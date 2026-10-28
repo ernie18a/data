@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //| PROGRAMMING PATTERNS - STRATEGY                                  |
 //| Incapsulate a family of interchangeable algorythms which can be  |
 //| modified independently from the client.                          | 

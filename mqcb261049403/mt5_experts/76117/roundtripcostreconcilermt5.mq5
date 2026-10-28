@@ -1,4 +1,4 @@
-﻿#property copyright "Usamah"
+#property copyright "Usamah"
 #property link      "https://www.mql5.com/en/users/usamah41"
 #property version   "1.00"
 #property description "Read-only deal and round-trip cost reconciliation to CSV."

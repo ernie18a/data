@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------------------------+
+//+------------------------------------------------------------------------------------+
 #define     _NAME_                  "SpreadTrack"
 #define     _TITLE_                 "SpreadTrack (v1.0r2) - MetaTrader 4 Indicator"
 #define     _ABSTRACT_              "OHLC History File Spread Tracker Indicator"

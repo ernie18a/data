@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                         Human_Level_Structure_Engine_v2.mq5      |
 //| Human-Level SMC Market Structure Engine + CHoCH Fibo & FVG Retest|
 //|                                                                  |

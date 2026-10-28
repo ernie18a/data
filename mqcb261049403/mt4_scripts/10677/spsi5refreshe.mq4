@@ -1,4 +1,4 @@
-﻿//IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII+
+//IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII+
 //|                                                                 s-PSI@Refresh.mq4 |
 //|                                       Copyright © 2012, Igor Stepovoi aka TarasBY |
 //|                                                                taras_bulba@tut.by |

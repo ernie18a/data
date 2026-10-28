@@ -1,4 +1,4 @@
-﻿//< afd.AdjustLotSize >                                                                                // 01
+//< afd.AdjustLotSize >                                                                                // 01
                                                                                                        // 02
 //< head>                                                                                              // 03
                                                                                                        // 04

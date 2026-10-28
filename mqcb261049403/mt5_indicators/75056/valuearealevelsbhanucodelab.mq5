@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                 ValueAreaLevelsBhanuCodeLab.mq5                  |
 //|       Session Value Area High, Point of Control, and Low         |
 //|                         Copyright BhanuCodeLab                   |

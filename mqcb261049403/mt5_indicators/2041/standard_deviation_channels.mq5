@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                  Standard_Deviation_Channels.mq5 |
 //|                Copyright © 2006, tageiger, aka fxid10t@yahoo.com |
 //|                                       https://www.metaquotes.net |

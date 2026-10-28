@@ -1,4 +1,4 @@
-﻿#property copyright "Copyright 2025, ProtimeTrader."
+#property copyright "Copyright 2025, ProtimeTrader."
 #property link      "https://www.mql5.com/en/users/protimetrader"
 #property description "Moving Average based on Heiken-Ashi"
 #property version   "1.00"

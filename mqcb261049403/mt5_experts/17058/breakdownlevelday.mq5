@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                   BreakdownLevelDay(barabashkakvn's edition).mq5 |
 //|                               Copyright © 2011, Hlystov Vladimir |
 //|                                                cmillion@narod.ru |

@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 #property copyright "Copyright © 2012 Matus German, www.MTexperts.net"
 
 extern string    separator1            = "------ Martingale settings ------";

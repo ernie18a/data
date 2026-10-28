@@ -1,4 +1,4 @@
-﻿#property link      "https://www.metaquotes.net"
+#property link      "https://www.metaquotes.net"
 #property copyright "Copyright © 2015 Matus German, www.mtexperts.net"
 #property version   "1.1" 
 

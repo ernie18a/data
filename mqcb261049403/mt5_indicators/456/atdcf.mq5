@@ -1,4 +1,4 @@
-﻿/*
+/*
  * For the indicator to work, place the
  * SmoothAlgorithms.mqh version >= 3.01!!!
  * in the directory: MetaTrader\\MQL5\Include

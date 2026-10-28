@@ -1,4 +1,4 @@
-﻿// PanelView.mqh
+// PanelView.mqh
 // Lightweight chart-object panel used by Daily Risk Monitor Lite.
 // This module owns:
 // - object creation,

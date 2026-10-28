@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Filename:    DayImpulseOverlay.mq4
  * Author:      DriverDan, based on the original by Tartan at the link below
  * Date:        Nov 3, 2005

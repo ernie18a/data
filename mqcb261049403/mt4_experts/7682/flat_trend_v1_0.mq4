@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|    Spel Thanks to :                                              |
 //|    Todd Geiger for the initial start trend ea                    |
 //|    Shimodax, Mr Pip and Perky for the Juice indicator            |

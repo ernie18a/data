@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                     Kijun Sen Robot(barabashkakvn's edition).mq5 |
 //|                   Copyright ® 2005 Noam Koren (noamko@shani.net) |
 //|                                         http://www.metaquotes.ru |

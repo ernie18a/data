@@ -1,4 +1,4 @@
-﻿// Daily Risk Monitor Lite MT5
+// Daily Risk Monitor Lite MT5
 // Read-only account-level risk monitor indicator.
 // Main responsibilities:
 // 1) collect current calculation parameters,

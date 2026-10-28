@@ -1,4 +1,4 @@
-﻿#property copyright "Emilio Stefano Reale FxTrading"
+#property copyright "Emilio Stefano Reale FxTrading"
 
 #import "IdleLib.dll"
    int GetLastKeyWP();

@@ -1,4 +1,4 @@
-﻿#include <Trade\Trade.mqh>
+#include <Trade\Trade.mqh>
 #property tester_file "larry_model.onnx" 
 
 // Input parameters

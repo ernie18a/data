@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                   Simple Martingale Template.mq4 |
 //|                           Copyright © 2015, Joel Tagle Protusada |
 //|                     https://www.facebook.com/groups/FXFledgling/ |

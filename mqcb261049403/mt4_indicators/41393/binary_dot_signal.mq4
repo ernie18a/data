@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 #property copyright "Binary Dot"
 #property link      "https://www.mql5.com/en/users/denisadha_"
 #property version   "1.0"

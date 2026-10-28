@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                             Elder Impulse System Candlestick.mq4 |
 //|                            Copyright 2023, ksspjan67@hotmail.com |
 //|                                      email:ksspjan67@hotmail.com |

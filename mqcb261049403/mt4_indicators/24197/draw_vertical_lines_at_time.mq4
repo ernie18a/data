@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------+
+//+------------------------------------------------+
 //| File        | Draw_Vertical_Lines_at_Time.mq4  |
 //| Description | Draw vertical lines at time.     |
 //| Copyright   | TR4DEX                           |

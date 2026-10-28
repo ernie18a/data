@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|              ArtificialIntelligence(barabashkakvn's edition).mq5 |
 //|                               Copyright © 2006, Yury V. Reshetov |
 //|                                         http://reshetov.xnet.uz/ |

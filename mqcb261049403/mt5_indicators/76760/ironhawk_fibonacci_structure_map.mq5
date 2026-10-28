@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //| IronHawk_Fibonacci_Structure_Map.mq5                             |
 //| IronHawk Capital                                                 |
 //| IFSM - Fibonacci confluence and structure indicator              |

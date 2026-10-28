@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                     Universal Breakout Study.mq5 |
 //|                        Copyright 2026, Sergei Ermolov (mql5.com) |
 //|                        https://www.mql5.com/en/users/dj_ermoloff |

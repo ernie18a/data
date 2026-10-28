@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                                 Raghee Vague.mq4 |
 //|                            Copyright © 2009, Roman Robidet Burel |
 //|    IF you find this Indicator/Code usefull and you want          |

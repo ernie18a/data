@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                               Vlado(barabashkakvn's edition).mq5 |
 //|                Copyright © 2005, Nick Bilak, beluck[AT]gmail.com |
 //|                                    http://metatrader.50webs.com/ |

@@ -1,4 +1,4 @@
-﻿
+
 #property copyright "Copyright © 2009, Kevin Kurka"
 #include <WinUser32.mqh>
 

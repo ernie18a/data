@@ -1,4 +1,4 @@
-﻿#property indicator_separate_window
+#property indicator_separate_window
 #property indicator_buffers 1
 #property indicator_color1 Magenta
 #property indicator_level1 70

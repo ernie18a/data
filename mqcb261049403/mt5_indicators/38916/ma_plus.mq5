@@ -1,4 +1,4 @@
-﻿#property copyright    "Alexandr Sokolov"
+#property copyright    "Alexandr Sokolov"
 #property link         "https://www.mql5.com/en/users/asokolov7"
 #property version      "1.00"
 

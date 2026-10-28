@@ -1,4 +1,4 @@
-﻿
+
 //+-------------------------------------------------------------------------+
 //| 4Period_RSI_Arrows.mq4                                                  |
 //| transport_david thanks the many friends @                               |

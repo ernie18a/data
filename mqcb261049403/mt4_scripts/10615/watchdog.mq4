@@ -1,4 +1,4 @@
-﻿/*=============================================================
+/*=============================================================
  Info:    WatchDog - An EA monitoring script. WatchDog alerting you when things go wrong! 
  Name:    WatchDog.mq4
  Author:  Erich Pribitzer

@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                               BullBearVolume.mq5 |
 //|                             Converted from Amibroker AFL to MQL5 |
 //|                                 Original Author: Nick Molchanoff |

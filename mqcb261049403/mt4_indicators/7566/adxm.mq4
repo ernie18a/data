@@ -1,4 +1,4 @@
-﻿//-------ANG3110@latchess.com------- 
+//-------ANG3110@latchess.com------- 
 //****************************************
 #property indicator_separate_window
 #property indicator_buffers 5

@@ -1,4 +1,4 @@
-﻿// RSI based trading robot
+// RSI based trading robot
 // logic bar>bar2 + rsi 50 level
 // ILAN based half-scalping robot with modifications, especially regarding max. lots
 

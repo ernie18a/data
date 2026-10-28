@@ -1,4 +1,4 @@
-﻿// Multi Time Frame (MTF) Fractal Indicator
+// Multi Time Frame (MTF) Fractal Indicator
 
 // Include required header files.
 #include "Fractal-Utilities.mqh"

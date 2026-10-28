@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                             Wick-Rejection-Scanner-Dashboard.mq5 |
 //|                Professional MT5 Wick Rejection Scanner Dashboard |
 //|            Completely redesigned UI with proper visual hierarchy |

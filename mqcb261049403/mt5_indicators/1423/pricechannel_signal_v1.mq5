@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                       PriceChannel_Signal_v1.mq5 |
 //|                                Copyright © 2013, TrendLaboratory |
 //|            http://finance.groups.yahoo.com/group/TrendLaboratory |

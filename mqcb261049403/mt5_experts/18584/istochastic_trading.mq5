@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                 IStochastic_Trading(barabashkakvn's edition).mq5 |
 //|                              Copyright © 2017, Vladimir Karputov |
 //|                                           http://wmua.ru/slesar/ |

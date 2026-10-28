@@ -1,4 +1,4 @@
-﻿#property copyright "Max Berilo"
+#property copyright "Max Berilo"
 #include <Trade.mqh>
 //+------------------------------------------------------------------+
 //| script program start function                                    |

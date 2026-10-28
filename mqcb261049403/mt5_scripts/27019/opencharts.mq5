@@ -1,4 +1,4 @@
-﻿#property script_show_inputs  true
+#property script_show_inputs  true
 input ENUM_TIMEFRAMES timeFrame = PERIOD_H1; //Timeframe
 input string tplName = "Momentum.tpl";       //Template
 input uint ptsSpread = 20;                   //Spread Filter

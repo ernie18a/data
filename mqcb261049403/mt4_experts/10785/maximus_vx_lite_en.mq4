@@ -1,4 +1,4 @@
-﻿#property copyright "Evgeny I. SHCHERBINA"
+#property copyright "Evgeny I. SHCHERBINA"
 //maximus_vX.mq4
 //12.04.2011
 //You are free to use concepts of the advisor, reference to the author is mandatory.

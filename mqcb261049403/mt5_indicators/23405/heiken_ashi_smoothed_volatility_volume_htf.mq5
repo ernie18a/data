@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+ 
+//+------------------------------------------------------------------+ 
 //|                   Heiken_Ashi_Smoothed_Volatility_Volume_HTF.mq5 | 
 //|                               Copyright © 2018, Nikolay Kositsin | 
 //|                              Khabarovsk,   farria@mail.redcom.ru | 

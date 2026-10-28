@@ -1,4 +1,4 @@
-﻿//------------------------------------------------------------------
+//------------------------------------------------------------------
 #property copyright "© mladen, 2017"
 #property link      "www.forex-station.com"
 #property link      "mladenfx@gmail.com"

@@ -1,4 +1,4 @@
-﻿#property strict                                //A lot size of 3.6 was used during testing on EUR/USD 4HRs.
+#property strict                                //A lot size of 3.6 was used during testing on EUR/USD 4HRs.
 
 static bool BuyIsActive = False;
 static bool SellIsActive = False;

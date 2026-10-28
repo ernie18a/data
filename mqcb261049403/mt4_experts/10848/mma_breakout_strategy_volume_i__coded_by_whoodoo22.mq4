@@ -1,4 +1,4 @@
-﻿//+-------------------------------------------------------------------+
+//+-------------------------------------------------------------------+
 //|           MMA_Breakout_strategy_Volume I - coded by WhooDoo22.mq4 |
 //|                         Copyright 2012, MetaQuotes Software Corp. |
 //|                                        https://www.metaquotes.net |

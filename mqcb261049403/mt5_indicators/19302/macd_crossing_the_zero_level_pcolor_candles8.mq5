@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                 MACD Crossing the zero level (color candles).mq5 |
 //|                              Copyright © 2017, Vladimir Karputov |
 //|                                           http://wmua.ru/slesar/ |

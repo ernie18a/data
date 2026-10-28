@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                        Brooky_Trend_Strength.mq5 |
 //|                              Original MQL4 code credit to Brooky |
 //|                               http://forex-indicators.weebly.com |

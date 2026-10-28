@@ -1,4 +1,4 @@
-﻿#property strict
+#property strict
 
 #property description "Displays the candle wicks' length above and below the candles."
 #property description "Alerts when the candle's wick (shadow) reaches a certain length."

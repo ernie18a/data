@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                       Virtual_SL_TP_Pending_with_SL_Trailing.mq4 |
 //|                        Copyright 2024, MetaQuotes Software Corp. |
 //|                                      https://www.metaquotes.net/ |

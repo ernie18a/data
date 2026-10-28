@@ -1,4 +1,4 @@
-﻿//IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII+
+//IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII+
 //|                                                        e-PSI@ManagerTrailling.mq4 |
 //|                                                         Copyright © 2010, TarasBY |
 //|                                                                taras_bulba@tut.by |

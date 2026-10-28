@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                          Two Stochastic Custom Filling Alert.mq5 |
 //|                              Copyright © 2021, Vladimir Karputov |
 //|                     https://www.mql5.com/ru/market/product/43516 |

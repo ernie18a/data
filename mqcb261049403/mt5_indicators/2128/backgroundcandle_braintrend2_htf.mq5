@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+ 
+//+------------------------------------------------------------------+ 
 //|                             BackgroundCandle_BrainTrend2_HTF.mq5 | 
 //|                               Copyright © 2013, Nikolay Kositsin | 
 //|                              Khabarovsk,   farria@mail.redcom.ru | 

@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                                     JMASlope.mq5 |
 //|                    Copyright © 2005, Weld & TrendLaboratory Ltd. |
 //|            http://finance.groups.yahoo.com/group/TrendLaboratory |

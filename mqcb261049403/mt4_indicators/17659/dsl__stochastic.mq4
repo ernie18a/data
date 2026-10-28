@@ -1,4 +1,4 @@
-﻿//------------------------------------------------------------------
+//------------------------------------------------------------------
 #property copyright   "copyright© mladen"
 #property description "discontinued signal lines stochastic"
 #property description "made by mladen"

@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                              Turtle Channel Method(Donchain).mq4 |
 //|                                           djindyFX@sbcglobal.net |
 //|      http://www.learncurrencytrading.com/fxforum/blogs/djindyfx/ |

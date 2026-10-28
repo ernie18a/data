@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                             DeleteAllObjects.mq4 |
 //|                       Copyright 2014, ForexTradingAutomation.com |
 //|                                http://ForexTradingAutomation.com |

@@ -1,4 +1,4 @@
-﻿
+
 
 #define Magic 66671
 #define SLIPPAGE 3 // nejaukt ar indikatora parametru Slipage

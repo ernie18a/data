@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                  Adaptive_VWAP_Institutional.mq5 |
 //|                         Institutional-Grade VWAP Implementation  |
 //|                                    Optimized for Trading Systems |

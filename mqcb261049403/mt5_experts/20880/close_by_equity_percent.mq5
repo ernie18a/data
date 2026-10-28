@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|             Close by Equity Percent(barabashkakvn's edition).mq5 |
 //|                            Copyright 2012, adam malik bin kasang |
 //|                                             adamkasang@gmail.com |

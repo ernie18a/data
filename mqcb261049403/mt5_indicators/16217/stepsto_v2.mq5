@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                                   StepSto_v2.mq5 |
 //|                           Copyright © 2005, TrendLaboratory Ltd. |
 //|            http://finance.groups.yahoo.com/group/TrendLaboratory |

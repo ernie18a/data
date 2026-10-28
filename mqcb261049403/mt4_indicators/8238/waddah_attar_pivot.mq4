@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                               Waddah Attar Pivot |
 //|                        Copyright © 2007, waddahattar@hotmail.com |
 //|                             Waddah Attar waddahattar@hotmail.com |

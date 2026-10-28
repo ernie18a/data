@@ -1,4 +1,4 @@
-﻿//------------------------------------------------------------------
+//------------------------------------------------------------------
 #property copyright   "© mladen"
 #property link        "mladenfx@gmail.com"
 #property description "Laguerre RSI with Laguerre filter - extended"

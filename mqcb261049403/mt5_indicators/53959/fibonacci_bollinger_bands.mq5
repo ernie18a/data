@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                        Fibonnaci Bollinger Bands |
 //|                          Copyright 2024, Rama Destrian (vilraxq) |
 //|                            https://www.mql5.com/ru/users/vilraxq |

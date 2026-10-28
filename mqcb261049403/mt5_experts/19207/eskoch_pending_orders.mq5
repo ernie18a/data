@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|              e-Skoch pending orders(barabashkakvn's edition).mq5 |
 //|                      Copyright © 2012, MetaQuotes Software Corp. |
 //|                                         http://www.fxgeneral.com |

@@ -1,4 +1,4 @@
-﻿#property indicator_chart_window
+#property indicator_chart_window
 #property indicator_buffers 7  // 2 asal + 5 untuk candle
 #property indicator_plots   3  // 2 arrow + 1 candle plot
 

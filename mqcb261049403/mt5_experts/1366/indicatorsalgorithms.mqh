@@ -1,4 +1,4 @@
-﻿//MQL5 Version  June 21, 2010 Final
+//MQL5 Version  June 21, 2010 Final
 //+X================================================================X+
 //|                                         IndicatorsAlgorithms.mqh |
 //|                               Copyright © 2010, Nikolay Kositsin |

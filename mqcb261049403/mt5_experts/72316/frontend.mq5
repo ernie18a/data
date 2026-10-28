@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                              L1VwapDisplay.mq5   |
 //|   Self-contained EA: computes L1 Trend Filter (H1) and session   |
 //|   VWAP (+/- SD bands) internally and draws them on the chart.    |

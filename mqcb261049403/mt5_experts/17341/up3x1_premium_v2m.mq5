@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                   up3x1_premium_v2M(barabashkakvn's edition).mq5 |
 //|                                  Copyright © 2006, Izhutov Pavel |
 //|                        www.forexnow.narod.ru   izhutov@yandex.ru |

@@ -1,4 +1,4 @@
-﻿//+---------------------------------------------------------------------------+
+//+---------------------------------------------------------------------------+
 //|       Awesome Oscillator without iAO- beginner tutorial by William210.mq5 |
 //|                                                      Copyright 2023, GwDs |
 //|                                             Need more help? Contact me on |

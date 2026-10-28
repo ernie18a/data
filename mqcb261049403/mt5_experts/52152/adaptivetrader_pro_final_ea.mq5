@@ -1,4 +1,4 @@
-﻿
+
 #include <Trade\Trade.mqh> 
 
 // Define signal states

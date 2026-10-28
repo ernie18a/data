@@ -1,4 +1,4 @@
-﻿#property copyright "Стандартная оценка. StdScore v4.2. © FXcoder"
+#property copyright "Стандартная оценка. StdScore v4.2. © FXcoder"
 #property link      "http://fxcoder.blogspot.com"
 #property strict
 

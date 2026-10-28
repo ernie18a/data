@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                 BW Market Facilitation Index.mq4 |
 //|                      Copyright © 2005, MetaQuotes Software Corp. |
 //|                                      https://www.metaquotes.net/ |

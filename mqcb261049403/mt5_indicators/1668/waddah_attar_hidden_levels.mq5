@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                   Waddah_Attar_Hidden_Levels.mq5 |
 //|           Copyright © 2007, Waddah Attar waddahattar@hotmail.com |
 //|                             Waddah Attar waddahattar@hotmail.com |

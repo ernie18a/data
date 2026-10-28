@@ -1,4 +1,4 @@
-﻿//+-------------------------------------------------------------------------+ 
+//+-------------------------------------------------------------------------+ 
 //|                                                      LaguerreVolume.mq5 | 
 //|                                 Copyright © 2007, Emerald King, t_david |
 //| http://finance.groups.yahoo.com/group/MetaTrader_Experts_and_Indicators |

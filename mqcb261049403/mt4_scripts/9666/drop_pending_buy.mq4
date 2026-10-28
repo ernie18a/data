@@ -1,4 +1,4 @@
-﻿#property show_inputs
+#property show_inputs
 //#property show_confirm
 
 extern double Lots    = 0.1;

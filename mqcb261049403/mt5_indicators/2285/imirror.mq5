@@ -1,4 +1,4 @@
-﻿#property copyright "2014, Timur Gatin"
+#property copyright "2014, Timur Gatin"
 #property link      "https://www.mql5.com/ru/users/gt788"
 #property version   "2.00"
 #property indicator_chart_window

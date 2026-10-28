@@ -1,4 +1,4 @@
-﻿//*
+//*
 //* my_DailyOpen_indicator
 //*
 //* Revision 1.1  2005/11/13 Midnite

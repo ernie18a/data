@@ -1,4 +1,4 @@
-﻿#property copyright "Copyright 2021, mfx123 & Conor Dailey"
+#property copyright "Copyright 2021, mfx123 & Conor Dailey"
 #property version   "1.00"
 #property description "No need to tick anything below"
 #property strict

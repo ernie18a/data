@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                  Two MA Other TimeFrame Correct Intersection.mq5 |
 //|                         Copyright © 2021-2022, Vladimir Karputov |
 //|                      https://www.mql5.com/en/users/barabashkakvn |

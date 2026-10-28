@@ -1,4 +1,4 @@
-﻿
+
 #property copyright "Copyright 2010, vsebastien3"
 #include <Trade\PositionInfo.mqh>
 #include <Trade\Trade.mqh>

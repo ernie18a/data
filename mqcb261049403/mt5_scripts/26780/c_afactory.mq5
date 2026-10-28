@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //| A B S T R A C T  F A C T O R Y               C R E A T I O N A L |
 //|                                                                  |
 //| Provides an interface for creating families of related or        |

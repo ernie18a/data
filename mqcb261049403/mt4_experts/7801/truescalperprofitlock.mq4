@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                        TrueScalperProfitLock.mq4 |
 //|         Copyright © 2005, International Federation of Red Cross. |
 //|                                             http://www.ifrc.org/ |

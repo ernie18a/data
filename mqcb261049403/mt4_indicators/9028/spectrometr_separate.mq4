@@ -1,4 +1,4 @@
-﻿#property copyright ""
+#property copyright ""
 #property link      ""
 
 #property indicator_separate_window

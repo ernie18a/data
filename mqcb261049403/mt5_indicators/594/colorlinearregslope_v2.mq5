@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                            LinearRegSlope_V2.mq5 | 
 //|                  Linear regression value  - time series forecast |
 //|                       Linear regression value - tsf with Trigger |

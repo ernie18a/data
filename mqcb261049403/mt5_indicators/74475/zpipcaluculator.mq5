@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                FoxWave_PipValueCalculator.mq5    |
 //|                       Copyright Fox Wave - foxwavetrading.top    |
 //|     Live Pip Value, Lot Sizing & Open Position P/L Calculator    |

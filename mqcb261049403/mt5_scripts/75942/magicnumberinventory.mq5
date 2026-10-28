@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //| MagicNumberInventory.mq5                                v1.10    |
 //| "Who is trading on my account?"                                  |
 //| Read-only audit script: groups the account's closed-trade        |

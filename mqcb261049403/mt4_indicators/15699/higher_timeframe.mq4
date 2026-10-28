@@ -1,4 +1,4 @@
-﻿#property copyright "Copyright © 2022, Il Anokhin"
+#property copyright "Copyright © 2022, Il Anokhin"
 #property description "Higher Timeframe Indicator"
 #property link "https://www.mql5.com/en/users/ilanokhin"
 #property strict

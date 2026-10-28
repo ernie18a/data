@@ -1,4 +1,4 @@
-﻿//---- indicator settings
+//---- indicator settings
 #property  indicator_separate_window
 #property  indicator_buffers 2
 

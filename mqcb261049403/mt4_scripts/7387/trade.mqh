@@ -1,4 +1,4 @@
-﻿#define copyright "Max Berilo"
+#define copyright "Max Berilo"
 //----
 #import "Trade.ex4"
 //+------------------------------------------------------------------+

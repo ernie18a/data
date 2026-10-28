@@ -1,4 +1,4 @@
-﻿/*
+/*
 вызов индикатора из др.программ
 iCustom(string symbol, int timeframe, "_StochNR", int %Kperiod, int %Dperiod, 
 int slowing, int method, int price_field, double sens, int mode, int shift);

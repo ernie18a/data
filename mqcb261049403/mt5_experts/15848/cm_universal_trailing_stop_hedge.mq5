@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 #property copyright "Copyright © 2016, cmillion@narod.ru"
 #property link      "http://cmillion.ru"
 #property strict

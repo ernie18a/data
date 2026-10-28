@@ -1,4 +1,4 @@
-﻿#property strict
+#property strict
 
 class CHART_BASE
 {

@@ -1,4 +1,4 @@
-﻿//+-------------------------------------------------------------------+
+//+-------------------------------------------------------------------+
 //|                                             wd.Range_DailyAvg.mq5 |
 //|                 Copyright © 2023, Karya Prima Rajasa Mediavestama |
 //|                                  Programmed by widhie75@yahoo.com |

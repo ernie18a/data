@@ -1,4 +1,4 @@
-﻿#include <AIV/Matrices.mqh>
+#include <AIV/Matrices.mqh>
 
 void ShowVector(SSeries& series[], double& vectors[], const int order, const string name)
 {

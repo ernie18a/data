@@ -1,4 +1,4 @@
-﻿#property copyright "Copyright © 2012, Rampok Mie"
+#property copyright "Copyright © 2012, Rampok Mie"
 #property link      "http://facebook.com/zvickyhac"
 extern string OptionsEA="settingan Default Tanpa MM";
 extern double TakeProfit = 40;

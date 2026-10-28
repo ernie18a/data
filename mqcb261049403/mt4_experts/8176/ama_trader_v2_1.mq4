@@ -1,4 +1,4 @@
-﻿/***
+/***
 
 Project name: AMA TRADER
 Coder: Kalenzo

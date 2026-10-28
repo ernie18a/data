@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                               Candle Counter.mq5 |
 //|                   Copyright 2019-2025, Virologista Kerntopf Corp.|
 //|                  https://www.mql5.com/pt/users/virologustavo/news|

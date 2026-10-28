@@ -1,4 +1,4 @@
-﻿//------------------------------------------------------------------
+//------------------------------------------------------------------
 #property copyright   "copyright© mladen"
 #property description "discontinued signal lines rsi"
 #property description "made by mladen"

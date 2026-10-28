@@ -1,4 +1,4 @@
-﻿#property strict
+#property strict
 #property indicator_chart_window
 #define VERSION "201.003"
 #property version VERSION

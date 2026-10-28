@@ -1,4 +1,4 @@
-﻿//+-----------------------------------------------------------------------------+
+//+-----------------------------------------------------------------------------+
 //|Simple continuous trend-following strategy  BUY/SELL for chart symbol.mq4    |
 //|                                   Copyright 2024, MetaQuotes Software Corp. |
 //|                                                         http://www.mql4.com |

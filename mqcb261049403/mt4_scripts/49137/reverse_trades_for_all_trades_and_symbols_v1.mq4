@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                     ReverseTradesForAllSymbols_Script.mq4        |
 //|                        Copyright 2024, Your Company Name         |
 //|                          http://www.yourwebsite.com              |

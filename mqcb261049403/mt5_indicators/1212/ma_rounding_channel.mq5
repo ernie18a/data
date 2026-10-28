@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                          MA_Rounding_Channel.mq5 | 
 //|                   Copyright © 2011, BACKSPACE + Nikolay Kositsin | 
 //|                              Khabarovsk,   farria@mail.redcom.ru | 

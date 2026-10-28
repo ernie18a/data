@@ -1,4 +1,4 @@
-﻿//--- Renko Time Indicator - time difference between candles / bricks / blocks
+//--- Renko Time Indicator - time difference between candles / bricks / blocks
 #property copyright "Copyright 2015, Paul Reed."
 #property version   "2.00"
 #property strict

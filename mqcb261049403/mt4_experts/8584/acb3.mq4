@@ -1,4 +1,4 @@
-﻿int start ()                                                                          // 01
+int start ()                                                                          // 01
 {                                                                                     // 02
 static int    ali.Digits                                                            ; // 03
 static double ald.QuotePoint                                                        ; // 04

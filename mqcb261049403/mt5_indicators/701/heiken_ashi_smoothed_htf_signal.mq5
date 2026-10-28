@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+ 
+//+------------------------------------------------------------------+ 
 //|                              Heiken_Ashi_Smoothed_HTF_Signal.mq5 | 
 //|                               Copyright © 2010, Nikolay Kositsin | 
 //|                              Khabarovsk,   farria@mail.redcom.ru | 

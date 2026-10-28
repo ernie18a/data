@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                            Exp_Chaikin_Volatility_Stochastic.mq5 |
 //|                               Copyright © 2016, Nikolay Kositsin | 
 //|                              Khabarovsk,   farria@mail.redcom.ru | 

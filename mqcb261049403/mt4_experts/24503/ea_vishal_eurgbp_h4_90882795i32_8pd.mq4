@@ -1,4 +1,4 @@
-﻿//
+//
 // EA vishal Expert Advisor
 //
 // Created with: Expert Advisor 

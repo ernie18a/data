@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                                   PriceAlert.mq4 |
 //|                         Copyright © 2009-2011, www.earnforex.com |
 //|           Issues sound alerts when price reaches certain levels. |

@@ -1,4 +1,4 @@
-﻿int BarsTotal_OnInt; 
+int BarsTotal_OnInt; 
 int BarsTotal_OnTick;
 //+------------------------------------------------------------------+
 //| Expert initialization function                                   |

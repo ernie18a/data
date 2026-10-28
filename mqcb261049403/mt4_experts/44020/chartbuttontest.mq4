@@ -1,4 +1,4 @@
-﻿
+
 
 #property strict
 #property copyright "Copyright 2023, MetaQuotes Ltd."

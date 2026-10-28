@@ -1,4 +1,4 @@
-﻿#property indicator_separate_window
+#property indicator_separate_window
 
 #property indicator_buffers 8
 #property indicator_color1 Black

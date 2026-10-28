@@ -1,4 +1,4 @@
-﻿#include <Trade\Trade.mqh>  // Include the trading functions library
+#include <Trade\Trade.mqh>  // Include the trading functions library
 
 CTrade trade;  // Declare the trade object to handle trading operations
 

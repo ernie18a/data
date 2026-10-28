@@ -1,4 +1,4 @@
-﻿//+----------------------------------------+
+//+----------------------------------------+
 //|                  BREW_MktFlwAnlMth.mq4 |
 //| Market Flow Analysis Method            |
 //| http://www.forexforprofits.com         |

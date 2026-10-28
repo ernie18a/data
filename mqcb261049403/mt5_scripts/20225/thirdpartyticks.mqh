@@ -1,4 +1,4 @@
-﻿#include <Zip\Zip.mqh> // https://www.mql5.com/ru/articles/1971
+#include <Zip\Zip.mqh> // https://www.mql5.com/ru/articles/1971
 
 #include "Files_Prices.mqh"
 #include "CustomSymbol.mqh"

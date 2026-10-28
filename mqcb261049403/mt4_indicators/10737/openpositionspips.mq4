@@ -1,4 +1,4 @@
-﻿
+
 #property copyright "Copyright © 2007, MetaQuotes Software Corp." // Modifications Author: file45
 #property link      "https://www.metaquotes.net"
 

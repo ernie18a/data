@@ -1,4 +1,4 @@
-﻿//+--------------------------------------------+
+//+--------------------------------------------+
 //|                           TickRecorder.mq4 |
 //|           Copyright (c) 2016 David Ruzicka |
 //| https://www.mql5.com/en/users/davidruzicka |

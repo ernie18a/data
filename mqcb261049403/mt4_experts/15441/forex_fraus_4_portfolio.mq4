@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|Caution: If you use this EA, that's your self-responsibility.     |
 //|                                                                  |
 //|This EA is based Forex Fraus (for M1) which was made              |

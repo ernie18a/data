@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //| PZ_ReversalTrendFollowingEA.mq4
 //| --
 //| You can either be long or short at any given time. You buy if the market 

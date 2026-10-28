@@ -1,4 +1,4 @@
-﻿//------------------------------------------------------------------
+//------------------------------------------------------------------
 #property copyright   "Copyright 2017, mladen"
 #property link        "mladenfx@gmail.com"
 #property description "Schaff trend RSI"

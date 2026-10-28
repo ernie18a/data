@@ -1,4 +1,4 @@
-﻿#property strict
+#property strict
 #property indicator_chart_window
 #property indicator_buffers 1
 #include <Movement\Chanse.mqh>

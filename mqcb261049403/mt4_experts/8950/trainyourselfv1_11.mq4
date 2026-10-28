@@ -1,4 +1,4 @@
-﻿#property copyright "Louis Stoltz lightsites@gmail.com"
+#property copyright "Louis Stoltz lightsites@gmail.com"
 #property link      "http://www.lightsites.co.za"
 
 double Lots = 5;

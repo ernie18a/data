@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                        Exp_Color_QEMA_Envelopes_Digit_System.mq5 |
 //|                               Copyright © 2017, Nikolay Kositsin | 
 //|                              Khabarovsk,   farria@mail.redcom.ru | 

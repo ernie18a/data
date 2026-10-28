@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                  Exp_WeightOscillator_Direct.mq5 |
 //|                               Copyright © 2017, Nikolay Kositsin | 
 //|                              Khabarovsk,   farria@mail.redcom.ru | 

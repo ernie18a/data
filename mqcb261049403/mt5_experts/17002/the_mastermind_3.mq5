@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                    The MasterMind 3(barabashkakvn's edition).mq5 |
 //|                          Copyright © 2008, CreativeSilence, Inc. |
 //|                                  http://www.creative-silence.com |

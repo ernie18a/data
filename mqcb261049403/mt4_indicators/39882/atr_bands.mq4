@@ -1,4 +1,4 @@
-﻿//https://www.tradingview.com/script/uTetNB3s-ATR-Bands/
+//https://www.tradingview.com/script/uTetNB3s-ATR-Bands/
 #property copyright "Bugscoder Studio"
 #property link      "https://www.bugscoder.com/"
 #property version   "1.00"

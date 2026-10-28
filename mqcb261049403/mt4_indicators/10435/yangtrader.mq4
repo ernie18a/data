@@ -1,4 +1,4 @@
-﻿//--  Original Author : yangshu --//
+//--  Original Author : yangshu --//
 //--  copyright YangShu 2011    --//
 //--  Email:yangshu@yangshu.net --//
 //--  Web: http://yangshu.net   --//

@@ -1,4 +1,4 @@
-﻿/*
+/*
  * <<< DIGITAL FILTERS FOR METATRADER 5 >>>
  *
  * Place DF.dll file to "\MetaTrader5\MQL5\Libraries\"

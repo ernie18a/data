@@ -1,4 +1,4 @@
-﻿#property copyright "*** Click here for more experts ***"
+#property copyright "*** Click here for more experts ***"
 #property link      "https://www.google.com/search?q=forexeas+payhip&rlz=1C1CHBF_en-GBAU972AU972&sxsrf=APq-WBtD_BRErb2qCXBGJg8Yh8QJmO9hng%3A1647519330253&ei=YiYzYoH9DoK_4-EP78-ZuAw&ved=0ahUKEwiBtsLjj832AhWC3zgGHe9nBscQ4dUDCA4&uact=5&oq=forexeas+payhip&gs_lcp=Cgdnd3Mtd2l6EAMyBQghEKABMgUIIRCgAToHCAAQRxCwAzoICAAQCBANEB46BAgAEA06BggAEA0QHjoHCCEQChCgAUoECEEYAEoECEYYAFCZC1j6GGCuIGgBcAF4AIAB3QKIAYgQkgEFMi00LjOYAQCgAQHIAQjAAQE&sclient=gws-wiz"
 #property version   "1.00"
 #property description "Forex Experts & Indicators"

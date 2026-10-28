@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                         SUPERMACBOT BY THE GUARDIAN FOREX TV.mq5 |
 //|                                    Copyright 2024, SIMON GITHIRI |
 //|                               https://www.theguardianforextv.com |

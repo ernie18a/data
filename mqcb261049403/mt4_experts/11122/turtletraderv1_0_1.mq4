@@ -1,4 +1,4 @@
-﻿#property copyright "Copyleft c 2014, Thrinai Chankong"
+#property copyright "Copyleft c 2014, Thrinai Chankong"
 #property link      "http://www.plapayoon.com"
 
 

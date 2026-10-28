@@ -1,4 +1,4 @@
-﻿
+
 //#property show_confirm
 #include <stdlib.mqh>   
    

@@ -1,4 +1,4 @@
-﻿extern int MagicNumber=454;
+extern int MagicNumber=454;
 extern double Lots=0.01;
 extern double Factor=1.55;
 extern double Trailing_Stop=350;

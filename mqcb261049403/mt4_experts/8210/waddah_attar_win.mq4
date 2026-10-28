@@ -1,4 +1,4 @@
-﻿#property link      "waddahattar@hotmail.com"
+#property link      "waddahattar@hotmail.com"
  
 extern int     Step=120;
 extern double  FirstLot=0.1;

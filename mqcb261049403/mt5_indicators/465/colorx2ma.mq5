@@ -1,4 +1,4 @@
-﻿/* For the indicator to work, place the SmoothAlgorithms.mqh
+/* For the indicator to work, place the SmoothAlgorithms.mqh
    in the directory: MetaTrader\\MQL5\Include */
 //+------------------------------------------------------------------+
 //|                                                    ColorX2MA.mq5 | 

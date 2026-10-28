@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|              ZigZagEvgeTrofi ver. 1(barabashkakvn's edition).mq5 |
 //|                               Copyright © 2008, Trofimov Evgeniy |
 //|                                     http://www.fracpar.narod.ru/ |

@@ -1,4 +1,4 @@
-﻿// Learn how to manage the volume data, separate it in groups for comparison.
+// Learn how to manage the volume data, separate it in groups for comparison.
 // Why is it important? Volume indicates commitment of the traders with the price movement.
 // it may help you create strategies based on volume trading, trend and momentum.
 

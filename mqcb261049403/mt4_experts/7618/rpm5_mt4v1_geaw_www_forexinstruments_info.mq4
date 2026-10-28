@@ -1,4 +1,4 @@
-﻿//+-------------------------------------------------------------------------+
+//+-------------------------------------------------------------------------+
 //| RPM5_MT4_[ea].mq4                                                       |
 //| Copyright © 2005,yahoo.com/group/MetaTrader_Experts_and_Indicators/     |
 //|http://finance.groups.yahoo.com/group/MetaTrader_Experts_and_Indicators/ |

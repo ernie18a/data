@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                          RiskCalculatorPanel.mq5 |
 //|  Position size calculator with draggable Stop Loss and Take      |
 //|  Profit lines. Drag the SL line, type your risk %, read the lot. |

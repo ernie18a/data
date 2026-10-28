@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                                 RangeBoundMA.mq4 |
 //|                               Shenzhen City YuHe E-commerce Ltd. |
 //|               find the biggest difference price between the 3 SMA|

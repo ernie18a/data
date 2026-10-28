@@ -1,4 +1,4 @@
-﻿#property copyright "Emilio Stefano Reale FxTrading"
+#property copyright "Emilio Stefano Reale FxTrading"
 #property library
 
 #include <stderror.mqh>

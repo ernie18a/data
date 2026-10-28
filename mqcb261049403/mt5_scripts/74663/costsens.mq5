@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                                     CostSens.mq5 |
 //|                Execution Cost Sensitivity Analyzer (MetaTrader 5)|
 //|        Reads a per-closing-deal result file and measures how much|

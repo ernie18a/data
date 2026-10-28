@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                           Alligator(barabashkakvn's edition).mq5 |
 //|                      Copyright © 2008, MetaQuotes Software Corp. |
 //|                                       https://www.metaquotes.net |

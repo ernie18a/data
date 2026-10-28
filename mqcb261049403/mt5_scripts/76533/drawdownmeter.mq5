@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //| DrawdownMeter.mq5                                       v1.10    |
 //| Underwater profile of your account's REALIZED trading result.    |
 //| Builds the cumulative closed-trade P/L curve (deposits and       |

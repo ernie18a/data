@@ -1,4 +1,4 @@
-﻿#include <Symbol.mqh>  // https://www.mql5.com/ru/code/18855
+#include <Symbol.mqh>  // https://www.mql5.com/ru/code/18855
 
 #include "Casting.mqh" // https://www.mql5.com/ru/code/16280
 #include "Data.mqh"

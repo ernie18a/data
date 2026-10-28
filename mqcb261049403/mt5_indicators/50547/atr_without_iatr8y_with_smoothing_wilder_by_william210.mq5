@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|       ATR without iATR() with smoothing Wilder by William210.mq5 |
 //|                                       Copyright 2024, William210 |
 //|                         https://www.mql5.com/fr/users/william210 |

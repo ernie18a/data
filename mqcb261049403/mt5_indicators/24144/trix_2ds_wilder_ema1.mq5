@@ -1,4 +1,4 @@
-﻿//------------------------------------------------------------------
+//------------------------------------------------------------------
 #property copyright   "© mladen, 2018"
 #property link        "mladenfx@gmail.com"
 #property description "Triple Exponential Average using double smoothed Wilder's EMA"

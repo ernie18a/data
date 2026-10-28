@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                         5_8 MACross(barabashkakvn's edition).mq5 |
 //|                      Copyright © 2006, MetaQuotes Software Corp. |
 //|                                       https://www.metaquotes.net |

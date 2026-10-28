@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                         FoxWave_SwapMeter.mq5    |
 //|                       Copyright Fox Wave - foxwavetrading.top    |
 //|             Single-Symbol Live Sell/Buy Swap Meter Panel         |

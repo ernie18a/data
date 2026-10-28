@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                   Double_Moving_Averages_With Fibonacci.mq4      |
 //|                       Copyright 2025, Mir Mostofa Kamal          |
 //|                               https://www.mql5.com/en/users/bokul|

@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                             iFreeNumFractals.mq5 |
 //|            Copyright © 2017, Artem A. Trishkin, Skype artmedia70 |
 //|                      https://login.mql5.com/ru/users/artmedia70/ |

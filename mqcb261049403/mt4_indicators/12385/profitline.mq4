@@ -1,4 +1,4 @@
-﻿#property copyright "Copyright © Matus German 2015, www.mtexperts.net"
+#property copyright "Copyright © Matus German 2015, www.mtexperts.net"
 #property version   "1.1" 
 #property strict
 #property indicator_chart_window

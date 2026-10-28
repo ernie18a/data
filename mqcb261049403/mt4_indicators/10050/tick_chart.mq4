@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                                   Tick Chart.mq4 |
 //|     Copyright © 2005, MetaQuotes Software Corp. © 2010, J.Arent. |
 //|             https://www.metaquotes.net/, http://www.fxtools.info |

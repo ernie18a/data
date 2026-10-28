@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|         Ichimoku Chinkou Cross Version 1.4.2 adds .5 profit take |
 //|                                  Copyright © 2013, EarnForex.com |
 //|                                        http://www.earnforex.com/ |

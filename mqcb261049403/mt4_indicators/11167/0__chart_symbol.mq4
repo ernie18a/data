@@ -1,4 +1,4 @@
-﻿//+---------------------------------------------------------------------------+
+//+---------------------------------------------------------------------------+
 //| Chart Symbol | Author: file45 | http://codebase.mql4.com/en/author/file45 |
 //|                                 Copyright 2013, MetaQuotes Software Corp. |
 //|                                                     https://forge.mql5.io |

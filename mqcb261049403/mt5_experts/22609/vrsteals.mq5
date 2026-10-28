@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                         VR---STEALS(barabashkakvn's edition).mq5 |
 //|                               Copyright 2018, Vladimir Pastushak |
 //|                    https://www.mql5.com/ru/users/voldemar/seller |

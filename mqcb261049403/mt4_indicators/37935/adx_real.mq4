@@ -1,4 +1,4 @@
-﻿//+----------------------------------------------------------------------------+
+//+----------------------------------------------------------------------------+
 //|                                                               ADX_real.mq4 |
 //| This ADX version is used on many other popular trading platforms.          |
 //| It is different to the standard one included with Metatrader.              |

@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                              GoldScalpBot.mq5 |
 //|                     Autonomous XAUUSD scalper + bridge client |
 //|         Author: Philippe Davenson Azor (MQL5: pipo-xdavens)   |

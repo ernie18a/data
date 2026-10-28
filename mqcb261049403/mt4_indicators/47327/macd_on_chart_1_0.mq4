@@ -1,4 +1,4 @@
-﻿#property strict
+#property strict
 #property indicator_chart_window
 #property indicator_buffers 4
 #property indicator_type1 DRAW_LINE

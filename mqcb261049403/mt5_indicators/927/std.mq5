@@ -1,4 +1,4 @@
-﻿//The Simple Trend Detector. Based on code RSI.mq4,  Copyright © 2004, MetaQuotes Software Corp. http://www.metaquotes.net/
+//The Simple Trend Detector. Based on code RSI.mq4,  Copyright © 2004, MetaQuotes Software Corp. http://www.metaquotes.net/
 
 #property  copyright "Copyright © 2004, MetaQuotes Software Corp., BECEMAL 2010"
 #property  link      "http://www.becemal.ru/"

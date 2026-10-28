@@ -1,4 +1,4 @@
-﻿#property copyright "BestForexScript.Com"
+#property copyright "BestForexScript.Com"
 #property link      "https://bestforexscript.com"
 #property version   "1.02"
 #property description "Download Expert Advisors and Indicator for FREE!"

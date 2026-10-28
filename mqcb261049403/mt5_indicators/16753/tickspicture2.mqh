@@ -1,4 +1,4 @@
-﻿#property strict
+#property strict
 
 #include "Ticks.mqh"
 #include "..\Resource.mqh"

@@ -1,4 +1,4 @@
-﻿// This is Not Tested , Use At Your Own Risk !
+// This is Not Tested , Use At Your Own Risk !
 
 //+--------------------------------------------------------------------------+
 //| 3 MA Cross w_Alert v2.mq4                                                |

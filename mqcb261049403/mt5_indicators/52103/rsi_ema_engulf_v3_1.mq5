@@ -1,4 +1,4 @@
-﻿#property copyright   "http://bc.vc/ohKDegn"
+#property copyright   "http://bc.vc/ohKDegn"
 #property link        "http://bc.vc/ohKDegn"
 #property description "VISIT SITE 4 MORE FREE INDICATORS & EXPERT ADVISORS "
 #property version     "1.2"

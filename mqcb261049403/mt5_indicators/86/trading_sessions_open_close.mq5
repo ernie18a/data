@@ -1,4 +1,4 @@
-﻿
+
 //+------------------------------------------------------------------+
 //|                                  Trading Sessions Open Close.mq5 |
 //|                                                Copyright VDVSoft |

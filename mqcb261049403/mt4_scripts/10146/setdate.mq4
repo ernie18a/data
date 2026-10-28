@@ -1,4 +1,4 @@
-﻿#import "user32.dll"
+#import "user32.dll"
 #include <WinUser32.mqh>
 #property copyright "Copyright c 2011, Mike Furlender"
 

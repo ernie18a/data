@@ -1,4 +1,4 @@
-﻿#property copyright "Integer"
+#property copyright "Integer"
 #property link      "http://dmffx.com"
 #property version   "1.00"
 //+------------------------------------------------------------------+

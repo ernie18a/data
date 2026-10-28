@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                            Corrected Average.mq5 |
 //|    Copyright 2012, Prof. A.Uhl, FinGeR alias Alexander Piechotta |
 //|                                  http://www.metatrader-wiki.com  |

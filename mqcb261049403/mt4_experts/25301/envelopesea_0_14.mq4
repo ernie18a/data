@@ -1,4 +1,4 @@
-﻿#property strict                                // Tested on EUR/USD 2019
+#property strict                                // Tested on EUR/USD 2019
 static bool BuyIsActive = False;
 static bool SellIsActive = False;
 extern double UD = 0.5;

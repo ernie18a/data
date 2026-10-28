@@ -1,4 +1,4 @@
-﻿
+
 #property copyright "Copyright © 2009, sHrung."
 #property link      "http://www.something.com/"
 

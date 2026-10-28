@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                                   CPDEngine.mqh  |
 //|                      BGC Grid Trading EA — Change Point Detection|
 //|                      CUSUM (Cumulative Sum Control Chart)        |

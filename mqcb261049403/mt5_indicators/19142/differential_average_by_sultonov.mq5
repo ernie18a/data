@@ -1,4 +1,4 @@
-﻿#property copyright "Scriptong by Sultonov's idea, starring Sevan62"
+#property copyright "Scriptong by Sultonov's idea, starring Sevan62"
 #property link      "http://advancetools.net"
 #property description "English: Sultonovs Differential Indicator."
 #property description "Russian: Дифференциальный индикатор Султонова"

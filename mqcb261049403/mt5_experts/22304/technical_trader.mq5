@@ -1,4 +1,4 @@
-﻿#property copyright "Copyright 2018, MetaQuotes Software Corp."
+#property copyright "Copyright 2018, MetaQuotes Software Corp."
 #property link      "https://forge.mql5.io"
 #property version   "1.00"
 #include <Math\Stat\Normal.mqh>

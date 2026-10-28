@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                 HedgeCover EA - Intelligent Position Protection  |
 //|                               Copyright 2025, Lupus Materia Ltd. |
 //|                                    https://www.lupusmateria.com/ |

@@ -1,4 +1,4 @@
-﻿#include "ChartObject.mqh"
+#include "ChartObject.mqh"
 
 class CHARTOBJECTRECTANGLE : public CHARTOBJECT
 {

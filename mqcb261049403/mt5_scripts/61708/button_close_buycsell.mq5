@@ -1,4 +1,4 @@
-﻿//
+//
 // ButtonCloseBuySell.mq5
 // getYournet.ch
 //

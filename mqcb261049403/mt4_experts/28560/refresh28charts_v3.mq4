@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                              Refresh28Charts.mq4 |
 //|            Copyright © 2019 by Jt, FXFledgling Forex Study Group |
 //|                     https://www.facebook.com/groups/FXFledgling/ |

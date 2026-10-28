@@ -1,4 +1,4 @@
-﻿/*
+/*
   Общие функции
 */
 #include "DataType.mqh"

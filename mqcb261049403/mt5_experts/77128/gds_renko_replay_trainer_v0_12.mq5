@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //| GDS Renko Replay Trainer                                         |
 //| Historical tick replay and ONE virtual position.                 |
 //| Attach to a NEW EMPTY normal chart, not to Strategy Tester.       |

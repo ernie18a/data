@@ -1,4 +1,4 @@
-﻿#include "Array.mqh"
+#include "Array.mqh"
 
 #define _CS(A) ((!::IsStopped()) && (A))
 

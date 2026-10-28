@@ -1,4 +1,4 @@
-﻿#property copyright "Copyright 2025 "
+#property copyright "Copyright 2025 "
 #property description "RSI EA MT5"
 #property version   "1.0"
 

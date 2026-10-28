@@ -1,4 +1,4 @@
-﻿
+
 //+------------------------------------------------------------------+
 //|                                               CloseAllProfit.mq4 |
 //|                       Copyright © 2008, PRMQuotes Software Corp. |

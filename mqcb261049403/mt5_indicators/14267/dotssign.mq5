@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|Based on NonLagDOT.mq4 by TrendLaboratory                         |
 //|http://finance.groups.yahoo.com/group/TrendLaboratory             |
 //|igorad2003@yahoo.co.uk                                            |

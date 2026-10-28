@@ -1,4 +1,4 @@
-﻿#property strict  /// --- Please remove this line and press Compile. If this line is removed it should compile without errors or warnings.
+#property strict  /// --- Please remove this line and press Compile. If this line is removed it should compile without errors or warnings.
 
 extern double LL = 7000;
 extern double HH = 1300;

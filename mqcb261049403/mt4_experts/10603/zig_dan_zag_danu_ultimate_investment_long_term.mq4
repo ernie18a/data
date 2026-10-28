@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //                      DO NOT DELETE THIS HEADER
 //             DELETING THIS HEADER IS COPYRIGHT INFRIGMENT 
 //                      Copyright © 2011, Molanis

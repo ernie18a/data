@@ -1,4 +1,4 @@
-﻿//------------------------------------------------------------------
+//------------------------------------------------------------------
 #property copyright   "mladen"
 #property link        "mladenfx@gmail.com"
 #property description "Bollinger bands stops - JMA based with multiple stops"

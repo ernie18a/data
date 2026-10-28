@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                        Smoothed RSI Inverse Fisher Transform.mq4 |
 //|                                     © 2011 MaryJane@ForexFactory |
 //|   Indicator formula © 2010 Sylvain Vervoort, http://stocata.org/ |

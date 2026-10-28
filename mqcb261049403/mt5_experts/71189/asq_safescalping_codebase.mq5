@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                   ASQ_SafeScalping_CodeBase.mq5  |
 //|                AlgoSphere Quant - ASQ Safe Scalping v1.10        |
 //|                https://www.mql5.com/en/users/robin2.0            |

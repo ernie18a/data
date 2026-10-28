@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                               TradingPanelEA.mq5 |
 //|  EA Panel giao dịch: Buy/Sell, Quản lý Lot, Đóng lệnh,           |
 //|  Trung bình giá + Set TP trung bình, Breakeven                   |

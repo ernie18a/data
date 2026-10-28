@@ -1,4 +1,4 @@
-﻿#ifndef ROUND_TRIP_COST_CORE_MQH
+#ifndef ROUND_TRIP_COST_CORE_MQH
 #define ROUND_TRIP_COST_CORE_MQH
 
 struct RTCPositionRow

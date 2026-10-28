@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                  SuperTrend Indicator for MetaTrader 5           |
 //|               Fixed & Enhanced by BENALI (dahmi_benali)          |
 //|                   https://www.mql5.com/en/users/dahmi_benali     |

@@ -1,4 +1,4 @@
-﻿#property description "The Expert Advisor demonstrates how to take a screenshot of the current chart using the ChartScreenShot() function when the 's' key is pressed."
+#property description "The Expert Advisor demonstrates how to take a screenshot of the current chart using the ChartScreenShot() function when the 's' key is pressed."
 
 #define WIDTH  1920    
 #define HEIGHT 1080    

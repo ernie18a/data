@@ -1,4 +1,4 @@
-﻿input int count = 50; // Set the counting limit as an input
+input int count = 50; // Set the counting limit as an input
 
 int Counter; // counter variable
 

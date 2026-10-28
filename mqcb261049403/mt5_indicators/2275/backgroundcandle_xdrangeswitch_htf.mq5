@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+ 
+//+------------------------------------------------------------------+ 
 //|                          BackgroundCandle_XD-RangeSwitch_HTF.mq5 | 
 //|                               Copyright © 2014, Nikolay Kositsin | 
 //|                              Khabarovsk,   farria@mail.redcom.ru | 

@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+ 
+//+------------------------------------------------------------------+ 
 //|                     AbsolutelyNoLagLwma_BBx7_Cloud_Digit_HTF.mq5 | 
 //|                               Copyright © 2018, Nikolay Kositsin | 
 //|                              Khabarovsk,   farria@mail.redcom.ru | 

@@ -1,4 +1,4 @@
-﻿#include "Defines.mqh"
+#include "Defines.mqh"
 #include <WinUser32.mqh>
 
 #import "user32.dll"

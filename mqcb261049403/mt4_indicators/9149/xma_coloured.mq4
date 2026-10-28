@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                                 Xma_Coloured.mq4 |
 //|                 Copyright © 2009, XrustSolution. Toys from Vinin.|
 //|              http://www.xrust.ucoz.net  http://www.vinin.ucoz.ru |

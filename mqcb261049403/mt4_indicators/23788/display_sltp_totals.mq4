@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------+
+//+------------------------------------------------+
 //| File        | Display_SLTP_Totals.mq4          |
 //| Description | Displays open P/L.               |
 //| Copyright   | TR4DEX                           |

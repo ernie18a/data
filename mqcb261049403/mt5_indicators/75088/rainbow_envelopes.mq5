@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                                 RainbowRanga.mq5 |
 //|                          Copyright 2026, Amarnath Kondiyan Mohan |
 //|     https://www.linkedin.com/in/amarnath-kondiyan-mohan-546293a/ |

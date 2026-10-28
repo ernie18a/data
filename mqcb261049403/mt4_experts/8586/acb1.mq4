@@ -1,4 +1,4 @@
-﻿int    start () {                                                                                                 //<  1>
+int    start () {                                                                                                 //<  1>
                                                                                                                   //<  2>
                                                                                                                   //<  3>
 static double             ai.TimeStamp                                                                          ; //<  4>

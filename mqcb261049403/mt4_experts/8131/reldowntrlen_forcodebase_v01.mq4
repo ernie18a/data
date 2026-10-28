@@ -1,4 +1,4 @@
-﻿//This shows the relative length of the down trend.
+//This shows the relative length of the down trend.
 
 //+------------------------------------------------------------------+
 //|                                             RelDownTrLen_....mq4 |

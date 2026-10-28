@@ -1,4 +1,4 @@
-﻿#property copyright "Copyright © 2012, File45"
+#property copyright "Copyright © 2012, File45"
 #property link      "http: //codebase.mql4.com/en/author/file45"
 #property indicator_chart_window
 //+------------------------------------------------------------------+

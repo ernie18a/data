@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                                super-signals.mq4 |
 //|                Copyright © 2006, Nick Bilak, beluck[AT]gmail.com |
 //| Modified by Robert Hill to do alert or send email                |

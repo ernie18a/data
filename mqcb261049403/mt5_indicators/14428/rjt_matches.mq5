@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                                  RJT Matches.mq5 |
 //|                            Copyright 2015, Rafael Jimenez Tocino |
 //|               http://www.tradingrafa.com/indicadores/rjt_matches |

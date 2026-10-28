@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                      Market Capture(barabashkakvn's edition).mq5 |
 //|                             Copyright © 2010, Trishkin Artyom A. |
 //|                                           support@goldsuccess.ru |

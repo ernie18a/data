@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                      Exp_Hans_Indicator_Cloud_System_Tm_Plus.mq5 |
 //|                               Copyright © 2018, Nikolay Kositsin | 
 //|                              Khabarovsk,   farria@mail.redcom.ru | 

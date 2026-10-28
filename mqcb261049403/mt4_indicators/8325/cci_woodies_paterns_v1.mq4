@@ -1,4 +1,4 @@
-﻿#property copyright "Copyright © 2008, Vico"
+#property copyright "Copyright © 2008, Vico"
 
 #property indicator_chart_window
 #property indicator_buffers 8

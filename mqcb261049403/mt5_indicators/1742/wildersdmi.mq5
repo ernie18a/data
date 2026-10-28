@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                                   WildersDMI.mq5 |
 //|                           Copyright © 2007, TrendLaboratory Ltd. |
 //|            http://finance.groups.yahoo.com/group/TrendLaboratory |

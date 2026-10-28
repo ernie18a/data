@@ -1,4 +1,4 @@
-﻿#include<Trade\Trade.mqh>
+#include<Trade\Trade.mqh>
 CTrade trade;
 
 int tickCont = 0;    // ticks counter

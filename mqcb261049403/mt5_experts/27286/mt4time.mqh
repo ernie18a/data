@@ -1,4 +1,4 @@
-﻿class DateTime
+class DateTime
 {
   private:
     MqlDateTime mdtstruct;

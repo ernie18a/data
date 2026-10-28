@@ -1,4 +1,4 @@
-﻿// ШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШ
+// ШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШШ
 //|                        Digital Low Pass (FATL/SATL, KGLP) Filter          |
 //|                      Copyright (c) Sergey Iljukhin, Novosibirsk.          |
 //|                       email sergey[at]tibet.ru http://fx.qrz.ru/          |

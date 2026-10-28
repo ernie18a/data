@@ -1,4 +1,4 @@
-﻿//+-----------------------------------------------------------------------------+
+//+-----------------------------------------------------------------------------+
 //|                                              Bollinger Squeeze Advanced.mq5 |
 //|                                             Copyright © 2023, EarnForex.com |
 //| https://www.earnforex.com/metatrader-indicators/Bollinger-Squeeze-Advanced/ |

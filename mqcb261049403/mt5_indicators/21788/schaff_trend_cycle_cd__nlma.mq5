@@ -1,4 +1,4 @@
-﻿//------------------------------------------------------------------
+//------------------------------------------------------------------
 #property copyright   "Copyright 2018, mladen"
 #property link        "mladenfx@gmail.com"
 #property description "Schaff trend cycle CD - non lag MA"

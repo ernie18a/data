@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                               ColorSchaffRSITrendCycleCandle.mq5 |
 //|                               Copyright © 2015, Nikolay Kositsin | 
 //|                              Khabarovsk,   farria@mail.redcom.ru | 

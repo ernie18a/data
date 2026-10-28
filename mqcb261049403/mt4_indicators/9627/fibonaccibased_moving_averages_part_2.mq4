@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //| Fibonacci-based moving Averages.mq4  PART-2                      |
 //| FOR EDUCATIONAL PURPOSE AND FREE INDICATOR                       | 
 //| Copyright © 2010, WWMMACAU.                                      | 

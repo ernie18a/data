@@ -1,4 +1,4 @@
-﻿#define OBJ_PREFIX MQLInfoString(MQL_PROGRAM_NAME)
+#define OBJ_PREFIX MQLInfoString(MQL_PROGRAM_NAME)
 
 int fontSize = 10;
 

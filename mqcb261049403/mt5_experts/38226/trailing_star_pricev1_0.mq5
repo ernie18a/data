@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                           Trailing Star on Price |
 //|                                   Copyright 2022, Pham Ngoc Vinh |
 //|                    https://github.com/phamngocvinh/galaxy-trader |

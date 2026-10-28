@@ -1,4 +1,4 @@
-﻿#property copyright "Copyright @ 2012, File45"
+#property copyright "Copyright @ 2012, File45"
 #property indicator_chart_window 
 //thanks: mladen-super moderator FOREX-TSD www.forex-tsd.com who's edits on a previous project provided a template for further endevours. 
 //http://www.forex-tsd.com/expert-advisors-metatrader-4/20171-please-fix-indicator-ea-34.html#post425056

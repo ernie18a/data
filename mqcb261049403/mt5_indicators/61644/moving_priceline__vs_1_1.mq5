@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                              MovingPriceLine.mq5 |
 //|            Copyright 2003-2025, Opengates Success International. |
 //|               https://www.mql5.com/en/users/opengates2012/seller |

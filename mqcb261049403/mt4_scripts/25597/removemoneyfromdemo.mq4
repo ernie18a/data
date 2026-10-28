@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                          RemoveMoneyFromDemo.mq4 |
 //|                                       Copyright 2019, Mr Stephen.|
 //|             Using the spread to lower the equity in your account |

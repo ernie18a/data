@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                                     EES-USDX.mq4 |
 //|                         Copyright © 2009, Elite E Services, Inc. |
 //| Programmed by : Mikhail Veneracion www.forexcoding.com           |

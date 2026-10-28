@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                             MACD_Signal_Line.mq5 |
 //|                              (Original: MACD by Metaquotes Ltd.) |
 //|                     This stripped own to MACD_Signal_Line by RJo |

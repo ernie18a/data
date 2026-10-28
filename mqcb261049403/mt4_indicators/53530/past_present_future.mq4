@@ -1,4 +1,4 @@
-﻿#property copyright "Evgeniy Chumakov | © Copyright 2024"
+#property copyright "Evgeniy Chumakov | © Copyright 2024"
 #property description "The indicator is based on the idea of ​​Yousufkhodja Sultonov."
 #property version "2.0"
 #property link "https://www.mql5.com/en/users/jack857752"

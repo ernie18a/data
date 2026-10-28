@@ -1,4 +1,4 @@
-﻿//---
+//---
 //|                     Master_MM_Droid(barabashkakvn's edition).mq5 |
 //|     Публичная бесплатная версия 2.4 для http://codebase.mql4.com |
 //|                              Copyright © 2013, Musa Esmagambetov |

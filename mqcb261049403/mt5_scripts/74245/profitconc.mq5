@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                                   ProfitConc.mq5 |
 //|                Profit Concentration & Consistency Analyzer (MT5) |
 //|          Reads a per-closing-deal result file and measures where |

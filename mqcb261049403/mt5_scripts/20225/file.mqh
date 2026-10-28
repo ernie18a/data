@@ -1,4 +1,4 @@
-﻿class FILE
+class FILE
 {
 private:
   static int GetFileNames( string &FileNames[], int Pos = 0, string Filter = "*", const int Common_Flag = 0 )

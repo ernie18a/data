@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------
+//+------------------------------------------------------------------
 #property copyright   "© mladen, 2018"
 #property link        "mladenfx@gmail.com"
 #property description "MACD of RSI adaptive EMA - floating levels"

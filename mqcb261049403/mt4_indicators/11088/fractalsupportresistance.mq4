@@ -1,4 +1,4 @@
-﻿#property copyright "Alexander Elgin"
+#property copyright "Alexander Elgin"
 #property link      "alexmost113@mail.ru"
 #property indicator_chart_window
 

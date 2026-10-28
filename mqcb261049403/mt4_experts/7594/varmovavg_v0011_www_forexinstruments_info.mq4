@@ -1,4 +1,4 @@
-﻿//+-------------------------------------------------------------------------------------+
+//+-------------------------------------------------------------------------------------+
 //|                                                                  VarMovAvg V001.mq4 |
 //|       A VMA is an EMA that automatically adjusts its smoothing                      |
 //| percentage based on market volatility. Sensitivity is increased                     |

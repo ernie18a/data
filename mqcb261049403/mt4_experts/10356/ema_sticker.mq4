@@ -1,4 +1,4 @@
-﻿
+
 
 #property indicator_chart_window
 #property indicator_buffers 1

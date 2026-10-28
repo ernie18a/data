@@ -1,4 +1,4 @@
-﻿//---------------------------------------------+
+//---------------------------------------------+
 //                          AutoFib TradeZones |
 //         © 2010 Eagleye777, www.fxtools.info |
 //           *Mod of AutoFibo by Julien Loutre |

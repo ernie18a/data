@@ -1,4 +1,4 @@
-﻿#property  copyright "ANG3110@latchess.com"
+#property  copyright "ANG3110@latchess.com"
 //-----------------------------------------
 #property show_inputs
 //--------------------

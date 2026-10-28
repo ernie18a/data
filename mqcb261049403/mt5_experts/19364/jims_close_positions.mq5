@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                Jims Close Positions(barabashkakvn's edition).mq5 |
 //|                                             Jedimedic77@gmail.com|
 //|             Origional Coding Before Chop Copyright © 2007, sx ted|

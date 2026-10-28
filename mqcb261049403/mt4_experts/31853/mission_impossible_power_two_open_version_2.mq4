@@ -1,4 +1,4 @@
-﻿//Mission Impossible Power Two : https://www.mql5.com/en/market/product/56691 
+//Mission Impossible Power Two : https://www.mql5.com/en/market/product/56691 
 #property copyright "Stiopa"
 #property link      "https://www.mql5.com/en/users/stiopa"
 #property version   "1.00"

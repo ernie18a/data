@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                               Guppy Multiple Moving Averages.mq4 |
 //|                              Copyright 2015, Dmitriy Kudryashov. |
 //|                       https://www.mql5.com/ru/users/dlim0n4ik.dk |

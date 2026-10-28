@@ -1,4 +1,4 @@
-﻿//+---------------------------------------------------------------------+
+//+---------------------------------------------------------------------+
 //|                                     LOCSignal-MACDDoublePike.mq4    |
 //| For more EXPERTS, INDICATORS, TRAILING EAs and SUPPORT Please visit:|
 //|                                      http://www.landofcash.net      |

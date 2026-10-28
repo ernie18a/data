@@ -1,4 +1,4 @@
-﻿#property link          "https://tokot4l.my.id"
+#property link          "https://tokot4l.my.id"
 #property version       "1.038"
 #property strict
 #property copyright     "Kursustrading.my.id - 2024"

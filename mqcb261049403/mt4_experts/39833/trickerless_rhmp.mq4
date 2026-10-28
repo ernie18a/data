@@ -1,4 +1,4 @@
-﻿#property copyright "Copyright 2022, Lulus Arga Kustyarso"
+#property copyright "Copyright 2022, Lulus Arga Kustyarso"
 #property link      "https://www.mql5.com/en/users/lulusargak"
 #property version   "22.9"
 #property strict  

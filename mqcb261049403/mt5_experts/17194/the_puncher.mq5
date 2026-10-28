@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                         The Puncher(barabashkakvn's edition).mq5 |
 //|                          Copyright © 2008, CreativeSilence, Inc. |
 //|                                  http://www.creative-silence.com |

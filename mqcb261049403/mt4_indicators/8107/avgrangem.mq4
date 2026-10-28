@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|    AvgRangeM                                        AvgRange.mq4 |
 //|                 Copyright © 2005, tageiger aka fxid10t@yahoo.com |
 //| /www.forex-tsd.com                     http://www.metatrader.org |

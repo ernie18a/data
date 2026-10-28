@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                          EES Hedger(barabashkakvn's edition).mq5 |
 //|                             Copyright © 2008, Elite E Services   |
 //|  http://www.eliteeservices.net          http://www.getfxnow.com  |      

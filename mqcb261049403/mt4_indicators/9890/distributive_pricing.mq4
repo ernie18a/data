@@ -1,4 +1,4 @@
-﻿
+
 #property copyright "Copyright © 2009, Kevin Kurka"
 #property link      "http://www.kurkafund.com; kurkafund@yahoo.com"
 

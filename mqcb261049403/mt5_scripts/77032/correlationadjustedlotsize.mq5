@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                 CorrelationAdjustedLotSize.mq5   |
 //|                                                                    |
 //| Calculates a risk-based lot size for a new trade, then adjusts    |

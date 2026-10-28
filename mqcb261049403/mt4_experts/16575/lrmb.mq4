@@ -1,4 +1,4 @@
-﻿//The Limits Bot with RSI & Momentum
+//The Limits Bot with RSI & Momentum
 //Patrick Burns
 
 #include <WinUser32.mqh>

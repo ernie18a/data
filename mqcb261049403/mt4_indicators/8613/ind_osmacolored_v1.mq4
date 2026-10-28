@@ -1,4 +1,4 @@
-﻿#property copyright "*"
+#property copyright "*"
 #property link      "*"
 
 #define IND "ind_DivPeakTroughOsMA_SW_v1"

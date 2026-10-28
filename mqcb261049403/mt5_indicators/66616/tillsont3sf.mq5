@@ -1,4 +1,4 @@
-﻿/*
+/*
     Tillson T3
     Copyright (C) 2025  boyvlad  <https://www.mql5.com/en/users/boyvlad/>
 

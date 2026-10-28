@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                               TradeExcursion.mq5  |
 //|  Draws, for every closed trade on this chart's symbol, how far it  |
 //|  went in your favour before it closed, and how far against you     |

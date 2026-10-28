@@ -1,4 +1,4 @@
-﻿// This indicator is based on the article: Getting Clear With Short-Term Swings by Ron Black
+// This indicator is based on the article: Getting Clear With Short-Term Swings by Ron Black
 //
 // http://www.traders.com/Documentation/FEEDbk_docs/2010/09/Black.html
 // http://www.traders.com/Documentation/FEEDbk_docs/2010/09/TradersTips.html

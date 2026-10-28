@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|              Filename changed to ForexOFFTrend.mq4 by CrazyChart |
 //|                                                 SilverTrend .mq4 |
 //|                              SilverTrend rewritten by CrazyChart |

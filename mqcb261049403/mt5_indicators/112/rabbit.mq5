@@ -1,4 +1,4 @@
-﻿// Rabbit
+// Rabbit
 #property copyright "Jon Katana, VDV Soft (vdv_2001@mail.ru)"
 #property indicator_chart_window
 #property indicator_buffers 2

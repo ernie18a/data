@@ -1,4 +1,4 @@
-﻿#property indicator_separate_window
+#property indicator_separate_window
 #property indicator_buffers 2
 #property indicator_plots   2
 

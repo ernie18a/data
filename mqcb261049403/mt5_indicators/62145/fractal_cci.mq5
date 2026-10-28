@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                 Fractal CCI Indicator for MetaTrader 5           |
 //|                     Fixed & Enhanced by Joy & Qwen               |
 //|                        https://www.mql5.com/en/users/jhoe125     |

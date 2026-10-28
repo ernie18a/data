@@ -1,4 +1,4 @@
-﻿#property  copyright "Copyright © 2005, Yura Prokofiev"
+#property  copyright "Copyright © 2005, Yura Prokofiev"
 #property  link      "Yura.prokofiev@gmail.com"
 
 #property  indicator_separate_window

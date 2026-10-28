@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------
+//+------------------------------------------------------------------
 #property copyright   "mladen"
 #property link        "mladenfx@gmail.com"
 #property link        "https://forge.mql5.io"

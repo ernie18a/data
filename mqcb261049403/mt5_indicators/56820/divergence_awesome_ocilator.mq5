@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                  Divergence Awesome Ocilator.mq5 |
 //|                                 Copyright 2025, Francisco Gomes. |
 //|             https://www.mql5.com/en/users/franciscogomes5/seller |

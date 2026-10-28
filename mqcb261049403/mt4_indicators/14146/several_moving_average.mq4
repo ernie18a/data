@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                       Several Moving Average.mq4 |
 //|                        Copyright 2015, MetaQuotes Software Corp. |
 //|                       https://www.mql5.com/ru/users/dlim0n4ik.dk |

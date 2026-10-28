@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                      Exp_AbsolutelyNoLagLwma_Digit_NN3_MMRec.mq5 |
 //|                               Copyright © 2018, Nikolay Kositsin | 
 //|                              Khabarovsk,   farria@mail.redcom.ru | 

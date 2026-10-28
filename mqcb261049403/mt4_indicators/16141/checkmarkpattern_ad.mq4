@@ -1,4 +1,4 @@
-﻿#property copyright "Scriptong"
+#property copyright "Scriptong"
 #property link      "http://advancetools.net"
 #property description "English: Finding the \"Check mark\" pattern.\nRussian: Поиск паттерна \"Галочка\"."
 #property version "1.10"

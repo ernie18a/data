@@ -1,4 +1,4 @@
-﻿//+--------------------------------------------------------------------+
+//+--------------------------------------------------------------------+
 //|Date of Design 11.11.11                      Marneni Money Tree.mq4 |
 //|                        Copyright © 2011, MetaQuotes Software Corp. |
 //|                               http://www.marnenimoneytree.webs.com |

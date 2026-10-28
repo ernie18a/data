@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                                  DrawdownDNA.mq5 |
 //|                           Drawdown DNA Analyzer for MetaTrader 5 |
 //|           Reads a daily equity curve and dissects its drawdowns: |

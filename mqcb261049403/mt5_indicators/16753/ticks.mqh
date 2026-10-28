@@ -1,4 +1,4 @@
-﻿#property strict
+#property strict
 
 #ifdef __MQL4__
   #define COPY_TICKS_ALL -1

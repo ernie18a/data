@@ -1,4 +1,4 @@
-﻿// +——————————————————————————————————————————————————————————————————————————————————————————————+
+// +——————————————————————————————————————————————————————————————————————————————————————————————+
 // ¦     History Downloader Indicator                                      HistoryDownloaderI.mq4 ¦
 // ¦  Indicator for History Downloader EA.                                                        ¦
 // ¦  The indicator's objective is setting and updating the global variables:                     ¦

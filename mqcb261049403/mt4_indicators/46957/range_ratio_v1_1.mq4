@@ -1,4 +1,4 @@
-﻿#property strict
+#property strict
 #property indicator_separate_window
 #property indicator_buffers 2
 #property indicator_type1 DRAW_HISTOGRAM

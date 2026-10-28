@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                       Brooky_Fibbed_Donchian.mq4 |
 //|                     Copyright © 2010, www.Brooky-Indicators.com. |
 //|                             http://www.www.Brooky-Indicators.com |

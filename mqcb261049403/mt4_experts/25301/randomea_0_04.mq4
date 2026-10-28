@@ -1,4 +1,4 @@
-﻿#property strict                                //Thise settings work on EURUSD with a 50,000 dollars account
+#property strict                                //Thise settings work on EURUSD with a 50,000 dollars account
 
 static bool BuyIsActive = False;
 static bool SellIsActive = False;

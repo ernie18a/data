@@ -1,4 +1,4 @@
-﻿#property copyright "Edoardo Centorame"
+#property copyright "Edoardo Centorame"
 #property version   "1.01"
 #property description "Long-term TRIX momentum and trend oscillator"
 

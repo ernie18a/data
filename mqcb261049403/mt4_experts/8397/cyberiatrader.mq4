@@ -1,4 +1,4 @@
-﻿#property copyright "Copyright c 2006, Cyberia Decisions"
+#property copyright "Copyright c 2006, Cyberia Decisions"
 #property link      "http://cyberia.org.ru"
 
 #define DECISION_BUY 1

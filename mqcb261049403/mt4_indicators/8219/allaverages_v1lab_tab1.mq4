@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                               AllAverages_v1.mq4 |
 //|                             Copyright © 2007-08, TrendLaboratory |
 //|            http://finance.groups.yahoo.com/group/TrendLaboratory |

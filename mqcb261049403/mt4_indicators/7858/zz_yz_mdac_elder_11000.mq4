@@ -1,4 +1,4 @@
-﻿//
+//
 // MDAC по элдеру
 //
 #property  copyright "Copyright © 2007, YURAZ"

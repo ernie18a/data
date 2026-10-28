@@ -1,4 +1,4 @@
-﻿#include "Error.mqh"
+#include "Error.mqh"
 
 struct PRICECHANGE
 {

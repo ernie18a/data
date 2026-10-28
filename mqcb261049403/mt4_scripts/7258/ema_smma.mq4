@@ -1,4 +1,4 @@
-﻿#property show_inputs
+#property show_inputs
 
 extern int _SMMA_PERIOD = 21;
 

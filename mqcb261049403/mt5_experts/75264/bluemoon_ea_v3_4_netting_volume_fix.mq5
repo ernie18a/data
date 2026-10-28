@@ -1,4 +1,4 @@
-﻿
+
 //+------------------------------------------------------------------+
 //| BlueMoon EA v3.4 Netting + Volume Limit Fix                      |
 //| Envelope + Grid + Basket Management with Diagnostic Dashboard    |

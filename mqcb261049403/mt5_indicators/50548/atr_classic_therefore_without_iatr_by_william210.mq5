@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|             ATR classic therefore without iATR by William210.mq5 |
 //|                                       Copyright 2024, William210 |
 //|                         https://www.mql5.com/fr/users/william210 |

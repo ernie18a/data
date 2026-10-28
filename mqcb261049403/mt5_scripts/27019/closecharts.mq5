@@ -1,4 +1,4 @@
-﻿void OnStart()
+void OnStart()
 {
    int symIndex = 0;
    string symName = "";

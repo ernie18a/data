@@ -1,4 +1,4 @@
-﻿//+---------------------   ---------------------------------------------+
+//+---------------------   ---------------------------------------------+
 //|                                        SmartMoneyConcepts.mq5    |
 //|                                      Copyright, Hammad Dilber    |
 //|          Structure, OB, FVG, EQH/EQL + BUY/SELL Signal Arrows    |

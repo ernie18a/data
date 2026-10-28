@@ -1,4 +1,4 @@
-﻿//|                                      Copyright © 2019, Abu Saidu |
+//|                                      Copyright © 2019, Abu Saidu |
 //|                                                t.me/ask4abusaidu |
 //+------------------------------------------------------------------+
 #property copyright "Copyright © 2020, Abu Saidu"

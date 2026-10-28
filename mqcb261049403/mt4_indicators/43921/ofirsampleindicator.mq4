@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //| FractalZigZagNoRepaint.mq4
 //| Copyright © Pointzero-indicator.com
 //| Shows ZigZag signals without repainting, ever.

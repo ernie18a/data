@@ -1,4 +1,4 @@
-﻿//+--------------------------------------------------------------------+
+//+--------------------------------------------------------------------+
 //|Date of Design 31.12.2013                    Elliott_Trader         |
 //|                        Copyright © 2014, wagdytaher@hotmail.com    |
 //|Author and Sole Owner of wagdytaher@hotmail.com                     |

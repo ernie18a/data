@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                           MTF Stochastic_SmL.mq4 |
 //|                            smooz line 2007, Christof Risch (iya) |
 //|                          Stochastic indicator from any timeframe |

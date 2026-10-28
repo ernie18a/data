@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|          Nevalyashka_BreakdownLevel(barabashkakvn's edition).mq5 |
 //|                               Copyright © 2010, Vladimir Hlystov |
 //|                                         http://cmillion.narod.ru |

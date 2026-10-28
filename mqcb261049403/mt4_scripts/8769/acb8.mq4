@@ -1,4 +1,4 @@
-﻿int init ()                                                                                      //<   1>
+int init ()                                                                                      //<   1>
 {                                                                                                //<   2>
 string acs.Operation [] = { "Buy" , "Sell"                                                   } ; //<   3>
                                                                                                  //<   4>

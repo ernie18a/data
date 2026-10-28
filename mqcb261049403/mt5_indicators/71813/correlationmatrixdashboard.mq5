@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                   CorrelationMatrixDashboard.mq5 |
 //|              Pearson Correlation Heatmap – On-Chart Bitmap Label |
 //|                                      Uses MQL5 matrix.CorrCoef() |

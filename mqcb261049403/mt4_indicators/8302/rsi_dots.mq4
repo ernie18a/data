@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|    Dots added by Accrete : )  accrete.com            RSIdots.mq4 |
 //|                      Copyright © 2004, MetaQuotes Software Corp. |
 //|                                      https://www.metaquotes.net/ |

@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                  Elite eFibo Trader(barabashkakvn's edition).mq5 |
 //|                             Copyright © 2007, Elite E Services   |
 //|                                         www.eliteeservices.net   |

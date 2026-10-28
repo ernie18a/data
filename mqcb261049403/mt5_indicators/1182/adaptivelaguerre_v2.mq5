@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                          AdaptiveLaguerre_v2.mq5 |
 //|                                Copyright © 2012, TrendLaboratory |
 //|            http://finance.groups.yahoo.com/group/TrendLaboratory |

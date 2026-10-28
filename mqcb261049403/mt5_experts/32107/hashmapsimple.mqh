@@ -1,4 +1,4 @@
-﻿template<typename K, typename V>
+template<typename K, typename V>
 class HashMapSimple
 {
   private:

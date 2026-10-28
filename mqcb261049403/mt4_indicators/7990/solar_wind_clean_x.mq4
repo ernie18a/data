@@ -1,4 +1,4 @@
-﻿//+-------------------------------------------------------------------+
+//+-------------------------------------------------------------------+
 //| Solar wind clean XXX(based on Solar wind clean  (FisherTransform) |
 //| revised by Mladen    Copyright © 2005, MetaQuotes Software Corp.  |
 //| ForexTSD mladen nittany  mod fxbs  ki https://www.metaquotes.net/ |

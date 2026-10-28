@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                 Exp_Donchian_Channels_System.mq5 |
 //|                               Copyright © 2016, Nikolay Kositsin | 
 //|                              Khabarovsk,   farria@mail.redcom.ru | 

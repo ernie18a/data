@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|       Arthur Matteson's Trading Machine, version 1.5             |
 //| EA written in MQL4 for MetaTrader4 on 9/13/2006                  |
 //| Meant for EUR/USD on the hourly timeframe (H1)                   |

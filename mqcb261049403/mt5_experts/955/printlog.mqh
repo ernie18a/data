@@ -1,4 +1,4 @@
-﻿#include <MyMQL_v2.1.mqh>
+#include <MyMQL_v2.1.mqh>
 int LogHandle=0;
 //+------------------------------------------------------------------+
 void LogNewFile(){

@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|             Consecutive Candles with Stochastic Filter Indicator |
 //|                                         Copyright 2017, tidyneat |
 //|                                          http://www.tidyneat.com |

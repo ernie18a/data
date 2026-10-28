@@ -1,4 +1,4 @@
-﻿#property copyright "Yongbin Yu"
+#property copyright "Yongbin Yu"
 #property link      "http://www.forexcafe.cn"
 
 extern double TakeProfit = 50;

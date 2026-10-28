@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                                DiagnosticLog.mqh |
 //|                      BGC Grid Trading EA — CSV-Based Diagnostics |
 //|                      Buffers data in memory, flushes to CSV at   |

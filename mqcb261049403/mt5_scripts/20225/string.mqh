@@ -1,4 +1,4 @@
-﻿#define SPACE_SYMBOL " "
+#define SPACE_SYMBOL " "
 
 class STRING
 {

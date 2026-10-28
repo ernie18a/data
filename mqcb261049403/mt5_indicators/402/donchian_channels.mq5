@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                      Donchian Channels - Generalized version.mq4 |
 //|                         Copyright © 2005, Luis Guilherme Damiani |
 //|                                      http://www.damianifx.com.br |

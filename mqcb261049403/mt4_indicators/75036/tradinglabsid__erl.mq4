@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                            External Range Liquidity ( ERL ).mq4  |
 //|                               Copyright @ 2025, TradingLabs ID.  |
 //|                          https://www.tiktok.com/@cakndutproject  |

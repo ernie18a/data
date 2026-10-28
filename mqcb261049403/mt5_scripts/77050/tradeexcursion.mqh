@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                              TradeExcursion.mqh   |
 //|  Rebuilds closed trades from account history and measures how far  |
 //|  each one went in your favour before it closed, and how far it     |

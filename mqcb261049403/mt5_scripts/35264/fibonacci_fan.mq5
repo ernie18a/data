@@ -1,4 +1,4 @@
-﻿//--- description
+//--- description
 #property copyright "Copyright © 2021, Dark Ryd3r"
 #property link      "https://twitter.com/DarkRyd3r"
 #property version   "1.00"

@@ -1,4 +1,4 @@
-﻿#property strict                                         
+#property strict                                         
 double Deviation = 100;
 static double D = -100000;
 

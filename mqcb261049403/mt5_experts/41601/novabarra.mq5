@@ -1,4 +1,4 @@
-﻿#property copyright "Direito Autoral \x00A9 2022, Fernando M. I. Carreiro, Todos os direitos reservados"
+#property copyright "Direito Autoral \x00A9 2022, Fernando M. I. Carreiro, Todos os direitos reservados"
 #property link      "https://www.mql5.com/en/users/FMIC"
 #property version   "1.001"
 #property strict

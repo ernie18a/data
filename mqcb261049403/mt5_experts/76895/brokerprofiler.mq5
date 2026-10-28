@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                               BrokerProfiler.mq5 |
 //|  Prints everything about a symbol that makes the SAME EA behave  |
 //|  DIFFERENTLY on another broker: trading hours, contract size,    |

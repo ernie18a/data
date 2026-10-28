@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                                   CycleTrade.mq5 |
 //|                                Copyright Amarnath Kondiyan Mohan |
 //|     https://www.linkedin.com/in/amarnath-kondiyan-mohan-546293a/ |

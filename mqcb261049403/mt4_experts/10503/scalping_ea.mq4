@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 #property copyright "Interbank FX, LLC" //( original template)
 
 #property copyright "PicassoInActions , 123@donothing.us" //( original idea)

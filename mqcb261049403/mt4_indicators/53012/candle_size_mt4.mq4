@@ -1,4 +1,4 @@
-﻿#property copyright "Evgeniy Chumakov | © Copyright 2024"
+#property copyright "Evgeniy Chumakov | © Copyright 2024"
 #property description "Candle Size MT4 - The indicator searches for candles on the price chart that are larger than those specified in the settings and marks them on the chart."
 #property version "1.0"
 #property link "https://www.mql5.com/en/users/jack857752"

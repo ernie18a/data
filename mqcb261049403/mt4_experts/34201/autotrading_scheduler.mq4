@@ -1,4 +1,4 @@
-﻿#property copyright "EarnForex.com"
+#property copyright "EarnForex.com"
 #property link      "https://www.earnforex.com/metatrader-expert-advisors/AutoTrading-Scheduler/"
 #property version   "1.00"
 string    Version = "1.00";

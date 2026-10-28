@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|      Clean up all drawings ( Delete All Object Comment etc ).mq4 |
 //|                                                    Dwi Sudarsono |
 //|                                        https://t.me/DwiSudarsono |

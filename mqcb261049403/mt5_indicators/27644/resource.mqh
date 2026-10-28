@@ -1,4 +1,4 @@
-﻿class RESOURCE
+class RESOURCE
 {
 public:
   const string Name;

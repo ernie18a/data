@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Place SmoothAlgorithms.mqh
  * in the following folder (directory): MetaTrader\MQL5\Include
  */

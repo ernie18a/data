@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                               Connect_Disconnect_Sound_Alert.mq5 |
 //|                                Copyright 2024, Rajesh Kumar Nait |
 //|                  https://www.mql5.com/en/users/rajeshnait/seller |

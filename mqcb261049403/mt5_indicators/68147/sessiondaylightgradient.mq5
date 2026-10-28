@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                    Session-Daylight-Gradient.mq5 |
 //|                          Session Daylight Gradient MT5 Indicator |
 //|                                           stratcorealpha project |

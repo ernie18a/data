@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                                 PrevDayLines.mq4 |
 //|            Copyright 2024, MetaTrader4 Professional Code Creator |
 //|                          https://www.mql5.com/en/users/mqlzone   |

@@ -1,4 +1,4 @@
-﻿//+--------------------------------------------------------------------------+
+//+--------------------------------------------------------------------------+
 //|                                                  X4Period_RSI_Arrows.mq5 |
 //|                                        Copyright © 2005, transport_david | 
 //| http://finance.groups.yahoo.com/group/MetaTrader_Experts_and_Indicators/ | 

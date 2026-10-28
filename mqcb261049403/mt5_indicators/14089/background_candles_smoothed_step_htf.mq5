@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+ 
+//+------------------------------------------------------------------+ 
 //|                         Background_Candles_Smoothed_Step_HTF.mq5 | 
 //|                               Copyright © 2015, Nikolay Kositsin | 
 //|                              Khabarovsk,   farria@mail.redcom.ru | 

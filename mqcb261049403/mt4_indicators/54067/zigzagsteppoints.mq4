@@ -1,4 +1,4 @@
-﻿#property copyright "Evgeniy Chumakov | © Copyright 2026"
+#property copyright "Evgeniy Chumakov | © Copyright 2026"
 #property description "ZigZag with Step in Points."
 #property version "2.0"
 #property link "https://www.mql5.com/ru/users/jack857752"

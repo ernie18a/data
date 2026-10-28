@@ -1,4 +1,4 @@
-﻿#property strict
+#property strict
 
 #include "ChartObject_Chart.mqh"
 #include "ChartObjectRectangle.mqh"

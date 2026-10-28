@@ -1,4 +1,4 @@
-﻿//+--------------------------------------------------------------------------+
+//+--------------------------------------------------------------------------+
 //|                                                      Laguerre_PlusDi.mq5 |
 //|                         Copyright © 2005, Emerald King / transport_david | 
 //| http://finance.groups.yahoo.com/group/MetaTrader_Experts_and_Indicators/ | 

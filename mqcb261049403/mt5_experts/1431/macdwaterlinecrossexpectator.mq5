@@ -1,4 +1,4 @@
-﻿#property copyright     "Author: laplacianlab, CC Attribution-Noncommercial-No Derivate 3.0"
+#property copyright     "Author: laplacianlab, CC Attribution-Noncommercial-No Derivate 3.0"
 #property link          "https://www.mql5.com/en/forum/ea"
 #property version       "1.00"
 #property description   "This is a basic trading system which consists in buying when MACD crosses above the waterline line and selling when crosses below it. This EA works along with a monetary management system which has a positive mathematical expectation."

@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                     Cercos_Chaos_vs_Movement.mq4 |
 //|                    Copyright 2021, Manuel Alejandro Cercós Pérez |
 //|                         https://www.mql5.com/en/users/alexcercos |

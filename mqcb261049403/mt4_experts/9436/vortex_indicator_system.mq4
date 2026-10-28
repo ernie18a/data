@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|Vortex Indicator System.mq4                                       |
 //|This system is based on the Trading Idea section of the article   |
 //|"The Vortex Indicator" which appeared in the January 2010 issue   |

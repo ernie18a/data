@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                              Pivot Mid Support Historical_V1.mq4 |
 //|                      Copyright © 2005, MetaQuotes Software Corp. |
 //|                                       https://www.metaquotes.net |

@@ -1,4 +1,4 @@
-﻿//+-----------------------------------------------------------------+
+//+-----------------------------------------------------------------+
 // On all MT4 market execution accounts (ECN, ECN Zero and Pro),     |
 //preset SL/TP levels are not permitted. If a client wishes to add   |
 //SL/TP levels, the client must modify the existing position after   |

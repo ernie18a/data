@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //| Die Stдrke des Corrected Average (CA) besteht darin,             |
 //| dass der aktuelle Wert der Zeitreihe einen von der momentanen    |
 //| Volatilitдt abhдngigen Schwellenwert ьberschreiten muss,         |

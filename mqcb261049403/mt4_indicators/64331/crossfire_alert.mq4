@@ -1,4 +1,4 @@
-﻿#property link          "https://tradesmartfxtools.in/"
+#property link          "https://tradesmartfxtools.in/"
 #property version       "1.05"
 #property strict
 #property copyright     "Trade Smart FX Tools - 2025"

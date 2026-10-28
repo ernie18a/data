@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                     Breakthrough_BB(barabashkakvn's edition).mq5 |
 //|                        Copyright 2017, MetaQuotes Software Corp. |
 //|                                            https://forge.mql5.io |

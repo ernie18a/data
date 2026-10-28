@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                        Reduce_risks(barabashkakvn's edition).mq5 |
 //|                            Copyright 2017, Alexander Masterskikh |
 //|                      https://www.mql5.com/ru/users/a.masterskikh |

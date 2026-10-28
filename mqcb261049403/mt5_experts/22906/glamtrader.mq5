@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                          GlamTrader(barabashkakvn's edition).mq5 |
 //|                                              complied by Oba Ire |
 //|                http://finance.groups.yahoo.com/group/autotraders |

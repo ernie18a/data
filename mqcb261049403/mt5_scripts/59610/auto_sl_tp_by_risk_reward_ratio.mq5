@@ -1,4 +1,4 @@
-﻿#property copyright "MQL5"
+#property copyright "MQL5"
 #property link      "MQL5.COM"
 #property version   "2.00"
 #property description "Optimized script to set Stop Loss and Take Profit based on Risk:Reward ratio"

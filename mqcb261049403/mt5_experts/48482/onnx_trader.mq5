@@ -1,4 +1,4 @@
-﻿#include <EURUSD ONNX include propensity matching original IPW.mqh>
+#include <EURUSD ONNX include propensity matching original IPW.mqh>
 #include <Trade\Trade.mqh>
 #include <Trade\AccountInfo.mqh>
 

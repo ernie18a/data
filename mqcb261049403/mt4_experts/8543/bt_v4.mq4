@@ -1,4 +1,4 @@
-﻿
+
 #property copyright "© skymaster"
 
 #include <stdlib.mqh>

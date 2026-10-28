@@ -1,4 +1,4 @@
-﻿#property copyright "Copyright © 2009, Waddah Attar"
+#property copyright "Copyright © 2009, Waddah Attar"
 #property link      "waddahattar@hotmail.com"
 //----
 extern int IPeriod=180;

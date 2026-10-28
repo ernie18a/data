@@ -1,4 +1,4 @@
-﻿//+--------------------------------------------------------------------------------------------+
+//+--------------------------------------------------------------------------------------------+
 //|                                                                   Elder_Impulse_System.mq4 |
 //| Copyright © 2007, http://finance.groups.yahoo.com/group/MetaTrader_Experts_and_Indicators/ |
 //|                   http://finance.groups.yahoo.com/group/MetaTrader_Experts_and_Indicators/ |

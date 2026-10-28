@@ -1,4 +1,4 @@
-﻿/*
+/*
 int Kperiod // %K
 int Slowing // замедление
 int PriceFild // тип цены: 0-High/Low; 1-Close/Close

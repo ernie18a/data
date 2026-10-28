@@ -1,4 +1,4 @@
-﻿int start ()                                                                                        // 01
+int start ()                                                                                        // 01
 {                                                                                                   // 02
 static int ali.TicksReported.0 ; ali.TicksReported.0 = iVolume ( Symbol () , PERIOD_M1 , 0 )      ; // 03
 static int ali.TicksReported.1 ; ali.TicksReported.1 = iVolume ( Symbol () , PERIOD_M1 , 1 )      ; // 04

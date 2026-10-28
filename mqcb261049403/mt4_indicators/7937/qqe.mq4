@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|   Qualitative Quantitative Estimation Indicator for Metatrader 4 |
 //|                                    Copyright © 2006Roman Ignatov |
 //|                                   mailto:roman.ignatov@gmail.com |

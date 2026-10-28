@@ -1,4 +1,4 @@
-﻿#property copyright "ATR_Momentum_Color"
+#property copyright "ATR_Momentum_Color"
 #property link      "https://forge.mql5.io"
 #property version   "1.00"
 #property description "ATR_Momentum_Color"

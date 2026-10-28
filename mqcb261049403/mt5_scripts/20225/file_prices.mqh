@@ -1,4 +1,4 @@
-﻿#include "String.mqh"
+#include "String.mqh"
 
 struct FILE_PRICES
 {

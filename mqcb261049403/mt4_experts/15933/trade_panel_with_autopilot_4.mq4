@@ -1,4 +1,4 @@
-﻿//****** Project (expert): TPA.mq4
+//****** Project (expert): TPA.mq4
 //+------------------------------------------------------------------+
 //|                The code generated MasterWindows Copyright DC2008 |
 //|                              http://www.mql5.com/ru/users/dc2008 |

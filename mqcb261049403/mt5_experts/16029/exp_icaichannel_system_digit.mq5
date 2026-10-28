@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                Exp_i-CAiChannel_System_Digit.mq5 |
 //|                               Copyright © 2016, Nikolay Kositsin | 
 //|                              Khabarovsk,   farria@mail.redcom.ru | 

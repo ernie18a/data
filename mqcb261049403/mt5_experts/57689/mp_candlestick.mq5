@@ -1,4 +1,4 @@
-﻿
+
 // This MQL5 code is an Expert Advisor (EA) designed for automated trading based on candlestick analysis. The EA focuses on executing trades with a specific risk-to-reward ratio, dynamic stop-loss calculation, and margin validation. Here's a breakdown of the code:
 // 
 // ### Header and Includes

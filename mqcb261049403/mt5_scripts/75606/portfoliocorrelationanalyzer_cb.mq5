@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //| PortfolioCorrelationAnalyzer.mq5                        v1.30    |
 //| Portfolio analytics for accounts that run several EAs: how much  |
 //| drawdown the combination actually saves compared with running    |

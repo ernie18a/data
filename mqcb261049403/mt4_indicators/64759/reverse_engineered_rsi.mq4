@@ -1,4 +1,4 @@
-﻿#property link        "https://www.mql5.com/en/users/apprentice/"
+#property link        "https://www.mql5.com/en/users/apprentice/"
 #property version     "1.00"
 #property description "Reverse Engineered RSI projects RSI levels (30, 50, 70) directly onto the price chart."
 

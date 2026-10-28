@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                            DynamicRS_3CLines.mq5 |
 //|                           Copyright © 2006, Renato P. dos Santos |
 //|                   inspired on 4xtraderCY's and SchaunRSA's ideas |

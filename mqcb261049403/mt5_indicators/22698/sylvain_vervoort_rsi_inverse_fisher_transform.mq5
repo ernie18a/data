@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                Sylvain_Vervoort_RSI_inverse_fisher_transform.mq5 |
 //|                        Copyright 2018, MetaQuotes Software Corp. |
 //|                                                 https://mql5.com |

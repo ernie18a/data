@@ -1,4 +1,4 @@
-﻿#property copyright "FORTRADER.RU"
+#property copyright "FORTRADER.RU"
 #property link      "http://FORTRADER.RU"
 
 /*

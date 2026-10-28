@@ -1,4 +1,4 @@
-﻿#property copyright "Mahmut Deniz"
+#property copyright "Mahmut Deniz"
 #property indicator_chart_window
 #property indicator_buffers 11
 #property indicator_plots   4

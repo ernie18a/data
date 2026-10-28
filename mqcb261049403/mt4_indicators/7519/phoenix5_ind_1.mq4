@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------------+
+//+------------------------------------------------------------------------+
 //|                                        Phoenix_4_CONTEST_indicator.ex4 |
 //|                                         Copyright © 2006, fryk@tlen.pl |
 //| This indicator is based on Phoenix_v4_2_CONTEST.mq4 EA © 2006 Hendrick |

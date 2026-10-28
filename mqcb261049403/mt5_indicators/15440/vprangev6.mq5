@@ -1,4 +1,4 @@
-﻿#property copyright "VP-Range: Volume Profile (on time range) v6.0. © FXcoder"
+#property copyright "VP-Range: Volume Profile (on time range) v6.0. © FXcoder"
 #property link      "http://fxcoder.blogspot.com"
 #property strict
 #property indicator_chart_window

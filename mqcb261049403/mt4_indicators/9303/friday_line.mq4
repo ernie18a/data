@@ -1,4 +1,4 @@
-﻿/*///+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
+/*///+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
 Indicator shows a vertical lines at last week bar .
 Counted_Bars - number of bars in the calculation, 0 means all bars.
 type_line - type line.

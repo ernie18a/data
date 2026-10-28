@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                                NotOnlySpread.mq4 |
 //|        Spread, its moving average (ema), its maximum and minimum,|
 //|                   and ticks per second (market speed) on comment.|

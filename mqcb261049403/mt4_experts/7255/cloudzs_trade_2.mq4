@@ -1,4 +1,4 @@
-﻿#property copyright "cloud666@rbcmail.ru"
+#property copyright "cloud666@rbcmail.ru"
 extern int Kperiod=            8;
 extern int Dperiod=            8;
 extern int Slowing=             4;

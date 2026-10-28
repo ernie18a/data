@@ -1,4 +1,4 @@
-﻿#property indicator_chart_window
+#property indicator_chart_window
 #property indicator_buffers 2
 #property indicator_color1 Blue
 #property indicator_color2 Red

@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                         Dead-Line-Visualizer.mq5 |
 //|   PropGuard MT5 – Daily Loss & Max Drawdown Dead-Line Visualizer |
 //|                                   Copyright 2025, StratCoreAlpha |

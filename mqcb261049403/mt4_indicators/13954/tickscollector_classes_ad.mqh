@@ -1,4 +1,4 @@
-﻿#property copyright "Scriptong"
+#property copyright "Scriptong"
 #property link      "http://advancetools.net"
 
 #property strict

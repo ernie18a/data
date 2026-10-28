@@ -1,4 +1,4 @@
-﻿
+
 
 #define CHART_MODE_LINE 2   // Use line chart mode
 

@@ -1,4 +1,4 @@
-﻿
+
 extern double     StartingLot = 0.01;
 extern double     IncreasePercentage = 0.001;
 extern double     DistanceFromPrice = 0.0010;

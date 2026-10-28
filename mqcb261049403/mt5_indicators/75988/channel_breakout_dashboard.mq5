@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                   Channel Breakout Dashboard.mq5 |
 //|               Multi-timeframe channel breakout dashboard for MT5 |
 //|                                Copyright (c) 2026 Marian Beceanu |

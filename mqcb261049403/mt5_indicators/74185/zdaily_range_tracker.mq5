@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                 FoxWave_DailyRangeTracker.mq5    |
 //|                       Copyright Fox Wave - foxwavetrading.top    |
 //|        Live Daily High/Low/Range Tracker vs Average Range        |

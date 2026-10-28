@@ -1,4 +1,4 @@
-﻿#property copyright "Created by abfs.tech"
+#property copyright "Created by abfs.tech"
 #property link      "https://www.abfs.tech/"
 #property version   "1.00"
 #property description ""

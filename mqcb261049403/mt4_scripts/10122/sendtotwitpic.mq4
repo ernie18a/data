@@ -1,4 +1,4 @@
-﻿#property copyright     "gunzip <spammmmme@gmail.com>"
+#property copyright     "gunzip <spammmmme@gmail.com>"
 #property link          "http://twitter.com/gunzip"
 #property show_inputs
 

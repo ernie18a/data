@@ -1,4 +1,4 @@
-﻿
+
 #property copyright "Mueller Peter"
 #property link      "https://www.mql5.com/en/users/mullerp04/seller"
 #property version   "1.00"

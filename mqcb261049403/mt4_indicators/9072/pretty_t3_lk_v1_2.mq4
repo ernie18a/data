@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                            Pretty_t3_LK_V1.2.mq4 |
 //|                         Orginal T3 calculation by Tim Tillson in |
 //|     Technical Analysis of Stocks and Commodities - January 1998. |

@@ -1,4 +1,4 @@
-﻿//|                           Copyright © 2011, Skype:  mqlcmillion  |
+//|                           Copyright © 2011, Skype:  mqlcmillion  |
 //|                                         http://cmillion.narod.ru |
 //+------------------------------------------------------------------+
 #property copyright "Copyright © 2011, Skype:  mqlcmillion "

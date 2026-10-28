@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //| AutoCloseOnProfitLoss_EA.mq5                                     |
 //| Copyright 2025, Your Name                                        |
 //| Description: EA to auto-close all positions on profit/loss       |

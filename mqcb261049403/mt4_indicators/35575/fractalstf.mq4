@@ -1,4 +1,4 @@
-﻿// Single Time Frame (STF) Fractal Indicator
+// Single Time Frame (STF) Fractal Indicator
 
 // Include required header files.
 #include "Fractal-Utilities.mqh"

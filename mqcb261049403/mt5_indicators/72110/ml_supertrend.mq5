@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|  Machine Learning SuperTrend [Hammad Dilber] — MQL5 Indicator    |
 //|  Author  : Hammad Dilber                                         |
 //|  Version : v10.02 — Real Signal Win Rate + Dashboard Fixes       |

@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //| Digital High Pass (KGHP) Filter                                  |
 //| Created by newdigital                                            |
 //| Using the Generator of Digital Filters                           |

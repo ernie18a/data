@@ -1,4 +1,4 @@
-﻿#property copyright   "MACD Above Below Zero Color Bars"                              // copyright
+#property copyright   "MACD Above Below Zero Color Bars"                              // copyright
 #property copyright   "ckart1.simplesite.com"                              // copyright
 #property copyright "Copyright 2015, MetaQuotes Software Corp."
 #property link      "https://forge.mql5.io"

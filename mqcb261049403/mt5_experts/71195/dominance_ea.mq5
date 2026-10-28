@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 #property copyright "© 2026, ChukwuBuikem"
 #property link      "https://www.mql5.com/en/users/bikeen"
 #define  _VERSION   "1.50"

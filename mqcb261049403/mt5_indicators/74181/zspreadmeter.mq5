@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                       FoxWave_SpreadMeter.mq5    |
 //|                       Copyright Fox Wave - foxwavetrading.top    |
 //|          Single-Symbol Live Spread Meter with Max/Min Record     |

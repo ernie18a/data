@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------------------+
+//+------------------------------------------------------------------------------+
 //| For re-writing JForex OHLC data without the weekend candles and the seconds  |
 //| Copy the input file into Metatrader/experts/files folder                     |
 //| Set input and output filename                                                |

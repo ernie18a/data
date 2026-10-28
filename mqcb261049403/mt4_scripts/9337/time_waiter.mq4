@@ -1,4 +1,4 @@
-﻿// this code will get the current time , wait until a certain amount of Seconds
+// this code will get the current time , wait until a certain amount of Seconds
 // has passed and then continue processing.
 
 // NOTE: the first run will produce a error as the stored Time

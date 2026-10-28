@@ -1,4 +1,4 @@
-﻿#property copyright "Max Berilo"
+#property copyright "Max Berilo"
 //----
 #property indicator_chart_window
 #property indicator_buffers 5

@@ -1,4 +1,4 @@
-﻿#property strict
+#property strict
 
 #ifndef __MQL5__
   #define ShortArrayToString CharArrayToString

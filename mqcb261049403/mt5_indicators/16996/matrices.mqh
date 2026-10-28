@@ -1,4 +1,4 @@
-﻿#include <AIV/Resources.mqh>
+#include <AIV/Resources.mqh>
 
 void copySeries(SSeries &source[], SSeries &destination[])
 {

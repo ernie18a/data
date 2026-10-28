@@ -1,4 +1,4 @@
-﻿#property description "Bears vs Bulls"
+#property description "Bears vs Bulls"
 #property   copyright "Copyright © 2012, VladMsk"
 #property   link      "vlad@rosfi.ru"
 #property version   "1.4"

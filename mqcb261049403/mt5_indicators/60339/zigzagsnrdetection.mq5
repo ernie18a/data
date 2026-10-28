@@ -1,4 +1,4 @@
-﻿#property copyright "© 2026 tshalgo"
+#property copyright "© 2026 tshalgo"
 #property link "https://www.mql5.com/en/users/protimetrader"
 #property version "1.00"
 

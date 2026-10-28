@@ -1,4 +1,4 @@
-﻿bool ResetLastError2()
+bool ResetLastError2()
 {
   ResetLastError();
 

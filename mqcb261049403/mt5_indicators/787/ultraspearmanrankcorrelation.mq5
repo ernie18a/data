@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                 UltraSpearmanRankCorrelation.mq5 |
 //|                             Copyright © 2011,   Nikolay Kositsin | 
 //|                              Khabarovsk,   farria@mail.redcom.ru | 

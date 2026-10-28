@@ -1,4 +1,4 @@
-﻿#property copyright           "Mokara"
+#property copyright           "Mokara"
 #property link                "https://www.mql5.com/en/users/mokara"
 #property description         "Peter Panel"
 #property version             "1.0"

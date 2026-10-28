@@ -1,4 +1,4 @@
-﻿#define OP_ALL 10
+#define OP_ALL 10
 #define OP_OPENED 11
 #define OP_PENDING 12
 

@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                               News-Gap-Spread-Risk-Dashboard.mq5 |
 //|                                      Developed by stratcorealpha |
 //|                     https://www.mql5.com/de/users/stratcorealpha |

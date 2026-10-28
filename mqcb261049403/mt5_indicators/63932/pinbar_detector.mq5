@@ -1,4 +1,4 @@
-﻿#property indicator_chart_window
+#property indicator_chart_window
 #property indicator_buffers 4 // Utilizes 4 buffers (2 for data, 2 for colors)
 #property indicator_plots   2 // Two plots: one for upward pinbars, one for downward pinbars
 // Plot for Upward Pinbar (Upward Arrow)

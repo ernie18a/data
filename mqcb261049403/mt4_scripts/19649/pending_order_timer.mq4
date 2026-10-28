@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 #property copyright "Copyright 2019, DOKTORCAK"
 #property link      "mehmetcak@yandex.com"
 #property version   "1.00"

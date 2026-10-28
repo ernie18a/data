@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                          Period_ConverterALL.mq4 |
 //|             Original Copyright © 2005, MetaQuotes Software Corp. |
 //|                                       https://www.metaquotes.net |

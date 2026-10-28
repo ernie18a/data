@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                         SHK_Professional_Heikin_Ashi_Signals.mq5 |
 //|                               Original Heikin Ashi Signal Engine |
 //|   Pure HA engine + momentum-shift circles + confirmed arrows     |

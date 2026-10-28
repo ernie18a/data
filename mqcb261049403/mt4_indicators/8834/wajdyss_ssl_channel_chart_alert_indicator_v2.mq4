@@ -1,4 +1,4 @@
-﻿#property copyright "wajdyss"
+#property copyright "wajdyss"
 #property link      "wajdyss@yahoo.com"
 //----
 #property indicator_chart_window

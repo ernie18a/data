@@ -1,4 +1,4 @@
-﻿#property copyright   "Phade & MetaQuotes Ltd."
+#property copyright   "Phade & MetaQuotes Ltd."
 #property description "CCI with shift"
 #property version   "1.01"
 #property indicator_separate_window

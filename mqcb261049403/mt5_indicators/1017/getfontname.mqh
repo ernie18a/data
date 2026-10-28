@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Note that the presence of any font in the system depends on the selected options in installation
  * of operating system, and on the software.
 

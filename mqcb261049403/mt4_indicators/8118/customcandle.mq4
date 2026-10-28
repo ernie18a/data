@@ -1,4 +1,4 @@
-﻿#property link      "mankurt@freemail.ru"
+#property link      "mankurt@freemail.ru"
 #property copyright "© 2006, mankurt"
 #property indicator_chart_window
 //+------------------------------------------------------------------------------------------------+

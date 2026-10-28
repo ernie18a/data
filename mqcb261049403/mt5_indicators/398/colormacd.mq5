@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Place the file SmoothAlgorithms.mqh
  * in the terminal_data_folder\\MQL5\Include
  */

@@ -1,4 +1,4 @@
-﻿//------------------------------------------------------------------
+//------------------------------------------------------------------
 #property copyright   "© mladen, 2019"
 #property link        "mladenfx@gmail.com"
 #property description "Average crosses signals"

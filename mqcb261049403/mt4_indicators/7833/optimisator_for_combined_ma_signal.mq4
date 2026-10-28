@@ -1,4 +1,4 @@
-﻿/*
+/*
 My mt4 is not typing russion letters,
 @#$%@$^^&%@$#%^$% =--> ???? прогнкуаиторШНУЫЧмсми<--=, sorry.
 NOTE: Don't put much days on lower timeframes, or it will be freezed

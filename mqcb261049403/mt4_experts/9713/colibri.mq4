@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //| Colibri.mq4
 //| Copyright © 2010, Laurent Bйville (LoBev)
 //| http://fr-fr.facebook.com/pages/La-Martinique-Fleur-des-Caraibes/13968306412

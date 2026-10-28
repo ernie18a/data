@@ -1,4 +1,4 @@
-﻿#property copyright "Bugscoder Studio"
+#property copyright "Bugscoder Studio"
 #property link      "https://www.bugscoder.com/"
 #property version   "1.00"
 #property strict

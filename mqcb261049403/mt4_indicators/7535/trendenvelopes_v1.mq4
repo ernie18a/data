@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                            TrendEnvelopes_v1.mq4 |
 //|                           Copyright © 2006, TrendLaboratory Ltd. |
 //|            http://finance.groups.yahoo.com/group/TrendLaboratory |

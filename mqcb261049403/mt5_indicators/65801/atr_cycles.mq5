@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                                   ATR_Cycles.mq5 |
 //|                 Original: Stage3_VCycles, http://Stage3forex.com |
 //| This converted from mod: Ale, http://www.mql4.com/ru/users/ale00 |									

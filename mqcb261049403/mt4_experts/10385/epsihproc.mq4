@@ -1,4 +1,4 @@
-﻿//IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII+
+//IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII+
 //|                                                                    e-PSI@PROC.mq4 |
 //|                                      Copyright © 2011, TarasBY & Evgeniy Trofimov |
 //|                                                                taras_bulba@tut.by |

@@ -1,4 +1,4 @@
-﻿
+
 //+-------------------------------------------------------------------+
 //|                                            Bollinger Bands %b.mq4 |
 //|                       Copyright © 2004, MetaQuotes Software Corp. |

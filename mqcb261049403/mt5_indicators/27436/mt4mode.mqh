@@ -1,4 +1,4 @@
-﻿#define MODE_LOW 1
+#define MODE_LOW 1
 #define MODE_HIGH 2
 #define MODE_TIME 5
 #define MODE_BID 9

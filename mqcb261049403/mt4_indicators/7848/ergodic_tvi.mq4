@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                   Ergodic Ticks Volume Indicator |
 //|                                         Copyright © William Blau |
 //|                                    Coded/Verified by Profitrader |

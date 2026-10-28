@@ -1,4 +1,4 @@
-﻿
+
 #property copyright   "Duy Van Nguy " 
 #property link        ""
 #property description "CandleMove"

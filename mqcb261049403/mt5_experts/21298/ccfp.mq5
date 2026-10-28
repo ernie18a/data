@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                CCFp(barabashkakvn's edition).mq5 |
 //|                                              SemSemFX@rambler.ru |
 //|              http://onix-trade.net/forum/index.php?showtopic=107 |

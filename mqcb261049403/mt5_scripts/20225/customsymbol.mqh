@@ -1,4 +1,4 @@
-﻿//#include "String.mqh"
+//#include "String.mqh"
 #include "Ticks.mqh"
 
 class CUSTOMSYMBOL : public SYMBOL

@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                             YURAZ_CreaHistorCSVFromMT5forMT4.mq5 |
 //|            Copyright 2010, MetaQuotes Software Corp. (C) & YURAZ |
 //|                                            www.masterforex-v.org |

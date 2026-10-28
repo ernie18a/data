@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 #property copyright "Copyright © 2011 Matus German www.MTexperts.net"
 
 extern bool      useProfitToClose       = true;

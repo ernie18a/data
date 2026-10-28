@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                                         OBTR.mq4 |
 //|                     Copyright © 2010, www.Brooky-Indicators.com. |
 //|     On Balance True Range   http://www.www.Brooky-Indicators.com |

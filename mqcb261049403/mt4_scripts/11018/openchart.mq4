@@ -1,4 +1,4 @@
-﻿#import "user32.dll"
+#import "user32.dll"
 
    int GetAncestor(int hWnd, int gaFlags);
    int GetDlgItem(int hDlg, int nIDDlgItem);

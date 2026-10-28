@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //| EA Spread Lister - current, min, max per day                     |
 //| Purpose : Display current, min, max spread for all visible       |
 //|           Market Watch symbols in a table.                       |

@@ -1,4 +1,4 @@
-﻿#property strict
+#property strict
 
 #ifdef __MQL5__
   #ifndef FALSE

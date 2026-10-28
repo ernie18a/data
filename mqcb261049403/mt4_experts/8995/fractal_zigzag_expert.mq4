@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                        Fractal ZigZag Expert.mq4 |
 //|                                                        ikovrigin |
 //|    This expert was made from a fractal zig zag indicator created |

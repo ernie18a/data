@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                               SwapMinorPairs.mq4 |
 //|                    Copyright 2020, FXFledgling Forex Study Group |
 //|                     https://www.facebook.com/groups/FXFledgling/ |

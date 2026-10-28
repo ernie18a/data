@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                         GC_SupportResistance.mq4 |
 //|                         Copyright 2023, Gurchiek Consulting LLC. |
 //|                               https://www.gurchiekconsulting.com |

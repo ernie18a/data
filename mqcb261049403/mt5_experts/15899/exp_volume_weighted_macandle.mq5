@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                 Exp_Volume_Weighted_MACandle.mq5 |
 //|                               Copyright © 2016, Nikolay Kositsin | 
 //|                              Khabarovsk,   farria@mail.redcom.ru | 

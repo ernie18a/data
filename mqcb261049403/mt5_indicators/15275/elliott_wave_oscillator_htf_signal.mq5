@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+ 
+//+------------------------------------------------------------------+ 
 //|                           Elliott_Wave_Oscillator_HTF_Signal.mq5 | 
 //|                                Copyright © 2016 Nikolay Kositsin | 
 //|                              Khabarovsk,   farria@mail.redcom.ru | 

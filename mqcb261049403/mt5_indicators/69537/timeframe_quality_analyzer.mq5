@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                   TimeFrame_Quality_Analyzer.mq5 |
 //|                                Copyright 2026, Rajesh Kumar Nait |
 //|                         https://www.mql5.com/en/users/rajeshnait |

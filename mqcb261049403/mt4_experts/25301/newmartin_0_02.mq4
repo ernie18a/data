@@ -1,4 +1,4 @@
-﻿#property strict
+#property strict
 
 extern double Dev = 400;
 

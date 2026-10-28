@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                   Sniper Gold Hybrid Recovery EA |
 //|                                  Copyright 2026, Waseem Shahrukh |
 //|                        https://www.mql5.com/en/users/shahrukhktk |

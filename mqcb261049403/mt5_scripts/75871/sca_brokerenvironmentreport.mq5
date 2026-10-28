@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //| SCA_BrokerEnvironmentReport.mq5                                  |
 //| Copyright 2026 Arnold Holm / StratCoreAlpha                      |
 //| https://stratcorealpha.com                                       |

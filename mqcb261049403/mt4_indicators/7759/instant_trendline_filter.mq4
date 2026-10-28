@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                    Instantaneous Trendline Filter|
 //|                         Copyright © 2006, Luis Guilherme Damiani |
 //|                                      http://www.damianifx.com.br |

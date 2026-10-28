@@ -1,4 +1,4 @@
-﻿#property copyright "Evgeniy Chumakov | © Copyright 2024"
+#property copyright "Evgeniy Chumakov | © Copyright 2024"
 #property description "Candle range forecast based on statistics."
 #property version "1.0"
 #property link "https://www.mql5.com/en/users/jack857752"

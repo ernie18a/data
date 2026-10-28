@@ -1,4 +1,4 @@
-﻿//--- descriзгo
+//--- descriзгo
 #property description "Script cria objeto grбfico de \"Texto\"."
 //--- janela de exibiзгo dos parвmetros de entrada durante inicializaзгo do script
 #property script_show_inputs

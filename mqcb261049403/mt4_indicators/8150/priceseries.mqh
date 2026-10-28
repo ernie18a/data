@@ -1,4 +1,4 @@
-﻿//Version  January 1, 2007
+//Version  January 1, 2007
 //+------------------------------------------------------------------+
 //|                                                  PriceSeries.mqh |
 //|                        Copyright © 2006,        Nikolay Kositsin | 

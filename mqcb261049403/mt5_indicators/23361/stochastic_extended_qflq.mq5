@@ -1,4 +1,4 @@
-﻿//------------------------------------------------------------------
+//------------------------------------------------------------------
 #property copyright   "© mladen, 2018"
 #property link        "mladenfx@gmail.com"
 #property description "Stochastic of choosable price - extended with floating levels"

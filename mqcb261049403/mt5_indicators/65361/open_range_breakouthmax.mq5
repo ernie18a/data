@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                    Open Range Breakout-H-Max.mq5 |
 //|                By Hieronymos Starch - Quotesy of The Nevek Ratio |
 //|                                            https://forge.mql5.io |

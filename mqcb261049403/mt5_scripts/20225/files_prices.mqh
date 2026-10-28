@@ -1,4 +1,4 @@
-﻿#include "Web.mqh"
+#include "Web.mqh"
 #include "File.mqh"
 #include "File_Prices.mqh"
 #include "Data.mqh"

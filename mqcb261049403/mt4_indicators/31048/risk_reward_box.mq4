@@ -1,4 +1,4 @@
-﻿#property copyright "Copy right 2020 ZiWox Group"
+#property copyright "Copy right 2020 ZiWox Group"
 #property link      "http://www.ziwox.com"
 #property version   "1.00"
 

@@ -1,4 +1,4 @@
-﻿//+-------------------------------------------------------------------+
+//+-------------------------------------------------------------------+
 //| LW_MarketStructure_SMC.mq5                                        |
 //| SMC Market Structure — Swing H/L + BOS + CHoCH                    |
 //| Author : Yeoh Joo Yam | Display: Lonely Wolf                      |

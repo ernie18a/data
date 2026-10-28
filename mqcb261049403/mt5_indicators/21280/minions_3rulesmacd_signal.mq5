@@ -1,4 +1,4 @@
-﻿//+-------------------------------------------------------------------------------------+
+//+-------------------------------------------------------------------------------------+
 //|                                                       Minions.3RulesMACD_Signal.mq5 |
 //| (CC) Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License|
 //|                                                          http://www.MinionsLabs.com |

@@ -1,4 +1,4 @@
-﻿#property indicator_chart_window
+#property indicator_chart_window
 #property version "2.0"
 #property strict
 

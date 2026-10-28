@@ -1,4 +1,4 @@
-﻿//ACCESS
+//ACCESS
 string TimeAccess, FunctionAccess;
 //TIME
 int PREV_MINUTE, CURR_MINUTE, CURR_HOUR, CURR_SECONDS;

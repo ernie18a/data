@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                              GS_SessionBoxes.mq5 |
 //|                        Gold Session Boxes - Sydney, Tokyo, London,|
 //|                        New York and the London/New York overlap   |

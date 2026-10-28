@@ -1,4 +1,4 @@
-﻿//------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------
 //                                                       V_FastZZ_2DinapoliTargets.mq5
 //                                                   The modified indicator FastZZ.mq5
 //                                       Added DiNapoli Target Levels and Time Targets

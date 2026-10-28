@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                               MFCS GridLines.mq5 |
 //|            Copyright 2015, Mansukh Patidar, All rights reserved. |
 //|                                    http://www.mansukhpatidar.com |

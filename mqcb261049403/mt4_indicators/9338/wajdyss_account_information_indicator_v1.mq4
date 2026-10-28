@@ -1,4 +1,4 @@
-﻿#property copyright "Copyright 2009 Wajdyss"
+#property copyright "Copyright 2009 Wajdyss"
 #property link      "wajdyss@yahoo.com"
 
 #property indicator_chart_window

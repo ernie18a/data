@@ -1,4 +1,4 @@
-﻿#property copyright "FXNode"
+#property copyright "FXNode"
 #property link      "http://fxnode.ir"
 #property version   "1.00"
 #property strict

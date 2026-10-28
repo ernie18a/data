@@ -1,4 +1,4 @@
-﻿#property copyright "Evgeniy Chumakov | © Copyright 2026"
+#property copyright "Evgeniy Chumakov | © Copyright 2026"
 #property description "A modification of the ZigZag indicator, where the reversal moment is determined not by a fixed percentage, but by reaching a specified ratio of the current price to the last local extremum."
 #property version "1.0"
 #property link "https://www.mql5.com/ru/users/jack857752"

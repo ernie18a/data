@@ -1,4 +1,4 @@
-﻿class WEB
+class WEB
 {
 public:
   static bool Get( uchar &Data[], const string URL, const int TimeOut = 5000 )

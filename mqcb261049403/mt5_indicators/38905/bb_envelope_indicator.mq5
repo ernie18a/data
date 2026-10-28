@@ -1,4 +1,4 @@
-﻿
+
 #property copyright "https://www.mql5.com/en/users/paultraderone/seller"
 #property link      "https://www.mql5.com/en/users/paultraderone/seller"
 #property version   "1.00"

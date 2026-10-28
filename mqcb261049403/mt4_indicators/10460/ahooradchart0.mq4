@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //| Ahoora.mq4.mq4
 //| Copyright © 2010, Farshad Saremifar, Farshad.saremifar@gmail.com
 //| Farshad.saremifar@gmail.com

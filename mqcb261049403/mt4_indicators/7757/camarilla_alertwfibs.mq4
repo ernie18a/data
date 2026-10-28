@@ -1,4 +1,4 @@
-﻿// +------------------------------------------------------------------+
+// +------------------------------------------------------------------+
 // | FileName: Camarilla_AlertwFibs.mq4                               |
 // | Author: Copyright © 2005, Fermin Da Costa Gomez                  |
 // | Version : 01 (Inital code)                                       |

@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+ 
+//+------------------------------------------------------------------+ 
 //|                               RJTX_Matches_Smoothed_main_HTF.mq5 | 
 //|                               Copyright © 2018, Nikolay Kositsin | 
 //|                              Khabarovsk,   farria@mail.redcom.ru | 

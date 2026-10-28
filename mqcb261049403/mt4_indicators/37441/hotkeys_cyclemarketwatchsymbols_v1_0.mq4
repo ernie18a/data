@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                         Hotkeys_CycleMarketWatchSymbols_v1.0.mq4 |
 //|                                         Copyright 2021, NickBixy |
 //|             https://www.forexfactory.com/showthread.php?t=904734 |

@@ -1,4 +1,4 @@
-﻿//
+//
 // Regression Channel with variable polynomial degree indicator
 //
 // original by Boris

@@ -1,4 +1,4 @@
-﻿//MQL5 Version  August 1, 2013 Final
+//MQL5 Version  August 1, 2013 Final
 //+------------------------------------------------------------------+
 //|                                             SmoothAlgorithms.mqh |
 //|                               Copyright © 2011, Nikolay Kositsin |

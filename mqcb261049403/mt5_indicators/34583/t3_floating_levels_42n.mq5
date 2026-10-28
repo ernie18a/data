@@ -1,4 +1,4 @@
-﻿//------------------------------------------------------------------
+//------------------------------------------------------------------
 #property copyright   "©mladen, 2021"
 #property link        "mladenfx@gmail.com"
 #property description "This T3 uses two methods for calculating T3"

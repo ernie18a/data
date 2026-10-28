@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------
+//+------------------------------------------------------------------
 #property copyright   "© mladen, 2018"
 #property link        "mladenfx@gmail.com"
 #property link        "https://www.mql5.com/en/users/mladen/publications"

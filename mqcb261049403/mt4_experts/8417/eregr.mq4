@@ -1,4 +1,4 @@
-﻿
+
 #property copyright "© 2008 BJF Trading Group"
 #property link      "www.iticsoftware.com"
 

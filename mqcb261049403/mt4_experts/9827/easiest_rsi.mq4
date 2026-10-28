@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //| Easiest RSI          Author: LordoftheMoney                      |
 //| Important!                                                       |
 //| At a five digit broker one more zero must be added to the        |

@@ -1,4 +1,4 @@
-﻿//+-------------------------------------------------------------------+
+//+-------------------------------------------------------------------+
 //|                                          Build_Own_Strategy!.mq4  |
 //|                                     © 2007  v0 - AutoGrapf.dp.ua  | // It was shared for MQL4 book. So, there are no any reserved copyrights except open source since beginning.
 //|                          v1 2010 Seletsky R.V. aka Romari         | // Also shared on MQL4.com . R is for Roman... I guess.

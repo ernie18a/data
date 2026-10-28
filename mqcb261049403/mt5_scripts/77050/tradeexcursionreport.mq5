@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                         TradeExcursionReport.mq5  |
 //|  Writes one CSV line per closed trade, with the excursion numbers  |
 //|  the statement does not carry, and prints a summary.               |

@@ -1,4 +1,4 @@
-﻿#property link      "lightsites@gmail.com"
+#property link      "lightsites@gmail.com"
 
 /**
 Louis Christian Stoltz

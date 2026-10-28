@@ -1,4 +1,4 @@
-﻿//------------------------------------------------------------------
+//------------------------------------------------------------------
 #property copyright   "© mladen, 2020"
 #property link        "mladenfx@gmail.com"
 #property description "McGinley dynamic average"

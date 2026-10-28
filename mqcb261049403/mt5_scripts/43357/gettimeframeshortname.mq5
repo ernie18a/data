@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                        GetTimeframeShortName.mq5 |
 //|                                         Francisco Gomes da Silva |
 //|                    https://www.mql5.com/pt/users/franciscogomes5 |

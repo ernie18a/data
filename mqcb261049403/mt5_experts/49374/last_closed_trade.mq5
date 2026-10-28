@@ -1,4 +1,4 @@
-﻿// variables
+// variables
 string DayStart = "00:00"; // Day Start Time
 double LastClosed_Profit; // Last Closed trade profit
 string TradeSymbol, TradeType;

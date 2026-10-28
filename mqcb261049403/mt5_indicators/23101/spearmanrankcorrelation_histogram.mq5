@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                            SpearmanRankCorrelation_Histogram.mq5 |
 //|                      Copyright © 2007, MetaQuotes Software Corp. |
 //|                                       https://www.metaquotes.net |

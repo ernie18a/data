@@ -1,4 +1,4 @@
-﻿#property copyright "trevone"
+#property copyright "trevone"
 #property link "https://www.mql5.com/en/users/trevone"   
  
 #property strict 

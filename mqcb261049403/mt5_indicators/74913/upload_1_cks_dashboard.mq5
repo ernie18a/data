@@ -1,4 +1,4 @@
-﻿#property copyright "Cheng Kah Seng"
+#property copyright "Cheng Kah Seng"
 #property version   "1.00"
 #property strict
 #property description "Displays account, symbol, position-risk and suggested-volume information."

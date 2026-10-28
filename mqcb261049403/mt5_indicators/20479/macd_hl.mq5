@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------
+//+------------------------------------------------------------------
 #property copyright   "mladen"
 #property link        "mladenfx@gmail.com"
 #property description "Macd high/low"

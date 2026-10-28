@@ -1,4 +1,4 @@
-﻿#property copyright "Scriptong"
+#property copyright "Scriptong"
 #property link      "http://advancetools.net"
 #property description "English: Displaying of the divergence based on the testimony of various indicators.\nRussian: Отображение дивергенции на основе показаний различных индикаторов."
 #property version "1.18"

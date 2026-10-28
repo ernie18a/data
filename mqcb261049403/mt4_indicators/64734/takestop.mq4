@@ -1,4 +1,4 @@
-﻿#property copyright "Evgeniy Chumakov | © Copyright 2025"
+#property copyright "Evgeniy Chumakov | © Copyright 2025"
 #property description "Graphs the price levels for simulated trades, including the defined TP and SL, for the selected trading direction. Brief statistics are also shown, including hourly entry breakdowns."
 #property version "1.0"
 #property link "https://www.mql5.com/ru/users/jack857752"

@@ -1,4 +1,4 @@
-﻿// +——————————————————————————————————————————————————————————————————————————————————————————————+
+// +——————————————————————————————————————————————————————————————————————————————————————————————+
 // ¦     Affine Transform                                                     AffineTransform.mq5 ¦
 // ¦  The indicator performs an affine transformation of the time series of price data (by prices,¦
 // ¦ specified in the Applied_Price parameter), using the inclination angle of the trend line.    ¦

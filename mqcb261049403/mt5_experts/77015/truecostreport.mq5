@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                              TrueCostReport.mq5  |
 //|        What one round trip actually costs on YOUR broker, and    |
 //|        how far your backtest's assumption is from it             |

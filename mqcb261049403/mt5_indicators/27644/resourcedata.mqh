@@ -1,4 +1,4 @@
-﻿#include "Resource.mqh"
+#include "Resource.mqh"
 #include "Convert.mqh"
 
 template <typename T>

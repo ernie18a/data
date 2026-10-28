@@ -1,4 +1,4 @@
-﻿#define EXPERT_MAGIC 123456   // MagicNumber of the expert
+#define EXPERT_MAGIC 123456   // MagicNumber of the expert
 input int InpTakeProfit =900; // Take Profit (in points)
 input int InpStopLoss   =900; // Stop loss (in points)
 //+------------------------------------------------------------------+

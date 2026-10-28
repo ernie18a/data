@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                    FractalZigZagNoRepaintMt5.mq5 |
 //written by Ufranco derived from indicator by pointzero-trading.com |
 //|                                              http://www.mql5.com |

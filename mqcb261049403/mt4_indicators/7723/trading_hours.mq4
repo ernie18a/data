@@ -1,4 +1,4 @@
-﻿//+-----------------------------------------------------------------------------------------------+
+//+-----------------------------------------------------------------------------------------------+
 //| by Gilani                                                                                     |
 //| currencyTimeZone - adjust to the timezone of the relevant currency.                           |
 //| serverTimeZone - timezone of the source of data source feed (+1 Russian zone for MetaTrader)  |

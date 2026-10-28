@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                            Close_All_Windows.mq5 |
 //|     Copyright 2015, Daniel Osuna de la Rosa, Alias: _de_la_Rosa. |
 //|                        https://www.mql5.com/en/users/_de_la_rosa |

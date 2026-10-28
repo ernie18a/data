@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                              apply_template_SoHarD_dB_w@®Ez_.mq5 |
 //|                             Copyright 2014, by _SoHarD_dB_w@®Ez_ |
 //|                https://www.google.com/+RicardoPenders_SoHarD_dB_ |

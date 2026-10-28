@@ -1,4 +1,4 @@
-﻿#property strict                                // Lot size of 3.6 was used during testing.
+#property strict                                // Lot size of 3.6 was used during testing.
 static bool BuyIsActive = False;
 static bool SellIsActive = False;
 extern double Lots = 2;

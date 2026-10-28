@@ -1,4 +1,4 @@
-﻿#property copyright "Copyright 2022, Tradecian Algo"
+#property copyright "Copyright 2022, Tradecian Algo"
 #property link      "https://www.fiverr.com/biswait50/write-code-for-forex-expert-advisor-ea-on-mt4-and-mt5"
 #property description  "Contact Mail  : help.tradecian@gmail.com"
 #property description  "Telegram  : @pops1990"

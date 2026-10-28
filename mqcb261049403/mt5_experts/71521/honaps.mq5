@@ -1,4 +1,4 @@
-﻿//--- Include system libraries
+//--- Include system libraries
 #include <Trade\Trade.mqh>
 #include <Trade\PositionInfo.mqh>
 #include <Trade\SymbolInfo.mqh>

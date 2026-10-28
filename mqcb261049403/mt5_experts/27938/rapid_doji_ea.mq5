@@ -1,4 +1,4 @@
-﻿/*
+/*
 Rapid Doji EA
 
 This MQL5 Expert Advisor uses a simple strategy on a daily chart.

@@ -1,4 +1,4 @@
-﻿#property copyright "Waseem Shahrukh"
+#property copyright "Waseem Shahrukh"
 #property version   "1.00"
 #property description "Auto structure based SL + profit trailing for manual trades & pendings. DEMO test first."
 

@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                           Waddah_Attar_Pivot.mq5 |
 //|                        Copyright © 2007, waddahattar@hotmail.com |
 //|                             Waddah Attar waddahattar@hotmail.com |

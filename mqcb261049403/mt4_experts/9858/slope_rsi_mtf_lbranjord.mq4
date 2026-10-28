@@ -1,4 +1,4 @@
-﻿//Slope + RSI - EUR USD 5m
+//Slope + RSI - EUR USD 5m
 
 
 extern double   ATR_Percent = 0.15,  //This value sets the ATR Used, The ATR is 15%

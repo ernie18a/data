@@ -1,4 +1,4 @@
-﻿#property link "http://www.forex-instruments.info"
+#property link "http://www.forex-instruments.info"
 //+------------------------------------------------------------------+
 //|                                                         RAVI.mq4 |
 //|                      Copyright © 2005, MetaQuotes Software Corp. |

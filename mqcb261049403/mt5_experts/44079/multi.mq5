@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //| MultiOrders.mq5: A MetaTrader 5 Expert Advisor for Opening       |
 //|                 Multiple Buy and Sell Orders Based on User Input |
 //| Copyright 2023, MetaQuotes Software Corp.                        |

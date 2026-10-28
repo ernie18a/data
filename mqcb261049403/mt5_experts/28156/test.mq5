@@ -1,4 +1,4 @@
-﻿int OnInit()
+int OnInit()
 {
 
 return INIT_SUCCEEDED;

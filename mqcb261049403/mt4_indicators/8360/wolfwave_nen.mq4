@@ -1,4 +1,4 @@
-﻿//+-----------------------------------------------------------------------+
+//+-----------------------------------------------------------------------+
 //|                                 A WolfWave finder based on ZIGZAG.MQ4 |
 //|                                     fukinagashi a t gmx p o i n t net |
 //| Patched by Nen @  http://onix-trade.net/forum/index.php?showtopic=373 |

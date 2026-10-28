@@ -1,4 +1,4 @@
-﻿//+----------------------------------------------------------------------------+
+//+----------------------------------------------------------------------------+
 //|                                                           Braid_Filter.mq4 |
 //| Braid Filter indicator of Robert Hill stocks and commodities magazine 2006 |
 //| MT4 code by Max Michael 2021                                               |

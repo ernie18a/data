@@ -1,4 +1,4 @@
-﻿#property copyright "Copyright 2026, IronHawk"
+#property copyright "Copyright 2026, IronHawk"
 #property link      "https://www.mql5.com"
 #property version   "2.04"
 #property strict

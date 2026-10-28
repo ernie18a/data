@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                           Coin Flip(barabashkakvn's edition).mq5 |
 //|                               Copyright 2015, Vladimir Gribachev |
 //|                      https://www.mql5.com/ru/users/moneystrategy |

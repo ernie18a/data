@@ -1,4 +1,4 @@
-﻿
+
 extern double TakeProfit = 5;
 extern double StopLoss = 55;
 extern double Lots = 1.0;

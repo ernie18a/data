@@ -1,4 +1,4 @@
-﻿#include <Trade\Trade.mqh>
+#include <Trade\Trade.mqh>
 #include <Trade\SymbolInfo.mqh>    
 #include <Trade\PositionInfo.mqh>
 #include <Trade\OrderInfo.mqh>

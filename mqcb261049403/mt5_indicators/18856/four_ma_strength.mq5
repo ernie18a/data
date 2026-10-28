@@ -1,4 +1,4 @@
-﻿//+----------------------------------------------------------------------+
+//+----------------------------------------------------------------------+
 //|                                                 Four_MA_Strength.mq5 |
 //|        Copyright © 2006 , kurkafund on 11/05/2006 by David Honeywell |
 //|                      kurkafund@yahoo.com , transport.david@gmail.com |

@@ -1,4 +1,4 @@
-﻿//Author: Markus Haberzettl
+//Author: Markus Haberzettl
 //This does not guarantee successful trades or any trading functionality at all!!
 
 

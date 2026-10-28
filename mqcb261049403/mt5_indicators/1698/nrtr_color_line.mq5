@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                              NRTR_color_line.mq5 |
 //|                                Copyright © 2013, TrendLaboratory |
 //|            http://finance.groups.yahoo.com/group/TrendLaboratory |

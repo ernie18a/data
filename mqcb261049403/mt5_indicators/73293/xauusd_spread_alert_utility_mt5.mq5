@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                  XAUUSD Spread Alert Utility MT5 |
 //|                               Educational spread monitoring tool |
 //|                                   Developer: Mr. Brijesh Jaiswal |

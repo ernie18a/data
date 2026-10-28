@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                           Expert_Licence_Protection_Template.mq4 |
 //|                             Copyright 2019, DKP Sweden,CS Robots |
 //|                             https://www.mql5.com/en/users/kenpar |

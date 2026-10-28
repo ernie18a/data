@@ -1,4 +1,4 @@
-﻿/**
+/**
 * Classic Moving Averages with colors 
 *
 * Simple moving average

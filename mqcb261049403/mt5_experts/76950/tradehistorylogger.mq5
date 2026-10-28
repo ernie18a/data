@@ -1,4 +1,4 @@
-﻿#property copyright "TradeHistoryLogger"
+#property copyright "TradeHistoryLogger"
 #property version   "1.00"
 #property description "Logs every closed position to CSV with the market context at BOTH"
 #property description "entry and exit: RSI, Stochastic, EMA distance, Bollinger %B, ATR"

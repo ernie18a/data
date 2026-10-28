@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------------------------------------------+
+//+------------------------------------------------------------------------------------------------------+
 //|  MACD-v Panels for MT4                                                                               |
 //|  Chart-window heat map and dashboard modes                                                           |
 //|  https://www.tradingview.com/script/mMMHCZUx-AS-MACD-v-Hist-Alex-Spiroglou-S-M-A-R-T-TRADER-SYSTEMS/ |

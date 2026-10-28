@@ -1,4 +1,4 @@
-﻿#property copyright "trevone"
+#property copyright "trevone"
 #property link "http://www.mql4.com/users/trevone" 
 
 /* 

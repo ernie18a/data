@@ -1,4 +1,4 @@
-﻿// RiskCalc.mqh
+// RiskCalc.mqh
 // Account-level calculation helpers for Daily Risk Monitor Lite.
 // This module contains:
 // - daily range detection,

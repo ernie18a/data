@@ -1,4 +1,4 @@
-﻿// Candle (define g_rates as: MqlRates g_rates[];)
+// Candle (define g_rates as: MqlRates g_rates[];)
 #define CANDLELOW(i)    g_rates[i].low
 #define CANDLEHIGH(i)   g_rates[i].high
 #define CANDLEOPEN(i)   g_rates[i].open

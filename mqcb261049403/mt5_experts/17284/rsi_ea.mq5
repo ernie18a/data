@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                              RSI EA(barabashkakvn's edition).mq5 |
 //|                        Copyright 2015, MetaQuotes Software Corp. |
 //|                           http://free-bonus-deposit.blogspot.com |

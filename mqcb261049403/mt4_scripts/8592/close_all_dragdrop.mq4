@@ -1,4 +1,4 @@
-﻿#property copyright "what?"
+#property copyright "what?"
 #property link      "who cares!"
 
 //+------------------------------------------------------------------+

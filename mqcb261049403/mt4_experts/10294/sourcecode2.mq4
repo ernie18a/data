@@ -1,4 +1,4 @@
-﻿int init()
+int init()
 {
   return(0);
 }

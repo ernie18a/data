@@ -1,4 +1,4 @@
-﻿//+----------------------------------------------------------+
+//+----------------------------------------------------------+
 //|                             Alternative Ichimoku .mq4    |
 //|                             Copyright © february 2007    |
 //|               Lukashuk Victor Gennadievich aka lukas1    |

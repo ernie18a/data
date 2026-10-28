@@ -1,4 +1,4 @@
-﻿#property script_show_inputs  true
+#property script_show_inputs  true
 
 input ENUM_TIMEFRAMES timeFrame = PERIOD_MN1; //Timeframe
 input string tplName = "B01.tpl"; //Template

@@ -1,4 +1,4 @@
-﻿#property copyright "Copyright @ 20011, File45 and anyone who want to add their 2 pence/cents/rupees worth"
+#property copyright "Copyright @ 20011, File45 and anyone who want to add their 2 pence/cents/rupees worth"
 #property indicator_chart_window 
 
 //thanks: miaden-super moderator FOREX-TSD www.forex-tsd.com for major edit after which it workedas as intended.

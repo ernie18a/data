@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //| Price Action Volumetric Order Blocks - MT5 Community Edition     |
 //|                                                                  |
 //| Original Pine Script concept and implementation: UAlgo           |

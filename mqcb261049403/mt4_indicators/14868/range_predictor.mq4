@@ -1,4 +1,4 @@
-﻿#property copyright "2012, ovo.cz"
+#property copyright "2012, ovo.cz"
 #property link "ovo.cz/#"
 
 /**

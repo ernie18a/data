@@ -1,4 +1,4 @@
-﻿//IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII+
+//IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII+
 //|                                                                e-PSI@MultiSET.mq4 |
 //|                                                         Copyright © 2011, TarasBY |
 //|                                                                taras_bulba@tut.by |

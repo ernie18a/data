@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Please note that the availability of a font in the system depends on the options selected during the
  * installation of the operating system, as well as software used.
 

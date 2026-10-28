@@ -1,4 +1,4 @@
-﻿#property strict
+#property strict
 #property version "1.1"
 //#property indicator_separate_window
 //#property indicator_buffers    2

@@ -1,4 +1,4 @@
-﻿//---------------------SVS_Trend------
+//---------------------SVS_Trend------
 #property indicator_separate_window    
 #property indicator_buffers 6
 #property indicator_color1 White

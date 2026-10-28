@@ -1,4 +1,4 @@
-﻿#property copyright "Copyright © 2007, Waddah Attar"
+#property copyright "Copyright © 2007, Waddah Attar"
 #property link      "waddahattar@hotmail.com"
 
 #property indicator_chart_window

@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                 Exp_i-SpectrAnalysis_Chaikin.mq5 |
 //|                               Copyright © 2016, Nikolay Kositsin | 
 //|                              Khabarovsk,   farria@mail.redcom.ru | 

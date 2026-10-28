@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                            Spread Calculator.mq5 |
 //|            Copyright 2003-2026, Opengates Success International. |
 //|               https://www.mql5.com/en/users/opengates2012/seller |

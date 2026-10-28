@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                      cointegration_indicator.mq5 |
 //|                                 Copyright 2017, Max Dmitrievskiy |
 //|                        https://www.mql5.com/ru/users/dmitrievsky |

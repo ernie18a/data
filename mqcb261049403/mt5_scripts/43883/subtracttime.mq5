@@ -1,4 +1,4 @@
-﻿
+
 
 int tickCont = 0;    // ticks counter
 datetime tempDate = TimeCurrent();

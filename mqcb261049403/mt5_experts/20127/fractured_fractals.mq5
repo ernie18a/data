@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                  Fractured Fractals(barabashkakvn's edition).mq5 |
 //|                 Copyright © 2005, tageiger aka fxid10t@yahoo.com |
 //|                MetaTrader_Experts_and_Indicators@yahoogroups.com |

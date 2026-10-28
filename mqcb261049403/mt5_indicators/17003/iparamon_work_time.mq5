@@ -1,4 +1,4 @@
-﻿//------------------------------------------------------------------
+//------------------------------------------------------------------
 #property copyright   "Copyright © 2006, Kim Igor V. aka KimIV"
 #property link        "http://www.kimiv.ru"
 #property description "The iParamon WorkTime indicator originally made by Kim Igor V"

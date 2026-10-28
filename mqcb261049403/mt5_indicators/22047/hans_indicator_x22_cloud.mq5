@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+ 
+//+------------------------------------------------------------------+ 
 //|                                     Hans_Indicator_x22_Cloud.mq5 | 
 //|                                       Copyright © 2014, Shimodax | 
 //|   http://www.strategybuilderfx.com/forums/showthread.php?t=15439 | 

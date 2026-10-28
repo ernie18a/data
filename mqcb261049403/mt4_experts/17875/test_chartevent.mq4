@@ -1,4 +1,4 @@
-﻿//tao.wu. Create(2017-03-14)Modify(2017-04-18)..file:Test_ChartEvent.mq45 (mt45: same file for mql4 & mql5)
+//tao.wu. Create(2017-03-14)Modify(2017-04-18)..file:Test_ChartEvent.mq45 (mt45: same file for mql4 & mql5)
 //=============================================================================================================
 // WU Tao - http://forex.simula.fr/temp/
 //=======================================================================================

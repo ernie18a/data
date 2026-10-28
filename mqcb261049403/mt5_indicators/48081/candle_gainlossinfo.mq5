@@ -1,4 +1,4 @@
-﻿#property copyright "Copyright 2024, Kursustrading.my.id"
+#property copyright "Copyright 2024, Kursustrading.my.id"
 #property link      "https://belajarfx.my.id"
 #property version   "1.00"
 

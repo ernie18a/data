@@ -1,4 +1,4 @@
-﻿#property copyright "EmilioStefanoReale"
+#property copyright "EmilioStefanoReale"
 #property link      ""
 
 #property indicator_chart_window

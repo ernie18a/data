@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                               Bounce Strength Indicator_v2.4.mq5 |
 //| Bounce Strength Indicator v2.4            Copyright 2015, fxborg |
 //|                                   http://fxborg-labo.hateblo.jp/ |

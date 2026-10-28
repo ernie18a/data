@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|            True Scalper Profit Lock(barabashkakvn's edition).mq5 |
 //|         Copyright © 2005, International Federation of Red Cross. |
 //|                                             http://www.ifrc.org/ |

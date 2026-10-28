@@ -1,4 +1,4 @@
-﻿//
+//
 // Aussie Surfer Expert Advisor
 //
 // Created by Aussie Surfer Ltd

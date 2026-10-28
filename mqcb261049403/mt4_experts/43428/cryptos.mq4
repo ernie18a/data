@@ -1,4 +1,4 @@
-﻿#property copyright "Copyright 2023, Ctyptos_V1."
+#property copyright "Copyright 2023, Ctyptos_V1."
 #property description "Crypto robot for ETH/USD pair. It uses large & tp/sl ratio and trailings for catching big profits. Usefull for conservative investments."
 #property link      "https://t.me/CryptoRobotSecrets"
 #property version   "1.00"

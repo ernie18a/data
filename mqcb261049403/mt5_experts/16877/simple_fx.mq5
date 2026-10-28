@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                           simplefx2(barabashkakvn's edition).mq5 |
 //|                             Copyright © 2007, GLENNBACON.COM LLC |
 //|                                  http://www.GetForexSoftware.com |

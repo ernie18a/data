@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|     MA Cross 3MACross Alert WarnSig(barabashkakvn's edition).mq5 |
 //|                                             2008forextsd mladen  |
 //|                 Copyright © 1999-2007, MetaQuotes Software Corp. |

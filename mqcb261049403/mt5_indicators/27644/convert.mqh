@@ -1,4 +1,4 @@
-﻿#include <TypeToBytes.mqh> // https://www.mql5.com/ru/code/16280
+#include <TypeToBytes.mqh> // https://www.mql5.com/ru/code/16280
 
 class CONVERT
 {

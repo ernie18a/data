@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                       Dynamic Resistance Support |
 //|             Copyright 2014, Michael Schmidt root@shellsangles.de |
 //|                                             http://www.xvirt.net |

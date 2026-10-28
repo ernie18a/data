@@ -1,4 +1,4 @@
-﻿//|                                Copyright 2020, Aleksey Panfilov. |
+//|                                Copyright 2020, Aleksey Panfilov. |
 //|                                                filpan1@yandex.ru |
 //+------------------------------------------------------------------+
 #property copyright "Copyright © 2020, Aleksei Panfilov. filpan1@yandex.ru"

@@ -1,4 +1,4 @@
-﻿//properties
+//properties
    #property copyright "Copyright 2016, quebralim"
    #property link      "https://www.mql5.com/en/users/quebralim"
    #property version   "1.4"

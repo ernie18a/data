@@ -1,4 +1,4 @@
-﻿// The Stops Bot
+// The Stops Bot
 // Patrick Burns
 
 #include <WinUser32.mqh>

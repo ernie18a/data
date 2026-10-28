@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //| removal or closure order, which put the mouse script             |
 //|                              Copyright © 2012, Vladimir Khlystov |
 //|                                                cmillion@narod.ru |

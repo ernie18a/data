@@ -1,4 +1,4 @@
-﻿#property link      "https://forge.mql5.io"                       // URL
+#property link      "https://forge.mql5.io"                       // URL
 #property description "q-period Stochastic Momentum (William Blau)" // description
 #property description "output as colored candles" // description
 //--- indicator settings

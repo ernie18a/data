@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                            #(SF_TREND_LINES).mq4 |
 //|                                   Copyright © 2007 ForexArea.com |
 //|        Utilizing code from SHI_Channel_true.mq4 by Shurka & Kevin|

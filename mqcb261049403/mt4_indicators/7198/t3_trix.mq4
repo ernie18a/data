@@ -1,4 +1,4 @@
-﻿  
+  
 //+------------------------------------------------------------------+ 
 //|                                          T3 TRIX (ROC of T6).mq4 | 
 //|                      convert FinGeR Alex orginal by Luis Damiani | 

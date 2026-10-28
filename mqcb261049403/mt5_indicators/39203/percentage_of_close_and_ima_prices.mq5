@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                           Percentage of CLose and iMA prices.mq5 |
 //|                              Copyright © 2022, Vladimir Karputov |
 //|                      https://www.mql5.com/en/users/barabashkakvn |

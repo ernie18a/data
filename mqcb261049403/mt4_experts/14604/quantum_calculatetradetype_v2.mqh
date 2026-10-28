@@ -1,4 +1,4 @@
-﻿// Класс эксперта Quantum_v2_Expert. Используется для определения типа необходимой торговой операции и ее параметров
+// Класс эксперта Quantum_v2_Expert. Используется для определения типа необходимой торговой операции и ее параметров
 #property copyright "Scriptong"
 #property link      "http://advancetools.net"
 #property strict

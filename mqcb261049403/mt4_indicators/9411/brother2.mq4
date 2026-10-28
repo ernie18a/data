@@ -1,4 +1,4 @@
-﻿//
+//
 // "Dissent is the highest form of patriotism" / "Bunt jest najwyїsz№ form№ patriotyzmu" - Thomas Jefferson 
 // "BROTHER 2 - indicator"
 //

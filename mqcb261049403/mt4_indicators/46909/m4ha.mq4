@@ -1,4 +1,4 @@
-﻿#property strict
+#property strict
 //---- indicator settings
 #property indicator_chart_window
 #property indicator_buffers 4

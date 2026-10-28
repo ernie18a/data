@@ -1,4 +1,4 @@
-﻿#property copyright "Zigzag structure by Evgeniy Chumakov | MT5 indicator by Phade | 2025"
+#property copyright "Zigzag structure by Evgeniy Chumakov | MT5 indicator by Phade | 2025"
 #property link "https://www.mql5.com/en/users/jack857752"
 #property description "Zigzag which changes wave direction based on price percentage change on the security"
 #property version "1.0"

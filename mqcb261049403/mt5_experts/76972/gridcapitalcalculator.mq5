@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                       GridCapitalCalculator.mq5  |
 //|          What a grid actually costs to hold, and how often the   |
 //|          move that ends it has already happened                  |

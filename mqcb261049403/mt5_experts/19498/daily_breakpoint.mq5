@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                    Daily BreakPoint(barabashkakvn's edition).mq5 |
 //|                        Copyright 2015, MetaQuotes Software Corp. |
 //|                             http://confident-trader.blogspot.com |

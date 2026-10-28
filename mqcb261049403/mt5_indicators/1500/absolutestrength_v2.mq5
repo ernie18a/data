@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                          AbsoluteStrength_v2.mq4 |
 //|                                Copyright © 2012, TrendLaboratory |
 //|            http://finance.groups.yahoo.com/group/TrendLaboratory |

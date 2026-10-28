@@ -1,4 +1,4 @@
-﻿#property copyright "2026, Cheng Kah Seng"
+#property copyright "2026, Cheng Kah Seng"
 #property link      "https://forge.mql5.io"
 #property version   "1.00"
 #property description "Educational completed-candle EMA and RSI Expert Advisor with a compact dashboard."

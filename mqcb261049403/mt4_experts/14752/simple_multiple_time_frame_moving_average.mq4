@@ -1,4 +1,4 @@
-﻿
+
 //+------------------------------------------------------------------+
 //|                    Simple Multiple Time Frame Moving Average.mq4 |
 //|                             Forest Kirschbaum: forest4k@gmail.com|

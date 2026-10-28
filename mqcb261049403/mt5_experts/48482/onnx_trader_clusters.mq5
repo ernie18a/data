@@ -1,4 +1,4 @@
-﻿#include <EURUSD ONNX include clusters.mqh>
+#include <EURUSD ONNX include clusters.mqh>
 #include <Trade\Trade.mqh>
 #include <Trade\AccountInfo.mqh>
 

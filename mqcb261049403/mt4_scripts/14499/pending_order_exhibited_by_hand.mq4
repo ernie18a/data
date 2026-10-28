@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 #property copyright "Copyright 2015, http://cmillion.ru"
 #property link      "http://cmillion.ru"
 #property version   "1.00"

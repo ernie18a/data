@@ -1,4 +1,4 @@
-﻿#property copyright "Copyright 2016, Carlos Oliveira"
+#property copyright "Copyright 2016, Carlos Oliveira"
 #property link      "https://www.forextradingtools.eu/products/indicators/forex-scanner-free-indicator/"
 #property version   "1.30"
 #property indicator_chart_window

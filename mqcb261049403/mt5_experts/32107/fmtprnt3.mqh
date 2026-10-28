@@ -1,4 +1,4 @@
-﻿class Printable
+class Printable
 {
   public:
     virtual string toString(){return "?";};

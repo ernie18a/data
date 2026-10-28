@@ -1,4 +1,4 @@
-﻿class TWOVLINES
+class TWOVLINES
 {
 private:
   datetime Time1;

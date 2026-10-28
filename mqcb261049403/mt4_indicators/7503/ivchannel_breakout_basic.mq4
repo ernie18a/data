@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                       channel_breakout_entry.mq4 | 
 //|                                   with ATR Stop Loss calculation |
 //|                                 use this one for drawing channel |

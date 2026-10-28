@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                       SniperGold_SMC_ProPlus.mq5 |
 //|     Institutional Smart Money Concepts (SMC) Suite               |
 //|  Internal/Swing Structure · Volume OB · MTF FVG · EQH/EQL ·      |

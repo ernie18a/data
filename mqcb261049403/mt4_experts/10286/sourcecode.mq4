@@ -1,4 +1,4 @@
-﻿extern int stopTrade = 600; // This is the minimum value I can take in my account
+extern int stopTrade = 600; // This is the minimum value I can take in my account
 int tickA, tickB, tickC, tickD, tickE, tickF;
 
 int cnt = 0;

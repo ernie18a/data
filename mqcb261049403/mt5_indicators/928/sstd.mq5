@@ -1,4 +1,4 @@
-﻿//The Simple Trend Detector. Based on code RSI.mq4,  Copyright © 2004, MetaQuotes Software Corp. http://www.metaquotes.net/
+//The Simple Trend Detector. Based on code RSI.mq4,  Copyright © 2004, MetaQuotes Software Corp. http://www.metaquotes.net/
 //3-Pole Butterworth Filter: Code by Witold Wozniak, www.mqlsoft.com
 
 #property  copyright "Copyright © 2004, MetaQuotes Software Corp., BECEMAL 2010"

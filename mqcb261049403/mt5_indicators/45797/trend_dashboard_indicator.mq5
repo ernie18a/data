@@ -1,4 +1,4 @@
-﻿
+
 #property copyright "Tradingforliving.my.id, 2010-2023"
 #property link      "https://Tradingforliving.my.id"
 #property version   "1.02"

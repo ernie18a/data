@@ -1,4 +1,4 @@
-﻿// +——————————————————————————————————————————————————————————————————————————————————————————————————————+
+// +——————————————————————————————————————————————————————————————————————————————————————————————————————+
 // ¦     History Downloader Expert                                          HistoryDownloader.mq4         ¦
 // ¦  EA for downloading quote history to the current chart.                                              ¦
 // ¦  The idea is borrowed from the s-Downloader script (https://www.mql5.com/en/code/9099) of respected  ¦

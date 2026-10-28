@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                              Vortex(barabashkakvn's edition).mq5 |
 //|From the January 2010 issue of Technical Analysis of Stocks &     |
 //|Commodities                                                       |

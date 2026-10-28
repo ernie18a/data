@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                          MW Download History.mq5 |
 //|                  Copyright 2026, Martinware (Martin Bittencourt) |
 //|                    https://www.mql5.com/en/users/momergil/seller |

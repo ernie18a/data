@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                               Pipstriker-com.mq4 |
 //|                                  Copyright © 2012 PipStriker.com |
 //|        Utilizing code from SHI_Channel_true.mq4 by Shurka & Kevin|

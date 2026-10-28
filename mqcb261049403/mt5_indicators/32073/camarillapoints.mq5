@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                              Camarillapoints.mq5 |
 //|   site:     http://fxstill.com                                   |
 //|   Telegram: https://t.me/fxstill (Literature on cryptocurrencies,| 

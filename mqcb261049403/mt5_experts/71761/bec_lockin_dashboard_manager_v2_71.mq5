@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                           BEC -Lockin Dashboard Manager v2.71.mq5|
 //|                               BEC -Lockin Dashboard Manager v2.71|
 //|                               Extended with bulk trade actions   |

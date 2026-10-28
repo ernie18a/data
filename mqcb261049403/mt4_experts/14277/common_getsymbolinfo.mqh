@@ -1,4 +1,4 @@
-﻿// Универсальный класс для получения текущей рыночной информации
+// Универсальный класс для получения текущей рыночной информации
 #property copyright "Scriptong"
 #property link      "http://scriptong.myqip.ru/"
 #property version "1.00"

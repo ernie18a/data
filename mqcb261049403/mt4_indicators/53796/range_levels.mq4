@@ -1,4 +1,4 @@
-﻿#property copyright "Evgeniy Chumakov | © Copyright 2024"
+#property copyright "Evgeniy Chumakov | © Copyright 2024"
 #property description "The indicator draws the nearest levels of the specified range."
 #property version "1.0"
 #property link "https://www.mql5.com/en/users/jack857752"

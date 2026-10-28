@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //| PROGRAMMING PATTERNS - OBSERVER                                  |
 //| When the subject changes, it notifies and updates its observers, |
 //|   who know nothing about each other (one-to-many weak relation)  |

@@ -1,4 +1,4 @@
-﻿#ifndef __TYPETOBYTES__
+#ifndef __TYPETOBYTES__
 
 template <typename T>
 class CASTING

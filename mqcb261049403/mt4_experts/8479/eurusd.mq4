@@ -1,4 +1,4 @@
-﻿#include <stdlib.mqh>
+#include <stdlib.mqh>
 double feature2[47];
  
 /* inarray[0] is I */

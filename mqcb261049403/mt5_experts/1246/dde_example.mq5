@@ -1,4 +1,4 @@
-﻿#property copyright "© 2005-2007 RickD"
+#property copyright "© 2005-2007 RickD"
 #property link      "www.e2e-fx.net"
 
 #define major   1

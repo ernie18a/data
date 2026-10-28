@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                   MACD Stochastic 2(barabashkakvn's edition).mq5 |
 //|                           Copyright 2005, Gordago Software Corp. |
 //|                                           http://www.gordago.com |  

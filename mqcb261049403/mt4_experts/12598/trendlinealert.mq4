@@ -1,4 +1,4 @@
-﻿input bool TradeEnabled = false;  // Breakout trade option
+input bool TradeEnabled = false;  // Breakout trade option
 input double Lots = 1.0;          // Trade Lots
 input int TargetProfit = 50;      // Target Profit 
 input int StopLoss = 50;          // Stop Loss

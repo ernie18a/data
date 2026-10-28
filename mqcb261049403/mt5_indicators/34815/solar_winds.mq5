@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 // Solar Winds Indicator re-write for MQ5.                           |
 // Demonstrates Paint and non-repaint                                |
 //   Solar Winds MQ4 original Author appears to be:                  |

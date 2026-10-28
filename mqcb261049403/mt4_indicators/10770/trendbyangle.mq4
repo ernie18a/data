@@ -1,4 +1,4 @@
-﻿#property copyright "Copyright 2012, YangShu.net"
+#property copyright "Copyright 2012, YangShu.net"
 #property link      "http://yangshu.net"
 #property indicator_chart_window
 

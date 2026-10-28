@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                          Waddah Attar RSI Level ..Idea by Yamedo |
 //|                              Copyright © 2007, www.metaforex.net |
 //|                                   Waddah Attar www.metaforex.net |

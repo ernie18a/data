@@ -1,4 +1,4 @@
-﻿#include <stdlib.mqh>   
+#include <stdlib.mqh>   
 
 
 

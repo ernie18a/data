@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                                wd.Range_MACD.mq5 |
 //|                  Copyright 2023, Karya Prima Rajasa Mediavestama |
 //|                        Programmed/Modified by widhie75@yahoo.com |

@@ -1,4 +1,4 @@
-﻿/*
+/*
  * For the indicator to work, place the files
  * SmoothAlgorithms.mqh and 
  * IndicatorsAlgorithms.mqh

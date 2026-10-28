@@ -1,4 +1,4 @@
-﻿#property   copyright "BECEMAL"
+#property   copyright "BECEMAL"
 #property   link      "http://www.becemal.ru/"
 // Use Code by Witold Wozniak, www.mqlsoft.com
 

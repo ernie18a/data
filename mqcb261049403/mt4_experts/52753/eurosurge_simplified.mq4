@@ -1,4 +1,4 @@
-﻿
+
 #property strict
 
 enum TradeSizeTypeEnum { FixedSize, BalancePercent, EquityPercent };

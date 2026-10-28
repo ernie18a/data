@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                                  Velocity_v2.mq5 |
 //|                                Copyright © 2006, TrendLaboratory |
 //|            http://finance.groups.yahoo.com/group/TrendLaboratory |

@@ -1,1 +1,1 @@
-﻿const string ObjNamePrefix = "ObjShow-";
+const string ObjNamePrefix = "ObjShow-";

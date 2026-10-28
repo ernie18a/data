@@ -1,4 +1,4 @@
-﻿#property show_inputs
+#property show_inputs
 
 #include <stdlib.mqh> // string ErrorDescription(int error_code);
 

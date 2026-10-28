@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                             SimpleOrderPanel.mq5 |
 //|                    Copyright 2022, Manuel Alejandro Cercós Pérez |
 //|                         https://www.mql5.com/en/users/alexcercos |

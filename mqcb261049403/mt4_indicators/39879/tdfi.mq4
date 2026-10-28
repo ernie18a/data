@@ -1,4 +1,4 @@
-﻿//https://www.tradingview.com/script/HUpIful1-Trend-Direction-Force-Index-v2-TDFI-wm/
+//https://www.tradingview.com/script/HUpIful1-Trend-Direction-Force-Index-v2-TDFI-wm/
 #property copyright "Bugscoder Studio"
 #property link      "https://www.bugscoder.com/"
 #property version   "1.00"

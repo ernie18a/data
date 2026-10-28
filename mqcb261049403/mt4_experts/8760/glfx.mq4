@@ -1,4 +1,4 @@
-﻿//GLFX basic information:
+//GLFX basic information:
 //Optimalized for Metatrader 4, build 229
 //+------------------------------------------------------------------+
 #property copyright "Copyright © 2008 Globus"

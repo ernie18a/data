@@ -1,4 +1,4 @@
-﻿// Класс эксперта Divergence_Expert. Используется для определения типа необходимой торговой операции и ее параметров
+// Класс эксперта Divergence_Expert. Используется для определения типа необходимой торговой операции и ее параметров
 #property copyright "Scriptong"
 #property link      "http://advancetools.net"
 #property strict

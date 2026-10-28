@@ -1,4 +1,4 @@
-﻿#property link        "http:www.trading-go.ru/   full version"
+#property link        "http:www.trading-go.ru/   full version"
 #property copyright   "http:www.trading-go.ru/   full version"
 
 

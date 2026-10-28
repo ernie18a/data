@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                       VoltyChannel_Stop_v2.1.mq4 |
 //|                                Copyright © 2007, TrendLaboratory |
 //|            http://finance.groups.yahoo.com/group/TrendLaboratory |

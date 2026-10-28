@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                        PolarCoordinateSystem.mq5 |
 //|                        Copyright 2020, MetaQuotes Software Corp. |
 //|                         https://www.mql5.com/en/users/nikolay7ko |

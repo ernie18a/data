@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|     Silver_MSNR_v531Plus_AEU_VisualOnly_CleanStudy_v2.mq5        |
 //|     HTF bias first, then 2 aligned setup signals can trade       |
 //|                                                                  |

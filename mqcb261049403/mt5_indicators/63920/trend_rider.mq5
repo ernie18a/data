@@ -1,4 +1,4 @@
-﻿
+
 #property copyright "Mohammed Kaddour"
 #property link "https://www.mql5.com/en/users/mohkadd/news"
 #property version "1.0"

@@ -1,4 +1,4 @@
-﻿//+-------------------------------------------------------------------+
+//+-------------------------------------------------------------------+
 //|                                            wd.Multi_SubWindow.mq5 |
 //|                 Copyright © 2023, Karya Prima Rajasa Mediavestama |
 //|                                  Programmed by widhie75@yahoo.com |

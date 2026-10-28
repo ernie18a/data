@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                             DonchianChannelsCloud_Digit_Grid.mq5 |
 //|                         Copyright © 2005, Luis Guilherme Damiani |
 //|                                      http://www.damianifx.com.br |

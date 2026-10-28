@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                             ServerTimeOffset.mq5  |
 //|  Prints the three clocks an MQL5 program sees - server, GMT and   |
 //|  local - their offsets, and the one rule that keeps timestamps    |

@@ -1,4 +1,4 @@
-﻿#property indicator_separate_window
+#property indicator_separate_window
 #property indicator_buffers 3
 #property indicator_color1 Blue
 #property indicator_color2 Lime

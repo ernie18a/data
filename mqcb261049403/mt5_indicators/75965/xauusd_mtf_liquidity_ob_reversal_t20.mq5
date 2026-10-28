@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //| XAUUSD_MTF_LIQUIDITY_OB_REVERSAL.mq5                             |
 //| Multi-TF Liquidity + Order Block + M5 Reversal/Breakout          |
 //| Previous Day / H4 / M30 / M15 / M5 + M1 Swing Trade Levels       |

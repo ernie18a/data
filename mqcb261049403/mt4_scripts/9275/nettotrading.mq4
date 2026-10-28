@@ -1,4 +1,4 @@
-﻿#property show_inputs
+#property show_inputs
 
 #define PAUSE 100
 #define MAX_SYMBOLS 100

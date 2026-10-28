@@ -1,4 +1,4 @@
-﻿#property copyright "Copyright © 2023, Tokot4l.my.id"
+#property copyright "Copyright © 2023, Tokot4l.my.id"
 #property link      "Kursustrading.my.id"
 #property version   "1.038"
 #property description "Trading in Forex and certificates involves a considerable risk. These products are not suitable for every investor."

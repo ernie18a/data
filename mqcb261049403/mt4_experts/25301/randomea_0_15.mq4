@@ -1,4 +1,4 @@
-﻿#property strict                                              //I had to comment out lines 15 to 20 because of validation problems. I don't know how to fix it to pass validation. Yet. I'm working on it.
+#property strict                                              //I had to comment out lines 15 to 20 because of validation problems. I don't know how to fix it to pass validation. Yet. I'm working on it.
                                                               //You guys can uncomment lines 15 to 20 and see the martingale part like that.
 static bool BuyIsActive = False;                                 
 static bool SellIsActive = False;                                             

@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                         Bar_Replay_Simulator.mq5 |
 //|                                Copyright 2025, Rajesh Kumar Nait |
 //|                  https://www.mql5.com/en/users/rajeshnait/seller |

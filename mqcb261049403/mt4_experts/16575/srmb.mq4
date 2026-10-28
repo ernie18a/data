@@ -1,4 +1,4 @@
-﻿// The Stops Bot with RSI & Momentum
+// The Stops Bot with RSI & Momentum
 // Patrick Burns
 
 #include <WinUser32.mqh>

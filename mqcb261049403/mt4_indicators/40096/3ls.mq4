@@ -1,4 +1,4 @@
-﻿//https://www.tradingview.com/script/admGhVz7-3-Line-Strike-TTF/
+//https://www.tradingview.com/script/admGhVz7-3-Line-Strike-TTF/
 #property copyright "Bugscoder Studio"
 #property link      "https://www.bugscoder.com/"
 #property version   "1.00"

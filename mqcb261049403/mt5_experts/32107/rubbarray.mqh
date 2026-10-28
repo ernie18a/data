@@ -1,4 +1,4 @@
-﻿
+
 template <typename T>
 class RubbArray
 {

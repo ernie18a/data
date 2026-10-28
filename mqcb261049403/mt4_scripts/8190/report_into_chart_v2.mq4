@@ -1,4 +1,4 @@
-﻿//use this script to draw trades from a file with results from metatrader's strategy tester to a chart
+//use this script to draw trades from a file with results from metatrader's strategy tester to a chart
 //how does it work ?
 //1. load "StrategyTester.htm" to the experts/files directory
 //2. run this script on a appropriate chart

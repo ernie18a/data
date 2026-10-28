@@ -1,4 +1,4 @@
-﻿#property strict
+#property strict
 
 #include "ChartObjectResource.mqh"
 #include "Ticks\TicksPicture.mqh"

@@ -1,4 +1,4 @@
-﻿#include "PriceChange.mqh"
+#include "PriceChange.mqh"
 
 class PRICECHANGES
 {

@@ -1,4 +1,4 @@
-﻿//--------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------
 //                 This EA Programed And Developed By Akhmad FX
 //         Contact Me To akhmad.sna@gmail.com For Your Custom EA Request
 //                    Powered By Forex EA Generator Software

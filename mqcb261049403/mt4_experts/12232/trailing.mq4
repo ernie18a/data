@@ -1,4 +1,4 @@
-﻿
+
 #property copyright "Copyright © 2020, Adam Malik Kasang"
 #property link      "adamakasang2020@gmail.com"
 

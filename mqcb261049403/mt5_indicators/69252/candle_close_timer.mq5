@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //| Candle Close Timer - MT5 Indicator                               |
 //| Shows remaining time to candle close above current candle        |
 //| Author: BENTRADE TRADING                                         |

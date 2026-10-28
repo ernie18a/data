@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|              2MA Bunny Cross Expert(barabashkakvn's edition).mq5 |
 //|                                         Copyright © Ron Thompson |
 //|                                 http://www.lightpatch.com/forex/ |

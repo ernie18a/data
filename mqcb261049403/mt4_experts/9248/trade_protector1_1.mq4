@@ -1,4 +1,4 @@
-﻿// trade assistant - to watch after SL's for your trades
+// trade assistant - to watch after SL's for your trades
 // some ideas and code fragments: "S.Projects" - "cortex.snowcron.com"
 
 

@@ -1,4 +1,4 @@
-﻿// expert
+// expert
 
 #property copyright "Idea by wajdyss"
 #property link      "wajdyss@yahoo.com"

@@ -1,4 +1,4 @@
-﻿#property strict
+#property strict
 
 #define AMOUNT_BUFFERS 0
 

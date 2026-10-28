@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                                  Hammer Indicator|
 //|                            Copyright 2024, Rama Destrian Hartadi |
 //|               Web Address: https://www.mql5.com/en/users/vilraxq |

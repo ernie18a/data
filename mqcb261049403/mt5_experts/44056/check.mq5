@@ -1,4 +1,4 @@
-﻿// Include necessary files
+// Include necessary files
 #include <Trade\Trade.mqh>
 #include <Trade\SymbolInfo.mqh>
 

@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                             Reverse Strategy.mq5 |
 //|                          Copyright 2021, Valentinos Konstantinou |
 //|                    https://www.mql5.com/en/users/valentinoskonst |

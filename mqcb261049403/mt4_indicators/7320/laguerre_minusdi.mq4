@@ -1,4 +1,4 @@
-﻿//+--------------------------------------------------------------------------+
+//+--------------------------------------------------------------------------+
 //| Laguerre MinusDi.mq4                                                     |
 //| Emerald King / transport_david                                           |
 //| http://finance.groups.yahoo.com/group/MetaTrader_Experts_and_Indicators/ |

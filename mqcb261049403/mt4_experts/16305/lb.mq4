@@ -1,4 +1,4 @@
-﻿//The Limits Bot
+//The Limits Bot
 //Patrick Burns
 
 #include <WinUser32.mqh>

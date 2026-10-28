@@ -1,4 +1,4 @@
-﻿//Script to represent current Profit/Loss in Pips for FOREX
+//Script to represent current Profit/Loss in Pips for FOREX
 #property copyright    "Open Source 2020, by Arturo Minor"
 #property description  "free of copyright to the MQL community"
 

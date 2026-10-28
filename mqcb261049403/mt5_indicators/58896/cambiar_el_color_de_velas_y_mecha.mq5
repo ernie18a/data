@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                                      velas.mq5   |
 //|           Indicador personalizado que dibuja velas y mechas      |
 //|        con colores personalizados y se actualiza en tiempo real  |

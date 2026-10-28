@@ -1,4 +1,4 @@
-﻿/*
+/*
 
 This expert implements the method described on page
 http://www.tradejuice.com/forex/forex-1-2-3-methode-mm.htm.

@@ -1,4 +1,4 @@
-﻿#property copyright   "Copyright 2019, Pelanjie Mafuta"
+#property copyright   "Copyright 2019, Pelanjie Mafuta"
 #property link        "https://www.mql5.com/en/users/lpelanjie"
 #property description "This utility allows you to automatically enable or disable the automated trading button ."
 #property description "For assistance Email : info@forexlimerence.com Telegram : https://t.me/forexlimerence"

@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                          SCT_PriceAction_AllPotentialEntries.mq4 |
 //|                        Copyright 2019, MetaQuotes Software Corp. |
 //|                                            https://forge.mql5.io |

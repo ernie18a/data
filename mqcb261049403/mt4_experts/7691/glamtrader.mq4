@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                 Copyright 2005, Gideon Smolders. |
 //|                                              complied by Oba Ire |
 //|                http://finance.groups.yahoo.com/group/autotraders |

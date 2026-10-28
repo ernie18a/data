@@ -1,4 +1,4 @@
-﻿
+
 #property copyright   "Copyright 2025, Max Michael"
 #property description "Fair Value Gaps indicator or 'imbalance areas' where markets often move back to."
 #property indicator_chart_window

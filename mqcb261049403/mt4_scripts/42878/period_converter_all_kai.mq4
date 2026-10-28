@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                     period_converter_All_kai.mq4 |
 //|              Original Copyright ?2005, MetaQuotes Software Corp. |
 //|            Original Copyright https://www.mql5.com/ru/code/11201 |

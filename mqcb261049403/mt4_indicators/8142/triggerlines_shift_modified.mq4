@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                  Triggerlines Shift Modified.mq4 |
 //|                      Copyright © 2006, MetaQuotes Software Corp. |
 //|                                       https://www.metaquotes.net |

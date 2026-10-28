@@ -1,4 +1,4 @@
-﻿//===========================================================================================================================//
+//===========================================================================================================================//
 // Author VOLDEMAR227 site WWW.TRADING-GO.RU      SKYPE: TRADING-GO          e-mail: TRADING-GO@List.ru
 // Our group http:http://vk.com/club43661961
 // News, questions and answers, help, and a lot of interesting)))

@@ -1,4 +1,4 @@
-﻿//+---------------------------------------------------------------------+
+//+---------------------------------------------------------------------+
 //|                                     XFisher_org_v1_Vol_Supr_Zer.mq5 |
 //|                              Copyright © 2006, TrendLaboratory Ltd. |
 //|               http://finance.groups.yahoo.com/group/TrendLaboratory |

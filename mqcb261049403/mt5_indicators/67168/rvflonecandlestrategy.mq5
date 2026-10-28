@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                       RVFL Indicator_Free.mq5    |
 //|                      Range Vector Fibo Logic (Indicator Version) |
 //|                               Copyright 2025, AlgoPulse Academy  |

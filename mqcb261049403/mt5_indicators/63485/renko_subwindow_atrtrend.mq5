@@ -1,4 +1,4 @@
-﻿#property copyright "Copyright © 2020-2025"
+#property copyright "Copyright © 2020-2025"
 #property link      "https://forge.mql5.io "
 #property version   "1.001"
 #property indicator_separate_window

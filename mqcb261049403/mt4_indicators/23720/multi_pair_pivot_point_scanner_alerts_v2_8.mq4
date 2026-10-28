@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                   Multi_Pair_Pivot_Point_Scanner_Alerts_v2.7.mq4 |
 //|                                         Copyright 2019, NickBixy |
 //|             https://www.forexfactory.com/showthread.php?t=904734 |

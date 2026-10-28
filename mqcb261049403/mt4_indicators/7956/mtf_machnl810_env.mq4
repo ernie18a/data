@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                     MTF_MA_Channel810_Env; mod. Envelopes.mq4 ik |
 //|                      Copyright © 2005, MetaQuotes Software Corp. |
 //|                   www.forex-tsd.com;  https://www.metaquotes.net |

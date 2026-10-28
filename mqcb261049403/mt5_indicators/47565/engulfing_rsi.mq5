@@ -1,4 +1,4 @@
-﻿ 
+ 
 #property copyright "LINK"
 #property link      "https://www.etsy.com/au/shop/Metatrader5"
 #property version   "1.00"

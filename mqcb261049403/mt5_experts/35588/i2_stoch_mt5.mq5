@@ -1,4 +1,4 @@
-﻿#property copyright   "https://payhip.com/forexeas"
+#property copyright   "https://payhip.com/forexeas"
 #property link        "https://payhip.com/forexeas"
 #property description "Please Visit site \nmultiple different versions..."
 #property version     "1.0"

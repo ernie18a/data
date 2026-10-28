@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                                ProfitMonitor.mqh |
 //|                              BGC Grid Trading EA — Kill Switch 2 |
 //|                      Equity-based profit target & restart cycles |

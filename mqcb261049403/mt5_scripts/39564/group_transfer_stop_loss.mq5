@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                     Group transfer Stop loss.mq5 |
 //|                               Copyright © 022, Vladimir Karputov |
 //|                      https://www.mql5.com/en/users/barabashkakvn |

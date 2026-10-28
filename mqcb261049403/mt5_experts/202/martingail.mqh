@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                                   Martingail.mqh |
 //|                        Copyright 2010, MetaQuotes Software Corp. |
 //|        http://forum.liteforex.org/showthread.php?p=6210#post6210 |

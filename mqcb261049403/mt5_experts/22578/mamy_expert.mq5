@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                         MAMy Expert(barabashkakvn's edition).mq5 |
 //|                             Copyright © 2006, Victor Chebotariov |
 //|                                      http://www.chebotariov.com/ |

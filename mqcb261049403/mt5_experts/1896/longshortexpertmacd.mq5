@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                          LongShortExpertMACD.mq5 |
 //| Copyright 2009-2013, MetaQuotes Software Corp. - 2013, jlwarrior |
 //|                          https://www.mql5.com/en/users/jlwarrior |

@@ -1,4 +1,4 @@
-﻿#property copyright "Copyright 2023, MetaQuotes Ltd."
+#property copyright "Copyright 2023, MetaQuotes Ltd."
 #property link      "https://forge.mql5.io"
 #property version   "1.00"
 #include <Trade\Trade.mqh> // Include the Trade library for trading operations

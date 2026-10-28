@@ -1,4 +1,4 @@
-﻿#property strict
+#property strict
 
 static bool BuyIsActive = False;
 static bool SellIsActive = False;

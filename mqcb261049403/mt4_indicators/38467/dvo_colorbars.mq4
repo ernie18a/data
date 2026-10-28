@@ -1,4 +1,4 @@
-﻿//+-----------------------------------------------------------+
+//+-----------------------------------------------------------+
 //|                         DVO - David Varadi Oscillator.mq4 |
 //|                                                           |
 //| www.tradingview.com/script/m5lVzOkh-Varadi-Oscillator/    |

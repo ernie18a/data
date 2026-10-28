@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                        Break the Range Bound.mq4 |
 //|                    Shenzhen YuHe e-commerce Ltd. Author:He Yigeng|
 #property link      "http://www.yuhe.com"

@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                     Unseasonalised JPY Average Trading Range.mq4 |
 //|                                                    Gary Thompson |
 //|                                       GaryThompsons.blogspot.com |

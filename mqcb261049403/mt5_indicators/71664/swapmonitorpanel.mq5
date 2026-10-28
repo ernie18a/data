@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                             SwapMonitorPanel.mq5 |
 //|                                  Swap & Rollover Monitor Utility |
 //|                        Shows swap rates for all MarketWatch syms |

@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                       Trendscalpindic.mq4        |
 //|                        Based on Nick Beluk's TTF implementation  |
 //|                        No redrawing, no lookahead, nosmoothing   |

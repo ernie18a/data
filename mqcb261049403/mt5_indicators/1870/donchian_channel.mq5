@@ -1,4 +1,4 @@
-﻿#property copyright "Copyright © 2013, Johannes Hermann"
+#property copyright "Copyright © 2013, Johannes Hermann"
 //---- indicator version number
 #property version   "2.00"
 //---- drawing the indicator in the main window

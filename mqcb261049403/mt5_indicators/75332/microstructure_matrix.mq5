@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                             IronHawk_Microstructure_Matrix.mq5   |
 //|                            Advanced Quantitative Trading Systems |
 //|                                   Version 5.1.0 - Visual Quant   |

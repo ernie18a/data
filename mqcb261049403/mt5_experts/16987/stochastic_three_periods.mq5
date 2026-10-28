@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|            Stochastic Three Periods(barabashkakvn's edition).mq5 |
 //|                                            Rafael Maia de Amorim |
 //|                                       https://www.metaquotes.net |

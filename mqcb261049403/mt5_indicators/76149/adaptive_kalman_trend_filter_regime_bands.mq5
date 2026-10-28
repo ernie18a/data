@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                    Adaptive Kalman Trend Filter Regime Bands.mq5 |
 //|                                        Copyright ADEDAYO GBADEBO |
 //|                                    https://www.mql5.com/en/users |

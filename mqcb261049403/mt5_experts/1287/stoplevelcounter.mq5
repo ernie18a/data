@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                             StopLevelCounter.mq5 | 
 //|            Copyright © 2012, Nikolay Kositsin & Aleksey Rodionov | 
 //|                                Khabarovsk, farria@mail.redcom.ru | 

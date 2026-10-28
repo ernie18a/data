@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                 Crossover on the current bar.mq5 |
 //|                              Copyright © 2022, Vladimir Karputov |
 //|                      https://www.mql5.com/en/users/barabashkakvn |

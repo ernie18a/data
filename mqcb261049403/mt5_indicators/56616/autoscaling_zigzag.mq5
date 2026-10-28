@@ -1,4 +1,4 @@
-﻿#property copyright "Evgeniy Chumakov | © Copyright 2024"
+#property copyright "Evgeniy Chumakov | © Copyright 2024"
 #property description "ZigZag with automatic step size detection for changing wave direction."
 #property version "1.0"
 #property link "https://www.mql5.com/en/users/jack857752"

@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                           Regression_Channel.mq4 |
 //|                                        Converted to MT4 by KimIV |
 //| Modified bt MrPip to place lines at 2 different Standard Devs    |

@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                  UniversalMACrossEA(barabashkakvn's edition).mq5 |
 //|                                       Copyright © 2006, firedave | 
 //|                    Partial Function Copyright © 2006, codersguru | 

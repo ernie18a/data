@@ -1,4 +1,4 @@
-﻿#property copyright "Copyright © 2010, Khlystov Vladimir"
+#property copyright "Copyright © 2010, Khlystov Vladimir"
 #property link      "cmillion@narod.ru"
 #property show_inputs
 //--------------------------------------------------------------------

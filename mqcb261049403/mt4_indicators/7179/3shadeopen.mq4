@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                                   3shadeopen.mq4 |
 //|                                         Copyright © 2006, sx ted |
 //| Purpose: shade New York or other sessions for chart time frames  |

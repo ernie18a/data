@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                  RSI_MAonRSI_Filling Step EA.mq5 |
 //|                         Copyright © 2021-2022, Vladimir Karputov |
 //|                      https://www.mql5.com/en/users/barabashkakvn |

@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                      ExMachina_PropDashboard.mq5 |
 //|                        Copyright 2026, ExMachina Trading Systems |
 //|                         https://www.mql5.com/en/users/algosphere |

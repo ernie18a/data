@@ -1,4 +1,4 @@
-﻿#property copyright "LoopXor"
+#property copyright "LoopXor"
 #property link      "Skype: Loopxor for communication" 
 #property description ""
 #property description "Signals:"

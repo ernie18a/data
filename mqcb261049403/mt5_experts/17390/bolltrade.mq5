@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                           BollTrade(barabashkakvn's edition).mq5 |
 //|                 Copyright © 2000-2007, MetaQuotes Software Corp. |
 //|                                         http://www.metaquotes.ru |

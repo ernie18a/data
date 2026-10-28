@@ -1,4 +1,4 @@
-﻿
+
 #property copyright "Shevss"
 #property link      "https://www.metaquotes.net"
 

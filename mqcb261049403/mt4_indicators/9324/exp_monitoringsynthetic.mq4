@@ -1,4 +1,4 @@
-﻿#property show_inputs
+#property show_inputs
 
 #import "user32.dll"
   int PostMessageA(int hWnd,int Msg,int wParam,int lParam);

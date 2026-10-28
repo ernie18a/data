@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                                     Gimmebar.mq4 |
 //| See Joe Ross Trading Manual on Gimme-Bars (e.g. from the         |
 //| library on www.trading-naked.com)                                |

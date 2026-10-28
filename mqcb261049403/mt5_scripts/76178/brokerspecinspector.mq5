@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //| BrokerSpecInspector.mq5                                 v1.10    |
 //| "Why was my order rejected?"                                     |
 //| Read-only script that prints, per symbol, the contract limits    |

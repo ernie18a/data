@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                           ColorTrend_CF_Sign.mq5 |
 //|                                         CF = Continuation Factor |
 //|               Converted by and Copyright: Ronald Verwer/ROVERCOM |

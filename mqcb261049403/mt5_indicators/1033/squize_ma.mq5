@@ -1,4 +1,4 @@
-﻿/*
+/*
  * The operation of the indicator requires
  * SmoothAlgorithms.mqh
  * to be placed in the directory: MetaTrader\\MQL5\Include

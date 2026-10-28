@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                                  RenkoShade2.mq4 |
 //|   Draws renko on normal tf main window                           |
 //|   main algo ripped from renkolivechart_v32                       |

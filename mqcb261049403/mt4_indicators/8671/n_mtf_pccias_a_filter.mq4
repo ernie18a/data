@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                             Digital PCCI Filter  |
 //|                      Copyright (c) Sergey Iljukhin, Novosibirsk. |
 //|                         mailto:sergey@tibet.ru http://fx.qrz.ru/ |

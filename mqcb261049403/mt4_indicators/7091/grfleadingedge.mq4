@@ -1,4 +1,4 @@
-﻿
+
 #property copyright "Copyleft © 2007, GammaRatForex"
 #property link      "http://www.gammarat.com/Forex/"
 //design based on the principles similar to the MetaTrader STD Channel

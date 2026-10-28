@@ -1,4 +1,4 @@
-﻿/*=============================================== H E A D E R ==============================================
+/*=============================================== H E A D E R ==============================================
                                  Pavol Krizan | paulie.sk@gmail.com 
                                  
 EN  = Please if anyone modifying and improves file, send to me on my email thank you !!!                                          

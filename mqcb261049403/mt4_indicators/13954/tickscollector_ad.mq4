@@ -1,4 +1,4 @@
-﻿#property copyright "Scriptong"
+#property copyright "Scriptong"
 #property link      "http://advancetools.net"
 #property description "English: Record a tick stream to a file and the formation of non-standard timeframes.\nDescription available online AdvanceTools.net in the \"Tick volume - Collector ticks.\"\n\nRussian: Запись тикового потока в файл и формирование нестандартных таймфреймов.\nОписание доступно на сайте AdvanceTools.net в разделе \"Тиковые объемы - Сборщик тиков.\""
 #property version "1.02"

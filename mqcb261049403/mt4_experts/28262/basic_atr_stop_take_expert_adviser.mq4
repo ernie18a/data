@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                           Basic ATR stop_take expert adviser.mq4 |
 //|                             Copyright 2020, DKP Sweden,CS Robots |
 //|                             https://www.mql5.com/en/users/kenpar |

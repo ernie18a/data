@@ -1,4 +1,4 @@
-﻿#property strict
+#property strict
 
 class CMovement{
    public:

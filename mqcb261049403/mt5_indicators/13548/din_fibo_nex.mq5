@@ -1,4 +1,4 @@
-﻿//+----------------------------------------------------------------------------------+
+//+----------------------------------------------------------------------------------+
 //|                                                                 Din_fibo_Nex.mq5 | 
 //|             Copyright © 2006, unknown author, get from kaizer, conversed by Rosh | 
 //|link to kaizer: http://forum.alpari-idc.ru/profile.php?mode=viewprofile&u=4196161 | 

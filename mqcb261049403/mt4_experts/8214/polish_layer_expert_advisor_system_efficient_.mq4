@@ -1,4 +1,4 @@
-﻿#property copyright "Copyright © 2008, PUNCHER from POLAND"
+#property copyright "Copyright © 2008, PUNCHER from POLAND"
 #property link      "bemowo@tlen.pl"
 // 5 or 15 MIN timeframe only
 extern int RSIPeriod=14;

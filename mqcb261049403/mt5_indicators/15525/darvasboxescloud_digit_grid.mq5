@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                  DarvasBoxesCloud_Digit_Grid.mq5 |
 //|                      Copyright © 2004, MetaQuotes Software Corp. |
 //|                                       https://www.metaquotes.net |

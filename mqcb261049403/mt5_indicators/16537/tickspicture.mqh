@@ -1,4 +1,4 @@
-﻿#property strict
+#property strict
 
 #include "Bars.mqh"
 #include "..\Resource.mqh"

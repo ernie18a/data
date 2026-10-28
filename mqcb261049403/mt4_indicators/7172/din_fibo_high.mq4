@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------------------------+
+//+------------------------------------------------------------------------------------+
 //|                                                Din_fibo_high.mq4                   |
 //|                                 unknown author, get from kaizer, converted by Rosh |
 //| link to kaizer: http://forum.alpari-idc.ru/profile.php?mode=viewprofile&u=4196161  |

@@ -1,4 +1,4 @@
-﻿
+
 #property description   "Shows price momentum in percentage or points during the last N seconds."
 #property description   "Alerts on above/below a given threshold."
 #property description   ""

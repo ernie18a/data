@@ -1,4 +1,4 @@
-﻿#include <AIV/Resources.mqh>
+#include <AIV/Resources.mqh>
 
 /**
  * Copy array of structures

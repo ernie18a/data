@@ -1,4 +1,4 @@
-﻿//+--------------------------------------------------------------------+
+//+--------------------------------------------------------------------+
 //|                                                      GurooEx01.mq5 |
 //|       Copyright © 2010, Marketing Dreams Ltd. All Rights Reserved. |
 //|                       http://community.trading-gurus.com/threads/9 |

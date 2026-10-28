@@ -1,4 +1,4 @@
-﻿//https://www.tradingview.com/script/6y9SkpnV-SSL-Channel/
+//https://www.tradingview.com/script/6y9SkpnV-SSL-Channel/
 #property copyright "Bugscoder Studio"
 #property link      "https://www.bugscoder.com/"
 #property version   "1.00"

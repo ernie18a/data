@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                            spreads.mq5
 //|
 //|answer to question  https://www.mql5.com/ru/forum/160683/page2440#comment_54567107 Before launching, make sure Symbol2 is in the market overview or add it

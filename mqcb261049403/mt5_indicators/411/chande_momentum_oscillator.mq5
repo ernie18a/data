@@ -1,4 +1,4 @@
-﻿/*
+/*
  *  << Chande Momentum Oscillator >>
  *
  * It used a library of smothing algorithms,

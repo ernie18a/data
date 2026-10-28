@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                      Waddah Attar Hidden Level   |
 //|           Copyright © 2007, Waddah Attar waddahattar@hotmail.com |
 //|                             Waddah Attar waddahattar@hotmail.com |

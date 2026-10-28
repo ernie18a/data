@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|This script resets the stop-loss orders and TakeProfit            |
 //|                              Copyright © 2012, Khlystov Vladimir |
 //|                                                cmillion@narod.ru |

@@ -1,4 +1,4 @@
-﻿// The Proper Bot
+// The Proper Bot
 // Patrick Burns
 
 #property strict

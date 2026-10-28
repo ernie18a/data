@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|             Crossing Moving Average(barabashkakvn's edition).mq5 |
 //|                                                             Rosh |
 //|               http://www.investo.ru/forum/viewtopic.php?t=124777 |

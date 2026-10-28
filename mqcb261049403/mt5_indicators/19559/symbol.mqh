@@ -1,4 +1,4 @@
-﻿class SYMBOL
+class SYMBOL
 {
 public:
   const string Name;

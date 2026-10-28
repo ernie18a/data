@@ -1,4 +1,4 @@
-﻿#property copyright     "Author: laplacianlab, CC Attribution-Noncommercial-No Derivate 3.0"
+#property copyright     "Author: laplacianlab, CC Attribution-Noncommercial-No Derivate 3.0"
 #property link          "https://www.mql5.com/en/forum/ea"
 #property version       "1.00"
 #property description   "This system, based on Momentum indicator, assumes that very strong price movements are determinant. It consists in riding the appearing tsunamis, for instance, an important US Nonfarm Payrolls release. HawaiianTsunamiSurfer works well on AUDUSD, USDJPY and EURUSD. It also works with a lower performance on USDCHF and GBPUSD."

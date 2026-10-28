@@ -1,4 +1,4 @@
-﻿//------------------------------------------------------------------
+//------------------------------------------------------------------
 #property strict
 #property copyright   "Copyright 2019, Soewono Effendi"
 #property link        "https://www.mql5.com/en/users/seffx"

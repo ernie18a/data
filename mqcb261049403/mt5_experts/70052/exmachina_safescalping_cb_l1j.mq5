@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                    ExMachina_SafeScalping_CB.mq5 |
 //|                         ExMachina Safe Scalping v1.0 — Code Base |
 //|                                        ExMachina Trading Systems |

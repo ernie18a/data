@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                      TrendMeLeaveMe(barabashkakvn's edition).mq5 | 
 //|                              Copyright © 2006, Eng. Waddah Attar |
 //|                                          waddahattar@hotmail.com |

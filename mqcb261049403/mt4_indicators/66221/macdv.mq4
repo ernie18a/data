@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------------------------------------------+
+//+------------------------------------------------------------------------------------------------------+
 //|  MACD-v Oscillator for MT4                                                                           |
 //|  Separate-window oscillator, histogram, and combo modes                                              |
 //|  https://www.tradingview.com/script/mMMHCZUx-AS-MACD-v-Hist-Alex-Spiroglou-S-M-A-R-T-TRADER-SYSTEMS/ |

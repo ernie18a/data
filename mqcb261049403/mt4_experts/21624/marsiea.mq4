@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 #property copyright "Copyright © 2018, Brian Lillard"
 #property link "https://www.mql5.com/en/users/subgenius/seller"
 #property version   "1.00"

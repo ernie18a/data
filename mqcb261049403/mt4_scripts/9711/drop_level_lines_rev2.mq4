@@ -1,4 +1,4 @@
-﻿#include <stdlib.mqh>   
+#include <stdlib.mqh>   
 
 /*
 This script will help you to draw horizontal segment lines (level lines).

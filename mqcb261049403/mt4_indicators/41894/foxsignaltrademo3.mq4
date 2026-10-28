@@ -1,4 +1,4 @@
-﻿//+---------------------------------------------------------------------+
+//+---------------------------------------------------------------------+
 //|                                               FOXSignal-TradeMo3.mq4|
 //| For more EXPERTS, INDICATORS, TRAILING EAs and SUPPORT Please visit:|
 //|                                         http://www.foxzard.com      |

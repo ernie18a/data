@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                              VWDD_Oscillator.mq5 |
 //|                                   Copyright 2026, Adeolu Gbadebo |
 //|                      Volume-Weighted Delta Divergence Oscillator |

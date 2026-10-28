@@ -1,4 +1,4 @@
-﻿//+-------------------------------------------------------------------------+
+//+-------------------------------------------------------------------------+
 //| BullsBearsEyes.mq4                                                      |
 //| EmeraldKing , transport_david                                           |
 //| http://finance.groups.yahoo.com/group/MetaTrader_Experts_and_Indicators/|

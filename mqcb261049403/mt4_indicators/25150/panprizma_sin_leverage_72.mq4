@@ -1,4 +1,4 @@
-﻿//|                                Copyright 2018, Aleksey Panfilov. |
+//|                                Copyright 2018, Aleksey Panfilov. |
 //|                                                filpan1@yandex.ru |
 //+------------------------------------------------------------------+
 #property copyright "Copyright © 2018, Aleksei Panfilov. filpan1@yandex.ru"

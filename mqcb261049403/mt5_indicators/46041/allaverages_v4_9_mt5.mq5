@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                             AllAverages_v4.9.mq5 |
 //|                                Copyright © 2019, TrendLaboratory |
 //|            http://finance.groups.yahoo.com/group/TrendLaboratory |

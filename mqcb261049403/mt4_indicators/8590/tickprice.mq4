@@ -1,4 +1,4 @@
-﻿//+——————————————————————+
+//+——————————————————————+
 //| Ticks2Rangebar.mq4 |
 //| A Sexy Trader |
 //| http://5to5000.wordpress.com |

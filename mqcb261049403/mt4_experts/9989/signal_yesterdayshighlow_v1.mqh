@@ -1,4 +1,4 @@
-﻿//+--------------------------------------------------------------------+
+//+--------------------------------------------------------------------+
 //|               Signalgeneration for Daily STP Entry Frame           |
 //|                      Copyright © 2010, Cheftrader                  |
 //|     If you want to donate, visit www.paypal.com and send money to  |

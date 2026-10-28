@@ -1,4 +1,4 @@
-﻿#property copyright "wazatrader"
+#property copyright "wazatrader"
 #property version "1.00"
 #property indicator_separate_window
 #property indicator_buffers 6

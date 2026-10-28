@@ -1,4 +1,4 @@
-﻿//Version  January 7, 2007 Final
+//Version  January 7, 2007 Final
 //+------------------------------------------------------------------+
 //|                                                   T3Series().mqh |
 //|                                T3 code: Copyright © 1998, Tilson |

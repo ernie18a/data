@@ -1,4 +1,4 @@
-﻿
+
 #property copyright "Copyright © 2005-2006, RickD"
 #property link      "http://www.e2e-fx.net"
 

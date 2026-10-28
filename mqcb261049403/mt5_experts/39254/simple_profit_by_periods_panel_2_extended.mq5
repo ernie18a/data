@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                    Simple Profit By Periods Panel 2 Extended.mq5 |
 //|                              Copyright © 2022, Vladimir Karputov |
 //|                      https://www.mql5.com/en/users/barabashkakvn |

@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                                MA_In_Color.mq4   |
 //|                      Copyright © 2004, MetaQuotes Software Corp. |
 //| Modified from LSMA_In_Color to use any MA by Robert Hill         |     

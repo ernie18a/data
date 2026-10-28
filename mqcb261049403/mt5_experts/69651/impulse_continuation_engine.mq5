@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                          ImpulseContinuationEngine [ICE_Pro].mq5 |
 //|                                    Copyright 2026, MT5 Developer |
 //|                          https://www.mql5.com/en/users/ritzfalih |

@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|              Altarius RSI Stohastic(barabashkakvn's edition).mq5 |
 //|                      Copyright © 2005, MetaQuotes Software Corp. |
 //|                                      https://www.metaquotes.net/ |

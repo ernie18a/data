@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|           TradingLab_Best_MACD_Strategy.mq5                      |
 //|           Author: Mueller Peter                                  |
 //|                   https://www.mql5.com/en/users/mullerp04/seller |

@@ -1,4 +1,4 @@
-﻿/*
+/*
  * The indicator uses the library SmoothAlgorithms.mqh 
  * it must be placed to  terminal_data_folder\MQL5\Include
  */

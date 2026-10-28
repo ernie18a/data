@@ -1,4 +1,4 @@
-﻿//+-------------------------------------------------------------------+
+//+-------------------------------------------------------------------+
 //|                                     wd.Multi_ClockPrice lite!.mq5 |
 //|                 Copyright © 2024, Karya Prima Rajasa Mediavestama |
 //|                                  Programmed by widhie75@yahoo.com |

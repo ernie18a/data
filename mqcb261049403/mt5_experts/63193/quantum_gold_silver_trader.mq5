@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                      Quantum Gold & Silver Trader 3.2.mq5        |
 //|        Enhanced with Quantum Trailing Stop & Deposit Protection  |
 //|             Full Auto-Optimization for Strategy Tester           |

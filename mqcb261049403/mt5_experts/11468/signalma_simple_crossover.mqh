@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                           SignalMA_Crossover.mqh |
 //|                         Adapted from SignalMA.mqh from MetaQuotes|
 //|                      Copyright © 2011, MetaQuotes Software Corp. |

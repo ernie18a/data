@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                      Volatility_Step_Channel.mq4 |
 //| Volatility Step Channel v1.01             Copyright 2015, fxborg |
 //|                                   http://fxborg-labo.hateblo.jp/ |

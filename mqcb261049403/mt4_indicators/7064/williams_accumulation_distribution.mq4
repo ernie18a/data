@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                          Williams' Accumulation/Distribution.mq4 |
 //|                      Copyright © 2007, MetaQuotes Software Corp. |
 //|                                       https://www.metaquotes.net |

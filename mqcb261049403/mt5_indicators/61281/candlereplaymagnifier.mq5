@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                        CandleReplayMagnifier.mq5 |
 //|                                    Copyright 2025, ProtimeTrader |
 //|                      https://www.mql5.com/en/users/protimetrader |

@@ -1,4 +1,4 @@
-﻿//------------------------------------------------------------------
+//------------------------------------------------------------------
 #property copyright   "© mladen, 2021"
 #property link        "mladenfx@gmail.com"
 #property description "Rsi with Hann windowing"

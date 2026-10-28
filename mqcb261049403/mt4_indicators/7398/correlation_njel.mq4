@@ -1,4 +1,4 @@
-﻿#property copyright "Copyright © 2007, njel [andrew opeyda]"
+#property copyright "Copyright © 2007, njel [andrew opeyda]"
 #property link      "www.signalslab.com [andrew.opeyda@gmail.com] %)"
 
 #property indicator_separate_window

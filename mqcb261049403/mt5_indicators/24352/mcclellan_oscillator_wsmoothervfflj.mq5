@@ -1,4 +1,4 @@
-﻿//------------------------------------------------------------------
+//------------------------------------------------------------------
 #property copyright   "© mladen, 2019"
 #property link        "mladenfx@gmail.com"
 #property description "McClellan Oscillator using \"smoother\" with floating levels"

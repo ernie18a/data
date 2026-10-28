@@ -1,4 +1,4 @@
-﻿#include <WinUser32.mqh>
+#include <WinUser32.mqh>
 	
 #define PAUSE 10
 #define VK_MENU 0x12 //ALT key

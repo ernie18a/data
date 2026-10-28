@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                           EhlersHighPassLowPassRoofingFilter.mq5 |
 //|                                Copyright 2020, Andrei Novichkov. |
 //|  Main Site: http://fxstill.com                                   |

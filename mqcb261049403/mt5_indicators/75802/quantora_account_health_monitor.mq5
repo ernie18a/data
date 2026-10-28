@@ -1,4 +1,4 @@
-﻿#property copyright "Copyright 2026 Quantora"
+#property copyright "Copyright 2026 Quantora"
 #property link      "https://www.mql5.com/en/users/quantora/seller"
 #property version   "1.00"
 #property strict

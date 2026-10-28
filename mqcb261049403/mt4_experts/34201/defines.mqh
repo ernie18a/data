@@ -1,4 +1,4 @@
-﻿#include <Controls\Button.mqh>
+#include <Controls\Button.mqh>
 #include <Controls\Dialog.mqh>
 #include <Controls\CheckBox.mqh>
 #include <Controls\Label.mqh>

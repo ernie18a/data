@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //| Based on total_power_indicator.mq4 by Daniel Fernandez           |
 //| Asirikuy.com 2011                                                |
 //|                                          TotalPowerIndicator.mq5 |

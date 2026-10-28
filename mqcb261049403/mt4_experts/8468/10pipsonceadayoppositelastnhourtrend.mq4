@@ -1,4 +1,4 @@
-﻿#property copyright "slacktrader"
+#property copyright "slacktrader"
 #property link      ""
 
 #define  MAGICMA           0

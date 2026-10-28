@@ -1,4 +1,4 @@
-﻿
+
 //Three grades take profit Grid System, use it on weak market and fluctuating market, may need close all positions at some time.
 
 //+------------------------------------------------------------------+

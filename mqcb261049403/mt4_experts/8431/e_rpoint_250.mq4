@@ -1,4 +1,4 @@
-﻿extern double Lots=0.1;
+extern double Lots=0.1;
 extern int TakeProfit=15;
 extern int StopLoss=999;
 extern int TrailingStop=0;

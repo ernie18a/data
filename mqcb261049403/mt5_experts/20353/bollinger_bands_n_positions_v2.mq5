@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|      Bollinger Bands N positions v2(barabashkakvn's edition).mq5 |
 //|                              Copyright © 2018, Vladimir Karputov |
 //|                                           http://wmua.ru/slesar/ |

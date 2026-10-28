@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                Brooky_FibIt_Extension_Script.mq4 |
 //|                        Copyright 2012, www.Brooky_Indicators.com |
 //|                                        www.Brooky_Indicators.com |

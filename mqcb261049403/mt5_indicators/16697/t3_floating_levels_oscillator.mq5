@@ -1,4 +1,4 @@
-﻿//------------------------------------------------------------------
+//------------------------------------------------------------------
 #property copyright   "© mladen, 2016, MetaQuotes Software Corp."
 #property link        "www.forex-tsd.com, forge.mql5.io"
 #property description "This T3 uses two methods for calculating T3"

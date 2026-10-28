@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                           Scirpt-Count-Consecutive-Bull-Bear.mq5 |
 //|                                      Copyright 2024,Rosh Jardine |
 //|                        https://www.mql5.com/en/users/roshjardine |

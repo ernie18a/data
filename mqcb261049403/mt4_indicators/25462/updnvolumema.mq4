@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                            Volume with Custom Moving Average.mq4 |
 //|                      Copyright © 2004, MetaQuotes Software Corp. |
 //|                                      https://www.metaquotes.net/ |

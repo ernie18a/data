@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                      Bull vs Medved(barabashkakvn's edition).mq5 |
 //|                       Copyright © 2008, Andrey Kuzmenko (Foxbat) |
 //|                                          mailto:foxbat-b@mail.ru |

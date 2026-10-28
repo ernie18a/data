@@ -1,4 +1,4 @@
-﻿#property version "1.02"
+#property version "1.02"
 #property copyright "Shows the ATR value as a % relative to the past X years. uwy"
 #property strict
 #property indicator_separate_window

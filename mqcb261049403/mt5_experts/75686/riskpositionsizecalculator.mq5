@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                 RiskPositionSizeCalculator.mq5   |
 //|                                                                  |
 //| Position size calculator driven by a fixed percentage risk.      |

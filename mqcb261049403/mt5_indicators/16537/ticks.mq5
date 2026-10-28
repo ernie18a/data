@@ -1,4 +1,4 @@
-﻿// https://www.mql5.com/ru/blogs/post/665093
+// https://www.mql5.com/ru/blogs/post/665093
 
 #property strict
 

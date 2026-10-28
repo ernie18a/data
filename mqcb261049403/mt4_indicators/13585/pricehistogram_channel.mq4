@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                        PriceHistgram_channel.mq4 |
 //|        PriceHistgram_channel              Copyright 2015, fxborg |
 //|                                  http://blog.livedoor.jp/fxborg/ |

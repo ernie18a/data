@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //| Disclaimer:                                                      |
 //| This EA is provided "as is" without warranty of any kind.        |
 //| Lupus Materia Ltd. shall not be liable for any losses incurred.  |

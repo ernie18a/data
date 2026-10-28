@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                       CyberiaTrader(barabashkakvn's edition).mq5 |
 //|        #property copyright "Copyright c 2006, Cyberia Decisions" |
 //|                           #property link "http://cyberia.org.ru" |

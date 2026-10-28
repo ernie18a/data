@@ -1,4 +1,4 @@
-﻿double avd.OperationVolume                                                                          ; // 01
+double avd.OperationVolume                                                                          ; // 01
                                                                                                       // 02
 double avd.VARLimit  = 200.00                                                                       ; // 03
 int    avi.VARPoints = 50                                                                           ; // 04

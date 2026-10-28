@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|            Unseasonalised Average Trading Range and Forecast.mq4 |
 //|                                                    Gary Thompson |
 //|                                       GaryThompsons.blogspot.com |

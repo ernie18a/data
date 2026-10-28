@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+ 
+//+------------------------------------------------------------------+ 
 //|   Qualitative Quantitative Estimation Indicator with Alerts      |
 //|                                   Copyright © 2006 Roman Ignatov |
 //|                                  mailto:roman.ignatov@gmail.com  | 

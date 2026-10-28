@@ -1,4 +1,4 @@
-﻿#property copyright "Denis Nikolaev"
+#property copyright "Denis Nikolaev"
 #property link      "https://www.mql5.com/ru/users/zaqcde/seller#products"
 #property version   "1.00"
 #property description "Local position copier on one computer from one terminal to another";

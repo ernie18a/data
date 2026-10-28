@@ -1,4 +1,4 @@
-﻿#property copyright   "https://bit.ly/4e0wwMk"
+#property copyright   "https://bit.ly/4e0wwMk"
 #property link        "https://bit.ly/4e0wwMk"
 #property description "Check Out Honeygain It's a Software for Windows Andoid IOS + more devices - Download Free & Earn Passive Income- Also Earn 25% On referalls - Currently there is a $4 sign up bonus "
 #property version     "1.0"

@@ -1,4 +1,4 @@
-﻿#property indicator_chart_window
+#property indicator_chart_window
 #property indicator_buffers 1
 #property indicator_label1  "Adaptive SMA"
 #property indicator_type1   DRAW_LINE

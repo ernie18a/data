@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                           Advanced version of CandlePatterns.mqh |
 //|                      Copyright © 2011, MetaQuotes Software Corp. |
 //|                                       https://www.metaquotes.net |

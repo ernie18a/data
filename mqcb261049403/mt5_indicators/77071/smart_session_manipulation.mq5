@@ -1,4 +1,4 @@
-﻿#property copyright "Copyright 2026, IronHawk Capital LLC"
+#property copyright "Copyright 2026, IronHawk Capital LLC"
 #property version   "3.00"
 #property strict
 #property indicator_chart_window

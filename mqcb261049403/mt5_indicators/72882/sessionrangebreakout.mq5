@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                         SessionRangeBreakout.mq5 |
 //|                              Session Range Visualizer for XAUUSD |
 //|                               Free indicator - Code Base edition |

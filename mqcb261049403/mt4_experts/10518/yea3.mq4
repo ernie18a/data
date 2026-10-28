@@ -1,4 +1,4 @@
-﻿
+
 
 #define SIGNAL_NONE 0
 #define SIGNAL_BUY   1

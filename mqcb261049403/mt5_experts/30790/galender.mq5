@@ -1,4 +1,4 @@
-﻿#include <Controls\Dialog.mqh>
+#include <Controls\Dialog.mqh>
 #include <Controls\ListView.mqh>
 #include <Arrays\ArrayString.mqh>
 

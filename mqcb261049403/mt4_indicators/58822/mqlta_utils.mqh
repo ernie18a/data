@@ -1,4 +1,4 @@
-﻿#property link          "https://www.earnforex.com/"
+#property link          "https://www.earnforex.com/"
 #property version       "1.01"
 #property strict
 #property copyright     "EarnForex.com - 2020-2021"

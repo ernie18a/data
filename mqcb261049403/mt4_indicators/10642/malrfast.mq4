@@ -1,4 +1,4 @@
-﻿#property  copyright "BECEMAL"
+#property  copyright "BECEMAL"
 #property  link      "http://www.becemal.ru/"
 #property  indicator_chart_window
 //#property  indicator_separate_window

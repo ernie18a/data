@@ -1,4 +1,4 @@
-﻿#define INDICATOR_BUFFERS 3
+#define INDICATOR_BUFFERS 3
 
 #property version   "1.00"
 #property description "MCD Hot money"

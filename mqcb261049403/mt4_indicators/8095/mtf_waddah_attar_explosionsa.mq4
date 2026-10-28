@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|MTF CJA   Alert           MTF_Waddah_Attar_ExplosionSA  M2.mq4 ik |
 //|    standalone        Copyright © 2006, MetaQuotes Software Corp. |
 //|    fxTSD.com                          https://www.metaquotes.net |

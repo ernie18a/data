@@ -1,4 +1,4 @@
-﻿// Tether Line Indicator
+// Tether Line Indicator
 #property copyright "Star"
 #property indicator_chart_window
 #property indicator_buffers 4

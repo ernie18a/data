@@ -1,4 +1,4 @@
-﻿#property strict
+#property strict
 extern double D = 800;
 extern double D2 = 2200;
 extern double D3 = 1600;

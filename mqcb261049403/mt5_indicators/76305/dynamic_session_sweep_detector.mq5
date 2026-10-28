@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                               Dynamic_Session_Sweep_Detector.mq5 |
 //|                                    Author: Gbadebo Adedayo David |
 //|   Tracks Asian / London / New York session ranges, locks them    |

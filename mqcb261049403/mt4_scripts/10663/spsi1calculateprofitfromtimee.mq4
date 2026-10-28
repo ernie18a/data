@@ -1,4 +1,4 @@
-﻿//IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII+
+//IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII+
 //|                                                 s-PSI@CalculateProfitFromTime.mq4 |
 //|                                       Copyright © 2011, Igor Stepovoi aka TarasBY |
 //|                                                                taras_bulba@tut.by |

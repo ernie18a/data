@@ -1,4 +1,4 @@
-﻿// MQL4&5-code
+// MQL4&5-code
 
 // Parallel use of the MetaTrader 4 and MetaTrader 5 order systems.
 // https://www.mql5.com/en/code/16006

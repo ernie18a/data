@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                       ZIWOX Sentiment and Technical Strategy.mq4 |
 //|                                        Copyright 2024, ssabbaghi |
 //|                          https://www.mql5.com/en/users/ssabbaghi |

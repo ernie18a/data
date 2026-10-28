@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                   Vortex Oscillator(barabashkakvn's edition).mq5 |
 //|An adaptation of the Vortex Indicator described in the            |
 //|January 2010 issue of Technical Analysis of Stocks & Commodities  |

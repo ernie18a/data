@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+ 
+//+------------------------------------------------------------------+ 
 //|                         Modified_Optimum_Elliptic_Filter_HTF.mq5 | 
 //|                               Copyright © 2015, Nikolay Kositsin | 
 //|                              Khabarovsk,   farria@mail.redcom.ru | 

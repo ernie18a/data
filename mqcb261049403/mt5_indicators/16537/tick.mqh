@@ -1,4 +1,4 @@
-﻿#property strict
+#property strict
 
 #define THOUSAND 1000
 

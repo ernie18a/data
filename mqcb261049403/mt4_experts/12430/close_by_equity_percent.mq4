@@ -1,4 +1,4 @@
-﻿
+
 #property copyright "Copyright © 2015, adam malik bin kasang"
 #property link      "adamkasang@gmail.com"
 

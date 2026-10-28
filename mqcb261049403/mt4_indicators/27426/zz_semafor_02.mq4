@@ -1,4 +1,4 @@
-﻿// This Code's semaphore zig zag algorithm came from
+// This Code's semaphore zig zag algorithm came from
 // === https://www.forexfactory.com/showthread.php?p=12559584#post12559584 ===
 // === !!!-MT4 SEMAFOR
 // Zig Zag Semafor

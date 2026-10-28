@@ -1,4 +1,4 @@
-﻿extern int INTERVAL_MILLIS = 100;
+extern int INTERVAL_MILLIS = 100;
 extern int serverzone = 0;
 extern int localzone = 8;
 

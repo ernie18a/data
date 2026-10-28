@@ -1,4 +1,4 @@
-﻿// Fractal Utilities
+// Fractal Utilities
 
 #property copyright "Developed by Hosein Rahnama"
 #property link "https://www.mql5.com/en/users/hosein.rahnama"

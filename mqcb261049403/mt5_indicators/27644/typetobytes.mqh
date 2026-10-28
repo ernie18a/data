@@ -1,4 +1,4 @@
-﻿// MQL4&5-code
+// MQL4&5-code
 
 #define __TYPETOBYTES__
 

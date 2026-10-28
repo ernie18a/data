@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                            FoxWave_SRZoneScanner.mq5             |
 //|                   Copyright Fox Wave - foxwavetrading.top        |
 //|          Multi-Timeframe Support & Resistance Zone Scanner       |

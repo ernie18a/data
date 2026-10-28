@@ -1,4 +1,4 @@
-﻿#property strict
+#property strict
 
 struct SMovement{
    int      direction;

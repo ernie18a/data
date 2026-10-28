@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                              Countdown clock.mq5 |
 //|        Copyright 2003-2026, Opengates Success International Org. |
 //|                            https://www.ffxmvdashboards.com/store |

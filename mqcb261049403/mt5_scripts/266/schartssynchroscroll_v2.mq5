@@ -1,4 +1,4 @@
-﻿#property copyright     "Integer"
+#property copyright     "Integer"
 #property link          "https://www.mql5.com/ru/users/integer"
 #property description   " "
 #property description   "      http://dmffx.com"

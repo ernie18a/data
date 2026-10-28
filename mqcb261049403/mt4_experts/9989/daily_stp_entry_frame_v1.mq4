@@ -1,4 +1,4 @@
-﻿//+--------------------------------------------------------------------+
+//+--------------------------------------------------------------------+
 //|                      Daily STP Entry Frame                         |
 //|                   Copyright © 2010, Cheftrader                     |
 //|  If you use this EA to build your live account EA, please donate   |

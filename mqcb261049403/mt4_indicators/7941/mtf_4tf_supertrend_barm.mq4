@@ -1,4 +1,4 @@
-﻿//+-----------------------------------------------------------------------------------------+
+//+-----------------------------------------------------------------------------------------+
 //|                                                             MTF_4TF_Supertrend_BarM.mq4 |
 //|                               Modified  from: FF Add-on to be used with 4TF HAS Bar.mq4 |
 //|                                         Modified by Matsu, from #MTF Supertrend Bar.mq4 |

@@ -1,4 +1,4 @@
-﻿ 
+ 
 #property copyright "GreenDog"
 #property link      "krot@inbox.ru" // v2.3 simplified trendline only no comments
 

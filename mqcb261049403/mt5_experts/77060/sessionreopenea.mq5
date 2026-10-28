@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                            SessionReopenEA.mq5  |
 //|      One trade a night at the CME gold reopen, and the honest    |
 //|      size of what that is worth                                  |

@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                    Spread & Pip Cost Checker.mq4 |
 //|                             Copyright 2015, Obujh Software Corp. |
 //|        https://www.obujh.org/scripts/spread-and-pip-cost-checker |

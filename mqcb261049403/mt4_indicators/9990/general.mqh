@@ -1,4 +1,4 @@
-﻿
+
 #property copyright "Emilio Stefano Reale FxTrading"
 
 int dSunday = 0;

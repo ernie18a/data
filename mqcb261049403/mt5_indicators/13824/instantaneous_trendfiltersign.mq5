@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|                                Instantaneous_TrendFilterSign.mq5 |
 //|                         Copyright © 2006, Luis Guilherme Damiani |
 //|                                      http://www.damianifx.com.br |

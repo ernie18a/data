@@ -1,4 +1,4 @@
-﻿//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
 //|              MSB_Pro_ALGO_Neon_Account_Dashboard.mq5             |
 //| Author: Kemal Mustafa Ozkan                                      |
 //| Free MT5 account dashboard for CodeBase                          |
