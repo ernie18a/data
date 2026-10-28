@@ -1,0 +1,18 @@
+Description:
+It uses monthly High/Low values.
+To draw all levels, it is necessary to download the history.
+In the second version the High and Low values are plotted with different colors. V2 also allows to use High/Low values for the defined number of months (N).
+Image:
+Version 1.
+Version 2.
+Editor's remark:
+Note that it's a mirror translation of the
+original Russian version
+.
+If you have any questions to the author, suggestions or comments, it's better to post them
+there
+.
+If you have found this code useful for trading or educational purposes, don't forget to thank author.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9389

@@ -1,0 +1,10 @@
+Advisor
+The EA receives signals from the custom indicator '
+VIDYA N Bars Borders
+'. Before executing a trading signal, the EA checks the current profit - if the profit is negative, then the signal is executed with an increased lot (the 'Position Increase Ratio' setting works).
+Pic. 1. VIDYA N Bars Borders Martingale
+The EA can hold both 'BUY' and 'SELL' positions at the same time:
+Pic. 2. VIDYA N Bars Borders Martingale
+All positions will be closed if the EA reaches profit (in money) '
+Profit target
+'.

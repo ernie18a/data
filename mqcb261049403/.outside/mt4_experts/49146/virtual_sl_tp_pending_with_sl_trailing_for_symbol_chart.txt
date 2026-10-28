@@ -1,0 +1,26 @@
+T"Virtual_SL_TP_Pending_with_SL_Trailing.mq4." It's designed to manage trades by setting virtual stop loss and take profit levels, along with a virtual pending order with an optional trailing stop loss feature.
+Here's a breakdown of the script:
+Copyright and Link
+: Specifies the copyright information and a link to the creator's website.
+Version
+: Indicates the version of the script.
+Description
+: Provides information about the script, including the creator's email address, intellectual property details, and a warning about using the software at your own risk.
+Input Parameters
+: External variables that allow users to customize the behavior of the EA, including:
+StopLossPoints : Initial Stop Loss in points.
+TakeProfitPoints : Initial Take Profit in points.
+SpreadThreshold : Spread threshold for virtual stop loss/take profit in points.
+TrailingStopPoints : Trailing stop in points for the virtual pending order.
+EnableTrailing : Option to enable or disable trailing stop.
+Global Variables
+: Variables used throughout the script to store initial spread, virtual stop loss, virtual take profit, and pending order price.
+Initialization Function ( OnInit )
+: Initializes the EA when it's attached to a chart. It calculates the initial virtual stop loss, take profit, and pending order price based on the input parameters.
+Tick Function ( OnTick )
+: Called on every tick of the price. It checks if the spread has increased beyond the threshold and adjusts the virtual stop loss, take profit, and pending order price accordingly. It also monitors if the price hits the virtual stop loss or take profit and closes the position. Additionally, if trailing stop is enabled and the price reaches the pending order price, it places a virtual pending order with a trailing stop loss.
+Close Position Function ( ClosePosition )
+: Closes the position when the price hits the virtual stop loss or take profit.
+Place Pending Order Function ( PlacePendingOrder )
+: Places a virtual pending order with a trailing stop loss if trailing stop is enabled.
+This EA provides a flexible way to manage trades using virtual levels and a trailing stop feature, allowing traders to automate their trade management process in MetaTrader 4.

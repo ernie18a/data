@@ -1,0 +1,70 @@
+Idea by
+:
+Scriptor
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+The EA only operates when a new bar appears on timeframe
+Working timeframe
+. Indicators are also taken from timeframe
+Working timeframe
+. The EA itself must only be used on timeframe
+M1
+!
+As soon as a signal appears to open BUY or SELL, a price level will be defined. As soon as the price crosses this price level, a new position will be opened.
+Signal to open BUY
+: MA Fast on bar #0 > MA Slow on bar #0;
+Signal to open SELL
+: MA Fast on bar #0 < MA Slow on bar #0.
+When defining a signal, the working time range is re-checked (if only
+Start Hour
+and
+Stop Hour
+are not equal to "-1").
+Positions are closed by the opposite signal. If parameter
+Friday Close Hour
+is not equal to "-1", your positions will be closed forcedly at
+Friday Close Hour
+on Friday.
+Inputs
+Working timeframe
+- timeframe to calculate the indicators;
+Stop Loss
+- stop loss ("0" disables the parameter);
+Take Profit
+- take profit ("0" disables the parameter);
+Trailing Stop
+- trailing ("0" disables the parameter);
+Trailing Step
+- trailing step.
+Start Hour
+- starting the time range (hours); "-1" disables BOTH parameters:
+Start Hour
+and
+Stop Hour
+;
+Stop Hour
+- ending the time range (hours), "-1" disables BOTH parameters:
+Start Hour
+and
+Stop Hour
+;
+Friday Close Hour
+- closing on Friday (hours), "-1" disables the parameter;
+BreakOut Level
+- break-out level;
+Lots
+- lot size is constant, parameter
+Risk
+having to be equal to "0";
+Risk
+- lot size is dynamic, in risk percents per trade, parameter
+Lots
+having to be equal to "0";
+magic number
+- unique identifier for the EA.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17057

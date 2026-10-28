@@ -1,0 +1,17 @@
+The indicator OzFx Signals v1.7.
+Parameters:
+PairsList="EURUSD,EURGBP,EURCHF,USDJPY,AUDUSD,EURJPY,GPBUSD,USDCAD,USDCHF,NZDUSD,CHFJPY,CADJPY,EURAUD,EURCAD,GBPCHF,AUDJPY,AUDNZD";//- This is where you add the currency pairs you want
+SymbolSuffix="";//- If your broker names the currency pairs with a suffix for a mini account (like an "m", for example), enter the suffix here
+ShowTimeTillNextBar=True;
+ShowAESSignal=True;
+Show4HoursSqueezeMore=True;
+SMAFilterOriginal=False;//- Filter Original Method with SMA
+SMAFilterAES=False;//- Filter AES Method with SMA
+SMAFilterPeriod=200;
+StochKPeriod=5;
+StochDPeriod=3;
+StochSlowing=3;
+ATRPeriod=5;
+OriginalAndAESTF=1440;//- Original & AES Signal Timeframe: 1, 15, 30, 60, 240 - Default is Daily (D1)
+SqueezeMoreTF=240;//- Squeeze-More Timeframe: 1, 15, 30, 60, 240 - Default is H4
+OzFx Signals v1.7

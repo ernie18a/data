@@ -1,0 +1,35 @@
+The
+Fractal_ADX
+indicator with the timeframe selection option available in input parameters:
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// Indicator chart period (timeframe)
+The Fractal_ADX_HTF repeater indicator requires the compiled custom indicator file Fractal_ADX.mq5 in order to compile. Place it in
+<terminal_data_folder>\MQL5\Indicators
+.
+After compilation, the Fractal_ADX_HTF.ex5 indicator file contains the Fractal_ADX.ex5 indicator as a
+resource
+,
+and therefore, it is not required to be present in the terminal folder for the compiled indicator to work! For this purpose, the corresponding code has been added to the indicator code in order to include the Fractal_ADX indicator in the executable file.
+The indicator executable file has been added as resources at the global scope
+//---- Include custom indicators in the indicator code as resources
+#resource
+\\Indicators\\Fractal_ADX.ex5
+Changed the string path to the indicator used as resource in the block of the OnInit() function
+Ind_Handle=
+iCustom
+(
+Symbol
+(),TimeFrame,
+"::Indicators\\Fractal_ADX"
+,e_period,normal_speed,IPC,
+0
+);
+Thus, the compiled executable file of the repeater indicator can be used on other trade terminals on its own without the original indicator.
+Fig1. The Fractal_ADX_HTF and Fractal_ADX_Cloud_HTF indicators
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17026

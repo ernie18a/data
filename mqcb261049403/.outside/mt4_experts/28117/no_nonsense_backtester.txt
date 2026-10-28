@@ -1,0 +1,41 @@
+NEW MT5 VERSION AVAILABLE, WITH EASIER TESTING, FASTER OPTIMIZATION AND LIVE TRADING!
+This EA is for testing No Nonsense Forex algos. With this EA you can test your algos much faster than eyeballing, using Soft4x or using any other EAs in Strategy tester.
+Main features:
+Test up to 100 symbols at once
+Works with almost every indicator (if you can't use your indicator then contact me)
+Based on VP algo structure
+Fully customizable
+Faster than other testing options
+After testing you get a CSV file for analyzing your results
+Don't need any coding experience
+Optimization feature that can test up to 100 000 different settings and find the best one.
+Starting:
+Put the NoNonsenseBacktester.ex4 file to MQL4/Experts folder
+Download indicators folder from:
+https://drive.google.com/open?id=1FASO924VCai0HzINfdLdpK26VKN8RNL6
+Put
+nnfxea
+folder to MQL4/Indicators folders
+Download history if you haven’t already
+Launch NoNonsenseBacktester on any chart you want
+Change settings (change the C1 choose indicator setting otherwise the EA will give an error)
+Wait for it to backtest
+Using your indicators:
+Optimizing:
+Converting results to Excel:
+Results
+Balance: how much money you have in the end of testing period.
+Yearly: your yearly average return in percents.
+DD balance: your end balance if your drawdown is fixed (you can lower you drawdown with lowering risk)
+Risk: what your input risk should be if you want to have DD Balance as a real Balance.
+DD: the current drawdown.
+PF: profit factor.
+TP: percent of trades that hit takeprofit.
+Profit: percent of trades that closed in profit.
+Trades: how many trades EA took.
+Older but in more detail getting started pdf file:
+https://drive.google.com/file/d/1Vgp_GdgU7YiB843YHHKhVu5Gu9M-H28T/view?usp=sharing
+Balance and drawdown aren’t 100% accurate.
+If you have any issues or
+find a good algo using this
+let me know at karel789@hotmail.com.

@@ -1,0 +1,9 @@
+This is the MT5 port of an indicator that I implemented for my personal use.
+It allows you to define a checklist that helps you check your rules before opening a trade.
+Keep in mind that this is not automatic. You must manually define the checks and mark them as according to your strategy.
+Settings
+TAG - Allows you to have more than one instance of this indicator on a chart. Keep in mind that the instances must all have different TAG values.
+Window Position
+- Allows you to define the default position where the window is opened.
+Check01...Check20
+- Allow you to define the rules of your checklist.

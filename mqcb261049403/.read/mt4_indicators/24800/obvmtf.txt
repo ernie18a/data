@@ -1,0 +1,3 @@
+Indicator OBVMTF base on the On Balance Volume indicator for MetaTrader 4
+with Signal and Alert, email alert, Push Notification and option to display trader info and signal on the chart.
+Hopefully useful for fellow traders.

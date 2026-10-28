@@ -1,0 +1,21 @@
+Using Golden Section Analysis of the market for yesterday and last week.
+The core is to calculate the start and end times of yesterday or last week. A week of market begins at 17:00 EST (USA EAST UTC -5) on Sunday, the market continues till Friday 17:00.
+Input parameters:
+startWeekDayOfWeek — first day of the week, 1 for East, 7 for West
+minTimeFrames — minimum timeframe
+maxTimeFrames — maximum timeframe
+Color settings:
+TimeRangeColor — time range line
+PriceRangeColor — price range line
+PriceMarkColor — price value mark
+GoldenSectionColor — golden section line
+Update 2015.06.26:
+Input Parameters:
+showFibo — show golden section
+init_YesterdayFibo, init_LastWeekFibo — indicator initialization complete. Limit index is only initialized once, if the date has not changed, it's easy to change the target object, such as increase the proportion of modified golden ratio.
+Added description information(OBJPROP_TEXT) for an object.
+YesterdayFibo on AUDUSDPro M30:
+LastWeekFibo on AUDUSDPro H4:
+Translated from Chinese by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/zh/code/13256

@@ -1,0 +1,4 @@
+Any symbol Bid, LastDayDiff(% or pip), Spread, Swap, Hi-Lo Today, Hi-Lo Week, Hi-Lo Mounth view to separate window.
+The symbols must be included in the list.
+Input parameters:
+Symbols: EURUSD,GBPUSD,USDCHF.

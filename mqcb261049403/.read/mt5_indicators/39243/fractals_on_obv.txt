@@ -1,0 +1,3 @@
+Indicator
+Fractals based on the iOBV indicator (On Balance Volume, OBV). Done at the request of the forum.
+Rice. 1. Fractals On OBV

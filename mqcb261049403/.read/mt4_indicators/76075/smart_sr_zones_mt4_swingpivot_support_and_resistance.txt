@@ -1,0 +1,23 @@
+## Description
+Support/resistance indicator for MetaTrader 4 built on real swing-pivot detection, not a simple highest/lowest-over-N-bars shortcut. Nearby pivots are clustered into zones and ranked by how many times price has actually tested them — each zone shows its touch count directly on the chart (e.g. "x8"), so you can see at a glance which levels are proven, not just recent.
+Zone thickness and the number of zones shown adapt automatically to keep the chart readable: pivots that sit close together on lower timeframes stay visually separated instead of merging into one solid block, and zones far from current price are hidden so only what's actually relevant stays on screen.
+Optional higher-timeframe context overlays zones from a longer timeframe (e.g. H4 levels on an H1 chart) in a distinct color — automatically skipped if it would just duplicate the chart's own timeframe.
+Includes proximity alerts (pop-up + sound) when price approaches a significant zone, with a cooldown so you're not spammed on every tick.
+**Features**
+-
+Swing-pivot detection (configurable strength) — not a crude range high/low
+-
+Zone clustering with touch-count strength ranking
+-
+Adaptive zone thickness — zones never visually overlap, on any timeframe
+-
+Distance-based relevance filter to avoid chart clutter
+-
+Optional higher-timeframe context zones, auto-disabled when redundant
+-
+Proximity alerts (pop-up + sound) with cooldown
+-
+Free, full source, open for questions
+For information purposes only — this indicator does not place or manage trades.
+---
+*Works exceptionally well alongside ArgosWatch Prop Challenge Guardian & Consistency Guard for a complete institutional risk and level-based trading workflow.*

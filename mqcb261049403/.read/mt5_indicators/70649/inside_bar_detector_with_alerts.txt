@@ -1,0 +1,9 @@
+Description:
+This indicator detects Inside Bar candlestick patterns on the chart and highlights them by coloring the candle. An Inside Bar occurs when the current candle’s high and low are fully contained within the range of the previous candle, indicating a period of market consolidation that may precede a breakout.
+When a new Inside Bar is detected on the most recently closed candle, the indicator can optionally trigger popup alerts and push notifications to inform the trader in real time.
+External Inputs:
+InsideBarColor : Color used to highlight Inside Bar candles.
+FireAlerts : Enables or disables alerts when an Inside Bar is detected.
+EnablePushNotification : Sends a push notification to the MetaTrader mobile application.
+EnablePopupAlert : Displays a popup alert in the MetaTrader terminal.
+Illustration:

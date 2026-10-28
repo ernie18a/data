@@ -1,0 +1,91 @@
+Strategy Tester Report
+NTOqF V1
+SIG-Demo.com (Build 225)
+Símbolo
+EURUSD (Euro vs US Dollar)
+Período
+Diário (D1) 2009.01.05 00:00 - 2009.08.11 00:00 (2009.01.01 - 2009.08.11)
+Modelo
+Pontos de controle (baseado no ponto mais próximo do periódo inferior com interpolação fractal)
+Parâmetros
+Lots=0.1; TakeProfit=78; StopLoss=6; useRSI=false; RSI=10; RSIPos=81; RSINeg=50; useSTO=true; STOK=5; STOD=5; STOL=3; useADX=true; ADX=4; useADXMain=true; ADXMainValue=17; Shift=1; useTrailingStop=true; TrailingStop=4; NumeroMagico=1000;
+Barras em teste
+1158
+Ticks modelados
+12874
+Qualidade do modelamento
+n/a
+Mismatched charts errors
+0
+Deposito Inicial
+3000.00
+Lucro líquido total
+33623.24
+Lucro Bruto
+38452.18
+Perda Bruta
+-4828.94
+Fator de lucro
+7.96
+Compensação esperada
+8.61
+diminuição absoluta
+6.00
+Perda máxima
+44.59 (0.20%)
+Relative drawdown
+0.56% (23.77)
+Total de negociações
+3906
+Posições de Venda (ganhos %)
+1753 (67.83%)
+Posições de Compras (ganhos %)
+2153 (67.67%)
+Negociações com Lucro (% do total)
+2646 (67.74%)
+Negociações com perdas (% do total)
+1260 (32.26%)
+Maior
+Negociações com lucro
+78.00
+Negociações com perda
+-7.77
+Média
+Negociações com lucro
+14.53
+Negociações com perda
+-3.83
+Máximo
+Ganhos consecutivos (lucro em dinheiro)
+29 (500.41)
+Perdas consecutivas (perdas em dinheiro)
+5 (-30.00)
+Máximo
+ganhos consecutivos (contagem de ganhos)
+585.00 (21)
+perdas consecutivas (contagem de perdas)
+-30.00 (5)
+Média
+ganhos consecutivos
+4
+perdas consecutivas
+2
+I´m still learning english, sorry the sentence errors...
+I try only in EURUSD, but this ea can work in any pair.
+-
+Optimize only in M1, set the time frame in config
+If you have any ideas to improve, please tell
+----------------------------------------------------------------------------
+Update to V2 - 12/08/2009
+- Added Stochastic High / low to determine trend
+- You can set any timeframe for each indicator
+----------------------------------------------------------------------------
+Update to V3 - 14/08/2009
+- Added SAR to determine trend
+- Added MA to determine trend
+----------------------------------------------------------------------------
+Now you have 56 combinations of indicators.....
+In V4 you have +- 224 combinations of indicators
+i´m still working to put MA Cross, MACD and custom indicator
+If you want orthers indicators, tell me
+Thanks all

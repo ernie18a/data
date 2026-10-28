@@ -1,0 +1,8 @@
+AdxVma trend that uses adxvma steps to show the trend.
+The trend is based on values similar to ADX (hence the name of the adxvma) but still different enough to make this indicator showing different values than adx trend would be. The values can be smoothed using one of the 5 smoothing types:
+simple moving average
+exponential moving average
+smoothed moving average
+linear weighted moving average
+adxvma average
+PS: regardless of the smoothing period or type, the state (the "trend") of the indicator will not change. The smoothing is introduce in order to have a cleaner picture where the trend is heading, not to alert the trend value. Trend value depends exclusively on the adxvma calculation. When adxvma is used for smoothing, that does not change the trend either (since in that case it is used only for smoothing, not for trend assessment).

@@ -1,0 +1,24 @@
+Indicator EURX displays index EUR.
+It has two configurable parameters:
+Applied price
+- index calculation price;
+Reverse
+- whether to reversely display the chart vertically (Yes/No).
+Calculations:
+EURX = 34.38805726 × EURUSD
+0.3155
+× EURGBP
+0.3056
+× EURJPY
+0.1891
+× EURSEK
+0.0785
+× EURCHF
+0.1113
+Note that for the indicator to oeprate, the following currency pairs must be available on the server: EURUSD, EURGBP, EURJPY, EURSEK, and EURCHF. If any of them is absent, the indicator will be calculated incorrectly. You should also keep in mind that the indicator will require some time to load the history necessary for all those symbols, if it is launched for the first time or if the timeframe is switched.
+The indicator works in the chart of any instrument.
+Fig 1. EUR index chart
+Fig. 2. Inverted chart of EUR index
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21235

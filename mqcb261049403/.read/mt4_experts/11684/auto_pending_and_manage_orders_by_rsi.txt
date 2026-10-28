@@ -1,0 +1,192 @@
+Auto pending orders by
+RSI
+;
+Lower risk at weekend and restore position the next week;
+Mail some useful information.
+Recommendations:
+1. Set testmode true for backtest, false for real mode:
+extern
+bool
+testmode =
+false
+;
+//true:for backtest
+2. If in testmode,please set only one of the tradesymbol array,for example:
+extern
+string
+tradesymbol1 =
+"EURUSDm_802_2802_1602_200_860"
+;
+extern
+string
+tradesymbol2 =
+""
+;
+extern
+string
+tradesymbol3 =
+""
+;
+extern
+string
+tradesymbol4 =
+""
+;
+extern
+string
+tradesymbol5 =
+""
+;
+extern
+string
+tradesymbol6 =
+""
+;
+if in real account mode, set
+testmode false,and config tradesymbol like
+(use "," to separate symbols,use "_" to separate a symbol's parameters):
+extern
+string
+tradesymbol1 =
+"EURUSDm_802_2802_1602_200_860,USDCHFm_506_2606_1506_120_600"
+;
+extern
+string
+tradesymbol2 =
+"USDJPYm_460_2802_1302_100_320"
+;
+extern
+string
+tradesymbol3 =
+""
+;
+extern
+string
+tradesymbol4 =
+""
+;
+extern
+string
+tradesymbol5 =
+""
+;
+extern
+string
+tradesymbol6 =
+""
+;
+EURUSDm_802_2802_1602_200_860 means:
+symbol:
+EURUSDm
+(m means my exness mini account,possibly you should modify to your own symbol)
+pendingpips:
+802(pending gap)
+weekendpluspips:
+2802(widen plus gap at weekend)
+cancelpips:
+1602(when the gap exceed this pips,close the pending order)
+trailingsl:
+200(trailing stop loss)
+takeprofit:
+860(virtual take profit)
+3. If you want to delete pending orders at weekend, set weekenddelete=true, else if you want to widen pending gap and restore it the next week, please set weekenddelete=false.
+extern
+bool
+weekenddelete =
+false
+;
+//true:delete false:modify
+4. Weekend mode begin and end time (5 means Friday,7 means Sunday (the time is GMT,maybe you should adjust with your local time,the default parameters run well in Beijing Time):
+//trading end time in friday
+extern
+int
+weekendbeginday =
+5
+;
+extern
+string
+weekendbegintime =
+"20:30"
+;
+//friday 20:30
+extern
+int
+weekendendday =
+7
+;
+extern
+string
+weekendendtime =
+"23:30"
+;
+//sunday 20:30
+5. All symbols
+(maybe not trade symbol)
+you want to mail the RSI value prompt (>70 or <30) and periodically report to you.obviously,
+you should modify the AUDJPYm if your account is not mini one.
+string
+symbolsstr1 =
+"AUDJPYm,AUDCADm,AUDCHFm,AUDNZDm,AUDSGDm,AUDUSDm,CADCHFm,CADHKDm,CADJPYm,CHFJPYm,CHFPLNm,CHFSGDm,EURAUDm,EURBRLm,EURCADm,EURCHFm,EURDKKm,EURGBPm,EURHKDm,EURHUFm,EURJPYm,EURMXNm"
+;
+string
+symbolsstr2 =
+"GBPCHFm,GBPJPYm,GBPNZDm,GBPUSDm,HKDJPYm,HUFJPYm,MXNJPYm,NZDCADm,NZDCHFm,NZDJPYm,NZDSGDm,NZDUSDm,SGDJPYm,USDBRLm,USDCADm,USDCHFm,USDCZKm,USDDKKm,USDHKDm,USDHUFm,USDJPYm,USDMXNm"
+;
+string
+symbolsstr3 =
+"EURNOKm,EURNZDm,EURPLNm,EURRUBm,EURSEKm,EURSGDm,EURTRYm,EURUSDm,EURZARm,GBPAUDm,GBPCADm,USDNOKm,USDPLNm,USDRONm,USDRUBm,USDSEKm,USDSGDm,USDTRYm,USDZARm,XAGUSDm,XAUUSDm,ZARJPYm"
+;
+long
+sendmininterval =
+3600
+;
+6. RSI configuration:
+//rsi
+extern
+int
+rsitimeframe =
+PERIOD_H4
+;
+extern
+int
+rsiperiod  =
+14
+;
+extern
+ENUM_APPLIED_PRICE
+rsiappliedprice =
+PRICE_CLOSE
+;
+extern
+int
+rsishift =
+0
+;
+extern
+double
+rsiupperline =
+70
+;
+extern
+double
+rsilowerline =
+30
+;
+7. Use the magicweekendexpiration to identify the weekend mode,if anyone has better way please kindly tell me
+int
+magicweekendexpiration =
+1577836800
+;
+//2020-1-1 0:0:0 intvalue:1577836800
+8. Others:
+If modify to weekend mode failed, the EA will send a mail and try MAX_MODIFY_TRY_TIME(100 default) times till success.
+No stop loss applied, and if little loss order (min buy or max sell order) of one symbol exceed pendingpips, the EA will pend another order of the same symbol.
+In test mode, if the equity less than 95% of balance, EA will write the status to warning files.
+if
+(((AccountEquity()/AccountBalance()) <
+0.95
+))
+        {
+            WriteToWarningFile();
+        }
+If you have found any bugs or have suggestions, please kindly let me know.

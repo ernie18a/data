@@ -1,0 +1,30 @@
+Description:
+I present to you a new version of the
+Open Interest Online ©
+Indicator.
+Now it has become more intuitive with a new design.
+The main features are:
+- Automatic determination of background and color scheme;
+- There is an opportunity to show levels and their values which are closest to the price, it also can show all of 15 strikes.
+- Now it is possible to change level brightness and show only levels background.
+- Numerical values of the Open Interest by Call\Put is optional,
+- Historical levels are optional.
+When
+Open Interest Put
+values becomes
+greater
+than
+Open Interest Call
+values the indicator color is
+red
+(color of short position), if Call becomes greater than Put, it's blue (color of long position).
+The color deep and brightness corresponds to the quantitative ratio of the Open Interest to its maximum level for this date, so now the level strength is more visual.
+The numerical values of the levels corresponds to Call/Put ratios.
+Image:
+Editor's remark:
+Note that it's an English translation of the
+original Russian version
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9334

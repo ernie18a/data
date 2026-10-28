@@ -1,0 +1,3 @@
+Author:
+Joe Chalhoub
+This FX custom indicator is very easy to set, it does not predict or forecast future trend movement it allows traders to take the maximum profit from a long or short trade. To install this indicator open the H5 period and insert it. It uses the 5 minutes period for entry points.

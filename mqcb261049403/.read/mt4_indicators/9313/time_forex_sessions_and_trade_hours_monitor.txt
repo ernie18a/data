@@ -1,0 +1,20 @@
+Author:
+Vadim Baklanov (
+gip
+)
+Indicator shows a different Forex sessions, market hours of the exchanges and user defined time lines.
+It's a very useful tool for manual and automatic trading.
+To perform a correct winter/summer time change, check the following parameters:
+Broker_standard_time_zone
+- time zone, standard UTC+ broker server shift. The default value +1 - EST (Eastern Standard Time).
+Broker_DST_start
+- Broker server's date and time for the summer time change.
+Broker_DST_end
+- Broker server's date and time for the winter time (standard) change.
+Fig 1. Trade session example
+The only thing that requires explanation - the mouse icon in the right corner of the indicator.
+It's mode selector. If you drag the icon located on the lower symbol, you will switch to the session borders display mode.
+Fig 2. Session borders example
+Fig 3. Custom defined time lines example
+Remark:
+At timeframes M30 and H1, it shows only session borders. At higher time frames (H4 and above) it shows only time (hours).

@@ -1,0 +1,90 @@
+Author of the original idea and methodology
+:
+Alex Spiroglou
+,
+MT4 conversion and code adaptation
+:
+OU
+This release brings
+MACD-v: Volatility Normalised Momentum
+to MT4, based on the award-winning research and original framework developed by
+Alex Spiroglou
+. Spiroglou's work pushed beyond the conventional MACD by treating momentum through a volatility-aware lens, producing a cleaner and more robust reading of trend pressure across changing market conditions. The underlying concept is his. This MT4 package is the platform conversion and implementation of that idea, built to make the model practical for MetaTrader users.
+Spiroglou's 2022 research on MACD-v earned major industry recognition, including the
+Charles H. Dow Award (2022)
+from the CMT Association and the
+Founders Award (2022)
+for advances in active investment management. That matters because MACD-v is not just another cosmetic MACD variation. It is a more thoughtful momentum framework that normalizes the fast-versus-slow EMA spread with ATR, helping traders compare momentum more consistently when volatility expands or contracts.
+This MT4 version includes
+two companion tools
+: a separate-window
+MACD-v oscillator
+and a chart-window
+MACD-v Panels
+module. Together they provide both detailed single-chart analysis and fast top-down scanning across multiple symbols and timeframes.
+How the calculation works
+The core value is built from the difference between a fast EMA and a slow EMA, then normalized by ATR and scaled by 100:
+MACD-v = ((Fast EMA - Slow EMA) / ATR) x 100
+A smoothed signal line is then calculated from the MACD-v value, and the histogram plots the distance between the two. This produces a momentum model that reacts to directional pressure while staying better balanced across quiet and volatile regimes. Instead of reading raw EMA spread alone, the indicator frames momentum in relation to current market movement, which is exactly what makes Spiroglou's approach stand out.
+What is included
+1. MACD-v Oscillator
+The main oscillator is displayed in a separate indicator window and supports three display modes:
+Oscillator: Shows the MACD-v line structure with the signal line.
+Histogram: Shows momentum expansion and contraction as a two-color histogram.
+Oscillator + Histogram: Combines both views in one panel.
+The oscillator also classifies momentum into six states, making the readout far more descriptive than a standard MACD:
+Range: Market is contained around the neutral zone for an extended period.
+Risk: Momentum is stretched into extreme territory.
+Rally: Bullish momentum is expanding above the signal line.
+Rebound: Positive recovery is developing from a weaker zone.
+Retrace: Momentum is cooling while remaining near the middle structure.
+Reverse: Bearish pressure is active below the signal line.
+Optional reference levels can be shown for faster context reading. In oscillator mode the indicator can draw 0, +/-50, +/-100 and +/-150. In histogram mode it can draw 0 and +/-40. The oscillator can also be calculated from an independent timeframe, so traders can plot a higher-timeframe momentum model directly on a lower-timeframe chart.
+2. MACD-v Panels
+The companion panel version runs in the chart window and provides two scanning modes:
+Heat Map: Tracks the current chart symbol across selected timeframes.
+Dashboard: Tracks multiple symbols across multiple timeframes in one grid.
+The panel is designed for fast situational awareness. Each cell displays the latest MACD-v value together with its active state and histogram bias. Cell background color follows the current MACD-v state, so the dashboard can be read visually in seconds.
+The implementation also includes practical broker-handling logic. Symbol aliases, common prefixes, and common suffixes can be defined so the dashboard can resolve broker-specific names automatically. This is especially useful when one broker uses US500, another uses SPX500, and another uses custom suffixes. The panel will attempt to match the requested market to the available broker symbol before reporting it as unavailable.
+Navigation is interactive as well. Clicking a timeframe header, symbol header, or dashboard cell can switch the active chart to the corresponding symbol and/or timeframe. That turns the panel into a working scanner rather than a passive display.
+Interpretation
+MACD-v retains the intuitive logic traders appreciate in momentum indicators, but presents it in a more adaptive and informative form. A move above the signal line suggests strengthening bullish momentum. A move below the signal line suggests strengthening bearish momentum. Expanding histogram bars indicate acceleration, while contracting bars warn that momentum is fading. Extreme readings highlight elevated directional pressure, and extended movement around the central zone may point to a range environment rather than trend continuation.
+The key difference is that these readings are volatility-normalized. That gives the indicator a more stable frame of reference when market conditions change. It is one of the reasons Spiroglou's work resonates with serious momentum traders: the model is designed to improve interpretation, not just appearance.
+External variables
+MACD-v Oscillator inputs
+DisplayMode: Selects Oscillator, Histogram, or Oscillator + Histogram view.
+ShowLevels: Enables the built-in horizontal reference levels.
+MaxBarsBack: Limits the number of historical bars processed. Use 0 to process all available bars.
+SourcePrice: Price source used for the EMA calculation.
+OscillatorTF: Timeframe used for the MACD-v calculation. Use 0 for the current chart timeframe.
+FastLen: Period of the fast EMA in the MACD-v formula.
+SlowLen: Period of the slow EMA in the MACD-v formula.
+SignalLen: Smoothing length for the signal line.
+ATRPeriod: ATR lookback used to normalize the EMA spread.
+MACD-v Panels inputs
+DisplayMode: Selects Heat Map or Dashboard mode.
+SourcePrice: Price source used for the MACD-v calculation.
+OscillatorTF: Timeframe used for the MACD-v engine. Use 0 for the current chart timeframe.
+FastLen: Period of the fast EMA.
+SlowLen: Period of the slow EMA.
+SignalLen: Smoothing length for the signal line.
+ATRPeriod: ATR lookback used for volatility normalization.
+UseTF1 to UseTF5: Enables or disables each dashboard timeframe slot.
+TF1 to TF5: Timeframes used in the Heat Map and Dashboard grid.
+UseSymbol1 to UseSymbol7: Enables or disables each dashboard symbol slot.
+Symbol1 to Symbol7: Symbols to scan in Dashboard mode.
+SymbolAliasMap: Optional alias definitions for broker symbol translation.
+CommonSuffixes: Common broker suffixes used during symbol resolution.
+CommonPrefixes: Common broker prefixes used during symbol resolution.
+PanelRefreshSeconds: Refresh interval for panel updates.
+PanelCorner: Screen corner used as the panel anchor.
+PanelX and PanelY: Horizontal and vertical panel offsets.
+PanelFontSize: Base font size for panel text.
+PanelFontName: Font used in the panel.
+PanelBackground: Background color of the panel.
+PanelText: Standard text color.
+PanelHeader: Header text color.
+The package also performs internal validation. If the chart timeframe is higher than the selected calculation timeframe, or if plotted values drift from the latest calculated snapshot, the indicator can display a warning. This helps maintain consistency between what is calculated and what is shown.
+Recommended use
+MACD-v can be used on all liquid symbols and across all major timeframes. Intraday traders may favor M15 to H1, while swing traders may prefer H4 to D1. For best structure, the chart timeframe should not exceed the selected calculation timeframe. The oscillator is well suited for focused trade analysis, while the panel module is ideal for top-down scanning, market rotation checks, and quickly locating symbols where momentum state and timeframe alignment are already in place.
+As with most professional workflows, MACD-v becomes even stronger when combined with market structure, higher-timeframe bias, or a confirmation filter. Used that way, Spiroglou's framework offers a smarter momentum lens than the standard MACD template and gives MT4 users access to a genuinely modern interpretation of trend behavior.

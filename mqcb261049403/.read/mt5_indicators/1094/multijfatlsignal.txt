@@ -1,0 +1,13 @@
+The MultiJFatlSignal indicator shows the information about active trends using the
+JFatl
+four indicators value from different Time Frame. Each the JFatl indicator corresponds to one of four indicator lines. If the JFatl indicator rises, line color is blue, if falls it is pink. Color squares on lines occur in the moment of bar changing to the corresponding Time Frame.
+Place the JFatl.mq5 indicator to the folder terminal_directory\MQL5\Indicators.
+The indicator
+JFatlmq5
+uses SmoothAlgorithms.mqh library classes (must be copied to the terminal_data_folder\MQL5\Include). The use of the classes was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Fig.1 The MultiJFatlSignal indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1094

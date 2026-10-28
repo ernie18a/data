@@ -1,0 +1,9 @@
+Advanced EA optimized on selling positions on EURUSD.
+Uses
+advanced calculations
+for opening positions and ALSO
+when to close them
+!
+Recommendations:
+You only have to attach it on 5min Chart EURUSD.
+Open lot size:0.05

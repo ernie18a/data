@@ -1,0 +1,17 @@
+INTRODUCTION :
+Have you notice that the market really moves on some days while it barely moves on other days ? Let's not forget that when the market really moves we can actually make some decent profit. So if you would like to know which days the market really moves, this is the script that will identify these days for you.
+This is one of the important thing to consider in order to improve our strategy by calculating on average how much an asset moves, in which it will allow us to identify the best days to trade when the market moves the most as well as the worst days to trade in order to prevent trading during these days.
+HOW TO USE IT :
+You can check the following video that will explain how to
+install and run the script,
+analyze historical data and convert it into a column chart
+PARAMETERS :
+This script has 1 input, which is the number of trading days.
+REMARK:
+I've already published a script on best day to trade (https://www.mql5.com/en/code/31594).
+You can check the following video that will explain how to
+install and run the script,
+analyze historical data and convert it into a column chart
+integrate this information into your strategy
+PARAMETERS :
+This script has 1 input, which is the number of trading days.

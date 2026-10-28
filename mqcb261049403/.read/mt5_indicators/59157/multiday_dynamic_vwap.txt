@@ -1,0 +1,63 @@
+This indicator plots a
+multi-day VWAP (Volume Weighted Average Price)
+level dynamically, starting from the daily timeframe by default (timeframe is fully customizable in the input). Because of the fact that it can calculate the VWAP over multiple days (or bars if you will), it is similar to the anchored VWAP. It's powerful for identifying
+key support/resistance levels
+,
+trend confirmation
+, and
+mean reversion signals
+. Along with a dynamically updating VWAP level, the market closes prices are plotted with the heiken ashi trend to help visualize bearish and bullish trends.
+VWAP represents the
+average price weighted by volume
+over a selected time period. Unlike simple averages, it tells you
+where the majority of volume has traded
+, and this is a crucial benchmark for institutions.
+When
+looking for signals with VWAP, you ideally want to see how the market price moves from the VWAP price, as opposed to buying directly at the VWAP price.
+Trend Support / Resistance:
+Downtrend:
+VWAP acts as
+resistance when the current price is below VWAP
+.
+Price below VWAP = sellers are in control.
+Uptrend:
+VWAP acts as
+support when the current price is above VWAP
+.
+Price above VWAP = buyers are in control.
+Momentum:
+When looking for trade signals using VWAP, it’s more insightful to focus on
+how the price moves
+away
+from the VWAP level
+rather than entering right at it.
+If price is
+shifting strongly away
+from VWAP in the direction of the trend, it often signals
+momentum continuation
+or a
+strong directional bias
+.
+This movement shows that
+market participants are committing capital
+and shifting the perceived value, revealing a potentially high-conviction opportunity.
+Breakout Signals:
+Bullish Breakout:
+If the price
+breaks above
+VWAP, it's a
+potential buy signal
+—indicating buyers are taking control.
+Bearish Breakout:
+If the price
+breaks below
+VWAP, it signals a
+potential sell opportunity
+as sellers dominate.
+Mean Reversion in Ranging Markets:
+In
+sideways or consolidating markets
+, the price often
+retreats back to VWAP
+.
+This offers high-probability counter-trend trades and mean reversion setups.

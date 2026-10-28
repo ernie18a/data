@@ -1,0 +1,16 @@
+Box size:
+fixed (points) or ATR-based, so it adapts to the symbol and timeframe. The reversal is configurable (default 3 boxes). The price source is Close or High/Low.
+Pattern detection:
+double and triple top breakout, double and triple bottom breakdown, bullish and bearish catapult, and triangle. Names are shown on the chart.
+BUY/SELL signals
+on breakouts, with optional filters: higher low / lower high, EMA trend filter, ADX minimum, trading session, and signal only on direction change.
+Info panel
+on the main chart, with Full, Compact and Minimal modes. It shows the signal, entry, SL, TP, risk/reward, lot size from the risk percentage, spread, ATR, and warnings for an oversized SL, a late entry or a wide spread. It also shows the P&F structure.
+Support/resistance:
+R1/R2/S1/S2 lines and labels drawn on the main chart from the P&F columns.
+Alerts:
+popup, sound, push and e-mail, for signals, patterns or new columns.
+Signal buffer
+for use in EAs: +1 BUY, -1 SELL, 0 none.
+Notes:
+the “closed bars only” option keeps signals stable, with no repainting on closed bars. Colors, panel size and text scale are all customizable.

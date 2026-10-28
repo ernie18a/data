@@ -1,0 +1,7 @@
+Some intraday manual trading systems use trade start and trade stop time. For example, the night flat is determined at 8 a.m. After 8 p.m. no new trades are allowed and any open trades are forcibly closed.
+This indicator draws a period of operation that specifies trade start time and trade stop time.
+You can set different colors of the rectangle for different color schemes and use the fill.
+The operation of the indicator is shown in this video:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1072

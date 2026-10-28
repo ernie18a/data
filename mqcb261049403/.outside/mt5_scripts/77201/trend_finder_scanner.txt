@@ -1,0 +1,24 @@
+The essence and logic behind the script:
+Scanning:
+Retrieves all financial instruments open in the ‘Market Watch’ window
+.
+R² trend smoothness filter:
+Calculates a linear regression over a specified number of bars (50 by default)
+. If the price action is too choppy and the
+R²
+coefficient
+is less than 0.70
+, the pair is rejected
+.
+Trend Strength Filter (ADX):
+Retrieves the ADX indicator values
+. If the value is below 25.0, the pair is excluded
+.
+Data output:
+For pairs that pass the filter, the trend direction (UP/DOWN), the precision of the movement and the ADX value are displayed in the ‘Experts’ tab
+.
+How to use:
+Simply drag and drop the script onto any hourly (H1) chart. It will immediately scan the chart and display a list of the identified trending pairs in the ‘Experts’ tab at the bottom of the terminal.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/77201

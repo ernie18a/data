@@ -1,0 +1,13 @@
+The real author:
+Vadim Shumilov
+Normalized Volume is an indicator whose main purpose is to filter false signals which occur in the side movement of the market.
+The basis of the strong side of the Normalized Volume indicator is a work with the volume and price, and a theory that occurrence of strong trend movements is, as a rule, supported by increase of the market volume. Therefore the Normalized Volumе indicator has low and high volume filtering.
+The signal to open position occurs above the horizontal line "1", the price movement is strong enough and the breakthrough can be considered as true.
+The principles of the Normalized Volume indicator are particularly useful in the breakthrough or rollback strategies, as they allow to go away from the unnecessary losses.
+The indicator uses SmoothAlgorithms.mqh library classes (must be copied to the terminal_data_folder\MQL5\Include). The use of the classes was thoroughly described in the article
+"Averaging price series for intermediate calculations without using additional buffers"
+.
+Fig.1 The Normalized Volume indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1464

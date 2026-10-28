@@ -1,0 +1,38 @@
+Oscillator
+i-KlPrice
+using volumes.
+Calculation formula:
+KlPrice_Vol = KlPrice  * Volume
+Since the smoothing of the final indicator is already in the indicator, multiplying by volume is performed before such smoothing.
+Understandably, the overbought/oversold levels must be recalculated in such a modified oscillator by the same formula, considering this additional smoothing, which has been done. In the final version, these levels are not permanent anymore. We used two levels of each, their breakthrough being indicated accordingly.
+input
+int
+HighLevel2=+
+150
+;
+//overbought level 2
+input
+int
+HighLevel1=+
+20
+;
+//overbought level 1
+input
+int
+LowLevel1=-
+20
+;
+//oversold level 1
+input
+int
+LowLevel2=-
+150
+;
+//oversold level 2
+In the indicator inputs, these levels are represented as the levels of the initial indicator, while multiplying by volumes and smoothing take place at each tick of the indicator.
+The indicator uses the classes of library SmoothAlgorithms.mqh (to be copied to terminal_data_catalog\MQL5\Include), working with which was described in details in article
+Averaging Price Series for Intermediate Calculations without Using Additional Buffers.
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22688

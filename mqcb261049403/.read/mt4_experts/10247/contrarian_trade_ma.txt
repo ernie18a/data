@@ -1,0 +1,2 @@
+Contrarian trade using MA indicator And Trendfollow trade using Breakout system.
+The Advisor is adjusted on D1 timeframe and currency pair USDJPY.

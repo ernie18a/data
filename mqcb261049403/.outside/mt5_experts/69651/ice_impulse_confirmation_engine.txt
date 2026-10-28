@@ -1,0 +1,203 @@
+1. Main Architecture (The Three Pillars)
+This system works through three integrated validation layers:
+Detection (Intel): Uses the ratio of volume and candle body to ATR to detect the initial "explosion." It looks not only at the price, but also at the energy (volume) behind that price.
+Confirmation (Defense): Uses an Adaptive Trend Filter (MA Slope) and Volatility Guard to ensure the EA doesn't trade in a "dead" market or when spreads are wild.
+Execution (Attack): Uses three-scenario logic (Breakout, Pullback, & Velocity) to ensure the EA enters the market at the best price without losing momentum.
+2. Logical Advantage
+After a refactoring process, ICE now has intelligent features:
+ATR Auto-Point Calibration: The EA automatically recognizes whether it is running on Gold (XAUUSD), Forex, or Indices without the need to adjust complex decimal settings.
+//+------------------------------------------------------------------+
+//| Get adaptive body ratio based on volatility                     |
+//+------------------------------------------------------------------+
+double GetAdaptiveBodyRatio()
+  {
+   if(!InpEnableAdaptive)
+      return InpMinBodyRatio;
+
+   double atr = GetATRValue();
+   double atr_percent = atr / SymbolInfoDouble(CurrentSymbol, SYMBOL_BID);
+
+// Lower body ratio requirement in high volatility
+   if(atr_percent > 0.001)
+      return InpMinBodyRatio * 0.8;  // High volatility
+   if(atr_percent < 0.0003)
+      return InpMinBodyRatio * 1.2; // Low volatility
+
+   return InpMinBodyRatio;
+  }
+Momentum Velocity: The ability to enter early if the detector detects a significant price acceleration, so you don't miss the train when the trend is running fast.
+// --- SKENARIO C: MOMENTUM ACCELERATION (NEW) ---
+// Jika harga bergerak cepat searah impuls meski belum breakout
+if
+(rates[
+0
+].close > rates[
+1
+].high && (
+double
+)rates[
+0
+].tick_volume > (GetAverageVolume(InpLookbackPeriod) *
+0.8
+))
+        {
+if
+(InpDebugMode)
+Print
+(
+"ICE Entry: Bullish Velocity detected."
+);
+return
+true
+;
+        }
+     }
+else
+// BEARISH
+{
+// --- SKENARIO A: AGGRESSIVE CONTINUATION ---
+if
+(current_ask <= Impulse.lowest_since)
+        {
+if
+(InpDebugMode)
+Print
+(
+"ICE Entry: Bearish Breakout!"
+);
+return
+true
+;
+        }
+// --- SKENARIO B: SMART PULLBACK ---
+double
+range = Impulse.highest_since - Impulse.lowest_since;
+if
+(range >
+0
+)
+        {
+double
+retrace_level = (current_ask - Impulse.lowest_since) / range;
+if
+(retrace_level >=
+0.20
+&& retrace_level <=
+0.65
+)
+           {
+if
+(rates[
+0
+].close < rates[
+0
+].open || current_ask < rates[
+1
+].low)
+              {
+if
+(InpDebugMode)
+PrintFormat
+(
+"ICE Entry: Retrace Sell at %.2f level"
+, retrace_level);
+return
+true
+;
+              }
+           }
+        }
+3. Trading Characteristics
+Fitur
+Deskripsi
+Trading Style
+Aggressive Momentum / Impulse Follower
+Ideal Timeframe
+M15, M30, up to H1
+Risk Management
+Adaptive Lot based on ATR Stop Loss
+Session Filter
+Automatically avoids Asian Session and quiet Rollover hours
+4. ICE Pro Parameter Summary
+This system uses parameters optimized for modern markets:
+Lookback Period (20): Standard for capturing short-term volatility cycles.
+Volume Multiplier (1.3x): Minimum volume requirement for a candle to be considered an impulse.
+Risk Per Trade (0.5% - 2%): Disciplined money management to ensure account security even in the event of a series of stop-losses.
+ICE Philosophy: "Discipline in filtering out the trash, but courage in pursuing opportunities."
+//--- Enumerations
+enum ENUM_TRADING_MODE
+  {
+   TRADING_MODE_DISABLED,
+   TRADING_MODE_DEMO,
+   TRADING_MODE_LIVE
+  };
+
+enum ENUM_MARKET_SESSION
+  {
+   SESSION_ASIAN,
+   SESSION_LONDON,
+   SESSION_NEWYORK,
+   SESSION_PACIFIC
+  };
+
+enum ENUM_TRAILING_MODE
+  {
+   TRAIL_NONE,          // No trailing
+   TRAIL_BREAKEVEN,     // Move to breakeven only
+   TRAIL_ATR_FIXED,     // Fixed ATR trailing
+   TRAIL_ATR_DYNAMIC,   // Dynamic ATR trailing
+   TRAIL_HYBRID         // Hybrid trailing (breakeven + ATR)
+  };
+
+//--- Input Parameters - OPTIMIZED & CALIBRATED
+input group "───────── CORE SETTINGS ───────────"
+input ENUM_TRADING_MODE   InpTradingMode    = TRADING_MODE_DEMO;   // Trading mode selection (Live / Test / Visual)
+input string              InpTradeSymbol    = "";                  // Trading symbol (empty = current chart symbol)
+input int                 InpMagicNumber    = 888888;              // Unique magic number for order identification
+input string              InpTradeComment   = "Ritz-ICE-Pro";      // Trade comment shown in terminal & history
+input bool                InpDebugMode      = true;                // Enable detailed debug logging
+input bool                InpEnableAdaptive = true;                // Enable adaptive logic based on market conditions
+
+input group "───────── ICE DETECTION ───────────"
+input int                 InpLookbackPeriod = 20;                  // Historical bars used for ICE pattern detection
+input double              InpVolumeMultiplier = 1.3;               // Minimum volume multiplier to confirm impulse
+input double              InpMinBodyRatio   = 0.5;                 // Minimum candle body-to-range ratio (impulse strength)
+input double              InpClosePosition  = 0.6;                 // Minimum close position within candle range (0–1)
+input int                 InpMinImpulseBars = 2;                   // Minimum bars required for a valid impulse
+input int                 InpMaxImpulseBars = 5;                   // Maximum bars allowed for impulse sequence
+input bool                InpUseSessionFilter = true;              // Allow trades only during active trading sessions
+
+input group "───────── RISK MANAGEMENT ───────────"
+input double              InpRiskPerTrade   = 0.1;                 // Risk per trade in percent of account balance
+input bool                InpReduceAfterLoss = false;              // Reduce risk after a losing trade
+input double              InpReductionFactor = 0.2;                // Risk reduction factor after loss (0.8 = -20%)
+input double              InpMinEquityToTrade = 10.0;              // Minimum funds to keep trading (USD)
+input double              InpMinMarginLevel   = 110.0;             // Minimum Margin Level (%)
+
+input group "───────── TRADE EXECUTION ───────────"
+input double              InpATRMultiplierSL = 1.2;                // Stop Loss distance based on ATR multiplier
+input double              InpATRMultiplierTP = 1.8;                // Take Profit distance based on ATR multiplier
+input int                 InpSlippagePoints  = 30;                 // Maximum allowed slippage (in points)
+
+input group "───────── ENTRY OPTIMIZATION ───────────"
+input bool                InpImmediateEntry  = true;               // Enter immediately after impulse detection
+input double              InpMaxEntryBars    = 3;                  // Maximum bars to wait for entry after detection
+
+input group "───────── SMART TRAILING ───────────"
+input ENUM_TRAILING_MODE  InpTrailingMode    = TRAIL_ATR_FIXED;    // Trailing stop mode (Fixed / ATR / Hybrid)
+input double              InpBreakevenAt    = 0.5;                 // Move SL to breakeven at % of TP reached
+input double              InpTrailATRMulti  = 1.0;                 // ATR multiplier for trailing stop distance
+input double              InpTrailActivation = 0.3;                // Profit % required to activate trailing logic
+input bool                InpUseVolatilityAdjust = true;           // Dynamically adjust trailing based on volatility
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+input group "───────── SAFETY FILTERS (CALIBRATED) ───────────"
+input double              InpMaxSpread      = 40.0;                // Maximum allowed spread (points)
+input int                 InpMinATRPoints   = 50;                  // Minimum ATR volatility filter (≈ 5 pips)
+input int                 InpMaxATRPoints   = 1500;                // Maximum ATR volatility filter (≈ 150 pips)
+input bool                InpFilterLowVolume = true;               // Block trades during low-volume conditions
+===
+The code is only for reference, not to be used directly without further development that you must do. If you use it directly with a real account, all risks are your own responsibility. I, as the author and originator of the idea, only provide input and ideas for this code.
+==

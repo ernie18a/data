@@ -1,0 +1,3 @@
+Multi time frame version of the average trend indicator (originally published here :
+Average Trend
+with more explanation)

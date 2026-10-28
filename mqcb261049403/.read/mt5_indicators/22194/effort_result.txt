@@ -1,0 +1,14 @@
+Effort Result oscillator displays correlation of the price change speed to the maximum volume for the specified time interval.
+It has one configurable parameter:
+Period
+- calculation period
+Calculation:
+ER = ROC / MaxVol
+where:
+ROC = 100.0 * (Price / Price[Period]-1)
+Price = SMA(Close, Period)
+MaxVol - maximum volume in the Period range
+The indicator has a peculiarity: sharp spikes of the oscillator values often forecast a price reversal towards the oscillator reversal
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22194

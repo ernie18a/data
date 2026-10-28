@@ -1,0 +1,76 @@
+An institutional-grade order flow and footprint chart indicator ported from Pine Script to MQL5.
+It dynamically deconstructs major timeframe bars using lower timeframe (LTF) historical tick/real volume to compute buy/sell volume delta at each price level.
+The indicator features automatic timeframe selection, Point of Control (POC) highlighting, Stacked Imbalances.
+extreme Absorption detection, Unfinished Business (UB) tracking with live mitigation, and real-time alert triggers.
+Key Features:
+Dynamic Column Widths:
+Footprint cells automatically adjust their horizontal dimensions based on MT5's visual chart zoom scale to maintain separation.
+Auto-Scaling Font Engine:
+Text font sizes scale down automatically on smaller zooms and cleanly hide when zoomed out past readability.
+Background Candle Toggle:
+hide original background candles to render a clean order-flow layout, with safe visual restoration when the indicator is removed.
+Performance Optimized:
+Restricts calculation to a user-defined lookback window to prevent CPU overhead and UI freezing.
+Closed-Bar Alerts:
+Signals are evaluated on completed bars to prevent tick-by-tick alert spam.
+Short Guide for Users
+1. Installation
+Open your MetaTrader 5 terminal.
+Press
+F4
+to open
+MetaEditor
+.
+In the Navigator tree on the left, right-click the
+Indicators
+folder and select
+New File
+.
+Choose
+Custom Indicator
+, name it
+FootPrint_X_Ray
+, and click Next until finished.
+Paste the entire compiled
+.mq5
+code into the workspace, replacing all existing code.
+Click the
+Compile
+button at the top.
+Go back to MetaTrader 5, locate
+FootPrint_X_Ray
+under your Navigator's Indicators folder, and drag it onto your chart.
+2. Best Practices & Tweaks
+Hiding Default MT5 Candles:
+For the clearest visual layout, keep
+Hide Background Candles
+set to
+true
+.
+This hides the default bodies so you can focus strictly on the footprint cells.
+The indicator safely restores your native chart template colors when detached.
+Adjusting Column Spacing:
+If the columns appear too thin or fat on your monitor, use the
+Width Spacing Multiplier
+parameter.
+Setting it to
+0.80
+will compress the boxes slightly, while
+1.20
+will expand them.
+Font Legibility:
+If the numbers are too small or overlapping, adjust the
+Base Footprint Font Size
+(defaults to
+8
+).
+Calculation Limit:
+The indicator is optimized to draw footprints on the most recent
+25
+bars by default.
+f you need a deeper lookback and your terminal has a fast processor, you can increase
+Max Bars to Render
+in the inputs.
+Data Requirements:
+Make sure your broker provides volume data (either tick or real volume).
+When loading on a new chart, MT5 may take a moment to download the required lower timeframe historical data (M1/M5) to compute the deltas.

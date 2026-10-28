@@ -1,0 +1,3 @@
+This is meant to be an aggregating service script that collects data from the EconomicCalendar functions & outputs the values to a text file as a list of dictionaries for each event collected over a period of time.
+This is meant to be a prototype test to approaching the solution, temporary for users of the PythonAPI, offering access to the same data.
+All variables are current statically declared.

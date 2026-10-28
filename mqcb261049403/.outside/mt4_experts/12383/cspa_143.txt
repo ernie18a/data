@@ -1,0 +1,10 @@
+CSPA is a multi currency Expert Advisor, it uses the currency strengths to open trades on the best pairs.
+It uses both a long period currency strength and a short period of which you can set. It also uses an RSI for confirmation. It also uses the a news filter, many thanks to Tim Morris from Forex Factory. Just add it to one chart and it will trade all the enabled pairs from the settings.
+You will need to download the news indicator from Tim Morris
+NewsCalv107
+.
+If you would like to backtest this EA you will need to export all the data for all the pairs and set the Shift to 1 on both long and short time frames. A full description will on all the settings will come shortly.
+Suggestions and comments will not be attended to by myself, however Pedro may be able to help.
+Many thanks to:
+Pedro Simao - Contributer of ideas and a good friend
+Tim Morris - I borrowed your News Indicator.

@@ -1,0 +1,8 @@
+Draws colored rectangular boxes for the Asian, London, and New York trading sessions with high/low range extension lines. Essential for session-based breakout strategies and understanding market structure.
+Features:
+Three independently configurable sessions with custom times
+GMT offset adjustment for any broker server time
+Range high/low extension lines with configurable style
+Optional session labels showing name and range
+Lightweight — works on all timeframes
+Enable/disable each session independently

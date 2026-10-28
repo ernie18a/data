@@ -1,0 +1,301 @@
+Author of the idea
+:
+vgs
+MQL5 code author
+:
+barabashkakvn
+The idea is trivial: if RSI is in the oversold area and starts reversing upwards, while Moving Average goes up as well, this is a buy signal. An opposite case is applied to selling.
+The main EA feature is the ability to use two sets of parameters. Some settings have shorter periods that give more entries. Others, on the contrary, have longer periods, giving fewer but more accurate entries.
+ATR is applied for calculating stop loss and take profit levels. It is possible to sort trades by trend. Moving Average from H1 is used as a filter.
+Inputs
+Lots
+- volume of a position to open;
+SL Factor
+- stop loss, calculated as SL Factor * ATR;
+TP Factor
+- take profit, calculated as TP Factor * ATR;
+Trailing Stop
+- trailing;
+Trailing Step
+- trailing step;
+Positions Maximum
+- maximum number of positions;
+Distance between positions
+;
+Bars Control
+- trading type: at each tick/at a new bar only;
+Coefficient for position locking
+- position ratio if the previous one closed in a loss;
+Use RSI Teacher #1
+- use RSI #1 set of parameters;
+Use RSI Teacher #2
+- use RSI #2 set of parameters;
+MA First, ATR: averaging period
+;
+MA Second: averaging period
+;
+MA Filter: averaging period
+;
+MA First, MA Second, MA Filter: smoothing type
+;
+MA First, MA Second, MA Filter: type of price
+;
+RSI First: averaging period
+;
+RSI Second: averaging period
+;
+RSI Sell Level #1
+- Sell level for set of parameters #1;
+RSI Buy Level #1
+- Buy level for set of parameters #1;
+RSI Sell Level 2
+- Sell level for set of parameters #2;
+RSI Buy Level 2
+- Buy level for set of parameters #2;
+Signal Bar number
+;
+Trend filter
+;
+Trade on Friday
+;
+Begin trade hour
+("0" - off);
+End trade hour
+("0" - off);
+magic number
+- unique EA identifier.
+Test in "Every tick" mode by all symbols on M15 timeframe:
+Symbol
+Pass
+Result
+Profit
+Expected Payoff
+Profit Factor
+Recovery Factor
+Sharpe Ratio
+Custom
+Equity DD %
+Trades
+EURGBP
+12
+575.67
+80.94
+0.56
+1.83
+1.95
+0.19
+0
+1.38
+144
+EURJPY
+15
+321.64
+77.95
+0.31
+1.52
+1.23
+0.10
+0
+2.05
+253
+EURCHF
+13
+306.95
+43.83
+0.28
+1.41
+0.68
+0.10
+0
+2.11
+157
+USDCAD
+5
+270.04
+56.87
+0.24
+1.39
+0.82
+0.09
+0
+2.30
+238
+AUDUSD
+6
+232.34
+35.64
+0.19
+1.30
+0.91
+0.08
+0
+1.29
+186
+EURCAD
+4
+202.97
+47.71
+0.18
+1.31
+0.87
+0.07
+0
+1.82
+264
+CHFJPY
+11
+194.00
+37.23
+0.18
+1.25
+0.63
+0.06
+0
+1.95
+202
+AUDJPY
+9
+171.69
+29.55
+0.15
+1.21
+0.68
+0.06
+0
+1.44
+197
+USDJPY
+3
+169.57
+28.51
+0.15
+1.23
+0.54
+0.06
+0
+1.77
+195
+AUDCAD
+8
+95.83
+13.75
+0.08
+1.13
+0.27
+0.03
+0
+1.67
+175
+EURUSD
+0
+34.48
+9.78
+0.04
+1.05
+0.14
+0.01
+0
+2.38
+228
+CADCHF
+18
+5.86
+0.93
+0.00
+1.00
+0.02
+0.00
+0
+2.05
+200
+GBPCHF
+17
+-14.52
+-4.64
+-0.02
+0.98
+-0.06
+0.00
+0
+2.36
+189
+GBPJPY
+19
+-16.28
+-10.41
+-0.03
+0.97
+-0.08
+-0.01
+0
+4.08
+308
+GBPUSD
+1
+-54.34
+-22.53
+-0.09
+0.92
+-0.15
+-0.02
+0
+5.16
+241
+EURNZD
+16
+-66.62
+-16.25
+-0.07
+0.91
+-0.26
+-0.02
+0
+2.09
+241
+USDCHF
+2
+-104.34
+-26.89
+-0.14
+0.86
+-0.27
+-0.04
+0
+3.29
+186
+EURAUD
+14
+-116.65
+-31.03
+-0.13
+0.84
+-0.33
+-0.04
+0
+3.09
+242
+AUDCHF
+10
+-149.68
+-37.55
+-0.21
+0.82
+-0.34
+-0.05
+0
+3.62
+181
+AUDNZD
+7
+-221.88
+-36.76
+-0.21
+0.74
+-0.61
+-0.07
+0
+2.00
+174
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21616

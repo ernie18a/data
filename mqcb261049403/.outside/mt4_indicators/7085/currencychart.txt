@@ -1,0 +1,11 @@
+The CurrencyChart indicator allows to display the charts of multiple currencies (symbols) in a single window.
+Input Parameters:
+symbol - the name of the symbol to display in the window (by default EURUSD).
+Usage example:
+the picture below shows that the CurrencyChart indicator was attached to the EURUSD,M5 chart twice with the 'symbol' parameters set to EURCHF and USDJPY the first and second time, respectively. As a result, there are three price charts (EURUSD, EURCHF, USDJPY) in a single window.
+CurrencyChart
+Requirements:
+the windows with the currency (symbol) charts that are used in the indicator must be opened.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7085

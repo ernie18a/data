@@ -1,0 +1,8 @@
+The MultiColorZerolagTriXOSMATrend_x10 indicator shows information on current trends using the
+ColorZerolagTriXOSMA
+indicator direction from ten different timeframes.
+Each of the ten indicator lines corresponds to a separate indicator. Growing oscillator movement paints the lines in purple, and falling movement — in pink. Otherwise, the lines are gray. Colored dots on lines appear when a new bar opens on the corresponding timeframe.
+Fig.1. The MultiColorZerolagTriXOSMATrend_x10 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13293

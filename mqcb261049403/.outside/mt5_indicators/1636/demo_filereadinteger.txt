@@ -1,0 +1,6 @@
+The indicator reads data of the price movement directions from the file and displays them as the broken line in the chart main window. To get the file with data you need preliminary run the
+Demo_FileWriteInteger
+script.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1636

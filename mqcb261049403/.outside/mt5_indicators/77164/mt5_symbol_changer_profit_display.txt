@@ -1,0 +1,18 @@
+EMTOrdersUtility is a Real-Time Trade Monitor & Symbol Changer Utility designed for active traders who demand Real-Time visibility into their open positions across multiple financial instruments. Unlike standard terminal panels, this utility places a fully interactive, color-coded symbol grid directly on your chart — showing at a glance which instruments are in Profit, which are in Loss, how many trades are open, and what trade types are active. Whether you trade Forex, Synthetic Indices, Commodities, or CFDs, this utility eliminates the need to scroll through the Terminal window to check your exposure. Every symbol button updates in Real-Time with your running P&L, Trade Count, and Trade Type — all color-coded for instant recognition.
+v2.3:
+The
+Panel
+will now always
+List
+/
+Show
+symbols in
+Alphabetical
+Order
+regardless of the original
+Market Watch
+order or the order you typed them in the manual list. It also comes without the
+Hide
+/
+Show
+Button

@@ -1,0 +1,22 @@
+Author of the idea
+—
+Bima Setyawan
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+It uses the iCCI(CCI, Commodity Channel Index), iRSI(RSI, Relative Strength Index) indicators.
+Recommended timeframe is H1.
+Expert Advisor inspired by Ilan 1.6.
+The EA with functions very sensitive to price movement, equipped with various tools:
+stop trading at a certain decrease in equity;
+trailing stop;
+equity risk management;
+use of a timeout;
+hours for opening maximum deals and others.
+Rule: use a pair with minimum spread. For example, use EURUSD with the 1-minute timeframe.
+Good luck!
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17122

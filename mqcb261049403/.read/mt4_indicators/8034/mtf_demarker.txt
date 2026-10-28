@@ -1,0 +1,3 @@
+Author:
+ycomp
+One more indicator Demarka, is under construction on the basis of comparisons of a maximum of a current bar is compared to a maximum previous.

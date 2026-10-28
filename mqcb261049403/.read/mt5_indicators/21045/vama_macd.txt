@@ -1,0 +1,32 @@
+Oscillator VAMA_MACD (Volume Adjusted MA MACD) is an MACD, in which Volume Adjusted Moving Average (VAMA) is used for smoothing. To calculate the VAMA, contract price is used, which is divided by the total volume over a period of time.
+The indicator has four configured parameters:
+Fast MA period
+- fast MA period for calculating the MACD;
+Slow MA period
+- slow MA period for calculating the MACD;
+Signal line period
+- MACD signal line calculation period; and
+Applied price
+- price used for calculations.
+Calculation:
+MACD = MAS - MAL
+Signal = SMACD / SV
+Histogram = MACD - Signal
+where:
+MAS = FastSPV / FastSV
+MAL = SlowSPV / SlowSV
+FastSPV
+- sum of prices and volumes over the Fast MA period;
+SlowSPV
+- sum of prices and volumes over the Slow MA period;
+FastSV
+- sum of volumes over the Fast MA period;
+SlowSV
+- sum of volumes over the Slow MA period;
+SMACD
+- sum of the MACD values and of volumes over the Signal line period;
+SV
+- sum of volumes over the Signal line period.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21045

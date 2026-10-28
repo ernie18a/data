@@ -1,0 +1,9 @@
+Description:
+This is a percentage of the user set stop-loss or profit robot. When an inch head floating profit reached the level set will run close，I hope it helps manage your money.
+Input parameters:
+ManageAllSymbol : true to manage all varieties inch head, false representation only for the species as a chart-inch head;
+UseStopLoss : true that the use of stop-loss percentage, false representation does not use stop-loss percentage;
+StopLossPercent ： Said loss account balance reached 0.02 (based on personal money management changes need to) stop when open;
+UseTakeProfit : true that the use of percentage of profit only, false profit percentage said they did not use only;
+TakeProfitPercent: Said floating account balance surplus reached 0.06 (based on personal money management changes need to) take profit when open.
+Sorry for my English，I wish you a smooth translaction.

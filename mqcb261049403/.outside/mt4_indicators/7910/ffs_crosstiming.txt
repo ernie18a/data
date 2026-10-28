@@ -1,0 +1,4 @@
+Author:
+Forex-TSD
+Indicator FFS CrossTiming. Shows a trend of all cros'ов, connected with the considered pair. Further see in a code of the indicator.
+Indicator FFS_CrossTiming

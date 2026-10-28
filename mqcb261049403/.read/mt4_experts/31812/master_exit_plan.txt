@@ -1,0 +1,10 @@
+Master Exit Plan is collection of simple strategies that would help traders manage on how to exit open trades and pending orders.
+NOTE: This EA doesn't open a trade for you. It only manages your open trades and pending orders.
+Here are the list of exit strategies...
+Equity Target - this part of the program helps you protect your account equity conservatively.
+Hard Stop-Loss - you can set a fixed visible stop-loss on every trade you do.
+Hidden Stop-Loss - you can set a fixed hidden stop-loss on your every trade.
+Dynamic Hard Stop-Loss - this is a visible stop-loss that moves with the price. This will enable the trader to trade as if there's no stop-loss even if there's a stop-loss. The full explanation of this revolutionary concept is discussed in the e-book, Uncharted Stratagems: Unknown Depths of Forex Trading. There are actually more than a dozen of new ideas that can be stolen from that book.
+Hidden Dynamic Stop-Loss - as the name stated this is just a hidden version of the dynamic stop-loss.
+Trailing Stop - this is not an ordinary trail stop method. it has another revolutionary idea of triggering the trail stop when a certain positive profit in percentage is reached. It also assured the trader of positive pips to gain.
+Trail Pending Order - this trails stop orders to maximize a beneficial postions.

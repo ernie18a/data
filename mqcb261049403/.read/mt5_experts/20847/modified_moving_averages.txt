@@ -1,0 +1,29 @@
+Idea by
+:
+Gatis
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+A modified EA from the standard delivery: MQL5\Experts\Examples\Moving Average\Moving Average
+Parameters "StopLoss" and "TakeProfit" are added. Moreover, if you set parameter "Lots" with a minus, it means that the lot size will never change. For instance, the value of "-0.1" means that the lot of "0.1" will always be the same for all positions.
+Input parameters
+Lots
+- lot size; if parameter "Lots" is set with a minus, the lot size will always be the same;
+Maximum Risk in percentage
+- maximum risk;
+Decrease factor
+- decrease factor;
+Moving Average period
+- period of indicator Moving Average;
+Moving Average shift
+- horizontal shift of indicator Moving Average;
+StopLoss
+- Stop Loss;
+TakeProfit
+- Take Profit.
+If you set Stop Loss or Take Profit to zero, it means that the parameter is disabled.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20847

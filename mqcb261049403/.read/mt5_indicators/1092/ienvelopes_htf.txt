@@ -1,0 +1,5 @@
+Envelopes drawn in ZigZag form. They can be drawn fixing Time Frame and then calculate input parameters.
+Fig.1 Indicator iEnvelopes_HTF
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1092

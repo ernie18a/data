@@ -1,0 +1,57 @@
+The script exports
+all
+the symbols available in the Market Watch window into a csv file ("
+MT4\experts\files\SymbolList(ServerName).csv
+").
+The symbols are searched for by a blunt (I'm tempted to say) enumeration of letters. I.e., we take the AAAAAA symbol and check whether it is available in Market Watch. Then we take AAAAAB, and so on. The method is very slow, I couldn't invent anything wiser.
+External variables:
+-
+Min_CharsInSymbolName
+- the minimum length of the symbol name (can be from 1 to 10);
+-
+Max_CharsInSymbolName
+- the maximum length of the symbol name (from 1 to 10);
+-
+Use_Reshetka
+- to use or not the "#" symbol during the search (true/false);
+-
+Use_Podcherkivanie
+- to use the "_" symbol;
+-
+Use_09
+- to use digits (0-9);
+-
+Use_AZ
+- to use capital letters (A-Z);
+-
+Use_az
+- to use lower-case letters (a-z).
+The speed of working depends on the
+Max_CharsInSymbolName
+(the larger values are, the slower working will be) and on the amount of "
+Use_
+"-variables equal to true (the same). On my P4 2.4 GHz, all symbol names of six capital letters (like EURUSD) can be found within
+18 minutes
+. If the characters of "#" and "_" are added, then the search takes
+28 minutes
+. And if digits are added, too, then I have to wait for
+3 hours
+. Respectively, if you choose the
+Max_CharsInSymbolName = 7
+(I haven't ever met any longer symbols), you will be able to see the results only after
+111 hours
+.
+But it is no matter how many symbols there are in the Market Watch.
+So, for the maximum efficiency choose "Show all", set the
+Max_CharsInSymbolName = 6
+, all "
+Use_
+"-variables except
+Use_az
+in the
+true
+position and leave it for the night.
+And in the morning you will see something like this:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8317

@@ -1,0 +1,4 @@
+CCI is without any doubt a useful indicator.
+The only thing that bothers me is its "roughness" or "being nervous". It jumps in a sudden changes very quickly and sometimes it simply limits its usefulness. Traditional ways of smoothing are simply not good enough for one simple reason: the peaks so characteristic to CCI are lost with any kind of smoothing (and I mean any kind).
+The idea of this one is not to smooth the result, but to filter the price first and then to use those prices in CCI calculation. And, considering everything, results are surprisingly good.
+This is the CCI pre-filtered indicator with an addition of 18 possible types of averages that can be used for pre-filtering.

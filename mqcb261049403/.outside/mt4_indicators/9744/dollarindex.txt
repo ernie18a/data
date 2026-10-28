@@ -1,0 +1,5 @@
+Author:
+(c) 2010 Shon Shampain for Zen Cows Go Mu,
+http://www.zencowsgomu.com/
+.
+DollarIndex is an indicator that computes the volume-adjusted flow of USD considering all 7 major currency pairs. When reading the indicator, remember that values above the 0.0 line are net flows positive for USD. If you are viewing a pair in which USD is the 2nd currency, for example EUR/USD, positive net flows of USD (an "above-the-line" indicator reading) will *generally* show negative (short, bearish) price-action, and similarly vice-versa, negative net flows of USD will show positive (long, bullish) price-action. When USD is the first currency, e.g. USD/JPY, flows will *generally* align with price action. This indicator is useful, at the very least, as a thought experiment if you believe that, in general, USD moves in concert (and hence the high degree of correlation among the currency pairs). The reason is that you may be able to detect a net flow of USD (either positive or negative) before, or in spite of, the price action.

@@ -1,0 +1,75 @@
+Strategy Tester Report
+Kloss
+XTrade-Server (Build 216)
+Symbol
+EURUSD (Euro vs US Dollar)
+Okres
+5 Minut (M5) 2002.01.02 00:05 - 2008.06.06 11:05 (2002.01.02 - 2008.06.07)
+Model
+Every tick (the most precise method based on all available least timeframes)
+Parametry
+Lots=0; Prots=0.2; max_lot=5; StopLoss=48; TakeProfit=152;
+Słupki w tescie
+479240
+Ticks modelled
+12731523
+Modelling quality
+90.00%
+Mismatched charts errors
+0
+Depozyt początkowy
+10000.00
+Total net profit
+701353.15
+Gross profit
+3559975.68
+Gross loss
+-2858622.54
+Profit factor
+1.25
+Przewidywany zysk
+133.79
+Absolute drawdown
+308.00
+Maximal drawdown
+59808.80 (17.93%)
+Relative drawdown
+46.04% (9521.42)
+Transakcji w sumie
+5242
+Short positions (won %)
+2003 (69.45%)
+Long positions (won %)
+3239 (58.47%)
+Profit trades (% of total)
+3285 (62.67%)
+Loss trades (% of total)
+1957 (37.33%)
+Największy
+profit trade
+7576.00
+loss trade
+-2673.40
+Średni
+profit trade
+1083.71
+loss trade
+-1460.72
+Maksimum
+consecutive wins (profit in money)
+20 (32075.20)
+consecutive losses (loss in money)
+10 (-15562.20)
+Maximal
+consecutive profit (count of wins)
+32075.20 (20)
+consecutive loss (count of losses)
+-15581.00 (7)
+Średni
+consecutive wins
+3
+consecutive losses
+2
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8186

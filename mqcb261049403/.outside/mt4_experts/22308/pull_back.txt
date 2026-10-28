@@ -1,0 +1,46 @@
+"Pull Back" EA Trades when there is a pull back from the trend of 2 Moving Averages has Trailing Stop Loss &Take Profit works on all time frames major forex pairs and stocks NASDAQ.
+Try it on demo first.
+This EA trades only with the price of open candle!
+If you do not want to trade with increasing lot size when you lose  a trade set:"IncreaseFactor=0"
+Inputs
+Use_TP_In_Money- Use Take Profit In Money (values:true/false).
+TP_In_Money- Take Profit In Money   (values: 10-100).
+Use_TP_In_percent- Use Take Profit In Percent (values:true/false).
+TP_In_Percent- Take Profit In Percent (values: 10-100).
+------------[Money Trailing Stop For Multiple Trades]----------------------
+Enable_Trailing-Enable_Trailing with money  (values:true/false).
+Take Profit In Money (in current currency) (values: 25-200).
+Stop Loss In Money(in current currency) (values: 1-20).
+--------------------------------------------------------------------------------------
+Exit= Close trades if the trend is against you and control draw dwon (values:true/false).
+Lots - Lots size (values: 0.01-1).
+Lots size Exponent  (values: 1.01-2).
+IncreaseFactor -how much to increase lots from total margin if you lose a trade (values: 0.001-0.1).
+Stop_Loss - Stop Loss (values: 30-500).  /set value 600 for  Multiple Trades
+MagicNumber - Magic number (values: 1-100000).
+TakeProfit - Take Profit (values: 50-200).  /set value 600 for  Multiple Trades
+FastMA - Fast Moving Average (values: 1-20).
+SlowMA - Slow Moving Average (values: 50-200).
+Mom_Sell-Momentum_Sell trigger(values: 0.1-0.9).
+Mom_Buy-Momentum_Buy trigger(values: 0.1-0.9).
+---------------------CONTROL DRAW DOWN-----------------------------
+UseEquityStop -
+(values:true/false).
+TotalEquityRisk- (values: 0.01-20).
+-------------------------------------------------------------------------------
+Max_Trades(1-12).
+----------------IF YOU USE ONLY 1 TRADE:-----------------------
+/////////////////////////////////////////////////////////////////////
+USETRAILINGSTOP-If use trailing stop (values:true/false).
+WHENTOTRAIL-When to trail (values: 40-100).
+TRAILAMOUNT-Trail amount (values: 40-100).
+Distance From Candle -Distance From Candle (values: 1-100).
+USECANDELTRAIL=If use trailing stop (values:true/false).
+X=2-number of candles (values: 1-100).
+USEMOVETOBREAKEVEN-Enable " break even " (values: true/false).
+WHENTOMOVETOBE-When to move break even (values: 1-30).
+PIPSTOMOVESL=30-How much pips to move stop loss  (values: 1-30).
+-You should optimize this EA every few months and use the exact same  inputs from above .
+-You can use it as  hedging grid EA or a single trade EA.
+-How to perform back test:
+https://bit.ly/2CD7XWD

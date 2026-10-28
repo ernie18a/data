@@ -1,0 +1,30 @@
+Description:
+This is a modified indi Brooky posted some time ago.
+Displays the stength of a currency based on 7 of its crosses. Origianally done by Brooky a few pages back in the code base.
+Enter 7 currency pairs with a common major in each pair. For example
+Pair1
+USD
+CHF;
+Pair2
+USD
+JPY;
+Pair3
+USD
+CAD;
+Pair4 AUD
+USD
+;
+Pair5 EUR
+USD
+;
+Pair6 GBP
+USD
+;
+Pair7 NZD
+USD;
+If the pairs check out OK, the indi will display else will abort.
+For additional info please visit this indi by the original author a few pages back .
+Cheers.
+Pat1
+Image:
+Sub window 1 is the modified version. Sub window 2 is the original by Brooky.

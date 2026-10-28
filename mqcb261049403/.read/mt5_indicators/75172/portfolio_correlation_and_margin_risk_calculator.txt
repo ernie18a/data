@@ -1,0 +1,29 @@
+Most MT5 traders size each position on its own and never see how their open (or planned) positions interact as a portfolio. Two instruments that look independent can move almost identically during the same news event, and a set of "small" positions can silently add up to a dangerous share of account equity in combined margin.
+The indicator reads a comma-separated list of symbols and lot sizes and prints a full report in the Experts tab and, optionally, on the chart itself:
+Pairwise correlation matrix
+— Pearson correlation between the historical bar-to-bar returns of every pair of instruments, over a configurable lookback and timeframe.
+Average pairwise correlation
+— a single number summarizing how diversified (or concentrated) the set is.
+Combined estimated margin
+— the total margin your broker would require to open every listed instrument at its given lot size, in account currency.
+Deposit load
+— that combined margin as a percentage of current account equity, with a one-time alert when it crosses a threshold you set.
+Input.
+Set
+InpSymbols
+(e.g. "EURUSD,GBPUSD,XAUUSD,USDJPY") and
+InpLots
+(e.g. "0.10,0.10,0.10,0.10") as comma-separated lists, same order, 2 to 10 instruments. Each symbol is auto-added to Market Watch if it is not already there.
+Parameters.
+InpTimeframe
+and
+InpLookbackBars
+control the return series used for correlation;
+InpMarginWarnPct
+sets the deposit-load alert threshold;
+InpRefreshSec
+sets how often the report recalculates;
+InpShowPanel
+toggles the on-chart Comment() panel.
+The tool is written in pure MQL5. It needs no external libraries, no Python, and no DLLs — everything runs natively inside MetaTrader 5.
+Built by the team behind AbacuQuant, an audited multi-strategy copy-trading platform for MT5 that runs diversified portfolios across uncorrelated instruments with a 24-month verified track record.

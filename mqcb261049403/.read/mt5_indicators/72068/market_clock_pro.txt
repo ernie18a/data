@@ -1,0 +1,31 @@
+Market Clock Pro
+Candle countdown HUD for MetaTrader 5
+It shows the time remaining to the next candle close plus contextual data: trading sessions, spread, daily range, and a market-closed state for the current symbol.
+FEATURES
+Candle countdown with color escalation near the close
+Geographic sessions in UTC (Tokyo, London, New York, Sydney) with countdown to the nearest session end when two or more overlap
+Market-closed detection with explicit reason: NYSE CLOSED (holiday), LSE CLOSED (weekend), XETRA CLOSED (session)
+Automatic symbol-to-market mapping for NYSE, LSE, XETRA, TSE, HKEX, ASX, SSE. Manual override available when the broker uses non-standard tickers
+Holidays calendar as plain text file (164 entries, 2026-2027)
+Live spread with rolling-average anomaly detection (2x baseline)
+Daily range vs ADR as percentage, lookback configurable
+Configurable sound alert before the candle close
+Four HUD positions, three themes (Dark / Light / Stealth)
+Timeframe-aware accent color
+TECHNICAL
+EventSetMillisecondTimer as the sole render driver
+OnCalculate is a no-op, zero indicator buffers
+Every label deduplicates on text and color before ChartRedraw
+No DLLs, no WebRequest, no Sleep, no external dependencies
+Broker-agnostic via TimeTradeServer + SymbolInfoSessionTrade
+INSTALLATION
+Copy MarketClockPro.mq5 to MQL5\Indicators\
+Copy holidays.txt to MQL5\Files\MarketClockPro\holidays.txt
+Compile in MetaEditor (F7)
+Attach to any chart
+The holidays file is optional. When absent or invalid the indicator falls back to broker-session-based detection.
+INPUTS
+Split in 5 groups: DISPLAY, MODULES, BEHAVIOR, HOLIDAYS, ALERT. Descriptions in English, defaults preloaded.
+COMPATIBILITY
+MetaTrader 5 on Windows. All timeframes. All asset classes (indices, forex, crypto, metals, commodities, stocks).
+Author: Marcelo Borasi

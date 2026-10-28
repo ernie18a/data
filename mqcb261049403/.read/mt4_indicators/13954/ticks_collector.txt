@@ -1,0 +1,16 @@
+When working real-time the indicator collects price data: the tick arrival time, the Bid price and the Ask price. The Bid and Ask prices are displayed as lines in the indicator subwindow, and all the gathered information can be saved to a special tick file (tks file type).
+Along with the information collection, the indicator can plot and keep the non-standard charts active:
+Isochronous charts with period from 1 second.
+Range bar charts
+Equivolume charts.
+For each of the listed chart types a specific price type can be set:
+By Bid prices - the way it is used in МТ4.
+By Ask prices - instead of Bid the real Ask prices are displayed, but not the addition of the spread value to the Bid price.
+Close - min Bid, open - max Ask - the first combined price representation. Such chart shows the maximum distance the market went in the direction of the profit of the perfect deal - opening in the right direction by one of the candlestick prices.
+Close - max Ask, open - min Bid - the second combined price representation. The chart displays the maximum amplitude of the prices on a candlestick.
+The detailed description -
+Ticks collector
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13954

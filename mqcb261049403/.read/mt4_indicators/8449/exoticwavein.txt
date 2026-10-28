@@ -1,0 +1,15 @@
+The indicator writes the history to the CSV file.
+Input Parameters:
+extern
+int
+LastBar
+=
+0
+;
+extern
+int
+cnttik
+=
+3
+;
+Exoticwavein

@@ -1,0 +1,9 @@
+Key Features:
+Flicker-Free Vector GUI: Renders the entire dashboard onto a single-frame bitmap canvas, supporting auto-resize and high-DPI scaling with no terminal lag.
+Vertical Scrollable Calendar: A stacked monthly calendar grid (color-coded cyan for wins and red for losses) that scrolls dynamically using the mouse wheel.
+Interactive Log Cards: A vertical scrollable trades log displaying individual executions, grades, and an interactive pencil icon to input/edit custom notes directly on the chart.
+Behavioral Bias Diagnostics: Programmatically monitors and flags revenge trading, FOMO entries, panic liquidations, and discipline failures (such as widening stop-losses mid-trade).
+Institutional Quantitative Core: Calculates Sharpe, Sortino, Calmar, Ulcer Index, and System Quality Number (SQN), split into separate Long and Short trade profiles.
+1,000-Path Monte Carlo Simulation: Employs bootstrap resampling of actual trade history to project capital drawdown paths and calculate mathematical Risk of Ruin.
+Cooperative Task Scheduler: Runs heavy statistical calculations and history scans in time-sliced chunks to prevent terminal thread freezing.
+Local Binary Storage: Automatically saves and restores customized notes, setups, and tags using a lightweight local binary format.

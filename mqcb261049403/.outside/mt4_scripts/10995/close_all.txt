@@ -1,0 +1,2 @@
+Description:
+This script will close all your open positions in your MT4. You just need to drag it to the chart.

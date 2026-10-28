@@ -1,0 +1,2 @@
+ATR Levels indicator marks 5pm NY on the chart along with the 14 day ATR value.
+Horizontal lines are drawn at this value, both above and below the 5pm close. This simple graphic gives a visual idea on how far the currency pair may move during the next day.

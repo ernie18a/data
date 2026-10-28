@@ -1,0 +1,1 @@
+This EA is based on daily highs and lows and the relationship to each other. With three profit points, four modify points, money management, trading time and daytrade closing is this new EA very successful.

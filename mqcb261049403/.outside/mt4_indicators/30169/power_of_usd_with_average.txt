@@ -1,0 +1,34 @@
+Power of XXX with average indicator description.
+Version 229.201
+The indicator is new version of previously published indicator showing relative actual strength of currency XXX.
+Zero line (0.0) presents average with chosen period (
+AveragePeriod
+variable).
+The indicator calculates its value of close prices of 7 pairs containing currency XXX.
+Colored histogram was added to simplify interpretation of the market situation.
+Now you have 2 mode options to choose:
+TREND
+COUNTER-TREND
+The same color on BASE and QUOTE in equal mode means higher oportunity to trade in correct direction.
+Instance 1 = BUY:
+EUR USD.
+You chose mode TREND for
+Power of EUR with average
+and for
+Power of USD with average.
+Both indicators show
+GREEN
+color you should be prepared to
+BUY
+pair EUR USD.
+Instance 2 = SELL:
+EUR USD.
+You chose mode TREND for
+Power of EUR with average
+and for
+Power of USD with average.
+Both indicators show
+RED
+color you should be prepared to
+SELL
+pair EUR USD.

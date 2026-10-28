@@ -1,0 +1,13 @@
+This indicator shows the direction of the acceleration of
+JFatlAcceleration
+price from a larger timeframe at a smaller one.
+Besides, the indicator alerts about the current direction of acceleration at each change of a large timeframe bar. Two arrow colors are used for acceleration display. If acceleration is positive and raising, the up arrow color is lime. If acceleration is positive but falling, the arrow color is yellow. The opposite case is also defined by arrow colors. If acceleration is negative and falling, the down arrow color is red. If acceleration is negative but raising, the arrow color is magenta.
+It must be noted that this indicator does not show the current trend direction but only its second derivative or acceleration. Therefore, it is better to filter it using a trend indicator.
+Place the
+ColorJFatlAcceleration
+indicator compiled file into the MQL5\Indicators folder. ColorJFatlAcceleration indicator uses the classes of the SmoothAlgorithms.mqh library. Working with that class was thoroughly described in details in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/580

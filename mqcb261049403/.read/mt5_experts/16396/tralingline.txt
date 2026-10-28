@@ -1,0 +1,7 @@
+The Expert Advisor is intended to be used on Forex hedging accounts. It has not been tested on netting accounts.
+When a new position appears, the EA draws a trend line, which can be moved as desired.
+The trend line will be below the opening price for Buy positions and above the opening price for Sell positions, and also 2 bars to the right (into future), where they will remain and will be moved when a new bar appears.
+If the trend line is later moved, so that it becomes lower than the Buy position, for example, the EA will generate a message indicating the price and profit or loss with which all positions will be closed.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16396

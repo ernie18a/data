@@ -1,0 +1,43 @@
+A professional Grid advisor works according to
+RSI
+( Relative Strength Index ) indicators. And has the function of
+Reducing the Drawdown
+on the account by overlapping unprofitable orders. The chart displays information about the profit. It can be a very useful tool, For manual trading.
+⚡ Recommend ECN broker with LOW SPREAD: IC Market , Exness, NordFX , FXPRIMUS , Alpari , FXTM
+⚡ Pls try this EA with Demo account account!
+⚡ It good to combo with Buy Sell Signals  to follow Trend and Sellect Buy Only/Sell Only for EA work Semi-Automatic.
+OPTIONS:
+RSI_PERIOD
+- period for calculating the relative strength index;
+UP_LEVEL
+- upper bound;
+DN_LEVEL
+- lower bound;
+RSI_TIMEFRAME
+- timeframe for calculation;
+START_LOT
+- initial lot;
+LOT_MULTIPLIER
+- lot multiplier in the order grid;
+MAX_LOT
+- maximum lot;
+STEP_ORDERS
+- order grid step;
+STEP_MULTIPLIER
+- order step multiplication factor, if = -1 then it is not used;
+MAX_STEP
+- maximum order grid step;
+OVERLAP_ORDERS
+- from which order to enable the order overlap function;
+OVERLAP_PIPS
+- minimum profit in pips for closing unprofitable orders;
+STOPLOSS, TAKEPROFIT
+- stop loss and take profit in pips, if = -1 is not used;
+BREAKEVEN_STOP, BREAKEVEN_STEP
+- level and step of breakeven, if = -1 is not used;
+TRAILING_STOP, TRAILING_STEP
+- trailing stop level and step, if = -1 is not used;
+MAGIC_NUMBER, ORDERS_COMMENT
+- magic order number and comment;
+START_TIME, END_TIME
+- time at which it is allowed to open orders. if = "00:00", then not used

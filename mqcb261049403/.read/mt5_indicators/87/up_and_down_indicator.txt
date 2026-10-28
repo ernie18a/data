@@ -1,0 +1,2 @@
+This indicator allows to see the activity of the market.
+Indicator displays candles in one dimension. Colour is automatically adapted to current tick volume.

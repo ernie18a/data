@@ -1,0 +1,89 @@
+You can see other analytical tools on my profile page. The AllAverages v4.9 version for MT4
+here.
+This indicator is not mine, it is in the public domain, but it is not available on the MQL5 forum. That is why I decided to post it here. I am currently using some modifications of moving averages in my strategies. Previous version is
+here
+.
+Available formulas (MA_Method)
+SMA                      Simple Moving Average
+EMA                      Exponential Moving Average
+Wilder                  Wilder Exponential Moving Average
+LWMA                   Linear Weighted Moving Average
+SineWMA              Sine Weighted Moving Average
+TriMA                   Triangular Moving Average
+LSMA                    Least Square Moving Average (or EPMA, Linear Regression Line)
+SMMA                   Smoothed Moving Average
+HMA                     Hull Moving Average by A.Hull
+ZeroLagEMA          Zero-Lag Exponential Moving Average
+DEMA                    Double Exponential Moving Average by P.Mulloy
+T3_basic               T3 by T.Tillson (original version)
+ITrend                   Instantaneous Trendline by J.Ehlers
+Median                  Moving Median
+GeoMean               Geometric Mean
+REMA                     Regularized EMA by C.Satchwell
+ILRS                       Integral of Linear Regression Slope
+IE_2                       Combination of LSMA and ILRS
+TriMAgen                Triangular Moving Average generalized by J.Ehlers
+VWMA                    Volume Weighted Moving Average
+JSmooth                 M.Jurik's Smoothing
+SMA_eq                  Simplified SMA
+ALMA                     Arnaud Legoux Moving Average
+TEMA                     Triple Exponential Moving Average by P.Mulloy
+T3                         T3 by T.Tillson (correct version)
+Laguerre                Laguerre filter by J.Ehlers
+MD                         McGinley Dynamic
+BF2P                      Two-pole modified Butterworth filter by J.Ehlers
+BF3P                      Three-pole modified Butterworth filter by J.Ehlers
+SuperSmu               SuperSmoother by J.Ehlers
+Decycler                 Simple Decycler by J.Ehlers
+eVWMA                   Modified eVWMA
+EWMA                     Exponential Weighted Moving Average
+DsEMA                    Double Smoothed EMA
+TsEMA                     Triple Smoothed EMA
+VEMA                      Volume-weighted Exponential Moving Average(V-EMA)
+The choice of prices used to build moving averages:
+close                       Close
+open                        Open
+high                         High
+low                          Low
+median                    Median
+typical                     Typical
+weightedClose          Weighted Close
+medianBody             Median Body (Open+Close)/2
+average                    Average (High+Low+Open+Close)/4
+trendBiased              Trend Biased
+trendBiasedExt         Trend Biased(extreme)
+haClose                    Heiken Ashi Close
+haOpen                    Heiken Ashi Open
+haHigh                     Heiken Ashi High
+haLow                      Heiken Ashi Low
+haMedian                  Heiken Ashi Median
+haTypical                  Heiken Ashi Typical
+haWeighted               Heiken Ashi Weighted Close
+haMedianBody           Heiken Ashi Median Body
+haAverage                 Heiken Ashi Average
+haTrendBiased           Heiken Ashi Trend Biased
+haTrendBiasedExt      Heiken Ashi Trend Biased(extreme)
+TimeFrame                            = 0
+Selecting the timeframe
+Price                                     = 0
+Choice of prices used
+MA_Period                             = 14
+Averaging period of the moving average
+MA_Shift                               = 0
+Shift the moving average by a specified number of periods
+MA_Method                           = SMA
+Choice of moving average formula
+ShowInColor                          = true
+Show/hide color rendering, up-trend color selection, down-trend color selection
+Number of bars counted
+= 0                   Plotted on the chart for a specified number of candles (bars), "0" - all bars are involved in the construction
+Alerts, Emails & Notifications
+AlertOn                                = false              Disable/enable sound alerts when changing the direction of the moving average
+AlertShift                             = 1                    Shift of periods (candlesticks), after which the notification about the change of direction of the moving average will come
+SoundsNumber                     = 5                    Number of sound alerts
+SoundsPause                        = 5                    Pause in seconds between sound alerts
+UpTrendSound                      = "alert.wav"     Selecting a sound file when a trend changes from downtrend to uptrend
+DnTrendSound                      = "alert2.wav"   Selecting a sound file when a trend changes from uptrend to downtrend
+EmailOn                               = false              Disable/enable sending messages to email
+EmailsNumber                      = 1                   Number of messages to be sent to the mail
+PushNotificationOn               = false              Disable/enable "push" messaging to your smartphone

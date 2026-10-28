@@ -1,0 +1,2 @@
+Draws horizontal grid lines at specified distances.
+Image illustrates fractional pip ability.

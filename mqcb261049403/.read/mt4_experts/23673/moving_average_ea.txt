@@ -1,0 +1,73 @@
+Strategy Tester Report
+MaRobot
+Trading variety
+XAUUSD (Gold Spot (1 LOT = $10 per 0.1))
+Time period
+1 hour chart 2010.01.07 22:00 - 2018.10.05 16:00 (2010.01.03 - 2018.11.30)
+Compound model
+Each real-time price (based on fractal interpolation for each price of all available minimum time periods)
+parameter
+MAGICMA=20181115; Lots=0.01; MovingFastPeriod=10; MovingSlowPeriod=23; AdxThresHold=30; RsiThresHold=38; TakeProfit=0.038; StopLossPoint=10; Protect=0.001; BackClose=12; HOUR=2; Debug=true;
+Tested number of columns
+53017
+The amount of real-time price for the re-distribution
+134935256
+Quality of the complex model
+89.83%
+Input chart error
+0
+Starting capital
+5000.00
+Spread
+30
+Total net profit
+1150.23
+Total profit
+1573.07
+Total loss
+-422.84
+Profit ratio
+3.72
+Expected profit
+10.27
+Absolute loss
+57.29
+Maximum loss
+244.35 (4.37%)
+Relative loss
+4.37% (244.35)
+Total transaction order
+112
+Sell order (% profit percentage)
+77 (94.81%)
+Pay (% of profit)
+35 (71.43%)
+Profitable trades (% of total)
+98 (87.50%)
+Loss trading (% of total)
+14 (12.50%)
+maximum:
+Profitable transaction
+337.60
+Loss trading
+-104.25
+average
+Profitable transaction
+16.05
+Loss trading
+-30.20
+maximum:
+Continuous profit amount
+36 (587.22)
+Continuous loss amount
+3 (-49.28)
+most:
+Continuous profit
+587.22 (36)
+Continuous loss
+-104.33 (2)
+average:
+Continuous profit
+9
+Continuous loss
+1

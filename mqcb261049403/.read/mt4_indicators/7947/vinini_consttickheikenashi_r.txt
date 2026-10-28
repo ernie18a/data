@@ -1,0 +1,7 @@
+Changed calculation of the forming bars. Accelerated the operation speed. The indicator is recommended to be used on M1.
+Parameters:
+int CountTick=100; // The amount of ticks in the forming bar
+bool DrawAll=false; // Should every bar be drawn or not?
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7947

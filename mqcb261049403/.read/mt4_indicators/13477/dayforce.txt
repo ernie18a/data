@@ -1,0 +1,7 @@
+DayForce is the Force Index indicator, in which the indicator period is calculated automatically using the number of bars of the current day.
+Timeframe: M1-D1. At the first run, the indicator needs some time for calculation.
+Recommendations:
+Use it for making decisions during intraday trading.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13477

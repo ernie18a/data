@@ -1,0 +1,4 @@
+Based on the original
+Dynamic Balance Point
+, this version is a bit cleaner and simpler to use indicator.
+Colors of this version can be used as a sort of trend determination and the values can be used as support or resistance.

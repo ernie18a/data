@@ -1,0 +1,19 @@
+Shortly:
+Displaying of candles of any instrument
+,
+synchronisation on bars or on days
+.
+The indicator gives the convenience to trace the relative movement of currencies.
+This is the improved version of that:
+http://codebase.mql4.com/en/code/9545
+The indicator allows to level its shart concerning the original shart. For this purpose it is necessary to select with a mouse red "
+handle
+" and to move it under
+Low
+of a desired bar of the original shart. The indicator's shart will be levelled with this point when the new tic come or after a command to Update.
+Besides, function Synchronization on days is added:
+DaySynch
+which allows to level the indicator's shart automatically on the first bar of each day.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9632

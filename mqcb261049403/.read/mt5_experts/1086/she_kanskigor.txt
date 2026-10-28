@@ -1,0 +1,18 @@
+This Expert Advisor is rewritten from MQL4 and was originally published here
+https://www.mql5.com/en/code/8213
+by its author
+kanskigor.
+How It Works
+The Expert Advisor determines the direction of the last daily bar at a set time and opens a position in the opposite direction (provided that there is no open position).
+The image below shows the performance of the Expert Advisor in the strategy tester's visual mode.
+Parameters
+Lots - Position volume.
+Profit - Take Profit in points. 0 - no Take Profit.
+Stop - Stop Loss in points. 0 - no Stop Loss.
+Slippage - Permissible slippage in points.
+Symb - trade symbol. If the value is *, then the chart symbol is used.
+StartTimeHour - The hour when the position opens.
+StartTimeMinute - The minute when the position opens.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1086

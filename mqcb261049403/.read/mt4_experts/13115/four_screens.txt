@@ -1,0 +1,16 @@
+Trades one currency pair, for example EUR/USD, on 4 charts (timeframes M5, M15, M30, H1). The Heiken Ashi is attached to every chart. The data is measured on the formed bar for M5, and on the current one for other timeframes.
+The EA Operation Principle:
+Sell order:
+When all four charts have red candles, it places a Sell order (with fixed Take Profit and Stop Loss, for example 20 points each). If Take Profit is triggered and the candles remain red, then a new Sell order is placed immediately, but if a candle is white on any of the charts, then wait for the market entry. Enter the market once all four charts have red candles.
+Buy order:
+The principle is the same: when all four charts have white candles, it places a Buy order (with fixed Take Profit and Stop Loss, 20 points each). If Take Profit is triggered and the candles remain white, then a new Buy order is placed immediately, but if a candle is red on any of the charts, then wait for the market entry. Enter the market once all four charts have white candles.
+If Stop Loss was triggered, regardless of the trading direction — Buy or Sell, then the next order by the indicator signal on four charts is doubled (for example, if lot was 0.01, then the next one will be multiplied by 2 etc. until a Take Profit is triggered, in case a Take Profit is triggered the lot is returned to its initial value, i.e. 0.01).
+Trading occurs when all the charts have the same colored candles (red or white).
+Expert Advisor Input Parameters:
+Lot
+Order points (Stop Loss and Take Profit)
+Standard Trailing is added in v2.
+If the order is closed in profit, and there is a signal, a new order is only opened during the opening of a new bar.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13115

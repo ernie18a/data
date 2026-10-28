@@ -1,0 +1,12 @@
+This indicator is as an evolution of the classic Donchian channel.
+Pivots are identified using a zigzag structure and graphical markers, with the pivots derived entirely from the behaviour of the channel. A pivot is triggered when the channel flattens, forming a connector point for the next zigzag leg. To avoid weak or insignificant pivots, a
+depth parameter
+is used to confirm the channel’s flatness before marking a new pivot. The pivot logic is intentionally kept simple, with no forward correction applied. As a result, there is some inherent lag due to the need for confirmation.
+To make the indicator more useful in live trading, the current "live" leg is drawn as a
+dynamic trendline
+from the most recent confirmed pivot to the current price extreme. This trendline remains valid until a new pivot is confirmed. The result is a continuously updating cycle of trendlines, which enhances the visual interpretation of the channel and provides an analytical advantage.
+The purpose of this indicator is to observe whether price action respects the trendline by reacting to it with a bounce, or disrespects it, by altering it and prompting a shift in direction. This tool provides
+qualitative insight
+rather than precise signals, so it should not be used to predict exact market movements or serve as a standalone decision-making tool.
+-----
+New version (1.2): code is cleaned up and restructured, comments added, and a small code change to include a dropdown for allowing the user to switch zigzag mode from trendline generation to classic repaint

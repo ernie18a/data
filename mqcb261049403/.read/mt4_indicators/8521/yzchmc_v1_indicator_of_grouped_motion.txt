@@ -1,0 +1,35 @@
+Authors:
+YuraZ
+Copyright c 2008
+yzh {at} mаil {dot} ru
+sergeev
+Copyright c 2008, Alexey Sergeev
+urgunt {at} gmаil {dot} com
+KimIV
+The library for working with the INI files is in the indicator <inifiles.mqh>. Author: IGOR KIM, KimIV
+www.kimiv.ru
+admin{at} kiv {dot} ru
+Description:
+The indicator calculates the percentage of motion of the group of symbols in relation to the beginning of the day. The grouped motion is a good sign for opening positions.
+Usually at the time of Asian session the groups of symbols of USDXXX and XXXUSD range in a certain manner,
+often the impulse that is given by Asia or Europe continues through whole european session.
+If this impulse is caught up by America then the entrance appears to be great, it happens almost always during the trend periods.
+It's better to perform the opening by convergences/divergences.
+The grouped break through of the morning flat can serve as one of the signs both for entering and for confirming the earlier entering.
+---
+At first start the indicator creates the INI file, YZCHMC_V1.INI in the folder MetaTraders is launched from. All currencies are written to the file.
+You can edit this file, add new symbols or remove some of them.
+It is very uncomfortable to pick at the parameters every time you launch it, that was the reason to implent the reading of the parameters from the file.
+---
+The indication of the growth on the concrete TF is displayed on the oscillator, and only the information from the beginning of the current day is displayed at the corner of the main chart.
+---
+The discussion of the indicator is
+here
+The break through of the morning flat:
+http://forum.masterforex-v.org/index.php?showtopic=9387
+Also you can find other materials
+here
+---
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8521

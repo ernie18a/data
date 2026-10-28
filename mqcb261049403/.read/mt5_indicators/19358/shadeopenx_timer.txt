@@ -1,0 +1,9 @@
+The
+ShadeOpenX
+indicator with the possibility to display the percentage value of time that has elapsed since the beginning of the trading session displayed in input parameters. The possibility is implemented using the classes of libraries that were described in detail in the article
+"Custom indicators and infographics in CCanvas"
+. The indicator shows the ratio between the time that has elapsed since session beginning and the duration of the entire session in percentage.
+Fig.1. The ShadeOpenX_Timer indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19358

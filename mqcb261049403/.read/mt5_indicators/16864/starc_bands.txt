@@ -1,0 +1,16 @@
+This is a version of STARC bands with some deviations compared to the original bands .
+By definition STARC bands are :
+STARC (Stoller Average Range Channels) show three lines which create a channel around an ordinary moving average. These three lines are:
+An n–period Simple Moving Average (SMA).
+An upper band, which is the n-period SMA plus an m-period Average True Range (ATR) multiplied by a constant K.
+A lower band, which is the n-period SMA minus an m-period ATR multiplied by a constant K.
+STARC bands were developed by Manning Stoller.
+Usage :the STARC Bands
+tend to define upper and lower limits
+for normal price action. Therefore, some traders use STARC bands to determine the level of risk prior to entry.
+This version :
+has two bands (not just one) which are drawn as a filled channel
+it allows usage of any of the basic 4 type of averages for calculating the basic value of STARC and for ATR calculation - that way we can have variations that were not part of the original bands
+it has a set of 22 types of prices
+It is a multi time frame version already
+Important update : version 1.2 is now compatible with back-testing in multi time frame mode too

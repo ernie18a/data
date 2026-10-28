@@ -1,0 +1,27 @@
+The Expert Advisor is based on the
+iRSI
+(Relative Strength Index, RSI) indicator signals. Inspired by the forum topic at
+https://www.mql5.com/ru/forum/219752
+(in Russian).
+Input Parameters
+RSI: averaging period
+Stop Loss
+Risk in percent for a deal from a free margin
+Position volume is calculated as percent of free margin,
+Stop Loss
+is specified in input parameters.
+Conditions for opening BUY trades
+Entering a buy trade if RSI is above 50% on the H1 timeframe and the stop loss size condition is met (See p.3);
+The EA enters the market once a day. There can be one buy trade and one sell trade per day;
+If the calculated stop loss exceeds the
+Stop Loss
+parameter, the entry signal should be ignored. Stop loss is equal to the low of the previous daily bar minus 10 points;
+Take profit is three times the size of the stop loss;
+Moving to breakeven if the price has passed a distance in the positive direction which is not less than the stop loss size;
+If there is an
+open position
+that was opened yesterday or earlier, signals to open a new position will be handled. If the open position was opened today, signals will be ignored;0
+Sell conditions are opposite.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19414

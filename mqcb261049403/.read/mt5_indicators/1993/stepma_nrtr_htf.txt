@@ -1,0 +1,14 @@
+The
+StepMA_NRTR
+indicator with the timeframe selection option available in input parameters.
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+//Indicator chart period
+Place the indicator compiled file StepMA_NRTR.mq5 to the terminal_data_folder\MQL5\Indicators\ of the client terminal.
+Figure 1. StepMA_NRTR_HTF
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1993

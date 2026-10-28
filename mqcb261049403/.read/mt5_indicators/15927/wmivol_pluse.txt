@@ -1,0 +1,19 @@
+Real author:
+Murad Ismayilov
+Indicator of intraday volatility with no lag. It suggests the trading area for intraday strategies.
+Often, it is necessary to calculate the optimum time for trading, when the quotes are changing rapidly (for example, from 07:00 to 21:00).
+If the instrument is not a familiar one, this may be a problem. This indicator reads all bars on the chart and displays statistics on which time of the day had the greatest activity. The candle height (High minus Low) was selected as the criterion of activity. High activity is highlighted by blue bars, low - pink. The indicator can be used as a filter for different strategies, which require high activity of the instrument.
+In this version, the input parameter allows to change calculation timeframe of the indicator and to use the indicator on any charts
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_D1
+;
+//Timeframe
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 28.02.2014.
+Fig.1. The WmiVol_Pluse indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15927

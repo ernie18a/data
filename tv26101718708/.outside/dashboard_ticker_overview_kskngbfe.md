@@ -1,0 +1,924 @@
+# Dashboard - ticker overview
+
+- url: https://www.tradingview.com/script/KsknGBfE-Dashboard-ticker-overview/
+- type: indicator
+- pine_id: PUB;57ba093eebaf44acb430f90063f93e21
+- version: 1.0
+
+## Description
+
+# Custom Performance Dashboard
+
+A multi-symbol performance table displaying up to 20 stocks in a single, configurable dashboard. Designed for active traders who track a personal watchlist and want price action signals, technical levels, and candle patterns visible at a glance — without switching between charts.
+
+The script comes pre-filled with 20 tickers. All symbols can be replaced via the indicator settings panel.
+
+The skeleton of this script was taken from a tradingview script created by a fellow user, but unfortunately I cannot find it to link it as a resource. 
+---
+
+## Getting Started
+
+1. Open the Pine Script Editor in TradingView
+2. Paste the full script and click **Save**
+3. Click **Add to chart**
+4. The dashboard table appears on the chart — customize symbols and columns in the **Settings** panel
+
+> **Note on TradingView plans:** This script uses 2 `request.security()` calls per symbol (40 total for 20 symbols). It was built and tested on a **Premium subscription**. Free plan users are limited to fewer security calls and may need to reduce the number of active symbols to around 10 to avoid errors. To disable a symbol row, uncheck the toggle next to it in the Symbols settings group.
+
+---
+
+## Dashboard Columns
+
+All column groups can be toggled on or off independently in the settings panel.
+
+| Column Group | Default | What it shows |
+|---|---|---|
+| **Basic Info** | On | Ticker, price, % change from open, daily % change |
+| **Buy Price** | On | Your buy zone / price range (e.g. `240-220`) |
+| **Metrics** | On | EMA 10, EMA 20, SMA 50 values |
+| **Distances** | On | % distance from current price to each metric |
+| **SlingShot** | On | Momentum signal + trigger price |
+| **PV Breakout** | On | Price & volume breakout signal |
+| **Candle Combos** | On | Pattern detection (see below) |
+| **Industry** | On | Notes / sector label per symbol |
+| **Trading** | Off | Trigger price, stop loss, Risk:Reward ratio |
+| **Price Levels** | Off | Previous day high (PDH) and previous day low (PDL) |
+| **Pre-Market** | Off | Pre-market % change |
+| **Post-Market** | Off | Post-market % change |
+
+---
+
+## Signals
+
+### SlingShot
+Triggers when the close crosses **above** the EMA of the high for the first time after being below it for at least 3 bars. Signals a momentum shift / trend re-engagement.
+
+- **EMA length**: configurable (default 4)
+- Output: `Yes` / blank + the trigger price level
+
+### Price & Volume Breakout (PV Breakout)
+Confirms a breakout when three conditions align simultaneously:
+- Close exceeds the rolling highest high (last N bars)
+- Volume exceeds the rolling highest volume (last N bars)
+- Price is on the correct side of the trend filter (SMA)
+
+**Long**: above prior high, above prior volume high, above SMA
+**Short**: below prior low, above prior volume high, below SMA
+
+Configurable parameters:
+- **Price Breakout Period**: bars to look back for highest high/low (default 60)
+- **Volume Breakout Period**: bars to look back for highest volume (default 60)
+- **Trendline Length**: SMA length used as trend filter (default 200)
+
+---
+
+## Candle Patterns
+
+Detected on the **daily** timeframe regardless of the chart's current timeframe.
+
+| Pattern | Condition |
+|---|---|
+| **Kicker** | Previous bar bearish, today opens above prior open — bullish reversal |
+| **Oops+** | Opens below prior low, closes back above it — failed breakdown |
+| **Oops-** | Opens above prior high, closes back below it — failed breakout |
+| **OEL** | Open equals Low — full-day bullish pressure |
+| **OEH** | Open equals High — full-day bearish pressure |
+| **Inside** | High ≤ prior high and Low ≥ prior low — compression / coiling |
+| **Engulf** | High > prior high and Low < prior low — engulfing range expansion |
+| **3Bar+** | Close breaks above the high of the last 3 bars |
+| **3Bar-** | Close breaks below the low of the last 3 bars |
+
+---
+
+## Symbol Configuration
+
+Each of the 20 symbol rows has the following fields editable in the settings panel:
+
+- **Show**: toggle the row on/off
+- **Ticker**: the symbol (use exchange prefix if needed, e.g. `NASDAQ:AAPL`)
+- **Name**: display label shown in the table
+- **Buy Price**: your buy zone, displayed as-is (e.g. `240-220`)
+- **Trigger**: entry price level
+- **Stop**: stop loss level
+- **Notes**: sector, theme, or any label
+
+---
+
+## Table Display Options
+
+| Setting | Options | Default |
+|---|---|---|
+| Position | Top/Middle/Bottom × Left/Center/Right | Top Left |
+| Size | Auto / Tiny / Small / Normal / Large / Huge | Auto |
+| Font | Default / Monospace | Default |
+| Horizontal offset | 0–n columns right | 0 |
+| Vertical offset | 0–n rows down | 0 |
+| Frame & Border | Color + width | Transparent / 1px |
+
+## Source Code
+
+````pine
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © valpatradd
+
+//@version=6
+indicator('db', 'Dashboard', true)
+
+// ---- Combo Input Toggles ----
+var gCombo = 'Candle Combos'
+kickerBool   = input.bool(true, 'Kicker', inline='c1', group=gCombo)
+oopsBool     = input.bool(true, 'Oops', inline='c1', group=gCombo)
+oelBool      = input.bool(true, 'Open=High/Low', inline='c1', group=gCombo)
+insideBool   = input.bool(true, 'Inside/Engulf', inline='c2', group=gCombo)
+threeBarBool = input.bool(true, '3 Bar Break', inline='c2', group=gCombo)
+
+val = input.string('Chg %', 'Performance', ['Chg %'], display = display.none)
+val_ema1 = input.string('EMA 10', 'Metric1', options=['EMA 10', 'EMA 20', 'SMA 50'], display = display.none)
+val_ema2 = input.string('EMA 20', 'Metric2', options=['EMA 10', 'EMA 20', 'SMA 50'], display = display.none)
+val_ema3 = input.string('SMA 50', 'Metric3', options=['EMA 10', 'EMA 20', 'SMA 50'], display = display.none)
+
+sling_ema_len = input.int(4, "Slingshot EMA Length", minval=1, group="Slingshot")
+
+// Price and Volume Breakout
+pv_price_period = input.int(60, "Price Breakout Period", minval=1, group="Price & Volume Breakout")
+pv_volume_period = input.int(60, "Volume Breakout Period", minval=1, group="Price & Volume Breakout")
+pv_trendline_length = input.int(200, "Trendline Length", minval=1, group="Price & Volume Breakout")
+
+// ---- Column Visibility Controls ----
+var gColVis = 'Column Visibility'
+show_basic = input.bool(true, 'Basic Info (Name, Price, Chg Open %, Performance)', group=gColVis)
+show_premp = input.bool(false, 'Pre-MP', group=gColVis)
+show_postmp = input.bool(false, 'Post-MP', group=gColVis)
+show_price_levels = input.bool(false, 'Price Levels (PDL, PDH)', group=gColVis)
+show_buyprice = input.bool(true, 'Buy Price', group=gColVis)
+show_metrics = input.bool(true, 'Metrics (EMA/SMA)', group=gColVis)
+show_distances = input.bool(true, 'Distances to Metrics', group=gColVis)
+show_trading = input.bool(false, 'Trading (Trigger, Stop, R:R)', group=gColVis)
+show_slingshot = input.bool(true, 'SlingShot Signals', group=gColVis)
+show_pv_breakout = input.bool(true, 'Price/Volume Breakout', group=gColVis)
+show_combos = input.bool(true, 'Candle Combos', group=gColVis)
+show_notes = input.bool(true, 'Industry', group=gColVis)
+
+// ---- Performance Table Controls ----
+_name(_str) =>
+    string[] parts = str.split(_str, ":")
+    array.size(parts) > 1 ? array.get(parts, 1) : _str
+
+mode = input.string('Name', 'Mode', ['Name', 'Tooltip'], group='Symbols', inline='Mode', display = display.none)
+
+tf = input.timeframe('', 'Timeframe', group='Timeframe', inline='TF', display = display.none)
+force_iday = input.bool(true, 'Force on Intraday', group='Timeframe', inline='Force', display = display.none)
+in_force_tf = input.string('Daily', '', ['Daily', 'Weekly', 'Monthly', 'Yearly'], group='Timeframe', inline='Force', display = display.none)
+force_tf = switch in_force_tf
+    'Daily'   => 'D'
+    'Weekly'  => 'W'
+    'Monthly' => 'M'
+    'Yearly'  => '12M'
+
+input_tab_pos = input.string('Top Left', 'Position', ['Top Left', 'Top Center', 'Top Right', 'Middle Left', 'Middle Center', 'Middle Right', 'Bottom Left', 'Bottom Center', 'Bottom Right'], group='Table')
+tab_pos = switch input_tab_pos
+    'Top Left'    => position.top_left
+    'Top Center'  => position.top_center
+    'Top Right'   => position.top_right
+    'Middle Left' => position.middle_left
+    'Middle Center' => position.middle_center
+    'Middle Right' => position.middle_right
+    'Bottom Left'  => position.bottom_left
+    'Bottom Center' => position.bottom_center
+    'Bottom Right' => position.bottom_right
+
+col_offset = input.int(0, 'Offset:  Horizontal', 0, group='Table', tooltip='Shifts the table to the right.')
+row_offset = input.int(0, '             Vertical      ', 0, group='Table', inline='Offset', tooltip='Shifts the table downward.')
+input_tab_size = input.string('Auto', 'Size', group='Table', options=['Auto', 'Tiny', 'Small', 'Normal', 'Large', 'Huge'])
+tab_size = switch input_tab_size
+    'Auto'   => size.auto
+    'Tiny'   => size.tiny
+    'Small'  => size.small
+    'Normal' => size.normal
+    'Large'  => size.large
+    'Huge'   => size.huge
+
+in_font = input.string('Default', 'Text Font', ['Default', 'Monospace'], group='Table')
+font = switch in_font
+    'Default'   => font.family_default
+    'Monospace' => font.family_monospace
+
+col_f = input.color(color.new(#363A45, 100), 'Frame', group='Table', inline='Frame')
+w_f = input.int(0, '', 0, group='Table', inline='Frame')
+col_b = input.color(color.new(#363A45, 100), 'Border', group='Table', inline='Border')
+w_b = input.int(1, '', 0, group='Table', inline='Border')
+
+// ---- SYMBOLS 1-20 ----
+show_1 = input.bool(true, '', group='Symbols', inline='Line 1', display = display.none)
+ticker_1 = input.symbol('COHR', '', group='Symbols', inline='Line 1', display = display.none)
+name_1 = input.string('COHR', '', group='Symbols', inline='Line 1', display = display.none)
+trigger_1 = input.string('', 'Trigger', group='Symbols', inline='Line 1', display = display.none)
+stop_1 = input.string('', 'Stop', group='Symbols', inline='Line 1', display = display.none)
+notes_1 = input.string('hfhsghdgs', 'Notes', group='Symbols', inline='Line 1', display = display.none)
+buyprice_1 = input.string('240-220', 'BuyPrice', group='Symbols', inline='Line 1', display = display.none)
+bg_1 = input.color(color.new(#909090, 70), '', group='Symbols', inline='Line 1', display = display.none)
+txt_1 = input.color(#d6d6d6, '', group='Symbols', inline='Line 1', display = display.none)
+
+show_2 = input.bool(true, '', group='Symbols', inline='Line 2', display = display.none)
+ticker_2 = input.symbol('LITE', '', group='Symbols', inline='Line 2', display = display.none)
+name_2 = input.string('LITE', '', group='Symbols', inline='Line 2', display = display.none)
+trigger_2 = input.string('', 'Trigger', group='Symbols', inline='Line 2', display = display.none)
+stop_2 = input.string('', 'Stop', group='Symbols', inline='Line 2', display = display.none)
+notes_2 = input.string('', 'Notes', group='Symbols', inline='Line 2', display = display.none)
+buyprice_2 = input.string('600-550', 'BuyPrice', group='Symbols', inline='Line 2', display = display.none)
+bg_2 = input.color(color.new(#909090, 70), '', group='Symbols', inline='Line 2', display = display.none)
+txt_2 = input.color(#d6d6d6, '', group='Symbols', inline='Line 2', display = display.none)
+
+show_3 = input.bool(true, '', group='Symbols', inline='Line 3', display = display.none)
+ticker_3 = input.symbol('MU', '', group='Symbols', inline='Line 3', display = display.none)
+name_3 = input.string('MU', '', group='Symbols', inline='Line 3', display = display.none)
+trigger_3 = input.string('', 'Trigger', group='Symbols', inline='Line 3', display = display.none)
+stop_3 = input.string('', 'Stop', group='Symbols', inline='Line 3', display = display.none)
+notes_3 = input.string('', 'Notes', group='Symbols', inline='Line 3', display = display.none)
+buyprice_3 = input.string('375-350', 'BuyPrice', group='Symbols', inline='Line 3', display = display.none)
+bg_3 = input.color(color.new(#909090, 70), '', group='Symbols', inline='Line 3', display = display.none)
+txt_3 = input.color(#d6d6d6, '', group='Symbols', inline='Line 3', display = display.none)
+
+show_4 = input.bool(true, '', group='Symbols', inline='Line 4', display = display.none)
+ticker_4 = input.symbol('SNDK', '', group='Symbols', inline='Line 4', display = display.none)
+name_4 = input.string('SNDK', '', group='Symbols', inline='Line 4', display = display.none)
+trigger_4 = input.string('', 'Trigger', group='Symbols', inline='Line 4', display = display.none)
+stop_4 = input.string('', 'Stop', group='Symbols', inline='Line 4', display = display.none)
+notes_4 = input.string('', 'Notes', group='Symbols', inline='Line 4', display = display.none)
+buyprice_4 = input.string('550-500', 'BuyPrice', group='Symbols', inline='Line 4', display = display.none)
+bg_4 = input.color(color.new(#909090, 70), '', group='Symbols', inline='Line 4', display = display.none)
+txt_4 = input.color(#d6d6d6, '', group='Symbols', inline='Line 4', display = display.none)
+
+show_5 = input.bool(true, '', group='Symbols', inline='Line 5', display = display.none)
+ticker_5 = input.symbol('TSM', '', group='Symbols', inline='Line 5', display = display.none)
+name_5 = input.string('TSM', '', group='Symbols', inline='Line 5', display = display.none)
+trigger_5 = input.string('', 'Trigger', group='Symbols', inline='Line 5', display = display.none)
+stop_5 = input.string('', 'Stop', group='Symbols', inline='Line 5', display = display.none)
+notes_5 = input.string('', 'Notes', group='Symbols', inline='Line 5', display = display.none)
+buyprice_5 = input.string('345-325', 'BuyPrice', group='Symbols', inline='Line 5', display = display.none)
+bg_5 = input.color(color.new(#909090, 70), '', group='Symbols', inline='Line 5', display = display.none)
+txt_5 = input.color(#d6d6d6, '', group='Symbols', inline='Line 5', display = display.none)
+
+show_6 = input.bool(true, '', group='Symbols', inline='Line 6', display = display.none)
+ticker_6 = input.symbol('BE', '', group='Symbols', inline='Line 6', display = display.none)
+name_6 = input.string('BE', '', group='Symbols', inline='Line 6', display = display.none)
+trigger_6 = input.string('', 'Trigger', group='Symbols', inline='Line 6', display = display.none)
+stop_6 = input.string('', 'Stop', group='Symbols', inline='Line 6', display = display.none)
+notes_6 = input.string('', 'Notes', group='Symbols', inline='Line 6', display = display.none)
+buyprice_6 = input.string('140-130', 'BuyPrice', group='Symbols', inline='Line 6', display = display.none)
+bg_6 = input.color(color.new(#909090, 70), '', group='Symbols', inline='Line 6', display = display.none)
+txt_6 = input.color(#d6d6d6, '', group='Symbols', inline='Line 6', display = display.none)
+
+show_7 = input.bool(true, '', group='Symbols', inline='Line 7', display = display.none)
+ticker_7 = input.symbol('AAOI', '', group='Symbols', inline='Line 7', display = display.none)
+name_7 = input.string('AAOI', '', group='Symbols', inline='Line 7', display = display.none)
+trigger_7 = input.string('', 'Trigger', group='Symbols', inline='Line 7', display = display.none)
+stop_7 = input.string('', 'Stop', group='Symbols', inline='Line 7', display = display.none)
+notes_7 = input.string('optical', 'Notes', group='Symbols', inline='Line 7', display = display.none)
+buyprice_7 = input.string('80-70', 'BuyPrice', group='Symbols', inline='Line 7', display = display.none)
+bg_7 = input.color(color.new(#909090, 70), '', group='Symbols', inline='Line 7', display = display.none)
+txt_7 = input.color(#d6d6d6, '', group='Symbols', inline='Line 7', display = display.none)
+
+show_8 = input.bool(true, '', group='Symbols', inline='Line 8', display = display.none)
+ticker_8 = input.symbol('SIMO', '', group='Symbols', inline='Line 8', display = display.none)
+name_8 = input.string('SIMO', '', group='Symbols', inline='Line 8', display = display.none)
+trigger_8 = input.string('', 'Trigger', group='Symbols', inline='Line 8', display = display.none)
+stop_8 = input.string('', 'Stop', group='Symbols', inline='Line 8', display = display.none)
+notes_8 = input.string('', 'Notes', group='Symbols', inline='Line 8', display = display.none)
+buyprice_8 = input.string('120-110', 'BuyPrice', group='Symbols', inline='Line 8', display = display.none)
+bg_8 = input.color(color.new(#909090, 70), '', group='Symbols', inline='Line 8', display = display.none)
+txt_8 = input.color(#d6d6d6, '', group='Symbols', inline='Line 8', display = display.none)
+
+show_9 = input.bool(true, '', group='Symbols', inline='Line 9', display = display.none)
+ticker_9 = input.symbol('CRDO', '', group='Symbols', inline='Line 9', display = display.none)
+name_9 = input.string('CRDO', '', group='Symbols', inline='Line 9', display = display.none)
+trigger_9 = input.string('', 'Trigger', group='Symbols', inline='Line 9', display = display.none)
+stop_9 = input.string('', 'Stop', group='Symbols', inline='Line 9', display = display.none)
+notes_9 = input.string('', 'Notes', group='Symbols', inline='Line 9', display = display.none)
+buyprice_9 = input.string('100-90', 'BuyPrice', group='Symbols', inline='Line 9', display = display.none)
+bg_9 = input.color(color.new(#909090, 70), '', group='Symbols', inline='Line 9', display = display.none)
+txt_9 = input.color(#d6d6d6, '', group='Symbols', inline='Line 9', display = display.none)
+
+show_10 = input.bool(true, '', group='Symbols', inline='Line 10', display = display.none)
+ticker_10 = input.symbol('INOD', '', group='Symbols', inline='Line 10', display = display.none)
+name_10 = input.string('INOD', '', group='Symbols', inline='Line 10', display = display.none)
+trigger_10 = input.string('', 'Trigger', group='Symbols', inline='Line 10', display = display.none)
+stop_10 = input.string('', 'Stop', group='Symbols', inline='Line 10', display = display.none)
+notes_10 = input.string('', 'Notes', group='Symbols', inline='Line 10', display = display.none)
+buyprice_10 = input.string('40-35', 'BuyPrice', group='Symbols', inline='Line 10', display = display.none)
+bg_10 = input.color(color.new(#909090, 70), '', group='Symbols', inline='Line 10', display = display.none)
+txt_10 = input.color(#d6d6d6, '', group='Symbols', inline='Line 10', display = display.none)
+
+show_11 = input.bool(true, '', group='Symbols', inline='Line 11', display = display.none)
+ticker_11 = input.symbol('NVDA', '', group='Symbols', inline='Line 11', display = display.none)
+name_11 = input.string('NVDA', '', group='Symbols', inline='Line 11', display = display.none)
+trigger_11 = input.string('', 'Trigger', group='Symbols', inline='Line 11', display = display.none)
+stop_11 = input.string('test', 'Stop', group='Symbols', inline='Line 11', display = display.none)
+notes_11 = input.string('', 'Notes', group='Symbols', inline='Line 11', display = display.none)
+buyprice_11 = input.string('', 'BuyPrice', group='Symbols', inline='Line 11', display = display.none)
+bg_11 = input.color(color.new(#909090, 70), '', group='Symbols', inline='Line 11', display = display.none)
+txt_11 = input.color(#d6d6d6, '', group='Symbols', inline='Line 11', display = display.none)
+
+show_12 = input.bool(true, '', group='Symbols', inline='Line 12', display = display.none)
+ticker_12 = input.symbol('AMD', '', group='Symbols', inline='Line 12', display = display.none)
+name_12 = input.string('AMD', '', group='Symbols', inline='Line 12', display = display.none)
+trigger_12 = input.string('', 'Trigger', group='Symbols', inline='Line 12', display = display.none)
+stop_12 = input.string('test', 'Stop', group='Symbols', inline='Line 12', display = display.none)
+notes_12 = input.string('', 'Notes', group='Symbols', inline='Line 12', display = display.none)
+buyprice_12 = input.string('', 'BuyPrice', group='Symbols', inline='Line 12', display = display.none)
+bg_12 = input.color(color.new(#909090, 70), '', group='Symbols', inline='Line 12', display = display.none)
+txt_12 = input.color(#d6d6d6, '', group='Symbols', inline='Line 12', display = display.none)
+
+show_13 = input.bool(true, '', group='Symbols', inline='Line 13', display = display.none)
+ticker_13 = input.symbol('AVGO', '', group='Symbols', inline='Line 13', display = display.none)
+name_13 = input.string('AVGO', '', group='Symbols', inline='Line 13', display = display.none)
+trigger_13 = input.string('', 'Trigger', group='Symbols', inline='Line 13', display = display.none)
+stop_13 = input.string('test', 'Stop', group='Symbols', inline='Line 13', display = display.none)
+notes_13 = input.string('', 'Notes', group='Symbols', inline='Line 13', display = display.none)
+buyprice_13 = input.string('', 'BuyPrice', group='Symbols', inline='Line 13', display = display.none)
+bg_13 = input.color(color.new(#909090, 70), '', group='Symbols', inline='Line 13', display = display.none)
+txt_13 = input.color(#d6d6d6, '', group='Symbols', inline='Line 13', display = display.none)
+
+show_14 = input.bool(true, '', group='Symbols', inline='Line 14', display = display.none)
+ticker_14 = input.symbol('MRVL', '', group='Symbols', inline='Line 14', display = display.none)
+name_14 = input.string('MRVL', '', group='Symbols', inline='Line 14', display = display.none)
+trigger_14 = input.string('', 'Trigger', group='Symbols', inline='Line 14', display = display.none)
+stop_14 = input.string('test', 'Stop', group='Symbols', inline='Line 14', display = display.none)
+notes_14 = input.string('', 'Notes', group='Symbols', inline='Line 14', display = display.none)
+buyprice_14 = input.string('', 'BuyPrice', group='Symbols', inline='Line 14', display = display.none)
+bg_14 = input.color(color.new(#909090, 70), '', group='Symbols', inline='Line 14', display = display.none)
+txt_14 = input.color(#d6d6d6, '', group='Symbols', inline='Line 14', display = display.none)
+
+show_15 = input.bool(true, '', group='Symbols', inline='Line 15', display = display.none)
+ticker_15 = input.symbol('QCOM', '', group='Symbols', inline='Line 15', display = display.none)
+name_15 = input.string('QCOM', '', group='Symbols', inline='Line 15', display = display.none)
+trigger_15 = input.string('', 'Trigger', group='Symbols', inline='Line 15', display = display.none)
+stop_15 = input.string('test', 'Stop', group='Symbols', inline='Line 15', display = display.none)
+notes_15 = input.string('', 'Notes', group='Symbols', inline='Line 15', display = display.none)
+buyprice_15 = input.string('', 'BuyPrice', group='Symbols', inline='Line 15', display = display.none)
+bg_15 = input.color(color.new(#909090, 70), '', group='Symbols', inline='Line 15', display = display.none)
+txt_15 = input.color(#d6d6d6, '', group='Symbols', inline='Line 15', display = display.none)
+
+show_16 = input.bool(true, '', group='Symbols', inline='Line 16', display = display.none)
+ticker_16 = input.symbol('AMAT', '', group='Symbols', inline='Line 16', display = display.none)
+name_16 = input.string('AMAT', '', group='Symbols', inline='Line 16', display = display.none)
+trigger_16 = input.string('', 'Trigger', group='Symbols', inline='Line 16', display = display.none)
+stop_16 = input.string('test', 'Stop', group='Symbols', inline='Line 16', display = display.none)
+notes_16 = input.string('', 'Notes', group='Symbols', inline='Line 16', display = display.none)
+buyprice_16 = input.string('', 'BuyPrice', group='Symbols', inline='Line 16', display = display.none)
+bg_16 = input.color(color.new(#909090, 70), '', group='Symbols', inline='Line 16', display = display.none)
+txt_16 = input.color(#d6d6d6, '', group='Symbols', inline='Line 16', display = display.none)
+
+show_17 = input.bool(true, '', group='Symbols', inline='Line 17', display = display.none)
+ticker_17 = input.symbol('KLAC', '', group='Symbols', inline='Line 17', display = display.none)
+name_17 = input.string('KLAC', '', group='Symbols', inline='Line 17', display = display.none)
+trigger_17 = input.string('', 'Trigger', group='Symbols', inline='Line 17', display = display.none)
+stop_17 = input.string('test', 'Stop', group='Symbols', inline='Line 17', display = display.none)
+notes_17 = input.string('', 'Notes', group='Symbols', inline='Line 17', display = display.none)
+buyprice_17 = input.string('', 'BuyPrice', group='Symbols', inline='Line 17', display = display.none)
+bg_17 = input.color(color.new(#909090, 70), '', group='Symbols', inline='Line 17', display = display.none)
+txt_17 = input.color(#d6d6d6, '', group='Symbols', inline='Line 17', display = display.none)
+
+show_18 = input.bool(true, '', group='Symbols', inline='Line 18', display = display.none)
+ticker_18 = input.symbol('LRCX', '', group='Symbols', inline='Line 18', display = display.none)
+name_18 = input.string('LRCX', '', group='Symbols', inline='Line 18', display = display.none)
+trigger_18 = input.string('', 'Trigger', group='Symbols', inline='Line 18', display = display.none)
+stop_18 = input.string('test', 'Stop', group='Symbols', inline='Line 18', display = display.none)
+notes_18 = input.string('', 'Notes', group='Symbols', inline='Line 18', display = display.none)
+buyprice_18 = input.string('', 'BuyPrice', group='Symbols', inline='Line 18', display = display.none)
+bg_18 = input.color(color.new(#909090, 70), '', group='Symbols', inline='Line 18', display = display.none)
+txt_18 = input.color(#d6d6d6, '', group='Symbols', inline='Line 18', display = display.none)
+
+show_19 = input.bool(true, '', group='Symbols', inline='Line 19', display = display.none)
+ticker_19 = input.symbol('ARM', '', group='Symbols', inline='Line 19', display = display.none)
+name_19 = input.string('ARM', '', group='Symbols', inline='Line 19', display = display.none)
+trigger_19 = input.string('', 'Trigger', group='Symbols', inline='Line 19', display = display.none)
+stop_19 = input.string('test', 'Stop', group='Symbols', inline='Line 19', display = display.none)
+notes_19 = input.string('', 'Notes', group='Symbols', inline='Line 19', display = display.none)
+buyprice_19 = input.string('', 'BuyPrice', group='Symbols', inline='Line 19', display = display.none)
+bg_19 = input.color(color.new(#909090, 70), '', group='Symbols', inline='Line 19', display = display.none)
+txt_19 = input.color(#d6d6d6, '', group='Symbols', inline='Line 19', display = display.none)
+
+show_20 = input.bool(true, '', group='Symbols', inline='Line 20', display = display.none)
+ticker_20 = input.symbol('INTC', '', group='Symbols', inline='Line 20', display = display.none)
+name_20 = input.string('INTC', '', group='Symbols', inline='Line 20', display = display.none)
+trigger_20 = input.string('', 'Trigger', group='Symbols', inline='Line 20', display = display.none)
+stop_20 = input.string('test', 'Stop', group='Symbols', inline='Line 20', display = display.none)
+notes_20 = input.string('', 'Notes', group='Symbols', inline='Line 20', display = display.none)
+buyprice_20 = input.string('', 'BuyPrice', group='Symbols', inline='Line 20', display = display.none)
+bg_20 = input.color(color.new(#909090, 70), '', group='Symbols', inline='Line 20', display = display.none)
+txt_20 = input.color(#d6d6d6, '', group='Symbols', inline='Line 20', display = display.none)
+// ---- DATA FETCH FUNCTIONS (2 request.security calls per symbol) ----
+// Each symbol = 1 tf call + 1 Daily call = 2 unique requests
+// 20 symbols x 2 = 40 unique calls (free plan limit)
+
+custom_tf = timeframe.in_seconds(force_iday and timeframe.isintraday ? force_tf : tf)
+chart_tf = timeframe.in_seconds(timeframe.period)
+if chart_tf > custom_tf
+    runtime.error('The selected timeframe is lower than the current chart timeframe.')
+
+// Fetch all tf-based data in ONE request per symbol (12 values)
+_fetch_tf(ticker, emaLen) =>
+    tf_used = force_iday and timeframe.isintraday ? force_tf : tf
+    request.security(ticker, tf_used, [
+        close, close[1], close[2], close[3], open, high, low, volume,
+        ta.ema(high, emaLen), ta.ema(high, emaLen)[1], ta.ema(high, emaLen)[2], ta.ema(high, emaLen)[3]])
+
+// Fetch all daily data in ONE request per symbol (13 values)
+_fetch_D(ticker) =>
+    request.security(ticker, "D", [
+        high[1], low[1], close[1], open,
+        close[1] < open[1] and open > open[1],
+        open == low,
+        open == high,
+        open < low[1] and close > low[1],
+        open > high[1] and close <= high[1],
+        high <= high[1] and low >= low[1],
+        high > high[1] and low < low[1],
+        high[1] < high[3] and close > high[1] and close > high[2] and close > high[3],
+        low[1] > low[3] and close < low[1] and close < low[2] and close < low[3]])
+
+// Price/Volume Breakout - pure computation, no request.security
+_pv_compute(c, h, l, v, price_period, volume_period, trendline_length) =>
+    price_highest = ta.highest(h, price_period)
+    price_lowest = ta.lowest(l, price_period)
+    volume_highest = ta.highest(v, volume_period)
+    trendline = ta.sma(c, trendline_length)
+    long_breakout = c > price_highest[1] and v > volume_highest[1] and c > trendline
+    short_breakout = c < price_lowest[1] and v > volume_highest[1] and c < trendline
+    signal = long_breakout ? "Long" : short_breakout ? "Short" : ""
+    breakout_price = (long_breakout or short_breakout) ? c : na
+    [signal, breakout_price]
+
+_dist(price, metric_value) =>
+    na(price) or na(metric_value) or metric_value == 0 ? na : (price - metric_value) / metric_value * 100
+
+_get_value_text_color(value_str, price) =>
+    color.white
+
+_get_value_bg_color(value_str, price) =>
+    if value_str == '' or na(price)
+        color.new(#2D3748, 0)
+    else
+        value_num = str.tonumber(value_str)
+        if na(value_num)
+            color.new(#2D3748, 0)
+        else if value_num < 0 or price < value_num
+            color.new(#7D1007, 0)
+        else
+            color.new(#1B4332, 0)
+
+// ---- DYNAMIC COLUMN CALCULATION ----
+basic_cols = show_basic ? 4 : 0
+premp_cols = show_premp ? 1 : 0
+postmp_cols = show_postmp ? 1 : 0
+price_level_cols = show_price_levels ? 2 : 0
+buyprice_cols = show_buyprice ? 1 : 0
+metric_cols = show_metrics ? 3 : 0
+distance_cols = show_distances ? 3 : 0
+trading_cols = show_trading ? 3 : 0
+slingshot_cols = show_slingshot ? 2 : 0
+pv_breakout_cols = show_pv_breakout ? 2 : 0
+combo_cols = show_combos ? 5 : 0
+notes_cols = show_notes ? 1 : 0
+
+visible_cols = basic_cols + premp_cols + postmp_cols + price_level_cols + buyprice_cols + metric_cols + distance_cols + trading_cols + slingshot_cols + pv_breakout_cols + combo_cols + notes_cols
+total_cols = visible_cols + col_offset
+
+// ---- TABLE ----
+tab = table.new(tab_pos, total_cols, 22 + row_offset, frame_color=col_f, frame_width=w_f, border_color=col_b, border_width=w_b)
+header_row = row_offset
+
+// ---- DYNAMIC TABLE HEADER GENERATION ----
+current_col = col_offset
+
+if show_basic
+    table.cell(tab, current_col, header_row, mode == 'Name' ? "Name" : "Ticker", bgcolor=color.gray, text_color=color.white, text_size=tab_size, text_font_family=font)
+    current_col += 1
+
+if show_price_levels
+    table.cell(tab, current_col, header_row, "PDL", bgcolor=color.gray, text_color=color.white, text_size=tab_size, text_font_family=font)
+    current_col += 1
+    table.cell(tab, current_col, header_row, "PDH", bgcolor=color.gray, text_color=color.white, text_size=tab_size, text_font_family=font)
+    current_col += 1
+
+if show_premp
+    table.cell(tab, current_col, header_row, "Pre-MP", bgcolor=color.yellow, text_color=color.black, text_size=tab_size, text_font_family=font)
+    current_col += 1
+
+if show_basic
+    table.cell(tab, current_col, header_row, "Price", bgcolor=color.navy, text_color=color.white, text_size=tab_size, text_font_family=font)
+    current_col += 1
+    table.cell(tab, current_col, header_row, "Chg Open %", bgcolor=color.gray, text_color=color.white, text_size=tab_size, text_font_family=font)
+    current_col += 1
+    table.cell(tab, current_col, header_row, "Chg Daily%", bgcolor=color.gray, text_color=color.white, text_size=tab_size, text_font_family=font)
+    current_col += 1
+
+if show_postmp
+    table.cell(tab, current_col, header_row, "Post-MP", bgcolor=color.yellow, text_color=color.black, text_size=tab_size, text_font_family=font)
+    current_col += 1
+
+if show_buyprice
+    table.cell(tab, current_col, header_row, "Buy Price", bgcolor=color.new(#1A5276, 0), text_color=color.white, text_size=tab_size, text_font_family=font)
+    current_col += 1
+
+if show_trading
+    table.cell(tab, current_col, header_row, "Trigger", bgcolor=color.navy, text_color=color.white, text_size=tab_size, text_font_family=font)
+    current_col += 1
+    table.cell(tab, current_col, header_row, "Stop", bgcolor=color.navy, text_color=color.white, text_size=tab_size, text_font_family=font)
+    current_col += 1
+    table.cell(tab, current_col, header_row, "R:R", bgcolor=color.gray, text_color=color.white, text_size=tab_size, text_font_family=font)
+    current_col += 1
+
+if show_slingshot
+    table.cell(tab, current_col, header_row, "SlingShot?", bgcolor=color.new(#B8660A, 50), text_color=color.white, text_size=tab_size, text_font_family=font)
+    current_col += 1
+    table.cell(tab, current_col, header_row, "Trigger Price", bgcolor=color.new(#B8660A, 50), text_color=color.white, text_size=tab_size, text_font_family=font)
+    current_col += 1
+
+if show_pv_breakout
+    table.cell(tab, current_col, header_row, "PV Breakout", bgcolor=color.teal, text_color=color.white, text_size=tab_size, text_font_family=font)
+    current_col += 1
+    table.cell(tab, current_col, header_row, "Breakout Price", bgcolor=color.teal, text_color=color.white, text_size=tab_size, text_font_family=font)
+    current_col += 1
+
+if show_combos
+    table.cell(tab, current_col, header_row, "Kicker", bgcolor=color.new(color.gray, 75), text_color=color.white, text_size=tab_size, text_font_family=font)
+    current_col += 1
+    table.cell(tab, current_col, header_row, "Oops", bgcolor=color.new(color.gray, 85), text_color=color.white, text_size=tab_size, text_font_family=font)
+    current_col += 1
+    table.cell(tab, current_col, header_row, "OEL/OEH", bgcolor=color.new(color.gray, 90), text_color=color.white, text_size=tab_size, text_font_family=font)
+    current_col += 1
+    table.cell(tab, current_col, header_row, "IN/EN", bgcolor=color.new(color.gray, 90), text_color=color.white, text_size=tab_size, text_font_family=font)
+    current_col += 1
+    table.cell(tab, current_col, header_row, "3Bar", bgcolor=color.new(color.gray, 85), text_color=color.white, text_size=tab_size, text_font_family=font)
+    current_col += 1
+
+if show_metrics
+    table.cell(tab, current_col, header_row, val_ema1, bgcolor=color.navy, text_color=color.white, text_size=tab_size, text_font_family=font)
+    current_col += 1
+    table.cell(tab, current_col, header_row, val_ema2, bgcolor=color.navy, text_color=color.white, text_size=tab_size, text_font_family=font)
+    current_col += 1
+    table.cell(tab, current_col, header_row, val_ema3, bgcolor=color.navy, text_color=color.white, text_size=tab_size, text_font_family=font)
+    current_col += 1
+
+if show_distances
+    table.cell(tab, current_col, header_row, "Dist to " + val_ema1, bgcolor=color.blue, text_color=color.white, text_size=tab_size, text_font_family=font)
+    current_col += 1
+    table.cell(tab, current_col, header_row, "Dist to " + val_ema2, bgcolor=color.blue, text_color=color.white, text_size=tab_size, text_font_family=font)
+    current_col += 1
+    table.cell(tab, current_col, header_row, "Dist to " + val_ema3, bgcolor=color.blue, text_color=color.white, text_size=tab_size, text_font_family=font)
+    current_col += 1
+
+if show_notes
+    table.cell(tab, current_col, header_row, "Industry", bgcolor=color.purple, text_color=color.white, text_size=tab_size, text_font_family=font)
+    current_col += 1
+
+fill_offset(row) =>
+    if col_offset > 0
+        for j = 0 to col_offset - 1
+            table.cell(tab, j, row, "", text_color=color.new(color.white, 100))
+
+// Dynamic Table row function
+// p = close (from _fetch_tf), o = open (from _fetch_tf), premarket from _fetch_D
+// buy_price = string input (e.g. "240-220")
+_t(show, tkr, name, txtcol, bgcol, chg, trigger, stop, notes, buy_price, base_row,
+   p, o, premarket,
+   sling, sling_price, pv_signal, pv_price,
+   kicker, oopsUp, oopsDn, oel, oeh, inside, engulf, b3Up, b3Dn, pdh, pdl, symbol_index) =>
+    if show and (tkr != '' or name == "-")
+        fill_offset(base_row)
+
+        chg_open = show_basic and not na(o) and not na(p) ? ((p - o) / o * 100) : na
+        chg_open_str = show_basic ? (na(chg_open) ? "" : str.tostring(chg_open, format.percent)) : ""
+
+        float postmarket = 0.0
+
+        // Metrics computed from fetched close series (no request.security)
+        m1 = show_metrics or show_distances ? (val_ema1 == 'EMA 10' ? ta.ema(p, 10) : val_ema1 == 'EMA 20' ? ta.ema(p, 20) : ta.sma(p, 50)) : na
+        m2 = show_metrics or show_distances ? (val_ema2 == 'EMA 10' ? ta.ema(p, 10) : val_ema2 == 'EMA 20' ? ta.ema(p, 20) : ta.sma(p, 50)) : na
+        m3 = show_metrics or show_distances ? (val_ema3 == 'EMA 10' ? ta.ema(p, 10) : val_ema3 == 'EMA 20' ? ta.ema(p, 20) : ta.sma(p, 50)) : na
+        m1_s = show_metrics ? (na(m1) ? "" : str.tostring(m1, "#.##")) : ""
+        m2_s = show_metrics ? (na(m2) ? "" : str.tostring(m2, "#.##")) : ""
+        m3_s = show_metrics ? (na(m3) ? "" : str.tostring(m3, "#.##")) : ""
+        d1 = show_distances ? _dist(p, m1) : na
+        d2 = show_distances ? _dist(p, m2) : na
+        d3 = show_distances ? _dist(p, m3) : na
+        d1_s = show_distances ? (na(d1) ? "" : str.tostring(d1, "#.##") + "%") : ""
+        d2_s = show_distances ? (na(d2) ? "" : str.tostring(d2, "#.##") + "%") : ""
+        d3_s = show_distances ? (na(d3) ? "" : str.tostring(d3, "#.##") + "%") : ""
+
+        trigger_cell = show_trading ? (trigger == '' ? '' : trigger) : ''
+        stop_cell = show_trading ? (stop == '' ? '' : stop) : ''
+        notes_cell = show_notes ? (notes == '' ? '' : notes) : ''
+
+        float rr_ratio = na
+        rr_cell = ''
+        if show_trading and trigger_cell != '' and stop_cell != '' and not na(p)
+            trigger_num = str.tonumber(trigger_cell)
+            stop_num = str.tonumber(stop_cell)
+            if not na(trigger_num) and not na(stop_num) and trigger_num != stop_num
+                reward = trigger_num - p
+                risk = trigger_num - stop_num
+                if risk != 0
+                    rr_ratio := reward / risk
+                    rr_cell := str.tostring(rr_ratio, "#.##")
+
+        trigger_txt_color = show_trading ? _get_value_text_color(trigger_cell, p) : color.white
+        trigger_bg_color = show_trading ? _get_value_bg_color(trigger_cell, p) : color.new(#2D3748, 0)
+        stop_txt_color = show_trading ? _get_value_text_color(stop_cell, p) : color.white
+        stop_bg_color = show_trading ? _get_value_bg_color(stop_cell, p) : color.new(#2D3748, 0)
+        rr_txt_color = color.white
+        rr_bg_color = show_trading ? (rr_cell == '' or na(rr_ratio) ? color.new(#2D3748, 0) : rr_ratio > 1 ? color.new(#1B4332, 0) : rr_ratio < 1 ? color.new(#7D1007, 0) : color.new(#2D3748, 0)) : color.new(#2D3748, 0)
+
+        pdh_txt_color = show_price_levels ? _get_value_text_color(str.tostring(pdh, "#.##"), p) : color.white
+        pdh_bg_color = show_price_levels ? _get_value_bg_color(str.tostring(pdh, "#.##"), p) : color.new(#2D3748, 0)
+        pdl_txt_color = show_price_levels ? _get_value_text_color(str.tostring(pdl, "#.##"), p) : color.white
+        pdl_bg_color = show_price_levels ? _get_value_bg_color(str.tostring(pdl, "#.##"), p) : color.new(#2D3748, 0)
+
+        perf_txt_color = color.white
+        perf_bg_color = show_basic ? (chg > 0 ? color.new(#1B4332, 0) : chg < 0 ? color.new(#7D1007, 0) : color.new(#2D3748, 0)) : color.new(#2D3748, 0)
+        string valFormatted = show_basic ? str.tostring(chg, format.percent) : ""
+
+        current_col = col_offset
+
+        if show_basic
+            table.cell(tab, current_col, base_row, (mode == 'Name' and name == '') or mode == 'Tooltip' ? _name(tkr) : name, text_color=txtcol, text_size=tab_size, bgcolor=bgcol, text_font_family=font, tooltip=(mode == 'Tooltip' and name == '') or mode == 'Name' ? na : name)
+            current_col += 1
+
+        if show_price_levels
+            table.cell(tab, current_col, base_row, na(pdl) ? "" : str.tostring(pdl, "#.##"), text_color=pdl_txt_color, text_size=tab_size, bgcolor=pdl_bg_color, text_font_family=font)
+            current_col += 1
+            table.cell(tab, current_col, base_row, na(pdh) ? "" : str.tostring(pdh, "#.##"), text_color=pdh_txt_color, text_size=tab_size, bgcolor=pdh_bg_color, text_font_family=font)
+            current_col += 1
+
+        if show_premp
+            premarket_str = na(premarket) ? "" : str.tostring(premarket, format.percent)
+            premarket_color = na(premarket) ? color.black : (premarket > 0 ? color.green : premarket < 0 ? color.red : color.black)
+            table.cell(tab, current_col, base_row, premarket_str, text_color=premarket_color, text_size=tab_size, bgcolor=color.yellow, text_font_family=font)
+            current_col += 1
+
+        if show_basic
+            table.cell(tab, current_col, base_row, na(p) ? "" : str.tostring(p, '#.##'), text_color=txtcol, text_size=tab_size, bgcolor=bgcol, text_font_family=font)
+            current_col += 1
+            table.cell(tab, current_col, base_row, chg_open_str, text_color=chg_open > 0 ? color.green : chg_open < 0 ? color.red : color.white, text_size=tab_size, bgcolor=bgcol, text_font_family=font)
+            current_col += 1
+            table.cell(tab, current_col, base_row, valFormatted, text_color=perf_txt_color, text_size=tab_size, bgcolor=perf_bg_color, text_font_family=font)
+            current_col += 1
+
+        if show_postmp
+            postmarket_str = na(postmarket) ? "" : str.tostring(postmarket, format.percent)
+            postmarket_color = na(postmarket) ? color.black : (postmarket > 0 ? color.green : postmarket < 0 ? color.red : color.black)
+            table.cell(tab, current_col, base_row, postmarket_str, text_color=postmarket_color, text_size=tab_size, bgcolor=color.yellow, text_font_family=font)
+            current_col += 1
+
+        if show_buyprice
+            table.cell(tab, current_col, base_row, buy_price, text_color=color.white, text_size=tab_size, bgcolor=color.new(#1A5276, 0), text_font_family=font)
+            current_col += 1
+
+        if show_trading
+            table.cell(tab, current_col, base_row, trigger_cell, text_color=trigger_txt_color, text_size=tab_size, bgcolor=trigger_bg_color, text_font_family=font)
+            current_col += 1
+            table.cell(tab, current_col, base_row, stop_cell, text_color=stop_txt_color, text_size=tab_size, bgcolor=stop_bg_color, text_font_family=font)
+            current_col += 1
+            table.cell(tab, current_col, base_row, rr_cell, text_color=rr_txt_color, text_size=tab_size, bgcolor=rr_bg_color, text_font_family=font)
+            current_col += 1
+
+        if show_slingshot
+            table.cell(tab, current_col, base_row, sling ? "Yes" : "", text_color=color.white, text_size=tab_size, bgcolor=color.new(#B8660A, 50), text_font_family=font)
+            current_col += 1
+            table.cell(tab, current_col, base_row, sling and not na(sling_price) ? str.tostring(sling_price, '#.##') : "", text_color=color.white, text_size=tab_size, bgcolor=color.new(#B8660A, 50), text_font_family=font)
+            current_col += 1
+
+        if show_pv_breakout
+            table.cell(tab, current_col, base_row, pv_signal, text_color=color.white, text_size=tab_size, bgcolor=pv_signal == "Long" ? color.new(color.green, 15) : pv_signal == "Short" ? color.new(color.red, 15) : color.new(color.teal, 15), text_font_family=font)
+            current_col += 1
+            table.cell(tab, current_col, base_row, not na(pv_price) ? str.tostring(pv_price, '#.##') : "", text_color=color.white, text_size=tab_size, bgcolor=color.new(color.teal, 25), text_font_family=font)
+            current_col += 1
+
+        if show_combos
+            table.cell(tab, current_col, base_row, kickerBool ? (kicker ? 'Kicker' : '') : '', bgcolor=kicker ? color.new(color.green, 10) : na, text_color=color.black, text_size=tab_size, text_font_family=font)
+            current_col += 1
+            table.cell(tab, current_col, base_row, oopsBool ? (oopsUp ? 'Oops+' : oopsDn ? 'Oops-' : '') : '', bgcolor=oopsUp ? color.new(color.green, 0) : oopsDn ? color.new(color.red, 0) : na, text_color=color.black, text_size=tab_size, text_font_family=font)
+            current_col += 1
+            table.cell(tab, current_col, base_row, oelBool ? (oel ? 'OEL' : oeh ? 'OEH' : '') : '', bgcolor=oel ? color.new(color.green, 10) : oeh ? color.new(color.red, 10) : na, text_color=color.black, text_size=tab_size, text_font_family=font)
+            current_col += 1
+            table.cell(tab, current_col, base_row, insideBool ? (inside ? 'Inside' : engulf ? 'Engulf' : '') : '', bgcolor=inside ? color.new(color.green, 12) : engulf ? color.new(color.red, 12) : na, text_color=color.black, text_size=tab_size, text_font_family=font)
+            current_col += 1
+            table.cell(tab, current_col, base_row, threeBarBool ? (b3Up ? '3Bar+' : b3Dn ? '3Bar-' : '') : '', bgcolor=b3Up ? color.new(color.green, 0) : b3Dn ? color.new(color.red, 0) : na, text_color=color.black, text_size=tab_size, text_font_family=font)
+            current_col += 1
+
+        if show_metrics
+            table.cell(tab, current_col, base_row, m1_s, text_color=color.white, text_size=tab_size, bgcolor=color.new(color.navy, 40), text_font_family=font)
+            current_col += 1
+            table.cell(tab, current_col, base_row, m2_s, text_color=color.white, text_size=tab_size, bgcolor=color.new(color.navy, 40), text_font_family=font)
+            current_col += 1
+            table.cell(tab, current_col, base_row, m3_s, text_color=color.white, text_size=tab_size, bgcolor=color.new(color.navy, 40), text_font_family=font)
+            current_col += 1
+
+        if show_distances
+            table.cell(tab, current_col, base_row, d1_s, text_color=color.white, text_size=tab_size, bgcolor=color.new(color.blue, 20), text_font_family=font)
+            current_col += 1
+            table.cell(tab, current_col, base_row, d2_s, text_color=color.white, text_size=tab_size, bgcolor=color.new(color.blue, 20), text_font_family=font)
+            current_col += 1
+            table.cell(tab, current_col, base_row, d3_s, text_color=color.white, text_size=tab_size, bgcolor=color.new(color.blue, 20), text_font_family=font)
+            current_col += 1
+
+        if show_notes
+            table.cell(tab, current_col, base_row, notes_cell, text_color=color.white, text_size=tab_size, bgcolor=color.new(color.purple, 20), text_font_family=font)
+            current_col += 1
+
+        base_row + 1
+    else
+        base_row
+
+// Fill vertical offset rows (if any)
+if row_offset > 0
+    for i = 0 to row_offset - 1
+        for j = 0 to total_cols - 1
+            table.cell(tab, j, i, "", text_color=color.new(color.white, 100))
+
+// ---- FILL TABLE FOR 20 SYMBOLS ----
+int row = header_row + 1
+
+[s1_c, s1_c1, s1_c2, s1_c3, s1_o, s1_h, s1_l, s1_v, s1_ema0, s1_ema1, s1_ema2, s1_ema3] = _fetch_tf(ticker_1, sling_ema_len)
+[s1_pdh, s1_pdl, s1_dc1, s1_do, s1_kicker, s1_oel, s1_oeh, s1_oopsUp, s1_oopsDn, s1_inside, s1_engulf, s1_b3Up, s1_b3Dn] = _fetch_D(ticker_1)
+s1_chg = ticker_1 == '' or name_1 == '-' ? na : (na(s1_c) or na(s1_c1) ? na : (math.abs((s1_c - s1_c1) / s1_c1 * 100) > 1e6 ? na : (s1_c - s1_c1) / s1_c1 * 100))
+s1_premp = na(s1_dc1) or na(s1_do) ? na : (s1_do - s1_dc1) / s1_dc1 * 100
+s1_sling = s1_c > s1_ema0 and s1_c1 < s1_ema1 and s1_c2 < s1_ema2 and s1_c3 < s1_ema3
+s1_slingprice = s1_sling ? s1_c : na
+[s1_pv_signal, s1_pv_price] = _pv_compute(s1_c, s1_h, s1_l, s1_v, pv_price_period, pv_volume_period, pv_trendline_length)
+row := _t(show_1, ticker_1, name_1, txt_1, bg_1, s1_chg, trigger_1, stop_1, notes_1, buyprice_1, row, s1_c, s1_o, s1_premp, s1_sling, s1_slingprice, s1_pv_signal, s1_pv_price, s1_kicker, s1_oopsUp, s1_oopsDn, s1_oel, s1_oeh, s1_inside, s1_engulf, s1_b3Up, s1_b3Dn, s1_pdh, s1_pdl, 0)
+
+[s2_c, s2_c1, s2_c2, s2_c3, s2_o, s2_h, s2_l, s2_v, s2_ema0, s2_ema1, s2_ema2, s2_ema3] = _fetch_tf(ticker_2, sling_ema_len)
+[s2_pdh, s2_pdl, s2_dc1, s2_do, s2_kicker, s2_oel, s2_oeh, s2_oopsUp, s2_oopsDn, s2_inside, s2_engulf, s2_b3Up, s2_b3Dn] = _fetch_D(ticker_2)
+s2_chg = ticker_2 == '' or name_2 == '-' ? na : (na(s2_c) or na(s2_c1) ? na : (math.abs((s2_c - s2_c1) / s2_c1 * 100) > 1e6 ? na : (s2_c - s2_c1) / s2_c1 * 100))
+s2_premp = na(s2_dc1) or na(s2_do) ? na : (s2_do - s2_dc1) / s2_dc1 * 100
+s2_sling = s2_c > s2_ema0 and s2_c1 < s2_ema1 and s2_c2 < s2_ema2 and s2_c3 < s2_ema3
+s2_slingprice = s2_sling ? s2_c : na
+[s2_pv_signal, s2_pv_price] = _pv_compute(s2_c, s2_h, s2_l, s2_v, pv_price_period, pv_volume_period, pv_trendline_length)
+row := _t(show_2, ticker_2, name_2, txt_2, bg_2, s2_chg, trigger_2, stop_2, notes_2, buyprice_2, row, s2_c, s2_o, s2_premp, s2_sling, s2_slingprice, s2_pv_signal, s2_pv_price, s2_kicker, s2_oopsUp, s2_oopsDn, s2_oel, s2_oeh, s2_inside, s2_engulf, s2_b3Up, s2_b3Dn, s2_pdh, s2_pdl, 1)
+
+[s3_c, s3_c1, s3_c2, s3_c3, s3_o, s3_h, s3_l, s3_v, s3_ema0, s3_ema1, s3_ema2, s3_ema3] = _fetch_tf(ticker_3, sling_ema_len)
+[s3_pdh, s3_pdl, s3_dc1, s3_do, s3_kicker, s3_oel, s3_oeh, s3_oopsUp, s3_oopsDn, s3_inside, s3_engulf, s3_b3Up, s3_b3Dn] = _fetch_D(ticker_3)
+s3_chg = ticker_3 == '' or name_3 == '-' ? na : (na(s3_c) or na(s3_c1) ? na : (math.abs((s3_c - s3_c1) / s3_c1 * 100) > 1e6 ? na : (s3_c - s3_c1) / s3_c1 * 100))
+s3_premp = na(s3_dc1) or na(s3_do) ? na : (s3_do - s3_dc1) / s3_dc1 * 100
+s3_sling = s3_c > s3_ema0 and s3_c1 < s3_ema1 and s3_c2 < s3_ema2 and s3_c3 < s3_ema3
+s3_slingprice = s3_sling ? s3_c : na
+[s3_pv_signal, s3_pv_price] = _pv_compute(s3_c, s3_h, s3_l, s3_v, pv_price_period, pv_volume_period, pv_trendline_length)
+row := _t(show_3, ticker_3, name_3, txt_3, bg_3, s3_chg, trigger_3, stop_3, notes_3, buyprice_3, row, s3_c, s3_o, s3_premp, s3_sling, s3_slingprice, s3_pv_signal, s3_pv_price, s3_kicker, s3_oopsUp, s3_oopsDn, s3_oel, s3_oeh, s3_inside, s3_engulf, s3_b3Up, s3_b3Dn, s3_pdh, s3_pdl, 2)
+
+[s4_c, s4_c1, s4_c2, s4_c3, s4_o, s4_h, s4_l, s4_v, s4_ema0, s4_ema1, s4_ema2, s4_ema3] = _fetch_tf(ticker_4, sling_ema_len)
+[s4_pdh, s4_pdl, s4_dc1, s4_do, s4_kicker, s4_oel, s4_oeh, s4_oopsUp, s4_oopsDn, s4_inside, s4_engulf, s4_b3Up, s4_b3Dn] = _fetch_D(ticker_4)
+s4_chg = ticker_4 == '' or name_4 == '-' ? na : (na(s4_c) or na(s4_c1) ? na : (math.abs((s4_c - s4_c1) / s4_c1 * 100) > 1e6 ? na : (s4_c - s4_c1) / s4_c1 * 100))
+s4_premp = na(s4_dc1) or na(s4_do) ? na : (s4_do - s4_dc1) / s4_dc1 * 100
+s4_sling = s4_c > s4_ema0 and s4_c1 < s4_ema1 and s4_c2 < s4_ema2 and s4_c3 < s4_ema3
+s4_slingprice = s4_sling ? s4_c : na
+[s4_pv_signal, s4_pv_price] = _pv_compute(s4_c, s4_h, s4_l, s4_v, pv_price_period, pv_volume_period, pv_trendline_length)
+row := _t(show_4, ticker_4, name_4, txt_4, bg_4, s4_chg, trigger_4, stop_4, notes_4, buyprice_4, row, s4_c, s4_o, s4_premp, s4_sling, s4_slingprice, s4_pv_signal, s4_pv_price, s4_kicker, s4_oopsUp, s4_oopsDn, s4_oel, s4_oeh, s4_inside, s4_engulf, s4_b3Up, s4_b3Dn, s4_pdh, s4_pdl, 3)
+
+[s5_c, s5_c1, s5_c2, s5_c3, s5_o, s5_h, s5_l, s5_v, s5_ema0, s5_ema1, s5_ema2, s5_ema3] = _fetch_tf(ticker_5, sling_ema_len)
+[s5_pdh, s5_pdl, s5_dc1, s5_do, s5_kicker, s5_oel, s5_oeh, s5_oopsUp, s5_oopsDn, s5_inside, s5_engulf, s5_b3Up, s5_b3Dn] = _fetch_D(ticker_5)
+s5_chg = ticker_5 == '' or name_5 == '-' ? na : (na(s5_c) or na(s5_c1) ? na : (math.abs((s5_c - s5_c1) / s5_c1 * 100) > 1e6 ? na : (s5_c - s5_c1) / s5_c1 * 100))
+s5_premp = na(s5_dc1) or na(s5_do) ? na : (s5_do - s5_dc1) / s5_dc1 * 100
+s5_sling = s5_c > s5_ema0 and s5_c1 < s5_ema1 and s5_c2 < s5_ema2 and s5_c3 < s5_ema3
+s5_slingprice = s5_sling ? s5_c : na
+[s5_pv_signal, s5_pv_price] = _pv_compute(s5_c, s5_h, s5_l, s5_v, pv_price_period, pv_volume_period, pv_trendline_length)
+row := _t(show_5, ticker_5, name_5, txt_5, bg_5, s5_chg, trigger_5, stop_5, notes_5, buyprice_5, row, s5_c, s5_o, s5_premp, s5_sling, s5_slingprice, s5_pv_signal, s5_pv_price, s5_kicker, s5_oopsUp, s5_oopsDn, s5_oel, s5_oeh, s5_inside, s5_engulf, s5_b3Up, s5_b3Dn, s5_pdh, s5_pdl, 4)
+
+[s6_c, s6_c1, s6_c2, s6_c3, s6_o, s6_h, s6_l, s6_v, s6_ema0, s6_ema1, s6_ema2, s6_ema3] = _fetch_tf(ticker_6, sling_ema_len)
+[s6_pdh, s6_pdl, s6_dc1, s6_do, s6_kicker, s6_oel, s6_oeh, s6_oopsUp, s6_oopsDn, s6_inside, s6_engulf, s6_b3Up, s6_b3Dn] = _fetch_D(ticker_6)
+s6_chg = ticker_6 == '' or name_6 == '-' ? na : (na(s6_c) or na(s6_c1) ? na : (math.abs((s6_c - s6_c1) / s6_c1 * 100) > 1e6 ? na : (s6_c - s6_c1) / s6_c1 * 100))
+s6_premp = na(s6_dc1) or na(s6_do) ? na : (s6_do - s6_dc1) / s6_dc1 * 100
+s6_sling = s6_c > s6_ema0 and s6_c1 < s6_ema1 and s6_c2 < s6_ema2 and s6_c3 < s6_ema3
+s6_slingprice = s6_sling ? s6_c : na
+[s6_pv_signal, s6_pv_price] = _pv_compute(s6_c, s6_h, s6_l, s6_v, pv_price_period, pv_volume_period, pv_trendline_length)
+row := _t(show_6, ticker_6, name_6, txt_6, bg_6, s6_chg, trigger_6, stop_6, notes_6, buyprice_6, row, s6_c, s6_o, s6_premp, s6_sling, s6_slingprice, s6_pv_signal, s6_pv_price, s6_kicker, s6_oopsUp, s6_oopsDn, s6_oel, s6_oeh, s6_inside, s6_engulf, s6_b3Up, s6_b3Dn, s6_pdh, s6_pdl, 5)
+
+[s7_c, s7_c1, s7_c2, s7_c3, s7_o, s7_h, s7_l, s7_v, s7_ema0, s7_ema1, s7_ema2, s7_ema3] = _fetch_tf(ticker_7, sling_ema_len)
+[s7_pdh, s7_pdl, s7_dc1, s7_do, s7_kicker, s7_oel, s7_oeh, s7_oopsUp, s7_oopsDn, s7_inside, s7_engulf, s7_b3Up, s7_b3Dn] = _fetch_D(ticker_7)
+s7_chg = ticker_7 == '' or name_7 == '-' ? na : (na(s7_c) or na(s7_c1) ? na : (math.abs((s7_c - s7_c1) / s7_c1 * 100) > 1e6 ? na : (s7_c - s7_c1) / s7_c1 * 100))
+s7_premp = na(s7_dc1) or na(s7_do) ? na : (s7_do - s7_dc1) / s7_dc1 * 100
+s7_sling = s7_c > s7_ema0 and s7_c1 < s7_ema1 and s7_c2 < s7_ema2 and s7_c3 < s7_ema3
+s7_slingprice = s7_sling ? s7_c : na
+[s7_pv_signal, s7_pv_price] = _pv_compute(s7_c, s7_h, s7_l, s7_v, pv_price_period, pv_volume_period, pv_trendline_length)
+row := _t(show_7, ticker_7, name_7, txt_7, bg_7, s7_chg, trigger_7, stop_7, notes_7, buyprice_7, row, s7_c, s7_o, s7_premp, s7_sling, s7_slingprice, s7_pv_signal, s7_pv_price, s7_kicker, s7_oopsUp, s7_oopsDn, s7_oel, s7_oeh, s7_inside, s7_engulf, s7_b3Up, s7_b3Dn, s7_pdh, s7_pdl, 6)
+
+[s8_c, s8_c1, s8_c2, s8_c3, s8_o, s8_h, s8_l, s8_v, s8_ema0, s8_ema1, s8_ema2, s8_ema3] = _fetch_tf(ticker_8, sling_ema_len)
+[s8_pdh, s8_pdl, s8_dc1, s8_do, s8_kicker, s8_oel, s8_oeh, s8_oopsUp, s8_oopsDn, s8_inside, s8_engulf, s8_b3Up, s8_b3Dn] = _fetch_D(ticker_8)
+s8_chg = ticker_8 == '' or name_8 == '-' ? na : (na(s8_c) or na(s8_c1) ? na : (math.abs((s8_c - s8_c1) / s8_c1 * 100) > 1e6 ? na : (s8_c - s8_c1) / s8_c1 * 100))
+s8_premp = na(s8_dc1) or na(s8_do) ? na : (s8_do - s8_dc1) / s8_dc1 * 100
+s8_sling = s8_c > s8_ema0 and s8_c1 < s8_ema1 and s8_c2 < s8_ema2 and s8_c3 < s8_ema3
+s8_slingprice = s8_sling ? s8_c : na
+[s8_pv_signal, s8_pv_price] = _pv_compute(s8_c, s8_h, s8_l, s8_v, pv_price_period, pv_volume_period, pv_trendline_length)
+row := _t(show_8, ticker_8, name_8, txt_8, bg_8, s8_chg, trigger_8, stop_8, notes_8, buyprice_8, row, s8_c, s8_o, s8_premp, s8_sling, s8_slingprice, s8_pv_signal, s8_pv_price, s8_kicker, s8_oopsUp, s8_oopsDn, s8_oel, s8_oeh, s8_inside, s8_engulf, s8_b3Up, s8_b3Dn, s8_pdh, s8_pdl, 7)
+
+[s9_c, s9_c1, s9_c2, s9_c3, s9_o, s9_h, s9_l, s9_v, s9_ema0, s9_ema1, s9_ema2, s9_ema3] = _fetch_tf(ticker_9, sling_ema_len)
+[s9_pdh, s9_pdl, s9_dc1, s9_do, s9_kicker, s9_oel, s9_oeh, s9_oopsUp, s9_oopsDn, s9_inside, s9_engulf, s9_b3Up, s9_b3Dn] = _fetch_D(ticker_9)
+s9_chg = ticker_9 == '' or name_9 == '-' ? na : (na(s9_c) or na(s9_c1) ? na : (math.abs((s9_c - s9_c1) / s9_c1 * 100) > 1e6 ? na : (s9_c - s9_c1) / s9_c1 * 100))
+s9_premp = na(s9_dc1) or na(s9_do) ? na : (s9_do - s9_dc1) / s9_dc1 * 100
+s9_sling = s9_c > s9_ema0 and s9_c1 < s9_ema1 and s9_c2 < s9_ema2 and s9_c3 < s9_ema3
+s9_slingprice = s9_sling ? s9_c : na
+[s9_pv_signal, s9_pv_price] = _pv_compute(s9_c, s9_h, s9_l, s9_v, pv_price_period, pv_volume_period, pv_trendline_length)
+row := _t(show_9, ticker_9, name_9, txt_9, bg_9, s9_chg, trigger_9, stop_9, notes_9, buyprice_9, row, s9_c, s9_o, s9_premp, s9_sling, s9_slingprice, s9_pv_signal, s9_pv_price, s9_kicker, s9_oopsUp, s9_oopsDn, s9_oel, s9_oeh, s9_inside, s9_engulf, s9_b3Up, s9_b3Dn, s9_pdh, s9_pdl, 8)
+
+[s10_c, s10_c1, s10_c2, s10_c3, s10_o, s10_h, s10_l, s10_v, s10_ema0, s10_ema1, s10_ema2, s10_ema3] = _fetch_tf(ticker_10, sling_ema_len)
+[s10_pdh, s10_pdl, s10_dc1, s10_do, s10_kicker, s10_oel, s10_oeh, s10_oopsUp, s10_oopsDn, s10_inside, s10_engulf, s10_b3Up, s10_b3Dn] = _fetch_D(ticker_10)
+s10_chg = ticker_10 == '' or name_10 == '-' ? na : (na(s10_c) or na(s10_c1) ? na : (math.abs((s10_c - s10_c1) / s10_c1 * 100) > 1e6 ? na : (s10_c - s10_c1) / s10_c1 * 100))
+s10_premp = na(s10_dc1) or na(s10_do) ? na : (s10_do - s10_dc1) / s10_dc1 * 100
+s10_sling = s10_c > s10_ema0 and s10_c1 < s10_ema1 and s10_c2 < s10_ema2 and s10_c3 < s10_ema3
+s10_slingprice = s10_sling ? s10_c : na
+[s10_pv_signal, s10_pv_price] = _pv_compute(s10_c, s10_h, s10_l, s10_v, pv_price_period, pv_volume_period, pv_trendline_length)
+row := _t(show_10, ticker_10, name_10, txt_10, bg_10, s10_chg, trigger_10, stop_10, notes_10, buyprice_10, row, s10_c, s10_o, s10_premp, s10_sling, s10_slingprice, s10_pv_signal, s10_pv_price, s10_kicker, s10_oopsUp, s10_oopsDn, s10_oel, s10_oeh, s10_inside, s10_engulf, s10_b3Up, s10_b3Dn, s10_pdh, s10_pdl, 9)
+
+[s11_c, s11_c1, s11_c2, s11_c3, s11_o, s11_h, s11_l, s11_v, s11_ema0, s11_ema1, s11_ema2, s11_ema3] = _fetch_tf(ticker_11, sling_ema_len)
+[s11_pdh, s11_pdl, s11_dc1, s11_do, s11_kicker, s11_oel, s11_oeh, s11_oopsUp, s11_oopsDn, s11_inside, s11_engulf, s11_b3Up, s11_b3Dn] = _fetch_D(ticker_11)
+s11_chg = ticker_11 == '' or name_11 == '-' ? na : (na(s11_c) or na(s11_c1) ? na : (math.abs((s11_c - s11_c1) / s11_c1 * 100) > 1e6 ? na : (s11_c - s11_c1) / s11_c1 * 100))
+s11_premp = na(s11_dc1) or na(s11_do) ? na : (s11_do - s11_dc1) / s11_dc1 * 100
+s11_sling = s11_c > s11_ema0 and s11_c1 < s11_ema1 and s11_c2 < s11_ema2 and s11_c3 < s11_ema3
+s11_slingprice = s11_sling ? s11_c : na
+[s11_pv_signal, s11_pv_price] = _pv_compute(s11_c, s11_h, s11_l, s11_v, pv_price_period, pv_volume_period, pv_trendline_length)
+row := _t(show_11, ticker_11, name_11, txt_11, bg_11, s11_chg, trigger_11, stop_11, notes_11, buyprice_11, row, s11_c, s11_o, s11_premp, s11_sling, s11_slingprice, s11_pv_signal, s11_pv_price, s11_kicker, s11_oopsUp, s11_oopsDn, s11_oel, s11_oeh, s11_inside, s11_engulf, s11_b3Up, s11_b3Dn, s11_pdh, s11_pdl, 10)
+
+[s12_c, s12_c1, s12_c2, s12_c3, s12_o, s12_h, s12_l, s12_v, s12_ema0, s12_ema1, s12_ema2, s12_ema3] = _fetch_tf(ticker_12, sling_ema_len)
+[s12_pdh, s12_pdl, s12_dc1, s12_do, s12_kicker, s12_oel, s12_oeh, s12_oopsUp, s12_oopsDn, s12_inside, s12_engulf, s12_b3Up, s12_b3Dn] = _fetch_D(ticker_12)
+s12_chg = ticker_12 == '' or name_12 == '-' ? na : (na(s12_c) or na(s12_c1) ? na : (math.abs((s12_c - s12_c1) / s12_c1 * 100) > 1e6 ? na : (s12_c - s12_c1) / s12_c1 * 100))
+s12_premp = na(s12_dc1) or na(s12_do) ? na : (s12_do - s12_dc1) / s12_dc1 * 100
+s12_sling = s12_c > s12_ema0 and s12_c1 < s12_ema1 and s12_c2 < s12_ema2 and s12_c3 < s12_ema3
+s12_slingprice = s12_sling ? s12_c : na
+[s12_pv_signal, s12_pv_price] = _pv_compute(s12_c, s12_h, s12_l, s12_v, pv_price_period, pv_volume_period, pv_trendline_length)
+row := _t(show_12, ticker_12, name_12, txt_12, bg_12, s12_chg, trigger_12, stop_12, notes_12, buyprice_12, row, s12_c, s12_o, s12_premp, s12_sling, s12_slingprice, s12_pv_signal, s12_pv_price, s12_kicker, s12_oopsUp, s12_oopsDn, s12_oel, s12_oeh, s12_inside, s12_engulf, s12_b3Up, s12_b3Dn, s12_pdh, s12_pdl, 11)
+
+[s13_c, s13_c1, s13_c2, s13_c3, s13_o, s13_h, s13_l, s13_v, s13_ema0, s13_ema1, s13_ema2, s13_ema3] = _fetch_tf(ticker_13, sling_ema_len)
+[s13_pdh, s13_pdl, s13_dc1, s13_do, s13_kicker, s13_oel, s13_oeh, s13_oopsUp, s13_oopsDn, s13_inside, s13_engulf, s13_b3Up, s13_b3Dn] = _fetch_D(ticker_13)
+s13_chg = ticker_13 == '' or name_13 == '-' ? na : (na(s13_c) or na(s13_c1) ? na : (math.abs((s13_c - s13_c1) / s13_c1 * 100) > 1e6 ? na : (s13_c - s13_c1) / s13_c1 * 100))
+s13_premp = na(s13_dc1) or na(s13_do) ? na : (s13_do - s13_dc1) / s13_dc1 * 100
+s13_sling = s13_c > s13_ema0 and s13_c1 < s13_ema1 and s13_c2 < s13_ema2 and s13_c3 < s13_ema3
+s13_slingprice = s13_sling ? s13_c : na
+[s13_pv_signal, s13_pv_price] = _pv_compute(s13_c, s13_h, s13_l, s13_v, pv_price_period, pv_volume_period, pv_trendline_length)
+row := _t(show_13, ticker_13, name_13, txt_13, bg_13, s13_chg, trigger_13, stop_13, notes_13, buyprice_13, row, s13_c, s13_o, s13_premp, s13_sling, s13_slingprice, s13_pv_signal, s13_pv_price, s13_kicker, s13_oopsUp, s13_oopsDn, s13_oel, s13_oeh, s13_inside, s13_engulf, s13_b3Up, s13_b3Dn, s13_pdh, s13_pdl, 12)
+
+[s14_c, s14_c1, s14_c2, s14_c3, s14_o, s14_h, s14_l, s14_v, s14_ema0, s14_ema1, s14_ema2, s14_ema3] = _fetch_tf(ticker_14, sling_ema_len)
+[s14_pdh, s14_pdl, s14_dc1, s14_do, s14_kicker, s14_oel, s14_oeh, s14_oopsUp, s14_oopsDn, s14_inside, s14_engulf, s14_b3Up, s14_b3Dn] = _fetch_D(ticker_14)
+s14_chg = ticker_14 == '' or name_14 == '-' ? na : (na(s14_c) or na(s14_c1) ? na : (math.abs((s14_c - s14_c1) / s14_c1 * 100) > 1e6 ? na : (s14_c - s14_c1) / s14_c1 * 100))
+s14_premp = na(s14_dc1) or na(s14_do) ? na : (s14_do - s14_dc1) / s14_dc1 * 100
+s14_sling = s14_c > s14_ema0 and s14_c1 < s14_ema1 and s14_c2 < s14_ema2 and s14_c3 < s14_ema3
+s14_slingprice = s14_sling ? s14_c : na
+[s14_pv_signal, s14_pv_price] = _pv_compute(s14_c, s14_h, s14_l, s14_v, pv_price_period, pv_volume_period, pv_trendline_length)
+row := _t(show_14, ticker_14, name_14, txt_14, bg_14, s14_chg, trigger_14, stop_14, notes_14, buyprice_14, row, s14_c, s14_o, s14_premp, s14_sling, s14_slingprice, s14_pv_signal, s14_pv_price, s14_kicker, s14_oopsUp, s14_oopsDn, s14_oel, s14_oeh, s14_inside, s14_engulf, s14_b3Up, s14_b3Dn, s14_pdh, s14_pdl, 13)
+
+[s15_c, s15_c1, s15_c2, s15_c3, s15_o, s15_h, s15_l, s15_v, s15_ema0, s15_ema1, s15_ema2, s15_ema3] = _fetch_tf(ticker_15, sling_ema_len)
+[s15_pdh, s15_pdl, s15_dc1, s15_do, s15_kicker, s15_oel, s15_oeh, s15_oopsUp, s15_oopsDn, s15_inside, s15_engulf, s15_b3Up, s15_b3Dn] = _fetch_D(ticker_15)
+s15_chg = ticker_15 == '' or name_15 == '-' ? na : (na(s15_c) or na(s15_c1) ? na : (math.abs((s15_c - s15_c1) / s15_c1 * 100) > 1e6 ? na : (s15_c - s15_c1) / s15_c1 * 100))
+s15_premp = na(s15_dc1) or na(s15_do) ? na : (s15_do - s15_dc1) / s15_dc1 * 100
+s15_sling = s15_c > s15_ema0 and s15_c1 < s15_ema1 and s15_c2 < s15_ema2 and s15_c3 < s15_ema3
+s15_slingprice = s15_sling ? s15_c : na
+[s15_pv_signal, s15_pv_price] = _pv_compute(s15_c, s15_h, s15_l, s15_v, pv_price_period, pv_volume_period, pv_trendline_length)
+row := _t(show_15, ticker_15, name_15, txt_15, bg_15, s15_chg, trigger_15, stop_15, notes_15, buyprice_15, row, s15_c, s15_o, s15_premp, s15_sling, s15_slingprice, s15_pv_signal, s15_pv_price, s15_kicker, s15_oopsUp, s15_oopsDn, s15_oel, s15_oeh, s15_inside, s15_engulf, s15_b3Up, s15_b3Dn, s15_pdh, s15_pdl, 14)
+
+[s16_c, s16_c1, s16_c2, s16_c3, s16_o, s16_h, s16_l, s16_v, s16_ema0, s16_ema1, s16_ema2, s16_ema3] = _fetch_tf(ticker_16, sling_ema_len)
+[s16_pdh, s16_pdl, s16_dc1, s16_do, s16_kicker, s16_oel, s16_oeh, s16_oopsUp, s16_oopsDn, s16_inside, s16_engulf, s16_b3Up, s16_b3Dn] = _fetch_D(ticker_16)
+s16_chg = ticker_16 == '' or name_16 == '-' ? na : (na(s16_c) or na(s16_c1) ? na : (math.abs((s16_c - s16_c1) / s16_c1 * 100) > 1e6 ? na : (s16_c - s16_c1) / s16_c1 * 100))
+s16_premp = na(s16_dc1) or na(s16_do) ? na : (s16_do - s16_dc1) / s16_dc1 * 100
+s16_sling = s16_c > s16_ema0 and s16_c1 < s16_ema1 and s16_c2 < s16_ema2 and s16_c3 < s16_ema3
+s16_slingprice = s16_sling ? s16_c : na
+[s16_pv_signal, s16_pv_price] = _pv_compute(s16_c, s16_h, s16_l, s16_v, pv_price_period, pv_volume_period, pv_trendline_length)
+row := _t(show_16, ticker_16, name_16, txt_16, bg_16, s16_chg, trigger_16, stop_16, notes_16, buyprice_16, row, s16_c, s16_o, s16_premp, s16_sling, s16_slingprice, s16_pv_signal, s16_pv_price, s16_kicker, s16_oopsUp, s16_oopsDn, s16_oel, s16_oeh, s16_inside, s16_engulf, s16_b3Up, s16_b3Dn, s16_pdh, s16_pdl, 15)
+
+[s17_c, s17_c1, s17_c2, s17_c3, s17_o, s17_h, s17_l, s17_v, s17_ema0, s17_ema1, s17_ema2, s17_ema3] = _fetch_tf(ticker_17, sling_ema_len)
+[s17_pdh, s17_pdl, s17_dc1, s17_do, s17_kicker, s17_oel, s17_oeh, s17_oopsUp, s17_oopsDn, s17_inside, s17_engulf, s17_b3Up, s17_b3Dn] = _fetch_D(ticker_17)
+s17_chg = ticker_17 == '' or name_17 == '-' ? na : (na(s17_c) or na(s17_c1) ? na : (math.abs((s17_c - s17_c1) / s17_c1 * 100) > 1e6 ? na : (s17_c - s17_c1) / s17_c1 * 100))
+s17_premp = na(s17_dc1) or na(s17_do) ? na : (s17_do - s17_dc1) / s17_dc1 * 100
+s17_sling = s17_c > s17_ema0 and s17_c1 < s17_ema1 and s17_c2 < s17_ema2 and s17_c3 < s17_ema3
+s17_slingprice = s17_sling ? s17_c : na
+[s17_pv_signal, s17_pv_price] = _pv_compute(s17_c, s17_h, s17_l, s17_v, pv_price_period, pv_volume_period, pv_trendline_length)
+row := _t(show_17, ticker_17, name_17, txt_17, bg_17, s17_chg, trigger_17, stop_17, notes_17, buyprice_17, row, s17_c, s17_o, s17_premp, s17_sling, s17_slingprice, s17_pv_signal, s17_pv_price, s17_kicker, s17_oopsUp, s17_oopsDn, s17_oel, s17_oeh, s17_inside, s17_engulf, s17_b3Up, s17_b3Dn, s17_pdh, s17_pdl, 16)
+
+[s18_c, s18_c1, s18_c2, s18_c3, s18_o, s18_h, s18_l, s18_v, s18_ema0, s18_ema1, s18_ema2, s18_ema3] = _fetch_tf(ticker_18, sling_ema_len)
+[s18_pdh, s18_pdl, s18_dc1, s18_do, s18_kicker, s18_oel, s18_oeh, s18_oopsUp, s18_oopsDn, s18_inside, s18_engulf, s18_b3Up, s18_b3Dn] = _fetch_D(ticker_18)
+s18_chg = ticker_18 == '' or name_18 == '-' ? na : (na(s18_c) or na(s18_c1) ? na : (math.abs((s18_c - s18_c1) / s18_c1 * 100) > 1e6 ? na : (s18_c - s18_c1) / s18_c1 * 100))
+s18_premp = na(s18_dc1) or na(s18_do) ? na : (s18_do - s18_dc1) / s18_dc1 * 100
+s18_sling = s18_c > s18_ema0 and s18_c1 < s18_ema1 and s18_c2 < s18_ema2 and s18_c3 < s18_ema3
+s18_slingprice = s18_sling ? s18_c : na
+[s18_pv_signal, s18_pv_price] = _pv_compute(s18_c, s18_h, s18_l, s18_v, pv_price_period, pv_volume_period, pv_trendline_length)
+row := _t(show_18, ticker_18, name_18, txt_18, bg_18, s18_chg, trigger_18, stop_18, notes_18, buyprice_18, row, s18_c, s18_o, s18_premp, s18_sling, s18_slingprice, s18_pv_signal, s18_pv_price, s18_kicker, s18_oopsUp, s18_oopsDn, s18_oel, s18_oeh, s18_inside, s18_engulf, s18_b3Up, s18_b3Dn, s18_pdh, s18_pdl, 17)
+
+[s19_c, s19_c1, s19_c2, s19_c3, s19_o, s19_h, s19_l, s19_v, s19_ema0, s19_ema1, s19_ema2, s19_ema3] = _fetch_tf(ticker_19, sling_ema_len)
+[s19_pdh, s19_pdl, s19_dc1, s19_do, s19_kicker, s19_oel, s19_oeh, s19_oopsUp, s19_oopsDn, s19_inside, s19_engulf, s19_b3Up, s19_b3Dn] = _fetch_D(ticker_19)
+s19_chg = ticker_19 == '' or name_19 == '-' ? na : (na(s19_c) or na(s19_c1) ? na : (math.abs((s19_c - s19_c1) / s19_c1 * 100) > 1e6 ? na : (s19_c - s19_c1) / s19_c1 * 100))
+s19_premp = na(s19_dc1) or na(s19_do) ? na : (s19_do - s19_dc1) / s19_dc1 * 100
+s19_sling = s19_c > s19_ema0 and s19_c1 < s19_ema1 and s19_c2 < s19_ema2 and s19_c3 < s19_ema3
+s19_slingprice = s19_sling ? s19_c : na
+[s19_pv_signal, s19_pv_price] = _pv_compute(s19_c, s19_h, s19_l, s19_v, pv_price_period, pv_volume_period, pv_trendline_length)
+row := _t(show_19, ticker_19, name_19, txt_19, bg_19, s19_chg, trigger_19, stop_19, notes_19, buyprice_19, row, s19_c, s19_o, s19_premp, s19_sling, s19_slingprice, s19_pv_signal, s19_pv_price, s19_kicker, s19_oopsUp, s19_oopsDn, s19_oel, s19_oeh, s19_inside, s19_engulf, s19_b3Up, s19_b3Dn, s19_pdh, s19_pdl, 18)
+
+[s20_c, s20_c1, s20_c2, s20_c3, s20_o, s20_h, s20_l, s20_v, s20_ema0, s20_ema1, s20_ema2, s20_ema3] = _fetch_tf(ticker_20, sling_ema_len)
+[s20_pdh, s20_pdl, s20_dc1, s20_do, s20_kicker, s20_oel, s20_oeh, s20_oopsUp, s20_oopsDn, s20_inside, s20_engulf, s20_b3Up, s20_b3Dn] = _fetch_D(ticker_20)
+s20_chg = ticker_20 == '' or name_20 == '-' ? na : (na(s20_c) or na(s20_c1) ? na : (math.abs((s20_c - s20_c1) / s20_c1 * 100) > 1e6 ? na : (s20_c - s20_c1) / s20_c1 * 100))
+s20_premp = na(s20_dc1) or na(s20_do) ? na : (s20_do - s20_dc1) / s20_dc1 * 100
+s20_sling = s20_c > s20_ema0 and s20_c1 < s20_ema1 and s20_c2 < s20_ema2 and s20_c3 < s20_ema3
+s20_slingprice = s20_sling ? s20_c : na
+[s20_pv_signal, s20_pv_price] = _pv_compute(s20_c, s20_h, s20_l, s20_v, pv_price_period, pv_volume_period, pv_trendline_length)
+row := _t(show_20, ticker_20, name_20, txt_20, bg_20, s20_chg, trigger_20, stop_20, notes_20, buyprice_20, row, s20_c, s20_o, s20_premp, s20_sling, s20_slingprice, s20_pv_signal, s20_pv_price, s20_kicker, s20_oopsUp, s20_oopsDn, s20_oel, s20_oeh, s20_inside, s20_engulf, s20_b3Up, s20_b3Dn, s20_pdh, s20_pdl, 19)
+// --- END OF SCRIPT ---
+````

@@ -1,0 +1,14 @@
+The
+ColorXRSI_Histogram
+indicator with the timeframe selection option available in the input parameters:
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// Indicator chart period (timeframe)
+To provide correct operation of the indicator, add the compiled ColorXRSI_Histogram.mq5 indicator file to terminal_data_folder\MQL5\Indicators.
+Fig1. Indicator ColorXRSI_Histogram_HTF
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17709

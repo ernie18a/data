@@ -1,0 +1,39 @@
+Trading system based on
+i-KlPrice_Vol
+indicator signals. The signal is formed when a bar is closing if there is breakthrough of an overbought/oversold level. Since there are two levels, each of the levels has its own position with its own magic number and size for a breakthrough:
+input
+uint
+Magic1=
+555
+;
+//Magic number for orders by a normal signal
+input
+uint
+Magic2=
+777
+;
+//Magic number for orders by a strong signal
+input
+double
+MM1=
+0.1
+;
+//Share of a deposit in a deal (normal signal)
+input
+double
+MM2=
+0.2
+;
+//Share of a deposit in a deal (strong signal)
+This Expert Advisor requires the compiled
+i-KlPrice_Vol.ex5
+indicator file in order to run. Place it to
+<terminal_data_folder>\MQL5\Indicators
+.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. Sample deals on the chart
+Testing results for 2017 at EURUSD H6:
+Fig. 2. Testing results chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22869

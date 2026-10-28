@@ -1,0 +1,6 @@
+The purpose of this interactive script is to display
+into one place
+all market and symbol informations taken from MarketInfo and Symbol Info, such as margin and leverage. This way traders don't have to browse the entire broker's site to find market conditions for a given symbol, which could be the case at times. The button list is taken from MarketWath with the Select option as some brokers may trade thousands of symbols
+This is a downgraded version to MT4 of the sample script SymbolInfo for MT5,
+itself enhanced with previously missing margin and leverage values for any given symbol.  Left column lists Market Informations (MarketInfo), center and right columns list validated Symbol informations (SymbolInfoInteger, String, Double).Leverage value has been added and labeled MODE_LEVERAGE on the last line of MarketInfo column. It is calculated for any symbol as;
+Leverage = Bid * Contractsize * Rate (Symbol Profit Currency / Account Curency  )  / Margin Required.

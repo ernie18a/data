@@ -1,0 +1,21 @@
+The Multi-timeframe Moving Average indicator.
+It has five input parameters:
+Period
+- calculation period
+Method
+- calculation method
+Applied price
+- price used for calculations
+Timeframe
+- calculation timeframe
+Drawing mode
+- line drawing mode
+Steps
+- as a ladder
+Slope
+- inclined lines, which connect the values of neighboring bars of the calculation timeframe
+Fig.1. Multitimeframe Moving Average. H4 data on the H1 chart, Drawing mode = Steps
+Fig.2. Multitimeframe Moving Average. H4 data on the H1 chart, Drawing mode = Slope
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23301

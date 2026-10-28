@@ -1,0 +1,14 @@
+The
+ATR_Channels_Cloud_Digit
+indicator with the timeframe selection option available in input parameters:
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// Indicator chart period (timeframe)
+The indicator requires atr_channels_cloud_digit.mq5 indicator file. Place it in <terminal_data_folder>\MQL5\Indicators.
+Fig1. The ATR_Channels_Cloud_Digit_HTF indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16419

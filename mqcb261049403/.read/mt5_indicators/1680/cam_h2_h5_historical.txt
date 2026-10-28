@@ -1,0 +1,11 @@
+A modified
+Camarilla dt Historical
+indicator.
+In fact, Camarilla Equation has originally 8 and in later versions - 10 levels for which calculation are used open, close, maximum and minimum of yesterday's session, as well as a set of recommendations how to trade using these levels. Levels are divided into two groups. The first group is built down from yesterday's close price, indicated by letter L (from "Low") and numerated from 1 to 5. Analogically, the second group is built up from yesterday's close price, indicated by letter H (you are right, from "High") and numerated from 1 to 5. Notice, that levels 1 and 2 have a comparatively small value and therefore excluded from consideration. But the levels L5 and H5, in contrast, must not be excluded from consideration.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 24.07.2008.
+Fig.1 The Cam_H2_H5_Historical indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1680

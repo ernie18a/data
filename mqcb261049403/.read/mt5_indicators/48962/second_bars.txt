@@ -1,0 +1,13 @@
+The indicator draws an arbitrary seconds timeframe on the chart.
+In the settings:
+Number of days-if you set too many days, it may take a long time to calculate.
+Timeframe in seconds.
+Choice to display bars or candlesticks.
+I compared it with the charts of
+the reference utility
+, the indicator seems to draw candlesticks correctly.
+You should understand that this is not a full-fledged seconds chart, but only an indicator.
+You can't put other indicators on it. If you install other indicators, they will show the values of the chart timeframe, not the seconds chart.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/48962

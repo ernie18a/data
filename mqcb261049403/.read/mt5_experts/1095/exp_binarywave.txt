@@ -1,0 +1,11 @@
+The EA Exp_BinaryWave based on signal entry taken from the
+BinaryWave
+integral oscillator. The signal is formed when a bar is closing if there is breakthrough in zero level or there is change in Moving Average direction (depending on the options selected in the input parameter Mode).
+Place BinaryWave.ex5 compiled file to the terminal_data_folder\MQL5\Indicators.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. The instances of history of deals on the chart.
+Testing results for 2011 at USDCHF H4:
+Fig. 2. Charts of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1095

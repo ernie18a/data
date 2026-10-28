@@ -1,0 +1,15 @@
+This is an updated indicator i came across from an old forum thread back in year 2013, you find the forum thread here :
+https://www.mql5.com/en/forum/182215
+I thought it was an interesting indicator and maybe it could be worth bringing back to life again....or maybe not :P
+I did some changes in the code as there was some things that was messed up as 'i thought' would be necessary to fix and make it work better. It could be more bugs around to fix, i just did this....well it just happened as it was interesting somehow....
+What's been done can be found at the beginning of the code, i wrote down all bugs i fixed. Feel free to try it out, to get more information about how it works just head over to forum topic about this using the link above and read as it would be to long to describe here. The new updated code i put here in code base to find easier, originally this indicator had no version number attached to it but i assume it could be 'with my' edit version 1.1  but maybe been modified before.
+There are two indicators, but only metaneural_dashboard_nmc been edited as the other one is ok and works fine.
+Installation
+Download and put both indicators in your terminal /MQL4/Indicators directory
+Open a
+Daily chart
+, any currency pair...maybe it works on stocks and other to - never tested! Just remember that it sometimes takes a awhile before a new signal emerges....just so you don't start thinking it don't work ;)
+Attach both indicators to the chart
+meatneural_vsa_sr.mq4
+metaneural_dashboard_nmc.mq4
+Chart visual and settings

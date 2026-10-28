@@ -1,0 +1,5 @@
+A simple indicator to make a smoother line chart while also using tick volume to determine the market direction.
+The basic idea is to give you the true direction of where the market is moving.
+When compared to the line chart, you can see that it is ignoring short noisy market movements. Smoothing can be adjusted in the input.
+Some graphical elements are added to emphasize the direction of the market.
+It's not a great idea to be placing trades when the line goes horizontal.

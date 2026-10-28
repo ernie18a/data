@@ -1,0 +1,13 @@
+This indicator contains call of the
+SuperTrend
+indicator, which is used for drawing Pivot levels that correspond to its direction and current value on different timeframes.
+I use it to see the levels of higher timeframes.
+Attention! The indicator requires the source original indicator
+SuperTrend
+. It should be placed to the folder \MQL5\Indicators.
+P.S. User
+zfs
+has developed this indicator for me, and I want to thank him. I have modified this indicator and want to share it with the community.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2382

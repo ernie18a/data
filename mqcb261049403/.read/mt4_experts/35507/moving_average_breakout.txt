@@ -1,0 +1,15 @@
+Trending moving averages with a breakout input .
+Input explanation , i'll explain as a buy trade and sells would be inverse.
+inp1 20 ema greater than 30ema
+inp2 30 ema greater than 50ema
+inp3 open of breakout bar is above 30ema
+input4 breakout settings
+quite bar count is the number of bar back the breakout is higher than
+quite bar range is in pips minimum range of the quite bars.
+inpulse strength . set at 1.1 meaning the breakout is atleast 10% above the highs of the breakout quite bar range
+set step value for optimization at 0.1 and start at 1 to about 5
+input 5 wick length in % value of the whole bar
+optimize from 0-100
+inp5 minimum and maximum size in pips of the breakout bar.
+inp6 the low of the breakout bar must equal or be lower than the 20 ema.
+and volume lots stop loss target in pips.

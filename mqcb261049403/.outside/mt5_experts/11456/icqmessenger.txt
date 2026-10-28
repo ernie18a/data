@@ -1,0 +1,147 @@
+Backgrounds / Usage Motivation
+Using the automated trading system, once in a while we may need to enquire information concerning account balance, opened positions, etc., being far from a trading terminal, but having Internet connection and ICQ on any computer (or any other device). One does not have time nor desire to install and log in
+MetaTrader
+to get such a common information. So the idea of finding a way to get needed information concerning a trading account via ICQ has appeared.
+Implementation
+I chose <
+s
+aving information in
+txt
+-file> ; <sending information on request> as a way to implement the idea.
+I developed a common
+mt
+-advisor
+exp_statusbot
+for saving information. It saves information concerning account balance in
+status
+.
+txt
+and opened positions changes in
+notify
+.
+txt
+.
+To send information from
+txt
+-files, I made the simplest
+icqbot
+mustwatcher
+. It will analyze a request and send an answer to its author.
+Installation Instructions
+Download and compile
+exp_statusbot.
+mq
+4
+.
+Launch
+MT
+and add
+the advisor
+to any chart.
+Download
+icqbot
+mustwatcher_v1.16.zip
+.
+Launch the bot (please ensure that "Microsoft .NET Framework 3.5" is installed on your computer)
+Using
+Add
+button add needed
+status
+.
+txt
+and
+notify
+.
+txt
+(located in
+<metatrader_dir>
+\experts\files\statusbot
+)
+to the list
+Register
+UIN
+for the bot (Universal Identification Number, or flatly the ICQ number which can be obtained on the official web-site
+https://www.icq.com/register
+)
+Enter
+UIN
+of the bot and a password.
+Enter your name as an administrator.
+Click
+Connect
+Then send
+command
+!
+status
+(as the file is named
+status
+.
+txt
+) from your
+UIN
+and get what we needed.
+To enable automatic notifier of changed files (here
+notify
+.
+txt
+)
+we shall enter
+!
+spamon
+.
+And after a corresponding change we receive what we subscribed to =)
+The administrator can add other users to the registry, if they also need an access to this information.
+This is just an example. Needless to say that you can make as many
+txt
+files with any content as you wish and receive this content upon corresponding demand.
+The list of all available commands appears by means of
+!help
+or can be seen in the file
+<mustwatcher
+_
+dir
+>\
+data
+\help_admin.txt
+.
+The bot's interface contains several buttons, so you won't be confused.
+Putting it in a nutshell, the one who needs it will grasp it.
+The End.
+Updates
+MustWatcher v1.05
+Automatic connection function when the program is launched is added.
+MustWatcher v1.06
+A checkbox of program automatic launch (when the operating system is launched) is added. It can be minimized to a tray.
+MustWatcher v1.07
+1) The list scheme for files necessary to be viewed and meant for automatic notification is changed. Now before obtaining content of a text-file, you shall add it to the list (
+Watcher
+tab) using
+Add
+button. 2) Feedback system which allows to write any text to a file is changed. Now you can add your own commands (
+Feedback
+tab) with any text and file record.
+exp_statusbot.
+mq
+4
+Function that records data file, which shall be sent via email, is added.
+exp_statusbot.
+mq
+5
+Function that records data file necessary for email report is added.
+MustWatcher v1.08
+Function that generates a detailed report and sends it to stated email is added. In order to receive a report you shall add the data file to the corresponding list (
+Watcher
+tab). A file name without a suffix is also a request command (for example, if you send command
+!report
+, the bot will generate a report on the basis of data from
+report.txt
+).
+MustWatcher v1.10
+Bugfix.
+MustWatcher v1.13
+Optimization. Fixed errors.
+MustWatcher v1.16
+Optimization. Fixed errors.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11456

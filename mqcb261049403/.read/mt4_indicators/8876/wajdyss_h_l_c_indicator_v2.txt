@@ -1,0 +1,2 @@
+for show High & Low & Close
+http://forum.m-e-c.biz/t28529.html

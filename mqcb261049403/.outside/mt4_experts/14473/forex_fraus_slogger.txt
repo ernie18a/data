@@ -1,0 +1,11 @@
+The Expert Advisor is based on the operation of its predecessor —
+Forex Fraus (for M1)
+, but using the Envelopes indicator.
+The EA was designed for EURUSD on the М1 time frame (for 5-digits), it is suitable for others, there is a trailing stop with adjustable start and step. Also, there is an operation timer in the settings, in the EA properties it is specified as "time" (value "0" — disabled, value "1" — enabled). "starttime" — EA operation start by the terminal time, "stoptime" — EA operation end by the terminal time. The money-management block is also implemented.
+It closes positions using trailing stop, the non-closed positions are closed by the opposite trades.
+WARNING: if you are going to use the EA on a demo account or live, it is necessary to download the Zvon.wav sound file (it can be found in the archive below the EA link) and place it in the terminal folder: C:\Program Files\MetaTrader 4\Sounds.
+Test of EUR/USD H1 (January-December) 2015, deposit 10000:
+Test of EUR/USD M1 (August-December) 2015, deposit 10000:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14473

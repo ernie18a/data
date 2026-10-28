@@ -1,0 +1,58 @@
+"Fibochannel line" EA draws Fibonacci channel lines on chart and trades its trend,has Trailing Stop Loss &Take Profit works with all time frames major forex pairs and stocks NASDAQ.
+Works well also in a 1 hour time frame.
+Try it on demo first.
+This EA trades only with the price of open candle!
+If you do not want to trade with increasing lot size when you lose  a trade set:"
+IncreaseFactor=0"
+I combined together a simple EA with two moving averages and Fibonacci channel lines,
+The Fibonacci channel lines do not work on test mode,
+The optimization tests can be performed only with moving averages,
+In live trading only, Fibonacci channel lines and moving averages will work together,
+During tests, the EA  only draws the Fibonacci channel lines on the screen in  visual mode without considering them in the creation of trades,
+The Fibonacci channel lines will function as a filter .
+In this situation the probability of winning trades increases.
+Inputs
+Use_TP_In_Money- Use Take Profit In Money (values:true/false).
+TP_In_Money- Take Profit In Money   (values: 10-100).
+Use_TP_In_percent- Use Take Profit In Percent (values:true/false).
+TP_In_Percent- Take Profit In Percent
+(values: 10-100).
+------------[Money Trailing Stop For Multiple Trades]----------------------
+Enable_Trailing-Enable_Trailing with money  (values:true/false).
+Take Profit In Money (in current currency) (values: 25-300).
+Stop Loss In Money(in current currency) (values: 1-20).
+Loss Index (values: 1.1-2).
+------------------------------------------------------------------------------------
+Fibochannel line length (bars)(values: 10-100).
+Fibochannel line color.
+------------------------------------------------------------------------------------
+IncreaseFactor -how much to increase lots from total margin if you lose a trade (values: 0.001-0.1).
+Lots - Lots size (values: 0.01-10).
+Lots size Exponent  (values: 1.01-2).
+IncreaseFactor -how much to increase lots from total margin if you lose a trade (values: 0.001-0.1).
+Stop_Loss - Stop Loss (values: 10-100).  /set value 600 for  Multiple Trades
+MagicNumber - Magic number (values: 1-100000).
+TakeProfit - Take Profit (values: 10-100).  /set value 600 for  Multiple Trades
+FastMA - Fast Moving Average (values: 1-20).
+SlowMA - Slow Moving Average (values: 50-200).
+---------------------CONTROL DRAW DOWN-----------------------------
+UseEquityStop -  (values: true).
+TotalEquityRisk- (values: 0.01-20).
+-------------------------------------------------------------------------------
+Max_Trades(1-12).
+FractalNum= Number Of High And Low(values: 1-10).
+IF YOU USE ONLY 1 TRADE:
+//////////////////////////////////////////////////
+USETRAILINGSTOP-If use trailing stop (values:true/false).
+WHENTOTRAIL-When to trail (values: 40-100).
+TRAILAMOUNT-Trail amount (values: 40-100).
+Distance From Candle -Distance From Candle (values: 1-100).
+UseEquityStop -  (values: true).
+TotalEquityRisk- (values: 0.01-5).
+USEMOVETOBREAKEVEN-Enable " break even " (values: true/false).
+WHENTOMOVETOBE-When to move break even (values: 1-30).
+PIPSTOMOVESL=30-How much pips to move stop loss  (values: 1-30).
+-You should optimize this EA every few months and use the exact same  inputs from above .
+-You can use it as  hedging grid EA or a single trade EA.
+-How to perform back test:
+https://bit.ly/2CD7XWD

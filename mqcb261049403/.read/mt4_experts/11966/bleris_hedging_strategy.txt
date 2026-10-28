@@ -1,0 +1,23 @@
+Please remember I hate Martingale strategies but I use it in small in this system. If you're optimizing Bleris, please remember to use fixed Lots value.
+Very important is drawdown below $3000 (not %). This is the only basis of the whole system. If you help me significantly improve it, your credit will be added.
+Bleris Pro Version is here in the Market:
+https://www.mql5.com/en/market/product/8806
+Real author:
+Tomas Hrubý - ČR.
+MQL5.com: Tomac1
+This strategy uses hedging if trend changes.
+It is able to change it for Martingale strategy with variables EscapeLossUSDRatio, EscapeLotsMultiplier, OppositeLotsMultiplier but I cannot recommend it. Some of the strategy optimization results passed forward test but there are too many ways to improve it.
+I made this strategy for real trading account, but the reason why I am sharing it now is that I want to get some tips and tricks from you. If you will share your ideas I can share with you the final concept of Bleris strategy.
+I made some advanced and successful systems in the past. I am looking for another systems which can pass forward tests and can be used for real trading without big losses.
+Commented Code:
+I commented the code for easier understanding and improving.
+Sources:
+Strategy will be presented at
+http://bleris.com
+and
+http://tomashruby.com
+later with all of you guys ;-)
+Optimization
+One of the optimization results USDJPY, backtested with M5 period. Other pairs give better results.
+You can find settings for optimization in the attached file.
+Guys. She can trade and she's for free! ;-)

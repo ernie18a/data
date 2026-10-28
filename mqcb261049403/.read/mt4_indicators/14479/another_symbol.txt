@@ -1,0 +1,12 @@
+In some cases, it is necessary to display quotes of another financial instrument (hereinafter - the symbol) or timeframe withing the window of the current chart. An example of this necessity:
+searching for divergences
+between the quote charts of two symbols.
+The solution to this problem is available in a variety of options, up to the display of the chart of a different symbol. In this case, however, it will be limited to the display of a simple line, which is one of the four characteristics of the candlestick of another symbol: the opening price, closing, high or low.
+The Another_Symbol indicator displays the data of another symbol in the subwindow of the current chart. The symbol name is specified in the "Symbol" parameter. In addition, it is possible to specify the desired timeframe (the "Chart period" parameter) and the price of one of the candles (the "Price" parameter). To extend the functionality, the "Price" parameter contains options for the calculation of the average price of candles (Median), typical (Typical) and weighted (Weighted Close) prices.
+A simple example of the indicator operation - display of the closing price of GBPUSD symbol on the chart of the EURUSD symbol.
+The simplicity of the indicator lies in the fact that it does not synchronize the charts. Data is output by the bars indexes, not by time. That is, if for any of the bars of the current chart there is no corresponding bar of the other symbol, there the data from the adjacent (earlier of later) bar will be displayed. This problem is not relevant on the higher timeframes, as such bar gaps are rare. But on the lower timeframes, especially on the chart periods like M1, the time lag can be significant.
+The result of this discrepancy is the distortion of the real appearance of the quote chart of the other symbol. For this reason, this version of the indicator is more suitable for the timeframes in which the bar gaps almost never happen: M30 or higher.
+The flip side of the problem is the advantage: it is possible to display the M15 or even the M5 chart on the H1 chart.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14479

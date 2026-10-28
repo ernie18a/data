@@ -1,0 +1,16 @@
+This EA uses 3 Timeframes to identify the best signal
+Buy Signal
+STO5 indicates that the price will rise, STOm15 is also rising and STOm30
+Sell Signal
+STO5 indicates that the price will fall, and falling STOm15 must also STOm30
+The optimization should be weekly or monthly
+-------------------Version 2------------------------------
+Changes.
+Set the time frame on variables: sto1, sto, sto3
+Optimize always in M1!!!! Best results, now you can optime 1 year or 2, you chose the time of the back test.
+On variables k1, k2 and k3, you can select the timeframes!!!
+rules:
+K1 < k2 < k3
+You can download the preset to EURUSD.
+If you have any idea to improve, please let
+Thanks

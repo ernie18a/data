@@ -1,0 +1,16 @@
+I am sharing these  EAs.
+This is my best work till now.
+the
+only restriction
+is that you can  use it on
+CHFJPY
+and
+CADJPY
+pair .
+Recommendations:
+5 min chart
+CHFJPY and CADJPY
+IMPORTANT
+:when use them live,
+CHANGE the magic number
+in one of two.(ex. from 4355 make it 4356)

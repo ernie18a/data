@@ -1,0 +1,6 @@
+Author: Poruchik & aka KimIV
+Shows when to buy and when to sell. Position is opened when the indicator color changes: if there is a green dot - buy,
+if there is a red dot - sell.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7140

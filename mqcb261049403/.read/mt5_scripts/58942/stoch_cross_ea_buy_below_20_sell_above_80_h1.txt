@@ -1,0 +1,37 @@
+Key Features:
+Stochastic Crossover Strategy:
+Enters a Buy position when the Stochastic %K line crosses above the %D line, and enters a Sell position when the %K line crosses below the %D line.
+Adjustable Stochastic Periods:
+Users can customize the %K period ( StochKPeriod ), %D period ( StochDPeriod ), and slowing period ( Slowing ) according to their preferences.
+Entry Cooldown:
+The CooldownMinutes feature prevents the EA from executing new trades within a specified time period after a previous trade, helping to avoid whipsaws and impulsive entries.
+Fixed Stop Loss and Take Profit:
+Each trade is equipped with adjustable Stop Loss and Take Profit in points ( StopLossPoints and TakeProfitPoints ). In the current configuration, both are set at 300 points.
+Simple Risk Management:
+The lot size for each trade is currently set at a fixed value of 0.1 for easy risk management.
+Automatic Position Closure:
+The EA automatically closes all open positions before opening a new position based on an opposing Stochastic crossover signal.
+Prevention of Duplicate Positions:
+The EA checks for the existence of open positions before making a new entry in the same direction.
+Trade.mqh Library Implementation:
+Utilizes the Trade.mqh library for efficient trade execution.
+Adjustable Input Parameters:
+RiskPercent : Percentage of risk per trade (currently not used in lot calculation, lot is fixed).
+StochKPeriod : Period for the Stochastic %K line.
+StochDPeriod : Period for the Stochastic %D line.
+Slowing : Slowing period for the Stochastic.
+CooldownMinutes : Time interval (in minutes) after a trade before a new entry is allowed.
+StopLossPoints : Stop Loss value in points.
+TakeProfitPoints : Take Profit value in points.
+How to Use:
+Place this EA file in the MQL5\Experts folder of your MetaTrader 5 platform.
+Drag and drop the EA onto your desired currency pair chart.
+Adjust the input parameters according to your preferences and trading strategy.
+Ensure that the
+Auto Trading
+feature is enabled on your MetaTrader 5 platform.
+Important Notes:
+This script is provided "as is" without any guarantee of performance.
+Thorough backtesting and testing on a demo account are recommended before using it on a live account.
+Proper risk management is crucial in trading. While this EA has simple risk management features, you may need to further customize it according to your risk tolerance and account size.
+Past performance is not indicative of future results.

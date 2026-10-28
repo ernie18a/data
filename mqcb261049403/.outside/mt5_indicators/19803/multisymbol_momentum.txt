@@ -1,0 +1,24 @@
+It is calculated as follows:
+MA(
+today
+) - MA(
+yesterday
+)
+The calculation is based on a moving average with a preset period, method and calculation price.
+The indicator has four main input parameters:
+Period of MA
+- MA period for calculation;
+Calculation method
+- MA calculation method;
+Applied price
+- MA calculation price;
+Vertical shift
+- vertical shift of each symbol's momentum lines relative to each other.
+Extra:
+Eight parameters to specify symbol names;
+Eight parameters to set the colors of momentum lines.
+Fig.1 Period M1, shift 2
+Fig.2 Period M1, shift 20
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19803

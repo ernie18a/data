@@ -1,0 +1,2 @@
+Indicator DayPivotPoint System with Signal and Alert for MetaTrader 5 with options to display signal on the chart.
+This Indicator can use only on TF_M1 to H4, and will visually appealing only on TF-M5 to TF-H1. Recommendation for Day Trading use on TF-M15.

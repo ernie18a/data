@@ -1,0 +1,28 @@
+Spread lister - current, min, max
+Motivation to create such an EA:
+All brokers have different rules on spreads - incl. fixed spread accounts, ECN, regular etc.
+Some market EAs do have a build-in spread filter, others are developing own EAs with the need to know and potentially filter high spread phases.
+Therefore it is important to know the spreads with your broker and account. Otherwise, one EA and settings might work for one trader while another would fail.
+Description:
+This simple EA can be assigned to
+any chart
+that is not used for real trading.
+In
+case
+you have performance issues, you might increase the default
+from
+1
+second to e.g. every
+15
+sec.
+The min and max values are listed per day.
+The table / min max values will be reset at midnight (broker and terminal time).
+You may decide to toggle to pips instead of points in the settings.
+All instruments that are in your Market watch (shortcut ctrl-u) are shown by default.
+You may decide to sort by highest spread in the settings as well.
+As formatting with standard comment function is an issue, I created a box and inserted the values.
+Every line gets a new OBJ_LABEL.
+Background and chart is not used, so grid and background can be removed.
+Please find attached the mq5 code plus (in the zip) the compiled ex5.
+Screenshot of EA result on chart:
+Screenshot of the settings:

@@ -1,0 +1,3 @@
+This indicator calculate count of one direction movement in selected period.
+That a bit similar to renko charts, but also include both direction movement into account.
+The indicator can help you easily recognize consolidation zones to use breakout strategy.

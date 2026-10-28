@@ -1,0 +1,110 @@
+I. Introduction
+MetaTrader provieds the functions to set a fixed TP, SL or trailing stop to an order. More often, we hope to use some other closing strategy, such as resistance, support lines, channels, etc. But this need users to keep staring at the chart and modifying the TP and SL times to time, which will be a hard working. OrdersGuardian is such an EA that will partly free you from the computer screen after opening orders. It has some simple closing strategy, including MA, envelopes, trendline, channels, parabolic SAR. It will close the order as the price reach to this curve or line you set.
+II. Parameters
+Varables
+Type
+Default Values
+Comments
+Orders
+string
+"*"
+Orders' tickets to be monitored. "*" means all opened orders of current symbol, it can be tickets list separated by spaces, commas and other chars, for the EA will check each order whecher its ticket is this string's substr. All the orders in this list must be in the same direction, otherwise the EA can not work.
+TP_Method
+int
+2
+TP strategy: 1 - Envelopes or MA (set TP_Env_Dev to 0 means MA), 2 - line objects, others - no TP.
+EA will search line objects in the chart, which can be Trendline, Trendline by Angel or Equidistant Channel.
+SL_Method
+int
+2
+SL strategy : 1 - Envelopes or MA, 2 - line objects, 3 - Parabolic SAR, others - no SL.
+ShowLines
+bool
+true
+Whether to show TP and SL price line in the chart.
+TP_LineColor
+color
+LimeGreen
+Color of TP price line.
+TP_TimeFrame
+int
+0
+Timeframe of the indicator for calculating TP price, the unit is minute, 0 means the current chart timeframe.
+TP_MA_Period
+int
+34
+Period for TP MA calculation.
+TP_MA_Method
+int
+MODE_EMA
+TP MA method.
+TP_MA_Price
+int
+PRICE_CLOSE
+Applied price for TP MA.
+TP_Env_Dev
+double
+0.2
+Percent deviation of TP envelopes line from MA, positive - the upper, negative - the lower, zero - MA curve line.
+TP_Shift
+int
+0
+TP MA shift, MA line offset relate to the chart by timeframe.
+SL_LineColor
+color
+Red
+Color of SL price line.
+SL_TimeFrame
+int
+0
+Timeframe of the indicator for calculating SL price.
+SL_MA_Period
+int
+34
+Period for SL MA calculation.
+SL_MA_Method
+int
+MODE_EMA
+SL MA method.
+SL_MA_Price
+int
+PRICE_CLOSE
+Applied price for SL MA.
+SL_Env_Dev
+double
+0.2
+Percent deviation of SL envelopes line from MA
+SL_SARStep
+double
+0.02
+Increment of SAR.
+SL_SARMax
+double
+0.5
+Maximum value of SAR.
+SL_Shift
+int
+0
+SL MA shift
+III. About line objects
+If there were more than one line object in the chart, taking a long order as example, the EA would search the nearest one above the current price as the TP trendline, and the nearest one below as the SL trendline.
+When EA running, user can adjust the position of trendline, and EA will calculate the new coordinates automatically.
+The EA searches the TL and SL trendline right after its starting, after which two line objects will not change, even if user move them above or below other lines, excpet restarting the EA.
+Changing the period of attached chart will cause EA restarting and then re-searching TP and SL objects.
+If users delect the working TP or SL objects, the EA would search a new one.
+When equidistant channel used, the upper line would be TP line and lower be SL in long orders, vice versa in short orders.
+Trendline in angel is not recommanded, for its position in the chart's price coordinate is not fixed and changes with the price or time axis.
+IV. Notice
+When SAR used as SL, the variable SL_Shift can not be zero, must >=1.
+The TP and SL price is the price showed in chart, ie. bid price, no spread calculated.
+V. Operation steps
+Open your orders.
+Place indicators or trendline to the chart as your TP or SL objects.
+Attach OrdersGuardian to the chart，set the parameters same as your indicators (setting ShowLines's value true is recommended), and leave "Allow live trading" unchecked on the common tab. Click OK button, there should be a cross in the top-right corner of the chart.
+Press down the "Expert Advisors" button, the cross will became an unhappy face, which means the EA is working properly, but will not close any orders.
+If the TP and SL price line displayed in the chart are same as your planned, press F7, select the checkbox of "Allow live trading", and the unhappy face icon will change into a smiling one, so the EA is now starting monitoring your orders.
+Equidistant Channels as TP and SL
+Envelopes as TP
+Moving Average as SL
+Parabolic SAR as SL
+Trendline as TP and SL

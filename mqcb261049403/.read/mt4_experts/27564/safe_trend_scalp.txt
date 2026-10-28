@@ -1,0 +1,19 @@
+Do you want Scalp in safe market trend??
+Many traders don't trust robots... they Just use technical analysis and make manual orders.
+So what happens if this technical analysis and use trend line to make the best decision work AUTOMATIC ??
+Yes. We do that...
+Safe Trend Scalp
+is a smart ea that uses the Zigzag indicator to find out the sensitivity situation of the market price.
+with zigzag find the highest and lowest price (support and resistance) and with this point, EA finds a Price slip.
+Like Trend Line trading we have sensitivity price, Best Support and resistance to make an action.
+with this point, the SMART robot automatically creates a trend line that market movement reacted at this point.
+if price touches this line expert decides to act with it. BUY or SEll depended on the market situation.
+This code is basing idea that I creating and sharing with you not a pro version
+if you have any question, any Idea to have better ea im here:
+Fafolika
+And what happened with this method trading ??
+Recommendations
+Do not use on real account without a clear understanding of the risks and consequences
+Integrate your strategy into the code if you have Knowledge about that.
+Before using the EA in real conditions, test on demo accounts for at least 4 working weeks.
+If you have any idea contact me on private massage.

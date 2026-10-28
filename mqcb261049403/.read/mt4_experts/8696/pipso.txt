@@ -1,0 +1,101 @@
+extern
+int
+start=
+21
+;
+// operation start hour
+extern
+int
+end=
+9
+;
+// operation end hour (added to start time)
+extern
+int
+period=
+36
+;
+// period to plot the channel in bars
+extern
+double
+SLpp=
+300
+;
+// stop loss as a percentage of the channel width
+works with a spread of 3-4 points
+Warning: Do not attempt to use on real account! :)
+Strategy Tester Report
+Pipso
+MetaQuotes-Demo (Build 220)
+Symbol
+EURGBP (Euro vs Great Britain Pound )
+Period
+5 Minutes (M5) 2006.01.02 00:10 - 2009.02.06 13:20 (2006.01.01 - 2010.01.01)
+Model
+Every tick (the most accurate mode based on the shortest available time frames)
+Parameters
+start=21; end=9; period=36; SLpp=300;
+Bars in test
+222523
+Ticks modelled
+4418012
+Modelling quality
+90.00%
+Mismatched chart errors
+0
+Initial deposit
+10000.00
+Net profit
+76680.42
+Gross profit
+154571.41
+Gross loss
+-77890.99
+Profit factor
+1.98
+Expected payoff
+30.39
+Absolute drawdown
+306.55
+Maximum drawdown
+4443.23 (5.18%)
+Relative drawdown
+5.22% (583.70)
+Total trades
+2523
+Short positions (won %)
+1284 (78.35%)
+Long positions (won %)
+1239 (78.53%)
+Profit trades (% of total)
+1979 (78.44%)
+Loss Trades (% of total)
+544 (21.56%)
+Largest
+profit trade
+933.20
+loss trade
+-2244.36
+Average
+profit trade
+78.11
+loss trade
+-143.18
+Maximum
+consecutive wins (profit in money)
+68 (5453.46)
+consecutive losses (loss in money)
+9 (-131.98)
+Maximal
+consecutive profit (count of wins)
+5453.46 (68)
+consecutive loss (count)
+-2536.27 (2)
+Average
+consecutive wins
+5
+consecutive losses
+1
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8696

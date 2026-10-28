@@ -1,0 +1,10 @@
+Author: Profitrader
+In the futures markets data on trade volumes a reported with a one day delay.
+To compensate for this, many analysts use the tick volume indicator (tick volume™): it allows you to track volume changes during the trading day.
+Tick ​​volume indicates the number of deals concluded over a certain intraday period, but does not show the number of contracts per deal.
+So it can for example be 50 deals per hour. But how many contracts have been concluded for each deal is not clear from this figure. It could be, for example, 50 one-lot orders or 50
+hundred-lot orders. From this point of view, the tick does not reflect the true volume.
+However, it is a valuable indicator because only it allows you to measure the volume with less delay, although at the expense of accuracy.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7804

@@ -1,0 +1,16 @@
+Daily Perspective indicator/ tool description.
+Version 221.221
+new version 22.12.2020.
+Version 810.201
+Whole range of visual concepts use several timeframes view.
+Daily Perspective indicator/ tool uses visualization of last 3 daily candles for timeframes H1 and shorter.
+The indicator projects previous days (yesterday and older) OCHL prices into current day (today).
+The indicator has built-in ALARM signaling that price meet following criteria:
+Trend represented by moving average EMA with chosen period on timeframes H1,H4,D1,W1,MN1 is in appropriate direction,
+UPTREND for BUY
+DOWNTREND for SELL,
+Price is
+ABOVE previous day HIGH for BUY
+BELOW previous day LOW for SELL.
+Usage:
+Intraday trading on timeframes H1 and shorter.

@@ -1,0 +1,5 @@
+The indicator draws two of the following indicators in separate window:
+RSI;
+CCI;
+Percent Range of RSI;
+Percent Range of CCI.

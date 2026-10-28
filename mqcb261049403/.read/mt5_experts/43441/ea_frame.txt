@@ -1,0 +1,10 @@
+Include file contains moving average group, a moving average group with 6 moving averages in PERIOD_W1,
+and a moving average group with 6 moving averages in PERIOD_CURRENT.
+MA group is several different period MA lines in an array, yeah,
+double dimensional array
+. There is a very useful function call MA_Direction, which tell you whether the MA group goes with the same direction  in  controllable bars. The performance is very good. give me 5 stars, please!
+With object-oriented programming, it is easy to integrate multiple strategies, one object for one
+strategy
+.
+Of course, there must be the most basic order management, it according to the order's comment to manage each order, so that different strategy could integrate.
+Beside, keep an eye on my signal!

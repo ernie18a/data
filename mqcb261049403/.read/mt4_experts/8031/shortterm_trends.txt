@@ -1,0 +1,26 @@
+Symbol: EUR/USD
+Timeframes: M15, H1
+Indicators used: Moving Average(200), Stoh
+Trade volume: 0.1
+The system is described in more details
+here
+.
+A detailed article devoted to the system testing is available in our
+magazine's issue of 31.03.2008
+.
+You can discuss it and make your suggestions at
+our forum
+.
+System Rules:
+2 charts with different timeframes (M15 and H1) are used in the strategy, as well as two technical indicators: Moving Average (period 200) and slow Stochastic (period 14).
+1) Compare moving averages on M15 and on H1 charts. It is a trend, if the price on both charts is above or below the moving average.
+2) Once having identified a trend, analyze the M15 chart for its conformity to two conditions (the situation must be conforming to both conditions at the same time):
+a) the price must be no more than 20 points higher (for buying) or lower (for selling) than the moving average;
+b) the fast Stochastic line must intersect the slow Stochastic line below the level of 20 (for buying) or intersect it from top to bottom below the level of 80 (for selling).
+3) After entering, place StopLoss. For a long position, place it 10 points below MA200 on the M15 chart. In case of opening a short position, place StopLoss 10 points above MA on the M15 chart. If the price moves to your favor, place the stop level higher or lower (according to whether you are holding a long or a short position) to protect your profit. For the sake of simplicity, we use a trailing stop with a step of 25 points of each new peak or trough in the examples below. (When testing the EA, we placed StopLoss of the Bid/Ask price, not of the MA200 line).
+Image:
+Testing the EA on EURUSD М15 chart with standard inputs:
+Testing the EA on EURUSD М15 chart with optimized parameters:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8031

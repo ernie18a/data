@@ -1,0 +1,2 @@
+You never see like this indicator before. This indicator draw Dayly RSI Level on your chart like CAMERILLA and Pivot. The levels is very powerful and very matchful. Try it quickly.
+It Draw RSI level ( 20 - 30 - 40 - 50 - 60 - 70 - 80 )  and ExtraLevel you can define it in its property.

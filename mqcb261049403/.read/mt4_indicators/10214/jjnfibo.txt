@@ -1,0 +1,4 @@
+Intra-[Month,Week,Day,H4,H1 ...] Fibonacci. (Maybe) one of the most useful Fibonacci tool.
+For example:
+Intraweek (BasisTF=10080) Fibonacci on H1 chart with ProcessedUnits=1:
+Intraweek (BasisTF=10080) Fibonacci on H1 chart with ProcessedUnits=2:

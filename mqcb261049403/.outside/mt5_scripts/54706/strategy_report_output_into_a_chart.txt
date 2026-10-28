@@ -1,0 +1,10 @@
+This script was developed for displaying saved Strategy report from the Strategy Tester into a chart.
+Follow these steps:
+Put report_into_chart.mql5 into ¨\MQL5\Scripts" folder.
+Compile
+report_into_chart.mql5 and get
+report_into_chart.ex5.
+Unzip StrategyTester.zip and put StrategyTester.html into ¨\MQL5\Files" folder.
+Refresh your Metatrader 5.
+Run report_into_chart script from Metatrader and all deals will be displayed on the selected chart as blue (buy positions) or red (sell positions) arrows.
+Later you can replace StrategyTester.html file with your chosen *.html report from the Strategy Tester.

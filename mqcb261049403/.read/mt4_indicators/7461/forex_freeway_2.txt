@@ -1,0 +1,2 @@
+Author: Desoft
+Forex Freeway 2 indicator. Requires RSX indicator.

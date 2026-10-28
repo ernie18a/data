@@ -1,0 +1,23 @@
+The standard
+OnTick()
+handler allows to receive the ticks for only one symbol. For multicurrency experts you need the ticks for several symbols.  In some cases it's necessary to recieve the ticks for all symbols from"Market Watch" window.
+The Expert Advisor
+exOnTickMarketWatch.mq5
+uses the standard custom event handler of
+OnChartEvent()
+function, it provides the following information:
+Symbol index of the "Market Watch" window
+Symbol name
+Tick Bid price.
+Symbol spread.
+Launch the scOnTickMarketWatch.mq5 script to receive the ticks from "Market Watch" window.
+Recommendations:
+This version of multicurrency event handler uses a lot of resources. The CPU usage can be decreased by increasing the delay variable of the script, but you can skip some ticks.
+After launch of the script and Expert Advisor you can specify the symbols by adding them in "Market Watch" window.
+You can modify the code for your needs, for example, you can configure it to receive the Ask price instead of spread.
+P.S. It has been published at Russian
+forum
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/209

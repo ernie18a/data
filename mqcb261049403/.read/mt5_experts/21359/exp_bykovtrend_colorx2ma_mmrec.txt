@@ -1,0 +1,70 @@
+Two independent trading systems using indicators
+BykovTrend_V2
+and
+ColorX2MA
+within one EA, with an option of changing the size of the future trade depending on the results of the previous ones. Signals to open trades by trading systems are formed when a bar is closing, if the trend has changed, displayed through changing the color of any of those two indicators.
+To manage the volumes of the positions to be opened, the blocks of the EA inputs were added. For example, in the system using indicator BykovTrend:
+input
+uint
+A_BuyLossMMTriger=
+2
+;
+//A number of losing Buy positions to reduce MM
+input
+uint
+A_SellLossMMTriger=
+2
+;
+//A number of losing Sell positions to reduce MM
+input
+double
+A_SmallMM=
+0.01
+;
+//A Share of the deposit in a deal, when losing
+input
+double
+A_MM=
+0.1
+;
+//A Share of the deposit in a deal for normal trading
+With such inputs and if there are two last trades within the same trading direction, the EA will open the next trade in the same direction with the lot size of as little as 0.01. Should at least one of two last trades be non-losing, then the position volume will be 0.1.
+Inputs for the trading system using ColorX2MA are absolutely the same:
+input
+uint
+B_BuyLossMMTriger=
+2
+;
+//B number of losing Buy positions to reduce MM
+input
+uint
+B_SellLossMMTriger=
+2
+;
+//B number of losing Sell positions to reduce MM
+input
+double
+B_SmallMM=
+0.01
+;
+//B Share of the deposit in a deal, when losing
+input
+double
+B_MM=
+0.01
+;
+//B Share of the deposit in a deal, when losing
+For the generated EA to operate correctly, the compiled files of indicators
+BykovTrend_V2.ex5
+and
+ColorX2MA.ex5
+must be in the
+<terminal_data_directory>\MQL5\Indicators
+folder.
+In testing shown below, the EA's default inputs were used with stops.
+Fig 1. Exemplary trades in the chart
+Test results for GBPJPY H2 over the year 2016:
+Fig. 2. Testing results chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21359

@@ -1,0 +1,6 @@
+The MultiCandleSignal indicator displays information on current trends using candlestick direction from seven different timeframes.
+One of the seven indicator lines corresponds to each timeframe. If the candlestick is growing on the corresponding timeframe, the line color is green. If its is falling, the line is pink. Color squares on lines occur when the bar of the corresponding timeframe changes.
+Figure 1. The MultiCandleSignal indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2130

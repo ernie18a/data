@@ -1,0 +1,17 @@
+The Exp_JBrainSig1_UltraRSI Expert Advisor uses the values of
+JBrainTrend1Sig
+and
+UltraRSI
+indicators to analyze the market state.
+A signal to perform a deal is formed at bar closing if the signal of the JBrainTrend1Sig indicator appears and the cloud color of the UltraRSI indicator coincides with the color of its signal. Analogically the trading signal appears in the moment when the cloud color of the UltraRSI indicator changes and the last signal of the JBrainTrend1Sig indicator coincides with the cloud color. Thus, in this trading system indicators are mutually filtered. This variant of strategy is activated when selecting Composition (simultaneously filtering) by Mode input parameter of the Expert Advisor.
+The other two values ​​are JBrainSig1Filter and UltraRSIFilter intended for algorithms in which one of these two indicators is the source of a trading signal and the other is the confirmation signal (signal filter).
+Place JBrainTrend1Sig.ex4 and
+UltraRSI.ex5
+compiled files to the terminal_data_folder\MQL5\Indicators.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. The instances of history of deals in the chart.
+Testing results for 2011 at NZDUSD H4:
+Fig. 2. Chart of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1189

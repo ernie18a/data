@@ -1,0 +1,23 @@
+The indicator displays a colored tick-volum histogram by five criteria:
+Increase in volume and grwoing price (default color is
+green
+);
+Decrease in volume and falling price (default color is
+sky blue
+);
+Increase in volume and falling price (default color is
+red
+);
+Decrease in volume and growing price (default color is
+golden
+);
+There are no changes in either volume or price (dafault color is
+pale gray
+).
+The indicator compares the current data with the data as of N periods ago.
+It has one input parameter:
+Period
+- calculation period.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20919

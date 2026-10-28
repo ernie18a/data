@@ -1,0 +1,51 @@
+The CandleTrend indicator displays price movement directions from six different timeframes: H4, H8, H12, Daily, Weekly, Monthly. Downtrend paints squares in red, uptrend - in green.
+Indicator input parameters:
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+color
+UpColor=LimeGreen;
+// currency uptrend color
+input
+color
+DnColor=Red;
+// currency downtrend color
+input
+color
+ZrColor=Gray;
+// no change color
+input
+int
+FontSize=
+11
+;
+// font size
+input
+type_font FontType=Font14;
+// font type
+input
+ENUM_BASE_CORNER
+WhatCorner=
+CORNER_LEFT_LOWER
+;
+// location corner
+input
+uint
+Y_=
+20
+;
+// vertical location
+input
+uint
+X_=
+5
+;
+// horizontal location
+Fig.1 The CandleTrend Indicator
+Place
+GetFontName.mqh
+library file to the 'terminal_directory\MQL5\Include' folder.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1028

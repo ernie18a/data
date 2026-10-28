@@ -1,0 +1,11 @@
+Theory :
+"Rocket RSI" was (along with detailed description) published here :
+Rocket RSI
+This version is adding pivot calculation to such RSI. Pivots are calculated from the RSI itself, and you have 4 possible types that can be displayed :
+display pivot only
+display pivot and 1st level support and resistance
+display pivot and 1st and 2nd level support and resistance
+display pivot and 1st and 2nd and 3rd level support and resistance
+The time frame selected, is used for pivots only (that time frame is used as "delimiter" for pivots). The RSI is always calculated as current time frame
+Usage :
+You can use it as it is recommended for rocketRSI

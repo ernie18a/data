@@ -1,0 +1,23 @@
+Daily VWAP: Your Essential Intraday Fair Value Indicator
+The
+Daily VWAP (Volume Weighted Average Price)
+is a precisely coded custom indicator designed to provide traders with a critical piece of intraday analysis: the volume-weighted average price, reset daily. Unlike traditional moving averages, VWAP incorporates volume into its calculation, giving more weight to prices where more trading activity occurred. This makes it an incredibly valuable tool for gauging the true fair value of an asset throughout the trading day.
+This indicator calculates the cumulative sum of (Price * Volume) divided by the cumulative volume for each day, starting fresh at the beginning of every new trading session. It plots a smooth line directly on your chart, making it easy to visualize where the majority of today's trading volume has occurred relative to price.
+Why use Daily VWAP?
+Identify Intraday Fair Value:
+Understand the average price at which an asset has traded, adjusted for volume, providing a clear benchmark for bullish or bearish sentiment.
+Strategic Entry & Exit Points:
+Many institutional traders use VWAP as a key reference point. Price trading above VWAP can indicate bullish sentiment, while price below VWAP may suggest bearish control. This offers valuable insights for potential entry and exit strategies.
+Trend Confirmation:
+Use VWAP to confirm the strength of an intraday trend. A strong trend often sees price maintaining its position relative to VWAP.
+Simple & Uncluttered:
+Despite its sophisticated calculation, the Daily VWAP is presented as a single, clear line on your chart, keeping your analysis clean and focused.
+Features of this Source Code:
+Daily Reset:
+The VWAP calculation automatically resets at the start of each new trading day, providing a fresh perspective on daily market activity.
+Robust Calculation:
+Utilizes standard MQL5 functions for accurate calculation of typical price and volume.
+Clean Plotting:
+Displays a distinct blue line on your chart for easy identification.
+Open Source:
+Full MQL5 source code is provided, allowing for complete transparency, learning, and further customization by the community.

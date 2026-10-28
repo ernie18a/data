@@ -1,0 +1,22 @@
+Description:
+FOREX Currency Powers
+provides an example of calculation of Forex currency strengths using synthetic financial instruments.
+Similarly, we can calculate the strengths of RTS, USD and RUB of the FORTS futures market.
+Using the values of futures contracts "MIX-3.18" (~RTSRUB), "RTS-3.18" (~RTSUSD),  "Si-3.18" (~USDRUB), "Eu-3.18" (~EURRUB), we can create an indicator of currency strengths:
+<FORTS.RTS> = (RTSUSD+RTSRUB)/2
+<
+FORTS.
+USD> = (USDRTS+USDRUB)/2
+<
+FORTS.
+RUB> = (RUBRTS+RUBUSD+RUBEUR)/3
+Copy the CurrencyPowerIndex.mqh file to <terminal_data_folder>\MQL5\Include.
+After you launch FORTS_Currency_Power.mq5, the following synthetic instruments will appear in the Market Watch window: FORTS.RTS.M5, FORTS.USD.M5, FORTS.RUB.M5:
+Fig.1. Synthetic symbols FORTS.RTS.M5, FORTS.USD.M5, FORTS.RUB.M5
+Fig. 2. A tick chart of the synthetic instrument FORTS.RTS.M5
+Fig. 3. A tick chart of the synthetic instrument FORTS.USD.M5
+Fig. 4. A tick chart of the synthetic instrument FORTS.RUB.M5
+Fig. 5. Strength of RTS, USD, RUB calculated based on FORTS futures contracts
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19545

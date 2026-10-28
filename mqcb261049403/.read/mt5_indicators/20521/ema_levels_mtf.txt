@@ -1,0 +1,12 @@
+There seems to be at a moment serious lack of multi timeframe versions of MetaTrader 5 indicators. Since there is no real reason for that, here is one more multi timeframe version.
+This is a multi timeframe version of
+EMA Levels
+.
+Timeframes supported are all the possible timeframes supported by MetaTrader 5 and it has 3 "special" timeframes:
+Next higher timeframe: first higher timeframe compared to active chart.
+Second higher timeframe: second higher timeframe compared to active chart.
+Third higher timeframe: third higher timeframe compared to active chart.
+If some of these 3 timeframes are used, then the timeframe is set automatically as you change the timeframe of the chart.
+Option that sometimes causes some confusion is the interpolation.
+Interpolation is taking effect only in multi timeframe mode. It, instead of having the step like data display on chart, uses linear interpolation to make a smoother display. When it is turned off, here is how the upper example looks like:
+Some are arguing that it produces false values. That is actually not true. If we compare the "classic" way of displaying multi timeframe data (the "step like" way) and interpolated multi timeframe data, the number of guaranteed exact points is exactly the same: 1 per timeframe. The rest is, in a step like way, repeated at bars where that value did not exist, and interpolated way is adjusting those values in a more logical ("smoother") way, and, in most cases it is even much closer to what was going on in runtime than the classical multi timeframe way.

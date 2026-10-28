@@ -1,0 +1,16 @@
+With this indicator we can visualize price action in other (higher) timeframe without leaving our current chart.
+Just choose wich timeframe you desire (ex: TFup=3 means third timeframe up from the current timeframe in the chart).
+Also you can choose:
+bars_back: how many inside bars (candles)
+stats: if true shows the range (Open-Close, absolute value) in pips of the inside bar (candle)
+UpCandleColor: color for a bull bar (candle)
+DownCandleColor: color for a bear bar (candle)
+width: thickness of the bar
+filling: if true draws the inside bar with fill; otherwise just the edges.
+Update 22.03.15 - v1.2:
+Added these parameters:
+Font_Size: text font size (default=15);
+Corner: text corner position (default=3 -> Bottom Right).
+Bug correction: Object Delete.
+Now the text has the same color as the last (upper timeframe) bar.
+Cheers!

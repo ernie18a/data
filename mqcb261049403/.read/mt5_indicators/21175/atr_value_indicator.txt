@@ -1,0 +1,1 @@
+An indicator for displaying ATR (Average True Range) value in pips or points with option for setting multiplier.

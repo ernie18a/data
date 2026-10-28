@@ -1,0 +1,9 @@
+Trades three moving averages in trending conditions , opens trades when bar crosses over the smaller moving average.
+standard inputs, all modifiable.
+buy trades
+input 1 ,  5 greater than 20
+input 2 ,  20 greater than 30
+input 3 , candle crosses above this moving average, 5
+input 4 , stop loss in pips and target in % equal to stop.
+inputs 5/6/7/8 are in the same order for sell trades.
+ability to change moving average type , simple , exponential , and more.

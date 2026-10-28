@@ -1,0 +1,2 @@
+Author: Amir Aliev
+Expected Volumes indicator.

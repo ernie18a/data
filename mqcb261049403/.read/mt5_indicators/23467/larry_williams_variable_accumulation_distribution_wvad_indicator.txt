@@ -1,0 +1,8 @@
+Albeit forex with major pairs does not have volume information, one of the most used indicators where this information is available is Williams' Variable Accumulation Distribution, or WVAD for short.
+It's basic mathematical definition is:
+While signal of (close-open) represents direction (positive for uptrend, negative for downtrend), it quantifies the amount of volume needed to actually change the price, driving it.
+It was dropped in late 1970's due to the difficulty in implementing it.
+The indicator reverts to the ratio of open-close to high-low, if volume information is not available. In the code was also included a Ask>Bid, because it becomes more reliable for other instruments where placing limit orders in pre-market is possible and, sometimes, results in Ask being larger than Bid (WDO/DOL FUTURES, at Brazilian BMF Bovespa, for instance).
+In this version, it calculates for current bar at current time-frame.
+Basic code formula is:
+((close[i] - open[i])/(high[i] - low[i]))*(volume[i])

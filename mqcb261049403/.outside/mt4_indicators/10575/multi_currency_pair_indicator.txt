@@ -1,0 +1,13 @@
+Author:
+The author is researcher who is studying the stock and FX market for research purpose. The indicator has been tested extensively on historical data, but there is no guarantee past performance will be indicative of future results.
+Description:
+This indicator watches the major currency pairs to find the status of the current candle (Bullish or Bearish) of USD, EUR, and GBP compared to other currencies such as EUR, JPY, GBP, CHF, AUD, and CAD.
+For example, if all boxes in the USD row are red that means the current candle of the USD is weak or bearish against all other major currencies at the moment. The same method can be used to analyses the candles of GBP and EUR. The column are read in opposite.
+For example, if all boxes in the CHF are green this means CHF is bearish against EUR, GBP and USD. The best use of this indicator when combined with other indicator such as moving average, Bollinger Bands, Support and Resistant levels.
+Image:
+Recommendations:
+For strong bullish EURUSD signal wait until all boxes in the EUR row are Green and the USD row all are Red
+The indicator has two main parameters that are:
+HistoryShift: If 0, it means the current candle. To trade you should have it on 0. If you want to test the previous performance of the indicator you should change this number. For example, if you enter 10 the indicator will go back 10 candles.
+DrawVline: This will draw a vertical line that matches the HistoryShift parameter
+I will be very interested in your feedback, suggestion for improvement and collaboration to improve the indicator.

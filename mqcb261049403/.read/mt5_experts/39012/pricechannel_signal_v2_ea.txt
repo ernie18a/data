@@ -1,0 +1,61 @@
+Trading strategy
+The custom indicator 'PriceChannel_Signal_v2' (
+I took the indicator here
+) generates several signals: two types of signals to open a 'BUY' position, two types of signals to open a 'SELL' position, one signal to close 'BUY' and one signal to close 'SELL'. No Stop Loss, No Take Profit, No Trailing.
+An example of opening a position:
+Rice. 1. PriceChannel_Signal_v2 EA
+Peculiarities:
+The EA can be optimized for the working timeframe ('
+Working timeframe
+')
+There can be only one 'entry to the market' deal per bar
+When working in the '
+inside bar
+' mode (parameter
+'
+Search signals on ...
+'
+equals '
+bar #0 (at every tick)
+') the current bar is bar #0, when working in the mode '
+only at the moment of birth of a new bar
+'
+(parameter
+'
+Search signals on ...
+'
+equals '
+bar #1 (on a new bar)
+)
+current bar is bar #1
+Now more about each group of parameters:
+Trading settings:
+'
+Working timeframe
+' - working timeframe. The timeframe on which indicators are created and on which a new bar is searched.
+Position size management (lot calculation)
+The lot can be either permanent ('
+Money management
+' set to '
+Constant lot
+' and set the lot size to '
+The value for "Money management"
+') and dynamic - in percent risk per trade ('
+Money management
+' set to '
+Risk in percent for a deal
+' and set the risk percentage in '
+The value for "Money management"
+'). You can also set a constant lot equal to the minimum lot - '
+Money management
+' set to '
+Lots Min
+'.
+Additional features:
+Flag '
+Positions: Only one
+' set to '
+true
+' allows the EA to have no more than one position in the market. '
+Print log
+' prints an extended log of all operations.

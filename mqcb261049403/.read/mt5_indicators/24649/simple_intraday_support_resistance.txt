@@ -1,0 +1,4 @@
+Theory :
+As simple as it gets : no parameters. It is made to work on time frame that are less than daily time frames and is showing an estimated intraday support resistance
+Usage :
+Like any support/resistance indicator

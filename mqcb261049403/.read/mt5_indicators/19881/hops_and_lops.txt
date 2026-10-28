@@ -1,0 +1,5 @@
+Even though it seems like a funny name, it is not.
+The "HOPS" and "LOPS" stand for High Of the Previous Session and Low Of the Previous Sessions. That makes it a sort of support/resistance or a pivot type of indicator. This version supports any of the time frames that are supported by MetaTrader 5 (even displaying lower time frame session pivots, lows and highs).
+Recommendations
+Use it as any previous session high/low indicator (mainly for possible break-outs).
+If you use multiple instances on the same chart set the unique ID of the indicator to unique value - that way you can have more than one instance on the same chart.

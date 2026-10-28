@@ -1,0 +1,16 @@
+Indicator
+FineTuningMACandle
+with the timeframe selection option available in its input parameters:
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// The indicator chart period (timeframe)
+For the indicator to operate, the
+FineTuningMACandle.ex5
+indicator should be added to the <terminal_data_directory>\MQL5\Indicators folder.
+Fig1. Indicator FineTuningMACandle_HTF
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22803

@@ -1,0 +1,27 @@
+The indicator calculates and shows in the price chart panel:
+The size of possible loss at closing all the positions available on the account by their StopLoss orders;
+The number of positions that have or do not have the StopLoss orders placed by the indicator;
+Number of Buy and Sell positions on the account and their total profit/loss.
+It has eight input parameters:
+Panel corner
+- chart corner, to which the panel is attached;
+Panel X offset
+- horizontal offset of the panel from the base corner;
+Panel Y offset
+- vertical offset of the panel from the base corner;
+Panel background color
+- panel color;
+Panel border color
+- panel border color;
+Loss value text color
+- value text color of possible loss;
+Positions text color
+- data text color of the positions on the account;
+Panel transparency
+- panel transparency (255 means complete opacity)*.
+* Panel transparency cannot be set to less than 48.
+Fig.1 Panel anchored at the lower right corner. Default colors.
+Fig.2 Panel anchored at the lower left corner. Colors and transparency are not set up by default.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20702

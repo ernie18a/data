@@ -1,0 +1,12 @@
+From MultiIndicatorDivergence - Show all Time-Frames 5 bars ago & bar actual.
+Divergence Panel: Spot Market Reversals Fast
+A small panel on your chart that tells you when the price and the indicators are “disagreeing.”
+Traders call this a divergence, and it can be an early hint that the market may turn around.
+🟩 Green square = possible move up
+🟥 Red square = possible move down
+⬛ Dark square = nothing yet
+Each square is a different indicator (RSI, MACD, and 8 more).
+More squares of the same color = more indicators agree...
+All timeframes at once, from M1 to monthly
+6 columns: five bars ago and the bar happening right now
+It’s a helper tool, not a crystal ball... Protect first & then profit!

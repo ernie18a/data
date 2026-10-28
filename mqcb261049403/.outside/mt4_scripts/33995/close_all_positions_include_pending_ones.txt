@@ -1,0 +1,2 @@
+https://github.com/wds23817/MT4-Scripts/blob/main/CloseAllPositions
+// This is not an EA, it is a script.

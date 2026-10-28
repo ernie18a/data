@@ -1,0 +1,62 @@
+Multi-Timeframe Trend Dashboard
+The idea behind it
+Trading with the higher-timeframe trend usually means alt-tabbing between several chart windows just to answer one question: is this symbol actually trending, and in which direction, across the timeframes that matter for the setup? This indicator answers that in one glance. For every timeframe you enable — M15 through W1 — it creates its own independent Fast/Slow moving-average pair on that timeframe, reads the latest values, and shows the result as a single color-coded row: Bullish when the fast average is above the slow one, Bearish when it's below, and Neutral when they're effectively equal.
+Each timeframe's trend is calculated completely independently using the terminal's own indicator engine ( iMA handles plus CopyBuffer ), so the M15 row is exactly what an M15 chart with the same two moving averages would show you, the H4 row is exactly what an H4 chart would show, and so on — there is no cross-timeframe approximation or synthetic resampling involved.
+How to interpret it
+BULLISH
+(default green) — the fast moving average is above the slow moving average on that timeframe.
+BEARISH
+(default red) — the fast moving average is below the slow moving average on that timeframe.
+NEUTRAL
+(default gray) — the two averages are essentially equal, or that timeframe's history isn't fully loaded yet (shown as "N/A" until it is).
+Row order
+— always fixed from the lowest enabled timeframe to the highest (M15 → W1), so the panel reads the same way every time regardless of which timeframes are toggled on.
+Optional MA values
+— enabling
+InpShowMAValues
+appends the exact fast/slow price values to each row, for when you want the numbers behind the color.
+External variables (inputs)
+Input
+Default
+Purpose
+InpShowM15 / InpShowM30 / InpShowH1 / InpShowH4 / InpShowD1 / InpShowW1
+true / true / true / true / true / false
+Toggles which timeframes appear as rows in the panel.
+InpFastMAPeriod
+10
+Period of the fast moving average, evaluated separately on every enabled timeframe.
+InpSlowMAPeriod
+30
+Period of the slow moving average, evaluated separately on every enabled timeframe.
+InpMAMethod
+Simple
+Moving average method (Simple, Exponential, Smoothed, Linear Weighted) applied to both the fast and slow average.
+InpAppliedPrice
+Close
+Price series the moving averages are calculated from.
+InpShowMAValues
+false
+When enabled, appends the exact fast/slow price values to each row.
+InpUpdateOnNewBarOnly
+true
+When true, refreshes once per new chart bar; when false, refreshes on every tick.
+InpPanelCorner
+Left Upper
+Chart corner the panel is anchored to.
+InpPanelXDistance / InpPanelYDistance
+12 / 18
+Panel offset from the chosen corner, in pixels.
+InpFontSize
+9
+Font size used for every row.
+InpBullColor / InpBearColor / InpNeutralColor
+Lime / Red / Silver
+Row color for each of the three possible trend states.
+InpPanelTextColor / InpPanelBgColor
+White / Dark Gray
+Title text color and panel background color.
+Recommended use
+Attach to any single chart of any symbol; the timeframes shown are independent of the chart's own period, since each row pulls its own data directly via iMA() handles created for that specific timeframe. Only run one instance per chart layout — there's no benefit to attaching it to several charts of the same symbol at once, since every instance would show identical rows.
+A Fast/Slow MA cross is a lagging trend filter by nature, so treat "Bullish"/"Bearish" as a regime read rather than an entry signal on its own; it answers "which way is this timeframe leaning" rather than "trade now." On symbols with very short trading history (a newly listed instrument, or a broker with limited weekly/monthly bars), the higher-timeframe rows may show "N/A" until enough bars have loaded — this is expected and resolves itself automatically. This indicator only reads price data and never places, modifies, or closes any order, so it is safe to run on any account type.
+Every indicator handle created in OnInit() is released via IndicatorRelease() in OnDeinit() , and all chart objects are removed via ObjectsDeleteAll() at the same time, so detaching the indicator leaves nothing behind.
+Fig. 1. The trend dashboard on EURUSD M15, showing M15 through D1 each evaluated independently. Rendered in black and white per the Code Base image guidelines (750×500 px).

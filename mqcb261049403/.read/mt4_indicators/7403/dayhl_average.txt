@@ -1,0 +1,5 @@
+Author: KCBT
+The indicator plots levels based on the previous days.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7403

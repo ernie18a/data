@@ -1,0 +1,5 @@
+Converts trendlines with specified color into horizontal lines . The line expands automatically.
+Trendline with specified color:
+Line to current time:
+Input parameters:
+Color

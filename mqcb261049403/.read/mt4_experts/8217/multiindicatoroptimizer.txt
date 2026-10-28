@@ -1,0 +1,23 @@
+Before using it, read the instruction (.txt file attached).
+Signals for the indicator:
+MACD:
+signal1 - the indicator is above zero line - value=+1, the indicator is below zero line value=-1;
+signal2 - the indicator is above signal line - value +1, the indicator is below signal line - value -1;
+Awesome Oscillator:
+signal1 - the indicator is above zero line - value=+1, the indicator is below zero line - value=-1;
+signal2 - the indicator is colored in green - value +1, the indicator is colored in red - value -1;
+Moving Average of Oscillator:
+signal1 - the indicator is above zero line - value=+1, the indicator is below zero line - value=-1;
+signal2 is not involved.
+Williams' Percent Range:
+signal1 - the indicator crosses the oversold line upwards=+1, the indicator crosses the overbought line downwards=-1;
+signal2 is not involved.
+Stochastic Oscillator:
+signal1 - %K crosses the oversold line upwards=+1, %K crosses the overbought line downwards=-1;
+signal2 - %K is above %D = +1, %K is below %D = -1.
+Trading:
+- if the total signal is greater than 0 and there are no buying positions, open a buying position;
+- if the total signal is less than 0 and there are no selling positions, open a selling position.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8217

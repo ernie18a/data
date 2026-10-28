@@ -1,0 +1,9 @@
+Indicator displaying the volume based on a price to average correlation.
+If the price is greater than the corresponding average, it is assumed that the state of the trend is "buy" and the volume used is the "buy" volume then. If the price is less than the corresponding average, it is assumed that the state of the trend is "sell" and the volume used is the "sell" volume then. You can chose to use tick volume or real volume.
+For comparison of the buy/sell states, you can use one of the 4 types of averages:
+simple moving average
+exponential moving average
+smoothed moving average
+linear weighted moving average
+Volume display for the "buy" volume and "sell" volume is smoothed using a kind of a "discontinued EMA" in order to make it more logical.
+Alerts and multi time frames already included.

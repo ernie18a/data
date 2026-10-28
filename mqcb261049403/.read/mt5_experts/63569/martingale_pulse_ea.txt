@@ -1,0 +1,75 @@
+Key Features
+Four Unique Price Action Strategies:
+Choose your core logic from HFT Tick Momentum, Candlestick Engulfing patterns, RSI Reversals, or a classic EMA Crossover.
+Flexible Entry Methods:
+Execute trades instantly with Market Orders or plan your entries with precision using Stop and Limit Orders.
+Advanced Martingale System:
+Go beyond the classic approach with three distinct Martingale types: Classic Multiplier, Multiplier with Sum, and Sum with Initial.
+Dynamic Lot Sizing:
+Select a fixed lot size or let the EA automatically calculate position sizes based on a percentage of your account balance and stop-loss.
+Comprehensive Trade Management:
+Set Stop Loss in points.
+Define your target with a Risk:Reward Ratio.
+New in v1.10:
+A powerful dual-mode
+Trailing Stop
+that works in
+Points
+or
+Money
+.
+Institutional-Grade Risk Management:
+Set a
+Daily Profit Target
+to lock in gains automatically.
+Protect your capital with a
+Daily Drawdown Limit
+(fixed amount or percentage).
+Customize risk calculation periods based on Server Time or a custom UTC window.
+Full Time & Session Control:
+Define exact trading hours for every day of the week. Automatically close all trades at the end of a session if desired.
+Built-in Trade Cooldown:
+Prevent over-trading by setting a minimum time between a closed trade and the next entry.
+Smart Margin Checks:
+The EA always checks for sufficient margin before placing a trade, protecting your account from errors.
+Detailed Feature Explanations
+Trading Strategies
+Fine-tune the EA's logic to match your market view.
+HFT Tick Momentum:
+For high-frequency scalpers, this strategy analyzes tick-by-tick data to capture short-term momentum bursts.
+Candlestick Engulfing:
+A powerful price action pattern that identifies potential trend reversals on the close of a new bar.
+RSI Reversal:
+Trades on classic RSI signals, entering when the indicator crosses back from overbought or oversold territories.
+EMA Crossover:
+A robust trend-following strategy that triggers trades when the price closes across a specified Exponential Moving Average.
+Dual-Mode Trailing Stop
+Protect your profits dynamically as the market moves in your favor.
+Trailing in Points:
+Secure your profits by trailing the stop-loss at a fixed point distance from the current price. Perfect for volatile markets.
+Trailing in Money:
+Lock in a specific cash amount. The stop-loss will trail to protect a defined monetary profit, regardless of the distance in points.
+Daily Risk Protection
+Trade with peace of mind. The EA tracks your account's performance from the start of each trading day. If the daily profit target is hit or the maximum drawdown is reached, it will
+close all open positions and stop trading
+until the next day, securing your capital and profits.
+Who Is This EA For?
+Traders who want to automate different price action strategies.
+Users who require a high degree of customization over risk management.
+Traders who employ or want to safely experiment with Martingale strategies.
+Systematic traders who operate within specific market sessions.
+Fully Customizable Inputs
+All settings are clearly grouped and labeled for easy configuration:
+Core Trading Strategy
+Indicator Settings
+Lot Sizing & Martingale
+Trade Management
+Time & Session Management
+Daily Risk Management
+EA Identification (Magic Number)
+Recommendations
+For best performance and uninterrupted trading, run this EA on a Virtual Private Server (VPS).
+Always perform thorough backtesting on your chosen symbol and timeframe before deploying on a live account.
+Start with the risk-based lot sizing (
+PERCENT_OF_BALANCE
+) on a demo account to understand how the EA behaves with your settings.

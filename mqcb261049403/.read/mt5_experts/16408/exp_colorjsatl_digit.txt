@@ -1,0 +1,18 @@
+The Exp_ColorJSatl_Digit Expert Advisor is based on the
+ColorJSatl_Digit
+indicator color change. The signal is formed when a bar is closing if there is change in color of the indicator line.
+This Expert Advisor requires the compiled indicator file ColorJSatl_Digit.ex5 in order to run. Place it to terminal_data_folder\MQL5\Indicators.
+Note that the TradeAlgorithms.mqh library file allows using Expert Advisors with brokers who offer
+nonzero spread
+and the option of setting Stop Loss and Take Profit
+together with position opening
+. You can download more variants of the library at the following link:
+Trade Algorithms
+.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig1. Examples of deals on the chart
+Testing results for 2015 at GBPUSD H4:
+Fig.2. Chart of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16408

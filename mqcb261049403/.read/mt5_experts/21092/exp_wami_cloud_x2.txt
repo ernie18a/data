@@ -1,0 +1,262 @@
+Trend-following trading system Exp_WAMI_Cloud_X2 is based on the signals of two indicators
+WAMI
+. The first indicator determines the direction of the slow trend based on the position of the main and signal lines. The second indicator determines the moment for opening a trade, when the lines cross each other. The signal is formed when a bar is closing if two conditions are met:
+Signals of the fast and slow trend match;
+Direction of the fast trend has changed.
+Input parameters of the Expert Advisor
+//+-------------------------------------------------+
+//| Input parameters of the EA indicator            |
+//+-------------------------------------------------+
+sinput
+string
+Trade=
+"Trade Management"
+;
+//+============== TRADE MANAGEMENT ==============+
+input
+double
+MM=
+0.1
+;
+//Share of a deposit in a deal
+input
+MarginMode MMMode=LOT;
+//Lot value detection method
+input
+uint
+StopLoss_=
+1000
+;
+//Stop Loss in points
+input
+uint
+TakeProfit_=
+2000
+;
+//Take Profit in points
+sinput
+string
+MustTrade=
+"Trade Permissions"
+;
+//+============== TRADE PERMISSIONS ==============+
+input
+int
+Deviation_=
+10
+;
+//Max price deviation in points
+input
+bool
+BuyPosOpen=
+true
+;
+//Permission to enter long positions
+input
+bool
+SellPosOpen=
+true
+;
+//Permission to enter short positions
+//+-------------------------------------------------+
+//| Input parameters of the filter indicator        |
+//+-------------------------------------------------+
+sinput
+string
+Filter=
+"SLOW TREND PARAMETERS"
+;
+//+============== TREND PARAMETERS ==============+
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H6
+;
+//1 Chart period for the trend
+input
+uint
+InpPeriodMA1      =
+4
+;
+// First MA period
+input
+ENUM_MA_METHOD
+InpMethodMA1      =
+MODE_SMA
+;
+// First MA method
+input
+uint
+InpPeriodMA2      =
+13
+;
+// Second MA period
+input
+ENUM_MA_METHOD
+InpMethodMA2      =
+MODE_SMA
+;
+// Second MA method
+input
+uint
+InpPeriodMA3      =
+13
+;
+// Third MA period
+input
+ENUM_MA_METHOD
+InpMethodMA3      =
+MODE_SMA
+;
+// Third MA method
+input
+uint
+InpPeriodSig      =
+4
+;
+// Signal MA period
+input
+ENUM_MA_METHOD
+InpMethodSig      =
+MODE_SMA
+;
+// Signal MA method
+input
+ENUM_APPLIED_PRICE
+InpAppliedPrice   =
+PRICE_CLOSE
+;
+// Applied price
+input
+uint
+SignalBar=
+1
+;
+// bar number to receive the entry signal
+input
+bool
+BuyPosClose=
+true
+;
+// Permission to close long positions by trend
+input
+bool
+SellPosClose=
+true
+;
+// Permission to close short positions by trend
+//+-------------------------------------------------+
+//| Input parameters of the entry indicator         |
+//+-------------------------------------------------+
+sinput
+string
+Input=
+"ENTRY PARAMETERS"
+;
+//+=============== ENTRY PARAMETERS ===============+
+input
+ENUM_TIMEFRAMES
+TimeFrame_=
+PERIOD_M30
+;
+//2 Chart period for entry
+input
+uint
+InpPeriodMA1_      =
+4
+;
+// First MA period
+input
+ENUM_MA_METHOD
+InpMethodMA1_      =
+MODE_SMA
+;
+// First MA method
+input
+uint
+InpPeriodMA2_      =
+13
+;
+// Second MA period
+input
+ENUM_MA_METHOD
+InpMethodMA2_      =
+MODE_SMA
+;
+// Second MA method
+input
+uint
+InpPeriodMA3_      =
+13
+;
+// Third MA period
+input
+ENUM_MA_METHOD
+InpMethodMA3_      =
+MODE_SMA
+;
+// Third MA method
+input
+uint
+InpPeriodSig_      =
+4
+;
+// Signal MA period
+input
+ENUM_MA_METHOD
+InpMethodSig_      =
+MODE_SMA
+;
+// Signal MA method
+input
+ENUM_APPLIED_PRICE
+InpAppliedPrice_   =
+PRICE_CLOSE
+;
+// Applied price
+input
+uint
+SignalBar_=
+1
+;
+// bar number to receive an entry signal
+input
+bool
+BuyPosClose_=
+false
+;
+// Permission to close long positions by signal
+input
+bool
+SellPosClose_=
+false
+;
+// Permission to close short positions by signal
+//+-------------------------------------------------+
+String parameters with text in the code of input parameters are only for better visualization of the input parametera window of the expert.
+Indicators
+WAMI_Cloud_HTF
+in the EA are only designed for a more convenient visualization of trends in the Strategy Tester; and they doe not work in any other modes.
+For the generated EA to operate correctly, the compiled files of indicators
+WAMI.ex5
+and
+WAMI_Cloud_HTF.ex5
+must be in the
+<terminal_data_directory>\MQL5\Indicators
+folder.
+Note that the
+TradeAlgorithms.mqh
+library file allows using Expert Advisors with brokers who offer
+nonzero spread
+and the option of setting Stop Loss and Take Profit
+together with position opening
+. You can download more variants of the library at the following link:
+Trade Algorithms
+.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Testing results for 2016 on EURUSD, slow trend on H4, entry by fast trend on M30:
+Fig 1. Examples of deals on the chart
+Fig. 2. Testing results chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21092

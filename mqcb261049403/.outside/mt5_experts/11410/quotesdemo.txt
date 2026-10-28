@@ -1,0 +1,13 @@
+Example of getting world index quotes from
+Google Finance
+using
+WebRequest
+function. Data is updated in 10 seconds.
+Add URL "
+https://www.google.com/finance
+" in the trusted URL list (Main Menu->Service->Settings, Expert Advisers tab):
+Fig. 1 Add Google Finance in the trusted URL list
+Fig. 2. World index quotes from Google Finance web-site
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11410

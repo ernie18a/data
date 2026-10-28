@@ -1,0 +1,408 @@
+Abstract
+The Kinetic Compression Index (KCI) is a custom oscillator designed to detect market exhaustion and localized compression events. By calculating its kinematic metrics internally rather than relying on external standard indicator handles, the KCI reduces overhead and simplifies buffer management for Expert Advisor (EA) integration. This article details the mathematical foundation, system architecture, buffer mapping, and practical integration guides for developers looking to implement this tool in MetaTrader 5.
+Introduction
+In algorithmic trading, reducing dependency on multiple external indicator handles can streamline an Expert Advisor's architecture. Calling multiple iCustom or standard indicator handles (like moving averages and standard deviations) can sometimes complicate buffer management and initialization processes.
+The KCI is engineered to process price and volume data natively within a single file. By identifying rapid deceleration in price movement combined with volume drops, it aims to pinpoint exhaustion events—points where a local mean-reversion is statistically probable.
+Problem Statement
+The primary goals of the KCI architecture are to:
+Reduce Handle Dependency:
+Calculate moving averages and deviations natively inside the indicator loop to minimize the use of external handles.
+Provide Reproducible Metrics:
+Expose clean, transparent mathematical metrics (Velocity, Deviation, and Dispersion) to EAs.
+Ensure Asynchronous Safety:
+Build signal buffers that only validate on closed bars, protecting the EA from intrabar repainting and asynchronous tick data delays.
+Theory & Mathematical Foundation
+KCI is built upon four fundamental metrics. To ensure full reproducibility, the core formulas are defined as follows (where
+$n$
+is the BasePeriod ):
+Text Figure :
+1.
+**Velocity Quotient (VQ)** – Measures the rate of price change.
+VQ_i=\frac{Close_i-Close_{i-n}}{n}
+Where:
+- \(Close_i\) = current closing price
+- \(Close_{i-n}\) = closing price \(n\) bars ago
+- \(n\) = lookback period
+2.
+**Kinetic Displacement (KD)** – Measures the deviation of the current price
+from
+its local mean.
+KD_i=Close_i-SMA(Close,n)_i
+Where:
+- \(SMA(Close,n)_i\) = Simple Moving Average of the closing price over the last \(n\) periods.
+3.
+**Energy Dispersion (ED)** – Acts
+as
+a dynamic volatility proxy, calculated
+as
+the standard deviation of the closing price.
+ED_i=\sqrt{\frac{\sum_{j=
+0
+}^{n-
+1
+}\left(Close_{i-j}-SMA_i\right)^
+2
+}{n}}
+Where:
+- \(SMA_i\) = local Simple Moving Average at bar \(i\).
+4.
+**Phase Velocity (PV)** – Tracks the immediate momentum of the Velocity Quotient.
+PV_i=VQ_i-VQ_{i-
+1
+}
+Where:
+- \(VQ_i\) = current Velocity Quotient
+- \(VQ_{i-
+1
+}\) = previous Velocity Quotient
+
+// Or
+1.
+Velocity Quotient (VQ)
+VQ(i) = (Close(i) - Close(i-n)) / n
+2.
+Kinetic Displacement (KD)
+KD(i) = Close(i) - SMA(Close, n)
+3.
+Energy Dispersion (ED)
+                n-
+1
+-----
+               \
+ED(i) = sqrt(  /    (Close(i-j) - SMA(i))² / n )
+               -----
+               j=
+0
+4.
+Phase Velocity (PV)
+PV(i) = VQ(i) - VQ(i-
+1
+)
+Z-Score Normalization:
+Because these four metrics have different scales (e.g., price points vs. pure rates), they are normalized using a rolling Z-Score over a defined ZScorePeriod before being summed into the Raw_KCI .
+System Architecture & Unified Buffer Map
+To prevent the common "Index Out of Bounds" or mismatched buffer errors during CopyBuffer() calls, the KCI strictly adheres to the following unified buffer map. This mapping is consistent across #property declarations, SetIndexBuffer() , and EA integration.
+Buffer Index
+Buffer Name
+Type
+Purpose
+0
+KCI_Main
+INDICATOR_DATA
+Visual Polarized Oscillator line
+1
+KCI_Color
+INDICATOR_COLOR_INDEX
+Dynamic color mapping for the main line
+2
+Signal_Buy
+INDICATOR_DATA
+Buy Signal (1.0 = Buy, 0.0 = Neutral)
+3
+Signal_Sell
+INDICATOR_DATA
+Sell Signal (1.0 = Sell, 0.0 = Neutral)
+4
+Internal_VQ
+INDICATOR_CALCULATIONS
+Velocity Quotient array
+5
+Internal_KD
+INDICATOR_CALCULATIONS
+Kinetic Displacement array
+6
+Internal_ED
+INDICATOR_CALCULATIONS
+Energy Dispersion array (used for SL/TP)
+7
+Internal_PV
+INDICATOR_CALCULATIONS
+Phase Velocity array
+8
+Raw_KCI
+INDICATOR_CALCULATIONS
+Sum of normalized matrices
+Code Walkthrough: EA Integration & Risk Management
+When calling KCI from an EA, the code must handle the indicator's handle lifecycle, verify that CopyBuffer successfully retrieved the data, and normalize all price calculations for Stop Loss (SL) and Take Profit (TP) according to the symbol's digits.
+Here is the corrected, robust EA integration template:
+#include
+<Trade\Trade.mqh>
+CTrade trade;
+int
+handle_kci;
+datetime
+last_bar_time =
+0
+;
+double
+buf_buy[], buf_sell[], buf_ed[];
+int
+OnInit
+()
+{
+// Initialize KCI Handle
+handle_kci =
+iCustom
+(
+_Symbol
+,
+_Period
+,
+"KCI"
+,
+50
+,
+2.0
+,
+14
+);
+if
+(handle_kci ==
+INVALID_HANDLE
+) 
+    {
+Print
+(
+"Failed to create KCI handle!"
+);
+return
+(
+INIT_FAILED
+);
+    }
+ArraySetAsSeries
+(buf_buy,
+true
+);
+ArraySetAsSeries
+(buf_sell,
+true
+);
+ArraySetAsSeries
+(buf_ed,
+true
+);
+return
+(
+INIT_SUCCEEDED
+);
+}
+void
+OnDeinit
+(
+const
+int
+reason)
+{
+if
+(handle_kci !=
+INVALID_HANDLE
+)
+IndicatorRelease
+(handle_kci);
+}
+void
+OnTick
+()
+{
+datetime
+current_time = (
+datetime
+)
+SeriesInfoInteger
+(
+_Symbol
+,
+_Period
+,
+SERIES_LASTBAR_DATE
+);
+if
+(current_time == last_bar_time)
+return
+;
+// Basic filter: only one position per symbol
+if
+(
+PositionsTotal
+() >
+0
+) 
+    {
+for
+(
+int
+i =
+PositionsTotal
+() -
+1
+; i >=
+0
+; i--)
+        {
+if
+(
+PositionGetSymbol
+(i) ==
+_Symbol
+)
+return
+; 
+        }
+    }
+// Retrieve Data (Buffer 2 = Buy, Buffer 3 = Sell, Buffer 6 = ED)
+if
+(
+CopyBuffer
+(handle_kci,
+2
+,
+1
+,
+1
+, buf_buy) <=
+0
+)
+return
+;
+if
+(
+CopyBuffer
+(handle_kci,
+3
+,
+1
+,
+1
+, buf_sell) <=
+0
+)
+return
+;
+if
+(
+CopyBuffer
+(handle_kci,
+6
+,
+1
+,
+1
+, buf_ed) <=
+0
+)
+return
+;
+// Lock the time ONLY after data is successfully copied
+last_bar_time = current_time;
+double
+dynamic_volatility = buf_ed[
+0
+];
+if
+(dynamic_volatility ==
+0
+)
+return
+;
+double
+point =
+SymbolInfoDouble
+(
+_Symbol
+,
+SYMBOL_POINT
+);
+int
+digits = (
+int
+)
+SymbolInfoInteger
+(
+_Symbol
+,
+SYMBOL_DIGITS
+);
+double
+ask =
+SymbolInfoDouble
+(
+_Symbol
+,
+SYMBOL_ASK
+);
+double
+bid =
+SymbolInfoDouble
+(
+_Symbol
+,
+SYMBOL_BID
+);
+// Execution Logic with Normalized Dynamic Volatility Stop Loss
+if
+(buf_buy[
+0
+] ==
+1.0
+)
+    {
+double
+sl =
+NormalizeDouble
+(ask - (dynamic_volatility *
+1.5
+), digits);
+double
+tp =
+NormalizeDouble
+(ask + (dynamic_volatility *
+3.0
+), digits);
+        trade.Buy(
+0.01
+,
+_Symbol
+, ask, sl, tp,
+"KCI Buy"
+);
+    }
+if
+(buf_sell[
+0
+] ==
+1.0
+)
+    {
+double
+sl =
+NormalizeDouble
+(bid + (dynamic_volatility *
+1.5
+), digits);
+double
+tp =
+NormalizeDouble
+(bid - (dynamic_volatility *
+3.0
+), digits);
+        trade.Sell(
+0.01
+,
+_Symbol
+, bid, sl, tp,
+"KCI Sell"
+);
+    }
+}
+Performance & Limitations
+To ensure realistic expectations, developers must account for the following structural limitations:
+Tick Volume Dependency:
+For Forex/CFDs, tick_volume represents the frequency of price changes, not actual liquidity. The volumetric compression metric may behave differently on centralized exchanges (Stocks/Futures) where real volume is available.
+Mean-Reversion Vulnerability:
+As a bounded oscillator, KCI aims to catch exhaustion. In a strong, trending market, it may generate consecutive premature reversal signals. It should be paired with a higher-timeframe trend filter (e.g., EMA 200).
+Low Timeframe Noise:
+Using this indicator on M1 or M5 exposes the logic to micro-structure noise. Z-Score normalization requires stable distribution, which is better found on M15 and above.
+Conclusion
+The Kinetic Compression Index provides a transparent, natively calculated alternative to stacking multiple standard indicators. By exposing both directional signals on closed bars and a dynamic volatility proxy (Energy Dispersion) through a unified buffer map, it serves as a reliable structural component for MQL5 Expert Advisors.
+Implementation on Chart : (KCI Custom)

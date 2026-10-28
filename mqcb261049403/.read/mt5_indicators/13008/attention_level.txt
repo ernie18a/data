@@ -1,0 +1,22 @@
+As an intraday trader with two years of experience, I know how important it is to accurately predict price movement within a day. Incorrect prediction of intraday price direction may produce very sad results, even when using a good money or risk management system. And what if you had several such days in a row? This may become a psychological issue putting high pressure on a trader. During the development of my trading system I had to invent methods to overcome such problem. And here I want to share my most interesting idea.
+I present you a simple indicator which places a horizontal level on a chart. I would call it an attention level. So, what is this level and how it is calculated? It's all very simple — I take a 10-day value of the ATR indicator, on a daily interval, of course, and if the previous day of the symbol I trade was growing, I subtract this ATR value from its maximum price. If the day was falling, then I add the ATR value to its minimum price. Then I draw a horizontal level through one of these values.
+If I trade by an uptrend, and the price falls below the attention level, I stop all trade operations, because it's obvious that the market situation has changed and doesn't match the original trade plan. I don't have to lose money buying on a probably reversed trend or during its correction period.
+This simple idea has saved me a lot of money on stop orders which would trigger if I didn't use this indicator.
+Fig.1. Daily chart of the RTS index futures contract and the attention level
+Fig.2. H1 chart of the RTS index futures contract and the attention level
+The code itself is very simple, I used the CList and CObjectHLine classes from the Standard Library to quickly create and manage graphical objects.
+Tips:
+If you predicted an uptrend, and the price has passed the attention level in the reverse direction, you should stop trading and revise your trade plan, and also refrain from further buying.
+If you predicted a downtrend, and the price has passed the attention level in the reverse direction, you should stop trading and revise your trading plan, and also refrain from further selling.
+Indicator settings:
+ATR_maPeriod
+— averaging period of ATR indicator (by default, 10 days).
+LevelColor
+— level line color (by default, red).
+LevelStyle
+— level line style (by default, solid).
+LevelWidth —
+level line thickness (by default, 1).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13008

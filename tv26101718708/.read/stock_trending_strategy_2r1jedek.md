@@ -1,0 +1,74 @@
+# Stock trending strategy 
+
+- url: https://www.tradingview.com/script/2R1jEdek-Stock-trending-strategy/
+- type: strategy
+- pine_id: PUB;f0bf62f0920348bdaefe7e8f7cc8e832
+- version: 1.0
+
+## Description
+
+This is a long only strategy designed maily for stock markets and futures. In general it works best with 1h, however it can be optimized with other timeframes as well.
+
+
+Components:
+VWAP
+MACD histogram
+EMA 9
+
+
+Rules for entry
+Long :
+For VWAP: close is above the vwap daily 
+EMA: close is above the moving average
+MACD histogram is above 0 
+
+
+Short:
+For VWAP: close is belowthe vwap daily 
+EMA: close is below the moving average
+MACD histogram is below 0 
+
+
+Rules for exit
+This strategy does not have any risk management inside. Instead it exits whenver it receives an opposite signal form the original one used for entry.
+
+If you have any questions let me know !
+
+## Source Code
+
+````pine
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © exlux99
+
+//@version=4
+strategy("stock trending strategy",overlay=true)
+
+
+len = input(9, minval=1, title="Length")
+src = input(close, title="Source")
+out = ema(src, len)
+
+fast_length = input(title="Fast Length", type=input.integer, defval=12)
+slow_length = input(title="Slow Length", type=input.integer, defval=26)
+signal_length = input(title="Signal Smoothing", type=input.integer, minval = 1, maxval = 50, defval = 9)
+sma_source = input(title="Simple MA(Oscillator)", type=input.bool, defval=false)
+sma_signal = input(title="Simple MA(Signal Line)", type=input.bool, defval=false)
+
+// Calculating
+fast_ma = sma_source ? sma(src, fast_length) : ema(src, fast_length)
+slow_ma = sma_source ? sma(src, slow_length) : ema(src, slow_length)
+macd = fast_ma - slow_ma
+signal = sma_signal ? sma(macd, signal_length) : ema(macd, signal_length)
+hist = macd - signal
+
+
+long =  close > vwap and close > out and crossover(hist[1],0) and hist > hist[1]
+short =  close < vwap and close < out and crossunder(hist[1],0) and hist < hist[1]
+
+strategy.entry("long",1,when= long)
+//strategy.entry("short",0,when=short)
+
+
+strategy.close("long", when = crossunder(hist,0))
+//strategy.close("short", when = crossover(hist,0))
+````

@@ -1,0 +1,3 @@
+This is simply the classic repaint zigzag but with a timeframe input so that you can view the higher timeframe zigzag on a lower timeframe chart. Nothing more nothing less.
+Edit:
+v1.01 uploaded which for convenience - will process the current timeframe and construct the zigzag in single-timeframe mode if user selects "current" in the timeframe input

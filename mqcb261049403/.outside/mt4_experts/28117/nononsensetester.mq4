@@ -1,0 +1,1537 @@
+//+------------------------------------------------------------------+
+//|                                                      ProjectName |
+//|                                      Copyright 2018, CompanyName |
+//|                                       http://www.companyname.net |
+//+------------------------------------------------------------------+
+#property show_inputs
+#property copyright "Karel Nagel"
+#property version "3.0"
+#property description "EA, that makes testing your NNFX algo so much faster!"
+#property strict
+
+enum indicator
+{
+   off, most0Lines, most2Lines, most2LinesOpposite, mostBaselines, Aroon, ASH, FSS, SSL, Kuskus, SRC, CHV, WAE, WAEVolume, Kijun, MA, T3, TSI, Schaff, RVI, MACD, MACD0, DPO, CCI, Awesome, DIDI, Ichimoku, RSX, QQE, a, b, c, d, e, f, g, Custom1, Custom2
+
+};
+
+
+string indicatorName[]= {"", "", "", "", "", "Aroon", "ASH", "FSS", "SSL", "Kuskus", "SRC", "CHV", "WAE", "WAE", "Kijun", "MA", "T3", "TSI", "Schaff", "RVI", "MACD", "MACD", "DPO", "CCI", "Awesome", "DIDI", "Ichimoku", "RSX", "QQE", "", "", "", "", "", "", "", "", "" };
+int buffer1[]= {0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 2, 3, 1, 2, NULL, NULL };
+int buffer2[]= {0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 2, 1, 1, 1, 0, 0, 0, 3, 2, 2, 1, NULL, NULL };
+double buffer3[]= {0, 0, 2, 2, 2, 2, 2, 0, 2, 0, 0, 0, 2, 2, 2, 2, 2, 0, 2, 2, 2, 0, 0, 0, 2, 1, 2, 2, 50, 0, 0, 0, 0, 0, 0, 0, NULL, NULL };
+int type[]= {0, 0, 1, 1, 4, 1, 2, 0, 1, 0, 0, 0, 6, 7, 4, 4, 1, 0, 3, 1, 1, 0, 0, 0, 3, 1, 1, 8, 0, 0, 0, 0, 1, 1, 1, 1, NULL, NULL };
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+int signal(bool settings, string name, int type2, int first, int second, double third, int candle)
+{
+   if (first>=0) one=indicatorValue(settings, name, first, candle);
+   if (second>=0) two=indicatorValue(settings, name, second, candle);
+   if (third>=0) three=indicatorValue(settings, name, third, candle);
+   if (first>=0) lastOne=indicatorValue(settings, name, first, candle+1);
+   switch(type2)
+   {
+   case 0: //Zero cross
+      if(one<third)
+      {
+         return(-1);
+      }
+      else if(one>third)
+      {
+         return(1);
+      }
+      else
+      {
+         return(0);
+      }
+      break;
+   case 1: //Most two line cross
+      if(one<two)
+      {
+         return(1);
+      }
+      else if(one>two)
+      {
+         return(-1);
+      }
+      else
+      {
+         return(0);
+      }
+      break;
+   case 2: //ASH
+      if(one>0)
+      {
+         return(1);
+      }
+      else if(two>0)
+      {
+         return(-1);
+      }
+      else
+      {
+         return(0);
+      }
+      break;
+   case 3: //AO
+      if(one<lastOne)
+      {
+         return(-1);
+      }
+      else if(one>lastOne)
+      {
+         return(1);
+      }
+      else
+      {
+         return(0);
+      }
+      break;
+   case 4: //Moving averages
+      if(one<iClose(symbol, period, candle))
+      {
+         return(1);
+      }
+      else if(one>iClose(symbol, period, candle))
+      {
+         return(-1);
+      }
+      else
+      {
+         return(0);
+      }
+      break;
+   case 5: //Lines
+      if(one==1)
+      {
+         return(1);
+      }
+      else if(two==1)
+      {
+         return(-1);
+      }
+      else
+      {
+         return(0);
+      }
+      break;
+   case 6: //WAE
+      if(one>three)
+      {
+         return(1);
+      }
+      else if(two>three)
+      {
+         return(-1);
+      }
+      else
+      {
+         return(0);
+      }
+      break;
+   case 7: //WAE volume
+      if(one>three||two>three)
+      {
+         return(1);
+      }
+      else
+      {
+         return(-1);
+      }
+      break;
+   case 8: //RSX
+      if(one!=0)
+      {
+         return(1);
+      }
+      else if(two!=0)
+      {
+         return(-1);
+      }
+      else
+      {
+         return(0);
+      }
+      break;
+   case 9: //Level cross
+      if(one<-third)
+      {
+         return(-1);
+      }
+      else if(one>third)
+      {
+         return(1);
+      }
+      else
+      {
+         return(0);
+      }
+      break;
+   case 10: //NULL
+      if(one!=EMPTY_VALUE)
+      {
+         return(-1);
+      }
+      else if(two!=EMPTY_VALUE)
+      {
+         return(1);
+      }
+      else
+      {
+         return(0);
+      }
+      break;
+   case 11:
+      if (one>second) return (1);
+      else if (one <third) return(-1);
+      else return(0);
+      break;
+   default:
+      return(0);
+      break;
+   }
+}
+enum BTtypes
+{
+   currentSymbolTF=1, //Current symbol
+   allSymbols=28, //All 28 symbols
+   allSymbols2=29, //All symbols that are selected in marketwatch
+   cSymbols=100, //Custom symbols
+//EURUSD/AUDUSD/USDJPY/USDCHF/GBPUSD/USDCAD/NZDUSD/EURCHF/EURGBP/EURJPY/EURCAD/EURAUD/GBPCHF/GBPJPY/CHFJPY/AUDCAD/GBPAUD/EURNZD/AUDNZD/CADJPY/NZDCHF/AUDJPY/NZDCAD/GBPCAD/GBPNZD/NZDJPY/CADCHF/AUDCHF
+
+};
+enum extraE
+{
+   extraBaseline=0, //Baseline
+   extraConfirmation=1, //Confirmation
+   extraVolume=2, //Volume
+   extraVolumeDirection=3, //Volume with direction
+};
+enum onoff
+{
+   Off2=0,//Off
+   On=1,
+
+};
+enum yearly
+{
+   Balance=0,
+   DDBalance=1, //Drawdown balance
+
+};
+
+enum dS
+{
+   Default,
+   inputs,//User inputs
+};
+enum basedOn
+{
+   all, //Shows all, but applies highest balance
+   balance2, //Highest balance
+   drawdown, //Lowest drawdown
+   profitTrades, //Profit trades
+   TPTrades, //TP trades
+   fewestTrades, //Fewest trades
+   mostTrades, //Most trades
+   off2 //Off
+};
+bool closed, tsModified, buyContinuation[100], sellContinuation[100], seek, orderClosed[100000], news, alreadyHasOrder, end;
+
+double timeInYears, result, pips, resultDrawdown, factorProfit, factorLoss, profitFactor[100000], ATR, Lot, one, two, three, lastOne, baselineValue, accountBalance, price, price2, oStart[7], tp2=NULL, extraValue, k, oStep[7], oStop[7], oBest[7], orderLots[100000], orderTakeProfit[100000], orderStopLoss[100000], orderOpenPrice[100000], orderClosePrice[100000], orderComment[100000], orderBalance[100000], orderProfit[100000], highestBalance, lowestBalance, newDD, DDmax, DDmin, ETA, startBalance, high, low, evz=1, goodEnough[100000], balanceBest[100000], drawdownBest[100000], rp2[100000], ddBalanceBest[100000], profitBest[100000], TPBest[100000], totalBest[100000], yearlyPercent[100000];
+
+int fileResults, fileReport, resultTP, resultProfit, baseline, confirmation1, confirmation2, symbolOrders, BT, m,
+    exit, volume, lastBaseline, lastConfirmation1, lastConfirmation2, lastExit, lastVolume, ticket1, ticket2, i, bar, period=Period(), progress, allProgress, ordersTotal=0, oCycles[7], orderType[100000], orderPeriod[100000], best, l;
+int startBars[28], test=1, symbolsCount, extra, lastExtra;
+string symbol=Symbol(), customSymbolsArray[100], lineName, settingsBest[100000], oSettings[7], orderSymbol[100000], orderCloseReason[100000], progressBar, firstHalf=StringSubstr(Symbol(), 0, 3), secondHalf=StringSubstr(Symbol(), 3, 3);
+
+datetime time, orderOpenTime[100000], orderCloseTime[100000], currentTime;
+string symbols[]= {"AUDCAD", "AUDCHF", "AUDJPY", "AUDNZD", "AUDUSD", "CADCHF", "CADJPY", "CHFJPY", "EURAUD", "EURCAD", "EURCHF", "EURGBP", "EURJPY", "EURNZD", "EURUSD", "GBPAUD", "GBPCAD", "GBPCHF", "GBPJPY", "GBPNZD", "GBPUSD", "NZDCAD", "NZDCHF", "NZDJPY", "NZDUSD", "USDCAD", "USDCHF", "USDJPY"};
+string pairs[100];
+ushort divide=StringGetCharacter("/", 0);
+bool moneyBackMessages=true;
+input string a1="---------------EA Settings---------------"; //.
+int magicNumber=69; //Magic number
+bool checkForSameCurrencyOrders=true; //Check if already has orders with same currency
+extern bool scaleOut=true; //Scaling out [SO]
+extern bool continuationTrades=true; //Continuation trades [CT]
+extern bool continuationWOPreviousTrade=false; //Continuation trades with out previous trade [CT2]
+extern double distanceFromBL=1; //Distance from baseline [DB]
+extern double riskPercent=2; //Risk percent [RP]
+extern double trailingStop=1.5; //Trailing stop [TS]
+extern double trailingStart=2; //Trailingstop start [TSS]
+extern double stopLoss=1.5; //Stoploss [SL]
+extern double takeProfit=1; //Takeprofit [TP]
+extern double takeProfit2=0;                                   //Takeprofit for 2nd trade [TP2]
+extern int atrPeriod=14; //ATR period [ATR]
+extern string folder="nnfxea"; //Folder
+input string a2="---------------BT settings---------------"; //.
+bool backtesting=true; //Backtesting
+extern double balance=10000; //Balance
+extern double ddPercent=10; //Drawdown percent
+extern yearly yearlyPercentBasedOn=1; //Yearly % based on
+extern int spread=10; //Spread
+extern double commission=1234; //Commission
+extern bool csv=true; //CSV file
+input BTtypes BTType=1; //Backtesting type
+extern datetime BTStart=D'01.01.2010'; //Backtesting start time
+extern datetime BTStop=D'01.01.2021'; //Backtesting stop time
+input string a3="---------------Optimization settings---------------"; //.
+input bool optimization=false; //Optimization
+basedOn bestSettingsBasedOn=0; //Best settings based on
+bool applyBestSettings=true; //After backtesting applies best settings
+input string optimizationSettings="0/0/0/0/0/0/0"; //Settings to opimize
+input string optimizationStart= "1/1/1/1/1/1/1"; //Start
+input string optimizationStep= "1/1/1/1/1/1/1"; //Step
+input string optimizationStop= "1/1/1/1/1/1/1"; //Stop
+input string a4="---------------Baseline---------------"; //.
+extern indicator chooseIndicator; //Choose indicator
+extern string baselineName; //Name
+int baselineType; //Type
+onoff turnOffBaseline; //Turn on/off [T1]
+int firstBuffer, secondBuffer;
+double thirdBuffer; //3. buffer
+extern dS defaultSettings=0; //Default settings
+extern double S1, S2, S3, S4, S5, S6, S7;
+input string a5="---------------Confirmation 1---------------"; //.
+extern indicator chooseIndicator1=0; //Choose indicator
+extern string indicatorName1; //Name
+int indicatorType1; //Type
+int firstBuffer1, secondBuffer1;
+double thirdBuffer1; //3. buffer
+extern dS defaultSettings1=0; //Default settings
+extern double S8, S9, S10, S11, S12, S13, S14;
+input string a6="---------------Confirmation 2---------------"; //.
+extern indicator chooseIndicator2; //Choose indicator
+extern string indicatorName2; //Name
+int indicatorType2; //Type
+onoff turnOff2Confimation; //Turn on/off [T2]
+int firstBuffer2, secondBuffer2;
+double thirdBuffer2; //3. buffer
+extern dS defaultSettings2=0; //Default settings
+extern double S15, S16, S17, S18, S19, S20, S21;
+input string a7="---------------Volume---------------"; //.
+extern bool volumeDirection=false; //Volume indicator has direction
+extern indicator chooseIndicator3; //Choose indicator
+extern string indicatorName3; //Name
+int indicatorType3; //Type
+onoff turnOffVolume; //Turn on/off [T3]
+int firstBuffer3, secondBuffer3;
+double thirdBuffer3; //3. buffer
+extern dS defaultSettings3=0; //Default settings
+extern double S22, S23, S24, S25, S26, S27, S28;
+input string a8="---------------Exit---------------"; //.
+extern indicator chooseIndicator4; //Choose indicator
+extern string indicatorName4; //Name
+int indicatorType4; //Type
+onoff turnOffExit; //Turn on/off [T4]
+int firstBuffer4, secondBuffer4;
+double thirdBuffer4; //3. buffer
+extern dS defaultSettings4=0; //Default settings
+extern double S29, S30, S31, S32, S33, S34, S35;
+input string a9="---------------Extra indicator---------------"; //.
+input extraE extraType; //Extra indicator type
+extern indicator chooseIndicator5; //Choose indicator
+extern string indicatorName5; //Name
+int indicatorType5; //Type
+onoff turnOffExtra; //Turn on/off [T5]
+int firstBuffer5, secondBuffer5;
+double thirdBuffer5; //3. buffer
+extern dS defaultSettings5=0; //Default settings
+extern double S36, S37, S38, S39, S40, S41, S42;
+input string a10="---------------Custom---------------"; //.
+input string custom1="firstBuffer/secondBuffer/thirdBuffer/type" ; //Custom buffer 1
+input string custom2="firstBuffer/secondBuffer/thirdBuffer/type" ; //Custom buffer 2
+extern string customSymbols="EURUSD/USDCAD"; //Custom symbols
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+double optimizing(int cycle, int step, double bestSetting=NULL)
+{
+   if(optimization==true)
+   {
+      string asd=oSettings[cycle];
+      double value;
+      if(bestSetting==NULL)
+         value=double(oStart[cycle]+(step*oStep[cycle]));
+      else
+         value=bestSetting;
+      if(asd=="0" || asd=="1")
+         oCycles[cycle]=1;
+      else if(asd=="S1")
+         S1=value;
+      else if(asd=="S2")
+         S2=value;
+      else if(asd=="S3")
+         S3=value;
+      else if(asd=="S4")
+         S4=value;
+      else if(asd=="S5")
+         S5=value;
+      else if(asd=="S6")
+         S6=value;
+      else if(asd=="S7")
+         S7=value;
+      else if(asd=="S8")
+         S8=value;
+      else if(asd=="S9")
+         S9=value;
+      else if(asd=="S10")
+         S10=value;
+      else if(asd=="S11")
+         S11=value;
+      else if(asd=="S12")
+         S12=value;
+      else if(asd=="S13")
+         S13=value;
+      else if(asd=="S14")
+         S14=value;
+      else if(asd=="S15")
+         S15=value;
+      else if(asd=="S16")
+         S16=value;
+      else if(asd=="S17")
+         S17=value;
+      else if(asd=="S18")
+         S18=value;
+      else if(asd=="S19")
+         S19=value;
+      else if(asd=="S20")
+         S20=value;
+      else if(asd=="S21")
+         S21=value;
+      else if(asd=="S22")
+         S22=value;
+      else if(asd=="S23")
+         S23=value;
+      else if(asd=="S24")
+         S24=value;
+      else if(asd=="S25")
+         S25=value;
+      else if(asd=="S26")
+         S26=value;
+      else if(asd=="S27")
+         S27=value;
+      else if(asd=="S28")
+         S28=value;
+      else if(asd=="S29")
+         S29=value;
+      else if(asd=="S30")
+         S30=value;
+      else if(asd=="S31")
+         S31=value;
+      else if(asd=="S32")
+         S32=value;
+      else if(asd=="S33")
+         S33=value;
+      else if(asd=="S34")
+         S34=value;
+      else if(asd=="S35")
+         S35=value;
+      else if(asd=="S36")
+         S36=value;
+      else if(asd=="S37")
+         S37=value;
+      else if(asd=="S38")
+         S38=value;
+      else if(asd=="S39")
+         S39=value;
+      else if(asd=="S40")
+         S40=value;
+      else if(asd=="S41")
+         S41=value;
+      else if(asd=="S42")
+         S42=value;
+      else if(asd=="ATR")
+         atrPeriod=int(value);
+      else if(asd=="RP")
+         riskPercent=value;
+      else if(asd=="DB")
+         distanceFromBL=value;
+      else if(asd=="SL")
+         stopLoss=value;
+      else if(asd=="TP")
+         takeProfit=value;
+      else if(asd=="TP2")
+         takeProfit2=value;
+      else if(asd=="TS")
+         trailingStop=value;
+      else if(asd=="SO")
+         scaleOut=value;
+      else if(asd=="CT")
+         continuationTrades=value;
+      else if(asd=="CT2")
+         continuationWOPreviousTrade=value;
+      else if(asd=="TSS")
+         trailingStart=value;
+      else
+         Print("Wrong optimization parameter ", asd);
+      return(value);
+   }
+   else
+      return(0);
+}
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+double calcPL(string sym, int type6, double entry, double exit6, double lots)
+{
+   if(type6 == 0)
+      result = (exit6 - entry) * lots * (1 / MarketInfo(sym, MODE_POINT)) * MarketInfo(sym, MODE_TICKVALUE);
+   else if(type6 == 1)
+      result = (entry - exit6) * lots * (1 / MarketInfo(sym, MODE_POINT)) * MarketInfo(sym, MODE_TICKVALUE);
+   return (result);
+}
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+void customBuffers()
+{
+   string b1[4], b2[4];
+   StringSplit(custom1, divide, b1);
+   StringSplit(custom2, divide, b2);
+   i=ArraySize(buffer1)-2;
+   buffer1[i]=int (b1[0]);
+   buffer2[i]=int (b1[1]);
+   buffer3[i]=double(b1[2]);
+   type[i]=int(b1[3]);
+   buffer1[i+1]=int (b2[0]);
+   buffer2[i+1]=int (b2[1]);
+   buffer3[i+1]=double(b2[2]);
+   type[i+1]=int(b2[3]);
+}
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+void oGetValues(bool last=false)
+{
+   string o1[7], o2[7], o3[7], o4[7], o5[7];
+   if(last==false)
+   {
+      StringSplit(optimizationSettings, divide, o1);
+      StringSplit(optimizationStart, divide, o2);
+      StringSplit(optimizationStep, divide, o3);
+      StringSplit(optimizationStop, divide, o4);
+   }
+   else
+   {
+      StringSplit(settingsBest[best], divide, o5);
+   }
+   for(i=0; i<7; i++)
+   {
+      if(last==false)
+      {
+         if(ArraySize(o1)>i)
+         {
+            if((o1[i]!=NULL && o1[i]!=""))
+               oSettings[i]=o1[i];
+            else
+               oSettings[i]="0";
+         }
+         else
+         {
+            oSettings[i]="0";
+         }
+         if(ArraySize(o2)>i)
+         {
+            if(o2[i]!=NULL && o2[i]!="")
+            {
+               oStart[i]=double(o2[i]);
+            }
+            else
+            {
+               oStart[i]=1;
+            }
+         }
+         else
+         {
+            oStart[i]=1;
+         }
+         if(ArraySize(o3)>i)
+         {
+            if(o3[i]!=NULL && o3[i]!="")
+            {
+               oStep[i]=double(o3[i]);
+            }
+            else
+            {
+               oStep[i]=1;
+            }
+         }
+         else
+         {
+            oStep[i]=1;
+         }
+         if(ArraySize(o4)>i)
+         {
+            if(o4[i]!=NULL && o4[i]!="")
+            {
+               oStop[i]=double(o4[i]);
+            }
+            else
+            {
+               oStop[i]=1;
+            }
+         }
+         else
+         {
+            oStop[i]=1;
+         }
+         if(double(oStep[i])!=0 || double(oStep[i])!=NULL)
+         {
+            if(optimization==true)
+            {
+               oCycles[i]=int((double(oStop[i])-double(oStart[i]))/double(oStep[i])+1);
+               if(oCycles[i]<=0)
+               {
+                  oCycles[i]=1;
+               }
+            }
+            else
+            {
+               oCycles[i]=1;
+            }
+         }
+         else
+         {
+            oCycles[i]=1;
+         }
+      }
+      else
+      {
+         if(ArraySize(o5)>i)
+         {
+            if(o5[i]!=NULL && o5[i]!="")
+            {
+               oBest[i]=double(o5[i]);
+            }
+            else
+            {
+               oBest[i]=1;
+            }
+         }
+         else
+         {
+            oBest[i]=1;
+         }
+      }
+   }
+}
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+void arrayInitialize(double &array[])
+{
+   ArrayResize(array, 0, 0);
+   ArrayResize(array, 100000, 0);
+}
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+void arrayInitialize2(int &array[])
+{
+   ArrayResize(array, 0, 0);
+   ArrayResize(array, 100000, 0);
+}
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+void arrayInitialize3(string &array[])
+{
+   ArrayResize(array, 0, 0);
+   ArrayResize(array, 100000, 0);
+}
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+void arrayInitialize4(datetime &array[])
+{
+   ArrayResize(array, 0, 0);
+   ArrayResize(array, 100000, 0);
+}
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+void closedAtStop()
+{
+   for(i=0; i<ordersTotal; i++)
+   {
+      if(orderClosed[i]==false)
+      {
+         m=0;
+         while(pairs[m]!=orderSymbol[i])
+         {
+            m++;
+         }
+         price=iClose(orderSymbol[i], period, startBars[m]);
+         orderClose(i, price, "close at stop");
+      }
+      else
+      {
+         continue;
+      }
+   }
+}
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+void orderClose(int ticket, double closePrice, string reason)
+{
+   if(orderOpenPrice[ticket]!=0)
+   {
+      orderClosed[ticket]=true;
+      orderCloseTime[ticket]=iTime(symbol, period, bar);
+      if(reason=="close at stop")
+      {
+         orderCloseTime[ticket]=iTime(symbol, period, bar);
+      }
+      orderCloseReason[ticket]=reason;
+      if(orderType[ticket]==1 && orderCloseReason[ticket]=="close")
+      {
+         orderClosePrice[ticket]=closePrice+(spread*MarketInfo(symbol, MODE_POINT));
+      }
+      else
+      {
+         orderClosePrice[ticket]=closePrice;
+      }
+      if(orderComment[ticket]!=0)
+      {
+         orderProfit[ticket]=calcPL(orderSymbol[ticket], orderType[ticket], orderOpenPrice[ticket], orderClosePrice[ticket], orderLots[ticket]);
+      }
+      else
+      {
+         Print("Error 3");
+      }
+      if(orderCloseReason[ticket]=="t/p")
+      {
+         resultTP++;
+      }
+      if(orderProfit[ticket]>0)
+      {
+         resultProfit++;
+         factorProfit+=orderProfit[ticket];
+      }
+      else
+      {
+         factorLoss-=orderProfit[ticket];
+      }
+      balance+=orderProfit[ticket];
+      balance-=(orderLots[ticket]*commission);
+      orderBalance[ticket]=balance;
+      lineName="Order "+string(ticket);
+      if(orderSymbol[ticket]==Symbol() && period==Period() && optimization==false)
+      {
+         ObjectCreate(0, lineName, OBJ_TREND, 0, orderOpenTime[ticket], orderOpenPrice[ticket], orderCloseTime[ticket], orderClosePrice[ticket]);
+         ObjectSet(lineName, OBJPROP_TIME1, orderOpenTime[ticket]);
+         ObjectSet(lineName, OBJPROP_PRICE1, orderOpenPrice[ticket]);
+         ObjectSet(lineName, OBJPROP_TIME2, orderCloseTime[ticket]);
+         ObjectSet(lineName, OBJPROP_PRICE2, orderClosePrice[ticket]);
+         ObjectSet(lineName, OBJPROP_RAY, false);
+         if(orderType[ticket]==0)
+         {
+            ObjectSetInteger(0, lineName, OBJPROP_COLOR, clrGreen);
+         }
+         else if(orderType[ticket]==1)
+         {
+            ObjectSetInteger(0, lineName, OBJPROP_COLOR, clrPink);
+         }
+         ObjectSetInteger(0, lineName, OBJPROP_WIDTH, 2);
+      }
+   }
+   else
+   {
+      Print("Error 5");
+   }
+}
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+void checkOrders(bool firstCheck)
+{
+   for(i=0; i<ordersTotal; i++)
+   {
+      if(orderClosed[i]==false && orderOpenTime[i]<=iTime(symbol, period, bar) && orderSymbol[i]==symbol)
+      {
+         if(firstCheck==true)
+         {
+            high=iOpen(symbol, period, bar);
+            low=iOpen(symbol, period, bar);
+         }
+         else if(firstCheck==false)
+         {
+            high=iHigh(symbol, period, bar);
+            low=iLow(symbol, period, bar);
+         }
+         if(orderType[i]==0)
+         {
+            if(orderStopLoss[i]>=low)
+            {
+               orderClose(i, orderStopLoss[i], "s/l");
+            }
+            else if(orderTakeProfit[i]<=high && orderTakeProfit[i]!=0)
+            {
+               orderClose(i, orderTakeProfit[i], "t/p");
+            }
+            else
+            {
+               continue;
+            }
+         }
+         else if(orderType[i]==1)
+         {
+            if(orderStopLoss[i]<=high+(spread*MarketInfo(symbol, MODE_POINT)))
+            {
+               orderClose(i, orderStopLoss[i], "s/l");
+            }
+            else if(orderTakeProfit[i]>=low+(spread*MarketInfo(symbol, MODE_POINT)))
+            {
+               orderClose(i, orderTakeProfit[i], "t/p");
+            }
+            else
+            {
+               continue;
+            }
+         }
+      }
+      else
+      {
+         continue;
+      }
+   }
+}
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+int orderSend(string symbol5, int cmd5, double volume5, double price5, double stoploss5, double takeprofit5, double comment5)
+{
+   if(ArraySize(orderSymbol)>ordersTotal)
+   {
+      if(cmd5==0)
+      {
+         price5+=(spread*MarketInfo(symbol, MODE_POINT));
+      }
+      if(volume5<0.01)
+      {
+         Print("Use bigger start balance or increase riskpercent, because lot size = 0.");
+      }
+      orderSymbol[ordersTotal]=symbol;
+      orderType[ordersTotal]=cmd5;
+      orderLots[ordersTotal]=volume5;
+      orderOpenPrice[ordersTotal]=price5;
+      orderStopLoss[ordersTotal]=stoploss5;
+      orderTakeProfit[ordersTotal]=takeprofit5;
+      orderComment[ordersTotal]=comment5;
+      orderPeriod[ordersTotal]=period;
+      orderOpenTime[ordersTotal]=iTime(symbol, period, bar);
+      orderClosed[ordersTotal]=false;
+      ordersTotal++;
+      return(ordersTotal);
+   }
+   else
+   {
+      return(-1);
+   }
+}
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+double indicatorValue(bool settings, string name, double buffer, int candle)
+{
+   if(settings==1)
+   {
+      if(name==baselineName)
+      {
+         return(iCustom(symbol, period, name, S1, S2, S3, S4, S5, S6, S7, buffer, candle));
+      }
+      else if(name==indicatorName1)
+      {
+         return(iCustom(symbol, period, name, S8, S9, S10, S11, S12, S13, S14, buffer, candle));
+      }
+      else if(name==indicatorName2)
+      {
+         return(iCustom(symbol, period, name, S15, S16, S17, S18, S19, S20, S21, buffer, candle));
+      }
+      else if(name==indicatorName3)
+      {
+         return(iCustom(symbol, period, name, S22, S23, S24, S25, S26, S27, S28, buffer, candle));
+      }
+      else if(name==indicatorName4)
+      {
+         return(iCustom(symbol, period, name, S29, S30, S31, S32, S33, S34, S35, buffer, candle));
+      }
+      else if(name==indicatorName5)
+      {
+         return(iCustom(symbol, period, name, S36, S37, S38, S39, S40, S41, S42, buffer, candle));
+      }
+      else
+      {
+         return(0);
+      }
+   }
+   else
+   {
+      return(iCustom(symbol, period, name, buffer, candle));
+   }
+}
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+int OnInit()
+{
+   customBuffers();
+   if(folder!="")
+   {
+      folder=folder+"/";
+   }
+   if(baselineName=="" && chooseIndicator!=0&&indicatorName[chooseIndicator]!="")
+   {
+      baselineName=folder+indicatorName[chooseIndicator];
+   }
+   if(indicatorName1==""&&chooseIndicator1!=0&&indicatorName[chooseIndicator1]!="")
+   {
+      indicatorName1=folder+indicatorName[chooseIndicator1];
+   }
+   if(indicatorName2==""&&chooseIndicator2!=0&&indicatorName[chooseIndicator2]!="")
+   {
+      indicatorName2=folder+indicatorName[chooseIndicator2];
+   }
+   if(indicatorName3==""&&chooseIndicator3!=0&&indicatorName[chooseIndicator3]!="")
+   {
+      indicatorName3=folder+indicatorName[chooseIndicator3];
+   }
+   if(indicatorName4==""&&chooseIndicator4!=0&&indicatorName[chooseIndicator4]!="")
+   {
+      indicatorName4=folder+indicatorName[chooseIndicator4];
+   }
+   if(indicatorName5==""&&chooseIndicator5!=0&&indicatorName[chooseIndicator5]!="")
+   {
+      indicatorName5=folder+indicatorName[chooseIndicator5];
+   }
+   oGetValues();
+   allProgress=oCycles[0]*oCycles[1]*oCycles[2]*oCycles[3]*oCycles[4]*oCycles[5]*oCycles[6];
+   if(IsTesting()==true)
+   {
+      Alert("Can't run on tester");
+   }
+   else if(chooseIndicator1==0)
+   {
+      Alert("First confirmation indicator can't be turned off");
+   }
+   else if(indicatorName1==""||(indicatorName2==""&&turnOff2Confimation==true)||(indicatorName3==""&&turnOffVolume==true)||(indicatorName4==""&&turnOffExit==true)||(baselineName==""&&turnOffBaseline==true)||(indicatorName5==""&&turnOffExtra==true))
+   {
+      Alert("You have to write the indicator name");
+   }
+   else if(ArraySize(indicatorName)!=ArraySize(buffer1)||ArraySize(indicatorName)!=ArraySize(buffer2)||ArraySize(indicatorName)!=ArraySize(buffer3)||ArraySize(indicatorName)!=ArraySize(type))
+   {
+      Alert("Something wrong with buffers");
+   }
+   else
+   {
+      Comment("Backtesting started!");
+      arrayInitialize(orderLots);
+      arrayInitialize(orderTakeProfit);
+      arrayInitialize(orderStopLoss);
+      arrayInitialize(orderOpenPrice);
+      arrayInitialize(orderClosePrice);
+      arrayInitialize(orderComment);
+      arrayInitialize(orderBalance);
+      arrayInitialize(orderProfit);
+      arrayInitialize(balanceBest);
+      arrayInitialize(drawdownBest);
+      arrayInitialize(profitBest);
+      arrayInitialize(TPBest);
+      arrayInitialize(totalBest);
+      arrayInitialize(yearlyPercent);
+      arrayInitialize(goodEnough);
+      arrayInitialize(profitFactor);
+      arrayInitialize2(orderType);
+      arrayInitialize2(orderPeriod);
+      arrayInitialize3(settingsBest);
+      arrayInitialize3(orderSymbol);
+      arrayInitialize3(orderCloseReason);
+      arrayInitialize4(orderOpenTime);
+      arrayInitialize4(orderCloseTime);
+      startBalance=balance;
+      if(BTStop>TimeCurrent()||BTStop<BTStart)
+      {
+         BTStop=TimeCurrent();
+      }
+      if(commission==1234 && backtesting==true)
+      {
+         int commissionTicket=OrderSend(Symbol(), 0, 0.01, Ask, NULL, NULL, NULL, "Commission test", 0, 0, clrNONE);
+         if(OrderSelect(commissionTicket, SELECT_BY_TICKET)==true)
+         {
+            commission=-1*OrderCommission()/OrderLots();
+            if(OrderClose(OrderTicket(), 0.01, Bid, NULL, clrNONE)==true)
+            {
+               Print("Commission=", DoubleToStr(commission, 2));
+            }
+         }
+         else
+         {
+            if(GetLastError()==132)
+            {
+               Print("Market is closed, can't calculate commission");
+            }
+            else
+            {
+               Print("Can't calculate commission, error:", GetLastError());
+            }
+            commission=0;
+         }
+      }
+      //SPREAD
+      if(spread==0)
+      {
+         if(MarketInfo(Symbol(), MODE_SPREAD)!=0)
+         {
+            spread=int(MarketInfo(Symbol(), MODE_SPREAD));
+            Print("Spread: ", DoubleToStr(spread, 2));
+         }
+         else
+         {
+            Print("Can't take current spread! Spread set to 10.");
+            spread=10;
+         }
+      }
+      symbol=Symbol();
+      period=Period();
+      int startTime=int(TimeLocal());
+      progress=0;
+      string reportSettings=StringConcatenate("\nscaleOut=", scaleOut, "\ncontinuationTrades=", continuationTrades, "\ncontinuationWOPreviousTrade=", continuationWOPreviousTrade, "\ndistanceFromBL=", distanceFromBL, "\ntrailingStop=", trailingStop, "\ntrailingStart=", trailingStart, "\nriskPercent=", riskPercent,
+                                              "\nstopLoss=", stopLoss, "\ntakeProfit=", takeProfit, "\ntakeProfit2=", takeProfit2, "\natrPeriod=", atrPeriod, "\nfolder=", StringSubstr(folder, 0, StringLen(folder)-1), "\nbalance=", balance, "\nddPercent=", ddPercent, "\nyearlyPercentBasedOn=", yearlyPercentBasedOn, "\nspread=", spread, "\ncommission=", commission, "\ncsv=", csv, "\nBTType=", BTType, "\nBTStart=", int(BTStart),
+                                              "\nBTStop=", int(BTStop), "\noptimization=", optimization, "\noptimizationSettings=", optimizationSettings, "\noptimizationStart=", optimizationStart,
+                                              "\noptimizationStep=", optimizationStep, "\noptimizationStop=", optimizationStop, "\nchooseIndicator=", chooseIndicator, "\nbaselineName=", baselineName, "\ndefaultSettings=", defaultSettings);
+      reportSettings=StringConcatenate(reportSettings, "\nchooseIndicator1=", chooseIndicator1, "\nindicatorName1=", indicatorName1, "\ndefaultSettings1=", defaultSettings1, "\nchooseIndicator2=", chooseIndicator2, "\nindicatorName2=", indicatorName2,
+                                       "\ndefaultSettings2=", defaultSettings2, "\nchooseIndicator3=", chooseIndicator3, "\nindicatorName3=", indicatorName3, "\ndefaultSettings3=", defaultSettings3, "\nchooseIndicator4=", chooseIndicator4,
+                                       "\nindicatorName4=", indicatorName4, "\ndefaultSettings4=", defaultSettings4, "\nextraType=", extraType, "\nchooseIndicator5=", chooseIndicator5, "\nindicatorName5=", indicatorName5, "\ndefaultSettings5=", defaultSettings5, "\nS1=", S1, "\nS2=", S2, "\nS3=", S3, "\nS4=", S4, "\nS5=", S5, "\nS6=", S6, "\nS7=", S7, "\nS8=", S8, "\nS9=", S9, "\nS10=", S10, "\nS11=", S11);
+      reportSettings=StringConcatenate(reportSettings, "\nS12=", S12, "\nS13=", S13, "\nS14=", S14, "\nS15=", S15, "\nS16=", S16,
+                                       "\nS17=", S17, "\nS18=", S18, "\nS19=", S19, "\nS20=", S20, "\nS21=", S21, "\nS22=", S22, "\nS23=", S23, "\nS24=", S24, "\nS25=", S25, "\nS26=", S26, "\nS27=", S27, "\nS28=", S28, "\nS29=", S29, "\nS30=", S30, "\nS31=", S31,
+                                       "\nS32=", S32, "\nS33=", S33, "\nS34=", S34, "\nS35=", S35, "\nS36=", S36, "\nS37=", S37, "\nS38=", S38, "\nS39=", S39, "\nS40=", S40, "\nS41=", S41, "\nS42=", S42);
+      reportSettings=StringConcatenate(reportSettings, "\ncustom1=", custom1, "\ncustom2=", custom2, "\ncustomSymbols=", customSymbols);
+      baselineType=int(type[chooseIndicator]);
+      turnOffBaseline=onoff(chooseIndicator);
+      firstBuffer=buffer1[chooseIndicator];
+      secondBuffer=buffer2[chooseIndicator];
+      thirdBuffer=buffer3[chooseIndicator];
+      indicatorType1=int(type[chooseIndicator1]);
+      firstBuffer1=buffer1[chooseIndicator1];
+      secondBuffer1=buffer2[chooseIndicator1];
+      thirdBuffer1=buffer3[chooseIndicator1];
+      indicatorType2=int(type[chooseIndicator2]);
+      turnOff2Confimation=onoff(chooseIndicator2);
+      firstBuffer2=buffer1[chooseIndicator2];
+      secondBuffer2=buffer2[chooseIndicator2];
+      thirdBuffer2=buffer3[chooseIndicator2];
+      indicatorType3=int(type[chooseIndicator3]);
+      turnOffVolume=onoff(chooseIndicator3);
+      firstBuffer3=buffer1[chooseIndicator3];
+      secondBuffer3=buffer2[chooseIndicator3];
+      thirdBuffer3=buffer3[chooseIndicator3];
+      indicatorType4=int(type[chooseIndicator4]);
+      turnOffExit=onoff(chooseIndicator4);
+      firstBuffer4=buffer1[chooseIndicator4];
+      secondBuffer4=buffer2[chooseIndicator4];
+      thirdBuffer4=buffer3[chooseIndicator4];
+      indicatorType5=int(type[chooseIndicator5]);
+      turnOffExtra=onoff(chooseIndicator5);
+      firstBuffer5=buffer1[chooseIndicator5];
+      secondBuffer5=buffer2[chooseIndicator5];
+      thirdBuffer5=buffer3[chooseIndicator5];
+      //BACKTESTING
+      if(backtesting==true)
+      {
+         if(BTType==28)
+         {
+            symbolsCount=28;
+         }
+         else if(BTType==29)
+         {
+            symbolsCount=SymbolsTotal(true);
+         }
+         else if(BTType==13)
+         {
+            symbolsCount=13;
+         }
+         else if(BTType==1)
+         {
+            symbolsCount=1;
+         }
+         else if(BTType==100)
+         {
+            StringToUpper(customSymbols);
+            symbolsCount=StringSplit(customSymbols, divide, customSymbolsArray);
+         }
+         ArrayResize(pairs, 100, 0);
+         ArrayResize(startBars, 100, 0);
+         ArrayResize(buyContinuation, 100+1, 0);
+         ArrayResize(sellContinuation, 100+1, 0);
+         for(i=0; i<symbolsCount; i++)
+         {
+            buyContinuation[i]=false;
+            sellContinuation[i]=false;
+            if(BTType==28)
+            {
+               symbol=symbols[i];
+            }
+            if(BTType==29)
+            {
+               symbol=SymbolName(i, true);
+            }
+            else if(BTType==1)
+            {
+               symbol=Symbol();
+            }
+            else if(BTType==100)
+            {
+               symbol=customSymbolsArray[i];
+            }
+            SymbolSelect(symbol, true);
+            pairs[i]=symbol;
+            if(iBars(symbol, period)-(atrPeriod*3)<iBarShift(symbol, period, BTStart, false))
+            {
+               BTStart=iTime(symbol, period, iBars(symbol, period)-(atrPeriod*3));
+               Print(symbol, " Too few data, backtesting started from: ", BTStart);
+            }
+         }
+         timeInYears=double(BTStop-BTStart)/60/60/24/365;
+         if(csv==true)
+         {
+            if(allProgress>1)
+            {
+               fileReport=FileOpen(string(int(TimeLocal()))+"_Optimization_"+Symbol()+"_"+string(Period())+".csv", FILE_READ|FILE_WRITE|FILE_CSV);
+               FileWrite(fileReport, oSettings[0], oSettings[1], oSettings[2], oSettings[3], oSettings[4], oSettings[5], oSettings[6], "Balance", "Yearly", "DD Balance", "DD", "Risk%", "PF", "TP%", "Profit%", "Trades");
+            }
+            if(allProgress==1)
+            {
+               fileResults=FileOpen(string(int(TimeLocal()))+"_Results_"+Symbol()+"_"+string(Period())+".csv", FILE_READ|FILE_WRITE|FILE_CSV);
+               FileWrite(fileResults, "Ticket", "Symbol", "Type", "Lots", "Open time", "Close time", "Open price", "Close price", "ATR", "Pips", "Balance", "Profit", "Close reason");
+            }
+         }
+         for(int O1=0; O1<oCycles[0]; O1++)
+         {
+            double oOne=optimizing(0, O1);
+            for(int O2=0; O2<oCycles[1]; O2++)
+            {
+               double oTwo=optimizing(1, O2);
+               for(int O3=0; O3<oCycles[2]; O3++)
+               {
+                  double oThree=optimizing(2, O3);
+                  for(int O4=0; O4<oCycles[3]; O4++)
+                  {
+                     double oFour=optimizing(3, O4);
+                     for(int O5=0; O5<oCycles[4]; O5++)
+                     {
+                        double oFive=optimizing(4, O5);
+                        for(int O6=0; O6<oCycles[5]; O6++)
+                        {
+                           double oSix=optimizing(5, O6);
+                           for(int O7=0; O7<oCycles[6]; O7++)
+                           {
+                              double oSeven=optimizing(6, O7);
+                              for(int h=0; h<symbolsCount; h++)
+                              {
+                                 startBars[h]=iBarShift(pairs[h], period, BTStart, false)-1;
+                              }
+                              end=false;
+                              while(end==false)
+                              {
+                                 currentTime=TimeCurrent();
+                                 for(int y=0; y<=symbolsCount; y++)
+                                 {
+                                    if(iTime(pairs[y], period, startBars[y])<currentTime)
+                                    {
+                                       currentTime=iTime(pairs[y], period, startBars[y]);
+                                    }
+                                 }
+                                 for(BT=0; BT<symbolsCount; BT++)
+                                 {
+                                    symbol=pairs[BT];
+                                    if(iTime(symbol, period, startBars[BT])==currentTime)
+                                    {
+                                       bar=startBars[BT];
+                                       checkOrders(true);
+                                       OnTick();
+                                       checkOrders(false);
+                                       startBars[BT]--;
+                                    }
+                                 }
+                                 if(startBars[0]==iBarShift("EURUSD", period, BTStop, false))
+                                 {
+                                    end=true;
+                                    closedAtStop();
+                                 }
+                                 if(ordersTotal>=99995)
+                                 {
+                                    Print("Orders have reached maximum limit of 100 000, backtesting stopped!");
+                                    break;
+                                 }
+                              }
+                              if(ordersTotal>0)
+                              {
+                                 balanceBest[progress]=balance;
+                                 drawdownBest[progress]=resultDrawdown;
+                                 ddBalanceBest[progress]=MathPow(balance/startBalance, ((ddPercent/100*riskPercent)/resultDrawdown)/riskPercent)*startBalance;
+                                 rp2[progress]=(ddPercent/100*riskPercent)/resultDrawdown;
+                                 profitBest[progress]=double(resultProfit)/ordersTotal;
+                                 TPBest[progress]=double(resultTP)/ordersTotal;
+                                 totalBest[progress]=ordersTotal;
+                                 settingsBest[progress]=string(oOne)+"/"+string(oTwo)+"/"+string(oThree)+"/"+string(oFour)+"/"+string(oFive)+"/"+string(oSix)+"/"+string(oSeven);
+                                 if(yearlyPercentBasedOn==0)
+                                 {
+                                    yearlyPercent[progress]=MathPow(balance/startBalance, 1./timeInYears)*100-100;
+                                 }
+                                 else if(yearlyPercentBasedOn==1)
+                                 {
+                                    yearlyPercent[progress]=MathPow(ddBalanceBest[progress]/startBalance, 1./timeInYears)*100-100;
+                                 }
+                                 goodEnough[progress]=MathPow(MathPow(balance/startBalance, ((5.0/100*riskPercent)/resultDrawdown)/riskPercent)*startBalance/startBalance, 1./timeInYears)*100-100;
+                                 profitFactor[progress]=factorProfit/factorLoss;
+                                 if(csv==true && allProgress>1)
+                                 {
+                                    FileWrite(fileReport, DoubleToStr(double(oOne), 3), DoubleToStr(double(oTwo), 3), DoubleToStr(double(oThree), 3), DoubleToStr(double(oFour), 3), DoubleToStr(double(oFive), 3), DoubleToStr(double(oSix), 3), DoubleToStr(double(oSeven), 3), DoubleToStr(balanceBest[progress], 1), DoubleToStr(yearlyPercent[progress]/100, 4), DoubleToStr(ddBalanceBest[progress], 1), DoubleToStr(drawdownBest[progress], 4), DoubleToStr(rp2[progress], 4), DoubleToStr(profitFactor[progress], 2), DoubleToStr(TPBest[progress], 4), DoubleToStr(profitBest[progress], 4), DoubleToStr(totalBest[progress], 1));
+                                 }
+                                 if(csv==true && allProgress==1)
+                                 {
+                                    for(i=0; i<ordersTotal; i++)
+                                    {
+                                       if(orderType[i]==0)
+                                       {
+                                          pips=orderClosePrice[i]-orderOpenPrice[i];
+                                       }
+                                       else
+                                       {
+                                          pips=orderOpenPrice[i]-orderClosePrice[i];
+                                       }
+                                       FileWrite(fileResults, i, orderSymbol[i], orderType[i], DoubleToStr(orderLots[i], 2), orderOpenTime[i], orderCloseTime[i], DoubleToStr(orderOpenPrice[i], 5), DoubleToStr(orderClosePrice[i], 5), DoubleToStr(orderComment[i], 5), DoubleToStr(pips/MarketInfo(orderSymbol[i], MODE_POINT)/10, 0), DoubleToStr(orderBalance[i], 2), DoubleToStr(orderProfit[i], 2), orderCloseReason[i]);
+                                    }
+                                    FileWrite(fileResults, "", "", "", "", "", "", "", "", "", "", "", DoubleToStr(balanceBest[progress], 0), DoubleToStr(yearlyPercent[progress], 2), DoubleToStr(ddBalanceBest[progress], 0), DoubleToStr(drawdownBest[progress]*100, 2), DoubleToStr(rp2[progress], 2), DoubleToStr(profitFactor[progress], 2), DoubleToStr(TPBest[progress]*100, 2), DoubleToStr(profitBest[progress]*100, 2), DoubleToStr(totalBest[progress], 0));
+                                    FileWrite(fileResults, reportSettings);
+                                 }
+                              }
+                              if(allProgress==1 && ordersTotal!=0)
+                              {
+                                 Print("Balance: ", DoubleToStr(balanceBest[progress], 0), "$ Yearly: ", DoubleToStr(yearlyPercent[progress], 2), "% DD Balance: ", DoubleToStr(ddBalanceBest[progress], 0), "$ DD: ", DoubleToStr(drawdownBest[progress]*100, 2), "% Risk: ", DoubleToStr(rp2[progress], 2), "% PF: ", DoubleToStr(profitFactor[progress], 2), " TP: ", DoubleToStr(TPBest[progress]*100, 2), "% Profit: ", DoubleToStr(profitBest[progress]*100, 2), "% Trades: ", DoubleToStr(totalBest[progress], 0));
+                              }
+                              highestBalance=0;
+                              lowestBalance=0;
+                              newDD=0;
+                              DDmax=0;
+                              DDmin=0;
+                              factorProfit=0;
+                              factorLoss=0;
+                              resultDrawdown=0;
+                              resultTP=0;
+                              resultProfit=0;
+                              ordersTotal=0;
+                              progress++;
+                              balance=startBalance;
+                              double progressPercent=double(progress)/allProgress;
+                              if(progressPercent>0)
+                              {
+                                 ETA=(((int(TimeLocal())-startTime)*(1-progressPercent))/progressPercent);
+                                 if(ETA<60)
+                                 {
+                                    progressBar=StringConcatenate(" Varieties: ", allProgress, ".\n Progress: ", DoubleToStr(progressPercent*100, 0), " %.\n Time left: ", DoubleToStr(int(ETA)%60, 0), " s");
+                                 }
+                                 else if(ETA<3600)
+                                 {
+                                    progressBar=StringConcatenate(" Varieties: ", allProgress, ".\n Progress: ", DoubleToStr(progressPercent*100, 0), " %.\n Time left: ", StringSubstr(DoubleToStr(ETA/60, 2), 0, StringFind(DoubleToStr(ETA/60, 2), ".", 0)), " min ", DoubleToStr(int(ETA)%60, 0), " s");
+                                 }
+                                 else if(ETA>=3600)
+                                 {
+                                    progressBar=StringConcatenate(" Varieties: ", allProgress, ".\n Progress: ", DoubleToStr(progressPercent*100, 0), " %.\n Time left: ", StringSubstr(DoubleToStr(ETA/3600, 2), 0, StringFind(DoubleToStr(ETA/3600, 2), ".", 0)), " h ", DoubleToStr((int(ETA)%3600)/60, 0), " min");
+                                 }
+                                 Comment(progressBar);
+                              }
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+      if(allProgress>1)
+      {
+         best=ArrayMaximum(totalBest);
+         print("Most trades ");
+         best=ArrayMinimum(totalBest, allProgress);
+         print("Fewest trades ");
+         best=ArrayMaximum(profitBest);
+         print("Highest profit% ");
+         best=ArrayMaximum(TPBest);
+         print("Highest TP% ");
+         best=ArrayMaximum(profitFactor);
+         print("Highest PF ");
+         best=ArrayMinimum(drawdownBest, allProgress);
+         print("Smallest drawdown ");
+         best=ArrayMaximum(ddBalanceBest);
+         print("DD Profit best ");
+         best=ArrayMaximum(balanceBest);
+         print("Highest profit ");
+      }
+      if(csv==true && allProgress>1)
+      {
+         FileWrite(fileReport, reportSettings);
+      }
+      Comment("Backtesting finished");
+      double moneyBack=goodEnough[ArrayMaximum(goodEnough)];
+      string s;
+      if(optimization==true)
+      {
+         s=settingsBest[ArrayMaximum(goodEnough)];
+      }
+      Print("Avg yearly percent with 5% max drawdown: ", DoubleToStr(moneyBack, 2), "%");
+      FileClose(fileResults);
+      FileClose(fileReport);
+   }
+   return(INIT_SUCCEEDED);
+}
+//+------------------------------------------------------------------+
+//| |
+//+------------------------------------------------------------------+
+void print(string atribute)
+{
+   FileWrite(fileReport, "", "", "", "", "", "", "", DoubleToStr(balanceBest[best], 1), DoubleToStr(yearlyPercent[best]/100, 4), DoubleToStr(ddBalanceBest[best], 1), DoubleToStr(drawdownBest[best], 4), DoubleToStr(rp2[best], 4), DoubleToStr(profitFactor[best], 2), DoubleToStr(TPBest[best], 4), DoubleToStr(profitBest[best], 4), DoubleToStr(totalBest[best], 1), atribute, settingsBest[best]);
+   Print(settingsBest[best], " ", atribute, "Balance: ", DoubleToStr(balanceBest[best], 0), "$ Yearly: ", DoubleToStr(yearlyPercent[best], 2), "% DD Balance: ", DoubleToStr(ddBalanceBest[best], 0), "$ DD: ", DoubleToStr(drawdownBest[best]*100, 2), "% Risk: ", DoubleToStr(rp2[best], 2), "% PF: ", DoubleToStr(profitFactor[best], 2), " TP: ", DoubleToStr(TPBest[best]*100, 2), "% Profit: ", DoubleToStr(profitBest[best]*100, 2), "% Trades: ", DoubleToStr(totalBest[best], 0));
+}
+//+------------------------------------------------------------------+
+//| |
+//+------------------------------------------------------------------+
+void OnDeinit(const int reason)
+{
+   ObjectsDeleteAll();
+   Comment("");
+}
+//+------------------------------------------------------------------+
+//| |
+//+------------------------------------------------------------------+
+void OnTick()
+{
+   news=false;
+   price=iOpen(symbol, period, bar);
+   price2=iClose(symbol, period, bar+1);
+   time=iTime(symbol, period, bar+1);
+   accountBalance=balance;
+   if(balance>highestBalance)
+   {
+      highestBalance=balance;
+      lowestBalance=balance;
+   }
+   if(balance<lowestBalance)
+   {
+      lowestBalance=balance;
+      newDD=(highestBalance-lowestBalance)/highestBalance;
+   }
+   if(resultDrawdown<newDD)
+   {
+      resultDrawdown=newDD;
+      DDmax=highestBalance;
+      DDmin=lowestBalance;
+   }
+   ATR=iATR(symbol, period, atrPeriod, bar+1);
+   if(ATR!=0 && MarketInfo(symbol, MODE_POINT)!=0 && MarketInfo(symbol, MODE_TICKVALUE)!=0)
+   {
+      Lot=(accountBalance*(riskPercent/100)/(ATR*stopLoss/MarketInfo(symbol, MODE_POINT))/MarketInfo(symbol, MODE_TICKVALUE));
+   }
+   else
+   {
+      if(ATR==0)
+      {
+         Print("Can't calculate ATR on ", symbol, "!");
+      }
+      if(MarketInfo(symbol, MODE_POINT)==0)
+      {
+         Print("Can't get ", symbol, " point!");
+      }
+      if(MarketInfo(symbol, MODE_TICKVALUE)==0)
+      {
+         Print("Can't get ", symbol, " tickvalue!");
+      }
+      Lot=0.01;
+   }
+   //GETTING CONFIRMATION1 SIGNALS
+   confirmation1=signal(defaultSettings1, indicatorName1, indicatorType1, firstBuffer1, secondBuffer1, thirdBuffer1, bar+1);
+   lastConfirmation1=signal(defaultSettings1, indicatorName1, indicatorType1, firstBuffer1, secondBuffer1, thirdBuffer1, bar+2);
+   //IF TURNED OFF THEN THESE VALUES ARE GIVEN
+   extra=volume=baseline=confirmation2=exit=confirmation1;
+   lastExtra=lastVolume=lastBaseline=lastConfirmation2=lastExit=lastConfirmation1;
+   extraValue=baselineValue=price;
+   if(volumeDirection==false)
+   {
+      lastVolume=1;
+      volume=1;
+   }
+   if(extraType==extraVolume)
+   {
+      extra=1;
+      lastExtra=1;
+   }
+   //IF TURNED ON THEN THESE VALUES ARE GIVEN
+   if(turnOffBaseline!=0)
+   {
+      baseline=signal(defaultSettings, baselineName, baselineType, firstBuffer, secondBuffer, thirdBuffer, bar+1);
+      lastBaseline=signal(defaultSettings, baselineName, baselineType, firstBuffer, secondBuffer, thirdBuffer, bar+2);
+      baselineValue=indicatorValue(defaultSettings, baselineName, firstBuffer, bar+1);
+   }
+   if(turnOff2Confimation!=0)
+   {
+      confirmation2=signal(defaultSettings2, indicatorName2, indicatorType2, firstBuffer2, secondBuffer2, thirdBuffer2, bar+1);
+      lastConfirmation2=signal(defaultSettings2, indicatorName2, indicatorType2, firstBuffer2, secondBuffer2, thirdBuffer2, bar+2);
+   }
+   if(turnOffVolume!=0)
+   {
+      volume=signal(defaultSettings3, indicatorName3, indicatorType3, firstBuffer3, secondBuffer3, thirdBuffer3, bar+1);
+      lastVolume=signal(defaultSettings3, indicatorName3, indicatorType3, firstBuffer3, secondBuffer3, thirdBuffer3, bar+2);
+   }
+   if(turnOffExit!=0)
+   {
+      exit=signal(defaultSettings4, indicatorName4, indicatorType4, firstBuffer4, secondBuffer4, thirdBuffer4, bar+1);
+      lastExit=signal(defaultSettings4, indicatorName4, indicatorType4, firstBuffer4, secondBuffer4, thirdBuffer4, bar+2);
+   }
+   if(turnOffExtra!=0)
+   {
+      extra=signal(defaultSettings5, indicatorName5, indicatorType5, firstBuffer5, secondBuffer5, thirdBuffer5, bar+1);
+      lastExtra=signal(defaultSettings5, indicatorName5, indicatorType5, firstBuffer5, secondBuffer5, thirdBuffer5, bar+2);
+      if(extraType==0)
+      {
+         extraValue=indicatorValue(defaultSettings5, indicatorName5, firstBuffer5, bar+1);
+      }
+   }
+   if(turnOffBaseline==0&&turnOffExtra!=0&&extraType==0)
+   {
+      baseline=extra;
+   }
+   if(turnOffBaseline!=0&&turnOffExtra==0&&extraType==0)
+   {
+      extra=baseline;
+   }
+   //CLOSING ORDERS WHEN BT
+   for(i=0; i<ordersTotal; i++)
+   {
+      if(orderClosed[i]==false && orderSymbol[i]==symbol)
+      {
+         if(orderType[i]==0)
+         {
+            if(confirmation1!=1 || confirmation2!=1 || exit!=1 || baseline!=1||((extraType==0||extraType==1)&&extra!=1))
+            {
+               orderClose(i, price, "close");
+            }
+         }
+         else if(orderType[i]==1)
+         {
+            if(confirmation1!=-1 || confirmation2!=-1 || exit!=-1 || baseline!=-1||((extraType==0||extraType==1)&&extra!=-1))
+            {
+               orderClose(i, price, "close");
+            }
+         }
+         if(trailingStop!=0 && scaleOut==true)
+         {
+            if(orderType[i]==0 && price2-orderOpenPrice[i]>=trailingStart*orderComment[i])
+            {
+               if(price2-orderStopLoss[i]>trailingStop*orderComment[i])
+               {
+                  orderStopLoss[i]=price2-trailingStop*orderComment[i];
+               }
+            }
+            else if(orderType[i]==1 && orderOpenPrice[i]-price2>=trailingStart*orderComment[i])
+            {
+               if(orderStopLoss[i]-price2>trailingStop*orderComment[i])
+               {
+                  orderStopLoss[i]=price2+trailingStop*orderComment[i];
+               }
+            }
+         }
+         if(scaleOut==true && orderTakeProfit[i]==NULL && orderClosed[i-1]==true)
+         {
+            if(orderType[i]==0 && orderStopLoss[i]<orderOpenPrice[i] && price>orderOpenPrice[i])
+            {
+               orderStopLoss[i]=orderOpenPrice[i];
+            }
+            else if(orderType[i]==1 && orderStopLoss[i]>orderOpenPrice[i] && price<orderOpenPrice[i])
+            {
+               orderStopLoss[i]=orderOpenPrice[i];
+            }
+         }
+      }
+      else
+      {
+         continue;
+      }
+   }
+   if(continuationTrades==true)
+   {
+      if(buyContinuation[BT]==true && (baseline!=1||(extra!=1&&extraType==0)))
+      {
+         buyContinuation[BT]=false;
+      }
+      if(sellContinuation[BT]==true && (baseline!=-1||(extra!=-1&&extraType==0)))
+      {
+         sellContinuation[BT]=false;
+      }
+   }
+   else
+   {
+      buyContinuation[BT]=false;
+      sellContinuation[BT]=false;
+   }
+   //MAKES NEW TRADES
+   if(confirmation1==1 && confirmation2==1 && exit==1 && baseline==1 && (extra==1 || extraType==2 || extraType==3))
+   {
+      if(lastConfirmation1!=1 || lastConfirmation2!=1 || exit!=1 || lastBaseline!=1 ||(lastExtra!=1 && (extraType==0 || extraType==1)))
+      {
+         if((((baselineValue+(distanceFromBL*ATR)>price2 && extraValue+(distanceFromBL*ATR)>price2)||distanceFromBL==0) && (extra==1||extraType==0|| extraType==1) && volume==1) || buyContinuation[BT]==true)
+         {
+            if(scaleOut==false)
+            {
+               orderSend(symbol, 0, Lot, price, price-(ATR*stopLoss), price+(ATR*takeProfit), ATR);
+            }
+            else
+            {
+               if(takeProfit2!=0)
+               {
+                  tp2=price+(ATR*takeProfit2);
+               }
+               orderSend(symbol, 0, Lot/2, price, price-(ATR*stopLoss), price+(ATR*takeProfit), ATR);
+               orderSend(symbol, 0, Lot/2, price, price-(ATR*stopLoss), tp2, ATR);
+            }
+            buyContinuation[BT]=true;
+         }
+         if(continuationWOPreviousTrade==true)
+         {
+            buyContinuation[BT]=1;
+         }
+      }
+   }
+   else if(confirmation1==-1 && confirmation2==-1 && exit==-1 && baseline==-1 &&(extra==-1 || extraType==2 || extraType==3))
+   {
+      if(lastConfirmation1!=-1 || lastConfirmation2!=-1 || exit!=-1 || lastBaseline!=-1 || (lastExtra!=-1 && (extraType==0 || extraType==1)))
+      {
+         if((((baselineValue-(distanceFromBL*ATR)<price2 && extraValue-(distanceFromBL*ATR)<price2)||distanceFromBL==0) && (extra==1 || extraType!=2) && (extra==-1 || extraType!=3) && ((volumeDirection==false && volume==1) || (volumeDirection==true && volume==-1))) || sellContinuation[BT]==true)
+         {
+            if(scaleOut==false)
+            {
+               orderSend(symbol, 1, Lot, price, price+(ATR*stopLoss), price-(ATR*takeProfit), ATR);
+            }
+            else
+            {
+               if(takeProfit2!=0)
+               {
+                  tp2=price-(ATR*takeProfit2);
+               }
+               orderSend(symbol, 1, Lot/2, price, price+(ATR*stopLoss), price-(ATR*takeProfit), ATR);
+               orderSend(symbol, 1, Lot/2, price, price+(ATR*stopLoss), tp2, ATR);
+            }
+            sellContinuation[BT]=true;
+         }
+         if(continuationWOPreviousTrade==true)
+         {
+            sellContinuation[BT]=1;
+         }
+      }
+   }
+}
+//+------------------------------------------------------------------+

@@ -1,0 +1,14 @@
+A simple Expert Advisor that trades only when the price movement has formed a Three From Within pattern. There are two patterns of the pattern.
+1.
+"Three From Inside" Up
+(Fig. 1) :
+This is a three candle pattern where the first candle is a long bearish candle, the second is a small bullish candle that trades inside the first candle, and the third is a long bullish candle that closes above the high of the first candle.
+2.
+"Three from inside" down
+(Fig. 2) :
+This is such a pattern consisting of three candles in which
+, the first candle is a long bullish candle, the second candle is a small bearish candle that trades inside the first candle and the third candle is a long bearish candle that closes below the low of the first candle.
+During trading, the Expert Advisor can open only one long or one short position.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/49448

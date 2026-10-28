@@ -1,0 +1,12 @@
+The script displays the monthly and weekly levels on the chart.
+Number of days — the number of days for calculation;
+W1 Color of lines — the color of the weekly lines;
+W1 Line Width — the width of the weekly lines;
+W1 Style of lines — the style of the weekly lines;
+MN1 Color of lines — the color of the monthly lines;
+MN1 Line Width — the width of the monthly lines;
+MN1 Style of lines — the style of the monthly lines;
+Trend or Horizontal line — display the lines using trend lines or horizontal lines.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16283

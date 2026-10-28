@@ -1,0 +1,4 @@
+I present this expert advisor that catches the gaps, it is simple and it contains some comments. Tried in the strategy tester to find the results by yourself. I have tried it on most of the currencies and I have found it effective only on EURUSD, GBPUSD, USDCHF and AUDNZD with profit and no losses at all.
+The program takes in to account the spread of the currencey into account in taking the profit. The program works or the idea the programs work one, is that the expert compares the open price of the new bar with the maximum or the minimum price of the previous bar, if there is a gap, directly it will send and order and a take profit.
+In general, I do not believe in stop loss, but you can easily add it in the program. I hope that you will like the program. For me I am using it, and still looking for other effective strategy to program it and get profits.
+See you....

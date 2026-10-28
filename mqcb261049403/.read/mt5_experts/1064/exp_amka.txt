@@ -1,0 +1,11 @@
+The Expert Advisor Exp_AMkA based on signals of the
+AMkA
+indicator. The signal is formed when a bar is closing if there is a new colored point and the last, the previous and colored points were of a different color.
+Place AMkA.ex5 compiled file to the terminal_data_folder\MQL5\Indicators.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. The instances of history of deals on the chart.
+Testing results for 2011 at NZDUSD H4:
+Fig. 2. Charts of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1064

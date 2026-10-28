@@ -1,0 +1,9 @@
+Author:
+Izhutov Pavel izhutov@yandex.ru
+www.forexnow.narod.ru
+The ideas underlying the code were collected on the basis of technical analysis and can be applicable to all situations of classical market movements, with the exception of fundamental events and obviously speculative movements of individual significant market players, suring which it is recommended to stop the EA.
+The EA is intended for working on eur/usd, H1 charts. It is also possible to use it for other currency pairs, but we haven't analyzed them yet, so there are no data about the efficiency of the EA for other symbols.
+Picture:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7912

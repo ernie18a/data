@@ -1,0 +1,19 @@
+Jay Digital Parabolic Spy is a multi timeframe indicator based on the parabolic sar.
+It displays timeframes from 15 minutes to 4 hours.
+If the parabolic sar is below the price (indicating a buy position), then a green arrow pointing up will be displayed otherwise, a red arrow pointing down will be displayed.
+The indicator shows 3 values:
+Position
+,
+pipDifference
+and
+SwinG
+.
+The
+position
+indicates which direction the parabolic sar is currently in. It will display a green arrow for buy and a red arrow for sell.
+Pipifference
+tells us howfar in pips the price is from the parabolic sar or in other words, how many pips in the oposite direction the parabolic sar will have to move before there is a reversal of the signal.
+SwinG
+is simply the entire length of the candle measured in pips.
+Please note that all the values are for the current candles on their respective timeframes.
+Image:

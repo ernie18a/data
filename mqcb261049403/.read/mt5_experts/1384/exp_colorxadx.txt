@@ -1,0 +1,19 @@
+The Exp_ColorXADX trading system is based on changes of the trend direction displayed by the
+ColorXADX
+indicator. A signal to perform a deal is formed at bar closing depending on the change of cloud color of the "XDi" indicator.
+To eliminate triggering of the Expert Advisor on the flat the ability to determine the trend force is added into it which level determines whether there is enough trend force to open position. Deals filtering performs by the input parameter of this indicator:
+input
+int
+ExtraHighLevel=
+30
+;
+//trend level enough to open the deal
+The deals filtering carried out only by the entry, exits are without filtering.
+Place ColorXADX.ex5 compiled file to the terminal_data_folder\MQL5\Indicators.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. The instances of history of deals in the chart.
+Testing results for 2011 at USDCHF H4:
+Fig. 2. Chart of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1384

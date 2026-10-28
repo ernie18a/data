@@ -1,0 +1,26 @@
+Identifies and maps all DOL targets — the levels price is likely seeking next.
+DOL targets mapped:
+-
+Previous Day High/Low (PDH/PDL)
+-
+Previous Week High/Low (PWH/PWL)
+-
+Previous Month High/Low (PMH/PML)
+-
+Equal Highs (EQH) and Equal Lows (EQL)
+-
+Untested FVGs above and below current price
+Features:
+-
+All targets labeled and color-coded by type
+-
+"Nearest DOL" info panel with distance in pips
+-
+Targets removed when reached
+-
+Configurable which DOL types to display
+-
+Alerts when price approaches a DOL target
+-
+Works on all timeframes
+Understanding where price is GOING is more important than where it IS.

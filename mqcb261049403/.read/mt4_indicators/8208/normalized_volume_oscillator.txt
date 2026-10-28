@@ -1,0 +1,18 @@
+This indicator is a developed idea of using normalized volumes (
+Normalized Volume
+).
+First of all, the normalized values are now expressed in percentage of the average value for a period. Accordingly, the data on the chart can now take negative values, too. This will mean some lull on the market.
+Another useful innovation is coloring histogram bars according to the normalized volume size.
+- Blue color means that the current volume is less than the average one for this period.
+- Dark green color means a small exceeding in volume as compared to the average one for this period.
+- Light green color means that the increase in volume has exceeded the Fibo level of 38.2% as compared to the average one for this period.
+- Yellow color means that the increase in volume has exceeded the Fibo level of 61.8% as compared to the average one for this period.
+- White (it is red in the image below not to melt into the background) color means that the increase in volume has exceeded the Fibo level of 100% as compared to the average one for this period.
+Осциллятор нормализованного объема
+In the image above, you can see an example of how to use Normalized Volume Oscillator when analyzing the probability of breaking through pivot levels.
+The yellow bar of the histogram says that the breaking through is very probable in the nearest future. White (red in the picture above) bar informs us that the breaking through is taking place just now and, most probably, it is true.
+The indicator works best on comparatively small timeframes (15 minutes, for example).
+On longer trends, the break-through conditions are "cushioned", since the general volume level for the period is high. In this case, it is sufficient that the histogram bar is green.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8208

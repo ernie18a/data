@@ -1,0 +1,4 @@
+This script scans through the bars within a 1 Hour chart and calculates the average volume per hour. It is prevented from working on any chart other than 1 hour and the average calculation uses
+MathAbs
+to ensure the absolute volume is calculated.
+Just drag the script onto a 1 Hour chart and it should display a message box with the results. I thought this might be useful if you are thinking of limiting trading to times when the volume is high and you wanted to double check which times were most liquid.

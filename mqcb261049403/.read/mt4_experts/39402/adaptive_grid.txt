@@ -1,0 +1,5 @@
+A simple adaptive grid expert advisor for meta trader 4. Works on all time frames and most common forex symbols. Something you want to change or add in the code example, you are asked to take your project to the
+Freelance department
+Visual
+Expert menu
+Tested on EURUSD, time frame M15

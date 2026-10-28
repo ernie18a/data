@@ -1,0 +1,196 @@
+Trading strategy
+The Expert Advisor uses two indicators: iCHO (Chaikin Oscillator, CHO) and custom
+CCIDualOnMA
+. CHO is used as a trend indicator and also, when the indicator crosses zero, to close positions. The 'CCIDualOnMA' indicator is used as a filter to add positions. Both indicators are created on the specified
+'Working
+timeframe' - the same timeframe is used to determine the moment of birth of a new bar (if necessary for the parameters
+'Trailing on ...
+' and
+'Search signals on ...
+').
+Trading signals:
+Closing positions when the
+CHO
+indicator crosses zero
+:
+Crossing
+Positions: Reverse
+Trade mode
+Crossing from bottom to top
+'false
+' -> close all SELL positions
+(
+'Allowed only BUY positions
+' OR
+'Allowed BUY and SELL positions
+') -> open BUY position
+'true
+' -> close all BUY positions
+(
+'Allowed only SELL positions
+' OR
+'Allowed BUY and SELL positions
+') -> open SELL position
+Top-down intersection
+'false
+' -> close all BUY positions
+(
+'Allowed only SELL positions
+' OR
+'Allowed BUY and SELL positions
+') -> open SELL position
+'true
+' -> close all SELL positions
+(
+'Allowed only BUY positions
+' OR '
+Allowed BUY and SELL positions
+') -> open BUY position
+Normal signals (adding a position)
+The CHO indicator is above zero and the fast CCI crosses the slow CCI from bottom to top and the fast one is below zero - a signal to open BUY.
+The CHO indicator is below zero and the fast CCI crosses the slow CCI from top to bottom and the fast one is above zero - signal to open SELL.
+Fig. 1. iCHO Trend CCIDualOnMA Filter
+Features:
+The Expert Advisor can be optimised by
+working time
+frame (
+'Working time
+frame')
+There can be only one 'market entry' trade per bar (this is an internal parameter, it is not included in the input parameters and it has nothing to do with the
+'Only one positions
+' parameter).
+When working in the
+'inside bar
+' mode (the
+'
+Search signals on ...
+'
+parameter
+is
+'bar
+#0 (at every tick)
+') the current bar is bar #0, when working in the
+'only when a new bar is born
+' mode
+(
+the
+'
+Search signals on ...
+'
+parameter
+is
+'
+bar #1 (on a new bar)
+') the
+current
+bar is bar #1.
+Parameter
+'Trade mode:
+'
+- restriction on which side to trade. It can take the values
+'Allowed only BUY positions
+', '
+Allowed
+only SELL positions
+'
+and 'Allowed BUY and SELL positions
+'.
+The
+'Use time control
+' parameter
+- time interval for searching for trading signals
+from
+'Start Hour
+'::
+'Start Minute
+' to
+'End Hour
+'::
+'End Minute
+'. The time range can be set both within a day and with a transition through a day
+Now let's learn more about each group of parameters:
+Trading settings:
+'Working timeframe
+' -
+working
+timeframe. The timeframe on which indicators are created and on which a new bar is searched.
+Stop Loss, Take Profit and Trailing are set in
+Points
+. Any of the parameters (
+'Stop Loss
+',
+'Take Profit
+',
+'Trailing Stop
+')
+can be disabled - to do this, set the selected parameter to '0.0'.
+How trailing works is shown in pictures in the
+TrailingStop
+code.
+Position size management (lot calculation)
+Lot can be either constant (
+'Money management
+' set to
+'Constant lot
+' and set lot size in
+'The value for "Money management"
+') or dynamic - in percentage of risk per
+deal
+(
+'Money management
+' set to
+'Risk in percent for a deal
+' and set risk percentage in
+'The value for "Money management
+"'). It is also possible to set a constant lot equal to the minimum lot - '
+Money management
+' is set to
+'Lots Min
+'.
+Time control:
+This section sets the time range for searching for trading signals. The time range is enabled via
+'Use time control
+' and sets the time interval for searching signals from
+'Start Hour
+'::
+'Start Minute
+' to
+'End Hour
+':::
+'End Minute
+'. The time range can be set both within a day and with a transition through a day. Does not affect trailing.
+Additional features:
+The
+'Positions: Only one
+' flag set to
+'true
+' allows the Expert Advisor to have no more than one position in the market.
+ATTENTION:
+'
+Positions: Only one
+' set to
+'
+true
+'
+does not cancel
+'
+Positions: Close opposite
+'
+set to
+'
+true
+'! In other words: the opposite position(s) will be closed first.
+The
+'Positions: Reverse
+' flag is responsible for reversing signals. An interesting flag 'Positions
+: Close opposite
+' - when set to
+'true
+' before opening a position, it ensures that opposite positions are removed.
+'Print
+log' outputs advanced logging of all operations. The
+'Freeze and StopsLevels Coefficient
+' parameter sets the coefficient for stop and freeze levels for cases when these levels for a symbol are equal to zero. It is recommended to use the value '3'.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/37799

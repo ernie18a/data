@@ -1,0 +1,200 @@
+Exp_X2MA_Digit_DM_361 trend-following trading system is based on
+ColorX2MA_Digit
+and
+ColorDM_361
+indicator signals. ColorX2MA_Digit indicator is used to define the main slow trend direction, while ColorDM_361 indicator allows us to define an entry point when a fast trend direction is changing. An entry signal is generated at a bar closure if the following two conditions are met:
+Fast and slow trend signals coincide;
+Fast trend has changed its direction.
+EA inputs:
+//+-------------------------------------------------+
+//| Input parameters of the EA indicator            |
+//+-------------------------------------------------+
+input
+string
+Trade=
+"Trade management"
+;
+//+============== TRADE MANAGEMENT ==============+
+input
+double
+MM=
+0.1
+;
+//Share of a deposit in a deal
+input
+MarginMode MMMode=LOT;
+//lot value detection method
+input
+uint
+StopLoss_=
+1000
+;
+//stop loss in points
+input
+uint
+TakeProfit_=
+2000
+;
+//take profit in points
+input
+string
+MustTrade=
+"Trading permissions"
+;
+//+============== TRADING PERMISSIONS ==============+
+input
+int
+Deviation_=
+10
+;
+//max price deviation in points
+input
+bool
+BuyPosOpen=
+true
+;
+//Permission to enter a long position
+input
+bool
+SellPosOpen=
+true
+;
+//Permission to enter a short position
+//+-------------------------------------------------+
+//| Input parameters of the filter indicator        |
+//+-------------------------------------------------+
+input
+string
+Filter=
+"SLOW TREND PARAMETERS"
+;
+//+============== TREND PARAMETERS ==============+
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+//1 Chart period for a trend
+input
+Smooth_Method MA_Method1=MODE_SMA_;
+//first smoothing averaging method
+input
+int
+Length1=
+12
+;
+//First smoothing depth
+input
+int
+Phase1=
+15
+;
+//First smoothing parameter,
+//for JJMA, it varies within the range -100 ... +100 and influences on the quality of the transient period;
+// For VIDIA, it is a CMO period, for AMA, it is a slow moving average period
+input
+Smooth_Method MA_Method2=MODE_JJMA;
+//second smoothing averaging method
+input
+int
+Length2=
+5
+;
+//Second smoothing depth
+input
+int
+Phase2=
+15
+;
+//second smoothing parameter,
+//for JJMA, it varies within the range -100 ... +100 and influences on the quality of the transient period;
+// For VIDIA, it is a CMO period, for AMA, it is a slow moving average period
+input
+Applied_price_ IPC=PRICE_CLOSE_;
+//Price constant
+input
+uint
+Digit=
+2
+;
+//number of digits to round to
+input
+uint
+SignalBar=
+1
+;
+//bar index for getting an entry signal
+input
+bool
+BuyPosClose=
+true
+;
+//Permission to exit long positions by trend
+input
+bool
+SellPosClose=
+true
+;
+//Permission to exit short positions by trend
+//+-------------------------------------------------+
+//| Input parameters of the entry indicator         |
+//+-------------------------------------------------+
+input
+string
+Input=
+"ENTRY PARAMETERS"
+;
+//+=============== ENTRY PARAMETERS ===============+
+input
+ENUM_TIMEFRAMES
+TimeFrame_=
+PERIOD_M30
+;
+//2 Chart period for an entry
+input
+Applied_price_ IPC_=PRICE_CLOSE_;
+//price constant
+input
+uint
+SignalBar_=
+1
+;
+//bar index for getting an entry signal
+input
+bool
+BuyPosClose_=
+false
+;
+//Permission to exit long positions by signal
+input
+bool
+SellPosClose_=
+false
+;
+//Permission to exit short positions by signal
+//+-------------------------------------------------+
+int
+TimeShiftSec,TimeShiftSec_;
+//---- Declaration of integer variables for the indicator handles
+int
+InpInd_Handle,InpInd_Handle_;
+//---- declaration of the integer variables for the start of data calculation
+int
+min_rates_total,min_rates_total_;
+String variables containing text in the inputs code are included only for better visual display of the EA inputs window.
+ColorDM_361_HTF and ColorX2MA_Digit_HTF indicators in the EA are included only for more convenient trend visualization in the strategy tester. They are not used in other operation modes.
+Place ColorX2MA_Digit.ex5, ColorX2MA_Digit_HTF.ex5, ColorDM_361.ex5 and ColorDM_361_HTF.ex5 compiled files to the <terminal_data_folder>\MQL5\Indicators for the generated EA correct operation.
+Note that the TradeAlgorithms.mqh library file allows using Expert Advisors with brokers who offer
+nonzero spread
+and the option of setting Stop Loss and Take Profit
+together with position opening
+. You can download more variants of the library at the following link:
+Trade Algorithms
+.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. Examples of trades on the chart
+Test results for 2015 on GBPUSD, slow trend on H4, entry by fast trend on M30:
+Fig. 2. Testing results chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16681

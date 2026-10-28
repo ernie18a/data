@@ -1,0 +1,23 @@
+The author of the idea
+-
+Scriptor
+.
+mq5 code author
+-
+barabashkakvn
+.
+The EA uses the following indicators: iADX (Average Directional Movement Index, ADX), two iMAs (Moving Average,MA) - one indicator at CLOSE prices and another one at OPEN prices, iOsMA (Moving Average of Oscillator, OsMA). Creating and moving the
+OBJ_TEXT
+and
+OBJ_HLINE
+graphical objects are used in the code.
+Inputs
+Lots - position volume
+Stop Loss (in pips)
+Trailing Stop (in pips)
+Trailing Step (in pips)
+Time zone - time zone (server time shift)
+magic number - unique EA identifier
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21394

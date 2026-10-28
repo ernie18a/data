@@ -1,0 +1,2 @@
+Introduction
+Robot for Meta Trader 4 - It was never mentioned here or anywhere else that this is some kind of holy grail.

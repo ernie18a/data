@@ -1,0 +1,4 @@
+This is the source code of the free MQL4 utility 'Manual Trading Lightweight Utility', that you can download from
+https://www.mql5.com/en/market/product/33591
+.
+The utility allows you to place fast orders with predefined stop-loss and stop-win.

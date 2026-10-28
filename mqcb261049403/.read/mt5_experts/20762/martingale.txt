@@ -1,0 +1,14 @@
+Idea by
+:
+Igor
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+The EA uses dynamic managing the lot size depending on whether we have exceeded the balance or not, as compared to the preceding pass (the calculations are based on OpenBuy and OpenSell).
+For parameters
+results for EURUSD
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20762

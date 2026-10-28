@@ -1,0 +1,3 @@
+This EA trades of on the M5, M15, M30 and H1 timeframes. It uses the BB, SAR and RSI of these timeframes to determine its entry point.
+Basically using Martingale system to cater to losing positions. Credit goes to the author of MultiLot Scalper and swb grid for the codes.
+Can be used on any time frame. Adjustable lotsize, amount of profit per row of order, Time zone and the like. Still need more modification though.

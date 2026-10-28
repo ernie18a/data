@@ -1,0 +1,26 @@
+This Expert Advisor is rewritten from MQL4 and was originally published here
+https://www.mql5.com/en/code/8164
+by its author
+George-on-Don
+.
+How It Works
+A buy position is opened at the intersection of the price and the support level. The bar should close above the level, and the previous bar should be opened above the level and cross the level by its shadow or close exactly at the level. The opening of a sell position goes quite the opposite way round.
+Stop Loss and Take Profit are set at the support/resistance levels located below/above the entry level. If the Stop Loss and Take Profit are so close that it is impossible to open a position, an attempt is made to open a position with a Stop Loss at the second support/resistance level and Take Profit at the third resistance/support level.
+When the nearest support/resistance level is reached (if the Take Profit is situated further), the Stop Loss of the position is moved to the opening price level of the position plus the spread (the function can be disabled).
+The image shows the performance of the Expert Advisor in the strategy tester's visual mode.
+Parameters
+Lots - order volume; when 0, the MaxrR parameter is used.
+SndMl - sends messages by e-mail when the Expert Advisor opens and closes positions.
+DcF - lot reduction factor at losses. If the value is 0, the reduction is not carried out. The lower the value, the greater the lot reduction. If the lot cannot be reduced, the minimum lot is used.
+MaxR - maximum risk from 0-1 (share of free funds). It is effective when the Lots value is 0.
+TgtProfit - variants of using the levels (1-5) as exemplified by a buy position:
+1 - open based on Support1, Stop Loss at Support2, Take Profit at Resist1;
+2 - open based on Support1, Stop Loss at Support2, Take Profit at Resist2;
+3 - open based on Support2, Stop Loss at Support3, Take Profit at Resist1;
+4 - open based on Support2, Stop Loss at Support3, Take Profit at Resist2;
+5 - open based on Support2, Stop Loss at Support3, Take Profit at Resist3.
+isTradeDay - intraday trade only (close the position at 23:00).
+ModSL - modify the Stop Loss when the first target is reached (the nearest level in the direction of the profit from the opening level).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1054

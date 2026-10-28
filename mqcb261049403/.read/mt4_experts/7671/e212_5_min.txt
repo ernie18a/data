@@ -1,0 +1,7 @@
+Author: tageiger aka fxid10t
+Adviser e.2.12 5 min.
+-------------------------
+Parameters of testing
+Symbol: EURUSD.
+Period: H4.
+Model: For the prices of opening.

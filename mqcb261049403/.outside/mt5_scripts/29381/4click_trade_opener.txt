@@ -1,0 +1,12 @@
+Trade with no need to calculate lot size! This script calculates the proper lot size and opens the position(s) for you.
+Set risk percent or risk amount of your equity and other parameters in script source code and compile it, then:
+First click: Open a trade with minimum lot size that broker allows to opening an order (use buy & sell buttons of trade panel on top left corner of charts)
+Second and third clicks: drag SL and TP lines to your wanted prices on the chart
+Forth click: drag and drop script on the chart. Script calculates the lot size and opens position(s) for you.
+Parameters:
+Risk Percent (like 2% of equity)
+Risk Amount (like 100$)
+Minimum Lot Allowed by Broker to open Orders (generally 0.01 or 0.1)
+Number of Positions  (You can split your risk between more than one positions to set different TPs for them)
+Max order slippage(deviation)
+Script calculates the size of the min lot position that you opened and sets remaining lot size based on SL line that you defined on the chart.

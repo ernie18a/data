@@ -1,0 +1,111 @@
+A trader manages the EA on the basis of accustomed operations and terms.
+The general principle of graphical orders and practical approach to their realization in MetaTrader 4 environment are described in the
+article
+, on the
+Forum thread
+.
+TRADING
+- automation of routines for realization of the trading plan;
+- releasing a human trader from continuous waiting for a trading event at the terminal.
+LEARNING
+- Visual demonstration of trading principles and strategies.
+- Training of skills in MT 4 Strategy Tester.
+- Strategy testing.
+- Traders' contesting in MT 4 Strategy Tester.
+Graphical orders
+are lines for executing of trade requests. The execution is limited with the end of a line.
+Order opening lines, conditionally, are named as follows:
+BUYSTOP, BUYLIMIT, SELLSTOP, SELLLIMIT
+.
+Order closing lines, conditionally, are named as follows:
+TPBUY
+,
+SLBUY
+,
+TPSELL
+,
+SLSELL
+.
+Lines of closing all orders on the chart of the given type, conditionally, are named as follows:
+TPALLBUY
+,
+SLALLBUY
+,
+TPALLSELL
+,
+SLALLSELL
+(including those opened manually).
+Initialization lines that set StopLoss/TakeProfit for newly opened orders:
+TPINITBUY
+,
+SLINITBUY
+,
+TPINITBUY
+,
+SLINITSELL
+(init - only at the moment of order opening).
+EA managing line:
+P
+AUSE
+(to be placed in the chart automatically in demo/real trading).
+Lines of opening/closing are also executed in the indicator windows:
+RSI,
+CCI,
+WPR,
+Momentum,
+Force Index,
+DeMarker, ATR, OBV,
+MFI
+.
+The line accepted for execution has in its description the EA's reply "
+O
+.
+k
+.", whereas an unaccepted line has "
+Not execute
+". These replies are highlighted, if you put the mouse cursor over the line.
+GTerminal
+can trade on all markets where
+МТ 4 is applied. It provides you with the possibility to send orders in two steps: first
+tp
+/
+sl
+=0, then modifying
+(necessary for С
+FD
+).
+Different
+GTerminal
+EAs attached to different windows of different symbols do not
+hinder each other from trading. To identify them, you can set a magic number
+.
+A trader can manually manage his or her orders opened by the EA, in a usual way: modify, close, apply scripts, enable Trailing Stop, etc.
+Limitations:
+The EA opens only one order per direction.
+The lot size is given in the EA properties. The deposit state is not controlled.
+The period of the indicator used must match with that specified in the EA (a feature of
+MQL
+4)
+All lines are of the
+Trend
+Line
+type, i.e., "/".
+The mutual arrangement of lines is not checked or commented.
+Recommendations:
+If a graphical order has not been executed or if it has been opened, but closed immediately, then check the mutual arrangement of your lines.
+The EA's trades are stored in log files and visible in the tabs of "Expert Advisors", "Journal".
+You may use the "load/save" option in "Properties/Inputs" for your convenience.
+Please read the comment inside the file attached.
+You can refer to the author by commenting on this publication or via
+e
+-
+mail
+.
+P.S.
+I didn't delete the debugging print (one)
+.
+Please download again, 35.2 KB, or delete it yourselves:
+=>Edit/Find Print that is not banned, and put two ones before it //.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8087

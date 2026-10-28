@@ -1,0 +1,14 @@
+This program downloads daily EVZ data which is needed in the
+Euro FX Vix
+indicator from Yahoo Finance. It is necessary to add the URL "https://query1.finance.yahoo.com" to the list of allowed URLs in the 'Advisors' tab (Tools > Options > Expert Advisors) for this program to work.
+It can download data once and be removed or run in the background and update each 1-5-10 minutes (but it's not recommended, when switching charts the script will get removed).
+You can find the generated files in Common Files folder. The file is also compatible with the MT5 versions of
+Euro FX Vix
+and
+EVZ Reader
+3291
+2008.08.04,008.93,008.61,009.27,009.27
+2008.08.05,009.50,009.01,009.60,009.20
+2008.08.06,009.20,009.20,009.46,009.30
+2008.08.07,009.30,009.23,009.92,009.91
+2008.08.08,009.91,009.91,011.54,011.23

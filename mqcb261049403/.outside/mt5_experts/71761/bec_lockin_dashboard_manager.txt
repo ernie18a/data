@@ -1,0 +1,49 @@
+BEC Trade Manager helps you manage active positions on the current symbol using one-click controls for breakeven, trailing logic, partial close, stop-loss removal, profit-side closing, loss-side closing, and fast scalp entries. It also displays key account and symbol information on the chart, including equity, floating profit, daily profit, stop-loss labels, and basket breakeven preview.
+Main features
+Account breakeven based on total basket profit
+Adjustable account lock-profit target
+Price-distance trailing stop
+Per-trade breakeven lock profit
+Position trail from current stop loss with step-based movement
+Close profit trades only
+Close loss trades only
+Close 50% and set breakeven
+Apply breakeven lock profit to all qualified trades
+Cancel all stop losses
+Close all trades and delete pending orders
+One-click scalp buy and scalp sell
+Floating P/L and SL labels on chart
+Filters by order type, magic number, and comment
+Example description
+ACC LOCK PROFIT
+Defines the additional account profit amount to protect when account breakeven is active. The breakeven line is adjusted to lock this value after the trigger is reached.
+ACC BE OFF / ACC BE ON
+Enables or disables basket-level account breakeven management for the current symbol. When active, the EA can move position stop losses to protect basket profit after the configured trigger.
+PRICE TRAIL OFF / PRICE TRAIL ON
+Enables or disables standard price-distance trailing stop logic. The stop loss trails price after the defined profit threshold is reached.
+TRADE BE OFF / TRADE BE ON
+Enables or disables per-trade breakeven lock management. Each qualifying position can receive its own protected stop-loss level beyond entry.
+POS TRAIL OFF / POS TRAIL ON
+Enables or disables position trailing from the current stop-loss anchor. This mode uses step movement and is intended for traders who want structured SL progression instead of classic trailing.
+Close Profit (All)
+Closes all currently profitable positions on the active symbol that match the selected filters.
+Close Loss (All)
+Closes all currently losing positions on the active symbol that match the selected filters.
+Close 50% + BE (All)
+Partially closes half of each eligible position, then moves the remaining volume to a breakeven-lock level based on the configured trade lock-profit distance.
+50% + BE (Profit)
+Applies the partial-close-and-protect action only to positions that are currently in profit.
+BE Lock Profit (All)
+Applies per-trade breakeven lock profit to all positions that have already reached the configured trade trigger.
+Cancel All StopLoss
+Removes stop-loss values from filtered positions on the current symbol while keeping take-profit unchanged.
+Close All + Delete Orders
+Closes all filtered open positions on the current symbol and deletes pending orders. Useful as a fast exit function.
+SCALP SELL
+Opens a market sell order using the configured scalp lot size. Scalp trades can then be managed by the scalp trailing logic.
+SCALP BUY
+Opens a market buy order using the configured scalp lot size. Scalp trades can then be managed by the scalp trailing logic.
+Important notes
+The EA is a trade management tool. It is not a signal service and does not guarantee profit.
+Results depend on market conditions, spread, execution quality, broker rules, and user settings.
+The tool works on the current symbol and can filter trades by type, magic number, and comment when needed.

@@ -1,0 +1,35 @@
+If you want to authomatize already taken well-designed strategy...
+Or simply save your time...
+HERE IS THE SOLUTION. FREE 100%.
+Author:
+Mostly me, but original version 1 is by Seletsky R.V.
+I don't own the rights, but the V1 was on MQL4 (i.e. here).
+Manual:
+Inside. Also, all the code is commented.
+lmages:
+None. I mean, you need own strategy
+Well, I have no any "well" strategy, through I can take any simple one.
+Primary part - Features:
+- 16 indicators: 2MA, MACD Signal, WPR, Stoch, OsMA etc.
+- 4 (up to 16) custom indincators
+- Flexible code - perfect for those, who don't know real coding, but can edit scripts "by seeing the example".
+- MM - You
+- ATR as independent closer.
+But the best purpose is studying the coding rules. Even if you're not a programmeur yet.
+Coming (not so) soon in v4:
+- "Split exit" - good, if you want to close your positions in two different halves (Money management measures)
+- "TrailStops" - simple, but necessary for many people thing called "trail". Well. I don't understand, how a trail works, so I need an example...
+- New Customs, already defined and tuned
+- Strategies - bundled.
+- Maybe, templates?
+Bonuses:
+You can use it for getting lots of money by selling tuned advisor as black box (compiled code, no externs)
+Also, you can write own code snippets, because I would like to get newer version by anonymous sourcing. I mean,
+Weak Sides:
+- Unusual. It's easier to make from new list for some people.
+- Needs some knowing the code. Indicators have different terms, and it must be defined every time you're making new strategy.
+- Not "plug-and-play" yet.
+- Really slow backtest. Don't ask me, better take the initiative, since this thing is free and it's easy to clone it "for yourself".
+Summary:
+Good thing, if you're watching for "lego kit".
+But if you're a perfectionist - wait untill next version (but I need some help!!!)

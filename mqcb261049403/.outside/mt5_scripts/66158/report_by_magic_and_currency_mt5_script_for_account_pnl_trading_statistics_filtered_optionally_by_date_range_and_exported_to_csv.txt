@@ -1,0 +1,73 @@
+The report groups by magic number and currency, specially useful when testing or analizyng several EAs or strategies in a single account.
+Total P&L
+- Including profit, swap, and commission
+Win Rate %
+- Percentage of winning trades
+Gain%(TWR)
+-
+Time-Weighted Return, percentage gain/loss calculated from starting balance plus total P&L
+PeakDD$    PeakDD%
+- The highest drawdown both in cash and percentage from historical reconstruction based on 1H OHLC to get a close accuracy to a live drawdown tracker.
+Net Position Size
+- Current net position from history
+Current Exposure
+- Open position exposure
+Gross Profit/Loss
+- Separate win/loss totals
+Profit Factor
+- Risk/reward metric
+Total Volume
+- Cumulative lot size
+Automatically includes ALL magic numbers (including 0)
+Aggregates all symbols per magic number
+Shows combined symbol list in the Symbol column for each magic
+Exports everything to a single TradingStats.csv file
+Just drag and drop on any chart - optionally you can input dates range but by default it reports from all available history, the CSV will be saved to
+MQL5/Files/
+folder
+Additional metrics:
+MAE (Maximum Adverse Excursion)
+measures the worst unrealized loss a trade experienced while it was open, before it closed.
+Avg MAE
+: Average of the worst floating loss across all trades. Shows typical risk exposure during trades.
+Max MAE
+: The single largest unrealized loss ever reached across all trades. Represents your worst drawdown moment within any individual position.
+MAE 95%
+: 95th percentile of MAE values. Means 95% of your trades had a worst floating loss at or below this level. Useful for risk assessment.
+MAE 99%
+: 99th percentile of MAE values. Only 1% of trades experienced a worse floating loss than this. Helps identify tail risk events.
+=== STATISTICS BY MAGIC NUMBER ===
+Magic Number | Symbol(s) | Total P&L | Total Trades | Win Rate % | ...
+0
+(Manual)   | EURUSD+GBPUSD |
+1234.56
+|
+45
+|
+60.00
+| ...
+12345
+| USDJPY |
+567.89
+|
+30
+|
+55.00
+| ...
+
+=== STATISTICS BY CURRENCY ===
+Currency | Total P&L | Total Trades | Win Rate % | ...
+EUR      |
+2345.67
+|
+89
+|
+58.43
+| ...
+GBP      |
+1234.56
+|
+56
+|
+62.50
+| ...

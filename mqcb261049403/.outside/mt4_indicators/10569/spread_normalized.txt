@@ -1,0 +1,4 @@
+Author:
+Vangabestia
+This indicator use in cross ( es. EURAUD, GBPAUD, EURGBP, ect) depends of correlation of currency. Usually I use with timaframe Daily. But I think can to use in another timeframe. Important can use in commodity and stocks.
+Now I use it no EA ..I must to do it, Usually I use it in manual when down -0.3 I open position in buy up 0.3 open position in sell.

@@ -1,0 +1,6 @@
+Renko charts are built on custom symbols. The EA automatically creates a custom symbol. The EA works on tick history. Renko chart features tick and real volume (if any). The chart is built based on either Last or Bid price.
+The chart works in real time mode when the EA is running. An obtained symbol can be used in the tester but only on Open prices and every tick.
+Important! The chart is displayed correctly on М1 only.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21920

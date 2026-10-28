@@ -1,0 +1,14 @@
+The script is an updated version of the FXTFileMaker script (see
+Conversion of the real tick data into FXT files of the strategy tester
+, which describes what *.tks file is and how to work with it).
+Among the revolutionary novelties are the abilities to create:
+any chart timeframe that is a multiple of one second, and not just from the standard timeframes set;
+chart of equally high candlesticks (range bars);
+equivolume charts.
+The minimum period of an equivolume chart is equal to 1 tick, which allows to create even the tick chart type in the strategy tester visualizer.
+For further details
+look here
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13036

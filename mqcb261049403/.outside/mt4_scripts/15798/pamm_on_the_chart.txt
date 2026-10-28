@@ -1,0 +1,5 @@
+The script downloads the history of PAMM accounts from the Alpari rating and displays it on the chart. PAMM accounts are identified by account number. It is possible to download th entire history in the format of daily bars or hourly bars.
+Add the "http://www.alpari.ru/" address to the list of allowed URL before running the script.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15798

@@ -1,0 +1,9 @@
+Positive Volume Index (PVI) draws a connection between the volume rise and financial instrument price change. In case the volume increases compared to the previous day, PVI is defined by the price percentage change.
+PVI indicator is designed so that its value changes only when the current day volume is higher than the previous day one. Due to the fact that the prices growth is often connected with increasing volumes, PVI usually changes during an uptrend (and follows it).
+The following assumption is implemented in PVI interpretation. At the time when trading activity is booming and the volume is going up, amateur investors who follow the crowd are most active. In the opposite case, when the volume is decreasing, the market is controlled by professionals making smart money. Therefore, PVI values changes (as it was already noted, PVI changes only when the volume is rising) show that the time for making "smart money" on the market has come.
+In his book
+"Stock Market Logic: A Sophisticated Approach to Profits on Wall Street"
+Norman Fosback shows that, if PVI of Dow Industrials index is lower than its one-year moving average, the market is bearish in 95 out of 100 cases.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/518

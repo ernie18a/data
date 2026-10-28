@@ -1,0 +1,11 @@
+Hello
+This code has two features:
+1. It shows technique of bar opening control.
+2. It proves that tick counting is useless.
+It is result of collaboration in "
+Which EA model is best to use?
+" topic.
+Thanks to all the participants
+.
+Best regards
+Ais

@@ -1,0 +1,2 @@
+Author: Keris2112
+MTF_FibBreakout1.3 indicator. Uses indicator Stochastic.

@@ -1,0 +1,10 @@
+In the market watch in MT4, there are several symbols. Some of them could be binary Options.
+Different brokers have different method of representing a binary Options symbols.
+For eg:
+some broker use   .bo  at the end
+Some broker use   _OP  in the names
+Other broker may use some other methodology.
+so, it may become confusing to ensure whether a symbol is Binary Options or not.
+In the attached code, we use  MODE_PROFITCALCMODE to detect if a symbol is binary Option or not.
+This is very sure shot method of detecting a binary Option symbol
+The code iterates through all the symbols in the market watch and detects those symbols which are binary Options.

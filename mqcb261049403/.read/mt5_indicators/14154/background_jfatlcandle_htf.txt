@@ -1,0 +1,11 @@
+The indicator draws
+JFatlCandle
+indicator candlesticks of a higher timeframe as color filled rectangles using
+DRAW_FILLING
+buffers.
+Depending on candlestick direction its body is painted in blue or red, shadows are painted in light blue or pink.
+Place JFatl.mq5 and JFatlCandle.mq5 compiled indicator files to the <terminal_data_folder>\MQL5\Indicators\.
+Fig.1. The Background_JFatlCandle_HTF indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14154

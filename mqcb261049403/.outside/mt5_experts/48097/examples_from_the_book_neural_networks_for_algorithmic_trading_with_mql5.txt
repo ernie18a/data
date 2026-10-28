@@ -1,0 +1,10 @@
+The book "
+Neural networks for algorithmic trading with MQL5
+" is your go-to guide for learning how to use machine learning and neural networks in trading. This book is intended for algorithmic traders who want to learn how to create trading strategies using advanced artificial intelligence techniques.
+The book has 7 chapters that cover everything you need to know to get started with neural networks and integrate them into your trading robots in MQL5. With easy-to-follow explanations, you will learn the basics of machine learning and will discover different types of neural networks, including convolutional and recurrent models, as well as more complex architectural solutions and attention mechanisms.
+To assist you in integrating these solutions into your trading robots within the MQL5 environment, the book provides a plethora of practical examples. Additionally, the book explores various methods for improving model convergence, such as Batch Normalization and Dropout.
+Furthermore, the author provides practical guidance on how to train neural networks and embed them into your trading strategies. You will learn how to create trading Expert Advisors to test the performance of trained models on new data, enabling you to evaluate their potential in real-world financial markets.
+"Neural networks for algorithmic trading with MQL5" is not just a book: it is a handy guide that can help you integrate advanced decision-making techniques into your trading algorithms and potentially improve financial results. Start learning the advanced capabilities of machine learning today and take your trading to the next level.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/48097

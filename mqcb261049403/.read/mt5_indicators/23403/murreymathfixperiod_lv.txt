@@ -1,0 +1,48 @@
+Indicator of Murrey levels in indicator buffers with the added visual text information on those levels, calculating the levels on a timeframe specified in the inputs.
+//+----------------------------------------------+
+//|  INDICATOR INPUT PARAMETERS                  |
+//+----------------------------------------------+
+input
+ENUM_TIMEFRAMES
+Timeframe=
+PERIOD_D1
+;
+//Indicator timeframe for calculating the levels
+input
+int
+CalculationPeriod=
+64
+;
+//P calculation period
+input
+int
+StepBack=
+0
+;
+input
+int
+FontSize=
+8
+;
+//font size
+input
+type_font FontType=Font7;
+//font type
+input
+string
+LableSirname=
+"Murrey_Math_Lv"
+;
+//First part of the graphical objects names
+The indicator uses the class of library
+GetFontName.mqh
+(to be copied to the terminal_data_folder\MQL5\Include).
+For the indicator to operate, indicator
+Murrey_Math_Lv.ex5
+should be in the
+terminal_directory\MQL5\Indicators
+folder .
+Fig. 1. Indicator MurreyMathFixPeriod_Lv
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23403

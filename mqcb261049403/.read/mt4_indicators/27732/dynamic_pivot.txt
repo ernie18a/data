@@ -1,0 +1,21 @@
+Supported Timeframe :
+Current
+M1
+M5
+M15
+M30
+H1
+H4
+Daily
+Weekly
+Monthly
+Quarterly (Buggy - Removed)
+Semester (Buggy - Removed)
+Formula :
+Resistance 3 = High + 2 * (Pivot - Low)
+Resistance 2 = Pivot + (R1 - S1)
+Resistance 1 = 2 * Pivot - Low
+Pivot Point = (High + Close + Low) / 3
+Support 1 = 2 * Pivot - High
+Support 2 = Pivot - (R1 - S1)
+Support 3 = Low - 2 * (High - Pivot)

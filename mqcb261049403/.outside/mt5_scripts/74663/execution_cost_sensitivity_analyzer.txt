@@ -1,0 +1,17 @@
+A backtest charges only the costs you assume. Net profit and profit factor are measured at that cost, so they never show how close the edge sits to the cost line. This tool answers the question directly: how much execution cost can the strategy absorb before its edge is gone?
+The script reads a Date,Profit,Volume file (one row per closing deal) and prints a full report in the Experts tab:
+Breakeven cost per deal
+— the cost level at which the net profit reaches zero (the average edge per deal).
+Cushion
+— the multiple of an assumed realistic cost that the edge can absorb before the net hits zero.
+Net and profit factor at the assumed cost
+— the whole record re-priced, plus a cost-sensitivity curve from 0 to 3 times the assumed cost.
+Win erosion
+— the winning deals that the assumed cost turns into losers.
+A composite score (A+ to F)
+combining the cushion, the profit-factor resilience, and the win erosion, with written recommendations.
+Input.
+Place a CSV named in the input parameter (default Trades.csv) in the terminal MQL5\Files folder, with the header Date,Profit,Volume and one row per closing deal. The Volume column is optional: if it is missing, the cost is applied per deal rather than per lot. On the first run, if no file is found, the script generates a reproducible sample and analyzes it, so the output is visible immediately. The helper ExportCost.mq5 writes the file from the trade history: copy its function into your Expert Advisor and call it from OnTester(), or run it as a standalone script.
+Parameters.
+InpFileName (the CSV to read); InpCostPerLot and InpCostFixed (the assumed per-lot and per-deal cost); InpCushionTarget (the cushion that scores full marks); InpThinMult (the thin-winner threshold); InpErosionTol (the win-erosion tolerance); InpWeightCushion, InpWeightPF, InpWeightErosion (the three dimension weights, normalized automatically).
+The tool is written in pure MQL5. It needs no external libraries, no Python and no DLLs.

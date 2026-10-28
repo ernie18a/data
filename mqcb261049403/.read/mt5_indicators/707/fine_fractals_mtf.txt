@@ -1,0 +1,9 @@
+The indicator creates fractals from another larger timeframe on a current chart based on
+Fine_Fractals
+indicator data. There is a possibility to change the timeframe of calculated fractals in the indicator input parameters.
+Place compiled
+Fine_Fractals
+indicator file to the terminal_data_folder\MQL5\Indicators.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/707

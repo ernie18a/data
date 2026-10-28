@@ -1,0 +1,19 @@
+I would like to represent you a small script that copies candlestick data for the specified period of time and searches separate parts of the candlestick (body, upper and lower shadows) there. Then the script finds the maximum and minimum value, as well as the arithmetic mean value. In this case, scanning is performed on all timeframes. As a result, the script displays the received data as a table in the upper left corner of the active window.
+Features
+The following abbreviations are used in the script:
+MAX - maximum value,
+MIN - minimum value,
+MID - arithmetic mean value,
+B - candlestick body,
+US - upper shadow,
+DS - lower shadow.
+For smaller than weekly timeframes the results of arithmetic mean values ​​are displayed with rounding up to one decimal place.
+Note!
+The script downloads the history on all timeframes, and it may be unable to download all the data at the first launch. In this case, of course, the display will be incorrect, at that copy error messages will be thrown to the log. To operate the script to the end, you need to run it after several time again.
+There can also be possible crashes in data testimony on minute timeframes when using large periods of scanning, as the data arrays will be too large.
+Why Do You Need It
+The script was developed to search the distinctive features of pairs, exactly volatility. By using it you can find out on how many points the movement of these or those pairs is strong. The arithmetic mean value especially good assists to orient in it.
+So, Here Is The Result of The Script Work.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1669

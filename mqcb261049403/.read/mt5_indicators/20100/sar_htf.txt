@@ -1,0 +1,11 @@
+The iSAR indicator with the possibility to change the indicator timeframe in input parameters, implemented in color:
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// Indicator chart period (timeframe)
+Fig1. The Sar_HTF parameter
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20100

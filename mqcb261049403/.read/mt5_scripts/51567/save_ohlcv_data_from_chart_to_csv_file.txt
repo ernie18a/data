@@ -1,0 +1,6 @@
+The standard method of getting historical data in metatrader5 is to use "View>Symbols>Request" tool as shown in the picture below:
+However, this
+sometimes
+doesn't return all the data available on the chart.
+This script saves all the available historical data to a CSV file located in "Files" folder inside the "Common Data Path" directory.
+Note: Make sure "Max bars in chart" is set to "Unlimited" in 'Tools>Options>Charts' (see the picture below).

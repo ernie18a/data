@@ -1,0 +1,8 @@
+This version of
+Murrey Lines
+can be built for any chart bar and allows to clearly see the market behaviour relative to the indicator levels at each bar. Apparently this indicator can be most useful when analyzing a strategy in the offline mode.
+Another advantage of this indicator is the possibility to fix a chart period used for Murrey lines calculation with the help of Timeframe input variable. Thus, by varying a chart period of a financial instrument we can work with the set of Murrey Lines belonging to one definite timeframe.
+Place the Murrey_Math indicator compiled file to the terminal_data_folder\MQL5\Indicators\.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/605

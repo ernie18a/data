@@ -1,0 +1,11 @@
+Indicator DXYvsEXY is the USDX vs EURX with Awesome Oscillator Indicator for MT4. Highly recommended for the EURUSD pair.
+Can be used for all major currency pairs against USD and EUR.
+For USD basket: AUDUSD, GBPUSD, NZDUSD, USDCHF, USDCAD, USDJPY.
+For EUR basket: EURAUD, EURGBP, EURNZD, EURCHF, EURCAD, EURJPY.
+* Update_01: 2020/08/22:
+~ Change signal position display template.
+~ Speed up program execution by removing code and wordy programs.
+* Update_02: 2020/09/10:
+~ Added option to display or not the DXY histogram and EXY histogram.
+~ Removes the strict calculation timeframes option.
+Hopefully useful for fellow traders.

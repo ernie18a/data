@@ -1,0 +1,18 @@
+Oscillator of
+intraday intensity index
+as a histogram with a signal line.
+It has two configurable parameters:
+Intensity period
+- calculation period
+Signal period
+- signal line period
+Calculations:
+II = 100*Avg/AvgVol
+Signal = SMA(II, Signal period)
+where:
+Avg = SMA(Vol, Intensity period)
+AvgVol = SMA(Volume, Intensity period)
+Vol = Volume*(2*Close-High-Low) / (High-Low)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21323

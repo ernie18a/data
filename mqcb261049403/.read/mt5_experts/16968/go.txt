@@ -1,0 +1,39 @@
+Author of the idea
+—
+Victor Chebotariov
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+Signals based on four iMA (MA) indicators, by PRICE_OPEN, PRICE_HIGH, PRICE_LOW, PRICE_CLOSE prices. Trades only on hedge accounts.
+Block for determining the signal direction:
+double
+open =iMAGet(handle_iMA_open,
+0
+);
+double
+high =iMAGet(handle_iMA_high,
+0
+);
+double
+low  =iMAGet(handle_iMA_low,
+0
+);
+double
+close=iMAGet(handle_iMA_close,
+0
+);
+double
+GO=((close-open)+(high-open)+(low-open)+(close-low)+(close-high))*iTickVolume(
+0
+);
+The number of positions is limited by the parameter
+input
+int
+MaxPositions   =
+5
+;
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16968

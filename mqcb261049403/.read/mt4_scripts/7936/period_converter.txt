@@ -1,0 +1,7 @@
+Use this script to make nonstandard timeframe of symbol based on standard timeframe. For example, to make 3-hours timeframe H3 for selected symbol you should:
+Open H1 chart.
+Attach to chart 'Period_converter.mq4' MQL4 file from 'Script' folder of 'Navigator' window.
+On 'Common' tab check 'Allow DLL imports' and clear 'Confirm DLL function calls' checkbox.
+On 'Inputs' properties tab please set 'ExtPeriodMultiplier' variable value to 3 (you'll get H1*3 = H3).
+Click OK.
+Open H3 chart in offline mode ('File – Open Offline'). H3 chart will be updated every 2 sec (by default) while H1 chart with attached 'Period_converter.mq4' will be opened.

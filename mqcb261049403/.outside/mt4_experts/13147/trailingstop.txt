@@ -1,0 +1,5 @@
+Trailing stop allows you to automatically protect the profits with your positions. It adjusts itself according to the current market rate and the amount of pips you give it to trail behind. Trailing stop is a great tool for the conservative and long term traders as it easily creates protective "airbag" for trades. There are two basic ways to set the trailing stop in your MetaTrader 4 platform - use the built-in tool and attach a special EA that will apply a single trailing stop to all orders. But before going into describing these ways I'd like to tell you how the correct trailing stop should work:
+It should go into the action only when the position is in profit (or at a break even point).
+It should apply itself only when the difference between the current Stop Loss and the current market price is greater than the trailing stop value.
+Trailing stop should never "decrease" the Stop Loss level.
+If used without the initial Stop Loss, trailing stop doesn't protect your position from the excess losses; it only provides a good profit-following tool.

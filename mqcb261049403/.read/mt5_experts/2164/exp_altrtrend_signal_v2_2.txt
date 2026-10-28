@@ -1,0 +1,17 @@
+A trading system using the
+AltrTrend_Signal_v2_2
+semaphore signal indicator. Trade decisions are made when colored arrow appear, if their direction is the same as the direction of deals.
+Note that the TradeAlgorithms.mqh library file allows using Expert Advisors with brokers who offer
+nonzero spread
+and the option of setting Stop Loss and Take Profit
+with position opening
+. You can download more variants of the library at the following link:
+TradeAlgorithms
+.
+The generated Expert Advisor requires the compiled file of the indicator AltrTrend_Signal_v2_2.ex5. Place it to the terminal_data_folder\MQL5\Indicators.
+Fig. 1 The instances of history of deals on the chart
+Testing results for 2013 at USDJPY H4:
+Fig. 2. Chart of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2164

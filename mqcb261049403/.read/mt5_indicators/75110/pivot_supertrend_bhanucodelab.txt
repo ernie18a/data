@@ -1,0 +1,68 @@
+The indicator calculates confirmed swing highs and swing lows, then uses them to build a weighted pivot center. An ATR-based adaptive trail is calculated around this center to determine the current trend direction.
+A bullish trend is displayed with the bullish trail color, while a bearish trend is displayed with the bearish trail color. When the trend changes direction, the indicator can display BUY or SELL tags and generate terminal, push, or email notifications.
+Optional features include:
+Confirmed swing-high and swing-low markers
+Weighted pivot center line
+Latest confirmed support and resistance levels
+BUY and SELL signal tags
+Closed-candle or live-candle alerts
+EA-accessible signal and trend buffers
+Who Is This Indicator For?
+This indicator is suitable for:
+Trend-following traders
+Swing traders
+Intraday traders
+Traders looking for structured trend-reversal signals
+Traders who use pivot highs and lows for market structure analysis
+EA developers who need accessible trend and signal buffers
+Traders who want ATR-adjusted signals that respond to changing volatility
+It can be used on Forex, metals, indices, cryptocurrencies, and other instruments available in MetaTrader 5.
+How to Check the Signals
+BUY Signal
+A BUY signal appears when the indicator changes from a bearish trend to a bullish trend.
+Look for:
+The trail changing to the bullish color
+A BUY tag appearing on the chart
+The Trend Direction buffer changing from
+-1
+to
+1
+The BUY signal becomes more reliable when confirmed after the candle closes.
+SELL Signal
+A SELL signal appears when the indicator changes from a bullish trend to a bearish trend.
+Look for:
+The trail changing to the bearish color
+A SELL tag appearing on the chart
+The Trend Direction buffer changing from
+1
+to
+-1
+The SELL signal becomes more reliable when confirmed after the candle closes.
+Recommended Signal Confirmation
+For safer signal checking:
+Enable closed-bar alerts.
+Wait for the signal candle to close.
+Confirm that price remains on the correct side of the trend trail.
+Check the higher-timeframe trend.
+Avoid taking signals during low-volatility or sideways market conditions.
+Use proper stop-loss and risk-management rules.
+The indicator should not be used as a complete trading system by itself. Signals should be confirmed with market structure, support and resistance, volatility, or another suitable trading method.
+Recommended Timeframes
+The indicator can be used on all MetaTrader 5 timeframes, but it generally performs better on:
+M15 and M30
+for intraday trading
+H1 and H4
+for swing trading and more stable trend signals
+D1
+for long-term trend analysis
+For most users,
+H1 is the best balanced timeframe
+because it provides clearer trend changes with less market noise.
+Lower timeframes such as
+M1 and M5
+may produce more frequent signals, but they can also generate more false reversals during sideways or highly volatile market conditions.
+A practical approach is to check the main signal on
+M15 or H1
+and confirm the broader trend using
+H1 or H4
+.

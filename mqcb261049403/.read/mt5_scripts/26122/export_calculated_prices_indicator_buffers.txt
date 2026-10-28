@@ -1,0 +1,1 @@
+Tool extracts ohlc, volumes, median, weighted, typical, heiken-ashi ohlc, body, range, true range & all indicator buffers on chart

@@ -1,0 +1,5 @@
+Three Adaptive Moving Average indicators from three different timeframes displayed on the same chart.
+Figure 1. The AMA_3HTF and AMA_3HTF_ indicators
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14664

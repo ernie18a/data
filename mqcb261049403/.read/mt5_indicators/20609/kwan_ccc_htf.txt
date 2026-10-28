@@ -1,0 +1,16 @@
+The
+KWAN_CCC
+indicator with the possibility to change the indicator timeframe in input parameters.
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// Indicator chart period (timeframe)
+For the indicator to operate, the
+KWAN_CCC.ex5
+indicator must be added to the <terminal_data_directory>\MQL5\Indicators folder.
+Fig.1. Indicator KWAN_CCC_HTF
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20609

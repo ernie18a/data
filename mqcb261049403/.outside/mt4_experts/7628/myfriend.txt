@@ -1,0 +1,8 @@
+Author: Nick A. Zhilin
+Expert Advisor that has been repeatedly discussed on the
+forum
+. The report is there as well.
+Requires the DC indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7628

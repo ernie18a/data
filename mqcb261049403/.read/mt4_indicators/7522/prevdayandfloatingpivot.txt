@@ -1,0 +1,2 @@
+Author: mbkennel
+Indicator PrevDay And Floating Pivot.

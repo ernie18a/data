@@ -1,0 +1,14 @@
+The indicator adds signal arrows on the specified day of the week and time:
+If the Close price of a candlestick preceding the given one is lower than the Open price of the specified day of the week, then an up arrow is drawn at the given candlestick;
+If the Close price of a candlestick preceding the given one is higher than the Open price of the specified day of the week, then a down arrow is drawn at the given candlestick;
+The indicator allows selecting the day of the week and the hour of that day to check, so it has two configurable parameters:
+Day of week
+- the day of the week to check;
+Hour of day
+- the hour of the day.
+Note that arrows may not be placed in some cases: for example, if you use the H4 chart and select a candlestick with the time which is not a multiple of 4 (3, 11, 7 etc.), the indicator will not find such candlesticks on the H4 chart, so will not draw arrows.
+Fig.1 H4, Monday, 8 hours
+Fig.2 H4, Monday, 16 hours
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20205

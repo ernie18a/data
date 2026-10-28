@@ -1,0 +1,12 @@
+ProfitTrailing is to realize virtual profit trailing.
+Parameters:
+minlots: the min lots unit for calculation,usually is 0.01;
+minlotsprofittrailingsl: profit trailing stoploss per minlots, default is 2.2, for example,when the order lots is 0.01,current profit is 3, the orders virtual profit stoploss is 0.8(3 - 2.2), when the lots is 0.02, current profit is 10, the orders virtual profit stoploss is 5.6(10-(0.02/0.01)*2.2);
+minlotsprofittp: profit take per minlots, when profit is great than minlotsprofittp,close the order immediately;
+slippage: slippage when close order.
+This EA is suitable for any charts,it check all orders profit every 2 second with OnTimer(),and record the data in arrays.
+Advantage:
+Maximize profit with low risk,just like trailing stop;
+Hide the trailing stop/stop loss/take profit positions,for some brokers may increase spread(Ask - Bid) factitiously.
+Note:
+This EA is created days ago and still under real account testing, any bugs or ideas,please kindly tell me.

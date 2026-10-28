@@ -1,0 +1,5 @@
+Expert Advisor that will close all orders and disable another Expert Advisor / AutoTrading at desired level.
+Attach on any symbol and any timeframe.
+Features:
+Set your equity take profit. When your equity reaches the Take Profit Level (USD), EA will close all open orders and disable AutoTrading, so you can withdraw profit and start your EA again.
+Set your equity stop loss. When your EA gone crazy and wild, this EA will close all open orders and disable AutoTrading, so you can protect your equity from margin call by loss because of an Expert Advisor.

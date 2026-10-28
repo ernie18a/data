@@ -1,0 +1,58 @@
+Simple multicurrency
+trend indicator
+. You can modify it according to your taste (timeframes, pairs).
+If you want to
+modify
+it, search for this in the code:
+//+------------------------------------------------------------------------------------------------------------------+
+// YOU CAN CHANGE THESE PARAMETERS ACCORDING TO YOUR TASTE:
+//+------------------------------------------------------------------------------------------------------------------+
+int
+tfnumber      =
+5
+;
+// Number of the timeframes
+int
+tframe[]      = {
+5
+,
+15
+,
+30
+,
+60
+,
+240
+};
+// Timeframes in minutes
+double
+IndVal[][
+5
+];
+// Be the second array-index equal with tfnumber
+int
+NumberOfPairs =
+8
+;
+// Number of the pairs
+string
+Pairs[]       = {
+"EURUSD"
+,
+"GBPUSD"
+,
+"AUDUSD"
+,
+"NZDUSD"
+,
+"USDJPY"
+,
+"GBPJPY"
+,
+"EURJPY"
+,
+"USDCHF"
+};
+// Requested pairs
+//+------------------------------------------------------------------------------------------------------------------+
+//+------------------------------------------------------------------------------------------------------------------+

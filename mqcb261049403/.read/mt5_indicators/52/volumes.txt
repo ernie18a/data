@@ -1,0 +1,8 @@
+The
+Volumes
+indicator shows volumes with different colors depending on the volume changes.
+The Indicator bars have two colors - green and red. The green color means that volume of the current bar is higher than volume of the previous bar. The red color, contrary, means that volume is lower than at previous bar. There is an option to choose the volumes used - tick/real volumes, the colors also can be changed.
+Volumes indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/52

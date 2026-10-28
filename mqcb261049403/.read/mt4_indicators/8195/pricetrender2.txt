@@ -1,0 +1,13 @@
+The indicator is used to check price locations.
+To see more details, please go to
+this link
+.
+TimeFrame=60,
+Price=0,
+Ma1Type=0,
+Ma1Price=0,
+Ma1Length=24,
+Ma2Type=0,
+Ma2Price=0,
+Ma2Length=5;
+PriceTrender2

@@ -1,0 +1,11 @@
+Wolfe Wave Dashboard v1.25 is a professional MetaTrader 5 indicator designed as a multi-symbol, multi-timeframe monitoring tool. It continuously scans up to 20 symbols across selectable timeframes (M1 to MN1) and identifies the freshest valid Wolfe Wave patterns based on strict geometric rules (alternating pivots, convergence of lines 1-3 and 2-4, line tolerance, minimum/maximum pattern width, etc.).
+Key features:
+Highly optimized and chunked scanning engine that only processes new closed bars, keeping CPU usage low even with many symbol/timeframe combinations.
+Clean interactive dashboard showing Symbol, Timeframe, Direction, Pattern name, Age (bars since point 5), historical Average Time-To-Target (TTT), and an “Open” button.
+One-click chart opening that automatically draws the complete pattern (trend lines 1-3 & 2-4, filled triangle, numbered labels, entry arrow, and optional target line 1-4).
+Configurable alerts (popup, sound, email, push notification).
+Persistent TTT statistics stored in a CSV file for long-term average tracking.
+Extensive input parameters for performance tuning, pivot strength, pattern size limits, visual appearance, and dashboard scaling/font size.
+The code is well-structured, robust, and focused on stability and efficiency, making it suitable for both discretionary traders and systematic multi-symbol monitoring.
+NOTE:
+Disclaimer: Price will not always reach the EPA line.

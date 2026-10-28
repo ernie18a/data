@@ -1,0 +1,5 @@
+This indicator separate Buy Volume and Sell Volume .. you never see like this before
+It Draws three histogram:
+Red - Sell Volume
+Green - Buy Volume
+Yellow - Defrence

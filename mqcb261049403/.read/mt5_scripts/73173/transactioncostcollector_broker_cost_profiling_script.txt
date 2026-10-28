@@ -1,0 +1,262 @@
+Triple-barrier labeling pipelines frequently use an arbitrary constant (0.5–1.0%) or a legacy spread assumption as the
+min_ret
+threshold. A threshold set below the actual round-trip transaction cost causes the pipeline to label cost-driven noise as tradeable signal. The labeled dataset then systematically overstates edge, and any model trained on those labels overfits to an artifact of the labeling scheme rather than to genuine market structure.
+TransactionCostCollector.mq5
+is a standalone script that resolves the data-collection step of this problem. Version 3.00 samples the spread distribution directly from tick data via
+CopyTicksRange()
+— not from bar-resolution spread history — reads the broker's swap rates, symbol and execution properties, and commission diagnostics for the attached chart symbol, and exports everything to a structured CSV file. The CSV is consumed by the companion Python class
+TransactionCostModel
+, which converts all costs to fractional returns and computes the instrument-specific
+min_ret
+threshold for your labeling call.
+Three-panel illustration of TransactionCostCollector output: intraday cost breakdown by session (a), full cost distribution (b), and percentile curve for min_ret selection (c)
+Version History
+v1.00
+— initial release. Spread distribution sampled via
+CopySpread()
+at bar resolution into a single
+spread_summary
+section.
+v2+
+— added a
+status
+row on both the success and failure export paths, so a partial or failed export can be detected from the CSV itself rather than surfacing as an unrelated-looking missing-section error downstream.
+v3.00 (current)
+— replaced
+CopySpread()
+with direct tick sampling via
+CopyTicksRange()
+, in response to reader feedback that
+CopySpread()
+returns the lowest spread registered within a bar's timespan rather than the spread a trade actually crosses.
+spread_summary
+is gone, replaced by four independently-weighted distributions (see below) plus an optional audit of the old broker-stored bar field against real ticks. Also added: symbol currency identifiers, an
+execution_constraints
+section, and a
+sampling_diagnostics
+section reporting tick-sampling coverage.
+CSVs from v1.00/v2 are not compatible with the current Python loader
+— re-run the script to get a v3.00 export.
+What the Script Collects
+The script collects the following for a single symbol in one run:
+Spread
+— sampled tick by tick from
+CopyTicksRange()
+over the requested lookback window, not from bar-resolution history. Three independently-weighted distributions are reported (mean, standard deviation, and percentiles p25–p99, in both points and pips):
+tick-weighted
+(one weight per tick),
+time-weighted
+(weighted by dwell time until the next tick — the unconditional quote distribution), and
+execution-conditional
+(the prevailing quote at each boundary of a configurable execution timeframe — use this one for cost modeling). Also computed per hour of day, broker time.
+Bar-field audit
+(optional,
+InpAuditBarField
+) — reconstructs each M1 bar from its own ticks and compares against the broker-stored M1 spread field, reporting what that field actually stores (bar minimum, open, close, or maximum) on the current broker and terminal build, since this is undocumented and has changed across builds. Reported for comparison only; never used as a cost estimate.
+Symbol and execution properties
+— point size, tick size/value, contract size, pip factor, the base/profit/margin currency triple (used to filter a news calendar down to events that actually correlate with the traded pair), and the execution constraints that bound order placement and sizing (stops/freeze level, volume min/max/step/limit, filling mode, trade mode).
+Swap
+— long and short overnight swap rates read directly from
+SYMBOL_SWAP_LONG
+/
+SYMBOL_SWAP_SHORT
+, the swap mode, and the weekday on which triple swap is charged.
+Commission
+— diagnostic only. MQL5 does not expose per-lot commission as a direct API call on all brokers. The script records
+ACCOUNT_COMMISSION_BLOCKED
+and a note explaining how to derive the per-lot rate from a single reference trade.
+Sampling diagnostics
+— days requested versus days with usable ticks, ticks accepted/invalid/clamped, execution-boundary samples versus missed boundaries, and dwell-time totals. Check this before trusting any other section: low coverage here means the other sections are built from a thinner sample than the lookback window suggests.
+Input Parameters
+Parameter
+Default
+Description
+InpDays
+30
+Lookback window in calendar days. Ticks are fetched one day at a time across the window; a longer window gives a more representative distribution across sessions but takes longer to run and needs more tick history held by the terminal.
+InpExecTF
+PERIOD_H1
+Execution timeframe used only for the execution-conditional spread distribution — the prevailing quote at each boundary of this timeframe. Independent of the chart's own timeframe, which no longer affects sampling now that spread comes from ticks rather than bars.
+InpAuditBarField
+true
+When true, also reconstructs each M1 bar from its own ticks and audits it against the broker-stored M1 spread field. Set false to skip this (slightly faster; unnecessary once you've confirmed the field's behavior for a given broker and terminal build).
+InpMaxDwellSec
+60
+Cap, in seconds, on how long a quote is assumed to prevail before the next tick. Used by the time-weighted distribution and the execution-boundary check, so a single weekend or holiday gap can't dominate either one.
+InpRetryMs
+200
+Sleep, in milliseconds, between
+CopyTicksRange()
+retries for a given day when the terminal is still fetching history rather than reporting a genuinely empty day.
+InpMaxRetries
+25
+Retries per day before that day is declared to have no usable ticks and skipped.
+InpOutputFile
+(blank)
+Override the output filename. When blank (default), the file is named
+<SYMBOL>_costs.csv
+— for example,
+EURUSD_costs.csv
+for EURUSD. The file is written to
+MQL5\Files\
+in the terminal data folder (
+FILE_WRITE | FILE_CSV
+mode).
+CSV Output Format
+The CSV uses a five-column structure:
+section
+,
+key
+,
+value
+,
+unit
+,
+note
+. Sections are:
+symbol_properties
+— point size, tick size/value, contract size, pip factor, and the base/profit/margin currency identifiers.
+execution_constraints
+— stops/freeze level, volume min/max/step/limit, filling mode, trade execution and trade mode, initial margin.
+swap
+— long/short rates, swap mode, triple-swap weekday.
+commission
+— diagnostic value and derivation note.
+sampling_diagnostics
+— tick-sampling coverage: days requested vs. with ticks, tick counts, execution-boundary hits and misses, dwell-time totals.
+spread_tick_weighted
+,
+spread_time_weighted
+,
+spread_exec_conditional
+— mean, standard deviation, and percentiles (p25–p99, points and pips) under each weighting scheme.
+spread_exec_conditional
+is what the companion Python loader reads by default.
+spread_bar_field
+and
+bar_field_audit
+— written only when
+InpAuditBarField
+is true; the broker-stored M1 field's distribution and how it compares to the same bars' own ticks.
+spread_by_hour
+— mean spread (pips) for each hour of day with at least one tick, one row per hour, broker time.
+status
+—
+"ok"
+on a complete export, or
+"error"
+with a reason if tick sampling produced no usable data; the sections above remain valid either way.
+How to Run
+Place
+TransactionCostCollector.mq5
+in your
+MQL5\Scripts\Downloads\
+folder and compile in MetaEditor.
+Open a chart of the target symbol. The chart's own timeframe is irrelevant — spread is sampled from ticks, not chart bars — but the symbol must match the instrument you want a cost model for.
+Drag the script onto the chart. The input dialog will appear (controlled by
+#property script_show_inputs
+). The defaults are reasonable for a first run; set
+InpDays
+and
+InpExecTF
+deliberately if your strategy's lookback or holding timeframe differs from them, and click OK.
+Retrieve the output CSV from
+MQL5\Files\
+in the terminal data folder (
+File → Open Data Folder
+in MetaTrader 5).
+Use
+MQL5\Files\afml\transaction_costs.py
+to read the CSV and prepare the data for model training.
+Integrating with Python
+The companion Python class
+TransactionCostModel
+loads the CSV and computes
+min_ret
+for triple-barrier labeling:
+from
+afml.transaction_costs
+import
+load_cost_model
+import
+pandas
+as
+pd
+
+model = load_cost_model(
+    csv_path           =
+"EURUSD_costs.csv"
+,
+    spread_section     =
+"spread_exec_conditional"
+,
+# default; matches this script's own recommendation
+spread_percentile  =
+"p95_pips"
+,
+# conservative
+slippage_pips      =
+0.4
+,
+    commission_per_lot =
+7.0
+,
+# from reference trade
+lot_size           =
+0.01
+,
+)
+
+close = pd.read_parquet(
+"EURUSD_H1.parquet"
+)[
+"close"
+]
+min_ret = model.min_ret_for_symbol(
+    price_series    = close,
+    holding_days    =
+1.0
+,
+    cost_multiplier =
+1.5
+,
+# 1.5x break-even
+)
+print(f
+"min_ret = {min_ret:.6f}"
+)
+load_cost_model()
+raises a specific error if it's pointed at a CSV from v1.00/v2 — it will not silently accept the old
+spread_summary
+section.
+swap_cost_frac()
+also recognizes every swap-mode string this version of the collector writes, including
+reopen_current
+/
+reopen_bid
+, for which it raises rather than approximating (those modes recompute swap by reopening the position at a new reference price each night, which no fixed per-night rate models correctly).
+Notes on Commission
+The per-lot commission rate cannot be read programmatically on all brokers. The recommended procedure is: open a reference trade of exactly 1.0 standard lot on a demo account, read
+ACCOUNT_COMMISSION_BLOCKED
+from the terminal immediately after the trade opens, then close the trade. The blocked value divided by 1.0 gives the per-lot rate. Confirm against the account statement. This needs to be done once per broker relationship.
+Why p95, Not the Mean
+The mean spread is dominated by quiet periods: Asian session, overnight consolidation, and orderly trending conditions. Strategy entries, however, often coincide with the moments of highest uncertainty (which is when models generate signals). Using the 95th-percentile spread — read from
+spread_exec_conditional
+by default — as
+min_ret
+input accounts for the cost environment at typical entry conditions rather than at average market conditions.
+References and Companion Articles
+López de Prado, M. (2018).
+Advances in Financial Machine Learning
+, Chapter 3 (Labels), p. 44–47. Wiley.
+Original implementation and derivation:
+MetaTrader 5 Machine Learning Blueprint — Part 14: Transaction Cost Model
+by Patrick M. Njoroge.
+This version's spread-sampling refactor, the CSV compatibility fixes it required on the Python side, and a companion
+CalendarCollector.mq5
+for high-impact news events are covered in
+Machine Learning Under Constraint — Part 3
+, by the same author.
+Companion Python class
+TransactionCostModel
+and usage examples are included in the article download package.

@@ -1,0 +1,2 @@
+Description:
+This EA is based on the 10 SMA moving average and another things which could be better - It also make sounds according to the context.

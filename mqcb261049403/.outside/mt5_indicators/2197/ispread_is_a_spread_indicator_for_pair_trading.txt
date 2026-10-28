@@ -1,0 +1,49 @@
+Using this indicator you can create your synthetic symbol based on two selected pairs.
+The indicator algorithm is the following:
+Start date
+- select the start day to build a synthetic symbol. Required to avoid using unnecessary old history data.
+Symbol 1/2
+- select two initial pairs.
+The next step is to prepare input data.
+Action
+- select an arithmetic operation, using which two series will be merged into one. There are 4 available operations:
+- + / *
+I used the difference and ratio. Probably the sum and the product may also be necessary, but I've never done this. I would be glad if someone writes to me how they can be used.
+Symbol reverse 1/2
+- invert a selected series if correlation is negative.
+Symbol degree 1/2
+- Exponentiation of selected series. I know that it is necessary, although I never use this option because I do not understand exactly why the series needs to be exponentiated. I think this option can be used to equalize dimensions of both series, but I use multipliers for this purpose. If the assumption is true, then what is the benefit of one approach over another?
+Symbol multiplier 1/2
+- multiplying a series by a certain number. I use it to equalize series dimensions.
+Logarithms
+- convert the resulting series into a logarithmic scale. If I use the logarithm, I prepare the final series using the difference between two original series. If you do not use it, then select ratio as the action. Generally by converting to this scale you can avoid the influence of the quadratic trend. However I do not see any difference in short segments, so often I do not use it and select an action - ratio. If I am mistaken, I will be glad to receive your comments.
+Smoothing.Period
+- When all actions are done, before you merge two series into one, sometimes a light smoothing of resulting data is used. I smooth this series using a simple MA with a specified period. It virtually makes no distortion, but can cut out some spikes. You may choose not to use smoothing by specifying 0 for this parameter. When using a short period to removing the trend (see options further) I do not use smoothing. Smoothing causes no data loss when applied to large values, while making the final series smoother with less noise.
+That's all we need to do to prepare data and create a synthetic symbol. That's what we have done:
+We have taken EURUSD:
+We have taken GBPUSD:
+That's a synthetic symbol:
+The last step is to determine the required deviation to find entry points:
+Selecting an algorithm
+- Detrend using a simple MA or the First Difference. Remove the trend from a resulting series. I know two ways of how to do this (I prefer the second one). The first way is to remove the MA with a required period (lag) from the resulting series. The period is selected on the basis of the investment horizon. The MA is based on a simple algorithm. It is still not clear whether it make sense to use the exponential and what is the difference. I will be glad to receive your comments on this. The second way: take the first difference twice, first for every pair, then the difference between the results. The final results of the two ways are similar when there are no strong movements on one of the series. When there is a strong movement, the first method gives a more rapid return of the synthetic result to 0, which is often a false indication. A remark for the first difference: Instead of Close[1]-Close[2] I use Close[1]/Close[2], i.e. the "first ratio", although I've never seen this term.
+Period for the algorithm
+- a lag, an offset. If set to 0, the synthetic symbol is not modified.
+Show levels
+- show or hide deviation levels, crossing which indicates a decision to enter the market. I use three levels in both directions: red, yellow, green.
+Level calculation method
+- I know three ways to determine these levels. Method 1 (called normalization in 0..1 with an offset) - detrended synthetic symbol is normalized in a unit range, followed by offset = -0.5 so that fluctuations are around 0. Most often I use this method. However, please note that the initial data available when we do not have stable extremes are still normalized, and these values should not be taken into account. Since the indicator does not redraw the past after the updated extrema come, it will look as follows on a chart:
+But after two or three good divergences of initial series you can start trusting these levels. Extremes for normalization are not lost as data are accumulated.
+Method 2 (called levels of extrema) - just tracking the absolute maximum deviation and its division into 3 levels for entering the market.
+Features are the same as for normalization - it is not recommended to trust such levels until you receive stable extrema.
+When using this method we see the following picture:
+There is a significant advantage of using any of the above methods for drawing levels - the levels are not narrowed. But there is also one drawback - if there is a spike, subsequent calculations are guided by it. To remove it, the indicator has one more parameter called Levels Coefficient (it's just a factor that allows you to manually narrow or expand the levels for market entering).
+Method 3 for drawing levels - calculation of standard deviation. This method has not been implemented in the indicator, because it causes level narrowing which is unacceptable in my opinion. As a result, levels look like bubbles that are continually narrowed and expanded. Unfortunately I cannot provide screenshots since I've removed this calculation method from all indicators. Another drawback is that you constantly have to check all the available data to correctly calculate all this.
+P.S. The indicator has migrated from MetaTrader 4 to check some ideas in multitester, but there are some remarks:
+The indicator draws some noise if it can't get all the data. I couldn't find out the reason, this does not happen in MetaTrader 4;
+The indicator could use previous data when meeting data omissions in history , but because of paragraph 1 I left the data empty, so we can see exactly where data are omitted.
+If something strange is drawn, refresh the chart, change period, pair etc.
+I tried to use the timer when there were no data - the result was unsatisfactory, so I deleted the timer.
+I suspect that 1-4 result from my "not good enough" knowledge of MQL5, so I would appreciate much your comments.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2197

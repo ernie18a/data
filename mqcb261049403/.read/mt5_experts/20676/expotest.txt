@@ -1,0 +1,23 @@
+The EA uses the indications of SAR for making trading decisions. If the Ask price is higher than the indicator values, we assume buying; if it is lower, then selling.
+Settings
+TimeFrames
+- selecting the chart timeframe for signals from the indicator;
+SL
+- stop loss level;
+TP
+- take profit level;
+Volume
+- volume of orders; if it is 0, the volume will be defined automatically according to the Risk setting;
+Risk
+- risk setting in percents; it runs at Volume = 0;
+MAGIC
+- identifier of the EA's orders;
+Slippage
+- the maximum allowed slippage;
+step
+- price changing step - acceleration factor, for indicator SAR;
+maximum
+- maximum step, for indicator SAR.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20676

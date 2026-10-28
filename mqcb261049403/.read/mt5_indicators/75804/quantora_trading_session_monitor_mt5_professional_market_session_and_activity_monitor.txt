@@ -1,0 +1,5 @@
+Quantora Trading Session Monitor MT5 is an indicator that tracks global trading sessions and current market activity in real time. It does not open or manage trades and is designed for monitoring and analysis.
+The tool shows the status of Sydney, Tokyo, London, and New York sessions, including whether they are active or closed, how long until they open or close, and which sessions are currently overlapping. It also identifies the next upcoming session and displays a live countdown.
+In addition to session tracking, it analyzes market activity using ATR, spread, and the current daily range. This helps you quickly understand whether market conditions are quiet, normal, or active without using multiple indicators.
+All information is displayed in a clear dashboard with both UTC and broker server time, making it easier to follow global market timing and activity in one place.
+Suitable for traders who want a practical overview of trading sessions and market conditions in real time.

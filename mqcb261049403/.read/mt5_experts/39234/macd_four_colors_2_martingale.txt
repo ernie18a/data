@@ -1,0 +1,6 @@
+EA
+The EA works with a series of positions in one direction: either BUY or SELL (the direction depends on the first deal in the series).
+Each subsequent position is opened at the best price and with increased volume.
+Example of a series of SELL positions
+Pic. 1. MACD Four Colors 2 Martingale
+The series can be closed if: 'Maximum drawdown (in money)' loss is reached or if 'Target profit (in money)' profit is reached

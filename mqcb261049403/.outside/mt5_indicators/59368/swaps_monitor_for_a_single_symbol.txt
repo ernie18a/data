@@ -1,0 +1,3 @@
+A simple utility for monitoring long and short swaps of a single symbol. If your broker-dealer's swaps are specified in points instead of account currency, this utility automatically converts points into account currency. Swaps are tripled on Wednesday. Horizontal and vertical alignment can be adjusted in the inputs.
+08/25/2025 EDIT:
+Added swap adjusted for input lot size in version 5.

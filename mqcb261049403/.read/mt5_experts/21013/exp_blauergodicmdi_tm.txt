@@ -1,0 +1,46 @@
+A trading system using oscillator
+BlauErgodicMDI
+with the option of strictly setting a trading time interval.
+A trade decision is made when the histogram changes direction, at the breakthrough of the zero line or when the color of the signal line cloud changes. The following input parameter is used for selecting an entry algorithm option:
+input
+AlgMode Mode=twist;
+//market entering algorithm
+It is possible to specify trading time in input parameters to trade in the specified time interval:
+input
+bool
+TimeTrade=
+true
+;
+//Permission to trade by time intervals
+input
+HOURS StartH=ENUM_HOUR_0;
+//Trading start (Hours)
+input
+MINUTS StartM=ENUM_MINUT_0;
+//Trading start (Minutes)
+input
+HOURS EndH=ENUM_HOUR_23;
+//Trading end (Hours)
+input
+MINUTS EndM=ENUM_MINUT_59;
+//Trading end (Minutes)
+Two variables (hours and minutes) are provided for the operation start time, and two similar variables for the end time.
+Default settings enable the Expert Advisor to trade the whole trading session from 0:00, while all positions are closed at 23:59.
+If the start time is later than the specified end time, the Expert Advisor will close positions the next day, at the specified time.
+For the EA to be compiled correctly, the compiled file of indicator
+BlauErgodicMDI.ex5
+must be in the terminal_data_directory\MQL5\Indicators folder. Upon compiling the EA, the indicator is in the EA's code as a resource, so its presence in the relevant terminal folder is not necessary.
+Note that the TradeAlgorithms.mqh library file allows using Expert Advisors with brokers who offer
+nonzero spread
+and the option of setting Stop Loss and Take Profit
+together with position opening
+. You can download other versions of this library at
+TradeAlgorithms
+.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. Examples of deals on the chart
+Testing results for 2016 at AUDUSD H4:
+Fig. 2. Testing results chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21013

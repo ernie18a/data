@@ -1,0 +1,14 @@
+Aggregate statistics such as win rate or profit factor cannot show whether the probability of a loss depends on what a trader just did, such as sizing up right after a previous loss. Neural Loss-Pattern Auditor tests for exactly that kind of behavioral pattern, directly on the trader's own trade history.
+The main script builds an eight-feature dataset per closed deal and prints a full diagnostic report to the Experts tab:
+Accuracy uplift
+— the trained network's validation accuracy against the accuracy of always guessing the majority class.
+Calibration table
+— each probability bin's average prediction against the actual observed loss frequency in that bin.
+Permutation feature importance
+— which of the eight features the network actually relies on, ranked by the accuracy drop when that column is shuffled.
+A composite score (A to F)
+combining the three diagnostics, with written recommendations.
+Input.
+With the default InpUseDemoData=true, the script generates 480 synthetic closing deals with a known injected pattern (larger position size right after a loss) and analyzes those, so the output is visible immediately. Set InpUseDemoData=false to read real closed-deal history instead, through HistorySelect() and the HistoryDealGet*() functions; no file or CSV is needed in this mode.
+Parameters.
+InpMinTrades sets the minimum closed trades required before training; InpValidationFraction sets how much of the most recent history is held out for validation; InpHiddenNeurons, InpLearningRate, and InpEpochs control the network; InpCalibrationBins and InpPermutationRepeats control the two diagnostics; and InpWeightUplift, InpWeightCalibration, InpWeightTopFeature plus the three *Scale and four Grade inputs control the composite score.

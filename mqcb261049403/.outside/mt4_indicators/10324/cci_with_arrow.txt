@@ -1,0 +1,5 @@
+Description:
+It can be used for scalpers and to determine if a trend is gaining or loosing momentum.
+For scalper:use on m5 attach with period M15,M30 and H1 where there exist an arrow,place an order.
+For momentum: the arrow indicates where the new high/low is greater/lesser than the previous high/low,hence can be used to predict if the trend would fail or pass.
+Image:

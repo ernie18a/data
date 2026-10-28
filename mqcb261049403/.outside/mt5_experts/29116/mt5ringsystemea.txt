@@ -1,0 +1,8 @@
+It's a triangular arbitrage system (three pairs correlation system) to use 3 currencies to make 3 pairs to open hedge orders on those.
+The expert starts opening six orders for each ring (3 plus and 3 minus) and waits to move prices in one direction to make a grid of orders.
+The expert can use a maximum of 8 currencies to make 28 pairs and make 56 rings.
+It is important the order of currencies is from the strongest to the weakest.
+Strongest... EUR/GBP/AUD/NZD/USD/CAD/CHF/JPY ...weakest.
+Canto inputs minimum of three currencies and a maximum eight.
+All information about parameters you can see on
+blog.

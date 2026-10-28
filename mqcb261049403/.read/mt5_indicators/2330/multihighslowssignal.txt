@@ -1,0 +1,8 @@
+The MultiHighsLowsSignal indicator shows information on active trends using the values of seven
+HighsLowsSignal
+indicators from different timeframes.
+One of the seven indicator lines corresponds to each HighsLowsSignal indicator. The trend direction displayed by the line color corresponds to the direction of the last signal.
+Figure 1. The MultiHighsLowsSignal indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2330

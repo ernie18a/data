@@ -1,0 +1,10 @@
+Real author:
+tageiger
+When applied to financial markets this method is usually used to determine the moments of prices extreme deviation from a "standard" level.
+Creation of a trend line using linear regression is based on the least squares method. This method assumes that a straight line is created that pass through the price points so that the distance between the prices points to the line is as short as possible. In an attempt to predict tomorrow prices, it is logical to assume that they will be located close to the values of today's prices. If there is an uptrend, the best guess would be that the price value will be close to the current one with a certain upward deviation. Regression analysis provides statistical confirmation of these assumptions.
+This indicator was first implemented in MQL4 and published in
+CodeBase at mql4.com
+09.10.2007.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/765

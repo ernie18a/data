@@ -1,0 +1,9 @@
+How it's working?
+The premise is simple. The entrance looks like this ...
+Force=((Bid-close)/close)*10000;
+example:
+Force > 10% (see input parameters)  Opening Buy
+Force < -10% (
+see input parameters
+)
+Opening Sell

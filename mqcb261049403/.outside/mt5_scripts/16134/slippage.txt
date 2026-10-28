@@ -1,0 +1,35 @@
+During the execution, slippages induce
+non-system
+profit/loss.
+This script outputs the values of these slippages in the account currency.
+It is possible to evaluate the order execution of the trading system — contribution of slippages in its expected payoff.
+In the "real ticks" mode, the tester executes both limit and TP orders with unrealistically high positive slippage. Solving the problem if imaginary (inflated) backtest results, caused by this peculiarity of the MT5 tester, is possible by calling the following OnTester and/or OnDeinit
+#include
+<SlipPage.mqh>
+// After the backtest completes, first the OnTester, then the OnDeinit are called
+double
+OnTester
+(
+void
+)
+{
+// Returns the backtest balance net of positive slippages of limit and TP orders in the tester (running instrument)
+return
+(SLIPPAGE::OnTesterBalance());
+}
+// After the backtest completes, first the OnTester, then the OnDeinit are called
+void
+OnDeinit
+(
+const
+int
+Reason )
+{
+// Subtracts the value of positive slippages of limit and TP orders (running instrument) from the backtest balance
+SLIPPAGE::CorrectBackTestBalance();
+return
+;
+}
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16134

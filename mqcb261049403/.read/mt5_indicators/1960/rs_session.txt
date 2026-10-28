@@ -1,0 +1,32 @@
+Real author:
+DVYU inc.
+The indicator allows to use a special background color for marking the price chart in the period of day selected in the input parameters.
+Indicator input parameters:
+input
+string
+SessionSirName=
+"Asian"
+;
+// Session name
+input
+Hour   StartHour=H08;
+// Session start hour
+input
+Min    StartMinute=M00;
+// Session start minute
+input
+uint
+SessionTime=
+400
+;
+// Time of the session in minutes
+input
+color
+Color_Session =
+clrLavender
+;
+// Session color
+The RS_session indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1960

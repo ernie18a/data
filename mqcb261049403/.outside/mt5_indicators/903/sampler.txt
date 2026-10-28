@@ -1,0 +1,12 @@
+The indicator (i_Sampler.mq5) calculates perfect market entry signals, which can be used for neural network training.
+It has two buffers:
+buffer 0 (green line) - analog signal, calculated as a ratio of the positive/negative price change (normalized to range [-1, +1]) during bars_future bars forward;
+buffer 1 (two-color histogram) discrete signal, the values are: -1(sell), 0(wait), +1(buy).
+The discrete signal can be calculated 2 different methods:
+method 1: the signal appears when analog signal became greater than threshold, specified by porog input parameter;
+method 2: the signal appears when TP/SL conditions are satisfied.
+The e_CheckSampler.mq5 Expert Advisor is created for checking of the indicator values.
+The Expert Advisor uses the data from file, created by indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/903

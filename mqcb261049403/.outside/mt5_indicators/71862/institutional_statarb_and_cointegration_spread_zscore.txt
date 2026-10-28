@@ -1,0 +1,31 @@
+The Flaw in Directional Trading & Simple Correlation
+Most retail algorithms attempt to predict directional market moves, exposing capital to unpredictable macroeconomic shocks. To mitigate this, some traders use simple "Correlation" across pairs (e.g., EURUSD vs GBPUSD). However, correlation is a flawed metric for trading because two assets can be highly correlated while their spread diverges indefinitely.
+The Institutional Edge: Cointegration & StatArb
+Top-tier quantitative hedge funds operate
+Market Neutral
+portfolios through Statistical Arbitrage (StatArb). Instead of predicting direction, they rely on
+Cointegration
+—a mathematical property ensuring that the spread between two historically linked assets will eventually revert to its mean.
+The
+Institutional StatArb Spread Z-Score
+brings this advanced portfolio mathematics directly to your MQL5 terminal.
+Core Quantitative Architecture
+Logarithmic Spread Calculation:
+The engine does not simply subtract prices. It calculates the natural logarithm differential ( Log(Asset A) - Log(Asset B) ) to normalize volatility across instruments with different pricing scales (e.g., Gold vs. Silver).
+Dynamic Spread Z-Score:
+It applies a rolling standard deviation (Z-Score) to the spread. This unbound metric reveals exactly how many standard deviations the current spread has strayed from its historical baseline.
+Multi-Asset Time Synchronization:
+Native MQL5 handling perfectly synchronizes the time-series data between the chart symbol and the secondary injected symbol, ensuring accurate tick-by-tick spread calculation even if one asset has missing broker data.
+How to Execute a Pairs Trade (Market Neutral)
+Attach the Indicator:
+Place it on an asset (e.g., AUDUSD ) and input the naturally cointegrated pair in the settings (e.g., NZDUSD ).
+Identify Divergence:
+Wait for the Spread Z-Score to breach the critical extremes (e.g., +2.5 or -2.5 ).
+Execute the Arbitrage:
+If Z-Score hits
++2.5
+(Spread is too wide): Sell Asset A and Buy Asset B.
+If Z-Score hits
+-2.5
+(Spread is too narrow): Buy Asset A and Sell Asset B.
+Close both legs simultaneously when the Z-Score returns to 0.0 (The Mean).

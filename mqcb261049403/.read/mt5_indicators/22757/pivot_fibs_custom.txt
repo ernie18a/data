@@ -1,0 +1,40 @@
+Real author:
+Archer Trading, LLC
+A set of Fibo levels (pivot points) built on candles of the timeframe specified in the inputs.
+//+----------------------------------------------+
+//|  INDICATOR INPUT PARAMETERS                  |
+//+----------------------------------------------+
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H12
+;
+// Chart period
+input
+double
+FiboRatio1=
+0.99
+;
+input
+double
+FiboRatio2=
+0.382
+;
+input
+double
+FiboRatio3=
+0.618
+;
+input
+int
+Shift=
+0
+;
+// Horizontal indicator shift in bars
+This indicator was first implemented in MQL4 and published in the
+Code Base at mql4.com
+on November 30, 2007.
+Fig.1. Indicator Pivot_Fibs_Custom
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22757

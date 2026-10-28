@@ -1,0 +1,12 @@
+An original indicator that shows buying/selling signals.
+Parameters:
+scaleX=20,
+scaleY=20,
+offsetX=35,
+offsetY=20,
+fontSize=20,
+corner=2,
+symbolCodeBuy=67,
+symbolCodeSell=68,
+symbolCodeNoSignal=73;
+SignalTable

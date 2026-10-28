@@ -1,0 +1,16 @@
+1. NS2-32.zip (85.7 Kb) -- DLL;
+2. EURUSD.zip (2.0 Kb) -- Neuro net itself;
+3. Swetten.zip (2.5 Kb) -- EA;
+4. EURUSDn.zip (3.8 Kb) -- Neuro net in MQL.
+An experimental neuro expert advisor. EURUSD, TF M1.
+Klot's EA was taken as a convenient template-base, if I'm not mistaken (the source is lost). The original external Kohonen's neuro net is replaced with the neuro net of my own making in the EA itself, plus entrances and some other trifles.
+The EA is meant for working on EURUSD, TF M1.
+This is my first work of this kind, so I count on the objective criticism and friendly advices.
+Find the following entry in the EA:
+string defpath="C:\EURUSD.def";
+and change the path within the quotes to the path to *.def file you unpacked from archive.
+Put DLL in Windows\System32\ folder.
+P.S. Sometimes the EA works extremely unstable.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8479

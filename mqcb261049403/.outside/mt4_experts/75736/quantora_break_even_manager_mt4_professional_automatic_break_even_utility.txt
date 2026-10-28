@@ -1,0 +1,4 @@
+Quantora Break Even Manager MT4 is a utility that automatically moves stop loss to the break even level once a defined profit is reached. It does not open trades or generate signals, and focuses only on protecting existing positions.
+The tool monitors open trades and applies break even based on your settings. You can define the trigger level and use an optional offset to secure a small profit. It supports managing manual trades, all positions, or trades filtered by magic number, with separate control for buy and sell orders.
+It also includes symbol filtering and a simple dashboard for monitoring account and trade data. A one-click option allows you to apply break even instantly to eligible trades.
+Suitable for traders who want a simple and consistent way to protect profits automatically.

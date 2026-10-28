@@ -1,0 +1,30 @@
+EA for Automatic Stop Loss, Take Profit, Profit Lock, and Trailing Stop (With Special Methods). SL and TP could be hidden.
+Input parameters
+Changes
+v. 1.0:
+Auto SL and TP.
+v. 1.22:
+Correcting Minimum Stop Level.
+v. 2.0:
+Added modes for SL and TP (Hidden or Placed).
+Added profit lock.
+Added stepping Trailing Stop.
+v. 2.01:
+Added option to enable/disable alert when closed by hidden SL/TP.
+v. 2.03:
+Fixed initial locking profit.
+Fixed trailing stop.
+v. 2.04:
+Fixed trailing stop step that moving against entry price.
+Rearrange lock profit to a function.
+v. 2.05:
+Added Trailing Stop Method (Classic, Step Keep Distance, Step By Step)
+v. 2.06:
+Added Option to Enable/Disable Profit Lock
+Note
+First of all, your orders SL and TP must be set to 0, then this EA will set appropriate SL and TP.
+To disable SL, TP, Profit Lock, and Trailing Stop, set its value to 0.
+Credits
+Dedi Sucianto
+for Profit Lock idea and testing.
+All users who find bugs in this EA.

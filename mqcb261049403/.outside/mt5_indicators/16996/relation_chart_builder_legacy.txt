@@ -1,0 +1,25 @@
+Indicator for building custom charts, which are based on user-defined formula.
+Charts are drawn in bars of the timeframe specified in the indicator settings. Charts of the selected instruments are synchronized in time.
+Spaces in the formula are optional, fractional numbers are only specified using the point.
+To avoid inconsistency in measurement units and to convert everything into the deposit currency, set the InpAlign parameter to true
+Supported operations, by priority of execution:
+Parentheses: (a ... b)
+Exponentiation: a ^ b
+Division: a / b
+Multiplication: a * b
+Addition: a + b
+Subtraction: a - b
+Example of application, to find the separation between the currency baskets for the last 1000 bars on the M1 chart:
+InpDepth =
+1000
+InpPeriod -
+PERIOD_M1
+InpExpression =
+"3 * EURUSD * 1.5 * AUDUSD * GBPUSD - (5 * AUDGBP - 2 * EURGBP) * 1.2 * CHFGBP"
+This results in a chart of the synthetic pair, with the condition of buying 3 lots of EURUSD, 1.5 lots of AUDUSD and so on.
+Idea of the indicator has been adopted from
+here
+and MS Excel.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16996

@@ -1,0 +1,5 @@
+Indicates the number of periods for the calculation of the average line.
+4 Period MA
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7155

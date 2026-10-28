@@ -1,0 +1,13 @@
+Author:
+mladen
+Indicator OnChart Rsi.
+Parameters:
+extern int RSIPeriod =14;
+extern int RSIPriceType = 0;
+extern int maPeriod =20;
+extern int maMethod =1;
+extern int maPrice =0;
+extern int overBought =70;
+extern int overSold =30;
+extern string timeFrame="Current time frame";
+Indicator OnChart Rsi

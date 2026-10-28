@@ -1,0 +1,91 @@
+Risk Guard is not a trading strategy. It never opens a position. Attach it to one chart per account and it watches every position on the account — manual trades and other Expert Advisors alike — and enforces the rules you set. Every rule is an input and can be switched off.
+1. Risk-based lot size, live on the chart.
+Choose risk as a percent of balance or a fixed amount, set the stop distance you trade with, and the panel shows the exact lot size for this symbol. The calculation uses the symbol's tick value, tick size and volume step, so it is correct on gold, indices and crypto CFDs, not only on forex pairs.
+2. Daily loss limit with a lock.
+When today's closed plus floating P/L reaches the limit (a money amount, or a percent of the start-of-day balance), all positions are closed (optional) and every new position is closed the moment it appears — until the next server day. The lock is stored in a terminal global variable, so restarting the terminal or the EA does not clear it.
+3. Maximum open positions.
+The newest position over the cap is closed.
+4. Oversized-trade trim.
+When a position opens, Risk Guard reads its stop-loss distance and computes the lot size your risk setting allows. If the position is larger, the excess volume is closed with a partial close; if even the minimum lot would risk too much, the whole position is closed.
+5. Forced stop-loss.
+Any position opened without a stop-loss gets one at the distance you set.
+6. Spread warning.
+The panel shows WAIT when the spread is above your maximum.
+Every action is written to the Experts log and, optionally, raised as a terminal Alert.
+Recommended use:
+any symbol, any timeframe — the chart is only a place for the panel. EURUSD M1 is used in the screenshot. Leave "Only guard this chart's symbol" off to guard the whole account from one chart.
+Inputs
+Group
+Input
+Default
+Position sizing
+Risk mode
+Percent of balance
+Position sizing
+Risk % of balance
+1.0
+Position sizing
+Fixed risk (account currency)
+50
+Position sizing
+Stop distance (pips) for the lot calc
+20
+Limits
+Enable daily loss limit
+true
+Limits
+Daily loss limit (money, 0 = use %)
+0
+Limits
+Daily loss limit (% of start-of-day balance)
+3.0
+Limits
+Close all positions at limit
+true
+Limits
+Max open positions (0 = off)
+3
+Limits
+Max spread (pips, 0 = off)
+3.0
+Protection
+Add SL to positions opened without one
+true
+Protection
+Forced SL distance (pips)
+30
+Protection
+Trim positions that risk more than the limit
+true
+Protection
+Only guard this chart's symbol
+false
+Protection
+Pop-up alert on every enforcement
+true
+Display
+Show panel
+true
+Display
+Panel corner
+Left upper
+Display
+Panel font size
+10
+A pip is 10 points on 3- and 5-digit quotes and 1 point otherwise.
+How it works
+Enforcement runs in OnTradeTransaction on the deal-add event, so a rejected position is closed in the same tick it was opened. The daily limit counts closed deals (profit + swap + commission) since server midnight plus the floating P/L of open positions, checked every tick and every second on a timer. The daily lock is written to a terminal global variable named after the account login and cleared automatically on the next server day.
+Verified
+Strategy Tester, EURUSD M1, MetaQuotes-Demo, 10,000 USD, hedging account. A test harness opened deliberately bad trades against the EA:
+Risk Guard: new day 2026.06.02, start balance 10000.00
+step 1: 1.00 lot buy without SL
+Risk Guard: forced SL on #2 at 1.16017 - ok
+Risk Guard: #2 1.00 lots > max 0.33 for a 30.0-pip SL - trimmed 0.67 (ok)
+step 2: four 0.01 buys (max 3)
+Risk Guard: 5 open > max 3 - closing newest #4
+Risk Guard: 4 open > max 3 - closing newest #5
+step 3: churn 30 round-trips past the daily limit
+Risk Guard: DAILY LOSS LIMIT HIT - P/L -230.60, limit 50.00. No new positions until tomorrow.
+step 4: 0.01 buy while locked
+Risk Guard: daily limit active - closing EURUSD #73
+SELFTEST DONE: 5 pass, 0 fail

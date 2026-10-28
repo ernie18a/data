@@ -1,0 +1,6 @@
+Description:
+This version 2 of Multi currency pair Indicator
+http://codebase.mql4.com/en/code/10575
+.
+It includes an optional trend line and the color of the label has been changed to red to make it visible on default chart template.
+Image:

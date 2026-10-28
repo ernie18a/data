@@ -1,0 +1,5 @@
+Description:
+Please test this and tell me what you see.
+I don't think it is profitable really, just appears that way. It may be over-fitting, or it may just work well. Enjoy the code anyhow :)
+Indicator for slope must be named: Slope_Direction_Line_Alert Or just use the one I've attached.
+Image:

@@ -1,0 +1,8 @@
+Real author:
+Forest Kirschbaum
+Multiple Timeframe Moving Average. It is set to look at H4 and H1 time frames. This code is for anyone who wants to use a different timeframe than on the current window.
+Recommendations:
+Do not use this for trading, except on demo accounts.
+Use this to find the value of an indicator on a time frame other than on the present window.
+For testing purposes, set to H1 timeframe.
+Note, the present timeframe is excluded, meaning that in trend reversals, there should be losses. The 4 hour will be even more delayed because it needs the 4 hour indicator to provide the indicator.

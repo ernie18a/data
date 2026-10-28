@@ -1,0 +1,5 @@
+The EA opens the trade in the direction of the brek through, it is specified in points, for example the level of the previous extremum. The trade is opened by the closing of the specified timeframe beyond the specified level (in points) of TakeProfit and StopLoss and the opening of the trade in one direction (only buy or only sell).
+Picture:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8543

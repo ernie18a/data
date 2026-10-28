@@ -1,0 +1,71 @@
+Real author:
+Bigeev Rustem
+HLCrossSigForMFI is considered as a trend indicator since it is intended for "catching" trends. However, it's a pretty complex and informative indicator that allows excluding the psychological and emotional effects from trading.
+This indicators shows levels for opening positions, setting stop levels, Trailing Stop and Take Profit, what leaves no doubts for a trader regarding performing a deal. Avoiding psychological and emotional influence in trading is a key factor for getting a profit on the market.
+Inputs:
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+int
+Supr_Period=
+6
+;
+//Period of the break through range; the greater is the value, the later and rarer are the signals
+input
+int
+MA_Period=
+21
+;
+//Triple Exponential Moving Average period. Used as an additional filter
+input
+int
+Risk=
+0
+;
+//Maximal risk in pips, used for calculation of the level of entering on the basis of a closest MAX/MIN level
+input
+int
+ATR_Period=
+120
+;
+//АТR period. Used for calculation of volatility.
+input
+double
+Q=
+0.7
+;
+//Parameter for placing Take Profit. - A rate of Stop Loss. if =1, Take = Stop
+input
+int
+MFI_Period=
+12
+;
+//MFI period. Used as an additional filter
+input
+ENUM_APPLIED_VOLUME
+MFI_VolumeType=
+VOLUME_TICK
+;
+// MFI volume
+input
+uint
+HLine=
+60
+;
+//Upper signal stop line for MFI
+input
+uint
+LLine=
+40
+;
+//Lower signal stop line for MFI
+Displayed elements of the indicator:
+Up and down arrows are signals for opening the corresponding positions;
+Circles on crosshairs are points for placing initial Take Profit;
+Dots are used for confirmation of determined trend. If the price continuously breaks through the levels of these points, one should keep the position as long as it is possible. If points represent a "corridor" for a long period, it is time for fix the profit;
+Diamonds are limits for placing Stop Loss and Trailing Stop.
+Fig. 1. HLCrossSigForMFI indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23135

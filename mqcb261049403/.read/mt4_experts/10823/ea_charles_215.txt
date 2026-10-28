@@ -1,0 +1,71 @@
+This version of the EA is much more complex than prior versions. The main concept is the same, uses stop orders on break-outs and hedges loosing orders, trying to close always on positive.
+Other than this this version introduces a lot of capabilities:
+Checks for special volatility conditions in order to open Orders below the spike
+Checks for trening condition in order to try to follow the trend when possible
+Introduces the concept of Pivot, Resistances and Supports, computed every hour in order to minimize the loss of loosing orders by catching a good price retrace
+Introduces the concept of Orders Basket in order to compensate loosing orders as soon as possible and minimize the drawdown
+Exposes a lot of configuration parameters allowing to tweak out the strategy
+Parameters:
+NOTE
+: In case of "zero divide" error, you must check the list of symbols provided on "Symbols" parameter. There can be two possible issues 1) your broker does not support all or some of the symbols specified (you MUST use only supported symbols by your broker) - 2) your broker uses different names for symbols, as an istance intead of EURUSD it uses EURUSDm or EUR_USD ... you MUST use the names provided by your broker.
+If you plan to use the EA on a single chart and a single symbol at time, just attach the EA to the corresponding chart, pay attention to the MagicNumber and
+leave the Symbols filed empty
+.
+PARAMETERS:
+======================================
+0) The TimeFrame is not important. The EA check internally the timeframes he needs.
+1) Symbols; Comma separated list of symbols you want the EA to manage on a single instance. If empty the EA works *ONLY* on the current chart/symbol
+Symbols = "EURUSD,EURGBP,EURJPY,CHFJPY,GBPUSD,GBPJPY,GBPCHF, GBPAUD,USDCAD,USDCHF,USDJPY,AUDNZD,AUDUSD,NZDUSD";
+2) MagicNumber; Assigned to *every* order handled by the EA
+MagicNumber = 3939;
+3) xFactor; Multiplier for *HEDGE* orders.
+xFactor = 1.8;
+4) TimeSet; Broker time. It's used to reset the pending orders every day.
+TimeSet = "07:32";
+5) RiskPercent; Try to recover loosing orders if the balance goes down this percentage.
+RiskPercent = 5;
+6) RiskPerTrade; Risk for every LOT automatically computed by the EA. In any case the EA cannot open a LOT minor than the MINLOT. If "0" the EA will use the fixed LOT value taken from Lots field.
+RiskPerTrade = 10;
+7) MaxAllowedOrders; Max number of *accessory* orders. Those orders are special orders opened under particular conditions, i.e. special Volatility spikes or RSI+MMA trend condition matched.
+MaxAllowedOrders = 15;
+8) MaxOpenHours; Every opened order will be closed if it's age is higher than this value. "0" means do not check the order age.
+MaxOpenHours = 0;
+9) ProfitCheckPeriod; Number of 15m bars of flattened market to take into account in order to close a winning order. This works *ONLY* if the whole profit is positive.
+ProfitCheckPeriod = 3;
+10) Aggressive; If TRUE means consider H1 timeframes for breakouts instead of H4 and Daily. Rise up considerably the amount of trades. Dangerous.
+Aggressive = false;
+11) UsePivots; If TRUE pivots, resistances and supports will be used to recalculate TakeProfits of loosing orders. In that case they can be closed in negative, trying to minimize the loss. Pivots are checked every hour.
+UsePivots = true;
+12) Params used for RSI+MMA trend condition checks.
+FastPeriod = 18;
+SlowPeriod = 60;
+Selectivity = 14;
+13) Lots; Fixed value to use in case RiskPerTrade = 0.
+Lots = 0.01;
+14) Slippage; Slippage in PIPS.
+Slippage = 3;
+15) ECN; Support for ECN accounts.
+ECN = true;
+16) MarginPercent; Try to preserve this amount of margin before opening more orders. Does not prevent losses for already opened trades.
+MarginPercent = 20;
+17) StopLoss; Stoploss in PIPS.
+StopLoss = 0;
+18) Trailings values applied to the winning order *ONLY* when you have ALL positive profits. In other cases a *BASKET* is used by the EA which will try to close as much as possible loosing orders with just one winning order.
+TrailStart = 20;
+TrailingAmount = 3;
+19) TakeProfit; Offset applied to the Pivots computed TakeProfits.
+TakeProfit = 20;
+20) AllOrders; If TRUE will ignore the MagicNumber and will manage all the orders doeneding on the AllSymbols setting.
+AllOrders = true;
+21) AllSymbols; It TRUE will ignore the managed Symbols and will manage all the orders.
+AllSymbols = true;
+22) LogToFile; If TRUE writes logs to a file.
+LogToFile = false;
+23) InitResetOrders; If TRUE resets the Pending Orders at init time.
+InitResetOrders = true;
+24)
+StartHour = 0;
+EndHour = 24;
+CloseAllNow = false;
+FridayCloseTime = 0;
+Traiding allowed hours and force close conditions. CloseAllNow will forcibly *CLOSE* ALL ORDERS. FridayCloseTime will forcibly *CLOSE* ALL ORDERS after this Friday hour; "0" means ignore this and leave the orders opened.

@@ -1,0 +1,24 @@
+The main purpose of this script is to close partially open buy orders (Which is in profits) and let the other running orders close in target profits. Check the Experts tab for the info.
+How to Use This Script:
+Input Parameters
+:
+ClosePercentage : The percentage of each buy position you want to close (0-100)
+Slippage : Maximum allowed slippage in points
+CommentText : If you want to close only positions with a specific comment (leave empty for all buy positions)
+Features
+:
+Works with multiple buy positions
+Preserves stop loss and take profit levels for the remaining position
+Validates minimum volume requirements
+Handles errors and provides feedback
+Installation
+:
+Copy the code to MetaEditor
+Compile it (F7)
+The script will appear in the Navigator panel under "Scripts"
+Drag it to any chart to execute
+Notes
+:
+The script will close the specified percentage of ALL buy positions unless you filter by comment
+It uses FOK (Fill or Kill) execution type to ensure the entire partial close is filled at once
+The remaining position will keep its original SL/TP levels

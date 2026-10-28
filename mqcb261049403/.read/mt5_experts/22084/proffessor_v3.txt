@@ -1,0 +1,146 @@
+The author of the idea
+:
+vitaly
+MQL5 code author
+:
+barabashkakvn
+The trading strategy is simple. BUY or SELL position is opened and protected by a pending Stop order at a distance of
+Delta 1
+. Then, a grid consisting of Limit or Stop pending orders at a distance of
+Delta 2
+from one another is created. The number of pending orders of each direction is set in Max Lines. Pending orders (Buy Limit, Sell Limit, Buy Stop and Sell Stop) are set via a single
+PendingOrder
+function, to which a pending order type (
+order_type
+), volume (
+volume
+), stop loss (
+sl
+) and take profit (
+tp
+) are passed
+//+------------------------------------------------------------------+
+//| Pending order                                                    |
+//+------------------------------------------------------------------+
+void
+PendingOrder(
+ENUM_ORDER_TYPE
+order_type,
+double
+volume,
+double
+price,
+double
+sl,
+double
+tp)
+  {
+   sl=m_symbol.NormalizePrice(sl);
+   tp=m_symbol.NormalizePrice(tp);
+if
+(m_trade.OrderOpen(m_symbol.Name(),order_type,volume,
+0.0
+,
+      m_symbol.NormalizePrice(price),m_symbol.NormalizePrice(sl),m_symbol.NormalizePrice(tp)))
+     {
+if
+(m_trade.ResultOrder()==
+0
+)
+        {
+Print
+(
+"#1 "
+,
+EnumToString
+(order_type),
+" -> false. Result Retcode: "
+,m_trade.ResultRetcode(),
+", description of result: "
+,m_trade.ResultRetcodeDescription());
+         PrintResultTrade(m_trade,m_symbol);
+        }
+else
+{
+Print
+(
+"#2 "
+,
+EnumToString
+(order_type),
+" -> true. Result Retcode: "
+,m_trade.ResultRetcode(),
+", description of result: "
+,m_trade.ResultRetcodeDescription());
+         PrintResultTrade(m_trade,m_symbol);
+        }
+     }
+else
+{
+Print
+(
+"#3 "
+,
+EnumToString
+(order_type),
+" -> false. Result Retcode: "
+,m_trade.ResultRetcode(),
+", description of result: "
+,m_trade.ResultRetcodeDescription());
+      PrintResultTrade(m_trade,m_symbol);
+     }
+//---
+}
+When reaching the
+Profit Close
+target profit, close all positions and remove all pending orders. You can also close all positions and delete pending orders if you lose more than
+Loss close
+(if you set
+Loss close
+to 0.0, the parameter is disabled).
+The EA operation (opening positions and setting protective pending orders) is performed within the working time interval from
+Start hour
+to
+End hour
+(
+Start hour
+may be less than
+End hour
+or exceed it).
+Main idea
+Analyzing ADX value on
+Work TimeFrame
+timeframe. If ADX is below 40, this is considered to be flat, and Limit pending orders are placed. Otherwise, Stop pending orders are used;
+If DI+ is higher than DI-, buy, otherwise, sell.
+The best optimization results of the two parameters (
+Current bar ADX
+from 0 to 2, step 1 and
+Work TimeFrame
+from M1 to H1)
+EURUSD,
+Currenr bar ADX
+0,
+Work TimeFrame
+H1
+USDJPY,
+Currenr bar ADX
+2,
+Work TimeFrame
+M1
+In case of EURUSD,
+Current bar ADX
+0,
+Work TimeFrame
+H1, but the
+Loss Close
+parameter is set to "0.0"
+and USDJPY,
+Current bar ADX
+2,
+Work TimeFrame
+M1, but the
+Loss Close
+parameter is set to "0.0"
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22084

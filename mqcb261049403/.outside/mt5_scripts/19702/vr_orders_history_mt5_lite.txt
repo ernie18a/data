@@ -1,0 +1,49 @@
+VR Orders History MT5 Lite - a script for downloading trading history in the CSV format. The
+Lite
+version demonstrates
+a small part of the source code
+of the
+VR Orders History MT5
+script.
+This universal script can run both on hedging and netting accounts.
+The script divides the report into two stages
+:
+The first stage includes existing current positions and deals, which have opened these positions.
+The second stage includes historical positions and associated deals.
+VR Orders History MT5 can download the trading history of any financial instrument (currency pairs, CFDs, Futures, Bitcoin, Ethereum and others).
+An additional analysis of the trading history will help you:
+Avoid gross mistakes in the future
+Identify the most profitable trading instruments
+Create a heatmap of successful trading time
+Analyze the trading history using external analyzer software
+Calculate profit, loss and volumes of selected symbols, Expert Advisors and trading tactics
+VR Orders History MT5 Lite launch instructions
+Drag the program from the Navigator to any chart using the mouse. After the execution of the script, the
+VR Order History Lite.csv
+file is created in
+\App Data Trading-Go\VR Order History Lite\
+.
+Other script versions
+VR Orders History MT5
+- the full bersion for MetaTrader 5.
+VR Orders History
+- MetaTrader 4 version.
+VR Order History Lite
+- a lite version for MetaTrader 4: with a small demonstration of the source code and limited functionality.
+VR Orders History Script Settings
+Separator
+- the separator to be added in values downloaded to CSV for a proper data display in MS Excel:
+Comma
+as in 0,00000
+Point
+as in 0.00000
+Symbol
+- trading symbol
+Magic Number
+- unique number of Expert Advisor's orders
+Separator Line
+- table separator line, default is ------------------------------- . It can be removed by entering a space or a custom one can be used, such as ============
+Expanded settings and more report data are available in the full version.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19702

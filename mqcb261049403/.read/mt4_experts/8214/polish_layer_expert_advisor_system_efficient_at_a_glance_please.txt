@@ -1,0 +1,15 @@
+Author (from Poland):
+Mix of a few previous EA. This is not my work only. I have added a few logical loops with conditions. But the finish was quite good for me. Not good for USDCAD, you should change the parameters.
+This EA based on indicators:
+RSI
+WPR%
+Stochastic
+Moving Average
+deMarker
+EURUSD (2008.01.01 - 2008.06.23/24)
+GBPUSD, EURJPY (2008.01.01 - 2008.06.23/24)
+EURGBP (2008.01.01 - 2008.06.23/24)
+Recommendations:
+Only charts with timerframe 15 MIN
+TP max 30 (recommended 17)
+SL min 7777 (recommended) - you should monitor your EA once a week or more I think

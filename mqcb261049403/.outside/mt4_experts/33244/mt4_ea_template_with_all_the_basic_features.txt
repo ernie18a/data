@@ -1,0 +1,42 @@
+The buy and sell conditions go as 'bool' value parameters in the Direction function, as you can see in the default example.
+int
+signalConditions=
+3
+;
+   DashKeys[openCloseConditionIdx+
+1
+-
+1
+]=
+"BB Status"
+;
+   DashValues[openCloseConditionIdx+
+1
+-
+1
+]=Direction(ok(bbGreen) && bbGreen!=-
+1
+,ok(bbRed) && bbRed!=-
+1
+,canBuy,canSell,
+" at "
++TimeToStr(Time[masterCandleIdx]),
+" at "
++Time[masterCandleIdx]);
+The
+canBuy
+and
+canSell
+variables will get out set as true or false based on these conditions.
+That will trigger the
+sign
+to carry the signals further for trading purposes.
+Make sure to increase these 2 array sizes if you need more lines on the dashboard.
+string
+DashKeys[
+8
+];
+string
+DashValues[
+8
+];

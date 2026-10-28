@@ -1,0 +1,43 @@
+Ease of Movement (EMV) technical indicator is used to display the ratio between prices change rate and market volume.
+Ease of Movement was developed by Richard W. Arms, Jr.) who is known as the author of the popular indicator called Arms Index. EMV is calculated as a ratio of the Midpoint Move to the volume parameter (Volume/ High - Low).
+The basic formula looks the following way:
+EMV = Midpoint Move/ (Volume/ High-Low)
+where:
+Midpoint Move = (today's high + today's low)/2 - (yesterday's high + yesterday's low)/2
+As a rule, EMV indicator value is smoothed by a moving average having the smoothing period equal to 14 candlesticks.
+EMV growth shows that the prices have advanced on low volumes and the low volume can soon lead to prices change on the market.
+Descending EMV shows that the prices have dropped on low volumes and the low volume can soon lead to prices change.
+Almost a zero value of EMV means a "heavy market", i.e. a considerable volume is needed in the short term to move the market prices.
+Big positive values show that the prices are rising, while the volume is staying low. Big negative values show that the prices are going down, while the volume is staying low.
+Signals:
+The indicator gives a buy signal when EMV crosses the zero line and goes upwards.
+The indicator gives a sell signal when EMV falls below the zero line.
+The indicator shows that the lower is the price movement range and the "heavier" is the volume, the less is the movement freedom.
+This indicator allows to select a smoothing type out of ten possible versions:
+SMA
+- simple moving average;
+EMA
+- exponential moving average;
+SMMA
+- smoothed moving average;
+LWMA
+- linear weighted moving average;
+JJMA
+- JMA adaptive average;
+JurX
+- ultralinear smoothing;
+ParMA
+- parabolic smoothing;
+T3
+- Tillson's multiple exponential smoothing;
+VIDYA
+- smoothing with the use of Tushar Chande's algorithm;
+AMA
+- smoothing with the use of Perry Kaufman's algorithm.
+It should be noted that Phase type parameters for different smoothing algorithms have completely different meaning. For JMA it is an external Phase variable changing from -100 to +100. For T3 it is a smoothing ratio multiplied by 100 for better visualization, for VIDYA it is a CMO oscillator period and for AMA it is a slow EMA period. In other algorithms these parameters do not affect smoothing. For AMA fast EMA period is a fixed value and is equal to 2 by default. The ratio of raising to the power is also equal to 2 for AMA.
+The indicator uses SmoothAlgorithms.mqh library classes (must be copied to the terminal_data_folder\MQL5\Include). The use of the classes was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/521

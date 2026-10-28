@@ -1,0 +1,1 @@
+Add Popup or Push Alert notification on manually placed horizontal lines, The lines are deleted and reset itself as soon as price touches these lines

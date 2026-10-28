@@ -1,0 +1,48 @@
+Float MetaTrader indicator
+— a sophisticated indicator that analyzes the previous chart history for the given currency pair and then tries to analyze the trends in the current situation. It shows where trends start and end in a separate chart window and
+Fibonacci retracement
+levels combined with DiNapoli levels on the main chart. It also displays how long ago the local high and low were detected. This indicator is available for MT4 and MT5.
+The indicator
+repaints
+its levels based on all the bars it analyzes (200 by default). This means that you cannot use its detections of new peaks or troughs as trading signals as they will be revised based on how market situation develops further. This indicator should be used only for the analysis of trend swing durations and important chart levels.
+Input parameters
+Float
+(default = 200) — the number of bars to process for trend analysis. The lower is the number means more up-to-date data but less accurate analysis.
+ObjectPrefix
+(default = "FI-") — prefix for chart objects for compatibility with other indicators.
+DisableDinapoli
+(default = false) — if
+true
+, then DiNapoli levels won't be drawn in the main chart window.
+DisableFibonacci
+(default = false) — if
+true
+, then Fibonacci levels won't be drawn in the main chart window.
+DrawVerticalLinesAsBackground
+(default = false) — if
+true
+, vertical lines for trend start and end will be set as chart background to avoid concealing the chart itself.
+SwingBorderColor
+(default = clrBlue) — the color of the swing zone borders.
+SwingBorderWidth
+(default = 1) — the width of the swing zone borders.
+SwingBorderStyle
+(default = STYLE_SOLID) — the line style for the swing zone borders.
+SwingLinesColor
+(default = clrRed) — the color of the swing lines.
+SwingLinesWidth
+(default = 1) — the width of the swing lines.
+SwingLinesStyle
+(default = STYLE_DOT) — the line style for the swing lines.
+FiboColor
+(default = clrGreen) — the color of the Fibonacci levels.
+FiboWidth
+(default = 1) — the width of the Fibonacci levels.
+FiboStyle
+(default = STYLE_DASH) — the line style for the Fibonacci levels.
+DinapoliColor
+(default = clrRed) — the color of the DiNapoli levels.
+DinapoliWidth
+(default = 1) — the width of the DiNapoli levels.
+DinapoliStyle
+(default = STYLE_DOT) — the line style for the DiNapoli levels.

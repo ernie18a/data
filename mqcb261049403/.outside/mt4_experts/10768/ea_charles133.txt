@@ -1,0 +1,24 @@
+Author:
+afabiani (AlFa)
+The EA starts looking for prices and break-outs. After that it continues trading by placing orders progressively aiming to reach a global profit. It also scalps pips in when a positive amount is reached and tries to aument the gain when the market is tranding.
+It should work on most pairs and all periods. The profit factor is not "galactic" since it tries to protect the capital as much as possible with a small but constant profit increment and a small draw down.
+Moreover there is a protection when the profit falls below the balance risk-percent. It places hedge orders in order to block the loss and looks for some indicator trying to catch the good direction in order to exit the stall.
+Of course it can be improved a lot and it may require manual intervention and/or some parameters tweaking basing on the market condition. In general however it should be quite stable.
+If you like this EA and you have some expertise in Forex trading, I would be greatefull for hints and ideas on how to improve it. Also if you have time to test it and find bugs, please report them to me.
+Parameters:
+Anchor[250]; PIPS displacements for up/down orders
+xFactor[0.7]; Lots xFactor multiplier for further orders
+Amount[1.0]; Initial profit target (indicative, the EA computes it automatically)
+RiskPercent[10]; Account Balance percent you want to risk (I recommend to not go above 10%)
+LotPercent[10]; Lots percent
+Lots[0.01]; Lots amount, considere only when LotPercent is 0
+Slippage[2]; Orders slippage
+Macd;"Quick, Slow, Signal"
+- Qema[10]; Quick MACD EMA period
+- Sema[32]; Slow MACD EMA period
+- Signalmacd[4]; MACD Signal period
+Ema;"fast close, slow open."
+- Fastema[8]; Fast EMA period
+- Slowema[14]; Slow EMA period
+AllOrders[false]; wheather or not consider ALL the orders for the Symbol, also the manual ones
+LogToFile; wheather or not log to a file into the MT4 folders

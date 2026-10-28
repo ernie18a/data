@@ -1,0 +1,6 @@
+There are many indicators showing support / resistance level. This is one of them. It allows for using multiple
+timeframes
+and has many options to set. It also uses advanced filtering to provide most important levels.
+Full description you can find
+here..
+Example

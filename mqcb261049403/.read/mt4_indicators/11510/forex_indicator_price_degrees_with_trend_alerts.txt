@@ -1,0 +1,18 @@
+This indicator will write value degrees of the lastest position of price at the current timeframes, and when position and condition of trend status was changed, the indicator will give an alerts.
+The Price Degrees indicator is not a direction indicator for BUY or SELL instruction, but a measure of position, direction and condition of the trend status accordance to the current trading timeframes.
+If the theory of degrees is applied to the forex charts trading terminal, then price position can be divided in 4 ranges of degrees:
+=> 270 degrees to 310 degrees, is position of Strong Bearish.
+=> 315 degrees to 360 degrees (0 degrees), is a position of Bearish.
+=> 0 degrees to 45 degrees, is a position of Bullish.
+=> 50 degrees to 90 degrees, is position of Strong Bullish.
+This indicator will write value degrees of the lastest position of price at the current Timeframes, and when position and condition of trend status was changed, the indicator will give an alerts.
+Description of Color indicator:
+Rounded blue, and arrow blue, Status Trend is Strong Bullish.
+Rounded blue, and arrow aqua, Status Trend is Bullish Weakened.
+Rounded aqua, and arrow blue, Status Trend is Bullish Strengthened.
+Rounded aqua, and arrow yellow, Status Trend is Began to Bearish.
+Rounded yellow, and arrow aqua, Status Trend is Began to Bullish.
+Rounded yellow, and arrow red, Status Trend is Bearish Strengthened.
+Rounded red, and arrow yellow, Status Trend is Bearish Weakened.
+Rounded red, and arrow red, Status Trend is a strong Bearish.
+In order to make it easier to see the trends on the current chart timeframe, I bring the indicator PriceDegrees with the template "pricedegrees_template".

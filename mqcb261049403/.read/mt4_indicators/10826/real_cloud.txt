@@ -1,0 +1,10 @@
+This indicator uses 2 Moving Averages.
+One is current timeframe's, the other is upper timeframe's.
+You can use this indicator to check the trend on current timeframe.
+This indicator carries"Changing
+upper timeframe
+automaticalｌy when you change timeframe".
+Recommendations:
+Please use default setting as possible.
+Attention ! You cannot use correctly on Monthly chart.
+Next upload is "Real Time Pivot" :D

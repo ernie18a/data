@@ -1,0 +1,36 @@
+RSI Monitor v2.0 – The Institutional Overhaul
+After 10 years since the initial release (2015), the
+RSI Monitor
+has been completely re-engineered from the ground up to meet modern high-frequency trading standards. This is not just a visual update; it is an executive-level trading tool designed for professional market analysis.
+The Opus 4.5 Advantage
+Version 2.0 has undergone a rigorous architectural audit and logic refinement by
+Opus 4.5 Quant Architect
+. This ensures that every line of code is optimized for maximum execution speed, zero redundant calculations, and professional-grade reliability under extreme market volatility.
+Major Upgrades & New Features
+Zero-Lag RSI Engine:
+An optional delagged calculation mode that reacts significantly faster to price changes than standard RSI, giving you an edge in fast-moving markets.
+Professional Divergence Detection:
+Automated identification of Bullish and Bearish price-RSI divergences, qualified by Overbought/Oversold zone validation to filter out noise.
+Multi-TF Confluence Scoring:
+An intelligent aggregator that scans all timeframes (M1 to MN1) to calculate a total bias score, helping you identify high-probability "Strong Bias" zones.
+Adaptive Trend Analysis:
+New trend detection logic based on percentage-based volatility, making it highly sensitive to real momentum shifts.
+Optimized for Performance
+Multi-Tier RSI Caching:
+Reduces CPU load by over 90%. The indicator only calculates what is necessary, updating live values every tick while caching historical data.
+Instant Alert Processing:
+Alerts are processed on every tick, independent of the chart's timeframe. You will never miss a M1 signal just because you are watching an H4 chart.
+State Escalation Logic:
+Smart alerts that distinguish between normal OB/OS and Extreme OB/OS, allowing for signal "escalation" alerts within the same bar.
+User Experience & Aesthetics
+Dual Panel Styles:
+Choose between
+Standard
+(Compact) and
+Extended
+(Full Data) views.
+Modern Visuals:
+State-aware coloring and high-resolution Wingdings icons for clear, immediate signal recognition.
+Highly Configurable:
+Full control over periods, levels, colors, and per-timeframe alert cooldowns.
+Version v2.0 represents the ultimate evolution of the RSI Monitor, transforming a simple dashboard into a powerful institutional-grade analysis engine.

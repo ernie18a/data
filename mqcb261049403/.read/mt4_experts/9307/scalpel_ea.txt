@@ -1,0 +1,38 @@
+Author:
+ryaz
+Description:
+An interesting EA that works on GBP pairs and also teaches you how to make your EAs faster
+Inputs are:
+Parameter
+Description
+Lots
+:+/- standard / %risk
+TakeProfit
+self explanatory
+StopLoss
+TrailingStop
+cciPeriod
+iCCI() bars
+cciLimit
++/- iCCI() upper/lower threshold
+MaxPos
+open positions allowed in one direction
+Interval
+minutes before sending a new order (o=not used)
+Reduce
+minutes before reducing TP by one pip (0=not used)
+Live
+minutes before closing an order regardless profit (0=not used)
+Volatility
+volatility minute bars (+directional or -non dir.)
+Threshold
+pip threshold for volatility
+FridayClose
+the time to close all orders on Friday (0=not used)
+Slippage
+the slippage for opening or closing an order
+Spreadlimit
+the maximum spread allowed for opening an order
+Magic
+self explanatory
+Here's a tester graph for EURGBP M1 3yrs to date

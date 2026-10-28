@@ -1,0 +1,2 @@
+Author: Bill Sica
+5 day Breakout indicator.

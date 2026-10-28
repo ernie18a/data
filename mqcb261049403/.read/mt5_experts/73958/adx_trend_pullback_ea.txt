@@ -1,0 +1,51 @@
+Brief Description
+This Expert Advisor combines an ADX-based trend strength filter with an EMA pullback entry technique, using ATR for dynamic stop loss and take profit sizing. It is designed for trading a single symbol with one position open at a time.
+What ideas is the code based on?
+The strategy is built on three established concepts. First, the Average Directional Index (ADX) is used to measure trend strength: a rising ADX above a defined threshold indicates that a trend is developing or strengthening, while a flat or falling ADX suggests a weak or ranging market. Second, an Exponential Moving Average (EMA) is used as a dynamic reference level for pullback detection: price moving close to the EMA and then away from it again is treated as a pullback within the prevailing trend. Third, the Average True Range (ATR) is used to express stop loss and take profit distances in terms of current market volatility rather than fixed pip values, and the Plus/Minus Directional Indicators (+DI / -DI) from the ADX indicator are used to determine trade direction.
+How can the indications be interpreted?
+All calculations are performed on closed bars of the timeframe selected in the input settings, and signals are evaluated once per new bar. The entry logic requires two conditions to be satisfied together:
+1. Trend filter: ADX on the previous bar must be above the ADX threshold and higher than ADX on the bar before that, indicating increasing trend strength.
+2. Pullback event: the distance between price and the EMA, expressed as a multiple of ATR, must have been at or above the pullback ratio on the earlier bar and dropped below it on the previous bar. This represents price approaching the EMA and then moving away again.
+When both conditions are met, the trade direction is determined by comparing +DI and -DI on the previous bar: if +DI is greater than -DI, a buy signal is generated; if -DI is greater than +DI, a sell signal is generated. The trade direction input can restrict the EA to buy-only, sell-only, or both directions.
+Stop loss distance is calculated as ATR multiplied by the SL multiplier input, and take profit distance is the stop loss distance multiplied by the risk-reward ratio input. Only one position per symbol is allowed at a time, and a new position is only considered when no position is currently open.
+Suitable Symbols and Timeframes
+The EA is configured by default for the H1 timeframe, but the timeframe used for indicator calculations can be changed independently of the chart timeframe through the input settings. Because the logic relies on ADX, EMA, and ATR values that adapt to current volatility, it can in principle be applied to a range of liquid symbols and timeframes. Testing on the target symbol and timeframe in the Strategy Tester is recommended before live use.
+Description of #include Files Used
+This code does not use external #include files. All logic is contained in a single source file.
+Description of Main External Variables
+Variable
+Default
+Description
+InpTradeDirection
+TRADE_BOTH
+Restricts trading to both directions, buy only, or sell only
+InpMagicNumber
+270601
+Magic number used to identify orders placed by this EA
+InpLotSize
+0.01
+Fixed lot size used for every trade
+InpATR_SL_Multiplier
+1.5
+Stop loss distance, expressed as a multiple of ATR(14) on the previous bar
+InpRR_Ratio
+2.0
+Take profit distance, expressed as a multiple of the stop loss distance
+InpIndicatorTF
+PERIOD_H1
+Timeframe used for ADX, EMA, and ATR calculations
+InpADXPeriod
+14
+Period used for the ADX indicator
+InpEMAPeriod
+20
+Period of the EMA applied to the close price
+InpATRPeriod
+14
+Period used for the ATR indicator
+InpADXThreshold
+25.0
+Minimum ADX value required, combined with a rising ADX, to allow an entry
+InpPullbackATRRatio
+0.5
+Distance from the EMA, as a multiple of ATR, used to define a pullback event

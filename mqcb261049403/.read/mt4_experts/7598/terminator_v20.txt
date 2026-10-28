@@ -1,0 +1,6 @@
+Author: Alejandro Galindo
+Adviser Terminator. Uses indicators
+I_Trend
+and
+Support and Resistance.mq4
+.

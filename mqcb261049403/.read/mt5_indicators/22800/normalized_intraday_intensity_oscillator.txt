@@ -1,0 +1,13 @@
+John Bollinger's Normalized Intraday Intensity Oscillator.
+It has one input parameter:
+Period
+- calculation period
+Calculations:
+NII = SMA(SUMM, Period) / AvgVOL * 100.0
+where:
+AvgVOL = SMA(VOL, Period)
+SUMM = (2.0 * Close-High-Low) / (High-Low) * VOL
+VOL - tick volume
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22800

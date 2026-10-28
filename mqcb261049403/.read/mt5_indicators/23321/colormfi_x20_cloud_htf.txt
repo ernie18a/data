@@ -1,0 +1,17 @@
+The
+ColorMFI_X20_Cloud
+indicator with the possibility to change the calculation timeframe using the indicator input parameters:
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// The indicator chart period (timeframe)
+For the indicator to operate, the
+ColorMFI_X20_Cloud.ex5
+indicator should be added to the <terminal_data_directory>\MQL5\Indicators folder.
+Fig.1. The ColorMFI_X20_Cloud_HTF indicator
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23321

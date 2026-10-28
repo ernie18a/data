@@ -1,0 +1,2 @@
+Author: forex-tsd.com
+MTF_MAChnl810_Env indicator.

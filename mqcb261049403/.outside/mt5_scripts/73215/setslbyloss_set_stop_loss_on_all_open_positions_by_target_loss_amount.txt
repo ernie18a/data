@@ -1,0 +1,6 @@
+Script that sets a Stop Loss on every open position based on a target loss amount expressed in the account's currency (e.g. $50 per position). Works for any deposit currency (USD, AUD, EUR, NZD, etc.) and any forex symbol - currency conversion is handled automatically via SYMBOL_TRADE_TICK_VALUE_LOSS. Validates broker stops/freeze levels before submitting changes, skips positions whose SL is already correct, and reports clear reasons for any positions that cannot be modified. The target loss is set in an input parameter: Maximum loss (amount in account currency) for each position.
+LOGIC
+For each open position, calculates the SL price such that if hit, the loss equals approximately InpTargetLossAmount (in the account's currency).
+Validates against stops level and freeze level before submitting modifications.
+Skips positions that already have a correct SL (within 1 tick of the target).
+Skips positions whose price has moved so far that placing the SL would violate broker constraints, logging the reason.

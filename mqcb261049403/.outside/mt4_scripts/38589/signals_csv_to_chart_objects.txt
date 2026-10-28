@@ -1,0 +1,11 @@
+Blue Arrow = Buy
+Red Arrow = Sell
+Blue Tick = Win
+Red Cross = Lose
+---
+1. Go to https://www.mql5.com/en/signals and pick a signal
+2. Inside the signal, go to Trading History tab
+3. Scroll to the most bottom and click on History link on the right side.
+4. From your MT4, click on File > Open Data Folder
+5. Drop the CSV file downloaded from (3) inside MQL4\Files folder.
+6. Insert the filename (without .csv) into FILENAME at input tab when load the script.

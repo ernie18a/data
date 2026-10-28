@@ -1,0 +1,22 @@
+I am gratefull to the following on which the code is based on: Japanese Candlesticks by
+http://www.candlesticker.com
+(which lists the various patterns for bear/bull scenarios) and CandleCode by Victor Likhovidov, references to be found at
+http://www.forexschool.ru
+Setup:
+Place files into the following subdirectories: |
+Candle Patterns.mq4 into "\experts\indicators",
+Candle Patterns.csv into "\experts\files",
+Candle Patterns.rtd into "\experts\files",
+Symbols_.csv into "\experts\files",
+gSpeak.mqh into "\experts\include",
+speak.dll into "\experts\libraries",
+candle patterns.tpl into "\templates".
+Close and then re-start MetaTrader for it to find the new files.
+Select "Indicators" -> "Custom" -> "Candle Patterns".
+The "Custom Indicator" window is displayed, select "Common" and enable "Allow DLL imports".
+Inputs:
+"Inputs" are described in file "Candle Patterns.rtd", alternatively right click on the chart and select "candle patterns.tpl" from "Templates".
+I spent my youth in Kinshasa and if my programs come in usefull in your trading please let us help the people of the Democratic Republic of the Congo by donating what you can to:
+http://www.redcross.ie/help/donate_now.php?appeal=107
+or any charity.
+Take care, Teddy.

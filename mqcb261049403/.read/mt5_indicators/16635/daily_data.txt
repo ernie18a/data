@@ -1,0 +1,3 @@
+The indicator displays in chart window the important data on current symbol.
+Now is it possible to interact with indicator with a simple click of a mouse. It is implemented in this code in a way that something can be hidden or shown simply by clicking on the hide/show buttons.
+.

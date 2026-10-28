@@ -1,0 +1,35 @@
+Unfortunately, I had to realise that some brokers are a bit careless with the
+server time changeover, which I had not expected
+and which surprised me very much.
+The FOREX session lasts exactly 120 hours:
+from Sunday 17:00 Eastern Standard Time (North America) or EST
+to Friday 17:00 EST.
+The problem arises from the time changes to summer time and winter time,
+which do not take place on the same Sundays in the different regions of the world.
+For example, the USA changes on the 2nd Sunday in March and the 1st Sunday in November,
+which also affects the start and end of the FOREX session.
+The EU changes on the last Sunday in March, i.e. after the USA, and on
+the last Sunday in October, i.e. before the USA (see timeline above).
+This creates a transition period in which the US and the EU have a different
+time difference than the normal differences of 5
+hours (London), 6 hours (Frankfurt, CET) or 7 hours (Cyprus, EET).
+In this interim period, this change in time difference should be reflected in the
+changed timestamps of the first and last hour of the FOREX session.
+So if the FOREX session starts on Monday at 00:00 (EET, MQ time), it should
+start one hour earlier after the change in the US, i.e. at 23:00 on Sunday,
+and end one hour earlier on Friday, i.e. at 23:00 (or 22:59:59).
+But unfortunately I had to realise (and with this script anyone can check this with their
+broker) that on an MQ demo account and on accounts of some real brokers
+the first hour always(!) appears on Monday at 00:00, but the last hour appears as expected
+on Friday at 23:00 (or 22:59) or one hour earlier. This means that the first hour
+of the FOREX session, in which the trader or an EA could react to events at the weekend, is missing.
+The end of the FOREX session can also no longer be determined by simply adding120 to the
+first hour of the FOREX session, e.g. to close all positions before the weekend.
+This script now checks the broker's time changes in the past and logs all
+FOREX sessions that are obviously incorrect (odd) or not 120 hours. If there are 120 hours between
+the first and last hour of a FOREX session, there is no printout in the log.
+At the end, the script prints the last retrieved timestamp, the number of
+shortened sessions found and the approximate number of years checked.
+Translated from German by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/de/code/55086

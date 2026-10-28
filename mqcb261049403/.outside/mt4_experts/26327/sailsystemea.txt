@@ -1,0 +1,10 @@
+This Expert Advisor is a pure hedging system.
+The expert place and manage two market opposite orders.
+Runs perfect on pairs with tight spread and low commission broker (commission plus spread equal or less than 0.5 pip).
+Pairs and Time Frame
+Pair: eurusd
+Time frame: M1
+Default settings are good for eurusd.
+Information
+Please test expert on demo account first, before uses it on real account. Have on your mind, this expert is sensitive and depend on broker's slipping.
+Update version 2.3 > Added time filter to trade in specific time.

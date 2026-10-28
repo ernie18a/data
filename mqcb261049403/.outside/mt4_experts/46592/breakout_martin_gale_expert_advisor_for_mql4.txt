@@ -1,0 +1,26 @@
+The "Martin Gale Breakout" strategy is an Expert Advisor (EA) designed for trading in the Forex market. This EA combines a breakout trading approach with elements of the Martin Gale money management system to optimize trading performance.
+Input Parameters:
+TakeProfPoints:
+This parameter allows you to set the Take Profit level in points for each trade.
+BalancePercentageAvailable:
+Specify the percentage of your account balance that will be used for trading.
+TP_Percentage_of_Balance:
+It determines the percentage of your account balance to be used as Take Profit for each trade.
+SL_Percentage_of_Balance:
+This sets the percentage of your balance to be allocated as the Stop Loss for trades.
+Start_The_Recovery:
+This parameter plays a crucial role in the recovery process, controlling when and how recovery measures are activated.
+TP_Points_Multiplier:
+A multiplier for Take Profit points, allowing for flexible profit-taking strategies.
+MagicNumber:
+An identifier unique to this EA, ensuring it can manage its own trades independently.
+Strategy Highlights:
+Breakout Trading:
+The EA specializes in identifying breakout opportunities in the market, where price movements breach key levels.
+Dynamic Lot Sizing:
+Lot sizes are dynamically adjusted based on your account balance and risk preferences, following the Martin Gale money management principles.
+Loss Recovery:
+The EA includes a powerful recovery mechanism designed to recover losses by adaptively modifying trade parameters when necessary.
+The main function that is used in this EA is the CalcLotWithTP() function which has 3 input parameters: Takeprofit, Startprice, Endprice. It calculates the volume needed for the trade so that it achieves the profit goal when it enters a trade at the Startprice and exits at the Endprice.
+Everything in the code is commented, so that the understanding of it is made easier.
+I've made a youtube video about it:

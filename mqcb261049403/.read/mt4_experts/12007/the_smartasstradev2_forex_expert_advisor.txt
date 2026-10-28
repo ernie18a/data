@@ -1,0 +1,133 @@
+The SmartAssTrade-V2 Forex Expert Advisor (EA) is a new update for
+SmartAssTrade EA Version 1
+(old version) in Code Base MQL4.
+SmartAssTrade-V2 EA Only working on M30 Timeframes or PERIOD_M30.
+If used on other timeframes may be lost.
+SmartAssTrade-V2 Expert Properties (Default setting):
+//--- User Input
+input
+string
+SmartAssTradeV2 =
+"Copyright © 2014 3RJ ~ Roy Philips-Jacobs"
+;
+input
+string
+SmartAssTradeV2TF =
+"SmartAssTrade-V2 EA's Only Use on M30 Timeframes"
+;
+input
+int
+SmartAssTradeV2Period =
+PERIOD_M30
+;
+extern
+bool
+FridayTrade = True;
+// If True, EA still trading at Friday
+input
+string
+OptimizationLots =
+"Set LotsOptimization=True"
+;
+extern
+bool
+LotsOptimization = True;
+// If True, Lots wil calculation by EA, default Lots size = 0.01"
+extern
+double
+Lots =
+0.01
+;
+// If LotsOptimization=False, Lots adjusted by user
+extern
+int
+MaxOpenOrder =
+12
+;
+// Maximum Allowed for Open Order (Maximum Pairs to Trade = 12 pairs)
+// PAIRS: EURAUD,AUDUSD,EURUSD,NZDUSD,GBPUSD,GBPCHF,USDCHF,USDCAD,USDJPY,GBPJPY,EURJPY,EURGBP //
+input
+string
+AutomaticSystemTP =
+"Set AutomaticTakeProfit=True or False"
+;
+extern
+bool
+AutomaticTakeProfit = True;
+// TP will calculation by EA and Automatic TP by EA
+extern
+bool
+NoMinimumTakeProfit = False;
+// True or False -> If Set True, 100% TP by EA not use minimum TP.
+input
+string
+MinimumSystemTP =
+"If Set NoMinimumTakeProfit=False"
+;
+// TP by EA on minimum TP values
+extern
+double
+MinimumTP =
+27
+;
+// Minimum TP by EA on the AutomaticTakeProfit=True function, default value 27
+input
+string
+ManualSystemTP =
+"If Set AutomaticTakeProfit=False"
+;
+// TP by Terminal MT4 (same as manual trading)
+extern
+double
+TakeProfit =
+35
+;
+// TP by System, values can adjust by user, default value 35
+input
+string
+AutomaticSystemSL =
+"Set AutomaticStopLoss=True"
+;
+extern
+bool
+AutomaticStopLoss = True;
+// SL will calculation by EA
+input
+string
+ManualSystemSL =
+"If Set AutomaticStopLoss=False"
+;
+// SL values can adjusted by user
+extern
+double
+StopLoss =
+62
+;
+// SL adjusted by user, default value 62
+extern
+bool
+UseTrailingStop = False;
+// Use Trailing Stop, True (Yes) or False (Not)
+extern
+double
+TrailingStop =
+30.0
+;
+// If Use Trailing Stop True, input Trailing Stop Value, default value 30
+extern
+double
+TrailingStopStep =
+1.0
+;
+// Input Trailing Stop Step Value (default 1.0)
+//---
+In
+testing
+below,
+I used the
+Lots
+size =
+1.00
+(LotsOptimization = False)
+with the default settings mentioned above.
+May be useful for fellow traders.

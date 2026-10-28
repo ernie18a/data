@@ -1,0 +1,9 @@
+My first indicator. Maybe it will be useful for somebody.
+The idea of creation was the following: to see the values of a parameter calculated for different timeframes not to open many charts simultaneously and not to compare the data visually. In this indicator the calculated parameter is the direction of MA moving.
+The accounting of indications of a timeframe can be selectively turned on/off. Everything should be logically understandable. (1 - include into the calculation, 0 - exclude): M1 = 0; M5 = 1; M15 = 0; M30 = 0; H1 = 1; H4 = 1; D1 =1.
+The period of averaging can be specified for each period: M1_per = 20; M5_per = 5; M15_per = 12; M30_per = 8; H1_per = 10; H4_per = 3; D1_per = 5.
+Only the smoothing method and the used price are specified one for all МАs: method = 3 (0 - SMA, 1 - EMA, 2- SSMA, 3 - LWMA); price = 5 (0 - close, 1 - open, ..., 5 - typical, 6 - weighted).
+My deposit has increased from 18000 to 31000 for three days on the demo account. (I opened the positions manually once a snippet of any color appeared, I closed positions intuitively :))
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8581

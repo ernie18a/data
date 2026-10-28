@@ -1,0 +1,2 @@
+Very useful way to advance your chart analysis. This indicator show you ratio of movement sizes inside bar to current bar size.
+This is can be good approval of signals. Few examples:

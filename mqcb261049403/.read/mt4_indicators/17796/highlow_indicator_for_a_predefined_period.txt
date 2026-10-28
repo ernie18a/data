@@ -1,0 +1,18 @@
+The middle line can be configured with the parameter
+Middle line type
+as:
+MID_TYPE_NONE=
+0
+,
+// None
+MID_TYPE_MEDIAN=
+1
+,
+// Median, (high + low)/2
+MID_TYPE_TYPICAL=
+2
+,
+// Typical, (high + low + close)/3
+MID_TYPE_WEIGHTED=
+3
+// Average, (high + low + close + close)/4‌

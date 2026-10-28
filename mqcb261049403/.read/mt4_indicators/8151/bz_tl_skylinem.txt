@@ -1,0 +1,12 @@
+The author insists that users may utilize this indicator as an external interface for all other indexes,
+more details
+.
+Parameters:
+myEntryTrigger =4;
+myProfitTarget =10;
+myStopLoss =7;
+Shift =0;
+myHourColor =DarkGray;
+myStyle =STYLE_DOT;
+ShowLables =false ;
+BZ_TL_SkylineM

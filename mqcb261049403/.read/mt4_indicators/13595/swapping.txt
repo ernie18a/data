@@ -1,0 +1,5 @@
+This indicator downloads history of symbols which have open charts. It will no longer be necessary to wait for an update when switching timeframes.
+It can only be placed on one chart.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13595

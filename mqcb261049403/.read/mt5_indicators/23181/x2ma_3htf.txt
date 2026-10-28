@@ -1,0 +1,11 @@
+Three
+X2MA
+indicators from different timeframes in a single window The
+X2MA_3HTF
+indicator is designed for an additional window and
+X2MA_3HTF_main
+is used for the main window.
+Fig.1. SpearmanRankCorrelation_3HTF and X2MA_3HTF_main indicators
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23181

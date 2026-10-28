@@ -1,0 +1,24 @@
+The indicator of increasing SonicR PVA Volumes and their extreme values
+It has four inputs:
+Climax period
+- extreme values calculation period
+Rising period
+- emerging values calculation period
+Rising factor
+- ratio of correcting emerging values relative to the candle volume
+Extreme factor
+- ratio of correcting extreme values relative to the candle volume
+The indicator displays five states:
+Increasing volumes on a bullish candle -
+light-green
+Increasing volumes on a bearish candle -
+orange
+Extreme volumes on a bullish candle -
+green
+Extreme volumes on a bearish candle -
+red
+Neutral volumes -
+gray
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22109

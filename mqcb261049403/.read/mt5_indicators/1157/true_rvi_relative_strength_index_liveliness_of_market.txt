@@ -1,0 +1,10 @@
+The real author:
+VladMsk
+An alternative replacement for the standard RVI indicator which considers trades volume.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 15.06.2010.
+Fig.1 The True RVI indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1157

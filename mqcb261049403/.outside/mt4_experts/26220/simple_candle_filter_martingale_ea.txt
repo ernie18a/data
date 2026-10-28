@@ -1,0 +1,23 @@
+This EA uses a candle size filter to initiate a trade.
+Attribution: Ideas are mine, code is compiled using fxdreema.
+Concept
+If the Candle size is > x pips, then the EA will enter into a buy trade.
+The candle size is an input in the EA settings.
+If the buy trade results in a loss, The EA will enter into the next trade at a scaled up lot size.
+The scale factor is adjustable in the EA settings.
+Main principle of the concept
+The main principle behind all EAs that I design is to control the number of consecutive losses (Rather than to predict where the price is moving next).
+This control is accomplished by increasing the Candle size required in the settings until a sufficiently low (safe) amount of consecutive losses occur over a long test period.  (The reason for controlling the consecutive losses is so that we can safely use the martingale strategy).
+Settings
+I use USDJPY and 4hr chart for testing. Other timeframes will work too.
+I usually set the settings for candle size to be 20 or more , preferably 30.
+10 or less will usually not work.
+TP and SL
+The TP and SL I use are normally a ratio of 1:1
+and the settings are 50 TP and 50 SL
+Settings of 75TP 50SL; 100TP 50SL, work if you use a lower scale factor such as 1.5.
+This is because when the Ratio of TP to SL changes, the probability of winning to losing on average changes, and so do the number of consecutive losses (important).
+I find as a rule of thumb that the max consec losses is usually 6 times the average losses, and that average losses in a similar ratio of TP:SL ratio (the same or a multiple of the TP:SL ratio or a less favourable ratio).
+EXample a TP:SL of 50pips:50pips gives average wins to losses of 2:2 or worse 2:3 due to spread
+And max consec losses of example 2x6=12. (We aim to lower these to less than 8, perhaps 6 would be good- using the candle filter)
+Feedback is welcome. We can develop more advanced ideas to control consecutive losses and unleash the power of martingale in a random market environment.

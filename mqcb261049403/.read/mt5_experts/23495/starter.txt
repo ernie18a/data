@@ -1,0 +1,20 @@
+Idea by:
+kuk
+mq5 code by:
+barabashkakvn
+The EA refers to three timeframe, each having one iMA (Moving Average, MA) and one iStochastic (Stochastic Oscillator). The timeframes are specified in parameters
+Fast: timeframe
+,
+Normal: timeframe
+, and
+Slow: timeframe
+.
+You can reverse trading signals (using parameter
+Reverse
+) and you can also forcedly close the positions opposite to the signal (using parameter
+Close opposite
+).
+EURUSD, M30:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23495

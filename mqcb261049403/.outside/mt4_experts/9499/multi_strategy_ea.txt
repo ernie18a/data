@@ -1,0 +1,39 @@
+Hello Guys,
+Maybe You Have seen my Combo Trader, This one is the other version of Combo Trader, which use it with your strategy,
+**this expert is useful for those who have strategy to trade
+After many requests i've decide to change the code to comfortable it for you
+1-Add noise filter by Damiani_volatmeter indicator (you have to download Damiani_volatmeter.ex4 too and copy it to \experts\indicators)
+2-showing the current Trend Condition on chart
+3-add an option to use static lots(if use_static_loss is set true
+4-add static take profit & static Loss
+5-add an option to closing mode: use noise_closing which you noises to close all positions, if profit<noise_loss all the loss positions will be closed
+6-you can choose between MACD classic or using Zerolag MACD, by setting zerolag_macd to true or classic_macd to true(just one of them have to choosed)
+7-added TrendDetect Option to detecting trend by adx. you just insert the ADX_PERIOD and ADX_MAINLEVEL
+8-added Profit_close:which protects your profits by entering Profit_to_close value,if all the open Trades get in this profit they will close (
+Enter Profit_to_close in Currency not pip)
+9-
+added Loss_control:which protects your account not to take loss more than Loss_to_Close (
+Enter
+Loss_to_Close
+in Currency not pip)
+10-Added Cancel_Trading_On_profit, if all positions closed by
+Profit_close then it will never trade on that day
+11-Added Cancel_Trading_On_Loss, if all positions closed by Loss_control
+then it will never trade on that day
+12-Calculating Stoploss and Takeprofit by Atr is removed
+13-Added Option Filtering_noise which use noise filtering on opening position-if there is any noise on market it will not open new position until the noise has gone
+15-show all indicators signals mode on chart(if you set Use_last_xxx_signal to true it will show you the last signal only)
+16-Add an Option to use Bollinger Bands Indicator to trade on range markets-(to use this option you must set Use_BBand to true) and insert Bollinger Bands Parameters
+17-Add Time Frame option for all indicators and all settings, so it is real Multi TIme frame EA
+For time frames you have to Enter a value between 1 to 6
+1: 1min timeframe
+2: 5min Timeframe
+3- 15min Timeframe
+4-30min timeframe
+5-1H time frame
+6-4H TimeFrame
+and many other new settings
+i have included a manual for this.
+for installing this EA, you have to Copy all files in "Indicators.zip" to experts\indicators folder where MetaTrader is installed and copy Multi-Strategy@FSF.mq4 to your experts folder
+For Optimizing this EA Optimize it just like any EA (for finding best tp and sl and other settings)
+"If You make too much money with this EA - some gift or donations accepted [:-)"

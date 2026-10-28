@@ -1,0 +1,43 @@
+WatchDog is an "Expert Advisor" and "System" monitoring script.
+WatchDog sends an e-mail when things go wrong, an order has opened or closed, on requotes, on log errors, on server shut down ... Just drag the script in a chart window.
+In order to use this script, you have to:
+Adjust the BASEDIR value. Set your MetaTrader installation path string BASEDIR = "C:\\Program Files\\MetaTrader4\\";
+Setup MetaTrader for Email notification. (Tools -> Options -> Email)
+Optional: A Webspace with PHP support. Only necessary if you want to use the server alive-event. (This event is disabled by default)
+The script is based on events; each event defines a monitoring task. WatchDog comes with a lot of pre-defined events. But it's also possible to add custom events. Later on I'll explain how to do this. Basically there are two types of events, events and log-events. A log-event searches the given log file for a string. The different between events and log-events is just the parameter count. Log-events always expect a log file name and a search pattern.
+Here comes a short description of all events. (Each event has its own event-id which is defined in the source.)
+Log-Events:
+WDE_JL_DELETED: Searches the journal-log (every minute) for "order deleted" and mails any corresponding line.
+WDE_JL_REQUOTE: Searches the journal-log (every minute) for "requote" and mails any corresponding line.
+WDE_JL_FAILED: Searches the journal-log (every minute) for "failed" and mails any corresponding line.
+WDE_JL_EALOADED: Helper event
+WDE_JL_EAREMOVED: Sends a mail when an EA script was removed or loaded. (1 min. check interval)
+Events:
+WDE_ALIVE: A helper event that invokes an URL (every 40 seconds)
+WDE_CONNECTIVITY: Sends a mail when MetaTrader has lost the connection.
+WDE_OPENCLOSE: Invokes a WDE_STATEMEN-event when an order has opened or closed.
+WDE_STATEMENT: Sends (every hour) information about active trades, closed trades and account values.
+WDE_ERROR: Sends information about errors.
+To change or add an event, go to the init() function. Below the "Event configuration" comment-line, you can add or update event parameters.
+Furthermore, if you add an event, you have to uncomment or add the corresponding line within the switch statement. Search the script for "custom1" to see what I mean.
+For example to add a log-event (WDE_JL_custom1) that searches the journal log for "error", just uncomment and update these lines.
+//   wd_eventTitle[WDE_JL_custom1]         = "Custom1";           // email subject
+//   wdc[WDE_JL_custom1][WDC_ENABLED]      = 1;                   // event 0=disabled / 1=enabled
+//   wdc[WDE_JL_custom1][WDC_INTERVAL]     = 60;                  // check-interval in seconds
+//   wdc[WDE_JL_custom1][WDC_NORMALLEVEL]  = 1;                   // perform a normal-action if level-counter is >= 1
+//   wdc[WDE_JL_custom1][WDC_NORMALACTION] = WDA_MAIL|WDA_RESET;  // normal-action: send mail and clear level-counter
+//   wd_logPath[WDE_JL_custom1]            = BASEDIR+"logs\\";    // journal log path
+//   wd_match1[WDE_JL_custom1]             = "error";             // first pattern
+...also uncomment
+switch
+(event) {
+//             case WDE_JL_custom1:
+Optional:
+The Alive-Event calls a php web script every 40 seconds.
+To use this event you have to:
+Install update.php, check.php and timestamp.txt on a website (with sendmail and php support)
+Make timestamp.txt writeable
+Set the WD_URL ( #define WD_URL "http://myWebSite.com/update.php" )
+Modify update.php, check.php (adjust IP and Email addresses)
+Use a free cronjob service to call "http://myWebSite.com/check.php" every 2 minutes. (If the update.php script fails, check.php sends an alert mail)
+Enable the Alive-Event. (wdc[WDE_ALIVE][WDC_ENABLED]=1)

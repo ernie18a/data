@@ -1,0 +1,369 @@
+AurumNeuro Vanguard
+AurumNeuro Vanguard
+is an intelligent Expert Advisor (EA) specifically designed for
+XAUUSD / Gold trading
+, combining a hybrid
+Neural Risk Architecture
+with the
+Unified Market Dynamics Engine (UMDE)
+.
+Rather than relying solely on conventional technical signals, AurumNeuro Vanguard combines
+causal price analysis
+, an
+online-learning neural network
+, and
+ATR-based adaptive risk management
+to evaluate market conditions and generate disciplined entry and exit decisions.
+Key Features
+UMDE Core Engine
+Detects market direction by analyzing
+price velocity, entropy, and Causal Price Dynamics (CPD)
+to filter out lower-quality market signals and focus on stronger trading conditions.
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+class
+CUMDE_Kernel
+{
+private
+:
+   MarketState    m_pool[STATE_POOL_SIZE];
+   MarketState    m_l1_buffer[L1_SIZE];
+ushort
+m_free_ptr;
+int
+m_head;
+double
+m_cpd, m_hamiltonian, m_cpd_smooth, m_scale;
+bool
+m_shadow_mode;
+public
+:
+   CUMDE_Kernel() : m_free_ptr(
+0
+), m_head(
+0
+), m_cpd(
+0.0
+),
+      m_shadow_mode(
+true
+), m_cpd_smooth(
+0.0
+) {}
+void
+InitScale()
+   {
+      point =
+SymbolInfoDouble
+(
+_Symbol
+,
+SYMBOL_POINT
+);
+      m_scale = (point <
+0.01
+) ?
+1000.0
+:
+100.0
+;
+   }
+void
+UpdateState(
+double
+price,
+double
+vol,
+double
+spread)
+   {
+      m_head = (m_head +
+1
+) & (L1_SIZE -
+1
+);
+double
+prev_price = m_l1_buffer[(m_head + L1_SIZE -
+1
+) & (L1_SIZE -
+1
+)].price;
+double
+vel = (price - prev_price) * m_scale;
+      m_l1_buffer[m_head].price     = price;
+      m_l1_buffer[m_head].velocity  = vel;
+      m_l1_buffer[m_head].curvature = vel *
+0.5
+;
+      m_l1_buffer[m_head].entropy   = spread * vol;
+      m_l1_buffer[m_head].timestamp =
+TimeCurrent
+();
+   }
+void
+EvaluatePhysics()
+   {
+double
+v = m_l1_buffer[m_head].velocity;
+double
+s = m_l1_buffer[m_head].entropy;
+double
+raw_cpd =
+MathAbs
+(v * (
+1.0
+/ (s +
+0.0001
+)));
+double
+current_cpd =
+MathMin
+(raw_cpd,
+10.0
+);
+      m_cpd_smooth =
+0.95
+* m_cpd_smooth +
+0.05
+* current_cpd;
+      m_cpd = m_cpd_smooth;
+      m_hamiltonian = (v * v) + (s *
+0.5
+);
+      m_shadow_mode = (m_cpd <
+0.60
+);
+      m_l1_buffer[m_head].cpd        = m_cpd;
+      m_l1_buffer[m_head].hamiltonian= m_hamiltonian;
+   }
+   MarketState GetCurrentState()
+const
+{
+return
+m_l1_buffer[m_head];
+   }
+ENUM_ORDER_TYPE
+GetCausalDirection()
+const
+{
+return
+(m_l1_buffer[m_head].velocity >
+0
+) ?
+ORDER_TYPE_BUY
+:
+ORDER_TYPE_SELL
+;
+   }
+bool
+IsInShadowMode()
+const
+{
+return
+m_shadow_mode;
+   }
+double
+GetCPD()
+const
+{
+return
+m_cpd;
+   }
+};
+CUMDE_Kernel UMDE;
+Neural Advisor
+Uses a
+5-12-3 neural network architecture
+that is continuously trained online using previous bar data. The Neural Advisor provides directional confirmation as well as dynamic
+Take Profit (TP)
+and
+Stop Loss (SL)
+guidance.
+Adaptive Risk & Lot Sizing
+Supports both
+Fixed Lot
+and
+Risk Percent
+trading modes. Position size can be calculated automatically based on
+SL distance, commission, and tick value
+, helping maintain consistent risk across different market conditions.
+ATR Trailing Stop + Anti-Reversal Buffer
+Features an
+ATR-based trailing stop
+with an optional
+aggressive mode
+and dynamic stop widening during extreme volatility. This helps reduce the chance of premature stop-outs when Gold experiences rapid price reversals.
+Hard Close Profit — Risk/Reward
+Automatically closes positions when the achieved profit reaches the configured
+Risk/Reward (RR)
+target, providing a clear and systematic profit-taking mechanism.
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+void
+ManageHardCloseProfit()
+{
+if
+(!InpUseRR)
+return
+;
+for
+(
+int
+i =
+PositionsTotal
+() -
+1
+; i >=
+0
+; i--) {
+ulong
+ticket =
+PositionGetTicket
+(i);
+if
+(!
+PositionSelectByTicket
+(ticket))
+continue
+;
+if
+(
+PositionGetString
+(
+POSITION_SYMBOL
+) !=
+_Symbol
+)
+continue
+;
+double
+entryPrice =
+PositionGetDouble
+(
+POSITION_PRICE_OPEN
+);
+double
+currentSL  =
+PositionGetDouble
+(
+POSITION_SL
+);
+ENUM_POSITION_TYPE
+posType = (
+ENUM_POSITION_TYPE
+)
+PositionGetInteger
+(
+POSITION_TYPE
+);
+if
+(currentSL ==
+0
+)
+continue
+;
+double
+slPoints = (posType ==
+POSITION_TYPE_BUY
+) ?
+                        (entryPrice - currentSL) / point :
+                        (currentSL - entryPrice) / point;
+if
+(slPoints <=
+0
+)
+continue
+;
+double
+bid =
+SymbolInfoDouble
+(
+_Symbol
+,
+SYMBOL_BID
+);
+double
+ask =
+SymbolInfoDouble
+(
+_Symbol
+,
+SYMBOL_ASK
+);
+double
+profitPoints = (posType ==
+POSITION_TYPE_BUY
+) ?
+                            (bid - entryPrice) / point :
+                            (entryPrice - ask) / point;
+if
+(profitPoints >= InpRRatio * slPoints) {
+Print
+(
+"RR hit: ticket="
+, ticket,
+" profit="
+,
+DoubleToString
+(profitPoints,
+1
+),
+" pts, SL="
+,
+DoubleToString
+(slPoints,
+1
+),
+" RR="
+,
+DoubleToString
+(InpRRatio,
+1
+));
+         ClosePosition(ticket);
+      }
+   }
+}
+Hard Close Cut Loss
+Can exit losing positions early when
+neural confidence falls below the configured threshold
+, helping protect account equity from prolonged or excessive drawdown.
+Strict Gatekeeper
+Uses multiple execution filters, including
+spread control, trade cooldown, and one-position-per-bar protection
+, designed to reduce unnecessary entries and overtrading.
+Target Market
+Instrument:
+XAUUSD / Gold
+(The EA may also be adapted to other highly volatile instruments.)
+Recommended Timeframes:
+M15 – H1
+Optimal Timeframe:
+H1 for more stable signal conditions
+Account Types:
+Standard, Raw Spread, or ECN accounts with competitive commissions
+Recommended Starting Capital:
+$500 minimum
+Recommended Capital:
+$1,000+ when trading 0.01 lots
+Competitive Advantages
+Adaptive Learning
+The neural network continuously updates its weights using new market data, allowing the model to adapt to changing market behavior over time.
+Dual-Layer Protection
+Combines
+adaptive ATR trailing protection
+with
+hard close cut-loss logic
+, providing multiple layers of protection against unfavorable market movements.
+Transparent Configuration
+Major trading, risk, and execution parameters are exposed through the EA inputs, making it easier to optimize the system and adapt it to different trading preferences and market conditions.
+Built for Gold's Volatility
+AurumNeuro Vanguard
+is designed for traders looking for an AI-inspired trading system built on a mathematical foundation and disciplined risk management framework.
+By combining
+market dynamics analysis, online neural learning, adaptive volatility management, and strict trade execution controls
+, AurumNeuro Vanguard is engineered to handle the fast and volatile characteristics of the
+Gold market
+with a systematic approach.

@@ -1,0 +1,13 @@
+Detrended_Price_Oscillator
+indicator with the timeframe selection option available in input parameters:
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// Indicator chart period (timeframe)
+The indicator requires Detrended_Price_Oscillator.mq5 indicator file. Place it in <terminal_data_folder>\MQL5\Indicators.
+Fig.1. Detrended_Price_Oscillator_HTF
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15297

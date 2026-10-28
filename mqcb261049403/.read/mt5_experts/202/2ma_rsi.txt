@@ -1,0 +1,22 @@
+This Expert Advisor uses two
+Moving Averages
+and
+RSI
+indicator.
+It has two money management systems - fixed lot and martingale. The martingale can be disabled.
+Input parameters:
+PeriodFast - fast MA period;
+PeriodSlow - slow MA period;
+ShiftFast - fast MA shift;
+ShiftSlow - slow MA shift;
+RSI - RSI period;
+Perekup - overbought RSI level;
+Pereprod - oversold RSI level;
+Stop - Stop Loss in points;
+Tp - Take Profit in points;
+DML - margin for 1 lot;
+UD - number of doublings;
+Slipage - slippage in points.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/202

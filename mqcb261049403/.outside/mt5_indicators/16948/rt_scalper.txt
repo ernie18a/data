@@ -1,0 +1,18 @@
+Real time indicator designed for scalping on FORTS.
+The chart data is displayed in percentages.
+Yellow line — change in buy/sell deals (in %)
+Crimson line — change in volumes of buy/sell orders in the Depth of Market (в %)
+Light blue line — change in the total number of buy/sell orders (in %)
+The information strings display the maximum current volumes in the Depth of Market and their position.
+Parameter
+input
+uint
+Deals=
+100
+;
+//Deals threshold
+changes the "sensitivity" of the deals indicator (yellow line).
+Adjusts to each instrument individually.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16948

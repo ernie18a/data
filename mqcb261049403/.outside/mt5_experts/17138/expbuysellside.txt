@@ -1,0 +1,4 @@
+ExpBuySellSide is a MetaTrader 5 Expert Advisor based on the ATRStops and StepUpDown indicators.
+Extract and copy 2 sound wav files into the folder MetaTrader 5/Sounds, so that during the expert activity, e.g. when opening/closing positions, the expert will give a warning sound.
+Use expert ExpBuySellSideon a demo account, or use it according to your wisdom.
+May be useful for fellow traders.

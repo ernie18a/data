@@ -1,0 +1,65 @@
+The script exports history of closed positions from MT5 retail hedging account selected between two dates. The resulting file is CSV that can be opened/imported with any spreadsheet software.
+For
+version 2
+of the script, please go to
+https://www.mql5.com/en/code/27683
+It supports only
+retail hedging
+accounts (Forex).
+To export the entire trading history, keep
+Start date
+and
+End date
+at their default values.
+The CSV file will be auto-opened with the associated Windows program (e.g., Microsoft Excel or Ron's CSV Editor).
+The output CSV file can be located at: Terminal > File > Open data folder > MQL5\Files\<Filename>
+Following data columns are exported:
+Open Time
+Ticket:
+this is the position ID
+Type
+Volume
+Symbol
+Open Price
+S/L
+T/P
+Close Time
+Close Price
+Commission
+Swap
+Profit
+Profit Points
+Balance,
+this includes the running sum of all profits, swaps and commissions from previous trades
+Magic Number
+Duration,
+this includes duration of the position expressed in (hh:mm:ss) format
+Open Reason
+,
+this includes reason of opening the position (client, mobile, web, expert)
+Close Reason
+,
+this includes reason of closing the position (client, mobile, web, expert, sl, tp, so, ...)
+Open Comment
+,
+this includes comment of the deal in for position
+Close Comment
+,
+this includes comments of all the deals out for position
+Deal In Ticket
+,
+this includes ticket of the deal in for position
+Deal Out Tickets
+,
+this includes tickets of all the deals out for position
+The closed positions are reconstructed in a more convenient representation than the History tab of the MetaTrader 5 terminal.
+The CSV file can be opened with Microsoft Excel or better with
+Ron's CSV Editor
+.
+https://www.ronsplace.eu/Products/RonsEditor
+Note:
+To be able to calculate the running Balance in the correct chronological order, the option "
+Order positions by:
+" has to be set to "
+Close time
+", so that the list of positions is ordered by the time of closing (not by the opening times).

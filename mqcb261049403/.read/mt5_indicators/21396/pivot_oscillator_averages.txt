@@ -1,0 +1,2 @@
+This is a variation of a well known pivot indicator
+Instead of showing pivot lines on main chart the indicator is showing pivot lines in a separate window and it shows average price position relative to those pivot lines. That way you can clearly see how the averaged price moved during the day compared to pivot lines. If you use average period less than or equal to 1, then it is effectively using price and not average and then it is pivot oscillator of a "raw" price instead of average

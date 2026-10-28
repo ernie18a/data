@@ -1,0 +1,20 @@
+The indicator forecasts high and low price values of a financial asset for the current trading day considering yesterday's (completed) and today's day candlesticks parameters.
+Tomorrow's price range X depends on the current day Close and Open prices ratio.
+Three relations are possible among them:
+if Сlose[0] < Open [0], then Х = (High[1] + Low[1] + Close[1] + Low[1] ) / 2;
+if Сlose[0] > Open [0], then Х = (High[1] + Low[1] + Close[1] + High[1]) / 2;
+if Сlose[0] = Open [0], then Х = (High[1] + Low[1] + Close[1] + Close[1]) / 2.
+where:
+Open[0], High[0], Low[0], Close[0] - current day prices;
+Open[1], High[1], Low[1], Close[1] - yesterday's prices.
+Estimated low price for tomorrow: Min = X - High[1].
+Estimated high price for tomorrow: Max = Low[1] - X.
+This version of the
+Daily Range Projections
+indicator can be generated for any chart bar and allows to see a complete picture of the market behaviour relative to the indicator levels at each bar. Perhaps, the most appropriate application sphere for this indicator is an offline strategy analysis.
+The indicator has been written based on the book
+"Forex from the first person. For beginners and professionals"
+(А. Vedikhin, G. Petrov, B. Shylov).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/566

@@ -1,0 +1,16 @@
+The indicator calculates either the distance of the current price from the opening price, or the distance between the High and Low price, whichever is selected.
+The calculation is performed for all pairs available (not hidden) in the "Market Watch" window, then the values are sorted descending/ascending and they are output to the buttons.
+Clicking the button opens a chart of the corresponding symbol in a separate window.
+Amendments of 2015.06:
+fixed the error of shifting the button coordinates when switching timeframes.
+Settings:
+Method — selection of the calculation method (opening-closing or high-low).
+Number of buttons — the number of currency buttons displayed.
+Pressing the MODE button changes the sorting mode to "ascending/descending".
+To exclude a pair from the calculation it should be removed from the "Market Watch" window.
+IMPORTANT:
+Response to pressing the MODE button happens with a delay (the code is heavy).
+The maximum number of pairs to calculate — 50 (in code #define LINES 50).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13109

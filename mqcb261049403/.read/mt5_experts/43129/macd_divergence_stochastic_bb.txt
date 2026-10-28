@@ -1,0 +1,17 @@
+This expert identifies macd divergence when
+BUYS
+stochastic main line > signal line
+stochastic is between oversold levels ( control over duration how long has stochastic between these lvls input
+candle period 9 & 10
+)
+Closes trades based on the upper bollinger band level at the time trade is taken. stops are set at 100 % equal to target
+stoplosspercentTP
+All indicators including the macd divergence are multi time frame capable .
+Example you could have divergence occur on 4 hr timetrame , stocastic confluence on the 30min chart . and Targets and stops on the 5 minute bollinger band levels.
+Sell inverse.
+*The EA only trades if there is no other open trades*
+Include alert only EA
+* when changing the timeframe settings must use 1 minute open data to
+test
+*
+enjoy

@@ -1,0 +1,14 @@
+CloseAtProfit is an EA that I use only to close orders after defined profit, or loss, you can define if to close only trades on current symbol or to close all orders on all symbols, to close only opened trades or also delete pending orders.
+I am using it in live trading. I have closed with it more than 200 trades at once, without any problem. The speed of closing depends on time when it trades, on broker you are using and symbols you are trading.
+INPUTS:
+useProfitToClose = true; - if it is true the EA will close trades when the profit is greater than defined profit to close;
+profitToClose = 20; - the defined profit in account currency, when close trades;
+useLossToClose =false; - if it is true the EA will close trades when the loss is greater than defined loss to close;
+lossToClose =100; - the defined loss in account currency, when close trades;
+AllSymbols =true; - if it is true the EA closes trades on all symbols, if false- only on current symbol where EA is attached;
+PendingOrders =true; - if it is true the EA closes also pending orders, on all symbols or current symbol depends on AllSymbols setting;
+MaxSlippage = 3; - maximal allowed slippage in pip;
+showMenu = true; - if true, EA shows on graph information about open trades, lots and profit;
+menuColor = Yellow; - color of menu text;
+variablesColor = Red; - color of variables;
+font = 10; - font size;

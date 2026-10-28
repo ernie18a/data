@@ -1,0 +1,88 @@
+In general, it is quite strange pattern ... but, strangely enough, it works.
+When the price moves downward on 3 bars (three "falling" candles) on M15, the green is above the red on Stochastic of M1 and M5 charts.
+Stop loss, take profit can be optimized.
+Variables:
+extern int StopLoss // I hope this is clear
+extern int TakeProfit // I hope this is also clear :)
+extern double Lots // if lot is not set to 0, then it is fixed, if set to 0, then the lot size will be change automatically based on the deposit.
+extern int MaxOrders // maximum allowed number of simultaneously opened orders
+extern int Periods // period, the Stochastic of which is used by the EA
+extern int Periods2 // period, the Stochastic of which is used by the EA (second)
+After improvements and optimization the most successful results were achieved on euro/jpy, working timeframe - M15, stochastic periods are M1 and M5, take profit - 145, stop loss - 25. Testing results for one month period is provided below.
+I am waiting for tips. I know the EA is crude and not reliable enough, but nonetheless there is something in it, in my opinion.
+If anyone interested I can share modified versions as well as variations.
+Thank you for attention.
+Strategy Tester Report
+OpenTiks3.22(original)+periodical+lotchange
+Masterforex-Demo (Build 220)
+Symbol
+EURJPY (Euro vs Japanese Yen)
+Period
+15 Minutes (M15) 2008.11.21 21:30 - 2008.12.31 18:59 (2008.01.30 - 2009.01.30)
+Model
+Open prices only (fastest method to analyze the bar just completed, only for EAs that explicitly control bar opening)
+Parameters
+TrailingStop=30; StopLoss=140; TakeProfit=25; Lots=0; magicnumber=777; MaxOrders=1; Periods=1; Periods2=5;
+Bars in test
+2558
+Ticks modelled
+5013
+Modelling quality
+n/a
+Mismatched chart errors
+0
+Initial deposit
+2500.00
+Net profit
+7460.93
+Gross profit
+7460.93
+Gross loss
+0.00
+Profit factor
+Expected payoff
+276.33
+Absolute drawdown
+490.14
+Maximum drawdown
+2676.50 (28.28%)
+Relative drawdown
+28.28% (2676.50)
+Total trades
+27
+Short positions (won %)
+0 (0.00%)
+Long positions (won %)
+27 (100.00%)
+Profit trades (% of total)
+27 (100.00%)
+Loss Trades (% of total)
+0 (0.00%)
+Largest
+profit trade
+495.65
+loss trade
+0.00
+Average
+profit trade
+276.33
+loss trade
+0.00
+Maximum
+consecutive wins (profit in money)
+27 (7460.93)
+consecutive losses (loss in money)
+0 (0.00)
+Maximal
+consecutive profit (count of wins)
+7460.93 (27)
+consecutive loss (count)
+0.00 (0)
+Average
+consecutive wins
+27
+consecutive losses
+0
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8651

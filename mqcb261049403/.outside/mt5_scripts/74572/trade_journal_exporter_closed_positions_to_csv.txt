@@ -1,0 +1,5 @@
+A trading journal is the cheapest edge there is - this script gets your raw data out of the terminal in one run.
+It selects the account history for the last N days (input), walks all deals, and aggregates them into closed positions by position ID, so it is correct on both netting and hedging accounts and handles partial fills: entry and exit prices are volume-weighted across all entry and exit deals of the position.
+Each CSV row contains: position ID, symbol, direction, volume, open time and volume-weighted open price, close time and volume-weighted close price, the result in points (direction-aware), commission, swap, net profit, duration in minutes, and the first deal comment (often the EA name - handy for filtering by strategy).
+Inputs: period in days, file name (empty = auto TradeJournal_YYYY-MM-DD.csv), CSV separator (the default ";" opens directly in Excel), optional common-folder output, and an optional filter to the current chart symbol only.
+The file is written to MQL5\Files (or the common Files folder). Positions still open, and positions whose entry lies outside the selected period, are skipped. Export only - it changes nothing on the account.

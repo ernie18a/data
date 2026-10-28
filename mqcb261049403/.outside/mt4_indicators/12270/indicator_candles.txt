@@ -1,0 +1,5 @@
+The indicator draws candle objects in a separate window of any one of the following indicators:
+Percent Range;
+RSI;
+CCI;
+Price;

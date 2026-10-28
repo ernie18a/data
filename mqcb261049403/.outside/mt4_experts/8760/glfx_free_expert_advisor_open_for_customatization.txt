@@ -1,0 +1,5 @@
+Since 2009 when I published GLFX a lot of update were done. So I decided to upload the newest version that doesn´t write errors during the compilation into ex4 file.
+It is hard to describe which functions GLFX contains. Just explore mq4 code because almost functions are well described.
+I attached also a manual which I made only in Czech language for version 2009. I don´t plan to update this manual.
+I think it could be a good start for those who want to build their own EA. I didn´t attached a set file so first you have to set your own strategy.
+Enjoy it!

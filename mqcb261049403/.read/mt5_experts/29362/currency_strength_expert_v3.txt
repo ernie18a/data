@@ -1,0 +1,4 @@
+This EA can trades up to 28 Currency Pairs simultaneously using built in Currency Strength Indicator.
+Please note that this EA has Martingale features and should be used as
+Learning Purpose Only.
+I do not responsible if any loss occured due to usage of this EA.

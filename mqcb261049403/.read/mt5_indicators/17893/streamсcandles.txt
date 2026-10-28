@@ -1,0 +1,56 @@
+Real author
+: Yuriy Tokman (YTG)
+The indicator colors candlesticks whose size multiplied by volume exceeds a preset value. Depending on settings, the indicator can take into accounts the candlestick body or the entire candlestick size.
+Indicator input parameters:
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+ENUM_MODE Candles_Mode=OPENCLOSE;
+//size option
+input
+uint
+Candles_Size=
+1000
+;
+//minimum candlestick size for triggering
+input
+ENUM_APPLIED_VOLUME_ VolumeType=VOLUME_TICK_;
+//Volume
+input
+uint
+NumberofBar=
+1
+;
+//Bar number to generate a signal
+input
+bool
+SoundON=
+true
+;
+//Enable alerts
+input
+uint
+NumberofAlerts=
+2
+;
+//The number of alerts
+input
+bool
+EMailON=
+false
+;
+//Enable email notifications
+input
+bool
+PushON=
+false
+;
+//Enable push-notifications
+Originally this indicator was written in MQL4 and was published in the
+Code Base
+on 22.01.2016.
+Fig1. The Stream indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17893

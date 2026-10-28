@@ -1,0 +1,6 @@
+This expert is a system to help any trader to make a grid of orders (without martingale, lite martingale, or full martingale) easy and simple.
+Please make your test to find your settings.
+Default settings are just to take an idea of how the expert works.
+The expert can make according or contrary grid of orders.
+You can set the expert to work in hedge mode if the losses are huge.
+The system uses a high-risk strategy. It's better to test it first in a demo account.

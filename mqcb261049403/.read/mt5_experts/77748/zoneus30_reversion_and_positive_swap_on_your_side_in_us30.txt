@@ -1,0 +1,50 @@
+ZoneUS30
+ZoneUS30 is a simplified Expert Advisor developed specifically for the US30 index.
+The idea behind the EA is intentionally straightforward: strong markets do not move in a straight line forever. After an upward extension, the price may enter a correction or short-term reversal phase.
+ZoneUS30 looks for these situations and opens SELL positions when its internal conditions are satisfied.
+Strategy Concept
+The EA combines two basic market ideas:
+Mean Reversion
+After a strong upward movement, price can temporarily move too far away from its recent reference area. ZoneUS30 attempts to identify these extensions and trade a possible correction.
+Carry / Positive Swap
+Depending on the broker and current trading conditions, US30 short positions may receive positive overnight swap.
+For this reason, the strategy is designed only for SELL positions.
+When positive short swap is available, a position that remains open for several days may receive an additional carry component while waiting for the expected price correction.
+The swap is not intended to replace the trading edge. It is simply an additional component that may improve the economics of a position when the broker pays positive swap on the short side.
+Trading Style
+ZoneUS30 is not a high-frequency scalper.
+Some positions may remain open for several days while the strategy waits for a larger price correction.
+Because of this, the EA is closer to a swing / position-trading concept than to traditional day trading.
+Inputs
+The public version intentionally contains only two user inputs:
+Lot
+Position size used by the EA.
+Signal Timeframe
+Timeframe used by the strategy to analyze the market.
+All other strategy parameters are internally defined to keep the EA simple.
+Important Risk Information
+ZoneUS30 is a counter-trend strategy.
+Selling a strongly rising index can involve substantial risk because price may continue moving upward for a long period before a correction occurs.
+The default lot size is intentionally aggressive and should not be interpreted as a recommended position size.
+Users should select a lot size appropriate for their account balance, leverage, broker specifications and personal risk tolerance.
+Swap conditions are also not permanent.
+Positive or negative swap values may change according to:
+broker;
+account type;
+interest rates;
+financing conditions;
+trading symbol specifications;
+day of the week.
+Always verify the current swap specifications of your broker before using the EA.
+Recommended Use
+ZoneUS30 was designed primarily for:
+research;
+strategy testing;
+educational purposes;
+US30 mean-reversion experiments;
+carry-trade and overnight swap studies.
+Backtesting does not guarantee future results.
+Market behavior, spreads, swaps, execution conditions and margin requirements can change significantly over time.
+Translated from Portuguese by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/pt/code/77748

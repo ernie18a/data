@@ -1,0 +1,22 @@
+Trading system using the
+BlauCSI
+oscillator.
+A trade decision is made when the histogram changes direction or at the breakthrough of the zero line. The following input parameter is used for selecting an entry algorithm option:
+input
+AlgMode Mode=twist;
+//the algorithm to enter the market
+For a correct operation of the EA, place the compiled indicator file BBlauCSI.ex5 to the terminal_data_folder\MQL5\Indicators.
+It should be considered that the TradeAlgorithms.mqh library file is designed to use Expert Advisors by brokers who offer
+nonzero spread
+and ability to set Stop Loss and Take Profit
+simultaneously opening
+a position. Other variants of this library can be downloaded from
+Trade Algorithms
+.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. The instances of history of deals on the chart
+Testing results for 2012 on GBPUSD H4:
+Fig. 2. Chart of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1954

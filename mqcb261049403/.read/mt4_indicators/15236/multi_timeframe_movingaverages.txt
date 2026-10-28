@@ -1,0 +1,14 @@
+Show multi timeframe Moving Average on one chart.
+Input parameters:
+InpMinTimeFrame — Min TimeFrame
+InpMiddleTimeFrame — Middle TimeFrame
+InpMaxTimeFrame — Max TimeFrame
+InpMAPeriod — averaging period
+InpMAShif — horizontal shift
+InpMAMethod — smoothing type
+InpAppliedPrice — type of price or handle
+InpShowMin — Show Min
+InpShowMiddle — Show Middle
+InpShowMax — Show Max
+2016-04-01 Update
+Fix Refreshed All Time Forum

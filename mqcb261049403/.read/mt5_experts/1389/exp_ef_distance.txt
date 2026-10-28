@@ -1,0 +1,20 @@
+The Exp_EF_distance trading system is based on changes of the trend direction displayed by the
+EF_distance
+indicator.
+The signal is formed when a bar is closing depending on the change of the Moving Average direction displayed by the indicator.
+To eliminate triggering of the Expert Advisor on the flat the
+Flat-Trend
+volatility indicator with three states which level determines whether there is enough trend force to open position. Deals filtering performs by the input parameter of the Expert Advisor
+input
+Volatility Volatil=V3;
+//The size of volatility to perform deal
+The deals filtering carried out only by the entry, exits are without filtering.
+Place EF_distance.ex5 and Flat-Trend.ex4 compiled files to the terminal_data_folder\MQL5\Indicators.
+The Exp_EF_distance_ Expert Advisor is the same Expert Advisor but without use of volatility indicator!
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. The instances of history of deals in the chart.
+Testing results for 2011 at EURAUD H4:
+Fig. 2. Chart of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1389

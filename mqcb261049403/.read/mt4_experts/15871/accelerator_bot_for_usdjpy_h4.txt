@@ -1,0 +1,5 @@
+I wrote this code using a lot of different ideas and/or code from this website, thanks to all of them.
+This EA uses different indicators: ADX, Stochatisc, Accelerator...
+This EA is optimized for USDJPY TF H4, but it can work on others if you optimize it.
+The code is written from my template, so not everything is useful in this EA, you can easily use it as a basis to write an other one.
+I am not responsible for any loss that can occur on a real account.

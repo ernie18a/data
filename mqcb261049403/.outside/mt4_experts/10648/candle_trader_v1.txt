@@ -1,0 +1,4 @@
+Description:
+This Expert Advisor uses candlestick signals to trade.
+When semi automated it can achieve great results.
+We recommend only enabling it when the market is trending. The EA is great for both scalping and big tp strategies depending on chart timeframe used.

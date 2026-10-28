@@ -1,0 +1,18 @@
+Author and Original Code:
+https://www.mql5.com/en/code/7608
+I've just added to the indicator sound signals that inform about an auspicious moment for opening a position for basic currencies.
+EURUSD
+USDCHF
+USDJPY
+GBPUSD
+EURJPY
+GBPJPY
+AUDUSD
+You should attach the indicator to all symbol windows if you're going to trade them all.
+The EA informs you once and repeats the signal after 300 ticks (this means it alerts you approximately every 10-30 minutes according to the frequency of data entry; you can change the amount of ticks by editing the code). This excludes the disadvantages usually present in indicators with an alert that gets to you with its continuous triggering and that you have to disable by changing settings.
+The sounds from the attached zip file should be copied to your folder C:\Program Files\Real Trader 4\sounds
+I've also added an indicator for specific currencies separately that indicates the current direction of auspicious moments on different symbols (see Fig. below). It shows the direction on all currencies.
+In the second modification, the sound alert triggers once and will only be repeated when "LUCKY BUY or SELL" is off and on again. Added prices: the first price is that, at which the signal has triggered, the second price changes together with the market and stops changing when the signal is off.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7919

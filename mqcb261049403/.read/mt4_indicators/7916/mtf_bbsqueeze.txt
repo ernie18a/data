@@ -1,0 +1,6 @@
+Author:
+FX Sniper, Keris2112
+Indicator BB-Squeeze. The modified version. For work the indicator bbsqueeze is necessary See
+forum
+.
+Indicator MTF BB-Squeeze

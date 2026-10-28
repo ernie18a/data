@@ -1,0 +1,23 @@
+Prop-Firm Equity Guard: Stop blowing funded accounts over silly mistakes
+Let’s be honest. Passing a prop firm challenge is hard enough without losing it to a sudden news spike, a bad spread, or just a moment of revenge trading.
+I coded this utility because I needed a strict, emotionless risk manager for my own evaluations. You attach it to just one chart, and it quietly watches your entire account in the background. If you get too close to the daily or max drawdown rules, it pulls the plug before the prop firm terminates your account.
+What it actually does:
+Stops Revenge Trading (Daily Limit):
+Set your firm's daily loss limit. If your equity drops near it, the tool closes everything and locks you out for the day. You live to trade tomorrow.
+Max Drawdown Protection:
+Monitors your absolute account limit to make sure you never lose the initial evaluation fee.
+The Slippage Buffer:
+Prop firms don't care if slippage or a news spike ruined your trade. This tool lets you set a safety buffer (like stopping 1% before the actual limit) so spread manipulation doesn't fail your challenge.
+The Kill-Switch:
+When a limit is hit, it doesn't just close open positions. It instantly deletes all pending orders across all pairs so nothing triggers by accident.
+Plug & Play:
+No coding or complicated setups. Drop it on a single chart and it protects all symbols and timeframes automatically.
+It’s simple, it’s lightweight, and it does exactly what it says. The daily limit resets automatically based on your broker's server time.
+Protect your evaluation fees and keep your funded accounts safe.
+For developers: the tool sets a global flag your own EA can check in one line, so your strategies stop trading too.
+Version 1.10 - the breach state and the day-start snapshot are now persisted to Terminal\Common\Files (one file per account), so a terminal restart, a VPS reboot, a recompile or a re-attach can no longer clear a halt or re-anchor the daily limit to the reduced equity. New input InpResetState clears a stored halt for a new challenge. Thanks to Valerii Sakara for reporting the bug.
+Version history:
+v1.12 - File renamed to PropFirmEquityGuard.mq5. Protection logic unchanged.
+v1.10 - Breach state and day-start snapshot are saved per account, so a restart can no longer clear a halt.
+v1.00 - First release.
+An extended version with additional features, Prop Firm Equity Guard Pro, is available in the Market.

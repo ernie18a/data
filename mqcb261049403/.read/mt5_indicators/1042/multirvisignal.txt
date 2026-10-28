@@ -1,0 +1,8 @@
+MultiRVISignal displays information on current trends using values of the four
+RVI
+indicators obtained from different time frames.
+Each of the RVI indicators corresponds to one of the four indicator lines. If the RVI indicator is above its signal line, the line is green, if it is bellow, the line is red. Colored points appear on the lines when the bar of the relevant time frame is changing.
+Fig.1 The MultiRVISignal Indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1042

@@ -1,0 +1,9 @@
+The MultiColorZerolagJCCXTrend_x10 indicator shows information on current trends using the
+ColorZerolagJCCX
+indicator direction from ten different timeframes.
+Each of the ten indicator lines corresponds to a separate indicator. Growing oscillator movement paints the lines in light blue, and falling movement — in pink. Otherwise, the lines are gray. Colored dots on lines appear when the bar of the corresponding timeframe changes.
+This indicator requires the compiled indicator files JCCX.ex5 and ColorZerolagJCCX.ex5. Place them in <terminal_data_folder>\MQL5\Indicators.
+Fig.1. The MultiColorZerolagJCCXTrend_x10 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13889

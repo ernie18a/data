@@ -1,0 +1,50 @@
+Expert
+Advisor Exp_SpearmanRankCorrelation_Histogram
+with the added option of trading within the weekly range only, the borders of which are specified in the EA's input settings:
+input
+bool
+TimeTrade=
+true
+;
+//Allow trading by intervals
+//----
+input
+DAYS_OF_WEEK StartD=ENUM_DAY_OF_WEEK_2;
+//Trading start (Day of the week)
+input
+HOURS  StartH=ENUM_HOUR_8;
+//Trading start (Hour)
+input
+MINUTS StartM=ENUM_MINUT_0;
+//Trading start (Minute)
+input
+SECONDS StartS=ENUM_SECOND_0;
+//Trading start (Second)
+//----
+input
+DAYS_OF_WEEK EndD=ENUM_DAY_OF_WEEK_5;
+//Trading end (Day of the week)
+input
+HOURS  EndH=ENUM_HOUR_20;
+//Trading end (Hour)
+input
+MINUTS EndM=ENUM_MINUT_59;
+//Trading end (Minute)
+input
+SECONDS EndS=ENUM_SECOND_40;
+//Trading end (Second)
+For the generated EA to operate correctly, the compiled
+SpearmanRankCorrelation_Histogram.ex5
+indicator file should be available in the
+<terminal_data_directory>\MQL5\Indicators
+folder.
+Note that the TradeAlgorithms.mqh library file allows using Expert Advisors with brokers who offer
+nonzero spread
+and the option of setting Stop Loss and Take Profit
+together with position opening
+.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. Sample deals on the chart within the intraweek interval
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23342

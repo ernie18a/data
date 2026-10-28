@@ -1,0 +1,14 @@
+Idea by
+:
+Simeon Semenych
+.
+MQL5 code by
+:
+barabashkakvn
+.
+A cluster indicator based on article
+Practical Application of Cluster Indicators in FOREX
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21212

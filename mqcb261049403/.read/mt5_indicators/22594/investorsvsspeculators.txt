@@ -1,0 +1,28 @@
+Investors vs Speculators displays the ratio of major players' actions (Investors) to the actions of market traders (Speculators).
+It has two configurable parameters:
+Period
+- calculation period
+AD method
+- accumulation/distribution calculation method
+Classical MT
+- standard as in MetaTrader
+Trade Station
+- as in Trade Station
+Calculation:
+Delta = Investors - Speculators
+where:
+If VOL > AVG
+Speculators = PrevSpeculators
+Investors = PrevInvestors + AD
+otherwise
+Investors = PrevInvestors
+Speculators = PrevSpeculators + AD
+If AD method = Classical MT
+AD = ((Close - Low) - (High - Close)) / (High - Low) * VOL
+If AD method = Trade Station
+AD = (Close - Open) / (High - Low) * VOL
+AVG - SMA(VOL, Period)
+VOL - tick volume
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22594

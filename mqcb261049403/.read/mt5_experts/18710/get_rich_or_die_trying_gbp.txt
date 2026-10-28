@@ -1,0 +1,35 @@
+Author of the idea
+—
+John Smith
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+Positions are only opened at the specified time (+ shift set in "
+Additional hour"
+). Bullish and bearish bars are counted on PERIOD_M1 (M1). The money management classes CMoneyFixedMargin and CMoneyFixedRisk are used.
+Inputs:
+Stop Loss
+Take Profit
+Take Profit 2
+— used for a program-based closing
+Trailing Stop
+Trailing Step
+Money Management
+— risk calculation type (percent of free margin or fixed risk value)
+Risk for a deal (in percent)
+—
+allowable risk percent value
+Count bars
+— the number of bars among which bullish and bearish bars will be counted
+Additional hour
+— shift
+Max positions
+— the maximum number of positions
+Comparison of lot calculation based on the free margin on GBPUSD,M1:
+and the fixed risk value:
+The difference here is only the position load.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18710

@@ -1,0 +1,10 @@
+Author:
+(c) 2010 Shon Shampain for Zen Cows Go Mu,
+http://www.zencowsgomu.com/
+.
+NetFlows is an indicator (inspired by comments by user Merlin) that computes the volume-adjusted flow of a currency considering all currency pairs available on your platform.
+When reading the indicator, remember that values above the 0.0 line are positive net flows, and values below negative. It is very interesting to notice that price action can move in a wide range of net flow configurations; for example, EUR/USD might be increasing on both negative Euro flows AND negative Dollar flows (in which case one would defer to relative net flows to tell the story).
+This indicator is, of course, limited by the pairs available on your platform. It is also limited to the 8 major currencies (feel free to modify if you have more).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9753

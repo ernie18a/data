@@ -1,0 +1,4 @@
+A simple observatory of individual currencies.
+You can choose line color, line width and font size.
+The daily start is by default 00:00, but you can change the hours and minutes from which to start the day.
+If EUR is +1% and USD -0.50%, then the EURUSD cross is 1.50% (1-(-0.50%), and so are all the other crosses.

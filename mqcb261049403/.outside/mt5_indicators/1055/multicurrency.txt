@@ -1,0 +1,164 @@
+The MultiCurrency indicator allows you to concurrently analyze up to eight currency charts. The indicator itself does not perform any calculations. It simply displays eight
+CrossIndex
+indicator candlestick charts in the current chart.
+Indicator input parameters:
+//+-----------------------------------+
+//|  INDICATOR INPUT PARAMETERS       |
+//+-----------------------------------+
+input
+bool
+ShowIndicator1=
+true
+;
+//permission to display the indicator
+input
+string
+Symbol1=
+"EURUSD"
+;
+//currency
+input
+bool
+Direct1=
+true
+;
+//no chart inversion
+input
+bool
+ShowIndicator2=
+true
+;
+//permission to display the indicator
+input
+string
+Symbol2=
+"GBPUSD"
+;
+//currency
+input
+bool
+Direct2=
+true
+;
+//no chart inversion
+input
+bool
+ShowIndicator3=
+true
+;
+//
+permission to display the indicator
+input
+string
+Symbol3=
+"AUDUSD"
+;
+//currency
+input
+bool
+Direct3=
+true
+;
+//no chart inversion
+input
+bool
+ShowIndicator4=
+true
+;
+//
+permission to display the indicator
+input
+string
+Symbol4=
+"NZDUSD"
+;
+//currency
+input
+bool
+Direct4=
+true
+;
+//no chart inversion
+input
+bool
+ShowIndicator5=
+true
+;
+//
+permission to display the indicator
+input
+string
+Symbol5=
+"USDCHF"
+;
+//currency
+input
+bool
+Direct5=
+false
+;
+//no chart inversion
+input
+bool
+ShowIndicator6=
+true
+;
+//
+permission to display the indicator
+input
+string
+Symbol6=
+"USDJPY"
+;
+//currency
+input
+bool
+Direct6=
+false
+;
+//no chart inversion
+input
+bool
+ShowIndicator7=
+true
+;
+//
+permission to display the indicator
+input
+string
+Symbol7=
+"USDCAD"
+;
+//currency
+input
+bool
+Direct7=
+false
+;
+//no chart inversion
+input
+bool
+ShowIndicator8=
+true
+;
+//
+permission to display the indicator
+input
+string
+Symbol8=
+"XAUUSD"
+;
+//currency
+input
+bool
+Direct8=
+true
+;
+//no chart inversion
+Operation of the indicator requires the
+CrossIndex.mq5
+indicator to be placed in terminal_directory\MQL5\Indicators.
+Fig.1 The MultiCurrency Indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1055

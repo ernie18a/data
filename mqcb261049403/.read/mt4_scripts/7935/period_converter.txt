@@ -1,0 +1,10 @@
+The script is designed to create a non-standard symbol period based on the use of the standard period. For example, to create an H3 period of the selected symbol, it is necessary to:
+Open the H1 chart.
+Attach the 'Period_converter.mq4' script from the "Scripts" folder of the "Navigator" window to the chart.
+In the "General" tab flag the "Allow DLL imports" and unflag the "Confirm DLL function calls" parameter.
+In the "Inputs" tab of the script set the value 3 for the "ExtPeriodMultiplier" variable (to get the period H1*3 = H3).
+Press OK.
+Open the H3 chart in offline mode ("File - Open Offline"). The H3 chart will be updated every 2 seconds (by default) when the H1 chart is opened and the 'Period_converter.mq4' is attached to it.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7935

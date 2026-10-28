@@ -1,0 +1,31 @@
+Real author:
+Tomas Hruby in cooperation with Parbest company.
+This program is a simpler version of the original code of relatively simple system Millenium, which in the summer of 2014 earned on real account 54%. I decided to make available this Code Base release (without some paid functions) for free.
+The system is based on opening of only one trade per day. Last year, the system was running on a real account, where he produced nice results throughout the year, 2014. But currently I do not use it for its high degree of volatility. The basic principle is to open one order per day. The main indicator is the crossover of moving averages verifying the current price, which must be above or below the moving average. The condition is that always the lowest or highest price of the last X bars must be at the opposite side of the direction of the new signal order type. As you can see on the screenshot below, the BUY order was opened when lowest price of 20 last bars was below both Moving averages, Fast MA crosses Slow MA and current price is higher than Fast and Slow MA.
+Information:
+Millenium Code is only part of original Millenium Expert Advisor.
+It is very good to use optimization and disable trading at some days of the week.
+Millenium can be also combined with different settings of many trading days (just try to find settings for Monday, then for Friday and then combine them together).
+If you are looking for
+Trailing SL and TP
+with
+money management
+and
+reopening of orders
+please search for Millenium in the Market.
+Order example:
+if
+(yFastMAprice<ySlowMAprice && FastMAprice>SlowMAprice && Ask>SlowMAprice && Ask>FastMAprice && pL1<SlowMAprice && pL1<FastMAprice)
+  {
+if
+(ReverseSignal)
+     {
+      dirToday=OP_SELL;
+     }
+else
+{
+      dirToday=OP_BUY;
+     }
+  }
+And finally, do not miss the news and watch our MQL5 wall:
+https://www.mql5.com/en/users/tomac1

@@ -1,0 +1,12 @@
+The Exp_KaufWMAcross trading system is based on change of the trend direction displayed by the
+KaufWMAcross
+indicator.
+The signal is formed when a bar is closing if there has been the emergence of the next indicator arrow.
+The Expert Advisor requires the compiled file of the indicator KaufWMAcross.ex5. Place it to terminal_data_folder\MQL5\Indicators.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1 The instances of history of deals on the chart.
+Testing results for 2013 at GBPUSD H6:
+Fig. 2. Chart of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11418

@@ -1,0 +1,16 @@
+OHLC VolumeH displaiys the difference between two volume lines of the
+OHLC Volume volume indicator
+as a histogram.
+Since
+OHLC Volume
+is calculated only by OHLCV bar values, the indicator has no configurable parameters.
+Calculation:
+OHLCV = UpV - DnV
+where:
+UpV = Volume * CoeffUP/(CoeffUP+CoeffDN)
+DnV = Volume* CoeffDN/(CoeffUP+CoeffDN)
+CoeffUP = High-Open
+CoeffDN = Close-Low
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21403

@@ -1,0 +1,10 @@
+The indicator colors candlesticks.
+Parameters:
+TimeFrame = 60;
+Shift=0;
+xShift=0;
+SetShift0ToTFBarCloseTime = true;
+ShowMultipleBars = false;
+MaxBarsToCount = 1500;
+note_timeFrames = "M1;5,15,30,60H1;240H4;1440D1;10080W1;43200MN";
+Price_BarsM2_MTF

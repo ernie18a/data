@@ -1,0 +1,9 @@
+It is designed to have always on hand the pivot levels of big timeframes (W1, MN1) on all symbols from the market watch. The results of work of the script are written in html-file to the folder of MetaTrader5/MQL5/Files. Any modern browser can be used to view it. If necessary, the file can be printed (that was the purpose of creating the script). When you print in your browser, go to "File - Page Setup" and check mark next to "Print background colors and images".
+You can throw a script on the chart of any currency pair of any timeframe as the calculation will be performed on all symbols and timeframe data which you will set in the input parameters.
+Parameters:
+File name - it is the name of the file with the calculations results. There is no need in specifying the file extension!
+Timeframe to calculate - according to what timeframe Pivot Points will be calculated.
+The result of the work of the script (so html-file looks):
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1357

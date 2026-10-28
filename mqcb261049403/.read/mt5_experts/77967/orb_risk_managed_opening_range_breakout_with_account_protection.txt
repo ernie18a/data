@@ -1,0 +1,17 @@
+Idea
+The EA marks the high and low of the first minutes after the session open (the "opening range"). It then places a Buy Stop above and a Sell Stop below the range. When one order is filled, the other is deleted (OCO). Only one trade is taken per day, and all positions are closed before the session end.
+Recommended symbol and timeframe
+Built and tested on a US100 / Nasdaq 100 index CFD. Works on any chart timeframe, since the range is always calculated from M1 data. Default times assume a GMT+3 server (US session open 16:30 server time). Adjust the time inputs to your broker's server time.
+Main inputs
+Range start, range length, last entry time, close-all time (server time)
+Trade direction: both, long only, short only
+Risk per trade (% of balance), take profit as R multiple, stop distance as a fraction of the range
+ATR filter: skip days with an unusually small or large range
+Daily loss limit (%), maximum total drawdown (%), initial balance
+Account protection
+Position size calculated from risk and stop distance. If even the minimum lot exceeds the allowed risk, the trade is skipped.
+Daily loss limit: closes all positions and stops trading for the day.
+Maximum drawdown limit: closes all positions and stops the EA.
+Positions are never carried into the next day.
+Important
+This is an educational template showing breakout logic and risk management structure. It is not a profit-guaranteed system. Always test in the Strategy Tester and on a demo account before any live use.

@@ -1,0 +1,4 @@
+This indicator computes the % change in price for the current day and displays it at the top left of the main window, under price information.
+This can be used as an indication of overbought or oversold.
+There are no external variables.
+The formula used is:  ((current price - open price of daily candle)/open price of daily candle) * 100

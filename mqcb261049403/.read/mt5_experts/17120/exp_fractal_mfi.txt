@@ -1,0 +1,42 @@
+Real Author:
+Vladimir Khlystov
+The simplest EA based on the
+fractal MFI
+. Sells at downward crossing of oscillator overbought level, buys at the upward crossing of oscillator oversold level. The signal is formed when a bar is closing if there is crossing of the level.
+Place Fractal_MFI.ex5 compiled file to the
+<terminal_data_folder>\MQL5\Indicators
+.
+After compilation, the Exp_Fractal_MFI.ex5 expert file contains the Fractal_MFI.ex5 indicator as a
+resource
+,
+and therefore, it is not required to be present in the terminal folder for the compiled EA to work! For this purpose, the corresponding code has been added to the EA code in order to include this indicator in the expert's executable file.
+The indicator executable file has been added as resources at the global scope
+//---- Include the indicators in the EA code as resources
+#resource
+\\Indicators\\Fractal_MFI.ex5
+Changed the string path to the indicator used as resource in the block of the OnInit() function
+//---- getting handle of the Fractal_MFI indicator
+InpInd_Handle=
+iCustom
+(
+Symbol
+(),InpInd_Timeframe,
+"::Indicators\\Fractal_MFI"
+,e_period,normal_speed,IPC,VolumeType,
+0
+);
+Thus, the compiled executable file of the expert can be used on other trade terminals on its own without the indicator.
+Note that the TradeAlgorithms.mqh library file allows using Expert Advisors with brokers who offer
+nonzero spread
+and the option of setting Stop Loss and Take Profit
+together with position opening
+. You can download more variants of the library at the following link:
+Trade Algorithms
+.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. Examples of deals on the chart
+Testing results for 2015 on EURAUD H2:
+Fig. 2. Chart of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17120

@@ -1,0 +1,82 @@
+Author:
+A code/method to test redrawing indicators by the examples of
+FxmFish
+,
+ZigZag
+,
+NonLagZigZag
+,
+AFIRMA,
+TREND_alexcud
+- You may want to study the behavior of these indicators using this proposed method.
+There is a number of indicators that are redrawn in the chart at each oncoming new bar.
+Accordingly, some difficulties occur in visual estimating of the indicator properties in terms of their dynamics.
+The proposed code allows you to assign the last bar (right) to the indicator by moving the graphical object. It is most convenient to do it using a vertical line.
+General Instructions:
+Insert the code into the indicator source code. Find the calculation cycle and replace "0" in it with the variable “
+start
+”.
+Don't replace the value, if there is an array zeroizing cycle in the indicator.
+Place a vertical line in the chart and name it as
+“
+start
+”.
+Move the line manually waiting for the recalculation of the indicator.
+Movement from past to future is optimal, because not all indicators "sweep" right bars
+.
+So we will first place a vertical line named "start", then indicators.
+The indicator is recalculated, in two cases
+:
+- automatically, when a new tick comes; or
+- if there is no (not expected) a trade tick, manually, by changing any of the indicator properties; to do so, you should open its Properties window every time and change any color, since it is more convenient to change colors, not digits.
+It is not quite comfortable to work by the above instructions.
+If we have a group of several indicators in our chart
+, we will have to change the properties of each indicator when no ticks come.
+However, when developing this method, a paradoxial recalculation of all indicator was shown, only in case if there is an indicator without line calculations in a separate window that calls to function
+IndicatorDigits(MarketInfo(Symbol(),MODE_DIGITS)).
+<
+build 211
+MT 4 >
+It is a paradoxial fact that, when you change the properties of such an "empty" indicator, all other indicators are forcibly recalculated in all windows.
+Accidentally,
+TREND
+_
+alexcud became
+that initiating indicator.
+An extra initiating indicator
+Visual
+_
+start
+_
+All
+was written.
+Instructions for simultaneous testing of a group of indicators:
+To recalculate all indicators, change the properties of
+TREND
+_
+alexcud
+or
+Visual
+_
+start
+_
+All
+.
+Uploaded the files modified for
+Visual
+_
+start
+, they are also shown in the Figure below:
+1.
+FxmFish
+2.
+NonLagZigZag - yellow
+3. standard
+ZigZag - a red line
+4.
+AFIRMA - two-color, blue and red
+5. TREND_alexcud
+Alexander Pak, Almaty
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7995

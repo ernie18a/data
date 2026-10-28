@@ -1,0 +1,1 @@
+Its simply and example of how a traditional trend indicator like super trend can be turned into profitable trading EA as the key is exit decides the profit

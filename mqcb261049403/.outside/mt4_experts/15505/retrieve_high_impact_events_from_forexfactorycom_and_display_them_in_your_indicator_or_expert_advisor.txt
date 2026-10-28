@@ -1,0 +1,662 @@
+As I'm currently developing an Expert Advisor for Crude Oil and Brent, I wanted to get from ForexFactory.com the exact date and time of the 'Crude Oil Inventory' report. This report is typically issued on Wednesday's at 10:30am Eastern but when there's a holiday, the release date can change. As this is an important report for my EA, the only way was to check an online service to validate the release date.
+First thing is to add in the OPTIONS | EXPERT ADVISOR tab the web site it will use to make the WebRequest, which is 'http://www.forexfactory.com/' (see picture 1)
+Next is to define a structure in your code to store the events. This is placed somewhere at the top of your code which will declare 'DailyEvents' as a global variable with a maximum number of stored event defined by the 'MaxDailyEvents' variable.
+// Define event structure
+struct
+EVENTS
+{
+string
+time;
+string
+title;
+string
+currency;
+bool
+displayed;
+};
+#define
+MaxDailyEvents
+20
+// If you think you'll have more than 20 High Impact events, increase this number.
+EVENTS      DailyEvents[MaxDailyEvents];
+Next we need to retrieve the HTML code from ForexFactory.com and parse it. If you don't understand HTML code, don't worry, I'll step you thru it :)
+We first need to build the URL for the WebRequest. As I only wanted their calendar for the day and not the default (all week), we can do so by setting the 'day' parameter of the request to today's date and sending the request.
+string
+url=
+"http://www.forexfactory.com/calendar.php?day="
+;
+url += MthName(
+Month
+()) +
+DoubleToStr
+(
+Day
+(),
+0
+) +
+"."
++
+DoubleToStr
+(
+Year
+(),
+0
+);
+Then we send the request, check the error code (if any) and convert the returned character array to a string. This makes it easier to parse the HTML code.
+// Send web request
+ResetLastError
+();
+   res =
+WebRequest
+(
+"GET"
+, url, cookie,
+NULL
+, timeout, post,
+0
+, result, headers);
+// Check for errors
+if
+(res == -
+1
+)
+   {
+Print
+(
+"Error in WebRequest. Error code = "
+,
+GetLastError
+());
+MessageBox
+(
+"Add the address 'http://forexfactory.com/' in the\nlist of allowed URLs on"
++
+" tab 'Expert Advisors'"
+,
+"Error"
+,
+MB_ICONINFORMATION
+);
+return
+(
+false
+);
+   }
+If there's no error, we then convert the character array 'result' to an string for better parsing.
+// Convert character array to a string
+HTML =
+CharArrayToString
+(result);
+Now that we have a string, we can use the 'StringFind' function to locate HTML elements. The first thing is to make sure the returned HTML is indeed for today's date and cut anything before this HTML tag. The function 'GetHTMLElement' is used to parse the HTML code and return the value between the HTML tags specified. See below for it's definition.
+// Calendar loaded, make sure it's for today's date
+int
+i =
+StringFind
+(HTML,
+"<span class=\"date\">"
+);
+if
+(i == -
+1
+)
+return
+(
+false
+);
+HTML =
+StringSubstr
+(HTML, i);
+string
+date = GetHTMLElement(HTML,
+"<span>"
+,
+"</span>"
+);
+if
+(date != MthName(
+Month
+()) +
+" "
++
+DoubleToStr
+(
+Day
+(),
+0
+))
+return
+(
+false
+);
+Definition of the 'GetHTMLElement' function.
+//+------------------------------------------------------------------+
+//| Extract an HTML element
+//+------------------------------------------------------------------+
+string
+GetHTMLElement(
+string
+HTML,
+string
+ElementStart,
+string
+ElementEnd)
+{
+string
+data =
+NULL
+;
+// Find start and end position for element
+int
+s =
+StringFind
+(HTML, ElementStart) +
+StringLen
+(ElementStart);
+int
+e =
+StringFind
+(
+StringSubstr
+(HTML, s), ElementEnd);
+// Return element content
+if
+(e !=
+0
+) data =
+StringSubstr
+(HTML, s, e);
+return
+(data);
+}
+Ok, now that we've made sure the calendar returned is for today's date, let's start parsing each of the table row and extract the elements we need. Namely event time, event currency, event impact and event title. We need to do this for each table row there is in the HTML code until the end of the calendar or the MaxDailyEvents has been reached.
+Once the data for each row has been extracted, we add it to the DailyEvents structure.
+// Now get table rows for each event
+lasttime =
+NULL
+;
+cnrt =
+0
+;
+date =
+DoubleToStr
+(
+Year
+(),
+0
+) +
+"."
++
+DoubleToStr
+(
+Month
+(),
+0
+) +
+"."
++
+DoubleToStr
+(
+Day
+(),
+0
+) +
+" "
+;
+do
+{
+// Get event information
+time = GetHTMLElement(HTML,
+"<td class=\"calendar__cell calendar__time time\">"
+,
+"</td>"
+);
+if
+(
+StringFind
+(time,
+"<a name=\"upnext\""
+) ==
+0
+) time = GetHTMLElement(time,
+"class=\"upnext\">"
+,
+"</span>"
+);
+if
+(
+StringLen
+(time) !=
+0
+) lasttime = time;
+if
+(
+StringLen
+(time) ==
+0
+) time = lasttime; 
+   time = date + time;
+   currency = GetHTMLElement(HTML,
+"<td class=\"calendar__cell calendar__currency currency\">"
+,
+"</td>"
+);
+   impact = GetHTMLElement(HTML,
+"<span title=\""
+,
+"\" class=\""
+);
+   i =
+StringFind
+(impact,
+" Impact"
+);
+if
+(i != -
+1
+) impact =
+StringSubstr
+(impact,
+0
+, i);
+   title = GetHTMLElement(HTML,
+"\"calendar__event-title\">"
+,
+"</span>"
+);
+// Is this a high impact event?
+if
+(
+StringFind
+(
+Symbol
+(), currency) != -
+1
+&& impact ==
+"High"
+)
+   {
+// Add to daily event structure
+DailyEvents[cntr].displayed =
+false
+;
+      DailyEvents[cntr].time = time;
+      DailyEvents[cntr].title = title;
+      DailyEvents[cntr++].currency = currency;
+   }
+// Cut HTML string to the next table row
+i =
+StringFind
+(HTML,
+"</tbody> </table> </td> </tr> "
+);
+if
+(i != -
+1
+) HTML =
+StringSubstr
+(HTML, i+
+30
+);
+if
+(
+StringFind
+(HTML,
+"</table> <div class=\"foot\">"
+) ==
+0
+) i = -
+1
+;
+}
+while
+(i != -
+1
+|| cntr == MaxDailyEvents);
+Once we have parsed all table rows and reached the end of the calendar, we need to display the events on the chart. If the event is in the future, I want a vertical line displayed and if in the past, no line.
+// Display the high impact events, if any
+lasttime =
+NULL
+;
+for
+(cntr =
+0
+; cntr < MaxDailyEvents; cntr++)
+{
+if
+(
+StringLen
+(DailyEvents[cntr].time) ==
+0
+)
+break
+;
+// Create event marker on chart if last market wasn't the same time
+if
+(lasttime != DailyEvents[cntr].time)
+   {
+      res = cntr;
+// If we have a 'pm' the in string, add 12 hours to the time
+if
+(
+StringFind
+(DailyEvents[cntr].time,
+"pm"
+) != -
+1
+) DailyEvents[cntr].time =
+TimeToStr
+(
+StrToTime
+(DailyEvents[cntr].time) +
+43200
+);
+if
+(
+ObjectCreate
+(
+0
+, Event + cntr,
+OBJ_EVENT
+,
+0
+,
+StrToTime
+(DailyEvents[cntr].time),
+0
+))
+      {
+ObjectSetString
+(
+0
+, Event + cntr,
+OBJPROP_TEXT
+, DailyEvents[cntr].title +
+" ("
++ DailyEvents[cntr].currency +
+")"
+);
+ObjectSetInteger
+(
+0
+, Event + cntr,
+OBJPROP_COLOR
+, Red);
+ObjectSetInteger
+(
+0
+, Event + cntr,
+OBJPROP_WIDTH
+,
+2
+);
+ObjectSetInteger
+(
+0
+, Event + cntr,
+OBJPROP_BACK
+,
+true
+);
+ObjectSetInteger
+(
+0
+, Event + cntr,
+OBJPROP_SELECTABLE
+,
+false
+);
+ObjectSetInteger
+(
+0
+, Event + cntr,
+OBJPROP_SELECTED
+,
+false
+);
+ObjectSetInteger
+(
+0
+, Event + cntr,
+OBJPROP_HIDDEN
+,
+true
+);
+ObjectSetString
+(
+0
+, Event + cntr,
+OBJPROP_TOOLTIP
+, DailyEvents[cntr].title +
+" ("
++ DailyEvents[cntr].currency +
+")"
+);
+      }
+// Create vertical line if event is in the future
+if
+(
+TimeCurrent
+() < TimeOffset(DailyEvents[cntr].time,
+0
+))
+      {
+if
+(
+ObjectCreate
+(
+0
+, VLine + cntr,
+OBJ_VLINE
+,
+0
+, TimeOffset(DailyEvents[cntr].time,
+0
+),
+0
+))
+         {
+ObjectSetInteger
+(
+0
+, VLine + cntr,
+OBJPROP_COLOR
+, Red);
+ObjectSetInteger
+(
+0
+, VLine + cntr,
+OBJPROP_WIDTH
+,
+1
+);
+ObjectSetInteger
+(
+0
+, VLine + cntr,
+OBJPROP_BACK
+,
+true
+);
+ObjectSetInteger
+(
+0
+, VLine + cntr,
+OBJPROP_SELECTABLE
+,
+false
+);
+ObjectSetInteger
+(
+0
+, VLine + cntr,
+OBJPROP_SELECTED
+,
+false
+);
+ObjectSetInteger
+(
+0
+, VLine + cntr,
+OBJPROP_HIDDEN
+,
+true
+);
+ObjectSetString
+(
+0
+, VLine + cntr,
+OBJPROP_TOOLTIP
+, DailyEvents[cntr].title +
+" ("
++ DailyEvents[cntr].currency +
+")"
+);
+         }
+      }
+else
+DailyEvents[cntr].displayed =
+true
+;
+   }
+else
+{
+      title =
+ObjectGetString
+(
+0
+, Event + res,
+OBJPROP_TOOLTIP
+);            
+      title +=
+"\n"
++ DailyEvents[cntr].title +
+" ("
++ DailyEvents[cntr].currency +
+")"
+;
+ObjectSetString
+(
+0
+, Event + res,
+OBJPROP_TOOLTIP
+, title);
+if
+(
+TimeCurrent
+() < TimeOffset(DailyEvents[cntr].time,
+0
+))
+ObjectSetString
+(
+0
+, VLine + res,
+OBJPROP_TOOLTIP
+, title);
+   }
+   lasttime = DailyEvents[cntr].time;
+}
+If the events that are on the future, I want to notify the user of an upcoming in event if it's within 5 minutes of the current time and remove the vertical line. This is done by adding some code in your 'start()' function of the EA or indicator.
+//+------------------------------------------------------------------+
+//| Expert start function                                             |
+//+------------------------------------------------------------------+
+void
+start()
+{
+string
+event =
+NULL
+;
+// Is there a high impact event in the next 5 minutes?
+for
+(
+int
+i =
+0
+; i < MaxDailyEvents; i++)
+   {
+if
+(
+StringLen
+(DailyEvents[i].time) ==
+0
+)
+break
+;
+if
+(
+TimeCurrent
+() >=
+StrToTime
+(DailyEvents[i].time) -
+300
+&&
+TimeCurrent
+() <
+StrToTime
+(DailyEvents[i].time) && !DailyEvents[i].displayed)
+      {
+// Event in 5 minutes...
+event += DailyEvents[i].title +
+" ("
++ DailyEvents[i].currency +
+"), "
+;
+         DailyEvents[i].displayed =
+true
+;
+// Delete the vertical line associated to the event
+if
+(
+ObjectFind
+(
+"VLine"
++
+DoubleToStr
+(i,
+0
+)) >=
+0
+)
+ObjectDelete
+(
+"VLine"
++
+DoubleToStr
+(i,
+0
+));
+      }  
+   }
+// Anything to display?
+if
+(
+StringLen
+(event) !=
+0
+)
+   {
+      event +=
+"in 5 minutes."
+;
+Alert
+(event);
+   }
+}
+And finally, we need to get the daily events. This is done by adding a line in your OnInit() function.
+//+------------------------------------------------------------------+
+//| Expert initialization function                                   |
+//+------------------------------------------------------------------+
+int
+OnInit
+()
+{
+// Get today's events
+GetHighImpactEvents();
+return
+(
+INIT_SUCCEEDED
+);
+}
+Nice and simple. You can of course modify the code to display all events for the currency pair or add an input parameters to your indicator or EA to specify which impact to display (high, medium or low) and of course add a check for midnight turn around to get a new list of daily event, but I'll let you play with that :)
+Cheers!
+-Claude.

@@ -1,0 +1,13 @@
+The hst2csv script is used for converting *.hst files to *.csv files, that can be imported into the MetaTrader 4 client terminal with no errors.
+Script Operation Principle
+The input_file_name parameter must be specified with the extension. Extensions other than *.hst are not processed;
+The input_file_from_history parameter set to 'true' allows to open files from the current history folder
+(terminal_folder\history\server_name
+). If it is set to 'false', the file is opened from
+\\experts\files
+.
+What is the purpose of this script: by the client's request, I once put together a history from the pieces given by the customer, and found out that not all files are read by the terminal at all when importing the data from a hst file. But the data inside is valuable. And this script converted all those non-importable files to csv, and comparing the file sizes - correctly.
+Those who have a comma as a decimal point can have the quotes turn into dates when opening a csv in Excel... inevitably. I can not think of any other way than writing a separate function for converting the number to a string with "," as decimal separator. My system has ".", so I left it as is.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7092

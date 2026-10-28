@@ -1,0 +1,7 @@
+QQE
+(Quantitative Qualitative Estimation) is normally made using RSI (Relative Strength Index) as a "basic" indicator.
+This version is using Velocity (smoother momentum) and it can help in determining trend. Also, it is already a standalone multi time frame indicator.
+In this version timeframes supported are all the possible timeframes supported by MetaTrader 5 and it has 3 "special" timeframes:
+Next higher timeframe: first higher timeframe compared to active chart.
+Second higher timeframe: second higher timeframe compared to active chart.
+Third higher timeframe: third higher timeframe compared to active chart.

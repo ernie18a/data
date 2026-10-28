@@ -1,0 +1,15 @@
+Iin_MA_Signal_NRTR
+indicator with the timeframe selection option available in input parameters:
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// Indicator chart period (timeframe)
+For the indicator to operate, the
+Iin_MA_Signal_NRTR.ex5
+indicator should be added to the <terminal_data_directory>\MQL5\Indicators folder.
+Fig. 1. Iin_MA_Signal_NRTR_HTF
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21981

@@ -1,0 +1,10 @@
+Real author
+: Il Anokhin
+The indicator displays the change in price as a percentage relative to the Open price of the current candlestick. It can display on a chart up to 8 pairs as graphical objects added to the chart. Candlestick timeframe is selectable.
+This code was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 23.08.2012.
+Fig1. The CandleDifference_Obj indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18084

@@ -1,0 +1,11 @@
+MASTER-WINNERFX-Asim is an automated trading system designed for trend-based grid execution with dynamic money management.
+The Expert Advisor combines EMA trend filtering and RSI momentum confirmation to identify high-probability trade entries. It opens the first position only when trend and momentum conditions align. If the market moves against the position, the EA applies controlled grid progression using a conservative multiplier.
+Lot size is calculated dynamically based on account balance (LotPer1000 model), ensuring proportional exposure as the account grows. Safety limits such as minimum lot, maximum lot cap, and maximum floating loss protection are built-in.
+All open positions are managed as a basket and automatically closed when the defined TargetProfit is reached or when MaxRisk drawdown level is hit.
+Additional protection features include:
+Optional trading pause during predefined news hour (UTC based)
+Market close hour filter to avoid rollover volatility
+Magic Number isolation for multi-EA usage
+Fully automated execution (no manual intervention required)
+This Expert Advisor does not use external DLL files and works only with standard MT5 indicators (EMA and RSI).
+Recommended for disciplined traders who understand grid-based systems and proper risk control.

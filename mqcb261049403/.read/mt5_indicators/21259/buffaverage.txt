@@ -1,0 +1,13 @@
+Buff Dormeier's Moving Average was presented in Buff Dormeier's article "Buff Up Your Moving Averages".
+It has one input parameter:
+Period
+- calculation period.
+Calculations:
+Buff = AvgVC / AvgVol
+where:
+AvgVC = SMA(VC, Period)
+AvgVol = SMA(Volume, Period)
+VC = Volume*Close
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21259

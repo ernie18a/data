@@ -1,0 +1,5 @@
+I wrote this indicator to compare two modes
+, timeframes
+and analyze the settings of my EA. You can make adjustments to suit your requirements or add something. The data collected is saved to a file every 5 minutes (one file per instance).
+edit:
+I made some corrections

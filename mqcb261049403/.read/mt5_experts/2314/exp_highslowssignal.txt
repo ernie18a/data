@@ -1,0 +1,19 @@
+A trading system using the
+HighsLowsSignal
+semaphore arrow indicator.
+A trade decision is made when a star of an appropriate color and direction appears.
+For a correct operation of the EA, place the compiled indicator file HighsLowsSignal.ex5 to terminal_data_folder\MQL5\Indicators.
+Note that the TradeAlgorithms.mqh library file allows using Expert Advisors with brokers who offer
+nonzero spread
+and the option of setting Stop Loss and Take Profit
+together with position opening
+. You can download more variants of the library at the following link:
+Trade Algorithms
+.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Figure 1. The instances of history of deals on the chart
+Testing results for 2013 on AUDUSD H4:
+Figure 2. Chart of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2314

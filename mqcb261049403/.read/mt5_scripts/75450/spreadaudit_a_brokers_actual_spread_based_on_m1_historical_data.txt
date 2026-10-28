@@ -1,0 +1,25 @@
+Before getting too excited about the results of a backtest, it’s worth finding out how much you’re actually paying per trade. The trading terminal records the spread for each bar in the history, but this information is usually overlooked: the backtester displays the ‘current’ spread, whilst decisions are made based on a smooth equity curve.
+What the script does
+SpreadAudit scans the M1 historical data for the specified number of days, retrieves the spread field for each bar and calculates:
+the median, 90th and 99th percentiles of the spread – in price units and in pips;
+the same values as a proportion of ATR(H1), to compare instruments against one another;
+the average and maximum spread for each hour of the day – these are exported to a CSV file in the MQL5\Files folder.
+Input parameters
+InpDays
+– the number of days of M1 historical data to analyse (1–3650, default 60);
+InpAtrPeriod
+– the ATR period on the H1 timeframe for normalisation (default 24);
+InpSaveCSV
+– whether to save the hourly table as a CSV file.
+Output example
+=== SpreadAudit: XAUUSD | actual range 30 May 2026 ... 29 July 2026 | 86,397 bars (0 excluding spread) === median bar spread: 0.37 (37.0 pts) p90 bar spread: 0.42 (42.0 pts) p99 bar spread: 0.45 (45.0 pts) H1 ATR(24) = 6.41 -> median spread = 0.058 ATR, p90 = 0.066 ATR
+The attached chart shows the hourly price action for XAUUSD over 60 days. The average spread hovers around 0.40, but at the time of the daily rollover, the maximum jumps to almost 1.80 – that is, more than four times higher than usual. A strategy that operates specifically within this window does not pay the price it sees on average across the account.
+Why is this important in practice?
+A simple example. Let’s say your M5 pattern yields an average of 0.28 price units per trade – this is statistically significant and the effect is real. If the median spread for the instrument is 0.37, the system will run at a loss on a live account, even though it looks excellent on back-test data without transaction costs. The difference between ‘there is no effect’ and ‘there is an effect, but it is outweighed by the costs’ is fundamental: in the first case, the idea is discarded; in the second, you look for a timeframe or trade structure where the effect outweighs the spread.
+The hourly chart shows at what times the spread widens. This usually occurs at rollover and in the first few minutes after the opening of trading sessions – if your strategy enters the market at precisely these times, it is worth setting a spread filter, and it is better to set it as a fraction of the ATR rather than in points: an absolute threshold becomes obsolete when volatility conditions change.
+An important caveat
+MetaTrader records the MINIMUM spread for that bar. This means that all the figures obtained represent an optimistic lower limit of what you actually pay. The logic is simple: if even the lower limit of costs is enough to ruin the strategy, there is nothing more to discuss.
+If your broker’s ‘spread’ field in the M1 history is empty (some brokers show zeros there), the script will honestly report this and will not calculate statistics based on empty data.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/75450

@@ -1,0 +1,14 @@
+Two variations are available;
+[ScalpAll]
+this script opens random positions with multiple symbols on marketwatch.
+take-profit and stop-loss levels are calculated by multiplying
+current spread
+with "Take Profit Ratio" and "Stop Loss Ratio" respectively.
+count of trades to be opened can be limited by "Maximum Trades".
+only symbols having spread below "Maximum Spread" are considered.
+[ScalpRandom]
+this script opens a random position with single symbol that is selected randomly on marketwatch.
+take-profit and stop-loss levels are calculated in same way with ScalpAll. maximum spread limitor is also available.
+[CloseScalps]
+this script closes scalping positions tagged with magic number 999.
+only positions in profit can be closed by setting relevant input to true.

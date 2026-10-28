@@ -1,0 +1,6 @@
+Indicator that displays the change in price as a percentage relative to the Open price of the current candle.
+It can display up to 8 pairs on the chart.
+Candle timeframe can be selected.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16138

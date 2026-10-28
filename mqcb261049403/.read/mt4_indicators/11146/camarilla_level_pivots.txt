@@ -1,0 +1,13 @@
+Author:
+Bill Halliday
+I used to use the Standard Pivot Points calculations for a long time. But I was never satisfied with them because the pivot lines were too far apart to be useful to me.
+Somehow I found a different set of Calculations for Pivot Points. They are called Camarilla Level Pivot Points.
+You will find the definitions for these Pivot Points Lines at: http://www.mypivots.com/dictionary/definition/42/camarilla-pivot-points
+There is only 1 calculation that I think is wrong. That is the calculation of PP (Pivot Point). The calculation is the one used in calculating the Standard Pivot Point.
+Instead I will use: PP = (R1 + S1) / 2 because it places the pivot in the center of the other pivot points.
+Concerns:
+I've been working on this program for a few days not and I still have a couple of concerns.
+The
+first is that the last Indicator_color does not show up in the Indicator's property colors list.
+The second is that the lines do not extend to the last couple of Price Bars.
+Also I want to hear any comments you have on the code.

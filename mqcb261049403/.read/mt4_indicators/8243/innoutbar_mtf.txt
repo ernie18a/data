@@ -1,0 +1,4 @@
+Another indicator that displays the signals for buying and selling.
+Parameters:
+extern int tf=60;
+InnOutBar_mtf

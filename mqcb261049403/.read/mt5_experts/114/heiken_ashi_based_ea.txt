@@ -1,0 +1,85 @@
+The Expert Advisor is based on
+Heiken Ashi
+indicator.
+Suitable pair and timeframe:
+EURAUD -- H1
+Strategy Tester Report
+MetaQuotes-Demo (Build 294)
+Settings
+Expert:
+HA_kEA
+Symbol:
+EURAUD
+Period:
+H1 (2010.07.18 - 2010.07.24)
+Inputs:
+P=100
+Broker:
+MetaQuotes Software Corp.
+Currency:
+USD
+Initial Deposit:
+3 000.00
+Results
+Bars:
+120
+Ticks:
+378767
+Total Net Profit:
+-2 047.37
+Gross Profit:
+1 174.25
+Gross Loss:
+-3 221.62
+Profit Factor:
+0.36
+Expected Payoff:
+-292.48
+Recovery Factor:
+-0.37
+Sharpe Ratio:
+-1.62
+Balance Drawdown:
+Balance Drawdown Absolute:
+2 047.37
+Balance Drawdown Maximal:
+2 627.45 (73.39%)
+Balance Drawdown Relative:
+73.39% (2 627.45)
+Equity Drawdown:
+Equity Drawdown Absolute:
+2 301.38
+Equity Drawdown Maximal:
+5 472.90 (88.68%)
+Equity Drawdown Relative:
+88.68% (5 472.90)
+Total Trades:
+7
+Short Positions (won %):
+5 (40.00%)
+Long Positions (won %):
+2 (0.00%)
+Profit Trades (% of total):
+2 (28.57%)
+Loss Trades (% of total):
+5 (71.43%)
+Largest profit trade:
+1 031.31
+Largest Loss Trades (% of total):
+-891.96
+Average profit trade:
+587.13
+Average Loss Trades (% of total):
+-644.32
+Maximum consecutive wins ($):
+1 (1 031.31)
+Maximum consecutive losses ($):
+3 (-2 558.97)
+Maximal consecutive profit (count):
+1 031.31 (1)
+Maximal consecutive loss (count):
+-2 558.97 (3)
+Average consecutive wins:
+1
+Average consecutive losses:
+2

@@ -1,0 +1,103 @@
+New versions of the
+exp_iCustom
+Expert Advisor, which works with any Custom indicator, and draws buy/sell arrows.
+Version 5:
+Change the type of variables _O_M3_BuyLevel, _O_M3_SellLevel, _C_M3_CloseBuyLevel, _C_M3_CloseSellLevel, from int to double, to allow input of fractional numbers.
+More details can be found on the
+exp_iCustom_v1
+page.
+Version 6:
+Implemented the ability to include additional checks when closing orders based on the indicator: check of the order profit (close only orders with profit not less than specified), check of the order stop loss location (if stop loss fixes the specified profit, the order is not closed).
+Variables:
+==== Additional rules for closing ====
+CheckProfit
+- Check the order profit when closing, orders with less than MinimalProfit profit are not closed
+MinimalProfit
+- see the CheckProfit variable
+CheckSL
+- If the stop loss of the order fixes a profit not less than MinimalSLProfit, the order is not closed
+MinimalSLProfit
+- see the CheckSL variable
+* * *
+Added ability of trailing based on custom indicator.
+Any indicator can be used, for example, the
+PriceChannel Stop NK
+channel, two-colored alternating
+NRTR WATR
+, that draws dots or arrows, and the order modification will only happen if a dot or arrow is present.
+Variables:
+=== Trailing by indicator ===
+_TS_ON
+- enable trailing by indicator;
+_TS_iCustomName
+- name of the Custom indicator;
+_TS_iCustomParam
+- the list of parameters delimited by "/". For the boolean variables, use 1 instead of true, 0 instead of false. If the indicator parameters contain string variables, the EA will not work!!!;
+_TS_iForBuyBufIndex
+- index of the buffer for buy orders;
+_TS_iForSellBufIndex
+- index of the buffer for sell orders;
+_TS_iShift
+- indicator shift. 1 - on the formed bars, 0 - on the forming bar (not recommended). It is also possible to enter a value 2,3,4...
+_TS_Opt_1_Use
+- enable usage of the optimized variable 1. When the optimized variable is activated instead of the value from the iCustomParam string, defined by the Opt_X_Index variable, the value of the Opt_X_Value variable will be used;
+_TS_Opt_1_Index
+- index of the optimized variable 1 in the parameter array (in the iCustomParam string). The numbering starts with zero;
+_TS_Opt_1_Value
+- the value of the optimized variable 1;
+_TS_Opt_2_Use
+- enable usage of the optimized variable 2;
+_TS_Opt_2_Index
+- index of the optimized variable 2 in the parameter array (in the iCustomParam string). The numbering starts with zero;
+_TS_Opt_2_Value
+- the value of the optimized variable 2;
+_TS_Opt_3_Use
+- enable usage of the optimized variable 3;
+_TS_Opt_3_Index
+- index of the optimized variable 3 in the parameter array (in the iCustomParam string). The numbering starts with zero;
+_TS_Opt_3_Value
+- the value of the optimized variable 3;
+_TS_Opt_4_Use
+- enable usage of the optimized variable 4;
+_TS_Opt_4_Index
+- index of the optimized variable 4 in the parameter array (in the iCustomParam string). The numbering starts with zero;
+_TS_Opt_4_Value
+- the value of the optimized variable 4;
+_TS_Opt_5_Use
+- enable usage of the optimized variable 5;
+_TS_Opt_5_Index
+- index of the optimized variable 5 in the parameter array (in the iCustomParam string). The numbering starts with zero;
+_TS_Opt_5_Value
+- the value of the optimized variable 5;
+_
+TS_Indent
+- indent (in points) from the indicator value;
+_TS_TrailInProfit
+- minimum trailed profit. The stop loss is moved only in case it fixes not less than _TS_TrailInProfit points of profit.
+Version 6:
+Added the ability to use two-colored indicators
+(_O_Mode=5, _C_Mode=5
+). It is possible to use indicators like
+NRTR NK
+, or colored moving averages, for example,
+MA_In_Color_wAppliedPrice
+.
+A very large number of colored indicators can not be used, some indicators paint one bar in the past (in this case it is worth trying to increase the values of _O_iShift and _C_iShift by 1), others simply overlay lines of one color with lines of another color (these can not be used).
+Added the MarketWatch mode - opening market orders without stop loss/take profit, which are set afterwards.
+New parameters:
+In the "Indicator for opening" parameters section:
+_O_M5_iBuyBufIndex
+- index of the buffer for the line displayed during an uptrend;
+_O_M5_iSellBufIndex
+- index of the buffer for the line displayed during a downtrend.
+In the "Indicator for closing" parameters section:
+_C_M5_iBuyBufIndex
+- index of the buffer for the line displayed during an uptrend;
+_C_M5_iSellBufIndex
+- index of the buffer for the line displayed during a downtrend.
+In the "Order" parameters section:
+MW_Mode
+- enable the MarketWatch mode.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8524

@@ -1,0 +1,9 @@
+This EA compare last 2 days High and Low values in order to find a breakout on the current day. It place a pending order on the High of yesterday (if H/L of yesterday is higher than H/L of the day before) or on the Low of yesterday (if H/L of yesterday is lower than H/L of the day before).
+If order is not triggered on the end of day it will canceled.
+It works well only on currencies against JPY:
+USDJPY, EURJPY, GBPJPY.
+Works with only open prices but I suggest to test it in control points mode or every tick and on
+D1
+timeframe because the trigger for the order (after successfull breakout condition) refers to ASK/BID prices.
+No parameters to be optimized: this is a clear sign of robustness of the system that, in every way, need to be optimized in order to get more smoothed equities.
+I will be very happy if you can share with me some good ideas to improve performance of the system!

@@ -1,0 +1,16 @@
+The indicator shows support/resistance levels calculated using the methods by V.B. Antonov (A_Vlad).
+for the charts of <M30, it calculates on the preceding hour
+for the charts of M30 and H1, it calculates on the preceding day
+for the charts of H4 and D1, it calculates on the preceding week
+for W1 charts, it calculates on the preceding month
+It is adjusted as follows:
+_Mode:
+1 - degraded price range
+2 - normal price range
+3 - expanded price range
+_Shift: visual length of lines in the chart
+I whomped up this indicator on the basis of ^X_Sensors by Mr.WT, Senior Linux Hacker
+Levels_A_Vlad
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8119

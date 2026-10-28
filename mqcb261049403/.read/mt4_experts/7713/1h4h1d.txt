@@ -1,0 +1,10 @@
+Author: Expert Advisor Builder
+Adviser 1h-4h-1d. Uses indicator
+MA
+.
+It is optimized on the periods from M1 - M30.
+------------------------------
+Parameters of testing
+Symbol: EURUSD.
+Period: M15.
+Model: All tics.

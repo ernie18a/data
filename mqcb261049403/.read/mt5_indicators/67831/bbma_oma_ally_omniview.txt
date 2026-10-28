@@ -1,0 +1,19 @@
+The BBMA strategy was developed by Malaysian trader Ali Oma (Oma Ally). It is a method that combines Bollinger Bands (BB) and Moving Averages (MA) to identify market movements.
+CSA / CSAK
+(Candlestick Arah / Arah Kukuh)
+Extreme
+and
+MHV
+(Market Has No Volume)
+Momentum
+and
+Reentry
+Zone ZeroLoss
+The true strength – or ‘magic’ – of this strategy lies not in looking at individual signals, but in combining several signals across multiple time frames (multi-timeframe analysis).
+Linking these signals creates clear SOPs (standard operating procedures) that help traders find highly probable entry points.
+This indicator allows you to immediately see what is happening in price movements without missing a single signal. It is like a bird's eye view for BBMA fans.
+Simply drag it onto the chart and you will receive all BBMA signals running on the chart. Furthermore, the indicator has separate data buffers for each individual signal.
+This enables seamless integration into Expert Advisor (EA) – whether for the development of individual dashboards or for fully automated trading.
+Good luck with your trading! Where everyone wins eventually…
+References to the BBMA strategy:
+https://youtube.com/playlist?list=PLeaQzMmDyGZlJlRyQCMXcERiLDRda7msT&si=yXs125gVFkCYkp9P

@@ -1,0 +1,20 @@
+Market Facilitation Index
+technical indicator (BW MFI) is the indicator which shows the change of price for one tick.
+Absolute values of the indicator do not mean anything as they are, only indicator changes have sense. Bill Williams emphasizes the interchanging of MFI and volume:
+Market Facilitation Index increases and volume increases - this points out that:
+a) the number of players coming into the market increases (volume increases);
+b) the new coming players open positions in the direction of bar development, i.e., the movement has begun and picks up speed.
+Market Facilitation Index falls and volume falls. It means the market participants are not interested anymore;
+Market Facilitation Index increases, but the volume falls. It is most likely, that the market is not supported with the volume from clients, and the price is changing due to traders (brokers and dealers) "on the floor" speculations;
+Market Facilitation Index falls, but the volume increases. There is a battle between bulls and bears, characterized by a large sell and buy volume, but the price is not changing significantly since the forces are equal. One of the contending parties (buyers vs. sellers) will eventually win the battle. Usually, the break of such a bar lets you know if this bar determines the continuation of the trend or annuls the trend. Bill Williams calls such bar "curtsying".
+Market Facilitaion Index indicator
+Calculation:
+To calculate Market Facilitation Index you need to subtract the lowest bar price from the highest bar price and divide it by the volume.
+BW MFI = (HIGH - LOW) / VOLUME
+where:
+HIGH - maximum price of the current bar;
+LOW - minimum price of the current bar;
+VOLUME - volume of the current bar.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/36

@@ -1,0 +1,3 @@
+This indicator shows some Support/Resistance lines. The number of lines is variable (max 6). The more support lines are, the stronger "bull" will be expected. It also displays entry signals.These signals may be often disappointing, but sometimes good.
+This needs "MTFPI-sub1". "MTFPI-sub1" needs "MTFPI-sub2", "MTFPI-sub3" and "MTFPI-sub4".
+To clear a chart of Signals, please use script "clearSGNLs".

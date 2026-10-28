@@ -1,0 +1,10 @@
+This indicator displays the levels of the "morning flat" (red and blue lines) and shows possible targets (green and pink lines). The indicator was created by "motives" of the theme
+breakthrough of the morning flat
+. Please note that due to the specific definition of time intervals, this indicator works on timeframes no higher than H1!
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 20.06.2009.
+Fig.1 The MorningFlat indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1644

@@ -1,0 +1,395 @@
+This script introduces the function
+TimeServerDaylightSavings()
+that is missing among the built-in ones, which provide only
+TimeDaylightSavings()
+for local computer. In addition the attached header mqh-file includes some other helpful server-bound time-related functions, in particular allowing you to know if your broker uses DST switches in general.
+All this is based on empirical analysis of history of quotes from your broker. The whole idea is described in the algotrading book in the section about
+Daylight saving time
+(DST). In brief, the method analyzes statistics of week opening hours and deduce GMT offsets of your broker. Two distinct maximums in the statistics of the offsets, if they map into adjacent hours, most likely correspond to standard ("winter") and daylight-saving ("summer") time.
+Actually this script is a refined and extended version of the script presented in the book. Specifically, the versions since October 2024 include an important bug fix: the opening hours of weekly trading are detected by the US market, which itself is affected by DST switches according to US time zone (EST, UTC-5, standard winter time <--> EDT, UTC-4, daylight saving summer time), this is why it's important to eliminate the effect of US DST to obtain a continuous natural time flow all year round - this is what has been done in the fix. All the credit goes to
+amrali
+.
+Please, note that in the Northern and Southern Hemispheres, time zones are adjusted in the opposite direction: in the Northern Hemisphere, 1 hour is added in the "spring" (March or April) and subtracted in the "fall" (October or November), while in the Southern Hemisphere it is the other way around (because they have all the seasons swapped).
+Due to specificity of the analysis it's recommended to run the code for the most liquid Forex ticker, which is usually EURUSD.
+Here is the API:
+// Server time zone and DST current information
+struct
+ServerTimeZone
+// according to history analysis of week opening hours
+{
+int
+offsetGMT;
+// time zone offset in seconds against UTC/GMT for current week
+int
+offsetDST;
+// DST correction in seconds (included in offsetGMT, as per MQL5)
+bool
+supportDST;
+// DST changes are detected in the quotes
+};
+// Estimate server time zone and DST mode from H1 quotes history
+ServerTimeZone TimeServerZone(
+const
+datetime
+srvtime =
+0
+,
+// by default, current time, but can specify a moment in the past
+const
+int
+threshold = THRESHOLD,
+const
+double
+lookupYears =
+0.0
+,
+// by default, all available bars, otherwise 3 year seems enough
+const
+string
+symbol =
+NULL
+)
+// by default, symbol of current chart
+// Estimate server time DST mode correction (in seconds)
+int
+TimeServerDaylightSavings(
+const
+datetime
+srvtime =
+0
+,
+const
+int
+threshold = THRESHOLD,
+const
+double
+lookupYears =
+0.0
+,
+const
+string
+symbol =
+NULL
+);
+// Estimate server time zone offset (in seconds)
+int
+TimeServerGMTOffsetHistory(
+const
+datetime
+srvtime =
+0
+,
+const
+int
+threshold = THRESHOLD,
+const
+double
+lookupYears =
+0.0
+,
+const
+string
+symbol =
+NULL
+);
+// Estimate if server is DST-enabled (true/false)
+bool
+TimeServerDaylightSavingsSupported(
+const
+datetime
+srvtime =
+0
+,
+const
+int
+threshold = THRESHOLD,
+const
+double
+lookupYears =
+0.0
+,
+const
+string
+symbol =
+NULL
+);
+// Analogue of TimeGMTOffset() function for trade server, difference in seconds
+int
+TimeServerGMTOffset();
+// TimeGMT() - TimeTradeServer()
+The functions
+TimeServerDaylightSavings()
+,
+TimeServerGMTOffsetHistory()
+,
+TimeServerDaylightSavingsSupported()
+are just wrappers for
+TimeServerZone()
+, so if you need more than one characteristic it's preferable to use the later one and read values from the struct
+ServerTimeZone
+.
+All these functions take a server time as 1-st argument at which you want to get correspopnding characteristic (in present or in the past). If the server time is left 0 (by default), the result is returned for current moment.
+The 2-nd argument threshold allows you to adjust algorithms' sensitivity. By default, it's 52/4  that is a quarter of year of required stats for making decision (detecting time zone without a possible interference of short weeks before/after holidays). On the other hand, this settings prevent prompt detection of ad hoc time zone changes (should your broker decide to do so at some point). You may want to set the threshold to 0 to let  the algorithms detect any changes as soon as possible.
+The function
+TimeServerGMTOffset()
+does not use history analysis but rather calculate offset directly via MQL5 functions (as
+TimeGMT() - TimeTradeServer()
+).
+Please note, that this function uses the same offset notation as MQL5's built-in
+TimeGMTOffset()
+function, that is positive time zones, such as GMT+3, are denoted by negative offsets, such as -10800, and vice versa. This notation is used by some other programming languages, like JaveScript, but there is also other languages, which denote positive time zones by positive offsets, and negative time zones by negative offsets. Check your algorithms carefully.
+The test script outputs all acquired data into the log, for example:
+1 ~ Built-in functions ~
+TimeLocal
+()=
+2024.10
+.
+05
+00
+:
+39
+:
+01
+/ ok
+TimeCurrent
+()=
+2024.10
+.
+05
+00
+:
+38
+:
+59
+/ ok
+TimeTradeServer
+()=
+2024.10
+.
+05
+00
+:
+39
+:
+01
+/ ok
+TimeGMT
+()=
+2024.10
+.
+04
+21
+:
+39
+:
+01
+/ ok
+TimeGMTOffset
+()=-
+10800
+/ ok
+TimeDaylightSavings
+()=
+0
+/ ok
+2 ~ Add-on over built-in functions ~
+TimeServerGMTOffset()=-
+10800
+/ ok
+3 ~ Estimation of server TZ with DST based on week opening hours in history ~
+TimeServerDaylightSavings()=-
+3600
+/ ok
+    [offsetGMT] [offsetDST] [supportDST]
+[
+0
+]      -
+10800
+-
+3600
+true
+In this case it's detected that the server is currently in DST mode, whereas the local computer is not.
+Please, remember that system clocks of the local computer and the server can normally show slightly different times (seconds and even minutes), even if they are in the same time zone. Also note that built-in
+TimeTradeServer()
+function returns a synthetic
+datetime
+: it's the server's time with hourly accuracy, but it inherits intra-hour fractions from the local clock. This is done so in MQL5 to simplify conversions between time zones -
+TimeLocal()
+,
+TimeGMT()
+returned in the "local format" as well, and the trade server time.
+You can enable detailed print out of the data being analyzed by preprocessor directive:
+#define
+PRINT_DST_DETAILS
+which should be placed in your code before include:
+#include
+"TimeServerDST.mqh"
+Here is an example of details in the log:
+Got
+20023
+H1 bars, ~
+834
+days
+Week opening hours stats:
+30
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+83
+54
+0
+Time Zone changes (UTC±X before/after weekstart):
+            [weekstart]    [before] [DSTb] [after] [DSTa]
+[
+0
+]
+2021.07
+.
+25
+00
+:
+00
+:
+00
+-
+2147483648
+false
+-
+1
+false
+[
+1
+]
+2021.11
+.
+08
+00
+:
+00
+:
+00
+0
+true
+0
+false
+[
+2
+]
+2022.03
+.
+14
+00
+:
+00
+:
+00
+0
+false
+0
+true
+[
+3
+]
+2022.11
+.
+07
+00
+:
+00
+:
+00
+0
+true
+0
+false
+[
+4
+]
+2023.03
+.
+13
+00
+:
+00
+:
+00
+0
+false
+0
+true
+[
+5
+]
+2023.11
+.
+06
+00
+:
+00
+:
+00
+0
+true
+0
+false
+[
+6
+]
+2024.03
+.
+11
+00
+:
+00
+:
+00
+0
+false
+2
+false
+3
+different timezones detected
+in
+quotes,
+1
+DST candidates
+Server time offset: UTC+
+2
+STD
+TimeServerDaylightSavings()=-
+3600
+/ ok
+Please, feel free to run the script in your environments and post resulting logs in the discussion.
+Updates
+2024.10.10 - bug fix: US DST switches (that interfered into opening hours stats) are eliminated from timeline before main analysis.
+2024.10.27 - server time of interest and minimal weekly stats threshold are added as arguments for all functions;
+TimeServerGMTOffsetEmpiric()
+is renamed to
+TimeServerGMTOffsetHistory()
+.
+2024.10.29 - small bugfix to include requested time into lookup period.
+2024.10.30 - fixed DST in TimeZoneChange array; lookup is now performed from srvtime parameter, if it's specified.
+2024.11.01 - added an autoadjustement of calculations when applied on precious metals, which can provide more reliable results on weeks during US DST and EU DST schedules are out of sync.
+2024.11.04 - refined online detection of DST switch on/off.
+2024.11.07 - added caching of time-zone/DST changes for bulk requests on history for indicators or economic events backtesting.
+2024.11.08 - caching performance optimized by small code refactoring.
+2024.11.16 - 1 hour adjustment for timestamps deduced from metals by amrali.
+2024.11.17 - refactoring and fixes by amrali: eliminated cache rebuilds for online requests during weekends, 48h lookahead is added for detection of TZ changes during weekends (with possible DST transition), Sunday 00:00 is used as a boundary for timezones (instead of 1-st bar of a week).
+2024.11.20 - default threshold changed to 1 (a balance between prompt detection of time zone changes and elimination of false positives on non-standard weeks such as after holidays); new set of functions added for time formatting, including time zone offsets and DST (look at TimeZoneFmt.mqh); other small refinements.

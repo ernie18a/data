@@ -1,0 +1,11 @@
+The Exp_KPrmSt Expert Advisor with the entry at the intersection of the signal and the oscillator lines of the
+KPrmSt
+indicator. The signal is formed when a bar is closing if the oscillator has crossed its signal line.
+This Expert Advisor requires the compiled indicator file KPrmSt.ex5 in order to run. Place it to <terminal_data_folder>\MQL5\Indicators.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig.1. Examples of deals on the chart
+Testing results for 2014 at USDJPY H6:
+Fig.2. Testing results chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13928

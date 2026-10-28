@@ -1,0 +1,153 @@
+Author of the idea
+—
+George F.Peskov
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+Trading system based on intersection of two iMA (MA) stop loss is set automatically based on the value of ATR. Email message is sent whenever a position is opened or closed. Parameters can be selected by backtesting.
+Getting the indicator values on the first and second bars:
+//--- get Moving Average
+mas=iMAGet(handle_iMA1,
+1
+);
+// long moving average 12
+maf=iMAGet(handle_iMA2,
+1
+);
+// short moving average 4
+mas_p=iMAGet(handle_iMA1,
+2
+);
+// long moving average 12
+maf_p=iMAGet(handle_iMA2,
+2
+);
+// short moving average 4
+Atr=iATRGet(
+0
+);
+Check conditions for selling:
+//--- Condition for selling
+if
+(maf<mas && maf_p>=mas_p)
+{
+double
+lots=LotsOptimized();
+double
+stop_loss=
+NormalizeDouble
+(m_symbol.
+Ask
+()+Atr,
+Digits
+());
+res=m_trade.Sell(lots,
+Symbol
+(),m_symbol.
+Bid
+(),stop_loss,
+0
+);
+if
+(SndMl==
+true
+&& res)
+{
+sHeaderLetter=
+"Operation SELL by"
++
+Symbol
+()+
+""
+;
+sBodyLetter=
+"Deal Sell by"
++
+Symbol
+()+
+" at "
++
+DoubleToString
+(m_symbol.
+Bid
+(),
+Digits
+())+
+", and set stop/loss at "
++
+DoubleToString
+(stop_loss,
+Digits
+())+
+""
+;
+sndMessage(sHeaderLetter,sBodyLetter);
+}
+return
+;
+}
+Check conditions for buying:
+//--- Condition for buying
+if
+(maf>mas && maf_p<=mas_p)
+{
+double
+lots=LotsOptimized();
+double
+stop_loss=
+NormalizeDouble
+(m_symbol.
+Bid
+()-Atr,
+Digits
+());
+res=m_trade.Buy(lots,
+Symbol
+(),m_symbol.
+Ask
+(),stop_loss,
+0
+);
+if
+(SndMl==
+true
+&& res)
+{
+sHeaderLetter=
+"Operation BUY at"
++
+Symbol
+()+
+""
+;
+sBodyLetter=
+"Deal Buy at"
++
+Symbol
+()+
+" for "
++
+DoubleToString
+(m_symbol.
+Ask
+(),
+Digits
+())+
+", and set stop/loss at "
++
+DoubleToString
+(stop_loss,
+Digits
+())+
+""
+;
+sndMessage(sHeaderLetter,sBodyLetter);
+}
+return
+;
+}
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16949

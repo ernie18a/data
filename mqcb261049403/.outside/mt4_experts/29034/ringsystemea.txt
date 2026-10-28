@@ -1,0 +1,31 @@
+It's a triangular arbitrage system (three pairs correlation system) to use 3 currencies to make 3 pairs to open hedge orders on those.
+The expert starts opening six orders for each ring (3 plus and 3 minus) and waits to move prices in one direction to make a grid of orders.
+The expert can use a maximum of 8 currencies to make 28 pairs and make 56 rings.
+It is important the order of currencies is from the strongest to the weakest.
+Strongest... EUR/GBP/AUD/NZD/USD/CAD/CHF/JPY ...weakest.
+Canto inputs minimum of three currencies and a maximum eight.
+Parameters Information
+All information about parameters you can see on
+blog.
+Of all the created pairs, you can skip some of them from external parameter.
+Set expert to use currencies you want, and attach on one chart.
+It does not matter in which chart and time frame you will attach the expert, the final selection will be done automatically from expert.
+It's a multicurrency version of expert. Can to trade all rings from one chart.
+If your broker have limit of opened orders, please set expert to use less currencies. Default settings use 8 currencies.
+Can to delete some currencies from external parameter if you want to use less currencies. The parameter called: '
+Currencies To Make Pairs'
+"EUR/GBP/AUD/NZD/USD/CAD/CHF/JPY".
+Please, don't change the series of currencies. Try to
+delete
+currencies of parameter, not
+typing
+currencies on parameter.
+Number of currencies gives number of rings
+3 currencies = 1 ring.
+4 currencies = 4 rings.
+5 currencies = 10 rings.
+6 currencies = 20 rings.
+7 currencies = 35 rings.
+8 currencies = 56 rings.
+Please test expert on demo account first to see how it works.
+Expert can't to make back test, because use a multi pair strategy. Orders that open in the back test are completely random to pass the test for approval.

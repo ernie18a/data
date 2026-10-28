@@ -1,0 +1,162 @@
+JMACandleTrend_x10 shows the direction of
+JMACandle
+indicator signals from ten different timeframes from the bar defined in the indicator input parameters. A trend continuation is displayed by the right arrow, while a reversal is displayed by a diagonal up or down arrow.
+//+----------------------------------------------+
+//| Indicator inputs                             |
+//+----------------------------------------------+
+input
+ENUM_TIMEFRAMES
+TimeFrame0=
+PERIOD_H1
+;
+//chart 1 period
+input
+ENUM_TIMEFRAMES
+TimeFrame1=
+PERIOD_H2
+;
+//chart 2 period
+input
+ENUM_TIMEFRAMES
+TimeFrame2=
+PERIOD_H3
+;
+//chart 3 period
+input
+ENUM_TIMEFRAMES
+TimeFrame3=
+PERIOD_H4
+;
+//chart 4 period
+input
+ENUM_TIMEFRAMES
+TimeFrame4=
+PERIOD_H6
+;
+//chart 5 period
+input
+ENUM_TIMEFRAMES
+TimeFrame5=
+PERIOD_H8
+;
+//chart 6 period
+input
+ENUM_TIMEFRAMES
+TimeFrame6=
+PERIOD_H12
+;
+//chart 7 period
+input
+ENUM_TIMEFRAMES
+TimeFrame7=
+PERIOD_D1
+;
+//chart 8 period
+input
+ENUM_TIMEFRAMES
+TimeFrame8=
+PERIOD_W1
+;
+//chart 9 period
+input
+ENUM_TIMEFRAMES
+TimeFrame9=
+PERIOD_MN1
+;
+//chart 10 period
+input
+uint
+SignalBar=
+1
+;
+//Bar index for receiving a signal (0 - current bar)
+//---- JMACandleTrend parameters
+input
+int
+JLength=
+30
+;
+//smoothing depth
+input
+int
+JPhase=
+15
+;
+//averaging parameter,
+//---- for JJMA, changing within -100 ... +100, affects the transient process quality;
+//---- For VIDIA this is CMO period, for AMA this is a slow average
+//---- Indicator display parameters
+input
+color
+CpColor=
+clrBlueViolet
+;
+//indicator name color
+input
+color
+BuyColor=
+clrDodgerBlue
+;
+//Buy signal color
+input
+color
+UpColor=
+clrMediumBlue
+;
+//uptrend continuation color
+input
+color
+NnColor=
+clrGray
+;
+//flat color
+input
+color
+DnColor=
+clrPurple
+;
+//downtrend continuation color
+input
+color
+SellColor=
+clrMagenta
+;
+//Sell signal color
+input
+int
+FontSize=
+15
+;
+//font size
+input
+type_font FontType=Font14;
+//font type
+input
+ENUM_BASE_CORNER
+WhatCorner=
+CORNER_LEFT_LOWER
+;
+//corner
+input
+uint
+Y_=
+20
+;
+//vertical position
+input
+uint
+X_=
+5
+;
+//horizontal position
+The indicator requires
+JMA.ex5
+and
+JMACandle.ex5
+indicators for operation. Place them in <terminal_data_folder>\MQL5\Indicators. For the indicator compilation, the <terminal_data_directory>\MQL5\Include folder should feature the
+GetFontName.mqh
+file.
+Fig. 1. JMACandleTrend_x10 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22567

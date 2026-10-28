@@ -1,0 +1,30 @@
+Input
+Default
+Meaning
+InpFastEMA, InpSlowEMA
+10, 30
+EMA periods, M15 closed bars
+InpSignalTF
+M15
+Signal timeframe
+InpStartHourWIB, InpEndHourWIB
+19, 22
+WIB session hours
+InpLot
+0.01
+Fixed lot
+InpSLpoints, InpTPpoints
+70, 200
+SL/TP in points
+InpMaxPos
+1
+Maximum positions
+MaxInpSpreadPoints
+100
+Spread filter (0 = off)
+InpMagic, InpDeviation
+20260909, 10
+Magic, slippage
+Translated from Spanish by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/es/code/77180

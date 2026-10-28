@@ -1,0 +1,2 @@
+Author:  Emerald King, t_david
+Laguerre Volume indicator.

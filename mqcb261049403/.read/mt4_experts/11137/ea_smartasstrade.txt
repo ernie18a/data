@@ -1,0 +1,7 @@
+This is the last EA that I created, and I want to share to friends traders.
+This EA uses alert sound when making or take profit orders or loss, therefore that the sound alerts working properly, please copy the sound file that I include it into the sound MT4 folder. Picture proof that a performance of EA SmartAssTrade, is trading on MT4 ECN broker (3 and 5 digits after the decimal point).
+I do this trade using EA SmartAssTrade, on the evidence of images ranging from the date of February 12, 2014, from my computer, and only 2 times a week I switch so that EA can make a new order. This EA just using a very simple formula, but according to my experience, the formula was accurate enough to make a profit.
+EA is used on all timeframes and all currency pairs, except Gold and Index (EURX or USDX). So, May be useful for traders who want to succeed. I've done an last update (2014-02-28) for EA SmartASSTrade (especially on the default setting that is easily understood on setting default, and discard unused variable).
+EA SmartAssTrade (Update_2)
+In this day (2014-03-03), I've done an update version_2 for EA SmartAssTrade, especially on the modif() function, and add #include 2 standard files MQL4 <stderror.mqh> and stdlib.mqh, so when that an error occurs, then the user can look at the MT4 Journal tab, the error code that occurred and a description of the error.
+I hope this update can help you to analyze this EA when running.

@@ -1,0 +1,11 @@
+The real author:
+GregoryK
+The indicator calculates the Moving Average using a modified algorithm of the linearly weighed Moving Average, where smoothing coefficients are calculated using radially basis function (Gaussian function).
+Mathematical formula of the underlay algorithm in the indicator is the following:
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 22.07.2009.
+Fig.1 The Gaus_MA indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1272

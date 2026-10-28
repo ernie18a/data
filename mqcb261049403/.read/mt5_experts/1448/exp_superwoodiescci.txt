@@ -1,0 +1,14 @@
+The trading system drawn on the basis of the signals of the
+SuperWoodiesCCI
+indicator. A signal to perform a deal is formed at bar closing when there is breakthrough of the zero level.
+Place
+SuperWoodiesCCI.ex5
+compiled file to the terminal_data_folder\MQL5\Indicators.
+The Expert Advisor provides a possibility to display the indicator used in it on the current chart directly from the Expert Advisor. There is no need to install the indicator in the chart manually. This is quite convenient, as the indicator is displayed in the chart automatically after the Expert Advisor is installed on the chart. This indicator always has input parameters identical to the Expert Advisor's input parameters. The indicator is present in the chart only if it coincides with the chart's timeframe!
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. The instances of history of deals in the chart.
+Testing results for 2011 at USDCHF H4:
+Fig. 2. Chart of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1448

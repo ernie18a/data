@@ -1,0 +1,68 @@
+Author of the idea
+—
+Denis Denisov
+,
+mq5 code author
+—
+barabashkakvn
+.
+The EA operation is based on the analysis of the four iMA indicator readings on different bars:
+iMA
+(
+Symbol
+(),
+PERIOD_H1
+,
+2
+,
+0
+,
+MODE_EMA
+,
+PRICE_CLOSE
+);
+iMA
+(
+Symbol
+(),
+PERIOD_H1
+,
+24
+,
+0
+,
+MODE_EMA
+,
+PRICE_CLOSE
+);
+iMA
+(
+Symbol
+(),
+PERIOD_D1
+,
+2
+,
+0
+,
+MODE_EMA
+,
+PRICE_CLOSE
+);
+iMA
+(
+Symbol
+(),
+PERIOD_D1
+,
+24
+,
+0
+,
+MODE_EMA
+,
+PRICE_CLOSE
+);
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16814

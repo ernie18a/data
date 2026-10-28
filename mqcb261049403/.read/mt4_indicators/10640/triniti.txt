@@ -1,0 +1,6 @@
+Author:
+Chart.Extra
+The support and resistance levels are determined. It provides the values for TP and SL.
+My first self-made indicators. The current one examines the occurrence of the same price. You can set the period and the number of repetitions.
+Buffer3, Buffer4 = support, resistance. It can be used in EA
+Buffer2, Buffer1, Buffer5, Target prices and stop levels. In the EA, I do not recommend their use.

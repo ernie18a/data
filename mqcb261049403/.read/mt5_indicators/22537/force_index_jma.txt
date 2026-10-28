@@ -1,0 +1,10 @@
+Basics :
+The Force Index (sometimes referred to as “the index”) is another technical analysis concept introduced by Alexander Elder in his book
+Trading For A Living
+.
+The calculation for the force index:
+Force Index (1) = [Close (current period) – Close (prior period)] x Volume
+Force Index (13) = 13-period Exponential Moving Average of Force Index (1)
+A 13-period average highlights short-term trends, and is suitable for shorter-term traders. A 100-period Force Index average will highlight longer-term trends and is preferred by longer-term traders.
+This version :
+In this version we are using well known JMA  (Jurik Moving Average) instead of using the EMA for calculation

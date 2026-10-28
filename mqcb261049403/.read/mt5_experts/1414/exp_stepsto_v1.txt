@@ -1,0 +1,11 @@
+The Exp_StepSto_v1 trading system is drawn on the basis of the signals of the
+StepSto_v1
+stochastic oscillator. A signal to perform a deal is formed at bar closing. To make deals the location of a purple, signal line of the indicator is used as a filter. If the signal line is higher than 50, the Expert Advisor can open only longs and close only shorts, if the signal line is below 50, then only shorts are opened and longs are closed. The signal to perform a deal is the breakdown of the orange indicator line by purple, signal line in the corresponding direction.
+Place StepSto_v1.ex5 compiled file to the terminal_data_folder\MQL5\Indicators.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. The instances of history of deals in the chart.
+Testing results for 2011 at XAUUSD H4:
+Fig. 2. Chart of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1414

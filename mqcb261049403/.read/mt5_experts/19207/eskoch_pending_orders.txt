@@ -1,0 +1,36 @@
+The author of the idea
+:
+Skoch
+,
+the mq5 code author
+:
+barabashkakvn
+.
+The EA executes trading operations at the opening of the bar, and does not work inside the bar (does not analyze ticks).
+The "e-Skoch pending orders" Expert Advisor places stop orders based on the following rules:
+Buy Stop: if the high of bar #2 on the D1 timeframe is higher than the high of bar #1 on the D1 timeframe and the high of bar #2 on the current timeframe is higher than the high of bar #1 on the current timeframe.
+Sell Stop: if the low of bar #2 on the D1 timeframe is lower than the low of bar #1 on the D1 timeframe, and the low of bar #2 on the current timeframe is lower than the low of bar #1 on the current timeframe.
+Input Parameters
+Lots
+- lot size.
+Take Profit for BUY (in pips)
+- the take profit level for pending buy orders.
+Stop Loss for BUY (in pips)
+- the stop loss level for pending buy orders.
+Take Profit for SELL (in pips)
+- the take profit level for pending sell orders.
+Stop Loss for SELL (in pips)
+- the stop loss level for pending sell orders.
+Indenting price from High (in pips)
+- distance from the high of the bar on the current timeframe.
+Indenting price from Low (in pips)
+- distance from the low of the bar on the current timeframe.
+true -> If there is a position, do not place a pending order
+- prohibits placing pending orders if there is an open position.
+Percent equity
+- profit as percent of equity.
+magic number
+- Expert Advisor's unique identifier.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19207

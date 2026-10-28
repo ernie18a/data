@@ -1,0 +1,12 @@
+Part 5. Creating application programs in MQL5
+In
+"Part 5. Creating application programs"
+of the MQL5 Programming for Traders book, we'll delve deeper into the APIs associated with algorithmic trading, including financial data analysis and processing, chart visualization, automation, and user interactions.
+We will start with the general principles of creating MQL programs and will consider the event types, features, and models in the terminal. We will then explore access to timeseries, operations with charts and graphical objects, as well as the principles of creating and applying each MQL program type separately.
+The MetaTrader 5 terminal supports five types of programs: technical indicators, Expert Advisors (EAs) for automatic or semi-automatic trading, scripts for performing one-time tasks, services for background operations, and libraries for individual functional modules.
+We will delve into working with indicators and charts and will learn techniques that are also applicable to Expert Advisors. The development of Expert Advisors will be considered in the next part of the book, where we will explore the automatic execution of orders, the formalization of trading strategies, as well as their testing and optimization using historical data.
+We will learn how to use standard built-in indicators and how to create our custom applications from scratch or based on other indicators. All compiled programs are displayed in the Navigator in MetaTrader 5, except for EX5 libraries, which are used by other programs but do not have a separate representation in the Navigator.
+As a result, we will gain a more comprehensive understanding of the capabilities of the MQL5 language and its application in algorithmic trading. This will enable us to effectively work with financial data and create trading indicators and Expert Advisors.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/45594

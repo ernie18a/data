@@ -1,0 +1,5 @@
+Author:
+Emilio Reale is a professional trader that makes some useful tool and places in public domain to help others to use his ordinary daily working tools.
+The Alerter simply works on 1 or 2 trendlines and plays a sound file when the trendline has been broken so the only think you must do is name correctly the trendlines
+Image:
+Place the mqh file in the include directory, the general.mq4 in the libraries directory and the trendlinealert.mq4 in the indicators directory

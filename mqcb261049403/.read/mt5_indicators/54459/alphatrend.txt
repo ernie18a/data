@@ -1,0 +1,7 @@
+It is an indicator used to determine the market trend and support and resistance levels.
+When volume data is available, it calculates using MFI, otherwise it calculates using RSI.
+Momentum: RSI and MFI
+Volatility: ATR
+Translated from Turkish by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/tr/code/54459

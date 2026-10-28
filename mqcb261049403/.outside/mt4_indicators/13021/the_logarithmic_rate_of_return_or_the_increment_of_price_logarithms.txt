@@ -1,0 +1,9 @@
+This indicator can be useful for arbitrageurs. The formula for the calculation of the indicator:
+ln(C/O) = ln(C) - ln(O)
+where C — is the Close, and the O — Open.
+For more information about the logarithmic rate of return read the article
+"Market invariants, or why the trader needs logarithms"
+:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13021

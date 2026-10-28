@@ -1,0 +1,66 @@
+Two identical trading systems (for long and short positions) based on the signals of the
+Slow-Stoch
+indicator, which can be configured in different ways within one Expert Advisor. For this purpose, all input parameters can be divided into two large groups:
+Those having names starting with L are input parameters to manage long positions;
+Those starting with S are input parameters to manage short positions.
+//+----------------------------------------------+
+//| Input parameters of the EA for long trades   |
+//+----------------------------------------------+
+input
+uint
+L_Magic=
+777
+;
+//L magic number
+input
+double
+L_MM=
+0.1
+;
+//L share of a deposit per trade
+input
+MarginMode L_MMMode=LOT;
+//L lot setting mode
+//+----------------------------------------------+
+//| Input parameters of the EA for short trades  |
+//+----------------------------------------------+
+input
+uint
+S_Magic=
+555
+;
+//S magic number
+input
+double
+S_MM=
+0.1
+;
+//S share of a deposit per trade
+input
+MarginMode S_MMMode=LOT;
+//S lot setting mode
+These two trading systems use different magic numbers and are absolutely independent on each other. Real financial markets are rarely symmetric. Absolutely different parameters of the same trading system are often needed for trading in the rising and falling market. To properly configure the EA, you should first test only one trading system, having disabled the second one using relevant switches.
+input
+bool
+L_PosOpen=
+true
+;
+//L permission to enter long positions
+input
+bool
+L_PosClose=
+true
+;
+//L permission to exit long positions
+Upon that, perform the same for the second system.
+For the EA to operate, you should place the compiled indicator file
+Slow-Stoch.ex5
+to terminal_data_older\MQL5\Indicators.
+The EA default input parameters were used in tests below. Stop Loss and Take Profit were not used in testing.
+Fig.1. Examples of deals on the chart with symmetrical settings.
+Testing results for 2017 at EURAUD H8:
+Fig.2. Testing results chart.
+Fig.3. Examples of deals on the chart with non-symmetrical settings.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23141

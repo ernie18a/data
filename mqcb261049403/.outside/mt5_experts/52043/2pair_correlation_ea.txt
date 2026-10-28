@@ -1,0 +1,35 @@
+Unlock the potential of automated crypto trading with the 2-Pair Correlation EA, a fully self-adaptive Expert Advisor designed for BTC/USD and ETH/USD pairs. Whether you're new to trading or an experienced crypto enthusiast, this EA is built to help you capture opportunities in the market while keeping your risk low.
+And the best part? It’s completely free! Available to download on MQL5, this EA is a perfect tool for anyone looking to explore the world of crypto trading automation without any cost.
+Key Features of the 2-Pair Correlation EA:
+1. Correlation-Based Trading Strategy
+The 2-Pair Correlation EA monitors the price difference between BTC/USD and ETH/USD, taking advantage of their close price correlation. It identifies deviations in their usual relationship and places trades to profit when the pairs realign. This strategy is perfect for traders looking to benefit from market inefficiencies without guessing market direction.
+2. Automatic Lot Sizing for Safe Risk Management
+This EA features a dynamic lot sizing mechanism that automatically adjusts the lot size based on your account balance and a pre-set risk percentage. This ensures that you’re always trading safely, no matter how big or small your account is. It’s ideal for traders who want to maintain consistent risk exposure.
+3. Built-In Volatility Control
+The EA uses the ATR (Average True Range) indicator to measure market volatility. When volatility is too high, the EA pauses trading to prevent losses during turbulent market conditions. This extra layer of protection is especially useful for crypto trading, where sudden price movements are common.
+4. Drawdown Protection
+Worried about losing too much in a downturn? The 2-Pair Correlation EA includes a maximum drawdown limit. If your account reaches the specified drawdown percentage, the EA will pause trading to protect your capital. When your account recovers, the EA automatically resumes trading, keeping you safe during challenging market conditions.
+5. Fully Customizable Settings
+Even though it’s free, this EA is packed with customization options. From adjusting the lot size and risk percentage to setting slippage and volatility filters, the EA gives you full control. This makes it suitable for both beginner and experienced traders who want to fine-tune their trading strategies.
+Why Should You Download the 2-Pair Correlation EA?
+Free and Powerful: Available at no cost, this EA provides an opportunity to automate your trading without having to spend money upfront. Whether you're just testing out automated trading or want a reliable EA to help manage your crypto portfolio, this is a great starting point.
+Perfect for Crypto Traders: Designed specifically for BTC/USD and ETH/USD, the two largest cryptocurrencies by market capitalization, this EA is tailored for traders looking to get the most out of the crypto market.
+Risk Management Built In: The EA uses advanced techniques to manage your risk, including automatic lot sizing, volatility filtering, and drawdown protection—features usually found in paid EAs.
+Easy to Use: With a user-friendly interface and simple setup process, you can start trading with this EA in minutes. No complicated configurations or expert-level knowledge required.
+Features Overview:
+Trade Pairs: BTC/USD, ETH/USD
+Dynamic Lot Sizing: Automatically adjusts your lot size based on account balance and risk
+ATR Volatility Filter: Pauses trading during high volatility to reduce risk
+Max Drawdown Protection: Prevents further losses if account drawdown exceeds your set percentage
+Profit Locking: Closes trades when profit targets are hit
+User-Friendly Customization: Fine-tune the EA to match your trading style
+Who Is This EA For?
+New Traders: If you’re just getting started with automated trading, this EA is a perfect introduction to the world of Expert Advisors, with minimal risk and zero cost.
+Crypto Enthusiasts: Specially designed for BTC/USD and ETH/USD, this EA is ideal for traders focused on crypto.
+Experienced Traders: If you’re an experienced trader looking for a reliable and free EA to add to your toolkit, the 2-Pair Correlation EA offers solid performance and adaptability.
+How to Get Started:
+Download for Free: Visit MQL5.com and download the 2-Pair Correlation EA at no cost.
+Install and Customize: Simply attach the EA to your BTC/USD and ETH/USD charts, customize the settings, and let the EA start trading.
+Monitor and Profit: Sit back and watch as the EA handles your trades automatically, locking in profits and managing your risk.
+Download the 2-Pair Correlation EA Now – It’s Free!
+Ready to automate your crypto trading? Download the 2-Pair Correlation EA for free today on MQL5.com and start trading with confidence. With advanced features and zero cost, it's the perfect tool to help you trade smarter, safer, and more efficiently.

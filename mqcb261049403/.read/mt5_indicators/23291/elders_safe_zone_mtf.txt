@@ -1,0 +1,27 @@
+Multi-timeframe version of
+Elder's Safe Zone
+indicator. Displays Alexander Elder's Safe Zones calculated for three specified timeframes. Elder's Safe Zone calculates the minimum stop loss so that to keep it not far from the price, to protect profit, and not too close to the price, to avoid stop loss activation from noise movements.
+It has seven input parameters:
+ESZ Period
+- Safe Zone calculation period
+Stop factor
+- Safe Zone line shift from the price
+EMA period
+- EMA calculation period for defining the price direction
+Drawing mode
+- line drawing mode
+Steps
+- by steps
+Slope
+- inclined lines, which connect the values of neighboring bars of specified timeframes
+First ESZ timeframe
+- the timeframe of the first displayed Elder's Safe Zone
+Second ESZ timeframe
+- the timeframe of the second displayed Elder's Safe Zone
+Third ESZ timeframe
+- the timeframe of the third displayed Elder's Safe Zone
+Fig.1. Multi timeframe Elder's Safe Zone, Drawing mode = Steps
+Fig.2. Multi timeframe Elder's Safe Zone, Drawing mode = Slope
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23291

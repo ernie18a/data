@@ -1,0 +1,5 @@
+AIS2 Trading Robot: Features
+1. Automatic trading
+2. Automatic risk management
+3. Fast on-the-fly preset control
+4. Monitoring function

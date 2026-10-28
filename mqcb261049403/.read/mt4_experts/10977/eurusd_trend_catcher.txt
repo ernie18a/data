@@ -1,0 +1,11 @@
+Description:
+The EA catches long trends by crossing a moving average on 15min time frame.
+The EA has 50 pip noise filter which prevents the EA to jump on every little move.
+Tested on 15min EUR/USD pair between 2001 and 2010 with 90% history accuracy with great results.
+T.P = 350 pips;
+S.L = 20 pips;
+Most of the time the EA loses, however one T.P overcomes 17 losses !
+So generally its profitable.
+Tester results:
+Enjoy
+for comments : sergeyrar@gmail.com

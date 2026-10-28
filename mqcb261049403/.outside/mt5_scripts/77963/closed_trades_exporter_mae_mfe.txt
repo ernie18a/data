@@ -1,0 +1,21 @@
+Closed Trades Exporter saves your closed trades to a CSV file that opens in Excel, Google Sheets or any spreadsheet program. Besides the usual trade details, it calculates two values that the terminal's history does not show: Maximum Adverse Excursion (MAE) and Maximum Favorable Excursion (MFE). These are measured from M1 price history for the period each trade was open.
+MAE is the furthest the price moved against the trade before it was closed, and MFE is the furthest it moved in the trade's favor. Studying them across many trades shows whether stop losses are too tight or too wide, and whether take profits leave too much on the table. The CapturedPct column shows how much of the MFE each trade actually kept.
+The file contains one row per closed position with these columns: position ID, symbol, type, volume, open and close time, open and close price, duration in minutes, profit, commission, swap, net profit, result in points, MAE and MFE in points and in account currency, captured percentage, magic number and comment.
+Input
+Description
+Days of history to export
+Exports trades closed within this many days. Set 0 to export the full history. Default 90.
+Only this symbol
+Exports trades of one symbol only. Leave blank for all symbols.
+Only this magic number
+Exports trades of one Expert Advisor only. Set -1 for all trades, including manual ones.
+Calculate MAE/MFE from M1 history
+Turns the excursion calculation on or off. Turning it off makes the export faster.
+File name
+Name of the CSV file. Leave blank for an automatic name with the account number and date.
+Column separator
+Character between columns. Use a semicolon if your spreadsheet program expects it.
+Save to the common Files folder
+Saves the file to the folder shared by all terminals instead of this terminal's Files folder.
+The file location is shown in a message when the export finishes. In the terminal, File, Open Data Folder opens the data folder, and the CSV is in MQL5\Files. MT5 rebuilds each position from its deals, so scaling in and partial closes appear as one row with average entry and exit prices. Positions reversed on netting accounts, and positions opened before the selected period, are skipped.
+MAE and MFE are based on Bid M1 bars, so for sell trades they do not include the spread. If the broker's server no longer has M1 history for an old trade, those columns are left blank and the count is shown in the final message. Money values use the current tick value, so they are approximate for symbols whose profit currency differs from the account currency.

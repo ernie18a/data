@@ -1,0 +1,25 @@
+Version 2 added '
+Time control
+' group and removed '
+Profit limit for close all
+' and '
+Withdrawal
+' parameters. Added trailing lot size control (description of new functions is in the
+RSI Dual Cloud EA
+code).
+Checking the trading signal - only at the moment of the birth of a new bar.
+When generating a trading signal, the Expert Advisor considers two indicators: iAMA (Adaptive Moving Average, AMA) and iRSI (Relative Strength Index, RSI). The signal itself is created in two steps. On the example of the "Open Buy" signal:
+Step 1: RSI Must be below level 30 (this level in the EA is set in the parameter
+RSI Level Down
+). Step 2: The price must overcome the AMA indicator. To search for the optimal combination of two indicators, the
+Step Length
+parameter is introduced
+- distance in bars between Step 1 and Step 2.
+Martingale
+When a trading order is received, we separately request profit for BUY positions and SELL positions. If a trade order is received:
+"Open Buy"
+if profit on BUY positions is less than 0.0 - open two BUY positions
+otherwise open one BUY position
+"Open Sell"
+if profit on SELL positions is less than 0.0 - open two SELL positions
+otherwise open one SELL position

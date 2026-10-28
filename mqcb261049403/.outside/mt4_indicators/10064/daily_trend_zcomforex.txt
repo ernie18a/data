@@ -1,0 +1,15 @@
+Description:
+A very useful indicator to show trend of 4 currency pairs on your charts. For more information and forex trading visit
+ZCOM Forex
+.
+You will be able to choose 4 currency pairs to show daily trend.
+Trend is determined by these indicators:
+Smoothed Moving Average (100) of H1 chart;
+Smoothed Moving Average (50) of H1 chart;
+Stochastic (30,1,3) of H4 chart.
+The trend is Down when SMA(50) < SMA(100) and Stochastic is below 50 level.
+The trend is Up when SMA(50) > SMA(100) and Stochastic is above 50 level.
+There is a Flat determined when SMA(50) > SMA(100) and Stochastic is below 50 level and vice versa.
+For more information and forex trading visit
+ZCOM Forex
+.

@@ -1,0 +1,8 @@
+Consecutive Identical Candles
+for number of currency pairs.
+Descritpion:
+Indicator shows how many consecutive identical candles have appeared on currency pairs.
+You can change size of the text.
+Usage:
+The indicator can help to identify possibility of correction (or reversal) after increased number of identical candles.
+Do not take the information given by the indicator separately from market context.

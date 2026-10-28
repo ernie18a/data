@@ -1,0 +1,90 @@
+Author of the idea
+—
+Yuri
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+Attention! The Expert Advisor will only work on the M15 timeframe!
+Short-term trends. The Expert Advisor uses two iMA indicators and one iStochastic.
+System rules:
+Compare the moving averages on the 15-minute and 1-hour chart. Trend exists if price on both charts is above or below the moving average.
+Once you have identified the trend, analyze the 15-minute chart for compliance with its two conditions (both of them must be met at the same time):
+the price should be no more than 20 points above (to buy) or no more than 20 pips below (to sell) the moving average;
+the stochastic line should cross the stochastic line below the stochastic level 20 (to buy) or cross the stochastic line down above the level of 80 (to sell).
+Calculating parameters:
+//--- Calculating initial parameters of indicators to search for entry conditions
+double
+MA_M15   = iMAGet(handle_iMA_M15,
+1
+);
+double
+MA_H1    = iMAGet(handle_iMA_H1,
+1
+);
+double
+Stoh_slow = iStochasticGet(
+SIGNAL_LINE
+,
+1
+);
+double
+Stoh_fast = iStochasticGet(
+MAIN_LINE
+,
+1
+);
+double
+Stoh_fast_prew=iStochasticGet(
+MAIN_LINE
+,
+2
+);
+double
+price_M15=
+iClose
+(
+1
+,
+NULL
+,
+PERIOD_M15
+);
+double
+price_H1=
+iClose
+(
+1
+,
+NULL
+,
+PERIOD_H1
+);
+Buy condition:
+//--- Checking conditions to perform a deal
+if
+(price_M15<MA_M15 && price_H1<MA_H1 && (MA_M15-price_M15)<=porog*m_adjusted_point)
+     {
+if
+(Stoh_slow<
+20
+&& Stoh_fast<
+20
+&& Stoh_fast_prew<Stoh_slow && Stoh_fast>Stoh_slow)
+        {
+Sell condition:
+if
+(price_M15>MA_M15 && price_H1>MA_H1 && (price_M15-MA_M15)<=porog*m_adjusted_point)
+     {
+if
+(Stoh_slow>
+80
+&& Stoh_fast>
+80
+&& Stoh_fast_prew>Stoh_slow && Stoh_fast<Stoh_slow)
+        {
+EURUSD,M15, c 2016.01.01 по 2017.02.06:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17562

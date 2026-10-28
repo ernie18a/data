@@ -1,0 +1,13 @@
+Autor real:
+DriverDan
+Indicador que calcula o volume por segundo (ou de um determinado período) e sua correspondente média móvel.
+Este indicador foi implementado pela primeira vez em MQL4 e publicado na
+Base de Código
+em 19.09.2007.
+Este indicador utiliza a biblioteca de classes SmoothAlgorithms.mqh (deve ser copiada para terminal_data_folder\MQL5\Include). O uso desta classe está descrito com mais detalhes no Artigo
+"Série de preço médio para cálculos intermediários sem utilizar buffers adicionais"
+.
+Fig.1 Indicador VSI
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1561

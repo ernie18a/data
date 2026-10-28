@@ -1,0 +1,25 @@
+INTRODUCTION:
+I want to share with you this story. When I started trading, I learnt the scalping strategy in a volatile market. I really loved scalping especially when I see the price is moving fast. However, scalping for a long period of time is exhausting to me especially in a volatile market; volatile market requires fast analysis, actions and reactions; that is why I always reach a point that I loss concentration, focus and I start making those really stupid mistakes.
+That is why I created this indicator that helped me to automatically identify these potential entries (based on the formation of candlesticks) instead of doing all the work myself. I know there are plenty of Metatraders who also suffer from this and that is why I would like to share this indicator with you, hopefully it will be beneficial.
+LIVE TRADING SESSION:
+You can check the following live trading session on 25 August 2020 and see how I was use my tools in my trading
+You can check the below videos:
+How to compile this indicator
+Do not forget to send you comments as well as rate these scripts. Happy trading!
+This indicator:
+* has one input that will allow you to specify if you want to identify potential entries on bullish or bearish trends (i.e. it is up to you to choose bullish trend or bearish trend).
+* If you choose bullish trend, this indicator will identify potential bullish entries based on the formation of these candlesticks:
+Bullish Hammer (HAM),
+Inverted Hammer (IVH),
+Bullish Engulfing (ENG),
+Bullish
+Harami (HAR),
+Morning start (MOS) and
+Bullish Building Momentum
+* If you choose bearish trend, this indicator will identify potential bearish entries based on the formation of these candlesticks :
+Shooting Star (SHS),
+Hanging Man (HGM),
+Bearish Engulfing (ENG),
+Bearish Harami (HAR),
+Evening Start (EVS) and
+Bearish Building Momentum)

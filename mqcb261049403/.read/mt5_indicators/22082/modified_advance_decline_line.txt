@@ -1,0 +1,14 @@
+Modified Advance Decline line indicator is a modified
+ADL (Advances/Declines Line)
+trend indicator. It compares the difference between symbol chart increase and decrease moments within a certain time period. The indicator determines a trend strength for detecting market reversals as well. The calculation is performed considering tick volumes.
+It has one configurable parameter:
+Period
+- calculation period
+Calculation:
+MADL = PrevMADL + (2.0*Close-High-Low) / (High-Low) * (Volume+MA)
+where
+MA - SMA(Volume, Period)
+If a trading instrument price goes up, while the indicator line moves down, this means a divergence and a possible market reversal signal. At the same time, this is only a warning about a possible reversal, since, due to some features of the indicator, the divergence of the directions of its line and the price chart may continue for a long time. But when the indicator line confirms the movement of the price chart with its direction, this indicates a strong current trend.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22082

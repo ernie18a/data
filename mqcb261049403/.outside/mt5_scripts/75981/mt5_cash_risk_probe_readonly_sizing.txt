@@ -1,0 +1,34 @@
+MT5 Cash Risk Probe
+is a read-only MetaTrader 5 script for checking one cash-risk sizing boundary before order logic is implemented. It does not send, modify or close any order.
+How it works
+The script calls OrderCalcProfit() for a hypothetical one-lot trade between the chosen entry and stop. This returns the price-loss estimate in the terminal account deposit currency. The script subtracts an explicit cash reserve for fees or slippage, divides the remaining budget by the one-lot loss, floors the result to the symbol volume grid and recalculates the final loss.
+Every successful report includes the symbol, side, account currency, entry, stop, cash budget, reserve, one-lot loss, raw volume, final volume, estimated price loss, estimated total, broker minimum/maximum/step/limit, tick size and order_sent=false .
+Inputs
+InpSymbol
+— symbol to inspect; blank uses the current chart symbol.
+InpSide
+— hypothetical BUY or SELL direction.
+InpEntryPrice
+— explicit entry; zero uses current Ask for BUY or Bid for SELL.
+InpStopPrice
+— required hypothetical stop price. A BUY stop must be below entry; a SELL stop must be above entry.
+InpRiskCash
+— maximum cash budget in the reported account deposit currency.
+InpCashCostReserve
+— explicit cash amount reserved for commission, fees or slippage assumptions. It must be nonnegative and below the cash budget.
+InpRunSelfTests
+— runs five deterministic volume-floor boundary tests at startup.
+Deterministic checks
+The startup tests cover ordinary 0.01-step flooring, below-minimum rejection, maximum-volume capping, a 0.10 step and a grid whose minimum is not an integer multiple of its step. The broker-dependent calculation blocks missing or wrong-side stops, invalid cash values, unavailable ticks, invalid volume metadata, failed profit calculation and a budget below minimum volume.
+Result interpretation
+PASS
+means the recalculated price loss plus the explicit cash reserve does not exceed the entered cash budget.
+BLOCKED
+means a required input, terminal state, broker property or calculation boundary could not be validated safely. A block is intentional: the script does not guess missing values.
+Installation
+Copy SCA_MT5CashRiskProbe.mq5 to MQL5\Scripts\StratCoreAlpha\ .
+Compile it in MetaEditor.
+Run it on an MT5 chart and review the chart comment and Experts log.
+A connected terminal is required for broker/account-currency profit calculation.
+Limitations
+This is engineering diagnostic code, not trading advice or a performance claim. PASS does not guarantee fill price, commission, slippage, margin availability, trade-server acceptance or profit. The script does not aggregate portfolio exposure and does not send orders.

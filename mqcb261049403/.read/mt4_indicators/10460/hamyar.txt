@@ -1,0 +1,7 @@
+Description:
+Just Enjoy it, it's very useful, Hamyar means "an assistant" in Persian.
+Sorry for some mistakes in code, this is one of my first indicators i wrote in long time ago
+it's useful to analysis the chart beside of your own system
+Ahoora(chart).mq4
+Ahoora.mq4
+Hamyar-V2.mq4

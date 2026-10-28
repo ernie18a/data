@@ -1,0 +1,18 @@
+Normalized Volume is an indicator showing the normalized volume value. It displays the average volume within the bars range, in the form of a colored histogram with a threshold value.
+It has two input parameters:
+Period
+- normalization period
+Threshold
+- threshold level
+Calculation:
+VolumeNorm = Volume / MA * 100.0
+where:
+MA - SMA(Volume, Period)
+Volume - tick volume
+If VolumeNorm is greater than Threshold
+Histogram bars are colored green.
+Otherwise
+Histogram bars are colored red.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23126

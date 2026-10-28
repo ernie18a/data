@@ -1,0 +1,9 @@
+The AMkA_Signal indicator shows information on the current trend using the values of the
+AMkA
+indicator with a fixed timeframe.
+The indicator displays signals from the colored dots of the source AMkA indicator. Colored dots on the line appear when the bar of the corresponding timeframe changes.
+The indicator requires AMkA.mq5 indicator file. Place it to terminal_folder\MQL5\Indicators.
+Figure 1. The AMkA_Signal indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/6998

@@ -1,0 +1,5 @@
+The indicator displays the total number of deals by symbol in real time. Red line of deals is for SELL, blue line is for BUY.
+If the size of the actual history in indicator buffers is 0, then all available history equal to the number of bars on the chart will be available (may affect the indicator operation speed).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16210

@@ -1,0 +1,193 @@
+In MQL ticks are stored in a special structure - MqlTick. It's universal but a bit fat. If your algorithm handles large tick arrays it may become a reason of RAM shortage. The class TickCompressor provides a simple solution to minimize memory utilization.
+Instead of standard structure MqlTick, it offers to use 2 new data types: MqlTickBidAsk for Forex/CFDs and MqlTickBidAskLastVolume for Exchanges, as well as a bunch of method for conversion between them back and forth.
+Let us compare the standard MqlTick and the mini-tick structures.
+struct
+MqlTick
+{
+datetime
+time;
+double
+bid;
+double
+ask;
+double
+last;
+ulong
+volume;
+long
+time_msc;
+uint
+flags;
+double
+volume_real;
+};
+The `time` field is excessive because it duplicates `time_msc` with lesser accuracy.
+The price fields do not have to be doubles in fact. The type float is sufficient medium for most of symbols. When it comes to price calculations, then indeed double is a must, but as long as it's a matter of passive storage, float can do the job.
+Also for symbols of centralized markets (not exchanges) the `last` price is always 0. In addition, `volume` and `volume_real` are also unused.
+Finally, the `flags` field can easily fit into ushort.
+As a result, MqlTickBidAsk for Forex and CFDs looks quite minified.
+struct
+MqlTickBidAsk
+{
+float
+bid;
+float
+ask;
+long
+time_msc;
+ushort
+flags;
+};
+MqlTickBidAskLastVolume is more verbose but still compact.
+struct
+MqlTickBidAskLastVolume
+{
+float
+bid;
+float
+ask;
+float
+last;
+ulong
+volume;
+long
+time_msc;
+ushort
+flags;
+};
+Actually, in both cases we could use `ushort spread` instead of `float ask` and build `ask` from `bid`, but it's left as an option.
+The test script outputs original and minified ticks to the log.
+For GBPUSD it uses MqlTickBidAsk, and for S&P 500 mini futures - MqlTickBidAskLastVolume.
+As you can see, MqlTickBidAsk is 3 times smaller than MqlTick, and MqlTickBidAskLastVolume is 2 times smaller.
+One of the areas where the tick compressor can be helpful is virtual testing and optimization using tick arrays. For example, the library
+Virtual
+provides a method for virtual trading:
+static
+int
+Tester(
+const
+MqlTick
+&Ticks[], ...)
+where the Ticks array should be provided in-memory by calling code.
+If a strategy to be tested on a deep history (several years), the tick array can easily grow up to many Gbs and exceed physical RAM. In such cases one can store minified array (compressed ticks) and then patch the Virtual library to consume mini-ticks via decompression keeping all the internal logic intact (in the same way as with standard ticks).
+#ifdef
+TICK_COMPRESSOR
+template
+<
+typename
+TC>
+static
+int
+TesterTC(
+const
+TC &Ticks[],
+const
+STRATEGY Strategy,
+const
+double
+Balance =
+DBL_MIN
+,
+const
+bool
+Stop =
+true
+,
+const
+bool
+bNetting =
+false
+)
+  {
+const
+int
+Handle = VIRTUAL::GetHandle();
+const
+bool
+Res = ::
+ArraySize
+(Ticks) && VIRTUAL::SelectByHandle(VIRTUAL::Create(Balance, (Ticks[
+0
+].time_msc /
+1000
+/ (
+24
+*
+3600
+)) * (
+24
+*
+3600
+), bNetting));
+if
+(Res)
+    {
+      VIRTUAL::NewTickTC(Ticks, Strategy);
+if
+(Stop)
+        VIRTUAL::Stop();
+    }
+return
+(Res ? Handle : -
+1
+);;
+  }
+template
+<
+typename
+TC>
+static
+void
+NewTickTC(
+const
+TC &Ticks[],
+const
+STRATEGY Strategy =
+NULL
+)
+  {
+if
+(VIRTUAL::SelectOrders)
+    {
+const
+int
+Size = ::
+ArraySize
+(Ticks);
+MqlTick
+result;
+if
+(Strategy)
+      {
+for
+(
+int
+i =
+0
+; (i < Size)  && (!::
+IsStopped
+()); i++)
+        {
+          TickCompressor::decompress(Ticks[i], result);
+          VIRTUAL::SelectOrders.NewTick(result);
+
+          Strategy();
+        }
+      }
+else
+{
+for
+(
+int
+i =
+0
+; i < Size; i++)
+        {
+          TickCompressor::decompress(Ticks[i], result);
+          VIRTUAL::SelectOrders.NewTick(result);
+        }
+      }
+    }
+  }
+#endif
+Also the tick compressor can be used to store tick arrays in files in a more compact way.

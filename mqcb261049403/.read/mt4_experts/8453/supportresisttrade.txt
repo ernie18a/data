@@ -1,0 +1,23 @@
+A simple analysis of the market is performed before opening/closing a position, it determines the levels of support/resistance and the direction of the trend (bullish/bearish) as well.
+The support/resistance levels are drawn by the last
+numBars
+bars.
+The trend is identified using the Moving Avarage indicator (the period is set by the
+maPeriod
+parameter): if the price is above the MA then the trend is bearish, if it is below the MA then the trend is bullish.
+If the trend is bullish then the position is opened at the break through of the resistance level.
+If the ternd is bearish then the position is opened at the break through of the support level.
+The closing of the position is performed by StopLoss that is placed either by the support level (if a long posotion is opened), or by the resistance level (if a short position is opened). The closing of the position can be performed by the break through of the support level as well (if an opened position is opened and this position is at a lossless region) or by the break through of the resistance level (if a short position is opened and this position is at the lossless region). A primitive TrailingStop with the levels of 10, 20 and 30 points is used in the EA.
+Input Parameters:
+1.
+numBars
+- the number of bars that are used for drawing of the support/resistance levels.
+2.
+maPeriod
+- the period of the Moving Avarage.
+The result of testing through September (EUR\USD):
+Period H1:
+The input parameters are not optimized. The default values are: numBars = 55; maPeriod = 500.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8453

@@ -1,0 +1,4 @@
+risk : 1% _  3%
+monthly profs : 25% _ 35%
+leverage : 500
+by using SL & TP

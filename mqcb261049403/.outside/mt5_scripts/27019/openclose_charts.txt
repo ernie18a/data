@@ -1,0 +1,8 @@
+First script selects symbols having spread below specified value on the marketwatch, then opens corresponding charts by appyling timeframe and template stated.
+Second script closes all charts and deletes symbols on the marketwatch except one.
+To Open Charts;
+Double-click or drag-drop OpenCharts on a chart.
+Enter inputs. (Timeframe, Template, Spread)
+Click Ok.
+To Close Charts;
+Double-click or drag-drop CloseCharts on a chart.

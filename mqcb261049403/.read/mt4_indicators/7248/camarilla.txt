@@ -1,0 +1,13 @@
+Author:
+ForexMasterMaker.com
+The ideal indicator for those who like to work "by levels". It clearly shows the reversal level, support/resistance levels for the current day.
+The indicator is very popular abroad. Very useful for traders who trade any currency pair, as the simple rules (e.g. a reversal of the price chart is very probable "near a
+PIVOT
+") will warn the trader against false entries. Similar for the
+Res.
+and
+Sup
+levels.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7248

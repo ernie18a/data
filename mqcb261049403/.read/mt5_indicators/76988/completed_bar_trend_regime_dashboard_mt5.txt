@@ -1,0 +1,33 @@
+Completed Bar Trend Regime Dashboard is a lightweight MetaTrader 5 indicator that summarizes market structure from completed candles. It combines EMA structure and slope, ADX/DI strength, higher-timeframe confirmation, ATR volatility, breakout position and spread context in one panel.
+The indicator is designed as a decision-support tool. A bullish or bearish regime requires agreement between the signal timeframe and the higher timeframe. If the conditions are not aligned, the panel reports a range or transition instead of forcing a directional label.
+How to read the panel
+EMA stack
+shows the fast/slow relationship and the completed close relative to the filter EMA.
+Fast EMA slope
+shows whether the short-term average is rising, falling or flat.
+ADX and DI
+show trend strength and directional pressure.
+Higher-timeframe alignment
+confirms or rejects the signal-timeframe direction.
+ATR and body/ATR
+put the completed candle in current volatility context.
+Breakout
+shows whether the completed close is outside or inside the recent range.
+Spread/ATR
+compares current spread with recent volatility.
+Suggested US500 setup
+Start with a US500 H4 chart, H4 signal timeframe and D1 higher-timeframe confirmation. Read the dashboard after the H4 candle closes. The defaults are only a starting point; all timeframes, EMA periods, ADX threshold, ATR period and breakout lookback are adjustable.
+Inputs
+Signal timeframe / Higher timeframe
+control the two analysis periods.
+Fast, slow and filter EMA periods
+define trend structure.
+ADX period / Minimum ADX
+define the trend-strength requirement.
+ATR period / Minimum body in ATR
+define volatility and candle-body context.
+Breakout lookback
+defines the recent completed-bar range.
+Dashboard corner, offsets and font size
+control panel placement.
+All regime decisions use shift 1, so the current forming candle is excluded. The indicator does not open or manage trades, use DLLs, send network requests or collect account data. It is an analysis tool, not a guarantee of future results.

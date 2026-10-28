@@ -1,0 +1,1 @@
+A simple indicator to see previous High/Low for D1 and W1, made with objects (trendlines).

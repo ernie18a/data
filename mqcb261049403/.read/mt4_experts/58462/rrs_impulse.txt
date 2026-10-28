@@ -1,0 +1,458 @@
+This EA scalps using the
+Relative Strength Index (RSI) Indicator, Stochastic Oscillator Indicator,
+and
+Bollinger Bands Indicator
+to identify
+trend
+or
+counter-trend
+opportunities. As a
+multi-pair EA
+, it scans multiple currency pairs for signals.
+This EA comes with a variety of features, including
+Trailing, Risk Management, Money Management, Restriction Mode,
+and more. With the right settings, it has the potential to generate significant profits.
+Impulse :
+Variable
+Values
+Description
+Trading_Indicator
+RSI, Stochastic, BollingerBands, RSI_Stochastic_BollingerBands
+RSI:
+Uses the RSI indicator to analyze the market and open trades.
+Stochastic:
+Uses the Stochastic indicator to analyze the market and trade.
+BollingerBands:
+Uses the Bollinger Bands indicator to analyze the market and trade.
+RSI_Stochastic_BollingerBands:
+Uses all three indicators (RSI, Stochastic, and Bollinger Bands) together for more accurate market analysis before taking a trade.
+TradeDirection
+Trend, CounterTrend
+Trend:
+Opens a trade in the direction of the trend. For example, if the RSI touches the overbought line, it will take a buy trade; if the RSI touches the oversold line, it will take a sell trade.
+CounterTrend:
+Trades against the trend, waiting for a trend reversal. For example, if the RSI touches the overbought line, it will take a sell trade; if the RSI touches the oversold line, it will take a buy trade.
+SignalStrength
+NormalSignal, NormalMultiTimeFrame, StrongSignal, VeryStrongSignal
+NormalSignal:
+Analyzes the indicator (RSI, Stochastic, or Bollinger Bands) based on a single timeframe specified in the EA settings.
+NormalMultiTimeFrameSignal:
+Analyzes the indicator (RSI, Stochastic, or Bollinger Bands) based on a single timeframe at a time (M1, M5, M15, M30, H1, H4), checking them one by one.
+StrongSignal:
+Analyzes multiple timeframes (M1, M5, M15, M30) for a stronger confirmation before trading.
+VeryStrongSignal:
+Analyzes multiple timeframes (M1, M5, M15, M30, H1, H4) for a stronger confirmation before trading.
+minLot_Size
+Double Value
+Minimum lot size to ensure lot size randomness does not go below this value.
+maxLot_Size
+Double Value
+Maximum lot size to ensure lot size randomness does not exceed this value.
+StopLoss
+Int Value
+Set your stop loss value in points/pips (the smallest price movement unit for your asset).
+Set Stop Loss to
+0
+to disable it.
+TakeProfit
+Int Value
+Set your take profit value in points/pips.
+Set Take Profit to
+0
+to disable it.
+Trailing_Start
+Int Value (Points/Pips)
+Specify the number of pips from the open trade price at which trailing should begin.
+Set
+0
+to disable the trailing operation.
+Trailing_Gap
+Int Value (Points/Pips)
+Set the gap in pips between the current market price and the trailing stop loss.
+Set
+0
+to disable the trailing operation.
+Risk_In_Money_Type
+FixedMoney, BalancePercentage
+FixedMoney:
+Closes all open trades when the negative floating reaches your specified amount.
+BalancePercentage:
+Automatically calculates based on your account balance and closes all trades once this limit is reached.
+Money_In_Risk
+Int Value
+If
+Risk_In_Money_Type
+is set to
+FixedMoney
+, enter the amount of money you can afford to lose.
+If set to
+BalancePercentage
+, the EA will automatically calculate the risk based on your account balance and close all trades when that limit is reached.
+Max_Spread
+Int Value (Points/Pips)
+Sets the maximum acceptable spread. If the current spread exceeds this value, the EA will not take a trade and will wait for the spread to return within the specified limit.
+Slippage
+Int Value (Points/Pips)
+Set the maximum allowed slippage for order execution.
+MaxOpenTrade
+Int Value
+Maximum number of open trades allowed.
+Trade_Currencies
+String Value
+List of all currency symbols (not currency pairs) that the EA should analyze and trade.
+Impulse Plus :
+RRS Impulse Plus EA
+is an
+advanced
+version of
+RRS Impulse EA
+. This upgraded version provides more flexibility with several new options. The EA scalps using the
+Relative Strength Index (RSI), Stochastic Oscillator, Moving Average (MA),
+and
+Bollinger Bands
+indicators to identify trend and counter-trend opportunities. As a
+multi-pair EA
+, it scans multiple currency pairs for signals.
+This EA includes various features such as
+Trailing, Risk Management, Money Management, Restriction Mode,
+and more. With the right settings, it has the potential to generate significant profits.
+Signal Descriptions:
+Indicator
+BUY
+SELL
+RSI
+Trend:
+When RSI touches the overbought line.
+CounterTrend:
+When RSI touches the oversold line.
+Trend:
+When RSI touches the oversold line.
+CounterTrend:
+When RSI touches the overbought line.
+Stochastic
+Trend:
+When both the Main & Signal lines touch the overbought level.
+CounterTrend:
+When both the Main & Signal lines touch the oversold level.
+Trend:
+When both the Main & Signal lines touch the oversold level.
+CounterTrend:
+When both the Main & Signal lines touch the overbought level.
+Bollinger Bands
+Trend:
+When the current market price touches the Bollinger Bands' resistance line (Upper Band).
+CounterTrend:
+When the current market price touches the Bollinger Bands' Support line (Lower Band).
+Trend:
+When the current market price touches the Bollinger Bands' Support line (Lower Band).
+CounterTrend:
+When the current market price touches the Bollinger Bands' resistance line (Upper Band).
+Moving Average
+Trend/CounterTrend:
+When the current market price is above the Moving Average.
+Trend/CounterTrend:
+When the current market price is below the Moving Average.
+Signal Scenarios (Inverse : False)
+RSI
+Stochastic
+Bollinger Bands
+Moving Average
+Signal
+Above
+Above
+Above
+Below
+CounterTrend Sell ✅
+Below
+Below
+Below
+Above
+CounterTrend Buy  ✅
+Above
+Above
+Above
+Above
+Trend Buy ✅
+Below
+Below
+Below
+Below
+Trend Sell ✅
+Signal Scenarios (Inverse : True)
+RSI
+Stochastic
+Bollinger Bands
+Moving Average
+Signal
+Above
+Above
+Above
+Below
+CounterTrend Buy ✅
+Below
+Below
+Below
+Above
+CounterTrend Sell ✅
+Above
+Above
+Above
+Above
+Trend Sell ✅
+Below
+Below
+Below
+Below
+Trend Buy ✅
+Variable Descriptions:
+Variable
+Values
+Description
+RSI, Stochastic, Bollinger Bands, Moving Average
+Bool (True/False)
+RSI
+: Enable to use the RSI indicator for market analysis and trade execution.
+Stochastic
+: Enable to use the Stochastic indicator for market analysis and trade execution.
+Bollinger Bands
+: Enable to use the Bollinger Bands indicator for market analysis and trade execution.
+Moving Average
+: Enable to use the Moving Average indicator for market analysis and trade execution.
+You can enable multiple indicators together. At least one indicator must be enabled for EA operation.
+Timeframe
+M1, M5, M15, M30, H1, H4, D1
+Bool (True/False)
+TradeDirection
+Trend, CounterTrend
+Trend
+: Opens trades in the direction of the trend (e.g., if RSI touches the overbought line, it takes a
+buy
+trade; if RSI touches the oversold line, it takes a
+sell
+trade).
+CounterTrend
+: Trades against the trend, waiting for a trend reversal (e.g., if RSI touches the overbought line, it takes a
+sell
+trade; if RSI touches the oversold line, it takes a
+buy
+trade).
+SignalStrength
+SingleTF, MultiTF
+SingleTF
+: The EA checks timeframes one by one. For example, if RSI and Bollinger Bands are enabled and the selected timeframes are M1 & M15, the EA will first check signals for both indicators on M1, then on M15, and open a trade if any condition is met.
+MultiTF
+: The EA checks all selected timeframes together. For example, if RSI and Stochastic are enabled with timeframes M1, M5 & M15, the EA will confirm signals across all timeframes simultaneously before executing a trade.
+SingleTF
+follows
+OR logic
+, while
+MultiTF
+follows
+AND logic
+for timeframes.
+Inverse
+Bool True/false
+By using Inverse Mode, it will reverse the order type. This means a buy trade will become a sell trade, and a sell trade will become a buy trade.
+LotMode
+Random_Lot, Lot_Percentage
+Random Lot
+: Trades with a
+random
+lot size between minLot_Size and maxLot_Size .
+Lot_Percentage
+: Trades based on the
+risk percentage per trade
+and ensures that the lot size does not go below minLot_Size or exceed maxLot_Size .
+If you want to use a
+fixed
+lot size, set minLot_Size and maxLot_Size to the same value.
+StopLoss_Type
+Virtual_SL, Classic_SL
+Virtual SL:
+The EA will close the trade when your specified stop loss is reached, but the stop loss level will not be visible to the broker’s server (remains on your local PC).
+Classic SL:
+The EA will place a visible stop loss that reflects on the broker’s server.
+This feature is useful if your broker does not support hyperactive EAs, has a limit on modification quotas per day, or if you suspect your broker is hunting your stop loss.
+StopLoss
+Int Value
+Set your
+Stop Loss
+value in points/pips. Set
+0
+to disable Stop Loss.
+TakeProfit_Type
+Virtual_TP, Classic_TP
+Virtual TP:
+The take profit level is not visible to the broker’s server.
+Classic TP:
+The take profit level is visible to the broker’s server.
+TakeProfit
+Int Value
+Set your
+Take Profit
+value in points/pips. Set
+0
+to disable Take Profit.
+Trailing_Type
+Classic_Trailing, Virtual_Trailing
+Virtual Trailing:
+The trailing stop loss is hidden from the broker’s server (remains on your local PC).
+Classic Trailing:
+A visible trailing stop loss is placed and reflects on the broker’s server.
+Note:
+This feature is useful if your broker does not support hyperactive EAs, has modification limits per day, or if you suspect stop-loss hunting.
+Recommendation:
+Martingale relies on strict calculations, so it's better to use
+Classic Trailing
+.
+Trailing_Start
+Int Value (Points/Pips)
+Number of pips from the open trade price at which trailing should begin. Set
+0
+to disable trailing.
+Trailing_Gap
+Int Value (Points/Pips)
+Set the gap (in pips) between the market price and the trailing stop loss. Set
+0
+to disable trailing.
+CandleExit
+Int Value
+Once the trade is opened, after X number of candles from the opened trade, it will close the trade. Set 0 to disable Candle Exit.
+Risk Management:
+Variable
+Values
+Description
+RiskManagement_Action
+StopEA, CloseAndContinue
+StopEA
+: If the negative floating loss reaches Money_In_Risk , all trades are closed, and the EA stops trading (requires manual restart).
+CloseAndContinue
+: If the negative floating loss reaches Money_In_Risk , all trades are closed, but the EA continues trading.
+Risk_In_Money_Type
+FixedMoney, BalancePercentage
+FixedMoney
+: Closes trades when the floating loss reaches a set monetary value.
+BalancePercentage
+: Calculates risk based on the account balance and closes trades when the defined percentage loss is reached.
+Money_In_Risk
+Int Value
+If Risk_In_Money_Type is
+FixedMoney
+, enter the maximum money you can afford to lose. If
+BalancePercentage
+, the EA will calculate the value based on your account balance.
+Money Management:
+Variable
+Values
+Description
+MoneyManagement_Action
+Stop_EA, Close_And_Continue
+Stop_EA
+: When equity reaches Target_Revenue , all trades close, and the EA stops (manual restart required).
+Close_And_Continue
+: When equity reaches Target_Revenue , all trades close, and the EA continues trading.
+MoneyManagement_Type
+Fixed_Money, Balance_Percentage
+Fixed_Money
+: Closes trades when equity reaches a set amount.
+Balance_Percentage
+: Closes trades when a certain percentage of the account balance is reached.
+Target_Revenue
+Int Value
+If MoneyManagement_Type is
+Fixed_Money
+, enter the target equity value. If
+Balance_Percentage
+, the EA will calculate the value based on your account balance.
+Restriction Mode:
+Variable
+Values
+Description
+Max_Spread
+Int Value (Points/Pips)
+Maximum spread allowed for trade execution. The EA will wait if the spread exceeds this value.
+Slippage
+Int Value (Points/Pips)
+Maximum allowed slippage for trade execution.
+MaxOpenTrade
+Int Value
+Maximum number of open trades allowed at a time.
+TradeMode
+Bool (True/False)
+True
+: The EA can open new trades.
+False
+: The EA will not open new trades but will manage existing ones.
+News Management:
+Variable
+Values
+Description
+NewsManagement
+NewsDeactivated, HighImpactNews, ImportantNews
+NewsDeactivated
+: No news filter applied.
+HighImpactNews
+: Filters out high-impact news events.
+ImportantNews
+: Only filters out important news events listed in Important_News .
+BeforeNews_Minutes
+Int Value (Minutes)
+Time before news events when trading should pause. (e.g., 120 for
+2 hours
+)
+AfterNews_Minutes
+Int Value (Minutes)
+Time after news events when trading should pause. (e.g., 180 for
+3 hours
+)
+News_CutLoss
+Int Value
+If a trade has a floating loss equal to or worse than this value during news time, it will be closed.
+News_ReCheckMinutes
+Int Value
+Frequency at which the EA should update news data from ForexFactory.
+Important_News
+String Value
+List of important news events that should pause trading (comma-separated).
+Currency Selection:
+Variable
+Values
+Description
+Trade_Currencies
+String Value
+List of currency symbols (not pairs) that the EA should analyze and trade (comma-separated).
+Important Notes:
+Enable web requests
+in
+MT4/MT5
+:
+Navigate to
+Tools → Options → Expert Advisor → Allow Web Request
+, then add:
+http://nfs.faireconomy.media/
+(This service is provided by
+ForexFactory
+and retrieves news data from their platform.)
+Recommended Testing:
+It is
+highly recommended
+to test this EA on a
+demo account for at least 45 days
+before using it on a real account.
+Please share your experience, feedback, and trading reports.
+Good Luck & Happy Trading! 🚀
+Important Note:
+It is
+highly recommended
+to test this EA on a
+demo account for at least 45 days
+before using it on a real account.
+Please share your
+experience, feedback,
+and
+account report.
+You can also check out the advanced version of this EA,
+RRS Impulse Plus
+. It offers more flexibility to choose timeframes, indicators of your choice, news filters, and more.
+Good Luck & Happy Trading!
+🚀

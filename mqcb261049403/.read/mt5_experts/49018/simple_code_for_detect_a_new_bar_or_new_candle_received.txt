@@ -1,0 +1,209 @@
+This code block
+detects
+a
+New Bar
+or a
+New Candle
+when it has received.
+the basic principle of the codes is very simple. First the code stores the
+Time of the previous bar / Candle
+. (Then add
+60 seconds
+(equals to
+1 min.
+you can add time as you want) to the Time of the previous bar which give the
+closing time value of the Current Bar / Candle.
+Once,
+Current Time = closing time value of the Current Bar / Candle.
+That means a new has received / the current bar has closed..
+in this code the flag (the bool type variable '
+NewBarRecived')
+avoids the multiple calling of this code block. which means this code block execute only once per bar / candle. The
+Comment();
+and the
+playsound("ok.wav");
+is used to check the accuracy of the code block. You can remove it if you want.
+The flag is reset to false once the current Time is above the closing time of the current candle to check next bar arrival. (Watch comments to see).
+//+------------------------------------------------------------------+
+//|                                               New Bar Detect.mq5 |
+//|                                                  by H A T Lakmal |
+//|                                           https://t.me/Lakmal846 |
+//+------------------------------------------------------------------+
+bool
+NewBarRecived =
+false
+;
+// Falg for control.
+//+------------------------------------------------------------------+
+//| Expert initialization function                                   |
+//+------------------------------------------------------------------+
+int
+OnInit
+()
+  {
+//--- create timer
+EventSetTimer
+(
+60
+);
+//---
+return
+(
+INIT_SUCCEEDED
+);
+  }
+//+------------------------------------------------------------------+
+//| Expert deinitialization function                                 |
+//+------------------------------------------------------------------+
+void
+OnDeinit
+(
+const
+int
+reason)
+  {
+//--- destroy timer
+EventKillTimer
+();
+
+  }
+//+------------------------------------------------------------------+
+//| Expert tick function                                             |
+//+------------------------------------------------------------------+
+void
+OnTick
+()
+  {
+datetime
+TimePreviousBar =
+iTime
+(
+_Symbol
+,
+PERIOD_M1
+,
+1
+);
+datetime
+TimeCurrentClose = TimePreviousBar +
+60
+;
+// Closing Time of the current bar.
+datetime
+Time_Current =
+TimeCurrent
+();
+if
+(Time_Current == TimeCurrentClose && NewBarRecived ==
+false
+)
+     {
+PlaySound
+(
+"ok.wav"
+);
+// For the statement work of not.
+NewBarRecived =
+true
+;
+// Update the flag to avoide multiple  calls.
+// Your Code goes here ----- (Do Something)
+}
+else
+if
+(Time_Current > TimeCurrentClose)
+        {
+         NewBarRecived =
+false
+;
+// Rest the flag for next bar open.
+// Your Code goes here ----- (Do Something)
+}
+Comment
+(
+"\n"
++
+"\n"
++
+"Time Current Bar -: "
++
+TimeToString
+(TimePreviousBar,
+TIME_DATE
+|
+TIME_MINUTES
+|
+TIME_SECONDS
+) +
+"\n"
++
+"Time Current Close -: "
++
+TimeToString
+(TimeCurrentClose,
+TIME_DATE
+|
+TIME_MINUTES
+|
+TIME_SECONDS
+) +
+"\n"
++
+"Time Current -: "
++
+TimeToString
+(Time_Current,
+TIME_DATE
+|
+TIME_MINUTES
+|
+TIME_SECONDS
+) +
+"\n"
++
+"\n"
++
+"A New Bar Recived -: "
++ NewBarRecived);
+// For check calculations
+}
+//+------------------------------------------------------------------+
+//| Timer function                                                   |
+//+------------------------------------------------------------------+
+void
+OnTimer
+()
+  {
+//---
+}
+//+------------------------------------------------------------------+
+//| Trade function                                                   |
+//+------------------------------------------------------------------+
+void
+OnTrade
+()
+  {
+//---
+}
+//+------------------------------------------------------------------+
+//| ChartEvent function                                              |
+//+------------------------------------------------------------------+
+void
+OnChartEvent
+(
+const
+int
+id,
+const
+long
+&lparam,
+const
+double
+&dparam,
+const
+string
+&sparam)
+  {
+//---
+}
+//+------------------------------------------------------------------+

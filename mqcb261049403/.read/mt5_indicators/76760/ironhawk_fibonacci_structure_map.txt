@@ -1,0 +1,28 @@
+IronHawk Fibonacci Structure Map is based on the idea that Fibonacci levels become more useful when they are combined with confirmed market swings and higher-timeframe context instead of being drawn from arbitrary points.
+The indicator automatically identifies confirmed swing highs and lows, calculates the main Fibonacci retracement and extension levels, and compares those levels across several timeframes. When two or more Fibonacci levels are located close to each other, the indicator groups them into a confluence zone.
+The main levels used are 23.6%, 38.2%, 50%, 61.8%, 78.6%, 127.2% and 161.8%. A confluence zone does not represent an automatic buy or sell signal. It simply highlights an area where several Fibonacci references overlap and where the trader may want to pay closer attention to price behaviour.
+The indicator also displays a basic market-structure context, Premium/Discount areas around the active swing, the nearest Fibonacci level and the distance from the current price.
+Main external parameters include:
+Timeframe 1 / 2 / 3
+: timeframes used for Fibonacci comparison.
+Lookback Bars
+: amount of historical data used to search for swings.
+Swing Depth
+: strength required before a high or low is considered a confirmed swing.
+Fibonacci Levels
+: enables or disables individual retracement and extension levels.
+ATR Period
+: volatility reference used when calculating whether nearby Fibonacci levels belong to the same confluence zone.
+Cluster ATR Multiplier
+: controls the maximum distance allowed between levels inside a confluence area.
+Minimum Cluster Levels
+: minimum number of overlapping Fibonacci levels required before a zone is displayed.
+Show Structure
+: enables the market-structure information.
+Show Premium/Discount
+: displays the upper and lower halves of the active swing.
+View Mode
+: switches between Full, Clusters Only and Minimal chart views.
+Alerts
+: optionally notifies the user when price enters a detected confluence zone.
+The indicator is designed as a chart-analysis tool only. It does not open, close or manage trades.

@@ -1,0 +1,24 @@
+This Expert Advisor is designed to assist traders by combining
+RSI-based signal logic
+with a
+grid trading system
+to manage positions dynamically.
+The EA opens trades based on RSI levels and continues building positions using a grid approach when the market moves against the initial trade. To help reduce drawdown, it includes an
+overlap function
+, which intelligently closes combinations of profitable and losing trades when specific conditions are met.
+Features:
+Adjustable lot sizing (fixed, balance-based, or risk-based)
+Grid step and multiplier control
+Trailing stop and breakeven management
+Manual trading panel (Buy/Sell buttons)
+Time filter for controlled trading sessions
+This EA is highly customizable, allowing traders to adjust risk according to their strategy. However, due to the nature of grid trading, proper risk management is essential.
+Important Notes:
+Works only on
+Hedging accounts
+Not compatible with
+Netting accounts
+Recommended to test on a
+demo account first
+Grid strategies can carry
+high risk in trending markets

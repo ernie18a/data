@@ -1,0 +1,14 @@
+The indicator is based on the indicators' code of
+MetaQuotes Software Corp.
+Bears.mq5 and Bulls.mq5.
+Indicator values ​​are calculated by the following scheme:
+Bull >0 and Bear>0   =>  Ind= Bull – Bear
+Bull <0 and Bear<0   =>  Ind= Bear- Bull
+(Bull <0 and Bear>0  ) or (Bull >0 and Bear<0  )  =>  Ind= Bear+Bull
+The received Ind value multiplies on the coefficient of volume. The volume can be as tick, so real (set in input parameters). Then if the delta i.e. flat noise level is set, all the indicator values less than zero are set to zero.
+The example 1. The work of the BullsBearsVolume indicator at EURUSD H1
+The example 2. The work of the BullsBearsVolume indicator at EURUSD H1
+The window of the indicator parameters setting.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1302

@@ -1,0 +1,2 @@
+In the original Keltner channel used simple moving average (SMA) and it uses ranges for bands calculation (not average true range, but average range).
+Here are added the most commonly used EMA calculation for middle line too. Additional options are: if you wish to see the middle line or not, if you wish to see bars colored on slope (bars or candles) additional Heiken Ashi prices, and some more.

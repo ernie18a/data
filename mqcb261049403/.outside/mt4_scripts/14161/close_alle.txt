@@ -1,0 +1,9 @@
+Script that closes orders and (or) deletes pending orders.
+It can close all magics or only a certain one.
+It can close all symbols or only the current one.
+It can close only profitable or only unprofitable orders.
+It can delete pending orders.
+There is an option to set the number of order closing attempts, the pause between the attempts, the slippage.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14161

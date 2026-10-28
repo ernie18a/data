@@ -1,0 +1,35 @@
+Author of the idea
+:
+PPP
+,
+MQL5 code author
+:
+barabashkakvn
+.
+The Expert Advisor's trading is focused on the panic caused by the releases of important economic indicators in the FOREX market: we analyze the candlestick's High-Low and Open-Close values.
+The Expert Advisor parameters are configured for trading EUR/USD on H1. Recommended initial deposit is $1000 or higher. You can try to increase profit by increasing the risk factor, but it is better to stick to money management rules and use them as is.
+Input Parameters
+Trade parameters
+Stop Loss (in pips)
+- Stop Loss value.
+Take Profit (in pips)
+- Take Profit value.
+Trailing Stop (in pips)
+- trailing value.
+Trailing Step (in pips)
+- trailing step value.
+Risk in percent for a deal from a free margin
+- risk per trade as percent of free margin.
+Decreased factor (based on the history of trading)
+- this factor is used in case of having losing trades.
+History days (only if "Decreased factor" > 0)
+- the number of days for analyzing the trading history.
+Difference parameters
+Difference high#1 minus low#1 (in pips)
+- the minimum value of candlestick's High minus Low;
+Difference open#1 minus close#1 (in pips)
+- the minimum value of candlestick's Open minus Close.
+Example if testing on EURUSD, H1:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18893

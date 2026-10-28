@@ -1,0 +1,20 @@
+Idea
+by
+jirimac
+mq5 code author
+-
+barabashkakvn
+The Expert Advisor is based on the
+RSI Custom Smoothing
+indicator. Regression is calculated before a signal is generated.
+The EA can apply one of the following three trailing types:
+... by Pips Mode - regular trailing stop
+... by Highest/Lowest of Range of Bars - Stop Loss is calculated as the highest/lowest of all values within N bars
+... by High/Low of Bar x - Stop Loss is calculated as the highest/lowest price of the Nth bar
+Similarly, you can choose between three Stop Loss and Take Profit options:
+... by Pips Mode - regular Stop Loss and Take Profit
+... by Highest/Lowest of Range of Bars - Stop Loss and Take Profit calculated as the highest/lowest of all values within N bars
+... by High/Low of Bar x - Stop Loss and Take Profit calculated as the highest/lowest price of the Nth bar
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23199

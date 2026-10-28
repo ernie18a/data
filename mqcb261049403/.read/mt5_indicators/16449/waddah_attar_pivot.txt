@@ -1,0 +1,10 @@
+Real author:
+waddahattar@hotmail.com
+This indicator draws the daily, weekly and monthly Pivot with backtesting.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 23.08.2008.
+Fig1. The Waddah_Attar_Pivot indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16449

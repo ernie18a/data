@@ -1,0 +1,6 @@
+Sharing this trend indicator made by me. Called "Timeframe Flow".
+It will draw a user defined higher time-frame candle on every shift on your current time-frame.
+Meaning you can have H4, H12 or D1 candles on every shift of your H1 Charts.
+Or you can have D2, D3 or D5 candles on every shift of your Daily Charts.
+Combined with the current time-frame ATR Bands, you have a trend indicator with some filter.
+You may also use the Mid Line crosses as exit( Calculated using Higher timeframe candles displayed in the indicator(Close + Open)/2 ).

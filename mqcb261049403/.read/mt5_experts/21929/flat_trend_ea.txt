@@ -1,0 +1,39 @@
+The author of the idea
+:
+Scriptor
+MQL5 code author
+:
+barabashkakvn
+The EA uses the
+FlatTrend
+indicator:
+The indicator defines the market state: flat or trend.
+Interpretation of the histogram color buffers when setting "
+signal timeframe
+" PERIOD_CURRENT:
+If Use hour flag is enabled - from
+Start Hour
+to
+End Hour
+on the bar #
+Current bar
+, the
+FlatTrend
+is surveyed. If a signal is present, open
+Buy
+or
+Sell
+. Set a stop loss (only if
+Stop Loss
+is not "0.0") and a take profit (only if
+Take Profit
+is not "0.0").
+Trailing is activated if
+Trailing Stop
+is not "0.0".
+Test on EURUSD, M15
+with these parameters
+:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21929

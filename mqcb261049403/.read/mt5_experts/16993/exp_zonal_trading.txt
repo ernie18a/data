@@ -1,0 +1,24 @@
+Real author:
+Relaysim Comp.
+The Expert Advisor which uses the AO and AC indicators in its operation, which were proposed by the Bill Williams.
+The EA buys at green AO and AC, sells at red AO and AC. The market exit is performed when any of the indicators changes its color.
+The signal is formed when a bar is closing.
+The AO_HTF and AC_HTF indicators in the EA are intended only for a more convenient visualization of trends in the strategy tester, in other operation modes they are inactive.
+Place AO_HTF.ex5 and AC_HTF.ex5 compiled files to the <terminal_data_folder>\MQL5\Indicators.
+Note that the TradeAlgorithms.mqh library file allows using Expert Advisors with brokers who offer
+nonzero spread
+and the option of setting Stop Loss and Take Profit
+together with position opening
+. You can download more variants of the library at the following link:
+Trade Algorithms
+.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Originally this EA has been written in MQL4 and was first published in the
+Code Base
+on 25.12.2015.
+Fig. 1. Examples of deals on the chart
+Testing results for 2015 at EURUSD H4:
+Fig. 2. Chart of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16993

@@ -1,0 +1,13 @@
+Author: IDS Corp
+Adviser ASCV. Uses indicators
+ASCTrend1sig
+,
+BrainTrend1Sig
+and
+Pivot_AllLevels
+.
+--------------------------
+Parameters of testing
+Period: М5.
+Symbol: EURUSD.
+Model: Control  points.

@@ -1,0 +1,11 @@
+Volume Price Momentum oscillator is a volume and price momentum.
+It has one configurable parameter:
+Period
+- calculation period
+Calculation:
+VPMO = EMA(VPM, Period)
+where:
+VPM = Volume * (Close - PrevClose)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22126

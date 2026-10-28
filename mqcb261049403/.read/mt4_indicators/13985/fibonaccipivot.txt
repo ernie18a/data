@@ -1,0 +1,14 @@
+Real author:
+The indicator of the author LeMan — AllPivotPoint is taken as a basis.
+The indicator builds levels channels beginning from the line of closing of previous day, on the basis of data of previous day:
+dayClose+(dayHigh-dayLow)*fibo*koeff
+. On Monday, except the level of closing of Friday, the level of opening of Monday is in addition drawn.
+mondayGAP
+defines how to build levels on Monday: if false — levels are drawn from closing of Friday, if true — from opening of Monday;
+Days
+number of days for plotting, counting of today. Zero — the whole days available in the history are processed;
+koeff
+allows to squeeze & stretch a grid of levels. I recommend to put Fibonacci's numbers (0.34, 0.55, 0.618, 0.89, 1.44, 2.33).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13985

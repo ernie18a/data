@@ -1,0 +1,1 @@
+There is only one external variable and that is Maximum spread. Set this to the maximum spread you wish to see inside of your Market Watch window. I built this script because I got tried of scrolling, removing, and adding different elements to my Market Watch window.

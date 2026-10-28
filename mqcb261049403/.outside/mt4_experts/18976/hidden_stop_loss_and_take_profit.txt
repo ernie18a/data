@@ -1,0 +1,7 @@
+The EA implements a hidden Stop Loss and Take Profit system. The system is run as follows:
+First, open the buy and/or sell orders that you desire for a particular chart symbol.
+Second, open the EA in a chart with the same symbol, specifying the size of the hidden Stop Loss and Take Profit in points.
+The default is to calculate these relative to the open price of the trade, but it can be calculated relative to the current mid price of the tickets symbol.
+The EA should print out the hidden Stop Loss and Take Profit in the Experts tab.
+If the appropriate input option is selected, it should draw horizontal lines on the chart.
+When all of the trades have been closed, a message is added to the comment section and the Experts tab. Please be warned that I have not tested this extensively or on a live system so great care should be taken.

@@ -1,0 +1,5 @@
+This is a volume weighted Wilder's DMI (the real ADX).
+It allows you to use 3 kinds of volumes:
+no volume (in which case it is the same as the original Wilder's DMI);
+tick volumes (for forex symbols)
+and "real" volumes (for symbols that have it — you can easily find it out: if you chose real volume and you do not see anything in the indicator area, then that symbol has only tick volumes).

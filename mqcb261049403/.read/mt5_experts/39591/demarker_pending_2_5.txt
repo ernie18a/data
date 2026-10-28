@@ -1,0 +1,3 @@
+Finalization of the version
+DeMarker Pending 2
+Now, when opening a 'SELL' position, we immediately close all 'BUY' positions and vice versa: when opening a 'BUY' position, we immediately close all 'SELL' positions

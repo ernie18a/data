@@ -1,0 +1,3 @@
+This is an upgraded version of Aroon oscillator that uses quantile bands for levels and can filter either prices, result or both in order to lessen the false signals number.
+Code has been changed in order to reflect the latest changes in the new builds of metatrader 5. Also, some code optimization has been made.
+The indicator is multi time frame version with usual set of alerts and usual set of choice of 22 prices included.

@@ -1,0 +1,7 @@
+Author:
+Me
+You have many informations about the MARKET and CURRENCY in ONE SUBWINDOW
+Recommendations:
+Every currency pair and every BROKER
+You don't need change anything I think
+I have also added the template to take nice effect for this indicator - brother2.tpl (brother2.zip file - unzip it to {drive letter}:\Program files\{Meta trader folder}\templates)

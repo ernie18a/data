@@ -1,0 +1,217 @@
+PrecisionSniper: A Multi-Confluent Signal Indicator with Built-In Backtest Dashboard
+PrecisionSniper
+is a comprehensive MetaTrader 5 indicator designed to identify high-probability long and short trade opportunities by combining multiple technical confluences into a single weighted scoring system. Instead of relying on any single indicator, PrecisionSniper evaluates up to eight independent conditions per bar, assigns each a score weight, and only fires a signal when the combined score meets or exceeds a configurable threshold. The result is a filter-heavy signal engine that significantly reduces noise and focuses the trader's attention on setups that carry strong, multi-factor confirmation.
+At its core, the indicator uses three Exponential Moving Averages (EMA Fast, EMA Slow, and EMA Trend) as the trend backbone, supported by RSI momentum, MACD histogram direction, ADX trend strength, VWAP position, tick volume surge, and an optional Higher-Timeframe (HTF) bias filter. When HTF bias is enabled, it contributes the highest single weight in the scoring system, making it particularly effective for traders who want their entries to align with the larger-frame trend. Signals are graded as A+, A, B, or C depending on the total score, and the
+Grade Filter
+input lets the user surface only the grades they want to trade.
+PrecisionSniper includes a rich set of built-in features beyond signal generation: automatically drawn Entry, Stop Loss, and three Take Profit levels on the chart, an adaptive trailing stop that ratchets forward as each TP is reached, a structure-aware Stop Loss that anchors behind recent swing highs or lows instead of a fixed ATR multiple, and a fully featured on-chart dashboard that displays real-time market context alongside a backtest performance summary calculated directly from historical price data. The dashboard supports three backtest modes: all loaded history, a fixed date range, and a rolling window of the last N bars.
+Nine trading presets are available (Auto, Scalping, Aggressive, Default, Conservative, Swing, Crypto, Gold, Custom) to instantly reconfigure EMA periods, RSI length, ATR length, minimum score, and SL multiplier for different instruments and timeframes. Auto mode selects the appropriate preset automatically based on the chart's current timeframe.
+Indicator Inputs
+The table below documents every input parameter, its default value, and its function.
+Parameter
+Default
+Description
+Preset
+Default
+Selects a built-in configuration profile. Options: Auto, Scalping, Aggressive, Default, Conservative, Swing, Crypto, Gold, Custom. Auto detects the appropriate preset from the current chart timeframe. Custom uses the C_ prefixed inputs below.
+HTF Timeframe
+PERIOD_CURRENT (off)
+Higher-Timeframe bias filter. When set to any timeframe other than PERIOD_CURRENT, the indicator adds a 2-point score bonus when the HTF EMA alignment agrees with the signal direction. Set to PERIOD_CURRENT to disable.
+C_EmaFast
+9
+[Custom preset only] Period for the Fast EMA line (blue). Used in EMA crossover and spacing checks.
+C_EmaSlow
+21
+[Custom preset only] Period for the Slow EMA line (orange). The gap between Fast and Slow must exceed 0.15x ATR to qualify as a valid EMA separation signal.
+C_EmaTrend
+55
+[Custom preset only] Period for the Trend EMA line (gray dotted). Price must be above (for longs) or below (for shorts) this EMA by at least 0.1x ATR to score the trend-position point.
+C_RSI
+13
+[Custom preset only] RSI period. Scores 1.5 points for longs when RSI is between 50 and 70 and rising; scores 1.5 points for shorts when RSI is between 30 and 50 and falling.
+C_ATR
+14
+[Custom preset only] ATR period. ATR is used for SL sizing, TP level calculation, EMA separation thresholds, trend-position thresholds, and volatility regime classification.
+C_MinScore
+5
+[Custom preset only] Minimum total score required for a signal to fire. Raise this value to filter for only the highest-confidence setups. Maximum theoretical score is 10 (or 9 without HTF enabled).
+C_SLMult
+1.5
+[Custom preset only] ATR multiplier for Stop Loss distance when Structure-Based SL is disabled. Effective SL = entry price +/- (ATR x SL Multiplier).
+TP1 Risk:Reward
+1.0
+Risk-to-reward ratio for Take Profit 1. TP1 distance = risk distance x TP1_RR. When the trailing stop is enabled, reaching TP1 moves the trail to the entry price (breakeven).
+TP2 Risk:Reward
+2.0
+Risk-to-reward ratio for Take Profit 2. Reaching TP2 moves the trailing stop to TP1 level when trailing is enabled.
+TP3 Risk:Reward
+3.0
+Risk-to-reward ratio for Take Profit 3. Reaching TP3 moves the trailing stop to TP2 level when trailing is enabled.
+SL Multiplier (all presets)
+1.5
+Global override for the SL ATR multiplier. This value always takes precedence over the preset's built-in SL multiplier. Applies to the flat ATR-based SL when Structure SL is disabled.
+Min Bars Between Signals
+5
+Cooldown period. After a signal fires, no new signal in the same direction can appear for this many bars. Prevents signal clustering in choppy conditions.
+Enable Trailing Stop
+true
+Activates the ratcheting trailing stop. When enabled, the trailing stop level advances to entry (BE) after TP1, to TP1 after TP2, and to TP2 after TP3. The backtest engine uses trailing-adjusted R values when this is on.
+Structure-Based SL
+true
+When enabled, the Stop Loss is placed beyond the nearest swing high (for shorts) or swing low (for longs) within the Swing Lookback window, plus a 0.2x ATR buffer. Falls back to the flat ATR-based SL if the computed swing SL is less than 0.5x ATR from entry.
+Swing Lookback Bars
+10
+Number of bars to look back when searching for the nearest swing high or low for Structure-Based SL placement.
+Grade Filter
+All Signals
+Filters signals by grade. "All Signals" shows B, A, and A+ grades (C is hidden separately by HideCGrade). "A+ and A Only" requires a score of 6.5 or higher. "A+ Only" requires 8.0 or higher.
+Hide C-Grade Signals
+true
+When true, signals with a score below 5.0 (C grade) are suppressed regardless of the Grade Filter setting. Recommended to leave enabled for live trading.
+Show Long/Short Signals
+true
+Toggles the buy (green up arrow) and sell (red down arrow) signal markers on the chart.
+Show EMA Lines
+true
+Toggles the three EMA lines (Fast, Slow, Trend) on the chart. Disabling this keeps the chart clean while still using EMA data for scoring.
+Show TP/SL Lines
+true
+When true, horizontal lines for Entry, Stop Loss, TP1, TP2, and TP3 are drawn on the chart after each new signal on the most recent bar.
+Show Trail Stop Line
+true
+When true and Enable Trailing Stop is also true, an orange dotted line shows the current trailing stop level. The line updates in real time as the trade progresses through TP levels.
+Show Dashboard
+true
+Toggles the on-chart information panel that displays trend, score, signal status, RSI, ADX, volatility regime, HTF bias, grade filter, and the full backtest statistics.
+Backtest Mode
+All Loaded Data
+Controls which historical bars are counted in the backtest dashboard. Options: "All Loaded Data" (entire chart history), "Date Range" (BtFrom to BtTo), "Rolling Window" (last BtRollingBars bars).
+[Date Range] From
+2025.01.01
+Start datetime for Date Range backtest mode. Only trades opened on or after this date are counted in the dashboard statistics.
+[Date Range] To
+2025.12.31
+End datetime for Date Range backtest mode. Only trades opened on or before this date are counted in the dashboard statistics.
+[Rolling] Last N Bars
+500
+Number of recent bars to include in the Rolling Window backtest mode. Useful for monitoring recent signal performance without the influence of older market regimes.
+Scoring System
+Each bar is evaluated against eight conditions. The table below lists each condition, the maximum points it contributes, and the direction it applies to.
+Condition
+Points
+Notes
+EMA Fast/Slow crossover with sufficient separation
+1.5
+EMA gap must exceed 0.15x ATR to avoid scoring in flat, choppy markets.
+Price above/below EMA Trend by 0.1x ATR
+1.5
+Confirms the bar is trading on the correct side of the long-term trend line.
+RSI in momentum zone and rising/falling
+1.5
+Long: RSI between 50 and 70, rising. Short: RSI between 30 and 50, falling.
+MACD histogram expanding in signal direction
+1.0
+Compares current histogram to the previous bar to detect momentum acceleration.
+Price above/below VWAP of current bar
+0.5
+VWAP calculated as (High + Low + Close) / 3 for the current bar.
+Tick volume above 20-bar average by 20%
+0.5
+Detects participation spikes that often accompany genuine breakout moves.
+ADX above 20 with DI+ or DI- dominant
+1.0
+Requires a trending market (ADX above 20) and the directional index aligned with signal direction.
+Higher-Timeframe EMA bias alignment
+2.0
+Only scored when HTF Timeframe is set to a value other than PERIOD_CURRENT. Highest single weight in the system.
+Signal grade thresholds are as follows: a score of 8.0 or above earns an
+A+
+grade, 6.5 to 7.9 earns an
+A
+, 5.0 to 6.4 earns a
+B
+, and anything below 5.0 earns a
+C
+. The Grade Filter and HideCGrade inputs work together to control which grades appear as arrows on the chart.
+Built-In Preset Configurations
+The table below shows the exact parameter values applied by each preset. The Custom preset uses the C_ prefixed inputs instead.
+Preset
+EMA Fast
+EMA Slow
+EMA Trend
+RSI
+ATR
+Min Score
+SL Mult
+Scalping
+5
+13
+34
+8
+10
+4
+0.8
+Aggressive
+8
+18
+50
+11
+12
+3
+1.2
+Default
+9
+21
+55
+13
+14
+5
+1.5
+Conservative
+12
+26
+89
+14
+14
+7
+2.0
+Swing
+13
+34
+89
+21
+20
+6
+2.5
+Crypto
+9
+21
+55
+14
+20
+5
+2.0
+Gold (Daily)
+21
+55
+200
+21
+20
+7
+2.5
+The
+Auto
+preset selects from the above automatically: charts of 5 minutes or less use Scalping, 6 minutes to 1 hour use Default, 1 hour to 4 hours use Aggressive, and above 4 hours use Swing.
+Dashboard and Backtest Statistics
+The on-chart dashboard (toggled by the Show Dashboard input) displays two sections. The upper section shows live market context including trend direction (Bullish, Bearish, or Neutral), the current signal score and grade, the active signal status (Long Active, Short Active, or Waiting), HTF bias, RSI with overbought/oversold labels, ADX with strength label, volatility regime (High, Normal, or Low based on a 42-bar ATR average), and the current Grade Filter setting.
+The lower section of the dashboard presents backtest statistics computed from historical signals on the loaded chart. These statistics include total trade count broken down into wins, losses, and breakeven outcomes, win rate percentage, profit factor, average R per trade, total accumulated R, and a TP/SL breakdown showing how many trades reached TP1, TP2, TP3, or were stopped out at a full loss. The backtest engine correctly handles trades that are closed by an opposite signal (force-close) and does not count those as actual SL hits in the SL breakdown counter.
+Important:
+The backtest statistics shown in the dashboard are calculated from the indicator's signal logic applied to historical bars on the current chart. They do not account for broker spreads, slippage, swap fees, partial position management, or real execution conditions. Always validate performance on a demo account before applying any signals to a live trading account. Past signal performance on historical data does not guarantee future results.
+How to Use
+Attach PrecisionSniper to any chart in MetaTrader 5 and select a Preset that matches your instrument and timeframe. For most forex pairs on H1 or H4, the Default preset is a good starting point. For lower timeframes such as M5 or M15, try Scalping or Aggressive. For XAUUSD on the Daily chart, use the Gold preset.
+To improve signal quality further, set the HTF Timeframe input to one or two timeframes above the chart you are trading. For example, if you are trading on H1, set HTF to H4 or D1. This adds a 2-point bonus only when the larger-frame trend agrees with the signal, which effectively means only A-grade or better signals survive when the HTF is misaligned. Set the Grade Filter to "A+ and A Only" if you prefer to trade fewer but higher-confidence setups.
+When a buy or sell arrow appears, the Entry, Stop Loss, and TP1/TP2/TP3 lines are drawn automatically. If the trailing stop is enabled, monitor the orange dotted trail line as the trade moves through TP levels. The trail advances to breakeven after TP1, to TP1 after TP2, and to TP2 after TP3, locking in profit at each stage. Use the backtest dashboard to review recent signal statistics and adjust the Min Score or Grade Filter if the current settings produce too many or too few signals for your style.
+File name
+Description
+PrecisionSniper.mq5
+Full source code of the PrecisionSniper indicator for MetaTrader 5

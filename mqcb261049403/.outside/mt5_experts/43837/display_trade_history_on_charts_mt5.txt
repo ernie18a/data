@@ -1,0 +1,6 @@
+Get trade history files (.csv) and put it in ..\MQL5\File folder and save the name of file (.csv).
+For time differences of broker's terminals, use the same broker's meta trader 5 to get the best results.
+Run the expert adviser on each charts and put the name of the file (filename.csv) in input field of expert adviser.
+For buy signals, blue arrows and trend lines are used. For sell signals, red arrows and trend lines are used.
+Remove the expert, and all the objects (arrows and trend lines) are gone.
+This EA was tested on forex and gold charts.

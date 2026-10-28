@@ -1,0 +1,109 @@
+Three independent trading systems using
+XWAMI
+indicators within a single EA with an ability to change the volume of a forthcoming trade depending on the results of the previous trades for this trading system. Trading signals are formed at the bar close, provided that the trend has changed (which is indicated by a change in the color of any of the three indicators).
+The blocks of the Expert Advisor inputs have been added for managing volumes of opened positions. For example, for the first system:
+input
+uint
+A_BuyTotalMMTriger=
+5
+;
+//A number of the last Buy deals to calculate stop loss
+input
+uint
+A_BuyLossMMTriger=
+3
+;
+//A number of losing Buy deals to reduce MM
+input
+uint
+A_SellTotalMMTriger=
+5
+;
+//A number of the last Sell deals to calculate stop loss
+input
+uint
+A_SellLossMMTriger=
+3
+;
+//A number of losing Sell deals to reduce MM
+input
+double
+A_SmallMM=
+0.01
+;
+//A share of a deposit in a deal in case of loss
+input
+double
+A_MM=
+0.1
+;
+//A share of a deposit in a deal during normal trading
+input
+MarginMode A_MMMode=LOT;
+//A lot setting mode
+In case of such inputs and when selecting from the last five trades, three of which are loss-making in a single direction, the EA opens the next trade in the same direction having the volume of 0.01 lot. If there are less than three loss-making trades out of the last five ones, the position volume is 0.1.
+The similar inputs are available for the second trading system:
+input
+uint
+B_BuyTotalMMTriger=
+5
+;
+//B number of the last Buy deals to calculate stop loss
+input
+uint
+B_BuyLossMMTriger=
+3
+;
+//B number of losing Buy deals to reduce MM
+input
+uint
+B_SellTotalMMTriger=
+5
+;
+//B number of the last Sell deals to calculate stop loss
+input
+uint
+B_SellLossMMTriger=
+3
+;
+//B number of losing Sell deals to reduce MM
+input
+double
+B_SmallMM=
+0.01
+;
+//B share of a deposit in a deal in case of loss
+input
+double
+B_MM=
+0.1
+;
+//B share of a deposit in a deal during normal trading
+The C_ prefix is used in the inputs for the third system.
+The most optimal option for setting up such an EA is configuring it on each trading system separately disabling other two applying the appropriate switches in the form of the following parameters:
+input
+bool
+B_BuyPosOpen=
+true
+;
+//B permission to enter long positions
+input
+bool
+B_SellPosOpen=
+true
+;
+//B permission to enter short positions
+by setting them to
+false.
+For the generated EA to operate correctly, the compiled
+XWAMI.ex5
+indicator file should be available under the
+<terminal_data_directory>\MQL5\Indicators
+folder.
+Default Expert Advisor's input parameters with stops have been used during tests shown below.
+Fig. 1. Example trades on the chart
+Test results for GBPJPY H1, H4 and H8 over the year 2016.
+Fig. 2. Test results chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21660

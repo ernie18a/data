@@ -1,0 +1,12 @@
+This is one of my current projects. The idea was to keep it simple.
+To use it, you have to do the following:
+Copy S!mple.mq4 to your experts folder
+Open S!mple.mq4 and modify the init() function. You can define as much currencies as you like.
+Save and Compile the EA and attach it to one of your charts (only to one).
+Open all other charts you are trading on for data updates.
+You have to set the variable makeTrades to true, otherwise the EA will not place any trades.
+For better understanding, you can also use the attached template.
+To check on which currencies the EA is profitable, first just attach the template file to a chart and look out for clear cuts on the two MA's.
+I use it on a 5 Minute chart, if you want to use it on an other chart, you have to change the variable timeFrame to what you would like to use.
+Best regards and happy trading
+mike

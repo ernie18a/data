@@ -1,0 +1,12 @@
+Author:
+Farshad Saremifar
+This EA is Based On BAT Strategy With some Modifications. It will Enter Position on Breaks of Lows and Highs, If the break was correct then we'll see our TP, If Not it will try to add Offset Depending on Orders input parameter, on every breaking of a low or high it will close all positions, so we don't need to set a stop loss, it will close all by changing the side.
+The takeprofits are calculated static(Static_SL) or automatic by entering a fibo level in input parameters, (you have to set Static_TP to a negative(-) value like : -10 )
+You can set the Number of offsets by changing Orders value, You can also change the lot multiply by changing LotExponent.
+I have good results both on demo and real forwarding.Please try on demo first.
+Install BAT.mq4 in indicators folder of metatrader, and Install Batman-EA.mq4 in experts folder
+Recommendations:
+it's better to use that in higher Time Frames
+If you want to use it on a lower time frame you have to optimize EA for a shorter period like everyday
+it's better to optimize these parameters (not all of input parameters): ATRPeriod,Factor (from 1 step 0.1 to 2),Static_TP (from -1 step 1 to....),Orders)
+Have a look at my site, I am going to share all of my Products and Software and if you have any question feel free to contact me

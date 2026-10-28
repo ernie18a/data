@@ -1,0 +1,2 @@
+This indicator shows good signals based on modified MA.
+You can use this indicator on your favorite timeframe, specified in inputs.

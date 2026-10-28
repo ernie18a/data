@@ -1,0 +1,12 @@
+Author of the idea
+-
+Yury Reshetov
+mq5 code author
+-
+barabashkakvn
+The Expert Advisor works both on netting and hedging accounts. The EA works at the moment of forming a new bar only, and allows holding only one position in the market. It compares Open prices and values of three indicators: iMACD (Moving Average Convergence/Divergence, MACD), iStochastic (Stochastic Oscillator) and iRSI (Relative Strength Index, RSI).
+When searching for parameters, users can run optimization in the "1 minute OHLC" tick generation mode.
+For more convenient search, the working timeframe has been added to inputs (Work timeframe). This is the timeframe indicators are built on and the EA receives Open prices from. Therefore, the EA is recommended for the M1 timeframe.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22550

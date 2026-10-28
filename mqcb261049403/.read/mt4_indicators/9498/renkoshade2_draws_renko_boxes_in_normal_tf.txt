@@ -1,0 +1,10 @@
+To see the renko box on normal TF... or not!!! Try the renkoshade on renko chart!
+Put the renkoshade2 on a renko chart, it will provide you 'multi renko' view.
+See attached picture.
+Picture 1: RenkoShade 10 on TF M5
+Picture 2: RenkoShade 5 on Renko 3
+---
+Logic of drawing renko boxes taken from renkolivechartv32.
+version 2_1 does not need to import external experts
+Pic 1 - RenkoShade on TF M5
+Pic 2 - RenkoShade 5 on Renko 3

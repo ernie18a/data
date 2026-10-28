@@ -1,0 +1,27 @@
+This good an H1 timeframe. This EA will execute at the new bar if the last bar has broken through the point that we set.
+Breaking calculation is indicated by first bar of open day position with
+BreakPoint
+value that set in parameters.
+Strategy conditions are:
+SELL
+if previous bar look bearish and break the number of BreakPoint parameter.
+BUY
+if previous bar look bullish and break the number of BreakPoint parameter.
+Averaging.
+Trailing.
+Parameters
+Parameters description:
+BreakPoint — distance in points to break.
+MinSizePrevBarForBreak — order will be executed if size (iOpen & iClose) of previous bar has minimum size 5.
+MaxSizePrevBarForBreak — order will be executed if size (iOpen & iClose) of previous bar is not greater than this parameter.
+MaxOrderAtOnceTime — if we set the value by "2", then two order positions will open on every break point.
+Example of
+BUY
+when break point.
+When we set BreakPoint to 20 and open day position is 0.6924, the BUY position should open if the last bar breaks through
+[Open Day Point + BreakPoint]
+which equals
+0.6944
+. Check the screenshot below.
+Recommendations:
+Please try first on a demo account.

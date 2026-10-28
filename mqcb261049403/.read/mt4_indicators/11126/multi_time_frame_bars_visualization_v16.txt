@@ -1,0 +1,12 @@
+Multi Time Frame Bars on a single chart.
+Note: to see the label of each bar (M1, M15, M30, etc) select "Show Object Descriptions" at Common Tab (Chart properties).
+Edit: v1.4 with this new features:
+New parameters to improve visibility:
+"offset" -> distance to the first bar
+"step" -> distance between bars
+Now with "yearly bar".
+Now with Monthly, Weekly and Daily Pivot Points (if "pivots" parameter = true)
+Sorry for the delay...had been sick.
+Edit:
+v1.5: bug correction (YearOpen) and added "Year Stats" (if "stats" parameter =true);
+v1.6 (Jan 2016): bug correction (YearLow and YearHigh values).

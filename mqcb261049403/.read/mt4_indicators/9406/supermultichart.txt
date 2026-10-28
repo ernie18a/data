@@ -1,0 +1,275 @@
+Greetings to you!
+The lovely holyday comes to us and I would like to present to all of us something
+especial
+, global!..
+Megalomania, whether know, well and there's nothing to be done... ))
+And so I represent today:
+The universal multi-chart of the currencies, with the changed list of currencies, a range of display, the period and position in a window.
+Universality .
+What its universality is?
+Choice of unlimited number of the currencies necessary to you and in the convenient order for your work.
+Setting of a range of display, i.e. width of the chart of each currency.
+Setting of the period for each currency separately.
+Visual (!) setting of the general
+position
+of the multi-chart in a window.
+Opportunity of addition
+( in the program code)
+the additional information for display.
+Use .
+The multischedule is convenient for the analysis of movement of several currencies or one currency on the different periods, for revealing correlation (interrelation of currencies), or the well-known group movement.
+Last two factors, for example
+,
+are well visible on a picture:
+On the same picture the
+"
+handle
+"
+is shown, by means of which the multi-chart can be moved above-below in a window . Change of position occurs on arrival of a new tic, or at manual updating the schedule -
+Refresh
+.
+Settings .
+Setting of the charts
+:
+Instruments
+=
+"EURUSD240 EURUSD60 EURUSD30 EURUSD15 EURUSD5 EURUSD1"
+;
+the list of the Instruments
+Bars_
+=
+12
+;
+a range of the charts
+,
+quantity of bar
+ChartsGap
+=
+1
+;
+spaces between the charts
+,
+quantity of bar
+GoldColor
+=
+False
+;
+switching in the
+"gold"
+color
+scheme
+,
+for
+a black background
+Setting of lines
+:
+VertLineColor
+=
+Blue
+;
+color
+of vertical lines
+VertLineWidth
+=
+1
+;
+width of vertical lines
+VertLineStyle
+=
+2
+;
+style of vertical lines
+if
+the width is less
+2
+Setting of the text
+:
+TextY
+=
+60
+;
+a space of the top line of the text from the bottom edge
+,
+points
+TextYStep
+=
+20
+;
+height of lines
+,
+points
+FontSize
+=
+10
+;
+the size of a font
+TextColor
+=
+Blue
+;
+color
+of the text
+UpColor
+=
+Green
+;
+color
+of the text of the growing price
+DnColor
+=
+Red
+;
+color
+of the text of the falling price
+The Instruments in the list should follow through a space .
+If it is required to change the period of the Instrument - write the period after it, without a space .
+If it is required "to switch off" the tool - put
+-
+(
+minus
+)before it .
+F
+or example,
+Instruments = "EURUSD240 EURUSD60 EURUSD30
+-
+EURUSD15"
+...will draw the charts of EURUSD on periods H4, H1 and M30.
+Instruments = "EURUSD240 EURUSD60 EURUSD30 EURUSD15 EURUSD5 EURUSD1" - as on a picture:
+*
+The original instrument of a window can be hidden by means of SMA with the period 1 and color of a background, if to switch the chart in a line mode.
+Just in case, I have put the precautionary tablet in top of a window
+Remember NOT to trade here!
+That you casually have not started to trade here, having forgotten about the original instrument of this window.
+The multichart is updated on arrival of new tics of the original tool of the shart, or manually - Refresh.
+And at last, as you see on the chart there was still more many place, and you can add in the indicator more of the text labels for display the necessary information. For this purpose, in block
+LABELS,
+I have commented down
+a pair of a lines (you can add more)
+/// LABELS
+string
+Text
+=
+DoubleToStr
+(
+c
+,
+Digits
+)
+;
+DrawText
+(
+LName
++
+"_1"
+,
+Time
+[
+B
+-
+6
+]
+,
+WindowPriceMin
+(
+)
++
+TextY
+*
+Point
+,
+Symb
+,
+0
+,
+TextColor
+,
+FontSize
+,
+0
+)
+;
+DrawText
+(
+LName
++
+"_2"
+,
+Time
+[
+B
+-
+4
+]
+,
+WindowPriceMin
+(
+)
++
+(
+TextY
+-
+TextYStep
+)
+*
+Point
+,
+perStr
+,
+0
+,
+TextColor
+,
+FontSize
+,
+0
+)
+;
+DrawText
+(
+LName
++
+"_3"
+,
+Time
+[
+B
+-
+5
+]
+,
+WindowPriceMin
+(
+)
++
+(
+TextY
+-
+2
+*
+TextYStep
+)
+*
+Point
+,
+Text
+,
+0
+,
+pColor
+,
+FontSize
+,
+0
+)
+;
+//DrawText( LName+"_4", Time[B-5], WindowPriceMin()+(TextY-3*TextYStep)*Point, NewText, 0, pColor, FontSize,0) ;
+//DrawText( LName+"_5", Time[B-5], WindowPriceMin()+(TextY-4*TextYStep)*Point, NewText, 0, pColor, FontSize,0) ;
+T
+extY=60; a space of the top line of the text from the bottom edge, points
+TextYStep=20; height of lines, points
+FontSize=10; the size of a font
+In summary
+Well here to you the new universal tool for research and conquest of the market!
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9406

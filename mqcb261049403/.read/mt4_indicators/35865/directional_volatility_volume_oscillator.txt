@@ -1,0 +1,1 @@
+An oscillator that manages to display direction of volatility and volume in a single oscillator

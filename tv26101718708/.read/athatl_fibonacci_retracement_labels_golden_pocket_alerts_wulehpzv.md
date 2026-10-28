@@ -1,0 +1,161 @@
+# ATH/ATL Fibonacci Retracement - Labels, Golden Pocket & Alerts
+
+- url: https://www.tradingview.com/script/WuLEhPZV-ATH-ATL-Fibonacci-Retracement-Labels-Golden-Pocket-Alerts/
+- type: indicator
+- pine_id: PUB;b930d8bbccb5459093df3ae424bef835
+- version: 3.0
+
+## Description
+
+Plots Fibonacci retracement levels anchored to the all-time high and all-time low of the loaded chart history. The range updates automatically as new highs or lows print, so the levels always reflect the full extent of price action without manual redrawing.
+
+Features:
+
+- Auto ATH/ATL tracking — the 0% and 100% anchors update dynamically across all available history.
+
+- Flip toggle — switch 0% between the top (all-time high) and the bottom (all-time low) to suit your bias or the direction of the move you're measuring.
+
+- Standard Fib levels — 0%, 23.6%, 38.2%, 50%, 61.8%, 78.6%, and 100%, each color-coded.
+
+- On-chart labels — every level shows its retracement percentage alongside the exact price, placed to the right of the last bar. Adjustable offset.
+
+- Golden pocket shading — the 61.8%–78.6% reaction zone is highlighted for quick visual reference. Toggle on/off.
+
+- Built-in alerts — alert conditions on crosses of each major level, plus a golden-pocket entry alert, ready to wire up from the Create Alert dialog.
+
+Notes: Levels are based on the chart's loaded history, so the all-time high/low depends on how far back your data goes and your timeframe. This is an analysis tool, not financial advice — use it alongside your own process and risk management.
+
+## Source Code
+
+````pine
+//@version=6
+indicator('All-Time High/Low Fibonacci Retracement (with Flip)', overlay = true)
+
+// User Input Toggle (Acts as your button)
+flip = input.bool(false, title = 'Flip Retracement (0% at Bottom / Low)')
+
+// --- Range Source: All-Time vs Local Window vs Swing Pivots ---
+range_mode = input.string('All-Time', title = 'Range Source', options = ['All-Time', 'Local Window', 'Swing Pivots'])
+lookback   = input.int(100, title = 'Local Window Lookback (bars)', minval = 2)
+piv_left   = input.int(15, title = 'Pivot Left Bars', minval = 1)
+piv_right  = input.int(15, title = 'Pivot Right Bars', minval = 1)
+
+// Display options
+offset       = input.int(5, title = 'Label Offset (bars)', minval = 0)
+show_pocket  = input.bool(true, title = 'Shade Golden Pocket (61.8%–78.6%)')
+
+// --- Moving Averages ---
+show_ma = input.bool(true, title = 'Show Moving Averages', group = 'Moving Averages')
+
+ma1_len   = input.int(150, title = 'MA 1 Length', minval = 1, group = 'Moving Averages', inline = 'ma1')
+ma1_tf    = input.timeframe('D', title = 'TF', options = ['D', 'W', 'M'], group = 'Moving Averages', inline = 'ma1')
+ma1_color = input.color(color.aqua, title = '', group = 'Moving Averages', inline = 'ma1')
+
+ma2_len   = input.int(200, title = 'MA 2 Length', minval = 1, group = 'Moving Averages', inline = 'ma2')
+ma2_tf    = input.timeframe('D', title = 'TF', options = ['D', 'W', 'M'], group = 'Moving Averages', inline = 'ma2')
+ma2_color = input.color(color.fuchsia, title = '', group = 'Moving Averages', inline = 'ma2')
+
+// Use 'var' to keep track of values across the entire history of the chart
+var float ath = na
+var float atl = na
+
+// Update All-Time High and All-Time Low dynamically
+if na(ath) or high > ath
+    ath := high
+    ath
+
+if na(atl) or low < atl
+    atl := low
+    atl
+
+// Local (fixed trailing window) high and low
+float local_hi = ta.highest(high, lookback)
+float local_lo = ta.lowest(low, lookback)
+
+// Swing pivots — hold the most recent CONFIRMED pivot high/low
+float ph = ta.pivothigh(piv_left, piv_right)
+float pl = ta.pivotlow(piv_left, piv_right)
+var float swing_hi = na
+var float swing_lo = na
+if not na(ph)
+    swing_hi := ph
+    swing_hi
+if not na(pl)
+    swing_lo := pl
+    swing_lo
+
+// Select the active range top/bottom based on the chosen mode
+// (Swing mode falls back to all-time until the first pivots confirm)
+float hi = range_mode == 'Local Window' ? local_hi : range_mode == 'Swing Pivots' ? (na(swing_hi) ? ath : swing_hi) : ath
+float lo = range_mode == 'Local Window' ? local_lo : range_mode == 'Swing Pivots' ? (na(swing_lo) ? atl : swing_lo) : atl
+
+// Calculate the total price difference
+float diff = hi - lo
+
+// Conditional calculation based on the 'flip' checkbox
+float fib_0 = flip ? lo : hi
+float fib_236 = flip ? lo + diff * 0.236 : hi - diff * 0.236
+float fib_382 = flip ? lo + diff * 0.382 : hi - diff * 0.382
+float fib_50 = flip ? lo + diff * 0.500 : hi - diff * 0.500
+float fib_618 = flip ? lo + diff * 0.618 : hi - diff * 0.618
+float fib_786 = flip ? lo + diff * 0.786 : hi - diff * 0.786
+float fib_100 = flip ? hi : lo
+
+// Plot Levels on the Chart (keep IDs so we can fill between them)
+plot(fib_0, title = '0.0%', color = color.new(color.red, 0), linewidth = 2)
+plot(fib_236, title = '23.6%', color = color.new(color.orange, 20), linewidth = 1)
+plot(fib_382, title = '38.2%', color = color.new(color.yellow, 20), linewidth = 1)
+plot(fib_50, title = '50.0%', color = color.new(color.green, 20), linewidth = 1)
+p_618 = plot(fib_618, title = '61.8%', color = color.new(color.blue, 20), linewidth = 1)
+p_786 = plot(fib_786, title = '78.6%', color = color.new(color.purple, 20), linewidth = 1)
+plot(fib_100, title = '100.0%', color = color.new(color.red, 0), linewidth = 2)
+
+// --- Golden Pocket Fill (61.8% – 78.6%) ---
+fill(p_618, p_786, color = show_pocket ? color.new(color.blue, 85) : na, title = 'Golden Pocket')
+
+// --- Moving Averages ---
+// Each MA is pulled from its own selected timeframe (D/W/M) so it stays true to
+// that timeframe even when viewed on a lower chart timeframe.
+float ma1 = request.security(syminfo.tickerid, ma1_tf, ta.sma(close, ma1_len))
+float ma2 = request.security(syminfo.tickerid, ma2_tf, ta.sma(close, ma2_len))
+plot(show_ma ? ma1 : na, title = 'MA 1', color = ma1_color, linewidth = 2)
+plot(show_ma ? ma2 : na, title = 'MA 2', color = ma2_color, linewidth = 2)
+
+// --- Percentage + Price Labels ---
+// Keep a persistent reference to each label so we can move it instead of stacking new ones
+var label lbl_0   = na
+var label lbl_236 = na
+var label lbl_382 = na
+var label lbl_50  = na
+var label lbl_618 = na
+var label lbl_786 = na
+var label lbl_100 = na
+
+// Helper to create-or-update a label at a given price level
+f_setLabel(label lbl, float price, string pct, color col) =>
+    string txt = pct + '  —  ' + str.tostring(price, format.mintick)
+    label result = na
+    if na(lbl)
+        result := label.new(x = bar_index + offset, y = price, text = txt, color = color.new(col, 100), textcolor = col, style = label.style_label_left, size = size.small)
+    else
+        label.set_xy(lbl, bar_index + offset, price)
+        label.set_text(lbl, txt)
+        result := lbl
+    result
+
+if barstate.islast
+    lbl_0   := f_setLabel(lbl_0,   fib_0,   '0.0%',   color.red)
+    lbl_236 := f_setLabel(lbl_236, fib_236, '23.6%',  color.orange)
+    lbl_382 := f_setLabel(lbl_382, fib_382, '38.2%',  color.yellow)
+    lbl_50  := f_setLabel(lbl_50,  fib_50,  '50.0%',  color.green)
+    lbl_618 := f_setLabel(lbl_618, fib_618, '61.8%',  color.blue)
+    lbl_786 := f_setLabel(lbl_786, fib_786, '78.6%',  color.purple)
+    lbl_100 := f_setLabel(lbl_100, fib_100, '100.0%', color.red)
+
+// --- Alerts on Level Crosses ---
+alertcondition(ta.cross(close, fib_236), title = 'Cross 23.6%', message = 'Price crossed 23.6% Fib level')
+alertcondition(ta.cross(close, fib_382), title = 'Cross 38.2%', message = 'Price crossed 38.2% Fib level')
+alertcondition(ta.cross(close, fib_50),  title = 'Cross 50.0%', message = 'Price crossed 50.0% Fib level')
+alertcondition(ta.cross(close, fib_618), title = 'Cross 61.8%', message = 'Price crossed 61.8% Fib level (golden pocket edge)')
+alertcondition(ta.cross(close, fib_786), title = 'Cross 78.6%', message = 'Price crossed 78.6% Fib level (golden pocket edge)')
+````

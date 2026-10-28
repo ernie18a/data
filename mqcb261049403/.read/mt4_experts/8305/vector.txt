@@ -1,0 +1,4 @@
+The EA for 4 symbols: EURUSD, GBPUSD, USDCHF and USDJPY. The basis is the 4H moving averages.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8305

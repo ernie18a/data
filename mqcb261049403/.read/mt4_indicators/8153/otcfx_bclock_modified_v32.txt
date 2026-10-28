@@ -1,0 +1,9 @@
+Indicator Otcfx_b-clock modified V3.2. Another version of the recommended indicator.
+Parameters:
+BClockClr= Aqua;
+ClksColor= Lime;
+TDCOL= Aqua;
+show.Bclk=true ;
+myFont ="Arial Bold" ;
+myFont2 ="Verdana Bold" ;
+Otcfx_b-clock modified V3.2

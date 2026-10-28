@@ -1,0 +1,65 @@
+Description:
+The Forex Strategy "
+10 points on EURUSD"
+has a number of varieties and something similar to the
+Session Breakout
+strategy,
+many professional traders
+use it, so if you combine it with an optimal money management, you can achieve very good trading results.
+The idea is the following:
+The strategy is based on breakthrough of the maximum and minimum price values of the previous trading day.
+The most of the traders believed that if the level of the previous day has been broken, the price goes up, and vice versa for the minimum.
+From the other side, these two extrema are used as a stop-loss levels for the most of the traders.
+Therefore,
+if the price has breaked the minimum of the previous day, stop-losses will be executed and further price movement will
+continue for some number of points.
+The same is for the maximum, but only opposite direction.
+So, using these facts
+, we will earn profits if we open buy, after the
+maximal price
+breakthrough of the previous day, and sell
+after the breakthrough of the
+previous day minimum.
+But another
+category of FOREX traders use the same 2 points as support and resistance levels, so the price does not always move in the
+breakthrough
+direction of the maximum and minimum of the last days - therefore there it is necessary to use fixed stop-losses.
+Remark:
+The recommended currency pair is
+EURUSD.
+The pending orders are valid from 00.00 (GMT) of today to 00.00 (GMT) of tommorow.
+1.
+At 00.00 (GMT time) send 2 pending orders
+: one of buy at the following price:
+previous day high +2 points
+and one for sell at the following price:
+previous day low -2 points
+.
+2. Set
+Тake profit - 10 pips
+.
+3. Set
+Stop-loss - 5 pips
+.
+4. Important feature: it is necessary to deal
+only at first crossing
+of the maximal and minimal prices during the trade day (it means that if pending orders has been closed today with SL or TP, we are not trading today any more!)
+Image:
+Recommendations:
+For each deal the risk should be
+2% -5%
+of the deposit.
+Test it and write your proposals.
+Please test is only at daily charts and all ticks (the most precise method)
+Here is the test results for the period 01.01.2009 - 30.11.2009 on EURUSD DAY ALL TICKS (the most precise modelling...)
+Editor's remark:
+Note that it's a mirror translation of the
+original Russian version
+.
+If you have any questions to the author, suggestions or comments, it's better to post them
+there
+.
+If you have found this code useful for trading or educational purposes, don't forget to thank author.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9321

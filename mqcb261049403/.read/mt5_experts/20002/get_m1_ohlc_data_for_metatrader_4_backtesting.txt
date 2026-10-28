@@ -1,0 +1,7 @@
+Usually most brokers do not provide M1 data over 3 months in MetaTrader 4, but they provide M1 data over 3 years in MetaTrader 5. So we can use this tool to obtain the M1 data in MetaTrader 5 tester and save the data into .hst file for MetaTrader 4 backtesting.
+How to use it?
+Test EA in MetaTrader 5, select M1 time frame and 1 minute OHLC.
+After testing finish, the .hst file is saved in tester folder, copy it to your MetaTrader 4 history folder.
+Use period converter script to convert M1 .hst to other timeframes.
+https://www.mql5.com/en/code/19839
+.

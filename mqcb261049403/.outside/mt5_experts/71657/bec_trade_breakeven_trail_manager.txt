@@ -1,0 +1,26 @@
+Key Features:
+Automatic
+Breakeven Management
+(single or grouped positions)
+Dynamic
+Trailing Stop System
+One-click trade management panel:
+Close smallest profit trade
+Close 50% and move stop to breakeven
+Close all trades & delete pending orders
+Built-in
+Scalping Mode
+(Buy/Sell with auto trailing)
+Smart filtering:
+By trade type (Buy/Sell)
+By Magic Number
+By Comment
+Real-time dashboard:
+Equity
+Floating P/L
+Daily profit
+Important:
+Requires
+AutoTrading enabled
+Designed for MT5 hedging accounts
+Use proper risk management

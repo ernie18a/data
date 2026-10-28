@@ -1,0 +1,11 @@
+Can you predict medium and long term moves? If so, there is no more need to waste your time in front of your computer, SwingCyborg comes to the rescue! This Expert Advisor is based on your human ability to predict medium and long term trends. Please, tell SwingCyborg when you think the new trend is starting and finishing, and it will work 24 hours 7 days for you.
+Figure 1. A cybernetic organism is a being with both organic and mechanical parts
+Example on CADJPY:
+Figure 2. SwingCyborg on CADJPY from 2014.01.02 to 2014.02.03
+Features:
+Simulates MT5 position system.
+Helps you to automate your medium and long term trading.
+Manages three different money management policies: LOW, MEDIUM and HIGH. This is the so-called EA's aggressiveness.
+Please, backtest the EA's aggressiveness on your prefered asset and then chose that one that historically better behaves.
+It relies on RSI to avoid trading when the market is overbought or oversold.
+Works on MT4 build 600.

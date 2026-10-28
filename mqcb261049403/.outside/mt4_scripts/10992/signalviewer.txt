@@ -1,0 +1,11 @@
+IceFX SignalViewer a nice script which can display on your chart all closed position of
+Signals
+provided by MQL5 Community Services website.
+How it works:
+Install script (copy file to MetaTrader's experts\scripts folder).
+Download a CSV history file from any Signal Provider's webpage. (Export to CSV: history)
+Copy the downloaded csv file to MetaTrader's experts\files folder.
+Open a chart in MetaTrader4.
+Drag StrategyViewer script to this chart. Please give the file's real name in the Setup menu.
+If it's necessary enter the time offset (in hours).
+Press OK button and you will see on the chart the signals closed positions listed in the CSV history report.

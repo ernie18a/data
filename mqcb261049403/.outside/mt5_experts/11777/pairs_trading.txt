@@ -1,0 +1,26 @@
+The robot opens two positions, profit and loss of which overlap each other. In other words two positions are opened: one has positive profit, while the other has negative profit. After that the robot waits for positive profit of these orders and closes positions.
+The robot is capable of trading in two modes: manual and automatic (when the robot itself makes decision upon purchase or sale depending on a trade session). You shall state the symbols you have (pair or mirror) to work in the automatic mode.
+You have pair symbols if symbol charts are similar.
+You have mirror symbols if symbol charts are reflected specularly.
+The robot provides profits statistics:
+Attention!
+You will need
+correlation
+indicators for the EA. It shall be installed in
+terminal data folder\MQL5\Indicators
+as in the figure:
+Key parameters
+Correlation bail for orders opening
+- correlation value according to which positions are opened.
+How many times you can try to open an order
+- if your agency does not open a position on the first try, this parameter will state how many times one position can be opened .
+Lots for the 1st symbol, Lots for the 2nd symbol
+- number of lots is selected in such a way that profit of one pair overlaps loss of the other pair. I.e. symbol profit shall be equal to zero (but during "tranquil" correlation only (see the figure)).
+EURUSD and USDCHF Statistics
+This statistic data is obtained from MetaTrader 5 tester. In practice such statistic can appear only on stocks, futures, options, and Forts markets (the latter is more volatile). As for FOREX, suitable markets were found abroa
+d (for insta
+nce www.swissquote-fx.com, http
+s://www.tradeking.com or http://pricemarkets.com). Why abroad? Because at night Russian agencies close and then open your positions, meanwhile loss taking (in the course of pairs trading) can happen.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11777

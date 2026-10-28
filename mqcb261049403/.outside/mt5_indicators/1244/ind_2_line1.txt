@@ -1,0 +1,12 @@
+The indicator has three lines:
+Green is an averaging line of the first instrument index;
+Blue is an averaging line of the second instrument index;
+Line of the width of the instruments runaway: sky blue is in divergence, red is in convergence.
+If there is a very strong divergence at the moment when the instruments start to converge the upper should be sold and the lower should be bought simultaneously. When instruments' lines crossing, closing position is recommended.
+Besides, the indicator calculates deals volume which should be performed to balance instruments volatility. Calculation results display on the upper corner of the indicator. On the left side from the instruments name volumes relative to instruments' price are calculated. For example, shares of VTB24 cost about 5 cents, while Sberbank shares are about 100 rubles. It is clear that their weight should be compared not as 1:1. However, this approach is not suitable for FOREX market. Therefore, the authors proposed a second version of the calculation of lots. It is displayed on the right of the names of the instruments. Such lots were obtained taking into account both assets volatility, contract size, the minimum price change and ticks calculation value.
+MoneyManagment.mqh:
+The indicator uses include which need to be placed in a relevant folder ...Include\EvgeTrofi\. It is specified for additional properties of the instruments. During MQL5 studying I will expand this library, give a detailed description of its functions and place it in the Code Base. But it will be later.
+Good luck!
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1244

@@ -1,0 +1,13 @@
+This oscillator indicator displays volumes taking into account the direction of the candlestick. If a candlestick is bullish, then the positive histogram of the volume appears, on bearish candlesticks the histogram is negative.
+Candlestick direction calculation type is set by the only adjustable parameter:
+Calculation method
+- calculation method
+Price
+- calculation using the candlestick Open/Close
+Heiken Ashi
+- calculation using the Heiken Ashi candlestick method
+Fig.1. Calculation using Open/Close
+Fig.2. Calculation using Heiken Ashi
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20374

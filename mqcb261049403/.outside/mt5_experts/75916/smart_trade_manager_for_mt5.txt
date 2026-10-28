@@ -1,0 +1,57 @@
+Smart Trade Manager for MT5
+is a trade management Expert Advisor for traders who open their own positions manually and want automatic protection after entry. It does not generate entry signals and does not open trades by itself.
+The EA watches supported symbols, assigns a structure-based stop loss to unprotected manual positions or pending orders, then manages open trades with breakeven, ATR trailing, and dollar-based profit protection.
+Main idea
+For a buy trade, the EA looks for the recent swing low on the selected structure timeframe. For a sell trade, it looks for the recent swing high. It adds an ATR buffer beyond that structure level, then clamps the stop loss between the configured minimum and maximum ATR distance. The swing and ATR logic uses closed-bar data.
+Key features
+Manages manual trades by default, using magic number 0.
+Optional input to also manage one specific EA magic number.
+Optional pending order protection for buy limit, sell limit, buy stop, and sell stop orders.
+Structure based stop loss using swing highs/lows and ATR buffer.
+Minimum and maximum SL distance limits based on ATR.
+Breakeven management with configurable R trigger and lock amount.
+Separate trailing profiles for Gold symbols and selected FX pairs.
+Optional fixed take profit in R multiples, disabled by default.
+Dollar based protection that can lock a minimum profit and close after a configurable giveback from peak net profit.
+Spread filter to avoid modifications during wide-spread conditions.
+Broker stop level compliance before modifying SL or TP.
+Timer based management so the EA can monitor supported symbols from one chart.
+Cached ATR handles for lighter repeated processing.
+Supported symbol scope
+Gold profile:
+symbols containing XAU or GOLD.
+FX profile:
+EURUSD and USDJPY.
+Other symbols are ignored by the default symbol filter in the source code.
+Important inputs
+Scope
+InpOnlyManual: manage only manual trades when true.
+InpAlsoMagic: optional additional magic number to manage.
+InpManagePendings: enable or disable pending order protection.
+Structure and ATR
+InpStructTF: timeframe used for swing and ATR calculations.
+InpATRPeriod: ATR period.
+InpSwingLookback: number of closed bars scanned for recent structure.
+InpATRBuffer: ATR buffer added beyond the swing level.
+InpMinSL ATR and InpMaxSL ATR: minimum and maximum SL distance limits.
+Breakeven and trailing
+InpUseBreakeven: enable breakeven logic.
+InpBE TriggerR and InpBE LockR: breakeven trigger and lock amount in R.
+InpGold TrailStartR and InpGold TrailATR: Gold trailing profile.
+InpFX TrailStartR and InpFX TrailATR: FX trailing profile.
+Dollar protection
+InpUseMoneyProtect: enable dollar based protection.
+InpCommissionPerLot: commission estimate used for net profit calculation.
+InpMoneySecureTrig: net profit level that activates dollar protection.
+InpMoneySecureLock: minimum dollar amount to protect through SL.
+InpMoneyGiveback: allowed drop from peak net profit before closing at market.
+How to use
+Compile SmartTradeManager.mq5 in MetaEditor.
+Attach the EA to any MT5 chart.
+Enable Algo Trading and allow automated trading for the EA.
+Open a manual trade or pending order on a supported symbol.
+The EA will apply protection according to the configured inputs.
+Recommended starting point
+Use a demo account first. Check the broker's symbol names, spread, stop level, freeze level, commission, and execution behavior before using the EA on a live account.
+Risk note
+This is a trade management utility, not a profitable strategy by itself. It does not predict market direction and does not guarantee profit, win rate, drawdown reduction, or account recovery. Results depend on the trader's entries, broker conditions, market volatility, and chosen inputs.

@@ -1,0 +1,35 @@
+Indicator Three timeframes Money Flow Index with Average displays in a separate window three indicators Money Flow Index from the pre-defined timframes and the mean value thereof.
+It has twelve adjustable parameters:
+Period
+- MFI calculation period
+Applied volume
+- volume used for calculations
+Overbought
+- overbought level
+Median
+- mean level
+Oversold
+- oversold level
+Drawing mode
+- drawing mode
+Steps
+- by steps
+Slope
+- by sloping lines
+First MFI timeframe
+- timeframe of the first MFI
+Second MFI timeframe
+- timeframe of the second MFI
+Third MFI timeframe
+- timeframe of the third MFI
+Show first MFI
+- show the first MFI
+Show second MFI
+- show the second MFI
+Show third MFI
+- show the third MFI
+Fig. 1. Three timeframes Money Flow Index with Average. Drawing mode = Steps
+Fig. 2. Three timeframes Money Flow Index with Average. Drawing mode = Slope
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23433

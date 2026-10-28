@@ -1,0 +1,3 @@
+Author:
+Christof Risch (iya)
+One more version stohastic. Works on all periods.

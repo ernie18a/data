@@ -1,0 +1,2 @@
+hi, this code need your telegram token and telegram chat id .
+you can make robot by BotFather and then search in google how you can find telegram token and chat id then attach them to this code . now every trade would be signals on your telegram channel.

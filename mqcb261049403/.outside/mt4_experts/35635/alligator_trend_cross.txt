@@ -1,0 +1,5 @@
+Alligator indicator is in a trending condition
+trades opened when candle crosses over either line, variable modes.
+input the number one cross over the blue line
+red line
+green line

@@ -1,0 +1,22 @@
+Plese comment for improve this code ..thank
+Key Features:
+Multi-Timeframe Analysis:
+It uses Stochastic Oscillator and Bollinger Bands values from M1, M5, and M15 charts for trade entry decisions.
+Entry Conditions:
+Buy:
+All three Stochastic K lines are below the MinStochOversold level, and the M15 price is below the lower Bollinger Band.
+Sell:
+All three Stochastic K lines are above the MaxStochOverbought level, and the M15 price is above the upper Bollinger Band.
+Trade Management:
+Allows a maximum of MaxTradesPerTrend open trades at a time.
+Calculates Stop Loss (SL) and Take Profit (TP) levels based on the Average True Range (ATR) of the M15 timeframe and the SLMultiplier and TPMultiplier inputs.
+Spread Control:
+It checks the current spread against MaxSpreadStandard (for standard/ECN accounts) and MaxSpreadCent (for cent/micro accounts). If the spread is too high, it places a buy limit or sell limit order instead of an instant execution.
+Pending Orders:
+When the spread is too high for immediate execution, the EA places pending buy limit or sell limit orders slightly below the current price for buy entries and slightly above for sell entries.
+Inputs:
+It provides various input parameters for customization, including slippage, lot size, indicator periods and deviations, SL/TP multipliers, break-even and trailing stop settings, maximum spread limits for different account types, and Stochastic overbought/oversold levels.
+OnTick Function:
+The OnTick() function is the main execution block. It retrieves indicator values, checks for open orders, and then evaluates buy and sell conditions to potentially open new trades.
+Debugging:
+Includes Print() statements for debugging purposes, logging Stochastic K values across timeframes and the current spread.

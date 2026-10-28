@@ -1,0 +1,4 @@
+This indicator is developed to show the average movement of any 2 correlated currency pairs of the same TF.
+In case of "EURUSD" and "USDCHF" Green Histogram shows assending trend of the main currency ("EURUSD") and Red Histogram shows a descending trend.
+The input parameters:
+ActiveLevel and PassiveLevel are used for cutting off the flat and they are subjects of a optimization.

@@ -1,0 +1,14 @@
+Each individual trade request is written to "TradeRequest.csv" file in real time.
+This file will become long with all trade information and will have its name updated automatically every day, using current date on the name, to keep files small enough to be handled.
+1 Trade request file will be created on common folder each day and they will accumulate in the folder.
+a Timer is used to write to common folder, other 2 files:
+Open Positions, with a summary of all the currently open positions in the account
+Open Orders, with a summary of all the unfilled orders currently active in the account
+Code can be modified to use pipes, sockets, webrequests or other methods to transmit data over the internet.
+When you write the receiver side, make sure to check the age of the signal, before taking it
+Master account equity is also transmitted with each trade information, so the receiver can act on sizing the trades.
+Code has been compiled, is fully operational and is super fast, as of today.
+Have fun !
+If you want to show gratitude, to a lot of time you will save on writing a transmitter yourself, you can share your receivers for this transmitter also. I will also appreciate.
+-----
+2020/Mar/3 - Code Updated to version 4 and now already has a Socket Client embedded to send Messages with all Trading information to a free message relay server on the cloud, where messages are relayed to free Receivers. With this implementation, the same Transmitter already sends signals to local and remote computer.

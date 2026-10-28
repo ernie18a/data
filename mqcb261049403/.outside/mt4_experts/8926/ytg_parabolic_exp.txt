@@ -1,0 +1,72 @@
+Symbol
+EURUSD (Euro vs US Dollar)
+Period
+4 Hours (H4) 2009.03.02 00:00 - 2009.05.15 00:00 (2009.03.01 - 2009.05.15)
+Model
+Control points (a very crude method, the results must not be considered)
+Parameters
+timeframe=240; step=0.009; maximum=0.2; StopLoss=100; TakeProfit=2000; Lotsi=10; MagicNumber=28081975; Slippage=30; NumberOfTry=5;
+Bars in test
+1326
+Ticks modeled
+17385
+Modeling quality
+n/a
+Mismatched chart errors
+25
+Initial deposit
+50000.00
+Total net profit
+44968.00
+Gross profit
+59968.00
+Gross loss
+-15000.00
+Profit factor
+4.00
+Expected payoff
+2498.22
+Absolute drawdown
+1310.00
+Maximum drawdown
+9782.00 (12.13%)
+Relative drawdown
+12.13% (9782.00)
+Total trades
+18
+Short positions (won %)
+9 (11.11%)
+Long positions (won %)
+9 (22.22%)
+Profit trades (% of total)
+3 (16.67%)
+Loss trades (% of total)
+15 (83.33%)
+Largest
+profit trade
+20000.00
+loss trade
+-1000.00
+Average
+profit trade
+19989.33
+loss trade
+-1000.00
+Maximum
+consecutive wins (profit in money)
+1 (20000.00)
+consecutive losses (loss in money)
+9 (-9000.00)
+Maximal
+consecutive profit (count of wins)
+20000.00 (1)
+consecutive loss (count of losses)
+-9000.00 (9)
+Average
+consecutive wins
+1
+consecutive losses
+4
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8926

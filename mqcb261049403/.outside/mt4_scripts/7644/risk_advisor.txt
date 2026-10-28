@@ -1,0 +1,5 @@
+This script tries to calculate Lots value given on how much percent from balance can be lost and how much pips are in range for Stop Loss.
+Additionally you may change Profit Loss factor so advised Take Profit pips wil be adjusted. And the Lots value is default value on which pips range can be recalculated but is expected as default Lots value.
+Hope this script will be usefull for traders with many opened orders.
+Cheers,
+T-1000

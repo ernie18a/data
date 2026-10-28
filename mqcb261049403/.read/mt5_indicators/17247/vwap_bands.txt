@@ -1,0 +1,4 @@
+This indicator is similar to Bollinger bands, but it uses volume weighted average as the central value of the bands.
+When using it you have an option to use the tick volume or real volume for calculation (if the symbol and the broker are having real volume at all).
+Also, you can chose to have deviations calculated with or without sample correction.
+Each of the bands can be turned on or off. If the deviations multiplier for any of the bands is set to <=0 then that bands are not going to be calculated.

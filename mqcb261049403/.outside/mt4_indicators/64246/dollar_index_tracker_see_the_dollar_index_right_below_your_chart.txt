@@ -1,0 +1,64 @@
+Dollar Index Tracker calculates and displays the
+US Dollar Index (USDX / DXY)
+directly below the chart of your current trading pair. This makes it easy to compare the strength of the US Dollar against a basket of major currencies while analyzing your pair at the same time.
+The USDX is based on six major pairs:
+EUR/USD, USD/JPY, GBP/USD, USD/CAD, USD/CHF, and USD/SEK
+. Each pair has a weight in the formula, with EUR/USD having the largest share. The index was introduced in
+1973
+at a base value of 100 and has been one of the most followed measures of dollar strength ever since.
+How It Works
+Dollar Index Tracker runs the USDX calculation formula in the background:
+USDX = 50.14348112 × EURUSD^-0.576 × USDJPY^0.136 × GBPUSD^-0.119 × USDCAD^0.091 × USDSEK^0.042 × USDCHF^0.036
+It then displays the result in a
+separate sub-window below your chart
+. You can customize the display with two moving averages to smooth the index and highlight trends.
+Input Parameters
+Core Settings
+IndexPairs
+– Default:
+"EURUSD, USDJPY, GBPUSD, USDCAD, USDSEK, USDCHF"
+→ currency pairs to use for USDX calculation.
+IndexCoefficients
+– Default:
+"-0.576, 0.136, -0.119, 0.091, 0.036, 0.042"
+→ weight of each pair in the calculation.
+IndexInitialValue
+– Default:
+50.14348112
+→ base value for USDX formula.
+Moving Averages
+MA_Period1 (default = 13)
+– Period of the first moving average. (Set 0 to disable.)
+MA_Period2 (default = 17)
+– Period of the second moving average. (Set 0 to disable.)
+MA_Mode1 / MA_Mode2
+– Method of calculation (SMA, EMA, SMMA, LWMA).
+Example Strategies
+1. Divergence Detection
+USDX rising but EUR/USD also rising → signal that EUR is much stronger than other USDX basket currencies.
+USDX falling but USD/JPY not dropping → shows JPY weakness compared to others.
+2. Trend Confirmation
+If USDX is trending up and your USD pair is also moving in favor, you have extra confirmation to hold trades longer.
+3. Multi-Timeframe Context
+Use the USDX on higher timeframes (H4/D1) while trading your pair on lower ones (M15/H1) to stay aligned with overall dollar strength.
+Why Choose Dollar Index Tracker?
+Unlike standard MA or RSI tools,
+Dollar Index Tracker
+gives you
+direct insight into the world’s most important currency
+. It acts as a correlation filter for USD trades, helping you:
+Avoid false signals in majors.
+Confirm the real strength of the dollar.
+Identify divergence setups before the crowd.
+By combining
+broad USDX data
+with your pair’s chart, you gain an edge in decision-making and risk control.
+⚠️
+Important Note
+:
+Make sure all six pairs used in the USDX formula (
+EURUSD, USDJPY, GBPUSD, USDCAD, USDSEK, USDCHF
+) are visible in your
+Market Watch
+window, otherwise the indicator may not calculate correctly.
+If the display looks incorrect, try refreshing the chart (e.g., switch to another timeframe and back).

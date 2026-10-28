@@ -1,0 +1,41 @@
+New Renko 2.0 (indicator) with a lot more information (time, volumes, and spread).
+Inspired by
+Renko
+for MQL5 by Serhii Ivanenko and
+Renko Live Charts v4.13
+for MQL4 by Tim Welch.
+References the
+Symbol
+library for MetaTrader 5 by fxsaber.
+A complete Renko chart indicator with wicks. Configure using Tick Size, Pip Size, Points or R. Now with Asymetric Reversals!
+Don't forget to check the new
+Renko 2.0 Offline
+.
+Parameters
+View
+Version history
+2017-12-31:
+Implemented Bars History Input for better performance.
+2018-01-04:
+Fixed: Array out of range exception for Bars History input.
+Fixed: Invalid plot of two Renko bricks when pivot high.
+2018-01-13:
+Fixed: Wick size on history and chart reload.
+Fixed: Wick malformed with brick size.
+2018-01-15:
+Fixed: Minimum brick size to one tick.
+2018-01-17:
+Implemented normal array buffer for better performance. w/ Aécio F. Neto <aecio.neto@xcalper.com.br>
+Implemented chart reload algorithm and other corrections.
+2018-03-08:
+Implemented Renko 2.0 library with Renko 2 Offline, custom symbol generation, volumes, gap colors, and other improvements.
+2018-03-28:
+Fixed events and time from Renko rates.
+2018-04-02:
+Fixed Renko open time on Renko rates.
+2018-05-02:
+Fixed Renko volumes, bugs, and performance.
+2018-06-21:
+New library with custom tick, performance and other improvements
+2018-09-27:
+Asymetric reversals, corrections on wick size and initialization

@@ -1,0 +1,23 @@
+Roboost is an EA for MetaTrader 4 trading. It combines several ideas of common forex robots such as RSI half-scalping.
+It tries to limit the risks by
+adding a limiter to maximum lot size
+usage of stop losses
+limitation on trading hours
+limitation of maximum Spread to avoid trades during news or difficult market conditions
+Using Pending Orders instead of Market Orders
+It also calculates lot size automatically based on remaining equity if enabled in the set.
+The code is delivered as-is.
+Target tf: h1
+Testing period: long term (e.g. 2 years)
+Pairs: EURUSD, GBPUSD, other major pairs
+It can run on different pairs in parallel with different sets. Of course, the automatic lot calculation is dependent on the remaining equity — in case of several pairs traded in parallel, the lot size will be impacted by all other open trades.
+I am submitting it as a template for further development.
+Wording: Working beta version - use it as template, to generate ideas or extend to ready-for-use ea.
+Before trading on live account, please do extensive testing and/or further development.
+Recommendations:
+Try the attached sets for EURUSD h1 first
+Test on 2 yrs
+Insert a 2nd indication to validate the trades in the highlighted section (if you know, what you are doing)
+Dependencies:
+There is no include/library/dll needed so far
+In case you enter more sophisticated indicators, you might have to allow dll-usage in expert settings

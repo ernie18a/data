@@ -1,0 +1,22 @@
+This is MQL5 version of Shved Supply and Demand indicator written by Shved and upgraded by eevviill7 from
+this link
+.
+History mode to indicator. Set "historyMode" parameter to true then "double click" on any point in price chart to see Support and Resistance zones in that point, is done by Mr.  Behzad Movaghar.
+This Indicator has been made to work on any chosen timeframe other than the chart to facilitate the users to better use it.
+Indicator uses fractals and ATR indicator to find and draw support resistance zones on price chart. Types of zones are:
+weak: important high and low points in trend
+untested: major turning points in price chart that price still didn't touch the again
+verified: strong zones, price touched them before but couldn't break them
+proven: verified zone that at least four time price couldn't break it
+broken: zones that price breaks them (not applied for weak zones)
+v1.1:
+Fixed warnings when compiling the code and error when there was low number of bars in the chart.
+Checked zones with MT4 version and now they are exactly the same.
+v1.2:
+History mode added
+v1.3:
+Added parameter for sending notification to mobile phone when price entering S/R zones.
+v1.4:
+Fixed Sup. & Res. labels in history mode.
+(mtf):
+This version is Multi Timeframe version of the above

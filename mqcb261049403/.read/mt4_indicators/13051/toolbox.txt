@@ -1,0 +1,90 @@
+Changelog:
+Version 1.02: Added new functionality, button to change lot size, choose a different timeframe.
+Version 1.01: Some bug corrections and added more information.
+Information provided:
+Button to
+change the timeframe
+, or to put it in
+auto mode.
+Button
++
+and
+-
+to change the
+lot size
+, you can use "P" and "M" shortcut to change lot size.
+Line 1 :
+Lot Size
+/
+countdown
+of the current candle / the price at the
+mouse position.
+Line 2 :
+Pip value
+in your currency /
+Atr
+/
+Swap Buy
+/
+Swap Sell.
+Line 3 :
+Average pips
+in the last
+20 period
+of the timeframe choose / the same information but in
+money.
+Line 4 : Same thing but in the last
+10 period.
+Line 5 : Same thing but in the last
+5 period.
+Line 6 : Same thing in the
+actual candle.
+Line 7 :
+Spread in Pips
+/ the
+percentage of spread
+over the average 5 period /
+spread in your currency.
+Line 8 : When you click on the chart you can have in your currency the
+value between the actual price and the mouse click
+/ idem in
+Pips
+/ the
+mouse click price.
+Line 9 : When you move the mouse, you can have the number of
+pips between Open and Close
+of a candle / the
+Pips between High and Low
+of the candle / the
+datetime
+of the candle.
+In options:
+You can activate
+the range of
+the period
+choose.
+You can activate the
+E
+stimated
+T
+ime of
+A
+rrival
+of your take profit
+.
+The parameters are:
+Lot:
+the lot you usually use.
+Label Color:
+choose the color of the text, white is the default.
+ActiveRangeLine:
+you can view the range of the average range of the last 5 periods. [True/False]
+LineColor:
+you can change the color of the range line.
+ActiveTakeProfitETA
+: give the date and hour of when your take profit could be touch. [True/False]
+When you move your mouse on the chart you can see the value in pips between Open and Close [OC] and the Hight and Low [HL].
+You can also see the black square, you can move it on your chart, and the text will follow.
+When you click on the chart it tells you (in your currency) how much money separate the click and the actual market price (based on the pip value). So you can know before opening a trade the potential of this one, and see if the risk is profitable.
+You can see the range of the period based on the average of the last five period. Here it's the blue line.
+You can see two trades with a Take Profit, the first take profit can be touch at this date and hour, of course, the hour changes a lot, but it's good to know if you need to wait 1 week or few hours.

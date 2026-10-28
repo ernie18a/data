@@ -1,0 +1,33 @@
+Average of 18 Moving Averages shows the average value of 18 different moving averages.
+It has two input parameters:
+Period
+- calculation period of each MA used in calculation
+Applied price
+- price used for the calculation of each MA
+Calculation:
+MA = (MA1 + MA2 + MA3 + ... + MA18) / 18.0
+Moving averages used in the calculation:
+Simple
+Exponential
+Smoothed
+Linear-Weighted
+Wilder Exponential
+Sine-Weighted
+Triangular
+Least Square
+Hull MA by Alan Hull
+Zero-Lag Exponential
+Instantaneous Trendline by J.Ehlers
+Moving Median
+Geometric Mean
+Regularized EMA by Chris Satchwell
+Integral of Linear Regression Slope
+Combination of
+LSMA
+and
+ILRS
+Triangular MA generalized by J.Ehlers
+Volume-Weighted
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22935

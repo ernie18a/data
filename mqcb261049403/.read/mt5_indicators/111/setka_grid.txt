@@ -1,0 +1,82 @@
+This indicator will help you to determine quickly the starting and ending of the day (week, month), to see the maximal and minimal prices of the period (and determine them more accurately), the magnitude and direction of the movement for the period, the important levels (figure), the exchanges starting time, the news publication times etc.
+Try this indicator, I think it will be very useful. The
+MQL5 Language
+allows to implement more functions, that was impossible in MQL4 (see
+https://www.mql5.com/ru/code/8684
+).
+By default, it has the following parameters:
+//--- input parameters
+input
+int
+Step=
+250
+;
+// vertical grid step in points
+input
+int
+Figure=
+1000
+;
+// figure step
+Sometimes,  you need to change these setting for some symbols. By changing these input variables in the code of the program, you may configure your own color scheme:
+// color of vertical lines
+color
+new_hour=
+DimGray
+;
+// new hour
+color
+new_day =
+Blue
+;
+// new day
+color
+new_week=
+DeepPink
+;
+// new week
+color
+new_mon =
+Yellow
+;
+// new month
+// color of horizontal lines
+color
+new_Hfigure=
+RoyalBlue
+;
+// new figure
+color
+new_Hline=
+DimGray
+;
+// new line
+you can configure your own color scheme by changing these variables.
+If you like it and you want to use it, here are some recoommendations:
+1. Disable the standard grid.
+2. Change the number of bars in history Service->Settings->:
+3. Restart client terminal.
+4. Open the chart and attach this indicator. You will see the picture as follows:
+5. Select all the objects created and delete them.
+6. Using the right mouse click, save template (Templates->Save template) with name Default. tpl
+As a result, the grid will be launched automatically when open and change of any chart. The time and other info is printed in Log:
+2010.06.15 11:53:16
+Setka (AUDUSD,M15)
+Failure or first call
+Time= 1.4
+sec for
+50000
+bars
+ObjectsTotal= 12718
+MaxBars= 0
+If you want to decrease the grid start time (and you don't need the grid on all history), set
+MaxBars
+=2000 before the template saving.
+On the flat market or in the case of failures (you will see them) you need to refresh the chart ("Refresh") for the recalculation of the indicator.
+I would like to thank
+Renat
+for the help in writing the indicator and example
+https://www.mql5.com/ru/forum/1165/page3.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/111

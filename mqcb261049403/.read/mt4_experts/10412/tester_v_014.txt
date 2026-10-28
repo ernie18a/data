@@ -1,0 +1,8 @@
+Description:
+This is an example only - how optimization results can be edited in a text editor and used by the Expert Advisor.
+The signals were found by the optimizer of MT4 strategy tester, and all of these signals are used above profit factor 2. Many of these signals appeared only one time in the whole history, that's why more different type of signals must confirm each other.
+"MinSignSum" setting means the number of these confirmations and it should never be less than 4!!
+Shared only to show this method, how even beginner coders also can create real trading monsters :)
+It's not recommended for live trading at all!
+* first version is updated - v0.15 - some mistakes are corrected
+Backtest using forextester data, with default settings, 2001.01.01 - 2011.06.30. (test starts from the 100th H4 bar)

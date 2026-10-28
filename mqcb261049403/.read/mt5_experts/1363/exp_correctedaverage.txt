@@ -1,0 +1,18 @@
+The breakthrough system with the
+CorrectedAverage
+Moving Average.
+A signal to perform a deal is formed at bar closing when there is breakthrough on price level separated from Moving Average in a distance determined by the input parameter of the Expert Advisor.
+input
+int
+Level=
+300
+;
+//the breakthrough level in points
+Place CorrectedAverage.ex5 compiled file to the terminal_data_folder\MQL5\Indicators.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. The instances of history of deals in the chart.
+Testing results for 2011 at AUDUSD H4:
+Fig. 2. Chart of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1363

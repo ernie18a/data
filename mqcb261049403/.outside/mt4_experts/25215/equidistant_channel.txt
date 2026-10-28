@@ -1,0 +1,49 @@
+With "Equidistant Channel" EA you can draw Equidistant Channel on the chart and trade with price breakthrough or trend,has 3 buttons for manual trading and allows to predetermine trailing stoploss & take profit, open and close all trades at once.
+Try it on demo first
+It is possible to activate a hedge fund protocol for low drawdown
+Inputs
+==================HEDGE FUND PROTOCOL==========================
+HEDGE FUND PROTOCOL -Enabale Draw dwon control (values:true/false).
+Close basket at +0.10% MIN_PROFIT_PERCENT (values:0.1-0.6).
+Close basket at -0.50% MAX_LOSS_PERCENT (values: 0.5-0.8).
+HEDGE FUND PROTOCOL_SLIPPAGE (values: 10-50).
+=================================================================
+Use_TP_In_Money- Use Take Profit In Money (values:true/false).
+TP_In_Money- Take Profit In Money   (values: 10-100).
+------------[Money Trailing Stop For Multiple Trades]----------------------
+Enable_Trailing-Enable_Trailing with money  (values:true/false).
+Take Profit In Money (in current currency) (values: 25-200).
+Stop Loss In Money(in current currency) (values: 1-20).
+Loss Index (values: 1.1-2).
+--------------------------------------------------------------------------------------
+Channel name
+1 st point's date, %
+1 st point's price, %
+2 nd point's date, %
+2 nd point's price, %
+3 rd point's date, %
+3 rd point's date, %
+Channel color
+Style of channel lines
+Channel line width
+Background channel
+Filling the channel with color
+Highlight to move
+Channel's continuation to the right
+Hidden in the object list
+Priority for mouse click
+USESTOP - Enable automatic "STOP"  function (values: 0-1).
+Lots - Lots size (values: 0.01-10).
+MaximumRisk - maximum risk from total margin in %, (values: 0.01 - 0.3).
+If "MaximumRisk =0" then "Lot=constant"
+DecreaseFactor - decrease from total margin if you lose a trade.
+Stop_Loss - Stop Loss (values: 10-100).
+MagicNumber - Magic number (values: 1-100000).
+TakeProfit - Take Profit (values: 10-100).
+NumberOfTrades-Number Of Trades(values: 1-10).
+----------------IF YOU USE ONLY 1 TRADE:-----------------------
+//////////////////////////////////////////////////
+TrailingStop-set a value from 40 to 100 to activate trailing stop loss & take profit, "0" will not activate trailing stop loss.
+Enable "Break Even" -(values:true/false).
+When move "Break Even"- (values: 5-30).
+How much pips move- "Break Even" (values:5-30).

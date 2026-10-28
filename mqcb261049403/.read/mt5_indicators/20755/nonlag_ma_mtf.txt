@@ -1,0 +1,9 @@
+Well known
+NonLag MA
+with additions and adjustments. The first version published long time ago did not have price as an input option. This version corrects that, and the code is adjusted to new builds of MetaTrader 5 and also made multi timeframe.
+Timeframes supported are all the possible timeframes supported by MetaTrader 5 and it has 3 "special" timeframes:
+Next higher timeframe: first higher timeframe compared to active chart.
+Second higher timeframe: second higher timeframe compared to active chart.
+Third higher timeframe: third higher timeframe compared to active chart.
+If some of these 3 timeframes are used, then the timeframe is set automatically as you change the timeframe of the chart.
+PS: the indicator is a stand alone indicator - it does not need the "regular" version in order to work, neither it uses any other indicator.

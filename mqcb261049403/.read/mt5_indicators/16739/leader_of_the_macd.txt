@@ -1,0 +1,2 @@
+This is the Leader of the MACD as described by Giorgos E. Siligardos. In short, in this indicator there are 2 indicators in 1. There are a regular MACD (which is drawn as lines (colored line is a regular MACD and dotted line is signal)) and the "Leader MACD" indicator (which is drawn as shaded areas).
+Using shaded areas gives us a clearer view of the 2 indicators and a much easier way of reading the 2 (which was not the case with MetaTrader 4 version — it was very hard to read the whole thing).

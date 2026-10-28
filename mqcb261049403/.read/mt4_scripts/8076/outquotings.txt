@@ -1,0 +1,4 @@
+Unloading quotes from the selected period into an external file. File name is formed automatically and is made of the following details: symbol name, timeframe, start date, end date.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8076

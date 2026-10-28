@@ -1,0 +1,34 @@
+Author:
+www.mt4exclusive.com
+Description:
+With the MTF RSI Indicator you can easily identify the oversold/overbought levels on several different timeframes by using only one chart. Short Term trades can be confirmed by higher timeframe RSI Levels.
+MTF RSI in Action
+The built in Automatic Timeframe Recognition ensures that you don't have to struggle with the reading of unnecessary information in the RSI indicator window. When you change the timeframe of your chart, the indicator will automatically adjust the displayed RSI values, and values from lower timeframes than your current chart won't be displayed and calculated anymore therefore the program is using less computing resources.
+Being the most popular Indicator the RSI levels are extremely important in every situation. The Multi Timeframe version of the RSI Indicator provides you with leading trading signals and easy readability.
+professionally coded
+automatic timeframe recognition
+works with any broker and on any currency
+leading trading signals
+easy readability
+This indicator can be fully customized to your needs and to fit with any of your setups.
+RSI Period:
+Set the period for the RSI calculation as usual.
+Available Timeframes:
+M1 - 1 Minute
+M5 - 5 Minutes
+M15 - 15 Minutes
+M30 - 30 Minutes
+H1 - 1 Hour
+H4 - 4 Hours
+D1 - Daily
+W1 - Weekly
+RSI Price:
+Set the price constant for the RSI calculation as usual:
+0 = Close price.
+1 = Open price.
+2 = High price.
+3 = Low price.
+4 = Median price, (high+low)/2.
+5 = Typical price, (high+low+close)/3.
+6 = Weighted close price, (high+low+close+close)/4
+SCREENSHOTS

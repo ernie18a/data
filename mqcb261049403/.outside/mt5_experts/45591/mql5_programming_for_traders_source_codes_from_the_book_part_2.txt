@@ -1,0 +1,8 @@
+Part 2. Fundamentals of MQL5 programming
+"Part 2. MQL5 programming fundamentals"
+is an introduction to the key concepts of this programming language. Like any other language, MQL5 is based on several fundamental concepts that serve as building blocks for creating complex programs. This part of the book is devoted to data types, identifiers, variables, expressions, and operators. You will learn how to combine different instructions to form the program logic.
+The basic principles of procedural programming will enable readers to learn how to create programs that follow a sequence of steps to process data. This is an important step before proceeding to the powerful paradigm of object-oriented programming (OOP), which will be covered in the next part of the book.
+Identifiers play a key role in MQL5 programming, as they allow program elements to be accessed by unique names. Identifiers are composed of Latin letters, numbers, and underscores, they cannot begin with a number and must not match MQL5 reserved words. Adhering to this important rule is a required prerequisite for successful program compilation.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/45591

@@ -1,0 +1,7 @@
+The double smoothed stochastic that is usually found is using EMA (exponential moving average) for calculation. This version is a sort of deviation from that. Default does use ema for calculation, but it allows you to chose among the 4 types of averages for (double) smoothing.  That way we can get a completely new double smoothed stochastic types :
+SMA double smoothed stochastic
+EMA double smoothed stochastic(the default)
+SMMA double smoothed stochastic
+LWMA double smoothed stochastic
+Any combination of prices usage (internally it orders the prices so that they are "usable" in calculation). With all that, quite a few new versions of double smoothed stochastic can be produced (including a sort of a "raw stochastic" that can be produced when both smoothing periods are set to <= 1)
+Usually double smoothed stochastic is used as an over-bought and oversold type of indicator, but, with longer periods of stochastic calculations, it might be good to revise that point of view and check for reversal conditions too. Experimenting is advised in any case : as with any indicator, there is no universal setting that will fit all the symbols, so some adjustments are necessary

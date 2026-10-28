@@ -1,0 +1,42 @@
+Trading strategy
+The main idea of this Expert Advisor: is it possible to open 'BUY' positions on each new bar while the 'DeMarker' indicator is below the 'DeM: Level DOWN' level (the 'SELL' positions while the 'DeMarker' indicator is above the 'DeM: Level UP' level). By default, the 'Positions: Only one' parameter is set to 'false' - so the EA can work in the "open a new position even if there are already positions in the market" mode.
+Each new position is opened at the moment of the birth of a new bar, and there is no check whether the opening price is the best.
+There is no Stop Loss, Take Profit, or Trailing in the Expert Advisor - positions are closed according to the opposite signal and only if after closing the positions there will be a profit greater than zero.
+Rice. 1. DeMarker gaining position volume
+An example of testing for all symbols
+Rice 2. Settings
+Rice 3. Inputs
+Rice 4. Result
+Now more about each group of parameters:
+Trading settings:
+'
+Working timeframe
+' - working timeframe. The timeframe on which indicators are created and on which a new bar is searched.
+Position size management (lot calculation)
+The lot can be either permanent ('
+Money management
+' set to '
+Constant lot
+' and set the lot size to '
+The value for "Money management"
+') and dynamic - in percent risk per trade ('
+Money management
+' set to '
+Risk in percent for a deal
+' and set the risk percentage in '
+The value for "Money management"
+'). You can also set a constant lot equal to the minimum lot - '
+Money management
+' set to '
+Lots Min
+'.
+Additional features:
+Flag '
+Positions: Only one
+' set to '
+true
+' allows the EA to have no more than one position in the market. The flag '
+Positions: Reverse
+' is responsible for signal reversal. '
+Print log
+' prints an extended log of all operations.

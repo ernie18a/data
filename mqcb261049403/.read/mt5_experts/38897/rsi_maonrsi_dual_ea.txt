@@ -1,0 +1,140 @@
+Trading strategy
+The EA uses a custom indicator
+RSI_MAonRSI_Dual
+- the signal is the intersection of two indicator lines. The indicator is created on the specified timeframe '
+Working timeframe
+' - the same timeframe is used to determine the moment of the birth of a new bar (if it is necessary for the parameters
+'Trailing on ...
+' and '
+Search signals on ...
+').
+Trading signals:
+We are waiting for the lines to cross ('Fast' and 'Slow'). If the crossing is below the '50.0' line, it is a signal to open a 'BUY' position, if it is above the
+'50.0'
+line
+, it is a signal to open a 'SELL' position.
+Rice. 1. RSI_MAonRSI_Dual_EA (BUY signal)
+Peculiarities:
+The EA can be optimized for the working timeframe ('
+Working timeframe
+')
+There can be only one 'entry to the market' deal per bar (this is an internal parameter, it is not included in the input parameters and it has nothing to do with the '
+Only one positions
+' parameter)
+When working in the '
+inside bar
+' mode (parameter
+'
+Search signals on ...
+'
+equals '
+bar #0 (at every tick)
+') the current bar is bar #0, when working in the mode '
+only at the moment of birth of a new bar
+'
+(parameter
+'
+Search signals on ...
+'
+equals '
+bar #1 (on a new bar)
+)
+current bar is bar #1
+'
+Trade mode parameter:
+' - restriction in which direction to trade. Can take the values '
+Allowed only BUY positions
+', '
+Allowed only SELL positions
+' and '
+Allowed BUY and SELL positions
+'
+'
+Use time control
+' parameter
+- time interval for searching trading signals
+from '
+Start Hour
+'::'
+Start Minute
+' to '
+End Hour
+'::'
+End Minute'
+. The time range can be set both within the day and with the transition through the day
+Now more about each group of parameters:
+Trading settings:
+'
+Working timeframe
+' - working timeframe. The timeframe on which indicators are created and on which a new bar is searched. Stop Loss, Take Profit and Trailing are set in
+Points
+. Any of the parameters ('
+Stop Loss
+', '
+Take Profit
+', '
+Trailing Stop
+') can be disabled - for this, set the selected parameter to '0.0'. How trailing works is shown in the pictures in the
+TrailingStop
+code.
+Position size management (lot calculation)
+The lot can be either permanent ('
+Money management
+' set to '
+Constant lot
+' and set the lot size to '
+The value for "Money management"
+') and dynamic - in percent risk per trade ('
+Money management
+' set to '
+Risk in percent for a deal
+' and set the risk percentage in '
+The value for "Money management"
+'). You can also set a constant lot equal to the minimum lot - '
+Money management
+' set to '
+Lots Min
+'.
+time control:
+This section sets the time range for searching for trading signals. The time range is enabled via '
+Use time control
+' and sets the time interval for searching for signals from '
+Start Hour
+'::'
+Start Minute
+' to '
+End Hour
+'::'
+End Minute
+'. The time range can be set both within the day and with the transition through the day. Does not affect trailing.
+Additional features:
+Flag '
+Positions: Only one
+' set to '
+true
+' allows the EA to have no more than one position in the market.
+WARNING:
+'
+Positions: Only one
+' set to '
+true
+'
+does not override
+'
+Positions: Close opposite
+'
+set
+to '
+true
+'! In other words: the opposite position(s) will be closed first
+The flag '
+Positions: Reverse
+' is responsible for signal reversal. An interesting flag '
+Positions: Close opposite
+' - when set to '
+true
+' before opening a position, it is guaranteed to remove opposite positions. '
+Print log
+' prints an extended log of all operations. The '
+Freeze and StopsLevels Coefficient
+' parameter sets the coefficient for stop and freeze levels for cases when these levels for a symbol are equal to zero. The recommended value is '3'.

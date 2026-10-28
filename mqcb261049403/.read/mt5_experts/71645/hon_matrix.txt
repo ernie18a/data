@@ -1,0 +1,81 @@
+High-Frequency Multi-Strategy Algorithmic System
+Hon-Matrix Pro
+is an advanced algorithmic trading system that combines
+Price Action, Volatility Analysis, and Real-Time News Filtering
+. Unlike standard "static" EAs, Hon-Matrix utilizes a dynamic decision-making engine that identifies the current market phase (Trending vs. Ranging) and switches its entry logic accordingly. It features a professional-grade on-chart dashboard allowing for live parameter adjustments without restarting the EA, making it a powerful tool for both automated prop-firm passing and personal capital growth.
+Technical Documentation
+1. Market Analysis Engine ( CMarketAnalyzer )
+The EA continuously scans the market using a proprietary blend of indicators:
+Trend Filter:
+Uses a 100-period EMA on a higher timeframe (H4) to establish the "Dominant Direction."
+Volatility Filter (ATR):
+Measures market "noise" to prevent entries during low-liquidity periods.
+Momentum (RSI):
+Confirms overbought/oversold conditions to optimize entry timing.
+2. Multi-Modular Entry Logic
+Hon-Matrix does not rely on a single trigger. It uses three distinct strategies:
+Fibonacci Grid:
+Places orders at key retracement levels (38.2, 50.0, 61.8, 78.6) during market pullbacks.
+S/R Bounce & Breakout:
+Detects high-strength Support and Resistance zones. It trades "bounces" in ranging markets and "confirmed breakouts" (validated by volume) in trending markets.
+Linear Regression Channels:
+Identifies parallel price channels for mean-reversion trading.
+3. Advanced News Filter ( CAdvancedNewsFilter )
+A robust safety module that prevents trading during high-impact economic events:
+Dual Source:
+Integrates the MT5 Internal Calendar with a WebRequest fallback.
+Auto-Halt:
+Stops trading
+$X$
+minutes before and after news.
+Hard-Close:
+Optionally closes all open positions before "Red Folder" events to protect equity.
+4. Risk & Trade Management
+Dynamic Lot Sizing:
+Automatically adjusts position size based on the "Strength" of the technical signal.
+Basket Management:
+Manages groups of trades as a single unit with a unified "Ultimate Take Profit."
+Smart Protection:
+Includes a Breakeven Trigger and an ATR-based Trailing Stop to lock in profits.
+Equity Protection:
+Emergency "Close All" triggers if the account loses a user-defined percentage of balance.
+5. Interactive Dashboard ( CEnhancedDashboard )
+The UI provides real-time feedback:
+Live Metrics:
+Floating P&L, Spread, Account Exposure, and Daily Performance.
+Interactive Controls:
+Buttons to manually close all profits, losses, or the entire basket.
+On-the-Fly Tuning:
+Edit boxes to change multipliers and lot sizes without opening the EA settings window.
+Advantages of Hon-Matrix Pro
+Adaptive Intelligence:
+It distinguishes between a "ranging" market and a "trending" market, applying the correct strategy for each environment.
+Prop-Firm Ready:
+With strict
+Max Account Exposure
+and
+Equity % Stop Loss
+settings, it is designed to stay within the drawdown limits of firms like Hantec, FTMO, or Darwinex.
+Real-Time News Avoidance:
+The integrated news filter significantly reduces the "Holiday Gap" and "Slippage" risks common in automated systems.
+Live Parameter Adjustment:
+You can change the Lot Multiplier or Grid Distance directly on the chart while trades are active—a feature rarely seen in standard MQL5 EAs.
+Safe Recovery:
+While it uses a grid-style approach, it is highly filtered. It only adds to a position if Price Action (Fibonacci/SR) confirms the move, rather than adding blindly every few pips.
+Input Parameter Guide
+Parameter
+Function
+MaxAccountExposure
+The maximum % of your account allowed to be at risk simultaneously.
+CloseLosesAtPercent
+Emergency equity protection; closes everything if drawdown hits this %.
+InitialLotSize
+The starting lot for the first trade in a sequence.
+LotMultiplier
+The factor by which the next grid order increases (e.g., 1.1).
+EnableNewsFilter
+Set to true to avoid trading during high-impact volatility.
+UseFibonacciGrid
+Enables/Disables the grid system based on retracement levels.
+TrendTimeframe
+The timeframe used to determine the overall market bias.

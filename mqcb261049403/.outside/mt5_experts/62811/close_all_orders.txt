@@ -1,0 +1,33 @@
+Key Features:
+Visual Button Interface - Easy-to-use buttons displayed directly on the chart
+Close Market Orders - Instantly close all open positions with one click
+Delete Pending Orders - Remove all pending orders (Buy/Sell Limit/Stop) at once
+Flexible Options - Choose to close market orders, pending orders, or both
+Real-Time Display - Live counter showing the number of market and pending orders
+Confirmation Dialog - Optional safety confirmation before closing orders to prevent accidental actions
+Customizable UI - Adjust button position, size, and colors to match your preferences
+Detailed Reports - Get instant feedback on successfully closed and failed orders
+Error Handling - Robust error management with detailed logging
+Input Parameters:
+Button Settings:
+Button position (X, Y coordinates)
+Button dimensions (Width, Height)
+Custom colors for button and text
+Close Settings:
+Enable/disable market order closing
+Enable/disable pending order deletion
+Slippage tolerance
+Confirmation dialog toggle
+How to Use:
+Attach the EA to any chart
+Enable AutoTrading (Ctrl+E)
+Click the red "CLOSE ALL ORDERS" button to close all orders
+Click the blue "INFO" button to view current settings and order counts
+Perfect For:
+Emergency exit situations
+End of trading session cleanup
+Quick portfolio management
+Risk management during high volatility
+Traders managing multiple positions simultaneously
+Note:
+This EA requires AutoTrading to be enabled. The button interface provides a safe and efficient way to manage your orders without navigating through multiple menus.

@@ -1,0 +1,3 @@
+Automatic set of stoploss and takeprofit with confirmation.
+We use buy cost for the calculs.
+For the moment you have a value for sl and one for tp. These value are used for all symbols. I prepare a new version where you could parameter sl and tp for each symbol.

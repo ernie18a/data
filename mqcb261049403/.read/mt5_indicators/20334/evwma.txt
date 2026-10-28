@@ -1,0 +1,10 @@
+A weighted moving average of volumes.
+It has one input parameter:
+Period
+- calculation period
+Calculation:
+total = Sum(volume, Period);
+EVWMA = ((total-volume)*EVWMA[-1] + volume[period]*close) / total;
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20334

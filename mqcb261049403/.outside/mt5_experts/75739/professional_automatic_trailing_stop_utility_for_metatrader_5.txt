@@ -1,0 +1,4 @@
+Quantora Trailing Stop Manager MT5 is a utility that manages open trades by automatically trailing stop loss as the market moves in profit. It does not open trades or generate signals.
+The tool activates trailing once a defined profit level is reached and updates stop loss step by step to protect gains. You can control the start level, trailing distance, and update step, with an option to avoid changes before a minimum profit is reached.
+It supports manual trades, all positions, or trades filtered by magic number, with separate control for buy and sell orders. Symbol filtering and a simple dashboard allow easy monitoring and control, along with a one-click option to apply trailing instantly.
+Suitable for traders who want to lock in profits while letting trades run automatically.

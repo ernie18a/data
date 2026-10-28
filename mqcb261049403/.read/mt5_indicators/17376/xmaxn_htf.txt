@@ -1,0 +1,36 @@
+The
+XMA-XN
+indicator with the timeframe selection option available in the input parameters.
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// Indicator chart period (timeframe)
+The XMA-XN_HTF repeater indicator requires the compiled custom indicator file XMA-XN.mq5 in order to compile. Place it in
+<terminal_data_folder>\MQL5\Indicators
+.
+After compilation, the XMA-XN_HTF.ex5 indicator file contains the XMA-XN.ex5 indicator as a
+resource
+,
+and therefore, it is not required to be present in the terminal folder for the compiled indicator to work! For this purpose, the corresponding code has been added to the indicator code in order to include the XMA-XN indicator in the executable file.
+The indicator executable file has been added as resources at the global scope
+//---- Include custom indicators in the indicator code as resources
+#resource
+\\Indicators\\XMA-XN.ex5
+Changed the string path to the indicator used as resource in the block of the OnInit() function
+//--- Getting the handle of the XMA-XN indicator
+Ind_Handle=
+iCustom
+(
+Symbol
+(),TimeFrame,
+"::Indicators\\XMA-XN"
+,Step,xMA_Method,xLength,xPhase,IPC,
+0
+,PriceShift,ColorWidth);
+Thus, the compiled executable file of the repeater indicator can be used on other trade terminals on its own without the original indicator.
+Fig1. The XMA-XN_HTF indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17376

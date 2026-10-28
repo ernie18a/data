@@ -1,0 +1,67 @@
+Idea by
+:
+Alexey Lopatin
+MQL5 code author
+:
+barabashkakvn
+The EA only operates when a new bar emerges.
+Trading system signals
+A signal to
+open a BUY position
+: if
+Close
+price of bar #
+Bar index for signal checking
+>
+Open
+price of bar #
+Bar index for signal checking
+;
+A signal to
+open a SELL position
+: if
+Close
+price of bar #
+Bar index for signal checking
+<
+Open
+price of bar #
+Bar index for signal checking
+;
+Trading settings
+Stop Loss
+and
+Take Profit
+can be disabled. To do this, set the appropriate parameter value to
+0.0
+. Trading signals can be reversed using parameter
+Enable/disable reverse mode for trading
+. If the current spread is greater than
+Maximum allowed spread
+, the position open signal should be ignored.
+Working Timeframe
+For convenience of testing,
+Work TimeFrame
+is available as a separate parameter. This enables to test the Expert Advisor on the selected symbol using all timeframes.
+Position volume calculation
+The EA can trade a constant lot (
+Lots
+> 0 and
+Risk
+== 0), as well as use dynamic calculation (
+Lots
+== 0 and
+Risk
+> 0). Here:
+Lots
+- fixed position volume (in this case the
+Risk
+parameter should be equal to zero);
+Risk
+- risk as percent per trade (in this case the
+Lots
+parameter should be equal to zero).
+Symbol EURUSD, "Every tick based on real ticks":
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21653

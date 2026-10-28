@@ -1,0 +1,10 @@
+Symbol for downloading the history data for the symbol from the server.
+Distinctive feature - indication of the download process using the
+progress bar
+.
+Features:
+The script uses a modified Canvas class, where the position of the origin (bottom left corner of the chart) and the reference direction of the vertical axis (from the bottom up) has been changed.
+It uses generation of images using layers: the bottom layer is the background.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7026

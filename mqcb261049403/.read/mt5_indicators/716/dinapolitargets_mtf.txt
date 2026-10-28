@@ -1,0 +1,7 @@
+The grid consisting of DiNapoli levels and built using a larger timeframe chart.
+DiNapoliTargets
+indicator data is considered in the process of grid creation.
+Place DinapoliTargets indicator compiled file to the terminal_data_folder\MQL5\Indicators.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/716

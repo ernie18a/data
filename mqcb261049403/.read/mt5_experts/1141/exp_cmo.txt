@@ -1,0 +1,11 @@
+The Exp_CMO Expert Advisor based on signal entry taken from the
+CMO
+indicator. A signal to perform a deal is formed at bar closing when the cloud indicator changes its color to the opposite.
+Place CMO.ex5 compiled file to the terminal_data_folder\MQL5\Indicators.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. The instances of history of deals in the chart.
+Testing results for 2011 at EURJPY H4:
+Fig. 2. Chart of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1141

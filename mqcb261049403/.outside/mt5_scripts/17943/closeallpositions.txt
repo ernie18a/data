@@ -1,0 +1,4 @@
+The script closes all open positions on the current account.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17943

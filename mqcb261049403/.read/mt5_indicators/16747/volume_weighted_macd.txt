@@ -1,0 +1,3 @@
+Same as for
+volume weighted EMA
+here you can choose between tick volume and real volume (for symbols supporting real volumes at all).

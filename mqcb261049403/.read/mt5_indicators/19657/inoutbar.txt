@@ -1,0 +1,7 @@
+Real author
+: Kalenzo
+The indicator marks candlesticks with colored arrows if candlesticks of a higher timeframe selected in input parameters are higher or lower than previous candlesticks. It should be noted that the indicator (for obvious reasons) is repainted on the number of candlesticks included in the candlestick of a higher timeframe selected in input parameters.
+Fig.1. The InOutBar indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19657

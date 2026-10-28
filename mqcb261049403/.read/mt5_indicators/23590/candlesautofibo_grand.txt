@@ -1,0 +1,23 @@
+Indicator
+CandlesAutoFibo
+with a wider range of settings to display Fibo levels. To the input parameters, variables have been added to change the line styles and widths of the levels. It is now possible to change the Fibo level width by changing just one parameter and to move the geometry of all the levels simultaneously in proportion thereto:
+input
+double
+FiboRatio =
+1.000
+;
+//Multiplying ratio of all Fibo levels
+For example, if this ratio is set as two, then the zero level remains in its place, the Fibo width under a hundred percent will be doubled, while the other levels from the zero level will be similarly removed on a doubled basis.
+Now we can also move the Fibo vertically with a step proportional to the Fibo width:
+input
+double
+FiboLevelsShift=
+0.000
+;
+//Vertical shift of all Fibo levels from the zero level
+For example, if the value of this parameter is 0.5, the Fibo level will move in the direction to the zero level by one half of its width.
+Fig. 1. Indicator CandlesAutoFibo_Grand with default settings.
+Fig. 2. Indicator CandlesAutoFibo_Grand, doubled in width and moved vertically by a half of its width
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23590

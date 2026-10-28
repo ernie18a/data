@@ -1,0 +1,7 @@
+The EA unloads historical data in the *.csv format for several timeframes of the symbol it is attached to, and updates these data with the preset periodicity (by default, once a minute).
+The Ea doesn't trade. It will be helpful for those performing main analysis in separate programs and wanting to analyze quotes for his or her specific Data Center.
+It is very convenient to attach the EA to several symbols simultaneously and to get fresh data in the *.csv format once a minute.
+The EA creates its directory Terminal_dir\experts\files\Export_History. The data are unloaded to this directory.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8102

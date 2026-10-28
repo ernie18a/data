@@ -1,0 +1,4 @@
+The script downloads history for all timeframes and symbols in the Market Watch. Download is performed by emulating pressing the HOME button. If the download by pressing the button has stopped for about 5 seconds, it is assumed that the entire history for this symbol and timeframe is downloaded, and the next iteration begins. The script also updates the chart, thus downloading the most recent history.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9099

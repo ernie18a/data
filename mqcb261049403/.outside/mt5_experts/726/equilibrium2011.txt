@@ -1,0 +1,15 @@
+Multicurrency "grider" with risk control.
+E04LC07-v4 -
+Automated Trading Championship 2011
+version.
+EQ3-06 - new version.
+The code has comments.
+Updates:
+Fixed an error when closing position;
+Added some features for optimization;
+Added "FreeTrade" mode - no restrictions (fixed % of margin used).
+This Expert Advisor doesn't show the best result, but it can work a long time with profit. The better result can be achieved with many currency pairs. The lower values of TakeProfit lead to increase of the risk but shows better result.
+At restart there is a problem (BestBallance becomes 0). If current loss<10%, it closes position (this value can be increased in OnInit() function).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/726

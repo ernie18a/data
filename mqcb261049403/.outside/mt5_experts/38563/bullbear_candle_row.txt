@@ -1,0 +1,3 @@
+Input row mode instruction in files.
+Reversing candle patterns , input how many bulls then bears or bears then bulls.
+Sl, Tp -Full Expert.

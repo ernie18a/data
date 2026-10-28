@@ -1,0 +1,37 @@
+//+------------------------------------------------------------------------------------------------------------------------------+
+//|Close_on_PROFIT_or_LOSS_inAccont_Currency_V2 optimization: what's new:
+//|
+//|1. Added Error Handling: The code includes error handling to deal with situations where orders cannot be closed or deleted.
+//|2. Code Optimization: The code is optimized to avoid repetition and improve readability.
+//|3. Efficiency: Removed unnecessary loops or computations.
+//|4. Clear all chart objects upon EA deinitialization
+//+------------------------------------------------------------------------------------------------------------------------------+
+At 0 set EA will do nothing.
+Positive_Closure_in_Account_Currency must be higher than the current Equity amount, otherwise, the trades will be executed immediately.
+Example: Equity is 55000$ and Positive_Closure_in_Account_Currency set to 55500$ to gain 500$
+Positive_Closure_in_Account_Currency
+> O && <
+55000$ = immediate execution
+Negative_Closure_in_Account_Currency must be lower than the current Equity amount, otherwise, the trades will be executed immediately.
+Example: Equity is 55000$ and Negative_Closure_in_Account_Currency set to 54500$ to loose only 500$
+Negative_Closure_in_Account_Currency
+>55000$ = immediate execution
+Spread spikes can be avoided by reducing the spread number but the market will do what it wants and higher gains or losses can occure.
+Also if the spread is set lower than the average spread for the pairs traded those positions will not be executed.
+WARNING: Use this software at your own risk. The Forex market is very volatile!
+#property copyright     "Copyright 2024, MetaQuotes Ltd."
+#property link          "https://www.mql5.com"
+#property version       "1.01"
+#property description   "persinaru@gmail.com"
+#property description   "IP 2024 - free open source"
+#property description   "This EA closes all trades on Profit and Losses calculated in Account Currency."
+#property description   ""
+#property description   "WARNING: Use this software at your own risk."
+#property description   "The creator of this script cannot be held responsible for any damage or loss."
+#property description   ""
+#property strict
+#property show_inputs
+extern string  Closures = "EA closes all trades and pending orders when a profit or loss is reached. Profit and Losses are calculated in Account Currency.";
+extern int Positive_Closure_in_Account_Currency     = 0;
+extern int Negative_Closure_in_Account_Currency     = 0;
+extern int Spread = 10;

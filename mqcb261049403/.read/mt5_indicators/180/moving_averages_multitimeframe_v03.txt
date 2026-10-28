@@ -1,0 +1,53 @@
+Real author:
+traderak20, based on iUniMA.mq5 by Integer
+The iUniMA MTF indicator allows the user to choose between different types of moving averages (
+SMA
+,
+EMA
+,
+SMMA
+,
+LWMA
+,
+AMA
+,
+DEMA
+,
+TEMA
+,
+FRAMA
+, and
+VIDYA
+). It can be applied to any timeframe, higher or lower than the current chart's timeframe.
+Compared to the original
+iUniMA indicator
+, the only extra setting is the second timeframe used as input for the calculations. When the indicator is applied to a timeframe lower than the current chart's time frame it's not possible to display all values. In this case, depending on the price type chosen, it will use a different approach to give the most appropriate value.
+Two examples:
+timeframe_1=5 minutes, timeframe_2=1 minute, calculations based on
+Close
+price series:
+For any bar on timeframe_1, the indicator will show the latest bar of timeframe_2 with a Close time before or at the Close time of the bar at timeframe_1. This goes for bars that have been closed as well as the current bar that's still open.
+timeframe_1=5 minutes, timeframe_2=1 minute, calculations based on
+Open
+price series:
+For any bar at timeframe_1, the indicator will show the latest bar of timeframe_2 with a opening time before or at the Open time of the bar on timeframe_1. This goes for bars that have been closed as well as the current bar that's still open. The logic here is that if you choose to calculate your indicators on the Open time of a bar then probably you will also trade when a new bar opens. In that case, at the Open of a new 5-minute bar, you will only know the Open of the first of the five 1-minute bars that are part of it. The Open of the second to fifth 1-minute bars are therefore ignored in the calculations.
+You can mix any time frame with any other time frame, even if they are not in sync, e.g. timeframe_1 = 5 minutes and timeframe_2 = 12 minutes. The indicator will make sure they stay synced. The way this works is similar to the examples above.
+See the
+MACD Histogram MTF MC
+indicator for a more visual explanation in an excel sheet.
+When switching between time frames, allow some time (a few seconds) for the price data to be loaded. If the indicator is not displayed, refresh the chart manually.
+Look in the source to switch on/off error messages:
+bool
+ShowErrorMessages=
+false
+;
+// turn on/off error messages for debugging
+Update history:
+2010 09 26: v03
+Improved display of values on timeframes smaller than the chart's timeframe;
+Set buffers to EMPTY_VALUE instead of 0 after: if(convertedTime<tempTimeArray_TF2[0]);
+Code optimization;
+Removed PLOT_DRAW_BEGIN from OnInit() - inherited from single time frame indicator;
+Moved ArraySetAsSeries of buffers and arrays into OnInit();
+2010 08 28: v02
+Indicator first published;

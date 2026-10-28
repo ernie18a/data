@@ -1,0 +1,98 @@
+The KCI Embedded Sniper is an algorithmic trading solution designed for high-precision reversal entries. Unlike conventional Expert Advisors that rely on external indicator dependencies (which often suffer from thread desynchronization and latency), this EA features a fully embedded Kinetic Compression Index (KCI) engine.
+By transplanting the entire mathematical framework of the KCI—calculating Velocity Quotients, Kinetic Displacement, Energy Dispersion, and Phase Velocity—directly into the EA’s core logic, we have eliminated "asynchronous lag." The result is a lightning-fast sniper engine that validates market exhaustion (Singularity) and momentum extremes (Williams %R) with micro-second precision, operating solely on completed bars to ensure zero-repaint performance.
+Check KCI Indicators :
+KCI Standard
+Why "Embedded"? (The Developer’s Advantage)
+Most EAs using custom indicators depend on iCustom() calls, which run on separate CPU threads. If the underlying indicator is slow to calculate, the EA misses the tick.
+Performance:
+This EA processes its own KCI matrix, requiring no external files. It significantly reduces memory overhead and ensures that signal calculation and trade execution happen in the same process loop.
+Robustness:
+Because the KCI logic is hard-coded within the EA, you are immune to common pitfalls like "indicator not found" errors, pathing issues, or desynchronized buffer reading.
+Zero-Lag Architecture:
+It uses rates_total and internal matrix arrays to perform calculations only when needed, making it one of the lightest EAs for multi-asset portfolio management.
+For EA Developers:
+When calling KCI via iCustom , ensure your EA's OnTick handler accounts for asynchronous thread loading.
+// ASYNCHRONOUS HANDLING: If KCI is still calculating, return and try again next tick.
+// Buffer Index 2 = Buy, Index 3 = Sell, Index 6 = Energy Dispersion
+if
+(
+CopyBuffer
+(handle_kci,
+2
+,
+1
+,
+1
+, buf_buy) <=
+0
+)
+return
+;
+if
+(
+CopyBuffer
+(handle_kci,
+3
+,
+1
+,
+1
+, buf_sell) <=
+0
+)
+return
+;
+if
+(
+CopyBuffer
+(handle_kci,
+6
+,
+1
+,
+1
+, buf_ed) <=
+0
+)
+return
+;
+// Lock the bar time ONLY after data is safely retrieved
+last_bar_time = current_time;
+// You can use buf_ed (Energy Dispersion) to calculate dynamic, volatility-based Stop Losses.
+How to Use & Settings
+Trade & Risk Management
+InpLotSize
+: Fixed volume for entries.
+InpEDMultiplierSL/TP
+: This is a key feature. Instead of static pips, the EA uses the
+Energy Dispersion (ED)
+buffer from the KCI core to dynamically calculate Stop Loss and Take Profit levels. If the market is volatile (high ED), the EA widens its stop levels automatically to avoid noise; if the market is calm, it tightens them.
+WPR Momentum Filter
+InpWPRPeriod
+: Momentum lookback.
+InpWPRBuyLevel / InpWPRSellLevel
+: Acts as a "Gatekeeper." Even if KCI detects a market singularity, the EA will only enter if the WPR confirms that the price is in an extreme oversold or overbought state, drastically increasing the win probability.
+KCI Computing Core
+ZScorePeriod / CompressionThreshold / BasePeriod
+: These inputs allow you to tune the sensitivity of the Singularity detection. A lower CompressionThreshold makes the EA more selective, entering only on the most extreme market collapses.
+Suggested Roadmap for Further Development
+This architecture is just the starting point. To transform this from a sniper bot into an institutional-grade trading system, consider these development paths:
+Multi-Timeframe Confirmation (MTF):
+Modify the GetEmbeddedKCISignal function to require the Singularity to appear on both the H1 and M15 timeframes simultaneously. This adds a powerful layer of trend alignment.
+Machine Learning Filter:
+The internal KCI matrices (VQ, KD, PV) are already normalized. A developer could easily export these values into a CSV file to train a lightweight Neural Network (via Python or MQL5 ONNX) to replace the static CompressionThreshold with an AI-predicted probability score.
+Adaptive Volatility Scaling:
+Instead of a fixed InpLotSize , integrate a capital-based risk calculator that adjusts the position size based on the current_ed (Energy Dispersion). This turns the EA into a professional risk-managed instrument that automatically lowers exposure during high-dispersion (chaotic) markets.
+Order Flow Integration:
+Pair the "Singularity" signal with real-time Tick Volume divergence analysis. If a Singularity is detected while volume is decreasing, the probability of a reversal increases exponentially.
+Technical Implementation Details
+Developers interested in observing the code should focus on these two critical functions:
+GetEmbeddedKCISignal()
+: This is the heart of the engine. It manually computes the kinematic matrices ( vq , kd , ed , pv ) and then iterates through a Z-Score matrix to detect the 'V' valley formation.
+Developer Tip:
+If you want to customize the "Sniper" logic, modify the is_local_min and is_energy_drop booleans here.
+OnTick()
+: Optimized using the IsNewBar() function. This ensures the EA only performs heavy calculations once per candle closure, guaranteeing that the signal is confirmed, locked, and non-repainting.
+Result :
+Getting Started
+Simply compile the KCI_WPR_Embedded_Sniper.mq5 file. No dependencies are required—you do not need to compile any separate indicator files. It is a complete, self-contained system. Attach it to your preferred currency pair, and the "Sniper" will begin scanning for market exhaustion points immediately.

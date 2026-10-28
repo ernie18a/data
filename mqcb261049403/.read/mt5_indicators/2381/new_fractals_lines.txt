@@ -1,0 +1,10 @@
+Real author:
+olyakish
+The indicator displays "squatter" fractals with regard to volumes.
+This indicator was first implemented in MQL4 and published in
+CodeBase
+on July 13, 2007.
+Fig.1. New_Fractals_Lines Indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2381

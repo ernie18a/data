@@ -1,0 +1,74 @@
+Pinball machine
+Alpari-Contest (Build 224)
+Symbol
+EURUSD (Euro vs US Dollar)
+Period
+1 Hour (H1) 2009.06.25 00:00 - 2009.07.24 22:00 (2009.06.25 - 2009.07.26)
+Model
+Control points (a very crude method, the results must not be considered)
+Parameters
+____2___="Order settings"; Lots=0.3;
+Bars in test
+1523
+Ticks modeled
+14241
+Modeling quality
+n/a
+Mismatched chart errors
+0
+Initial deposit
+10000.00
+Total net profit
+1309.38
+Gross profit
+11370.99
+Gross loss
+-10061.61
+Profit factor
+1.13
+Expected payoff
+6.82
+Absolute drawdown
+487.02
+Maximum drawdown
+990.18 (8.91%)
+Relative drawdown
+8.91% (990.18)
+Total trades
+192
+Short positions (won %)
+101 (52.48%)
+Long positions (won %)
+91 (53.85%)
+Profit trades (% of total)
+102 (53.13%)
+Loss trades (% of total)
+90 (46.88%)
+Largest
+profit trade
+299.10
+loss trade
+-268.80
+Average
+profit trade
+111.48
+loss trade
+-111.80
+Maximum
+consecutive wins (profit in money)
+5 (325.77)
+consecutive losses (loss in money)
+5 (-425.40)
+Maximal
+consecutive profit (count of wins)
+510.12 (3)
+consecutive loss (count of losses)
+-606.87 (3)
+Average
+consecutive wins
+2
+consecutive losses
+2
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9086

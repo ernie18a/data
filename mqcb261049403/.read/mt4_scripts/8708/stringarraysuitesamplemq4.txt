@@ -1,0 +1,1 @@
+Demo of functions in StringArraySuite.mqh

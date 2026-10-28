@@ -1,0 +1,4 @@
+Indicator that displays the day's trend at any chart time. You can customise the colours and position of the text on the screen.
+Translated from Portuguese by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/pt/code/56909

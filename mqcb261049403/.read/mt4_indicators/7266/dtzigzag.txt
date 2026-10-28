@@ -1,0 +1,9 @@
+Author: klot
+In this mode, the chart of the current timeframe displays the ZigZag from a higher timeframe. The plotting algorithm in ZUP differs from the one developed by
+klot
+. Only his idea was used. Read
+here
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7266

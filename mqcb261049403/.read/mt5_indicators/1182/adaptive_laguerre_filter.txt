@@ -1,0 +1,8 @@
+The given indicator represents the approved variant of an Adaptive Laguerre filter calculated by the method of
+John Eiliers
+. Despite the source indicator it uses the algorithm of Laguerre polynomial of any order (default Order parameter is 4). In addition, you can use different ways of smoothing factor of adaptability with AdaptiveSmooth (default 5) and AdaptiveSmoothMode (default Median) parameters.
+Additionally, there is the possibility of constructing non-adaptive Laguerre filter using Length period in bars and AdaptiveMode parameter equal to 0.
+There are also opportunities of highlighting the trend (ColorMode parameter) and the construction of the filter for the higher timeframes.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1182

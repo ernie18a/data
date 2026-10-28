@@ -1,0 +1,6 @@
+Author:
+Kirk Sloan
+Indicator MTF MACD_Bars. The description to be
+here
+.
+Indicator MTF Macd_Bars

@@ -1,0 +1,1 @@
+This indicator shows symbol index with two MA.

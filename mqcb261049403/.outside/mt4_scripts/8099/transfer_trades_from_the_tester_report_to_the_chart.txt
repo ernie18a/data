@@ -1,0 +1,9 @@
+The script is designed to transfer trades from the standard report of the MetaTrader 4 tester to the chart. The main purpose of such action is to study third-party trading systems.
+It transfers to the chart:
+Entry Points. Displayed by characters separately for long and short positions. The character codes can be set by user.
+Lines or rectangles connecting the entry and exit points. The type of object is defined by the TypeObjects parameter (0-rectangle, 1-line).
+Trades results in points. Different colors for the profitable and unprofitable trades.
+Running total profit or loss.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8099

@@ -1,0 +1,9 @@
+Pivot point formula's
+Standard(Floor)
+Fibonacci
+Camarilla
+Woodie
+Traditional
+Demark
+Classic
+Timeframe M1-MN,historical pivot points,future pivot points,central pivot range(for Standard(Floor)), unique ID and many line/label customization settings.

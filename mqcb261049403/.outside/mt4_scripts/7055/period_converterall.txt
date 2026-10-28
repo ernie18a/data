@@ -1,0 +1,13 @@
+The second version of the script for converting a chart of the M1 timeframe into all other charts of the standard timeframes and recreating the M1 timeframe chart.
+The advanced functionality of chart conversion of the M1 timeframe chart depends on the ReCreateM1Volume input parameter. It can take on the following values:
+-2 by default or less (-3, -4 and so on). The script simply converts the М1 timeframe chart into all other charts of the standard timeframes;
+-1. The script performs the recreation of the M1 timeframe chart by the following rule: If the volume of a М1 bar is equal to 1 then the volume will be recalculated according to the rule of inequality of Open, Close, High, Low prices. For example: Open 1.2524, Close 1.2530, High 1.2540, Low 1.2524. The new volume will be set to 3 (i.e. 3 different prices in the bar). At the same time the Close price must not be equal to High and Low. Then the conversion into all other timeframes will be performed;
+0: The script performs the recreation of the М1 timeframe according to the same rule as with "-1", but for absolutely all bars
+ignoring their initial volume. After that the conversion into all other timeframes will be performed;
+1: (2, 3, 4 and so on). The script performs the recreations of the М1 timeframe, setting the user-specified volume for all М1 bars,
+i.e. the value of the ReCreateM1Volume input parameter. Then the conversion into all other timeframes will be performed.
+And finally, when using the M1 timeframe recreation make sure to restart the terminal for the recreated quotes to show up in the History Center.
+Good luck.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7055

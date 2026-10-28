@@ -1,0 +1,75 @@
+Strategy Tester Report
+DVD 100-50 cent
+Alpari-Classic (Build 226)
+Symbol
+EURUSD (Euro vs US Dollar)
+Period
+1 Minute (M1) 2009.01.02 10:00 - 2010.11.15 16:02 (2009.01.01 - 2010.11.16)
+Model
+Every tick (the most precise method based on all available least timeframes)
+Parameters
+AccountIsMini=true; MoneyManagement=true; UseTrailingStop=true; TradeSizePercent=10; Lots=0.1; MaxLots=400; StopLoss=210; TakeProfit=18; MarginCutoff=10; Slippage=4;
+Bars in test
+688068
+Ticks modelled
+21693410
+Modelling quality
+25.00%
+Mismatched charts errors
+0
+Initial deposit
+10000.00
+Total net profit
+1001828.36
+Gross profit
+1233251.81
+Gross loss
+-231423.45
+Profit factor
+5.33
+Expected payoff
+2846.10
+Absolute drawdown
+1350.15
+Maximal drawdown
+161809.28 (19.09%)
+Relative drawdown
+36.74% (96335.62)
+Total trades
+352
+Short positions (won %)
+188 (97.87%)
+Long positions (won %)
+164 (96.95%)
+Profit trades (% of total)
+343 (97.44%)
+Loss trades (% of total)
+9 (2.56%)
+Largest
+profit trade
+41406.97
+loss trade
+-54725.84
+Average
+profit trade
+3595.49
+loss trade
+-25713.72
+Maximum
+consecutive wins (profit in money)
+91 (829262.55)
+consecutive losses (loss in money)
+1 (-54725.84)
+Maximal
+consecutive profit (count of wins)
+829262.55 (91)
+consecutive loss (count of losses)
+-54725.84 (1)
+Average
+consecutive wins
+34
+consecutive losses
+1
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9952

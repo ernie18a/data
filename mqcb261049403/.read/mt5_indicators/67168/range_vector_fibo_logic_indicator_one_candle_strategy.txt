@@ -1,0 +1,20 @@
+Range Vector Fibo Logic (Indicator) — One Candle Strategy
+Idea of the Indicator, Stop waking up at 3 AM to draw lines manually. This is the professional visual tool for the popular “One Candle” and “Daily Breakout” strategies used by institutional traders. If you are trading the viral Daily High/Low Breakout strategy, this tool automates the analysis. It instantly projects the Vector Breakout Levels, Stop Loss Zones, and Fibonacci Profit Targets for the current day based on yesterday's volatility.
+How to Interpret the Indications
+The indicator draws specific lines to guide your trading decisions:
+Black Lines (Entry): These mark the Breakout trigger levels (Yesterday's High and Low). A candle closes outside these lines signals a potential entry.
+Red Dotted Lines (Stop Loss): Placed at the 0.9 Fibonacci retracement level. If price reverses to this level, the setup is invalid.
+Blue Solid Lines (Take Profit): Placed at the 1.25 Fibonacci expansion level. This is the statistical exhaustion point for the day's volatility vector.
+Recommended Symbol and Timeframe
+Symbol: XAUUSD (Gold)
+Timeframe: M15 (15-Minute)
+External Variables (Parameters)
+This indicator allows full customization of the strategy logic and visuals:
+History_Days: Determines how many past days the indicator will draw levels for (Default: 10).
+Show_Period_Sep: Toggle vertical separators to visually divide trading days (true/false).
+Line_Width: Adjust the thickness of the signal lines for better visibility (Default: 2).
+Entry / Stop Loss / Take Profit Color: Customize the line colors to match your chart background.
+Long_SL_Level: The Fibonacci ratio for Long Stop Loss (Default: 0.9).
+Long_TP_Level: The Fibonacci ratio for Long Take Profit (Default: 1.25).
+Short_SL_Level: The Fibonacci ratio for Short Stop Loss (Default: 0.1).
+Short_TP_Level: The Fibonacci ratio for Short Take Profit (Default: -0.25).

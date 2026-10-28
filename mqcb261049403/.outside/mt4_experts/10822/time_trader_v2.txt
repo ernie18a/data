@@ -1,0 +1,3 @@
+Time trader expert advisor opens buy, sell or both trades at the time you have specified. This EA is very suitable for hedging strategies, scalping as well as long term strategies. The EA can also be used to detect hidden time based market behaviour.
+New version includes
+: Better broker compatibility, support for ecn accounts and exclusion of seconds proximity.

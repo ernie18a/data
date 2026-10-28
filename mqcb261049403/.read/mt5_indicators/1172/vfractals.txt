@@ -1,0 +1,10 @@
+The real author:
+sanyooooook
+The VFractals indicator marks the fractal level formed on the bar with the volume larger than the average volume of the last 3 bars to the fractal.
+This indicator was first implemented in MQL4 and published in
+CodeBase in mql4.com
+on 10.06.2010.
+Fig.1 The VFractals indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1172

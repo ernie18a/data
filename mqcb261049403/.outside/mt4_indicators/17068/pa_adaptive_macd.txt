@@ -1,0 +1,5 @@
+There is a lot of MACD versions. Here is one more but a bit "different".
+This version is specific because it is two times adaptive.
+First, it is using Hilbert transform for phase accumulation to calculate MACD fast and slow periods, and that way it is having the basic MACD calculation adaptive (the interesting part is that the fast and the slow periods are not changed proportionally - they are having a sort of "a life on their own" and each is adapting to market conditions on its own) which help in a lt of cases when the market enters volatile periods.
+Second, the usual criteria for MACD (signal line cross or zero line cross) is changed in this one and what used to be a zero line cross is changed to be a dynamic (also adaptive) levels cross (levels can be floating or quantile levels). For the sake of having something classical too, slope can be used for short term trend./momentum determination too.
+Indicator is already multi time frame with all the usual set of alerts built in and, in order to help with possible signals, on chart arrows can be used (handled by the indicator itself).

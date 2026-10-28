@@ -1,0 +1,169 @@
+The Expert Advisor trades directly on whichever symbol chart it is attached to (no hardcoded symbols). It executes a maximum of one trade per week and all strategy decisions are calculated exclusively using Daily (D1) closed candle data based on server time.
+⚡ Core Rules
+Rule 1 — Entry:
+On Monday close, the closing price is compared with the previous session's close (usually Friday). A long position is triggered only if Monday’s close is strictly lower than the prior trading day’s close. This check occurs only once per week.
+Rule 2 — Exit:
+The open position is automatically closed at Wednesday's daily close (executed at the first tick of the next daily session), regardless of profit or loss. If Wednesday close is missed, any subsequent daily close (Thursday, Friday, or weekend close) will trigger the exit.
+Rule 3 — Stop Loss & Safety:
+A percentage-based Stop Loss ( InpStopLossPercent ) is applied upon entry, respecting the broker's minimum stop distance ( SYMBOL_TRADE_STOPS_LEVEL ). If 5 consecutive attempts to apply or modify the Stop Loss fail, the EA attempts an immediate market close to ensure capital safety.
+Note: There is no Take Profit target—exits are entirely time- and stop-based.
+🛡️ Optional Entry Filters
+Both filters are optional toggles that can only restrict entries further (they will never create entries on their own or loosen Rule 1):
+Internal Bar Strength (IBS) Filter:
+Calculates IBS = (Close - Low) / (High - Low) for Monday's candle. Entry is permitted only if IBS <= InpIBSMax . If High equals Low, the day is ignored and logged.
+Moving Average (MA) Filter:
+Requires Monday’s close to be strictly below a Simple Moving Average ( InpMAPeroid ) calculated over closed D1 candles including Monday.
+⚙️ Key Specifications
+Chart Timeframe:
+Timeframe independent (uses D1 series internally). Attaching to a D1 chart is recommended for clean log monitoring.
+Symbol Compatibility:
+Multi-index compatible (US500, UK100, GER40, etc.).
+Risk Management:
+Strict 1-position limit with robust retry logic for order execution and emergency closes.
+Inputs
+Input
+Default value
+Unit
+Meaning and effect
+InpLots
+0.10
+lots
+Fixed position size requested for every entry. It is floored to the symbol's volume step; a size below SYMBOL_VOLUME_MIN aborts the entry (it is never rounded up), a size above SYMBOL_VOLUME_MAX is clamped down to the maximum.
+InpStopLossPercent
+10.0
+percent of the entry price
+Distance of the stop loss below the entry price. If the broker's SYMBOL_TRADE_STOPS_LEVEL demands a wider distance, the stop is widened. Values less than or equal to 0 are rejected at start-up: the EA does not run without a stop.
+InpMagic
+20260922
+identifier
+Magic number that marks the EA's own positions. Only positions on the chart symbol carrying this magic are counted and managed.
+InpMaxSlippagePoints
+30
+points
+Requested maximum deviation (slippage tolerance) for the market entry and the market exit. This is a tolerance request, not a guaranteed cap: the actually executed price also depends on the broker's execution mode and policy.
+InpTradeComment
+"MonDip long"
+text
+Comment attached to the entry order, visible in the terminal's trade history.
+InpUseIBS
+true
+on / off
+Enables the optional IBS entry filter (see below). The filter can only make entry stricter.
+InpIBSMax
+0.25
+ratio in (0, 1]
+Maximum allowed IBS of the Monday bar. Values outside (0, 1] are rejected at start-up.
+InpUseMA
+true
+on / off
+Enables the optional long-term moving-average entry filter (see below).
+InpMAPeriod
+180
+daily bars
+Period of the simple moving average of daily closing prices, computed on closed D1 bars ending with the Monday bar. Values below 2 are rejected at start-up.
+InpVerboseLog
+true
+on / off
+Prints additional journal detail. The weekly decision line is always printed regardless of this switch.
+The core logic in three excerpts
+The following excerpts are cut verbatim from the submitted source. They are
+selected excerpts of the decision logic, not complete runnable programs
+.
+Signal (rule 1):
+//--- RULE 1 ------------------------------------------------------
+// DECISION D8: "below" is a strict comparison, an equal close is a no-trade week.
+if
+(!(bar.close < refBar.close))
+return
+(
+StringFormat
+(
+"SKIP - rule 1: the Monday close %s is not below the previous trading day's close %s (equal or above)."
+,
+DoubleToString
+(bar.close,
+_Digits
+),
+DoubleToString
+(refBar.close,
+_Digits
+)));
+Filters (IBS and long-term MA):
+//--- FILTER 1: IBS ----------------------------------------------
+if
+(InpUseIBS)
+   {
+if
+(!haveIBS)
+      {
+// DECISION D7
+return
+(
+"SKIP - IBS filter: High == Low on the Monday bar, the ratio is undefined - no-trade day."
+);
+      }
+if
+(!(ibs <= InpIBSMax))
+// DECISION D8: "<=" as specified
+return
+(
+StringFormat
+(
+"SKIP - IBS filter: IBS %.4f is above InpIBSMax %.4f."
+, ibs, InpIBSMax));
+   }
+//--- FILTER 2: long-term MA -------------------------------------
+if
+(InpUseMA)
+   {
+if
+(!haveMA)
+return
+(
+StringFormat
+(
+"SKIP - MA filter: not enough daily history to compute the MA(%d)."
+, InpMAPeriod));
+if
+(!(bar.close < ma))
+// DECISION D8: strict "<"
+return
+(
+StringFormat
+(
+"SKIP - MA filter: the Monday close %s is not below the MA(%d) %s."
+,
+DoubleToString
+(bar.close,
+_Digits
+), InpMAPeriod,
+DoubleToString
+(ma,
+_Digits
+)));
+   }
+Exit (Wednesday close and later):
+MqlDateTime
+dtBar;
+TimeToStruct
+(tBar, dtBar);
+// DECISION D18
+if
+(!BarIsAtOrAfterWednesday(dtBar.day_of_week))
+return
+;
+// DECISION D2: the exit is triggered by the close of the Wednesday bar and
+// executed on the first tick after it, retried until the position is flat.
+// DECISION D24: "the bar closed" is MT5's definition - the moment the next
+// daily bar opens on the server clock - not the cash-market closing bell.
+CloseOurPosition(
+StringFormat
+(
+"rule 2 - the daily bar %s closed and it is a %s (Wednesday close reached)"
+,
+TimeToString
+(tBar,
+TIME_DATE
+), WeekdayName(dtBar.day_of_week)));
+Weekly flow
+Figure 1. One weekly cycle of the EA - schematic, not a terminal screenshot and not backtest data.

@@ -1,0 +1,7 @@
+This indicator has been done to find out
+MACD
+divergenсe\convergenсe and mismath between price and volume.
+Full functional MACD lines and histogram, and you can turn off showing volumes whenever you want.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12455

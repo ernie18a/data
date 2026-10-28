@@ -1,0 +1,12 @@
+The indicator plots the correlation between eight currencies and Gold.
+Select one of the following indicators for calculation:
+Moving Average
+Moving Average Convergence/Divergence
+Stochastic Oscillator
+Relative Strength Index
+Commodity Channel Index
+Relative Vigour Index
+DeMarker Oscillator
+Momentum Index
+Triple Exponential Index
+Money Flow Index

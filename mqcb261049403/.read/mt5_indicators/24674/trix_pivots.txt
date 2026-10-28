@@ -1,0 +1,10 @@
+Theory :
+TriX oscillator is a nice trending indicator found as a built in indicator in metatrader.
+This version is adding pivot calculation to such TRiX. Pivots are calculated from the TRiXitself, and you have 4 possible types that can be displayed :
+display pivot only
+display pivot and 1st level support and resistance
+display pivot and 1st and 2nd level support and resistance
+display pivot and 1st and 2nd and 3rd level support and resistance
+The time frame selected, is used for pivots only (that time frame is used as "delimiter" for pivots). The TRiX is always calculated as current time frame
+Usage :
+You can use it as it is recommended for TRiX

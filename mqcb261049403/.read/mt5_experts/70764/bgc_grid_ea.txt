@@ -1,0 +1,144 @@
+Overview
+This Expert Advisor implements a
+regime-aware, restartable grid-trading system
+grounded in the Bi-Directional Grid Constrained (BGC) stochastic process
+research by Aldo Taranto
+at the University of Southern Queensland (2020–2022). The research formally proves that naive grids converge toward ruin, but that finite cycles with regime-aware gating transform grid trading into a viable strategy with positive expected value under the right conditions.
+Unlike conventional grid EAs that run a single open-ended grid until the account blows, this system operates in short, restartable
+cycles
+. Each cycle picks an anchor price, builds a grid, trades under active supervision, and closes when a profit target, drawdown threshold, age limit, or weekend rule triggers. The cycle then restarts fresh at current market conditions, resetting both variance accumulation and grid-level exposure back to zero.
+The EA features
+three distinct grid algorithms
+that activate automatically based on detected market regime:
+BGT (Bi-Directional Grid Trading)
+— places both buy and sell orders at each level. Designed for ranging markets where volatility dominates drift. This is the default mode.
+TGT (Trending Grid Trading)
+— places stop orders in the trend direction only, with no per-trade take profit and basket-level exit. Activates when a trend is detected via the sigma/mu ratio or a CUSUM structural break.
+MGT (Mean-Reversion Grid Trading)
+— places counter-trend limit orders only, with take profit toward the anchor. Activates after a failed TGT cycle to capture the post-trend reversion.
+Mode selection happens automatically at each cycle restart based on the VolatilityGate (ATR/drift ratio with cooldown) and CPDEngine (frozen-baseline CUSUM structural break detector).
+Recommended Setup
+Setting
+Recommended value
+Notes
+Symbol
+XAUUSD (Gold)
+Primary development and testing instrument. The EA works on any symbol — ATR-dynamic spacing adapts automatically.
+Chart timeframe
+M1 (1-minute)
+The chart timeframe is for tick-level execution and sync. Regime detection and ATR spacing use configurable higher timeframes (default H4 and D1).
+Account type
+Hedged
+Required. The EA places simultaneous long and short positions and uses CloseBy for efficient shutdown.
+Important:
+Always test on a demo account first. Grid trading involves significant financial risk. The mathematical research demonstrates both the potential and the structural limitations of constrained grid systems. Past backtest performance does not guarantee future results.
+Key Features
+Regime Detection and Mode Switching
+VolatilityGate computes the sigma_t / mu_t ratio (ATR vs. drift magnitude) on a configurable regime timeframe (default H4) with cooldown-based state transitions.
+CPDEngine runs a frozen-baseline CUSUM structural break detector to identify abrupt regime changes that the continuous ratio filter may detect too gradually.
+Three start gates prevent cycle deployment into hostile conditions: CPD block, price-level filter near recent extremes, and optional BGT disable mode.
+Adaptive Grid Infrastructure
+ATR-dynamic spacing recalculates grid width from daily ATR at each cycle restart, so spacing tracks the instrument's current volatility rather than using a fixed pip value.
+Equity-based dynamic lot sizing (Remark 42 from the thesis) compounds base lot upward during profitable operation and scales down during drawdowns.
+Mild multiplier or stress-responsive dynamic lot mode for per-level sizing within a cycle.
+Cycle Management
+Equity-based drawdown kill switch (runs every tick) with optional tighter threshold for MGT mode.
+Profit-target basket close with automatic restart — the variance reset mechanism from the research.
+Unconditional age-based restart (default 72 hours) — justified by the exponential variance growth proof.
+Weekend flat close on Friday with delayed restart on Monday — protection against gap risk.
+Diagnostics Pipeline
+CSV logging of per-bar snapshots (30 fields), per-cycle summaries (28 fields), and event records (7 fields).
+L_t formula computation, snapshot RPR, path-aware L_t, and Theorem 52/53 ruin probability diagnostics.
+Two companion Python scripts for post-run analysis and cross-run parameter calibration.
+Backtest Results
+File Structure
+The EA consists of one main file, nine header modules, and two companion Python scripts:
+MQL5 Source Files
+File
+Role
+Description
+GridEA.mq5
+Orchestrator
+Main EA file — all inputs, OnInit/OnTick/OnDeinit, cycle start/restart policy, weekend rules, block flags, and glue code between modules.
+Defines.mqh
+Shared types
+Enums (ENUM_GRID_STATE, ENUM_GRID_MODE, ENUM_LOT_MODE), structs (GridLevel, GridSession), and constants.
+GridCore.mqh
+Execution engine
+Order placement for all three modes (PlaceLevelBGT/TGT/MGT), sync and re-arm, CloseAllPositions with CloseBy hedging, position recovery.
+LotEngine.mqh
+Lot sizing
+Per-level lot calculation with mild multiplier mode and dynamic shrink-under-stress mode.
+LtMonitor.mqh
+Risk diagnostics
+Theoretical L_t, weighted dollar loss, snapshot RPR, path-aware L_t, Theorem 52/53 ruin probability, expected absorption steps.
+ProfitMonitor.mqh
+Profit logic
+Cycle profit calculation (equity minus cycleStartEquity), target check (percent or dollar), position counting.
+VolatilityGate.mqh
+Regime filter
+ATR and drift computation on regime timeframe, sigma_t/mu_t ratio, cooldown-based favorable/unfavorable state, signed drift for trend direction.
+CPDEngine.mqh
+Break detector
+Frozen-baseline CUSUM — collects baseline window, freezes it, accumulates S_high/S_low, fires on threshold breach, resets accumulators.
+StateManager.mqh
+Persistence
+Saves and loads cycle state via MQL5 global variables. Supports spacing mismatch tolerance for ATR-dynamic mode.
+DiagnosticLog.mqh
+CSV logging
+Buffers BarSnapshot, DiagCycleSummary, and DiagEventRecord rows in memory. Flushes to FILE_COMMON on OnDeinit or OnTester.
+Python Companion Scripts
+File
+Purpose
+Description
+analyze_backtest.py
+Post-run analysis
+Loads latest CSVs from MetaTrader common files. Prints 13 text-analysis sections, runs 10 automated bug checks, generates 8 chart PNGs. Supports --date and --no-charts flags.
+calibrate_parameters.py
+Cross-run calibration
+Loads all CSVs across all dates. Runs 6 calibration passes: variance age curve, Theorem 53 sanity check, sigma/mu threshold derivation, profitability zone analysis, expected-steps validation, and multi-timeframe regime detection. Supports --no-mt5 flag.
+Input Parameters Overview
+The EA exposes 12 input groups. Key parameters are listed below with their defaults. All parameters are documented in the source code and explained in the accompanying article series.
+Group
+Key parameters
+Defaults
+Grid structure
+InpGridSpacing, InpGridLevels, InpBaseLot
+500 pts, 8 levels/side, 0.01 lot
+Dynamic spacing
+InpUseATRSpacing, InpATRSpacingTF, InpATRSpacingMultiplier
+true, D1, 0.12
+Dynamic lot sizing
+InpUseDynamicBaseLot, InpLotFraction
+true, 0.000003
+Exit conditions
+InpRuinThreshold, InpProfitTargetPercent, InpMaxCycleHours
+0.25 (25%), 3.0%, 72 hours
+Regime detection
+InpRegimeTF, InpMinSigmaMuRatio, InpATRPeriod, InpMAPeriod
+H4, 5.0, 14, 20
+Mode switching
+InpEnableTGT, InpEnableMGT, InpTGTSigmaMuThreshold
+true, true, 5.0
+CPD
+InpUseCPD, InpCPDWindow, InpCPDDelta, InpCPDThreshold
+true, 50, 2.0, 15.0
+Weekend
+InpEnableWeekendClose, InpFridayCloseHour, InpMondayResumeHour
+true, 22, 1
+Note
+: Disable free-margin closures if need not be.
+Research Basis
+The EA is based on the following academic work by Aldo Taranto and Manzur Khan at the University of Southern Queensland:
+Gambler's Ruin Problem and Bi-Directional Grid Constrained Trading and Investment Strategies
+— IMFI, 2020
+Drawdown and Drawup of Bi-Directional Grid Constrained Stochastic Processes
+— JMS, 2020
+Application of Bi-Directional Grid Constrained Stochastic Processes to Algorithmic Trading
+— JMS, 2021
+Iterated Logarithm Bounds of Bi-Directional Grid Constrained Stochastic Processes
+— GSA, 2021
+Bi-Directional Grid Constrained Stochastic Processes and Their Applications in Mathematical Finance
+— PhD Thesis, 2022
+A detailed companion article series explains the mathematical foundations and walks through the implementation of each module.
+It's Now Available

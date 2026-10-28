@@ -1,0 +1,2 @@
+Simple indicator that will scan thru the symbols in the MarketWatch window to alert you if price is overbought or oversold based on RSI.
+You can use a pop up alert or send to phone.

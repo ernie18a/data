@@ -1,0 +1,15 @@
+The indicator for multi-currency technical analysis based on the related financial assets resonances.
+The idea of the correlation between different financial assets is not new and it would be interesting to develop the algorithm based exactly on the analysis of such a regularities. The indicator contains multi-currency code based on the article of Vasily Yakimkin "
+Resonances - a New Class of Technical Indicators
+" published in the "Currency Speculator" magazine (2001).
+In few words, the idea of this method is as follows. For example, to analyze the EUR/USD market we may use not only the readings of any indicator concerning this asset but also the readings of the same indicator concerning the related assets - EUR/JPY and USD/JPY.
+It is better to use the indicator with the values normalized in the same range of changes to provide simplicity and convenience of measurements and calculations.
+Stochastic Oscillator
+is quite suitable for that purposes and it was used in this indicator.
+Detailed description of this indicator and its signals can be found in the article
+"Creating
+an Expert Advisor, which Trades on a Number of Instruments
+".
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/451

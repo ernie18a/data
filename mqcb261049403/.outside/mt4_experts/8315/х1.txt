@@ -1,0 +1,9 @@
+This EA works in the following manner:
+1) Two positions buy and sell with the lot of 0,1 are opened simultaneously with the specified T/P level - order_profit;
+2) When a position is closed the buy and sell are placed again with a decreased lot, and so on;
+3) When the total profit that is equal to my_profit is reached all the positions will be closed and everything will begin again.
+If it appears that the lot becomes equal to 0 then the next lot is started with 0,1 again, and so on.
+The results of testing.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8315

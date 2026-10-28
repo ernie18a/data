@@ -1,0 +1,5 @@
+ZigZag based on the fractals of a larger timeframe considering VininI_FractalsTrend indicator data. The indicator has no other input parameters except the possibility to select a timeframe.
+Place VininI_FractalsTrend compiled file to the terminal_data_folder\MQL5\Indicators.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/705

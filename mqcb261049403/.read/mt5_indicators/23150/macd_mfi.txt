@@ -1,0 +1,18 @@
+Original author:
+Lukashuk Viktor
+The
+MFI
+indicator (Money Flow Index) applied over
+MACD
+(Moving Average Convergence/Divergence) provides a visual presentation of the current price divergence.
+In addition to divergences, MACD provides a superb display of reversals on minor periods, such as 1, 5 and 15 min. Intersection of the MACD signal line and MFI can serve as an additional signal to open a trade. MFI line color changes after such an intersection.
+Input parameters contain the MACD histogram and MFI parameters, as well as
+caliber
+- the RSI scaling factor. This factor has been added due to a large variation of MACD values on different timeframes. So, "caliber" for 15 minute EURUSED is about 4, for daily TF "caliber" = 20, for M1 "caliber" =0.5.
+The indicator uses the CMoving_Average class from the SmoothAlgorithms.mqh library. The class is described in detail in the article
+Averaging Price Series for Intermediate Calculations Without Using Additional Buffers
+.
+Fig.1. The MACD_MFI indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23150

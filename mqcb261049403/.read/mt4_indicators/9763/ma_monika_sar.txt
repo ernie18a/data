@@ -1,0 +1,3 @@
+Works on the range of M1 to H4.
+Of course, the colors of MA and Parabolic SAR are the same for the same periods.
+Good luck!

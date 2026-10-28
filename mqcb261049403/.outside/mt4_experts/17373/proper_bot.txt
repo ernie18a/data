@@ -1,0 +1,5 @@
+The Proper Bot is for those who like Martingale style trading.  Features: Stop Loss, Take Profit, Trailing Stop Loss functions. All are calculated in POINTS.
+A high and low level parameter price range.
+Market entry: This is user defined by tick volume for any given timeframe and doesn't have to be the same timeframe which the EA operates on. In addition, entry can be decided by a 3 EMA crossover. This does correspond to the timeframe the EA operates on. This function can be disabled if not required.
+Grid: This is where subsequent orders are mapped.
+Screenshot of variables, showing format of grid map and input of high & low parameters.

@@ -1,0 +1,4 @@
+The indicator plots straight channels on three different timeframes (by default 1 hour, 1 hours, 4 day) and displays them on one chart. Also, for greater clarity, it displays the boundaries of each channel on the chart. The line width varies depending on the timeframe. Version channels_v2.5.mq4 differs in presence of horizontal extensions of the channel boundaries.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8707

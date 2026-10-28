@@ -1,0 +1,13 @@
+By definition Elliot oscillator is a "34 period simple moving average of prices subtracted from a 5 period simple moving average of prices displayed as a histogram above and below a zero line" (it is sometimes called a "5/34 oscillator"). This version is much extended.
+In this version you can choose any periods for calculation (which, in some cases makes it a MACD - whenever EMA is used for calculation), but for the sake of flexibility, it is done so. Averages types that can be used for calculation are the usual:
+simple moving average (the default and how the original Elliot oscillator is calculated)
+exponential moving average
+smoothed moving average
+linear weighted moving average
+Colors (and alerts) can be chosen from 3 types :
+on outer levels cross
+on middle level cross
+on slope
+Also the usual 22 types of prices (all price variations and their heiken eshi equivalents) and multi time framing are already built in.
+PS: levels are none of the standard levels. This indicator uses discontinued ema to calculate levels and then the middle line is taken as an average of the two outer levels. That type of middle "zero" line gives earlier signals than the usual zero cross and, even in cases when ema is used for Elliot oscillator, those levels are making it a completely different indicator from macd. So, there is no danger of using this the same as macd since they are not going to be the same.
+PPS: some versions of Elliot oscillators for mt4 (some made by me too) were using peak detection which, as it is natural when it comes to peaks/extremes detection, are recalculating/repainting. This version does not have that and, thus, it does not have any part that repaints. If using in signaling mode, use it freely since the signals are not going to be recalculated/repainted.

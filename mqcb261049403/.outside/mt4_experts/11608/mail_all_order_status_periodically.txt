@@ -1,0 +1,11 @@
+Mail all current order status periodically, the interval is sendmininterval, unit is second. It's a simple EA but I use it everyday.
+Recommendations:
+1. Sendmininterval should set > 60 (send interval more than 1 minute) to avoid too many mails.
+2. Please configure in Tools>options>Email correctly, for example:
+SMTP server:smtp.163.com
+SMTP login:XXXXXX
+SMTP pass:*****
+From:XXXXXX@163.com
+To:YYYYYY@hotmail.com
+You can improve for some other purpose,such as send warning mail if orders newly opened,indicator's signals,etc.
+If there are any bugs or suggestions, please kindly let me know.

@@ -1,0 +1,40 @@
+Day of week indicator. Another version of the
+indicator
+displaying week days on a price chart. The indicator shows week days with day numbers, month names and week day separators.
+There are sixteen customizable parameters:
+Hours offset
+- zero hour shift
+Show days numbers
+- display date number next to week day name (Yes/No)
+Day label color
+- week day name label color
+Day label font size
+- week day font size
+Day label font name
+- week day font type
+Day dividing lines color
+- day separator line color
+Day dividing lines style
+- day separator line style
+Day dividing lines width
+- day separator line width
+Show day dividing lines date field
+- display date field on day separator line (Yes/No)
+Month label color
+- month label color
+Month label font size
+- month name font size
+Month label font name
+- month name font type
+Month dividing lines color
+- month separator line color
+Month dividing lines style
+- month separator line style
+Month dividing lines width
+- month separator line width
+Show month dividing lines date field
+- display date field on month separator line (Yes/No)
+It is not recommended to run the indicator on a timeframe above H4
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22927

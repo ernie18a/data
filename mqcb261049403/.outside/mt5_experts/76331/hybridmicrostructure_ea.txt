@@ -1,0 +1,390 @@
+The
+Hybrid Microstructure EA
+is an advanced, high-frequency scalping Expert Advisor designed specifically for
+XAUUSD (Gold) on the M1 timeframe
+. Unlike traditional indicators that rely on lagging OHLC mathematics, this EA operates on
+Tick-Level Microstructure Dynamics
+—tracking tick velocity, volume-weighted average price (VWAP) deviations, and liquidity sweep rejections (stop hunts) executed by institutions.
+Becktest :
+To bridge the gap between deterministic local rules and adaptive intelligence, it features an
+AI Bridge Decision Layer
+that supports both an internal weighted scoring engine and an external OpenAI-compatible local AI API (via Python/FastAPI) to act as a final factual gatekeeper before order execution.
+Key Features :
+Tick Microstructure Engine:
+Bypasses lagging indicators by calculating real-time tick velocity windows and ring-buffer VWAP deviations.
+Liquidity Grab & Snapback Guard:
+Waits for retail stop-losses to be swept beyond extreme VWAP bands and triggers entries only upon confirmed price snapback/rejection.
+Dual-Engine AI Bridge:
+Integrates a deterministic local scoring matrix and an optional local AI web endpoint ( /analyze ) for multi-factor decision validation.
+Multi-Session & Volatility Filters:
+Restricts execution to active trading sessions (Asia, London, Middle East) while bypassing dangerous rollover periods.
+Advanced Risk & Money Management:
+Supports Fixed Lot or Risk-Percent (% of Balance/Equity) sizing with dynamic ATR/Fixed Stop-Loss, Break-Even, and Trailing Stop protection.
+1. Code Structure & Workflow :
+OnTick()
+: The core loop executing spread checks, real-time tick buffer updates, VWAP calculations, and liquidity grab state machines.
+CalculateTickVWAP()
+: Computes volume-weighted average price and standard deviation bands dynamically from a 500-tick ring buffer.
+AIBridge_Confirm()
+: The decision gateway acting as a final filter by evaluating multi-timeframe trends (H1, M15, M5), M1 structure, and velocity metrics.
+AIBridge_LocalScore()
+: Computes a deterministic weighted score (0.0 to 1.0) based on measured market facts.
+AIBridge_WebCall()
+: Packages live market facts into a strict JSON payload and communicates asynchronously with a local Python/FastAPI server.
+SecureProfits()
+: Manages automated Break-Even and Trailing Stop modifications safely using MT5 TRADE_ACTION_SLTP requests.
+2. Execution Workflow :
+Tick Ingestion & Filtering:
+Validates incoming ticks against maximum allowed spread, active trading hours, and minimum M1 ATR volatility.
+Microstructure Tracking: Continuously builds a ring buffer to evaluate tick velocity acceleration and VWAP band stretches (+/- StdDev).
+Trigger & AI Validation:
+When a liquidity sweep exceeds outer bands followed by a snapback rejection, the context is sent to the
+AI Bridge Layer
+.
+Decision & Execution:
+If local scoring or the external AI model approves the trade ( ALLOW=YES with high confidence), ExecuteTrade() calculates dynamic risk-based lot sizing and dispatches the order using optimal filling modes ( IOC / FOK ).
+This EA is designed to send HTTP POST requests with a JSON payload in the OpenAI style (containing `messages`, `role: system`, and `role: user`) and expects a JSON response containing `decision`, `confidence`, and `reason`.
+To create a Local AI API (local server) capable of responding to these MT5 requests within milliseconds, the ideal programming language is Python using the FastAPI framework. FastAPI is lightweight, lightning-fast, and perfectly suited for processing high-frequency data from MT5.
+Below is the complete Python server code. You can later integrate a real Machine Learning model (such as TensorFlow, Scikit-Learn, or even Ollama for a local LLM) into this engine.
+1. Python Environment Setup
+Ensure Python is installed on your computer. Open the Terminal or Command Prompt and install these two essential libraries:
+pip install fastapi uvicorn
+2. Python API Code (local_ai_bridge.py)
+Create a file named local_ai_bridge.py on your computer and copy the following code: (Python)
+from
+fastapi
+import
+FastAPI, Request
+from
+pydantic
+import
+BaseModel
+from
+typing
+import
+List
+,
+Optional
+import
+json
+import
+uvicorn
+
+app = FastAPI(title=
+"MT5 AI Microstructure Bridge"
+)
+# --- DATA MODELS (Compatible with the MQL5 data format) ---
+class
+Message(BaseModel):
+    role:
+str
+content:
+str
+class
+AIRequest(BaseModel):
+    model:
+str
+temperature:
+float
+response_format:
+Optional
+[
+dict
+] =
+None
+messages:
+List
+[Message]
+# --- MAIN ENDPOINT (/analyze) ---
+@app.post(
+"/analyze"
+)
+async
+def
+analyze_market(payload: AIRequest):
+"""
+    This endpoint receives tick and microstructure data from MT5,
+    analyzes the data, and returns a BUY/SELL/WAIT decision.
+    """
+# 1. Extract JSON data from the "user" message sent by MT5
+user_content =
+"{}"
+for
+msg
+in
+payload.messages:
+if
+msg.role ==
+"user"
+:
+            user_content = msg.content
+break
+try
+:
+        facts = json.loads(user_content)
+except
+json.JSONDecodeError:
+return
+{
+"decision"
+:
+"WAIT"
+,
+"confidence"
+:
+0.0
+,
+"reason"
+:
+"Invalid JSON format"
+}
+# 2. Extract market facts
+order_type = facts.get(
+"order_type"
+,
+"WAIT"
+)
+    high_velocity = facts.get(
+"high_velocity"
+,
+False
+)
+    snapback_pips = facts.get(
+"snapback_pips"
+,
+0.0
+)
+    min_snapback = facts.get(
+"min_snapback_pips"
+,
+2.0
+)
+    deviation_z = facts.get(
+"deviation_z"
+,
+0.0
+)
+    
+    mtf = facts.get(
+"mtf"
+, {})
+    m1_structure = facts.get(
+"m1_structure"
+, {})
+# 3. AI / DECISION-MAKING ALGORITHM (Can be replaced with an ML model later)
+# This is a simple example of decision logic
+confidence =
+0.0
+decision =
+"WAIT"
+reason =
+""
+# Evaluate the logic when the EA requests SELL confirmation
+if
+order_type ==
+"SELL"
+:
+        score =
+0
+# Validate snapback and velocity
+if
+snapback_pips >= min_snapback
+and
+high_velocity:
+            score +=
+0.4
+# Validate extreme deviation (overbought condition)
+if
+deviation_z >
+2.0
+:
+            score +=
+0.3
+# Validate MTF alignment (at least H1 or M15 must be bearish)
+if
+mtf.get(
+"h1_down"
+)
+or
+mtf.get(
+"m15_down"
+):
+            score +=
+0.2
+# Validate M1 rejection (long upper wick)
+if
+m1_structure.get(
+"upper_wick_ratio"
+,
+0.0
+) >=
+0.2
+:
+            score +=
+0.1
+confidence = score
+if
+confidence >=
+0.70
+:
+            decision =
+"SELL"
+reason =
+"High velocity drop, MTF align, Z-Score high"
+else
+:
+            reason =
+f"Score only
+{confidence:
+.2
+f}
+, lacking momentum"
+# Evaluate the logic when the EA requests BUY confirmation
+elif
+order_type ==
+"BUY"
+:
+        score =
+0
+# Validate snapback and velocity
+if
+snapback_pips >= min_snapback
+and
+high_velocity:
+            score +=
+0.4
+# Validate extreme deviation (deviation_z is already direction-adjusted in MQL5)
+if
+deviation_z >
+2.0
+:
+            score +=
+0.3
+# Validate MTF alignment (at least H1 or M15 must be bullish)
+if
+mtf.get(
+"h1_up"
+)
+or
+mtf.get(
+"m15_up"
+):
+            score +=
+0.2
+# Validate M1 rejection (long lower wick)
+if
+m1_structure.get(
+"lower_wick_ratio"
+,
+0.0
+) >=
+0.2
+:
+            score +=
+0.1
+confidence = score
+if
+confidence >=
+0.70
+:
+            decision =
+"BUY"
+reason =
+"High velocity bounce, MTF align, Z-Score high"
+else
+:
+            reason =
+f"Score only
+{confidence:
+.2
+f}
+, lacking momentum"
+# 4. Send the JSON response back to MT5
+return
+{
+"decision"
+: decision,
+"confidence"
+:
+round
+(confidence,
+2
+),
+"reason"
+: reason[:
+60
+]
+# Limit the reason to a maximum of 60 characters for MT5
+}
+if
+__name__ ==
+"__main__"
+:
+# Start the local server on port 8787, matching the InpAIEndpoint parameter in MQL5
+print
+(
+"AI Bridge Server is running on http://127.0.0.1:8787"
+)
+    uvicorn.run(app, host=
+"127.0.0.1"
+, port=
+8787
+)
+3. How to Run the Server & Connect to MT5
+Open the Terminal and navigate to the folder where the Python file is stored.
+Run the command:
+The server will start and listen at [http://127.0.0.1:8787](http://127.0.0.1:8787).
+On the MetaTrader 5 platform, ensure you have added the URL [http://127.0.0.1](http://127.0.0.1) to the list of allowed WebRequest URLs:
+Go to Tools -> Options -> Expert Advisors.
+Check "Allow WebRequest for listed URL".
+Add the URL [http://127.0.0.1](http://127.0.0.1) to the list.
+Run your EA. The EA will now send real-time data to the Python API; Python will analyze it based on parameters within the Python function and send BUY/SELL/WAIT commands back to MT5.
+This Python architecture is highly scalable. If, in the future, you wish to store this price movement history in a database (for machine learning training data) or connect it to a prediction model (such as XGBoost or Random Forest), you simply need to modify the section marked with comment # 3—ARTIFICIAL INTELLIGENCE / DECISION ALGORITHM—in the code above.
+If successful, the Print Expert will appear as follows:
+Creating a Python file (.py) is actually very simple. Essentially, a Python file is just a standard text file (like a .txt file) with its extension changed to .py.
+Using MetaTrader 5 (which generally runs on Windows), here are the 3 easiest ways to create the local_ai_bridge.py file:
+Method 1: Using Notepad (Fastest & No Additional Apps to Install)
+This is the quickest method on the Windows operating system:
+Open the built-in Windows Notepad application.
+Copy the entire FastAPI Python code I provided earlier (above). [
+2. Python API Code (local_ai_bridge.py)]
+Paste the code into a blank Notepad document.
+Click the File menu > Save As...
+Select the folder where you want to save this file (for example, create a new folder named AI_MT5 in Documents or on the Desktop).
+VERY IMPORTANT: In the "Save as type" section, change the setting from "Text Documents (*.txt)" to "All Files (*.*)".
+In the File name field, type exactly: local_ai_bridge.py
+Click Save. Done!
+Additional Tips After Creating the File:
+To run it, make sure you open the Command Prompt (CMD) in the folder where the `local_ai_bridge.py` file is located, then type the command to run it:
+python local_ai_bridge.py
+If successful, your CMD window will display text indicating that the Uvicorn/FastAPI server is running.
+//-------------------------
+For Python to run the `local_ai_bridge.py` file, the Terminal must be "located" in the same folder as that file. Here are the three easiest ways to do this on Windows (choose the one you prefer):
+Method 1: File Explorer "Address Bar" Trick (Easiest & Fastest)
+This is a favorite trick among programmers because it is very practical:
+Open File Explorer (the screen where you usually view files and folders).
+Go to the folder where you saved the local_ai_bridge.py file earlier.
+Left-click once on the Address Bar at the top (the long field showing the folder location, e.g., C:\Users\YourName\Documents\AI_MT5).
+The address text will be highlighted in blue. Delete the text, then type: cmd
+Press Enter on the keyboard.
+A black screen (Command Prompt) will immediately open, positioned exactly within that folder.
+Execution Steps (If the terminal is already open in the correct folder)
+Once the black or blue window opens in the correct folder, you simply need to issue a command to Python to launch the AI ​​robot.
+Type this command:
+python local_ai_bridge.py
+Press Enter.
+If the installation of the libraries (fastapi and uvicorn) was successful, you will see text appear stating "AI Bridge Server is running on http://127.0.0.1:8787" or a message indicating "Uvicorn running on..."
+As follows :
+AI Bridge Server is running on http://127.0.0.1:8787
+INFO:     Started server process [4168]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8787 (Press CTRL+C to quit)
+The text indicates that:
+Initialization Successful: The EA successfully detected the XAUUSD symbol with a Pip multiplier of 10.0 (correctly detecting a 3-digit/5-digit broker).
+AI Bridge Active: The AIBridge v1.1 module successfully loaded in HYBRID mode, connected to the local endpoint [http://127.0.0.1:8787/analyze](http://127.0.0.1:8787/analyze), and detected that key authorization is not required (anonymous)—which is suitable for our local Python server.
+Multi-Timeframe & Locked Structure: Supporting trend indicators (H1, M15, M5) and the M1 Closed Candle structure are ready to monitor the market.
+What Does This Indication Mean?
+This means the EA and our local Python server are now running side-by-side and are ready to interact. The EA is no longer "blind"—it possesses a "local brain" that filters every Liquidity Sweep and Velocity signal on the Gold M1 timeframe before deciding whether to execute an order or hold off (WAIT).
+Next, simply monitor the chart movements or conduct forward testing on a demo or live account. When the sweep conditions and tick speed requirements are met, you will see decision logs—such as `[AI] SELL HYBRID ... ALLOW=YES` or `NO`—appear in the journal in real-time.
+Strategy Tester Visualization :

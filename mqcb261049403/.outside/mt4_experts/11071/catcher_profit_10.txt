@@ -1,0 +1,6 @@
+Description:
+Once connected on the graph, this EA constantly checks the profit/loss value.
+If percentage is false and profit becomes greater than maximum profit fixed, all trades are closed!
+If percentage is true, all trades will be closed when the percentage profit will be greater than maximum percentage fixed!
+Regards
+Dottor Market

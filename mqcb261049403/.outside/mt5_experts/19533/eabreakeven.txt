@@ -1,0 +1,13 @@
+eaBreakeven
+is an EA that moves the Stop Loss to breakeven and simultaneously plays the sound, when the Stop Loss is changed. EA manages the positions for the current chart currency pair only, i.e. if you attach in on the GBPUSD chart, it will manage only GBPUSD positions.
+Input parameters
+Breakeven in points
+- profit of the position, when this expert moves the Stop Loss to breakeven.
+Breakeven distance in points
+- the distance value where the Stop Loss is set. For example, if the opening price of a short position is 1.9873, and this parameter is set to 5 points, then eaBreakeven will change the Stop Loss to 1.9868.
+Magic Number
+- managed orders ID. If 0 then EA will manage all the positions for the current symbol.
+Enable / disable playing sound
+- enable/disable audio playback when a break-even occurs.
+Sound file name
+- the name of the sound file in the \Sounds folder.

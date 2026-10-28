@@ -1,0 +1,4 @@
+The Expert Adviser MARE5.1 is much simple and uses values of Simple Moving Average (SMA) on Close Price of 0, 2 and 5 bars. The Expert Adviser is adjusted on work on M1 timeframe.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9643

@@ -1,0 +1,8 @@
+Description:
+An Expert Advisor designed to open and close respective orders at the first parabolic SAR signal.
+Its performance depends on the custom parameters of stop loss, take profit, trailing stop, lot size for opening trades and more. This version works alongside manual trades and other expert advisors as per you requests.
+Note:
+You need to change the SAR indicator "Step" and "maximum" value/s to that of the EA in order to match the EA operation with that of the SAR indicator.
+But this is just for visual purposes as the EA does'nt need the indicator in order to work. e.g. if you are using the default step setting for the EA (0.001) you might get a false impression that the EA didnt open an order when the SAR indicator with its default step setting (0.02) showed a signal but in reality the virtual SAR with a step setting of 0.001 had'nt yet shown a signal.
+If no order was opened and the journal displayed an error as to why, thats when action needs to be taken. Always check this page for updates thank you !!!.
+Ive also included a full documentation for pSAR bug 6 available at our new site.

@@ -1,0 +1,33 @@
+This Expert Advisor closes all positions if the total loss/profit exceeds a predefined limit. In fact, this is a global stop loss and take profit for all positions simultaneously. The EA leaves appropriate comments on its actions in the log file.
+//+----------------------------------------------+
+//| Enumeration for loss calculation options     |
+//+----------------------------------------------+
+enum
+StopMode
+{
+ENUM_PERCENT,
+//losses in percentage
+ENUM_CARRENCY
+//losses in deposit currency
+};
+//+----------------------------------------------+
+//| Input parameters of the EA indicator         |
+//+----------------------------------------------+
+input
+StopMode LMode=ENUM_PERCENT;
+//loss calculation method
+input
+double
+StopLoss=
+20.0
+;
+//stop loss
+input
+double
+TakeProfit=
+100.0
+;
+//take profit
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16782

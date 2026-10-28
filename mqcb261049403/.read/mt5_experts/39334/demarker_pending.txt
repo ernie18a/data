@@ -1,0 +1,19 @@
+Description of the adviser
+Working on the 'DeMarker' indicator using pending orders ('Limit' of 'Stop'). The signal is checked only when a new bar is born.
+You can enable/disable '
+Stop Loss
+', '
+Take Profit
+', '
+Trailing
+'. The '
+Trailing activate if profit is >=
+' parameter has been added to Trailing - this is an analogue of breakeven: as soon as the position reaches the specified level (in Points), the classic Trailing is activated.
+A pending order is placed at a distance of '
+Pending: Indent
+' from the current price. If the current spread is greater than the specified one ('
+Pending: Maximum spread ('0' -> OFF)
+' - the signal is removed and a pending order is not placed. All positions will be closed and all pending orders will be deleted if the target profit (in money) '
+Target Profit, in money ('0' -> OFF)
+' is reached.
+Pic.1. DeMarker Pending

@@ -1,0 +1,110 @@
+Idea by:
+Apelsin
+mq5 code by:
+barabashkakvn
+The EA uses a very simple neural network unit
+double
+n1=((ma_h1[
+1
+]-ma_h1[
+2
+])/ma_h1[
+1
+])*p1+((ma_h1[
+2
+]-ma_h1[
+3
+])/ma_h1[
+3
+])*p2+((ma_h1[
+3
+]-ma_h1[
+4
+])/ma_h1[
+4
+])*p3;
+   n1=(
+MathRound
+(n1*
+10000
+));
+double
+n2=((ma_h4[
+1
+]-ma_h4[
+2
+])/ma_h4[
+2
+])*q1+((ma_h4[
+2
+]-ma_h4[
+3
+])/ma_h4[
+3
+])*q2+((ma_h4[
+3
+]-ma_h4[
+4
+])/ma_h4[
+4
+])*q3;
+   n2=(
+MathRound
+(n2*
+10000
+));
+double
+n3=((ma_d1[
+1
+]-ma_d1[
+2
+])/ma_d1[
+2
+])*k1+((ma_d1[
+2
+]-ma_d1[
+3
+])/ma_d1[
+3
+])*k2+((ma_d1[
+3
+]-ma_d1[
+4
+])/ma_d1[
+4
+])*k3;
+   n3=(
+MathRound
+(n3*
+10000
+));
+if
+((n1>
+0
+&& n2>
+0
+&& n3>
+0
+))
+      m_need_open_buy=
+true
+;
+if
+((n1>
+0
+&& n2<
+0
+&& n3<
+0
+))
+      m_need_open_sell=
+true
+;
+based on the signals from three indicators iMA (Moving Average, MA) on H1, H4, and D1.
+Recommendations on Optimization
+Optimization is performed in two stages (1 and 2 in the picture below).
+After stages one and two
+select among the top ten ones the version that provides equally good results on both backtest and forward.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23338

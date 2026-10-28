@@ -1,0 +1,14 @@
+The
+Volume_Weighted_MA
+indicator that fills the chart space with a colored background and displays the most recent value as a price label with the possibility to round the channel levels up to a required number of digits. The number of digits to round is set in the
+Digit
+input variable:
+input
+uint
+Digit=2;
+//Number of digits to round to
+The moving average itself serves as the color separation line.
+Fig.1. The Volume_Weighted_MA_Cloud_Digit indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15859

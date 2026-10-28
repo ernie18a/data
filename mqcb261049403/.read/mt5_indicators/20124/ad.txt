@@ -1,0 +1,13 @@
+This Accumulation/Distribution indicator has three calculation methods:
+Classical
+Classical Incremental (used in the standard AD indicator available in the terminal);
+Trade Station Incremental (calculation with an increment like in Trade Station)
+It has one input parameter:
+AD calculation method
+- selection of the calculation method.
+Fig.1 Classical
+Fig.2 Classical Incremental (MetaTrader)
+Fig.3 Trade Station Incremental
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20124

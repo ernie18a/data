@@ -1,0 +1,19 @@
+Author:
+InvestMoneyLab.com
+This indicator is used to show the trend of the 30 min charts. The trend is determined based on the moving average. If the short period MA is above the long period MA, it is an Up Trend and conversely it is a Down Trend if the short period MA is below the long period MA. I also use ROC as an additional rules to montior the trend.
+Ths
+Trend Indicator
+will give 5 output values:
+2: Strong Up Trend
+1: Up Trend
+0: No Trend
+-1: Down Trend
+-2: Strong Down Trend
+The external variables that you can see in this indicator are:
+ROC_MA_Period & ROC_Period : I like to use 200 for both as I like to look at the long term trend.
+MA_Short_Period & MA_Long_Period : For you to insert he period of your preferred short and long term period.
+MetaTrader Trend Indicator
+Recommendations:
+This indicator help you to determine the trend of 30 minutes chart and you can attach them if you are trading in the 1, 5 or 15 mins charts such that you do not need to open and close the 30 mins chart regularly.
+You can apply your Long Strategy when the market is UP and Short Strategy when the market is DOWN.
+Lastly, I am still trying to improve on the indicator further. I appreciate any comments or feedbacks you have.

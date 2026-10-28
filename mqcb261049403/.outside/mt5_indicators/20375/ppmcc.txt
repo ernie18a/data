@@ -1,0 +1,20 @@
+Pearson product-moment correlation coefficient (Pearson's PCC) displays the linear relation between the moving average values of two instruments ranging from -1 to +1. When the chart is above zero, a positive correlation is marked. Correlation is negative below zero. Zero indicates that there is no correlation.
+The indicator has five input parameters:
+Period
+- MA calculation period
+First symbol name
+- the name of the first financial instrument
+First symbol applied price
+- the calculation price of the first financial instrument
+Second symbol name
+- the name of the second financial instrument
+Second symbol applied price
+- the calculation price of the second financial instrument
+If an invalid symbol name is used (for the first symbol, the second one, or both), the indicator prints a message to the log and is unloaded with an error.
+The first symbol in the settings can differ from the one the indicator is running on. In this case the indicator values will be updated only after the arrival of a new tick of the symbol, which the indicator is running on. To display the line, the indicator needs the history of the symbols it is working with. If the required history is not available, the indicator first downloads the necessary history, and then displays the line after the arrival of a tick on the symbol on which it is running.
+Fig.1. EURUSD/USDJPY
+Fig.2. EURCAD/AUDUSD
+Fig.3. GBPUSD/EURGBP
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20375

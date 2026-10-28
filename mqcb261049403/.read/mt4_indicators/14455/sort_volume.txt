@@ -1,0 +1,1 @@
+Calculates volume for each currency on pair based on price movement.

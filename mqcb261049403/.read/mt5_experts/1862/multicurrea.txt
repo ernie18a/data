@@ -1,0 +1,17 @@
+An example of a multicurrency Expert Advisor that uses the loop, where each iteration is responsible for trading each symbol separately.
+In order not to depend on ticks of any of the symbols, the
+OnTimer
+function is used for event generation.
+Values of
+Bollinger Bands
+are used for trading.
+The EA trades according to the following strategy:
+Buy: the Ask price touches the bottom line of the Bollinger Bands calculated based on the low price.
+Close: the Bid price touches the bottom line of the Bollinger Bands, calculated based on the high price.
+Sell: the Bid price touches the upper line of the Bollinger Bands, calculated based on the high price.
+Close: the Ask price touches the upper line of the Bollinger Bands calculated based on the low price.
+Restrictions: only one deal can be conducted on one bar.
+The presented code is only an example of how to create a multicurrency Expert Advisor. All the details of the program operation are described in the code.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1862

@@ -1,0 +1,7 @@
+Description:
+Parabolic SAR on the M1 from all Time Frames
+You may change the input parameters:
+Step (by default 0.02),
+Maximum (by default 0.2),
+MaShift (by default 0)
+Image:

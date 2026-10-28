@@ -1,0 +1,13 @@
+The EA trades with the help of the Rectangle, EMA and SMA indicator.
+EA settings:
+1: magic
+2: Commentary
+3: EMA Small
+4: SMA Big
+5: volumes
+6: Stop Loss of Day
+7: SL Points
+8: TP Points
+9: Rectangle settings
+10: Time filter
+Update: --- Risk inserted for position. ---

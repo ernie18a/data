@@ -1,0 +1,9 @@
+The Repulse Multi Timeframe indicator measures and displays the bullish or bearish pressure associated with each price candlestick in the form of a curve.
+This version is a standalone multi timeframe version (
+Repulse
+indicator is needed for its work).
+Timeframes supported are all the possible timeframes supported by MetaTrader 5 and it has 3 "special" timeframes:
+Next higher timeframe: first higher timeframe compared to active chart.
+Second higher timeframe: second higher timeframe compared to active chart.
+Third higher timeframe: third higher timeframe compared to active chart.
+If some of these 3 timeframes are used, then the timeframe is set automatically as you change the timeframe of the chart.

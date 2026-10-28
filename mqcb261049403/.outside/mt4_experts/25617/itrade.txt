@@ -1,0 +1,19 @@
+Do you rely
+on your analysis
+and just want help on position sizing and how and when to take profit ?
+Do you have a lot of open positions and you need to
+reduse your DD
+and
+release some margin
+?
+ITrade is here to help you!
+Created from a trader for traders.
+Recommendations:
+Symbol
+EURUSD
+Timeframe
+ANY
+Capital
+more than 1000$ is adviceble
+PLOT your indicators,start your analysis and start openung sell position when you think it is right.
+EA will manage the lotsize,the PROFIT,the drawdown and the margin release.

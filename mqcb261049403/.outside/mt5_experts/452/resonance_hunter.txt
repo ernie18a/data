@@ -1,0 +1,19 @@
+Considering correlations between different financial assets is not a new idea and it would be interesting to create the algorithm based on the analysis of such regularities.
+Here we present the multi-currency trading robot inspired by the article of Vasily Yakimkin "
+Resonances - a New Class of Technical Indicators
+" published in the "Currency Speculator" magazine (
+№04 (part 1)
+and
+№05 (part 2)
+in Russian).
+In few words, the idea of this method is as follows. For example, to analyze the EUR/USD market we may use not only the readings of any indicator concerning this asset but also the readings of the same indicator concerning the related assets - EUR/JPY and USD/JPY.
+Multistochastic_exp custom indicator is used in this trading robot to get trading signals. The indicator calculates its values based on
+Stochastic oscillator
+.
+Detailed description of this Expert Advisor can be found in the article
+"Creating
+an Expert Advisor, which Trades on a Number of Instruments
+".
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/452

@@ -1,0 +1,2 @@
+Expert Advisor work with one hour chart, and is the best robot for now.
+It plays a sound when orders/alarms are executed and multiply positions by 10 when 5 digits is true, trailing stops every tick regardless of Execution Mode.

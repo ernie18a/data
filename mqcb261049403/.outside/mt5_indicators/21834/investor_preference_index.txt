@@ -1,0 +1,38 @@
+Investor Preference Index was
+discussed in the "Technical Analysis of Stocks & Commodities" magazine in December, 1997, page 19. The article was written by Cyril V. Smith Jr.
+Initially, this indicator, which was used as the long-term stock market investment tool, compared the efficiency of S&P 500 with the New York Stock Exchange to measure sentiment.
+The theory suggests that investors prefer certain types of investment.
+The indicator has five input parameters:
+Instrument
+- the name of the financial instrument
+ROC period
+- period for calculating the price rate of change
+Fast smoothing period
+- the period of the fast smoothing
+Slow smoothing period
+- the period of the slow smoothing
+Result smoothing period
+- the period of the resulting smoothing
+Calculation:
+IPI =100.0*(Result smoothing period * SMA(B2, Result smoothing period)+1.0)
+where:
+B2 = SMA(B1, Fast smoothing period) - SMA(B1, Slow smoothing period)
+B1 = ROC1 - ROC2
+ROC1 - the current symbol's price rate of change over the ROC period
+ROC2 - the 'Instrument' symbol's price rate of change over the ROC period
+ROC = 100.0 * Log(Close - Log2) / Log2
+Log2 = Log(Close[ROC period])
+Please note that in order for the indicator to display correctly, historical data for the 'Instrument' symbol are needed, which can lead to a delay in displaying the oscillator line during the first launch or symbol changed.
+Fig. 1. Investor Preference Index
+GBPUSD
+relative to EURUSD
+Fig. 2. Investor Preference Index
+GBPUSD
+relative to USDJPY
+Fig. 3. Investor Preference Index
+GBPUSD
+relative to AUDCAD
+Fig. 4. Investor Preference Index GBPUSD relative to USDRUB
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21834

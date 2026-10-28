@@ -1,0 +1,165 @@
+Indicator ColorPEMA_Digit_Trend_x10 displays the directions of the
+ColorPEMA_Digit
+indicator signals from ten different timeframes from the bar specified in the indicator inputs A trend continuation is displayed by the right arrow, while a reversal is displayed by a diagonal up or down arrow.
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+ENUM_TIMEFRAMES
+TimeFrame0=
+PERIOD_H1
+;
+//chart 1 period
+input
+ENUM_TIMEFRAMES
+TimeFrame1=
+PERIOD_H2
+;
+//chart 2 period
+input
+ENUM_TIMEFRAMES
+TimeFrame2=
+PERIOD_H3
+;
+//chart 3 period
+input
+ENUM_TIMEFRAMES
+TimeFrame3=
+PERIOD_H4
+;
+//chart 4 period
+input
+ENUM_TIMEFRAMES
+TimeFrame4=
+PERIOD_H6
+;
+//chart 5 period
+input
+ENUM_TIMEFRAMES
+TimeFrame5=
+PERIOD_H8
+;
+//chart 6 period
+input
+ENUM_TIMEFRAMES
+TimeFrame6=
+PERIOD_H12
+;
+//chart 7 period
+input
+ENUM_TIMEFRAMES
+TimeFrame7=
+PERIOD_D1
+;
+//chart 8 period
+input
+ENUM_TIMEFRAMES
+TimeFrame8=
+PERIOD_W1
+;
+//chart 9 period
+input
+ENUM_TIMEFRAMES
+TimeFrame9=
+PERIOD_MN1
+;
+//chart 10 period
+input
+uint
+SignalBar=
+1
+;
+//Bar number to receive a signal (0 - current bar)
+//---- Parameters of ColorPEMA_Digit
+input
+double
+EmaLength=
+50.01
+;
+//smoothing depth
+input
+Applied_price_ IPC=PRICE_CLOSE_;
+//price constant
+input
+uint
+Digit=
+2
+;
+//number of digits to round to
+//---- Indicator drawing parameters
+input
+color
+CpColor=
+clrBlueViolet
+;
+//indicator name color
+input
+color
+BuyColor=
+clrDodgerBlue
+;
+//Buy signal color
+input
+color
+UpColor=
+clrMediumBlue
+;
+//uptrend continuation color
+input
+color
+NnColor=
+clrGray
+;
+//no-trend color
+input
+color
+DnColor=
+clrPurple
+;
+//downtrend continuation color
+input
+color
+SellColor=
+clrMagenta
+;
+//Sell signal color
+input
+int
+FontSize=
+15
+;
+//font size
+input
+type_font FontType=Font14;
+//font type
+input
+ENUM_BASE_CORNER
+WhatCorner=
+CORNER_LEFT_LOWER
+;
+//location corner
+input
+uint
+Y_=
+20
+;
+//vertical location
+input
+uint
+X_=
+5
+;
+//horizontal location
+For the indicator to work, the
+ColorPEMA_Digit
+.ex5
+indicator must be added to the <terminal_data_directory>\MQL5\Indicators folder. To compile the indicator, file
+GetFontName.mqh
+must be available in the
+<terminal_data_directory>\MQL5\Include
+folder.
+The indicator uses the classes of library GetFontName.mqh (to be copied to terminal_data_directory\MQL5\Include).
+Fig. 1. Indicator ColorPEMA_Digit_Trend_x10
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23454

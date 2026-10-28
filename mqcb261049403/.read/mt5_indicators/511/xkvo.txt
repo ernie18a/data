@@ -1,0 +1,38 @@
+O Klinger Volume Oscillator (KVO) foi desenvolvido por Stephen Klinger. O indicador KVO possui duas características que a primeira vista parecem se contradizerem: Ela é sensível a sinais de topos e fundos de curto prazo, mas ao mesmo tempo ela nos mostra o fluxo de entrada e saída de dinheiro a longo prazo com bastante precisão.
+O indicador KVO se baseia nos seguintes princípios:
+A faixa de preço é uma medida do movimento e o volume é a força do movimento. A soma de High + Low + Close determina uma tendência. Há uma acumulação, no caso da soma do dia atual exceder a soma do dia anterior, e uma distribuição no caso contrário. No caso das somas serem iguais, a tendência atual é mantida;
+O volume causa variações constantes no preço intradiário mostrando a força compradora e vendedora. O KVO determina força do volume através da diferença entre o número de ações acumuladas e distribuídas a cada dia. Uma força de volume alta e crescente precede uma tendência de alta. Em seguida, este valor diminui gradualmente correspondendo às últimas etapas de uma tendência de alta e assim dá-se os primeiros passos para a formação de uma tendência de baixa. Mais adiante, a ascensão da força de volume, mostrando a acumulação definitiva, deve se repetir antes da formação do fundo;
+Após a transformação da força de volume para o oscilador, que representa a diferença entre 34 e 55 dias da média móvel exponencial com a linha de sinal de 13 dias, é muito fácil de traçar uma "força volume" de entrada e saída do mercado. Comparando esta força com os movimentos de preços pode lhe ajudar a revelar divergências entre topos e fundos.
+Klinger recomenda seguir os seguintes conceitos ao aplicar o KVO:
+Os sinais mais confiáveis ​​aparecem na mesma direção da tendência;
+O sinal mais forte é uma divergência entre os novos topos e fundos do preço e do indicador gráfico, especialmente em áreas de sobrecompra / sobrevenda;
+Em caso de uma tendência de alta, está na hora de comprar quando o KVO desce para níveis muito baixos, abaixo de zero e depois vira para cima, cruzando sua linha de disparo. No caso de uma tendência de baixa, está na hora de vender quando o KVO sobe para níveis muito elevados, acima de zero e depois vira para baixo, cruzando sua linha de disparo.
+Devemos nos lembrar que o KVO funciona bem durante as operações de negócio que ocorrem na direção da tendência, sendo menos eficiente se operar contra a tendência.
+Este indicador permite selecionar dentre um conjunto de dez variantes distintas o tipo de suavização do histograma e da linha de sinal de XKVO:
+SMA
+- média móvel simples;
+EMA
+- média móvel exponencial;
+SMMA
+- média móvel suavizada;
+LWMA
+- média móvel ponderada linear;
+JJMA
+- média adaptativa JMA;
+JurX
+- suavização ultra linear;
+ParMA
+- suavização parabólica;
+T3
+- suavização exponencial múltipla de Tillson;
+VIDYA
+- suavização com o algoritmo de Tushar Chande;
+AMA
+- suavização com o algoritmo de Perry Kaufman.
+Deve se notar que o parâmetros Phase1 e Phase2 possuem um significado totalmente diferente entre os diferentes algoritmos de suavização. Para JMA, Phase é uma variável externa cujo valor varia entre -100 e +100. Para T3, é uma relação de suavização multiplicada por 100 para se obter uma visualização melhor. Para VIDYA, é um período do oscilador CMO e para AMA é um período lento de EMA. Estes parâmetros não afetam o cálculo de suavização em outros algoritmos. Em AMA, o período rápido de EMA, por padrão, é um valor fixo igual a 2. A razão de crescimento da potência para AMA também é igual a 2.
+Este indicador utiliza a biblioteca de classes SmoothAlgorithms.mqh (deve ser copiada para terminal_data_folder\MQL5\Include). O uso desta classe está descrito com mais detalhes no Artigo
+"Série de preço médio para cálculos intermediários sem utilizar buffers adicionais"
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/511

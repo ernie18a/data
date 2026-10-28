@@ -1,0 +1,4 @@
+A standard ADX indicator with time frame setting.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8600

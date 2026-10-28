@@ -1,0 +1,4 @@
+Simple volume indicator that has two coloring mode options :
+to change color on average volume cross(es)
+to change color based on bull/bear state of the corresponding price candle
+It needs the SmoothAlgorithms.mqh file from Nikolay Kositsinsn in order to be compiled.

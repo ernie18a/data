@@ -1,0 +1,6 @@
+Accumulated RSI that uses:
+Floating levels
+Or quantile bands
+Process of "accumulating" uses consecutive RSI calculations in order to "construct" new "RSI" value.
+PS: since this indicator is rather unknown (I guess that it is because without the usage of dynamic zones, floating levels or quantile bands, it is almost unusable in any normal trading), I would like to point out to one of its properties: the more you accumulate, the smoother it becomes, but, what is "strange" is that there is no additional lag (when these type of adjusting levels are used).
+Here is an example where 30 instances of RSI are accumulated in the accumulated RSI value - it is clear that a lot of false signals were cleaned up (and I even did not use RSX for the example):

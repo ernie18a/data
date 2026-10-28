@@ -1,0 +1,4 @@
+The indicator analyzes the last three bars on the basis of a quadratic function. It is displayed as a histogram. There are two moving averages on it, the parameters of which can be changed in presetting. I also introduced optional sound alerts and comment in the main field when signal lines are touched. The second indicator, Fast_3, works on the same principle, but it introduces alerts in the price field as corresponding arrows. Stops at the level of preceding fractals are crossed. The indicator was created because I needed a non-delayed and non-redrawn oscillator. As a result, it delays from the price by one bar, of course, but, at least, it is not redrawn all the time. As compared to other MACDs, it is 2 bars faster. However, this high sensibility results in that this indicator should be applied with any low-frequency filter on a flat market.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8027

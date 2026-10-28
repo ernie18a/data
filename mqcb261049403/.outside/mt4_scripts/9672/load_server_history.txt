@@ -1,0 +1,12 @@
+This is a script to load the history at the server. Most of the Using, is for testing the Expert Advisor, Need more data to test!
+1. But reminder to set the option at 1:
+2. Set the Max Bars in History = 9999999999999999999999999999. Set the Max Bars in Chart = 99999999999999999999999999.
+3. Click you need to load at server. Unclick to unlike symbol.
+Note
+If fail to Load at no error!
+try Pass F3
+then delete the value "glSymbolHandle"
+then try again!
+this is new version! but I have been forget What is the Update!
+Sorry! Sorry! Sorry!
+Thank You!

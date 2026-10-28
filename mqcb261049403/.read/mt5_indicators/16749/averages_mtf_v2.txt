@@ -1,0 +1,19 @@
+Updated and upgraded averages indicator. Now it contains the 18 types of averages available (no need for numbers, since here all is choosable by name):
+Simple moving average
+Exponential moving average
+Double smoothed EMA
+Double EMA
+Triple EMA
+Smoothed MA
+Linear weighted MA
+Parabolic weighted MA
+Alexander MA
+Volume weighted MA
+Hull MA (you can see it on the image)
+Triangular MA
+Sine weighted MA
+Linear regression value
+IE/2
+Non lag MA
+Zero lag EMA
+Leader EMA

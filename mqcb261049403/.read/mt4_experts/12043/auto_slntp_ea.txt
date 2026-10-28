@@ -1,0 +1,6 @@
+Helps trader by setting automatic Stop Loss (SL) and Take Profit (TP) on trades while scalping.
+Saves time and gives trader time to worry about other chart monitoring.
+You can choose:
+Fixed SL and TP
+SL and TP by use of daily ATR.
+Input parameters:

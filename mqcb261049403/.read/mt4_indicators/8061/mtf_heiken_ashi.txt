@@ -1,0 +1,7 @@
+Author:
+not specified
+Indicators MTF Heiken_Ashi and MTF Heiken_Ashi_[sw]. Work with indicator
+Heiken Ashi
+.
+Indicator MTF Heiken_Ashi
+Indicator MTF Heiken_Ashi_[sw]

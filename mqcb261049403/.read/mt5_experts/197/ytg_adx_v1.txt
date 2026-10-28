@@ -1,0 +1,23 @@
+The Expert Advisor is designed to trade in
+MetaTrader 5
+client terminal at any currency pairs and any timeframes.
+The trading strategy is the following:
+when trading it checks the values of the
+ADX indicator
+.
+to open BUY position, the +DI line should cross the specified level from below to above;
+to open SELL position, the -DI line should cross the specified level from above to below.
+Input parameters:
+TimeFrames = 0; - ADX indicator timeframe;
+shift = 1; - ADX indicator shift;
+adx_period = 28; - ADX indicator period;
+MAGIC = 2899; - EA magic number;
+Lots = 0.1; - position volume;
+SL = 500; - stop loss;
+TP = 500; - take profit;
+dev = 30; - slippage;
+level_p = 5; - level of +DI and ADX crossing for BUY operation;
+level_m = 5; - level of -DI and ADX crossing for SELL operation;
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/197

@@ -1,0 +1,6 @@
+Subject Area:
+Automated Trading Strategies Development
+Size:
+Code Size: Approximately 525 lines
+Form of Materials:
+Code Files: .mq4 format (for MetaTrader 4)

@@ -1,0 +1,11 @@
+Real author:
+RickD
+The MFIdivCandle indicator. Colors the candles based on the MFI oscillator:
+Teal — MFI is in the overbought area;
+Pale green — MFI is above the 50 level and outside the overbought and oversold areas;
+Light pink — MFI is below the 50 level and outside the overbought and oversold areas;
+Deep pink — MFI is in the oversold area.
+Fig.1. The MFIdivCandle indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16043

@@ -1,0 +1,18 @@
+This code is very simplistic idea of the oscillator, which takes into account values in multiple timeframes indicators
+Oscillator 3TF (https://www.mql5.com/en/market/product/15565)
+.
+This indicator allows you to monitor the current RSI values and user-defined timeframe at the same time.
+Parameters:
+Period
+- indicator calculation period.
+NewTimeFrame
+- time (in minutes) of another timeframe:
+1 - M1;
+5 - M5;
+15 - M15;
+30 - M30;
+60 - H1;
+240 - H4;
+1440 - D1;
+10080 - W1;
+43200 - MN.

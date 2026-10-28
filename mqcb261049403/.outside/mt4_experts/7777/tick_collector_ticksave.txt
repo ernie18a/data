@@ -1,0 +1,180 @@
+The Expert Advisor collects tick history for specified symbols into csv-files.
+The file name is formed from the security name and current date ("
+Symbol_Year.Month.csv
+").
+The files are saved in the directory "
+path_to_terminal\
+experts\files\[Ticks]\Server name\
+".
+External variables:
+SymbolList
+- list of symbols, for which ticks should be collected. It can contain
+from 1 up to 32
+symbols coma separated (","). All indicated symbols should be present in the window "
+Market Watch
+".
+WriteWarnings
+- allow (
+true
+) or prohibit (
+false
+) recording messages about connection failure (
+"--------------------------Connection lost"
+) and EA's stopping (
+"--------------------------Expert was stoped"
+). This function may be useful for closing 'history holes'.
+File examples:
+2006.06.21
+11
+:
+14
+:
+39
+;
+1.2634
+2006.06.21
+11
+:
+14
+:
+48
+;
+1.2633
+2006.06.21
+11
+:
+14
+:
+50
+;
+1.2634
+2006.06.21
+11
+:
+14
+:
+52
+;
+1.2633
+--------------------------
+Connection
+lost
+2006.06.21
+11
+:
+18
+:
+13
+;
+1.2634
+2006.06.21
+11
+:
+18
+:
+23
+;
+1.2633
+2006.06.21
+11
+:
+18
+:
+29
+;
+1.2634
+2006.06.21
+11
+:
+18
+:
+37
+;
+1.2633
+2006.06.21
+04
+:
+06
+:
+15
+;
+1.2618
+2006.06.21
+04
+:
+06
+:
+36
+;
+1.2617
+2006.06.21
+04
+:
+06
+:
+38
+;
+1.2618
+2006.06.21
+04
+:
+06
+:
+41
+;
+1.2617
+2006.06.21
+04
+:
+06
+:
+42
+;
+1.2618
+--------------------------
+Expert
+was
+stoped
+2006.06.21
+08
+:
+18
+:
+22
+;
+1.2618
+2006.06.21
+08
+:
+18
+:
+27
+;
+1.2619
+2006.06.21
+08
+:
+18
+:
+31
+;
+1.2618
+2006.06.21
+08
+:
+18
+:
+31
+;
+1.2619
+2006.06.21
+08
+:
+18
+:
+32
+;
+1.2621
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7777

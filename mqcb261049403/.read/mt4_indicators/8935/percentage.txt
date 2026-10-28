@@ -1,0 +1,6 @@
+Author:
+Arif E. Nugroho
+arif_endro@vectra.web.id
+The problem arise when I want to know what is current daily percentage gain/loss at current price in this moment. Then I found the solutions to display current daily, weekly, monthly percentage gain in terminal windows. This will help me to know if current price is overbought or oversold at this time because certain pair only has certain daily, weekly, monthly price range.
+Above is preview indicator, it show current daily, weekly, and monthly percentage gain. This indicator color could be modified as you like in the indicator parameter, in this example: red is minus percentage gain and blue is plus percentage gain. You could also adjust font size with adjusting parameter FontSize.
+I'm adding feature to display daily percentage level up or down 0.5%, 1.0%, 1.5%, and 2.0% which can be activated through indicator options `ShowPriceLabel', by default this options is turn off. If you activate this options then this indicator will display like this:

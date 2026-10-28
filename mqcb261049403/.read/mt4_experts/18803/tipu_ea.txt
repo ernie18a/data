@@ -1,0 +1,42 @@
+This is a simple EA based on
+Tipu Trend
+and
+Tipu Stops
+indicators found in the Market. This EA is for educational purposes only and does not guarantee any profit.
+EA Rules
+The following are the rules of this EA.
+Step #1
+.
+Define Trade Entry - this EA defines trade entry as Tipu Trend M15 signals confirmed by the H1 trend and filtered by risk tolerance set by the user. For example, if trend on H1 is upward it will look at buy signals on M15 lower timeframe. If there is a buy signal, it will then compare calculated stop loss (using Tipu Stops = swing low) with the risk tolerance set in "SL Risk per Trade pips". If everything is okay it will move to the next step.
+Step #2
+.
+Open Trade - this EA opens only trade per signal. The default lot size is 0.01.
+Step #3
+.
+Manage Trade - there are three ways to manage the trade.
+Use SL/TP - these settings are defined in pips. You can enable/disable these settings.
+Use Risk Free Trade - this is a pyramiding feature that adds to the current position and the same time changes the stop loss to break-even. For example, if you have 0.01 buy position, it will add 0.01 lots buy order (to a maximum 0.03 lots) after a 10 pips profit and at the same time change the stop loss to 10 pips. This will make the new 0.01 lots trade as a risk free trade, in a way that if both of the orders go against you, both of them will get closed with no gain/loss.
+Use Trail Stop - the trail stops in this EA is implemented in step. For example, when you have a profit in buy trade it will lock profit in increments of 10s, 20s, and 30s, and will always leave a safe cushion (option = Trail Cushion between current price and SL) between the current stop and current market. You can enable/disable these settings.
+Parameters
+Hedge
+- choose true if you want to open buy/sell orders at the same time using the rules. This will only work if your broker has enabled hedging on your account. You should also make sure Close Trade on Reverse Signal is disabled.
+Close Trade on Reverse Signal
+- choose true to close orders on reverse signals.
+TP
+- enable/disable settings
+TP pips
+- this is TP settings in pips
+SL Risk per Trade pips
+- You cannot disable this setting. This risk pips checks the settings with Tipu Stops. This is an additional filter for the trade.
+Lots per order
+- the default setting is 0.01
+Add Risk Free Trade
+- the risk free trade settings with additional settings for pips increment, incremental lots, and maximum lots
+Trail SL
+- enable/disable settings
+Trail Profit pips
+- this is the trail stop step settings. The default setting is 10. The EA will trail stop in increments of 10s, 20s, 30s, and so on.
+Trail Cushion between current price and SL
+- this setting keeps a safe distance between the trial stops and the current price, so the trades are not closed right
+Magic Number
+- used in EA management

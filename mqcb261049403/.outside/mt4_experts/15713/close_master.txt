@@ -1,0 +1,5 @@
+EA that can delete pending orders, close open orders and close terminal at certain time.
+You can choose all 3 options or less.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15713

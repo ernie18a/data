@@ -1,0 +1,3 @@
+This EA calculates the strength of various currencies according to the percentage change in a day from the opening of the candle. If some currency is very strong or very weak, it will check the difference between both. If it is more than the value provided in the inputs parameters, it will open a trade with that pair and set take profit as given by the user.
+This EA cannot be backtested. Don't trade in live directly. Check in demo first.
+NOTE: It is to be applied on one chart only and it will do the rest for all currencies.

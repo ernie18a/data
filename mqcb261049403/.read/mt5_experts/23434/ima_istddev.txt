@@ -1,0 +1,19 @@
+Idea by:
+Sergey Deev
+mq5 code by:
+barabashkakvn
+The EA trades on two indicators iMA (Moving Average) and one indicator iStdDev (Standard Deviation, StdDev). It does not involve Stop Loss, Take Profit, or Trailing Stop. Positions are closed as soon as the opposite signal is received.
+A sample Sell deal. Conditions:
+1) Fast iMA (
+MA Fast
+) is below the slow iMA (
+MA Normal
+);
+2) The preceding candle is bearish and closed below the fast iMA (
+MA Fast
+); and
+3) Indicator iStdDev moves upwards and exceeds the pre-defined level.
+Positions may be opened in one direction without limitations. However, in case of receiving an opposite signal, those positions will be closed.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23434

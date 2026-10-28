@@ -1,0 +1,7 @@
+You need to do your own TA for the best results. You decide which direction you want the EA to place trades in (you can go long and short, but hedging won't work) & the EA will wait until a setup occurs and place the trades for you. The EA looks at volume and levels & decides where to place trades.
+Level & Length correspond to the level and length of the pullback. The longer the Length, the more it will scale in, the bigger the level, the deeper the pullback it'll look for.
+Close PL is the max floating PL before the EA closes all positions.
+The profit & risk limit are the parameters you will need to use to specify how much profit/risk you are looking to achieve on the given signal.
+The capital parameter will be set to your balance before the EA was attached, if you have a floating loss or profit, you may want to change, but the default value of 0 will assume your initial balance before the EA is attached.
+If you're trading multiple pairs, the hedging function will not work, so it will not hedge anything. Make sure to turn off Multipairtrading if you're only trading one pair and want to use the hedging function. The hedging function will hedge your position once the hedgelevel is reached, hedgelevel meaning the percent of risk you have remaining, and to the specified ration.
+Maxsize is the largest position the EA will scale into, layers is the number of positions you want to spread Maxsize into. For instance, if you want to buy 1 lot worth of an instrument and scale in 10 times, Maxsize = 1, Layers = 10

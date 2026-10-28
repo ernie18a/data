@@ -1,0 +1,8 @@
+Author:
+Indicator is co-written with Vladmir Bocharov.
+The main idea - a connecting consistently the daily, weekly, monthly highs\lows by the trend lines to determine the direction of the market. In this case, the levels themselves highs lows also are plotted on the chart.
+Thus, the indicator shows the most important levels and the current direction of movement within the higher timeframes (> H4).
+The figures below are marked with white daily highs/lows, yellow - weekly, blue - monthly, red - half year.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12091

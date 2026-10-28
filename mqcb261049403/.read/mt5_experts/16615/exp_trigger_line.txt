@@ -1,0 +1,18 @@
+The Exp_Trigger_Line is based on the signals of the
+Trigger_Line
+indicator. The signal is formed when a bar is closing if there is crossing of the main and signal lines of the indicator, and if there is a change in the indicator cloud color.
+This Expert Advisor requires the compiled indicator file Trigger_Line.ex5 in order to run. Place it to terminal_data_folder\MQL5\Indicators.
+Note that the TradeAlgorithms.mqh library file allows using Expert Advisors with brokers who offer
+nonzero spread
+and the option of setting Stop Loss and Take Profit
+together with position opening
+. You can download more variants of the library at the following link:
+Trade Algorithms
+.
+Default Expert Advisor's input parameters have been used during tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. Examples of trades on the chart
+Testing results for 2015 at GBPUSD H4:
+Fig. 2. Testing results chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16615

@@ -1,0 +1,61 @@
+Author of the idea
+—
+John Smith
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+Condition to open Buy: if the value of the first MA is
+greater
+than the second MA on the first bar, and the current price has broken the
+Low
+of the last six bars:
+//--- Buy
+if
+(iMAGet(handle_iMA_first,
+1
+)>iMAGet(handle_iMA_second,
+1
+) &&  
+         m_symbol.
+Bid
+()<=
+iLowest
+(m_symbol.Name(),
+Period
+(),
+MODE_LOW
+,
+6
+,
+1
+))
+Condition to open Buy: if the value of the first MA is
+lower
+than the second MA on the first bar, and the current price has broken the
+High
+of the last six bars:
+//--- Sell
+if
+(iMAGet(handle_iMA_first,
+1
+)<iMAGet(handle_iMA_second,
+1
+) &&  
+         m_symbol.
+Bid
+()>=
+iHighest
+(m_symbol.Name(),
+Period
+(),
+MODE_HIGH
+,
+6
+,
+1
+))
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17641

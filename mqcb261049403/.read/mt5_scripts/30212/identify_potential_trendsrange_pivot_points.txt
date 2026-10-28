@@ -1,0 +1,5 @@
+When I start learning about trading, I remember the trading pioneer Shawn Lucas (founder of Apiary-fund) saying "trading is simple, you go from bound range market to breakout market and vice versa". I looked at few charts and he was right. So I told myself, I have to always eyeball ranging market and trending market but with the help of an indicator. There are plenty of indicators that help us eyeball these ranging/trending market and they work really well, but I like using Pivot Points.
+That is why I created this indicator that helped me to automatically eyeball these potential trends/range (based on pivot points) instead of doing all the work myself. I know there are plenty of Metatraders who also suffer from this and that is why I would like to share this indicator with you, hopefully it will be beneficial.
+Do not forget to send you comments as well as rate these scripts. Happy trading!
+LIVE TRADING SESSION:
+You can check the following live trading sessions and see how I was using my Products in my trading

@@ -1,0 +1,7 @@
+Description:
+This
+Camarilla Equation
+indicator built for all chart bars can be easily used to analyze the behaviour of a financial asset relative to the indicator in history.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/470

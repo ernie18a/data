@@ -1,0 +1,9 @@
+Description:
+Indicator of some basic information:
+Multi-timeframe trend (based on ADX and PSAR)
+RSI, STOCHASTIC (and its trend)
+MACD trend
+Spread
+Remaining bar-time
+BIG PRICE (selectable 4 or 5 digits displaying, up-down color changing).
+You can adjust the settings.

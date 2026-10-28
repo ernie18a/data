@@ -1,0 +1,15 @@
+- This script opens randomly selected charts and applies user-defined template.
+[INPUTS]
+Timeframe:
+chart timeframe.
+Template:
+chart template.
+Spread Filter:
+only open symbols having spread below this.
+Chart Count:
+maximum chart count to be opened.
+[LIMITATIONS]
+only tradeable forex instruments will get selected.
+only symbols having spread below specified will be selected. lack of such symbol results in infinite loop.
+after symbol selected program waits until rates are updated.
+if there aren't enough symbol that meets the requirements, number of charts opened may be below user specified.

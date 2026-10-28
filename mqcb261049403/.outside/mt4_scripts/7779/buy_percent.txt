@@ -1,0 +1,5 @@
+Author: mandorr
+Opens a BUY position with the size of a percentage of the maximum allowed size.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7779

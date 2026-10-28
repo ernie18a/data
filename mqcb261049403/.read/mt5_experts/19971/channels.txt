@@ -1,0 +1,42 @@
+The author of the idea
+:
+Scriptor
+,
+the author of the MQL5 code
+:
+barabashkakvn
+.
+All indicators have hard coded parameters, including the timeframe: "H1". Therefore, it is recommended to run the Expert Advisor on the H1 timeframe and on the EURUSD symbol. You can also set the time interval for the Expert Advisor operation using the
+From hour
+and
+To hour
+parameters.
+The Expert Advisor works in a channel formed by indicators with a period of 220: one Moving Average and three Envelopes of different heights. It also uses two Moving Averages with a very short period of 2, one of which is based on Close prices and the other one is based on Open prices.
+Separate settings of stop loss, take profit and trailing for BUY and SELL positions.
+Input Parameters
+Lots
+- the volume of position to open;
+Stop Loss BUY (in pips)
+- the stop loss of BUY positions;
+Stop Loss SELL (in pips)
+- the stop loss of SELL positions;
+Take Profit BUY (in pips)
+- the take profit of BUY positions;
+Take Profit SELL (in pips)
+- the take profit of SELL positions;
+Trailing Stop BUY (in pips)
+- the trailing stop of BUY positions;
+Trailing Stop SELL (in pips)
+- the trailing stop of SELL positions;
+Use trade hours
+- enable working hours;
+From hour
+- trading start hour;
+To hour
+- trading end hour;
+magic number
+- unique identifier for the EA.
+Trading without a stop loss can lead to a large drawdown, for example as follows:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19971

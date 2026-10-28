@@ -1,0 +1,68 @@
+The indicator automatically finds linear channels using all timeframes.
+During the first launch the indicator is most likely to notify of the absence of history data, because it needs 400 (default value) bars of each time period. In this case, switch to another time interval and switch back or restart the indicator.
+If you click on the chart and press Ctrl, the channel will be redrawn based on the position of the mouse pointer.
+extern
+int
+StartBar    =
+0
+;
+// from what point the data analysis begins, 0 - from the current one.
+extern
+int
+BarAnalys   =
+400
+;
+// the number of bars for analysis in each period. Not more than 2000!
+extern
+double
+k_width     =
+4
+;
+// channel width factor
+extern
+int
+accuracy    =
+50
+;
+// accuracy of modeling 1-no accuracy, if BarAnalys-max. accuracy. The higher the accuracy, the slower the indicator
+extern
+double
+Filter      =
+0.55
+;
+// filter the depth of forming a new channel, it is advisable to use the range 0.382-0.618
+extern
+double
+MinWidth    =
+0
+;
+// the minimum average weighted channel width in points, (with smaller width channels will not be formed)
+extern
+double
+MaxWidth    =
+10000
+;
+// the maximum average weighted channel width in points, (with a wider width channels will not be formed)
+extern
+bool
+Ray         =
+true
+;
+// a sign of continuation of the channel; true - ray, false - segment
+extern
+bool
+MaxMin      =
+true
+;
+// To build a channel taking into account extreme extremes?
+// -true - Yes. For the construction to pass through extreme extremes, the width coefficient k_width should be large, for example 100
+// -false - No. In this case, the upper and lower boundary of the channel is equidistant from the central axis of the channel (the center of the "mass")
+extern
+bool
+color_fill  =
+true
+;
+// Fill channels?
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10882

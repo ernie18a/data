@@ -1,0 +1,145 @@
+Backtest XAUUSD 01/03/2025 - 20/01/2026 Timeframe H1
+Backtest EURUSD 01/03/2025 - 21/01/2026 Timeframe H1
+1. Overall Concept
+This strategy combines
+machine learning–based market structure classification
+with
+rule-based trade execution
+.
+An ONNX model is used to classify the current market structure, while classical technical analysis (moving average trend filter, Fibonacci retracement, ATR, and risk–reward rules) is used to manage entries, exits, and risk.
+The system is designed to:
+Trade
+only at structurally meaningful pullback levels
+Avoid overtrading by allowing
+only one active trade or pending order
+Use
+probability confidence filtering
+from the AI model
+Apply
+risk-reward–based trailing stop management
+2. Market Structure Classification Using AI
+An ONNX model ( market_structure.onnx ) is loaded during initialization.
+On every new bar, the model predicts the
+current market structure state
+.
+Input Features
+The model receives six normalized features:
+Momentum change
+Price difference between the current close and the close 5 bars ago, normalized by ATR.
+Distance to recent swing high
+Difference between the highest high in the last 50 bars and the current close, normalized by ATR.
+Distance to recent swing low
+Difference between the current close and the lowest low in the last 50 bars, normalized by ATR.
+Relative tick volume
+Current tick volume compared to the average tick volume of the last 20 bars.
+Candle body strength
+Difference between close and open price, normalized by ATR.
+Time feature (hour of day)
+Encodes intraday session behavior.
+These features allow the model to infer
+trend strength, pullback depth, volatility, volume context, and session timing
+.
+3. Model Output and Confidence Filtering
+The ONNX model outputs:
+A
+predicted label
+representing market structure state
+(e.g., higher high, higher low, lower high, lower low)
+A
+probability score
+for the predicted class
+A trade signal is considered
+valid only if
+:
+The prediction confidence is
+above the defined threshold
+(default 0.65)
+The signal aligns with the higher-timeframe trend filter
+This ensures that
+low-confidence or noisy signals are ignored
+.
+4. Trend Direction Filter
+A
+50-period Simple Moving Average (SMA)
+is used as a directional filter:
+Bullish bias
+: price is above the SMA
+Bearish bias
+: price is below the SMA
+Trade directions are constrained as follows:
+Bullish market structure signals are allowed
+only in bullish trend
+Bearish market structure signals are allowed
+only in bearish trend
+This prevents counter-trend entries.
+5. Entry Logic Using Fibonacci Retracement
+Instead of market orders, the strategy uses
+pending limit orders
+at Fibonacci retracement levels.
+Pivot Detection
+Recent swing high and swing low are detected using a
+pivot-based method
+that scans historical highs and lows.
+Fibonacci Entry
+Entry is placed at a predefined Fibonacci retracement level (default
+61.8%
+)
+This targets
+pullbacks within a valid market structure
+, not breakouts
+Order Types
+Buy Limit
+in bullish conditions
+Sell Limit
+in bearish conditions
+Each pending order has:
+Fixed lot size
+Stop Loss beyond the structure invalidation level
+Take Profit based on a fixed
+Risk-Reward ratio
+(default 1:2)
+Expiration time to avoid stale orders
+6. Risk Management and Trade Limitation
+The strategy enforces strict exposure control:
+Only
+one open position or one pending order
+at a time
+No stacking or martingale behavior
+Stop Loss is always defined at entry
+Risk is structurally bounded by:
+Market structure invalidation
+ATR-normalized distance
+Fixed RR ratio
+7. Trailing Stop Based on Risk-Reward Progress
+Once a position is active, a
+Risk-Reward–based trailing stop
+is applied:
+Trailing activates after price reaches a predefined fraction of the TP distance
+Stop Loss is moved progressively toward breakeven and beyond
+Trailing logic is symmetric for buy and sell positions
+This approach:
+Protects partial profits
+Allows winners to extend
+Avoids premature stop-outs caused by noise
+8. Visual Feedback
+When a trade setup is created:
+A
+Fibonacci object
+is drawn on the chart
+The object is automatically removed once all trades and pending orders are cleared
+This helps visually confirm:
+Market structure
+Entry logic
+Retracement validity
+9. Summary of the Methodology
+In summary, this strategy follows a
+hybrid AI + rule-based methodology
+:
+AI classifies market structure using normalized, context-aware features
+High-confidence predictions are filtered by trend direction
+Trades are executed only at Fibonacci pullbacks within structure
+Risk is controlled using fixed RR and structural stop placement
+Profits are managed dynamically using RR-based trailing stops
+The result is a
+disciplined, structure-driven trading system
+that uses AI for decision support rather than blind automation.

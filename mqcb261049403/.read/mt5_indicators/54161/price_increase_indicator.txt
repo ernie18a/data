@@ -1,0 +1,2 @@
+A price increase indicator calculates range and price changes in percent.
+Update 13.12.2024: There was an error in the last version. It has been corrected!

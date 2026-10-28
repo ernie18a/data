@@ -1,0 +1,14 @@
+The
+StepMA_v6.4
+indicator with the timeframe selection option available in input parameters.
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+//Indicator chart period
+The indicator requires the compiled indicator file StepMA_v634.mq5. Place it to the terminal_data_folder\MQL5\Indicators\.
+Figure 1. Indicator StepMA_v6.4_HTF
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2098

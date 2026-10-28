@@ -1,0 +1,14 @@
+Indicator
+Awesome_Signal
+with the timeframe selection option available in input parameters.
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// Indicator chart period
+Place the indicator compiled file Awesome_Signal.mq5 to the terminal_data_folder\MQL5\Indicators\ of the client terminal.
+Figure 1. Indicator Awesome_Signal_HTF
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2025

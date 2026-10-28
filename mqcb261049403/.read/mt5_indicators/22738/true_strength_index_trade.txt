@@ -1,0 +1,34 @@
+Basics:
+The
+true strength index
+(
+TSI
+) is a technical indicator used in the analysis of financial markets that attempts to show both trend direction and overbought/oversold conditions. It was first published William Blau in 1991. The indicator uses moving averages of the underlying momentum of a financial instrument. Momentum is considered a leading indicator of price movements, and a moving average characteristically lags behind price. The TSI combines these characteristics to create an indication of price and direction more in sync with market turns than either momentum or moving average.
+The formula for the TSI is:
+where:
+c
+0 = today's closing price
+m
+=
+c
+0 −
+c
+1 = momentum (difference between today's and yesterday's close)
+EMA
+(
+m
+,
+n
+) = exponential moving average of
+m
+over
+n
+periods
+r
+= EMA smoothing period for momentum, typically 25
+s
+= EMA smoothing period for smoothed momentum, typically 13
+This version:
+This version is using what William Blau made for almost all his indicators - the "trade" version. The idea of the "trade" versions is to check the main value for zero crosses and then use the slope direction change in the same direction as signals for entries or re-entries.
+Usage:
+You can use it for signals when the value gets different from 0 - the direction of the entries depends on the direction of the momentum.

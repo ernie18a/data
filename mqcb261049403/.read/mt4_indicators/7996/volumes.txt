@@ -1,0 +1,4 @@
+The Indicator Volumes displays volumes as histogram in separate window and paints the histogram in two colours.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7996

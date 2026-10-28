@@ -1,0 +1,5 @@
+Author: not specified
+It is suitable for those who are too lazy to calculate the daily levels.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7486

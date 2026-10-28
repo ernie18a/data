@@ -1,0 +1,4 @@
+This indicator draw
+Month - Week - Day - H4
+Level or Range. with backtest true or false
+You can show or hide any level you want see the charts:

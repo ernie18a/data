@@ -1,0 +1,15 @@
+Author of the idea
+—
+Vince Wells
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+The Expert Advisor trades moving average breakouts. It uses the following indicators: two iMAs (Moving Average, MA), iRSI(Relative Strength Index, RSI) and two iEnvelopes (Envelopes).
+The Expert Advisor is based on a very simple moving average that is based on fast price deviations from a significant moving average. It is designed to be used on the Н1 timeframe.
+It is ready-to-use on EURUSD and USDCHF with default settings. If you want to use it on other pairs, you should replace the basic MA with the one that suits the desired pair. It is also recommended to adjust the TP, SL and trailing stop parameters in accordance with each currency pair. Volumes are easy to configure.
+It has a good reward-to-risk ratio, the number of winning trades clearly exceeds the number of losing ones.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17195

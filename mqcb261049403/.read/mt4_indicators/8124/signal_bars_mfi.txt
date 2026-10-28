@@ -1,0 +1,4 @@
+Author:
+cja
+The indicator displays helpful information for the trader.
+Signal_Bars_MFI

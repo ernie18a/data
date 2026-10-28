@@ -1,0 +1,1 @@
+Once you execute you will see detailed information about trades that were open at the inputted time.

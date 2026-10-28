@@ -1,0 +1,8 @@
+This Indicators Show You most of Support and Resistance Levels on your Chart .
+It Calc more than 180 levels and combine them in Rects with High (Step) pips .
+every level in any rect will increse Color and Wide to know this rect contain more levels on it .
+look to indicator properties to know what kind of Levels that this indicator Compine it togather.
+This version Contain New Levels.
+PLEASE DO NOT PUT ANY OTHER INDICATORS WITH THIS INDICATOR .
+for more explain see this link ( In Arabic ) ..
+http://www.arabictrader.com/vb/t50713.html

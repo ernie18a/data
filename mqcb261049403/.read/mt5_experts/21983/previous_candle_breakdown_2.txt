@@ -1,0 +1,78 @@
+This EA is a further development of the first
+Previous Candle Breakdown
+version
+Added the parameters
+Start time (hour) - operation start hour
+Start time (minute) - operation start minute
+End time (hour) - operation end hour
+End time (hour) - operation end minute
+Besides, trailing now works at each tick.
+The EA waits for breaking down any timframe from 1 minute through 1 month. Bar #1 is checked for breakdown at a specified timeframe
+Breakdown previous candle
+. It is also possible to enable two filters - Moving Average.
+NOTE! For the filters to operate, it is necessary that averaging periods
+Fast: av. period
+and
+Slow: av. period
+are above zero.
+In the EA, trailing is implemented that (at the first modification of the Stop Loss level) moves Stop Loss to breakeven.
+Position size can be both permanent (
+Lots
+above zero and
+Risk
+is equal to zero) and dynamically calculated in the risk percents per trade (
+Risk
+above zero and
+Lots
+is equal to zero).
+NOTE! No situations may be allowed, where:
+Both "Lots" and "Risk" are above zero;
+both "Lots" and "Risk" are equal to zero.
+Upon reaching the target profit
+Close all positions when profit is achieved
+, all positions will be closed. The EA ensures that no more than one position in each direction is opened at the specified timeframe
+Previous Candle Breakdown
+.
+Fig. 1. Current timeframe: M15, breakdown is set to H4
+Inputs
+Previous Candle Breakdown
+- timeframe of the candlestick to be broken down;
+Indent from High or Low
+- indent from High and Low of the broken-down candlestick;
+Fast: av. period
+- Moving Average "Fast": Averaging period; if it is set to zero, the filter from indicators "Fast" and "Slow" will not be used;
+Fast: horizontal shift
+- Moving Average "Fast": Horizontal shift of the indicator;
+Fast: type of price
+- Moving Average "Fast": Type of the price, on which the indicator is calculated;
+Slow: av. period
+- Moving Average "Slow": averaging period; if it is set to zero, the filter from indicators "Fast" and "Slow" will not be used;
+Slow: horizontal shift
+- Moving Average "Slow": horizontal shift of the indicator;
+Slow: type of price
+- Moving Average "Slow": type of the price, on which the indicator is calculated;
+Fast and Slow: smoothing type
+- averaging type (common for both "Fast" and "Slow");
+Stop Loss
+- stop loss;
+Take Profit
+- take profit;
+Trailing Stop
+- trailing (it works as breakeven at the first modification of Stop Loss);
+Trailing Step
+- trailing step;
+Lots
+- lot size is permanent (
+Risk
+must be set to zero);
+Risk
+- lot size is calculated dynamically in the risk percents per trade (
+Lots
+must be set to zero);
+Maximum number of positions in one direction
+;
+Close all positions when profit is achieved
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21983

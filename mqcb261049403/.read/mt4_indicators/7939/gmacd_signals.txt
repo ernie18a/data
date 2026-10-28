@@ -1,0 +1,2 @@
+Author: Muhammad Hamizi Jaminan (hymns) & CJA
+GMacd_Signals indicator. Will approach as the filter.

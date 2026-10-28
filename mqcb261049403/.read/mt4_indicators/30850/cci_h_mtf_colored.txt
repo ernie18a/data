@@ -1,0 +1,5 @@
+Fully customizable: Period, TimeFrame, Color, and Price.
+Above 0: Chartreuse
+Below 0: Red
+Above 100: Marron
+Below -100: Dark Green

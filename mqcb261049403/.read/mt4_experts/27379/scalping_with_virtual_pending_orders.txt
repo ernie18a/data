@@ -1,0 +1,8 @@
+This EA demonstrates the use of a Virtual Pending Order class library (VirtPndOrds.mqh) by means of a scalping program.
+The implementation of simulated Buy Stop and Sell Stop orders enables pending orders to be executed when the price and/or an indicator value exceeds specified thresholds.
+In addition, the threshold testing of the Buy/Sell Stop order may be done at either a new bar or at a new tick .
+The library also supports simulated Buy/Stop Limit pending orders .
+This method gives much more flexibility in dealing with pending orders.
+The scalping program runs on a M1 EURUSD chart.
+Stop orders are initiated when the Stochastic value crosses a first limit line.
+The Buy/Sell Stop orders are then executed when the Stochastic value exceeds a second limit line (higher for Buy orders) and when the price also changes by a set value in pips. Filtering by trend behavior is used to improve performance.  The scalping demonstration program only works well for low spreads (<0.50 pips).

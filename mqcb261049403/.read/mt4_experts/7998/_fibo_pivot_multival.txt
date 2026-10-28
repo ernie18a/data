@@ -1,0 +1,62 @@
+Author of Technical Requirement:
+Dael
+https://www.mql5.com/ru/forum/106595
+EA Code Developer:
+olyakish
+Since the technical requirement was uploaded to the forum and its author ordered the code from another programmer, I don't see any moral constraints to freely upload my own version of the Expert Advisor.
+The essence of the EA. Working on several currency pairs at night (Asian session), it trades from the levels of Fibo Pivot with small profits, but without losses.
+As soon as a certain total amount of points is gained for all the traded pairs, the EA must close trading for the current day.
+This Ea can be considered as an example of a multi-currency EA without any limitations on the amount of traded currencies.
+There are 10 of them in my example.
+Recommendations:
+The Ea should be launched on the days when a flat market is expected.
+You should attach the Ea to the currency pair that has the largest amount of ticks in Asian session.
+You should select currency pairs with small spreads.
+Variables:
+extern int CountSymbol=10;
+The amount of currencies to be traded
+extern string AllVal="EURUSD,GBPUSD,USDCHF,USDJPY,USDCAD,AUDUSD,AUDJPY,CADJPY,EURJPY,EURCHF";
+Currency pairs
+extern string All_Level_P_F1="33,33,33,33,33,33,33,33,33,33";
+Line percentage according to the indicator (mentioned in the above forum)
+extern string All_Level_F1_F2="50,50,50,50,50,50,50,50,50,50";
+Line percentage according to the indicator (mentioned in the above forum)
+extern string All_Level_F2_F3="33,33,33,33,33,33,33,33,33,33";
+Line percentage according to the indicator (mentioned in the above forum)
+extern string All_Level_F3_out="40,40,40,40,40,40,40,40,40,40";
+Line percentage according to the indicator (mentioned in the above forum)
+extern string rem01 = "Amount of profitable trades in order not to trade on this currency pair";
+extern string All_ExpertTrades="15,15,15,15,15,15,15,15,15,15";
+for one pair, after that the trading on this currency pair stops for the current day
+extern string rem02 = "Minimum value of profit in !points!";
+extern string All_ExpertProfit1="150,150,150,150,150,150,150,150,150,150";
+for one pair, after that the trading on this currency pair stops for the current day
+extern int AllValProfit=50;
+the total desired profit, after that the trading stops for the current day
+extern int AllValProfitTrades=35;
+total amount of wins within the current day
+extern string rem03 = "If b then upper - buy, alow - sell";
+extern string rem04 = "If s then upper - sell, alow -buy";
+extern string rem05 = "If bs then upper and alow buy/sell";
+extern string All_F2_F3_Order = "bs,bs,bs,bs,bs,bs,bs,bs,bs,bs";
+according to the technical requirement
+extern int MagicStart=1000;
+starting Magic Number
+each order in the system has its own magic number, so one pair takes 14 magic numbers
+extern int GlobalPeriod=15;
+global period for all pairs (the corresponding symbol window with this period must be opened in the client terminal
+)
+extern string HourMinStart="00:07";
+hour and minutes of the EA start (terminal time)
+extern string HourMinFinish="08:00";
+time limit for placing pending orders
+extern string HourMinCloseAll="22:00";
+forcible closing of all trades (if even losing ones)
+extern bool DrawLine=true;
+I faced the problem of line drawing of the reference indicator in other windows (as related to the symbol window the EA is attached to)
+So this variable is not used in the EA code
+.
+P.S. The shipping version of this EA (not my code) seems to have a code of doubled length as compared to this one, and it is aimed at trading of only one currency pair.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7998

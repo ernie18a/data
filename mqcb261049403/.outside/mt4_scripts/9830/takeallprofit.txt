@@ -1,0 +1,3 @@
+TakeAllProfit by a script
+Update to V2
+Fix the Bug while loop(Slow) and not start New MT4 been updated!

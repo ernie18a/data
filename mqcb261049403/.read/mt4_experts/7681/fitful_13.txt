@@ -1,0 +1,7 @@
+Author: Artapov Alexandr, Sidorina Yulia
+Adviser FitFul 13.
+-------------------------
+Parameters of testing
+Symbol: EURUSD.
+Period: H4.
+Model: All tiks.

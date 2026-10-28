@@ -1,0 +1,28 @@
+(You need use Heiken Ashi to see the graph or change the parameter ti put the graph in front of the indicators)
+So I choose a H1 PERIOD to have a strong trend, I write a histogramme whith appropriate colors, and I put the all in MTF to have a better view in M1 or M5 PERIOD
+EASY -> Green = UpTrend // Orange = not defined  // Red = DownTrend
+The Bollinger inverse is just a bollinger Band inicator whith lower-mode parameter for the upperBB line and upper-mode parameter for the lowerBB.
+When a very fast Ma cross the upperBB, is probably a uptrend and when is crossing the lowerBB, is probably a downtrend.
+(bollinger inverse + MA
++ Heiken Ashi)
+So I choose a H1 PERIOD to have a strong trend, I write a histogramme whith appropriate colors, and I put the all in MTF to have a better view in M1 or M5 PERIOD
+when MA > UPPERBB -> Grenn, MA < UPPER && MA > LOWERBB -> Oraange, MA < LOWERBB -> RED
+(a-TENDANCE-H1-chart-window + Heiken Ashi)
+and I put the histogram in a MaxMinBand channel.
+So you have to ajust the parameters of BBinverse, period, deviation and shift, and the parameters of the fast MA
+and the Time Frime .
+I prefere
+extern int TimeFrame=60;
+//---- input parameters Bollinger-inverse
+extern int ainpperiod = 10;
+extern double ainpdeviation =1.25 ;
+extern int ainpshift = 1;
+//---- input parameters Ma
+extern int aperiodma = 3;
+extern int ashiftma = 0;
+extern int amethodma = 3;
+extern int apricema = 5;
+//---- input parameters MaxMinChannel
+extern int Band_PeriodMM = 90;
+extern int SiftMM = 1;
+But please, let me know your let me know your parameters preferences .

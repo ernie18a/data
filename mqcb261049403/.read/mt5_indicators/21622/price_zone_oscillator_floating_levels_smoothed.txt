@@ -1,0 +1,4 @@
+In order to filter out some of the signals of the
+Price Zone Oscillator - Floating Levels
+indicator, smoothing is added to this version.
+It filters out a lot of false signals this way, thus possibly becoming more usable.

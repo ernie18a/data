@@ -1,0 +1,29 @@
+Broker Execution Diagnostics is a read only utility for traders and developers who need to understand how the current broker defines a symbol before configuring an Expert Advisor or investigating rejected orders.
+The script does not open, modify or close trades. It reads the selected symbol specifications and displays a structured report on the chart and in the Experts log.
+The report includes:
+• Current bid, ask and spread in points
+• Symbol digits, point size and trade tick size
+• Tick value, profit tick value and loss tick value
+• Contract size and account currencies
+• Minimum, maximum and step volume
+• Directional volume limit
+• Stop level and freeze level
+• Symbol trade mode and execution mode
+• Supported filling modes and order features
+• Terminal, account and Expert Advisor trading permissions
+• Estimated margin for a configurable test volume
+• Estimated account currency profit for a configurable price movement
+The test volume is normalized according to the broker’s minimum volume, maximum volume and volume step. Margin and profit estimates use the native OrderCalcMargin and OrderCalcProfit functions instead of fixed pip value assumptions.
+Inputs
+InpSymbol
+Leave this field empty to analyze the current chart symbol. A different broker symbol may also be entered manually.
+InpTestVolume
+Defines the volume used for margin and profit estimates.
+InpTestMovePoints
+Defines the price movement in points used for the estimated profit calculation.
+How to use
+1. Compile BrokerExecutionDiagnostics.mq5 in MetaEditor.
+2. Place the compiled script in the MQL5\Scripts directory.
+3. Attach the script to the required symbol chart.
+4. Read the complete report on the chart or in the Experts tab.
+This utility is intended for broker specification analysis and execution troubleshooting. It does not generate trading signals, predict market direction or guarantee order execution.

@@ -1,0 +1,35 @@
+'Three timeframes Stochastic Average' displays in a separate window three Stochastic Oscillators of the specified timeframes, as well as their average value.
+The indicator has twelve input parameters:
+Stochastic %K period
+- stochastic %K line calculation period
+Stochastic %D period
+- stochastic %D line calculation period
+Stochastic Slowing
+- stochastic %slowing period
+Overbought
+- overbought level
+Oversold
+- oversold level
+Drawing mode
+- indicator drawing type
+Steps
+- as a ladder
+Slope
+- sloping lines
+First Stochastic timeframe
+- the timeframe of the first Stochastic indicator
+Second Stochastic timeframe
+- the timeframe of the second Stochastic indicator
+Third Stochastic timeframe
+- the timeframe of the third Stochastic indicator
+Show first Stochastic
+- show the first Stochastic indicator
+Show second Stochastic
+- show the second Stochastic indicator
+Show third Stochastic
+- show the third Stochastic indicator
+Fig.1. Three timeframes Stochastic Average, H4, H8 and D1 data on the H1 chart, Drawing mode = Steps
+Fig.2. Three timeframes Stochastic Average, H4, H8 and D1 data on the H1 chart, Drawing mode = Slope
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23314

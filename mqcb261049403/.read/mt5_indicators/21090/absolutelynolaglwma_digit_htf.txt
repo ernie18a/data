@@ -1,0 +1,16 @@
+Indicator
+AbsolutelyNoLagLwma_Digit
+with the timeframe selection option available in its input parameters:
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// Indicator chart period (timeframe)
+For the indicator to operate, indicator
+AbsolutelyNoLagLwma_Digit.ex5
+must be in the <terminal_data_directory>\MQL5\Indicators folder.
+Fig 1. Indicator AbsolutelyNoLagLwma_Digit_HTF
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21090

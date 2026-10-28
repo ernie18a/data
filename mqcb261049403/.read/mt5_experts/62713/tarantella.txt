@@ -1,0 +1,22 @@
+Tarantella EA: Advanced Adaptive Grid Trading System
+Tarantella is a sophisticated grid trading Expert Advisor that combines traditional grid strategies with innovative risk management techniques. At its core, the EA places buy/sell orders in expanding Fibonacci-based intervals, dynamically adjusting position sizes and grid spacing based on market conditions.
+Key Features:
+Market Profile Integration: Restricts trading to high-probability Value Areas (70% typical) while avoiding Point of Control zones
+Multi-Layer Trend Filtering: Combines ADX trend strength detection with MA/MACD directional confirmation across timeframes
+Intelligent Hedging System: Activates counter-trades at user-defined intervals with partial close options
+Adaptive Grid Management: Uses Fibonacci ratios (1.0, 1.618, 2.618...) for dynamic grid spacing and lot scaling
+Advanced Entry Conditions: Requires consecutive bars + volume filters + optional ATR/RSI confirmation
+Comprehensive Risk Management:
+Trailing stops & breakeven triggers
+Position limits with oldest-trade closure
+Equity-based full/partial closure rules
+Stop-loss buffers respecting broker constraints
+Strategic Advantages:
+Trades only during confirmed trends (ADX > 25 + MA/MACD alignment)
+Avoids low-probability zones using Market Profile analysis
+Mitigates drawdown through proactive hedging
+Adapts to volatility via Fibonacci grid expansion
+Implements 4-layer risk protection (position limits, equity stops, trailing mechanisms, and hedge coverage)
+Please be aware: This EA is not designed for live trading. Using martingale strategies or increasing lot sizes could eventually lead to a complete loss of your balance. It is intended for demo and strategy testing only. The code requires significant updates before it is suitable for live trading. Consider it a work in progress and feel free to make improvements.
+Ideal For: EURUSD, GBPUSD, XAUUSD and other liquid pairs on M15-H1 timeframes. Requires medium-high volatility environments.
+Package Includes: Fully commented code, preset files for major pairs, and detailed risk management guide.

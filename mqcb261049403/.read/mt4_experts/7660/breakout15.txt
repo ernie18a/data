@@ -1,0 +1,7 @@
+Author: Robert Hill
+The adviser works only on 15 minutes.
+-------------------------------
+Parameters of tesing:
+Period: 15.
+Model: For the prices of opening.
+Symbol: EURUSD.

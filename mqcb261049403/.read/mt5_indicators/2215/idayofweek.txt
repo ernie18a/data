@@ -1,0 +1,16 @@
+Real author:
+Kim Igor V. aka KimIV
+The indicator uses colored rectangles to paint the price range of the weekday selected in the indicator settings:
+//+-----------------------------------+
+//| Indicator input parameter         |
+//+-----------------------------------+
+input
+dayOfWeek NumberDayOfWeek=Friday;
+// Number of the day of the week
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 24.09.2007.
+Figure 1. The i-DayOfWeek indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2215

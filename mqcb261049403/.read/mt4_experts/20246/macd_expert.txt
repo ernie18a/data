@@ -1,0 +1,9 @@
+This expert advisor is using the MACD indicator to open trades.
+It works on any symbol and support 5 and 4 digits brokers.
+The exits are based on fixed stop loss and take profit values.
+Inputs
+Lot Size
+Stop Loss in points
+Take Profit in points
+Max allowed spread in points
+EA magic number

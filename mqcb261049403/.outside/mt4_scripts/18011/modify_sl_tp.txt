@@ -1,0 +1,15 @@
+This script is used to modify the Stop Loss and Take Profit of current symbol positions.
+The new Stop Loss and Take Profit are based on the market price.
+If the inputs are 0, there will be no modification.
+It is useful to update all positions with the same SL/TP.
+Update: 2019-8-7
+Modify_SL_TP   ---  it has a bug and corrected,please update.
+Modify_SL_TP_With Price --- it is newly added
+Modify_SL_TP_ALL_Symbol --- it is newly added.
+1. Modify_SL_TP:
+It is used to modify the Stop Loss /Take Profit of current symbol positions,the input are
+in pips.
+2. Modidy_SL_TP_With_Price :  It is used to modify the Stop Loss /Take Profit of current symbol positions,the input are
+in price instead of pips.
+3. Modify_SL_TP_ALL_Symbol.mq4 :  It is used to modify all orders and pending orders of all symbols, the inputs are
+in pips.

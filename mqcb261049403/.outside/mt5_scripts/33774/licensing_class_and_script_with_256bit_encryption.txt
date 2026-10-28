@@ -1,0 +1,11 @@
+This class loads a licensing file by reading 256bit encrypted account data from a license file into an account array for the purpose of licensing.
+The Class is initialised with a Filename, a Master Key and whether the file needs to be saved in the common folders or not.
+Important Methods:
+m_Write(string m_Acc  = "", string m_Server = "")
+- Adds a a new account to the licensing file...
+(we use this to make a simple script to add new accounts to the licence file. directly in Mt5 / Mt4)
+m_LicenceFound(string m_Acc="", string m_Server="")
+- Checks the array of accounts from the license file to see if there is a matching and returns a bool based on it.
+And finally there are two public functions available for encrypting and decrypting strings using 256 bit encryption... (if needed by user)
+The included sample script file creates a license file using above class.
+The script will append new account licences to the specified file...

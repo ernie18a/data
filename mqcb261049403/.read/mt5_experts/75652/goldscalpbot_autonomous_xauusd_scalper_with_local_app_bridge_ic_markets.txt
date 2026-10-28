@@ -1,0 +1,68 @@
+GoldScalpBot
+is an Expert Advisor for MetaTrader 5 focused on
+XAUUSD
+scalping.
+DEMO = unlimited free.
+LIVE = 7-day trial, then rent GoldScalping Pro on MQL5 Market:
+https://www.mql5.com/en/market/product/190166
+What it does
+Trades
+XAUUSD
+on
+M5
+during London / New York sessions
+Entry logic: EMA momentum + short breakout/retest filters
+Exits: ATR-based Stop Loss / Take Profit + optional time-stop
+Risk: fixed
+% of equity
+per base trade
+Lot scaling: increases only after
+consecutive wins
+(capped) —
+no martingale after losses
+Daily loss stop and max spread filter
+Optional local HTTP bridge for a companion mobile/web app (monitor, pause, close, modify SL/TP)
+Recommended setup
+Broker:
+IC Markets
+(or any ECN with tight XAUUSD spreads)
+Symbol:
+XAUUSD
+Timeframe:
+M5
+Account:
+DEMO first
+Enable Algo Trading
+If using the bridge: allow WebRequest for
+http://127.0.0.1:8765
+Inputs (main)
+InpRiskPercent
+— risk % per base trade
+InpSlAtrMult
+/
+InpTpAtrMult
+— ATR multipliers
+InpWinsForScale
+/
+InpLotScaleFactor
+/
+InpMaxLotMult
+— win pyramid
+InpBridgeUrl
+/
+InpBridgeToken
+— local bridge (optional)
+Session filters: London / New York / overlap
+Important risk disclaimer
+This EA does
+not
+guarantee profits. Automated trading can lose your entire account balance. Always test on a
+demo
+account. Past performance is not indicative of future results. Use at your own risk.
+Notes
+Designed primarily for hedging accounts (IC Markets style).
+Symbol name may differ by broker ( XAUUSD ,
+GOLD , etc.) — set
+InpSymbol
+accordingly.
+Companion app / bridge files are separate from this Code Base entry; the EA can run standalone.

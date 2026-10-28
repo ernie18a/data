@@ -1,0 +1,204 @@
+UltraWPR_HTF_Signal_BG shows information about trend direction based on the data of the
+UltraWPR
+indicator on a selected bar as a graphic object with a colored indication of trend or deal direction and gives alerts or audio signals and sends push notifications on the smartphone if signal to conduct a deal appears.
+A graphic object is represented as a colored background. The background has four colors. Pale colors indicate trend continuation and bright colors indicate a signal to trade.
+The indicator sends alerts and push notifications only if the value of the input parameter:
+input
+uint
+SignalBar=
+0
+;
+// The bar number to get a signal (0 - current bar)
+is greater than one. For the zero bar sound signals and Push-notifications are useless because the signal of the indicator on the zero bar can change and disappear!
+All input parameters can be divided into three large groups:
+Input parameters for drawing a session:
+//+------------------------------------------------+
+//| Session drawing input parameters               |
+//+------------------------------------------------+
+input
+bool
+SessionDrawOff=
+false
+;
+// Show session in a non-session period
+input
+string
+SessionSirName=
+"Asian"
+;
+// Session name
+input
+Hour   StartHour=H00;
+// Session start hour
+input
+Min    StartMinute=M00;
+// Session start minute
+input
+uint
+SessionTime=
+480
+;
+// Session duration in minutes
+input
+color
+Up_Color=
+clrPaleTurquoise
+;
+// Color of growth
+input
+color
+Buy_Color=
+clrLime
+;
+// Color of Buy
+input
+color
+Sell_Color=
+clrDeepPink
+;
+// Color of fall
+input
+color
+Dn_Color=
+clrLightPink
+;
+// Color of Sell
+Input parameters of UltraWPR:
+//+------------------------------------------------+
+//|  Indicator input parameters                    |
+//+------------------------------------------------+
+input
+string
+Symbol_=
+""
+;
+// Financial instrument
+input
+ENUM_TIMEFRAMES
+Timeframe=
+PERIOD_H6
+;
+// Indicator timeframe for indicator calculation
+input
+int
+WPR_Period=
+13
+;
+// Period of the WPR indicator
+//---
+input
+Smooth_Method W_Method=MODE_JJMA;
+// Method of averaging
+input
+int
+StartLength=
+3
+;
+// Starting period of averaging
+input
+int
+WPhase=
+100
+;
+// Period of averaging (-100..+100)
+//---
+input
+uint
+Step=
+5
+;
+// Period change step
+input
+uint
+StepsTotal=
+10
+;
+// Number of period changes
+//---
+input
+Smooth_Method SmoothMethod=MODE_JJMA;
+// Smoothing method
+input
+int
+SmoothLength=
+3
+;
+// Smoothing depth
+input
+int
+SmoothPhase=
+100
+;
+// Parameter of smoothing (-100..+100)
+The input parameters of the UltraWPR_HTF_Signal_BG indicator required for the indicator visualization:
+//---- indicator visualization settings
+input
+uint
+SignalBar=
+0
+;
+// Bar number to receive a signal (0 - current bar)
+input
+string
+Symbols_Sirname=INDICATOR_NAME
+"_Label_"
+;
+// a name for the indicator labels
+input
+color
+IndName_Color=DarkOrchid;
+// color of the indicator name
+input
+uint
+Font_Size=
+10
+;
+// Font size of the indicator name
+input
+int
+X_1=
+5
+;
+// Horizontal shift of the name
+input
+int
+Y_1=-
+15
+;
+// Vertical shift of the name
+input
+bool
+ShowIndName=
+true
+;
+// Show the indicator name
+input
+ENUM_BASE_CORNER
+WhatCorner=
+CORNER_RIGHT_UPPER
+;
+// Location corner
+Input parameters of the UltraWPR_HTF_Signal indicator that are necessary for producing alerts and audio signals:
+//---- Settings of alerts
+input
+ENUM_ALERT_MODE alert_mode=OnlySound;
+// Option of triggering indication
+input
+bool
+Push=
+true
+;
+// Allow push notifications
+input
+uint
+AlertCount=
+0
+;
+// Number of produced alerts
+In case several UltraWPR_HTF_Signal_BG indicators are to be used on one chart, each of them should have its own Symbols_Sirname (indicator labels names) string variable value.
+Place the indicator compiled file UltraWPR.mq5 to the terminal_data_folder\MQL5\Indicators\ of the client terminal.
+Fig. 1. A signal of trend continuation based on the data of the UltraWPR_HTF_Signal_BG indicator
+Fig. 2. A signal to open a position based on the data of UltraWPR_HTF_Signal_BG
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2018

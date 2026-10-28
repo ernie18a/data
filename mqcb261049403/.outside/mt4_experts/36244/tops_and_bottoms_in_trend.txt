@@ -1,0 +1,12 @@
+This EA buys when at new low in a down trend occurs with oversold rsi.
+inputs for trending range and quality including look back how many bars involved.
+sells at new high and same as buy.
+Past candle count , look back period for trend conditions.
+past pips , pip look back range minimum range.
+trend quality 1-10 , 1 being loose trend / 10 quality trend.
+stop are placed in pips targets are a percent of stops.
+100 being a 1:1 risk reward ratio . 200 1:2 ect
+lots set at 0.01 , variable.
+rsi period set at 14, variable and oversold and overbought levels set at 40/60 variable.
+preset parameters may not be profitable , lots of inputs for optimization.
+ignore input 17 takeprofitinpips set at 5pips

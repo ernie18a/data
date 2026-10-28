@@ -1,0 +1,28 @@
+Real author:
+I have modified and combined the following materials:
+Harmonik_Ratios by "all traders";
+Support and Resistance Barry Stander;
+My own program.
+This is the improved version of the
+"HarmonikManual"
+, with more attractive and easier to use.
+This indicator is made with the aim to:
+Detect the name of the pattern of the points that we place;
+Finding the possibility of emerging pattern;
+Automatically finding the possibility of reversal pattern.
+How to use:
+By clicking the button feature is located on the right top of the chart, we can set the utility as follows:
+"SEARCH" will find all the possible patterns that will happen next.
+"NEXT" will move the point "D" on the pattern obtained, to know the name.
+"ON / OFF" to turn the indicator on or off.
+"COLOUR / NONE" to change the color of the harmonic pattern, which is colored or not.
+"XABC" to put the point XABC to the nearest highest or lowest point.
+"RESET" when an error occurs that is not yet defined, press this button.
+"AUTO" search the possibility next pattern automatically.
+To move the location of the menu, press the key "M" for a while. After the key "M" is released, click the mouse button on the desired area.
+"AUTO", the feature "AUTO" will automatically create object property "TEXT" name "PERIOD" that show the PERIOD that will use to search the possibility of the next reversal pattern.
+We can change the PERIOD to search, by changing the object property "TEXT" name "PERIOD" above.
+Click the button "AUTO" again, and the result will shown as figure below.
+You also be able to change the database of "Harmonics Pattern" with your own database. By changing the input "file name" and "DatabaseRecord".
+You do not have to worry that the number defined in "DatabaseRecord" is not appropriate, because the indicator will adjust if a given number is too large. And will only read the database records, according to the input number, if the number entered is too small.
+Save your database file at <terminal_data_folder>\MQL4\Files.

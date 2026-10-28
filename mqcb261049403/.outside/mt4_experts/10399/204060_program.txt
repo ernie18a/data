@@ -1,0 +1,5 @@
+Description:
+Three grades take profit Grid System, use it on weak market and fluctuating market, may need close all positions at some time.
+Notice
+: This article has switched to this link:
+http://codebase.mql4.com/en/code/10398

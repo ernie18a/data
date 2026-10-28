@@ -1,0 +1,32 @@
+Author of the idea
+:
+arist0
+MQL5 code author
+:
+barabashkakvn
+The EA works with pending Buy Stop and Sell Stop orders. At the start of the day, pending orders from the previous day are deleted. New Buy Stop and Sell Stop orders are placed at
+Minimum distance
+above High and below Low.
+If a pending order is triggered and the position becomes profitable, trailing is applied to it.
+When any of pending orders is triggered, the remaining pending order is removed. This is done in
+OnTradeTransaction
+: DEAL_ENTRY_IN (market entry) is searched for.
+Inputs
+Stop Loss
+- stop loss;
+Take Profit
+- take profit;
+Trailing Stop
+- trailing;
+Trailing Step
+- trailing step;
+Minimum distance
+- minimum indent from High and Low of the previous day;
+Risk in percent for a deal from a free margin
+- risk per trade;
+magic number
+- unique EA identifier.
+EURUSD,M15:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21457

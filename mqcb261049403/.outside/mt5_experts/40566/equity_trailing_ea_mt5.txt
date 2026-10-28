@@ -1,0 +1,4 @@
+This EA started off as a job to trail equity. I then added the function of managing individual trades.
+Thereafter I added the facility of manually putting the price of when it can send a grid of pending order's.
+This EA does not have condition set in it to open trades. You have to determine that if market moves to an area you  believe you would open a grid of orders if you were by your computer watching the market. No what this EA helps is you wake up in the morning you see the area you a grid to open. PUT THE PRICE FOR THE EA TO OPEN A GRID OF PENDING ORDERS.
+If the market reaches the area price you have set. The EA will send the grid and will manage those trades putting Stop Loss (if you set it) trailing(if you set it). Today 13 Sep 2022 the EA generates has NO ERROR when compiled

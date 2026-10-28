@@ -1,0 +1,3 @@
+Author:
+not specified
+Indicator MTF_atrstops. Works with indicator ATRStops_v1[1].1.

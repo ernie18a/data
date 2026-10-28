@@ -1,0 +1,15 @@
+Supertrend MTF Indicator
+is a free multi-timeframe trend indicator for MetaTrader 4.
+The indicator displays bullish and bearish trend conditions directly on the chart using colored Supertrend lines and signal arrows.
+Main features:
+Multi-timeframe trend analysis
+Bullish and bearish Supertrend visualization
+Buy and Sell signal arrows
+Works with Forex, Gold, indices and other MT4 instruments
+Can be used on different chart timeframes
+Suitable for manual trend confirmation and entry/exit analysis
+Adjustable indicator parameters
+The indicator is intended for visual analysis and does not open or manage trades automatically.
+An Expert Advisor based on the same Supertrend MTF trading concept has also been developed and is available in the MQL5 Market.
+The EA version is intended for traders who prefer automated execution, while this free source-code indicator can be used for manual analysis, education and further development.
+Always test any trading tool on a demo account before using it in live trading.

@@ -1,0 +1,13 @@
+Expert Advisor in MQL4 with 4 signals based on 6 Indicators. Works at any stock: Forex, Indices, Metals, you just need to give it the right parameters.
+Available in Spanish ES and in English EN.
+The expert works better on Timeframes from M15 to H1, at least with my way of trading but any Timeframe can be profitable if your strategy matches the needs.
+You can open orders by fixed lots or use a lot per percentage of the balance risk.
+It works with Volumes, PSAR, Stochastic, Bull and Bears Power, ATR and MFI.
+Profit is taken trough Trailing and Trailing Step as per 1 order. If more orders are opened, profit is taken by money or by percentage over the balance, as well as loss. Remember not activating loss in percentage is the same as giving it a 100 percent.
+Before backtesting I recommend you to attach the indicators in your chart, first, see the minimum volumes for trend, then evaluate the best matches between all the other indicators and timeframes, in order to backtest with less parameters.
+Also evaluate the average move per trade to give the Trailing Profit a value.
+REMEMBER
+: To add URLs at Tools / Options / Expert Advisors / activate: Allow WebRequest for listed URL and Add both URLs for News. It looks like news cannot be taken for Indices and Metals, so remember NOT to activate it at those, as it stops all the other EAs at other charts from working.
+If anybody wants to translate it to MQL5, it would be great. I still do not know MQL5. If you do, please, send me a copy
+😉
+.

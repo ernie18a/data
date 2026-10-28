@@ -1,0 +1,16 @@
+MultiX2MASignal displays information on current trends using values of the four
+X2MA
+indicators obtained from different time frames.
+Each of the
+X2MA
+indicators corresponds to one of the four indicator lines. If the X2MA indicator goes up, the line is blue, if it goes down, the line is orange. Colored points appear on the lines when the bar of the relevant time frame is changing.
+The operation of the indicator requires X2MA.mq5 to be located in terminal_directory\MQL5\Indicators.
+The
+X2MA.mq5
+indicator uses the SmoothAlgorithms.mqh library classes (to be be placed in terminal_directory\MQL5\Include). The use of the classes was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Fig.1 The MultiX2MASignal Indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1045

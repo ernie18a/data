@@ -1,0 +1,9 @@
+Post the Expert Advisor code participated in Automated Trading Championship 2012.
+kositbablo_10.ex5, 1 minute OHLC:
+Fig. 1. Testing results of the kositbablo_10 Expert Advisor for 2012
+A little changed kositbablo10-1.ex5, less profitable with position reversal and lower drawdown, 1 minute OHLC:
+Fig. 2. Testing results of the kositbablo_10-1 Expert Advisor for 2012
+Variants are raw, perhaps it can be improved, put more control parameters, but they do not play any interest to me.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1433

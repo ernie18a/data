@@ -1,0 +1,29 @@
+Hi Guys:
+Three basic scripts tools for you guys to play around with basically they are order closers that are irrespective of chart and directed to look at the open orders in the Terminal Trade Section.
+- CloseAllOrders : Well noobs what do ya think it does? You're Right thats what it does! It closes all your open orders silultainiously. "Its a Nuke"........ LOL
+- CloseAllProfit : This one's a little more selective, it closes only those open orders that are showing positive profit silultainiously. "Cash Collector".......Like Tony Soprano only nicer
+- CloseAllLosses: OK heres the deal with this one, nobody likes to accept a loss willingly but sometimes it just has to happen, this one closes all your losing positions silultainiously. "Cut and Run"
+====================================================================================================================================
+NOTICE ABOUT ALL THESE SCRIPTS (BASICALLY FOR ALL THE OTHER NOOBIES OUT THERE LIKE ME)
+THEY ARE ALL CHART IRRESPECTIVE IT DOEST MATTER IF YOU HAVE MULTIPLE TRADES ACROSS 20 DIFFERENT PAIRS THESE SCRIPTS WILL AFFECT EACH ONE SIMULTAINIOUSLY BASED ON THEIR PROFIT OR LOSS OR IN THE CASE OF "CLOSEALLORDERS" ALL OF THEM.
+============================================================================================================
+AS WITH ALL SCRIPTS OR EAs (BASICALLY FOR ALL THE OTHER NOOBIES OUT THERE LIKE ME) YOU EXPERTS OUT THERE IGNORE THIS PART THANKS ------ LOL
+TO USE THEM IN YOUR MT4 TRADING STATION YOU NEED TO TAKE CERTAIN STEPS:
+FIRST:
+YOU NEED TO COPY THE FILES TO THE CORRECT LOCATION THEY ALL WILL LOOK SIMILAR BUT WILL VARY SLIGHTLY DEPENDING ON YOUR SOFTWARE PROVIDER:
+INDICATORS GO INTO ----- C:\Program Files\ForexTrader.Meta\experts\indicators
+TEMPLATES GO INTO ----- C:\Program Files\ForexTrader.Meta\experts\templates
+EXPERTS GO INTO ----- C:\Program Files\ForexTrader.Meta\experts\experts
+SCRIPTS GO INTO ----- C:\Program Files\ForexTrader.Meta\experts\experts\scripts
+SECOND:
+OPEN EACH FILE UP INDIVIDUALLY WITH THE METAEDITOR AND HIT THE (COMPILE) BUTTON THEN CLOSE THE FILE
+NOW ITS READY TO USE
+================================================================================================================================
+Enjoy
+Please Post feedback here and/or Email Me
+Jedimedic77@gmail.com
+Good Luck Everyone, Happy Holidays, and Good Fortune
+Jim Malwitz
+--------------------------------
+"Sis Vis Pacum Parabellum"
+"Draco Dormiens Nunqueim Titilandus"

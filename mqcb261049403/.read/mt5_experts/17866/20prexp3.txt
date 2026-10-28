@@ -1,0 +1,33 @@
+Author of the idea
+—
+Sergey
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+The 20PRExp-3 Expert Advisor is based on the intraday volatility breakthrough system. It additionally uses volume filters and the Parabolic SAR indicator. Exit strategy: using a trailing stop.
+Recommended period: M5.
+The Expert Advisor draws and moves horizontal lines at the following levels:
+‌"
+MLP
+" — at the
+High
+price of the bar with the "0" index on the PERIOD_D1 timeframe.
+"
+MLM
+" — at the
+Low
+price of the bar with the "0" index on the PERIOD_D1 timeframe.
+"
+MidL
+" — at the average price ("
+MLP
+"+"
+MLM
+")/2.
+Testing on EURUSD, M5 from 2016.06.01 to 2017.03.14:
+‌
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17866

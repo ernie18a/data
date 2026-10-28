@@ -1,0 +1,9 @@
+Author:
+by Shurka & Kevin
+It draws a channel with recommendations.
+Its operations are described inside the code3.
+External Variables:
+LineColor=DarkOrange;
+AllBars=240;
+BarsForFract=0;
+#SF_Trend_Lines

@@ -1,0 +1,27 @@
+Indicator Multi timeframe Dynamic Trend is the multi-timframe
+Dynamic Trend
+indicator. It displays the data of three indicators Dynamic Trend from different timeframes on the current chart.
+It has six adjustable parameters:
+Period
+- Dynamic Trend calculation period
+Percent
+- Dynamic Trend "strengthening percentage"
+Drawing mode
+- drawing mode
+Steps
+- by steps
+Slope
+- by sloping lines
+First DT timeframe
+- timeframe of the first Dynamic Trend
+Second DT timeframe
+- timeframe of the second Dynamic Trend
+Third DT timeframe
+- timeframe of the third Dynamic Trend
+Signal indicator Dynamic Trend draws a two-color trend direction line and places signal pointers.
+To filter the indicator signals, it is recommended to use confirmation signals, such as support/resistance levels.
+Fig. 1. Multi timeframe Dynamic Trend, Drawing mode = Steps
+Fig. 2. Multi timeframe Dynamic Trend, Drawing mode = Slope
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23412

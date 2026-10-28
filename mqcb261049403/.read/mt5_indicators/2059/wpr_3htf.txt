@@ -1,0 +1,7 @@
+Three
+Larry Williams' Percent Range
+indicators from three different timeframes displayed on the same chart.
+Figure 1. Indicator WPR_3HTF
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2059

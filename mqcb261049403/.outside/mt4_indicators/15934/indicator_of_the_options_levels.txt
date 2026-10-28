@@ -1,0 +1,239 @@
+The indicator is designed for calculating and displaying the options levels on the screen.
+Download the СМЕ bulletin:
+http://www.cmegroup.com/market-data/daily-bulletin.html
+Or from here: ftp://ftp.cme.com/bulletin/
+Fill the input parameters of the indicator and get the options levels on the screen.
+Calculation of levels is performed according to the formula:
+Call = Strike/1000 + Premium * Multiplier
+Put = Strike/1000 - Premium * Multiplier
+Indicator input parameters:
+input
+double
+Call_1_Strike  =
+1115
+;
+// Call Strike Price 1
+input
+double
+Call_1_Prem    =
+7.6
+;
+// Call Premium 1
+input
+double
+Call_1_Vol     =
+471
+;
+// Call Volume 1
+input
+double
+Call_1_OI      =
+1513
+;
+// Call Open Interest 1
+input
+double
+Call_2_Strike  =
+1120
+;
+// Call Strike Price 2
+input
+double
+Call_2_Prem    =
+5.8
+;
+// Call Premium 2
+input
+double
+Call_2_Vol     =
+419
+;
+// Call Volume 2
+input
+double
+Call_2_OI      =
+3016
+;
+// Call Open Interest 2
+input
+double
+Call_3_Strike  =
+1130
+;
+// Call Strike Price 3
+input
+double
+Call_3_Prem    =
+3.1
+;
+// Call Premium 3
+input
+double
+Call_3_Vol     =
+696
+;
+// Call Volume 3
+input
+double
+Call_3_OI      =
+2738
+;
+// Call Open Interest 3
+input
+double
+Put_1_Strike   =
+1080
+;
+// Put Strike Price 1
+input
+double
+Put_1_Prem     =
+1.9
+;
+// Put Premium 1
+input
+double
+Put_1_Vol      =
+694
+;
+// Put Volume 1
+input
+double
+Put_1_OI       =
+2541
+;
+// Put Open Interest 1
+input
+double
+Put_2_Strike   =
+1100
+;
+// Put Strike Price 2
+input
+double
+Put_2_Prem     =
+6.2
+;
+// Put Premium 2
+input
+double
+Put_2_Vol      =
+655
+;
+// Put Volume 2
+input
+double
+Put_2_OI       =
+3148
+;
+// Put Open Interest 2
+input
+double
+Put_3_Strike   =
+1090
+;
+// Put Strike Price 3
+input
+double
+Put_3_Prem     =
+3.5
+;
+// Put Premium 3
+input
+double
+Put_3_Vol      =
+286
+;
+// Put Volume 3
+input
+double
+Put_3_OI       =
+7061
+;
+// Put Open Interest 3
+input
+double
+Multiplier     =
+0.001
+;
+// Premium Multiplier
+input
+string
+Line_Inputs=
+"**** Line Inputs *****"
+;
+input
+int
+LineWidth      =
+2
+;
+// Line Width
+input
+int
+LineStyle      =
+0
+;
+// Line Style
+input
+int
+LineStart      =
+0
+;
+// Start bar of the line
+input
+int
+LineEnd        =
+15
+;
+// End bar of the line
+input
+color
+CallColor      = Red;
+// Call Line Color
+input
+color
+PutColor       = Lime;
+// Put Line Color
+input
+string
+Text_Inputs=
+"**** Text_Inputs *****"
+;
+input
+int
+StartText      =
+6
+;
+// Start bar of the text
+input
+int
+FontSize       =
+6
+;
+// Font Size
+input
+string
+FontName       =
+"Arial"
+;
+// Font Name
+input
+color
+CallText       = Blue;
+// Call Text Color
+input
+color
+PutText        = Blue;
+// Put Text Color
+input
+bool
+ShowText       =
+true
+;
+// Show Text
+Fig.1. The indicator on the chart
+Recommendations:
+Use the indicator as a trading assistant.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15934

@@ -1,0 +1,7 @@
+Description of the adviser
+The EA works on the 'iVIDyA' indicator - the signal is searched only at the moment of the birth of a new bar.
+The position is opened with the specified Stop Loss and Take Profit, without trailing. There is no more than one position in the market. If a signal arrives, then the opposite position (if any) will be closed.
+The Expert Advisor can be optimized by the '
+Working timeframe
+' parameter.
+Pic. 1. iVIDyA Simple

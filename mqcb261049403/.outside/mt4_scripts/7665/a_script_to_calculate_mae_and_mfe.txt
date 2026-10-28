@@ -1,0 +1,4 @@
+The script is intended for calculation of the characteristics of MAE, MFE, and all drawdowns (of Equity) on the history. Swaps are not taken into consideration. Calculations of drawdowns are less optimistic (drawdowns are calculated as a bit larger than the real ones), since only the worst developments are taken into consideration. You need to have one-minute history for each currency pair you traded. The script can be used for only Forex securities.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7665

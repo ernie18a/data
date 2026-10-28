@@ -1,0 +1,61 @@
+CodeBase already has plenty of SuperTrends, so this one needs a reason to exist. It returns the same numbers as TradingView, down to the last digit that matters, and it ships with the tool that proves it. A screenshot of two charts that look alike is not evidence of anything, and anyone who has ported an indicator knows the difference only shows up later.
+If you have ever moved an indicator from Pine to MQL5 and found that the arrows land in roughly the right places while the entries are not the ones you saw on TradingView, this project is about exactly that gap. The line comes out the right shape, the flips look plausible, and the trades still differ.
+SuperTrend TV on XAUUSD M5, teal for uptrend and crimson for downtrend
+Why ports drift
+The first trap is that ta.rma is not an EMA. Pine builds its ATR as a Wilder average with alpha of 1/n, seeded with the simple average of the first n true ranges. The reflex when porting is to write an EMA with alpha of 2/(n+1), which produces a line of the same shape and a different set of signals.
+The second trap is that iATR is not a drop-in replacement either. Its warm-up begins one bar later than Pine's ta.tr with handle_na enabled, which counts the very first bar as high minus low. Inside a recursive average that one bar offset never fully washes out, so this indicator builds the true range and the smoothing itself rather than borrowing them.
+The third trap is the stickiest one, and it is a single line in the Pine source. The bands only tighten, and a band gives way only once price has closed through it. Skip that rule and the indicator disagrees with the original on nearly half of all bars, which stops being a rounding difference and becomes a different strategy.
+Each mistake was switched on by itself and measured against the same reference on five instruments. The drift scales with the instrument, so the same error is worth fractions of a pip on EURUSD and hundreds of dollars on BTCUSD.
+Mistake
+Wrong trend on
+Worst price error
+ATR as EMA, alpha = 2/(n+1)
+5.5% to 7.3% of bars
+42 on gold
+ATR as a plain moving average
+5.2% to 9.4% of bars
+41 on gold
+Bands not sticky
+47.6% to 56.6% of bars
+85 on gold
+There is one more thing that is not a bug but bites all the same. In TradingView the direction value is minus one while the trend is up and plus one while it is down. That reads backwards to most people, and flipping it silently inverts every signal built on top of the indicator. This port keeps the TradingView convention.
+How to check it yourself
+The attached script exports OHLC together with the indicator's own output into a single file. The Python reference then recomputes the indicator from those very same rows and compares every bar. Both sides therefore see identical input, which leaves a discrepancy nowhere to hide, and the check either passes on every bar or names the first bar where it fails.
+SuperTrend  period=10  factor=3.0  tolerance=1e-08
+source: supertrend_mt5.csv  (17443 bars)
+MQL5 port vs Pine reference
+ATR (Wilder/RMA)   bars 17434 | max 0.0000000000 | mean 0.0000000000   PASS
+SuperTrend line    bars 17434 | max 0.0000000001 | mean 0.0000000000 | direction differs on 0 bars   PASS
+Result that port matches Pine bar for bar
+The run above is gold on M5. The same check was repeated on five instruments out of a live terminal, chosen to cover five digit and three digit quotes, a metal, an index and crypto. Across all of them the trend direction never disagreed on a single bar, and the largest difference on the line itself was one part in ten billion, which is double rounding rather than a difference in the arithmetic.
+Instrument
+Timeframe
+Bars compared
+Direction mismatches
+EURUSD
+M5
+99990
+0
+USDJPY
+M5
+99990
+0
+XAUUSD
+M5
+17434
+0
+GER40
+M15
+5815
+0
+BTCUSD
+M15
+5727
+0
+The checker is itself tested, because a verifier stuck on PASS would be worse than no verifier at all. The selftest feeds it one correct file and one deliberately mis-ported file, and it fails unless the second is rejected. The Python side needs nothing installed beyond the standard library, so anyone can rerun all of this in a minute.
+Usage
+The indicator takes the usual two inputs, the ATR period with a default of 10 and the factor with a default of 3.0. It draws a single line coloured by trend, and it exposes the values an Expert Advisor needs through iCustom.
+buffer 0, the SuperTrend value
+buffer 2, the direction, minus one for up and plus one for down
+buffer 3, the Wilder ATR
+The scope is deliberately narrow. This is ta.supertrend on hl2, one symbol and one timeframe, computed on closed bars. The forming bar is excluded from the export, since its value is still moving and comparing it would report a mismatch that means nothing at all.

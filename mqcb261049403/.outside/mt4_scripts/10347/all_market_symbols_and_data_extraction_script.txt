@@ -1,0 +1,5 @@
+Description:
+Reads all available instruments and their characteristics and generates an HTML report. Positive Swaps are highlighted.
+Drag and drop the script on whatever chart.
+To visualize the report, just open it with your browser. (Its file is contained in the "/experts/files/" folder).
+An example of the Report can be found here .

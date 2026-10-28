@@ -1,0 +1,71 @@
+The adviser on indicators: Ichimoku, ADX.
+Symbol
+GBPUSD (Great Britain Pound vs US Dollar)
+Period
+1 Hour (H1) 2009.05.01 00:00 - 2009.06.01 00:00 (2009.05.01 - 2009.06.01)
+Model
+Control points (a very crude method, the results must not be considered)
+Bars in test
+1500
+Ticks modeled
+13579
+Modeling quality
+n/a
+Mismatched chart errors
+13
+Initial deposit
+50000.00
+Total net profit
+18562.05
+Gross profit
+27735.39
+Gross loss
+-9173.34
+Profit factor
+3.02
+Expected payoff
+1546.84
+Absolute drawdown
+528.97
+Maximum drawdown
+7153.84 (10.50%)
+Relative drawdown
+10.50% (7153.84)
+Total trades
+12
+Short positions (won %)
+0 (0.00%)
+Long positions (won %)
+12 (58.33%)
+Profit trades (% of total)
+7 (58.33%)
+Loss trades (% of total)
+5 (41.67%)
+Largest
+profit trade
+4623.00
+loss trade
+-1918.70
+Average
+profit trade
+3962.20
+loss trade
+-1834.67
+Maximum
+consecutive wins (profit in money)
+2 (8772.53)
+consecutive losses (loss in money)
+3 (-5589.82)
+Maximal
+consecutive profit (count of wins)
+8772.53 (2)
+consecutive loss (count of losses)
+-5589.82 (3)
+Average
+consecutive wins
+2
+consecutive losses
+2
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8959

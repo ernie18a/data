@@ -1,0 +1,4 @@
+This code can be used to read CSV file.
+It reads the file row by row.
+For each row, it will separate the token in the string using a delimiter like underscore ( _ ). or pipe ( | ) or anything else.
+It can be used if you want to read some information from a csv file back into the code.

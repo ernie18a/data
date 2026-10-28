@@ -1,0 +1,18 @@
+Two independent trading systems using indicators
+BrainTrend2
+and AbsolutelyNoLagLWMA
+within one EA. Signals to open trades by trading systems are formed when a bar is closing, if the trend has changed, displayed through changing the color of any of those two indicators.
+For the generated EA to operate correctly, the compiled files of indicators
+BrainTrend2_V2.ex5
+and
+AbsolutelyNoLagLwma.ex5
+must be in the
+<terminal_data_directory>\MQL5\Indicators
+folder.
+The default EA inputs were used in tests below. Stop Loss and Take Profit were not used in testing.
+Fig 1. Exemplary trades in the chart
+Testing results for GBPUSD H4 over the year 2016:
+Fig. 2. Testing results chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21210

@@ -1,0 +1,14 @@
+Indicator
+Ang_Zad_C_Hist
+with the timeframe selection option available in the input parameters
+input
+ENUM_TIMEFRAMES TimeFrame=
+PERIOD_H4;
+// Indicator chart period (timeframe)
+For the indicator to operate, the
+Ang_Zad_C_Hist.ex5
+indicator must be added to the <terminal_data_directory>\MQL5\Indicators folder.
+Fig 1. Indicator Ang_Zad_C_Hist_HTF
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21303

@@ -1,0 +1,6 @@
+An example of adding buttons for your advisors.
+In this example, a button has been implemented to close all active positions for all instruments.
+In addition to the button event processing functionality, methods for closing positions relative to the symbol name and counting the number of positions relative to the symbol name are also implemented.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/48267

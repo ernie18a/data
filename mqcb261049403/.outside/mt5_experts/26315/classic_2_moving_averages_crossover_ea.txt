@@ -1,0 +1,11 @@
+This is a classic trading strategy based on two Moving Averages crossover. Buys when fast MA crosses slow MA from below and sells when fast MA crosses slow MA from above.
+This code can be used in both MetaTrader5 and MetaTrader4.
+Just change the file extension from .mq5 to .mq4
+and compile the file in MetaEditor.
+This expert advisor is designed with
+visual strategy builder -
+Mission Automate. Code is generated automatically. More info:
+https://www.mql5.com/en/articles/4951
+This EA is available as a template in a free demo version, so you can easily modify / customise it without programming.
+Parameters
+Examples

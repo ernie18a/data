@@ -1,0 +1,124 @@
+The author of the idea
+is
+Maksim
+, and
+the author of the mq5 code
+is
+barabashkakvn
+.
+The Expert Advisor uses two ZigZag indicators for analysis: a smaller zigzag with parameters (
+13.5,3
+) and a larger zigzag with parameters multiplied by eight: (
+13*8,5*8,3*8
+)
+//--- create handle of the indicator iCustom
+handle_iCustom=
+iCustom
+(
+Symbol
+(),
+Period
+(),
+"Examples\\ZigZag"
+,
+13
+,
+5
+,
+3
+);
+//--- if the handle is not created
+if
+(handle_iCustom==
+INVALID_HANDLE
+)
+     {
+//--- tell about the failure and output the error code
+PrintFormat
+(
+"Failed to create handle of the iCustom indicator for the symbol %s/%s, error code %d"
+,
+Symbol
+(),
+EnumToString
+(
+Period
+()),
+GetLastError
+());
+//--- the indicator is stopped early
+return
+(
+INIT_FAILED
+);
+     }
+//--- create handle of the indicator iCustom
+handle_iCustomX8=
+iCustom
+(
+Symbol
+(),
+Period
+(),
+"Examples\\ZigZag"
+,
+13
+*
+8
+,
+5
+*
+8
+,
+3
+*
+8
+);
+//--- if the handle is not created
+if
+(handle_iCustomX8==
+INVALID_HANDLE
+)
+     {
+//--- tell about the failure and output the error code
+PrintFormat
+(
+"Failed to create handle of the iCustomX8 indicator for the symbol %s/%s, error code %d"
+,
+Symbol
+(),
+EnumToString
+(
+Period
+()),
+GetLastError
+());
+//--- the indicator is stopped early
+return
+(
+INIT_FAILED
+);
+     }
+To make a trading decision, the two legs of the last peak of a larger ZigZag (
+13*8,5*8,3*8
+) are analyzed, while the number of peaks of the smaller ZigZag (
+13,5,3
+) contained in these two legs is counted.
+If a signal to open a BUY position is received, all SELL positions are closed. Vice versa: if a signal to open a SELL position is received, all BUY positions are closed.
+Expert Advisor parameters:
+k is the ratio of the number of peaks of the smaller zigzag in the legs of the larger zigzag
+k2 is the ratio of the price difference in the peaks of the larger zigzag
+Example:
+The larger ZigZag (13*8,5*8,3*8) is shown in red, the smaller zigzag ZigZag (13,5,3) is yellow.
+Respectively,
+ABC
+are the peaks of the larger ZigZag (13*8,5*8,3*8).
+The legs
+AB
+and
+AC
+contain nine peaks of the smaller ZigZag (13,5,3).
+Testing results on EURUSD,M1:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18629

@@ -1,0 +1,131 @@
+WHAT IT DOES
+The EA detects trade events through two independent mechanisms: the OnTradeTransaction handler for real-time detection, and a periodic deal history scan as fallback. A deduplication system ensures you never receive the same notification twice, even if both mechanisms trigger on the same event.
+Supported notifications:
+— Trade opened: symbol, direction (BUY/SELL), volume, price, SL, TP, magic number, deal ticket
+— Trade closed: symbol, volume, close price, gross P/L, commission, swap, net P/L, updated balance
+— SL/TP modified: old and new values displayed side by side (e.g. SL: 1924.00 → 1926.50)
+— Pending orders placed: type (Buy Limit, Sell Limit, Buy Stop, Sell Stop, Buy Stop Limit, Sell Stop Limit), price, volume
+— Position reversal: new direction, closed P/L
+— Deposits and withdrawals: amount and updated balance
+— Periodic account summaries: balance, equity, free margin, floating P/L, session P/L, open positions, day high/low equity, drawdown percentage
+— Connection and disconnection messages with session statistics
+SETUP — STEP BY STEP
+You need two things from Telegram: a Bot Token and your Chat ID.
+Step 1: Create a Telegram Bot
+Open Telegram, search for @BotFather, and start a conversation. Send the command /newbot. BotFather will ask you to choose a display name (anything you like) and a username (must end in "bot"). Once created, BotFather sends you an API token — a long string that looks like 7123456789:AAH1bCdEfGhIjKlMnOpQrStUvWxYz. Copy this token.
+Step 2: Get Your Chat ID
+In Telegram, search for @userinfobot (or @getmyid_bot) and send it any message. It will reply with your numeric Chat ID (e.g. 123456789). Copy this number.
+For group notifications: add your bot to a Telegram group, then use @getidsbot in the group to get the group Chat ID (negative number, e.g. -1001234567890).
+Step 3: Start a Conversation with Your Bot
+This step is easy to forget. Find your bot by its username in Telegram search, open it, and press Start. If you skip this, Telegram's API will reject all messages.
+Step 4: Allow WebRequest in MetaTrader 5
+In MT5, go to Tools → Options → Expert Advisors. Check "Allow WebRequest for listed URL". Click Add and enter exactly: https://api.telegram.org — then click OK. This is a one-time configuration. If you skip this step, you will see WebRequest error 4014 in the Experts tab and no messages will be sent.
+Step 5: Install the EA
+Copy ExMachina_TelegramBridge.mq5 to your MQL5/Experts/ folder (access via File → Open Data Folder in MT5). Open MetaEditor (F4), navigate to the file, and press Compile (F7). You should see 0 error(s), 0 warning(s).
+Step 6: Attach to a Chart
+Drag the EA from the Navigator panel onto any chart. In the settings dialog, paste your Bot Token and Chat ID. Click OK. Within seconds, you should receive a connection message in Telegram showing your account number, server, balance, equity, and number of open positions.
+INPUT PARAMETERS
+Telegram Configuration:
+— Bot Token: your API token from @BotFather (required)
+— Chat ID: your numeric chat ID (required, can be a group ID)
+Notification Settings:
+— Notify on Trade Open: true/false (default: true)
+— Notify on Trade Close: true/false (default: true)
+— Notify on SL/TP Modify: true/false (default: true)
+— Notify on Pending Orders: true/false (default: true)
+— Notify on Deposit/Withdrawal: true/false (default: true)
+Account Summary:
+— Summary Report Interval: Off, Every 1 Hour, Every 4 Hours, Every 8 Hours, Every 24 Hours (default: Every 4 Hours)
+— Include Equity in Summary: true/false (default: true)
+— Include Drawdown Info: true/false (default: true)
+Display & Style:
+— Message Style: Minimal (compact one-line), Detailed (full info with labels), or Emoji-rich (detailed with Unicode icons). Default: Emoji-rich.
+— Show Dashboard on Chart: true/false (default: true)
+— Dashboard Background, Text Color, Accent Color: customizable. Default uses the ExMachina steel palette.
+Filters:
+— Symbol Filter: comma-separated list of symbols to monitor. Leave empty for all symbols. Example: "EURUSD,XAUUSD"
+— Min Lot Size to Notify: minimum volume to trigger a notification. 0 = no filter. Useful to ignore micro-lots.
+— Magic Number Filter: only notify for trades with this specific magic number. -1 = all trades (including manual).
+MESSAGE STYLES
+Minimal — compact single-line format:
+XAUUSD | BUY | 0.50 lots @ 1928.45
+Detailed — structured with labeled fields:
+TRADE CLOSED
+━━━━━━━━━━━━━━━━━━━━
+Symbol: XAUUSD
+Close: SELL (close BUY)
+Volume: 0.50 lots
+Price: 1935.20
+───────────────────
+Gross P/L: +$340.00
+Commission: -$2.50
+Swap: -$0.00
+Net P/L: +$337.50
+Balance: $10,585.00 USD
+Deal #182947363
+Emoji-rich (default) — same as Detailed but with Unicode icons for each field. Trade opens show a green circle for BUY and red circle for SELL. Closures show a checkmark for profit and a cross for loss.
+FILTERS
+The Magic Number filter is particularly useful if you run multiple EAs on the same account. Set it to the magic number of a specific EA to only receive notifications from that EA. Set it to -1 to receive everything (including manual trades).
+The Symbol filter accepts a comma-separated list: "XAUUSD,EURUSD,GBPUSD". Only trades on those symbols will generate notifications. Leave empty to monitor all symbols.
+ACCOUNT SUMMARIES
+Periodic summaries include: balance, equity, free margin, number of open positions, total floating P/L (including swap), session P/L since the EA was started, day high equity, day low equity, and drawdown percentage calculated from the day's high.
+Useful for prop firm traders who need to monitor daily drawdown limits remotely. Set the interval to 1 Hour during active sessions.
+ON-CHART DASHBOARD
+A compact status panel in the top-left corner of the chart shows:
+— Connection status: CONNECTED (green) or DISCONNECTED (red)
+— Bot username
+— Running counters: messages sent and failed
+— ExMachina tagline
+The dashboard uses the ExMachina steel palette by default (background C'8,10,18', accent C'0,180,220') and can be customized or disabled via the Display inputs.
+HOW TO TEST
+Step 1: Attach the EA to any chart on a demo account. Check the Experts tab for "Connected to bot @YourBotName". Check Telegram for the connection message.
+Step 2: Open a small market order manually (e.g. 0.01 lots EURUSD). You should receive a "TRADE OPENED" notification.
+Step 3: Modify the SL or TP of your open position (right-click → Modify). You should receive a "SL/TP MODIFIED" notification showing old → new values.
+Step 4: Close the position. You should receive a "TRADE CLOSED" notification with P/L breakdown.
+Step 5: Place a pending order (e.g. Buy Limit). You should receive a "PENDING ORDER PLACED" notification.
+Step 6: Remove the EA from the chart. You should receive a "Disconnected" message with session statistics.
+Quick browser test: to verify your token and chat ID before using the EA, paste this URL in any browser (replace the placeholders):
+https://api.telegram.org/bot<YOUR_TOKEN>/sendMessage?chat_id=<YOUR_CHAT_ID>&text=Test
+If you see {"ok":true} in the response, your credentials are correct.
+Quick smoke test script: save this as a Script (not EA) in MQL5/Scripts/, compile, and run on a demo chart:
+#include <Trade\Trade.mqh>
+void OnStart()
+{
+CTrade trade;
+trade.Buy(0.01, "EURUSD");
+Sleep(3000);
+for(int i = PositionsTotal()-1; i >= 0; i--)
+{
+if(PositionGetSymbol(i) == "EURUSD")
+trade.PositionClose(PositionGetTicket(i));
+}
+}
+You should receive both an open and close notification in Telegram.
+Important: this EA does not work in the Strategy Tester. The Strategy Tester does not support WebRequest (network calls). The EA must run on a live or demo chart with internet access.
+RUNNING ALONGSIDE OTHER EAs
+MT5 allows only one EA per chart. Attach the Telegram Bridge to a separate chart (any symbol). It monitors the entire account, not just the chart it is attached to. All trades from all EAs and manual trades will be detected regardless of which chart the Bridge is running on.
+Use the Magic Number filter to limit notifications to a specific EA.
+TROUBLESHOOTING
+No messages received:
+1. Check that https://api.telegram.org is in Tools → Options → Expert Advisors → Allow WebRequest
+2. Verify Bot Token and Chat ID are correct (no extra spaces)
+3. Make sure you pressed Start in your bot's Telegram chat
+4. Check the Experts tab (View → Toolbox → Experts) for error messages
+WebRequest error 4014: the Telegram URL is not in the allowed list. This is the most common issue.
+HTTP 401 Unauthorized: invalid Bot Token. Copy it again from @BotFather.
+HTTP 400 Bad Request: wrong Chat ID, or you have not started a conversation with your bot.
+HTTP 429 Too Many Requests: Telegram rate limit. The EA has built-in retry logic with backoff. This only happens with extremely high trade frequency.
+EA shows INIT_PARAMETERS_INCORRECT: Bot Token and Chat ID are both required. Make sure neither field is empty.
+Dashboard not showing: make sure "Show Dashboard on Chart" is set to true in the EA inputs.
+TECHNICAL DETAILS
+— Trade detection: dual mechanism via OnTradeTransaction (real-time) + deal history polling every 2 seconds (fallback)
+— Deduplication: processed deals stored in memory (last 500 deals tracked)
+— SL/TP detection: position snapshot array compared on every tick, triggers on any change
+— Telegram API: HTTPS POST via WebRequest, URL-encoded payload, Markdown parse mode
+— Retry logic: up to 3 attempts per message, 1-second delay between retries, 3-second delay on HTTP 429
+— Connection test: /getMe endpoint called on init to validate token and retrieve bot name
+— Summary timer: EventSetTimer(60) checks if the configured interval has elapsed
+— Chart objects: all dashboard objects use prefix "EXTB_" and are cleaned up on deinit
+— No external DLLs, no third-party servers. Direct MT5 → Telegram communication over HTTPS.
+This EA is free and open source. Feedback, ratings, and suggestions are welcome.
+ExMachina Trading Systems — Precision before profit.

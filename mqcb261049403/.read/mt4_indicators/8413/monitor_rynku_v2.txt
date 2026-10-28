@@ -1,0 +1,11 @@
+Remember, the background color should not be set to white or ivory, otherwise a part of the indicator will be indistinguishable.
+The indicator displays in a separate subwindow of the chart the current symbol, Bid/Ask prices, the current swap, the expected deposit for long/short position as well as the floating spread for the symbol and the remaining time until the candle completion of the current timeframe... Let's see...
+Choosing a broker (note):
+It is necessary to check whether your broker is an authorized member of the NFA (National Futures Association) or, in case of domestic brokers, of the Financial Supervision Commission. Such information is not difficult to find, and it will help you protect yourself from broker frauds, which are actually the only kind of scams on the Internet.
+Also important are the transaction costs (size of spread, commissions on transactions). Obviously, this has an impact on trading results.
+Read the opinions on brokers, for example, on Internet forums, where people can express their reviews. Of course, there are people who always blame brokers for their failures. It is important to read the opinions of different people with different points of view. The universally accepted brand is most likely satisfy you as well.
+Another factor to consider the choice is the execution of operations. Usually there are two types of brokers: market makers and ECN-brokers. The most convenient is, of course, using the services of an ECN (Electronic Communication Network) broker. I recommend:
+www.fxdd.com
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8413

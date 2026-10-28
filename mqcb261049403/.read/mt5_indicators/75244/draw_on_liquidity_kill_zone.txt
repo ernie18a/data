@@ -1,0 +1,19 @@
+Liquidity levels often act as magnets for price movement. The highs and lows of the previous day (PDHL) and week (PWHL) are key reference points where stop orders and institutional activity tend to cluster. Identifying these levels manually is time-consuming and prone to error.
+The Draw On Liquidity (DOL) indicator automatically plots these essential levels on your chart and highlights high-probability trading windows through session kill zones. With full customization options, it provides a clean, professional, and highly informative display to enhance your trading decisions.
+Key Features :
+Automatic PDHL & PWHL Plotting – Instantly displays the previous day’s and week’s highs/lows with precision.
+Liquidity Zone Visualization – Clearly see where liquidity pools are likely to be targeted by price.
+Session Kill Zones – Mark the Tokyo, London, and New York sessions with customizable times to focus on the most active trading hours.
+Fully Customizable – Adjust colors, line styles, thickness, and labels to match your preferred chart setup.
+Clean & User-Friendly – All inputs are logically grouped for quick setup without chart clutter.
+How It Helps You :
+Save time by removing the need for manual line drawing.
+Anticipate price movements around key liquidity levels.
+Focus on the most relevant sessions for trading opportunities.
+Maintain a professional and structured chart layout.
+Input Parameters :
+Show/Hide Previous Daily & Weekly High/Low
+Adjustable line styles, widths, and colors
+Customizable text labels (color & size)
+Session markers with start/end times (Tokyo, London, New York)
+Days to display past sessions

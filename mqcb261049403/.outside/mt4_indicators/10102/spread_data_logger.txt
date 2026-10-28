@@ -1,0 +1,42 @@
+Are you getting the spread you've been quoted by your broker?
+Ever wanted to verify spread data stats from another source
+or create your own data?
+Description:
+Spread Logger consists of two indicators:
+Spread Logger Write
+- Creates a CSV file containing spread data as a function of time. This is done in real-time.
+Spread Logger Read
+- Reads CSV file created, displays some stats, & draws collected data to chart. Also, draws live spread data to chart.
+Directions:
+Save both files in
+terminal\experts\indicators
+folder
+Spread Logger Write:
+Attach
+Spread Logger Write
+to any chart. (
+Insert > Indicators > Custom > Spread Logger Write
+)
+Name your file under the inputs tab or leave the default filename.
+Leave the MT4 terminal running and chart open for the time desired, Spread Logger will collect data in real-time.
+Note: For most accurate data, attach
+Spread Logger Write
+to a 1-Minute chart.
+note: All files created by Spread Logger Write are saved to the
+terminal\experts\files
+folder.
+Spread Logger Read:
+Open chart of currency pair for which you have logged data & attach
+Spread Logger Read
+to chart. If you used a custom file name, make sure you type the file name correctly.
+note: While you may attach
+Spread Logger Read
+to a chart of any timeframe, using a chart of the same timeframe for which you collected data will yield the best results visually.
+Spread Logger Read
+will display some stats:
+Time tested & number of bars tested
+Mean spread
+Mode & frequency of the mode as a percentage
+If the time interval for which data was collected is within the range of the portion of the chart currently being displayed, you will see the spread data you collected drawn to the chart. The live spread will also be displayed as of the time Spread Logger Read was attached to the chart.
+Please post your data and results.
+Happy logging! :)

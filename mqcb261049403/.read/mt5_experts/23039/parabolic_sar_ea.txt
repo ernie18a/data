@@ -1,0 +1,15 @@
+The author of the idea
+-
+Victor Lukashuck
+mq5 code author
+-
+barabashkakvn
+The EA uses iSAR (Parabolic SAR) indicator signals on the
+Bar current
+bar from the
+Work timeframe
+. The EA opens only one position at a time, therefore it is able to work both on hedging and netting accounts.
+An open signal is also a signal to close an opposite position. If an opposite position is present, it is closed, and a new position is opened in a signal direction.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23039

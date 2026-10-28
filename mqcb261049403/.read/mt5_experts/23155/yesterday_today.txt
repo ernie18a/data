@@ -1,0 +1,6 @@
+The EA compares yesterday's High and Low prices with the current day Close price. As soon as the current price breaks through yesterday's High or Low, immediately open a position. If Stop Loss and Take Profit are non-zero, appropriate positions will be set for the position.
+The EA opens only one position at a time, therefore it is able to work both on hedging and netting accounts.
+High breakout example:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23155

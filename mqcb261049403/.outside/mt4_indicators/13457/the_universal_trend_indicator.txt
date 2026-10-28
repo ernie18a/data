@@ -1,0 +1,13 @@
+It shows the trend direction for multiple currency pairs on the current time frame.
+The indicator operation is based on the comparison of three MA indicators with different context shift parameter.
+Input Parameters:
+The indicator settings are adjusted as follows:
+ShiftMA1 — Fast EMA shift period
+ShiftMA2 — Intermediate EMA shift period
+ShiftMA3 — Slow EMA shift period
+The other parameters of the indicator are adjustable as well. The indicator display corner is also adjustable.
+The values of this indicator correspond to the ratio of the top row of the currency pairs to the side column, with the current chart timeframe value.
+Display on the chart:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13457

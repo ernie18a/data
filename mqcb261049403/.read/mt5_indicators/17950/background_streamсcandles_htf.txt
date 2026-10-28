@@ -1,0 +1,13 @@
+The indicator draws colored candlesticks of a larger timeframe as color filled rectangles using
+DRAW_FILLING
+buffers. Rectangles are color filled in accordance with the colors of the
+StreamСCandles
+indicator candlesticks, if there are any.
+Depending on the trend direction defined by the color of the dot of the source indicator, the candlestick body is painted in green or red, the appropriate shadows are painted in lime or pink.
+For the indicator to be properly executed, place the compiled indicator file
+StreamСCandles.ex5
+to terminal_data_folder\MQL5\Indicators\.
+Fig1. Indicator Background_StreamСCandles_HTF
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17950

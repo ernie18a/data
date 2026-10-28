@@ -1,0 +1,8 @@
+The indicator reads data of the
+Moving Average
+from the binary file and displays them in a separate subwindow. To get the file with data you need preliminary run the
+Demo_FileWriteDouble
+script. The indicator is correctly displayed on timeframes that are more or equal to timeframe on which the indicator was calculated.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1630

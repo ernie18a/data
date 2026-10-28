@@ -1,0 +1,27 @@
+Session Levels is a visual indicator that draws on the chart the reference levels most used by intraday traders. It does not open trades.
+Session Levels on XAUUSD H1: Asian range boxes, previous day high/low, daily VWAP, swing points and the info panel.
+How to use
+Attach it to any symbol and timeframe (M5-H1 recommended). Hover over any line or box to read what the level is and why it matters. The info panel in the top right corner shows the current values. Colors adapt automatically to dark or light chart backgrounds.
+Input parameters
+Sessions
+(broker server time)
+Days to draw: number of past days with sessions and levels.
+Show Asian range / start hour / end hour: box of the Asian session range.
+Extend Asian high/low until hour: the Asian high and low are extended as dotted lines until this hour.
+Show London / New York session box, start and end hours: optional session boxes.
+Box colors: None = automatic colors.
+Key levels
+Show previous day high/low (PDH/PDL).
+Show previous week high/low (PWH/PWL).
+Show round numbers, step (0 = automatic, e.g. 5.0 on gold, 0.005 on EURUSD) and how many levels above/below price.
+VWAP and swings
+Show daily VWAP: tick-volume weighted average price, reset every day.
+Show swing highs/lows and swing strength: a swing is confirmed only after N bars on each side, so it does not repaint after confirmation.
+Alerts
+Alert on Asian range break / previous day high-low break.
+Popup alert and/or push notification to the phone (MetaQuotes ID required).
+Info panel
+Show or hide the panel in the top right corner.
+Notes
+Session hours are in broker server time: adjust them to your broker.
+Levels are calculated from the chart's own bars, so the indicator works immediately, even during the weekend.

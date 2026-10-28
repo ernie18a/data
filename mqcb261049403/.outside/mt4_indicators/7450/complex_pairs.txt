@@ -1,0 +1,8 @@
+Author:
+Semen Semenovich
+Quote:
+A clearly visible fractal is required to determine a signal. The second point is the presence of an auxiliary (reference) peak. A signal line is drawn from the fractal through this auxiliary peak. When the indicator line crosses the signal line, an aggressive signal appears. At the same time, if the fractal was above the zero line and the crossing happened below the zero line, then this is a signal to buy the pair in question.
+More..
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7450

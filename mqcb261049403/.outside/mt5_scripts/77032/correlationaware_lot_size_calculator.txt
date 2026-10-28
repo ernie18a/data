@@ -1,0 +1,22 @@
+I got tired of position size calculators that only look at the trade you're about to open and ignore everything else sitting on your account. If you're already long EURUSD and you open GBPUSD too, most calculators will happily size that second trade using your full risk % again — even though the two pairs move together most of the time and you've basically doubled your bet on the dollar without realizing it.
+This script tries to fix that. Before you open a new trade, it:
+- Works out the normal risk-based lot size from your balance, risk %, and stop loss in points
+- Goes through every position you currently have open, on any symbol
+- Calculates the actual correlation between each of those symbols and the one you're about to trade, using real recent price history (not a fixed correlation table that's already outdated by the time someone publishes it)
+- Checks direction too — same-direction trades on correlated pairs stack risk, opposite-direction trades on correlated pairs usually offset each other
+- Adds up how much risk is already sitting in correlated positions, and shrinks your new lot size if you're close to (or past) a basket risk limit you set yourself
+Everything gets printed to the Experts/Journal tab — which positions got flagged, why, and what lot size it recommends instead of your "normal" one.
+A few things worth knowing before you use it:
+- If a correlated position has no stop loss set, the script can't know its real dollar risk, so it warns you instead of guessing
+- Correlation is calculated from the last N bars (you pick the timeframe and how many), so it reflects current market behavior — but it's still a backward-looking number and can shift over time
+- This is read-only. It doesn't open, modify, or close anything on your account
+Inputs:
+- InpTargetSymbol — symbol you're about to trade (leave blank to use the current chart)
+- InpNewTradeIsBuy — direction of the new trade
+- InpRiskPercent — risk % for the new trade
+- InpStopLossPoints — stop loss distance in points
+- InpMaxBasketRiskPercent — max combined risk you're willing to carry across correlated positions
+- InpCorrelationThreshold — how strong a correlation needs to be before it counts
+- InpCorrelationBars / InpCorrelationTimeframe — controls how correlation is measured
+I built this after catching myself stacking correlated pairs a few too many times without noticing until the drawdown showed up. If you only ever trade one pair at a time it won't do much for you — but if you run multiple positions across majors/minors together, it should catch things a plain lot calculator won't.
+Free to use, modify, and adapt.

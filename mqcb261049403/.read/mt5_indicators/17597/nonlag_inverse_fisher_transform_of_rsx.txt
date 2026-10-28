@@ -1,0 +1,5 @@
+Inverse fisher transform version of nonlag smoothed RSX.
+Since RSX is already a "smoother than RSI" RSI, if you wish to turn the nonlag smoothing off, then simple set the nonlag smoothing period to <=1.
+This version is extended (compared to MetaTrader 4 version
+NonLag Inverse Fisher Transform of RSX
+) with a set of 22 price types and a bit different look and feel (using the MetaTrader 5 possibilities).

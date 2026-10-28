@@ -1,0 +1,17 @@
+The
+U.S. Dollar Index
+(
+USDX
+,
+DXY
+,
+DX
+) is an index (or measure) of the value of the United States dollar relative to a basket of foreign currencies, often referred to as a basket of U.S. trade partners' currencies. The Index goes up when the U.S. dollar gains "strength" (value) when compared to other currencies.
+The index is maintained and published by ICE (Intercontinental Exchange, Inc.), with the name "U.S. Dollar Index" a registered trademark.
+It is a weighted geometric mean of the dollar's value relative to following select currencies:
+Euro (EUR), 57.6% weight.
+Japanese yen (JPY) 13.6% weight.
+Pound sterling (GBP), 11.9% weight.
+Canadian dollar (CAD), 9.1% weight.
+Swedish krona (SEK), 4.2% weight.
+Swiss franc (CHF) 3.6% weight.

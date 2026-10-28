@@ -1,0 +1,8 @@
+MultiWajdyss_Ichimoku_x10 shows information on the current trends, using the colors of the
+Wajdyss_Ichimoku_Candle
+indicator from ten different timeframes.
+Each of the ten indicator lines corresponds to a separate indicator. Colors of the lines and colored dots are uniquely defined by the color of the initial indicator candlesticks. Colored dots appear on the lines when the bar of the relevant timeframe changes.
+Fig. 1. The MultiWajdyss_Ichimoku_x10 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21649

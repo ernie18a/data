@@ -1,0 +1,55 @@
+The author of the idea
+:
+JS_Sergey
+,
+the mq5 code author
+:
+barabashkakvn
+.
+The Expert Advisor uses three iMAs (Moving Average, MA), one iOsMA (Moving Average of Oscillator and one iRVI (Relative Vigor Index, RVI). The EA can use either a fixed lot or a lot calculated as a risk percent of free margin. It can apply Trailing Stop based on the High/Low of earlier bars. It only works on a new bar, i.e. at the moment of formation of a new bar.
+Input Parameters
+Trade setting
+- main trading settings:
+The minimum balance. If less - then close the expert advisor
+- minimum allowable balance;
+Lots (if "Lots" <=0.0 -> then the "Risk" parameter is used)
+- fixed lot value;
+Stop Loss (in pips)
+- Stop Loss value;
+Take Profit (in pips)
+- Take Profit value;
+Risk in percent for a deal from a free margin (if "Lots" <=0.0)
+- risk per trade as percent of free margin;
+Volatility (in bars)
+- the number of bars to search for High and Low;
+magic number
+- Expert Advisor identifier.
+Moving Average settings
+:
+Minimum difference between Moving Average indicators
+- the minimum distance between indicators
+Moving Average #1: averaging period
+Moving Average #2: averaging period
+Moving Average #3: averaging period
+OsMA settings
+:
+OsMA: period for Fast Moving Average
+OsMA: period for Slow Moving Average
+OsMA: averaging period for their difference
+RVI settings
+:
+RVI: averaging period
+RVI max value
+RVI min value
+Trailing on shadows of bars
+- the trailing stop function based on bar shadows:
+Trailing Shadows
+- enable/disable trailing based on shadows;
+Timeframe
+- the timeframe of bars for the trailing function;
+Indent from the shadow of the bar on which the stop loss is placed
+- additional indent.
+An example of testing on EURUSD, H1, with the trailing stop based on M5 shadows:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19633

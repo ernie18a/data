@@ -1,0 +1,31 @@
+This code extracts tick data from the broker's server and refreshes the 28 charts of the 8 commonly traded currencies in MT4.
+This tool can be used by traders that use indicators, Expert Advisors, or other tools that needs to use the 28 pairs, like "Volatility Watcher", "OBOS Watcher", and other programs that measures currency strengths.
+⚡
+⚡
+8   C O M M O N L Y   T R A D E D   C U R R E N C I E S
+⚡
+⚡
+EUR - Euro
+GBP - British Pound
+AUD - Australian Dollar
+NZD - New Zealand Dollar
+USD - US Dollar
+CAD - Canadian Dollar
+CHF - Swiss Francs
+JPY - Japanese Yen
+⚡
+⚡  F E A T U R E S
+⚡
+⚡
+Just attach the indicator in any chart. It will automatically refresh all 28 charts.
+One-off execution. No need to run again once your MT4 is updated already.
+⚡
+⚡  P A R A M E T E R
+⚡
+⚡
+You can indicate the number of bars to extract from the broker's server:
+⚡
+⚡  R E P O R T
+⚡
+⚡
+It reports the pairs that failed to refresh after the execution so you can re-run the tool or you can just manually extract it.

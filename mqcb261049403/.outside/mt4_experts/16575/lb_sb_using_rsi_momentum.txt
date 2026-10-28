@@ -1,0 +1,63 @@
+The same EA's as
+previously released
+. The additional code allows the user to set parameters on RSI and Momentum. For guidance, in the variables, if the RSI buy restrict is set to 70, the EA will not place a pending buy order if the RSI is above 70.
+The modification to the code is simple, even someone of limited knowledge of coding could change the indicators to one of their choice. Below are the new lines.
+extern
+int
+RSI_Period        =
+14
+;
+extern
+int
+RSI_Buy_Restrict  =
+1
+.;
+extern
+int
+RSI_Sell_Restrict =
+1
+.;
+extern
+int
+Momentum_Period        =
+14
+;
+//  These additional lines in the variables
+extern
+int
+Momentum_Buy_Restrict  =
+1
+.;
+extern
+int
+Momentum_Sell_Restrict =
+1
+.;
+double
+d_RSI =
+iRSI
+(
+Symbol
+(),
+0
+,RSI_Period,
+PRICE_CLOSE
+,
+1
+);
+double
+d_Momentum=
+iMomentum
+(
+Symbol
+(),
+0
+,Momentum_Period,
+PRICE_CLOSE
+,
+1
+);
+// These two lines before the order send
+&& d_Momentum < Momentum_Buy_Restrict && d_RSI < RSI_Buy_Restrict)
+&& d_Momentum > Momentum_Sell_Restrict && d_RSI > RSI_Sell_Restrict)
+//These two lines at the order send

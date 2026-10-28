@@ -1,0 +1,16 @@
+Indicator RDS2689SignalAlerts
+This indicator will write the price of Pivot Point on the trading chart, ranging from Price Support 6 to Price Resistance 6.
+When prices change, or pass one of Pivot Price level, the indicator will be given alerts:
+Message Alert (Print on message alerts MT4 default panel)
+Sound Alerts, and / or
+eMail Alerts.
+In addition, the indicators will also provide at each level (Day Level Signal) and Day Prime Signal (means the price trend on that day and at that time).
+You can also display the Horizontal line (true or false):
+Horizontal line consists of:
+Open Price today (Day Open Price)
+Highest Price today
+Lowest Price today
+Mid Price today
+Pivot Price today, and
+Fibonacci Retracement Line level (only one level), which will adjust itself according to the last price change.
+This indicator used on all timeframes.

@@ -1,0 +1,10 @@
+The Expert Advisor is supposed to pyramid into big and fast market movements. It adds up on profitable trades and instantly trails them when in profit. Trades are entered when potential outbreak of big movement is identified. The advisor uses inbuilt functions for calculation of volatility, trend formation and timing to enter the trade.
+Inputs
+Commission
+- commission per round lot.
+SpreadThreshold
+- maximum spread (in points) to open orders (if spread is higher than set threshold Expert Advisor won't open trades).
+MagicNumber
+- order magic number.
+WarningAlerts
+- set to true if you want the warnings to be printed.

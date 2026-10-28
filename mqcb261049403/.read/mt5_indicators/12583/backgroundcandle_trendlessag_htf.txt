@@ -1,0 +1,13 @@
+The indicator draws candlesticks of a larger timeframe as color filled rectangles using
+DRAW_FILLING
+buffers. Rectangles are color filled according to the
+TrendlessAG
+indicator values.
+Depending on location of
+TrendlessAG
+relative to the zero line, the candlestick body is painted in blue or orange, and shadows are painted in light blue or light pink.
+This indicator requires the the compiled indicator file TrendlessAG.mq5. Place it to <terminal_data_folder>\MQL5\Indicators\.
+Fig. 1. The BackgroundCandle_TrendlessAG_HTF indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12583

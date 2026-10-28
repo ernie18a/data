@@ -1,0 +1,46 @@
+The indicator calculates the correlation of the currency pairs.
+Input Parameters:
+extern
+string
+OtherChart
+=
+"EURUSD"
+;
+extern
+int
+n
+=
+20
+;
+extern
+bool
+UseOpen
+=
+true
+;
+extern
+bool
+UseClose
+=
+false
+;
+extern
+bool
+UseHigh
+=
+false
+;
+extern
+bool
+UseLow
+=
+false
+;
+extern
+int
+CalcBars
+=
+400
+;
+Example with USDCHF and EURUSD:
+Correlation

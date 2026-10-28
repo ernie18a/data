@@ -1,0 +1,2 @@
+This EA was written for the EURUSD M15. It is a break out system that relies mainly on Bollinger Bands.
+This is my first EA, and although it is a losing strategy, I post it here purely to get feed back to improve my coding. Please have a look at it, and tell me what you think.

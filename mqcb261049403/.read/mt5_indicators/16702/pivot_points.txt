@@ -1,0 +1,6 @@
+Pivot point indicator with an addition of 4 ways of calculating pivot points :
+(Previous High +Previous Low + Previous Close)/3
+(Previous High +Previous Low + Previous Close + Previous Close)/4
+(Previous High +Previous Low + Previous Close + Open)/4
+(Previous High +Previous Low + Open + Open)/4
+Added "alternate way" of calculating pivot support and resistance lines - I found that in a lot of versions the R3 and S3 are calculated differently than the original (it effectively makes it "tighter" than the original) so I decided to enable that way too.

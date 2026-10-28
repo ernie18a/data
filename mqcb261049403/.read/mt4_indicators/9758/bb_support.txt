@@ -1,0 +1,13 @@
+Description:
+Works on the range of M1. I am using periods of M1, M5, H1, D1 but, if necessary, everyone can modify the periods.
+Example #1:
+M1up[i] = iBands(NULL, PERIOD_M1, M1Period, M1Deviation, 0, PRICE_Ma, MODE_UPPER, i);
+M5up[i] = iBands(NULL, PERIOD_M5, M5Period, M5Deviation, 0, PRICE_Ma, MODE_UPPER, i / PERIOD_M5);
+M15up[i] = iBands(NULL, PERIOD_M15, M15Period, M15Deviation, 0, PRICE_Ma, MODE_UPPER, i / PERIOD_M15);
+M30up[i] = iBands(NULL, PERIOD_M30, M30Period, M30Deviation, 0, PRICE_Ma, MODE_UPPER, i / PERIOD_M30);
+Example #2:
+M15up[i] = iBands(NULL, PERIOD_M15, H1Period, M15Deviation, 0, PRICE_Ma, MODE_UPPER, i / PERIOD_M15);
+M30up[i] = iBands(NULL, PERIOD_M30, H1Period, M30Deviation, 0, PRICE_Ma, MODE_UPPER, i / PERIOD_M30);
+H1up[i] = iBands(NULL, PERIOD_H1, H1Period, H1Deviation, 0, PRICE_Ma, MODE_UPPER, i / PERIOD_H1;
+H4up[i] = iBands(NULL, PERIOD_H4, H4Period, H4Deviation, 0, PRICE_Ma, MODE_UPPER, i / PERIOD_H4);
+Images:

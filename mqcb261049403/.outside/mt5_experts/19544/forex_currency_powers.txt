@@ -1,0 +1,38 @@
+Description:
+MetaTrader 5 allows creating synthetic instruments. The price of such instruments can depend on the current values of a number of financial instruments.
+An example of such instruments in the stock market is the
+stock market index
+. Indexes for the FOREX market are
+USDX
+,
+EURX
+.
+In trading, such symbols allow spotting the beginning and end of global market movements at an early stage.
+We can create a currency strength indicator by averaging the current position of the Close price relative to the High/Low range over a certain amount of one-minute bars (in this case 5) of corresponding currency pairs.
+The strength of Forex currencies in this example is calculated using the following formulas:
+<FOREX.EUR> = (EURUSD+EURGBP+EURCHF+EURJPY)/4
+<
+FOREX.
+USD> = (USDCHF+USDEUR+USDGBP+USDJPY)/4
+<
+FOREX.
+GBP> = (GBPUSD+GBPEUR+GBPCHF+GBPJPY)/4
+<
+FOREX.
+JPY> = (JPYUSD+JPYEUR+JPYGBP+JPYCHF)/4
+<
+FOREX.
+CHF> = (CHFUSD+CHFGBP+CHFJPY+CHFEUR)/4
+In this example, the strengths of currencies are plotted in the interval from 0 to 100, the central line passes through the level 50. The sum of the strengths of currencies at any moment of time is equal to 50, i.е. the currencies move at the expense of other currencies. Global movements of USD are reflected on stock and commodity markets, as well as the Forex market (because all markets are interrelated).
+Copy the CurrencyPowerIndex.mqh file to <terminal_data_folder>\MQL5\Include.
+After you launch FOREX_Currency_Power.mq5, the following synthetic instruments will appear in the Market Watch window: FOREX.EUR.M5, FOREX.USD.M5, FOREX.GBP.M5, FOREX.JPY.M5, FOREX.CHF.M5:
+Fig.1. Synthetic instruments FOREX.EUR.M5, FOREX.USD.M5, FOREX.GBP.M5, FOREX.JPY.M5, FOREX.CHF.M5 in Market Watch
+Fig. 2. A tick chart of the synthetic instrument FOREX.EUR.M5
+Fig. 3. A tick chart of the synthetic instrument FOREX.USD.M5
+Fig. 4. A tick chart of the synthetic instrument FOREX.GBP.M5
+Fig. 5. A tick chart of the synthetic instrument FOREX.JPY.M5
+Fig. 6. A tick chart of the synthetic instrument FOREX.CHF.M5
+Fig. 7. Strength of EUR, USD, GBP, JPY, CHF
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19544

@@ -1,0 +1,9 @@
+VSA is about reading the market and mapping it out to give you a better understanding of what it might do next.
+Bars info:
+YellowGreen: We can have increasing spread and increasing volume -strong participation and price should continue in this direction.
+Red: We can have decreasing spread and increasing volume-direction move may be losing steam.
+Blue: We can have increasing spread and decreasing volume- price is moving without strong participation.
+Gray: We can have decreasing spread and decreasing volume-waiting market(dull or congested)
+Using MACD:
+And MTF settings: VSA 15min on H1 chart.(4x15m bars in 1 H1 bar)
+regards:)

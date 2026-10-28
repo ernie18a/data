@@ -1,0 +1,18 @@
+Asian, London and New York session high/low boxes with ICT killzone shading, breakout alerts and average-range statistics panel.
+OVERVIEW
+Draws clean high/low boxes for the Asian, London and New York sessions in your broker's server time. Shades the ICT killzones in the background, marks liquidity sweeps of the Asian range, alerts you when a session box breaks, and shows a small panel with each session's average range in pips.
+KEY FEATURES
+Asian / London / New York boxes with 50% midlines, fully customizable server-time inputs
+ICT killzone shading (London 07:00-10:00, New York 12:00-15:00 by default)
+Breakout alerts (popup + push), once per session per side - no spam
+Statistics panel: average session range in pips over N days
+Liquidity sweep markers: wick through the Asian high/low that closes back inside
+Works on all symbols and timeframes; overnight sessions supported
+HOW TO USE
+Attach to any chart. Default times: Asia 00:00-09:00, London 07:00-12:00, New York 12:00-17:00 (server time).
+If your broker's server is offset, shift all session times by the same offset.
+Watch price react at box highs/lows and midlines during killzones; sweeps often precede the real move.
+NOTES
+Times are server time, not local time - adjust inputs to your broker.
+Boxes need M1 history; on a fresh terminal let history download first.
+This is an analytical tool, not a trading signal - it does not predict direction.

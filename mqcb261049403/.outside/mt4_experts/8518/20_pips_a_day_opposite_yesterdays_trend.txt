@@ -1,0 +1,16 @@
+Some time ago I published
+10 pips a day opposite "yesterday's trend"
+EA. Thanks to
+funyoo
+and his optimalisation report I was ispired to improve this EA and this is his second version.
+Now we can call it
+20 pips a day opposite "yesterday's trend"
+.
+I found TP/SL ration 20/80 even better than 10/50 from
+10 pips a day opposite "yesterday's trend"
+.
+With updated Martingale coefficients adapted to new condition we get even prettier profit curve.
+Strategy tester results for 01.01.2008 - 23.10.2008:
+01.01.2008 - 23.10.2008
+Strategy tester results for 01.01.2004 - 23.10.2008:
+01.01.2004 - 23.10.2008

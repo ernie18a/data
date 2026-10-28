@@ -1,0 +1,95 @@
+The Exp_RSIOMA Expert Advisor based on the signals taken from the
+RSIOMA
+histogram. The signal is formed when a bar is closing if there is breakout of the support or resistance levels by the MACD histogram or if there is change in the direction of the histogram or signal line and also if there is breakout of the signal line by the histogram (depending on the options selected in the Mode input parameter).
+The RSIOMA_HTF indicator in the EA is intended only for a more convenient visualization of trends in the strategy tester, in other operation modes it is inactive.
+Place RSIOMA.ex5 and RSIOMA_HTF.ex5 compiled files to the
+<terminal_data_folder>\MQL5\Indicators
+.
+After compilation, the Exp_RSIOMA.ex5 expert file contains the RSIOMA.ex5 and RSIOMA_HTF.ex5 indicators as
+resources
+,
+and therefore, they are not required to be present in the terminal folder for the compiled EA to work! For this purpose, the corresponding code has been added to the EA code in order to include these indicators in the expert's executable file.
+The indicator executable files have been added as resources at the global scope
+//---- Include the indicators in the EA code as resources
+#resource
+"\\Indicators\\RSIOMA.ex5"
+#resource
+"\\Indicators\\RSIOMA_HTF.ex5"
+Changed the string paths to the indicators used as resources in the block of the OnInit() function
+//---- getting handle of the RSIOMA indicator
+InpInd_Handle=
+iCustom
+(
+Symbol
+(),InpInd_Timeframe,
+"::Indicators\\RSIOMA"
+,
+RSIOMA_Method,RSIOMA,RSIOMAPhase,MARSIOMA_Method,MARSIOMA,MARSIOMAPhase,MomPeriod,IPC,HighLevel,MiddleLevel,LowLevel,
+0
+);
+if
+(InpInd_Handle==
+INVALID_HANDLE
+)
+{
+Print
+(
+" Failed to get handle of the RSIOMA indicator"
+);
+return
+(
+INIT_FAILED
+);
+}
+//---- getting handle of the RSIOMA_HTF indicator for visualization in the strategy tester
+if
+(
+MQLInfoInteger
+(
+MQL_VISUAL_MODE
+))
+{
+//---- getting handle of the RSIOMA_HTF indicator
+int
+Ind_Handle=
+iCustom
+(
+Symbol
+(),
+Period
+(),
+"::Indicators\\RSIOMA_HTF"
+,InpInd_Timeframe,
+RSIOMA_Method,RSIOMA,RSIOMAPhase,MARSIOMA_Method,MARSIOMA,MARSIOMAPhase,MomPeriod,IPC,HighLevel,MiddleLevel,LowLevel,
+0
+);
+if
+(Ind_Handle==
+INVALID_HANDLE
+)
+{
+Print
+(
+" Failed to get handle of the RSIOMA_HTF indicator"
+);
+return
+(
+INIT_FAILED
+);
+}
+}
+Thus, the compiled executable file of the expert can be used on other trade terminals on its own without the indicators.
+Note that the TradeAlgorithms.mqh library file allows using Expert Advisors with brokers who offer
+nonzero spread
+and the option of setting Stop Loss and Take Profit
+together with position opening
+. You can download more variants of the library at the following link:
+Trade Algorithms
+.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. Examples of deals on the chart
+Testing results for 2015 on USDCHF H4:
+Fig. 2. Chart of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17054

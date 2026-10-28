@@ -1,0 +1,7 @@
+The multi-timeframe version of the
+ChannelsFIBO_v2
+indicator. Differs from the parent with the "Source data timeframe" parameter. Thus, the indicator is able to display the current situation corresponding to specified chart period, regardless of the timeframe selected as current.
+An example of the indicator values on the chart with the current period М5 is shown in the figure. The value of the "Source data timeframe" parameter — "1 Hour":
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14845

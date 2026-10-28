@@ -1,0 +1,5 @@
+Small indicator for monitoring the history of closed and the status of open orders on the chart. Red - unprofitable order, green - profitable.
+ShowOrdersOnChart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7220

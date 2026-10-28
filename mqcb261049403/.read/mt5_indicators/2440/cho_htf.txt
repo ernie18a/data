@@ -1,0 +1,14 @@
+O indicador
+CHO
+com a opção de seleção de um período de tempo diferente nos parâmetros de entrada:
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// Período gráfico do indicador (timeframe)
+Para proporcionar o funcionamento correto do indicador, coloque o arquivo compilado CHO.mq5 em terminal_data_folder\MQL5\Indicators.
+Figura 1. O indicador CHO_HTF
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2440

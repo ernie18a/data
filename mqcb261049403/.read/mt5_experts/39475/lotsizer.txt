@@ -1,0 +1,4 @@
+Lotsizer
+is a risk-based lot size calculator that dynamically determines the optimal trade volume using the Average Daily Range (ADR) together with the account equity or balance, helping traders to
+keep a consistent risk exposure across different symbols
+.

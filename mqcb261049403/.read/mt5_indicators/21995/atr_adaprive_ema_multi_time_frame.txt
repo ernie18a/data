@@ -1,0 +1,6 @@
+There a lot of ways how some indicators can be made adaptive instead of calculating fixed periods.
+One, less known method, is to use normalized ATR (Average True Range) for making the calculation adaptive. And since EMA (Exponential Moving Average) is a a good candidate for being adaptive (it allows fractional periods for calculation), this EMA is using ATR for adaptive EMA calculations and it is already a standalone multi time frame indicator too.
+In this version timeframes supported are all the possible timeframes supported by MetaTrader 5 and it has 3 "special" timeframes:
+Next higher timeframe: first higher timeframe compared to active chart.
+Second higher timeframe: second higher timeframe compared to active chart.
+Third higher timeframe: third higher timeframe compared to active chart.

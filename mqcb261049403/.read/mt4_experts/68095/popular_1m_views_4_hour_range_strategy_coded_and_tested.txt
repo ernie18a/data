@@ -1,0 +1,25 @@
+Provided for educational purposes; not trading advice. Backtests on EURUSD under my conditions were unprofitable.
+The strategy follows the following logic:
+First the strategy marks the high and the low of the first 4H candle, using the New york time zone.
+After the first 4H candle is formed the strategy waits for a 5 Minute candle to close outside the Range.
+If a 5 Minute candle closes above the High and then a 5 Minute candle closes back in the Range, there is a sell signal.
+If a 5 Minute candle closes below the Low and then a 5 Minute candle closes back in the Range, there is a buy signal.
+There was one vague rule the strategy did not follow regarding the orderblock. To avoid trades after the price has overextended beyound the range, a time filter was introduced and if the price stayed above the high or below the low for more than 75 Minutes the trade is marked as invalid.
+It is of utmost importance to specify your own broker's GMT offset times and the dates when the switching from Summer time to Winter time (and vica versa). Since this strategy is based on the New York local time, a single error in this can offset the whole strategy.
+Here are the input parameters for the strategy:
+ServerGMTOffsetWinter
+: The GMT offset of the broker's server in winter time.
+ServerGMTOffsetSummer
+: The GMT offset of the broker's server in summer time. (Can be the same as Winter offset for brokers with fixed GMT offset)
+ServerSwitchToSummerMonth
+: The month when the broker switches to summer time zone.
+ServerSwitchToSummerDay
+: The day of month when the broker switches to summer time zone.
+ServerSwitchToWinterMonth
+: The month when the broker switches to winter time zone.
+ServerSwitchToWinterDay
+:
+The day of month when the broker switches to winter time zone.
+Lots
+: Lotsize
+Here are the backtest results of the backtest for EURUSD:

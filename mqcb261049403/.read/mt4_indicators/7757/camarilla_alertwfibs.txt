@@ -1,0 +1,2 @@
+Author: MrPip
+This indicator shows support and resistance line same with camarilla indicator.

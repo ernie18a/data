@@ -1,0 +1,56 @@
+Development of the first version of
+MA Trend
+- added
+Type traiding
+restriction parameter
+:
+Only BUY - allowed to open only BUY
+Only SELL - it is allowed to open only SELL
+BUY and SELL - it is allowed to open both BUY and SELL.
+The Expert Advisor works according to the iMA (Moving Average, MA) indicator. It has many settings:
+Only one positions
+-
+only one
+position can be held in the market
+Reverse
+- reverse (flip) trading signals
+Close opposite
+- forced closing of opposite positions when a trading signal is received.
+Formation of trading signals when all parameters are set by default:
+Current ASK price is higher than the indicator value on bar #1 -> signal to open BUY position
+Current BID price is less than the indicator value on bar #1 -> signal to open a SELL position.
+and how it looks like in MQL5 code:
+if
+(m_symbol.
+Ask
+()>ma[
+1
+])
+         m_need_open_buy=
+true
+;
+else
+if
+(m_symbol.
+Bid
+()<ma[
+1
+])
+         m_need_open_sell=
+true
+;
+Example of operation when
+Only one positions
+parameters are false and true:
+The following example
+Only one positions
+- true,
+Reverse
+- false and
+Close opposite
+- true: a BUY position was opened, after some time a signal to open SELL position was received. Since
+Close opposite
+is true, the BUY position was closed first (because it is opposite to the signal) and only then the SELL position was opened.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23632

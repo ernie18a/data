@@ -1,0 +1,25 @@
+Freedom of Movement oscillator is a price movement indicator with the trend component excluded from its chart.
+It has two configurable parameters:
+Period
+- calculation period
+Method
+- calculation method
+Calculation:
+FoM = (vByM - avF) / sdF
+where:
+sdF - StdDev(vByM, Period)
+avF - MA(vByM, Period, Method)
+vByM = Vol / Move
+Vol = 1 + 9*(RV-MinV) / Abs(denomV)
+denomV = MaxV - MinV
+MaxV, MinV - maximum and minimum RV values in the Period range
+Move = 1 + 9*(aMove-MinM) / Abs(denomM)
+denomM = MaxM-MinM,
+MaxM, MinM - maximum and minimum aMove values in the Period range
+aMove = Abs(Close-PrevClose) / PrevClose
+RV = (Volume-av) / sd
+sd - StdDev(Volume, Period)
+av - MA(Volume, Period, Method)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22504

@@ -1,0 +1,39 @@
+Welcome to the Quantitative Standard.
+Developed by the quant team at
+IronHawk Capital
+, the Microstructure Matrix v5.1 is not a standard drawing tool. Most SMC (Smart Money Concepts) indicators on the market are visually appealing but mathematically hollow, causing terminal lag and repainting fake signals.
+We engineered this matrix to solve the retail overtrading problem. It acts as an asynchronous background engine that scans your favorite assets and filters out low-probability setups using pure statistical variance and structural validation.
+The Core Quantitative Engine
+1. Event-Driven CPU Caching
+Unlike standard indicators that recalculate thousands of bars on every tick, our engine caches the High-Timeframe (HTF) data. The processor only executes a lightweight real-time price verification.
+Result: Zero terminal freeze, even when scanning 5 assets simultaneously.
+2. Imbalance Validator (FVG)
+An Order Block without an imbalance is just a candlestick. The algorithm mathematically verifies that the displacement candle leaves a true Fair Value Gap. If there is no liquidity void, the setup is instantly discarded.
+3. True Fractal CHOCH & Z-Score Volume
+We do not use standard "candle closes" for CHOCH. The engine identifies true structural fractals (Swing Highs/Lows). Furthermore, a break of structure is only validated if the tick volume exceeds the
+Mean + 1.5x Standard Deviation (Z-Score)
+of the last 50 periods. If institutions aren't injecting abnormal volume, the dashboard flags it as a LOW VOLATILITY DEFECT .
+Dashboard & Features
+Dynamic HUD:
+A sleek, non-intrusive matrix displaying real-time data for all selected assets.
+Visual Rendering:
+Automatically draws and projects the validated Order Block (POI) strictly on your current active chart to keep your workspace clean.
+Daily Bias Filter:
+Automatically ignores counter-trend signals based on the D1 candle structure.
+Killzone Filter:
+Restricts execution signals to high-liquidity sessions (London/NY).
+Smart Alerts:
+Push notifications to your phone and MT5 pop-ups specifically when a setup aligns perfectly.
+How to Use
+Attach the indicator to a
+single, clean chart
+(e.g., EURUSD M15).
+In the inputs, type the symbols you want to scan separated by commas (e.g., BTCUSD,EURUSD,GBPUSD,XAUUSD,USDJPY ).
+Note: Ensure these symbols exactly match your broker's naming convention.
+Set your HTF (High Timeframe for POI) and LTF (Low Timeframe for Execution).
+Let the Matrix run. Wait for the dashboard to display
+"EXECUTE BUY"
+or
+"EXECUTE SELL"
+.
+Built for precision. Built for Prop-Traders.

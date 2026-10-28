@@ -1,0 +1,19 @@
+Real author:
+Weld & TrendLaboratory Ltd.
+The
+JMASlope
+indicator with the timeframe selection option available in input parameters.
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// Indicator chart period
+Place the indicator compiled file JMASlope.mq5 to the terminal_data_folder\MQL5\Indicators\ of the client terminal.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 02.01.2008.
+Figure 1. JMASlope_HTF
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1997

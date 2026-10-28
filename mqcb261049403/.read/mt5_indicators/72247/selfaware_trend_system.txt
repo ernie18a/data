@@ -1,0 +1,254 @@
+The
+Self-Aware Trend System (SATS)
+is an advanced multi-engine SuperTrend indicator for MetaTrader 5 that goes far beyond a standard trend-following line. It combines four tightly integrated sub-systems: an
+Adaptive SuperTrend engine
+, a
+Trend Quality Index (TQI)
+, a
+Signal Scoring filter
+, and a built-in
+Risk Management layer
+with automatic TP/SL projection. The result is a single indicator that not only identifies the trend but also measures how strong and trustworthy that trend is, filters low-quality signals, and draws trade levels directly on the chart.
+At the core of the indicator is an ATR-based SuperTrend line whose band width adapts in real time using the
+Kaufman Efficiency Ratio (ER)
+. When price is trending efficiently (high ER), the bands tighten to stay close to price. When price is choppy (low ER), the bands widen to avoid false flips. This adaptation can be further refined by the
+Trend Quality Engine (TQI)
+, a composite score built from four weighted sub-components: Efficiency (how directional recent movement is), Volatility Regime (whether current ATR is above or below its long-term baseline), Market Structure (pivot-high and pivot-low alignment), and Momentum Persistence (how consistently price has followed through in the same direction). The TQI score runs from 0 to 1 and is shown live in the on-chart dashboard. A
+Character-Flip detection
+module watches for a sharp drop in TQI during an active trend, treating that drop as an early warning that the trend character has changed before the SuperTrend line itself flips.
+Signals are only displayed when a composite
+Signal Score
+clears a configurable minimum threshold. This score is built from momentum alignment, Efficiency Ratio level, Volume Z-score, RSI zone, pivot structure, and a baseline bonus. The scoring system prevents the indicator from printing arrows on every SuperTrend flip and focuses attention on setups where multiple conditions agree. Once a valid signal fires, the indicator immediately draws an
+Entry line
+, a
+Stop Loss
+(ATR-distance below/above entry), and three
+Take Profit levels
+(TP1, TP2, TP3) defined as R-multiples of the initial risk. As subsequent bars form, the TP and SL lines extend forward and are automatically marked when hit.
+The
+Performance Dashboard
+displays all of this in a compact panel that can be anchored to any corner of the chart. It shows the current TQI and its four sub-components, trend direction, active preset name, RSI, Volume Z-score, Efficiency Ratio, rolling win rate, average R, rolling drawdown, all-time win/loss streaks, and cumulative R. An experimental
+Auto-Calibration
+module monitors recent signal R-results and adjusts the Quality Influence parameter up or down to self-correct when the indicator enters a run of poor signals. The indicator is fully non-repainting: the dashboard and all signals are locked to confirmed closed bars (shift = 1), so no value changes on a chart refresh.
+Six built-in
+Presets
+(Auto, Scalping, Default, Swing, Crypto 24/7, Custom) adjust ATR length, base multiplier, ER window, RSI period, and SL multiplier in a single dropdown. The
+Auto
+preset selects Scalping for timeframes up to M5, Default for M6 through H4, and Swing for H5 and above. All visual elements (band colors, signal labels, TQI-colored line, background shading, watermark) are individually toggleable. Alerts fire with either a plain-text or a structured
+Webhook JSON
+payload containing symbol, timeframe, price, SL, TP1-3, score, and TQI, making it straightforward to pipe signals into an external system or trade copier.
+Input Parameters
+Parameter
+Default
+Description
+--- Main Settings ---
+Preset
+Auto
+Selects a parameter bundle. Auto picks the preset based on the current chart timeframe. Options: Auto, Custom, Scalping, Default, Swing, Crypto 24/7.
+ATR Length
+13
+Period for the ATR calculation used in SuperTrend band construction. Overridden by the active preset unless Custom is selected.
+Base Band Width (xATR)
+2.0
+The base multiplier applied to ATR to set the initial band distance. The adaptive engine adjusts this value up or down from this starting point.
+Source Price
+Close
+The price series used for SuperTrend calculation. Options: Close, Open, High, Low, HL2, HLC3.
+--- Adaptive Engine ---
+Enable Vol-Adaptive Bands
+true
+Activates Efficiency Ratio-based band adaptation. When enabled, bands narrow during trending conditions and widen during choppy conditions.
+Efficiency Window
+20
+The lookback period in bars used to compute the Kaufman Efficiency Ratio. A higher value produces a smoother ER signal.
+Adaptation Strength
+0.5
+Controls how aggressively the ER shifts the band multiplier. Higher values produce more band compression during strong trends.
+ATR Baseline Length
+100
+The period for the long-term ATR used as a baseline to determine the current volatility regime. Used by the TQI Volatility component.
+--- Trend Quality Engine ---
+Enable Trend Quality Engine
+true
+Activates the TQI scoring system. When enabled, the adaptive multiplier is further modulated by the composite quality score.
+Quality Influence
+0.4
+How much the TQI score affects the adaptive multiplier. A value of 0 means no influence; 1.0 means maximum influence on band tightening.
+Quality Curve Power
+1.5
+Applies a power curve to the TQI before it influences the multiplier, allowing non-linear scaling of quality influence at the extremes.
+Smooth Adaptive Multipliers
+true
+Applies EWMA smoothing to the active and passive band multipliers to prevent sudden band jumps between bars.
+Asymmetric Bands
+true
+Uses different multipliers for the upper and lower bands based on recent price structure, allowing the indicator to adapt to directional volatility.
+Asymmetry Strength
+0.5
+The degree to which the bands are allowed to differ from each other when Asymmetric Bands is enabled.
+Efficiency-Weighted ATR
+true
+Blends the standard ATR with an ER-weighted ATR to reduce the impact of single-bar volatility spikes on band width.
+Character-Flip Detection
+true
+Monitors for a sharp TQI drop during an active trend as an early warning of trend character change, before the SuperTrend line flips.
+Char-Flip: Min Trend Age
+5
+The minimum number of bars a trend must be active before Character-Flip detection begins checking for reversal warnings.
+Char-Flip: High TQI
+0.55
+The TQI threshold that a trend must have previously reached for a subsequent drop to qualify as a character flip.
+Char-Flip: Low TQI
+0.25
+The TQI level that the current bar must fall to in order to trigger a character-flip warning signal.
+Weight: Efficiency
+0.35
+The proportion of the TQI composite score assigned to the Efficiency Ratio component.
+Weight: Volatility Regime
+0.20
+The proportion of the TQI composite score assigned to the Volatility Regime component (current ATR vs. ATR baseline).
+Weight: Structure
+0.25
+The proportion of the TQI composite score assigned to the Market Structure component (pivot alignment).
+Weight: Momentum Persist
+0.20
+The proportion of the TQI composite score assigned to the Momentum Persistence component (consistency of follow-through).
+Structure Window
+20
+The lookback period in bars used to identify pivot highs and lows for the Market Structure TQI component.
+Momentum Persist Window
+10
+The lookback period in bars used to measure momentum persistence for the Momentum TQI component.
+--- Signal Filters ---
+Use Structure in Score
+true
+Includes pivot structure alignment as one of the scoring components when evaluating signal quality.
+Pivot Strength
+3
+The number of bars on each side required to confirm a pivot high or pivot low for structural analysis.
+Use RSI in Score
+true
+Includes RSI zone alignment as a scoring component. Bullish signals score higher when RSI is below the overbought level, and vice versa.
+RSI Length
+14
+The period for the RSI indicator used in signal scoring.
+RSI Overbought
+70
+The RSI level above which a bullish signal loses RSI score points due to overbought conditions.
+RSI Oversold
+30
+The RSI level below which a bearish signal loses RSI score points due to oversold conditions.
+RSI Memory (bars)
+20
+How far back the RSI scoring logic looks for a recent visit to the oversold or overbought zone to reward setup quality.
+Use Volume in Score
+true
+Includes Volume Z-score as a scoring component. Signals with above-average volume receive additional score points.
+Volume Z Window
+20
+The lookback period in bars used to compute the mean and standard deviation of volume for Z-score normalization.
+Min Score Threshold
+60
+The minimum composite score (out of 100) required for a signal arrow to be displayed. Half of this value is used as a soft floor for borderline setups.
+--- Risk Management ---
+Show TP/SL Levels
+true
+Draws the Entry, Stop Loss, TP1, TP2, and TP3 horizontal lines on the chart when a signal fires.
+SL Buffer (xATR)
+1.5
+The distance of the Stop Loss from the entry price, expressed as a multiple of the current ATR value.
+TP1 (R-multiple)
+1.0
+The first take profit target expressed as a multiple of the initial risk (distance from entry to SL).
+TP2 (R-multiple)
+2.0
+The second take profit target expressed as a multiple of the initial risk.
+TP3 (R-multiple)
+3.0
+The third take profit target expressed as a multiple of the initial risk.
+Label Offset (bars)
+10
+The number of bars to the right of the current bar at which the TP/SL level labels are placed on the chart.
+Mark TP Hits
+true
+Places a marker on the TP line at the exact bar where price reached that level, providing a visual record of trade outcomes.
+Trade Timeout (bars)
+100
+The maximum number of bars a trade is tracked. If price has not hit TP3 or SL within this many bars, the trade is closed and performance is recorded.
+--- Self-Learning ---
+Enable Auto-Calibration
+false
+Experimental. When enabled, the indicator monitors recent signal R-results and automatically adjusts Quality Influence up or down to self-correct after poor performance runs.
+Calibration Window
+20
+The number of most recent signals used to compute the rolling average R for calibration decisions.
+Bad-Edge Threshold (R)
+0.0
+If the rolling average R falls below this value, Auto-Calibration adjusts the Quality Influence parameter to reduce signal frequency.
+Good-Edge Threshold (R)
+0.7
+If the rolling average R is above this value, the calibration cooldown resets and no adjustment is made.
+Quality Step
+0.05
+The increment by which Quality Influence is raised or lowered during each calibration adjustment.
+Calibration Cooldown (signals)
+5
+The minimum number of new signals that must occur between calibration adjustments to prevent rapid oscillation.
+Quality Floor
+0.1
+The minimum value Auto-Calibration is allowed to set for Quality Influence, preventing the filter from becoming too permissive.
+Quality Ceiling
+0.9
+The maximum value Auto-Calibration is allowed to set for Quality Influence, preventing the filter from becoming too restrictive.
+--- Visual ---
+Show SuperTrend Bands
+true
+Draws the upper and lower SuperTrend bands on the chart in addition to the central trend line.
+Color Line by TQI
+true
+Colors the SuperTrend line from red to green based on the current TQI value, giving an immediate visual read of trend quality strength.
+Show Signal Labels
+true
+Displays BUY and SELL arrow labels on the chart at the bar where a valid signal was confirmed.
+Show Trend Background
+false
+Fills the chart background with the bull or bear color based on the current SuperTrend direction.
+Show Watermark
+true
+Displays the indicator name and version as a watermark in the top area of the chart window.
+--- Dashboard ---
+Show Dashboard
+true
+Shows the on-chart information panel displaying trend state, TQI, filters, and performance statistics.
+Show TQI Breakdown
+true
+Expands the dashboard to display the individual TQI sub-component scores (Efficiency, Volatility, Structure, Momentum).
+Show Score Breakdown
+false
+Legacy display option. Shows the individual signal score component values from the most recent signal in the dashboard.
+Show Performance Stats
+true
+Adds the rolling win rate, average R, rolling drawdown, all-time cumulative R, and win/loss streaks to the dashboard.
+Dashboard Position
+Top Right
+Controls which corner of the chart the dashboard panel is anchored to. Options: Top Right, Top Left, Bottom Right, Bottom Left.
+--- Colors ---
+Bull Color
+Green (0,230,118)
+The color used for bullish elements including the uptrend band, buy signal labels, and TP lines.
+Bear Color
+Red (255,82,82)
+The color used for bearish elements including the downtrend band and sell signal labels.
+SL Color
+Red (255,23,68)
+The color used for the Stop Loss line drawn after a signal fires.
+TP Color
+Green (0,230,118)
+The color used for the TP1, TP2, and TP3 lines drawn after a signal fires.
+--- Alerts ---
+Enable Alert Signals
+true
+Fires a MetaTrader alert when a confirmed buy or sell signal is detected on the current live bar.
+Webhook JSON Format
+false
+When enabled, the alert message is formatted as a JSON string containing action, ticker, timeframe, price, SL, TP1, TP2, TP3, score, and TQI for use with webhook integrations.

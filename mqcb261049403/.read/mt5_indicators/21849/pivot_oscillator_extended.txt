@@ -1,0 +1,10 @@
+Extended version of
+Pivot Oscillator
+.
+In addition to be able to calculate pivot points as oscillator, 4 ways of calculating pivot points were added:
+(Previous High + Previous Low + Previous Close)/3
+(Previous High + Previous Low + Previous Close + Previous Close)/4
+(Previous High + Previous Low + Previous Close + Open)/4
+(Previous High + Previous Low + Open + Open)/4
+Also added the "alternate way" of calculating pivot support and resistance lines - seems that in a lot of versions the R3 and S3 are calculated differently than the original (it effectively makes it "tighter" than the original) so in this version you can use both ways.
+PS: it is a standalone (no need for any other indicator in order to work correctly) multi timeframe indicator too.

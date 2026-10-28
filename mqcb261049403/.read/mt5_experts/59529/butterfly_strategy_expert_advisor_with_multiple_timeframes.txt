@@ -1,0 +1,26 @@
+Butterfly Strategy Expert Advisor
+This Expert Advisor (EA) implements the Butterfly harmonic trading pattern across multiple timeframes (M2 to D1) for automated forex trading. It detects bullish and bearish Butterfly patterns using pivot points and executes trades with customizable risk management and multiple take-profit levels.
+Key Features:
+Pattern Detection
+: Identifies Butterfly patterns with adjustable pivot parameters and tolerance levels.
+Multi-Timeframe Support
+: Trades on user-selected timeframes (M2, M5, M10, M15, M30, H1, H2, H4, D1).
+Risk Management
+: Offers fixed or dynamic lot sizing based on account balance and risk percentage.
+Take-Profit Strategy
+: Splits positions into three take-profit levels (default: 50%, 30%, 20%).
+Break-Even & Trailing Stops
+: Configurable per timeframe, triggered after TP1 or TP2.
+Session Filter
+: Optional trading time restrictions (e.g., GMT-based sessions).
+Pattern Quality
+: Ensures high-quality patterns with a minimum quality score (0.0-1.0).
+Visual Aids
+: Draws pattern triangles, trend lines, and labels on the chart for clarity.
+Statistics Dashboard
+: Displays trade stats, including win rate, profit/loss, and drawdown.
+Usage:
+Enable desired timeframes and configure pattern, risk, and session parameters.
+Ensure trading is allowed ( AllowTrading = true ) and set a unique MagicNumber .
+Monitor the dashboard for performance insights.
+Ideal for traders seeking automated harmonic pattern trading with robust risk management and visual feedback.

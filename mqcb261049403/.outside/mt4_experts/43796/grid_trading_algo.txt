@@ -1,0 +1,7 @@
+This strategy is based on some very interesting enter criterias and usefull funtcions are included which I used to create this trading bot. It has shown very good potential in the markets lately, but some changes have to be made in order to test it with a demo account/real money. The backtest is with 30 Leverage.
+There are 4 inputs:
+Tp : Take Profit: the multiplier of the total money invested, for example if you invested 1000 dollars and the tp is 0.05, the ea will close when the trades reach 50 dollar profit.
+Multiplier: This is the volume multiplier in the grid.
+MaPeriod: The period of the moving average in the bollinger bands
+The StopLoss is 10 times the takeprofit.
+Hope I could help.

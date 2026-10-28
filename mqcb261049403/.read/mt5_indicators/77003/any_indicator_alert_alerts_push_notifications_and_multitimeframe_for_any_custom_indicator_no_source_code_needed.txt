@@ -1,0 +1,144 @@
+Two of the largest threads on this forum are "Indicators with alerts/signal" and "Multi Timeframe Indicators". They are still open after years because the answer has always been the same: get the source, edit it, recompile. That does not help if you have an .ex5 and no source, and it does not scale if you use several indicators.
+This does the job from outside. iCustom can load any indicator by name and read its buffers without its source, so one tool can serve all of them.
+Start in EXPLORE mode
+The reason people avoid iCustom is that it wants a buffer number, and nothing tells you which number holds the thing you can see on the chart. So the default mode answers that first. It probes the buffers, counts what is in each one, and prints them beside the last few bars.
+A buffer with a value on nearly every bar is a line, so use a level cross or a cross against a second buffer. A buffer that is empty except where the indicator drew something is the signal, so use "a value appears". Read the number off the table, switch to WATCH, and pick a trigger.
+Sample of what EXPLORE prints
+This is a real run on a live XAUUSDm H1 chart, watching the standard RSI. Every buffer the indicator has is listed with how many of the sampled bars carry a real value, how many are exactly zero, and how many are blank, followed by the values themselves bar by bar.
+Buffers found: 3   (checked up to 16, on XAUUSDm PERIOD_H1)
+------------------------------------------------------------------
+  buffer  values  zeros  blank  what it looks like                     range of the values
+       0      12      0      0  a line - a value on almost every bar   31.47608 .. 55.28984
+       1      12      0      0  a line - a value on almost every bar   4.11585 .. 6.11288
+       2      12      0      0  a line - a value on almost every bar   3.86003 .. 8.96028
+------------------------------------------------------------------
+  bar  time               buf0         buf1         buf2
+    0  2026.09.04 20:00     45.61107     5.40493     6.44511
+    1  2026.09.04 19:00     46.88624     5.82069     6.59381
+    2  2026.09.04 18:00     43.33095     5.42967     7.10102
+    3  2026.09.04 17:00     40.80179     5.27080     7.64725
+------------------------------------------------------------------
+Read it like this: the buffer that is empty on most bars and carries a value
+only where the indicator drew its signal is the one to watch. Put its number
+in 'Buffer to watch', set Mode to WATCH, and pick a trigger.
+A buffer that has a value on every bar is a line - use a level or buffer cross.
+Here all three buffers are lines, which is what RSI is. On an arrow or signal indicator the table looks different, and that difference is the whole point:
+buffer  values  zeros  blank  what it looks like                     range of the values
+       0       0      0      8  nothing here on these bars             -
+      11       8      0      0  a line - a value on almost every bar   16.08798 .. 16.25192
+      14       7      1      0  sparse - looks like a signal           4166.06000 .. 4166.06000
+Buffer 14 is the one to watch there. It is empty on most bars and carries a price only where the indicator marked something, so "a value appears" is the trigger for it. Buffer 11 is an internal line and buffer 0 holds nothing on these bars at all.
+Late values and repaints are not the same thing, so they are counted apart
+Every closed bar's value is kept and read again on each new bar. When a closed bar has changed, there are two very different reasons why.
+A late value.
+The bar was blank and now holds a value. The indicator needed later bars before it could mark this one. Fractals work this way by design, and so do most swing and structure markers. It is not deceit, but it does mean the signal was never visible on the bar it points at, and that matters if you judge a strategy by eye.
+A repaint.
+A value that was there has moved or vanished. Something you could have acted on is gone.
+Both are reported with the bar's time, the old value and the new one, and the chart comment keeps a running count of each. Nothing is inferred from the forming bar, because the forming bar changing is normal.
+That distinction was tested rather than asserted. On XAUUSD H1, 299 bars, 1 to 20 August 2026, watching each indicator's buffer 0:
+Watched indicator
+Late values
+Repaints
+Examples\Fractals, marks a bar two bars after it closes
+40
+0
+Examples\ZigZag, redraws its last leg by design
+0
+83, every one a value that vanished
+Examples\RSI, settled once a bar closes
+0
+0
+So it says "late" about an indicator that lags, "repaint" about one that repaints, and nothing about one that does neither. In the same run the level trigger fired twice on RSI crossing below 30, at 28.38 and 29.21; MACD's main line crossed above its signal line nine times and below it nine times; and RSI read from H4 on an H1 chart produced one alert per H4 bar, 77 of them, each stamped PERIOD_H4. It was also run against a 157 KB third-party Smart Money Concepts indicator, where it found 16 buffers and separated three internal lines from two sparse signal buffers.
+Triggers
+A value appears on a bar, whether on the bar that just closed or, for a lagging indicator, on an earlier bar it has only now marked; a cross above or below a level; one buffer crossing another in either direction; or simply the value changing. Alerts go to a popup, a sound, a push notification or email, one per bar. By default only closed bars are judged. Turn that off and the forming bar is judged on every tick, which alerts sooner and can reverse, still one alert per bar either way.
+A higher timeframe
+Set "Read it on this timeframe" and the watched indicator is loaded on that timeframe instead of the chart's. Bars, triggers and the repaint check all follow it.
+Two worked examples
+Example 1 - tell me when RSI crosses above 70.
+You know this indicator, so EXPLORE is only a check.
+Input
+Value
+Indicator file
+Examples\RSI
+Its inputs
+14
+Read it on this timeframe
+Current timeframe
+Mode
+WATCH
+Buffer to watch
+0
+Trigger
+buffer crosses above Level
+Level
+70
+Popup alert
+true
+On the test data that produced four alerts, at 75.04, 76.31, 70.38 and 74.83. To get the same thing from the four hour chart while you sit on the one hour, set "Read it on this timeframe" to H4 and change nothing else.
+Example 2 - an arrow indicator you downloaded and have no source for.
+Here EXPLORE is doing the real work.
+Attach with Mode on EXPLORE and "Indicator file" set to that indicator's name. Leave "Its inputs" blank to use its own defaults.
+Open Toolbox, Experts tab, and find the buffer that is
+sparse
+- empty on most bars, a value where you can see an arrow on the chart. Say it is buffer 2.
+Attach it again with Mode on WATCH, Buffer to watch 2, Trigger "a value appears", and Push notification on.
+If EXPLORE printed the note about a buffer being mostly exact zeros, switch on "This indicator writes 0 where it means nothing" and read the table again before choosing.
+What each input does
+Input
+What it does
+Indicator file
+Path under MQL5\Indicators, without the extension. One backslash, for example Examples\RSI or MyFolder\MyArrows. It starts empty on purpose - there is no indicator every terminal is certain to have - and nothing happens until you fill it in.
+Its inputs
+The watched indicator's own inputs, comma separated, in the order it declares them. Blank means use its defaults. Whole numbers are passed as int, numbers with a point as double, true and false as bool, anything else as text. The log prints back what it decided so you can check.
+Read it on this timeframe
+Load the watched indicator on this timeframe instead of the chart's. Current timeframe means the chart's own.
+This indicator writes 0 where it means "nothing"
+Treat an exact 0 as empty. Needed for indicators like ZigZag. EXPLORE tells you when it is worth switching on.
+Mode
+EXPLORE lists the buffers and alerts nothing. WATCH alerts on the buffer you chose.
+How many buffers to probe
+EXPLORE stops here. Raise it if the note says it hit the limit.
+How many recent bars to print
+How many bars EXPLORE shows and counts.
+Buffer to watch
+The buffer number you read off the EXPLORE table.
+Second buffer
+Only used by the two buffer-cross triggers.
+Trigger
+A value appears, a cross above or below Level, buffer A crossing buffer B either way, or the value simply changing.
+Level
+Only used by the two level-cross triggers.
+Judge closed bars only
+On by default: one judgement when a bar closes, and it cannot reverse. Off means the forming bar is judged on every tick, which alerts sooner but can undo itself.
+Popup, sound, push, email
+How you are told. Any combination. Push needs your MetaQuotes ID set in Tools, Options, Notifications.
+Re-read closed bars and report changes
+Turns the late value and repaint reporting on.
+How many closed bars to keep watching
+How far back the check looks. A change further back than this is not seen.
+Ignore changes smaller than this
+Leave at 0 to catch every change. Raise it if an indicator jitters in the last decimal.
+Three things that catch people out, and are handled
+Some indicators write a plain 0 where they mean "nothing here"
+instead of EMPTY_VALUE. ZigZag is one. Read naively, such a buffer looks like a solid line of zeros. There is an input for it, and EXPLORE prints a note when a buffer is mostly exact zeros with a few real values, so you can decide. It is deliberately not guessed: an oscillator that genuinely sits at zero looks identical from outside.
+A bar the indicator has not written yet reads as exactly 0.0.
+That is what the terminal puts in a freshly grown buffer, and a lagging indicator leaves its newest bars like that on purpose until it has the later bars it needs. Fractals never touches its last three. Read naively, every one of those bars later "changes", and the first version of this tool reported three hundred repaints on an indicator that has none. A bar going from that 0.0 to blank is now treated as initialisation, and from 0.0 to a value as a late arrival.
+input group occupies a positional parameter slot.
+If you call this indicator from your own code with iCustom or IndicatorCreate, the six group labels have to be counted along with the real inputs, as strings, or the handle fails with error 4002. This was measured, not assumed. Buffer 0 carries the watched buffer's value, so your EA can read it instead of repeating the plumbing; it was checked against the watched RSI on 299 of 299 bars.
+If the indicator you named cannot be loaded - a typo, or a file that has not been compiled yet - this does not detach itself. It says so on the chart and in the Experts log, and keeps trying every few seconds, so correcting the name is enough.
+What it does not do
+It reads indicator
+buffers
+. An indicator that draws only with chart objects exposes no buffers, and there is nothing here for this tool to read. Nothing outside the indicator can change that.
+"No repaint seen over 200 bars" is an observation about those bars, not a guarantee about every bar that will ever form. It is evidence, and better than the claim most indicators ship with, but it is not a proof. The check covers the number of closed bars you set in "How many closed bars to keep watching"; a change further back than that is not seen.
+It cannot tell you what a buffer means. It will show you that buffer 3 holds 1.0 on fourteen bars; whether that is a buy signal is yours to decide.
+An indicator that signals with a value of exactly 0.0 will not trigger "a value appears", because that is the reading of an unwritten bar. Signal buffers carry a price or a flag, never 0.0, so in practice this costs nothing, but it is a rule and you should know it.
+Buffer 0 mirrors the watched buffer only when the watched timeframe is the chart's own. Mapping a higher timeframe onto every chart bar is a different job and is not attempted.
+The alert channels themselves, popup, sound, push and email, are one call each and were not exercised in the Strategy Tester, which does not deliver them. Everything the tool decides before that call was.
+How to install it
+Copy AnyIndicatorAlert.mq5 into MQL5\Indicators in your terminal's data folder. In MetaTrader, File then Open Data Folder takes you there.
+Open it in MetaEditor and press F7. It should report 0 errors and 0 warnings.
+Back in the terminal press Ctrl+N for the Navigator, open Indicators, and drag AnyIndicatorAlert onto a chart. If it is not listed, right click in the Navigator and choose Refresh.
+Fill in "Indicator file" - it is empty to begin with - leave Mode on EXPLORE, and press OK. Examples\RSI is the one to try first.
+Press Ctrl+T for the Toolbox and open the Experts tab. The buffer table is there.
+Written and verified on MetaTrader 5 build 6140. It places no orders and changes nothing.

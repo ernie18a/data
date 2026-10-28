@@ -1,0 +1,17 @@
+Author:
+gunzip <spammmmme@gmail.com>
+As usual, you have to put it into experts/scripts metatrader subfolder and restart mt4 eventually
+(or just compile it if you are able to). You don't need to download anything but the script itself.
+You may edit (right click + modify) the script to put your twitter username and password inside it
+so you don't have to re-type them every time (if you feel it's safe to put them in clear text directly there)
+An alert should appear once the chart gets posted. Inputs are:
+username
+password
+message (eventually leave blank to skip posting to twitter and just upload the chart screenshot)
+width of the screenshot
+height of the screenshot
+This script embeds a stripped version of
+my HTTP library for mt
+(note that you
+don't
+have to download the library as is embedded in the twitpic script)

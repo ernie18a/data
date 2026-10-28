@@ -1,0 +1,97 @@
+Implementation of a machine with memory based on
+k
+-nearest neighbors.
+This approach did not yield the desired result, possibly due to too little time spend fiddling with it (most likely),
+possibly due to the lack of some knowledge. In short, I decided to post the approach for discussion, and maybe it will bear fruit (I really hope so).
+The Euclidean_Metric function is a classifier.
+Using the available vector base describing either the trades or market situations, the function determines if the input vector belongs to any of the groups in the base. Vectors are distributed into groups by user, in the example it is simple: If a trade closed with positive result then it is class 1, if the result is negative, then class 0. The search for the nearest neighbors of a multi-dimensional vector is performed using
+the Euclidean distance. Then it calculates how many of those
+k
+-vectors belong to class 1. After that it divides this value by the total number of the neighbors (i.e. by
+k
+) and receives the probability of the given vector belonging to class 1. Due to “bad” selected coordinates of the vectors, the classification can not be completely trusted (simply above 0,5 or below 0,5). Therefore, the additional threshold value was included, i.e. if the probability of the future trade being profitable is higher than 0,7 (for example), then enter the market. The ratios of the moving averages have been taken as the measures (coordinates) of vectors, supposing that the ratios are static and after classifying the vectors (trades) once, this classification could be used in the forward tests as well. But it is not that simple :) .
+Why exactly
+k
+-nearest neighbors? Simply because when the 1st nearest neighbor is considered, it may be an abnormal spike of a random value which will be selected for the classification without considering that a cluster of the opposite (in the group) vectors is present nearby. Detailed description
+S. Haykin
+«
+Neural Networks: A Comprehensive Foundation
+»(Learning Methods).
+The classifier has 2 problems:
+1)
+Finding the static data describing the market situations (or future trades) with the required accuracy or with the required level of correct classification.
+2)
+Large volume of mathematical operations, as a consequence - computation takes a while…(by the way, slightly less than
+PNN
+)
+Simply put, the problems are almost the same as in conventional TS. The advantage is that the classifier can formalize the conditions the trader can not see, but will intuitively sense that some values of the indicator affect whether a trade should be opened.
+Now specifically about the implementation.
+Base
+-
+true
+write a file with the vector base,
+false
+trade with classification…
+buy
+_
+threshold
+=0.6 threshold for all
+Buy
+positions
+sell_threshold=0.6
+likewise
+for
+sell
+inverse
+_
+position
+_
+open
+_?=
+true
+; This is an interesting point. If the probability of a profitable trade is very small, then why not enter the market with an inverted position? This flag enables such positions.
+invers
+_
+buy
+_
+threshold
+=0.3 threshold, when the probability of a profitable
+Buy
+position is smaller, then open a sell trade
+invers_sell_threshold=0.3;
+likewise
+…
+fast=12
+parameters of
+MACD
+slow=34;
+tp
+=40; Take profit
+sl
+=30; Stop loss
+close
+_
+orders
+=
+false
+; flag to enable closing by an opposite signal only if the order is in profit…
+Usage: First, flag
+Base
+-
+true
+, set
+sl
+=
+tp
+and run on history (1 time!), vector file is written. The next time set
+Base
+-
+false
+and it is recommended to optimize the thresholds, I choose them according to the 1st report (without classification). If the probability of success = 0,5 then
+the thresholds are 0,6 and 0,4 (to invert the position)
+Once again this is an example, the classifier can be applied to other TS in the same way, with the other input data
+Before classification:
+After, with optimization of thresholds.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8645

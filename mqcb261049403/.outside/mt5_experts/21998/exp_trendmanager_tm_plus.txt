@@ -1,0 +1,34 @@
+The trading system based on
+TrendManager
+indicator signals with the possibility to set a fixed position holding time. The trade signal is formed when a bar is closing if the color of the indicator bar has changed or it has appeared after an absence. Once position holding time exceeds a preset fixed limit, the position will be closed immediately:
+input
+bool
+TimeTrade=
+true
+;
+//Enabling position exit by time
+input
+uint
+nTime=1
+2000
+;
+//Open position holding time in minutes
+For the generated EA to operate correctly, the compiled
+TrendManager.ex5
+indicator file should be available in the <terminal_data_directory>\MQL5\Indicators folder.
+Note that library file
+TradeAlgorithms.mqh
+is designed for using EAs with the brokers that offer a
+nonzero spread
+and a possibility to set Stop Loss and Take Profit
+simultaneously with opening
+a position. You can download the other versions of this library at
+Trade Algorithms
+.
+Default Expert Advisor's input parameters with stops have been used during tests shown below.
+Fig. 1. Examples of trades on the chart
+Testing results for GBPJPY H4 over the year 2017:
+Fig. 2. Test results chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21998

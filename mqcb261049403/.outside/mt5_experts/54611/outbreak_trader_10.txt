@@ -1,0 +1,55 @@
+Breakout Trader 1.0
+trades breakouts from the range and places the orders according to the set trading time.
+Settings:
+Set start date!!!
+Magic number
+Starting capital
+Volume input
+Risk per order in %
+Allow reverse?
+Use Austoper on the day or not
+Number of negative orders per day
+1+2+3 Profit day formula. Stop loss per day.
+Stop below signal candle?
+Stop by daily range?
+Stop after points?
+Stoploss, trailing and trailing step
+Allow trailing?
+If daily range higher than in (%) increase stop?
+Takeprofit
+Equity call. Deposit protection with remaining amount %?
+If in profit equity call ((100 - 75)/2) increase by?
+The target in %?
+Spread to DayHigh and DayLow
+Trade if daily range higher than (%)?
+No trade if daily range higher than (%)?
+Allow partial sell?
+Partial sell times risk
+Minlot times?
+Monthly trade settings
+From January to December (true/false)
+Trading days settings
+Monday to Friday (true/false)
+Trading start and end (00:00)
+Switch trading time off or on true= on false= off
+Trading start period 00:00:00
+Trading end period 00:00:00
+Order is closed
+Close order after time?
+If order is negative, close after (minutes)?
+Day in minus! End trade.
+Day in minus of starting capital in %?
+Day in plus! Close trade.
+The day in profit from starting capital in %?
+The week in plus! Pause until next week.
+The week in profit of starting capital in %?
+Week in minus! Pause until next week.
+Week Velrust of starting capital in %?
+Panel settings!
+Panel on/off
+Text and design settings
+Please try the EA only in the tester or demo account!
+Have fun trying it out.
+Translated from German by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/de/code/54611

@@ -1,0 +1,19 @@
+The indicator displays in the price chart two moving averages: Volume Move-Adjusted Moving Average and Weight Volume Move-Adjusted Moving Average, calculated by the formula:
+VOMOMA = (MOMA + VOMA)/2
+WEVOMO = (MOMA + VOMA + WMA)/3
+where:
+MOMA[i] = (Close[i-Period+1]*Diff[i-Period+1] + Close[i-Period+2]*Diff[i-Period+2] +... + Close[i]*Diff[i])/Sum(Diff)
+VOMA[i] = (Close[i-Period+1]*Volume[i-Period+1] + Close[i-Period+2]*Volume[i-Period+2] + ... + Close[i]*Volume[i])/Sum(Volume)
+WMA[i] = (Close[i-Period+1]*1 + Close[i-Period+2]*2 + ... + Close[i]*Period)/LSum
+LSum = (Period+1)*Period/2
+Diff[i] = Abs(Close[i] - Close[i-1])
+The indicator has three input parameters:
+Period
+- calculation period;
+Show Volume Move MA
+- display Volume Move-Adjusted MA (VOMOMA);
+Show Weighted Volume Move MA
+- display Weight Volume Move-Adjusted MA (WEVOMO).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20927

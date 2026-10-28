@@ -1,0 +1,25 @@
+This MT5 custom indicator, called "wd.Range_DailyAvg.mq5".
+Basic idea is based on MT4 indicator 'TSR_Ranges.mq4' by Ogeimais.
+It is designed to calculate the 'Average Daily Range' (ADR) based on 20 days of historical upper and lower price data.
+The primary purpose of this indicator is to estimate today's price movements and to help traders identify today potential profit opportunities based on historical price ranges.
+Here's how the indicator works:
+Input Parameters:
+Display Average Range Information:
+This input parameter controls whether to display the Average Range Information on the upper left chart.
+Today's price zone color :
+The color of the rectangle that represents the estimated price zone for the day.
+User also can choose the border style and it's width.
+Estimated today prize zone:
+This allows user to choose the anchor for the estimated price zone.
+User can select either 'Room_up' or 'Room_down' based on the market trend.
+Number inside the rectangle shows the Average Daily Range (ADR). ADR is calculated based on the range of the previous day, averages for 2-day, 5-day, 10-day, and 20-day periods.
+Make sure to check the
+'Show object description'
+option in MT5 Chart Properties.
+If user believes that today's trend is upward and wants to estimate how many pips the price movement might take, user can set the 'Estimated today prize zone' to 'Room_up.' In this case, the rectangle will determine today's lowest price and set the highest price based on the ADR.
+Overall, this indicator helps user estimate the potential price movement for the current day based on 20 days historical data and market trends.
+Depending on the selected anchor (Room_up or Room_down), it showing potential profit-taking or buying/selling price levels.
+The indicator provides a visual representation of the estimated price zone as a colored rectangle on the chart, making it easier for users to make trading decisions.
+Version history:
+----------------
+v2.23    : initial release

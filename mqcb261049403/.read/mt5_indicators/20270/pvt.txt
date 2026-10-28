@@ -1,0 +1,9 @@
+Price Volume Trend (PVT) is an indicator of price trend and volume, similar to the standard On Balance Volume (OBV) indicator.
+The amount of the volume to be added to the current value is determined by the volume, by which prices have risen or fallen relative to the previous day's Close.
+The indicator has no configurable parameters.
+Calculation formula:
+PVT = ((Close - Close(-1)) / Close(-1)) * TickVolume + PVT(-1)
+Interpretation of indicator values is similar to standard On Balance Volume and Accumulation/Distribution (AD).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20270

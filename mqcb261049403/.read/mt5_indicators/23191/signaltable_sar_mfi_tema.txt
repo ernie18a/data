@@ -1,0 +1,230 @@
+Original author:
+Antonuk Oleg
+The indicator shows Buy and Sell signals of three indicators (iSAR, iMFI и iTEMA) located in nine timeframes, with full settings.
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+string
+Symbol_=
+""
+;
+// Financial asset
+input
+ENUM_TIMEFRAMES
+TimeFrame1=
+PERIOD_M1
+;
+// Chart 1 period
+input
+ENUM_TIMEFRAMES
+TimeFrame2=
+PERIOD_M5
+;
+// Chart 2 period
+input
+ENUM_TIMEFRAMES
+TimeFrame3=
+PERIOD_M15
+;
+// Chart 3 period
+input
+ENUM_TIMEFRAMES
+TimeFrame4=
+PERIOD_M30
+;
+// Chart 4 period
+input
+ENUM_TIMEFRAMES
+TimeFrame5=
+PERIOD_H1
+;
+// Chart 5 period
+input
+ENUM_TIMEFRAMES
+TimeFrame6=
+PERIOD_H4
+;
+// Chart 6 period
+input
+ENUM_TIMEFRAMES
+TimeFrame7=
+PERIOD_D1
+;
+// Chart 7 period
+input
+ENUM_TIMEFRAMES
+TimeFrame8=
+PERIOD_W1
+;
+// Chart 8 period
+input
+ENUM_TIMEFRAMES
+TimeFrame9=
+PERIOD_MN1
+;
+// Chart 9 period
+sinput
+string
+info1=
+"<<<==============  iSAR Parameters ===============>>>"
+;
+//--- iSAR parameters
+input
+double
+SARStep=
+0.02
+;
+// iSAR step
+input
+double
+SARMaximum=
+0.2
+;
+// Maximum iSAR
+input
+uint
+SARNumberofBar=
+0
+;
+// Bar number to get the iSAR signal
+sinput
+string
+info2=
+"<<<============  Moving Average Parameters =============>>>"
+;
+//---- Moving Average parameters
+input
+uint
+FastTEMA=
+13
+;
+// Fast TEMA
+input
+uint
+SlowTEMA=
+24
+;
+// Slow TEMA
+input
+ENUM_APPLIED_PRICE
+TEMAPrice=
+PRICE_CLOSE
+;
+// TEMA price
+input
+uint
+TEMANumberofBar=
+0
+;
+// Bar number to get the MA signal
+sinput
+string
+info3=
+"<<<==============  iMFI parameters ===============>>>"
+;
+//---- MFI parameters
+input
+int
+MFIPeriod=
+14
+;
+input
+ENUM_APPLIED_VOLUME
+MFIVolumeType=
+VOLUME_TICK
+;
+// iMFI volume
+input
+uint
+MFIHighLevel=
+60
+;
+// iMFI overbought level
+input
+uint
+MFILowLevel=
+40
+;
+// iMFI oversold level
+input
+bool
+MFIInvert=
+true
+;
+// Inverting of iMFI signals
+input
+uint
+MFINumberofBar=
+0
+;
+// Bar number to get the MFI signal
+sinput
+string
+info4=
+"<<< === Indicator's visual display parameters === >>>"
+;
+//---- Indicator's visual display parameters
+input
+color
+TextColor=
+clrBlueViolet
+;
+// Text color
+input
+color
+UpColor=
+clrDarkTurquoise
+;
+// Uptrend color
+input
+color
+MdColor=
+clrSlateBlue
+;
+// No-trend color
+input
+color
+DnColor=
+clrTomato
+;
+// Downtrend color
+input
+int
+FontSize=
+13
+;
+// Font color
+input
+type_font FontType=Font14;
+// Font type
+input
+ENUM_BASE_CORNER
+WhatCorner=
+CORNER_LEFT_LOWER
+;
+// Display corner
+input
+uint
+Y_=
+20
+;
+// Vertical position
+input
+uint
+X_=
+5
+;
+// Horizontal position
+input
+string
+LableSirname=
+"SignalTable_Sar_MFI_TEMA 1"
+;
+The indicator uses the class of library
+GetFontName.mqh
+(should be copied to the terminal_data_folder\MQL5\Include).
+Fig.1 The SignalTable_Sar_MFI_TEMA indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23191

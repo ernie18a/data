@@ -1,0 +1,3 @@
+A nice expert advisor, designeg for making own simple strategies.
+Now needs something like pending orders and trail-for snippets... but it's also possible to use scripts (replace order to pend' one or launch own trail with Swiss Army)
+Everything else is aviliable... MM, 12+8 indicators, easy change of requirements for indicators... etc. Pend and trail may be added as scripts... everything else is here!

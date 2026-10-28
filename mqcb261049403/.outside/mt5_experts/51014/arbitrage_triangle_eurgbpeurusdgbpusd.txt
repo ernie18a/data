@@ -1,0 +1,22 @@
+Key Features:
+Automatic Detection of Arbitrage Opportunities:
+Utilizes real-time currency pair data to find profitable arbitrage opportunities.
+Dynamic Trade Management:
+Opens and closes trades based on the calculated arbitrage potential, managing positions actively to optimize profitability.
+Plotting Functionality:
+Optionally plots the maximum observed price discrepancy for analytical purposes.
+Input Parameters:
+Lot_Size_Per_Thousand (default: 0.01):
+Defines the lot size per $1000 of account balance, scaling the trade size according to account size.
+Total_Commission_for_Lot_Traded (default: 7.0):
+The total expected commission cost per lot traded, used in arbitrage calculations to ensure profitability post-fees.
+Plot_Max_Difference (default: false):
+If set to true, the EA will record and print the maximum observed price discrepancy in the Expert tab.
+Trading Logic:
+The EA computes the theoretical cross rates and compares them with the actual market rates of the involved currency pairs (EURUSD, GBPUSD, and EURGBP).
+It determines whether the discrepancy between the theoretical and actual rates, adjusted for commission and spread costs, presents a viable arbitrage opportunity.
+If an opportunity is detected, the EA executes trades across the three currencies in a manner that the inherent risk exposure is minimized—essentially locking in a risk-free profit if the market aligns with the arbitrage calculation.
+Two helper functions, ClosePosSide() and CloseNegSide() , manage the closing of profitable and non-profitable positions respectively, ensuring that the strategy adjusts in real-time to market movements.
+This EA serves as a robust tool for exploring arbitrage opportunities in Forex markets, employing a calculated approach to capitalize on price inefficiencies between correlated currency pairs. Ideal for advanced traders looking to augment their trading strategies with arbitrage techniques.
+Note:
+While the backtest results may appear highly profitable, actual market conditions such as execution speed, liquidity, and broker-specific constraints can significantly affect the operational success of arbitrage strategies. It's recommended to conduct thorough testing in a demo environment before deploying on a live account.

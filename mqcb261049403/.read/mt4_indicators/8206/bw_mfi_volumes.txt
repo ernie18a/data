@@ -1,0 +1,4 @@
+This indicator displays in the separate window the values of the volumes and tints them with the BW MFI colors. It shows a tip about the candlestick and the value of Volume for it as soon as you put the cursor of your mouse over it.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8206

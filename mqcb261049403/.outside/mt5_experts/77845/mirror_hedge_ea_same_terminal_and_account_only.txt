@@ -1,0 +1,103 @@
+Overview: There are many EAs that loose consistently. Will they be profitable if the trades are simply reversed?
+Use this tool to find the answer in real time on live or demo account!
+MirrorHedgeEA watches the account for trades placed by another Expert Advisor (or manual trading). It copies them according to magic-number rules. It handles market positions, pending orders, SL/TP changes, partial closes, and closures. Every mirror trade is tagged with its own magic number and comment, so mirrored results are easy to separate from the originals in the History tab.
+Copying happens inside a single account at a single broker. There is no cross-account or cross-server communication.
+The EA can run on any chart - e.g. it will still mirror positions for XAUUSD if placed on EURUSD chart:
+Features
+Flexible source selection:
+one or more comma-separated magic patterns, matched as
+starts with
+(default),
+contains
+, or
+exact
+.
+Lot size modes:
+same as source (default), fixed lot, or a percentage of the source lot. Volumes are rounded to the symbol's step and clamped to its min/max.
+Inverse mode (on by default):
+Buy becomes Sell and Sell becomes Buy.
+The source TP becomes the mirror's SL, and the source SL becomes the mirror's TP, at the same price levels.
+Pending orders keep the same price: Buy Limit becomes Sell Stop, Buy Stop becomes Sell Limit, and so on.
+Full lifecycle sync:
+opens, pending placement, price/SL/TP/expiration modifications, partial closes (Same and % modes), closes, and pending deletions.
+Traceable mirrors:
+the mirror magic is the source magic with a suffix appended (808 → 808321). The mirror comment is the source comment plus _mirror .
+Restart-safe:
+links between sources and mirrors survive an EA restart. A mirror that was closed by its own SL/TP is not re-opened.
+Info panel:
+shows the active rule, lot mode, the source magics being copied (with their mirror magics), each source position or pending order next to its mirror, and source/mirror/net P/L:
+Input parameters
+Parameter
+Default
+Description
+Source magic pattern(s)
+1001
+Comma-separated magic patterns to copy
+Magic match rule
+Starts with
+Starts with / Contains / Exact
+Mirror magic suffix
+321
+Mirror magic = source magic + suffix
+Mirror comment suffix
+_mirror
+Mirror comment = source comment + suffix (31-character limit)
+Inverse direction
+true
+Buy↔Sell, TP↔SL
+Lot size mode
+Same as source
+Same / Fixed / % of source
+Fixed lot / Lot percent
+0.01 / 100
+Used by the matching lot mode
+Mirror pending orders
+true
+Copy pending orders
+Mirror SL/TP
+true
+Copy SL/TP and their changes
+Sync partial closes
+true
+Same and % modes only
+Mirror existing trades
+true
+Copy trades already open at EA start
+Max slippage / Sync interval
+20 pts / 100 ms
+Execution and polling settings
+Panel settings
+–
+Show, position, width, font size, max rows
+Setup
+The account must be a
+hedging
+account. The EA refuses to start on netting accounts.
+Attach the EA to any chart and enable algo trading.
+Set the source magic pattern to the magic of the EA or manual trades you want to mirror.
+Check the panel: the source magic should appear under "Copying magics" and each trade should show a mirror.
+Why this is useful for testing a reversed strategy
+A common idea is: "This strategy loses in backtests, so the opposite must win." Inverting a backtest on paper is simply the source P/L with the sign flipped, and that is usually wrong.
+Costs are paid twice.
+With source P/L = gross edge − costs, the mirror's P/L is −gross edge − costs, not −(gross edge − costs). A strategy that loses mainly to spread and commission does not become a winner when inverted, because the mirror pays the same costs. A paper inversion overstates the result by about twice the costs.
+Spread asymmetry.
+Buys open at the ask and close at the bid. Sells do the opposite. The mirror's stops trigger on a different price side than the source's, so spread widening can trigger one and not the other.
+Execution delay.
+The mirror enters after the source, so slippage on fast markets affects it differently.
+SL/TP asymmetry.
+A tight-TP, wide-SL system has a high win rate. Its inverse flips to a low win rate with large winners, and the path of price to each level matters.
+Swap.
+Long and short swaps differ, so the mirror carries different holding costs.
+Tester assumptions.
+Modelled ticks and fixed spreads hide broker-specific behavior such as stop levels, freeze levels, requotes, and partial fills.
+Run this EA on a demo or small live account next to the original strategy. Both run against the same live ticks and the same execution, so the mirror's results include all of these effects. In the History tab you can filter the mirror's trades by their magic and evaluate the inverse on its own. The panel's source/mirror/net P/L shows the combined effect at a glance.
+Because the mirror is a hedge, the source and mirror positions offset each other on the account. Net equity moves roughly by the negative of the trading costs. This makes the EA a
+measurement tool
+, not a profit strategy. If the mirror shows a real edge after costs over a meaningful sample, you can consider running the inverse on its own, in an account that doesn't include the source.
+Limitations
+Hedging accounts only.
+Stop-limit orders have no exact inverse, so they are skipped in inverse mode.
+In fixed-lot mode, partial closes are not mirrored.
+Magic numbers longer than 15 digits cannot take the suffix and are skipped.
+Source/mirror links are stored in terminal global variables. Deleting them, or leaving them untouched for 4 weeks, breaks the link.
+This EA does not guarantee profit and is a testing tool. Test on demo before live use.

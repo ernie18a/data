@@ -1,0 +1,2 @@
+Author: not specified
+Intra Day indicator.

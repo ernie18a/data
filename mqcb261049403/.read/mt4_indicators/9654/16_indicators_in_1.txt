@@ -1,0 +1,51 @@
+Author:
+Damien
+http://wallstreetfx.comze.com/
+1. Price indicator
+This tool is made of candles.
+It is supplied with:
+The parabolic SAR
+Bollinger-bands
+4 Moving Averages
+Each indicator can be activated or not will the optional true / false.
+The options "price" is "ma_style" are valid for four moving averages.
+In the option price must note your preference as well and capitalized:
+CLOSE
+HIGH
+LOW
+OPEN
+TYPICAL
+MEDIAN
+WEIGHTED
+In the "ma_style" it should be noted and your preferences and
+uppercase
+:
+EMA
+SMA
+SMOOT
+LWMA
+Indicator in separate window
+:
+CCI = CCI
+RSI = RSI
+Deviation standart = STDEV
+MACD = MACD
+Stochastique = STO
+Bull = BULL
+Bear = BEAR
+on balance volume = OBV
+momentum = MOM
+AO = AO
+AC = AC
+Money flow index = MFI
+average true range = ATR
+Osma = OSMA
+ADX =ADX
+force = FORCE
+You can choose the type of price used in calculating the indicator and the type of moving averages, your preferences are noted in the same manner as the price indicator.
+It is possible to choose the style of the indicator in the "style", 3 types are available, they should note the following in block letters
+histogram = HISTO
+line = LIGNE
+dot= POINT
+I'm sorry if my explanations are incomprehensible, this is an automatic translation, I'm French.
+Good test and good trades ;)

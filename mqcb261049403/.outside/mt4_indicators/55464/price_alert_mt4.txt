@@ -1,0 +1,57 @@
+Price Alert MetaTrader indicator
+— can issue any type of alert when the price reaches certain levels set by a trader. There are three types of price levels: the first one is used when the price rises above certain level (displayed with the green line on the chart), the second one is used when the price falls below certain level (displayed with the red line on the chart), and the third one is used when the price reaches the certain level exactly (displayed with the yellow line). Three alert types include: native (popup), email, and push-notification. For email and push-notification alert features to work, you need to set up the email or MetaQuotes ID settings in your MetaTrader platform options window. The indicator is available for both MT4 and MT5.
+The indicator is equipped with a control panel that lets you quickly set alert price, levels, and types.
+Input parameters
+Main
+PriceGoesAbove
+(default = 0.0) — if price goes above this value the alert will be triggered.
+PriceGoesBelow
+(default = 0.0) — if price goes below this value the alert will be triggered.
+PriceIsExactly
+(default = 0.0) — if price is exactly at this value the alert is triggered.
+NativeAlert
+(default = false) — if
+true
+, the indicator will issue a native platform alert (popup window with a sound).
+SendEmail
+(default = false) — if
+true
+and the correct email settings are set in the MetaTrader options window, the indicator will issue an email alert.
+SendPush
+(default = false) — if
+true
+and the correct MetaQuotes ID settings are set in the MetaTrader options window, the indicator will issue a push notification alert to your mobile device.
+AlertOnPrice
+(default = Normal Ask/Bid) — defines the price type for the alerts to use: normal Ask/Bid, only Ask, only Bid, or Close of the previous candle.
+PanelOnTopOfChart
+(default = true) — if
+true
+, the panel will be drawn on foreground, and the chart will be drawn as background. Setting it to
+false
+will uncover the chart behind the panel.
+Lines
+Above Line Color
+(default = clrGreen) — color of the above line.
+Below Line Color
+(default = clrRed) — color of the below line.
+Exactly Line Color
+(default = clrYellow) — color of the exactly line.
+Above Line Style
+(default = STYLE_SOLID) — above line style.
+Below Line Style
+(default = STYLE_SOLID) — below line style.
+Exactly Line Style
+(default = STYLE_SOLID) — exactly line style.
+Above Line Width
+(default = 1) — above line width.
+Below Line Width
+(default = 1) — below line width.
+Exactly Line Width
+(default = 1) — exactly line width.
+Position
+PanelPositionX
+(default = 0) — default horizontal distance from the selected panel position corner.
+PanelPositionY
+(default = 15) — default vertical distance from the selected panel position corner.
+PanelPositionCorner
+(default = CORNER_LEFT_UPPER) — default panel position corner

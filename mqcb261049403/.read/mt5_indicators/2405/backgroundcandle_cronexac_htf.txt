@@ -1,0 +1,11 @@
+The indicator draws candlesticks of a larger timeframe as color filled rectangles using
+DRAW_FILLING
+buffers. Rectangles are color filled in accordance with the colors of the
+CronexAC
+indicator cloud.
+Depending on trend direction defined by the color of the cloud of the original indicator, the candlestick body is painted in sky-blue or purple, the appropriate shadows are painted in light plum or pale blue.
+The indicator requires the compiled indicator file CronexAC.mq5 for operation. Place it to terminal_data_folder\MQL5\Indicators\.
+Figure 1. Indicator BackgroundCandle_CronexAC_HTF
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2405

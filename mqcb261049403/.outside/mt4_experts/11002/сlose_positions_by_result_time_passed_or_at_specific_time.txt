@@ -1,0 +1,10 @@
+Description:
+This EA will watch your open positions and close the ones that meet the preset conditions. You can filter positions by:
+Magic Number
+By side: Short or Long
+By result
+By time: for how long are opened
+It can be used for hidden Stop Loss and Take Profit as well.
+Recommendations:
+Please note: EA will closed the positions only if your MT4 is connected to the server.
+If you want to close positions at a specific time, please make sure you set the correct GMT offset. For example: if your timezone is GMT +5:30, set gmt_offset_hours: 5 and gmt_offset_minutes: 30

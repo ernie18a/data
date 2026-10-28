@@ -1,0 +1,18 @@
+I built this after getting tired of     switching between a lot-size calculator, the chart, and the order ticket every single time I wanted to place a trade. RiskPilot Pro puts three lines directly on the chart — entry, stop loss, and take profit — and you just drag them where your analysis says they should go. The panel recalculates your lot size the moment you let go of the mouse.
+Everything is based on a fixed percentage of your account balance, not a fixed lot size, so your risk stays consistent whether you're trading a 5-pip scalp or a 50-pip swing. It also handles cross pairs correctly — most free calculators quietly get this wrong on symbols like USDCHF or USDJPY because they assume your account currency matches the symbol's profit currency. This one asks the broker directly for the real conversion, so the numbers hold up on any pair.
+What it does:
+- Drag Entry/SL/TP lines directly on the chart, lot size updates live
+- One click to open the trade with the size already calculated
+- RESET button snaps the lines back to an ATR-based distance if you want a volatility-based stop instead of guessing
+- Automatic break-even and trailing stop once a trade moves in your favor
+- A daily loss limit and a max-drawdown guard — cross either one and it closes every position it opened and blocks new trades until the next day (useful if you're trading a prop-firm challenge with hard daily limits)
+- A running total of how much you'd have at risk across all open positions if you took the trade you're previewing, so you don't stack more risk than you meant to
+External variables:
+InpRiskPercent — how much of your balance you're willing to lose on one trade.
+InpRewardRatio — used to auto-place the take-profit line relative to your stop.
+InpUseATRForReset / InpATRPeriod / InpATRMultiplier — control where RESET puts your stop.
+InpEnableBreakEven / InpBreakEvenTriggerPips / InpBreakEvenOffsetPips — when and how far to lock in.
+InpEnableTrailing / InpTrailingStartPips / InpTrailingStepPips — trailing behavior.
+InpDailyLossLimitPercent / InpMaxDrawdownPercent — the two account guards.
+InpMaxBasketRiskPercent — warns you when combined open risk gets too high.
+Tested on a demo account across EURUSD and USDCHF — lot sizing, margin, and the currency conversion all checked out against manual calculation before I published this.

@@ -1,0 +1,25 @@
+EA Information :
+This EA is based on OGT Zone Recovery EA.
+Strategy : Hedging
+Hedging Type : Zone Recovery (No two pairs correlation, No triangular arbitrage)
+Zone Recovery Type : Averaging Take Profit Line based on targeted Take Profit
+Trading Mode : Manual & Automatic
+Automatic Trading Strategy : RSI MTF
+Input's/Parameters breakdown :
+YouTube Tutorial Playlist
+:
+https://www.youtube.com/playlist?list=PLjkJhj4gfHjQ8zzS_U39M4tCRyQI1NiT_
+Useful links :
+OGT Website :
+https://oneglancetrader.com
+Developer Website :
+https://www.toolkitfortraders.com
+EA Suggestion :
+https://www.toolkitfortraders.com/forum/toolkit-for-traders-forum/suggestion-zone-recovery-ea
+EA Errors Fixing :
+https://www.toolkitfortraders.com/forum/toolkit-for-traders-forum/error-zone-recovery-ea-1-5
+Contact Info :
+Skype :
+rajeev-rrs
+Telegram :
+rajeevrrs

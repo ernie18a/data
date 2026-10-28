@@ -1,0 +1,5 @@
+This oscillator is rewritten from AmiBroker Formula Language (AFL) on MQL5.
+ALF Winner serves for definition of a trend by formed characteristic reversed parts of the indicator in the interval of 0/100. For intraday trading input parameters values should be decreased, for example, to Period=2, Average=4 values.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1492

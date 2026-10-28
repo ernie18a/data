@@ -1,0 +1,1 @@
+This expert advisor closes all open orders when total cash profit in the account is a certain value set by the input "WhenProfitIs". Please report any bugs you find so we can improve it.

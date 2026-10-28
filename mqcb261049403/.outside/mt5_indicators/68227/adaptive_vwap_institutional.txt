@@ -1,0 +1,49 @@
+Adaptive VWAP Institutional v1.0.0
+Institutional-grade Volume Weighted Average Price (VWAP) indicator for MetaTrader 5
+, engineered for high-frequency trading (HFT) environments and professional asset management. This is not just a retail vwap; it is a precision tool designed to meet institutional data standards.
+🚀 Key Technical Features
+Multi-Stage Asset Intelligence:
+Automatically detects Asset Classes (Crypto, Forex, Metals, Stocks, Indices) using a sophisticated 5-step verification process to apply the correct reset policies.
+Institutional Timezone Engine:
+DST-aware calculations using
+Zeller's Congruence
+algorithm for lifelong precision in New York, London, Tokyo, and Sydney sessions.
+Forex Standard Rollover:
+Supports the gold-standard 17:00 (5 PM) New York session reset for Forex, Gold, and Energy.
+Volatility-Adaptive Filtering:
+Integrated Median Volume sampling to neutralize "bad ticks" and institutional volume spikes that often distort traditional VWAP lines.
+Zero-Latency Persistence:
+High-speed Disk Caching system that preserves session state (PV/Vol/Stats) across terminal restarts or timeframe switches.
+Modular High-Performance Code:
+Optimized $O(n)$ execution loop designed for low-latency and stable performance on VPS environments.
+📊 Professional Analytics UI
+The indicator features a real-time
+On-Chart Diagnostic Panel
+providing critical institutional data at a glance:
+Real-time Distance from VWAP (Percentage).
+Current Session Accumulated Volume.
+Precise Session Bar Count.
+Active Timezone and Server Offset detection.
+⚙️ Optimized Parameters
+Session Reset:
+Daily, Weekly, Monthly, or Auto-Detected based on asset class.
+Customization:
+Fully adjustable Deviation Bands (±σ) with optimized memory allocation.
+Data Quality:
+Adjustable spike threshold to filter out market noise.
+Performance:
+Controllable historical depth (Max Recalc Bars) for smooth chart scrolling.
+📊 Professional Analytics UI
+Includes a real-time
+On-Chart Diagnostic Panel
+providing:
+Real-time Distance from VWAP (Percentage).
+Current Session Accumulated Volume & Bar Count.
+Active Timezone and Server Offset detection.
+🛡️ Institutional Development & QA
+This indicator has undergone a rigorous development cycle and high-level technical audits to ensure reliability:
+AI Technical Audit:
+The codebase has been thoroughly reviewed and stress-tested by
+Opus 4.5 and Gemeni 3 pro
+to identify and eliminate edge-case bugs and ensure mathematical precision in all calculation modes.
+Engineered for traders who demand institutional accuracy and architectural excellence.

@@ -1,0 +1,10 @@
+This script calculates required margin to open a trade by examining specified volume.
+It also calculates maximum amount of lots that can be traded for given symbol.
+PARAMETERS
+Symbol Name:
+select symbol for calculation. if it is not specified script takes chart symbol as default.
+Volume:
+specify lots for required margin calculation.
+Order Type:
+determine order type. results can be changed even a little because of spread.
+Example: CADJPY with default parameters

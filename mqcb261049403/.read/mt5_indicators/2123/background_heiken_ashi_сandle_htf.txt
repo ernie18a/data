@@ -1,0 +1,8 @@
+The indicator draws Heiken Ashi candlesticks of a higher timeframe as color filled rectangles using
+DRAW_FILLING
+buffers.
+Depending on candlestick direction its body is painted in blue or pink, shadows are painted in lighter colors.
+Figure 1. The Background_Heiken_Ashi_Сandle_HTF indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2123

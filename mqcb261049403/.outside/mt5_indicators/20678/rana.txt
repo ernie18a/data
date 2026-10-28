@@ -1,0 +1,13 @@
+The RANA (Ratio Adjusted Net Advances) indicator developed by Sherman and Marian McClellan shows the ratios of positive and negative increments in the prices of instruments available in the Market Watch and including the specified currency.
+It has one input parameter:
+Base currency
+- name of the base currency of symbols in the Market Watch.
+Calculations:
+RANA = (Up - Dn)/(Up + Dn)
+where:
+Up - number of bullish candlesticks on all symbols;
+Dn - number of bearish candlesticks for all symbols.
+It should be noted that, at the first launch or at switching the timeframe, the indicator will need some time to download the necessary history for all the symbols required.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20678

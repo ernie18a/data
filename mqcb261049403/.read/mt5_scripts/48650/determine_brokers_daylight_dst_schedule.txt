@@ -1,0 +1,40 @@
+Script to determine whether your Broker follows the US, UK or AU daylight (DST) schedule.
+The script scans the H1 chart bars of the current chart at the expected dates for the daylight changes, and by comparing the changes in server (bar) times at these bars, the DST schedule of your broker can be determined.
+The algorithm is simple and fast. Additionally, it
+works properly in the strategy tester because
+it does not depend on price reaction to economic calendar events (like other algos).
+DST_AU schedule:
+server dst begins on the first Sunday of October (+1) and ends on the first Sunday of April (-1)
+source:
+https://www.timeanddate.com/time/change/australia/sydney
+DST_UK schedule:
+server dst begins on the last Sunday of March (+1) and ends on the last Sunday of October (-1)
+source:
+https://www.timeanddate.com/time/change/uk/london
+DST_US schedule:
+server dst begins on the second Sunday of March (+1) and ends on the first Sunday of November (-1)
+source:
+https://www.timeanddate.com/time/change/usa/new-york
+DST_NONE schedule:
+the server does not forward its clock during summer.
+Sample outputs after running the script on different Fx brokers:
+/*
+ Server : Exness-MT5Trial
+ Time   : 2024.03.13 12:25:13
+ Offset : GMT+0
+ DST_NONE
+*/
+another broker:
+/*
+ Server : OctaFX-Demo
+ Time   : 2024.03.14 00:27:05
+ Offset : GMT+2
+ DST_UK : server dst begins on the last Sunday of March (+1) and ends on the last Sunday of October (-1)
+*/
+a third broker:
+/*
+ Server : ICMarketsSC-Demo
+ Time   : 2024.03.14 01:42:54
+ Offset : GMT+3
+ DST_US : server dst begins on the second Sunday of March (+1) and ends on the first Sunday of November (-1)
+*/

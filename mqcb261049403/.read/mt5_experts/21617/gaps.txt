@@ -1,0 +1,18 @@
+The author of the idea
+:
+Scriptor
+MQL5 code author
+:
+barabashkakvn
+The EA opens positions having
+Lots
+volume. We can set stop loss and take profit. Trailing can be enabled for positions. It is recommended to launch the EA on M1.
+When a new bar appears on a specified
+Timeframe
+, the EA checks if there has been a gap. If yes, it is compared with the
+Gap
+threshold value. After that, a position is opened depending on the gap direction.
+On EURUSD, the highest profit was detected on M6:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21617

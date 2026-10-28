@@ -1,0 +1,18 @@
+Net profit and win rate tell you how much a strategy made, not where that profit came from. A system can show a strong net result while a few lucky trades, or one explosive day, carry almost the entire profit. Profit Concentration Analyzer reads your closed trades and measures exactly that: how broad and repeatable the profit really is.
+The script reads a CSV file with one row per closed trade and two columns, Date and Profit, and prints a full report in the Experts tab:
+Concentration profile
+— how much of the gross profit comes from the top 1%, 5%, 10%, 25% and 50% of the winning trades.
+Top-N share
+— the share of the net profit produced by the N largest trades.
+Gini coefficient
+of the winning trades: a single 0-to-1 number for how unequal the gains are.
+Survival test
+— removes the best few winners (a configurable percentage) and recomputes the net profit and profit factor, to show whether the edge survives without its outliers.
+Day consistency
+— aggregates trades by day and compares the most profitable day against a prop-firm-style consistency limit (PASS/FAIL).
+A composite score (A+ to F)
+combining concentration, consistency and survival, with written recommendations that point at the specific weakness.
+Input.
+Place a CSV named in the input parameter (default Trades.csv) in the terminal MQL5\Files folder, with a header line "Date,Profit" and one row per closed trade. On the first run, if no file is found, the script generates a sample set and analyzes it, so you can see the output immediately. The included helper ExportTrades.mq5 writes that file from your trade history: copy its function into your Expert Advisor and call it from OnTester(), or run it as a standalone script on an account that already has trades.
+Parameters.
+InpFileName (the CSV file), InpConsistencyLimit (largest-day limit as a percent of total profit), InpTopN (how many top trades the concentration figure uses), InpRemovePct (percentage of best winners removed in the survival test), and three weights InpWeightConc, InpWeightConsist and InpWeightSurv for the composite score.

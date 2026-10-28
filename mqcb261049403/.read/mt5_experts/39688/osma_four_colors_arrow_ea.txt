@@ -1,0 +1,6 @@
+Trading strategy
+The Expert Advisor checks signals in indicator buffers:
+Rice. 1. OsMA Four Colors Arrow EA
+A detailed description of the trading engine is in the code
+RSI Dual Cloud EA
+.

@@ -1,0 +1,84 @@
+Gold has a daily maintenance break on the CME. The first hour of trading after it rises more than chance explains, and it does so on every calendar year of an eleven-year sample — while
+every other hour of the day measures flat
+.
+This Expert Advisor buys at that reopen, holds for a fixed time with a volatility-scaled server-side stop, and does nothing else. One trade per session. No averaging, no grid, no martingale, no recovery.
+The number, and then the number after I found my cost model was wrong
+Measured over 11 years of hourly data, entering at the reopen and holding two hours:
+as the research charged cost
+at the cost the tester measured
+per trade
++3.34 bps
++1.60 bps
+t statistic
+7.40
+3.42
+win rate
+59.3%
+50.8%
+profit factor
+1.63
+1.30
+positive years
+11 of 11
+10 of 11
+The left column is what I would have published if I had stopped where most people stop. Then a real-tick backtest in MetaTrader's own Strategy Tester showed the true round-trip cost at the reopen is about
+60 points, not the 19 my research had charged
+— because the M1 bar's
+spread
+field is a per-bar summary and understates the reopen spread by roughly three times.
+The edge survives that correction, at less than half its original strength
+, and the win rate becomes a coin flip carried by a favourable payoff rather than by frequency. The right column is the real one, and it is the one this EA is built on.
+What it is not
+It is not a living, and the header of the source file says so before any parameter is described. On capital sized for a 20% drawdown it measures about
++3.3% a year with 4.6% maximum drawdown
+, Sharpe 1.23, roughly 200 trades a year — which also means roughly
+one year in nine is negative
+. At 0.01 lots that is about 130 currency units a year, and that figure measures the
+position size
+, not the strategy.
+A 2.5-year window of it, taken alone, gives
+t = +1.12
+— not significant. A profitable two-year backtest of this proves nothing by itself; the eleven-year sample is what carries it.
+What the result survived before I trusted it
+Each of these could have killed it, and the reason they are listed is that a result nobody tried to break is not a result:
+It is not a gap.
+The recorded gap across the break averages −0.011 — the move happens with the market
+open
+.
+It is not a bar-construction artifact.
+Rebuilding the hour from independently fetched M1 bars agrees with the H1 series to 0.0000 on all 73 overlapping days.
+It is not outliers.
+The 1%-trimmed mean is +0.70 against a full-sample +0.75; the median is +0.48.
+It is not the spread normalisation
+that would be the obvious trap, since MT5 bars are bid-side and the reopen spread is wider: the spread stays flat across the whole hour, so it explains 0% of the effect.
+It does not need the exact reopen tick.
+Entering 15 minutes late still pays, 30 minutes late still pays, and it dies at 45.
+The weekly reopen is NOT part of it.
+Sunday measures +1.11 bps with t = 0.88 — indistinguishable from noise — against +3.90 bps and t = 8.32 for the daily ones. That is why
+InpSkipMonday
+exists and defaults to true.
+Inputs, and why they are what they are
+Input
+Meaning
+InpEntryHour
+The server hour of the reopen. Working in server time is deliberate: this broker's clock follows US daylight saving, so the reopen sits at a fixed server hour all year, while a UTC trigger would drift by an hour twice a year.
+InpEntryWindowMin
+Only enter within this many minutes of the hour.
+InpHoldHours
+Hours to hold before closing on time.
+InpSkipMonday
+Skip the weekly reopen. See the Sunday figures above.
+InpLots
+Fixed lot. No scaling, ever.
+InpStopAtrMult
+Stop = this × the mean hourly range. Default 2.0, not the 1.5 the first version used — see below.
+InpRangeBars
+H1 bars in the mean-range unit. 480 is about 20 sessions.
+InpMaxSpreadPts
+Refuse to enter if the spread is worse than this.
+On the stop multiplier.
+At the corrected cost, 1.5× gives +1.60 bps (t 3.42) while 2.0× gives +1.91 (t 4.07) and is hit on 1.3% of trades instead of 2.6%. Wider still keeps improving — and the stop stays, because "remove the stop and the backtest improves" is exactly the reasoning that makes a martingale look profitable. The stop is what bounds a tail event; the time exit bounds the rest.
+Test it before believing any of the above
+And test it with
+every tick based on real ticks
+. On other code of mine, the same rules over the same period produced −15,627 with 1-minute bar modelling and +79,000 with real ticks. A backtest that does not state its modelling mode is not telling you what it measured.

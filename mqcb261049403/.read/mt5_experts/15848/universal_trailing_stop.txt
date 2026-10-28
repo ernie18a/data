@@ -1,0 +1,9 @@
+The Expert Advisor works both in normal mode with one positions, and in the HEDGE mode with multiple positions.
+Trailing can be performed based on the fractals, bar extremums, Parabolic MA and ATR indicators, or by the specified number of points. It is also possible to trail orders based on the profit percentage.
+Parameters:
+Example of operation based on Parabolic:
+Example of operation based on MA:
+The Expert Advisor works both in normal mode with one positions, and in the HEDGE mode with multiple positions.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15848

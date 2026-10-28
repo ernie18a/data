@@ -1,0 +1,35 @@
+ATS Liquidity City answers two questions on any chart: where are the stops resting, and which ones got taken today?
+What counts as a liquidity pool
+- Swing highs and lows: a high with N lower highs on each side (N = 5 by default). It is confirmed only after N closed bars, so nothing repaints. Buy stops of short sellers rest above swing highs, sell stops of buyers below swing lows.
+- Equal highs / equal lows: two or more active swings within 0.10 x ATR(14) of each other. More stops, a bigger pool: the line on the chart gets thicker.
+- Yesterday's high and low (server day), alive for today only.
+What counts as a sweep
+- The first closed bar that trades beyond the pool. The arrow is drawn on that bar.
+- "Grabbed & rejected": the sweeping bar closes back on the other side of the level. "Taken": it closes beyond.
+On the chart
+- Active pools: solid lines (blue above, orange below, gold for yesterday) running to the current bar, with their name and price at the end: SWING HIGH, EQUAL LOWS x2, YDAY HIGH... Thicker line = more stops.
+- Swept pools: grey dotted lines ending on the sweep bar, kept for the last 300 bars. The arrow on the sweep bar says "grab" (closed back inside) or "break" (closed beyond, in grey).
+- Hover a line for its tooltip: type, price and status.
+The panel
+- The FLYING CAR is the price, cruising at mid-height.
+- Pools BELOW the price are skyscrapers: the neon roof sits at the level, wider towers mean equal lows. Pools ABOVE are floating platforms. Yesterday's high/low are golden holo-billboards. Every pool carries its price.
+- Height = distance in ATR. The scale stretches by itself so the nearest pool on each side is always in view; pools beyond it are counted as "off the map".
+- The SEARCHLIGHT swings across the sky and lights up the pools it touches (pure decoration).
+- NEAREST ABOVE / NEAREST BELOW: price, distance in ATR and type of pool.
+- TAKEN TODAY: how many pools were swept since the start of the server day, with a scrolling ticker (time, level, grabbed & rejected or taken).
+- The - / + button minimises the panel; the state is remembered.
+For programmers
+Buffers: 0 high pool swept (arrow), 1 low pool swept (arrow), 2 nearest active pool above, 3 nearest active pool below (values on the forming bar, EMPTY_VALUE if none).
+CCanvas does not blend a semi-transparent shape with what is already on the canvas, so every glow in the city is mixed by hand against the sky colour at that height (Mix(), SkyAt()). The minimise button is created after the canvas, because chart objects created later are drawn on top. The panel is redrawn 5 times per second by a millisecond timer; pools and sweeps are rebuilt only when a new bar opens.
+Inputs
+InpPivot (5) - bars on each side of a swing.
+InpLookback (400) - bars scanned for pools.
+InpEqualATR (0.10) - tolerance for equal highs/lows, in ATR(14).
+InpDayLevels (true) - include yesterday's high and low.
+InpLines (true) - draw the pools on the chart.
+InpAlert (false) - popup when a pool is swept on the last closed bar.
+InpShowPanel, InpPanelX, InpPanelY.
+A note on honesty
+This is a map of where stops probably rest, not a forecast. In our own tests on gold, trading every sweep on its own had no edge after costs. Use it as context for your own rules: where the obvious stops are, and whether they have already been taken.
+Notes
+This is an indicator. It never opens, modifies or closes trades. Built for XAUUSD M5/M15, it works on any symbol and timeframe.

@@ -1,0 +1,103 @@
+The idea of an adviser
+The EA trades on the signals of the custom indicator '
+MA on Momentum
+' - the signal is the intersection of two lines of the indicator. At the same time, a signal to open a 'BUY' position is considered only if the intersection was BELOW the level '100', and a signal to open a 'SELL' is considered only if the intersection was ABOVE the level '100'.
+ATTENTION: '
+Take Profit
+' in Points (1.00055-1.00045=10 points), '
+Stop Loss
+' in money
+The position can be closed if the 'Take profit' level is reached (set in points) or if the 'Stop Loss' level is reached (set in money). There is no trailing in the EA.
+How to optimize an Expert Advisor
+For initial optimization, I recommend using the following parameters
+Rice. 1. MA on Momentum Min Profit
+Peculiarities:
+The EA can be optimized for the working timeframe ('
+Working timeframe
+')
+There can be only one 'entry to the market' deal per bar (this is an internal parameter, it is not included in the input parameters and it has nothing to do with the '
+Only one positions
+' parameter)
+When working in the '
+inside bar
+' mode (parameter
+'
+Search signals on ...
+'
+equals '
+bar #0 (at every tick)
+') the current bar is bar #0, when working in the mode '
+only at the moment of birth of a new bar
+'
+(parameter
+'
+Search signals on ...
+'
+equals '
+bar #1 (on a new bar)
+)
+current bar is bar #1
+Now more about each group of parameters:
+Trading settings:
+'
+Working timeframe
+' - working timeframe. The timeframe on which indicators are created and on which a new bar is searched. Stop Loss, Take Profit and Trailing are set in
+Points
+. Any of the parameters ('
+Stop Loss
+', '
+Take Profit
+', '
+Trailing Stop
+') can be disabled - for this, set the selected parameter to '0.0'. How trailing works is shown in the pictures in the
+TrailingStop
+code.
+Position size management (lot calculation)
+The lot can be either permanent ('
+Money management
+' set to '
+Constant lot
+' and set the lot size to '
+The value for "Money management"
+') and dynamic - in percent risk per trade ('
+Money management
+' set to '
+Risk in percent for a deal
+' and set the risk percentage in '
+The value for "Money management"
+'). You can also set a constant lot equal to the minimum lot - '
+Money management
+' set to '
+Lots Min
+'.
+Additional features:
+Flag '
+Positions: Only one
+' set to '
+true
+' allows the EA to have no more than one position in the market.
+WARNING:
+'
+Positions: Only one
+' set to '
+true
+'
+does not override
+'
+Positions: Close opposite
+'
+set
+to '
+true
+'! In other words: the opposite position(s) will be closed first
+The flag '
+Positions: Reverse
+' is responsible for signal reversal. An interesting flag '
+Positions: Close opposite
+' - when set to '
+true
+' before opening a position, it is guaranteed to remove opposite positions. '
+Print log
+' prints an extended log of all operations. The '
+Freeze and StopsLevels Coefficient
+' parameter sets the coefficient for stop and freeze levels for cases when these levels for a symbol are equal to zero. The recommended value is '3'.

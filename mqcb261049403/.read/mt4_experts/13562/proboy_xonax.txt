@@ -1,0 +1,5 @@
+The newly formed candlestick is analyzed, and an order is placed as soon as the breakout of High or Low of the previous candlestick occurs. Once the price gains profit equal to the value of stop loss, the order is moved to breakeven.
+The number of orders is not limited, i.e. a situation occurs — an order is placed. In the screenshot is the result of testing on the daily time frame from the beginning of the year. The chart timeframe is specified in the program as well.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13562

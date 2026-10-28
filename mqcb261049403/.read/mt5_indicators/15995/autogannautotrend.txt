@@ -1,0 +1,88 @@
+Real author:
+zzuegg
+The indicator plots price channel, Fibonacci levels and Gann fan based on the latest ZigZag peaks.
+Indicator input parameters:
+//+------------------------------------------------+
+//|  Indicator input parameters                    |
+//+------------------------------------------------+
+//---- Input parameters of the ZigZag
+input
+ENUM_TIMEFRAMES
+Timeframe=
+PERIOD_H6
+;
+// ZigZag indicator timeframe for calculation
+input
+int
+ExtDepth=
+12
+;
+input
+int
+ExtDeviation=
+5
+;
+input
+int
+ExtBackstep=
+3
+;
+//---- indicator display settings
+input
+string
+Sirname=
+"AutoGannAutoTrend"
+;
+// Name for the indicator labels
+input
+bool
+ShowFib=
+true
+;
+input
+color
+FibColor=
+clrRed
+;
+input
+uint
+FibSize=
+1
+;
+//----
+input
+bool
+ShowGannFan=
+true
+;
+input
+color
+GannFanColor=
+clrDarkViolet
+;
+input
+uint
+GannFanSize=
+1
+;
+//----
+input
+bool
+ShowTrend=
+true
+;
+input
+color
+TrendColor=
+clrBlue
+;
+input
+uint
+TrendSize=
+5
+;
+The indicator requires compiled ZigZag_NK_Color.mq5 indicator file. Place it in <terminal_data_folder>\MQL5\Indicators.
+Fig.1. The AutoGannAutoTrend indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15995

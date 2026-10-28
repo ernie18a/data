@@ -1,0 +1,6 @@
+Indicator
+The task of the indicator is to visualize the last three candles from another (larger) timeframe.
+With the help of
+OBJ_RECTANGLE
+graphical objects, the last three candlesticks are drawn - rectangles are built at High and Low prices.
+Rice. 1. Three Candles Other TimeFrame

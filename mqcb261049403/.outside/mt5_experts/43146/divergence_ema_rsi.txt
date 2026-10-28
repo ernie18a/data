@@ -1,0 +1,11 @@
+Includes EA & Alert only with arrows.
+This EA Buys when
+macd divergence occurs on 5 minute timeframe
+1 hour stochastic main line is greater than signal line & between upper lower levels , currently 0-40
+Daily exponential moving average 9 is greater than 20
+5 minute bar closes below 9 ema on the daily chart ( input 18 )
+Closes trades on stops and targets or
+closes when the rsi period 7 closes above 77 overbought level. ( input 36 )
+Sell trades inversed.
+These signals with default setting have a small amount of trades .
+test on 1 min data on atleast 4 years back

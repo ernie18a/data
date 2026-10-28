@@ -1,0 +1,5 @@
+Indicator that shows higher timeframe candle on current timeframe.
+On screenshot you can see D1 candle on H1 timeframe.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15700

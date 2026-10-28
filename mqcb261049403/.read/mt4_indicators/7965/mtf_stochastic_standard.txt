@@ -1,0 +1,4 @@
+Author:
+Keris2112
+Indicator MTF Stochastic Standard. Shows 4 stochastic on one.
+Indicator MTF Stochastic Standard

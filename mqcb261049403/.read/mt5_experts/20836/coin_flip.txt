@@ -1,0 +1,261 @@
+Idea by
+:
+Vladimir Gribachev
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+An EA without using any custom indicators; positions are opened pseudorandomly. The EA can show the current statistics in two languages:
+Trailing modifies the Stop Loss of open positions. In case of loss, the lots increase using Martingale. How to monitor losses: In
+OnTradeTransaction
+, we catch transaction
+DEAL_REASON_SL
+- the sign of the Stop Loss triggered:
+//+------------------------------------------------------------------+
+//| TradeTransaction function                                        |
+//+------------------------------------------------------------------+
+void
+OnTradeTransaction
+(
+const
+MqlTradeTransaction
+&trans,
+const
+MqlTradeRequest
+&request,
+const
+MqlTradeResult
+&result)
+  {
+//--- get transaction type as enumeration value
+ENUM_TRADE_TRANSACTION_TYPE
+type=trans.type;
+//--- if transaction is result of addition of the transaction in history
+if
+(type==
+TRADE_TRANSACTION_DEAL_ADD
+)
+     {
+long
+deal_ticket       =
+0
+;
+long
+deal_order        =
+0
+;
+long
+deal_time         =
+0
+;
+long
+deal_time_msc     =
+0
+;
+long
+deal_type         =-
+1
+;
+long
+deal_entry        =-
+1
+;
+long
+deal_magic        =
+0
+;
+long
+deal_reason       =-
+1
+;
+long
+deal_position_id  =
+0
+;
+double
+deal_volume       =
+0.0
+;
+double
+deal_price        =
+0.0
+;
+double
+deal_commission   =
+0.0
+;
+double
+deal_swap         =
+0.0
+;
+double
+deal_profit       =
+0.0
+;
+string
+deal_symbol       =
+""
+;
+string
+deal_comment      =
+""
+;
+string
+deal_external_id  =
+""
+;
+if
+(
+HistoryDealSelect
+(trans.deal))
+        {
+         deal_ticket       =
+HistoryDealGetInteger
+(trans.deal,
+DEAL_TICKET
+);
+         deal_order        =
+HistoryDealGetInteger
+(trans.deal,
+DEAL_ORDER
+);
+         deal_time         =
+HistoryDealGetInteger
+(trans.deal,
+DEAL_TIME
+);
+         deal_time_msc     =
+HistoryDealGetInteger
+(trans.deal,
+DEAL_TIME_MSC
+);
+         deal_type         =
+HistoryDealGetInteger
+(trans.deal,
+DEAL_TYPE
+);
+         deal_entry        =
+HistoryDealGetInteger
+(trans.deal,
+DEAL_ENTRY
+);
+         deal_magic        =
+HistoryDealGetInteger
+(trans.deal,
+DEAL_MAGIC
+);
+         deal_reason       =
+HistoryDealGetInteger
+(trans.deal,
+DEAL_REASON
+);
+         deal_position_id  =
+HistoryDealGetInteger
+(trans.deal,
+DEAL_POSITION_ID
+);
+
+         deal_volume       =
+HistoryDealGetDouble
+(trans.deal,
+DEAL_VOLUME
+);
+         deal_price        =
+HistoryDealGetDouble
+(trans.deal,
+DEAL_PRICE
+);
+         deal_commission   =
+HistoryDealGetDouble
+(trans.deal,
+DEAL_COMMISSION
+);
+         deal_swap         =
+HistoryDealGetDouble
+(trans.deal,
+DEAL_SWAP
+);
+         deal_profit       =
+HistoryDealGetDouble
+(trans.deal,
+DEAL_PROFIT
+);
+
+         deal_symbol       =
+HistoryDealGetString
+(trans.deal,
+DEAL_SYMBOL
+);
+         deal_comment      =
+HistoryDealGetString
+(trans.deal,
+DEAL_COMMENT
+);
+         deal_external_id  =
+HistoryDealGetString
+(trans.deal,
+DEAL_EXTERNAL_ID
+);
+        }
+else
+return
+;
+if
+(deal_symbol==m_symbol.Name() && deal_magic==m_magic)
+if
+(deal_entry==
+DEAL_ENTRY_OUT
+)
+           {
+            PrevBars=
+0
+;
+if
+(
+deal_reason==
+DEAL_REASON_SL
+&& deal_commission+deal_swap+deal_profit<
+0.0
+)
+               last_lots_sl=deal_volume;
+else
+last_lots_sl=
+0.0
+;
+           }
+     }
+  }
+Input parameters
+Stop Loss
+- Stop Loss;
+Take Profit
+- Take Profit;
+Trailing Stop
+- trailing;
+Trailing Step
+- trailing step;
+Lots
+- lot size is set manually (if
+Lots
+is above zero, then
+Risk
+must be equal to zero);
+Risk
+- lot size is calculated automatically (if
+Risk
+is above zero, then
+Lots
+must be equal to zero);
+Martingale
+- lot increase ratio, if the preceding position was closed by Stop Loss and the profit gained was negative;
+Max lots
+- the maximum position size; if this size is exceeded, then the EA terminates its operation abnormally;
+magic number
+- unique identifier for the EA.
+Then testing was interrupted (the EA was unloaded from the chart forcedly), since the reference lot exceeded the
+Max lots
+parameter:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20836

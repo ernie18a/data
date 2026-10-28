@@ -1,0 +1,16 @@
+The EA uses RSI filtering, ATR based recovery spacing, market structure checks, basket level profit management, crash pause protection, and optional news filtering. It is designed to manage recovery entries with configurable risk controls and dashboard monitoring.
+Main features:
+Fixed lot or balance based compounding lot calculation
+ATR based adaptive recovery distance
+RSI entry filter with normal, high ATR, and extreme ATR modes
+Structure checks using LL/LH and support conditions
+Basket profit target and recovery basket trailing
+Smart trimming option for basket management
+Spread, slippage, equity loss, and crash movement protections
+News filter using MQL5 calendar, CSV file, or both
+On chart dashboard with current recovery and status information
+Fully configurable inputs including magic number, lot settings, ATR/RSI settings, recovery distance, target profit, trailing, news filter, and dashboard position
+Recommended chart:
+XAUUSD, M15
+Important note:
+This EA is provided as trading software. It does not guarantee profit, win rate, drawdown level, or account growth. Always test in Strategy Tester and on a demo account before using it on a live account.

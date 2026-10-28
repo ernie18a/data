@@ -1,0 +1,40 @@
+This Expert Advisor tests a classic idea: after a quiet, narrow-range day, the next day is more likely to move strongly in one direction from its open. The method is based on the
+opening range breakout and contraction/expansion
+concepts described by Toby Crabel in "Day Trading with Short Term Price Patterns and Opening Range Breakout" (1990). The code is an original implementation, adapted for a 24-hour market such as XAUUSD.
+Recommended symbol and timeframe
+- Symbol: XAUUSD (gold). It also runs on other liquid symbols, but the default settings were chosen for gold.
+- Timeframe: any. The EA reads M1 and D1 data itself, so the chart timeframe does not change its behavior. M1 is best for watching it in the visual tester.
+How it works
+1. At the session start, the EA records the session open. By default, the start is 08:00 London time, converted to the broker's server time with daylight saving handled automatically.
+2. It calculates an offset in one of two ways: the "stretch" (the average distance from each recent session's open to its nearest extreme) or a fixed multiple of yesterday's daily ATR.
+3. It checks yesterday's daily bar against the selected filter.
+4. If the day qualifies, it places a buy stop above the open and a sell stop below it. Each order's stop loss is the opposite level.
+5. When one order fills, the other is deleted. Unfilled orders are removed when the entry window ends.
+6. All trades are closed a set number of minutes after the start (default 13 hours, before gold's daily break), so the EA is flat overnight.
+Filters
+- None: the control group. It trades every day, so you can measure whether the filters add anything.
+- NR4: yesterday's range was narrower than each of the 3 days before it.
+- NR7: yesterday's range was narrower than each of the 6 days before it.
+- Inside day + NR4.
+- 3-bar NR: the last 3 days' combined range was the narrowest of any 3-day window in the previous 20 days.
+- Any of the above.
+- Optional: skip the day after a wide-range day (WS4 or WS7).
+Risk controls
+- Lot size from % risk per trade and the stop distance
+- Daily loss limit based on account equity (useful for prop-firm rules)
+- Maximum fills per session
+- Spread filter measured as a % of the offset (works for 2- and 3-digit gold quotes), stops-level and freeze-level checks, free-margin and volume-limit checks
+- Skips the day if price already passed a level before the EA was ready
+Input parameters
+- Session: time mode (London time with automatic daylight saving, or broker server time), broker server time zone (GMT+0, GMT+2/+3 New York close, or fixed offset), session start hour and minute, entry window (minutes), exit (minutes after the start)
+- Entry offset: offset mode (stretch or ATR), stretch lookback, ATR period, ATR multiple
+- Day filters: contraction filter, skip after a wide-range day
+- Exits: take-profit multiple (0 = off)
+- Risk: risk % per trade, daily loss limit %, max fills per session, use the minimum lot when the risk-based lot is smaller, max risk at the minimum lot, magic number
+- Filters: max spread as % of the offset, optional hard cap in points, skip Fridays
+- Display: draw the open and entry levels on the chart
+Notes
+- Set the broker's server time zone correctly. London mode then places the session at 08:00 London time all year.
+- Narrow-range filters use the broker's daily candles. Short Sunday candles (common on GMT+0 servers) are ignored.
+- On small accounts the risk-based lot is often below the minimum lot, so the EA skips the day unless "use the minimum lot" is switched on.
+- This is a research and learning tool, not a profit promise. Test it on your own broker's data before any live use.

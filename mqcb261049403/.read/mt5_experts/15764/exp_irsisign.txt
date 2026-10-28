@@ -1,0 +1,18 @@
+Trading system based on
+iRSISign
+indicator signals. A signal is formed at the close of a bar if a color icon of the indicator has appeared.
+This Expert Advisor requires the compiled indicator file iRSISign.ex5 in order to run. Place it to <terminal_data_folder>\MQL5\Indicators.
+Note that the TradeAlgorithms.mqh library file allows using Expert Advisors with brokers who offer
+nonzero spread
+and the option of setting Stop Loss and Take Profit
+together with position opening
+. You can download more variants of the library at the following link:
+Trade Algorithms
+.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. The instances of history of deals on the chart.
+Testing results for 2015 at EURUSD H1:
+Fig. 2. Testing results chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15764

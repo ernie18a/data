@@ -1,0 +1,23 @@
+The script saves the values of Time, Open, High, Low, Close, Volume and standard indicators. It is also possible to save certain derivatives of the Time, such as day of week, hour and minute. You can select what to save.
+Parameters
+Begin after
+- skip a specified number of bars, required for skipping incorrect data;
+Number of records(0-All)
+- the number of stored samples, if set to zero, then everything is saved
+Number of digits after decimal point
+- the number of decimal places for real numbers, does not affect the values of Open, High, Low, Close;
+The method of averaging
+- price series smoothing method, used by several indicators, one value is set for them
+The price used
+- the applied price, used by several indicators, one value is set for them
+Averaging period
+- averaging period, used by several indicators, one value is set for them
+... (Times and prices)
+... (Indicators and their parameters)
+For a large amount of data, the quotes can be downloaded from the server,
+it is possible that not all brokers have archives that correspond to the market quotes.
+In the 'Tools' menu select 'History Center', then choose what you need and press 'Download'.
+The data storage format: the values are separated by tabs, lines end with CR LF (standard for Windows).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15022

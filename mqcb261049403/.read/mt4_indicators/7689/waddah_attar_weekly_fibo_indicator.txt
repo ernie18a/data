@@ -1,0 +1,4 @@
+This Indicator Draws 7 Level Of weekly Fibo With Back Test.
+It is very power Levels.
+It is also show you the current percent and current price on your chart.
+Show the Chart

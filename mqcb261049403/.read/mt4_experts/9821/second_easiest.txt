@@ -1,0 +1,2 @@
+EUR/USD H1 2010.01.01 - 07.26. Deposit: 10000, Lot: 1.
+Without stoploss, takeprofit, trailing stop, or any indicator. For all timeframes. It is to give ideas for programmers, to build indicators into it, etc.

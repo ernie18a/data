@@ -1,0 +1,7 @@
+Normal moving average with some extra features.
+Custom Label:
+Allows you to set a name for the MA to easily identify it in the Data Window and when you hover your mouse over it.
+Time frame:
+You choose the time frame that the MA will be calculated and the indicator will adapt to your current time frame if it is lower or equals to the target one.
+It is useful for traders that look for the 20, 50, 100 and 200 days moving averages, this way they can see it without having to change the time frame. Also, a gap was added between periods to easily identify when a new one started.
+Here's an example of a 20 day exponential moving average, applied to the close of the day with shift +1.

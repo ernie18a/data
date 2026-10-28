@@ -1,0 +1,18 @@
+Author of the idea
+—
+Dima
+,
+author of mq5 code
+—
+barabashkakvn
+.
+Modification of StopLoss of any positions. Trailing. Trailing.
+The trading robot can be applied to any symbol window. It tracks all open positions and works with
+each profitable position
+.
+Parameters:
+TrailingStop
+TrailingStep
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17476

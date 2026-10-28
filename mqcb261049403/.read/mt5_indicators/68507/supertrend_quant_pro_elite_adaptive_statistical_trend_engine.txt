@@ -1,0 +1,31 @@
+The Quant Edge
+Traditional SuperTrend indicators suffer from "lag" and "whipsaws" because they use static multipliers.
+SuperTrend Quant Pro Elite
+solves this by using a
+Z-Score Normalization
+algorithm. It dynamically adjusts the trend-tracking sensitivity based on current market volatility, effectively widening the gap during spikes and tightening it during stable moves.
+Key Technical Features:
+Adaptive Volatility Engine:
+Uses statistical Z-Score analysis to auto-adjust the ATR multiplier in real-time.
+Volume Confluence (VSA):
+Signals are only "Confirmed" when tick volume exceeds institutional averages, helping you avoid low-liquidity traps.
+Regime Detection:
+The indicator automatically identifies "Trending" (Solid Line) vs. "Choppy" (Dotted Line) environments using built-in ADX logic.
+Built-in MTF Scanner:
+A professional dashboard tracks the trend status across M15, M30, H1, H4, and D1 simultaneously on your current chart.
+Performance Metrics:
+Displays real-time Edge Probability (Win Rate) and Profit Factor based on the current timeframe's history.
+Interpretation of Signals:
+Green Line/Arrow:
+Bullish momentum established. Look for Buy opportunities.
+Red Line/Arrow:
+Bearish momentum established. Look for Sell opportunities.
+Star (★) Icon:
+High-conviction signal where Volume and Trend Strength align.
+Dotted Line:
+Market is in a ranging/choppy phase; exercise caution.
+Recommended Setup:
+Symbols:
+Works best on major Forex pairs (EURUSD, GBPUSD), Indices (US30, GER40), and Gold (XAUUSD).
+Timeframes:
+Optimized for M15 and H1 for day trading; H4 and D1 for swing trading.

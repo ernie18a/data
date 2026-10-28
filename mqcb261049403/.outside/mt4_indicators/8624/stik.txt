@@ -1,0 +1,7 @@
+It shows the tick chart in a separate indicator window, places the separators in accordance with the current timeframe.
+The feature are it manages its own database of ticks with the depth of nearly eight days, and that base can be viewed (for analysis) by specifying the date/time to start displaying the chart from and the number of ticks to be viewed in the settings.
+If the "Start" and "TikChart" parameters are the default ones, i.e. they're equal to 0 and 350 respectively, then it displays the current 350 ticks.
+It is unfinished, now it can be attached to only one symbol.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8624

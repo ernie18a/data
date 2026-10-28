@@ -1,0 +1,189 @@
+To make a long story short:
+the built-in economic calendar of MetaTrader 5 is not (completely) synchronized with historical quotes.
+Quotes are marked with timestamps in accordance with the time zones that were in effect on the server at the moment of formation of each corresponding bar.
+Once the bars are formed they remain unchanged, including their timestamps. On the other hand, the economic calendar provides information about events (past, present, and future) tied to the current time zone of the server. Since many brokers adhere to a specific time zone schedule, including turning daylight saving mode on and off, the timestamps of the historical events may be shifted by 1 hour relative to associated bars, for about half of each year.
+Moreother, brokers sometimes change time zones more radically than just switching DST. Historical quotes may then appear to be shifted several hours to the left or right relative to the time of the economic events that originally occurred on them, but are now reported by the calendar in the server's updated time zone.
+Taking into account that news come from different countries with their own DST schedules and your server can be located in a region with other schedule, time of news releases can  visually "jump" back and forth on charts even in more peculiar manner (for example, for several weeks in spring and in autumn).
+All this doesn't seem so important online, but what if we want to test a news-based strategy?
+Yes, you can say that the calendar is not supported in MetaTrader tester natively, but many traders like to trade news and everyone else who doesn't should follow the news to simply step aside from the market before it'll go wild during news. So backtesting with the calendar is important. That's why it's very logical to export the calendar to an external storage (file, database) and then import it to the tester. One of such archiving tools for calendar-in-tester experience was presented in
+the algotrading book
+.
+And here we run into the problem of desynchronization of historical quotes with historical events. For the sake of simplicity, this problem has been left unresolved in the book.
+Now it's solved thanks to the extended version of
+CalendarCache.mqh
+and the showcasing indicator
+CalendarMonitorCachedTZ.mq5
+. This is just a slightly changed version of
+CalendarMonitorCached.mq5
+from the book.
+The indicator monitors news events and dynamically updates an on-chart table with several past and forthcoming events.
+All the job related to time correction is done behind the scenes - in the other public library
+TimeServerDST.mqh
+.
+For better understanding how the time correction works one can use the script
+CalendarCSVForDates.mq5
+and compare CSV-files with and without correction side by side.
+And here is how the lib is embedded into the source codes of both programs - the script and this indicator.
+#include
+<TimeServerDST.mqh>
+// including before Calendar cache enables timezone fix-up support
+#include
+<MQL5Book/CalendarFilterCached.mqh>
+#include
+<MQL5Book/CalendarCache.mqh>
+As in the original indicator, there is the string input
+CalendarCacheFile
+, where you can provide a name of cal-file for writing or reading.
+When the indicator is attached to an online chart with empty
+CalendarCacheFile
+, it works with the built-in calendar on-the-fly.
+When the indicator is executed with specific name in
+CalendarCacheFile
+and the file doesn't exist, the indicator exports the calendar records into the cache file (creates the file) and exits. This is the stage when the timestamps should/can be corrected (see
+FixCachedTimesBySymbolHistory
+below).
+When the indicator is executed with a name of existing cache-file in
+CalendarCacheFile
+, it loads the cache and works with this copy in the same way as with built-in calendar. This is specifically useful for the tester.
+Please, don't forget that the tester requires to specify additional files, in our case - the prepared online cal-file, in the directive
+#property tester_file
+OR you should place the cal-file into the common folder C:/Users/<User>/AppData/Roaming/MetaQuotes/Terminal/Common/.
+Of course, the cache can be also loaded into an EA during backtests and optimizations.
+The input string
+FixCachedTimesBySymbolHistory
+is processed in the following way.
+If it's empty, the indicator saves the cache without time corrections.
+To enable time corrections during export you should specify a symbol, which will be used for empirical detection of historical time zones of the server. It works based on history of H1 quotes, preferably "XAUUSD" or "EURUSD".
+With the help of this input, only a couple of lines are added into the new version of the indicator:
+if
+(
+StringLen
+(FixCachedTimesBySymbolHistory))
+            cache[].adjustTZonHistory(FixCachedTimesBySymbolHistory,
+true
+);
+The method
+adjustTZonHistory
+was specifically introduced into
+CalendarCache
+class for timestamps adjustments and its implementation uses internals of
+TimeServerDST.mqh
+.
+The method should be called online only (not in the tester).
+Normally the method should be called on cache objects filled from the built-in calendar, right after the filling. Otherwise, if the cache is loaded from a cal-file, or if the method was already called before, the cache contents could be already adjusted. Then you'll apply fix on fix and get wrong timestamps.
+The second parameter (
+true
+) instructs the method to write boundaries of applied changes into the log. Something like this:
+Time fix-up started at
+2021.07
+.19
+00
+:
+30
+:
+00
+2021.07
+.19
+00
+:
+30
+:
+00
+:
+148786
+-
+10800
+diff=-
+3600
+2021.11
+.08
+01
+:
+50
+:
+00
+:
+135918
+-
+7200
+OK
+2022.03
+.14
+04
+:
+30
+:
+00
+:
+161085
+-
+10800
+diff=-
+3600
+2022.11
+.07
+04
+:
+00
+:
+00
+:
+165962
+-
+7200
+OK
+2023.03
+.13
+01
+:
+50
+:
+00
+:
+168500
+-
+10800
+diff=-
+3600
+2023.11
+.06
+01
+:
+50
+:
+00
+:
+169270
+-
+7200
+OK
+2024.03
+.11
+01
+:
+50
+:
+00
+:
+181258
+-
+10800
+diff=-
+3600
+2024.11
+.04
+02
+:
+30
+:
+00
+:
+208469
+-
+7200
+OK
+Each line contains a time and ID of an event where new discrepancy was detected, server time offset at the event, and what difference must be applied to all subsequent timestamps in order to eliminate the bias in server time at the moment of calendar caching.
+The attached mqh-files (CalendarFilter.mqh, CalendarCache.mqh, QuickSortStructT(Ref).mqh) contain bugfixes and improvements compared to their original versions from the book.
+Updates
+11.11.2024 - small bugfix and updates in CalendarFilter.mqh, CalendarCache.mqh;
+22.11.2024 - small bugfixes and improvements in CalendarCache.mqh.

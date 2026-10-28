@@ -1,0 +1,37 @@
+Key Features
+Flexible Risk:Reward Ratio
+: Set any R:R ratio (1:1, 1:2, 1:3, etc.)
+Pip-Based Calculation
+: Define Stop Loss in pips, TP calculated automatically
+Multi-Symbol Support
+: Can modify all positions or only current symbol
+Broker Compatibility
+: Works with both 3-digit and 5-digit brokers
+Safety Checks
+: Validates Stop Levels and Freeze Levels
+Error Handling
+: Complete error checking with detailed logs
+Smart Skip
+: Avoids unnecessary modifications if SL/TP already correct
+Input Parameters
+RiskRewardRatio
+(default: 2.0) - Your desired risk-reward ratio
+StopLossPips
+(default: 20) - Stop loss distance in pips
+ModifyAllPositions
+(default: true) - Modify all positions or only current symbol
+How to Use
+Open one or more positions
+Attach the script to any chart
+Configure the parameters if needed
+Click OK - the script will automatically set SL/TP for all positions
+Calculation Example
+If you set:
+Stop Loss: 20 pips
+Risk:Reward Ratio: 2.0
+The script will set:
+SL: 20 pips from entry
+TP: 40 pips from entry (20 × 2.0)
+Benefits
+✓ Saves time - no manual SL/TP calculation ✓ Ensures consistent risk management ✓ Prevents human error in calculations ✓ Works on all forex pairs, metals, and indices ✓ Professional-grade error handling
+Perfect for scalpers, day traders, and swing traders who want to automate their risk management workflow!

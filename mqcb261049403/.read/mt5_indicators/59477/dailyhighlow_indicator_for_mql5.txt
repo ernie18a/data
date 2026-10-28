@@ -1,0 +1,112 @@
+Features and Functionality
+The indicator plots two lines on the chart: one for the high price and one for the low price, calculated based on user-defined inputs. Its key features include:
+Customizable Timeframe
+: Users can select a timeframe (e.g., daily, hourly) using the
+TimeFrame
+input, with a default of
+PERIOD_D1
+(daily). The indicator ensures the selected timeframe is not smaller than the chart's current timeframe to maintain data accuracy.
+Price Calculation Options
+: The
+Price
+input allows users to choose between three modes:
+Low/High (DHL_LOWHIGH)
+: Plots the highest and lowest prices of the specified timeframe.
+Open/Close (DHL_OPENCLOSE)
+: Plots the maximum of open/close prices and the minimum of open/close prices.
+Close/Close (DHL_CLOSECLOSE)
+: Plots the highest and lowest closing prices.
+Previous Period Option
+: The
+Previous
+input (default:
+true
+) allows users to display the high/low of the previous period, aiding in historical analysis.
+Visual Customization
+: The indicator uses solid silver lines for both high and low plots, with a width of 1, ensuring clear visibility without cluttering the chart.
+How It Works
+The indicator operates by initializing two buffers (
+HighBuffer
+and
+LowBuffer
+) to store and display the high and low price levels. During initialization (
+OnInit
+), it sets these buffers and validates the timeframe. The core logic resides in the
+OnCalculate
+function, which processes price data for each bar:
+Data Preparation
+: Arrays for time, open, close, high, and low prices are set as series for reverse indexing.
+Timeframe Alignment
+: The indicator calculates bar shifts using
+iBarShift
+to align data with the selected timeframe.
+Price Calculation
+:
+For
+DHL_LOWHIGH
+, it directly fetches the high and low prices using
+iHigh
+and
+iLow
+.
+For
+DHL_OPENCLOSE
+and
+DHL_CLOSECLOSE
+, it identifies the highest/lowest open or close prices within the timeframe using
+iHighest
+and
+iLowest
+.
+Previous Period Handling
+: If
+Previous
+is enabled, calculations shift to the prior period, providing historical context.
+Optimization
+: The indicator limits calculations to new or updated bars (
+limit
+) to ensure efficiency and avoid redundant processing.
+Practical Applications
+The
+DailyHighLow
+indicator is ideal for traders employing strategies based on key price levels, such as:
+Support and Resistance
+: Identifying daily or custom timeframe high/low levels for breakout or reversal strategies.
+Trend Analysis
+: Comparing current price action against previous highs/lows to gauge market direction.
+Risk Management
+: Setting stop-loss or take-profit levels based on significant price points.
+Usage Instructions
+Installation
+: Add the indicator to your MetaTrader 5 platform by copying the code to the MQL5/Indicators folder and compiling it.
+Configuration
+:
+Set the desired
+TimeFrame
+(e.g.,
+PERIOD_D1
+for daily levels).
+Choose a
+Price
+mode (
+DHL_LOWHIGH
+,
+DHL_OPENCLOSE
+, or
+DHL_CLOSECLOSE
+) based on your strategy.
+Enable or disable the
+Previous
+option to toggle between current and previous period data.
+Chart Application
+: Attach the indicator to any chart. It will display two silver lines representing the high and low levels.
+Conclusion
+The
+DailyHighLow
+indicator is a simple yet powerful tool for MQL5 traders, offering flexibility in timeframe and price calculation methods. Its lightweight design and efficient processing make it suitable for both novice and experienced traders looking to enhance their technical analysis.
+Feedback
+If you have suggestions or encounter issues, please leave a comment on the MQL5 CodeBase page or
+contact me
+through the MQL5 community. Your feedback is valuable for improving this tool!
+Contact me:
+MQL5 Link

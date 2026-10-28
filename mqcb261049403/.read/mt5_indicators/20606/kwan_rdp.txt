@@ -1,0 +1,11 @@
+A simple oscillator based on the values of the iDemarker, iMFI and iMomentum indicators and implemented as a two-colored histogram.
+Indicator calculation formula:
+kwan = MA(100 * iDemarker[bar] * iMFI[bar] / iMomentum[bar])
+The growth of a financial asset is usually accompanied by the indicator growth and the aquamarine color of the histogram. An asset is considered falling if the indicator falls and the histogram is red and pink. The optimal time to perform a trade is when the color of the histogram bars changes.
+The indicator uses the SmoothAlgorithms.mqh library classes (copy it to <terminal_data_folder>\MQL5\Include). The classes were described in detail in the
+Averaging Price Series for Intermediate Calculations Without Using Additional Buffers
+article.
+Fig.1. Indicator KWAN_RDP
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20606

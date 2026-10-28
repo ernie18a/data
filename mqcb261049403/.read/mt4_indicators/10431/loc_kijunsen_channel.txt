@@ -1,0 +1,4 @@
+Description:
+The Kijun-Sen line with up line and bottom line.
+The indicator can be calculated on a different timeframe and period.
+Image:

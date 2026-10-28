@@ -1,0 +1,11 @@
+The indicator draws candlesticks of a larger timeframe as color filled rectangles using
+DRAW_FILLING
+buffers. Rectangles are color filled in accordance with the values of the
+XD-RangeSwitch
+indicator.
+Depending on trend direction the candlestick body is painted in blue or orange, shadows are painted in light blue or yellow.
+The indicator requires the compiled indicator file XD-RangeSwitch.mq5 for operation. Place it to terminal_data_folder\MQL5\Indicators\.
+Figure 1. The BackgroundСandle_XD-RangeSwitch_HTF indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2275

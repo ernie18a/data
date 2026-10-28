@@ -1,0 +1,23 @@
+What is Volume Profile?
+The volume profile tool, also known as horizontal volume, illustrates transaction volume at each price within a specific time range using a horizontal histogram chart. Longer bars indicate higher transaction volume at that price, while shorter bars represent lower transaction activity. The calculations in this indicator are executed in a simple way, allowing for high-speed, lightweight execution.
+How to Use
+To display the volume profile within a specific time interval, place two vertical lines that appear after executing the indicator at the start and end of that interval. Adjusting these lines will change the volume profile based on the selected interval.
+sample screenshot
+Input Settings
+Calculation Timeframe
+: The assumption behind the calculations of this indicator is that volume is distributed evenly throughout the candle length (from its low to high), which may lead to less accurate results, especially when using small time ranges (see Figure 1). By changing this option in the input section, calculations can be based on lower timeframes (e.g., 1 minute), resulting in accurate results almost comparable to using tick data for calculation (see Figure 2).
+Number of VP Bars
+: The number of histogram bars, where smaller numbers show the
+range of price
+where most transactions have taken place, and larger numbers show the
+exact prices
+where most transactions have occurred. When changing this input, the position of the Point of Control (POC) may shift, but it is not due to a mistake in the calculations or errors in the code, it is because you are looking for something different.
+Applied Volume
+: The default applied volume is real volume. However, selecting 'tick_volume' in the input, or in the absence of real volume data on the server, the indicator will use tick volume data.
+Maximum VP Bar Length to Chart Width Ratio
+: You can adjust the length of the VP bars relative to the width of your chart.
+figure 1: calculation based on current timeframe
+figure 2: calculation based on 1-minute timeframe
+Caution
+When using lower timeframes for calculation, the indicator requires the price data of that timeframe, which may not have been downloaded already. It may take some time to download, so please be patient and drag and drop the vertical lines until the downloading is complete!
+I hope it will help you in making successful trades and make me happy by commenting the mistakes and errors in the code!

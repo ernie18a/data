@@ -1,0 +1,5 @@
+The indicator marks the current day's time period specified in the indicator settings using colored rectangles. The middle rectangle is drawn based on the open and close prices of the trading period (the body of the resulting candlestick of the specified period), while the upper and lower rectangles represent the candlestick shadows. Growing candlesticks are colored in lime-green, and falling candlesticks are of yellow-brick colors. The indicator is drawn using graphical objects.
+Fig.1. The ShadeOpenX indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19340

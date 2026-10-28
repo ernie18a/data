@@ -1,0 +1,7 @@
+Three
+PEMAs
+from three different timeframes on a single chart
+Fig. 1. Indicator PEMA_3HTF
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23584

@@ -1,0 +1,64 @@
+Two identical trading systems based on the change in the color of
+XFatlXSatlCloud
+for long and short trades, which can be configured in different ways in one Expert Advisor. For this purpose, all input parameters can be divided into two large groups:
+Parameters starting with the letter L are used for managing long positions
+Parameters starting with the letter S are used for managing short positions
+//+----------------------------------------------+
+//| EA's input parameters for long positions     |
+//+----------------------------------------------+
+input
+uint
+L_Magic=
+777
+;
+//L magic number
+input
+double
+L_MM=
+0.1
+;
+//L share of a deposit per trade
+input
+MarginMode L_MMMode=LOT;
+//L lot setting mode
+//+----------------------------------------------+
+//| EA's input parameters for short positions    |
+//+----------------------------------------------+
+input
+uint
+S_Magic=
+555
+;
+//S magic number
+input
+double
+S_MM=
+0.1
+;
+//S share of a deposit per trade
+input
+MarginMode S_MMMode=LOT;
+//S lot setting mode
+Different magic numbers are used for these trading systems, so they are two independent systems. Real financial markets are rarely symmetric. Different parameters of the same trading systems are often needed for trading in the rising and falling market. To properly configure the EA, you should first test only one trading system and disable the second one using special switchers.
+input
+bool
+L_PosOpen=
+true
+;
+//L permission to enter long positions
+input
+bool
+L_PosClose=
+true
+;
+//L permission to exit long positions
+After that perform the same for the second system.
+For a correct operation of the Expert Advisor, you should save the XFatlXSatlCloud.ex5 compiled indicator file to <terminal_data_folder>\MQL5\Indicators.
+Default input parameters of the Expert Advisor were used during the tests shown below. Stop Loss and Take Profit were not used during testing.
+Fig.1. Examples of deals on the chart with symmetrical settings.
+Testing results for 2016 at GBPUSD H4:
+Fig. 2. Testing results chart.
+Fig.2. Examples of deals on the chart with non-symmetrical settings.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19628

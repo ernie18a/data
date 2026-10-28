@@ -1,0 +1,49 @@
+Expert Advisor signals are based on the common intersection of two MA lines. These are signals of the
+Diff_TF_MA
+indicator:
+If the MA of the current timeframe crosses the MA line of the higher timeframe upwards, it is a signal to open a long position;
+If the MA of the current timeframe crosses the MA line of the higher timeframe downwards, it is a signal to open a short position.
+An appropriate position is opened on one signal. The opposite position is closed.
+The Expert Advisor is designed for working on hedging accounts. If you launch the EA on a netting account, a warning message will pop up and the EA will be unloaded.
+The
+indicator
+is not required for the EA operation, because calculations of required moving averages are implemented directly in the EA code.
+The Expert Advisor can reverse indicator signals to open Sell instead of Buy and vice versa. You can also set stop loss and take profit in points. If invalid Stop Loss and Take Profit values are specified, the EA will adjust the values to the minimum
+StopLevel
+allowed for the symbol.
+The Expert Advisor will also adjust the lot in case an incorrect value is specified. If the lot is too large, the EA will adjust it in order to be able to open a position. If there is no money for opening even the minimum lot, the signal will be skipped.
+Please note that the Expert Advisor is designed for training purposes.
+The EA has nine input parameters:
+Experts magic number
+- a unique identifier for the EA's positions;
+Period of MA
+- calculation period for the moving average of a higher timeframe (the calculation period of the current timeframe MA is selected automatically);
+Timeframe of MA
+- the timeframe for the Moving Average of a higher TF;
+Reverse trade
+- choosing the reverse mode (Yes, No): if Yes, a short position will open upon a long signal and vice versa;
+Lots
+- the volume of positions to open;
+Stop loss in points
+- the Stop Loss of a position in points;
+Take profit in points
+- the Take Profit of a position in points;
+Slippage of price
+- maximum allowable slippage when opening a position;
+Multiplier spread for stops
+- spread multiplier for calculating a correct distance for stop orders.
+For Stop Loss and Take Profit orders (as well as pending orders), there is a minimum allowed distance for placing such orders -
+StopLevel
+. I.e. Stop Loss and Take Profit (as well as pending orders) cannot be placed closer than this distance to the price. If
+StopLevel
+is zero, it does not mean its absence, it only means that
+StopLevel
+is floating. In this case, the minimum distance is usually equal to spread*, but sometimes even the double spread is not enough. So, this parameter allows specifying a custom multiplier for the spread used to calculate the minimum distance for placing stop orders.
+To check the strategy, testing with default settings was performed using data in the interval from 2017.01.02 to 2018.01.19. Unfortunately, the EA did not show good results with default settings. Therefore, it was tested in the reverse mode. The results were better. Additionally, the
+Period of MA
+was optimized in the range from 1 to 20 with step 1. The best value when optimizing for the maximum balance was the period 8.
+Fig.1 Testing result 2017.01.02 - 2018.01.19, period 8, reverse of trades is enabled
+Fig.2 Testing chart on 2017.01.02 - 2018.01.19, period 8, reverse of trades is enabled
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19906

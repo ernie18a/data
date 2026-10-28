@@ -1,0 +1,15 @@
+Hello, Coders
+Here are the rules for this EA:
+Use on the EURUSD and EURGBP 1M charts. (You may try others as well)
+Confirm price direction manually on the 5M chart and choose
+Only Long, Only Short
+or
+Short and Long
+from the MT4
+Properties
+dialog for the ea.
+Close open positions moving in the opposite direction of the current trend.
+I'm not a coder, but I know that this is a counter trend system, which is really not my favorite for this style of trading. Please modify this code to open orders with the direction confirmation of two indicators (your choice), and to automatically close open positions moving in the opposite direction.
+There is an ongoing forum discussion of this EA at
+http://www.forex-tsd.com/expert-advisors-metatrader-4/22058-aggressive-scalp-ea.html
+Happy trading!

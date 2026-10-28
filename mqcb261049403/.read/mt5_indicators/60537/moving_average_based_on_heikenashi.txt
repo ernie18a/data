@@ -1,0 +1,23 @@
+Features:
+Works on
+all symbols
+.
+The indicator is
+multi time-frame
+.
+Uses
+colors
+for up and down trend to better visualize true market trend.
+Inputs:
+Time-frame - change the time-frame for indicator calculations.
+Period - change MA period.
+Shift - change MA shift.
+Method - change MA method.
+Price - change price type.
+Here is an example of 3 MA's for 5 minutes, 10 minutes and 15 minutes time-frames on a 5 minutes chart.
+The indicator only draws the MA line and not the Heiken-Ashi candles, here is an example with Heiken-Ashi candles.
+The indicator only calculates the Heiken-Ashi candles but the code inside CalculateHeikenAshi can be modified to calculate new OHLC data.
+Here is an example of Heiken-Ashi Smoothed calculation.
+Heiken-Ashi smoothed is a more reliable trend following tool, better for swing trading and filter entries.
+Or we can replace the code with Heiken-Ashi smoothed using ATR.
+The Heiken-Ashi smoothed ATR provides a smooth baseline for setting dynamic stop-loss/take-profit levels.

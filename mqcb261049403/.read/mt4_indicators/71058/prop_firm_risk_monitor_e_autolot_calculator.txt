@@ -1,0 +1,16 @@
+MetaTrader 4 is a highly reliable execution platform, but it severely lacks built-in risk management tools. For traders managing funded accounts (Prop Firms), calculating the exact lot size dynamically and monitoring strict daily drawdown limits manually can lead to fatal emotional errors.
+The Prop Firm Risk Monitor is a lightweight MQL4 utility designed to bridge this gap. It works entirely on the chart as a visual dashboard, ensuring you never violate your daily loss limits or over-leverage your positions.
+Core Features
+Daily Drawdown Tracker:
+It scans your open positions and today's closed history (including commissions and swaps) to calculate your exact Daily PnL. This prevents you from accidentally hitting the standard 5% daily loss limit imposed by prop firms.
+Auto-Lot Calculator:
+Stop guessing your position size. Simply input the percentage of your balance you wish to risk and your Stop Loss in Pips. The indicator automatically reads the symbol's tick value and outputs the exact lot size you need to execute.
+Zero Lag:
+Built purely as a visual indicator using native MT4 MQL4 logic. It does not execute trades, keeping your terminal safe and blazingly fast.
+Input Parameters
+InpRiskPercent:
+The percentage of your current balance you want to risk per trade (e.g., 1.0 for 1%).
+InpStopLossPips:
+Your planned Stop Loss distance in Pips (the calculator automatically handles 4-digit and 5-digit brokers).
+InpMaxDailyDD:
+Your maximum allowed daily drawdown percentage. If your daily loss exceeds this, the dashboard will flash a warning.

@@ -1,0 +1,167 @@
+This is the new implementation of full-featured multi-currency mode in MetaTrader 5. It's implemented in extended OnTick(string symbol) function.
+Benefits:
+It provides the real multi-currency mode on demo and real accounts.
+It has simple settings.
+The events list for OnTick(string symbol): can be configured: NewTick and/or NewBar.
+The list of symbols can be configured (all symbols from Market Watch or some specified symbols).
+When working with Market Watch symbols, it allows to manage the events "on the fly" in OnTick(string symbol).
+It isn't necessary to understand the details of its work. All code is contained in the include file.
+It can be used in Strategy Tester.
+The Expert Advisor template looks as follows:
+//+------------------------------------------------------------------+
+//|                                        OnTick(string symbol).mq5 |
+//|                                            Copyright 2010, Lizar |
+//|                            https://www.mql5.com/ru/users/Lizar |
+//+------------------------------------------------------------------+
+#define VERSION
+"1.00 Build 1 (01 Fab 2011)"
+#property copyright
+"Copyright 2010, Lizar"
+#property link
+"https://www.mql5.com/ru/users/Lizar"
+#property version     VERSION
+#property description
+"Template of the Expert Advisor"
+#property description
+"with multicurrency OnTick(string symbol) event handler"
+//+------------------------------------------------------------------+
+//|                MULTICURRENCY MODE SETTINGS                       |
+//|           of OnTick(string symbol) event handler                 |
+//|                                                                  |
+//| 1.1 List of symbols needed to proceed in the events:             |
+#define  SYMBOLS_TRADING
+"EURUSD"
+,
+"GBPUSD"
+,
+"USDJPY"
+,
+"USDCHF"
+//| 1.2 If you want all symbols from Market Watch, use this:         |
+//#define  SYMBOLS_TRADING    "MARKET_WATCH"
+//|     Note: Select only one way from 1.1 or 1.2.                   |
+//|                                                                  |
+//| 2.  Event type for OnTick(string symbol):                        |
+#define  CHART_EVENT_SYMBOL CHARTEVENT_TICK
+//|     Note: the event type must corresponds to the                 |
+//|                 ENUM_CHART_EVENT_SYMBOL enumeration.             |
+//|                                                                  |
+//| 3.  Include file:                                                |
+#include <OnTick(string symbol).mqh>
+//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
+//| Expert initialization function                                   |
+//| This function must be declared, even if it empty.                |
+//+------------------------------------------------------------------+
+int
+OnInit
+()
+  {
+//--- Add your code here...
+return
+(
+0
+);
+  }
+//+------------------------------------------------------------------+
+//| Expert multi tick function                                       |
+//| Use this function instead of the standard OnTick() function      |
+//+------------------------------------------------------------------+
+void
+OnTick
+(
+string
+symbol)
+  {
+//--- Add your code here...
+Print
+(
+"New event on symbol: "
+,symbol);
+  }
+//+------------------------------------------------------------------+
+//| ChartEvent function                                              |
+//| This function must be declared, even if it empty.                |
+//+------------------------------------------------------------------+
+void
+OnChartEvent
+(
+const
+int
+id,
+// event id
+const
+long
+& lparam,
+// event param of long type
+const
+double
+& dparam,
+// event param of double type
+const
+string
+& sparam)
+// event param of string type
+{
+//--- Add your code here...
+}
+//+------------------------------------------------------------------+
+//| Expert deinitialization function                                 |
+//+------------------------------------------------------------------+
+void
+OnDeinit
+(
+const
+int
+reason)
+  {
+//--- Add your code here...
+}
+//+------------------------------ end -------------------------------+
+Some features:
+1. Settings
+All settings can be configured using the #define directives. For correct work of the OnTick(string symbol) function you need to specify only two parameters: SYMBOLS_TRADING and CHART_EVENT_SYMBOL.The first (SYMBOLS_TRADING) defines the symbol list, used for the events. The second (CHART_EVENT_SYMBOL) defines the event types for all symbols.
+The SYMBOLS_TRADING contains the list of symbols, for example:
+#define  SYMBOLS_TRADING
+"EURUSD"
+,
+"GBPUSD"
+,
+"USDJPY"
+,
+"USDCHF"
+The list must be prepared as strings, separated by comma. The list ends with end of the line.
+The
+SYMBOLS_TRADING can be defined as follows
+:
+#define  SYMBOLS_TRADING
+"MARKET_WATCH"
+This way means that all symbols from Market Watch will be used. This method can be used to change the list of symbols "on the fly"
+. Just add or remove to Market Watch the symbols needed.
+The CHART_EVENT_SYMBOL event type is defined by flag or their combination from the ENUM_CHART_EVENT_SYMBOL enumeration. See details
+here
+(in Russian).
+Here are examples of the event types:
+//--- Example 1. OnTick event:
+#define  CHART_EVENT_SYMBOL CHARTEVENT_TICK
+//--- Example 2. NewBar M1 and New Bar H1:
+#define  CHART_EVENT_SYMBOL CHARTEVENT_NEWBAR_H1|CHARTEVENT_NEWBAR_M1
+2.  Include file.
+The #include OnTick(string symbol).mqh is needed, this file contain the implementation of OnTick(string symbol) function. It provides the simple way to use all the OnTick(string symbol) function. Some of the standard functions should be declared in code of Expert Advisor, even if they are empty.
+3. Strategy Tester.
+As you know (at present time), the OnChartEvent doesn't supported in Strategy Tester. To solve this problem, the global variables are used to handle the events. This way is used in Strategy Tester only, in all other cases (on real/demo accounts) the events processed via the OnChartEvent.
+Here is the feature. In Strategy Tester the OnTick(string symbol) will work on the ticks of the symbol, specified in the settings of Strategy Tester. In other words, it works like 
+
+OnTick(), but called also when new ticks on the selected symbols. For working with Strategy Tester the
+SYMBOLS_TRADING must be specified as a list of symbols.
+4. "Spies".
+It uses the "spies" (agents-indicators). The "Spy Control panel MCM.ex5" file must be located in \MQL5\Indicators\ folder.
+5. The files from the archive must be extracted into the \MQL5 folder. The files needed:
+/MQL5/Experts/OnTick(string symbol).mq5 - Example of Expert Advisor, source code of the template;
+/MQL5/Experts/OnTick(string symbol).ex5 - Example of Expert Advisor compiled file;
+/MQL5/Indicators/Spy Control panel MCM.mq5 - Agent-indicator, source code;
+/MQL5/Indicators/Spy Control panel MCM.ex5 - Agent-indicator, compiled file;
+/MQL5/Include/OnTick(string symbol).mqh - include file with all functions needed for implementation of OnTick(string symbol) function.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/280

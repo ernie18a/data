@@ -1,0 +1,9 @@
+I wrote this Expert Advisor for checking of the effectiveness trading during the night.
+An Expert Advisor trades on EURUSD (M15), according the signals of
+Stochastic
+indicator. It uses a simple money management system.
+Recommendations:
+It isn't recommended to use this Expert Advisor in real trade!
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/147

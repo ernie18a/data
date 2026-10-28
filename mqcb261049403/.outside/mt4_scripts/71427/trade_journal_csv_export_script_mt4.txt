@@ -1,0 +1,14 @@
+Exports your complete trade history to a CSV file with comprehensive performance statistics. Ready to import into Excel or Google Sheets for detailed analysis.
+**Features:**
+-
+18 columns per trade (ticket, symbol, type, times, prices, profit, pips, etc.)
+-
+Duration formatted as "Xd Xh Xm"
+-
+Handles 3/5-digit brokers for accurate pip calculation
+-
+Filters: magic number, date range, symbol
+-
+Summary statistics: win rate, profit factor, avg R:R, max drawdown, Sharpe ratio, expectancy
+-
+Max consecutive wins/losses tracking

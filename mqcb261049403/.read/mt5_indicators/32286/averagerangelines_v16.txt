@@ -1,0 +1,1 @@
+ADR,AWR,AMR,Draws Average Range Lines

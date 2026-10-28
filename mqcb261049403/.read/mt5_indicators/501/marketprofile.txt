@@ -1,0 +1,39 @@
+Real author:
+Avals
+Market Profile is a tool widely used by futures traders.
+Market Profile MetaTrader is a standard solution of the Market Profile that displays the statistical time distribution of the price, price area and control value for the day trading session. The indicator is based on the simple price movement and does not use standard
+MetaTrader 5
+platform indicators.
+More information on the Market Profile can be found in:
+Erik L. Nayman, Master Trading. The Secret Materials
+(in Russian)
+Erik L. Nayman, A Way to Financial Freedom. Professional Approach to Trading and Investments
+(in Russian)
+J. Piper, The Way to Trade.
+See also the article
+"The Price Histogram (Market Profile) and its implementation in MQL5"
+.
+The author implemented different colors for the indicator: green is for the Asian session, blue is for the European one, while violet is for the American session. Working periods are M30 and M15.
+Input parameters:
+StartDate - for history testing (test starting date);
+lastdayStart - if true, it is drawn till the last day (StartDate is ignored);
+CountProfile - the number of day profiles to be drawn.
+The mode is drawn in gray.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+23.03.2006. In MQL5 this indicator is presented as MarketProfile.mq5 file.
+Besides, one more version of this indicator is available (MarketProfile_.mq5).
+This indicator can be added to M5, M15 and M30 charts to show market profile for day sessions. Though M5 timeframe is much more accurate, M30 is recommended for more clarity. Also, it is a standard market profile calculation method. Three different color schemes are available for profile blocks drawing.
+Input parameters:
+StartFromDate (by default = __DATETIME__) - if StartFromToday is equal to false, the indicator will start drawing profiles from that date. It draws back in time. For example, if you set this variable to 2010.07.20 and DaysToCount to 2, the profiles will be drawn for 2010.07.20 and 2010.07.19;
+StartFromToday (by default = true) - if true, the indicator starts drawing from the current day, otherwise - from the date specified in StartFromDate;
+DaysToCount (by default = 2) - the number of day sessions, for which the market profiles are to be drawn;
+ColorScheme (by default = 0) - color schemes for profiles blocks:
+0 - from blue to red;
+1 - from red to green;
+2 - from green to blue.
+MedianColor (by default = White) - reference value (median) color;
+ValueAreaColor (by default = White) - price area border color.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/501

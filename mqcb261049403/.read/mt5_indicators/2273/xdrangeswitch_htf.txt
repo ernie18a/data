@@ -1,0 +1,14 @@
+The
+XD-RangeSwitch
+indicator with the timeframe selection option available in input parameters:
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// Indicator chart period (timeframe)
+To provide correct operation of the indicator, place the compiled XD-RangeSwitch.mq5 indicator file in terminal_data_folder\MQL5\Indicators.
+Figure 1. Indicator XD-RangeSwitch_HTF
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2273

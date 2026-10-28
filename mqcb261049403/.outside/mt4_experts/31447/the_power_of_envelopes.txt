@@ -1,0 +1,4 @@
+This EA was based on the signal from "
+5Mins Envelopes Scalping - expert for MetaTrader 4
+".
+Additionally, small changes were made, and the Trailing stop function was added.

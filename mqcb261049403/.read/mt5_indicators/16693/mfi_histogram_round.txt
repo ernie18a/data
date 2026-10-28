@@ -1,0 +1,16 @@
+Standard MFI oscillator implemented as a histogram rounding its values to the standard range:
+1 — no rounding;
+2 — all values from 0 to 100 divided by 2;
+5 — all values from 0 to 100 divided by 5;
+10 — all values from 0 to 100 divided by 10;
+20 — all values from 0 to 100 divided by 20;
+50 — 0, 50, 100.
+For all MFI values less than 50, rounding occurs to the lower side, while for all RSI values exceeding 50 — to the greater one.
+The following input is used for rounding in the indicator:
+input
+ENAM_ROUND_MODE Round=X5;
+// rounding level
+Fig.1. MFI_Histogram_Round indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16693

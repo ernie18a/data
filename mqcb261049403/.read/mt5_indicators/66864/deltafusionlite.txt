@@ -1,0 +1,26 @@
+Key Features:
+Cumulative Delta
+: Tracks aggregated buy and sell volume over time.
+Net Delta
+: Shows the difference between buying and selling pressure for each bar.
+Session Reset
+: Allows custom session start times for intraday analysis.
+Smoothing
+: Includes EMA smoothing for cleaner and more readable delta curves.
+Purpose:
+Ideal for traders who want to monitor order flow dynamics, volume imbalances, and divergences between price and delta without complex multi-timeframe calculations. It’s lightweight, fast, and focused on essential delta metrics.
+Examples of Divergences Detectable with DeltaFusion Lite:
+Bullish Divergence
+Price makes new lows, but
+Net Delta
+shows higher lows → selling pressure is weakening, possible bullish reversal.
+Bearish Divergence
+Price makes new highs, but
+Net Delta
+shows lower highs → buying pressure is fading, possible bearish reversal.
+Hidden Divergence
+Price makes a higher low, while
+Cumulative Delta
+makes a lower low → confirms continuation of the bullish trend.
+Exhaustion Divergence
+Strong price movement without confirmation in delta → indicates low participation, possible correction ahead.

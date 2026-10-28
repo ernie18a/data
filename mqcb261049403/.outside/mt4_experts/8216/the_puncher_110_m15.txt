@@ -1,0 +1,72 @@
+Strategy Tester Report
+ThePuncher
+AlpariUS-Demo (Build 216)
+Symbol
+EURUSD (Euro vs US Dollar)
+Period
+15 Minutes (M15) 2008.04.01 00:00 - 2008.06.24 23:45 (2008.04.01 - 2008.06.25)
+Model
+Every tick (the most precise method based on all available least timeframes)
+Parameters
+Lots=200; StopLoss=2000; TakeProfit=0; TradeAtCloseBar=true; TrailingStop=0; TrailingStep=1; BreakEven=0; MagicNumber=0; Repeat=3; Periods=5; UseAlert=false; SendEmail=true; TradeLog="MasterMind"; Slippage=3; Indicator_Setting="---------- Indicator Setting"; Crash=false; TimeFrame=0; Length=5; Method=3; Smoothing=1; Filter=5; RealTime=true; Steady=false; Color=true; Alerts=true; EmailON=false; SignalPrice=true; SignalPriceBUY=Yellow; SignalPriceSELL=Aqua; CountBars=1485;
+Bars in test
+6809
+Ticks modelled
+603516
+Modelling quality
+76.07%
+Mismatched charts errors
+52
+Initial deposit
+10000.00
+Total net profit
+25577.31
+Gross profit
+59931.34
+Gross loss
+-34354.03
+Profit factor
+1.74
+Expected payoff
+177.62
+Absolute drawdown
+1989.57
+Maximal drawdown
+17947.80 (43.37%)
+Relative drawdown
+43.37% (17947.80)
+Total trades
+144
+Short positions (won %)
+72 (75.00%)
+Long positions (won %)
+72 (70.83%)
+Profit trades (% of total)
+105 (72.92%)
+Loss trades (% of total)
+39 (27.08%)
+Largest
+profit trade
+1452.00
+loss trade
+-2626.65
+Average
+profit trade
+570.77
+loss trade
+-880.87
+Maximum
+consecutive wins (profit in money)
+24 (15650.10)
+consecutive losses (loss in money)
+6 (-11677.76)
+Maximal
+consecutive profit (count of wins)
+15650.10 (24)
+consecutive loss (count of losses)
+-11677.76 (6)
+Average
+consecutive wins
+11
+consecutive losses
+4

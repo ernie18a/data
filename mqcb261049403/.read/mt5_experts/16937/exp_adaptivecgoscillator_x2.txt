@@ -1,0 +1,156 @@
+The Exp_AdaptiveCGOscillator_X2 trend trading system based on the signals from two
+AdaptiveCGOscillator
+indicators. The first indicator determines the direction of the slow trend based on the position of the main and signal lines. The second indicator determines the moment for opening a trade, when the lines are crossed or touched. The signal is formed when a bar is closing if two conditions are met:
+Signals of the fast and slow trend match;
+Direction of the fast trend has changed.
+Input parameters for the Expert Advisor:
+//+-------------------------------------------------+
+//| Input parameters of the EA indicator           |
+//+-------------------------------------------------+
+input
+string
+Trade=
+"Trade management"
+;
+//+============== TRADE MANAGEMENT ==============+
+input
+double
+MM=
+0.1
+;
+//Share of a deposit in a deal
+input
+MarginMode MMMode=LOT;
+//lot value detection method
+input
+uint
+StopLoss_=
+1000
+;
+//Stop Loss in points
+input
+uint
+TakeProfit_=
+2000
+;
+//Take Profit in points
+input
+string
+MustTrade=
+"Trade permissions"
+;
+//+============== TRADE PERMISSION ==============+
+input
+int
+Deviation_=
+10
+;
+//max. price deviation in points
+input
+bool
+BuyPosOpen=
+true
+;
+//Permission to enter long position
+input
+bool
+SellPosOpen=
+true
+;
+//Permission to enter short position
+//+-------------------------------------------------+
+//| Input parameters of the filter indicator        |
+//+-------------------------------------------------+
+input
+string
+Filter=
+"PARAMETERS FOR SLOW TREND"
+;
+//+============== PARAMETERS FOR SLOW TREND ==============+
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H6
+;
+//1 Chart period for the trend
+input
+double
+Alpha=
+0.07
+;
+// indicator smoothing ratio
+input
+uint
+SignalBar=
+1
+;
+//bar index for getting an entry signal
+input
+bool
+BuyPosClose=
+true
+;
+//Permission to exit long positions by trend
+input
+bool
+SellPosClose=
+true
+;
+//Permission to exit short positions by trend
+//+-------------------------------------------------+
+//| Input parameters of the entry indicator         |
+//+-------------------------------------------------+
+input
+string
+Input=
+"ENTRY PARAMETERS"
+;
+//+=============== ENTRY PARAMETERS ===============+
+input
+ENUM_TIMEFRAMES
+TimeFrame_=
+PERIOD_M30
+;
+//2 Chart period for the entry
+input
+double
+Alpha_=
+0.07
+;
+// indicator smoothing ratio
+input
+uint
+SignalBar_=
+1
+;
+//bar index for getting an entry signal
+input
+bool
+BuyPosClose_=
+false
+;
+//Permission to exit long positions by signal
+input
+bool
+SellPosClose_=
+false
+;
+//Permission to exit short positions by signal
+//+-------------------------------------------------+
+String parameters with text in the code of input parameters are only for better visualization of the input parametera window of the expert.
+The AdaptiveCGOscillator_Cloud_HTF indicators in the EA are intended only for a more convenient visualization of trends in the strategy tester, in other operation modes they are inactive.
+Place AdaptiveCGOscillator.ex5, CyclePeriod.ex5 and AdaptiveCGOscillator_Cloud_HTF.ex5 compiled files to the <terminal_data_folder>\MQL5\Indicators.
+Note that the TradeAlgorithms.mqh library file allows using Expert Advisors with brokers who offer
+nonzero spread
+and the option of setting Stop Loss and Take Profit
+together with position opening
+. You can download more variants of the library at the following link:
+Trade Algorithms
+.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. Examples of deals on the chart
+Testing results for 2015 on EURUSD, slow trend on H6, entry by fast trend on M30:
+Fig. 2. Chart of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16937

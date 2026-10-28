@@ -1,0 +1,108 @@
+Two identical trading systems (for long and short deals) based on the
+ColorSchaffJCCXTrendCycle
+indicator signals that can be configured in different ways within a single EA with an ability to change the volume of a forthcoming trade depending on the results of the previous trades for this trading system. For this purpose, all input parameters can be divided into two large groups:
+Those having names starting with L are input parameters to manage long positions;
+Those starting with S are input parameters to manage short positions.
+//+----------------------------------------------+
+//| Input parameters of the EA for long trades   |
+//+----------------------------------------------+
+magic number
+input
+uint
+L_Magic=
+777
+;
+//L magic number
+//+----------------------------------------------+
+//| Input parameters of the EA for short trades  |
+//+----------------------------------------------+
+input
+uint
+S_Magic=
+555
+;
+//S magic number
+These two trading systems use different magic number and are absolutely independent on each other. Real financial markets are rarely symmetric. Absolutely different parameters of the same trading system are often needed for trading in the rising and falling market. To properly configure the EA, you should first test only one trading system, having disabled the second one using relevant switches.
+input
+bool
+L_PosOpen=
+true
+;
+//L permission to enter long positions
+input
+bool
+L_PosClose=
+true
+;
+//L permission to exit long positions
+Upon that, perform the same for the second system.
+The blocks of the Expert Advisor inputs have been added for managing volumes of opened positions:
+input
+uint
+L_TotalMMTriger=
+5
+;
+//L number of the last Buy deals to calculate stop loss
+input
+uint
+L_LossMMTriger=
+3
+;
+//L number of losing Buy deals to reduce MM
+input
+double
+L_SmallMM=
+0.01
+;
+//L Share of a deposit in a deal in case of loss
+input
+double
+L_MM=
+0.1
+;
+//L Share of a deposit in a deal during normal trading
+input
+MarginMode L_MMMode=LOT;
+//L lot setting mode
+and
+input
+uint
+S_TotalMMTriger=
+5
+;
+//S number of the last Sell deals to calculate stop loss
+input
+uint
+S_LossMMTriger=
+3
+;
+//S number of losing Sell deals to reduce MM
+input
+double
+S_SmallMM=
+0.01
+;
+//S Share of a deposit in a deal in case of loss
+input
+double
+S_MM=
+0.1
+;
+//S Share of a deposit in a deal during normal trading
+input
+MarginMode S_MMMode=LOT;
+//S lot setting mode
+In case of such inputs and when selecting from the last five trades, three of which are loss-making in a single direction, the EA opens the next trade in the same direction having the volume of 0.01 lot. If there are less than three loss-making trades out of the last five ones, the position volume is 0.1.
+For the EA to operate, the compiled
+JCCX.ex5
+and
+ColorSchaffJCCXTrendCycle.ex5
+indicators' files should be in <terminal_data_directory>\MQL5\Indicators.
+Default Expert Advisor's input parameters have been used during tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. Examples of deals on the chart with symmetrical settings
+GBPUSD H8 testing results over the year of 2017:
+Fig. 2. Testing results chart
+Fig. 3. Examples of deals on the chart with non-symmetrical settings
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22219

@@ -1,0 +1,9 @@
+Real author:
+Waddah Attar
+The indicator displays possible support and resistance lines as colored dots using Fibo levels.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+22.12.2008.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/731

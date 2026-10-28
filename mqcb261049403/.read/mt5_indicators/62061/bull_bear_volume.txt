@@ -1,0 +1,6 @@
+This indicator splits volume into buyer volume and seller volume, and a visualization of the volume pressure is drawn with overlaying histograms.
+The indicator was initially part of trading software called "
+Amibroker".
+It was discussed on the forum, and was initially requested to be converted to mql4, however I decided to convert it to mql5 with my best understanding of the original indicator.
+https://www.mql5.com/en/forum/177976/page2#comment_4348326
+While I am the author of this mql5 conversion, I credit the original author Nick Molchanoff in the code who came up with the original design.

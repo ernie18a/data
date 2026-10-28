@@ -1,0 +1,8 @@
+One more "experiment" using the CCI.
+This indicator can calculate CCI of CCI of CCI of CCI ... up to "level" 25.
+When level 1 (one) is used, it is the same as "regular" CCI. After that, CCI of CCI is calculated and so on (each new step uses previous step cci value instead of the price - it is calculating CCI of CCI instead of CCI of price). Levels are limited to 25 purely for practical reasons (the CCI becomes in-recognizable after some level, but it can easily be extended in the code to calculate CCI to any (reasonable) level.
+The rest of the usual stuff is already included :
+floating levels
+or quantile levels.
+Price smoothing/filtering - including the price smoothing methods. Coloring choices and alerts. Multi time frame ...
+PS: higher levels of CCI recursion should be used with care. The recursive method is highly experimental and should be used as such - do not use it based on a first impression but please do the testing part thoroughly before any usage.

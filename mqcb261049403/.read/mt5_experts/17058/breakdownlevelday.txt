@@ -1,0 +1,29 @@
+Author of the idea
+—
+Vladimir Khlystov
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+The Expert Advisor trades daily breakouts. It places pending BuyStop and SellStop orders.
+Quote from the author of the idea:
+Trading daily breakouts.
+Every day at the specified TimeSet time ("terminal time") pending orders are placed.
+After one of the pending orders triggers the second order is deleted.
+The pending Buy Stop orders is immediately placed with SL and TP (SL and TP sizes can be changed in the settings), the Buy Stop order is placed at the High of the trading day, above the price by Delta points.
+The pending Sell Stop order is placed immediately with SL and TP. The Sell Stop order is placed at the High of the trading day, below the price by Delta points.
+Description of Variables
+:
+TimeSet = "07:32" — Time for placing the stop orders. If TimeSet = "00:00", the EA trades the breakout of the previous day.
+Delta — Above or below the daily extremums.
+SL — Stop Loss in points.
+TP — Take Profit in points.
+risk — If 0, uses fixed lot.
+NoLoss — If 0, breakeven is disabled.
+trailing — If 0, trailing is disabled.
+Lot — Used only if risk = 0.
+OpenStop — Place stop orders if there is an open order present.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17058

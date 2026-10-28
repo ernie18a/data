@@ -1,0 +1,9 @@
+Author: Gordago Software Corp
+Adviser Channels, uses indicator
+МА
+.
+-------------------------
+Parameters of testing
+Period: M5.
+Symbol: EURUSD.
+Model: For the prices of opening.

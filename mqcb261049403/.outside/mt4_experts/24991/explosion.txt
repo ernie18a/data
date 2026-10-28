@@ -1,0 +1,95 @@
+input
+double
+_Lots =
+0.01
+;
+// Lot
+input
+int
+_SL =
+20
+;
+//SL
+input
+int
+_TP =
+10
+;
+//TP
+input
+int
+_MagicNumber =
+4425
+;
+//Magic
+input
+int
+_TrailingStop =
+0
+;
+//Trailing Stop
+input
+int
+_TrailingStep =
+1
+;
+//Trailing Step
+input
+string
+_Comment =
+"FX BOT"
+;
+//Comments
+input
+int
+_Slippage =
+3
+;
+//Slippage
+input
+bool
+_OnlyOneOpenedPos =
+true
+;
+//Only one pos per bar
+input
+bool
+_AutoDigits =
+true
+;
+// Autodigits
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// ---
+bool
+op_buy_sig()
+{
+if
+(((e_High() - e_Low()) > ((e_High1() - e_Low1()) *
+2
+)) && (e_Close() > e_Open()))
+return
+true
+;
+// ---
+return
+false
+;
+}
+// ---
+bool
+op_sell_sig()
+{
+if
+(((e_High() - e_Low()) > ((e_High1() - e_Low1()) *
+2
+)) && (e_Close() < e_Open()))
+return
+true
+;
+// ---
+return
+false
+;
+}
+The optimal timeframe is 4H. The idea of the adviser is extremely simple. The explosive effect of the current price is used (the reasons can be any). It is at this moment that the position is opened, in the direction of the impulse.
+This strategy allows you to effectively use the trailing stop to accompany the position. Stop Loss, place no more than 20 points.

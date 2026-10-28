@@ -1,0 +1,5 @@
+Simple scripts that help trader draw a weekly and monthly pivot with support and resistance lines of current week or month.
+Recommendations:
+Accompany the submitted code with a meaning-bearing name and a brief description.
+Attach a brief explanation to the code for users to make head or tail of it.
+Insert illustrating images where applicable.

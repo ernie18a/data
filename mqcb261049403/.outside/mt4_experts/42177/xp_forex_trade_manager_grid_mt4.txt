@@ -1,0 +1,17 @@
+Forex Trade Manager Grid MT4 helps you to managing orders and achieve the goal. You only need to place first order with Take Profit, run EA and set in params profit (pips) you want to get. EA will be managing your positions, as will gather appointed number of pips. It’s a strategy for management of manual trades opened on current pair. The strategy adds positions to currently opened trades in a grid management (with chosen distance in pips between trades) - up to 15 trades (or less). First up to 3 trades are managed with individual take profits, after 4th trade the EA close whole grid on common level (break-even). After closing the trade on TP, it can be renewed. Whole cycle can be closed if loss is bigger than allowed risk balance percentage.
+Parameters:
+"Additional Trade Params":
+AddNewTradeAfter – distance in pips from last trade after which trades are added to the grid
+“Take Profit”
+TakeProfit1Total (number) – total TP in pips required from first position
+TakeProfit1Partitive – initial TP in pips for the first position in cycle
+TakeProfit1Offset – minimum distance in pips from take profit of last closed first position required to renew this first trade
+TakeProfit 2/3 – individual TP in pips for the second/third position in cycle
+TakeProfit 4/5/6/…15Total – total TP in pips from all positions in cycle (for 4 or more trades opened)
+“TradeParams”
+MaxOrders – maximum allowed number of trades in grid
+Risk Balance % – maximum allowed loss as percentage of the account balance (closes all opened positions)
+Lots – lot size for trades opened by the EA
+Slippage – allowed slippage in points
+Info:
+All parameters for trades and functions are settable in the parameters of the EA. The Forex Trade Manager Grid also display on the chart an information about the profit/loss from current cycle in pips and account currency.

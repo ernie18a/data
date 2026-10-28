@@ -1,0 +1,11 @@
+This is a very simple EA that trades based on Aroon indicator (also attached).
+It works on
+M15 TF
+and search for Aroon UP/DOWN cross. It is possible to use variables aroonUpTrend and aroonDwTrend to have a confirmation H1 of the trend.
+It use also a WPR oscillator to get a good entry point and also for closing orders.
+It needs, for sure, some optimization and other filters but i think that the basic of the logic is good!
+It works
+REALLY
+with
+only open prices
+! Remember that if you want to add some functions like breakeven and trailing stop based on instant price you will need to backtest it as every tick mode.

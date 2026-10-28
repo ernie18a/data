@@ -1,0 +1,6 @@
+Aroon oscillator is usually not associated with to much flexibility. It is its nature.
+This version is breaking that. Instead of using fixed levels to find out trends / overbought / oversold conditions, this version is introducing dynamic levels in order to change that rigidness. Levels are calculated using quantile bands (some more information on quantile calculation can be found here:
+https://en.wikipedia.org/wiki/Quantile
+) and that changes the way how Aroon oscillator behaves significantly.
+Entries (and exists) are signaled much faster and, with some parameters experimenting, it can be fine tuned to work in a ways that Aroon oscillator never could be used.
+Indicator can use any price combination(s) for calculation (original Aroon oscillator could use only high an low), is multi time frame and already has all the usual alerts built in

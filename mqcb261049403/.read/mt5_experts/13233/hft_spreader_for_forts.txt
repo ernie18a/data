@@ -1,0 +1,12 @@
+Inputs:
+position size
+in lots,
+spread
+— number of minimum price steps. For example, the value of 4 set for MIX-9.15 symbol means that the minimum price change step for this symbol (from its contract specification) equals 25, therefore, the EA will start to place orders when the spread is 4*25=100.
+Operating principle:
+If all conditions for trading are met, then the EA places 2 limit orders by best prices, i.e. if the best Bid price was 167000, then the EA places the order by 167025 (for MIX-9.15), then it waits for the orders to be accepted. After the orders are accepted, i.e. the position is opened, the EA will place only an opposite order with doubled volume to close the position and reverse. If the orders weren't accepted, and then the spread has been extended, then the EA will remove the orders and will always ensure that our orders have the best prices from the closest best price by 1 minimum step of the symbol's price change.
+On fast markets, it may work with a delay and fail to reopen orders by best prices in time.
+Video:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13233

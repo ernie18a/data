@@ -1,0 +1,2 @@
+This particular script will find the biggest winning / losing trade among a list of trades and close them . if you want either of them then comment the code block accordingly.
+there is also symbol and magic number filter

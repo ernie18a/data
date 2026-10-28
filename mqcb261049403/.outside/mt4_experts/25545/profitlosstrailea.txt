@@ -1,0 +1,46 @@
+This Expert Advisor is a tool for managing orders.
+The EA can
+Place/remove a take profit.
+Place/modify/delete a stop loss.
+Manage all orders or specific ones having a certain ID.
+Parameters
+ManageOrders
+:
+Order_By_Order = Manage separately each order.
+Same_Type_As_One = manage same orders (all buy or all sell as one order, like basket system).
+PutTakeProfit
+: Put take profit in orders (yes/no).
+TakeProfitPips
+: Take Profit in pips.
+PutStopLoss
+: Put stop loss in order (yes/no).
+StopLossPips
+: Stop Loss in pips.
+UseTrailingStop
+: Use trailing stop loss (yes/no).
+PutStopLossAfter
+: Put stop loss in order if order has profit x pips.
+TrailingStop
+: Trailing stop loss in pips (distance to follow order).
+TrailingStep
+: Steps in pips to use for move stop loss.
+UseBreakEven
+: Use Break Even (Put stop loss only in profit) (yes/no).
+BreakEvenAfter
+: Put stop loss if order has profit x pips.
+BreakEvenPips
+: Pips from order open price to put stop loss.
+DeleteTakeProfit
+: Delete Take Profit if there is in order (yes/no).
+DeleteStopLoss
+: Delete Stop loss if there is in order (yes/no).
+MagicNumber
+:
+>0: modify identifier orders (with special ID, this number is ID).
+0: modify all orders (from ea or manually).
+-1: modify only manual orders.
+-2: modify only chart symbol orders.
+SoundAlert
+: Expert play sound in each operation.
+ColorBackground
+: Option to change color comments' background.

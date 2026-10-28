@@ -1,0 +1,2 @@
+Author: Idea from John Taylor
+An implementation of the original idea as is, without any changes.

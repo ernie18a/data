@@ -1,0 +1,93 @@
+Bounce Strength Indicator (BSI) shows the strength of bounce. It now works in trend and uses
+Tango Line
+calculations.
+There is no difference in the
+basic concept
+, but I tried to remake it from a different angle.
+I used the width of the range as a measure to measure (like a classical oscillator). This version does not use the width of the range. It uses the deviation from the center line instead. And the center line is the moving average of the Tango Line.
+double
+ratio=
+0
+;
+//--- Bar Spread
+double
+sp=(high[k]-low[k]);
+//--- Not DownBar
+if
+(!(close[k-
+1
+]-sp*
+0.2
+>close[k]))
+   {
+    ratio=-
+1
+*(low[k]/TangoMaBuffer[k])+
+2
+;
+    sumpos+=(close[k]-low[k])*ratio;
+   }
+//--- Not UpBar
+if
+(!(close[k-
+1
+]+sp*
+0.2
+<close[k]))
+   {
+    ratio=-
+1
+*(high[k]/TangoMaBuffer[k])+
+2
+;
+    sumneg+=(high[k]-close[k])*ratio;
+   }
+Display:
+Plus histogram — shows the bounce strength up from lows.
+Minus histogram — shows the bounce strength down from highs.
+Signal line — difference between plus/minus [ (plus - minus) * abs((plus-minus) / (plus+minus)) ].
+Blue box — uptrend strength (average of Signal line).
+Red box — downtrend strength (average of Signal line).
+Slow Line — average of Signal line (long span).
+Chart window is Tango Line (version 1.1).
+Trending:
+Settings:
+//--- input parameters
+input
+int
+InpRangePeriod=
+20
+;
+// Range Period
+input
+int
+InpSlowing=
+3
+;
+// Slowing
+input
+int
+InpAvgPeriod=
+14
+;
+// Avg Period
+input
+bool
+InpUsingVolumeWeight=
+true
+;
+// Using TickVolume
+input
+double
+InpReversalNoiseFilter=
+5
+;
+// Noise Filter
+input
+color
+InpSigColor=DarkSlateBlue;
+// Signal Color
+input
+color
+InpSlowColor=Navy;
+// Slow Color

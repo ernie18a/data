@@ -1,0 +1,9 @@
+The scanning of all TF with the refreshing of windows of opened charts, the recording to a file of names and trading conditions by all symbols from the Market Watch window are performed. So, the script uploads the history of all symbols of the terminal in the hardest manner.
+If the history is not uploaded using this method, then there is a problem with the broker's server.
+The script allows to write the names and the trading conditions of all symbols from the Market Watch window to a file of two types ("*.TXT", "*.CSV").
+In comparison with my previous scripts for quotes uploading this one has maximum possible reliability. You can throw out my previous scripts.
+Advices:
+The limitation by RAM or PC's performance are minimal. There is no need to specify them here. I ran the uploading on three terminals simultaneously. This maybe is not an end.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8443

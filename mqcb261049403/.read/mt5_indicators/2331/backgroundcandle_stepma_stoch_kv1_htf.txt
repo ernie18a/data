@@ -1,0 +1,11 @@
+The indicator draws candlesticks of a larger timeframe as color filled rectangles using
+DRAW_FILLING
+buffers. Rectangles are color filled in accordance with the values of the
+StepMA_Stoch_KV1
+indicator.
+Depending on trend direction defined by the position of the original indicator histogram relative to zero, the candlestick body is painted in dark green or orange, shadows are painted in light-lime or yellow.
+The indicator requires the compiled indicator file StepMA_Stoch_KV1.mq5. Place it to the terminal_data_folder\MQL5\Indicators\.
+Figure 1. Indicator BackgroundCandle_StepMA_Stoch_KV1_HTF
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2331

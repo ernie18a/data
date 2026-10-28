@@ -1,0 +1,12 @@
+This script convert historical data from M1 to M1, M5, M15, M30, H1, H4, D1, W1 and MN, specifying the start date.
+This is a basic flow.
+1. Download or import your historical data.
+2. Close all charts and restart MT4.
+3. Menu->File->Open Offline, open an offline chart of the target symbol M1.
+*NOTICE* The target offline chart must be marked in grey.
+4. Execute "period_converter_all_kai" from the script folder.
+5. Enter "Start Date" and press OK.
+6. Wait for the message "Converting to period(1), bars to end: 0".
+7. Restart MT4 and check all timeframes.
+More detailed procedure with picture,
+https://www.mql5.com/en/blogs/post/751842

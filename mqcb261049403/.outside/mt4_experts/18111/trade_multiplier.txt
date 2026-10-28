@@ -1,0 +1,14 @@
+This expert will duplicate a trade with the preset lot multiplier on the same account. No cross-account functionality, trades only on the same account. Can be synced on a virtual host.
+Tested with FxPro MetaTrader 4, version 4.00, build 1065, CALM signal and on MQL5 London 4 virtual host.
+Can be attached to any chart, no matter which symbol it shows, it will copy all trade. If you enable it to do live trading as an EA, please test on a demo account prior to enabling live trade to prevent malfunction. Do not enable it on multiple charts on the same account at the same time. Will handle max 100 simultaneous orders at the same time (rewrite/increase this, if you want, see code). Read the name of the input variables and think about them, they describe themselves exactly what they are responsible for.
+WARNING 1
+: Use at your own risk, there is
+ABSOLUTELY NO GUARANTEE that it works with your MT4 client
+.
+WARNING 2
+: Remember, that multiplying a trade with same or increased lot size will also multiply your risk. Calculate with it in your MM.
+WARNING 3
+: Author does not take any responsibility or claim for your losses that connected to, or may come from this EA's possible malfunction. Remember: it's free.
+PS
+: DO NOT ask me for additional features, I will update if I want.
+Thanks to a Russian coder, whose code I reused for this EA. Sorry, I can't recall his name.

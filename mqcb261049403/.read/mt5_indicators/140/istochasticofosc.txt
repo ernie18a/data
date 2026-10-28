@@ -1,0 +1,100 @@
+The Stochastic of all
+oscillator-like
+indicators, included in
+MetaTrader 5
+client terminal.
+Parameters:
+Indicator
+- type of the indicator;
+Volume
+- volume type;
+Period_1
+- 1st period;
+Period_2
+- 2nd period;
+Period_3
+- 3rd period;
+Price
+- applied price type;
+Method
+- smoothing method;
+Shift_1
+- shift 1;
+Shift_2
+- shift 2;
+Shift_3
+- shift 3;
+Line
+- selected line of the indicator;
+StPeriod_K
+- Stochastic К period;
+StPeriod_D
+- Stochastic D period;
+StPeriod_S
+- Stochastic S period;
+StMethod
+- Smoothing method for the signal line.
+Parameters, used for the each indicator:
+AD
+: Volume;
+ADX
+: Period_1;
+ADXW
+: Period_1;
+ATR
+: Period_1;
+BEARS
+: Period_1;
+BULLS
+: Period_1;
+BWMFI
+: Volume;
+CCI
+: Period_1, Price;
+CHAIKIN
+: Period_1 (Fast), Period_2 (Slow), Method, Volume;
+DEMARKER
+: Period_1;
+FORCE
+: Period_1, Method, Volume;
+GATOR
+: Period_1, Shift_1 (Jaw), Period_2, Shift_2 (Teeth), Period_3, Shift_3 (Lips), Method, Price;
+MACD
+: Period_1 (Fast), Period_2 (Slow), Period_3 (Signal), Price;
+MFI
+: Period_1, Volume;
+MOMENTUM
+: Period_1, Price;
+OBV
+: Volume;
+OSMA
+: Period_1 (Fast), Period_2 (Slow), Period_3 (Signal), Price;
+RSI
+: Period_1, Price;
+RVI
+: Period_1;
+STDDEV
+: Period_1, Method, Price;
+STOCHASTIC
+: Period_1 (K), Period_2 (D), Period_3 (S), Method, Price;
+TRIX
+: Period_1, Price;
+VOLUMES
+: Volume;
+WPR
+: Period_1.
+Note.
+The Line parameter may be one of the following:
+For STOCHASTIC and MACD
+: MAIN and SIGNAL.
+For ADX and ADXW
+: ADX_ADX, ADX_PDI and ADX_MDI.
+For GATOR
+: GATOR_UPPER_HISTOGRAM and GATOR_LOWER_HISTOGRAM.
+For other indicators
+: MAIN.
+Because of the fact, that some of the different Line identifiers have the same values, after the change of the Line value and opending the indicator properties window, you may see the different Line value. It's not an error, the other identifier can be plotted, but with the same value, as has been selected before. The different identifiers with same values are used for the convience.
+The same for the Price parameter - the CLOSECLOSE and LOWHIGH are added for the Stochastic, the standard values for the other indicators.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/140

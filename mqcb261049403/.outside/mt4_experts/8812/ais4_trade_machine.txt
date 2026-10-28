@@ -1,0 +1,11 @@
+AIS4 Trade Machine
+Modification: 40000
+Release Date: 2009.04.07
+Copyright (C) 2009, MetaQuotes Software Corp.
+https://www.metaquotes.net
+Copyright (C) 2009, Airat Safin
+https://www.mql5.com/en/users/ais
+Free Open Source Software
+AIS4 Trade Machine: Features
+1. Live Trading mode: trade in real time with automatic risk management
+2. SuperTrainer mode: trade in Tester just like in real time

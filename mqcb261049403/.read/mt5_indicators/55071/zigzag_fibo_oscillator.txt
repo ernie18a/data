@@ -1,0 +1,13 @@
+This is a quirky version of the Zigzag which is based on the MetaQuotes algorithm.
+Here are some differences and advancements:
+- The zigzag has two modes "Oscillator" and "HighLow". The oscillator mode will show a visual oscillation of the zigzag swings, even though it's not a true oscillator and it doesn't have a fixed range.
+The extreme low becomes the symbol point value, and the extreme high is the highs as normal in this mode.
+- The HighLow mode respects the prices of extreme highs and lows (as the normal Zigzag does). Fibonacci retracement levels are added, and the levels are dynamically scaled so that, visually, they remain fixed in place. It's not possible to scale a price chart adequately when prices can vary greatly in magnitude over time, so the dynamic scaling of the Zigzag in this mode only applies to the last extreme swing price and current extreme swing price.
+- In each of the modes, the current leg is drawn even if it is not confirmed yet, and it will track the price that is specified in the inputs. There is a choice to track open, close, high, low, weighted, or typical price for the current bar.
+The idea behind the current unconfirmed leg being drawn is to help see what is happening in real-time, and to help with that, the colouring of the current leg is carefully applied.
+When the upward leg is currently in the process of being confirmed, it will color blue when the price is bullish, and will color grey for every bearish divergence.
+When the downward leg is in the process of being confirmed, it will color red when the price is bearish, and will color grey for every bullish divergence.
+To help depict the trend color of the unconfirmed leg with real-time price action, volume is also checked. The bull color will override the current leg color if there's significant bullish volume, and likewise, the bear color will override the current leg color if there's significant bearish volume.
+Version 1.01 uploaded. Some bugs noticed and fixed.
+---------------------------------------------------------------------------------------------------------------------
+Version 1.02 uploaded. More customizability with scaling, some minor improvements, can now toggle fib levels, and improved price direction tracking with unconfirmed leg in the oscillator mode

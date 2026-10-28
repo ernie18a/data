@@ -1,0 +1,52 @@
+Brief Description
+Session Boxes is a custom indicator for MetaTrader 5 that draws color-coded rectangular boxes on the chart representing the high-low range of the Asia, London, and New York trading sessions. The indicator uses H1 data internally and supports configurable session hours in GMT along with a broker server offset parameter.
+What ideas is the code based on?
+The indicator is built on the concept of trading session analysis — the observation that price behavior and volatility differ across the three major global market sessions: Asia (Tokyo), London (Europe), and New York (US). By identifying the high-low range of each session per day, traders can mark significant price levels for use in breakout, liquidity, and range-based strategies.
+Technically, the indicator converts broker server time to GMT by applying a configurable hour offset (InpBrokerGMTOffset). It then determines whether each H1 bar falls within a given session's GMT window using an hour-range check that correctly handles overnight sessions where the start hour is greater than the end hour — cross-midnight logic is handled by the IsHourInSession function. A per-day tracking mechanism ensures that one rectangle object is drawn per session per calendar day, spanning from the session's first to last H1 bar and covering the full high-low range of that period.
+How can the indications be interpreted?
+Each drawn rectangle represents the complete high-low range of a trading session for a single trading day. Three session boxes are displayed:
+Asia box (default color: Slate Blue) — marks the overnight consolidation range before the London open. A narrow Asia range often precedes a significant directional move during the London or New York session. Traders use the Asia high and low as reference levels for liquidity sweeps and breakout entries.
+London box (default color: Sea Green) — captures the European session range, typically the most active and directional period for XAUUSD and major forex pairs. Price that breaks and closes outside the London box during the New York session may indicate continuation or reversal.
+New York box (default color: Goldenrod) — represents the US session range. The overlap between the London and New York sessions (approximately 12:00 to 16:00 GMT) generates increased volatility, and both session boxes will cover that shared period. The New York box is useful for identifying late-session range extensions or consolidations.
+All boxes are drawn on the chart background so they do not obscure candlestick visibility. The number of historical days displayed is controlled by InpBoxLookbackDays.
+Suitable Symbols and Timeframes
+The indicator can be applied to any chart timeframe — it fetches H1 data internally regardless of the period selected for the chart. It is suitable for any liquid trading symbol; it is particularly relevant for instruments with strong session-based behavior, such as XAUUSD (Gold), major forex pairs (EURUSD, GBPUSD, USDJPY), and indices (US30, NAS100). Before using in live conditions, verify the InpBrokerGMTOffset value matches the GMT offset of the broker server.
+Description of #include Files Used
+This code does not use external #include files.
+Description of Main External Variables
+Variable
+Default
+Description
+InpAsiaStartGMT
+0
+Asia session start hour in GMT (0-23)
+InpAsiaEndGMT
+8
+Asia session end hour in GMT (0-23)
+InpLondonStartGMT
+7
+London session start hour in GMT (0-23)
+InpLondonEndGMT
+16
+London session end hour in GMT (0-23)
+InpNYStartGMT
+12
+New York session start hour in GMT (0-23)
+InpNYEndGMT
+21
+New York session end hour in GMT (0-23)
+InpBrokerGMTOffset
+2
+Broker server time offset relative to GMT in hours (adjust to match your broker)
+InpBoxLookbackDays
+50
+Number of past calendar days for which session boxes are drawn on the chart
+InpAsiaColor
+clrSlateBlue
+Fill color of the Asia session rectangle
+InpLondonColor
+clrSeaGreen
+Fill color of the London session rectangle
+InpNYColor
+clrGoldenrod
+Fill color of the New York session rectangle

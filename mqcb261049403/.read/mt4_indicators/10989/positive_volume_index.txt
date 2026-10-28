@@ -1,0 +1,6 @@
+Description:
+This indicator, recognizing trends in an early stage, can be used to get ready for a break-out scenario.
+The indicator depicts the Positive Volume Index (PVI), smoothed by the factor MA_PERIOD (default=2). For comparison purpose, the EMA with period ME_PERIOD (default=10) is also added to the indicator window.
+Notice:
+The code is at it is. The author does not carry liability for any errors or mistakes in the program.
+Image:

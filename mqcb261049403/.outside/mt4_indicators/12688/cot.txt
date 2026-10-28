@@ -1,0 +1,9 @@
+This indicator uses reports by CFTC. These reports are published on the website
+www.cftc.gov
+in two formats, "Excel" and "Text".
+Select reports in text format of the category "Futures-and-Options Combined Reports", or "Futures Only Reports".
+Download five files and then rename them. All of the files in the archives have the same name annualof.txt, or annual.txt, so they must be renamed. The file for current year must be renamed in 2015.txt.
+The second file for past year must be renamed in 2014.txt and so on. Old version of the indicator used files type of A.txt, B.txt, C.txt, D.txt, E.txt. So as not to rename these files every year, I began to use files type of year.txt, in new version of the indicator.
+Then place the renamed files it the folder MQL4\Files. After that, you can start to use the indicator.
+The indicator creates files and global variables with names code.bin. To update these files, you should change values of global variables from 0 to 1, (press F3). Then click "Refresh" to refresh the chart. If you want to update all of files at once, use global variable named "Update files code.bin".
+The variable "Code", which you can see in the settings of the indicator, means market code of a futures. For example, the code of wheat is equal 001602.

@@ -1,0 +1,30 @@
+This is the version 2 of my script to export the trade history from MT5 selected between two dates. The resulting file is CSV that can be opened/imported with any spreadsheet software.
+The CSV can be found in the folder \MQL5\Files
+Following data columns are exported:
+Position ID
+Type
+Symbol
+Volume
+Open Date/Time
+Open Price
+Close Date/Time
+Close Price
+TakeProfit
+, data not available using HistoryOrderGetDouble(order_ticket, ORDER_TP)
+StopLoss
+, data not available using HistoryOrderGetDouble(order_ticket, ORDER_SL)
+Position PnL
+Position PnL (points)
+Swap
+Swap (points)
+Commission
+Commission (points)
+Total PnL
+Total PnL (points)
+MagicNumber
+Comment
+, this includes the comment of each deal separated by /
+Deal in ID
+, this includes the ticket of the in deal
+Deal out ID
+, this includes the ticket of each out deals

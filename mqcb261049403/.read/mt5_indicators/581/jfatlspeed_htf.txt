@@ -1,0 +1,14 @@
+This indicator shows the direction of the acceleration of
+JFatlSpeed
+price from a larger timeframe at a smaller one.
+Besides, the indicator alerts about the speed current direction at each change of a large timeframe bar.
+Two colors of large dots are used for speed display. If the speed is positive and raising, the dot color is lime. If the speed is positive but falling, the dot color is yellow. The opposite case is also defined by dot colors. If the speed is negative and falling, the dot color is red. If the speed is negative but raising, the dot color is magenta.
+It must be noted that this indicator does not show the current trend direction but only its first derivative or the speed. Therefore, it is better to filter it using a trend indicator.
+Place the
+ColorJFatlSpeed
+indicator compiled file to MQL5\Indicators\. Indicator ColorJFatlSpeed uses the classes of the SmoothAlgorithms.mqh library. Working with that class was described in details in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/581

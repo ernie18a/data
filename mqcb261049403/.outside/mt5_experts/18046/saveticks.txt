@@ -1,0 +1,28 @@
+This utility program is designed for recording tick quotes in the text (CSV) and binary (BIN) format. Files are saved to the MQL5\Files folder. Quotes are recorded with a constant sampling frequency to ensure a convenient analysis of ticks in mathematical programs.
+Input Parameters
+Recording interval
+- the interval of tick recording, milliseconds.
+The symbols chosen as...
+- method of symbol selection for writing.
+All symbols
+- writing all symbols provided by the broker.
+MarketWatch symbols
+- writing all symbols from the Market Watch.
+Load list of symbols from file
+- the list of symbols is loaded from a file.
+Name of file with all symbol names
+- the name of the file with the list of symbols, e.g. "InputSymbolList.txt".
+Format recording
+- CSV or Binary.
+Time format
+- time setting. It can be either server time or computer time.
+An example of algorithm with "Load list of symbols from file".
+Run the Expert Advisor with any parameters, unload the EA.
+The resulting file "\MQL5\Files\AllSymbols_SaveTicks.txt" will contain the names of all symbols provided by the broker.
+Rename it, for example to "InputSymbolList.txt".
+Edit "InputSymbolList.txt" leaving required symbols in it. The first line should show the number of symbols in the file. See the example in the download list at the top of this page.
+Run the EA again with necessary settings, and it will record ticks for symbols form the list.
+Check the "\MQL5\Files\*****" folder , it should have files with names like EURUSD_SaveTicks.csv.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18046

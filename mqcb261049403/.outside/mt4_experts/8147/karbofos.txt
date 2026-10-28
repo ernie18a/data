@@ -1,0 +1,8 @@
+The gist of the EA is the 15 pending BuyLimit and 15 pending SellLimit orders (the distance is specified by the "shag" value) are placed, then some of them trigger and we wait while the price goes to the opposite direction by the specified value - my_profit. If the price doesn't return to the necessary side, then the loss is fixed - my_stop.
+The problem is to search the necessary algorithm of floating StopLoss specifying or the level of orders placing. I've tested it only with the pound, but I think that it will work with the others (with the other parameters). If anybody has any suggestions I will appreciate for the help. The picture:
+Что-то такое выходит!
+Optimization with the stop.
+Optimization without stops (shows a good result, but discharge occurs one "fine" day).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8147

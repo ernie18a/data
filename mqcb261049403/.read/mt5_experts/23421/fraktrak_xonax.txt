@@ -1,0 +1,28 @@
+Idea by:
+Bakhytzhan Abzalbekov
+mq5 code by:
+barabashkakvn
+ATTENTION: It is recommended to run this EA on hedge accounts ONLY! The EA can open BUY and SELL positions at the same time!
+An
+EA based on
+indicator iFractals. Its basic idea is breaking through the fractal.
+For parameter
+Reverse
+equalling to
+false
+, the EA generates signals:
+When breaking through the fractal upwards, Fractals Up, a BUY position will be opened
+When breaking through the fractal downwards, Fractals Down, a SELL position will be opened.
+the total number of positions is unlimited.
+For parameter
+Close opposite
+equalling
+true
+, before opening a position all opposite positions will be closed first. For parameter
+Close opposite
+equalling
+false
+, then the EA can hold both BUY and SELL positions in the market at the same time.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23421

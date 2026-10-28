@@ -1,0 +1,19 @@
+The Expert Advisor closes all positions opened on the account, if the current server time has exceeded the time limit specified in the input variables.
+//+----------------------------------------------+
+//| Expert Advisor input parameters              |
+//+----------------------------------------------+
+input
+datetime
+StopTime=
+D'2030.01.01 23:59'
+;
+//Position closing time
+input
+uint
+Deviation_=
+20
+;
+//max price deviation in points
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17910

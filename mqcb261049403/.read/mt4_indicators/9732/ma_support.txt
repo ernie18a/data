@@ -1,0 +1,1 @@
+You may change M1Period - MnPeriod, ma_method(MODE_Ma from 0 to 3) and applied_price(PRICE_Ma from 0 to 6).

@@ -1,0 +1,55 @@
+An Expert Advisor for closing all positions, in case of the total profits on those positions exceeded the Take Profit level fixed in inputs, or where it is necessary to close all positions beyond the time interval fixed in the settings. In a manner, this EA works as a global take profit function for all open positions simultaneously.
+//+----------------------------------------------+
+//|  Options to calculate the profits            |
+//+----------------------------------------------+
+enum
+TakeMode
+  {
+   ENUM_PERCENT,
+//profits in percents of the deposit
+ENUM_CARRENCY
+//profits in deposit currency units
+};
+//+----------------------------------------------+
+//| Input parameters of the EA indicator         |
+//+----------------------------------------------+
+input
+TakeMode LMode=ENUM_PERCENT;
+//method of detecting profits
+input
+double
+TakeProfit=
+100.0
+;
+//take profit level
+input
+bool
+TimeTrade=
+true
+;
+//Allow trading in the specified interval
+The EA provides an option of closing positions only beyond the time interval defined in its input variables:
+input
+bool
+TimeTrade=
+true
+;
+//Permission to trade by time intervals
+input
+HOURS StartH=ENUM_HOUR_0;
+//Trading start (Hours)
+input
+MINUTS StartM=ENUM_MINUT_0;
+//Trading start (Minutes)
+input
+HOURS EndH=ENUM_HOUR_23;
+//Trading end (Hours)
+input
+MINUTS EndM=ENUM_MINUT_59;
+//Trading end (Minutes)
+Two variables (hours and minutes) are provided for the operation start time, and two similar variables for the end time.
+Default settings enable the Expert Advisor to trade the whole trading session from 0:00, while all positions are closed at 23:59.
+If the start time is later than the specified end time, the Expert Advisor will close positions the next day, at the specified time.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21342

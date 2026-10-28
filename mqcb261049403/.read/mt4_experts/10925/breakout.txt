@@ -1,0 +1,3 @@
+On Monday the EA is opening position only after MondayHour.
+On Friday  the EA is opening position only before FridayHour.
+You can switch off the TrailingStop by putting 0 (zero) to this Input parameters.

@@ -1,0 +1,18 @@
+Most traders check the spread and forget the swap. Meanwhile a single night of holding can quietly cost more than the spread you paid to enter - and on many instruments the two directions differ by a factor of ten or more. This script makes those numbers visible in ten seconds.
+WHAT IT PRINTS
+For every open position:
+- what tonight will cost for this exact position, in your account currency;
+- how much swap it has already paid and how many days it has been held.
+For every symbol (position symbols first, then the visible Market Watch):
+- swap per night for 1.0 lot, LONG and SHORT separately, converted to account currency;
+- the same cost annualized (night % of notional x 360) - "holding this long costs 6% a year" is a number worth knowing before any swing trade;
+- the broker's markup per side: (|swap long| + |swap short|) / 2. The underlying interest rate enters the two directions with opposite signs and cancels out of this sum, so what remains does not depend on rates at all - it is the broker's own margin. Use it to compare brokers: this number is what you pay whichever direction you trade;
+- the triple-swap day for the symbol (the night charged x3).
+HOW IT HANDLES SWAP MODES
+Points, deposit-currency and interest-rate modes are converted exactly. Where a reliable conversion is impossible (exotic modes, foreign-currency swaps) the script prints the raw value with a currency note, or "n/a" - an honest gap instead of a confidently wrong number.
+INPUTS
+- ScanMarketWatch - also scan visible Market Watch symbols (default true);
+- MaxSymbols - Market Watch scan limit, keeps the report readable (default 20);
+- ShowChartSummary - short summary on the chart in addition to the full table in the Experts log.
+NOTES
+Values are what your broker reports at the moment of the run - re-run after rollover if you want fresh numbers, and verify critical decisions against the broker's contract specifications. Annualization uses the 360-day convention. The script only reads symbol properties; it never trades.

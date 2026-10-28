@@ -1,0 +1,26 @@
+Description
+This expert is designed to modify the StopLoss of orders.
+The trading robot can be applied to any symbol window. It tracks all open positions and works with each of them.
+All the necessary information is displayed in the corner of the screen.
+Settings
+UseOneAccount
+UseCloseOneThird - if true, one third of the position is closed when LevelProfit1 is reached;
+LevelProfit1           - when this level is reached, the stop loss is moved to LevelMoving1;
+LevelMoving1        - 1 value to move the stop loss;
+LevelProfit2           - when this level is reached, the stop loss is moved to LevelMoving2;
+LevelMoving2        - 2 value to move the stop loss;
+LevelProfit3           - when this level is reached, the stop loss is moved to LevelMoving3;
+LevelMoving3        - 3 value to move the stop loss;
+TrailingStop           - the level to activate trailing;
+TrailingStep           - trailing step;
+Slippage
+ShowComment      - if true, the data is displayed on screen;
+UseSound             - if true, an audio signal is triggered when moving StopLoss order.
+Advice
+TrailingStop level
+should exceed LevelProfit3. Otherwise, the Expert Advisor will not work correctly.
+Thank you for your time and Good Luck!
+Best regards, mpeugep.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8674

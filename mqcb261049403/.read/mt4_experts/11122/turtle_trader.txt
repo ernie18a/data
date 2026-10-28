@@ -1,0 +1,19 @@
+Author:
+Thrinai Chankong
+Update : OrderModify and Profit factor
+Currency
+: EURUSD
+Time Frame :
+1m
+Initial deposit
+: $300
+Profit factor :
+1.34
+Use Custom Indicator :
+CHO.mq4
+Copy to :
+<Path of Meta Trader>\Indicators
+Expert Advisor :
+TurtleTraderV1.0.1.mq4
+Copy to :
+<Path of Meta Trader>\Experts

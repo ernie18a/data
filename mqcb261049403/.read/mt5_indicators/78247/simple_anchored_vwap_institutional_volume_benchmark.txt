@@ -1,0 +1,36 @@
+Simple Anchored VWAP for MetaTrader 5
+Anchored VWAP (AVWAP)
+calculates the volume-weighted average price (fair value benchmark) starting from a specific, user-defined point in time rather than an arbitrary midnight session reset.
+Popularized by Brian Shannon, Anchored VWAP enables traders to track the true break-even benchmark price of institutional participants from key market catalysts:
+Major economic news releases (CPI, Non-Farm Payrolls, Rate Decisions)
+Key swing highs and swing lows
+Session opens (London, New York, Tokyo)
+Weekly and Monthly opens
+Features
+Custom Anchor Date/Time:
+Anchor calculation to any historical date/time.
+Auto Volume Detection:
+Automatically detects whether your broker provides Tick Volume (Forex) or Real Volume (Futures, Indices, Stocks, Crypto).
+Applied Price Flexibility:
+Calculate based on Typical Price (H+L+C)/3, Close, Median, or Weighted price.
+Standard Deviation Bands:
+Optional Upper and Lower volatility bands (+/- 1 SD or custom multiplier) to identify statistical overbought/oversold extremes.
+Zero Memory Leaks:
+Fully optimized OnCalculate routine suitable for backtesting and multi-timeframe analysis.
+Input Parameters
+InpAnchorTime:
+Anchor Date and Time (e.g. 2026.10.01 00:00).
+InpAppliedPrice:
+Price source (Default: PRICE_TYPICAL).
+InpVolumeType:
+VOL_AUTO (auto-detect), VOL_TICK, or VOL_REAL.
+InpShowBands:
+Enable/Disable volatility standard deviation bands.
+InpBandMultiplier:
+Standard deviation multiplier (Default: 1.0).
+Note for Advanced Traders:
+Looking for TradingView-style interactive Drag & Drop, magnetic candlestick snapping, and Multi-Anchor confluence (up to 10 simultaneous anchors)? Check out the full Interactive AVWAP series on MQL5 Market:
+Fixed Time AVWAP Free
+and
+Interactive AVWAP Pro
+.

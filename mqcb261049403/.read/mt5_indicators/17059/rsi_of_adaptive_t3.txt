@@ -1,0 +1,10 @@
+This is RSI that can use adaptive T3 for price filtering.
+It supports 7 types of RSI:
+Cuttler's RSI
+Ehlers' smoothed RSI
+Harris' RSI
+Rapid RSI
+RSI
+RSX
+Slow RSI
+In some way it is RSI of average — but in this case it is using adaptive T3 (it can be original Tim Tillson T3 or the modified Fulks/Matulich T3 calculation). Also, if the adapting period is set to <=1, then the regular T3 is used (no adapting will happen then). If the T3 period is set to <=1, then it is a regular RSI (regardless of the adapting period set) — any of the chosen RSI types. Levels are adjustable and the indicator is multi time frame version already. The usual set of supported prices is built in in the indicator.

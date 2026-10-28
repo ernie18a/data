@@ -1,0 +1,5 @@
+I search Moving Average that can be hide and shown with button, just like in Trading View, but I cannot found it.
+Then I try to modify example of Moving Average code from MQL5 Metaeditor Help, and do some add for button and logic for toggleable the button to show or hide Moving Average.
+Just like in Trading View.
+For those who need this, please feel free to use or modify for your own requirement.
+Press the button for Show / Hide MA as your preference.

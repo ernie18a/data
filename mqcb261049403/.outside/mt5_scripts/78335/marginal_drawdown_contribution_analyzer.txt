@@ -1,0 +1,14 @@
+Standalone drawdowns and correlation matrices do not show which configuration of a multi-configuration portfolio deepens its drawdown. This script answers that question from daily results.
+The script reads one of three sources and prints a full report in the Experts tab:
+Drawdown added
+: The portfolio maximum drawdown minus the drawdown without the configuration (leave-one-out).
+Share of the worst drawdown
+: The configuration's result between the peak and the trough of the portfolio's worst drawdown, as a share of that loss.
+Euler variance share
+: Cov(x_i, P) / Var(P), shown next to the share of net profit.
+A composite score (A+ to F)
+: It combines drawdown compression, risk spread, drag-free share, and net profit to drawdown, with KEEP, REDUCE, and REMOVE verdicts and written recommendations.
+Input.
+Select the source with InpSource. The demonstration source builds a reproducible portfolio of 12 configurations over 520 trading days, so the output is visible immediately. The account source reads the trading deals of the current account (profit + swap + commission + fee) and groups them by magic number, or by magic number and symbol. Deals closed by hand (magic 0) are assigned to the magic of the deal that opened the position. The CSV source reads a file from MQL5\Files with the header Date,Config,Profit and one row per closing deal or per day. The separator (comma or semicolon) is detected from the header, and numbers with spaces, a decimal comma, or accounting brackets are accepted.
+Parameters.
+InpMinDays sets the minimum sample. InpReduceRatio and InpImproveMin control the REDUCE verdict, and InpMaxWindowShare controls the worst-drawdown alert. InpCompTarget, InpNeffTarget, InpDragTol, and InpRetDDTarget scale the four score dimensions. The four weights and the five grade boundaries are inputs too.

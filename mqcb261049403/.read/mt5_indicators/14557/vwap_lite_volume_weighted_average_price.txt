@@ -1,0 +1,15 @@
+Versions:
+2016-06-15; v1.49; Code Improvement
+2016-01-11; v1.47; Code Improvement
+2016-01-11; v1.46; Code Improvement
+2016-01-11; v1.45; Code Improvement
+2015-12-29; v1.43; Initial Public Release
+VWAP is an intra-day calculation used primarily by algorithms and institutional traders to assess where a stock is trading relative to its volume weighted average for the day. Day traders also use VWAP for assessing market direction and filtering trade signals. Before using VWAP, understand how it is calculated, how to interpret it and use it, as well the drawbacks of the indicator (
+http://traderhq.com/trading-strategies/understanding-volume-weight-average-price/
+).
+This is a VWAP indicator based on the Investopedia description (
+http://www.investopedia.com/articles/trading/11/trading-with-vwap-mvwap.asp
+).
+I've added three lines to this indicator. The principal is the VWAP Daily which is the calculation based on the intra-day values, there's the Weekly and the Monthly that is calculated based in the week and month starts respectively.
+All three lines are independent. As default only the intra-day comes enabled, but you can enable the others in the properties panel.
+Thanks for downloading this code. I will be waiting for your comments, vote and rating.

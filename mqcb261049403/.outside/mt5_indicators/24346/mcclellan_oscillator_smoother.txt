@@ -1,0 +1,8 @@
+Theory :
+In 1969, based on Haurlan’s use of advance and decline data, Sherman and Marian McClellan developed the McClellan Oscillator. This oscillator is the difference between two exponential moving averages of advances minus declines. The two averages are an exponential equivalent to a 19-day and 39-day moving average.
+The rationale for this oscillator is that in intermediate-term overbought and oversold periods, shorter moving averages tend to rise faster than longer-term moving averages. However, if the investor waits for the moving average to reverse direction, a large portion of the price move has already taken place. A ratio of two moving averages is much more sensitive than a single average and will often reverse direction coincident to, or before, the reverse in prices, especially when the ratio has reached an extreme.
+This version deviates from the original in a couple of things :
+it is using the "smoother" for calculations, instead of using exponential averages (it produces much smoother results than the EMA)
+it is adding "periods multiplier" for the simplicity of use. Since the "smoother" is much faster than the ema, instead of having to change both fast and slow period to longer period to have more readable (less scalping like) values, simply change the multiplier to desired (can be fractional) value, and that is all
+Usage :
+It should be used the way it is described by the inventors of the oscillator, but I find that this version, with multipliers set to higher values (see second example, multiplier set to 3), zero cross can be used in many occasions as a signal if used on a chart with the related base symbol

@@ -1,0 +1,5 @@
+Author:
+sxTed
+Description:
+Close all multi currency open orders and cancel pending orders according to various scenarios. Slippage for open orders is calculated for each currency.
+Choose only one scenario per visit, the script processes the first menu item selected.

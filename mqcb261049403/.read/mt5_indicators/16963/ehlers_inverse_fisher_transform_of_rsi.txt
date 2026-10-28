@@ -1,0 +1,10 @@
+Ehlers inverse Fisher transform of RSI.
+This version can calculate the inverse Fisher transform of :
+Regular RSI
+Cuttler's RSI
+Haris' RSI
+Rapid RSI
+RSX
+Slow RSI
+Choice of floating or fixed levels is available. If you set the floating levels period to <=1, then fixed levels are calculated. In case when the period for floating levels is set to > 1, floating levels are calculated. According to those levels you can chose the way how the colors will be changed/adjusted and accordingly how and when alerts are going to be triggered. Along with multi time framing usual set of alerts (alert messages, sounds, emails, push notifications on still opened or first closed bar) are available.
+As inverse Fisher transform of RSI is designed to enhance the extremes (overbought and oversold zones), in combination with floating levels and in combination with all the different types of RSI, this version allows faster and cleaner trend detection and identification. With additional smoothing, false signals can be avoided. As with any other indicator some experimenting with parameters is advised (in order to find optimal settings for symbol/time frame pair).

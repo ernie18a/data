@@ -1,0 +1,353 @@
+In the past, I thought of using an EA for my trading and this is part of my simple EA and this is the simplest EA I ever had so please rate this after read...
+This EA working on single pair. With the fully functioning setting timeframe, lots, stoploss and takeprofit here are input in the menu properties.
+extern
+ENUM_TIMEFRAMES
+TF  =
+PERIOD_CURRENT
+;
+// Select Time Frame
+extern
+int
+period          =
+8
+;
+// Period DeMarker
+extern
+double
+lt           =
+0.01
+;
+// Lots
+extern
+int
+sl              =
+100
+;
+// Stop Loss
+extern
+int
+tp              =
+100
+;
+// Take Profit
+extern
+double
+OB           =
+0.7
+;
+// Over Sold
+extern
+double
+OS           =
+0.3
+;
+// Over Bought
+extern
+bool
+OPENBAR        =
+false
+;
+// Trading on newbar open price
+Here is the secret, I divide it into 3 parts of variables:
+1. data | timeframe
+2. order
+3. pair
+//+------------------------------------------------------------------+
+//-- time frame|indicator
+double
+dmrk[
+5
+];
+int
+signal  =-
+1
+;
+//-- 0.buy 1.sell
+int
+hold =
+0
+;
+//-- order
+int
+ticket  =
+0
+;
+double
+lot  =
+0.0
+;
+int
+typ     =-
+1
+;
+//-- pair
+datetime
+t1=
+0
+;
+bool
+newbar=
+false
+;
+bool
+entry =
+false
+;
+//+------------------------------------------------------------------+
+In OnInit() function, I have to initialize an indicator DeMarker array variable and also checking minimum lot size of trading for the specific type of broker requirement.
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+void
+OnInit
+()
+  {
+ArrayInitialize
+(dmrk,
+0.0
+);
+//---
+const
+double
+test_lot   =
+SymbolInfoDouble
+(
+Symbol
+(),
+SYMBOL_VOLUME_MIN
+);
+if
+(lt<test_lot)   lt    = test_lot;
+  }
+On OnTick() function, this is the for calculating of the indicator and to determine the buy and sell signals
+//---------------------------------------------------------------------------
+signal = -
+1
+;
+//---------------------------------------------------------------------------
+//---calc
+for
+(
+int
+i=
+0
+; i<
+ArraySize
+(dmrk); i++)
+     {
+      dmrk[i]  =
+iDeMarker
+(
+Symbol
+(),TF,period,i);
+     }
+//---
+if
+(dmrk[
+1
+] > OB)
+     {
+      hold =
+1
+;
+//set
+}
+else
+if
+(dmrk[
+1
+] < OS)
+        {
+         hold = -
+1
+;
+//set
+}
+else
+{
+         hold =
+0
+;
+//reset
+}
+if
+(hold ==
+1
+)
+     {
+if
+(dmrk[
+0
+]<OB && dmrk[
+1
+]>OB)
+        {
+         signal = OP_SELL;
+        }
+     }
+if
+(hold == -
+1
+)
+     {
+if
+(dmrk[
+0
+]>OS && dmrk[
+1
+]<OS)
+        {
+         signal = OP_BUY;
+        }
+     }
+To open a buy and sell signal...
+//---------------------------------------------------------------------------
+if
+(signal != -
+1
+)
+if
+(newbar==
+true
+)
+if
+(entry==
+false
+)
+//door open
+{
+//---
+entry =
+true
+;
+//set
+//---
+if
+(signal == OP_BUY)
+              {
+               ticket =
+OrderSend
+(
+Symbol
+(),OP_BUY,lt,Ask,(
+int
+)((Ask-Bid)/
+Point
+),
+                                  sl>
+0
+?Bid-sl*
+Point
+:
+0.0
+,
+                                  tp>
+0
+?Bid+tp*
+Point
+:
+0.0
+,
+                                  EAName+
+":signal= "
++
+IntegerToString
+(signal)+
+":hold= "
++
+IntegerToString
+(hold),
+                                  EANumber,
+0
+,
+clrBlue
+);
+               signal=-
+1
+;
+//hold =0;
+}
+//reset
+else
+if
+(signal == OP_SELL)
+                 {
+                  ticket =
+OrderSend
+(
+Symbol
+(),OP_SELL,lt,Bid,(
+int
+)((Ask-Bid)/
+Point
+),
+                                     sl>
+0
+?Ask+sl*
+Point
+:
+0.0
+,
+                                     tp>
+0
+?Ask-tp*
+Point
+:
+0.0
+,
+                                     EAName+
+":signal= "
++
+IntegerToString
+(signal)+
+":hold= "
++
+IntegerToString
+(hold),
+                                     EANumber,
+0
+,
+clrRed
+);
+                  signal=-
+1
+;
+//hold =0;
+}
+//reset signal
+}
+And for the closing...
+if
+(entry ==
+true
+)
+// closing
+{
+if
+(
+OrderSelect
+(ticket,SELECT_BY_TICKET))
+        {
+if
+(OrderCloseTime() ==
+0
+)
+//-- order active trade
+{
+/*  todo condition to close  */
+//entry = false;
+}
+//else
+if
+(OrderCloseTime() !=
+0
+)
+//--  close by 1. manual 2. sl/tp 3. ea
+{
+               entry =
+false
+;
+//reset entry
+}
+        }
+     }

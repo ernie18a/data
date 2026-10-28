@@ -1,0 +1,54 @@
+MSB Pro ALGO Neon Account Dashboard is a free visual account monitoring panel for MetaTrader 5.
+The indicator displays important account and trading information directly on the chart in a modern neon-style interface.
+Main Features
+• Account Balance
+• Account Equity
+• Floating Profit / Loss
+• Today's Realized Profit / Loss
+• Number of Closed Positions Today
+• Daily Win Rate
+• Number of Open Positions
+• BUY / SELL Position Count
+• Open Position Details
+• Symbol
+• Position Type
+• Volume
+• Open Price
+• Current Profit / Loss
+• Market Open / Closed Status
+• Automatic 1-second refresh
+• Customizable panel position and colors
+The dashboard automatically reads information from the currently connected MetaTrader 5 account.
+The OPEN POSITIONS section can display up to five positions at the same time. If more positions are open, the dashboard shows the number of additional positions.
+Market status is based on the trading session of the symbol where the indicator is attached.
+This indicator does not open, close or modify trades.
+It contains no trading strategy and no automatic trading logic.
+Installation
+1. Download the indicator.
+2. Open MetaTrader 5.
+3. Attach MSB Pro ALGO Neon Account Dashboard to any chart.
+4. The dashboard will automatically display the current account information.
+The indicator works with demo and live MetaTrader 5 accounts.
+No DLLs, external APIs or additional files are required.
+Input
+Açıklama
+InpPanelX
+Horizontal panel position
+InpPanelY
+Vertical panel position
+InpRefreshSeconds
+Dashboard refresh interval
+InpMaxPositionRows
+Maximum number of displayed open positions
+InpShowOpenPositions
+Show/hide open positions table
+InpAccentColor
+Main neon accent color
+InpAccentSoft
+Secondary accent color
+InpProfitColor
+Profit / BUY color
+InpLossColor
+Loss / SELL color
+Developed by Mustafa Özkan
+MSB Pro ALGO

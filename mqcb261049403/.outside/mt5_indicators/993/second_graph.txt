@@ -1,0 +1,7 @@
+Description:
+When launching the indicator, the necessary symbol for display ("Symbol1" parameter) should be specified in the input parameters. EURUSD is set by default. Several copies of the indicator with different input parameters can be launched allowing users to conveniently analyze several trading symbols in one window.
+The indicator will be useful for traders interested in pairs trading (spread trading). The indicator allows to compare visually the charts of two symbols in one window estimating their correlation. The indicator bars are strictly synchronized by time with the bars of the chart the indicator is launched at.
+Example of the indicator operation is shown below: AUDUSD (above), NZDUSD (in the indicator window below).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/993

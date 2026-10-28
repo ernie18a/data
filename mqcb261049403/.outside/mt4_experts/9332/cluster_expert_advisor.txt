@@ -1,0 +1,26 @@
+The expert advisor idea is to find the strongest and the weakest currency pair.
+For example, if the strongest currency is EUR (from the 8 pairs) and the weakest is JPY, then we are buying EURUSD and buying USDJPY. So the use this way to hedge risks.
+I have used the following articles:
+Practical Application of Cluster Indicators in FOREX
+Theoretical Basis of Building Cluster Indicators for FOREX
+The advisor uses an indicator
+CCFp.mq4
+from these articles. It should be downloaded and compiled. I am attaching it here with minor changes for the
+convenience
+.
+Here is a picture from the article:
+The Advisor buys XXXUSD or sells USDXXX, then the line of the XXX currency is maximal and the same, it sells YYYUSD and buys USDYYY, when the line of the YYY currency became minimal.
+After the change of maximal (minimal) lines, the position of the currency pair closes and advisor opens a new position. The advisor opens orders after the crossing of the previous bar. It works with 8 currency pairs.
+Remarks:
+Take profit is absent.
+Stop Loss is defined in points and the same for all of the currency pairs.
+Editor's remark:
+It's a mirror English translation of the
+original Russian version
+.
+If you have any questions, suggestions or comments, it's better to post them
+there
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9332

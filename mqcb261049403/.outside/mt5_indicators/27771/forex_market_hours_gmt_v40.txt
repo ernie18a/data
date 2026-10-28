@@ -1,0 +1,19 @@
+The good old MT4 indicator! Now for MetaTrader 5.
+Automatic summer time (DST) detection on trade server, display of economic calendar events and many improvements.
+GMT and EST hours for trading Forex
+Forex market welcomes traders 24 hours a day.
+Forex market opens on Sunday 5 pm EST (10:00 pm GMT), closes on Friday 5 pm EST
+(10:00 pm GMT).
+Trading sessions according to GMT (Greenwich Mean Time):
+https://www.forexmarkethours.com/
+https://www.forexmarkethours.com/GMT_hours/02/
+https://www.forexboat.com/forex-market-hours/
+The
+Forex_Market_Hours_GMT_v4.0
+indicator assumes local "wall clock" trading hours
+of 8:00 AM - 5:00 PM in each Forex market, except in Tokyo it is 9:00 AM - 6:00 PM.
+Holidays not included. Not intended for use as an accurate time source.
+If you need the precise time, see
+https://www.markethours.net/forex-market-hours
+The link to the original indicator on Forex Factory forum:
+https://www.forexfactory.com/showthread.php?t=239188&page=7

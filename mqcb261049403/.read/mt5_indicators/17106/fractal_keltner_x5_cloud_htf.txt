@@ -1,0 +1,35 @@
+The
+Fractal_Keltner_x5_Cloud
+indicator with the timeframe selection option available in input parameters:
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// Indicator chart period (timeframe)
+The Fractal_Keltner_x5_Cloud_HTF repeater indicator requires the compiled custom indicator file Fractal_Keltner_x5_Cloud.mq5 in order to compile. Place it in
+<terminal_data_folder>\MQL5\Indicators
+.
+After compilation, the Fractal_Keltner_x5_Cloud_HTF.ex5 indicator file contains the Fractal_Keltner_x5_Cloud.ex5 indicator as a
+resource
+,
+and therefore, it is not required to be present in the terminal folder for the compiled indicator to work! For this purpose, the corresponding code has been added to the indicator code in order to include the Fractal_Keltner_x5_Cloud indicator in the executable file.
+The indicator executable file has been added as resources at the global scope
+//---- Include custom indicators in the indicator code as resources
+#resource
+\\Indicators\\Fractal_Keltner_x5_Cloud.ex5
+Changed the string path to the indicator used as resource in the block of the OnInit() function
+//---- getting handle of the Fractal_Keltner_x5_Cloud indicator
+Ind_Handle=
+iCustom
+(Symbol_,TimeFrame,
+"::Indicators\\Fractal_Keltner_x5_Cloud"
+,
+e_period,normal_speed,alpha1,alpha2,IPC,
+0
+,PriceShift,Upper_color,Middle_color,Lower_color,FontSize);
+Thus, the compiled executable file of the repeater indicator can be used on other trade terminals on its own without the original indicator.
+Fig1. The Fractal_Keltner_x5_Cloud_HTF indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17106

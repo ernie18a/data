@@ -1,0 +1,66 @@
+Idea by
+:
+JS_Sergey
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+The EA is based on indicator iMA (Moving Average, MA) with timeframe D1.
+You can increase your positions (set parameter "
+Increase positions
+" to "
+true
+"), but you should be careful when setting parameters "
+Close hour
+" and "
+Increase timeframe
+". An example of erroneously set parameters: You set "
+Close hour
+" to "
+23
+" and "
+Increase timeframe
+" to "
+PERIOD_H4
+". In this case, positions will not close at 23-00, since candlesticks open at the period of H4 at the following times: 16-00, 20-00, and 00-00, i.e., we cannot be within the range of 23-00 at all. This is why, if you enable "
+Close hour
+" (the value exceeds "-1") for parameter "
+Increase timeframe
+", it is better to select H1 or a lower timeframe. When increasing your positions, you can limit the number of open positions ("
+Max positions
+") on the current symbol and with the current "
+magic number
+".
+Stop loss, take profit, and trailing can be disabled. For this, it is sufficient to set the relevant input to zero.
+Position size can be managed in two manners: Trading with a constant lot size (parameter "
+Lots
+" is above zero, and parameter "
+Risk
+" is zero), or dynamically calculating the lot size in risk percents per trade (parameter "
+Risk
+" is above zero, and parameter "
+Lots
+" is zero).
+Inputs
+Increase positions
+Increase timeframe
+Max positions
+Reverse signals
+Close hour ("-1" --> off)
+//--- Indicator input
+MA PERIOD_D1: averaging period
+MA PERIOD_D1: horizontal shift
+MA PERIOD_D1: smoothing type
+MA PERIOD_D1: type of price or handle
+//--- Trade managing
+Stop Loss (in pips)
+Take Profit (in pips)
+Trailing Stop (in pips)
+Trailing Step (in pips)
+Lots (or "Lots">0 and "Risk"==0 or "Lots"==0 and "Risk">0)
+Risk (or "Lots">0 and "Risk"==0 or "Lots"==0 and "Risk">0)
+magic number
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16952

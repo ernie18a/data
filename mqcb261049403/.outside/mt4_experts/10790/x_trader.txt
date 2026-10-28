@@ -1,0 +1,9 @@
+X trader trades when two moving averages cross each other.
+For Ma method set; 0 for simple, 1 for exponential, 2 for smoothed, 3 for linear weighted.
+For Applied price set; 0 for close price, 1 for open price, 2 for high price, 3 for low price, 4 for median price, 5 for typical price, 6 for weighted close price.
+NOTE:
+The EA is designed for 5 digit brokers since most major brokers are 5 digit nowadays.
+Its up to you to discover the optimum settings for your strategy(using inbuilt mt4 strategy tester) the default settings have not been tested/optimized.
+If this EA helps you donate at our website.
+Complete documentation is available at
+http://www.fxautomated.com/docs/xtraderdoc.php

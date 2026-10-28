@@ -1,0 +1,48 @@
+With "Fibonacci Time Zones" EA you can draw Fibonacci Time Zones on the chart and trade with price breakthrough,has 3 buttons for manual trading and allows to predetermine trailing stoploss & take profit, open and close all trades at once.
+Try it on demo first.
+It is possible to activate a hedge fund protocol for low drawdown
+Inputs
+==================HEDGE FUND PROTOCOL==========================
+HEDGE FUND PROTOCOL -Enabale Draw dwon control (values:true/false).
+Close basket at +0.10% MIN_PROFIT_PERCENT (values:0.1-0.6).
+Close basket at -0.50% MAX_LOSS_PERCENT (values: 0.5-0.8).
+HEDGE FUND PROTOCOL_SLIPPAGE (values: 10-50).
+=================================================================
+Use_TP_In_Money- Use Take Profit In Money (values:true/false).
+TP_In_Money- Take Profit In Money   (values: 10-100).
+------------[Money Trailing Stop For Multiple Trades]----------------------
+Enable_Trailing-Enable_Trailing with money  (values:true/false).
+Take Profit In Money (in current currency) (values: 25-200).
+Stop Loss In Money(in current currency) (values: 1-20).
+Loss Index (values: 1.1-2).
+--------------------------------------------------------------------------------------
+Object name
+1 st point's date, %
+1 st point's price, %
+2 nd point's date, %
+2 nd point's price, %
+Object color
+Line style
+Line width
+Background object
+Highlight to move
+Hidden in the object list
+Priority for mouse click
+Enable "STOP"
+Lots - Lots size (values: 0.01-1).
+MaximumRisk   =  Maximum Risk in precent    (values: 0.01-10).
+DecreaseFactor= (values: 0.01-1).
+Stop_Loss - Stop Loss (values: 30-500).  /set value 600 for  Multiple Trades
+TakeProfit - Take Profit (values: 50-200).  /set value 600 for  Multiple Trades
+MagicNumber - Magic number (values: 1-100000).
+NumberOfTrades= Number Of Trades  (values: 1-100).
+----------------IF YOU USE ONLY 1 TRADE:-----------------------
+//////////////////////////////////////////////////
+TrailingStop
+-set a value from 40 to 100 to activate trailing stop loss & take profit, "0" will not activate trailing stop loss.
+USEMOVETOBREAKEVEN
+- Enable "no loss" break even system (values: 0-1).
+When move "Break Even"- (values: 5-30).
+How much pips move- "Break Even" (values:5-30).
+-How to perform back test:
+https://bit.ly/2CD7XWD

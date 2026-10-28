@@ -1,0 +1,7 @@
+Theory :
+This is an ATR (Average True Range) that resets itself on the start of a new period. New periods are :
+daily (for all time frames less than daily
+weekly for daily time frame chart
+monthly for weekly time frame chart
+Usage :
+It can be used as any regular ATR

@@ -1,0 +1,2 @@
+Author: Kalenzo
+KI signals v1 indicator.

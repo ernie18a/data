@@ -1,0 +1,4 @@
+Quantora Break Even Manager MT5 is a utility that automatically protects open trades by moving stop loss to the break even level once a defined profit is reached. It does not open trades or generate signals.
+The tool monitors positions continuously and applies break even based on your settings. You can define the trigger level and optionally set an offset to lock in a small profit. It supports managing manual trades, all positions, or trades filtered by magic number, with separate control for buy and sell orders.
+It also includes symbol filtering and a simple dashboard to track account and trade status. A one-click option allows you to apply break even instantly to eligible trades.
+Suitable for traders who want a simple and reliable way to secure profits automatically.

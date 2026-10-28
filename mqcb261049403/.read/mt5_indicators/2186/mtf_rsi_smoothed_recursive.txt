@@ -1,0 +1,12 @@
+Recursive implementation of multi-timeframe smoothed RSI indicator.
+The values of the standard
+Relative Strength Index
+indicator are smoothed using Simple Moving Average (
+SMA
+). To disable smoothing set the value of Smoothed <= 1.
+The indicator uses the
+recursive
+call of itself for lower timeframes. This eliminates the need to create two indicators: the conventional and multi-timeframe (implemented by call of the conventional). Moreover, the multi-timeframe indicator can not work without conventional version. This code is useful rather as a demonstration of the special programming technique than unique oscillator for trading.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2186

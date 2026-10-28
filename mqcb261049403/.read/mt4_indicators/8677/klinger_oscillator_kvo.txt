@@ -1,0 +1,12 @@
+This oscillator based on turnovers has been developed by Stephen Klinger.
+The oscillator is calculated in seven steps:
+The average typical price is calculated - (H+L+C)/3
+If the current typical price is greater than the average typical price of the previous bar, the turnover of the current bar gets a "plus" sign
+If the current typical price is less than the average typical price of the previous bar, the turnover of the current bar gets a "minus" sign
+A 34-period EMA of the turnover obtained in steps 2 or 3 is calculated
+A 55-period EMA of the turnover obtained in steps 2 or 3 is calculated
+The 34-period EMA is subtracted from the 55-period EMA; the result is plotted on the chart as a histogram
+The EMA of the difference obtained in step 6 is calculated and plotted on the chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8677

@@ -1,0 +1,440 @@
+Description
+This is an example for Heiken Ashi candles.
+Only uses pending orders (Buy-Limit & Sell-Limit).
+Hedging is possible (by using different magic numbers).
+Filter is possible (by two time frames as the code below).
+see the
+main
+idea of this expert in these following two functions:
+int
+AshiUp
+(
+int
+TF=
+PERIOD_CURRENT
+)
+  {
+double
+haLowHigh_1 =
+iCustom
+(
+Symbol
+(),TF,
+"Heiken Ashi"
+,Red,White,Red,White,
+0
+,
+1
+);
+double
+haOpen_1    =
+iCustom
+(
+Symbol
+(),TF,
+"Heiken Ashi"
+,Red,White,Red,White,
+2
+,
+1
+);
+double
+haClose_1   =
+iCustom
+(
+Symbol
+(),TF,
+"Heiken Ashi"
+,Red,White,Red,White,
+3
+,
+1
+);
+double
+haLowHigh_0 =
+iCustom
+(
+Symbol
+(),TF,
+"Heiken Ashi"
+,Red,White,Red,White,
+0
+,
+0
+);
+double
+haOpen_0    =
+iCustom
+(
+Symbol
+(),TF,
+"Heiken Ashi"
+,Red,White,Red,White,
+2
+,
+0
+);
+double
+haClose_0   =
+iCustom
+(
+Symbol
+(),TF,
+"Heiken Ashi"
+,Red,White,Red,White,
+3
+,
+0
+);
+if
+((haClose_0>haOpen_0 && haOpen_0==haLowHigh_0) && 
+      (haClose_1>haOpen_1 && haOpen_1!=haLowHigh_1))
+return
+(
+1
+);
+else
+return
+(
+0
+);
+  }
+int
+AshiDown
+(
+int
+TF=
+PERIOD_CURRENT
+)
+  {
+double
+haLowHigh_1 =
+iCustom
+(
+Symbol
+(),TF,
+"Heiken Ashi"
+,Red,White,Red,White,
+0
+,
+1
+);
+double
+haOpen_1    =
+iCustom
+(
+Symbol
+(),TF,
+"Heiken Ashi"
+,Red,White,Red,White,
+2
+,
+1
+);
+double
+haClose_1   =
+iCustom
+(
+Symbol
+(),TF,
+"Heiken Ashi"
+,Red,White,Red,White,
+3
+,
+1
+);
+double
+haLowHigh_0 =
+iCustom
+(
+Symbol
+(),TF,
+"Heiken Ashi"
+,Red,White,Red,White,
+0
+,
+0
+);
+double
+haOpen_0    =
+iCustom
+(
+Symbol
+(),TF,
+"Heiken Ashi"
+,Red,White,Red,White,
+2
+,
+0
+);
+double
+haClose_0   =
+iCustom
+(
+Symbol
+(),TF,
+"Heiken Ashi"
+,Red,White,Red,White,
+3
+,
+0
+);
+if
+((haClose_0<haOpen_0 && haOpen_0==haLowHigh_0) && 
+      (haClose_1<haOpen_1 && haOpen_1!=haLowHigh_1))
+return
+(
+1
+);
+else
+return
+(
+0
+);
+  }
+see the code below for detect buy:
+//--- Trading
+if
+(TotalOrdersCount(MagicNumberBuy)<
+1
+)
+if
+(AshiUp(
+1440
+)==
+1
+&& AshiUp()==
+1
+)
+         BuyExecute();
+In addition, it is not allowed to work with metals as you can see below:
+//+------------------------------------------------------------------+
+//| Expert initialization function
+//+------------------------------------------------------------------+
+int
+OnInit
+()
+  {
+Comment
+(
+" "
+);
+if
+(
+Symbol
+()==
+"Gold"
+||
+Symbol
+()==
+"GOLD"
+||
+Symbol
+()==
+"gold"
+||
+Symbol
+()==
+"XAUUSD"
+||
+Symbol
+()==
+"AUCMDUSD"
+||
+Symbol
+() ==
+"Silver"
+||
+Symbol
+() ==
+"SILVER"
+||
+Symbol
+() ==
+"silver"
+||
+Symbol
+() ==
+"XAGUSD"
+||
+Symbol
+() ==
+"E_SI"
+||
+Symbol
+() ==
+"Copper"
+||
+Symbol
+() ==
+"COPPER"
+||
+Symbol
+() ==
+"copper"
+||
+Symbol
+() ==
+"CUCMDUSD"
+||
+Symbol
+() ==
+"XAUEUR"
+||
+Symbol
+() ==
+"Gold.Euro"
+||
+Symbol
+() ==
+"Gold.Eur"
+||
+Symbol
+() ==
+"XAGEUR"
+||
+Symbol
+() ==
+"Silver.Euro"
+||
+Symbol
+() ==
+"Silver.Eur"
+||
+Symbol
+() ==
+"USOil"
+||
+Symbol
+() ==
+"USOIL"
+||
+Symbol
+() ==
+"UKOil"
+||
+Symbol
+() ==
+"UKOIL"
+||
+Symbol
+() ==
+"NGAS"
+||
+Symbol
+() ==
+"NGas"
+||
+Symbol
+() ==
+"Bund"
+||
+Symbol
+() ==
+"BUND"
+||
+Symbol
+() ==
+"bund"
+||
+Symbol
+() ==
+"Oil"
+||
+Symbol
+() ==
+"Brent"
+||
+Symbol
+() ==
+"BRENT"
+||
+Symbol
+() ==
+"brent"
+||
+Symbol
+() ==
+"Crude"
+||
+Symbol
+() ==
+"COPPER"
+||
+Symbol
+() ==
+"BRENTCMDUSD"
+||
+Symbol
+() ==
+"WTI"
+||
+Symbol
+() ==
+"Light"
+||
+Symbol
+() ==
+"LIGHT"
+||
+Symbol
+() ==
+"LIGHTCMDUSD"
+||
+Symbol
+() ==
+"COPPER"
+||
+Symbol
+() ==
+"Palladium"
+||
+Symbol
+() ==
+"PALLADIUM"
+||
+Symbol
+() ==
+"palladium"
+||
+Symbol
+() ==
+"PDCMDUSD"
+||
+Symbol
+() ==
+"Platinum"
+||
+Symbol
+() ==
+"PLATINUM"
+||
+Symbol
+() ==
+"platinum"
+||
+Symbol
+() ==
+"PTCMDUSD"
+)
+     {
+Comment
+(SymbolErr);
+Alert
+(SymbolErr);
+return
+(
+INIT_FAILED
+);
+}
+.
+.
+.
+}
+Image
+Recommendations
+This example code is only for coders/traders who are interested for free codes in order to learn/modify it in the future.
+Don't use it on real money trading.
+Use it only in Demo or Strategy Tester.
+You can remove lines (from 55 to 70) in order to try it in metals.
+Good Luck.

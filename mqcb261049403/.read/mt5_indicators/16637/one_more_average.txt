@@ -1,0 +1,6 @@
+The idea of this one is simple: it should not be itself, but it should be a kind of a chameleon — it should "imitate" as much other moving averages as it can. So the need for zillion different moving averages would diminish.
+And it should have some extra, of course.
+The extras:
+it has to be smooth
+it has to be able to "change speed" without length change
+it has to be able to adapt or not (since it has to "imitate" the non-adaptive as well as the adaptive ones)

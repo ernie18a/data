@@ -1,0 +1,9 @@
+mt4excel.dll is a library written in Delphi. At calling the DLL, the COM library is initialized.
+Before using it, you should call one of the following functions: ExcelOpen or ExcelOpenPattern, or ExcelOpenFile.
+At calling, an OLE object is created, MS Excel is opened, a new book and page are created by template or an existing Excel file is opened (depending on the function). Function ExcelClose will close MS Excel and free the OLE object.
+You can write and read in either a separate cell: ExcelSetFormulaCell, ExcelSetValueCell, ExcelSetTextCell, ExcelGetValueCell, ExcelGetTextCell, ExcelGetFormulaCell, or in a range previously memorized with function ExcelSetRange, then using ExcelSetFormula, for example, or other functions requiring a range to be set.
+There is a number of auxiliary functions to manage displaying, format information, etc. You can find more details about them in the comments on the example.
+Use function ExcelSetDiagramma to create a diagram.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8175

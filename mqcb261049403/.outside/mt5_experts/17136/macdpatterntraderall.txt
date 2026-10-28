@@ -1,0 +1,14 @@
+Author of the idea
+—
+Yuri
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+Six (iMACD, MACD, Moving Average Convergence/Divergence) indicators and four (iMA, MA, Moving Average) indicators.
+Opens trades when the indicator's MACD crosses its signal line:
+Sell when the MACD falls below its signal line, and buy when the it rises above its signal line. It is also popular to buy/sell when the MACD goes above/below zero.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17136

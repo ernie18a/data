@@ -1,0 +1,5 @@
+The MA-4H indicator displays the moving average of the selected timeframe on the chart of the current timeframe. The intersection of the two moving averages is implemented as optional. The external parameters allow to activate the second moving average in order to see their intersection.
+MA-4H
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7062

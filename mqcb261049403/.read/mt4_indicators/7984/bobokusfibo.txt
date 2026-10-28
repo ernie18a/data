@@ -1,0 +1,2 @@
+Author: not specified
+BobokusFibo indicator. The modified version of indicator SpudFibo.

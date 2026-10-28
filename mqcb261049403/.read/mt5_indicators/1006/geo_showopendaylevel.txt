@@ -1,0 +1,10 @@
+Real author:
+Geokom
+The indicator shows day open level on any timeframe.
+This indicator was first implemented in MQL4 and published in
+Code Base
+24.02.2012 (in Russian).
+Geo_ShowOpenDayLevel
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1006

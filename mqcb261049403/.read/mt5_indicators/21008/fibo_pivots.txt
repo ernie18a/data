@@ -1,0 +1,2 @@
+Fibonacci Pivot points indicator that can draw any number of levels for any of the known timeframes usable by MetaTrader 5.
+To insert any level, simply enter the level in the levels parameter separated by ";" in the list of levels. Defaults used are 38.2%, 61.8% and 100%, but you can customize those to any levels desired.

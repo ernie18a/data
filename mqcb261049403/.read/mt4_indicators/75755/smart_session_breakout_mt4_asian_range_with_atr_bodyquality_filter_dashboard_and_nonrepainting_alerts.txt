@@ -1,0 +1,72 @@
+Smart Session Breakout is a session-based breakout indicator for MetaTrader 4.
+It marks the Asian session range on the chart, then watches for a confirmed breakout of that range during the London / New York expansion phase. An on-chart dashboard shows the current session phase, live spread, ATR in pips and a countdown to the current bar close.
+Most session breakout tools confirm a signal simply by checking that a candle closed beyond the range. This one goes further: it also measures the strength of that candle. The breakout candle body must be at least a configurable multiple of ATR, so a marginal close half a pip past the level is not treated the same as a decisive expansion candle. In practice this filters out a large share of the weak breaks that make session strategies frustrating.
+HOW IT WORKS
+1. During the Asian session (default 00:00-08:00 broker time) the indicator tracks the high and low of the period.
+2. When the session closes, the range is drawn as a box with an upper and a lower level projected forward.
+3. Ranges that are too small or too large are skipped, using the Min/Max Range Box Height filters, so dead days and news-distorted days are excluded.
+4. During the London / New York phase, a breakout is signalled when price closes beyond the range level.
+5. Optional filters require the breakout candle to show real expansion: ATR expansion and a minimum candle body measured against ATR.
+6. An arrow is printed and the selected alerts are triggered.
+NON-REPAINTING
+Signals are confirmed on bar close. With "Confirm Signal on Bar Close (Non-Repainting)" set to true (default), an arrow is only printed after the breakout candle has closed, and once printed it never moves, changes or disappears.
+If you set this input to false, signals appear intra-bar and may change before the candle closes. The default is true and this is the recommended setting.
+FEATURES
+- Asian range box with configurable colour and fill
+- Projected upper and lower breakout levels
+- Range size filters (minimum and maximum height in pips)
+- ATR expansion filter
+- Minimum breakout candle body measured as a ratio of ATR
+- Buy and sell arrows, confirmed on bar close
+- On-chart dashboard: symbol, timeframe, session phase, spread, ATR in pips, bar close countdown
+- Dashboard position and colours fully configurable
+- Four alert types: pop-up, sound, email, push notification to mobile
+- Chart history limit to keep the chart light on older data
+INPUT PARAMETERS
+Session
+- Asian Session Start (Broker Time HH:MM) - start of the range period. Default 00:00
+- Asian Session End (Broker Time HH:MM) - end of the range period. Default 08:00
+- Max Days to Process on Chart - how many days of history to draw. Default 30
+Important: these times are in your broker's server time, not your local time. Check the clock in the Market Watch window and adjust the values to match the Asian session for your broker.
+Range filters
+- Min Range Box Height (Pips) - ranges smaller than this are ignored. Default 8.0
+- Max Range Box Height (Pips) - ranges larger than this are ignored. Default 70.0
+Signal
+- Confirm Signal on Bar Close (Non-Repainting) - true = signals confirmed on close and never repaint. Default true
+- Enable ATR Expansion Filter - requires volatility expansion at the breakout. Default true
+- ATR Period - period of the ATR used by the filters. Default 14
+- Min Breakout Candle Body vs ATR Ratio - the breakout candle body must be at least this multiple of ATR. Higher values mean fewer but stronger signals. Default 0.8
+Visual
+- Asian Box Color / Fill Asian Range Box
+- Upper Line Color / Lower Line Color
+- Show On-Screen Dashboard Panel
+- Panel Position Corner
+- Dashboard Background Color / Text Color / Accent Highlight
+Alerts
+- Enable Pop-up Alert
+- Enable Sound Alert
+- Enable Email Alert - requires email to be configured in Tools > Options > Email
+- Enable Push Alert to Mobile - requires MetaQuotes ID in Tools > Options > Notifications
+RECOMMENDED USE
+- Timeframes: M5 to M30. The screenshots use M15
+- Symbols: works on any symbol. Best suited to FX majors and crosses with a clear Asian range
+- Start with the default filter values, then raise "Min Breakout Candle Body vs ATR Ratio" if you want fewer and stronger signals
+NOTES
+This is an analysis tool, not a trading system, and it does not place orders. It does not guarantee any result. Test it on a demo account and on your own broker's data before using it in any decision.
+Feedback and suggestions are welcome in the comments.
+Version 1.10 — correctness update
+- Sessions that cross midnight now work. The session end was rebuilt from
+each bar's own calendar date, so a window such as 22:00-08:00 never
+registered as complete and the indicator drew nothing at all.
+- The dashboard is drawn correctly in every corner. On a right-hand corner,
+which is the default, both the panel text and its background box were
+positioned from the chart edge outwards and ended up off screen.
+- Alerts now fire with "Confirm Signal on Bar Close" switched off. The alert
+was tied to a fixed bar index that mode never reaches, so arrows appeared
+but nothing was ever announced. Alerts are now limited to one per bar.
+- Session times are validated at startup. A malformed value now prints an
+explanation instead of producing an empty chart.
+- On a timeframe too high for the configured session the panel says so and
+suggests a suitable range.
+- The session range is calculated once per session rather than once per bar.
+Inputs are unchanged, so existing templates keep working.

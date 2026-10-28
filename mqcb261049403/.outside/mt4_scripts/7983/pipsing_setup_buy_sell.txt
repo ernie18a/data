@@ -1,0 +1,78 @@
+Author: Sell Percent, Scriptor; idea by borman (see
+https://www.mql5.com/ru/forum/107399
+)
+When working manually, we often see such a situation: the price is moving, and we are opening a dialog box and trying to place SL and TP as quickly as possible. Accordingly, we sum or subtract data mentally, which results in probable miscalculations... This obvious inconvenience makes one nervous.
+If we attempt to automate our trading, then the order must be calculated automatically.
+Let's base on the fact that most trading strategies have a predefined size of SL and TP. Script PipsingV1_Setup writes the following parameters of the future orders in global variables:
+- Lot size
+- Slippage
+- Amount of attempts to place the order
+- TP for the orders of Buy type
+- SL for the orders of Buy type
+- TP for the orders of Sell type
+- SL for the orders of Sell type
+- Prohibition to place Buy orders
+- Prohibition to place Sell orders
+Script PipsingV1_Buy checks the ratio deposit:lot of a Buy order, calculates the orders for a new price, and places the order.
+Script PipsingV1_Sell does the same for Sell orders.
+Accordingly, you should call script PipsingV1_Setup before trading to set the parameters and then use scripts PipsingV1_Вuy and PipsingV1_Sell during trading.
+By default, the following parameters are set in PipsingV1_Setup: volume=0.1, slippage=3, repeated attempts=1, TP Buy=10, SL Buyl=40, TP Sell=10, SL Sell=40, trading with Buy orders allowed, trading with Sell orders allowed.
+These signals of enabling/disabling placing the orders of certain types are included for the scripts to be used together with an indicator or EA. Correspondingly, they can be changed by these programs.
+To install the scripts, you should download the attached files into folder /scripts and compile them.
+Scripts are called from Navigator by double clicking with your mouse or by a hotkey (hotkeys work only within one chart, for unknown reasons).
+The scripts display two text objects. PiPsingOwn = test line with accepted parameters. It remains after the script has finished its work. It can be moved or deleted.
+As soon as you launch the scripts of Buy/Sell, the text object "!!!" is displayed immediately that is necessary to exclude the repeated call. The inscription of "!!!" is kept displayed as long as the script works, then it will disappear.
+Additions.
+A set of three scripts, version 2.
+PipsingV2_
+It has all functions of the first version. However, it doesn't depend on the first version in its operations.
+The global variables of the terminal are named differently, so now it is convenient to view/modify the trade parameters without using the
+Setup
+- just go to the tab of Tools>Global Variables =>
+P
+_[variable name]. All names of global variables start with "_Р".
+Error processing has been changed, no repeated placing is necessary, in case of critical errors.
+Following up the note of
+stace
+, the two-stage order placing is added
+.
+Description of two-stage placing:
+– open a contract with empty
+tp
+/
+sl
+,
+– then, after the order has been accepted by the broker, modify
+tp
+/
+sl
+.
+Placing mode flag:
+P
+_
+Two
+_
+slash
+=0 is the placing of a complete order (by default),it it is =1
+, then there will be a "double strike"
+.
+TP and SL are calculated from the price actual as of the moment of placing the order, i.e., recalculated at each attempt to modify them. The amount of attempts to place an order or to modify it is the same.
+In the code of
+PipsingV
+2_
+Buy
+/
+Sell, there is a line
+that says: "Delayed placing of modifications". This line is banned, since the opening of a contract is already a permission to modify it.
+If the broker doesn't accept the modification immediately after opening, you should just set the amount of attempts
+P
+_
+Repetition
+, for example, 5.
+The attempts will follow each other with a pause of 1 sec
+plus 1-3 sec for waiting for the broker's response, i.e., totally 2-5 sec per attempt. I suppose this would be sufficient.
+If this doesn't help, then you can restore the code line of "Delayed placing of modifications", and find a delay time for your specific broker.
+Alexander Pak, Almaty.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7983

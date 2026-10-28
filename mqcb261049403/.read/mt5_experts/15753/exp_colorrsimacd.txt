@@ -1,0 +1,14 @@
+The Exp_ColorRsiMACD Expert Advisor based on the signals taken from the
+ColorRsiMACD
+histogram. The signal is formed when a bar is closing if there is breakout of the zero level by the MACD histogram or if there is change in the direction of the histogram or signal line and also if there is breakout of the signal line by the histogram (depending on the options selected in the Mode input parameter).
+input
+AlgMode Mode=MACDdisposition;
+//algorithm to enter the market
+This Expert Advisor requires the compiled indicator file ColorRsiMACD.ex5 in order to run. Place it to <terminal_data_folder>\MQL5\Indicators.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. The instances of history of deals on the chart.
+Testing results for 2015 at USDJPY H6:
+Fig. 2. Testing results chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15753

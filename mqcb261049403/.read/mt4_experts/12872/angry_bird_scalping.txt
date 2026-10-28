@@ -1,0 +1,15 @@
+Real author:
+Bima setyawan (Jember Trader Community)
+It is EA with features that are very sensitive to movement is equipped with other features including:
+Equity stop;
+Tralling Stop;
+Equity Risk Management;
+Time Out Use;
+Max Trade open Hours and others.
+Rule: Use Pair With Minimal spreads, one I use EUR / USD With Time Frame 1 Minute.
+Good Luck
+Testing results:
+Recommendations:
+Use Pair with small spread (EUR/USD);
+Time Frame 1 Minute;
+Use Trailling Stop.

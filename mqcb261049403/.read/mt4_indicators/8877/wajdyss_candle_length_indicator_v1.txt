@@ -1,0 +1,2 @@
+Indicator for Show the length of the candle
+http://forum.m-e-c.biz/t28486.html

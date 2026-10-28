@@ -1,0 +1,125 @@
+Multi timeframe Tymen STARC Bands is a multi-timeframe version of the
+Tymen STARC Bands
+indicator. Shows three
+Tymen STARC Bands
+indicators with different parameters and timeframes on the current chart.
+It has twenty six input parameters:
+Drawing mode
+- indicator drawing type
+Steps
+- as a ladder
+Slope
+- sloping lines
+Show middle lines
+- show middle lines of Tymen STARC Bands
+Show first Tymen STARC Bands
+- draw the first Tymen STARC Bands indicator
+First bands timeframe
+- timeframe the first Tymen STARC Bands indicator
+First bands ATR period
+- ATR calculation period for the first Tymen STARC Bands
+First bands MA period
+- MA calculation period for the first Tymen STARC Bands
+First bands Method
+- MA type of the first Tymen STARC Bands
+First bands Applied price
+- MA calculation price of the first Tymen STARC Bands
+First bands ATR coefficient
+- external ATR period of the first Tymen STARC Bands
+First bands ATR middle coefficient
+- internal ATR period of the first Tymen STARC Bands
+Show second Tymen STARC Bands
+- draw the second Tymen STARC Bands indicator
+Second bands timeframe
+- timeframe the second Tymen STARC Bands indicator
+Second bands ATR period
+- ATR calculation period for the second Tymen STARC Bands
+Second bands MA period
+- MA calculation period for the second Tymen STARC Bands
+Second bands Method
+- MA type of the second Tymen STARC Bands
+Second bands Applied price
+- MA calculation price of the second Tymen STARC Bands
+Second bands ATR coefficient
+- external ATR period of the second Tymen STARC Bands
+Second bands ATR middle coefficient
+- internal ATR period of the second Tymen STARC Bands
+Show third Tymen STARC Bands
+- draw the third Tymen STARC Bands indicator
+Third bands timeframe
+- timeframe the third Tymen STARC Bands indicator
+Third bands ATR period
+- ATR calculation period for the third Tymen STARC Bands
+Third bands MA period
+- MA calculation period for the third Tymen STARC Bands
+Third bands Method
+- MA type of the third Tymen STARC Bands
+Third bands Applied price
+- MA calculation price of the third Tymen STARC Bands
+Third bands ATR coefficient
+- external ATR period of the third Tymen STARC Bands
+Third bands ATR middle coefficient
+- internal ATR period of the third Tymen STARC Bands
+The types of Moving Averages, which can be used for each of the three Tymen STARC Bands:
+Simple
+-
+simple moving average
+Exponential
+-
+exponential moving average
+Smoothed
+-
+smoothed moving average
+Linear-Weighted
+-
+linear weighted moving average
+Wilder Exponential
+-
+Welles Wilder's exponential moving average
+Sine-Weighted
+-
+sine-weighted moving average
+Triangular
+-
+triangular moving average
+Least Square
+-
+least square moving average (LSMA)
+Hull MA by Alan Hull
+-
+Hull's moving average (HMA)
+Zero-Lag Exponential
+-
+exponential moving average with the minimum delay
+Instantaneous Trendline by J.Ehlers
+-
+John Ehlers' trendline
+Moving Median
+-
+moving median
+Geometric Mean
+-
+moving average based on the geometric mean method
+Regularized EMA by Chris Satchwell
+-
+moving average based on Chris Satchwell's Regularized EMA method
+Integral of Linear Regression Slope
+-
+integral of linear regression slope (ILRS MA)
+Combination of LSMA and ILRS
+- moving average - combination of
+LSMA
+and
+ILRS
+methods
+Triangular MA generalized by J.Ehlers
+-
+John Ehlers' triangular moving average
+Volume-Weighted
+-
+volume-weighted moving average
+Fig.1. Multi timeframe Tymen STARC Bands, H4, H12 and D1 data on the H1 chart, Drawing mode = Steps
+Fig.2. Multi timeframe Tymen STARC Bands, H4, H12 and D1 data on the H1 chart, Drawing mode = Slope
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23312

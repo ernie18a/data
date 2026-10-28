@@ -1,0 +1,18 @@
+OHLC Volume Histogram displays the difference between two streams of the
+OHLC Volume volume indicator
+as a colored histogram.
+There are no input parameters.
+Calculation:
+Histogram = StreamUP - StreamDN
+where:
+StreamUP = Volume * UP_Coeff / (UP_Coeff+DN_Coeff)
+StreamDN = Volume * DN_Coeff / (UP_Coeff+DN_Coeff)
+UP_Coeff = High-Open
+DN_Coeff = Close-Low
+Volume - tick volume
+Fig.1. OHLC Volume Histogram
+Fig. 2. OHLC Volume Histogram +
+OHLC Volume
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23111

@@ -1,0 +1,13 @@
+The Multi pair MACD indicator. Another variant of MACD, shows the signals for the following pairs: EURUSD, GBPUSD и USDCAD.
+FastEma =12;
+SlowEma =26;
+SignalEma =9;
+barsPerPair=70;
+pairs ="EURUSD;GBPUSD;USDCAD";
+TimeFrame ="Current time frame";
+equalize =false;
+text ="color";
+textColor =Silver;
+backColor =C'48,48,48';
+separatorWidth=6;
+Multi pair MACD

@@ -1,0 +1,8 @@
+Indicator has a rekomendatsionny nature. Shows signals on the basis stohastika.
+Options:
+int K_period=8;
+int D_period=3;
+int S_period=3;
+bool Show_Stoch_Value=true;
+bool Show_Legend=true;
+Digistoch-1

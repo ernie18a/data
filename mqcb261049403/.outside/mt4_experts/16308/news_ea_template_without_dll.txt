@@ -1,0 +1,52 @@
+In essence, this is source code (template) of the Expert Advisor that downloads news from the investing.com, written in the MQL4 without the use of DLL. If you were looking for a way to do this in your product for the Market (use of DLL is not allowed there), then this is what you need. Now anyone can implement the feature of working according to the news background — and anyone can do this himself. The template is based on the
+Urdala News Investing
+indicator.
+For example, it is possible to make the EA to not trade at all during the news release, or make it close all profitable positions before the news release, or make it place pending orders before the news, there are numerous options. I give you a draft — create.
+But despite it being only a template, it is fully operational as news background indicator — generates signals, drawn lines.
+Recommendations:
+The code contains this segment
+if
+(CheckNews>
+0
+)
+     {
+// Here you should list the actions to be performed at the time of the news release and during its validity period
+Comment
+(
+"News time"
+);
+
+        }
+else
+{
+// Here you should specify the action when there is no news on the horizon
+Comment
+(
+"No news"
+);
+
+     }
+Currently, the EA simply generates a comment stating that there is news or there is no news. You can insert the conditions you want to execute during the news events instead of these comments.
+Attention! The EA operation requires the following link to be added to trusted URL:
+http://ec.forexprostools.com/?columns=exc_currency,exc_importance&importance=1,2,3&calType=week&timeZone=15&lang=1
+List of variables:
+BeforeNewsStop
+- time in minutes before the news for the EA to pause operation, for example, 5 minutes before the news release. The EA switches to "News time" mode.
+AfterNewsStop
+- time in minutes after the news for the EA to pause operation, for example, 5 minutes after the news release. The EA deactivates the "News time" mode.
+NewsLight, NewsMedium, NewsHard
+- enable downloading weak, medium and strong news.
+offset
+- Time zone (GMT).
+NewsSymb
+- list of all currencies, for which the news should be downloaded. If empty, currencies of the current symbol are used.
+DrawLines
+- draw lines on the chart.
+Next
+- draw only the upcoming news, do not draw the past news.
+Signal
+- alert about the approaching news at the distance of BeforeNewsStop minutes.
+If you are unable to insert the required functions into the EA, contact me.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16308

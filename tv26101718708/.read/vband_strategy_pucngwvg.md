@@ -1,0 +1,67 @@
+# VBand Strategy
+
+- url: https://www.tradingview.com/script/PuCNgwvG-VBand-Strategy/
+- type: strategy
+- pine_id: PUB;u5dYsTXbaq8XqGgXFubKlt6pg0HjOWeg
+- version: 2.0
+
+## Description
+
+VBand Strategy is simply used Vwap funcation and atr 14 for find the entry and exit points. This simple Strategy.
+
+## Source Code
+
+````pine
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © Saravanan_Ragavan
+
+
+// This is purely base on the vwap and atr14. This is very simple strategy 
+
+// Updates
+// 1) Changed Entry and Exit Labels and added Buy, Sell and Exit Symbols in the bottom 
+
+//@version=4
+strategy("VBand Strategy", overlay=true)
+
+
+
+// showing Vwap line 
+plot(vwap, color=color.black)
+
+// showing vwap + atr (14) line
+aboveline= vwap + atr(14)
+
+// showing vwap - atr (14) line
+belowline= vwap - atr(14)
+
+//showing above atr and below atr and fill the gap
+a1 = plot(aboveline, color=color.green)
+b1 = plot(belowline, color=color.red)
+
+fill(a1, b1, color.blue)
+
+
+
+// Buy above Buy Line
+if (crossover(close,aboveline))
+    strategy.entry("Buy", strategy.long, comment="Buy")
+    
+// Exit Long Below Vwap
+strategy.close("Buy", when = close<vwap)
+
+// Sell above Buy Line
+if (crossunder(close,belowline))
+    strategy.entry("Sell", strategy.short, comment="Sell")
+    
+// Exit Short above Vwap    
+strategy.close("Sell", when = close>vwap)
+
+
+plotchar(crossover(close,aboveline) and strategy.opentrades==0, title="Buy Signal", char="▲", location = location.bottom, color=color.green, transp=5,  text="Buy", textcolor=color.green)
+plotchar(crossunder(close,vwap) and strategy.opentrades!=0, title="Buy Exit", char="◼", location = location.bottom, color=color.black, transp=5,  text="B Exit", textcolor=color.black)
+
+
+plotchar(crossunder(close,belowline) and strategy.opentrades==0, title="Sell Signal", char="▼", location = location.bottom, color=color.red, transp=5,  text="Sell", textcolor=color.red)
+plotchar(crossover(close,vwap) and strategy.opentrades!=0, title="Sell Exit", char="◼", location = location.bottom, color=color.black, transp=5,  text="S Exit", textcolor=color.black)
+````

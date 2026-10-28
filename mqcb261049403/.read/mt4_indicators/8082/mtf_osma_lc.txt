@@ -1,0 +1,9 @@
+Author:
+SOK
+Indicator MTF_OsMA_Lc. Copied indicator OsMACD_M (it OsMA_Lc). Only now OsMA_Lc it is caused through iCustom.
+TimeFrame - 0;
+FastEMA - 12;
+SlowEMA - 26;
+SignalSMA - 9;
+AplyingPrice - 0;
+Indicator indicatori_ mtf_osma_lc

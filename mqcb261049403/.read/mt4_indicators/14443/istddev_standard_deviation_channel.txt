@@ -1,0 +1,1 @@
+This indicator will draw two Standard Deviation Channels based on Fibonacci 0.618 / 1.618 levels with the ability to fix the channel on your preferred timeframe.

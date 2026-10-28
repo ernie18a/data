@@ -1,0 +1,10 @@
+Situation: One demo account, with multiple experts being tested on it.
+Question: What is the profitability of each expert?
+To answer this question, I wrote a script that reads the list of deals from the account history, groups them by comments (I usually write the name of the EA and the timeframe it works on) and outputs to a file. The functionality has been extended by adding grouping by operation type (buy, sell), by symbol and by magic number. The results of the script operation are displayed in the figures below.
+Grouping by operation type
+Grouping by symbol
+Grouping by magic
+Grouping by comment
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8100

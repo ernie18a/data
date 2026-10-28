@@ -1,0 +1,140 @@
+The idea of the Expert Advisor was mine. The code of the Expert Advisor is written by
+Sergey Diubakin
+.
+This version the Expert Advisor was used for trading on a PAMM account. Due to the human factor (i.e. me) the net profit was 20%. The maximum profit that could be reached made 84% of the initial deposit.
+Real trading period: from 23.02.2015 to 23.07.2015.
+According to my observations, trading with this Expert Advisor requires a large deposit (15 000 - 20 000 minimum).
+The
+Moving Average
+indicator values are used for trading. If the fast Moving Average line is above the slow Moving Average line, and the distance between these two lines is greater than specified, then a buy order is opened.
+The opposite values of the indicators are used for opening a sell order. Order closing happens according to the Moving Average indicator values.
+This EA also has additional plugin modules: the distance between the fast and the slow Moving Average lines, Take Profit, Stop Loss, Trailing Stop, the distance between orders (up and down), Take Profit averaging method, Trade time, Turn, the increase of the first main lot in case the previous one closed with loss.
+The algorithm of the EA:
+The EA checks if there are any orders it had previously opened.
+If there are no open orders, then the EA analyzes the chart, and if all the conditions specified in the settings are met, it opens the first main order.
+After opening the first main order the EA sets the Take Profit and Stop Loss levels (if those modules are enabled).
+If the first main order closes with a loss, then the next order may be opened with an increase in size.
+If the first main order is placed, the Step Up and the Step Down modules are enabled and the price reaches the specified values, then additional orders for these modules are placed. Additional orders for the Step Up and Step Down modules may only be placed in case the EA sees that it has previously opened the first main order or there are unclosed additional orders.
+This Expert Advisor has 2 operation modes:
+a) 1 operation mode is that if the Fast MA is above the Slow MA, then the EA places buy orders, and once the trend changes (the Fast MA is below the Slow MA) all of the opened orders are closed and sell orders are placed.
+b) 2 operation mode is that if the EA has opened buy orders and the trend changes (the Fast MA is below the Slow MA), then the orders remain opened. The EA may place sell orders only when the Fast MA becomes lower than the Slow MA and all of the EA's orders are closed (Take Profit, Stop Loss are reached, or closed "by hand").
+This Expert Advisor has a Trade time module, which, if activated, allows the EA to place the first main order only at the time period specified in this module. This module does not apply to additional orders for Step Up, Step Down and Turn modules. That is, if there are orders previously opened by the EA, and either of the Step Up, Step Down or Turn modules is activated, then additional orders for these modules will be placed regardless of the time.
+Expert Advisor Settings:
+Operation mode:
+1 — if the trend changes, all of the opened orders are closed and the opposite orders are opened;
+2 — if the trend changes, the opened orders are not closed (the EA waits until Take Profit, Stop Loss are reached, or closed "by hand").
+Fast MA
+— settings for the Moving Average indicator plugin: period, offset, МА method. The Moving Average included in the MetaTrader 4 terminal is used.
+Slow MA
+— settings for the Moving Average indicator plugin: period, offset, МА method. The Moving Average included in the MetaTrader 4 terminal is used.
+Initial lot
+4.1.
+Initial lot
+LotConst_or_not
+— allows the user to choose whether to start trading from the very same lot or to recalculate the initial lot depending on the deposit change:
+true
+— the first lot will be constant and equal to the value of Lots, specified below;
+false
+— the first lot will dynamically change according to the change of the deposit and will depend on the RiskPercent parameter and the size of the deposit.
+Lots =AccountBalance() * (RiskPercent / 100.0) / 10000.0
+Lots
+— sets the initial lot for trading;
+RiskPercent
+— sets the initial lot depending on the deposit.
+4.2.
+Increase of the lot
+FirstLotMultiplicator
+— parameter which is responsible for the increase ratio of every following first main order in case the previous first main order closed with a loss (closed by Stop Loss, "by hand" or simply with a loss);
+First_LotSize
+— if the first main order reached a value specified in this line, then the EA places Take Profit on the level set in the following line (First_LotSize_TakeProfit), but not in point 5 of the EA settings;
+First_LotSize_TakeProfit
+— a "new" Take Profit level of the first main order, in case it reaches the size set in the First_LotSize line;
+First_MaxLotSize
+— the maximum value to which the EA will increase the first main order. If the size of the first main order to be placed is greater than the value specified in this line, then the EA places the first main order according to p.3.1. of the EA settings.
+Settings of the distance between the Fast MA and the Slow MA
+Distance
+— the required distance between the Fast MA and the Slow MA to open an order, measured in points of the chart the EA is attached to.
+true
+— the Distance module is activated (on),
+false
+— the Distance module is deactivated (off).
+Profit in points — TP
+TakeProfit — the desired value of profit in points when closing an order or a group of orders.
+true
+— the TakeProfit module is activated (on),
+false
+— the TakeProfit module is deactivated (off).
+Averaging method — Varyant
+— a variant of TakeProfit level averaging method (selectable between 1 or 2).
+Varyant 1.
+The averaging of the level happens according to this formula: (opening price 1 + opening price 2 + opening price 3 + opening price N) / N + Take Profit level, specified in the EA settings.
+Varyant 2.
+The averaging of the level takes place as follows: the EA determines the "lossless level" of every positions (considering every swap and commissions on orders, opened by the EA at the time of the Take Profit level averaging) and adds Take Profit level specified in the EA's settings to that price.
+Stop in points — SL
+StopLoss
+— value of the loss in points, which may be received, if the price moves the opposite (to the opened order) direction.
+true
+— the StopLoss module is activated (on),
+false
+— the StopLoss module is deactivated (off).
+The distance between orders (Step Up)
+— the distance (interval) between opened orders in the order grid, set along the "trend".
+true
+— the Step Up module is activated (on),
+false
+— the Step Up module is deactivated (off).
+9.1.
+Trailing stop
+— movable Stop Loss level.
+true
+— the Trailing stop module is activated (on),
+false
+— the Trailing stop module is deactivated (off).
+Distance between orders (Step Down)
+— the distance (interval) between opened orders in the order grid, set against the "trend".
+true
+— the Step Down module is activated (on),
+false
+— the Step Down module is deactivated (off).
+The identifier of the EA's orders — Magic (Magic Number)
+— the parameter helps EAs to recognize their orders when trading in one terminal.
+Logo and data output — ShowTableOnTesting
+— the parameter allows to turn the table (earnings today, yesterday etc.) on and off: true - on, false - off.
+Time frame
+— program code that determines which chart timeframe will be used by the EA for trading.
+Current — the chart timeframe, specified in the terminal.
+M1, M5, M15, M30, H1, H4, D1, W1, MN1 — fixed timeframes.
+Trade time
+— module for opening the first main order at a specific time.
+true
+— the Trade time module is activated (on),
+false
+— the Trade time module is deactivated (off).
+Turn
+— places limit orders according to Stop Loss level of the first main order in the opposite direction.
+true
+— the Turn module is activated (on),
+false
+— the Turn module is deactivated (off).
+Turn
+— the distance at which the opposite pending order is placed.
+LotMultiplicator
+— the parameter responsible for the increase ratio of the orders placed by the Turn module, in case the previous order closed with a loss (closed by Stop Loss, "by hand" or simply with a loss);
+Turn_TakeProfit
+— the Take Profit level for orders placed by the Turn module;
+Turn_LotSize
+— if the order to be placed by the Turn module exceeds the value set in this line, then a new Take Profit level is used for that order, which is specified by the Turn module in the next line, but not in the Turn_TakeProfit line;
+Turn_LotSize_TakeProfit
+— a new Take Profit level for the orders of the Turn module, in case the orders to be placed exceed the size specified in the Turn_LotSize line;
+Turn_MaxLotSize
+— the maximum size of an order to be placed by the Turn module. If the order to be placed exceeds the specified size, then the EA does not place it.
+Trade Results:
+This version the Expert Advisor was used for trading on a PAMM account. Real trading period: from 23.02.2015 to 23.07.2015.
+The maximum profit that could be reached made 84% of the initial deposit. However, because of myself, the net profit was only 20%. The reason was that I interfered with the EA's trading.
+The EA test runs I conducted showed 5%, 10%, 15% net profit yield per month with the drawdown of no greater than 20% of the deposit.
+P.S.
+The attached sets operated only on the account I traded on. Custom EA setting are required for each DC/broker and account (demo or real).
+Do not get carried away with the optimization, because it does not always help and may disregard order placement speed at very rapid movements.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13617

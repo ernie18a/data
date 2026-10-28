@@ -1,0 +1,160 @@
+The author of the idea
+:
+Maxym Kondratiuk
+,
+the mq5 code author
+:
+barabashkakvn
+.
+The trading strategy is based on the observation, which shows that if the price crosses the MA chart and moves a certain distance, the price is likely to continue its movement in the same direction.
+The EA uses pending Buy Stop and Sell Stop orders. Pending orders are modified to follow the current price at the specified
+Distance from MA for setting a pending order
+. An action is performed every
+Timeout
+seconds. The EA only trails pending orders. Once an order triggers and turns into a position, the position will no longer be modified.
+Input Parameters
+Stop Loss
+Take Profit
+Trailing Step
+Distance from MA for setting a pending order
+- minimum distance between the current price and the MA(590) indicator
+Timeout
+magic number
+- unique Expert Advisor number.
+Testing results for the last year (from 2017.01.01 to 2017.10.31) at the M1 timeframe:
+Symbol
+Pass
+Result
+Profit
+Expected Payoff
+Profit Factor
+Recovery Factor
+Sharpe Ratio
+Custom
+Equity DD %
+Trades
+USDCAD
+8
+2912,82
+1912,82
+2,66
+1,81
+3,09
+0,05
+0
+32,64
+718
+GBPUSD
+1
+2498,00
+1498,00
+1,53
+1,31
+0,91
+0,03
+0
+69,25
+980
+USDCNH
+4
+2423,50
+1423,50
+0,48
+1,29
+0,60
+0,02
+0
+53,66
+2983
+USDCHF
+2
+1461,92
+461,92
+0,98
+1,21
+0,70
+0,04
+0
+33,33
+469
+NZDUSD
+7
+969,68
+-30,32
+-0,08
+0,98
+-0,04
+0,01
+0
+52,90
+394
+AUDUSD
+6
+677,71
+-322,29
+-0,95
+0,77
+-0,39
+-0,04
+0
+64,30
+339
+EURUSD
+0
+661,05
+-338,95
+-0,48
+0,89
+-0,28
+0,00
+0
+70,87
+701
+GBPCAD
+10
+197,41
+-802,59
+-2,61
+0,38
+-0,42
+-0,14
+0
+92,23
+307
+USDJPY
+3
+195,22
+-804,78
+-2,24
+0,61
+-0,52
+0,00
+0
+88,95
+360
+USDRUB
+5
+8,45
+-991,55
+-13,05
+0,00
+-1,00
+-0,52
+0
+99,24
+76
+USDSEK
+9
+6,67
+-993,33
+-1,16
+0,38
+-0,72
+-0,27
+0
+99,53
+860
+USDCAD:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19341

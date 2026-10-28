@@ -1,0 +1,103 @@
+This EA looks at
+(3)
+time frames and determines either to short or to long a trade based on the highest time frame. This EA accesses the
+!LinRegrBuf
+indicator and determines the trend/slope for
+M1
+,
+M5
+, and
+H1
+time frames.
+If the
+H1
+trend/slope is heading in a positive direction
+(+)
+, then the EA waits until
+M5
+is oversold, and
+M1
+is oversold, then the EA enters a long trade.
+M5
+and
+M1
+oversold conditions are determined by waiting until the
+iLow
+of
+M5
+and
+M1
+is lower then the respective
+supports
+of the
+!LinRegrBuf
+indicator on
+M5
+and
+M1
+time frames. The takeprofit of the long order is the
+center line
+of the
+!LinRegrBuf
+indicator on a
+M5
+chart.
+The stoploss of the order is half of the takeprofit.
+If the
+H1
+trend/slope is heading in a negative direction
+(-)
+, then the EA waits until
+M5
+is overbought, and
+M1
+is overbought, then the EA enters a short trade.
+M5
+and
+M1
+overbought conditions are determined by waiting until the
+iHigh
+of
+M5
+and
+M1
+is higher then the respective
+resistances
+of the
+!LinRegrBuf
+indicator on
+M5
+and
+M1
+time frames. The takeprofit of the short order is the
+center line
+of the
+!LinRegrBuf
+indicator on a
+M5
+chart.
+The stoploss of the order is half of the takeprofit.
+The risk/reward ratio is 1:2 on all orders.
+This EA can be applied to any trading symbol.
+This EA can be applied to any chart, and any time frame, and it will show the slope of the trend of each time frame, as shown in the top left corner of the image above. In the chart above the M1 slope reading is -0.1212, this negative trend/slope can be visually seen in the chart above with the help of the
+!LinRegrBuf
+indicator. Slopes of other time frames are shown below the M1 slope.
+EA Properties:
+Trade | this enables the trading based on trends/slopes
+barstocount | this number is passed to the
+!LinRegrBuf
+indicator, to determine the trend. See the following link for details of the
+!LinRegrBuf
+indicator.
+https://www.mql5.com/en/code/8016
+Lots | lots to use in orders
+Slippage | allowed slippage in orders
+MagicNumber | number to track orders opened by this EA
+More Information:
+Download the
+!LinRegrBuf.mq4
+to the MT4 indicator directory, i.e. 'experts\indicators'
+To find out more details on this strategy review the content in the following link:
+http://www.saxoeducation.com/Learning/Pages/fx_MultipleTimeframes.aspx#4.1
+Investopedia information on multi time frame trading:
+http://www.investopedia.com/articles/forex/08/multiple-timeframe.asp

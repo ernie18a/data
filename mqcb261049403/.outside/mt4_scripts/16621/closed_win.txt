@@ -1,0 +1,1 @@
+Closure of all winning positions. (You can indicate a specific instrument if you want to).

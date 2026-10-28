@@ -1,0 +1,12 @@
+The Expert Advisor plays a sound when candlestick size exceeds a certain value.
+The size can be considered as Ask - Open (current price - candlestick open price) or as High - Low, the calculation mode is selected in the settings. It works on any timeframe and symbol.
+You can set timeframe irrespective of the current chart timeframe. Current — means current timeframe.
+Parameters:
+TimeFrame — choose timeframe.
+BarPoint — bar size in points.
+SP — bar size measuring type.
+WavFile — the name of the sound file.
+ShowAlert — show an additional pop-up alert or not.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17206

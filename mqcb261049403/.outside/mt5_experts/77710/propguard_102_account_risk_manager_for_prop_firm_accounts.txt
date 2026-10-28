@@ -1,0 +1,47 @@
+PropGuard 1.02 — account-level risk manager for prop-firm accounts
+One copy on any chart watches every position on the account, whatever EA or manual trading opened it, and closes everything before the firm's daily or maximum loss limit is hit. Version 1.02 adds size caps in money, a stop-loss requirement and a per-position risk cap.
+Why 1.02: numbers from my own account
+I trade a 100k FTMO account by hand next to my own EAs. Four days of my journal (46 manual trades) showed two things the daily and maximum loss limits alone do not catch:
+17 trades ended without a stop loss. The longest one ran 2 hours 22 minutes.
+One 18-lot GER40 trade had a 94-point stop and lost 1,933 — about two thirds of a 3% daily limit, on a single trade.
+The screenshot replays both in the Strategy Tester (a tester-only build opens the two trades; the guard code is the one attached here), with InpRequireStopLoss true, InpMaxRiskPerPos 750 and the size caps off so only the stop rules act: the 18-lot stop is pulled in to the 750 cap at once, and the 8 lots without a stop are closed after 62 seconds.
+What it does
+Daily loss.
+At the reset time (default 01:00 server, which is 00:00 CE(S)T at FTMO) it records the equity. If equity drops by more than InpDailyLossPct of InpInitialBalance during the day, all positions are closed, pending orders deleted, and with InpBlockAfterBreach any new position is closed again until the next reset. Set the guard below the firm's rule: 4% for a 5% rule, 2.5% for a 3% rule, so there is room for slippage when it closes.
+Maximum loss.
+Three ways to measure it (InpMaxLossMode):
+static: from the initial balance (classic 2-step evaluations),
+trailing: from the highest equity seen, updated on every tick,
+trailing daily balance: from the highest balance recorded at a daily reset. This is how FTMO's 1-Step Challenge recalculates its floor at midnight, and the floor never moves down.
+The guard fires at InpMaxLossPct (default 8% for a 10% rule).
+Size caps in money, not lots.
+A lot cap makes no sense across instruments: 15 lots of an index CFD at 25,000 is worth about 430,000, 15 lots of another index at 7,700 about 115,000, 15 lots of EURUSD about 1,750,000. PropGuard measures every position as lots x current price x value of one point per lot, in the account currency, and compares that:
+InpMaxNotionalPerPos: a single position worth more than this is closed.
+InpMaxNotionalTotal: when everything open together is worth more than this, the newest position is closed, then the next newest, until it fits.
+Why money: a 1% move against 300,000 of exposure is 3,000, whatever the symbol. If the daily limit is 3,000, that is the number to set. The old InpMaxLotsPerPos is still there (0 = off) for anyone who wants a lot cap as well.
+Stop-loss requirement.
+With InpRequireStopLoss, any position that still has no stop loss InpStopGraceSeconds after it was opened is closed. Sixty seconds is enough to type one in.
+Risk cap per position.
+InpMaxRiskPerPos is the most money one position may risk between its open price and its stop loss. If a stop risks more, PropGuard moves it to the distance that risks exactly the cap. If the market has already gone past that distance when it looks, the position is closed instead. The cap is in account currency, so it also fits every instrument. Positions whose stop is already in profit are left alone.
+Best-day information.
+With InpBestDayInfo the log shows, at every reset, the most profitable day as a share of the sum of all positive days. FTMO's 1-Step rule requires that share to be at most 50% when the challenge is passed. Information only, no action.
+Also:
+a trading window and a Friday close (server hours), a high-impact news filter from the MT5 economic calendar, a magic number to exclude, push notifications on every action, and a CSV log per account in MQL5/Files. State (day start, breach flag, highest daily balance) is kept in terminal global variables, so a restart after a breach does not re-arm trading before the next reset.
+Inputs
+InpInitialBalance — account size the percentages refer to.
+InpDailyLossPct, InpMaxLossPct, InpMaxLossMode — the two limits and how the maximum loss is measured.
+InpResetHour, InpResetMinute — the firm's daily reset in server time.
+InpMaxLotsPerPos, InpMaxNotionalPerPos, InpMaxNotionalTotal — size caps (0 = off).
+InpRequireStopLoss, InpStopGraceSeconds — stop-loss requirement.
+InpMaxRiskPerPos — risk cap per position in account currency (0 = off).
+InpBestDayInfo — best-day ratio in the log.
+InpCloseOnBreach, InpBlockAfterBreach — what happens at a breach.
+InpUseWindow, InpWindowStartHour, InpWindowEndHour, InpFridayClose, InpFridayCloseHour — time rules.
+InpUseNewsFilter, InpNewsCurrencies, InpNewsMinutesBefore, InpNewsMinutesAfter — news window.
+InpPushAlerts, InpMagicToIgnore.
+Example, FTMO 1-Step 100k
+(3% daily, 10% trailing, best day 50%): InpInitialBalance 100000, InpDailyLossPct 2.5, InpMaxLossPct 8, InpMaxLossMode trailing daily balance, InpResetHour 1, InpMaxNotionalPerPos 300000, InpMaxNotionalTotal 450000, InpRequireStopLoss true, InpMaxRiskPerPos 750, InpBestDayInfo true.
+Example, 2-step 200k
+(5% daily, 10% static): InpInitialBalance 200000, InpDailyLossPct 4, InpMaxLossPct 8, InpMaxLossMode static, InpResetHour 1.
+Notes.
+In the Strategy Tester the EA opens and closes one minimum-lot position at start so the closing logic can be seen working; on a live or demo account it never opens anything. The tester has no economic calendar, so the news filter is inactive there. The time rules use server time; check the reset hour after a daylight-saving change, because the firm's midnight and the server clock do not always move on the same date.

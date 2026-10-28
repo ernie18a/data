@@ -1,0 +1,33 @@
+Every backtest on 1-minute OHLC data makes one silent assumption: that inside a bar, price walked Open - Low - High - Close on a bullish bar and Open - High - Low - Close on a bearish one. It has to assume something, because OHLC data does not record the path. Real ticks do.
+That assumption only matters when the bar that closes a trade touches both the stop and the target. Then the order decides whether the trade was a win or a loss, and the tester is guessing. This script measures how often the guess is wrong.
+How it works.
+On every M1 bar it opens a virtual bracketed trade - one level above the bar open, one below, both the same distance away - and walks forward until price reaches one of them. If the closing bar touched only one level, there was nothing to decide. If it touched both, the script compares the tester's assumption with what the real ticks of that minute actually did.
+The answer depends entirely on how wide the bracket is, so the script sweeps several distances and prints the curve. On XAUUSD, over 30 days and 27 844 virtual trades:
+20-point stop
+- 62.6 % of trades contested,
+23.84 %
+resolved the wrong way
+50-point stop
+- 30.1 % contested,
+8.25 %
+wrong
+100-point stop
+- 8.9 % contested,
+1.66 %
+wrong
+200-point stop
+- 1.5 % contested,
+0.18 %
+wrong
+500-point stop
+- 0.1 % contested,
+0.00 %
+wrong
+1000-point stop
+- nothing contested, nothing wrong
+"Contested" means the bar that closed the trade touched both levels, so the order decided the outcome. "Wrong" is the share of all resolved trades where the tester's assumed order was the opposite of what the ticks did - a win written down as a loss, or the reverse.
+So the honest conclusion is not "OHLC always lies" or "OHLC is fine". The lie has a threshold, the threshold is symbol-specific, and you can measure it in eleven seconds instead of arguing about it.
+Inputs.
+InpSymbol (empty = the chart symbol), InpDays, InpBrackets (the stop distances to sweep, in points), InpHorizonBars (how long a trade may stay open before it counts as unresolved), InpStepBars (open a trade every N bars, raise it on slow machines) and InpWriteCSV, which lists every mis-resolved trade with its entry time, its closing bar, what the model said and what the ticks said, so you can look at individual cases.
+It reads history only. It never places an order and never touches an open position.
+Requires real tick history for the symbol - download it in the Symbols window first, otherwise the contested trades cannot be decided.

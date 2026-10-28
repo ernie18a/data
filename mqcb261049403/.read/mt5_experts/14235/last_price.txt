@@ -1,0 +1,10 @@
+A scalper that trades depending on the last deal on the open interest side. It is known that on a centralized market a chart is plotted depending on the last deal made on the market side. Therefore, this robot watches that deal and opens positions depending on where its price goes.
+The robot's feature is that it opens positions without slippage. Parameters are configured to RTS futures.
+The expert advisor launch date and its position are marked on the figure.
+Recommendations:
+In order to aviod drawdown, the last deal must be greater or less than Ask and Bid prices. Otherwise you may lose out on the spread.
+It is possible to specify the maximum allowed spread for opening a position, just to be safe.
+Deal volumes also affect the potential profit. It was noted that the volume equal to 1 generates income more often (that is when dealing with the "extreme mode" of the expert advisor - when the minimum deviation of the deal price is only slightly greater than spread).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14235

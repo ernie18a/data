@@ -1,0 +1,28 @@
+KSQ Fair Value Gap EA is a fully automated Expert Advisor that
+trades institutional Fair Value Gaps (FVGs) with built-in regime
+detection to avoid low-quality setups in ranging markets.
+━━━ CORE STRATEGY ━━━
+Detects bullish and bearish 3-bar FVG patterns and enters when
+price pulls back into the unfilled zone. Each FVG is tracked
+individually — once traded, it will not fire again.
+━━━ REGIME DETECTION ━━━
+- EMA Filter — Higher timeframe EMA50/EMA200 bias (configurable TF)
+- ADX Filter — Minimum trend strength + DI+/DI- directional check
+- Combined Mode — Both conditions must align for a valid signal
+- Off Mode — Trade all FVGs without restriction
+━━━ STOP LOSS & TAKE PROFIT ━━━
+Both SL and TP support two independent modes:
+- ATR-Based — Multiplier × ATR for dynamic volatility-adjusted levels
+- Fixed Points — Set exact point distance for consistent sizing
+━━━ LOT SIZING ━━━
+- Fixed Lot — Consistent lot size every trade
+- Risk-Based — Auto-calculates lot size from account % risk per trade
+━━━ TRADE MANAGEMENT ━━━
+- Partial close at mid-TP or configurable R:R level
+- ATR or points-based trailing stop
+- Max simultaneous trades cap
+━━━ RISK PROTECTION ━━━
+- Daily drawdown kill switch (%)
+- Total drawdown kill switch (%)
+- Session time filter (hour-based)
+- Push notification and alert support

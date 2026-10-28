@@ -1,0 +1,16 @@
+This trading system is drawn on the basis of the JMASlope indicator. A signal to perform a deal is formed at bar closing.
+Depending on input parameter value there is a choice of one of two algorithms of trading system:
+input
+AlgMode Mode=breakdown;
+//an algorithm to enter the market
+In the first algorithm the signal to perform a deal is formed if there was a breakthrough of the zero line. In the second algorithm the signal is formed when the oscillator changes its direction.
+Place
+JMASlope.ex5
+compiled file to the terminal_data_folder\MQL5\Indicators.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. The instances of history of deals in the chart.
+Testing results for 2011 at XAUUSD H4:
+Fig. 2. Chart of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1524

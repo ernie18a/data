@@ -1,0 +1,11 @@
+The oscillator displays in a separate window the yesterday/today ranges ratio.
+"If yesterday's range was narrower than the previous day's one, it may be an explosive movement today." (Toby Crabel)
+It has one input parameter:
+Threshold
+- threshold(*)
+* If yesterday's range is narrower than the Threshold and the previous day's range was wider than yesterday's range, then a good movement can be expected today.
+Calculation:
+Range = (High - Low) / ((PrevHigh - PrevLow) / 100.0)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20987

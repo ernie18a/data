@@ -1,0 +1,32 @@
+Idea by
+:
+Aleksey Filatkin
+.
+MQL5 code by
+:
+barabashkakvn
+.
+An Expert Advisor based on cluster indicator
+CCFp (Complex Common Frames percent)
+Stop Loss, Take Profit, and Trailing levels in true points. For instance, parameter 500 means 0.00500 for a five-digit symbol and 0.0500 for a four-digit one.
+Inputs
+Lots
+- volume of the position to be opened
+Stop Loss
+- stop loss
+Take Profit
+- take profit
+Trailing Stop
+- trailing
+Trailing Step
+- trailing step
+Step
+- step between the indicator values
+Close opposite positions
+- closing opposite positions
+magic number
+- unique identifier for the EA.
+Default parameters for EURUSD,H1: In one case, parameter "Close opposite positions" is equal to true; in the other case, it is equal to false
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21298

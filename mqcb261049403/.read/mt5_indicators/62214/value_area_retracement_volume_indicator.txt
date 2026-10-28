@@ -1,0 +1,15 @@
+The
+VAR (Value Area Retracement) Volume Indicator
+for MT5 is a technical tool that analyzes price action within the
+Value Area
+(typically the 70% volume range of a Market Profile).
+Key Levels
+: Highlights critical price zones and profile extremes.
+Volume-at-Price (VAP)
+: The X-axis lists price levels paired with volume data, indicating liquidity concentrations.
+Retracement Logic
+: Identifies pullbacks into high-volume nodes (Value Area) for potential reversals or continuations.
+Technical Note
+: The indicator merges Market Profile concepts (brackets, profile highs) with volume profiling, aiding in spotting institutional footprints and statistically significant retracement zones.
+The alphanumeric sequences may encode time-price-volume mappings for algorithmic backtesting.
+Scalpers/swing traders leverage VAR to confirm entries/exits near high-volume retracement levels, aligning with auction market theory.

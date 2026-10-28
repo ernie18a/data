@@ -1,0 +1,21 @@
+Author of the idea
+—
+Oleksandr
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+Before opening\closing a position, a simple market analysis is performed, which determines the support\resistance levels, as well as the trend direction — bullish or bearish.
+Support and resistance levels are calculated using the last
+numBars
+bars.
+Trend is determined using the Moving Average indicator (its period is specified in the
+maPeriod
+parameter): if the price is below the MA, there is bearish trend, otherwise it is bullish.
+If the trend is defined as bullish, a position is opened at a breakout of the resistance level.
+If the trend is bearish, a position is opened at a breakout of the support level.
+The position is closed by StopLoss, which is set at the support (for a long position) or resistance (for a short position) level. It is also possible to close a position at the breakout of the support (if a long position is open and it is in breakeven) or resistance (if a short position is open and it is in breakeven) level. The Expert Advisor uses a primitive TrailingStop with the levels at 10, 20, 30 points.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17568

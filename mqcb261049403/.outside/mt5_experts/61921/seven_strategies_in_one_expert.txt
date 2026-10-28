@@ -1,0 +1,6 @@
+'Seven strategies in One exper' or 'MultiStrategyEA' it's a system it includes the code of seven different experts in one expert.
+The experts included are as follows, AC_Expert, ADX_Expert, AO_Expert, DeM_Expert, ForceBB_Expert, MFI_Expert, MS_Expert.
+It has many parameters so that each user can find the appropriate settings that suit their investment profile.
+It can work on 28 different pairs, one pair per chart.
+The default parameter settings are indicative,
+I recommend that each user experiment to find their own settings.

@@ -1,0 +1,1 @@
+This is a simple indicator that plots Signal History on the chart. This requires the csv file downloaded and saved in the folder MQL4/Files/Tipu History/history.csv. The folder and file settings can be changed from the input section, however the file has to be saved in the Files folder of MQL4.

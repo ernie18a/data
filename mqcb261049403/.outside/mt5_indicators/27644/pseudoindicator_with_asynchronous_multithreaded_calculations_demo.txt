@@ -1,0 +1,28 @@
+This indicator is a pseudo-indicator w/o buffers. Its only purpose is to demonstrate multi-threaded calculations technique. The indicator can issue commands for lenghty calculations which are performed in separate threads, created for chart objects with worker expert adviser. The classes provided in the included header file -
+MultiThreadedObjectWorker.mqh
+- will automatically create the chart objects and apply template with specified worker expert adviser in each object. After calculation is done the object is automatically removed from the chart.
+This example is intended for users with programming background.
+The idea comes from the article about
+Multi-Threaded Asynchronous WebRequests
+. Please, find all technical details on how the messages (events) are dispatched, and how resources are used to pass data between charts in the article.
+The indicator utilizes more "compact" implementation of the techique than in the article by using chart objects instead of full-fledged chart windows. You may find details on the
+forum
+.
+Make sure the worker expert adviser -
+MultiThreadedObjectWorker
+- is compiled before you compile and run the indicator itself -
+MultiThreadedIndicator
+.
+Input parameters
+sinput int _Cores = 1; - number of threads to utilize (don't use more than available physical cores)
+sinput int _Tasks = 1; - number of pseudo-tasks to execute in parallel (use number larger than number of cores to see parallel performance)
+input string MultiThreadedScriptPath = "Experts\\MultiThreadedObjectWorker.ex5"; - must indicate the pathname of the worker expert adviser
+Each pseudo-task calculates a bunch of sqrt functions (for demo purposes only). This can be changed in your MQL projects to any other time-consuming algorithms.
+To start parallel calculations after the indicator is attached to a chart, please, click the chart. All important phases of the process (both in client and worker MQL5 programs) are logged.
+The client MQL programm issuing parallel calculations requests can be not indicators only but expert advisers as well. Scripts and services are not supported by the platrform.
+Using the header file MultiThreadedObjectWorker.mqh you should implement your own data marshalling between MQL5-client and the worker expert adviser.
+Here is 2 examples of the logs.
+Execution of 4 tasks on 2 cores (2 threads in parallel)
+When running 4 tasks on 2 cores there are 2 parallel threads, that provides twice as fast execution as on 1 cores (compare 3354ms above and 6240ms below).
+Execution of 4 tasks on 1 core (single thread - standard MQL program)
+More cores - more speed.

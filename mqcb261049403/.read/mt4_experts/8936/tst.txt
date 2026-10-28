@@ -1,0 +1,74 @@
+Without the display adviser.
+Strategy Tester Report
+TST
+Alpari-Demo (Build 223)
+Symbol
+GBPUSD (Great Britain Pound vs US Dollar)
+Period
+15 Minutes (M15) 2009.04.01 00:00 - 2009.05.18 00:00 (2009.04.01 - 2009.05.18)
+Model
+Control points (a very crude method, the results must not be considered)
+Bars in test
+4135
+Ticks modeled
+114766
+Modeling quality
+n/a
+Mismatched chart errors
+79
+Initial deposit
+10000.00
+Total net profit
+10318.31
+Gross profit
+108074.00
+Gross loss
+-97755.69
+Profit factor
+1.11
+Expected payoff
+3.30
+Absolute drawdown
+1244.87
+Maximum drawdown
+9609.19 (49.91%)
+Relative drawdown
+49.91% (9609.19)
+Total trades
+3131
+Short positions (won %)
+1578 (60.96%)
+Long positions (won %)
+1553 (77.98%)
+Profit trades (% of total)
+2173 (69.40%)
+Loss trades (% of total)
+958 (30.60%)
+Largest
+profit trade
+50.00
+loss trade
+-103.39
+Average
+profit trade
+49.73
+loss trade
+-102.04
+Maximum
+consecutive wins (profit in money)
+96 (4793.52)
+consecutive losses (loss in money)
+25 (-2573.02)
+Maximal
+consecutive profit (count of wins)
+4793.52 (96)
+consecutive loss (count of losses)
+-2573.02 (25)
+Average
+consecutive wins
+6
+consecutive losses
+3
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8936

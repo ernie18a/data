@@ -1,0 +1,8 @@
+Since now we have a possibility of using real volumes too (where it is provided by the broker), seems that the Volume Rate of Change indicator becomes interesting to be used.
+The Volume Rate of Change indicator (VROC) measures the rate of change in volume over the past "n" sessions. In other words, the VROC measures the current volume by comparing it to the volume "n" periods or sessions ago.
+VROC can be a powerful technical indicator. When the rate of change is high, you can then compare price to any technical support or resistance levels or use any other price based technical indicators as well.
+In such circumstances, the Volume Rate of Change indicator can tell you ahead of time whether the support or resistance levels can be breached and can confirm trends as well.
+The Volume Rate of Change indicator can be used in a number of ways. There are quite a few trading strategies that also employ the information from the VROC indicator.
+Using the Volume Rate of Change to spot fake market moves
+Most commonly, the Volume Rate of Change indicator can be used to determine fake breakouts in the market. When markets are trading at a new high, volume is typically stronger. This validates the high and new interest in the security pours in pushing volume higher.
+However, when volume fails to validate a new high, you can expect to see a correction in the price.

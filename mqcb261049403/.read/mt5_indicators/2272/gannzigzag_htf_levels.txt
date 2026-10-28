@@ -1,0 +1,8 @@
+A set of support and resistance levels built on the last tops of
+GannZIGZAG_HTF
+with an option of fixing the timeframe, on which the zigzag is calculated.
+To provide correct operation of the indicator, place the compiled GannZIGZAG_MTF.mq5 and GannZIGZAG.mq5 indicator files in terminal_data_folder\MQL5\Indicators.
+Figure 1. Indicator GannZIGZAG_HTF_Levels
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2272

@@ -1,0 +1,15 @@
+StepMA_3D_v3
+indicator with the timeframe selection option available in the input parameters:
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// Indicator chart period (timeframe)
+For the indicator to work, the
+StepMA_3D_v3.ex5
+indicator must be added to the <terminal_data_directory>\MQL5\Indicators folder.
+Fig. 1. StepMA_3D_v3_HTF
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21910

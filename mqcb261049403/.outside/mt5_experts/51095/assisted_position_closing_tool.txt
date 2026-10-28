@@ -1,0 +1,11 @@
+Two parameters;
+The first one sets the stop loss amount, which must be negative. It does not work without input.
+The second one is the take profit multiplier, based on the stop loss value.
+The tool has a disadvantage, it does not recognise pending orders.
+It has the advantage that a set stop loss will default to an order that does not require the tool to operate, making it convenient for users to hold both long-term and short-term orders.
+It has two ways of stop loss: one is to set a stop loss for one of the orders to guide the closing of the position.
+The second is to close the position using a multiple of the input.
+This tool is designed to strictly limit the stop loss, especially for people who often trade stop loss frequently. If you often arbitrarily stop loss, then you can use it to discipline yourself.
+Translated from Chinese by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/zh/code/51095

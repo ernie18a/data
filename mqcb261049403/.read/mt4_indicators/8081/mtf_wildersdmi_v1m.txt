@@ -1,0 +1,18 @@
+Author
+:
+igorad
+One more version of indicator
+WildersDMI_v1
+. Works with indicator
+ADX_WildersDMI_v1m
+, it
+WildersDMI_v1
+.
+The brief explanatory
+MA_Length - Period of additional smoothing
+DMI_Length - Period of DMI
+ADX_Length - Period of ADX
+ADXR_Length - Period of ADXR
+UseADX - Use ADX: 0-off, 1-on
+UseADXR - Use ADXR: 0-off, 1-on
+Indicator MTF_WildersDMI_v1m

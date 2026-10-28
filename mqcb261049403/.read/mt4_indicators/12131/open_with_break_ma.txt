@@ -1,0 +1,9 @@
+This indicator shows when to open positon.
+If it break above moving average 5 line its time to buy and break below sell... and break more moving average 20 that more strong buy and sell.
+Rule:
+buy when break above ma 5 and ma 20;
+sell when break below ma 5 and ma 20.
+Stoploss when it touch again ma 5 and reversal;
+Recomendation
+Use in tf H1;
+This stratagy have optimized to open with ma 5 and ma 20.

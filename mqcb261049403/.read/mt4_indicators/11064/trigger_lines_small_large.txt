@@ -1,0 +1,7 @@
+Author:
+The Author of this code is William Kreider (madhatt30) but the concept comes from the indicators on NinjaTrader. These "Triggerlines" were ported from the NinjaTrader code to work with MetaTrader
+This indicator is designed to be used along side your existing strategy. The Triggerlines help to provide information on the direction of the market. For the most part The large Triggerlines could be interpreted as the bigger trend (or Higher Timeframe Trend) and the small Triggerlines could be interpreted as the smaller Trend (or Current Timeframe Trend).
+Pullbacks into the triggers would indicate and good area to consider an entry.
+The more price hangs around the Triggerlines or penetrated them the weaker they get and could indicate a change in direction, refer to small Triggerlines to fine tune the entry.
+I have found other "Triggerlines" indicator out there but I have found them to be inaccurate. This will match up to the NinjaTrader if put side by side with the exception of broker price difference of course.
+You can use these on any Standard Timeframe

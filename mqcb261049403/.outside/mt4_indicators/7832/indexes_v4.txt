@@ -1,0 +1,14 @@
+Author: Xupypr
+Indicator Indexes_v4. It shows the motion pattern of two or more indexes on a single chart.
+I've read that the
+"auto_detect_pair"
+parameter should be equal to
+"false"
+, at the same time you can specify what exactly indexes to display with the
+"show_USD"
+and so on, the default one is to display all. The description of all parameters is in the source code. Look throug hthe code.
+An one thing more - indexes are united to one point at the beginning of every week, i.e. the base point is changed with the coming of every new one - the close prices of the previous week are used.
+The last version of the indicator is
+here
+.
+The indicator requires the uploading of the history of all symbols.

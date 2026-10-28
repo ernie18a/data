@@ -1,0 +1,5 @@
+Author: Poruchik & aka KimIV
+The indicator calculates the product of GBPUSD x USDCHF. Painted blue, GBPCHF - light blue (repeats the price on the upper chart).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7407

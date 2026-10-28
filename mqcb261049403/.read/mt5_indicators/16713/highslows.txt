@@ -1,0 +1,2 @@
+A simple indicator that shows the high and the low of desired time frame on a current chart.
+It can be limited to show just a certain number of higher time frame values back (in order to keep the chart as clean as possible). It can be used as usually this type of indicators are used: for expected volatility estimation.

@@ -1,0 +1,31 @@
+A specification panel shows what a broker reports now. Broker Contract Change Watch records when selected contract properties differ from the last saved observation.
+What it watches
+Digits, point size, minimum price tick and contract size.
+Minimum, maximum and step volume, plus the directional volume limit.
+Stops and freeze levels.
+Trading mode, execution mode, filling flags and allowed order flags.
+Swap mode, long and short swap values, and the triple-swap weekday.
+The tool stores a baseline for the account server, account login and chart symbol. After reattachment or a terminal restart, it can compare the next valid observation with that saved baseline. A small panel displays the latest change, volume settings and stop restrictions. The CSV contains the observed local time, property, previous value and new value.
+Spread and currency-converted tick value are deliberately excluded from the baseline because routine market movement can change them. A change in a watched property is an observation, not an accusation of broker misconduct.
+Inputs
+Input
+Default
+Use
+InpPollSeconds
+10
+Poll interval, from 1 to 3600 seconds.
+InpResetBaseline
+false
+Explicitly replace the saved baseline on this attachment.
+InpPopupAlerts
+false
+One terminal popup for a batch of changes.
+InpPanelX / InpPanelY
+16 / 24
+Panel placement.
+InpFontSize
+10
+Text size, from 8 to 18.
+Keep reset disabled during ordinary use. Enable it only when intentionally starting a new baseline, then return it to false for later attachments. A disconnected terminal or unavailable symbol specification does not advance the baseline. A corrupt or incompatible saved file is rejected rather than silently accepted.
+Limits
+Only the chart symbol is watched. Values changing and reverting between polls can be missed. The tool cannot recover changes from before its first baseline or establish the exact time of a change during downtime. Trading/filling/order flags are recorded as native MQL5 numeric values. It does not audit trading-session schedules or all possible contract fields.

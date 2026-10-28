@@ -1,0 +1,11 @@
+OHLC Volume displays two volume graphs considering Open, High, Low and Close and applying two calculation methods: High-Open and Close-Low.
+Since it is calculated only by OHLCV bar values, the indicator has no configurable parameters.
+Calculation:
+Vol UP = Volume * CoeffUP/(CoeffUP+CoeffDN)
+Vol DN = Volume* CoeffDN/(CoeffUP+CoeffDN)
+where:
+CoeffUP = High-Open
+CoeffDN = Close-Low
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21402

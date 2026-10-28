@@ -1,0 +1,33 @@
+The indicator automatically draws Fibonacci lines by yesterday's or today's range.
+Some notes to use indicator input parameters:
+input
+bool
+AutomaticallyAdjustToToday =
+true
+;
+//adjustment under the current prices
+input
+Hour  TimeToAdjust=H00;
+//the hour of shifting Fibo
+input
+uint
+iDaysBackForHigh=
+0
+;
+//number of days back to obtain high
+input
+uint
+iDaysBackForLow=
+0
+;
+//number of days back to obtain low
+AutomaticallyAdjustToToday (adjustment under the current prices) - the parameter determines whether to have the indicator automatically adjust to today's prices;
+TimeToAdjust (the hour of shifting Fibo 0 /23) - If the AutomaticallyAdjustToToday parameter is set to 'true', you can define at what time the fib lines switch to using today's prices instead of the yesterday's ones;
+iDaysBackForHigh and iDaysBackForLow. If the AutomaticallyAdjustToToday parameter is set to 'false', you can adjust the amount of days back to get high and low, from which the readout will start.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 25.07.2008.
+Fig.1 The AutoDayFibs indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1678

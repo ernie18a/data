@@ -1,0 +1,14 @@
+Author of the idea
+-
+Martingeil1
+mq5 code author
+-
+barabashkakvn
+NOTE: The EA can be used only on hedging accounts!
+The EA applies OHLC analysis, standard iMA (Moving Average, MA) and iRSI (Relative Strength Index, RSI) indicators, as well as
+Silence
+custom indicator.
+Martingale is applied. The system is based on improved Ilan versions.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22985

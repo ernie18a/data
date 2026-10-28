@@ -1,0 +1,24 @@
+A live Expert Advisor can stay in profit long after its edge has gone. The Edge Drift Detector answers one question with a statistical test: do the live closing deals still come from the same distribution as the backtest, or has the average result per deal fallen toward zero?
+The script reads two CSV files and prints a full report in the Experts tab:
+A live Expert Advisor can stay in profit long after its edge has gone. The Edge Drift Detector answers one question with a statistical test: do the live closing deals still come from the same distribution as the backtest, or has the average result per deal fallen toward zero?
+The script reads two CSV files and prints a full report in the Experts tab:
+CUSUM edge-loss detector
+: an alarm threshold calibrated by bootstrap from the backtest deals, with a false-alarm rate you choose over a planned monitoring horizon.
+Drift start
+: the deal and date after which the drift most likely began.
+Two-horizon check
+: bootstrap tail probabilities for the last 20 and the last 100 deals.
+Expectancy decomposition
+: the change in expectancy split into win-rate, win-size, and loss-size effects.
+Symbol mix check
+: a warning when the live account trades a different mix of instruments than the baseline, since per-lot results of different symbols are not comparable.
+Detection delay
+: the median number of deals needed to confirm a complete loss of edge for this strategy.
+Edge Health Score (A+ to F)
+and a CONTINUE, WATCH, REDUCE, or SUSPEND verdict with written recommendations.
+Input.
+No code changes are needed. Backtest the Expert Advisor, right-click the Backtest results, choose Report, and save it as HTML in the common Files folder. Then run EdgeDrift.mq5 on the live account with the Expert Advisor's magic number. The script finds the newest ReportTester*.html file by itself and reads the live deals from the account history. On the first run, before any report exists, it prints these steps and analyzes built-in demonstration data. Two alternatives are available: a CSV baseline or live file, and a baseline taken from the same account before a chosen date. DriftExport.mq5 is an optional helper that writes the live deals to CSV when the account runs on another terminal.
+Files.
+Both scripts go to MQL5\Scripts\EdgeDrift. The attached MQL5.zip already has this structure.
+Parameters.
+InpBaseSource selects a tester report, a CSV file, or the account history. InpLiveSource selects the account history or a CSV file. InpMagic, InpSymbol, and InpLiveFrom filter the deals. InpMaxMixGap sets the symbol mix difference that triggers a warning. InpHorizon sets the planned monitoring horizon in deals. InpAlpha sets the false-alarm probability over that horizon. InpShortWindow and InpLongWindow set the two windows. InpBootstrap and InpSeed control the resampling, which is reproducible. InpPerLot normalizes every result to one lot. The score weights, the healthy tail level, and the grade boundaries are all inputs.

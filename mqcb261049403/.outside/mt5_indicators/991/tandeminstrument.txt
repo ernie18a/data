@@ -1,0 +1,14 @@
+This indicator implements visualization of pair trading method (searching for divergences). Tandem Expert Advisor uses the same method (
+https://www.mql5.com/en/code/955
+).
+Fig. 1. Overlaying EURUSD chart on GBPUSD. Common H1 timeframe
+Fig.1 shows the example of the indicator application. It can clearly be seen that pairs diverged for a certain distance and started converging again. At the next similar divergence, the upper pair should be sold, while the lower one should be bought. When pairs start converging, both deals should be closed. One deal will be closed with a loss, while another one will fix a profit exceeding the loss.
+The following parameters were used in the above example:
+Fig.2. TandemInstrument indicator parameters used in the example
+History of changes:
+September 8, 2012
+improved the indicator code considering possible holes in an indirect symbol;
+added data on an indirect symbol's density (the ratio, by which the sizes of an indirect symbol's candles are multiplied before they are displayed on the main symbol's chart) to the chart window comment.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/991

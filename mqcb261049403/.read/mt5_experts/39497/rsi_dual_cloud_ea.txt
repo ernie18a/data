@@ -1,0 +1,129 @@
+Trading strategy
+The EA uses a custom indicator
+'
+RSI Dual Cloud
+'. The EA uses four types of signals:
+Entrance to the zone
+Being in the zone
+Leaving the zone
+Lines crossing
+For 'BUY' signals, the zone is formed below the level '
+RSI Fast and Slow: Level DOWN
+', and for 'SELL' - '
+RSI Fast and Slow: Level UP
+'.
+Rice. 1. RSI Dual Cloud EA
+Now more about the parameter groups
+"Trading settings"
+The Expert Advisor can be optimized by the '
+Working timeframe
+' parameter - the timeframe used for the '
+bar #1 (on a new bar)
+' mode. '
+Stop Loss (SL)
+' and '
+Take Profit (TP)
+' are in Points, to disable any of these options - set it to '0'. The modes for trailing and searching for signals ('
+Trailing on ...
+' and '
+Search signals on ...
+') can be of two types: '
+bar #0 (at every tick)
+' - work on every tick and '
+bar #1 (on a new bar)
+' - work only when a new bar is born. '
+Maximum number of positions
+' limits the maximum number of simultaneously open positions, and '
+Minimum step of positions
+' sets (in Points) the minimum distance between positions, it doesn't matter what type of position and relative position (higher or lower).
+"
+Signals
+"
+Four types of signals from a custom indicator. Any signal can be enabled/disabled.
+"
+Trailing
+"
+In the '
+Trailing
+' section, all three parameters are in Points. Trailing works ONLY for a profitable position! '
+Trailing activate if profit is >=
+' - this is an analog of breakeven, is set in Points. To disable trailing set the '
+Trailing Stop
+' parameter to '0'.
+"
+Position size management (lot calculation)
+"
+The lot can be either permanent ('
+Money management
+' set to '
+Constant lot
+' and set the lot size to '
+The value for "Money management"
+') and dynamic - in percent risk per trade ('
+Money management
+' set to '
+Risk in percent for a deal
+' and set the risk percentage in '
+The value for "Money management"
+'). You can also set a constant lot equal to the minimum lot - '
+Money management
+' set to '
+Lots Min
+'.
+"
+Trade mode
+"
+Restriction in which direction to trade. Can take the values '
+Allowed only BUY positions
+', '
+Allowed only SELL positions
+' and '
+Allowed BUY and SELL positions
+'
+"
+Time control
+"
+This section sets the time range for searching for trading signals. The time range is enabled via '
+Use time control
+' and sets the time interval for searching for signals from '
+Start Hour
+'::'
+Start Minute
+' to '
+End Hour
+'::'
+End Minute
+'. The time range can be set both within the day and with the transition through the day. Does not affect trailing.
+"
+Additional features
+"
+Flag '
+Positions: Only one
+' set to '
+true
+' allows the EA to have no more than one position in the market.
+WARNING:
+'
+Positions: Only one
+' set to '
+true
+'
+does not override
+'
+Positions: Close opposite
+'
+set
+to '
+true
+'! In other words: the opposite position(s) will be closed first
+The flag '
+Positions: Reverse
+' is responsible for signal reversal. An interesting flag '
+Positions: Close opposite
+' - when set to '
+true
+' before opening a position, it is guaranteed to remove opposite positions. '
+Print log
+' prints an extended log of all operations. The '
+Freeze and StopsLevels Coefficient
+' parameter sets the coefficient for stop and freeze levels for cases when these levels for a symbol are equal to zero. The recommended value is '3'.

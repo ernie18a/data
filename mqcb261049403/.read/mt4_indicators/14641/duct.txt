@@ -1,0 +1,15 @@
+The indicator plots a channel based on fractals.
+Description of the indicator settings:
+Time_Frame — period of the chart for finding the fractals and the points of control of the channel. At = 0 means the current chart, on which the MQL4 program is running.
+Needed_Bars
+— The number of bars in history for the indicator calculation, at = 0 all bars are calculated.
+Clamping_Bars
+— limit of the number of bars for the search of fractals, at = 0 calculated automatically.
+Koeff_Flat
+— The coefficient to determine the flat.
+collir
+—
+the color of the indicator lines.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14641

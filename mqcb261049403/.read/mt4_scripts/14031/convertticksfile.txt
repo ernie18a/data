@@ -1,0 +1,23 @@
+The converter of the tick files created with the Ticks collector into different data representation formats.
+During the operation of the
+Ticks collector
+special tick files are created (TKS type). The main usage of the TKS files — creating non-standard charts in the MetaTrader 4. Those can be offline charts as well as
+non-standard strategy tester files
+.
+Nevertheless, there is still a range of problems that can be solved with the real tick history at hand. The rest is up to the toolset. The ConvertTicksFile script tried to fill in that gap. It provides three ways of processing the tick files:
+1. A simple rewriting of the data into a CSV file
+(a usual text file, that may be opened with either the Notepad or by using the Excel).
+The resulting file will look like this:
+The first column — date/time of the tick, the second — Bid price, the third — Ask price.
+2. Into candlesticks of the specified chart period.
+The data, as in the precious case, is written into a CSV file in such a format, that can later be read by the MetaTrader 4 terminal during a quotes import (Tools - History Center).
+3. Into candlesticks of the specified chart period with a direct write of the quotes into the MetaTrader 4 terminal history.
+Data is written directly into the HST files of the terminal. As a result, it is possible to change the current quotes history used by the terminal, which requires great caution from the user.
+This method, for example, allows to fill in the gaps in the quotes history. So, if there is such a "gap":
+then after the operation of the script and with the corresponding tick history file, the "gap" ceases to be such.
+The full description of the script —
+Conversion of the tick stream files
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14031

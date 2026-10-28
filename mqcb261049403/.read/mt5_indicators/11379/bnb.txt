@@ -1,0 +1,15 @@
+Real author:
+Zhaslan
+The indicator shows the power of bulls and bears.
+The indicator uses SmoothAlgorithms.mqh library classes (must be copied to the
+terminal_data_folder
+\MQL5\Include). The use of the classes was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 21.05.2012.
+Fig.1. Bulls and bears indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11379

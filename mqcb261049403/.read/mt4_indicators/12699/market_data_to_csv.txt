@@ -1,0 +1,7 @@
+Author:
+Inovance
+Easily save historical bar data and every new tick to a csv file. To find the saved file, in the MetaTrader 4 directory, open the "MQL4" folder and your file will be in the "Files" folder.
+It will capture both all the historical data in your chart and changing values with every new tick. To save indicator values as well, we have also published
+Indicators Values to CSV
+Custom Indicator.
+To use, just add the Custom Indicator to the chart, name the csv file, and all the historical data as well as every new tick will automatically be recorded to the csv file.

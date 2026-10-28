@@ -1,0 +1,1 @@
+This simple script will close /delete a order based on the input value passed on the script. for example if user pass OP_BUY then it will close all the buy trades. Similarly if someone pass OP_SELL_LIMIT then it will delete all sell limit orders

@@ -1,0 +1,33 @@
+The code of the adviser, excluding the position opening algorithm, is copied from the advisor
+Dual MACD
+int size_need_position=ArraySize(SNeedPosition);
+            if(main_0[1]>0 && main_1[1]>0)
+                if(main_0[1]<main_1[1] && main_0[0]>main_1[0])
+
+     {
+      if(!InpReverse)
+        {
+         ArrayResize(SNeedPosition,size_need_position+1);
+         SNeedPosition[size_need_position].pos_type=POSITION_TYPE_BUY;
+         return(true);
+        }
+      else
+        {
+         ArrayResize(SNeedPosition,size_need_position+1);
+         SNeedPosition[size_need_position].pos_type=POSITION_TYPE_SELL;
+         return(true);
+        }
+     }
+            if(main_0[1]<0 && main_1[1]<0)
+                if(main_0[1]>main_1[1] && main_0[0]<main_1[0])
+Trading settings
+In the Expert Advisor, you can both enable and disable the Take Profit, Stop Loss and Trailing Stop levels. To disable the selected parameter, simply select the parameter set to "0.0".
+Trailing can be triggered either in N-seconds or only at the moment of the birth of a new bar. Trailing interval in seconds is set in Trailing, in seconds. Rule: if the interval is set less than "10" - this means work ONLY at the time of birth of a new bar, if the interval is set exactly or more than "10" - this means work every "N" seconds.
+Additional features
+Only one positions - there is always only one position in the market.
+Reverse - the flip of trading signals
+Close opposite - closing positions opposite to the trading signal, and first comes the guaranteed closing of the opposite position and only then opening a new position in the direction of the signal
+Please note: the trading signal has the highest priority! You can limit its execution only with the help of the parameter Only one positions. If Only one positions is "true" and the number of positions opened by this advisor on this symbol is greater than "1" - then the trading signal is ignored.
+The Close opposite parameter is "true": first CLOSE the opposite position, then work out the trading signal.
+Management of position size (lot calculation)
+A lot can be either permanent (Money management set in Constant lot and set the lot size in The value for "Money management") or dynamic - in percent risk per trade (Money management set in Risk in percent for a deal and set risk percent in The value for "Money management").

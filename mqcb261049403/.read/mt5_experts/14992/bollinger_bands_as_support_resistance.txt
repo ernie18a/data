@@ -1,0 +1,67 @@
+Bollinger Bands as Support & Resistance Using Pending Orders:
+It will use the upper BB edge as Sell pending order & lower BB edge to place the Buy pending order.
+The central SMA line of the BB will be used to close the opened positions as enough.
+It is not profitable, it is just an example for coding Forex robots.
+It is trading only on time frame 15 minutes as you can see in the code below:
+//+------------------------------------------------------------------+
+//|   expert OnTick function                                         |
+//+------------------------------------------------------------------+
+void
+OnTick
+()
+  {
+   BB_UPPER   =
+iBands
+(
+NULL
+,
+PERIOD_M15
+,BB_period ,BB_dev ,
+0
+,
+PRICE_CLOSE
+,
+MODE_UPPER
+,
+0
+);
+   BB_SMA     =
+iBands
+(
+NULL
+,
+PERIOD_M15
+,BB_period ,BB_dev ,
+0
+,
+PRICE_CLOSE
+,
+MODE_SMA
+,
+0
+);
+   BB_LOWER   =
+iBands
+(
+NULL
+,
+PERIOD_M15
+,BB_period ,BB_dev ,
+0
+,
+PRICE_CLOSE
+,
+MODE_LOWER
+,
+0
+);
+............
+.
+.
+.
+  }
+You can change the period above from PERIOD_M15 to PERIOD_CURRENT or by using the ENUM_TIMEFRAMES
+Recommendations
+This example is only for coders who are interested in automated trading source codes.
+Using this example in real account is not recommended.
+Take care!

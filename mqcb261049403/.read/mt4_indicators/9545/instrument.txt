@@ -1,0 +1,18 @@
+New version :
+http://codebase.mql4.com/en/code/9632
+Shortly:
+Displaying of candles of any instrument of any period.
+The description:
+All is very simple.
+We choose
+Instrument,
+TimeFrame - if 0 that of a chart,
+Vertical shift in points,
+Horizontal shift in bars,
+History,
+The colour scheme.
+We receive some tools on one chart.
+Simply, clearly. There is not of any questions. )
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9545

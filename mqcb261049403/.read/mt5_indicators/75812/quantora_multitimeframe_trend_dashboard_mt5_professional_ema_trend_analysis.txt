@@ -1,0 +1,6 @@
+Quantora Multi-Timeframe Trend Dashboard MT5 is a multi-timeframe trend analysis indicator for MetaTrader 5.
+It analyzes seven timeframes at the same time — from M1 to D1 — and classifies each one as bullish, bearish, or neutral using an EMA-based model. This allows traders to quickly see how different timeframes are aligned without switching between charts.
+Each timeframe contributes to an overall trend score, which is summarized into a clear market bias ranging from strong bearish to strong bullish. This helps identify whether the market structure is consistent or mixed across timeframes.
+The dashboard also shows basic market data such as bid, ask, and spread, and updates automatically in real time.
+EMA periods can be adjusted, making the indicator flexible for different trading styles.
+This tool is designed for market analysis only. It does not generate signals or manage trades.

@@ -1,0 +1,9 @@
+Further to the topic about equivoluminal bars. The indicator is recommended to be used on M1.
+Parameters:
+int Price_Mode= 0; // price mode 0-6
+int MA_Period=13; // smoothing period
+int CountTick=100; // the amount of ticks in the forming bar
+bool DrawAll=false; // should the intermediate results be drawn or not?
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7946

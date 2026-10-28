@@ -1,0 +1,25 @@
+Twiggs Money Flow is an indicator by Colin Twiggs, which uses
+Welles Wilder's Moving Average
+.
+It has one configurable parameter:
+Period
+- calculation period.
+Calculations:
+TMF = WMA(ADV) / WMA(Volume)
+where:
+WMA - Wilder's Smoothing Average with the smoothing average k = 1/Period
+ADV = Volume * (2*Close - TRL - TRH) / TR
+TRH = Maximum(High, PrevClose)
+TRL = Minimum(Low, PrevClose)
+TR = TRH-TRL
+Interpretation:
+Positive values of Twiggs Money Flow point to a bullish trend in the market, negative values indicate a bearish trend.
+The greater the oscillator value (above or below zero), the stronger the signal.
+Long position entry is performed when the resistance line is broken upwards and Twiggs Money Flow is above zero.
+Short position entry is performed when the support line is broken downwards and Twiggs Money Flow is above zero.
+The divergence of the oscillator line and the price also provides good signals:
+Long position entry at a bullish divergence.
+Short position entry at a bearish divergence.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21687

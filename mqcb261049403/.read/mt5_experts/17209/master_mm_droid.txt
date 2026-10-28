@@ -1,0 +1,24 @@
+Author of the idea
+—
+Musa Esmagambetov
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+Four trading strategies in one Expert Advisor.
+Description from the author of the idea:
+An Expert Advisor with an implemented idea of deposit protection against loss. Version 2.4.
+Consists of 4 trading strategies and a money management unit. Available parameters: broker's time shift relative to Greenwich, money management mode (0 to 10) separately for each strategy. The code has been optimized, while most of logical errors have been fixed. Nevertheless, there are still some strange parts in the code, so its development continues.
+The Expert Advisor works based on 4 trading strategies simultaneously, recommended timeframe is M5, but you can try to run the EA on other timefraames. The EA has been originally designed for autonomous operation on a VPS. In case of stop or restart, interbal variables will be reset, so for a proper operation of the EA, the terminal should be turned on on weekends if you are running the EA from home. It is originally created for USDJPY, but can also work on EURUSD. The built in trading strategies show not so good results on other timeframes.
+Brief description of trading strategies.
+1. RSI buy/sell signals, MA exiting overbought/oversold areas. If the price has gone from the first entry point in the right direction, there will be two rebuys at a step of 15 points.
+2. Breakout of box, a set of several well-known breakthrough strategies, stop orders are placed in both directions, 6, 12 and 20 hours GMT, untriggered orders are deleted after 4 hours.
+3. The popular "Lazy trader" strategy. On Monday two stop orders are placed in two directions, which are then closed on Friday.
+4. The strategy monitors gap on Monday, i.e. the difference between the Friday's Close and the Monday's Open. All positions are provided with trailing stop. Take profit has been removed from the Expert Advisor, since it was connected with the deleted scaling, i.e. a position is opened using two orders, one of them does not has a target, and the other one has the take profit.
+Important Warning
+: All strategies are trend strategies. It is clear from backtests, that when the market moves in a range/triangle which is vilible on H4/D1, the EA loses money.
+When run on EURUSD, M1, the balance graph is losing, although equity is more than balance there:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17209

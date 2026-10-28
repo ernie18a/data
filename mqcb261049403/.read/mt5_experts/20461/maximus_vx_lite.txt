@@ -1,0 +1,43 @@
+The author of the idea
+:
+eugene-last
+.
+The MQL5 code author
+:
+Vladimir Karputov
+.
+The Expert Advisor determines price consolidation levels. Consolidations are visually displayed as horizontal lines on a chart, forming a kind of a channel. The two upper lines (green) indicate the corridor for BUY positions, and the two lower lines (red) mark a corridor for SELL positions:
+The EA tries not to open more than two positions of each type (BUY and SELL). The following rule is used: if there is a position, then the next position of the same type can be opened no earlier than after
+Trade once in the "timeframe of checked elements"
+* number of seconds on the
+History: timeframe of checked elements
+timeframe.
+Input Values
+Trade once in "timeframe of checked elements"
+- the minimum time interval, after which the second position can be opened (the parameter value is multiplied by
+History: timeframe of checked elements
+);
+Minimum indent from to the consolidation line to open a position
+- the minimum distance from the current consolidation line to position opening level;
+History: range candle (High - Low)
+- the minimum candlestick size for calculating consolidation;
+History: data count to copy
+- the number of requested elements for calculating consolidation;
+History: number of checked elements for Max and Min
+- the number of analyzed elements inside
+History: data count to copy
+;
+History: timeframe of checked elements
+- the timeframe, on which consolidation is calculated;
+Risk in percent for a deal from a free margin
+- risk per trade calculated as percent of free margin;
+Stop Loss
+- the stop loss value (50 means 0.00050 on 5-digit quotes and 0.0050 on 4-digit quotes);
+Min profit (percent)
+- the minimum profit (in percentage), upon reaching which all positions are closed;
+magic number
+- unique identifier for the EA.
+Testing results on EURUSD, H1 with default parameters:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20461

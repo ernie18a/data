@@ -1,0 +1,13 @@
+Author of idea
+—
+Iurii Tokman
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+A multi-currency Expert Advisor that opens a market position (either Buy or Sell) at the user defined time. You can also set to close the position at a particular time, select currencies, as well as select the percentage of profit or loss to close all positions.
+You can specify up to ten symbols in settings (symbols can be repeated). Attention: if you specify a non-existent symbol, the Expert Advisor will be unloaded with an error.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17766

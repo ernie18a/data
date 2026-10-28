@@ -1,0 +1,67 @@
+Indicators: 1. Open Position Points 2. Open Position Pips
+These indicators are
+simplification modifications
+of the iexposure indicator.
+Both indicators are in all functions exact except one is by default set to return [p] = Pips and the other [p] = Points.
+Both indicators can display either Pips or Points depending on true/false status of [p_as_Points] option.
+The MT4 terminal returns profit as a) Points or b) Term Currency or c) Deposited Currency. Points is consistent with MT4 Terminal, however, individual preference may favor Pips.
+The indicator must be placed in a secondary window such as a MACD or Stocastics window
+-
+note:
+the indicator will not display in the chart-primary window.
+If a second window is not in use attach Blank.mq4 as a secondary window. See above download files.
+Drag and drop indicator on secondary window.
+Display will appear only when a trade is opened.
+Increase/decrease width between columns:
+Use X_Distance_Multiplier option with small decimal increments - too large an increment, up or down, will result in indicator display shifting off-screen.
+Example: [p]=Points:
+Profit-Loss [€]
+Lots - long[10.00 L] German Bund & short [-0.01 L] Dow-Industrial
+Points [p]
+Symbols [EuBundMar12...]
+Example: [p]=Pips:
+Profit-Loss [£]
+Lots - all positions long [0.10 L]
+Pips [p]
+Symbols [EURUSD...]
+Permanently change defaults options - examples provided .
+Edit the below highlighted code to permanently change default options.
+See here for examples - scroll towards end of SL+TP-CP Dist Indi - v2.
+//**** START OF DEFAULT OPTIONS
+extern color Symbols =
+LightSlateGray
+;
+extern bool p_as_Points =
+true;
+extern color Pips_or_Points =
+DarkOrange;
+extern color Lots_Long =
+Lime;
+extern color Lots_Short =
+Red;
+extern string Currency_Symbol = "
+£
+";
+extern color Prof_Gain =
+Lime;
+extern color Prof_Loss =
+Red;
+------------------------------------------
+extern int corner =
+1
+; //0 - for top-left corner, 1 - top-right, 2 - bottom-left, 3 - bottom-right
+extern int Line1_Distance_Y =
+1
+;
+extern double X_Distance_Multiplier =
+1.5
+;
+extern int Font_Size =
+8
+;
+extern string Font_Face = "
+Arial Bold
+";
+//**** END OF DEFAULT OPTIONS
+Credits:
+Thanks to Daniel Kirstein for contributions: X_Distance_Multiplier and corner.

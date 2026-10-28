@@ -1,0 +1,54 @@
+Telegram Trade Notifier keeps you informed about your account when you are away from the terminal. Attach it to one chart and it sends a Telegram message for every trade event. The EA never opens, changes or closes trades on your account.
+Preview mode on a EURUSD M30 chart (demo account): without a bot token the messages are shown on the chart
+Messages
+Position opened
+: side, lots, symbol, price, stop loss and take profit, and where it came from: an EA (with its magic number), a manual order, the mobile app or the web terminal.
+Position closed
+: price, result in the account currency, and the reason: stop loss, take profit or stop out.
+Pending order
+placed, cancelled or expired.
+Stop loss / take profit changed
+(optional, off by default, because trailing stops would send many messages).
+Daily summary
+at the server hour you choose: closed trades, won and lost, closed result, open positions, floating result, balance and equity.
+Messages are put in a queue and sent from the timer, so trade events are never slowed down by the network. A message that fails is sent again (up to 5 attempts); errors that a retry cannot fix, such as a wrong token or chat ID, are printed in the Experts journal.
+Preview mode
+: leave the bot token empty to try the EA first. The messages are then shown on the chart and in the Experts journal, and nothing is sent to Telegram. The chart also shows the status (messages sent, waiting, last error) and the last messages.
+Setup
+In Telegram, create a bot with @BotFather and copy its token.
+Send a message to your bot (or add it to your group or channel) and find the chat ID, for example with @userinfobot.
+In MetaTrader 5 open Tools > Options > Expert Advisors, tick "Allow WebRequest for listed URL" and add https://api.telegram.org
+Attach the EA to one chart (any symbol, any timeframe) and enter the token and the chat ID.
+Inputs
+Input
+Default
+Meaning
+Bot token
+token from @BotFather, empty = preview mode
+Chat ID
+user, group or channel
+Title of the messages
+empty
+empty = "Account <number>"
+When the EA starts / Position opened / Position closed
+true
+Pending order placed / cancelled
+true
+Stop loss / take profit changed
+false
+Daily summary / Summary at server hour
+true / 23
+hour 0-23
+Only this magic number
+-1
+-1 = all trades
+Only this symbol
+empty
+empty = all symbols
+Show the status and the last messages on the chart
+true
+Number of messages shown on the chart
+6
+Notes
+Keep the bot token private and do not share .set files that contain it.
+In the Strategy Tester web requests are not allowed, so the messages are printed in the journal instead of being sent. Only there, the EA opens and closes one small test trade a day (minimum lot, closed after 4 hours), so you can see the messages.

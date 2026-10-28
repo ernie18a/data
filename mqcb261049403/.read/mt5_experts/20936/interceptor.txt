@@ -1,0 +1,55 @@
+Idea by
+:
+mserega76
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+A trading strategy based on working with a "fan" of Moving Averages (three timeframes, five Moving Averages on each). The EA is designed to work on GBPUSD,M5 "five-digit." If you try to run it on another symbol or another timeframe, the EA will finish its operation with an error.
+Two methods of obtaining data from indicators Moving Average are used in the code:
+Data from only one bar per request (obtaining data in variable) - "
+iMAGet
+"
+Data from several bars per request (obtaining data in array) - "
+iMAGetArray
+" and "
+iStochasticGetArray
+"
+CopyRates
+is also widely used to accelerate calculations.
+Inputs
+lot size when position is opened normally (if signals do not match)
+flat coefficient on M5 (number of points per bar)
+initial stop loss (if it is below 100, no stop loss will not be placed)
+take profit (if it is below 100, no take profit will be placed)
+minimum profit in points upon moving to breakeven
+stop loss upon moving to breakeven (we move it to breakeven, if the parameter is above 9)
+the maximum allowable distance between MAs for a fan on chart M5 (in signal 1 only)
+the maximum allowable distance between MAs for a fan on chart M15 (in signal 4 only)
+the maximum allowable distance between MAs for a fan on chart M15 (in signal 6 only)
+stochastic period (for M5)
+upper level of stochastic (for M5)
+lower level of stochastic (for M5)
+stochastic period (for M15)
+upper level of stochastic (for M15)
+lower level of stochastic (for M15)
+minimum size of the candlestick body (in signal 1 only)
+low flat (the minimum flat length in bars)
+high flat (the maximum flat height in points)
+minimum distance in bars between the indicator peaks for divergence on M5
+minimum percentage of the long hammer shadow
+maximum percentage of the short hammer shadow
+minimum hammer size in points (in chart M5)
+how long ago the hammer was present (the highest number of its bar)
+on how many bars the hammer is the maximum (in signal 6 only)
+narrow source (the largest width of the fan on M5 at the narrowest point)
+how many bars ago the fan converged to the "narrow source" (to practically a point)
+maximum/minimum range that is broken through ("narrow source" in bars)
+marking your positions with such number
+minimum shift of trailing stop
+distance from trailoing stop to the price (if it is below 100, trailing does not function)
+A single test in the "Every tick based on real ticks" mode:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20936

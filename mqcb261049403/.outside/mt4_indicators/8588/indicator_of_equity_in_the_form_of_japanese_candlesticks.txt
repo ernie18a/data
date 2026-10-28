@@ -1,0 +1,10 @@
+Equity and Balance Chart for the Account
+In distinct from
+more simple variant
+, the indicator has a number of differences and improvements:
+the equity chart in the form of the japanese candlesticks, it gives a visible range of differences
+more delicate adjusting by the orders filtering (besides the magic number and the symbol you can add the selection by the comment or the type of operation)
+the writing of data to a file, for example, for further processing in Excel
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8588

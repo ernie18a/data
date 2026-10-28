@@ -1,0 +1,5 @@
+Description of the EA
+A joke expert, now with a full range of features. There is Stop Loss, Take Profit, Trailing, lot size management, position reversal... Full description of the trading engine is in the "
+RSI Dual Cloud EA
+" code (only there is no indicator here).
+Pic. 1. At random Full

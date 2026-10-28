@@ -1,0 +1,10 @@
+Real author:
+KCBT
+The indicator displays the pivot level, support and resistance levels.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 24.09.2007.
+Figure 1. The HL indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2213

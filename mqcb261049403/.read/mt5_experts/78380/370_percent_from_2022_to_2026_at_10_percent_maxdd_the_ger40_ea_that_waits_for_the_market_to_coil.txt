@@ -1,0 +1,69 @@
+370 Percent from 2022 to 2026 at 10 Percent MaxDD. The GER40 EA That Waits for the Market to Coil
+GER40 Evening Coil
+is a free, fully open EA for the German 40 index on H1. It buys in the evening session after a recent narrow-range bar, when volatility is calm and volume is normal, and closes everything by 23:00 server time. Four conditions, long only, one trade at a time, a stop loss on every trade.
+Backtest results
+GER40, H1, 2022 01 01 to 2026 10 13. $10k starting balance, fixed lot of 5, so there is no compounding.
+Net profit: +$37,647 (+376.5%)
+Return per year: +78.7% (simple, not compounded)
+Max drawdown: 10.5% of equity
+MAR ratio: 2.74
+Profit factor: 2.07
+Win rate: 62.6% (291 of 465)
+Trades: 465, all long (about 97 a year)
+Average win / average loss: $250.81 / $203.10
+Longest losing streak: 5 trades
+Recovery factor: 13.12.
+Robustness: 15 tests built to break it
+It passed all 15 with grade A. The tests ran in my research engine, not in MetaTrader.
+Costs and timing
+: doubled fees (PF 1.82), extra slippage on every entry and exit (PF 1.71), every entry one bar late (PF 1.43).
+Is it luck?
+p-value 0.000014 on the data used to build it and 0.001 on data it never saw. It beats 200 random-entry strategies (PF 1.95 against a random median of 1.09). It stays significant after the Harvey-Liu haircut for 5,552 candidates tested (adjusted p 0.0008). In 1,000 Monte Carlo resamples, even the worst 5% stay profitable.
+Overfitting
+: profit factor on unseen data is 2.15, against 1.88 on the data used to build it. Four of five walk forward periods are profitable, and the fifth broke even. Probability of backtest overfitting is 14%. The look-ahead audit is clean.
+Fragility
+: all 12 nearby versions keep a PF of 1.60 to 1.96, and all 55 parameter tweaks stay profitable (median PF 1.58). Dropping a random 20% of trades, or the 10 best trades, still leaves a clear profit; the 10 best trades are only 29% of the total.
+The strategy in more detail
+A signal needs all four conditions on the bar that just closed:
+Volatility is not spiking. The last 10 hourly returns are less than 1.6 times as volatile as the last 100.
+Volume is at least normal. The bar’s tick volume is not below its 50-bar average.
+A quiet regime. The average tick volume of the last 252 bars is below a set level.
+A recent coil. One of the last 13 bars was an NR7 bar, the narrowest of its last 7.
+These came out of my automated research. I don’t claim a theory for why they work, so the code is here for you to test and challenge.
+Trade management:
+it buys at the open of the next bar with a stop at 3.5 ATR and a target at 4.5 ATR. Everything is closed at 23:00 server time, or one minute before your broker closes GER40 if that’s earlier.
+When it trades:
+Monday to Friday, in the evening session after the Frankfurt cash close while Wall Street is open. The times assume the common MetaTrader server time of GMT+2 in winter and GMT+3 in summer:
+Entries
+Close
+Server
+18:00 to 21:00
+23:00
+New York
+11:00 to 14:00
+16:00
+Frankfurt / Stockholm
+17:00 to 20:00
+22:00
+UTC
+15:00 to 18:00 (summer), 16:00 to 19:00 (winter)
+20:00 (summer), 21:00 (winter)
+If your broker uses a different server time, move the hours by the difference. The EA prints your server’s GMT offset when it starts.
+Setup:
+attach it to your broker’s German 40 chart (GER40, DE40, GER40.cash and so on) on H1 and set your lot size. The VALIDATION section at the bottom of the source exists only for MQL5’s automatic tests and doesn’t touch a trade on GER40 H1.
+Pros and cons
+Pros
+Four plain conditions in readable code
+Passed all 15 stress tests, and was stronger on data it never saw
+Stop loss on every trade, and flat every night with no swap
+Free, with the full source
+Cons
+Condition 3 uses an absolute tick-volume level from my broker’s feed. Your broker may count tick volume differently. The EA prints your value at start, and you can switch the condition off or set your own level.
+Long only, so it sits out falling markets.
+It trades the thinner evening session, where spreads can be wider.
+One market and one timeframe.
+What I actually trade
+I don’t trade this strategy myself. The strategies I do trade are in
+SIGMA EA
+, which I just listed on the Market: 14 independent gold strategies in one EA, built with the same research process, with news protection, a daily loss stop and risk per trade in percent. You’ll find it on my profile.
+Shared for education and research. Backtest and stress test results do not guarantee future performance. Only trade with money you can afford to lose.

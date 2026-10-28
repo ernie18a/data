@@ -1,0 +1,5 @@
+The professional EA intended for trading on the currencies with the 2 points spread and on the M1 period. It works very good on the flat markets with the good volumes. The personal trade performing technologies are implemented: working by cross-rates, automatic calculation of the lots by the specified risk, working with several currencies, automatic determination of the modelling period, autocorrection of the StopLoss value with the specified coefficient of the confidence to the market and many other things. The EA realizes the pipsing technology, the technology of shady StopLoss determination...
+The EA shows the results from 100 to 300% per day with the default settings. Earlier this EA was distributed by my company only to the commercial clients. Now I think that some of its ideas will be useful to many ones. I'll say directly, do not use this version on the real accounts or use it olnly at the flat on your own risk.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8397

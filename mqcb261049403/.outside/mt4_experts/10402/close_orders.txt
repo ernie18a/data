@@ -1,0 +1,10 @@
+Description:
+This is a tool for you to automatically close all orders when you have dozens of pending orders and open orders.
+For example, if now have 20 pending EUR/USD long and short orders, and have 20 open ones, and you now want to close them all, you should set as the following:
+CloseOpenLongOrders = true;
+CloseOpenShortOrders = true;
+ClosePendingLongOrders = true;
+ClosePendingShortOrders = true;
+JustCloseSpecificMagicNumber= 0; // if set JustCloseSpecificMagicNumber to 0, will close all MagicNumber orders; if just want to close specific MagicNumber orders, set JustCloseSpecificMagicNumber to you magic value ;
+CloseAllSymbols = true; // if set CloseAllSymbols = true, it will close all symbols satisfying the settings, if set CloseAllSymbols = false, just close the symbol you are applying this EA to;
+JustCloseOrdersWithinTheRange = false; //if set JustCloseOrdersWithinTheRange = true, just close orders whose open prices are within the range CloseRangeHigh to CloseRangeLow.

@@ -1,0 +1,12 @@
+Description:
+First version
+. A very useful indicator to show trend of up to 6 currency pairs on your charts. For more information and forex trading visit
+my blog
+.
+Use only on 1 hour timeframe, because it uses indicators of 1H chart. On other timeframes select
+ShowArrows=false
+in settings. If You do not want to show trend of other pairs, just delete symbol names in settings.
+Best to trade on smaller timeframes (M30, M15, M5, M1).
+Best to use with default settings.
+Use this indicator as daily trend indicator. Do not use this as a signal indicator.
+In a chart below there are marked trend of 2 months of EUR/USD.

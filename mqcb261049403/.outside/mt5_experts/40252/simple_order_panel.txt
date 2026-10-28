@@ -1,0 +1,3 @@
+Source code of simple order panel which you can customize at your will.
+The code compiles both for MT5 and MT4 (the mq4 needed would look the same as the mq5 included here). I recommend compiling the MT4 version using the Controls library from MT5 though.
+Some fixes when dealing with templates will require a few simple modifications in the standard Controls library, but those haven't been included here. The original program icon is also not included.

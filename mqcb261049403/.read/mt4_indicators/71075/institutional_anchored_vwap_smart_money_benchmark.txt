@@ -1,0 +1,18 @@
+Retail traders use Moving Averages; Institutional algorithms use the VWAP. When a hedge fund or liquidity provider executes massive block orders, their execution algorithms are benchmarked against the Volume Weighted Average Price. They accumulate positions when the price is below the VWAP (Discount) and distribute when it is above (Premium).
+MetaTrader 4 lacks a native, institutional-grade Anchored VWAP. This indicator bridges that gap by calculating the true volume-weighted price from the exact start of your chosen session (Daily, Weekly, or Monthly) and projecting standard deviation bands to identify extreme algorithmic over-extension.
+Core Features
+True Mathematical VWAP:
+Calculates the cumulative Typical Price (H+L+C)/3 multiplied by tick volume, providing the actual "fair value" line of the day.
+Dynamic Anchoring:
+Automatically resets the calculation at the start of a new Day, Week, or Month without any repainting.
+Algorithmic Deviation Bands:
+Projects an upper and lower Standard Deviation band. In quantitative finance, price action hitting the 2nd standard deviation from the VWAP is statistically overextended, offering high-probability mean-reversion entries.
+Zero Lag & CPU Optimized:
+Modern MQL4 OnCalculate structure ensures the indicator runs instantly even on a 10-year historical chart without freezing the terminal.
+Input Parameters
+AnchorPeriod:
+Choose between PERIOD_D1, PERIOD_W1, or PERIOD_MN1.
+DeviationMultiplier:
+The standard deviation multiplier for the outer bands (Default is 2.0).
+Line Styles:
+Fully customizable colors and weights for the VWAP and Bands.

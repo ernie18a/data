@@ -1,0 +1,10 @@
+The Intraday Intensity Open Form indicator.
+There are no input parameters.
+Calculation:
+Intensity = PrevIntensity + (2.0 * Close - High - Low) / Vol
+where:
+Vol = (High - Low) * Volume
+Volume - tick volume
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23121

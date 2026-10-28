@@ -1,0 +1,49 @@
+The author of the idea
+:
+Scriptor
+MQL5 code author
+:
+barabashkakvn
+The EA based on iMACD (Moving Average Convergence/Divergence, MACD) and iStochastic (Stochastic Oscillator). The robot works only when a new bar appears, while trailing works on each tick.
+EA features:
+specify a working timeframe (
+Work timeframe
+) - main timeframe used to define the moment a new bar emerges
+specify MACD indicator timeframe (
+MACD: timeframe
+)
+specify Stochastic indicator timeframe (
+Stochastic: timeframe
+)
+specify various stop loss and take profit for BUY and SELL positions
+When defining a trading signal, Stochastic is additionally checked for levels:
+for a BUY signal, Stochastic indicator on bar #0 should be less than
+Stochastic level BUY
+for a SELL signal, Stochastic indicator on bar #0 should exceed
+Stochastic level SELL
+Full equation of BUY signals:
+(MACD #0 > MACD #1) AND (MACD #1 < 0.0) AND (
+Stochastic
+#0 <
+Stochastic level BUY)
+AND (
+Stochastic
+#0 >
+Stochastic
+#1)
+Full equation of SELL signals:
+(MACD #0 < MACD #1) AND (MACD #1 > 0.0) AND (
+Stochastic
+#0 >
+Stochastic level SELL)
+AND (
+Stochastic
+#0 <
+Stochastic
+#1)
+Optimized parameters:
+You may use OHLC mode for faster optimization, although make sure to test in "Every tick" or "Every tick based on real ticks" mode after that.
+After optimization for USDJPY (these parameters are included into the EA as default ones) :
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21878

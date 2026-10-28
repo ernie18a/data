@@ -1,0 +1,3 @@
+Author: Zmiuka
+The indicator draws the dollar index on the chart. The indicator is intended to simplify the charts analysis. It draws the dollar index DXY right on the chart. It is a greatly useful thing and it's unexpendable when analyzing the main USD currency pairs and when estimating the short-term tendencies within a day.
+Index Dollar

@@ -1,0 +1,4 @@
+A standard indicator Fractals, that doesn't redraw the last fractal....
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8193

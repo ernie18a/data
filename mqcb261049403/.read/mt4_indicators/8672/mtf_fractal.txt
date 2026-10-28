@@ -1,0 +1,11 @@
+Another variation of the fractals.
+Input parameters:
+extern
+int
+TimeFrame=
+60
+;
+mtf_fractal
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8672

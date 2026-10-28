@@ -1,0 +1,12 @@
+Pivot Points are always very useful for trading, this is a simple way to have some idea of where the market is heading during the day.
+The indicator also provides the first three supports and resistances.
+The formulae I used are:
+Resistance 3 = High + 2*(Pivot - Low)
+Resistance 2 = Pivot + (R1 - S1)
+Resistance 1 = 2 * Pivot - Low
+Pivot Point = ( High + Close + Low )/3
+Support 1 = 2 * Pivot - High
+Support 2 = Pivot - (R1 - S1)
+Support 3 = Low - 2*(High - Pivot)
+It uses the data from the bar of the previous day.
+The orange line is the pivot point of the day, the red lines are supports and the green lines are resistances.

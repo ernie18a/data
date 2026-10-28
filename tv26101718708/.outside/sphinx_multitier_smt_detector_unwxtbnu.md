@@ -1,0 +1,4093 @@
+# Sphinx Multi-Tier SMT Detector
+
+- url: https://www.tradingview.com/script/UnwXtbnU-Sphinx-Multi-Tier-SMT-Detector/
+- type: indicator
+- pine_id: PUB;23ae4533051d496aa2226240ca947f4a
+- version: 10.0
+
+## Description
+
+█ [b]OVERVIEW[/b]
+
+Sphinx Multi-Tier SMT Detector reads SMT divergence (Smart Money Technique) between two or three correlated instruments and reports it across two complementary structures from one shared engine. An [i]Engine Mode[/i] input selects intraday cycle tiers, a higher-timeframe reader, or both together, so the same indicator serves a 1-minute execution chart and a Daily context chart without switching tools.
+
+SMT divergence occurs when correlated markets disagree at a liquidity level: one instrument sweeps a prior swing high or low while a correlated one fails to confirm. That non-confirmation often marks exhaustion or a manipulation leg ahead of a reversal, and is a core read in index-futures trading (for example ES vs NQ vs YM, or their micros).
+
+═════════════════════════════════════════════════════════
+
+█ [b]CONCEPTS[/b]
+
+[b]Leader and sisters.[/b] You define three correlated assets. Whichever one matches the chart symbol becomes the leader (A1); the other two become sisters (A2 and A3). Nothing is hardcoded, so any of the three can be charted and the roles reassign automatically. A toggle allows a strict two-asset comparison (A1 vs A2).
+
+[b]Divergence rule.[/b] On each structure the engine anchors a reference swing for the leader and records each sister's value at that same anchor bar. It latches a per-instrument swept flag the moment that instrument trades through its own reference. A divergence fires on a symmetric any-swept-not-all rule: at least one instrument takes the level but not all do. The divergence is attributed to the non-confirming sister, so a signal reads A1/A2, A1/A3, or both.
+
+[b]Lag rejection.[/b] If the lagging instrument had already cleared the reference between the anchor and the present, an intervening shared extreme existed and the divergence is rejected. This filters false positives from non-simultaneous sweeps.
+
+═════════════════════════════════════════════════════════
+
+█ [b]THE TWO ENGINES[/b]
+
+[b]LTF Cycles.[/b] Intraday divergence on a nested cycle grid anchored to the 20:00 New York (CME futures) open: 90-minute blocks with 30-minute and 10-minute sub-cycles. [i]T1[/i] compares against the prior completed session extreme; [i]T2[/i], [i]T3[/i] and [i]T4[/i] compare against prior cycles at their respective scales. Tiers are prioritized (T1 > T2 > T3 > T4): one label per direction is arbitrated to the highest active tier, a lower tier hides while a higher one is active in the same direction, and a confirmed A1/A2 divergence takes precedence over an A3-only divergence.
+
+[b]HTF Multi-TF.[/b] The same divergence logic evaluated on 1H, 4H, Daily, Weekly and Monthly in parallel. It draws only the timeframe matching the chart resolution and lists every other live higher-timeframe SMT in a compact table, so a Daily divergence stays visible while you are on a 4H chart.
+
+[b]Mitigation.[/b] Signals invalidate and their drawings are removed once price closes through the divergent pivot, keeping the chart to currently relevant levels.
+
+═════════════════════════════════════════════════════════
+
+█ [b]HOW TO USE[/b]
+
+1 — Chart your leader instrument and set the three correlated assets. Turn off
+     the third asset for a strict two-way comparison.
+2 — Choose an [i]Engine Mode[/i]: LTF Cycles or Both for intraday execution;
+     HTF Multi-TF or Both for 1H-and-higher context.
+3 — Read the signal. A line connects the reference swing to the divergent
+     extreme. The LTF label states direction, tier and diverging sister (for
+     example T1 A2); the HTF label and table state timeframe and pair (for
+     example Daily A1/A3).
+4 — Treat SMT as context, not a standalone trigger. Combine it with your own
+     execution: a structure shift, displacement, or a fair-value-gap reclaim.
+
+Higher tiers and higher timeframes carry more weight. A lower-tier SMT with no higher-tier or higher-timeframe backing is more prone to being an inducement.
+
+═════════════════════════════════════════════════════════
+
+█ [b]ORIGINALITY[/b]
+
+ • [b]One engine, two structures.[/b] The same leader-sister swept-flag logic
+   drives both a nested intraday session/cycle model and a five-timeframe
+   higher-timeframe reader, from a single input rather than separate tools.
+ • [b]Fractal tier arbitration.[/b] Four nested intraday tiers with explicit
+   priority, one-label-per-direction arbitration, higher-hides-lower
+   suppression and A1/A2-over-A3 precedence, so a busy chart stays legible.
+ • [b]Automatic role assignment.[/b] No fixed instrument hierarchy; the chart
+   symbol is always the leader and the sisters follow, so the same settings
+   work on any of the correlated charts.
+ • [b]Sister-anchored comparison.[/b] Each sister is sampled at the leader's
+   exact reference bar, and an intervening shared extreme invalidates a
+   would-be divergence.
+ • [b]CME-anchored cycle grid.[/b] Intraday cycles anchor to the 20:00 NY
+   futures open rather than midnight, matching how index-futures sessions run.
+
+═════════════════════════════════════════════════════════
+
+█ [b]ALERTS[/b]
+
+Per-tier bull/bear, aggregate any-tier, all-tier alignment, and higher-timeframe bull/bear on the chart timeframe. An edge-triggered mode fires once on appearance; an optional repeat mode re-fires each bar close while a signal remains active.
+
+═════════════════════════════════════════════════════════
+
+█ [b]LIMITATIONS[/b]
+
+ • Intended for correlated instruments (for example index futures and their
+   micros). Uncorrelated symbols produce meaningless divergences.
+ • SMT is a contextual read, not a complete trading system. Past behavior does
+   not guarantee future results. This is a technical tool, not financial advice.
+
+## Source Code
+
+````pine
+// This source code is subject to the terms of the Mozilla Public License 2.1
+// Sphinx Multi-Tier SMT Detector
+// Merged build: LTF cycle/session SMT tiers (T1-T4) + HTF multi-timeframe SMT reader
+// (1H / 4H / D / W / M), selectable via the Engine Mode input. Shared leader-sister engine.
+// Base LTF v5.6.4; HTF module folded in from Sphinx HTF Multi-Timeframe SMT v7.0.
+//
+// Change from v5.8.2 -> v5.8.3  (load and realtime cost):
+//   - HTF chart-timeframe line and label now draw on the last bar only. Every
+//     bar previously deleted the prior pair and drew a new one, so history
+//     load created a line and label on every qualifying bar just to show the
+//     final state. Detection state still advances every bar; the HTF alert
+//     reads nbe / nbu directly and is unchanged.
+//   - Tables are created once and filled on the last bar instead of deleted
+//     and rebuilt on every realtime tick: SMT Cycle Detector, symbol warning,
+//     watchdog, HTF other-timeframe table (fixed five rows, cleared then
+//     filled) and the anchor diagnostic (fixed 13 rows, cleared then filled).
+//     The diagnostic previously created a new table every tick with no delete.
+//     HTF and diagnostic backgrounds move from the table to each cell so a
+//     cleared row cannot paint an empty band.
+//   - The f_smt() dispatch skips the chart's own timeframe. That result was
+//     never read - the table excludes it and the drawn line uses the native
+//     engine - so it cost five requests per bar for nothing. chart_tf is now
+//     defined above the dispatch.
+//   - max_bars_back moves off indicator() onto high and low only, the two
+//     series the IFVG scanners index at a computed offset. Same protection,
+//     without reserving 1500 bars for every series in the script.
+//   - Signal logic, tiers T1-T4, mitigation, suppression, the Sphinx Seal,
+//     IFVG, alerts and HTF detection are unchanged. No signal count changes.
+//
+// Change from v5.8.1 -> v5.8.2  (HTF table fix):
+//   - ROOT CAUSE. f_smt() reset its reference block on every bar where the HTF
+//     pivot was non-na. request.security(sym, tf, ta.pivothigh(...)) with
+//     lookahead_off holds the last completed HTF pivot value CONSTANT across
+//     every chart bar inside that HTF bar - roughly 60 bars on a 1-minute
+//     chart. So `if not na(a1ph)` stayed true for the whole hour and cleared
+//     pHf / s1Hf / s2Hf on all sixty of them. Sweep flags have to accumulate
+//     asymmetrically over time for a divergence to exist at all; clearing them
+//     every bar meant beDiv / buDiv could only ever reflect a single bar's
+//     comparison, so a genuine 1H divergence developing over twenty minutes was
+//     erased nineteen times before it could register. The reset is now guarded
+//     on pivot IDENTITY - a1t, the pivot bar's own timestamp, which is constant
+//     while the same pivot is held and changes only when a new one confirms -
+//     so it fires exactly once per pivot. Both directions.
+//   - The NATIVE chart-timeframe block is deliberately UNCHANGED. n_ph / n_pl
+//     are ta.pivothigh/low evaluated on chart bars, which return na except on
+//     the confirming bar, so that reset already fired once. This asymmetry is
+//     precisely why the drawn on-chart HTF line behaved while the top-right
+//     table appeared sporadically and vanished.
+//   - TABLE FAULT STATE. The gather loop counted qualifying rows first and
+//     skipped table.new() when the count was zero - but table.delete() had
+//     already run unconditionally above it. An empty corner therefore meant
+//     EITHER "no divergence on any other timeframe" OR "the script died", with
+//     no way to tell them apart from the chart. The table now always renders at
+//     least one row: a status line reading no-divergence, sister-feed-na, or
+//     no-timeframes-enabled. A blank top-right corner now means one thing only -
+//     the indicator is not executing.
+//   - FEED HEALTH. Every sister request.security carries ignore_invalid_symbol
+//     = true, so a feed resolution failure returns na silently, the not-na
+//     guards skip the flag updates, and beDiv stays 0 - indistinguishable from a
+//     real no-divergence. _htf_feed_bad now tests the sister series directly and
+//     surfaces the condition in the status row.
+//   - Audited and found correct, no change: the single-pivot-per-direction
+//     design of the HTF module (unlike the LTF 8/2/6-deep rings) means a fresh
+//     pivot overwrites a still-standing divergence. That is why HTF signals feel
+//     more transient than T1-T4. Left as-is - it is a design choice, not a
+//     defect - but noted here so it is not rediscovered as a bug.
+//   - Signal logic, LTF tiers T1-T4, mitigation, suppression, the Sphinx Seal,
+//     IFVG, label arbitration, alerts, and every request.security count are
+//     byte-for-byte unchanged.
+//
+// Change from v5.8.0 -> v5.8.1  (audit pass):
+//   - max_bars_back = 1500 declared. The IFVG scanners index history relative
+//     to a passed-in target bar, and for T1 that target can be a session
+//     running-high bar several hundred bars back on a 1-minute chart. A loop
+//     with a computed offset defeats Pine's automatic history-buffer sizing,
+//     so the reference could fall outside the buffer and raise a runtime error
+//     mid-session. This is the one finding here that could stop the indicator.
+//   - REMOVED find_ifvg_bull / find_ifvg_bear. Superseded by the _near_
+//     variants in v5.5.x; zero call sites remained.
+//   - REMOVED s1_name / s2_name. v5.5.5 replaced ticker text on labels with the
+//     A2 / A3 tag and left these computed but never read. pri_name stays - the
+//     symbol mismatch warning uses it.
+//   - REMOVED in_ny. It was defined as in_ny_am or in_ny_pm and never read;
+//     in_ny_blks two lines below is the same expression and is the one used.
+//   - Audited and found correct, no change: the fire condition is any_swept
+//     and not all_swept with full re-convergence as hard invalidation; _prio
+//     yields a unique winner per band so arbitration cannot tie; the ring-roll
+//     decrement runs after cycle tracking and before tier execution, so an
+//     active index is corrected before it is read; suppressed slots still
+//     advance their extension state and redraw correctly on unsuppress; every
+//     array index is bounds-checked before use.
+//   - Also checked: the T3 sister-extreme capture is an independent running
+//     max per asset, not a capture at the primary's extreme bar. The
+//     under-recording defect from the older architecture is not present here.
+//
+// Change from v5.7.1 -> v5.8.0:
+//   - LABELS: new "Label background chip" toggle (Display group). OFF draws
+//     SMT labels as coloured text with no chip behind them. The chip colour is
+//     now an input rather than a constant. The default is near-black, which is
+//     a dark block on a light chart background. Applies to the LTF tier labels
+//     and the HTF chart-timeframe labels - the latter previously hardcoded its
+//     own chip and ignored the constant entirely.
+//   - PLUMBING: removed four request.security calls. n_s1h / n_s1l / _n2h /
+//     _n2l in the HTF native block were byte-identical to the LTF feeds -
+//     same symbol, same timeframe.period, same field, same ignore_invalid_symbol
+//     flag - so sister data was fetched twice every bar. They are now aliases
+//     of s1_h / s1_l / s2_h / s2_l. With 1H and 4H enabled the unique request
+//     count drops 16 -> 12. No downstream name changed.
+//   - ENGINE MODE: the five f_smt() dispatch branches tested only their own
+//     timeframe toggle, not _htf_on. Selecting "LTF Cycles" therefore still ran
+//     the HTF engine - five request.security calls per enabled timeframe - and
+//     merely hid the output. Same defect v5.6.5 fixed for show_t1..show_t4.
+//     Each branch now carries _htf_on, so "LTF Cycles" costs nothing.
+//   - EXPORTS: added SMT Bull/Bear Active and SMT Bull/Bear Tier to the data
+//     window. Per-tier booleans cannot answer "was SMT present at this level
+//     touch" without four separate input.source hookups; these collapse it to
+//     one series per direction plus the rank of the highest active tier, which
+//     is what the level-interaction harvester needs to condition on.
+//   - DIAGNOSTIC: _dg_qual now calls fire_qualifies rather than restating its
+//     logic. A drift between the two would have made the anchor diagnostic
+//     disagree with the engine it exists to audit.
+//
+// Change from v5.7.0 -> v5.7.1:
+//   - Draw-layer coordinate guard. SMT lines/labels could stretch off price
+//     (float across the chart) when a draw or extend received an invalid
+//     coordinate - an na anchor/extension price or a bar index <= 0 - reaching
+//     the draw layer through a state edge. _draw / _draw_with_ifvg now create a
+//     line/label only when the anchor and extension coordinates are finite and
+//     the bars are > 0; _extend_line_label skips the update on an invalid
+//     coordinate. A bad coordinate now draws nothing instead of a floating line.
+//
+// Change from v5.6.9 -> v5.7.0:
+//   - RING ROLL no longer orphans a live divergence. The active-anchor slot is
+//     a positional index into the cycle ring, which renumbers on every roll.
+//     A live A2 (e.g. the NY-A high) had its index point at the wrong block once
+//     a later cycle rolled the ring, so it dropped and a lower A3 took over even
+//     though the sister had not caught up. The shift now sets a _tN_rolled flag
+//     and each active index is decremented in lock-step after declaration; a
+//     slot whose own block rolled out is retired. Ring tiers T2/T3/T4, both dirs.
+//
+// Change from v5.6.8 -> v5.6.9:
+//   - A2 DISPLAY vs FIRED decoupled. The per-anchor fired flag was gating both
+//     alert-once AND display: once an A2 anchor had fired, the scan skipped it,
+//     so a still-standing A2 could not be re-selected and a lower A3 held the
+//     line. Display now scans newest-first for any qualifying A2 regardless of
+//     fired state and always shows it; the fired flag + anchor latch govern
+//     alert-once only. An _already guard skips redrawing the block already on
+//     screen, so there is no per-bar churn. Ring tiers T2/T3/T4, both sides.
+//
+// Change from v5.6.7 -> v5.6.8:
+//   - A2 PRIORITY (within tier): a tier could display an A3 divergence while an
+//     A2 divergence was available on another anchor in the same tier. The firing
+//     scan took the newest qualifying anchor regardless of pairing, and a later
+//     A3 fire tore down and replaced a live A2 line. Now each tier prefers the
+//     newest qualifying A2 anchor over any A3, and an A3 can no longer demote a
+//     live A2 in the same tier (an A2 may still upgrade a held A3). Applies to
+//     T1 (session refs) and T2/T3/T4 (cycle rings), both directions.
+//   - Cross-tier arbitration (_prio) is UNCHANGED: T1/T2 band still beats T3/T4,
+//     and within a band A2 still beats A3. Band priority is preserved.
+//
+// Change from v5.6.6 (b):
+//   - ALERTS: fixed duplicate tier alerts on a single level. A slot could
+//     retire and re-arm on the same anchor within one session, emitting a
+//     second edge re-labeled A2 -> A3 - so a 'T1 or T2' alert could arrive
+//     long after the T1/T2 level formed, while the chart showed only lower
+//     tier activity. A per-tier per-direction anchor latch now suppresses
+//     repeat alerts on an anchor already alerted. Applies to both the named
+//     alertconditions and the inline alert() route. Latches clear at the
+//     18:00 day reset. Alert titles unchanged - existing alerts keep working.
+//   - ALERTS: 'T1 + T2 Confluence' is now symmetric. It previously required
+//     T1 to be the newly-firing leg, so a T2 firing into a live T1 never
+//     triggered it.
+//   - Signal logic, drawings, suppression, mitigation, _refresh_slot() and
+//     the Sphinx Seal are byte-for-byte unchanged.
+//
+// Change from v5.6.6:
+//   - DISPLAY: new "Show T1 and T2 together" toggle. When ON, a live T1 no
+//     longer hides T2 in the same direction - both draw regardless of A2/A3
+//     rank. T3/T4 band arbitration is unchanged. Implied by "Show all tiers".
+//
+// Change from v5.6.5:
+//   - ENGINE MODE: show_t1..show_t4 now carry _ltf_on. Previously the four LTF
+//     tier state machines kept running (and all tier alertconditions kept
+//     firing) in "HTF Multi-TF" mode while every LTF visual was gated off.
+//   - MITIGATION: no longer wrapped in hide_tN. State always advances on
+//     mitigation - tier flag clears and the session/cycle fired-flag re-arms,
+//     so a level can fire again the same day. hide_tN now gates only the
+//     visual teardown, its documented job. Orphaned drawings (hide OFF) keep
+//     their labels and stop extending their IFVG box.
+//   - SEAL: alert text no longer claims "all tiers aligned" - the condition is
+//     T1+T2 and (T3 or T4). Re-arm is now per direction, so a bull-to-bear
+//     seal flip emits its own alert instead of being swallowed.
+//   - REMOVED: dead "Label offset (ATRx)" input. lbl_pad was computed from
+//     ta.atr(14) every bar and referenced nowhere; labels are centered on the
+//     SMT line by design. Two stale tooltips corrected.
+//
+// Change from v5.6.4:
+//   - DISPLAY: new "Show all tiers (disable suppression)" toggle (Display group).
+//     ON: every active tier slot draws its own line, label and IFVG box instead
+//     of one winner per band per direction. Resolves the mismatch where a T2/T3
+//     alert fires with no corresponding visual on the chart. Display-only -
+//     _prio() is untouched, and tier state flags, alertconditions and the Sphinx
+//     Seal are unaffected. Toggling mid-session repaints previously suppressed
+//     signals from their stored anchors.
+//
+// Change from v5.6.2:
+//   - SUPPRESSION: when a T1 signal is valid (visible) in a direction, the T2
+//     line, IFVG box, and label in that direction are suppressed. T3 and T4
+//     are unaffected by this rule and keep their existing visibility (T4 still
+//     hidden under T3, A3-only still hidden under a visible A2). T2 reappears
+//     automatically if T1 mitigates. Label arbitration is unchanged (it
+//     already keys off the final visibility flags).
+//
+// Change from v5.6.1:
+//   - SUPPRESSION: restored the cross-tier rule that an A1/A2 divergence
+//     (div_sister == 1) hides any A3-only divergence (div_sister == 2) in the
+//     same direction within the same band (see _prio). Previously (since the v5.5 engine
+//     rewrite) an A2 signal on one tier and an A3 signal on another could draw
+//     simultaneously. The suppressing A2 source must itself be visible (pass
+//     the show_bear/show_bull gate and the T4-under-T3 rule); A2 slots are
+//     never suppressed by this rule. Label arbitration now keys off the final
+//     visibility flags so the surviving A2 line always keeps its label.
+//
+// Change from v5.6.0:
+//   - T4: the lowest tier's cycle period is now 10 minutes instead of 5.
+//     subsub_idx divides the 30m window into three 10m slices (0-2) rather
+//     than six 5m slices. The cycle key stays unique (subsub < 10) and T4
+//     remains nested inside the 30m (T3) and 90m (T2) grids. T4 still scans
+//     the previous 6 completed cycles, which now spans 60 minutes of context
+//     rather than 30. Only the period definition changed; ring tracking, fire
+//     qualification, mitigation, IFVG, arbitration, and the T4-hidden-when-T3
+//     rule are unchanged.
+//
+// Change from v5.5.9:
+//   - T3 and T4 now scan multiple prior cycles instead of only the single
+//     immediately-previous one, using the same array/ring architecture as T2.
+//     T3 scans the previous 2 completed 30m cycles; T4 scans the previous 6
+//     completed 10m cycles. Each tier scans newest-first and fires the first
+//     qualifying not-yet-fired cycle (1 bull + 1 bear max per tier, as before).
+//     Mitigation and label/color refresh are now index-based off the firing
+//     cycle. The hierarchy is unchanged: T4 stays hidden whenever a T3 is
+//     active in the same direction, and the one-label-per-direction
+//     arbitration (T1>T2>T3>T4) is unaffected.
+//
+// Change from v5.5.8:
+//   - T4: the lowest tier's cycle period is now 5 minutes instead of 15.
+//     subsub_idx divides the 30m window into six 5m slices (0-5) rather than
+//     two 15m halves. The cycle key stays unique (subsub < 10, sub < 10,
+//     block * 100), and T4 remains nested inside the 30m (T3) and 90m (T2)
+//     grids. Only the period definition changed - the previous-cycle tracking,
+//     fire qualification, mitigation, IFVG, label arbitration, and the
+//     T4-hidden-when-T3-active rule are all unchanged and simply run on the
+//     finer 5m cadence. T4 will fire more frequently as a result.
+//
+// Change from v5.5.7:
+//   - LABELS: at most one bullish and one bearish SMT label is ever visible.
+//     When multiple tiers are active in the same direction, only the
+//     highest-priority tier keeps its label text (priority T1 > T2 > T3 > T4);
+//     all lower-priority labels in that direction are blanked so they never
+//     stack at a shared extension endpoint. Lines and IFVG boxes are
+//     unaffected - only the label text is suppressed. Arbitration runs after
+//     all fire / extend / refresh / suppression logic so it has the final say
+//     each bar, and a lower tier's label automatically reappears if the
+//     higher tier mitigates.
+//
+// Change from v5.5.6:
+//   - LABELS: SMT labels are now offset off the line endpoint instead of
+//     centered on it. Bull labels sit below the candle low, bear labels above
+//     the high, by a Display input "Label offset (ATR×)" (default 0.5 × ATR14;
+//     0 = centered, old behavior). Offset scales with volatility so it reads
+//     consistently across MES/MNQ/MYM. The line endpoints still terminate on
+//     the true extreme - only the label text is displaced. Applied to initial
+//     draw, suppression redraw, and live extension so the gap holds as the
+//     run extends.
+//
+// Change from v5.5.5:
+//   - LABELS: SMT signal labels are now background-free, colored text only,
+//     at a user-selectable size (Display > "SMT label size", default Tiny;
+//     Small/Normal/Large available). The label content is now compact:
+//     direction triangle + tier grade + diverging asset slot, e.g. "▲ T1 A2"
+//     or "▼ T3 A3" (A1 = chart, A2 = sister 1, A3 = sister 2). The full
+//     ticker pair is no longer printed on the label. Text color still carries
+//     bull/bear and the Asset C highlight, so the A3 recolor is unchanged.
+//     Note: inline alert() messages now also use the A2/A3 tag instead of the
+//     ticker pair, keeping alert text consistent with the labels.
+//
+// Change from v5.5.4:
+//   - REMOVED: HTF SMT bias subsystem (Daily/Weekly/Monthly) and its table.
+//     Deletes nine request.security() calls - the three chart D/W/M tuples
+//     and the three D/W/M tuples for each sister - taking the unique
+//     request.*() count from 11 down to 2 (the two intraday [high, low]
+//     tuples). The associated sweep-state tracking, the htf_* helper
+//     functions, the HTF table, the HTF inputs group, and the three HTF
+//     data-window plots are removed with it. Intraday tier logic (T1-T4),
+//     the Sphinx Seal, IFVG, Asset C highlight, Equinox gates, the watchdog,
+//     and all alerts are untouched. The Asset C highlight color inputs remain
+//     because the intraday tiers still use them.
+//
+// Change from v5.5.3:
+//   - PLUMBING: paired high/low request.security() calls consolidated into
+//     single tuple calls (e.g. [s1_h, s1_l] = request.security(eff_s1,
+//     timeframe.period, [high, low], ...)). A tuple request counts as ONE
+//     unique request.*() call, so the data-feed count drops 22 -> 11. This
+//     halves data-fetch/compute pressure and, as a side effect, closes the
+//     ignore_invalid_symbol gap: three sister-symbol low calls (s1_pdl/pwl/pml)
+//     previously lacked the flag, so a momentary sister-feed resolution failure
+//     could raise a runtime error and blank Trinity on one chart while the
+//     other kept running. The consolidated calls carry the flag once per call.
+//     Pure plumbing - every downstream variable name and read is unchanged;
+//     no signal, mitigation, Seal, HTF, or alert behavior is affected.
+//
+// Change from v5.5.1:
+//   - NEW: "Run cycle tiers from Asia open" toggle (Display group, default ON).
+//     When ON, the T2/T3/T4 cycle tiers execute continuously from the Asian
+//     session open (20:00 NY) through London and NY, instead of only during
+//     the NY blocks (08:00-17:00). This lets Asia be studied from its first
+//     90m cycle onward. When OFF, behavior is bit-identical to v5.5.1
+//     (NY-only cycle tiers) - a one-click revert.
+//     Implementation is a gate widening only: the block grid (mins_from_2000,
+//     anchored to 20:00 with block/sub/subsub indices) already runs
+//     continuously across Asia/London/NY; only the in_ny_blks gate kept the
+//     cycle tiers silent outside NY. A new in_cycle_blks gate repoints the six
+//     T2/T3/T4 sites. No cycle math changed; no new state; Seal logic, the
+//     1-bull/1-bear-per-tier rule, mitigation, and the T3-hides-T4 suppression
+//     are all unchanged.
+//     T1 (session) is intentionally NOT affected - no completed session
+//     exists before London, so T1 still never prints during Asia. Correct by
+//     design. The 90m lookback array cap stays at 8, counted from Asia's first
+//     90m cycle.
+//
+// Change from v5.5:
+//   - NEW: "Repeat while tier active" alert toggle (Alerts group). When OFF
+//     (default) every named alertcondition is edge-triggered - fires once on
+//     the bar a tier state flips false->true (original v5.x behavior, never
+//     fires on alert creation). When ON, each condition stays true while the
+//     tier remains active, so with "Once Per Bar Close" frequency the alert
+//     re-fires every bar close until the signal mitigates. Alert titles are
+//     unchanged, so any alerts already configured keep working - only the
+//     underlying trigger series changes. Inline alert() calls inside the
+//     firing blocks remain edge-by-construction and are unaffected.
+//   - REMOVED: A3 separator layer (inputs, state, execution). It was a pure
+//     read-only display layer that never mutated tier state, so removal has
+//     zero effect on firing, mitigation, Seal, HTF table, or alerts. The
+//     uppercase "A3" labels in the HTF table refer to the third asset and
+//     are unrelated - they remain.
+//
+// v5.5 features (preserved):
+//   - Suppression: T1/T2/T3 all display simultaneously when active (no
+//     cross-tier suppression among them). T3 and T4 are mutually exclusive -
+//     any active T3 hides T4 in the same direction. Bull and bear pools are
+//     independent. Each tier's line independently prefers an A1/A2 divergence
+//     over an A3-only divergence via divergent_sister()/_pair_label().
+//
+// v5.3 features (preserved):
+//   - Diagnostic watchdog badge with bar counter. If badge freezes or
+//     disappears, Trinity has stopped executing.
+//
+// v5.2 features (preserved):
+//   - Four aggregate alertconditions:
+//       * "Any Bull SMT" - fires on any new bull from T1/T2/T3/T4
+//       * "Any Bear SMT" - fires on any new bear from T1/T2/T3/T4
+//       * "Any Bull SMT (T1 or T2)" - fires on any new bull from T1/T2 only
+//       * "Any Bear SMT (T1 or T2)" - fires on any new bear from T1/T2 only
+//
+// v5.0 features (preserved):
+//   - Global show_bull / show_bear toggles in Display group - mute all visuals
+//     in chosen direction. State flags, alerts, and Sphinx Seal still respect
+//     underlying signals; only chart visuals are affected.
+//
+//@version=6
+indicator('Sphinx Multi-Tier SMT Detector', shorttitle = 'Sphinx SMT', overlay = true, max_lines_count = 500, max_labels_count = 500, max_boxes_count = 500)
+
+// ============================================================
+// === ENGINE MODE (folds the HTF Multi-TF SMT reader into this script) ===
+// ============================================================
+g_mode = 'Engine Mode'
+eng_mode = input.string('Both', 'Engine', group = g_mode, options = ['LTF Cycles', 'HTF Multi-TF', 'Both'], tooltip = 'LTF Cycles: intraday session / 90m / 30m / 10m tier SMTs only. HTF Multi-TF: the 1H / 4H / D / W / M multi-timeframe SMT reader only. Both: run and display both engines together.')
+_ltf_on = eng_mode != 'HTF Multi-TF'
+_htf_on = eng_mode != 'LTF Cycles'
+
+// ============================================================
+// === INPUT GROUPS ===
+// ============================================================
+g_disp = 'Display'
+g_sym = 'Instruments'
+g_t1 = 'T1 - Session (Critical)'
+g_t2 = 'T2 - 90m Cycle (High)'
+g_t3 = 'T3 - 30m Cycle (Medium)'
+g_t4 = 'T4 - 10m Cycle (Low)'
+g_ifvg = 'IFVG & Tier Tag'
+g_hl_c = 'Asset C Highlight'
+g_seal = 'SMT Cycle Table'
+g_gate = 'Equinox Gates'
+g_alrt = 'Alerts'
+g_wd = 'Watchdog (Diagnostic)'
+
+// ============================================================
+// === DISPLAY (NEW in v5.0) ===
+// ============================================================
+show_bull = input.bool(true, 'Show bullish SMTs', group = g_disp, inline = 'dir', tooltip = 'Master toggle for all bullish SMT visuals (T1/T2/T3/T4). Alerts and Sphinx Seal still respect the underlying state regardless.') and _ltf_on
+show_bear = input.bool(true, 'Show bearish SMTs', group = g_disp, inline = 'dir') and _ltf_on
+sup_off = input.bool(false, 'Show all tiers (disable suppression)', group = g_disp, tooltip = 'OFF (default): one visual per band per direction, ranked by priority (T1/T2 band beats T3/T4; A2 beats A3). ON: every active tier slot draws its own line, label and IFVG box, so the chart matches what the alerts report. Diagnostic mode - expect clutter. Alerts and the Sphinx Seal are unaffected either way; they always key off tier state, not visibility.')
+t12_both = input.bool(false, 'Show T1 and T2 together', group = g_disp, tooltip = 'OFF (default): within the T1/T2 band only the higher ranked slot draws, so a live T1 hides T2. ON: T1 and T2 each draw their own line, label and IFVG box whenever both are active, regardless of whether either is a two-asset (A2) or third-asset-only (A3) divergence. The T3/T4 band keeps its own arbitration. Implied by Show all tiers.')
+run_asia = input.bool(true, 'Run cycle tiers from Asia open', group = g_disp, tooltip = 'ON (default): T2/T3/T4 cycle tiers execute continuously from the Asian session open (20:00 NY) through London and NY - lets you study how Asia behaves. OFF: cycle tiers run only during the NY blocks (08:00-17:00 NY), which is bit-identical v5.5.1 behavior. T1 (session) is unaffected either way - no completed session exists before London, so T1 never prints in Asia by design.')
+lbl_size_opt = input.string('Tiny', 'SMT label size', group = g_disp, options = ['Tiny', 'Small', 'Normal', 'Large'], tooltip = 'Size of the on-chart SMT labels (direction + tier + diverging asset). Default Tiny; increase if hard to read. Labels sit centered on the SMT line with a dark background chip.')
+lbl_sz = lbl_size_opt == 'Small' ? size.small : lbl_size_opt == 'Normal' ? size.normal : lbl_size_opt == 'Large' ? size.large : size.tiny
+lbl_bg_on = input.bool(true, 'Label background chip', group = g_disp, inline = 'lbg', tooltip = 'OFF: SMT labels draw as coloured text with no chip behind them. The default chip is near-black, which reads as a dark block on a light chart background. Applies to the LTF tier labels and the HTF chart-timeframe labels.')
+col_lbl_chip = input.color(color.new(#0e0e0e, 12), '', group = g_disp, inline = 'lbg')
+
+// ============================================================
+// === WATCHDOG (NEW in v5.3) ===
+// ============================================================
+show_smt_diag = input.bool(false, 'Show SMT anchor diagnostic (high side)', group = g_wd, tooltip = 'READ-ONLY. Lists T1 session + T2 90m HIGH anchors with their three sweep flags (P=primary S1=sister1 S2=sister2), whether the anchor is fully swept (dead), and whether it already fired this session. A bear SMT can only fire on an anchor that is NOT full and NOT fired, with a flag mismatch. Sets no state - strip once solved.')
+diag_pos = input.string('Middle Left', 'Diagnostic position', options = ['Top Left','Middle Left','Bottom Left','Top Right','Middle Right','Bottom Right'], group = g_wd)
+show_watchdog = input.bool(false, 'Show watchdog badge', group = g_wd, tooltip = 'Tiny badge shows a marker (●) + a counter that increments every bar. If the badge disappears or counter freezes, Trinity stopped executing. Pure diagnostic - disable once debugging is done.') and _ltf_on
+wd_pos = input.string('Bottom Left', 'Position', group = g_wd, options = ['Top Left', 'Top Center', 'Top Right', 'Middle Left', 'Middle Center', 'Middle Right', 'Bottom Left', 'Bottom Center', 'Bottom Right'])
+
+// ============================================================
+// === INSTRUMENTS ===
+// ============================================================
+i_sym_a = input.symbol('MES1!', 'Asset A', group = g_sym, tooltip = 'One of three correlated assets. Indicator auto-assigns roles based on which matches the chart.')
+i_sym_b = input.symbol('MNQ1!', 'Asset B', group = g_sym, tooltip = 'One of three correlated assets.')
+i_sym_c = input.symbol('MYM1!', 'Asset C', group = g_sym, tooltip = 'One of three correlated assets. Disable from scan with the toggle below to use only two assets.')
+use_s2 = input.bool(true, 'Include third asset (S2)', group = g_sym, tooltip = 'When OFF, the third asset is excluded from divergence detection - only chart-vs-S1 is checked.')
+i_tz = input.string('America/New_York', 'Timezone', group = g_sym, options = ['America/New_York', 'America/Chicago', 'Europe/London', 'Europe/Berlin', 'Asia/Tokyo'])
+
+_strip(sym) =>
+    _ci = str.pos(sym, ':')
+    _raw = na(_ci) ? sym : str.substring(sym, _ci + 1)
+    str.endswith(_raw, '1!') ? str.substring(_raw, 0, str.length(_raw) - 2) : _raw
+
+_name_chart = _strip(syminfo.ticker)
+_name_a = _strip(i_sym_a)
+_name_b = _strip(i_sym_b)
+_name_c = _strip(i_sym_c)
+
+_a_matches = _name_chart == _name_a
+_b_matches = _name_chart == _name_b
+_c_matches = _name_chart == _name_c
+
+eff_s1 = _a_matches ? i_sym_b : _b_matches ? i_sym_a : _c_matches ? i_sym_a : i_sym_a
+eff_s2 = _a_matches ? i_sym_c : _b_matches ? i_sym_c : _c_matches ? i_sym_b : i_sym_b
+_sym_warn = not(_a_matches or _b_matches or _c_matches)
+
+// v5.5.5 moved the label text to the A2 / A3 tag, so the stripped sister
+// tickers are no longer printed anywhere. pri_name survives - the symbol
+// mismatch warning still uses it.
+pri_name = _name_chart
+
+// ============================================================
+// === TIER SETTINGS ===
+// ============================================================
+show_t1 = input.bool(true, 'Show T1', group = g_t1, inline = 't1a') and _ltf_on
+col_t1_bull = input.color(#115E59, 'Bull', group = g_t1, inline = 't1a')
+col_t1_bear = input.color(#9F1239, 'Bear', group = g_t1, inline = 't1a')
+sty_t1 = input.string('Solid', 'Line style', group = g_t1, options = ['Solid', 'Dashed', 'Dotted'])
+wid_t1 = input.int(2, 'Width', group = g_t1, inline = 't1b', minval = 1, maxval = 4)
+hide_t1 = input.bool(true, 'Hide when mitigated', group = g_t1, inline = 't1b')
+
+show_t2 = input.bool(true, 'Show T2', group = g_t2, inline = 't2a') and _ltf_on
+col_t2_bull = input.color(#0D9488, 'Bull', group = g_t2, inline = 't2a')
+col_t2_bear = input.color(#BE185D, 'Bear', group = g_t2, inline = 't2a')
+sty_t2 = input.string('Solid', 'Line style', group = g_t2, options = ['Solid', 'Dashed', 'Dotted'])
+wid_t2 = input.int(2, 'Width', group = g_t2, inline = 't2b', minval = 1, maxval = 4)
+hide_t2 = input.bool(true, 'Hide when mitigated', group = g_t2, inline = 't2b')
+
+show_t3 = input.bool(true, 'Show T3', group = g_t3, inline = 't3a') and _ltf_on
+col_t3_bull = input.color(#14B8A6, 'Bull', group = g_t3, inline = 't3a')
+col_t3_bear = input.color(#E11D48, 'Bear', group = g_t3, inline = 't3a')
+sty_t3 = input.string('Solid', 'Line style', group = g_t3, options = ['Solid', 'Dashed', 'Dotted'])
+wid_t3 = input.int(1, 'Width', group = g_t3, inline = 't3b', minval = 1, maxval = 4)
+hide_t3 = input.bool(true, 'Hide when mitigated', group = g_t3, inline = 't3b')
+
+show_t4 = input.bool(true, 'Show T4', group = g_t4, inline = 't4a') and _ltf_on
+col_t4_bull = input.color(#5EEAD4, 'Bull', group = g_t4, inline = 't4a')
+col_t4_bear = input.color(#FB7185, 'Bear', group = g_t4, inline = 't4a')
+sty_t4 = input.string('Dashed', 'Line style', group = g_t4, options = ['Solid', 'Dashed', 'Dotted'])
+wid_t4 = input.int(1, 'Width', group = g_t4, inline = 't4b', minval = 1, maxval = 4)
+hide_t4 = input.bool(true, 'Hide when mitigated', group = g_t4, inline = 't4b')
+
+// ============================================================
+// === IFVG & TIER TAG ===
+// ============================================================
+show_ifvg = input.bool(true, 'Show IFVG box', group = g_ifvg)
+show_tier_tag = input.bool(true, 'Show tier tag', group = g_ifvg, tooltip = 'Tiny T1/T2/T3/T4 badge on the IFVG box showing which tier produced this gap.')
+ifvg_extend = input.int(30, 'Extend (bars)', group = g_ifvg, minval = 1, maxval = 300)
+col_ifvg_bull = input.color(color.new(#ff9800, 75), 'Bull IFVG (amber)', group = g_ifvg)
+col_ifvg_bear = input.color(color.new(#ff9800, 75), 'Bear IFVG (amber)', group = g_ifvg)
+
+// ============================================================
+// === ASSET C HIGHLIGHT ===
+// ============================================================
+hl_c_enable = input.bool(true, 'Highlight when Asset C diverges', group = g_hl_c, tooltip = 'When Asset C is the labeled divergent sister, recolor line/label/IFVG with the highlight colors below.')
+col_hl_c_bull = input.color(#2196f3, 'Bull highlight (blue)', group = g_hl_c)
+col_hl_c_bear = input.color(#9c27b0, 'Bear highlight (purple)', group = g_hl_c)
+col_ifvg_hl_c_bull = input.color(color.new(#2196f3, 75), 'Bull IFVG highlight (blue)', group = g_hl_c)
+col_ifvg_hl_c_bear = input.color(color.new(#9c27b0, 75), 'Bear IFVG highlight (purple)', group = g_hl_c)
+
+// ============================================================
+// === SPHINX SEAL ===
+// ============================================================
+show_seal = input.bool(true, 'Show table', group = g_seal) and _ltf_on
+seal_pos = input.string('Bottom Right', 'Position', group = g_seal, options = ['Top Left', 'Top Center', 'Top Right', 'Middle Left', 'Middle Center', 'Middle Right', 'Bottom Left', 'Bottom Center', 'Bottom Right'])
+seal_w = input.float(5.5, 'Col width %', group = g_seal, minval = 2.0, maxval = 20.0, step = 0.5)
+seal_h = input.float(2.0, 'Row height %', group = g_seal, minval = 0.5, maxval = 10.0, step = 0.5)
+
+// ============================================================
+// === EQUINOX GATES ===
+// ============================================================
+src_long = input.source(close, 'Long Gate', group = g_gate)
+src_short = input.source(close, 'Short Gate', group = g_gate)
+src_notrd = input.source(close, 'No Trade', group = g_gate)
+src_tier = input.source(close, 'Bias Tier', group = g_gate)
+use_gates = input.bool(false, 'Enable gate filter', group = g_gate)
+
+// ============================================================
+// === ALERTS ===
+// ============================================================
+alrt_t1 = input.bool(true, 'Alert T1', group = g_alrt)
+alrt_t2 = input.bool(true, 'Alert T2', group = g_alrt)
+alrt_t3 = input.bool(false, 'Alert T3', group = g_alrt)
+alrt_t4 = input.bool(false, 'Alert T4', group = g_alrt)
+alrt_seal = input.bool(true, 'Alert Sphinx Seal', group = g_alrt)
+alrt_repeat = input.bool(false, 'Repeat while tier active', group = g_alrt, tooltip = 'OFF (default): each alert fires once when the signal first appears (edge-triggered). ON: the named alertconditions stay true while the tier remains active, so with \'Once Per Bar Close\' frequency they re-fire every bar close until the signal mitigates. On a 1-min chart this can be frequent - choose the dialog frequency accordingly. Affects named alertconditions only; the inline alert() route is unchanged.')
+
+// ============================================================
+// === CONSTANTS ===
+// ============================================================
+noColor = color.new(#ffffff, 100)
+_col_hdr   = input.color(color.new(#000000, 0),  'Header bg',   group = g_seal, inline = 'tb1')
+_col_bg    = input.color(color.new(#0e0f14, 6),  'Table bg',    group = g_seal, inline = 'tb1')
+_col_hdr_t = input.color(#e8e8e8, 'Header font', group = g_seal, inline = 'tb2')
+_col_bod_t = input.color(#c8ced8, 'Body font',   group = g_seal, inline = 'tb2')
+_col_bull  = input.color(#14b8a6, 'Bull accent', group = g_seal, inline = 'tb3')
+_col_bear  = input.color(#f43f5e, 'Bear accent', group = g_seal, inline = 'tb3')
+// SMT label chip. Fully transparent when the toggle is off, so the label is
+// coloured text alone - the near-black default is a dark block on a light chart.
+_col_lbl_bg = lbl_bg_on ? col_lbl_chip : color.new(#000000, 100)
+
+// ============================================================
+// === WATCHDOG STATE (NEW in v5.3) ===
+// ============================================================
+// Increments on every bar execution. If the badge stops updating or
+// disappears, Trinity has stopped executing.
+var int wd_counter = 0
+wd_counter := wd_counter + 1
+
+// ============================================================
+// === SESSION DETECTION ===
+// ============================================================
+in_asia_a = not na(time(timeframe.period, '2000-0000', i_tz))
+in_asia_b = not na(time(timeframe.period, '0000-0330', i_tz))
+in_asia = in_asia_a or in_asia_b
+in_london = not na(time(timeframe.period, '0330-0800', i_tz))
+in_ny_am = not na(time(timeframe.period, '0800-1230', i_tz))
+in_ny_pm = not na(time(timeframe.period, '1230-1700', i_tz))
+
+_tc = time_close - 60000
+_h = hour(_tc, i_tz)
+_m = minute(_tc, i_tz)
+mins_from_2000 = _h >= 20 ? (_h - 20) * 60 + _m : _h < 17 ? (_h + 4) * 60 + _m : na
+block_idx = not na(mins_from_2000) ? math.floor(mins_from_2000 / 90) : na
+sub_idx = not na(mins_from_2000) ? math.floor(mins_from_2000 % 90 / 30) : na
+subsub_idx = not na(mins_from_2000) ? math.floor(mins_from_2000 % 30 / 10) : na // T4: three 10m slices per 30m
+
+in_ny_blks = in_ny_am or in_ny_pm
+
+// v5.5.3: cycle-tier execution window. When run_asia is ON, T2/T3/T4 run
+// continuously from Asia open (20:00 NY) through London and NY. When OFF,
+// they run only during the NY blocks - bit-identical v5.5.1 behavior. The
+// underlying block grid (mins_from_2000, anchored to 20:00) already spans
+// Asia/London/NY, so this is a gate widening only - no new cycle math.
+in_cycle_blks = run_asia ? in_asia or in_london or in_ny_blks : in_ny_blks
+
+in_day_open = not na(time(timeframe.period, '1800-1802', i_tz))
+is_day_reset = in_day_open and not in_day_open[1]
+
+// ============================================================
+// === DATA FEEDS ===
+// ============================================================
+// v5.5.5: only the two intraday [high, low] tuple calls remain. The nine
+// HTF D/W/M calls (chart + both sisters) were removed with the HTF bias
+// subsystem. Unique request.*() count is now 2.
+[s1_h, s1_l] = request.security(eff_s1, timeframe.period, [high, low], ignore_invalid_symbol = true)
+
+[_s2_h_raw, _s2_l_raw] = request.security(eff_s2, timeframe.period, [high, low], ignore_invalid_symbol = true)
+s2_h = use_s2 ? _s2_h_raw : float(na)
+s2_l = use_s2 ? _s2_l_raw : float(na)
+
+// ============================================================
+// === EQUINOX GATES ===
+// ============================================================
+eq_long = use_gates ? src_long >= 1 : true
+eq_short = use_gates ? src_short >= 1 : true
+eq_notrd = use_gates ? src_notrd >= 1 : false
+eq_tier = use_gates ? src_tier : 1
+
+long_ok = eq_long and not eq_notrd and eq_tier >= 1
+short_ok = eq_short and not eq_notrd and eq_tier >= 1
+
+// ============================================================
+// === IFVG DETECTION ===
+// ============================================================
+// v5.8.3: history buffer sized for the two series the IFVG scanners index at a
+// loop-computed offset - and only those. Audited: every other historical
+// reference in the script uses a constant or a simple h_swing offset, which
+// Pine sizes automatically. Replaces the global max_bars_back = 1500 on
+// indicator(), which reserved 1500 bars of history for every series.
+max_bars_back(high, 1500)
+max_bars_back(low, 1500)
+
+find_ifvg_near_bull(target_bar, radius) =>
+    float best_top = na
+    float best_bot = na
+    int best_gbar = na
+    int best_dist = na
+    int target_offset = bar_index - target_bar
+    int low_off = math.max(0, target_offset - radius)
+    int high_off = math.min(bar_index - 2, target_offset + radius)
+    for i = low_off to high_off by 1
+        if not na(low[i + 2]) and not na(high[i]) and low[i + 2] > high[i]
+            int dist = math.abs(target_offset - (i + 1))
+            if na(best_dist) or dist < best_dist
+                best_top := low[i + 2]
+                best_bot := high[i]
+                best_gbar := bar_index - (i + 1)
+                best_dist := dist
+                best_dist
+    [best_top, best_bot, best_gbar]
+
+find_ifvg_near_bear(target_bar, radius) =>
+    float best_top = na
+    float best_bot = na
+    int best_gbar = na
+    int best_dist = na
+    int target_offset = bar_index - target_bar
+    int low_off = math.max(0, target_offset - radius)
+    int high_off = math.min(bar_index - 2, target_offset + radius)
+    for i = low_off to high_off by 1
+        if not na(high[i + 2]) and not na(low[i]) and high[i + 2] < low[i]
+            int dist = math.abs(target_offset - (i + 1))
+            if na(best_dist) or dist < best_dist
+                best_top := low[i]
+                best_bot := high[i + 2]
+                best_gbar := bar_index - (i + 1)
+                best_dist := dist
+                best_dist
+    [best_top, best_bot, best_gbar]
+
+// ============================================================
+// === HELPERS ===
+// ============================================================
+_sty(s) =>
+    s == 'Dashed' ? line.style_dashed : s == 'Dotted' ? line.style_dotted : line.style_solid
+
+_pair_label(pri_f, s1_f, s2_f) =>
+    s1_diverges = pri_f != s1_f
+    s2_diverges = use_s2 and pri_f != s2_f
+    s1_diverges ? 'A2' : s2_diverges ? 'A3' : ''
+
+_lbl(tier, pair, is_bull) =>
+    (is_bull ? '▲ ' : '▼ ') + tier + ' ' + pair
+
+_mid_b(ab, pb) =>
+    int(math.round((ab + pb) / 2.0))
+
+_mid_p(ap, pp) =>
+    (ap + pp) / 2.0
+
+_draw(ab, ap, pb, pp, is_bull, tier, pair, lcol, icol, lsty, lwid) =>
+    bool _valid = not na(ap) and not na(pp) and ab > 0 and pb > 0
+    line ln = na
+    label lb = na
+    if _valid
+        _lc = color.new(lcol, 0)
+        ln := line.new(ab, ap, pb, pp, color = _lc, width = lwid, style = _sty(lsty))
+        lb := label.new(_mid_b(ab, pb), _mid_p(ap, pp), _lbl(tier, pair, is_bull), style = label.style_label_center, color = _col_lbl_bg, textcolor = lcol, size = lbl_sz)
+    bx = box(na)
+    dl = label(na)
+    if show_ifvg and _valid
+        float it = na
+        float ib = na
+        int igbar = na
+        if is_bull
+            [t, b, g] = find_ifvg_near_bull(pb, 15)
+            it := t
+            ib := b
+            igbar := g
+            igbar
+        else
+            [t, b, g] = find_ifvg_near_bear(pb, 15)
+            it := t
+            ib := b
+            igbar := g
+            igbar
+        if not na(it) and not na(ib) and not na(igbar)
+            _bx_left = igbar > 0 ? igbar : pb
+            bx := box.new(_bx_left, it, _bx_left + ifvg_extend, ib, bgcolor = icol, border_color = color.new(lcol, 30), border_width = 1)
+            if show_tier_tag
+                _badge_text = str.length(tier) >= 2 ? str.substring(tier, 0, 2) : tier
+                dl := label.new(_bx_left + ifvg_extend, math.avg(it, ib), _badge_text, style = label.style_label_left, color = color.new(lcol, 0), textcolor = #ffffff, size = size.tiny)
+                dl
+    [ln, lb, bx, dl]
+
+_draw_with_ifvg(ab, ap, pb, pp, is_bull, tier, pair, lcol, icol, lsty, lwid, ifvg_t, ifvg_b, ifvg_l) =>
+    bool _valid = not na(ap) and not na(pp) and ab > 0 and pb > 0
+    line ln = na
+    label lb = na
+    if _valid
+        _lc = color.new(lcol, 0)
+        ln := line.new(ab, ap, pb, pp, color = _lc, width = lwid, style = _sty(lsty))
+        lb := label.new(_mid_b(ab, pb), _mid_p(ap, pp), _lbl(tier, pair, is_bull), style = label.style_label_center, color = _col_lbl_bg, textcolor = lcol, size = lbl_sz)
+    bx = box(na)
+    dl = label(na)
+    if show_ifvg and _valid and not na(ifvg_t) and not na(ifvg_b)
+        bx := box.new(ifvg_l, ifvg_t, ifvg_l + ifvg_extend, ifvg_b, bgcolor = icol, border_color = color.new(lcol, 30), border_width = 1)
+        if show_tier_tag
+            _badge_text = str.length(tier) >= 2 ? str.substring(tier, 0, 2) : tier
+            dl := label.new(ifvg_l + ifvg_extend, math.avg(ifvg_t, ifvg_b), _badge_text, style = label.style_label_left, color = color.new(lcol, 0), textcolor = #ffffff, size = size.tiny)
+            dl
+    [ln, lb, bx, dl]
+
+_clr(ln, lb, bx, dl) =>
+    if not na(ln)
+        ln.delete()
+    if not na(lb)
+        lb.delete()
+    if not na(bx)
+        bx.delete()
+    if not na(dl)
+        dl.delete()
+
+// ============================================================
+// === T1 SESSION REFERENCE LEVELS ===
+// ============================================================
+var float asia_run_h = na
+var float asia_run_l = na
+var int asia_run_hb = 0
+var int asia_run_lb = 0
+var float asia_run_s1h = na
+var float asia_run_s1l = na
+var float asia_run_s2h = na
+var float asia_run_s2l = na
+
+var float lon_run_h = na
+var float lon_run_l = na
+var int lon_run_hb = 0
+var int lon_run_lb = 0
+var float lon_run_s1h = na
+var float lon_run_s1l = na
+var float lon_run_s2h = na
+var float lon_run_s2l = na
+
+var float nyam_run_h = na
+var float nyam_run_l = na
+var int nyam_run_hb = 0
+var int nyam_run_lb = 0
+var float nyam_run_s1h = na
+var float nyam_run_s1l = na
+var float nyam_run_s2h = na
+var float nyam_run_s2l = na
+
+var float ref_asia_h = na
+var float ref_asia_l = na
+var int ref_asia_hb = 0
+var int ref_asia_lb = 0
+var float ref_asia_s1h = na
+var float ref_asia_s1l = na
+var float ref_asia_s2h = na
+var float ref_asia_s2l = na
+var bool asia_pri_h = false
+var bool asia_pri_l = false
+var bool asia_s1_h = false
+var bool asia_s1_l = false
+var bool asia_s2_h = false
+var bool asia_s2_l = false
+var bool asia_fired_h = false
+var bool asia_fired_l = false
+
+var float ref_lon_h = na
+var float ref_lon_l = na
+var int ref_lon_hb = 0
+var int ref_lon_lb = 0
+var float ref_lon_s1h = na
+var float ref_lon_s1l = na
+var float ref_lon_s2h = na
+var float ref_lon_s2l = na
+var bool lon_pri_h = false
+var bool lon_pri_l = false
+var bool lon_s1_h = false
+var bool lon_s1_l = false
+var bool lon_s2_h = false
+var bool lon_s2_l = false
+var bool lon_fired_h = false
+var bool lon_fired_l = false
+
+var float ref_nyam_h = na
+var float ref_nyam_l = na
+var int ref_nyam_hb = 0
+var int ref_nyam_lb = 0
+var float ref_nyam_s1h = na
+var float ref_nyam_s1l = na
+var float ref_nyam_s2h = na
+var float ref_nyam_s2l = na
+var bool nyam_pri_h = false
+var bool nyam_pri_l = false
+var bool nyam_s1_h = false
+var bool nyam_s1_l = false
+var bool nyam_s2_h = false
+var bool nyam_s2_l = false
+var bool nyam_fired_h = false
+var bool nyam_fired_l = false
+
+if is_day_reset
+    asia_run_h := na
+    asia_run_l := na
+    asia_run_hb := 0
+    asia_run_lb := 0
+    asia_run_s1h := na
+    asia_run_s1l := na
+    asia_run_s2h := na
+    asia_run_s2l := na
+    lon_run_h := na
+    lon_run_l := na
+    lon_run_hb := 0
+    lon_run_lb := 0
+    lon_run_s1h := na
+    lon_run_s1l := na
+    lon_run_s2h := na
+    lon_run_s2l := na
+    nyam_run_h := na
+    nyam_run_l := na
+    nyam_run_hb := 0
+    nyam_run_lb := 0
+    nyam_run_s1h := na
+    nyam_run_s1l := na
+    nyam_run_s2h := na
+    nyam_run_s2l := na
+    ref_asia_h := na
+    ref_asia_l := na
+    ref_asia_s1h := na
+    ref_asia_s1l := na
+    ref_asia_s2h := na
+    ref_asia_s2l := na
+    asia_pri_h := false
+    asia_pri_l := false
+    asia_s1_h := false
+    asia_s1_l := false
+    asia_s2_h := false
+    asia_s2_l := false
+    asia_fired_h := false
+    asia_fired_l := false
+    ref_lon_h := na
+    ref_lon_l := na
+    ref_lon_s1h := na
+    ref_lon_s1l := na
+    ref_lon_s2h := na
+    ref_lon_s2l := na
+    lon_pri_h := false
+    lon_pri_l := false
+    lon_s1_h := false
+    lon_s1_l := false
+    lon_s2_h := false
+    lon_s2_l := false
+    lon_fired_h := false
+    lon_fired_l := false
+    ref_nyam_h := na
+    ref_nyam_l := na
+    ref_nyam_s1h := na
+    ref_nyam_s1l := na
+    ref_nyam_s2h := na
+    ref_nyam_s2l := na
+    nyam_pri_h := false
+    nyam_pri_l := false
+    nyam_s1_h := false
+    nyam_s1_l := false
+    nyam_s2_h := false
+    nyam_s2_l := false
+    nyam_fired_h := false
+    nyam_fired_l := false
+    nyam_fired_l
+
+if in_asia
+    if not in_asia[1]
+        asia_run_h := high
+        asia_run_l := low
+        asia_run_hb := bar_index
+        asia_run_lb := bar_index
+        asia_run_s1h := s1_h
+        asia_run_s1l := s1_l
+        asia_run_s2h := s2_h
+        asia_run_s2l := s2_l
+        asia_run_s2l
+    else
+        if high > asia_run_h or na(asia_run_h)
+            asia_run_h := high
+            asia_run_hb := bar_index
+            asia_run_hb
+        if low < asia_run_l or na(asia_run_l)
+            asia_run_l := low
+            asia_run_lb := bar_index
+            asia_run_lb
+        if not na(s1_h) and (s1_h > asia_run_s1h or na(asia_run_s1h))
+            asia_run_s1h := s1_h
+            asia_run_s1h
+        if not na(s1_l) and (s1_l < asia_run_s1l or na(asia_run_s1l))
+            asia_run_s1l := s1_l
+            asia_run_s1l
+        if use_s2 and not na(s2_h) and (s2_h > asia_run_s2h or na(asia_run_s2h))
+            asia_run_s2h := s2_h
+            asia_run_s2h
+        if use_s2 and not na(s2_l) and (s2_l < asia_run_s2l or na(asia_run_s2l))
+            asia_run_s2l := s2_l
+            asia_run_s2l
+
+if in_asia[1] and not in_asia
+    ref_asia_h := asia_run_h
+    ref_asia_l := asia_run_l
+    ref_asia_hb := asia_run_hb
+    ref_asia_lb := asia_run_lb
+    ref_asia_s1h := asia_run_s1h
+    ref_asia_s1l := asia_run_s1l
+    ref_asia_s2h := asia_run_s2h
+    ref_asia_s2l := asia_run_s2l
+    ref_asia_s2l
+
+if in_london
+    if not in_london[1]
+        lon_run_h := high
+        lon_run_l := low
+        lon_run_hb := bar_index
+        lon_run_lb := bar_index
+        lon_run_s1h := s1_h
+        lon_run_s1l := s1_l
+        lon_run_s2h := s2_h
+        lon_run_s2l := s2_l
+        lon_run_s2l
+    else
+        if high > lon_run_h or na(lon_run_h)
+            lon_run_h := high
+            lon_run_hb := bar_index
+            lon_run_hb
+        if low < lon_run_l or na(lon_run_l)
+            lon_run_l := low
+            lon_run_lb := bar_index
+            lon_run_lb
+        if not na(s1_h) and (s1_h > lon_run_s1h or na(lon_run_s1h))
+            lon_run_s1h := s1_h
+            lon_run_s1h
+        if not na(s1_l) and (s1_l < lon_run_s1l or na(lon_run_s1l))
+            lon_run_s1l := s1_l
+            lon_run_s1l
+        if use_s2 and not na(s2_h) and (s2_h > lon_run_s2h or na(lon_run_s2h))
+            lon_run_s2h := s2_h
+            lon_run_s2h
+        if use_s2 and not na(s2_l) and (s2_l < lon_run_s2l or na(lon_run_s2l))
+            lon_run_s2l := s2_l
+            lon_run_s2l
+
+if in_london[1] and not in_london
+    ref_lon_h := lon_run_h
+    ref_lon_l := lon_run_l
+    ref_lon_hb := lon_run_hb
+    ref_lon_lb := lon_run_lb
+    ref_lon_s1h := lon_run_s1h
+    ref_lon_s1l := lon_run_s1l
+    ref_lon_s2h := lon_run_s2h
+    ref_lon_s2l := lon_run_s2l
+    ref_lon_s2l
+
+if in_ny_am
+    if not in_ny_am[1]
+        nyam_run_h := high
+        nyam_run_l := low
+        nyam_run_hb := bar_index
+        nyam_run_lb := bar_index
+        nyam_run_s1h := s1_h
+        nyam_run_s1l := s1_l
+        nyam_run_s2h := s2_h
+        nyam_run_s2l := s2_l
+        nyam_run_s2l
+    else
+        if high > nyam_run_h or na(nyam_run_h)
+            nyam_run_h := high
+            nyam_run_hb := bar_index
+            nyam_run_hb
+        if low < nyam_run_l or na(nyam_run_l)
+            nyam_run_l := low
+            nyam_run_lb := bar_index
+            nyam_run_lb
+        if not na(s1_h) and (s1_h > nyam_run_s1h or na(nyam_run_s1h))
+            nyam_run_s1h := s1_h
+            nyam_run_s1h
+        if not na(s1_l) and (s1_l < nyam_run_s1l or na(nyam_run_s1l))
+            nyam_run_s1l := s1_l
+            nyam_run_s1l
+        if use_s2 and not na(s2_h) and (s2_h > nyam_run_s2h or na(nyam_run_s2h))
+            nyam_run_s2h := s2_h
+            nyam_run_s2h
+        if use_s2 and not na(s2_l) and (s2_l < nyam_run_s2l or na(nyam_run_s2l))
+            nyam_run_s2l := s2_l
+            nyam_run_s2l
+
+if in_ny_am[1] and not in_ny_am
+    ref_nyam_h := nyam_run_h
+    ref_nyam_l := nyam_run_l
+    ref_nyam_hb := nyam_run_hb
+    ref_nyam_lb := nyam_run_lb
+    ref_nyam_s1h := nyam_run_s1h
+    ref_nyam_s1l := nyam_run_s1l
+    ref_nyam_s2h := nyam_run_s2h
+    ref_nyam_s2l := nyam_run_s2l
+    ref_nyam_s2l
+
+// ============================================================
+// === T2/T3/T4 CYCLE REFERENCE LEVELS ===
+// ============================================================
+var float t2_cur_h = na
+var float t2_cur_l = na
+var int t2_cur_hb = 0
+var int t2_cur_lb = 0
+var float t2_cur_s1h = na
+var float t2_cur_s1l = na
+var float t2_cur_s2h = na
+var float t2_cur_s2l = na
+var int t2_cur_blk = -1
+
+var array<float> t2_hs = array.new_float()
+var array<float> t2_ls = array.new_float()
+var array<int> t2_hbs = array.new_int()
+var array<int> t2_lbs = array.new_int()
+var array<float> t2_s1hs = array.new_float()
+var array<float> t2_s1ls = array.new_float()
+var array<float> t2_s2hs = array.new_float()
+var array<float> t2_s2ls = array.new_float()
+var array<bool> t2_pri_h_arr = array.new_bool()
+var array<bool> t2_pri_l_arr = array.new_bool()
+var array<bool> t2_s1_h_arr = array.new_bool()
+var array<bool> t2_s1_l_arr = array.new_bool()
+var array<bool> t2_s2_h_arr = array.new_bool()
+var array<bool> t2_s2_l_arr = array.new_bool()
+var array<bool> t2_fired_h_arr = array.new_bool()
+var array<bool> t2_fired_l_arr = array.new_bool()
+
+var float t3_cur_h = na
+var float t3_cur_l = na
+var int t3_cur_hb = 0
+var int t3_cur_lb = 0
+var float t3_cur_s1h = na
+var float t3_cur_s1l = na
+var float t3_cur_s2h = na
+var float t3_cur_s2l = na
+var int t3_cur_sub = -1
+
+var array<float> t3_hs = array.new_float()
+var array<float> t3_ls = array.new_float()
+var array<int> t3_hbs = array.new_int()
+var array<int> t3_lbs = array.new_int()
+var array<float> t3_s1hs = array.new_float()
+var array<float> t3_s1ls = array.new_float()
+var array<float> t3_s2hs = array.new_float()
+var array<float> t3_s2ls = array.new_float()
+var array<bool> t3_pri_h_arr = array.new_bool()
+var array<bool> t3_pri_l_arr = array.new_bool()
+var array<bool> t3_s1_h_arr = array.new_bool()
+var array<bool> t3_s1_l_arr = array.new_bool()
+var array<bool> t3_s2_h_arr = array.new_bool()
+var array<bool> t3_s2_l_arr = array.new_bool()
+var array<bool> t3_fired_h_arr = array.new_bool()
+var array<bool> t3_fired_l_arr = array.new_bool()
+
+var float t4_cur_h = na
+var float t4_cur_l = na
+var int t4_cur_hb = 0
+var int t4_cur_lb = 0
+var float t4_cur_s1h = na
+var float t4_cur_s1l = na
+var float t4_cur_s2h = na
+var float t4_cur_s2l = na
+var int t4_cur_sub10 = -1
+
+var array<float> t4_hs = array.new_float()
+var array<float> t4_ls = array.new_float()
+var array<int> t4_hbs = array.new_int()
+var array<int> t4_lbs = array.new_int()
+var array<float> t4_s1hs = array.new_float()
+var array<float> t4_s1ls = array.new_float()
+var array<float> t4_s2hs = array.new_float()
+var array<float> t4_s2ls = array.new_float()
+var array<bool> t4_pri_h_arr = array.new_bool()
+var array<bool> t4_pri_l_arr = array.new_bool()
+var array<bool> t4_s1_h_arr = array.new_bool()
+var array<bool> t4_s1_l_arr = array.new_bool()
+var array<bool> t4_s2_h_arr = array.new_bool()
+var array<bool> t4_s2_l_arr = array.new_bool()
+var array<bool> t4_fired_h_arr = array.new_bool()
+var array<bool> t4_fired_l_arr = array.new_bool()
+
+if is_day_reset
+    t2_cur_h := na
+    t2_cur_l := na
+    t2_cur_hb := 0
+    t2_cur_lb := 0
+    t2_cur_s1h := na
+    t2_cur_s1l := na
+    t2_cur_s2h := na
+    t2_cur_s2l := na
+    t2_cur_blk := -1
+    array.clear(t2_hs)
+    array.clear(t2_ls)
+    array.clear(t2_hbs)
+    array.clear(t2_lbs)
+    array.clear(t2_s1hs)
+    array.clear(t2_s1ls)
+    array.clear(t2_s2hs)
+    array.clear(t2_s2ls)
+    array.clear(t2_pri_h_arr)
+    array.clear(t2_pri_l_arr)
+    array.clear(t2_s1_h_arr)
+    array.clear(t2_s1_l_arr)
+    array.clear(t2_s2_h_arr)
+    array.clear(t2_s2_l_arr)
+    array.clear(t2_fired_h_arr)
+    array.clear(t2_fired_l_arr)
+    t3_cur_h := na
+    t3_cur_l := na
+    t3_cur_hb := 0
+    t3_cur_lb := 0
+    t3_cur_s1h := na
+    t3_cur_s1l := na
+    t3_cur_s2h := na
+    t3_cur_s2l := na
+    t3_cur_sub := -1
+    array.clear(t3_hs)
+    array.clear(t3_ls)
+    array.clear(t3_hbs)
+    array.clear(t3_lbs)
+    array.clear(t3_s1hs)
+    array.clear(t3_s1ls)
+    array.clear(t3_s2hs)
+    array.clear(t3_s2ls)
+    array.clear(t3_pri_h_arr)
+    array.clear(t3_pri_l_arr)
+    array.clear(t3_s1_h_arr)
+    array.clear(t3_s1_l_arr)
+    array.clear(t3_s2_h_arr)
+    array.clear(t3_s2_l_arr)
+    array.clear(t3_fired_h_arr)
+    array.clear(t3_fired_l_arr)
+    t4_cur_h := na
+    t4_cur_l := na
+    t4_cur_hb := 0
+    t4_cur_lb := 0
+    t4_cur_s1h := na
+    t4_cur_s1l := na
+    t4_cur_s2h := na
+    t4_cur_s2l := na
+    t4_cur_sub10 := -1
+    array.clear(t4_hs)
+    array.clear(t4_ls)
+    array.clear(t4_hbs)
+    array.clear(t4_lbs)
+    array.clear(t4_s1hs)
+    array.clear(t4_s1ls)
+    array.clear(t4_s2hs)
+    array.clear(t4_s2ls)
+    array.clear(t4_pri_h_arr)
+    array.clear(t4_pri_l_arr)
+    array.clear(t4_s1_h_arr)
+    array.clear(t4_s1_l_arr)
+    array.clear(t4_s2_h_arr)
+    array.clear(t4_s2_l_arr)
+    array.clear(t4_fired_h_arr)
+    array.clear(t4_fired_l_arr)
+
+bool _t2_rolled = false
+bool _t3_rolled = false
+bool _t4_rolled = false
+if in_cycle_blks and not na(block_idx)
+    if block_idx != t2_cur_blk
+        if not na(t2_cur_h) and t2_cur_blk >= 0
+            array.push(t2_hs, t2_cur_h)
+            array.push(t2_ls, t2_cur_l)
+            array.push(t2_hbs, t2_cur_hb)
+            array.push(t2_lbs, t2_cur_lb)
+            array.push(t2_s1hs, t2_cur_s1h)
+            array.push(t2_s1ls, t2_cur_s1l)
+            array.push(t2_s2hs, t2_cur_s2h)
+            array.push(t2_s2ls, t2_cur_s2l)
+            array.push(t2_pri_h_arr, false)
+            array.push(t2_pri_l_arr, false)
+            array.push(t2_s1_h_arr, false)
+            array.push(t2_s1_l_arr, false)
+            array.push(t2_s2_h_arr, false)
+            array.push(t2_s2_l_arr, false)
+            array.push(t2_fired_h_arr, false)
+            array.push(t2_fired_l_arr, false)
+            if array.size(t2_hs) > 8
+                array.shift(t2_hs)
+                array.shift(t2_ls)
+                array.shift(t2_hbs)
+                array.shift(t2_lbs)
+                array.shift(t2_s1hs)
+                array.shift(t2_s1ls)
+                array.shift(t2_s2hs)
+                array.shift(t2_s2ls)
+                array.shift(t2_pri_h_arr)
+                array.shift(t2_pri_l_arr)
+                array.shift(t2_s1_h_arr)
+                array.shift(t2_s1_l_arr)
+                array.shift(t2_s2_h_arr)
+                array.shift(t2_s2_l_arr)
+                array.shift(t2_fired_h_arr)
+                array.shift(t2_fired_l_arr)
+                _t2_rolled := true
+        t2_cur_blk := block_idx
+        t2_cur_h := high
+        t2_cur_l := low
+        t2_cur_hb := bar_index
+        t2_cur_lb := bar_index
+        t2_cur_s1h := s1_h
+        t2_cur_s1l := s1_l
+        t2_cur_s2h := s2_h
+        t2_cur_s2l := s2_l
+        t2_cur_s2l
+    else
+        if high > t2_cur_h or na(t2_cur_h)
+            t2_cur_h := high
+            t2_cur_hb := bar_index
+            t2_cur_hb
+        if low < t2_cur_l or na(t2_cur_l)
+            t2_cur_l := low
+            t2_cur_lb := bar_index
+            t2_cur_lb
+        if not na(s1_h) and (s1_h > t2_cur_s1h or na(t2_cur_s1h))
+            t2_cur_s1h := s1_h
+            t2_cur_s1h
+        if not na(s1_l) and (s1_l < t2_cur_s1l or na(t2_cur_s1l))
+            t2_cur_s1l := s1_l
+            t2_cur_s1l
+        if use_s2 and not na(s2_h) and (s2_h > t2_cur_s2h or na(t2_cur_s2h))
+            t2_cur_s2h := s2_h
+            t2_cur_s2h
+        if use_s2 and not na(s2_l) and (s2_l < t2_cur_s2l or na(t2_cur_s2l))
+            t2_cur_s2l := s2_l
+            t2_cur_s2l
+
+if in_cycle_blks and not na(block_idx) and not na(sub_idx)
+    _k30 = block_idx * 10 + sub_idx
+    if _k30 != t3_cur_sub and _k30 >= 0
+        if not na(t3_cur_h) and t3_cur_sub >= 0
+            array.push(t3_hs, t3_cur_h)
+            array.push(t3_ls, t3_cur_l)
+            array.push(t3_hbs, t3_cur_hb)
+            array.push(t3_lbs, t3_cur_lb)
+            array.push(t3_s1hs, t3_cur_s1h)
+            array.push(t3_s1ls, t3_cur_s1l)
+            array.push(t3_s2hs, t3_cur_s2h)
+            array.push(t3_s2ls, t3_cur_s2l)
+            array.push(t3_pri_h_arr, false)
+            array.push(t3_pri_l_arr, false)
+            array.push(t3_s1_h_arr, false)
+            array.push(t3_s1_l_arr, false)
+            array.push(t3_s2_h_arr, false)
+            array.push(t3_s2_l_arr, false)
+            array.push(t3_fired_h_arr, false)
+            array.push(t3_fired_l_arr, false)
+            if array.size(t3_hs) > 2
+                array.shift(t3_hs)
+                array.shift(t3_ls)
+                array.shift(t3_hbs)
+                array.shift(t3_lbs)
+                array.shift(t3_s1hs)
+                array.shift(t3_s1ls)
+                array.shift(t3_s2hs)
+                array.shift(t3_s2ls)
+                array.shift(t3_pri_h_arr)
+                array.shift(t3_pri_l_arr)
+                array.shift(t3_s1_h_arr)
+                array.shift(t3_s1_l_arr)
+                array.shift(t3_s2_h_arr)
+                array.shift(t3_s2_l_arr)
+                array.shift(t3_fired_h_arr)
+                array.shift(t3_fired_l_arr)
+                _t3_rolled := true
+        t3_cur_sub := _k30
+        t3_cur_h := high
+        t3_cur_l := low
+        t3_cur_hb := bar_index
+        t3_cur_lb := bar_index
+        t3_cur_s1h := s1_h
+        t3_cur_s1l := s1_l
+        t3_cur_s2h := s2_h
+        t3_cur_s2l := s2_l
+        t3_cur_s2l
+    else if _k30 >= 0
+        if high > t3_cur_h or na(t3_cur_h)
+            t3_cur_h := high
+            t3_cur_hb := bar_index
+            t3_cur_hb
+        if low < t3_cur_l or na(t3_cur_l)
+            t3_cur_l := low
+            t3_cur_lb := bar_index
+            t3_cur_lb
+        if not na(s1_h) and (s1_h > t3_cur_s1h or na(t3_cur_s1h))
+            t3_cur_s1h := s1_h
+            t3_cur_s1h
+        if not na(s1_l) and (s1_l < t3_cur_s1l or na(t3_cur_s1l))
+            t3_cur_s1l := s1_l
+            t3_cur_s1l
+        if use_s2 and not na(s2_h) and (s2_h > t3_cur_s2h or na(t3_cur_s2h))
+            t3_cur_s2h := s2_h
+            t3_cur_s2h
+        if use_s2 and not na(s2_l) and (s2_l < t3_cur_s2l or na(t3_cur_s2l))
+            t3_cur_s2l := s2_l
+            t3_cur_s2l
+
+if in_cycle_blks and not na(block_idx) and not na(sub_idx) and not na(subsub_idx)
+    _k10 = block_idx * 100 + sub_idx * 10 + subsub_idx
+    if _k10 != t4_cur_sub10 and _k10 >= 0
+        if not na(t4_cur_h) and t4_cur_sub10 >= 0
+            array.push(t4_hs, t4_cur_h)
+            array.push(t4_ls, t4_cur_l)
+            array.push(t4_hbs, t4_cur_hb)
+            array.push(t4_lbs, t4_cur_lb)
+            array.push(t4_s1hs, t4_cur_s1h)
+            array.push(t4_s1ls, t4_cur_s1l)
+            array.push(t4_s2hs, t4_cur_s2h)
+            array.push(t4_s2ls, t4_cur_s2l)
+            array.push(t4_pri_h_arr, false)
+            array.push(t4_pri_l_arr, false)
+            array.push(t4_s1_h_arr, false)
+            array.push(t4_s1_l_arr, false)
+            array.push(t4_s2_h_arr, false)
+            array.push(t4_s2_l_arr, false)
+            array.push(t4_fired_h_arr, false)
+            array.push(t4_fired_l_arr, false)
+            if array.size(t4_hs) > 6
+                array.shift(t4_hs)
+                array.shift(t4_ls)
+                array.shift(t4_hbs)
+                array.shift(t4_lbs)
+                array.shift(t4_s1hs)
+                array.shift(t4_s1ls)
+                array.shift(t4_s2hs)
+                array.shift(t4_s2ls)
+                array.shift(t4_pri_h_arr)
+                array.shift(t4_pri_l_arr)
+                array.shift(t4_s1_h_arr)
+                array.shift(t4_s1_l_arr)
+                array.shift(t4_s2_h_arr)
+                array.shift(t4_s2_l_arr)
+                array.shift(t4_fired_h_arr)
+                array.shift(t4_fired_l_arr)
+                _t4_rolled := true
+        t4_cur_sub10 := _k10
+        t4_cur_h := high
+        t4_cur_l := low
+        t4_cur_hb := bar_index
+        t4_cur_lb := bar_index
+        t4_cur_s1h := s1_h
+        t4_cur_s1l := s1_l
+        t4_cur_s2h := s2_h
+        t4_cur_s2l := s2_l
+        t4_cur_s2l
+    else if _k10 >= 0
+        if high > t4_cur_h or na(t4_cur_h)
+            t4_cur_h := high
+            t4_cur_hb := bar_index
+            t4_cur_hb
+        if low < t4_cur_l or na(t4_cur_l)
+            t4_cur_l := low
+            t4_cur_lb := bar_index
+            t4_cur_lb
+        if not na(s1_h) and (s1_h > t4_cur_s1h or na(t4_cur_s1h))
+            t4_cur_s1h := s1_h
+            t4_cur_s1h
+        if not na(s1_l) and (s1_l < t4_cur_s1l or na(t4_cur_s1l))
+            t4_cur_s1l := s1_l
+            t4_cur_s1l
+        if use_s2 and not na(s2_h) and (s2_h > t4_cur_s2h or na(t4_cur_s2h))
+            t4_cur_s2h := s2_h
+            t4_cur_s2h
+        if use_s2 and not na(s2_l) and (s2_l < t4_cur_s2l or na(t4_cur_s2l))
+            t4_cur_s2l := s2_l
+            t4_cur_s2l
+
+// ============================================================
+// === SIGNAL HANDLES ===
+// ============================================================
+var line ln_t1b = na
+var label lb_t1b = na
+var box bx_t1b = na
+var label dl_t1b = na
+var float t1b_active_pri = na
+var int t1b_active_src = 0
+var float t1b_ext_p = na
+var int t1b_ext_b = 0
+var int t1b_div_sister = 0
+var bool t1b_suppressed = false
+var int t1b_anchor_b = 0
+var float t1b_anchor_p = na
+var string t1b_pair = ''
+var float t1b_ifvg_top = na
+var float t1b_ifvg_bot = na
+var int t1b_ifvg_left = 0
+
+var line ln_t1l = na
+var label lb_t1l = na
+var box bx_t1l = na
+var label dl_t1l = na
+var float t1l_active_pri = na
+var int t1l_active_src = 0
+var float t1l_ext_p = na
+var int t1l_ext_b = 0
+var int t1l_div_sister = 0
+var bool t1l_suppressed = false
+var int t1l_anchor_b = 0
+var float t1l_anchor_p = na
+var string t1l_pair = ''
+var float t1l_ifvg_top = na
+var float t1l_ifvg_bot = na
+var int t1l_ifvg_left = 0
+
+var line ln_t2b = na
+var label lb_t2b = na
+var box bx_t2b = na
+var label dl_t2b = na
+var float t2b_active_pri = na
+var int t2b_active_idx = -1
+var float t2b_ext_p = na
+var int t2b_ext_b = 0
+var int t2b_div_sister = 0
+var bool t2b_suppressed = false
+var int t2b_anchor_b = 0
+var float t2b_anchor_p = na
+var string t2b_pair = ''
+var float t2b_ifvg_top = na
+var float t2b_ifvg_bot = na
+var int t2b_ifvg_left = 0
+
+var line ln_t2l = na
+var label lb_t2l = na
+var box bx_t2l = na
+var label dl_t2l = na
+var float t2l_active_pri = na
+var int t2l_active_idx = -1
+var float t2l_ext_p = na
+var int t2l_ext_b = 0
+var int t2l_div_sister = 0
+var bool t2l_suppressed = false
+var int t2l_anchor_b = 0
+var float t2l_anchor_p = na
+var string t2l_pair = ''
+var float t2l_ifvg_top = na
+var float t2l_ifvg_bot = na
+var int t2l_ifvg_left = 0
+
+var line ln_t3b = na
+var label lb_t3b = na
+var box bx_t3b = na
+var label dl_t3b = na
+var float t3b_active_pri = na
+var int t3b_active_idx = -1
+var float t3b_ext_p = na
+var int t3b_ext_b = 0
+var int t3b_div_sister = 0
+var bool t3b_suppressed = false
+var int t3b_anchor_b = 0
+var float t3b_anchor_p = na
+var string t3b_pair = ''
+var float t3b_ifvg_top = na
+var float t3b_ifvg_bot = na
+var int t3b_ifvg_left = 0
+
+var line ln_t3l = na
+var label lb_t3l = na
+var box bx_t3l = na
+var label dl_t3l = na
+var float t3l_active_pri = na
+var int t3l_active_idx = -1
+var float t3l_ext_p = na
+var int t3l_ext_b = 0
+var int t3l_div_sister = 0
+var bool t3l_suppressed = false
+var int t3l_anchor_b = 0
+var float t3l_anchor_p = na
+var string t3l_pair = ''
+var float t3l_ifvg_top = na
+var float t3l_ifvg_bot = na
+var int t3l_ifvg_left = 0
+
+var line ln_t4b = na
+var label lb_t4b = na
+var box bx_t4b = na
+var label dl_t4b = na
+var float t4b_active_pri = na
+var int t4b_active_idx = -1
+var float t4b_ext_p = na
+var int t4b_ext_b = 0
+var int t4b_div_sister = 0
+var bool t4b_suppressed = false
+var int t4b_anchor_b = 0
+var float t4b_anchor_p = na
+var string t4b_pair = ''
+var float t4b_ifvg_top = na
+var float t4b_ifvg_bot = na
+var int t4b_ifvg_left = 0
+
+var line ln_t4l = na
+var label lb_t4l = na
+var box bx_t4l = na
+var label dl_t4l = na
+var float t4l_active_pri = na
+var int t4l_active_idx = -1
+var float t4l_ext_p = na
+var int t4l_ext_b = 0
+var int t4l_div_sister = 0
+var bool t4l_suppressed = false
+var int t4l_anchor_b = 0
+var float t4l_anchor_p = na
+var string t4l_pair = ''
+var float t4l_ifvg_top = na
+var float t4l_ifvg_bot = na
+var int t4l_ifvg_left = 0
+
+var bool t1_bull = false
+var bool t1_bear = false
+var bool t2_bull = false
+var bool t2_bear = false
+var bool t3_bull = false
+var bool t3_bear = false
+var bool t4_bull = false
+var bool t4_bear = false
+
+// ============================================================
+// === RING ROLL INDEX SYNC (v5.7.0) ===
+// ============================================================
+// When the cycle ring rolls (oldest block shifted out, every block renumbers
+// -1), a stored active-anchor index would point at the wrong block and a live
+// divergence gets orphaned - the A2 dropping on the NY-C roll. The push/shift
+// runs earlier in the bar than these state vars are declared, so it only sets
+// a _tN_rolled flag; the matching decrement happens here, after declaration,
+// keeping each active index locked to its own block. If the active anchor was
+// the block shifted out (index -> -1), its slot is retired cleanly.
+if _t2_rolled
+    if t2b_active_idx >= 0
+        t2b_active_idx := t2b_active_idx - 1
+        if t2b_active_idx < 0
+            _clr(ln_t2b, lb_t2b, bx_t2b, dl_t2b)
+            ln_t2b := na
+            lb_t2b := na
+            bx_t2b := na
+            dl_t2b := na
+            t2_bear := false
+            t2b_div_sister := 0
+    if t2l_active_idx >= 0
+        t2l_active_idx := t2l_active_idx - 1
+        if t2l_active_idx < 0
+            _clr(ln_t2l, lb_t2l, bx_t2l, dl_t2l)
+            ln_t2l := na
+            lb_t2l := na
+            bx_t2l := na
+            dl_t2l := na
+            t2_bull := false
+            t2l_div_sister := 0
+if _t3_rolled
+    if t3b_active_idx >= 0
+        t3b_active_idx := t3b_active_idx - 1
+        if t3b_active_idx < 0
+            _clr(ln_t3b, lb_t3b, bx_t3b, dl_t3b)
+            ln_t3b := na
+            lb_t3b := na
+            bx_t3b := na
+            dl_t3b := na
+            t3_bear := false
+            t3b_div_sister := 0
+    if t3l_active_idx >= 0
+        t3l_active_idx := t3l_active_idx - 1
+        if t3l_active_idx < 0
+            _clr(ln_t3l, lb_t3l, bx_t3l, dl_t3l)
+            ln_t3l := na
+            lb_t3l := na
+            bx_t3l := na
+            dl_t3l := na
+            t3_bull := false
+            t3l_div_sister := 0
+if _t4_rolled
+    if t4b_active_idx >= 0
+        t4b_active_idx := t4b_active_idx - 1
+        if t4b_active_idx < 0
+            _clr(ln_t4b, lb_t4b, bx_t4b, dl_t4b)
+            ln_t4b := na
+            lb_t4b := na
+            bx_t4b := na
+            dl_t4b := na
+            t4_bear := false
+            t4b_div_sister := 0
+    if t4l_active_idx >= 0
+        t4l_active_idx := t4l_active_idx - 1
+        if t4l_active_idx < 0
+            _clr(ln_t4l, lb_t4l, bx_t4l, dl_t4l)
+            ln_t4l := na
+            lb_t4l := na
+            bx_t4l := na
+            dl_t4l := na
+            t4_bull := false
+            t4l_div_sister := 0
+
+// ============================================================
+// === ALERT ANCHOR LATCH (v5.6.7) ===
+// ============================================================
+// A tier slot can retire and re-arm on the SAME anchor inside one
+// session: pair_resolved() tests only the labeled pair while
+// fire_qualifies() tests all three legs, so when the labeled sister
+// catches up the slot mitigates, re-arms, and re-fires next bar on the
+// identical level - re-labeled A2 -> A3. That produced two alert edges
+// per level, the second landing well after the fact.
+//
+// The latch records the anchor BAR of the fire that last produced an
+// alert, per tier per direction, and suppresses any repeat edge on that
+// same anchor. Anchor bar is used rather than price because it is unique
+// per cycle extreme. Latches clear on the 18:00 day reset.
+//
+// ALERT LAYER ONLY. Tier state flags, drawings, mitigation, suppression,
+// _refresh_slot() and the Sphinx Seal are all untouched - a suppressed
+// repeat still draws and still updates the table exactly as before.
+var int _lat_t1l = -1
+var int _lat_t1b = -1
+var int _lat_t2l = -1
+var int _lat_t2b = -1
+var int _lat_t3l = -1
+var int _lat_t3b = -1
+var int _lat_t4l = -1
+var int _lat_t4b = -1
+
+// Per-bar 'this fire is on a new anchor' flags. False unless a tier
+// fires this bar on an anchor it has not already alerted on.
+bool _new_t1l = false
+bool _new_t1b = false
+bool _new_t2l = false
+bool _new_t2b = false
+bool _new_t3l = false
+bool _new_t3b = false
+bool _new_t4l = false
+bool _new_t4b = false
+
+if is_day_reset
+    _clr(ln_t1b, lb_t1b, bx_t1b, dl_t1b)
+    ln_t1b := na
+    lb_t1b := na
+    bx_t1b := na
+    dl_t1b := na
+    t1b_active_pri := na
+    t1b_active_src := 0
+    t1b_ext_p := na
+    t1b_ext_b := 0
+    t1b_div_sister := 0
+    t1b_suppressed := false
+    t1b_anchor_b := 0
+    t1b_anchor_p := na
+    t1b_pair := ''
+    t1b_ifvg_top := na
+    t1b_ifvg_bot := na
+    t1b_ifvg_left := 0
+    _clr(ln_t1l, lb_t1l, bx_t1l, dl_t1l)
+    ln_t1l := na
+    lb_t1l := na
+    bx_t1l := na
+    dl_t1l := na
+    t1l_active_pri := na
+    t1l_active_src := 0
+    t1l_ext_p := na
+    t1l_ext_b := 0
+    t1l_div_sister := 0
+    t1l_suppressed := false
+    t1l_anchor_b := 0
+    t1l_anchor_p := na
+    t1l_pair := ''
+    t1l_ifvg_top := na
+    t1l_ifvg_bot := na
+    t1l_ifvg_left := 0
+    _clr(ln_t2b, lb_t2b, bx_t2b, dl_t2b)
+    ln_t2b := na
+    lb_t2b := na
+    bx_t2b := na
+    dl_t2b := na
+    t2b_active_pri := na
+    t2b_active_idx := -1
+    t2b_ext_p := na
+    t2b_ext_b := 0
+    t2b_div_sister := 0
+    t2b_suppressed := false
+    t2b_anchor_b := 0
+    t2b_anchor_p := na
+    t2b_pair := ''
+    t2b_ifvg_top := na
+    t2b_ifvg_bot := na
+    t2b_ifvg_left := 0
+    _clr(ln_t2l, lb_t2l, bx_t2l, dl_t2l)
+    ln_t2l := na
+    lb_t2l := na
+    bx_t2l := na
+    dl_t2l := na
+    t2l_active_pri := na
+    t2l_active_idx := -1
+    t2l_ext_p := na
+    t2l_ext_b := 0
+    t2l_div_sister := 0
+    t2l_suppressed := false
+    t2l_anchor_b := 0
+    t2l_anchor_p := na
+    t2l_pair := ''
+    t2l_ifvg_top := na
+    t2l_ifvg_bot := na
+    t2l_ifvg_left := 0
+    _clr(ln_t3b, lb_t3b, bx_t3b, dl_t3b)
+    ln_t3b := na
+    lb_t3b := na
+    bx_t3b := na
+    dl_t3b := na
+    t3b_active_pri := na
+    t3b_active_idx := -1
+    t3b_ext_p := na
+    t3b_ext_b := 0
+    t3b_div_sister := 0
+    t3b_suppressed := false
+    t3b_anchor_b := 0
+    t3b_anchor_p := na
+    t3b_pair := ''
+    t3b_ifvg_top := na
+    t3b_ifvg_bot := na
+    t3b_ifvg_left := 0
+    _clr(ln_t3l, lb_t3l, bx_t3l, dl_t3l)
+    ln_t3l := na
+    lb_t3l := na
+    bx_t3l := na
+    dl_t3l := na
+    t3l_active_pri := na
+    t3l_active_idx := -1
+    t3l_ext_p := na
+    t3l_ext_b := 0
+    t3l_div_sister := 0
+    t3l_suppressed := false
+    t3l_anchor_b := 0
+    t3l_anchor_p := na
+    t3l_pair := ''
+    t3l_ifvg_top := na
+    t3l_ifvg_bot := na
+    t3l_ifvg_left := 0
+    _clr(ln_t4b, lb_t4b, bx_t4b, dl_t4b)
+    ln_t4b := na
+    lb_t4b := na
+    bx_t4b := na
+    dl_t4b := na
+    t4b_active_pri := na
+    t4b_active_idx := -1
+    t4b_ext_p := na
+    t4b_ext_b := 0
+    t4b_div_sister := 0
+    t4b_suppressed := false
+    t4b_anchor_b := 0
+    t4b_anchor_p := na
+    t4b_pair := ''
+    t4b_ifvg_top := na
+    t4b_ifvg_bot := na
+    t4b_ifvg_left := 0
+    _clr(ln_t4l, lb_t4l, bx_t4l, dl_t4l)
+    ln_t4l := na
+    lb_t4l := na
+    bx_t4l := na
+    dl_t4l := na
+    t4l_active_pri := na
+    t4l_active_idx := -1
+    t4l_ext_p := na
+    t4l_ext_b := 0
+    t4l_div_sister := 0
+    t4l_suppressed := false
+    t4l_anchor_b := 0
+    t4l_anchor_p := na
+    t4l_pair := ''
+    t4l_ifvg_top := na
+    t4l_ifvg_bot := na
+    t4l_ifvg_left := 0
+    t1_bull := false
+    t1_bear := false
+    t2_bull := false
+    t2_bear := false
+    t3_bull := false
+    t3_bear := false
+    t4_bull := false
+    t4_bear := false
+    _lat_t1l := -1
+    _lat_t1b := -1
+    _lat_t2l := -1
+    _lat_t2b := -1
+    _lat_t3l := -1
+    _lat_t3b := -1
+    _lat_t4l := -1
+    _lat_t4b := -1
+    _lat_t4b
+
+// ============================================================
+// === SWEEP STATE UPDATES - done every bar for all live refs ===
+// ============================================================
+if not na(ref_asia_h) and not asia_pri_h and high > ref_asia_h
+    asia_pri_h := true
+    asia_pri_h
+if not na(ref_asia_s1h) and not asia_s1_h and s1_h > ref_asia_s1h
+    asia_s1_h := true
+    asia_s1_h
+if not na(ref_asia_s2h) and use_s2 and not asia_s2_h and not na(s2_h) and s2_h > ref_asia_s2h
+    asia_s2_h := true
+    asia_s2_h
+if not na(ref_asia_l) and not asia_pri_l and low < ref_asia_l
+    asia_pri_l := true
+    asia_pri_l
+if not na(ref_asia_s1l) and not asia_s1_l and s1_l < ref_asia_s1l
+    asia_s1_l := true
+    asia_s1_l
+if not na(ref_asia_s2l) and use_s2 and not asia_s2_l and not na(s2_l) and s2_l < ref_asia_s2l
+    asia_s2_l := true
+    asia_s2_l
+
+if not na(ref_lon_h) and not lon_pri_h and high > ref_lon_h
+    lon_pri_h := true
+    lon_pri_h
+if not na(ref_lon_s1h) and not lon_s1_h and s1_h > ref_lon_s1h
+    lon_s1_h := true
+    lon_s1_h
+if not na(ref_lon_s2h) and use_s2 and not lon_s2_h and not na(s2_h) and s2_h > ref_lon_s2h
+    lon_s2_h := true
+    lon_s2_h
+if not na(ref_lon_l) and not lon_pri_l and low < ref_lon_l
+    lon_pri_l := true
+    lon_pri_l
+if not na(ref_lon_s1l) and not lon_s1_l and s1_l < ref_lon_s1l
+    lon_s1_l := true
+    lon_s1_l
+if not na(ref_lon_s2l) and use_s2 and not lon_s2_l and not na(s2_l) and s2_l < ref_lon_s2l
+    lon_s2_l := true
+    lon_s2_l
+
+if not na(ref_nyam_h) and not nyam_pri_h and high > ref_nyam_h
+    nyam_pri_h := true
+    nyam_pri_h
+if not na(ref_nyam_s1h) and not nyam_s1_h and s1_h > ref_nyam_s1h
+    nyam_s1_h := true
+    nyam_s1_h
+if not na(ref_nyam_s2h) and use_s2 and not nyam_s2_h and not na(s2_h) and s2_h > ref_nyam_s2h
+    nyam_s2_h := true
+    nyam_s2_h
+if not na(ref_nyam_l) and not nyam_pri_l and low < ref_nyam_l
+    nyam_pri_l := true
+    nyam_pri_l
+if not na(ref_nyam_s1l) and not nyam_s1_l and s1_l < ref_nyam_s1l
+    nyam_s1_l := true
+    nyam_s1_l
+if not na(ref_nyam_s2l) and use_s2 and not nyam_s2_l and not na(s2_l) and s2_l < ref_nyam_s2l
+    nyam_s2_l := true
+    nyam_s2_l
+
+if array.size(t2_hs) > 0
+    for i = 0 to array.size(t2_hs) - 1 by 1
+        _ph = array.get(t2_hs, i)
+        _ps1h = array.get(t2_s1hs, i)
+        _ps2h = array.get(t2_s2hs, i)
+        if not na(_ph) and not array.get(t2_pri_h_arr, i) and high > _ph
+            array.set(t2_pri_h_arr, i, true)
+        if not na(_ps1h) and not array.get(t2_s1_h_arr, i) and s1_h > _ps1h
+            array.set(t2_s1_h_arr, i, true)
+        if not na(_ps2h) and use_s2 and not array.get(t2_s2_h_arr, i) and not na(s2_h) and s2_h > _ps2h
+            array.set(t2_s2_h_arr, i, true)
+        _pl = array.get(t2_ls, i)
+        _ps1l = array.get(t2_s1ls, i)
+        _ps2l = array.get(t2_s2ls, i)
+        if not na(_pl) and not array.get(t2_pri_l_arr, i) and low < _pl
+            array.set(t2_pri_l_arr, i, true)
+        if not na(_ps1l) and not array.get(t2_s1_l_arr, i) and s1_l < _ps1l
+            array.set(t2_s1_l_arr, i, true)
+        if not na(_ps2l) and use_s2 and not array.get(t2_s2_l_arr, i) and not na(s2_l) and s2_l < _ps2l
+            array.set(t2_s2_l_arr, i, true)
+
+if array.size(t3_hs) > 0
+    for i = 0 to array.size(t3_hs) - 1 by 1
+        _t3ph = array.get(t3_hs, i)
+        _t3ps1h = array.get(t3_s1hs, i)
+        _t3ps2h = array.get(t3_s2hs, i)
+        if not na(_t3ph) and not array.get(t3_pri_h_arr, i) and high > _t3ph
+            array.set(t3_pri_h_arr, i, true)
+        if not na(_t3ps1h) and not array.get(t3_s1_h_arr, i) and s1_h > _t3ps1h
+            array.set(t3_s1_h_arr, i, true)
+        if not na(_t3ps2h) and use_s2 and not array.get(t3_s2_h_arr, i) and not na(s2_h) and s2_h > _t3ps2h
+            array.set(t3_s2_h_arr, i, true)
+        _t3pl = array.get(t3_ls, i)
+        _t3ps1l = array.get(t3_s1ls, i)
+        _t3ps2l = array.get(t3_s2ls, i)
+        if not na(_t3pl) and not array.get(t3_pri_l_arr, i) and low < _t3pl
+            array.set(t3_pri_l_arr, i, true)
+        if not na(_t3ps1l) and not array.get(t3_s1_l_arr, i) and s1_l < _t3ps1l
+            array.set(t3_s1_l_arr, i, true)
+        if not na(_t3ps2l) and use_s2 and not array.get(t3_s2_l_arr, i) and not na(s2_l) and s2_l < _t3ps2l
+            array.set(t3_s2_l_arr, i, true)
+
+if array.size(t4_hs) > 0
+    for i = 0 to array.size(t4_hs) - 1 by 1
+        _t4ph = array.get(t4_hs, i)
+        _t4ps1h = array.get(t4_s1hs, i)
+        _t4ps2h = array.get(t4_s2hs, i)
+        if not na(_t4ph) and not array.get(t4_pri_h_arr, i) and high > _t4ph
+            array.set(t4_pri_h_arr, i, true)
+        if not na(_t4ps1h) and not array.get(t4_s1_h_arr, i) and s1_h > _t4ps1h
+            array.set(t4_s1_h_arr, i, true)
+        if not na(_t4ps2h) and use_s2 and not array.get(t4_s2_h_arr, i) and not na(s2_h) and s2_h > _t4ps2h
+            array.set(t4_s2_h_arr, i, true)
+        _t4pl = array.get(t4_ls, i)
+        _t4ps1l = array.get(t4_s1ls, i)
+        _t4ps2l = array.get(t4_s2ls, i)
+        if not na(_t4pl) and not array.get(t4_pri_l_arr, i) and low < _t4pl
+            array.set(t4_pri_l_arr, i, true)
+        if not na(_t4ps1l) and not array.get(t4_s1_l_arr, i) and s1_l < _t4ps1l
+            array.set(t4_s1_l_arr, i, true)
+        if not na(_t4ps2l) and use_s2 and not array.get(t4_s2_l_arr, i) and not na(s2_l) and s2_l < _t4ps2l
+            array.set(t4_s2_l_arr, i, true)
+
+// ============================================================
+// === FIRE / MITIGATION HELPERS ===
+// ============================================================
+fire_qualifies(pri_f, s1_f, s2_f) =>
+    if use_s2
+        any_swept = pri_f or s1_f or s2_f
+        all_swept = pri_f and s1_f and s2_f
+        any_swept and not all_swept
+    else
+        any_swept = pri_f or s1_f
+        all_swept = pri_f and s1_f
+        any_swept and not all_swept
+
+fully_swept(pri_f, s1_f, s2_f) =>
+    use_s2 ? pri_f and s1_f and s2_f : pri_f and s1_f
+
+divergent_sister(pri_f, s1_f, s2_f) =>
+    if pri_f != s1_f
+        1
+    else if use_s2 and pri_f != s2_f
+        2
+    else
+        0
+
+pair_resolved(div_sister, pri_f, s1_f, s2_f) =>
+    if div_sister == 1
+        pri_f == s1_f
+    else if div_sister == 2
+        pri_f == s2_f
+    else
+        fully_swept(pri_f, s1_f, s2_f)
+
+pick_line_col(div_sister, is_bull, regular_col) =>
+    if hl_c_enable and div_sister == 2
+        is_bull ? col_hl_c_bull : col_hl_c_bear
+    else
+        regular_col
+
+pick_ifvg_col(div_sister, is_bull, regular_col) =>
+    if hl_c_enable and div_sister == 2
+        is_bull ? col_ifvg_hl_c_bull : col_ifvg_hl_c_bear
+    else
+        regular_col
+
+// ============================================================
+// === T1 EXECUTION - sweep of any completed session today ===
+// ============================================================
+if show_t1
+    if not use_gates or short_ok
+        bool _fired = false
+        float _ref = na
+        int _refb = 0
+        bool _pri_f = false
+        bool _s1_f = false
+        bool _s2_f = false
+        int _src = 0
+        string _pfx = ''
+        if not _fired and not na(ref_nyam_h) and not nyam_fired_h and fire_qualifies(nyam_pri_h, nyam_s1_h, nyam_s2_h)
+            _fired := true
+            _ref := ref_nyam_h
+            _refb := ref_nyam_hb
+            _pri_f := nyam_pri_h
+            _s1_f := nyam_s1_h
+            _s2_f := nyam_s2_h
+            _src := 3
+            _pfx := 'T1 NY-AM H'
+            _pfx
+        if not _fired and not na(ref_lon_h) and not lon_fired_h and fire_qualifies(lon_pri_h, lon_s1_h, lon_s2_h)
+            _fired := true
+            _ref := ref_lon_h
+            _refb := ref_lon_hb
+            _pri_f := lon_pri_h
+            _s1_f := lon_s1_h
+            _s2_f := lon_s2_h
+            _src := 2
+            _pfx := 'T1 Lon H'
+            _pfx
+        if not _fired and not na(ref_asia_h) and not asia_fired_h and fire_qualifies(asia_pri_h, asia_s1_h, asia_s2_h)
+            _fired := true
+            _ref := ref_asia_h
+            _refb := ref_asia_hb
+            _pri_f := asia_pri_h
+            _s1_f := asia_s1_h
+            _s2_f := asia_s2_h
+            _src := 1
+            _pfx := 'T1 Asia H'
+            _pfx
+        // v5.6.8: A2 beats A3 within T1. If the session pick is an A3, override to
+        // the highest-priority qualifying A2 session (NY-AM > London > Asia).
+        if _fired and divergent_sister(_pri_f, _s1_f, _s2_f) == 2
+            if not na(ref_nyam_h) and not nyam_fired_h and fire_qualifies(nyam_pri_h, nyam_s1_h, nyam_s2_h) and divergent_sister(nyam_pri_h, nyam_s1_h, nyam_s2_h) == 1
+                _ref := ref_nyam_h
+                _refb := ref_nyam_hb
+                _pri_f := nyam_pri_h
+                _s1_f := nyam_s1_h
+                _s2_f := nyam_s2_h
+                _src := 3
+                _pfx := 'T1 NY-AM H'
+                _pfx
+            else if not na(ref_lon_h) and not lon_fired_h and fire_qualifies(lon_pri_h, lon_s1_h, lon_s2_h) and divergent_sister(lon_pri_h, lon_s1_h, lon_s2_h) == 1
+                _ref := ref_lon_h
+                _refb := ref_lon_hb
+                _pri_f := lon_pri_h
+                _s1_f := lon_s1_h
+                _s2_f := lon_s2_h
+                _src := 2
+                _pfx := 'T1 Lon H'
+                _pfx
+            else if not na(ref_asia_h) and not asia_fired_h and fire_qualifies(asia_pri_h, asia_s1_h, asia_s2_h) and divergent_sister(asia_pri_h, asia_s1_h, asia_s2_h) == 1
+                _ref := ref_asia_h
+                _refb := ref_asia_hb
+                _pri_f := asia_pri_h
+                _s1_f := asia_s1_h
+                _s2_f := asia_s2_h
+                _src := 1
+                _pfx := 'T1 Asia H'
+                _pfx
+        int _cand_div = _fired ? divergent_sister(_pri_f, _s1_f, _s2_f) : 0
+        bool _demote = t1_bear and t1b_div_sister == 1 and _cand_div == 2
+        if _fired and not _demote
+            _clr(ln_t1b, lb_t1b, bx_t1b, dl_t1b)
+            pair = _pair_label(_pri_f, _s1_f, _s2_f)
+            int _div = divergent_sister(_pri_f, _s1_f, _s2_f)
+            color _lcol = pick_line_col(_div, false, col_t1_bear)
+            color _icol = pick_ifvg_col(_div, false, col_ifvg_bear)
+            float _ep_p = high
+            int _ep_b = bar_index
+            if in_ny_pm
+                _ep_p := high
+                _ep_b := bar_index
+                _ep_b
+            else if in_ny_am and not na(nyam_run_h) and nyam_run_h >= high
+                _ep_p := nyam_run_h
+                _ep_b := nyam_run_hb
+                _ep_b
+            else if in_london and not na(lon_run_h) and lon_run_h >= high
+                _ep_p := lon_run_h
+                _ep_b := lon_run_hb
+                _ep_b
+            [a, b, c, d] = _draw(_refb, _ref, _ep_b, _ep_p, false, _pfx, pair, _lcol, _icol, sty_t1, wid_t1)
+            ln_t1b := a
+            lb_t1b := b
+            bx_t1b := c
+            dl_t1b := d
+            t1b_active_pri := _ref
+            t1b_active_src := _src
+            t1b_ext_p := _ep_p
+            t1b_ext_b := _ep_b
+            t1b_div_sister := _div
+            t1b_anchor_b := _refb
+            t1b_anchor_p := _ref
+            t1b_pair := pair
+            [_t1b_ift, _t1b_ifb, _t1b_ifg] = find_ifvg_near_bear(_ep_b, 15)
+            t1b_ifvg_top := _t1b_ift
+            t1b_ifvg_bot := _t1b_ifb
+            t1b_ifvg_left := na(_t1b_ifg) ? bar_index : _t1b_ifg > 0 ? _t1b_ifg : bar_index
+            t1b_suppressed := false
+            if _src == 1
+                asia_fired_h := true
+                asia_fired_h
+            if _src == 2
+                lon_fired_h := true
+                lon_fired_h
+            if _src == 3
+                nyam_fired_h := true
+                nyam_fired_h
+            t1_bear := true
+            _new_t1b := _refb != _lat_t1b
+            if _new_t1b
+                _lat_t1b := _refb
+                _lat_t1b
+            if alrt_t1 and _new_t1b
+                alert('T1 Bear SMT (' + pair + ')', alert.freq_once_per_bar)
+
+    if not use_gates or long_ok
+        bool _fired = false
+        float _ref = na
+        int _refb = 0
+        bool _pri_f = false
+        bool _s1_f = false
+        bool _s2_f = false
+        int _src = 0
+        string _pfx = ''
+        if not _fired and not na(ref_nyam_l) and not nyam_fired_l and fire_qualifies(nyam_pri_l, nyam_s1_l, nyam_s2_l)
+            _fired := true
+            _ref := ref_nyam_l
+            _refb := ref_nyam_lb
+            _pri_f := nyam_pri_l
+            _s1_f := nyam_s1_l
+            _s2_f := nyam_s2_l
+            _src := 3
+            _pfx := 'T1 NY-AM L'
+            _pfx
+        if not _fired and not na(ref_lon_l) and not lon_fired_l and fire_qualifies(lon_pri_l, lon_s1_l, lon_s2_l)
+            _fired := true
+            _ref := ref_lon_l
+            _refb := ref_lon_lb
+            _pri_f := lon_pri_l
+            _s1_f := lon_s1_l
+            _s2_f := lon_s2_l
+            _src := 2
+            _pfx := 'T1 Lon L'
+            _pfx
+        if not _fired and not na(ref_asia_l) and not asia_fired_l and fire_qualifies(asia_pri_l, asia_s1_l, asia_s2_l)
+            _fired := true
+            _ref := ref_asia_l
+            _refb := ref_asia_lb
+            _pri_f := asia_pri_l
+            _s1_f := asia_s1_l
+            _s2_f := asia_s2_l
+            _src := 1
+            _pfx := 'T1 Asia L'
+            _pfx
+        // v5.6.8: A2 beats A3 within T1. If the session pick is an A3, override to
+        // the highest-priority qualifying A2 session (NY-AM > London > Asia).
+        if _fired and divergent_sister(_pri_f, _s1_f, _s2_f) == 2
+            if not na(ref_nyam_l) and not nyam_fired_l and fire_qualifies(nyam_pri_l, nyam_s1_l, nyam_s2_l) and divergent_sister(nyam_pri_l, nyam_s1_l, nyam_s2_l) == 1
+                _ref := ref_nyam_l
+                _refb := ref_nyam_lb
+                _pri_f := nyam_pri_l
+                _s1_f := nyam_s1_l
+                _s2_f := nyam_s2_l
+                _src := 3
+                _pfx := 'T1 NY-AM L'
+                _pfx
+            else if not na(ref_lon_l) and not lon_fired_l and fire_qualifies(lon_pri_l, lon_s1_l, lon_s2_l) and divergent_sister(lon_pri_l, lon_s1_l, lon_s2_l) == 1
+                _ref := ref_lon_l
+                _refb := ref_lon_lb
+                _pri_f := lon_pri_l
+                _s1_f := lon_s1_l
+                _s2_f := lon_s2_l
+                _src := 2
+                _pfx := 'T1 Lon L'
+                _pfx
+            else if not na(ref_asia_l) and not asia_fired_l and fire_qualifies(asia_pri_l, asia_s1_l, asia_s2_l) and divergent_sister(asia_pri_l, asia_s1_l, asia_s2_l) == 1
+                _ref := ref_asia_l
+                _refb := ref_asia_lb
+                _pri_f := asia_pri_l
+                _s1_f := asia_s1_l
+                _s2_f := asia_s2_l
+                _src := 1
+                _pfx := 'T1 Asia L'
+                _pfx
+        int _cand_div = _fired ? divergent_sister(_pri_f, _s1_f, _s2_f) : 0
+        bool _demote = t1_bull and t1l_div_sister == 1 and _cand_div == 2
+        if _fired and not _demote
+            _clr(ln_t1l, lb_t1l, bx_t1l, dl_t1l)
+            pair = _pair_label(_pri_f, _s1_f, _s2_f)
+            int _div = divergent_sister(_pri_f, _s1_f, _s2_f)
+            color _lcol = pick_line_col(_div, true, col_t1_bull)
+            color _icol = pick_ifvg_col(_div, true, col_ifvg_bull)
+            float _ep_p = low
+            int _ep_b = bar_index
+            if in_ny_pm
+                _ep_p := low
+                _ep_b := bar_index
+                _ep_b
+            else if in_ny_am and not na(nyam_run_l) and nyam_run_l <= low
+                _ep_p := nyam_run_l
+                _ep_b := nyam_run_lb
+                _ep_b
+            else if in_london and not na(lon_run_l) and lon_run_l <= low
+                _ep_p := lon_run_l
+                _ep_b := lon_run_lb
+                _ep_b
+            [a, b, c, d] = _draw(_refb, _ref, _ep_b, _ep_p, true, _pfx, pair, _lcol, _icol, sty_t1, wid_t1)
+            ln_t1l := a
+            lb_t1l := b
+            bx_t1l := c
+            dl_t1l := d
+            t1l_active_pri := _ref
+            t1l_active_src := _src
+            t1l_ext_p := _ep_p
+            t1l_ext_b := _ep_b
+            t1l_div_sister := _div
+            t1l_anchor_b := _refb
+            t1l_anchor_p := _ref
+            t1l_pair := pair
+            [_t1l_ift, _t1l_ifb, _t1l_ifg] = find_ifvg_near_bull(_ep_b, 15)
+            t1l_ifvg_top := _t1l_ift
+            t1l_ifvg_bot := _t1l_ifb
+            t1l_ifvg_left := na(_t1l_ifg) ? bar_index : _t1l_ifg > 0 ? _t1l_ifg : bar_index
+            t1l_suppressed := false
+            if _src == 1
+                asia_fired_l := true
+                asia_fired_l
+            if _src == 2
+                lon_fired_l := true
+                lon_fired_l
+            if _src == 3
+                nyam_fired_l := true
+                nyam_fired_l
+            t1_bull := true
+            _new_t1l := _refb != _lat_t1l
+            if _new_t1l
+                _lat_t1l := _refb
+                _lat_t1l
+            if alrt_t1 and _new_t1l
+                alert('T1 Bull SMT (' + pair + ')', alert.freq_once_per_bar)
+
+// ============================================================
+// === T2 EXECUTION - sweep of any prior 90m block H/L ===
+// ============================================================
+if show_t2 and in_cycle_blks
+    if (not use_gates or short_ok) and array.size(t2_hs) > 0
+        bool _fired = false
+        float _ref = na
+        int _refb = 0
+        bool _pri_f = false
+        bool _s1_f = false
+        bool _s2_f = false
+        int _idx = -1
+        for i = array.size(t2_hs) - 1 to 0 by 1
+            if _fired
+                break
+            if array.get(t2_fired_h_arr, i)
+                continue
+            _ah = array.get(t2_hs, i)
+            _ahb = array.get(t2_hbs, i)
+            pri_f = array.get(t2_pri_h_arr, i)
+            s1_f = array.get(t2_s1_h_arr, i)
+            s2_f = array.get(t2_s2_h_arr, i)
+            if not na(_ah) and fire_qualifies(pri_f, s1_f, s2_f)
+                _fired := true
+                _ref := _ah
+                _refb := _ahb
+                _pri_f := pri_f
+                _s1_f := s1_f
+                _s2_f := s2_f
+                _idx := i
+                _idx
+        // v5.6.9: A2 always wins for DISPLAY, even if its anchor already fired.
+        // The fired flag governs alert-once only (via the anchor latch below);
+        // it must never hide a divergence that is still standing. Scan newest
+        // first for any qualifying A2 anchor regardless of fired state.
+        int _a2i = -1
+        for j = array.size(t2_hs) - 1 to 0 by 1
+            _av = array.get(t2_hs, j)
+            if na(_av)
+                continue
+            _pj = array.get(t2_pri_h_arr, j)
+            _s1j = array.get(t2_s1_h_arr, j)
+            _s2j = array.get(t2_s2_h_arr, j)
+            if fire_qualifies(_pj, _s1j, _s2j) and divergent_sister(_pj, _s1j, _s2j) == 1
+                _a2i := j
+                break
+        if _a2i >= 0
+            _ref := array.get(t2_hs, _a2i)
+            _refb := array.get(t2_hbs, _a2i)
+            _pri_f := array.get(t2_pri_h_arr, _a2i)
+            _s1_f := array.get(t2_s1_h_arr, _a2i)
+            _s2_f := array.get(t2_s2_h_arr, _a2i)
+            _idx := _a2i
+            _fired := true
+        int _cand_div = _fired ? divergent_sister(_pri_f, _s1_f, _s2_f) : 0
+        bool _demote = t2_bear and t2b_div_sister == 1 and _cand_div == 2
+        bool _already = t2_bear and t2b_active_idx == _idx
+        if _fired and not _demote and not _already
+            _clr(ln_t2b, lb_t2b, bx_t2b, dl_t2b)
+            pair = _pair_label(_pri_f, _s1_f, _s2_f)
+            int _div = divergent_sister(_pri_f, _s1_f, _s2_f)
+            color _lcol = pick_line_col(_div, false, col_t2_bear)
+            color _icol = pick_ifvg_col(_div, false, col_ifvg_bear)
+            float _ep_p = high
+            int _ep_b = bar_index
+            if not na(t2_cur_h) and t2_cur_h >= high
+                _ep_p := t2_cur_h
+                _ep_b := t2_cur_hb
+                _ep_b
+            [a, b, c, d] = _draw(_refb, _ref, _ep_b, _ep_p, false, 'T2', pair, _lcol, _icol, sty_t2, wid_t2)
+            ln_t2b := a
+            lb_t2b := b
+            bx_t2b := c
+            dl_t2b := d
+            t2b_active_pri := _ref
+            t2b_active_idx := _idx
+            t2b_ext_p := _ep_p
+            t2b_ext_b := _ep_b
+            t2b_div_sister := _div
+            t2b_anchor_b := _refb
+            t2b_anchor_p := _ref
+            t2b_pair := pair
+            [_t2b_ift, _t2b_ifb, _t2b_ifg] = find_ifvg_near_bear(_ep_b, 15)
+            t2b_ifvg_top := _t2b_ift
+            t2b_ifvg_bot := _t2b_ifb
+            t2b_ifvg_left := na(_t2b_ifg) ? bar_index : _t2b_ifg > 0 ? _t2b_ifg : bar_index
+            t2b_suppressed := false
+            array.set(t2_fired_h_arr, _idx, true)
+            t2_bear := true
+            _new_t2b := _refb != _lat_t2b
+            if _new_t2b
+                _lat_t2b := _refb
+                _lat_t2b
+            if alrt_t2 and _new_t2b
+                alert('T2 Bear SMT (' + pair + ')', alert.freq_once_per_bar)
+
+    if (not use_gates or long_ok) and array.size(t2_ls) > 0
+        bool _fired = false
+        float _ref = na
+        int _refb = 0
+        bool _pri_f = false
+        bool _s1_f = false
+        bool _s2_f = false
+        int _idx = -1
+        for i = array.size(t2_ls) - 1 to 0 by 1
+            if _fired
+                break
+            if array.get(t2_fired_l_arr, i)
+                continue
+            _al = array.get(t2_ls, i)
+            _alb = array.get(t2_lbs, i)
+            pri_f = array.get(t2_pri_l_arr, i)
+            s1_f = array.get(t2_s1_l_arr, i)
+            s2_f = array.get(t2_s2_l_arr, i)
+            if not na(_al) and fire_qualifies(pri_f, s1_f, s2_f)
+                _fired := true
+                _ref := _al
+                _refb := _alb
+                _pri_f := pri_f
+                _s1_f := s1_f
+                _s2_f := s2_f
+                _idx := i
+                _idx
+        // v5.6.9: A2 always wins for DISPLAY, even if its anchor already fired.
+        // The fired flag governs alert-once only (via the anchor latch below);
+        // it must never hide a divergence that is still standing. Scan newest
+        // first for any qualifying A2 anchor regardless of fired state.
+        int _a2i = -1
+        for j = array.size(t2_ls) - 1 to 0 by 1
+            _av = array.get(t2_ls, j)
+            if na(_av)
+                continue
+            _pj = array.get(t2_pri_l_arr, j)
+            _s1j = array.get(t2_s1_l_arr, j)
+            _s2j = array.get(t2_s2_l_arr, j)
+            if fire_qualifies(_pj, _s1j, _s2j) and divergent_sister(_pj, _s1j, _s2j) == 1
+                _a2i := j
+                break
+        if _a2i >= 0
+            _ref := array.get(t2_ls, _a2i)
+            _refb := array.get(t2_lbs, _a2i)
+            _pri_f := array.get(t2_pri_l_arr, _a2i)
+            _s1_f := array.get(t2_s1_l_arr, _a2i)
+            _s2_f := array.get(t2_s2_l_arr, _a2i)
+            _idx := _a2i
+            _fired := true
+        int _cand_div = _fired ? divergent_sister(_pri_f, _s1_f, _s2_f) : 0
+        bool _demote = t2_bull and t2l_div_sister == 1 and _cand_div == 2
+        bool _already = t2_bull and t2l_active_idx == _idx
+        if _fired and not _demote and not _already
+            _clr(ln_t2l, lb_t2l, bx_t2l, dl_t2l)
+            pair = _pair_label(_pri_f, _s1_f, _s2_f)
+            int _div = divergent_sister(_pri_f, _s1_f, _s2_f)
+            color _lcol = pick_line_col(_div, true, col_t2_bull)
+            color _icol = pick_ifvg_col(_div, true, col_ifvg_bull)
+            float _ep_p = low
+            int _ep_b = bar_index
+            if not na(t2_cur_l) and t2_cur_l <= low
+                _ep_p := t2_cur_l
+                _ep_b := t2_cur_lb
+                _ep_b
+            [a, b, c, d] = _draw(_refb, _ref, _ep_b, _ep_p, true, 'T2', pair, _lcol, _icol, sty_t2, wid_t2)
+            ln_t2l := a
+            lb_t2l := b
+            bx_t2l := c
+            dl_t2l := d
+            t2l_active_pri := _ref
+            t2l_active_idx := _idx
+            t2l_ext_p := _ep_p
+            t2l_ext_b := _ep_b
+            t2l_div_sister := _div
+            t2l_anchor_b := _refb
+            t2l_anchor_p := _ref
+            t2l_pair := pair
+            [_t2l_ift, _t2l_ifb, _t2l_ifg] = find_ifvg_near_bull(_ep_b, 15)
+            t2l_ifvg_top := _t2l_ift
+            t2l_ifvg_bot := _t2l_ifb
+            t2l_ifvg_left := na(_t2l_ifg) ? bar_index : _t2l_ifg > 0 ? _t2l_ifg : bar_index
+            t2l_suppressed := false
+            array.set(t2_fired_l_arr, _idx, true)
+            t2_bull := true
+            _new_t2l := _refb != _lat_t2l
+            if _new_t2l
+                _lat_t2l := _refb
+                _lat_t2l
+            if alrt_t2 and _new_t2l
+                alert('T2 Bull SMT (' + pair + ')', alert.freq_once_per_bar)
+
+// ============================================================
+// === T3 EXECUTION - sweep of previous 30m cycle ===
+// ============================================================
+if show_t3 and in_cycle_blks
+    if (not use_gates or short_ok) and array.size(t3_hs) > 0
+        bool _fired = false
+        float _ref = na
+        int _refb = 0
+        bool _pri_f = false
+        bool _s1_f = false
+        bool _s2_f = false
+        int _idx = -1
+        for i = array.size(t3_hs) - 1 to 0 by 1
+            if _fired
+                break
+            if array.get(t3_fired_h_arr, i)
+                continue
+            _ah = array.get(t3_hs, i)
+            _ahb = array.get(t3_hbs, i)
+            pri_f = array.get(t3_pri_h_arr, i)
+            s1_f = array.get(t3_s1_h_arr, i)
+            s2_f = array.get(t3_s2_h_arr, i)
+            if not na(_ah) and fire_qualifies(pri_f, s1_f, s2_f)
+                _fired := true
+                _ref := _ah
+                _refb := _ahb
+                _pri_f := pri_f
+                _s1_f := s1_f
+                _s2_f := s2_f
+                _idx := i
+                _idx
+        // v5.6.9: A2 always wins for DISPLAY, even if its anchor already fired.
+        // The fired flag governs alert-once only (via the anchor latch below);
+        // it must never hide a divergence that is still standing. Scan newest
+        // first for any qualifying A2 anchor regardless of fired state.
+        int _a2i = -1
+        for j = array.size(t3_hs) - 1 to 0 by 1
+            _av = array.get(t3_hs, j)
+            if na(_av)
+                continue
+            _pj = array.get(t3_pri_h_arr, j)
+            _s1j = array.get(t3_s1_h_arr, j)
+            _s2j = array.get(t3_s2_h_arr, j)
+            if fire_qualifies(_pj, _s1j, _s2j) and divergent_sister(_pj, _s1j, _s2j) == 1
+                _a2i := j
+                break
+        if _a2i >= 0
+            _ref := array.get(t3_hs, _a2i)
+            _refb := array.get(t3_hbs, _a2i)
+            _pri_f := array.get(t3_pri_h_arr, _a2i)
+            _s1_f := array.get(t3_s1_h_arr, _a2i)
+            _s2_f := array.get(t3_s2_h_arr, _a2i)
+            _idx := _a2i
+            _fired := true
+        int _cand_div = _fired ? divergent_sister(_pri_f, _s1_f, _s2_f) : 0
+        bool _demote = t3_bear and t3b_div_sister == 1 and _cand_div == 2
+        bool _already = t3_bear and t3b_active_idx == _idx
+        if _fired and not _demote and not _already
+            _clr(ln_t3b, lb_t3b, bx_t3b, dl_t3b)
+            pair = _pair_label(_pri_f, _s1_f, _s2_f)
+            int _div = divergent_sister(_pri_f, _s1_f, _s2_f)
+            color _lcol = pick_line_col(_div, false, col_t3_bear)
+            color _icol = pick_ifvg_col(_div, false, col_ifvg_bear)
+            float _ep_p = high
+            int _ep_b = bar_index
+            if not na(t3_cur_h) and t3_cur_h >= high
+                _ep_p := t3_cur_h
+                _ep_b := t3_cur_hb
+                _ep_b
+            [a, b, c, d] = _draw(_refb, _ref, _ep_b, _ep_p, false, 'T3', pair, _lcol, _icol, sty_t3, wid_t3)
+            ln_t3b := a
+            lb_t3b := b
+            bx_t3b := c
+            dl_t3b := d
+            t3b_active_pri := _ref
+            t3b_active_idx := _idx
+            t3b_ext_p := _ep_p
+            t3b_ext_b := _ep_b
+            t3b_div_sister := _div
+            t3b_anchor_b := _refb
+            t3b_anchor_p := _ref
+            t3b_pair := pair
+            [_t3b_ift, _t3b_ifb, _t3b_ifg] = find_ifvg_near_bear(_ep_b, 15)
+            t3b_ifvg_top := _t3b_ift
+            t3b_ifvg_bot := _t3b_ifb
+            t3b_ifvg_left := na(_t3b_ifg) ? bar_index : _t3b_ifg > 0 ? _t3b_ifg : bar_index
+            t3b_suppressed := false
+            array.set(t3_fired_h_arr, _idx, true)
+            t3_bear := true
+            _new_t3b := _refb != _lat_t3b
+            if _new_t3b
+                _lat_t3b := _refb
+                _lat_t3b
+            if alrt_t3 and _new_t3b
+                alert('T3 Bear SMT (' + pair + ')', alert.freq_once_per_bar)
+
+    if (not use_gates or long_ok) and array.size(t3_ls) > 0
+        bool _fired = false
+        float _ref = na
+        int _refb = 0
+        bool _pri_f = false
+        bool _s1_f = false
+        bool _s2_f = false
+        int _idx = -1
+        for i = array.size(t3_ls) - 1 to 0 by 1
+            if _fired
+                break
+            if array.get(t3_fired_l_arr, i)
+                continue
+            _al = array.get(t3_ls, i)
+            _alb = array.get(t3_lbs, i)
+            pri_f = array.get(t3_pri_l_arr, i)
+            s1_f = array.get(t3_s1_l_arr, i)
+            s2_f = array.get(t3_s2_l_arr, i)
+            if not na(_al) and fire_qualifies(pri_f, s1_f, s2_f)
+                _fired := true
+                _ref := _al
+                _refb := _alb
+                _pri_f := pri_f
+                _s1_f := s1_f
+                _s2_f := s2_f
+                _idx := i
+                _idx
+        // v5.6.9: A2 always wins for DISPLAY, even if its anchor already fired.
+        // The fired flag governs alert-once only (via the anchor latch below);
+        // it must never hide a divergence that is still standing. Scan newest
+        // first for any qualifying A2 anchor regardless of fired state.
+        int _a2i = -1
+        for j = array.size(t3_ls) - 1 to 0 by 1
+            _av = array.get(t3_ls, j)
+            if na(_av)
+                continue
+            _pj = array.get(t3_pri_l_arr, j)
+            _s1j = array.get(t3_s1_l_arr, j)
+            _s2j = array.get(t3_s2_l_arr, j)
+            if fire_qualifies(_pj, _s1j, _s2j) and divergent_sister(_pj, _s1j, _s2j) == 1
+                _a2i := j
+                break
+        if _a2i >= 0
+            _ref := array.get(t3_ls, _a2i)
+            _refb := array.get(t3_lbs, _a2i)
+            _pri_f := array.get(t3_pri_l_arr, _a2i)
+            _s1_f := array.get(t3_s1_l_arr, _a2i)
+            _s2_f := array.get(t3_s2_l_arr, _a2i)
+            _idx := _a2i
+            _fired := true
+        int _cand_div = _fired ? divergent_sister(_pri_f, _s1_f, _s2_f) : 0
+        bool _demote = t3_bull and t3l_div_sister == 1 and _cand_div == 2
+        bool _already = t3_bull and t3l_active_idx == _idx
+        if _fired and not _demote and not _already
+            _clr(ln_t3l, lb_t3l, bx_t3l, dl_t3l)
+            pair = _pair_label(_pri_f, _s1_f, _s2_f)
+            int _div = divergent_sister(_pri_f, _s1_f, _s2_f)
+            color _lcol = pick_line_col(_div, true, col_t3_bull)
+            color _icol = pick_ifvg_col(_div, true, col_ifvg_bull)
+            float _ep_p = low
+            int _ep_b = bar_index
+            if not na(t3_cur_l) and t3_cur_l <= low
+                _ep_p := t3_cur_l
+                _ep_b := t3_cur_lb
+                _ep_b
+            [a, b, c, d] = _draw(_refb, _ref, _ep_b, _ep_p, true, 'T3', pair, _lcol, _icol, sty_t3, wid_t3)
+            ln_t3l := a
+            lb_t3l := b
+            bx_t3l := c
+            dl_t3l := d
+            t3l_active_pri := _ref
+            t3l_active_idx := _idx
+            t3l_ext_p := _ep_p
+            t3l_ext_b := _ep_b
+            t3l_div_sister := _div
+            t3l_anchor_b := _refb
+            t3l_anchor_p := _ref
+            t3l_pair := pair
+            [_t3l_ift, _t3l_ifb, _t3l_ifg] = find_ifvg_near_bull(_ep_b, 15)
+            t3l_ifvg_top := _t3l_ift
+            t3l_ifvg_bot := _t3l_ifb
+            t3l_ifvg_left := na(_t3l_ifg) ? bar_index : _t3l_ifg > 0 ? _t3l_ifg : bar_index
+            t3l_suppressed := false
+            array.set(t3_fired_l_arr, _idx, true)
+            t3_bull := true
+            _new_t3l := _refb != _lat_t3l
+            if _new_t3l
+                _lat_t3l := _refb
+                _lat_t3l
+            if alrt_t3 and _new_t3l
+                alert('T3 Bull SMT (' + pair + ')', alert.freq_once_per_bar)
+
+// ============================================================
+// === T4 EXECUTION - sweep of previous 10m cycles ===
+// ============================================================
+if show_t4 and in_cycle_blks
+    if (not use_gates or short_ok) and array.size(t4_hs) > 0
+        bool _fired = false
+        float _ref = na
+        int _refb = 0
+        bool _pri_f = false
+        bool _s1_f = false
+        bool _s2_f = false
+        int _idx = -1
+        for i = array.size(t4_hs) - 1 to 0 by 1
+            if _fired
+                break
+            if array.get(t4_fired_h_arr, i)
+                continue
+            _ah = array.get(t4_hs, i)
+            _ahb = array.get(t4_hbs, i)
+            pri_f = array.get(t4_pri_h_arr, i)
+            s1_f = array.get(t4_s1_h_arr, i)
+            s2_f = array.get(t4_s2_h_arr, i)
+            if not na(_ah) and fire_qualifies(pri_f, s1_f, s2_f)
+                _fired := true
+                _ref := _ah
+                _refb := _ahb
+                _pri_f := pri_f
+                _s1_f := s1_f
+                _s2_f := s2_f
+                _idx := i
+                _idx
+        // v5.6.9: A2 always wins for DISPLAY, even if its anchor already fired.
+        // The fired flag governs alert-once only (via the anchor latch below);
+        // it must never hide a divergence that is still standing. Scan newest
+        // first for any qualifying A2 anchor regardless of fired state.
+        int _a2i = -1
+        for j = array.size(t4_hs) - 1 to 0 by 1
+            _av = array.get(t4_hs, j)
+            if na(_av)
+                continue
+            _pj = array.get(t4_pri_h_arr, j)
+            _s1j = array.get(t4_s1_h_arr, j)
+            _s2j = array.get(t4_s2_h_arr, j)
+            if fire_qualifies(_pj, _s1j, _s2j) and divergent_sister(_pj, _s1j, _s2j) == 1
+                _a2i := j
+                break
+        if _a2i >= 0
+            _ref := array.get(t4_hs, _a2i)
+            _refb := array.get(t4_hbs, _a2i)
+            _pri_f := array.get(t4_pri_h_arr, _a2i)
+            _s1_f := array.get(t4_s1_h_arr, _a2i)
+            _s2_f := array.get(t4_s2_h_arr, _a2i)
+            _idx := _a2i
+            _fired := true
+        int _cand_div = _fired ? divergent_sister(_pri_f, _s1_f, _s2_f) : 0
+        bool _demote = t4_bear and t4b_div_sister == 1 and _cand_div == 2
+        bool _already = t4_bear and t4b_active_idx == _idx
+        if _fired and not _demote and not _already
+            _clr(ln_t4b, lb_t4b, bx_t4b, dl_t4b)
+            pair = _pair_label(_pri_f, _s1_f, _s2_f)
+            int _div = divergent_sister(_pri_f, _s1_f, _s2_f)
+            color _lcol = pick_line_col(_div, false, col_t4_bear)
+            color _icol = pick_ifvg_col(_div, false, col_ifvg_bear)
+            float _ep_p = high
+            int _ep_b = bar_index
+            if not na(t4_cur_h) and t4_cur_h >= high
+                _ep_p := t4_cur_h
+                _ep_b := t4_cur_hb
+                _ep_b
+            [a, b, c, d] = _draw(_refb, _ref, _ep_b, _ep_p, false, 'T4', pair, _lcol, _icol, sty_t4, wid_t4)
+            ln_t4b := a
+            lb_t4b := b
+            bx_t4b := c
+            dl_t4b := d
+            t4b_active_pri := _ref
+            t4b_active_idx := _idx
+            t4b_ext_p := _ep_p
+            t4b_ext_b := _ep_b
+            t4b_div_sister := _div
+            t4b_anchor_b := _refb
+            t4b_anchor_p := _ref
+            t4b_pair := pair
+            [_t4b_ift, _t4b_ifb, _t4b_ifg] = find_ifvg_near_bear(_ep_b, 15)
+            t4b_ifvg_top := _t4b_ift
+            t4b_ifvg_bot := _t4b_ifb
+            t4b_ifvg_left := na(_t4b_ifg) ? bar_index : _t4b_ifg > 0 ? _t4b_ifg : bar_index
+            t4b_suppressed := false
+            array.set(t4_fired_h_arr, _idx, true)
+            t4_bear := true
+            _new_t4b := _refb != _lat_t4b
+            if _new_t4b
+                _lat_t4b := _refb
+                _lat_t4b
+            if alrt_t4 and _new_t4b
+                alert('T4 Bear SMT (' + pair + ')', alert.freq_once_per_bar)
+
+    if (not use_gates or long_ok) and array.size(t4_ls) > 0
+        bool _fired = false
+        float _ref = na
+        int _refb = 0
+        bool _pri_f = false
+        bool _s1_f = false
+        bool _s2_f = false
+        int _idx = -1
+        for i = array.size(t4_ls) - 1 to 0 by 1
+            if _fired
+                break
+            if array.get(t4_fired_l_arr, i)
+                continue
+            _al = array.get(t4_ls, i)
+            _alb = array.get(t4_lbs, i)
+            pri_f = array.get(t4_pri_l_arr, i)
+            s1_f = array.get(t4_s1_l_arr, i)
+            s2_f = array.get(t4_s2_l_arr, i)
+            if not na(_al) and fire_qualifies(pri_f, s1_f, s2_f)
+                _fired := true
+                _ref := _al
+                _refb := _alb
+                _pri_f := pri_f
+                _s1_f := s1_f
+                _s2_f := s2_f
+                _idx := i
+                _idx
+        // v5.6.9: A2 always wins for DISPLAY, even if its anchor already fired.
+        // The fired flag governs alert-once only (via the anchor latch below);
+        // it must never hide a divergence that is still standing. Scan newest
+        // first for any qualifying A2 anchor regardless of fired state.
+        int _a2i = -1
+        for j = array.size(t4_ls) - 1 to 0 by 1
+            _av = array.get(t4_ls, j)
+            if na(_av)
+                continue
+            _pj = array.get(t4_pri_l_arr, j)
+            _s1j = array.get(t4_s1_l_arr, j)
+            _s2j = array.get(t4_s2_l_arr, j)
+            if fire_qualifies(_pj, _s1j, _s2j) and divergent_sister(_pj, _s1j, _s2j) == 1
+                _a2i := j
+                break
+        if _a2i >= 0
+            _ref := array.get(t4_ls, _a2i)
+            _refb := array.get(t4_lbs, _a2i)
+            _pri_f := array.get(t4_pri_l_arr, _a2i)
+            _s1_f := array.get(t4_s1_l_arr, _a2i)
+            _s2_f := array.get(t4_s2_l_arr, _a2i)
+            _idx := _a2i
+            _fired := true
+        int _cand_div = _fired ? divergent_sister(_pri_f, _s1_f, _s2_f) : 0
+        bool _demote = t4_bull and t4l_div_sister == 1 and _cand_div == 2
+        bool _already = t4_bull and t4l_active_idx == _idx
+        if _fired and not _demote and not _already
+            _clr(ln_t4l, lb_t4l, bx_t4l, dl_t4l)
+            pair = _pair_label(_pri_f, _s1_f, _s2_f)
+            int _div = divergent_sister(_pri_f, _s1_f, _s2_f)
+            color _lcol = pick_line_col(_div, true, col_t4_bull)
+            color _icol = pick_ifvg_col(_div, true, col_ifvg_bull)
+            float _ep_p = low
+            int _ep_b = bar_index
+            if not na(t4_cur_l) and t4_cur_l <= low
+                _ep_p := t4_cur_l
+                _ep_b := t4_cur_lb
+                _ep_b
+            [a, b, c, d] = _draw(_refb, _ref, _ep_b, _ep_p, true, 'T4', pair, _lcol, _icol, sty_t4, wid_t4)
+            ln_t4l := a
+            lb_t4l := b
+            bx_t4l := c
+            dl_t4l := d
+            t4l_active_pri := _ref
+            t4l_active_idx := _idx
+            t4l_ext_p := _ep_p
+            t4l_ext_b := _ep_b
+            t4l_div_sister := _div
+            t4l_anchor_b := _refb
+            t4l_anchor_p := _ref
+            t4l_pair := pair
+            [_t4l_ift, _t4l_ifb, _t4l_ifg] = find_ifvg_near_bull(_ep_b, 15)
+            t4l_ifvg_top := _t4l_ift
+            t4l_ifvg_bot := _t4l_ifb
+            t4l_ifvg_left := na(_t4l_ifg) ? bar_index : _t4l_ifg > 0 ? _t4l_ifg : bar_index
+            t4l_suppressed := false
+            array.set(t4_fired_l_arr, _idx, true)
+            t4_bull := true
+            _new_t4l := _refb != _lat_t4l
+            if _new_t4l
+                _lat_t4l := _refb
+                _lat_t4l
+            if alrt_t4 and _new_t4l
+                alert('T4 Bull SMT (' + pair + ')', alert.freq_once_per_bar)
+
+// ============================================================
+// === DYNAMIC LINE/LABEL EXTENSION ===
+// ============================================================
+_extend_line_label(ln, lb, ab, ap, new_b, new_p) =>
+    bool _ok = not na(new_b) and not na(new_p) and not na(ap) and new_b > 0 and ab > 0
+    if not na(ln) and _ok
+        ln.set_x2(new_b)
+        ln.set_y2(new_p)
+    if not na(lb) and _ok
+        lb.set_x(_mid_b(ab, new_b))
+        lb.set_y(_mid_p(ap, new_p))
+
+_rescan_ifvg(cur_bx, cur_dl, is_bull, tier, lcol, icol, target_bar) =>
+    if not show_ifvg
+        [cur_bx, cur_dl]
+    else
+        float it = na
+        float ib = na
+        int igbar = na
+        if is_bull
+            [t, b, g] = find_ifvg_near_bull(target_bar, 15)
+            it := t
+            ib := b
+            igbar := g
+            igbar
+        else
+            [t, b, g] = find_ifvg_near_bear(target_bar, 15)
+            it := t
+            ib := b
+            igbar := g
+            igbar
+        if na(it) or na(ib) or na(igbar)
+            [cur_bx, cur_dl]
+        else
+            _new_left = igbar > 0 ? igbar : bar_index
+            _same_box = not na(cur_bx) and cur_bx.get_top() == it and cur_bx.get_bottom() == ib and cur_bx.get_left() == _new_left
+            if _same_box
+                [cur_bx, cur_dl]
+            else
+                if not na(cur_bx)
+                    cur_bx.delete()
+                if not na(cur_dl)
+                    cur_dl.delete()
+                _new_bx = box.new(_new_left, it, _new_left + ifvg_extend, ib, bgcolor = icol, border_color = color.new(lcol, 30), border_width = 1)
+                label _new_dl = na
+                if show_tier_tag
+                    _badge_text = str.length(tier) >= 2 ? str.substring(tier, 0, 2) : tier
+                    _new_dl := label.new(_new_left + ifvg_extend, math.avg(it, ib), _badge_text, style = label.style_label_left, color = color.new(lcol, 0), textcolor = #ffffff, size = size.tiny)
+                    _new_dl
+                [_new_bx, _new_dl]
+
+if t1_bear and high > t1b_ext_p
+    t1b_ext_p := high
+    t1b_ext_b := bar_index
+    if not na(ln_t1b)
+        _extend_line_label(ln_t1b, lb_t1b, t1b_anchor_b, t1b_anchor_p, t1b_ext_b, t1b_ext_p)
+        [_nb, _nd] = _rescan_ifvg(bx_t1b, dl_t1b, false, 'T1', pick_line_col(t1b_div_sister, false, col_t1_bear), pick_ifvg_col(t1b_div_sister, false, col_ifvg_bear), t1b_ext_b)
+        bx_t1b := _nb
+        dl_t1b := _nd
+        dl_t1b
+if t1_bull and low < t1l_ext_p
+    t1l_ext_p := low
+    t1l_ext_b := bar_index
+    if not na(ln_t1l)
+        _extend_line_label(ln_t1l, lb_t1l, t1l_anchor_b, t1l_anchor_p, t1l_ext_b, t1l_ext_p)
+        [_nb, _nd] = _rescan_ifvg(bx_t1l, dl_t1l, true, 'T1', pick_line_col(t1l_div_sister, true, col_t1_bull), pick_ifvg_col(t1l_div_sister, true, col_ifvg_bull), t1l_ext_b)
+        bx_t1l := _nb
+        dl_t1l := _nd
+        dl_t1l
+
+if t2_bear and high > t2b_ext_p
+    t2b_ext_p := high
+    t2b_ext_b := bar_index
+    if not na(ln_t2b)
+        _extend_line_label(ln_t2b, lb_t2b, t2b_anchor_b, t2b_anchor_p, t2b_ext_b, t2b_ext_p)
+        [_nb, _nd] = _rescan_ifvg(bx_t2b, dl_t2b, false, 'T2', pick_line_col(t2b_div_sister, false, col_t2_bear), pick_ifvg_col(t2b_div_sister, false, col_ifvg_bear), t2b_ext_b)
+        bx_t2b := _nb
+        dl_t2b := _nd
+        dl_t2b
+if t2_bull and low < t2l_ext_p
+    t2l_ext_p := low
+    t2l_ext_b := bar_index
+    if not na(ln_t2l)
+        _extend_line_label(ln_t2l, lb_t2l, t2l_anchor_b, t2l_anchor_p, t2l_ext_b, t2l_ext_p)
+        [_nb, _nd] = _rescan_ifvg(bx_t2l, dl_t2l, true, 'T2', pick_line_col(t2l_div_sister, true, col_t2_bull), pick_ifvg_col(t2l_div_sister, true, col_ifvg_bull), t2l_ext_b)
+        bx_t2l := _nb
+        dl_t2l := _nd
+        dl_t2l
+
+if t3_bear and high > t3b_ext_p
+    t3b_ext_p := high
+    t3b_ext_b := bar_index
+    if not na(ln_t3b)
+        _extend_line_label(ln_t3b, lb_t3b, t3b_anchor_b, t3b_anchor_p, t3b_ext_b, t3b_ext_p)
+        [_nb, _nd] = _rescan_ifvg(bx_t3b, dl_t3b, false, 'T3', pick_line_col(t3b_div_sister, false, col_t3_bear), pick_ifvg_col(t3b_div_sister, false, col_ifvg_bear), t3b_ext_b)
+        bx_t3b := _nb
+        dl_t3b := _nd
+        dl_t3b
+if t3_bull and low < t3l_ext_p
+    t3l_ext_p := low
+    t3l_ext_b := bar_index
+    if not na(ln_t3l)
+        _extend_line_label(ln_t3l, lb_t3l, t3l_anchor_b, t3l_anchor_p, t3l_ext_b, t3l_ext_p)
+        [_nb, _nd] = _rescan_ifvg(bx_t3l, dl_t3l, true, 'T3', pick_line_col(t3l_div_sister, true, col_t3_bull), pick_ifvg_col(t3l_div_sister, true, col_ifvg_bull), t3l_ext_b)
+        bx_t3l := _nb
+        dl_t3l := _nd
+        dl_t3l
+
+if t4_bear and high > t4b_ext_p
+    t4b_ext_p := high
+    t4b_ext_b := bar_index
+    if not na(ln_t4b)
+        _extend_line_label(ln_t4b, lb_t4b, t4b_anchor_b, t4b_anchor_p, t4b_ext_b, t4b_ext_p)
+        [_nb, _nd] = _rescan_ifvg(bx_t4b, dl_t4b, false, 'T4', pick_line_col(t4b_div_sister, false, col_t4_bear), pick_ifvg_col(t4b_div_sister, false, col_ifvg_bear), t4b_ext_b)
+        bx_t4b := _nb
+        dl_t4b := _nd
+        dl_t4b
+if t4_bull and low < t4l_ext_p
+    t4l_ext_p := low
+    t4l_ext_b := bar_index
+    if not na(ln_t4l)
+        _extend_line_label(ln_t4l, lb_t4l, t4l_anchor_b, t4l_anchor_p, t4l_ext_b, t4l_ext_p)
+        [_nb, _nd] = _rescan_ifvg(bx_t4l, dl_t4l, true, 'T4', pick_line_col(t4l_div_sister, true, col_t4_bull), pick_ifvg_col(t4l_div_sister, true, col_ifvg_bull), t4l_ext_b)
+        bx_t4l := _nb
+        dl_t4l := _nd
+        dl_t4l
+
+// ============================================================
+// === MITIGATION ===
+// ============================================================
+if t1_bear
+    bool _done = false
+    if t1b_active_src == 1
+        _done := pair_resolved(t1b_div_sister, asia_pri_h, asia_s1_h, asia_s2_h)
+        _done
+    if t1b_active_src == 2
+        _done := pair_resolved(t1b_div_sister, lon_pri_h, lon_s1_h, lon_s2_h)
+        _done
+    if t1b_active_src == 3
+        _done := pair_resolved(t1b_div_sister, nyam_pri_h, nyam_s1_h, nyam_s2_h)
+        _done
+    if _done
+        if hide_t1
+            _clr(ln_t1b, lb_t1b, bx_t1b, dl_t1b)
+            ln_t1b := na
+            lb_t1b := na
+            bx_t1b := na
+            dl_t1b := na
+            dl_t1b
+        if t1b_active_src == 1
+            asia_fired_h := false
+            asia_fired_h
+        if t1b_active_src == 2
+            lon_fired_h := false
+            lon_fired_h
+        if t1b_active_src == 3
+            nyam_fired_h := false
+            nyam_fired_h
+        t1b_active_pri := na
+        t1b_active_src := 0
+        t1b_ext_p := na
+        t1b_ext_b := 0
+        t1b_div_sister := 0
+        t1b_suppressed := false
+        t1_bear := false
+        t1_bear
+if t1_bull
+    bool _done = false
+    if t1l_active_src == 1
+        _done := pair_resolved(t1l_div_sister, asia_pri_l, asia_s1_l, asia_s2_l)
+        _done
+    if t1l_active_src == 2
+        _done := pair_resolved(t1l_div_sister, lon_pri_l, lon_s1_l, lon_s2_l)
+        _done
+    if t1l_active_src == 3
+        _done := pair_resolved(t1l_div_sister, nyam_pri_l, nyam_s1_l, nyam_s2_l)
+        _done
+    if _done
+        if hide_t1
+            _clr(ln_t1l, lb_t1l, bx_t1l, dl_t1l)
+            ln_t1l := na
+            lb_t1l := na
+            bx_t1l := na
+            dl_t1l := na
+            dl_t1l
+        if t1l_active_src == 1
+            asia_fired_l := false
+            asia_fired_l
+        if t1l_active_src == 2
+            lon_fired_l := false
+            lon_fired_l
+        if t1l_active_src == 3
+            nyam_fired_l := false
+            nyam_fired_l
+        t1l_active_pri := na
+        t1l_active_src := 0
+        t1l_ext_p := na
+        t1l_ext_b := 0
+        t1l_div_sister := 0
+        t1l_suppressed := false
+        t1_bull := false
+        t1_bull
+
+if t2_bear and t2b_active_idx >= 0 and t2b_active_idx < array.size(t2_pri_h_arr)
+    if pair_resolved(t2b_div_sister, array.get(t2_pri_h_arr, t2b_active_idx), array.get(t2_s1_h_arr, t2b_active_idx), array.get(t2_s2_h_arr, t2b_active_idx))
+        if hide_t2
+            _clr(ln_t2b, lb_t2b, bx_t2b, dl_t2b)
+            ln_t2b := na
+            lb_t2b := na
+            bx_t2b := na
+            dl_t2b := na
+            dl_t2b
+        array.set(t2_fired_h_arr, t2b_active_idx, false)
+        t2b_active_pri := na
+        t2b_active_idx := -1
+        t2b_ext_p := na
+        t2b_ext_b := 0
+        t2b_div_sister := 0
+        t2b_suppressed := false
+        t2_bear := false
+        t2_bear
+if t2_bull and t2l_active_idx >= 0 and t2l_active_idx < array.size(t2_pri_l_arr)
+    if pair_resolved(t2l_div_sister, array.get(t2_pri_l_arr, t2l_active_idx), array.get(t2_s1_l_arr, t2l_active_idx), array.get(t2_s2_l_arr, t2l_active_idx))
+        if hide_t2
+            _clr(ln_t2l, lb_t2l, bx_t2l, dl_t2l)
+            ln_t2l := na
+            lb_t2l := na
+            bx_t2l := na
+            dl_t2l := na
+            dl_t2l
+        array.set(t2_fired_l_arr, t2l_active_idx, false)
+        t2l_active_pri := na
+        t2l_active_idx := -1
+        t2l_ext_p := na
+        t2l_ext_b := 0
+        t2l_div_sister := 0
+        t2l_suppressed := false
+        t2_bull := false
+        t2_bull
+
+if t3_bear and t3b_active_idx >= 0 and t3b_active_idx < array.size(t3_pri_h_arr)
+    if pair_resolved(t3b_div_sister, array.get(t3_pri_h_arr, t3b_active_idx), array.get(t3_s1_h_arr, t3b_active_idx), array.get(t3_s2_h_arr, t3b_active_idx))
+        if hide_t3
+            _clr(ln_t3b, lb_t3b, bx_t3b, dl_t3b)
+            ln_t3b := na
+            lb_t3b := na
+            bx_t3b := na
+            dl_t3b := na
+            dl_t3b
+        array.set(t3_fired_h_arr, t3b_active_idx, false)
+        t3b_active_pri := na
+        t3b_active_idx := -1
+        t3b_ext_p := na
+        t3b_ext_b := 0
+        t3b_div_sister := 0
+        t3b_suppressed := false
+        t3_bear := false
+        t3_bear
+if t3_bull and t3l_active_idx >= 0 and t3l_active_idx < array.size(t3_pri_l_arr)
+    if pair_resolved(t3l_div_sister, array.get(t3_pri_l_arr, t3l_active_idx), array.get(t3_s1_l_arr, t3l_active_idx), array.get(t3_s2_l_arr, t3l_active_idx))
+        if hide_t3
+            _clr(ln_t3l, lb_t3l, bx_t3l, dl_t3l)
+            ln_t3l := na
+            lb_t3l := na
+            bx_t3l := na
+            dl_t3l := na
+            dl_t3l
+        array.set(t3_fired_l_arr, t3l_active_idx, false)
+        t3l_active_pri := na
+        t3l_active_idx := -1
+        t3l_ext_p := na
+        t3l_ext_b := 0
+        t3l_div_sister := 0
+        t3l_suppressed := false
+        t3_bull := false
+        t3_bull
+
+if t4_bear and t4b_active_idx >= 0 and t4b_active_idx < array.size(t4_pri_h_arr)
+    if pair_resolved(t4b_div_sister, array.get(t4_pri_h_arr, t4b_active_idx), array.get(t4_s1_h_arr, t4b_active_idx), array.get(t4_s2_h_arr, t4b_active_idx))
+        if hide_t4
+            _clr(ln_t4b, lb_t4b, bx_t4b, dl_t4b)
+            ln_t4b := na
+            lb_t4b := na
+            bx_t4b := na
+            dl_t4b := na
+            dl_t4b
+        array.set(t4_fired_h_arr, t4b_active_idx, false)
+        t4b_active_pri := na
+        t4b_active_idx := -1
+        t4b_ext_p := na
+        t4b_ext_b := 0
+        t4b_div_sister := 0
+        t4b_suppressed := false
+        t4_bear := false
+        t4_bear
+if t4_bull and t4l_active_idx >= 0 and t4l_active_idx < array.size(t4_pri_l_arr)
+    if pair_resolved(t4l_div_sister, array.get(t4_pri_l_arr, t4l_active_idx), array.get(t4_s1_l_arr, t4l_active_idx), array.get(t4_s2_l_arr, t4l_active_idx))
+        if hide_t4
+            _clr(ln_t4l, lb_t4l, bx_t4l, dl_t4l)
+            ln_t4l := na
+            lb_t4l := na
+            bx_t4l := na
+            dl_t4l := na
+            dl_t4l
+        array.set(t4_fired_l_arr, t4l_active_idx, false)
+        t4l_active_pri := na
+        t4l_active_idx := -1
+        t4l_ext_p := na
+        t4l_ext_b := 0
+        t4l_div_sister := 0
+        t4l_suppressed := false
+        t4_bull := false
+        t4_bull
+
+// ============================================================
+// === DYNAMIC LABEL/COLOR REFRESH ===
+// ============================================================
+_refresh_slot(active, ln, lb, bx, dl, pri_f, s1_f, s2_f, is_bull, tier, regular_lcol, regular_icol) =>
+    int new_div = active ? divergent_sister(pri_f, s1_f, s2_f) : 0
+    if active and new_div > 0
+        new_pair = _pair_label(pri_f, s1_f, s2_f)
+        new_lcol = pick_line_col(new_div, is_bull, regular_lcol)
+        new_icol = pick_ifvg_col(new_div, is_bull, regular_icol)
+        new_lbl_text = _lbl(tier, new_pair, is_bull)
+        if not na(ln)
+            ln.set_color(color.new(new_lcol, 0))
+        if not na(lb)
+            lb.set_text(new_lbl_text)
+            lb.set_textcolor(new_lcol)
+        if not na(bx)
+            bx.set_bgcolor(new_icol)
+            bx.set_border_color(color.new(new_lcol, 30))
+        if not na(dl)
+            dl.set_color(color.new(new_lcol, 0))
+    [new_div]
+
+[_t1b_new_div] = _refresh_slot(t1_bear, ln_t1b, lb_t1b, bx_t1b, dl_t1b, t1b_active_src == 1 ? asia_pri_h : t1b_active_src == 2 ? lon_pri_h : nyam_pri_h, t1b_active_src == 1 ? asia_s1_h : t1b_active_src == 2 ? lon_s1_h : nyam_s1_h, t1b_active_src == 1 ? asia_s2_h : t1b_active_src == 2 ? lon_s2_h : nyam_s2_h, false, 'T1', col_t1_bear, col_ifvg_bear)
+if t1_bear and _t1b_new_div > 0
+    t1b_div_sister := _t1b_new_div
+    t1b_pair := _pair_label(t1b_active_src == 1 ? asia_pri_h : t1b_active_src == 2 ? lon_pri_h : nyam_pri_h, t1b_active_src == 1 ? asia_s1_h : t1b_active_src == 2 ? lon_s1_h : nyam_s1_h, t1b_active_src == 1 ? asia_s2_h : t1b_active_src == 2 ? lon_s2_h : nyam_s2_h)
+    t1b_pair
+
+[_t1l_new_div] = _refresh_slot(t1_bull, ln_t1l, lb_t1l, bx_t1l, dl_t1l, t1l_active_src == 1 ? asia_pri_l : t1l_active_src == 2 ? lon_pri_l : nyam_pri_l, t1l_active_src == 1 ? asia_s1_l : t1l_active_src == 2 ? lon_s1_l : nyam_s1_l, t1l_active_src == 1 ? asia_s2_l : t1l_active_src == 2 ? lon_s2_l : nyam_s2_l, true, 'T1', col_t1_bull, col_ifvg_bull)
+if t1_bull and _t1l_new_div > 0
+    t1l_div_sister := _t1l_new_div
+    t1l_pair := _pair_label(t1l_active_src == 1 ? asia_pri_l : t1l_active_src == 2 ? lon_pri_l : nyam_pri_l, t1l_active_src == 1 ? asia_s1_l : t1l_active_src == 2 ? lon_s1_l : nyam_s1_l, t1l_active_src == 1 ? asia_s2_l : t1l_active_src == 2 ? lon_s2_l : nyam_s2_l)
+    t1l_pair
+
+if t2_bear and t2b_active_idx >= 0 and t2b_active_idx < array.size(t2_pri_h_arr)
+    _t2b_pri = array.get(t2_pri_h_arr, t2b_active_idx)
+    _t2b_s1 = array.get(t2_s1_h_arr, t2b_active_idx)
+    _t2b_s2 = array.get(t2_s2_h_arr, t2b_active_idx)
+    [_d] = _refresh_slot(t2_bear, ln_t2b, lb_t2b, bx_t2b, dl_t2b, _t2b_pri, _t2b_s1, _t2b_s2, false, 'T2', col_t2_bear, col_ifvg_bear)
+    if _d > 0
+        t2b_div_sister := _d
+        t2b_pair := _pair_label(_t2b_pri, _t2b_s1, _t2b_s2)
+        t2b_pair
+
+if t2_bull and t2l_active_idx >= 0 and t2l_active_idx < array.size(t2_pri_l_arr)
+    _t2l_pri = array.get(t2_pri_l_arr, t2l_active_idx)
+    _t2l_s1 = array.get(t2_s1_l_arr, t2l_active_idx)
+    _t2l_s2 = array.get(t2_s2_l_arr, t2l_active_idx)
+    [_d] = _refresh_slot(t2_bull, ln_t2l, lb_t2l, bx_t2l, dl_t2l, _t2l_pri, _t2l_s1, _t2l_s2, true, 'T2', col_t2_bull, col_ifvg_bull)
+    if _d > 0
+        t2l_div_sister := _d
+        t2l_pair := _pair_label(_t2l_pri, _t2l_s1, _t2l_s2)
+        t2l_pair
+
+if t3_bear and t3b_active_idx >= 0 and t3b_active_idx < array.size(t3_pri_h_arr)
+    _t3b_pri = array.get(t3_pri_h_arr, t3b_active_idx)
+    _t3b_s1 = array.get(t3_s1_h_arr, t3b_active_idx)
+    _t3b_s2 = array.get(t3_s2_h_arr, t3b_active_idx)
+    [_d] = _refresh_slot(t3_bear, ln_t3b, lb_t3b, bx_t3b, dl_t3b, _t3b_pri, _t3b_s1, _t3b_s2, false, 'T3', col_t3_bear, col_ifvg_bear)
+    if _d > 0
+        t3b_div_sister := _d
+        t3b_pair := _pair_label(_t3b_pri, _t3b_s1, _t3b_s2)
+        t3b_pair
+
+if t3_bull and t3l_active_idx >= 0 and t3l_active_idx < array.size(t3_pri_l_arr)
+    _t3l_pri = array.get(t3_pri_l_arr, t3l_active_idx)
+    _t3l_s1 = array.get(t3_s1_l_arr, t3l_active_idx)
+    _t3l_s2 = array.get(t3_s2_l_arr, t3l_active_idx)
+    [_d] = _refresh_slot(t3_bull, ln_t3l, lb_t3l, bx_t3l, dl_t3l, _t3l_pri, _t3l_s1, _t3l_s2, true, 'T3', col_t3_bull, col_ifvg_bull)
+    if _d > 0
+        t3l_div_sister := _d
+        t3l_pair := _pair_label(_t3l_pri, _t3l_s1, _t3l_s2)
+        t3l_pair
+
+if t4_bear and t4b_active_idx >= 0 and t4b_active_idx < array.size(t4_pri_h_arr)
+    _t4b_pri = array.get(t4_pri_h_arr, t4b_active_idx)
+    _t4b_s1 = array.get(t4_s1_h_arr, t4b_active_idx)
+    _t4b_s2 = array.get(t4_s2_h_arr, t4b_active_idx)
+    [_d] = _refresh_slot(t4_bear, ln_t4b, lb_t4b, bx_t4b, dl_t4b, _t4b_pri, _t4b_s1, _t4b_s2, false, 'T4', col_t4_bear, col_ifvg_bear)
+    if _d > 0
+        t4b_div_sister := _d
+        t4b_pair := _pair_label(_t4b_pri, _t4b_s1, _t4b_s2)
+        t4b_pair
+
+if t4_bull and t4l_active_idx >= 0 and t4l_active_idx < array.size(t4_pri_l_arr)
+    _t4l_pri = array.get(t4_pri_l_arr, t4l_active_idx)
+    _t4l_s1 = array.get(t4_s1_l_arr, t4l_active_idx)
+    _t4l_s2 = array.get(t4_s2_l_arr, t4l_active_idx)
+    [_d] = _refresh_slot(t4_bull, ln_t4l, lb_t4l, bx_t4l, dl_t4l, _t4l_pri, _t4l_s1, _t4l_s2, true, 'T4', col_t4_bull, col_ifvg_bull)
+    if _d > 0
+        t4l_div_sister := _d
+        t4l_pair := _pair_label(_t4l_pri, _t4l_s1, _t4l_s2)
+        t4l_pair
+
+// ============================================================
+// === SUPPRESSION ENGINE ===
+// ============================================================
+// Per-direction priority + global show_bull/show_bear gate.
+// When show_bull/show_bear is OFF, that direction is fully suppressed
+// (all tier slots in that direction are torn down regardless of priority).
+
+// === VISIBILITY RULES ===
+// Up to two visuals show per direction: the best active slot in the T1/T2
+// band AND the best active slot in the T3/T4 band. Within each band the winner is chosen
+// by a composite priority key (lower = higher priority):
+//   band  : {T1,T2} = 0, {T3,T4} = 100  (T1/T2 band always beats T3/T4 band)
+//   asset : A2 (div_sister==1) = 0, A3 (div_sister==2) = 10  (A2 beats A3)
+//   tier  : + tier number (T1<T2, T3<T4 within same band+asset)
+// => order: T1A2 > T2A2 > T1A3 > T2A3 > T3A2 > T4A2 > T3A3 > T4A3.
+// Asset dominates within a band, so e.g. T4A2 outranks T3A3. The show_bear /
+// show_bull master toggles still fully gate their direction; an inactive or
+// gated slot scores 999 and never wins. Scores are unique per slot, so at most
+// one slot per band shows (two per direction; none if all inactive).
+// "Show T1 and T2 together" unbinds the T1/T2 band only; the T3/T4 band still
+// arbitrates normally. "Show all tiers" unbinds both bands.
+_prio(active, tier, div) =>
+    active ? (tier <= 2 ? 0 : 100) + (div == 1 ? 0 : 10) + tier : 999
+
+int _pb1 = _prio(show_bear and t1_bear, 1, t1b_div_sister)
+int _pb2 = _prio(show_bear and t2_bear, 2, t2b_div_sister)
+int _pb3 = _prio(show_bear and t3_bear, 3, t3b_div_sister)
+int _pb4 = _prio(show_bear and t4_bear, 4, t4b_div_sister)
+int _pb_hi = math.min(_pb1, _pb2)
+int _pb_lo = math.min(_pb3, _pb4)
+bool t1b_show = (sup_off or t12_both) ? (show_bear and t1_bear) : (_pb1 == _pb_hi and _pb1 < 999)
+bool t2b_show = (sup_off or t12_both) ? (show_bear and t2_bear) : (_pb2 == _pb_hi and _pb2 < 999)
+bool t3b_show = sup_off ? (show_bear and t3_bear) : (_pb3 == _pb_lo and _pb3 < 999)
+bool t4b_show = sup_off ? (show_bear and t4_bear) : (_pb4 == _pb_lo and _pb4 < 999)
+if t1_bear and not t1b_show and not na(ln_t1b)
+    _clr(ln_t1b, lb_t1b, bx_t1b, dl_t1b)
+    ln_t1b := na
+    lb_t1b := na
+    bx_t1b := na
+    dl_t1b := na
+    t1b_suppressed := true
+    t1b_suppressed
+if t1_bear and t1b_show and t1b_suppressed
+    color _lcol = pick_line_col(t1b_div_sister, false, col_t1_bear)
+    color _icol = pick_ifvg_col(t1b_div_sister, false, col_ifvg_bear)
+    [a, b, c, d] = _draw_with_ifvg(t1b_anchor_b, t1b_anchor_p, t1b_ext_b, t1b_ext_p, false, 'T1', t1b_pair, _lcol, _icol, sty_t1, wid_t1, t1b_ifvg_top, t1b_ifvg_bot, t1b_ifvg_left)
+    ln_t1b := a
+    lb_t1b := b
+    bx_t1b := c
+    dl_t1b := d
+    t1b_suppressed := false
+    t1b_suppressed
+if t2_bear and not t2b_show and not na(ln_t2b)
+    _clr(ln_t2b, lb_t2b, bx_t2b, dl_t2b)
+    ln_t2b := na
+    lb_t2b := na
+    bx_t2b := na
+    dl_t2b := na
+    t2b_suppressed := true
+    t2b_suppressed
+if t2_bear and t2b_show and t2b_suppressed
+    color _lcol = pick_line_col(t2b_div_sister, false, col_t2_bear)
+    color _icol = pick_ifvg_col(t2b_div_sister, false, col_ifvg_bear)
+    [a, b, c, d] = _draw_with_ifvg(t2b_anchor_b, t2b_anchor_p, t2b_ext_b, t2b_ext_p, false, 'T2', t2b_pair, _lcol, _icol, sty_t2, wid_t2, t2b_ifvg_top, t2b_ifvg_bot, t2b_ifvg_left)
+    ln_t2b := a
+    lb_t2b := b
+    bx_t2b := c
+    dl_t2b := d
+    t2b_suppressed := false
+    t2b_suppressed
+if t3_bear and not t3b_show and not na(ln_t3b)
+    _clr(ln_t3b, lb_t3b, bx_t3b, dl_t3b)
+    ln_t3b := na
+    lb_t3b := na
+    bx_t3b := na
+    dl_t3b := na
+    t3b_suppressed := true
+    t3b_suppressed
+if t3_bear and t3b_show and t3b_suppressed
+    color _lcol = pick_line_col(t3b_div_sister, false, col_t3_bear)
+    color _icol = pick_ifvg_col(t3b_div_sister, false, col_ifvg_bear)
+    [a, b, c, d] = _draw_with_ifvg(t3b_anchor_b, t3b_anchor_p, t3b_ext_b, t3b_ext_p, false, 'T3', t3b_pair, _lcol, _icol, sty_t3, wid_t3, t3b_ifvg_top, t3b_ifvg_bot, t3b_ifvg_left)
+    ln_t3b := a
+    lb_t3b := b
+    bx_t3b := c
+    dl_t3b := d
+    t3b_suppressed := false
+    t3b_suppressed
+if t4_bear and not t4b_show and not na(ln_t4b)
+    _clr(ln_t4b, lb_t4b, bx_t4b, dl_t4b)
+    ln_t4b := na
+    lb_t4b := na
+    bx_t4b := na
+    dl_t4b := na
+    t4b_suppressed := true
+    t4b_suppressed
+if t4_bear and t4b_show and t4b_suppressed
+    color _lcol = pick_line_col(t4b_div_sister, false, col_t4_bear)
+    color _icol = pick_ifvg_col(t4b_div_sister, false, col_ifvg_bear)
+    [a, b, c, d] = _draw_with_ifvg(t4b_anchor_b, t4b_anchor_p, t4b_ext_b, t4b_ext_p, false, 'T4', t4b_pair, _lcol, _icol, sty_t4, wid_t4, t4b_ifvg_top, t4b_ifvg_bot, t4b_ifvg_left)
+    ln_t4b := a
+    lb_t4b := b
+    bx_t4b := c
+    dl_t4b := d
+    t4b_suppressed := false
+    t4b_suppressed
+
+int _pl1 = _prio(show_bull and t1_bull, 1, t1l_div_sister)
+int _pl2 = _prio(show_bull and t2_bull, 2, t2l_div_sister)
+int _pl3 = _prio(show_bull and t3_bull, 3, t3l_div_sister)
+int _pl4 = _prio(show_bull and t4_bull, 4, t4l_div_sister)
+int _pl_hi = math.min(_pl1, _pl2)
+int _pl_lo = math.min(_pl3, _pl4)
+bool t1l_show = (sup_off or t12_both) ? (show_bull and t1_bull) : (_pl1 == _pl_hi and _pl1 < 999)
+bool t2l_show = (sup_off or t12_both) ? (show_bull and t2_bull) : (_pl2 == _pl_hi and _pl2 < 999)
+bool t3l_show = sup_off ? (show_bull and t3_bull) : (_pl3 == _pl_lo and _pl3 < 999)
+bool t4l_show = sup_off ? (show_bull and t4_bull) : (_pl4 == _pl_lo and _pl4 < 999)
+if t1_bull and not t1l_show and not na(ln_t1l)
+    _clr(ln_t1l, lb_t1l, bx_t1l, dl_t1l)
+    ln_t1l := na
+    lb_t1l := na
+    bx_t1l := na
+    dl_t1l := na
+    t1l_suppressed := true
+    t1l_suppressed
+if t1_bull and t1l_show and t1l_suppressed
+    color _lcol = pick_line_col(t1l_div_sister, true, col_t1_bull)
+    color _icol = pick_ifvg_col(t1l_div_sister, true, col_ifvg_bull)
+    [a, b, c, d] = _draw_with_ifvg(t1l_anchor_b, t1l_anchor_p, t1l_ext_b, t1l_ext_p, true, 'T1', t1l_pair, _lcol, _icol, sty_t1, wid_t1, t1l_ifvg_top, t1l_ifvg_bot, t1l_ifvg_left)
+    ln_t1l := a
+    lb_t1l := b
+    bx_t1l := c
+    dl_t1l := d
+    t1l_suppressed := false
+    t1l_suppressed
+if t2_bull and not t2l_show and not na(ln_t2l)
+    _clr(ln_t2l, lb_t2l, bx_t2l, dl_t2l)
+    ln_t2l := na
+    lb_t2l := na
+    bx_t2l := na
+    dl_t2l := na
+    t2l_suppressed := true
+    t2l_suppressed
+if t2_bull and t2l_show and t2l_suppressed
+    color _lcol = pick_line_col(t2l_div_sister, true, col_t2_bull)
+    color _icol = pick_ifvg_col(t2l_div_sister, true, col_ifvg_bull)
+    [a, b, c, d] = _draw_with_ifvg(t2l_anchor_b, t2l_anchor_p, t2l_ext_b, t2l_ext_p, true, 'T2', t2l_pair, _lcol, _icol, sty_t2, wid_t2, t2l_ifvg_top, t2l_ifvg_bot, t2l_ifvg_left)
+    ln_t2l := a
+    lb_t2l := b
+    bx_t2l := c
+    dl_t2l := d
+    t2l_suppressed := false
+    t2l_suppressed
+if t3_bull and not t3l_show and not na(ln_t3l)
+    _clr(ln_t3l, lb_t3l, bx_t3l, dl_t3l)
+    ln_t3l := na
+    lb_t3l := na
+    bx_t3l := na
+    dl_t3l := na
+    t3l_suppressed := true
+    t3l_suppressed
+if t3_bull and t3l_show and t3l_suppressed
+    color _lcol = pick_line_col(t3l_div_sister, true, col_t3_bull)
+    color _icol = pick_ifvg_col(t3l_div_sister, true, col_ifvg_bull)
+    [a, b, c, d] = _draw_with_ifvg(t3l_anchor_b, t3l_anchor_p, t3l_ext_b, t3l_ext_p, true, 'T3', t3l_pair, _lcol, _icol, sty_t3, wid_t3, t3l_ifvg_top, t3l_ifvg_bot, t3l_ifvg_left)
+    ln_t3l := a
+    lb_t3l := b
+    bx_t3l := c
+    dl_t3l := d
+    t3l_suppressed := false
+    t3l_suppressed
+if t4_bull and not t4l_show and not na(ln_t4l)
+    _clr(ln_t4l, lb_t4l, bx_t4l, dl_t4l)
+    ln_t4l := na
+    lb_t4l := na
+    bx_t4l := na
+    dl_t4l := na
+    t4l_suppressed := true
+    t4l_suppressed
+if t4_bull and t4l_show and t4l_suppressed
+    color _lcol = pick_line_col(t4l_div_sister, true, col_t4_bull)
+    color _icol = pick_ifvg_col(t4l_div_sister, true, col_ifvg_bull)
+    [a, b, c, d] = _draw_with_ifvg(t4l_anchor_b, t4l_anchor_p, t4l_ext_b, t4l_ext_p, true, 'T4', t4l_pair, _lcol, _icol, sty_t4, wid_t4, t4l_ifvg_top, t4l_ifvg_bot, t4l_ifvg_left)
+    ln_t4l := a
+    lb_t4l := b
+    bx_t4l := c
+    dl_t4l := d
+    t4l_suppressed := false
+    t4l_suppressed
+
+// ============================================================
+// === IFVG DYNAMIC EXTENSION ===
+// ============================================================
+_ext_ifvg(active, bx, dl) =>
+    if active and not na(bx)
+        bx.set_right(bar_index + 1)
+        if not na(dl)
+            dl.set_x(math.round((bx.get_left() + bar_index + 1) / 2))
+
+_ext_ifvg(t1_bear, bx_t1b, dl_t1b)
+_ext_ifvg(t1_bull, bx_t1l, dl_t1l)
+_ext_ifvg(t2_bear, bx_t2b, dl_t2b)
+_ext_ifvg(t2_bull, bx_t2l, dl_t2l)
+_ext_ifvg(t3_bear, bx_t3b, dl_t3b)
+_ext_ifvg(t3_bull, bx_t3l, dl_t3l)
+_ext_ifvg(t4_bear, bx_t4b, dl_t4b)
+_ext_ifvg(t4_bull, bx_t4l, dl_t4l)
+
+// ============================================================
+// === LABEL ARBITRATION - one label per band per direction ===
+// ============================================================
+// Each shown tier keeps its own label text; non-shown tiers are blanked. This
+// mirrors the per-band visibility (a T1/T2 and a T3/T4 can show together), so
+// every drawn line keeps its label. Lines and IFVG boxes are unaffected. Runs
+// after all draw / redraw / refresh logic so it has the final say each bar.
+if not na(lb_t1b) and t1_bear
+    lb_t1b.set_text(t1b_show ? _lbl('T1', t1b_pair, false) : '')
+if not na(lb_t2b) and t2_bear
+    lb_t2b.set_text(t2b_show ? _lbl('T2', t2b_pair, false) : '')
+if not na(lb_t3b) and t3_bear
+    lb_t3b.set_text(t3b_show ? _lbl('T3', t3b_pair, false) : '')
+if not na(lb_t4b) and t4_bear
+    lb_t4b.set_text(t4b_show ? _lbl('T4', t4b_pair, false) : '')
+
+if not na(lb_t1l) and t1_bull
+    lb_t1l.set_text(t1l_show ? _lbl('T1', t1l_pair, true) : '')
+if not na(lb_t2l) and t2_bull
+    lb_t2l.set_text(t2l_show ? _lbl('T2', t2l_pair, true) : '')
+if not na(lb_t3l) and t3_bull
+    lb_t3l.set_text(t3l_show ? _lbl('T3', t3l_pair, true) : '')
+if not na(lb_t4l) and t4_bull
+    lb_t4l.set_text(t4l_show ? _lbl('T4', t4l_pair, true) : '')
+
+// ============================================================
+// === SPHINX SEAL ===
+// ============================================================
+seal_bull = t1_bull and t2_bull and (t3_bull or t4_bull)
+seal_bear = t1_bear and t2_bear and (t3_bear or t4_bear)
+
+var bool seal_fired_bull = false
+var bool seal_fired_bear = false
+if seal_bull and not seal_fired_bull
+    seal_fired_bull := true
+    if alrt_seal
+        alert('⬡ Sphinx Seal - LONG - T1+T2 and T3 or T4 aligned', alert.freq_once_per_bar)
+    seal_fired_bull
+if seal_bear and not seal_fired_bear
+    seal_fired_bear := true
+    if alrt_seal
+        alert('⬡ Sphinx Seal - SHORT - T1+T2 and T3 or T4 aligned', alert.freq_once_per_bar)
+    seal_fired_bear
+if not seal_bull
+    seal_fired_bull := false
+    seal_fired_bull
+if not seal_bear
+    seal_fired_bear := false
+    seal_fired_bear
+
+// ============================================================
+// === TABLE POSITION HELPER ===
+// ============================================================
+_pos(s) =>
+    switch s
+        'Top Left' => position.top_left
+        'Top Center' => position.top_center
+        'Top Right' => position.top_right
+        'Middle Left' => position.middle_left
+        'Middle Center' => position.middle_center
+        'Middle Right' => position.middle_right
+        'Bottom Left' => position.bottom_left
+        'Bottom Center' => position.bottom_center
+        'Bottom Right' => position.bottom_right
+        => position.top_right
+
+// ============================================================
+// === SMT CYCLE DETECTOR TABLE ===
+// ============================================================
+_pill(active) =>
+    active ? '●' : '○'
+_pcol(active, bull) =>
+    active ? bull ? _col_bull : _col_bear : #6b7280
+_pbg(active, bull) =>
+    active ? bull ? color.new(_col_bull, 80) : color.new(_col_bear, 80) : _col_bg
+
+// v5.8.3: created once at its fixed 4x5 size. Every cell is rewritten on the
+// last bar, so no clear is needed and nothing is deleted or rebuilt per tick.
+var table seal_tbl = show_seal ? table.new(_pos(seal_pos), 4, 5, bgcolor = _col_bg, border_width = 0, border_color = noColor, frame_width = 0, frame_color = noColor) : table(na)
+if show_seal and barstate.islast
+    _nw = seal_w * 2.2
+    table.cell(seal_tbl, 0, 0, 'SMT Cycle Detector', text_color = _col_hdr_t, text_size = size.small, bgcolor = _col_hdr, width = _nw, height = seal_h)
+    table.cell(seal_tbl, 1, 0, 'Bull', text_color = _col_bull, text_size = size.small, bgcolor = _col_hdr, width = seal_w, height = seal_h)
+    table.cell(seal_tbl, 2, 0, 'Bear', text_color = _col_bear, text_size = size.small, bgcolor = _col_hdr, width = seal_w, height = seal_h)
+    table.cell(seal_tbl, 3, 0, 'Level', text_color = _col_hdr_t, text_size = size.small, bgcolor = _col_hdr, width = seal_w, height = seal_h)
+    table.cell(seal_tbl, 0, 1, 'T1 Session', text_color = _col_bod_t, text_size = size.small, bgcolor = _col_bg, width = _nw, height = seal_h)
+    table.cell(seal_tbl, 1, 1, _pill(t1_bull), text_color = _pcol(t1_bull, true), text_size = size.normal, bgcolor = _pbg(t1_bull, true), width = seal_w, height = seal_h)
+    table.cell(seal_tbl, 2, 1, _pill(t1_bear), text_color = _pcol(t1_bear, false), text_size = size.normal, bgcolor = _pbg(t1_bear, false), width = seal_w, height = seal_h)
+    table.cell(seal_tbl, 3, 1, 'prev sess', text_color = color.new(_col_bod_t, 25), text_size = size.tiny, bgcolor = _col_bg, width = seal_w, height = seal_h)
+    table.cell(seal_tbl, 0, 2, 'T2 90m', text_color = _col_bod_t, text_size = size.small, bgcolor = _col_bg, width = _nw, height = seal_h)
+    table.cell(seal_tbl, 1, 2, _pill(t2_bull), text_color = _pcol(t2_bull, true), text_size = size.normal, bgcolor = _pbg(t2_bull, true), width = seal_w, height = seal_h)
+    table.cell(seal_tbl, 2, 2, _pill(t2_bear), text_color = _pcol(t2_bear, false), text_size = size.normal, bgcolor = _pbg(t2_bear, false), width = seal_w, height = seal_h)
+    table.cell(seal_tbl, 3, 2, '90m sweep', text_color = color.new(_col_bod_t, 25), text_size = size.tiny, bgcolor = _col_bg, width = seal_w, height = seal_h)
+    table.cell(seal_tbl, 0, 3, 'T3 30m', text_color = _col_bod_t, text_size = size.small, bgcolor = _col_bg, width = _nw, height = seal_h)
+    table.cell(seal_tbl, 1, 3, _pill(t3_bull), text_color = _pcol(t3_bull, true), text_size = size.normal, bgcolor = _pbg(t3_bull, true), width = seal_w, height = seal_h)
+    table.cell(seal_tbl, 2, 3, _pill(t3_bear), text_color = _pcol(t3_bear, false), text_size = size.normal, bgcolor = _pbg(t3_bear, false), width = seal_w, height = seal_h)
+    table.cell(seal_tbl, 3, 3, '30m sweep', text_color = color.new(_col_bod_t, 25), text_size = size.tiny, bgcolor = _col_bg, width = seal_w, height = seal_h)
+    table.cell(seal_tbl, 0, 4, 'T4 10m', text_color = _col_bod_t, text_size = size.small, bgcolor = _col_bg, width = _nw, height = seal_h)
+    table.cell(seal_tbl, 1, 4, _pill(t4_bull), text_color = _pcol(t4_bull, true), text_size = size.normal, bgcolor = _pbg(t4_bull, true), width = seal_w, height = seal_h)
+    table.cell(seal_tbl, 2, 4, _pill(t4_bear), text_color = _pcol(t4_bear, false), text_size = size.normal, bgcolor = _pbg(t4_bear, false), width = seal_w, height = seal_h)
+    table.cell(seal_tbl, 3, 4, '10m sweep', text_color = color.new(_col_bod_t, 25), text_size = size.tiny, bgcolor = _col_bg, width = seal_w, height = seal_h)
+
+// ============================================================
+// === SYMBOL MISMATCH WARNING ===
+// ============================================================
+// v5.8.3: created once; the single cell is rewritten on the last bar.
+var table warn_tbl = _sym_warn ? table.new(position.top_center, 1, 1, bgcolor = color.new(#ff9800, 20), border_width = 1, border_color = color.new(#ff9800, 0), frame_width = 0, frame_color = noColor) : table(na)
+if _sym_warn and barstate.islast
+    _wmsg = '⚠ Sphinx SMT: chart symbol (' + pri_name + ') doesn\'t match Assets A/B/C - fix in settings'
+    table.cell(warn_tbl, 0, 0, _wmsg, text_color = #ffffff, text_size = size.small, bgcolor = color.new(#ff9800, 0))
+
+// ============================================================
+// === WATCHDOG TABLE (NEW in v5.3) ===
+// ============================================================
+// Renders a tiny 1x1 badge that updates every bar. If you see this badge
+// freeze (counter stops incrementing) or vanish entirely, Trinity has
+// stopped executing. The badge itself is intentionally minimal to avoid
+// chart clutter.
+// v5.8.3: created once; only the cell text is rewritten each tick.
+var table wd_tbl = show_watchdog ? table.new(_pos(wd_pos), 1, 1, bgcolor = color.new(#089981, 30), border_width = 0, border_color = noColor, frame_width = 0, frame_color = noColor) : table(na)
+if show_watchdog and barstate.islast
+    _wd_text = '● ' + str.tostring(wd_counter)
+    table.cell(wd_tbl, 0, 0, _wd_text, text_color = #ffffff, text_size = size.tiny, bgcolor = color.new(#089981, 30))
+
+// ============================================================
+// === SMT ANCHOR DIAGNOSTIC (read-only, high side) ===
+// ============================================================
+// Shows why a bear/high SMT does or does not qualify on each live
+// anchor. Reads existing refs/arrays and flags only - no writes.
+// v5.8.3: created ONCE at the fixed maximum size - 5 header/T1 rows plus the
+// 8-block T2 ring = 13 - then cleared and refilled on the last bar. The old
+// build called table.new() every realtime tick with no delete, leaking a
+// table per tick while the diagnostic was on. Background moved to the cells.
+_dg_pos = diag_pos == 'Top Left' ? position.top_left : diag_pos == 'Bottom Left' ? position.bottom_left : diag_pos == 'Top Right' ? position.top_right : diag_pos == 'Middle Right' ? position.middle_right : diag_pos == 'Bottom Right' ? position.bottom_right : position.middle_left
+var table dg_tbl = show_smt_diag ? table.new(_dg_pos, 7, 13, border_width = 1, border_color = color.new(#2a3138, 0), frame_width = 1, frame_color = color.new(#2a3138, 0)) : table(na)
+_dg_hc = color.new(#8fa0b0, 0)
+_dg_tc = color.new(#e6edf3, 0)
+_dg_yc = color.new(#4caf50, 0)
+_dg_rd = color.new(#f44336, 0)
+_dg_or = color.new(#ff9800, 0)
+_dg_hb = color.new(#1b2127, 0)
+_dg_bg = color.new(#101418, 10)
+_dg_f(b) => b ? 'Y' : '-'
+// calls the real qualifier rather than restating it - a divergence in the
+// restatement would make the diagnostic disagree with the engine it audits
+_dg_qual(pf, s1, s2) => fire_qualifies(pf, s1, s2)
+_dg_row(_r, _nm, _lv, _pf, _s1, _s2, _fd) =>
+    _full = fully_swept(_pf, _s1, _s2)
+    _q = _dg_qual(_pf, _s1, _s2) and not _fd
+    table.cell(dg_tbl, 0, _r, _nm, text_color = _dg_tc, text_size = size.tiny, bgcolor = _dg_bg)
+    table.cell(dg_tbl, 1, _r, na(_lv) ? '-' : str.tostring(_lv, format.mintick), text_color = _dg_tc, text_size = size.tiny, bgcolor = _dg_bg)
+    table.cell(dg_tbl, 2, _r, _dg_f(_pf), text_color = _pf ? _dg_yc : _dg_tc, text_size = size.tiny, bgcolor = _dg_bg)
+    table.cell(dg_tbl, 3, _r, _dg_f(_s1), text_color = _s1 ? _dg_yc : _dg_tc, text_size = size.tiny, bgcolor = _dg_bg)
+    table.cell(dg_tbl, 4, _r, use_s2 ? _dg_f(_s2) : 'off', text_color = _s2 ? _dg_yc : _dg_tc, text_size = size.tiny, bgcolor = _dg_bg)
+    table.cell(dg_tbl, 5, _r, _full ? 'DEAD' : '-', text_color = _full ? _dg_rd : _dg_tc, text_size = size.tiny, bgcolor = _dg_bg)
+    table.cell(dg_tbl, 6, _r, _fd ? 'FIRED' : _q ? 'READY' : '-', text_color = _q ? _dg_yc : _fd ? _dg_or : _dg_tc, text_size = size.tiny, bgcolor = _dg_bg)
+
+if show_smt_diag and barstate.islast
+    _n_t2 = array.size(t2_hs)
+    table.clear(dg_tbl, 0, 0, 6, 12)
+    table.cell(dg_tbl, 0, 0, 'ANCHOR', text_color = _dg_hc, text_size = size.tiny, bgcolor = _dg_hb)
+    table.cell(dg_tbl, 1, 0, 'level', text_color = _dg_hc, text_size = size.tiny, bgcolor = _dg_hb)
+    table.cell(dg_tbl, 2, 0, 'P', text_color = _dg_hc, text_size = size.tiny, bgcolor = _dg_hb)
+    table.cell(dg_tbl, 3, 0, 'S1', text_color = _dg_hc, text_size = size.tiny, bgcolor = _dg_hb)
+    table.cell(dg_tbl, 4, 0, 'S2', text_color = _dg_hc, text_size = size.tiny, bgcolor = _dg_hb)
+    table.cell(dg_tbl, 5, 0, 'full', text_color = _dg_hc, text_size = size.tiny, bgcolor = _dg_hb)
+    table.cell(dg_tbl, 6, 0, 'fired/qual', text_color = _dg_hc, text_size = size.tiny, bgcolor = _dg_hb)
+    _dg_row(1, 'T1 Asia', ref_asia_h, asia_pri_h, asia_s1_h, asia_s2_h, asia_fired_h)
+    _dg_row(2, 'T1 Lon',  ref_lon_h,  lon_pri_h,  lon_s1_h,  lon_s2_h,  lon_fired_h)
+    _dg_row(3, 'T1 NYam', ref_nyam_h, nyam_pri_h, nyam_s1_h, nyam_s2_h, nyam_fired_h)
+    table.cell(dg_tbl, 0, 4, 'T2 90m ->', text_color = _dg_hc, text_size = size.tiny, bgcolor = _dg_hb)
+    table.cell(dg_tbl, 1, 4, 'newest last', text_color = _dg_hc, text_size = size.tiny, bgcolor = _dg_hb)
+    table.cell(dg_tbl, 2, 4, '', bgcolor = _dg_hb)
+    table.cell(dg_tbl, 3, 4, '', bgcolor = _dg_hb)
+    table.cell(dg_tbl, 4, 4, '', bgcolor = _dg_hb)
+    table.cell(dg_tbl, 5, 4, '', bgcolor = _dg_hb)
+    table.cell(dg_tbl, 6, 4, '', bgcolor = _dg_hb)
+    if _n_t2 > 0
+        for _i = 0 to _n_t2 - 1 by 1
+            _dg_row(5 + _i, 'blk ' + str.tostring(_i), array.get(t2_hs, _i), array.get(t2_pri_h_arr, _i), array.get(t2_s1_h_arr, _i), array.get(t2_s2_h_arr, _i), array.get(t2_fired_h_arr, _i))
+
+// ============================================================
+// === DATA WINDOW EXPORTS ===
+// ============================================================
+plot(t1_bull ? 1 : 0, 'T1 Bull', color = na, display = display.data_window)
+plot(t1_bear ? 1 : 0, 'T1 Bear', color = na, display = display.data_window)
+plot(t2_bull ? 1 : 0, 'T2 Bull', color = na, display = display.data_window)
+plot(t2_bear ? 1 : 0, 'T2 Bear', color = na, display = display.data_window)
+plot(t3_bull ? 1 : 0, 'T3 Bull', color = na, display = display.data_window)
+plot(t3_bear ? 1 : 0, 'T3 Bear', color = na, display = display.data_window)
+plot(t4_bull ? 1 : 0, 'T4 Bull', color = na, display = display.data_window)
+plot(t4_bear ? 1 : 0, 'T4 Bear', color = na, display = display.data_window)
+plot(seal_bull ? 1 : 0, 'Seal Bull', color = na, display = display.data_window)
+plot(seal_bear ? 1 : 0, 'Seal Bear', color = na, display = display.data_window)
+// Watchdog diagnostics
+plot(bar_index, 'Bar Index', color = na, display = display.data_window)
+plot(barstate.islast ? 1 : 0, 'Is Last Bar', color = na, display = display.data_window)
+plot(wd_counter, 'WD Counter', color = na, display = display.data_window)
+
+// Aggregate SMT state, for ingestion by the level-interaction harvester via
+// input.source. Per-tier booleans cannot answer "was SMT present at this
+// touch" without four separate source inputs; these collapse it to one series
+// per direction, plus the rank of the highest active tier.
+plot(t1_bull or t2_bull or t3_bull or t4_bull ? 1 : 0, 'SMT Bull Active', color = na, display = display.data_window)
+plot(t1_bear or t2_bear or t3_bear or t4_bear ? 1 : 0, 'SMT Bear Active', color = na, display = display.data_window)
+plot(t1_bull ? 1 : t2_bull ? 2 : t3_bull ? 3 : t4_bull ? 4 : 0, 'SMT Bull Tier', color = na, display = display.data_window)
+plot(t1_bear ? 1 : t2_bear ? 2 : t3_bear ? 3 : t4_bear ? 4 : 0, 'SMT Bear Tier', color = na, display = display.data_window)
+
+// ============================================================
+// === ALERT CONDITIONS ===
+// ============================================================
+// Mode switched by the "Repeat while tier active" input:
+//   OFF (default) - EDGE-TRIGGERED: fires once on the false->true bar.
+//                   Original v5.x behavior; won't fire on alert creation.
+//   ON            - STATE-BASED: condition stays true while the tier is
+//                   active, so with "Once Per Bar Close" it re-fires each
+//                   bar close until mitigation. Pair with Once Per Bar Close.
+// Alert TITLES are unchanged so existing alerts keep working - only the
+// trigger series changes. Inline alert() calls are latched on the same
+// per-anchor flags, so both alert routes agree on what counts as a new signal.
+
+// v5.6.7: edge mode now keys off the per-bar new-anchor flags rather than a
+// raw false->true transition on the tier flag, so a slot that retires and
+// re-arms on the same level cannot emit a second alert. Repeat mode is
+// unchanged - it is state-based by design and re-fires while the tier is live.
+_t1_bull_a = alrt_repeat ? t1_bull : _new_t1l
+_t1_bear_a = alrt_repeat ? t1_bear : _new_t1b
+_t2_bull_a = alrt_repeat ? t2_bull : _new_t2l
+_t2_bear_a = alrt_repeat ? t2_bear : _new_t2b
+_t3_bull_a = alrt_repeat ? t3_bull : _new_t3l
+_t3_bear_a = alrt_repeat ? t3_bear : _new_t3b
+_t4_bull_a = alrt_repeat ? t4_bull : _new_t4l
+_t4_bear_a = alrt_repeat ? t4_bear : _new_t4b
+_seal_bull_a = alrt_repeat ? seal_bull : seal_bull and not seal_bull[1]
+_seal_bear_a = alrt_repeat ? seal_bear : seal_bear and not seal_bear[1]
+
+alertcondition(_t1_bull_a, 'T1 Bull - Session Low SMT', 'T1 Bull SMT fired')
+alertcondition(_t1_bear_a, 'T1 Bear - Session High SMT', 'T1 Bear SMT fired')
+alertcondition(_t2_bull_a, 'T2 Bull - 90m Cycle SMT', 'T2 Bull SMT fired')
+alertcondition(_t2_bear_a, 'T2 Bear - 90m Cycle SMT', 'T2 Bear SMT fired')
+alertcondition(_t3_bull_a, 'T3 Bull - 30m Cycle SMT', 'T3 Bull SMT fired')
+alertcondition(_t3_bear_a, 'T3 Bear - 30m Cycle SMT', 'T3 Bear SMT fired')
+alertcondition(_t4_bull_a, 'T4 Bull - 10m Cycle SMT', 'T4 Bull SMT fired')
+alertcondition(_t4_bear_a, 'T4 Bear - 10m Cycle SMT', 'T4 Bear SMT fired')
+alertcondition(_seal_bull_a, '⬡ Sphinx Seal - LONG', 'Sphinx Seal LONG - T1+T2 and T3 or T4 aligned')
+alertcondition(_seal_bear_a, '⬡ Sphinx Seal - SHORT', 'Sphinx Seal SHORT - T1+T2 and T3 or T4 aligned')
+alertcondition(_t1_bull_a or _t1_bear_a, 'T1 Any SMT', 'T1 SMT fired')
+alertcondition(_t2_bull_a or _t2_bear_a, 'T2 Any SMT', 'T2 SMT fired')
+alertcondition(((_t1_bull_a or _t1_bear_a) and (t2_bull or t2_bear)) or ((_t2_bull_a or _t2_bear_a) and (t1_bull or t1_bear)), 'T1 + T2 Confluence', 'T1 + T2 SMT confluence')
+
+_any_bull_a = _t1_bull_a or _t2_bull_a or _t3_bull_a or _t4_bull_a
+_any_bear_a = _t1_bear_a or _t2_bear_a or _t3_bear_a or _t4_bear_a
+_any_bull_t12_a = _t1_bull_a or _t2_bull_a
+_any_bear_t12_a = _t1_bear_a or _t2_bear_a
+
+alertcondition(_any_bull_a, 'Any Bull SMT', 'Any tier bull SMT fired (T1/T2/T3/T4)')
+alertcondition(_any_bear_a, 'Any Bear SMT', 'Any tier bear SMT fired (T1/T2/T3/T4)')
+alertcondition(_any_bull_t12_a, 'Any Bull SMT (T1 or T2)', 'T1 or T2 bull SMT fired')
+alertcondition(_any_bear_t12_a, 'Any Bear SMT (T1 or T2)', 'T1 or T2 bear SMT fired')
+
+// ============================================================
+// ============================================================
+// === HTF MULTI-TIMEFRAME SMT MODULE ===
+// === (folded in from Sphinx HTF Multi-Timeframe SMT v7.0) ===
+// ============================================================
+// Trinity sweep-divergence engine across 1H / 4H / 1D / 1W / 1M. Shares this
+// script's instrument resolution (eff_s1 / eff_s2 / use_s2) and the
+// fire_qualifies / divergent_sister / _sty / _pos helpers defined above.
+// Draws ONLY the timeframe matching the chart resolution (most recent bull +
+// bear); every OTHER live SMT is listed in a compact table. Gated by the
+// Engine Mode selector via _htf_on. Same divergence logic as the LTF tiers,
+// applied to higher-timeframe pivots instead of session/cycle anchors.
+// ============================================================
+g_htf = 'HTF Multi-TF'
+h_swing = input.int(3, 'HTF swing sensitivity', group = g_htf, minval = 1, maxval = 25, tooltip = 'Pivot lookback for the reference swing on each HTF timeframe (1H / 4H / D / W / M).')
+h_tf_1h = input.bool(true,  'HTF: 1H',      group = g_htf, inline = 'htf1')
+h_tf_4h = input.bool(true,  'HTF: 4H',      group = g_htf, inline = 'htf1')
+h_tf_d  = input.bool(false, 'HTF: Daily',   group = g_htf, inline = 'htf2', tooltip = 'Each enabled HTF timeframe pulls sister data via request.security every bar. Daily/Weekly/Monthly are the heaviest and are off by default. Disabling a timeframe skips its f_smt() call entirely, removing its five security requests - the real workload lever.')
+h_tf_w  = input.bool(false, 'HTF: Weekly',  group = g_htf, inline = 'htf2')
+h_tf_m  = input.bool(false, 'HTF: Monthly', group = g_htf, inline = 'htf2')
+h_col_bull = input.color(#089981, "Bull", group = g_htf, inline = "c")
+h_col_bear = input.color(#f44336, "Bear", group = g_htf, inline = "c")
+h_line_wid = input.int(2, "Line width", group = g_htf, minval = 1, maxval = 4)
+h_line_sty = input.string("Solid", "Line style", group = g_htf, options = ["Solid", "Dashed", "Dotted"])
+
+h_show_tbl = input.bool(true, "Show other-timeframe table", group = g_htf)
+h_tbl_pos  = input.string("Top Right", "Position", group = g_htf, options = ["Top Left", "Top Center", "Top Right", "Middle Left", "Middle Center", "Middle Right", "Bottom Left", "Bottom Center", "Bottom Right"])
+
+h_alert_on = input.bool(true, "Enable alerts", group = g_htf)
+
+
+// --- Trinity helpers (verbatim logic) ---
+h_pair_label(div) => div == 1 ? "A1/A2" : div == 2 ? "A1/A3" : "A1/A2+A3"
+
+// ============================================================
+// === PER-TIMEFRAME SMT EVALUATION ===
+// ============================================================
+// Pulls A1/A2/A3 high&low + swing pivots on timeframe `tf`, tracks references and swept
+// flags with per-call-site var state, and returns the live divergence for each direction:
+//   [beDiv, beRefT, beRefP, bePkT, bePkP, buDiv, buRefT, buRefP, buTrT, buTrP]
+//   *Div = 0 none, else divergent_sister (1|2|3-appended handled by label). RefT/PkT are times.
+//
+// v5.8.2 - PIVOT IDENTITY GUARD. request.security(sym, tf, ta.pivothigh(...))
+// with lookahead_off returns the LAST COMPLETED HTF pivot value, held constant
+// across every chart bar inside that HTF bar - ~60 bars on a 1-minute chart.
+// The old guard `if not na(a1ph)` was therefore true for the whole hour and
+// cleared pHf / s1Hf / s2Hf on all sixty of those bars. Sweep flags have to
+// accumulate asymmetrically over time for a divergence to exist at all, so
+// beDiv / buDiv could only ever reflect a single bar's comparison and any real
+// multi-bar divergence was erased before it could register. a1t is time[h_swing]
+// on the HTF - the pivot bar's own timestamp - which is constant while the same
+// pivot is held and changes only when a new pivot confirms. Comparing against
+// the stored rHt / rLt makes the reset fire exactly once per pivot.
+f_smt(simple string tf) =>
+    // per-tf data (A1 = chart symbol, at tf)
+    [a1h, a1l, a1ph, a1pl, a1t] = request.security(syminfo.tickerid, tf, [high, low, ta.pivothigh(high, h_swing, h_swing), ta.pivotlow(low, h_swing, h_swing), time[h_swing]], lookahead = barmerge.lookahead_off)
+    [s1h, s1l] = request.security(eff_s1, tf, [high, low], lookahead = barmerge.lookahead_off, ignore_invalid_symbol = true)
+    [s2h, s2l] = request.security(eff_s2, tf, [high, low], lookahead = barmerge.lookahead_off, ignore_invalid_symbol = true)
+    // sister value AT the pivot bar (h_swing back on tf) - same anchor
+    [s1hp, s1lp] = request.security(eff_s1, tf, [high[h_swing], low[h_swing]], lookahead = barmerge.lookahead_off, ignore_invalid_symbol = true)
+    [s2hp, s2lp] = request.security(eff_s2, tf, [high[h_swing], low[h_swing]], lookahead = barmerge.lookahead_off, ignore_invalid_symbol = true)
+
+    // HIGH side references + swept flags
+    var float rH = na
+    var int rHt = na
+    var float rS1H = na
+    var float rS2H = na
+    var bool pHf = false
+    var bool s1Hf = false
+    var bool s2Hf = false
+    var float pkH = na
+    var int pkHt = na
+    // v5.8.2: guarded on pivot identity, not non-na-ness. Fires once per pivot.
+    if not na(a1ph) and (na(rHt) or a1t != rHt)
+        rH := a1ph
+        rHt := a1t
+        rS1H := s1hp
+        rS2H := s2hp
+        pHf := false
+        s1Hf := false
+        s2Hf := false
+        pkH := a1h
+        pkHt := time
+    if not na(rH) and not pHf and a1h > rH
+        pHf := true
+    if not na(rS1H) and not s1Hf and not na(s1h) and s1h > rS1H
+        s1Hf := true
+    if use_s2 and not na(rS2H) and not s2Hf and not na(s2h) and s2h > rS2H
+        s2Hf := true
+    if not na(rH) and (na(pkH) or a1h > pkH)
+        pkH := a1h
+        pkHt := time
+    int beDiv = not na(rH) and fire_qualifies(pHf, s1Hf, s2Hf) ? divergent_sister(pHf, s1Hf, s2Hf) : 0
+
+    // LOW side references + swept flags
+    var float rL = na
+    var int rLt = na
+    var float rS1L = na
+    var float rS2L = na
+    var bool pLf = false
+    var bool s1Lf = false
+    var bool s2Lf = false
+    var float trL = na
+    var int trLt = na
+    // v5.8.2: guarded on pivot identity, not non-na-ness. Fires once per pivot.
+    if not na(a1pl) and (na(rLt) or a1t != rLt)
+        rL := a1pl
+        rLt := a1t
+        rS1L := s1lp
+        rS2L := s2lp
+        pLf := false
+        s1Lf := false
+        s2Lf := false
+        trL := a1l
+        trLt := time
+    if not na(rL) and not pLf and a1l < rL
+        pLf := true
+    if not na(rS1L) and not s1Lf and not na(s1l) and s1l < rS1L
+        s1Lf := true
+    if use_s2 and not na(rS2L) and not s2Lf and not na(s2l) and s2l < rS2L
+        s2Lf := true
+    if not na(rL) and (na(trL) or a1l < trL)
+        trL := a1l
+        trLt := time
+    int buDiv = not na(rL) and fire_qualifies(pLf, s1Lf, s2Lf) ? divergent_sister(pLf, s1Lf, s2Lf) : 0
+
+    [beDiv, rHt, rH, pkHt, pkH, buDiv, rLt, rL, trLt, trL]
+
+// Typed empty result so a disabled timeframe skips its f_smt() request.security
+// calls entirely (5 fewer security requests per disabled tf).
+_htf_off() => [int(na), int(na), float(na), int(na), float(na), int(na), int(na), float(na), int(na), float(na)]
+// which timeframe matches the chart?
+// v5.8.3: moved above the dispatch so each branch can skip the chart's own
+// timeframe - the table never lists it and the drawn line uses the native
+// chart-bar engine, so that f_smt() call was five requests with no reader.
+string _cp = timeframe.period
+string chart_tf = _cp == "60" ? "60" : _cp == "240" ? "240" : _cp == "1D" or _cp == "D" ? "D" : _cp == "1W" or _cp == "W" ? "W" : _cp == "1M" or _cp == "M" ? "M" : ""
+// evaluate enabled timeframes only
+[h1_be, h1_bert, h1_berp, h1_bept, h1_bepp, h1_bu, h1_burt, h1_burp, h1_butt, h1_butp] = switch
+    h_tf_1h and _htf_on and chart_tf != "60" => f_smt("60")
+    => _htf_off()
+[h4_be, h4_bert, h4_berp, h4_bept, h4_bepp, h4_bu, h4_burt, h4_burp, h4_butt, h4_butp] = switch
+    h_tf_4h and _htf_on and chart_tf != "240" => f_smt("240")
+    => _htf_off()
+[d1_be, d1_bert, d1_berp, d1_bept, d1_bepp, d1_bu, d1_burt, d1_burp, d1_butt, d1_butp] = switch
+    h_tf_d and _htf_on and chart_tf != "D" => f_smt("D")
+    => _htf_off()
+[w1_be, w1_bert, w1_berp, w1_bept, w1_bepp, w1_bu, w1_burt, w1_burp, w1_butt, w1_butp] = switch
+    h_tf_w and _htf_on and chart_tf != "W" => f_smt("W")
+    => _htf_off()
+[m1_be, m1_bert, m1_berp, m1_bept, m1_bepp, m1_bu, m1_burt, m1_burp, m1_butt, m1_butp] = switch
+    h_tf_m and _htf_on and chart_tf != "M" => f_smt("M")
+    => _htf_off()
+
+// ============================================================
+// === DRAW: only the chart-timeframe SMT ===
+// ============================================================
+var line  ln_be = na
+var label lb_be = na
+var line  ln_bu = na
+var label lb_bu = na
+
+_draw_smt(active, div, rt, rp, pt, pp, is_bull) =>
+    color _c = is_bull ? h_col_bull : h_col_bear
+    line _l = na
+    label _b = na
+    if active and not na(rt) and not na(pt)
+        _l := line.new(rt, rp, pt, pp, xloc = xloc.bar_time, color = color.new(_c, 0), width = h_line_wid, style = _sty(h_line_sty))
+        _b := label.new(int((rt + pt) / 2), math.avg(rp, pp), xloc = xloc.bar_time, text = (is_bull ? "▲ " : "▼ ") + h_pair_label(div), style = label.style_label_center, color = _col_lbl_bg, textcolor = color.new(_c, 0), size = size.small)
+    [_l, _b]
+
+// --- NATIVE chart-timeframe detection (reliable pivots) drives the DRAWN line ---
+// v5.8.0: these four request.security calls were byte-identical to the LTF
+// feeds above - same symbol, same timeframe.period, same field, same flag - so
+// the sister data was being fetched twice per bar. Aliased to the existing
+// series instead. s2_h / s2_l already carry the use_s2 gate.
+//
+// v5.8.2: deliberately NOT given the pivot-identity guard added to f_smt().
+// n_ph / n_pl are ta.pivothigh/low on CHART bars, which return na on every bar
+// except the one confirming a pivot, so this reset already fires exactly once.
+// That asymmetry is why the drawn on-chart line kept working while the
+// other-timeframe table did not.
+n_s1h = s1_h
+n_s1l = s1_l
+n_s2h = s2_h
+n_s2l = s2_l
+n_ph = ta.pivothigh(high, h_swing, h_swing)
+n_pl = ta.pivotlow(low,  h_swing, h_swing)
+
+// HIGH side (bear)
+var float NrH = na
+var int   NrHt = na
+var float NrS1H = na
+var float NrS2H = na
+var bool  NpHf = false
+var bool  Ns1Hf = false
+var bool  Ns2Hf = false
+var float NpkH = na
+var int   NpkHt = na
+if not na(n_ph)
+    NrH := n_ph
+    NrHt := time[h_swing]
+    NrS1H := n_s1h[h_swing]
+    NrS2H := n_s2h[h_swing]
+    NpHf := false
+    Ns1Hf := false
+    Ns2Hf := false
+    NpkH := high
+    NpkHt := time
+if not na(NrH) and not NpHf and high > NrH
+    NpHf := true
+if not na(NrS1H) and not Ns1Hf and not na(n_s1h) and n_s1h > NrS1H
+    Ns1Hf := true
+if use_s2 and not na(NrS2H) and not Ns2Hf and not na(n_s2h) and n_s2h > NrS2H
+    Ns2Hf := true
+if not na(NrH) and (na(NpkH) or high > NpkH)
+    NpkH := high
+    NpkHt := time
+int nbe = not na(NrH) and fire_qualifies(NpHf, Ns1Hf, Ns2Hf) ? divergent_sister(NpHf, Ns1Hf, Ns2Hf) : 0
+
+// LOW side (bull)
+var float NrL = na
+var int   NrLt = na
+var float NrS1L = na
+var float NrS2L = na
+var bool  NpLf = false
+var bool  Ns1Lf = false
+var bool  Ns2Lf = false
+var float NtrL = na
+var int   NtrLt = na
+if not na(n_pl)
+    NrL := n_pl
+    NrLt := time[h_swing]
+    NrS1L := n_s1l[h_swing]
+    NrS2L := n_s2l[h_swing]
+    NpLf := false
+    Ns1Lf := false
+    Ns2Lf := false
+    NtrL := low
+    NtrLt := time
+if not na(NrL) and not NpLf and low < NrL
+    NpLf := true
+if not na(NrS1L) and not Ns1Lf and not na(n_s1l) and n_s1l < NrS1L
+    Ns1Lf := true
+if use_s2 and not na(NrS2L) and not Ns2Lf and not na(n_s2l) and n_s2l < NrS2L
+    Ns2Lf := true
+if not na(NrL) and (na(NtrL) or low < NtrL)
+    NtrL := low
+    NtrLt := time
+int nbu = not na(NrL) and fire_qualifies(NpLf, Ns1Lf, Ns2Lf) ? divergent_sister(NpLf, Ns1Lf, Ns2Lf) : 0
+
+// v5.8.3: rebuilt on the last bar only. Each bar previously deleted the prior
+// line/label and drew a fresh pair, so only the final state was ever visible -
+// but history load paid for a line.new + label.new on every qualifying bar.
+// The detection state above still runs every bar; only the drawing is gated.
+// The HTF alert block below reads nbe / nbu directly and is unaffected.
+if barstate.islast
+    if not na(ln_be)
+        line.delete(ln_be)
+        ln_be := na
+    if not na(lb_be)
+        label.delete(lb_be)
+        lb_be := na
+    if not na(ln_bu)
+        line.delete(ln_bu)
+        ln_bu := na
+    if not na(lb_bu)
+        label.delete(lb_bu)
+        lb_bu := na
+    if _htf_on and chart_tf != ""
+        [_lb, _bb] = _draw_smt(nbe > 0, nbe, NrHt, NrH, NpkHt, NpkH, false)
+        ln_be := _lb
+        lb_be := _bb
+        [_lu, _bu2] = _draw_smt(nbu > 0, nbu, NrLt, NrL, NtrLt, NtrL, true)
+        ln_bu := _lu
+        lb_bu := _bu2
+
+// ============================================================
+// === TABLE: other-timeframe live SMTs ===
+// ============================================================
+// v5.8.2 FAULT STATE. The old build counted qualifying rows first and skipped
+// table.new() when the count was zero - but table.delete() had already run
+// unconditionally above it. An empty top-right corner therefore meant EITHER
+// "no divergence on any other timeframe" OR "the script died", with no way to
+// tell them apart from the chart. The table now ALWAYS renders at least one
+// row. A blank corner now means one thing only: the indicator is not executing.
+//
+// _htf_feed_bad tests the sister series directly. Every sister
+// request.security carries ignore_invalid_symbol = true, so a feed resolution
+// failure returns na silently, the not-na guards skip the flag updates, and
+// every *Div stays 0 - indistinguishable from a genuine no-divergence without
+// this check.
+_tf_name(tf) => tf == "60" ? "1H" : tf == "240" ? "4H" : tf == "D" ? "Daily" : tf == "W" ? "Weekly" : "Monthly"
+
+bool _htf_feed_bad = na(s1_h) or (use_s2 and na(s2_h))
+bool _htf_any_tf   = h_tf_1h or h_tf_4h or h_tf_d or h_tf_w or h_tf_m
+
+// v5.8.3: created ONCE at a fixed five rows (one per timeframe) and cleared
+// then refilled on the last bar, instead of deleted and rebuilt every realtime
+// tick. Rows left empty by table.clear() do not render. Background moved from
+// the table to each cell so an empty row cannot paint a band.
+var table tbl = h_show_tbl and _htf_on ? table.new(_pos(h_tbl_pos), 1, 5, border_width = 1, border_color = color.new(#000000, 60)) : table(na)
+if h_show_tbl and _htf_on and barstate.islast
+    table.clear(tbl, 0, 0, 0, 4)
+    // gather rows for every timeframe that is NOT the chart tf and has a live SMT
+    tfs   = array.from("60", "240", "D", "W", "M")
+    bes   = array.from(h1_be, h4_be, d1_be, w1_be, m1_be)
+    bus   = array.from(h1_bu, h4_bu, d1_bu, w1_bu, m1_bu)
+    int _rows = 0
+    for _i = 0 to 4
+        string _tf = array.get(tfs, _i)
+        if _tf != chart_tf and (array.get(bes, _i) > 0 or array.get(bus, _i) > 0)
+            _rows += 1
+    // always at least one row - see fault-state note above
+    if _rows > 0
+        int _r = 0
+        for _i = 0 to 4
+            string _tf = array.get(tfs, _i)
+            int _be = array.get(bes, _i)
+            int _bu = array.get(bus, _i)
+            if _tf != chart_tf and (_be > 0 or _bu > 0)
+                string _txt = _tf_name(_tf) + " " + (_be > 0 ? "▼ " + h_pair_label(_be) : "") + (_be > 0 and _bu > 0 ? "  " : "") + (_bu > 0 ? "▲ " + h_pair_label(_bu) : "")
+                color _tcol = _be > 0 and _bu <= 0 ? h_col_bear : _bu > 0 and _be <= 0 ? h_col_bull : #dbdbdb
+                table.cell(tbl, 0, _r, _txt, text_color = _tcol, text_size = size.small, text_halign = text.align_left, bgcolor = color.new(#0e0e0e, 10))
+                _r += 1
+    else
+        string _st = not _htf_any_tf ? "HTF — no timeframes enabled" : _htf_feed_bad ? "HTF ⚠ sister feed na" : "HTF — no divergence"
+        color _stc = not _htf_any_tf ? #8fa0b0 : _htf_feed_bad ? #ff9800 : #6b7280
+        table.cell(tbl, 0, 0, _st, text_color = _stc, text_size = size.small, text_halign = text.align_left, bgcolor = color.new(#0e0e0e, 10))
+
+// ============================================================
+// === ALERTS ===
+// ============================================================
+if h_alert_on and _htf_on and chart_tf != ""
+    if nbe > 0 and not (nbe[1] > 0)
+        alert("HTF SMT bear (" + h_pair_label(nbe) + ") on chart TF", alert.freq_once_per_bar)
+    if nbu > 0 and not (nbu[1] > 0)
+        alert("HTF SMT bull (" + h_pair_label(nbu) + ") on chart TF", alert.freq_once_per_bar)
+````

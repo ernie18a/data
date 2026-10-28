@@ -1,0 +1,175 @@
+CoensioTrader1 is an open, free, community-supported, automatic trading system (ATS), that is mainly based on only two basic, but very powerful market principles: market trends and market price action.
+This system rests on a "trend hunting" principle and enters a trade only when several market conditions are met. The trend detection is based on daily double exponential moving average
+(DEMA)
+indicator.
+The extended statistical investigation showed that, market can be considered as "trending" if only three successive daily DEMA values point in the same direction. In case when a trending condition is detected, system tries to find the best entry point in the direction of the current trend. The entry points are based on the
+Bollinger Bands
+indicator and swing-low/swing-high price action, as described below.
+Buy Signals
+The system enters a BUY trade every time when:
+Market is in "bullish" up trending condition;
+Price comes from below the lower Bollinger Band;
+A "swing low" price action is detected: Low -> Lower Low -> Higher Low.
+Fig.1. Example of BUY entry
+Sell signals
+The system enters a SELL trade every time when:
+Market is in "bearish " down trending condition;
+Price comes from above the upper Bollinger Band;
+A "swing high" price action is detected: High -> Higher High -> Lower High.
+Fig.2. Example of SELL entry
+The system is written in MQL5 programming language, that provides a possibility of performing an accurate and realistic back-test analysis of a multi-currency based trading systems.
+The key to successful back test of a multi-currency system is to abandon the "tick based" EA flow control and use a "timer based" one. This prevents from stagnation in case the EA's base currency does not receives price ticks any more e.g.: during the "quiet" market hours. Moreover the systems has a healthy risk/reward ratio and uses a trailing "stoploss" mechanism with configurable trailing step (using TrailingStopLossStep parameter).
+The lot size can be set to a fixed size (using LotSize parameter), a proportional lot size (using RiskMax, which is based on stoploss level and equity risk in %), or a dynamic lot size (using LotBalanceDivider parameter, which resizes the lot size according to change of account balance). Besides that, the system incorporates two different "takeprofit" actions: a standard level based "takeprofit" and additionally an equity based "takeprofit" action. In multi-currency trading systems the account equity can significantly rise above the account balance, this fact gives an opportunity to close all trades and take the current profit as it is. This smart behavior dramatically increases the system's profitability.
+As already stated above, CoensioTrader1 is a free and open project, however all CoensioTrader1 project members should actively contribute to the future system improvement.
+To make this possible, the system is designed in such way that it is capable of harnessing the computing power of all project members. So every time a project member performs a system optimization, the results are validated and in case of interesting outcome, the optimization parameters are automatically uploaded to the Coensio server database and directly shared with other project members.
+The most gainful results are selected using "CoensioIndex" which is defined by:
+CoensioIndex = ProfitFactor * BalanceGrowth[%] / EquityDrawDown[%]
+2
+where BalanceGrowth[%] = 100 * Profit / InitialDeposit
+The results:
+Rank:
+CoensioIndex:
+InitialDeposit:
+Profit:
+Growth:
+ProfitFactor:
+LotSize:
+EquityDrawdown:
+BalanceDrawdown:
+Trades:
+MT5 Report:
+Risk Level:
+User:
+1
+67.44
+$100000
+$15387106
+15387.11%
+1.49
+Proportional
+18.46%
+$2124569
+1714
+N/A
+N/A
+coensio
+2
+47.313
+$100000
+$13949417
+13949.42%
+1.50
+Proportional
+21.01%
+$2124569
+1705
+N/A
+N/A
+coensio
+3
+34.784
+$100000
+$14974811
+14974.81%
+1.46
+Proportional
+25.11%
+$2595423
+1772
+N/A
+N/A
+coensio
+4
+34.599
+$100000
+$6394101
+6394.10%
+1.55
+Proportional
+16.90%
+$955691
+1666
+N/A
+N/A
+coensio
+5
+29.316
+$100000
+$14295499
+14295.50%
+1.46
+Proportional
+26.67%
+$2595423
+1776
+N/A
+N/A
+coensio
+6
+27.997
+$100000
+$14482465
+14482.47%
+1.45
+Proportional
+27.37%
+$2694947
+1746
+N/A
+N/A
+coensio
+7
+24.631
+$100000
+$11281092
+11281.09%
+1.48
+Proportional
+26.06%
+$2050079
+1691
+N/A
+N/A
+coensio
+8
+23.092
+$100000
+$13765372
+13765.37%
+1.44
+Proportional
+29.31%
+$2694947
+1749
+N/A
+N/A
+coensio
+9
+22.436
+$100000
+$13684551
+13684.55%
+1.43
+Proportional
+29.54%
+$2694947
+1768
+N/A
+N/A
+coensio
+10
+19.079
+$100000
+$1010846
+1010.85%
+1.50
+Fixed
+8.91%
+$80848
+1588
+N/A
+High
+coensio
+Fig.3. Example of a backtest result (Rank=10)
+More trading parameters are available on:
+http://www.coensio.com/sts/CoensioTrader1V06TOP.php?table=0&ranklength=100

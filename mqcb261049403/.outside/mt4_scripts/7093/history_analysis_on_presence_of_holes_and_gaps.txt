@@ -1,0 +1,44 @@
+The history_data_analysis_v3 script checks the history for missing bars, determines the size of the holes, gaps and makes a list of them. The original can be found here:
+history data analysis
+.
+This version has the output file format changed to *.csv and implements a heavily reworked output. Now, when using the MS Excel to open the file with the script operation results there is a ready table for machine evaluation. In principle, the output of summary can be disabled. In Excel it is easier and more convenient to analyze the data, it has more features, such as data autofiltering.
+The script is able to receive the data not only from the chart, but also directly from the hst file, which can be useful, for instance, when building history from pieces (run one hst file through the script, then the second, third, bring them to one table, see which holes can be "patched up").
+The list of parameters:
+input_from_file
+bool
+true - analysis of the hst file, false - analysis of the chart;
+input_file_name
+string
+name of the input file. It must have the .hst extension. Ignored if chart input is selected;
+input_file_in_history
+bool
+true - input file in the current history folder
+(terminal_folder\history\server_name
+) of the terminal. false - input file in the
+\\experts\files
+folder. Ignored if chart input is selected;
+bars_ingnore
+bool
+true - enable filtering by the minimal hole size. The holes with sizes less than the specified value will not be considered holes. false - any missing bar will be considered a hole;
+min_hole
+int
+the minimum number of bars to consider a hole. Ignored if the filter is disabled;
+breakup_min
+int
+criterion for considering the hole a gap. Allows to split the summary to two parts - by holes (hole_min - breakup_min) and gaps (>=breakup_min). It must be greater than or equal to hole_min. It if is equal to hole_min, every hole is considered a gap;
+gap_ignore
+bool
+true - enable the filter by the minimal gap of the hole, false - even the holes with zero price gap will be considered;
+gap_min
+int
+the minimum price gap to consider a hole. Ignored if the filter is disabled;
+report_summary
+bool
+true - the report will contain a summary, false - no summary;
+report_table
+bool
+true - the report will contain a table, false (not recommended: this is the main purpose of the script) - no table;
+When opening directly in Excel, people with a "," sign as a decimal separator set in the system may see dates in the place of fractions, which can not be reversed back to numbers. My system has ".", so I do not bother too much about it. The table itself does not and can not contain any fractions.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7093

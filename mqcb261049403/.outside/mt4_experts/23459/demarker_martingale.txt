@@ -1,0 +1,42 @@
+This Martingale EA trades with "Demarker" indicator, it is considered relatively safe because it takes a single trade at a time(if you set"max trades"=1).
+has Trailing Stop Loss &Take Profit works on all time frames major forex pairs and stocks NASDAQ.
+If we lose a trade then the EA will take a new trade with a multiplied lot size,the EA has a special formula for calculating lot size.
+Try it on demo first.
+It is possible to activate a hedge fund protocol for low drawdown
+Trade volume of a position depends on previous trading results.
+It provides the possibility to limit the maximum risk (in % of deposit) of the trade.
+If you want to trade with constant lotsize say:0.01 lot ,you need to set "MaximumRisk =0" and "DecreaseFactor=0"
+Or else you will have a calculation of  Percent (%) of deposit and MaximumRisk.
+Inputs:
+==================HEDGE FUND PROTOCOL==========================
+HEDGE FUND PROTOCOL -Enabale Draw dwon control (values:true/false).
+Close basket at +0.10% MIN_PROFIT_PERCENT (values:0.1-0.6).
+Close basket at -0.50% MAX_LOSS_PERCENT (values: 0.5-0.8).
+HEDGE FUND PROTOCOL_SLIPPAGE (values: 10-50).
+=================================================================
+Use_TP_In_Money- Use Take Profit In Money (values:true/false).
+TP_In_Money- Take Profit In Money   (values: 10-100).
+------------[Money Trailing Stop For Multiple Trades]----------------------
+Enable_Trailing-Enable_Trailing with money  (values:true/false).
+Take Profit In Money (in current currency) (values: 25-200).
+Stop Loss In Money(in current currency) (values: 1-20).
+Loss Index (values: 1.1-2).
+--------------------------------------------------------------------------------------
+Multiply= Multiply for Martingale  (values: 1-4).
+Lots - Lots size (values: 0.01-1).
+Double_Lotsize=set to true if you want to just double every lotsize,
+Lot_Size_Increment=Additional orders will increase by this amount
+Stop_Loss=Stop Loss pips distance
+Take_Profit=Take Profit pips distance
+period=Demarker period  (values: 1-50).
+MagicNumber - Magic number (values: 1-100000).
+----------------"Timeset"--------------------------------
+Start=Start hour  (values: 0-24).
+End= End hour  (values:0-24).
+------------------------------------------------------------
+Maximum_loss= Maximum allowed loss (values: 1-500).
+WaitTime=Wait time for loss in minutes  (values: 1-360).
+Max_Trades=  (values: 1-10).
+-You should optimize this EA every few months and use the exact same  inputs from above .
+-How to perform back test:
+https://bit.ly/2CD7XWD

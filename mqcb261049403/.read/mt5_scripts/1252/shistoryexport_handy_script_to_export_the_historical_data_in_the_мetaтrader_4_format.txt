@@ -1,0 +1,104 @@
+Script for historical data export.
+Problems with history in MetaTrader 4? Load the detailed history of any depth from MetaTrader 5!
+Step 1: Set up
+Load script in the "terminal_data_folder\MQL5\scripts\".
+Load libraries
+CheckHistory
+and
+String
+to the "terminal_data_folder\MQL5\Include\komposter\".
+Compile the script.
+Step 2: Set the depth of the history
+Go to the menu "Tools - Options" (Ctr+O), or on the tab "Charts" specify how many bars you want to export ("Max. bars in the window"). History of М1 per one year it is about 370 000 bars.
+Click "ОК" and restart МТ.
+Step 3: Set the instruments list
+If you want to load the history on many parameters at once, add them to "Market Watch", and hide the unnecessary instruments:
+Step 4: Run script
+Drag the script to any chart and set the external variables value:
+SymbolsList
+: A list of symbols divided by a comma (for example, "EURUSD,GBPUSD").
+If you set "all", all the characters from the "Market Watch" will be used;
+TimeFramesList
+: time frame list divided by a comma (for example, "M1,M5,M15").
+If set "all", all the МТ4 time frames smaller D1 will be used .
+BarsToDownload
+: number of bars to export.
+If set 0, all bars visible on the chart will be exported ("Max. bars in the window").
+Click "ОК", and waiting for the shutdown message . The progress you can follow on the "Expert Advisors" tab of the terminal:
+2013.03.28 11:42:55
+sHistoryExport (EURUSD,H1)
+GBPJPY, PERIOD_M1: history synchronized within 1.5 sec
+2013.03.28 11:43:25
+sHistoryExport (EURUSD,H1)
+GBPJPY, PERIOD_M1: 1100000 bars have been written to "History (MetaQuotes-Demo)\GBPJPYM1.csv" and "History (MetaQuotes-Demo)\GBPJPY1.hst" within 30.0 sec!
+2013.03.28 11:43:27
+sHistoryExport (EURUSD,H1)
+EURJPY, PERIOD_M1: history synchronized within 1.6 sec
+2013.03.28 11:43:55
+sHistoryExport (EURUSD,H1)
+EURJPY, PERIOD_M1: 1100000 bars have been written to "History (MetaQuotes-Demo)\EURJPYM1.csv" and "History (MetaQuotes-Demo)\EURJPY1.hst" within 28.6 sec!
+2013.03.28 11:43:57
+sHistoryExport (EURUSD,H1)
+NZDUSD, PERIOD_M1: history synchronized within 1.6 sec
+2013.03.28 11:44:26
+sHistoryExport (EURUSD,H1)
+NZDUSD, PERIOD_M1: 1100000 bars have been written to "History (MetaQuotes-Demo)\NZDUSDM1.csv" and "History (MetaQuotes-Demo)\NZDUSD1.hst" within 29.0 sec!
+2013.03.28 11:44:28
+sHistoryExport (EURUSD,H1)
+AUDUSD, PERIOD_M1: history synchronized within 1.7 sec
+2013.03.28 11:44:56
+sHistoryExport (EURUSD,H1)
+AUDUSD, PERIOD_M1: 1100000 bars have been written to "History (MetaQuotes-Demo)\AUDUSDM1.csv" and "History (MetaQuotes-Demo)\AUDUSD1.hst" within 28.2 sec!
+2013.03.28 11:44:59
+sHistoryExport (EURUSD,H1)
+USDCAD, PERIOD_M1: history synchronized within 1.8 sec
+2013.03.28 11:45:27
+sHistoryExport (EURUSD,H1)
+USDCAD, PERIOD_M1: 1100000 bars have been written to "History (MetaQuotes-Demo)\USDCADM1.csv" and "History (MetaQuotes-Demo)\USDCAD1.hst" within 28.3 sec!
+2013.03.28 11:45:31
+sHistoryExport (EURUSD,H1)
+USDCHF, PERIOD_M1: history synchronized within 3.9 sec
+2013.03.28 11:46:00
+sHistoryExport (EURUSD,H1)
+USDCHF, PERIOD_M1: 1100000 bars have been written to "History (MetaQuotes-Demo)\USDCHFM1.csv" and "History (MetaQuotes-Demo)\USDCHF1.hst" within 28.5 sec!
+2013.03.28 11:46:01
+sHistoryExport (EURUSD,H1)
+GBPUSD, PERIOD_M1: history synchronized within 1.5 sec
+2013.03.28 11:46:31
+sHistoryExport (EURUSD,H1)
+GBPUSD, PERIOD_M1: 1100000 bars have been written to "History (MetaQuotes-Demo)\GBPUSDM1.csv" and "History (MetaQuotes-Demo)\GBPUSD1.hst" within 29.5 sec!
+2013.03.28 11:46:33
+sHistoryExport (EURUSD,H1)
+USDJPY, PERIOD_M1: history synchronized within 2.6 sec
+2013.03.28 11:47:03
+sHistoryExport (EURUSD,H1)
+USDJPY, PERIOD_M1: 1100000 bars have been written to "History (MetaQuotes-Demo)\USDJPYM1.csv" and "History (MetaQuotes-Demo)\USDJPY1.hst" within 29.4 sec!
+2013.03.28 11:47:04
+sHistoryExport (EURUSD,H1)
+EURUSD, PERIOD_M1: history synchronized within 1.5 sec
+2013.03.28 11:47:33
+sHistoryExport (EURUSD,H1)
+EURUSD, PERIOD_M1: 1100000 bars have been written to "History (MetaQuotes-Demo)\EURUSDM1.csv" and "History (MetaQuotes-Demo)\EURUSD1.hst" within 28.8 sec!
+2013.03.28 11:47:33
+sHistoryExport (EURUSD,H1)
+History export finished within 279.6 sec! 9 files have been written to:
+2013.03.28 11:47:33
+sHistoryExport (EURUSD,H1)
+D:\_Forex\MetaTrader 5 Work\MQL5\Files\History (MetaQuotes-Demo)\
+If you set larger number of instruments and/or time frames and/or loaded bars, script can work
+very long
+or in general
+hang
+due to lack of core memory! Adequately assess the potential of your hardware.
+Step 5: Done!
+Loading all the necessary history, the script displays a window with information and exits. The name of the folder where the files are stored, you can copy directly from the Alert window:
+csv-files, written by a script, ready to import in MetaTrader 4 ("Quotes archive - Import"):
+The history of changes
+2013.03.25:
+[*]
+If there is no sufficient depth history by the instrument/timeframe on the server, the script will download and save the whole available history (before it outputted an error and didn't save anything).
+2013.03.28:
+[+] Write to "hst" is added.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1252

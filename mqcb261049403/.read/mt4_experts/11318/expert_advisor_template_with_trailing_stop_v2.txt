@@ -1,0 +1,12 @@
+This is a template for Expert Advisor coders to decrease their coding time. It contains Trailing Stop, autolots (true or false) and function scanning previous candles to find the lowest and the highest order price in the past. Ready to use buy, buystop, sell, sellstop scripts.
+There is a lot more innovations to make it work better like buy, sell block or max orders opened on current symbol. Magic number etc.
+eatemplate v3.mq4 contains my comments to show you how every line in my code works;
+eatemplateclean v3 doesn't contain my comments.
+eateamplateworking v3 is simply ea, that shows template in action.
+Hello!
+I have updated my template! Now orders are set with magic number which prevents script from modifying your orders set manually. Now you can trade by hand and by script in same time without errors!!!
+Also there is now BA ( stoploss moving to order opening price + spread to make order safe )
+Now template contains buystop and sellstop orders with easy inputs modyfing order lifetime and distance from actual price in pips.
+Added working template to show the way, my template works.
+Second update!
+I also added max spread limit. If spread is bigger than "maxspread" orders wont open.

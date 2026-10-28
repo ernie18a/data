@@ -1,0 +1,13 @@
+TraderTool is a tool/panel that will help any trader to perform trades quickly and easily.
+The product has been developed with user friendliness and ease of use in mind.
+It has the ability to manage multiple types of orders, either placed by an Expert Advisor, or manually. It also allows you to place orders in a single click.
+You can add stop loss and take profit, initiate a trailing stop or start break even operation, and all these with the simple panel.
+With the advanced panel (you can call it from 'CALL ORDERS PANEL'), you have the opportunity to open/send and close/delete orders.
+All settings of the distances, stop loss, take profit, trailing stop, break even and the lot size can be done through the chart.
+There is an option to make a grid of pending orders. To do this, press the button for pending orders more than once.
+The number of button presses indicates the number of pending orders to be placed.
+If you press the button for pending orders more of one time, expert makes a grid of pending orders.
+Update version 1.5 > Added option to open and manage pending limit orders.
+Update version 1.6 > Rewrite a lot of part code to improve it.
+Update version 1.7 > Fixed issues to close panel if change time frame.
+Update version 1.8 > Added options to set size of buttons or/and set corner on chart to show buttons.

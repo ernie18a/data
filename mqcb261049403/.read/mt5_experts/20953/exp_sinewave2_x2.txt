@@ -1,0 +1,165 @@
+A trend-following trading system Exp_Sinewave2_X2 is based on the signals of two indicators
+Sinewave2
+The first indicator determines the direction of the slow trend based on the position of the main and signal lines. The second indicator determines the moment for opening a trade, when the lines cross or touch each other. An entry signal is generated at a bar closure if the following two conditions are met:
+Fast and slow trend signals coincide;
+Fast trend has changed its direction.
+EA Inputs
+//+-------------------------------------------------+
+//| Input parameters of the EA indicator            |
+//+-------------------------------------------------+
+input
+string
+Trade=
+"Trade management"
+;
+//+============== TRADE MANAGEMENT ==============+
+input
+double
+MM=
+0.1
+;
+// Share of a deposit in a deal
+input
+MarginMode MMMode=LOT;
+// lot value determining method
+input
+uint
+StopLoss_=
+1000
+;
+// Stop Loss in points
+input
+uint
+TakeProfit_=
+2000
+;
+// Take Profit in points
+input
+string
+MustTrade=
+"Trade permissions"
+;
+//+============== TRADE PERMISSIONS ==============+
+input
+int
+Deviation_=
+10
+;
+// max. price deviation in points
+input
+bool
+BuyPosOpen=
+true
+;
+// Permission to enter long positions
+input
+bool
+SellPosOpen=
+true
+;
+// Permission to enter short positions
+//+-------------------------------------------------+
+//| Input parameters of the filter indicator        |
+//+-------------------------------------------------+
+input
+string
+Filter=
+"SLOW TREND PARAMETERS"
+;
+//+============== TREND PARAMETERS ==============+
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H6
+;
+// 1 Chart period for the trend
+input
+uint
+Length=
+10
+;
+// indicator smoothing ratio
+input
+uint
+SignalBar=
+1
+;
+// bar number to receive the entry signal
+input
+bool
+BuyPosClose=
+true
+;
+// Permission to exit long positions by trend
+input
+bool
+SellPosClose=
+true
+;
+// Permission to exit short positions by trend
+//+-------------------------------------------------+
+//| Input parameters of the entry indicator         |
+//+-------------------------------------------------+
+input
+string
+Input=
+"ENTRY PARAMETERS"
+;
+//+=============== ENTRY PARAMETERS ===============+
+input
+ENUM_TIMEFRAMES
+TimeFrame_=
+PERIOD_M30
+;
+//2 Chart period for entry
+input
+uint
+Length_=
+10
+;
+// indicator period
+input
+uint
+SignalBar_=
+1
+;
+// bar number to receive an entry signal
+input
+bool
+BuyPosClose_=
+false
+;
+// Permission to exit long positions by signal
+input
+bool
+SellPosClose_=
+false
+;
+// Permission to exit short positions by signal
+//+-------------------------------------------------+
+String variables containing the text in the code of input parameters are only used for better visualization of the EA input parameters window.
+Indicators
+Sinewave2_Cloud_HTF
+in the EA are only intended for a more convenient visualization of trends in the strategy tester, and they are inactive in other operation modes.
+For the generated EA to operate correctly, the compiled files of indicators
+CyclePeriod.ex5
+,
+Sinewave2.ex5
+, and
+Sinewave2_Cloud_HTF.ex5
+must be in the
+<terminal_data_directory>\MQL5\Indicators
+folder.
+Note that the TradeAlgorithms.mqh library file allows using Expert Advisors with brokers who offer
+nonzero spread
+and the option of setting Stop Loss and Take Profit
+during position opening
+. You can download the other versions of this library at
+Trade Algorithms
+.
+The EA default input parameters were used in tests below. Stop Loss and Take Profit were not used in testing.
+Testing results for GBPUSD over the year 2016, slow trend on H8, and entry by fast trend on M30:
+Fig. 2. Testing results chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20953

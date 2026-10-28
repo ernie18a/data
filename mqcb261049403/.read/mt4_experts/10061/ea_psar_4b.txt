@@ -1,0 +1,6 @@
+Description:
+EA_PSar_004B designed on the idea of the indicator
+Nik_PSAR_2B
+.
+A sample version of this EA:
+http://codebase.mql4.com/en/code/9909

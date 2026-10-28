@@ -1,0 +1,11 @@
+Assistant
+This assistant is designed to assist in manual trading. Works only on the current symbol, no restrictions on Magic number.
+For trailing, a new parameter '
+Trailing activate if profit is >=
+' is used - this is essentially a breakeven for trailing. Trailing activates only after the position reaches profit in
+'
+Trailing activate if profit is >=
+' Points.
+If the position does not have Stop Loss and (or) Take Profit - the assistant will set the specified values (values that were specified in the input parameters). The assistant also monitors the target profit - when the target profit is reached, all positions will be closed.
+Pic. 1.Trailing Activate Close All
+The Expert Advisor works only on the current symbol, but has no restrictions on the Magic number. In this case, the adviser, when modifying a position, copies the Magic of this position.

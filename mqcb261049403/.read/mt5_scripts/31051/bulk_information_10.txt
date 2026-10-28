@@ -1,0 +1,4 @@
+This script displays useful information.
+HTML file created is under MQl5/Files folder.
+If you want to open file automatically after running script disable comments at the beginning and end related to ShellExec API.
+Check "Allow Dll import". to display information on default web browser.

@@ -1,0 +1,4 @@
+Author: not specified
+MTF_Bbands indicator. Uses indicator
+BBands
+.

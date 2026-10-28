@@ -1,0 +1,8 @@
+The basis of the RBVI Forex indicator is an attribute of the night market to sharply decrease the volatility due to absence of active trading on exchanges. The indicator considers the price flow and the volatility (changeability) of the market what helps to successfully behave in a flat market. It is recommended to use RBVI in Expert Advisors that run in night time.
+Signals of the RBVI indicator: if the indicator value on a chart is less than 40%, than the market is flat; if the value is greater than 60%, there is an active movement.
+Originally this indicator had been developed in MQL4 and published in
+Code Base at mql4.com
+on 15.06.2010.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/719

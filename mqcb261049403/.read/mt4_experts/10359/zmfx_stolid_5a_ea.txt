@@ -1,0 +1,4 @@
+Description:
+EA designed to trade by
+ZMFX trend indicator v2
+and by oversold and overbought conditions according to RSI(11). Best to trade on M5 using default settings. More info at my blog.

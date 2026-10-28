@@ -1,0 +1,3 @@
+This indicator shows both powers of the Bull and Bear, the market volume excluded
+.
+Image:

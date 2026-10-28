@@ -1,0 +1,10 @@
+Awesome oscillator exists as an indicator in MetaTrader 5 already .
+This version adds some options and extra functionality.
+You can use 4 types of averages for calculation:
+simple moving average (default — by definition this is what awesome oscillator uses)
+exponential moving average
+smoothed moving average
+linear weighted moving average
+Extended set of prices. Among the prices you can use heiken ashi prices which, implicitly, makes it the same as if you would use the indicator on an offline heiken ashi chart.
+The indicator has usual set of alerts added (alerts on opened or closed bar, messages, sounds, emails, push notifications) and it is made multi time frame.
+PS: as usual awesome oscillator is very similar to MACD(MACD, by definition uses exponential moving average for calculations) and can be used in a very similar way (momentum, divergence and similar). To make this version flexible, unlike the original awesome oscillator (which uses periods 5 and 34 and can not be changed), this version allows to use any period for calculation.

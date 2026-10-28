@@ -1,0 +1,7 @@
+The script creates the
+Fibonacci levels
+graphic object with a large number of settings.
+Fig.1. The SetColorFiboLevels script operation result
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23323

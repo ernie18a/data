@@ -1,0 +1,141 @@
+TREND Follower (DAILY)
+is a lightweight, development-oriented Expert Advisor (EA) created as a
+base trading architecture for research, learning, experimentation, and further development
+.
+The EA is intentionally designed around a simple concept:
+follow the market direction using the relationship between price and the Parabolic SAR
+.
+It is not presented as a fully optimized or finished trading system. Instead, it provides a clean and accessible foundation that developers can study, modify, test, and expand.
+Current Trading Strategy
+TREND Follower uses a simple
+Parabolic SAR trend-following and reversal strategy
+:
+Price above SAR → BUY direction
+Price below SAR → SELL direction
+// 6. SELL / BEARISH FLOW
+// Original logic:
+// If Quantum wants to go DOWN:
+// Close BUY and open SELL.
+if
+(isQuantumDn) {
+//--- Close existing BUY
+if
+(hasBuy) {
+if
+(!trade.PositionClose(buyTicket)) {
+Print
+(
+"SELL reversal blocked: failed to close BUY. "
+,
+"Ticket="
+, buyTicket,
+" Retcode="
+, trade.ResultRetcode(),
+" Description="
+, trade.ResultRetcodeDescription());
+return
+;
+         }
+//--- Refresh state after successful close
+hasBuy =
+false
+;
+      }
+//--- Open SELL only when no EA SELL exists
+if
+(!hasSell) {
+         OpenSell();
+      }
+   }
+// 7. BUY / BULLISH FLOW
+// Original logic:
+// If Quantum wants to go UP:
+// Close SELL and open BUY.
+else
+if
+(isQuantumUp) {
+//--- Close existing SELL
+if
+(hasSell) {
+if
+(!trade.PositionClose(sellTicket)) {
+Print
+(
+"BUY reversal blocked: failed to close SELL. "
+,
+"Ticket="
+, sellTicket,
+" Retcode="
+, trade.ResultRetcode(),
+" Description="
+, trade.ResultRetcodeDescription());
+return
+;
+         }
+//--- Refresh state after successful close
+hasSell =
+false
+;
+      }
+//--- Open BUY only when no EA BUY exists
+if
+(!hasBuy) {
+         OpenBuy();
+      }
+   }
+When the detected direction changes, the EA attempts to close the existing opposite position before opening a position in the new direction.
+This creates a straightforward
+follow-the-direction and reverse-on-change
+trading model.
+Current Features
+The current base version includes:
+Parabolic SAR directional analysis
+Fixed-lot position sizing
+Maximum spread protection
+Configurable trading hours
+EA-specific Magic Number
+Optional Stop Loss and Take Profit
+Basic trade execution validation
+Broker-compatible volume and order handling
+Safer position reversal logic
+These features provide basic execution and protection while keeping the original entry logic simple and transparent.
+Development Potential
+TREND Follower is designed to be
+extended rather than treated as a final system
+.
+Developers can build additional modules for:
+Risk-based position sizing
+ATR-based SL/TP and trailing protection
+Break-even and partial exits
+Higher-timeframe confirmation
+Market structure and price-action analysis
+Volatility and market-regime detection
+Grid, layering, or recovery logic
+AI and Machine Learning
+Advanced signal scoring
+Multi-symbol and portfolio management
+Advanced execution and risk controls
+The existing Parabolic SAR strategy can remain as the core signal while additional layers are developed around it.
+Why This Code Is Shared
+TREND Follower is published as a
+Development and Research Code Base
+.
+The objective is to provide developers with a simple and understandable foundation:
+Study → Modify → Test → Optimize → Extend
+The code is intended to encourage further research, experimentation, and development within the MQL5 community.
+Development & Risk Notice
+This source code is provided for
+development, research, educational, and experimental purposes
+.
+It should not be considered a guaranteed profitable or production-ready trading system. Thorough backtesting, forward testing, and risk evaluation are strongly recommended before any live deployment.
+Trading financial instruments, including
+XAUUSD / Gold
+, involves substantial financial risk. Market volatility, spread, slippage, leverage, liquidity, execution conditions, and technical failures can result in significant losses.
+Users are solely responsible for evaluating, modifying, testing, and deciding how the code is used.
+Final Perspective
+TREND Follower
+provides a simple foundation built around one clear principle :
+Observe the Parabolic SAR → Follow the detected direction → Reverse when the direction changes.
+The architecture is intentionally open for further development into more advanced
+trading, risk-management, market-analysis, adaptive, and AI-based systems
+.

@@ -1,0 +1,8 @@
+The indicator of ranges of the last three candlesticks of timeframe selected by the trader. The indicator displays the ranges of the price changes on the last three bars of the selected trading instrument in the indicator settings.
+The indicator uses the class of library
+GetFontName.mqh
+(should be copied to the terminal_data_folder\MQL5\Include).
+Fig.1 The CandleSize indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1647

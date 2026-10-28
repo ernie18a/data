@@ -1,0 +1,2 @@
+EUR/USD H1 2010.01.01-07.23 Deposit: 10000, Lot: 1.
+This is my first expert advisor, that's why it is so simple. For all timeframes and currency pairs. Opens position (when the daily candle opens) into the direction of previous day candle, and closes position every day at the earliest market closing hour of the week (friday). It works without stoploss, takeprofit, and trailing stop.

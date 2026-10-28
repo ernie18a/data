@@ -1,0 +1,6 @@
+The indicator uses up to three named Label objects, with selectable color, font size, offsets, date formatting and a statistical text showing Last and Current Candle Amplitude (MinMax), Last and Current Day Amplitude, Current Tick Spread and Time Remaining for next Candle. This indicator is useful if you wanna focus more on the charts and less on Market Watch or related windows, or publish a chart with date formatting, it will also show the Server/Broker Time, Local Time and Timezone Offsets.
+Changelog
+v1.07 Some changes
+v1.06 Increased debuggable information, implemented a latency to OnTimer() calls (this has nothing to do with Server Latency, just OnTimer() events)
+v1.05 Some fixes
+v1.02 Implemented a few incompleted functions (not used/not called), implemented and updated error checks, updated stats timer to not show negative values.

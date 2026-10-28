@@ -1,0 +1,7 @@
+Author: Jacob Yego
+Advisor LBS V 1.0.
+------------------------
+Parameter of testing
+Period: M15
+Symbol: EURUSD
+Model: все тики

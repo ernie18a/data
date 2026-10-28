@@ -1,0 +1,14 @@
+Author:
+mladen
+Indicator OnChart Stochastic.
+Parameters:
+extern int KPeriod =14;
+extern int Slowing =3;
+extern int DPeriod =3;
+extern int maPeriod =20;
+extern int maMethod =1;
+extern int maPrice =0;
+extern int overBought=80;
+extern int overSold =20;
+extern string timeFrame="Current time frame"
+Indicator OnChart Stochastic

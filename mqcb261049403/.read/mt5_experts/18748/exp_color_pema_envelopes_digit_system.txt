@@ -1,0 +1,18 @@
+A breakout trading system based on the signals of the
+Color_PEMA_Envelopes_Digit_System
+indicator. A signal is formed when a bar is closing, if a colored bar has occurred, while the previous bar had the opposite color or no color at all.
+The Expert Advisor uses the compiled indicator file Color_PEMA_Envelopes_Digit_System.ex5 for operation. Save it to <terminal_data_folder>\MQL5\Indicators.
+Note that the TradeAlgorithms.mqh library file allows using Expert Advisors with brokers who offer
+nonzero spread
+and the option of setting Stop Loss and Take Profit
+during position opening
+. You can download more variants of the library at the following link:
+Trade Algorithms
+.
+Default input parameters of the Expert Advisor were used during the tests shown below. Stop Loss and Take Profit were not used during testing.
+Fig. 1. Examples of deals on the chart
+Testing results for 2015 at GBPUSD H12:
+Fig. 2. Testing results chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18748

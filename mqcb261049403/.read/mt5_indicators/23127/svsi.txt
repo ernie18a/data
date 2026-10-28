@@ -1,0 +1,19 @@
+Slow Volume Strength Index oscillator defines the volume momentum. The indicator was first described in "Stock&Commodities" (April 2015).
+There are five inputs:
+EMA period
+- EMA calculation period
+Smoothing
+- smoothing period
+Overbought
+- overbought level
+Middle
+- middle line
+Oversold
+- oversold level
+Interpretation:
+When the oscillator value goes below 20, the market is considered to be oversold, which means it is time to look for long entries.
+When the oscillator values go above 80, the market is overbought meaning it is time to look for short entries.
+The overbought/oversold levels, middle line and divergences relative to the oscillator axial line are considered.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23127

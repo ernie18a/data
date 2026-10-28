@@ -1,0 +1,58 @@
+Two indicators
+ColorJFatl
+from different timeframes, the area between lines being filled with a cloud, the color of which corresponds with the trend direction on the market
+//+-------------------------------------+
+//|   INDICATOR INPUT PARAMETERS        |
+//+-------------------------------------+
+input
+ENUM_TIMEFRAMES
+TimeFrame1=
+PERIOD_H1
+;
+//Chart timeframe
+input
+ENUM_TIMEFRAMES
+TimeFrame2=
+PERIOD_H4
+;
+//Chart timeframe
+//+-------------------------------------+
+//|   INDICATOR INPUT PARAMETERS        |
+//+-------------------------------------+
+input
+uint
+Length=
+5
+;
+//smoothing depth
+input
+int
+Phase=-
+100
+;
+//smoothing parameter,
+//for JJMA that can change withing the range -100 ... +100. It impacts the quality of the intermediate process of smoothing;
+// For VIDIA, it is the CMO period, for AMA, it is the period of slow moving average
+input
+Applied_price_ IPC=PRICE_CLOSE_;
+//Price constant
+input
+int
+Shift=
+0
+;
+// Horizontal indicator shift in bars
+input
+int
+PriceShift=
+0
+;
+// vertical shift of the indicator in points
+//+-------------------------------------+
+For the indicator to operate, indicator
+ColorJFatl.ex5
+must be in the <terminal_data_directory>\MQL5\Indicators folder.
+Fig 1. Indicator ColorJFatl_x2_cloud_HTF
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20977

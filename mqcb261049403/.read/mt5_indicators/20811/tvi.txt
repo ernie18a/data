@@ -1,0 +1,10 @@
+Oscillator TVI (Trade Volume Index) shows whether a security is being accumulated (bought) or distributed (sold).
+It has one input parameter:
+Minimum tick value
+- the minimum tick value.
+Calculations:
+If the difference between the current price and yesterday's index exceeds the minimum threshold volume, we consider the security to be bought;
+If the difference between the current price and yesterday's index is lower than the negative minimum threshold volume, we consider the security to be sold;
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20811

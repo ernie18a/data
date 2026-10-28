@@ -1,0 +1,24 @@
+An educational example of a mean-reversion Expert Advisor based on Bollinger Bands. It shows how to combine two indicators, limit trading to selected hours and manage exits based on the current indicator value.
+Strategy
+BUY: bar 2 closed below the lower band and bar 1 closed back inside the bands (optionally: RSI on bar 2 below the lower level). SELL – the other way round (upper band, RSI above the upper level).
+Exit: when the price touches the current middle band (BUY: Bid ≥ middle, SELL: Ask ≤ middle) or at Stop Loss.
+Trading hours limit only opening new positions (overnight ranges such as 22:00–06:00 are allowed); closing always works. Optionally, positions can be closed outside trading hours.
+Maximum number of open positions at once – a parameter (1 by default).
+What the code demonstrates
+reading two indicators through handles and
+CopyBuffer
+with a check of the number of copied values,
+an optional filter that can be switched on and off,
+time windows in server time, including ranges that cross midnight,
+free margin, lot and stop level checks, spread filter, order retries.
+Inputs
+TimeFrame – timeframe of the signal (current chart by default)
+Bollinger Bands period / deviation / applied price – 20 / 2.0 / Close
+Use RSI filter – off by default; RSI period 14, lower level 30 (BUY below), upper level 70 (SELL above)
+Trading start / end (HH:MM, server time) – 00:00 / 00:00 (start = end → all day)
+Close position outside trading hours – off
+Lot (fixed) – 0.10; Stop Loss – in points, 0 = none (300)
+Max open positions at once – 1
+Magic number – 5020; Max slippage – 10 points; Max spread – 30 points (0 = off)
+Important
+This is an educational example, not a trading system. It works only on demo accounts and in the Strategy Tester – on a live account it shows a message and stops. Provided "as is", without any warranty. Not investment advice. Trading Forex and CFDs involves a high risk of losing capital. License: FxCraft Example EA License (see the source header).

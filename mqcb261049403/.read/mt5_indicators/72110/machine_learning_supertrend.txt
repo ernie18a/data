@@ -1,0 +1,291 @@
+This is a next-generation SuperTrend indicator that layers a full machine learning engine on top of the classic trend-following concept. Rather than using fixed ATR multipliers and static rules, the indicator continuously learns from its own signal history, adapts its core parameters bar by bar, and filters entries through a multi-stage confirmation pipeline before plotting any arrow on the chart. It runs entirely inside the MetaTrader 5 indicator framework, requires no external libraries, and exposes a hidden
+Confidence
+buffer that any Expert Advisor can read directly for automated trading.
+The indicator is organized into
+13 input groups
+covering every aspect of its behavior: signal mode, volatility envelope, momentum filter, flow analysis, signal quality, the master reactivity dial, the auto-tune engine, the optimizer, risk guard, context memory (regime grid), decay traces, alerts, and display. Default values have been chosen so that the indicator works out of the box on any liquid symbol and any timeframe, but every parameter can be adjusted independently to suit a specific instrument or trading style.
+How the Indicator Works
+At its core the indicator computes two SuperTrend bands — a
+Bull line
+(blue) and a
+Bear line
+(red) — using an RMA-smoothed ATR envelope applied to a user-selected price basis. The band width and ATR period are not fixed: they start from the values you enter and are then continuously adjusted by the optimizer each time new trade outcomes are evaluated. This means the envelope naturally widens during high-volatility regimes and tightens during calm markets without any manual intervention.
+Signals are generated in one of two modes. In
+Reversal mode
+the indicator watches for a confirmed trend flip: a bullish pivot must form while the trend is bearish (producing a green buy arrow), or a bearish pivot must form while the trend is bullish (producing a red sell arrow). In
+Breakout mode
+the logic is inverted: a new swing high during an uptrend triggers a sell signal anticipating a failed breakout, and a new swing low during a downtrend triggers a buy signal. Both modes require all active confirmation filters to agree before any arrow is drawn.
+Confirmation Filters
+Every candidate signal passes through three independent filters before it is accepted.
+The
+Momentum Filter
+uses a standard RSI. For a buy signal to fire, RSI must have touched or crossed below the Cold Level (default 30) within the recent lookback window. For a sell signal, RSI must have touched or crossed above the Hot Level (default 70). This prevents the indicator from generating counter-trend entries during one-sided momentum runs.
+The
+Flow Analysis
+filter examines tick volume. When the Require Surge option is enabled, a signal is only accepted if the current bar's volume exceeds the average of the preceding sample bars by at least the Surge Threshold factor. This eliminates signals that occur on low-activity bars where breakouts are more likely to be false.
+The
+Signal Quality
+filter, when Key Levels Only mode is active, requires that the pivot behind the signal is a major structural level: the distance from the swing high to the nearest swing low (or vice versa) must exceed the Key Level Depth multiplied by the current ATR. This keeps signals anchored to significant price structure rather than minor wiggles.
+Machine Learning Engine
+The ML engine operates through four cooperating subsystems.
+The
+Context Memory (Regime Grid)
+is an 8x8 grid (configurable) that maps market regime on one axis and volatility on the other. Each cell accumulates exponentially weighted statistics from past trades that occurred under similar conditions. When a new signal is being evaluated, the indicator reads the cell corresponding to the current regime and volatility, blends its recommendations across neighboring cells using a Gaussian kernel (controlled by the Neighbor Blend Radius), and adjusts the confidence score accordingly. Cells decay over time via a half-life parameter so that stale market memory is gradually forgotten.
+The
+Optimizer
+runs every few bars (set by Update Cooldown). It evaluates a rolling window of recent trade outcomes and computes gradient-style updates for five parameters: band width multiplier, ATR smoothing length, stop distance, take-profit distance, and breakout buffer. Updates are quantized to avoid noise-chasing, and a deadband prevents micro-adjustments that do not meaningfully change behavior. A periodic revert step pulls parameters back toward their anchor values to prevent drift during unusual market conditions.
+The
+Decay Trace Buffer
+stores a short-term memory of recent signal outcomes as decaying energy records. Each record holds the ATR-normalized return, maximum adverse excursion, regime state, and volatility level at the time of the signal. These traces feed the optimizer with richer context than simple win/loss counts, helping it distinguish between signals that were directionally correct but stopped out by noise versus those that were genuinely wrong.
+The
+Micro-Batch Processor
+, when enabled, groups recent outcomes into small batches and computes batch-level parameter recommendations. These batch signals are blended with the optimizer's rolling recommendations to smooth out single-trade overreactions.
+Risk Guard
+The Risk Guard system sits between the signal engine and the buffer writer. Even if all confirmation filters pass and the ML engine endorses a signal, the Risk Guard can block it under the following conditions.
+Session trade limit.
+Once the number of signals in the current trading day reaches Max Entries Per Session, no further signals are plotted for the rest of that day.
+Session loss limit.
+If the simulated session PnL (computed from the Sim Position USD and ATR-based stop distances) drops below the Session Loss Limit, all further signals are blocked until the next session.
+Cooldown after loss.
+After a losing trade the indicator imposes a pause of at least Base Pause After Loss bars. If Dynamic Cooldown is enabled the pause scales with the size of the loss relative to ATR, so larger losses produce longer pauses.
+Consecutive loss streak.
+If the number of consecutive losses reaches the Streak Limit, trading is paused for the remainder of the session regardless of the cooldown timer.
+All Risk Guard counters reset automatically at the start of each new trading day.
+Confidence Score and EA Integration
+Every signal bar receives a
+Confidence Score
+between 0 and 100, written to the hidden fifth buffer (label: Confidence). The score is built from four components: the grid cell confidence from the Regime Grid, a boost when RSI is strongly confirming the signal direction, a boost when a volume surge is present, and a boost when the current regime aligns with the signal direction. An Expert Advisor can read this buffer using CopyBuffer and use the score to scale position size, filter low-confidence signals, or rank competing signals across multiple symbols.
+Dashboard
+When Show Info Dashboard is enabled, a multi-column table is drawn directly on the chart as a text label object. The dashboard displays the current trend direction, real win rates for long and short signals separately (computed from actual 5-bar forward price comparison rather than simulation), Sharpe and Sortino ratios from the rolling ATR-return history, total signal counts, the current confidence score, and Risk Guard status (active cooldown bars remaining, trades used in the session, session PnL). The dashboard updates on every new bar and on every real-time tick.
+Alerts
+The indicator can send a MetaTrader popup alert and/or a mobile push notification whenever a new buy or sell arrow is drawn on the current (live) bar. The Alert Once per Bar option prevents duplicate alerts when the indicator recalculates on the same bar due to new ticks.
+Input Parameters
+Parameter
+Default
+Description
+GROUP 1 — SIGNAL MODE
+Signal Type
+Reversal
+Reversal: signal fires on trend flip. Breakout: signal fires on failed breakout at a new extreme.
+Require Fresh Pivot
+false
+When true, a reversal signal requires a new swing extreme to have formed before the trend flipped. Reduces signal frequency and increases selectivity.
+Signal Spacing
+10
+Minimum number of bars that must pass between two consecutive signals. Prevents signal clustering in fast markets.
+GROUP 2 — VOLATILITY ENVELOPE
+Lookback Window
+30
+Number of recent bars used to detect swing highs and lows for signal logic. Also sets the initial sensitivity value passed to the optimizer.
+Smoothing Period
+24
+ATR period for the SuperTrend envelope. Adapted by the optimizer over time. A longer period produces smoother bands that react more slowly to volatility changes.
+Band Width
+1.4
+ATR multiplier for the SuperTrend band. Adapted by the optimizer. Higher values create wider bands with fewer but more reliable trend flips.
+Price Basis
+hlcc4
+Price series used as the midpoint for the SuperTrend bands. Options: open, high, low, close, hl2, hlc3, ohlc4, hlcc4.
+True Range Mode
+true
+When true, ATR is smoothed with RMA (Wilder's smoothing). When false, EMA smoothing is used. RMA is the classic SuperTrend convention.
+GROUP 3 — MOMENTUM FILTER
+RSI Active
+true
+Enables the RSI momentum confirmation filter. Disable to allow signals regardless of RSI position.
+RSI Length
+14
+Period for the RSI calculation.
+Hot Zone Memory
+50
+Number of bars to look back when checking whether RSI has been above the Hot Level. A sell signal requires at least one bar in this window to have RSI above the Hot Level.
+Cold Zone Memory
+50
+Number of bars to look back when checking whether RSI has been below the Cold Level. A buy signal requires at least one bar in this window to have RSI below the Cold Level.
+RSI Hot Level
+70
+RSI threshold above which momentum is considered overbought. Used by both the filter and the confidence scorer.
+RSI Cold Level
+30
+RSI threshold below which momentum is considered oversold.
+GROUP 4 — FLOW ANALYSIS
+Sample Depth
+3
+Number of recent bars whose volume is averaged to form the baseline for the surge check.
+Surge Threshold
+1.2
+Current bar volume must exceed this multiple of the average volume for the surge filter to pass.
+Require Surge
+false
+When true, a volume surge is mandatory for any signal. When false, the surge check is advisory only and does not block signals.
+GROUP 5 — SIGNAL QUALITY
+Key Levels Only
+false
+When true, signals are restricted to pivots that qualify as major structural levels based on the Key Level Depth threshold.
+Key Level Depth (xATR)
+4.5
+Minimum swing range in ATR units required for a pivot to be classified as a major level.
+GROUP 6 — MASTER DIAL
+Reactivity (1-20)
+10
+Global sensitivity dial. Lower values make the signal engine less reactive to price swings, reducing noise but also reducing responsiveness. Higher values increase sensitivity.
+Micro-Batch Processing
+true
+Enables the micro-batch learning subsystem that groups recent signal outcomes and blends batch-level parameter recommendations with the optimizer output.
+Live Pressure Sensor
+true
+Enables real-time tick pressure tracking. The sensor accumulates buy and sell pressure within each bar and feeds it into the regime classifier.
+GROUP 7 — AUTO-TUNE ENGINE
+Enable Auto-Tune
+true
+Master switch for the auto-tune system. When disabled, Band Width and Smoothing Period remain fixed at their input values.
+Use Background Test Matrix
+true
+Enables the background probe system that silently tracks hypothetical trade outcomes across different parameter combinations to inform the optimizer.
+Lock Envelope to Base
+true
+When true, the plot bands (what you see on chart) are locked to the input Band Width value. The signal engine still uses adaptive parameters internally.
+GROUP 8 — OPTIMIZER
+Optimizer Enable
+true
+Master switch for the parameter optimizer. When disabled, the five adaptive parameters remain at their initial values.
+Step Size
+0.25
+Learning rate for parameter updates. Smaller values produce more stable but slower adaptation. Larger values react faster but may oscillate.
+History Depth
+30
+Number of recent trade outcomes used in the rolling statistics window for Sharpe, Sortino, and win rate calculations.
+Win Ceiling
+0.62
+If the rolling win rate rises above this value, the optimizer increases the ATR multiplier to reduce signal frequency and capture only higher-quality setups.
+Win Floor
+0.38
+If the rolling win rate drops below this value, the optimizer decreases the ATR multiplier to become more responsive and recapture momentum.
+Normalize Returns by ATR
+true
+Divides trade PnL by the ATR at signal time before storing in the rolling return array. This makes Sharpe and Sortino ratios comparable across different volatility regimes.
+Momentum Smoothing
+0.35
+EMA alpha applied to the optimizer gradient before it is added to each parameter. Smooths out single-trade overreactions.
+Update Cooldown (bars)
+3
+Minimum number of bars between parameter update cycles. Prevents the optimizer from firing on every bar.
+Deadband Width
+0.01
+Parameter changes smaller than this fraction of the current value are suppressed. Prevents noise-driven micro-adjustments.
+Deadband Period
+0.25
+Fractional period used in the deadband decay calculation alongside Deadband Width.
+Quant Step Width
+0.05
+Quantization step for the Band Width multiplier updates. Rounds proposed values to the nearest multiple of this step.
+Quant Step Guard
+0.02
+Quantization step for the adaptive stop distance multiplier.
+Quant Step Target
+0.02
+Quantization step for the adaptive take-profit multiplier.
+Quant Step Edge
+0.01
+Quantization step for the adaptive breakout buffer.
+Anchor Revert Interval
+200
+Every this many bars, all adaptive parameters are nudged back toward their input anchor values by the Anchor Revert Strength fraction. Prevents long-term drift.
+Anchor Revert Strength
+0.01
+Fraction of the gap between current adaptive value and anchor value that is closed on each revert event.
+PnL Cap per Trade
+750.0
+Simulated PnL values above this absolute USD amount are capped before being stored in the rolling return array. Prevents extreme outliers from distorting optimizer statistics.
+GROUP 9 — RISK GUARD
+Max Entries Per Session
+20
+Maximum number of signal arrows that can be plotted in a single trading day. Resets at the start of each new day.
+Session Loss Limit USD
+-1000.0
+If the simulated session PnL drops below this value, no further signals are plotted for the rest of that day.
+Base Pause After Loss
+5
+Minimum number of bars to wait after a losing signal before allowing a new signal. Extended by Dynamic Cooldown when enabled.
+Streak Limit
+3
+Maximum number of consecutive losing signals allowed before trading is halted for the rest of the session.
+Scale Pause by Loss Size
+true
+When true, the post-loss cooldown is extended proportionally to the size of the loss relative to ATR. Larger losses produce longer pauses.
+GROUP 10 — CONTEXT MEMORY (REGIME GRID)
+Enable Regime Grid
+true
+Enables the 2D context memory grid that stores performance statistics per regime/volatility cell and blends their recommendations into the confidence score.
+Regime Bins
+8
+Number of buckets along the regime axis of the grid. More bins provide finer context resolution at the cost of slower cell population.
+Volatility Bins
+8
+Number of buckets along the volatility axis of the grid.
+Neighbor Blend Radius
+0.8
+Sigma of the Gaussian kernel used to blend adjacent grid cell recommendations. Larger values smooth across more cells, smaller values make each cell more independent.
+Decay Half-Life (trades)
+50
+Number of trades after which a grid cell's accumulated statistics decay to half their influence. Controls how quickly old market memory is forgotten.
+Confidence Ramp (trades)
+20
+Minimum number of trades a grid cell must accumulate before its confidence recommendation reaches full weight.
+Max Grid Influence
+0.65
+Maximum fraction by which the regime grid can adjust the optimizer output. Caps the grid's authority to prevent it from overriding the optimizer entirely.
+Vol Ratio Ceiling
+2.5
+Maximum volatility ratio used when normalizing the volatility axis for grid bucketing. Values above this are clamped to the top bin.
+GROUP 11 — DECAY TRACES
+Enable Trace Buffer
+true
+Enables the short-term memory trace buffer that stores recent signal outcomes as decaying energy records for the optimizer.
+Buffer Depth
+30
+Maximum number of decay trace records kept in memory simultaneously.
+Fade Rate per Bar
+0.02
+Fraction by which each trace record's energy decays on each new bar. A record with energy below a minimum threshold is removed from the buffer.
+Merge Interval (bars)
+200
+Every this many bars, trace records with similar regime and volatility profiles are consolidated to reduce buffer fragmentation.
+Adverse Move Threshold
+0.8
+Maximum adverse excursion in ATR units above which a trace record is flagged as a tail event. Tail-flagged records have increased influence on the optimizer's stop distance parameter.
+Guard Tighten Cap
+0.02
+Maximum fractional amount by which the adaptive stop multiplier can be tightened in a single optimizer cycle in response to tail-flagged trace records.
+GROUP 12 — ALERTS
+Popup Alert on Signal
+true
+Sends a MetaTrader popup alert dialog when a new signal arrow appears on the live bar.
+Push Notification on Signal
+false
+Sends a push notification to the MetaTrader mobile app when a new signal fires. Requires push notifications to be configured in MetaTrader settings.
+Alert Once per Bar
+true
+Prevents repeated alerts when the indicator recalculates on the same bar due to new incoming ticks.
+GROUP 13 — DISPLAY
+Guard xATR
+1.00
+ATR multiplier used to compute the simulated stop-loss distance for dashboard PnL tracking and Risk Guard calculations.
+Target xATR
+2.00
+ATR multiplier used to compute the simulated take-profit distance for dashboard PnL tracking.
+Edge Buffer xATR
+0.20
+Additional ATR buffer added beyond the stop or target level in breakout mode to account for spread and slippage in simulated PnL.
+Sim Position USD
+1000.0
+Notional position size in USD used for all simulated PnL calculations in the dashboard and Risk Guard. Does not affect real trading.
+Show Info Dashboard
+true
+Enables the multi-column information table drawn on the chart showing trend state, win rates, Sharpe/Sortino ratios, confidence score, and Risk Guard status.
+Note:
+This indicator is provided for educational and analytical purposes. The machine learning subsystems adapt to historical price data and do not guarantee future performance. Always validate on a demo account before using in live trading. Simulated PnL figures shown on the dashboard are based on ATR-scaled assumptions and do not reflect actual broker execution conditions.
+File name
+Description
+ML_SuperTrend.mq5
+Full source code for the ML SuperTrend indicator (v10.02)

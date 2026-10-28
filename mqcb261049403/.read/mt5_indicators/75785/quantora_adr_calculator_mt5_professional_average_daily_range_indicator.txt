@@ -1,0 +1,4 @@
+Quantora ADR Calculator MT5 is an indicator that measures the average daily price range based on historical data. It does not open or manage trades and is intended for analysis.
+The tool calculates the Average Daily Range over a selected period and compares it with the current day’s movement. It shows how much of the expected range has been used and how much may remain.
+It also provides basic daily levels such as high, low, and projected range, along with a simple progress display to track daily volatility.
+Suitable for traders who want a quick view of market range and daily movement.

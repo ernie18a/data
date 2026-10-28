@@ -1,0 +1,20 @@
+Watchlist Chart Opener saves the time spent opening charts one by one. Run the script once and it opens a chart for every symbol in Market Watch, or for a list of symbols you type in, on the timeframe you choose. If you name a chart template, it is applied to every new chart, so all charts open with your usual indicators and colors.
+Symbols in the custom list are added to Market Watch automatically. Symbols that do not exist on your broker's server are skipped and reported in the Experts log. A text filter lets you open only matching symbols, for example only symbols containing USD, or only symbols with your broker's suffix.
+To avoid duplicates, the script can skip any symbol that already has a chart open on the same timeframe. A maximum chart count protects the terminal from opening too many charts at once when Market Watch contains many symbols. A summary message at the end shows how many charts were opened, skipped and failed.
+Input
+Description
+Symbols to open
+All Market Watch symbols, or the custom list below.
+Custom list
+Comma-separated symbols, for example EURUSD,GBPUSD,XAUUSD. Used only when the custom list is selected.
+Only symbols containing this text
+Opens only symbols whose names contain this text (not case-sensitive). Leave blank to open all.
+Timeframe
+Timeframe of the new charts. Select "current" to use the timeframe of the chart the script runs on.
+Template name
+Name of a saved chart template, for example "mytemplate". The .tpl extension is added automatically. Leave blank to open plain charts.
+Skip symbols already open on this timeframe
+Does not open a second chart when the same symbol and timeframe are already open.
+Maximum charts to open
+Upper limit on the number of charts opened in one run. Default 20.
+Templates are saved from any chart with right-click, Template, Save Template. The script uses the template name only, so the template must be in the terminal's standard templates folder.

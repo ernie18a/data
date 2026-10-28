@@ -1,0 +1,7 @@
+This is a simple indicator calculating most close to real average price per bar on timeframes higher than M1. It uses prices from corresponding M1 bars to get the "effective" (averaged) prices on the chart's bars. This estimation is more adequate compared to any standard price type (close, open, median, typical, weighted, etc). Yet it does not mean more smoothed values, and it's not intended for this.
+The effective prices give you new insights into price action analysis and important price levels.
+Parameters
+BarLimit - number of bars to calculate, default - 100; this limit is important because a higher timeframe may require too many M1 bars to process, which in turn may take too much time for syncing; also make sure your broker provides M1 history for entire period you request; for example, on round-the-clock market a single D1 bar needs 1440 M1 bars to load;
+BarPeriod - number of bars for smoothing on the host timeframe, default - 1, means that pure effective price per bar is shown;
+M1Price - price type on M1 used in calculations, default - close;
+Work timeframes: M5 and higher. Recommended timeframes: intraday.

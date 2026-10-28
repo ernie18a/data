@@ -1,0 +1,25 @@
+Swap Monitor Panel
+is a lightweight, fully customizable indicator that overlays a live swap rate dashboard directly on your MT5 chart. It scans every symbol in your MarketWatch window and presents long swap, short swap, estimated daily cost, and weekly cost side by side — all in one clean, readable panel.
+Key Features
+Live MarketWatch scanning
+— automatically reads all symbols currently in your MarketWatch; no manual configuration needed.
+Multi-mode swap calculation
+— correctly handles all MT5 swap modes: points, currency (symbol/deposit/margin), and interest-based (current/open price), so monetary cost estimates are as accurate as possible.
+Daily & Weekly cost columns
+— shows the estimated real monetary cost or gain per your chosen lot size for both long and short positions, updated every 5 seconds.
+Best swap highlighting
+— optionally highlights the symbol with the most favorable long or short swap in accent color, helping you quickly spot carry trade opportunities.
+Flexible sorting
+— sort the table by symbol name (A–Z), best long swap, best short swap, or best daily cost with a single input change.
+Minimize / Close controls
+— title bar buttons let you collapse the panel to just its header bar or remove it from the chart entirely without detaching the indicator.
+Fully themeable
+— every color (background, rows, positive/negative values, accent, title) is exposed as an input parameter so the panel fits any chart theme.
+Font & layout control
+— choose your preferred font, font size, panel X/Y position, and toggle the daily/weekly cost columns on or off to keep the panel as compact or detailed as you need.
+How It Works
+On load, the panel reads swap rates and contract specifications for each MarketWatch symbol using native SymbolInfo functions. It then converts raw swap values into monetary terms based on the symbol's swap mode, tick value, and your reference lot size. The panel refreshes automatically every 5 seconds via a timer and can also be manually refreshed by clicking anywhere on the panel body.
+Use Cases
+Identifying positive carry (swap-positive) opportunities across your watchlist
+Comparing rollover costs before holding positions overnight or over the weekend
+Monitoring weekly swap exposure for a given lot size across multiple instruments

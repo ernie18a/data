@@ -1,0 +1,23 @@
+Forex Trade Manager MT5 simplifies managing open orders in MetaTrader 5. If you open a new order, the manager automatically sets Stop Loss and Take Profit. When price will move, then the program could move Stop Loss to Break Even (stop loss = open price) or continuously moving Stop Loss (Trailing Stop) to protect your profits. Forex Trading Manager can control orders for only current symbols (where EA works) or for all opened orders (regardless symbol) and hide the Stop Loss and Take Profit from brokers. It’s a strategy for management of opened manual trades (opened on all symbols or only current chart’s symbol) by:
+- setting Stop Loss and/or Take Profit for the trades in pips
+- Trailing Stop function which trail SL by the price
+- Break Even which move SL to BE on chosen distance
+SL/TP can be managed by the broker (standard way) or in stealth mode – hidden from the broker.
+Parameters:
+“SLTP Params”
+Stop Loss – stop loss in pips for trades
+Take Profit – take profit in pips for trades
+“Break even”
+UseBreakEven (true/false) – allowing to use only break-even function for opened trades
+BEActivation – profit in pips when break even function is activated
+BELevel – additional distance from BE in pips when SL is placed by break even function
+“Trailing Stop”
+UseTrailingStop (true/false) – allowing to use only trailing stop function for opened trades
+TSStart – profit in pips when trailing stop function is activated
+TSStep – minimum difference in pips between new and current SL to allow to move SL by trailing stop function
+TSDistance – distance from current price in pips when SL is placed by trailing stop function
+“Behavior”
+StealthMode(true/false) – hide sl/tp levels from the broker and EA is closing trades on those levels programmatically
+OnlyCurrentPair(true/false) – allow management of trades only from current chart’s symbol (true) or from all pairs (false)
+Info:
+All parameters for trades and functions are settable in the parameters of the EA. The Forex Trade Manager also display on the chart an information about the current daily profit/loss in pips and account currency.

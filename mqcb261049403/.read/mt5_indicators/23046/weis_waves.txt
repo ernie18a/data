@@ -1,0 +1,5 @@
+This is a very simple but effective Volume Waves indicator for MT5.
+"Anyone who has watched intraday price movement knows it unfolds in a series of buying and selling waves..."
+Anyone who wants to experiment this kinf of analysis I suggest to search for Richard D. Wyckoff's works.
+Hope this indicator helps the community!
+Live Long and Prosper.

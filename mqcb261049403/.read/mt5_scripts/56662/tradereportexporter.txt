@@ -1,0 +1,46 @@
+Essential Functions:
+Transaction history export:
+The
+script
+collects data on all transactions for the last year for
+the
+current instrument
+.
+Support for cryptocurrencies and currencies:
+Automatically
+calculates the commission depending on the type of instrument (cryptocurrency or currency).
+Data formatting:
+All
+numbers are formatted for easy reading (replacing a full stop with a comma if necessary).
+Totals
+:
+Totals for commission, profit/loss and number of trades are added at
+the
+end of the file.
+How to use:
+Make sure the history of trades is loaded in the terminal.
+Install the script on the chart of the required instrument.
+Run the script.
+The script will create a CSV file in the MQL5/Files folder with the name in the format trades_symbol_date_time.csv .
+Open the file in Excel or other editor to analyse it.
+Example file:
+Benefits:
+Ease of use:
+Run the
+script and it will do everything for you.
+Flexibility:
+Suitable
+for any instrument (cryptocurrencies, currencies, stocks, etc.).
+Transparency:
+All
+transaction data is available in one file.
+Focus on the current instrument:
+The script
+uploads data only for the instrument it is installed on.
+Tips:
+Make sure that the history of trades is loaded in the terminal before running the script.
+Use Excel or Google Sheets to analyse the data.
+Good luck in using it, I hope this tool will be useful for you!
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/56662

@@ -1,0 +1,18 @@
+Camarilla Equation system was implemented by Nick Stott at the end of 1980s.
+Camarilla Equation consists of 8 or 10 levels (in later modifications) calculated by using Open, Close, High and Low prices of a previous trading session and a set of instructions on the application of these levels in trading.
+The levels are divided in two groups. The first one is built downwards from the yesterday's Close price, indicated by L symbol (for "Low") and numbered from 1 to 5. Similarly, the second group of levels is built upwards from the yesterday's Close price, indicated by H symbol (for "High") and also numbered from 1 to 5.
+It should be noted that levels 1 and 2 have comparatively small value and are often not considered. As for L5 and H5 levels, they should always be considered, though they are ignored in some sources.
+Camarilla Equation levels are calculated the following way:
+H1 = close + (high-low)*1.1 /12
+H2 = close + (high-low)*1.1 /6
+H3 = close + (high-low)*1.1 /4
+H4 = close + (high-low)*1.1 /2
+H5 = (high/low)*close
+L1 = close - (high-low)*1.1 /12
+L2 = close - (high-low)*1.1 /6
+L3 = close - (high-low)*1.1 /4
+L4 = close - (high-low)*1.1 /2
+L5 = close - (H5 - close)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/469

@@ -1,0 +1,6 @@
+Author:
+Zathar
+One more version of indicator ChandelierStops. Works together with indicator
+ChandelierStops_v1
+.
+Indicator MTF_ChandelierStops_60min

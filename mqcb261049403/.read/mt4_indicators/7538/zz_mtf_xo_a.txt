@@ -1,0 +1,4 @@
+Author: not specified
+Indicator ZZ MTF XO A. Custom indicator
+XO
+.

@@ -1,0 +1,37 @@
+MACD Institutional: High-Volume Activity Filter
+MACD Institutional
+is an advanced indicator designed for traders looking to trade in line with the ‘smart money’. Unlike the standard MACD, which processes every tick or candle close indiscriminately, this indicator reconstructs the price structure using a dynamic volume filter before calculating its moving averages.
+The Concept: Statistical Relevance Filter
+The indicator operates on the premise that not all price movements carry the same weight. In illiquid markets, the price can move erratically without any real underlying support.
+MACD Institutional
+uses an
+Analysis Buffer (InpBufferSize)
+that is only updated when the volume of a current tick exceeds its moving average volume (volume SMA). If the volume is below average, the indicator ignores that data, maintaining the institutional “memory”. The result is a MACD that reacts to the true buying and selling pressure from major market participants.
+Key Features
+Dynamic Volume Filtering:
+Only candles with above-average volume (InpMAVolumePeriod) are used to calculate the EMAs.
+Reduction of False Signals:
+By eliminating noise from low activity, the signal and MACD lines tend to show clearer trends and crossovers with a higher probability of success.
+Custom EMA Calculation:
+Includes a proprietary implementation for calculating the Exponential Moving Average based exclusively on the filtered data window.
+Fully Adjustable Parameters:
+Full control over the volume period, the analysis buffer size and the classic MACD periods.
+Input Parameters
+Volume Averaging Period:
+Window for averaging volume and determining what constitutes ‘relevant activity’.
+N values in the array (Buffer Size):
+Size of the analysis window for reconstructing the filtered price.
+MACD Fast/Slow EMA:
+Traditional periods for calculating the difference.
+MACD Signal Period:
+The SMA period acting as the trigger line.
+Technical Details
+Author:
+Fernando Javier De Mendonça
+Platform:
+MetaTrader 5 (MQL5)
+Type:
+Separate Window Indicator
+Translated from Spanish by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/es/code/71832

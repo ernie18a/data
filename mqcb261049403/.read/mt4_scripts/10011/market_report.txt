@@ -1,0 +1,82 @@
+Given a list of symbols, this script creates a HTML file in experts/files which looks like this
+Market Overview
+Symbol
+Price
+MA 13
+MA 50
+Cross 50/200
+SAR
+GOLD
+1392.38213267
+rising / below price
+rising / below price
+76 days ago (2009.06.14 1452 pips)
+long
+SILVER
+28.60030777
+rising / below price
+rising / below price
+79 days ago (2009.05.24 242 pips)
+long
+#GXZ0
+6892.94949597
+rising / below price
+rising / below price
+42 days ago (2010.02.07 22393 pips)
+long
+#AA
+13.82603911
+rising / below price
+rising / below price
+56 days ago (2009.11.01 306 pips)
+long
+#AIG
+42.65638877
+rising / below price
+rising / below price
+43 days ago (2010.01.31 50 pips)
+long
+#AXP
+44.37431078
+rising / below price
+rising / below price
+21 days ago (2010.07.04 135 pips)
+long
+EURUSD
+1.32254000
+falling / above price
+falling / above price
+9 days ago (2010.09.26 -3 pips)
+long
+EURCHF
+1.31187540
+falling / above price
+falling / above price
+8 days ago (2010.10.03 -112 pips)
+short
+EURJPY
+110.37112355
+falling / above price
+falling / above price
+9 days ago (2010.09.26 -13916 pips)
+short
+You can set up the Timeframe and the Moving Average Periods
+The script reads a file called "symbols.txt" from experts/files. It has the following format
+*EUR
+*USD
+*CHF
+*JPY
+*CAD
+*AUD
+*NZD
+*GBP
+*MXN
+*HKD
+*NOK
+*SEK
+*ZAR
+GOLD
+SILVER
+All entries with "*" are currencies, the script will create all combinations for example EURUSD and USDEUR. If it gets a price for one of the constructed pairs it considers this as existent.
+Feel free to include your own indicator into the report.
+Please support the author in order for us to continue with free code (see comments in the mq4).

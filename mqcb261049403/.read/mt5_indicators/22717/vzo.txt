@@ -1,0 +1,31 @@
+Oscillating indicator Volume Zone Oscillator (VZO) indicates volumes
+as related to the price change direction at each bar.
+It has five adjustable parameters:
+Period
+- calculation period
+Extreme overbought
+- extreme overbought level
+Overbought
+- overbought level
+Oversold
+- oversold level
+Extreme oversold
+- extreme oversold level
+Calculations:
+VZO = (AvgVP / AvgVol) * 100.0
+where:
+AvgVol = EMA(Volume, Period)
+AvgVP = EMA(VP, Period)
+If Close > PrevClose
+VP = Volume
+otherwise
+VP = -Volume
+Volume - tick volume
+The oscillator value of 40 or higher indicates the bullish accumulation.
+-40 and below are bearish accumulations.
++/- 20 around zero indicate consolidation or approximity to a support/resistance level.
+Where VZO is close to +/- 60, we should expect the end of the bullish/bearish movement.
+If this movement has been opposite to the long-term trend direction, the probability of a reversal is high.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22717

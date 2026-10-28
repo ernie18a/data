@@ -1,0 +1,2 @@
+Rates Version of a script https://www.mql5.com/en/code/30791
+Compresses OHLC data

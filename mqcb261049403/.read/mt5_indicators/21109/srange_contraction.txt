@@ -1,0 +1,23 @@
+A signal indicator of daily ranges. It is based on indicator
+Range Contraction
+.
+It displays in a separate window the ratio between today's and yesterday's ranges. It marks with signal pointers the narrow range points (under the specified value).
+"If yesterday's range was narrower than the previous day's one, it may be an explosive movement today." (Toby Crabel)
+There are three adjustable parameters:
+Threshold
+- yesterday's range threshold;
+Show Small Range
+- whether to show narrow range signals or not (Yes/No);
+Calculation period mode
+- calculation period mode
+Current
+- calculations on the current bar;
+Previous
+- calculations on the previous bar.
+Calculation:
+RC = 100.0 * (High[Period] - Low[Period]) / (High[Period+1] - Low[Period+1])
+if RC < Threshold:
+Breakout = RC
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21109

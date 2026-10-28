@@ -1,0 +1,35 @@
+Is it possible to take just 10 pips a day? Very old question. Very interesting for me, as a beginer. As I have seen, it is so difficult to take even 10 pips profit in live trading.
+I tried to make little investigation to get my 10 pips a day. I ended with a once a day trading system, that just put one position a day, at the begining of the day. First in the trend sense, then opposite, then with stop orders with particular SL and TP and so on...
+I finished with EA which makes one position a day against a "trend" at certain hour. What is a "trend" for me in this EA? Just price difference within last N-hours. After simple optimalization I finished with interesting curve, as it usually happens.
+It showed me 6/1 winning trades and 26/2 max consecutive wins/loss. Because of this I used some kind of Martingale to make an intelligent MM and et the end curve was even prettier :-)
+This EA is profitable within last 7 years, if MAXIMUM risk MM is used, not a fix lot, but optimised just for last 2 years, so older results are not so pretty.
+Main characteristics:
+Currency: EURUSD
+Timeframe: chosen by EA automatically (you can setup whatever)
+Open position at: 07:00 CET
+Max. age of openned position: 75600sec = 21 hour
+Amount of hours to check price difference to see a "trend": 30 hour
+Graph for 2008
+Report for 2008
+Graph for 2003 - 2008
+Report for 2003 - 2008
+You can change/optimise these variable to see different results:
+FIXLOT if 0, uses maximumrisk variable to count lots, else uses only this while trading
+MINLOTS minimum lot
+MAXLOTS maximum lot
+MAXIMUMRISK maximum risk, if FIXLOT = 0 ... maybe better to use FIXLOT = 0 and MAXIMUMRISK = 0.05 (0.02)
+SLIPPAGE max slippage alowed
+TRADINGHOUR time when position should be oppened
+HOURSTOCHECKTREND amount of hours to check price difference to see a "trend"
+ORDERMAXAGE max age of position - closes older positions
+Martingale element used in EA - after loss positions, next order lot is multiplied
+FIRSTMULTIPLICATOR multiply lots when position -1 was loss
+SECONDMULTIPLICATOR multiply lots when position -2 was loss
+THIRDMULTIPLICATOR multiply lots when position -3 was loss
+FOURTHMULTIPLICATOR multiply lots when position -4 was loss
+FIFTHMULTIPLICATOR multiply lots when position -5 was loss
+STOPLOSS
+TRAILINGSTOP
+TAKEPROFIT
+Maybe a question for experienced traders at the end:
+What coul be a logical reason to trade like this. Is it only a overoptimised past without any future success chance or has this kind of trading any logical base?

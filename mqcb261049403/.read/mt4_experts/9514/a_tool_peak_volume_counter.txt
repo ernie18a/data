@@ -1,0 +1,17 @@
+A Tool: Peak Volume Counter
+Modification: 70001
+Edition Date: 2009.06.03
+Copyright (C) 2009, MetaQuotes Software Corp.
+https://www.metaquotes.net
+Copyright (C) 2009, Airat Safin
+https://www.mql5.com/en/users/ais
+Free Open Source Software
+AS IS
+A Tool: Peak Volume Counter
+1. A Tool: Peak Volume Counter, or simply AIS7PVC, is an auxiliary program for
+AIS5 Trade Machine
+. 
+2. Main aim of AIS7PVC is to identify and display on the chart the large packets of incoming ticks.
+3. To adjust the program set proper value of threshold "aci.Threshold" in line of code 16 and check lines 88-94. 
+4. Large packets of incoming ticks may reflect large amounts of current transactions and may be used for entry point. 
+5. Please always remember that complete certainty is always missing.

@@ -1,0 +1,63 @@
+MetaTrader 5 provides
+MQL Wizard for generating expert advisers
+based on trading, trailing and money management modules from standard library. The library affords a limited number of predefined signals untilizing some of the
+built-in indicators
+. This project allows you to generate EAs on arbitrary signals powered not only by standard, but also custom indicators and expressions.
+Disclaimer. This is a Proof Of Concept (POC) library. It may not provide all the means you'd like to use for trading signal generation. Please, use the source code to extend the library as you think is appropriate.
+New signal module is SignalUniversal.mqh (should be placed in MQL5/Include/Expert/Signal).
+New trailing module is TrailingUniversal.mqh (should be placed in MQL5/Include/Expert/Trailing).
+The modules become available in MetaEditor's MQL Wizard only after editor restart.
+Indicators and signals setup is based on the article:
+- [1]
+Naive Bayes classifier for signals of a set of indicators
+.
+In this article you can find supported list of indicators, how custom indicators can be specified, how parameters are passed, how signals are constructed, and other stuff, including optimization support. The core is the header file IndicatR.mqh (which is located in MQL5/Include/IndStats/ and is an improved version of original IndicatN.mqh).
+Custom indicators with maximum 20 parameters are supported. The core allows you to define 6 explicit indicators in inputs, and 8 signals in inputs, with optional 2 implicit indicators in each signal. Explicit indicators are defined in __INDICATOR_1 .. __INDICATOR_6 groups, which then can be referenced from signals by numerical index (1..6) in the corresponding signal's IndicatorX/Y inputs. Implicit indicators are specified in IndicatorX/Y inputs as strings of special format
+indicatorName@buffer(param1,param2,...)[bar]
+.
+The universal signals are equivalent to "so called"
+models/patterns
+provided by the module. All modules of the standard library work on the same principle.
+SignalUniversal.mqh supports the following signals of IndicatR.mqh: buy, sell, buyExit, sellExit (can be combined for reversion).
+TrailingUniversal.mqh supports the following signals of IndicatR.mqh: ModifySL, ModifyTP.
+Stop and limit orders are not currently supported by IndicatR.mqh.
+In addition to original SignalCondition described in the article (such as NotEmptyIndicatorX, IndicatorXcrossesIndicatorY, IndicatorXcrossesLevelX, etc.), new option ExpressionByIndicatorX is introduced. It allows you to calculate signal value by mathematical expression. When ExpressionByIndicatorX is enabled, expression should be given in the first IndicatorX input of required signal.
+Expressions are processed by parsers described in the articles:
+- [2]
+Calculating mathematical expressions (Part 1). Recursive descent parsers
+(v.1.0)
+- [3]
+Calculating mathematical expressions (Part 2). Pratt and shunting yard parsers
+(v.1.0)
+- [4]
+Parallel Particle Swarm Optimization [RU]
+(v.1.1)
+You don't need to know how the parsers work, but the articles provide useful information about supported operators, functions, and principles of operation. Extended version of the parsers (v.1.2) is included here.
+New functors are added in version 1.2:
+'now' built-in function (returning MQL's TimeCurrent) along with 25 math functions;
+timeseries: TIME, OPEN, HIGH, LOW, CLOSE, VOLUME, REALVOLUME, SPREAD; for example OPEN(1) returns open price of the previous bar;
+basic symbol properties: ASK, BID, LAST, LASTVOLUME, POINT; for example LAST() returns last price;
+direct access to global variables by their names;
+explicit indicator values can be accessed from expressions as variables Cn, Pn (where C means current bar, P means previous bar, n is the number of indicator; please, note, that explicit indicator settings include buffer number and bar number to read);
+in addition, for explicit indicators arbitrary buffers for any bar can be read by the function INDn(bar, buffer); implicit indicators can be accessed by their names (indicatorName(bar, buffer));
+To generate EA with new universal signals choose
+File -> New -> Expert Adviser (generate)
+in the metaeditor. On the 2-nd step after pressing Add button, in the dialog "Parameters of Signal Module" you should select "Universal signals from arbitrary indicators".
+This module provides input parameters with Pattern_N strength for each of 8 signals. Actual parameters of signals and underlying indicators should be specified in inputs exposed from IndicatR.mqh, according to the article [1]. On the 3-d step of the wizard you may choose "Trailing Stop based on Universal signals" (no inputs here, again all settings made through inputs exposed from IndicatR.mqh).
+After the creation of EA you should get a source code similar to UniversalSignalDemo.mq5 which is attached here.
+Here is an example of the demo EA setup. It uses the custom indicator
+SilverTrend_Signal
+. This is a signal indicator which places bullets on the chart in buy and sell conditions. The 0-th buffer holds sell signals, and the 1-st buffer holds buy signals. Normally, a signal indicator should use EMPTY_VALUE value for all bars without signals. For such proper indicators the library provides special condition NotEmptyIndicatorX (it checks values against EMPTY_VALUE and returns true for any other number). Yet SilverTrend_Signal uses 0 for empty values. To address this specificity we can use different approaches. First, there exists IndicatorXrelatesToLevelX condition, which can be used to compare indicator values with 0 (level by default). Second, we can use expressions with the built-in condition ExpressionByIndicatorX. For the 1-st indicator, the value from required buffer and bar number is available as C1, for the 2-nd indicator - as C2, and so on. Below you can see the setup with "C1!=0" and "C2!=0" for sells and buys.
+Buy and sell signals by the custom indicator SilverTrend_Signal with expressions
+The indicator has 2 parameters (RISK and NumberofAlerts) which are ommited in the setup, hence the default values 3 and 2 will be used. If we need to give specific parameters, they should be filled in the Parameters input, as a comma separated list, for example, "5,1". Signal names are arbitrary strings which will be shown in logs and alerts when corresponding conditions are met.
+Instead of variables Cn, one can read explicit indicator values via INDn function. So the same setup can be altered in the following way.
+Buy and sell signals using SilverTrend_Signal by another expressions
+The same indicator can be set implicitly, directly in the input IndicatorX of corresponding signal, for example:
+SilverTrend_Signal@0(3,2)[1]
+for sell (buffer 0, bar 1). This way there is no need to use explicit indicator groups.
+We can use indicators for universal trailing.
+Universal trailing by MA (just for the purpose of demonstration)
+Finally, this is how symbol properties can be accessed from expressions.
+Buy and sell signals by gap of 10 spreads
+Test trading by the custom signals is presented in the following screenshot.
+Unfortunately, all the inputs of the library go in front of work parameters of EA by default, because the library is included before EA inputs. You may move all includes after the inputs in the generated source code.

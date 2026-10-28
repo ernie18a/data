@@ -1,0 +1,2 @@
+Author: cja
+MACD_4in1_v2 indicator. Four in one.

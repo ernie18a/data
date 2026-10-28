@@ -1,0 +1,25 @@
+Real author:
+Andrey Voytenko
+The AFL_WinnerV2 indicator identifies a trend change by established turnover areas at -50/+50 levels. In this version, the following input parameters:
+input
+int
+HighLevel=+4
+0
+;
+// overbought level
+input
+int
+LowLevel=-4
+0
+;
+// oversold level
+provide the ability to highlight the indicator entries into the overbought and oversold areas with color. Pale histogram tones are simply a rise or fall, bright tones show a rise or fall and an entry or exit.
+The indicator uses the classes of SmoothAlgorithms.mqh library (copy it to
+<terminal_data_folder>
+\MQL5\Include). The use of the classes was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Fig.1. The AFL_WinnerV2 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16145

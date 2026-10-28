@@ -1,0 +1,44 @@
+Author of the idea
+—
+slacktrader
+,
+author of the mq5 code
+—
+barabashkakvn
+.
+10 pips per day opposite to the "yesterday's trend".
+The author of the idea describes the Expert Advisor as follows.
+Is it possible to make 10 pips a day? The question is not new, but it is very interesting for me being a beginner. As I have seen, it is pretty hard to earn 10 pips of profit during live trading.
+I tried to do some research in order to make my 10 pips per day. It all resulted in the "once a day" trading system. I open only one position a day, at the beginning of the day. First, a trend following position, then against it, then with stop orders, with special SL and the TP, and so on ...
+Finally I chose an Expert Advisor that opens one position a day against the "trend" at a certain hour. What does trend mean within this Expert Advisor? It's just the price difference in the range of N bars. As it usually happens, after a simple optimization I received an interesting curve.
+She showed 6/1 winning trades and 26/2 max consecutive winning/losing trades. I added a martingale to have a reasonable money management system and to get an even more beautiful curve :-)
+The Expert Advisor showed profitable results over the last 7 years. If we use the money management with the minimum risk, not the fixed lot, but optimized over the last 2 years, older results will be worse.
+Main features:
+Currency pair: EURUSD
+Timeframe: selected automatically (you can set any)
+Position opening: 07:00 CET (Central European Time, + 1 GMT)
+Maximum position lifetime: 75600 sec. = 21 hours
+The number of hours to check the price difference in order to define the "Trend": 30 hours
+You can change/optimize these variables to get different results:
+FIXLOT: If 0, the maximumrisk variable will be used in order to calculate lot, otherwise the specified lot value will be used for trading;
+MINLOTS: minimum lot;
+MAXLOTS: maximum lot;
+MAXIMUMRISK: maximum risk if FIXLOT = 0 . In this case, it is probably better to use FIXLOT = 0 and MAXIMUMRISK = 0.05 (0.02);
+SLIPPAGE: maximum allowable slippage.
+TRADINGHOUR: the tome at which positions should be opened;
+HOURSTOCHECKTREND: the number of hours to check the price difference in order to determine the "Trend";
+ORDERMAXAGE: maximum position lifetime — older positions will be closed.
+The EA contains an element of martingale: in case of a losing position the lot of the next position will be multiplied.
+FIRSTMULTIPLICATOR: multiply lots if there was one losing position;
+SECONDMULTIPLICATOR: multiply lots if there were two losing positions;
+THIRDMULTIPLICATOR: multiply lots if there were three losing positions;
+FOURTHMULTIPLICATOR: multiply lots if there were four losing positions;
+FIFTHMULTIPLICATOR: multiply lots if there were five losing positions.
+STOPLOSS
+TRAILINGSTOP
+TAKEPROFIT
+Here is a question to experienced traders:
+What could be a logical reason to trade like this? Is this only an over-optimized history without any chance of success in the future, or does this trading strategy have some logical basis?
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17474

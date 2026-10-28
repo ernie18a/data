@@ -1,0 +1,48 @@
+The script prints info about a closed position by its position ticket or identifier, on a retail hedging account.
+It supports only
+retail hedging
+accounts (Forex).
+Following info are printed to the '
+Experts
+' log:
+Position Open Time
+Position Symbol
+Position Ticket:
+this is the position ID
+Position Type
+Position Volume
+Position Open Price
+Position S/L,
+updated to the last stoploss price for the position
+Position T/P,
+updated to the last takeprofit price for the position
+Position Close Time
+Position Close Price
+Position Commission
+Position Swap
+Position Profit
+Position Magic Number
+Position
+Open Reason
+,
+this includes reason of opening the position (client, mobile, web, expert)
+Position
+Close Reason
+,
+this includes reason of closing the position (client, mobile, web, expert, sl, tp, so, ...)
+Position
+Open Comment
+,
+this includes comment of the deal in for position
+Position
+Close Comment
+,
+this includes comments of all the deals out for position
+Position
+Deal In Ticket
+,
+this includes ticket of the deal in for position
+Position
+Deal Out Ticket(s)
+,
+this includes tickets of all the deals out for position

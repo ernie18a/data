@@ -1,0 +1,24 @@
+Every trader knows that some hours are better than others. This script answers that question with numbers from your own broker, instead of a general rule of thumb.
+For each hour of the day it measures two things over the last N days:
+Movement
+- the average distance price travels, in points per hour, taken from the M1 bar ranges.
+Spread
+- the average spread in that same hour, taken from the spread field of the M1 bars.
+The number that matters is the ratio between them: how many spreads of movement one hour actually gives you. An hour with plenty of movement and a wide spread can be worse than a quiet hour with a tight one.
+The script is built around gold, but it takes a list of symbols and prints them side by side, so you can see where gold stands against the majors.
+Inputs:
+InpSymbols
+- symbols separated by commas, empty means the chart symbol. Example: XAUUSD,EURUSD,GBPUSD,USDJPY
+InpDays
+- how many days back to measure, 90 by default.
+InpHourShift
+- shifts server hours to your own time zone.
+InpWriteCSV
+- writes one CSV per symbol into the Files folder.
+What it found on my broker over 90 days - your numbers will differ, which is exactly why the script exists:
+XAUUSD spread is flat all day, 18.1 to 19.8 points. Best hour 16:00 with 1155.7 spreads of movement, worst 23:00 with 356.5 - only a 3.2 times difference.
+GBPUSD spread jumps from 13.0 to 99.9 points at 00:00. The ratio falls from 119.4 at 17:00 to 8.2 - a 14.6 times difference.
+USDJPY goes from 18.4 to 74.7 in that same hour, EURUSD from 12.0 to 53.3.
+XAUUSD has no 00:00 bar at all on this broker - the contract is closed that hour.
+So on this broker gold is the calm one on spread, while the majors have a midnight trap hour that costs several times more than the rest of the day. That is not something you can read off a price chart.
+The script only reads history. It places no orders and changes nothing. Run it on any chart, the timeframe does not matter - it always reads M1 data.

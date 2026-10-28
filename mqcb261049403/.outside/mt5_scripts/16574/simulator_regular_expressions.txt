@@ -1,0 +1,18 @@
+The script allows you to try regular expressions.
+Materials on regular expressions:
+The article
+"Regular expressions for traders"
+The library
+RegularExpressions in MQL5 for working with regular expressions
+Before starting the work, please copy the all_functions.mq5 text file to the "sandbox": <data folder>\MQL5\Files\. The all_functions.mq5 text file contains all functions for processing events.
+The input parameters contain the (int)(.*?)(\(\)) regular expression
+(int) — search for the "int" word occurrence
+(.*?) — any symbol except for a newline character or another separator of a Unicode string, found zero or more times, not greedy
+(\(\)) — search for the "()" word occurrence
+In other words, we should find the following string:
+int
+OnInit
+()
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16574

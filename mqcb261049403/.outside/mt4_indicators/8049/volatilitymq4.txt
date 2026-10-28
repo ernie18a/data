@@ -1,0 +1,29 @@
+Description:
+A simple indicator that calculates the volatility of a certain currency pair (or of another security available in the terminal). Volatility is calculated in points for High and Low prices (not for Open or Close ones).
+The
+current value
+of the
+volatility
+level is highlighted in the upper left corner of the indicator window. You can find the
+historical value of the level
+by putting your cursor over the volatility chart.
+The indicator implies changing:
+1) averaging period. There are 5 periods by default, i.e., the symbol volatility is averaged for 5 periods;
+2) important levels. For example, it is sometimes useful to set the pair volatility level, below which it is not recommended to enter the market (flat market is meant). The default levels for volatile symbols like
+GBPJPY are
+50, 100, 200, 300, and 400 points;
+3) indicator drawing lines and colors.
+Explanations and Recommendations:
+Volatility is calculated using a simple average as a sum of High prices within the averaging period minus the sum of Low prices for the same period, expressed in points:
+(IMA (High,5) - IMA (Low,5)) * 100,
+where High and Low are the highest and the lowest prices for the period, respectively,
+5 is the averaging period (given in the above formula since it has been set by default, but can be varied),
+100 is the transfer of the obtained value into points. This value depends on the amount of decimal places in the symbol considered: 100 - for prices like 0.00 (all pairs quoted with JPY), 10000 - for prices like 0.0000 (most currency pairs).
+On this basis, the number in the indicator name indicates the amount of decimal places, which determines the applying of the indicator to one symbol or to another.
+However, it is sometimes necessary to grade symbols by their volatility. For example, you may need to select the most or the least volatile symbol at a moment to enhance the operating efficiency of a trading system. In this case, you can use Volatility 3 pairs.mq4:
+In this case, the indicator is adjusted for determining the volatility of three pairs: GBPUSD, USDJPY, GBPJPY. So, whatever chart you attach it to, it will calculate volatility only for these three pairs. However, you can easily change this by opening and editing the program in MetaEditor:
+Don't forget to make the corresponding changes in the upper part of the code:
+Besides, you can also increase the amount of symbols to calculate volatility for. For this, you should add the amount of buffers (not exceeding 8, though) and make the corresponding changes in the code.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8049

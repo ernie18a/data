@@ -1,0 +1,7 @@
+It's an expert to use prices action and trade level to open each order.
+Expert can to trade up 12 pairs, uses the corresponding default setting for each pair.
+Default settings are good for
+EURUSD
+pair and
+H1
+time frame.

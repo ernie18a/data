@@ -1,0 +1,3 @@
+This indicator combines two adaptive Laguerre values into a "trend" display.
+It is using the newest version of adaptive Laguerre filter (with the new type of low lag smoothing) in calculation.
+Trend (and alerts and colors) is depending on the relative position of the main Laguerre value and its signal value. If you chose the signal value to be <= 1, then it is behaving the same as if it was a simple adaptive Laguerre filter, so, in a way, this indicator is actually a two-in-one indicator. As usual, it is already a multi time frame version.

@@ -1,0 +1,14 @@
+Description:
+More information at my blog.
+Allows You to have a look at 8 currency pairs and their 5 indicators with this, 1 indicator. It is recommended to use it on
+higher
+time frames, such as 4H, Daily, Weekly. For example, if trading on 15MIN TF, put this on Daily chart, and trade strongest and weakest currency pairs, depending on trend direction.
+Arrow descriptions:
+LIME
+arrow - extreme Bullish trend.
+GREEN
+arrow - simple Bullish trend.
+FIREBRICK
+arrow - simple Bearish trend.
+RED
+arrow - extreme Bearish trend.

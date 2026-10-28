@@ -1,0 +1,8 @@
+Price Zone Oscillator indicator is based on the "Entering the Price Zone" article by Walid Khalil and David Steckler.
+In our last article, we introduced a new oscillator that provides better guidance to buying and selling levels for securities: the Volume Zone Oscillator (VZO). This time, we introduce a similar, complementary indicator: the Price Zone Oscillator (PZO).
+The formula for PZO depends on only one condition: if today's closing price is higher than yesterday's closing price, then the closing price will have a positive value (bullish); otherwise it will have a negative value (bearish).
+Price Zone Oscillator = 100 x (CP/TC).
+where:
+CP (Closing position) = X-days EMA (± close).
+and
+TC (Total close) = X-days EMA (close).

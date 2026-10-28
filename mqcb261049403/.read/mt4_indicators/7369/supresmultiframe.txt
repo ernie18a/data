@@ -1,0 +1,6 @@
+Author
+: RD
+The indicator draws levels interestingly, especially on the smaller timeframes.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7369

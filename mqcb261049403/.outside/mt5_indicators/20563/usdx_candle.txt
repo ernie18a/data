@@ -1,0 +1,23 @@
+Indicator USDX shows the
+USD index
+in form of Japanese candlesticks.
+Calculations:
+USDX = 50.14348112 × EURUSD
+-0.576
+× USDJPY
+0.136
+× GBPUSD
+-0.119
+× USDCAD
+0.091
+× USDSEK
+0.042
+× USDCHF
+0.036
+The indicator has one input parameter:
+Reverse
+- reverse of the calculated index chart.
+Please note that for the indicator to work, the following currency pairs must be available on the server: EURUSD, USDJPY, GBPUSD, USDCAD, USDSEK, and USDCHF. If any of them is unavailable, the indicator will be calculated incorrectly.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20563

@@ -1,0 +1,15 @@
+Overview:
+BreakRevertPro combines statistical analysis with robust validation features, implementing both breakout and mean reversion strategies with built-in testing safeguards.
+Key Features:
+Statistical trade identification using Weibull, Poisson, and Exponential distributions
+Validation-optimized design with automatic safety trade mechanism
+Smart position sizing with special handling for precious metals
+Multi-timeframe analysis (M1, M15, H1) for comprehensive market assessment
+Dynamic stop loss and take profit validation
+Automatic detection of validation environments
+Technical Highlights:
+Integrated validator class ensuring broker compliance
+Conservative risk management with multiple margin safety checks
+Adaptive execution based on market conditions
+Persistent data storage for continuous strategy refinement
+Designed for reliable performance in both live trading and validation testing environments.

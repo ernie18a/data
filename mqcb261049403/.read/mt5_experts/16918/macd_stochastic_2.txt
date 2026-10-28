@@ -1,0 +1,40 @@
+Idea by
+:
+Scriptor
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+An Expert Advisor based on two oscillators: iMACD (with adjustable timeframe) and iStochastic taken on the current timeframe. The main idea is that the MACD timeframe must be higher than the current one in the chart.
+Stop loss and take profit are set individually for BUY and SELL positions. Trailin is the same for all position types.
+Inputs
+Lots
+- position volume (constant, to be set manually)
+Stop Loss BUY
+(in pips) - Stop Loss for BUY positions
+Stop Loss SELL
+(in pips) - Stop Loss for SELL positions
+Take Profit BUY
+(in pips) - Take Profit for BUY positions
+Take Profit SELL
+(in pips) - Take Profit for SELL positions
+Trailing Stop BUY and SELL
+(in pips) - trailing (a single one for BUY and SELL)
+Trailing Step BUY and SELL
+(in pips) - trailing step
+//--- Indicators inputs:
+MACD: period
+MACD: period for Fast average calculation
+MACD: period for Slow average calculation
+MACD: period for their difference averaging
+MACD: type of price or handle
+Stochastic: K-period (number of bars for calculations)
+Stochastic: D-period (period of first smoothing)
+Stochastic: final smoothing
+Stochastic: type of smoothing
+Stochastic: stochastic calculation method
+Inputs must be optimized for each symbol and timeframe. Exemplary optimization range for AUDUSD,M15:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16918

@@ -1,0 +1,6 @@
+Description of the adviser
+Development of the first version
+DeMarker Pending
+.
+Version two added the parameters 'Maximum number of positions' and 'Minimum step of positions'. Both parameters (or one of the two) can be disabled by setting the parameter to '0'.
+Pic.1. DeMarker Pending 2

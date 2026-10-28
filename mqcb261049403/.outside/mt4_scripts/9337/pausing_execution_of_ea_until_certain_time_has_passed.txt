@@ -1,0 +1,4 @@
+Author:
+Desmond Wright aka "Buju"
+This code will get the current time, wait until a certain amount of Seconds has passed and then continue processing.
+NOTE: the first run will produce an error as the stored Time will be reinitialized, after that it will work correctly.

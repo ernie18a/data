@@ -1,0 +1,34 @@
+# Try Me I'm New
+
+- url: https://www.tradingview.com/script/hVtpF7mn-Try-Me-I-m-New/
+- type: strategy
+- pine_id: PUB;USE1rpZEPTqXJ98b2JcvbUTmNNHEja8y
+- version: 1.0
+
+## Description
+
+This script can be used on the Forex Majors. When you apply it to the chart open the properties box and click the 'recalculate after update' box. It open only long positions when the conditions are met.
+This is my very first attempt so dont crit me too much.
+
+## Source Code
+
+````pine
+//@version=3
+strategy("Try Me I'm New", shorttitle="TMIN", overlay=true, max_bars_back=150)
+longCondition1 = open<close and open >= open[1] and volume>=1000
+//longCondition2 = high>high[1] and high[1]>high[2] and volume>volume[1] and volume[1]>volume[2]
+if (longCondition1)
+    strategy.order("Long Id", true, 1, when = longCondition1) // buy by market if current open great then previous high
+else
+    strategy.close_all(when = close<close[1])
+    
+//shortCondition = low<low[1] and low[1]<low[2]and volume>volume[1] and volume[1]>volume[2]
+//if (shortCondition)
+    //strategy.entry("Short Id", strategy.short)
+    //strategy.order("sell", false, 100, when = shortCondition) // sell by market if current open less then previous low
+//else
+    //strategy.exit("sell", when=close>close[2])
+//plot(strategy.position_size)    
+//poscndls=open<close
+//plotshape(poscndls, style=shape.diamond)
+````

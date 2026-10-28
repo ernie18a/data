@@ -1,0 +1,8 @@
+Rewrites JForex csv data without the weekend candles and the seconds.
+If you export OHLC data from JForex platform, you will see it is not ready to import into MetaTrader 4 - the first row is the name of the columns, and the data contains weekend candles (open=high=low=close, and volume=0). This script makes the data ready to import into the History Center of MetaTrader 4.
+Instructions:
+Copy the data file into MetaTrader/experts/files folder,
+Set input and output file names,
+Start this script on any chart and timeframe,
+Wait for getting "Done" message on Terminal/Experts tab,
+Now the output file is ready to import into MetaTrader History Center.

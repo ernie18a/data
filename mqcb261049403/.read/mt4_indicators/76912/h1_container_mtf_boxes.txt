@@ -1,0 +1,12 @@
+H1 container with nested M30, M15, M5 and M1 boxes on an EURUSD M5 chart.
+H1 Container MTF Boxes is a visual MetaTrader 4 indicator for mapping the structure of one H1 candle across lower timeframes.
+The indicator draws an H1 container box and optional nested boxes for M30, M15, M5 and M1 candles inside that hour. The H1 range can show 25%, 50% and 75% levels, while lower timeframe boxes use a single 50% line to keep the chart readable.
+Main inputs:
+AutoFollowCurrentH1: follow the current H1 candle or display a selected historical H1 candle.
+H1Shift: choose the historical H1 candle when AutoFollowCurrentH1 is disabled.
+ShowM30, ShowM15, ShowM5, ShowM1: enable or disable each nested timeframe.
+Color, width and line-style inputs: adjust box outlines, levels and labels.
+ObjectPrefix: keep object names separated from other indicators.
+Attach it to any MT4 chart. M1 mode can create many objects, so disable it if the chart becomes too crowded.
+The indicator is display-only. It does not open, close or modify trades. Values for the currently forming H1 and lower-timeframe candles update while the candles are still open.
+An Expert Advisor (EA) version based on this H1 container logic is currently in development.

@@ -1,0 +1,78 @@
+Everyone who runs a grid, a martingale or any averaging system asks the same question —
+is my account big enough?
+— and almost everyone answers it with the wrong number.
+The usual answer is the loss at the last grid level. That is not what ends the account. What ends the account is the
+margin level reaching the broker's stop-out
+, which happens while the chain is still open and still looks recoverable.
+This Expert Advisor computes the real number, and then does the part that turns arithmetic into information: it scans the symbol's own M1 history and counts
+how many times a move that large has already happened
+.
+It is
+strictly read-only
+. It never opens, closes or modifies a position.
+The three mistakes it exists to fix, and they all err in the reassuring direction
+A chain of N legs does not float at step × N.
+The oldest leg is (N−1) steps away, the next (N−2), and so on, so the total is
+step × N(N−1)/2
+. At 10 legs that is 45 steps of loss, not 10.
+Open positions also lock up margin while they float.
+The stop-out compares equity against margin used, so both sides of that fraction move against you at the same time — the loss grows while the buffer shrinks.
+Stop-out is a percentage, not zero.
+The account does not need to lose everything. At the common 50% level, losing half the equity is already enough.
+What it reports
+Line
+Meaning
+full chain spans
+Price distance from the newest leg to the oldest.
+floating when full
+The
+step × N(N−1)/2
+figure, in account currency.
+margin locked up
+From OrderCalcMargin, not derived — only the terminal knows your broker's rules.
+a full chain is
+Floating plus margin, as a percentage of equity.
+adverse move that ends it
+How far price can travel against you before the broker acts.
+legs open at that point
+How many legs actually exist when it happens.
+times in the last N days
+How often a move that large occurred, counted on real M1 bars.
+Why the last two lines matter more than the rest
+"You need 86 dollars of room" is an abstraction. "
+A move of 86 dollars happened 71 times in the last 100 days, one every 1.4 days
+" is a decision. The frequency is counted from a running extreme and restarts after each event, so one long decline counts once rather than once per bar — the figure stays comparable to a number of days.
+And
+legs open at that point
+answers a question people argue about without measuring: if the account dies before the chain is full, your leg cap is never reached, and raising or lowering it changes nothing at all.
+Three details that are easy to get wrong, handled here
+Money per price unit
+comes from the symbol's tick value and tick size, not from contract size. A CFD index, a metal and a currency pair all disagree about what "contract size" means, and a cross whose profit currency is not the account currency needs a conversion that the tick value already contains.
+Hedged legs usually do not double the margin.
+On a hedging account the broker typically charges the larger side rather than the sum — measured on a live account, 6 long plus 2 short positions were charged for 6, not 8. The EA reads SYMBOL_MARGIN_HEDGED to find out, and when the rule cannot be read it assumes the
+expensive
+case, because an assumption about your own safety should never be the optimistic one.
+The chain fills as price travels.
+Solving for a full chain charges the margin of N legs at a moment when only two exist. On a small account with a wide step that produces "you are already dead" for a configuration whose real answer is an ordinary move. This EA solves inside each band of k legs and takes the first solution that is self-consistent — the one where the chain really does hold k legs at that price.
+Inputs
+Input
+Meaning
+InpGridStep
+Distance between legs, in price (not points).
+InpLots
+Lots per leg.
+InpMaxLegs
+Legs per chain — your cap.
+InpBothSides
+Whether a long and a short chain run together.
+InpEquity
+Equity to assume. 0 uses the live account, so you can test a size you do not have yet.
+InpStopOutLevel
+Stop-out percentage. 0 asks the broker.
+InpHistoryDays
+Days of M1 history to scan. 0 skips the frequency check.
+On InpEquity.
+Setting it to a number the account does not have is the point, not a workaround: it answers "how much capital would this configuration actually need" without needing to deposit it first.
+What it does not do
+It is not a backtest and it says nothing about whether a strategy is profitable. It answers one question: given this configuration and this account, how far can price go against you before the broker closes you, and how common is a move that far.
+It also does not model a recovery. A chain that survives is a chain price came back to — and this tool measures the excursion, which is what decides whether you are still there when it does.

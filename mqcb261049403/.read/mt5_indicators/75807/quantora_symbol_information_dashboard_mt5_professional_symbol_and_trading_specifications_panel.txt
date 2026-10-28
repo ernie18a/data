@@ -1,0 +1,5 @@
+Quantora Symbol Information Dashboard MT5 is an indicator that displays detailed symbol and trading specifications directly on the chart. It does not open or manage trades and is intended for informational use.
+The tool shows live market data such as bid, ask, spread, and market status, along with key contract details including point size, tick size, tick value, contract size, and lot limits. All values are taken directly from the broker and updated in real time.
+It also provides additional information such as swap rates, stops and freeze levels, trading mode, and basic account details. Daily high, low, range, and ATR are included to give a quick view of current market movement.
+You can monitor the current chart symbol or select a custom symbol, with all data displayed in a clean and easy-to-read dashboard.
+Suitable for traders who want quick access to symbol specifications and market details without leaving the chart.

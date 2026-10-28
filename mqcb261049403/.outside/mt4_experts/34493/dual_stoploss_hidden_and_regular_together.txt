@@ -1,0 +1,25 @@
+Usually the first thing a trader should consider when opening a new position is money management. One of the ways traders often control risk and manage their capital is to use a certain margin loss for their positions.
+Many traders think that when they set a Stop Loss (or even Take Profit) for a position and enter this price in
+the position modifying window
+, the broker server is obliged to close their position as soon as the price reaches this limit. But in fact this is not exactly true.
+It depends on the type of account you have at your broker. It is good to know that in ECN accounts, when you give a price to the broker as a Stop Loss or Take Profit, the broker closes your position in the first available price after that as soon as the price reaches this limit. If you do not agree with this, this time look at your trading history more carefully.
+You will see that some of your orders are closed at a price other than what you set, and you incur more losses and even more profit than you expect. This is because of
+SLIPPAGE
+.
+In addition, some traders believe that the loss limit should not be accurately indicated for brokerage. The
+HIDDEN
+Stop Loss is born of such traders, and This robot is designed for exactly this purpose. From now you can have both
+HIDDEN
+and
+REGULAR
+Stop Loss
+together
+.
+You can easily set a
+REGULAR
+Stop Loss for your positions like always. It does not matter if you use robots or trade manually.
+Just run this robot on a new separate chart (any) to manage your entire positions. The input value determines the distance between the
+HIDDEN
+and
+REGULAR
+Stop Loss. Note that this value is defined by point, not pip.

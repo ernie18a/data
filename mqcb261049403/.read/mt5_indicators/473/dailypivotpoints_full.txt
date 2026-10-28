@@ -1,0 +1,8 @@
+The DailyPivot Points indicator helps to compose a picture of market future movements, in distinct from the other tools that hang behind the market. The information that became availble in the course of the previous day is used to calculate the check points of the minor trend of the current day.
+This variant of the DailyPivot Points indicator can be built for any bar of a chart and a complete picture of the market behaviour relative to the indicator levels at each bar can be seen. Probably the best way to use the indicator is to analyze a strategy, while working offline.
+This indicator was first implemented MQL4 and published in
+Code Base at mql4.com
+23.12.2005.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/473

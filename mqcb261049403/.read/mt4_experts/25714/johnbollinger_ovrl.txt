@@ -1,0 +1,16 @@
+EA based
+on parameters of The BOOK of John Bollinger
+with Lot size calculator and position overlaping.
+This is a
+LITE
+version.(Full version you can change Take Profit and lot size)
+Recommendations:
+TF:
+15m
+Pair:
+ANY
+Initial capital:
+10000 and more
+ONLY FOR TESTING this EA cause is a LITE version
+.
+Pls let me know how do you think of it.

@@ -1,0 +1,8 @@
+ADX trend (that is a part of adxvma calculation) made as standalone indicator and using Jurik smoothing for result smoothing (in order to lessen the false signals)
+It is in a same way as any trend assessment indicator: when the color is changed, the trend is changed too
+In this version timeframes supported are all the possible timeframes supported by MetaTrader 5 and it has 3 "special" timeframes:
+Next higher timeframe: first higher timeframe compared to active chart.
+Second higher timeframe: second higher timeframe compared to active chart.
+Third higher timeframe: third higher timeframe compared to active chart.
+If some of these 3 timeframes are used, then the timeframe is set automatically as you change the timeframe of the chart.
+PS: this is a standalone indicator. It does not need any other indicator in order to work correctly

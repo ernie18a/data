@@ -1,0 +1,137 @@
+BrainTrend_HTF_Signal displays trend directions from the last bars of the
+BrainTrend1
+and
+BrainTrend2
+indicators as a sequence of graphical objects colored according to a trend direction. The number of bars to be used is set in the input parameters.
+Red color shows a descending trend, while violet color signals about an ascending one. Gray color is used in case there are no trend signals. Diamonds are BrainTrend1 signals, while circles are BrainTrend2 ones.
+Indicator input parameters:
+A timeframe and a name of a financial asset used for the indicator calculation can be changed by the indicator appropriate input parameters. If Symbol_ (financial asset) input parameter is empty, the current chart symbol shall be used as a financial instrument.
+All input parameters can be divided into two large groups:
+BrainTrend1 and BrainTrend2 indicators input parameters are explained in detail in their appropriate pages -
+BrainTrend1
+and
+BrainTrend2
+:
+//+-----------------------------------+
+//|  Indicator input parameters       |
+//+-----------------------------------+
+input
+string
+Symbol_=
+""
+;
+// Financial asset
+input
+ENUM_TIMEFRAMES
+Timeframe=
+PERIOD_H6
+;
+// Indicator timeframe for the indicator calculation
+input
+int
+ATR_Period=
+7
+;
+// ATR period
+input
+int
+STO_Period=
+9
+;
+// Stochastic period
+input
+ENUM_MA_METHOD
+MA_Method=
+MODE_SMA
+;
+// Smoothing method
+input
+ENUM_STO_PRICE
+STO_Price=
+STO_LOWHIGH
+;
+// Prices calculation method
+BrainTrend_HTF_Signal indicator input parameters that are necessary for the indicator visualization:
+//---- indicator display settings
+input
+string
+Symbols_Sirname=
+"BrainTrend_Label_"
+;
+// Indicator labels name
+input
+uint
+BarTotal=
+4
+;
+// Number of displayed bars
+input
+color
+UpSymbol_Color=BlueViolet;
+// Growth symbol color
+input
+color
+FlSymbol_Color=Gray;
+// Flat symbol color
+input
+color
+DnSymbol_Color=Red;
+// Downfall symbol color
+input
+color
+IndName_Color=DarkOrchid;
+// Indicator name color
+input
+uint
+Symbols_Size=
+34
+;
+//
+Signal symbols size
+input
+uint
+Font_Size=
+15
+;
+// Indicator name font size
+input
+int
+Xn=
+0
+;
+// Horizontal shift of the name
+input
+int
+Yn=-
+60
+;
+// Vertical shift of the name
+input
+bool
+ShowIndName=
+true
+;
+// Indicator name display
+input
+ENUM_BASE_CORNER
+WhatCorner=
+CORNER_RIGHT_UPPER
+;
+// Location corner
+input
+uint
+X_=
+0
+;
+// Horizontal shift
+input
+uint
+Y_=
+30
+;
+// Vertical shift
+In case several BrainTrend_HTF_Signal indicators are to be used on one chart, each of them should have its own Symbols_Sirname (indicators labels names) string variable value.
+Place BrainTrend1 and BrainTrend2 indicators compiled files to the terminal_data_folder\MQL5\Indicators\.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/691

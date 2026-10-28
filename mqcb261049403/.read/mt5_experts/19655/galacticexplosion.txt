@@ -1,0 +1,39 @@
+The Expert Advisor was inspired by the forum topic Requests & Ideas (MQL5 only!), comment
+#299
+.
+Description of the System
+The Expert Advisor only performs actions on a new bar (calculations are performed at the moment of a new bar emergence, the EA does not work inside the bar).
+The EA operation is restricted by
+operation time
+, which is specified in hours. For example,
+operation hours
+can be set from 8 am to 5 pm:
+8 am -
+operation hours
+- 5 pm
+New positions can ONLY be opened in working hours. POSITION CLOSING is also allowed in non-working hours.
+Position volume
+is set manually in input parameters and is always
+equal to a fixed amount
+.
+When to open the first trade: BUY if the 200 EMA is below the new bar. SELL is the 200 EMA is above the new bar.
+A position (or positions) should be closed if the NET profit (commission + swap + profit) is equal to or greater than
+Minimum profit
+(specified in the account currency).
+If at the opening of the next new bar trading is not in profit, we do nothing with open positions until all trades together make a total profit.
+If there are open positions and the total NET profit is negative, open a new position at the opening of each new bar. Continue opening new positions until the
+Minimum profit
+value is reached.
+When there are more than 8 open positions, the following limitations apply:
+We continue opening new positions similar to the first 8 positions, but now a position can only be opened if
+the distance between the new bar price and the last open position is no less than 10 points
+.
+If
+the current bar price is at a distance of 500 to 999 points from the price of the first open position
+, we open a new position according to the rule 8.1, but now we skip a minimum of 3 candlesticks.
+If
+the current bar price is at a distance of 1000 to 2000 points from the price of the first open position
+, we open a new position according to the rule 8.1, but now we skip a minimum of 6 candlesticks.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19655

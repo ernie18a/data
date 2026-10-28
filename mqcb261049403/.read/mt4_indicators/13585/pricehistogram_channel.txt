@@ -1,0 +1,8 @@
+This indicator shows channels using the price histogram.
+Display:
+red line — top of the histogram;
+dot area — where 60% trades take place;
+dash line area — where 90% trades take place;
+blue lines — other peaks (1-3 line).
+With Price histogram:
+Settings:

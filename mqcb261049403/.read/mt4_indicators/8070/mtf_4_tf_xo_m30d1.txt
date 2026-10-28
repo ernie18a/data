@@ -1,0 +1,6 @@
+Author:
+forex-tsd.com
+Indicator MTF_4 TF XO_M30D1. Works with indicator
+XO
+.
+Indicator MTF_4 TF XO_M30D1

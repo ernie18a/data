@@ -1,0 +1,4 @@
+The Multi Forex Scanner indicator is a indicator that I developed because I wanted to save time finding good pairs to trade.
+Here is the MT5 port of the MT4 original one.
+It shows the list of currencies available in the Market Watch window. If you wish to hide any currency, just hide it in the Market Watch.
+I hope it helps you.

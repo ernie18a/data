@@ -1,0 +1,37 @@
+The Expert Advisor MAVA-XonaX uses moving averages based on the open and close prices.
+Attach four MA indicators with the period equal to 6 to the H4 EURUSD chart. One is based on the opening prices MA
+open
+, the second one — on the closing prices MA
+close.
+These are signal indicators. The third one is based on the High prices MA
+high
+and the last one — on the Low prices MA
+low
+.
+When the trend is downward, the opening price of the candlesticks is higher than the closing price, which means that the moving average based on the opening prices will be higher and vice-versa. Thus, buy if MA
+close
+crosses MA
+open
+from below and sell as soon as MA
+open
+goes above MA
+close
+.
+To use the MA indicator to its fullest, the take profit will be placed as the average spread for the given period, which calculated by the formula MA
+high
+– MA
+low
+. Stop loss for sell: 2*(MA
+high
+– MA
+open
+), stop loss for buy, respectively: 2*(MA
+close
+– MA
+low
+).
+The Expert Advisor has been tested on the period 20.02.2015 – 16.07.2015.
+Testing Results:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13459

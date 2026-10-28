@@ -1,0 +1,12 @@
+Trend Envelopes
+indicator is calculated based on a % of price change. That % is then used to determine if there is a new trend or trend remains the same.
+This version is using Standard Deviation for the price change calculation instead and is adding prices smoothing prior to be used in calculations. The smoothing can be done using one of the 4 averages types:
+Simple Moving Average
+Exponential Moving Average
+Smoothed Moving Average
+Linear Weighted Moving Average
+Also, this version is  already a standalone multi time frame indicator too.
+In this version timeframes supported are all the possible timeframes supported by MetaTrader 5 and it has 3 "special" timeframes:
+Next higher timeframe: first higher timeframe compared to active chart.
+Second higher timeframe: second higher timeframe compared to active chart.
+Third higher timeframe: third higher timeframe compared to active chart.

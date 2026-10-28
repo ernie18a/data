@@ -1,0 +1,2 @@
+StochPosition is an indicator for MetaTrader 4 based on Stochastic Indicator, which shows the position and direction of Stochastic in M5 timeframe up to W1 timeframe.
+In addition, StochPosition indicator also provides direction and advice to BUY or SELL, and every change of direction and advice is also displayed as alerts.

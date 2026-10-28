@@ -1,0 +1,4 @@
+This Expert Advisor automatically sets preconfigured Stop Loss and Take Profit value on all orders with empty TP & SL.
+The Stop Loss and Take Profit doesn't include Symbol Minimum Stop Level.
+Update v1.20:
+Added chart symbol selection (All Opened Order | Current Chart Only).

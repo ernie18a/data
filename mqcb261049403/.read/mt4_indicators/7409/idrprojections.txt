@@ -1,0 +1,6 @@
+Author: Kim Igor V. aka KimIV
+Prediction of the daily price ranges. This indicator shows the current day support and resistance levels forecast on the bases of the previous day price levels. The formula for calculating the levels are described in Thomas Demark's The New Science of Technical Analysis
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7409

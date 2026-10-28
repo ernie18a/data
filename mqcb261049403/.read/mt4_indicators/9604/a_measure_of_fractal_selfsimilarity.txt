@@ -1,0 +1,9 @@
+IMPORTANT:
+I have updated this message with a correct version of the script MTF_FractalDispersion11.mq4, the previous version is incorrect, it gave an incorrect value of the fractal dispersion. My blog is also updated but the link below remains correct.
+This indicator is meant to be used with FGDI.mq4 which is available here (
+http://codebase.mql4.com/en/code/8844
+). It basically calculates this indicator for several timeframes and compute a dispersion of the fractal dimensions of these timeframes around the longest timeframe selected, each timeframe can be given a different importance by means of different weights (provided all the weights are integer). The dispersion is simply a standard deviation around the longest timeframe.
+Here is what it look like in the bottom window, above is the FGDI.
+The program FGDI.mq4 must be present and compiled on your PC for this indicator to be able to work.
+For more details about the theory and the technical details of this indicator, please see my blog:
+http://fractalfinance.blogspot.com/2010/03/self-similarity-and-measure-of-it.html

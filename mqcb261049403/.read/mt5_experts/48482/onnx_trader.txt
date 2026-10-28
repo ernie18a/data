@@ -1,0 +1,66 @@
+An archive of the models from the
+article
+. You can train your own, because the models can be very different, depending on the training hyperparameters.
+Machine learning models are trained in Python and converted to ONNX format. You don't need to change their parameters and code in the encludnik.
+The settings are simple:
+sinput
+double
+MaximumRisk=
+0.001
+;
+//Progressive lot coefficient
+sinput
+double
+ManualLot=
+0
+;
+//Fixed lot
+sinput
+ulong
+OrderMagic =
+666
+;
+//Orders magic
+input
+int
+max_orders =
+1
+;
+//Orders number
+input
+int
+stoploss =
+2000
+;
+//Stop loss
+input
+int
+takeprofit =
+2000
+;
+//Take profit
+input
+string
+comment =
+"The ONNX EA"
+;
+But you can add your own filters to try to make the models trade better.
+At least you can optimise stoploss and take profit, on any timeframe
+The model is connected via a header file, e.g.:
+#include
+<EURUSD ONNX include propensity matching original IPW.mqh>
+31 March 2024. Added examples from the article about "
+clustering
+".
+"ONNX Trader Clusters" bot, ONNX models and include file. Clustering is done by k-means method.
+Training is done from 2010 to 2020. Forward - from 2020 to 2024.
+The
+"Onnx Trader
+" bot supports the second method of training from the article
+"Matching trades using clustering
+"
+To do this, connect the iniclude file <EURUSD ONNX include10.mqh>, which will pull up the corresponding models "catmodel10.onnx" and "catmodel_m10.onnx"
+Models are trained on EURUSD H1, but can be used on any timeframe!
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/48482

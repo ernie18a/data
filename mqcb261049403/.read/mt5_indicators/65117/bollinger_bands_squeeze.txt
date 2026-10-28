@@ -1,0 +1,25 @@
+Bollinger Bands Squeeze - The Calm Before the Storm
+The Bollinger Bands Squeeze is one of the most powerful and sought-after signals when using the Bollinger Bands indicator. It signals a period of low market volatility that is about to end, foreshadowing a significant price move.
+1. What are Bollinger Bands?
+A technical analysis indicator consisting of three lines:
+Middle Band: A 20-period Simple Moving Average (SMA).
+Upper Band: Middle Band + (2 x Standard Deviation).
+Lower Band: Middle Band - (2 x Standard Deviation).
+The upper and lower bands expand and contract based on market volatility.
+2. When Does the "Squeeze" Happen?
+A Bollinger Bands Squeeze occurs when the upper and lower bands contract and move closer together. This indicates:
+The market is in a "consolidation" or quiet phase.
+Price volatility is extremely low.
+Buying and selling pressure is in equilibrium.
+Visually, the bands coiling tightly resembles a squeeze, compressing the market's energy and tension.
+3. The Meaning: It Forecasts a Major Move
+"The tighter the squeeze, the bigger the move." When the bands begin to expand again after a squeeze, it is a clear signal that:
+The consolidation phase is over.
+A new, strong trend is about to begin.
+The price will "break out" of the trading range with high momentum.
+Crucial Note:
+The Squeeze only warns of an imminent volatile move; it does not predict the direction.
+The breakout direction (up or down) must be confirmed using:
+A sharp increase in trading volume.
+Other technical signals (candlestick patterns, RSI, etc.).
+In summary, the Bollinger Bands Squeeze is an excellent tool for identifying when the market is "quiet before the storm." When you spot a squeeze, traders should prepare for a substantial price movement.

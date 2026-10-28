@@ -1,0 +1,24 @@
+Before you start using the script, install the necessary maximum amount of bars in the window using the Tools>Options>Charts menu. It is this amount of bars that will be loaded and checked. Then restart MT 4 Client Terminal and start using the script. The end of script working does not mean the end of history loading. You can view the loading process in the task manager. After the loading has ended, you should restart your client terminal to save the history as *.hst files.
+====
+The script is rather RAM-intensive:
+- for the RAM of 1GB, you can load only currency pairs and metals at a time when loading the history from the server of Moneyrain Data Center with 50000 bars specified in the field of "Max. bars in window";
+- then you should discard the client terminal checking the discarding process in the task manager in order to form *.hst files;
+- then start MT 4 and continue loading starting with the next group of securities.
+====
+//| 6. Added in the version of ZZ_All Quotings 0-0060 from 17.07.2007.
+//| 6.1. The window displaying loading data appears when the script finishes working.
+//| 6.2. Requirements related to free RAM available are decreased more than twice.
+//| 6.3. Error in the name of currency "LBP" is fixed.
+//| 6.4. Working in the mode without checking the history for "holes" is optimized.
+//| 6.5. The condition of incoming history control is changed.
+//| 7. Added in the version of ZZ_All Quotings 0-0070 from 29.07.2007.
+//| 7.1. Security groups of "CFD London", "CFD NewYork" are added.
+//| 7.2. Last-bar waiting time counter is introduced - 1 minute of the latest update of the last-bar open time.
+//| 8. Added in the version of ZZ_All Quotings 0-0080 from 10.01.2008.
+//| 8.1. The names of CFD Tokyo are modified and added according to the changes at the broker's side.
+//| 8.2. The names of CFD Moscow are added according to the changes at the broker's side.
+//| 8.3. The amount of currency names is increased up to 170, that of metal names is increased up to 10.
+//+-----------------------------------------------------------------------------------------+
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7969

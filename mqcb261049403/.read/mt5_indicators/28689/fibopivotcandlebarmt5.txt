@@ -1,0 +1,9 @@
+FiboPivotCandleBar MetaTrader 5 is a composite of several forex indicators, Fibonacci,
+Pivot Point, ZigZag, MACD and Moving Average which are combined in this indicator.
+Hope it is useful for fellow traders.
+Update version 2.00
+version: 2.0 ~ Last update: 2020/04/15 @ 12:00 PM WIT (Western Indonesian Time)
+* Remove programs that are not so important
+which slows down the execution of the indicator.
+* Increase the number of Pivot Points Resistance and Support from only 7 to S8 and R8.
+* Simplify and improve the structure of the program.

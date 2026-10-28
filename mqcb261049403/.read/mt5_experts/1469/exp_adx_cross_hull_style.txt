@@ -1,0 +1,15 @@
+The Exp_ADX_Cross_Hull_Style trade system is based on change of the trend displayed by the
+ADX_Cross_Hull_Style
+trend. A signal to perform a deal is formed at bar closing when the next color point of the indicator appears.
+To eliminate false triggering of the Expert Advisor against the trend, the Expert Advisor uses trade signals filtering with the help of the
+UltraXMA
+trend indicator. The signals to close positions serve as an opposite signals of the ADX_Cross_Hull_Style indicator entry, so the opposite trend signals of the UltraXMA indicator.
+Place ADX_Cross_Hull_Style.ex5 and UltraXMA.ex5 compiled file to the terminal_data_folder\MQL5\Indicators.
+The Exp_ADX_Cross_Hull_Style_.mq5 Expert Advisor file is a crippled version of the given trade platform without trade signals filtering.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. The instances of history of deals in the chart.
+Testing results for 2011 at XAUUSD H4:
+Fig. 2. Chart of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1469

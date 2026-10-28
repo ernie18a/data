@@ -1,0 +1,5 @@
+RenkoLiveChart_v600 version 6 Expert Advisor.
+Old code converted to post MetaTrader build 600 new code format — all errors and warnings cleared.
+Renko BoxSize inputs edited to accommodate fractional pip 3 and 5 digit pricing.
+Renko_Range_Detector indicator can be attached to the Renko offline chart for Renko boxsize verification.
+Research: Renko chart installation instructions and further information can be found on the internet and video sites.

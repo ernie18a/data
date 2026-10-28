@@ -1,0 +1,34 @@
+Stochastic Daily Breakout combines two simple ideas on gold. A turn in the stochastic signal line marks a possible change in momentum, and yesterday's high and low mark the levels where that change has to be confirmed. The EA never buys or sells at the market: it places a stop order at one of those levels, so the trade opens only if price actually gets there.
+The code is short and self-contained. The stochastic is computed inside the EA, because this variant uses the close-to-close range with SMMA smoothing, which differs from the built-in iStochastic. The only built-in indicator is iBands. The EA trades one position at a time.
+Trading rules
+Buy:
+the stochastic signal line turns down (a peak on the previous bar) and the open three bars ago is below the upper Bollinger band. A buy stop goes to yesterday's high.
+Sell:
+the signal line turns up (a trough on the previous bar) and the open three bars ago is above the lower Bollinger band. A sell stop goes to yesterday's low.
+Stop loss and take profit:
+1.9% of the entry price each.
+Expiry:
+an unfilled order is cancelled after 9 bars; a new signal on the same side replaces it.
+Indicators:
+stochastic 23/3/7, Bollinger bands 9 periods, 2.0 deviations, weighted price.
+How the strategy was built and validated
+This strategy was not tuned by hand on a chart. It came out of an automated search on five years of XAUUSD history, where six independent genetic builders, each with its own out-of-sample period, generated and tested candidate strategies.
+Every candidate needed a healthy trade structure, with results that do not depend on a single trade or a single day. Then it had to pass a chain of robustness tests, including other timeframes, related markets, Monte Carlo simulations with spread stress, parameter stability, walk-forward analysis and more, where a single failure is enough to discard it.
+This EA was found among more than two million candidate strategies tested for its family.
+Backtest
+The test was run on XAUUSD H1 in the "Every tick based on real ticks" mode, from July 2021 to September 2026, with a 1,000 USD deposit, 1:100 leverage and a fixed 0.01 lot. Real ticks cover about a quarter of that period; for the rest, the tester generated ticks from M1 data. The net profit was 2,453 USD (+245%), with a profit factor of 1.54, a recovery factor of 5.56 and a maximum equity drawdown of 23.9%. There were 213 trades: 116 buys, 66.4% of them winners, and 97 sells, 50.5% winners. The results scale with the lot: at a fixed 0.01 lot, a larger deposit shows a smaller percentage.
+Inputs
+InpLots
+— volume per trade (default 0.01).
+InpMagic
+— magic number of the EA's orders.
+InpBandPeriod
+— Bollinger band period.
+InpKPeriod, InpDPeriod, InpSlowing
+— stochastic periods.
+InpStopPct, InpTargetPct
+— stop and target, in percent of the entry price.
+InpExpiryBars
+— bars a pending order stays alive.
+Attach the EA to an XAUUSD H1 chart. The defaults are the tested values. A backtest is not a promise of future results, so test it on a demo account with your broker's prices before trading real money.
+Educational content, not financial advice. Trading involves risk of loss.

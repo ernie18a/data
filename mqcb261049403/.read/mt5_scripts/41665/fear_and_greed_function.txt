@@ -1,0 +1,42 @@
+It is known that the market is mainly driven by two emotions: fear and greed.
+This script implements a class with variables and functions to embody these emotions in a mathematical model applicable to the exchange market.
+In addition, a mathematical models of motivation, stress, c
+onfidence
+and activity are presented here - this is what makes you or your program perform or stop trading operations.
+Confidence - shows the overall level of trading skills.
+Activity could be compared with periods of action and rest in living beings.
+This can be applied in expert advisors or indicators.
+Fear scores in this model range from -1 to inf, greed scores from 0 to inf, motive, stress and activity scores from 1 to -1.
+Fear increases as it approaches -1 or is absent around zero, and transforms into euphoria at positive values. Fear is strategic.
+Stress has the same meaning as fear, but differs in tactical significance within the trading period.
+In turn, greed ranges from 0 to inf, where: 1 is a normal state, with increasing fear, greed decreases to 0, and with the transformation of fear into euphoria, greed becomes higher than 1 and multiply with a profit of more than 100%.  Greed
+is strategic and motive is close to tactical meaning.
+Motivation in the normal state has a value close to zero, increases with negative profit, on the contrary, decreases as the daily aim is approached, and becomes negative when the profit is above the daily goal.
+Thus, it can be used, for example, in programs using fuzzy logic, where it is necessary to decide using the fear, stress,
+c
+onfidence,
+a
+ctivity
+and motive functions to open a new trade transaction or close an existing one, and using the greed function, you can regulate the volume of trade.
+Most of the variables are easy to understand, so I will only explain a few of them.
+Some Variables Explanation:
+0) Sensitivity is regulated by range from 0 to 1: 0 - coward, 0.5 - normal and 1 - brave. In other words, it turns out that the coward type is safer, and the brave one is more risky.
+For example, this can be useful when your trading expert accumulates certain experience in trading, which can be expressed in a positive mathematical expectation - in this case, you can gradually change the sensitivity value in a positive direction, and if the result is negative, you can gradually reduce this parameter.
+1) The number of trading operations in the expected recovery period mean:
+It depends on your trading style: - How many trades you make in a certain period of time and, accordingly, for how many trades you plan to restore the sagging deposit to the previous level?
+Theoretically, the higher this value, the less fear when the balance draws down - that is, if you plan to restore your balance to the previous value in an infinite number of steps, then you should not worry at all.
+I don't yet know how to calculate this value, or it doesn't exist at all.
+This should be considered as some kind of ideal that you or your trading expert should strive for. In my opinion, the ideal values here are from 3 to 5, or a maximum of 10 in very rare cases.
+2) In this model, there are three weight coefficients and three amplification switches of apropriate values for calculating the final level of fear, which consists of three parts:
+You can change them according to your preferences - weights range from 0 to 12, and amplificators are true or false:
+- fear of a decrease in the deposit,
+- fear of increasing negative profits,
+- fear of margin calls.
+Most of the functions are easy to understand, so I will only explain a few of them.
+0) During the first initialization, you can enter the previous state of your account balance if it was greater than the current one, and then with each change in this balance, you must call "TrailInitialBalance()" function so that these changes are taken into account by the program.
+1) How to use function "SetWeightFactors()"? :
+For example, the Margin Call Fear Factor should be adjusted depending on the leverage - the higher the leverage, the higher this ratio should be, and vice versa, or when leverage is 1:1 set this value to 0. This must be done for the other two parameters as well - you need to decide what is more important for you in the current situation: a strategic drawdown in the balance or a tactical decrease in the current profit on the account. These remaining two parameters can be changed dynamically.
+In general, this can be very useful for novice traders as a guideline when to perform or stop trading and for calculating the volume of trade and the result of their trading. To do this, run the script in the chart window and make several manual trades and see how these values change in real time. Multiply the initial trading volume by the greed value and open or close an existing trade position depending on the fear, stress, a
+ctivity
+and motive values. The closer the stress level is to -1 or motive level to negative values, the more you should think about rest and postpone trading for the next period.
+If you have any questions feel free to write to me and I will try to answer as best I can.

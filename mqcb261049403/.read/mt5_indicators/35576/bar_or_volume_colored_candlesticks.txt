@@ -1,0 +1,6 @@
+Volume Colored Candlestick with Bollinger Bands as the Standard Deviation
+Changelog
+v1.02b: Hotfix for static int chartBars, where it would be forever the first call value of Bars(Symbol(), PERIOD_CURRENT) and would not update thereafter (guarantees that invalid candles are not visible)
+v1.02a:
+Guarantee that Invalid Bars don't have Invalid Chart Data (hide uncalculable Bars), also check for Minimum Bars
+Fix Gradients not showing from Bar 0 until iPeriod

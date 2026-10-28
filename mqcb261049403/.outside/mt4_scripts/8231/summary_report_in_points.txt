@@ -1,0 +1,3 @@
+It was said in the
+"How to Evaluate the Expert Testing Results"
+article, that "It is easy to recalculate the profit in points then". The represented script calculates in points the profit and all parameters calculated from it. The script creates two files: the summary report and the list of performed trades that can be impotred in the electrincal table.

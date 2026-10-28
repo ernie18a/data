@@ -1,0 +1,9 @@
+The
+Parabolic SAR
+indicator with the ability to choose timeframe where it can be calculated.
+When new bars appear on the timeframe where the indicator is calculated, large color dots are drawn. Trend continuation is indicated with a color line.
+To the moment of code publication the iSAR technical indicator didn't work correctly and its values didn't coincide with the analog performed in the form of the ParabolicSAR custom indicator placed in terminal_data_folder\MQL5\Indicators\Examples. For this reason there were two variants of the indicator: the Parabolic_HTF and the Parabolic_HTF indicators with the ability to receive data from the technical indicator and its custom analog, respectively.
+Fig.1 The Parabolic_HTF indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1118

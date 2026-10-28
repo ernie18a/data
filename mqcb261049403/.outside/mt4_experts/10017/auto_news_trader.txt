@@ -1,0 +1,8 @@
+Author:
+Orginal author American Financial Institute - modified by born2trade
+http://www.fxstreet.com/metatrader/addons/58db0883-1935-421a-82c6-254c16f70da9
+This Expert Advisor trades straddles (long and short stop orders) that are placed before a news event at a specific time of the day. Chose importance of news to automatically trade.
+Will only trade news if news is part of currency symbol e.g symbol is eurusd, will trade news for usd and eur.
+Place MarketNewsLib.mq4 in experts\libraries
+Place MarketNewsLib.mqh in experts\include
+Place AutoNewsTraderEA.mq4 in experts\

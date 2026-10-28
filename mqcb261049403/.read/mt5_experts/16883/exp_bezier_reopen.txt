@@ -1,0 +1,14 @@
+The Exp_Bezier_ReOpen trading system is based on the
+Bezier
+indicator color change with adding to trend-following positions. A trade signal forms at a bar closing if the indicator line color changes. Its volume is then further increased if profit in points increases a threshold fixed in the EA inputs.
+The data on addings are stored in a string comment to a position in the following format:
+number of addings/last trade price/last trade volume
+.
+This Expert Advisor requires the compiled indicator file Bezier.ex5 in order to run. Place it to terminal_data_folder\MQL5\Indicators.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig.1. Examples of trades on the chart
+Testing results for 2015 on USDCHF H4:
+Fig.2. Testing results chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16883

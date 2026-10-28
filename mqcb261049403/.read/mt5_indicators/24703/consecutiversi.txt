@@ -1,0 +1,7 @@
+Just a combining of a variable consecutive candle detector along with associated RSI levels.
+Interesting settings:
+Number of consecutive candles needed before a valid signal
+Overbought level of RSI
+Oversold level of RSI
+In the marketplace at
+https://www.mql5.com/en/market/product/35976

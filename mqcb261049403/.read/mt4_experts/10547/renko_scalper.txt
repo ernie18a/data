@@ -1,0 +1,4 @@
+EA achieved best results on Renko Chart.
+Renko Chart is not mine but I used it to write EA on it.
+EA can trade every pair but I got best results on GBP/USD and EUR/JPY.
+I'll appreciate any comments.

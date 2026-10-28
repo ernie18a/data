@@ -1,0 +1,3 @@
+Continuously records tick data in format "DateTime, Bid, Ask, Volume" even after restart.
+You can use it for broker data manipulation evidence, collect you own history data, compare two brokers data feeds...
+Added data flush every 10 seconds.

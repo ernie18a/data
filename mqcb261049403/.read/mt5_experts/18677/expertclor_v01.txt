@@ -1,0 +1,119 @@
+Author of the idea
+—
+John Smith
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+An assistant Expert Advisor. Only CLOSING positions:
+Positions are moved to Breakeven, Stop Loss is calculated based on the StopATR_auto indicator, positions are closed at the intersection of two MAs (Moving Averages).
+In order to provide conditions for the EA operation, you should add the compiled
+StopATR_auto
+indicator file to the folder
+MQL5\Indicators\Download
+s
+:
+//+------------------------------------------------------------------+
+//| Expert initialization function                                   |
+//+------------------------------------------------------------------+
+int
+OnInit
+()
+  {
+//---
+...
+//--- create handle of the indicator iCustom
+handle_iCustom=
+iCustom
+(m_symbol.Name(),TimeFrame,
+"Downloads\\StopATR_auto"
+,
+                          CountBarsForAverage,
+                          Target
+                          );
+Although this Expert Advisor only closes positions, I have added a small code part for opening positions:
+//+------------------------------------------------------------------+
+//| Expert tick function                                             |
+//+------------------------------------------------------------------+
+void
+OnTick
+()
+  {
+//---
+if
+(
+MQLInfoInteger
+(
+MQL_DEBUG
+) ||
+MQLInfoInteger
+(
+MQL_PROFILER
+) ||
+MQLInfoInteger
+(
+MQL_TESTER
+) ||
+MQLInfoInteger
+(
+MQL_OPTIMIZATION
+))
+     {
+static
+long
+counter=-
+50
+;
+static
+bool
+trade_buy=
+true
+;
+if
+(counter==
+0
+)
+         m_trade.Buy(m_symbol.LotsMin());
+else
+if
+(counter%
+1500
+==
+0
+)
+        {
+if
+(
+RefreshRates
+())
+           {
+if
+(trade_buy)
+              {
+               OpenBuy(m_symbol.LotsMin());
+               trade_buy=
+false
+;
+              }
+else
+{
+               OpenSell(m_symbol.LotsMin());
+               trade_buy=
+true
+;
+              }
+           }
+else
+counter=counter-
+9
+;
+        }
+
+      counter++;
+     }
+//---
+This unit only works when you test or optimize this Expert Advisor. Buy or Sell is opened after every 1,500 ticks.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18677

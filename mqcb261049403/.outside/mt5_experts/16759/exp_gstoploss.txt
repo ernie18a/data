@@ -1,0 +1,28 @@
+This Expert Advisor closes all positions if the total loss exceeds a predefined limit. In fact, this is a global stop loss for all positions simultaneously.
+//+----------------------------------------------+
+//| Enumeration for loss calculation options     |
+//+----------------------------------------------+
+enum
+LossMode
+{
+ENUM_PERCENT,
+//losses in percentage
+ENUM_CARRENCY
+//losses in deposit currency
+};
+//+----------------------------------------------+
+//| Input parameters of the EA indicator         |
+//+----------------------------------------------+
+input
+LossMode LMode=ENUM_PERCENT;
+//loss calculation method
+input
+double
+StopLoss=
+20.0
+;
+//stop loss
+//+----------------------------------------------+
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16759

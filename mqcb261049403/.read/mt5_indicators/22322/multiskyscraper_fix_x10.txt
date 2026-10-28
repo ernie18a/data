@@ -1,0 +1,8 @@
+The indicator shows information on the current trends, using the colors of the
+Skyscraper_Fix
+indicator from ten different timeframes.
+Each of the ten indicator lines corresponds to a separate indicator. Colors of the lines and colored dots are uniquely defined by the color of the initial indicator's middle line. Color stars on the lines occur when the bar of the corresponding timeframe changes.
+Fig. 1. MultiSkyscraper_Fix_x10
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22322

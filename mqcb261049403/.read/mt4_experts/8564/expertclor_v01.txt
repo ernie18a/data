@@ -1,0 +1,214 @@
+1. It closes an order by the intersection of two MAs (5 and 7 on default);
+2. It automatically moves the stop by the StopATR_auto indicator;
+3. It moves the opened position to the breakeven when the price reaches the specified level.
+Attention!
+The EA closes only opened orders!
+Input Parameters:
+MA_CloseOnOff
+-
+turning on
+(
+1
+)
+or off
+(
+0
+)
+the mode of closing the orders by the intersection of MA
+StATR_CloseOnOff
+-
+turning on
+(
+1
+)
+or off
+(
+0
+)
+the placing and modifying of the stop by the StopATR_auto indicator
+MA_Fast_Pe
+-
+the period of the fast МА
+MA_Fast_Ty
+-
+the type of the fast MA
+(
+0
+-
+SMA
+,
+1
+-
+EMA
+,
+2
+-
+SMMA
+(
+smoothed
+)
+,
+3
+-
+LWMA
+(
+weighted
+)
+)
+MA_Fast_Pr
+-
+the price of the fast МА
+(
+0
+-
+Close
+,
+1
+-
+Open
+,
+2
+-
+High
+,
+3
+-
+Low
+,
+4
+-
+HL
+/
+2
+,
+5
+-
+HLC
+/
+3
+,
+6
+-
+HLCC
+/
+4
+)
+MA_Slow_Pe
+-
+the period of the slow MA
+MA_Slow_Ty
+-
+the type of the slow МА
+(
+0
+-
+SMA
+,
+1
+-
+EMA
+,
+2
+-
+SMMA
+(
+smoothed
+)
+,
+3
+-
+LWMA
+(
+weighted
+)
+)
+MA_Slow_Pr
+-
+the pice of the slow МА
+(
+0
+-
+Close
+,
+1
+-
+Open
+,
+2
+-
+High
+,
+3
+-
+Low
+,
+4
+-
+HL
+/
+2
+,
+5
+-
+HLC
+/
+3
+,
+6
+-
+HLCC
+/
+4
+)
+TimeFrame
+-
+the operational timeframe
+(
+1
+-
+М
+1
+,
+5
+-
+М
+5
+,
+15
+-
+М
+15
+б
+60
+-
+Н
+1
+,
+240
+-
+Н
+4
+)
+BezUb
+-
+the level of profit in points when the order is moved to the breakeven
+CountBarsForShift
+-
+the parameter of the StopATR_auto indicator
+-
+the distance in bars for displaying the stop on the screen
+CountBarsForAverage
+-
+the parameter of the StopATR_auto indicator
+-
+the amount of averaging bars for stop calculation
+Target
+-
+the parameter of the StopATR_auto indicator
+-
+the coefficient of increasing the value of the average bar
+for stop calculation
+The StopATR_auto indicator must
+obligingly
+be in the Indicators folder of your МТ4.
+It is not necessary to attach the StopATR_auto indicator to the chart, the EA will do it itself.

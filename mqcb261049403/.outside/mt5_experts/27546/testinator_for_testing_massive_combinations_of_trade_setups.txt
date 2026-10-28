@@ -1,0 +1,113 @@
+Welcome to the Binary Testinator.
+The Purpose of this EA is for testing different Indicators to optimize a trade scenario.
+Everyone has an opinion on what is the best trade setup, and advice is never ending! Better if you test it out...
+Is this EA perfect, well no, of course not! I'm open to modification suggestions. But the core Logic is solid :-)
+How it works
+This EA is for testing combinations of Trade Scenarios for the optimal setup. It will go through, in a binary fashion, all combinations of trade decisions that you choose and provide results on each scenario or sequence.
+The commented out "Pre-Condition" area is where you should put what you think, or have already tested, as a good pre-condition for either an open buy decision and/or close buy decision. If you have something here, you should start your testing sequence at 0 to include it as a base in your test results! If you leave this commented out, you should start at 1.
+The case statements are individual conditions you would like to test in combination with all other case statement tests. An example of a case statements for BuySequence could be MA30 > EMA12 or rates[1].low < BollingerBandsLow[1], etc. Whatever you define as the conditions. Then the EA will test each unique combination of all statements and provide the result of that unique sequence.
+For example, if you put 3 in your BuySequence, it will test with both case 1 & 2. (Because 1 & 2 = 3)
+If you put 4 in your BuySequence, it will test only case 4. If you put 5, it will test case statement 1 & 4, but not 2. This is Binary Logic.
+By testing a range from 1 to 7, it will test all of the combinations of 1st-4th case statements (4+2+1). (Being case 1, case 2 and case 4).
+Meaning it will test 1 on the first pass, 2 on the second pass, and 1 & 2 on the 3rd pass, and 4 on the 4th pass, and 1 & 4 on the 5th pass, 2&4 on the 6th pass, and 1,2 & 4 on the 7th pass.
+It indexes all combinations in a binary fashion. This is the core logic.
+The following are notable items when using Testinator
+0)
+Do NOT use Organic optimization, as this looks for a pattern in testing indexes and moves closer to that index and will not test all scenarios. There is no pattern in this testing scenario, as each testing sequence is completely different.
+1)
+It may produce a sequence that is not doing what you think it is doing.
+Note) A sequence combination can be produced that would be extremely rare or possibly never occur, resulting in few or no trades or holding open a trades until end of testing.
+2)
+Duplicate results can (and most likely will) appear. Multiple results all showing same Profit, Drawdown and Number of Trades, etc...
+Note) This is a natural occurrence as two or more sequences can be true at the same time, all the time. Simply choose the smaller of the sequence numbers.
+3)
+Large combinations are possible, but the MT5 tester has limitations.
+Note) I've successfully tested up to a million combinations. The XML file is huge, but Excel will open and not truncate the data. Also, if dealing with large datasets and further analysis is required, it's highly recommended to use something like MySQL. Saving the file as CSV and then importing into MySQL has been the easiest scenario for me.
+4)
+More processors are highly recommended when testing large combinations. I have used Local Network Farm (an extra computer in my house with many cores) and the MQL5 Cloud network. MQL5 Cloud Network is amazing! On one scenario, the local network farm took about 32 Hours, while the Cloud finished the same test in under 10 minutes. It cost about $4 USD for this particular test, but was worth it for me. I was going to get a Killer AMD setup with many cores/threads, but I’ll stick to the Cloud for now.
+5)
+Watch your errors!!!! Double or triple check everything before you start a test. Watch the results for a while to see that they look like something you are expecting before walking away from the terminal. Nothing will make you more unhappy than running a very long test, only to find out your configuration for a condition was incorrectly set or a sequence was supposed to start with 0 (Pre-Conditions) and not 1 or some other number. Simple mistakes can cost you time and money, and produce highly unreliable results.
+6)
+Have a clear goal of what you are looking for (See the Q&A Section) and do not get caught up in a testing cycle with no clear scope end to end!
+Analysis paralysis can happen easily.
+7)
+If you test on open prices, and find a good sequence, then perform a single test of the buy and close sequence on every tick. If it is good, it should still be good on every tick or every tick based on real ticks.
+8)
+All Dates/Times in Tester are in Eastern European Time
+. This is how the data is presented, because it is an Industry Standard.
+Do Not
+use TimeLocal() or TimeGMT() in tester. Tester has no idea when Time Zone changes occur. The Industry Standard is that the Trading Day/Week starts on 00:00 Monday and runs till 23:59 Friday EET. This translates to 16:59 Sunday and runs to 16:59 Friday Eastern Standard Time. All Bar days/hours, such as yesterdays High/Low, are in this format in both Tester and Live trading.
+PS:
+The "All symbols selected in MarketWatch" optimization testing option is something I would avoid as of today (5/Jan/2020 with build 2286). I have ran this, and then ran a single test on a Forex Pair, only to have very different results. Also the “Profit in PIPs for Faster Calculations” produces odd results. I ran an EA that produced positive money results, only to produce negative PIPs results.
+Q and A / Comments
+Q)
+What am i looking for exactly?
+A)
+Indicators provide some indication that the market is headed in a direction. Sometimes they are correct, sometimes (many times) they are wrong, or "faked out" by the market. You are looking for a trade setup that gets it right with more PIPs than the faked out occurrences. And when a faked out occurence happens, you close orders quickly, before losing too much money. Thus a net profit. Refer to the screenshot at the end.
+Q)
+Can I add a different or custom indicator?
+A)
+If you are asking this question, then no,
+you
+probably should not. Get someone on MQL5.com (
+https://www.mql5.com/en/job
+) or somewhere else to make changes for you. Just remember that your sequence range will change. You can also remove sequences if you like, but remember to keep the sequence case numbers in binary sequence (1, 2, 4, 8, 16...) and your testing range should stop at the sum of those numbers.
+Q)
+Will there be an MQL4 version?
+A)
+No. Actually, I already coded one. But Metatrader 4 uses only a single core, and Cloud is not available to MT4. Unless Intel or AMD come out with a Bazillion GHZ Single Core Performance Processor, the plan is to continue development and testing with MQL5. If a great trade setup is found, it can easily be migrated back to a MQ4 EA.
+Q)
+What is the OnTester function and how do I use it?
+A)
+This is the Average Bars to Close a Trade.
+It will appear in your "custom" column on the data export.
+There is the CSTS (Coefficient of the Safe Trade System) value of that trade sequence that is commented out.
+If you want to use this, and can get a coefficient of 1 or greater, it is a good trading system, maybe. Reference:
+https://www.mql5.com/en/articles/286
+Q)
+Metatrader crashed/froze, how can I get the results that I ran?
+A)
+Look at the top bar of the tester window, there is a way to view past results. Just select the expert, then click on "view previous results". Hopefully it should be there. Also MT5 has an awesome feature where if you run it again, it will pick up where it left off, or pull up previously completed results.
+Q)
+How do you get the data into Excel/MySQL?
+A)
+On the tester window, right click and choose export to XML. Then I would immediately save as "Excel or CSV". Getting it into MySQL is a bit more complicated. Especially depending on your OS and version. There is plenty of info on the internet.
+Q)
+You’re not using MQLRates (or any other part of the EA) correctly! You don't know what you're doing.
+A)
+I'm open to helpful suggestions.
+Q)
+Your Trailing Stop is complete Crap! You should only trail after you are in profit.
+A)
+See the above answer :-)
+Q)
+This is just stupid, you're just poking around in the dark.
+A)
+1) Yea, so. 2) Stop being so negative.
+Q)
+I have a suggestion/need help/want to talk about a different EA.
+A)
+Send me an email:
+quint@savoon.com
+I have a day job, so no promises on how quick I will respond.
+Q)
+This is awesome, it should find the perfect trade setup! Should I quit my job tomorrow and devote all of my attention to finding the golden setup?
+A)
+Nope, a bird in the hand is worth two in the bush. Bank the money first, then have a talk with your boss.
+Core Logical Observations
+1)
+The more Entry Conditions in a buy decision will result in fewer trades. This is because the possibility to meet all of those conditions becomes rarer. The number of entry conditions is irrelevant to a good trade setup. More doesn’t always equal better and less is harder to measure.
+2)
+The more Exit Conditions in a close decision will result in trades held open longer. This is because the possibility to meet all of those conditions becomes rarer. Herein lies the && vs || debate, and how exit conditions can get extremely more complex. The && vs || ( AND vs OR) debate is on the core premise that take profit and stop loss can also be expressed through exit conditions, but not with AND. This is possible with code changes, and may appear in version 2
+:-)
+but if this is done, the math of probable numbers will grow exponentially.
+3)
+When comparing two trade setups, measure of a Profit Factor is only good against a different trade setup with the same approximate amount of trades. For example, you shouldn’t compare a trade setup that has 12 trades a year with Profit Factor of 3.4 to a trade setup that has 732 trades a year and a Profit Factor of 2.1. This is, mathematically speaking, Apples and Oranges. In order to compare the two trade setups, you would need to run the trade setup with only 12 trades a year for 61 years to get an approximate comparison.
+4)
+When trading a time frame, the logic of a trade should close reasonable to that timeframe. For example, a trade setup that uses M1 timeframe should close reasonably short, as a decision to close weeks after would have nothing to do with your entry logic that you based on minutes. Likewise, a trade setup that makes core decisions based on Weekly or Monthly timeframes should not close out routinely in a very short time, as the logic on entry would still hold true.
+5)
+The Number of Trades a strategy generates is a widely underused, but very important metric. This will generate many results, and determining the quality of a strategy will become difficult. Remember the more conditions you add to a strategy, the fewer trades you will get. You should gain in some way by losing those trades. Think of the number of trades as a cost. The perfect strategy would be one that trades every tick, has no losses and no drawdown. That’s impossible, so we’re hypothetically speaking. Therefore the worst strategy would be one that trades only once, it loses and draws down your entire account. I can explain the importance of Trades on a macro and micro level. On a Macro Level, Say you have a crazy strategy that generates 1000 trades a year, with Profit of $150. And you add to that strategy several more conditions that result in $160 a year, but only 10 Trades. Yes, it is more money, but can you really trust 10 trades a year? Speaking on the Micro level, this measure allows you to compare using the cost of Trades lost. For example, if you have a trade scenario that generates 500 trades, and profit of $80 with a drawdown of 3%, and you add a new condition that results in only 480 trades, but generates $95 profit, with 7% drawdown. You can measure that you have lost 20 Trades, and 5% drawdown, at a gain of $15. What you don’t want is to add a new condition and result in 400 trades, with profit of $75 and drawdown of 3%. You can measure that you had a loss in trades, but also a loss in profit!
+Recommendations:
+Accompany the submitted code with a meaning-bearing name and a brief description.
+Attach a brief explanation to the code for users to make head or tail of it.
+Insert illustrating images where applicable.

@@ -1,0 +1,31 @@
+This indicator gives us four signals to filtering 4 strategies:
+Broken Trend:
+Buy:
+1 - Broking the Down Trend;
+2 - Crossing of tow Exponential Moving Average: EMA9 Cross Up EMA30;
+3 - Momentum value > 100.
+Sell:
+1 - Broking the Up Trend;
+2 - Crossing of tow Exponential Moving Average:EMA9 Cross Down EMA30;
+3 - Momentum < 100.
+The lower one gives the momentum & the Arrows points to the crossing of  2MA:
+Golden Trend:
+Buy:
+1 - Broking the Down Trend;
+2 - Crossing of tow  Moving Average: EMA5 Cross Up SMMA15 (Smooth);
+3 - DeMarker value > 0.5 & Force Index >0.
+Sell:
+1 - Broking the Up Trend;
+2 - Crossing of tow Exponential Moving Average:EMA5 Cross Down SMMA15;
+3 - DeMarker value < 0.5 & Force Index< 0.
+The Middle one gives the required signal & the Arrows points to the crossing of 2 MA:
+Golden Cross:
+Buy:
+1 - Crossing of tow Exponential Moving Average: EMA5 Cross Up EMA15;
+2 - RSI value > 50 & Crossing Up of MACD& Crossing Up of ADX.
+Sell:
+1 - Crossing of tow Smooth Moving Average: EMA5 Cross Down EMA15;
+2 - RSI value < 50 & Crossing Down of MACD& Crossing Down of ADX.
+The Upper one gives the required signal & the Arrows points to the crossing of 2 MA:
+Golden Lines:
+When the price passed a strong resistance or support we can get a good confirming signal for Buy or Sell by looking to the three signals of the indicator.

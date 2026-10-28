@@ -1,0 +1,70 @@
+The image above is my £100 start using rabbitm2.set
+Below is the Report 22August to 1 Nov
+Bars in test 70115
+Ticks modelled 1107725
+Modelling quality 24.96%
+Mismatched charts errors 0
+Initial deposit 100.00
+Total net profit 452.19
+Gross profit 1826.41
+Gross loss -1374.22
+Profit factor 1.33
+Expected payoff 1.29
+Absolute drawdown 44.55
+Maximal drawdown 258.83 (42.97%)
+Relative drawdown 68.44% (125.18)
+Total trades 350
+Short positions (won %) 163 (16.56%)
+Long positions (won %) 187 (9.09%)
+Profit trades (% of total) 44 (12.57%)
+Loss trades (% of total) 306 (87.43%)
+Largest
+profit trade 135.02
+loss trade -7.81
+Average
+profit trade 41.51
+loss trade -4.49
+Maximum
+consecutive wins (profit in money) 3 (130.68)
+consecutive losses (loss in money) 30 (-19.69)
+Maximal
+consecutive profit (count of wins) 160.54 (2)
+consecutive loss (count of losses) -148.90 (20)
+Average
+consecutive wins 1
+consecutive losses 7
+Here is the comp entry for next year... from 1st Oct 2008 - 1Nov 2008
+Bars in test 33008
+Ticks modelled 679997
+Modelling quality 25.00%
+Mismatched charts errors 0
+Initial deposit 10000.00
+Total net profit 51552.40
+Gross profit 208341.67
+Gross loss -156789.26
+Profit factor 1.33
+Expected payoff 405.92
+Absolute drawdown 1268.81
+Maximal drawdown 54895.03 (47.71%)
+Relative drawdown 70.64% (28514.15)
+Total trades 127
+Short positions (won %) 75 (21.33%)
+Long positions (won %) 52 (9.62%)
+Profit trades (% of total) 21 (16.54%)
+Loss trades (% of total) 106 (83.46%)
+Largest
+profit trade 36005.20
+loss trade -2079.87
+Average
+profit trade 9921.03
+loss trade -1479.14
+Maximum
+consecutive wins (profit in money) 3 (15359.49)
+consecutive losses (loss in money) 26 (-51401.09)
+Maximal
+consecutive profit (count of wins) 53598.06 (2)
+consecutive loss (count of losses) -51401.09 (26)
+Average
+consecutive wins 1
+consecutive losses 7
+I would be very grateful for feedback.

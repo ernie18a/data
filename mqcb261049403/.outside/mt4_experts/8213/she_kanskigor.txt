@@ -1,0 +1,8 @@
+The idea is simple and already repeatedly implemented in differnet variations. If the day was closed with the growth, then we sell, and vice versa. This program was written mostly for educational purpose, it will be useful for the ones who just began his/her investigation of MQL4.
+The comments are given as far as possible, so everything is in your hands.
+Let's put all kinds of filters in different variations on it and see who'll get the best profitableness in POINTS.
+The testing diapason is from 02.01.2006
+Good luck.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8213

@@ -1,0 +1,10 @@
+The Exp_ColorBBCandles Expert Advisor based on the
+ColorBBCandles
+indicator.
+A signal to perform a deal is formed at bar closing, if the candlestick is colored in a trend color, but before the candlestick didn't have color or it has the opposite trend color.
+Fig. 1. The instances of history of deals in the chart.
+Testing results for 2011 at EURCHF H4:
+Fig. 2. Chart of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1152

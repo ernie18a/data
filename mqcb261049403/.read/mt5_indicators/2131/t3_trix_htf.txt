@@ -1,0 +1,14 @@
+The
+T3_TRIX
+indicator with the timeframe selection option available in input parameters:
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// Indicator chart period (timeframe)
+The indicator requires the compiled indicator file T3_TRIX.mq5 for operation. Place it to terminal_data_folder\MQL5\Indicators\.
+Figure 1. The T3_TRIX_HTF indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2131

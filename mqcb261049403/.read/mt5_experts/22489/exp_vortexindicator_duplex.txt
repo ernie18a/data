@@ -1,0 +1,66 @@
+Two identical trading systems (for long and short positions) based on the signals of the
+VortexIndicator
+indicator, which can be configured in different ways within one Expert Advisor. For this purpose, all input parameters can be divided into two large groups:
+Those having names starting with L are input parameters to manage long positions;
+Those starting with S are input parameters to manage short positions.
+//+----------------------------------------------+
+//| EA inputs for long operations                |
+//+----------------------------------------------+
+input
+uint
+L_Magic=
+777
+;
+//L magic number
+input
+double
+L_MM=
+0.1
+;
+//L share of a deposit in a deal
+input
+MarginMode L_MMMode=LOT;
+//L lot size calculation method
+//+----------------------------------------------+
+//| EA inputs for short operations               |
+//+----------------------------------------------+
+input
+uint
+S_Magic=
+555
+;
+//S magic number
+input
+double
+S_MM=
+0.1
+;
+//S share of a deposit in a deal
+input
+MarginMode S_MMMode=LOT;
+//S lot size calculation method
+These two trading systems use different magic number and are absolutely independent of each other. Real financial markets are rarely symmetric. Absolutely different parameters of the same trading system are often needed for trading in the rising and falling market. To properly configure the EA, you should first test only one trading system, having disabled the second one using relevant switches.
+input
+bool
+L_PosOpen=
+true
+;
+//L Permission to enter long positions
+input
+bool
+L_PosClose=
+true
+;
+//L Permission to exit long positions
+Upon that, perform the same for the second system.
+For the EA to operate, the compiled
+VortexIndicator.ex5
+indicator file should be in the <terminal_data_directory>\MQL5\Indicators.
+Default Expert Advisor's input parameters have been used during tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. Examples of deals on the chart with symmetrical settings
+Testing results for 2017 on EURJPY H12:
+Fig. 2. Testing results chart
+Fig. 3. Examples of deals on the chart with non-symmetrical settings
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22489

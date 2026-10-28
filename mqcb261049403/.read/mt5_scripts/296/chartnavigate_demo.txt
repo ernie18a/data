@@ -1,0 +1,21 @@
+Simple script with demonstration of use of the
+ChartNavigate()
+function.
+The script uses several chart functions:
+ChartID()
+- to get the handle of the chart with the script launched (the handle is used in
+chart operations
+)
+ChartGetInteger()
+- to get the number of the first visible bar on the chart (
+indexing as timeseries
+is used - the last (uncompleted) bar has index 0),
+ChartSetInteger()
+- to set chart shift from the right border of the chart, to disable autoscroll when new tick, to set drawing as candles and showing of tick volumes.
+Each navigation demo is commented using the
+Comment()
+function.
+t
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/296

@@ -1,0 +1,64 @@
+Same concept with
+Triangle Hedge
+(Symbol Synthesizer for MT5), but for chart display in MetaTrader 4.
+It synthesizes any symbol if you have the source symbols in Market Watch window and then makes a real time offline chart like Period_Converter_Opt.mq4 (
+https://www.mql5.com/en/code/7673
+).
+So, basic use is same with Period_Converter_Opt since this is based on it.
+Differences in Parameter settings are:
+extern int     spread      = 0;
+Spread in points for sSym01 (Attached chart symbol). 0 means current.
+Since MetaTrader 4 history file doesn't have past spread data, we need them to determine Ask price for the case dividing to calculate the virtual prices.
+extern int     vDigits     = 5;
+The digits for synthesized symbol. This is replaced OmitDigit (from Period_Converter_Opt.mq4).
+extern string vSymbol   ="EURUSD_v";
+The one you want to generate. Any name is OK but less than 11 characters.
+string sSym01    ="EURGBP";  // (Not external variable)
+Source symbol#1.
+It is automatically set from the attached chart Symbol.
+You should attach this tool on this symbol chart to avoid getting "Insufficient Data Error" when sCal is "D" and if the history file of sSym01 is not sufficient.
+extern string sSym02    ="GBPUSD";
+Source symbol#2.
+It has to be and exact same name on Market Watch include prefix and/or suffix.
+extern string sCal    ="M";
+The calculation to synthesize. "M" means "Multiply", or put "D" means "Divide".
+If the virtual price of vSymbol can be calculated by sSym01 multiply sSym02, put "M".
+Ex: vSymbol="EURUSD"   sSym01="EUR
+GBP
+"   sSym02="
+GBP
+USD"
+vSymbol="EURJPY"   sSym01="EUR
+GBP
+"   sSym02="
+GBP
+JPY"
+vSymbol="EURJPY"   sSym01="EUR
+USD
+"   sSym02="
+USD
+JPY"
+vSymbol="BTCJPY"   sSym01="BTC
+USD
+"   sSym02="
+USD
+JPY"
+Note: sSym01 and sSym02 can be switched with each other since we multiply them. Major pair should be sSym01 for more often ticks.
+If the virtual price of vSymbol can be calculated by sSym02 divided by sSym01, put "D" or any other string but "M".
+Ex: vSymbol="USDJPY"   sSym01="
+EUR
+USD"   sSym02="
+EUR
+JPY"
+vSymbol="ZARJPY"   sSym01="
+USD
+ZAR"   sSym02="
+USD
+JPY"
+vSymbol="EURUSD"   sSym01="USD
+JPY
+"   sSym02="EUR
+JPY
+"
+Note: sSym01 and sSym02 can NOT be switched with each other since we divide.
+Those under-lined currencies are "media" currencies.

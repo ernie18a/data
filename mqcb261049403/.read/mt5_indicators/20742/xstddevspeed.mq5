@@ -1,0 +1,161 @@
+//+---------------------------------------------------------------------+
+//|                                                    XStdDevSpeed.mq5 | 
+//|                                  Copyright ꧂ ㈀　㄀㠀Ⰰ 一椀欀漀氀愀礀 䬀漀猀椀琀猀椀渀 簀 ഀ਀⼀⼀簀                                 䬀栀愀戀愀爀漀瘀猀欀Ⰰ   昀愀爀爀椀愀䀀洀愀椀氀⸀爀攀搀挀漀洀⸀爀甀 簀 ഀ਀⼀⼀⬀ⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀ⬀ഀ਀⼀⼀簀 ᐀㬄伄 䀀〄㄄㸄䈄䬄  㠀㴄㐄㠄㨄〄䈄㸄䀄〄  䄀㬄㔄㐄䌄㔄䈄  㼀㸄㬄㸄㘄㠄䈄䰄 䐀〄㤄㬄 匀洀漀漀琀栀䄀氀最漀爀椀琀栀洀猀⸀洀焀栀 簀ഀ਀⼀⼀簀 ㈀ 㼀〄㼄㨄䌄 ⠀㐀㠄䀄㔄㨄䈄㸄䀄㠄丄⤄㨀 㨀〄䈄〄㬄㸄㌄弄㐀〄㴄㴄䬄䔄弄䈀㔄䀄㰄㠄㴄〄㬄〄射尀䴀儀䰀㔀尀䤀渀挀氀甀搀攀        簀ഀ਀⼀⼀⬀ⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀⴀ⬀ഀ਀⌀瀀爀漀瀀攀爀琀礀 挀漀瀀礀爀椀最栀琀 ∀䌀漀瀀礀爀椀最栀琀 숀© 2018, Nikolay Kositsin"
+#property link "farria@mail.redcom.ru"
+//---- номер версии индикатора
+#property version   "1.10"
+//---- отрисовка индикатора в отдельном окне
+#property indicator_separate_window 
+//---- количество индикаторных буферов
+#property indicator_buffers 2 
+//---- использовано всего одно графическое построение
+#property indicator_plots   1
+//+-----------------------------------+
+//|  объявление констант              |
+//+-----------------------------------+
+#define RESET 0 // Константа для возврата терминалу команды на пересчёт индикатора
+//+-----------------------------------+
+//|  Параметры отрисовки индикатора   |
+//+-----------------------------------+
+//---- отрисовка индикатора в виде многоцветной гистограммы
+#property indicator_type1   DRAW_COLOR_HISTOGRAM
+//---- в качестве цветов трёхцветной линии использованы
+#property indicator_color1  clrGold,clrGray
+//---- линия индикатора - непрерывная кривая
+#property indicator_style1  STYLE_SOLID
+//---- толщина линии индикатора равна 2
+#property indicator_width1  2
+//---- отображение метки линии индикатора
+#property indicator_label1  "XStdDevSpeed"
+//+-----------------------------------+
+//|  Описание класса CXMA             |
+//+-----------------------------------+
+#include <SmoothAlgorithms.mqh> 
+//+-----------------------------------+
+//---- объявление переменных классов CXMA и CMomentum из файла SmoothAlgorithms.mqh
+CXMA XMA1;
+CMomentum Mom;
+//+-----------------------------------+
+//|  объявление перечислений          |
+//+-----------------------------------+
+/*enum Smooth_Method - перечисление объявлено в файле SmoothAlgorithms.mqh
+  {
+   MODE_SMA_,  // SMA
+   MODE_EMA_,  // EMA
+   MODE_SMMA_, // SMMA
+   MODE_LWMA_, // LWMA
+   MODE_JJMA,  // JJMA
+   MODE_JurX,  // JurX
+   MODE_ParMA, // ParMA
+   MODE_T3,    // T3
+   MODE_VIDYA, // VIDYA
+   MODE_AMA,   // AMA
+  }; */
+//+-----------------------------------+
+//|  Входные параметры индикатора     |
+//+-----------------------------------+
+input ENUM_MA_METHOD Std_Method=MODE_SMA;                     // Тип Std усреднения
+input uint Std_Period=20;                                     // Период Std
+input ENUM_APPLIED_PRICE  Std_applied_price=PRICE_CLOSE;      // тип цены
+input uint SpeedBars=5;                    // Количество баров для определения скорости
+input Smooth_Method MA_SMethod=MODE_JJMA;  // Метод усреднения сглаживания
+input uint MA_Length=5;                    // Глубина сглаживания                    
+input int MA_Phase=15;                     // Параметр сглаживания
+input int Shift=0;                         // Сдвиг индикатора по горизонтали в барах
+//+-----------------------------------+
+//---- объявление динамического массива, который в дальнейшем будет использован в качестве индикаторного буфера
+double IndBuffer[],ColorIndBuffer[];
+//---- объявление целых переменных начала отсчета данных
+int min_rates_1,min_rates_2,min_rates_total;
+//--- объявление целочисленных переменных для хендлов индикаторов
+int Ind_Handle;
+//+------------------------------------------------------------------+   
+//| Custom indicator initialization function                         | 
+//+------------------------------------------------------------------+ 
+int OnInit()
+  {
+//---- инициализация переменных начала отсчета данных
+   min_rates_1=int(Std_Period);
+   min_rates_2=min_rates_1+int(SpeedBars);
+   min_rates_total=min_rates_2+GetStartBars(MA_SMethod, MA_Length, MA_Phase);  
+//---- получение хендла индикатора iStdDev
+   Ind_Handle=iStdDev(Symbol(),NULL,Std_Period,0,Std_Method,Std_applied_price);
+   if(Ind_Handle==INVALID_HANDLE)
+    {
+     Print(" Не удалось получить хендл индикатора iStdDev");
+     return(INIT_FAILED);
+    }
+//---- превращение динамического массива в индикаторный буфер
+   SetIndexBuffer(0,IndBuffer,INDICATOR_DATA);
+//---- индексация элементов в буфере как в таймсерии
+   ArraySetAsSeries(IndBuffer,true);
+//---- превращение динамического массива цветовой буфер
+   SetIndexBuffer(1,ColorIndBuffer,INDICATOR_COLOR_INDEX);
+//---- индексация элементов в буфере как в таймсерии
+   ArraySetAsSeries(ColorIndBuffer,true);
+//---- осуществление сдвига индикатора 1 по горизонтали
+   PlotIndexSetInteger(0,PLOT_SHIFT,Shift);
+//---- осуществление сдвига начала отсчета отрисовки индикатора
+   PlotIndexSetInteger(0,PLOT_DRAW_BEGIN,min_rates_total);
+//---- установка значений индикатора, которые не будут видимы на графике
+   PlotIndexSetDouble(0,PLOT_EMPTY_VALUE,EMPTY_VALUE);
+//--- создание имени для отображения в отдельном подокне и во всплывающей подсказке
+   IndicatorSetString(INDICATOR_SHORTNAME,"XStdDevSpeed");  
+//--- определение точности отображения значений индикатора
+   IndicatorSetInteger(INDICATOR_DIGITS,_Digits+1);
+//---- завершение инициализации
+   return(INIT_SUCCEEDED);
+  }
+//+------------------------------------------------------------------+ 
+//| Custom indicator iteration function                              | 
+//+------------------------------------------------------------------+ 
+int OnCalculate(const int rates_total,    // Количество истории в барах на текущем тике
+                const int prev_calculated,// Количество истории в барах на предыдущем тике
+                const datetime &time[],
+                const double &open[],
+                const double &high[],
+                const double &low[],
+                const double &close[],
+                const long &tick_volume[],
+                const long &volume[],
+                const int &spread[])
+  {
+//---- проверка количества баров на достаточность для расчета
+   if(BarsCalculated(Ind_Handle)<rates_total || rates_total<min_rates_total) return(RESET);
+      
+//---- объявление переменных с плавающей точкой  
+   double speed,STD[];
+//---- объявление целых переменных и получение уже посчитанных баров
+   int limit,bar,to_copy,maxbar1,maxbar2;
+//----   
+   maxbar1=rates_total-min_rates_1;
+   maxbar2=rates_total-min_rates_2;
+   
+//---- расчёты необходимого количества копируемых данных и стартового номера limit для цикла пересчёта баров
+   if(prev_calculated>rates_total || prev_calculated<=0)// проверка на первый старт расчёта индикатора
+     {
+      limit=maxbar1; // стартовый номер для расчёта всех баров
+     }
+   else limit=rates_total-prev_calculated; // стартовый номер для расчёта новых баров 
+   to_copy=limit+1;
+
+//---- индексация элементов в массивах как в таймсериях  
+   ArraySetAsSeries(STD,true);
+
+//---- копируем вновь появившиеся данные в массивы
+   if(CopyBuffer(Ind_Handle,0,0,to_copy,STD)<=0) return(RESET);
+
+//---- Основной цикл расчёта индикатора
+   for(bar=limit; bar>=0 && !IsStopped(); bar--)
+     {
+      speed=Mom.MomentumSeries(maxbar1,prev_calculated,rates_total,SpeedBars,STD[bar],bar,true);
+      IndBuffer[bar]=XMA1.XMASeries(maxbar2,prev_calculated,rates_total,MA_SMethod,MA_Phase,MA_Length,speed,bar,true);
+      if(IndBuffer[bar]>=0) ColorIndBuffer[bar]=0;
+      else ColorIndBuffer[bar]=1;
+     }
+//----     
+   return(rates_total);
+  }
+//+------------------------------------------------------------------+
+
+   

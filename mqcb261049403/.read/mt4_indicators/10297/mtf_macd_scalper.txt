@@ -1,0 +1,25 @@
+First off, I am not the author of iMACD. All details are contained inside that file as I found it on the internet.
+My indicator calls iMACD through the iCustom function to perform its calculations. I started off thinking the in built MACD would not have given me what I wanted, however with hind sight it could have been used.
+At the moment in its current configuration the indicator will only appear on the M5 chart. Their is commenting inside the code which can be taken out, and it will parse 3-4 time periods higher than the current chart period for alignment on the MACD. At the moment its fixed to M5, H1,H4,D.
+This was based on the theory presented by a Forex education company, which I shall not name here. I wanted to see if the theory worked, and I could make the trading system a "no brainer". If when you first put the indicator onto the chart, if you do not see any gold circles appear, well do not despair, they do not happen very often. You may need to scroll back quite some way to see them.
+The theory is that you want the market trending on all time periods, to ensure a high probability trade. Unless my calculations are wrong, this does not work :( No holy grail here......
+The indicator works by putting a gold circle on the bar that you are to use as an activator to get into a trade. The gold circle is on top of the bar for short, and bottom of the bar for long. The gold circle is really a circle with a star in it, but its too small to make out the star :)
+This is my third indicator to have written and my first to share. So if you have any comments (Good or bad) please feel free to let me know.
+Cheers
+Colin
+Update V2.1 - Removed this version as it was more of a let down than an improvement, text left here as some of the improvements were carried through to 2.2
+1) You can change the color of the indicator
+2) Indicator now looks only at the next 3 higher time zones, 4 time zones meant that it hardly ever had a result.
+3) If your chart is higher than M30 then no indicator will display. Again using higher than M30 resulted in very little trades being displayed. This was also meant to help with scalping.
+4) Many code optimizations, mean the indicator runs faster, and is easier to read and follow.
+5) Checks price for above and below the 50 EMA, and if the price is below only shows short positions, and long for above. Removes many whipsaws and trades against trend.
+Update 2.2 - Thanks to people pointing out 2.1 was worse, so another quick update
+1) Removed the check for 3 higher time zones and went back to checking fixed higher time frames. However, you can set the higher time frames in the indicator variables if you want now. This means you can look at the m1,m5,m15,m30 and they will show all results which is in time with the H1,H4,D if you stick to the defaults. This seems to be the best result.
+2) Put all MACD variables into the indicator variables so you can set the MACD values to suit each time zone. Thought it might work better if the M1 had longer time variables, than the H1 and so on. Default values leaves them all the same. So far the quick play I've had with this, has shown that it does not make it more effective. I'll leave this for now and see if others come up with something on this.
+Update 2.3
+1) Only showed entry of the trade for the indicator
+2) Added alert to show when the alignment happens
+3) Removed price check for above and below 50 ema
+Update 2.4 - Going to introduce
+1) Additional filtering on entry to try and remove whipsaws by checking if MACD histo is falling.
+2) Extra buffer to show arrow for short and long entries.

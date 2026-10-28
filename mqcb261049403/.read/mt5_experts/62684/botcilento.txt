@@ -1,0 +1,22 @@
+BotCilento is a sophisticated grid-trading Expert Advisor for MetaTrader 5 that combines trend-following signals with adaptive risk management.
+Dual MA Strategy
+Trades on crossovers of fast/slow SMAs (H1 timeframe)
+Filters signals with volume spikes and volatility checks
+Smart Grid Management
+Adds positions at dynamic intervals (fixed pips or ATR-based)
+Supports Martingale or Arithmetic lot sizing
+Closes entire grid at user-defined profit/breakeven targets
+Risk Safeguards
+Auto-stop at daily loss limits
+Drawdown-based emergency closure
+Position age expiration
+Spread/slippage filters
+Unique Features
+Optional "hold through reversals" mode
+Stagnation detection (no movement)
+Real-time dashboard with profit metrics
+Please be aware: This EA is not designed for live trading. Using martingale strategies or increasing lot sizes could eventually lead to a complete loss of your balance. It is intended for demo and strategy testing only. The code requires significant updates before it is suitable for live trading. Consider it a work in progress and feel free to make improvements.
+Ideal for: Trending forex pairs (EURUSD, GBPUSD) during active hours, with customizable aggression levels from conservative to high-frequency trading.
+"A self-correcting grid system that prioritizes capital preservation while capturing extended trends."
+"Important Notice:
+After 3 days of dedicated development, I'm sharing this tool with the community. While I've put significant effort into its creation, please understand this isn't a guaranteed profit solution. Treat it as a foundation for experimentation - test thoroughly, refine parameters, and see if you can adapt it to your unique trading approach."

@@ -1,0 +1,38 @@
+The Exp_CandlesticksBW_Tm Expert Advisor is based on the color change of the
+CandlesticksBW
+candlesticks and allows strictly define the trading time interval.
+A trade signal is formed when a bar is closing, if the indicator color has changed, providing evidence for changing the current trend.
+It is possible to specify trading time in input parameters to trade in the specified time interval:
+input
+bool
+TimeTrade=
+true
+;
+// Allow trading within the specified time intervals
+input
+HOURS  StartH=ENUM_HOUR_0;
+// Trading start (Hours)
+input
+MINUTS StartM=ENUM_MINUT_0;
+// Trading start (Minutes)
+input
+HOURS  EndH=ENUM_HOUR_23;
+// Trading end (Hours)
+input
+MINUTS EndM=ENUM_MINUT_59;
+// Trading end (Minutes)
+Two variables for hours and minutes are provided for each of trading start and trading end times.
+Default settings enable the Expert Advisor to trade the whole trading session from 0:00, while all positions are immediately closed at 23:59.
+If the start time in the EA's settings is later than the specified trading end time, the EA will close the opened positions at the specified time next day.
+For the EA to operate, the compiled
+CandlesticksBW.ex5
+indicator file must be in the
+<terminal_data_directory>\MQL5\Indicators
+folder.
+The EA default input parameters were used in tests below. Stop Loss and Take Profit were not used in testing.
+Fig.1. Example trades on the chart
+Testing results for GBPUSD H4 over the year 2016:
+Fig.2. Testing results chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20905

@@ -1,0 +1,14 @@
+The
+CCI_Histogram
+indicator with the timeframe selection option available in input parameters.
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// Indicator chart period (timeframe)
+The indicator requires CCI_Histogram.mq5 indicator file. Place it in <terminal_data_folder>\MQL5\Indicators.
+Fig.1. The CCI_Histogram_HTF indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15951

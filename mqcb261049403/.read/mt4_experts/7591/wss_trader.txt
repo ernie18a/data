@@ -1,0 +1,5 @@
+Author: Fuccer
+I have not checked myself, but people recommend setting the trading hours to 7-17, trailing to 60, metrics to 36 and to look back to 2 months.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7591

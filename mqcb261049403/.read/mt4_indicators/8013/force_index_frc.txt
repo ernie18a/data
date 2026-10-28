@@ -1,0 +1,22 @@
+Force Index indicator measures the Bulls Power at each increase, and the Bulls Power at each decrease.
+It connects the basic elements of market information: price trend, its drops, and volumes of transactions. This index can be used as it is, but it is better to approximate it with the help of Moving Average. Approximation with the help a short moving average ( 2 intervals) contributes to finding the best opportunity to open and close positions. If the approximations is made with long moving average (period 13), the index shows the trends and their changes.
+It is better to buy when the forces become minus (fall below zero) in the period of indicator increasing tendency;
+The force index signalizes the continuation of the increasing tendency when it increases to the new peak;
+The signal to sell comes when the index becomes positive during the decreasing tendency;
+The force index signalizes the Bears Power and continuation of the decreasing tendency when the index falls to the new trough;
+If price changes do not correlate to the corresponding changes in volume, the force indicator stays on one level, which tells you the trend is going to change soon.
+Calculation
+The force of every market movement is characterized by its direction, scale and volume. If the closing price of the current bar is higher than the preceding bar, the force is positive. If the current closing price if lower than the preceding one, the force is negative. The greater the difference in prices is, the greater the force is. The greater the transaction volume is, the greater the force is.
+FORCE INDEX (i) = VOLUME (i) * ((MA (ApPRICE, N, i) - MA (ApPRICE, N, i-1))
+where:
+FORCE INDEX (i) — Force Index of the current bar;
+VOLUME (i) — volume of the current bar;
+MA (ApPRICE, N, i) — any Moving Average of the current bar for N period: Simple, Exponential, Seighted or Smoothed;
+ApPRICE — applied price;
+N — period of the smoothing;
+MA (ApPRICE, N, i-1) — any Moving Average of the previous bar.
+Full description of FRC is available in the
+Technical analysis: Force Index
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8013

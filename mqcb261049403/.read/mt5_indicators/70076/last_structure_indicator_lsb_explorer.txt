@@ -1,0 +1,15 @@
+Last Structure Indicator(Single Phase) – Exploring the Last Structure Break (LSB) Trading Concept
+This indicator is my personal quest to explore and validate the Last Structure Break (LSB) trading idea through structured price-action analysis.
+It works independently of the daily timeframe ( PERIOD_D1 ), instead using logical day separation and separator-based detection to identify new trading days.
+This approach keeps structure analysis consistent across different timeframes and brokers, avoiding reliance on daily chart data.
+The indicator scans for meaningful support and resistance pivots using configurable structure modes (wick-based or body-based detection). It identifies the last valid structural levels of a trading day that remained unbroken until the session ended and projects them forward as trendlines into the new trading day.
+To ensure analytical relevance, only levels that were respected for the remainder of the day are considered valid and drawn. This results in a cleaner view of market structure and helps highlight price-action behavior more effectively.
+Key features include:
+Logical day detection that does not depend on PERIOD_D1
+Automatic new-day recognition using chart separators and datetime normalization
+Structure validation using pivot strength (left/right bar analysis)
+Support and resistance detection across multiple structure modes
+Last structure break validation for LSB experimentation
+Trendline visualization of valid structural levels extended into new sessions
+Minimal recalculation for efficiency and real-time performance
+This project is an experimental framework for studying market structure dynamics and evaluating their potential role in trading strategies. By analyzing the LSB concept with an independent day model, I aim to determine whether structural endpoints of a session have predictive or strategic value for subsequent price action.

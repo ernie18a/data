@@ -1,0 +1,42 @@
+Hi there.
+This is a EA that I'm working on. It's in the "play with" stage now and I though I would make it open for everybody to play with.
+How this works.
+Al the changes takes place here:
+// PLACE ORDER
+if (OrdersTotal() < 1)
+{
+//if (m1==1&&m5==0&&m15==1&&m30==1&&h1==1&&h4==1)
+if (/*m1==1&&*/cm5U<10&&m5==1&&cm15U>200&&m15==1&&m30==1&&h1==1&&h4==1)
+{
+if (fail) StopLoss=StopLoss+5;
+BUY_FX(NULL);
+}
+//if (m1==0&&m5==1&&m15==0&&m30==0&&h1==0&&)//h4==0)
+if (/*m1==0&&*/cm5D<10&&m5==0&&cm15D>200&&m15==0&&m30==0&&h1==0&&h4==0)
+{
+if (fail) StopLoss=StopLoss+5;
+SELL_FX(NULL);
+}
+//SELL_FX(NULL);
+//BUY_FX(NULL);
+}
+I have avaiables to play with.
+The ones below are the ammount of time a HAS indicator is active in ticks. The U is for UP and D is for down.
+In the chart the 2 swap depending on if the HAS indicator is up or down (RED/GREEN)
+int cm1U,cm5U,cm15U,cm30U,ch1U,ch4U=0;
+int cm1D,cm5D,cm15D,cm30D,ch1D,ch4D=0;
+The variables below are the normal ones.
+extern int TakeProfit=20;
+extern int StopLoss=500;
+extern int Magic=12367;
+extern double LOT = 0.1;
+The ones below are the actual up/down of the indicator. 0=down, 1=up.
+ie.. m1=0 means the HAS indicator on the M1 chart is down or RED.
+int m1,m5,m15,m30,h1,h4;
+With this you can play and have a lot of settings.
+The below means:
+Ignore the m1 HAS chart, The 5m tic counter must be below 10, The 15m Tick counter must be below 200, and the rest (30m to 4h) must be up(1).
+if (/*m1==1&&*/cm5U<10&&m5==1&&cm15U>200&&m15==1&&m30==1&&h1==1&&h4==1)
+You need the HAS indicator for this. Save it under indicators.
+You can run this on any time frame as it looks at all the time frames.
+Any news or help or just nice info would be very nice. :)

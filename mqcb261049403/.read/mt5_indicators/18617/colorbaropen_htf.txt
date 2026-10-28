@@ -1,0 +1,11 @@
+The indicator draws the open level of a candlestick of a higher timeframe specified in the indicator input parameters:
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H12
+;
+// Chart period
+Fig. 1. The ColorBarOpen_HTF indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18617

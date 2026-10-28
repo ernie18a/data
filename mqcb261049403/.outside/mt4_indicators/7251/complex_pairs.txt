@@ -1,0 +1,5 @@
+Author: Semen Semenovich
+The idea of the indicator is to select each currency from currency pairs separately. The currencies are measured in relative units (points). The sum of all currencies at any given time is equal to zero.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7251
