@@ -1,0 +1,3 @@
+Calculation: Open-based series = open price or the selected moving average of open price, calculated on chart-timeframe bars or on higher-timeframe bars; use the higher-timeframe bar still forming
+Long: Current open-based series > previous open-based series AND previous open-based series <= two-bars-back open-based series OR previous open-based series > current open-based series
+Short: Current open-based series < previous open-based series AND previous open-based series >= two-bars-back open-based series OR previous open-based series <= current open-based series

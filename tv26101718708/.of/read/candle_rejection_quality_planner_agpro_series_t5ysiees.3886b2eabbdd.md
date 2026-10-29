@@ -1,0 +1,5 @@
+Calculation: Bullish rejection quality = weighted average of normalized lower-wick share, close location, candle range relative to ATR, and (if enabled) relative volume; bearish rejection quality uses upper-wick share and inverse close location. Normalize wick share and close location so higher is better; score range highest near the configurable ideal ATR multiple and lower toward the configurable minimum and maximum; score relative volume so higher is better. Relative volume = volume / its moving average.
+Long: lower-wick share ≥ minimum wick share AND close location ≥ minimum close quality AND lower wick > upper wick AND bullish rejection quality ≥ bearish rejection quality AND bullish rejection quality ≥ minimum quality AND event-label cooldown elapsed
+Short: upper-wick share ≥ minimum wick share AND (lower-wick share < minimum wick share OR close location < 1 − minimum close quality OR upper wick ≤ lower wick) AND bearish rejection quality ≥ minimum quality AND event-label cooldown elapsed
+Exit: long, close < failure edge OR close ≥ target guide
+Exit: short, close > failure edge OR close ≤ target guide

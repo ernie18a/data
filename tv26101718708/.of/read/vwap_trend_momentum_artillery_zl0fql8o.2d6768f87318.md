@@ -1,0 +1,11 @@
+Calculation: session VWAP = cumulative typical price ((high + low + close) / 3) multiplied by max(volume, 1), divided by cumulative max(volume, 1), resetting each day
+Calculation: EMA slope = long-period EMA of close minus its value a shorter lookback ago
+Calculation: VWAP distance = abs(close - session VWAP) / close × 100
+Calculation: near VWAP = VWAP distance is within the configured maximum distance
+Calculation: was near VWAP = near VWAP on the current bar or any of the prior three bars
+Calculation: long stop price = initial stop price, raised to at least entry price once high reaches entry price plus ATR times the breakeven trigger
+Calculation: short stop price = initial stop price, lowered to at most entry price once low reaches entry price minus ATR times the breakeven trigger
+Long: daily trade count below its cap AND no open position AND within the configured session AND ATR > 0 AND close > session VWAP AND EMA slope > 0 AND abs(EMA slope) > ATR × threshold AND (EMA50 filter disabled OR close > EMA50) AND was near VWAP AND close > session VWAP AND close > prior bar high AND (rejection filter disabled OR lower wick is at least its configured share of bar range AND real body is at least its configured share of bar range AND close > open) AND (ADX filter disabled OR ADX >= its configured minimum)
+Short: daily trade count below its cap AND no open position AND within the configured session AND ATR > 0 AND short entries enabled AND close < session VWAP AND EMA slope < 0 AND abs(EMA slope) > ATR × threshold AND (EMA50 filter disabled OR close < EMA50) AND was near VWAP AND close < session VWAP AND close < prior bar low AND (rejection filter disabled OR upper wick is at least its configured share of bar range AND real body is at least its configured share of bar range AND close < open) AND (ADX filter disabled OR ADX >= its configured minimum)
+Exit: long, low <= long stop price OR high >= entry price + ATR-at-entry × target multiple OR session end
+Exit: short, high >= short stop price OR low <= entry price - ATR-at-entry × target multiple OR session end

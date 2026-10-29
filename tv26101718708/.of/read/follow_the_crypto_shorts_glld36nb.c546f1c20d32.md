@@ -1,0 +1,2 @@
+Long: Higher-timeframe BTC short position count crosses below its higher-timeframe SMA, using the last completed bar
+Exit: Long, higher-timeframe BTC short position count crosses above its higher-timeframe SMA, using the last completed bar

@@ -1,0 +1,3 @@
+Calculation: Daily close percentage change = (current daily close − previous daily close) / previous daily close; use the still-forming daily bar for current close and the last completed daily bar for previous close.
+Long: Daily close percentage change > threshold OR (Daily close percentage change >= −threshold AND Daily close percentage change <= threshold AND position side is long)
+Short: Daily close percentage change < −threshold OR (Daily close percentage change >= −threshold AND Daily close percentage change <= threshold AND position side is short)

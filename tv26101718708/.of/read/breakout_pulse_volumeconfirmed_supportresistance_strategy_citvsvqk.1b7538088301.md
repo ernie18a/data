@@ -1,0 +1,6 @@
+Calculation: Resistance = most recent confirmed swing high, where the high exceeds highs over configurable bars before and after it; update when the bars after it are complete
+Calculation: Support = most recent confirmed swing low, where the low is below lows over configurable bars before and after it; update when the bars after it are complete
+Long: close crosses above resistance AND volume > its moving average × configured surge multiplier AND (trend filter disabled OR close > EMA) AND time is within the configured backtest date range
+Short: close crosses below support AND volume > its moving average × configured surge multiplier AND (trend filter disabled OR close < EMA) AND time is within the configured backtest date range
+Exit: long, low <= (structural stop enabled AND support available at entry ? support at entry − ATR at entry × buffer : entry price − ATR at entry × stop multiplier) OR high >= entry price + ATR at entry × target multiplier
+Exit: short, high >= (structural stop enabled AND resistance available at entry ? resistance at entry + ATR at entry × buffer : entry price + ATR at entry × stop multiplier) OR low <= entry price − ATR at entry × target multiplier

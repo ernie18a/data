@@ -1,0 +1,4 @@
+Calculation: Pivot high = a chart-bar high that is the highest within the configured number of preceding and following chart bars; confirmed after the following bars complete
+Calculation: Pivot low = a chart-bar low that is the lowest within the configured number of preceding and following chart bars; confirmed after the following bars complete
+Short: Pivot high AND (RSI at the pivot bar >= the overbought threshold, if the RSI filter is enabled) AND (volume at the pivot bar >= its moving average at the pivot bar × the volume multiplier, if the volume filter is enabled)
+Long: Pivot low AND (RSI at the pivot bar <= the oversold threshold, if the RSI filter is enabled) AND (volume at the pivot bar >= its moving average at the pivot bar × the volume multiplier, if the volume filter is enabled)

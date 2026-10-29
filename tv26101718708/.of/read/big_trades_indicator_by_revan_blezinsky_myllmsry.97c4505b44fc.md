@@ -1,0 +1,5 @@
+Calculation: Volume ratio = current bar volume divided by the simple moving average of volume over a lookback
+Calculation: Bullish candle direction = use the selected comparison: close vs. open (ties use close >= previous close), close vs. (high + low) / 2 (ties use close >= previous close), or close vs. previous close (ties use close >= open)
+Calculation: Directional big-trade count = count same-direction big-trade bars since the last opposite-direction big-trade bar; in strict-consecutive mode, reset the count on any bar without a big trade
+Long: volume ratio >= spike threshold AND bullish candle direction OR bullish directional big-trade count = momentum sequence length
+Short: volume ratio >= spike threshold AND NOT bullish candle direction OR bearish directional big-trade count = momentum sequence length

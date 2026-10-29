@@ -1,0 +1,10 @@
+Calculation: Moving average = selected moving-average type applied to close; the Impulse MA has a shorter lookback than the Lead MA.
+Calculation: Session VWAP = cumulative (hlc3 × volume) since session start divided by cumulative volume since session start.
+Long: (cloud rule = stack AND Impulse MA > Lead MA OR cloud rule = slope AND Impulse MA > its prior value AND Lead MA > its prior value OR cloud rule = price AND close > Impulse MA AND close > Lead MA) AND the prior bar's cloud state was not bullish
+Short: (cloud rule = stack AND Impulse MA < Lead MA OR cloud rule = slope AND Impulse MA < its prior value AND Lead MA < its prior value OR cloud rule = price AND close < Impulse MA AND close < Lead MA) AND the prior bar's cloud state was not bearish
+Long: Same cloud conditions and state change as above, using Impulse and Lead MAs calculated for a higher timeframe from its last completed bar.
+Short: Same cloud conditions and state change as above, using Impulse and Lead MAs calculated for a higher timeframe from its last completed bar.
+Long: For each Momentum MA, MainTrend MA, or session VWAP signal, its selected paint rule changes to bullish: slope rule means value > its prior value; price rule means close > value. The prior bar's paint state was not bullish.
+Short: For each Momentum MA, MainTrend MA, or session VWAP signal, its selected paint rule changes to bearish: slope rule means value < its prior value; price rule means close < value. The prior bar's paint state was not bearish.
+Long: For each Trender, at least one selected source has a non-Uni paint rule, every selected non-Uni source is bullish under its selected paint rule (slope: value > prior value; price: close > value), and the prior Trender state was neutral or bearish. Higher-timeframe sources use the last completed higher-timeframe bar.
+Short: For each Trender, at least one selected source has a non-Uni paint rule, every selected non-Uni source is bearish under its selected paint rule (slope: value < prior value; price: close < value), and the prior Trender state was neutral or bullish. Higher-timeframe sources use the last completed higher-timeframe bar.

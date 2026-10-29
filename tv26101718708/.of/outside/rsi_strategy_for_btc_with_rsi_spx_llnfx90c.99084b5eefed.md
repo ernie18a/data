@@ -1,0 +1,1 @@
+On the hourly timeframe, calculate RSI for the traded instrument and the S&P 500. Enter long when the traded instrument’s RSI crosses above the S&P 500’s RSI; enter short when it crosses below. No effective exit condition is defined.

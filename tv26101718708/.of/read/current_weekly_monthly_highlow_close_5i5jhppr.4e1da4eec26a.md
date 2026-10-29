@@ -1,0 +1,2 @@
+Long: close is greater than every earlier close in the current calendar week OR this is the first bar of the week OR close is greater than every earlier close in the current calendar month OR this is the first bar of the month
+Short: close is less than every earlier close in the current calendar week OR this is the first bar of the week OR close is less than every earlier close in the current calendar month OR this is the first bar of the month

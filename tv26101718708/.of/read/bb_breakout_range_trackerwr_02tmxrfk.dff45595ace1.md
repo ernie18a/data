@@ -1,0 +1,2 @@
+Long: close crosses above the upper Bollinger Band AND no upper breakout has occurred since the most recent lower breakout
+Short: close crosses below the lower Bollinger Band AND no lower breakout has occurred since the most recent upper breakout

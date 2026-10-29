@@ -1,0 +1,3 @@
+Calculation: Bullish candle count = number of bars in a recent rolling lookback where close > open
+Long: close > VWAP AND MACD line > MACD signal line AND short-term EMA > medium-term EMA > long-term EMA AND bullish candle count >= its threshold AND datetime is within the selected date range AND datetime is within the allowed session AND position is flat
+Exit: long, MACD line < MACD signal line OR high >= entry price + take-profit offset OR low <= entry price - stop-loss offset

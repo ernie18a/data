@@ -1,0 +1,4 @@
+Calculation: Weighted score = weighted average of normalized RSI, normalized rate of change, and normalized Sharpe ratio. For each component, normalize its raw value by the rolling lowest and highest values over a lookback to a 0–100 range, apply recursive exponential smoothing, normalize again the same way, smooth again, then transform as (value − 50) × 2. Raw RSI is RSI(close) − 50, moving-average smoothed and clipped; raw rate of change is ROC(close), moving-average smoothed and clipped. Raw Sharpe ratio is the mean of close-to-close returns minus the daily risk-free rate, divided by the population standard deviation of those returns plus a small constant; clip it before normalization.
+Long: weighted score <= lower threshold
+Short: weighted score >= upper threshold
+Exit: long, weighted score >= upper threshold AND not in a buy cycle AND position > 0

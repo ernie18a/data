@@ -1,0 +1,3 @@
+Calculation: MATD = hl2 − SMA(hl2 − selected moving average of close, distance lookback); smoothed MATD = SMA(MATD, smoothing lookback)
+Long: RSI crosses above 50 OR RSI crosses above the oversold level AND EMA of high is above the longer-term EMA of close AND close is above EMA of close AND close is above SAR AND close is above the greater of smoothed MATD and the selected moving average
+Short: RSI crosses below 50 OR RSI crosses below the overbought level AND EMA of low is below the longer-term EMA of close AND close is below EMA of close AND close is below SAR AND close is below the lesser of smoothed MATD and the selected moving average

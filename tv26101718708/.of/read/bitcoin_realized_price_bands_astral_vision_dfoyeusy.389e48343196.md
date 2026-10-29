@@ -1,0 +1,3 @@
+Calculation: Realized Price = realized market capitalization / circulating supply, using the last completed bar of the higher timeframe
+Long: Previous close < previous Realized Price × cost-basis multiplier AND current close >= current Realized Price × cost-basis multiplier
+Short: Previous close > previous Realized Price × overvaluation multiplier AND current close <= current Realized Price × overvaluation multiplier

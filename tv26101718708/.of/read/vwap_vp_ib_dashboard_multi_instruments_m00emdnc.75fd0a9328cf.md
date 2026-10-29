@@ -1,0 +1,7 @@
+Calculation: Globex VWAP = volume-weighted average of each bar’s OHLC4, reset at the symbol’s daily boundary.
+Calculation: Session VWAP = volume-weighted average of each bar’s OHLC4, reset at each Tokyo, London, or RTH session open; active only during those sessions.
+Calculation: Globex value area high/low = upper/lower boundaries of the contiguous price rows containing the configured percentage of Globex-session volume, starting from the highest-volume row and expanding toward the adjacent row with more volume.
+Calculation: Session value area high/low = same value-area calculation, reset at each Tokyo, London, or RTH session open and active only during those sessions.
+Calculation: Initial Balance high/low = highest high and lowest low during the configured initial-balance window; use the levels only after that window has completed, retaining them until the next window opens.
+Long: close >= Globex VWAP OR (session active AND close >= Session VWAP) OR close > Globex value area high OR (session active AND close > Session value area high) OR (Initial Balance complete AND close > Initial Balance high)
+Short: close < Globex VWAP OR (session active AND close < Session VWAP) OR close < Globex value area low OR (session active AND close < Session value area low) OR (Initial Balance complete AND close < Initial Balance low)

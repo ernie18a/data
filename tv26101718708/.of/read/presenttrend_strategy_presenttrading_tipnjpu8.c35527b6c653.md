@@ -1,0 +1,6 @@
+Calculation: PresentTrend = Let upper = low − SMA(true range, length) × multiplier and lower = high + SMA(true range, length) × multiplier. If the selected momentum indicator (RSI of the selected price source or MFI of HLC3) is at least 50, set PresentTrend to the greater of upper and the previous PresentTrend; otherwise set it to the lesser of lower and the previous PresentTrend. Treat an unavailable previous value as zero.
+Calculation: Trend direction = Set to +1 when PresentTrend crosses above its value two bars earlier and the age of the previous long signal is greater than the age of the latest short signal. Set to −1 when PresentTrend crosses below its value two bars earlier and the age of the previous short signal is greater than the age of the latest long signal. Otherwise retain the prior trend direction. Signal age is the number of bars since the signal; previous-signal age counts from the prior bar.
+Long: PresentTrend crosses above its value two bars earlier OR Trend direction = +1
+Short: PresentTrend crosses below its value two bars earlier OR Trend direction = −1
+Exit: Long, Trend direction = −1
+Exit: Short, Trend direction = +1

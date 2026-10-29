@@ -1,0 +1,6 @@
+Calculation: Blue wave = EMA of the average of RSI and stochastic over the shorter lookback minus EMA of that average over the longer lookback, plus half the TCI; TCI = EMA of ((HLC3 − EMA(HLC3)) / (0.015 × EMA(abs(HLC3 − EMA(HLC3)))), with the two EMA lookbacks equal
+Calculation: Money flow = EMA(MFI(HLC3) − 50) × multiplier
+Calculation: Structural stop = lowest low over the stop lookback
+Long: flat position AND blue wave > 0 AND money flow > 0 AND blue wave > its previous-bar value AND money flow > its previous-bar value AND close > EMA(close) with the longer EMA lookback AND close > EMA(close) with the shorter EMA lookback AND (previous bar's blue wave <= 0 OR previous bar's money flow <= 0 OR blue wave's value two bars ago >= its previous-bar value OR money flow's value two bars ago >= its previous-bar value OR previous bar's close <= its longer-lookback EMA OR previous bar's close <= its shorter-lookback EMA)
+Exit: long, low <= structural stop
+Exit: long, close < EMA(close) with the shorter EMA lookback

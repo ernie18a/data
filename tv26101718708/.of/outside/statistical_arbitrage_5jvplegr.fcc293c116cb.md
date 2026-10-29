@@ -1,0 +1,1 @@
+Calculate the spread between the closing prices of two external instruments, then calculate its rolling mean and standard deviation. Enter long when the spread falls below the mean by a chosen multiple of its standard deviation. Exit the long when the spread rises above its mean. No short entry is defined.

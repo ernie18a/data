@@ -1,0 +1,2 @@
+Long: configured leading indicator is bullish AND every enabled confirmation passes its long condition AND the leading signal has been active for no more than the configured expiry count AND (alternate-signal mode is off OR the previous signal state is short)
+Short: configured leading indicator is bearish AND every enabled confirmation passes its short condition AND the leading signal has been active for no more than the configured expiry count AND (alternate-signal mode is off OR the previous signal state is long)

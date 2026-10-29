@@ -1,0 +1,5 @@
+Calculation: Bull volume ratio = volume of lower-timeframe bars within the current chart bar whose close is at least the previous lower-timeframe close, divided by total volume of those bars; compare the first such bar’s close with itself. Use available bars, including a still-forming lower-timeframe bar.
+Calculation: Bear volume ratio = volume of lower-timeframe bars within the current chart bar whose close is below the previous lower-timeframe close, divided by total volume of those bars. Use available bars, including a still-forming lower-timeframe bar.
+Calculation: Total volume = sum of volume of lower-timeframe bars within the current chart bar. Use available bars, including a still-forming lower-timeframe bar.
+Long: Confirmed pivot low AND bull volume ratio >= dominance threshold AND total volume >= minimum volume
+Short: Confirmed pivot high AND bear volume ratio >= dominance threshold AND total volume >= minimum volume

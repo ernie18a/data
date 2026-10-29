@@ -1,0 +1,5 @@
+Calculation: On-chain score = (percentile rank over its trailing window − 50) × 2; for SOPR, rank SOPR − 1; for sending addresses, negate the score. Rank on-chain metrics using the last completed bar of a higher-timeframe series.
+Calculation: ChainPulse = EMA of the weighted mean of the six on-chain scores (SOPR, active addresses, new addresses, transaction fees, hash rate, and sending addresses); omit dead feeds and renormalize remaining weights.
+Calculation: Signal line = EMA of ChainPulse, with a longer smoothing period than ChainPulse.
+Long: ChainPulse crosses above the signal line AND its prior-bar value is below zero OR a confirmed chart-timeframe price pivot low is lower than the prior pivot low, its ChainPulse value is higher than at that prior pivot low, and the pivot lows are within the maximum comparison distance.
+Short: ChainPulse crosses below the signal line AND its prior-bar value is above zero OR a confirmed chart-timeframe price pivot high is higher than the prior pivot high, its ChainPulse value is lower than at that prior pivot high, and the pivot highs are within the maximum comparison distance.

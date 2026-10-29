@@ -1,0 +1,4 @@
+Calculation: Prior-session volume profile = assign each completed lower-timeframe bar’s volume to the equal-width price row containing its close, using the previous completed NY RTH session’s chart-bar high and low as the row range; the POC is the midpoint of the highest-volume row (ties choose the lower row). Starting with the POC row, add the adjacent row with greater volume until the accumulated volume reaches the configured fraction of total volume (ties choose the upper row); VAH and VAL are the upper and lower boundaries of the resulting rows. Use completed lower-timeframe bars.
+Calculation: VA midpoint = (VAH + VAL) / 2
+Long: First chart bar of the current NY RTH session AND its open > prior-session VAH AND prior-session POC > prior-session VA midpoint
+Short: First chart bar of the current NY RTH session AND its open < prior-session VAL AND prior-session POC < prior-session VA midpoint

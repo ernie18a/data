@@ -1,0 +1,4 @@
+Long: bullish Fair Value Gap forms on a same- or higher-timeframe bar when its low > high two bars earlier, using the last completed bar; OR price enters an active bullish gap zone before it is invalidated
+Short: bearish Fair Value Gap forms on a same- or higher-timeframe bar when its high < low two bars earlier, using the last completed bar; OR price enters an active bearish gap zone before it is invalidated
+Exit: Long, a completed same- or higher-timeframe bar has body low ≤ the active bullish zone bottom OR price high ≥ its external target after the zone is entered
+Exit: Short, a completed same- or higher-timeframe bar has body high ≥ the active bearish zone top OR price low ≤ its external target after the zone is entered

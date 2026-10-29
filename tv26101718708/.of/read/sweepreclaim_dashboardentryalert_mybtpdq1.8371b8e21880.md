@@ -1,0 +1,13 @@
+Calculation: PDH/PDL = highest high / lowest low of the previous completed regular session
+Calculation: ONH/ONL = highest high / lowest low of the current overnight session while it is forming, otherwise the latest completed overnight session
+Calculation: Active levels = PDH, PDL, ONH, and ONL; if PDH and ONH are within the cluster tolerance (a percentage of close), keep only the higher; if PDL and ONL are within the tolerance, keep only the lower
+Calculation: Sweep depth (%) = distance from the swept level to the most extreme high above it or low below it since the sweep began, divided by the level, times 100
+Calculation: Close position in range = (close - low) / (high - low); use 0.5 if high equals low
+Calculation: Nearest opposing level = closest active level below the swept level for an above-level sweep, or above it for a below-level sweep
+Calculation: Estimated risk = absolute difference between entry close and stop; stop is the most extreme sweep price plus a close-based percentage buffer for an above-level sweep, or minus the buffer for a below-level sweep
+Calculation: Live reward/risk = absolute distance from entry close to the nearest opposing level divided by estimated risk
+Calculation: Planned reward/risk = distance from the level to the nearest active opposing level divided by previous regular session ATR times a multiplier
+Long: an active level is at or below close OR a below-level sweep began when the previous close was above the level and the current low is below it, and price closes above the level within the maximum reclaim bars, the number of closes at or below the level during the sweep is at most the maximum, sweep depth is between the minimum and maximum, close position in range is at least the rejection threshold, the reclaim candle closes above its open if candle-color filtering is enabled, current time is in either trading window, and live reward/risk is at least the minimum
+Short: an active level is above close OR an above-level sweep began when the previous close was below the level and the current high is above it, and price closes below the level within the maximum reclaim bars, the number of closes at or above the level during the sweep is at most the maximum, sweep depth is between the minimum and maximum, close position in range is at most one minus the rejection threshold, the reclaim candle closes below its open if candle-color filtering is enabled, current time is in either trading window, and live reward/risk is at least the minimum
+Exit: long, low <= stop OR high >= nearest opposing level (or the 2R target if there is no opposing level)
+Exit: short, high >= stop OR low <= nearest opposing level (or the 2R target if there is no opposing level)

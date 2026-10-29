@@ -1,0 +1,3 @@
+Calculation: SD-1 = VWMA of close − standard deviation of close
+Long: On the signal timeframe (chart timeframe or a higher/lower timeframe), close > SD-1 AND rate of change of close > 0; use the latest available signal bar (the bar still forming in real time, the latest completed bar historically)
+Exit: Long, low ≤ entry price × (1 − emergency-stop percentage) OR (highest high since entry ≥ entry price × (1 + trail-activation percentage) AND low ≤ max(entry price × (1 − emergency-stop percentage), highest high since entry × (1 − trailing-distance percentage)))

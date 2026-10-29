@@ -1,0 +1,4 @@
+Calculation: ATR = average true range over a lookback
+Calculation: Rolling trend = initialize bullish with rolling value equal to the first close; on each bar, flip bearish if the prior trend is bullish and close is more than the reversal threshold × ATR below the rolling value, or flip bullish if the prior trend is bearish and close is more than the reversal threshold × ATR above it; otherwise retain the prior trend. Set fast mode when the absolute distance from close to rolling value exceeds the fast threshold × ATR. Set the active step to ATR divided by the shorter slope length in fast mode, or ATR divided by the longer slope length in slow mode; refresh the step when a reversal or mode change occurs, or when no step is set. Update the rolling value by adding the active step for bullish trend or subtracting it for bearish trend. If ATR is unavailable, set the rolling value to close.
+Long: rolling trend == bullish
+Short: rolling trend == bearish

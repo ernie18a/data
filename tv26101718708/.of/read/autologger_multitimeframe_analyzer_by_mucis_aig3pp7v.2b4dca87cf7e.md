@@ -1,0 +1,4 @@
+Long: Shorter-lookback EMA crosses above longer-lookback EMA AND RSI is below the overbought threshold AND volume is above its simple moving average
+Short: Shorter-lookback EMA crosses below longer-lookback EMA AND RSI is above the oversold threshold AND volume is above its simple moving average
+Exit: long, Shorter-lookback EMA crosses below longer-lookback EMA AND RSI is above the oversold threshold AND volume is above its simple moving average
+Exit: short, Shorter-lookback EMA crosses above longer-lookback EMA AND RSI is below the overbought threshold AND volume is above its simple moving average

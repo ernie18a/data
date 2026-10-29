@@ -1,0 +1,6 @@
+Calculation: Short-lookback SMA = simple moving average of close over a shorter lookback than the long-lookback SMA; calculate on each higher timeframe using its still-forming bar
+Calculation: Long-lookback SMA = simple moving average of close over a longer lookback than the short-lookback SMA; calculate on each higher timeframe using its still-forming bar
+Calculation: Bullish fair value gap = current low is above the high two bars earlier and the gap meets the minimum size threshold; calculate on each higher timeframe using its still-forming bar and on the chart timeframe
+Calculation: Bearish fair value gap = current high is below the low two bars earlier and the gap meets the minimum size threshold; calculate on each higher timeframe using its still-forming bar and on the chart timeframe
+Long: each higher-timeframe close > its short-lookback SMA > its long-lookback SMA AND at least one timeframe has a bullish fair value gap AND the chart close is between the high two bars earlier and current low on at least one of the higher timeframes or the chart timeframe
+Short: each higher-timeframe close < its short-lookback SMA < its long-lookback SMA AND at least one timeframe has a bearish fair value gap AND the chart close is between the current high and low two bars earlier on at least one of the higher timeframes or the chart timeframe

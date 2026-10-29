@@ -1,0 +1,5 @@
+Calculation: Relative strength ratio = close / benchmark close
+Calculation: Short-range = highest high minus lowest low over the shorter lookback
+Calculation: Long-range = highest high minus lowest low over the longer lookback
+Calculation: ATR percentage = average true range / close × 100
+Long: close > intermediate-term SMA AND close > long-term SMA AND intermediate-term SMA > long-term SMA AND long-term SMA > its value at an earlier bar AND short-term SMA > intermediate-term SMA AND short-term SMA > long-term SMA AND close > short-term SMA AND close >= 75% of the 52-week high AND close >= 130% of the 52-week low AND relative strength ratio > its 50-bar SMA AND relative strength ratio > its value 20 bars earlier AND short-range < 55% of long-range AND ATR percentage < its 50-bar SMA AND close is no more than the configured maximum percentage above the short-term SMA AND close > the highest high of the prior breakout lookback bars AND volume > the configured multiple of its average over the volume lookback

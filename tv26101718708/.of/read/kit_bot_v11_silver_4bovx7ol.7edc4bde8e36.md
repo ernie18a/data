@@ -1,0 +1,9 @@
+Calculation: Bullish divergence = current low < prior low AND current RSI > prior RSI AND prior RSI < oversold threshold
+Calculation: Bearish divergence = current high > prior high AND current RSI < prior RSI AND prior RSI > overbought threshold
+Calculation: Hammer = lower wick > 2 × body AND upper wick < 0.5 × body AND body > 0
+Calculation: Gravestone = upper wick > 2 × body AND lower wick < 0.5 × body AND body > 0
+Calculation: Doji = body < 10% of high-low range AND high-low range > 0
+Long: Position is flat AND trades today < configured daily limit AND current time is in an enabled session AND at least the configured minimum number of these six conditions are true: RSI is between 20 and 55 and above prior-bar RSI; close > lower Bollinger Band AND prior close ≤ current lower Bollinger Band; close > EMA; close > Bollinger middle band OR (close > lower Bollinger Band AND close < middle band AND RSI < 40); Hammer OR (Doji AND close > open); Bullish divergence
+Short: Position is flat AND trades today < configured daily limit AND current time is in an enabled session AND at least the configured minimum number of these six conditions are true: RSI > 65 AND RSI < prior-bar RSI; close < upper Bollinger Band AND prior close ≥ current upper Bollinger Band; close < EMA; Gravestone OR (Doji AND close < open); Bearish divergence; prior-bar RSI > 70 AND current RSI < 70
+Exit: Long, low ≤ stop price OR high ≥ target price, where stop and target are fixed from the entry signal bar close using ATR-based stop distance and configured risk:reward
+Exit: Short, high ≥ stop price OR low ≤ target price, where stop and target are fixed from the entry signal bar close using ATR-based stop distance and configured risk:reward

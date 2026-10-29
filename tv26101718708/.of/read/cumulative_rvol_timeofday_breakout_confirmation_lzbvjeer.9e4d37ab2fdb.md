@@ -1,0 +1,7 @@
+Calculation: Long cumulative RVOL = current session cumulative volume through the current chart bar divided by the average cumulative volume through the same time of day across a longer lookback of prior completed sessions.
+Calculation: Short cumulative RVOL = current session cumulative volume through the current chart bar divided by the average cumulative volume through the same time of day across a shorter lookback of prior completed sessions.
+Calculation: Opening-range high = highest high from the session open through the opening-range interval; opening-range low = lowest low over the same interval.
+Long: During the session and before the signal cutoff, close crosses above the prior completed daily bar's high OR the completed opening-range high OR the manual level, and that level has not already produced an upward signal that day.
+Short: During the session and before the signal cutoff, close crosses below the prior completed daily bar's low OR the completed opening-range low OR the manual level, and that level has not already produced a downward signal that day.
+Exit: long, a confirmed upward breakout has occurred that day AND long cumulative RVOL crosses below the in-play threshold.
+Exit: short, a confirmed downward breakout has occurred that day AND long cumulative RVOL crosses below the in-play threshold.

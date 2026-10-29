@@ -1,0 +1,2 @@
+Calculation: qualifying cluster count = Number of bars with daily NYSE TICK close at or below the threshold in the current cluster; a qualifying bar joins the cluster when it is no more than the cluster lookback bars after the previous qualifying bar, otherwise it starts a new cluster. Daily NYSE TICK close uses the current daily bar, including its still-forming value on lower-timeframe charts.
+Long: Daily NYSE TICK close <= threshold AND qualifying cluster count >= minimum cluster count

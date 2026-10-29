@@ -1,0 +1,5 @@
+Calculation: Confirmed swing high = a bar’s high that is higher than the highs of the configured number of preceding and following chart bars; it becomes available after those following bars complete.
+Calculation: Confirmed swing low = a bar’s low that is lower than the lows of the configured number of preceding and following chart bars; it becomes available after those following bars complete.
+Calculation: 10am level = the open of the bar containing 10:00 New York time, or the configured body edge of that bar.
+Long: On a confirmed bar, low < an unexpired confirmed swing low AND close > that swing low OR, after an enabled session ends, low < its low AND close > that low OR, while the 10am level is active and its daily mark has not fired, low < the 10am level AND close > the 10am level.
+Short: On a confirmed bar, high > an unexpired confirmed swing high AND close < that swing high OR, after an enabled session ends, high > its high AND close < that high OR, while the 10am level is active and its daily mark has not fired, high > the 10am level AND close < the 10am level.

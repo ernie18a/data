@@ -1,0 +1,3 @@
+Calculation: Overnight gap = current NY session opening price − previous NY regular-session close reference price (the open of the 16:00 NY bar)
+Long: Current NY session opening price > previous NY regular-session close reference price OR candle body length (or full high−low range when wick mode is enabled) > ATR × multiplier AND close > open
+Short: Current NY session opening price < previous NY regular-session close reference price OR candle body length (or full high−low range when wick mode is enabled) > ATR × multiplier AND close < open

@@ -1,0 +1,4 @@
+Calculation: First-15-minute high = highest high from 9:15 through 9:29 IST of the current day
+Calculation: First-15-minute low = lowest low from 9:15 through 9:29 IST of the current day
+Long: first-15-minute range captured AND outside 9:15–9:30 IST AND previous close < first-15-minute low AND close > first-15-minute low AND (volume filter disabled OR volume > its short-term simple moving average × configurable multiplier)
+Short: first-15-minute range captured AND outside 9:15–9:30 IST AND previous close > first-15-minute high AND close < first-15-minute high AND (volume filter disabled OR volume > its short-term simple moving average × configurable multiplier)

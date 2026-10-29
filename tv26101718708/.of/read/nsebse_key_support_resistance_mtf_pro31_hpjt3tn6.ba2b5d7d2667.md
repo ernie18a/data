@@ -1,0 +1,5 @@
+Calculation: Support/resistance levels = confirmed pivot lows/highs, respectively, where the pivot is the lowest low/highest high across a lookback on both sides; levels come from the chart timeframe and any enabled higher or lower timeframes, and a pivot is used after its right-side bars complete
+Calculation: Average volume = simple moving average of volume over a configurable lookback
+Long: On a confirmed bar, a valid support level has low <= level and close > level OR a valid resistance level is broken, with close > level (close-based invalidation) or high > level (wick-based invalidation); for a resistance break, volume >= average volume × configured multiplier when the volume break filter is enabled
+Short: On a confirmed bar, a valid resistance level has high >= level and close < level OR a valid support level is broken, with close < level (close-based invalidation) or low < level (wick-based invalidation); for a support break, volume >= average volume × configured multiplier when the volume break filter is enabled
+Exit: 

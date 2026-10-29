@@ -1,0 +1,27 @@
+Calculation: Confirmed swing high/low = highest high/lowest low over the pivot lookback, confirmed only after the same number of later bars; retain the latest of each.
+Calculation: Structure state = initially neutral; change to bullish when close crosses above the latest confirmed swing high while state is not bullish; change to bearish when close crosses below the latest confirmed swing low while state is not bearish.
+Calculation: Bullish/bearish CHoCH = the corresponding structure-state change.
+Calculation: High-volume bar = volume > volume SMA × volume multiplier.
+Calculation: Reversal swing highs/lows = confirmed pivots using the reversal swing lookback; retain the latest two highs and lows and the RSI value at each pivot bar.
+Calculation: Bullish/bearish RSI divergence = latest reversal swing low is lower/higher than the preceding low/high, while RSI at that latest pivot is higher/lower than RSI at the preceding pivot.
+Calculation: Bullish/bearish sweep = current low/high crosses below/above the latest reversal swing low/high, then close finishes above/below it. A valid sweep additionally requires close below/above the trend EMA.
+Calculation: Bullish/bearish ATR reclaim/rejection = low/high extends beyond the baseline EMA by the ATR extension multiple, and close finishes above the lower/ below the upper first ATR band.
+Calculation: Bullish/bearish wick rejection = lower/upper wick exceeds both the real body (using minimum tick size for a zero body) times the wick ratio and 0.25 ATR.
+Calculation: Bullish/bearish failed break = low/high is below/above the prior bar's low/high, close recovers above/falls below that prior low/high, and close is above/below open.
+Calculation: Bullish/bearish micro confirmation = close above prior high or bullish failed break / close below prior low or bearish failed break.
+Calculation: Bullish/bearish Williams %R hook = prior Williams %R is at or below -80 / at or above -20, and current Williams %R rises/falls.
+Calculation: Bullish/bearish momentum fade = RSI is below 45 / above 55 and rising/falling versus the prior bar.
+Calculation: Up/down volume ratio = sum of volume on bars closing above/below the prior close over the 50-bar lookback, divided; if down volume is zero, use 1.
+Calculation: Higher-timeframe structure trend = structure state calculated independently on each of the three higher timeframes, using each timeframe's last completed bar and the same swing-pivot rule. Bullish/bearish reversal agreement requires at least the configured number of those states to be non-bearish/non-bullish, respectively (neutral counts as agreement).
+Calculation: Bullish/bearish reversal score = sum the following points and cap at 100: valid sweep 25, else any sweep 8; RSI divergence 15; wick rejection 15; volume ≥ volume SMA × climax multiplier 12; ATR reclaim/rejection 15; micro confirmation 10; Williams %R hook 10; higher-timeframe agreement 8; current low within 2 ATR / current high within 2 ATR of the latest reversal swing low/high 5; momentum fade 5; up/down volume ratio <0.7 / >1.5, 5; HVE or HV1 bar while below/above the trend EMA, 8. HVE is a volume record since the start of available data; HV1 is volume equal to the highest volume over the applicable one-year bar lookback and below HVE. The one-year lookback uses weekly, monthly, or other bars as applicable.
+Calculation: Strong opposing trend = close, 20-period EMA, 50-period EMA, and 200-period EMA are strictly ordered in the opposing direction, and ADX > 30. Reversal is allowed when the ADX filter is off, there is no strong opposing trend, or the corresponding valid sweep or ATR reclaim/rejection occurs.
+Calculation: Reversal core = sweep or ATR reclaim/rejection or failed break.
+Calculation: Reversal extension = close is beyond the trend EMA in the reversal direction, or the corresponding ATR reclaim/rejection occurs.
+Long: Bullish CHoCH.
+Long: High-volume bar AND close ≥ open.
+Long: Reversal signals enabled AND bullish reversal allowed AND bullish reversal core AND bullish reversal score ≥ minimum reversal score AND bullish signal lock is clear AND no bullish reversal signal occurred within the configured cooldown bars (elapsed bars must be strictly greater than cooldown) AND no bearish CHoCH occurred within the configured CHoCH cooldown (elapsed bars must be strictly greater than cooldown), unless a valid bullish sweep occurs AND extension is required only if the extension condition holds. Clear the bullish signal lock when a new reversal swing low is confirmed; set it when this signal occurs.
+Long: Setup dots enabled AND reversal signals enabled AND no bullish reversal signal AND bullish reversal core AND bullish reversal score ≥ 55.
+Short: Bearish CHoCH.
+Short: High-volume bar AND close < open.
+Short: Reversal signals enabled AND bearish reversal allowed AND bearish reversal core AND bearish reversal score ≥ minimum reversal score AND bearish signal lock is clear AND no bearish reversal signal occurred within the configured cooldown bars (elapsed bars must be strictly greater than cooldown) AND no bullish CHoCH occurred within the configured CHoCH cooldown (elapsed bars must be strictly greater than cooldown), unless a valid bearish sweep occurs AND extension is required only if the extension condition holds. Clear the bearish signal lock when a new reversal swing high is confirmed; set it when this signal occurs.
+Short: Setup dots enabled AND reversal signals enabled AND no bearish reversal signal AND bearish reversal core AND bearish reversal score ≥ 55.

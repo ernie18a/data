@@ -1,0 +1,7 @@
+Calculation: Confirmed bullish regime = close above the simple moving average and RSI within the bullish range for the required consecutive bars
+Calculation: Confirmed bearish regime = close below the simple moving average and RSI within the bearish range for the required consecutive bars
+Calculation: Higher-timeframe confirmed regime = confirmed bullish or bearish regime calculated on a higher timeframe, using its last completed bar
+Long: Confirmed bullish regime is true now and was false on the previous chart bar AND (higher-timeframe confirmed regime is bullish, if that filter is enabled) AND (ADX is at least its minimum threshold, if that filter is enabled)
+Short: Confirmed bearish regime is true now and was false on the previous chart bar AND (higher-timeframe confirmed regime is bearish, if that filter is enabled) AND (ADX is at least its minimum threshold, if that filter is enabled)
+Exit: Long, confirmed bearish regime becomes true now and was false on the previous chart bar AND (higher-timeframe confirmed regime is bearish, if that filter is enabled) AND (ADX is at least its minimum threshold, if that filter is enabled)
+Exit: Short, confirmed bullish regime becomes true now and was false on the previous chart bar AND (higher-timeframe confirmed regime is bullish, if that filter is enabled) AND (ADX is at least its minimum threshold, if that filter is enabled)

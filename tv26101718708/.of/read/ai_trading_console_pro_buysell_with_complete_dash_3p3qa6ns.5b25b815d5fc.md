@@ -1,0 +1,6 @@
+Calculation: Opening-range high/low = highest high and lowest low of chart-timeframe bars whose hour is 9 and minute is less than 30; reset each day.
+Calculation: Initial stop = entry price minus (long) or plus (short) ATR times the initial-stop multiplier; while a trade is open, update the long stop to the maximum of its prior value and close minus ATR times the trailing multiplier, or the short stop to the minimum of its prior value and close plus ATR times the trailing multiplier.
+Long: close crosses above opening-range high AND fast EMA > slow EMA AND RSI > long threshold AND ADX > minimum threshold AND VIX < maximum threshold AND current close of a higher-timeframe bar still forming > its 50-period EMA AND flat AND last entered trade was not long
+Short: close crosses below opening-range low AND fast EMA < slow EMA AND RSI < short threshold AND ADX > minimum threshold AND VIX < maximum threshold AND current close of a higher-timeframe bar still forming < its 50-period EMA AND flat AND last entered trade was not short
+Exit: long, close < stop
+Exit: short, close > stop

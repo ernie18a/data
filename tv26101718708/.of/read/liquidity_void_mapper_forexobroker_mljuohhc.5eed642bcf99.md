@@ -1,0 +1,5 @@
+Calculation: Liquidity void zones = On every fifth completed chart bar, find the highest high and lowest low over a lookback, divide that range into price bins, and distribute each bar’s volume equally across the bins its low-to-high range overlaps. Mark bins whose volume is below a threshold fraction of the average bin volume as voids, retaining at most the configured maximum in ascending price order. Use the most recently calculated zones until the next update.
+Calculation: Exponential moving average = Exponential moving average of close.
+Calculation: Average volume = Simple moving average of volume.
+Long: Close is strictly inside a void zone AND the previous close was at or below that zone’s lower boundary AND close is above the exponential moving average AND volume is above average volume AND the configured cooldown has elapsed since the last signal AND the bar is complete.
+Short: Close is strictly inside a void zone AND the previous close was at or above that zone’s upper boundary AND close is below the exponential moving average AND volume is above average volume AND the configured cooldown has elapsed since the last signal AND the bar is complete.

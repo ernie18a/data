@@ -1,0 +1,1 @@
+At each daily bar, use the previous completed bar: if BTC’s close was above its long-term exponential moving average, hold BTC; otherwise, hold the BTC-dominance perpetual contract. Remain fully allocated to one of these assets.

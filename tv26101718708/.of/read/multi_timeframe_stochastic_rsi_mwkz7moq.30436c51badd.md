@@ -1,0 +1,3 @@
+Calculation: Stochastic RSI K and D = RSI of close, normalized between its lowest and highest values over the stochastic lookback (0 if equal); K is the short moving average of that value and D is the moving average of K. Use the same parameter lengths on the chart and both higher timeframes.
+Long: Chart-timeframe K > D AND K > D on each of two higher timeframes, using each timeframe’s last completed bar
+Short: Chart-timeframe K < D AND K < D on each of two higher timeframes, using each timeframe’s last completed bar

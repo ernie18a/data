@@ -1,0 +1,2 @@
+Calculation: VWAP upper band 2 = volume-weighted mean of typical price plus a parameterized multiple of its volume-weighted standard deviation, calculated cumulatively from the start of the selected anchor period; typical price = (high + low + close) / 3
+Long: close > VWAP upper band 2

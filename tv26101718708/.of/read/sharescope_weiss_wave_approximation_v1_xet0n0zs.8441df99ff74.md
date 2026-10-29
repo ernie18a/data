@@ -1,0 +1,5 @@
+Calculation: Up reversal level = reference low × (1 + reversal percentage)
+Calculation: Down reversal level = reference high × (1 − reversal percentage), or reference high ÷ (1 + reversal percentage) in symmetric mode
+Calculation: Wave direction = initialize neutral while tracking the highest high (or close) and lowest low (or close); establish an up wave when price reaches the up reversal level from the tracked low, or a down wave when price reaches the down reversal level from the tracked high. In an up wave, update the reference high to each higher high (or close) and switch to a down wave when price reaches its down reversal level. In a down wave, update the reference low to each lower low (or close) and switch to an up wave when price reaches its up reversal level. Use highs and lows or closes according to the high/low setting.
+Long: Wave direction > 0
+Short: Wave direction < 0

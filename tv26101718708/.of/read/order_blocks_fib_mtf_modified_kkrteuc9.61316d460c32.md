@@ -1,0 +1,2 @@
+Long: low <= most recent demand order block’s proximal boundary AND low[1] > that boundary AND no long alert has fired since that boundary was established
+Short: high >= most recent supply order block’s proximal boundary AND high[1] < that boundary AND no short alert has fired since that boundary was established

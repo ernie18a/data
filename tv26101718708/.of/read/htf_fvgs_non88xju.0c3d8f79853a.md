@@ -1,0 +1,2 @@
+Long: On a higher timeframe, using the three most recent completed bars in chronological order (oldest A, middle B, newest C): C.high < A.low AND C.high > B.low AND A.low < B.high
+Short: On a higher timeframe, using the three most recent completed bars in chronological order (oldest A, middle B, newest C): C.low > A.high AND C.low < B.high AND A.high > B.low

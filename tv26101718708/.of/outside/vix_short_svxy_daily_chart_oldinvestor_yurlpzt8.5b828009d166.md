@@ -1,0 +1,1 @@
+On the traded instrument, enter long when the external volatility index’s daily high crosses above a chosen entry threshold and the current year is at or after the chosen start year. Exit the position when that index’s daily low crosses below a chosen exit threshold.

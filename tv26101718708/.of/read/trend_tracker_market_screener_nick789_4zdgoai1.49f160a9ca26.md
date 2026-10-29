@@ -1,0 +1,3 @@
+Calculation: Tracker direction = use OHLC4 as price; form an EMA center (the fast EMA in Scalp mode, or the mean of fast and slow EMAs in Trend mode), then add/subtract ATR times a multiplier for upper/lower bands. Initialize bullish. On each bar, set bullish if OHLC4 > the prior bar’s upper band, bearish if OHLC4 < the prior bar’s lower band, otherwise retain the prior direction. In Trend mode the slow EMA lookback is longer than the fast EMA lookback.
+Long: Tracker direction changes from bearish to bullish.
+Short: Tracker direction changes from bullish to bearish.

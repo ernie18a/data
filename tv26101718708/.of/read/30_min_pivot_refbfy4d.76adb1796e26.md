@@ -1,0 +1,13 @@
+Calculation: Relative strength ratio = chart close divided by benchmark close on the same timeframe
+Calculation: Daily short and long EMAs = EMAs of completed daily closes; the short lookback is shorter than the long lookback
+Calculation: Daily support band = range between the daily short and long EMAs; its tolerance is 0.75 × daily ATR(14), using the current daily bar, which may still be forming
+Calculation: Daily support test = low is within the tolerance below or 0.65 × tolerance above either daily EMA, or low undercuts the EMA by more than the tolerance and close recovers to within the tolerance below it; for the long EMA test, also allow a low near that EMA when it is below the short EMA
+Calculation: Prior-day low reclaim = price undercuts the previous completed daily low and closes at or above it within 0.75 × the daily ATR tolerance
+Calculation: Core daily support = daily short EMA is at least approximately aligned with the long EMA, and price tests either daily EMA, closes inside the daily support band with tolerance, or reclaims the prior-day low
+Calculation: Confirmed reaction = green candle and (first green candle after a red candle, or price tests chart short or long EMA and closes at or above it, or core daily support, or not the opening session bar)
+Calculation: T1 = entry price + 2 × (entry price − trigger-bar low)
+Calculation: T2 = the greater of entry price + 2.5 × initial risk and the selected target anchor; target anchor is the next daily swing high, otherwise the next 52-week high, otherwise entry price + 3.5 × initial risk, capped by the nearest enabled qualifying moving-average resistance
+Long: relative strength ratio exceeds its prior lookback high OR, on the execution chart during the exchange session and outside the closing bar, core daily support AND confirmed reaction AND close is not below any enabled resistance EMA/SMA AND the nearest enabled overhead resistance is at least 2 initial-risk units above the trigger-bar high when the minimum-reward filter is enabled AND the volume dry-up filter passes when enabled; set pending entry at trigger-bar high and stop at trigger-bar low, and enter when a later bar reaches the pending entry without a pending-order cancellation condition
+Exit: long, high >= T1 (take partial profit and move stop to entry price)
+Exit: long, high >= T2 OR open <= stop OR low <= stop OR close <= stop before T1; after T1, raise stop on subsequent bars to the greater of its current value and the selected chart-timeframe or completed-daily short EMA, then exit if close < stop or open <= stop (ignore the close-based trail check on the opening session bar when configured to do so)
+Exit: long, end-of-session bar when end-of-day expiry is enabled

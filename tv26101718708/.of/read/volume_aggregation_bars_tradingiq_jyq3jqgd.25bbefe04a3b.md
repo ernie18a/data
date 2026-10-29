@@ -1,0 +1,3 @@
+Calculation: Volume-aggregation candle = a completed block formed when accumulated volume reaches the selected threshold; its close is the price of the sample that reaches the threshold. Use lower-timeframe bars if enabled, otherwise chart-timeframe bars; compare only completed blocks. The threshold is either the configured required volume or the 90th-percentile nearest-rank volume of the last 500 chart-timeframe bars.
+Long: completed volume-aggregation candle close > previous completed volume-aggregation candle close
+Short: completed volume-aggregation candle close <= previous completed volume-aggregation candle close

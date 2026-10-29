@@ -1,0 +1,5 @@
+Calculation: Bullish FVG = current low > high two bars ago AND previous close > high two bars ago; zone is [high two bars ago, current low]
+Calculation: Bearish FVG = current high < low two bars ago AND previous close < low two bars ago; zone is [current high, low two bars ago]
+Calculation: Accumulation high/low = highest high and lowest low from the start of each base-timeframe period through the accumulation duration; use the period in progress
+Long: During the manipulation phase, close crosses above the top of an unmitigated bearish FVG OR, after a long IFVG has occurred in the current base-timeframe period, close crosses above the accumulation high during the manipulation phase
+Short: During the manipulation phase, close crosses below the bottom of an unmitigated bullish FVG OR, after a short IFVG has occurred in the current base-timeframe period, close crosses below the accumulation low during the manipulation phase

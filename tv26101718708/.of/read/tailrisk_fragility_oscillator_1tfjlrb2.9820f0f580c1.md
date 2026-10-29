@@ -1,0 +1,4 @@
+Calculation: Skew wave = 100 × tanh(0.33 × robust z-score of rolling return skewness); return skewness = third central moment ÷ return standard deviation cubed; robust z-score uses the median and 1.4826 × median absolute deviation over one normalization window. By default, returns use confirmed bars from a lower timeframe; with realized estimation disabled, they use chart-timeframe bars.
+Calculation: Excess-kurtosis percentile = percentile rank of rolling excess kurtosis (fourth central moment ÷ variance squared − 3) over a longer lookback than the moment window.
+Long: Skew wave > positive extreme threshold AND excess-kurtosis percentile > fat-tail threshold AND the same two conditions were not both true on the prior bar.
+Short: Skew wave < negative extreme threshold AND excess-kurtosis percentile > fat-tail threshold AND the same two conditions were not both true on the prior bar.

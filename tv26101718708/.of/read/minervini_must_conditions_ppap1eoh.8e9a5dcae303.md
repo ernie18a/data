@@ -1,0 +1,3 @@
+Calculation: Short-, intermediate-, and long-term moving averages = EMA or SMA of close, with progressively longer lookbacks
+Calculation: Rolling high and rolling low = highest high and lowest low over a long lookback
+Long: Close > short-term moving average AND close > intermediate-term moving average AND close > long-term moving average AND short-term moving average > intermediate-term moving average AND short-term moving average > long-term moving average AND intermediate-term moving average > long-term moving average AND long-term moving average > its value at an earlier bar AND close is within the configured fraction below the rolling high AND close is more than the configured fraction above the rolling low

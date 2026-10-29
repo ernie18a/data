@@ -1,0 +1,11 @@
+Calculation: Confirmed pivot high/low = a bar’s high/low is strictly above/below the highs/lows of the same number of bars on each side; it becomes available after the bars on both sides are complete.
+Calculation: Pivot center = initialize at the first confirmed pivot; on each bar with a new pivot, use the pivot high if present, otherwise the pivot low, and update the center to (2 × previous center + new pivot) / 3.
+Calculation: Pivot-based trend = compute lower band as pivot center − ATR × multiplier and upper band as pivot center + ATR × multiplier. Carry the lower band as the maximum of its current base and previous carried value when the previous close is above the previous carried lower band; otherwise reset it to its current base. Carry the upper band as the minimum of its current base and previous carried value when the previous close is below the previous carried upper band; otherwise reset it to its current base. Trend is bullish when close is above the previous carried upper band, bearish when close is below the previous carried lower band, and otherwise retains its prior direction (initially bullish).
+Calculation: VWAP buffer = ATR × buffer multiplier.
+Calculation: Active swing high/low = the latest confirmed pivot high/low, respectively; clear each level after close breaks above the active high or below the active low, respectively.
+Long: bullish pivot-based trend AND close > VWAP + VWAP buffer AND no prior main long signal since the trend last changed
+Long: bullish pivot-based trend AND low ≤ VWAP + 3 × VWAP buffer AND close > open AND close > previous close AND NOT (close > VWAP + VWAP buffer AND no prior main long signal since the trend last changed)
+Short: bearish pivot-based trend AND close < VWAP − VWAP buffer AND no prior main short signal since the trend last changed
+Short: bearish pivot-based trend AND high ≥ VWAP − 3 × VWAP buffer AND close < open AND close < previous close AND NOT (close < VWAP − VWAP buffer AND no prior main short signal since the trend last changed)
+Exit: long, bearish pivot-based trend AND close < active swing low
+Exit: short, bullish pivot-based trend AND close > active swing high

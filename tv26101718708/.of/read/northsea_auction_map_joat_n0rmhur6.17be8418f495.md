@@ -1,0 +1,3 @@
+Calculation: Delta bias = total profile delta divided by total profile volume; each bar’s delta is its volume multiplied by 0.45 × (2 × (close − low) / bar range − 1) + 0.35 × ((lower wick + bullish body − upper wick − bearish body) / (lower wick + bullish body + upper wick + bearish body)) + 0.20 × signed body / bar range. Profile volume and delta are allocated to price rows in proportion to each bar’s overlap with each row; use the current chart-timeframe bars in the selected rolling or session anchor, including the forming bar.
+Long: Delta bias > 0.10
+Short: Delta bias < −0.10

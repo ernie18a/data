@@ -1,0 +1,3 @@
+Calculation: CCI of typical price = Commodity Channel Index of (high + low + close) / 3
+Long: higher-timeframe RSI on its last completed bar > 50 AND chart-timeframe RSI on its last completed bar > 50 AND CCI of typical price > 0 AND (on the previous chart bar, higher-timeframe RSI on its last completed bar <= 50 OR chart-timeframe RSI on its last completed bar <= 50 OR CCI of typical price <= 0)
+Short: higher-timeframe RSI on its last completed bar < 50 AND chart-timeframe RSI on its last completed bar < 50 AND CCI of typical price <= 0 AND (on the previous chart bar, higher-timeframe RSI on its last completed bar >= 50 OR chart-timeframe RSI on its last completed bar >= 50 OR CCI of typical price > 0)

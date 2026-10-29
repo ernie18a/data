@@ -1,0 +1,7 @@
+Calculation: normalized band position = (selected-timeframe close − lower band) / (upper band − lower band), where the bands are the selected-timeframe linear regression of close plus/minus a multiplier times the selected-timeframe standard deviation of close; use the chart timeframe when no alternate timeframe is selected, otherwise the selected timeframe, using its last completed bar
+Calculation: support level = carry the prior value forward, updating to the prior selected-timeframe low when normalized band position was below the oversold threshold on the prior bar and is above it on the current bar
+Calculation: resistance level = carry the prior value forward, updating to the prior selected-timeframe high when normalized band position was above the overbought threshold on the prior bar and is below it on the current bar
+Long: (support level > its prior value AND its prior value <= its value two bars ago) OR (support level < its prior value AND its prior value >= its value two bars ago)
+Short: (resistance level > its prior value AND its prior value <= its value two bars ago) OR (resistance level < its prior value AND its prior value >= its value two bars ago)
+Exit: long, low <= entry price minus fixed stop distance OR (highest high since trail activation >= entry price plus trail activation distance AND low <= that highest high minus trailing offset)
+Exit: short, high >= entry price plus fixed stop distance OR (lowest low since trail activation <= entry price minus trail activation distance AND high >= that lowest low plus trailing offset)

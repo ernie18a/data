@@ -1,0 +1,2 @@
+Long: chart-timeframe MACD > 0 AND chart-timeframe MACD > its previous value AND higher-timeframe MACD on the current forming bar > its previous value AND higher-timeframe MACD on the current forming bar >= its previous value AND RSI > 60 AND ADX >= 12 AND smoothed Stochastic %K > smoothed Stochastic %D AND Bollinger Band upper band > its previous value
+Exit: Long, close < EMA

@@ -1,0 +1,5 @@
+Calculation: First Renko level = previous first Renko level + ATR when close is above that sum, previous first Renko level − ATR when close is below that difference, otherwise previous first Renko level; initialize at zero. ATR is calculated on the last completed bar of a higher timeframe.
+Calculation: Second Renko level = previous first Renko level when the first Renko level changes, otherwise previous second Renko level; initialize at zero.
+Long: First Renko level crosses above second Renko level AND datetime is within the configured test period AND position is flat or short.
+Short: First Renko level crosses below second Renko level AND datetime is within the configured test period AND position is flat or long AND margin is enabled.
+Exit: Long, first Renko level crosses below second Renko level AND datetime is within the configured test period AND margin is disabled.

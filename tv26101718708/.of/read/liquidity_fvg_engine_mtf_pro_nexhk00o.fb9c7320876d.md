@@ -1,0 +1,6 @@
+Calculation: Bullish FVG = current low > high two bars earlier; gap height = current low − high two bars earlier
+Calculation: Bearish FVG = current high < low two bars earlier; gap height = low two bars earlier − current high
+Calculation: Swing liquidity levels = confirmed pivot highs and lows from enabled timeframes, using the last completed bar of each timeframe that is higher or lower than the chart timeframe
+Calculation: Session liquidity levels = the high and low of each enabled session, aggregated from chart-timeframe bars
+Long: an unswept low liquidity level is swept (low < level and close > level in wick-and-close mode, or low < level in touch mode) AND a bullish FVG forms on the sweep bar, within the configured scan-back range, or within the configured forward search window AND its height is between the configured ATR-based minimum and maximum AND, when reversal-only mode is enabled, the FVG follows a low-level sweep
+Short: an unswept high liquidity level is swept (high > level and close < level in wick-and-close mode, or high > level in touch mode) AND a bearish FVG forms on the sweep bar, within the configured scan-back range, or within the configured forward search window AND its height is between the configured ATR-based minimum and maximum AND, when reversal-only mode is enabled, the FVG follows a high-level sweep

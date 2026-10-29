@@ -1,0 +1,6 @@
+Calculation: Weighted median close = the close at which cumulative volume, after sorting closes over the lookback from lowest to highest, first reaches at least half of total volume; calculated on the configured timeframe, which may be higher or lower than the chart timeframe, using its last completed bar in backtests.
+Calculation: Oscillator histogram = (current close − weighted median close) / EMA(high − low over the range lookback); optionally apply a WMA over a shorter smoothing lookback.
+Calculation: Main oscillator = (weighted median close − EMA of weighted median close over a lookback three times the weighted-median lookback) / EMA(high − low over the range lookback); optionally apply a WMA over a shorter smoothing lookback.
+Calculation: Oscillator signal = EMA of the main oscillator over the same lookback as the weighted median close.
+Long: Oscillator histogram crosses above zero OR main oscillator crosses above zero OR main oscillator crosses above oscillator signal OR main oscillator is greater than or equal to oscillator signal after being below it on the previous bar
+Short: Oscillator histogram crosses below zero OR main oscillator crosses below zero OR main oscillator crosses below oscillator signal OR main oscillator is below oscillator signal after being greater than or equal to it on the previous bar

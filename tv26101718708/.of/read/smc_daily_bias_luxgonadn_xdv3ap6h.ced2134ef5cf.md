@@ -1,0 +1,4 @@
+Calculation: Higher-timeframe structure = bullish when the latest confirmed pivot high and pivot low are each above their respective preceding pivots; bearish when each is below; otherwise neutral. Pivot highs and lows use equal left and right lookbacks.
+Calculation: Bias score = sum of the previous completed higher-timeframe candle direction, higher-timeframe structure direction, and current chart close relative to the still-forming higher-timeframe open; each direction is +1, -1, or 0.
+Long: Previous completed higher-timeframe close > open OR higher-timeframe structure is bullish OR current chart close > still-forming higher-timeframe open OR bias score >= 2
+Short: Previous completed higher-timeframe close < open OR higher-timeframe structure is bearish OR current chart close < still-forming higher-timeframe open OR bias score <= -2

@@ -1,0 +1,24 @@
+Calculation: Confirmed swing pivots = highs and lows confirmed by the configured number of bars on both sides; keep pivots in alternating order, replacing the latest pivot of the same type only with a more extreme one.
+Calculation: Matching levels = absolute difference between two prices is no greater than the larger absolute price times the configured tolerance.
+Calculation: Pattern boundaries = straight lines through the two latest swing highs and through the two latest swing lows; their current values are the projected upper and lower boundaries.
+Calculation: Flat/rising/falling boundaries = a boundary is flat when its two pivots match within tolerance; rising or falling when its slope exceeds the configured ATR-scaled slope threshold in the corresponding direction.
+Calculation: Sufficient pattern height = range of the latest three pivots is at least the configured ATR multiple.
+Calculation: Strong upward/downward impulse = price change across the six latest pivots is at least the configured ATR multiple upward/downward.
+Calculation: Bullish cup and handle = five-pivot high-low-high-low-high sequence; first and third highs match, the middle low is sufficiently below them, the next low retraces at least the configured fraction of the bowl while remaining below the highs, and the final high is within the configured ATR allowance of the third pivot.
+Calculation: Bearish inverted cup and handle = five-pivot low-high-low-high-low sequence; first and third lows match, the middle high is sufficiently above them, the next high retraces at least the configured fraction of the bowl while remaining above the lows, and the final low is within the configured ATR allowance of the third pivot.
+Calculation: Bearish head and shoulders = five-pivot high-low-high-low-high sequence; middle high exceeds both outer highs by the configured ATR allowance, outer highs match, and the two intervening lows match.
+Calculation: Bullish inverse head and shoulders = five-pivot low-high-low-high-low sequence; middle low is below both outer lows by the configured ATR allowance, outer lows match, and the two intervening highs match.
+Calculation: Triple top/bottom = five alternating pivots of high-low-high-low-high / low-high-low-high-low sequence, respectively, with the three highs / lows matching.
+Calculation: Double top/bottom = latest three pivots high-low-high / low-high-low, respectively; the two outer pivots match and the middle pivot is separated from them by at least the configured ATR multiple.
+Calculation: Rectangle = latest four alternating pivots have matching highs and matching lows, and sufficient pattern height.
+Calculation: Ascending triangle = latest four alternating pivots have matching highs, rising lows, and sufficient pattern height.
+Calculation: Descending triangle = latest four alternating pivots have falling highs, matching lows, and sufficient pattern height.
+Calculation: Symmetrical triangle = latest four alternating pivots have falling highs, rising lows, and sufficient pattern height.
+Calculation: Rising wedge = latest four alternating pivots have rising highs and lows, with the lower boundary slope greater than the upper boundary slope, and sufficient pattern height.
+Calculation: Falling wedge = latest four alternating pivots have falling highs and lows, with the upper boundary slope less than the lower boundary slope, and sufficient pattern height.
+Calculation: Bullish flag = strong upward impulse followed by latest four alternating pivots with falling highs and lows whose slopes differ by no more than the configured ATR-scaled tolerance.
+Calculation: Bearish flag = strong downward impulse followed by latest four alternating pivots with rising highs and lows whose slopes differ by no more than the configured ATR-scaled tolerance.
+Calculation: Bullish/bearish pennant = strong upward/downward impulse, respectively, followed by a symmetrical triangle.
+Calculation: Bullish/bearish symmetrical triangle or rectangle bias = close is at or above / below the midpoint of the latest high-low pivot pair, respectively.
+Long: bullish cup and handle OR inverse head and shoulders OR triple bottom OR double bottom OR bullish pennant OR bullish flag OR falling wedge OR ascending triangle OR (symmetrical triangle AND close is at or above the latest high-low pivot-pair midpoint) OR (rectangle AND close is at or above the latest high-low pivot-pair midpoint)
+Short: bearish inverted cup and handle OR head and shoulders OR triple top OR double top OR bearish pennant OR bearish flag OR rising wedge OR descending triangle OR (symmetrical triangle AND close is below the latest high-low pivot-pair midpoint) OR (rectangle AND close is below the latest high-low pivot-pair midpoint)

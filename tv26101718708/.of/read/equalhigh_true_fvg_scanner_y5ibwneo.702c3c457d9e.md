@@ -1,0 +1,11 @@
+Calculation: ATR = average true range on the chart timeframe; for classic gaps, average true range on the lower timeframe.
+Calculation: Candle body ratio = absolute(close − open) / (high − low).
+Calculation: Displacement = middle candle has the direction of the gap, body at least the configured ATR multiple, and body ratio at least the configured minimum.
+Calculation: Structure break = middle candle closes above the highest high (bullish) or below the lowest low (bearish) in the configured lookback preceding that candle.
+Calculation: Liquidity sweep = first candle’s low falls below the preceding lookback low and closes above it (bullish), or its high rises above the preceding lookback high and closes below it (bearish).
+Calculation: Premium/discount = FVG midpoint is at or below (bullish) or at or above (bearish) the midpoint of the preceding rolling range.
+Calculation: FVG quality score = configured point contributions for displacement, structure break, liquidity sweep, premium/discount, freshness, session, and opposite-coloured first candle; session contributes when session scoring is disabled or the creation candle is in the configured session.
+Long: On a confirmed chart-timeframe bar, low > high two bars earlier AND (low − high two bars earlier) ≥ configured minimum ATR multiple × chart-timeframe ATR AND the middle candle is bullish with qualifying displacement AND the middle candle closes above the preceding structure lookback high AND FVG quality score ≥ configured minimum.
+Short: On a confirmed chart-timeframe bar, high < low two bars earlier AND (low two bars earlier − high) ≥ configured minimum ATR multiple × chart-timeframe ATR AND the middle candle is bearish with qualifying displacement AND the middle candle closes below the preceding structure lookback low AND FVG quality score ≥ configured minimum.
+Long: At chart-bar close, a completed lower-timeframe bar has low > previous lower-timeframe bar’s high AND the gap is at least the configured minimum in ticks AND at least the configured minimum ATR multiple of lower-timeframe ATR.
+Short: At chart-bar close, a completed lower-timeframe bar has high < previous lower-timeframe bar’s low AND the gap is at least the configured minimum in ticks AND at least the configured minimum ATR multiple of lower-timeframe ATR.

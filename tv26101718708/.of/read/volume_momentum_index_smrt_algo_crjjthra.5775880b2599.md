@@ -1,0 +1,4 @@
+Calculation: VMI = EMA(EMA(100 × EMA(P / max(EMA(abs(P), momentum lookback), ε) × (1 + volume influence × Q), base smoothing lookback) / max(rolling highest of absolute base-smoothed values over normalization lookback, ε), VMI smoothing lookback), VMI smoothing lookback), where P = close − close[momentum lookback], Q = D × R / (1 + abs(D × R)), D = sign(close − previous close), R = volume / max(EMA(volume, momentum lookback), ε), and ε is a small positive constant
+Calculation: Signal = EMA(VMI, signal lookback)
+Long: VMI > Signal AND previous VMI <= previous Signal AND VMI < oversold level AND Signal < oversold level
+Short: VMI < Signal AND previous VMI >= previous Signal AND VMI > overbought level AND Signal > overbought level

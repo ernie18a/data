@@ -1,0 +1,1 @@
+For each monitored stock, identify a pivot high when a candle’s body top is at least as high as the body tops of the three candles before and after it; use that pivot candle’s body top as the breakout level. Signal long when the stock’s close crosses from at or below the latest confirmed pivot high to above it. Alert if any monitored stock signals.

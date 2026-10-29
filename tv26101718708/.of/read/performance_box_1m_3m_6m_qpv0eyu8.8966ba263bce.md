@@ -1,0 +1,3 @@
+Calculation: Performance return = (current close / close at the beginning of the lookback − 1) × 100, using the requested daily close series and the current daily bar, which may still be forming; the lookbacks are ordered from shorter to longer.
+Long: 1-period performance return >= 0 OR 2-period performance return >= 0 OR 3-period performance return >= 0
+Short: 1-period performance return < 0 OR 2-period performance return < 0 OR 3-period performance return < 0

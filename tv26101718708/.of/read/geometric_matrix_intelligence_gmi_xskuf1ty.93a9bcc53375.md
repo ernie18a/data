@@ -1,0 +1,4 @@
+Calculation: ATR trailing line = recursively updated line using close and ATR: when current and previous close are above the previous line, take the maximum of that line and close minus sensitivity × ATR; when both are below, take the minimum of that line and close plus sensitivity × ATR; otherwise use close minus sensitivity × ATR if close is above the previous line, or close plus sensitivity × ATR if below.
+Calculation: Confirmed pivot high/low = a bar whose high/low is respectively greater/less than the highs/lows of an equal number of bars on both sides; confirmation occurs after the bars on the right are complete.
+Long: close crosses above the ATR trailing line OR a confirmed pivot high occurs OR close > the latest unbroken pivot high.
+Short: close crosses below the ATR trailing line OR a confirmed pivot low occurs OR close < the latest unbroken pivot low.

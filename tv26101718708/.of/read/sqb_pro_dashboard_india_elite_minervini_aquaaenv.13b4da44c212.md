@@ -1,0 +1,4 @@
+Calculation: Stage 2 = close > medium-term SMA AND close > long-term SMA AND medium-term SMA > long-term SMA AND long-term SMA > its value one medium-term lookback ago AND short-term SMA > medium-term SMA AND short-term SMA > long-term SMA AND close > short-term SMA AND close >= lowest low over a long-term lookback × lower-bound multiplier AND close >= highest high over a long-term lookback × upper-bound multiplier
+Calculation: Relative strength score = ((stock close / stock close one long-term lookback ago) / (benchmark close / benchmark close one long-term lookback ago) - 1) × 100
+Calculation: Average traded value = average(volume × close) over a short-term lookback
+Long: Stage 2 AND close > highest high over a short-term lookback excluding the current bar AND volume > average volume over a short-term lookback × volume expansion threshold AND Average traded value > liquidity threshold AND Relative strength score > strong-strength threshold

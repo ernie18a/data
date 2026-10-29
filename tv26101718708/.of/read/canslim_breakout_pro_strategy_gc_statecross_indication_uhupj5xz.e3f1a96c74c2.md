@@ -1,0 +1,5 @@
+Calculation: Pivot = highest high over the preceding base lookback bars, excluding the current bar
+Calculation: Average volume = simple moving average of volume over a lookback shorter than the slow moving-average lookback
+Calculation: Highest close since entry = highest close from entry through the current bar
+Long: Flat position AND close > Pivot AND close <= Pivot × (1 + maximum buy-range fraction) AND volume >= Average volume × volume multiplier AND (market gate disabled OR market data unavailable OR market fast simple moving average > market slow simple moving average) AND (sector gate disabled OR sector data unavailable OR sector fast simple moving average > sector slow simple moving average) OR market fast simple moving average crosses above market slow simple moving average OR (sector gate enabled AND sector fast simple moving average crosses above sector slow simple moving average)
+Exit: Long, close <= entry price × (1 − hard-stop fraction) OR (close >= entry price × (1 + trail-activation fraction) AND close <= Highest close since entry × (1 − trailing-distance fraction)) OR close >= entry price × (1 + target fraction)

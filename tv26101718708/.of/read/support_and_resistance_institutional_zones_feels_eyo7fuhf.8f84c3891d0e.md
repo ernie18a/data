@@ -1,0 +1,10 @@
+Calculation: Support and resistance zones = confirmed chart-timeframe pivot lows and highs, respectively, clustered separately when their prices are within a tolerance based on ATR and each qualifying pivot is separated from every cluster member by a minimum bar spacing. A pivot is confirmed after the required right-side bars complete. Retain clusters meeting the minimum touch count; calculate each zone center as the pivot-price average weighted by (1 + 0.5 × pivot volume / volume moving average + 0.5 × rejection-wick length / ATR) / (1 + pivot age / decay constant). Set zone top and bottom equally around the center using an ATR-based padding; keep the strongest zones up to the per-side limit. Active zones must not be broken or dropped.
+Calculation: Broken zones = zones removed from the active set after a close beyond their boundary or after cluster reorganization; mark as broken only when the close crossed the boundary and the previous close was on the unbroken side. A retest age is the number of chart bars since the zone was marked broken.
+Long: Active support zone exists AND low <= zone top AND close >= zone bottom AND close >= open AND no signal was recorded within the cooldown interval for a zone center within the ATR-based cluster tolerance
+Long: Previously broken resistance zone exists AND 0 < retest age <= retest window AND low <= zone top AND close >= zone bottom AND close >= open
+Long: Active resistance zone exists AND close > zone top AND previous close <= zone top
+Long: Active support zone exists AND low <= zone top AND close > zone bottom
+Short: Active resistance zone exists AND high >= zone bottom AND close <= zone top AND close <= open AND no signal was recorded within the cooldown interval for a zone center within the ATR-based cluster tolerance
+Short: Previously broken support zone exists AND 0 < retest age <= retest window AND high >= zone bottom AND close <= zone top AND close <= open
+Short: Active support zone exists AND close < zone bottom AND previous close >= zone bottom
+Short: Active resistance zone exists AND high >= zone bottom AND close < zone top

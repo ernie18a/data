@@ -1,0 +1,5 @@
+Calculation: Relative volume = current bar volume divided by the average volume of preceding chart bars, excluding the current bar.
+Calculation: Bull-side volume = sum of volume from completed lower-timeframe bars that closed above their open, plus half the volume of doji bars; if lower-timeframe data is unavailable, bull side means the chart bar closed in its upper half (or at/above its open when its range is zero). Bear side is the opposite comparison: down-volume exceeds up-volume; with unavailable lower-timeframe data, the chart bar closed in its lower half.
+Calculation: Heavy-bar price = the typical price (high + low + close) / 3 of the completed lower-timeframe bar with the greatest volume inside the chart bar; if lower-timeframe data is unavailable, use the chart bar's typical price.
+Long: Relative volume >= bubble threshold AND bull side OR current close > previous bar's last heavy bear price AND previous close <= that price.
+Short: Relative volume >= bubble threshold AND bear side OR current close < previous bar's last heavy bull price AND previous close >= that price.

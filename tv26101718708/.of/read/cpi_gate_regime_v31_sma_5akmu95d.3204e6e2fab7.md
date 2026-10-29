@@ -1,0 +1,6 @@
+Calculation: Long-term SMA = simple moving average of chart close with a longer lookback than the short-term SMA, using completed signal-timeframe bars
+Calculation: Short-term SMA = simple moving average of chart close with a shorter lookback than the long-term SMA, using completed signal-timeframe bars
+Calculation: QQQ drawdown = (QQQ close / highest QQQ close over the trailing two years - 1) × 100, using completed signal-timeframe bars
+Calculation: Latched grind-bear state = latch when QQQ drawdown reaches the bear-trigger threshold and CPI YoY is above the CPI gate; release when QQQ drawdown recovers to the release threshold; while latched, upgrade to grind-bear if CPI YoY rises above the gate, with no downgrade before release. CPI YoY uses the last completed bar of a timeframe higher than the chart timeframe.
+Long: chart close > long-term SMA OR (NOT latched grind-bear state AND chart close > short-term SMA)
+Exit: Long, chart close <= long-term SMA AND (latched grind-bear state OR chart close <= short-term SMA)

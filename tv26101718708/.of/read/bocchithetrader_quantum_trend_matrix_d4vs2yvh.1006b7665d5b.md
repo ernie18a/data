@@ -1,0 +1,8 @@
+Calculation: RSI-based Fisher transform = EMA-smoothed 0.5 × ln((1 + x) / (1 − x)), where x is RSI scaled to [0,1]
+Calculation: Stochastic %K = close's position within the lookback high-low range; %D = moving average of %K
+Calculation: Daily trend SMA uses the same lookback as the chart-timeframe trend SMA
+Calculation: Fast EMA uses a shorter lookback than slow EMA
+Long: chart-timeframe close > its SMA OR higher-timeframe daily close > its SMA (last completed bar) OR MACD line > signal line OR RSI ≥ 50 OR Stochastic %K > %D OR RSI-based Fisher transform > 0 OR MFI > 50 OR close < lower Bollinger Band OR +DI > −DI OR fast EMA > slow EMA
+Long: higher-timeframe daily close > its SMA (last completed bar) AND chart-timeframe close > its SMA AND MACD line > signal line AND RSI ≥ 50 AND RSI-based Fisher transform > 0 AND ADX > 25 AND current fast EMA > current slow EMA AND previous fast EMA ≤ previous slow EMA
+Short: chart-timeframe close ≤ its SMA OR higher-timeframe daily close ≤ its SMA (last completed bar) OR MACD line ≤ signal line OR RSI < 50 OR Stochastic %K ≤ %D OR RSI-based Fisher transform ≤ 0 OR MFI ≤ 50 OR close > upper Bollinger Band OR +DI ≤ −DI OR fast EMA ≤ slow EMA
+Short: higher-timeframe daily close ≤ its SMA (last completed bar) AND chart-timeframe close ≤ its SMA AND MACD line ≤ signal line AND Stochastic %K ≤ %D AND MFI ≤ 50 AND RSI < 50 AND current fast EMA < current slow EMA AND previous fast EMA ≥ previous slow EMA

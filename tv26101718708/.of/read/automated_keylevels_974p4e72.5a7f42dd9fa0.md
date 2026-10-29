@@ -1,0 +1,5 @@
+Calculation: Upward first-break count for each daily level set = number of days when, after the set is complete, a bar first has high above its upper level; count at most once per day, and treat a bar breaking both sides as upward.
+Calculation: Downward first-break count for each daily level set = number of days when, after the set is complete, a bar first has low below its lower level; count at most once per day.
+Calculation: Rounded upside percentage = round(upward first-break count / total first-break count × 100); rounded downside percentage = round(downward first-break count / total first-break count × 100). A daily level set is premarket, midnight range, or an opening range; opening ranges use different durations.
+Long: For a daily level set, total first-break count > 0 AND rounded upside percentage > rounded downside percentage.
+Short: For a daily level set, total first-break count > 0 AND rounded downside percentage > rounded upside percentage.

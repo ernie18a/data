@@ -1,0 +1,2 @@
+Long: 9-period EMA is above VWAP OR (9-period EMA crosses above VWAP AND close > VWAP AND 9-period EMA > its value at the configured slope lookback AND the prior bar's absolute difference between the 9-period EMA and VWAP is at least the configured minimum distance)
+Short: 9-period EMA is below VWAP OR (9-period EMA crosses below VWAP AND close < VWAP AND 9-period EMA < its value at the configured slope lookback AND the prior bar's absolute difference between the 9-period EMA and VWAP is at least the configured minimum distance)

@@ -1,0 +1,4 @@
+Calculation: Cluster score = recent-window volume share of the current close’s price bin divided by its long-window volume share; define equal-width price bins across the long-lookback lowest low to highest high, assign each bar to a bin by its close, and add a small epsilon to the long-window share denominator. The recent lookback is shorter than the long lookback; both use chart-timeframe bars.
+Calculation: Price drift = percentage change from the close at the short-lookback bar to the current close, using chart-timeframe bars.
+Long: Price drift > 0 AND cluster score ≥ moderate threshold AND recent-window volume share of the current close’s price bin ≥ minimum share threshold AND price range over the long lookback > 0
+Short: Price drift < 0 AND cluster score ≥ moderate threshold AND recent-window volume share of the current close’s price bin ≥ minimum share threshold AND price range over the long lookback > 0

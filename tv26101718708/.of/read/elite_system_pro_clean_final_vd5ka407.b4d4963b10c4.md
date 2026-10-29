@@ -1,0 +1,6 @@
+Calculation: Bullish divergence = current low is the lowest low over the swing lookback AND a prior swing low exists AND current low is below the prior swing low AND current stochastic is above the stochastic at the prior swing low
+Calculation: Bearish divergence = current high is the highest high over the swing lookback AND a prior swing high exists AND current high is above the prior swing high AND current stochastic is below the stochastic at the prior swing high
+Calculation: Buy score = one point for each condition: fast SMA crosses above slow SMA; RSI is above its midpoint; bullish divergence; close is above long-term SMA; higher-timeframe close is above its long-term SMA; ATR is above its longer-lookback SMA; close is above fast SMA and low is at or below fast SMA
+Calculation: Sell score = one point for each condition: fast SMA crosses below slow SMA; RSI is below its midpoint; bearish divergence; close is below long-term SMA; higher-timeframe close is below its long-term SMA; ATR is above its longer-lookback SMA; close is below fast SMA and high is at or above fast SMA
+Long: Buy score is at least the minimum score AND the bar is within the defined session
+Short: Sell score is at least the minimum score AND the bar is within the defined session

@@ -1,0 +1,3 @@
+Calculation: Trend state = up after the selected moving average’s rate of change crosses above the positive slope threshold; down after it crosses below the negative slope threshold; otherwise unchanged
+Long: The selected moving average’s rate of change crosses above the positive slope threshold AND the immediately preceding trend state is down
+Short: The selected moving average’s rate of change crosses below the negative slope threshold AND the immediately preceding trend state is up

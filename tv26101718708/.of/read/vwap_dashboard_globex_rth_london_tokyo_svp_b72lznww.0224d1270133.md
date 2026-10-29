@@ -1,0 +1,6 @@
+Calculation: Globex VWAP = cumulative volume-weighted average of each bar’s OHLC4, reset at 18:00 UTC.
+Calculation: Active-session VWAP = cumulative volume-weighted average of each bar’s OHLC4, reset at each Tokyo, London, or RTH session open; available only during those sessions.
+Calculation: Globex value-area boundaries = upper and lower boundaries of the Globex volume profile, built from bar volume distributed across price buckets; reset at 18:00 UTC.
+Calculation: Active-session value-area boundaries = upper and lower boundaries of the volume profile built from bar volume distributed across price buckets; reset at each Tokyo, London, or RTH session open; available only during those sessions.
+Long: close >= Globex VWAP OR close >= active-session VWAP during a Tokyo, London, or RTH session OR close > Globex value-area high OR close > active-session value-area high during a Tokyo, London, or RTH session
+Short: close < Globex VWAP OR close < active-session VWAP during a Tokyo, London, or RTH session OR close < Globex value-area low OR close < active-session value-area low during a Tokyo, London, or RTH session

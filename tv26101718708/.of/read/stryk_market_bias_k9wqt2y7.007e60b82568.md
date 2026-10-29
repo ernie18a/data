@@ -1,0 +1,6 @@
+Calculation: EMA = exponential moving average of close, calculated on each selected timeframe; use the last completed bar for higher timeframes and chart-resolution sampling for lower timeframes.
+Calculation: Short-term bias score = weighted mean of the fast-timeframe +1/−1 EMA votes, with temporary extra weight for recent flips; its timeframes have shorter lookbacks than the long-term group.
+Calculation: Long-term bias score = weighted mean of the slow-timeframe +1/−1 EMA votes, with vote weight increasing with time held on the same side, up to a cap; its timeframes have longer lookbacks than the short-term group.
+Calculation: Overall bias score = weighted blend of the long-term and short-term bias scores, with more weight on the long-term score by default.
+Long: close >= EMA on a selected timeframe OR short-term bias score >= positive threshold OR long-term bias score >= positive threshold OR overall bias score >= positive threshold OR close > both band EMAs
+Short: close < EMA on a selected timeframe OR short-term bias score <= negative threshold OR long-term bias score <= negative threshold OR overall bias score <= negative threshold OR close < both band EMAs

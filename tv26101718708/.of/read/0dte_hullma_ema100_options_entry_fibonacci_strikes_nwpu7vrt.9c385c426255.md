@@ -1,0 +1,4 @@
+Calculation: Falling HullMA flip = prior HullMA > HullMA two bars ago AND current HullMA <= prior HullMA
+Calculation: Rising HullMA flip = prior HullMA <= HullMA two bars ago AND current HullMA > prior HullMA
+Long: bars since the latest rising HullMA flip <= the confirmation wait period AND close > EMA(close) AND bars since the start of the calendar day >= the opening skip period AND this combined condition is true now and was false on the prior bar AND bars since the previous signal > the cooldown period
+Short: bars since the latest falling HullMA flip <= the confirmation wait period AND close < EMA(close) AND bars since the start of the calendar day >= the opening skip period AND this combined condition is true now and was false on the prior bar AND bars since the previous signal > the cooldown period

@@ -1,0 +1,5 @@
+Calculation: Sigmoid adaptive EMA = recursively smooth source using alpha = clamp((2 / (length + 1)) * (0.5 + sigmoid(feed)), 0.01, 1), where sigmoid(x) = 1 / (1 + exp(-x)); feed is the change over a lookback window in RSI, ATR, EMA-smoothed volume, or source / EMA(source), as selected.
+Calculation: Adaptive volatility = sigmoid adaptive EMA of a selected volatility measure (standard deviation, ATR, mean absolute deviation, or median absolute deviation); its feed is the change over a lookback window in volatility measure / EMA(volatility measure).
+Calculation: Upper and lower bands = sigmoid adaptive EMA of source plus/minus adaptive volatility times a multiplier. Optionally scale upper and lower volatility separately using sigmoid-adaptively smoothed squared positive and negative log returns relative to their total, then constrain each scale around its long-term average.
+Long: close > upper band
+Short: close < lower band

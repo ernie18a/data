@@ -1,0 +1,3 @@
+Calculation: Regime score = count of these true conditions: RSI > its threshold; close > EMA; SuperTrend is bullish; volume > its simple moving average; and SuperTrend on the higher timeframe is bullish, using the last completed higher-timeframe bar
+Long: regime score >= 4 AND absolute percentage distance of close from EMA <= maximum stretch AND the long condition was false on the previous bar
+Short: SuperTrend is bearish AND close < EMA AND RSI < 50 AND the short condition was false on the previous bar

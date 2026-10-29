@@ -1,0 +1,2 @@
+Long: Short-term simple moving average crosses above the highest of the long-term exponential moving average, long-term volume-weighted moving average, and session VWAP
+Short: Short-term simple moving average crosses below the lowest of the long-term exponential moving average, long-term volume-weighted moving average, and session VWAP

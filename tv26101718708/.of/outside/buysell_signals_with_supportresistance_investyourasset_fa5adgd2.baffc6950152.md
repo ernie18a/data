@@ -1,0 +1,1 @@
+Go long when a shorter simple moving average of the instrument’s closing price crosses above a longer one. Go short when it crosses below. No exit rule is implemented.

@@ -1,0 +1,4 @@
+Calculation: Session POC = midpoint of the equal-price bin with the greatest volume, after each bar’s volume is spread evenly across the bins intersected by its high-low range within the current session.
+Calculation: Session VAH and VAL = upper and lower edges of the contiguous value area grown from the Session POC by repeatedly adding the higher-volume adjacent bin until the selected fraction of session volume is included.
+Long: On a confirmed chart bar, close crosses above the developing Session POC OR Session VAH OR the previous completed day’s high.
+Short: On a confirmed chart bar, close crosses below the developing Session POC OR Session VAL OR the previous completed day’s low.

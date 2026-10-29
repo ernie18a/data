@@ -1,0 +1,4 @@
+Calculation: Macro support score = sum the configured weight for each input above its simple moving average when that input supports gold, and below its simple moving average when that input opposes gold; reverse the comparison for real yield, DXY, US10Y, US02Y, and USDJPY. Use a longer-period daily series for real yield and a configured higher-timeframe series for the other macro inputs; use the last completed bar.
+Calculation: Final direction score = 2 × sign(macro support score) + sign(TradingView Technical Rating) + regime direction, where supportive regime = +1, opposing regime = −1, and mixed regime = 0. Calculate the rating and other macro inputs on their configured timeframes, using the last completed bar.
+Long: TradingView Technical Rating ≥ 0.1 OR macro support score ≥ 7 OR final direction score > 0
+Short: TradingView Technical Rating ≤ −0.1 OR macro support score ≤ −7 OR final direction score < 0

@@ -1,0 +1,4 @@
+Calculation: Bullish FVG = on the selected same or higher timeframe’s current bar, including while it is forming, low > high two bars earlier AND the previous bar’s close > high two bars earlier
+Calculation: Bearish FVG = on the selected same or higher timeframe’s current bar, including while it is forming, high < low two bars earlier AND the previous bar’s close < low two bars earlier
+Long: Current bullish FVG AND a bearish FVG within the configured maximum separation whose range overlaps it (current bar’s high two bars earlier < older FVG’s low two bars after its start AND current bar’s low > older FVG’s high)
+Short: Current bearish FVG AND a bullish FVG within the configured maximum separation whose range overlaps it (current bar’s low two bars earlier > older FVG’s high two bars after its start AND current bar’s high < older FVG’s low)

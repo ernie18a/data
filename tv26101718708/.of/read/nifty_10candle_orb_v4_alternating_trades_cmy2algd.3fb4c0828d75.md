@@ -1,0 +1,6 @@
+Calculation: Opening range high = highest high among the first configured number of chart bars of each day; fixed after those bars
+Calculation: Opening range low = lowest low among the first configured number of chart bars of each day; fixed after those bars
+Long: opening range is complete AND previous close <= previous opening range high AND close > opening range high AND position is flat AND current time is before the last-entry time AND current time is before the forced-exit time AND (no earlier trade today OR the most recent trade today was short)
+Short: opening range is complete AND previous close >= previous opening range low AND close < opening range low AND position is flat AND current time is before the last-entry time AND current time is before the forced-exit time AND (no earlier trade today OR the most recent trade today was long)
+Exit: Long, high >= entry price × (1 + configured profit-target percentage) OR low <= entry price × (1 - configured stop-loss percentage) OR current time >= forced-exit time
+Exit: Short, low <= entry price × (1 - configured profit-target percentage) OR high >= entry price × (1 + configured stop-loss percentage) OR current time >= forced-exit time

@@ -1,0 +1,3 @@
+Calculation: AlphaTrend = recursively, if the selected oscillator is at least 50, the greater of the prior AlphaTrend and low minus multiplier times the simple moving average of true range; otherwise, the lesser of the prior AlphaTrend and high plus multiplier times that average. The selected oscillator is money flow index of (high + low + close) / 3, or RSI of close when using the no-volume-data mode. Initialize prior AlphaTrend to zero.
+Long: AlphaTrend > AlphaTrend two bars ago AND prior AlphaTrend <= AlphaTrend three bars ago
+Short: AlphaTrend < AlphaTrend two bars ago AND prior AlphaTrend >= AlphaTrend three bars ago

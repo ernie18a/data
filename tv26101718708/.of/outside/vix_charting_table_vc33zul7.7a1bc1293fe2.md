@@ -1,0 +1,1 @@
+Use the latest available VIX price and the adaptive range-filter level calculated from the last completed 15-minute VIX bar. Favor long positions in the traded index futures when VIX is below that level; favor short positions when VIX is above it. The indicator supplies directional bias only and does not define entries or exits.

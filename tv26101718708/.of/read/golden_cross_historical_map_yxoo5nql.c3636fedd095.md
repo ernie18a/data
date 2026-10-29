@@ -1,0 +1,1 @@
+Long: On the last completed chart-timeframe bar, the shorter-lookback SMA of close is greater than the longer-lookback SMA of close AND on the preceding bar it was less than or equal to the longer-lookback SMA of close

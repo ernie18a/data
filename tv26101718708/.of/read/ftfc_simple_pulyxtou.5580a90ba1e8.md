@@ -1,0 +1,7 @@
+Calculation: Continuity score = sum of four states, each +1 when close >= its timeframe open and −1 otherwise; use the chart timeframe for the first state when it meets the configured base timeframe, otherwise use the next higher timeframe. For any other timeframe, use its aggregated bar open; a higher timeframe uses its still-forming bar, and a lower timeframe uses the value returned by the lower-timeframe request with lookahead enabled.
+Calculation: Daily-open strength = abs((close − daily open) / daily open × 100).
+Calculation: Open spread = (highest − lowest of the three non-base timeframe opens) / lowest × 100.
+Long: Continuity score >= configured long-entry threshold AND daily-open strength >= configured minimum AND open spread >= configured minimum for the configured number of consecutive bars AND cooldown is zero AND (flat OR short with its exit condition met).
+Short: Shorts enabled AND continuity score <= configured short-entry threshold AND (monthly-direction gate disabled OR close < monthly open) AND daily-open strength >= configured minimum AND open spread >= configured minimum for the configured number of consecutive bars AND cooldown is zero AND (flat OR long with its exit condition met).
+Exit: Long, continuity score <= configured long-exit threshold for the configured number of consecutive bars.
+Exit: Short, continuity score >= configured short-cover threshold for the configured number of consecutive bars.

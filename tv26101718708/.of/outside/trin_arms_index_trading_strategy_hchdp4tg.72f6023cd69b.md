@@ -1,0 +1,1 @@
+Enter or maintain a long position when the daily TRIN index exceeds its rolling average plus a multiple of its rolling standard deviation. Exit the long position when the traded instrument closes above the prior bar’s high, or when its price reaches a volatility-based stop below the average entry price, calculated using the instrument’s rolling close-price standard deviation.

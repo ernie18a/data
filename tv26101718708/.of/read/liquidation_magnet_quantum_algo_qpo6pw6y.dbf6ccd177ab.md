@@ -1,0 +1,3 @@
+Calculation: Active liquidation pools = confirmed swing highs project short-liquidation levels above the swing and confirmed swing lows project long-liquidation levels below it at the enabled leverage tiers; scale each projection’s mass by positive volume z-score at the anchor, merge nearby same-side levels using mass-weighted prices, decay mass each bar, remove swept or weak pools, and retain only the configured maximum number of strongest pools
+Long: confirmed bar low <= active long-liquidation pool price
+Short: confirmed bar high >= active short-liquidation pool price

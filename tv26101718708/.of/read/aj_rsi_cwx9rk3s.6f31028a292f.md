@@ -1,0 +1,4 @@
+Calculation: Mansfield relative strength = ((chart close / benchmark close) / SMA(chart close / benchmark close, lookback) - 1) × 100, using the benchmark close on the chart timeframe
+Calculation: RSI = RSI of the configured source on the configured timeframe (higher, lower, or same as the chart), using the still-forming bar
+Long: Mansfield relative strength crosses above 0 OR its most recent zero crossing was upward OR it has not crossed 0 and RSI > its moving average
+Short: Mansfield relative strength crosses below 0 OR its most recent zero crossing was downward OR it has not crossed 0 and RSI ≤ its moving average

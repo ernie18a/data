@@ -1,0 +1,3 @@
+Calculation: Relative-strength score = 100 × (close / benchmark close − the lowest value of that ratio over the lookback) / (the highest value − the lowest value over the same lookback)
+Calculation: Trend-template score = count of true comparisons: relative-strength score > threshold; close > short-term SMA; close > medium-term SMA; close > long-term SMA; short-term SMA > medium-term SMA; short-term SMA > long-term SMA; medium-term SMA > long-term SMA; close ≥ 1.30 × the lowest low over 52 completed bars of a higher timeframe; close ≥ 0.75 × the highest high over 52 completed bars of a higher timeframe; long-term SMA > its value at the earlier lookback
+Long: trend-template score ≥ threshold

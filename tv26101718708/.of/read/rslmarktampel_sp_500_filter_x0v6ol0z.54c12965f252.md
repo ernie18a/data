@@ -1,0 +1,2 @@
+Long: S&P 500 weekly close > weekly SMA AND S&P 500 daily close > daily SMA AND S&P 500 daily close >= daily SMA
+Exit: long, (S&P 500 weekly close < weekly SMA AND previous completed S&P 500 weekly close < its weekly SMA) OR S&P 500 daily close < daily SMA OR held instrument weekly close < its weekly SMA

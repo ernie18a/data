@@ -1,0 +1,3 @@
+Calculation: Awesome Oscillator = short-period simple moving average of median price minus long-period simple moving average of median price
+Calculation: Alligator jaw, teeth, and lips = smoothed moving averages of median price, shifted forward by their respective Alligator offsets; jaw uses the longest lookback, teeth the intermediate lookback, and lips the shortest lookback
+Long: Awesome Oscillator crosses above its short-period simple moving average AND close is above each of the jaw, teeth, and lips from the last completed higher-timeframe bar

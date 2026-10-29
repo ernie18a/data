@@ -1,0 +1,6 @@
+Calculation: Opening-range high/low = highest high / lowest low during the configured opening-range window
+Calculation: Confirmation close = last completed bar close of a timeframe higher than the chart timeframe; otherwise, chart bar close
+Long: Opening range is complete AND within the configured trading window AND no long breakout has occurred this session AND a new confirmation close > opening-range high; OR a long breakout is active and not failed or retested AND low <= opening-range high AND chart close > opening-range high; OR a short breakout is active AND a new confirmation close is strictly inside the opening range
+Short: Opening range is complete AND within the configured trading window AND no short breakout has occurred this session AND a new confirmation close < opening-range low; OR a short breakout is active and not failed or retested AND high >= opening-range low AND chart close < opening-range low; OR a long breakout is active AND a new confirmation close is strictly inside the opening range
+Exit: long, a long breakout is active AND a new confirmation close > opening-range low AND < opening-range high
+Exit: short, a short breakout is active AND a new confirmation close > opening-range low AND < opening-range high

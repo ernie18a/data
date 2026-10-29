@@ -1,0 +1,9 @@
+Calculation: Structural swing high/low = a bar’s high/low is the highest/lowest across the configured equal number of bars to its left and right; it is confirmed after the right-side bars complete.
+Calculation: Bullish impulse high = a high pivot using the structural lookback on the left and a shorter lookback on the right.
+Calculation: Bearish impulse low = a low pivot using the structural lookback on the left and a shorter lookback on the right.
+Calculation: ATR(14) = 14-bar average true range.
+Calculation: Higher-timeframe bullish bias = the two latest confirmed swing highs and lows on the next standard higher timeframe are both higher than their respective preceding swings; bearish bias is when both are lower. Use the last completed higher-timeframe bar.
+Long: A bullish impulse high occurs after the latest structural swing low AND that swing low is above the latest earlier structural swing low AND the impulse high exceeds the latest structural swing high preceding that swing low AND (impulse high − swing low) ≥ minimum displacement multiple × ATR(14) AND higher-timeframe bullish bias.
+Short: A bearish impulse low occurs after the latest structural swing high AND that swing high is below the latest earlier structural swing high AND the impulse low is below the latest structural swing low preceding that swing high AND (swing high − impulse low) ≥ minimum displacement multiple × ATR(14) AND higher-timeframe bearish bias.
+Exit: long, close < bullish leg origin − invalidation buffer multiple × ATR(14)
+Exit: short, close > bearish leg origin + invalidation buffer multiple × ATR(14)

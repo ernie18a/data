@@ -1,0 +1,9 @@
+Calculation: Watched swing high = confirmed pivot high; retain until swept or its age exceeds the maximum; reject a new level if it is closer than the minimum ATR spacing to an existing watched swing high
+Calculation: Watched swing low = confirmed pivot low; retain until swept or its age exceeds the maximum; reject a new level if it is closer than the minimum ATR spacing to an existing watched swing low
+Calculation: Sweep wick/body ratio = wick beyond the watched level divided by absolute close minus open; when body is zero, the wick filter passes if the wick is positive
+Calculation: Long stop = lowest sweep-bar low minus ATR times stop buffer; risk = entry close minus long stop; target = entry close plus risk times reward:risk ratio
+Calculation: Short stop = highest sweep-bar high plus ATR times stop buffer; risk = short stop minus entry close; target = entry close minus risk times reward:risk ratio
+Long: flat AND watched swing low swept (low < level AND close > level) AND, if enabled, volume > volume SMA AND sweep wick/body ratio >= minimum AND, if confirmation is enabled, on the next bar close > midpoint of sweep-bar low and close AND, if enabled, within session AND longs allowed AND risk >= ATR times minimum risk
+Short: flat AND watched swing high swept (high > level AND close < level) AND, if enabled, volume > volume SMA AND sweep wick/body ratio >= minimum AND, if confirmation is enabled, on the next bar close < midpoint of sweep-bar high and close AND, if enabled, within session AND shorts allowed AND risk >= ATR times minimum risk
+Exit: long, low <= active stop OR high >= target
+Exit: short, high >= active stop OR low <= target

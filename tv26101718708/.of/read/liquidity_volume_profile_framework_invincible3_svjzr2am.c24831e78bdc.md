@@ -1,0 +1,4 @@
+Calculation: Confirmed swing low = a bar’s low lower than the lows of the pivot lookback number of bars before and after it; confirm after those later bars close, and retain the latest confirmed value until swept or replaced by a new confirmed swing low.
+Calculation: Confirmed swing high = a bar’s high higher than the highs of the pivot lookback number of bars before and after it; confirm after those later bars close, and retain the latest confirmed value until swept or replaced by a new confirmed swing high.
+Long: (low < latest confirmed swing low AND close > latest confirmed swing low) OR (low > high two bars ago AND prior bar close > prior bar open)
+Short: (high > latest confirmed swing high AND close < latest confirmed swing high) OR (high < low two bars ago AND prior bar close < prior bar open)

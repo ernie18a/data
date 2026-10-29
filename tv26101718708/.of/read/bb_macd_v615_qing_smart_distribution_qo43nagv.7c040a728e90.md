@@ -1,0 +1,4 @@
+Long: (close crosses above Bollinger basis AND MACD line > signal line AND MACD histogram > 0 AND MACD histogram > prior bar's histogram) OR (MACD line crosses above signal line AND close > Bollinger basis AND MACD histogram > 0), AND volume >= average volume AND close > open
+Calculation: Recent upper-band touch = highest high over a short lookback >= prior bar's upper Bollinger Band
+Short: 
+Exit: Long, (Recent upper-band touch AND MACD histogram < prior bar's histogram AND prior bar's histogram < histogram two bars ago AND close < open AND close <= prior close) OR (close < Bollinger basis - ATR × multiplier AND close < open) OR (close > upper Bollinger Band AND MACD line > 0 AND MACD line > signal line × multiplier)

@@ -1,0 +1,10 @@
+Calculation: Bullish fair value gap = current bar low > high two bars earlier
+Calculation: Bearish fair value gap = current bar high < low two bars earlier
+Calculation: Bullish order block = current bar close > prior bar high AND prior bar open > prior bar close
+Calculation: Bearish order block = current bar close < prior bar low AND prior bar open < prior bar close
+Calculation: Downside liquidity sweep = current bar low < prior value of the rolling lowest low AND current bar close > current value of the rolling lowest low
+Calculation: Upside liquidity sweep = current bar high > prior value of the rolling highest high AND current bar close < current value of the rolling highest high
+Long: UTC hour is within either configured trading session window AND higher timeframe close > higher timeframe shorter-term EMA > higher timeframe longer-term EMA AND chart-timeframe close > chart-timeframe shorter-term EMA > chart-timeframe longer-term EMA AND (downside liquidity sweep OR bullish fair value gap OR bullish order block) AND RSI > configured bullish threshold
+Short: UTC hour is within either configured trading session window AND higher timeframe close < higher timeframe shorter-term EMA < higher timeframe longer-term EMA AND chart-timeframe close < chart-timeframe shorter-term EMA < chart-timeframe longer-term EMA AND (upside liquidity sweep OR bearish fair value gap OR bearish order block) AND RSI < configured bearish threshold
+Exit: long, bar low <= current close - ATR × configured stop multiple OR bar high >= current close + ATR × configured stop multiple × configured reward multiple OR (bar close > entry price + ATR × configured break-even multiple AND bar low <= entry price) OR bar low <= current close - ATR × configured trailing multiple
+Exit: short, bar high >= current close + ATR × configured stop multiple OR bar low <= current close - ATR × configured stop multiple × configured reward multiple OR (bar close < entry price - ATR × configured break-even multiple AND bar high >= entry price) OR bar high >= current close + ATR × configured trailing multiple

@@ -1,0 +1,4 @@
+Calculation: Monthly open = open of the first available sampled bar in the current calendar month; sampled bars are chart-timeframe bars or lower-timeframe bars, and the opening bar is completed by the decision bar.
+Calculation: Weekly open = open of the first available sampled bar in the current week; sampled bars are chart-timeframe bars or lower-timeframe bars, and the opening bar is completed by the decision bar.
+Long: On Monday at 15:15 IST, monthly open < weekly open AND weekly open < current bar open (the 15:15 bar is still forming).
+Short: On Monday at 15:15 IST, monthly open > weekly open AND weekly open > current bar open (the 15:15 bar is still forming).

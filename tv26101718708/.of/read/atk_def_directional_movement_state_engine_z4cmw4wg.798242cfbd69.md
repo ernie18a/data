@@ -1,0 +1,4 @@
+Calculation: candle body size = absolute value of close minus open
+Calculation: candle range = high minus low
+Long: close > 20-period SMA AND close > 50-period SMA AND close > open AND candle body size > 0.5 × candle range OR 20-period EMA > 50-period EMA AND 50-period EMA > 200-period EMA AND close > 20-period EMA AND close > 50-period EMA OR ADX > 20 AND +DI > -DI
+Short: close < 20-period SMA AND close < 50-period SMA AND close < open AND candle body size > 0.5 × candle range OR 20-period EMA <= 50-period EMA AND 50-period EMA <= 200-period EMA AND close < 20-period EMA AND close < 50-period EMA OR ADX > 20 AND +DI <= -DI

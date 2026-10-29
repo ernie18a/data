@@ -1,0 +1,3 @@
+Calculation: Volume profile levels = Divide the configured profile window’s highest high to lowest low into equal-price rows; allocate each bar’s volume to each row in proportion to the overlap between the bar’s high-low range and the row; set POC to the midpoint of the highest-volume row; expand the value area from POC by adding the adjacent row with greater volume (upper row on ties) until it contains the configured fraction of total volume; VAH and VAL are the upper and lower boundaries of the resulting rows.
+Long: close > VAH
+Short: close < VAL

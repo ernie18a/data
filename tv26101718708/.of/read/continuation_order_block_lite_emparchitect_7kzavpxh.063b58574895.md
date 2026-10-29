@@ -1,0 +1,3 @@
+Calculation: Confirmed swing high/low = a structure bar whose high is strictly above / low is strictly below those of the configured neighboring bars on both sides; it becomes available after the right-side bars complete. A newer confirmed pivot replaces an older unbroken pivot. Use equal- or higher-timeframe structure bars, processing only the last completed bar.
+Long: structure-timeframe close > latest live confirmed swing high
+Short: structure-timeframe close < latest live confirmed swing low

@@ -1,0 +1,1 @@
+During the configured trading window, go long when either real or nominal GDP is higher than its previous reported value; go short when either is lower. Outside the window, exit all positions.

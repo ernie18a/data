@@ -1,0 +1,5 @@
+Calculation: Confirmed pivot high = a bar’s high exceeds the highs of the preceding and following lookback bars; it becomes available after the following bars complete.
+Calculation: Confirmed pivot low = a bar’s low is below the lows of the preceding and following lookback bars; it becomes available after the following bars complete.
+Calculation: ATR breakout buffer = ATR multiplied by a configurable multiplier; use zero when the buffer is disabled.
+Long: close > latest confirmed pivot high + ATR breakout buffer AND previous close <= latest confirmed pivot high + ATR breakout buffer AND (volume filter disabled OR volume > average volume × configurable multiplier) AND latest confirmed pivot high has not already triggered a long signal
+Short: close < latest confirmed pivot low − ATR breakout buffer AND previous close >= latest confirmed pivot low − ATR breakout buffer AND (volume filter disabled OR volume > average volume × configurable multiplier) AND latest confirmed pivot low has not already triggered a short signal

@@ -1,0 +1,16 @@
+Calculation: Short-term moving average = moving average of close over a shorter lookback than the long-term moving average; it is EMA or SMA, while the long-term moving average is SMA.
+Calculation: Long-term moving-average rising = long-term moving average > its value at a prior, shorter lookback.
+Calculation: Sustained above/below = consecutive chart bars with close >/< the short-term moving average, counted from the start of the current streak.
+Calculation: High-volume expansion = volume > its longer-lookback SMA by at least a configurable percentage.
+Calculation: Close quality = (close - low) / (high - low), or 0 when high = low.
+Calculation: OBV accumulation = OBV > its SMA; OBV adds volume when close rises, subtracts volume when close falls, and is unchanged when close is unchanged.
+Calculation: A/D accumulation = cumulative money-flow volume > its SMA; money-flow volume = (((close - low) - (high - close)) / (high - low)) * volume, or 0 when high = low.
+Calculation: Relative strength = (instrument close / its close at a prior lookback - 1) - (benchmark close / its close at the same lookback - 1), using benchmark bars on the chart timeframe.
+Calculation: Bull market = benchmark close > its shorter-lookback SMA and that SMA > its longer-lookback SMA.
+Calculation: Institutional score = sum of points for short-term average > long-term average, rising long-term average, close above short-term average, high-volume expansion, close quality above its threshold, ATR above or below its SMA, OBV accumulation, A/D accumulation, positive or strongly positive relative strength, and bull market; stronger relative strength contributes more points than merely positive relative strength.
+Long: Short-term moving average > long-term moving average AND long-term moving average rising AND close has remained above the short-term moving average for the configured consecutive-bar confirmation count AND (close > the highest prior close over the breakout lookback OR close > 92% of the highest prior close over the longer breakout lookback) AND high-volume expansion AND relative strength > 0 AND bull market AND bars since full exit >= configured cooldown AND institutional score >= configured minimum AND bar is within the configured date range
+Long: After the initial entry, before the first add, (close - average entry price) / average entry price >= configured confirmation-profit threshold AND close > short-term moving average AND relative strength > 0
+Long: After the first add, before the second add, (close - average entry price) / average entry price >= configured expansion-profit threshold AND close > short-term moving average
+Exit: Long, close has remained below the short-term moving average for the configured consecutive-bar confirmation count AND high-volume expansion occurred at least once during the current below-average streak
+Exit: Long, close < short-term moving average * (1 - configured stop percentage)
+Exit: Long, absolute percentage change in short-term moving average over its slope lookback <= configured flattening threshold AND close > short-term moving average AND no prior trim during this trade

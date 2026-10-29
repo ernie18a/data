@@ -1,0 +1,2 @@
+Long: DEMA(close, slow-period lookback) on the higher timeframe, using the last completed bar, crosses above DEMA(close, fast-period lookback) on that timeframe (current value > and previous value ≤; the fast-period lookback is longer than the slow-period lookback)
+Short: DEMA(close, slow-period lookback) on the higher timeframe, using the last completed bar, crosses below DEMA(close, fast-period lookback) on that timeframe (current value < and previous value ≥; the fast-period lookback is longer than the slow-period lookback)

@@ -1,0 +1,8 @@
+Calculation: Bullish SMT divergence = at the latest two confirmed chart-timeframe pivot lows (each using equal left and right lookbacks), both corresponding second-symbol lows are positive, the latest pivot is fewer than 30 bars ago, the pivots are fewer than 30 bars apart, and either the chart makes a lower low while the second symbol makes a higher low or the chart makes a higher low while the second symbol makes a lower low
+Calculation: Bearish SMT divergence = at the latest two confirmed chart-timeframe pivot highs (each using equal left and right lookbacks), both corresponding second-symbol highs are positive, the latest pivot is fewer than 30 bars ago, the pivots are fewer than 30 bars apart, and either the chart makes a higher high while the second symbol makes a lower high or the chart makes a lower high while the second symbol makes a higher high
+Long: Bullish SMT divergence AND the bullish MSS level has not yet been confirmed
+Long: Close >= the latest pivot high recorded when a higher-timeframe low PD array is detected AND the bar is within the MSS validity period
+Long: Price mitigates an active bullish fair value gap created while the bullish MSS level is confirmed and within its validity period
+Short: Bearish SMT divergence AND the bearish MSS level has not yet been confirmed
+Short: Previous bar's close <= the latest pivot low recorded when a higher-timeframe high PD array is detected AND the bar is within the MSS validity period
+Short: Price mitigates an active bearish fair value gap created while the bearish MSS level is confirmed and within its validity period

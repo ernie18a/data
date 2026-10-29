@@ -1,0 +1,6 @@
+Calculation: JCFBaux volatility = JCFBaux applied to close on each configured timeframe; use that timeframe’s current bar, which may still be forming, whether the timeframe is higher or lower than the chart timeframe
+Calculation: Smoothed volatility signal = Jurik filter applied to JCFBaux volatility on the same timeframe
+Calculation: Rising count = number of enabled configured timeframes where JCFBaux volatility >= smoothed volatility signal
+Calculation: Falling count = number of enabled configured timeframes where JCFBaux volatility < smoothed volatility signal
+Long: On any configured timeframe, JCFBaux volatility >= smoothed volatility signal OR JCFBaux volatility crosses above the smoothed volatility signal (current value > signal and previous value <= signal) OR rising count > falling count OR rising count >= the strong-bias threshold
+Short: On any configured timeframe, JCFBaux volatility < smoothed volatility signal OR falling count > rising count OR falling count >= the strong-bias threshold

@@ -1,0 +1,11 @@
+Calculation: ATR = average true range
+Calculation: C1 range = high and low of the current reference bar; after a bar fails to form a setup, that bar becomes the new reference. After a confirmed setup, begin a new cycle.
+Calculation: Bullish order block = prior bar is bearish and current close exceeds prior high, with current body greater than ATR × displacement multiplier; its zone is the prior bar’s high-to-low range. Bearish order block = prior bar is bullish and current close is below prior low, with current body greater than ATR × displacement multiplier; its zone is the prior bar’s high-to-low range. Remove a bullish zone when close falls below its bottom, and a bearish zone when close rises above its top.
+Calculation: OB overlap = bar range overlaps an active matching-side OB zone expanded above and below by ATR × proximity margin.
+Calculation: OB near C1 boundary = C1 breakout boundary lies within an active matching-side OB zone expanded above and below by ATR × proximity margin.
+Calculation: MA filter = close above (long) or below (short) the simple moving average of close. Use the MA timeframe; if higher than the chart timeframe, use its last completed bar; if the same timeframe, use the current chart bar.
+Calculation: Long stop = C1 low − ATR × minimum-stop multiplier; short stop = C1 high + ATR × minimum-stop multiplier. Long target = entry price + (entry price − long stop) × reward-to-risk ratio; short target = entry price − (short stop − entry price) × reward-to-risk ratio.
+Long: C2 low < C1 low AND C2 high ≤ C1 high AND C2 close ≥ C1 low AND C2 close ≤ C1 high; on a later bar, high ≥ C1 high + ATR × breakout buffer AND (close > MA OR C1 or C2 range overlaps an active bullish OB expanded by ATR × proximity margin OR C1 or C2 range overlapped an active bullish OB expanded by ATR × proximity margin when forming the setup)
+Short: C2 high > C1 high AND C2 low ≥ C1 low AND C2 close ≥ C1 low AND C2 close ≤ C1 high; on a later bar, low ≤ C1 low − ATR × breakout buffer AND (close < MA OR C1 or C2 range overlaps an active bearish OB expanded by ATR × proximity margin OR C1 or C2 range overlapped an active bearish OB expanded by ATR × proximity margin when forming the setup)
+Exit: long, high ≥ long target OR low ≤ long stop
+Exit: short, low ≤ short target OR high ≥ short stop

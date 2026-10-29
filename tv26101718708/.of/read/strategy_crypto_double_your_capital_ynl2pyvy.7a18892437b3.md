@@ -1,0 +1,12 @@
+Calculation: Hull Suite value = selected Hull moving average variant applied to close, using the configured length and length multiplier
+Calculation: Volume oscillator = 100 × (shorter-lookback EMA(volume) − longer-lookback EMA(volume)) / longer-lookback EMA(volume)
+Calculation: QQE MOD bullish bar = smoothed RSI of the second QQE calculation exceeds 50 by its threshold AND smoothed RSI of the first QQE calculation minus 50 exceeds the upper Bollinger band of its fast QQE trailing line
+Calculation: QQE MOD bearish bar = smoothed RSI of the second QQE calculation is below 50 by its threshold AND smoothed RSI of the first QQE calculation minus 50 is below the lower Bollinger band of its fast QQE trailing line
+Calculation: Long stop distance fraction = (entry-bar close − lowest low over the configured swing lookback) / entry-bar close
+Calculation: Short stop distance fraction = (highest high over the configured swing lookback − entry-bar close) / entry-bar close
+Long: position is flat AND close > current Hull Suite value AND current Hull Suite value > its value 2 bars ago AND volume oscillator > 0 AND QQE MOD bullish bar is true AND QQE MOD bullish bar was false on the previous bar AND datetime is within the configured date range
+Short: position is flat AND close < Hull Suite value 2 bars ago AND current Hull Suite value < its value 2 bars ago AND volume oscillator > 0 AND QQE MOD bearish bar is true AND QQE MOD bearish bar was false on the previous bar AND datetime is within the configured date range
+Exit: long, low <= average entry price × (1 − long stop distance fraction) OR high >= average entry price × (1 + configured target multiple × long stop distance fraction)
+Exit: short, high >= average entry price × (1 + short stop distance fraction) OR low <= average entry price × (1 − configured target multiple × short stop distance fraction)
+Exit: long, low <= average entry price × (1 − long stop distance fraction) OR high >= average entry price × (1 + first target multiple × long stop distance fraction); after the first target is reached, exit the remainder if low <= average entry price OR high >= average entry price × (1 + second target multiple × long stop distance fraction)
+Exit: short, high >= average entry price × (1 + short stop distance fraction) OR low <= average entry price × (1 − first target multiple × short stop distance fraction); after the first target is reached, exit the remainder if high >= average entry price OR low <= average entry price × (1 − second target multiple × short stop distance fraction)

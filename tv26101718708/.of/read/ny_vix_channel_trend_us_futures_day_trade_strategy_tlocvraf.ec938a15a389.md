@@ -1,0 +1,6 @@
+Calculation: Daily implied-move fraction = selected daily VIX9D value, or daily VIX value if unavailable, divided by 100 and by sqrt(252); use the selected daily bar’s open or close
+Calculation: Window close = close of the first chart bar whose time is at or after the session start plus the configured window duration
+Long: in session AND after the window-close bar AND window close > session open AND no entry has occurred this session AND position is flat
+Short: in session AND after the window-close bar AND window close < session open AND no entry has occurred this session AND position is flat
+Exit: long, close >= session open × (1 + daily implied-move fraction) OR close >= entry price × (1 + daily implied-move fraction × take-profit factor) OR close <= entry price × (1 − daily implied-move fraction × stop-loss factor) OR time >= session close − configured exit offset
+Exit: short, close <= session open × (1 − daily implied-move fraction) OR close <= entry price × (1 − daily implied-move fraction × take-profit factor) OR close >= entry price × (1 + daily implied-move fraction × stop-loss factor) OR time >= session close − configured exit offset

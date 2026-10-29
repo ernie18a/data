@@ -1,0 +1,3 @@
+Calculation: Estimated volume delta = volume × (2 × close − high − low) / max(high − low, 0.000001), calculated on each configured timeframe bar
+Long: For each configured timeframe above or below the chart timeframe, using its latest bar, which may still be forming: estimated volume delta > 0 OR RSI > 60
+Short: For each configured timeframe above or below the chart timeframe, using its latest bar, which may still be forming: estimated volume delta ≤ 0 OR RSI < 40

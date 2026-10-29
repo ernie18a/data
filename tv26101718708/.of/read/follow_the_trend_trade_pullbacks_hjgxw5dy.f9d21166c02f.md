@@ -1,0 +1,8 @@
+Calculation: Trend line = On each timeframe, set the value to the minimum of the current and prior two lows when that minimum is at least the prior value and either the close is at least the prior value plus ATR or the current low is above the prior value; otherwise set it to the maximum of the current and prior two highs when that maximum is at most the prior value and either the close is at most the prior value minus ATR or the current high is below the prior value; otherwise retain the prior value. Use Wilder ATR.
+Calculation: Trend state = Bullish when the trend line rises and CCI is at least zero; bearish when the trend line falls and CCI is at most zero; otherwise retain the prior state. Use the chart timeframe's CCI.
+Calculation: Higher-timeframe trend line and state = Trend line and state calculated on a higher timeframe, using its last completed bar.
+Calculation: Middle-timeframe trend line = Trend line calculated on a timeframe higher than the chart timeframe and lower than the higher timeframe, using its last completed bar.
+Long: Trend state changes from bearish to bullish AND the low is below the higher-timeframe trend line AND the higher-timeframe trend state is bullish
+Short: Trend state changes from bullish to bearish AND the high is above the higher-timeframe trend line AND the higher-timeframe trend state is bearish
+Exit: Long, close < middle-timeframe trend line
+Exit: Short, close > middle-timeframe trend line

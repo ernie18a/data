@@ -1,0 +1,4 @@
+Long: close crosses above the Supertrend line calculated on the chart timeframe
+Short: close crosses below the Supertrend line calculated on the chart timeframe
+Exit: long, high reaches the average entry price increased by the take-profit percentage OR RSI on a lower timeframe's last completed bar is at or above the upper threshold OR close crosses below the Supertrend line calculated on the chart timeframe
+Exit: short, low reaches the average entry price decreased by the take-profit percentage OR RSI on a lower timeframe's last completed bar is at or below the lower threshold OR close crosses above the Supertrend line calculated on the chart timeframe

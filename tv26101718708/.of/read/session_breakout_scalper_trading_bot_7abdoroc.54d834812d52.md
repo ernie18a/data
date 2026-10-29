@@ -1,0 +1,6 @@
+Calculation: Session range high/low = highest high/lowest low over the last 2N chart bars, calculated N chart bars after an enabled session bar; N is the configured wait in chart bars.
+Calculation: Large-trade momentum index = 50 × moving average(close − close N bars ago, N) / ATR(N) + 50; the moving average type is configurable.
+Long: During the configured backtest date range, a session range has just been established and bar high >= its range high.
+Short: During the configured backtest date range, a session range has just been established and bar low <= its range low.
+Exit: Long, bar low <= entry price − ATR(N) at range setup × stop multiple OR bar high >= entry price + fixed target distance OR an enabled session starts OR daily equity gain is above its lower threshold and <= its upper threshold OR on the prior bar an enabled long regime condition was false (large-trade momentum index > 50; Andean Oscillator bull line > bear line).
+Exit: Short, bar high >= entry price + ATR(N) at range setup × stop multiple OR bar low <= entry price − fixed target distance OR an enabled session starts OR daily equity gain is above its lower threshold and <= its upper threshold OR on the prior bar an enabled short regime condition was false (large-trade momentum index < −50; Andean Oscillator bear line > bull line).

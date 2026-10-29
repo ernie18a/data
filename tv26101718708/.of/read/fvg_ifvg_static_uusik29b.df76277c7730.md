@@ -1,0 +1,2 @@
+Long: chart timeframe <= configured display limit AND higher-timeframe last completed bar low > high two bars earlier AND close one bar earlier > high two bars earlier
+Short: chart timeframe <= configured display limit AND higher-timeframe last completed bar high < low two bars earlier AND close one bar earlier < low two bars earlier

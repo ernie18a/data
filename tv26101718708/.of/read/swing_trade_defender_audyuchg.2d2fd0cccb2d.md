@@ -1,0 +1,6 @@
+Calculation: Prior swing low = lowest low over the configured swing lookback, excluding the current bar
+Calculation: Prior swing high = highest high over the configured swing lookback, excluding the current bar
+Calculation: Long ATR trailing stop = on the first bar, highest high over the ATR lookback minus ATR × configured multiple; afterward, if close > previous stop, the greater of previous stop and that value, otherwise that value
+Calculation: Short ATR trailing stop = on the first bar, lowest low over the ATR lookback plus ATR × configured multiple; afterward, if close < previous stop, the lesser of previous stop and that value, otherwise that value
+Exit: long, close < EMA OR low < prior swing low OR (RSI < configured rollover level AND RSI < prior bar RSI) OR (close < open AND volume > average volume × configured volume multiple) OR close < long ATR trailing stop OR count of these five conditions >= configured exit flag threshold
+Exit: short, close > EMA OR high > prior swing high OR (RSI > 100 − configured rollover level AND RSI > prior bar RSI) OR (close > open AND volume > average volume × configured volume multiple) OR close > short ATR trailing stop OR count of these five conditions >= configured exit flag threshold

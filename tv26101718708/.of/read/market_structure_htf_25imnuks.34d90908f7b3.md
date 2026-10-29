@@ -1,0 +1,3 @@
+Calculation: Most recent unbroken confirmed swing high/low = the latest higher-timeframe pivot high/low, confirmed after the chosen lookback number of higher-timeframe bars on each side have completed; clear the high when a higher-timeframe close breaks above it and the low when a higher-timeframe close breaks below it.
+Long: Higher-timeframe close > most recent unbroken confirmed swing high on a completed higher-timeframe bar
+Short: Higher-timeframe close < most recent unbroken confirmed swing low on a completed higher-timeframe bar

@@ -1,0 +1,10 @@
+Calculation: upper wick = high − max(open, close); lower wick = min(open, close) − low; candle range = high − low
+Calculation: close position = (close − low) / candle range, or 0.5 when candle range is zero
+Calculation: candle centroid = low + candle range × (0.5 + clamp(0.3 × (2 × close position − 1) + 0.15 × (lower wick − upper wick) / (upper wick + lower wick) + 0.05 × (close − open) / max(abs(close − open), a small positive value), −0.45, 0.45)); when candle range is zero, use (high + low) / 2
+Calculation: velocity ratio = abs(close − open) / candle range × 100, or 0 when candle range is zero
+Calculation: velocity percentile = normal CDF of (velocity ratio − its ALMA-smoothed average) / its standard deviation, using the same lookback for the average and standard deviation
+Calculation: wick ratio = (upper wick + lower wick) / candle range × 100, or 0 when candle range is zero
+Calculation: wick percentile = normal CDF of (wick ratio − its ALMA-smoothed average) / its standard deviation, using the same lookback for the average and standard deviation
+Calculation: normalized imbalance = min(50 × abs(close − open) / max(upper wick + lower wick, a small positive value) / max(ALMA-smoothed average of this ratio, a small positive value), 100); use 1 for the ratio when total wick length is zero
+Long: close > candle centroid OR (candle range > 0 AND velocity percentile > 0.90 AND normalized imbalance > 75 AND close > open) OR (candle range > 0 AND velocity percentile < 0.30 AND wick percentile > 0.85 AND lower wick > 1.5 × upper wick AND close > candle centroid) OR (candle range > 0 AND velocity percentile > 0.75 AND close < open AND lower wick / candle range > 0.25 AND close > candle centroid)
+Short: close <= candle centroid OR (candle range > 0 AND velocity percentile > 0.90 AND normalized imbalance > 75 AND close < open) OR (candle range > 0 AND velocity percentile < 0.30 AND wick percentile > 0.85 AND upper wick > 1.5 × lower wick AND close < candle centroid) OR (candle range > 0 AND velocity percentile > 0.75 AND close > open AND upper wick / candle range > 0.25 AND close < candle centroid)

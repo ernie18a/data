@@ -1,0 +1,3 @@
+Calculation: Volume delta = estimated buying volume minus estimated selling volume; by wick method, buying volume = volume × (close − low) / (high − low) and selling volume = volume − buying volume (if high = low, each is half of volume); by candle-color method, delta = volume if close ≥ open, otherwise −volume
+Long: low < lowest low of the preceding lookback bars AND volume delta > lowest volume delta of the preceding lookback bars AND volume delta < 0
+Short: high > highest high of the preceding lookback bars AND volume delta < highest volume delta of the preceding lookback bars AND volume delta > 0

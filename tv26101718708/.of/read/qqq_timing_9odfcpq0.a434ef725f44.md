@@ -1,0 +1,2 @@
+Long: Higher-timeframe low > EMA of higher-timeframe close on three consecutive bars, using the still-forming higher-timeframe bar, AND datetime >= configured start datetime
+Exit: long, (short-term SMA crosses below long-term SMA AND higher-timeframe close < short-term SMA AND higher-timeframe close < medium-term EMA AND chart-timeframe close < chart-timeframe EMA) OR (chart-timeframe low < entry price × (1 − configured stop-loss fraction) AND chart-timeframe low < chart-timeframe SMA), AND datetime >= configured start datetime

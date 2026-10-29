@@ -1,0 +1,6 @@
+Calculation: Bollinger Bands %B = (close − lower band) / (upper band − lower band), using the latest completed bar of a lower timeframe than the chart timeframe
+Calculation: RSI = standard RSI, using the latest completed bar of a lower timeframe than the chart timeframe
+Calculation: Cumulative safety-order deviation = first deviation plus each subsequent step, where each step is the previous step multiplied by the deviation-step multiplier
+Calculation: Running average entry = total cost of the base order and filled safety orders divided by their total quantity
+Short: position side = flat AND prior completed lower-timeframe Bollinger Bands %B < its threshold AND latest completed lower-timeframe Bollinger Bands %B >= its threshold AND prior completed lower-timeframe RSI < its threshold AND latest completed lower-timeframe RSI >= its threshold OR position side = short AND filled safety orders < configured maximum AND close >= base entry × (1 + next cumulative safety-order deviation)
+Exit: Short, close <= running average entry × (1 − take-profit fraction)

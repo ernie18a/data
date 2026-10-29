@@ -1,0 +1,7 @@
+Calculation: Previous day high/low = high/low of the previous completed daily bar (higher timeframe than the chart timeframe).
+Calculation: Premarket high/low = highest high/lowest low from 8:00–9:30 AM ET on chart-timeframe bars, available from 9:30 AM ET.
+Calculation: Asia high/low = highest high/lowest low from 8:00 PM to midnight ET on chart-timeframe bars, available after midnight ET.
+Calculation: Displacement = current chart-bar high − low > average high − low over a longer lookback × a multiplier.
+Calculation: Bullish HTF FVG = current completed higher-timeframe bar's low > high from two higher-timeframe bars earlier; bearish HTF FVG = current completed higher-timeframe bar's high < low from two higher-timeframe bars earlier. Use the last completed higher-timeframe bar.
+Long: For the first sweep of a level in its session, low < previous day low, premarket low, or Asia low − minimum wick distance AND close > that level; OR a bullish displacement bar (close > open AND displacement) occurs within the confirmation window after such a sweep; OR a bullish HTF FVG forms after a confirmed bullish sweep and before another such FVG forms or the trading day resets.
+Short: For the first sweep of a level in its session, high > previous day high, premarket high, or Asia high + minimum wick distance AND close < that level; OR a bearish displacement bar (close < open AND displacement) occurs within the confirmation window after such a sweep; OR a bearish HTF FVG forms after a confirmed bearish sweep and before another such FVG forms or the trading day resets.

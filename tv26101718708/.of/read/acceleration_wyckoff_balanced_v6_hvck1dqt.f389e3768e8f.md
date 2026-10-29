@@ -1,0 +1,3 @@
+Calculation: Acceleration = current momentum minus momentum at the shorter acceleration lookback; momentum = close minus close at the longer momentum lookback. The acceleration lookback is shorter than the momentum lookback.
+Long: current low equals the lowest low over the spring lookback AND acceleration > the minimum acceleration threshold AND (volume confirmation is disabled OR volume < 1.3 × average volume over the volume-average lookback)
+Short: current high equals the highest high over the spring lookback AND acceleration < − the minimum acceleration threshold

@@ -1,0 +1,9 @@
+Calculation: Confirmed pivot low = a local minimum of low using symmetric left and right lookbacks, confirmed on the right-lookback bar
+Calculation: Confirmed pivot high = a local maximum of high using symmetric left and right lookbacks, confirmed on the right-lookback bar
+Calculation: MACD histogram = MACD line minus its signal line; MACD line = short-term EMA of close minus long-term EMA of close
+Calculation: Stochastic oscillator = smoothed %K, where %K compares close with the lowest low and highest high over its lookback
+Calculation: CCI = (hlc3 minus its lookback SMA) divided by 0.015 times its lookback mean absolute deviation from that SMA
+Calculation: OBV = cumulative volume added when close rises and subtracted when close falls, unchanged when close is unchanged
+Calculation: Momentum = close minus close at the start of its lookback
+Long: On a confirmed pivot low, the pivot low is lower than the previous confirmed pivot low AND at least the minimum confluence count of enabled oscillators have higher values at the current pivot than at the previous pivot (regular bullish divergence), OR the pivot low is higher than the previous confirmed pivot low AND at least the minimum confluence count of enabled oscillators have lower values at the current pivot than at the previous pivot (hidden bullish divergence)
+Short: On a confirmed pivot high, the pivot high is higher than the previous confirmed pivot high AND at least the minimum confluence count of enabled oscillators have lower values at the current pivot than at the previous pivot (regular bearish divergence), OR the pivot high is lower than the previous confirmed pivot high AND at least the minimum confluence count of enabled oscillators have higher values at the current pivot than at the previous pivot (hidden bearish divergence)

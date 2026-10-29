@@ -1,0 +1,13 @@
+Long: Any enabled Supertrend changes from downtrend to uptrend, and every Supertrend's current trend satisfies its configured long trend requirement, and volume > its configured moving average, and the configured Waddah Attar filters pass, and ATR is within its configured boundaries and on the configured side of its moving average, and close > the configured long trend moving average when enabled, and the bar passes enabled session, date, and trading-time filters
+Short: Any enabled Supertrend changes from uptrend to downtrend, and every Supertrend's current trend satisfies its configured short trend requirement, and volume > its configured moving average, and the configured Waddah Attar filters pass, and ATR is within its configured boundaries and on the configured side of its moving average, and close < the configured short trend moving average when enabled, and the bar passes enabled session, date, and trading-time filters
+Exit: long, low <= the fixed long stop level set on entry or high >= the fixed long target level set on entry or an enabled force-exit session ends
+Exit: short, high >= the fixed short stop level set on entry or low <= the fixed short target level set on entry or an enabled force-exit session ends
+Calculation: Waddah Attar momentum = change in (fast moving average of close − slower moving average of close), multiplied by sensitivity; the fast lookback is shorter than the slow lookback
+Calculation: Waddah Attar explosion = upper Bollinger Band − lower Bollinger Band, using a configurable moving average basis and standard deviation multiplier
+Calculation: Waddah Attar dead zone = smoothed true range
+Calculation: Waddah Attar trend magnitude = absolute Waddah Attar momentum; uptrend when momentum >= 0, downtrend otherwise; strong when current magnitude >= prior magnitude, soft when current magnitude < prior magnitude
+Calculation: Configured Waddah Attar filters = optionally require explosion > dead zone or explosion < dead zone; optionally require uptrend for long or downtrend for short, with strong/soft/all trend selection; optionally require trend magnitude > both explosion and dead zone
+Calculation: ATR limiter = smoothed true range; require it between configured low and high boundaries and, when selected, above or below its moving average
+Calculation: Long target and stop = on the long entry signal bar, close + risk distance × reward ratio and close − risk distance, respectively
+Calculation: Short target and stop = on the short entry signal bar, close − risk distance × reward ratio and close + risk distance, respectively
+Calculation: Risk distance = selected ATR-based, recent-low/high-based, percentage-based, or pip-based distance, adjusted by the configured risk multiplier

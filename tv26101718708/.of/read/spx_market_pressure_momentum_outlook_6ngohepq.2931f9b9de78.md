@@ -1,0 +1,4 @@
+Calculation: Liquidity pressure score = signed strength bucket of a clipped directional edge combining close location in range, candle body relative to range, close-to-previous-close momentum normalized by ATR, and relative volume; positive denotes Demand and negative denotes Supply. For SPY and QQQ, calculate on each configured timeframe (which may be higher or lower than the chart timeframe); higher-timeframe values use the last completed bar historically and the forming bar in real time, while lower-timeframe values use the requested intrabar data.
+Calculation: Sigma score = signed strength bucket of the weighted average of SPY and QQQ liquidity edges, calculated separately on each configured timeframe using the same higher/lower-timeframe bar handling.
+Long: SPY liquidity pressure score > 0 OR QQQ liquidity pressure score > 0 OR Sigma score > 0
+Short: SPY liquidity pressure score < 0 OR QQQ liquidity pressure score < 0 OR Sigma score < 0

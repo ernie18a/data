@@ -1,0 +1,8 @@
+Calculation: Chart-timeframe bullish FVG = current low > high two bars earlier AND gap size (current low − high two bars earlier) ≥ minimum ATR(14) multiple AND (displacement filter off OR middle candle body ≥ its ATR(14) multiple)
+Calculation: Chart-timeframe bearish FVG = current high < low two bars earlier AND gap size (low two bars earlier − current high) ≥ minimum ATR(14) multiple AND (displacement filter off OR absolute middle-candle body ≥ its ATR(14) multiple in the gap direction)
+Calculation: Higher-timeframe bullish FVG = on a higher timeframe, the last completed bar's low > the high three bars earlier AND gap size ≥ minimum ATR(14) multiple
+Calculation: Higher-timeframe bearish FVG = on a higher timeframe, the last completed bar's high < the low three bars earlier AND gap size ≥ minimum ATR(14) multiple
+Long: chart-timeframe bullish FVG forms OR higher-timeframe bullish FVG forms OR first touch of a live, non-inverted chart-timeframe bullish FVG at the configured gap edge or midpoint OR first retest of a bullish iFVG
+Short: chart-timeframe bearish FVG forms OR higher-timeframe bearish FVG forms OR first touch of a live, non-inverted chart-timeframe bearish FVG at the configured gap edge or midpoint OR first retest of a bearish iFVG
+Exit: long, low ≤ stop OR high ≥ target OR holding bars ≥ maximum; on the entry bar, count a stop hit but ignore a target hit
+Exit: short, high ≥ stop OR low ≤ target OR holding bars ≥ maximum; on the entry bar, count a stop hit but ignore a target hit

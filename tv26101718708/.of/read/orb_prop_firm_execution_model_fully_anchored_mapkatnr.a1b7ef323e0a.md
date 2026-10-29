@@ -1,0 +1,4 @@
+Calculation: Opening-range high/low = highest high and lowest low during the opening range of each session.
+Calculation: Opening-anchored VWAP = cumulative ((high + low + close) / 3 × volume) divided by cumulative volume, starting at the session open.
+Long: Opening range is complete AND close > opening-range high AND prior close ≤ prior opening-range high AND close > opening-anchored VWAP AND close > moving average of close AND moving average of close > its prior-bar value AND volume > average volume × threshold AND NOT (high > opening-range high AND close < opening-range high)
+Short: Opening range is complete AND close < opening-range low AND prior close ≥ prior opening-range low AND close < opening-anchored VWAP AND close < moving average of close AND moving average of close < its prior-bar value AND volume > average volume × threshold AND NOT (low < opening-range low AND close > opening-range low)

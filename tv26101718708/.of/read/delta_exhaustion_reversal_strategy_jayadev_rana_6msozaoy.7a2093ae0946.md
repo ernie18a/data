@@ -1,0 +1,10 @@
+Calculation: Bar delta = Sum of lower-timeframe bar volume when close > open minus volume when close < open, over the lower-timeframe bars completed within the chart bar; if none are available, use chart-bar volume signed by chart-bar close versus open (zero if equal)
+Calculation: CVD = Running cumulative sum of chart-bar delta
+Calculation: ATR percentile = Percentile rank of chart-timeframe ATR within a longer chart-timeframe lookback
+Calculation: Close position = (close - low) / (high - low), or 0.5 when high = low
+Long: low <= lowest low over the configured chart-timeframe extreme lookback AND CVD > lowest CVD over the same lookback excluding the current bar AND bar delta < 0 AND close position > 1 - configured effort threshold AND ATR percentile >= configured minimum
+Long: Flat AND a bullish exhaustion setup is pending from an earlier bar within the configured confirmation window AND no earlier pending bar has had low below the setup-bar low AND close > setup-bar midpoint
+Short: high >= highest high over the configured chart-timeframe extreme lookback AND CVD < highest CVD over the same lookback excluding the current bar AND bar delta > 0 AND close position < configured effort threshold AND ATR percentile >= configured minimum
+Short: Flat AND a bearish exhaustion setup is pending from an earlier bar within the configured confirmation window AND no earlier pending bar has had high above the setup-bar high AND close < setup-bar midpoint
+Exit: Long, low <= setup-bar low minus configured ATR buffer OR high >= confirmation-bar close + configured target multiple times (confirmation-bar close - long stop) OR (close < average entry price AND consecutive chart bars with bar delta < 0 >= configured adverse-delta limit) OR bars since entry >= configured maximum holding period
+Exit: Short, high >= setup-bar high plus configured ATR buffer OR low <= confirmation-bar close - configured target multiple times (short stop - confirmation-bar close) OR (close > average entry price AND consecutive chart bars with bar delta > 0 >= configured adverse-delta limit) OR bars since entry >= configured maximum holding period

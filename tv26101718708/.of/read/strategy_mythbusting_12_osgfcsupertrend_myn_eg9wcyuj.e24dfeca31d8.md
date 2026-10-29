@@ -1,0 +1,7 @@
+Calculation: One-sided Gaussian filter = Fibonacci-weighted moving average of the selected price source, followed by a 2-pole Ehlers super smoother; its signal line is the filter value from the previous bar.
+Long: One-sided Gaussian filter crosses above its signal line.
+Long: One-sided Gaussian filter crosses above its signal line AND SuperTrend is bullish AND the most recent opposite Gaussian and SuperTrend signals are farther back than their respective configured lookbacks AND (ADX exceeds its threshold if the ADX filter is enabled).
+Short: One-sided Gaussian filter crosses below its signal line.
+Short: One-sided Gaussian filter crosses below its signal line AND SuperTrend is bearish AND the most recent opposite Gaussian and SuperTrend signals are farther back than their respective configured lookbacks AND (ADX exceeds its threshold if the ADX filter is enabled).
+Exit: Long, One-sided Gaussian filter crosses below its signal line OR close < entry price × (1 − configured stop-loss fraction) OR high >= entry price × (1 + configured profit-target fraction).
+Exit: Short, One-sided Gaussian filter crosses above its signal line OR close > entry price × (1 + configured stop-loss fraction) OR low <= entry price × (1 − configured profit-target fraction).

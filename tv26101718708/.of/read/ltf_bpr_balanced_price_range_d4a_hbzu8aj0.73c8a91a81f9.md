@@ -1,0 +1,4 @@
+Calculation: Bullish FVG = on three consecutive completed bars of a lower timeframe than the chart timeframe, the middle bar’s high exceeds the oldest bar’s high and the newest bar’s low exceeds the oldest bar’s high; the gap size must exceed the configured multiple of lower-timeframe ATR(200).
+Calculation: Bearish FVG = on three consecutive completed bars of a lower timeframe than the chart timeframe, the middle bar’s low is below the oldest bar’s low and the newest bar’s high is below the oldest bar’s low; the gap size must exceed the configured multiple of lower-timeframe ATR(200).
+Long: A new bullish FVG’s zone has positive-width overlap with a bearish FVG zone formed within the configured maximum number of lower-timeframe bars.
+Short: A new bearish FVG’s zone has positive-width overlap with a bullish FVG zone formed within the configured maximum number of lower-timeframe bars.

@@ -1,0 +1,14 @@
+Calculation: Mean = exponential moving average of close
+Calculation: Z-score = (close − Mean) / standard deviation of close over the same lookback; use 0 if standard deviation is 0
+Calculation: Bollinger bands = simple moving average of close ± multiplier × standard deviation of close
+Calculation: Keltner bands = the same simple moving average of close ± multiplier × simple moving average of true range
+Calculation: Up/down run = consecutive bars closing higher/lower than the prior close; reset to 0 otherwise
+Calculation: Up exhaustion = rounded 100 × (0.30 × min(1, up run / run length) + 0.30 × min(1, max(0, Z-score) / stretch threshold) + 0.25 × min(1, max(0, RSI − overbought level) / max(1, 100 − overbought level)) + 0.15 × min(1, (high − low) / ATR / volatility-spike multiple)
+Calculation: Down exhaustion = rounded 100 × (0.30 × min(1, down run / run length) + 0.30 × min(1, max(0, −Z-score) / stretch threshold) + 0.25 × min(1, max(0, oversold level − RSI) / max(1, oversold level)) + 0.15 × min(1, (high − low) / ATR / volatility-spike multiple)
+Calculation: Bullish reversal = bullish engulfing (close > open, prior close < prior open, close ≥ prior open, and open ≤ prior close) OR bullish pin (low below either lower band, close above the lower Bollinger band, lower wick / range ≥ wick fraction, and close > open)
+Calculation: Bearish reversal = bearish engulfing (close < open, prior close > prior open, close ≤ prior open, and open ≥ prior close) OR bearish pin (high above either upper band, close below the upper Bollinger band, upper wick / range ≥ wick fraction, and close < open)
+Calculation: Bullish confluence count = count of these true conditions: low ≤ either lower band; RSI ≤ oversold level; close < prior close AND RSI > prior RSI AND RSI < 50; volume / its simple moving average ≥ volume threshold; Z-score ≤ −stretch threshold
+Calculation: Bearish confluence count = count of these true conditions: high ≥ either upper band; RSI ≥ overbought level; close > prior close AND RSI < prior RSI AND RSI > 50; volume / its simple moving average ≥ volume threshold; Z-score ≥ stretch threshold
+Calculation: Eligible signal = no prior signal OR current bar index − prior signal bar index ≥ cooldown bars
+Long: Bullish reversal AND down exhaustion ≥ minimum exhaustion AND bullish confluence count ≥ minimum confluences AND down exhaustion > up exhaustion AND eligible signal
+Short: Bearish reversal AND up exhaustion ≥ minimum exhaustion AND bearish confluence count ≥ minimum confluences AND up exhaustion ≥ down exhaustion AND eligible signal AND NOT (bullish reversal AND down exhaustion ≥ minimum exhaustion AND bullish confluence count ≥ minimum confluences AND down exhaustion > up exhaustion)

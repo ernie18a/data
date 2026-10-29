@@ -1,0 +1,2 @@
+Calculation: Gap = absolute difference between the short-lookback and long-lookback simple moving averages, divided by the absolute long-lookback SMA, multiplied by 100; the long lookback is longer, and both averages use closes from completed higher-timeframe bars.
+Long: Short-lookback SMA < long-lookback SMA AND gap is within the configured minimum and maximum thresholds AND gap < gap on the preceding completed higher-timeframe bar.

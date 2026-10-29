@@ -1,0 +1,8 @@
+Calculation: Bullish FVG = For the three latest completed bars of the chart or a higher timeframe, newest.low > oldest.high AND middle.close > oldest.high AND newest.low <= middle.high AND middle.low <= oldest.high
+Calculation: Bearish FVG = For the three latest completed bars of the chart or a higher timeframe, newest.high < oldest.low AND middle.close < oldest.low AND newest.high >= middle.low AND middle.high >= oldest.low
+Calculation: Lower-timeframe bullish FVG = For three consecutive lower-timeframe bars as they complete within the chart bar, newest.low > oldest.high AND middle.close > oldest.high AND newest.low - oldest.high > the configured threshold times a fixed-lookback lower-timeframe ATR
+Calculation: Lower-timeframe bearish FVG = For three consecutive lower-timeframe bars as they complete within the chart bar, newest.high < oldest.low AND middle.close < oldest.low AND oldest.low - newest.high > the configured threshold times a fixed-lookback lower-timeframe ATR
+Calculation: Bullish IFVG = A previously filled bearish FVG's close rises above its top before the close falls below its bottom; use the selected FVG fill rule to determine when it is filled
+Calculation: Bearish IFVG = A previously filled bullish FVG's close falls below its bottom before the close rises above its top; use the selected FVG fill rule to determine when it is filled
+Long: Bullish FVG on chart or higher-timeframe bars OR lower-timeframe bullish FVG OR bullish IFVG
+Short: Bearish FVG on chart or higher-timeframe bars OR lower-timeframe bearish FVG OR bearish IFVG

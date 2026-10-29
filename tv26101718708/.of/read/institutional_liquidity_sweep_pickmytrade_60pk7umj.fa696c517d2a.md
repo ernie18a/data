@@ -1,0 +1,11 @@
+Calculation: Prior swing low/high = lowest low/highest high over the lookback, excluding the current bar
+Calculation: Single-bar volume delta = volume × (2 × close − high − low) / (high − low), using zero when high = low
+Calculation: Directional sweep score = clamp((z + 3) / 6, 0, 1), where z is the rolling z-score of the factor over the normalization window
+Calculation: Sweep factors = wick purity (bull: min(1, (close − low) / (prior swing low − low)); bear: min(1, (high − close) / (high − prior swing high))); volume participation (volume z-score); absorption (single-bar volume-delta z-score, positive for bull and sign-reversed for bear); recovery (bull: min(2, (close − prior swing low) / (prior swing low − low)); bear: min(2, (prior swing high − close) / (high − prior swing high))). For each factor, z-score uses its rolling mean and standard deviation; non-sweep raw wick purity is (close − low) / (high − low), recovery is zero, and absorption uses the absolute delta z-score.
+Calculation: Session weight = 1 during the configured London window, 0.85 during the configured New York window, and 0.45 otherwise, using datetime in the configured timezone
+Calculation: Composite score = min(100, 100 × (0.28 × wick-purity score + 0.20 × volume-participation score + 0.25 × absorption score + 0.17 × recovery score + 0.10 × session weight) + order-block bonus). Add the configured bonus when the swept swing level is inside the corresponding active order-block zone.
+Calculation: Active bullish order block = most recent last bearish candle before a run of consecutive bullish candles; active bearish order block = most recent last bullish candle before a run of consecutive bearish candles. Each zone spans that candle's low to high; invalidate bullish zone when close is below its low and bearish zone when close is above its high. Use completed bars for the run and opposing candle.
+Long: low < prior swing low AND close > prior swing low AND composite score ≥ configured threshold AND close > EMA AND prior bar did not satisfy the same long conditions
+Short: high > prior swing high AND close < prior swing high AND composite score ≥ configured threshold AND close < EMA AND prior bar did not satisfy the same short conditions
+Exit: Long, short-entry condition
+Exit: Short, long-entry condition

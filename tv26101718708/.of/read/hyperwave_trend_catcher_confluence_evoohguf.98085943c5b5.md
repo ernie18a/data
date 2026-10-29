@@ -1,0 +1,2 @@
+Calculation: HyperWave = EMA((HLC3 − EMA(HLC3, channel lookback)) / (0.015 × EMA(abs(HLC3 − EMA(HLC3, channel lookback)), channel lookback)), average lookback), where the average lookback is longer than the channel lookback
+Long: HyperWave > crossing level AND previous HyperWave ≤ crossing level AND close > SMA(high, cloud lookback) AND Money Flow Index(close, lookback) > threshold

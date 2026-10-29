@@ -1,0 +1,4 @@
+Calculation: Bullish trend = close > EMA-fast AND EMA-fast ≥ EMA-medium ≥ EMA-slow ≥ EMA-filter ≥ EMA-major, OR EMA-fast ≥ EMA-medium ≥ EMA-slow ≥ EMA-filter AND close > EMA-major, OR close > EMA-major AND close ≥ EMA-filter. All EMAs use Daily bars; periods are ordered shortest to longest. Use the last completed Daily bar when Daily is higher than the chart timeframe.
+Calculation: Daily closes below EMA-filter for the configured number of consecutive bars = each of that many consecutive Daily closes is below EMA-filter. Use completed Daily bars when Daily is higher than the chart timeframe.
+Long: Bullish trend AND close ≥ EMA-filter AND Daily low ≤ EMA-fast AND Daily high ≥ EMA-fast. Use the last completed Daily bar when Daily is higher than the chart timeframe.
+Exit: Long, Daily closes below EMA-filter for the configured number of consecutive bars. Use completed Daily bars when Daily is higher than the chart timeframe.

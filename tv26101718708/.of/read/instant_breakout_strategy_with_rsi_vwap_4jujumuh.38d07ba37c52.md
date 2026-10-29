@@ -1,0 +1,7 @@
+Calculation: Confirmed pivot high = a bar’s high exceeds the highs of the configured number of bars before and after it; the latest confirmed value is resistance.
+Calculation: Confirmed pivot low = a bar’s low is below the lows of the configured number of bars before and after it; the latest confirmed value is support.
+Calculation: Bar momentum = (close − open) / open.
+Long: Close crosses above latest confirmed pivot high AND (filters disabled OR (volume > its configured simple moving average × configured surge multiplier AND bar momentum > configured threshold AND RSI is above its midpoint AND close > VWAP)).
+Short: Close crosses below latest confirmed pivot low AND (filters disabled OR (volume > its configured simple moving average × configured surge multiplier AND bar momentum < −configured threshold AND RSI is below its midpoint AND close < VWAP)).
+Exit: long, high >= signal-bar close + ATR at signal × take-profit multiplier OR low <= signal-bar close − ATR at signal × stop-loss multiplier OR short-entry condition.
+Exit: short, low <= signal-bar close − ATR at signal × take-profit multiplier OR high >= signal-bar close + ATR at signal × stop-loss multiplier OR long-entry condition.

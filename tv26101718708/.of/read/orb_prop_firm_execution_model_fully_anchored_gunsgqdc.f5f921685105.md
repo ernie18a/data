@@ -1,0 +1,5 @@
+Calculation: Opening-range high = highest high from the session open through the opening-range end
+Calculation: Opening-range low = lowest low from the session open through the opening-range end
+Calculation: Anchored VWAP = cumulative ((high + low + close) / 3 × volume) divided by cumulative volume from the session open through the cutoff; hold the value until the daily reset
+Long: current time ≥ opening-range end AND close > opening-range high AND previous close ≤ previous opening-range high AND close > anchored VWAP AND close > simple moving average of close AND simple moving average of close > its previous value AND volume > simple moving average of volume × a multiplier AND (high ≤ opening-range high OR close ≥ opening-range high)
+Short: current time ≥ opening-range end AND close < opening-range low AND previous close ≥ previous opening-range low AND close < anchored VWAP AND close < simple moving average of close AND simple moving average of close < its previous value AND volume > simple moving average of volume × a multiplier AND (low ≥ opening-range low OR close ≤ opening-range low)

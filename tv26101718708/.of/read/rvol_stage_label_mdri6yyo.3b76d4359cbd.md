@@ -1,0 +1,4 @@
+Calculation: Long-term high = highest high over a long-term lookback
+Calculation: Long-term low = lowest low over the same long-term lookback
+Long: Close > medium-term SMA AND Close > long-term SMA AND short-term SMA > medium-term SMA AND short-term SMA > long-term SMA AND long-term SMA > its value at a prior chart bar separated by a configured offset AND Close is at least a configured percentage above long-term low AND Close is no more than a configured percentage below long-term high AND Close is no more than a configured percentage below short-term SMA
+Short: Close < long-term SMA AND long-term SMA < its value at a prior chart bar separated by a configured offset

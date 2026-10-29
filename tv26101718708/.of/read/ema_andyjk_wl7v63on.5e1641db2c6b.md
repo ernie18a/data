@@ -1,0 +1,2 @@
+Long: 50-period EMA of close > 100-period EMA of close AND 100-period EMA of close > 200-period EMA of close
+Short: 50-period EMA of close < 100-period EMA of close AND 100-period EMA of close < 200-period EMA of close

@@ -1,0 +1,2 @@
+Long: On a chart timeframe lower than the higher timeframe, the last two completed higher-timeframe bars form an inside bar (the later bar’s high <= the earlier bar’s high and its low >= the earlier bar’s low), AND the current chart bar’s high > the earlier bar’s high
+Short: On a chart timeframe lower than the higher timeframe, the last two completed higher-timeframe bars form an inside bar (the later bar’s high <= the earlier bar’s high and its low >= the earlier bar’s low), AND the current chart bar’s low < the earlier bar’s low

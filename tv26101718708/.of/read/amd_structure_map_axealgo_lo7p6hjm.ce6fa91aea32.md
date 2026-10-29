@@ -1,0 +1,8 @@
+Calculation: Fast-to-slow ATR ratio = shorter-lookback ATR divided by longer-lookback ATR
+Calculation: Recent ATR-ratio average = average of the fast-to-slow ATR ratio over a short lookback
+Calculation: Active accumulation range = on a confirmed chart-timeframe bar, the recent ATR-ratio average is below a threshold and the seed-window high minus low is at least a minimum multiple of fast ATR; the range high and low are the seed-window highest high and lowest low, and its volume baseline is the seed-window average volume, all frozen when the range starts; the range is eligible only after the post-resolution cooldown and remains active until a confirmed break or maximum range duration
+Calculation: Confirmed sweep = a range-boundary pierce by at least a minimum multiple of fast ATR, with volume above a minimum multiple of the frozen volume baseline, followed within a short return window by a confirmed close strictly inside the range
+Calculation: Confirmed distribution break = a confirmed close beyond the range high or low by at least a minimum multiple of fast ATR, with volume above a minimum multiple of the frozen volume baseline
+Calculation: Higher-timeframe bias = close above the EMA on a higher timeframe, using the last completed higher-timeframe bar
+Long: Active accumulation range AND (confirmed sweep below the range low OR confirmed distribution break above the range high after the latest confirmed sweep was below the range low) OR higher-timeframe close > higher-timeframe EMA
+Short: Active accumulation range AND (confirmed sweep above the range high OR confirmed distribution break below the range low after the latest confirmed sweep was above the range high) OR higher-timeframe close <= higher-timeframe EMA

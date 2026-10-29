@@ -1,0 +1,4 @@
+Calculation: VWAP-based Supertrend = A Supertrend whose center is the rolling volume-weighted average of the selected price source; its bands are that average plus or minus a multiplier times price ATR, with trailing bands and direction determined by close crossing the active band.
+Calculation: Volume Supertrend = A Supertrend calculated using volume as its source and an ATR calculated from volume.
+Long: (Volume > Volume Supertrend AND VWAP-based Supertrend direction changes from down to up) OR (Volume Supertrend direction changes from down to up AND selected price source > VWAP-based Supertrend)
+Exit: Long, (Volume <= Volume Supertrend AND VWAP-based Supertrend direction changes from up to down) OR (Volume Supertrend direction changes from up to down AND selected price source <= VWAP-based Supertrend)

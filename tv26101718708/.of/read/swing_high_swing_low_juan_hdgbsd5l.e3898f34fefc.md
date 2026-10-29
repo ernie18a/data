@@ -1,0 +1,5 @@
+Calculation: Swing high = a bar whose high is higher than the highs of the same number of bars before and after it; confirmed after those following bars complete
+Calculation: Swing low = a bar whose low is lower than the lows of the same number of bars before and after it; confirmed after those following bars complete
+Calculation: ATR = average true range
+Long: confirmed swing low AND (no prior accepted swing OR (prior accepted swing is a low AND swing low price < prior accepted swing price) OR (prior accepted swing is a high AND absolute difference between swing low price and prior accepted swing price >= ATR-scaled minimum swing move AND bars between the pivots >= minimum bar gap))
+Short: confirmed swing high AND (no prior accepted swing OR (prior accepted swing is a high AND swing high price > prior accepted swing price) OR (prior accepted swing is a low AND absolute difference between swing high price and prior accepted swing price >= ATR-scaled minimum swing move AND bars between the pivots >= minimum bar gap))

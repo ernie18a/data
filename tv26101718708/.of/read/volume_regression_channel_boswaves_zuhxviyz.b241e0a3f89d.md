@@ -1,0 +1,5 @@
+Calculation: HL2 = (high + low) / 2
+Calculation: Regression center = least-squares linear regression of HL2 over a lookback, evaluated on the current bar.
+Calculation: Regression channel = configured linear or quadratic least-squares fit of HL2 over a lookback, with upper and lower bands one parameterized standard-deviation width above and below the fit.
+Long: close > Regression center OR low <= lower band AND previous low > previous lower band OR volume >= volume-SMA * flare-volume threshold AND low <= lower flare zone AND (high > upper flare zone OR abs(close - lower band) < abs(close - upper band))
+Short: close <= Regression center OR high >= upper band AND previous high < previous upper band OR volume >= volume-SMA * flare-volume threshold AND high >= upper flare zone AND (low > lower flare zone OR abs(close - upper band) <= abs(close - lower band))

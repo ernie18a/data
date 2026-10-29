@@ -1,0 +1,1 @@
+For an options strategy that profits while the underlying stays within a defined range, enter only when the estimated probability of the underlying moving beyond that range over the chosen horizon is low. Estimate this probability from ATR and recent price dispersion.

@@ -1,0 +1,4 @@
+Long: Position is flat AND momentum is positive AND the change in the simple moving average of close is positive AND close is above the long-term EMA AND volume exceeds a multiple of its simple moving average
+Short: Position is flat AND momentum is negative AND the change in the simple moving average of close is negative AND close is below the long-term EMA AND volume exceeds a multiple of its simple moving average
+Exit: long, low is at or below the entry-bar low minus ATR at entry times the long stop multiplier OR high is at or above entry price plus current ATR times twice the long stop multiplier
+Exit: short, high is at or above the entry-bar high plus ATR at entry times the short stop multiplier OR low is at or below entry price minus current ATR times twice the short stop multiplier

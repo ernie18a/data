@@ -1,0 +1,6 @@
+Calculation: Opening-range high/low = highest high / lowest low among the configured opening-range bars at the start of each day
+Calculation: Retest buffer = ATR multiplied by a configurable buffer factor
+Long: Within the configured session AND opening range ready AND close > shorter-period EMA AND close > longer-period EMA AND close > opening-range high AND previous close <= opening-range high
+Long: Within the configured session AND after an uncanceled long breakout and within the configured retest-bar limit AND current low is between opening-range high minus and plus the retest buffer AND close > open AND close > opening-range high AND close > shorter-period EMA AND close > longer-period EMA
+Short: Within the configured session AND opening range ready AND close < shorter-period EMA AND close < longer-period EMA AND close < opening-range low AND previous close >= opening-range low
+Short: Within the configured session AND after an uncanceled short breakout and within the configured retest-bar limit AND current high is between opening-range low minus and plus the retest buffer AND close < open AND close < opening-range low AND close < shorter-period EMA AND close < longer-period EMA

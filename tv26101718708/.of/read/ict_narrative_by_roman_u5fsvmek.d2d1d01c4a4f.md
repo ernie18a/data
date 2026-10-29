@@ -1,0 +1,3 @@
+Calculation: Equilibrium = midpoint of the latest confirmed fractal high and fractal low; a fractal high/low is a bar whose high/low is greater/less than the immediately preceding and following bars.
+Long: On each displayed higher timeframe, using its last completed bar, equilibrium is available AND close > equilibrium
+Short: On each displayed higher timeframe, using its last completed bar, equilibrium is available AND close <= equilibrium

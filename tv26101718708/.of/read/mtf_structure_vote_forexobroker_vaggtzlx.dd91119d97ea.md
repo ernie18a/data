@@ -1,0 +1,3 @@
+Calculation: Net vote = sum of three higher-timeframe votes, each +1 when the last completed bar's close is above its trend EMA and -1 otherwise; all three timeframes are higher than the chart timeframe, and their trend EMAs use the same lookback.
+Long: Net vote ≥ the confluence threshold AND chart close crosses above the chart-timeframe reclaim EMA AND session filter passes (if enabled) AND position is not long AND bars since the last signal ≥ cooldown AND bar is confirmed
+Short: Net vote ≤ -confluence threshold AND chart close crosses below the chart-timeframe reclaim EMA AND session filter passes (if enabled) AND position is not short AND bars since the last signal ≥ cooldown AND bar is confirmed

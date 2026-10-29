@@ -1,0 +1,6 @@
+Calculation: High-low range percentage = (highest high over short lookback − lowest low over short lookback) / highest high over short lookback × 100
+Calculation: Closing-price range percentage = (highest close over short lookback − lowest close over short lookback) / highest close over short lookback × 100
+Calculation: Range percentile = percentile rank of the current high-low range percentage over a longer lookback
+Calculation: Breakout level = highest high over the breakout lookback, ending on the previous chart bar
+Long: close > short-term SMA AND short-term SMA > medium-term SMA AND medium-term SMA > long-term SMA AND long-term SMA > its value one bar ago AND long-term SMA > its value at a longer lookback ago AND short-term SMA >= its value one bar ago AND (range percentile <= threshold OR closing-price range percentage <= threshold) AND (volume filter disabled OR volume > volume SMA × multiplier) AND datetime is within the configured date range AND position is flat AND high >= breakout level
+Exit: long, price <= entry price × (1 − stop-loss percentage) OR price >= entry price × (1 + first profit percentage) OR price >= entry price × (1 + second profit percentage) OR price >= entry price × (1 + final profit percentage)

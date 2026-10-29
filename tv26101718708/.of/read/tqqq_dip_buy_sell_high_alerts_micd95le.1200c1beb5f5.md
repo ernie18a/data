@@ -1,0 +1,3 @@
+Long: close > VWAP AND fast EMA > slow EMA AND volume > volume SMA AND ((low <= fast EMA AND close > fast EMA) OR (low <= VWAP AND close > VWAP)) AND close > open AND close > previous bar high AND RSI > configured dip threshold
+Short: close > VWAP AND fast EMA > slow EMA AND (close exceeds fast EMA by configured extension threshold OR RSI > configured overbought threshold) AND close < open
+Exit: long, close < VWAP OR fast EMA < slow EMA

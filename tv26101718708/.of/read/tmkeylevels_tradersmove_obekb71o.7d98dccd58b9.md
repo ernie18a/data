@@ -1,0 +1,3 @@
+Calculation: Opening-range high/low = highest high / lowest low during the first configured duration after a session opens.
+Long: For an enabled session while it is active and after its opening-range window ends, close > opening-range high AND previous close <= previous opening-range high.
+Short: For an enabled session while it is active and after its opening-range window ends, close < opening-range low AND previous close >= previous opening-range low.

@@ -1,0 +1,7 @@
+Calculation: Transformed signal = On the selected timeframe (which may be higher or lower than the chart timeframe), take the previous completed bar’s inverse Fisher transform, (exp(2x) − 1) / (exp(2x) + 1), of the selected factor after the configured smoothing. The factor is RSI, RSX, Karobein, MFI, or close scaled to 0–100 over its lookback; normalize it as 0.1 × (factor − 50), then apply either the configured JMA-style smoother and multiply by 100, or a weighted moving average of the factor and multiply by 100.
+Calculation: Long trailing stop = highest high since entry activation − configured trail offset; activation occurs when the high reaches entry price plus the configured trail distance.
+Calculation: Short trailing stop = lowest low since entry activation + configured trail offset; activation occurs when the low reaches entry price minus the configured trail distance.
+Long: year ≥ 2019 AND month > 7 AND transformed signal crosses above threshold (current value > threshold AND previous value ≤ threshold)
+Short: year ≥ 2019 AND month > 7 AND transformed signal crosses below negative threshold (current value < −threshold AND previous value ≥ −threshold)
+Exit: long, low ≤ long trailing stop after activation
+Exit: short, high ≥ short trailing stop after activation

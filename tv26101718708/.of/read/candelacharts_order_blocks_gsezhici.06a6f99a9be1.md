@@ -1,0 +1,6 @@
+Calculation: Internal pivot high = A bar whose high is the highest across equal lookbacks to its left and right; confirm after the right-side bars complete. Use the same lookback for internal pivot lows.
+Calculation: Internal pivot low = A bar whose low is the lowest across equal lookbacks to its left and right; confirm after the right-side bars complete.
+Calculation: Bullish block lookback = Number of chart bars since the latest confirmed internal pivot high; use that count of bars from the configured block timeframe (same as, higher, or lower than the chart timeframe), using the last completed block-timeframe bar.
+Calculation: Bearish block lookback = Number of chart bars since the latest confirmed internal pivot low; use that count of bars from the configured block timeframe (same as, higher, or lower than the chart timeframe), using the last completed block-timeframe bar.
+Long: Close crosses above the latest confirmed internal pivot high AND at least two internal pivot lows and one internal pivot high are confirmed AND bullish block lookback is greater than one bar.
+Short: Close crosses below the latest confirmed internal pivot low AND at least two internal pivot highs and one internal pivot low are confirmed AND bearish block lookback is greater than one bar.

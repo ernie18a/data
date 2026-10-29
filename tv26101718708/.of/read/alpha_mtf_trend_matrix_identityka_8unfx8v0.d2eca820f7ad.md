@@ -1,0 +1,3 @@
+Calculation: Trend vote for each timeframe = +1 if the fast EMA is above the slow EMA, -1 if below, otherwise 0; plus +1 if close is above the slow EMA, -1 if below, otherwise 0; plus +1 if the slow EMA is above its value at a shorter lookback ago, -1 if below, otherwise 0. The fast EMA length is shorter than the slow EMA length. The chart timeframe uses the current bar; higher timeframes use the last completed bar by default, or the forming bar when confirmed-bar mode is off.
+Long: Trend vote > 0 on the chart timeframe OR on any enabled timeframe equal to or higher than the chart timeframe.
+Short: Trend vote < 0 on the chart timeframe OR on any enabled timeframe equal to or higher than the chart timeframe.

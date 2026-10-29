@@ -1,0 +1,7 @@
+Calculation: Confirmed swing high/low = a bar whose high/low is the highest/lowest across the configured bars on both sides; confirm it after the configured number of right-side bars, using volume and its volume moving average from the pivot bar.
+Calculation: Price trend = up when the latest confirmed swing high and low are both higher than their respective previous values; down when both are lower; otherwise none.
+Calculation: Up exhaustion warning = while the trend before a confirmed swing high is up, a below-average-volume high following a above-average-volume high starts the warning; consecutive weak-volume highs keep it active; a strong-volume high or a trend change clears it.
+Calculation: Down exhaustion warning = same rule applied to confirmed swing lows while the trend before the pivot is down.
+Calculation: Exhaustion line = in an uptrend, the close moving average minus the ATR offset unless the up exhaustion warning is active, in which case use the plus offset; in a downtrend, use the plus offset unless the down exhaustion warning is active, in which case use the minus offset. The offset is ATR multiplied by a parameter.
+Long: Exhaustion line exists AND close > Exhaustion line
+Short: Exhaustion line exists AND close <= Exhaustion line

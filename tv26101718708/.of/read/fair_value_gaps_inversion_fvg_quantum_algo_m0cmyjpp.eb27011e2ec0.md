@@ -1,0 +1,5 @@
+Calculation: Bullish FVG = on a confirmed chart-timeframe bar, current low > high two bars earlier; zone top = current low and bottom = that earlier high; require gap width ≥ minimum ATR multiple and, if the optional displacement filter is enabled, the middle bar’s range > its ATR multiple.
+Calculation: Bearish FVG = on a confirmed chart-timeframe bar, current high < low two bars earlier; zone top = that earlier low and bottom = current high; apply the same gap-size and optional displacement filters.
+Calculation: Higher-timeframe FVG = the same bullish or bearish three-bar gap using the last completed higher-timeframe bar and the two preceding bars; apply the minimum ATR-size filter. Higher-timeframe gaps are optional.
+Long: For a bearish FVG, a confirmed close > zone top inverts it; on a later confirmed bar, its first retest where low ≤ zone top and close ≥ zone bottom, before any prior retest or invalidation (close < zone bottom).
+Short: For a bullish FVG, a confirmed close < zone bottom inverts it; on a later confirmed bar, its first retest where high ≥ zone bottom and close ≤ zone top, before any prior retest or invalidation (close > zone top).

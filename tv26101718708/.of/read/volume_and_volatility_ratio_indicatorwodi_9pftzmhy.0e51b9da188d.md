@@ -1,0 +1,11 @@
+Calculation: Volume-volatility index = volume × ((high − low) / close × 100)
+Calculation: Short and long index averages = simple moving averages of the volume-volatility index, using shorter and longer lookbacks respectively
+Calculation: Index threshold = long index average × threshold multiplier
+Calculation: Bullish reversal pattern = for every i from 1 through the pattern lookback: close[i+1] > close[i]; AND volume-volatility index[1] > volume-volatility index[2]; AND (volume-volatility index[1] > volume-volatility index OR volume[1] > volume); AND close[1] < close; AND volume > simple moving average of volume; AND volume-volatility index > index threshold; AND ((open[1] − close[1] < close[1] − low[1]) OR (open − close < close − low))
+Calculation: Bearish reversal pattern = for every i from 1 through the pattern lookback: close[i+1] < close[i]; AND volume-volatility index[1] > volume-volatility index[2]; AND (volume-volatility index[1] > volume-volatility index OR volume[1] > volume); AND close[1] > close; AND volume > simple moving average of volume; AND volume-volatility index > index threshold; AND ((close[1] − open[1] < high[1] − close[1]) OR (close − open < high − close))
+Calculation: Long stop and target = for a bullish pattern, pattern low = min(low[1], low) and pattern high = max(high[lookback], high); for a bearish pattern, pattern low = min(low[lookback], low) and pattern high = max(high[1], high); range = pattern high − pattern low; stop = pattern low − range × stop ratio; target = pattern low + range × target ratio
+Calculation: Short stop and target = for a bullish pattern, pattern low = min(low[1], low) and pattern high = max(high[lookback], high); for a bearish pattern, pattern low = min(low[lookback], low) and pattern high = max(high[1], high); range = pattern high − pattern low; stop = pattern high + range × stop ratio; target = pattern high − range × target ratio
+Long: (reversal mode disabled AND bullish reversal pattern AND position is flat or short) OR (reversal mode enabled AND bearish reversal pattern AND position is flat or short)
+Short: (reversal mode disabled AND bearish reversal pattern AND position is flat or long) OR (reversal mode enabled AND bullish reversal pattern AND position is flat or long)
+Exit: long, low < long stop OR high > long target
+Exit: short, high > short stop OR low < short target

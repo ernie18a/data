@@ -1,0 +1,3 @@
+Short: Position is flat AND 5-minute RSI crosses down its overbought threshold on the last completed bar of a timeframe lower than the chart timeframe (previous RSI ≥ threshold AND current RSI < threshold)
+Short: Position is short AND averaging orders remain AND close ≥ the next uniformly spaced averaging level above the base entry
+Exit: Short, close ≥ average entry × (1 + stop-loss percentage) OR take-profit is armed AND close ≥ the lowest close since it armed × (1 + trailing percentage); arm the take-profit when close ≤ average entry × (1 − take-profit percentage)

@@ -1,0 +1,5 @@
+Calculation: Volume delta = sum of lower-timeframe volume signed positive when the lower-timeframe close is above its open and negative when below; use intrabars within the current chart bar, including the still-forming bar.
+Calculation: Buy volume = max((volume + volume delta) / 2, 0); sell volume = max((volume - volume delta) / 2, 0).
+Calculation: Profile levels = divide the highest high and lowest low of the profile lookback bars into equal-width price bins; distribute each bar’s buy and sell volume equally across every bin its high-low range touches. Classify a bar’s volume as large when it exceeds a configurable multiple of its 20-bar volume SMA; otherwise classify it as small. Sum large and small buy and sell volume separately for each bin.
+Long: At least one profile bin has (large buy volume + large sell volume) / total volume > the configurable large-order percentage threshold AND large buy volume > large sell volume.
+Short: At least one profile bin has (large buy volume + large sell volume) / total volume > the configurable large-order percentage threshold AND large sell volume >= large buy volume.

@@ -1,0 +1,2 @@
+Calculation: Stochastic Momentum Index (SMI) = 100 × double-EMA-smoothed difference between close and the midpoint of the highest high and lowest low, divided by half the double-EMA-smoothed high-low range; both smoothing stages use the same respective lookback lengths for the difference and range.
+Long: SMI > EMA of SMI AND SMI < 0 AND EMA of SMI < 0 AND SMI > volume-weighted moving average of SMI AND close > Bollinger Bands middle line

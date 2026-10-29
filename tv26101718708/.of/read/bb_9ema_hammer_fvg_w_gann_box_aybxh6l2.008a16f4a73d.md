@@ -1,0 +1,4 @@
+Calculation: Hammer = high − Fibonacci fraction × (high − low) < min(open, close)
+Calculation: Shooting star = low + Fibonacci fraction × (high − low) > max(open, close)
+Long: Hammer; or, if next-candle confirmation is enabled, prior bar is a Hammer AND current close > current open; or current bar is a failed 2 Down (low < prior low AND NOT (high > prior high AND low < prior low) AND close > prior close); or low ≥ high[2] AND low − high[2] > minimum gap size
+Short: Shooting star; or, if next-candle confirmation is enabled, prior bar is a Shooting star AND current close < current open; or current bar is a failed 2 Up (high > prior high AND NOT (high > prior high AND low < prior low) AND close < prior close); or low[2] ≥ high AND low[2] − high > minimum gap size

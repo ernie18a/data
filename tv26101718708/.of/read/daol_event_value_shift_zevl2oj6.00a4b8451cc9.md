@@ -1,0 +1,5 @@
+Calculation: Anchored VWAP = cumulative (HLC3 × volume) divided by cumulative volume since the exchange-day anchor; HLC3 = (high + low + close) / 3
+Calculation: Price distance = (close − current anchored VWAP) / prior bar ATR
+Calculation: VWAP shift = (current anchored VWAP − anchored VWAP from the shorter lookback ago) / prior bar ATR
+Long: Price distance ≥ minimum distance threshold AND VWAP shift ≥ meaningful shift threshold for the required number of consecutive closed bars AND the confirmed state changes to above VWAP / rising after initialization, with valid VWAP history in the same anchor and positive prior-bar ATR
+Short: Price distance ≤ −minimum distance threshold AND VWAP shift ≤ −meaningful shift threshold for the required number of consecutive closed bars AND the confirmed state changes to below VWAP / falling after initialization, with valid VWAP history in the same anchor and positive prior-bar ATR

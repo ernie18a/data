@@ -1,0 +1,11 @@
+Calculation: Prior-bar body = absolute difference between its close and open; upper wick = high minus the greater of open and close; lower wick = the lesser of open and close minus low, floored at zero.
+Calculation: Hammer = prior bar has a positive body, lower wick at least a configurable multiple of body, and upper wick no greater than a configurable multiple of body.
+Calculation: Shooting star = prior bar has a positive body, upper wick at least a configurable multiple of body, and lower wick no greater than a configurable multiple of body.
+Calculation: Micro POC = prior bar has a positive body, both wicks at least a configurable multiple of body, and the smaller wick divided by the larger wick meets a configurable minimum.
+Calculation: Prior-bar volume baseline = simple moving average of volume over a configurable lookback, shifted back one bar.
+Calculation: Long stop = prior bar low minus a configurable tick offset; long target = signal-bar close plus the distance from signal-bar close to the long stop multiplied by a configurable reward multiple.
+Calculation: Short stop = prior bar high plus a configurable tick offset; short target = signal-bar close minus the distance from the short stop to signal-bar close multiplied by a configurable reward multiple.
+Long: PA mode enabled AND Hammer AND current close > prior-bar close AND prior-bar volume > prior-bar volume baseline × configurable volume threshold AND long target distance / long stop distance >= configurable minimum risk/reward; OR POC mode enabled AND Micro POC AND prior-bar volume > prior-bar volume baseline × configurable volume threshold AND current close > prior-bar high AND long target distance / long stop distance >= configurable minimum risk/reward.
+Short: PA mode enabled AND Shooting star AND current close < prior-bar close AND prior-bar volume > prior-bar volume baseline × configurable volume threshold AND short target distance / short stop distance >= configurable minimum risk/reward; OR POC mode enabled AND Micro POC AND prior-bar volume > prior-bar volume baseline × configurable volume threshold AND current close < prior-bar low AND short target distance / short stop distance >= configurable minimum risk/reward.
+Exit: Long, low <= long stop OR high >= long target
+Exit: Short, high >= short stop OR low <= short target

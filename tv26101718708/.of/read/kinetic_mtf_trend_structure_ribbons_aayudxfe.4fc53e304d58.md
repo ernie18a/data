@@ -1,0 +1,8 @@
+Calculation: Short EMA group = six EMAs of close on the selected GMMA timeframe, with shorter lookbacks than the six EMAs in the long group; the selected timeframe may be higher or lower than the chart timeframe, and its current bar may still be forming
+Calculation: Long EMA group = six EMAs of close on the selected GMMA timeframe, with longer lookbacks than the six EMAs in the short group
+Calculation: Gaussian line = linear regression of a recursive Gaussian smoothing of close on the selected Gaussian timeframe; the selected timeframe may be higher or lower than the chart timeframe, and its current bar may still be forming
+Calculation: Gaussian trend line = supertrend line calculated from the Gaussian line using ATR
+Long: Each of the first five short-group EMAs is above every long-group EMA AND the sixth short-group EMA changes from at or below zero to above zero when its state is +1 if it is above every long-group EMA, −1 if it is below every long-group EMA, and 0 otherwise
+Short: Each of the first five short-group EMAs is below every long-group EMA AND the sixth short-group EMA changes from at or above zero to below zero when its state is +1 if it is above every long-group EMA, −1 if it is below every long-group EMA, and 0 otherwise
+Long: Gaussian line is above its Gaussian trend line and was at or below it on the previous selected-timeframe bar
+Short: Gaussian line is below its Gaussian trend line and was at or above it on the previous selected-timeframe bar

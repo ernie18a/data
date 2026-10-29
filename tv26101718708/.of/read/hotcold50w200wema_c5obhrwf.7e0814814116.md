@@ -1,0 +1,3 @@
+Calculation: Histogram = ((weekly close − long-term EMA) / long-term EMA − (weekly close − short-term EMA) / short-term EMA) × 100, where the long-term EMA has a longer lookback than the short-term EMA
+Long: On the weekly higher timeframe, the histogram crosses above zero using the last completed bar when repaint avoidance is enabled, or the forming bar when disabled OR weekly close crosses above the long-term EMA OR weekly close crosses above the short-term EMA
+Short: On the weekly higher timeframe, the histogram crosses below zero using the last completed bar when repaint avoidance is enabled, or the forming bar when disabled OR weekly close crosses below the long-term EMA OR weekly close crosses below the short-term EMA

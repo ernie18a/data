@@ -1,0 +1,6 @@
+Calculation: WVF line = Let highest high be the highest high over the lookback; calculate ((highest high − close) / highest high) × 100, smooth with an EMA using the same lookback, then add that value × 0.01 × the lowest low over the lookback to that lowest low.
+Calculation: Upper WVF level = Lowest low over the lookback + smoothed WVF × upper multiplier × 0.01 × lowest low over the lookback.
+Calculation: Lower WVF level = Lowest low over the lookback + smoothed WVF × lower multiplier × 0.01 × lowest low over the lookback.
+Calculation: Omega Score = Round(((trend power + RSI power + WVF power + volume power + 4) / 8) × 100), where trend power is +1 when the shorter-period EMA is above the longer-period EMA and −1 otherwise; RSI power is +1 above 55, −1 below 45, otherwise 0; WVF power is +1 when close is above the WVF line and −1 otherwise; volume power is +1 when volume is above its moving average and close > open, −1 when volume is above its moving average and close < open, otherwise 0.
+Long: Omega Score ≥ 55 OR close crosses above the upper WVF level OR a pivot low is confirmed.
+Short: Omega Score ≤ 45 OR close crosses below the lower WVF level OR a pivot high is confirmed.

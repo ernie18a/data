@@ -1,0 +1,4 @@
+Calculation: Session value area high/low = For bars from the current session open through the current bar, divide the session high-low range into configured price bins; assign each bar’s volume to the bin containing its high-low midpoint. Starting at the highest-volume bin, expand into the higher-volume adjacent bin until the configured fraction of session volume is included. The upper and lower boundaries of the included bins are the value area high and low.
+Calculation: Range value area high/low = Apply the same binning and value-area procedure to the configured rolling lookback of chart bars through the current bar.
+Long: close > session value area high AND close > range value area high
+Short: close < session value area low AND close < range value area low

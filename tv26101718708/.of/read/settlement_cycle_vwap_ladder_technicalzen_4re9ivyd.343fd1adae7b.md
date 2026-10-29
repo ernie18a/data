@@ -1,0 +1,6 @@
+Calculation: Monthly anchor = higher-timeframe VWMA with a longer lookback than the weekly anchor, sampled from the still-forming higher-timeframe bar and held from each monthly expiry until the next; use the current chart bar when the calculation is on the chart timeframe.
+Calculation: Weekly anchor = higher-timeframe VWMA with a shorter lookback than the monthly anchor, sampled from the still-forming higher-timeframe bar and held from each weekly expiry until the next; use the current chart bar when the calculation is on the chart timeframe.
+Calculation: Week-to-date VWAP = cumulative volume-weighted average price from the day after each weekly expiry, accumulating chart bars through the current bar.
+Calculation: Session VWAP = cumulative volume-weighted average price from the start of the current session, accumulating chart bars through the current bar.
+Long: close > monthly anchor AND close > weekly anchor AND close > week-to-date VWAP AND close > session VWAP
+Short: close < monthly anchor AND close < weekly anchor AND close < week-to-date VWAP AND close < session VWAP

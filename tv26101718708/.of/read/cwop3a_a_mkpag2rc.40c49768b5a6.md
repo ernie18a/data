@@ -1,0 +1,2 @@
+Calculation: HLC3 = (high + low + close) / 3
+Long: On the current bar, (high - low) / low * 100 >= 1 AND abs(close - open) / (high - low) >= 0.25 AND ((low <= EMA of HLC3 AND high >= EMA of HLC3 AND low <= VWAP AND high >= VWAP) OR (EMA of HLC3 crosses above SMA of HLC3)); the most recent bar meeting this condition was at least 4 bars ago

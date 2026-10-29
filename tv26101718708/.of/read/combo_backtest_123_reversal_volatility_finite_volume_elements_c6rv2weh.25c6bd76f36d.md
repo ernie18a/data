@@ -1,0 +1,7 @@
+Calculation: Reversal state = 1 when close two bars ago < previous close AND current close > previous close AND fast stochastic %K < its D line AND fast stochastic %K > Level; -1 when close two bars ago > previous close AND current close < previous close AND fast stochastic %K > its D line AND fast stochastic %K < Level; otherwise retain the previous state (initially 0). Fast stochastic %K = Length-period stochastic smoothed by KSmoothing; its D line = fast stochastic %K smoothed by DLength.
+Calculation: FVE = 100 × sum(volume × sign(MF relative to the adaptive cutoff), Samples) / sum(volume, Samples), where MF = close − hl2 + hlc3 − previous hlc3, and the adaptive cutoff = Cintra × stdev(sma(log(high / low), Samples), Samples) + Cinter × stdev(sma(log(hlc3 / previous hlc3), Samples), Samples). The sign is 1 when MF > cutoff × close, −1 when MF < −cutoff × close, and 0 otherwise.
+Calculation: FVE state = 1 when FVE > its Perma-period EMA; −1 when FVE < its Perma-period EMA; otherwise retain the previous state (initially 0).
+Long: Reversal state = 1 AND FVE state = 1 (swap direction when reverse trading is enabled)
+Short: Reversal state = −1 AND FVE state = −1 (swap direction when reverse trading is enabled)
+Exit: long, Reversal state ≠ 1 OR FVE state ≠ 1
+Exit: short, Reversal state ≠ −1 OR FVE state ≠ −1

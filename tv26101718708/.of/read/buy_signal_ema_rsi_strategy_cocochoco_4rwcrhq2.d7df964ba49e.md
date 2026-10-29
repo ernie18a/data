@@ -1,0 +1,3 @@
+Calculation: ATR trailing stop = on a long signal, close minus ATR times a multiplier; otherwise while long, the greater of the prior stop and close minus ATR times the same multiplier; undefined while flat
+Long: EMA with shorter lookback > EMA with longer lookback AND close > both EMAs AND RSI > its minimum threshold AND RSI < its ceiling AND RSI > its prior-bar value AND ADX > its threshold AND volume > the highest volume in the prior lookback window
+Exit: long, close < ATR trailing stop

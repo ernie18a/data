@@ -1,0 +1,3 @@
+Calculation: Conviction = 50 + 50 × (up-class probability − down-class probability), from an online-trained three-class neural network (down, neutral, up) using current RSI level, RSI slope and acceleration, fast-minus-slow RSI, RSI and ATR percentiles, RSI volatility, price distance from a long-term EMA normalized by ATR, ADX, and RSI on a higher timeframe using its last completed bar. The network learns from prior feature vectors labeled by whether the forward close move exceeds an ATR-based threshold. Center = 50, or the running mean of Conviction when adaptive centering is enabled.
+Long: trained sample count ≥ warm-up threshold AND Conviction − Center ≥ neutral-zone width
+Short: trained sample count ≥ warm-up threshold AND Conviction − Center ≤ −neutral-zone width

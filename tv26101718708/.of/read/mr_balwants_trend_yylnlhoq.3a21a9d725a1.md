@@ -1,0 +1,3 @@
+Calculation: 200-period EMA = exponential moving average of close over 200 bars
+Long: close on a requested timeframe > its 200-period EMA, using the last completed bar when that timeframe is higher than the chart timeframe and the bar still forming otherwise
+Short: close on a requested timeframe < its 200-period EMA, using the last completed bar when that timeframe is higher than the chart timeframe and the bar still forming otherwise

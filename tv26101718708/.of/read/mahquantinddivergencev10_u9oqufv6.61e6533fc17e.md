@@ -1,0 +1,7 @@
+Calculation: Divergence = compare each enabled indicator at the current bar (or preceding bar when confirmation is required) with its value at a prior confirmed price pivot; bullish regular: indicator higher low and price lower low; bullish hidden: indicator lower low and price higher low; bearish regular: indicator lower high and price higher high; bearish hidden: indicator higher high and price lower high. Require the indicator and closing-price paths between the pivot and comparison point to stay on the corresponding straight-line interpolation, and require the configured minimum total divergence count.
+Calculation: Stop loss = beyond the more extreme of the divergence pivot and signal-bar low (long) or high (short) by ATR × a configurable multiplier, capped at the configured maximum stop distance; risk = absolute distance from entry to stop loss.
+Calculation: Take-profit levels = entry price ± risk (TP1) and entry price ± 2 × risk (TP2), adding for long and subtracting for short.
+Long: at least one bullish regular or hidden divergence AND all enabled confluence and multiple-divergence filters pass
+Short: at least one bearish regular or hidden divergence AND all enabled confluence and multiple-divergence filters pass
+Exit: Long, low <= stop loss OR high >= TP1 OR high >= TP2
+Exit: Short, high >= stop loss OR low <= TP1 OR low <= TP2

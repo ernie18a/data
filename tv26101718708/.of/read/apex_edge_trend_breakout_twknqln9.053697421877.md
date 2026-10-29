@@ -1,0 +1,7 @@
+Calculation: Breakout upper rail = highest high over the preceding channel lookback bars, excluding the current bar
+Calculation: Breakout lower rail = lowest low over the preceding channel lookback bars, excluding the current bar
+Calculation: Chandelier stop = for a long, initialize at entry price minus an ATR multiple measured at entry; thereafter ratchet upward to the greater of the previous stop and the highest high since entry minus a longer ATR multiple measured on the current bar. For a short, initialize at entry price plus an ATR multiple measured at entry; thereafter ratchet downward to the lesser of the previous stop and the lowest low since entry plus a longer ATR multiple measured on the current bar.
+Long: close > breakout upper rail AND previous close <= previous breakout upper rail AND close > EMA AND EMA > its value at the longer slope lookback AND, if higher-timeframe confirmation is enabled, chart-timeframe close > EMA calculated on the last completed bar of a higher timeframe
+Short: close < breakout lower rail AND previous close >= previous breakout lower rail AND close < EMA AND EMA < its value at the longer slope lookback AND, if higher-timeframe confirmation is enabled, chart-timeframe close < EMA calculated on the last completed bar of a higher timeframe
+Exit: long, low <= chandelier stop
+Exit: short, high >= chandelier stop

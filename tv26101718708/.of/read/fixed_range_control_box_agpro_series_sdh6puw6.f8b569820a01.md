@@ -1,0 +1,3 @@
+Calculation: Control line = volume-weighted average of (high + low + close) / 3 from the active range start through the current bar; if it is within 10% of either range edge, use the range midpoint instead.
+Long: Active range exists AND close is within range high and range low AND closes above the control line have reached the confirmation count since the most recent close below it AND prior state is Inside or Lower
+Short: Active range exists AND close is within range high and range low AND closes below the control line have reached the confirmation count since the most recent close above it AND prior state is Inside or Upper

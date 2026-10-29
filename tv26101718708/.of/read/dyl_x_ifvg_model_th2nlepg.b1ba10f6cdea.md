@@ -1,0 +1,3 @@
+Calculation: Fair value gap = bullish when the third bar’s low is above the first bar’s high; bearish when the third bar’s high is below the first bar’s low. For each gap, top and bottom are its upper and lower boundaries. Use the last completed bars of each timeframe aggregated from the chart bars.
+Long: A bullish fair value gap forms on the chart timeframe, a higher timeframe, or a lower timeframe OR a bearish fair value gap exists on a lower timeframe and close > its top
+Short: A bearish fair value gap forms on the chart timeframe, a higher timeframe, or a lower timeframe OR a bullish fair value gap exists on a lower timeframe and close < its bottom

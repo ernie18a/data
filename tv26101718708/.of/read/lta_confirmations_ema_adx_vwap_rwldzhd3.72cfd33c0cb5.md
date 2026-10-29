@@ -1,0 +1,2 @@
+Long: short-period EMA crosses above long-period EMA OR close crosses above daily-reset session VWAP OR +DI > -DI OR (ADX >= very-strong threshold AND +DI > -DI) OR (short-period EMA crosses above long-period EMA AND ADX >= trend threshold AND +DI > -DI)
+Short: short-period EMA crosses below long-period EMA OR close crosses below daily-reset session VWAP OR +DI <= -DI OR (ADX >= very-strong threshold AND +DI <= -DI) OR (short-period EMA crosses below long-period EMA AND ADX >= trend threshold AND +DI <= -DI)

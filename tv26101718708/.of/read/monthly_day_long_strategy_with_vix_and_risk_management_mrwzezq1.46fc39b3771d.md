@@ -1,0 +1,3 @@
+Calculation: Adjusted entry date = configured day of each month, moved to the following Monday if it falls on a Saturday or Sunday
+Long: Current datetime is on the adjusted entry date AND daily VIX close from the last completed higher-timeframe bar < VIX threshold
+Exit: long, Current datetime >= entry datetime + hold duration in days OR low <= entry price × (1 − stop loss percentage) OR high >= entry price × (1 + take profit percentage)

@@ -1,0 +1,5 @@
+Calculation: Elliott Wave Oscillator = short-term simple moving average of (high + low) / 2 minus long-term simple moving average of (high + low) / 2
+Calculation: Breakout barrier = highest high over the lookback bars preceding the current bar
+Calculation: Oversold zone = becomes true when RSI falls below the exhaustion level and remains true until a raw long entry occurs
+Long: RSI < 40 AND Elliott Wave Oscillator > its previous value AND Elliott Wave Oscillator < 0 OR RSI crosses above 40 AND MFI > 30 AND Elliott Wave Oscillator > its previous value AND volume > 0.8 × its simple moving average AND (close > breakout barrier OR oversold zone) AND previous primary signal was not long
+Short: RSI > 60 AND Elliott Wave Oscillator < its previous value AND Elliott Wave Oscillator > 0 OR RSI crosses below 60 AND MFI < 70 AND Elliott Wave Oscillator < its previous value AND volume > 0.8 × its simple moving average AND previous primary signal was not short

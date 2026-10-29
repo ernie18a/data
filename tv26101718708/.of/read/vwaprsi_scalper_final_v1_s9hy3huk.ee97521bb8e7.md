@@ -1,0 +1,4 @@
+Long: RSI < oversold threshold AND close > VWAP AND close > EMA AND (chart is non-intraday OR (bar hour >= session start hour AND bar hour < session end hour)) AND trades opened today < daily trade limit AND position is flat
+Short: RSI > overbought threshold AND close < VWAP AND close < EMA AND (chart is non-intraday OR (bar hour >= session start hour AND bar hour < session end hour)) AND trades opened today < daily trade limit AND position is flat
+Exit: Long, low <= entry price - ATR * stop multiplier OR high >= entry price + ATR * target multiplier
+Exit: Short, high >= entry price + ATR * stop multiplier OR low <= entry price - ATR * target multiplier

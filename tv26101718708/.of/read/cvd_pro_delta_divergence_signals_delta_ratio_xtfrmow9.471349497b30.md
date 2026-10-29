@@ -1,0 +1,5 @@
+Calculation: CVD = Reset at each selected daily or weekly session boundary; otherwise add the signed volume of the 1-minute bar (positive if its close is above its open, negative if below, zero if equal). Use completed 1-minute bars, which are lower timeframe than the chart timeframe.
+Calculation: CVD pivot low = A confirmed CVD low over the configurable number of chart bars before and after the pivot; associate the close from that pivot bar.
+Calculation: CVD pivot high = A confirmed CVD high over the configurable number of chart bars before and after the pivot; associate the close from that pivot bar.
+Long: On a newly confirmed CVD pivot low, its CVD value is greater than the previous CVD pivot low AND its associated close is less than the close associated with the previous CVD pivot low.
+Short: On a newly confirmed CVD pivot high, its CVD value is less than the previous CVD pivot high AND its associated close is greater than the close associated with the previous CVD pivot high.

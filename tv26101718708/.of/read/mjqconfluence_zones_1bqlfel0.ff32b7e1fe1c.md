@@ -1,0 +1,5 @@
+Calculation: Confluence zone = group sorted selected levels while each level is within the configured proximity threshold of the group’s lowest level; keep groups meeting the configured minimum level count. Selected levels include configured weekly, monthly, quarterly, yearly, and daily prior-period highs/lows; classic floor pivots from prior completed weekly, monthly, quarterly, and yearly bars; and prior weekly market-profile value-area bounds.
+Calculation: Proximity threshold = configured ATR multiple, configured percentage of close, or configured tick count times minimum tick size.
+Calculation: Prior weekly market-profile value-area bounds = value area formed by expanding from the highest-frequency price bin until it contains the configured share of weekly close counts.
+Long: close > the high of a confluence zone
+Short: close < the low of a confluence zone

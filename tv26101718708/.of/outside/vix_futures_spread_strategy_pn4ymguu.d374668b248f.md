@@ -1,0 +1,1 @@
+On each confirmed bar, calculate the weekly midpoint of the three-month VIX futures index minus the weekly midpoint of spot VIX. While the spread is below zero and the year is later than 2018, enter or add to a long position in the traded instrument. When the spread rises above 3 while a long position is open, close it. Never open a short position.

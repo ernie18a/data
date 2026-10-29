@@ -1,0 +1,7 @@
+Calculation: Smoothed Supertrend oscillator = apply the selected moving average to (close − Supertrend) / (factor × ATR); in percentage mode multiply by 100 and clamp to [−100, 100], and in ratio mode rescale the smoothed value using its rolling 70-bar minimum and maximum to [−3, 3]. Supertrend uses hl2 and ATR with the standard trailing-band and direction rules.
+Calculation: Signal levels = the overbought and oversold levels in percentage mode; in ratio mode, each level is its percentage-mode value × 3 / 100.
+Calculation: Reversal threshold = a positive threshold in oscillator units; use its negative for bullish reversals.
+Long: Smoothed Supertrend oscillator crosses above the lower or upper signal level AND the last emitted level-cross signal was not long.
+Long: Smoothed Supertrend oscillator crosses above its prior-bar value AND is below the negative reversal threshold AND more than 10 bars have elapsed since the prior reversal signal.
+Short: Smoothed Supertrend oscillator crosses below the lower or upper signal level AND the last emitted level-cross signal was not short.
+Short: Smoothed Supertrend oscillator crosses below its prior-bar value AND is above the positive reversal threshold AND more than 10 bars have elapsed since the prior reversal signal.

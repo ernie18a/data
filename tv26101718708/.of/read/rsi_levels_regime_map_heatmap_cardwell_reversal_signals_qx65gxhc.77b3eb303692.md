@@ -1,0 +1,7 @@
+Calculation: Inverse RSI price level for target T = close + x, where R = T / (100 - T), x = (n - 1) × (R × average loss − average gain) when that value is nonnegative; otherwise x = (n - 1) × (average loss − average gain / R). Average gain and average loss are Wilder-smoothed over the RSI lookback.
+Calculation: RSI pivot low/high = RSI value at a bar lower/higher than the RSI values on the pivot-length bars before and after it; the pivot is confirmed pivot-length bars later.
+Calculation: Pivot price low/high = low/high at the bar of the corresponding RSI pivot.
+Long: (current low ≤ prior bar’s selected support level AND current close > that level AND prior close > that level) OR (a confirmed RSI pivot low is below the preceding RSI pivot low AND its price low is above the preceding pivot price low AND the pivot gap is within the maximum pivot gap).
+Short: (current high ≥ prior bar’s selected resistance level AND current close < that level AND prior close < that level) OR (a confirmed RSI pivot high is above the preceding RSI pivot high AND its price high is below the preceding pivot price high AND the pivot gap is within the maximum pivot gap).
+Exit: long, low ≤ entry price − ATR-based stop distance OR high ≥ entry price + target distance.
+Exit: short, high ≥ entry price + ATR-based stop distance OR low ≤ entry price − target distance.

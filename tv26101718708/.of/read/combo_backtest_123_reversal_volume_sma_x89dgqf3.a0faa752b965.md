@@ -1,0 +1,7 @@
+Calculation: Fast Stochastic = simple moving average over a smoothing lookback of 100 × (close − lowest low over the stochastic lookback) / (highest high over the stochastic lookback − lowest low over the stochastic lookback)
+Calculation: Slow Stochastic = simple moving average over a smoothing lookback of Fast Stochastic
+Calculation: Volume SMA = simple moving average of volume over a lookback
+Long: close two bars ago < previous close AND close > previous close AND Fast Stochastic < Slow Stochastic AND Fast Stochastic > threshold AND volume < Volume SMA
+Short: close two bars ago > previous close AND close < previous close AND Fast Stochastic > Slow Stochastic AND Fast Stochastic < threshold AND volume > Volume SMA
+Exit: long, (close two bars ago >= previous close OR close <= previous close OR Fast Stochastic >= Slow Stochastic OR Fast Stochastic <= threshold OR volume >= Volume SMA) AND (close two bars ago <= previous close OR close >= previous close OR Fast Stochastic <= Slow Stochastic OR Fast Stochastic >= threshold OR volume <= Volume SMA)
+Exit: short, (close two bars ago >= previous close OR close <= previous close OR Fast Stochastic >= Slow Stochastic OR Fast Stochastic <= threshold OR volume >= Volume SMA) AND (close two bars ago <= previous close OR close >= previous close OR Fast Stochastic <= Slow Stochastic OR Fast Stochastic >= threshold OR volume <= Volume SMA)

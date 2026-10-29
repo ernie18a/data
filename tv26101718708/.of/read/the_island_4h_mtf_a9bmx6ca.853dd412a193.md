@@ -1,0 +1,2 @@
+Long: On the first chart bar of a new higher-timeframe period, the last completed higher-timeframe bar’s low < the prior completed higher-timeframe bar’s low AND its close > the prior completed higher-timeframe bar’s high
+Short: On the first chart bar of a new higher-timeframe period, the last completed higher-timeframe bar’s high > the prior completed higher-timeframe bar’s high AND its close < the prior completed higher-timeframe bar’s low

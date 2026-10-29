@@ -1,0 +1,4 @@
+Calculation: Consecutive bullish count = number of consecutive chart-timeframe bars where Fast EMA > Slow WMA; reset to zero otherwise
+Calculation: Consecutive bearish count = number of consecutive chart-timeframe bars where Fast EMA < Slow WMA; reset to zero otherwise
+Long: Fast EMA > Slow WMA on the chart timeframe AND on each of two higher timeframes using their still-forming bars AND consecutive bullish count >= trend threshold
+Short: Fast EMA < Slow WMA on the chart timeframe AND on each of two higher timeframes using their still-forming bars AND consecutive bearish count >= trend threshold

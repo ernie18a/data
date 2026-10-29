@@ -1,0 +1,14 @@
+Calculation: Chart moving average = selected EMA, SMA, or HMA of chart-bar closes over a lookback.
+Calculation: Relative volume = current bar volume divided by the moving average of volume over a shorter lookback.
+Calculation: ATR percentage = ATR divided by close.
+Calculation: Adaptive filters active = forced on, or not forced off and adaptive filtering is enabled and ATR percentage is below its threshold.
+Calculation: Higher-timeframe EMA = EMA of closes on a higher timeframe, using the last completed higher-timeframe bar.
+Calculation: Higher-timeframe EMA slope angle = arctan(the percentage change from the higher-timeframe EMA at a longer lookback to its current value, divided by that lookback in bars).
+Calculation: Setup = starts when close crosses the chart moving average in either direction; records the initial high and low and updates the maximum high and minimum low until retrace-ready.
+Calculation: Pullback ready = the cumulative count of bearish candles closing above the chart moving average plus bullish candles closing below it reaches its configured threshold.
+Calculation: Retrace-ready = pullback ready and, on at least one bar, absolute distance from close to the chart moving average divided by impulse range meets its configured minimum, with close within the chart moving-average distance threshold when adaptive filters are active; once true, remains true until setup reset.
+Calculation: Setup swing high and low = maximum high and minimum low recorded from setup start through the bar retrace-ready first becomes true.
+Long: setup is retrace-ready AND close > setup swing high AND (adaptive filters inactive OR (relative volume >= its threshold AND absolute percentage distance from close to chart moving average < its threshold)) AND (higher-timeframe trend filter disabled OR close > higher-timeframe EMA) AND (higher-timeframe distance filter disabled OR absolute percentage distance from close to higher-timeframe EMA < its threshold) AND (slope filter disabled OR higher-timeframe EMA slope angle >= its minimum threshold)
+Short: setup is retrace-ready AND close < setup swing low AND (adaptive filters inactive OR (relative volume >= its threshold AND absolute percentage distance from close to chart moving average < its threshold)) AND (higher-timeframe trend filter disabled OR close < higher-timeframe EMA) AND (higher-timeframe distance filter disabled OR absolute percentage distance from close to higher-timeframe EMA < its threshold) AND (slope filter disabled OR higher-timeframe EMA slope angle <= negative its minimum threshold)
+Exit: long, low <= setup swing low OR high >= entry price + (entry price - setup swing low) * reward-to-risk multiple
+Exit: short, high >= setup swing high OR low <= entry price - (setup swing high - entry price) * reward-to-risk multiple

@@ -1,0 +1,7 @@
+Calculation: Bullish gap size in standard deviations = (current low − high two bars ago) / max(200-bar standard deviation of (low − high two bars ago), minimum tick)
+Calculation: Bearish gap size in standard deviations = (low two bars ago − current high) / max(200-bar standard deviation of (low two bars ago − high), minimum tick)
+Calculation: Active bullish and bearish register counts = counts of confirmed bullish and bearish gaps that have not been invalidated or fully mitigated; a bullish register is invalidated when low falls below its bottom and fully mitigated when low reaches or falls below its bottom; a bearish register is invalidated when high rises above its top and fully mitigated when high reaches or rises above its top
+Long: Current bar is confirmed AND current low > high two bars ago AND previous bar high > high two bars ago AND bullish gap size in standard deviations > gap-size threshold
+Long: Active bullish register count > active bearish register count OR (active bullish register count >= 2 AND active bullish register count > active bearish register count)
+Short: Current bar is confirmed AND current high < low two bars ago AND previous bar low < low two bars ago AND bearish gap size in standard deviations > gap-size threshold
+Short: Active bearish register count > active bullish register count OR (active bearish register count >= 2 AND active bearish register count > active bullish register count)

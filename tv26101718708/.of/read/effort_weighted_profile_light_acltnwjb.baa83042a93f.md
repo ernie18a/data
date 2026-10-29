@@ -1,0 +1,7 @@
+Calculation: Candle direction = +1 when close > open, −1 when close < open; for a doji, +1 when close > the previous analysis-bar close, −1 when close < it, otherwise 0.
+Calculation: Row volume = analysis-bar volume × the fraction of its high-low range overlapping the price row; for a zero-range bar, assign all volume to its containing row.
+Calculation: Candle inhibition = 1 − min(1, |close − open| ÷ (high − low)); for a zero-range bar, use 1.
+Calculation: Row weight = row volume in LTF Volume mode; in W-Weighted mode, row volume × candle inhibition × (1 + memory strength × decayed zone memory). Decayed zone memory is the row's remembered strength multiplied by 0.5^(elapsed time ÷ memory half-life); on a return visit after at least one analysis bar without a visit, add 1 to remembered strength if candle inhibition meets the revisit threshold, capped at the memory cap. Otherwise, retain the decayed strength.
+Calculation: Display-row directional score = sum, across its calculation rows and collected analysis bars, of row weight × candle direction.
+Long: display-row directional score > 0 AND display-row total weight > 0 AND its session profile is valid.
+Short: display-row directional score < 0 AND display-row total weight > 0 AND its session profile is valid.

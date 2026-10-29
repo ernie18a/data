@@ -1,0 +1,3 @@
+Calculation: Opening range high/low = high/low of the first chart bar beginning at 8:30 AM Central Time
+Long: close > opening range high AND during the 8:30 AM–12:00 PM Central Time session AND futures instrument AND no earlier long signal this session
+Short: close < opening range low AND during the 8:30 AM–12:00 PM Central Time session AND futures instrument AND no earlier short signal this session

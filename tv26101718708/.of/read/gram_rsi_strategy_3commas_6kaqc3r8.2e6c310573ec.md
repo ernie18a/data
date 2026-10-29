@@ -1,0 +1,2 @@
+Long: flat, within the configured trading window, and completed chart-timeframe RSI below its threshold; OR long position, within the configured trading window, fewer than the maximum safety orders filled, and close at or below the next fixed threshold measured from the original base-entry price, with each later threshold farther below the base entry
+Exit: long, close at or above average entry price increased by the configured take-profit percentage

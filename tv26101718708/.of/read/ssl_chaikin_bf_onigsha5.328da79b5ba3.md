@@ -1,0 +1,8 @@
+Calculation: Chaikin Money Flow = sum(money flow multiplier × volume, lookback) / sum(volume, lookback), where money flow multiplier = 0 when close = high = low or high = low; otherwise (2 × close − low − high) / (high − low)
+Calculation: SSL upper and lower bands = the SMA of highs and the SMA of lows, using separate lookbacks. Set the state to bullish when close > SMA of highs, bearish when close < SMA of lows, and otherwise retain the prior state. In the bullish state, upper = SMA of highs and lower = SMA of lows; in the bearish state, upper = SMA of lows and lower = SMA of highs.
+Calculation: Smoothed ROC = EMA of 100 × (close − close[lookback]) / close[lookback], with EMA lookback equal to half the ROC lookback.
+Calculation: Long ATR stop = close on the latest long signal − ATR × multiplier. Short ATR stop = close on the latest short signal + ATR × multiplier. Each stop persists until an opposite signal.
+Long: SSL upper band > SSL lower band AND (smoothed ROC > half the ROC threshold OR smoothed ROC < −half the ROC threshold) OR Chaikin Money Flow crosses above its upper threshold
+Short: SSL upper band < SSL lower band AND (smoothed ROC > half the ROC threshold OR smoothed ROC < −half the ROC threshold) OR Chaikin Money Flow crosses below its lower threshold
+Exit: long, low <= position entry price × (1 − fixed stop percentage) OR low <= long ATR stop, according to the configured stop type
+Exit: short, high >= position entry price × (1 + fixed stop percentage) OR high >= short ATR stop, according to the configured stop type

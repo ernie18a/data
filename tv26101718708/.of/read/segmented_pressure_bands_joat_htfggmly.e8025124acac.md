@@ -1,0 +1,7 @@
+Calculation: Segment regression basis and deviation = During each segment, fit an ordinary least-squares line to the configured price source over the segment’s most recent bars, capped at the maximum lookback; the intercept at the current bar is the basis and the root mean square residual is the deviation. At the minimum segment length, freeze slope, intercept, and deviation on the confirmed bar; thereafter project the basis using the frozen slope and elapsed bars, keeping deviation fixed. Upper and lower bands = basis ± deviation × band multiplier. Start a new segment on either breakout, beginning with the breakout bar.
+Calculation: Stop distance = ATR × stop multiplier in ATR mode; otherwise entry price × stop percentage.
+Calculation: Stop level = long entry price − stop distance; short entry price + stop distance. Farthest enabled target = long entry price + stop distance × the greatest enabled reward/risk multiple; short entry price − stop distance × that multiple.
+Long: Confirmed bar closes above the upper band AND segment length is at least the minimum AND (channel is not frozen OR at least one bar has elapsed since freeze).
+Short: Confirmed bar closes below the lower band AND segment length is at least the minimum AND (channel is not frozen OR at least one bar has elapsed since freeze).
+Exit: Long, after the entry bar, low ≤ stop level OR (a target is enabled AND high ≥ farthest enabled target).
+Exit: Short, after the entry bar, high ≥ stop level OR (a target is enabled AND low ≤ farthest enabled target).

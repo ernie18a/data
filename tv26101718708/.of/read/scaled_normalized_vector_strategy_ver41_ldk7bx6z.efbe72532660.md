@@ -1,0 +1,6 @@
+Calculation: Transformed ratio = (close from the lower of the two configured timeframes / close from the higher of the two configured timeframes) - 1, transformed by the selected method: LReLU(x)=max(x,0)-0.8×max(-x,0); Step(x)=1 if x≥0, otherwise -1; Swish(x)=x/(1+exp(-x)); ZScore(x)=(x-mean)/sqrt((x-mean/(bar_index-1))²), where mean=cumulative sum(x)/bar_index; or unchanged. Each configured timeframe can be higher or lower than the chart timeframe, depending on its value. Requested timeframe bars use the last completed bar historically and the bar still forming in realtime.
+Calculation: Normalized Karobein Oscillator = scale Karobein Oscillator to [-1,1] using its all-history minimum and maximum. Karobein Oscillator: let d=EMA(close, period), a=EMA(d/d[1] if d<d[1] else 0, period), b=EMA(d/d[1] if d>d[1] else 0, period), c=(d/d[1])/(d/d[1]+b); value=2×((d/d[1])/(d/d[1]+c×a))-1.
+Long: Transformed ratio crosses above the positive sensitivity threshold AND Normalized Karobein Oscillator > 0
+Short: Transformed ratio crosses below the negative sensitivity threshold AND Normalized Karobein Oscillator < 0
+Exit: Long, short condition OR bars since the signal changed = configured holding period OR enabled long trailing stop is hit
+Exit: Short, long condition OR bars since the signal changed = configured holding period OR enabled short trailing stop is hit

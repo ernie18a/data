@@ -1,0 +1,4 @@
+Calculation: Raw momentum = 100 × (EMA(close, shorter lookback) − EMA(close, longer lookback)) / EMA(close, longer lookback)
+Calculation: Normalized momentum = if the highest raw momentum over the lookback minus the lowest raw momentum over the lookback is greater than 0, 2 × ((raw momentum − lowest raw momentum over the lookback) / (highest raw momentum over the lookback − lowest raw momentum over the lookback)) − 1; otherwise 0
+Long: close > long-term EMA AND short-term EMA > medium-term EMA AND normalized momentum > 0 AND normalized momentum > its EMA AND normalized momentum < overbought threshold AND volume ≥ its simple moving average × surge multiplier AND close > open
+Short: close < long-term EMA AND short-term EMA < medium-term EMA AND normalized momentum < 0 AND normalized momentum < its EMA AND normalized momentum > oversold threshold AND volume ≥ its simple moving average × surge multiplier AND close < open

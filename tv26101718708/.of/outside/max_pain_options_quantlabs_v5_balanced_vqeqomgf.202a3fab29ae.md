@@ -1,0 +1,1 @@
+When the underlying is materially above estimated max pain, take a short position targeting max pain; when materially below, take a long position targeting max pain. Avoid breakout trades while price is within the pin zone around max pain, especially near expiration.

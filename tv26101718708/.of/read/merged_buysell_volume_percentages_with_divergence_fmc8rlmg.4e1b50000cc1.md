@@ -1,0 +1,4 @@
+Calculation: Buy percentage = within each RTH (09:30–17:00) or ETH (18:00–09:29) session, reset at session start; if session high > session low, round to 2 decimal places: 100 × cumulative session volume × (current close − session low) / (session high − session low) / cumulative session volume; otherwise 0
+Calculation: Sell percentage = within each RTH or ETH session, reset at session start; if session high > session low, round to 2 decimal places: 100 × cumulative session volume × (session high − current close) / (session high − session low) / cumulative session volume; otherwise 0
+Long: During RTH or ETH, that session's buy percentage crosses above its sell percentage AND both percentages > 1 AND cumulative session volume > 0
+Short: During RTH or ETH, that session's sell percentage crosses above its buy percentage AND both percentages > 1 AND cumulative session volume > 0

@@ -1,0 +1,8 @@
+Calculation: Relative volume = current volume / average volume over a lookback period
+Calculation: 52-week high = highest high over a lookback period
+Calculation: Prior breakout high = highest high over a lookback period excluding the current bar
+Calculation: Stoch RSI K = smoothed stochastic position of RSI within its recent RSI range; Stoch RSI D = smoothed Stoch RSI K
+Calculation: Percent stop = entry price × (1 − stop percentage); percent target = entry price × (1 + target percentage)
+Calculation: ATR stop = entry price − ATR × stop multiplier; ATR target = entry price + ATR × target multiplier
+Long: absolute(close − fast EMA) / close ≤ consolidation threshold AND close ≥ 52-week high × (1 − proximity threshold) AND close > prior breakout high AND relative volume ≥ volume threshold AND (if EMA trend filter is enabled: fast EMA crosses above slow EMA OR close > fast EMA when cross-or-above mode is enabled, otherwise fast EMA > slow EMA) AND (if Stoch RSI filter is enabled: Stoch RSI K > Stoch RSI D AND Stoch RSI K < overbought threshold) AND position is flat
+Exit: long, (exit mode is slow EMA crossunder AND close crosses below slow EMA) OR (exit mode is fast EMA crossunder AND close crosses below fast EMA) OR (exit mode is percent stop AND low ≤ percent stop) OR (exit mode is percent stop plus target AND (low ≤ percent stop OR high ≥ percent target)) OR (exit mode is ATR stop AND low ≤ ATR stop) OR (exit mode is ATR stop plus target AND (low ≤ ATR stop OR high ≥ ATR target))

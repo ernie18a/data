@@ -1,0 +1,1 @@
+Compare the selected asset’s weekly closing price with its three-month closing price. Enter or hold long when the weekly close is higher; enter or hold short when the three-month close is higher. Switching conditions reverses the position; there is no separate exit signal.

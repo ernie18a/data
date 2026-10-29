@@ -1,0 +1,3 @@
+Calculation: Intrabar volume delta = Sum volume from completed bars at a lower timeframe than the chart timeframe, positive when close > open and negative when close < open; when close = open, use the close versus the previous lower-timeframe close, and if unchanged carry forward the last nonzero polarity, defaulting to positive. Sum positive and negative signed volume.
+Long: close < open AND intrabar volume delta > 0
+Short: close > open AND intrabar volume delta < 0

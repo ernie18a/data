@@ -1,0 +1,2 @@
+Long: At least the minimum required number of enabled configured timeframes have RSI(close) at or above the bullish threshold; use the last completed bar on higher timeframes, the last completed available bar on lower timeframes, and the current chart bar on the chart timeframe.
+Short: At least the minimum required number of enabled configured timeframes have RSI(close) at or below the bearish threshold AND the long condition is false; use the same bar timing as for the long condition.

@@ -1,0 +1,5 @@
+Calculation: Higher-timeframe DEMA change = DEMA(close from one completed higher-timeframe bar ago) − DEMA(close from two completed higher-timeframe bars ago), where DEMA(x) = 2 × EMA(x) − EMA(EMA(x))
+Calculation: Stochastic %K = short-term SMA of 100 × (close − lowest low) / (highest high − lowest low), using the same lookback for the lowest low and highest high
+Calculation: Stochastic %D = short-term SMA of Stochastic %K
+Long: shorter-lookback EMA of higher-timeframe DEMA change crosses above longer-lookback EMA of higher-timeframe DEMA change OR Stochastic %K crosses above Stochastic %D OR (shorter-lookback EMA of higher-timeframe DEMA change > longer-lookback EMA of higher-timeframe DEMA change AND Stochastic %K <= oversold threshold AND Stochastic %K crosses above Stochastic %D)
+Short: shorter-lookback EMA of higher-timeframe DEMA change crosses below longer-lookback EMA of higher-timeframe DEMA change OR Stochastic %K crosses below Stochastic %D OR (shorter-lookback EMA of higher-timeframe DEMA change < longer-lookback EMA of higher-timeframe DEMA change AND Stochastic %K >= overbought threshold AND Stochastic %K crosses below Stochastic %D)

@@ -1,0 +1,5 @@
+Calculation: Confirmed swing high = a bar whose high is higher than the highs of the preceding and following long pivot lookback; it becomes available after the following bars complete. Confirmed swing low = a bar whose low is lower than the lows of the preceding and following long pivot lookback; it becomes available after the following bars complete.
+Calculation: Confirmed internal high/low = confirmed swing high/low calculated with a shorter pivot lookback than the long pivot lookback.
+Calculation: For each structure (swing and internal), retain the latest confirmed pivot high and low until broken; mark each level broken after a bar closes beyond it. Track trend separately for each structure, initially undefined, and update it to bullish after an upward break or bearish after a downward break.
+Long: Close > latest unbroken swing pivot high OR close > latest unbroken internal pivot high
+Short: Close < latest unbroken swing pivot low OR close < latest unbroken internal pivot low

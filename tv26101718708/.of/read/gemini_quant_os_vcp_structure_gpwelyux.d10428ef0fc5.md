@@ -1,0 +1,4 @@
+Calculation: Pivot high = a bar high that is the highest among the pivot-length bars before and after it
+Calculation: Pivot low = a bar low that is the lowest among the pivot-length bars before and after it
+Calculation: Break level = newest pivot high × (1 + breakout buffer percentage / 100)
+Long: At least the required number of pivot highs and pivot lows exist AND each of the newest required pivot highs is lower than the preceding older pivot high AND each of the newest required pivot lows is higher than the preceding older pivot low AND (highest high over the shorter range lookback − lowest low over the shorter range lookback) / (highest high over the longer range lookback − lowest low over the longer range lookback) ≤ range contraction ratio AND short-lookback SMA of ATR / long-lookback SMA of ATR ≤ ATR contraction ratio AND volume ≤ volume SMA × quiet-volume factor AND volume ≥ volume SMA × breakout-volume factor AND close > break level

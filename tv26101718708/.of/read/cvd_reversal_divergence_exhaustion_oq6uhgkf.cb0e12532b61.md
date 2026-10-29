@@ -1,0 +1,7 @@
+Calculation: CVD = cumulative sum of signed volume: +volume when close > open, −volume when close < open, and 0 when close = open.
+Calculation: Confirmed pivot high = a local high with N bars on each side; it is confirmed after N bars to its right. Compare its high and CVD with those of the previous confirmed pivot high.
+Calculation: Confirmed pivot low = a local low with N bars on each side; it is confirmed after N bars to its right. Compare its low and CVD with those of the previous confirmed pivot low.
+Calculation: Potential high = current high equals the highest high over the current and preceding N bars.
+Calculation: Potential low = current low equals the lowest low over the current and preceding N bars.
+Short: (Potential high AND close < open AND (no previous confirmed pivot high CVD OR current CVD < previous confirmed pivot high CVD)) OR (confirmed pivot high AND ((pivot high > previous pivot high AND pivot CVD < previous pivot high CVD) OR (pivot high < previous pivot high AND pivot CVD > previous pivot high CVD)))
+Long: (Potential low AND close > open AND (no previous confirmed pivot low CVD OR current CVD > previous confirmed pivot low CVD)) OR (confirmed pivot low AND ((pivot low < previous pivot low AND pivot CVD > previous pivot low CVD) OR (pivot low > previous pivot low AND pivot CVD < previous pivot low CVD)))

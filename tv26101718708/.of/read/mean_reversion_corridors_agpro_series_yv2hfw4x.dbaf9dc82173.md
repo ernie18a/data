@@ -1,0 +1,8 @@
+Calculation: Center = selected EMA, VWMA, or Hull moving average of close
+Calculation: Width unit = (1 − blend) × ATR + blend × standard deviation of close, falling back to ATR if the result is nonpositive or unavailable
+Calculation: Inner bands = center ± (width unit × inner width multiplier); outer bands = center ± (width unit × outer width multiplier), with the inner multiplier smaller than the outer
+Calculation: Trend slope = ((selected moving average of close − its value one trend lookback ago) ÷ trend lookback) ÷ ATR, calculated on a higher timeframe with lookahead off, using the higher-timeframe bar value available at each chart bar
+Long: After the most recent lower outer-band crossunder, before the confirmation window expires and unless superseded by an upper outer-band cross, close crosses above the lower inner band AND trend slope is not below the negative strength threshold
+Long: Close is above the upper outer band AND trend slope is above the strength threshold AND the previous chart bar did not also satisfy both conditions
+Short: After the most recent upper outer-band crossover, before the confirmation window expires and unless superseded by a lower outer-band cross, close crosses below the upper inner band AND trend slope is not above the strength threshold
+Short: Close is below the lower outer band AND trend slope is below the negative strength threshold AND the previous chart bar did not also satisfy both conditions

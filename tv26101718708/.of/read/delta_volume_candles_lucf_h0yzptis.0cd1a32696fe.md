@@ -1,0 +1,12 @@
+Calculation: Up volume = sum of lower-timeframe bar volumes classified up: close > open; if equal, close > previous lower-timeframe close; if unchanged, carry forward the last polarity. Use lower-timeframe bars within the chart bar, including the bar still forming for live calculation.
+Calculation: Down volume = sum of lower-timeframe bar volumes classified down by the inverse polarity rules; use the same lower timeframe and bar status as Up volume.
+Calculation: Volume delta = Up volume − Down volume.
+Calculation: Average balance = EMA(Up volume, lookback) − EMA(Down volume, same lookback).
+Calculation: Momentum balance = RSI((EMA(Up volume, Average balance lookback) − SMA(Up volume, twice that lookback)) − (EMA(Down volume, same EMA lookback) − SMA(Down volume, twice that lookback)), its own lookback) − 50.
+Calculation: Relative balance = ALMA(max(0, Up volume − EMA(Up volume, Average balance lookback)) − max(0, Down volume − EMA(Down volume, same EMA lookback)), its own lookback).
+Calculation: Percent balance = ALMA(100 × Volume delta / chart-bar volume, its own lookback).
+Calculation: Combined balance = sum of +1 for each of Volume delta, Average balance, Momentum balance, Relative balance, and Percent balance above zero, and −1 for each below zero.
+Calculation: Divergence = the selected balance has a different sign from chart-bar close − open.
+Calculation: Marker bias = sum over its lookback of the up-marker count minus down-marker count; markers 1–4 each contribute 1 when their condition occurs.
+Long: (chart-bar close > open AND chart-bar close > previous chart-bar close AND Volume delta > 0 AND Up volume > its EMA using the Average balance lookback AND Up volume > previous chart-bar Up volume) OR (the same bump-up condition occurred on this and the previous chart bar) OR (Divergence was true on the previous chart bar AND chart-bar close > open AND Divergence is false now) OR (the selected balance crosses above zero) OR (Marker bias crosses above zero) OR (Combined balance equals +5)
+Short: (chart-bar close < open AND chart-bar close < previous chart-bar close AND Volume delta < 0 AND Down volume > its EMA using the Average balance lookback AND Down volume > previous chart-bar Down volume) OR (the same bump-down condition occurred on this and the previous chart bar) OR (Divergence was true on the previous chart bar AND chart-bar close < open AND Divergence is false now) OR (the selected balance crosses below zero) OR (Marker bias crosses below zero) OR (Combined balance equals −5)

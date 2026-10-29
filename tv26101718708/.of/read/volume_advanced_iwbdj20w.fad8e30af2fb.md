@@ -1,0 +1,3 @@
+Calculation: Volume ratio = sum(volume, longer lookback) / (sum(volume, shorter lookback) / (shorter lookback / longer lookback))
+Long: volume ratio is rising over a lookback OR crosses above a threshold AND close > close from a longer lookback ago AND the internal state is long AND the bar is within the configured test period
+Exit: long, volume ratio is falling over a lookback OR (volume ratio crosses above a threshold AND close < close from a longer lookback ago)

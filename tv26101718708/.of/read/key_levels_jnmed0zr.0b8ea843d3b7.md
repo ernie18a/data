@@ -1,0 +1,3 @@
+Calculation: Battle Line = midpoint of the highest and lowest among premarket high, premarket low, prior-day high, prior-day low, and prior-day close; or the mean of those five levels, according to the selected basis. Premarket high and low use chart-timeframe bars in the premarket session. Prior-day high, low, and close use the last completed daily bar (higher timeframe).
+Long: During the regular session, close crosses above the Battle Line (or high crosses above it when wick confirmation is selected).
+Short: During the regular session, close crosses below the Battle Line (or low crosses below it when wick confirmation is selected).

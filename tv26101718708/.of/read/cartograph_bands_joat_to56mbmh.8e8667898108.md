@@ -1,0 +1,8 @@
+Calculation: Momentum score = clamp(EMA of [0.32 × clamp((RSI − 50) / 50, −1, 1) + 0.24 × clamp(CMO / 100, −1, 1) + 0.24 × clamp(ROC z-score / 2.5, −1, 1) + 0.20 × clamp(linear-regression slope of close divided by max(ATR × 0.35, 10 minimum ticks), −1, 1)], −1, 1); ROC z-score uses its deviation from its moving average divided by its standard deviation.
+Calculation: Regime score = clamp(EMA of [0.65 × momentum score + 0.35 × EMA of normalized linear-regression slope], −1, 1); the outer EMA uses a longer lookback than the inner EMA.
+Calculation: Regime state = bullish when regime score is above the bull threshold, bearish when below the bear threshold, and neutral otherwise.
+Calculation: Adaptive step = max(ATR, 0.75 × standard deviation of close) × mapping base × (1 + |momentum score| × momentum expansion weight) × (1 + |regime score| × regime expansion weight), floored at 10 minimum ticks.
+Calculation: Mapped center = EMA of close + regime score × adaptive step × center shift multiplier.
+Calculation: Inner and outer bands = mapped center ± adaptive step × their respective band multipliers; the outer multiplier is greater than the inner multiplier.
+Long: regime state becomes bullish OR (previous close < previous lower outer band AND close >= lower outer band AND close <= lower inner band)
+Short: regime state becomes bearish OR (previous close > previous upper outer band AND close <= upper outer band AND close >= upper inner band)

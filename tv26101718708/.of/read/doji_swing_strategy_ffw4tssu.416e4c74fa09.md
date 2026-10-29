@@ -1,0 +1,7 @@
+Calculation: Doji = abs(close - open) <= (high - low) * doji-size threshold
+Calculation: Long entry level = current high if the previous bar’s abs(close - open) / (high - low) exceeds the long-candle threshold and its range exceeds the current bar’s range; otherwise, the greater of current and previous highs
+Calculation: Short entry level = current low if the previous bar’s abs(close - open) / (high - low) exceeds the long-candle threshold and its range exceeds the current bar’s range; otherwise, the lesser of current and previous lows
+Long: Doji AND datetime is within the configured date window AND (volume filter is disabled OR volume > its exponential moving average) AND high >= long entry level
+Short: Doji AND datetime is within the configured date window AND (volume filter is disabled OR volume > its exponential moving average) AND low <= short entry level
+Exit: long, stop-loss distance from entry is reached OR take-profit distance from entry is reached when stop-loss/take-profit mode is enabled; otherwise, take-profit distance from entry is reached OR close < current Doji low
+Exit: short, stop-loss distance from entry is reached OR take-profit distance from entry is reached when stop-loss/take-profit mode is enabled; otherwise, take-profit distance from entry is reached OR close > current Doji high

@@ -1,0 +1,23 @@
+Calculation: Opening range high/low = highest high and lowest low during the configured opening-range window, completed before its trading-permit window.
+Calculation: Bullish CISD level = on the first trading-permit bar that trades below the opening-range low, provided no bar in that permit has traded above its opening-range high, scan backward up to the configured lookback for the nearest bullish candle (close > open); use the higher open of the two bars immediately before that candle (or the immediately preceding bar's open if the candle is one bar back). Bearish CISD level = mirror this: first trade above the opening-range high with no trade below the low; find the nearest bearish candle (close < open) and use the lower open of the two bars immediately before it (or the immediately preceding bar's open if one bar back).
+Calculation: Prior-period high/low = high/low of the last completed day, week, or month (higher timeframe than the chart; last completed bar). Asia/London high/low = highest high and lowest low of the most recently completed configured session.
+Calculation: Premarket range = highest high and lowest low during the configured premarket window, locked when that window completes and carried forward; equilibrium = midpoint of that range.
+Calculation: Bullish FVG = current low > high two bars earlier; bearish FVG = current high < low two bars earlier. First presented FVG uses the first such gap per configured AM or PM session, with the middle candle inside the session; source bars are 1-minute bars (lower timeframe than a chart above 1 minute), using completed bars.
+Calculation: Displacement = configured candle range measure (absolute open-close or high-low) exceeds its standard deviation multiplied by a strength factor; the standard deviation lookback is configurable.
+Calculation: Suspension block = bullish or bearish FVG whose middle candle body is separated from each neighboring candle body at both ends.
+Long: During an active trading-permit window, an opening-range low is first breached (low < opening-range low) before any opening-range high breach, a bullish CISD level was found, and close >= bullish CISD level within its configured staleness period.
+Short: During an active trading-permit window, an opening-range high is first breached (high > opening-range high) before any opening-range low breach, a bearish CISD level was found, and close <= bearish CISD level within its configured staleness period.
+Long: Bullish CISD confirmation occurs with a most-recent unmitigated bullish FVG present.
+Short: Bearish CISD confirmation occurs with a most-recent unmitigated bearish FVG present.
+Long: A bullish displacement occurs and high two bars earlier < current low; if the displacement-window filter is enabled, the displacement candle is in an active trading-permit window.
+Short: A bearish displacement occurs and low two bars earlier > current high; if the displacement-window filter is enabled, the displacement candle is in an active trading-permit window.
+Long: For any enabled prior-period or completed Asia/London low, low < level AND close > level.
+Short: For any enabled prior-period or completed Asia/London high, high > level AND close < level.
+Long: The first bullish FVG forms in the configured AM or PM session.
+Short: The first bearish FVG forms in the configured AM or PM session.
+Long: Price crosses below the equilibrium of the most recently completed premarket range (close < equilibrium AND previous close >= previous equilibrium).
+Short: Price crosses above the equilibrium of the most recently completed premarket range (close > equilibrium AND previous close <= previous equilibrium).
+Long: At an eligible premarket-grid level, low <= level AND body low > level for the configured number of consecutive qualifying interactions; count resets when the body touches/crosses the level or price clears it below. Emit at most once per level per session when that limit is enabled.
+Short: At an eligible premarket-grid level, high >= level AND body high < level for the configured number of consecutive qualifying interactions; count resets when the body touches/crosses the level or price clears it above. Emit at most once per level per session when that limit is enabled.
+Long: A bullish suspension block forms on the chart timeframe, on a confirmed bar and within the configured scan scope.
+Short: A bearish suspension block forms on the chart timeframe, on a confirmed bar and within the configured scan scope.

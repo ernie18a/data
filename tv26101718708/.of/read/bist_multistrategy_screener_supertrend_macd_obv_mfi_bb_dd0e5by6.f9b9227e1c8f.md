@@ -1,0 +1,1 @@
+Long: SuperTrend is bullish OR MACD line > signal line OR close > upper Bollinger Band OR MFI > 50 OR OBV > its EMA

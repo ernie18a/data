@@ -1,0 +1,9 @@
+Calculation: short-term EMA = exponential moving average of close with a shorter lookback than the long-term EMA
+Calculation: long-term EMA = exponential moving average of close with a longer lookback than the short-term EMA
+Calculation: volume ratio = volume / simple moving average of volume
+Calculation: gap percentage = (close - previous close) / previous close × 100
+Calculation: Bollinger Band width = (upper band - lower band) / middle band × 100, using bands 2 standard deviations from the middle band
+Calculation: 5-bar momentum = (close - close 5 bars ago) / close 5 bars ago × 100
+Calculation: signal score = 2 if volume ratio > 1.5, else 1 if volume ratio > 1.2, else 0; plus 2 if gap percentage > 3, else 1 if gap percentage > 1, else 0; plus 1 if short-term EMA > long-term EMA; plus 1 if close > short-term EMA; plus 1 if Bollinger Band width < 5; plus 1 if 5-bar momentum > 2
+Long: position is flat AND close > short-term EMA AND RSI < its maximum threshold AND signal score >= its minimum threshold
+Exit: long, close < short-term EMA AND 5-bar momentum < -3 OR low <= the active trailing stop; trailing stop activates when high reaches entry price plus the current close times the activation percentage, then trails the highest price since activation by the current close times the trail offset percentage

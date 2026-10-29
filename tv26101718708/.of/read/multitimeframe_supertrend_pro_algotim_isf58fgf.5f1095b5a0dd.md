@@ -1,0 +1,6 @@
+Calculation: Confirmation Supertrend direction = Supertrend direction on the configured timeframe (chart timeframe if blank); when different from chart timeframe, use the last completed requested-timeframe bar (lookahead_off), whether that timeframe is higher or lower.
+Calculation: Higher-timeframe Supertrend direction = Supertrend direction on a higher timeframe, using the last completed higher-timeframe bar (lookahead_off).
+Calculation: Bullish vote count = number of bullish Supertrend directions among the chart-timeframe, confirmation, and higher-timeframe Supertrends.
+Calculation: Bearish vote count = number of bearish Supertrend directions among the chart-timeframe, confirmation, and higher-timeframe Supertrends.
+Long: chart-timeframe Supertrend direction changes from bearish to bullish OR bullish vote count reaches the configured threshold while it did not reach the threshold on the previous chart bar OR all three Supertrend directions are bullish while they were not all bullish on the previous chart bar
+Short: chart-timeframe Supertrend direction changes from bullish to bearish OR bearish vote count reaches the configured threshold while it did not reach the threshold on the previous chart bar OR all three Supertrend directions are bearish while they were not all bearish on the previous chart bar

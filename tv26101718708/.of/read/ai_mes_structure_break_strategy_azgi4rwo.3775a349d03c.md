@@ -1,0 +1,8 @@
+Calculation: Last confirmed pivot high = latest bar high greater than the highs of the configured number of bars before and after it; available after those following bars complete
+Calculation: Last confirmed pivot low = latest bar low lower than the lows of the configured number of bars before and after it; available after those following bars complete
+Calculation: Long stop = last confirmed pivot low minus stop buffer; long target = entry price + (entry price − long stop) × reward-to-risk ratio
+Calculation: Short stop = last confirmed pivot high plus stop buffer; short target = entry price − (short stop − entry price) × reward-to-risk ratio
+Long: close > last confirmed pivot high AND previous close ≤ last confirmed pivot high AND chart close > EMA of closes on the higher timeframe using its last completed bar AND RSI > its midpoint AND volume > its multiplier × its simple moving average AND time is within an enabled session window AND trades entered in that window < its limit AND position is flat
+Short: close < last confirmed pivot low AND previous close ≥ last confirmed pivot low AND chart close < EMA of closes on the higher timeframe using its last completed bar AND RSI < its midpoint AND volume > its multiplier × its simple moving average AND time is within an enabled session window AND trades entered in that window < its limit AND position is flat
+Exit: Long, low ≤ long stop OR high ≥ long target OR current bar is outside all enabled session windows AND previous bar was inside an enabled session window
+Exit: Short, high ≥ short stop OR low ≤ short target OR current bar is outside all enabled session windows AND previous bar was inside an enabled session window

@@ -1,0 +1,2 @@
+Long: TRIX crosses above its signal line AND Aroon Up crosses above Aroon Down
+Long: TRIX crosses above its signal line AND Aroon Up crosses above Aroon Down AND MACD line crosses above its signal line OR MACD histogram > 0 AND RSI > 50 AND close > EMA AND OBV > its EMA AND OBV is rising over a short lookback AND ADX > its minimum threshold AND +DI > -DI

@@ -1,0 +1,10 @@
+Calculation: RSI = Relative Strength Index of close
+Calculation: Fast RSI average = selected simple or exponential moving average of RSI, with a shorter lookback than the slow RSI average
+Calculation: Slow RSI average = selected simple or exponential moving average of RSI, with a longer lookback than the fast RSI average
+Calculation: Higher-timeframe RSI = RSI of close on a higher timeframe, using the bar still forming
+Calculation: Smoothed upper and lower channel = Wilder moving averages of high and low
+Calculation: Smoothed price average = selected simple, exponential, or Wilder moving average of (open + high + low + close) / 4
+Calculation: Triangle oscillator = compute Wilder moving averages of high and low using a short lookback; normalize high and low around their midpoint by half the channel width and compute RSI of each normalized series; choose the farther-from-50 RSI when both are on the same side of 50, otherwise choose the one closer to 50
+Calculation: Adaptive overbought and oversold levels = detect a Williams-style pivot high or low in the triangle oscillator using a fixed three-bar offset and eight-bar extreme window; update the overbought EMA from pivot highs above the upper neutral threshold and the oversold EMA from pivot lows below the lower neutral threshold, using a longer adaptive smoothing lookback than the short channel lookback
+Long: RSI >= upper neutral threshold OR RSI > higher-timeframe RSI OR RSI > fast RSI average OR RSI > slow RSI average OR fast RSI average > slow RSI average OR smoothed price average > smoothed upper channel OR triangle oscillator > adaptive overbought level
+Short: RSI <= lower neutral threshold OR RSI < higher-timeframe RSI OR RSI < fast RSI average OR RSI < slow RSI average OR fast RSI average < slow RSI average OR smoothed price average < smoothed lower channel OR triangle oscillator < adaptive oversold level

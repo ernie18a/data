@@ -1,0 +1,4 @@
+Calculation: Adaptive pivot width = round(shorter-lookback ATR / longer-lookback average true range × a scale factor), clamped between configured minimum and maximum widths; use that many chart bars on each side of a pivot.
+Calculation: Historical reaction power = min(price at pivot / ATR at pivot, configured cap) × min(volume at pivot / average volume at pivot, configured cap) × age weight, capped at a configured maximum; age weight is 1 when the pivot is within the configured lookback range and 0.5 otherwise.
+Long: A confirmed pivot low is detected using the adaptive pivot width AND its historical reaction power is at least the configured power threshold.
+Short: A confirmed pivot high is detected using the adaptive pivot width AND its historical reaction power is at least the configured power threshold.

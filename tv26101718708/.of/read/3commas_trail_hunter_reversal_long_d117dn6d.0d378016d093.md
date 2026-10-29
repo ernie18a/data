@@ -1,0 +1,2 @@
+Long: Fast SMA crosses below the slower SMA AND CCI crosses below its oversold threshold within the keep-alive window, with at least one signal firing on the current chart bar (AND mode); OR either cross occurs (OR mode), while flat
+Exit: Long, close <= entry price × (1 − stop-loss fraction) OR, after price reaches entry price × (1 + activation fraction), close <= highest price reached since activation − entry price × trailing-deviation fraction

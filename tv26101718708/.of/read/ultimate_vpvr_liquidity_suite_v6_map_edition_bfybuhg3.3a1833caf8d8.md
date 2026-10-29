@@ -1,0 +1,2 @@
+Long: close > close[3] * (1 + impulse threshold) AND close > open AND close[1] > open[1] AND close[3] < open[3]
+Short: close < close[3] * (1 - impulse threshold) AND close < open AND close[1] < open[1] AND close[3] > open[3]

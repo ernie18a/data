@@ -1,0 +1,13 @@
+Calculation: Trend strength = clamp(0, 100, 50 + 15 × clamp(-2, 2, (shorter-lookback EMA of close − longer-lookback EMA of close) / ATR) + 0.4 × (RSI − 50)); the two EMA lookbacks are 20 and 50 bars, and RSI and ATR use 14 bars.
+Calculation: Active range high/low = latest confirmed pivot high/low, respectively; a pivot is confirmed when its high/low is an extreme over the same lookback on both sides.
+Calculation: Risk distance = ATR × stop multiplier in ATR stop mode; in swing stop mode, use the distance from entry to the opposite active range extreme plus an ATR buffer if that distance is less than 4 × ATR, otherwise use ATR × stop multiplier.
+Calculation: Initial stop = entry − risk distance for a long, or entry + risk distance for a short; take-profit = entry + risk distance × target multiple for a long, or entry − risk distance × target multiple for a short.
+Calculation: Long trailing stop = highest high since entry − ATR × trail distance; short trailing stop = lowest low since entry + ATR × trail distance. The stop can only move toward profit.
+Long: No open position AND active range high unused AND both active range extremes exist AND range high − range low ≥ ATR × minimum range height AND active range high age ≤ maximum range age AND close > active range high + ATR × breakout buffer AND trend strength ≥ 50 AND trend strength ≥ minimum buy strength AND (MTF agreement disabled OR 15-minute trend strength ≥ 50; use the last completed 15-minute bar when it is higher than the chart timeframe) AND close ≤ EMA of highs + ATR × maximum extension AND same-direction loss cooldown expired.
+Short: No open position AND active range low unused AND both active range extremes exist AND range high − range low ≥ ATR × minimum range height AND active range low age ≤ maximum range age AND close < active range low − ATR × breakout buffer AND trend strength < 50 AND 100 − trend strength ≥ minimum sell strength AND (MTF agreement disabled OR 15-minute trend strength < 50; use the last completed 15-minute bar when it is higher than the chart timeframe) AND close ≥ EMA of lows − ATR × maximum extension AND same-direction loss cooldown expired.
+Exit: Long, high ≥ entry + risk distance × partial target multiple
+Exit: Long, low ≤ active stop
+Exit: Long, high ≥ take-profit in fixed-target mode
+Exit: Short, low ≤ entry − risk distance × partial target multiple
+Exit: Short, high ≥ active stop
+Exit: Short, low ≤ take-profit in fixed-target mode

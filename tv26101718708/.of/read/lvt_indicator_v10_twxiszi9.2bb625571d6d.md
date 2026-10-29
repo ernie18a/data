@@ -1,0 +1,4 @@
+Calculation: Prior-window swing low = lowest low over the swing lookback ending on the previous bar
+Calculation: Prior-window swing high = highest high over the swing lookback ending on the previous bar
+Long: close > long-term EMA AND short-term EMA > long-term EMA AND ADX > trend-strength threshold AND low < prior-window swing low AND close > prior-window swing low AND volume > average volume over the volume lookback × volume multiplier AND RSI > bullish-momentum threshold
+Short: close < long-term EMA AND short-term EMA < long-term EMA AND ADX > trend-strength threshold AND high > prior-window swing high AND close < prior-window swing high AND volume > average volume over the volume lookback × volume multiplier AND RSI < bearish-momentum threshold

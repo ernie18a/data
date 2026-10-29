@@ -1,0 +1,2 @@
+Long: Faster EMA > slower EMA on the last completed bar of a timeframe higher than the chart timeframe AND faster EMA > slower EMA on the bar still forming of a timeframe lower than the chart timeframe
+Short: Faster EMA < slower EMA on the last completed bar of a timeframe higher than the chart timeframe AND faster EMA < slower EMA on the bar still forming of a timeframe lower than the chart timeframe

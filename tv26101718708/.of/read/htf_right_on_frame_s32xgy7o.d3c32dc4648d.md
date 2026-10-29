@@ -1,0 +1,2 @@
+Long: Either of the two higher-timeframe candles has close >= open (historically, the last completed bar; in real time, the bar still forming)
+Short: Either of the two higher-timeframe candles has close < open (historically, the last completed bar; in real time, the bar still forming)

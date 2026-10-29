@@ -1,0 +1,15 @@
+Calculation: opening-range high and low = highest high and lowest low of chart bars opening within the configured range interval from session start; use them after the first bar opens at or after that interval ends
+Calculation: relative volume = current bar volume / longer-lookback simple moving average of volume
+Calculation: initial risk = absolute difference between entry price and configured initial stop; configured stop is the opposite range edge, range midpoint, an ATR or range distance from entry, or beyond the breakout bar; for fades it is beyond the breakout extreme or an ATR distance from entry
+Calculation: configured target price = entry adjusted by the configured risk multiple, ATR multiple, points, or percentage; a range extension is beyond the opposite range edge by the configured range multiple; other targets may be the opposite range edge, range midpoint, or session end
+Calculation: active stop may move to entry after target 1 or after the configured risk threshold, and may trail from each bar's close by the configured ATR or range distance; only move it toward profit
+Long: first confirmed chart bar after range completion closes above opening-range high plus configured ATR buffer, and relative volume meets the configured minimum when that filter is enabled
+Short: first confirmed chart bar after range completion closes below opening-range low minus configured ATR buffer, and relative volume meets the configured minimum when that filter is enabled
+Long: in stop-order entry mode, bar high reaches opening-range high plus configured ATR buffer and bar low does not reach opening-range low minus that buffer
+Short: in stop-order entry mode, bar low reaches opening-range low minus configured ATR buffer and bar high does not reach opening-range high plus that buffer
+Long: after a downward breakout, within the configured fake-out window, a confirmed bar closes above opening-range low
+Short: after an upward breakout, within the configured fake-out window, a confirmed bar closes below opening-range high
+Long: after an upward breakout, within the configured retest window and after the breakout bar, bar low reaches opening-range high
+Short: after a downward breakout, within the configured retest window and after the breakout bar, bar high reaches opening-range low
+Exit: long, bar low reaches active stop OR configured full-exit target is reached OR target 1 is reached with no remaining target 2 OR target 2 is reached after target 1 OR breakout closes back inside the range within the fake-out window when fake-out exit is enabled OR configured maximum holding time is reached at bar close OR session ends
+Exit: short, bar high reaches active stop OR configured full-exit target is reached OR target 1 is reached with no remaining target 2 OR target 2 is reached after target 1 OR breakout closes back inside the range within the fake-out window when fake-out exit is enabled OR configured maximum holding time is reached at bar close OR session ends

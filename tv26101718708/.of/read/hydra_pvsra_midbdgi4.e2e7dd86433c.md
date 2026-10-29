@@ -1,0 +1,3 @@
+Calculation: Active volume = chart volume, or external symbol volume on the chart timeframe when external volume is enabled
+Long: Active volume >= SMA(active volume, volume lookback) * volume multiplier AND high - low >= SMA(high - low, same lookback) * spread multiplier AND close > open
+Short: Active volume >= SMA(active volume, volume lookback) * volume multiplier AND high - low >= SMA(high - low, same lookback) * spread multiplier AND close <= open

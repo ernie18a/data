@@ -1,0 +1,3 @@
+Calculation: Prior-hour high/low = high/low of the last completed bar on a higher timeframe
+Long: low < prior-hour low AND neither prior-hour boundary has been breached yet in the current higher-timeframe bar AND the bar is within the configured New York session AND the chart timeframe is lower than the higher timeframe
+Short: high > prior-hour high AND neither prior-hour boundary has been breached yet in the current higher-timeframe bar AND the bar is within the configured New York session AND the chart timeframe is lower than the higher timeframe

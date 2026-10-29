@@ -1,0 +1,2 @@
+Long: close > EMA(close) AND close > highest high over the lookback window ending on the previous completed chart bar AND volume > short-term SMA(volume) × volume-spike factor AND RSI > upper threshold
+Short: close < EMA(close) AND close < lowest low over the lookback window ending on the previous completed chart bar AND volume > short-term SMA(volume) × volume-spike factor AND RSI < lower threshold

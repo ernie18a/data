@@ -1,0 +1,4 @@
+Calculation: Bullish sweep = on the selected analysis timeframe (which may be higher or lower than the chart timeframe), the last completed candle has a low below the preceding completed candle’s low, a high at or below its high, and a close strictly between its low and high
+Calculation: Bearish sweep = on the selected analysis timeframe, the last completed candle has a high above the preceding completed candle’s high, a low at or above its low, and a close strictly between its low and high
+Long: Bullish sweep AND the current price on the selected analysis timeframe, using its still-forming candle, is above the last completed candle’s high
+Short: Bearish sweep AND the current price on the selected analysis timeframe, using its still-forming candle, is below the last completed candle’s low

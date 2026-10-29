@@ -1,0 +1,4 @@
+Calculation: Average daily range percentage = average(high - low over chart-timeframe bars) / close × 100
+Calculation: Stop price = low if (high - low) / close × 100 ≥ range-development threshold × average daily range percentage; otherwise close − ADR-floor multiplier × average daily range percentage × close / 100
+Calculation: Risk percentage = (close − stop price) / close × 100
+Long: prior close / close two bars ago ≤ prior up-swing cap AND high > low AND (close − low) / (high − low) ≥ strong-close threshold AND close − open > prior close − prior open AND close ≥ price floor AND volume ≥ volume threshold AND risk percentage ≤ average daily range percentage

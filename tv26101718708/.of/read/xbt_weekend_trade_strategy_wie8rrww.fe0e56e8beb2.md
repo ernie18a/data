@@ -1,0 +1,5 @@
+Calculation: Friday reference close = close from the higher daily timeframe, indexed by days elapsed since Friday; use the still-forming daily bar when the offset is zero, otherwise the corresponding completed daily bar.
+Long: Within the configured backtest window AND on Saturday or Sunday AND flat AND close < Friday reference close × (1 − configured entry threshold)
+Short: Within the configured backtest window AND on Saturday or Sunday AND ((flat AND close > Friday reference close × (1 + configured entry threshold)) OR (already short AND close > average entry price × (1 + configured add threshold)))
+Exit: long, Within the configured backtest window AND (unrealized profit as a fraction of initial capital > configured profit threshold OR day is Monday)
+Exit: short, Within the configured backtest window AND (unrealized profit as a fraction of initial capital > configured profit threshold OR day is Monday)

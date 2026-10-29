@@ -1,0 +1,13 @@
+Calculation: Confirmed pivot high/low = a bar whose high/low is the highest/lowest across the configured number of bars on both sides; it becomes available after the right-side bars complete.
+Calculation: Bullish FVG = current low > high from two bars earlier; bearish FVG = current high < low from two bars earlier.
+Calculation: ATR buffer = ATR × proximity multiplier.
+Long: On the source timeframe bar at close, session allowed AND (pivot mode: close crosses above the high of the latest confirmed pivot-low candle OR candle-run mode: close > selected MSS swing high AND the current MSS direction is not bullish AND the valid bullish swing sequence has a newer swing price below the intervening older swing price AND a consecutive bullish-candle run exists in that swing leg).
+Short: On the source timeframe bar at close, session allowed AND (pivot mode: close crosses below the low of the latest confirmed pivot-high candle OR candle-run mode: close < selected MSS swing low AND the current MSS direction is not bearish AND the valid bearish swing sequence has a newer swing price above the intervening older swing price AND a consecutive bearish-candle run exists in that swing leg).
+Long: Session allowed AND close < high of latest confirmed pivot-low candle AND close >= high of that candle - ATR buffer AND this condition was false on the previous source bar.
+Short: Session allowed AND close > low of latest confirmed pivot-high candle AND close <= low of that candle + ATR buffer AND this condition was false on the previous source bar.
+Long: Source timeframe bar at close: low > high two source bars earlier AND session allowed.
+Short: Source timeframe bar at close: high < low two source bars earlier AND session allowed.
+Long: Current chart timeframe bar at close: low > high two chart bars earlier AND session allowed AND source timeframe differs from chart timeframe AND chart FVG rank filter passes.
+Short: Current chart timeframe bar at close: high < low two chart bars earlier AND session allowed AND source timeframe differs from chart timeframe AND chart FVG rank filter passes.
+Long: An active, unbroken bullish breaker zone exists AND no retest signal has been issued for it AND open is above the zone midpoint and below its top AND close > zone top.
+Short: An active, unbroken bearish breaker zone exists AND no retest signal has been issued for it AND open is below the zone midpoint and above its bottom AND close < zone bottom.

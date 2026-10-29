@@ -1,0 +1,36 @@
+Calculation: Bull confluence score = 1 if price is in an active bullish FVG; plus 2 if the best active bullish FVG quality is at least 0.65, else 1 if at least 0.45; plus 2 for a bullish internal or swing structure break; plus 2 for a bullish CHoCH; plus 2 for a sell-side liquidity sweep; plus 1 for an upper trendline break; plus 1 if close > 50-period EMA > 200-period EMA; plus 1 if higher-timeframe structure direction is bullish; plus 1 if close is below the midpoint of the latest swing-high/swing-low range; plus 1 for a bullish order-block retest; plus 1 for a bullish inverted FVG; plus 1 during an active London, New York morning, or New York afternoon session; plus 1 for each of close > daily open and close > previous-day high; plus 1 if relative volume meets its minimum; plus 1 if volatility is expanded, or minus 1 if compressed; plus the bullish multi-timeframe score.
+Calculation: Bear confluence score = the bearish counterpart of the bull confluence score, using bearish FVGs, bearish structure breaks and CHoCHs, buy-side sweeps, lower trendline breaks, bearish EMA and higher-timeframe structure, premium range, bearish order-block retests and inverted FVGs, close below daily open and previous-day low, and the bearish multi-timeframe score.
+Calculation: Relative volume = volume / 20-bar average volume.
+Calculation: Bullish structure break = close (or high if wick breaks are enabled) exceeds the latest unbroken internal or swing pivot high; bearish structure break = close (or low if wick breaks are enabled) falls below the latest unbroken internal or swing pivot low. Internal pivot lookback is shorter than swing pivot lookback.
+Calculation: Bullish FVG = current low > high two bars ago, prior close > high two bars ago, gap meets the configured percentage and ATR filters, and the prior bar is a bullish displacement candle when displacement is required; bearish FVG is the inverse. Displacement means body size / ATR meets its minimum, body / range meets its minimum, and candle direction matches the gap.
+Calculation: Active bullish (bearish) FVG = an unexpired, not-yet-invalidated bullish (bearish) gap; price is in it when the current bar overlaps its zone, and a CE tap occurs when low (high) reaches its midpoint. An inverted FVG requires a full fill and close through the zone, with the configured displacement and opposite structure-break filters.
+Calculation: Bullish (bearish) liquidity sweep = price sweeps below a sell-side (above a buy-side) liquidity zone and closes back above (below) its boundary, using the configured sweep-confirmation rule. Crypto sweep = low < prior low and close > prior low (high > prior high and close < prior high).
+Calculation: Higher-timeframe structure direction = direction after price breaks the latest unbroken pivot; higher-timeframe liquidity code is positive for a sell-side sweep or sell-side liquidity below price and negative for a buy-side sweep or buy-side liquidity above price. Higher-timeframe FVG direction is bullish or bearish when its quality meets the configured minimum. Use the last higher-timeframe bar returned by lookahead-off requests.
+Calculation: Long confluence = bull confluence score >= effective confluence threshold and bull confluence score > bear confluence score. Short confluence is the inverse. Effective threshold is the configured market-type base threshold, adjusted +1 for compressed volatility, weak trend, or low relative volume and -1 for momentum expansion or strong trend, then bounded to 3–8.
+Calculation: Long sweep setup = current bullish liquidity sweep or a previously recorded sell-side sweep; short sweep setup is the buy-side counterpart.
+Calculation: Long IT3 signal = on its configured approved symbol and timeframe, at least 70% of these points: 40 if 5-bar EMA slope / ATR > 0.05 and VWAP distance / ATR < 0.2; 30 if 20-bar close standard deviation / ATR < 1; 30 if a sell-side sweep occurred within the last 15 bars. Short IT3 watch signal uses the configured watchlist symbol and timeframe, with slope < -0.05, VWAP distance > -0.2, and a buy-side rejection within 15 bars.
+Long: bull confluence score >= effective confluence threshold AND bull confluence score > bear confluence score
+Long: bullish FVG detected OR bullish inverted FVG OR bullish BOS OR bullish CHoCH OR bullish liquidity sweep OR crypto bullish sweep OR upper trendline break OR approved long IT3 signal
+Long: demand reaction AND (bullish CHoCH OR bullish structure break OR close > 50-period EMA > 200-period EMA)
+Long: bullish breaker retest
+Long: resistance break beyond latest swing high + 0.35 ATR AND relative volume meets its minimum AND (volatility is expanded OR volume > 20-bar average volume)
+Long: BTC cycle discount AND bullish liquidity sweep AND bullish CHoCH
+Long: higher-timeframe sell-side liquidity sweep AND (bullish CHoCH OR bullish structure break) AND (context-timeframe structure direction >= neutral OR macro-timeframe structure direction >= neutral)
+Long: bullish context-timeframe FVG meeting minimum quality AND context-timeframe FVG touched AND (bullish CE tap OR price in bullish FVG)
+Long: long sweep setup AND bullish CHoCH
+Long: bullish inverted FVG OR (price in bullish FVG AND bullish CE tap AND best bullish FVG quality >= 0.60)
+Long: (bullish BOS OR upper trendline break OR opening-range break up) AND (higher-timeframe structure direction >= neutral OR close > 50-period EMA > 200-period EMA)
+Long: close > 50-period EMA > 200-period EMA AND higher-timeframe structure direction bullish AND close is below the latest swing-range midpoint
+Short: bear confluence score >= effective confluence threshold AND bear confluence score > bull confluence score
+Short: bearish FVG detected OR bearish inverted FVG OR bearish BOS OR bearish CHoCH OR bearish liquidity sweep OR crypto bearish sweep OR lower trendline break
+Short: supply reaction AND (bearish CHoCH OR bearish structure break OR close < 50-period EMA < 200-period EMA)
+Short: bearish breaker retest
+Short: support break below latest swing low - 0.35 ATR AND relative volume meets its minimum AND (volatility is expanded OR volume > 20-bar average volume)
+Short: BTC cycle premium AND (bearish structure break OR price in bearish FVG)
+Short: higher-timeframe buy-side liquidity sweep AND (bearish CHoCH OR bearish structure break) AND (context-timeframe structure direction <= neutral OR macro-timeframe structure direction <= neutral)
+Short: bearish context-timeframe FVG meeting minimum quality AND context-timeframe FVG touched AND (bearish CE tap OR price in bearish FVG)
+Short: short sweep setup AND bearish CHoCH
+Short: bearish inverted FVG OR (price in bearish FVG AND bearish CE tap AND best bearish FVG quality >= 0.60)
+Short: (bearish BOS OR lower trendline break OR opening-range break down) AND (higher-timeframe structure direction <= neutral OR close < 50-period EMA < 200-period EMA)
+Short: close < 50-period EMA < 200-period EMA AND higher-timeframe structure direction bearish AND close is above the latest swing-range midpoint
+Exit: 

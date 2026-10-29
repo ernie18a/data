@@ -1,0 +1,4 @@
+Calculation: Pivot levels for each configured higher timeframe, using its last completed bar’s high (H), low (L), and close (C): P = (H + L + C) / 3; R1 = 2P − L; S1 = 2P − H; R2 = P + (H − L); S2 = P − (H − L); R3 = H + 2(P − L); S3 = L − 2(H − P)
+Calculation: Breakout buffer = configurable pip amount × minimum tick × 10
+Long: For any pivot level P, R1, S1, R2, S2, R3, or S3 on any configured higher timeframe, previous close ≤ level + breakout buffer AND current close > level + breakout buffer, AND the bar is not the first chart bar of that higher-timeframe period
+Short: For any pivot level P, R1, S1, R2, S2, R3, or S3 on any configured higher timeframe, previous close ≥ level − breakout buffer AND current close < level − breakout buffer, AND the bar is not the first chart bar of that higher-timeframe period

@@ -1,0 +1,7 @@
+Calculation: Confirmed pivot high = a bar’s high exceeds the highs of the specified number of bars before and after it
+Calculation: Confirmed pivot low = a bar’s low is below the lows of the specified number of bars before and after it
+Calculation: Trend reference = the price of the latest confirmed pivot high or low; trend direction is down after a pivot high and up after a pivot low
+Long: close crosses above trend reference AND the latest confirmed pivot is a low AND the current close of a higher-timeframe bar (still forming) is greater than its previous completed bar’s close AND configured trade direction allows long
+Short: close crosses below trend reference AND the latest confirmed pivot is a high AND the current close of a higher-timeframe bar (still forming) is less than its previous completed bar’s close AND configured trade direction allows short
+Exit: Long, low reaches the stop-loss level below the entry signal bar’s close OR high reaches the take-profit level above the entry signal bar’s close OR close crosses below trend reference
+Exit: Short, high reaches the stop-loss level above the entry signal bar’s close OR low reaches the take-profit level below the entry signal bar’s close OR close crosses above trend reference

@@ -1,0 +1,2 @@
+Calculation: Daily inverted VIX = 100 × (highest daily VIX close over the lookback − current daily VIX close) ÷ max(highest daily VIX close − lowest daily VIX close over the lookback, a small positive value); use the higher timeframe’s bar still forming
+Long: Daily inverted VIX crosses above the oversold threshold

@@ -1,0 +1,2 @@
+Long: close > open AND volume > volume moving average × lowest bubble-tier threshold AND bar is within the matrix lookback window
+Short: close < open AND volume > volume moving average × lowest bubble-tier threshold AND bar is within the matrix lookback window

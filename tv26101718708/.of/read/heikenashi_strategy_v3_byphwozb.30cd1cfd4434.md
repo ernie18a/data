@@ -1,0 +1,4 @@
+Calculation: Short-term EMA = EMA of the higher-timeframe Heikin-Ashi close from the higher-timeframe bar still forming
+Calculation: Long-term EMA = EMA of the higher-timeframe Heikin-Ashi close from the last completed higher-timeframe bar
+Long: Short-term EMA > long-term EMA AND previous chart bar short-term EMA <= previous chart bar long-term EMA AND (MACD line > MACD signal line on the lower timeframe’s last completed bar OR MACD filter = false)
+Short: Short-term EMA < long-term EMA AND previous chart bar short-term EMA >= previous chart bar long-term EMA AND (MACD line < MACD signal line on the lower timeframe’s last completed bar OR MACD filter = false)

@@ -1,0 +1,4 @@
+Calculation: Range high = highest high over the configured lookback of scan-timeframe bars (the scan timeframe may be higher or lower than the chart timeframe; use its current bar, still forming)
+Calculation: Range low = lowest low over the configured lookback of scan-timeframe bars (the scan timeframe may be higher or lower than the chart timeframe; use its current bar, still forming)
+Long: scan-timeframe close ≤ range low + (range high − range low) × configured edge-zone percentage AND scan-timeframe close > (range high + range low) / 2
+Short: scan-timeframe close ≥ range high − (range high − range low) × configured edge-zone percentage AND scan-timeframe close < (range high + range low) / 2

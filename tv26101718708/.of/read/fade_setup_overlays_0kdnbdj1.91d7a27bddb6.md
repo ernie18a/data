@@ -1,0 +1,8 @@
+Calculation: Reversal-down bar = current high < previous high AND current close < previous low
+Calculation: Reversal-up bar = current low > previous low AND current close > previous high
+Long: last completed higher-timeframe ADX(14) >= unlock threshold AND lowest low within the extreme lookback is no older than the freshness threshold AND Reversal-up bar
+Short: last completed higher-timeframe ADX(14) >= unlock threshold AND highest high within the extreme lookback is no older than the freshness threshold AND Reversal-down bar
+Calculation: Active long state = last completed higher-timeframe ADX(14) >= unlock threshold AND ((extreme age > impulse threshold AND extreme age <= freshness threshold AND close is within the armed-distance threshold above the lowest low AND NOT Reversal-up bar) OR (extreme age <= freshness threshold AND Reversal-up bar AND close is within 3% above the lowest low))
+Calculation: Active short state = last completed higher-timeframe ADX(14) >= unlock threshold AND ((extreme age > impulse threshold AND extreme age <= freshness threshold AND close is within the armed-distance threshold below the highest high AND NOT Reversal-down bar) OR (extreme age <= freshness threshold AND Reversal-down bar AND close is within 3% below the highest high))
+Exit: long, previous bar Active long state = true AND current bar Active long state = false
+Exit: short, previous bar Active short state = true AND current bar Active short state = false

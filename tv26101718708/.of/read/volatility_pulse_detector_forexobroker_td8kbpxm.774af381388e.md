@@ -1,0 +1,3 @@
+Calculation: Detrended ATR = (short-term ATR − long-term ATR) / long-term ATR
+Long: Detrended ATR > 0 and previous bar’s Detrended ATR ≤ 0 AND close > EMA of close AND close > highest high of the preceding short-term lookback bars AND volume > short-term SMA of volume AND enough bars have elapsed since the previous long or short signal AND current bar is confirmed
+Short: Detrended ATR > 0 and previous bar’s Detrended ATR ≤ 0 AND close < EMA of close AND close < lowest low of the preceding short-term lookback bars AND volume > short-term SMA of volume AND enough bars have elapsed since the previous long or short signal AND current bar is confirmed

@@ -1,0 +1,1 @@
+Go long when the instrument meets a strong, rising long-term trend template, breaks above its recent price range on elevated volume, has sufficient liquidity, and its one-year performance relative to the benchmark meets a strong-relative-strength threshold.

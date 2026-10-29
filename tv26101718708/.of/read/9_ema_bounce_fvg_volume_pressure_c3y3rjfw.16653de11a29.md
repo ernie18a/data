@@ -1,0 +1,4 @@
+Calculation: EMA touch band = the exponential moving average of close ± a configurable percentage of that average.
+Calculation: Bullish FVG active = for any lookback offset i ≥ 1, let gap bottom = high[i+1] and gap top = low[i−1]; gap top > gap bottom and (close is between gap bottom and gap top inclusive, OR close ≥ gap bottom × (1 − configurable proximity percentage) and close < gap bottom × (1 + configurable proximity percentage)).
+Calculation: OBV = cumulative volume added when close rises, subtracted when close falls, and unchanged when close is equal.
+Long: low is within the EMA touch band AND close > EMA AND close > open AND bullish FVG active AND (volume > its moving average × configurable multiplier OR volume > prior bar volume OR OBV > its short-lookback EMA)

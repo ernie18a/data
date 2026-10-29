@@ -1,0 +1,3 @@
+Calculation: Active gap-day low = low of the most recent bar where open / prior close - 1 is at or below the negative gap threshold, close / open - 1 is at or below the negative red-body threshold, and close is at or above the minimum price; when the optional volatility gate is enabled, VIX must be at or below its threshold or unavailable. The level is valid for the configured number of following bars, is reset by a newer qualifying bar, and becomes invalid after its first break.
+Short: low <= active gap-day low
+Exit: Short, at the current bar close

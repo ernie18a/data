@@ -1,0 +1,1 @@
+For Bitcoin, calculate the enabled momentum or oscillator measures for Bitcoin and a composite global-liquidity series, applying their respective configurable lags. Give each measure a bullish vote when Bitcoin’s value exceeds liquidity’s and a bearish vote otherwise; average the votes. Go long when the average is positive and short when it is negative. No exit rule is defined.

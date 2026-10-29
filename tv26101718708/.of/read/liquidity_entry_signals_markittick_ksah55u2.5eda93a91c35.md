@@ -1,0 +1,8 @@
+Calculation: Long risk distance = entry price − (entry-bar low − ATR × stop-risk factor)
+Calculation: Short risk distance = (entry-bar high + ATR × stop-risk factor) − entry price
+Calculation: Long take-profit levels = entry price + long risk distance × each configured reward multiple
+Calculation: Short take-profit levels = entry price − short risk distance × each configured reward multiple
+Long: low < lowest low of the preceding lookback chart bars AND close > that low AND close > open AND (chart trend filter disabled OR prior completed chart bar close > its SMA) AND (higher-timeframe trend filter disabled OR last completed higher-timeframe close > its SMA) AND (volatility filter disabled OR ATR / close × 100 ≥ minimum) AND (volume filter disabled OR volume ≥ its SMA × minimum multiple) AND (cooldown disabled OR no prior signal OR bars since the last signal ≥ cooldown length)
+Short: high > highest high of the preceding lookback chart bars AND close < that high AND close < open AND (chart trend filter disabled OR prior completed chart bar close < its SMA) AND (higher-timeframe trend filter disabled OR last completed higher-timeframe close < its SMA) AND (volatility filter disabled OR ATR / close × 100 ≥ minimum) AND (volume filter disabled OR volume ≥ its SMA × minimum multiple) AND (cooldown disabled OR no prior signal OR bars since the last signal ≥ cooldown length)
+Exit: Long, short-entry condition OR high ≥ any configured long take-profit level
+Exit: Short, long-entry condition OR low ≤ any configured short take-profit level

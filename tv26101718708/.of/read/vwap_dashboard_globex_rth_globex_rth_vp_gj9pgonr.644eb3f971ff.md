@@ -1,0 +1,5 @@
+Calculation: Globex VWAP = cumulative (bar OHLC4 × volume) / cumulative volume, reset at each UTC calendar-day change.
+Calculation: RTH VWAP = cumulative (bar OHLC4 × volume) / cumulative volume, reset at the configured RTH session open; available only during that session.
+Calculation: Session value area = distribute each bar’s volume across fixed price buckets in proportion to overlap with the bar’s high-low range. Set the bucket range around the first bar’s midpoint using a configurable multiple of its range. Start at the highest-volume bucket and expand to adjacent buckets, adding the fuller adjacent bucket first, until the configured share of session volume is included. VAH is the upper edge and VAL the lower edge of the included buckets. Globex profile resets at each 18:00-shifted day boundary; RTH profile resets at the configured RTH session open and is available only during that session.
+Long: close >= Globex VWAP OR close > Globex VAH OR (in RTH session AND (close >= RTH VWAP OR close > RTH VAH))
+Short: close < Globex VWAP OR close < Globex VAL OR (in RTH session AND (close < RTH VWAP OR close < RTH VAL))

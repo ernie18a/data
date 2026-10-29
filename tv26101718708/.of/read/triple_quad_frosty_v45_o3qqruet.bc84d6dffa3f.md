@@ -1,0 +1,12 @@
+Calculation: Local HMA = Hull moving average of chart-timeframe close
+Calculation: Higher-timeframe HMA = Hull moving average of close on a higher timeframe, using the last completed higher-timeframe bar
+Long: A rising edge of the configured long-source rule (selected mode: source 1 > 0; sources 1 AND 2 > 0; any source > 0; sources 1, 2, AND 3 > 0; at least 2 of sources 1–3 > 0; all sources 1–4 > 0; at least 2 of sources 1–4 > 0; or at least 3 of sources 1–4 > 0) AND close > higher-timeframe HMA AND (if enabled, close > local HMA AND local HMA − local HMA from a shorter lookback ago > minimum slope AND absolute distance from local HMA ≥ minimum distance) AND (if enabled, the selected A/B/C long filters pass) AND time/day/trade-limit gates pass
+Short: A rising edge of the configured short-source rule (same selectable source-combination modes as long) AND close < higher-timeframe HMA AND (if enabled, close < local HMA AND local HMA − local HMA from a shorter lookback ago < −minimum slope AND absolute distance from local HMA ≥ minimum distance) AND (if enabled, the selected A/B/C short filters pass) AND time/day/trade-limit gates pass
+Exit: Long, low ≤ active stop OR (static take profit enabled AND high ≥ trailing-entry price + take-profit distance)
+Exit: Short, high ≥ active stop OR (static take profit enabled AND low ≤ trailing-entry price − take-profit distance)
+Exit: Long or short, configured forced-close time/window-end condition occurs
+Calculation: Active long stop = if static stop enabled, closest long-entry price − static stop distance; otherwise, if favorable movement reaches trailing activation distance, running peak − trailing distance; otherwise, closest long-entry price − initial stop distance
+Calculation: Active short stop = if static stop enabled, closest short-entry price + static stop distance; otherwise, if favorable movement reaches trailing activation distance, running trough + trailing distance; otherwise, closest short-entry price + initial stop distance
+Calculation: Running peak/trough = highest high/lowest low since entry when high/low trailing is enabled, otherwise highest/lowest close since entry
+Calculation: Trailing-entry price = furthest long-entry price for a long position or furthest short-entry price for a short position
+Calculation: Take-profit distance, static stop distance, initial stop distance, trailing activation distance, trailing distance, minimum slope, and minimum distance = their respective configurable multiples of the Renko brick size

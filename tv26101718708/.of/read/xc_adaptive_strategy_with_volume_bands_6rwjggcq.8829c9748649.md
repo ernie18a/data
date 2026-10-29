@@ -1,0 +1,6 @@
+Calculation: Non-parametric adaptive moving average = Let K = abs(VWAP(close) - VWAP(open)) / (VWAP(high) - VWAP(low)); recursively calculate K * close + (1 - K) * prior average, initialized to close.
+Calculation: Volume-adaptive bands = For each band, recursively calculate the moving average of (prior band / signed average volume factor + source); use positive average volume factor for the upper band and negative for the lower band. The source may be the selected price source or one of the defined Heikin-Ashi sources, optionally smoothed with a moving average.
+Long: Non-parametric adaptive moving average crosses above upper volume-adaptive band AND last accepted marker is not long AND datetime is within the configured backtest window.
+Short: Non-parametric adaptive moving average crosses below lower volume-adaptive band AND last accepted marker is not short AND datetime is within the configured backtest window.
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

@@ -1,0 +1,6 @@
+Calculation: MACD histogram = the difference between the MACD line and its signal line; the MACD line is a shorter-lookback EMA of OHLC4 minus a longer-lookback EMA of OHLC4, and the signal line is a moving average of the MACD line.
+Calculation: MACD signal line = a moving average of the MACD line.
+Long: long-term higher-timeframe MACD histogram rises from the preceding higher-timeframe bar AND mid-term higher-timeframe MACD histogram rises from the preceding higher-timeframe bar AND chart-timeframe MACD histogram rises from the preceding chart bar AND long-term higher-timeframe MACD signal line is above zero
+Short: long-term higher-timeframe MACD histogram falls from the preceding higher-timeframe bar AND mid-term higher-timeframe MACD histogram falls from the preceding higher-timeframe bar AND chart-timeframe MACD histogram falls from the preceding chart bar AND long-term higher-timeframe MACD signal line is below zero
+Exit: long, long-term, mid-term, and chart-timeframe MACD histograms all fall from their preceding bars OR take-profit or stop-loss threshold is reached
+Exit: short, long-term, mid-term, and chart-timeframe MACD histograms all rise from their preceding bars OR take-profit or stop-loss threshold is reached

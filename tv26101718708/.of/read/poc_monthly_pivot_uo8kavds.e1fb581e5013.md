@@ -1,0 +1,2 @@
+Long: low is a pivot low, lower than the lows of the preceding and following lookback bars, confirmed after the following lookback bars
+Short: high is a pivot high, higher than the highs of the preceding and following lookback bars, confirmed after the following lookback bars

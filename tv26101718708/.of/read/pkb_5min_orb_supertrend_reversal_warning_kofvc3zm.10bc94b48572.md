@@ -1,0 +1,3 @@
+Calculation: SuperTrend direction = initialize bullish; while bullish, trail at the maximum of hl2 − factor × ATR and the prior trail, flipping bearish when close < trail and setting the trail to hl2 + factor × ATR; while bearish, trail at the minimum of hl2 + factor × ATR and the prior trail, flipping bullish when close > trail and setting the trail to hl2 − factor × ATR
+Long: SuperTrend direction is bullish
+Exit: long, SuperTrend direction flips bearish

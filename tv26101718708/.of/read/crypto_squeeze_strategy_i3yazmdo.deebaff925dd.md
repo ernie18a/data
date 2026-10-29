@@ -1,0 +1,6 @@
+Calculation: Blue wave = linear regression of close minus the average of (the midpoint of the rolling highest high and lowest low) and the rolling close simple moving average; use equal lookback lengths for all rolling calculations and the linear regression
+Calculation: Money flow oscillator = 3 × (money flow index − 50), where positive flow is the rolling sum of volume × HLC3 when HLC3 rises, and negative flow is the rolling sum of volume × HLC3 when HLC3 falls; money flow index = 100 − 100 / (1 + positive flow / negative flow), with value 100 when negative flow is zero and value 0 when positive flow is zero; HLC3 = (high + low + close) / 3
+Long: Blue wave crosses above 0 AND money flow oscillator > 0 AND datetime is within the configured date range AND long strategy is enabled
+Short: Blue wave crosses below 0 AND money flow oscillator < 0 AND datetime is within the configured date range AND short strategy is enabled
+Exit: Long, close <= entry price × (1 − configured long stop-loss percentage) OR close >= entry price × (1 + configured long take-profit percentage) OR Blue wave crosses below 0 AND money flow oscillator < 0
+Exit: Short, close >= entry price × (1 + configured short stop-loss percentage) OR close <= entry price × (1 − configured short take-profit percentage) OR Blue wave crosses above 0 AND money flow oscillator > 0

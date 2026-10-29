@@ -1,0 +1,5 @@
+Calculation: Confirmed pivot high/low = highest/lowest close over equal left and right lookbacks; available after the right lookback bars complete.
+Calculation: Previous pivot high/low = the preceding confirmed pivot of the same type.
+Calculation: Correlated pivot high/low = confirmed high/low of the correlated symbol on the chart timeframe, using the same lookback as the main symbol; available after the right lookback bars complete.
+Long: Chart timeframe is at least 15 minutes or non-intraday AND (confirmed pivot high > previous pivot high OR confirmed pivot low > previous pivot low OR confirmed pivot low < previous pivot low AND (correlated pivot low > its previous pivot low OR no correlated pivot low is confirmed on this bar))
+Short: Chart timeframe is at least 15 minutes or non-intraday AND (confirmed pivot high < previous pivot high OR confirmed pivot low < previous pivot low OR confirmed pivot high > previous pivot high AND (correlated pivot high < its previous pivot high OR no correlated pivot high is confirmed on this bar))

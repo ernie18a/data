@@ -1,0 +1,3 @@
+Calculation: Periodic profile POC = midpoint of the price row with the greatest allocated volume in the completed profile period; allocate each bar’s volume across equal-width price rows in proportion to the overlap of its high-low range with each row. Use completed chart bars from the profile period.
+Long: Latest completed profile POC > preceding completed profile POC
+Short: Latest completed profile POC < preceding completed profile POC

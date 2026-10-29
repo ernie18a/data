@@ -1,0 +1,3 @@
+Calculation: Candle body midpoint = (open + close) / 2
+Long: For any configured session that is inactive, low < its most recent session low AND close > that session low AND (that session low - low) >= minimum sweep depth × ATR AND close >= candle body midpoint AND current bar index - that session’s most recent sweep bar index >= cooldown bars
+Short: For any configured session that is inactive, high > its most recent session high AND close < that session high AND (high - that session high) >= minimum sweep depth × ATR AND close <= candle body midpoint AND current bar index - that session’s most recent sweep bar index >= cooldown bars

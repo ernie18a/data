@@ -1,0 +1,5 @@
+Calculation: Middle band = selected moving average of the selected price source over the middle-band lookback, calculated on the configured resolution; if that resolution is higher than the chart timeframe, use its still-forming bar in real time and its latest completed value historically; if lower, use the available lower-timeframe value.
+Calculation: Upper band = middle band + deviation × upper multiplier; lower band = middle band − deviation × lower multiplier, where deviation is either ATR or the standard deviation of the selected price source over its configured lookback.
+Calculation: Smoothed upper/lower bands = the respective bands smoothed with their configured moving-average types and lookbacks.
+Long: close > middle band AND prior close ≤ prior middle band OR close > smoothed upper band AND prior close ≤ prior smoothed upper band OR close > smoothed lower band AND prior close ≤ prior smoothed lower band
+Short: close < middle band AND prior close ≥ prior middle band OR close < smoothed upper band AND prior close ≥ prior smoothed upper band OR close < smoothed lower band AND prior close ≥ prior smoothed lower band

@@ -1,0 +1,6 @@
+Calculation: Candle body = absolute value of candidate bar’s close minus open on a timeframe higher than the chart timeframe, using completed bars.
+Calculation: Upper wick = candidate bar’s high minus the greater of its open and close; lower wick = the lesser of its open and close minus its low, using completed bars on a timeframe higher than the chart timeframe.
+Calculation: Pivot high = candidate bar’s high is strictly greater than the highs of the same number of preceding and following completed bars on a timeframe higher than the chart timeframe.
+Calculation: Pivot low = candidate bar’s low is strictly lower than the lows of the same number of preceding and following completed bars on a timeframe higher than the chart timeframe.
+Long: Pivot low AND lower wick > 0 AND lower wick >= candle body × wick-ratio parameter AND candidate bar’s high differs from the previous rejection block’s high in that timeframe stream.
+Short: Pivot high AND upper wick > 0 AND upper wick >= candle body × wick-ratio parameter AND candidate bar’s high differs from the previous rejection block’s high in that timeframe stream.

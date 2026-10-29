@@ -1,0 +1,8 @@
+Calculation: Previous-day high = high of the last completed daily bar (higher timeframe)
+Calculation: Previous-day low = low of the last completed daily bar (higher timeframe)
+Calculation: Previous-day close = close of the last completed daily bar (higher timeframe)
+Calculation: Previous-week high = high of the last completed weekly bar (higher timeframe)
+Calculation: Previous-week low = low of the last completed weekly bar (higher timeframe)
+Calculation: Round-number levels = integer multiples of the round-number spacing
+Long: (abs(close - previous-day low) < ATR × proximity threshold OR abs(close - previous-week low) < ATR × proximity threshold OR (abs(close - previous-day close) < ATR × proximity threshold AND close > previous-day close) OR (any round-number level is within ATR × proximity threshold of close AND close >= that level)) AND close > open AND close - open > (high - low) × 0.4 AND volume > SMA(volume, 20) × volume multiplier AND bars since the previous signal >= cooldown period
+Short: (abs(close - previous-day high) < ATR × proximity threshold OR abs(close - previous-week high) < ATR × proximity threshold OR (abs(close - previous-day close) < ATR × proximity threshold AND close < previous-day close) OR (any round-number level is within ATR × proximity threshold of close AND close <= that level)) AND open - close > (high - low) × 0.4 AND volume > SMA(volume, 20) × volume multiplier AND bars since the previous signal >= cooldown period

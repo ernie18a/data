@@ -1,0 +1,2 @@
+Long: current low is lower than the lows of the preceding pivot lookback bars and the following pivot confirmation bars
+Short: current high is higher than the highs of the preceding pivot lookback bars and the following pivot confirmation bars

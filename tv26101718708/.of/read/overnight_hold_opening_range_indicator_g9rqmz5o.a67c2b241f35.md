@@ -1,0 +1,6 @@
+Calculation: Higher-timeframe bullish score = count of these conditions on its still-forming bar: close > open, close > fast EMA, fast EMA > slow EMA, close > previous completed higher-timeframe bar high
+Calculation: Higher-timeframe bearish score = count of these conditions on its still-forming bar: close < open, close < fast EMA, fast EMA < slow EMA, close < previous completed higher-timeframe bar low
+Calculation: Close Location Value = (higher-timeframe close − low) / (high − low), using the still-forming higher-timeframe bar
+Calculation: Higher-timeframe range expansion = high − low ≥ ATR × range-expansion threshold, using the still-forming higher-timeframe bar
+Long: decision time has passed AND bullish score = 3 AND Close Location Value ≥ bullish Close Location Value threshold AND bullish score > bearish score AND higher-timeframe range expansion
+Short: decision time has passed AND bearish score = 3 AND Close Location Value ≤ bearish Close Location Value threshold AND bearish score > bullish score AND higher-timeframe range expansion

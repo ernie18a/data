@@ -1,0 +1,2 @@
+Long: For each dashboard timeframe, its close > its 9-period EMA; use the last completed bar when the timeframe is higher than the chart timeframe, the current chart bar when equal, and the latest completed bar within the current chart bar when lower
+Short: For each dashboard timeframe, its close <= its 9-period EMA; use the last completed bar when the timeframe is higher than the chart timeframe, the current chart bar when equal, and the latest completed bar within the current chart bar when lower

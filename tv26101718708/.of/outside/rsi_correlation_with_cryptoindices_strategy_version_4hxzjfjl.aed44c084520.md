@@ -1,0 +1,1 @@
+Calculate the traded asset’s RSI and the RSI of a selected external crypto market index using the index’s prior, higher-timeframe close. Divide the index RSI by the asset RSI. Enter long when this ratio crosses above its neutral level of 1; enter short when it crosses below 1. No separate exit rule is defined; an opposite signal reverses the position.

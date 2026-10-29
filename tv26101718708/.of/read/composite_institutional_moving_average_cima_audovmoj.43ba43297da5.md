@@ -1,0 +1,3 @@
+Calculation: CIMA = VWMA(close × composite weight, long lookback) / VWMA(composite weight, long lookback), where composite weight = max(|VWMA(delta, shorter lookback)| × (volume / max(high − low, minimum tick)) / VWMA(volume / max(high − low, minimum tick), intermediate lookback) × volume, 1), and delta = ((close − low) / max(high − low, minimum tick) − (high − close) / max(high − low, minimum tick)) × volume. If the optional multi-timeframe calculation is used, calculate CIMA on that timeframe; use the last completed bar when it is higher than the chart timeframe and the bar still forming when it is lower.
+Long: close ≥ CIMA
+Short: close < CIMA

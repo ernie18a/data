@@ -1,0 +1,9 @@
+Calculation: Anchored VWAP = cumulative volume-weighted average of typical price (high + low + close) / 3 since the latest bar that makes a new high or low versus the preceding structure lookback; reset the cumulative sums on that bar
+Calculation: Inner and outer bands = anchored VWAP plus or minus the corresponding multiplier times the smoothed ATR baseline; the outer multiplier is greater than the inner multiplier
+Calculation: Outer-band touch = high reaches or exceeds the upper outer band minus an ATR-based tolerance, or low reaches or falls below the lower outer band plus an ATR-based tolerance
+Calculation: Higher-timeframe EMA = EMA of closes on a higher timeframe; use the still-forming higher-timeframe bar in real time and the available completed bar in historical data
+Calculation: ATR Z-score = current ATR relative to its longer-lookback mean and standard deviation
+Long: Position is flat AND cooldown has elapsed AND low-volatility regime filter permits entry AND (if enabled, close is above the higher-timeframe EMA) AND a lower outer-band touch has armed a long setup without a subsequent VWAP touch or anchor reset AND close is above the lower inner band
+Short: Position is flat AND cooldown has elapsed AND low-volatility regime filter permits entry AND (if enabled, close is below the higher-timeframe EMA) AND an upper outer-band touch has armed a short setup without a subsequent VWAP touch or anchor reset AND close is below the upper inner band
+Exit: Long, VWAP is touched (bar range includes VWAP, or the configured close-to-VWAP tolerance is met) OR the lower outer band is touched OR a new anchor is set
+Exit: Short, VWAP is touched (bar range includes VWAP, or the configured close-to-VWAP tolerance is met) OR the upper outer band is touched OR a new anchor is set

@@ -1,0 +1,5 @@
+Calculation: Signed volume delta = sum of lower-timeframe volume for bars where close > open, minus volume where close < open; include the lower-timeframe bar still forming.
+Calculation: CVD = cumulative signed volume delta, reset at New York midnight; form CVD open, high, low, and close, then apply the Heikin-Ashi candle calculation to obtain HA-CVD open and close.
+Calculation: Delta spike = signed volume delta > a multiple of the moving average of its absolute value; selling spike = signed volume delta < the negative of that threshold.
+Long: HA-CVD close crosses above zero OR HA-CVD close >= HA-CVD open OR EMA of HA-CVD close with the shorter lookback > EMA with the longer lookback OR signed volume delta > its delta-spike threshold
+Short: HA-CVD close crosses below zero OR HA-CVD close < HA-CVD open OR EMA of HA-CVD close with the shorter lookback < EMA with the longer lookback OR signed volume delta < the negative of its delta-spike threshold

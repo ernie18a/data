@@ -1,0 +1,1 @@
+Enter a long position at the 08:30 UTC bar each day and close it at the 08:00 UTC bar the following day.

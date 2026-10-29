@@ -1,0 +1,4 @@
+Long: Long trading is allowed AND the shorter-lookback long WMA crosses above the longer-lookback long WMA
+Short: Short trading is allowed AND the shorter-lookback short WMA crosses below the longer-lookback short WMA
+Exit: long, (TP/SL active AND (high >= entry price × (1 + TP%) OR low <= entry price × (1 − SL%))) OR the longer-lookback long WMA crosses below the shorter-lookback long WMA OR (alternate exit enabled AND close < selected WMA)
+Exit: short, (TP/SL active AND (low <= entry price × (1 − TP%) OR high >= entry price × (1 + SL%))) OR the shorter-lookback short WMA crosses above the longer-lookback short WMA OR (alternate exit enabled AND close < selected WMA)

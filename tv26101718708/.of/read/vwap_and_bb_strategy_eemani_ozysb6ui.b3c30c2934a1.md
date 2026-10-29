@@ -1,0 +1,4 @@
+Calculation: Bollinger upper band = SMA(selected source, lookback) + standard deviation multiplier × standard deviation of selected source over the same lookback
+Calculation: Bollinger lower band = SMA(selected source, lookback) − standard deviation multiplier × standard deviation of selected source over the same lookback
+Long: (shorter-lookback EMA > longer-lookback EMA AND close > open AND close > session VWAP AND close < Bollinger upper band AND at least one of the previous 10 bars has close < its Bollinger lower band AND position size < 1) OR (position size ≥ 1 AND close < long position’s average entry price AND close > session VWAP)
+Exit: long, (close crosses above Bollinger upper band) OR (close < average entry price × (1 − stop-loss percentage))

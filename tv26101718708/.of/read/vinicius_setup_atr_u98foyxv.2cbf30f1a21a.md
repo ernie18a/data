@@ -1,0 +1,4 @@
+Long: Supertrend direction = positive AND |close - open| > ATR × minimum body multiplier AND volume > SMA(volume, lookback) × volume multiplier AND RSI < upper threshold
+Short: Supertrend direction = negative AND |close - open| > ATR × minimum body multiplier AND volume > SMA(volume, lookback) × volume multiplier AND RSI > lower threshold
+Exit: long, Supertrend direction = negative AND |close - open| > ATR × minimum body multiplier AND volume > SMA(volume, lookback) × volume multiplier AND RSI > lower threshold
+Exit: short, Supertrend direction = positive AND |close - open| > ATR × minimum body multiplier AND volume > SMA(volume, lookback) × volume multiplier AND RSI < upper threshold

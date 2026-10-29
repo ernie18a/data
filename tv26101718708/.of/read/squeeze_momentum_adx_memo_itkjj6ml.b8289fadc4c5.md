@@ -1,0 +1,6 @@
+Calculation: Squeeze-on = the Bollinger Bands (SMA of close ± 2 standard deviations, using the same lookback) are inside the Keltner Channel (EMA of close ± 1.5 × EMA of true range, using that lookback)
+Calculation: Momentum histogram = linear regression, over the squeeze lookback, of close minus the average of (the midpoint between the highest high and lowest low) and the SMA of close
+Long: ADX crosses above its signal threshold AND DI+ > DI- OR Squeeze-on AND (momentum histogram rises OR it is below zero and recovers) AND ADX crosses above the critical ADX level AND DI+ > DI- AND higher-timeframe close > its 200-period EMA (using the higher-timeframe bar still forming)
+Short: ADX crosses above its signal threshold AND DI- > DI+ OR Squeeze-on AND momentum histogram falls AND ADX crosses above the critical ADX level AND DI- > DI+ AND higher-timeframe close < its 200-period EMA (using the higher-timeframe bar still forming)
+Exit: long, a confirmed momentum pivot high has a lower value than the previous confirmed momentum pivot high while its corresponding price high is higher
+Exit: short, a confirmed momentum pivot low has a higher value than the previous confirmed momentum pivot low while its corresponding price low is lower

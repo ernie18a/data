@@ -1,0 +1,4 @@
+Calculation: Profile delta at each price level = bullish allocated dollar volume minus bearish allocated dollar volume, accumulated within the current session and transaction-size band. Include lower-timeframe bars, including a still-forming bar; dollar volume is volume × close (or volume when volume is quoted). Allocate each included bar’s dollar volume equally across the ATR-spaced profile levels between its low and high. Classify lower-timeframe bars by close versus open: positive is bullish, negative is bearish, zero contributes neither. A band includes dollar volumes greater than its threshold and less than the next threshold; the highest band has no upper bound.
+Calculation: Normalized delta = 20 × profile delta ÷ the greatest absolute profile delta across levels in that profile.
+Long: Normalized delta > 0 AND round(normalized delta) ≠ 0
+Short: Normalized delta < 0 AND round(normalized delta) ≠ 0

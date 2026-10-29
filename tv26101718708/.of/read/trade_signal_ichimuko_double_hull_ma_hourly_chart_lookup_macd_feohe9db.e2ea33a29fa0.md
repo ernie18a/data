@@ -1,0 +1,6 @@
+Calculation: Smoothed double Hull value = WMA over a rounded square-root lookback of [2 × WMA(close, rounded half-lookback) − WMA(close, full lookback)]; compare the current value with the same calculation applied to the prior bar’s close, using the same lookbacks.
+Calculation: Confidence = (last completed lower-timeframe close − last completed higher-timeframe close) / last completed higher-timeframe close.
+Long: Current smoothed double Hull value > prior-bar value AND no open trade AND confidence > threshold AND close > prior-bar smoothed double Hull value AND Ichimoku Leading Span A > Leading Span B AND open < close AND MACD line > its signal line
+Short: Current smoothed double Hull value < prior-bar value AND no open trade AND confidence < threshold AND close < prior-bar smoothed double Hull value AND Ichimoku Leading Span A < Leading Span B AND open > close AND MACD line < its signal line
+Exit: Long, current smoothed double Hull value < prior-bar value AND close < prior-bar smoothed double Hull value AND confidence < threshold OR position profit < stop-loss threshold OR position profit > target threshold
+Exit: Short, current smoothed double Hull value > prior-bar value AND close > prior-bar smoothed double Hull value AND confidence > threshold OR position profit < stop-loss threshold OR position profit > target threshold

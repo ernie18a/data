@@ -1,0 +1,6 @@
+Calculation: Main EMA = exponential moving average of close on the chart timeframe
+Calculation: EMA stack = four exponential moving averages of close, from shortest to longest lookback, calculated on the chart timeframe or selected override timeframe; use the latest value, including the still-forming bar when the selected timeframe bar is unfinished
+Calculation: Range high = highest high over a lookback window
+Calculation: Range low = lowest low over a lookback window
+Long: ((close > Main EMA AND prior close <= prior Main EMA) OR (close < Main EMA AND prior close >= prior Main EMA)) AND close > prior close AND shortest EMA > next-shortest EMA > next-longest EMA > longest EMA OR close > prior bar's Range high AND shortest EMA > next-shortest EMA > next-longest EMA > longest EMA
+Short: ((close < Main EMA AND prior close >= prior Main EMA) OR (close > Main EMA AND prior close <= prior Main EMA)) AND close < prior close AND shortest EMA < next-shortest EMA < next-longest EMA < longest EMA OR close < prior bar's Range low AND shortest EMA < next-shortest EMA < next-longest EMA < longest EMA

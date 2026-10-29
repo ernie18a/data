@@ -1,0 +1,2 @@
+Long: shorter-lookback exponential moving average of close crosses above longer-lookback exponential moving average AND close > longest-lookback exponential moving average OR volume > volume moving average × volume multiplier AND close > open
+Short: shorter-lookback exponential moving average of close crosses below longer-lookback exponential moving average AND close < longest-lookback exponential moving average OR volume > volume moving average × volume multiplier AND close < open

@@ -1,0 +1,3 @@
+Calculation: GLI = Fed balance sheet − Fed reverse repo balances − Treasury General Account + the USD-converted balance sheets of the Bank of Japan, People’s Bank of China, Bank of England, European Central Bank, Reserve Bank of India, Bank of Canada, Reserve Bank of Australia, Swiss National Bank, Central Bank of Russia, Central Bank of Brazil, Bank of Korea, Reserve Bank of New Zealand, Sveriges Riksbank, and Bank Negara Malaysia + US M2 + USD-converted EU, China, and Japan M2; use the last completed bar from a timeframe higher than the chart timeframe
+Long: GLI >= its exponential moving average
+Short: GLI < its exponential moving average

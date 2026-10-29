@@ -1,0 +1,6 @@
+Calculation: Log close = natural logarithm of close
+Calculation: RSI = relative strength index of log close; RSI average = simple moving average of RSI
+Calculation: MACD line = shorter-period exponential moving average of log close minus longer-period exponential moving average of log close; MACD signal = exponential moving average of MACD line
+Calculation: KST = sum of four simple moving averages of log-close rate of change, with progressively longer rate-of-change lookbacks and weights increasing from 1 to 4; the first three smoothing lookbacks are equal and the fourth is longer. KST signal = simple moving average of KST
+Long: 2-minute SMA with the shorter lookback > 2-minute SMA with the longer lookback AND RSI > RSI average AND MACD line > MACD signal AND KST > KST signal AND KST < 0 AND at least one of these conditions was false on the prior bar
+Short: 2-minute SMA with the shorter lookback < 2-minute SMA with the longer lookback AND RSI < RSI average AND MACD line < MACD signal AND KST < KST signal AND KST > 0 AND at least one of these conditions was false on the prior bar

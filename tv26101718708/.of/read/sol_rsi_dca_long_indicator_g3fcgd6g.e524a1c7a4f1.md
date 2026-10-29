@@ -1,0 +1,4 @@
+Calculation: Cumulative deviation at rung k = the first rung’s deviation plus each later rung’s deviation, where each step is the previous step multiplied by the deviation-step multiplier
+Calculation: Running average entry = total quote cost of the base order and filled averaging orders divided by their total asset quantity
+Long: Flat AND RSI(close, lookback) on the higher-timeframe bar still forming < configured RSI threshold OR in a long position AND an averaging order remains AND close <= base entry × (1 − cumulative deviation at the next unfilled rung)
+Exit: long, close >= running average entry × (1 + configured take-profit fraction)

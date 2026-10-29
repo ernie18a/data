@@ -1,0 +1,4 @@
+Calculation: Cumulative volatility percentile = percentile rank of the sum of true range over the activity lookback, ranked over a longer window equal to the lookback parameter multiplied by the activity lookback parameter, capped at 4900 bars
+Calculation: Cumulative volume percentile = percentile rank of the sum of volume over the activity lookback, ranked over the same longer window
+Long: cumulative volatility percentile > volatility threshold AND cumulative volume percentile > volume threshold AND open < close
+Short: cumulative volatility percentile > volatility threshold AND cumulative volume percentile > volume threshold AND open >= close

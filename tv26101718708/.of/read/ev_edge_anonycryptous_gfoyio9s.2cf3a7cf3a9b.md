@@ -1,0 +1,14 @@
+Calculation: Consolidation range = highest high minus lowest low over the lookback; a bar is compressed when this range is less than ATR × lookback × compression factor. Consolidation is active after the minimum number of consecutive compressed bars.
+Calculation: Pre-consolidation impulse is upward when the close at the start of the consolidation lookback is above the low at the start of the impulse lookback; downward when it is below.
+Calculation: Volume-weighted RSI = RSI of price changes weighted by current volume divided by its moving average.
+Calculation: Money Flow Index = money-flow index of typical price ((high + low + close) / 3) multiplied by volume.
+Calculation: Bullish divergence = a confirmed price pivot low is lower than the preceding pivot low while volume-weighted RSI at the pivot is higher; bearish divergence = a confirmed price pivot high is higher than the preceding pivot high while volume-weighted RSI at the pivot is lower.
+Calculation: EV score starts at 60 and each active bar adds 0.3 × the weighted average of price delta and, when enabled, volume delta, then clamps to 0–100. Price delta = favorable close-to-entry drift divided by ATR × 8, minus 15 + 10 × retracement depth in ATR when close has retraced into/past the consolidation boundary (depth is floored at zero). Volume delta = (volume / volume moving average − 1) × 10, minus 5 when absolute drift in ATR is below 0.1 and volume ratio exceeds 1.2. Use the configured price and volume weights; without volume, use price delta alone.
+Long: No position active AND previous bar had an active consolidation AND close > previous consolidation high + ATR × breakout buffer AND (impulse alignment disabled OR pre-consolidation impulse upward) AND (confirmation filter disabled OR every enabled confirmation meter is above its midline)
+Short: No position active AND previous bar had an active consolidation AND close < previous consolidation low − ATR × breakout buffer AND (impulse alignment disabled OR pre-consolidation impulse downward) AND (confirmation filter disabled OR every enabled confirmation meter is below its midline)
+Long: Price pivot low < preceding price pivot low AND volume-weighted RSI at the pivot > preceding volume-weighted RSI pivot
+Short: Price pivot high > preceding price pivot high AND volume-weighted RSI at the pivot < preceding volume-weighted RSI pivot
+Long: Volume-weighted RSI > its midline AND MFI > its midline, using only enabled confirmation meters
+Short: Volume-weighted RSI < its midline AND MFI < its midline, using only enabled confirmation meters
+Exit: Long or short, bars since entry >= minimum bars before early exit AND (EV score >= high exit threshold OR EV score <= low exit threshold)
+Exit: Long or short, bars since entry >= maximum tracking bars

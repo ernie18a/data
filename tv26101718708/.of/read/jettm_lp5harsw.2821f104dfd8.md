@@ -1,0 +1,5 @@
+Calculation: Smoothed price = 5-bar simple moving average of (high + low + close) / 3
+Calculation: Oversold state = each of the last 5 closes is below the lowest smoothed price in the last 10 bars
+Calculation: Overbought state = each of the last 5 closes is at or above the highest smoothed price in the last 10 bars
+Long: On the chart timeframe, the prior bar was oversold and the current bar is not oversold OR on a higher timeframe, the current bar is oversold or oversold convergence has occurred since the start of the current higher-timeframe bar OR low > high[2] AND (low - high[2]) / close * 100 >= minimum gap percentage
+Short: On the chart timeframe, the prior bar was overbought and the current bar is not overbought OR on a higher timeframe, the current bar is overbought or overbought convergence has occurred since the start of the current higher-timeframe bar OR high < low[2] AND (low[2] - high) / close * 100 >= minimum gap percentage

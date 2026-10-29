@@ -1,0 +1,2 @@
+Long: Parabolic SAR indicates downtrend AND RSI(close, long lookback) > RSI threshold AND ADX > EMA(ADX, shorter lookback) AND Chaikin Money Flow > 0
+Exit: long, Parabolic SAR indicates uptrend AND RSI(close, long lookback) < RSI threshold AND ADX < EMA(ADX, shorter lookback) AND Chaikin Money Flow < 0

@@ -1,0 +1,5 @@
+Calculation: First-candle high/low = highest high / lowest low during the configured opening-candle interval
+Long: close > first-candle high AND previous close < previous first-candle high AND a lower-timeframe bar has just started AND within the configured date range and session AND long trade count < configured maximum AND configured trade direction allows long
+Short: close < first-candle low AND previous close > previous first-candle low AND a lower-timeframe bar has just started AND within the configured date range and session AND short trade count < configured maximum AND configured trade direction allows short
+Exit: long, (close < first-candle high AND a lower-timeframe bar has just started) OR close < entry price − configured stop distance OR close > entry price + configured target distance OR outside the configured date range or session
+Exit: short, (close > first-candle low AND a lower-timeframe bar has just started) OR close > entry price + configured stop distance OR close < entry price − configured target distance OR outside the configured date range or session

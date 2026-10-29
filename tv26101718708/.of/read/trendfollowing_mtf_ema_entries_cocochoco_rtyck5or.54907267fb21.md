@@ -1,0 +1,4 @@
+Long: Chart close > chart EMA AND chart EMA > prior chart EMA AND higher-timeframe close > higher-timeframe EMA AND higher-timeframe EMA > prior higher-timeframe EMA on each of two higher timeframes (last completed bars) AND ADX on the chart timeframe > its threshold AND ADX > prior ADX AND no long entry has occurred since chart direction ceased to be bullish or price crossed below the EMA
+Short: Chart close < chart EMA AND chart EMA < prior chart EMA AND higher-timeframe close < higher-timeframe EMA AND higher-timeframe EMA < prior higher-timeframe EMA on each of two higher timeframes (last completed bars) AND ADX on the chart timeframe > its threshold AND ADX > prior ADX AND no short entry has occurred since chart direction ceased to be bearish or price crossed above the EMA
+Exit: long, chart close crosses below chart EMA
+Exit: short, chart close crosses above chart EMA

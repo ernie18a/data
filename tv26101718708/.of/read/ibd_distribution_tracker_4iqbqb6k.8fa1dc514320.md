@@ -1,0 +1,3 @@
+Short: ((close - previous close) / previous close <= -drop threshold AND volume > previous volume) OR (volume > previous volume AND close <= low + 0.5 × (high - low)) OR (volume > moving average of volume over its configured lookback AND (close - previous close) / previous close < stalling threshold)
+Short: valid distribution-day count over the configured rolling lookback >= danger threshold
+Calculation: Valid distribution-day count = number of distribution days in the rolling lookback for which no later close has risen to or above that day’s close × (1 + invalidation threshold)

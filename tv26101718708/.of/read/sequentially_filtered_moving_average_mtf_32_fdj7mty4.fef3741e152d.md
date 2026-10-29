@@ -1,0 +1,3 @@
+Calculation: Sequentially filtered SMA = the SMA updates to its current value only when its n consecutive bar-to-bar changes are all strictly positive or all strictly negative; otherwise it retains its previous value. Calculate on a higher timeframe and compare values from the last completed higher-timeframe bars.
+Long: Any of the three sequentially filtered SMAs > its previous value
+Short: Any of the three sequentially filtered SMAs < its previous value

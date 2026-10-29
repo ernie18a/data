@@ -1,0 +1,11 @@
+Calculation: Bull trend = short-period EMA(close) > medium-period EMA(close) > long-period EMA(close), all on the chart timeframe.
+Calculation: Bull surge = Bull trend AND (a bullish bar whose high-low range is at least a configurable fraction of the prior bar's ATR, OR two consecutive bullish bars whose combined high-low range is at least that fraction of the ATR from two bars ago).
+Calculation: Pullback bar = close < prior close OR low < prior low.
+Calculation: Abandonment level = surge high − configurable retracement fraction × (surge high − surge low).
+Calculation: Narrow bear channel = at least all-but-one of the last configurable number of bars are bearish AND their highest high minus lowest low is no more than a configurable multiple of current ATR AND current close is below the close that many bars ago.
+Calculation: Long-entry stop = lowest close of the pullback − configurable ATR multiple × current ATR. After entry, raise the trailing stop to a pullback bar's low when a later bar's high exceeds that pullback bar's high; never lower it.
+Calculation: Swing High count = since Bull trend began or the running high was renewed, count up to three occasions where a Pullback bar is followed by a non-Pullback bar with high > prior high; reset the count and pullback-ready state on a new running high, and reset all swing tracking when Bull trend ends.
+Long: On a confirmed chart-timeframe bar, after a Bull surge, a pullback begins, current close has not fallen below the Abandonment level, current high > the pullback reference high, and the pullback reference high > Long-entry stop, while Narrow bear channel is false; count successive entries as High 1, High 2, then High 3, returning to pullback tracking after a bearish first bar following an entry and stopping after the third such bearish first bar.
+Long: Bull trend AND Swing High count increments after a pullback-ready bar when the current bar is not a Pullback bar, high > prior high, and the count is below three.
+Short:
+Exit: Long, close < trailing stop

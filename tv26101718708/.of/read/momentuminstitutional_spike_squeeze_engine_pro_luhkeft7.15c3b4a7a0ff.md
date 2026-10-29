@@ -1,0 +1,20 @@
+Calculation: Fast ROC = rate of change of close over a shorter lookback
+Calculation: Slow ROC = rate of change of close over a longer lookback
+Calculation: Average volume = simple moving average of volume
+Calculation: Breakout = close > high of the last completed daily bar (higher timeframe)
+Calculation: Volume confirmation = volume > average volume × breakout-volume multiplier
+Calculation: Volume spike = volume > average volume × spike-volume multiplier
+Calculation: Range expansion = high − low > average of high − low over a lookback × range multiplier
+Calculation: Squeeze = Bollinger Bands are inside Keltner Channels, using the same-period bands and channels
+Calculation: Pre-spike = squeeze AND volume > average volume × buildup multiplier AND volume < average volume × spike-volume multiplier AND |fast ROC − slow ROC| < momentum-gap threshold AND fast ROC > 0
+Calculation: Momentum burst = fast ROC > slow ROC × momentum multiplier AND fast ROC > momentum threshold
+Calculation: Uptrend = positive directional index > negative directional index
+Calculation: Downtrend = negative directional index > positive directional index
+Calculation: Smart spike = volume spike AND breakout AND momentum burst AND ADX > trend-strength threshold AND uptrend
+Calculation: Trap spike = volume spike AND NOT breakout AND RSI > overbought threshold AND fast ROC < slow ROC AND downtrend
+Calculation: Exhaustion spike = volume spike AND RSI > exhaustion threshold AND NOT range expansion
+Calculation: Pre-momentum = fast ROC > 0 AND slow ROC > 0 AND volume confirmation AND NOT breakout
+Calculation: Strong break = breakout AND volume confirmation AND momentum burst
+Calculation: AI score = normalized weighted sum of: fast ROC > 0, fast ROC > slow ROC, RSI > strength threshold, ADX > trend-strength threshold, volume confirmation, breakout, smart spike, and pre-spike; subtract weighted trap-spike and exhaustion-spike terms
+Calculation: Slow rise = slow ROC > 0 AND fast ROC > 0 AND fast ROC < slow ROC AND NOT volume confirmation
+Long: (AI score > early-entry threshold AND (pre-momentum OR pre-spike)) OR (AI score > institutional-entry threshold AND strong break) OR slow rise OR pre-spike OR smart spike

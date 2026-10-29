@@ -1,0 +1,4 @@
+Calculation: Composite score = EMA-smoothed weighted average of RSI, normalized MACD histogram, normalized percentage distance from EMA, normalized volume-to-average-volume ratio, and normalized ATR-to-average-ATR ratio; normalize signed values using the rolling maximum absolute value over a common lookback to [0,100], and ratio values around 1 over a range of 1 to [0,100], clamping each result to that range
+Calculation: Mixed/chop = ADX below its threshold AND composite score between its bearish and bullish bias levels AND absolute one-bar composite-score change at or below its flat-slope threshold
+Long: composite score >= neutral midpoint AND NOT mixed/chop
+Short: composite score < neutral midpoint AND NOT mixed/chop

@@ -1,0 +1,5 @@
+Calculation: Narrow spread = current high − low ≤ its rolling low-spread percentile; low volume = volume ≤ its rolling low-volume percentile (or always true when volume is ignored).
+Calculation: Base zone = a qualifying bar centered at (high + low) / 2, with height max(high − low, minimum zone height × rolling median spread); overlapping same-side forming bases merge by extending the zone to cover their combined ranges.
+Calculation: Demand base = narrow spread and low volume and close > EMA. Supply base = narrow spread and low volume and close < EMA. With the EMA background filter disabled, demand instead requires close < prior close and supply requires close > prior close.
+Long: A demand base is forming and the bar closes above its zone top within the departure limit, before any close below its zone bottom.
+Short: A supply base is forming and the bar closes below its zone bottom within the departure limit, before any close above its zone top.

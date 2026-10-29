@@ -1,0 +1,5 @@
+Calculation: Entry moving average = EMA, SMA, or WMA of close over a lookback
+Long: Entry moving average > its value on each of the prior two bars AND ADX > threshold AND year = start year AND month >= start month AND day >= start day AND hour >= start hour AND minute >= start minute
+Short: Entry moving average < its value on each of the prior two bars AND ADX > threshold AND year = start year AND month >= start month AND day >= start day AND hour >= start hour AND minute >= start minute
+Exit: Long, Entry moving average < its value on each of the prior two bars AND ADX > threshold AND year = start year AND month >= start month AND day >= start day AND hour >= start hour AND minute >= start minute
+Exit: Short, Entry moving average > its value on each of the prior two bars AND ADX > threshold AND year = start year AND month >= start month AND day >= start day AND hour >= start hour AND minute >= start minute

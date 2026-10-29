@@ -1,0 +1,10 @@
+Calculation: EMA angle = degrees(arctan((current EMA − previous EMA) / (current close of the higher-timeframe bar still forming × a scaling parameter)))
+Calculation: Average EMA angle = simple moving average of EMA angle over a lookback
+Calculation: Long take-profit price = entry price × (1 + take-profit percentage)
+Calculation: Long stop-loss price = entry price × (1 − stop-loss percentage)
+Calculation: Short take-profit price = entry price × (1 − take-profit percentage)
+Calculation: Short stop-loss price = entry price × (1 + stop-loss percentage)
+Long: lower of open and close ≥ high − (high − low) × a shape parameter AND (color filter disabled OR close > open) AND high − low ≥ ATR × a shape-size parameter AND (minimum ATR-size filter disabled OR high − low ≥ ATR × its minimum parameter) AND (maximum ATR-size filter disabled OR high − low ≤ ATR × its maximum parameter) AND (swing-low filter disabled OR low = lowest low over its lookback OR previous bar's low = lowest low over the current lookback) AND Average EMA angle > positive guide AND chart bar is complete AND datetime is within the configured trading window
+Short: higher of open and close ≤ low + (high − low) × a shape parameter AND (color filter disabled OR close < open) AND high − low ≥ ATR × a shape-size parameter AND (minimum ATR-size filter disabled OR high − low ≥ ATR × its minimum parameter) AND (maximum ATR-size filter disabled OR high − low ≤ ATR × its maximum parameter) AND (swing-high filter disabled OR high = highest high over its lookback OR previous bar's high = highest high over the current lookback) AND Average EMA angle < negative guide AND chart bar is complete AND datetime is within the configured trading window
+Exit: long, high ≥ Long take-profit price OR low ≤ Long stop-loss price
+Exit: short, low ≤ Short take-profit price OR high ≥ Short stop-loss price

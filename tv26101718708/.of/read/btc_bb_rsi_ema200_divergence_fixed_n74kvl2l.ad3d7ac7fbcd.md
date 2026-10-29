@@ -1,0 +1,10 @@
+Calculation: Regular bullish divergence = On a confirmed pivot low, the low is below the previous pivot low and RSI at the pivot is above RSI at the previous pivot low, with no more than the maximum pivot gap.
+Calculation: Regular bearish divergence = On a confirmed pivot high, the high is above the previous pivot high and RSI at the pivot is below RSI at the previous pivot high, with no more than the maximum pivot gap.
+Calculation: Hidden bullish divergence = On a confirmed pivot low, the low is above the previous pivot low and RSI at the pivot is below RSI at the previous pivot low, with no more than the maximum pivot gap.
+Calculation: Hidden bearish divergence = On a confirmed pivot high, the high is below the previous pivot high and RSI at the pivot is above RSI at the previous pivot high, with no more than the maximum pivot gap.
+Long: Regular bullish divergence
+Long: Hidden bullish divergence
+Long: (Trend mode is Off OR (close > EMA AND (Trend mode is Soft OR EMA > previous EMA))) AND (higher-timeframe EMA confirmation is disabled OR close > EMA on the higher-timeframe bar still forming) AND low <= lower Bollinger Band AND ((RSI > oversold level AND previous RSI <= oversold level) OR (RSI <= oversold level AND RSI > previous RSI AND previous RSI <= RSI two bars ago)) AND Regular bullish divergence AND (volume filter is disabled OR volume >= volume SMA × volume multiplier) AND (no prior long signal OR bars since prior long signal >= cooldown)
+Short: Regular bearish divergence
+Short: Hidden bearish divergence
+Short: (Trend mode is Off OR (close < EMA AND (Trend mode is Soft OR EMA < previous EMA))) AND (higher-timeframe EMA confirmation is disabled OR close < EMA on the higher-timeframe bar still forming) AND high >= upper Bollinger Band AND ((RSI < overbought level AND previous RSI >= overbought level) OR (RSI >= overbought level AND RSI < previous RSI AND previous RSI >= RSI two bars ago)) AND Regular bearish divergence AND (volume filter is disabled OR volume >= volume SMA × volume multiplier) AND (no prior short signal OR bars since prior short signal >= cooldown)

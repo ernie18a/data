@@ -1,0 +1,5 @@
+Calculation: Short-lookback daily EMA = EMA of daily-bar closes, using the still-forming daily bar; daily is higher than an intraday chart and the same timeframe as a daily chart.
+Calculation: Longer-lookback daily EMA = EMA of daily-bar closes with a longer lookback than the short-lookback daily EMA, using the still-forming daily bar.
+Calculation: Weekly EMA = EMA of weekly-bar closes, using the still-forming weekly bar; weekly is higher than daily or intraday charts.
+Calculation: Daily open = open of the still-forming daily bar.
+Long: For any of the three EMAs, current close > that EMA AND current close < daily open AND current close > current open AND previous close > that EMA on the previous bar after at least one low < that EMA within the undercut lookback ending on the previous bar AND that reclaim condition was false two bars ago; only the first qualifying signal per day, prioritizing the short-lookback daily EMA, then the longer-lookback daily EMA, then the weekly EMA.

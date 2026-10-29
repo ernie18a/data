@@ -1,0 +1,9 @@
+Calculation: Custom Supertrend = ATR-based upper and lower bands around the source price; initialize direction bullish and line at the lower band. On each bar, if source price > prior line, set direction bullish and line to the greater of the lower band and prior line; otherwise set direction bearish and line to the lesser of the upper band and prior line. Use the same lookback and multiplier for both timeframes.
+Calculation: Higher-timeframe Supertrend = Custom Supertrend calculated from higher-timeframe bars, using the bar still forming.
+Calculation: Fast SMA = Simple moving average of close with a shorter lookback than Slow SMA.
+Calculation: Slow SMA = Simple moving average of close with a longer lookback than Fast SMA.
+Calculation: ATR = Average True Range.
+Long: Custom Supertrend direction is bullish AND close > Custom Supertrend line on the chart timeframe AND Higher-timeframe Supertrend direction is bullish AND Fast SMA >= Slow SMA AND position is flat
+Short: Custom Supertrend direction is bearish AND close < Custom Supertrend line on the chart timeframe AND Higher-timeframe Supertrend direction is bearish AND Fast SMA <= Slow SMA AND position is flat
+Exit: long, low <= entry price - (ATR × stop multiplier) OR high >= entry price + (first target multiple × ATR × stop multiplier) OR high >= entry price + (second target multiple × ATR × stop multiplier) OR high >= entry price + (third target multiple × ATR × stop multiplier)
+Exit: short, high >= entry price + (ATR × stop multiplier) OR low <= entry price - (first target multiple × ATR × stop multiplier) OR low <= entry price - (second target multiple × ATR × stop multiplier) OR low <= entry price - (third target multiple × ATR × stop multiplier)

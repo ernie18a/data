@@ -1,0 +1,3 @@
+Calculation: Ichimoku cloud bounds = the maximum and minimum, respectively, of the cloud spans calculated displacement bars earlier on each configured timeframe; Span A is the midpoint of Tenkan and Kijun, and Span B is the midpoint of the highest high and lowest low over its lookback.
+Long: On any configured timeframe, close > upper Ichimoku cloud bound
+Short: On any configured timeframe, close < lower Ichimoku cloud bound

@@ -1,0 +1,5 @@
+Calculation: Session VWAP = sum(typical price × volume) / sum(volume) over chart bars since the start of the current higher-timeframe bar; typical price = (high + low + close) / 3
+Calculation: Volume-weighted standard deviation = square root of max( sum(typical price² × volume) / sum(volume) − Session VWAP², 0 ), over the same bars
+Calculation: Each of three upper and lower bands = Session VWAP ± volume-weighted standard deviation × multiplier, with multipliers increasing from inner to outer bands
+Long: Current low ≤ any band AND previous low > that band’s previous value AND at least the cooldown number of chart bars has passed since the previous long signal
+Short: Current high ≥ any band AND previous high < that band’s previous value AND at least the cooldown number of chart bars has passed since the previous short signal

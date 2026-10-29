@@ -1,0 +1,6 @@
+Calculation: Confirmed swing high = a bar whose high is higher than the highs of the chosen number of bars before and after it; confirmed after those later bars close
+Calculation: Confirmed swing low = a bar whose low is lower than the lows of the chosen number of bars before and after it; confirmed after those later bars close
+Calculation: Equal-high zone level = highest of at least two confirmed swing highs within an ATR-multiple or price-percentage tolerance, with the chosen minimum and maximum bar gaps between touches; each qualifying touch updates the level. The zone remains live until price trades above the level, or it expires by age.
+Calculation: Equal-low zone level = lowest of at least two confirmed swing lows within an ATR-multiple or price-percentage tolerance, with the chosen minimum and maximum bar gaps between touches; each qualifying touch updates the level. The zone remains live until price trades below the level, or it expires by age.
+Long: A live equal-low zone is swept (low < zone level AND close >= zone level) OR a live equal-high zone is broken (high > zone level AND close > zone level)
+Short: A live equal-high zone is swept (high > zone level AND close <= zone level) OR a live equal-low zone is broken (low < zone level AND close < zone level)

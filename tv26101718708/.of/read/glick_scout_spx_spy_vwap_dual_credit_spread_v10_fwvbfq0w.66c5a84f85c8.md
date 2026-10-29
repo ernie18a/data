@@ -1,0 +1,6 @@
+Calculation: Current-session VWAP = volume-weighted average of HLC3 (the average of high, low, and close) during the current session, using chart-timeframe bars.
+Calculation: Previous-day VWAP = VWAP of the previous completed daily bar, using the higher daily timeframe.
+Calculation: Bullish score = count of these true conditions: close > open; close > current-session VWAP; close > previous-day VWAP; close crosses above current-session VWAP.
+Calculation: Bearish score = count of these true conditions: close < open; close < current-session VWAP; close < previous-day VWAP; close crosses below current-session VWAP.
+Long: Bullish score >= minimum score AND close crosses above current-session VWAP AND volatility index close is within its minimum and maximum limits AND timestamp is within the configured market session AND bars since the previous signal >= minimum signal gap.
+Short: Bearish score >= minimum score AND close crosses below current-session VWAP AND volatility index close is within its minimum and maximum limits AND timestamp is within the configured market session AND bars since the previous signal >= minimum signal gap.

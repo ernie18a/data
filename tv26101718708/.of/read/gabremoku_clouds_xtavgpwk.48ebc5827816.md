@@ -1,0 +1,9 @@
+Calculation: Typical price = (high + low + close) / 3
+Calculation: Equilibrium = volume-weighted average of typical price over a lookback
+Calculation: VWAS = volume-weighted average of (high − low) over the same lookback as Equilibrium
+Calculation: Bubble lower line = Equilibrium − VWAS × bubble-band multiplier
+Calculation: Bubble upper line = Equilibrium + VWAS × bubble-band multiplier
+Calculation: Adaptive Kumo bullish = Span A ≥ Span B, where Span A is the average of the short-lookback and long-lookback volume-weighted typical prices (shorter lookback < longer lookback), and Span B is the midpoint of the highest and lowest typical prices over a still longer lookback
+Calculation: Contraction = absolute change in Equilibrium over lookback − 1 bars < VWAS × flat-slope threshold
+Long: low ≤ Bubble lower line AND (no prior standard signal or prior standard signal was short) OR (selected bubble trigger is Touch and low ≤ Bubble lower line OR selected bubble trigger is Reentry and low < Bubble lower line AND close > Bubble lower line AND close < Equilibrium) AND (contraction filter disabled OR Contraction) AND (Kumo filter disabled OR Adaptive Kumo bullish) AND no long bubble signal within the cooldown
+Short: high ≥ Bubble upper line AND (no prior standard signal or prior standard signal was long) OR (selected bubble trigger is Touch and high ≥ Bubble upper line OR selected bubble trigger is Reentry and high > Bubble upper line AND close < Bubble upper line AND close > Equilibrium) AND (contraction filter disabled OR Contraction) AND (Kumo filter disabled OR Adaptive Kumo bearish) AND no short bubble signal within the cooldown

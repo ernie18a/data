@@ -1,0 +1,6 @@
+Calculation: Z-score MACD histogram = (MACD histogram − its rolling mean) / its rolling standard deviation; MACD histogram = fast EMA(close) − slow EMA(close) − EMA of that MACD line, using a shorter fast EMA and longer slow EMA.
+Calculation: Higher-timeframe Z-score histogram = the same Z-score MACD histogram computed on higher-timeframe bars, using the last completed higher-timeframe bar.
+Calculation: Higher-timeframe state = +1 when its Z-score histogram is below the negative threshold and rising; reset to 0 when it becomes positive or falls. Set to −1 when above the positive threshold and falling; reset to 0 when it becomes negative or rises. Otherwise retain its prior state.
+Calculation: Resonance score = 100 × weighted sum of the higher-timeframe states / sum of their available weights.
+Long: Resonance score crosses above the positive alert threshold OR Z-score MACD histogram is nonnegative
+Short: Resonance score crosses below the negative alert threshold OR Z-score MACD histogram is negative

@@ -1,0 +1,14 @@
+Calculation: Money Flow Index = money flow index calculated from the selected source and volume.
+Calculation: SMI of MFI = 100 × double-smoothed distance of MFI from the midpoint of its rolling high-low range, divided by half the double-smoothed range; use the configured SMI smoothing lengths and moving-average types.
+Calculation: Signal line = moving average of SMI of MFI using its separately configured smoothing length and moving-average type.
+Calculation: SMI histogram = SMI of MFI minus its signal line, using its separately configured MFI, SMI, and signal parameters.
+Calculation: Dynamic-zone upper and lower bounds = configured percentiles of the recent SMI of MFI sample; center bound = its median.
+Calculation: Selected higher-timeframe SMI, signal, histogram, and dynamic-zone values use the still-forming higher-timeframe bar when repainting is enabled, or the last completed higher-timeframe bar otherwise.
+Long: SMI of MFI crosses above its signal line AND the prior SMI is at or below the configured lower cross limit AND (the prior SMI is inside the dynamic zone when inside-zone filtering is enabled, or outside it when outside-zone filtering is enabled).
+Short: SMI of MFI crosses below its signal line AND the prior SMI is at or above the configured upper cross limit AND (the prior SMI is inside the dynamic zone when inside-zone filtering is enabled, or outside it when outside-zone filtering is enabled).
+Long: At a confirmed pivot low, price makes a lower low while the selected oscillator (SMI of MFI or its histogram) makes a higher low than at the previous confirmed pivot low, and the previous pivot is within the configured pivot-spacing range.
+Long: At a confirmed pivot low, price makes a higher low while the selected oscillator makes a lower low than at the previous confirmed pivot low, and the previous pivot is within the configured pivot-spacing range.
+Short: At a confirmed pivot high, price makes a higher high while the selected oscillator makes a lower high than at the previous confirmed pivot high, and the previous pivot is within the configured pivot-spacing range.
+Short: At a confirmed pivot high, price makes a lower high while the selected oscillator makes a higher high than at the previous confirmed pivot high, and the previous pivot is within the configured pivot-spacing range.
+Long: SMI of MFI rises above a falling trendline through successive falling oscillator pivot highs by more than the configured breakout difference.
+Short: SMI of MFI falls below a rising trendline through successive rising oscillator pivot lows by more than the configured breakout difference.

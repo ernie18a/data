@@ -1,0 +1,2 @@
+Long: confirmed bar close > completed reference-session high AND previous bar close <= that high AND bar is outside the reference session
+Short: confirmed bar close < completed reference-session low AND previous bar close >= that low AND bar is outside the reference session

@@ -1,0 +1,41 @@
+Calculation: Bullish liquidity sweep = price moves below a level, closes above it on a bullish candle, and the lower wick is at least the configured fraction of the bar’s range
+Calculation: Bearish liquidity sweep = price moves above a level, closes below it on a bearish candle, and the upper wick is at least the configured fraction of the bar’s range
+Calculation: Major and minor swing levels = latest confirmed pivot highs and lows; the major pivot lookback is longer than the minor pivot lookback
+Calculation: Prior-day high and low = high and low of the last completed daily bar, aggregated from the backtest bars
+Calculation: Tier-1 bullish sweep = bullish sweep of the prior-day low or a major pivot low
+Calculation: Tier-1 bearish sweep = bearish sweep of the prior-day high or a major pivot high
+Calculation: Any bullish sweep = Tier-1 bullish sweep or bullish sweep of a minor pivot low
+Calculation: Any bearish sweep = Tier-1 bearish sweep or bearish sweep of a minor pivot high
+Calculation: Linear regression slope = current linear regression value of close minus its value one bar earlier
+Calculation: Chandelier direction = long when close is above the prior bar’s short Chandelier stop; short when close is below the prior bar’s long Chandelier stop; otherwise retain the prior direction. The stops use the highest high or lowest low over the Chandelier lookback, adjusted by the ATR multiple, and are ratcheted using the prior stops
+Calculation: CVD = rolling sum of volume signed positive when close is at or above open and negative otherwise
+Calculation: CVD slope = CVD minus its value at the configured earlier bar
+Calculation: Choppiness Index = 100 × log10(sum of one-bar ATR over the lookback / highest-high-to-lowest-low range over the lookback) / log10(lookback)
+Calculation: Trending = Choppiness Index is at or below its threshold; choppy = above its threshold
+Calculation: Bullish displacement = bullish candle body exceeds the configured ATR multiple
+Calculation: Bearish displacement = bearish candle body exceeds the configured ATR multiple
+Calculation: Bullish MTF score = count of requested timeframes where close > EMA(20) > EMA(50), using the last completed bar of each aggregated timeframe above or below the chart timeframe
+Calculation: Bearish MTF score = count of requested timeframes where close < EMA(20) < EMA(50), using the last completed bar of each aggregated timeframe above or below the chart timeframe
+Calculation: Bullish scalp sweep = low reaches or falls below the prior lows over a short lookback; use a shorter lookback when bullish MTF score is at least four and the market is trending, otherwise use a longer lookback
+Calculation: Bearish scalp sweep = high reaches or exceeds the prior highs over a short lookback; use a shorter lookback when bearish MTF score is at least four and the market is trending, otherwise use a longer lookback
+Calculation: Recent bullish scalp sweep = a bullish scalp sweep occurred within the recent-bar window
+Calculation: Recent bearish scalp sweep = a bearish scalp sweep occurred within the recent-bar window
+Calculation: Bullish runaway setup = bullish MTF score is at least four, Chandelier direction is long, market is trending, bullish displacement, and the prior candle is bearish or current low is at or below prior low
+Calculation: Bearish runaway setup = bearish MTF score is at least four, Chandelier direction is short, market is trending, bearish displacement, and the prior candle is bullish or current high is at or above prior high
+Calculation: Recent bullish macro sweep = current low reached the prior-day low or latest major pivot low within the recent-bar window
+Calculation: Recent bearish macro sweep = current high reached the prior-day high or latest major pivot high within the recent-bar window
+Calculation: Bullish swing setup = recent bullish macro sweep, bullish candle, positive linear regression slope, and either long Chandelier direction or bullish displacement
+Calculation: Bearish swing setup = recent bearish macro sweep, bearish candle, negative linear regression slope, and either short Chandelier direction or bearish displacement
+Calculation: Active session = current bar is within the configured London or New York session
+Calculation: Long cooldown = more than the configured minimum signal-gap bars since the last bar that triggered a bullish strong, regular, weak, or choppy signal; any bearish strong, regular, weak, or choppy signal resets this reference
+Calculation: Short cooldown = more than the configured minimum signal-gap bars since the last bar that triggered a bearish strong, regular, weak, or choppy signal; any bullish strong, regular, weak, or choppy signal resets this reference
+Calculation: Strong bullish setup = Tier-1 bullish sweep, positive linear regression slope, long Chandelier direction, positive CVD slope, active session when the session gate is enabled, long cooldown, and either trending or bullish displacement
+Calculation: Strong bearish setup = Tier-1 bearish sweep, negative linear regression slope, short Chandelier direction, negative CVD slope, active session when the session gate is enabled, short cooldown, and either trending or bearish displacement
+Calculation: Regular bullish setup = (any bullish sweep or bullish runaway setup), positive linear regression slope, long Chandelier direction, active session when the session gate is enabled, long cooldown, either trending or bullish displacement, and not a strong bullish setup
+Calculation: Regular bearish setup = (any bearish sweep or bearish runaway setup), negative linear regression slope, short Chandelier direction, active session when the session gate is enabled, short cooldown, either trending or bearish displacement, and not a strong bearish setup
+Calculation: Weak bullish setup = any bullish sweep, either positive linear regression slope or long Chandelier direction, trending, long cooldown, and neither strong nor regular bullish setup
+Calculation: Weak bearish setup = any bearish sweep, either negative linear regression slope or short Chandelier direction, trending, short cooldown, and neither strong nor regular bearish setup
+Calculation: Bullish swing signal = bullish swing setup and more than the configured swing-signal spacing since the prior bullish swing signal
+Calculation: Bearish swing signal = bearish swing setup and more than the configured swing-signal spacing since the prior bearish swing signal
+Long: Strong bullish setup OR regular bullish setup OR weak bullish setup OR bullish swing signal
+Short: Strong bearish setup OR regular bearish setup OR weak bearish setup OR bearish swing signal

@@ -1,0 +1,2 @@
+Long: previous close < previous open AND current close > current open AND current candle body size >= ATR × minimum body/ATR threshold
+Short: previous close > previous open AND current close < current open AND current candle body size >= ATR × minimum body/ATR threshold

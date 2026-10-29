@@ -1,0 +1,1 @@
+Long: Year is within the configured investment period AND ((first chart bar OR calendar month differs from the previous bar) AND (EMA filter is off OR EMA is unavailable OR close ≥ EMA)) OR (EMA filter is on AND close crosses above EMA AND uninvested cash > 0)

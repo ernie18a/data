@@ -1,0 +1,4 @@
+Calculation: Chart swing-anchored VWAP = cumulative typical price × volume divided by cumulative volume, starting at a confirmed swing high or swing low; a swing high anchors resistance and a swing low anchors support. The line remains active until its confirmation condition is met: after the minimum post-anchor bars, a resistance line is confirmed by a close above it and a support line by a close below it, on one bar or for the configured consecutive-bar count.
+Calculation: Higher-timeframe swing-anchored VWAP = the same calculation on bars aggregated to a higher timeframe, using the last completed higher-timeframe bar.
+Long: Low ≤ an active chart-timeframe or higher-timeframe support-anchored VWAP ≤ high
+Short: Low ≤ an active chart-timeframe or higher-timeframe resistance-anchored VWAP ≤ high

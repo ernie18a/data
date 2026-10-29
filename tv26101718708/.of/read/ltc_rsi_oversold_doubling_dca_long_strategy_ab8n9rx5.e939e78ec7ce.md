@@ -1,0 +1,2 @@
+Long: Flat AND current bar is within the configured trading window AND lower-timeframe RSI (using the last completed lower-timeframe bar) < configured RSI threshold AND close < configured price ceiling OR long position open AND current bar is within the configured trading window AND the next unfilled safety order exists AND close <= base entry price × (1 − that order’s configured fixed deviation from base entry)
+Exit: long, close >= average entry price × (1 + configured take-profit percentage)

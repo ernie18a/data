@@ -1,0 +1,4 @@
+Calculation: Opening range high/low = maximum high/minimum low during the selected session’s initial ORB interval.
+Calculation: Prior-volume average = simple average of volume over the preceding lookback bars, excluding the current bar.
+Long: Close > opening range high AND volume ≥ prior-volume average × volume multiplier AND the opening range is locked AND the bar is confirmed AND within the session trading window AND no long signal has occurred since the close last returned within the opening range.
+Short: Close < opening range low AND volume ≥ prior-volume average × volume multiplier AND the opening range is locked AND the bar is confirmed AND within the session trading window AND no short signal has occurred since the close last returned within the opening range.

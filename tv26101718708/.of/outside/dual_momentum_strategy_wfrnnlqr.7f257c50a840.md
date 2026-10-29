@@ -1,0 +1,1 @@
+At each decision point, compare the risky asset’s return over the configured lookback period with the safe asset’s return over the same period. Go long the risky asset if its return is positive and greater than the safe asset’s; otherwise go long the safe asset, closing the position in the other asset.

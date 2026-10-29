@@ -1,0 +1,7 @@
+Calculation: Bullish structure = the latest event among close crossing above the latest unbroken confirmed pivot high and close crossing below the latest unbroken confirmed pivot low is an upside break; pivots confirm after the same number of bars on each side
+Calculation: Squeeze momentum = linear regression of close minus the average of the midpoint of the lookback high/low range and the lookback SMA of close, over that lookback
+Calculation: Oversold package = at least a threshold number of these are true: Bollinger %b is at or below its oversold level, RSI is at or below its oversold level, and smoothed stochastic %K is at or below its oversold level
+Calculation: Recent dip reversal = the oversold package was true on the prior bar and is false now, with that reversal occurring within the entry window
+Long: flat AND close > slow EMA AND fast EMA > slow EMA AND slow EMA > its value at a shorter lookback ago AND bullish structure AND squeeze momentum > 0 AND squeeze momentum > its prior-bar value AND recent dip reversal AND RSI > its confirmation level AND RSI > its prior-bar value AND ADX > its minimum threshold AND +DI > -DI
+Exit: long, low <= entry price × (1 − stop-loss fraction)
+Exit: long, low > entry price × (1 − stop-loss fraction) AND high >= entry price × (1 + take-profit fraction)

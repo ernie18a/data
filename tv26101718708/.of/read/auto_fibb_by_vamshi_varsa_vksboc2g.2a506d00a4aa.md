@@ -1,0 +1,10 @@
+Calculation: Confirmed swing high/low = a bar whose high/low is strictly above/below the highs/lows of an equal number of bars on both sides; use the latest confirmed pivot.
+Calculation: Bullish fair value gap = current low > high two bars earlier; bearish fair value gap = current high < low two bars earlier.
+Calculation: Bullish BOS = bullish fair value gap AND close crosses above the latest confirmed swing high on this bar or either of the prior two bars AND more than two bars have passed since the previous bullish BOS.
+Calculation: Bearish BOS = bearish fair value gap AND close crosses below the latest confirmed swing low on this bar or either of the prior two bars AND more than two bars have passed since the previous bearish BOS.
+Calculation: Bullish liquidity sweep = low < latest confirmed swing low AND close > that swing low; bearish liquidity sweep = high > latest confirmed swing high AND close < that swing high.
+Calculation: Bullish setup retracement level = bullish impulse extreme − (bullish impulse extreme − bullish origin) × configured retracement ratio; bearish setup retracement level = bearish impulse extreme + (bearish origin − bearish impulse extreme) × configured retracement ratio. The origin is the lowest low from the latest confirmed swing high through the bullish BOS, or the highest high from the latest confirmed swing low through the bearish BOS. The impulse extreme trails the highest high after bullish BOS or lowest low after bearish BOS until the next confirmed swing point in the impulse direction, then locks.
+Long: bullish liquidity sweep OR bullish BOS OR (active bullish BOS setup AND a bullish liquidity sweep occurred before that BOS AND low <= bullish setup retracement level AND close >= bullish origin)
+Short: bearish liquidity sweep OR bearish BOS OR (active bearish BOS setup AND a bearish liquidity sweep occurred before that BOS AND high >= bearish setup retracement level AND close <= bearish origin)
+Exit: long, low <= bullish origin OR high >= bullish impulse extreme
+Exit: short, high >= bearish origin OR low <= bearish impulse extreme

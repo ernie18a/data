@@ -1,0 +1,6 @@
+Calculation: Support/resistance levels = Most recent confirmed pivot low/high, respectively, on each of three configured higher timeframes; use the last completed higher-timeframe bar. Support and resistance use independently configurable lookback and lookahead periods.
+Calculation: Confluent levels = Two non-missing levels of the same type whose absolute difference is no greater than the configured percentage of the larger level.
+Calculation: Previous-day high/low = High/low of the last completed daily bar.
+Calculation: Current-day high/low = Running high/low of the current daily bar.
+Long: Any pair of the three support levels is confluent OR close is within the configured support range of the first support level AND that level is confluent with the second or third support level OR previous-day low is confluent with any support level OR close crosses above previous-day high OR close crosses above the current-day high recorded on the previous chart bar.
+Short: Any pair of the three resistance levels is confluent OR close is within the configured resistance range of the first resistance level AND that level is confluent with the second or third resistance level OR previous-day high is confluent with any resistance level OR close crosses below previous-day low OR close crosses below the current-day low recorded on the previous chart bar.

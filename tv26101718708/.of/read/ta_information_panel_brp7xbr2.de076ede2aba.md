@@ -1,0 +1,4 @@
+Calculation: Moving-average slope = current moving average minus its value on the previous chart bar; use the same SMA or EMA type and five lookbacks ordered shortest to longest.
+Calculation: Williams %R on each configured alternate timeframe = Williams %R over the corresponding lookback, using lookahead off; the timeframe may be higher or lower than the chart timeframe as configured, and the value is the latest available bar value.
+Long: Close > the moving average at any of the five lookbacks OR the moving-average slope is > 0 at the shortest, middle, or longest lookback OR RSI > 50 OR CCI > 0 OR MFI > 50 OR Williams %R > -50 OR Williams %R on any configured alternate timeframe > -50.
+Short: Close < the moving average at any of the five lookbacks OR the moving-average slope is < 0 at the shortest, middle, or longest lookback OR RSI < 50 OR CCI < 0 OR MFI < 50 OR Williams %R < -50 OR Williams %R on any configured alternate timeframe < -50.

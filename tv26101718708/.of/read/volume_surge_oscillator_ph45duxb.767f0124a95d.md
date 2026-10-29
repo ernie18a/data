@@ -1,0 +1,3 @@
+Calculation: Volume Surge Oscillator = [100 × (close − EMA(close, price_length)) ÷ EMA(close, price_length) ÷ (standard deviation of close over volatility_length, or 1 if that standard deviation is 0)] × [1 + volume_strength × (volume ÷ max(SMA(volume, volume_lookback), 1))^1.5 × sign(volume ÷ max(SMA(volume, volume_lookback), 1) − 1)]
+Long: Volume Surge Oscillator ≥ 0
+Short: Volume Surge Oscillator < 0

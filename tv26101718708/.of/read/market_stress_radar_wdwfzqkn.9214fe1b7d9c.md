@@ -1,0 +1,5 @@
+Calculation: Benchmark stress threshold (%) = max(minimum benchmark drop (%), volatility multiplier × 100 × benchmark ATR measured before the stress window / benchmark close before the stress window × √stress-window length)
+Calculation: Benchmark stress return (%) = 100 × (benchmark close / benchmark close stress-window bars ago − 1)
+Calculation: Relative lead (pp) = asset return from its frozen episode reference close − benchmark return from its frozen episode reference close
+Long: During an active episode triggered by a fresh benchmark stress transition (benchmark stress return ≤ −stress threshold and prior bar was not in stress), on an aligned confirmed close, asset close ≥ its frozen pre-window reference close AND asset has not previously closed at or above that reference during the episode
+Short: During an active episode, on an aligned confirmed close, initial relative lead at detection ≥ relative-strength buffer AND current relative lead ≤ −relative-strength buffer AND weakness has not already been recorded in the episode

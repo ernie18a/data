@@ -1,0 +1,5 @@
+Calculation: NQ score = bounded sum of market-internals components: breadth of the seven largest growth stocks, semiconductor-index performance relative to the broad growth index, volatility level and direction, risk-on versus defensive sector performance, and breadth of the twenty largest growth stocks.
+Calculation: ES score = bounded weighted sector-performance score, plus equal-weight versus capitalization-weight breadth, the same volatility score used in NQ, and financial-sector performance relative to the broad market.
+Calculation: Daily percentage change = (current daily close − previous daily close) / previous daily close × 100; use the higher-timeframe daily bar still forming and its previous completed bar.
+Long: NQ score crosses above its improving threshold OR ES score crosses above its improving threshold OR NQ score crosses below its collapsing threshold.
+Short: NQ score crosses below its fading threshold OR ES score crosses below its fading threshold.

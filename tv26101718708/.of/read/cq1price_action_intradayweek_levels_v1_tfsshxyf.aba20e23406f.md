@@ -1,0 +1,3 @@
+Calculation: bullish/bearish ladder levels = current daily or weekly open × (1 ± configured percentage × scale / 100); use the current bar of the higher anchor timeframe for its open; daily scale = 1; weekly scale is √(configured days per week), configured days per week, 1, or weekly ATR / daily ATR from the last completed bars, using the same ATR lookback.
+Long: current daily or weekly high >= any bullish ladder level
+Short: current daily or weekly low <= any bearish ladder level

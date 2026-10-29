@@ -1,0 +1,6 @@
+Calculation: Latest confirmed RSI pivot low/high = the most recent confirmed local low/high of RSI, using configurable left/right bar counts
+Calculation: RSI Bollinger Bands = RSI moving average plus/minus RSI standard deviation multiplied by a configurable factor over a configurable lookback
+Long: RSI crosses above the latest confirmed RSI pivot low AND RSI is above the long-zone threshold AND RSI on the last completed higher-timeframe bar is above the midpoint
+Short: RSI crosses below the latest confirmed RSI pivot high AND RSI is below the short-zone threshold AND RSI on the last completed higher-timeframe bar is below the midpoint
+Exit: long, low <= the stop level calculated from the prior bar's close OR high >= the target level calculated from the prior bar's close OR RSI >= the upper RSI Bollinger Band adjusted downward by a configurable factor
+Exit: short, high >= the stop level calculated from the prior bar's close OR low <= the target level calculated from the prior bar's close OR RSI <= the lower RSI Bollinger Band adjusted upward by a configurable factor

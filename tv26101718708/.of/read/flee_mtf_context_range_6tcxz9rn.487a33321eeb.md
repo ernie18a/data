@@ -1,0 +1,2 @@
+Long: On each requested context timeframe, short-term EMA > long-term EMA AND close > long-term EMA; use that timeframe’s still-forming bar when it is higher or lower than the chart timeframe
+Short: On each requested context timeframe, short-term EMA < long-term EMA AND close < long-term EMA; use that timeframe’s still-forming bar when it is higher or lower than the chart timeframe

@@ -1,0 +1,9 @@
+Calculation: Attention forecast = softmax-weighted mean of the next-bar ATR-normalized returns for the N prior bars, with weights proportional to exp(−squared Euclidean distance / temperature) between each prior bar's state and the current state; state features are close change / ATR, bar range / ATR, and volume z-score.
+Calculation: Trend Score = EMA of the Attention forecast.
+Calculation: Conviction = 1 − attention-weighted entropy / ln(N).
+Calculation: Long stop = entry price − ATR at entry × stop multiple; long target = entry price + ATR at entry × stop multiple × reward:risk.
+Calculation: Short stop = entry price + ATR at entry × stop multiple; short target = entry price − ATR at entry × stop multiple × reward:risk.
+Long: On a confirmed chart bar, Trend Score > threshold AND previous Trend Score ≤ threshold AND Conviction > floor AND (higher-timeframe close > EMA, using the last completed higher-timeframe bar, if enabled) AND within the enabled session AND outside enabled news windows AND daily loss lockout is false AND (drawdown lock is disabled OR drawdown is below its limit) AND signals today < daily maximum AND last signal side is not long AND bars since last signal ≥ cooldown.
+Short: On a confirmed chart bar, Trend Score < −threshold AND previous Trend Score ≥ −threshold AND Conviction > floor AND (higher-timeframe close < EMA, using the last completed higher-timeframe bar, if enabled) AND within the enabled session AND outside enabled news windows AND daily loss lockout is false AND (drawdown lock is disabled OR drawdown is below its limit) AND signals today < daily maximum AND last signal side is not short AND bars since last signal ≥ cooldown.
+Exit: long, low ≤ long stop OR high ≥ long target (check stop first if both are reached on the same bar).
+Exit: short, high ≥ short stop OR low ≤ short target (check stop first if both are reached on the same bar).

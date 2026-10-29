@@ -1,0 +1,4 @@
+Calculation: Session effort percentile = percentile rank of the active session’s high-low range divided by the prior completed higher-timeframe daily ATR, among completed sessions of the same type and weekday, each normalized by its own prior completed higher-timeframe daily ATR
+Calculation: Smoothed effort percentile = session effort percentile smoothed using the configured smoothing method
+Long: close < the lowest close over the prior divergence lookback bars AND smoothed effort percentile > the lowest smoothed effort percentile over the prior divergence lookback bars
+Short: close > the highest close over the prior divergence lookback bars AND smoothed effort percentile < the highest smoothed effort percentile over the prior divergence lookback bars

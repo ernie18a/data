@@ -1,0 +1,9 @@
+Calculation: Mean-deviation oscillator = (HLC3 − its simple moving average) ÷ (0.015 × its mean absolute deviation from that moving average)
+Calculation: Bullish regular divergence = a confirmed chart-timeframe price pivot low is lower than the preceding confirmed pivot low, while the oscillator at the pivot is higher; the pivots are no farther apart than the maximum lookback
+Calculation: Bullish hidden divergence = a confirmed chart-timeframe price pivot low is higher than the preceding confirmed pivot low, while the oscillator at the pivot is lower; the pivots are no farther apart than the maximum lookback
+Calculation: Bearish regular divergence = a confirmed chart-timeframe price pivot high is higher than the preceding confirmed pivot high, while the oscillator at the pivot is lower; the pivots are no farther apart than the maximum lookback
+Calculation: Bearish hidden divergence = a confirmed chart-timeframe price pivot high is lower than the preceding confirmed pivot high, while the oscillator at the pivot is higher; the pivots are no farther apart than the maximum lookback
+Calculation: Higher-timeframe bullish divergence state = the latest confirmed higher-timeframe regular bullish divergence occurred after the latest confirmed higher-timeframe regular bearish divergence
+Calculation: Higher-timeframe bearish divergence state = the latest confirmed higher-timeframe regular bearish divergence occurred after the latest confirmed higher-timeframe regular bullish divergence
+Long: Bullish regular divergence OR bullish hidden divergence, AND higher-timeframe bullish divergence state
+Short: Bearish regular divergence OR bearish hidden divergence, AND higher-timeframe bearish divergence state

@@ -1,0 +1,3 @@
+Calculation: Opening range high/low = highest high and lowest low from 13:00 to 13:59 UTC on weekdays; opening range = high minus low
+Long: weekday UTC time is 14:00–16:30 AND opening range is ready AND opening range <= ATR(14) * 2.5 AND ATR(14) <= SMA(ATR(14), 20) * 2 AND no long has fired that day AND close > opening range high AND previous close <= opening range high AND close > open AND volume > SMA(volume, 20) * 1.5
+Exit: long, low <= entry-signal-bar close - opening range OR high >= entry-signal-bar close + opening range OR weekday UTC time is 16:30

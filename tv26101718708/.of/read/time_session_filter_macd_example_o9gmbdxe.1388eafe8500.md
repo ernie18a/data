@@ -1,0 +1,8 @@
+Calculation: Smoothed HTF MACD = SMA of the higher-timeframe MACD over a lookback equal to the rounded ratio of higher-timeframe bar duration to chart bar duration; higher-timeframe values use the bar still forming.
+Calculation: Smoothed HTF signal line = SMA of the higher-timeframe signal line over the same lookback; the signal line is the selected moving average of MACD, and higher-timeframe values use the bar still forming.
+Calculation: Smoothed HTF trend average = SMA of the selected moving average of higher-timeframe close over the trend lookback, using a lookback equal to the rounded ratio of higher-timeframe bar duration to chart bar duration; higher-timeframe values use the bar still forming.
+Long: Smoothed HTF MACD crosses above Smoothed HTF signal line AND Smoothed HTF MACD < 0 AND Smoothed HTF trend average > its previous chart-bar value AND current chart bar opens and closes within the configured session on an enabled weekday
+Short: Smoothed HTF MACD crosses below Smoothed HTF signal line AND Smoothed HTF MACD > 0 AND Smoothed HTF trend average < its previous chart-bar value AND current chart bar opens and closes within the configured session on an enabled weekday
+Exit: long, Smoothed HTF MACD crosses below Smoothed HTF signal line
+Exit: short, Smoothed HTF MACD crosses above Smoothed HTF signal line
+Exit: long or short, session-end closing is enabled AND current chart bar is outside the configured session on an enabled weekday

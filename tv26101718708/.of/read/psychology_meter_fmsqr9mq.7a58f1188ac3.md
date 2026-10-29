@@ -1,0 +1,4 @@
+Long: close > highest high of the prior 252 bars AND close > previous close AND volume >= 2 × the prior 20-bar average volume
+Long: close > previous close AND previous close < close two bars ago AND previous bar's volume >= 2.5 × the volume average from before that bar AND RSI(14) on the previous bar < 35 AND (previous bar's close - low) / (high - low) >= 0.3
+Short: close < previous close AND volume >= 2.5 × the prior 20-bar average volume AND RSI(14) < 35
+Exit: long, low < the low of the most recent bar with close > previous close AND volume >= 2.5 × the prior 20-bar average volume AND RSI(14) > 75 AND (close - SMA(close, 20)) / ATR(14) > 2.5

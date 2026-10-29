@@ -1,0 +1,9 @@
+Calculation: Price Z-score = (close - rolling mean of close over a lookback) / rolling sample standard deviation of close over the same lookback; use 0 when the standard deviation is zero
+Calculation: Projected Z-score = current Price Z-score + momentum factor × projection bars × (current Price Z-score - previous bar's Price Z-score), clamped to [-4, 4]
+Calculation: Volume contraction = current volume < contraction threshold × simple moving average of volume over a lookback
+Calculation: Regular bullish divergence = at a confirmed pivot low of Price Z-score, close is lower and Price Z-score is higher than at a preceding Price Z-score pivot low within the allowed bar-distance range
+Calculation: Hidden bullish divergence = at a confirmed pivot low of Price Z-score, close is higher and Price Z-score is lower than at a preceding Price Z-score pivot low within the allowed bar-distance range
+Calculation: Regular bearish divergence = at a confirmed pivot high of Price Z-score, close is higher and Price Z-score is lower than at a preceding Price Z-score pivot high within the allowed bar-distance range
+Calculation: Hidden bearish divergence = at a confirmed pivot high of Price Z-score, close is lower and Price Z-score is higher than at a preceding Price Z-score pivot high within the allowed bar-distance range
+Long: Price Z-score ≤ -3 AND Volume contraction OR Price Z-score < 0 AND Projected Z-score > Price Z-score OR Regular bullish divergence OR Hidden bullish divergence
+Short: Price Z-score ≥ 3 AND Volume contraction OR Price Z-score > 0 AND Projected Z-score < Price Z-score OR Regular bearish divergence OR Hidden bearish divergence

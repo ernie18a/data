@@ -1,0 +1,5 @@
+Calculation: Fast stochastic = stochastic oscillator of close, high, and low over a lookback, smoothed with a lookback.
+Calculation: Slow stochastic = moving average of fast stochastic over a second lookback.
+Calculation: Ease of Movement value = 1,000,000 × (the change in half the high-low range from the prior bar, minus that change on the prior bar) ÷ (volume ÷ current high-low range); use zero when the high-low range or volume-to-range ratio is zero.
+Long: close two bars ago < close one bar ago AND close > close one bar ago AND fast stochastic < slow stochastic AND fast stochastic > the level threshold AND Ease of Movement value > the buy threshold
+Short: close two bars ago > close one bar ago AND close < close one bar ago AND fast stochastic > slow stochastic AND fast stochastic < the level threshold AND Ease of Movement value < the sell threshold

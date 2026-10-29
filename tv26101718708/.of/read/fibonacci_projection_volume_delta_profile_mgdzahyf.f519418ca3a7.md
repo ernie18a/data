@@ -1,0 +1,4 @@
+Calculation: Fib level between A and B at ratio r = A − (A − B) × r when measuring from A; otherwise B + (A − B) × r
+Calculation: Projection path = [rolling highest high if its latest occurrence is more recent than the rolling lowest low, otherwise rolling lowest low; first projection at the selected ratio, measured from the highest or lowest extreme according to which occurred earlier; second projection at the selected ratio, measured between the first projection and the opposite extreme if the low occurred later, otherwise between the highest extreme and the first projection; trend extension at its ratio, measured from the highest or lowest extreme according to which occurred earlier]
+Long: Any adjacent pair in the projection path has a later value greater than its prior value
+Short: Any adjacent pair in the projection path has a later value less than or equal to its prior value

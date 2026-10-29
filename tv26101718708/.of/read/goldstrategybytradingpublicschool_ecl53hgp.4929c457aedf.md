@@ -1,0 +1,2 @@
+Long: (RSI crosses above 50 AND close crosses above the lower Bollinger Band) OR (previous close < previous lower Bollinger Band AND close > lower Bollinger Band AND current Bollinger Band basis > previous Bollinger Band basis)
+Short: (RSI crosses below 50 AND close crosses below the upper Bollinger Band) OR (previous close > previous upper Bollinger Band AND close < upper Bollinger Band AND current Bollinger Band basis < previous Bollinger Band basis)

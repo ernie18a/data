@@ -1,0 +1,6 @@
+Calculation: Swing high/low = a local high/low confirmed after the configured number of chart bars on each side
+Calculation: Displacement strength = absolute body size of the break candle divided by ATR
+Calculation: Bullish order block = high-to-low zone of the latest down candle after the swing low pivot and before an upward structure break
+Calculation: Bearish order block = high-to-low zone of the latest up candle after the swing high pivot and before a downward structure break
+Long: On a confirmed chart bar, close crosses above an unbroken swing high, close > open, the latest down candle is after the swing high pivot and within the configured search window, and displacement strength meets the minimum grade; remain active until a later close falls below the order block low
+Short: On a confirmed chart bar, close crosses below an unbroken swing low, close < open, the latest up candle is after the swing low pivot and within the configured search window, and displacement strength meets the minimum grade; remain active until a later close rises above the order block high

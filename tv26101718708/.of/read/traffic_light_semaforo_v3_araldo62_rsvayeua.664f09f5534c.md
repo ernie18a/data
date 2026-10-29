@@ -1,0 +1,3 @@
+Calculation: SMA distance (%) = absolute difference between the short-lookback and long-lookback chart-timeframe SMAs divided by the long-lookback SMA, multiplied by 100
+Long: close < lower Bollinger Band AND RSI < oversold threshold AND ADX > threshold AND short-lookback chart-timeframe SMA > long-lookback chart-timeframe SMA AND SMA distance (%) > threshold
+Short: close > upper Bollinger Band AND RSI > overbought threshold AND ADX > threshold AND short-lookback chart-timeframe SMA < long-lookback chart-timeframe SMA AND SMA distance (%) > threshold

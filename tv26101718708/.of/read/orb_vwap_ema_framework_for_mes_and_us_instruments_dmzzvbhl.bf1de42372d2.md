@@ -1,0 +1,7 @@
+Calculation: Fast EMA = exponential moving average of close with a shorter lookback than the slow EMA
+Calculation: Slow EMA = exponential moving average of close with a longer lookback than the fast EMA
+Calculation: VWAP = volume-weighted average price of HLC3, reset each trading session
+Calculation: Opening-range high = highest high during the opening-range period so far that day
+Calculation: Opening-range low = lowest low during the opening-range period so far that day
+Long: Fast EMA crosses above slow EMA OR during regular trading hours after the opening range is complete, close > opening-range high and no earlier long breakout occurred that day OR during regular trading hours after a long breakout and before a long retest, low <= opening-range high AND close > opening-range high AND close > VWAP AND fast EMA > slow EMA AND this bar is not the breakout bar OR during regular trading hours after a long retest and before a long confirmation, close > open AND close > prior bar high
+Short: Fast EMA crosses below slow EMA OR during regular trading hours after the opening range is complete, close < opening-range low and no earlier short breakout occurred that day OR during regular trading hours after a short breakout and before a short retest, high >= opening-range low AND close < opening-range low AND close < VWAP AND fast EMA < slow EMA AND this bar is not the breakout bar OR during regular trading hours after a short retest and before a short confirmation, close < open AND close < prior bar low

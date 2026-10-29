@@ -1,0 +1,4 @@
+Long: within configured session AND fast EMA > slow EMA AND (trend filter disabled OR close > long-term EMA) AND low <= fast EMA AND close > fast EMA AND RSI crosses above its trigger
+Short: within configured session AND fast EMA < slow EMA AND (trend filter disabled OR close < long-term EMA) AND high >= fast EMA AND close < fast EMA AND RSI crosses below its trigger
+Exit: Long, low <= entry price - ATR × stop multiple OR high >= entry price + ATR × target multiple OR trailing stop is hit OR bars in position >= configured maximum OR outside configured session
+Exit: Short, high >= entry price + ATR × stop multiple OR low <= entry price - ATR × target multiple OR trailing stop is hit OR bars in position >= configured maximum OR outside configured session

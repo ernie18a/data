@@ -1,0 +1,5 @@
+Calculation: Session POC, VAH, and VAL = For the selected session, divide the session price range into equal rows and allocate each bar’s volume to each row in proportion to the bar’s price-range overlap; assign zero-range bars’ volume to the row containing their midpoint. POC is the center of the highest-volume row. Starting at POC, add the adjacent row with greater volume until the configured fraction of total volume is reached; VAH and VAL are the upper and lower bounds of the resulting value area.
+Calculation: Value area midpoint = (VAH + VAL) / 2
+Calculation: Migration direction = In POC-slope mode, +1 when POC exceeds its value N bars earlier by more than one minimum price increment, −1 when it is lower by more than one minimum price increment, otherwise 0; in value-midpoint-slope mode, apply the same comparison to the value area midpoint; in price-versus-midpoint mode, +1 when close is above the value area midpoint, −1 when below, otherwise 0. In standard-colors mode, 0.
+Long: Migration direction = +1
+Short: Migration direction = −1

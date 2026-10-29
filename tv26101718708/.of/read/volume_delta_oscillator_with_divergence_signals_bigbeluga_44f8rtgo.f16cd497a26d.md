@@ -1,0 +1,5 @@
+Calculation: normalized delta = clamp(50 × (close ≥ open ? 1 : −1) × volume × candle body ratio ÷ max(volume, 1), −50, 50), where candle body ratio = abs(close − open) ÷ (high − low), or 0 when high = low
+Calculation: smoothed delta = EMA of normalized delta over a lookback
+Calculation: confirmed oscillator pivot low/high = a low/high in smoothed delta that is confirmed after the right-side lookback bars, using the left- and right-side lookbacks; compare its value and the price low/high at its pivot bar with those at the previous confirmed pivot of the same kind
+Long: confirmed oscillator pivot low is higher than the previous confirmed oscillator pivot low AND low at its pivot bar is lower than low at the previous oscillator pivot low bar
+Short: confirmed oscillator pivot high is lower than the previous confirmed oscillator pivot high AND high at its pivot bar is higher than high at the previous oscillator pivot high bar

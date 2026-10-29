@@ -1,0 +1,4 @@
+Calculation: Cumulative safety-order deviation = first deviation plus each subsequent deviation, with each subsequent step equal to the prior step multiplied by the deviation-step multiplier
+Long: Flat AND lower-timeframe RSI on the last completed bar crossed down through its level since the prior chart bar (prior sampled RSI > level AND current sampled RSI <= level)
+Long: Long position AND fewer than the maximum safety orders filled AND lower-timeframe RSI on the last completed bar < its level AND close <= base entry price × (1 − cumulative safety-order deviation)
+Exit: long, close >= average entry price × (1 + take-profit rate)

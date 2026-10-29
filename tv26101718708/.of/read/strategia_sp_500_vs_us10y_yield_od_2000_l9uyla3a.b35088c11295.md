@@ -1,0 +1,3 @@
+Calculation: Yield position = (yield close − lowest yield close in the lookback) / (highest yield close in the lookback − lowest yield close in the lookback), or 0.5 when the highest and lowest are equal; use the still-forming bar from a timeframe higher than the chart timeframe
+Long: yield position <= threshold AND yield data is available AND current bar index > lookback period AND current bar time >= start date
+Exit: long, yield position > threshold AND yield data is available AND current bar index > lookback period AND current bar time >= start date

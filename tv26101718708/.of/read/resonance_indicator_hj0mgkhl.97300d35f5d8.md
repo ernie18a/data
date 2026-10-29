@@ -1,0 +1,6 @@
+Calculation: Momentum oscillator = average of the HMA-smoothed RSI and EMA-smoothed stochastic of close, high, and low.
+Calculation: Trend score = weighted sum of signed step states of the 7-period HMA across progressively longer timeframes, using the last completed bar for each timeframe; intact or fresh-turn up/down states are +1/−1, weakening up/down states are +0.5/−0.5, and flat states are 0, with shorter timeframes weighted more heavily.
+Long: On minute charts, the momentum oscillator on 1-minute bars forms a confirmed pivot low below the oversold threshold AND trend score >= negative trend threshold
+Short: On minute charts, the momentum oscillator on 1-minute bars forms a confirmed pivot high above the overbought threshold AND trend score <= positive trend threshold
+Long: The chart-timeframe momentum oscillator forms a confirmed pivot low below the oversold threshold AND trend score >= negative trend threshold
+Short: The chart-timeframe momentum oscillator forms a confirmed pivot high above the overbought threshold AND trend score <= positive trend threshold

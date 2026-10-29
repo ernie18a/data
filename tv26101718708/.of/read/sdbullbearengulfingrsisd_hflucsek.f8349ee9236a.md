@@ -1,0 +1,5 @@
+Calculation: Williams Vix Fix = 100 × (highest close over its lookback − current low) / highest close over its lookback
+Long: close > previous bar open AND low < previous bar low AND high > previous bar high AND open ≤ previous bar open AND selected moving average of close ≥ its value the configured number of chart bars earlier
+Short: close < previous bar open AND low < previous bar low AND high > previous bar high AND open ≥ previous bar open AND selected moving average of close < its value the configured number of chart bars earlier
+Exit: long, current Williams Vix Fix < 0.5 × Williams Vix Fix on entry bar OR current Williams Vix Fix > 2 × Williams Vix Fix on entry bar OR RSI(hlc3) < 35 OR RSI(hlc3) > 65
+Exit: short, current Williams Vix Fix < 0.5 × Williams Vix Fix on entry bar OR current Williams Vix Fix > 2 × Williams Vix Fix on entry bar OR RSI(hlc3) < 35 OR RSI(hlc3) > 65

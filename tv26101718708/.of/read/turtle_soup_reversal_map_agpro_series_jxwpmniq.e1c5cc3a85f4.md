@@ -1,0 +1,4 @@
+Long: A bar’s low is below the lowest low of the preceding lookback bars AND, on the sweep bar or the following bar according to the confirmation mode, its close is above the lowest low of the preceding lookback bars.
+Short: A bar’s high is above the highest high of the preceding lookback bars AND, on the sweep bar or the following bar according to the confirmation mode, its close is below the highest high of the preceding lookback bars.
+Exit: Long, a confirmed bar’s high is at or above entry price plus the ATR-based target distance OR its low is at or below the sweep low minus the ATR-based stop buffer.
+Exit: Short, a confirmed bar’s low is at or below entry price minus the ATR-based target distance OR its high is at or above the sweep high plus the ATR-based stop buffer.

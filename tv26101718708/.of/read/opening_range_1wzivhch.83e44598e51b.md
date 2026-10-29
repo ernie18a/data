@@ -1,0 +1,11 @@
+Calculation: Opening-range high = highest high from the opening-range session start through the current bar; fixed after the session ends
+Calculation: Opening-range low = lowest low from the opening-range session start through the current bar; fixed after the session ends
+Calculation: Opening-range midpoint = average of opening-range high and opening-range low
+Calculation: Opening-range range = absolute difference between opening-range high and opening-range low
+Calculation: Prior opening-range midpoint = midpoint from the previous session
+Calculation: Opening-range bias = bullish if the current midpoint is above the prior midpoint, bearish if below, neutral if equal
+Calculation: Target offset = configurable fraction of the opening-range range
+Calculation: Long armed = true at opening-range start; false after a long signal; true again when close is below the opening-range midpoint
+Calculation: Short armed = true at opening-range start; false after a short signal; true again when close is above the opening-range midpoint
+Long: Long armed = true AND ((bias disabled AND close crosses above opening-range high) OR (bias enabled AND bias is not bearish AND close crosses above opening-range high) OR (bias enabled AND bias is bearish AND close crosses above opening-range high plus target offset))
+Short: Short armed = true AND ((bias disabled AND close crosses below opening-range low) OR (bias enabled AND bias is not bullish AND close crosses below opening-range low) OR (bias enabled AND bias is bullish AND close crosses below opening-range low minus target offset))

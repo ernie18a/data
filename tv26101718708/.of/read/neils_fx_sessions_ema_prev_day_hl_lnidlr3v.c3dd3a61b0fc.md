@@ -1,0 +1,4 @@
+Calculation: Average session range = mean of recent completed ranges for the same session; each range is session high minus session low.
+Calculation: Opening-range targets = during the configured opening-range period, let H and L be the highest high and lowest low since session start, M=(H+L)/2, and A=average session range. R1=(L+M)/2+0.393A; R2=(L+M)/2+0.636A; S1=(H+M)/2-0.393A; S2=(H+M)/2-0.636A. Freeze these levels when the opening-range period ends.
+Long: During an enabled session's active opening-range breakout period, high crosses above R1 OR high crosses above R2.
+Short: During an enabled session's active opening-range breakout period, low crosses below S1 OR low crosses below S2.

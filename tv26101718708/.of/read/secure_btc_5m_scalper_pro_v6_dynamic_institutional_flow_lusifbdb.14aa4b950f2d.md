@@ -1,0 +1,2 @@
+Long: On the previous completed chart-timeframe bar, close crossed above Supertrend AND close > long-term EMA AND RSI > its midpoint (when enabled) AND ADX > its configured threshold
+Short: On the previous completed chart-timeframe bar, close crossed below Supertrend AND close < long-term EMA AND RSI < its midpoint (when enabled) AND ADX > its configured threshold

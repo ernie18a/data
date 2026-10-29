@@ -1,0 +1,3 @@
+Calculation: Selected higher-timeframe candle open = chart open on the selected higher-timeframe boundary; while fewer than the minimum profile bars have elapsed in the new period, use the previous higher-timeframe candle open if available. The selected timeframe is higher than the chart timeframe.
+Long: Chart close > selected higher-timeframe candle open
+Short: Chart close <= selected higher-timeframe candle open

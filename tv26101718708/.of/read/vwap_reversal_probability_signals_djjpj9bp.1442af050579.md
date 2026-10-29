@@ -1,0 +1,5 @@
+Calculation: Anchored VWAP and deviation bands = volume-weighted average of the price source since the anchor reset, with inner and outer bands at shorter and longer multiples of its volume-weighted standard deviation (outer multiple > inner)
+Long: On a confirmed bar after anchor reset, close crosses below the inner lower band; track that lower excursion, upgrading it if close < outer lower band; signal when close crosses back above the outer lower band if upgraded, otherwise when it crosses back above the inner lower band; reset the excursion after the signal
+Short: On a confirmed bar after anchor reset, close crosses above the inner upper band; track that upper excursion, upgrading it if close > outer upper band; signal when close crosses back below the outer upper band if upgraded, otherwise when it crosses back below the inner upper band; reset the excursion after the signal
+Exit: Long, high >= anchored VWAP fixed at the long-signal bar AND current bar is after the signal bar
+Exit: Short, low <= anchored VWAP fixed at the short-signal bar AND current bar is after the signal bar

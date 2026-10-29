@@ -1,0 +1,5 @@
+Calculation: ATR bands = upper band is close plus a moving average of true range times a multiplier; lower band is close minus the same value
+Calculation: Trailing stop = initialize to the lower band for a long position or upper band for a short position; thereafter ratchet the long stop upward to the greater of its prior value and the current lower band, or the short stop downward to the lesser of its prior value and the current upper band
+Calculation: Profit target = configured price, or start-bar close plus (start-bar close − long stop) × reward/risk multiple for a long, or start-bar close minus (short stop − start-bar close) × reward/risk multiple for a short
+Exit: long, while trailing is active, low < trailing stop (wick trigger) OR prior-bar close < trailing stop (close trigger) OR profit target is crossed by the high or low (wick trigger) OR close crosses the profit target (close trigger)
+Exit: short, while trailing is active, high > trailing stop (wick trigger) OR prior-bar close > trailing stop (close trigger) OR profit target is crossed by the high or low (wick trigger) OR close crosses the profit target (close trigger)

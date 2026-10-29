@@ -1,0 +1,8 @@
+Calculation: True range in ticks = max(high − low, abs(high − previous close), abs(low − previous close)) / minimum tick size
+Calculation: ATR = simple moving average of true range, expressed in ticks
+Calculation: Candle body size in ticks = abs(close − open) / minimum tick size
+Calculation: Body-to-range ratio = abs(close − open) / (high − low), or 0 when high = low
+Long: within a configured morning or noon session AND weekday enabled AND outside enabled exclusion periods AND not paused AND monthly profit below its enabled limit AND monthly loss above its enabled limit AND daily trades below the enabled limit AND long trading allowed AND ATR at least its floor AND ATR at most its limit AND body-to-range ratio at least its minimum AND candle body size at least its minimum AND close > open
+Short: within a configured morning or noon session AND weekday enabled AND outside enabled exclusion periods AND not paused AND monthly profit below its enabled limit AND monthly loss above its enabled limit AND daily trades below the enabled limit AND short trading allowed AND ATR at least its floor AND ATR at most its limit AND body-to-range ratio at least its minimum AND candle body size at least its minimum AND close < open
+Exit: long, low ≤ entry price − stop distance OR high ≥ entry price + target distance OR elapsed bars ≥ enabled time-exit limit OR selected session-end condition
+Exit: short, high ≥ entry price + stop distance OR low ≤ entry price − target distance OR elapsed bars ≥ enabled time-exit limit OR selected session-end condition

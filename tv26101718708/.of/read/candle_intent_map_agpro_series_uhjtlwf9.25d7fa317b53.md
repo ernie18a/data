@@ -1,0 +1,7 @@
+Calculation: Body-to-range ratio = absolute(close - open) / (high - low)
+Calculation: Upper-wick-to-range ratio = (high - max(open, close)) / (high - low)
+Calculation: Lower-wick-to-range ratio = (min(open, close) - low) / (high - low)
+Calculation: Close position = (close - low) / (high - low)
+Calculation: Relative volume = current volume / its moving average over the volume context lookback
+Long: current bar is confirmed AND (close > open AND body-to-range ratio >= initiative body threshold AND close position > bullish initiative close threshold AND relative volume > initiative participation threshold OR lower-wick-to-range ratio >= reaction wick threshold AND close position > bullish rejection close threshold OR (current bullish raw intent AND prior intent direction was short AND relative volume > intent shift threshold AND body-to-range ratio > indecision body threshold))
+Short: current bar is confirmed AND (close < open AND body-to-range ratio >= initiative body threshold AND close position < bearish initiative close threshold AND relative volume > initiative participation threshold OR upper-wick-to-range ratio >= reaction wick threshold AND close position < bearish rejection close threshold OR (current bearish raw intent AND prior intent direction was long AND relative volume > intent shift threshold AND body-to-range ratio > indecision body threshold))

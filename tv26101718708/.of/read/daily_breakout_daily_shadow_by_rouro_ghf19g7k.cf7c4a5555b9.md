@@ -1,0 +1,12 @@
+Calculation: Previous higher-timeframe body high = maximum of open and close of the last completed higher-timeframe bar.
+Calculation: Previous higher-timeframe body low = minimum of open and close of the last completed higher-timeframe bar.
+Calculation: Second-previous higher-timeframe body high = maximum of open and close of the second-last completed higher-timeframe bar.
+Calculation: Second-previous higher-timeframe body low = minimum of open and close of the second-last completed higher-timeframe bar.
+Calculation: Long stop level = selected stop: previous higher-timeframe body low, entry price minus a fixed distance, or entry price minus (previous higher-timeframe high − entry price) divided by a risk-reward parameter; if the safety stop is enabled, use the greater of that stop and entry price minus the safety distance.
+Calculation: Short stop level = selected stop: previous higher-timeframe body high, entry price plus a fixed distance, or entry price plus (entry price − previous higher-timeframe low) divided by a risk-reward parameter; if the safety stop is enabled, use the lesser of that stop and entry price plus the safety distance.
+Calculation: Long target level = selected target: entry price plus a fixed distance, previous higher-timeframe high, or, for partial exits, TP1 at the previous higher-timeframe high and TP2 at TP1 plus (TP1 − entry price) times a risk-reward parameter, or at the previous higher-timeframe close.
+Calculation: Short target level = selected target: entry price minus a fixed distance, previous higher-timeframe low, or, for partial exits, TP1 at the previous higher-timeframe low and TP2 at TP1 minus (entry price − TP1) times a risk-reward parameter, or at the previous higher-timeframe close.
+Long: position is flat AND this is the first chart-timeframe bar of a new higher-timeframe period AND previous higher-timeframe close > second-previous higher-timeframe body high AND previous higher-timeframe open < second-previous higher-timeframe body high
+Short: position is flat AND this is the first chart-timeframe bar of a new higher-timeframe period AND previous higher-timeframe close < second-previous higher-timeframe body low AND previous higher-timeframe open > second-previous higher-timeframe body low
+Exit: long, this is the first chart-timeframe bar of a new higher-timeframe period OR low <= long stop level OR high >= selected target level
+Exit: short, this is the first chart-timeframe bar of a new higher-timeframe period OR high >= short stop level OR low <= selected target level

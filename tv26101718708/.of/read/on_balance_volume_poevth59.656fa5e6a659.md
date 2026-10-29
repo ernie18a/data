@@ -1,0 +1,5 @@
+Calculation: On-Balance Volume (OBV) = cumulative volume added when close is higher than the previous close, subtracted when lower, and unchanged when equal
+Calculation: OBV change = current OBV minus previous OBV
+Calculation: OBV moving average = selected moving-average type applied to OBV
+Long: (no moving average selected AND OBV change > 0) OR (moving average selected AND OBV moving average change > 0) OR (OBV is rising on the chart timeframe and on the first and second selected higher timeframes, and, in triple mode, on the third selected higher timeframe, AND this alignment was false on the preceding chart bar)
+Short: (no moving average selected AND OBV change < 0) OR (moving average selected AND OBV moving average change < 0) OR (OBV is falling on the chart timeframe and on the first and second selected higher timeframes, and, in triple mode, on the third selected higher timeframe, AND this alignment was false on the preceding chart bar)

@@ -1,0 +1,1 @@
+For each tracked stock, define a pivot high as the highest candle-body top in a centered neighborhood of bars. When the stock’s close crosses from at or below its most recently confirmed pivot high to above it, signal a bullish breakout (long). Otherwise, give no signal.

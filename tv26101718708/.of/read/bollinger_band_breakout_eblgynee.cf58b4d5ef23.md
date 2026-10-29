@@ -1,0 +1,3 @@
+Long: (high >= upper Bollinger Band OR close >= upper Bollinger Band, according to configured trigger) AND (current-timeframe moving average filter disabled OR upper Bollinger Band > current-timeframe moving average) AND (higher-timeframe moving average filter disabled OR upper Bollinger Band > higher-timeframe moving average) AND datetime is within the configured backtest window
+Calculation: Long stop = higher of lower Bollinger Band and entry price minus the configured percentage of entry price, when the tighter initial stop is enabled; otherwise lower Bollinger Band
+Exit: long, (low <= long stop OR close <= long stop, according to configured trigger)

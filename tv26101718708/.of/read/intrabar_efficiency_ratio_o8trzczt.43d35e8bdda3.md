@@ -1,0 +1,4 @@
+Calculation: Intrabar efficiency ratio = (chart-bar close minus previous chart-bar close) divided by the sum of absolute close-to-close changes across the lower-timeframe intrabars within that chart bar, multiplied by a weight that is 1 unless optional weighting is enabled, in which case it is the percent rank of the absolute chart-bar close change over a configurable lookback divided by 100; use available intrabars, including a still-forming intrabar if present
+Calculation: Short, medium, and long efficiency-ratio moving averages = the selected moving-average type applied to the intrabar efficiency ratio with, respectively, shorter, intermediate, and longer lookbacks
+Long: For any of the short, medium, or long efficiency-ratio moving averages, its 100-bar percent rank is > 50 and <= 90
+Short: For any of the short, medium, or long efficiency-ratio moving averages, its 100-bar percent rank is >= 10 and <= 50

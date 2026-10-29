@@ -1,0 +1,8 @@
+Calculation: Moving average = selected moving average of close over its configured lookback
+Calculation: Deviation bands = moving average ± standard deviation of close over its configured lookback × configured multiplier
+Calculation: Bollinger Band width = upper deviation band − lower deviation band
+Calculation: Volatility range = long-term simple moving average of Bollinger Band width ± that average × configured volatility factor / 10
+Long: open < lower deviation band AND close > lower deviation band AND RSI crossed above its neutral level within the current or preceding configured RSI lookback bars AND Bollinger Band width is within the volatility range AND timestamp is outside the configured excluded date interval when date filtering is enabled AND timestamp is within the configured session when session filtering is enabled AND current bar is complete
+Short: open > upper deviation band AND close < upper deviation band AND RSI crossed below its neutral level within the current or preceding configured RSI lookback bars AND Bollinger Band width is within the volatility range AND timestamp is outside the configured excluded date interval when date filtering is enabled AND timestamp is within the configured session when session filtering is enabled AND current bar is complete
+Exit: Long, high ≥ take-profit level when take-profit is enabled OR low ≤ active stop level
+Exit: Short, low ≤ take-profit level when take-profit is enabled OR high ≥ active stop level

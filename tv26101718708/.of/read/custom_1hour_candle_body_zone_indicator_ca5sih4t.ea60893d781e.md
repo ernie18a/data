@@ -1,0 +1,4 @@
+Calculation: Zone top = greater of the open of the 1-minute bar starting at the selected time and the close of the 1-minute bar ending one hour later; use completed 1-minute bars, which are lower timeframe than the chart timeframe
+Calculation: Zone bottom = lesser of the open of the 1-minute bar starting at the selected time and the close of the 1-minute bar ending one hour later; use completed 1-minute bars, which are lower timeframe than the chart timeframe
+Long: close crosses above a zone top (current close > zone top AND previous close <= zone top)
+Short: close crosses below a zone bottom (current close < zone bottom AND previous close >= zone bottom)

@@ -1,0 +1,9 @@
+Calculation: Confirmed swing high/low = a pivot high/low confirmed after the same lookback number of bars on each side; use the structure lookback for CHoCH, the sweep lookback for liquidity sweeps, and the trend lookback for chart patterns.
+Long: Close crosses above the latest confirmed structure swing high AND the current structure bias is neutral or bearish
+Short: Close crosses below the latest confirmed structure swing low AND the current structure bias is neutral or bullish
+Long: Low > high two bars earlier AND the gap is at least the minimum size relative to ATR(14)
+Short: High < low two bars earlier AND the gap is at least the minimum size relative to ATR(14)
+Long: Two latest trend swing lows are within the tolerance relative to ATR(14) AND the latest trend swing high is above both lows by more than that tolerance
+Short: Two latest trend swing highs are within the tolerance relative to ATR(14) AND the latest trend swing low is below both highs by more than that tolerance
+Long: Low is below the latest confirmed sweep swing low by at least the minimum size relative to ATR(14) AND close is at or above that swing low AND the lower wick is at least the minimum fraction of the candle range AND no earlier sweep has occurred in the current structure-bias leg AND, during the next two bars, no close is below the swept level
+Short: High is above the latest confirmed sweep swing high by at least the minimum size relative to ATR(14) AND close is at or below that swing high AND the upper wick is at least the minimum fraction of the candle range AND no earlier sweep has occurred in the current structure-bias leg AND, during the next two bars, no close is above the swept level

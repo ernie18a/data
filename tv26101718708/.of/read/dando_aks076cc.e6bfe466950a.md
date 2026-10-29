@@ -1,0 +1,4 @@
+Calculation: Bullish fair value gap = Current low > high two bars ago, with gap / high two bars ago ≥ the minimum gap size; evaluate on the chart timeframe and on higher timeframes using their current forming bar.
+Calculation: Bearish fair value gap = Low two bars ago > current high, with gap / low two bars ago ≥ the minimum gap size; evaluate on the chart timeframe and on higher timeframes using their current forming bar.
+Long: Shorter-period close EMA > longer-period close EMA AND close momentum > 0 OR a bullish fair value gap forms on the chart timeframe or a higher timeframe.
+Short: Shorter-period close EMA < longer-period close EMA AND close momentum < 0 OR a bearish fair value gap forms on the chart timeframe or a higher timeframe.

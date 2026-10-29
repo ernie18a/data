@@ -1,0 +1,11 @@
+Calculation: Relative volume = current bar volume / average volume over the preceding lookback bars, excluding the current bar
+Calculation: Prior breakout high = highest high over the preceding breakout lookback bars, excluding the current bar
+Calculation: Prior breakout low = lowest low over the preceding breakout lookback bars, excluding the current bar
+Calculation: Bullish candle pressure = close > open AND (close − low) / (high − low) > 0.65 AND abs(close − open) / (high − low) > 0.45; when high = low, both ratios are 0
+Calculation: Bearish candle pressure = close < open AND (close − low) / (high − low) < 0.35 AND abs(close − open) / (high − low) > 0.45; when high = low, both ratios are 0
+Calculation: Long score = 25 if relative volume meets its minimum, plus 25 if close > VWAP AND fast EMA > slow EMA AND close > fast EMA AND the last completed higher-timeframe bar's close > its EMA using the same lookback as the slow EMA, plus 20 if RSI > its lower long bound AND RSI < its upper long bound, plus 20 if close > prior breakout high, plus 10 if bullish candle pressure; otherwise each component contributes 0
+Calculation: Short score = 25 if relative volume meets its minimum, plus 25 if close < VWAP AND fast EMA < slow EMA AND close < fast EMA AND the last completed higher-timeframe bar's close < its EMA using the same lookback as the slow EMA, plus 20 if RSI < its upper short bound AND RSI > its lower short bound, plus 20 if close < prior breakout low, plus 10 if bearish candle pressure; otherwise each component contributes 0
+Long: (inside configured trade session OR session bypass enabled) AND long score >= configured score threshold
+Short: (inside configured trade session OR session bypass enabled) AND short-entry toggle enabled AND short score >= configured score threshold
+Exit: Long, low <= entry price − ATR on entry bar × stop multiplier OR high >= entry price + ATR on entry bar × stop multiplier × target multiple OR bars since entry >= maximum holding bars OR outside configured trade session with session bypass disabled
+Exit: Short, high >= entry price + ATR on entry bar × stop multiplier OR low <= entry price − ATR on entry bar × stop multiplier × target multiple OR bars since entry >= maximum holding bars OR outside configured trade session with session bypass disabled

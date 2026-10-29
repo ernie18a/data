@@ -1,0 +1,6 @@
+Calculation: Fast EMA = exponential moving average of close with a shorter lookback than the slow EMA.
+Calculation: Centered RSI = RSI of close minus 50.
+Long: close > slow EMA AND fast EMA > slow EMA AND lower-timeframe MACD histogram from the current, possibly still-forming bar < negative MACD threshold AND ADX > ADX threshold AND centered RSI is between its lower and upper bounds AND no position is open AND entries since the most recent fast/slow EMA crossover < trade limit.
+Short: close < slow EMA AND fast EMA < slow EMA AND lower-timeframe MACD histogram from the current, possibly still-forming bar > positive MACD threshold AND ADX > ADX threshold AND centered RSI is between its lower and upper bounds AND no position is open AND entries since the most recent fast/slow EMA crossover < trade limit.
+Exit: Long, high >= entry-signal-bar close × (1 + take-profit fraction) OR low <= entry-signal-bar close × (1 - stop-loss fraction).
+Exit: Short, low <= entry-signal-bar close × (1 - take-profit fraction) OR high >= entry-signal-bar close × (1 + stop-loss fraction).

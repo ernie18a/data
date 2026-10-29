@@ -1,0 +1,7 @@
+Calculation: Body fraction = absolute(close − open) divided by high − low.
+Calculation: Long retracement zone = the interval between the configured shallow and deep retracement levels below Bar 2’s high, each measured as a fraction of Bar 2’s range.
+Calculation: Short retracement zone = the interval between the configured shallow and deep retracement levels above Bar 2’s low, each measured as a fraction of Bar 2’s range.
+Long: On the current chart bar, low is within the long retracement zone AND close > VWAP AND the two preceding completed chart bars each have a body fraction >= the configured minimum AND the second bar’s volume > the first bar’s volume AND (both bars close > open OR (the second bar closes > the first bar’s high AND the bars are not both bullish)).
+Short: On the current chart bar, high is within the short retracement zone AND close < VWAP AND the two preceding completed chart bars each have a body fraction >= the configured minimum AND the second bar’s volume > the first bar’s volume AND (both bars close < open OR (the second bar closes < the first bar’s low AND the bars are not both bearish)).
+Exit: long, low <= the long entry setup’s second bar low − configured stop offset.
+Exit: short, high >= the short entry setup’s second bar high + configured stop offset.

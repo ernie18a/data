@@ -1,0 +1,1 @@
+For gold, compare TIP and the US dollar index over the configured lookback: if TIP rises and the dollar index falls, favor long; if TIP falls and the dollar index rises, favor short; otherwise treat the signal as mixed and take no directional position. On intraday charts, update the reading only during US cash hours; outside those hours, retain the last reading.

@@ -1,0 +1,6 @@
+Calculation: Latest pivot-high confirmation close = the close on the most recent bar where a pivot high in close is confirmed, using configurable left and right lookbacks
+Calculation: Latest pivot-low confirmation close = the close on the most recent bar where a pivot low in close is confirmed, using configurable left and right lookbacks
+Long: close > latest pivot-high confirmation close
+Short: close < latest pivot-low confirmation close
+Exit: long, (close >= entry price AND the current bar confirms both a pivot high and pivot low AND latest pivot-high confirmation close < latest pivot-low confirmation close) OR (long signal is false AND low <= entry price × (1 − stop-loss fraction)) OR (long signal is false AND high >= entry price × (1 + take-profit fraction))
+Exit: short, (close <= entry price AND the current bar confirms both a pivot high and pivot low AND latest pivot-low confirmation close > latest pivot-high confirmation close) OR (short signal is false AND high >= entry price × (1 + stop-loss fraction)) OR (short signal is false AND low <= entry price × (1 − take-profit fraction))

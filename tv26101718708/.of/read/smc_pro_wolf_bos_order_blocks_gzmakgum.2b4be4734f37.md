@@ -1,0 +1,7 @@
+Calculation: Confirmed swing high/low = high/low pivot with equal lookback bars on each side; use the latest confirmed pivot of each kind.
+Calculation: Bullish/bearish structure break = close crosses above the latest confirmed swing high / below the latest confirmed swing low.
+Calculation: Order-block direction state = set bearish when the high from the order-block lookback bars ago exceeds the highest high of the current lookback; otherwise set bullish when the low from that many bars ago is below the lowest low of the current lookback; otherwise retain the prior state. If both tests hold, bearish takes precedence.
+Calculation: Bullish/bearish order block = on a confirmed volume pivot high, if the direction state is bullish/bearish, create a zone from low to the midpoint of high and low / from the midpoint of high and low to high, respectively, on the pivot bar.
+Calculation: Bullish/bearish order-block mitigation = the lowest low / highest high over the order-block lookback (or the corresponding lowest close / highest close when close-based mitigation is selected) moves below the bottom / above the top of at least one active bullish / bearish order block; remove each mitigated block.
+Long: Close crosses above the latest confirmed swing high OR bullish order-block mitigation AND close > open AND close > low + (high - low) / 2
+Short: Close crosses below the latest confirmed swing low OR bearish order-block mitigation AND close < open AND close < low + (high - low) / 2

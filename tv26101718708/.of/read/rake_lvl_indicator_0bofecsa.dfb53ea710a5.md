@@ -1,0 +1,7 @@
+Calculation: Opening Print = open of the first bar at the regular-session open; retain it as a reference level for the session.
+Calculation: Active hourly levels = open of an hourly bar whose color differs from the preceding completed hourly bar; remove a level after an hourly close crosses it. Hourly bars are higher than the chart timeframe; use the current hourly bar for its open/close and the last completed hourly bar for the preceding bar.
+Calculation: Near a reference = absolute distance from close to the Opening Print or any active hourly level is within a parameterized percentage of that level.
+Long: current high crosses above the previous bar's high AND close > chart-timeframe 20-period EMA AND close > higher-timeframe 20-period EMA on both the intermediate and hourly timeframes AND Near a reference
+Short: current low crosses below the previous bar's low AND close < chart-timeframe 20-period EMA AND close < higher-timeframe 20-period EMA on both the intermediate and hourly timeframes AND Near a reference
+Long: the previous daily bar closed below its open AND the current daily open is above the previous daily open
+Short: the previous daily bar closed above its open AND the current daily open is below the previous daily open

@@ -1,0 +1,5 @@
+Calculation: Opening-range high = highest high of regular-session chart bars in the opening range, beginning with the bar that starts at 9:30 ET; it is fixed when that bar completes.
+Calculation: Opening-range low = lowest low of regular-session chart bars in the opening range, beginning with the bar that starts at 9:30 ET; it is fixed when that bar completes.
+Calculation: Opening-range average volume = mean volume of the bars in the opening range.
+Long: close > opening-range high AND volume >= volume multiplier × opening-range average volume AND close > VWAP AND the bar is after the opening range has locked and before 11:30 ET AND no earlier long signal occurred that day
+Short: close < opening-range low AND volume >= volume multiplier × opening-range average volume AND close < VWAP AND the bar is after the opening range has locked and before 11:30 ET AND no earlier short signal occurred that day

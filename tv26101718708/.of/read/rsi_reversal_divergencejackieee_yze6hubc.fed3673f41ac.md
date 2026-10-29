@@ -1,0 +1,8 @@
+Calculation: Bullish RSI divergence = on the chart timeframe, a confirmed RSI pivot low is higher than the preceding RSI pivot low, while its corresponding price low is lower than the preceding price low; both RSI pivots use the same left and right lookbacks
+Calculation: Bearish RSI divergence = on the chart timeframe, a confirmed RSI pivot high is lower than the preceding RSI pivot high, while its corresponding price high is higher than the preceding price high; both RSI pivots use the same left and right lookbacks
+Calculation: HTF bullish engulfing = on the higher timeframe, the last completed candle closes above its open, the preceding completed candle closes below its open, the last close is at least the preceding open, and the last open is at most the preceding close
+Calculation: HTF bearish engulfing = on the higher timeframe, the last completed candle closes below its open, the preceding completed candle closes above its open, the last close is at most the preceding open, and the last open is at least the preceding close
+Calculation: HTF hammer = on the higher timeframe, using the last completed candle, the lower wick is greater than 60% of its high-low range and the absolute open-close difference is less than 30% of its high-low range
+Calculation: HTF shooting star = on the higher timeframe, using the last completed candle, the upper wick is greater than 60% of its high-low range and the absolute open-close difference is less than 30% of its high-low range
+Long: Bullish RSI divergence OR HTF bullish engulfing OR HTF hammer
+Short: Bearish RSI divergence OR HTF bearish engulfing OR HTF shooting star

@@ -1,0 +1,3 @@
+Calculation: Monthly anchored VWAP = cumulative sum of (typical price × volume) divided by cumulative volume, reset at the start of each month
+Long: volume > 0 AND volume > simple moving average of volume × threshold AND close > monthly anchored VWAP OR (close > monthly anchored VWAP AND previous close <= previous monthly anchored VWAP)
+Short: volume > 0 AND volume > simple moving average of volume × threshold AND close < monthly anchored VWAP OR (close < monthly anchored VWAP AND previous close >= previous monthly anchored VWAP)

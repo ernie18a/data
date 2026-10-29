@@ -1,0 +1,5 @@
+Calculation: Short and long moving averages = the same selected type (SMA, EMA, WMA, ALMA, HMA, VWMA, LSMA, SMMA, or DEMA) applied to their respective source fields; the short lookback is shorter than the long lookback
+Long: short moving average > long moving average AND prior bar short moving average <= prior bar long moving average
+Short: short moving average < long moving average AND prior bar short moving average >= prior bar long moving average
+Exit: long, take profit percentage > 0 AND close >= entry price × (1 + take profit percentage / 100) OR stop loss percentage > 0 AND close <= entry price × (1 - stop loss percentage / 100)
+Exit: short, take profit percentage > 0 AND close <= entry price × (1 - take profit percentage / 100) OR stop loss percentage > 0 AND close >= entry price × (1 + stop loss percentage / 100)

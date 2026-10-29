@@ -1,0 +1,1 @@
+When the traded instrument’s EMA is rising, close any short and enter long if flat. Otherwise, close any long and enter short if flat. If external earnings data indicates a report is within seven days, close any open position and do not enter a new one.

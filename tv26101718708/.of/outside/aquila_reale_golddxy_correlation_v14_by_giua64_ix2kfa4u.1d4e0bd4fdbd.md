@@ -1,0 +1,1 @@
+For gold, go long when the US dollar index crosses below its own moving average, and go short when it crosses above its own moving average. No exit rule is specified.

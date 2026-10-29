@@ -1,0 +1,7 @@
+Calculation: Session low/high = the lowest low/highest high among earlier bars in the current calendar session; reset at session start.
+Calculation: Range position = (close − low) / (high − low), or 0.5 when high = low.
+Calculation: Lower/upper wick fraction = (min(open, close) − low) / (high − low) and (high − max(open, close)) / (high − low), respectively, or 0 when high = low.
+Long: On a chart-timeframe bar, current low < session low AND (close > open AND range position ≥ 0.667 OR lower wick fraction > 0.5 AND range position > 0.333); OR close > open AND close > previous bar's open AND the previous chart-timeframe bar closed below its open and made a new session low.
+Long: On a completed bar of a higher timeframe, current low < session low AND (close > open AND range position ≥ 0.667 OR lower wick fraction > 0.5 AND range position > 0.333); OR close > open AND close > previous bar's open AND the previous higher-timeframe bar closed below its open and made a new session low.
+Short: On a chart-timeframe bar, current high > session high AND upper wick fraction > 0.5 AND range position < 0.667; OR close < open AND the previous chart-timeframe bar closed above its open and made a new session high.
+Short: On a completed bar of a higher timeframe, current high > session high AND upper wick fraction > 0.5 AND range position < 0.667; OR close < open AND the previous higher-timeframe bar closed above its open and made a new session high.

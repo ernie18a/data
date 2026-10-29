@@ -1,0 +1,1 @@
+At month-end, enter long the traded instrument when both the S&P 500 index and the TIPS ETF are above their respective simple moving averages. No short or exit condition is defined.

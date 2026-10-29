@@ -1,0 +1,16 @@
+Calculation: EMA = exponential moving average of close; fast EMA uses a shorter lookback than base EMA, which uses a shorter lookback than slow EMA.
+Calculation: ATR = average true range.
+Calculation: Trend slope = (base EMA − base EMA five bars ago) / ATR.
+Calculation: Acceptance band = base EMA ± ATR × band-width parameter.
+Calculation: Recent band interaction = at least one of the current or previous window bars has a high at or above the band bottom and a low at or below the band top.
+Calculation: Invalidation rail = for long context, the lower of (band bottom − ATR × buffer) and (slow EMA − ATR × buffer × 0.5); for short context, the higher of (band top + ATR × buffer) and (slow EMA + ATR × buffer × 0.5).
+Calculation: Pullback depth in ATR = for long, max(fast EMA − low, 0) / ATR; for short, max(high − fast EMA, 0) / ATR.
+Calculation: Prior obstruction = highest high for long or lowest low for short over the lookback bars before the current bar.
+Calculation: Slope score = clamp((direction-adjusted trend slope − minimum slope) / 0.18, 0, 1) × 100; direction-adjusted slope is trend slope for long and its negative for short.
+Calculation: Pullback score = 100 × clamp(depth / ideal depth, 0, 1) when depth ≤ ideal depth; otherwise 100 × clamp((maximum depth − depth) / (maximum depth − ideal depth), 0, 1).
+Calculation: Target-room score = 100 if the close clears the prior obstruction in the trade direction; otherwise 100 × clamp((room in ATR − 0.15) / (clean-room threshold − 0.15), 0, 1), where room in ATR is the positive distance from close to the obstruction divided by ATR.
+Calculation: Continuation score = round(clamp((70 + 0.3 × slope score) × 0.2 + pullback score × 0.2 + 25 + clamp(volume / volume moving average / required volume ratio, 0, 1) × 15 + target-room score × 0.2, 0, 100)); the volume moving average uses a longer lookback than the EMA fast lookback.
+Long: fast EMA > base EMA AND base EMA > slow EMA AND trend slope ≥ minimum slope AND recent band interaction AND close > base EMA AND (close − low) / max(high − low, minimum price increment) ≥ required close-location threshold AND close ≥ open AND confirmation mode permits the bar close AND (confirmation mode does not require volume OR volume / volume moving average ≥ required volume ratio) AND (confirmation mode is not strict OR (slope score ≥ 60 AND target-room score ≥ 45)) AND continuation score ≥ acceptance threshold AND close ≥ invalidation rail.
+Short: fast EMA < base EMA AND base EMA < slow EMA AND trend slope ≤ −minimum slope AND recent band interaction AND close < base EMA AND (high − close) / max(high − low, minimum price increment) ≥ required close-location threshold AND close ≤ open AND confirmation mode permits the bar close AND (confirmation mode does not require volume OR volume / volume moving average ≥ required volume ratio) AND (confirmation mode is not strict OR (slope score ≥ 60 AND target-room score ≥ 45)) AND continuation score ≥ acceptance threshold AND close ≤ invalidation rail.
+Exit: long, close < long invalidation rail.
+Exit: short, close > short invalidation rail.

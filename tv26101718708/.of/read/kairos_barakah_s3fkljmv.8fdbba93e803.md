@@ -1,0 +1,3 @@
+Calculation: Reference high and low = high and low of the bar at the configured daily reference time
+Long: During the active window, (close > reference high AND no buy signal has been generated since the reference bar or the latest buy reversal) OR (close < reference low AND the latest signal was a buy)
+Short: During the active window, (close < reference low AND no sell signal has been generated since the reference bar or the latest sell reversal) OR (close > reference high AND the latest signal was a sell)

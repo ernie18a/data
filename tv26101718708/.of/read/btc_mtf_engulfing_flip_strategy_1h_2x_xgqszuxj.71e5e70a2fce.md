@@ -1,0 +1,12 @@
+Calculation: Bullish engulfing = prior bar is bearish, current bar is bullish, current body contains the prior body, and current body is larger than prior body
+Calculation: Bearish engulfing = prior bar is bullish, current bar is bearish, current body contains the prior body, and current body is larger than prior body
+Calculation: Long stop = tighter of the buffered lower of the current and prior bar lows, or the maximum stop distance below entry
+Calculation: Short stop = tighter of the buffered higher of the current and prior bar highs, or the maximum stop distance above entry
+Calculation: Long flip stop = tighter of the buffered lowest low over the swing lookback, or the maximum flip stop distance below the broken stop
+Calculation: Short flip stop = tighter of the buffered highest high over the swing lookback, or the maximum flip stop distance above the broken stop
+Long: chart-timeframe RSI > long-entry threshold AND chart-timeframe MACD line > signal line AND bullish engulfing AND chart-timeframe ATR > its moving average with a longer lookback AND chart-timeframe volume > its moving average multiplied by the volume-spike threshold AND last completed bar on a higher timeframe has close > its EMA AND last completed bar on a higher timeframe has RSI > midpoint AND long cooldowns have elapsed AND no drawdown halt or pending flip
+Long: a main short position's stop was hit AND flip wait has elapsed AND no flip-on-flip AND generic cooldown has elapsed AND no drawdown halt
+Short: chart-timeframe RSI < short-entry threshold AND chart-timeframe MACD line < signal line AND bearish engulfing AND chart-timeframe ATR > its moving average with a longer lookback AND chart-timeframe volume > its moving average multiplied by the volume-spike threshold AND last completed bar on a higher timeframe has close < its EMA AND last completed bar on a higher timeframe has RSI < midpoint AND short cooldowns have elapsed AND no drawdown halt or pending flip
+Short: a main long position's stop was hit AND flip wait has elapsed AND no flip-on-flip AND generic cooldown has elapsed AND no drawdown halt
+Exit: Long, low <= active stop OR favorable move >= configured R multiple of initial stop distance OR short-entry signal OR flip-position time-stop elapsed
+Exit: Short, high >= active stop OR favorable move >= configured R multiple of initial stop distance OR long-entry signal OR flip-position time-stop elapsed

@@ -1,0 +1,11 @@
+Calculation: Trend alignment = the average of three direction scores: higher-timeframe close above/below its 50-period EMA; higher-timeframe MACD line above/below its signal line; chart-timeframe close above/below its 20-period EMA. The first two use the last completed higher-timeframe bar; the third uses the chart bar.
+Calculation: Bullish divergence = chart close below its close 10 bars earlier AND cumulative volume delta above its value 10 bars earlier; cumulative volume delta adds volume on up-close bars and subtracts volume on down-close bars.
+Calculation: Bearish divergence = chart close above its close 10 bars earlier AND cumulative volume delta below its value 10 bars earlier.
+Calculation: Volume confirmation = volume above its 20-bar average multiplied by a surge factor AND volume above 70% of its ratio to that average AND volume above a minimum threshold derived from its 100-bar average.
+Calculation: Signal strength = weighted sum of trend alignment, momentum, volume confirmation, bullish or bearish divergence, and weekend status; momentum contributes positively when RSI is oversold and rising, negatively when RSI is overbought and falling; weekend and prime-window boosts also apply.
+Calculation: Flash crash = absolute percentage change in close from 4 bars earlier exceeds a threshold.
+Calculation: Stop and target distances = ATR times a stop multiplier adjusted inversely by leverage and a target multiplier increased by signal confidence, respectively.
+Long: Signal strength exceeds its minimum threshold AND trend alignment is positive AND weekend trading is active AND no flash crash.
+Short: Signal strength is below the negative minimum threshold AND trend alignment is negative AND weekend trading is active AND no flash crash.
+Exit: Long, low reaches the ATR-based stop OR high reaches the ATR-based target OR trailing stop is hit after activation OR absolute open-profit percentage exceeds the leverage-based liquidation-distance threshold OR flash crash OR datetime is Monday at hour 0.
+Exit: Short, high reaches the ATR-based stop OR low reaches the ATR-based target OR trailing stop is hit after activation OR absolute open-profit percentage exceeds the leverage-based liquidation-distance threshold OR flash crash OR datetime is Monday at hour 0.

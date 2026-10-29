@@ -1,0 +1,5 @@
+Calculation: Wave Trend lines = WT1 is the EMA of CI, where CI = (HLC3 − EMA(HLC3, channel lookback)) / (0.015 × EMA(abs(HLC3 − EMA(HLC3, channel lookback)), same lookback); WT2 is the SMA of WT1 over a shorter lookback.
+Long: WT1 > WT2 AND previous WT1 ≤ previous WT2 AND (session limiting is disabled OR the bar time is within either configured session [start inclusive, stop exclusive])
+Short: WT1 < WT2 AND previous WT1 ≥ previous WT2 AND (session limiting is disabled OR the bar time is within either configured session [start inclusive, stop exclusive])
+Exit: long position, close-at-session-end is enabled for either session AND the bar time is at or after that session’s configured stop time within its stop hour
+Exit: short position, close-at-session-end is enabled for either session AND the bar time is at or after that session’s configured stop time within its stop hour

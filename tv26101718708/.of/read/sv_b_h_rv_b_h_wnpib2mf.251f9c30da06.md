@@ -1,0 +1,3 @@
+Calculation: Session composite = EMA of the weighted mean of price Z-score, volume Z-score, and Z-score of source price minus session VWAP
+Calculation: Rolling composite = EMA of the weighted mean of price Z-score, volume Z-score, and Z-score of source price minus rolling VWAP
+Long: (at least the minimum number of price Z-score, volume Z-score, and session VWAP distance Z-score exceed the strong-alignment threshold AND session composite crosses above the composite trigger) OR (at least the minimum number of price Z-score, volume Z-score, and rolling VWAP distance Z-score exceed the strong-alignment threshold AND rolling composite crosses above the composite trigger), AND close > opening-range high AND (no premarket high exists OR close > premarket high)

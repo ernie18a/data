@@ -1,0 +1,5 @@
+Calculation: Candle midpoint = (high + low) / 2
+Calculation: Long score = number of true conditions: close > candle midpoint; close > Bollinger middle band; CCI > its upper threshold; OBV > its moving average; +DI > -DI
+Calculation: Short score = number of true conditions: close < candle midpoint; close < Bollinger middle band; CCI < its lower threshold; OBV < its moving average; -DI > +DI
+Long: Long score >= minimum score AND ADX >= its threshold AND close > the long-term EMA AND the short-term EMA > the long-term EMA AND (last emitted direction is not long OR bars since the last emitted signal >= the reset interval)
+Short: Short score >= minimum score AND ADX >= its threshold AND close < the long-term EMA AND the short-term EMA < the long-term EMA AND (last emitted direction is not short OR bars since the last emitted signal >= the reset interval)

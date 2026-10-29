@@ -1,0 +1,1 @@
+For a Forex pair, compare the relative strength of its base and quote currencies, calculated from a normalized basket of currencies. Go long when base-currency strength crosses above quote-currency strength; go short when it crosses below. The indicator specifies no exit rule.

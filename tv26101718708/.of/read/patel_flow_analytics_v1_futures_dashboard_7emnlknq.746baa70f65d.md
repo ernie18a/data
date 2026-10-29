@@ -1,0 +1,6 @@
+Calculation: Estimated bar delta = volume × clamp(2 × (close − low) / (high − low) − 1, −1, 1); use 0 when high = low
+Calculation: Session delta = sum of estimated bar delta from the start of the analysis session through the current bar
+Calculation: Session VWAP = sum(hlc3 × volume) / sum(volume) from the start of the analysis session through the current bar
+Calculation: Flow score = clamp(0.35 × clamp(100 × session delta / session volume, −100, 100) + 0.25 × clamp(100 × (shorter-lookback EMA(close) − longer-lookback EMA(close)) / max(minimum tick size, ATR), −100, 100) + 0.25 × clamp(65 × (close − session VWAP) / max(minimum tick size, ATR), −100, 100) + 0.15 × clamp(15 × (count of large-volume bars with estimated bar delta > 0 − count of large-volume bars with estimated bar delta < 0), −100, 100), −100, 100); large-volume bars have volume / max(1, simple moving average of volume) at least the large-volume threshold; counts cover the current and preceding bars in the large-volume lookback
+Long: current bar is in the analysis session AND flow score > positive threshold AND previous bar's flow score ≤ positive threshold
+Short: current bar is in the analysis session AND flow score < negative threshold AND previous bar's flow score ≥ negative threshold

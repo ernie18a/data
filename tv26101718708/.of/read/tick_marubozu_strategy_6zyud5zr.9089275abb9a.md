@@ -1,0 +1,2 @@
+Long: close > open AND min(open, close) - low <= configurable minimum size threshold AND abs(close - open) >= configurable minimum size threshold AND volume > simple moving average of volume over a configurable lookback
+Short: close < open AND high - max(open, close) <= configurable minimum size threshold AND abs(close - open) >= configurable minimum size threshold AND volume > simple moving average of volume over a configurable lookback

@@ -1,0 +1,9 @@
+Calculation: Value centre = selected rolling volume-weighted average, adaptive moving average, or exponential moving average of the price source; use the same lookback for the selected method.
+Calculation: Recent volume-weighted price = volume-weighted average of the price source over a shorter lookback than the force lookback.
+Calculation: Net force = tanh of the exponentially smoothed sum of (recent volume-weighted price − close) / ATR and (value centre − close) / ATR, each multiplied by its respective nonnegative weight normalized by the sum of the weights.
+Calculation: Volume percentile = the bar's volume's percentile rank over a lookback.
+Calculation: Range percentile = the bar's high-low range's percentile rank over the same lookback as the volume percentile.
+Calculation: Close position = (close − low) / (high − low); use 0.5 when high equals low.
+Long: net force > positive strong-pull threshold OR net force crosses above the positive strong-pull threshold OR net force acceleration crosses above zero OR (low is at or below the lowest low of the preceding lookback bars AND close position ≥ 0.65 AND volume percentile ≥ 60) OR (close < prior close AND range percentile ≥ 60 AND volume percentile ≥ 80 AND close position ≥ 0.45) OR (close > prior close AND volume ≥ the highest volume in the lookback AND range percentile ≥ 70).
+Short: net force < negative strong-pull threshold OR net force crosses below the negative strong-pull threshold OR net force acceleration crosses below zero OR (high is at or above the highest high of the preceding lookback bars AND close position ≤ 0.35 AND volume percentile ≥ 60) OR (close > prior close AND volume ≥ the highest volume in the lookback AND range percentile ≥ 70).
+Exit:

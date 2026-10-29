@@ -1,0 +1,3 @@
+Calculation: body-to-range ratio = abs(close - open) / (high - low), or 0 when high = low
+Long: current chart bar range > ATR × range multiplier AND body-to-range ratio > body-strength threshold AND close > open OR current chart bar low > high two chart bars earlier OR chart close crosses above an EMA calculated from the higher-timeframe bar still forming (current close > current EMA AND previous close <= previous EMA)
+Short: current chart bar range > ATR × range multiplier AND body-to-range ratio > body-strength threshold AND close < open OR current chart bar high < low two chart bars earlier OR chart close crosses below an EMA calculated from the higher-timeframe bar still forming (current close < current EMA AND previous close >= previous EMA)

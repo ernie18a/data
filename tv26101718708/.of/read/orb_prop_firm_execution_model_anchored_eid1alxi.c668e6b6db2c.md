@@ -1,0 +1,5 @@
+Calculation: Opening-range high = highest high during the opening range
+Calculation: Opening-range low = lowest low during the opening range
+Calculation: Opening AVWAP = cumulative (typical price × volume) since session open / cumulative volume since session open
+Long: Opening range is ready AND close crosses above opening-range high AND close > opening AVWAP AND close > 20-period simple moving average AND the moving average is rising AND volume > 20-period average volume × threshold AND NOT (high > opening-range high AND close < opening-range high)
+Short: Opening range is ready AND close crosses below opening-range low AND close < opening AVWAP AND close < 20-period simple moving average AND the moving average is falling AND volume > 20-period average volume × threshold AND NOT (low < opening-range low AND close > opening-range low)

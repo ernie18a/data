@@ -1,0 +1,2 @@
+Long: next candle high > first candle high AND (first candle high - first candle low) / first candle close < threshold
+Short: next candle low < first candle low AND (first candle high - first candle low) / first candle close < threshold

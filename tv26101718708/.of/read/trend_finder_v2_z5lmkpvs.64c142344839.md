@@ -1,0 +1,4 @@
+Calculation: Stochastic sum = sum of a shorter-lookback and a longer-lookback stochastic %K, each smoothed by the same moving average
+Calculation: Smoothed trend = volume-weighted moving average of the stochastic sum
+Long: Stochastic sum > its previous-bar value AND Smoothed trend > its previous-bar value AND NOT (the previous bar’s Stochastic sum > its two-bars-back value AND its Smoothed trend > its two-bars-back value) AND NOT (the previous bar’s Stochastic sum < its two-bars-back value AND its Smoothed trend < its two-bars-back value)
+Exit: Long, Stochastic sum < its previous-bar value AND Smoothed trend < its previous-bar value AND NOT (the previous bar’s Stochastic sum > its two-bars-back value AND its Smoothed trend > its two-bars-back value) AND NOT (the previous bar’s Stochastic sum < its two-bars-back value AND its Smoothed trend < its two-bars-back value)

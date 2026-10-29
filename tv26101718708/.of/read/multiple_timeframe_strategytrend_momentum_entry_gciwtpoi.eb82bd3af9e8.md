@@ -1,0 +1,7 @@
+Calculation: Stochastic %K = 100 × (close − lowest low over the lookback) ÷ (highest high − lowest low) over the same lookback, using the medium-term bars (higher timeframe than the chart, bar still forming)
+Calculation: Smoothed %K = simple moving average of Stochastic %K over a shorter lookback, using the medium-term bars (higher timeframe than the chart, bar still forming)
+Calculation: Smoothed %D = simple moving average of Smoothed %K over a longer lookback, using the medium-term bars (higher timeframe than the chart, bar still forming)
+Long: close ≥ long-term simple moving average AND Smoothed %K < overbought threshold AND Smoothed %D < overbought threshold AND Smoothed %K > oversold threshold AND Smoothed %D > oversold threshold AND Smoothed %K > Smoothed %D AND crossover of the shorter-lookback simple moving average above the longer-lookback simple moving average on the entry timeframe
+Short: close < long-term simple moving average AND Smoothed %K < overbought threshold AND Smoothed %D < overbought threshold AND Smoothed %K > oversold threshold AND Smoothed %D > oversold threshold AND Smoothed %K < Smoothed %D AND crossunder of the shorter-lookback simple moving average below the longer-lookback simple moving average on the entry timeframe
+Exit: long, Smoothed %K crosses below Smoothed %D
+Exit: short, Smoothed %K crosses above Smoothed %D

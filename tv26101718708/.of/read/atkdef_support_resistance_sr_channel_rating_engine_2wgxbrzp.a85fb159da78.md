@@ -1,0 +1,4 @@
+Calculation: Adaptive pivot width = rounded (ATR over a shorter lookback / average true range over a longer lookback) × a scaling factor, bounded by minimum and maximum widths.
+Calculation: Historical power = capped product of (swing price / ATR at the swing × chart-timeframe factor), (swing-bar volume / average volume at the swing, capped), and a recency weight that is higher within a configurable lookback range; cap the final product.
+Long: the low is a pivot low over the adaptive pivot width on both sides AND historical power at that pivot is at least the power threshold.
+Short: the high is a pivot high over the adaptive pivot width on both sides AND historical power at that pivot is at least the power threshold.

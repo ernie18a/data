@@ -1,0 +1,4 @@
+Calculation: Time-of-day volume z-score = (previous bar's volume − mean volume of the most recent configured number of bars with the previous bar's time of day) / their standard deviation; use 0 if standard deviation is 0
+Calculation: Time-of-day gap-height z-score = (current gap height − mean gap height of the most recent configured number of positive gap heights with the previous bar's time of day) / their standard deviation; use 0 if standard deviation is 0
+Long: current chart bar is completed AND low > high two bars earlier AND previous bar's volume > 0 AND time-of-day volume z-score ≥ volume threshold AND time-of-day gap-height z-score ≥ gap threshold
+Short: current chart bar is completed AND high < low two bars earlier AND previous bar's volume > 0 AND time-of-day volume z-score ≥ volume threshold AND time-of-day gap-height z-score ≥ gap threshold

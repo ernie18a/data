@@ -1,0 +1,2 @@
+Long: buyers’ share of accumulated buy/sell power > 50 AND the short-term statistical baseline is rising AND (the higher-timeframe filter is disabled OR its fast centroid ALMA > its slow centroid ALMA, using the last completed higher-timeframe bar)
+Short: buyers’ share of accumulated buy/sell power < 50 AND the short-term statistical baseline is falling AND (the higher-timeframe filter is disabled OR its fast centroid ALMA < its slow centroid ALMA, using the last completed higher-timeframe bar)

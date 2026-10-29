@@ -1,0 +1,3 @@
+Calculation: Smoothed Elder Force Index = EMA of (close − prior close) × volume
+Long: short-term moving average of close > VWAP + ATR cushion AND short-term moving average of close > long-term moving average of close + ATR cushion AND smoothed Elder Force Index > 0
+Short: short-term moving average of close < VWAP − ATR cushion AND short-term moving average of close < long-term moving average of close − ATR cushion AND smoothed Elder Force Index < 0

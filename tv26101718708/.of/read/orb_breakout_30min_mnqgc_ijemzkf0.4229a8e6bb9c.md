@@ -1,0 +1,3 @@
+Calculation: Opening-range high = highest high during the opening-range window
+Calculation: Opening-range average volume = total volume during the opening-range window divided by the number of bars in that window
+Long: Opening range is complete AND close > opening-range high AND volume >= opening-range average volume × configured volume multiplier AND close > VWAP AND bar time is within the configured post-opening-range session window AND the preceding bar did not meet all these conditions

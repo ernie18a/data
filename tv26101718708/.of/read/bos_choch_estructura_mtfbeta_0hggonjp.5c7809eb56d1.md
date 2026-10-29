@@ -1,0 +1,3 @@
+Calculation: Higher-timeframe trend = On each of the three configured higher timeframes, initialize neutral; set bullish when close crosses above the latest confirmed pivot high, set bearish when close crosses below the latest confirmed pivot low (bearish takes precedence if both occur), otherwise retain the prior trend. Use each higher timeframe’s still-forming bar.
+Long: Close crosses above the latest confirmed pivot high OR at least one configured higher-timeframe trend is bullish
+Short: Close crosses below the latest confirmed pivot low OR at least one configured higher-timeframe trend is bearish

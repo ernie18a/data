@@ -1,0 +1,5 @@
+Calculation: Average volume = simple moving average of volume over the configured lookback
+Calculation: Bullish fair value gap = current low minus the high two bars earlier is at least the minimum gap threshold; bearish fair value gap = the low two bars earlier minus current high is at least the minimum gap threshold. Both require current volume not to be below the low-volume threshold. Configured filters may also require a volume spike; the high/low filter additionally requires the candle two bars earlier to have the lowest low or highest high, respectively, among it and the two preceding candles.
+Calculation: A bullish gap zone spans from the high two bars earlier to the current low; a bearish gap zone spans from current high to the low two bars earlier.
+Long: For an unmitigated, not-yet-retested bullish gap, the current bar does not form a bullish fair value gap AND current low is between the gap bounds, inclusive
+Short: For each unmitigated, not-yet-retested gap, (the gap is bearish OR the current bar forms a bullish fair value gap) AND the current bar does not form a bearish fair value gap AND current high is between the gap bounds, inclusive

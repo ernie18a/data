@@ -1,0 +1,2 @@
+Long: For each configured timeframe (higher or lower than the chart timeframe), current still-forming bar low < prior completed bar low AND current still-forming bar close > prior completed bar low AND current still-forming bar high < prior completed bar high
+Short: For each configured timeframe (higher or lower than the chart timeframe), current still-forming bar high > prior completed bar high AND current still-forming bar close < prior completed bar high AND current still-forming bar low > prior completed bar low

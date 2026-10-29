@@ -1,0 +1,5 @@
+Calculation: TMO main = apply a moving average of the selected type and calc length to the sum, over the current bar and the preceding length bars, of +1 when the current close is greater than that bar’s open, −1 when it is less, and 0 when equal; then apply a moving average of the selected type and smooth length. For HTM, calculate on the higher timeframe using its last completed bar. For ETM, calculate on the entry timeframe using its last completed bar.
+Long: HTM TMO main > 0 AND ETM TMO main crosses above 0.
+Short: HTM TMO main < 0 AND ETM TMO main crosses below 0.
+Exit: long, ETM TMO main crosses below 0 AND HTM TMO main < 0 OR low <= entry price − stop distance OR high >= entry price + target distance.
+Exit: short, ETM TMO main crosses above 0 AND HTM TMO main > 0 OR high >= entry price + stop distance OR low <= entry price − target distance.

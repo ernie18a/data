@@ -1,0 +1,5 @@
+Calculation: Supertrend = ATR-based trailing line: hl2 ± factor × ATR; in an uptrend, trail the lower band upward using the maximum of the current lower band and prior lower trail; in a downtrend, trail the upper band downward using the minimum of the current upper band and prior upper trail. Switch to uptrend when close exceeds the prior upper trail, or to downtrend when close falls below the prior lower trail; otherwise retain the prior trend. Use the last completed bar of the selected higher timeframe.
+Long: close >= selected higher-timeframe Supertrend AND the most recent crossover between the shorter-lookback and longer-lookback SMAs was upward
+Short: close <= selected higher-timeframe Supertrend AND the most recent crossover between the shorter-lookback and longer-lookback SMAs was downward
+Exit: long, shorter-lookback SMA crosses below longer-lookback SMA
+Exit: short, shorter-lookback SMA crosses above longer-lookback SMA

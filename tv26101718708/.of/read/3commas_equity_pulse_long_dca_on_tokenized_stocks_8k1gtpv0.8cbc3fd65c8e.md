@@ -1,0 +1,3 @@
+Calculation: Next safety-order trigger price = base-order price × (1 − cumulative sum of the successive percentage steps / 100); each step is the previous step multiplied by the configured step coefficient.
+Long: (position is flat AND bar is confirmed AND datetime is within the configured date range) OR (a long position is active AND bar is confirmed AND safety orders remain AND low <= next safety-order trigger price)
+Exit: long, bar is confirmed AND RSI on the chart timeframe's last completed bar crosses above its threshold AND close >= average entry price × (1 + minimum profit fraction)

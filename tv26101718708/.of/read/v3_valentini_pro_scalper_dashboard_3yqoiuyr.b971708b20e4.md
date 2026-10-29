@@ -1,0 +1,6 @@
+Long: flat AND close crosses above the highest high over a longer lookback, excluding the current bar AND volume > longer-term average volume × aggression multiplier AND close > session VWAP; OR long position AND high >= entry price + scale-in distance
+Short: flat AND close crosses below the lowest low over a longer lookback, excluding the current bar AND volume > longer-term average volume × aggression multiplier AND close < session VWAP; OR short position AND low <= entry price − scale-in distance
+Calculation: Highest high since entry = highest high from the entry bar through the current bar
+Calculation: Lowest low since entry = lowest low from the entry bar through the current bar
+Exit: long, (highest high since entry >= entry price + scale-in distance AND low <= entry price) OR (highest high since entry < entry price + scale-in distance AND low <= entry price − initial stop distance) OR high >= entry price + take-profit distance
+Exit: short, (lowest low since entry <= entry price − scale-in distance AND high >= entry price) OR (lowest low since entry > entry price − scale-in distance AND high >= entry price + initial stop distance) OR low <= entry price − take-profit distance

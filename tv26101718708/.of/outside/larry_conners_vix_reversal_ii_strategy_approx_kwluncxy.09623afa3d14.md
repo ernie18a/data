@@ -1,0 +1,1 @@
+Calculate the RSI of an external volatility index. When flat, enter long if the RSI crosses upward through its upper threshold, and enter short if it crosses downward through its lower threshold. Count holding bars from entry and close the position on the first bar when the count is within the configured minimum-to-maximum holding window.

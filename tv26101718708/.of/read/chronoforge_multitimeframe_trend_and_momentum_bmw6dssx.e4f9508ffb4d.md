@@ -1,0 +1,3 @@
+Calculation: score = EMA of [(100 / (trend weight + momentum weight + session weight)) × (trend weight × clamp((higher-timeframe fast EMA − higher-timeframe slow EMA) / chart-timeframe ATR(14), −1, 1) + momentum weight × clamp((chart-timeframe RSI − 50) / 50, −1, 1) + session weight × (active session ? sign of the sum of the trend and momentum contributions, treating zero as positive : 0)]; use a higher timeframe EMA value from the bar still forming, chart-timeframe RSI and ATR, and the configured session windows in the symbol’s exchange timezone.
+Long: score >= threshold AND previous score < threshold
+Short: score <= −threshold AND previous score > −threshold

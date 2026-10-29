@@ -1,0 +1,8 @@
+Calculation: Bullish Fair Value Gap = on the chart timeframe or a selected higher timeframe, using the last completed bars, the latest bar's low > the high two bars earlier
+Calculation: Bearish Fair Value Gap = on the chart timeframe or a selected higher timeframe, using the last completed bars, the latest bar's high < the low two bars earlier
+Calculation: Bullish Volume Imbalance = on the chart timeframe or a selected higher timeframe, using the last completed bars, the later candle's body low > the earlier candle's body high AND the later candle's low < the earlier candle's high
+Calculation: Bearish Volume Imbalance = on the chart timeframe or a selected higher timeframe, using the last completed bars, the later candle's body high < the earlier candle's body low AND the later candle's high > the earlier candle's low
+Calculation: Bullish Full Gap = on the chart timeframe or a selected higher timeframe, using the last completed bars, the later candle's low > the earlier candle's high
+Calculation: Bearish Full Gap = on the chart timeframe or a selected higher timeframe, using the last completed bars, the later candle's high < the earlier candle's low
+Long: Bullish Fair Value Gap with zone height >= max(global minimum size, FVG minimum size) OR bullish Volume Imbalance with zone height >= max(global minimum size, VI minimum size) OR bullish Full Gap with zone height >= max(global minimum size, full-gap minimum size)
+Short: Bearish Fair Value Gap with zone height >= max(global minimum size, FVG minimum size) OR bearish Volume Imbalance with zone height >= max(global minimum size, VI minimum size) OR bearish Full Gap with zone height >= max(global minimum size, full-gap minimum size)

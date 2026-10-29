@@ -1,0 +1,8 @@
+Calculation: Confirmed swing high = a high greater than the highs of the specified number of bars on both sides; becomes available after the right-side bars complete
+Calculation: Confirmed swing low = a low less than the lows of the specified number of bars on both sides; becomes available after the right-side bars complete
+Calculation: Bullish block candle = the first prior candle with close < open, scanning backward from the preceding bar past consecutive candles with close >= open, within the impulse lookback
+Calculation: Bearish block candle = the first prior candle with close > open, scanning backward from the preceding bar past consecutive candles with close <= open, within the impulse lookback
+Calculation: Block bounds = the source candle's high and low, or its open and close, according to the selected zone range
+Calculation: Block volume strength = source candle volume / the average volume over the volume baseline lookback
+Long: On a completed bar, close > the latest confirmed swing high and that swing high has not already been broken, and a bullish block candle exists, and its block height is within the configured ATR limit when the oversized-zone filter is enabled, and its volume strength meets the configured minimum when the high-volume filter is enabled, and its bounds do not overlap an active bullish block
+Short: On a completed bar, close < the latest confirmed swing low and that swing low has not already been broken, and a bearish block candle exists, and its block height is within the configured ATR limit when the oversized-zone filter is enabled, and its volume strength meets the configured minimum when the high-volume filter is enabled, and its bounds do not overlap an active bearish block

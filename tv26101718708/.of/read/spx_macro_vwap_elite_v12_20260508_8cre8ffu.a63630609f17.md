@@ -1,0 +1,5 @@
+Calculation: Fractal resistance = the most recent high that is strictly greater than the highs of the two bars before it and the two bars after it
+Calculation: Fractal support = the most recent low that is strictly less than the lows of the two bars before it and the two bars after it
+Calculation: 10-year yield average = simple moving average of the 10-year-yield series
+Long: bar is confirmed AND close > VWAP AND (low <= VWAP AND close > open AND close - open > ATR × 0.25 OR close crosses above VWAP AND close > open AND close - open > ATR × 0.25 OR close crosses above fractal resistance) AND close > previous bar's high AND at least two of (Hull moving average of close is rising, close - open > ATR × minimum-body parameter, 10-year yield <= 10-year yield average)
+Short: bar is confirmed AND close < VWAP AND (high >= VWAP AND close < open AND open - close > ATR × 0.25 OR close crosses below VWAP AND close < open AND open - close > ATR × 0.25 OR close crosses below fractal support) AND close < previous bar's low AND at least two of (Hull moving average of close is falling, open - close > ATR × minimum-body parameter, 10-year yield > 10-year yield average)

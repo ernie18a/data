@@ -1,0 +1,6 @@
+Calculation: Trend Pulse midline = apply a cascade of the configured number of EMAs to the selected source; if lag mode is enabled, pre-transform the source as source + (source − source[lag]), where lag = floor((period − 1) / (2 × poles)); set β = (1 − cos(2π / period)) / (1.414^(2 / poles) − 1), α = −β + sqrt(β² + 2β), and each EMA length = max(1, floor(2 / α)).
+Calculation: Trend Pulse upper band = Trend Pulse midline + the same EMA cascade applied to true range (with the same optional lag pre-transform) × range multiplier.
+Calculation: On-Balance Volume = cumulative volume added when close rises from the previous close, subtracted when it falls, and unchanged when equal.
+Calculation: ATR = average true range over the configured lookback.
+Long: close crosses above Trend Pulse upper band AND close > regime EMA if the regime filter is enabled AND On-Balance Volume > its EMA if the OBV filter is enabled AND current bar is within the configured date range AND no long position is open.
+Exit: long, close < Trend Pulse midline if enabled OR close < regime EMA if both regime EMA exit and regime filter are enabled OR low <= signal-bar close − previous bar ATR × stop multiplier.

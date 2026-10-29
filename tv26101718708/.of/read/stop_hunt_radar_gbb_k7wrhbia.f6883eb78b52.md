@@ -1,0 +1,5 @@
+Calculation: Sell-side pool = a confirmed swing low (lower than the preceding long-term and following short-term bars); merge nearby armed pools into one level.
+Calculation: Buy-side pool = a confirmed swing high (higher than the preceding long-term and following short-term bars); merge nearby armed pools into one level.
+Calculation: ATR = average true range over a lookback.
+Long: An armed sell-side pool is pierced below by more than a minimum ATR-based distance and the bar closes above it; after the sweep, a bar closes above the pool by a confirmation ATR distance before the watch window expires. If a bar first closes below the pool, count it as a sweep only if a bar closes back above within the break-grace window, then apply the reclaim confirmation.
+Short: An armed buy-side pool is pierced above by more than a minimum ATR-based distance and the bar closes below it; after the sweep, a bar closes below the pool by a confirmation ATR distance before the watch window expires. If a bar first closes above the pool, count it as a sweep only if a bar closes back below within the break-grace window, then apply the reclaim confirmation.

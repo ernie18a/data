@@ -1,0 +1,16 @@
+Calculation: Estimated delta = sum of lower-timeframe volume, positive when the lower-timeframe close is above its open, negative when below, and zero when equal unless the close differs from the previous close; use completed lower-timeframe bars.
+Calculation: Participation = percentile rank of the chart-bar volume EMA over a lookback, optionally raised to the raw volume's percentile rank; classify as thin, mid, or climax using configurable thresholds.
+Calculation: Paid = participation-based bell-shaped fuel, multiplied by delta agreement when true footprint delta is available; a bar is paid when fuel meets a configurable threshold.
+Calculation: Adaptive line = prior line plus a fuel-scaled fraction of the distance to close and a fuel-weighted fraction of the close change; clip it so it does not overshoot close.
+Calculation: Gap = close − adaptive line; gap size in ATRs = absolute gap divided by ATR.
+Calculation: Delta-timeframe block = net estimated delta and open-to-close price change across a lookback of higher-timeframe candles; form three consecutive blocks, newest first, and compare each block's delta with the average absolute delta of completed blocks. Use completed higher-timeframe candles for confirmed regimes; a live regime may use the forming candle and must hold for a configurable number of chart bars.
+Calculation: Long regime = the newest block has sufficiently large negative delta while its price change is no lower than the negative flat tolerance, or all three blocks have sufficiently large positive delta and their combined price change exceeds the positive flat tolerance.
+Calculation: Short regime = the newest block has sufficiently large positive delta while its price change is no higher than the positive flat tolerance, or all three blocks have sufficiently large negative delta and their combined price change is below the negative flat tolerance.
+Calculation: Confirmed line flip = a paid close crosses the adaptive line by a configurable ATR distance, with delta agreeing with the crossing direction, and price remains on that side under the selected confirmation rule: immediate with sufficient delta conviction and mid-band participation, after holding for a configurable number of chart bars, or at the next higher-timeframe candle close.
+Calculation: Rolling VWAP = volume-weighted average of typical price over a lookback window.
+Long: Paid close crosses above the adaptive line by the configured ATR distance and estimated delta is positive.
+Long: Close is below the adaptive line, the gap is unpaid and at least the configured ATR distance, and participation is thin.
+Long: Confirmed line flip is upward, the regime is long, participation at the flip is mid-band, and close is above rolling VWAP when the VWAP filter is enabled.
+Short: Paid close crosses below the adaptive line by the configured ATR distance and estimated delta is negative.
+Short: Close is above the adaptive line, the gap is unpaid and at least the configured ATR distance, and participation is thin.
+Short: Confirmed line flip is downward, the regime is short, participation at the flip is mid-band, and close is below rolling VWAP when the VWAP filter is enabled.

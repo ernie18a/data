@@ -1,0 +1,3 @@
+Calculation: Moving average = selected SMA, EMA, WMA, RMA, HMA, VWMA, TEMA, KAMA, or JMA of the configured price source over the configured lookback; each MA has independent settings and may use a higher, lower, or chart timeframe. Use the last completed higher-timeframe bar, the last available lower-timeframe bar within the chart bar, or the chart-timeframe bar. 
+Long: Close > any configured MA AND previous Close <= that MA's previous value; OR a configured fast MA > its paired slow MA AND its previous value <= the paired slow MA's previous value.
+Short: Close < any configured MA AND previous Close >= that MA's previous value; OR a configured fast MA < its paired slow MA AND its previous value >= the paired slow MA's previous value.

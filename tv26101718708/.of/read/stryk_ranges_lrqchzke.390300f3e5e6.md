@@ -1,0 +1,5 @@
+Calculation: Confirmed swing high/low = a local high/low confirmed after the same number of later chart-timeframe bars as earlier bars
+Calculation: Prior Day/Week high/low = high/low of the last completed higher-timeframe Day/Week bar
+Calculation: Asian high/low = highest high/lowest low of chart-timeframe bars in the configured Asian session
+Long: low < tracked swing low, Asian low, prior Day low, or prior Week low AND close > that level OR a bullish candle body is at least the displacement threshold times ATR within the displacement window after such a sweep; OR close > the latest confirmed swing high
+Short: high > tracked swing high, Asian high, prior Day high, or prior Week high AND close < that level OR a bearish candle body is at least the displacement threshold times ATR within the displacement window after such a sweep; OR close < the latest confirmed swing low

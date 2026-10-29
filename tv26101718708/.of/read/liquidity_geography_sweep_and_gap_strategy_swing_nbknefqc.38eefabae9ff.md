@@ -1,0 +1,7 @@
+Calculation: Active high/low liquidity pool = latest confirmed swing pivot high/low, or the highest high/lowest low over the configured lookback, excluding the current bar
+Calculation: EMA travel in ATR = absolute difference between the EMA and its value one EMA-length ago, divided by ATR
+Calculation: Higher-timeframe bias EMA = EMA of close on a higher timeframe, using the last completed higher-timeframe bar
+Long: Position is flat AND (open < prior close × (1 − minimum gap fraction) AND EMA travel in ATR < maximum range threshold OR low < active low liquidity pool AND close > active low liquidity pool AND (EMA travel in ATR < sweep trend threshold OR close > higher-timeframe bias EMA))
+Short: Position is flat AND (open > prior close × (1 + minimum gap fraction) AND EMA travel in ATR < maximum range threshold OR high > active high liquidity pool AND close < active high liquidity pool AND (EMA travel in ATR < sweep trend threshold OR close < higher-timeframe bias EMA))
+Exit: Long, low ≤ stop level OR high ≥ target level OR bars held ≥ maximum holding bars when that limit is enabled
+Exit: Short, high ≥ stop level OR low ≤ target level OR bars held ≥ maximum holding bars when that limit is enabled

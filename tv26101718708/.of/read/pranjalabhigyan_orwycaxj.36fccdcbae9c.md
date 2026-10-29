@@ -1,0 +1,3 @@
+Calculation: Parabolic weighted moving average = weighted average of closing prices over a lookback, assigning each bar a weight equal to the square of its recency rank; calculated on higher-timeframe bars using the current bar while it is forming
+Long: close > parabolic weighted moving average AND previous close <= previous parabolic weighted moving average
+Short: close < parabolic weighted moving average AND previous close >= previous parabolic weighted moving average

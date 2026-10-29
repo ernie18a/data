@@ -1,0 +1,3 @@
+Calculation: Normalized, smoothed rolling price-weighted volume delta = EMA of the rolling sum of per-bar estimated volume delta multiplied by (1 + absolute percentage change in close over a lookback), divided by rolling total volume and multiplied by 100; estimated volume delta is volume × (2 × close − high − low) ÷ (high − low), or 0 when high = low; result is 0 when rolling total volume is 0
+Long: Normalized, smoothed rolling price-weighted volume delta >= 0
+Short: Normalized, smoothed rolling price-weighted volume delta < 0

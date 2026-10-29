@@ -1,0 +1,5 @@
+Calculation: Average entry = total order cost divided by total quantity; each fill adds its order value and order value divided by fill close to the totals.
+Calculation: Trailing low = lowest chart-timeframe close since the take-profit zone was first reached.
+Short: Flat AND, if the optional active-date filter is enabled, within its date range AND the lower-timeframe RSI crosses down through its level on the last completed lower-timeframe bar (previous RSI >= level AND current RSI < level); evaluate at chart-timeframe bar close.
+Short: In a short position AND another averaging rung remains AND chart-timeframe close >= the next sequential rung threshold above the base entry; rung thresholds are progressively higher and equally spaced.
+Exit: Short, chart-timeframe close >= average entry times (1 + stop-loss percentage) OR the take-profit zone has been reached (close <= average entry times (1 - take-profit percentage)) AND chart-timeframe close >= trailing low times (1 + trailing percentage).

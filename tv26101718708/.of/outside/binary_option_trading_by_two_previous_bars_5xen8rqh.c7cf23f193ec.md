@@ -1,0 +1,1 @@
+At the start of each bar, compare the colors of the two preceding bars. If they match, buy a binary option predicting the current bar’s direction: predict up if the most recent preceding close is higher than the close before it; otherwise predict down. If the preceding bar colors differ, make no trade.

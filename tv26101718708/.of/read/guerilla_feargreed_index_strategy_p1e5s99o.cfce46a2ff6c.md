@@ -1,0 +1,6 @@
+Calculation: NAAIM fear score = NAAIM close EMA, using the same lookback as the equity put/call ratio EMA and the most recently completed bar of a higher timeframe than the chart; linearly scale from 0 at the fear threshold to 100 at the greed threshold, clamped to [0, 100], then multiply by its weight
+Calculation: Equity put/call ratio fear score = equity put/call ratio close EMA, using the same lookback as the NAAIM EMA and the most recently completed bar of a higher timeframe than the chart; linearly scale from 100 at the greed threshold to 0 at the fear threshold, clamped to [0, 100], then multiply by its weight
+Calculation: Fear/greed index = NAAIM fear score + equity put/call ratio fear score
+Calculation: Fear/greed index EMA = EMA of the fear/greed index, using its own lookback
+Long: prior bar's fear/greed index EMA < buy threshold AND current bar's fear/greed index EMA > prior bar's AND two-bars-ago fear/greed index EMA > prior bar's AND datetime >= configured start date
+Exit: long, (configured close-date exit is enabled AND datetime is the configured close date) OR (datetime >= configured start date AND prior bar's fear/greed index EMA > sell threshold AND current bar's fear/greed index EMA < prior bar's AND two-bars-ago fear/greed index EMA < prior bar's)

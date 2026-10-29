@@ -1,0 +1,4 @@
+Long: Flat AND lower-timeframe RSI crosses down through its threshold between the previous and latest completed lower-timeframe bars AND shorter-lookback EMA > longer-lookback EMA on the chart timeframe
+Calculation: Cumulative safety-order deviation for order k = sum of the first k step distances, where the first distance is the initial step and each subsequent distance is the previous distance multiplied by the step multiplier
+Long: Long position AND safety orders remain AND close ≤ base entry price × (1 − cumulative safety-order deviation for the next order)
+Exit: Long, close ≤ average entry price × (1 − stop-loss fraction) OR elapsed time since base entry ≥ maximum holding period OR take-profit has been reached and close ≤ highest close since first reaching take-profit × (1 − trailing-deviation fraction)

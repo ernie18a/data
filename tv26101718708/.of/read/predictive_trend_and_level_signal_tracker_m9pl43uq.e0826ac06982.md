@@ -1,0 +1,5 @@
+Calculation: ZLEMA = EMA of close plus the difference between close and close shifted back by half the lookback
+Calculation: Key levels = high and low of the last completed daily, weekly, or monthly bar (higher-timeframe bars)
+Calculation: High volume = volume > its 20-bar simple moving average × a multiplier
+Long: (close > a key level AND previous close ≤ the previous value of that key level AND close − key level > ATR × break sensitivity AND high volume AND ZLEMA > its previous value) OR (low ≤ a key level AND close > key level AND min(open, close) − low > abs(close − open) × rejection ratio AND high volume AND ZLEMA > its previous value)
+Short: (close < a key level AND previous close ≥ the previous value of that key level AND key level − close > ATR × break sensitivity AND high volume AND ZLEMA ≤ its previous value) OR (high ≥ a key level AND close < key level AND high − max(open, close) > abs(close − open) × rejection ratio AND high volume AND ZLEMA ≤ its previous value)

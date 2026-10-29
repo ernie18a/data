@@ -1,0 +1,4 @@
+Calculation: BTC-to-gold ROC = 100 × (current BTC-to-gold price ratio / its value the longer lookback ago − 1), calculated on the higher-timeframe bar still forming
+Calculation: Signal EMA = EMA of BTC-to-gold ROC, updated once per new higher-timeframe bar
+Long: a new higher-timeframe bar begins AND BTC-to-gold ROC exceeds the upper deadband threshold (deadband mode), the signal EMA (signal-line mode), or zero (zero-cross mode) AND the active regime is not already long
+Short: a new higher-timeframe bar begins AND BTC-to-gold ROC is below the lower deadband threshold (deadband mode), the signal EMA (signal-line mode), or zero (zero-cross mode) AND the active regime is not already short

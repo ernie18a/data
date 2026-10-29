@@ -1,0 +1,2 @@
+Long: current time = configured entry time AND signal_fired = false AND most recent close outside the opening range > opening-range high
+Short: current time = configured entry time AND signal_fired = false AND most recent close outside the opening range < opening-range low

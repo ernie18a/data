@@ -1,0 +1,7 @@
+Calculation: Setup score = count of these conditions: RSI stays within a bounded reset zone; RSI turns up after falling; RSI crosses above its signal line; RSI signal line is rising; MACD line crosses above its signal line or MACD histogram rises; positive DI exceeds negative DI or crosses above it within the recent bars; relative strength versus a benchmark improves over the lookback
+Calculation: Initial stop = lowest low over the swing lookback minus an ATR buffer
+Calculation: Trailing stop = highest high since entry minus an ATR multiple; it can only rise
+Long: flat position AND last completed higher-timeframe bar close > its SMA AND that SMA is rising versus its value several completed bars earlier AND higher-timeframe RSI is above its minimum AND chart-timeframe close > shorter-term SMA AND shorter-term SMA is flat or rising AND close > longer-term SMA AND close > EMA AND RSI is above its damage threshold AND low is above the prior rolling low AND (negative DI <= positive DI OR ADX is not rising) AND close > highest high of prior bars AND close > open AND close is in the upper part of the bar range AND close > EMA AND (close - EMA) / ATR is below its maximum AND setup score >= its minimum AND average close-times-volume >= its minimum
+Exit: long, low <= initial stop
+Exit: long, low <= trailing stop
+Exit: long, close < shorter-term SMA AND RSI is below its neutral level AND negative DI > positive DI

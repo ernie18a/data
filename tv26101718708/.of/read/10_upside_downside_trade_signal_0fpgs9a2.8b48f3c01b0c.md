@@ -1,0 +1,4 @@
+Calculation: Prior-window high = highest high over the breakout lookback, excluding the current bar
+Calculation: Prior-window low = lowest low over the breakdown lookback, excluding the current bar
+Long: Close > fast EMA AND close > slow EMA AND fast EMA > slow EMA AND RSI >= bullish threshold AND RSI < upper bullish bound AND close > prior-window high AND MACD line > MACD signal line AND MACD histogram > 0 AND volume > its moving average AND these conditions were false on the previous bar
+Short: Close < fast EMA AND close < slow EMA AND fast EMA < slow EMA AND RSI <= bearish threshold AND RSI > lower bearish bound AND close < prior-window low AND MACD line < MACD signal line AND MACD histogram < 0 AND volume > its moving average AND these conditions were false on the previous bar

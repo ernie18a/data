@@ -1,0 +1,12 @@
+Calculation: Liquidity pools = prior-period highs and lows, completed session highs and lows, and confirmed swing highs and lows; merge same-side levels within an ATR-based tolerance into equal-high/low pools. Use the last completed higher-timeframe bar for prior-period levels.
+Calculation: Sweep = a bar pierces an untouched pool by at least the minimum ATR-based depth and closes back inside it; a close beyond the pool breaks it instead.
+Calculation: Reclaim = after a sweep, a bar closes back through the pool origin within the reclaim window; the close must be beyond both the pool and the bar's open.
+Calculation: Nearest draw = the nearest untouched pool above the close for a long, or below the close for a short.
+Calculation: LTF bullish structure break = chart close above the latest confirmed pivot high calculated from lower-timeframe bars. LTF bearish structure break = chart close below the latest confirmed pivot low calculated from lower-timeframe bars. Use the latest lower-timeframe bar completed by the chart bar's close.
+Calculation: Effective stop = the swept wick until a confirmed higher low for a long or lower high for a short forms; thereafter use the latest such higher low or lower high.
+Calculation: Reward/risk ratio = absolute distance from close to nearest draw divided by absolute distance from close to effective stop.
+Calculation: Stop width in ATR = absolute distance from close to effective stop divided by ATR.
+Long: A sell-side pool is swept, then reclaimed within the reclaim window, AND a lower-timeframe bullish structure break occurs within the valid window after the sweep, AND the nearest draw is above close, AND reward/risk ratio >= the minimum, AND stop width in ATR <= the maximum, AND effective stop < close.
+Short: A buy-side pool is swept, then reclaimed within the reclaim window, AND a lower-timeframe bearish structure break occurs within the valid window after the sweep, AND the nearest draw is below close, AND reward/risk ratio >= the minimum, AND stop width in ATR <= the maximum, AND effective stop > close.
+Exit: Long, close < swept wick OR close < latest confirmed higher low OR close < current pullback low while the run high has not advanced OR entry price <= effective stop.
+Exit: Short, close > swept wick OR close > latest confirmed lower high OR close > current pullback high while the run low has not advanced OR entry price >= effective stop.

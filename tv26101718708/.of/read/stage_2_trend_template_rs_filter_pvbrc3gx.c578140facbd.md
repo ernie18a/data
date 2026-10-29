@@ -1,0 +1,6 @@
+Calculation: 52-week low distance = close divided by the lowest low over a long lookback, minus 1
+Calculation: 52-week high distance = 1 minus close divided by the highest high over the same long lookback
+Calculation: RS line = symbol close divided by benchmark close on the same timeframe
+Calculation: Mansfield reading = RS line divided by its long-term SMA, minus 1
+Calculation: Weighted relative performance = weighted average of symbol-versus-benchmark relative performance over short-, medium-, and long-term lookbacks; the shortest lookback has the greatest weight and the other three weights are equal
+Long: tradeable is true on this bar AND false on the previous bar, where tradeable requires close > short-term SMA AND close > long-term SMA AND medium-term SMA > long-term SMA AND long-term SMA > its value at a longer lookback AND short-term SMA > medium-term SMA AND short-term SMA > long-term SMA AND 52-week low distance >= minimum AND 52-week high distance <= maximum AND RS line > its short-term SMA AND Mansfield reading >= 0 AND weighted relative performance >= 1 AND long-term relative performance >= 1 AND close is less than the maximum allowed extension above the short-term SMA

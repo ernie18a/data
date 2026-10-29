@@ -1,0 +1,3 @@
+Calculation: Previous completed daily VAH and VAL = upper and lower value-area bounds of the previous completed daily volume profile, using lower-timeframe bars; distribute each bar’s volume evenly across price bins spanning its rounded high and low, then expand outward from the highest-volume bin toward the adjacent bin with more volume until the value-area volume parameter is reached.
+Long: Current daily open > previous completed daily VAH AND current daily low > previous completed daily VAH
+Short: Current daily open < previous completed daily VAL AND current daily high < previous completed daily VAL

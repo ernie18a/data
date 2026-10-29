@@ -1,0 +1,1 @@
+Enter long when the monthly ISM reading is above the strategy’s cutoff. Exit all positions when it is below the cutoff. Take no action when equal to the cutoff; no short rule is defined.

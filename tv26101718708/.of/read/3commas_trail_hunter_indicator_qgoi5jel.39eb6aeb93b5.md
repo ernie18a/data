@@ -1,0 +1,5 @@
+Calculation: Fast moving average = SMA or EMA of close with a shorter lookback
+Calculation: Slow moving average = SMA or EMA of close with a longer lookback
+Calculation: CCI = Commodity Channel Index of close over a lookback
+Long: No open position AND on a confirmed chart bar, either (AND mode: the fast moving average crosses below the slow moving average on its configured signal timeframe AND CCI crosses below its configured oversold threshold on its configured signal timeframe, both within the configured keep-alive window measured in chart bars, with at least one signal firing on this chart bar) or (OR mode: either cross occurs); each signal uses its configured timeframe, higher or lower than the chart timeframe, with lookahead_off behavior (the bar still forming in realtime and the latest completed bar historically)
+Exit: Long, trailing enabled AND the highest high since entry (including the current bar) >= entry price × (1 + take-profit activation %) AND low <= highest high since entry × (1 − trailing deviation %) OR trailing disabled AND high >= entry price × (1 + take-profit activation %) OR stop loss enabled AND low <= entry price × (1 − stop-loss %)

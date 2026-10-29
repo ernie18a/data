@@ -1,0 +1,3 @@
+Calculation: Master moving average = the selected visible moving average among four independently configured lines, falling back to the first or last visible line if the selected line is hidden; each line uses its configured moving average type, source, lookback, and timeframe. A higher-timeframe line uses its last completed bar.
+Long: Master moving average > its value one chart bar earlier
+Short: Master moving average < its value one chart bar earlier

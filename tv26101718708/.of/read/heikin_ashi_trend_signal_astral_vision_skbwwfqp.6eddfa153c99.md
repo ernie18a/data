@@ -1,0 +1,2 @@
+Long: Higher-timeframe Heikin Ashi close >= open on the still-forming bar; when confirmed-bar-only mode is enabled, use the last completed higher-timeframe bar.
+Short: Higher-timeframe Heikin Ashi close < open on the still-forming bar; when confirmed-bar-only mode is enabled, use the last completed higher-timeframe bar.

@@ -1,0 +1,3 @@
+Calculation: Stepped trailing stop = maximum of the prior stop and a candidate stop: initial stop at entry price × stop-loss multiplier; when close is at least 10% above entry, candidate is entry price; when close is at least 20% above entry, candidate is entry price × 1.1.
+Long: Fast EMA crosses above slow EMA AND ADX ≥ its threshold AND position is flat.
+Exit: long, high ≥ entry price × take-profit multiplier OR low ≤ stepped trailing stop

@@ -1,0 +1,5 @@
+Calculation: Volume breakout = current volume crosses above the highest volume over a long lookback ending at the prior completed chart bar
+Calculation: Price-ratio momentum = close divided by a short-term EMA(close) crosses above the longer-lookback SMA of that ratio
+Calculation: Positive shorter-term SMA slope = shorter-term SMA(close) > its value several completed chart bars earlier
+Long: Flat AND ((high / close < threshold AND open / low < threshold AND high / prior completed close > threshold AND close > longer-lookback SMA(close)) OR ((close / open > threshold OR close / prior completed close > threshold) AND Volume breakout AND Price-ratio momentum AND close > longer-lookback SMA(close) AND Positive shorter-term SMA slope))
+Exit: Long, close < short-term EMA(close) OR low <= entry price × (1 − stop-loss fraction) OR high >= entry price × (1 + take-profit fraction)

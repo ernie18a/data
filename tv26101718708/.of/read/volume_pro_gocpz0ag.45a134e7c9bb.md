@@ -1,0 +1,3 @@
+Calculation: Local volume peak = a bar’s volume is greater than the volume of each of the N preceding bars and each of the N following bars; confirm after the N following bars close
+Long: N bars ago, volume exceeded the volume of each of the preceding N bars and each of the following N bars AND close[N] > open[N]
+Short: N bars ago, volume exceeded the volume of each of the preceding N bars and each of the following N bars AND close[N] <= open[N]

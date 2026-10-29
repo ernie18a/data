@@ -1,0 +1,2 @@
+Long: a tracked index candle on a higher timeframe (last completed bar) has close > open OR on a lower timeframe (bar still forming) has close > open OR on the chart timeframe has close > open
+Short: a tracked index candle on a higher timeframe (last completed bar) has close < open OR on a lower timeframe (bar still forming) has close < open OR on the chart timeframe has close < open

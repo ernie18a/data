@@ -1,0 +1,6 @@
+Calculation: Opening auction high = highest high during the selected opening auction window, finalized when that window completes and reset at the next auction start
+Calculation: Opening auction low = lowest low during the selected opening auction window, finalized when that window completes and reset at the next auction start
+Calculation: Upper wick rejection (%) = 100 × (high − max(open, close)) ÷ (high − low)
+Calculation: Lower wick rejection (%) = 100 × (min(open, close) − low) ÷ (high − low)
+Long: chart timeframe is intraday and within its configured maximum AND opening auction is complete AND current bar is in the active session and trap evaluation window AND (low < opening auction low AND close > opening auction low AND lower wick rejection ≥ configured wick threshold OR close > opening auction high for at least configured acceptance close count + 1 consecutive bars)
+Short: chart timeframe is intraday and within its configured maximum AND opening auction is complete AND current bar is in the active session and trap evaluation window AND (high > opening auction high AND close < opening auction high AND upper wick rejection ≥ configured wick threshold OR close < opening auction low for at least configured acceptance close count + 1 consecutive bars)

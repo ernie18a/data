@@ -1,0 +1,4 @@
+Calculation: Confirmed pivot high = a bar whose high is the highest in the pivot-period bars before and after it; available pivot-period bars later, on the chart timeframe or a higher timeframe, using the current requested-timeframe bar.
+Calculation: Confirmed pivot low = a bar whose low is the lowest in the pivot-period bars before and after it; available pivot-period bars later, on the chart timeframe or a higher timeframe, using the current requested-timeframe bar.
+Long: confirmed pivot high AND (no prior confirmed pivot high OR current pivot high > prior confirmed pivot high) OR confirmed pivot low AND prior confirmed pivot low exists AND current pivot low >= prior confirmed pivot low
+Short: confirmed pivot high AND prior confirmed pivot high exists AND current pivot high <= prior confirmed pivot high OR confirmed pivot low AND (no prior confirmed pivot low OR current pivot low < prior confirmed pivot low)

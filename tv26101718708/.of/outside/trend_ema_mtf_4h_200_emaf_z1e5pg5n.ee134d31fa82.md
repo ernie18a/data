@@ -1,0 +1,1 @@
+Use the selected higher-timeframe EMA as a trend filter. Go long when the EMA is rising and the instrument’s close is at or above it. Go short when the EMA is falling and the close is below it. No exit rule is specified.

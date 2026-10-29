@@ -1,0 +1,2 @@
+Long: On a higher timeframe, the low of the last completed candle is above the high of the candle two bars earlier
+Short: On a higher timeframe, the low of the candle two bars earlier is above the high of the last completed candle

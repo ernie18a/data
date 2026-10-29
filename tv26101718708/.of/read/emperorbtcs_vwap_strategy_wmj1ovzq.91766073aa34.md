@@ -1,0 +1,8 @@
+Calculation: VWAP = cumulative (bar OHLC4 × volume) / cumulative volume, reset at each higher-timeframe period boundary and using data through the still-forming period.
+Calculation: Pivot levels = central pivot (previous completed higher-timeframe bar high + low + close) / 3, plus its first three support levels using the selected Fibonacci or Traditional pivot method.
+Calculation: Stochastic RSI K/D = smoothed stochastic of RSI for K, then smoothed K for D.
+Long: A Stochastic RSI K cross above D occurred on either of the two bars before the current bar AND a bar crossed VWAP upward (low < VWAP < high and close > open) on either of those same two bars AND the previous bar crossed upward through any of support 1–3 or the central pivot (low < level AND close > level) AND the previous and current bars both closed above their opens AND datetime is within the configured entry date range AND long entries are enabled by the configured trading-direction setting.
+Short: A Stochastic RSI K cross below D occurred on either of the two bars before the current bar AND a bar crossed VWAP downward (low < VWAP < high and close < open) on either of those same two bars AND the previous bar crossed downward through any of support 1–3 or the central pivot (high > level AND close < level) AND the previous and current bars both closed below their opens AND datetime is within the configured entry date range AND short entries are enabled by the configured trading-direction setting.
+Exit: long, close > entry price × (1 + configured take-profit percentage).
+Exit: short, close < entry price × (1 − configured take-profit percentage).
+Exit: long or short, datetime is outside the configured entry date range.

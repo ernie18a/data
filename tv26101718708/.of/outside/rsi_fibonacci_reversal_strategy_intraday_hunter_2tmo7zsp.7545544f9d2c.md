@@ -1,0 +1,1 @@
+During configured intraday trading windows, go long when RSI crosses up through its oversold threshold and the close is above the 61.8% retracement of the recent two-bar high-low range. Close the entire position when RSI crosses down through its overbought threshold and the close is below the 38.2% retracement of that range. No short entry rule.

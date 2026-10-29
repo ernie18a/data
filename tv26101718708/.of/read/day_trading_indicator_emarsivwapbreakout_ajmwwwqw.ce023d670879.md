@@ -1,0 +1,2 @@
+Calculation: Previous-bar highest high = highest high over the lookback window ending on the prior bar
+Long: close > fast EMA AND fast EMA > slow EMA AND RSI > midline AND ((close > previous-bar highest high AND volume > volume SMA × multiplier) OR (low <= VWAP AND close > VWAP))

@@ -1,0 +1,3 @@
+Calculation: Opening-range high = highest high from 09:30 through 09:59:59 ET of the current session
+Calculation: Opening-range average volume = mean bar volume from 09:30 through 09:59:59 ET of the current session
+Long: close > opening-range high AND volume >= 1.5 × opening-range average volume AND close > VWAP AND close >= (high + low) / 2 AND 10:00 <= bar time < 11:30 ET AND no earlier qualifying long signal this session

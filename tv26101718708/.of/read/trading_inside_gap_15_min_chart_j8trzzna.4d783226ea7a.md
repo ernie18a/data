@@ -1,0 +1,3 @@
+Calculation: Gap-up setup = first regular-session bar where open > previous bar close × (1 + gap threshold) and open < high of the still-forming bar on a higher timeframe; OR the previous chart bar had the gap-up setup and the current bar is in the regular session
+Long: Gap-up setup AND close < low of the still-forming bar on a higher timeframe × (1 + proximity threshold) AND close < open of the still-forming bar on a higher timeframe AND hour < entry cutoff hour AND daily filled-order count < configured cap AND current bar high >= previous bar high
+Exit: long, hour = exit hour AND minute > exit minute

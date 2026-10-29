@@ -1,0 +1,10 @@
+Calculation: Upper and lower boundaries = straight lines through the two assigned High and two assigned Low contacts, respectively, of four distinct manually selected, closed bars; choose the valid assignment with the smallest maximum anchor-wick excursion, requiring converging boundaries, positive width across the anchors, same-direction slopes, and excursion within the configured tolerance (selected-bar price range × tolerance percentage, with a half-tick minimum).
+Calculation: Apex = intersection of the upper and lower boundaries.
+Calculation: H = absolute price difference between the chronologically earliest assigned upper and lower contacts.
+Calculation: TP3 = breakout boundary at the entry bar + direction × configured near-target fraction × H.
+Calculation: TP1 and TP2 = entry price + their configured fractions of the entry-to-TP3 distance.
+Calculation: Initial stop = lowest assigned Low − configured offset for a falling formation; highest assigned High + configured offset for a rising formation.
+Long: All four anchors are closed AND the current bar is after the fourth anchor and before the apex AND close > upper boundary AND this is the first qualifying breakout AND TP1 < TP2 < TP3 and initial stop < entry price.
+Short: All four anchors are closed AND the current bar is after the fourth anchor and before the apex AND close < lower boundary AND this is the first qualifying breakout AND TP1 > TP2 > TP3 and initial stop > entry price.
+Exit: Long, on a confirmed bar after entry, high ≥ TP3 OR low ≤ effective stop AND neither TP1 nor TP2 is newly touched on that bar; effective stop is the initial stop until TP1 is first touched, then entry price starting the following bar.
+Exit: Short, on a confirmed bar after entry, low ≤ TP3 OR high ≥ effective stop AND neither TP1 nor TP2 is newly touched on that bar; effective stop is the initial stop until TP1 is first touched, then entry price starting the following bar.

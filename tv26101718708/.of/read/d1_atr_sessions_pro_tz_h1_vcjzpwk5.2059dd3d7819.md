@@ -1,0 +1,4 @@
+Calculation: Candle state = On the first bar, bullish if close >= open, otherwise bearish. Thereafter, state is neutral if (previous state was bearish AND close > previous bar's open) OR (previous state was bullish AND close < previous bar's open) OR (previous state was neutral AND close is within the neutral-zone bounds). If the previous state was neutral and none of those neutral conditions apply, state is bullish when close > the neutral-zone high, bearish when close < the neutral-zone low, and otherwise neutral. If the previous state was bullish and no neutral condition applies, state remains bullish; otherwise it remains bearish.
+Calculation: Neutral-zone bounds = On entry into neutral state, the current bar's higher and lower values of open and close, respectively; while state remains neutral, retain those bounds.
+Long: Candle state = bullish
+Short: Candle state = bearish

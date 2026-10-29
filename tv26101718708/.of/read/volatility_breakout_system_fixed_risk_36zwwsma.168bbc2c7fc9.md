@@ -1,0 +1,5 @@
+Calculation: Keltner upper/lower bands = EMA(close) plus/minus an ATR-based range
+Long: close crosses above the Keltner upper band AND volume > its moving average AND close > EMA(close) AND RSI > 50 AND ADX > its threshold AND flat AND elapsed time since prior entry > the cooldown interval
+Short: close crosses below the Keltner lower band AND volume > its moving average AND close < EMA(close) AND RSI < 50 AND ADX > its threshold AND flat AND elapsed time since prior entry > the cooldown interval
+Exit: long, low <= entry price − ATR × stop multiple (or entry price after high > entry price × (1 + breakeven threshold)) OR low <= the highest high since trailing activation minus the trailing offset, after high reaches the trailing activation price
+Exit: short, high >= entry price + ATR × stop multiple (or entry price after low < entry price × (1 − breakeven threshold)) OR high >= the lowest low since trailing activation plus the trailing offset, after low reaches the trailing activation price

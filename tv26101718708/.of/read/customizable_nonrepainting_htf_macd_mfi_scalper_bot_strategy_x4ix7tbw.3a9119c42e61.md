@@ -1,0 +1,4 @@
+Long: (MACD crosses above its signal line OR (MFI crosses above its lower threshold AND long-term SMA of higher-timeframe last-completed closes < long-term EMA of those closes)) AND long-term SMA of higher-timeframe last-completed closes < long-term EMA of those closes AND (RSI filter disabled OR RSI of higher-timeframe last-completed closes < RSI threshold) AND (trend filter disabled OR chart close > short-term SMA of higher-timeframe last-completed closes)
+Exit: long, chart close < entry price − ATR of higher-timeframe last-completed bars × stop multiplier
+Exit: long, take-profit enabled AND chart high ≥ entry price × (1 + take-profit percentage)
+Exit: long, chart high since entry ≥ entry price × (1 + trailing percentage) AND chart close ≤ highest chart high since entry − entry price × trailing percentage

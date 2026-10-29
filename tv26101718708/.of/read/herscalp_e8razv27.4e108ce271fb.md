@@ -1,0 +1,6 @@
+Calculation: Fast, medium, and slow EMAs = exponential moving averages with successively longer lookbacks.
+Calculation: MACD histogram = MACD line minus signal line.
+Calculation: Long score = 2 for fast EMA > medium EMA > slow EMA, plus 2 for fast EMA crossing above medium EMA, plus 2 when MACD histogram crosses from nonpositive to positive, plus 1 when the VWAP filter is disabled or close > VWAP, plus 1 when RSI is between its lower and upper long thresholds, plus 1 when the EMAs are stacked bullish and the bar's low is within an ATR-based tolerance of the medium EMA.
+Calculation: Short score = 2 for fast EMA < medium EMA < slow EMA, plus 2 for fast EMA crossing below medium EMA, plus 2 when MACD histogram crosses from nonnegative to negative, plus 1 when the VWAP filter is disabled or close < VWAP, plus 1 when RSI is between its lower and upper short thresholds, plus 1 when the EMAs are stacked bearish and the bar's high is within an ATR-based tolerance of the medium EMA.
+Long: long score >= minimum score AND long score > short score AND last emitted direction is not long
+Short: short score >= minimum score AND short score > long score AND last emitted direction is not short

@@ -1,0 +1,8 @@
+Calculation: Bullish fair value gap = current low > high two bars ago AND previous high > high two bars ago; gap bounds are high two bars ago to current low
+Calculation: Bearish fair value gap = current high < low two bars ago AND previous low < low two bars ago; gap bounds are current high to low two bars ago
+Calculation: Active bullish fair value gap = latest bullish fair value gap meeting the minimum-size threshold, retained until price reaches or passes its lower bound, it exceeds the maximum age, or a long entry occurs
+Calculation: Active bearish fair value gap = latest bearish fair value gap meeting the minimum-size threshold, retained until price reaches or passes its upper bound, it exceeds the maximum age, or a short entry occurs
+Long: low is within the active bullish fair value gap AND close > open AND (volume filter disabled OR volume > its simple moving average × volume multiplier) AND (trend filter disabled OR close > its exponential moving average) AND within an enabled Tokyo session or London/New York overlap AND position is flat
+Short: high is within the active bearish fair value gap AND close < open AND (volume filter disabled OR volume > its simple moving average × volume multiplier) AND (trend filter disabled OR close < its exponential moving average) AND within an enabled Tokyo session or London/New York overlap AND position is flat
+Exit: long, low <= entry price × (1 − stop-loss percentage) OR high >= entry price × (1 + stop-loss percentage × risk/reward ratio)
+Exit: short, high >= entry price × (1 + stop-loss percentage) OR low <= entry price × (1 − stop-loss percentage × risk/reward ratio)

@@ -1,0 +1,2 @@
+Long: Short-lookback DEMA on the higher timeframe (last completed bar) crosses above long-lookback DEMA on the same timeframe
+Short: Short-lookback DEMA on the higher timeframe (last completed bar) crosses below long-lookback DEMA on the same timeframe

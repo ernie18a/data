@@ -1,0 +1,6 @@
+Calculation: VWAP = volume-weighted average of typical price over a rolling lookback or since the selected anchor reset
+Calculation: Deviation = volume-weighted standard deviation of typical price around VWAP, smoothed for rolling VWAP and floored by a fraction of ATR
+Calculation: Normalized distance = (close − VWAP) / Deviation
+Calculation: VWAP trend = VWAP change over a lookback, expressed in deviations
+Long: On the first bar of a lower-band visit where Normalized distance reaches the stretched-tag depth; OR after a lower-band visit reaches the qualifying bounce depth, on the first close back above the lower band within the bounce window on an up candle, provided the visit has deepened enough since its prior bounce and the minimum same-side signal gap has passed; if the trend filter is enabled, VWAP trend is not falling
+Short: On the first bar of an upper-band visit where Normalized distance reaches the stretched-tag depth; OR after an upper-band visit reaches the qualifying bounce depth, on the first close back below the upper band within the bounce window on a down candle, provided the visit has deepened enough since its prior bounce and the minimum same-side signal gap has passed; if the trend filter is enabled, VWAP trend is not rising

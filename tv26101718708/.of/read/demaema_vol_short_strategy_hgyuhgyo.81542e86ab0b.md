@@ -1,0 +1,4 @@
+Calculation: Average true range percentage (ATRP) = higher-timeframe ATR divided by chart close, multiplied by 100; the higher-timeframe ATR uses the current bar in realtime and the last completed bar in historical data
+Calculation: ATRP moving average = EMA or SMA of ATRP on the higher timeframe; uses the current bar in realtime and the last completed bar in historical data
+Short: DEMA crosses below EMA AND ATRP > ATRP moving average AND position is flat AND chart-timeframe ATR is available
+Exit: Short, DEMA crosses above EMA AND (minimum-profit threshold is zero OR (bar low − entry price) / entry price ≥ minimum-profit threshold) AND a position is open

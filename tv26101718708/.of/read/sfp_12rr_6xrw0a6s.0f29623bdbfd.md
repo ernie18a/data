@@ -1,0 +1,8 @@
+Calculation: Confirmed swing high/low = a high/low greater/less than the highs/lows of the adjacent bars on each side, using higher-than-chart-timeframe, completed bars.
+Calculation: Bullish/bearish mitigation = higher-timeframe high above the latest confirmed swing high and close below it / higher-timeframe low below the latest confirmed swing low and close above it, using the last completed higher-timeframe bar.
+Calculation: Bullish/bearish displacement = chart-timeframe close above/below open and absolute candle body at least ATR times a threshold.
+Calculation: Bullish FVG = chart-timeframe low above the high two bars earlier, with zone from that earlier high to current low; bearish FVG = chart-timeframe high below the low two bars earlier, with zone from current high to that earlier low.
+Long: Bullish mitigation OR, on the bar after a chart-timeframe bar whose low <= the active bullish FVG top and high >= its bottom, the position is flat, bullish mitigation is active, bullish displacement has occurred since that mitigation, a bullish FVG formed after that displacement, and no trade has been taken since that mitigation.
+Short: Bearish mitigation OR, on the bar after a chart-timeframe bar whose high >= the active bearish FVG bottom and low <= its top, the position is flat, bearish mitigation is active, bearish displacement has occurred since that mitigation, a bearish FVG formed after that displacement, and no trade has been taken since that mitigation.
+Exit: long, low <= the active bullish mitigation wick low minus a buffer OR high >= entry price + 2 × (entry price − stop price).
+Exit: short, high >= the active bearish mitigation wick high plus a buffer OR low <= entry price − 2 × (stop price − entry price).

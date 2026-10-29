@@ -1,0 +1,3 @@
+Calculation: BTC Cap Dominance RSI = (RSI(BTC market cap) + RSI(BTC dominance)) / 2, where BTC market cap = total crypto market cap − crypto market cap excluding BTC, and BTC dominance = BTC market cap / total crypto market cap; market cap inputs use the higher-timeframe series from the last completed bar
+Long: BTC Cap Dominance RSI > Bull level AND previous bar’s BTC Cap Dominance RSI <= Bull level
+Short: BTC Cap Dominance RSI < Bear level AND previous bar’s BTC Cap Dominance RSI >= Bear level

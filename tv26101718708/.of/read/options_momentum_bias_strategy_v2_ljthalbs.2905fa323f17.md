@@ -1,0 +1,6 @@
+Calculation: Bullish pullback = lowest low over a short lookback
+Calculation: Bearish pullback = highest high over a short lookback
+Long: bar time is within the regular session AND close > VWAP AND short-term EMA > medium-term EMA AND close > long-term EMA AND volume > average volume over a lookback × volume multiplier AND bullish pullback <= short-term EMA AND close > previous bar high AND close > open AND short-term EMA > its previous value AND current bar index − last long signal bar index > cooldown AND position is flat or short
+Short: bar time is within the regular session AND close < VWAP AND short-term EMA < medium-term EMA AND close < long-term EMA AND volume > average volume over a lookback × volume multiplier AND bearish pullback >= short-term EMA AND close < previous bar low AND close < open AND short-term EMA < its previous value AND current bar index − last short signal bar index > cooldown AND position is flat or long
+Exit: Long, low <= entry price − ATR × stop multiplier OR high >= entry price + ATR × target multiplier OR close < VWAP
+Exit: Short, high >= entry price + ATR × stop multiplier OR low <= entry price − ATR × target multiplier OR close > VWAP

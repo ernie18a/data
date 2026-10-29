@@ -1,0 +1,2 @@
+Calculation: Previous confirmed swing low = the latest low that is lower than the lows across the selected lookback bars on both sides; use it only after the bars on the right have completed.
+Long: close > previous confirmed swing low AND close > simple moving average of close AND close < simple moving average of close × (1 + configured proximity fraction) AND close > open AND volume > previous bar’s volume

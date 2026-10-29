@@ -1,0 +1,5 @@
+Calculation: Bearish sequence level = opening price of the first candle in a consecutive bearish sequence; a doji ends the sequence
+Calculation: Bullish sequence level = opening price of the first candle in a consecutive bullish sequence; a doji ends the sequence
+Calculation: Confirmed swing high/low = a high/low pivot identified using preceding bars and confirmed only after following bars close
+Long: close > latest active bearish sequence level AND bar is after its source bar AND (level is from a bearish sequence beginning after a confirmed swing high, with no intervening close above the level before swing confirmation, OR every-sequence mode is selected) AND level has not expired
+Short: close < latest active bullish sequence level AND bar is after its source bar AND (level is from a bullish sequence beginning after a confirmed swing low, with no intervening close below the level before swing confirmation, OR every-sequence mode is selected) AND level has not expired

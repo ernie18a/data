@@ -1,0 +1,4 @@
+Calculation: Fast EMA = exponential moving average of close with a shorter lookback, calculated on the chart timeframe and each displayed timeframe; use the current chart bar and the latest available bar of each other timeframe.
+Calculation: Slow EMA = exponential moving average of close with a longer lookback than the Fast EMA, calculated on the chart timeframe and each displayed timeframe; use the current chart bar and the latest available bar of each other timeframe.
+Long: Fast EMA > Slow EMA on the chart timeframe OR Fast EMA > Slow EMA on any displayed timeframe OR Fast EMA > Slow EMA on all three timeframes in either alignment group
+Short: Fast EMA < Slow EMA on any displayed timeframe OR Fast EMA < Slow EMA on all three timeframes in either alignment group

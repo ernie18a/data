@@ -1,0 +1,2 @@
+Long: On a higher timeframe, the current forming candle made a lower low than the preceding completed candle if and only if at least one enabled, different reference instrument with a matching higher-timeframe period also made a lower low.
+Short: On a higher timeframe, the current forming candle made a higher high than the preceding completed candle if and only if at least one enabled, different reference instrument with a matching higher-timeframe period also made a higher high.

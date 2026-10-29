@@ -1,0 +1,10 @@
+Long: the close-price MA crosses above the open-price MA on the higher timeframe’s still-forming bar AND, if the ADX filter is enabled, ADX exceeds the selected threshold (a fixed threshold or the 50th percentile of ADX over a longer lookback)
+Short: the close-price MA crosses below the open-price MA on the higher timeframe’s still-forming bar AND, if the ADX filter is enabled, ADX exceeds the selected threshold (a fixed threshold or the 50th percentile of ADX over a longer lookback)
+Long: the close-price MA is above the open-price MA on the higher timeframe’s still-forming bar
+Short: the close-price MA is below or equal to the open-price MA on the higher timeframe’s still-forming bar
+Long: the chart-timeframe close-price MA is above the open-price MA on the higher timeframe’s still-forming bar
+Short: the chart-timeframe close-price MA is below or equal to the open-price MA on the higher timeframe’s still-forming bar
+Calculation: Long stop = entry price × (1 − fixed stop %) until the bar high exceeds entry price × (1 + activation %); thereafter, the stop is the greater of the prior stop and the current bar high × (1 − trailing stop %)
+Calculation: Short stop = entry price × (1 + fixed stop %) until the bar low falls below entry price × (1 − activation %); thereafter, the stop is the lesser of the prior stop and the current bar low × (1 + trailing stop %)
+Exit: Long, bar low ≤ long stop (if trailing stop is enabled) OR bar high ≥ entry price × (1 + take-profit %) (if take profit is enabled) OR the close-price MA crosses below the open-price MA when trades are restricted to long only
+Exit: Short, bar high ≥ short stop (if trailing stop is enabled) OR bar low ≤ entry price × (1 − take-profit %) (if take profit is enabled) OR the close-price MA crosses above the open-price MA when trades are restricted to short only

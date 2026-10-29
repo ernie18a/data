@@ -1,0 +1,9 @@
+Calculation: VWAP distance (%) = (close − VWAP) / VWAP × 100, using the configured VWAP source
+Calculation: Distance bands = VWAP ± (standard deviation of VWAP distance over a configured lookback × configured multiplier), converted to price
+Calculation: Trend EMA = EMA of close over a configured lookback on a higher timeframe, taken from the last completed bar
+Calculation: Long stop = lowest low over a configured lookback on entry; thereafter raise it to at least the entry price once the high reaches the configured favorable price move, and never lower it
+Calculation: Short stop = highest high over a configured lookback on entry; thereafter lower it to at most the entry price once the low reaches the configured favorable price move, and never raise it
+Long: (position is flat OR position is long AND close < average entry price) AND prior VWAP distance < prior lower outer band AND current VWAP distance ≥ current lower outer band AND within the configured trading session AND (expansion filter disabled OR current standard deviation > highest standard deviation in the configured number of prior bars) AND close > trend EMA
+Short: position is flat AND prior VWAP distance > prior upper outer band AND current VWAP distance ≤ current upper outer band AND within the configured trading session AND (expansion filter disabled OR current standard deviation > highest standard deviation in the configured number of prior bars) AND close < trend EMA
+Exit: long, low ≤ long stop OR high ≥ selected long target (lower band or VWAP)
+Exit: short, high ≥ short stop OR low ≤ selected short target (upper band or VWAP)

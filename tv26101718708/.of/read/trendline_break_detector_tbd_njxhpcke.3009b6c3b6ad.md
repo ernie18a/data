@@ -1,0 +1,4 @@
+Calculation: Confirmed pivot high/low = a high/low (or candle-body extreme, according to the configured source) that is the highest/lowest across the pivot lookback on both sides; use it only after the right-side bars complete. Maintain separate fast, medium, and slow pivot structures with progressively longer lookbacks. Each structure maintains an active pivot trendline; a break is evaluated against its current projected price.
+Calculation: Session VWAP gradient = (current session VWAP − session VWAP at the gradient lookback) / gradient lookback, divided by ATR.
+Long: Close > active resistance pivot trendline AND (session VWAP gradient > its positive strength threshold)
+Short: Close < active support pivot trendline AND (session VWAP gradient < its negative strength threshold)

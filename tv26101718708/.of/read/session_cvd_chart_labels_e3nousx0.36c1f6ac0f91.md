@@ -1,0 +1,5 @@
+Calculation: Volume delta = volume × (2 × (close − low) / (high − low) − 1), or 0 when high = low
+Calculation: Session CVD = cumulative volume delta within each configured UTC session, reset when that session starts
+Calculation: CVD pivot high/low = a confirmed local high/low in active session CVD, using equal lookbacks on both sides; the pivot is confirmed after the right-side bars complete. Its price pivot is the chart high/low on the same bar.
+Long: At a confirmed CVD pivot low, a previous pivot low exists in the same session AND (current price pivot low < previous price pivot low AND current CVD pivot low > previous CVD pivot low OR current price pivot low > previous price pivot low AND current CVD pivot low < previous CVD pivot low)
+Short: At a confirmed CVD pivot high, a previous pivot high exists in the same session AND (current price pivot high > previous price pivot high AND current CVD pivot high < previous CVD pivot high OR current price pivot high < previous price pivot high AND current CVD pivot high > previous CVD pivot high)

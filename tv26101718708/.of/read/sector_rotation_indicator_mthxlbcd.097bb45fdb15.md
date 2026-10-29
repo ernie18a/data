@@ -1,0 +1,8 @@
+Calculation: Asset score = percentage spread between the shorter and longer EMAs of the asset.
+Calculation: Systematic risk score = smoothed tail-risk score derived from percentile ranks of SPX year-over-year return, 63-bar positive-day persistence, distance from its 200-bar SMA in ATR units, and 63-bar return per normalized ATR; each component uses the higher of its short-lookback and long-lookback percentile ranks.
+Calculation: Average reference RSI = mean of the 14-bar RSI values for SPX, technology, and consumer staples.
+Calculation: Rotation leader = eligible asset with the highest asset score; an asset is eligible when its close is above its longer SMA if the absolute-momentum filter is enabled.
+Long: With two assets, asset A score > asset B score AND current asset is not A, OR asset B score > asset A score AND current asset is not B. With three or more assets, rotation leader differs from current asset AND (SPX close > its longer SMA implies leader score exceeds current asset score by the rotation buffer; otherwise no score buffer is required). Apply the anti-rotation risk and volatility filters to rotations.
+Exit: Long, current asset changes to another asset.
+Exit: Long, systematic risk score is at or above its extreme-risk threshold AND (SPX close is below its EMA, while above its longer SMA, OR SPX close is below its longer SMA) AND consumer-staples score > technology score.
+Exit: Long, average reference RSI < its risk threshold.

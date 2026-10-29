@@ -1,0 +1,6 @@
+Calculation: Directional Pressure Score (DPS) = EMA of the [-1, 1]-clamped weighted sum of: 45% of (close − open)/(high − low), 25% of (close − bar midpoint)/(high − low), 20% of the volume z-score versus its lookback mean and standard deviation divided by 3 and clamped to [-1, 1], and 10% of (open − previous close)/ATR clamped to [-1, 1]; use 0 for a component when its denominator is zero.
+Calculation: Route Continuity Index (RCI) = clamp to [0, 1] the weighted sum of 65% times the fraction of bars in its lookback whose nonzero DPS sign matches the current nonzero DPS sign, and 35% times clamp to [0, 1] of (1 − 4 × the DPS standard deviation over that lookback).
+Long: DPS > 0 AND ((absolute DPS ≥ clean DPS threshold AND RCI ≥ clean RCI threshold) OR (RCI ≥ 0.75 AND absolute DPS ≥ stalling DPS threshold)) AND previous bar was not Clean
+Short: DPS < 0 AND ((absolute DPS ≥ clean DPS threshold AND RCI ≥ clean RCI threshold) OR (RCI ≥ 0.75 AND absolute DPS ≥ stalling DPS threshold)) AND previous bar was not Clean
+Exit: Long, current nonzero DPS sign differs from the previous nonzero DPS sign and is negative AND absolute DPS ≥ broken minimum DPS AND previous bar was not Broken
+Exit: Short, current nonzero DPS sign differs from the previous nonzero DPS sign and is positive AND absolute DPS ≥ broken minimum DPS AND previous bar was not Broken

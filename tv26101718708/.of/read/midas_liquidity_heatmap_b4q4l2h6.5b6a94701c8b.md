@@ -1,0 +1,3 @@
+Calculation: Liquidity zone = a heatmap price bin with positive accumulated pivot weight and enough distinct contributing sources in that bin or its neighboring bins; pivot weight is normalized volume, with added weight near qualifying swing extremes. Use the external-source mean close when enough external sources are available, otherwise use chart close.
+Long: liquidity zone midpoint < active-source mean close AND active-source mean close is not strictly between the zone’s lower and upper bounds
+Short: liquidity zone midpoint > active-source mean close AND active-source mean close is not strictly between the zone’s lower and upper bounds

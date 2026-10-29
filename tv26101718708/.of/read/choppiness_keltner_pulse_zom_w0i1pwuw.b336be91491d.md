@@ -1,0 +1,7 @@
+Calculation: Choppiness release = current Choppiness Index < release threshold AND (prior bar's index >= release threshold OR current index < prior bar's index)
+Calculation: Keltner reclaim = close crosses above the Keltner centerline OR close > upper Keltner channel; Keltner flush = close crosses below the centerline OR close < lower Keltner channel
+Calculation: Bullish OBV pressure = OBV > its moving average AND OBV > prior bar's OBV; bearish OBV pressure = OBV < its moving average AND OBV < prior bar's OBV; OBV = cumulative signed volume, with each bar's volume signed by the direction of its close change
+Calculation: Bullish ATR thrust = close > open AND close − open > ATR × thrust multiplier; bearish ATR thrust = close < open AND open − close > ATR × thrust multiplier
+Calculation: Bull score = sum of the true conditions among Choppiness release, Keltner reclaim, bullish OBV pressure, and bullish ATR thrust; bear score = sum of the true conditions among Choppiness release, Keltner flush, bearish OBV pressure, and bearish ATR thrust
+Long: (Bull score >= signal threshold − 1 AND Bull score < signal threshold AND Keltner reclaim) OR (Bull score >= signal threshold AND Keltner reclaim AND bars since the prior bull signal > cooldown)
+Short: (Bear score >= signal threshold − 1 AND Bear score < signal threshold AND Keltner flush) OR (Bear score >= signal threshold AND Keltner flush AND bars since the prior bear signal > cooldown)

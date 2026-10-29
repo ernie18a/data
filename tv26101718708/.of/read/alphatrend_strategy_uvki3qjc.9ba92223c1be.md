@@ -1,0 +1,3 @@
+Calculation: AlphaTrend = Initialize at 0; on each bar, if RSI(close, lookback) ≥ 50 (or MFI((high + low + close) / 3, lookback) ≥ 50 when using volume), set it to max(previous AlphaTrend, low − multiplier × SMA(True Range, lookback)); otherwise set it to min(previous AlphaTrend, high + multiplier × SMA(True Range, lookback)).
+Long: AlphaTrend > its value 2 bars ago AND previous-bar AlphaTrend ≤ its value 3 bars ago AND bars since the previous-bar upward-cross signal > bars since the downward-cross signal.
+Short: AlphaTrend < its value 2 bars ago AND previous-bar AlphaTrend ≥ its value 3 bars ago AND bars since the previous-bar downward-cross signal > bars since the upward-cross signal.

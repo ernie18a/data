@@ -1,0 +1,7 @@
+Calculation: Opening-range high/low = highest high / lowest low during the configured opening-range period, fixed when that period ends
+Calculation: Bullish FVG = current low > high two bars earlier; gap = current low − high two bars earlier
+Calculation: Bearish FVG = current high < low two bars earlier; gap = low two bars earlier − current high
+Long: Flat AND within the configured trade window AND the first sweep was low < opening-range low AND a bullish FVG formed after that sweep with gap ≥ the minimum FVG size AND the active FVG has been tested (low ≤ its top) AND no close since setup formation was below its bottom AND close > max(previous bar high, high of the FVG's middle candle)
+Short: Flat AND within the configured trade window AND the first sweep was high > opening-range high AND a bearish FVG formed after that sweep with gap ≥ the minimum FVG size AND the active FVG has been tested (high ≥ its bottom) AND no close since setup formation was above its top AND close < min(previous bar low, low of the FVG's middle candle)
+Exit: Long, low ≤ entry price − stop distance OR high ≥ entry price + target distance OR (the high has reached entry price + breakeven trigger since entry AND low ≤ entry price)
+Exit: Short, high ≥ entry price + stop distance OR low ≤ entry price − target distance OR (the low has reached entry price − breakeven trigger since entry AND high ≥ entry price)

@@ -1,0 +1,3 @@
+Calculation: USD CVD open and close = the open and close of cumulative lower-timeframe volume delta since the current anchor period, aggregated from lower-timeframe bars within the chart bar (including the still-forming bar when present), multiplied by the chart bar's close; classify each lower-timeframe bar's volume as positive when its close is above its open and negative when below, using its close versus the preceding lower-timeframe close to classify doji bars
+Long: USD CVD close >= USD CVD open
+Short: USD CVD close < USD CVD open

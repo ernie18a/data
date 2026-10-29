@@ -1,0 +1,1 @@
+Using confirmed swing pivots in the traded instrument and a secondary symbol: signal short when price forms a higher pivot high while the secondary symbol forms a lower high; signal long when price forms a lower pivot low while the secondary symbol forms a higher low. Compare each pivot with the preceding pivot of the same type. No exit condition is defined.

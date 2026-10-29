@@ -1,0 +1,11 @@
+Calculation: ATR margin = ATR × minimum breakout multiple.
+Calculation: Confirmed pivot high/low = local highest high/lowest low over equal lookback bars on each side, confirmed after the right-side bars complete.
+Calculation: Tested pivot = confirmed pivot whose pivot-candle range overlaps at least once with a later candle; consecutive overlapping candles count as one test.
+Calculation: Active zone = a tested pivot-high/low pair with high > low, both pivots no farther apart than the maximum pair distance, all closes between the earlier pivot and the current bar within [pivot low − ATR margin, pivot high + ATR margin], and (if the ATR height cap is enabled) pivot high − pivot low no greater than the maximum ATR multiple. Zone top = pivot high; zone bottom = pivot low. A zone becomes inactive on any close beyond top + ATR margin or bottom − ATR margin.
+Calculation: Pre-breakout zone buy/sell volume = for each candle before the breakout, allocate its volume in proportion to the candle’s high-low range overlapping the zone, then split that allocated volume into buy volume by (close − low)/(high − low) and sell volume by (high − close)/(high − low). If outside-wick volume is enabled, include the outside wick volume in the nearest zone edge. Exclude the breakout candle.
+Calculation: Risk distance = ATR × stop multiplier when ATR stops are enabled; otherwise entry price × stop percentage.
+Calculation: Long stop/target levels = entry price − risk distance; entry price + risk distance × each enabled risk-reward ratio. Short stop/target levels = entry price + risk distance; entry price − risk distance × each enabled risk-reward ratio. Entry price is the breakout bar close.
+Long: Active zone AND close > zone top + ATR margin AND (volume confirmation is disabled OR pre-breakout zone buy volume >= pre-breakout zone sell volume).
+Short: Active zone AND close < zone bottom − ATR margin AND (volume confirmation is disabled OR pre-breakout zone sell volume > pre-breakout zone buy volume).
+Exit: Long, low <= long stop level OR high >= the highest enabled long target level.
+Exit: Short, high >= short stop level OR low <= the lowest enabled short target level.

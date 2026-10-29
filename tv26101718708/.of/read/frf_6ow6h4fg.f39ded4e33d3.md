@@ -1,0 +1,3 @@
+Calculation: FRF channel = For each lookback in the search range, fit a linear regression to close and calculate the Pearson correlation between price deviations from their mean and fitted-line deviations from their mean; select the lookback with the lowest correlation if it is at or below the threshold, and set the channel boundaries to the fitted line plus/minus 2 residual standard deviations. Use chart-timeframe bars, or, when MTF is enabled, selected higher- or lower-timeframe close bars with lookahead off (last completed bars historically; the bar still forming in real time).
+Long: min(open, close) > FRF upper boundary
+Short: max(open, close) < FRF lower boundary

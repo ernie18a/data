@@ -1,0 +1,1 @@
+Consider a long entry only for a stock with float below 20 million shares. No other trade decision uses data external to the traded instrument.

@@ -1,0 +1,3 @@
+Calculation: Composite MA = arithmetic mean of five equally weighted selected moving averages, each calculated from close on its component timeframe; use the developing bar for higher timeframes, the latest available intrabar (possibly still forming) for lower timeframes, and the current bar for the chart timeframe.
+Long: Composite MA > its value on the previous chart bar
+Short: Composite MA < its value on the previous chart bar

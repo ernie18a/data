@@ -1,0 +1,2 @@
+Long: Scan direction permits above EMA AND the number of enabled scan timeframes whose close is above their EMA is >= the required count (the enabled count in all-timeframes mode)
+Short: Scan direction permits below EMA AND the number of enabled scan timeframes whose close is below their EMA is >= the required count (the enabled count in all-timeframes mode)

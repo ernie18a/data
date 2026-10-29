@@ -1,0 +1,3 @@
+Calculation: Range direction = For each configured timeframe, initialize the range to the first bar’s high and low with neutral direction. While a bar closes within the range, keep its direction. When a bar closes above the range high or below the range low, set the range to that bar’s high and low and set direction to up or down, respectively. Use the timeframe’s last completed bar when it differs from the chart timeframe; use the chart bar when they are equal.
+Long: Range direction is up
+Short: Range direction is down

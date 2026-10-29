@@ -1,0 +1,3 @@
+Calculation: Session VWAP = each session, cumulative ((base high + base low + base close) / 3 × base volume) divided by cumulative base volume, resetting at the start of each session
+Long: base close > Session VWAP AND MACD line > MACD signal line AND (inverse close < inverse open OR inverse close < previous inverse close) AND absolute(base close − Session VWAP) > base close × trend threshold
+Short: base close < Session VWAP AND MACD line < MACD signal line AND (inverse close > inverse open OR inverse close > previous inverse close) AND absolute(base close − Session VWAP) > base close × trend threshold

@@ -1,0 +1,3 @@
+Calculation: Tension = EMA of sign(close − midline) × path efficiency, where path efficiency is abs(close − close 5 bars ago) / (5 × SMA over 5 bars of abs(close − prior close)); the midline is the volume-blended centerline of the Markus Channel.
+Long: Tension > the bullish color threshold OR close crosses above the configured crossover target while Tension exceeds the bullish signal threshold and volume / SMA(volume, lookback) > 1.
+Short: Tension < the bearish color threshold OR close crosses below the configured crossover target while Tension is below the negative bearish signal threshold and volume / SMA(volume, lookback) > 1.

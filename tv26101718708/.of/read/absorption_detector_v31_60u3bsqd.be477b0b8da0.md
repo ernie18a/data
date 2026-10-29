@@ -1,0 +1,4 @@
+Calculation: Absorption z-score = (volume / max(high − low, minimum price increment) − rolling mean of that ratio) / rolling standard deviation of that ratio
+Calculation: Smoothed absorption = moving average of the absorption z-score over a shorter lookback
+Long: Smoothed absorption > absorption threshold AND close < moving average of close over the trend-context lookback AND close < close from the trend-context lookback bars ago AND current bar index − bar index of the previous buy absorption signal ≥ cooldown
+Short: Smoothed absorption > absorption threshold AND close > moving average of close over the trend-context lookback AND close > close from the trend-context lookback bars ago AND current bar index − bar index of the previous sell absorption signal ≥ cooldown

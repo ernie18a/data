@@ -1,0 +1,6 @@
+Calculation: Fast, intermediate, and structural EMAs = EMAs of close with progressively longer lookbacks
+Calculation: Trend basis = average of the fast, intermediate, and structural EMAs
+Calculation: Confirmed pivot high/low = a local high/low confirmed after the specified number of later bars; retain confirmed pivots as liquidity levels until swept or removed from the tracked set
+Calculation: Candle body ratio = absolute(close − open) / (high − low), or 0 when high = low
+Long: At least three of fast EMA > intermediate EMA, intermediate EMA > structural EMA, close > trend basis, and +DI > −DI; OR confirmed close crosses above the latest confirmed pivot high; OR confirmed bar has volume above a multiple of its 20-bar average, candle body ratio below a threshold, close >= open, and close <= high − a fraction of the bar range; OR a confirmed bar has low below an unswept tracked pivot low and close above that level
+Short: At least three of fast EMA < intermediate EMA, intermediate EMA < structural EMA, close < trend basis, and +DI < −DI; OR confirmed close crosses below the latest confirmed pivot low; OR confirmed bar has volume above a multiple of its 20-bar average, candle body ratio below a threshold, close <= open, and close >= low + a fraction of the bar range; OR a confirmed bar has high above an unswept tracked pivot high and close below that level

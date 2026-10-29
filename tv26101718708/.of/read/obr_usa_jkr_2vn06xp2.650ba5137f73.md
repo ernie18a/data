@@ -1,0 +1,4 @@
+Calculation: Opening-range high = highest high during the configured opening-range window, calculated from fixed 1-minute bars
+Calculation: Opening-range low = lowest low during the configured opening-range window, calculated from fixed 1-minute bars
+Long: Opening range is complete AND the previous completed fixed 1-minute bar is after the opening-range window AND its close > opening-range high AND no earlier breakout occurred that day
+Short: Opening range is complete AND the previous completed fixed 1-minute bar is after the opening-range window AND its close < opening-range low AND no earlier breakout occurred that day

@@ -1,0 +1,4 @@
+Calculation: DI energy at each price row = sum of that row’s +DI or −DI across the profile window, weighted per bar by volume × (1 + abs(+DI − −DI) / (+DI + −DI)); if volume weighting is off, use 1 instead of volume. DMI may use the chart timeframe or a higher timeframe; higher-timeframe values use the bar still forming.
+Calculation: ADX density at each price row = sum of that row’s ADX across the profile window, weighted per bar by the same volume factor and divided across the bar’s touched price rows. Average ADX density = ADX density divided by the number of bars touching the row.
+Long: average ADX density ≥ the ADX threshold AND +DI energy > 1.2 × −DI energy
+Short: average ADX density ≥ the ADX threshold AND −DI energy > 1.2 × +DI energy

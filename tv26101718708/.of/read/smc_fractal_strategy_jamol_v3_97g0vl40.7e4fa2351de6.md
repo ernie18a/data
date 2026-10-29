@@ -1,0 +1,13 @@
+Calculation: Latest confirmed swing high/low = most recent confirmed pivot high/low, each requiring the configured number of chart-timeframe bars on both sides
+Calculation: Bullish/bearish sweep = low below latest swing low and close above it / high above latest swing high and close below it
+Calculation: Sweep validity = a bullish/bearish sweep occurred within the configured number of chart bars
+Calculation: Bullish/bearish BOS = with a valid matching sweep, close crosses above the latest swing high / below the latest swing low from at-or-below / at-or-above on the prior bar; BOS sets persistent bullish/bearish trend and consumes that sweep
+Calculation: Bullish/bearish order block = latest bearish/bullish candle among the preceding configured maximum search window when matching BOS occurs; zone spans that candle's low to high, and is invalidated by a close below its low / above its high
+Calculation: Bullish/bearish breaker block = in matching persistent trend, after three consecutive opposite-color candles, close above the highest / below the lowest of their bodies; zone spans the highest high to lowest low of those candles, and is invalidated by a close below its low / above its high
+Calculation: Bullish/bearish fair value gap = in matching persistent trend, current low exceeds the high from two chart bars earlier / current high is below the low from two bars earlier by at least the configured minimum gap; zone is the gap between those prices
+Calculation: Higher-timeframe bias = close above/below a 20-period EMA, both calculated on the last completed bar of a timeframe higher than the chart timeframe
+Calculation: Enabled-session condition = current bar time is within an enabled trading session
+Long: bullish sweep OR bullish BOS OR (flat position AND persistent bullish trend AND higher-timeframe bias is bullish AND enabled-session condition AND close is within a valid bullish order block OR bullish fair value gap OR bullish breaker block)
+Short: bearish sweep OR bearish BOS OR (flat position AND persistent bearish trend AND higher-timeframe bias is bearish AND enabled-session condition AND close is within a valid bearish order block OR bearish fair value gap OR bearish breaker block)
+Exit: long, low <= selected bullish zone low - configured stop buffer OR high >= signal close + (signal close - stop) * configured reward/risk ratio, where stop = selected bullish zone low - configured stop buffer
+Exit: short, high >= selected bearish zone high + configured stop buffer OR low <= signal close - (stop - signal close) * configured reward/risk ratio, where stop = selected bearish zone high + configured stop buffer

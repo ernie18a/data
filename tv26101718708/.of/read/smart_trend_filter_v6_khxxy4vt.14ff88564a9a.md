@@ -1,0 +1,2 @@
+Long: Fast EMA crosses above slow EMA AND RSI > buy threshold AND volume > volume moving average AND close > fast EMA
+Short: Fast EMA crosses below slow EMA AND RSI < sell threshold AND volume > volume moving average AND close < fast EMA

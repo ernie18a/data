@@ -1,0 +1,7 @@
+Calculation: Long stop = entry price − initial risk distance; after high ≥ entry price + initial risk distance, long stop = entry price × (1 + round-trip fee rate)
+Calculation: Short stop = entry price + initial risk distance; after low ≤ entry price − initial risk distance, short stop = entry price × (1 − round-trip fee rate)
+Calculation: Initial risk distance = ATR × stop-loss multiplier
+Long: EMA(7) crosses above EMA(144) OR EMA(14) crosses above EMA(144) AND EMA(7) > EMA(14) AND EMA(14) > EMA(21) AND +DI > −DI AND ADX > threshold AND no open long position AND datetime is within the configured date range
+Short: EMA(7) crosses below EMA(144) OR EMA(14) crosses below EMA(144) AND EMA(7) < EMA(14) AND EMA(14) < EMA(21) AND −DI > +DI AND ADX > threshold AND no open short position AND datetime is within the configured date range
+Exit: Long, high ≥ entry price + initial risk distance OR high ≥ entry price + 2 × initial risk distance OR high ≥ entry price + 3 × initial risk distance OR low ≤ long stop OR datetime is outside the configured date range
+Exit: Short, low ≤ entry price − initial risk distance OR low ≤ entry price − 2 × initial risk distance OR low ≤ entry price − 3 × initial risk distance OR high ≥ short stop OR datetime is outside the configured date range

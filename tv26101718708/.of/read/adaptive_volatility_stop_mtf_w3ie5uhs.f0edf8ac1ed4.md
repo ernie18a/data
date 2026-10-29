@@ -1,0 +1,19 @@
+Calculation: Adaptive volatility stop = trailing stop whose distance is ATR multiplied by an efficiency-ratio-adapted multiplier and a recent-return-volatility adjustment; in an uptrend it ratchets upward and flips down when close falls below it, and in a downtrend it ratchets downward and flips up when close rises above it. Compute independently on the chart timeframe and on higher timeframes; use the last completed higher-timeframe bar.
+Calculation: Bias score = 1× chart stop direction + 2× short-term higher-timeframe stop direction + 3× medium-term higher-timeframe stop direction + 4× long-term higher-timeframe stop direction, with bullish direction positive and bearish direction negative.
+Calculation: Effective score floor = 2 + volatility-cluster lift; the lift is zero below the shock-intensity warning threshold and increases proportionally above it, up to a configurable cap.
+Calculation: Trade allowed = absolute bias score > effective score floor.
+Calculation: Adjacent-stop band = the interval between the two stops that define that band.
+Long: short-term higher-timeframe stop flips bearish to bullish AND trade allowed AND long-term higher-timeframe stop is bullish.
+Long: medium-term higher-timeframe stop flips bearish to bullish AND trade allowed.
+Long: long-term higher-timeframe stop flips bearish to bullish.
+Long: chart and short-term higher-timeframe stops are bullish AND close is above the lower band boundary AND the prior close is above its prior lower boundary AND the close two bars ago was not above its corresponding boundary AND no short-term higher-timeframe flip signal occurs AND no medium- or long-term flip signal occurs AND the long-term higher-timeframe stop is bullish AND trade allowed.
+Long: short- and medium-term higher-timeframe stops are bullish AND close is above the lower boundary of their band AND the prior close is above its prior boundary AND the close two bars ago was not above its corresponding boundary AND no medium- or long-term flip signal occurs AND trade allowed.
+Long: medium- and long-term higher-timeframe stops are bullish AND close is above the lower boundary of their band AND the prior close is above its prior boundary AND the close two bars ago was not above its corresponding boundary AND no long-term flip signal occurs AND trade allowed.
+Long: short-, medium-, and long-term higher-timeframe stops are bullish AND they were not all bullish on the prior bar AND trade allowed.
+Short: short-term higher-timeframe stop flips bullish to bearish AND trade allowed AND long-term higher-timeframe stop is bearish.
+Short: medium-term higher-timeframe stop flips bullish to bearish AND trade allowed.
+Short: long-term higher-timeframe stop flips bullish to bearish.
+Short: chart and short-term higher-timeframe stops are bearish AND close is below the upper band boundary AND the prior close is below its prior upper boundary AND the close two bars ago was not below its corresponding boundary AND no short-term higher-timeframe flip signal occurs AND no medium- or long-term flip signal occurs AND the long-term higher-timeframe stop is bearish AND trade allowed.
+Short: short- and medium-term higher-timeframe stops are bearish AND close is below the upper boundary of their band AND the prior close is below its prior boundary AND the close two bars ago was not below its corresponding boundary AND no medium- or long-term flip signal occurs AND trade allowed.
+Short: medium- and long-term higher-timeframe stops are bearish AND close is below the upper boundary of their band AND the prior close is below its prior boundary AND the close two bars ago was not below its corresponding boundary AND no long-term flip signal occurs AND trade allowed.
+Short: short-, medium-, and long-term higher-timeframe stops are bearish AND at least one was not bearish on the prior bar AND trade allowed.

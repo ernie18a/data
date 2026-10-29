@@ -1,0 +1,6 @@
+Calculation: Kalman velocity = Run a two-state constant-velocity Kalman filter on 100 × ln(close), with position and velocity states initialized to the first transformed close and 0, and covariance P11=1, P12=0, P22=1. Each completed chart bar, predict position'=position+velocity, velocity'=velocity, P11'=P11+2P12+P22+Q, P12'=P12+P22, P22'=P22+Q; with measurement z=100 × ln(close), S=P11'+R, K1=P11'/S, K2=P12'/S, innovation=z-position', update position=position'+K1×innovation, velocity=velocity'+K2×innovation, P11=(1-K1)×P11', P12=(1-K1)×P12', P22=P22'-K2×P12'.
+Calculation: Velocity uncertainty bounds = Kalman velocity ± k × sqrt(max(P22, 1e-10)).
+Long: Lower uncertainty bound > 0 at the confirmation delay AND lower uncertainty bound <= 0 one bar before that AND at least the minimum signal spacing since the prior long signal.
+Short: Upper uncertainty bound < 0 at the confirmation delay AND upper uncertainty bound >= 0 one bar before that AND at least the minimum signal spacing since the prior short signal.
+Exit: Long, lower uncertainty bound > 0 on the previous bar AND current lower uncertainty bound <= 0 AND current upper uncertainty bound >= 0.
+Exit: Short, upper uncertainty bound < 0 on the previous bar AND current lower uncertainty bound <= 0 AND current upper uncertainty bound >= 0.

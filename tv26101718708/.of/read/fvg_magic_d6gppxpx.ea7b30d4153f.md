@@ -1,0 +1,4 @@
+Calculation: Gap-size measure = if the previous bar closes above its open, (current low − high two bars ago) / current low × 100; otherwise, (low two bars ago − current high) / current high × 100
+Calculation: Normalized gap size = gap-size measure / rolling maximum of the gap-size measure × 100
+Long: high two bars ago < current low AND high two bars ago < previous high AND low two bars ago < current low AND normalized gap size > minimum size threshold
+Short: low two bars ago > current high AND low two bars ago > previous low AND high two bars ago > current high AND normalized gap size > minimum size threshold

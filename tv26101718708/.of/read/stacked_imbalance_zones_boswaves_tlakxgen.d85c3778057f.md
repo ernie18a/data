@@ -1,0 +1,4 @@
+Calculation: Buy-dominant bar = at least the minimum consecutive count of preceding chart-timeframe bars each had (close − low) / (high − low) ≥ the dominance threshold and volume ≥ its chart-timeframe volume SMA × the volume factor; when high = low, use a buy ratio of 0.5. The current bar is not buy-dominant.
+Calculation: Sell-dominant bar = at least the minimum consecutive count of preceding chart-timeframe bars each had (high − close) / (high − low) ≥ the dominance threshold and volume ≥ its chart-timeframe volume SMA × the volume factor; when high = low, use a sell ratio of 0.5. The current bar is not sell-dominant.
+Long: Buy-dominant bar
+Short: Sell-dominant bar

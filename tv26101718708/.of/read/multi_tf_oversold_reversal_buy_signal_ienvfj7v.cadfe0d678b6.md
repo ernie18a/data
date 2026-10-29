@@ -1,0 +1,2 @@
+Long: RSI on each of the four requested timeframes is below the oversold threshold
+Long: RSI on the shortest requested timeframe crosses above the oversold threshold AND, on the previous chart bar, RSI on each of the four requested timeframes was below the oversold threshold

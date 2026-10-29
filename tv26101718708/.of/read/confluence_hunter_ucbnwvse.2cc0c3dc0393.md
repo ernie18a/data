@@ -1,0 +1,8 @@
+Calculation: EMA stack = short-term EMA > next-shorter-term EMA > next-longer-term EMA > long-term EMA; bearish stack is the reverse
+Calculation: Bullish factor count = number of these true: bullish EMA stack; close > current session VWAP; bullish sweep; smoothed order-flow delta > 0; close > current session volume-profile POC; RSI > upper threshold
+Calculation: Bearish factor count = number of these true: bearish EMA stack; close < current session VWAP; bearish sweep; smoothed order-flow delta < 0; close < current session volume-profile POC; RSI < lower threshold
+Calculation: Bullish sweep = low < latest confirmed pivot low and close > that pivot low and lower wick / (high − low) ≥ wick-ratio threshold; pivot uses a lookback on both sides
+Calculation: Bearish sweep = high > latest confirmed pivot high and close < that pivot high and upper wick / (high − low) ≥ wick-ratio threshold; pivot uses a lookback on both sides
+Calculation: Order-flow delta = volume × (2 × (close − low) / (high − low) − 1); smoothed order-flow delta = EMA of order-flow delta; delta magnitude = absolute order-flow delta; smoothed delta magnitude = EMA of delta magnitude
+Long: bullish factor count ≥ confluence threshold AND bearish factor count ≤ 1 OR bullish sweep OR order-flow delta > 0 AND delta magnitude > smoothed delta magnitude × strength threshold
+Short: bearish factor count ≥ confluence threshold AND bullish factor count ≤ 1 OR bearish sweep OR order-flow delta < 0 AND delta magnitude > smoothed delta magnitude × strength threshold

@@ -1,0 +1,3 @@
+Calculation: Smoothed absorption z-score = SMA((volume / max(high - low, minimum price increment) - SMA(volume / max(high - low, minimum price increment), normalization lookback)) / max(STDEV(volume / max(high - low, minimum price increment), normalization lookback), small positive floor), smoothing length)
+Long: Smoothed absorption z-score > absorption threshold AND close < SMA(close, trend context lookback) AND close < close[trend context lookback] AND current bar index - last buy signal bar >= cooldown bars
+Short: Smoothed absorption z-score > absorption threshold AND close > SMA(close, trend context lookback) AND close > close[trend context lookback] AND current bar index - last sell signal bar >= cooldown bars

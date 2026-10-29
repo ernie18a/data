@@ -1,0 +1,6 @@
+Calculation: Doji = high > low AND |close − open| / (high − low) ≤ doji body fraction
+Calculation: EMA30 ATR distance = (close − EMA30) / ATR14
+Long: A Doji has formed; current bar is at least two bars after the latest Doji; no long signal has fired for it since it formed or the current day began; high > latest Doji high; close > previous close; EMA30 ATR distance < long limit
+Short: A Doji has formed; current bar is at least two bars after the latest Doji; no short signal has fired for it since it formed or the current day began; low < latest Doji low; close < previous close; EMA30 ATR distance > short limit
+Exit: Long, on a bar after entry, any of close < entry Doji high, low < previous close − exit offset, or low ≤ entry price − hard stop is true, and at least one of these conditions was true on the immediately preceding bar
+Exit: Short, on a bar after entry, any of close > entry Doji low, high > previous close + exit offset, or high ≥ entry price + hard stop is true, and at least one of these conditions was true on the immediately preceding bar

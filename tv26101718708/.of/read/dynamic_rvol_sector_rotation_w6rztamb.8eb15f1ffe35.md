@@ -1,0 +1,3 @@
+Calculation: Relative volume = scanner-timeframe volume divided by its longer-lookback simple moving average of volume; use the current bar, which may still be forming. Scanner timeframe defaults to the chart timeframe and may be configured higher or lower.
+Calculation: Macro ATR exhaustion = absolute change from the previous macro-timeframe close to the current macro-timeframe close, divided by macro-timeframe ATR; use the current bar, which may still be forming. Macro timeframe may be higher or lower than the chart timeframe.
+Long: Relative volume >= its threshold AND scanner-timeframe percent change from the previous close > 0 AND macro ATR exhaustion < its threshold AND macro-timeframe close > macro-timeframe EMA

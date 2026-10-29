@@ -1,0 +1,7 @@
+Calculation: Confirmed swing high/low = a bar’s high/low is higher/lower than the highs/lows of the configured number of bars on both sides; confirm after the bars on the right have completed.
+Calculation: Bullish/bearish run level = the open of the first chart-timeframe candle in the most recent consecutive run of bullish/bearish candles.
+Long: A confirmed swing high exists AND chart-timeframe high > swing high AND (close > swing high OR candle-closure requirement is disabled)
+Long: Previous completed higher-timeframe candle is bullish AND a chart-timeframe candle has closed below the current, still-forming higher-timeframe candle’s open AND current higher-timeframe candle is in its first half AND delivery is bearish AND current chart-timeframe candle is bullish AND close > bearish run level AND the level was not crossed by the immediately following candle
+Short: A confirmed swing low exists AND chart-timeframe low < swing low AND (close < swing low OR candle-closure requirement is disabled)
+Short: Previous completed higher-timeframe candle is bearish AND a chart-timeframe candle has closed above the current, still-forming higher-timeframe candle’s open AND current higher-timeframe candle is in its first half AND delivery is bullish AND current chart-timeframe candle is bearish AND close < bullish run level AND the level was not crossed by the immediately following candle
+Exit:

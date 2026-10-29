@@ -1,0 +1,4 @@
+Calculation: Prior-bar midpoint = (previous bar’s open + previous bar’s close) / 2, using the chart timeframe or the specified higher timeframe; use the last completed bar.
+Calculation: Direction score = 100 × the 3-bar simple moving average of the average of five binary values, each 1 when chart OHLC4 > its prior-bar midpoint and 0 otherwise; the five midpoints use the chart timeframe and four higher timeframes.
+Long: Chart OHLC4 > prior-bar midpoint on the chart timeframe OR chart OHLC4 > prior-bar midpoint on any of the four higher timeframes OR direction score > 50
+Short: Chart OHLC4 ≤ prior-bar midpoint on the chart timeframe OR chart OHLC4 ≤ prior-bar midpoint on any of the four higher timeframes OR direction score ≤ 50

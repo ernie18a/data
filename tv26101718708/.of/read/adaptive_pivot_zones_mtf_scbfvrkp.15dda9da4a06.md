@@ -1,0 +1,10 @@
+Calculation: Pivot-zone lines = Track the latest confirmed pivot high and pivot low, each requiring the configured number of bars on both sides; place three lines at the configured coefficients of the low-to-high range, smooth each with its configured moving average, and define the zone boundaries as the minimum and maximum of the three smoothed lines. The middle line is the smoothed line at the middle coefficient.
+Calculation: Trend state = On the chart timeframe or either of two higher timeframes, set the state bearish when close is below the lower boundary in Full Band mode or below the middle line in Mid Line mode; set it bullish when close is above the upper boundary in Full Band mode or above the middle line in Mid Line mode; otherwise retain the prior state. Neutral is allowed only on the chart timeframe when enabled and close equals the decision level. Higher-timeframe calculations use the last completed higher-timeframe bar in backtests.
+Calculation: Agreement count = Number of the chart timeframe and two higher-timeframe trend states that equal the chart timeframe's non-neutral trend state.
+Calculation: Risk distance = ATR on the chart timeframe multiplied by the configured stop multiplier, or entry price multiplied by the configured stop percentage.
+Calculation: Stop price = Entry price minus risk distance for a long signal, or plus risk distance for a short signal.
+Calculation: Target price = Entry price plus risk distance times the configured reward multiple for a long signal, or minus that amount for a short signal. The exit target is the furthest enabled target among the three reward levels.
+Long: Chart-timeframe trend state is bullish AND (prior cascade direction is not bullish OR current agreement count > prior cascade count).
+Short: Chart-timeframe trend state is bearish AND (prior cascade direction is not bearish OR current agreement count > prior cascade count).
+Exit: Long, after the signal bar, low <= stop price OR high >= furthest enabled target
+Exit: Short, after the signal bar, high >= stop price OR low <= furthest enabled target

@@ -1,0 +1,8 @@
+Calculation: Bullish policy count = increase by 1, capped at 5, when volume > 20-bar SMA(volume) × policy volume threshold AND (close − previous close) / previous close × 100 > policy price threshold AND RSI < 80; every fifth chart bar, decrease by 1, floored at 0
+Calculation: Bearish policy count = increase by 1, capped at 5, when volume > 20-bar SMA(volume) × policy volume threshold AND (close − previous close) / previous close × 100 < −policy price threshold AND RSI > 20; every fifth chart bar, decrease by 1, floored at 0
+Calculation: Effective sentiment = manual sentiment unless the news filter is enabled; when enabled, positive if bullish policy count > bearish policy count and bullish policy count ≥ 2, negative if bearish policy count > bullish policy count and bearish policy count ≥ 2, neutral if the counts are equal, otherwise manual sentiment
+Long: (effective sentiment is positive OR bullish policy count ≥ 2) AND fast EMA > slow EMA AND close > trend SMA AND RSI < overbought level AND MACD line > MACD signal line AND close − close 5 chart bars ago > 0 AND (Bollinger upper band − lower band) / middle band ≥ 0.1
+Long: close crosses above the 2-bar SMA of close
+Exit: long, RSI > overbought level OR fast EMA < slow EMA OR close < trend SMA OR MACD line < MACD signal line OR effective sentiment is negative OR bearish policy count ≥ 2 OR close − close 5 chart bars ago < −2
+Exit: long, low ≤ entry price × (1 − stop-loss percentage / 100) OR high ≥ entry price × (1 + take-profit percentage / 100)
+Exit: long, bar index − entry timestamp > maximum position days × 24 × 60 / chart timeframe multiplier

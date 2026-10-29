@@ -1,0 +1,1 @@
+Calculate the difference between the external BTC long-position and short-position series, and smooth it with a weighted moving average. Go long when the difference crosses above its smoothed value; go short when it crosses below.

@@ -1,0 +1,13 @@
+Long: short-term EMA crosses above long-term EMA AND current bar volume >= prior bar volume × volume multiplier AND no long signal is active
+Short: short-term EMA crosses below long-term EMA AND current bar volume >= prior bar volume × volume multiplier AND no short signal is active
+Calculation: risk distance = ATR × stop-loss multiplier
+Exit: long, high >= entry price + risk distance
+Exit: long, high >= entry price + 2 × risk distance
+Exit: long, high >= entry price + 3 × risk distance
+Exit: long, high >= entry price + 4 × risk distance
+Exit: long, high >= entry price + 5 × risk distance
+Exit: short, low <= entry price - risk distance
+Exit: short, low <= entry price - 2 × risk distance
+Exit: short, low <= entry price - 3 × risk distance
+Exit: short, low <= entry price - 4 × risk distance
+Exit: short, low <= entry price - 5 × risk distance

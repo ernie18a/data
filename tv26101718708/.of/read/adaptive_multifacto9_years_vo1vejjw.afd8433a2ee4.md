@@ -1,0 +1,5 @@
+Calculation: score = sum 1 when each condition is true, otherwise −1: MACD line > MACD signal line; stochastic %K > %D; momentum > 0; RSI > 50; positive Vortex index > negative Vortex index; +DI > −DI; MFI > 50; Fisher transform > its signal line
+Long: score ≥ long-entry threshold AND Parabolic SAR < close AND RSI < long RSI limit AND no chop-zone bar (ADX < danger limit AND ATR > 20-bar SMA of ATR) occurred during the cooldown period or on the current bar
+Short: score ≤ short-entry threshold AND Parabolic SAR > close AND RSI > short RSI limit AND no chop-zone bar (ADX < danger limit AND ATR > 20-bar SMA of ATR) occurred during the cooldown period or on the current bar
+Exit: Long position, score ≤ long-exit threshold OR Parabolic SAR > close
+Exit: Short position, score ≥ short-exit threshold OR Parabolic SAR < close

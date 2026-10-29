@@ -1,0 +1,2 @@
+Long: flat AND RSI(lookback) < threshold OR long position AND an unfilled safety-order rung remains AND close ≤ base entry price × (1 − that rung’s fixed deviation); safety-order rungs trigger sequentially, with deviations increasing from rung to rung
+Exit: long, close ≥ average entry price × (1 + take-profit percentage)

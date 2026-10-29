@@ -1,0 +1,5 @@
+Calculation: Session open = open of the first bar in a configured London or New York Judas window
+Calculation: Upward excursion = highest high during the session window − session open
+Calculation: Downward excursion = session open − lowest low during the session window
+Long: At or after the session window closes and before the reversal deadline, downward excursion > upward excursion AND downward excursion ≥ ATR on the window-close bar × minimum fake-move multiplier AND high ≥ session open + ATR on the confirmation bar × reversal-confirmation multiplier
+Short: At or after the session window closes and before the reversal deadline, upward excursion ≥ downward excursion AND upward excursion ≥ ATR on the window-close bar × minimum fake-move multiplier AND low ≤ session open − ATR on the confirmation bar × reversal-confirmation multiplier

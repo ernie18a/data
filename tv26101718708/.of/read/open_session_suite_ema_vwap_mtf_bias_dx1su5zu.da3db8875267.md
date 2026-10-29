@@ -1,0 +1,2 @@
+Long: (close > EMA50 AND close > Session VWAP AND close > EMA200) OR close > EMA50 calculated from the last completed bar of a higher timeframe
+Short: (close < EMA50 AND close < Session VWAP AND close < EMA200) OR close < EMA50 calculated from the last completed bar of a higher timeframe

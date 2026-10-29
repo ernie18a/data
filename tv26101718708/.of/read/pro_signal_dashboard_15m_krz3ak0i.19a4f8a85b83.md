@@ -1,0 +1,2 @@
+Long: datetime is within the configured trading session AND EMA(50) > EMA(200) AND RSI(14) > 55 AND (volume > SMA(volume, 20) OR ATR(14) > SMA(ATR(14), 20))
+Short: datetime is within the configured trading session AND EMA(50) < EMA(200) AND RSI(14) < 45 AND (volume > SMA(volume, 20) OR ATR(14) > SMA(ATR(14), 20))

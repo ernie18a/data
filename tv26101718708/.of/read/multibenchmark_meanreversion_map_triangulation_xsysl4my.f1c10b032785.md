@@ -1,0 +1,3 @@
+Calculation: Relative z-score = EMA of ((EMA of asset close / benchmark close − rolling mean of the smoothed ratio) / rolling standard deviation of the smoothed ratio); use a shorter EMA for the ratio, a longer rolling lookback for the mean and standard deviation, and a final EMA to smooth the z-score. Use the current bar’s close; when sourced from a higher timeframe, use the bar still forming.
+Long: Primary-benchmark relative z-score > −extreme threshold AND previous primary-benchmark relative z-score ≤ −extreme threshold
+Short: Primary-benchmark relative z-score < +extreme threshold AND previous primary-benchmark relative z-score ≥ +extreme threshold

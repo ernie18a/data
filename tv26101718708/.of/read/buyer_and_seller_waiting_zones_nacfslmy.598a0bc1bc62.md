@@ -1,0 +1,3 @@
+Calculation: Confirmed swing high/low = a pivot high/low in the high/low series, respectively, with equal lookbacks on both sides; retain the latest and preceding confirmed swing high and low. Evaluate market structure separately on each requested timeframe, whether higher or lower than the chart timeframe, using that timeframe’s last completed bar.
+Long: On a requested timeframe, latest confirmed swing high > preceding confirmed swing high AND latest confirmed swing low > preceding confirmed swing low
+Short: On a requested timeframe, latest confirmed swing high < preceding confirmed swing high AND latest confirmed swing low < preceding confirmed swing low

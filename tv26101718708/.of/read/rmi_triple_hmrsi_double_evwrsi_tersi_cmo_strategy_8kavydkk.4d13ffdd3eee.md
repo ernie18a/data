@@ -1,0 +1,7 @@
+Calculation: Triple HMRSI = 10 × (three sequential Hull moving averages of close-based RSI − 50), using the same smoothing length for each Hull moving average.
+Calculation: DEVWRSI = 5 × (three sequential exponential moving averages of the volume-weighted moving average of close-based RSI − 50), using the same length for each moving average.
+Calculation: TERSI = 10 × (three sequential exponential moving averages of close-based RSI − 50), using the same length for each exponential moving average.
+Calculation: RMI = relative momentum index of close changes over a momentum lookback, using Wilder averages of positive and negative changes, scaled from 0–100 and centered at 0.
+Calculation: RMI × HMRSI = (the unsmoothed triple Hull moving average of close-based RSI) × RMI ÷ 25.
+Long: Chande momentum oscillator crosses above its buy threshold AND Triple HMRSI < its buy threshold AND DEVWRSI < its buy threshold AND TERSI < its buy threshold AND RMI < its buy threshold AND RMI × HMRSI < its buy threshold
+Short: Chande momentum oscillator crosses below its sell threshold AND Triple HMRSI > its sell threshold AND DEVWRSI > its sell threshold AND TERSI > its sell threshold AND RMI > its sell threshold AND RMI × HMRSI > its sell threshold

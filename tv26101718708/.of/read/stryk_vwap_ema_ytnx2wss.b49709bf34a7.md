@@ -1,0 +1,3 @@
+Calculation: Delta = sum lower-timeframe bar volume signed positive when close > open and negative when close < open; for a doji, sign volume by close versus the previous lower-timeframe close, or zero if equal. If no lower-timeframe bars are available, use chart-bar volume signed by close versus open, or zero for a doji. Accumulate into the current higher-or-equal-timeframe delta candle while it is still forming.
+Long: Delta > 0
+Short: Delta < 0

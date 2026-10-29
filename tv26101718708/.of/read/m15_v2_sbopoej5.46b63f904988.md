@@ -1,0 +1,4 @@
+Long: low <= lower Bollinger Band AND close > long-term EMA AND RSI < long-entry threshold AND datetime is within the trading window AND datetime is within the backtest lookback window AND fewer than the daily trade limit have been reached AND position is flat
+Short: high >= upper Bollinger Band AND close < long-term EMA AND RSI > short-entry threshold AND datetime is within the trading window AND datetime is within the backtest lookback window AND fewer than the daily trade limit have been reached AND position is flat
+Exit: long, low <= (high >= entry price + breakeven trigger distance ? entry price : entry price - stop-loss distance) OR high >= entry price + take-profit distance OR datetime is in the end-of-day closing window
+Exit: short, high >= (low <= entry price - breakeven trigger distance ? entry price : entry price + stop-loss distance) OR low <= entry price - take-profit distance OR datetime is in the end-of-day closing window

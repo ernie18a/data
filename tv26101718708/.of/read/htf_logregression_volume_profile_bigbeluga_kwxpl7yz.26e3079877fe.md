@@ -1,0 +1,4 @@
+Calculation: Log-regression endpoints = exponentiated fitted values at the start and current end of the active, still-forming higher-timeframe session, from a least-squares regression of natural-log chart-bar closes against reverse chronological bar index
+Calculation: Maximum profile-bin volume = largest accumulated volume among equal-price bins populated by session bars whose closes are within the log-regression center ± standard deviation × channel width
+Long: Maximum profile-bin volume > 0 AND current-end log-regression endpoint >= start log-regression endpoint
+Short: Maximum profile-bin volume > 0 AND current-end log-regression endpoint < start log-regression endpoint

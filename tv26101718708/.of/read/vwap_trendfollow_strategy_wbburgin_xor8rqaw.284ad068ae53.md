@@ -1,0 +1,4 @@
+Long: close crosses above the upper 1-standard-deviation VWAP band AND VWAP is rising OR bars since the latest close cross above the upper 1-standard-deviation VWAP band is less than bars since the latest close cross below the lower 1-standard-deviation VWAP band
+Short: close crosses below the lower 1-standard-deviation VWAP band AND VWAP is falling OR bars since the latest close cross above the upper 1-standard-deviation VWAP band is greater than or equal to bars since the latest close cross below the lower 1-standard-deviation VWAP band
+Exit: long, close crosses below the upper 2-standard-deviation VWAP band
+Exit: short, close crosses above the lower 2-standard-deviation VWAP band

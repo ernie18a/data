@@ -1,0 +1,10 @@
+Calculation: Scan high/low = highest high and lowest low over the ledger-build lookback, including the current bar.
+Calculation: Scan span in ATR = (scan high − scan low) / ATR.
+Calculation: Scan body efficiency = average of |close − open| / max(high − low, minimum price increment) over the ledger-build lookback.
+Calculation: Directional imbalance = absolute value of the sum of +1 for up bars, −1 for down bars, and 0 for unchanged bars, divided by the ledger-build lookback.
+Calculation: Tight scan = scan span in ATR ≤ compression ceiling AND scan body efficiency ≤ body-efficiency ceiling AND directional imbalance ≤ directional-balance ceiling.
+Calculation: Active ledger = becomes active on a confirmed bar after tight scan has held for at least max(4 bars, 35% of the ledger-build lookback rounded up); its high and low are the scan high and low on activation. It remains active until a confirmed close is above its high plus the ATR breakout buffer or below its low minus the ATR breakout buffer.
+Calculation: Build upper/lower levels = scan low + 75%/25% of (scan high − scan low).
+Calculation: Build readiness = clamp(55% × scan compression + 30% × (100 − 100 × directional imbalance) + 15% × (100 − 100 × prior-bar body efficiency), 0, 100), where scan compression = 100 − clamp(100 × scan span in ATR / compression ceiling, 0, 100).
+Long: Confirmed bar AND ((active ledger AND close > ledger high + ATR × breakout buffer) OR (active ledger AND low < ledger low AND close > ledger low) OR (ledger inactive AND scan data available AND build readiness ≥ 18 AND prior close ≤ prior build upper level AND close > build upper level)).
+Short: Confirmed bar AND ((active ledger AND close < ledger low − ATR × breakout buffer) OR (active ledger AND high > ledger high AND close < ledger high) OR (ledger inactive AND scan data available AND build readiness ≥ 18 AND prior close ≥ prior build lower level AND close < build lower level)).

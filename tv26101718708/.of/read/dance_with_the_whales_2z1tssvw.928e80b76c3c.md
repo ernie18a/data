@@ -1,0 +1,9 @@
+Calculation: Volume Z-score = (volume − moving average of volume) / standard deviation of volume, calculated on the higher signal timeframe using its last completed bar.
+Calculation: Candle location value = (close − low) / (high − low), calculated on the higher signal timeframe using its last completed bar; use 0.5 when high equals low.
+Calculation: Candle body fraction = absolute(close − open) / (high − low), calculated on the higher signal timeframe using its last completed bar; use 0 when high equals low.
+Calculation: Quiet-zone ATR ratio = current ATR / moving average of ATR, calculated on the higher signal timeframe using its last completed bar.
+Calculation: Previous Donchian high = highest high over the lookback, excluding the current bar, on the higher signal timeframe.
+Calculation: Short VWMA = volume-weighted moving average of close on the higher signal timeframe; long VWMA uses twice the short VWMA lookback. Use the last completed signal-timeframe bar.
+Calculation: Exit votes = count of these conditions that are true on the higher signal timeframe's last completed bar: close < short VWMA × (1 − breakdown buffer); candle location value ≤ 0.3 AND close < previous bar's low; previous bar's volume Z-score ≥ thrust threshold AND current volume Z-score < 0; open > close AND open ≥ previous bar's close AND close ≤ previous bar's open.
+Long: (quiet-zone ATR ratio ≤ quiet threshold AND close > previous Donchian high AND volume Z-score ≥ thrust threshold AND candle location value ≥ 0.6 AND close > short VWMA AND short VWMA > long VWMA) OR (volume Z-score ≥ thrust threshold AND candle body fraction ≤ 0.4 AND candle location value ≥ 0.6 AND close > previous bar's high AND close > short VWMA AND short VWMA > long VWMA); higher signal-timeframe bar is confirmed.
+Exit: long, exit votes ≥ required vote count AND higher signal-timeframe bar is confirmed.

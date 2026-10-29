@@ -1,0 +1,5 @@
+Calculation: Failed 2 = after at least N consecutive candles with closes above their opens, the first bearish candle that is not inside the previous bar, has high above the previous high, low at or above the previous low, and closes between the previous low and high; or, after at least N consecutive candles with closes below their opens, the first bullish candle that is not inside the previous bar, has low below the previous low, high at or below the previous high, and closes between the previous low and high. N is the minimum streak length.
+Long: Failed 2 is bullish AND (higher-timeframe Failed 2 on the last completed bar is bullish)
+Short: Failed 2 is bearish AND (higher-timeframe Failed 2 on the last completed bar is bearish)
+Exit: long, low <= entry-signal bar low minus stop buffer OR high >= previous bar high
+Exit: short, high >= entry-signal bar high plus stop buffer OR low <= previous bar low

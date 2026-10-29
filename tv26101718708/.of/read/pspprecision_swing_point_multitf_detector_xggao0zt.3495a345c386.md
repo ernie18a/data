@@ -1,0 +1,5 @@
+Calculation: Bullish PSP = On the same or a higher timeframe, among the three correlated assets, exactly one has close > open and the other two have close < open; use the last completed bar.
+Calculation: Bearish PSP = On the same or a higher timeframe, among the three correlated assets, exactly one has close < open and the other two have close > open; use the last completed bar.
+Calculation: Accumulation zone = On the PSP timeframe, at least the minimum count of bars in the trailing zone window each have volume > volume SMA × volume multiplier AND high − low < ATR × range multiplier; evaluate the zone on the chart symbol using the last completed bar.
+Long: chart symbol is one of the three correlated assets AND timeframe is same as or higher than the chart timeframe AND bullish PSP = true AND accumulation zone = false
+Short: chart symbol is one of the three correlated assets AND timeframe is same as or higher than the chart timeframe AND bearish PSP = true AND accumulation zone = false

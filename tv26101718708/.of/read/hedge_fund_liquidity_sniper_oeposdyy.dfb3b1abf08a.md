@@ -1,0 +1,9 @@
+Calculation: Prior range = highest high and lowest low over the preceding lookback bars, excluding the current bar
+Calculation: Bullish higher-timeframe bias = chart close > simple moving average of the higher-timeframe low series; bearish higher-timeframe bias = chart close < simple moving average of the higher-timeframe high series. Use a higher timeframe; use its last completed bar.
+Calculation: Initial long stop = signal-bar low − ATR × stop multiplier; initial short stop = signal-bar high + ATR × stop multiplier
+Calculation: Profit target = entry price + position-side direction × reward-to-risk multiple × initial risk, where initial risk is the distance from entry price to initial stop
+Calculation: While a position is open, update stop to the greater of its previous value and close − ATR whenever close > entry price
+Long: Flat AND current low < prior-range low AND current close > current low AND current close crosses above prior-range high AND absolute(current close − current open) > ATR × displacement threshold AND current low > high from two bars earlier AND previous close < previous open AND current close > previous high AND bullish higher-timeframe bias
+Short: Flat AND current high > prior-range high AND current close < current high AND current close crosses below prior-range low AND absolute(current close − current open) > ATR × displacement threshold AND current high < low from two bars earlier AND previous close > previous open AND current close < previous low AND bearish higher-timeframe bias
+Exit: Long, current high ≥ profit target OR current low ≤ stop
+Exit: Short, current high ≥ profit target OR current low ≤ stop

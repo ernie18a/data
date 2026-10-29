@@ -1,0 +1,4 @@
+Long: open <= previous close AND open < previous open AND close > previous open AND abs(close - open) >= ATR × body threshold AND abs(previous close - previous open) >= ATR × prior-body threshold AND volume > previous volume AND previous close < previous EMA AND current EMA < EMA five bars ago
+Short: open >= previous close AND open > previous open AND close < previous open AND abs(close - open) >= ATR × body threshold AND abs(previous close - previous open) >= ATR × prior-body threshold AND volume > previous volume AND previous close > previous EMA AND current EMA > EMA five bars ago
+Exit: long, high >= entry price + profit distance OR low <= entry price - loss distance
+Exit: short, low <= entry price - profit distance OR high >= entry price + loss distance

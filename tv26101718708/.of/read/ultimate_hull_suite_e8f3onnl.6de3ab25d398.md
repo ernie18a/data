@@ -1,0 +1,4 @@
+Calculation: Selected Hull moving average = HMA, EHMA, or THMA of close; HMA uses weighted moving averages, EHMA uses exponential moving averages, and THMA uses the triple weighted moving average formula.
+Calculation: Squeeze bands = Bollinger Bands around the simple moving average of close, using standard deviation, and Keltner Channels around the same average, using the simple moving average of true range; both use the same lookback.
+Long: Hull moving average > its previous value AND its previous value ≤ its value two bars ago AND lower Bollinger Band < lower Keltner Channel AND upper Bollinger Band > upper Keltner Channel
+Short: Hull moving average < its previous value AND its previous value ≥ its value two bars ago AND lower Bollinger Band < lower Keltner Channel AND upper Bollinger Band > upper Keltner Channel

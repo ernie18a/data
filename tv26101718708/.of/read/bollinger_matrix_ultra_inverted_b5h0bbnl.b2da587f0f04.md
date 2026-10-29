@@ -1,0 +1,5 @@
+Calculation: Higher-timeframe EMA = EMA of higher-timeframe closes, using the bar still forming.
+Long: (previous low < previous lower Bollinger Band AND close > lower Bollinger Band, when sweep confirmation is enabled; OR low crosses below the lower Bollinger Band, when disabled) AND ADX < configured threshold AND close > higher-timeframe EMA (if enabled) AND datetime is within the configured session
+Short: (previous high > previous upper Bollinger Band AND close < upper Bollinger Band, when sweep confirmation is enabled; OR high crosses above the upper Bollinger Band, when disabled) AND ADX < configured threshold AND close < higher-timeframe EMA (if enabled) AND datetime is within the configured session
+Exit: Long, low <= first entry price minus configured stop distance OR high >= current Bollinger middle band plus configured target offset
+Exit: Short, high >= first entry price plus configured stop distance OR low <= current Bollinger middle band minus configured target offset

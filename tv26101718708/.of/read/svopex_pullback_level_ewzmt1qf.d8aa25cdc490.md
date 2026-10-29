@@ -1,0 +1,8 @@
+Calculation: Body high = max(open, close)
+Calculation: Body low = min(open, close)
+Calculation: Active short level = On a confirmed bar, when the preceding bar is bearish, its body low is below the lowest body low in the lookback window ending two bars before the current bar, and the current bar is bullish, set the active short level to the body high of the oldest consecutive bearish bar found by walking back from the preceding bar, up to the maximum walk; replace any prior active short level.
+Calculation: Active long level = On a confirmed bar, when the preceding bar is bullish, its body high is above the highest body high in the lookback window ending two bars before the current bar, and the current bar is bearish, set the active long level to the body low of the oldest consecutive bullish bar found by walking back from the preceding bar, up to the maximum walk; replace any prior active long level.
+Calculation: Higher-timeframe RSI = RSI of close on a higher timeframe bar that is still forming.
+Calculation: Higher-timeframe RSI SMA = SMA of higher-timeframe RSI on the same higher timeframe, using the RSI SMA lookback.
+Long: An active short level exists AND current bar is bullish AND body high > active short level AND higher-timeframe RSI >= higher-timeframe RSI SMA
+Short: An active long level exists AND current bar is bearish AND body low < active long level AND higher-timeframe RSI <= higher-timeframe RSI SMA

@@ -1,0 +1,4 @@
+Calculation: momentum score = count of these conditions that are true: close > EMA > SMA; MACD histogram > 0 and greater than its prior-bar value; RSI between its configured lower and upper thresholds; close > Bollinger midline; volume >= configured multiplier × its moving average; SuperTrend is bullish; and, when enabled, the instrument's lookback return > benchmark's lookback return. Total conditions = 6 when relative-strength filtering is disabled, otherwise 7.
+Long: (momentum score = total conditions AND prior-bar momentum score < total conditions) OR (momentum score >= rounded 75% of total conditions AND momentum score < total conditions AND prior-bar momentum score < rounded 75% of total conditions) OR (MACD line crosses above signal line on this or one of the prior three bars AND (momentum score >= total conditions OR momentum score >= rounded 75% of total conditions) AND entry condition was false on the prior bar)
+Short: 
+Exit: 

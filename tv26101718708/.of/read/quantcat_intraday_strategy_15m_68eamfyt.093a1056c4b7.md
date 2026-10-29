@@ -1,0 +1,9 @@
+Calculation: Shorter-lookback SMA = simple moving average of close over a shorter lookback than the longer-lookback SMA
+Calculation: Longer-lookback SMA = simple moving average of close over a longer lookback than the shorter-lookback SMA
+Calculation: Recent cross count = number of times close crosses the shorter-lookback SMA within a lookback period
+Calculation: Long stop = close on the long-entry signal bar − ATR × stop multiplier, held until a short-entry signal
+Calculation: Short stop = close on the short-entry signal bar + ATR × stop multiplier, held until a long-entry signal
+Long: (shorter-lookback SMA crosses above longer-lookback SMA OR close < shorter-lookback SMA AND close > longer-lookback SMA AND shorter-lookback SMA > longer-lookback SMA) AND recent cross count <= maximum allowed crosses
+Short: (shorter-lookback SMA crosses below longer-lookback SMA OR close > shorter-lookback SMA AND close < longer-lookback SMA AND shorter-lookback SMA < longer-lookback SMA) AND recent cross count <= maximum allowed crosses
+Exit: long, low <= long stop
+Exit: short, high >= short stop

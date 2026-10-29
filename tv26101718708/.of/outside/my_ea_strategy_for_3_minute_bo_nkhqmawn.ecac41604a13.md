@@ -1,0 +1,1 @@
+On the one-minute chart, buy a three-minute call when the shorter-period volume-weighted moving average is above the longer-period one and RSI is at or below a lower threshold. Buy a three-minute put when the shorter-period average is below the longer-period one and RSI is at or above an upper threshold.

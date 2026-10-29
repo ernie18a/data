@@ -1,0 +1,4 @@
+Long: Higher-timeframe (last completed bar) close > EMA AND EMA > EMA on the previous higher-timeframe bar AND low <= chart-timeframe SMA(close) <= high AND previous chart-timeframe close > previous chart-timeframe open AND close > open
+Short: Higher-timeframe (last completed bar) close < EMA AND EMA < EMA on the previous higher-timeframe bar AND low <= chart-timeframe SMA(close) <= high AND previous chart-timeframe close < previous chart-timeframe open AND close < open
+Exit: Long, low <= chart-timeframe SMA(close) - ATR × trailing multiplier
+Exit: Short, high >= chart-timeframe SMA(close) + ATR × trailing multiplier

@@ -1,0 +1,4 @@
+Calculation: Pressure oscillator = the rolling sum over the accumulation window of classified volume pressure, divided by the prior bar’s rolling average volume over that window; optionally apply a short SMA. Classify a bar as positive capped volume when its HLC3 change exceeds close × noise sensitivity × rolling standard deviation of log HLC3 returns; classify it as negative capped volume when the change is below the negative threshold; otherwise classify it as zero. Capped volume is the lesser of bar volume and the rolling average volume multiplied by the participation cap.
+Calculation: Trigger line = EMA of the pressure oscillator, using a shorter smoothing period.
+Long: Pressure oscillator >= 0 OR pressure oscillator crosses above the trigger line
+Short: Pressure oscillator < 0 OR pressure oscillator crosses below the trigger line

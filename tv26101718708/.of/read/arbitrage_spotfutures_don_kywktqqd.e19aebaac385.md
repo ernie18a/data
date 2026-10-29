@@ -1,0 +1,6 @@
+Calculation: Spread = (futures close - spot close) / spot close
+Calculation: Long entry threshold = minimum spread threshold when adaptive thresholds are disabled; otherwise the greater of the minimum spread threshold and the spread moving average plus a standard deviation multiple
+Calculation: Short entry threshold = negative minimum spread threshold when adaptive thresholds are disabled; otherwise the lesser of the negative minimum spread threshold and the spread moving average minus a standard deviation multiple
+Long: spot close > 0 AND futures close > 0 AND spread >= long entry threshold AND (open trade count = 0 OR time since most recent entry > maximum holding duration)
+Short: spot close > 0 AND futures close > 0 AND spread <= short entry threshold AND (open trade count = 0 OR time since most recent entry > maximum holding duration)
+Exit: long or short, (entry price > 0 AND spread < long entry threshold * exit fraction) OR (entry price <= 0 AND spread > short entry threshold * exit fraction) OR time since most recent entry >= maximum holding duration

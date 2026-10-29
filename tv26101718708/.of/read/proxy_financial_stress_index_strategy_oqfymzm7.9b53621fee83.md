@@ -1,0 +1,3 @@
+Calculation: Proxy financial stress index = weighted sum of each component’s z-score, where each z-score = (component value − its simple moving average) / its standard deviation; the components are VIX, US 10-year Treasury yield, DXY, S&P 500, EUR/USD, and HYG. Use the requested daily series: the last completed daily bar historically and the still-forming daily bar in real time (daily may be higher or lower than the chart timeframe).
+Long: position side = flat AND current stress index < threshold AND previous stress index >= threshold
+Exit: long, bars since entry >= holding period

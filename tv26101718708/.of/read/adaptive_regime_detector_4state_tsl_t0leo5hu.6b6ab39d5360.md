@@ -1,0 +1,5 @@
+Calculation: Trend score = percentile rank, against the prior lookback bars, of a weighted combination of Kaufman efficiency ratio and ATR-normalized absolute EMA slope; the slope is the EMA change over the prior 3 bars divided by 3 and by ATR.
+Calculation: Volatility score = average of the ATR percentile rank and Bollinger Band width percentile rank; band width is 4 × standard deviation of close / average close. Use the same lookback for all percentile ranks.
+Calculation: Regime = trending when trend score ≥ its threshold, volatile when volatility score ≥ its threshold; classify as trending + volatile, trending + calm, ranging + volatile, or ranging + calm. Switch to a new regime only after its raw classification persists for the configured number of consecutive bars; initial regime is ranging + calm.
+Long: Confirmed regime is trending AND EMA > EMA from 3 bars earlier.
+Short: Confirmed regime is trending AND EMA < or = EMA from 3 bars earlier.

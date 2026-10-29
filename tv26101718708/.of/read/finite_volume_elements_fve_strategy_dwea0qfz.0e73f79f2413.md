@@ -1,0 +1,3 @@
+Calculation: FVE = cumulative sum, starting at zero, of 100 × signed volume / (lookback × SMA(volume, lookback)); signed volume is volume when close − (high + low)/2 + hlc3 − prior hlc3 is greater than threshold, −volume when it is less than −threshold, and zero otherwise; hlc3 = (high + low + close)/3; threshold = factor × close / 100
+Long: FVE is greater than its value one bar ago AND its value two bars ago
+Short: FVE is less than its value one bar ago AND its value two bars ago

@@ -1,0 +1,3 @@
+Calculation: Bollinger upper band = SMA of close over a lookback + standard deviation of close over the same lookback × multiplier; Bollinger lower band = SMA of close over a lookback − standard deviation of close over the same lookback × multiplier
+Long: On a completed chart bar, close is above the Bollinger upper band for the required consecutive confirmation bars OR for the required consecutive band-walk bars
+Short: On a completed chart bar, close is below the Bollinger lower band for the required consecutive confirmation bars OR for the required consecutive band-walk bars

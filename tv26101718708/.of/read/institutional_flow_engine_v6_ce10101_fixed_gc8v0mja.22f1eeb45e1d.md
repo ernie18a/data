@@ -1,0 +1,6 @@
+Calculation: Short-term EMA slope = current short-term EMA minus its value several bars earlier
+Calculation: Relative volume = current volume divided by average volume over a shorter lookback
+Calculation: Longer-lookback prior low/high = lowest low/highest high over a longer lookback, excluding the current bar
+Calculation: Shorter-lookback prior low/high = lowest low/highest high over a shorter lookback, excluding the current bar
+Long: EMA slope > 0 AND close > short-term EMA AND close > open AND relative volume > threshold AND RSI > bullish threshold AND MACD histogram > previous bar's histogram OR low > high two bars ago OR low < longer-lookback prior low AND close > longer-lookback prior low AND relative volume > threshold OR low < shorter-lookback prior low AND close > open
+Short: EMA slope < 0 AND close < short-term EMA AND close < open AND relative volume > threshold AND RSI < bearish threshold AND MACD histogram < previous bar's histogram OR high < low two bars ago OR high > longer-lookback prior high AND close < longer-lookback prior high AND relative volume > threshold OR high > shorter-lookback prior high AND close < open

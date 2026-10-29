@@ -1,0 +1,6 @@
+Calculation: Volume delta = sum of realtime volume increments, signed positive when update price rises and negative when it falls; unchanged-price updates inherit the last direction.
+Calculation: Bar point of control = volume-weighted average of realtime update prices.
+Calculation: Total tick count = number of realtime updates assigned a positive or negative direction; unchanged-price updates inherit the last direction.
+Calculation: Up bar = close > open, or close = open and (close > previous close, or close = previous close and the previous bar was up). Down bar is the symmetric condition.
+Long: Up bar AND volume delta > 0 AND bar point of control > previous bar point of control AND total tick count > previous bar total tick count AND volume delta > previous bar volume delta AND previous bar volume delta > 0
+Short: Down bar AND volume delta < 0 AND bar point of control < previous bar point of control AND total tick count > previous bar total tick count AND volume delta < previous bar volume delta AND previous bar volume delta < 0

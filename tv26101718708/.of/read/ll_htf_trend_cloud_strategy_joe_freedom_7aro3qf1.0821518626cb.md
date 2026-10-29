@@ -1,0 +1,6 @@
+Calculation: HTF trend direction = bullish when the higher-timeframe close is above the middle EMA plus a configurable fraction of the EMA-smoothed true range; bearish when it is below the middle EMA minus that amount; otherwise retain the previous direction. Use the higher-timeframe bar still forming.
+Calculation: HTF cloud boundary = middle EMA minus the scaled range when trend direction is bullish, or plus the scaled range when bearish. Use the higher-timeframe bar still forming.
+Long: HTF trend direction changes from bearish to bullish AND the four successively longer-lookback higher-timeframe close EMAs are ordered from highest to lowest AND the higher-timeframe close is at or above the middle EMA
+Short: HTF trend direction changes from bullish to bearish AND the four successively longer-lookback higher-timeframe close EMAs are ordered from lowest to highest AND the higher-timeframe close is at or below the middle EMA
+Exit: Long, chart close < HTF cloud boundary AND HTF trend direction is bullish
+Exit: Short, chart close > HTF cloud boundary AND HTF trend direction is bearish

@@ -1,0 +1,6 @@
+Calculation: Bullish engulfing = close > open AND previous close < previous open AND close > previous open AND open < previous close
+Calculation: Bearish engulfing = close < open AND previous close > previous open AND close < previous open AND open > previous close
+Long: fast EMA crosses above slow EMA AND close > VWAP AND (bullish engulfing if the price action filter is enabled) AND (volume > its simple moving average if the volume filter is enabled)
+Short: fast EMA crosses below slow EMA AND close < VWAP AND (bearish engulfing if the price action filter is enabled) AND (volume > its simple moving average if the volume filter is enabled)
+Exit: Long, low <= entry price - ATR × stop-loss multiplier OR (trailing stop enabled AND high has reached entry price + ATR × activation multiplier AND low <= highest high since entry - ATR × trailing-distance multiplier) OR (trailing stop disabled AND high >= entry price + ATR × take-profit multiplier) OR (opposite-signal exit enabled AND short condition)
+Exit: Short, high >= entry price + ATR × stop-loss multiplier OR (trailing stop enabled AND low has reached entry price - ATR × activation multiplier AND high >= lowest low since entry + ATR × trailing-distance multiplier) OR (trailing stop disabled AND low <= entry price - ATR × take-profit multiplier) OR (opposite-signal exit enabled AND long condition)

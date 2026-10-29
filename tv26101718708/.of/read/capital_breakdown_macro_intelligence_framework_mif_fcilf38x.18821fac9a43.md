@@ -1,0 +1,10 @@
+Calculation: Daily pivot = (high + low + close) / 3 of the last completed higher-timeframe daily bar
+Calculation: Weekly pivot = (high + low + close) / 3 of the last completed higher-timeframe weekly bar
+Calculation: Weekly first resistance = 2 × weekly pivot − low of the last completed higher-timeframe weekly bar
+Calculation: Weekly first support = 2 × weekly pivot − high of the last completed higher-timeframe weekly bar
+Calculation: Weekly second resistance = weekly pivot + (high − low) of the last completed higher-timeframe weekly bar
+Calculation: Weekly second support = weekly pivot − (high − low) of the last completed higher-timeframe weekly bar
+Calculation: Double EMA = EMA of the EMA of close, using the same lookback for both
+Calculation: Reversal condition = close is within the zone buffer of any weekly first or second resistance or support, or RSI is above its upper threshold or below its lower threshold
+Long: close > daily pivot − zone buffer AND close < daily pivot + zone buffer AND Supertrend direction = −1 AND close > double EMA AND NOT reversal condition
+Short: close > daily pivot − zone buffer AND close < daily pivot + zone buffer AND Supertrend direction = 1 AND close < double EMA AND NOT reversal condition

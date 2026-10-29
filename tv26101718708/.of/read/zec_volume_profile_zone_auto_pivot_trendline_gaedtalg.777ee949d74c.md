@@ -1,0 +1,3 @@
+Calculation: High-volume zone upper and lower bounds = over a rolling lookback of chart-timeframe bars including the current bar, divide the range from the lowest low to the highest high into equal price bins, sum volume for bars whose close falls in each bin, and use the boundaries of the bin with the greatest summed volume.
+Long: close crosses above the high-volume zone upper bound
+Short: close crosses below the high-volume zone lower bound

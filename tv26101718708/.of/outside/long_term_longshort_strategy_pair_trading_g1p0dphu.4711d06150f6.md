@@ -1,0 +1,1 @@
+Use the selected external asset or index’s close and its simple moving average. When the close crosses above the average, enter long if long positions are enabled and exit any short. When it crosses below, exit any long and enter short if short positions are enabled. The selected mode may enable both directions or only one.

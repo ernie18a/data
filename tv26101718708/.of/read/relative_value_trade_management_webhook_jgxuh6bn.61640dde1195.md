@@ -1,0 +1,4 @@
+Calculation: Relative OHLC = long asset OHLC divided by short asset OHLC, using the configured relative-graph timeframe. On a confirmed chart bar, this uses the current selected-timeframe bar: it may still be forming when that timeframe is higher than the chart timeframe; it is completed when equal to or lower than the chart timeframe.
+Long: Relative close crosses the entry level in either direction AND long asset is the chart instrument AND position is flat AND entry and stop levels are nonzero AND bar time is within the configured date range
+Short: Relative close crosses the entry level in either direction AND short asset is the chart instrument AND position is flat AND entry and stop levels are nonzero AND bar time is within the configured date range
+Exit: Long position, chart low <= stop level OR (take-profit level is nonzero AND chart high >= take-profit level)

@@ -1,0 +1,10 @@
+Calculation: dispersion = one of standard deviation(close), variance(close), standard deviation(close)/SMA(close), -SMA(close)/standard deviation(close), -(SMA(close)^2/standard deviation(close)^2), variance(close)^2/SMA(close), standard deviation(close)^2/SMA(close)^2, or highest(high)-lowest(low), each over a lookback
+Calculation: Price Action Index = (SMA of the close/high/low stochastic oscillator - 50)/50 × stochastic oscillator of dispersion; stochastic calculations use their respective lookbacks
+Calculation: PAI value = Price Action Index on the chart timeframe, or on the selected higher timeframe; in non-repainting mode use the last completed higher-timeframe bar, and when repainting is allowed use the higher-timeframe bar still forming
+Calculation: confirmed oscillator pivot low/high = a local PAI value minimum/maximum confirmed after the specified right-side bars, using the specified left- and right-side pivot lookbacks
+Long: PAI value crosses above the positive straddle threshold
+Long: At a confirmed oscillator pivot low, price low is lower than at the previous confirmed oscillator pivot low AND PAI value is higher than at that previous pivot low AND the previous pivot low was within the specified minimum and maximum bar distance
+Long: At a confirmed oscillator pivot low, price low is higher than at the previous confirmed oscillator pivot low AND PAI value is lower than at that previous pivot low AND the previous pivot low was within the specified minimum and maximum bar distance
+Short: PAI value crosses below the negative straddle threshold
+Short: At a confirmed oscillator pivot high, price high is higher than at the previous confirmed oscillator pivot high AND PAI value is lower than at that previous pivot high AND the previous pivot high was within the specified minimum and maximum bar distance
+Short: At a confirmed oscillator pivot high, price high is lower than at the previous confirmed oscillator pivot high AND PAI value is higher than at that previous pivot high AND the previous pivot high was within the specified minimum and maximum bar distance

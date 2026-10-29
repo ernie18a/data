@@ -1,0 +1,8 @@
+Calculation: Zone CVD % = accumulated fetched volume from bars with positive delta divided by accumulated fetched volume from bars with positive or negative delta, multiplied by 100; delta is volume × ((close − low) − (high − close)) / max(high − low, a small positive value), using the selected CVD timeframe (higher or lower than the chart timeframe as configured) and its latest available bar, which may still be forming. Accumulate separately when chart close is within each zone and chart volume meets the minimum; reset according to the configured CVD reset setting.
+Calculation: VWAP zones = volume-weighted HLC3 mean since the selected anchor, with upper and lower zones around the mean and its first and second standard-deviation bands; each zone is widened by ATR.
+Long: Chart close is within VWAP zone AND chart volume meets the minimum AND VWAP-zone CVD % >= bullish threshold
+Long: Chart close is within lower first-standard-deviation zone AND chart volume meets the minimum AND lower-first-zone CVD % >= bullish threshold
+Long: Chart close is within lower second-standard-deviation zone AND chart volume meets the minimum AND lower-second-zone CVD % >= bullish threshold
+Short: Chart close is within VWAP zone AND chart volume meets the minimum AND VWAP-zone CVD % <= 100% − bullish threshold
+Short: Chart close is within upper first-standard-deviation zone AND chart volume meets the minimum AND upper-first-zone CVD % <= 100% − bullish threshold
+Short: Chart close is within upper second-standard-deviation zone AND chart volume meets the minimum AND upper-second-zone CVD % <= 100% − bullish threshold

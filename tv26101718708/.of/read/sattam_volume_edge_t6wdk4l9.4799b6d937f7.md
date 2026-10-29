@@ -1,0 +1,7 @@
+Calculation: Opening range high/low = highest high / lowest low of bars in the configured session, reset at each session start
+Calculation: Trend state = bullish or bearish ATR trailing trend using hl2 ± a sensitivity-scaled ATR band; ratchet the active band toward price, and flip bearish when close falls below the lower band or bullish when close rises above the upper band
+Calculation: RMI = average of RSI(close, lookback) and MFI(typical price, same lookback)
+Long: bullish trend state changes from bearish OR RMI crosses above its positive threshold while above its negative threshold and the short-term EMA is rising OR, outside the configured session, close crosses above the opening range high and breakout count this session = 0
+Short: bearish trend state changes from bullish OR RMI is below its negative threshold and the short-term EMA is falling OR, outside the configured session, close crosses below the opening range low and breakdown count this session = 0
+Exit: Long, high reaches entry price plus the configured trend-band target distance OR close falls below the active long trailing Supertrend
+Exit: Short, low reaches entry price minus the configured trend-band target distance OR close rises above the active short trailing Supertrend

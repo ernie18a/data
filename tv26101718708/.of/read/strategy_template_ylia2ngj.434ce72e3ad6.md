@@ -1,0 +1,5 @@
+Calculation: Higher-timeframe moving average of high, low, and close using the selected moving-average type and lookback; use the last completed higher-timeframe bar
+Long: Supertrend direction changes from positive to negative AND close > selected higher-timeframe moving average (high when high/low range is enabled, otherwise close) AND datetime is within the configured trading window
+Short: Supertrend direction changes from negative to positive AND close < selected higher-timeframe moving average (low when high/low range is enabled, otherwise close) AND datetime is within the configured trading window
+Exit: long, Supertrend direction changes from negative to positive when wait-for-close mode is enabled OR low <= Supertrend when wait-for-close mode is disabled
+Exit: short, Supertrend direction changes from positive to negative when wait-for-close mode is enabled OR high >= Supertrend when wait-for-close mode is disabled

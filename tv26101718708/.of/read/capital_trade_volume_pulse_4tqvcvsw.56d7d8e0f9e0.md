@@ -1,0 +1,8 @@
+Calculation: Volume growth = (volume - previous bar volume) / previous bar volume × 100
+Calculation: Volume threshold 1 = EMA of volume + multiplier 1 × standard deviation of volume
+Calculation: Volume threshold 2 = EMA of volume + multiplier 2 × standard deviation of volume
+Calculation: Volume threshold 3 = EMA of volume + multiplier 3 × standard deviation of volume
+Calculation: Body high = max(open, close)
+Calculation: Body low = min(open, close)
+Long: (close >= open AND volume > 0 AND (volume threshold 3 is ready AND volume >= volume threshold 3 OR volume threshold 2 is ready AND volume >= volume threshold 2 AND volume < volume threshold 3 OR volume threshold 1 is ready AND volume >= volume threshold 1 AND volume < volume threshold 2 OR previous volume > 0 AND volume growth > growth threshold AND (volume threshold 1 is not ready OR volume < volume threshold 1))) OR (on a confirmed bar, a candidate 1 or 2 bars ago has the lowest body low among itself and the 1 or 2 bars on each side; allow equality with older bars only in Last Bar mode, and require strict inequality with newer bars)
+Short: (close < open AND volume > 0 AND (volume threshold 3 is ready AND volume >= volume threshold 3 OR volume threshold 2 is ready AND volume >= volume threshold 2 AND volume < volume threshold 3 OR volume threshold 1 is ready AND volume >= volume threshold 1 AND volume < volume threshold 2 OR previous volume > 0 AND volume growth > growth threshold AND (volume threshold 1 is not ready OR volume < volume threshold 1))) OR (on a confirmed bar, a candidate 1 or 2 bars ago has the highest body high among itself and the 1 or 2 bars on each side; allow equality with older bars only in Last Bar mode, and require strict inequality with newer bars)

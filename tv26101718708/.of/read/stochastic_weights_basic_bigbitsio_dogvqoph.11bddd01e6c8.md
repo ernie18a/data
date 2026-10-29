@@ -1,0 +1,3 @@
+Calculation: Weighted K = SMA, over the configured K lookback, of the weighted average of enabled components: smoothed stochastic of close/high/low; smoothed stochastic of RSI(close); smoothed stochastic of the SMA of (close − open) / open; smoothed stochastic of the SMA of signed volume (volume when close ≥ open, otherwise −volume); RSI(close); configured moving-average smoothing of RSI(close); MFI(hlc3); and configured moving-average smoothing of MFI(hlc3). Each component’s weight is its configured weight.
+Long: Weighted K < very oversold level
+Short: Weighted K > very overbought level

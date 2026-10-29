@@ -1,0 +1,4 @@
+Calculation: Session VWAP = cumulative ((high + low + close) / 3 × volume) / cumulative volume for the session, calculated on a timeframe equal to or higher than the chart timeframe using its last completed bar
+Calculation: Break level = session VWAP × (1 − break buffer percentage / 100)
+Calculation: Reclaim level = session VWAP × (1 + reclaim buffer percentage / 100)
+Long: low < break level on an unarmed bar, then within the maximum bar window from that sweep, close > reclaim level AND (volume filter disabled OR volume > volume SMA × volume multiple) AND (one-signal-per-day disabled OR no earlier reclaim signal on the current day)

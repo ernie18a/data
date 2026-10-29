@@ -1,0 +1,4 @@
+Calculation: Williams %R = 100 × (close − highest high over its lookback) / (highest high − lowest low over its lookback), calculated on the selected timeframe (chart timeframe or configured higher/lower timeframe); use the currently available bar, including a still-forming bar when the selected timeframe is higher.
+Calculation: Signal moving average = selected moving average of Williams %R, calculated on the same timeframe and bar as Williams %R.
+Long: Williams %R crosses above its signal moving average OR Williams %R crosses above the oversold level
+Short: Williams %R crosses below its signal moving average OR Williams %R crosses below the overbought level

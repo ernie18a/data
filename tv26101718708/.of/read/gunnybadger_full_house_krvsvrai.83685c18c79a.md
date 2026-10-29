@@ -1,0 +1,2 @@
+Long: current low > high two bars ago AND the latest gap state is not bullish FVG, OR current close > the top of the latest bearish FVG
+Short: current high < low two bars ago AND the latest gap state is not bearish FVG, OR current close < the bottom of the latest bullish FVG

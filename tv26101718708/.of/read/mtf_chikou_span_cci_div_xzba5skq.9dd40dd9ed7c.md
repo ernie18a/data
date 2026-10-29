@@ -1,0 +1,9 @@
+Calculation: Short CCI = (bar midpoint − its shorter-lookback SMA) / (0.015 × mean absolute deviation of bar midpoint from that SMA)
+Calculation: Long CCI = same CCI calculation with a longer lookback than Short CCI
+Calculation: Smoothed Short CCI = EMA of Short CCI
+Calculation: Smoothed Long CCI = EMA of Long CCI
+Calculation: Stop level = signal-bar close minus ATR for a long signal, or plus ATR for a short signal
+Long: (chart-timeframe close > chart-timeframe close one Chikou offset ago) AND (higher-timeframe close > higher-timeframe close one Chikou offset ago, using the last completed higher-timeframe bar) AND (Short CCI crosses above −100 OR Long CCI crosses above −100) AND (fast EMA > slow EMA OR Smoothed Short CCI <= its configured buy-override threshold) AND (current volume > its longer-lookback SMA)
+Short: (chart-timeframe close < chart-timeframe close one Chikou offset ago) AND (higher-timeframe close < higher-timeframe close one Chikou offset ago, using the last completed higher-timeframe bar) AND (Short CCI crosses below 100 OR Long CCI crosses below 100) AND (fast EMA < slow EMA OR Smoothed Short CCI >= its configured sell-override threshold) AND (current volume > its longer-lookback SMA)
+Exit: long, while the signal stop level is active and after the signal bar, low <= stop level
+Exit: short, while the signal stop level is active and after the signal bar, high >= stop level

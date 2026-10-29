@@ -1,0 +1,4 @@
+Calculation: Prior N-day high = highest high of the preceding N completed daily bars
+Calculation: Prior N-day low = lowest low of the preceding N completed daily bars
+Long: current bar high > prior N-day high AND (current bar low >= prior N-day low OR current bar high − prior N-day high >= prior N-day low − current bar low) AND (no prior shift OR sessions since prior shift > 60 OR prior shift was short)
+Short: current bar low < prior N-day low AND (current bar high <= prior N-day high OR current bar high − prior N-day high < prior N-day low − current bar low) AND (no prior shift OR sessions since prior shift > 60 OR prior shift was long)

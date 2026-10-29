@@ -1,0 +1,2 @@
+Long: close >= previous bar close AND volume < high relative-volume threshold × SMA(volume, lookback)
+Short: close < previous bar close AND volume < high relative-volume threshold × SMA(volume, lookback)

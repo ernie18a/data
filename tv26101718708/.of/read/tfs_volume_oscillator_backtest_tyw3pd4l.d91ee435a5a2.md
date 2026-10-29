@@ -1,0 +1,3 @@
+Calculation: Average signed volume = the average over a configurable lookback of volume when close > open, negative volume when close < open, and zero when close = open
+Long: (Average signed volume > upper threshold AND reverse is disabled) OR (Average signed volume < lower threshold AND reverse is enabled)
+Short: (Average signed volume < lower threshold AND reverse is disabled) OR (Average signed volume > upper threshold AND reverse is enabled)

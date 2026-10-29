@@ -1,0 +1,4 @@
+Calculation: Upper band = short-term EMA + ATR × multiplier
+Calculation: Lower band = short-term EMA − ATR × multiplier
+Long: short-term EMA crosses above longer-term EMA OR close < lower band OR, on any enabled dashboard timeframe using its latest available bar (which may still be forming), short-term EMA > medium-term EMA AND medium-term EMA > longer-term EMA
+Short: short-term EMA crosses below longer-term EMA OR close > upper band OR, on any enabled dashboard timeframe using its latest available bar (which may still be forming), short-term EMA < medium-term EMA AND medium-term EMA < longer-term EMA

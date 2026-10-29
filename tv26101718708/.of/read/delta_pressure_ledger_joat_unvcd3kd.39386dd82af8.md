@@ -1,0 +1,9 @@
+Calculation: Anchored VWAP = cumulative hl2 × volume divided by cumulative volume, reset at the selected session, week, or month boundary; use chart bars.
+Calculation: Pressure = EMA of (candle body ÷ true range × (0.50 + absolute body ÷ true range) × volume ÷ its longer-lookback SMA × 100) plus EMA of (close − anchored VWAP) ÷ ATR, using half the pressure lookback; z-score this sum over the normalization lookback, then EMA-smooth it.
+Calculation: Crowding = z-score over the normalization lookback of the EMA, using the crowding lookback, of (2 × (RSI − 50) + 10 × (close − anchored VWAP) ÷ ATR + 24 × (lower wick − upper wick) ÷ true range + 8 × (close position in range − 0.5)); then EMA-smooth it.
+Calculation: Volatility = z-score over the normalization lookback of ((ATR ÷ its longer-lookback SMA − 1) × 100 + (ATR percentile rank over that lookback − 50) × 0.35); then EMA-smooth it.
+Calculation: Skew = z-score over the normalization lookback of the EMA, using the skew lookback, of (100 × ((close − low) − (high − close)) ÷ true range + 12 × (close position in range − 0.5) + 7 × (close − anchored VWAP) ÷ ATR); then EMA-smooth it.
+Calculation: Composite = EMA of the weighted sum of smoothed pressure, crowding, volatility, and skew.
+Calculation: Risk = clamp(32 × clamp(abs(crowding) ÷ crowding extreme, 0, 1) + 22 × clamp(volatility ÷ volatility expansion, 0, 1) + 18 × clamp(abs(close − anchored VWAP) ÷ ATR ÷ VWAP stretch cap, 0, 1) + 12 × clamp(abs(skew) ÷ 1.25, 0, 1) + 16 × pressure conflict, 0, 100), where pressure conflict is 1 if (composite > 0 and pressure < −0.10) or (composite < 0 and pressure > 0.10), else 0.
+Long: (composite >= bull threshold AND pressure > 0 AND crowding > −0.20) OR (risk >= critical risk AND composite > 0)
+Short: (composite <= −bear threshold AND pressure < 0 AND crowding < 0.20) OR (risk >= critical risk AND composite < 0)

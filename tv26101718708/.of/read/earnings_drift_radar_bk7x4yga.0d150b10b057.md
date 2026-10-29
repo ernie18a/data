@@ -1,0 +1,2 @@
+Calculation: Sector excess return = the stock’s percentage price return since the close immediately before the selected earnings reaction day minus the sector benchmark’s percentage price return over the same period
+Short: Previous completed chart bar’s sector excess return > 0 AND current sector excess return <= 0 AND current bar is not the selected reaction day AND stock and benchmark closes are valid and session-aligned

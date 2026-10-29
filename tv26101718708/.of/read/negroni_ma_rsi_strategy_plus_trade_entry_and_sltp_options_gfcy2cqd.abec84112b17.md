@@ -1,0 +1,8 @@
+Calculation: Fast, trend, and slow moving averages = selected moving-average types and sources with progressively longer lookbacks, calculated on the chart timeframe
+Calculation: Fixed higher-timeframe MA = selected moving-average type and source on a timeframe higher than the chart timeframe, using the last completed higher-timeframe bar
+Long: (close crosses below fast MA AND fast MA > trend MA AND trend MA > slow MA OR close crosses below fast MA AND trend MA > slow MA) AND close > fixed higher-timeframe MA AND RSI > buy threshold
+Long: (close crosses above fast MA AND fast MA > trend MA AND trend MA > slow MA OR close crosses above fast MA AND trend MA > slow MA) AND close > fixed higher-timeframe MA AND RSI > buy threshold
+Short: (close crosses above fast MA AND fast MA < trend MA AND trend MA < slow MA OR close crosses above fast MA AND trend MA < slow MA) AND close < fixed higher-timeframe MA AND RSI < sell threshold
+Short: (close crosses below fast MA AND fast MA < trend MA AND trend MA < slow MA OR close crosses below fast MA AND trend MA < slow MA) AND close < fixed higher-timeframe MA AND RSI < sell threshold
+Exit: long, low crosses below fast MA OR low <= entry price × (1 − stop %) OR high >= entry price × (1 + take-profit %) OR low <= entry price − stop multiplier × ATR OR high >= entry price + take-profit multiplier × ATR
+Exit: short, high crosses above fast MA OR high >= entry price × (1 + stop %) OR low <= entry price × (1 − take-profit %) OR high >= entry price + stop multiplier × ATR OR low <= entry price − take-profit multiplier × ATR

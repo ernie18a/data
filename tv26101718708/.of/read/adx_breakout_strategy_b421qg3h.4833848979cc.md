@@ -1,0 +1,2 @@
+Long: close >= highest close of the preceding lookback window AND ADX < threshold AND position side = flat AND current bar is within the configured session AND entries taken since the start of the current day < session trade limit
+Exit: long, low <= entry price minus the fixed dollar stop converted to price units and rounded to the nearest tick OR current bar is outside the configured session

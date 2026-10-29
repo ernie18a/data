@@ -1,0 +1,4 @@
+Calculation: Confirmed swing high = a pivot high higher than the highs of the lookback bars on each side; use the latest confirmed pivot high.
+Calculation: Confirmed swing low = a pivot low lower than the lows of the lookback bars on each side; use the latest confirmed pivot low.
+Long: A confirmed swing high exists AND close > confirmed swing high AND that high has not already been broken, unless a new confirmed swing high or bearish break reset the condition.
+Short: A confirmed swing low exists AND close < confirmed swing low AND that low has not already been broken, unless a new confirmed swing low or bullish break reset the condition.

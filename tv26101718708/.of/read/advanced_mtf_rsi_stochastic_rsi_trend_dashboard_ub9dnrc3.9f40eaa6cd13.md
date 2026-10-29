@@ -1,0 +1,3 @@
+Calculation: Stochastic RSI %K = the smoothed stochastic position of RSI within its lookback range; %D = a further smoothing of %K. Calculate both on each dashboard timeframe using that timeframe’s last completed bar, whether it is higher or lower than the chart timeframe.
+Long: On any dashboard timeframe, close > EMA OR RSI <= 30 OR Stochastic RSI %K <= 20 OR Stochastic RSI %D <= 20
+Short: On any dashboard timeframe, close < EMA OR RSI >= 70 OR Stochastic RSI %K >= 80 OR Stochastic RSI %D >= 80

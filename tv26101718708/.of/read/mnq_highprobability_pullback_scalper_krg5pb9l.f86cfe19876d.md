@@ -1,0 +1,2 @@
+Long: close > VWAP AND shorter-period EMA > longer-period EMA AND shorter-period EMA > its prior bar AND low <= shorter-period EMA AND close > shorter-period EMA AND close > open AND RSI > bullish threshold AND bars since last long or short signal > cooldown interval
+Short: close < VWAP AND shorter-period EMA < longer-period EMA AND shorter-period EMA < its prior bar AND high >= shorter-period EMA AND close < shorter-period EMA AND close < open AND RSI < bearish threshold AND bars since last long or short signal > cooldown interval

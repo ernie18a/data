@@ -1,0 +1,4 @@
+Long: close[2] > open[2] AND abs(close[1] - open[1]) <= 0.5 * abs(close[2] - open[2]) AND close > open AND close > high[1] OR not in a long position AND close > trigger price, where trigger price is the latest chart-timeframe close recorded when the higher-timeframe RSI of OHLC4 is at or above its threshold and the still-forming higher-timeframe candle closes above its open
+Short: close[2] < open[2] AND abs(close[1] - open[1]) <= 0.5 * abs(close[2] - open[2]) AND close < open AND close < low[1]
+Exit: long, close < low[1] OR close <= trigger price * (1 - stop-loss percentage / 100) OR hour = configured exit hour AND minute >= configured exit minute
+Exit: short, close > high[1] OR hour = configured exit hour AND minute >= configured exit minute

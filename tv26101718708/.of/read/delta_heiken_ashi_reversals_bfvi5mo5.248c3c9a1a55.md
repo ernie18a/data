@@ -1,0 +1,6 @@
+Calculation: Estimated delta = volume × (close − open) ÷ (high − low), or 0 when high = low; smooth with an exponential moving average.
+Calculation: Completed run = consecutive bars whose estimated delta has the same sign; at a sign flip, use the prior run’s length, maximum absolute estimated delta, and average volume per bar.
+Calculation: Recent delta range = highest absolute estimated delta over a recent lookback.
+Calculation: Volume baseline = simple moving average of volume over a baseline lookback.
+Long: Estimated delta >= 0 AND the prior completed run had negative estimated delta AND its length >= the minimum run length AND its maximum absolute estimated delta >= recent delta range × the minimum swing fraction AND its average volume per bar >= volume baseline × the minimum run-volume fraction AND (if the regular-hours filter is enabled) the current bar is within the configured regular-hours session.
+Short: Estimated delta < 0 AND the prior completed run had nonnegative estimated delta AND its length >= the minimum run length AND its maximum absolute estimated delta >= recent delta range × the minimum swing fraction AND its average volume per bar >= volume baseline × the minimum run-volume fraction AND (if the regular-hours filter is enabled) the current bar is within the configured regular-hours session.

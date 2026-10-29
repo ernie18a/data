@@ -1,0 +1,1 @@
+Using monthly Temporary Help Services employment data, enter a long position when the current value is higher than the prior month and no position is held. Exit the long position when the current value is lower than the prior month. Do nothing when data is unavailable, the values are equal, or the conditions for entry or exit are not met. Never enter short.

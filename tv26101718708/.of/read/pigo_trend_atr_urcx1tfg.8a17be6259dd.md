@@ -1,0 +1,5 @@
+Calculation: EMA trend state = up when the selected EMA is rising or the shorter EMA is above the longer EMA; down when it is falling or the shorter EMA is below the longer EMA; otherwise neutral. If the impulse filter is enabled and fails, the state is neutral. Higher-timeframe states use the last completed bars.
+Long: all three progressively higher timeframes show uptrend AND the chart-timeframe trend changes to uptrend
+Short: all three progressively higher timeframes show downtrend AND the chart-timeframe trend changes to downtrend
+Exit: long, low <= entry price - configured fraction of chart-timeframe ATR OR high >= entry price + configured multiple of higher-timeframe ATR
+Exit: short, high >= entry price + configured fraction of chart-timeframe ATR OR low <= entry price - configured multiple of higher-timeframe ATR

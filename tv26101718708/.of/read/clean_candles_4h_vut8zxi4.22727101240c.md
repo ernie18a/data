@@ -1,0 +1,5 @@
+Calculation: Inspected candle = OHLC from the selected inspection timeframe; if it differs from the chart timeframe, it may be higher or lower. Use the still-forming bar; historical values use that bar’s eventual OHLC.
+Calculation: Upper wick = high − max(open, close)
+Calculation: Lower wick = min(open, close) − low
+Long: close ≥ open AND ((mode is no-upper-wick and upper wick ≤ tolerance × minimum tick) OR (mode is no-lower-wick and lower wick ≤ tolerance × minimum tick) OR (mode is both and upper wick ≤ tolerance × minimum tick AND lower wick ≤ tolerance × minimum tick))
+Short: close < open AND ((mode is no-upper-wick and upper wick ≤ tolerance × minimum tick) OR (mode is no-lower-wick and lower wick ≤ tolerance × minimum tick) OR (mode is both and upper wick ≤ tolerance × minimum tick AND lower wick ≤ tolerance × minimum tick))

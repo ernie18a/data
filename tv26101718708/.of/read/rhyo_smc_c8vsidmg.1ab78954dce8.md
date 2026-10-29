@@ -1,0 +1,4 @@
+Calculation: Confirmed pivot high/low = a bar whose high/low is strictly higher/lower than the highs/lows of the next N bars and at least as extreme as the previous N bars; use separate N values for swing pivots and shorter internal pivots.
+Calculation: RSI divergence = compare RSI at successive confirmed price pivots of the same type.
+Long: Close crosses above the latest unbroken swing or internal pivot high OR price makes a lower low than its previous confirmed pivot low while RSI makes a higher low at those pivots.
+Short: Close crosses below the latest unbroken swing or internal pivot low OR price makes a higher high than its previous confirmed pivot high while RSI makes a lower high at those pivots.

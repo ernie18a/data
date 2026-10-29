@@ -1,0 +1,6 @@
+Calculation: Previous high/low = high/low of the previous completed bar on the detection timeframe (chart timeframe or configured timeframe, which may be higher or lower than the chart timeframe)
+Calculation: Confirmed swing high/low = pivot high/low with the same lookback on both sides, confirmed after that many bars
+Long: Detection-timeframe low < previous low OR (latest confirmed setup is bullish AND close > latest confirmed swing high AND no bullish CHoCH has yet been marked for that setup) OR (latest confirmed setup is bullish AND low > high two chart-timeframe bars ago)
+Short: Detection-timeframe high > previous high OR (latest confirmed setup is bearish AND close < latest confirmed swing low AND no bearish CHoCH has yet been marked for that setup) OR (latest confirmed setup is bearish AND high < low two chart-timeframe bars ago)
+Exit: Long, high >= the previous high from the latest confirmed bullish setup AND its objective has not already been hit
+Exit: Short, low <= the previous low from the latest confirmed bearish setup AND its objective has not already been hit

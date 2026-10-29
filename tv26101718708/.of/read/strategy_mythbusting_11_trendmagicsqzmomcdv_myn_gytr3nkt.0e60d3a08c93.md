@@ -1,0 +1,9 @@
+Calculation: Trend Magic = if CCI is nonnegative, the greater of the prior Trend Magic value and low minus an ATR-based offset; otherwise, the lesser of the prior Trend Magic value and high plus an ATR-based offset
+Calculation: Squeeze Momentum histogram = linear regression of close minus the average of the bar-range midpoint and a moving average of close, using the Keltner lookback
+Calculation: Cumulative delta candle = candle formed from the cumulative sum of per-bar volume delta, where delta assigns volume to buying or selling pressure according to the bar’s body and wicks; use its selected candle representation
+Long: low crosses above Trend Magic OR CCI is nonnegative AND close exceeds Trend Magic plus the configured offset AND no opposite Trend Magic condition occurred within its configured lookback AND Squeeze Momentum histogram > 0 AND no negative histogram occurred within its configured lookback AND cumulative delta candle close >= open AND no down cumulative delta candle occurred within its configured lookback AND (ADX filter disabled OR ADX > its threshold)
+Short: high crosses below Trend Magic OR CCI is negative AND close is below Trend Magic minus the configured offset AND no opposite Trend Magic condition occurred within its configured lookback AND Squeeze Momentum histogram < 0 AND no positive histogram occurred within its configured lookback AND cumulative delta candle close < open AND no up cumulative delta candle occurred within its configured lookback AND (ADX filter disabled OR ADX > its threshold)
+Exit: Long, close < entry price minus the configured stop-loss fraction of entry price
+Exit: Short, close > entry price plus the configured stop-loss fraction of entry price
+Exit: Long, high reaches a configured take-profit target above entry price
+Exit: Short, low reaches a configured take-profit target below entry price

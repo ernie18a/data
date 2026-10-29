@@ -1,0 +1,2 @@
+Long: Close > rising trend EMA AND short-term EMA crosses above long-term EMA AND bullish engulfing candle AND close > VWAP AND ATR > its moving average AND ADX > minimum threshold AND absolute distance between short-term and long-term EMAs >= ATR multiplied by a threshold
+Short: Close < falling trend EMA AND short-term EMA crosses below long-term EMA AND bearish engulfing candle AND close < VWAP AND ATR > its moving average AND ADX > minimum threshold AND absolute distance between short-term and long-term EMAs >= ATR multiplied by a threshold

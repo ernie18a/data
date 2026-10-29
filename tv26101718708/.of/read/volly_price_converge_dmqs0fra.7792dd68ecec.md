@@ -1,0 +1,2 @@
+Long: volume HMA is greater than its prior value AND close HMA with the same lookback is greater than its prior value AND close is greater than the short-term SMA of close
+Exit: long, volume HMA is less than or equal to its prior value OR close HMA with the same lookback is less than or equal to its prior value OR close is less than the short-term SMA of close

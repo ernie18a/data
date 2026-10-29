@@ -1,0 +1,3 @@
+Calculation: Percentage levels = selected open, high, low, close, HL2, HLC3, OHLC4, or median price of the current higher-timeframe bar (still forming), multiplied by 1 plus or minus a configurable percentage.
+Long: Close > any alert-enabled upper percentage level AND previous close <= that level, OR close > the higher-timeframe base value AND previous close <= that value
+Short: Close < any alert-enabled lower percentage level AND previous close >= that level, OR close < the higher-timeframe base value AND previous close >= that value

@@ -1,0 +1,2 @@
+Calculation: Bullish close position = 100 × (close − open) / (high − open)
+Long: volume > previous bar volume AND percentage change from previous close > breakout threshold AND bullish close position > close-position threshold OR close − previous close > dollar-change threshold AND bullish close position > close-position threshold OR percentage gain over the gain lookback > gain threshold

@@ -1,0 +1,11 @@
+Calculation: Opening range high/low = highest high and lowest low during the configured opening-range session; use only after that session ends
+Calculation: Opening-range risk = opening range high − opening range low
+Calculation: VWAP deviation = volume-weighted standard deviation of bar typical price (high + low + close)/3 from the current session VWAP, accumulated from the session start
+Long: position is flat AND daily trades are below the configured cap AND current time is within configured trading hours AND opening range is complete AND (Breakout mode AND close crosses above opening range high AND fast EMA > slow EMA AND close > mid-length SMA OR Mean Reversion mode AND close is below VWAP minus a configured multiple of VWAP deviation AND close crosses above the previous chart bar's low AND close > mid-length SMA)
+Short: position is flat AND daily trades are below the configured cap AND current time is within configured trading hours AND opening range is complete AND (Breakout mode AND close crosses below opening range low AND fast EMA < slow EMA AND close < mid-length SMA OR Mean Reversion mode AND close is above VWAP plus a configured multiple of VWAP deviation AND close crosses below the previous chart bar's high AND close < mid-length SMA)
+Exit: long, high reaches entry price plus ATR times the configured first-target multiple
+Exit: long, low reaches the initial stop (opening range low in Breakout mode; entry price minus opening-range risk in Mean Reversion mode)
+Exit: long, after the first target, high reaches entry price plus ATR times the configured second-target multiple OR low reaches entry price
+Exit: short, low reaches entry price minus ATR times the configured first-target multiple
+Exit: short, high reaches the initial stop (opening range high in Breakout mode; entry price plus opening-range risk in Mean Reversion mode)
+Exit: short, after the first target, low reaches entry price minus ATR times the configured second-target multiple OR high reaches entry price

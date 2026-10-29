@@ -1,0 +1,3 @@
+Calculation: Higher-timeframe momentum = (last completed higher-timeframe close / its close at the longer lookback ago − 1) × 100; compare against zero
+Calculation: Higher-timeframe range position = (chart close − lowest low of the shorter-lookback range of completed higher-timeframe bars) / (highest high − lowest low) × 100
+Long: Higher-timeframe momentum > 0 AND (higher-timeframe range position <= bottom-zone percentage OR higher-timeframe range position >= 100% − top-zone percentage)

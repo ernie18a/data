@@ -1,0 +1,2 @@
+Long: low <= previous bar low AND close > open AND (open - low) >= (high - close) AND close > previous bar open AND (open - low) < 2 * (close - open) AND EMA(close, shorter lookback) >= EMA(close, intermediate lookback) AND EMA(close, intermediate lookback) >= EMA(close, longer lookback)
+Short: high >= previous bar high AND close < open AND (high - open) >= (close - low) AND close < previous bar open AND (high - open) < 2 * (open - close) AND EMA(close, shorter lookback) <= EMA(close, intermediate lookback) AND EMA(close, intermediate lookback) <= EMA(close, longer lookback)

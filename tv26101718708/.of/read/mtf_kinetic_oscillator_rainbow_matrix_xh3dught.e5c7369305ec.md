@@ -1,0 +1,6 @@
+Calculation: Per-timeframe score = average of RSI and a 0–100 sigmoid of the log-price regression z-score. For the z-score, regress log(hlc3), normalize the log of the bar’s high when close ≥ open or low otherwise against the regression residual standard deviation.
+Calculation: Multi-timeframe score = weighted average of five per-timeframe scores ordered fastest to slowest; middle two weights are highest, the second is next, and the fastest and slowest are lowest. Use the latest completed bar for higher-than-chart timeframes and the latest available bar for lower-than-chart timeframes.
+Calculation: Volume delta = volume × ((close − low) − (high − close)) / max(high − low, a small positive value). Its rolling z-score produces a bounded bonus added to the multi-timeframe score.
+Calculation: Kinetic Score = clamp to 0–100 the weighted multi-timeframe score plus the volume-delta bonus, with the score pulled toward 50 when volume z-score exceeds an abnormal-volume threshold; during a squeeze, compress its distance from 50. Smooth the result with a short weighted moving average.
+Long: Kinetic Score < 50
+Short: Kinetic Score ≥ 50

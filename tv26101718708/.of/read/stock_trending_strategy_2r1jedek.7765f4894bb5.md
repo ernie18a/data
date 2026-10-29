@@ -1,0 +1,3 @@
+Long: close > daily VWAP AND close > exponential moving average of close AND MACD histogram > prior-bar MACD histogram AND two-bars-prior MACD histogram <= 0 AND prior-bar MACD histogram > 0
+Short: close < daily VWAP AND close < exponential moving average of close AND MACD histogram < prior-bar MACD histogram AND two-bars-prior MACD histogram >= 0 AND prior-bar MACD histogram < 0
+Exit: long, MACD histogram < 0 AND prior-bar MACD histogram >= 0

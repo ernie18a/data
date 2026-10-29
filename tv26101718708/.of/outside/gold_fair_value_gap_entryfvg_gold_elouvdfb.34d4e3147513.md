@@ -1,0 +1,1 @@
+Compare the current XAUUSD price with a configurable fair value: go long when price is above it and short when price is below it. For each position, place a stop loss and take profit at configurable percentage distances from the traded instrument’s current close, with the levels reversed for long and short positions.

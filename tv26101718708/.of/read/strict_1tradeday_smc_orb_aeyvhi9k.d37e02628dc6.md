@@ -1,0 +1,10 @@
+Calculation: Opening-range high/low = highest high/lowest low during the configured opening-range session
+Calculation: Opening-range range = opening-range high − opening-range low
+Calculation: Latest swing high/low = latest confirmed pivot high/low, confirmed by bars on both sides
+Calculation: Bullish CHoCH = close crosses above latest swing high; bearish CHoCH = close crosses below latest swing low
+Calculation: Bullish FVG = current low exceeds the high two bars earlier by at least the configured minimum gap; bearish FVG = current high is below the low two bars earlier by at least the configured minimum gap
+Calculation: Fast SMA = shorter-lookback simple moving average of close; slow SMA = longer-lookback simple moving average of close
+Long: close > opening-range high AND bullish CHoCH occurred within the configured validity lookback AND bullish FVG AND during regular trading hours after the opening-range session and before the entry cutoff AND flat AND no trade has been taken that day
+Short: close < opening-range low AND bearish CHoCH occurred within the configured validity lookback AND bearish FVG AND during regular trading hours after the opening-range session and before the entry cutoff AND flat AND no trade has been taken that day
+Exit: Long, high >= entry price + 2 × opening-range range OR low <= active ATR trailing stop OR (high >= entry price + opening-range range OR fast SMA crosses below slow SMA) [close half] OR, after the configured elapsed time, low <= entry price OR during the configured end-of-day exit session
+Exit: Short, low <= entry price − 2 × opening-range range OR high >= active ATR trailing stop OR (low <= entry price − opening-range range OR fast SMA crosses above slow SMA) [close half] OR, after the configured elapsed time, high >= entry price OR during the configured end-of-day exit session

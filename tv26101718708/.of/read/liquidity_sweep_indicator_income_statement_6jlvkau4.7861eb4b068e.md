@@ -1,0 +1,3 @@
+Calculation: Confirmed pivot low/high = a bar’s low/high lower/higher than the preceding and following swing-length bars, confirmed after the following bars close; use the most recently confirmed pivot.
+Long: low < most recent confirmed pivot low AND close > most recent confirmed pivot low AND (most recent confirmed pivot low - low) / most recent confirmed pivot low × 100 > minimum sweep percentage AND volume > 20-bar average volume × volume multiplier AND close > EMA
+Short: high > most recent confirmed pivot high AND close < most recent confirmed pivot high AND (high - most recent confirmed pivot high) / most recent confirmed pivot high × 100 > minimum sweep percentage AND volume > 20-bar average volume × volume multiplier AND close < EMA

@@ -1,0 +1,4 @@
+Calculation: Flow line = Smooth with a configurable moving average the range-clamped value 2 × (previous bar open + previous bar close) − current bar high − current bar low − current bar open.
+Calculation: Wave = Apply a shorter-lookback moving average to open, high, low, and close; build recursive Heikin-Ashi open, high, and low from those smoothed values; then apply a longer-lookback moving average to the Heikin-Ashi high and low. Use the chart-timeframe bar still forming when the selected trend timeframe is equal to or lower than the chart timeframe; when it is higher, use the last completed bar of that higher timeframe.
+Long: Close >= Flow line OR Low > Wave high
+Short: Close < Flow line OR High < Wave low

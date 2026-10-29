@@ -1,0 +1,8 @@
+Calculation: Relative volume = current volume divided by its simple moving average over a configurable lookback.
+Calculation: Range high/low = highest prior high / lowest prior low over a configurable lookback, excluding the current bar.
+Calculation: Upper/lower wick-to-body ratio = upper/lower wick length divided by candle body size.
+Calculation: Rejection quality score = rounded 0–100 weighted score of relative volume, wick ratio, wick size relative to ATR, distance from the relevant range edge relative to ATR, close location within the candle, and room to the opposite range edge relative to ATR; normalize each component to its configured range and clamp the total to 0–100.
+Long: lower wick is near the range low (within a configurable ATR distance) AND relative volume >= its threshold AND lower wick-to-body ratio >= its threshold AND lower wick length >= its minimum ATR size AND close location >= its minimum threshold AND bullish rejection quality score >= its minimum score AND (bearish rejection is not also qualified OR bullish score >= bearish score) AND the event cooldown has elapsed.
+Short: upper wick is near the range high (within a configurable ATR distance) AND relative volume >= its threshold AND upper wick-to-body ratio >= its threshold AND upper wick length >= its minimum ATR size AND close location <= 1 minus its minimum threshold AND bearish rejection quality score >= its minimum score AND (bullish rejection is not also qualified OR bearish score > bullish score) AND the event cooldown has elapsed.
+Exit: long, close < the risk edge set at the bullish event low minus an ATR buffer.
+Exit: short, close > the risk edge set at the bearish event high plus an ATR buffer.

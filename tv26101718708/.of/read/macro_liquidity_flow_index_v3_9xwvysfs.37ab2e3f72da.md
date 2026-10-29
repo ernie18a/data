@@ -1,0 +1,5 @@
+Calculation: Macro liquidity signal = EMA of a weighted sum of four z-scores: yield spread, credit ratio, growth ratio, and inverted real yield. Yield spread = 10-year yield − 2-year yield; credit ratio = high-yield bond close / Treasury bond close; growth ratio = copper close / gold close; real yield = 10-year yield − inflation breakeven yield. Each z-score = (value − its simple moving average) / its standard deviation, or 0 when standard deviation is 0. All z-scores use the same lookback; the EMA uses a separate, shorter lookback. Source series use the indicator’s requested timeframe, which may be higher, equal to, or lower than the chart timeframe; use its current bar, including while forming.
+Long: Macro liquidity signal > neutral threshold
+Short: Macro liquidity signal < −neutral threshold
+Exit: long, absolute value of Macro liquidity signal ≤ neutral threshold
+Exit: short, absolute value of Macro liquidity signal ≤ neutral threshold

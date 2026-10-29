@@ -1,0 +1,2 @@
+Long: At least one timeframe is enabled AND RSI on every enabled timeframe is greater than or equal to the bullish threshold; for timeframes higher than the chart timeframe, use the last completed bar, and for lower timeframes, use the latest completed bar available within the chart bar.
+Short: At least one timeframe is enabled AND RSI on every enabled timeframe is less than or equal to the bearish threshold; for timeframes higher than the chart timeframe, use the last completed bar, and for lower timeframes, use the latest completed bar available within the chart bar.

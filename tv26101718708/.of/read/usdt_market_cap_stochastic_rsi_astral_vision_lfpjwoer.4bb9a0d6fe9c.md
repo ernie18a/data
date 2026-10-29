@@ -1,0 +1,3 @@
+Calculation: Smoothed Stochastic RSI (K) = SMA of raw Stochastic RSI; raw Stochastic RSI = 100 × (RSI − lowest RSI over the stochastic lookback) ÷ (highest RSI over the stochastic lookback − lowest RSI over the stochastic lookback), using RSI of the market-cap series over the RSI lookback. Calculate on the configured timeframe, which may be higher or lower than the chart timeframe; use the current forming bar in real time and the latest available bar historically.
+Long: K >= midline OR previous chart bar K >= midline OR K crossed above midline within the configured signal window
+Short: K < midline OR previous chart bar K < midline

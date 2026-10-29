@@ -1,0 +1,14 @@
+Calculation: Directional driver = soft-clip the one-bar change in an EMA of typical price divided by the standard deviation of log close-to-close returns; use a longer smoothing window for the return standard deviation than for the EMA.
+Calculation: Persistence driver = correlation between consecutive signs of close-to-close changes over a short lookback.
+Calculation: Curvature driver = soft-clip the second difference of a linear regression of close, divided by close's standard deviation over the regression lookback.
+Calculation: Orthogonalized drivers = sequentially remove each earlier driver's rolling linear projection from each later driver, then divide each residual by its rolling standard deviation.
+Calculation: Path-quality gate = (efficiency ratio × (1 − normalized binary up/down entropy) × (2 − clamped fractal dimension)) raised to a power; efficiency ratio is absolute net close movement divided by summed absolute close changes, and fractal dimension is 1 + log(path length / close range) / log(lookback), clamped to [1, 2].
+Calculation: Channel assist = signed position of close within the rolling low-to-high channel, multiplied by its absolute value and a weight.
+Calculation: Shock gate = 1 / (1 + max(0, short-term return volatility / long-term return volatility − 1)); the long-term volatility lookback is longer.
+Calculation: Side score = EMA of a soft-clipped score formed by adding the weighted orthogonalized drivers and channel assist, multiplying by the path-quality and shock gates, dividing by the rolling mean absolute deviation of the weighted drivers, and multiplying by a gain. Calculate long and short scores independently, each with its own base length and aggression setting.
+Calculation: Side thresholds = adaptive mean plus/minus adaptive standard deviation times a base threshold factor and skew tilt; calculate rolling score volatility, standardized score, and its rolling third moment (skew), lowering the long threshold for positive skew and the short threshold for negative skew. Use each side's own adaptive lookback and aggression setting.
+Calculation: Risk distance = stop multiple × ATR from the configured daily, weekly, or monthly anchor timeframe, aggregated from the backtest bars; use the last completed anchor bar.
+Long: Long score crosses above its long threshold AND entry mode is not short-only.
+Short: Short score crosses below its short threshold AND entry mode is not long-only.
+Exit: long, a short signal OR a long signal OR (risk engine enabled AND low ≤ long stop OR high ≥ long target).
+Exit: short, a long signal OR (risk engine enabled AND high ≥ short stop OR low ≤ short target).

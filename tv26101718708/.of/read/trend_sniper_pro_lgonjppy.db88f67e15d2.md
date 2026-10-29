@@ -1,0 +1,38 @@
+Calculation: Trend direction = SuperTrend direction; up when direction is -1, down when direction is 1
+Calculation: Trend price breakout = abs(current close - previous close) > ATR × trend target multiplier × (1 + trend value markup / 100), OR (if open/close breakout is enabled) current high - current low > 2 × ATR × trend target multiplier
+Calculation: Reversal price breakout = abs(current close - previous close) > ATR × reversal target multiplier × (1 + reversal value markup / 100), OR (if open/close breakout is enabled) current high - current low > 2 × ATR × reversal target multiplier
+Calculation: High price breakout = abs(current close - previous close) > ATR × high breakout multiplier, OR (if open/close breakout is enabled) current high - current low > 2 × ATR × high breakout multiplier
+Calculation: Trend volume breakout = volume > volume moving average × (1 + trend volume markup / 100), or volume is unavailable
+Calculation: Reversal volume breakout = volume > volume moving average × (1 + reversal volume markup / 100), or volume is unavailable
+Calculation: High volume breakout = volume > volume moving average × high volume multiplier, with volume available
+Calculation: Bullish bar state = close > previous close AND ((trend direction is down AND trend price breakout AND trend volume breakout) OR (trend direction is up AND reversal price breakout AND reversal volume breakout) OR high price breakout OR high volume breakout)
+Calculation: Bearish bar state = close < previous close AND ((trend direction is up AND trend price breakout AND trend volume breakout) OR (trend direction is down AND reversal price breakout AND reversal volume breakout) OR high price breakout OR high volume breakout)
+Calculation: True range = max(high - low, abs(high - previous close), abs(low - previous close))
+Calculation: Upper target line = on a bullish bar state, high + true range × trend value markup / 100 when trend direction is down, otherwise high + true range × reversal value markup / 100; otherwise retain its previous value
+Calculation: Lower target line = on a bearish bar state, low - true range × trend value markup / 100 when trend direction is up, otherwise low - true range × reversal value markup / 100; otherwise retain its previous value
+Calculation: Initial bullish stop line = on a bullish bar state, low - ATR × stop loss factor; otherwise retain its previous value
+Calculation: Initial bearish stop line = on a bearish bar state, high + ATR × stop loss factor; otherwise retain its previous value
+Calculation: Last breakout direction = most recent nonzero bar state
+Calculation: Bullish breakout permission = last breakout direction is bullish OR reversal breakouts are ignored
+Calculation: Bearish breakout permission = last breakout direction is bearish OR reversal breakouts are ignored
+Calculation: Bullish signal = (the crossover above the previous upper target line of high when trend direction is down, otherwise low, AND bullish breakout permission AND close > previous lower target line) OR (the crossover above the previous initial bearish stop line of high when trend direction is down, otherwise low, AND bearish breakout permission) OR (bullish bar state AND high when trend direction is down, otherwise low > previous upper target line)
+Calculation: Bearish signal = (the crossunder below the previous lower target line of low when trend direction is up, otherwise high, AND bearish breakout permission AND close < previous upper target line) OR (the crossunder below the previous initial bullish stop line of low when trend direction is up, otherwise high, AND bullish breakout permission) OR (bearish bar state AND low when trend direction is up, otherwise high < previous lower target line)
+Calculation: Alignment score = sum of seven comparisons: close > shortest-to-longest moving averages in sequence (close > shortest MA, then each shorter MA > the next longer MA); score is 7 for strict bullish alignment, -1 for strict bearish alignment, otherwise if partial alignment is enabled, 0.5 when score > 5, -0.5 when score < 2, 0.25 when score > 3, and -0.25 otherwise; if partial alignment is disabled, 0
+Calculation: Alignment sum = sum of alignment scores over the alignment lookback
+Calculation: MA trend direction = SuperTrend direction calculated on the moving average of OHLC4, using ATR distance; direction turns bullish when that average crosses above the prior bearish stop and bearish when it crosses below the prior bullish stop
+Calculation: Relative price rank = percentile rank of OHLC4 over the alignment lookback
+Calculation: Yearly high/low permission = compare the previous completed higher-timeframe 12-month bar's high and low with the corresponding values from 365 and 730 chart bars earlier; permit longs when the previous yearly high exceeds both older highs, or close exceeds the fallback high threshold (current previous-year high, or the applicable max/min combination of older highs); permit shorts by the corresponding low comparisons and fallback low threshold; permit both when the yearly high/low filter is disabled
+Calculation: New high = highest high over the shorter high/low lookback equals highest high over the longer high/low lookback, or the long-term high/low filter is disabled
+Calculation: New low = lowest low over the shorter high/low lookback equals lowest low over the longer high/low lookback, or the long-term high/low filter is disabled
+Calculation: Long entry filter = yearly high/low permission for longs AND bullish bar state is not present AND (new high AND alignment sum > alignment threshold when MA alignment is enabled AND MA trend direction is bullish when its filter is enabled AND relative price rank > 70, OR cumulative strategy net profit >= 0)
+Calculation: Short entry filter = yearly high/low permission for shorts AND bearish bar state is not present AND (new low AND alignment sum < negative alignment threshold when MA alignment is enabled AND MA trend direction is bearish when its filter is enabled AND relative price rank < 30, OR cumulative strategy net profit >= 0)
+Calculation: Trailing stops = while bullish state or long position, long stop is close - ATR × stop multiplier and short stop is close + ATR × compound multiplier, each subject to the prior-stop and close-crossing rules that retain the prior value; while bearish state or short position, long stop is close - ATR × compound multiplier and short stop is close + ATR × stop multiplier, with the corresponding prior-stop and close-crossing rules retaining the prior value
+Calculation: Compound entry permission = flat, or (long position AND close > short trailing stop), or (short position AND close < long trailing stop)
+Calculation: Long stop exit = low <= long trailing stop
+Calculation: Short stop exit = high >= short trailing stop
+Calculation: Long signal exit = crossunder below the previous lower target line or previous initial bullish stop line of close when trend direction is down, otherwise low
+Calculation: Short signal exit = crossover above the previous upper target line or previous initial bearish stop line of close when trend direction is up, otherwise high
+Long: bullish signal AND long entry filter AND compound entry permission
+Short: bearish signal AND short entry filter AND compound entry permission
+Exit: long, low <= long trailing stop OR (exit on opposing signal is enabled AND long signal exit)
+Exit: short, high >= short trailing stop OR (exit on opposing signal is enabled AND short signal exit)

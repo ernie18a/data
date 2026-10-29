@@ -1,0 +1,4 @@
+Calculation: Composite momentum = (RSI(close, lookback) + MFI(hlc3, volume, same lookback)) / 2
+Calculation: Regime = bullish when composite momentum > bullish threshold and EMA(close, lookback) > its prior-bar value on a completed bar; bearish when composite momentum < bearish threshold and EMA(close, lookback) < its prior-bar value on a completed bar; otherwise retain the prior regime, initially neutral
+Long: completed bar AND composite momentum > bullish threshold AND EMA(close, lookback) > its prior-bar value AND prior regime is not bullish
+Short: completed bar AND composite momentum < bearish threshold AND EMA(close, lookback) < its prior-bar value AND prior regime is not bearish

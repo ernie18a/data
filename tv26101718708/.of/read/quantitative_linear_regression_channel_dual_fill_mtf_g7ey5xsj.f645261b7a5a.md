@@ -1,0 +1,3 @@
+Calculation: Linear regression slope = current fitted value of a linear regression on close minus its fitted value one bar earlier, calculated over a lookback on the selected calculation timeframe (chart timeframe if unset; otherwise the configured timeframe, which may be higher or lower than the chart timeframe; use the last completed bar historically and the still-forming bar in real time)
+Long: Linear regression slope > 0
+Short: Linear regression slope < 0

@@ -1,0 +1,4 @@
+Calculation: Previous-day high = high of the last completed daily bar (higher timeframe than chart, using the configured day boundary)
+Calculation: Previous-day low = low of the last completed daily bar (higher timeframe than chart, using the configured day boundary)
+Long: low < Previous-day low AND close > Previous-day low OR low > high[2] AND low − high[2] > ATR(14) × minimum FVG-size multiplier OR close > open AND |close − open| > ATR(14) × displacement multiplier AND close[1] < open[1] AND high[1] − low[1] > ATR(14) × minimum OB-size multiplier AND (bullish FVG condition if the FVG requirement is enabled)
+Short: high > Previous-day high AND close < Previous-day high OR high < low[2] AND low[2] − high > ATR(14) × minimum FVG-size multiplier OR close < open AND |close − open| > ATR(14) × displacement multiplier AND close[1] > open[1] AND high[1] − low[1] > ATR(14) × minimum OB-size multiplier AND (bearish FVG condition if the FVG requirement is enabled)

@@ -1,0 +1,1 @@
+Compute the rolling z-score of the log ratio between the traded instrument’s daily close and soybean oil’s daily close. At an extreme positive reading, apply a short bias; at an extreme negative reading, apply a long bias. Otherwise, give no directional bias. This is a conviction modifier, not a standalone entry or exit signal.

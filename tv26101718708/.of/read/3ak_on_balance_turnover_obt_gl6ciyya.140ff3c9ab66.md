@@ -1,0 +1,2 @@
+Calculation: On Balance Turnover (OBT) = cumulative sum of sign of the close change multiplied by volume and close
+Long: OBT equals its highest value over the lookback period AND (high is below the highest high over the lookback period OR high equals the highest high over the lookback period)

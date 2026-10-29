@@ -1,0 +1,1 @@
+On each confirmed bar, go long when the shorter-term EMA crosses above the longer-term EMA, and go short when it crosses below. Set a stop and successive profit targets at volatility-scaled distances from entry. Exit the trade when the stop is hit or all configured profit targets are reached.

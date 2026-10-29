@@ -1,0 +1,3 @@
+Calculation: Trend strength = clamp(50 + 1.5 × (RSI − 50), 0, 100) in an uptrend; clamp(50 + 1.5 × (50 − RSI), 0, 100) in a downtrend; otherwise 50. Use shorter-lookback and longer-lookback EMAs for the uptrend and downtrend comparisons, respectively.
+Long: On each of the six analysis timeframes (higher, lower, or equal to the chart timeframe as applicable), close > shorter-lookback EMA AND shorter-lookback EMA > longer-lookback EMA AND trend strength ≥ the configured minimum strength
+Short: On each of the six analysis timeframes (higher, lower, or equal to the chart timeframe as applicable), close < shorter-lookback EMA AND shorter-lookback EMA < longer-lookback EMA AND trend strength ≥ the configured minimum strength

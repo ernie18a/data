@@ -1,0 +1,8 @@
+Calculation: Opening Range High = highest high of bars opening during the opening-range interval, inclusive of its start and exclusive of its end
+Calculation: Opening Range Low = lowest low of bars opening during the opening-range interval, inclusive of its start and exclusive of its end
+Calculation: POC = price row with the greatest volume allocated from opening-range bars
+Calculation: Value Area High/Low = upper/lower boundaries of the value area expanded from the POC toward the heavier adjacent row until adding the next row would exceed the target share of opening-range volume
+Long: opening range is valid AND entry time is at or before the cutoff AND, in order, a prior close > Opening Range High, a later close < Value Area High AND close > Value Area Low, and a still later close > Value Area High, with no intervening close < Opening Range Low
+Short: opening range is valid AND entry time is at or before the cutoff AND, in order, a prior close < Opening Range Low, a later close < Value Area High AND close > Value Area Low, and a still later close < Value Area Low, with no intervening close > Opening Range High
+Exit: long, low <= Opening Range Low OR high >= entry price + R multiple * (entry price - Opening Range Low) OR bar opening time >= time-close time
+Exit: short, high >= Opening Range High OR low <= entry price - R multiple * (Opening Range High - entry price) OR bar opening time >= time-close time

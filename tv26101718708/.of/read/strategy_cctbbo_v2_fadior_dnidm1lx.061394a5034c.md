@@ -1,0 +1,5 @@
+Calculation: CCTBBO = 100 × (source high + 2 × standard deviation(source high) − simple moving average(source high)) / (4 × standard deviation(source high)); source high is the high of the still-forming higher-timeframe bar, and the standard deviation and simple moving average use the same lookback on the chart-timeframe series.
+Long: CCTBBO > its short-term EMA AND prior CCTBBO ≤ its prior short-term EMA AND CCTBBO − its short-term EMA > margin
+Short: CCTBBO < its short-term EMA AND prior CCTBBO ≥ its prior short-term EMA AND CCTBBO − its short-term EMA < −margin
+Exit: Long, low ≤ the trailing stop after high reaches entry price plus the activation distance; the stop trails the highest high by the configured offset
+Exit: Short, high ≥ the trailing stop after low reaches entry price minus the activation distance; the stop trails the lowest low by the configured offset

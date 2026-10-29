@@ -1,0 +1,5 @@
+Calculation: Short-term higher-timeframe SMA = simple moving average of close on a higher timeframe, using the last completed higher-timeframe bar; same lookback as the medium-term and long-term SMAs
+Calculation: Medium-term higher-timeframe SMA = simple moving average of close on a higher timeframe, using the last completed higher-timeframe bar; same lookback as the short-term and long-term SMAs
+Calculation: Long-term higher-timeframe SMA = simple moving average of close on a higher timeframe, using the last completed higher-timeframe bar; same lookback as the short-term and medium-term SMAs
+Long: Short-term higher-timeframe SMA > medium-term higher-timeframe SMA OR medium-term higher-timeframe SMA > long-term higher-timeframe SMA
+Short: Short-term higher-timeframe SMA <= medium-term higher-timeframe SMA OR medium-term higher-timeframe SMA <= long-term higher-timeframe SMA

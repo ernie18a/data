@@ -1,0 +1,2 @@
+Long: For each lower-timeframe RSI value from a completed lower-timeframe bar within the current chart bar, RSI > the stack threshold AND (RSI < the hide-range minimum OR RSI > the hide-range maximum)
+Short: For each lower-timeframe RSI value from a completed lower-timeframe bar within the current chart bar, RSI <= the stack threshold AND (RSI < the hide-range minimum OR RSI > the hide-range maximum)

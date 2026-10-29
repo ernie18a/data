@@ -1,0 +1,2 @@
+Long: On the configured data timeframe (which may be higher or lower than the chart timeframe), close > shorter-period EMA > longer-period EMA; use the current bar while it is forming and the latest available bar otherwise
+Short: On the configured data timeframe (which may be higher or lower than the chart timeframe), close < shorter-period EMA < longer-period EMA; use the current bar while it is forming and the latest available bar otherwise

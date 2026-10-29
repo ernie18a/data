@@ -1,0 +1,7 @@
+Calculation: Current daily high and low = highest high and lowest low from the start of the current, still-forming daily bar through the current chart bar; daily midpoint = their average
+Calculation: Fast channel midpoint = average of max(current daily low, lowest chart-bar low over the shorter lookback) and min(current daily high, highest chart-bar high over the shorter lookback)
+Calculation: Cloud percentage = (fast channel midpoint − daily midpoint) / ATR over the longer lookback, calculated from chart bars
+Long: Position is flat AND bar time is within the configured trading session AND EMA of close over its lookback > fast channel midpoint AND cloud percentage > threshold AND bar high >= current daily high
+Short: Position is flat AND bar time is within the configured trading session AND EMA of close over its lookback < fast channel midpoint AND cloud percentage < −threshold AND bar low <= current daily low
+Exit: Long, bar low <= max(current daily low, lowest chart-bar low over the shorter lookback) OR cloud percentage < 0 OR this is the first bar outside the configured trading session
+Exit: Short, bar high >= min(current daily high, highest chart-bar high over the shorter lookback) OR cloud percentage > 0 OR this is the first bar outside the configured trading session

@@ -1,0 +1,2 @@
+Long: The shorter-lookback simple moving average of close crosses above the longer-lookback simple moving average of close on higher-timeframe daily bars, using the last completed bar
+Short: The shorter-lookback simple moving average of close crosses below the longer-lookback simple moving average of close on higher-timeframe daily bars, using the last completed bar

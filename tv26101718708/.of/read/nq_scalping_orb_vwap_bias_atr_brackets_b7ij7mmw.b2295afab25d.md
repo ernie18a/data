@@ -1,0 +1,6 @@
+Calculation: Opening-range high = highest high during the first configured number of minutes after the New York session open, reset each session
+Calculation: Opening-range low = lowest low during the first configured number of minutes after the New York session open, reset each session
+Long: (session filter disabled OR within trade session) AND trades today < daily trade limit AND (volume filter disabled OR volume > volume SMA) AND opening range ready AND (VWAP bias disabled OR close > VWAP) AND close > opening-range high AND position side is flat or short
+Short: (session filter disabled OR within trade session) AND trades today < daily trade limit AND (volume filter disabled OR volume > volume SMA) AND opening range ready AND (VWAP bias disabled OR close < VWAP) AND close < opening-range low AND position side is flat or long
+Exit: long, low <= entry price - stop ATR multiplier × ATR OR high >= entry price + target ATR multiplier × ATR OR bars since entry >= maximum bars in trade (when time exit is enabled) OR (session flattening and session filter enabled and outside trade session)
+Exit: short, high >= entry price + stop ATR multiplier × ATR OR low <= entry price - target ATR multiplier × ATR OR bars since entry >= maximum bars in trade (when time exit is enabled) OR (session flattening and session filter enabled and outside trade session)

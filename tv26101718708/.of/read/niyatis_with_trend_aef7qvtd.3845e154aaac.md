@@ -1,0 +1,4 @@
+Calculation: Support 3 = last completed higher-timeframe low - (last completed higher-timeframe high - last completed higher-timeframe low) * 0.382
+Calculation: P2 = last completed higher-timeframe low + (last completed higher-timeframe high - last completed higher-timeframe low) * 0.236
+Long: higher-timeframe low > EMA of higher-timeframe close AND higher-timeframe open > higher-timeframe close AND higher-timeframe high - higher-timeframe low < higher-timeframe close * 0.025 AND previous chart-bar low > Support 3 * 0.999 AND previous chart-bar low < Support 3 * 1.001 AND chart-bar open < chart-bar close AND chart-bar close > Support 3 AND chart-bar close < Support 3 * 1.002
+Exit: long, chart-bar high > P2 OR chart-bar low < Support 3 * 0.998

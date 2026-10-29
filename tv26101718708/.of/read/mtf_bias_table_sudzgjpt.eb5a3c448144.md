@@ -1,0 +1,3 @@
+Calculation: Fast and slow moving averages = the selected EMA or SMA of close, with the fast lookback shorter than the slow lookback; calculated on each evaluated timeframe using that timeframe’s bars. For a higher timeframe, use its last completed bar; for a lower timeframe, use the latest available bar within the chart bar.
+Long: On an evaluated timeframe, fast moving average >= slow moving average
+Short: On an evaluated timeframe, fast moving average < slow moving average

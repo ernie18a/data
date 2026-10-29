@@ -1,0 +1,6 @@
+Calculation: ATR trailing stop = initialize direction to 0 and stop to 0; on each source-timeframe bar, compute ATR × multiplier. A long flip occurs when prior direction is not +1 and source high > prior stop; a short flip occurs when prior direction is not −1 and source low < prior stop. Set direction to +1 on a long flip, otherwise −1 on a short flip, otherwise retain prior direction. Set stop to source high + ATR amount on a short flip, source low − ATR amount on a long flip, max(source low − ATR amount, prior stop) while prior direction is +1, min(source high + ATR amount, prior stop) while prior direction is −1, otherwise retain prior stop.
+Calculation: Direction state for each stop = −1 if chart low ≤ stop, else +1 if chart high ≥ stop, else prior state (initially 0). Use the current chart-timeframe stop and the last completed bar's stop from each of the three higher timeframes.
+Long: all four direction states = +1 AND chart time is within the configured date range
+Short: all four direction states = −1 AND chart time is within the configured date range
+Exit: long, sum of the four direction states ≤ 0 OR chart time is outside the configured date range
+Exit: short, sum of the four direction states ≥ 0 OR chart time is outside the configured date range

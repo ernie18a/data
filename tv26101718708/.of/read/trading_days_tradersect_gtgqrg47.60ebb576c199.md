@@ -1,0 +1,2 @@
+Long: close > previous bar's open AND shorter-lookback EMA of close > longer-lookback EMA of close AND current weekday is enabled
+Short: close < previous bar's open AND shorter-lookback EMA of close < longer-lookback EMA of close AND current weekday is enabled

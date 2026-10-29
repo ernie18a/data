@@ -1,0 +1,6 @@
+Calculation: Most recent confirmed swing low = the latest bar low that is lower than the lows of the specified number of bars on both sides; update the level after the bars on its right have completed.
+Calculation: Most recent confirmed swing high = the latest bar high that is higher than the highs of the specified number of bars on both sides; update the level after the bars on its right have completed.
+Long: low < most recent confirmed swing low AND close > most recent confirmed swing low AND volume ≥ average volume × volume multiplier AND bars since previous long entry > 2 × max(pivot left lookback + pivot right confirmation bars, 5)
+Short: high > most recent confirmed swing high AND close < most recent confirmed swing high AND volume ≥ average volume × volume multiplier AND bars since previous short entry > 2 × max(pivot left lookback + pivot right confirmation bars, 5)
+Exit: Long, low ≤ entry price − ATR × stop multiplier OR high ≥ entry price + ATR × stop multiplier × reward-to-risk ratio
+Exit: Short, high ≥ entry price + ATR × stop multiplier OR low ≤ entry price − ATR × stop multiplier × reward-to-risk ratio

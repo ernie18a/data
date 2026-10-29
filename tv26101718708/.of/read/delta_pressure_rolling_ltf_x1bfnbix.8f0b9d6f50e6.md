@@ -1,0 +1,3 @@
+Calculation: Delta pressure = EMA of (100 × rolling sum of directional volume / rolling sum of volume), where each lower-timeframe bar contributes its volume if its close is higher than the previous lower-timeframe close, negative volume if lower, and zero if unchanged; roll over prior completed flow buckets and the current forming bucket, including available forming lower-timeframe bars. Lower-timeframe bars are lower than the chart timeframe.
+Long: Delta pressure > 0 OR (Delta pressure < 0 AND delta pressure > its previous value AND its previous value > its value two bars ago)
+Short: Delta pressure < 0 OR (Delta pressure > 0 AND delta pressure < its previous value AND its previous value < its value two bars ago)

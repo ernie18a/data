@@ -1,0 +1,5 @@
+Calculation: OBV-M = selected moving average of On-Balance Volume
+Calculation: Signal line = selected moving average of OBV-M
+Calculation: Oscillator pivot high/low = OBV-M value at the center of a five-bar sequence, greater/less than each of the other four values; confirmed two bars later
+Long: OBV-M crosses above signal line OR regular bullish divergence (current pivot low < prior pivot low AND current oscillator pivot low > prior oscillator pivot low) OR hidden bullish divergence (current pivot low > prior pivot low AND current oscillator pivot low < prior oscillator pivot low) OR bars since last long signal <= bars since last short signal
+Short: OBV-M crosses below signal line OR regular bearish divergence (current pivot high > prior pivot high AND current oscillator pivot high < prior oscillator pivot high) OR hidden bearish divergence (current pivot high < prior pivot high AND current oscillator pivot high > prior oscillator pivot high) OR bars since last long signal > bars since last short signal

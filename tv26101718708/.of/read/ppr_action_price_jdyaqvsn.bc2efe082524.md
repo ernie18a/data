@@ -1,0 +1,2 @@
+Long: open < close AND open[1] >= close[1] AND open[2] >= close[2] AND close > high[1] AND (VWAP filter disabled OR open >= VWAP AND close >= VWAP) AND (EMA filter disabled OR open >= EMA AND close >= EMA)
+Short: open[1] < close[1] AND open[2] < close[2] AND open >= close AND close < low[1] AND (VWAP filter disabled OR open <= VWAP AND close <= VWAP) AND (EMA filter disabled OR open <= EMA AND close <= EMA)

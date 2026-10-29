@@ -1,0 +1,4 @@
+Calculation: Smoothed top-10 contribution = a configurable smoothing of the sum, across the top 10 index components, of each component’s return from the selected reference (session open or previous close) multiplied by its index weight and the index reference price; previous close uses the last completed higher-timeframe bar, while session open uses the current, forming higher-timeframe bar.
+Calculation: VWAP balance = the weighted percentage of components above their current-session VWAP minus the weighted percentage below it.
+Long: Smoothed top-10 contribution > 0 AND VWAP balance > 0
+Short: Smoothed top-10 contribution < 0 AND VWAP balance < 0

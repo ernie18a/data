@@ -1,0 +1,4 @@
+Short: While flat and within the active date window (if enabled), the RSI on the chart timeframe crosses down through its level: prior completed bar RSI ≥ level AND current completed bar RSI < level
+Short: While short and averaging orders remain, close ≥ the next averaging-order price, where each rung is above the base entry by the cumulative configured rung deviations
+Exit: Short, close ≤ average entry × (1 − configured take-profit fraction)
+Calculation: Average entry = total quote amount deployed across the base order and filled averaging orders ÷ total asset quantity acquired across those fills

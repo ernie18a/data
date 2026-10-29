@@ -1,0 +1,6 @@
+Calculation: Breakout pivot high = the high of a bar with no higher high in the configured number of bars before or after it; use the latest confirmed pivot high.
+Calculation: Breakout pivot low = the low of a bar with no lower low in the configured number of bars before or after it; use the latest confirmed pivot low.
+Calculation: Bullish order block = a zone spanning the low to high of a confirmed pivot-low bar when at least three of that bar and the next three bars are bullish (close > open); it remains in the indicator’s bullish-block list until removed by its block-management rules.
+Calculation: Bearish order block = a zone spanning the low to high of a confirmed pivot-high bar when at least four of that bar and the next four bars are bearish (close < open); it remains in the indicator’s bearish-block list until removed by its block-management rules.
+Long: Close > latest confirmed breakout pivot high AND at least one bullish order block is in the indicator’s bullish-block list AND (first-break-only is disabled OR at least one bullish order block has not previously signaled)
+Short: Close < latest confirmed breakout pivot low AND at least one bearish order block is in the indicator’s bearish-block list AND (first-break-only is disabled OR at least one bearish order block has not previously signaled)

@@ -1,0 +1,5 @@
+Calculation: Timeframe momentum = tanh(0.5 × scale × z-score of ROC(close, momentum lookback), where the z-score uses its longer normalization lookback; calculate on the chart timeframe and higher timeframes, using each timeframe’s last completed bar.
+Calculation: Learned timeframe weights = online linear regression coefficients trained by SGD with L2 regularization to predict the chart-timeframe forward H-bar close return in ATR units from the lagged timeframe momenta; train only after the H-bar outcome is known.
+Calculation: Fused momentum = sum over timeframes of (absolute learned weight / sum of absolute learned weights) × sign(learned weight) × timeframe momentum.
+Long: bar closes with fused momentum crossing above the positive signal threshold AND the warmup period has passed.
+Short: bar closes with fused momentum crossing below the negative signal threshold AND the warmup period has passed.

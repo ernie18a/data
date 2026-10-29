@@ -1,0 +1,6 @@
+Calculation: T3-smoothed anchored VWAP = T3 smoothing of source-price VWAP reset at the selected session, week, or month anchor; T3 uses six consecutive EMAs of the same lookback, combined with the standard T3 coefficients from its smoothing factor
+Calculation: ATR ladder unit = chart-timeframe ATR multiplied by the configurable band step
+Long: close > T3-smoothed anchored VWAP + ATR ladder unit × expansion threshold AND T3-smoothed anchored VWAP > its prior-bar value AND (close − T3-smoothed anchored VWAP) / ATR ladder unit > its prior-bar value
+Short: close < T3-smoothed anchored VWAP − ATR ladder unit × expansion threshold AND T3-smoothed anchored VWAP < its prior-bar value AND (close − T3-smoothed anchored VWAP) / ATR ladder unit < its prior-bar value
+Exit: long, high ≥ T3-smoothed anchored VWAP + ATR ladder unit × reaction threshold AND close < T3-smoothed anchored VWAP + ATR ladder unit × reaction threshold
+Exit: short, low ≤ T3-smoothed anchored VWAP − ATR ladder unit × reaction threshold AND close > T3-smoothed anchored VWAP − ATR ladder unit × reaction threshold

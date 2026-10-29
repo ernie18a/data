@@ -1,0 +1,1 @@
+When flat, enter long if the instrument’s close crosses above its trend EMA, its RSI is above a threshold, its volume exceeds its recent average, and—when the market filter is enabled—the broad-market index is above its own trend EMA. Exit the long if the instrument’s close crosses below its trend EMA. No short entries.

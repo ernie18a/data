@@ -1,0 +1,10 @@
+Calculation: Pressure-weighted volume flow = 100 × EMA(volume × clamp(0.65 × (close − open) / max(high − low, minimum tick) + 0.35 × sign(change(typical price)), −1, 1), flow length) / max(EMA(volume, flow length), 1)
+Calculation: Normalized flow = (pressure-weighted volume flow − its EMA) / max(its standard deviation, epsilon), using a longer lookback for standardization than for flow
+Calculation: Directional entropy = binary entropy of the proportions of positive and negative close changes over a lookback, divided by maximum binary entropy; ignore unchanged closes and use 1 if there are no changes
+Calculation: Fractal efficiency = absolute change in typical price over a lookback / sum of absolute one-bar typical-price changes over that lookback; use 0 if the denominator is 0
+Calculation: Information weight = clamp(0.55 × (1 − directional entropy) + 0.45 × fractal efficiency, 0.05, 1)
+Calculation: Entropy VZO oscillator = EMA of Gaussian-smoothed [max visual level × tanh(normalized flow × sensitivity × (0.65 + information weight))], with a 2-bar EMA; Gaussian smoothing weights current and prior values by exp(−0.5 × (i / max(smoothing length / 3, 1))²), where i is the number of bars back
+Calculation: Signal line = EMA of the Entropy VZO oscillator using a longer smoothing length than the oscillator's final 2-bar EMA
+Calculation: Histogram = Gaussian-smoothed difference between the Entropy VZO oscillator and its signal line
+Long: Entropy VZO oscillator > signal line AND Entropy VZO oscillator > 0 OR Entropy VZO oscillator > signal line AND prior oscillator ≤ prior signal line OR Entropy VZO oscillator > 0 AND prior oscillator ≤ 0 OR histogram > 0
+Short: Entropy VZO oscillator < signal line AND Entropy VZO oscillator < 0 OR Entropy VZO oscillator < signal line AND prior oscillator ≥ prior signal line OR Entropy VZO oscillator < 0 AND prior oscillator ≥ 0 OR histogram < 0

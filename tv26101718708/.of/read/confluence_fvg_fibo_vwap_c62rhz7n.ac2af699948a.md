@@ -1,0 +1,5 @@
+Calculation: HTF pivot high/low = confirmed high/low pivots using left and right bars on a higher timeframe, using completed bars; retain the latest pivot high and latest pivot low independently.
+Calculation: Fibonacci 0.382/0.618 levels = latest pivot low + (latest pivot high − latest pivot low) × 0.382/0.618.
+Calculation: Daily VWAP = cumulative ((high + low + close) / 3 × volume) ÷ cumulative volume since the start of the day; reset both cumulative sums daily.
+Long: low > high two chart bars ago AND (low − high two chart bars ago) / high two chart bars ago × 100 ≥ minimum FVG size AND close ≥ Fibonacci 0.382 AND close ≤ Fibonacci 0.618 AND latest pivot high occurred after latest pivot low AND close > daily VWAP
+Short: high < low two chart bars ago AND (low two chart bars ago − high) / low two chart bars ago × 100 ≥ minimum FVG size AND close ≥ Fibonacci 0.382 AND close ≤ Fibonacci 0.618 AND latest pivot low occurred after latest pivot high AND close < daily VWAP

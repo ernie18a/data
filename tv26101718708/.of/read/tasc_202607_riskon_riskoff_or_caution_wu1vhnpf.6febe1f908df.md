@@ -1,0 +1,3 @@
+Calculation: Credit ratio Z-score = (credit ratio − its rolling mean) / its rolling standard deviation, using the same lookback
+Long: At the close of the last completed bar of the higher-timeframe week, at least two are true: trend-series close > its long-term SMA; short-term volatility < longer-term volatility; credit ratio Z-score > −2
+Exit: long, at the close of the last completed bar of the higher-timeframe week, fewer than three are true: trend-series close > its long-term SMA; short-term volatility < longer-term volatility; credit ratio Z-score > −2

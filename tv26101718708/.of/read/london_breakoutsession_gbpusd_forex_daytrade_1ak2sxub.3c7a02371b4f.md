@@ -1,0 +1,4 @@
+Long: close > close[1] AND close[1] > close[2] AND close[2] < close[3] AND datetime is within the configured date range AND time is within the configured entry session AND the weekday is enabled AND long entries are enabled
+Short: close < close[1] AND close[1] < close[2] AND close[2] > close[3] AND datetime is within the configured date range AND time is within the configured entry session AND the weekday is enabled AND short entries are enabled
+Exit: long, low <= entry price - close × stop-loss fraction OR high >= entry price + close × target fraction OR time is outside the configured exit session
+Exit: short, high >= entry price + close × stop-loss fraction OR low <= entry price - close × target fraction OR time is outside the configured exit session

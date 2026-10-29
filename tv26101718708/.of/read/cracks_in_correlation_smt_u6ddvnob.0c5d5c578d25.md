@@ -1,0 +1,3 @@
+Calculation: Eligible pivot pair = the newest Zigzag pivot and an older pivot of the same direction, comparing older pivots from nearest to farthest; reject a pair if an intervening same-direction pivot is above the lower of the two highs or below the higher of the two lows
+Long: eligible low-pivot pair AND ((newer chart low > older chart low AND newer comparison-series low <= older comparison-series low) OR (newer chart low < older chart low AND newer comparison-series low >= older comparison-series low))
+Short: eligible high-pivot pair AND ((newer chart high > older chart high AND newer comparison-series high <= older comparison-series high) OR (newer chart high < older chart high AND newer comparison-series high >= older comparison-series high))

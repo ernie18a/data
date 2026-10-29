@@ -1,0 +1,12 @@
+Evaluate signals only after a bar closes. For every setup, require all enabled common filters: current volume meets its minimum; current volume divided by its lookback average meets the relative-volume threshold; bar range meets the minimum multiple of ATR; closing price meets its minimum; the bar falls within the allowed session; close is above the instrument EMA for long signals or below it for short signals; and, if index alignment is enabled, the selected index is on the corresponding side of its EMA.
+
+Generate a long signal when any enabled setup qualifies:
+- Inside-bar breakout: the preceding bar lies wholly within the bar before it, and the current close breaks above the preceding bar's high. If enabled, require the close above the EMA.
+- Record-high breakout: the current close crosses above the highest high over the configured lookback, excluding the current bar. If enabled, require relative volume to meet its threshold and every configured consolidation bar to have closed near, but not above, that prior high.
+- Gap-down reversal: at a new day, an opening gap down from the prior close meets the minimum gap size. While that gap remains active, require the configured partial fill to have been reached, then a bullish bar closing above the gap's lower boundary. Apply the configured partial/full trigger settings as well; a full fill deactivates the gap.
+- Bullish outside bar: the current high exceeds the prior high and its low is below the prior low; its body meets the minimum share of its range, it closes above its open, and its close is at or above the prior high.
+
+Generate a short signal when either enabled setup qualifies:
+- Inside-bar breakout: after the same inside-bar pattern, the current close breaks below the preceding bar's low. If enabled, require the close below the EMA.
+- Gap-up continuation: at a new day, an opening gap up from the prior close meets the minimum gap size. While the gap remains active and unfilled, require a bearish bar whose high remains below the gap's upper boundary and whose low remains above its lower boundary.
+- Bearish outside bar: the current high exceeds the prior high and its low is below the prior low; its body meets the minimum share of its range, it closes below its open, and its close is at or below the prior low.

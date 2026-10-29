@@ -1,0 +1,4 @@
+Calculation: IMFI = sum of scores for trend (price above short EMA, short EMA above medium EMA, medium EMA above long EMA), volume (volume above its average, OBV above its average, and price and volume both rising), RSI momentum, stock return versus benchmark return, and proximity to the rolling long-term high; each component awards points at its configured thresholds
+Long: ((close crosses above short EMA AND volume > average volume × high-volume threshold AND RSI > reversal threshold) OR (close > prior rolling highest high AND volume > average volume × breakout threshold)) AND IMFI >= buy threshold
+Exit: Long, close < medium EMA AND prior close from the configured lag < medium EMA at that lag
+Exit: Long, close < long EMA AND short EMA < medium EMA AND medium EMA < long EMA AND IMFI < sell threshold

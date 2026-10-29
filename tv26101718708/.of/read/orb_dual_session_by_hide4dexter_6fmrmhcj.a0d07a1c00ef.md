@@ -1,0 +1,6 @@
+Calculation: London opening-range high/low = highest high / lowest low during the configured London opening-range session
+Calculation: New York opening-range high/low = highest high / lowest low during the configured New York opening-range session
+Long: London session ended AND (retest mode off: close crosses above London opening-range high; retest mode on: close first exceeds London opening-range high, then low touches or falls below it, then close exceeds it again); once per direction per day
+Short: London session ended AND (retest mode off: close crosses below London opening-range low; retest mode on: close first falls below London opening-range low, then high touches or exceeds it, then close falls below it again); once per direction per day
+Long: New York session ended AND (retest mode off: close crosses above New York opening-range high; retest mode on: close first exceeds New York opening-range high, then low touches or falls below it, then close exceeds it again) AND the first London signal of the day was long
+Short: New York session ended AND (retest mode off: close crosses below New York opening-range low; retest mode on: close first falls below New York opening-range low, then high touches or exceeds it, then close falls below it again) AND the first London signal of the day was short

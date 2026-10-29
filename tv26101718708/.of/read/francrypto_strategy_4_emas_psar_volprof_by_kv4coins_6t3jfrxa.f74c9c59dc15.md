@@ -1,0 +1,2 @@
+Long: short-term EMA crosses above longer-term EMA OR medium-term EMA crosses above very-long-term EMA OR close > Parabolic SAR OR MACD histogram > 0
+Short: longer-term EMA crosses above short-term EMA OR very-long-term EMA crosses above medium-term EMA OR close < Parabolic SAR OR MACD histogram < 0

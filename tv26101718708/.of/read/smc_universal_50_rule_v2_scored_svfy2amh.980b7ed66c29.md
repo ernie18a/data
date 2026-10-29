@@ -1,0 +1,14 @@
+Calculation: ITH = latest pivot high from higher-timeframe bars, using configurable left/right pivot lookbacks; the anchor timeframe’s still-forming bar is used
+Calculation: ITL = latest pivot low from higher-timeframe bars, using configurable left/right pivot lookbacks; the anchor timeframe’s still-forming bar is used
+Calculation: EQ = (ITH + ITL) / 2
+Calculation: At a key level = close is within a configurable ATR-based tolerance of ITH, ITL, or EQ
+Calculation: In POI = close is within a configurable percentage-based distance of ITH, ITL, or EQ
+Calculation: Bullish engulfing = current candle is bullish, previous candle is bearish, and current body strictly contains the previous body
+Calculation: Bearish engulfing = current candle is bearish, previous candle is bullish, and current body strictly contains the previous body
+Calculation: Bullish absorption = volume exceeds a configurable multiple of the volume moving average, lower wick is at least a configurable fraction of the candle range, and price is at ITL or at EQ after the prior close was below EQ
+Calculation: Bearish absorption = volume exceeds a configurable multiple of the volume moving average, upper wick is at least a configurable fraction of the candle range, and price is at ITH or at EQ after the prior close was above EQ
+Calculation: Cumulative delta = sum of volume signed positive for bullish candles, negative for bearish candles, and zero for doji candles while price is in POI; reset when price leaves POI
+Calculation: Bull score = configurable weighted sum of being at a key level, bullish sweep, bullish engulfing at a key level, bullish absorption, volume spike with any bullish trigger, positive cumulative delta at ITL or EQ, and close below EQ
+Calculation: Bear score = configurable weighted sum of being at a key level, bearish sweep, bearish engulfing at a key level, bearish absorption, volume spike with any bearish trigger, negative cumulative delta at ITH or EQ, and close above EQ
+Long: (high > ITL AND open > ITL AND close > ITL) OR (low < EQ AND open > EQ AND close > EQ AND prior close > EQ) OR (bullish engulfing AND at a key level) OR bullish absorption OR (close crosses above EMA of close AND volume exceeds a configurable multiple of its moving average) OR (a bullish trigger exists AND Bull score > Bear score AND Bull score >= configured B-grade threshold)
+Short: (high > ITH AND open < ITH AND close < ITH) OR (high > EQ AND open < EQ AND close < EQ AND prior close < EQ) OR (bearish engulfing AND at a key level) OR bearish absorption OR (close crosses below EMA of close AND volume exceeds a configurable multiple of its moving average) OR (a bearish trigger exists AND Bear score > Bull score AND Bear score >= configured B-grade threshold)

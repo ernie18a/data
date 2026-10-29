@@ -1,0 +1,4 @@
+Calculation: Historical volatility = standard deviation of log(close / previous close) over a volatility lookback, multiplied by sqrt(252) × 100
+Calculation: IV Rank = (historical volatility − lowest historical volatility over a longer rank lookback) / (highest historical volatility over that same lookback − lowest) × 100; use 50 when highest equals lowest
+Long: IV Rank < 25 OR (IV Rank − IV Rank from a shorter signal lookback ago > threshold AND IV Rank from that lookback ago < 50)
+Short: IV Rank > 75 OR (IV Rank from a shorter signal lookback ago − IV Rank > threshold AND IV Rank from that lookback ago > 50)

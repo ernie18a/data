@@ -1,0 +1,4 @@
+Long: On any selected higher timeframe, the still-forming bar low < previous completed bar low OR the previous completed bar low < the bar before it low AND the previous completed bar close > the bar before it low
+Long: On any selected higher timeframe, the previous completed bar low < the bar before it low AND the previous completed bar close > the bar before it low
+Short: On any selected higher timeframe, the still-forming bar high > previous completed bar high OR the previous completed bar high > the bar before it high AND the previous completed bar close < the bar before it high
+Short: On any selected higher timeframe, the previous completed bar high > the bar before it high AND the previous completed bar close < the bar before it high

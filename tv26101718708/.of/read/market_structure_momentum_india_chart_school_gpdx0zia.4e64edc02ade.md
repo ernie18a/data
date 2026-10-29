@@ -1,0 +1,3 @@
+Calculation: Major swing pivots = confirmed local highs/lows using a longer lookback on both sides; minor internal pivots = the same using a shorter lookback on both sides.
+Long: Close > last unused confirmed major swing high OR (close > last unused confirmed minor internal high AND minor internal high != major swing high) OR (new confirmed major swing low is within an ATR-scaled tolerance of the previous confirmed major swing low)
+Short: Close < last unused confirmed major swing low OR (close < last unused confirmed minor internal low AND minor internal low != major swing low) OR (new confirmed major swing high is within an ATR-scaled tolerance of the previous confirmed major swing high)

@@ -1,0 +1,13 @@
+Calculation: Money Flow Index = over the lookback, sum(hlc3 × volume) for bars where hlc3 rose, divided against the corresponding sum where hlc3 fell, converted to the 0–100 index scale
+Calculation: Smoothed Stochastic = simple moving average of the Stochastic Oscillator
+Calculation: Tracked peak price and MFI = reset to current close and MFI when current MFI is the highest in the configured chart-timeframe lookback; otherwise carry forward prior values, then independently update each to its higher current value
+Calculation: Tracked trough price and MFI = reset to current close and MFI when current MFI is the lowest in the configured chart-timeframe lookback; otherwise carry forward prior values, then independently update each to its lower current value
+Calculation: Pivot high/low = a high/low with the configured number of lower highs/lows on each side; confirm only after the right-side bars complete
+Long: close crosses above a pending pivot high AND close > open AND (high − low) > 0 AND 100 × (close − open) / (high − low) ≥ minimum breakout body percentage
+Long: an active bullish breakout level is retested after the minimum retest delay AND low ≤ level × (1 + retest buffer percentage) AND the level was not invalidated within the false-break check period (a later bar has low ≤ level OR close < level)
+Long: tracked trough price[1] < tracked trough price[2] AND tracked trough MFI[1] < MFI[1] AND MFI ≥ MFI[1] AND (smoothed stochastic < oversold threshold OR smoothed stochastic[1] < oversold threshold)
+Long: tracked trough MFI = tracked trough MFI[2] AND tracked trough MFI[2] ≠ tracked trough MFI[3] AND (smoothed stochastic < oversold threshold OR smoothed stochastic[1] < oversold threshold)
+Short: close crosses below a pending pivot low AND close < open AND (high − low) > 0 AND 100 × (open − close) / (high − low) ≥ minimum breakout body percentage
+Short: an active bearish breakout level is retested after the minimum retest delay AND high ≥ level × (1 − retest buffer percentage) AND the level was not invalidated within the false-break check period (a later bar has high ≥ level OR close > level)
+Short: tracked peak price[1] > tracked peak price[2] AND tracked peak MFI[1] > MFI[1] AND MFI ≤ MFI[1] AND (smoothed stochastic > overbought threshold OR smoothed stochastic[1] > overbought threshold)
+Short: tracked peak MFI = tracked peak MFI[2] AND tracked peak MFI[2] ≠ tracked peak MFI[3] AND (smoothed stochastic > overbought threshold OR smoothed stochastic[1] > overbought threshold)

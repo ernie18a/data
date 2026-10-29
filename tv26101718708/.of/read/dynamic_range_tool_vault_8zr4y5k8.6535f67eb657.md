@@ -1,0 +1,6 @@
+Calculation: Open momentum (%) = 100 × (current open − open at the momentum lookback) / open at the momentum lookback
+Calculation: Bullish order block = on an upward crossing of the positive momentum threshold, create a zone from the high and low of the most recent bearish candle in the order-block search window; allow creation only when the crossing is farther than the minimum spacing from the previous threshold crossing
+Calculation: Bearish order block = on a downward crossing of the negative momentum threshold, create a zone from the high and low of the most recent bullish candle in the order-block search window; allow creation only when the crossing is farther than the minimum spacing from the previous threshold crossing
+Calculation: Block mitigation price = prior close in wick mode; current low for bullish blocks or current high for bearish blocks in close mode
+Long: Current low < upper boundary of any active bullish order block AND its mitigation price ≥ the block's lower boundary
+Short: Current high > lower boundary of any active bearish order block AND its mitigation price ≤ the block's upper boundary

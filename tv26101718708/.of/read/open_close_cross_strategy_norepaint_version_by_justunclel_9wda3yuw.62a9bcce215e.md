@@ -1,0 +1,5 @@
+Calculation: Open and close moving averages = apply the same selected moving-average method to open and close; calculate both at a shorter lookback and a longer lookback, with the longer lookback equal to the shorter lookback multiplied by a configurable factor.
+Long: The longer-lookback close moving average crosses above the longer-lookback open moving average.
+Short: The longer-lookback close moving average crosses below the longer-lookback open moving average.
+Exit: Long, the longer-lookback close moving average crosses below the longer-lookback open moving average OR price reaches the entry price plus the configured profit distance OR price reaches the entry price minus the configured loss distance.
+Exit: Short, the longer-lookback close moving average crosses above the longer-lookback open moving average OR price reaches the entry price minus the configured profit distance OR price reaches the entry price plus the configured loss distance.

@@ -1,0 +1,6 @@
+Calculation: Opening-range high = highest high during the configured opening interval
+Calculation: Opening-range low = lowest low during the configured opening interval
+Long: After the opening range is complete, during the configured entry window, with no open position and daily trades below the configured limit, close > opening-range high AND previous close <= opening-range high AND volume > its moving average AND ADX > its minimum threshold AND close > both a long-term EMA and a shorter-term EMA AND RSI < its upper limit
+Short: After the opening range is complete, during the configured entry window, with no open position and daily trades below the configured limit, close < opening-range low AND previous close >= opening-range low AND volume > its moving average AND ADX > its minimum threshold AND close < both a long-term EMA and a shorter-term EMA AND RSI > its lower limit
+Exit: Long, low <= the initial stop below entry price OR high >= the profit target above entry price OR the trailing stop is hit after price reaches its activation level OR the configured session exit begins
+Exit: Short, high >= the initial stop above entry price OR low <= the profit target below entry price OR the trailing stop is hit after price reaches its activation level OR the configured session exit begins

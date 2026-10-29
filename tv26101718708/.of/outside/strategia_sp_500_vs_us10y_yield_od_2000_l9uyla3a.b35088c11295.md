@@ -1,0 +1,1 @@
+After the selected start date and once enough external yield history is available, calculate the yield’s position within its rolling high–low range. If valid yield data places it above a chosen cutoff, exit the S&P 500 long position; otherwise, enter or maintain the long position. Take no action when yield data is unavailable.

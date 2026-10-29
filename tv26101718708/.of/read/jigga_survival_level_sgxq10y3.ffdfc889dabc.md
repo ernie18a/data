@@ -1,0 +1,10 @@
+Calculation: survival score = sum of the MACD state, MACD histogram momentum state, smoothed RSI state, short-versus-long EMA state, ADX/price state, smoothed Williams %R state, volume-weighted money flow state, and ATR trend state; each state is positive, negative, or neutral according to its indicator comparison with its signal, direction, or upper/lower threshold
+Calculation: MACD state = positive when the MACD line is above its signal line while above zero, or when it is above zero and above its signal line; negative when it is at or below zero and at or below its signal line; otherwise neutral
+Calculation: MACD histogram momentum state = positive when the MACD histogram is nonnegative and rising, negative when it is negative and not rising, otherwise neutral
+Calculation: ADX/price state = positive or negative according to whether ADX is rising versus its EMA and close is above or below its short EMA; neutral when ADX is not rising versus its EMA
+Calculation: volume-weighted money flow state = positive above its upper threshold, negative below its lower threshold, otherwise neutral; money flow is the rolling sum of the close-location value times volume divided by rolling volume sum
+Calculation: ATR trend state = direction from trailing bands formed from the high-low midpoint plus or minus an ATR multiple; direction switches when close crosses the prior opposite band
+Calculation: signal level = high multiplied by an offset above high when the survival score crosses from negative to nonnegative; low multiplied by an offset below low when it crosses from positive to nonpositive; otherwise the prior level, except a nonzero prior level resets to zero
+Calculation: signal level color = green on a negative-to-nonnegative survival score crossing, red on a positive-to-nonpositive crossing, otherwise the prior color
+Long: high > signal level AND signal level color is green OR survival score on this bar > 0 AND survival score on the prior bar > 0
+Exit: long, low < signal level AND signal level color is red OR survival score on this bar < 0 AND survival score on the prior bar < 0

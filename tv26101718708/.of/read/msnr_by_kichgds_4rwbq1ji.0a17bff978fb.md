@@ -1,0 +1,8 @@
+Calculation: Candle body high = max(open, close)
+Calculation: Candle body low = min(open, close)
+Calculation: Body pivot high = a candle body high greater than the body highs of the preceding left-lookback bars and following right-lookback bars on the analysis timeframe; it is confirmed after the right-lookback bars complete. Pivot calculations use the same left and right lookbacks across analysis timeframes. Analysis timeframes may be higher or lower than the chart timeframe; with lookahead off, historical values use completed bars, while real-time values may use a still-forming analysis-timeframe bar.
+Calculation: Body pivot low = a candle body low lower than the body lows of the preceding left-lookback bars and following right-lookback bars on the analysis timeframe.
+Long: A new body pivot low is confirmed and its demand level is fresh OR current chart close >= current daily open OR current chart close >= current weekly open
+Short: A new body pivot high is confirmed and its supply level is fresh OR current chart close < current daily open OR current chart close < current weekly open
+Exit: Long, the level's analysis-timeframe close is below its price (or its analysis-timeframe low is below its price when wick-break mode is selected)
+Exit: Short, the level's analysis-timeframe close is above its price (or its analysis-timeframe high is above its price when wick-break mode is selected)

@@ -1,0 +1,2 @@
+Long: close crosses above the selected daily or weekly high from the last completed higher-timeframe bar AND (close - open of the current, still-forming daily bar) / open of the current, still-forming daily bar × 100 > momentum threshold AND close > EMA(close, longer lookback)
+Exit: long, hour = 23 AND minute = 00

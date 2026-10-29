@@ -1,0 +1,5 @@
+Calculation: Bullish FVG = gap between a bar’s low and the high two bars earlier; bearish FVG = gap between the low two bars earlier and the bar’s high.
+Calculation: Order block = the last candle opposite the break direction within the configured lookback before a close breaks the latest confirmed swing high or low; its high and low are the zone boundaries.
+Calculation: Zone overlap = the intersection of two zones’ original price ranges.
+Long: Chart-timeframe bullish FVG forms and its gap meets the configured minimum gap filter OR close breaks above the latest confirmed swing high and a prior bearish candle is found within the configured lookback OR two enabled, distinct higher-timeframe zones are bullish and their overlap meets the configured minimum overlap filter.
+Short: Chart-timeframe bearish FVG forms and its gap meets the configured minimum gap filter OR close breaks below the latest confirmed swing low and a prior bullish candle is found within the configured lookback OR two enabled, distinct higher-timeframe zones are bearish and their overlap meets the configured minimum overlap filter.

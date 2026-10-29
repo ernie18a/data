@@ -1,0 +1,2 @@
+Long: close > daily EMA 200 AND close > daily SMA 200 AND close > chart EMA 10 AND close > chart EMA 20 AND close > weekly EMA 5 AND close > weekly EMA 9 for the configured number of consecutive bars
+Short: close <= daily EMA 200 OR close <= daily SMA 200 for the configured number of consecutive bars

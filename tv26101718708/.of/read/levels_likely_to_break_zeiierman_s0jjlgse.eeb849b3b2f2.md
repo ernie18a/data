@@ -1,0 +1,6 @@
+Calculation: Confirmed pivot high = a bar whose high is greater than the highs of the selected number of bars on both sides; available after the right-side bars complete.
+Calculation: Confirmed pivot low = a bar whose low is lower than the lows of the selected number of bars on both sides; available after the right-side bars complete.
+Calculation: Active upper level = the higher price of two confirmed pivot highs whose prices are within the selected percentage tolerance and whose confirmation bars are at least the selected minimum gap apart; remains active until broken or its selected maximum age is reached.
+Calculation: Active lower level = the lower price of two confirmed pivot lows whose prices are within the selected percentage tolerance and whose confirmation bars are at least the selected minimum gap apart; remains active until broken or its selected maximum age is reached.
+Long: an active upper level exists AND ((break trigger is Wick AND high > level + ATR × break buffer) OR (break trigger is Close AND close > level + ATR × break buffer))
+Short: an active lower level exists AND ((break trigger is Wick AND low < level − ATR × break buffer) OR (break trigger is Close AND close < level − ATR × break buffer))

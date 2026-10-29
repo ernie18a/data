@@ -1,0 +1,1 @@
+Buy a call option when the instrument’s closing price is above its current and three higher-timeframe VWAPs, and its fast EMA crosses above its slow EMA. Buy a put option when the closing price is below all four VWAPs, and the fast EMA crosses below the slow EMA.

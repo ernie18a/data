@@ -1,0 +1,4 @@
+Calculation: Pivot low = a bar whose low is the lowest across the configured number of bars before and after it; confirm only after the bars after it are complete. Use chart-timeframe bars, or the selected higher timeframe’s last completed bar when higher-timeframe mode is enabled; a lower-timeframe selection falls back to chart timeframe.
+Calculation: Pivot high = a bar whose high is the highest across the configured number of bars before and after it; confirm only after the bars after it are complete. Use chart-timeframe bars, or the selected higher timeframe’s last completed bar when higher-timeframe mode is enabled; a lower-timeframe selection falls back to chart timeframe.
+Long: A pivot low is confirmed.
+Short: A pivot high is confirmed.

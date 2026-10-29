@@ -1,0 +1,4 @@
+Calculation: Buyers-minus-sellers volume score = the simple moving average of normalized volume on bars where high and volume both exceed their prior-bar values, minus the simple moving average of normalized volume on bars where low is below its prior-bar value and volume exceeds its prior-bar value; normalize volume by its rolling maximum and scale it by a constant.
+Calculation: Hull agreement = the sum of short-term and long-term trend grades, each +1 when its Hull moving average rises faster than an ATR-scaled threshold, -1 when it falls faster than that threshold, and 0 otherwise; the long-term Hull moving average uses a longer lookback than the short-term one.
+Long: Buyers-minus-sellers volume score > 0 OR Hull agreement > 0
+Short: Buyers-minus-sellers volume score < 0 OR Hull agreement < 0

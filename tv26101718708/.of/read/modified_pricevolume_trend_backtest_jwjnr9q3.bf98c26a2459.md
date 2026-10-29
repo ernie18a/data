@@ -1,0 +1,3 @@
+Calculation: Modified price-volume trend = cumulative sum of volume × (current OHLC4 − prior bar OHLC4) / prior bar OHLC4
+Long: (Modified price-volume trend > its simple moving average AND reverse is false) OR (Modified price-volume trend < its simple moving average AND reverse is true)
+Short: (Modified price-volume trend < its simple moving average AND reverse is false) OR (Modified price-volume trend > its simple moving average AND reverse is true)

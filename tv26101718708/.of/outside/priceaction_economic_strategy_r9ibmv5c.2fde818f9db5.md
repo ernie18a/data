@@ -1,0 +1,1 @@
+On each bar, if the traded instrument closes above its open, close any short position and enter long. If it closes below its open, close any long position and enter short. Do nothing when the close equals the open. The external GDP data is informational only and does not affect decisions.

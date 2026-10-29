@@ -1,0 +1,3 @@
+Calculation: Higher-timeframe directional state = On each higher timeframe, track the latest confirmed pivot high and pivot low using equal left and right lookbacks; start neutral, set bullish when that timeframe’s close is above its latest pivot high, and set bearish when its close is below its latest pivot low, retaining the state otherwise. Use the still-forming higher-timeframe bar.
+Long: higher-timeframe directional state = bullish
+Short: higher-timeframe directional state = bearish

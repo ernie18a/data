@@ -1,0 +1,2 @@
+Long: A newer bar on a timeframe higher than the chart timeframe has a low above the immediately preceding bar’s high, and every higher-timeframe bar since then and the current chart bar have lows above that high; use the still-forming higher-timeframe bar.
+Short: A newer bar on a timeframe higher than the chart timeframe has a high below the immediately preceding bar’s low, and every higher-timeframe bar since then and the current chart bar have highs below that low; use the still-forming higher-timeframe bar.

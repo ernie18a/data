@@ -1,0 +1,3 @@
+Calculation: Ultimate RSI = smooth(50 + 50 × RMA(diff, lookback) / RMA(abs(diff), lookback)), where diff is the range between the lookback highest and lowest source values if the highest rises, the negative range if the lowest falls, and otherwise the source change
+Long: Ultimate RSI was at or below its oversold threshold on an earlier bar AND current Ultimate RSI > oversold threshold OR low > high two bars ago AND close[2] < open[2] AND close − open[2] > ATR × move-strength parameter
+Short: Ultimate RSI was at or above its overbought threshold on an earlier bar AND current Ultimate RSI < overbought threshold OR high < low two bars ago AND close[2] > open[2] AND open[2] − close > ATR × move-strength parameter

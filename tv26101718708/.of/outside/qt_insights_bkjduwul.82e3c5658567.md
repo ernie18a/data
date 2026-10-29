@@ -1,0 +1,1 @@
+When enabled correlated instruments have candles moving in opposite directions, signal a bullish setup if the chart instrument’s candle is up, or a bearish setup if it is down. Reverse candle direction for the dollar index and any manually inverted instruments. No exit condition is defined.

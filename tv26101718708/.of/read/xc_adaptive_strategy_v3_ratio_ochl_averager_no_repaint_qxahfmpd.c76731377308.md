@@ -1,0 +1,6 @@
+Calculation: Short-term ratio OCHL average = on each chart bar, take the absolute difference between its close and a reference (its open in nonrecursive mode; otherwise the prior average, falling back to its open), divide by the high minus low of the last completed bar on a higher timeframe, and cap the weight at 1; average = weight × close + (1 − weight) × prior average (falling back to close).
+Calculation: Long-term ratio OCHL average = calculate the same way using a higher timeframe with a longer resolution than the short-term average; use that timeframe’s last completed bar for high and low.
+Long: Long-term average < short-term average AND on the prior chart bar long-term average >= short-term average AND datetime is within the configured backtest window.
+Short: Long-term average > short-term average AND on the prior chart bar long-term average <= short-term average AND datetime is within the configured backtest window.
+Exit: long, low <= entry price − configured stop-loss distance OR high >= entry price + configured take-profit distance.
+Exit: short, high >= entry price + configured stop-loss distance OR low <= entry price − configured take-profit distance.

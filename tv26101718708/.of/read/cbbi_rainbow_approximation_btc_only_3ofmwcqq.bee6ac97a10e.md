@@ -1,0 +1,3 @@
+Calculation: CBBI composite score = short moving average of the mean of available 0–100 normalized scores for close / medium-term moving average, shorter-term moving average / (2 × longer-term moving average), close / very-long-term moving average, close / long-term moving average, RSI of closes, and close / log-log price regression against elapsed time; each component is clipped to its calibrated bounds. Compute on a fixed-resolution aggregation that may be higher or lower than the chart timeframe, using the latest available bar, including a still-forming bar.
+Long: current CBBI composite score < lower threshold AND previous score >= lower threshold
+Short: current CBBI composite score > upper threshold AND previous score <= upper threshold

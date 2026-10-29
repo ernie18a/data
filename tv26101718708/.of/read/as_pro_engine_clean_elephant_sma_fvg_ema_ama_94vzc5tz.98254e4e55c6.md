@@ -1,0 +1,2 @@
+Long: ((high - low) > ATR × range multiplier AND (high > low ? abs(close - open) / (high - low) : 0) > body-strength threshold AND close > open) OR low > high two bars ago OR close crosses above EMA of close on a higher-timeframe last completed bar
+Short: ((high - low) > ATR × range multiplier AND (high > low ? abs(close - open) / (high - low) : 0) > body-strength threshold AND close < open) OR high < low two bars ago OR close crosses below EMA of close on a higher-timeframe last completed bar

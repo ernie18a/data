@@ -1,0 +1,9 @@
+Calculation: ATR percentage = ATR / close × 100
+Calculation: VWAP distance percentage = absolute(close − VWAP) / VWAP × 100
+Long: position is flat AND cooldown has expired AND (when enabled, time is within the configured session) AND ATR percentage ≥ its minimum AND ADX ≥ its minimum AND (when enabled, volume > its longer-lookback average × its multiplier) AND (when enabled, close is within the configured maximum percentage distance of VWAP) AND close > VWAP AND shorter-lookback EMA > longer-lookback EMA AND RSI ≥ its long threshold AND close crosses above the shorter-lookback EMA AND (when enabled, higher-timeframe last completed bar close > its VWMA AND higher-timeframe shorter-lookback EMA > higher-timeframe longer-lookback EMA)
+Short: position is flat AND cooldown has expired AND (when enabled, time is within the configured session) AND ATR percentage ≥ its minimum AND ADX ≥ its minimum AND (when enabled, volume > its longer-lookback average × its multiplier) AND (when enabled, close is within the configured maximum percentage distance of VWAP) AND close < VWAP AND shorter-lookback EMA < longer-lookback EMA AND RSI ≤ its short threshold AND close crosses below the shorter-lookback EMA AND (when enabled, higher-timeframe last completed bar close < its VWMA AND higher-timeframe shorter-lookback EMA < higher-timeframe longer-lookback EMA)
+Exit: long, low ≤ entry price − ATR × stop multiple, or (after TP1 is reached, low ≤ entry price + ATR × stop multiple × lock factor)
+Exit: long, high ≥ entry price + ATR × stop multiple × TP1 R multiple, or high ≥ entry price + ATR × stop multiple × TP2 R multiple
+Exit: short, high ≥ entry price + ATR × stop multiple, or (after TP1 is reached, high ≥ entry price − ATR × stop multiple × lock factor)
+Exit: short, low ≤ entry price − ATR × stop multiple × TP1 R multiple, or low ≤ entry price − ATR × stop multiple × TP2 R multiple
+Exit: long or short, when enabled, bars in trade ≥ configured maximum

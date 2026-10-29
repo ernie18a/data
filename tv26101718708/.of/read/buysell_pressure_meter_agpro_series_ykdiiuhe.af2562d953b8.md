@@ -1,0 +1,7 @@
+Calculation: Buy pressure = volume × (0.5 + 0.5 × clamp((close − open) / bar range, −1, 1)); use the minimum tick as the range when high = low
+Calculation: Sell pressure = volume − buy pressure
+Calculation: Rolling bull pressure % = SMA(buy pressure, lookback) / [SMA(buy pressure, same lookback) + SMA(sell pressure, same lookback)] × 100
+Calculation: Session net delta = cumulative buy pressure − sell pressure since daily rollover
+Calculation: Bull/bear streak length = consecutive bars where buy pressure / (buy pressure + sell pressure) × 100 is at least the dominance threshold / at most 100% minus the dominance threshold; reset on a neutral or opposite bar
+Long: rolling bull pressure % ≥ dominance threshold OR rolling dominance changes from bear to bull (compared with the last non-neutral rolling dominant side) OR session net delta > 0 OR bull streak length = minimum alert streak OR a bull streak ends after reaching the minimum label streak
+Short: rolling bull pressure % ≤ 100% − dominance threshold OR rolling dominance changes from bull to bear (compared with the last non-neutral rolling dominant side) OR session net delta < 0 OR bear streak length = minimum alert streak OR a bear streak ends after reaching the minimum label streak

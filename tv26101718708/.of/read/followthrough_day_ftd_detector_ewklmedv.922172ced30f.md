@@ -1,0 +1,4 @@
+Calculation: Recent low = lowest low over the preceding lookback bars, excluding the current bar.
+Calculation: Rally state = reset the day count to 0 and clear the rally-start low when the current low is below the stored rally-start low or the day count exceeds the latest allowed day; if the count is 0 and close > prior close and (low ≤ recent low or prior low ≤ recent low), set the count to 1 and rally-start low to min(current low, prior low); otherwise, if the count ≥ 1, increment it.
+Calculation: Gain % = (close − prior close) / prior close × 100.
+Long: (day count = 1 AND prior day count ≠ 1) OR (day count ≥ earliest allowed day AND day count ≤ latest allowed day AND gain % ≥ minimum gain % AND (higher-volume requirement disabled OR volume > prior volume) AND current low ≥ rally-start low)

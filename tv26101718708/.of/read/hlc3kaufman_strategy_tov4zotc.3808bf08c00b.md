@@ -1,0 +1,3 @@
+Calculation: Kaufman adaptive moving average = recursively update the prior value by adding the squared adaptive smoothing constant times the difference between HLC3 and the prior value; the constant interpolates between fast and slow smoothing constants according to the efficiency ratio, defined as the absolute HLC3 change over the lookback divided by the sum of absolute one-bar HLC3 changes over that lookback
+Long: the higher-timeframe HLC3 from its last completed bar crosses above the chart-timeframe EMA of the Kaufman adaptive moving average
+Short: the higher-timeframe HLC3 from its last completed bar crosses below the chart-timeframe EMA of the Kaufman adaptive moving average

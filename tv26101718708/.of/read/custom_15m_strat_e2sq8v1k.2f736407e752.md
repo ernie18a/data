@@ -1,0 +1,7 @@
+Calculation: Double Hull MA = WMA(2 × WMA(close, half the longer lookback) − WMA(close, longer lookback), rounded square root of the longer lookback); prior-bar value uses the same lookbacks
+Calculation: Daily close return = (close of the still-forming higher-timeframe daily bar − close of the prior completed daily bar) / close of the prior completed daily bar
+Calculation: Leading Span 1 = average of the short-lookback and medium-lookback Donchian midpoints, each midpoint being the average of the highest high and lowest low over its lookback; Leading Span 2 = Donchian midpoint using a longer lookback than either lookback for Leading Span 1
+Long: no open position AND Double Hull MA > its prior-bar value AND close > its prior-bar value AND Daily close return > threshold AND Leading Span 1 > Leading Span 2 AND open < close AND MACD line > MACD signal line
+Short: no open position AND Double Hull MA < its prior-bar value AND close < its prior-bar value AND Daily close return < threshold AND Leading Span 1 < Leading Span 2 AND open > close AND MACD line < MACD signal line
+Exit: long, (Double Hull MA < its prior-bar value AND close < its prior-bar value AND Daily close return < threshold) OR unrealized profit < stop threshold OR unrealized profit > target threshold
+Exit: short, (Double Hull MA > its prior-bar value AND close > its prior-bar value AND Daily close return > threshold) OR unrealized profit < stop threshold OR unrealized profit > target threshold

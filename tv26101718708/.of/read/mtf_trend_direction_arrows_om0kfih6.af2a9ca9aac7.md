@@ -1,0 +1,3 @@
+Calculation: Trend direction = up when Supertrend is bullish and the EMA slope over the shorter lookback exceeds the flat threshold; down when Supertrend is bearish and that slope is below the negative flat threshold; otherwise neutral. Calculate on each configured timeframe, using its current bar (including a still-forming bar); relative to the chart timeframe, use the higher or lower timeframe as configured.
+Long: Trend direction on any configured timeframe = up
+Short: Trend direction on any configured timeframe = down

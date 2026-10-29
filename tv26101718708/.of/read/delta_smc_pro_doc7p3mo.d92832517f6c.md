@@ -1,0 +1,4 @@
+Calculation: Higher-timeframe swing low = the low from swingLen bars ago equals the lowest low across 2 × swingLen + 1 higher-timeframe bars
+Calculation: Higher-timeframe swing high = the high from swingLen bars ago equals the highest high across 2 × swingLen + 1 higher-timeframe bars
+Long: Last completed higher-timeframe low < the higher-timeframe low swingLen chart bars earlier AND higher-timeframe swing low AND last completed lower-timeframe high > the preceding lower-timeframe high
+Short: Last completed higher-timeframe high > the higher-timeframe high swingLen chart bars earlier AND higher-timeframe swing high AND last completed lower-timeframe low < the preceding lower-timeframe low

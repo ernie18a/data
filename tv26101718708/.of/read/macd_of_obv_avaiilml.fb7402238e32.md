@@ -1,0 +1,4 @@
+Calculation: OBV = cumulative volume added when close rises, subtracted when close falls, and unchanged when close is unchanged
+Calculation: OBV MACD histogram = (short-term EMA of OBV − long-term EMA of OBV) − signal EMA of that difference, where the signal EMA lookback is shorter than the long-term EMA lookback
+Long: OBV MACD histogram crosses above 0 AND month is within the inclusive lower and upper month bounds AND day of month is at least the lower day bound and less than the upper day bound
+Exit: long, OBV MACD histogram crosses below 0 AND month is within the inclusive lower and upper month bounds AND day of month is at least the lower day bound and less than the upper day bound

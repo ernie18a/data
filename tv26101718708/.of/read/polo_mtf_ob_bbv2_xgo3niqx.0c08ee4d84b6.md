@@ -1,0 +1,4 @@
+Calculation: Higher-timeframe swing high = a confirmed higher-timeframe candle high greater than the highs of the next shorter lookback bars; higher-timeframe swing low = a confirmed higher-timeframe candle low lower than the lows of the next shorter lookback bars. Use the same lookback for both.
+Calculation: Bullish OB zone = the full high-low range of the lowest-low candle between a swing high and the later confirmed higher-timeframe close above it; bearish OB zone = the full high-low range of the highest-high candle between a swing low and the later confirmed higher-timeframe close below it. Use confirmed higher-timeframe bars; exclude the break bar.
+Long: A confirmed higher-timeframe close is above a not-yet-broken swing high OR the maximum of open and close is above a bearish OB zone's top
+Short: A confirmed higher-timeframe close is below a not-yet-broken swing low OR the minimum of open and close is below a bullish OB zone's bottom

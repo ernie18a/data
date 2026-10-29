@@ -1,0 +1,7 @@
+Calculation: Hull Butterfly bullish trigger = the Hull Butterfly oscillator state changes to bullish; the state becomes bullish when the oscillator rises below its negative cumulative mean absolute value threshold, bearish when it falls above its positive threshold, and resets when it crosses either threshold.
+Calculation: HalfTrend bullish reversal = HalfTrend trend changes from bearish to bullish.
+Calculation: HalfTrend bearish reversal = HalfTrend trend changes from bullish to bearish.
+Long: HalfTrend bullish reversal AND Hull Butterfly bullish trigger occurred within the configured maximum number of bars AND (EMA filter disabled OR source > EMA) AND (ADX filter disabled OR selected ADX variant > threshold) AND (date and time filters disabled OR current bar is within their configured ranges)
+Short: HalfTrend bearish reversal AND Hull Butterfly bearish trigger occurred within the configured maximum number of bars AND (EMA filter disabled OR source < EMA) AND (ADX filter disabled OR selected ADX variant > threshold) AND (date and time filters disabled OR current bar is within their configured ranges)
+Exit: long, close < entry price × (1 − configured stop-loss percentage) OR high reaches any configured take-profit price above entry
+Exit: short, close > entry price × (1 + configured stop-loss percentage) OR low reaches any configured take-profit price below entry

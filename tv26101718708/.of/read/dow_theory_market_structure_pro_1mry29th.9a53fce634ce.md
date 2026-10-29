@@ -1,0 +1,4 @@
+Calculation: Confirmed swing high = a bar’s high that is higher than the highs of an equal number of preceding and following bars; it is confirmed after the following bars complete
+Calculation: Confirmed swing low = a bar’s low that is lower than the lows of an equal number of preceding and following bars; it is confirmed after the following bars complete
+Long: A new confirmed swing high is higher than the previous confirmed swing high OR a new confirmed swing low is higher than the previous confirmed swing low OR close crosses above the latest confirmed swing high
+Short: A new confirmed swing high is lower than the previous confirmed swing high OR a new confirmed swing low is lower than the previous confirmed swing low OR close crosses below the latest confirmed swing low

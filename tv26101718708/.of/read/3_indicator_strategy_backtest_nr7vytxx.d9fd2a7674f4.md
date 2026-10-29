@@ -1,0 +1,1 @@
+Long: Higher-timeframe close from the last completed bar > its EMA AND higher-timeframe close from the last completed bar < its EMA AND chart-timeframe close crosses above an EMA with a longer lookback than either higher-timeframe EMA

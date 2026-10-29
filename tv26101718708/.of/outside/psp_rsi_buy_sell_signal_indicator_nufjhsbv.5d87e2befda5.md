@@ -1,0 +1,1 @@
+On 30-minute bars, calculate RSI from the underlying instrument’s closing price. Buy a next-week call when RSI crosses upward through the oversold threshold; buy a next-week put when RSI crosses downward through the overbought threshold.

@@ -1,0 +1,5 @@
+Calculation: One-bar return = (current close − previous close) / previous close
+Calculation: Pump = RSI is at or above its upper threshold OR (current volume is greater than the 20-bar simple moving average of volume multiplied by a volume multiplier AND one-bar return is greater than an upward-return threshold)
+Calculation: Bars since pump ended = reset to 0 on the first bar after Pump changes from true to false; otherwise increment by 1, starting at 10000
+Short: Position is flat AND Pump is false AND ((Bars since pump ended is at least the wait period AND RSI is at or below its cooldown threshold AND (one-bar return is at most half the upward-return threshold OR current volume is at most the 20-bar simple moving average of volume multiplied by 80% of the volume multiplier)) OR (current high is greater than the highest high of the preceding lookback bars))
+Exit: short, Pump is true OR close is at or below entry price × (1 − take-profit percentage) OR close is at or above entry price × (1 + stop-loss percentage)

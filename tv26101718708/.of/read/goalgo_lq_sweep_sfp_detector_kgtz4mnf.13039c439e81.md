@@ -1,0 +1,2 @@
+Long: low < prior bar low AND close > prior bar low AND volume > (volume SMA × volume-spike multiplier)
+Short: high > prior bar high AND close < prior bar high AND volume > (volume SMA × volume-spike multiplier)

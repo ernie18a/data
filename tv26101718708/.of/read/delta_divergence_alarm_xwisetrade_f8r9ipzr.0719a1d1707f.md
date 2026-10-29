@@ -1,0 +1,3 @@
+Calculation: Delta = sum of lower-timeframe volume for bars with close > open minus sum of lower-timeframe volume for bars with close < open; split volume equally between the sums when close = open. Use lower-timeframe bars within the last completed chart bar.
+Long: close < open AND Delta > 0 AND volume > 0 AND at least one lower-timeframe bar is available
+Short: close > open AND Delta < 0 AND volume > 0 AND at least one lower-timeframe bar is available

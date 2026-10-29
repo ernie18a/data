@@ -1,0 +1,4 @@
+Calculation: Session value area high/low = build a time-at-price profile for the current trading-day session from completed chart bars: divide elapsed session time into configurable brackets and the session price range into configurable rows; count each bracket at most once per row it overlaps; start at the highest-count row and expand to the richer adjacent row until the configurable share of total row counts is included. The upper and lower edges of the included rows are the value area high and low.
+Calculation: Initial balance high/low = highest high and lowest low among bars in the first two session brackets.
+Long: close > session value area high AND previous close <= session value area high OR close > initial balance high AND previous close <= initial balance high
+Short: close < session value area low AND previous close >= session value area low OR close < initial balance low AND previous close >= initial balance low

@@ -1,0 +1,3 @@
+Calculation: Each of the seven constituent percentage changes = (current higher-timeframe close / previous higher-timeframe close − 1) × 100; use the still-forming higher-timeframe bar for the current close and the last completed bar for the previous close
+Long: At least five of the seven constituent percentage changes are greater than 0
+Short: At least five of the seven constituent percentage changes are less than 0

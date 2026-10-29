@@ -1,0 +1,13 @@
+Calculation: Confirmed swing high/low = a pivot high/low confirmed using equal configurable lookback on both sides; retain the latest and preceding confirmed highs and lows.
+Calculation: Bullish/bearish BOS = close crosses above the latest confirmed swing high / below the latest confirmed swing low; classify the break as CHoCH if prior structure direction was opposite, otherwise BOS. Structure direction changes to the break direction.
+Calculation: Bullish/bearish swing structure = the latest confirmed swing high is higher/lower than the preceding confirmed swing high AND the latest confirmed swing low is higher/lower than the preceding confirmed swing low.
+Calculation: Recent BOS/CHoCH = the corresponding event occurred within the configurable structure memory; opposing recent events cancel each other for scoring.
+Calculation: Bullish/bearish displacement = candle body is at least a configurable ATR multiple and close is above/below open.
+Calculation: Relative volume = volume divided by its moving average; high relative volume is at or above a configurable threshold.
+Calculation: Bullish/bearish FVG = current low is above the high two bars earlier / current high is below the low two bars earlier; recent FVG means occurrence within configurable FVG memory, with opposing recent FVGs canceling each other for scoring.
+Calculation: Active bullish/bearish order block = the most recent bearish/bullish candle within a configurable search window before bullish/bearish displacement, while within configurable age memory and close is at or above its low / at or below its high; opposing active blocks cancel each other for scoring.
+Calculation: Regime score = weighted sum of directional points for close above/below its moving average, normalized moving-average slope, displacement, high relative volume on a directional candle, swing structure, recent BOS, recent CHoCH, trending ADX with matching DMI direction and close on the matching side of the moving average, recent FVG, and active order block. Clip the score to its configured bounds.
+Calculation: Raw regime = strong bull, bull, neutral, bear, or strong bear according to configurable ordered score thresholds.
+Calculation: Confirmed regime = raw regime after it differs from the current confirmed regime for the configurable number of consecutive bars; otherwise retain the current regime. Initialize as neutral.
+Long: confirmed regime is bullish OR bullish BOS OR bullish CHoCH
+Short: confirmed regime is bearish OR bearish BOS OR bearish CHoCH

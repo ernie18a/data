@@ -1,0 +1,5 @@
+Calculation: Daily ohlc4 percent change = (current higher-timeframe daily bar ohlc4 − prior daily bar ohlc4) / prior daily bar ohlc4; use the current daily bar while it is still forming (Pine v2 historical values use that bar’s final value)
+Long: position is flat AND Hull moving average of ohlc4 > its prior-bar value AND ohlc4 > prior-bar Hull moving average AND daily ohlc4 percent change > decision threshold
+Short: position is flat AND Hull moving average of ohlc4 < its prior-bar value AND ohlc4 < prior-bar Hull moving average AND daily ohlc4 percent change < decision threshold
+Exit: long, Hull moving average of ohlc4 < its prior-bar value AND ohlc4 < prior-bar Hull moving average AND daily ohlc4 percent change < decision threshold OR unrealized profit < stop-loss threshold OR unrealized profit > take-profit threshold
+Exit: short, Hull moving average of ohlc4 > its prior-bar value AND ohlc4 > prior-bar Hull moving average AND daily ohlc4 percent change > decision threshold OR unrealized profit < stop-loss threshold OR unrealized profit > take-profit threshold

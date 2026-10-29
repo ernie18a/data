@@ -1,0 +1,8 @@
+Calculation: Confirmed swing high/low = a pivot high/low confirmed after the configured number of bars on each side, calculated on each enabled timeframe; use the last completed bar of that timeframe.
+Calculation: Bullish impulse = confirmed swing low to a later confirmed swing high, starting at the lowest confirmed swing low since the prior confirmed swing high (or the latest prior swing low if none); require the configured minimum leg length and lookback. Apply the configured structure filter, displacement filter, or both: structure requires the new high to exceed the prior confirmed swing high; displacement requires the leg range to meet the configured ATR multiple.
+Calculation: Bearish impulse = confirmed swing high to a later confirmed swing low, starting at the highest confirmed swing high since the prior confirmed swing low (or the latest prior swing high if none); require the configured minimum leg length and lookback. Apply the configured structure filter, displacement filter, or both: structure requires the new low to be below the prior confirmed swing low; displacement requires the leg range to meet the configured ATR multiple.
+Calculation: OTE zone = retracement band between the configured shallow and deep levels of the qualifying impulse; for a bullish impulse measure down from its high, and for a bearish impulse measure up from its low.
+Long: Price bar overlaps an active bullish OTE zone.
+Short: Price bar overlaps an active bearish OTE zone.
+Exit: Long, configured invalidation price (close or low) is below the active bullish OTE's deep level.
+Exit: Short, configured invalidation price (close or high) is above the active bearish OTE's deep level.

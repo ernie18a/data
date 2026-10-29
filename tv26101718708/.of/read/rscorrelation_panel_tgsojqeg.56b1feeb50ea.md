@@ -1,0 +1,6 @@
+Calculation: Symbol current-session return = (current session close - session open) / session open; use the still-forming session bar, which is higher timeframe than intraday chart bars.
+Calculation: Daily relative strength = symbol current-session return - benchmark current-session return; use the still-forming session bars, which are higher timeframe than intraday chart bars.
+Calculation: Short-term relative strength = symbol rate of change over a shorter lookback - benchmark rate of change over the same lookback, using chart-timeframe bars.
+Calculation: Long-term relative strength = (symbol return weighted across four successive quarters, with the most recent quarter weighted twice as much as each earlier quarter - benchmark return weighted the same way) / benchmark weighted return.
+Long: Symbol current-session return > 0 OR Daily relative strength > 0 OR Short-term relative strength > 0 OR Long-term relative strength > 0
+Short: Symbol current-session return < 0 OR Daily relative strength < 0 OR Short-term relative strength < 0 OR Long-term relative strength < 0

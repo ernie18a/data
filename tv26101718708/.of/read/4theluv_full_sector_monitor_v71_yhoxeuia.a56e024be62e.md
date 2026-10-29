@@ -1,0 +1,2 @@
+Long: sector ETF percentage change > 0 AND relative volume ≥ strong RVOL threshold AND positive sector breadth ≥ bullish breadth threshold
+Short: sector ETF percentage change < 0 AND relative volume ≥ strong RVOL threshold AND positive sector breadth ≤ bearish breadth threshold

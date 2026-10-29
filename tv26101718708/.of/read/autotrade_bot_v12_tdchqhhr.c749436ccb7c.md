@@ -1,0 +1,12 @@
+Calculation: Long sweep = current low < lowest low of the preceding shorter-timeframe chart bars; store that bar’s high and low and keep the sweep active until a long base condition occurs. Each new sweep replaces the stored values.
+Calculation: Short sweep = current high > highest high of the preceding shorter-timeframe chart bars; store that bar’s low and high and keep the sweep active until a short base condition occurs. Each new sweep replaces the stored values.
+Calculation: Higher low = the latest long-sweep low > the preceding long-sweep low.
+Calculation: Lower high = the latest short-sweep high < the preceding short-sweep high.
+Calculation: From oversold = Williams %R reached or crossed below its oversold level within the lookback window, including the current bar. From overbought = Williams %R reached or crossed above the corresponding overbought level within the lookback window, including the current bar.
+Calculation: Higher-timeframe EMA trend = the higher-timeframe EMA of close, using the last completed higher-timeframe bar; rising when its current sampled value >= its values one and two chart bars earlier, falling when <= both.
+Long: Flat AND an active long sweep AND close > open AND close > the stored long-sweep high AND close > chart-timeframe HMA AND chart-timeframe HMA is >= its values one and two chart bars earlier AND close > higher-timeframe EMA AND higher-timeframe EMA trend is rising AND Williams %R > its EMA AND (From oversold OR (NOT From oversold AND Higher low)).
+Short: Flat AND shorts enabled AND an active short sweep AND close < open AND close < the stored short-sweep low AND close < chart-timeframe HMA AND chart-timeframe HMA is <= its values one and two chart bars earlier AND close < higher-timeframe EMA AND higher-timeframe EMA trend is falling AND Williams %R < its EMA AND (From overbought OR (NOT From overbought AND Lower high)).
+Calculation: Long stop = stored long-sweep low minus one minimum tick; long target = signal close + max(signal close - long stop, one minimum tick) × reward-to-risk ratio.
+Calculation: Short stop = stored short-sweep high plus one minimum tick; short target = signal close - max(short stop - signal close, one minimum tick) × reward-to-risk ratio.
+Exit: long, low <= long stop OR high >= long target.
+Exit: short, high >= short stop OR low <= short target.

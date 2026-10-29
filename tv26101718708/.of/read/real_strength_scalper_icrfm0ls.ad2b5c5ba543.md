@@ -1,0 +1,7 @@
+Calculation: Real Strength = EMA of ROC(close, momentum lookback) × max(volume / SMA(volume, volume lookback), minimum floor) × max(ADX / reference level, minimum floor)
+Calculation: Long peak = highest Real Strength since entry
+Calculation: Short peak = lowest Real Strength since entry
+Long: Real Strength > positive strength threshold AND Real Strength > previous bar’s Real Strength AND ADX ≥ minimum ADX AND DI+ > DI− AND volume / its SMA ≥ minimum volume ratio AND (trend filter disabled OR short-lookback SMA(close) > long-lookback SMA(close))
+Short: Real Strength < negative strength threshold AND Real Strength < previous bar’s Real Strength AND ADX ≥ minimum ADX AND DI− > DI+ AND volume / its SMA ≥ minimum volume ratio AND (trend filter disabled OR short-lookback SMA(close) < long-lookback SMA(close))
+Exit: Long, low ≤ entry price × (1 − stop-loss percentage) OR (bars held ≥ minimum hold AND (short-lookback SMA(close) > long-lookback SMA(close) AND Real Strength ≤ −flip threshold OR short-lookback SMA(close) ≤ long-lookback SMA(close) AND Long peak > 0 AND Real Strength < Long peak × (1 − peak-drop percentage)))
+Exit: Short, high ≥ entry price × (1 + stop-loss percentage) OR (bars held ≥ minimum hold AND (short-lookback SMA(close) < long-lookback SMA(close) AND Real Strength ≥ flip threshold OR short-lookback SMA(close) ≥ long-lookback SMA(close) AND Short peak < 0 AND Real Strength > Short peak × (1 − peak-drop percentage)))

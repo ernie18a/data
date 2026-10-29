@@ -1,0 +1,6 @@
+Calculation: Efficiency ratio = absolute change in close over the lookback divided by the sum of absolute close-to-close changes over that lookback
+Calculation: Volume-weighted RSI = RSI of close-to-close gains and losses weighted by volume, using simple moving averages of the weighted gains and losses
+Calculation: Bull score = count of these conditions that are true: close > KAMA and KAMA > prior KAMA; efficiency ratio > prior efficiency ratio; volume-weighted RSI > bullish RSI threshold; close > open and absolute close-open body > ATR × thrust multiplier
+Calculation: Bear score = count of these conditions that are true: close < KAMA and KAMA < prior KAMA; efficiency ratio > prior efficiency ratio; volume-weighted RSI < bearish RSI threshold; close < open and absolute close-open body > ATR × thrust multiplier
+Long: (Bull score >= signal threshold - 1 AND Bull score < signal threshold AND close > KAMA AND KAMA > prior KAMA) OR (Bull score >= signal threshold AND current bar index - prior bullish signal bar index > cooldown)
+Short: (Bear score >= signal threshold - 1 AND Bear score < signal threshold AND close < KAMA AND KAMA < prior KAMA) OR (Bear score >= signal threshold AND current bar index - prior bearish signal bar index > cooldown)

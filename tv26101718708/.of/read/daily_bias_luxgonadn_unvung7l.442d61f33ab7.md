@@ -1,0 +1,5 @@
+Calculation: Previous-day candle = the last completed daily bar's close and open; daily bars are aggregated from the chart data.
+Calculation: Daily structure = compare each confirmed daily pivot high and pivot low with the preceding pivot of the same type; a higher high and higher low are bullish, a lower high and lower low are bearish, and mixed or unavailable comparisons are neutral. Pivots use equal left and right lookbacks; only confirmed pivots count.
+Calculation: Bias score = previous-day candle bias + daily structure bias + current-price-vs-daily-open bias, where bullish = +1, bearish = -1, and neutral = 0. Score >= +2 is bullish; score <= -2 is bearish.
+Long: Previous completed daily close > open OR daily structure has both a higher high and a higher low OR current chart close > the current, still-forming daily open OR bias score >= +2
+Short: Previous completed daily close < open OR daily structure has both a lower high and a lower low OR current chart close < the current, still-forming daily open OR bias score <= -2

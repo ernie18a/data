@@ -1,0 +1,4 @@
+Calculation: Volume Z-score = (current volume − rolling mean volume) / rolling population standard deviation over a lookback ending on the current bar; use 0 if standard deviation is zero.
+Calculation: Prior N-bar high/low = highest high / lowest low over the N chart-timeframe bars before the current bar.
+Long: Volume Z-score ≥ threshold AND |close − open| / (high − low) ≤ min(maximum body/range, 1 − minimum wick/range) AND (min(open, close) − low) / (high − low) ≥ minimum wick/range AND |low − prior N-bar low| ≤ ATR × distance parameter AND close > low + (high − low) × 0.25
+Short: Volume Z-score ≥ threshold AND |close − open| / (high − low) ≤ min(maximum body/range, 1 − minimum wick/range) AND (high − max(open, close)) / (high − low) ≥ minimum wick/range AND |high − prior N-bar high| ≤ ATR × distance parameter AND close < high − (high − low) × 0.25

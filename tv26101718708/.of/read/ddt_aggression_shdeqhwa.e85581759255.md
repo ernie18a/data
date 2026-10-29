@@ -1,0 +1,4 @@
+Calculation: Positive delta average = sum of positive volume delta values over a rolling chart-timeframe lookback divided by the count of positive values, with a minimum denominator of 1.
+Calculation: Negative delta average = sum of absolute negative volume delta values over a rolling chart-timeframe lookback divided by the count of negative values, with a minimum denominator of 1.
+Long: Current volume delta from lower-timeframe bars within the chart bar still forming > 0 AND current volume delta >= positive delta average × threshold
+Short: Current volume delta from lower-timeframe bars within the chart bar still forming < 0 AND absolute current volume delta >= negative delta average × threshold

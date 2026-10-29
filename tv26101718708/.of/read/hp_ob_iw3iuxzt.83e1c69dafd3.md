@@ -1,0 +1,5 @@
+Calculation: Institutional move = volume exceeds its average by a multiplier AND absolute candle body exceeds its average by a multiplier
+Calculation: Bullish fair value gap = at a tested bar offset, low is above the high two bars earlier
+Calculation: Bearish fair value gap = at a tested bar offset, high is below the low two bars earlier
+Long: On a higher-timeframe bar still forming, close crosses above the latest confirmed swing high AND the institutional-move condition is met AND a bullish fair value gap exists AND the nearest prior bearish candle in the scan window exists
+Short: On a higher-timeframe bar still forming, close crosses below the latest confirmed swing low AND the institutional-move condition is met AND a bearish fair value gap exists AND the nearest prior bullish candle in the scan window exists

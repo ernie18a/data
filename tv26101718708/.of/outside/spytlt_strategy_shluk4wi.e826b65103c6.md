@@ -1,0 +1,1 @@
+Go long the traded instrument when the external instrument’s closing price crosses above its simple moving average, provided the signal occurs within the configured trading window. Exit the position when that external instrument’s closing price crosses below its simple moving average, regardless of the time window. Do not enter short positions.

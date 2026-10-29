@@ -1,0 +1,12 @@
+Calculation: Heikin-Ashi candles = standard recursive Heikin-Ashi OHLC calculated from chart bars.
+Calculation: Heikin-Ashi ATR = Wilder ATR calculated from Heikin-Ashi high, low, and close.
+Calculation: Fast and slow Heikin-Ashi SuperTrend = SuperTrend using Heikin-Ashi ATR and midpoint of Heikin-Ashi high and low; the fast version uses a shorter/faster multiplier than the slow version. Its direction flips up when Heikin-Ashi close crosses below the prior lower band, and flips down when it crosses above the prior upper band; otherwise direction persists, with bands carried forward according to the prior close.
+Calculation: Heikin-Ashi run length = consecutive bars with the same Heikin-Ashi candle direction.
+Calculation: Confirmation spacing = number of chart bars since the previous confirmation.
+Calculation: Long target levels = entry price plus each of three configurable multiples of Heikin-Ashi ATR at entry. Short target levels = entry price minus each of three configurable multiples of Heikin-Ashi ATR at entry.
+Long: Selected SuperTrend direction changes from down to up, OR (filter mode is selected AND slow SuperTrend direction is up AND high exceeds the prior breakout-window highest high AND the previous filtered signal was not long).
+Short: Selected SuperTrend direction changes from up to down, OR (filter mode is selected AND slow SuperTrend direction is down AND low falls below the prior breakout-window lowest low AND the previous filtered signal was not short).
+Long: Slow SuperTrend direction is up AND Heikin-Ashi candle is up AND Heikin-Ashi run length is within the early-run limit AND Heikin-Ashi body is at least the configured ATR fraction AND at least the configured fraction of its range AND lower wick is at most the configured fraction of its range AND confirmation spacing meets its minimum AND no long or short signal occurred on this bar or the prior bar.
+Short: Slow SuperTrend direction is down AND Heikin-Ashi candle is down AND Heikin-Ashi run length is within the early-run limit AND Heikin-Ashi body is at least the configured ATR fraction AND at least the configured fraction of its range AND upper wick is at most the configured fraction of its range AND confirmation spacing meets its minimum AND no long or short signal occurred on this bar or the prior bar.
+Exit: long, high reaches or exceeds any long target level.
+Exit: short, low reaches or falls below any short target level.

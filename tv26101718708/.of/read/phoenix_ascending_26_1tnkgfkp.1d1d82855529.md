@@ -1,0 +1,5 @@
+Calculation: Tradition index = average of TCI, money-flow RSI, and RSI, using hlc3; TCI = EMA((price − EMA(price, period)) / (0.025 × EMA(abs(price − EMA(price, period)), same period)), another period) + 50; money-flow RSI = 100 − 100 / (1 + positive money flow / negative money flow), where positive and negative money flow are rolling averages of volume × price for up and down price changes over the same period, respectively (return 100 when negative money flow is zero)
+Calculation: Smoothed Tradition = simple moving average of the Tradition index
+Calculation: Tradition regression = linear regression of the Tradition index
+Long: Tradition index crosses above both Smoothed Tradition and Tradition regression while below 20 OR Smoothed Tradition < 20
+Short: Tradition index crosses below both Smoothed Tradition and Tradition regression while above 80 OR Smoothed Tradition > 80

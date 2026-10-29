@@ -1,0 +1,1 @@
+Short an at-the-money call and put when their combined premium forms a confirmed local peak. Associate the entry with the strike tracked at that peak. No exit rule is defined; subsequent labels track the straddle’s current premium and its highest and lowest values since entry.

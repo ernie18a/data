@@ -1,0 +1,4 @@
+Calculation: Each configured moving average = selected moving-average type applied to its selected source over its lookback; a higher-timeframe request uses the last completed higher-timeframe bar when confirmed values are enabled, otherwise the still-forming higher-timeframe bar; a lower-timeframe request uses the chart timeframe.
+Calculation: Cross pair = the two visible moving averages with the longest lookbacks when all three are visible, or both visible moving averages when exactly two are visible; the shorter-lookback member is the short-term MA and the other is the long-term MA.
+Long: The short-term MA crosses above the long-term MA.
+Short: The short-term MA crosses below the long-term MA.

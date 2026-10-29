@@ -1,0 +1,4 @@
+Calculation: Confirmed pivot high = a bar’s high greater than the highs of the N bars before and N bars after it; confirmed pivot low = a bar’s low less than the lows of the N bars before and N bars after it. Each pivot becomes available after the N bars after it complete.
+Calculation: Structure bias = neutral initially; set bullish after a bullish structure break and bearish after a bearish structure break; retain until the opposite structure break.
+Long: Close crosses above the latest confirmed pivot high AND structure bias is neutral or bearish OR low is above the high two bars earlier AND the gap is at least a minimum fraction of the 14-bar average true range
+Short: Close crosses below the latest confirmed pivot low AND structure bias is neutral or bullish OR high is below the low two bars earlier AND the gap is at least a minimum fraction of the 14-bar average true range

@@ -1,0 +1,3 @@
+Calculation: Confirmed pivot high/low = a bar whose high/low is higher/lower than the highs/lows of the same number of chart-timeframe bars before and after it; recognize it only after those later bars are complete.
+Long: A confirmed pivot low OR close > the latest unbroken confirmed pivot high from either the internal or major structure pivots
+Short: A confirmed pivot high OR close < the latest unbroken confirmed pivot low from either the internal or major structure pivots

@@ -1,0 +1,4 @@
+Long: Short-term moving average > medium-term moving average AND prior short-term moving average <= prior medium-term moving average AND medium-term moving average > long-term moving average
+Short: Short-term moving average < medium-term moving average AND prior short-term moving average >= prior medium-term moving average AND medium-term moving average < long-term moving average
+Exit: Long, take-profit percentage > 0 AND close >= entry price × (1 + take-profit percentage / 100) OR stop-loss percentage > 0 AND close <= entry price × (1 − stop-loss percentage / 100)
+Exit: Short, take-profit percentage > 0 AND close <= entry price × (1 − take-profit percentage / 100) OR stop-loss percentage > 0 AND close >= entry price × (1 + stop-loss percentage / 100)

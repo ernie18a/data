@@ -1,0 +1,7 @@
+Calculation: Fastest moving average = selected moving-average type applied to the selected price source with the shortest lookback.
+Calculation: Slowest moving average = the same moving-average type and source with a longer lookback than the fastest moving average.
+Long: [Ribbon Flip mode: fastest moving average > slowest moving average AND previous fastest moving average <= previous slowest moving average] OR [Fastest MA Slope mode: fastest moving average > previous fastest moving average AND previous fastest moving average <= its value two bars ago]
+Short: [Ribbon Flip mode: fastest moving average < slowest moving average AND previous fastest moving average >= previous slowest moving average] OR [Fastest MA Slope mode: fastest moving average < previous fastest moving average AND previous fastest moving average >= its value two bars ago]
+Exit: long, [Ribbon Flip mode: fastest moving average < slowest moving average AND previous fastest moving average >= previous slowest moving average] OR [Fastest MA Slope mode: fastest moving average < previous fastest moving average AND previous fastest moving average >= its value two bars ago]
+Exit: short, [Ribbon Flip mode: fastest moving average > slowest moving average AND previous fastest moving average <= previous slowest moving average] OR [Fastest MA Slope mode: fastest moving average > previous fastest moving average AND previous fastest moving average <= its value two bars ago]
+For all moving averages, use the chart timeframe or, if configured, a higher timeframe; use the still-forming bar.

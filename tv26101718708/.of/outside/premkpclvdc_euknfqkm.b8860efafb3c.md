@@ -1,0 +1,1 @@
+Calculate separate recent volume-by-price profiles for put-side and call-side levels, identifying each profile’s value-area high and low. Exit put sellers at the put profile’s value-area high and put buyers at its value-area low. Exit call buyers at the call profile’s value-area high and call sellers at its value-area low.

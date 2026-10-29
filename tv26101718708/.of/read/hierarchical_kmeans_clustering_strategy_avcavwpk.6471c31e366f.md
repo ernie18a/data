@@ -1,0 +1,6 @@
+Calculation: Modified SuperTrend direction = calculate ATR bands around hl2 using an ATR multiplier; carry the lower band forward unless the new lower band rises or the prior close falls below it, and carry the upper band forward unless the new upper band falls or the prior close rises above it. Direction changes to -1 when close crosses above the upper band and to +1 when close crosses below the lower band; initialize direction at +1.
+Calculation: Bull/bear volume ratio = sum over the last 3 chart bars of volume where close > open, divided by the greater of 0.01 and the sum over the last 3 chart bars of volume where close < open.
+Long: SuperTrend direction crosses from +1 to -1 AND date is on or after the configured start year and month AND (moving-average filter is disabled OR close > SMA) AND (trend-strength filter is disabled OR ADX > threshold)
+Short: SuperTrend direction crosses from -1 to +1 AND date is on or after the configured start year and month AND (moving-average filter is disabled OR close < SMA) AND (trend-strength filter is disabled OR ADX > threshold)
+Exit: long, bars since entry >= configured delay AND abs(bull/bear volume ratio - 1) <= 1 - configured volume ratio threshold
+Exit: short, bars since entry >= configured delay AND abs(bull/bear volume ratio - 1) <= 1 - configured volume ratio threshold

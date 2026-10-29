@@ -1,0 +1,8 @@
+Calculation: Candidate range high = highest high over the lookback bars; candidate range low = lowest low over the lookback bars
+Calculation: Candidate range width (%) = (candidate range high − candidate range low) / candidate range low × 100
+Calculation: Maximum range width (%) = max(3%, ATR over the lookback bars × 30 / candidate range low × 100) when automatic width is enabled; otherwise the configured maximum width
+Calculation: Active range = starts when no range is active, candidate range width is greater than 0.5% and no greater than maximum range width, and every high and low in the preceding minimum-in-range-bars is within the candidate range; freeze its high and low at start and keep it active until a close is above its high or below its low
+Calculation: Discount EQ = active range low + 25% of active range height / 2
+Calculation: Premium EQ = active range high − 25% of active range height / 2
+Long: Active range AND (a close below Discount EQ has occurred, followed by a later close above Discount EQ, followed by low ≤ Discount EQ AND close > Discount EQ; OR low < active range low AND close > active range low; OR close > active range high)
+Short: Active range AND (a close above Premium EQ has occurred, followed by a later close below Premium EQ, followed by high ≥ Premium EQ AND close < Premium EQ; OR high > active range high AND close < active range high; OR close < active range low)

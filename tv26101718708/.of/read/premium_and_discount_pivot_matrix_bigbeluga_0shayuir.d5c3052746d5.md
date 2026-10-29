@@ -1,0 +1,4 @@
+Calculation: Resistance = highest of the most recent configured number of confirmed pivot highs; a pivot high is the highest high within an equal left and right bar radius and is recorded after the right-side bars complete
+Calculation: Support = lowest of the most recent configured number of confirmed pivot lows; a pivot low is the lowest low within an equal left and right bar radius and is recorded after the right-side bars complete
+Long: (high + low) / 2 crosses below the previous bar's Support AND the current bar is complete AND more than five bars have elapsed since the previous Support or Resistance breakout
+Short: (high + low) / 2 crosses above the previous bar's Resistance AND the current bar is complete AND more than five bars have elapsed since the previous Support or Resistance breakout

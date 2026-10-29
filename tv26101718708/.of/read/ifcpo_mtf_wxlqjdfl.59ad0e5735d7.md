@@ -1,0 +1,2 @@
+Long: chart close > EMA of chart-timeframe close OR chart close > EMA of close from a higher timeframe (using its last completed bar) OR (chart close > EMA of chart-timeframe close AND chart close > EMA of close from each higher timeframe (using each last completed bar) AND higher-timeframe EMA > its value at a longer lookback)
+Short: chart close <= EMA of chart-timeframe close OR chart close <= EMA of close from a higher timeframe (using its last completed bar)

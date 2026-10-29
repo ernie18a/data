@@ -1,0 +1,5 @@
+Calculation: Daily moving averages = simple moving averages with short-, medium-, and long-term lookbacks, using the current daily bar, including while it is still forming; daily bars are higher or lower than the chart timeframe depending on the chart timeframe
+Calculation: 52-week range position = (daily close - lowest daily low in the lookback) / (highest daily high in the lookback - lowest daily low in the lookback)
+Calculation: 1-, 3-, 6-, and 12-month returns = daily close / daily close at the corresponding lookback - 1
+Long: 52-week range position > midpoint OR any of the 1-, 3-, 6-, or 12-month returns > 0 OR daily close > the medium- and long-term moving averages
+Short: 52-week range position < midpoint OR daily close < the highest daily high in the 52-week lookback OR any of the 1-, 3-, 6-, or 12-month returns < 0 OR daily close > the medium-term moving average AND daily close <= the long-term moving average OR daily close <= the medium- and long-term moving averages

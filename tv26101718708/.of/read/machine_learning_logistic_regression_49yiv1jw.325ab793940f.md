@@ -1,0 +1,8 @@
+Calculation: Selected price = the configured open, high, low, close, or OHLC average (HL2, OC2, OHL3, HLC3, or OHLC4) from the configured timeframe, using its last completed bar; that timeframe may be higher or lower than the chart timeframe.
+Calculation: Logistic-regression loss and prediction = on each chart bar, fit a binary logistic model by gradient descent over a lookback window. Use datetime as the input and selected-timeframe price as the target when the optional time-input mode is enabled; otherwise use selected-timeframe price as the input and log(abs(price² − 1) + 0.5) as the target. Normalize loss and prediction separately to the rolling minimum and maximum of selected-timeframe price over the normalization lookback.
+Calculation: Volatility filter = ATR with the shorter lookback > ATR with the longer lookback.
+Calculation: Volume filter = HMA(RSI(volume)) > the configured threshold.
+Long: The selected filter passes AND the configured signal mode is either selected-timeframe price > scaled loss, or scaled loss crosses above scaled prediction, AND the signal changes to long.
+Short: The selected filter passes AND the configured signal mode is either selected-timeframe price < scaled loss, or scaled loss crosses below scaled prediction, AND the signal changes to short.
+Exit: Long, the signal changes to short OR the signal has remained long for the configured holding period.
+Exit: Short, the signal changes to long OR the signal has remained short for the configured holding period.

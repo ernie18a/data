@@ -1,0 +1,11 @@
+Calculation: Confirmed swing high = a chart-timeframe high greater than the highs of an equal-length number of bars before and after it; confirmed swing low = a chart-timeframe low less than the lows of an equal-length number of bars before and after it. A swing is available only after the bars on both sides have completed.
+Calculation: Structure trend = 0 initially; set to +1 on a bullish swing break and −1 on a bearish swing break. A bullish break is BOS when the prior trend is ≥0, otherwise CHoCH; a bearish break is BOS when the prior trend is ≤0, otherwise CHoCH.
+Calculation: Initial risk distance = chart-timeframe ATR × selected stop multiplier.
+Calculation: Active stop = entry price minus initial risk distance for a long, or plus it for a short; after the first target is reached, set the active stop to the entry price, effective from the next bar.
+Calculation: Final target = entry price plus initial risk distance × selected final-target multiplier for a long, or minus it for a short.
+Long: A completed chart bar breaks above the latest unbroken confirmed swing high (by close or high, according to the selected break-confirmation method), after the warmup period, with no simultaneous break below the latest unbroken confirmed swing low; this is a bullish BOS or CHoCH marking.
+Long: A bullish BOS or CHoCH is selected by the signal mode AND the higher-timeframe filter is disabled or the chart close ≥ the EMA calculated on the higher timeframe using its last completed bar AND the position is flat AND initial risk distance > 0; enter at the chart close.
+Short: A completed chart bar breaks below the latest unbroken confirmed swing low (by close or low, according to the selected break-confirmation method), after the warmup period, with no simultaneous break above the latest unbroken confirmed swing high; this is a bearish BOS or CHoCH marking.
+Short: A bearish BOS or CHoCH is selected by the signal mode AND the higher-timeframe filter is disabled or the chart close ≤ the EMA calculated on the higher timeframe using its last completed bar AND the position is flat AND initial risk distance > 0; enter at the chart close.
+Exit: Long, on a completed chart bar after the entry bar, low ≤ the active stop OR high ≥ the final target.
+Exit: Short, on a completed chart bar after the entry bar, high ≥ the active stop OR low ≤ the final target.

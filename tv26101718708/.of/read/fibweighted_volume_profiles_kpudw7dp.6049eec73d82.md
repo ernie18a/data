@@ -1,0 +1,5 @@
+Calculation: Confirmed pivot high/low = a high/low that is the highest/lowest over the configured bars on both sides; confirm only after the right-side bars complete.
+Calculation: Active swing = latest confirmed pivot high and low; bullish when the low came first, bearish when the high came first. Extend a bullish swing high to the running high since its low, or a bearish swing low to the running low since its high.
+Calculation: Swing value area = divide the active swing price range into configurable bins; distribute each bar’s volume equally among bins touched by its range for bars from the swing’s earlier endpoint through the current bar. Starting at the highest-volume bin, add the higher-volume adjacent bin until included volume reaches 70%; the outer bin edges are value-area low and high.
+Long: confirmed pivot low OR close > swing value area high
+Short: confirmed pivot high OR close < swing value area low

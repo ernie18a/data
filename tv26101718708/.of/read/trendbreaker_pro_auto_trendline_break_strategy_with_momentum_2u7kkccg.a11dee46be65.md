@@ -1,0 +1,11 @@
+Calculation: Resistance line = straight line through the two most recent confirmed pivot highs when the newer high is lower; each pivot requires N bars on both sides, and the pivots must be at least the minimum span apart. Project the line to the current bar.
+Calculation: Support line = straight line through the two most recent confirmed pivot lows when the newer low is higher; each pivot requires N bars on both sides, and the pivots must be at least the minimum span apart. Project the line to the current bar.
+Calculation: Smoothed AO = EMA of (SMA of hl2 over a shorter lookback minus EMA of hl2 over a longer lookback), then smoothed by another EMA.
+Calculation: Initial stop = ATR-based stop at entry price minus (long) or plus (short) ATR times a multiplier, or the recent lowest low (long) / highest high (short) with ATR padding; initial risk distance = the greater of the entry-to-stop distance and half an ATR.
+Calculation: Long stop = initial stop, raised to at least entry price after the break-even trigger; once the trail trigger is reached, raised to at least close minus ATR times the trail distance on each bar.
+Calculation: Short stop = initial stop, lowered to at most entry price after the break-even trigger; once the trail trigger is reached, lowered to at most close plus ATR times the trail distance on each bar.
+Calculation: Profit target = entry price plus (long) or minus (short) initial risk distance times the target multiple.
+Long: close > valid, unbroken, unexpired resistance line + ATR times break buffer AND, if enabled, smoothed AO > its prior value AND, if enabled, close > EMA AND, if enabled, ADX > threshold AND, if enabled, volume > its 20-bar average times a multiplier.
+Short: close < valid, unbroken, unexpired support line - ATR times break buffer AND, if enabled, smoothed AO < its prior value AND, if enabled, close < EMA AND, if enabled, ADX > threshold AND, if enabled, volume > its 20-bar average times a multiplier.
+Exit: Long, low <= long stop OR (take profit enabled AND high >= profit target) OR bars since entry >= maximum bars when the time exit is enabled.
+Exit: Short, high >= short stop OR (take profit enabled AND low <= profit target) OR bars since entry >= maximum bars when the time exit is enabled.

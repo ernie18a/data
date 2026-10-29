@@ -1,0 +1,7 @@
+Calculation: Fast leading line = average of (highest and lowest rolling volume-weighted typical prices averaged together) over two lookbacks; use shorter lookbacks than for the slow leading line, and within each line use a shorter lookback and a longer lookback
+Calculation: Slow leading line = average of (highest and lowest rolling volume-weighted typical prices averaged together) over two lookbacks; use longer lookbacks than for the fast leading line, and within each line use a shorter lookback and a longer lookback
+Calculation: Upper Bollinger Band = simple moving average of the average of the fast and slow leading lines plus a standard-deviation multiplier times the standard deviation of that same average, using the same lookback
+Calculation: TSV = sum over a lookback of volume × (close − previous close), with zero contribution when close equals the previous close
+Calculation: VIDYA = variable index dynamic average of the selected price source, updated using an alpha scaled by the absolute Chande Momentum Oscillator of that source
+Long: fast leading line > its previous-bar value AND slow leading line > its previous-bar value AND close > upper Bollinger Band AND TSV > 0 AND TSV > its exponential moving average AND (VIDYA trend filter disabled OR close > VIDYA) AND within the configured date range
+Exit: long, fast leading line < its previous-bar value AND slow leading line < its previous-bar value

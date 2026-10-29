@@ -1,0 +1,4 @@
+Long: SuperTrend direction changes from down to up AND RSI is below its upper threshold AND volume is above its short-term moving average AND within the configured UTC session AND within the configured lookback window AND daily trade count is below its limit AND position is flat
+Short: SuperTrend direction changes from up to down AND RSI is above its lower threshold AND volume is above its short-term moving average AND within the configured UTC session AND within the configured lookback window AND daily trade count is below its limit AND position is flat
+Exit: Long, low <= entry price - stop distance OR (highest high since entry >= entry price + trail activation distance AND low <= highest high since entry - trail offset)
+Exit: Short, high >= entry price + stop distance OR (lowest low since entry <= entry price - trail activation distance AND high >= lowest low since entry + trail offset)

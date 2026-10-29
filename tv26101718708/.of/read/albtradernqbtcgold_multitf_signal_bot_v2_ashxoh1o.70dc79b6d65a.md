@@ -1,0 +1,4 @@
+Long: Fast EMA crosses above Slow EMA AND current-timeframe RSI < overbought threshold AND higher-timeframe fast EMA > higher-timeframe slow EMA (use the higher-timeframe bar still forming in real time; use its completed value historically)
+Short: Fast EMA crosses below Slow EMA AND current-timeframe RSI > oversold threshold
+Exit: long, low <= current bar close adjusted downward by the stop percentage OR high >= current bar close adjusted upward by the target percentage
+Exit: short, high >= current bar close adjusted upward by the stop percentage OR low <= current bar close adjusted downward by the target percentage

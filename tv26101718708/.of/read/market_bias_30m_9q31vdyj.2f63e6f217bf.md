@@ -1,0 +1,3 @@
+Calculation: resistance = latest confirmed pivot high, where the pivot bar’s high is greater than the highs of the swing_len bars before and after it
+Long: EMA(close, fast lookback) > EMA(close, medium lookback) AND EMA(close, medium lookback) > EMA(close, long lookback) AND close > EMA(close, long lookback) OR resistance exists AND previous close <= resistance AND close > resistance AND close > open AND EMA(close, fast lookback) > EMA(close, medium lookback) AND EMA(close, medium lookback) > EMA(close, long lookback) AND close > EMA(close, long lookback) AND volume > SMA(volume, lookback) * volume multiplier
+Short: EMA(close, fast lookback) < EMA(close, medium lookback) AND EMA(close, medium lookback) < EMA(close, long lookback) AND close < EMA(close, long lookback)

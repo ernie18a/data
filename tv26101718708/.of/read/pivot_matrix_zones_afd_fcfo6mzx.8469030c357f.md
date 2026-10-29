@@ -1,0 +1,4 @@
+Calculation: Active pivot levels = the selected pivot formula applied to the prior completed anchor bar’s OHLC; the anchor timeframe is equal to or higher than the chart timeframe. For Woodie, also use the current anchor bar’s open.
+Calculation: CPR levels = floor-pivot center (prior anchor high + low + close) / 3, with boundaries formed by that center and the prior anchor high-low midpoint; use the prior completed anchor bar on an equal or higher timeframe.
+Long: Close > an active pivot or CPR level AND prior close ≤ that same level AND its pack is operational AND its level is enabled AND the pack’s pivot geometry did not change on this bar.
+Short: Close < an active pivot or CPR level AND prior close ≥ that same level AND its pack is operational AND its level is enabled AND the pack’s pivot geometry did not change on this bar.

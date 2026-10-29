@@ -1,0 +1,11 @@
+Calculation: Stochastic RSI = stochastic of RSI; K and D are successively smoothed lines, with K shorter-smoothed than D.
+Calculation: Bullish engulfing = current close > prior open AND current open < prior close AND prior close < prior open.
+Calculation: Bearish engulfing = current close < prior open AND current open > prior close AND prior close > prior open.
+Calculation: Higher-timeframe bias = compare the last completed bar of a higher timeframe's close with its EMA; bullish when close > EMA and bearish when close < EMA.
+Calculation: Bullish score = weighted sum of: close > long-term EMA; short-term EMA > medium-term EMA; bullish Supertrend; MACD line > signal line and MACD histogram > 0; RSI between its lower and upper bounds; Stochastic RSI K > D and K below its upper bound; ADX above its threshold and +DI > -DI; volume > its moving average; bullish higher-timeframe bias (or filter disabled); bullish engulfing; ATR > its longer-lookback average times a factor.
+Calculation: Bearish score = weighted sum of: close < long-term EMA; short-term EMA < medium-term EMA; bearish Supertrend; MACD line < signal line and MACD histogram < 0; RSI between its lower and upper bounds; Stochastic RSI K < D and K above its lower bound; ADX above its threshold and -DI > +DI; volume > its moving average; bearish higher-timeframe bias (or filter disabled); bearish engulfing; ATR > its longer-lookback average times a factor.
+Calculation: Long stop and targets = entry price − ATR at entry × stop multiplier, and entry price + ATR at entry × respective target multipliers; short stop and targets use the opposite signs.
+Long: EMA(short-term) crosses above EMA(medium-term) AND bullish score ≥ selected signal-mode threshold AND position side is not long.
+Short: EMA(short-term) crosses below EMA(medium-term) AND bearish score ≥ selected signal-mode threshold AND position side is not short.
+Exit: Long, high ≥ long target 3 OR (low ≤ long stop AND target 1 has not previously been reached).
+Exit: Short, low ≤ short target 3 OR (high ≥ short stop AND target 1 has not previously been reached).

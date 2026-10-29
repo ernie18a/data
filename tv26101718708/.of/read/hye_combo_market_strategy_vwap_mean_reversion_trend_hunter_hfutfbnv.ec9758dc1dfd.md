@@ -1,0 +1,8 @@
+Calculation: Rolling VWAPs = rolling sum(typical price × volume) / rolling sum(volume), where typical price = (high + low + close) / 3; the small lookback is shorter than the big lookback, and the mean lookback is longer than both
+Calculation: Fast and slow lead lines = for each of two VWAP components, take the midpoint of the highest and lowest rolling VWAP over that component’s lookback, then average the two midpoints; the slow components use longer lookbacks than the fast components
+Calculation: Bollinger upper band = simple moving average of the average of the fast and slow lead lines + standard deviation of that average × the band multiplier
+Calculation: TSV = rolling sum of volume × close change, counting a bar only when its close differs from the previous close
+Calculation: VIDYA = recursively smoothed source, with smoothing factor 2 / (length + 1) multiplied by the absolute length-period CMO; CMO = (sum of positive source changes − sum of absolute negative source changes) / (sum of positive source changes + sum of absolute negative source changes)
+Long: small rolling VWAP crosses below big rolling VWAP × (1 − discount fraction) AND EMA of RSI is below its maximum threshold AND close is below mean rolling VWAP AND datetime is within the configured start-inclusive, end-exclusive date range AND no long position is open
+Long: fast lead line is rising AND slow lead line is rising AND TSV > 0 AND TSV > its EMA AND close > Bollinger upper band AND close > VIDYA AND datetime is within the configured start-inclusive, end-exclusive date range AND no long position is open
+Exit: long, close > mean rolling VWAP OR datetime is outside the configured date range OR (fast lead line is falling AND slow lead line is falling)

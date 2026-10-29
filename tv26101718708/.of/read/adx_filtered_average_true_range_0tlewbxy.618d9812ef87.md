@@ -1,0 +1,4 @@
+Calculation: ATR = selected moving average of true range, where true range is the maximum of high − low, |high − previous close|, and |low − previous close|
+Calculation: SWMA(X) = 4-bar symmetrically weighted moving average of X with weights 1, 2, 2, 1
+Long: SWMA(ATR) > previous SWMA(ATR) AND ATR > SWMA(ATR) AND SWMA(ADX) > previous SWMA(ADX) AND ADX > SWMA(ADX) AND (DI+ > previous DI+ OR DI+ > DI−) AND DI+ > 15 AND close > open
+Short: SWMA(ATR) > previous SWMA(ATR) AND ATR > SWMA(ATR) AND SWMA(ADX) > previous SWMA(ADX) AND ADX > SWMA(ADX) AND (DI− > previous DI− OR DI− > DI+) AND DI− > 15 AND close < open

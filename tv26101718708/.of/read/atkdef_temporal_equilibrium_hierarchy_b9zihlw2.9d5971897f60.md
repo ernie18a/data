@@ -1,0 +1,3 @@
+Calculation: Liquidity-weighted moving average = the moving average of close weighted by volume multiplied by the selected volatility measure (true range, high-low range, or absolute close-to-close change).
+Long: 1H LMA slope > 0 OR all four LMAs are strictly ordered 1H > 4H > Daily > Weekly OR at least one of 1H > 4H, 4H > Daily, or Daily > Weekly holds while none of 1H < 4H, 4H < Daily, or Daily < Weekly holds
+Short: 1H LMA slope < 0 OR all four LMAs are strictly ordered 1H < 4H < Daily < Weekly OR at least one of 1H < 4H, 4H < Daily, or Daily < Weekly holds while the four LMAs are not strictly ordered 1H > 4H > Daily > Weekly

@@ -1,0 +1,4 @@
+Calculation: Session high = highest high during the configured session, retained after it ends until the next session ends
+Calculation: Session low = lowest low during the configured session, retained after it ends until the next session ends
+Long: (bar is outside Session 1 AND previous bar close < Session 1 low AND current close > Session 1 low) OR (bar is outside Session 2 AND previous bar close < Session 2 low AND current close > Session 2 low)
+Short: (bar is outside Session 1 AND previous bar close > Session 1 high AND current close < Session 1 high) OR (bar is outside Session 2 AND previous bar close > Session 2 high AND current close < Session 2 high)

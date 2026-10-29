@@ -1,0 +1,1 @@
+Short: close < long-term EMA

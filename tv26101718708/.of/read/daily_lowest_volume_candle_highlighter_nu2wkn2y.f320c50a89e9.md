@@ -1,0 +1,2 @@
+Long: close > open AND (no earlier bullish candle exists in the current day OR volume < every earlier bullish candle's volume in the current day)
+Short: close < open AND (no earlier bearish candle exists in the current day OR volume < every earlier bearish candle's volume in the current day)

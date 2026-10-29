@@ -1,0 +1,5 @@
+Calculation: Opening-gap midpoint = average of the previous bar’s close and the first bar’s open of the current daily or weekly gap period
+Long: No trade has been taken today AND position is flat AND an opening-gap midpoint exists AND price has traded above the gap top during the current gap period AND low <= gap midpoint + configured long-entry offset
+Short: No trade has been taken today AND position is flat AND an opening-gap midpoint exists AND price has traded below the gap bottom during the current gap period AND high >= gap midpoint - configured short-entry offset
+Exit: Long, low <= trailing stop after price has advanced by the configured activation distance from entry; the stop is the highest price reached since activation
+Exit: Short, high >= trailing stop after price has declined by the configured activation distance from entry; the stop is the lowest price reached since activation

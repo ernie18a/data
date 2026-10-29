@@ -1,0 +1,4 @@
+Calculation: Weekly factor = absolute difference between the open five higher-timeframe daily bars ago and the close of the last completed higher-timeframe daily bar is less than a configurable ratio times the high-low range of the five daily bars ending with the last completed bar.
+Long: Weekly factor is true AND chart-bar close is above the previous completed higher-timeframe daily high AND the chart bar is after the first and before the 91st bar of the session.
+Short: Weekly factor is true AND chart-bar close is below the previous completed higher-timeframe daily low AND the chart bar is after the first and before the 91st bar of the session.
+Exit: long or short, a new session begins OR at least two sessions have begun since entry AND chart-bar close is above the entry price for a long position or below the entry price for a short position.

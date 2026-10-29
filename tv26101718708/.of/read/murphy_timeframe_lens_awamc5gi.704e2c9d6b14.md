@@ -1,0 +1,1 @@
+Long: Higher-timeframe bar changes AND current higher-timeframe close > current higher-timeframe open

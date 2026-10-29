@@ -1,0 +1,17 @@
+Calculation: Momentum oscillator = low-lag-smoothed composite of normalized price momentum and normalized, smoothed volume flow; momentum is price minus its linear regression over a lookback, normalized by its rolling standard deviation. Volume flow uses a Hull-smoothed signed-volume ratio (volume signed by whether price exceeds its value two bars earlier), normalizes it, recursively smooths it, then applies the low-lag smoother. The composite weights momentum and volume flow by configurable weights.
+Calculation: Oscillator signal = low-lag-smoothed momentum oscillator, using a separate signal lookback.
+Calculation: Confluence score = 100 × bullish votes / 7. The votes are: oscillator > 0; oscillator > its signal; smoothed normalized volume flow > 0; trend fan bullish; close > VWAP (or normalized price momentum > 0 when VWAP is unavailable); price slope > 0; and higher-timeframe close > its EMA. Trend fan is bullish when the sum of pairwise comparisons of EMAs with progressively longer lookbacks is positive (shorter-lookback EMA > longer-lookback EMA scores +1, otherwise −1). The higher timeframe is above the chart timeframe and uses its last completed bar while that bar is forming.
+Calculation: Chop filter = true when the absolute price change over a lookback divided by the sum of absolute one-bar price changes over that lookback is below a threshold.
+Calculation: Oscillator overbought/oversold levels = rolling oscillator mean plus/minus a configurable multiple of its rolling standard deviation.
+Calculation: Flow wave = low-lag-smoothed recursive smoothing of normalized volume flow, calculated with separate short and long lookbacks; its overbought and oversold zones are fixed at +60 and −60 on its bounded scale.
+Calculation: Confirmed oscillator pivot = a local oscillator high or low with configurable equal numbers of bars on its left and right; it is confirmed after the right-side bars complete.
+Long: Oscillator crosses above its signal AND oscillator is below its oversold level AND confluence score is at least the configured gate AND chop filter is false AND flow wave is not overbought.
+Long: Volume is greater than its rolling average times a configurable multiplier AND oscillator is below its oversold level.
+Long: At a confirmed oscillator pivot low, price low is below the previous pivot low and oscillator is above the previous pivot low; OR price low is above the previous pivot low and oscillator is below the previous pivot low. In either case, the pivot is within a configured maximum bar distance of the previous pivot.
+Long: Confluence score is at least 85.
+Long: Confluence score is greater than 57 AND chop filter is false.
+Short: Oscillator crosses below its signal AND oscillator is above its overbought level AND confluence score is at most 100 minus the configured gate AND chop filter is false AND flow wave is not oversold.
+Short: Volume is greater than its rolling average times a configurable multiplier AND oscillator is above its overbought level.
+Short: At a confirmed oscillator pivot high, price high is above the previous pivot high and oscillator is below the previous pivot high; OR price high is below the previous pivot high and oscillator is above the previous pivot high. In either case, the pivot is within a configured maximum bar distance of the previous pivot.
+Short: Confluence score is at most 15.
+Short: Confluence score is less than 43 AND chop filter is false.

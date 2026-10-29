@@ -1,0 +1,3 @@
+Calculation: Snapshot zone = an equal-price bin in the snapshot lookback range whose volume, allocated from each bar in proportion to its range overlapping the bin, falls within the configured lowest-volume percentile; retain the configured number of qualifying bins, merge overlapping zones, and use a snapshot zone only when its overlap count meets the confluence minimum.
+Long: For any available snapshot zone, close > zone top + confirmation buffer
+Short: For any available snapshot zone, close < zone bottom − confirmation buffer

@@ -1,0 +1,8 @@
+Calculation: Tight base = (highest high − lowest low over the base lookback) ÷ lowest low × 100 is at or below a configurable range percentage
+Calculation: Higher lows = current low > low at an earlier offset, and that low > low at twice that offset
+Calculation: Approximate delta = volume × abs(close − open) ÷ (high − low), positive when close > the candle midpoint and negative otherwise; zero when high = low
+Calculation: Positive delta = the moving average of approximate delta over a configurable lookback is > 0
+Calculation: Volume spike = volume ≥ a configurable multiple of its moving average
+Calculation: Extended = (close − moving average of close) ÷ moving average of close × 100 exceeds a configurable maximum
+Calculation: Rising moving average = current moving average of close > its value three bars earlier
+Long: (tight base AND volume spike AND close > moving average of close AND positive delta AND higher lows AND NOT extended AND close > the highest high over the base lookback as of the previous bar) OR (close > a configurable percentage below the moving average of close AND close < a configurable percentage below the highest close over 10 bars AND volume < its moving average AND positive delta AND rising moving average AND higher lows AND fewer than a configurable number of consecutive bars with approximate delta < 0) OR (volume ≥ a configurable ignition multiple of its moving average AND close > open AND close > the highest close over the base lookback as of the previous bar AND average volume < a configurable threshold) OR (rising moving average AND close > moving average of close AND previous close ≤ previous moving average of close AND volume spike AND positive delta AND NOT extended)

@@ -1,0 +1,6 @@
+Calculation: Upper-wick test = bar high is in the top 25% of the rolling high-low range over a lookback, upper wick > candle body × wick/body threshold, and volume ≥ its moving average × volume multiplier
+Calculation: Lower-wick test = bar low is in the bottom 25% of the rolling high-low range over a lookback, lower wick > candle body × wick/body threshold, and volume ≥ its moving average × volume multiplier
+Calculation: Resistance iceberg = at least the minimum number of upper-wick tests of the same side within the detection window, with test highs within ATR × cluster tolerance of the current test high and the required percentage of tests closing at or below open; its level is their average high
+Calculation: Support iceberg = at least the minimum number of lower-wick tests of the same side within the detection window, with test lows within ATR × cluster tolerance of the current test low and the required percentage of tests closing at or above open; its level is their average low
+Long: A support iceberg is confirmed OR an active resistance iceberg has a confirmed-bar close ≥ its level + ATR × break-distance threshold
+Short: A resistance iceberg is confirmed OR an active support iceberg has a confirmed-bar close ≤ its level − ATR × break-distance threshold

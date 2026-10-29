@@ -1,0 +1,6 @@
+Calculation: Bollinger squeeze = (upper band − lower band) / middle band < squeeze threshold
+Calculation: ATR volatility filter = ATR > close × minimum ATR percentage
+Long: fast EMA crosses above slow EMA AND (EMA filter disabled OR fast EMA > slow EMA) AND (RSI filter disabled OR RSI < overbought threshold) AND (MACD filter disabled OR MACD line > signal line AND MACD histogram > 0) AND (Bollinger filter disabled OR NOT Bollinger squeeze) AND (ATR filter disabled OR ATR volatility filter) AND (volume filter disabled OR volume > its moving average)
+Short: fast EMA crosses below slow EMA AND (EMA filter disabled OR fast EMA < slow EMA) AND (RSI filter disabled OR RSI > oversold threshold) AND (MACD filter disabled OR MACD line < signal line AND MACD histogram < 0) AND (Bollinger filter disabled OR NOT Bollinger squeeze) AND (ATR filter disabled OR ATR volatility filter) AND (volume filter disabled OR volume > its moving average)
+Exit: long, fast EMA crosses below slow EMA
+Exit: short, fast EMA crosses above slow EMA

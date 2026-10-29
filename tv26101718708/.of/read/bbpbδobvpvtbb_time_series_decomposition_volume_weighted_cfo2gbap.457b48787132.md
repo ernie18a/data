@@ -1,0 +1,10 @@
+Calculation: Trendline = the endpoint estimate of a Hodrick–Prescott filter applied to close over a rolling filter-length window, then volume-weighted as a VWAP that resets at each selected timeframe boundary
+Calculation: Volume-delta BB%B = Bollinger %B of an EMA-smoothed, historically normalized change in OBV minus PVT; OBV adds or subtracts volume when close rises or falls, and PVT is the price-volume trend
+Calculation: Delta BB%B = close BB%B minus Volume-delta BB%B
+Calculation: Inside candle = high < previous high AND low > previous low
+Calculation: Prior-window high/low = highest/lowest hl2 over the lookback window ending on the previous bar
+Calculation: Bullish lower-break pattern = low = open AND open < the lowest low over the prior 10 bars AND open < close AND close > the previous bar's low-to-high midpoint
+Long: (close < Trendline AND Trendline is rising OR close BB%B < 0 OR Volume-delta BB%B < 0) AND (Inside candle OR Bullish lower-break pattern OR high > Prior-window high)
+Short: ((close BB%B >= 1 OR 0.7 <= close BB%B < 1 OR Volume-delta BB%B >= 1 OR close > Trendline) AND (Trendline crosses above 0 OR Delta BB%B crosses above 0) AND Inside candle) OR (((close BB%B >= 1 OR 0.7 <= close BB%B < 1 OR Volume-delta BB%B >= 1 OR close > Trendline) AND (Trendline crosses above 0 OR Delta BB%B crosses above 0) AND Inside candle) AND NOT (((close BB%B >= 1 OR Volume-delta BB%B >= 1 OR (Trendline crosses above 0 AND Delta BB%B crosses above 0)) AND (Inside candle OR low < Prior-window low) AND (Trendline >= 1 OR Delta BB%B >= 1)))
+Exit: long, (((close BB%B >= 1 OR Volume-delta BB%B >= 1 OR (Trendline crosses above 0 AND Delta BB%B crosses above 0)) AND (Inside candle OR low < Prior-window low) AND (Trendline >= 1 OR Delta BB%B >= 1)) OR open >= previous high)
+Exit: short, (close BB%B < 0 OR 0 <= close BB%B < 0.3 OR Volume-delta BB%B < 0 OR (close < Trendline AND Trendline is rising)) AND (Inside candle OR low < Prior-window low)

@@ -1,0 +1,1 @@
+Long: RSI(14) of close on each scanned timeframe < 40

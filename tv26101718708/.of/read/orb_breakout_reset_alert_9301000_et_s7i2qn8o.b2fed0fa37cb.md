@@ -1,0 +1,3 @@
+Calculation: Opening-range high = highest high of bars whose start time is 9:30–9:59 ET for the current day
+Calculation: Opening-range average volume = mean volume of bars whose start time is 9:30–9:59 ET for the current day
+Long: Close crosses above opening-range high AND volume >= volume multiplier × opening-range average volume AND close > VWAP AND bar start time is 9:30–11:29 ET AND breakout is armed (armed at the start of each day or after a close below opening-range high; disarmed after a long signal)

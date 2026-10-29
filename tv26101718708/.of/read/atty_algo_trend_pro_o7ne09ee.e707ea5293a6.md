@@ -1,0 +1,8 @@
+Calculation: Fast and slow moving averages = moving averages of close using the same selected type, with the fast lookback shorter than the slow lookback.
+Calculation: Neutral zone = selected threshold: ATR times a configured fraction, a configured price-point amount, or close times a configured percentage.
+Calculation: Bull trend state = the fast moving average is above the slow moving average by more than the neutral zone for the configured number of consecutive completed bars.
+Calculation: Bear trend state = the fast moving average is below the slow moving average by more than the neutral zone for the configured number of consecutive completed bars.
+Calculation: Higher-timeframe direction = compare fast and slow moving averages of close on the last completed bar of a higher timeframe; direction is bullish or bearish when their gap exceeds the neutral zone, otherwise neutral.
+Calculation: Ribbon band = the fast and slow moving averages shifted by a smoothed offset of ATR; shift below price in a bull trend, above price in a bear trend, and zero in a neutral trend.
+Long: On a completed bar, bull trend state begins (previous bar was not bull) OR bull trend state holds and low <= top of ribbon band and close > top of ribbon band and close > open; if the session gate is enabled, the bar is in its configured window; if higher-timeframe confirmation is enabled, higher-timeframe direction is bullish.
+Short: On a completed bar, bear trend state begins (previous bar was not bear) OR bear trend state holds and high >= bottom of ribbon band and close < bottom of ribbon band and close < open; if the session gate is enabled, the bar is in its configured window; if higher-timeframe confirmation is enabled, higher-timeframe direction is bearish.

@@ -1,0 +1,11 @@
+Calculation: Weighted stochastic K = arithmetic mean of the enabled components’ K values: smoothed stochastic of close/high/low; smoothed stochastic of RSI(close); RSI(close); smoothed stochastic of SMA of signed volume (volume positive when close ≥ open, otherwise negative); and smoothed stochastic of SMA of percent change from open to close. Each stochastic uses its component’s lookback and smoothing lengths.
+Calculation: Weighted stochastic D = moving average of weighted stochastic K.
+Calculation: Williams Vix Fix = (highest close over its lookback − current low) / highest close over its lookback × 100.
+Calculation: Vix Fix upper band = moving average of Williams Vix Fix + deviation multiplier × standard deviation of Williams Vix Fix.
+Calculation: Vix Fix high threshold = highest Williams Vix Fix over its lookback × percentile multiplier.
+Calculation: StochCCI = 100 × weighted moving average of (CCI(hlc3) − its lowest value over the stochastic lookback) / (highest CCI(close) − lowest CCI(close) over the stochastic lookback).
+Long: current low > prior low AND current close > prior high AND current close > close N bars ago AND (current close < close at the long lookback offset OR current close < close at the medium lookback offset) AND (prior Williams Vix Fix ≥ prior upper band OR prior Williams Vix Fix ≥ prior high threshold) AND current Williams Vix Fix < current upper band AND current Williams Vix Fix < current high threshold
+Long: current close > prior close AND current close > prior open AND current close > close N bars ago AND (current close < close at the long lookback offset OR current close < close at the medium lookback offset) AND (prior Williams Vix Fix ≥ prior upper band OR prior Williams Vix Fix ≥ prior high threshold) AND (current Williams Vix Fix ≥ current upper band OR current Williams Vix Fix ≥ current high threshold)
+Long: current StochCCI > prior StochCCI AND prior StochCCI ≤ its value two bars ago AND current StochCCI < 50
+Short: current StochCCI < prior StochCCI AND prior StochCCI ≥ its value two bars ago AND current StochCCI > 50
+Exit: long, weighted stochastic K crosses below weighted stochastic D AND weighted stochastic D > 80

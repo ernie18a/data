@@ -1,0 +1,2 @@
+Long: close > short-, medium-, or long-term simple moving average OR 14-period RSI > 50 OR MACD histogram > 0 OR SuperTrend is bullish
+Short: close < short-, medium-, or long-term simple moving average OR 14-period RSI < 50 OR MACD histogram < 0 OR SuperTrend is bearish

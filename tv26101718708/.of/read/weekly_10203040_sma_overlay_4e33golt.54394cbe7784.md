@@ -1,0 +1,3 @@
+Calculation: Weekly SMA = simple moving average of weekly closes; use the higher-timeframe weekly value as provided by the source (developing weekly bar in realtime, completed weekly bar historically)
+Long: chart close > 10-week SMA AND 10-week SMA > 20-week SMA AND 20-week SMA > 30-week SMA AND 30-week SMA > 40-week SMA
+Short: chart close < 10-week SMA AND 10-week SMA < 20-week SMA AND 20-week SMA < 30-week SMA AND 30-week SMA < 40-week SMA

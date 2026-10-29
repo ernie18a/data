@@ -1,0 +1,5 @@
+Calculation: True range = max(high − low, abs(high − previous close), abs(low − previous close))
+Calculation: Selected range = true range when gap inclusion is enabled; otherwise high − low
+Long: On a completed chart bar, (selected range ≥ ATR × range threshold AND volume ≥ its simple moving average × volume threshold AND close > open AND bars since the last qualifying spike ≥ cooldown) OR (at least one retained prior qualifying spike with close ≤ open, 1 through the fade-window number of bars ago, and current close > that spike's open)
+Short: On a completed chart bar, (selected range ≥ ATR × range threshold AND volume ≥ its simple moving average × volume threshold AND close < open AND bars since the last qualifying spike ≥ cooldown) OR (at least one retained prior qualifying spike with close > open, 1 through the fade-window number of bars ago, and current close < that spike's open)
+Exit: 

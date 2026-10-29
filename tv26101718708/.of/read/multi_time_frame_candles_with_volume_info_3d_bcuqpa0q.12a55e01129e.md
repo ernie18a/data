@@ -1,0 +1,2 @@
+Long: current chart bar high equals the highest high among the configured number of latest higher-timeframe candles, including the still-forming candle
+Short: current chart bar low equals the lowest low among the configured number of latest higher-timeframe candles, including the still-forming candle

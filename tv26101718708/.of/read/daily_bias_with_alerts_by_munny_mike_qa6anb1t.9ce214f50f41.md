@@ -1,0 +1,2 @@
+Long: previous chart bar close > high two chart bars ago OR previous completed daily bar close > high two daily bars ago (daily bars are higher timeframe than an intraday chart)
+Short: previous chart bar close < low two chart bars ago OR previous completed daily bar close < low two daily bars ago (daily bars are higher timeframe than an intraday chart)

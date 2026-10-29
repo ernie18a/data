@@ -1,0 +1,4 @@
+Calculation: BlueWave = EMA of (RSI and stochastic average) over a shorter lookback minus its EMA over a longer lookback, plus half the TCI; TCI = EMA of ((hlc3 − EMA(hlc3)) / (0.015 × EMA(abs(hlc3 − EMA(hlc3)))))
+Calculation: Money flow = EMA of (MFI − 50) multiplied by a parameter
+Long: flat AND BlueWave > 0 AND Money flow > 0 AND BlueWave > its previous-bar value AND Money flow > its previous-bar value AND close > long-term EMA AND close > short-term EMA AND the same conditions were not all true on the previous bar
+Exit: Long, low <= the lowest low over the stop lookback OR close < short-term EMA

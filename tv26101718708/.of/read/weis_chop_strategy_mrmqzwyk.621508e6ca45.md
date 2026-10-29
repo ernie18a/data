@@ -1,0 +1,4 @@
+Calculation: Renko direction = up when the current Renko close is above the preceding Renko close, down when below, and otherwise retains its preceding direction; the Renko close advances to the chart bar's high or low when it crosses the prior Renko close by at least one brick.
+Long: close > EMA AND Renko direction is up AND Choppiness Index crosses below its upper threshold
+Short: close < EMA AND Renko direction is down AND Choppiness Index crosses below its upper threshold
+Exit: Long, high reaches the profit level above entry price OR low reaches the loss level below entry price; bracket is armed when the short condition is true

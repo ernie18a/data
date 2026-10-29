@@ -1,0 +1,1 @@
+Enter a long position in the charted asset during the user-selected evaluation interval, then close the position when the interval ends. Use the charted asset and a second selected asset to calculate and display weighted portfolio returns and risk-adjusted returns; those calculations do not determine trades.

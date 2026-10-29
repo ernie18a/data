@@ -1,0 +1,4 @@
+Calculation: Internal pivot high/low = a confirmed local high/low using equal left and right lookbacks; internal lookback is shorter than swing lookback.
+Calculation: Swing pivot high/low = a confirmed local high/low using equal left and right lookbacks; known only after the right-side bars complete.
+Long: Close crosses above the latest internal pivot high OR close crosses above the latest swing pivot high OR a newly confirmed swing high is higher than the preceding swing high OR a newly confirmed swing low is higher than the preceding swing low OR low > high[2] AND close[1] > high[2].
+Short: Close crosses below the latest internal pivot low OR close crosses below the latest swing pivot low OR a newly confirmed swing high is lower than the preceding swing high OR a newly confirmed swing low is lower than the preceding swing low OR high < low[2] AND close[1] < low[2].

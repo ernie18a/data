@@ -1,0 +1,1 @@
+On each weekly Commitments of Traders report, compare non-commercial long positions with non-commercial short positions. Enter long when longs exceed shorts; enter short when shorts exceed longs. When the opposite condition occurs, reverse the position. No separate exit condition is defined.

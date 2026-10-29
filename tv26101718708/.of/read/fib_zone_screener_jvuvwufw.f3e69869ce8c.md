@@ -1,0 +1,3 @@
+Calculation: Retrace fraction = for an up-swing, (highest high − close) / (highest high − lowest low); for a down-swing, (close − lowest low) / (highest high − lowest low), where the swing direction is up if the highest high is more recent than the lowest low, otherwise down
+Long: up-swing AND Retrace fraction is within any configured Fibonacci zone
+Short: down-swing AND Retrace fraction is within any configured Fibonacci zone

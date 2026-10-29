@@ -1,0 +1,9 @@
+Calculation: Net liquidity = Federal Reserve balance sheet - Treasury General Account - reverse repo balance
+Calculation: Index fair value = net liquidity / 1,000,000,000 / scalar - subtractor
+Calculation: Spread = daily index close (daily bar; current bar while forming, otherwise last available bar) - index fair value
+Long: net liquidity > 0 AND bar datetime >= start datetime AND ((previous spread < overbought threshold AND current spread > overbought threshold AND inverse mode) OR (previous spread > oversold threshold AND current spread < oversold threshold AND not inverse mode))
+Short: net liquidity > 0 AND bar datetime >= start datetime AND ((previous spread > oversold threshold AND current spread < oversold threshold AND inverse mode) OR (previous spread < overbought threshold AND current spread > overbought threshold AND not inverse mode))
+Exit: Long, (net liquidity > 0 AND bar datetime >= start datetime AND previous spread < overbought threshold AND current spread > overbought threshold AND not inverse mode) OR (close-date enabled AND bar date = configured close date)
+Exit: Short, (net liquidity > 0 AND bar datetime >= start datetime AND previous spread > oversold threshold AND current spread < oversold threshold AND not inverse mode) OR (close-date enabled AND bar date = configured close date)
+Exit: Long, net liquidity > 0 AND bar datetime >= start datetime AND previous spread > oversold threshold AND current spread < oversold threshold AND inverse mode
+Exit: Short, net liquidity > 0 AND bar datetime >= start datetime AND previous spread < overbought threshold AND current spread > overbought threshold AND inverse mode

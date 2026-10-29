@@ -1,0 +1,6 @@
+Calculation: Fast EMA = exponential moving average of close with a shorter lookback than Slow EMA
+Calculation: Slow EMA = exponential moving average of close with a longer lookback than Fast EMA
+Calculation: Trend EMA = exponential moving average of close with a longer lookback than both Fast EMA and Slow EMA
+Calculation: ATR average = simple moving average of ATR using the same lookback as ATR
+Long: Close > Trend EMA AND Trend EMA > its prior-bar value AND Fast EMA crosses above Slow EMA AND Close > Open AND prior Close < prior Open AND Close > prior Open AND Open < prior Close AND Close > VWAP AND ATR > ATR average AND ADX > its minimum threshold AND absolute difference between Fast EMA and Slow EMA >= ATR × chop threshold
+Short: Close < Trend EMA AND Trend EMA < its prior-bar value AND Fast EMA crosses below Slow EMA AND Close < Open AND prior Close > prior Open AND Close < prior Open AND Open > prior Close AND Close < VWAP AND ATR > ATR average AND ADX > its minimum threshold AND absolute difference between Fast EMA and Slow EMA >= ATR × chop threshold

@@ -1,0 +1,7 @@
+Calculation: WT1 = Kalman-filtered Channel Index of hlc3; Channel Index = (hlc3 − VWMA(hlc3, channel lookback)) / standard deviation of hlc3 over the same lookback × 50. Initialize filter state to the first Channel Index and covariance to 1; each bar predict covariance by adding process noise, calculate gain as predicted covariance / (predicted covariance + measurement noise), update state by gain × (Channel Index − prior state), and update covariance by (1 − gain) × predicted covariance. Process noise is scaled by ATR(14) / SMA(ATR(14), longer lookback), clipped to [0.5, 3].
+Calculation: WT2 = EMA of WT1 over a shorter lookback.
+Calculation: WT1 percentile rank = percentile rank of WT1 over a rolling lookback.
+Calculation: Smoothed Hurst proxy = EMA( log₂(standard deviation of hlc3 over the longer window / standard deviation of hlc3 over half that window), 10).
+Calculation: Smoothed entropy = EMA of normalized Shannon entropy over a rolling lookback: calculate hlc3 bar-to-bar returns, bin them into 8 equal-width bins spanning the rolling return range, then calculate −Σ(p × ln(p)) / ln(8).
+Long: WT1 > WT2 AND prior WT1 <= prior WT2 AND smoothed entropy <= maximum entropy AND WT1 percentile rank < 45 AND (smoothed Hurst proxy >= 0.5 − regime band OR WT1 percentile rank < 30)
+Short: WT1 < WT2 AND prior WT1 >= prior WT2 AND smoothed entropy <= maximum entropy AND WT1 percentile rank > 55 AND (smoothed Hurst proxy >= 0.5 − regime band OR WT1 percentile rank > 70)

@@ -1,0 +1,4 @@
+Calculation: Fast stochastic = 100 × (close − lowest low over the lookback) ÷ (highest high over the lookback − lowest low over the lookback), then a simple moving average over the shorter smoothing lookback
+Calculation: Slow stochastic = simple moving average of the fast stochastic over a longer smoothing lookback
+Long: close[2] < close[1] AND close > close[1] AND fast stochastic < slow stochastic AND fast stochastic > level AND volume < simple moving average of volume
+Short: close[2] > close[1] AND close < close[1] AND fast stochastic > slow stochastic AND fast stochastic < level AND volume > simple moving average of volume

@@ -1,0 +1,2 @@
+Long: On a newly completed higher-timeframe bar, the prior completed bar’s low > the high two bars before it, and the gap is at least the configured minimum size
+Short: On a newly completed higher-timeframe bar, the prior completed bar’s high < the low two bars before it, and the gap is at least the configured minimum size

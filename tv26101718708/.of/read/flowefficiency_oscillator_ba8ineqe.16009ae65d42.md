@@ -1,0 +1,4 @@
+Calculation: Cost percentile = percentile rank over a lookback of EMA-smoothed absolute signed volume delta divided by the greater of chart-bar close-to-close travel in ticks and a tick-travel floor; signed volume delta sums lower-timeframe bar volume signed positive when its close is above the previous lower-timeframe close and negative when below, and travel uses chart-timeframe bars.
+Calculation: Delta share = signed volume delta divided by total lower-timeframe volume within the chart bar.
+Long: Cost percentile >= upper absorption threshold AND Delta share <= negative one-sided delta threshold
+Short: Cost percentile >= upper absorption threshold AND Delta share >= one-sided delta threshold

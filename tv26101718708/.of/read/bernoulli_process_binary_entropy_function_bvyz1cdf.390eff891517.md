@@ -1,0 +1,5 @@
+Calculation: Bernoulli information = sum over the entropy lookback of the binary entropy contribution for p, where p is the percentile rank of the selected measurement over the averaging lookback, divided by 100 and clamped to [0.001, 0.999]. The contribution is p·log₂(p) − (1−p)·log₂(1−p), or standard binary entropy −p·log₂(p) − (1−p)·log₂(1−p) in purest mode.
+Calculation: Selected information = use the close-based stream, the log(volume)-based stream, or both as configured; when both are included, subtract the volume stream from the close stream, otherwise sum the included streams. In purest mode with only one stream, divide the sum by one minus the entropy lookback.
+Calculation: Information percentile rank = percentile rank of selected information over the averaging lookback.
+Long: Information percentile rank < lower percentile threshold AND absolute selected information > absolute trade band AND selected information ≤ trade band
+Short: Information percentile rank > 100 minus the lower percentile threshold AND absolute selected information > absolute trade band AND selected information ≥ trade band

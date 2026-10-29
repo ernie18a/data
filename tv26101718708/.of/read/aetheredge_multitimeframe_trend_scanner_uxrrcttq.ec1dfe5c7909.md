@@ -1,0 +1,4 @@
+Calculation: Trend score = +1 if close > the long-term EMA, otherwise −1, plus +1 if the short-term EMA > the longer-term EMA, otherwise −1; when ADX < its threshold, round half the raw score. Use the last completed bar of each of the four configured scanner timeframes, whether higher or lower than the chart timeframe; the short-term EMA has a shorter lookback than the longer-term EMA.
+Calculation: Consensus = the sum of the four timeframe trend scores divided by 8.
+Long: all four timeframe trend scores ≥ 2 OR previous-bar consensus ≤ 0 AND current consensus > 0.25
+Short: all four timeframe trend scores ≤ −2 OR previous-bar consensus ≥ 0 AND current consensus < −0.25

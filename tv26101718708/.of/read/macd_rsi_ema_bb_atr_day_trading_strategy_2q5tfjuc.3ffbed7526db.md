@@ -1,0 +1,10 @@
+Long: fast EMA > slow EMA AND close > fast EMA AND higher-timeframe fast EMA > higher-timeframe slow EMA (higher-timeframe current bar, still forming) AND MACD line crosses above MACD signal line AND RSI > configured lower bound AND RSI < configured upper bound AND close > VWAP AND close > open AND high > previous high AND volume > configured multiplier × volume moving average AND ATR > configured multiplier × moving average of ATR AND datetime is within the configured entry session AND position is flat
+Short: fast EMA < slow EMA AND close < fast EMA AND higher-timeframe fast EMA < higher-timeframe slow EMA (higher-timeframe current bar, still forming) AND MACD line crosses below MACD signal line AND RSI > configured lower bound AND RSI < configured upper bound AND close < VWAP AND close < open AND low < previous low AND volume > configured multiplier × volume moving average AND ATR > configured multiplier × moving average of ATR AND datetime is within the configured entry session AND position is flat
+Calculation: Initial long stop = signal-bar close − ATR × configured stop multiplier
+Calculation: Initial short stop = signal-bar close + ATR × configured stop multiplier
+Calculation: Long target = signal-bar close + (signal-bar close − initial long stop) × configured reward ratio
+Calculation: Short target = signal-bar close − (initial short stop − signal-bar close) × configured reward ratio
+Calculation: Long trailing stop = maximum(previous long trailing stop, close − ATR × configured trailing multiplier); initialize to close − ATR × configured trailing multiplier when a long position begins
+Calculation: Short trailing stop = minimum(previous short trailing stop, close + ATR × configured trailing multiplier); initialize to close + ATR × configured trailing multiplier when a short position begins
+Exit: Long, low ≤ initial long stop OR high ≥ long target OR close ≤ long trailing stop OR datetime is within the configured close session
+Exit: Short, high ≥ initial short stop OR low ≤ short target OR close ≥ short trailing stop OR datetime is within the configured close session

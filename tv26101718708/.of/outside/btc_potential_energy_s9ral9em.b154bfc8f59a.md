@@ -1,0 +1,1 @@
+For Bitcoin, calculate stablecoin dominance’s deviation from its long-term average and rank that deviation against its recent history. Go long when the rank is at or above the configured high-energy threshold and the deviation has declined for the configured number of consecutive bars. No short or exit rule is defined.

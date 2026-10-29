@@ -1,0 +1,4 @@
+Calculation: Confirmed pivot high/low = a bar whose high/low is the local maximum/minimum across equal-length lookbacks before and after it; confirm after the right-side bars close on the chart timeframe.
+Calculation: Deduplication threshold = configured ATR multiple, close percentage, or absolute point distance.
+Long: confirmed pivot low AND (no previously accepted pivot low OR absolute distance from the previous accepted pivot low is at least the deduplication threshold)
+Short: confirmed pivot high AND (no previously accepted pivot high OR absolute distance from the previous accepted pivot high is at least the deduplication threshold)

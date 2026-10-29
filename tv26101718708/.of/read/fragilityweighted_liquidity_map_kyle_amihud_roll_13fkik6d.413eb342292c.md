@@ -1,0 +1,6 @@
+Calculation: Range percentile = percentile rank of high − low over a lookback
+Calculation: Volume percentile = percentile rank of volume over a lookback
+Calculation: Close position = (close − low) / (high − low), or 0.5 when high = low
+Calculation: Prior high/low = highest high / lowest low over a lookback, excluding the current bar
+Long: volume > 0 AND ((low ≤ prior low AND close position ≥ 0.65 AND volume percentile ≥ 60) OR (close < previous close AND range percentile ≥ 60 AND volume percentile ≥ 80 AND close position ≥ 0.45) OR (close < previous close AND volume = highest volume over the volume lookback AND range percentile ≥ 70) OR (close < previous close AND range percentile ≤ 35 AND volume percentile ≤ 35))
+Short: volume > 0 AND ((high ≥ prior high AND close position ≤ 0.35 AND volume percentile ≥ 60) OR (close > previous close AND volume = highest volume over the volume lookback AND range percentile ≥ 70) OR (close > previous close AND range percentile ≤ 35 AND volume percentile ≤ 35))

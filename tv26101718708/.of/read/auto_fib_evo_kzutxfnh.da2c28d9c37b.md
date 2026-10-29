@@ -1,0 +1,3 @@
+Calculation: Confirmed swing high/low = a bar whose high/low is the highest/lowest across the pivot lookback bars before and after it; available after the bars on both sides have completed.
+Long: On a confirmed bar, a confirmed swing high occurs after the latest confirmed swing low, and the distance from that low to the high is at least the configured minimum leg-size multiple of ATR measured at the high; the configured direction permits up legs.
+Short: On a confirmed bar, a confirmed swing low occurs after the latest confirmed swing high, and the distance from that high to the low is at least the configured minimum leg-size multiple of ATR measured at the low; the configured direction permits down legs.

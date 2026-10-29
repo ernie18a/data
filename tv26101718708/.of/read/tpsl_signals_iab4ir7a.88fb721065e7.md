@@ -1,0 +1,5 @@
+Calculation: Hull moving average = weighted moving average of (2 × weighted moving average of close over half the lookback − weighted moving average of close over the full lookback), over the square root of the lookback
+Long: HMA on the shorter aggregation crosses above HMA on the longer aggregation
+Short: HMA on the shorter aggregation crosses below HMA on the longer aggregation
+Exit: Long, HMA on the shorter aggregation crosses below HMA on the longer aggregation OR high ≥ entry price × (1 + take-profit-2 percentage) OR (TP1 has been reached when high ≥ entry price × (1 + take-profit-1 percentage) and low ≤ entry price) OR (TP1 has not been reached and low ≤ entry price × (1 − stop-loss percentage))
+Exit: Short, HMA on the shorter aggregation crosses above HMA on the longer aggregation OR low ≤ entry price × (1 − take-profit-2 percentage) OR (TP1 has been reached when low ≤ entry price × (1 − take-profit-1 percentage) and high ≥ entry price) OR (TP1 has not been reached and high ≥ entry price × (1 + stop-loss percentage))

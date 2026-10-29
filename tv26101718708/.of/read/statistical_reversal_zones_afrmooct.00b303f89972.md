@@ -1,0 +1,5 @@
+Calculation: Daily open = open of the current, still-forming daily bar (higher timeframe than the chart timeframe)
+Calculation: Reversal zone boundaries = for each configured resistance or support center offset from the daily open, inner and outer edges are the center minus and plus the configured half-width; resistance centers are above the open and support centers are below it
+Calculation: Zone-entered state = set when a bar first overlaps a zone after the prior bar did not overlap it; clear on rejection and reset at the start of each day
+Long: For any support zone, (high >= outer boundary AND low <= inner boundary AND NOT (prior high >= outer boundary AND prior low <= inner boundary) AND rejection count for that zone = 0) OR (zone-entered state = true AND close > inner boundary)
+Short: For any resistance zone, (high >= inner boundary AND low <= outer boundary AND NOT (prior high >= inner boundary AND prior low <= outer boundary) AND rejection count for that zone = 0) OR (zone-entered state = true AND close < inner boundary)

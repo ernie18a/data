@@ -1,0 +1,2 @@
+Long: current period open > prior period Value Area High OR current period POC > preceding period POC
+Short: current period open < prior period Value Area Low OR current period POC < preceding period POC

@@ -1,0 +1,11 @@
+Calculation: Estimated volume delta = sum volume from lower-timeframe bars inside the chart bar, signed positive when each bar closes above the previous close and negative when below; unchanged bars keep the previous direction. If lower-timeframe data is unavailable, use chart-bar volume × ((close − low) − (high − close)) ÷ (high − low), or zero for a zero-range bar. Use completed lower-timeframe bars.
+Calculation: Normal one-way flow = normal upside flow + normal downside flow, estimated from the same time slot on prior sessions when available and otherwise from a rolling average of recent bars.
+Calculation: Normalized net flow = 3-bar EMA of estimated volume delta ÷ normal one-way flow, adjusted toward zero in proportion to volume ÷ normal volume when volume is below normal.
+Calculation: Price response relative to expected travel = 3-bar EMA of close-to-close change, signed in the direction of normalized net flow, ÷ normal close-to-close travel ÷ |normalized net flow|^exponent.
+Calculation: Upside and downside ribbon cores = EMA-smoothed upside and downside flow divided by their respective normal flows; ease each reading toward 1 when volume is below the quiet-volume threshold. The cores use the shortest smoothing length and the same number of EMA smoothing passes.
+Long: Upside ribbon core crosses above downside ribbon core
+Short: Upside ribbon core crosses below downside ribbon core
+Long: Normalized net flow > 0 AND |normalized net flow| ≥ surge threshold AND price response relative to expected travel > absorption response threshold
+Short: Normalized net flow < 0 AND |normalized net flow| ≥ surge threshold AND price response relative to expected travel > absorption response threshold
+Long: Normalized net flow > 0 AND |normalized net flow| ≥ absorption flow threshold AND price response relative to expected travel ≤ absorption response threshold
+Short: Normalized net flow < 0 AND |normalized net flow| ≥ absorption flow threshold AND price response relative to expected travel ≤ absorption response threshold

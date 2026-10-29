@@ -1,0 +1,8 @@
+Calculation: Confirmed pivot high/low = a bar whose high/low is the highest/lowest across a symmetric lookback window; use it only after the bars on both sides have completed. Maintain separate swing and internal pivot levels, with the internal lookback shorter than the swing lookback.
+Calculation: Structure direction = neutral initially; set bullish after a break above the latest unbroken pivot high and bearish after a break below the latest unbroken pivot low. A break in the existing direction is BOS; a break against it is CHoCH.
+Calculation: Break price = close, or high for an upward break and low for a downward break, according to the configured confirmation method.
+Calculation: Stop and target = use the latest swing low for a long or swing high for a short, buffered by ATR when valid; otherwise use an ATR-multiple distance from entry. Clamp risk distance between configured ATR floor and cap; target is entry plus/minus risk distance times the configured reward-to-risk multiple.
+Long: Break price > latest unbroken swing pivot high, or latest unbroken internal pivot high, according to the configured signal source; the selected event type (BOS and/or CHoCH) must be enabled; suppress if a short signal also occurs on that bar.
+Short: Break price < latest unbroken swing pivot low, or latest unbroken internal pivot low, according to the configured signal source; the selected event type (BOS and/or CHoCH) must be enabled; suppress if a long signal also occurs on that bar.
+Exit: long, high >= target OR low <= stop OR bars since entry >= projection length
+Exit: short, low <= target OR high >= stop OR bars since entry >= projection length

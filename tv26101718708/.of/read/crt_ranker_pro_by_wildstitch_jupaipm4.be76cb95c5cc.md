@@ -1,0 +1,1 @@
+Long: close > highest high and volume > simple moving average of volume and ATR > simple moving average of ATR, with the ATR and its average using the same lookback

@@ -1,0 +1,8 @@
+Calculation: Prior RTH close, high, and low = close, highest high, and lowest low, respectively, across the previous regular trading session.
+Calculation: Daily ATR = ATR on the higher daily timeframe, using the last completed bar.
+Calculation: Gap = RTH opening bar open − prior RTH close; gap size = absolute value of Gap; gap class = tiny, small, medium, or large by comparing gap size / Daily ATR with three increasing thresholds.
+Calculation: Stop distance = configured multiple of Daily ATR or configured fixed points; stop price = entry price − stop distance for long, or entry price + stop distance for short; target price = prior RTH close; reward/risk = absolute distance from entry price to target price / stop distance.
+Long: At RTH session start, Gap < 0 AND gap size ≥ minimum tick threshold AND gap class is enabled AND (open is within the prior RTH high–low range OR the inside-range filter is disabled) AND no position is open AND reward/risk ≥ minimum threshold.
+Short: At RTH session start, Gap > 0 AND gap size ≥ minimum tick threshold AND gap class is enabled AND (open is within the prior RTH high–low range OR the inside-range filter is disabled) AND no position is open AND reward/risk ≥ minimum threshold.
+Exit: Long, after the entry bar, low ≤ stop price OR high ≥ target price OR current bar is outside the configured trade window; if stop and target are both reached on the same bar, exit at the stop.
+Exit: Short, after the entry bar, high ≥ stop price OR low ≤ target price OR current bar is outside the configured trade window; if stop and target are both reached on the same bar, exit at the stop.

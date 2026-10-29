@@ -1,0 +1,8 @@
+Calculation: Higher-timeframe MACD = fast moving average of the higher-timeframe close minus the slower moving average of the higher-timeframe close; use the last completed higher-timeframe bar.
+Calculation: Higher-timeframe signal line = the selected moving average of the higher-timeframe MACD over the signal lookback; use the last completed higher-timeframe bar.
+Calculation: Smoothed MACD and signal line = simple moving averages of their respective higher-timeframe values over a lookback equal to the rounded ratio of the higher timeframe to the chart timeframe.
+Calculation: Smoothed trend moving average = simple moving average of the selected moving average of the higher-timeframe close; use the last completed higher-timeframe bar, then smooth over a lookback equal to the rounded ratio of the trend higher timeframe to the chart timeframe.
+Long: Smoothed MACD > smoothed signal line AND prior smoothed MACD <= prior smoothed signal line AND smoothed MACD < 0 AND smoothed trend moving average > its prior value
+Short: Smoothed MACD < smoothed signal line AND prior smoothed MACD >= prior smoothed signal line AND smoothed MACD > 0 AND smoothed trend moving average < its prior value
+Exit: long, smoothed MACD < smoothed signal line AND prior smoothed MACD >= prior smoothed signal line
+Exit: short, smoothed MACD > smoothed signal line AND prior smoothed MACD <= prior smoothed signal line

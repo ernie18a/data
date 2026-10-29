@@ -1,0 +1,1 @@
+Calculate the rolling mean and standard deviation of VIX. Enter long on the traded instrument when VIX rises above its mean by a configurable multiple of its standard deviation and there is no open long position. Exit the long after a configurable number of bars from entry.

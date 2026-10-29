@@ -1,0 +1,4 @@
+Calculation: MIDAS VWAP = cumulative volume-weighted average of (high + low + close) / 3 since the configured anchor, resetting at each anchor
+Calculation: Order flow score = 40 × abs(close − open) / (high − low) + 35 × min(volume / EMA(volume), 3) / 3 + 25 × directional wick fraction, where directional wick fraction is (close − low) / (high − low) when close > open, otherwise (high − close) / (high − low); use 0 for the body ratio and 0.5 for the volume and wick fractions when their denominators are zero
+Long: previous close ≤ previous MIDAS VWAP AND close > MIDAS VWAP AND order flow score ≥ its threshold
+Short: previous close ≥ previous MIDAS VWAP AND close < MIDAS VWAP AND order flow score ≥ its threshold

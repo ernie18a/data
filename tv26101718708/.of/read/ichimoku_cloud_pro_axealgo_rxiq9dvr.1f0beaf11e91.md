@@ -1,0 +1,27 @@
+Calculation: Tenkan-sen = midpoint of the highest high and lowest low over a shorter lookback.
+Calculation: Kijun-sen = midpoint of the highest high and lowest low over a longer lookback than Tenkan-sen.
+Calculation: Senkou Span A = midpoint of Tenkan-sen and Kijun-sen; Senkou Span B = midpoint of the highest high and lowest low over a longer lookback than Kijun-sen. Current cloud boundaries = the maximum and minimum of Span A and Span B from the bar one displacement interval earlier.
+Calculation: Chikou clear upward = current close is above the high and cloud top from one displacement interval earlier; Chikou clear downward = current close is below the low and cloud bottom from one displacement interval earlier.
+Calculation: Kijun direction = rising if Kijun is above its value several bars earlier by more than a small ATR-scaled tolerance; falling if below by more than that tolerance; otherwise flat.
+Calculation: Breakout score = weighted points for cloud thickness (capped at 2 ATR), Chikou clear, Tenkan/Kijun alignment, close margin beyond the cloud (capped at 0.5 ATR), agreement of valid higher-timeframe regimes, relative volume above its average (capped at 1.5 times average), and directional RSI momentum (scaled from neutral to a threshold); divide by the applicable maximum weights and scale to 100. If choppy-market handling is enabled, chop means at least two of: ADX below its threshold, flat Kijun, or cloud thickness below 0.5 ATR; subtract the configured penalty or suppress the signal according to the selected handling.
+Calculation: Higher-timeframe regime = bullish when its close is above its cloud and Tenkan-sen above Kijun-sen; bearish when its close is below its cloud and Tenkan-sen below Kijun-sen; otherwise neutral. Use the last completed bar on each of the two selected higher timeframes.
+Calculation: Bullish/bearish open-air condition = Chikou clear in that direction and current close beyond the high/low of the candles in Chikou's path, and beyond the current cloud top/bottom.
+Calculation: Bullish/bearish perfect alignment = close above/below Tenkan-sen, Tenkan-sen above/below Kijun-sen, Kijun-sen above/below the current cloud, and Chikou clear in that direction.
+Long: Close crosses above the current cloud top after the previous close outside the cloud was below its bottom AND breakout score is at least the configured minimum AND the minimum breakout spacing has elapsed AND the choppy-market handling does not suppress the signal.
+Short: Close crosses below the current cloud bottom after the previous close outside the cloud was above its top AND breakout score is at least the configured minimum AND the minimum breakout spacing has elapsed AND the choppy-market handling does not suppress the signal.
+Long: Bullish perfect alignment begins after not being aligned on the previous bar AND the minimum perfect-signal spacing has elapsed.
+Short: Bearish perfect alignment begins after not being aligned on the previous bar AND the minimum perfect-signal spacing has elapsed.
+Long: Tenkan-sen crosses above Kijun-sen AND the minimum cross spacing has elapsed.
+Short: Tenkan-sen crosses below Kijun-sen AND the minimum cross spacing has elapsed.
+Long: Previous close is above the current cloud top AND Kijun-sen is above the current cloud top AND Kijun direction is not falling AND low is at or below Kijun-sen but no more than the configured ATR distance below it AND close is above Kijun-sen and open AND the minimum bounce spacing has elapsed.
+Short: Previous close is below the current cloud bottom AND Kijun-sen is below the current cloud bottom AND Kijun direction is not rising AND high is at or above Kijun-sen but no more than the configured ATR distance above it AND close is below Kijun-sen and open AND the minimum bounce spacing has elapsed.
+Long: Senkou Span A crosses above Senkou Span B AND the minimum twist spacing has elapsed AND the change in the Span A/B gap over the configured lookback is at least the configured ATR-scaled strength.
+Short: Senkou Span A crosses below Senkou Span B AND the minimum twist spacing has elapsed AND the change in the Span A/B gap over the configured lookback is at least the configured ATR-scaled strength.
+Long: A newly confirmed swing low C lies strictly between the preceding swing high B and the swing low A before B (A < C < B).
+Short: A newly confirmed swing high C lies strictly between the preceding swing low B and the swing high A before B (A > C > B).
+Long: Bullish open-air condition becomes true after being false on the previous bar.
+Short: Bearish open-air condition becomes true after being false on the previous bar.
+Long: Close is at least the configured ATR multiple above Kijun-sen and this stretch condition was false on the previous bar.
+Short: Close is at least the configured ATR multiple below Kijun-sen and this stretch condition was false on the previous bar.
+Long: Chart-timeframe regime is bullish AND both selected higher-timeframe regimes are bullish, with this alignment not already active on the previous bar.
+Short: Chart-timeframe regime is bearish AND both selected higher-timeframe regimes are bearish, with this alignment not already active on the previous bar.

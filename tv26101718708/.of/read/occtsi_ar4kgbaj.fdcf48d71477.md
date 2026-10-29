@@ -1,0 +1,4 @@
+Calculation: Price basis = selected moving average of the higher-timeframe open and close, using the same lookback; use raw open and close if moving averages are disabled. The higher-timeframe bar is still forming.
+Calculation: TSI = 100 × double-smoothed change in chart-timeframe close / double-smoothed absolute change in chart-timeframe close; each double smoothing applies an EMA with a longer lookback followed by an EMA with a shorter lookback.
+Long: higher-timeframe close basis > higher-timeframe open basis AND chart-timeframe TSI > EMA of chart-timeframe TSI
+Short: higher-timeframe close basis < higher-timeframe open basis AND chart-timeframe TSI < EMA of chart-timeframe TSI

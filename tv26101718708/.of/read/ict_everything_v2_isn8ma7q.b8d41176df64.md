@@ -1,0 +1,4 @@
+Calculation: Session range high/low = highest high and lowest low during the corresponding range-building session; use the completed range after that session ends.
+Calculation: Previous week/month high/low = highest high and lowest low of the immediately preceding completed week/month, aggregated from chart bars.
+Long: On a confirmed bar, low > high two chart bars earlier (bullish FVG) OR outside its range-building session, high > session range high AND prior bar high <= prior bar session range high OR current low < previous week/month low AND current close > that low AND prior bar low >= that low.
+Short: On a confirmed bar, high < low two chart bars earlier (bearish FVG) OR outside its range-building session, low < session range low AND prior bar low >= prior bar session range low OR current high > previous week/month high AND current close < that high AND prior bar high <= that high.

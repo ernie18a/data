@@ -1,0 +1,15 @@
+Calculation: Long reversal score = 2 for RSI at/below oversold, crossing above oversold, or below the lower recovery threshold while rising; plus 2 for lower-wick rejection; plus 2 for a low sweep that closes back above the prior swing low; plus 1 for being near/beyond the lower Bollinger Band; plus 1 for bullish engulfing; plus 1 for close above prior close; plus 1 when candle range exceeds the minimum ATR multiple.
+Calculation: Short reversal score = 2 for RSI at/above overbought, crossing below overbought, or above the upper recovery threshold while falling; plus 2 for upper-wick rejection; plus 2 for a high sweep that closes back below the prior swing high; plus 1 for being near/beyond the upper Bollinger Band; plus 1 for bearish engulfing; plus 1 for close below prior close; plus 1 when candle range exceeds the minimum ATR multiple.
+Calculation: Lower-wick rejection = lower wick / (high − low) is at least the minimum wick fraction AND close is above the midpoint of the candle range.
+Calculation: Upper-wick rejection = upper wick / (high − low) is at least the minimum wick fraction AND close is below the midpoint of the candle range.
+Calculation: Low sweep = low is below the lowest low of prior lookback bars AND close is above that lowest low.
+Calculation: High sweep = high is above the highest high of prior lookback bars AND close is below that highest high.
+Calculation: Near lower Bollinger Band = low is at/below the lower band OR close is within an ATR fraction above it; bands use a moving average of close plus/minus a standard-deviation multiple.
+Calculation: Near upper Bollinger Band = high is at/above the upper band OR close is within an ATR fraction below it; bands use a moving average of close plus/minus a standard-deviation multiple.
+Calculation: Bullish engulfing = close > open AND prior close < prior open AND close > prior open AND open <= prior close.
+Calculation: Bearish engulfing = close < open AND prior close > prior open AND close < prior open AND open >= prior close.
+Calculation: Volume filter passes when volume exceeds its moving average times a multiplier; this filter is applied only when enabled.
+Long: bar is confirmed at close AND long reversal score >= the score threshold AND volume filter passes if enabled AND (EMA context is soft OR close > EMA) AND (cooldown since prior long signal has elapsed) AND (alternation is disabled OR the prior signal was not long).
+Short: bar is confirmed at close AND short reversal score >= the score threshold AND volume filter passes if enabled AND (EMA context is soft OR close < EMA) AND (cooldown since prior short signal has elapsed) AND (alternation is disabled OR the prior signal was not short).
+Exit: long, low <= stop-loss price OR high >= third take-profit price.
+Exit: short, high >= stop-loss price OR low <= third take-profit price.

@@ -1,0 +1,6 @@
+Long: range is locked AND close > range high
+Short: range is locked AND close < range low
+Long: range is locked AND not locked for the day AND time is 09:45–11:00 America/New_York AND no open trade AND the latest range breakout is above the range AND low <= range midpoint
+Short: range is locked AND not locked for the day AND time is 09:45–11:00 America/New_York AND no open trade AND the latest range breakout is below the range AND high >= range midpoint
+Exit: long, time leaves the 09:45–11:00 America/New_York session OR low <= range low OR high >= entry price + 2 * (entry price - range low) OR high >= entry price + 4 * (entry price - range low) OR (high previously reached entry price + 2 * (entry price - range low) AND low <= entry price)
+Exit: short, time leaves the 09:45–11:00 America/New_York session OR high >= range high OR low <= entry price - 2 * (range high - entry price) OR low <= entry price - 4 * (range high - entry price) OR (low previously reached entry price - 2 * (range high - entry price) AND high >= entry price)

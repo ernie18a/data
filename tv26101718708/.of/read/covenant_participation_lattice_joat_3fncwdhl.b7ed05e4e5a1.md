@@ -1,0 +1,7 @@
+Calculation: Participation axis = a three-stage stabilized point of control from a rolling volume-by-close profile: assign each bar’s volume to an evenly spaced price bin containing its close within the rolling highest-high to lowest-low range; take the midpoint of the highest-volume bin as raw POC; move stage 1 toward raw POC by at most an ATR-scaled band per bar and smooth it with an EMA; update stages 2 and 3 to the prior stage only when its change exceeds that ATR-scaled band; use stage 3 as the axis
+Calculation: Value-area high and low = boundaries of the smallest contiguous set of profile bins containing the target share of total volume, starting at the POC and repeatedly adding the adjacent bin with more volume
+Calculation: Value-area midpoint = average of value-area high and value-area low
+Calculation: Axis slope = current participation axis minus prior bar’s participation axis
+Calculation: Premium-discount balance = volume above value-area high minus volume below value-area low, divided by total profile volume
+Long: On a completed chart bar, close crosses above the participation axis OR close crosses above value-area high OR close crosses above the value-area midpoint OR axis slope crosses above zero OR premium-discount balance crosses above zero
+Short: On a completed chart bar, close crosses below the participation axis OR close crosses below value-area low OR close crosses below the value-area midpoint OR axis slope crosses below zero OR premium-discount balance crosses below zero

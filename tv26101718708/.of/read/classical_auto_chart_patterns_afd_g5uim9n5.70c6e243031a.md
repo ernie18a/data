@@ -1,0 +1,12 @@
+Calculation: Confirmed pivot = a bar whose high or low is an extreme over the swing-strength lookback on both sides; use it only after the later bars confirm it.
+Calculation: Valid boundary = a straight line through two confirmed pivots of the same type, with no intervening bar piercing it beyond a volatility-based tolerance and no later bar violating it before detection.
+Calculation: Two-boundary formation = overlapping valid upper and lower boundaries classified by their slopes and width as a channel, wedge, triangle, rectangle, flag, or pennant; flags and pennants also require a sufficiently large prior move and a brief pause. A neckline formation is a double top/bottom or head-and-shoulders/inverse pattern formed by matching confirmed extremes and its intervening troughs/peaks; its neckline joins the intervening pullback pivots.
+Calculation: Volatility = simple average of true range over a lookback on the chart timeframe.
+Calculation: Formation height = vertical distance between the two boundaries at their later starting bar, or the distance from the neckline to the defining extreme for a neckline formation.
+Calculation: R = the smaller of formation height and a configurable multiple of the average true range of the last 7 completed daily bars; use the last completed higher-timeframe daily bar. If the chart timeframe is daily or higher, use the chart timeframe's last 7 bars instead.
+Calculation: Target = entry price plus position side times a configurable multiple of R; when multiple target tiers are enabled, use the highest-numbered tier for closing the position.
+Calculation: Stop = the opposite boundary at completion for a two-boundary formation, or the far defining extreme for a neckline formation, with distance floored at 0.5R; alternatively, use entry price minus position side times a configurable multiple of R.
+Long: a bullish formation is detected and admitted OR the close is above a two-boundary formation's upper boundary by more than the completion tolerance OR the close is above a bullish neckline by more than the completion tolerance.
+Short: a bearish formation is detected and admitted OR the close is below a two-boundary formation's lower boundary by more than the completion tolerance OR the close is below a bearish neckline by more than the completion tolerance.
+Exit: long, a later bar's low is at or below the stop OR its high reaches the highest enabled target.
+Exit: short, a later bar's high is at or above the stop OR its low reaches the highest enabled target.

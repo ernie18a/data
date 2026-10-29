@@ -1,0 +1,2 @@
+Long: Higher-timeframe (daily, higher than the chart timeframe) short-term EMA of close > higher-timeframe long-term EMA of close, both from the last completed daily bar
+Short: Higher-timeframe (daily, higher than the chart timeframe) short-term EMA of close < higher-timeframe long-term EMA of close, both from the last completed daily bar

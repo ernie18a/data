@@ -1,0 +1,8 @@
+Calculation: EMA ribbon direction = bullish when price is above at least one enabled EMA and below no more than the allowed number of enabled EMAs; bearish when below at least one and above no more than the allowed number. EMA lookbacks range from shorter-term to longer-term. Use the last completed H1 or H4 bar; both timeframes are higher than the chart timeframe.
+Calculation: Daily range = current day's high − low, using the still-forming daily bar; average daily range = average high − low over prior completed daily bars, using a longer lookback than a single day. Daily bars are higher than the chart timeframe.
+Calculation: Stop = manipulation H4 low for a long, or high for a short.
+Calculation: Target = the highest high (long) or lowest low (short) among prior completed H4 bars if it is at least 1R from entry; otherwise entry plus (long) or minus (short) 1.5R, where 1R = absolute difference between entry and stop. H4 is higher than the chart timeframe.
+Long: At an H4 close, the last completed H4 bar's low < the lowest low of the preceding H4 bars AND its close > the close of the preceding H4 bar AND H1 and H4 EMA ribbon directions are both bullish AND current daily range <= average daily range.
+Short: At an H4 close, the last completed H4 bar's high > the highest high of the preceding H4 bars AND its close < the close of the preceding H4 bar AND H1 and H4 EMA ribbon directions are both bearish AND current daily range <= average daily range.
+Exit: long, low <= stop OR high >= target
+Exit: short, high >= stop OR low <= target

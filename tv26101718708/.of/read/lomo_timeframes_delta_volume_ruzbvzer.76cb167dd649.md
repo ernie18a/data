@@ -1,0 +1,5 @@
+Calculation: Zero-lag EMA = EMA of close plus the difference between close and close from a lagged bar; lag is derived from the EMA lookback. Use the same lookback for the EMA and ATR; the ATR highest-value lookback is longer.
+Calculation: Trend state = bullish after close crosses above zero-lag EMA plus the ATR-based volatility band; bearish after close crosses below zero-lag EMA minus the band; otherwise retain the prior state. Initially bearish. Evaluate on the chart timeframe and each configured timeframe, which may be higher or lower than the chart timeframe; use the current timeframe bar while it is forming.
+Calculation: Delta volume percentage = 100 × (volume − previous-bar volume) / previous-bar volume; use zero when previous-bar volume is zero.
+Long: Trend state is bullish on any configured timeframe OR delta volume percentage exceeds its positive threshold.
+Short: Trend state is bearish on any configured timeframe OR delta volume percentage is below its negative threshold.

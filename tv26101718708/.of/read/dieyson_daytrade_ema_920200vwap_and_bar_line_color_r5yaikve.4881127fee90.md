@@ -1,0 +1,2 @@
+Long: close > previous bar close AND EMA(20, close) > EMA(20, previous bar close) OR EMA(9, close) > EMA(9, previous bar close) AND EMA(20, close) > EMA(20, previous bar close) OR EMA(9) crosses above EMA(20)
+Short: close < previous bar close AND EMA(20, close) < EMA(20, previous bar close) OR EMA(9, close) < EMA(9, previous bar close) OR EMA(9) crosses below EMA(20)

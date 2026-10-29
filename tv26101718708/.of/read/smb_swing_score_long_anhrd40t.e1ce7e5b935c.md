@@ -1,0 +1,6 @@
+Calculation: Relative volume = current bar volume / the simple moving average of volume over a lookback period
+Calculation: Coiled = Bollinger Bands are fully inside Keltner Channels now, or were within a recent lookback period; both use the same lookback
+Calculation: Prior range high = highest high over a lookback period, excluding the current bar
+Calculation: Prior range low = lowest low over the same lookback period, excluding the current bar
+Long: Close > prior range high AND relative volume ≥ its threshold AND coiled AND daily close > medium-term daily simple moving average AND medium-term daily simple moving average > long-term daily simple moving average AND long-term daily simple moving average > longest-term daily simple moving average
+Long: Previous bar's (high − low) / low ≥ its threshold AND (previous close − previous low) / (previous high − previous low) ≥ its threshold AND previous close > previous open AND previous bar's relative volume ≥ its threshold AND current low < previous close AND current close > current open AND (current close − current low) / (current high − current low) > 0.5

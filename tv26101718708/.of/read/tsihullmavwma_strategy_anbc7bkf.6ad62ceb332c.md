@@ -1,0 +1,5 @@
+Calculation: TSI = 100 × EMA(EMA(change(OHLC4), equal lookbacks), equal lookbacks) / EMA(EMA(abs(change(OHLC4)), equal lookbacks), equal lookbacks)
+Calculation: Hull value = WMA(2 × WMA(OHLC4, rounded half-length) − WMA(OHLC4, full length), rounded square-root length)
+Long: TSI > EMA(TSI, shorter lookback than either TSI smoothing lookback) AND OHLC4 > OHLC4[1] AND OHLC4 > OHLC4[2] AND OHLC4 > OHLC4[3] AND Hull value > Hull value[1] AND Hull value > Hull value[2] AND VWMA(OHLC4, shorter lookback) > VWMA(OHLC4, twice that lookback)
+Short: TSI < EMA(TSI, shorter lookback than either TSI smoothing lookback) AND OHLC4 < OHLC4[1] AND OHLC4 < OHLC4[2] AND OHLC4 < OHLC4[3] AND Hull value < Hull value[1] AND Hull value < Hull value[2] AND VWMA(OHLC4, shorter lookback) < VWMA(OHLC4, twice that lookback)
+Exit: long or short, open profit > target threshold OR open profit < stop threshold

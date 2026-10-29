@@ -1,0 +1,5 @@
+Calculation: EMA = exponential moving average of close; chart-timeframe and higher-timeframe EMAs use the same lookback length.
+Calculation: Caution = close > higher-timeframe EMA from the last completed bar AND (highest high over the configured chart-bar lookback minus current low > configured ATR threshold OR close < chart-timeframe EMA).
+Calculation: Trailing stop = ratchet upward to the greater of its prior value and the highest selected price source over the configured chart-bar lookback minus chart-timeframe ATR; use the configured smaller ATR multiplier when the prior chart bar was in caution, otherwise use 1× ATR.
+Long: position is flat AND time is within the configured date range AND close > higher-timeframe EMA from the last completed bar AND NOT Caution
+Exit: long, on a confirmed chart bar, close < trailing stop OR close < higher-timeframe EMA from the last completed bar

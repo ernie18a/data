@@ -1,0 +1,5 @@
+Calculation: NVTS = Bitcoin market capitalization divided by the long-term simple moving average of daily USD-denominated Bitcoin blockchain transaction volume; use the daily values returned by the source for the chart bar.
+Long: NVTS < oversold threshold AND datetime is within the configured strategy date window
+Short: NVTS > overbought threshold AND datetime is within the configured strategy date window
+Exit: long, NVTS > overbought threshold OR low <= entry price minus the configured stop-loss distance OR (high reaches the configured trailing-stop activation level and low <= the highest high since entry minus the configured trailing-stop offset)
+Exit: short, NVTS < oversold threshold OR high >= entry price plus the configured stop-loss distance OR (low reaches the configured trailing-stop activation level and high >= the lowest low since entry plus the configured trailing-stop offset)

@@ -1,0 +1,20 @@
+Calculation: CRT range = high and low of the last completed daily, 4-hour, or 1-hour bar, or the completed 8:00–9:00 AM New York range; use the selected model’s range
+Calculation: Bearish-run open = open of the first bearish bar in the latest consecutive run of bearish bars
+Calculation: Bullish-run open = open of the first bullish bar in the latest consecutive run of bullish bars
+Calculation: CRT stop distance = greater of the distance from entry to just beyond the sweep extreme and the minimum stop distance
+Calculation: ORB stop distance = greater of the distance from entry to the opening-range midpoint and the minimum stop distance
+Calculation: CRT targets = range midpoint, opposite range boundary, and the configured extension beyond that boundary; if configured to substitute the range boundary when the midpoint reward is too small, use the boundary for TP1 and extend TP2/TP3 beyond it
+Calculation: ORB targets = entry price plus or minus the stop distance multiplied by the configured TP1, TP2, and TP3 R multiples, in the position direction
+Long: A low has swept below the CRT range low without exceeding the configured maximum sweep depth, and (in CISD mode, close > max(CRT range low, bearish-run open) AND close > open; in Fast mode, close > CRT range low AND close > open; in HTF-close mode, the last completed higher-timeframe bar closed inside the CRT range after a low sweep AND the current close is above the range low and below its midpoint) OR (the opening range is complete AND close > opening-range high); AND the bar is confirmed, weekday New York time is within the configured entry window and outside any enabled news block, no position is open, daily trade and loss limits are not reached, and the selected signal passes enabled regime and daily premium/discount filters, candle-spike and extreme-volatility filters, stop-size and position-size limits, minimum reward-to-risk to the opposite CRT boundary, and minimum TP1-distance rule; when multiple models qualify, select Daily CRT, then 4H CRT, then 8–9 AM CRT, then 1H CRT, then ORB
+Short: A high has swept above the CRT range high without exceeding the configured maximum sweep depth, and (in CISD mode, close < min(CRT range high, bullish-run open) AND close < open; in Fast mode, close < CRT range high AND close < open; in HTF-close mode, the last completed higher-timeframe bar closed inside the CRT range after a high sweep AND the current close is below the range high and above its midpoint) OR (the opening range is complete AND close < opening-range low); AND the bar is confirmed, weekday New York time is within the configured entry window and outside any enabled news block, no position is open, daily trade and loss limits are not reached, and the selected signal passes enabled regime and daily premium/discount filters, candle-spike and extreme-volatility filters, stop-size and position-size limits, minimum reward-to-risk to the opposite CRT boundary, and minimum TP1-distance rule; when multiple models qualify, select Daily CRT, then 4H CRT, then 8–9 AM CRT, then 1H CRT, then ORB
+Exit: Long, low <= current stop
+Exit: Short, high >= current stop
+Exit: Long, high >= TP1; take one third off and apply the configured stop move
+Exit: Short, low <= TP1; take one third off and apply the configured stop move
+Exit: Long, high >= TP2; take one third off and apply the configured stop move
+Exit: Short, low <= TP2; take one third off and apply the configured stop move
+Exit: Long, high >= TP3 when using a fixed TP3; close the remainder
+Exit: Short, low <= TP3 when using a fixed TP3; close the remainder
+Exit: Long, close <= close minus the configured ATR multiple after TP2 when using an ATR trail
+Exit: Short, close >= close plus the configured ATR multiple after TP2 when using an ATR trail
+Exit: Long or short, New York time is at or after the configured flat time and before 6:00 PM, or a new day begins

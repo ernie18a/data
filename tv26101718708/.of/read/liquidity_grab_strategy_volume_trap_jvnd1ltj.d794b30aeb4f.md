@@ -1,0 +1,2 @@
+Long: close[1] > close[2] AND close < close[1] AND close < low[1] AND close[1] < close[2] AND abs(volume - SMA(volume, lookback)) / SMA(volume, lookback) < threshold AND close[2] < open[1] AND close > high[1]
+Exit: long, high >= high[1] OR low <= low[2] - (high[1] - low[2])

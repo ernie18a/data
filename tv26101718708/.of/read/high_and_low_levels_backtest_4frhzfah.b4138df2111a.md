@@ -1,0 +1,2 @@
+Long: close > the low of the last completed bar aggregated to a higher timeframe
+Short: close <= the low of the last completed bar aggregated to a higher timeframe AND close < the high of the last completed bar aggregated to a higher timeframe

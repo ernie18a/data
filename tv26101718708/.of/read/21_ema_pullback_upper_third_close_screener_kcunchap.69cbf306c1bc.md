@@ -1,0 +1,2 @@
+Calculation: Upper-third close = (close - low) / (high - low) >= configurable threshold, when high > low
+Long: low <= short-term EMA(close) AND high >= short-term EMA(close) AND upper-third close AND volume > longer-lookback SMA(volume) AND close > short-term EMA(close) AND close > each of the longer-lookback SMAs(close) AND intermediate-lookback SMA(close) > longer-lookback SMA(close) > longest-lookback SMA(close) AND close is within a configurable threshold of the rolling highest high

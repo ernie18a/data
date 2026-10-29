@@ -1,0 +1,4 @@
+Calculation: Confirmed pivot high/low = a high/low pivot using the same lookback on both sides; use only after the right-side bars complete.
+Calculation: Structural bias = neutral initially; bullish after a close crosses above the last confirmed pivot high, bearish after a close crosses below the last confirmed pivot low; otherwise retain the prior bias.
+Long: current low > high two bars earlier on a completed bar OR a confirmed pivot high > the prior confirmed pivot high OR a confirmed pivot low > the prior confirmed pivot low OR close crosses above the last confirmed pivot high
+Short: current high < low two bars earlier on a completed bar OR a confirmed pivot high < the prior confirmed pivot high OR a confirmed pivot low < the prior confirmed pivot low OR close crosses below the last confirmed pivot low

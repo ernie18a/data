@@ -1,0 +1,9 @@
+Calculation: Structure pivots = a pivot high/low is confirmed when the high/low N bars earlier is above/below the highs/lows of the following N bars; internal structure uses a shorter lookback than swing structure
+Calculation: Bullish fair value gap = on a new configured gap-timeframe bar, its current low is above the high two bars earlier, the intervening completed bar closes above that high, and its positive close-to-open return exceeds twice the cumulative mean absolute return
+Calculation: Bearish fair value gap = on a new configured gap-timeframe bar, its current high is below the low two bars earlier, the intervening completed bar closes below that low, and its negative close-to-open return magnitude exceeds twice the cumulative mean absolute return
+Long: The chart close crosses above an unbroken internal or swing structure pivot high; tag CHoCH if the prior bias was bearish, otherwise BOS
+Long: Bullish fair value gap condition
+Long: Higher-timeframe fast EMA > higher-timeframe slow EMA AND lower-timeframe close > lower-timeframe EMA AND the chart close crosses above an unbroken internal structure pivot high while prior internal bias is bearish AND chart volume > its longer-lookback volume SMA
+Short: The chart close crosses below an unbroken internal or swing structure pivot low; tag CHoCH if the prior bias was bullish, otherwise BOS
+Short: Bearish fair value gap condition
+Short: Higher-timeframe fast EMA < higher-timeframe slow EMA AND lower-timeframe close < lower-timeframe EMA AND the chart close crosses below an unbroken internal structure pivot low while prior internal bias is bullish AND chart volume > its longer-lookback volume SMA

@@ -1,0 +1,7 @@
+Calculation: Cycle high = highest high of the most recent qualifying new peak; a qualifying peak occurs when the current high equals the highest high over a long lookback and passes the volume and trend filters. A new cycle high resets eligibility for all three buy levels.
+Calculation: Drop from cycle high = (cycle high − close) / cycle high × 100%
+Long: Level 1 remains eligible since the latest cycle high AND drop from cycle high ≥ the shallowest drop threshold AND volume filter passes (if enabled) AND higher-timeframe trend filter passes (if enabled; current higher-timeframe bar close > its longer-lookback SMA)
+Long: Level 2 remains eligible since the latest cycle high AND drop from cycle high ≥ the middle drop threshold AND volume filter passes (if enabled) AND higher-timeframe trend filter passes (if enabled; current higher-timeframe bar close > its longer-lookback SMA)
+Long: Level 3 remains eligible since the latest cycle high AND drop from cycle high ≥ the deepest drop threshold AND volume filter passes (if enabled) AND higher-timeframe trend filter passes (if enabled; current higher-timeframe bar close > its longer-lookback SMA)
+Long: A temporary sell cycle is enabled AND at least one chart-timeframe bar has elapsed since the tranche's exit
+Exit: Long, a temporary sell cycle is enabled AND at least one chart-timeframe bar has elapsed since the tranche's entry

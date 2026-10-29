@@ -1,0 +1,3 @@
+Calculation: Basket score = weighted average of eligible member scores; each member score is a weighted sum of its ATR-normalized price change over a lookback, distance from session VWAP, and distance from a long-term EMA, with each component capped at a bounded range. Use current source-timeframe bars, which may be higher or lower than the chart timeframe and may still be forming.
+Long: Basket score > bullish threshold
+Short: Basket score < bearish threshold

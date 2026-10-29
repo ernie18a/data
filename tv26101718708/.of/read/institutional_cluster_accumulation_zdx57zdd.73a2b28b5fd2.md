@@ -1,0 +1,2 @@
+Calculation: Relative volume = volume / average volume over a longer lookback
+Long: lowest RSI over a short recent lookback < oversold threshold AND Relative volume > 1 AND close > previous bar high AND close > open AND bars since the previous long signal >= signal cooldown

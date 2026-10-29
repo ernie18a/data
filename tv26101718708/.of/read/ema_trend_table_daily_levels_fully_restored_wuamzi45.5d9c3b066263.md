@@ -1,0 +1,2 @@
+Long: close > shortest-term EMA OR close > second-shortest-term EMA OR close > second-longest-term EMA OR close > longest-term EMA
+Short: close < shortest-term EMA OR close < second-shortest-term EMA OR close < second-longest-term EMA OR close < longest-term EMA

@@ -1,0 +1,4 @@
+Long: ALMA(close) >= ALMA(open) on the last completed chart bar AND ALMA(close) < ALMA(open) on the preceding chart bar; both ALMAs use the same parameters
+Short: ALMA(close) < ALMA(open) on the last completed chart bar AND ALMA(close) >= ALMA(open) on the preceding chart bar; both ALMAs use the same parameters
+Exit: long, ALMA(close) < ALMA(open) on the last completed chart bar AND ALMA(close) >= ALMA(open) on the preceding chart bar; both ALMAs use the same parameters
+Exit: short, ALMA(close) >= ALMA(open) on the last completed chart bar AND ALMA(close) < ALMA(open) on the preceding chart bar; both ALMAs use the same parameters

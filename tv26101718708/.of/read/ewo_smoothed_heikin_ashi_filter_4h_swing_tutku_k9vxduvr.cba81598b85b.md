@@ -1,0 +1,4 @@
+Calculation: EWO = (shorter-lookback moving average of close / longer-lookback moving average of close − 1) × 100; signal = moving average of EWO
+Calculation: Smoothed Heikin Ashi = smooth open, high, low, and close with the selected moving average; HA close = average of the smoothed OHLC; HA open = average of prior HA open and prior HA close, initialized as average of smoothed open and close; optionally smooth the resulting HA OHLC again
+Long: EWO crosses above its signal AND smoothed HA close > smoothed HA open for at least the configured minimum consecutive bars
+Short: EWO crosses below its signal AND smoothed HA close < smoothed HA open for at least the configured minimum consecutive bars

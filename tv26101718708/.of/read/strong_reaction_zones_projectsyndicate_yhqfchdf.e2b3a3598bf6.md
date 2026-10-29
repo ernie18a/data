@@ -1,0 +1,9 @@
+Calculation: Session range = higher-timeframe session high − low; use completed session bars.
+Calculation: ADR = average session range over a longer lookback than the short volatility window.
+Calculation: Balance zone = prior completed higher-timeframe session OHLC4, HLC3, or midpoint, or a higher-timeframe daily close SMA using its last completed bar.
+Calculation: Reaction tier = balance zone ± ADR × tier offset; each zone is centered on its tier level and has ADR-based thickness. Tier offsets increase from Low through Normal, High, Very High, and Extreme.
+Calculation: Reaction score = weighted average, scaled 0–10, of tier extremity, compressed volatility (short-window average range relative to ADR), choppiness (1 − close-to-close efficiency ratio over a longer lookback), and trend alignment (upper tiers align with a downtrend; lower tiers with an uptrend). Clamp component values to 0–1.
+Long: Price tags a lower High, Very High, or Extreme tier rated Strong or Elite and closes back above its upper edge OR price closes decisively above a High, Very High, or Extreme tier during volatility expansion (short-window average range > ADR) or when that tier is de-rated.
+Short: Price tags an upper High, Very High, or Extreme tier rated Strong or Elite and closes back below its lower edge OR price closes decisively below a High, Very High, or Extreme tier during volatility expansion (short-window average range > ADR) or when that tier is de-rated.
+Exit: long, price reaches the next inner tier toward balance or the balance zone OR price closes beyond the next outer tier.
+Exit: short, price reaches the next inner tier toward balance or the balance zone OR price closes beyond the next outer tier.

@@ -1,0 +1,4 @@
+Calculation: Normalized filtered price = close passed through a 2-pole Butterworth high-pass filter, then a SuperSmoother low-pass filter, divided by the square root of an exponentially smoothed squared filter output; the high-pass period is longer than the low-pass period
+Calculation: Normalized filtered volume = volume passed through the same filters and scaling as normalized filtered price
+Long: Normalized filtered price > 0 AND normalized filtered volume > 0 OR normalized filtered price < 0 AND normalized filtered volume < 0
+Short: Normalized filtered price < 0 AND normalized filtered volume > 0 OR normalized filtered price > 0 AND normalized filtered volume < 0

@@ -1,0 +1,4 @@
+Calculation: Buy zone = confirmed swing-low price ± ATR padding at the pivot bar; if an equal low exists within the equal-level lookback and ATR tolerance, expand the zone to include that low ± the same padding. Keep only zones passing the strength threshold and not overlapping or lying within the configured ATR distance of an existing non-invalid buy zone.
+Calculation: Sell zone = confirmed swing-high price ± ATR padding at the pivot bar; if an equal high exists within the equal-level lookback and ATR tolerance, expand the zone to include that high ± the same padding. Keep only zones passing the strength threshold and not overlapping or lying within the configured ATR distance of an existing non-invalid sell zone.
+Long: an active buy zone exists AND low < its lower boundary AND close > its lower boundary
+Short: an active sell zone exists AND high > its upper boundary AND close < its upper boundary

@@ -1,0 +1,9 @@
+Calculation: Fast and slow EMAs = EMAs of chart close and reference-series close; the fast EMA uses a shorter lookback than the slow EMA.
+Calculation: Latest swing high/low = most recent high/low equal to the respective extreme across a window centered N bars earlier, with N bars on each side; update after the right-side bars complete.
+Calculation: Trend = persistent direction, initially neutral; becomes bullish when close > latest swing high and bearish when close < latest swing low.
+Calculation: Relative PnL = (close - entry price) / entry price × 100 for long positions; (entry price - close) / entry price × 100 for short positions.
+Calculation: Profit targets = entry price ± ATR × common scale factor × 1, 2, or 3; use plus for long and minus for short.
+Long: Chart fast EMA > chart slow EMA OR (chart fast EMA = chart slow EMA AND reference fast EMA < reference slow EMA), AND trend is bullish, AND RSI < overbought threshold, AND long-entry lockout is clear.
+Short: Chart fast EMA < chart slow EMA, AND reference fast EMA > reference slow EMA, AND trend is bearish, AND RSI > oversold threshold, AND short-entry lockout is clear.
+Exit: Long, relative PnL < stop-loss threshold AND short-entry condition is false OR trend is bearish OR high > any active long profit target OR previous bar had chart fast EMA >= chart slow EMA AND reference fast EMA >= reference slow EMA AND current bar does not, AND relative PnL > minimum-profit threshold AND no scale-out has occurred for this position.
+Exit: Short, relative PnL < stop-loss threshold AND long-entry condition is false OR trend is bullish OR low < any active short profit target OR previous bar had chart fast EMA < chart slow EMA AND reference fast EMA <= reference slow EMA AND current bar does not, AND relative PnL > minimum-profit threshold AND no scale-out has occurred for this position OR long-entry condition is true AND short-entry lockout is clear.

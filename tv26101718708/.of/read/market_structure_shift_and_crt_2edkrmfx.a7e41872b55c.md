@@ -1,0 +1,6 @@
+Calculation: Body pivot high = a confirmed pivot high of max(open, close), using the configured left and right bars
+Calculation: Body pivot low = a confirmed pivot low of min(open, close), using the configured left and right bars
+Calculation: Prior highs/lows = the configured number of preceding candles’ highs/lows on each enabled higher sweep timeframe
+Calculation: Sweep candle = the still-forming higher-timeframe candle when forming sweeps are enabled; otherwise the last completed higher-timeframe candle
+Long: Body pivot high > previous body pivot high OR body pivot low > previous body pivot low OR configured break price > latest confirmed body pivot high on either structure timeframe OR sweep candle low < a prior low AND min(sweep candle open, close) > that prior low OR bullish bias on both structure timeframes
+Short: Body pivot high < previous body pivot high OR body pivot low < previous body pivot low OR configured break price < latest confirmed body pivot low on either structure timeframe OR sweep candle high > a prior high AND max(sweep candle open, close) < that prior high OR bearish bias on both structure timeframes

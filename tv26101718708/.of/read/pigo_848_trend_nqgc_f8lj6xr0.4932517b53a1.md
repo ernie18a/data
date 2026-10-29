@@ -1,0 +1,3 @@
+Long: EMA(close, lookback) > EMA(close, lookback)[1] AND (flat-catching disabled OR Impulse)
+Short: EMA(close, lookback) < EMA(close, lookback)[1] AND (flat-catching disabled OR Impulse)
+Calculation: Impulse = (smoothed zero-lag EMA of hlc3 is above the smoothed high or below the smoothed low) AND (the same was true on the prior bar), where the smoothed high and low are SMMA(high, 34) and SMMA(low, 34), the smoothed zero-lag EMA uses length 34, and SMMA(x, n) = (prior SMMA × (n−1) + x) / n after its initial n-bar SMA; the zero-lag EMA is EMA(x, n) + EMA(x, n) − EMA(EMA(x, n), n).

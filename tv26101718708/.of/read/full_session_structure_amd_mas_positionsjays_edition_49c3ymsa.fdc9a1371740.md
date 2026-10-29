@@ -1,0 +1,2 @@
+Long: During the session and after the accumulation period, close > the previous bar’s session high AND no earlier long signal has occurred this session
+Short: During the session, close < the previous bar’s session low AND no earlier short signal has occurred this session

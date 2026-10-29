@@ -1,0 +1,6 @@
+Calculation: Sharpe ratio = (((OHLC4 − OHLC4[lookback]) / OHLC4) + dividend yield × (lookback / 252) − risk-free rate) / (standard deviation of OHLC4 over lookback / OHLC4)
+Calculation: Beta = correlation(asset return, benchmark return, beta lookback) × standard deviation(asset return, beta lookback) / standard deviation(benchmark return, beta lookback), where each return = (current close − prior close) / current close
+Calculation: Alpha = (current close − close alpha lookback bars ago) / current close − ((current benchmark close − benchmark close alpha lookback bars ago) / current benchmark close) × Beta
+Calculation: SR filter = ((close − close sr lookback bars ago) / close) / sum of the rolling standard deviation of that same close-change ratio over the sr lookback
+Long: close > open AND simple moving average of Sharpe ratio over the trigger lookback > 1 AND simple moving average of Alpha over the trigger lookback > alpha trigger AND SR filter > sr trigger
+Exit: long, simple moving average of Sharpe ratio over the trigger lookback < 1 OR simple moving average of Alpha over the trigger lookback < 0

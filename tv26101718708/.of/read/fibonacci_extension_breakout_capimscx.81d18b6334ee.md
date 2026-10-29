@@ -1,0 +1,2 @@
+Long: At the start of a new higher-timeframe bar, its still-forming close > the previous completed higher-timeframe bar's high AND its high > its low
+Short: At the start of a new higher-timeframe bar, its still-forming close < the previous completed higher-timeframe bar's low AND its high > its low

@@ -1,0 +1,5 @@
+Calculation: Signed volume delta = volume when close > open, −volume when close < open, otherwise 0
+Calculation: Smoothed delta strength = clamp((SMA of signed volume delta over a lookback × lookback) / max(1, absolute value of that product) × 100, −100, 100)
+Calculation: Selected level = the nearest price level at $0.50-per-gram increments, converting close to price per gram by dividing by 31.1035, rounding to the nearest $0.50, then multiplying by 31.1035
+Long: absolute value of close minus selected level ≤ close × proximity percentage / 100 AND smoothed delta strength > strength threshold AND prior bar smoothed delta strength ≤ strength threshold AND volume > SMA(volume, 20) × volume multiplier
+Short: absolute value of close minus selected level ≤ close × proximity percentage / 100 AND smoothed delta strength < −strength threshold AND prior bar smoothed delta strength ≥ −strength threshold AND volume > SMA(volume, 20) × volume multiplier

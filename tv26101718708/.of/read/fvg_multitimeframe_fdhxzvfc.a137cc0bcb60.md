@@ -1,0 +1,2 @@
+Long: On an enabled chart-timeframe bar (current bar, confirmed at its close) or higher-timeframe bar (last completed bar), the low of candle 3 > the high of candle 1
+Short: On an enabled chart-timeframe bar (current bar, confirmed at its close) or higher-timeframe bar (last completed bar), the high of candle 3 < the low of candle 1

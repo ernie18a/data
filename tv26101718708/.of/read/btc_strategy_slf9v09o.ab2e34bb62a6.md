@@ -1,0 +1,4 @@
+Calculation: price minus the simple moving average of OHLC4
+Long: datetime >= configured start datetime AND datetime <= configured end datetime AND (MACD histogram crosses above its configured threshold OR RSI crosses above its configured threshold) AND stochastic RSI < its configured upper threshold
+Short: datetime >= configured start datetime AND datetime <= configured end datetime AND (MACD histogram crosses below 0 OR (price minus the simple moving average of OHLC4 crosses below its configured threshold AND stochastic RSI > its configured upper threshold))
+Exit: long, (datetime >= configured start datetime AND datetime <= configured end datetime AND (MACD histogram crosses below 0 OR (price minus the simple moving average of OHLC4 crosses below its configured threshold AND stochastic RSI > its configured upper threshold))) OR low <= entry price × (1 − configured long stop-loss percentage)

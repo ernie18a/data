@@ -1,0 +1,8 @@
+Calculation: Opening-range high/low = highest high/lowest low during the configured opening-range interval; the range is ready after that interval when both values exist and high > low
+Calculation: Anchored VWAP = cumulative sum of (high + low + close) / 3 × volume since the configured range start, divided by cumulative volume since that start
+Calculation: Long stop/target = if stop mode is ATR, entry price − ATR × multiplier / entry price + (entry price − stop) × target multiple; otherwise, opening-range low / entry price + (entry price − opening-range low) × target multiple
+Calculation: Short stop/target = if stop mode is ATR, entry price + ATR × multiplier / entry price − (stop − entry price) × target multiple; otherwise, opening-range high / entry price − (opening-range high − entry price) × target multiple
+Long: range ready AND before configured last-entry time AND (one-trade-per-session is disabled OR no trade has occurred this session) AND flat AND no breakout direction is set AND longs are allowed AND close > opening-range high OR an upside breakout direction was set on an earlier bar AND low <= anchored VWAP AND close > anchored VWAP AND close > open AND low > opening-range low
+Short: range ready AND before configured last-entry time AND (one-trade-per-session is disabled OR no trade has occurred this session) AND flat AND no breakout direction is set AND shorts are allowed AND close < opening-range low OR a downside breakout direction was set on an earlier bar AND high >= anchored VWAP AND close < anchored VWAP AND close < open AND high < opening-range high
+Exit: Long, low <= long stop OR high >= long target
+Exit: Short, high >= short stop OR low <= short target

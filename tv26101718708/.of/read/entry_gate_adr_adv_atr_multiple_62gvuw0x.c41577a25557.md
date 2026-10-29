@@ -1,0 +1,2 @@
+Calculation: ATR multiple = ((close − simple moving average of close) / simple moving average of close) × 100, divided by (average true range / close) × 100, using daily bars; daily is higher or lower than the chart timeframe depending on the chart, and the current daily bar is used while forming
+Exit: long, ATR multiple > warning threshold

@@ -1,0 +1,3 @@
+Calculation: NY cash VWAP = cumulative sum of ((high + low + close) / 3 × volume) divided by cumulative volume, reset at 9:30 a.m. New York time each day; calculated from lower-timeframe bars available within the current chart bar, including the bar still forming
+Long: Close[2] <= NY cash VWAP[2] AND Close[1] > NY cash VWAP[1] AND Close[1] > Open[1] AND Close > Open
+Short: Close[2] >= NY cash VWAP[2] AND Close[1] < NY cash VWAP[1] AND Close[1] < Open[1] AND Close < Open

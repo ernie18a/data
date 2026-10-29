@@ -1,0 +1,6 @@
+Calculation: Session VWAP = cumulative ((high + low + close) / 3 × volume) / cumulative volume during the current market session; reset at the start of each market session.
+Calculation: Daily pivot levels use the last completed bar of a timeframe higher than the chart timeframe: P=(prior high+prior low+prior close)/3; R1=2P−prior low; R2=P+(prior high−prior low); R3=prior high+2(P−prior low); S1=2P−prior high; S2=P−(prior high−prior low); S3=prior low−2(prior high−P); R4=R3+(R1−S1); R5=R4+(R1−S1); S4=S3−(R1−S1); S5=S4−(R1−S1).
+Long: Current bar time is 09:30–14:00 and fewer than 2 entries have been made today AND, for any daily pivot level P, low < P AND low < session VWAP AND close > P AND close > session VWAP AND position is flat.
+Short: Current bar time is 09:30–14:00 and fewer than 2 entries have been made today AND, for any daily pivot level P, high > P AND high > session VWAP AND close < P AND close < session VWAP AND position is flat.
+Exit: Long, session VWAP is available and the close is below session VWAP on this bar and the immediately preceding bar.
+Exit: Short, session VWAP is available and the close is above session VWAP on this bar and the immediately preceding bar.

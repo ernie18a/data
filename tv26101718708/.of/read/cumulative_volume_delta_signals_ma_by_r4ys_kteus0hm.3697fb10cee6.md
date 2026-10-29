@@ -1,0 +1,3 @@
+Calculation: Signed volume delta = for each lower-timeframe bar within the chart bar, assign +volume if close > open or, when close = open, if close > the previous lower-timeframe close; assign −volume if close < open or, when close = open, if close < the previous lower-timeframe close; otherwise retain the previous direction (initially +). Sum the signed volumes. Use completed lower-timeframe bars available at the chart bar’s close.
+Long: Signed volume delta ≥ 0 AND absolute signed volume delta > its chart-timeframe simple moving average × configured threshold percentage / 100
+Short: Signed volume delta < 0 AND absolute signed volume delta > its chart-timeframe simple moving average × configured threshold percentage / 100

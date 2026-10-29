@@ -1,0 +1,12 @@
+Calculation: Stoch RSI K = RSI of close, normalized to 0–100 within its lookback range, then smoothed with a shorter moving average
+Calculation: Stoch RSI D = moving average of Stoch RSI K, using a shorter lookback than the RSI and normalization lookbacks
+Calculation: Bullish RSI divergence = the latest two confirmed pivot lows have a lower low in price and a higher low in RSI; the latest pivot is within the scan lookback
+Calculation: Bearish RSI divergence = the latest two confirmed pivot highs have a higher high in price and a lower high in RSI; the latest pivot is within the scan lookback
+Long: faster EMA > medium EMA AND Stoch RSI K crosses above Stoch RSI D AND the lower of K and D <= oversold threshold
+Long: faster EMA > medium EMA AND faster EMA > slower EMA AND medium EMA > slower EMA AND MACD line crosses above signal line AND both MACD line and signal line < 0 AND RSI > floating level AND bullish RSI divergence
+Long: (faster EMA > medium EMA AND (Stoch RSI K crosses above Stoch RSI D AND the lower of K and D <= oversold threshold OR faster EMA > slower EMA AND medium EMA > slower EMA AND MACD line crosses above signal line AND both MACD line and signal line < 0 AND RSI > floating level AND bullish RSI divergence)) AND within configured session AND daily closed profit is below its target and above its loss limit AND position is flat or short AND no short signal
+Short: faster EMA < medium EMA AND Stoch RSI K crosses below Stoch RSI D AND the higher of K and D >= overbought threshold
+Short: faster EMA < medium EMA AND faster EMA < slower EMA AND medium EMA < slower EMA AND MACD line crosses below signal line AND both MACD line and signal line > 0 AND RSI < floating level AND bearish RSI divergence
+Short: (faster EMA < medium EMA AND (Stoch RSI K crosses below Stoch RSI D AND the higher of K and D >= overbought threshold OR faster EMA < slower EMA AND medium EMA < slower EMA AND MACD line crosses below signal line AND both MACD line and signal line > 0 AND RSI < floating level AND bearish RSI divergence)) AND within configured session AND daily closed profit is below its target and above its loss limit AND position is flat or long AND no long signal
+Exit: long, close <= entry price minus stop distance OR close >= entry price plus target distance
+Exit: short, close >= entry price plus stop distance OR close <= entry price minus target distance

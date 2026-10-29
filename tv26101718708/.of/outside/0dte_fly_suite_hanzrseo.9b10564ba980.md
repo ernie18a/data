@@ -1,0 +1,1 @@
+For open iron flies under a Theta Fly Trap preset, exit when the underlying crosses either breakeven. If VIX rises by the configured breaker amount from the session open, exit all positions and stop entries for the day. Skip entries on FOMC days; Iron Squadron also skips CPI, NFP, OpEx, and other flagged event days.

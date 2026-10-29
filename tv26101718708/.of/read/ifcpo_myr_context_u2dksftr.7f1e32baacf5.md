@@ -1,0 +1,4 @@
+Calculation: USDMYR deviation = percentage difference between the confirmed higher-timeframe USDMYR close and its simple moving average, using the same lookback as the correlation; use the last completed higher-timeframe bar
+Calculation: FCPO–USDMYR correlation = Pearson correlation between confirmed higher-timeframe FCPO and USDMYR closes over that same lookback; use the last completed higher-timeframe bars
+Long: USDMYR deviation > positive bias threshold AND absolute FCPO–USDMYR correlation >= strong-correlation threshold
+Short: USDMYR deviation < negative bias threshold AND absolute FCPO–USDMYR correlation >= strong-correlation threshold

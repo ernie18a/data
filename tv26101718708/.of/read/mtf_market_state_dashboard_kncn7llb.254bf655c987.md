@@ -1,0 +1,7 @@
+Calculation: Trend score = +1 if close > long-lookback EMA, otherwise −1, plus +1 if close > short-lookback EMA, otherwise −1, plus +1 if close > Supertrend line, otherwise −1; the long EMA lookback is longer than the short EMA lookback. Evaluate separately on each selected timeframe, which may be higher or lower than the chart timeframe; use the last completed bar for a higher timeframe.
+Calculation: CDV state = 0 if the absolute change in cumulative candle-direction volume is ≤ the neutral multiplier × its average absolute change over the lookback; otherwise +1 if that change is positive, or −1 if negative. Candle-direction volume is +volume when close > prior close, −volume when close < prior close, and 0 when equal; CDV is its cumulative sum.
+Calculation: OBV breakout state = +1 if OBV exceeds its highest value over the prior lookback bars, −1 if it is below its lowest value over the prior lookback bars, and 0 otherwise; OBV cumulatively adds volume when close rises and subtracts volume when close falls, with no change when equal.
+Calculation: Participation score = +1 if CMF > 0, −1 if CMF < 0, or 0 if CMF = 0, plus CDV state plus OBV breakout state.
+Calculation: Total score = Trend score + Participation score.
+Long: Trend score ≥ 2 AND Total score > 0
+Short: Trend score ≤ −2 AND Total score < 0

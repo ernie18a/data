@@ -1,0 +1,3 @@
+Long: close > EMA(close) AND Supertrend is bullish (direction = 1) AND 14 <= hour(datetime) <= 19 AND volume > SMA(volume) AND abs(close - EMA(close)) / EMA(close) > buffer AND ATR > SMA(ATR) AND no exit has occurred within the cooldown lookback
+Exit: long, close >= entry price + ATR * target AND bars held >= minimum hold
+Exit: long, after the partial exit, price reaches entry price + ATR * trail offset AND price <= highest price since activation - ATR * trail offset

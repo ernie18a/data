@@ -1,0 +1,7 @@
+Calculation: Dragon trend = ATR trailing-band trend that turns upward when close crosses above the prior upper band and downward when close crosses below the prior lower band; otherwise it retains its prior direction.
+Calculation: Directional bias = sum of directional votes for Dragon trend, long-term EMA vs. shorter-term EMA, shorter-term EMA vs. mid-term EMA, linear-regression slope, +DI vs. −DI, RSI level, and (when volume exceeds its moving average) candle direction; score = 50 + half the absolute bias, bounded to 0–100; forecast direction is up when bias is nonnegative, down otherwise.
+Calculation: Choppy = ADX is below its threshold OR the recent high-low range is small relative to ATR OR the long-term and shorter-term EMA separation is small relative to ATR.
+Long: shorter-term EMA crosses above main EMA
+Long: forecast direction is up AND Dragon trend is up AND shorter-term EMA > mid-term EMA AND close > main EMA AND score >= entry threshold AND NOT Choppy AND (every-signal mode OR setup was false on the prior bar)
+Short: shorter-term EMA crosses below main EMA
+Short: forecast direction is down AND Dragon trend is down AND shorter-term EMA < mid-term EMA AND close < main EMA AND score >= entry threshold AND NOT Choppy AND (every-signal mode OR setup was false on the prior bar)

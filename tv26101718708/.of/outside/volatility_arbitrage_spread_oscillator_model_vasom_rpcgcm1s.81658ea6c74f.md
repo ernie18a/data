@@ -1,0 +1,1 @@
+Calculate an RSI on the difference between the front-month and second-month VIX futures closing prices. Go long the traded instrument when the RSI is below its entry threshold, and exit that long when the RSI is above its exit threshold. No short or options decisions are specified.

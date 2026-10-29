@@ -1,0 +1,5 @@
+Calculation: Upper regression-channel boundary = linear regression of close over a chart-timeframe lookback + standard deviation of close over that same lookback × channel-width multiplier; use the current confirmed bar.
+Calculation: Lower regression-channel boundary = linear regression of close over a chart-timeframe lookback − standard deviation of close over that same lookback × channel-width multiplier; use the current confirmed bar.
+Calculation: Average volume = simple moving average of volume over a chart-timeframe lookback; use the current confirmed bar.
+Long: close crosses above the upper regression-channel boundary AND (volume confirmation is disabled OR volume ≥ average volume × volume multiplier)
+Short: close crosses below the lower regression-channel boundary AND (volume confirmation is disabled OR volume ≥ average volume × volume multiplier)

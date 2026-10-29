@@ -1,0 +1,2 @@
+Long: On each displayed NQ timeframe, previous completed bar close > previous completed bar Twin Range Filter
+Short: On each displayed NQ timeframe, previous completed bar close <= previous completed bar Twin Range Filter

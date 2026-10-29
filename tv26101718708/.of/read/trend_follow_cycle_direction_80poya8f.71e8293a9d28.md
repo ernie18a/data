@@ -1,0 +1,7 @@
+Calculation: Bullish zone = short-lookback RSI > longer-lookback RSI AND MACD > its signal line AND (RSI < 30 AND MACD < 0 OR RSI >= 30)
+Calculation: Bearish zone = short-lookback RSI < longer-lookback RSI AND MACD < its signal line AND (RSI >= 70 AND MACD > 0 OR RSI < 70)
+Long: Bullish zone on chart timeframe differs from the previous non-neutral bullish or bearish zone on chart timeframe AND bullish zone on higher timeframe (use its last completed bar)
+Long: Short-lookback RSI crosses above longer-lookback RSI AND MACD crosses above its signal line on a lower timeframe (use its last completed bar) AND chart close > VWAP on that lower timeframe
+Short: Bearish zone on chart timeframe differs from the previous non-neutral bullish or bearish zone on chart timeframe AND bearish zone on higher timeframe (use its last completed bar)
+Short: Short-lookback RSI crosses below longer-lookback RSI AND MACD crosses below its signal line on a lower timeframe (use its last completed bar) AND chart close < VWAP on that lower timeframe
+Exit: Long, short-lookback RSI < longer-lookback RSI AND MACD crosses below its signal line on a lower timeframe (use its last completed bar) AND short-lookback RSI < 50 AND lower-timeframe close < VWAP on that lower timeframe

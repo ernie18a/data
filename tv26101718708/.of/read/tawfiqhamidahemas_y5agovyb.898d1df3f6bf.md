@@ -1,0 +1,4 @@
+Calculation: Accelerator Oscillator = (short-lookback SMA of (high + low) / 2 − long-lookback SMA of (high + low) / 2) − short-lookback SMA of that difference
+Calculation: Percentage distance from long-term EMA = (close − long-term EMA) / long-term EMA
+Long: Fastest EMA > next-fastest EMA AND prior fastest EMA ≤ prior next-fastest EMA AND fastest-to-slowest short-term EMAs are strictly ordered descending AND close > long-term EMA AND MFI > its midpoint AND Accelerator Oscillator > its prior value AND percentage distance from long-term EMA ≤ upper distance limit
+Short: Fastest EMA < next-fastest EMA AND prior fastest EMA ≥ prior next-fastest EMA AND fastest-to-slowest short-term EMAs are strictly ordered ascending AND close < long-term EMA AND MFI ≤ its midpoint AND Accelerator Oscillator < its prior value AND percentage distance from long-term EMA ≥ lower distance limit

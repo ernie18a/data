@@ -1,0 +1,3 @@
+Calculation: Anchored VWAP bands = volume-weighted average price and its 1SD bands since the selected anchor; 2SD bands are twice the 1SD distance from VWAP. Hysteresis buffer = selected percentage of the 1SD distance. Price zone starts at Mid-Band. On each bar, in order, set it to Upper Extreme if close > +2SD + buffer; Upper Bias if close > +1SD + buffer AND close < +2SD - buffer; Mid-Band if close > -1SD + buffer AND close < +1SD - buffer; Lower Bias if close > -2SD + buffer AND close < -1SD - buffer; Lower Extreme if close < -2SD - buffer. Otherwise retain the previous zone.
+Long: Price zone = Upper Bias OR Upper Extreme
+Short: Price zone = Lower Bias OR Lower Extreme

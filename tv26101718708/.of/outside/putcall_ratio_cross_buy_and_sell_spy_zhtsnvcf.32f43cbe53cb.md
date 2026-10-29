@@ -1,0 +1,1 @@
+On put/call ratio data, go long the traded instrument when the shorter-term simple moving average crosses above the longer-term simple moving average; go short when it crosses below. Each signal reverses the position.

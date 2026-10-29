@@ -1,0 +1,4 @@
+Long: Current short-term EMA > current long-term EMA AND previous chart bar’s short-term EMA ≤ its long-term EMA AND current volume > a volume threshold × the arithmetic mean volume of the five immediately preceding completed chart bars AND current close > current short-term EMA
+Short: Current short-term EMA < current long-term EMA AND previous chart bar’s short-term EMA ≥ its long-term EMA AND current volume > a volume threshold × the arithmetic mean volume of the five immediately preceding completed chart bars AND current close < current short-term EMA
+Exit: long, current close < current short-term EMA
+Exit: short, current close > current short-term EMA

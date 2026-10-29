@@ -1,0 +1,12 @@
+Calculation: Return = percentage change in an asset’s close over a lookback; calculate fast, medium, and slow returns with progressively longer lookbacks.
+Calculation: Acceleration = current fast return minus its value at a shorter lookback ago.
+Calculation: Relative rank score = 100 if an asset’s metric exceeds both other assets’ metrics, 0 if it is below both, otherwise 50.
+Calculation: RSI quality = a piecewise score that rises from oversold toward healthy momentum, then declines as RSI becomes overbought; beyond the overbought threshold it declines faster, bounded at zero and its score at the threshold.
+Calculation: Trend quality = highest when close > fast EMA > slow EMA; next when close > slow EMA; next when fast EMA > slow EMA; otherwise lowest. The fast EMA uses a shorter length than the slow EMA.
+Calculation: Volume quality = clamp((volume / average volume − lower volume ratio) / volume ratio range, 0, 100) when fast return ≥ 0; otherwise 100 minus that value. Average volume uses a lookback.
+Calculation: Exhaustion penalty = maximum penalty times the greater of the normalized RSI excess above its overbought threshold and normalized close extension above the slow EMA beyond its maximum extension; each is clamped to 0–1. Penalty can be disabled.
+Calculation: Asset score = clamp(weighted average of fast, medium, and slow relative rank scores, acceleration relative rank score, RSI quality, trend quality, and volume quality, minus exhaustion penalty, 0, 100). Weights are configurable.
+Calculation: Leader = asset with the highest score, resolving ties in the order BTC, ETH, then SOL. Leader score = its score. Cash regime = enabled and leader score below the cash threshold and every tracked asset’s close below its slow EMA.
+Calculation: Destination = Cash in a cash regime; otherwise the leader. Holding score = the score of the current holding, or zero if holding is Cash. Destination advantage = cash threshold minus leader score when destination is Cash; otherwise leader score minus holding score.
+Long: Destination is BTC, ETH, or SOL AND destination differs from current holding AND leader score ≥ minimum leader score AND destination advantage ≥ minimum score advantage AND cooldown has elapsed since the prior signal AND, if close confirmation is enabled, the chart bar is confirmed.
+Exit: Long, destination is Cash AND destination differs from current holding AND cash regime AND cooldown has elapsed since the prior signal AND, if close confirmation is enabled, the chart bar is confirmed.

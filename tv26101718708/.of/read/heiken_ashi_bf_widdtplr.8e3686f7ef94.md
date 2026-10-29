@@ -1,0 +1,5 @@
+Calculation: Smoothed rate of change = EMA of the percent change in close over a longer lookback, using a shorter EMA lookback.
+Long: Daily Heikin-Ashi close > open (daily timeframe higher than the chart timeframe, bar still forming) AND (smoothed rate of change > half the threshold OR smoothed rate of change < negative half the threshold)
+Short: Daily Heikin-Ashi close < open (daily timeframe higher than the chart timeframe, bar still forming) AND (smoothed rate of change > half the threshold OR smoothed rate of change < negative half the threshold)
+Exit: Long, after the entry bar, (long signal state AND low <= entry price × (1 − stop percentage)) OR high >= entry price × (1 + take-profit percentage)
+Exit: Short, after the entry bar, (short signal state AND high >= entry price × (1 + stop percentage)) OR low <= entry price × (1 − take-profit percentage)

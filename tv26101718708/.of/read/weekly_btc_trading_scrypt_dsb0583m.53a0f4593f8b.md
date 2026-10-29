@@ -1,0 +1,2 @@
+Long: higher-timeframe close crosses above its simple moving average, calculated from higher-timeframe closes
+Exit: long, higher-timeframe close crosses below its simple moving average OR, after that crossunder activates the exit orders, price reaches the configured loss or reward level relative to entry price

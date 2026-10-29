@@ -1,0 +1,5 @@
+Calculation: Quartile levels = highest high and lowest low over the lookback; levels are highest high, highest high minus 25% of the range, midpoint, lowest low plus 25% of the range, and lowest low.
+Calculation: Intrabar net delta = sum of lower-timeframe volume, positive when close is at least open and negative otherwise, over intrabars available within the current chart bar, including a still-forming intrabar if available. If no lower-timeframe intrabars are available, use chart-bar volume with the same sign rule.
+Calculation: Intrabar POC price = the HLC3 of the lower-timeframe intrabar with the greatest volume within the current chart bar; if no lower-timeframe intrabars are available, use chart-bar HLC3.
+Long: Current bar's high-low range contains any quartile level AND intrabar net delta > 0 AND intrabar POC price is available.
+Short: Current bar's high-low range contains any quartile level AND intrabar net delta <= 0 AND intrabar POC price is available.

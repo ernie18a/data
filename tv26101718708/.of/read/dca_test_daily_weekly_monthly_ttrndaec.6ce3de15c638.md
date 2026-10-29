@@ -1,0 +1,2 @@
+Long: timestamp >= configured start date AND timestamp <= configured end date AND (zero-amount skipping is disabled OR amount per buy > 0) AND a new calendar day begins AND (selected frequency is daily OR (selected frequency is weekly AND weekday = selected weekday) OR (selected frequency is monthly AND day of month = selected day)
+Exit: long, (end-date flattening is enabled AND previous timestamp < configured end date AND current timestamp >= configured end date) OR (last-bar flattening is enabled AND current bar is the final available bar)

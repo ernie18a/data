@@ -1,0 +1,4 @@
+Calculation: Confirmed swing high = a bar’s high is greater than the highs of the specified number of bars before and after it; available after those later bars complete.
+Calculation: Confirmed swing low = a bar’s low is lower than the lows of the specified number of bars before and after it; available after those later bars complete.
+Long: low < most recently confirmed swing low AND close > most recently confirmed swing low AND volume > simple moving average of volume (including the current bar) × volume multiplier AND no prior long signal OR current bar index − prior long signal bar index > cooldown
+Short: high > most recently confirmed swing high AND close < most recently confirmed swing high AND volume > simple moving average of volume (including the current bar) × volume multiplier AND no prior short signal OR current bar index − prior short signal bar index > cooldown

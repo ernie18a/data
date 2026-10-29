@@ -1,0 +1,2 @@
+Long: close > previous bar high AND volume > SMA(volume) × volume multiplier AND RSI(close) < lower RSI threshold
+Short: close < previous bar low AND volume > SMA(volume) × volume multiplier AND RSI(close) > upper RSI threshold

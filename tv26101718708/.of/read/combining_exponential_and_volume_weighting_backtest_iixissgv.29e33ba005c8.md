@@ -1,0 +1,3 @@
+Calculation: Exponential volume-weighted average price = EMA(close × volume, lookback) / EMA(volume, lookback)
+Long: (reverse disabled AND exponential volume-weighted average price < previous bar close) OR (reverse enabled AND exponential volume-weighted average price > previous bar close)
+Short: (reverse disabled AND exponential volume-weighted average price > previous bar close) OR (reverse enabled AND exponential volume-weighted average price < previous bar close)

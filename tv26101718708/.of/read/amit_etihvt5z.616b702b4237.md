@@ -1,0 +1,7 @@
+Calculation: Confirmed swing high/low = a chart-timeframe pivot high/low confirmed after equal left and right lookbacks; retain the latest confirmed pivot of each type.
+Calculation: Market structure = initialize neutral; while neutral, set bullish when close > latest confirmed swing high, otherwise set bearish when close < latest confirmed swing low. Thereafter retain the direction until close breaks the opposite latest confirmed swing; then switch direction.
+Calculation: Higher-timeframe trend = compare the short-lookback EMA of close with the longer-lookback EMA of close, both calculated on the higher timeframe using its last completed bar.
+Long: close < latest confirmed swing low AND market structure was bullish before this bar AND short-lookback higher-timeframe EMA > longer-lookback higher-timeframe EMA AND datetime is within the enabled entry session AND position is flat
+Short: close > latest confirmed swing high AND market structure was bearish before this bar AND short-lookback higher-timeframe EMA < longer-lookback higher-timeframe EMA AND datetime is within the enabled entry session AND position is flat
+Exit: long, low <= entry price - fixed stop distance OR high >= entry price + fixed target distance
+Exit: short, high >= entry price + fixed stop distance OR low <= entry price - fixed target distance

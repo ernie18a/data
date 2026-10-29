@@ -1,0 +1,3 @@
+Calculation: Bull% = 100 × (sum of volume on bars where close > open + 0.5 × volume on bars where close = open) / sum of volume over the delta lookback
+Long: fast EMA > slow EMA AND Bull% > bull threshold AND (fast EMA > its prior-bar value if the fast-EMA slope requirement is enabled)
+Short: fast EMA < slow EMA AND Bull% < bear threshold AND (fast EMA < its prior-bar value if the fast-EMA slope requirement is enabled)

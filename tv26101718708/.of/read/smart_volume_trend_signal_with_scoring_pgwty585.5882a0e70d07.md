@@ -1,0 +1,2 @@
+Long: volume > configured multiple of average volume over its lookback AND close > EMA(close) AND close > highest high over the prior lookback bars, excluding the current bar AND RSI(close) > configured RSI threshold AND elapsed chart bars since the previous long signal > configured cooldown
+Exit: long, lowest low since entry <= entry price × (1 − configured stop-loss fraction) OR elapsed chart bars since entry >= configured trade duration

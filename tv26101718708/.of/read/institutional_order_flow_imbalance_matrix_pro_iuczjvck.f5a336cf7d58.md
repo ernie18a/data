@@ -1,0 +1,3 @@
+Calculation: ATR trailing trend state = initialize bullish with stop at close − ATR × multiplier; while bullish, flip bearish if close < prior stop and set stop to close + ATR × multiplier, otherwise keep bullish and set stop to max(prior stop, close − ATR × multiplier); while bearish, flip bullish if close > prior stop and set stop to close − ATR × multiplier, otherwise keep bearish and set stop to min(prior stop, close + ATR × multiplier)
+Long: ATR trailing trend state is bullish OR current low > high two bars ago AND current volume > 20-bar simple moving average of volume × volume-spike factor
+Short: ATR trailing trend state is bearish OR current high < low two bars ago AND current volume > 20-bar simple moving average of volume × volume-spike factor

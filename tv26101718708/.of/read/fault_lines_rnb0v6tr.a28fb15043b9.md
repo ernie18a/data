@@ -1,0 +1,3 @@
+Calculation: Fault levels = confirmed pivot highs and lows, each higher or lower than the highs or lows of an equal configurable number of bars on both sides; levels become available after the bars on the right complete. Merge nearby levels on the same side within a configurable ATR distance, retaining the more extreme price.
+Long: Lower fault is unruptured AND (Low < fault level AND Close >= fault level AND fault has not previously been swept OR Close < fault level)
+Short: Upper fault is unruptured AND (High > fault level AND Close <= fault level AND fault has not previously been swept OR Close > fault level)

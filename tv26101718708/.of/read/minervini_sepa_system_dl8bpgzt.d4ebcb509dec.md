@@ -1,0 +1,7 @@
+Calculation: Stage 2 = close > intermediate- and long-term SMAs AND intermediate-term SMA > long-term SMA AND long-term SMA > its value at an earlier bar AND short-term SMA > intermediate- and long-term SMAs AND close > short-term SMA AND close is at least the required percentage above the 52-week low AND within the allowed percentage below the 52-week high AND relative-strength rating versus SPY meets its minimum threshold; the short-term SMA uses a shorter lookback than the intermediate-term SMA, which uses a shorter lookback than the long-term SMA
+Calculation: Relative-strength rating = rank of the instrument’s price performance relative to SPY over the past year
+Calculation: Last confirmed pivot high = latest high that exceeds the highs over equal lookback windows before and after it
+Calculation: Stop-loss level = a level just below the lowest low of the final VCP contraction
+Calculation: Profit target = entry price increased by the specified gain percentage
+Long: Stage 2 AND close > last confirmed pivot high AND previous close <= that pivot high AND volume > its longer-lookback average multiplied by the required surge factor
+Exit: long, close < stop-loss level OR close >= profit target

@@ -1,0 +1,3 @@
+Calculation: Daily CPR = From the previous completed higher-timeframe daily bar, pivot = (high + low + close) / 3, bottom = (high + low) / 2, and top = 2 × pivot − bottom; lower and upper boundaries are the lesser and greater of bottom and top.
+Long: Current still-forming higher-timeframe daily close > upper Daily CPR boundary
+Short: Current still-forming higher-timeframe daily close < lower Daily CPR boundary

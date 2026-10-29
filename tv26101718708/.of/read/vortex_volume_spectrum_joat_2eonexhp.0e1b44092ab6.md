@@ -1,0 +1,2 @@
+Long: A pivot low is confirmed using the same lookback of n chart bars on each side, the chart has at least 3 × n bars, and the prior swing direction is not up
+Short: A pivot high is confirmed using the same lookback of n chart bars on each side, the chart has at least 3 × n bars, and the prior swing direction is not down

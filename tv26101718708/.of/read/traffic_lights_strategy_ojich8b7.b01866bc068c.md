@@ -1,0 +1,8 @@
+Calculation: Long take-profit price = entry price × (1 + target percentage)
+Calculation: Short take-profit price = entry price × (1 − target percentage)
+Calculation: Long trailing-stop price = the highest of the prior stop price and current chart-timeframe low − ATR × stop multiplier; reset when not long
+Calculation: Short trailing-stop price = the lowest of the prior stop price and current chart-timeframe high + ATR × stop multiplier; reset when not short
+Long: flat position AND datetime > configured start time AND chart-timeframe short EMA > chart-timeframe medium EMA > chart-timeframe long EMA AND chart-timeframe short EMA > higher-timeframe EMA of close (last completed higher-timeframe bar) AND (short EMA crosses above medium EMA OR medium EMA crosses above long EMA OR long EMA crosses above higher-timeframe EMA)
+Short: flat position AND datetime > configured start time AND chart-timeframe short EMA < chart-timeframe medium EMA < chart-timeframe long EMA AND chart-timeframe short EMA < higher-timeframe EMA of close (last completed higher-timeframe bar) AND (short EMA crosses below medium EMA OR medium EMA crosses below long EMA OR long EMA crosses below higher-timeframe EMA)
+Exit: long, short EMA crosses below medium EMA OR high >= long take-profit price OR low <= long trailing-stop price OR (fixed stop enabled AND low <= entry price × (1 − stop percentage))
+Exit: short, short EMA crosses above medium EMA OR low <= short take-profit price OR high >= short trailing-stop price OR (fixed stop enabled AND high >= entry price × (1 + stop percentage))

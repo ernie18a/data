@@ -1,0 +1,6 @@
+Calculation: Hybrid = RSI of close × RSI weight + smoothed stochastic × (1 − RSI weight), where smoothed stochastic is the simple moving average of 100 × (close − lowest low over the stochastic lookback) ÷ (highest high over the same lookback − lowest low); use 50 when highest high equals lowest low
+Calculation: Signal line = selected moving average of Hybrid, optionally smoothed with an EMA
+Calculation: Hybrid 2 = Hybrid calculated on a higher timeframe using that timeframe’s last completed bar, then smoothed on the chart timeframe
+Calculation: Hybrid 3 = Hybrid calculated on a higher timeframe using that timeframe’s last completed bar, then smoothed on the chart timeframe
+Long: Hybrid 1 > Signal line 1 AND previous Hybrid 1 ≤ previous Signal line 1 OR Hybrid 2 > Signal line 2 AND previous Hybrid 2 ≤ previous Signal line 2 OR Hybrid 3 > Signal line 3 AND previous Hybrid 3 ≤ previous Signal line 3
+Short: Hybrid 1 < Signal line 1 AND previous Hybrid 1 ≥ previous Signal line 1 OR Hybrid 2 < Signal line 2 AND previous Hybrid 2 ≥ previous Signal line 2 OR Hybrid 3 < Signal line 3 AND previous Hybrid 3 ≥ previous Signal line 3

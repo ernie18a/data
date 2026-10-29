@@ -1,0 +1,3 @@
+Calculation: Historical high/low liquidity level = the high/low of a completed chart-timeframe bar or, when using a higher timeframe, the last completed higher-timeframe bar; retain until touched or removed by the historical lookback limit
+Long: A historical high or low liquidity level is touched (bar high ≥ high level OR bar low ≤ low level) AND close > level
+Short: A historical high or low liquidity level is touched (bar high ≥ high level OR bar low ≤ low level) AND close < level

@@ -1,0 +1,4 @@
+Calculation: Confirmed pivot high = a bar whose high is the highest in a window of N bars before and N bars after it, detected after those bars are complete on an equal or higher timeframe than the chart; use the last completed higher-timeframe bar. Each source timeframe has its own pivot-strength parameter.
+Calculation: Confirmed pivot low = a bar whose low is the lowest in a window of N bars before and N bars after it, detected after those bars are complete on an equal or higher timeframe than the chart; use the last completed higher-timeframe bar. Each source timeframe has its own pivot-strength parameter.
+Long: A confirmed pivot low is detected.
+Short: A confirmed pivot high is detected.

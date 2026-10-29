@@ -1,0 +1,9 @@
+Calculation: Premarket high = highest high so far in the configured premarket session for the current day, carried forward after that session
+Calculation: Upper Bollinger Band = moving average of close plus the configured multiple of close’s rolling standard deviation
+Calculation: Lower Bollinger Band = moving average of close minus the configured multiple of close’s rolling standard deviation
+Calculation: Twice-standard-deviation threshold = configured multiple of close’s rolling standard deviation
+Calculation: VFI = sum over the configured lookback of signed, volume-weighted typical-price changes, divided by the prior bar’s average volume over that lookback; cap each bar’s volume at the configured multiple of that average, and count a change only when it exceeds a volatility-scaled cutoff
+Calculation: VFI signal = EMA of VFI over a shorter lookback
+Calculation: SAR = parabolic stop-and-reverse
+Long: datetime is within the configured trading session AND close two bars ago > current day’s premarket high AND (more than the configured number of bars have elapsed since the most recent exit condition OR (close > the moving average of close AND close < the twice-standard-deviation threshold)) AND ( (close > upper Bollinger Band AND prior close <= prior upper Bollinger Band) OR (close three bars ago > current upper Bollinger Band AND close > the 20-bar EMA of close AND (VFI > 0 OR VFI signal > 0) AND (VFI < the configured upper threshold OR VFI signal < the configured upper threshold)) ) AND close is below the configured percentage limit relative to close four bars ago AND close is below the configured percentage limit relative to close three bars ago
+Exit: Long, (close < lower Bollinger Band AND prior close >= prior lower Bollinger Band) OR VFI > the configured threshold OR VFI signal > the configured threshold OR (low < parabolic SAR AND close < the short-lookback simple moving average of close)

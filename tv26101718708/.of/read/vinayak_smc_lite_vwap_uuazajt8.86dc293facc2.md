@@ -1,0 +1,6 @@
+Calculation: Swing high = a bar whose high is greater than the highs of the preceding and following N bars; confirmed after N following bars.
+Calculation: Swing low = a bar whose low is less than the lows of the preceding and following N bars; confirmed after N following bars.
+Calculation: Swing label = compare a confirmed swing high or low with the previous confirmed swing of the same type; mark HH or HL when the value is greater than or equal to the previous swing, and LH or LL when it is lower.
+Calculation: Anchored VWAP = volume-weighted average of typical price (high + low + close) / 3 since the selected anchor period began.
+Long: swing label is HH OR swing label is HL OR (VWAP color mode is Directional and close > anchored VWAP) OR (VWAP color mode is Slope and anchored VWAP > its previous-bar value) OR close >= the top of an active supply zone.
+Short: swing label is LH OR swing label is LL OR (VWAP color mode is Directional and close <= anchored VWAP) OR (VWAP color mode is Slope and anchored VWAP <= its previous-bar value) OR close <= the bottom of an active demand zone.

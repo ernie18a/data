@@ -1,0 +1,2 @@
+Long: confirmed bullish three-bar fair value gap (current low > high two bars earlier), refined gap size meets the minimum-size threshold and, when enabled, the ATR-based displacement threshold, and no earlier qualifying gap has been marked in the eligible daily window
+Short: confirmed bearish three-bar fair value gap (current high < low two bars earlier), refined gap size meets the minimum-size threshold and, when enabled, the ATR-based displacement threshold, and no earlier qualifying gap has been marked in the eligible daily window

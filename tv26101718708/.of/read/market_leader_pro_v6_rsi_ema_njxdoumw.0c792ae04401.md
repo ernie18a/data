@@ -1,0 +1,4 @@
+Long: position is flat AND close > EMA(long-term) AND RSI > RSI threshold AND Supertrend direction changes from down to up AND close > highest high of the prior breakout lookback AND volume > volume moving average
+Short: position is flat AND close < EMA(long-term) AND RSI < RSI threshold AND Supertrend direction changes from up to down AND close < lowest low of the prior breakout lookback AND volume > volume moving average
+Exit: long, Supertrend direction changes from up to down OR high >= entry price × (1 + take-profit fraction) OR low <= entry price × (1 - stop-loss fraction)
+Exit: short, Supertrend direction changes from down to up OR low <= entry price × (1 - take-profit fraction) OR high >= entry price × (1 + stop-loss fraction)

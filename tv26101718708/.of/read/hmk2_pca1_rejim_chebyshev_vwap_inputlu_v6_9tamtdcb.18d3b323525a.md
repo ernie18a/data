@@ -1,0 +1,7 @@
+Calculation: PCA-1 = average of the rolling z-scores of RSI, MFI, and ROC; RSI and MFI use the same lookback, and ROC uses its own lookback. Each rolling z-score = (current value − rolling mean) / rolling standard deviation; use 0 when the standard deviation is 0.
+Calculation: Regime probability = EMA of 1 when ADX exceeds its threshold and 0 otherwise.
+Calculation: Chebyshev-valid return = return over its lookback is strictly between the rolling mean of returns minus the Chebyshev factor times their rolling standard deviation and that mean plus the factor times the standard deviation; the standard deviation must be greater than 0.
+Long: PCA-1 crosses above its positive threshold AND the EMA of close is rising AND regime probability > its threshold AND Chebyshev-valid return AND close >= VWAP AND position is flat or short.
+Short: PCA-1 crosses below its negative threshold AND the EMA of close is falling AND regime probability > its threshold AND Chebyshev-valid return AND close <= VWAP AND position is flat or long.
+Exit: long, low <= entry price − ATR × stop factor OR high >= entry price + ATR × target factor OR close crosses below VWAP OR PCA-1 crosses below zero.
+Exit: short, high >= entry price + ATR × stop factor OR low <= entry price − ATR × target factor OR close crosses above VWAP OR PCA-1 crosses above zero.

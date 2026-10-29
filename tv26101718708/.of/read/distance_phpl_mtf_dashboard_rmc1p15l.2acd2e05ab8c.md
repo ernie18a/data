@@ -1,0 +1,6 @@
+Calculation: Rolling period high = highest high over the configurable lookback; rolling period low = lowest low over the same lookback.
+Calculation: Distance from period low (%) = round(100 × (selected high source / rolling period low − 1), 2); selected high source is the bar high or close, according to the source setting.
+Calculation: Distance from period high (%) = −round(100 × (1 − selected low source / rolling period high), 2); selected low source is the bar low or close, according to the source setting.
+Calculation: Retracement ratio = 1 − round((close − rolling period low) / (rolling period high − rolling period low), 2), or round((close − rolling period low) / (rolling period high − rolling period low), 2) when retracement is reversed; use 0 when the period high equals the period low.
+Long: For any configured timeframe, distance from period low (%) > configurable buy threshold OR retracement ratio < 0.25
+Short: For any configured timeframe, distance from period high (%) > configurable sell threshold OR retracement ratio > 0.75

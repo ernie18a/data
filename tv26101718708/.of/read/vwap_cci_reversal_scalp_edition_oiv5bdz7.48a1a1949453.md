@@ -1,0 +1,6 @@
+Calculation: Daily VWAP standard-deviation bands = each day, volume-weighted mean and standard deviation of bar HLC3; ±2σ and ±3σ bands are the mean plus or minus two or three standard deviations.
+Calculation: CCI = standard CCI, EMA-smoothed with a shorter lookback than its CCI lookback.
+Calculation: Recent CCI extreme = CCI was below −120 (long) or above +120 (short) within a lookback ending on the current bar.
+Calculation: Chikou touch = within a lookback ending on the current bar, current close (or the segment between current and prior close) overlaps the high-low range of the bar shifted back by the Chikou shift, allowing the configured tick tolerance; on chart timeframes above 1 minute, evaluate this on 1-minute bars using the latest available bar, including one still forming.
+Long: CCI crosses above −100 AND low is between the lower 2σ band plus the configured buffer and the lower 3σ band minus the configured buffer AND recent CCI extreme is true AND close > open AND volume > its longer-lookback simple moving average AND Chikou touch is true
+Short: CCI crosses below +100 AND high is between the upper 2σ band minus the configured buffer and the upper 3σ band plus the configured buffer AND recent CCI extreme is true AND close < open AND volume > its longer-lookback simple moving average AND Chikou touch is true

@@ -1,0 +1,8 @@
+Calculation: Confirmed swing high/low = a high/low pivot with equal lookback bars on each side, available after the right-side bars complete.
+Calculation: Bullish structure = latest confirmed swing high > previous confirmed swing high AND latest confirmed swing low > previous confirmed swing low; bearish structure = latest confirmed swing high < previous confirmed swing high AND latest confirmed swing low < previous confirmed swing low.
+Calculation: Active bullish damage = bullish structure AND close < latest confirmed swing low − ATR × minimum damage buffer; retain that swing low as the rail and the damage bar’s low as the damage extreme. Active bearish damage = bearish structure AND close > latest confirmed swing high + ATR × minimum damage buffer; retain that swing high as the rail and the damage bar’s high as the damage extreme. A damage plan can start only when no plan is active, the prior plan failed or expired, or its age exceeds four timely-recovery windows.
+Calculation: ATR = average true range on chart bars. Recovery buffer = ATR × sensitivity-dependent recovery buffer. Risk edge = damage extreme − ATR × sensitivity-dependent risk-edge buffer for bullish damage; damage extreme + ATR × sensitivity-dependent risk-edge buffer for bearish damage.
+Long: active bullish damage AND not recovered, failed, or expired AND close > damaged rail + recovery buffer.
+Short: active bearish damage AND not recovered, failed, or expired AND close < damaged rail − recovery buffer.
+Exit: Long, recovered bullish plan AND close < risk edge.
+Exit: Short, recovered bearish plan AND close > risk edge.

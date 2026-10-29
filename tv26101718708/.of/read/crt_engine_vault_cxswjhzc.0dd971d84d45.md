@@ -1,0 +1,12 @@
+Long: Model 1 live sweep: chart-timeframe low < the previous completed higher-timeframe candle’s low AND chart-timeframe close > that low AND bias filter is not short-only
+Long: Model 2 confirmed sweep: higher-timeframe candle low < the previous completed higher-timeframe candle’s low AND higher-timeframe candle close > that low AND bias filter is not short-only
+Long: Model 2 CISD: a previous completed higher-timeframe candle swept below the prior candle’s low AND chart-timeframe close > the manipulation level, defined as the highest open-or-close price across the consecutive bearish candles ending at the sweep low
+Long: Bullish SMT at higher-timeframe close: chart higher-timeframe candle closes above its open AND its low is above the prior chart higher-timeframe low AND the paired instrument’s higher-timeframe low is below its prior low
+Long: Bullish SMT at chart-timeframe pivots: the latest confirmed chart-timeframe pivot low is below the preceding pivot low AND the paired instrument’s low at the latest pivot is above its low at the preceding pivot
+Short: Model 1 live sweep: chart-timeframe high > the previous completed higher-timeframe candle’s high AND chart-timeframe close < that high AND bias filter is not long-only
+Short: Model 2 confirmed sweep: higher-timeframe candle high > the previous completed higher-timeframe candle’s high AND higher-timeframe candle close < that high AND bias filter is not long-only
+Short: Model 2 CISD: a previous completed higher-timeframe candle swept above the prior candle’s high AND chart-timeframe close < the manipulation level, defined as the lowest open-or-close price across the consecutive bullish candles ending at the sweep high
+Short: Bearish SMT at higher-timeframe close: chart higher-timeframe candle closes below its open AND its high is below the prior chart higher-timeframe high AND the paired instrument’s higher-timeframe high is above its prior high
+Short: Bearish SMT at chart-timeframe pivots: the latest confirmed chart-timeframe pivot high is above the preceding pivot high AND the paired instrument’s high at the latest pivot is below its high at the preceding pivot
+Exit: long, high >= the target at the prior completed higher-timeframe range high OR low < the invalidation level at the swept prior range low
+Exit: short, low <= the target at the prior completed higher-timeframe range low OR high > the invalidation level at the swept prior range high

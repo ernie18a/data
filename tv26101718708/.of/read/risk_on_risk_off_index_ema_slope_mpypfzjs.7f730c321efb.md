@@ -1,0 +1,1 @@
+Long: On each of the three configured reference indexes, close > 10-period EMA > 21-period EMA on the calculation timeframe (same as or higher than the chart timeframe); use the last completed bar historically and the bar still forming live.

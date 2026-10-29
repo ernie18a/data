@@ -1,0 +1,3 @@
+Calculation: Rolling band buy/sell volume = sum of volume classified by intrabar price movement into buy and sell sides at each price band over the rolling chart-bar window, including the current forming bar and preceding completed bars; classification uses lower-timeframe intrabars.
+Long: The rolling profile is complete AND buy volume / total volume at a band >= the buyer-share threshold AND band volume >= the greater of the peak-band-relative threshold and the configured volume-percentile threshold
+Short: The rolling profile is complete AND sell volume / total volume at a band >= the seller-share threshold AND band volume >= the greater of the peak-band-relative threshold and the configured volume-percentile threshold

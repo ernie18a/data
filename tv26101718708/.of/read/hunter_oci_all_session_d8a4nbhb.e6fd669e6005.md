@@ -1,0 +1,11 @@
+Calculation: Opening range high/low = the high/low of the first session bar, or of the last completed bar of a lower timeframe when that source is selected
+Calculation: Radar lines = 3-bar simple moving averages of the short-term and long-term EMAs of the midpoint of bullish candles; ignore non-bullish candles in the EMAs
+Calculation: Upper/lower radar = the higher/lower of the two radar lines
+Calculation: Midline = the average of the two radar lines
+Calculation: Long initial stop = upper radar + (upper radar − midline) / 4; short initial stop = lower radar − (midline − lower radar) / 4
+Calculation: Protective stop = initial stop, then ratchet only in the trade’s favorable direction to the current initial stop; with profit protection active, also use the tighter of the lock level and the confirmed post-entry swing level buffered by ATR
+Calculation: Profit protection activates when maximum favorable price movement from entry reaches its percentage threshold and momentum score reaches its directional threshold; momentum score = clamp to [−100, 100] of 45 × (close − close three bars ago) / ATR + 55 × ((close − previous close) − (previous close − close two bars ago)) / ATR
+Long: (close > opening range high AND close > upper radar AND the bullish radar line > the bearish radar line AND candle body > total wick length AND prior signal state is not long) OR (prior signal state is short AND close > upper radar AND the bullish radar line > the bearish radar line) OR (after a confirmed stop exit, signal state is long, a later confirmed bar closes above upper radar, and the initial long stop is below close)
+Short: (close < opening range low AND close < lower radar AND the bearish radar line > the bullish radar line AND candle body > total wick length AND prior signal state is not short) OR (prior signal state is long AND close < lower radar AND the bearish radar line > the bullish radar line) OR (after a confirmed stop exit, signal state is short, a later confirmed bar closes below lower radar, and the initial short stop is above close)
+Exit: long, confirmed close < protective stop
+Exit: short, confirmed close > protective stop

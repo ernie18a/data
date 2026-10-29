@@ -1,0 +1,4 @@
+Long: first auxiliary source Hull MA < its one-chart-bar-lagged Hull MA AND second auxiliary source Hull MA > its one-chart-bar-lagged Hull MA AND chart instrument source Hull MA > its one-chart-bar-lagged Hull MA AND daily return > threshold AND flat
+Short: first auxiliary source Hull MA > its one-chart-bar-lagged Hull MA AND second auxiliary source Hull MA < its one-chart-bar-lagged Hull MA AND chart instrument source Hull MA < its one-chart-bar-lagged Hull MA AND daily return < threshold AND flat
+Exit: long, first auxiliary source Hull MA > its one-chart-bar-lagged Hull MA AND daily return < threshold
+Exit: short, first auxiliary source Hull MA < its one-chart-bar-lagged Hull MA AND daily return > threshold

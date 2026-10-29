@@ -1,0 +1,4 @@
+Calculation: Renko direction = direction of change in a synthetic Renko close: on each bar, set it to the selected price source’s high if that exceeds the prior synthetic close by one brick, or to its low if that falls below by one brick; otherwise carry it forward. Carry the prior direction when the synthetic close does not change.
+Long: close > upper Bollinger Band AND Renko direction is up
+Short: close < lower Bollinger Band AND Renko direction is down
+Exit: Long, Renko direction is down AND (high reaches entry price plus the profit distance OR low reaches entry price minus the loss distance)

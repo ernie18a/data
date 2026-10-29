@@ -1,0 +1,2 @@
+Long: On an intraday chart, current close > previous completed higher-timeframe daily bar high AND prior chart bar close <= that high AND this is not the first bar of the symbol-defined day AND no earlier long signal occurred that day
+Short: On an intraday chart, current close < previous completed higher-timeframe daily bar low AND prior chart bar close >= that low AND this is not the first bar of the symbol-defined day AND no earlier short signal occurred that day

@@ -1,0 +1,4 @@
+Long: high > previous-bar close + previous-bar true range AND close > open AND datetime is within the configured entry window
+Short: low < previous-bar close - previous-bar true range AND close < open AND datetime is within the configured entry window
+Exit: long, low <= entry price - configured stop-loss distance OR low < previous-bar close - previous-bar true range AND close < open OR higher-timeframe close crosses below higher-timeframe open (using the last completed higher-timeframe bar)
+Exit: short, high >= entry price + configured stop-loss distance OR high > previous-bar close + previous-bar true range AND close > open OR higher-timeframe close crosses above higher-timeframe open (using the last completed higher-timeframe bar)

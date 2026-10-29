@@ -1,0 +1,12 @@
+Calculation: HTF Failure High = on a completed bar of a timeframe higher than the chart, high > the preceding completed bar’s high AND close <= that high AND high > max(open, close); compare only when the adjacent HTF bars and current chart bar are within 1.5 HTF periods.
+Calculation: HTF Failure Low = on a completed bar of a timeframe higher than the chart, low < the preceding completed bar’s low AND close >= that low AND low < min(open, close); use the same gap guard as HTF Failure High.
+Calculation: HTF Inside Bar = on a completed bar of a timeframe higher than the chart, high < the preceding completed bar’s high AND low > the preceding completed bar’s low; use the same gap guard.
+Calculation: Chart Failure High = on the current chart bar, high > the preceding chart bar’s high AND close <= that high AND high > max(open, close).
+Calculation: Chart Failure Low = on the current chart bar, low < the preceding chart bar’s low AND close >= that low AND low < min(open, close).
+Calculation: Chart Inside Bar = on the current chart bar, high < the preceding chart bar’s high AND low > the preceding chart bar’s low.
+Calculation: Stop = selected stop model’s level (prior chart bar, prior two chart bars, HTF signal bar wick, or nested LTF signal bar wick), extended as needed to meet the minimum stop distance.
+Calculation: Target = entry price plus the position direction times the stop distance times the configured reward multiple.
+Long: Flat, entry window open, and either (an armed HTF Failure High, HTF Failure Low, or HTF Inside Bar signal and chart close > its high) OR (nested mode: an HTF signal bar’s high breaks, then a qualifying chart Failure Low or chart Inside Bar is armed and chart close > its high within the configured expiries); stop distance within the configured maximum if enabled; prior-RTH-level bias allows long if enabled.
+Short: Flat, entry window open, and either (an armed HTF Failure High, HTF Failure Low, or HTF Inside Bar signal and chart close < its low) OR (nested mode: an HTF signal bar’s low breaks, then a qualifying chart Failure High or chart Inside Bar is armed and chart close < its low within the configured expiries); stop distance within the configured maximum if enabled; prior-RTH-level bias allows short if enabled.
+Exit: Long, low <= Stop OR high >= Target OR the force-flat session cutoff is reached.
+Exit: Short, high >= Stop OR low <= Target OR the force-flat session cutoff is reached.

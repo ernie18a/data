@@ -1,0 +1,2 @@
+Long: Supertrend direction is bullish on the current and previous chart bars OR close crosses above Supertrend
+Short: Supertrend direction is bearish on the current and previous chart bars OR close crosses below Supertrend

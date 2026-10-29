@@ -1,0 +1,5 @@
+Calculation: McGinley Dynamic = initialize with the simple moving average of source over the lookback; thereafter, prior value + (source − prior value) / [K × lookback × (source / prior value)^4]
+Long: Fast McGinley Dynamic (shorter lookback) on the last completed chart bar > Slow McGinley Dynamic (longer lookback) on that bar AND Fast McGinley Dynamic on the preceding completed chart bar ≤ Slow McGinley Dynamic on that bar AND (higher-timeframe source on its last completed bar > higher-timeframe Fast McGinley Dynamic on that bar, if the higher-timeframe filter is enabled) AND no prior long signal OR bars since the prior long signal ≥ cooldown
+Short: Fast McGinley Dynamic (shorter lookback) on the last completed chart bar < Slow McGinley Dynamic (longer lookback) on that bar AND Fast McGinley Dynamic on the preceding completed chart bar ≥ Slow McGinley Dynamic on that bar AND (higher-timeframe source on its last completed bar < higher-timeframe Fast McGinley Dynamic on that bar, if the higher-timeframe filter is enabled) AND no prior short signal OR bars since the prior short signal ≥ cooldown
+Exit: long, Short condition
+Exit: short, Long condition

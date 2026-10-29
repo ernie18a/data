@@ -1,0 +1,10 @@
+Calculation: VWMA basis = volume-weighted moving average of hlc3 over a lookback
+Calculation: Deviation = multiplier × standard deviation of hlc3 over the same lookback
+Calculation: Upper band = VWMA basis + Deviation
+Calculation: Lower band = VWMA basis − Deviation
+Calculation: Upper target = VWMA basis + 0.001 × level × Deviation
+Calculation: Lower target = VWMA basis − 0.001 × level × Deviation
+Long: low < Lower band AND RSI(close)[1] > oversold threshold AND RSI(close)[2] <= oversold threshold AND high < Lower target
+Short: high > Upper band AND RSI(close)[1] < overbought threshold AND RSI(close)[2] >= overbought threshold AND low > Upper target
+Exit: long, high > lower target recorded when entering the position OR low <= close × (1 − stop-loss fraction)
+Exit: short, low < upper target recorded when entering the position OR high >= close × (1 + stop-loss fraction)

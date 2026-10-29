@@ -1,0 +1,4 @@
+Calculation: session-adjusted moving average = selected moving average of close over a lookback multiplied by the ceiling of reference-session duration divided by chart-bar duration
+Calculation: Bollinger Band Width = band multiplier × standard deviation of (close / session-adjusted moving average − 1) over the same lookback as the moving average
+Long: close > session-adjusted moving average OR (close < session-adjusted moving average AND |close / session-adjusted moving average − 1| > Bollinger Band Width)
+Short: close < session-adjusted moving average OR (close > session-adjusted moving average AND |close / session-adjusted moving average − 1| > Bollinger Band Width)

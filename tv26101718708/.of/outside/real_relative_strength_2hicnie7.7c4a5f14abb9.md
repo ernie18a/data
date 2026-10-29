@@ -1,0 +1,1 @@
+Go long when relative strength versus the benchmark is above zero and rising, price is above key moving averages, and volume is expanding. Go short when relative strength is below zero and falling, price is below key moving averages, and participation is weak during benchmark rallies.

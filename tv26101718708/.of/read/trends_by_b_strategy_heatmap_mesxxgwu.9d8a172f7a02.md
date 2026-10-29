@@ -1,0 +1,5 @@
+Calculation: Multi-timeframe trend average = arithmetic mean across the configured timeframes of +1 when the short-period EMA of close is above the long-period EMA, otherwise −1; the short period is shorter than the long period. For timeframes higher than the chart, use the last completed bar; for lower timeframes, use the most recent constituent bar available within the chart bar; for an equal timeframe, use the chart bar.
+Long: multi-timeframe trend average ≥ strong-up threshold AND previous bar’s multi-timeframe trend average < strong-up threshold
+Short: multi-timeframe trend average ≤ strong-down threshold AND previous bar’s multi-timeframe trend average > strong-down threshold
+Exit: long, high ≥ entry price × (1 + take-profit percentage) OR low ≤ entry price × (1 − stop-loss percentage)
+Exit: short, low ≤ entry price × (1 − take-profit percentage) OR high ≥ entry price × (1 + stop-loss percentage)

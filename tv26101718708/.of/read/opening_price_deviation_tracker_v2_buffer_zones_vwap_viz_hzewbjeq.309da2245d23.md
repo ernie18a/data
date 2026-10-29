@@ -1,0 +1,5 @@
+Calculation: Anchor open = the open of the first chart bar in each higher-timeframe anchor period, latched from that bar onward.
+Calculation: Deviation level = anchor open × (1 ± k × percentage step / 100), for each grid level k above or below the open.
+Calculation: Bar-range fraction retreat = the distance from the level to the close divided by the bar’s high − low; for upper levels use (level − close), and for lower levels use (close − level).
+Long: On the first completed chart bar to reach an upper deviation level in the anchor period, close > level; OR on the first completed chart bar to reach a lower deviation level in the anchor period, close ≥ level AND bar-range fraction retreat ≥ rejection threshold.
+Short: On the first completed chart bar to reach a lower deviation level in the anchor period, close < level; OR on the first completed chart bar to reach an upper deviation level in the anchor period, close ≤ level AND bar-range fraction retreat ≥ rejection threshold.

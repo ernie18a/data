@@ -1,0 +1,7 @@
+Calculation: Confirmed swing high/low = a bar whose high/low is the highest/lowest across an equal number of bars before and after it
+Calculation: QM quality score = rounded sum of capped scores for head extension, sequence-break displacement, smallest pivot spacing, average swing size, time balance between the first two pivot gaps, and optionally relative volume; each component is normalized to its qualifying target and weighted, with maximum total 100
+Calculation: Head-based invalidation = bullish head low minus ATR padding for a bullish pattern; bearish head high plus ATR padding for a bearish pattern
+Long: the latest four confirmed pivots, in chronological order, are low L1, high H1, low L2, high H2 AND L2 < L1 AND H2 > H1 AND each consecutive pivot gap >= minimum spacing AND L1 - L2 >= ATR × minimum head extension AND H2 - H1 >= ATR × minimum sequence break AND quality score >= minimum score AND bars since last accepted pattern >= cooldown AND H2 is not the last accepted pattern's final pivot
+Short: the latest four confirmed pivots, in chronological order, are high H1, low L1, high H2, low L2 AND H2 > H1 AND L2 < L1 AND each consecutive pivot gap >= minimum spacing AND H2 - H1 >= ATR × minimum head extension AND L1 - L2 >= ATR × minimum sequence break AND quality score >= minimum score AND bars since last accepted pattern >= cooldown AND L2 is not the last accepted pattern's final pivot
+Exit: long, low <= bullish head-based invalidation
+Exit: short, high >= bearish head-based invalidation

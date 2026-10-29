@@ -1,0 +1,7 @@
+Calculation: HTF Direction score = using the current, potentially still-forming bar of a higher timeframe than the chart: +100 if close > EMA(8), EMA(21), and EMA(50), and +DI > -DI; otherwise +75 if close is above all three EMAs; -100 if close is below all three EMAs and -DI > +DI; otherwise -75 if close is below all three EMAs; +25 if close > EMA(8) and close < EMA(21); -25 if close < EMA(8) and close > EMA(21); otherwise 0
+Calculation: HTF Trend score = using the current, potentially still-forming bar of a higher timeframe than the chart: +100 if ADX(14) > 40 and +DI > -DI; -100 if ADX(14) > 40 and -DI > +DI; +66 if ADX(14) > 25 and +DI > -DI; -66 if ADX(14) > 25 and -DI > +DI; +33 if ADX(14) > 20; otherwise 0
+Calculation: HTF Momentum score = using the current, potentially still-forming bar of a higher timeframe than the chart: +100 if RSI(14) > 75; +75 if RSI(14) > 65; +50 if RSI(14) > 55; 0 if RSI(14) > 45; -50 if RSI(14) > 35; -75 if RSI(14) > 25; otherwise -100
+Calculation: HTF Volatility score = using the current, potentially still-forming bar of a higher timeframe than the chart, calculate ATR(14) / (50-period SMA of ATR(14) + 0.0001); score 100 if the ratio > 1.8, 75 if > 1.4, 50 if > 1.0, 25 if > 0.6, otherwise 0
+Calculation: Composite HTF score = the average of HTF Direction, HTF Trend, and HTF Momentum scores; multiply by 0.85 if HTF Volatility score > 75, otherwise multiply by 0.95 if HTF Volatility score > 50; clamp the result to [-100, 100]
+Long: Composite HTF score > 15
+Short: Composite HTF score <= -15

@@ -1,0 +1,8 @@
+Calculation: Money flow divergence = EMA(momentum(close, longer lookback), shorter smoothing lookback); its signal average is SMA of money flow divergence.
+Calculation: Custom ADX = SMA(abs(+DI − −DI) / (+DI + −DI) × 100, lookback), where +DI and −DI are SMA(positive directional movement / true range × 100, same lookback) and SMA(negative directional movement / true range × 100, same lookback); positive directional movement is high − prior high when it exceeds prior low − low and is positive, otherwise zero; negative directional movement is prior low − low when it exceeds high − prior high and is positive, otherwise zero; true range is the maximum of high − low, abs(high − prior close), and abs(low − prior close).
+Calculation: Bullish engulfing = close > prior open AND open < prior close AND current high − current low > prior high − prior low.
+Calculation: Bearish engulfing = close < prior open AND open > prior close AND current high − current low > prior high − prior low.
+Long: time is within the NY morning session AND short-term EMA(close) > long-term EMA(close) AND close > VWAP AND money flow divergence > its signal average AND bullish engulfing AND custom ADX > its threshold.
+Short: time is within the NY morning session AND short-term EMA(close) < long-term EMA(close) AND close < VWAP AND money flow divergence < its signal average AND bearish engulfing AND custom ADX > its threshold.
+Exit: long, low <= entry price − 0.8 × ATR OR high >= entry price + 2 × ATR OR (close >= entry price + ATR AND low <= entry price).
+Exit: short, high >= entry price + 0.8 × ATR OR low <= entry price − 2 × ATR OR (close <= entry price − ATR AND high >= entry price).

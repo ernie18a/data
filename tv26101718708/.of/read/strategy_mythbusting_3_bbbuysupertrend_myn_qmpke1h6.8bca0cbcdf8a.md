@@ -1,0 +1,5 @@
+Calculation: Awesome Oscillator = short-lookback SMA of (high + low) / 2 minus long-lookback SMA of (high + low) / 2; the short lookback is shorter than the long lookback.
+Long: Fast EMA crosses above the Bollinger basis AND close > Bollinger basis AND Awesome Oscillator >= 0 AND Awesome Oscillator > its previous value AND SuperTrend is bullish AND no buy signal has occurred since the most recent sell signal (or start).
+Short: Fast EMA crosses below the Bollinger basis AND close < Bollinger basis AND Awesome Oscillator <= its previous value AND SuperTrend is bearish AND no sell signal has occurred since the most recent buy signal (or start).
+Exit: Long, close < entry price × (1 − stop-loss percentage) OR high reaches any configured take-profit price above entry.
+Exit: Short, close > entry price × (1 + stop-loss percentage) OR low reaches any configured take-profit price below entry.

@@ -1,0 +1,3 @@
+Calculation: Active range zone = ATR-compressed high/low envelope confirmed after minimum persistence and sideways-structure checks; its upper and lower boundaries may be refined while the zone remains active
+Long: Active range zone exists AND close > upper boundary + ATR buffer on 2 consecutive completed chart bars, with the range-continuation condition false on both bars
+Short: Active range zone exists AND close < lower boundary - ATR buffer on 2 consecutive completed chart bars, with the range-continuation condition false on both bars

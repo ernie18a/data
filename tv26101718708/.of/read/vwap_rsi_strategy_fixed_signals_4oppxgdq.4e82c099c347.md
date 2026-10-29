@@ -1,0 +1,2 @@
+Long: close crosses above VWAP AND RSI is above the long RSI threshold AND 0 < close - VWAP <= maximum allowed risk
+Short: close crosses below VWAP AND RSI is below the short RSI threshold AND 0 < VWAP - close <= maximum allowed risk

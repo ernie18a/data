@@ -1,0 +1,5 @@
+Calculation: Prior rolling high = highest high over the lookback chart bars, excluding the current bar
+Calculation: Prior rolling low = lowest low over the lookback chart bars, excluding the current bar
+Calculation: Minimum sweep size = 30% of daily ATR on a higher timeframe, using the last completed bar, multiplied by a configurable fraction
+Long: Low < prior rolling low AND close > prior rolling low AND (min(open, close) - low) / max(high - low, minimum tick) >= rejection-wick threshold AND close > highest high over the BOS lookback chart bars, excluding the current bar (when BOS confirmation is enabled) AND close >= VWAP (when VWAP filter is enabled) AND prior rolling low - low >= minimum sweep size AND current bar is within any enabled session
+Short: High > prior rolling high AND close < prior rolling high AND (high - max(open, close)) / max(high - low, minimum tick) >= rejection-wick threshold AND close < lowest low over the BOS lookback chart bars, excluding the current bar (when BOS confirmation is enabled) AND close <= VWAP (when VWAP filter is enabled) AND high - prior rolling high >= minimum sweep size AND current bar is within any enabled session

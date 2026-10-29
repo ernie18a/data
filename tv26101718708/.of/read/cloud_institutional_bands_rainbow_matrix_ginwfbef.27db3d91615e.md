@@ -1,0 +1,3 @@
+Calculation: Upper and lower outer deviation bands = exp(linear regression of ln(hlc3) over the band lookback ± residual standard deviation over that lookback × the outer-band multiplier); use the configured band timeframe, with its last completed bar when higher than the chart timeframe and its still-forming bar when lower.
+Long: low <= lower outer deviation band OR close > rolling volume-weighted moving average OR close > daily anchored VWAP
+Short: high >= upper outer deviation band OR close < rolling volume-weighted moving average OR close < daily anchored VWAP

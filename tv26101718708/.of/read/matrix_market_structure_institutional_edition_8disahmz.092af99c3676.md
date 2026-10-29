@@ -1,0 +1,4 @@
+Calculation: Swing pivot high/low = a confirmed local high/low with a longer pivot lookback than the internal pivot; confirmation requires that lookback number of bars on both sides.
+Calculation: Internal pivot high/low = a confirmed local high/low with a shorter pivot lookback than the swing pivot; confirmation requires that lookback number of bars on both sides.
+Long: close > latest unbroken swing pivot high AND previous close <= that pivot high OR close > latest unbroken internal pivot high AND previous close <= that pivot high OR low > high two bars ago AND low - high two bars ago >= ATR times the minimum gap-size multiplier
+Short: close < latest unbroken swing pivot low AND previous close >= that pivot low OR close < latest unbroken internal pivot low AND previous close >= that pivot low OR high < low two bars ago AND low two bars ago - high >= ATR times the minimum gap-size multiplier

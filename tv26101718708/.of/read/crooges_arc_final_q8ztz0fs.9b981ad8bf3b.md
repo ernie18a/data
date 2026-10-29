@@ -1,0 +1,6 @@
+Calculation: Ratchet line and direction = Initialize the line at the selected price source. In the bullish state, ratchet it upward to the maximum of its prior value and the highest smoothed high minus a volatility buffer; switch to bearish and reset it to the lowest smoothed low plus the buffer when the selected source falls below the ratcheted line. In the bearish state, ratchet it downward to the minimum of its prior value and the lowest smoothed low plus the buffer; switch to bullish and reset it to the highest smoothed high minus the buffer when the selected source rises above the ratcheted line. The volatility buffer is a smoothed true range multiplied by a sensitivity factor.
+Calculation: Average volume = simple moving average of volume.
+Long: Ratchet direction changes from bearish to bullish OR (volume > average volume × volume threshold AND close > open)
+Short: Ratchet direction changes from bullish to bearish OR (volume > average volume × volume threshold AND close <= open)
+Exit: long, close < Ratchet line
+Exit: short, close > Ratchet line

@@ -1,0 +1,3 @@
+Calculation: Stochastic RSI %K = RSI of close, normalized between its rolling minimum and maximum over the stochastic lookback, then smoothed with a simple moving average; use the same parameters on all three configured timeframes (short-, medium-, and long-term as configured), using each timeframe’s current bar, which may be lower than, equal to, or higher than the chart timeframe.
+Long: Stochastic RSI %K on all three configured timeframes ≤ their oversold thresholds
+Short: Stochastic RSI %K on all three configured timeframes ≥ their overbought thresholds

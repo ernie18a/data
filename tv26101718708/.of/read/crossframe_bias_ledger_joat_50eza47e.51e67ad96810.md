@@ -1,0 +1,12 @@
+Calculation: Primary basis = average of the fast and slow EMAs of close on the higher timeframe, using its last completed bar; fast EMA lookback is shorter than slow EMA lookback
+Calculation: Secondary basis = average of the fast and slow EMAs of close on the higher timeframe, using its last completed bar; fast EMA lookback is shorter than slow EMA lookback
+Calculation: Local basis = average of the fast and slow EMAs of close on the chart timeframe; fast EMA lookback is shorter than slow EMA lookback
+Calculation: Ledger score = clamp(primary trend score + secondary trend score + location score + local trend score, -100, 100)
+Calculation: Primary trend score = 34 × (fast EMA − slow EMA) / ATR + 10 × (fast EMA − signal EMA) / ATR, with all values from the higher timeframe's last completed bar; signal EMA lookback is shorter than fast EMA lookback, which is shorter than slow EMA lookback
+Calculation: Secondary trend score = 42 × (fast EMA − slow EMA) / ATR + 12 × (fast EMA − signal EMA) / ATR, with all values from the higher timeframe's last completed bar; signal EMA lookback is shorter than fast EMA lookback, which is shorter than slow EMA lookback
+Calculation: Location score = 16 × (chart close − primary basis) / primary ATR
+Calculation: Local trend score = 14 × (fast EMA − slow EMA) / ATR + 10 × (chart close − local basis) / ATR, using chart-timeframe values; fast EMA lookback is shorter than slow EMA lookback
+Long: current chart bar is confirmed AND ledger score ≥ 20 AND primary fast EMA ≥ primary slow EMA AND last completed primary-timeframe close ≥ primary basis AND secondary fast EMA ≥ secondary slow EMA AND last completed secondary-timeframe close ≥ secondary basis AND chart close ≥ local basis AND previous chart bar did not meet this same long condition
+Short: current chart bar is confirmed AND ledger score ≤ −20 AND primary fast EMA ≤ primary slow EMA AND last completed primary-timeframe close ≤ primary basis AND secondary fast EMA ≤ secondary slow EMA AND last completed secondary-timeframe close ≤ secondary basis AND chart close ≤ local basis AND previous chart bar did not meet this same short condition
+Exit: long, chart close < local basis OR ledger score < 0
+Exit: short, chart close > local basis OR ledger score > 0

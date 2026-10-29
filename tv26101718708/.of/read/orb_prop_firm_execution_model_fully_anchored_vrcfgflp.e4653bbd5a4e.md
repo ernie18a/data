@@ -1,0 +1,5 @@
+Calculation: Opening range high = highest high from the session open through the opening range period
+Calculation: Opening range low = lowest low from the session open through the opening range period
+Calculation: Session anchored VWAP = cumulative typical price × volume since session open ÷ cumulative volume since session open
+Long: opening range period is complete AND close > opening range high AND previous close ≤ opening range high AND close > session anchored VWAP AND close > 20-bar SMA of close AND current 20-bar SMA of close > previous 20-bar SMA of close AND volume > 20-bar SMA of volume × a multiplier AND NOT (high > opening range high AND close < opening range high)
+Short: opening range period is complete AND close < opening range low AND previous close ≥ opening range low AND close < session anchored VWAP AND close < 20-bar SMA of close AND current 20-bar SMA of close < previous 20-bar SMA of close AND volume > 20-bar SMA of volume × a multiplier AND NOT (low < opening range low AND close > opening range low)

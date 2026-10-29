@@ -1,0 +1,2 @@
+Long: Primary moving average >= its value the configured smoothing lookback of chart bars earlier OR (open < primary moving average AND close > primary moving average) OR (open < longer-lookback secondary moving average AND close > longer-lookback secondary moving average)
+Short: Primary moving average < its value the configured smoothing lookback of chart bars earlier OR (open > primary moving average AND close < primary moving average) OR (open > longer-lookback secondary moving average AND close < longer-lookback secondary moving average)

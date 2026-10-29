@@ -1,0 +1,13 @@
+Calculation: Smart index = Hull moving average of the mean of the percentile ranks of money flow index, Chaikin money flow, and cumulative volume delta momentum; cumulative volume delta adds volume on up bars, subtracts volume on down bars, adds zero on unchanged bars, and periodically resets; momentum is its change over a shorter lookback than the percentile-rank lookback
+Calculation: Retail index = Hull moving average of the mean of the percentile ranks of RSI and closing-price percentile rank, using a shorter lookback for RSI and closing-price percentile rank than for the outer percentile ranks
+Calculation: Adaptive upper/lower threshold = 90th/10th percentile of the corresponding index over the normalization lookback
+Calculation: Confirmed pivot low/high = a low/high lower/higher than the lows/highs of the specified number of bars on each side; available only after the bars on both sides are complete
+Calculation: Stop-volume event = close < open AND volume > average volume × high-volume multiplier AND high-low spread < average high-low spread × narrow-spread multiplier
+Calculation: Buying-climax event = close > open AND volume > average volume × ultra-high-volume multiplier AND high-low spread > average high-low spread × wide-spread multiplier
+Long: A confirmed pivot low is lower than the previous confirmed pivot low AND the smart index at that pivot is higher than at the previous pivot low AND the retail index at that pivot is below the current adaptive lower threshold AND (cumulative volume delta momentum at the pivot > 0 OR at least the minimum number of stop-volume events occurred in the three bars ending at the pivot)
+Long: Stop-volume event
+Long: Retail index > adaptive upper threshold AND smart index > adaptive upper threshold AND five-bar price momentum < its value one bar earlier AND close < open
+Long: Retail index < adaptive lower threshold AND smart index < adaptive lower threshold AND five-bar price momentum > its value one bar earlier AND close > open
+Short: A confirmed pivot high is higher than the previous confirmed pivot high AND the smart index at that pivot is lower than at the previous pivot high AND the retail index at that pivot is above the current adaptive upper threshold AND (cumulative volume delta momentum at the pivot < 0 OR at least the minimum number of buying-climax events occurred in the three bars ending at the pivot)
+Short: Buying-climax event
+Short: Retail index > adaptive upper threshold AND smart index > adaptive upper threshold AND five-bar price momentum < its value one bar earlier AND close < open

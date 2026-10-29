@@ -1,0 +1,5 @@
+Calculation: Smoothed Stochastic %K = short-lookback SMA of the longer-lookback Stochastic %K, calculated from close, high, and low
+Calculation: Drawdown from all-time high = (close − highest high to date) / highest high to date × 100%
+Calculation: Relative volume = volume / shorter-lookback SMA of volume; the volume median uses a longer lookback
+Calculation: Daily VIX close = VIX close from the higher timeframe, using the latest available bar, including a still-forming bar
+Long: long-term RSI < its oversold threshold AND short-term RSI < its lower oversold threshold AND Smoothed Stochastic %K < its oversold threshold AND drawdown from all-time high <= negative drawdown threshold AND daily VIX close > its panic threshold AND volume > its longer-lookback median AND relative volume > its threshold

@@ -1,0 +1,4 @@
+Calculation: Chart trend = bearish if the lowest low over the lookback equals the current low; otherwise bullish if the highest high over the same lookback equals the current high; otherwise retain the previous chart-bar trend (initially bearish)
+Calculation: Higher-timeframe trend = apply the same rule to higher-timeframe bars using the still-forming bar; otherwise retain the prior chart-bar trend (initially bearish)
+Long: Chart trend = bullish AND previous chart-bar trend was not bullish AND higher-timeframe trend = bullish
+Short: Chart trend = bearish AND previous chart-bar trend was not bearish AND higher-timeframe trend = bearish

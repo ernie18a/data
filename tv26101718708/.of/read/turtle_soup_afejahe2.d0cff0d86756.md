@@ -1,0 +1,4 @@
+Calculation: Swing high = A high on the swing timeframe is greater than the highs of the immediately newer and older completed bars, or equals the older bar’s high while that older bar’s high exceeds the high two bars older. The swing timeframe is the chart timeframe or higher; use completed bars.
+Calculation: Swing low = A low on the swing timeframe is less than the lows of the immediately newer and older completed bars, or equals the older bar’s low while that older bar’s low is below the low two bars older. The swing timeframe is the chart timeframe or higher; use completed bars.
+Long: Swing low detected
+Short: Swing high detected

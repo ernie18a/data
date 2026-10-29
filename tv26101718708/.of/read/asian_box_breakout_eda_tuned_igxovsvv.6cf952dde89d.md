@@ -1,0 +1,10 @@
+Calculation: Asian session high = highest chart-bar high during the current Asian session; reset at session start
+Calculation: Asian session low = lowest chart-bar low during the current Asian session; reset at session start
+Calculation: Daily ATR = Wilder ATR on daily bars, using the last completed daily bar
+Calculation: Daily EMA = EMA of daily closes, using the daily bar still forming
+Calculation: Favorable long extreme = highest chart-bar high since long entry
+Calculation: Favorable short extreme = lowest chart-bar low since short entry
+Long: Current bar high >= Asian session high AND current time is within the trading session AND no position is open AND no trade has been entered today AND Monday is allowed by the weekday filter AND (Asian session high - Asian session low) / Daily ATR >= minimum box-width ratio AND Daily ATR > 0 AND (daily close on the bar still forming > Daily EMA OR trend filter is disabled) AND long trades are enabled
+Short: Current bar low <= Asian session low AND current time is within the trading session AND no position is open AND no trade has been entered today AND Monday is allowed by the weekday filter AND (Asian session high - Asian session low) / Daily ATR >= minimum box-width ratio AND Daily ATR > 0 AND (daily close on the bar still forming < Daily EMA OR trend filter is disabled) AND short trades are enabled
+Exit: Long, current bar low <= (if (Favorable long extreme - entry price) / Daily ATR >= trail-activation multiple then max(entry price - Daily ATR, Favorable long extreme - trail-gap multiple * Daily ATR) else entry price - Daily ATR) OR trading session has just ended and forced end-of-day close is enabled
+Exit: Short, current bar high >= (if (entry price - Favorable short extreme) / Daily ATR >= trail-activation multiple then min(entry price + Daily ATR, Favorable short extreme + trail-gap multiple * Daily ATR) else entry price + Daily ATR) OR trading session has just ended and forced end-of-day close is enabled

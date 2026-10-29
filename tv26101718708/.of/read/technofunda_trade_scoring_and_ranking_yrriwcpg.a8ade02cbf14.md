@@ -1,0 +1,3 @@
+Calculation: Total score = count of true conditions: close above short-, medium-, and long-lookback simple moving averages; those averages ordered short > medium > long; long-lookback average above its value at an earlier bar; close at or above a parameterized fraction of the rolling high; EPS growth above its threshold; revenue growth above its threshold; ROE above its threshold; pocket pivot with volume at least a parameterized multiple of average volume; stock return over a parameterized lookback minus benchmark return over the same lookback > 0
+Calculation: Pocket pivot = close >= prior close AND current volume > the greatest volume among recent down-close bars AND current volume > 0
+Long: Total score >= the parameterized BUY threshold

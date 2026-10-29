@@ -1,0 +1,9 @@
+Calculation: Bullish confluence = close > volume-weighted moving average AND shorter-lookback EMA > longer-lookback EMA AND RSI > bullish threshold AND Supertrend is bullish AND (ADX > threshold OR ADX filter is disabled)
+Calculation: Bearish confluence = close < volume-weighted moving average AND shorter-lookback EMA < longer-lookback EMA AND RSI < bearish threshold AND Supertrend is bearish AND (ADX > threshold OR ADX filter is disabled)
+Calculation: Trend state = bullish when bullish confluence; bearish when bearish confluence; otherwise retain the prior state unless a bullish state has close < Supertrend or a bearish state has close > Supertrend, in which case set it to neutral
+Calculation: Initial stop distance = absolute value of signal-bar close minus Supertrend; for ATR-capped mode use the lesser of that distance and ATR multiplied by its cap; for fixed-percentage mode use signal-bar close multiplied by the stop percentage
+Calculation: Active stop = for a long, signal-bar close minus initial stop distance; for a short, signal-bar close plus initial stop distance. Before the first target is reached, update it to the Supertrend level each bar in Supertrend mode when Supertrend agrees with the position. After the first target is reached, for a long update it to the greater of its prior value and Supertrend when Supertrend is bullish, otherwise to the greater of its prior value and entry price; for a short use the lesser of its prior value and Supertrend when Supertrend is bearish, otherwise the lesser of its prior value and entry price
+Long: bullish confluence AND prior trend state is not bullish AND bars since last signal >= signal cooldown
+Short: bearish confluence AND prior trend state is not bearish AND bars since last signal >= signal cooldown
+Exit: Long, low <= active stop OR Supertrend is bearish
+Exit: Short, high >= active stop OR Supertrend is bullish

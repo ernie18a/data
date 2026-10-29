@@ -1,0 +1,1 @@
+Compute a stochastic RSI of USDT market capitalization on the selected timeframe. Go long when its smoothed stochastic value is at or above the configurable midline, and short when it is below. A cross above the midline marks the start of a bullish regime.

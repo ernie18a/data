@@ -1,0 +1,11 @@
+Calculation: Swing and internal structure = separately track confirmed pivot highs and lows; a pivot at lookback bars ago is confirmed when that high is above, or low below, the intervening lookback bars and the leg changes. Swing structure uses a longer lookback than internal structure.
+Calculation: Structure break = close crosses above the latest uncrossed pivot high or below the latest uncrossed pivot low; classify as CHoCH if the prior bias was opposite the break, otherwise BOS. Update bias to the break direction.
+Calculation: Validated AI CHoCH = a structure CHoCH during an allowed signal session, whose CHoCH candle is neither a rejected extreme wick with a tiny body nor below the tiny-range threshold; if displacement confirmation is enabled, that candle must also meet the directional displacement criteria. A later follow-through confirmation requires close beyond the CHoCH level by the ATR buffer and at least the CHoCH close in the break direction; if displacement confirmation is enabled, the confirmation candle must also meet directional displacement criteria. Use the chart timeframe; follow-through is checked on a later chart bar.
+Calculation: HTF bias = swing-structure bias on the selected bias timeframe when HTF bias is enabled, otherwise chart-timeframe swing-structure bias. When calculated on another timeframe, use its latest value with lookahead off. LTF bias = chart-timeframe internal-structure bias.
+Long: Close crosses above an uncrossed internal or swing pivot high (bullish BOS or CHoCH).
+Short: Close crosses below an uncrossed internal or swing pivot low (bearish BOS or CHoCH).
+Long: A bullish CHoCH passes immediate validation, or its pending CHoCH passes follow-through validation within the configured bar limit; signal on the validation bar.
+Short: A bearish CHoCH passes immediate validation, or its pending CHoCH passes follow-through validation within the configured bar limit; signal on the validation bar.
+Long: HTF bias is bearish and LTF bias is bearish (pullback), or HTF bias is bullish and LTF bias is not bullish (continuation).
+Short: HTF bias is bullish and LTF bias is bullish (pullback), or HTF bias is bearish and LTF bias is not bearish (continuation).
+Exit: None

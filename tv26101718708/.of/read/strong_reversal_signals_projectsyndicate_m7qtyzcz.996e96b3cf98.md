@@ -1,0 +1,7 @@
+Calculation: Liquidity high/low = according to the selected source, the latest confirmed chart-timeframe pivot high/low; the previous completed higher-timeframe bar’s high/low; or the high/low of the most recently completed session.
+Calculation: Upper/lower wick fraction = (high − max(open, close))/(high − low) and (min(open, close) − low)/(high − low), respectively; use the minimum tick as the range when high = low.
+Calculation: ADR10 = average high − low range of the prior 10 completed daily bars (higher timeframe when the chart is below daily).
+Long: ADR10 > 0 AND close < liquidity low AND lower wick fraction meets the minimum wick threshold; then, after tracking the lowest low from the sweep, the first confirmed bar whose low is above that tracked low, with strength tier at least the minimum tier.
+Short: ADR10 > 0 AND close > liquidity high AND upper wick fraction meets the minimum wick threshold; then, after tracking the highest high from the sweep, the first confirmed bar whose high is below that tracked high, with strength tier at least the minimum tier.
+Exit: Long, before target 1 is reached, low <= entry price − stop distance OR, after target 1 is reached, high >= entry price + target 2 distance OR low <= entry price − stop distance OR bars since entry >= expiry.
+Exit: Short, before target 1 is reached, high >= entry price + stop distance OR, after target 1 is reached, low <= entry price − target 2 distance OR high >= entry price + stop distance OR bars since entry >= expiry.

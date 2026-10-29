@@ -1,0 +1,4 @@
+Calculation: Volume percentile thresholds = linear-interpolation percentiles of chart-bar volume over short-, medium-, and long-term lookbacks.
+Calculation: Absolute net volume-delta percentile thresholds = linear-interpolation percentiles of absolute net volume delta over the same short-, medium-, and long-term lookbacks; net volume delta is calculated from lower-timeframe bars within the chart bar, including the bar still forming.
+Long: At least two of the three volume thresholds are met OR, when lower-timeframe delta is available, at least two of the three absolute net volume-delta thresholds are met; AND (when delta is available, close >= open AND net volume delta > 0; otherwise, close >= open).
+Short: At least two of the three volume thresholds are met OR, when lower-timeframe delta is available, at least two of the three absolute net volume-delta thresholds are met; AND (when delta is available, close < open AND net volume delta < 0; otherwise, close < open).

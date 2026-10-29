@@ -1,0 +1,5 @@
+Calculation: Fast, mid, and slow EMA = EMA of close, with fast shorter than mid and mid shorter than slow. For each configured timeframe, use the latest available bar: its still-forming bar when available, otherwise its latest completed bar.
+Calculation: RSI = relative strength index of close.
+Long: On any configured timeframe, close > fast EMA OR close > fast EMA > mid EMA > slow EMA OR RSI < 30; OR at least 4 of the 6 configured timeframes have close > fast EMA; OR all 6 configured timeframes have close > fast EMA and/or at least 5 of 6 have close > fast EMA; OR at least 5 of 6 configured timeframes have ALIGN status and at least 4 of 6 have close > fast EMA.
+Short: On any configured timeframe, close < fast EMA OR close < fast EMA < mid EMA < slow EMA OR RSI > 70; OR at least 4 of the 6 configured timeframes have close < fast EMA; OR all 6 configured timeframes have close < fast EMA and/or at least 5 of 6 have close < fast EMA.
+Exit: 

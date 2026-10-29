@@ -1,0 +1,4 @@
+Calculation: Reference close = close of the daily bar 0 bars back on Saturday (still forming) or 2 daily bars back on Sunday (last completed); the daily timeframe is higher than the chart timeframe
+Long: within the backtest date window AND on Saturday or Sunday AND position is flat AND close < Reference close × (1 − long-entry threshold)
+Short: within the backtest date window AND on Saturday or Sunday AND ((position is flat AND close > Reference close × (1 + short-entry threshold)) OR (position is short AND close > entry price × (1 + add-to-short threshold)))
+Exit: long or short, within the backtest date window AND (open profit / initial capital > profit target OR day is Monday)

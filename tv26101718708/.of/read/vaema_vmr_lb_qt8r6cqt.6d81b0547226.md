@@ -1,0 +1,6 @@
+Calculation: Hybrid trend line = weighted blend of the EMA of close and that EMA shifted by volatility drift; volatility drift = (close − EMA) / standard deviation of close × ATR × a volatility coefficient. The EMA lookback is longer than the standard-deviation lookback.
+Calculation: Volume ratio = volume / moving average of volume, clamped to a lower and upper bound.
+Calculation: Upper first band = hybrid trend line + max(base volatility width × (upper base multiplier + (volume ratio − 1) × upper volume impact), minimum-tick floor), where base volatility width blends standard deviation of close and ATR.
+Calculation: Lower first band = hybrid trend line − max(base volatility width × (lower base multiplier + (volume ratio − 1) × lower volume impact), minimum-tick floor), where base volatility width blends standard deviation of close and ATR.
+Long: close crosses above the upper first band AND hybrid trend line > its prior-bar value
+Short: close crosses below the lower first band AND hybrid trend line < its prior-bar value

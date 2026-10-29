@@ -1,0 +1,1 @@
+Choose either the volatility-trailing crossover signals, confirmed swing-point signals, or both. Buy an at-the-money call when price crosses above its volatility-adjusted trailing level or a confirmed swing low forms. Buy an at-the-money put when price crosses below the trailing level or a confirmed swing high forms. When both directions signal on the same bar, take neither.

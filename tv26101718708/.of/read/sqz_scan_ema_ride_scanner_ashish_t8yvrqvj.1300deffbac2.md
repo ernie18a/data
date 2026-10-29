@@ -1,0 +1,5 @@
+Calculation: Squeeze on = lower Bollinger Band > lower Keltner Channel AND upper Bollinger Band < upper Keltner Channel; Bollinger Bands use a simple moving average of close plus or minus a standard deviation multiple, and Keltner Channels use a simple moving average of close plus or minus a simple moving average of true range times a multiplier
+Calculation: Normalized momentum = linear regression of [close − average(average(highest high, lowest low), simple moving average of close)] over the configured lookback, divided by close and multiplied by 100
+Long: Squeeze on AND the preceding bar's consecutive squeeze count ≥ the minimum squeeze-bar threshold AND close > trend EMA
+Long: Squeeze on AND normalized momentum > 0 AND prior-bar normalized momentum ≤ 0 AND close > trend EMA
+Long: Squeeze ended on this bar or the prior bar AND the preceding bar's consecutive squeeze count ≥ the minimum squeeze-bar threshold AND normalized momentum > 0 AND normalized momentum > prior-bar normalized momentum AND close > trend EMA AND volume > 20-bar average volume × volume-surge multiplier

@@ -1,0 +1,4 @@
+Calculation: Anchored POC = midpoint of the highest-volume price bin in a volume-at-price profile accumulated from the latest confirmed swing high or swing low; distribute each chart bar’s volume evenly across the bins in its high-low range, refining with completed lower-timeframe bars when available. Scale bin width to chart-timeframe ATR.
+Calculation: Fast value = midpoint of the value area in a second volume-at-price profile whose volume decays exponentially each chart bar; its effective lookback is shorter than the anchored profile’s.
+Long: Fast value crosses above Anchored POC
+Short: Fast value crosses below Anchored POC

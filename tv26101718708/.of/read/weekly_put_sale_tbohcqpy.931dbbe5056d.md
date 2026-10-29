@@ -1,0 +1,2 @@
+Calculation: running high = maximum chart-bar high observed since the start of the current higher-timeframe period, resetting to the current bar's high at that period's start
+Long: close < open AND (running high - close) > (higher-timeframe ATR using the still-forming bar × percentage threshold)

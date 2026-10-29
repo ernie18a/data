@@ -1,0 +1,6 @@
+Long: Fast EMA > slow EMA AND close > slow EMA + ATR × gate AND close > VWAP AND fast EMA > prior bar fast EMA AND prior engine direction ≠ long, on a completed chart-timeframe bar
+Short: Fast EMA < slow EMA AND close < slow EMA − ATR × gate AND close < VWAP AND fast EMA < prior bar fast EMA AND prior engine direction ≠ short, on a completed chart-timeframe bar
+Calculation: Stop level = for long, the lower of the lowest low over the swing lookback and entry price − ATR × stop-floor multiplier; for short, the higher of the highest high over the swing lookback and entry price + ATR × stop-floor multiplier
+Calculation: Target level = entry price ± risk distance × target multiple, adding for long and subtracting for short; risk distance is the absolute distance from entry price to stop level
+Exit: long, low ≤ stop level OR high ≥ any target level, on a completed chart-timeframe bar after the entry bar
+Exit: short, high ≥ stop level OR low ≤ any target level, on a completed chart-timeframe bar after the entry bar

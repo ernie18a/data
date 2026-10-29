@@ -1,0 +1,6 @@
+Calculation: Buy volume share = total volume on lower-timeframe completed bars where close >= previous lower-timeframe close, divided by total volume on those bars
+Calculation: Sell volume share = total volume on lower-timeframe completed bars where close < previous lower-timeframe close, divided by total volume on those bars
+Calculation: Active buy volume share = total volume on lower-timeframe completed bars where close >= previous lower-timeframe close and volume > previous lower-timeframe volume, divided by total volume on lower-timeframe completed bars where volume > previous lower-timeframe volume
+Calculation: Active sell volume share = total volume on lower-timeframe completed bars where close < previous lower-timeframe close and volume > previous lower-timeframe volume, divided by total volume on lower-timeframe completed bars where volume > previous lower-timeframe volume
+Long: Buy volume share >= buy volume threshold OR Active buy volume share >= active volume threshold
+Short: Sell volume share >= sell volume threshold OR Active sell volume share >= active volume threshold

@@ -1,0 +1,3 @@
+Calculation: Volume delta = sum of lower-timeframe intrabar volumes, signed positive when intrabar close > open and negative when close < open; when equal, use the close change from the previous intrabar, and if unchanged carry forward the last polarity. Use completed intrabars within the current chart bar.
+Long: Volume delta > 0 OR a trend-change reset occurs with Supertrend turning up, Aroon up crossing above Aroon down, or Parabolic SAR crossing below close
+Short: Volume delta < 0 OR a trend-change reset occurs with Supertrend turning down, Aroon down crossing above Aroon up, or Parabolic SAR crossing above close

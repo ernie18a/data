@@ -1,0 +1,6 @@
+Calculation: Relative strength = stock percentage change divided by index percentage change over the same longer lookback; use the current still-forming higher-timeframe bar and the bar that many periods earlier; if index change is zero, use zero.
+Calculation: Score = weighted sum of stock close above the long-term EMA, close above the deeper-cycle EMA, RSI above its strength threshold, volume above its longer-lookback average, long-term EMA breakout, and deep-cycle reversal.
+Calculation: Long-term EMA breakout = current close above the long-term EMA AND previous completed higher-timeframe close below the current long-term EMA.
+Calculation: Deep-cycle reversal = close within a proximity threshold of the deeper-cycle EMA AND RSI above its reversal threshold AND volume above its longer-lookback average.
+Calculation: CPR top = pivot + (pivot - base), where pivot = (previous completed higher-timeframe high + low + close) / 3 and base = (previous completed higher-timeframe high + low) / 2.
+Long: (long-term EMA breakout OR deep-cycle reversal) AND score at or above its threshold AND relative strength above its threshold AND close above VWAP AND close above CPR top

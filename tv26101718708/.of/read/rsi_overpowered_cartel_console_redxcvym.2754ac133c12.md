@@ -1,0 +1,8 @@
+Calculation: Positive Volume Index = previous value multiplied by 1 + close percentage change when volume is greater than previous volume; otherwise previous value.
+Calculation: Negative Volume Index = previous value multiplied by 1 + close percentage change when volume is less than previous volume; otherwise previous value.
+Calculation: On-Balance Volume = previous value plus volume when close rises, minus volume when close falls, and unchanged when close is equal to previous close.
+Calculation: Composite RSI = average of the RSI of the Positive Volume Index, Negative Volume Index, and On-Balance Volume, all using the same lookback.
+Calculation: Smoothed Composite RSI = EMA of Composite RSI.
+Calculation: Composite RSI Oscillator = EMA of the RSI of Composite RSI; its RSI lookback matches the component RSI lookback.
+Long: Composite RSI Oscillator crosses above the oversold level AND Supertrend is bullish OR Smoothed Composite RSI enters the oversold zone OR a confirmed pivot low has Smoothed Composite RSI at or below the oversold level, and compared with the prior such pivot within the maximum pivot distance, price makes a lower low while Smoothed Composite RSI makes a higher low.
+Short: Composite RSI Oscillator crosses below the overbought level AND Supertrend is bearish OR Smoothed Composite RSI enters the overbought zone OR a confirmed pivot high has Smoothed Composite RSI at or above the overbought level, and compared with the prior such pivot within the maximum pivot distance, price makes a higher high while Smoothed Composite RSI makes a lower high.

@@ -1,0 +1,4 @@
+Calculation: Bollinger Bands = simple moving average of close ± 2 × standard deviation of close over the same lookback
+Calculation: Inner bands = the same simple moving average of close ± 1 × the same standard deviation
+Long: high > upper Bollinger Band OR (previous bar's high > its upper Bollinger Band OR previous bar qualified for this continuation condition) AND high <= upper Bollinger Band AND low > upper inner band
+Short: low < lower Bollinger Band OR (previous bar's low < its lower Bollinger Band OR previous bar qualified for this continuation condition) AND low >= lower Bollinger Band AND high < lower inner band

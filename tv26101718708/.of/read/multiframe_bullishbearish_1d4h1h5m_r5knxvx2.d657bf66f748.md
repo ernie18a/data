@@ -1,0 +1,2 @@
+Long: On each displayed timeframe, its close > its exponential moving average of close, using the last completed bar whether that timeframe is higher or lower than the chart timeframe.
+Short: On each displayed timeframe, its close < its exponential moving average of close, using the last completed bar whether that timeframe is higher or lower than the chart timeframe.

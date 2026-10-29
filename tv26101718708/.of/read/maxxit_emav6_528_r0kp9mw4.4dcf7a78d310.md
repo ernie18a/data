@@ -1,0 +1,12 @@
+Calculation: Rising over a lookback = current value is greater than at least one of the preceding lookback bars
+Calculation: Falling over a lookback = current value is less than at least one of the preceding lookback bars
+Long: The trend EMA is rising over its lookback AND the preceding bar’s fast EMA is below the trigger EMA AND the current fast EMA is above the trigger EMA AND (setback mode is off OR the preceding low is below the preceding fast EMA AND the current close is above the current fast EMA AND the fast EMA is above the trend EMA) AND the current bar is confirmed
+Short: The trend EMA is falling over its lookback AND the preceding bar’s fast EMA is above the trigger EMA AND the current fast EMA is below the trigger EMA AND (setback mode is off OR the preceding high is above the preceding fast EMA AND the current close is below the current fast EMA AND the fast EMA is below the trend EMA) AND the current bar is confirmed
+Long: Re-entry mode is on AND stop or take-profit management is enabled AND flat AND the trend EMA is rising over its lookback AND the fast EMA and high are each rising over the preceding 3 bars AND the fast EMA is above the trend EMA both now and 3 bars ago AND the EMA distance divided by ATR is at most 5 AND the preceding low is below the preceding fast EMA AND the current close is above the current fast EMA AND the current bar is confirmed
+Short: Re-entry mode is on AND stop or take-profit management is enabled AND flat AND the trend EMA is falling over its lookback AND the fast EMA and low are each falling over the preceding 3 bars AND the fast EMA is below the trend EMA both now and 3 bars ago AND the EMA distance divided by ATR is at most 5 AND the preceding high is above the preceding fast EMA AND the current close is below the current fast EMA AND the current bar is confirmed
+Long: The current trigger EMA is above the long EMA AND the preceding trigger EMA is at or above the preceding long EMA
+Short: The current trigger EMA is below the long EMA AND the preceding trigger EMA is at or below the preceding long EMA
+Exit: Long, current close is at or above entry price × (1 + adaptive take-profit fraction) when take-profit is enabled
+Exit: Long, current close is at or below the current stop when configured stop is enabled
+Exit: Short, current close is at or below entry price × (1 − adaptive take-profit fraction) when take-profit is enabled
+Exit: Short, current close is at or above the current stop when configured stop is enabled

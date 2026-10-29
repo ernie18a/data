@@ -1,0 +1,6 @@
+Calculation: Gap bounds = At the start of each higher-timeframe day (NDOG) or week (NWOG), gap top is the greater of the current bar's open and the previous completed chart bar's close; gap bottom is the lesser.
+Calculation: Swing point = While flat, on a bar whose high is at least the gap bottom and whose low is at most the gap top, initialize to that bar's low if its close is above the gap top, otherwise to its high. On subsequent overlapping bars, update to the lowest low if the close is above the gap top, otherwise to the highest high. Reset to undefined when outside the enabled trade sessions while flat.
+Long: No trade has been taken in the current gap period AND position is flat AND time is within an enabled trade session AND swing point is defined AND close > gap top AND previous bar's low <= gap top
+Short: No trade has been taken in the current gap period AND position is flat AND time is within an enabled trade session AND swing point is defined AND close < gap bottom AND previous bar's high >= gap bottom
+Exit: Long, low <= swing point minus stop offset OR (exit mode is fixed target AND high >= entry price plus target distance) OR (exit mode is 2 PM AND time is 2 PM Eastern)
+Exit: Short, high >= swing point plus stop offset OR (exit mode is fixed target AND low <= entry price minus target distance) OR (exit mode is 2 PM AND time is 2 PM Eastern)

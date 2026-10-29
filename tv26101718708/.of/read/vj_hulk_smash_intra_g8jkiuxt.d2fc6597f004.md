@@ -1,0 +1,4 @@
+Long: close > Supertrend AND close < open AND volume > previous bar volume AND ADX > ADX momentum threshold AND datetime is within the configured market session
+Short: close < Supertrend AND close > open AND volume > previous bar volume AND ADX > ADX momentum threshold AND datetime is within the configured market session
+Exit: long, low <= entry price × (1 − long stop-loss percentage) OR high >= entry price × (1 + long take-profit percentage) OR datetime is outside the configured market session
+Exit: short, high >= entry price × (1 + short stop-loss percentage) OR low <= entry price × (1 − short take-profit percentage) OR datetime is outside the configured market session

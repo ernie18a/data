@@ -1,0 +1,7 @@
+Calculation: Higher-timeframe EMA spread = EMA of the last completed higher-timeframe close using a shorter lookback minus EMA of that close using a longer lookback
+Calculation: Mixed-timeframe EMA spread = EMA of the lower-timeframe close using a shorter lookback minus EMA of the higher-timeframe close using a longer lookback; both timeframes are higher than the chart timeframe
+Calculation: Shortest-timeframe EMA spread = EMA of the shortest-timeframe close using a shorter lookback minus EMA of that close using a longer lookback; use the chart-timeframe bar if it is the chart timeframe, otherwise use its last completed bar
+Long: RSI < oversold threshold AND higher-timeframe EMA spread < 0 AND mixed-timeframe EMA spread < 0 AND shortest-timeframe EMA spread < 0
+Short: RSI > overbought threshold AND higher-timeframe EMA spread > 0 AND mixed-timeframe EMA spread > 0 AND shortest-timeframe EMA spread > 0
+Exit: Long, price <= highest price since entry minus trailing offset after price first reaches entry price plus the trailing activation distance
+Exit: Short, price >= lowest price since entry plus trailing offset after price first reaches entry price minus the trailing activation distance

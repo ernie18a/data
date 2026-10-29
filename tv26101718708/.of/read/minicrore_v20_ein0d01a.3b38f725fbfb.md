@@ -1,0 +1,6 @@
+Calculation: New swing low = current low equals the lowest low over a lookback and is below each of the previous two bars’ lows
+Calculation: New swing high = current high equals the highest high over a lookback and exceeds every high in the preceding bars of that lookback
+Calculation: Candle body size = absolute value of close − open
+Calculation: Channel range = greater of (highest high − lowest low over a lookback) and ATR
+Long: (New swing low AND volume > its moving average × multiplier AND close > open AND fast EMA > medium EMA AND medium EMA > slow SMA AND the same conditions were false on the previous bar) OR (low < previous low AND close > open AND candle body size > 0.4 × channel range AND volume > its moving average)
+Short: (New swing high AND volume > its moving average × multiplier AND close < open AND fast EMA < medium EMA AND medium EMA < slow SMA AND the same conditions were false on the previous bar) OR (high > previous high AND close < open AND candle body size > 0.4 × channel range AND volume > its moving average)

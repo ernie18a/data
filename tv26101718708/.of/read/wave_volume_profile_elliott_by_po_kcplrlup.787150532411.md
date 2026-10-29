@@ -1,0 +1,14 @@
+Calculation: Bullish ABC = the latest five alternating confirmed pivots are low P1, high P2, low P3, high P4, low P5; (P2−P3)/P2 meets the selected minimum pullback threshold; (P4−P3)/(P2−P3) does not exceed the selected maximum retracement and P4<P2; unless deep C is allowed, P5≥97% of P3; and no earlier high in the impulse lookback, excluding P2, is ≥P2
+Calculation: Adaptive minimum pullback threshold = selected preset minimum, or, when adaptive mode is enabled and at least ten prior pullbacks exist, the median of up to the latest 50 pullback percentages multiplied by 0.75 and clamped to 2.5%–15%
+Calculation: Volume baseline = simple moving average of volume over the selected lookback
+Calculation: Volume Point of Control (POC) = midpoint of the price row with the greatest allocated volume across the selected profile range; divide its high-low range into equal rows and allocate each bar's volume in proportion to each row's overlap with that bar's high-low range
+Calculation: Bullish breakout confirmation = close > P4 + ATR × selected breakout multiplier AND volume ≥ volume baseline × selected breakout volume percentage
+Long: Bullish ABC AND the pending pattern has not been invalidated by close < P5 − ATR × selected invalidation multiplier AND (a later confirmed pivot low is above P5 OR bullish breakout confirmation OR pending duration reaches its time cap); after profile finalization and on a bar after P5, close > POC for the selected weak-tier consecutive-bar count AND weak tier has not fired for this structure
+Long: Bullish ABC AND the pending pattern has not been invalidated by close < P5 − ATR × selected invalidation multiplier AND (a later confirmed pivot low is above P5 OR bullish breakout confirmation OR pending duration reaches its time cap); after profile finalization and on a bar after P5, close > POC for the selected medium-tier consecutive-bar count AND medium tier has not fired for this structure
+Long: Bullish ABC AND the pending pattern has not been invalidated by close < P5 − ATR × selected invalidation multiplier AND (a later confirmed pivot low is above P5 OR bullish breakout confirmation OR pending duration reaches its time cap); after profile finalization and on a bar after P5, close > POC for the selected weak-tier consecutive-bar count AND volume ≥ volume baseline × selected strong-tier volume threshold AND strong tier has not fired for this structure
+Exit: Long, low ≤ P5
+Exit: Long, high ≥ POC + (POC − P5) × selected first target multiple
+Exit: Long, high ≥ POC + (POC − P5) × selected second target multiple
+Exit: Long, high ≥ POC + (POC − P5) × selected third target multiple
+Exit: Long, high ≥ POC + (POC − P5) × selected third target multiple OR (first target has been reached AND low ≤ highest high since entry − ATR × selected trailing multiplier)
+Exit: Long, high ≥ POC + (POC − P5) × selected third target multiple OR (first target has been reached AND low ≤ entry price)

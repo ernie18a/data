@@ -1,0 +1,3 @@
+Calculation: Session reference level = previous session’s final close or current session’s first open, according to the selected reference mode
+Long: close > session reference level AND previous close <= previous bar’s session reference level AND current bar is not the first bar of the trading session AND chart timeframe is intraday
+Short: close < session reference level AND previous close >= previous bar’s session reference level AND current bar is not the first bar of the trading session AND chart timeframe is intraday

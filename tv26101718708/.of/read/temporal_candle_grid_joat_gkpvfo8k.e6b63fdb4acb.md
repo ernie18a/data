@@ -1,0 +1,3 @@
+Calculation: HTF midpoint = (high + low) / 2 of the last completed higher-timeframe bar
+Long: At least N consecutive chart-timeframe closes > the high of the last completed higher-timeframe bar OR at least N consecutive chart-timeframe closes > the HTF midpoint
+Short: At least N consecutive chart-timeframe closes < the low of the last completed higher-timeframe bar OR at least N consecutive chart-timeframe closes < the HTF midpoint

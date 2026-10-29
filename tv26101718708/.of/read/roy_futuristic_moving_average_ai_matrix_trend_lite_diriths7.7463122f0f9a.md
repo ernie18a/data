@@ -1,0 +1,2 @@
+Long: For each scanned higher or lower timeframe and each of five EMA lookbacks, ordered shortest to longest: that timeframe's close > its EMA; use the latest available timeframe value (forming bar in realtime, last completed bar historically)
+Short: For each scanned higher or lower timeframe and each of five EMA lookbacks, ordered shortest to longest: that timeframe's close <= its EMA; use the latest available timeframe value (forming bar in realtime, last completed bar historically)

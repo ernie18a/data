@@ -1,0 +1,3 @@
+Calculation: Naive Bayes win probability = Gaussian Naive Bayes posterior for an up-close outcome. Label each bar up when its close exceeds the previous close, otherwise down. Use relative volume (volume divided by its simple moving average) and close rate of change as independent features. For each class, estimate each feature’s mean and variance over the training lookback; multiply the two Gaussian densities by the class prior (the up-bar fraction for up, its complement for down), then divide the up-class likelihood by the sum of both class likelihoods.
+Long: Naive Bayes win probability > 0.5
+Short: Naive Bayes win probability <= 0.5

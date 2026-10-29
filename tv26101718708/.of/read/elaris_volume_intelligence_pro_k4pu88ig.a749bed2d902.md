@@ -1,0 +1,9 @@
+Calculation: Relative volume = current volume divided by its simple moving average.
+Calculation: Volume z-score = (current volume − the same volume moving average used for relative volume) divided by volume standard deviation over a separate lookback.
+Calculation: Close position = (close − low) / (high − low), or 0 when high equals low.
+Calculation: Normalized volume delta = clamp(100 × volume × (2 × close position − 1) / the volume moving average, −100, 100).
+Calculation: Volume flow momentum = two successive exponential moving averages of normalized volume delta, using the same smoothing length for both.
+Calculation: CVD = cumulative sum of volume × (2 × close position − 1).
+Calculation: ATR-normalized range = (high − low) / ATR.
+Long: (relative volume ≥ climax threshold AND volume z-score ≥ extreme threshold AND close > open AND close position ≥ 0.65) OR (relative volume ≥ high-volume threshold AND ATR-normalized range ≤ absorption threshold AND close position ≥ 0.60 AND close ≤ open) OR (low < lowest low over the prior divergence lookback AND current CVD ≥ lowest CVD over that lookback) OR (volume flow momentum > positive threshold AND normalized volume delta > 0 AND relative volume > 1).
+Short: (relative volume ≥ climax threshold AND volume z-score ≥ extreme threshold AND close < open AND close position ≤ 0.35) OR (relative volume ≥ high-volume threshold AND ATR-normalized range ≤ absorption threshold AND close position ≤ 0.40 AND close ≥ open) OR (high > highest high over the prior divergence lookback AND current CVD ≤ highest CVD over that lookback) OR (volume flow momentum < negative threshold AND normalized volume delta < 0 AND relative volume > 1).

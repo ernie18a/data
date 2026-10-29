@@ -1,0 +1,5 @@
+Calculation: Stock return = (current chart close − chart close at the return lookback) × 100 ÷ current chart close
+Calculation: Index return = (current higher-timeframe index close − index close at the same lookback) × 100 ÷ current higher-timeframe index close; use the bar still forming
+Calculation: Relative return = stock return − index return
+Long: During the configured date range, if comparing moving averages, stock-return moving average > index-return moving average; if comparing raw returns, stock return > index return; if comparing relative returns, relative return > its moving average
+Exit: Long, if comparing moving averages, stock-return moving average < index-return moving average; if comparing raw returns, stock return < index return; if comparing relative returns, relative return < its moving average

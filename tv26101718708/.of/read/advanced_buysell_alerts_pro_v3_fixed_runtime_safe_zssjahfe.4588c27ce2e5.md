@@ -1,0 +1,7 @@
+Calculation: Ticker metrics use the configured scan timeframe, which may be higher or lower than the chart timeframe; use the latest data available at chart-bar close, including a still-forming bar if the scan timeframe is higher.
+Calculation: Market-regime values use the configured regime timeframe, which may be higher or lower than the chart timeframe; use the latest data available at chart-bar close, including a still-forming bar if the regime timeframe is higher.
+Calculation: Volume ratio = short-lookback average volume / longer-lookback average volume.
+Calculation: ATR percentage = ATR / close × 100.
+Calculation: Distance below the lookback high = (close / highest high − 1) × 100.
+Calculation: Setup score = count of these conditions that are true: close > short-term SMA > medium-term SMA > long-term SMA; RSI is within its configured lower and upper bounds; volume ratio meets its configured minimum; ATR percentage is within its configured lower and upper bounds; close is below the lookback high by a percentage within its configured bounds.
+Long: Setup score ≥ configured minimum AND close > 0 AND ATR > 0 AND the configured regime filters pass (QQQ close > its long-term SMA when enabled; VIX close < its configured threshold when enabled).

@@ -1,0 +1,6 @@
+Calculation: Estimated delta = volume × ((close − low) − (high − close)) / (high − low); if high = low, 0
+Calculation: Delta ratio = estimated delta / volume; if volume = 0, 0
+Calculation: Cumulative delta = running sum of estimated delta, reset at configured session boundaries
+Calculation: Smoothed delta Z-score = EMA of (estimated delta − its rolling mean) / its rolling standard deviation, using a shorter smoothing lookback than the normalization lookback; use 0 when standard deviation is 0
+Long: delta ratio > imbalance threshold OR current low is a confirmed pivot low below the prior confirmed pivot low AND cumulative delta at the current pivot is above cumulative delta at the prior pivot AND the pivot is confirmed OR smoothed delta Z-score crosses above its upper threshold
+Short: delta ratio < negative imbalance threshold OR current high is a confirmed pivot high above the prior confirmed pivot high AND cumulative delta at the current pivot is below cumulative delta at the prior pivot AND the pivot is confirmed OR smoothed delta Z-score crosses below its lower threshold

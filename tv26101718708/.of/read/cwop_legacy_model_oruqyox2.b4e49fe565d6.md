@@ -1,0 +1,3 @@
+Calculation: Candle body-to-range ratio = abs(close - open) / (high - low), or 0 when high = low
+Calculation: Candle range percentage = (high - low) / low * 100
+Long: The most recent setup occurred at least four bars ago, where that setup had candle range percentage >= its threshold AND candle body-to-range ratio >= its threshold AND (low <= the longer-lookback EMA of HLC3 <= high AND low <= VWAP <= high OR the longer-lookback EMA of HLC3 crossed above the shorter-lookback SMA of HLC3)

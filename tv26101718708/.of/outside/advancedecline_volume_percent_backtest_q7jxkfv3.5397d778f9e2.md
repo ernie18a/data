@@ -1,0 +1,1 @@
+Calculate net advancing volume as advancing volume minus declining volume, then measure its percentage change from the prior bar relative to the sum of advancing and declining volume. Go long when this measure exceeds an upper threshold; go short when it falls below a lower threshold; otherwise keep the current position. An optional reverse setting swaps long and short signals.

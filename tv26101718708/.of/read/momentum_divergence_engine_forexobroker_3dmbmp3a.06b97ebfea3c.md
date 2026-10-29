@@ -1,0 +1,6 @@
+Calculation: Matched pivot low = price low and RSI low at the same confirmed pivot bar, each lower than the configured number of bars to its left and right; available after the right-side bars complete
+Calculation: Matched pivot high = price high and RSI high at the same confirmed pivot bar, each higher than the configured number of bars to its left and right; available after the right-side bars complete
+Long: A current matched pivot low is within the maximum bar distance of the previous matched pivot low AND (current price low < previous price low AND current RSI low > previous RSI low OR current price low > previous price low AND current RSI low < previous RSI low)
+Short: A current matched pivot high is within the maximum bar distance of the previous matched pivot high AND (current price high > previous price high AND current RSI high < previous RSI high OR current price high < previous price high AND current RSI high > previous RSI high)
+Long: A bullish divergence occurs on a confirmed bar AND volume > volume SMA AND close <= EMA * 1.02 AND the configured signal cooldown has elapsed
+Short: A bearish divergence occurs on a confirmed bar AND volume > volume SMA AND close >= EMA * 0.98 AND the configured signal cooldown has elapsed

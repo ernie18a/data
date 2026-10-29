@@ -1,0 +1,3 @@
+Calculation: Percentage distance from EMA = abs(close - EMA) / EMA * 100
+Long: On any monitored timeframe, close > EMA AND (consolidation detection is disabled OR percentage distance from EMA >= consolidation threshold); use that timeframe’s current bar, including a still-forming bar when available, otherwise its latest completed bar, whether the timeframe is higher or lower than the chart timeframe
+Short: On any monitored timeframe, close < EMA AND (consolidation detection is disabled OR percentage distance from EMA >= consolidation threshold); use that timeframe’s current bar, including a still-forming bar when available, otherwise its latest completed bar, whether the timeframe is higher or lower than the chart timeframe

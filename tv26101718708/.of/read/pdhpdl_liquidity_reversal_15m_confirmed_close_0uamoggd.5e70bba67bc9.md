@@ -1,0 +1,9 @@
+Calculation: Previous session high/low = highest high / lowest low during the preceding completed configured session, aggregated from chart-timeframe bars
+Calculation: Current calendar-day high/low = highest high / lowest low since the calendar day began
+Calculation: Confirmed pivot low/high = local low/high with configured numbers of chart bars on both sides, known after the right-side bars complete
+Calculation: Long trailing stop = current-day low minus configured tick buffer at entry; after high reaches entry price + initial risk × configured activation multiple, raise it to the greater of its prior value and confirmed pivot low minus ATR × configured buffer multiplier
+Calculation: Short trailing stop = current-day high plus configured tick buffer at entry; after low reaches entry price − initial risk × configured activation multiple, lower it to the lesser of its prior value and confirmed pivot high plus ATR × configured buffer multiplier
+Long: a low since the calendar day began < previous session low AND close > previous session low AND prior close <= previous session low AND close > (high + low) / 2 AND current bar is complete AND no short position is open AND entry time is within the configured session when that filter is enabled AND entry price − (current-day low − configured tick buffer) > one minimum tick
+Short: a high since the calendar day began > previous session high AND close < previous session high AND prior close >= previous session high AND close < (high + low) / 2 AND current bar is complete AND no long position is open AND entry time is within the configured session when that filter is enabled AND (current-day high + configured tick buffer) − entry price > one minimum tick
+Exit: long, low <= long trailing stop
+Exit: short, high >= short trailing stop

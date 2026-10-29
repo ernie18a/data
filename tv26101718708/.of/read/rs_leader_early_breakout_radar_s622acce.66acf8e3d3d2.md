@@ -1,0 +1,8 @@
+Calculation: Relative-strength ratio = stock close divided by benchmark close on the chart timeframe.
+Calculation: Prior price high = highest stock high over the long price lookback, excluding the current bar.
+Calculation: Distance below prior price high = (prior price high − stock close) / prior price high × 100.
+Calculation: Consolidation width = (highest stock high − lowest stock low over the short consolidation lookback) / stock close × 100.
+Calculation: Relative volume = stock volume / its moving average over the volume lookback.
+Calculation: RS Leader score = rounded, bounded weighted sum of: RS points (increase linearly from the RS scoring floor to the RS lookback high); price-proximity points (decrease linearly from the maximum allowed distance to zero distance); range points (decrease linearly as consolidation width rises to its scoring cap); trend points (awarded when close > fast MA, fast MA > medium MA, medium MA > slow MA, and medium MA is rising); and volume points (higher for lower relative volume, in tiers).
+Long: On a confirmed bar, RS ratio ≥ its long-lookback high × (1 − RS high tolerance) AND stock close < prior price high AND distance below prior price high is between zero and the maximum allowed distance AND consolidation width ≤ its maximum AND stock close > fast MA > medium MA > slow MA AND medium MA > its value at the earlier slope lookback AND RS Leader score ≥ its minimum.
+Long: On a confirmed bar, stock close > prior price high AND previous stock close ≤ the previous bar's prior price high AND the RS Leader setup was true on the previous bar.

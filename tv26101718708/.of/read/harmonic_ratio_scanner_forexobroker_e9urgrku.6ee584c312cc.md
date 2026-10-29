@@ -1,0 +1,5 @@
+Calculation: Confirmed swing high/low = a bar whose high/low is the highest/lowest across the swing lookback bars before and after it
+Calculation: Harmonic ratio = absolute move from the newest confirmed swing to the preceding swing divided by the absolute move from that preceding swing to the third newest; require the preceding-to-third-newest move to exceed ATR(14) times the minimum swing-size multiplier, and the ratio to be within the tolerance of an enabled 0.382, 0.500, 0.618, or 0.786 level. Scan up to the five most recent consecutive swing triples and use the first qualifying triple.
+Calculation: New harmonic ratio = a qualifying harmonic ratio whose newest swing bar differs from the newest swing bar of the prior detected ratio
+Long: New harmonic ratio AND newest swing is a low AND preceding swing is a high
+Short: New harmonic ratio AND newest swing is a high OR newest swing is a low AND preceding swing is not a high

@@ -1,0 +1,3 @@
+Calculation: ATR = Wilder-smoothed true range calculated from higher-timeframe bars, using the last completed bar
+Long: MACD crosses above its signal line OR MFI crosses above its lower threshold AND higher-timeframe EMA > higher-timeframe SMA; and, if enabled, RSI is within its configured bounds and rising, close >= the configured moving average, and ATR > its configured minimum
+Exit: Long, close < entry price * (1 - configured stop-loss fraction) OR close < (high of latest long-signal bar - configured ATR multiple * ATR) OR, after close > entry price * (1 + configured take-profit fraction), price falls by the configured trailing deviation from the take-profit level or by the configured trailing-stop distance from its post-activation high

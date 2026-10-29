@@ -1,0 +1,2 @@
+Long: (flat AND chart-timeframe RSI < entry threshold AND within configured entry window) OR (long position AND within configured entry window AND next unfilled safety-order rung exists AND close <= base entry × (1 − that rung’s fixed deviation)); safety-order deviations are measured from base entry and increase at each successive rung
+Exit: long, close >= average entry price × (1 + take-profit percentage)

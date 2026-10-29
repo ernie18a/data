@@ -1,0 +1,1 @@
+Enter long when the S&P 500’s low is above its 21-day EMA for three consecutive days. Exit the long if either the S&P 500’s 7-day SMA crosses below its 107-day SMA while the index closes below both its 7-day SMA and 14-day EMA and the traded instrument closes below its 14-day EMA; or the instrument’s low falls below its entry-relative stop and below its 50-day SMA.

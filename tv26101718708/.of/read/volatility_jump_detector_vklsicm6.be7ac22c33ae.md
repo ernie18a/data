@@ -1,0 +1,4 @@
+Calculation: Robust volatility = square root of the selected rolling variance estimate, using only bars before the current bar: either MedRV (π/(6−4√3+π) × jumpWin/(jumpWin−2) × mean of squared medians of three consecutive absolute log returns) or bipower variation (π/2 × mean of products of adjacent absolute log returns)
+Calculation: Lee–Mykland threshold = √(2 ln n) − (ln π + ln ln n)/(2√(2 ln n)) + [−ln(−ln(1−α))]/√(2 ln n); alternatively, use the selected fixed multiple of robust volatility
+Long: close > previous close AND |ln(close/previous close)| / robust volatility > selected threshold
+Short: close < previous close AND |ln(close/previous close)| / robust volatility > selected threshold

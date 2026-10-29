@@ -1,0 +1,2 @@
+Short: current longer-lookback VWMA > current shorter-lookback HMA AND previous longer-lookback VWMA <= previous shorter-lookback HMA
+Exit: short, (current shorter-lookback EMA > current longer-lookback EMA AND previous shorter-lookback EMA <= previous longer-lookback EMA) OR (current shorter-lookback EMA > current longer-lookback VWMA AND previous shorter-lookback EMA <= previous longer-lookback VWMA)

@@ -1,0 +1,3 @@
+Calculation: Price movement = absolute difference between the current close and the close N chart bars ago
+Long: Volume > simple moving average of volume over N chart bars × volume multiplier AND price movement > close N chart bars ago × price multiplier AND higher-timeframe VIX close (current bar as available, without lookahead) < VIX threshold
+Exit: Long, low <= entry price − stop-loss multiplier × standard deviation of close over N chart bars OR bars since entry >= holding-period parameter

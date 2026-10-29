@@ -1,0 +1,3 @@
+Calculation: Segment mean innovation sigma = mean, over confirmed chart-timeframe bars in the current segment, of the EWMA standard deviation of one-step innovations from a Kalman local-linear-trend filter.
+Long: Current segment’s OLS slope per bar > flat dead-zone parameter × segment mean innovation sigma
+Short: Current segment’s OLS slope per bar < −flat dead-zone parameter × segment mean innovation sigma

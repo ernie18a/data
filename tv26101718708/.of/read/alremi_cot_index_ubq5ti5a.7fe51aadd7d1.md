@@ -1,0 +1,3 @@
+Calculation: COT index (commercials, large speculators, or small speculators) = 100 × (net long positions − lowest net long positions over the lookback) / (highest net long positions over the lookback − lowest net long positions over the lookback), where net long positions = long positions − short positions; all three indices use the same lookback and the last completed bar of the higher timeframe
+Long: commercials COT index ≤ lower threshold OR large speculators COT index ≤ lower threshold OR small speculators COT index ≤ lower threshold
+Short: commercials COT index ≥ upper threshold OR large speculators COT index ≥ upper threshold OR small speculators COT index ≥ upper threshold

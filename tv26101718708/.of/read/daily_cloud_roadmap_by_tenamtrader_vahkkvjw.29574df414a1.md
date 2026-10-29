@@ -1,0 +1,2 @@
+Long: On a higher timeframe, using its still-forming bar, the shorter-lookback EMA is greater than the longer-lookback EMA for any of the five EMA pairs.
+Short: On a higher timeframe, using its still-forming bar, the shorter-lookback EMA is less than or equal to the longer-lookback EMA for any of the five EMA pairs.

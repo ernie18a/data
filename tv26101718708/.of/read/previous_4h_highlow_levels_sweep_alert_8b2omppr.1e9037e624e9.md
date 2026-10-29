@@ -1,0 +1,3 @@
+Calculation: Sweep buffer = configured number of ticks × instrument minimum tick size
+Long: current chart bar low < previous completed higher-timeframe bar low − sweep buffer AND current chart bar close > previous completed higher-timeframe bar low
+Short: current chart bar high > previous completed higher-timeframe bar high + sweep buffer AND current chart bar close < previous completed higher-timeframe bar high

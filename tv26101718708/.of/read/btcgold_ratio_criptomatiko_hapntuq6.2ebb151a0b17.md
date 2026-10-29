@@ -1,0 +1,3 @@
+Calculation: BTC/Gold ratio = BTC price divided by gold price, using the latest available daily bar (higher or lower than the chart timeframe as applicable; completed historically and possibly still forming in real time)
+Calculation: Bars since ratio high = number of chart bars since the ratio last equaled or exceeded its running maximum
+Long: Bars since ratio high >= configured bounce-zone threshold OR BTC/Gold ratio crosses above its EMA

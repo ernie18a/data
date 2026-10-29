@@ -1,0 +1,13 @@
+Calculation: Relative strength = close / benchmark close; its average = SMA of relative strength over a longer lookback
+Calculation: Accumulation/distribution line = cumulative (((close − low) − (high − close)) / max(high − low, minimum range) × volume)
+Calculation: Price/volume score = clamp[-5, 5](2 if high > prior high + 2 if low > prior low + 1 if close > open AND volume > short-term average volume − 3 if close < open AND volume > 1.5 × long-term average volume − 2 if high > prior 20-bar highest high AND close < open)
+Calculation: Smart-money score = clamp[-5, 5](2 if accumulation/distribution line > its short-term average + 2 if close is within 1% of VWAP AND volume > short-term average volume AND absolute(close − open) / close < 1% + 1 if close < prior close AND volume < short-term average volume − 3 if close < prior 20-bar lowest low AND volume > short-term average volume)
+Calculation: Institutional score = clamp[-5, 5](3 if both relative strengths exceed their longer-lookback averages AND close > medium-term EMA AND accumulation/distribution line > its short-term average + 2 if both relative strengths exceed their longer-lookback averages − 3 if both relative strengths are below their longer-lookback averages AND close < medium-term EMA)
+Calculation: Fundamental momentum score = clamp[-5, 5](3 if close > medium-term EMA AND RSI is between 55 and 75 + 2 if close > long-term EMA − 3 if close < medium-term EMA AND RSI < 45)
+Calculation: Relative strength score = clamp[-5, 5](4 if both relative strengths exceed their longer-lookback averages + 1 if close's rate of change is positive − 3 if both relative strengths are below their longer-lookback averages)
+Calculation: Technical structure score = clamp[-5, 5](3 if close exceeds the prior 20-bar highest high AND volume > short-term average volume + 1 if short-term EMA > medium-term EMA + 1 if medium-term EMA > long-term EMA − 2 if high >= prior 30-bar highest high AND close < open)
+Calculation: Volatility score = clamp[-5, 5](3 if short-term ATR < its longer-lookback average − 2 if short-term ATR > 1.2 × its longer-lookback average AND close < medium-term EMA)
+Calculation: Cycle score = clamp[-5, 5](3 if close > long-term EMA + 2 if both relative strengths exceed their longer-lookback averages − 3 if both relative strengths are below their longer-lookback averages)
+Calculation: Smoothed institutional score = SMA(((20 × price/volume score + 20 × smart-money score + 15 × institutional score + 15 × fundamental momentum score + 10 × relative strength score + 10 × technical structure score + 5 × volatility score + 5 × cycle score + 500) / 10), smoothing lookback)
+Long: Smoothed institutional score >= 70
+Short: Smoothed institutional score <= 40

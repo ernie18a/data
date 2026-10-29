@@ -1,0 +1,2 @@
+Long: chart close >= open of any displayed timeframe candle (use the current forming bar for higher timeframes)
+Short: chart close < open of any displayed timeframe candle (use the current forming bar for higher timeframes)

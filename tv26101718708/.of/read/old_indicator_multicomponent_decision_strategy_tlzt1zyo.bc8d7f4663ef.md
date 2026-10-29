@@ -1,0 +1,14 @@
+Calculation: Smoothed moving average = initialize with the simple moving average; thereafter use ((previous value × (length − 1)) + current source) / length
+Calculation: Zero-lag EMA = EMA(source, length) + EMA(source, length) − EMA(EMA(source, length), length)
+Calculation: MACD direction = +1 when HLC3 > zero-lag EMA and −1 otherwise; calculate separately on the chart timeframe and on a higher timeframe, using that timeframe’s last completed bar
+Calculation: MACD histogram direction = +1 when (histogram ≥ 0 AND histogram > previous histogram) OR (histogram < 0 AND histogram ≥ previous histogram); otherwise −1. Histogram uses the difference between fast and slow EMAs minus its signal EMA
+Calculation: RSI movement score = +1 when RSI change > threshold, −1 when RSI change < −threshold, and 0 otherwise
+Calculation: Falling trend = count of closes less than or equal to the next close in the lookback > count of closes greater than the next close in the lookback
+Calculation: Green component count = count of these being true: close ≥ open; volume ≥ previous volume; higher-timeframe MACD direction > 0; MACD histogram direction > 0; RSI movement score = +1; chart-timeframe MACD direction > 0
+Calculation: Red component count = count of these being true: close < open; volume < previous volume; higher-timeframe MACD direction < 0; MACD histogram direction < 0; RSI movement score = −1; chart-timeframe MACD direction < 0
+Calculation: Inconclusive component count = 6 − green component count − red component count
+Calculation: Strength = max(green component count, red component count) / 6 × 100
+Calculation: Decision color = first matching rule: green component count ≥ 4 → green; red component count ≥ 4 → red; both counts = 3 and RSI change ≥ 1 → green; both counts = 3 and RSI change < 1 → red; green component count = 3 and RSI movement score = 0 → yellow; red component count ≥ green component count + inconclusive component count → red; green component count ≥ red component count + inconclusive component count → green; otherwise inconclusive. If current close = previous close, use orange instead. If that result is orange and the previous bar closed below its open, use green; otherwise, if it is orange and the previous bar’s MACD direction was green or lime and its close was above its open, use red.
+Long: decision color = green AND chart-timeframe MACD direction is green or lime AND (RSI change ≠ 0 OR NOT falling trend) AND ((NOT falling trend AND strength > 50) OR (falling trend AND strength > 70 AND strength < 100))
+Short: decision color = red OR falling trend
+Exit: long, short condition AND close ≥ active sell limit price

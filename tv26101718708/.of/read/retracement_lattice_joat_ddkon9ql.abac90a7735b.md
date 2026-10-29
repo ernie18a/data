@@ -1,0 +1,12 @@
+Calculation: Active swing = initialize from the highest high and lowest low over a lookback; thereafter update each anchor when a pivot, confirmed after equal left/right spans, is found, subject to the optional volume gate at the pivot bar. Swing direction is down when the low anchor is later than the high anchor, overridden to up if close exceeds the high anchor and down if close falls below the low anchor; optionally reverse this direction.
+Calculation: Retracement level r = for an up swing, high − (high − low) × r; for a down swing, low + (high − low) × r. Use r = 0.618, 0.705, 0.786, and 1.0 (full anchor); the pocket is the range between levels 0.618 and 0.786.
+Calculation: Higher-timeframe direction = whether the last completed higher-timeframe bar closed below its open, optionally reversed. Higher-timeframe alignment = local swing direction equals higher-timeframe direction.
+Calculation: Pocket distance = zero when close is inside the pocket; otherwise the distance from close to the nearest pocket boundary.
+Long: Chart bar is confirmed AND swing direction is up AND close is within the pocket AND higher-timeframe alignment (when required) AND close is at or above the 0.705 level AND close > open AND (trend filter disabled OR close >= EMA(close)) AND (volume sponsorship not required OR volume > its moving-average baseline × threshold)
+Long: Chart bar is confirmed AND swing direction is up AND previous close <= 0.705 level AND close > 0.705 level AND pocket distance <= ATR × response buffer AND (trend filter disabled OR close >= EMA(close))
+Long: Chart bar is confirmed AND swing direction is up AND close > the swing's zero level
+Short: Chart bar is confirmed AND swing direction is down AND close is within the pocket AND higher-timeframe alignment (when required) AND close is at or below the 0.705 level AND close < open AND (trend filter disabled OR close <= EMA(close)) AND (volume sponsorship not required OR volume > its moving-average baseline × threshold)
+Short: Chart bar is confirmed AND swing direction is down AND previous close >= 0.705 level AND close < 0.705 level AND pocket distance <= ATR × response buffer AND (trend filter disabled OR close <= EMA(close))
+Short: Chart bar is confirmed AND swing direction is down AND close < the swing's zero level
+Exit: long, chart bar is confirmed AND swing direction is up AND close < the full anchor level
+Exit: short, chart bar is confirmed AND swing direction is down AND close > the full anchor level

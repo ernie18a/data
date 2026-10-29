@@ -1,0 +1,1 @@
+Calculate a weighted sum of log returns over several configured lookback horizons for each of two external assets. Enter long on the traded instrument when the first asset’s weighted momentum is positive. Close that long position when the second asset’s weighted momentum is negative. The strategy does not open short positions.

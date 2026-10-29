@@ -1,0 +1,5 @@
+Calculation: Bullish FPI = current bar low > high two bars earlier
+Calculation: Bearish FPI = current bar high < low two bars earlier
+Calculation: FPI zone = [the lower of current bar low and high two bars earlier, the higher of them] for a bullish FPI; [the lower of current bar high and low two bars earlier, the higher of them] for a bearish FPI
+Long: Active session AND (the first close beyond the first FPI zone detected in the session macro window is above that zone OR (no macro-window close has resolved bias AND the first FPI detected in the session-start FPI window is bullish))
+Short: Active session AND (the first close beyond the first FPI zone detected in the session macro window is below that zone OR (no macro-window close has resolved bias AND the first FPI detected in the session-start FPI window is bearish))

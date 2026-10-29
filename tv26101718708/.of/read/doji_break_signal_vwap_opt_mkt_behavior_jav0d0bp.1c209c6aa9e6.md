@@ -1,0 +1,27 @@
+Calculation: Doji = high > low AND |close - open| / (high - low) ≤ the configured body-to-range limit
+Calculation: EMA30 ATR distance = (close - EMA(30)) / ATR(14)
+Calculation: EMA stack = EMA(5), EMA(10), EMA(20), and EMA(30); bullish stack means each is greater than the next, bearish stack means each is less than the next
+Calculation: Full EMA range = minimum and maximum of EMA(5), EMA(10), EMA(20), and EMA(30)
+Calculation: Reversal score = min(round(EMA direction score + ATR stretch score + momentum fade score + EMA30-limit proximity score), 100), where EMA direction score is 25 for a full bullish or bearish stack, 15 if (EMA(5) > EMA(20) AND EMA(10) > EMA(30)) OR (EMA(5) < EMA(20) AND EMA(10) < EMA(30)), otherwise 5; ATR stretch score = min(|EMA30 ATR distance| / 3, 1) × 25; momentum fade score = 25 if |EMA(5) - EMA(10)| is less than on the previous bar, otherwise 0; EMA30-limit proximity score = min(max(|EMA30 ATR distance| / |buy limit|, |EMA30 ATR distance| / |sell limit|), 1) × 25
+Calculation: Bullish engulfing = close > open AND previous close < previous open AND open ≤ previous close AND close ≥ previous open
+Calculation: Bearish engulfing = close < open AND previous close > previous open AND open ≥ previous close AND close ≤ previous open
+Calculation: VWAP = cumulative sum of (typical price × volume) / cumulative volume, where typical price = (high + low + close) / 3; VWAP standard deviation = square root of max(0, cumulative volume-weighted typical-price-squared mean − VWAP²)
+Calculation: VWAP touch distance = configured ATR multiple × ATR(14)
+Long: Doji was formed more than one bar ago AND high > its high AND close > previous close AND EMA30 ATR distance < configured buy limit AND VWAP filter is disabled OR set to Both OR (set to Above Only AND close > VWAP) OR (set to Below Only AND close < VWAP) AND buy signal has not already occurred since the latest doji or day start
+Long: Bullish engulfing AND high < min(EMA(20), EMA(30)) AND min(|close − EMA(5)|, |close − EMA(10)|) ≤ configured ATR multiple × ATR(14)
+Long: close > open AND |close − open| ≥ configured ATR multiple × ATR(14) AND low ≤ max(EMA(5), EMA(10), EMA(20), EMA(30)) AND close > max(EMA(5), EMA(10), EMA(20), EMA(30))
+Long: Bullish EMA stack AND bar range intersects EMA(10) or EMA(20) AND |close − open| ≤ configured ATR multiple × ATR(14)
+Long: EMA30 ATR distance < 0 AND reversal score ≥ configured threshold AND |EMA30 ATR distance| ≥ configured minimum AND (confirmation disabled OR (close > open AND close > previous close)) AND (EMA(5) reclaim disabled OR close > EMA(5)) AND no positive-reversion signal occurred within the configured cooldown bars
+Long: A bearish breakout occurred within the preceding configured lookback bars AND close > min(EMA(5), EMA(10), EMA(20), EMA(30))
+Long: Previous close < VWAP AND high ≥ VWAP − VWAP touch distance AND high ≤ VWAP + VWAP touch distance AND (bounce confirmation disabled OR (close > open AND close > VWAP)) AND no VWAP bullish signal occurred within the configured cooldown bars
+Long: close < VWAP − configured standard-deviation multiple × VWAP standard deviation AND close > open AND close > previous close AND close > VWAP AND no VWAP bullish signal occurred within the configured cooldown bars
+Short: Doji was formed more than one bar ago AND low < its low AND close < previous close AND EMA30 ATR distance > configured sell limit AND VWAP filter is disabled OR set to Both OR (set to Above Only AND close > VWAP) OR (set to Below Only AND close < VWAP) AND sell signal has not already occurred since the latest doji or day start
+Short: Bearish engulfing AND low > max(EMA(20), EMA(30)) AND min(|close − EMA(5)|, |close − EMA(10)|) ≤ configured ATR multiple × ATR(14)
+Short: close < open AND |close − open| ≥ configured ATR multiple × ATR(14) AND high ≥ min(EMA(5), EMA(10), EMA(20), EMA(30)) AND close < min(EMA(5), EMA(10), EMA(20), EMA(30))
+Short: Bearish EMA stack AND bar range intersects EMA(10) or EMA(20) AND |close − open| ≤ configured ATR multiple × ATR(14)
+Short: EMA30 ATR distance > 0 AND reversal score ≥ configured threshold AND |EMA30 ATR distance| ≥ configured minimum AND (confirmation disabled OR (close < open AND close < previous close)) AND (EMA(5) reclaim disabled OR close < EMA(5)) AND no negative-reversion signal occurred within the configured cooldown bars
+Short: A bullish breakout occurred within the preceding configured lookback bars AND close < max(EMA(5), EMA(10), EMA(20), EMA(30))
+Short: Previous close > VWAP AND low ≤ VWAP + VWAP touch distance AND low ≥ VWAP − VWAP touch distance AND (bounce confirmation disabled OR (close < open AND close < VWAP)) AND no VWAP bearish signal occurred within the configured cooldown bars
+Short: close > VWAP + configured standard-deviation multiple × VWAP standard deviation AND close < open AND close < previous close AND close < VWAP AND no VWAP bearish signal occurred within the configured cooldown bars
+Exit: Long, after the entry bar, any of (close < entry doji high) OR (low < previous close − configured offset) OR (low ≤ entry price − configured stop distance) is true on two consecutive bars
+Exit: Short, after the entry bar, any of (close > entry doji low) OR (high > previous close + configured offset) OR (high ≥ entry price + configured stop distance) is true on two consecutive bars

@@ -1,0 +1,5 @@
+Calculation: A/D line = cumulative sum of volume × ((close − low) − (high − close)) / (high − low), using 0 for the multiplier when high = low
+Calculation: Price pivot low = low lower than the lows of the specified number of bars before and after it; confirmed after those following bars complete
+Calculation: Price pivot high = high higher than the highs of the specified number of bars before and after it; confirmed after those following bars complete
+Long: A/D line > its signal EMA OR A/D line crosses above its signal EMA OR a confirmed price pivot low is lower than the previous price pivot low, the A/D line at that pivot is higher than at the previous price pivot low, and the pivots are no more than the specified maximum bars apart
+Short: A/D line < its signal EMA OR A/D line crosses below its signal EMA OR a confirmed price pivot high is higher than the previous price pivot high, the A/D line at that pivot is lower than at the previous price pivot high, and the pivots are no more than the specified maximum bars apart

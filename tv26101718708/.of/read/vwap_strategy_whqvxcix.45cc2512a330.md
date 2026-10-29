@@ -1,0 +1,14 @@
+Calculation: NY-session VWAP = cumulative volume-weighted average of HLC3 from the start of the NY regular session
+Calculation: 18:00-anchored VWAP = cumulative volume-weighted average of HLC3 from the start of the 18:00-to-16:00 session
+Long: during NY regular session, price crosses above NY-session VWAP (by close, or by a bar spanning VWAP and closing above it after the prior close was below)
+Short: during NY regular session, price crosses below NY-session VWAP (by close, or by a bar spanning VWAP and closing below it after the prior close was above)
+Long: during NY regular session, NY-session VWAP crosses above 18:00-anchored VWAP
+Short: during NY regular session, NY-session VWAP crosses below 18:00-anchored VWAP
+Long: during NY regular session, the shorter-period EMA crosses above the longer-period EMA (5-period vs. 13-period)
+Short: during NY regular session, the shorter-period EMA crosses below the longer-period EMA (5-period vs. 13-period)
+Long: during the configured trade window, after a reclaim of NY-session VWAP (current close above VWAP and either the prior close was above VWAP or the close before that was at or below VWAP), before two consecutive closes below VWAP, the bar's low is at or below VWAP plus the configured touch buffer, close is above VWAP, the 5-period EMA is above the 8-period EMA and the 8-period EMA is above the 13-period EMA, all three EMAs are rising, volume is greater than on the prior bar, and the NY-session VWAP cross count is below its configured maximum
+Short: during the configured trade window, after a reclaim of NY-session VWAP (current close below VWAP and either the prior close was below VWAP or the close before that was at or above VWAP), before two consecutive closes above VWAP, the bar's high is at or above VWAP minus the configured touch buffer, close is below VWAP, the 5-period EMA is below the 8-period EMA and the 8-period EMA is below the 13-period EMA, all three EMAs are falling, volume is greater than on the prior bar, and the NY-session VWAP cross count is below its configured maximum
+Long: while flat with a valid pending long setup, price reaches at least one minimum price increment above the hold bar's high; the distance from this entry price to the hold bar's low minus the configured stop buffer does not exceed the configured maximum stop distance
+Short: while flat with a valid pending short setup, price reaches at least one minimum price increment below the hold bar's low; the distance from this entry price to the hold bar's high plus the configured stop buffer does not exceed the configured maximum stop distance
+Exit: long, low reaches the hold bar's low minus the configured stop buffer OR high reaches the entry price plus the configured profit target
+Exit: short, high reaches the hold bar's high plus the configured stop buffer OR low reaches the entry price minus the configured profit target

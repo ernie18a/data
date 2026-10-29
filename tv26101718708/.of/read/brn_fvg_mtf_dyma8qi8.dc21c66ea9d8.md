@@ -1,0 +1,4 @@
+Calculation: Bullish FVG = On the selected timeframe, which is equal to or higher than the chart timeframe, the last completed confirmation bar's low is above the high of the bar two bars before it; gap size is the difference between those prices.
+Calculation: Bearish FVG = On the selected timeframe, which is equal to or higher than the chart timeframe, the last completed confirmation bar's high is below the low of the bar two bars before it; gap size is the difference between those prices.
+Long: A new selected-timeframe bar has closed AND a bullish FVG is confirmed AND its gap size is at least the minimum gap size.
+Short: A new selected-timeframe bar has closed AND a bearish FVG is confirmed AND its gap size is at least the minimum gap size.

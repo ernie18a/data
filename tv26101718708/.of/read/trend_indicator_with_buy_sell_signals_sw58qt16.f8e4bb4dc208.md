@@ -1,0 +1,4 @@
+Calculation: Trend line = Use CCI of close and the weighted moving average of true range to form upper and lower bands: upper = low − weighted moving average, lower = high + weighted moving average. When CCI crosses from negative to nonnegative, set upper to the prior lower; when it crosses from positive to nonpositive, set lower to the prior upper. While CCI is nonnegative, keep upper at the greater of its current and prior values; while CCI is negative, keep lower at the lesser of its current and prior values. The trend line is upper when CCI is nonnegative and lower otherwise.
+Calculation: Trend direction = 1 when the trend line is higher than its prior value; −1 when lower; otherwise retain the prior direction.
+Long: Prior trend direction = −1 AND current trend direction = 1
+Short: Prior trend direction = 1 AND current trend direction = −1

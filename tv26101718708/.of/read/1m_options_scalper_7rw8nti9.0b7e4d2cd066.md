@@ -1,0 +1,6 @@
+Calculation: Z-score = (close − simple moving average of close) ÷ standard deviation of close, using the same lookback
+Calculation: Daily regime = reference instrument’s daily close compared with its 200-period daily simple moving average; use the higher timeframe’s bar still forming
+Long: RSI < threshold AND Z-score ≤ −threshold AND (close > trend simple moving average OR intraday trend filter disabled) AND (daily regime is bullish OR daily regime filter disabled) AND bars since the previous long signal > lockout period
+Short: RSI > 100 − threshold AND Z-score ≥ threshold AND (close ≤ trend simple moving average OR intraday trend filter disabled) AND (daily regime is bearish OR daily regime filter disabled) AND bars since the previous short signal > lockout period
+Exit: long, after entry limit is reached, low ≤ entry price × (1 − stop percentage) OR high ≥ entry price × (1 + target percentage); also clear the setup when bars since its signal exceed the maximum hold period
+Exit: short, after entry limit is reached, high ≥ entry price OR low ≤ entry price × (1 − target percentage) OR high ≥ entry price × (1 + stop percentage); also clear the setup when bars since its signal exceed the maximum hold period

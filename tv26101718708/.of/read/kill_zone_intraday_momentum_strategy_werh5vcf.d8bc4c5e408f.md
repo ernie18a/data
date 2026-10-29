@@ -1,0 +1,3 @@
+Long: At the first chart bar after the opening bias window, the last completed higher-timeframe bar for that window has close > open AND no position is open AND no entry has occurred that day
+Short: At the first chart bar after the opening bias window, the last completed higher-timeframe bar for that window has close < open AND no position is open AND no entry has occurred that day
+Exit: Long or short, current session hour >= configured end-of-day hour

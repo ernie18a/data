@@ -1,0 +1,4 @@
+Calculation: NY-session VWAP = cumulative sum of HLC3 × volume divided by cumulative volume, reset at the NY regular-session open
+Calculation: Deviation bands = NY-session VWAP ± the volume-weighted standard deviation of HLC3 from the VWAP, multiplied by the band’s configured deviation multiplier; the second and third bands use their respective multipliers
+Long: close crosses above NY-session VWAP OR close crosses above the upper second-deviation band OR close crosses above the upper third-deviation band
+Short: close crosses below NY-session VWAP OR close crosses below the lower second-deviation band OR close crosses below the lower third-deviation band

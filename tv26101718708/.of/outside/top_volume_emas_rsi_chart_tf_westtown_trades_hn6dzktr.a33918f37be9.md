@@ -1,0 +1,1 @@
+On each monitored instrument, go long when the WaveTrend line crosses above its signal line; go short when the signal line crosses above the WaveTrend line. Otherwise, issue no directional signal.

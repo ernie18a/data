@@ -1,0 +1,3 @@
+Calculation: Upper/lower RSI bands = 0.6 × EMA(RSI × volume, lookback) / EMA(volume, lookback) + 0.4 × 50 ± multiplier × standard deviation(RSI, lookback); both use the same lookback
+Long: previous RSI ≤ previous lower RSI band AND current RSI > current lower RSI band
+Short: (previous RSI ≥ previous upper RSI band AND current RSI < current upper RSI band) OR (long position AND close < long entry price × stop-loss rate)

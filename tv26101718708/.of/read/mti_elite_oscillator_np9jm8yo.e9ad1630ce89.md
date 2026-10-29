@@ -1,0 +1,4 @@
+Calculation: Confirmed pivot low = a bar whose low is lower than the lows of the preceding and following pivot-lookback bars; confirmed on the last following bar.
+Calculation: Confirmed pivot high = a bar whose high is higher than the highs of the preceding and following pivot-lookback bars; confirmed on the last following bar.
+Long: RSI < RSI oversold level AND MFI < MFI oversold level OR current confirmed pivot low < preceding confirmed pivot low AND (RSI at current pivot low > RSI at preceding pivot low OR MFI at current pivot low > MFI at preceding pivot low)
+Short: RSI > RSI overbought level AND MFI > MFI overbought level OR current confirmed pivot high > preceding confirmed pivot high AND (RSI at current pivot high < RSI at preceding pivot high OR MFI at current pivot high < MFI at preceding pivot high)

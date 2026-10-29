@@ -1,0 +1,9 @@
+Calculation: Lower-timeframe buy and sell volume = for completed bars from a timeframe lower than the chart timeframe, sum each sub-bar’s volume by whether its close is at or above its open, or below its open, respectively; allocate volume equally among the price rows its range intersects.
+Calculation: Bar delta = lower-timeframe buy volume − lower-timeframe sell volume.
+Calculation: Relative volume = (lower-timeframe buy volume + lower-timeframe sell volume) / longer-lookback average chart-bar volume.
+Calculation: Delta dominance = absolute bar delta / (lower-timeframe buy volume + lower-timeframe sell volume).
+Calculation: Absorption condition = delta dominance exceeds its threshold AND candle body is small relative to its range AND relative volume exceeds its threshold.
+Calculation: Exhaustion condition = relative volume exceeds its threshold AND delta dominance is below its threshold AND close is near the high or low of the chart bar.
+Calculation: Stacked imbalance = longest consecutive run of price rows where buy volume exceeds the adjacent lower-price row’s sell volume by the configured ratio, or sell volume exceeds the adjacent higher-price row’s buy volume by the configured ratio; retain the direction of the longest run.
+Long: (Absorption condition AND bar delta < 0) OR (NOT Absorption condition AND Exhaustion condition AND close near the low of the chart bar) OR (NOT Absorption condition AND NOT Exhaustion condition AND stacked imbalance meets the qualifying run threshold in the sell direction)
+Short: (Absorption condition AND bar delta > 0) OR (NOT Absorption condition AND Exhaustion condition AND close near the high of the chart bar) OR (NOT Absorption condition AND NOT Exhaustion condition AND stacked imbalance meets the qualifying run threshold in the buy direction)

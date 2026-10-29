@@ -1,0 +1,4 @@
+Calculation: Long-term linear regression slope = current fitted value minus the preceding fitted value from a linear regression of close over a longer lookback, calculated on the last completed bar of a higher timeframe.
+Calculation: Short-term linear regression slope = current fitted value minus the preceding fitted value from a linear regression of close over a shorter lookback, calculated on the last completed bar of a higher timeframe.
+Long: Long-term linear regression slope > 0 AND short-term linear regression slope > 0
+Short: Long-term linear regression slope < 0 AND short-term linear regression slope < 0

@@ -1,0 +1,4 @@
+Calculation: Bullish FVG = gap from the high two bars earlier to the current low, formed when current low is higher by at least the configured minimum ATR multiple. Local gaps use chart-timeframe bars; higher-timeframe gaps use three completed higher-timeframe bars and are added only after the latest one closes. The ATR is calculated on the chart timeframe.
+Calculation: Bearish FVG = gap from the current high to the low two bars earlier, formed when the earlier low is higher by at least the configured minimum ATR multiple. Local gaps use chart-timeframe bars; higher-timeframe gaps use three completed higher-timeframe bars and are added only after the latest one closes. The ATR is calculated on the chart timeframe.
+Long: An active bullish FVG with no previous hold has low <= its top AND close > its top.
+Short: An active bearish FVG with no previous hold has high >= its bottom AND close < its bottom.

@@ -1,0 +1,3 @@
+Calculation: Mayer Multiple = higher-timeframe close divided by the simple moving average of higher-timeframe close over a long lookback; use the bar still forming
+Long: Mayer Multiple <= deep-value threshold AND previous Mayer Multiple > deep-value threshold OR Mayer Multiple <= accumulation threshold AND Mayer Multiple > deep-value threshold AND previous Mayer Multiple > accumulation threshold
+Short: Mayer Multiple >= overheated threshold AND previous Mayer Multiple < overheated threshold OR Mayer Multiple >= extreme-overheated threshold AND previous Mayer Multiple < extreme-overheated threshold

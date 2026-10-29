@@ -1,0 +1,14 @@
+Calculation: Short- and long-lookback highs/lows = highest high and lowest low over their respective lookbacks; the long lookback is longer than the short lookback. Sweep comparisons use the prior bar’s values.
+Calculation: Fast and slow SMMA = Wilder-smoothed moving averages of close; fast uses a shorter lookback than slow.
+Calculation: VWAP = volume-weighted average of hlc3, reset at the configured anchor.
+Calculation: Confirmed swing high/low = local pivot high/low confirmed using bars on both sides.
+Calculation: Long stop = latest bullish-sweep low adjusted down by the configured buffer; short stop = latest bearish-sweep high adjusted up by the configured buffer. Long target = short-lookback highest high; short target = short-lookback lowest low. Freeze stop and target at entry.
+Calculation: Long reward-to-risk ratio = absolute distance from close to long target divided by absolute distance from close to long stop; short reward-to-risk ratio = absolute distance from close to short target divided by absolute distance from close to short stop.
+Long: low < prior short-lookback lowest low AND close > prior short-lookback lowest low OR low < prior long-lookback lowest low AND close > prior long-lookback lowest low
+Long: bullish sweep is active AND close > latest confirmed swing high
+Long: position is flat AND long reward-to-risk ratio >= configured minimum AND bullish sweep is active AND ((bullish sweep AND close > VWAP AND (fast SMMA crosses above slow SMMA OR close crosses above fast SMMA) AND current UTC time is within the configured session) OR (close > latest confirmed swing high AND (fast SMMA crosses above slow SMMA OR close > fast SMMA) AND close > VWAP AND current UTC time is within the configured session) OR (bullish sweep AND current UTC time is within the configured session))
+Short: high > prior short-lookback highest high AND close < prior short-lookback highest high OR high > prior long-lookback highest high AND close < prior long-lookback highest high
+Short: bearish sweep is active AND close < latest confirmed swing low
+Short: position is flat AND short reward-to-risk ratio >= configured minimum AND bearish sweep is active AND ((bearish sweep AND close < VWAP AND (fast SMMA crosses below slow SMMA OR close crosses below fast SMMA) AND current UTC time is within the configured session) OR (close < latest confirmed swing low AND (fast SMMA crosses below slow SMMA OR close < fast SMMA) AND close < VWAP AND current UTC time is within the configured session) OR (bearish sweep AND current UTC time is within the configured session))
+Exit: long, low <= frozen long stop OR high >= frozen long target OR close crosses above fast SMMA while the partial-close guard is unset
+Exit: short, high >= frozen short stop OR low <= frozen short target OR close crosses below fast SMMA while the partial-close guard is unset

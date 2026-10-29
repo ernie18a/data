@@ -1,0 +1,6 @@
+Calculation: Previous London-session high/low = maximum high / minimum low of the most recently completed London session
+Calculation: Lower wick = min(open, close) - low; upper wick = high - max(open, close); body = abs(close - open)
+Long: trades today < daily trade limit AND flat AND previous London high unused today AND a close above previous London-session high + ATR × breakout buffer with prior close ≤ that high has occurred within the retest wait AND low ≤ previous London-session high AND close > open AND lower wick > body × rejection multiplier AND close > previous London-session high + ATR × close-away buffer AND close > EMA(close)
+Short: trades today < daily trade limit AND flat AND previous London low unused today AND a close below previous London-session low - ATR × breakout buffer with prior close ≥ that low has occurred within the retest wait AND high ≥ previous London-session low AND close < open AND upper wick > body × rejection multiplier AND close < previous London-session low - ATR × close-away buffer AND close < EMA(close)
+Exit: long, low ≤ entry-signal-bar low - stop buffer OR high ≥ entry-signal-bar close × (1 + target percentage)
+Exit: short, high ≥ entry-signal-bar high + stop buffer OR low ≤ entry-signal-bar close × (1 - target percentage)

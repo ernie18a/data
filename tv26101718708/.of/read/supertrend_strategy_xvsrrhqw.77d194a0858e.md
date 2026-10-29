@@ -1,0 +1,4 @@
+Long: Supertrend is bullish OR Supertrend changes from bearish to bullish; when the EMA filter is enabled, the price source must be above the EMA; when the CMF filter is enabled, CMF must be above 0
+Short: Supertrend is bearish OR Supertrend changes from bullish to bearish; when the EMA filter is enabled, the price source must be below the EMA; when the CMF filter is enabled, CMF must be below 0
+Exit: long, Supertrend changes to bearish OR low <= entry price * (1 - stop-loss percentage) OR high >= entry price * (1 + take-profit percentage) OR the configured exit-time window has ended
+Exit: short, Supertrend changes to bullish OR high >= entry price * (1 + stop-loss percentage) OR low <= entry price * (1 - take-profit percentage) OR the configured exit-time window has ended

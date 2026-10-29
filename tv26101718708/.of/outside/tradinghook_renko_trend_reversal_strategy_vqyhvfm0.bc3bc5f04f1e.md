@@ -1,0 +1,1 @@
+Within the configured trading dates, use ATR-sized Renko bricks. Go long when the Renko open crosses below the Renko close; go short when it crosses above. For each entry, set a stop loss and take profit at configured percentage offsets from the Renko open, below and above for longs and above and below for shorts, respectively.

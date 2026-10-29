@@ -1,0 +1,1 @@
+Compare each of seven major German stocks—SAP, Siemens, Allianz, Deutsche Telekom, Airbus, Munich Re, and Mercedes-Benz—with its prior close over the selected timeframe. If a strong majority are up, signal long bias for the DAX; if a strong majority are down, signal short bias. Otherwise, wait for confirmation and give no directional signal.

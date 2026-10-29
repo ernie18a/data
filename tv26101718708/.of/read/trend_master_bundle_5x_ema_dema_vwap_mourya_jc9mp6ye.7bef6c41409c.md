@@ -1,0 +1,2 @@
+Long: close > shortest EMA AND shortest EMA > next-shortest EMA AND next-shortest EMA > middle EMA AND middle EMA > next-longest EMA AND next-longest EMA > DEMA AND DEMA > longest EMA
+Short: close < shortest EMA AND shortest EMA < next-shortest EMA AND next-shortest EMA < middle EMA AND middle EMA < next-longest EMA AND next-longest EMA < DEMA AND DEMA < longest EMA

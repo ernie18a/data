@@ -1,0 +1,2 @@
+Long: Close > EMA(close, same lookback) on each of the three higher timeframes, using each timeframe’s still-forming bar AND (chart bar low <= chart EMA <= chart bar high OR chart close = chart EMA OR chart close crosses chart EMA)
+Short: Close < EMA(close, same lookback) on each of the three higher timeframes, using each timeframe’s still-forming bar AND (chart bar low <= chart EMA <= chart bar high OR chart close = chart EMA OR chart close crosses chart EMA)

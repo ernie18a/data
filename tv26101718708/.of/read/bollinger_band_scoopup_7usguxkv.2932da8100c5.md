@@ -1,0 +1,3 @@
+Calculation: Daily close-to-lower area ratio = sum(max(close − lower Bollinger Band, 0)) divided by the sum of max(close − lower Bollinger Band, 0) plus max(upper Bollinger Band − close, 0), over the ratio lookback; use daily bars (higher timeframe), using the current bar while it is forming and otherwise the last completed bar.
+Long: Daily close-to-lower area ratio > 0.5
+Short: Daily close-to-lower area ratio ≤ 0.5

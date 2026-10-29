@@ -1,0 +1,2 @@
+Long: close < close a lookback period ago AND close < open AND volume > simple moving average of volume × risk multiplier
+Short: close > close a lookback period ago AND close > open AND volume > simple moving average of volume × risk multiplier

@@ -1,0 +1,5 @@
+Calculation: MACD = EMA(close, shorter lookback) − EMA(close, longer lookback)
+Calculation: MACD signal line = EMA(MACD, lookback)
+Long: MACD > MACD signal line OR MACD crosses above MACD signal line OR MACD crosses above zero OR MACD > MACD signal line AND MACD > 0 AND higher-timeframe MACD > its signal line AND higher-timeframe MACD > 0 OR MACD crosses above its signal line AND (higher-timeframe filter is disabled OR higher-timeframe MACD > its signal line AND higher-timeframe MACD > 0)
+Short: MACD < MACD signal line OR MACD crosses below MACD signal line OR MACD crosses below zero OR MACD < MACD signal line AND MACD < 0 AND higher-timeframe MACD < its signal line AND higher-timeframe MACD < 0 OR MACD crosses below its signal line AND (higher-timeframe filter is disabled OR higher-timeframe MACD < its signal line AND higher-timeframe MACD < 0)
+Exit:

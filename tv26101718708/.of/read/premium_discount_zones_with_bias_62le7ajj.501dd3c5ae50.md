@@ -1,0 +1,6 @@
+Calculation: Projected HTF price percentiles = percentiles of simulated prices after multiple higher-timeframe bars, starting from the last completed higher-timeframe close and using the mean and standard deviation of recent completed higher-timeframe log returns
+Calculation: ATR ratio = shorter-lookback chart-timeframe ATR / longer-lookback chart-timeframe ATR
+Calculation: HTF direction = current chart close compared with the open of the higher-timeframe candle still forming
+Calculation: Active session = within the configured New York kill zone or London kill zone
+Long: (close < 25th-percentile projected HTF price AND previous chart bar's close was at or above the 25th-percentile projected HTF price) OR (close < 25th-percentile projected HTF price AND HTF direction is bearish AND ATR ratio >= threshold AND active session)
+Short: (close > 75th-percentile projected HTF price AND previous chart bar's close was at or below the 75th-percentile projected HTF price) OR (close > 75th-percentile projected HTF price AND HTF direction is bullish AND ATR ratio >= threshold AND active session)

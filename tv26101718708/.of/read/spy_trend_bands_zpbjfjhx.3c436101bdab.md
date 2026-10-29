@@ -1,0 +1,3 @@
+Calculation: Upper and lower bands = RMA of high over a lookback plus ATR times the upper multiplier, and minus ATR times the lower multiplier, respectively; both use chart-timeframe bars. Trend state = bullish when a confirmed bar closes above the upper band, bearish when it closes below the lower band, otherwise retain the prior state; initialize as neutral.
+Long: Confirmed close > upper band AND prior trend state is not bullish
+Short: Confirmed close < lower band AND prior trend state is not bearish

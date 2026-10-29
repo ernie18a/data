@@ -1,0 +1,11 @@
+Calculation: Pivot high/low = a bar’s high/low exceeding the highs/lows of the configured number of bars on each side; use only after confirmed.
+Calculation: Local high/low = the latest confirmed pivot high/low since the most recent entry into a configured killzone; reset both levels on killzone entry.
+Calculation: Swept low/high = during a killzone, any bar’s low falls below the current local low / high rises above the current local high; reset both flags on killzone entry.
+Calculation: Average body = average of absolute close-minus-open values over the configured lookback, excluding the current bar.
+Calculation: Displacement = current absolute close-minus-open exceeds average body times the configured multiplier.
+Calculation: Higher-timeframe trend = close above/below its EMA, both calculated from the last completed bar of a timeframe higher than the chart timeframe.
+Calculation: Long stop distance = configured ATR-based distance or absolute difference between the signal bar close and the prior bar low, according to the selected stop method; short stop distance = configured ATR-based distance or absolute difference between the prior bar high and the signal bar close, respectively.
+Long: close > local high AND displacement AND bar time is within an enabled configured killzone AND (liquidity-sweep filter disabled OR swept low) AND (higher-timeframe trend filter disabled OR higher-timeframe trend is bullish) AND long direction enabled AND no open position AND cooldown elapsed AND long stop distance meets the configured minimum.
+Short: close < local low AND displacement AND bar time is within an enabled configured killzone AND (liquidity-sweep filter disabled OR swept high) AND (higher-timeframe trend filter disabled OR higher-timeframe trend is bearish) AND short direction enabled AND no open position AND cooldown elapsed AND short stop distance meets the configured minimum.
+Exit: long, low <= entry reference price - long stop distance OR high >= entry reference price + long stop distance × configured reward-to-risk ratio.
+Exit: short, high >= entry reference price + short stop distance OR low <= entry reference price - short stop distance × configured reward-to-risk ratio.

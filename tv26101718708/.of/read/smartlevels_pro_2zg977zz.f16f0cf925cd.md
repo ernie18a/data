@@ -1,0 +1,2 @@
+Long: At least two of (close > session VWAP, fast EMA > slow EMA, RSI > 50) OR close crosses above session VWAP OR fast EMA crosses above slow EMA OR (ADX >= its configured strength threshold AND at least two of (close > session VWAP, fast EMA > slow EMA, RSI > 50))
+Short: At least two of (close <= session VWAP, fast EMA <= slow EMA, RSI <= 50) OR close crosses below session VWAP OR fast EMA crosses below slow EMA OR (ADX >= its configured strength threshold AND at least two of (close <= session VWAP, fast EMA <= slow EMA, RSI <= 50))

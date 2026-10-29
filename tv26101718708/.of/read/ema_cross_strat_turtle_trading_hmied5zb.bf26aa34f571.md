@@ -1,0 +1,3 @@
+Long: Shorter-lookback higher-timeframe EMA crosses above longer-lookback higher-timeframe EMA using the still-forming bar AND position is flat or short
+Short: Shorter-lookback higher-timeframe EMA crosses below longer-lookback higher-timeframe EMA using the still-forming bar AND position is flat or long
+Exit: Long, shorter-lookback higher-timeframe EMA crosses below longer-lookback higher-timeframe EMA using the still-forming bar

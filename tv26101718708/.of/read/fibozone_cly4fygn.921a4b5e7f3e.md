@@ -1,0 +1,9 @@
+Calculation: Swing top = high of the bar N bars ago when it exceeds the highest high of the preceding N bars and the swing state flips bearish; retain it until crossed.
+Calculation: Swing bottom = low of the bar N bars ago when it is below the lowest low of the preceding N bars and the swing state flips bullish; retain it until crossed.
+Calculation: Bullish order block = the candle with the lowest selected low between the bar before the structure break and the swing top; its selected high and low are the block boundaries. Selected prices are wicks or candle bodies according to the configured setting.
+Calculation: Bearish order block = the candle with the highest selected high between the bar before the structure break and the swing bottom; its selected high and low are the block boundaries. Selected prices are wicks or candle bodies according to the configured setting.
+Calculation: Average bar range = average of high minus low over a configurable lookback of chart bars.
+Long: close > the latest uncrossed swing top; low > high two bars ago AND previous close > high two bars ago AND the current, previous, and two-bars-ago candles are bullish AND the gap size meets the configured minimum threshold; a swing bottom is inside an active bearish breaker block for the first time.
+Short: close < the latest uncrossed swing bottom; high < low two bars ago AND previous close < low two bars ago AND the current, previous, and two-bars-ago candles are bearish AND the gap size meets the configured minimum threshold; a swing top is inside an active bullish breaker block for the first time.
+Long: max(open, close) > the top of an active bearish order block.
+Short: min(open, close) < the bottom of an active bullish order block.

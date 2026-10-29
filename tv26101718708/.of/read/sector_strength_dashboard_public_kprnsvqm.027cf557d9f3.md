@@ -1,0 +1,5 @@
+Calculation: Daily relative strength = sector return from the current daily open to the current analysis-timeframe close minus benchmark return over the same interval; the daily bar is still forming, and the analysis timeframe may be higher or lower than the chart timeframe.
+Calculation: Long-lookback relative strength = sector percentage change over a longer lookback on the analysis timeframe minus benchmark percentage change over the same lookback; uses the current analysis-timeframe bar, which may still be forming.
+Calculation: Short-lookback relative strength = sector percentage change over a shorter lookback on the analysis timeframe minus benchmark percentage change over the same lookback; uses the current analysis-timeframe bar, which may still be forming.
+Long: Daily relative strength > 0 OR long-lookback relative strength > 0 OR short-lookback relative strength > 0
+Short: Daily relative strength < 0 OR long-lookback relative strength < 0 OR short-lookback relative strength < 0

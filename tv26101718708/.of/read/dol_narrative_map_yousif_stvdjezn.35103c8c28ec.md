@@ -1,0 +1,7 @@
+Calculation: HTF liquidity midpoint = midpoint of the highest high and lowest low over a lookback on the higher-timeframe bars; use completed bars only.
+Calculation: Directional narrative = set bullish when the latest completed higher-timeframe close exceeds the preceding completed higher-timeframe high; set bearish when it is below the preceding completed higher-timeframe low; otherwise retain its prior direction. If unset, set bullish when chart close is at or above the HTF liquidity midpoint, otherwise bearish. Then update using chart-timeframe bars: if bullish and chart close falls below the latest confirmed swing low, set bearish; if bearish and chart close rises above the latest confirmed swing high, set bullish; if bearish and bullish displacement occurs, set bullish; if bullish and bearish displacement occurs, set bearish. Apply these updates after the higher-timeframe update, in this order.
+Calculation: Confirmed swing high/low = pivot high/low with the same number of chart-timeframe bars on each side; use only after confirmation.
+Calculation: Bullish displacement = chart close > open AND absolute candle body size >= ATR × displacement multiplier AND chart close > the highest high of the preceding range-lookback chart-timeframe bars.
+Calculation: Bearish displacement = chart close < open AND absolute candle body size >= ATR × displacement multiplier AND chart close < the lowest low of the preceding range-lookback chart-timeframe bars.
+Long: Directional narrative = bullish
+Short: Directional narrative = bearish

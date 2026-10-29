@@ -1,0 +1,10 @@
+Calculation: CCI = Commodity Channel Index of typical price over a lookback
+Calculation: Relative volume = bar volume / moving average of volume over a lookback
+Calculation: Bullish CCI divergence = a confirmed pair of CCI low pivots where the first is below the negative extreme and the second is higher; paired price low pivots occur later and form a lower low, lie within the matching radius of their CCI pivots, have a span within the allowed difference from the CCI-pivot span, and have no more extreme intervening price pivot
+Calculation: Bearish CCI divergence = a confirmed pair of CCI high pivots where the first is above the positive extreme and the second is lower; paired price high pivots occur later and form a higher high, lie within the matching radius of their CCI pivots, have a span within the allowed difference from the CCI-pivot span, and have no more extreme intervening price pivot
+Calculation: Bullish volume level = high of a qualifying volume candle selected from the divergence span, or if none qualifies, the area around the second pivot; if none qualifies there, a qualifying candle during the post-confirmation candidate window may supply a level, up to the candidate limit per divergence. A candle qualifies when relative volume meets the minimum multiple of its moving average.
+Calculation: Bearish volume level = low of a qualifying volume candle selected from the divergence span, or if none qualifies, the area around the second pivot; if none qualifies there, a qualifying candle during the post-confirmation candidate window may supply a level, up to the candidate limit per divergence. A candle qualifies when relative volume meets the minimum multiple of its moving average.
+Long: bullish CCI divergence confirmed OR confirmed close > an active bullish volume level within that level's signal window and after its source candle
+Short: bearish CCI divergence confirmed OR confirmed close < an active bearish volume level within that level's signal window and after its source candle
+Exit: Long, low <= the low of the triggering volume candle - ATR delta
+Exit: Short, high >= the high of the triggering volume candle + ATR delta

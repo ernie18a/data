@@ -1,0 +1,5 @@
+Calculation: ATR percentage = ATR divided by close, multiplied by 100
+Long: The shorter-lookback EMA crosses above the longer-lookback EMA at chart-bar close AND the medium-lookback EMA is above the longer-lookback EMA on the chart timeframe AND the medium-lookback EMA is above the longer-lookback EMA on the higher timeframe using its last completed bar AND Supertrend direction equals +1 on the chart timeframe AND ATR percentage is above its threshold
+Short: The shorter-lookback EMA crosses below the longer-lookback EMA at chart-bar close AND the medium-lookback EMA is below the longer-lookback EMA on the chart timeframe AND the medium-lookback EMA is below the longer-lookback EMA on the higher timeframe using its last completed bar AND Supertrend direction equals -1 on the chart timeframe AND ATR percentage is above its threshold
+Exit: Short, the shorter-lookback EMA crosses above the longer-lookback EMA at chart-bar close
+Exit: Long, the shorter-lookback EMA crosses below the longer-lookback EMA at chart-bar close

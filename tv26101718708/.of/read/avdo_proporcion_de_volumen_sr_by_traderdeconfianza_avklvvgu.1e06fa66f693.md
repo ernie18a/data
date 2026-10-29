@@ -1,0 +1,11 @@
+Calculation: AVDO oscillator = smoothed close position within the volume-derived value and outer bands, blended with close position relative to the adaptive trailing anchor
+Calculation: AVDO signal = EMA of the AVDO oscillator, using a longer smoothing lookback than the oscillator’s final smoothing
+Calculation: AVDO trend = bullish or bearish state of an adaptive trailing anchor built from the volume-profile center and point of control, with its offset scaled by ATR and recent price movement
+Calculation: Critical-volume condition = volume normalized by the rolling maximum volume, minus its EMA, is positive and at least a fraction of its rolling maximum
+Calculation: VolProp zone = high-to-low range of a bar whose volume is at least a multiple of the previous bar’s volume, whose range is at least a multiple of ATR, and whose body is at least a fraction of its range
+Long: AVDO oscillator crosses above its signal OR AVDO oscillator crosses above zero OR close crosses above the AVDO trailing anchor OR AVDO trend flips bullish OR AVDO oscillator’s short-term EMA turns upward while the oscillator is above 30 and the bar makes a higher high than the previous two bars OR the smoothed AVDO oscillator is above zero OR a VolProp zone forms on a bar with close >= open OR price returns to an active bullish VolProp zone
+Short: AVDO oscillator crosses below its signal OR AVDO oscillator crosses below zero OR close crosses below the AVDO trailing anchor OR AVDO trend flips bearish OR AVDO oscillator’s short-term EMA turns downward while the oscillator is below -30 and the bar makes a lower low than the previous two bars OR the smoothed AVDO oscillator is below zero OR a VolProp zone forms on a bar with close < open OR price returns to an active bearish VolProp zone
+Long: VolProp zone forms AND Critical-volume condition OR VolProp zone forms AND AVDO trend is bullish AND close > trailing anchor AND AVDO oscillator > 0 AND AVDO oscillator > signal
+Short: VolProp zone forms AND Critical-volume condition OR VolProp zone forms AND AVDO trend is bearish AND close < trailing anchor AND AVDO oscillator < 0 AND AVDO oscillator < signal
+Exit: long, AVDO trend flips bearish
+Exit: short, AVDO trend flips bullish

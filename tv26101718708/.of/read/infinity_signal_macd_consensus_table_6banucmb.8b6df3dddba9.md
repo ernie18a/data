@@ -1,0 +1,4 @@
+Calculation: Bullish consensus = sum the configured weight for each timeframe where MACD line > MACD signal line, half the weight where they are equal, and zero otherwise.
+Calculation: Bearish consensus = sum the configured weight for each timeframe where MACD line < MACD signal line, half the weight where they are equal, and zero otherwise.
+Long: Bullish consensus >= its configured threshold AND bullish consensus > bearish consensus AND the same bullish-signal condition was false on the prior chart bar.
+Short: Bearish consensus >= its configured threshold AND bearish consensus > bullish consensus AND the same bearish-signal condition was false on the prior chart bar.

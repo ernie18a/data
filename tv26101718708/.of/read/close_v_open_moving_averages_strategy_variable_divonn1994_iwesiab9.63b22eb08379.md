@@ -1,0 +1,4 @@
+Long: close moving average >= open moving average AND previous bar's close moving average < previous bar's open moving average AND datetime is within the configured date range
+Short: close moving average < open moving average AND previous bar's close moving average >= previous bar's open moving average AND shorts are enabled AND datetime is within the configured date range
+Exit: long, close moving average < open moving average AND previous bar's close moving average >= previous bar's open moving average AND datetime is within the configured date range
+Exit: short, close moving average >= open moving average AND previous bar's close moving average < previous bar's open moving average AND datetime is within the configured date range

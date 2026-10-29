@@ -1,0 +1,6 @@
+Calculation: Relative volume = current volume / simple moving average of volume
+Calculation: Volume expansion (%) = (current volume / previous bar volume − 1) × 100
+Calculation: Normalized buy pressure = [0.55 × (close ≥ open ? |close − open| / (high − low) : 0) + 0.45 × (close − low) / (high − low)] divided by the sum of that raw buy pressure and [0.55 × (close < open ? |close − open| / (high − low) : 0) + 0.45 × (high − close) / (high − low)]
+Calculation: Normalized sell pressure = [0.55 × (close < open ? |close − open| / (high − low) : 0) + 0.45 × (high − close) / (high − low)] divided by the sum of that raw sell pressure and [0.55 × (close ≥ open ? |close − open| / (high − low) : 0) + 0.45 × (close − low) / (high − low)]
+Long: volume > volume SMA AND volume EMA > volume SMA AND relative volume ≥ burst threshold AND volume expansion (%) ≥ minimum expansion threshold AND normalized buy pressure ≥ minimum body pressure AND NOT (relative volume ≥ exhaustion threshold AND volume expansion (%) < 5%
+Short: volume > volume SMA AND volume EMA > volume SMA AND relative volume ≥ burst threshold AND volume expansion (%) ≥ minimum expansion threshold AND normalized sell pressure ≥ minimum body pressure AND NOT (relative volume ≥ exhaustion threshold AND volume expansion (%) < 5%

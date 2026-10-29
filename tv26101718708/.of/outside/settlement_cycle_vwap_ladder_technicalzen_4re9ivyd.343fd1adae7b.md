@@ -1,0 +1,1 @@
+Go long when the traded instrument’s price is above all four volume-weighted reference levels; go short when it is below all four. Otherwise, make no directional decision.

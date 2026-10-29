@@ -1,0 +1,3 @@
+Calculation: Volatility-weighted Hull moving average = VWTRMA(2 × VWTRMA(price source, half the lookback) − VWTRMA(price source, full lookback), square root of the lookback); VWTRMA is the sum of price source × absolute true range × decreasing recency weight over its lookback, divided by the sum of absolute true range × the same weights.
+Long: Volatility-weighted Hull moving average > its previous value AND its previous value ≤ its value two bars ago
+Short: Volatility-weighted Hull moving average < its previous value AND its previous value ≥ its value two bars ago

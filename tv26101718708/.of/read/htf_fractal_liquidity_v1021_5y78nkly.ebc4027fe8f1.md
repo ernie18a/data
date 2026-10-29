@@ -1,0 +1,4 @@
+Calculation: Valid higher-timeframe pivot high = the middle bar’s high is the highest of five consecutive higher-timeframe bars, and each of the two following bars has a lower high; confirmed when the second following bar completes.
+Calculation: Valid higher-timeframe pivot low = the middle bar’s low is the lowest of five consecutive higher-timeframe bars, and each of the two following bars has a higher low; confirmed when the second following bar completes.
+Long: chart timeframe is no higher than the selected higher timeframe AND a valid higher-timeframe pivot high forms (BSL marking).
+Short: chart timeframe is no higher than the selected higher timeframe AND a valid higher-timeframe pivot low forms (SSL marking).

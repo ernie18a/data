@@ -1,0 +1,3 @@
+Calculation: Commercials COT Index = 100 × (current commercial net positions − lowest commercial net positions in the lookback) / (highest commercial net positions in the lookback − lowest commercial net positions in the lookback), where net positions = long positions − short positions; use the longer of the two Commercials lookbacks, based on daily COT data
+Long: Commercials COT Index >= 75
+Short: Commercials COT Index <= 25

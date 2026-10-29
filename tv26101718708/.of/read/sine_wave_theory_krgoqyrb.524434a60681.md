@@ -1,0 +1,4 @@
+Calculation: Bar-color wave count = start at 0; on each change in candle color on the higher timeframe, add the current wave direction; reverse the direction when the absolute count reaches the wave number. Candle color is green when close > open, otherwise red; use the last completed higher-timeframe bar.
+Calculation: Volume-state wave count = start at 0; on each change in volume state on the higher timeframe, add the current wave direction; reverse the direction when the absolute count reaches the wave number. Volume state is above average when volume > its simple moving average over the lookback; otherwise it is at or below average. Use the last completed higher-timeframe bar.
+Long: Bar-color wave count = -wave number OR volume-state wave count = -wave number
+Short: Bar-color wave count = wave number OR volume-state wave count = wave number

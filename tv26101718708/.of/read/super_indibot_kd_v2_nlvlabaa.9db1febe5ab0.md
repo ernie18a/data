@@ -1,0 +1,4 @@
+Long: shorter-lookback EMA of prior-bar close > longer-lookback EMA of prior-bar close AND its preceding-bar value <= the longer-lookback EMA’s preceding-bar value AND the chart bar is closed
+Short: longer-lookback EMA of prior-bar close > shorter-lookback EMA of prior-bar close AND its preceding-bar value <= the shorter-lookback EMA’s preceding-bar value AND the chart bar is closed
+Exit: long, low <= entry price − ATR at entry × stop multiplier OR high >= entry price + ATR at entry × stop multiplier × take-profit factor × configured target count
+Exit: short, high >= entry price + ATR at entry × stop multiplier OR low <= entry price − ATR at entry × stop multiplier × take-profit factor × configured target count

@@ -1,0 +1,6 @@
+Calculation: EMA intersection = the price where the fast and slow EMAs intersect, linearly interpolated between their previous and current values on the higher-timeframe, last completed bars
+Calculation: Take profit = entry price plus (for long) or minus (for short) the distance between entry and stop loss multiplied by the reward-to-risk multiple
+Long: fast EMA crosses above slow EMA on the higher-timeframe, last completed bar AND close > VWAP AND ADX on the higher-timeframe, last completed bar >= its threshold AND absolute difference between fast and slow EMAs on the higher-timeframe, last completed bar >= ATR on the higher-timeframe, last completed bar multiplied by the minimum separation multiple AND close > EMA intersection
+Short: fast EMA crosses below slow EMA on the higher-timeframe, last completed bar AND close < VWAP AND ADX on the higher-timeframe, last completed bar >= its threshold AND absolute difference between fast and slow EMAs on the higher-timeframe, last completed bar >= ATR on the higher-timeframe, last completed bar multiplied by the minimum separation multiple AND EMA intersection > close
+Exit: long, high >= take profit OR low <= EMA intersection
+Exit: short, low <= take profit OR high >= EMA intersection

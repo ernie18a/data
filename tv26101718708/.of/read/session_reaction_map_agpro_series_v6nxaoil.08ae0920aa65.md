@@ -1,0 +1,8 @@
+Calculation: Previous Day High and Previous Day Low = high and low of the last completed higher-timeframe daily bar
+Calculation: Previous Day Mid = average of Previous Day High and Previous Day Low
+Calculation: Daily Open = open of the current, still-forming higher-timeframe daily bar
+Calculation: Weekly Open = open of the current, still-forming higher-timeframe weekly bar
+Calculation: ATR = average true range over a lookback on the chart timeframe
+Calculation: Reaction score = clamp to 0–100 the sum of ATR-normalized dominant excursion, close follow-through, and favorable wick rejection, less the ATR-normalized counter-excursion penalty
+Long: At the start of an enabled Asia, London, or New York session, no reaction is active, and the session bar's open is within an ATR-based touch tolerance of the nearest enabled reference level; after the evaluation window completes, the maximum high-to-reference excursion is greater than or equal to the maximum reference-to-low excursion and the reaction score is at least the minimum zone score
+Short: At the start of an enabled Asia, London, or New York session, no reaction is active, and the session bar's open is within an ATR-based touch tolerance of the nearest enabled reference level; after the evaluation window completes, the maximum reference-to-low excursion is greater than the maximum high-to-reference excursion and the reaction score is at least the minimum zone score

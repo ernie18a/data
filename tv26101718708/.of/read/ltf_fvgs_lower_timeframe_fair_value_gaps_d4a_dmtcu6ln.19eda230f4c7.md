@@ -1,0 +1,2 @@
+Long: On three consecutive lower-timeframe bars (last completed bars), the third bar's low > the first bar's high AND the middle bar's high > the first bar's high AND the third bar's low - the first bar's high > chart-timeframe ATR × the FVG threshold
+Short: On three consecutive lower-timeframe bars (last completed bars), the middle bar's low < the first bar's low AND the third bar's high < the first bar's low AND the first bar's low - the third bar's high > chart-timeframe ATR × the FVG threshold

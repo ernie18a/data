@@ -1,0 +1,3 @@
+Calculation: PCA projection = let zC and zV be current close and volume minus their respective rolling means, divided by their rolling standard deviations; let s11 and s22 be rolling variances of close and volume, and s12 their rolling covariance. Set λ = (s11 + s22 + sqrt((s11 + s22)^2 − 4(s11·s22 − s12^2)))/2; normalize (λ − s22, s12) to unit vector (ux, uy); projection = zC·ux + zV·uy.
+Long: current PCA projection ≥ threshold AND previous bar’s PCA projection < threshold AND position is flat or short AND bars since the previous signal ≥ cooldown
+Short: current PCA projection ≤ −threshold AND previous bar’s PCA projection > −threshold AND position is flat or long AND bars since the previous signal ≥ cooldown

@@ -1,0 +1,17 @@
+Calculation: Bar delta = sum of lower-timeframe intrabar buy volume minus sell volume, using intrabars within the completed chart bar
+Calculation: CVD = cumulative sum of bar delta
+Calculation: Volume profile = distribute each lower-timeframe intrabar’s volume across chart-bar price rows in proportion to price-range overlap
+Calculation: POC = price row with the greatest volume in the volume profile
+Calculation: Auction shape = B if at least two rows below 35% of maximum volume lie between the first and last rows at or above 70% of maximum volume and those rows are separated by at least three row indices; otherwise P if POC is in the upper 38% of the profile, b if in the lower 38%, or D
+Calculation: Excess at high = clamp(1 − mean volume of the top two rows / mean volume per profile row, 0, 1); excess at low = clamp(1 − mean volume of the bottom two rows / mean volume per profile row, 0, 1)
+Calculation: Relative volume = bar volume / 20-bar average volume
+Calculation: Wick rejection at high = clamp(upper wick / bar range / 0.50, 0, 1); at low = clamp(lower wick / bar range / 0.50, 0, 1)
+Calculation: Trapped delta at high = clamp(abs(bar delta) / bar volume / 0.50, 0, 1) when bar delta is positive and close is below bar midpoint, else 0; at low = same value when bar delta is negative and close is above bar midpoint, else 0
+Calculation: CVD divergence at high = current CVD is below its previous lookback-period high; at low = current CVD is above its previous lookback-period low
+Calculation: Stacked imbalance = longest consecutive run of diagonal sell imbalances at the profile’s upper 40% for a high, or diagonal buy imbalances at its lower 40% for a low; diagonal sell imbalance means sell volume in a row exceeds buy volume in the row above by the imbalance ratio, and diagonal buy imbalance means buy volume in a row exceeds sell volume in the row below by the imbalance ratio
+Calculation: Effort without result = clamp((relative volume − 1) / 1.5, 0, 1) × clamp(1 − body size / bar range, 0, 1)
+Calculation: High fade score = clamp(1.6 × wick rejection at high + 1.8 × effort without result + 1.8 × trapped delta at high + 1.4 × excess at high + 1.4 × (P shape ? clamp((POC position − 0.50) / 0.35, 0, 1) : 0) + 1.4 × (CVD divergence at high ? 1 : 0) + 0.6 × clamp(stacked imbalance / 4, 0, 1), 0, 10), multiplied by 0.55 when shape is B
+Calculation: Low fade score = clamp(1.6 × wick rejection at low + 1.8 × effort without result + 1.8 × trapped delta at low + 1.4 × excess at low + 1.4 × (b shape ? clamp((0.50 − POC position) / 0.35, 0, 1) : 0) + 1.4 × (CVD divergence at low ? 1 : 0) + 0.6 × clamp(stacked imbalance / 4, 0, 1), 0, 10), multiplied by 0.55 when shape is B
+Long: low is below the previous long-lookback low AND (mean extension is not required OR low is at least the ATR-multiple below the EMA) AND lower wick is at least as large as upper wick AND low fade score is at least the minimum score AND auction shape is not B AND chart bar is confirmed AND cooldown has elapsed
+Short: high is above the previous long-lookback high AND (mean extension is not required OR high is at least the ATR-multiple above the EMA) AND upper wick is at least as large as lower wick AND high fade score is at least the minimum score AND auction shape is not B AND chart bar is confirmed AND cooldown has elapsed
+Exit: none

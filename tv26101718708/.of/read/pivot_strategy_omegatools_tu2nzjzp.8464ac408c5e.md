@@ -1,0 +1,7 @@
+Calculation: Pivot levels = central pivot, first three resistance levels, and first three support levels from the selected pivot method applied to the last completed higher-timeframe reset period’s OHLC.
+Calculation: Long-entry level = configured central pivot or resistance level; short-entry level = configured central pivot or support level.
+Calculation: Long stop/target levels = configured support/resistance levels; short stop/target levels = configured resistance/support levels.
+Long: trade count is below the configured per-reset-period maximum AND position is flat or short AND no short signal AND ((breakout mode AND previous close < long-entry level AND close >= long-entry level) OR (mean-reversion mode AND previous close > short-entry level AND low <= short-entry level))
+Short: trade count is below the configured per-reset-period maximum AND position is flat or long AND no long signal AND ((breakout mode AND previous close > short-entry level AND close <= short-entry level) OR (mean-reversion mode AND previous close < long-entry level AND high >= long-entry level))
+Exit: long, a new reset period begins OR (enabled stop level is below entry price AND low <= stop level) OR (enabled target level is above entry price AND high >= target level)
+Exit: short, a new reset period begins OR (enabled stop level is above entry price AND high >= stop level) OR (enabled target level is below entry price AND low <= target level)

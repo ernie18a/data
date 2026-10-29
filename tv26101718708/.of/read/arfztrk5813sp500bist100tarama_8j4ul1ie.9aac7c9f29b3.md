@@ -1,0 +1,3 @@
+Calculation: Moving averages = selected simple or exponential moving averages of close with short-, medium-, and long-term lookbacks, calculated on the selected scan timeframe (which may be higher or lower than the chart timeframe); use the currently forming bar.
+Calculation: Average volume = simple moving average of volume over a lookback, calculated on the selected scan timeframe (which may be higher or lower than the chart timeframe); use the currently forming bar.
+Long: Close is above all three moving averages AND the preceding consecutive bars were below all three moving averages for at least the configured minimum count AND volume is greater than average volume multiplied by the configured volume factor

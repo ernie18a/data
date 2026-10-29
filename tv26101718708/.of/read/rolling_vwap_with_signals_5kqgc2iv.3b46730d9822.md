@@ -1,0 +1,9 @@
+Calculation: Rolling VWAP and standard deviation = smooth the volume-weighted mean of hlc3 and its volume-weighted standard deviation around that mean over the rolling time window, with a minimum of 10 bars; calculate on the selected RVWAP timeframe (which may be higher or lower than the chart timeframe), using its bar while forming.
+Calculation: Upper band = rolling VWAP + standard deviation multiplier × rolling standard deviation
+Calculation: Lower band = rolling VWAP − standard deviation multiplier × rolling standard deviation
+Calculation: Band width = (upper band − lower band) / rolling VWAP
+Calculation: Average volume = time-based rolling mean of volume over a 24-hour window, with a minimum of 10 bars
+Calculation: Average band width = time-based rolling mean of band width over a 24-hour window, with a minimum of 10 bars
+Calculation: Directional volume = mean volume over the lookback bars whose close is above the open (up-bar volume) or below the open (down-bar volume)
+Long: close crosses above the upper band AND band width one bar ago ≤ average band width one bar ago × narrow-band threshold AND smoothed ATR > its value one bar ago AND rolling VWAP > its value max(1, rounded ratio of RVWAP timeframe to chart timeframe) bars ago AND close > upper band AND volume > average volume × relative-volume threshold AND up-bar volume one bar ago > down-bar volume one bar ago
+Short: close crosses below the lower band AND band width one bar ago ≤ average band width one bar ago × narrow-band threshold AND smoothed ATR > its value one bar ago AND rolling VWAP < its value max(1, rounded ratio of RVWAP timeframe to chart timeframe) bars ago AND close < lower band AND volume > average volume × relative-volume threshold AND down-bar volume one bar ago > up-bar volume one bar ago

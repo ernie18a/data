@@ -1,0 +1,4 @@
+Long: EMA with shorter lookback crosses above EMA with longer lookback AND RSI < overbought threshold AND close > VWAP AND time is within the configured trading session
+Short: EMA with shorter lookback crosses below EMA with longer lookback AND RSI > oversold threshold AND close < VWAP AND time is within the configured trading session
+Exit: Long, low <= entry price × (1 − stop-loss percentage) OR high >= entry price × (1 + take-profit percentage) OR time is outside the configured trading session
+Exit: Short, high >= entry price × (1 + stop-loss percentage) OR low <= entry price × (1 − take-profit percentage) OR time is outside the configured trading session

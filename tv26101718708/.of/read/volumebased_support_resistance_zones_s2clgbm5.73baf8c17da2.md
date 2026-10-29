@@ -1,0 +1,4 @@
+Calculation: Resistance pivot = latest high in a six-bar sequence whose highs rise for three bars then fall for two bars, and whose pivot-bar volume exceeds the simple moving average of volume on that source timeframe; use completed source bars. Source timeframe is the chart timeframe or a configured timeframe that may be higher or lower.
+Calculation: Support pivot = latest low in a six-bar sequence whose lows fall for three bars then rise for two bars, and whose pivot-bar volume exceeds the simple moving average of volume on that source timeframe; use completed source bars. Source timeframe is the chart timeframe or a configured timeframe that may be higher or lower.
+Long: Close crosses above any configured resistance pivot (current close > current pivot AND previous close <= previous pivot)
+Short: Close crosses below any configured support pivot (current close < current pivot AND previous close >= previous pivot)

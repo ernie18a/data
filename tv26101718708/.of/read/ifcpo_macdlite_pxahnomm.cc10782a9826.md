@@ -1,0 +1,2 @@
+Long: On the higher timeframe, using the last completed bar, MACD line > signal line AND MACD histogram > 0
+Short: On the higher timeframe, using the last completed bar, MACD line < signal line AND MACD histogram < 0

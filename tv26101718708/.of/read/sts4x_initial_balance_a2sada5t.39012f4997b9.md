@@ -1,0 +1,4 @@
+Calculation: Initial-balance high = highest high from RTH open through the configured initial-balance window; fixed when the window ends for the rest of the session
+Calculation: Initial-balance low = lowest low from RTH open through the configured initial-balance window; fixed when the window ends for the rest of the session
+Long: Initial-balance window has ended AND current bar is in RTH AND current bar high > initial-balance high AND no earlier bar in RTH after the window ended had a high > initial-balance high
+Short: Initial-balance window has ended AND current bar is in RTH AND current bar low < initial-balance low AND no earlier bar in RTH after the window ended had a low < initial-balance low

@@ -1,0 +1,5 @@
+Calculation: Candle density = volume / candle range, using one minimum price tick as the range when high = low
+Calculation: Prior average range = mean candle range over the lookback ending on the previous bar
+Calculation: Prior average density = mean candle density over the lookback ending on the previous bar
+Long: volume > 0 AND low <= the lowest low of the prior lookback AND candle density >= density threshold factor × prior average density AND candle range <= maximum spread factor × prior average range AND (close − low) / candle range × 100 >= close-position threshold
+Short: volume > 0 AND high >= the highest high of the prior lookback AND candle density >= density threshold factor × prior average density AND candle range <= maximum spread factor × prior average range AND (high − close) / candle range × 100 >= close-position threshold

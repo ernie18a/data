@@ -1,0 +1,8 @@
+Calculation: Pivot highs/lows = highs/lows that are strictly greater than/less than the corresponding values in an equal number of bars on both sides; use confirmed pivots only.
+Calculation: Upper/lower boundary = straight line through two pivot highs/lows, respectively.
+Calculation: Formation span = maximum of the high-pivot spacing and low-pivot spacing; it is at least twice the pivot lookback and no greater than the formation lookback.
+Calculation: Formation interval = from the earliest of the four pivots to the latest; the four pivots alternate high, low, high, low or low, high, low, high.
+Calculation: Formation valid = throughout the formation interval every bar's high is at or below the upper boundary and every bar's low is at or above the lower boundary; the boundaries are ordered upper above lower at both interval ends and intersect strictly after the interval.
+Calculation: Normalized boundary angle = arctan((absolute boundary price change / formation height) / (pivot spacing / formation interval length)), in degrees; formation height is the upper-minus-lower boundary distance at the interval start.
+Long: Valid formation AND upper boundary angle <= flat-line tolerance AND lower boundary rises AND lower boundary angle > 2 * flat-line tolerance + 1 degree
+Short: Valid formation AND lower boundary angle <= flat-line tolerance AND upper boundary falls AND upper boundary angle > 2 * flat-line tolerance + 1 degree

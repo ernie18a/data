@@ -1,0 +1,5 @@
+Calculation: Weighted score = sum of configured points for each true condition: fast EMA > mid EMA > slow EMA and close > VWAP; RSI within its upper momentum band; volume > its moving average × configured volume multiplier; ADX > its trend threshold; ATR > its moving average; close > previous bar’s high; higher-timeframe fast EMA > mid EMA. False conditions contribute zero. The higher-timeframe EMAs use the latest available higher-timeframe bar (forming in realtime, completed in historical data).
+Long: weighted score ≥ configured entry threshold AND higher-timeframe fast EMA > mid EMA AND position is flat AND no long entry occurred within the configured cooldown interval
+Short: fast EMA < mid EMA AND close < VWAP AND RSI < its configured lower threshold AND higher-timeframe fast EMA < mid EMA AND position is flat AND no short entry occurred within the configured cooldown interval
+Exit: long, close < fast EMA OR close < VWAP
+Exit: short, close > fast EMA OR close > VWAP

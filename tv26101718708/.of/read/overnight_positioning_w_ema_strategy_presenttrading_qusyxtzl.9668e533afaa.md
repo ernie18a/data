@@ -1,0 +1,2 @@
+Long: position is flat AND local day is Monday–Friday AND local time is from market close minus the configured entry lead time up to (but not including) market close AND local day is not Friday AND (chart close > EMA of higher-timeframe closes using the last completed higher-timeframe bar OR the EMA filter is disabled)
+Exit: long, (local day is Monday–Friday AND local time is from market open plus the configured exit delay up to (but not including) market close) OR (local day is Friday AND local time is at or after 5 minutes before market close)

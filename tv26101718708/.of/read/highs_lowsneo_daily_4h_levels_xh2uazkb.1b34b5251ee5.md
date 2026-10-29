@@ -1,0 +1,8 @@
+Calculation: Active daily high/low levels = highs/lows of prior completed bars on a higher timeframe, retained until mitigated or aged out of the configured lookback
+Calculation: Active 4H high/low levels = highs/lows of prior completed bars on a higher timeframe, retained until mitigated or aged out of the configured lookback; exclude levels overlapping active daily levels
+Calculation: Long stop price = entry price reduced by the configured stop-loss percentage
+Calculation: Short stop price = entry price increased by the configured stop-loss percentage
+Long: Within the configured zone after an active daily or 4H low is mitigated, fewer than two entries have occurred in the zone, no trade is active, and no stop was hit on this bar, AND ((RSI mode is enabled AND lower-timeframe RSI crosses above its oversold threshold) OR (RSI mode is disabled AND the current candle is green AND its close is above the low of the first candle in the current consecutive green-candle sequence AND either no sweep is pending or the current low is below the pending sweep level))
+Short: Within the configured zone after an active daily or 4H high is mitigated, fewer than two entries have occurred in the zone, no trade is active, and no stop was hit on this bar, AND ((RSI mode is enabled AND lower-timeframe RSI crosses below its overbought threshold) OR (RSI mode is disabled AND the current candle is red AND its close is below the high of the first candle in the current consecutive red-candle sequence AND either no sweep is pending or the current high is above the pending sweep level))
+Exit: Long, after the entry bar, low <= long stop price
+Exit: Short, after the entry bar, high >= short stop price

@@ -1,0 +1,13 @@
+Calculation: Opening-range high = highest high during the configured opening-range time window, after that window completes
+Calculation: Opening-range low = lowest low during the configured opening-range time window, after that window completes
+Calculation: Opening-range midpoint = (opening-range high + opening-range low) / 2
+Calculation: Average volume = simple moving average of volume over a configurable lookback
+Calculation: Long stop = opening-range low − ATR × configurable buffer
+Calculation: Short stop = opening-range high + ATR × configurable buffer
+Calculation: Final target = the farthest enabled risk-to-reward target from entry among 1:1, 1:2, and 1:3
+Long: Opening range is complete AND no breakout has been recorded for the session AND bar is confirmed AND bar time is after the opening-range window AND close > opening-range high AND volume ≥ average volume × configurable multiplier
+Long: Active window is open AND bar is confirmed AND breakout direction is bullish AND ((entry mode is Immediate AND (this is the breakout bar OR this is the first active-window bar after a breakout during the wait period)) OR (entry mode is Midpoint Retest AND retest is waiting AND this bar is after the breakout bar AND low ≤ opening-range midpoint AND close > opening-range midpoint) OR (entry mode is Breakout Retest AND retest is waiting AND this bar is after the breakout bar AND low ≤ opening-range high AND high ≥ opening-range high AND close > opening-range high))
+Short: Opening range is complete AND no breakout has been recorded for the session AND bar is confirmed AND bar time is after the opening-range window AND close < opening-range low AND volume ≥ average volume × configurable multiplier
+Short: Active window is open AND bar is confirmed AND breakout direction is bearish AND ((entry mode is Immediate AND (this is the breakout bar OR this is the first active-window bar after a breakout during the wait period)) OR (entry mode is Midpoint Retest AND retest is waiting AND this bar is after the breakout bar AND high ≥ opening-range midpoint AND close < opening-range midpoint) OR (entry mode is Breakout Retest AND retest is waiting AND this bar is after the breakout bar AND low ≤ opening-range low AND high ≥ opening-range low AND close < opening-range low))
+Exit: Long, low ≤ long stop OR (final target is enabled AND high ≥ final target)
+Exit: Short, high ≥ short stop OR (final target is enabled AND low ≤ final target)

@@ -1,0 +1,2 @@
+Long: The highest high occurred more recently than the lowest low in both the short-term and long-term lookbacks AND 10-period EMA(close) > VWAP AND (session filter disabled OR the current lower-timeframe bar is within the configured trading session)
+Short: The highest high occurred less recently than the lowest low in both the short-term and long-term lookbacks AND 10-period EMA(close) < VWAP AND (session filter disabled OR the current lower-timeframe bar is within the configured trading session)

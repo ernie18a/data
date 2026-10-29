@@ -1,0 +1,10 @@
+Calculation: Previous confirmed HTF high = high of the last completed bar of a higher timeframe, captured at the start of each enabled session
+Calculation: Previous confirmed HTF low = low of the last completed bar of a higher timeframe, captured at the start of each enabled session
+Calculation: Prior lookback high = highest high over the selected lookback of chart-timeframe bars, excluding the current bar
+Calculation: Prior lookback low = lowest low over the selected lookback of chart-timeframe bars, excluding the current bar
+Long: During an enabled session, a low sweep has occurred (low < previous confirmed HTF low and, in the default close-back-inside mode, close > previous confirmed HTF low), and close > prior lookback high; bar is closed; no earlier long sweep entry this session
+Long: During an enabled session, close > previous confirmed HTF high for the configured number of consecutive bars; absolute(close - open) >= ATR × configured multiplier; volume filter passes if enabled; bar is closed; no earlier long breakout this session
+Long: During an enabled session, close > previous confirmed HTF low after an earlier close < previous confirmed HTF low in the same session; bar is closed; no earlier bear-trap mark this session
+Short: During an enabled session, a high sweep has occurred (high > previous confirmed HTF high and, in the default close-back-inside mode, close < previous confirmed HTF high), and close < prior lookback low; bar is closed; no earlier short sweep entry this session
+Short: During an enabled session, close < previous confirmed HTF low for the configured number of consecutive bars; absolute(close - open) >= ATR × configured multiplier; volume filter passes if enabled; bar is closed; no earlier short breakout this session
+Short: During an enabled session, close < previous confirmed HTF high after an earlier close > previous confirmed HTF high in the same session; bar is closed; no earlier bull-trap mark this session

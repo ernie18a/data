@@ -1,0 +1,3 @@
+Calculation: Average body = moving average of absolute candle bodies
+Long: Low reaches or crosses an untriggered confirmed pivot low AND volume exceeds its moving average; an existing bearish fair value gap formed when high < low two bars earlier and the preceding candle body exceeded the average body by a volatility parameter is inverted when close > its upper boundary
+Short: High reaches or crosses an untriggered confirmed pivot high AND volume exceeds its moving average; an existing bullish fair value gap formed when low > high two bars earlier and the preceding candle body exceeded the average body by a volatility parameter is inverted when close < its lower boundary

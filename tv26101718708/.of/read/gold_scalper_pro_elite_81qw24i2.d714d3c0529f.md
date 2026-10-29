@@ -1,0 +1,2 @@
+Long: close > EMA AND close > open AND volume > average volume × volume multiplier AND low <= lowest low over the lookback
+Short: close < EMA AND close < open AND volume > average volume × volume multiplier AND high >= highest high over the lookback

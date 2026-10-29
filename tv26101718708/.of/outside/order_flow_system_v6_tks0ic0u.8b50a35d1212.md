@@ -1,0 +1,1 @@
+At confirmed swing pivots, go long when the traded instrument makes a lower low than its prior swing low and a correlated instrument makes a higher low. Go short when the traded instrument makes a higher high than its prior swing high and the correlated instrument makes a lower high. No exit rule is specified.

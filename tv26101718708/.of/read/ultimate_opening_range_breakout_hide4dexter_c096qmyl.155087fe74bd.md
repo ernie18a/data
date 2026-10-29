@@ -1,0 +1,8 @@
+Calculation: Opening-range high = highest high during the configured opening-range session; if the range source is closing prices, use the greater of open and close for each bar instead.
+Calculation: Opening-range low = lowest low during the configured opening-range session; if the range source is closing prices, use the lesser of open and close for each bar instead.
+Calculation: Long trailing stop = the greater of the previous stop and the current bar's low minus ATR times the stop multiplier; initialize it to the current bar's low minus ATR times the stop multiplier.
+Calculation: Short trailing stop = the lesser of the previous stop and the current bar's high plus ATR times the stop multiplier; initialize it to the current bar's high plus ATR times the stop multiplier.
+Long: close crosses above the opening-range high AND the opening-range session has ended AND the current time is within the configured plotting window AND no long signal has occurred since the daily or session reset.
+Short: close crosses below the opening-range low AND the opening-range session has ended AND the current time is within the configured plotting window AND no short signal has occurred since the daily or session reset.
+Exit: long, close < long trailing stop OR current time is outside the configured plotting window
+Exit: short, close > short trailing stop OR current time is outside the configured plotting window

@@ -1,0 +1,4 @@
+Calculation: Bullish reaction quality = clamp(34% × lower-wick share of bar range + 34% × close location within bar range + 16% × volume participation + 16% × body share of bar range, 0–100), where volume participation = clamp(current volume ÷ max(average volume over the reaction lookback, 1) × 50, 0–100)
+Calculation: Bearish reaction quality = clamp(34% × upper-wick share of bar range + 34% × distance of the close from the bar high as a share of bar range + 16% × volume participation + 16% × body share of bar range, 0–100)
+Long: bullish reaction quality > bearish reaction quality
+Short: bearish reaction quality > bullish reaction quality

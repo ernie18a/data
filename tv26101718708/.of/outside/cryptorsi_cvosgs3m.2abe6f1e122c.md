@@ -1,0 +1,1 @@
+Use the selected preset’s RSI calculation and thresholds. Enter long when the traded instrument’s RSI exceeds its buy threshold and BTC’s daily close is above its daily EMA. Exit the long when, for the smoother preset, price crosses below its weighted moving average, or, for the faster preset, RSI falls below its sell threshold. Do not open short positions.

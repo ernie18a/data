@@ -1,0 +1,14 @@
+Calculation: Trend template = close > 50-period simple moving average, close > 150-period simple moving average, close > 200-period simple moving average, 50-period simple moving average > 150-period and 200-period simple moving averages, 150-period simple moving average > 200-period simple moving average, 200-period simple moving average > its value 20 bars ago, close >= 75% of the highest high over 252 bars, and close >= 130% of the lowest low over 252 bars
+Calculation: Relative strength is strong = close divided by the corresponding market index close > its 50-period simple moving average and > its value 20 bars ago
+Calculation: Weekly trend is strong = on the higher timeframe, using the current weekly bar, weekly close > 10-period weekly simple moving average > 30-period weekly simple moving average
+Calculation: VCP is tight = (highest high minus lowest low over the shorter lookback) < 55% of (highest high minus lowest low over the longer lookback) AND ATR as a percentage of close < its 50-period simple moving average AND absolute close change as a percentage of close < its 20-period simple moving average; the shorter lookback is shorter than the longer lookback
+Calculation: Volume dry-up = 10-period simple moving average of volume < 50-period simple moving average of volume
+Calculation: Not extended = (close - 50-period simple moving average) / 50-period simple moving average × 100 <= maximum extension AND > -3%
+Calculation: Market healthy = corresponding market index close > its 50-period simple moving average AND > its 200-period simple moving average AND its 50-period simple moving average > its 200-period simple moving average
+Calculation: Pivot = highest high over the pivot lookback, excluding the current bar
+Calculation: Pro candidate = Trend template AND Relative strength is strong AND VCP is tight AND Not extended AND (market healthy if the market filter is enabled) AND (Weekly trend is strong if the weekly filter is enabled)
+Calculation: Active stop = on entry, lowest low over the initial-stop lookback; thereafter, the greater of the prior active stop and the lowest low over the trailing-stop lookback
+Long: Pro candidate AND close > highest high over the prior 5 bars AND volume > average volume × early-volume multiplier AND prior bar's Volume dry-up
+Long: Pro candidate AND close > Pivot AND close > open AND volume > average volume × breakout-volume multiplier AND close > low + (high - low) × 0.60
+Long: Pro candidate AND a breakout entry occurred within the retest window AND low <= Pivot × (1 + retest tolerance) AND close >= Pivot × (1 - retest tolerance) AND close > 50-period simple moving average AND close > open
+Exit: long, close < Active stop OR (close < entry Pivot AND close < 50-period simple moving average) OR (close < 21-period exponential moving average AND close < prior close) OR (close < open AND volume > average volume × 1.5 AND close < prior close)

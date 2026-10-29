@@ -1,0 +1,8 @@
+Calculation: Daily strength = sum of five rubric scores, each based on: candle body/range, close position toward the candle’s direction, range/ATR, opposite wick/body, and volume/average volume; component scores use the indicator’s fixed 0–10 scoring bands.
+Calculation: Setup entry price = selected level: body midpoint, candle-range midpoint, or candle close.
+Calculation: Structural stop = signal candle low minus configured buffer for long setups; signal candle high plus configured buffer for short setups.
+Calculation: First target = entry price plus configured R multiple of absolute entry-to-stop distance for long setups; entry price minus that distance for short setups.
+Long: confirmed bullish daily candle AND strength ≥ configured gate AND strength tier ≥ configured minimum tier AND (minimum-range filter disabled OR range ≥ configured minimum × ATR) AND (rejection filter disabled OR upper wick ≤ body) AND (EMA filter disabled OR close > EMA); in momentum mode, or the same conditions for a bearish candle in fade mode.
+Short: confirmed bearish daily candle AND strength ≥ configured gate AND strength tier ≥ configured minimum tier AND (minimum-range filter disabled OR range ≥ configured minimum × ATR) AND (rejection filter disabled OR lower wick ≤ body) AND (EMA filter disabled OR close < EMA); in momentum mode, or the same conditions for a bullish candle in fade mode.
+Exit: Long, low ≤ structural stop OR high ≥ first target.
+Exit: Short, high ≥ structural stop OR low ≤ first target.

@@ -1,0 +1,5 @@
+Calculation: C1 = last completed higher-timeframe candle; C2 = current forming higher-timeframe candle, aggregated from chart-timeframe bars.
+Calculation: Bullish CISD level = open of the latest run of consecutive chart-timeframe bars with close < open, reset to the latest such run when the C2 low makes a new sweep low.
+Calculation: Bearish CISD level = open of the latest run of consecutive chart-timeframe bars with close > open, reset to the latest such run when the C2 high makes a new sweep high.
+Long: On a closed chart-timeframe bar, with no model active, C2 low < C1 low AND C2 high <= C1 high; OR, while a bullish model is active, close > bullish CISD level.
+Short: On a closed chart-timeframe bar, with no model active, C2 high > C1 high AND C2 low >= C1 low; OR, while a bearish model is active, close < bearish CISD level.

@@ -1,0 +1,2 @@
+Calculation: Fair Value Gap = current bar low > high two bars earlier
+Long: each of the minimum number of preceding bars closes below the 5-, 8-, and 13-period moving averages AND current close is above all three moving averages AND current volume > its moving average × volume multiplier AND (MA alignment filter disabled OR 5-period moving average > 8-period moving average > 13-period moving average) AND (bullish candle filter disabled OR close > open) AND (FVG filter disabled OR current bar forms a Fair Value Gap

@@ -1,0 +1,7 @@
+Calculation: Financial-credit growth proxy = rate of change of the average of financial-sector and real-estate-sector closes over the same lookback used for productive-credit growth.
+Calculation: Productive-credit growth proxy = rate of change of the industrial-sector close.
+Calculation: Bubble score = 1.2 × the percentile rank of the ratio of financial-credit growth proxy to productive-credit growth proxy, ranked over a longer lookback, clamped to 0–100; multiply by 1.25 when financial-credit momentum is positive and broad-market volume exceeds its moving average times a multiplier, then clamp to 100. Financial-credit momentum is the rate of change of the financial-credit growth proxy; the volume moving average uses a shorter lookback than the percentile-rank lookback.
+Calculation: Minsky score = 1.35 × the percentile rank of financial-credit momentum over a longer lookback when financial-credit acceleration is positive and the bubble score exceeds 50; otherwise use that percentile rank. Acceleration is the rate of change of financial-credit momentum over a shorter lookback than the momentum lookback.
+Long: bubble score < 35 AND productive-credit growth proxy crosses above 0
+Short: (bubble score > 80 AND financial-credit growth proxy crosses below its 30-bar exponential moving average) OR Minsky score crosses above 75
+Exit:

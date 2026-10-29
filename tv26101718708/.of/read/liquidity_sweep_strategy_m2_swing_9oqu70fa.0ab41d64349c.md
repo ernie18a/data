@@ -1,0 +1,8 @@
+Calculation: Session liquidity levels = each daily session’s running highest high and lowest low, reset daily.
+Calculation: Structure level after a high sweep = the selected bearish M2 candle’s low, or the latest confirmed pivot low using equal left and right lookbacks.
+Calculation: Structure level after a low sweep = the selected bullish M2 candle’s high, or the latest confirmed pivot high using equal left and right lookbacks.
+Calculation: Bearish M2 candle = nearest prior candle closing below its high-low midpoint, with at least one intervening candle whose low is above its high; search backward within a bounded lookback.
+Calculation: Bullish M2 candle = nearest prior candle closing above its high-low midpoint, with at least one intervening candle whose high is below its low; search backward within a bounded lookback.
+Calculation: Retracement entry = midpoint between the post-sweep extreme and the pullback extreme.
+Long: Outside the corresponding session, high > session high; subsequently close < selected structure level; after that close, no high > post-sweep extreme has occurred; current bar is later than the bar setting the pullback low; high >= retracement entry.
+Short: Outside the corresponding session, low < session low; subsequently close > selected structure level; after that close, no low < post-sweep extreme has occurred; current bar is later than the bar setting the pullback high; low <= retracement entry.

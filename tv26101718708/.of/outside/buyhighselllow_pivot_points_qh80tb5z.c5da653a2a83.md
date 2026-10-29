@@ -1,0 +1,1 @@
+Using the prior completed bar on a configurable higher timeframe, calculate classic pivot levels from its high, low, and close. Go long when the instrument’s source price (default: close) crosses above R1; go short when it crosses below S2. Evaluate entries only within the configured backtest date range. An opposite entry reverses the position; no separate exit signal is defined.

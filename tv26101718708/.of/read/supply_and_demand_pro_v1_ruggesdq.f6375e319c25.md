@@ -1,0 +1,15 @@
+Calculation: Strong bullish momentum = fast EMA > mid EMA > slow EMA AND RSI > RSI midpoint
+Calculation: Strong bearish momentum = fast EMA < mid EMA < slow EMA AND RSI < RSI midpoint
+Calculation: Early bullish momentum = (fast EMA > mid EMA OR close > fast EMA) AND RSI > RSI midpoint
+Calculation: Early bearish momentum = (fast EMA < mid EMA OR close < fast EMA) AND RSI < RSI midpoint
+Calculation: Upward structure break = close > the prior highest high over the configured structure lookback AND prior close <= that high
+Calculation: Downward structure break = close < the prior lowest low over the configured structure lookback AND prior close >= that low
+Calculation: Recent upward/downward structure break = the corresponding structure break occurred within the configured signal window
+Calculation: Demand-zone signal = on a higher-timeframe bar, a bullish candle body exceeds the configured multiple of its moving average absolute body, and the candle body at the configured earlier offset is below the configured fraction of that average; use the last completed higher-timeframe bar
+Calculation: Supply-zone signal = on a higher-timeframe bar, a bearish candle body exceeds the configured multiple of its moving average absolute body, and the candle body at the configured earlier offset is below the configured fraction of that average; use the last completed higher-timeframe bar
+Calculation: Long risk = entry price minus the configured buffer-adjusted lower of the current and prior bar lows; long targets are entry price plus configured risk multiples
+Calculation: Short risk = the configured buffer-adjusted higher of the current and prior bar highs minus entry price; short targets are entry price minus configured risk multiples
+Long: Demand-zone signal OR upward structure break OR (early bullish momentum AND RSI > RSI midpoint plus configured threshold AND NOT strong bearish momentum AND recent upward structure break AND upward structure break AND session filter passes AND configured same-side cooldown has elapsed) OR (strong bullish momentum AND recent upward structure break AND session filter passes AND NOT an X-buy signal AND configured same-side cooldown has elapsed AND no prior X-buy signal or the configured continuation delay has elapsed)
+Short: Supply-zone signal OR downward structure break OR (early bearish momentum AND RSI < RSI midpoint minus configured threshold AND NOT strong bullish momentum AND recent downward structure break AND downward structure break AND session filter passes AND configured same-side cooldown has elapsed) OR (strong bearish momentum AND recent downward structure break AND session filter passes AND NOT an X-sell signal AND configured same-side cooldown has elapsed AND no prior X-sell signal or the configured continuation delay has elapsed)
+Exit: long, high >= any configured long target AND prior low < that target
+Exit: short, low <= any configured short target AND prior high > that target

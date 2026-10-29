@@ -1,0 +1,2 @@
+Long: (high - low) > SMA(high - low, lookback) * range spike multiplier AND (volume spike not required OR volume > SMA(volume, lookback) * volume spike multiplier) AND (high - max(open, close)) > body reference * wick-to-body ratio AND (high - max(open, close)) > (min(open, close) - low)
+Short: (high - low) > SMA(high - low, lookback) * range spike multiplier AND (volume spike not required OR volume > SMA(volume, lookback) * volume spike multiplier) AND (min(open, close) - low) > body reference * wick-to-body ratio AND (min(open, close) - low) > (high - max(open, close))

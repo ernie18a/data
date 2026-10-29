@@ -1,0 +1,1 @@
+Long: First bar of a new higher-timeframe period AND short-dated volatility index / longer-dated volatility index <= threshold AND short-dated volatility index >= minimum volatility threshold AND (trend filter disabled OR close > EMA of close

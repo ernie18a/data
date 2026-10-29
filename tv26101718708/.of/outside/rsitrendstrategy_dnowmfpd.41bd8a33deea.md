@@ -1,0 +1,1 @@
+Go long when a short-period RSI crosses above a longer-period RSI and, on the prior bar, a separate RSI is below the oversold threshold. Go short when the short-period RSI crosses below the longer-period RSI and the separate RSI was above the overbought threshold on the prior bar.

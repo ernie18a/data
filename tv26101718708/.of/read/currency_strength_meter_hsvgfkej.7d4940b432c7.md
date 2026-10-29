@@ -1,0 +1,3 @@
+Calculation: Currency strength = the currency’s percentage move since the selected reset anchor, with USDJPY, USDCHF, and USDCAD moves inverted for JPY, CHF, and CAD, minus the mean move of all eight major currencies (USD move = 0), optionally EMA-smoothed
+Long: chart pair base currency strength > every other currency strength AND chart pair quote currency strength < every other currency strength
+Short: chart pair quote currency strength > every other currency strength AND chart pair base currency strength < every other currency strength

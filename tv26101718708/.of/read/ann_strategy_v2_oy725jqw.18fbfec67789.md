@@ -1,0 +1,3 @@
+Calculation: ANN prediction = a feedforward network with a linear input, 5 tanh units, 33 tanh units, and 1 tanh output, using the input (current chart-bar OHLC4 − previous completed higher-timeframe OHLC4) / previous completed higher-timeframe OHLC4; current chart-bar OHLC4 uses the bar still forming.
+Long: ANN prediction > 0 OR (ANN prediction = 0 AND previous signal state is long)
+Short: ANN prediction < 0 OR (ANN prediction = 0 AND previous signal state is short)

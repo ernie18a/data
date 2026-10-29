@@ -1,0 +1,5 @@
+Calculation: Swing high = a bar whose high is higher than the highs of the chosen number of bars before and after it; confirmed after those later bars complete.
+Calculation: Swing low = a bar whose low is lower than the lows of the chosen number of bars before and after it; confirmed after those later bars complete.
+Calculation: Matched comparison-asset pivot = the nearest-in-time pivot of the same type within the chosen bar tolerance of the primary pivot.
+Long: On an enabled timeframe equal to or higher than the chart timeframe, a new primary swing low is lower than the immediately preceding primary swing low AND its matched comparison-asset swing low is higher than the matched comparison-asset swing low for the preceding primary pivot.
+Short: On an enabled timeframe equal to or higher than the chart timeframe, a new primary swing high is higher than the immediately preceding primary swing high AND its matched comparison-asset swing high is lower than the matched comparison-asset swing high for the preceding primary pivot.

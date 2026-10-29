@@ -1,0 +1,4 @@
+Calculation: Fast EMA = exponential moving average of close with a shorter lookback than the slow EMA; when custom-timeframe mode is enabled, calculate it on higher-timeframe bars using the bar still forming
+Calculation: Slow EMA = exponential moving average of close with a longer lookback than the fast EMA; when custom-timeframe mode is enabled, calculate it on higher-timeframe bars using the bar still forming
+Long: Fast EMA > slow EMA AND (close > fast EMA OR (close >= slow EMA AND close <= fast EMA AND close >= open))
+Short: Fast EMA < slow EMA AND (close < fast EMA OR (close >= fast EMA AND close <= slow EMA AND close < open))

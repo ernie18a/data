@@ -1,0 +1,8 @@
+Calculation: Structural swing high/low = a bar’s high/low that is respectively greater/less than every high/low in the next N bars; retain the latest of each.
+Calculation: Bullish/bearish structure state = bullish when close > latest structural swing high; bearish when close < latest structural swing low; otherwise retain the prior state.
+Calculation: Bullish sweep = in bearish structure state, low < the running low established since the latest structure-state change and close > that running low, more than one bar after it was set. Bearish sweep = in bullish structure state, high > the running high established since the latest structure-state change and close < that running high, more than one bar after it was set. Update the running low/high whenever a lower low/higher high occurs; a structure-state change resets both to that bar’s low/high.
+Calculation: Long stop = lowest low over N bars in recent-swing mode, or the lower of the setup bar’s low and the bullish sweep level in trigger-candle mode. Short stop = highest high over N bars in recent-swing mode, or the higher of the setup bar’s high and the bearish sweep level in trigger-candle mode.
+Long: bullish sweep OR (a bearish sweep has occurred and close > its level during the configured session, followed by close > the high of that setup bar before the long stop is hit)
+Short: bearish sweep OR (a bullish sweep has occurred and close < its level during the configured session, followed by close < the low of that setup bar before the short stop is hit)
+Exit: Long, close < long stop in candle-close mode OR low < long stop in wick-cross mode
+Exit: Short, close > short stop in candle-close mode OR high > short stop in wick-cross mode

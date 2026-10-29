@@ -1,0 +1,3 @@
+Calculation: standardized log-price deviation = (ln(current still-forming higher-timeframe close) − simple moving average of ln(close) over a lookback) / standard deviation of ln(close) over the same lookback; the mean and standard deviation use the same lookback
+Long: previous chart-bar standardized log-price deviation ≤ −2 AND current standardized log-price deviation > −2
+Short: previous chart-bar standardized log-price deviation ≥ 2 AND current standardized log-price deviation < 2

@@ -1,0 +1,9 @@
+Calculation: Anchored VWAP and two-sigma bands = cumulative volume-weighted mean of hlc3 since the selected session, week, month, or confirmed strict swing-pivot anchor; for a swing anchor, include the pivot bar through the confirmation bar. Sigma = sqrt(max(volume-weighted mean of hlc3² − VWAP², 0)); bands = VWAP ± 2 × sigma.
+Calculation: KER = absolute net close change over a short lookback divided by the sum of absolute close changes over that same lookback.
+Calculation: ATR% = ATR divided by close.
+Calculation: Regime = compare current KER and ATR% with their respective trailing long-lookback medians, using the same lookback; KER above its median means trending, otherwise ranging. Median ties count as below.
+Calculation: Side occupancy = fraction of closes above the anchored VWAP in the preceding short window; closes equal to or below VWAP count as not above.
+Long: close[1] < lower two-sigma band[1] AND lower two-sigma band <= close AND close <= upper two-sigma band AND ranging regime
+Short: close[1] > upper two-sigma band[1] AND lower two-sigma band <= close AND close <= upper two-sigma band AND ranging regime
+Long: trending regime AND side occupancy meets the high-side threshold AND low touches or crosses VWAP during the active short hold window AND close > VWAP; emit once per touch episode, merging overlapping touches and ending the episode on a context flip or VWAP anchor reset.
+Short: trending regime AND the fraction of closes below VWAP in the preceding short window meets the high-side threshold AND high touches or crosses VWAP during the active short hold window AND close < VWAP; emit once per touch episode, merging overlapping touches and ending the episode on a context flip or VWAP anchor reset.

@@ -1,0 +1,1 @@
+Compute the price spread between a higher-amplitude market and a reference market, optionally scaling the spread by the reference price. Calculate an RSI of that spread. On a completed bar, enter long when the RSI crosses above its upper threshold; enter short when it crosses below its lower threshold. An opposite signal reverses the position.

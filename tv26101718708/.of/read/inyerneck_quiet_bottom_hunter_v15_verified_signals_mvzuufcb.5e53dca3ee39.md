@@ -1,0 +1,2 @@
+Long: close is between lower and upper percentage-drop thresholds from the highest high over a longer lookback AND volume is below a fraction of its moving average over a shorter lookback AND RSI is below an oversold threshold AND close >= open for the required number of consecutive bars AND the current bar is complete
+Exit: long, high reaches the entry price plus a profit distance OR low reaches the entry price minus a stop distance

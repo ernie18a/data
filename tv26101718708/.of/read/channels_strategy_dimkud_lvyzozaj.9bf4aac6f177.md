@@ -1,0 +1,7 @@
+Long: (low < lower channel OR (previous low < lower channel AND close > lower channel) OR close < lower channel OR (previous close < lower channel AND close > lower channel)), AND all enabled long filters pass
+Short: (high > upper channel OR (previous high > upper channel AND close < upper channel) OR close > upper channel OR (previous close > upper channel AND close < upper channel)), AND all enabled short filters pass
+Calculation: ATR = average true range; the volatility filter compares a shorter-lookback ATR with a longer-lookback ATR
+Calculation: Long stop and target = respectively the previous low or current low (according to entry mode), extended lower channel, or close minus ATR multiple; and the entry price minus a percentage, according to selected stop type; respectively opposite channel, channel midline, close plus ATR multiple, or entry price plus a percentage, according to selected target type
+Calculation: Short stop and target = respectively the previous high or current high (according to entry mode), extended upper channel, or close plus ATR multiple; and the entry price plus a percentage, according to selected stop type; respectively opposite channel, channel midline, close minus ATR multiple, or entry price minus a percentage, according to selected target type
+Exit: long, low <= selected stop price OR high >= selected target price
+Exit: short, high >= selected stop price OR low <= selected target price

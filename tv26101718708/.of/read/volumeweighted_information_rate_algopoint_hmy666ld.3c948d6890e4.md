@@ -1,0 +1,3 @@
+Calculation: Volume-weighted information-rate Z-score = the Z-score of [(1 − H/log₂(B)) × (volume/SMA(volume, L)) × ln(close/previous close)], using the mean and standard deviation over Z bars; H = −Σ(p × log₂(p)) for nonzero p, where p is each bin’s count divided by L. Form B equal-width bins over the minimum-to-maximum range of the last L log returns, with bin width max(range/B, 0.000001) and upper bin edges excluded.
+Long: Volume-weighted information-rate Z-score crosses above its signal threshold (current value > threshold AND previous value ≤ threshold)
+Short: Volume-weighted information-rate Z-score crosses below the negative signal threshold (current value < −threshold AND previous value ≥ −threshold)

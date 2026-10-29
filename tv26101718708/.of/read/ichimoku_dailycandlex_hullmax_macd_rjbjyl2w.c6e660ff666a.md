@@ -1,0 +1,5 @@
+Calculation: Ichimoku leading span A = average of the high-low midpoint over the shorter conversion lookback and the high-low midpoint over the longer base lookback.
+Calculation: Ichimoku leading span B = high-low midpoint over a lookback longer than the base lookback.
+Calculation: HMA-based MACD = HMA of the selected price source over a shorter lookback minus its HMA over a longer lookback; signal = HMA of that difference.
+Long: HMA of the selected price source > HMA of that source shifted back one chart bar AND selected price source > the shifted-source HMA AND selected price source on the latest completed higher-timeframe bar > its value on the preceding completed higher-timeframe bar (lookahead off) AND Ichimoku leading span A > Ichimoku leading span B AND HMA-based MACD > its signal.
+Short: HMA of the selected price source < HMA of that source shifted back one chart bar AND selected price source < the shifted-source HMA AND selected price source on the latest completed higher-timeframe bar < its value on the preceding completed higher-timeframe bar (lookahead off) AND Ichimoku leading span A < Ichimoku leading span B AND HMA-based MACD < its signal.

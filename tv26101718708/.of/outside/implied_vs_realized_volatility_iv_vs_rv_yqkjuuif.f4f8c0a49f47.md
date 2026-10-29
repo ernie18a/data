@@ -1,0 +1,1 @@
+Compare implied volatility with annualized realized volatility over the matching horizon. Sell options when implied volatility is sufficiently above realized volatility to qualify as RICH. Consider buying options or protection when realized volatility exceeds implied volatility (NEGATIVE). When the premium is FAIR or THIN, be cautious about selling; otherwise take no action.

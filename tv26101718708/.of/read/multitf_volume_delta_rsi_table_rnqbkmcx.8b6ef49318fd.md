@@ -1,0 +1,5 @@
+Calculation: Buy volume = volume × (close − low) / (high − low); if high = low, volume / 2
+Calculation: Sell volume = volume × (high − close) / (high − low); if high = low, volume / 2
+Calculation: Buy-volume share = buy volume / (buy volume + sell volume)
+Long: At least the minimum configured number of enabled timeframes have buy-volume share ≥ the delta-dominance threshold AND RSI < the overbought level, AND this overall condition was false on the previous chart bar; calculate each timeframe's values from its aggregated bars, using the last completed bar whether that timeframe is higher or lower than the chart timeframe
+Short: At least the minimum configured number of enabled timeframes have buy-volume share ≤ 1 − the delta-dominance threshold AND RSI > the oversold level, AND this overall condition was false on the previous chart bar; calculate each timeframe's values from its aggregated bars, using the last completed bar whether that timeframe is higher or lower than the chart timeframe

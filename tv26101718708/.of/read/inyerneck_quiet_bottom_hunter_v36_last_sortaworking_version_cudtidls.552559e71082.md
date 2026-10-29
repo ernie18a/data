@@ -1,0 +1,2 @@
+Long: close is at least the minimum drop below the highest high of preceding bars AND volume <= the maximum volume ratio times its moving average AND RSI <= its maximum threshold AND the count of consecutive bars with close >= open >= the minimum streak length
+Exit: Long, high >= entry price + the profit target OR low <= entry price - the stop loss

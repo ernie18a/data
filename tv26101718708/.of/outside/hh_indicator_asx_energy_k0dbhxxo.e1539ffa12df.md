@@ -1,0 +1,1 @@
+For each tracked instrument, identify a pivot high when a candle’s body top is at least as high as those of the three candles before and after it. Signal long when the instrument’s closing price crosses from at or below the latest pivot high to above it. There are no short or exit signals.

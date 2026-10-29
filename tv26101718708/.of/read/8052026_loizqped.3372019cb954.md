@@ -1,0 +1,8 @@
+Calculation: Bullish FVG = current low > high two bars earlier AND previous close > that earlier high AND the gap percentage exceeds the configured threshold
+Calculation: Bearish FVG = current high < low two bars earlier AND previous close < that earlier low AND the gap percentage exceeds the configured threshold
+Calculation: Bullish divergence = a confirmed pivot low in price is lower than the previous pivot low in price AND the corresponding confirmed pivot low in MACD-AS is higher than the previous one
+Calculation: Bearish divergence = a confirmed pivot high in price is higher than the previous pivot high in price AND the corresponding confirmed pivot high in MACD-AS is lower than the previous one
+Calculation: MACD-AS = (fast EMA of close − slow EMA of close) − EMA of (fast EMA of close − slow EMA of close)
+Long: hlc3 crosses above EMA(close) OR close crosses above SMA(close) OR SMA(close) rises from the previous bar OR Bullish FVG OR Bullish divergence OR a confirmed pivot low forms a demand zone OR a confirmed swing high is higher than the previous confirmed swing high OR a confirmed swing low is higher than the previous confirmed swing low
+Short: hlc3 crosses below EMA(close) OR close crosses below SMA(close) OR SMA(close) falls from the previous bar OR Bearish FVG OR Bearish divergence OR a confirmed pivot high forms a supply zone OR a confirmed swing high is lower than the previous confirmed swing high OR a confirmed swing low is lower than the previous confirmed swing low
+Exit: 

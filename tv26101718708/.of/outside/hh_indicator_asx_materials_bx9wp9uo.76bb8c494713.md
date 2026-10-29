@@ -1,0 +1,1 @@
+For each monitored instrument, identify confirmed pivot highs as candle body tops at least as high as those of the three candles before and after. Signal a bullish new-high breakout when the instrument’s close crosses above the latest confirmed pivot-high body top; emit at most one signal per pivot. No short or exit rule.

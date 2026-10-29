@@ -1,0 +1,5 @@
+Calculation: Volume delta = within-bar cumulative sum of volume increments, signed positive when update price rises from the previous update, negative when it falls, and retaining the previous sign when unchanged (initial sign is zero)
+Long: Volume delta > 0 AND previous bar’s volume delta > 0 AND volume delta > previous bar’s volume delta AND (close >= open OR volume delta <= 0)
+Short: Volume delta < 0 AND previous bar’s volume delta < 0 AND volume delta < previous bar’s volume delta AND (close <= open OR volume delta >= 0)
+Long: Volume delta > threshold AND (close >= open OR volume delta <= 0)
+Short: Volume delta < -threshold AND (close <= open OR volume delta >= 0)

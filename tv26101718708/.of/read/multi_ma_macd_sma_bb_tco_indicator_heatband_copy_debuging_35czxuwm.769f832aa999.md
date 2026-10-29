@@ -1,0 +1,8 @@
+Calculation: DEMA(x,n) = 2 × EMA(x,n) − EMA(EMA(x,n),n)
+Calculation: Zero-lag MACD histogram = DEMA(close, short lookback) − DEMA(close, long lookback) − DEMA(short-minus-long DEMA difference, signal lookback); short lookback < long lookback
+Calculation: Second-timeframe RSI = standard RSI on the configured second timeframe, which may be higher or lower than the chart timeframe; use the bar mapped to the chart bar
+Calculation: Gann state = second-most-recent nonzero value of: +1 if close > prior bar’s SMA(high, lookback), −1 if close < prior bar’s SMA(low, lookback), otherwise 0
+Calculation: Gann up trigger = Gann state = −1 AND close > SMA(high, lookback) AND prior close < SMA(high, lookback)
+Calculation: Gann down trigger = Gann state = +1 AND close < SMA(low, lookback) AND prior close > SMA(low, lookback)
+Long: Zero-lag MACD histogram > 0 AND ((prior zero-lag MACD histogram < 0 AND (Gann up trigger OR (chart-timeframe RSI < upper threshold AND chart-timeframe RSI > 50 AND second-timeframe RSI > 50))) OR (Gann up trigger AND chart-timeframe RSI < upper threshold AND chart-timeframe RSI > 50 AND second-timeframe RSI > 50) OR (Gann up trigger AND prior chart-timeframe RSI < lower threshold AND chart-timeframe RSI > lower threshold))
+Short: Zero-lag MACD histogram < 0 AND ((prior zero-lag MACD histogram > 0 AND (Gann down trigger OR (chart-timeframe RSI > lower threshold AND chart-timeframe RSI < 50 AND second-timeframe RSI < 50))) OR (Gann down trigger AND chart-timeframe RSI > lower threshold AND chart-timeframe RSI < 50 AND second-timeframe RSI < 50) OR (Gann down trigger AND prior chart-timeframe RSI > upper threshold AND chart-timeframe RSI < upper threshold))

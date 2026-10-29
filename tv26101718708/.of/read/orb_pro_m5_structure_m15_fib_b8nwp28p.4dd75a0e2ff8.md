@@ -1,0 +1,6 @@
+Calculation: Opening range high/low = highest high/lowest low during the opening window
+Calculation: Smoothed moving average = Wilder-smoothed average of close using a longer lookback; its slope is measured over a shorter lookback
+Calculation: Tenkan = midpoint of the highest high and lowest low over a shorter lookback
+Calculation: Kijun = midpoint of the highest high and lowest low over a longer lookback
+Long: Outside the opening window AND the most recent breakout since the range reset was upward (three consecutive closes above the opening range high) AND no signal has occurred since the range reset AND close > smoothed moving average AND smoothed moving average > its value at the shorter lookback ago AND Tenkan > Kijun AND Tenkan > smoothed moving average AND Kijun > smoothed moving average
+Short: Outside the opening window AND the most recent breakout since the range reset was downward (three consecutive closes below the opening range low) AND no signal has occurred since the range reset AND close < smoothed moving average AND smoothed moving average < its value at the shorter lookback ago AND Tenkan < Kijun AND Tenkan < smoothed moving average AND Kijun < smoothed moving average

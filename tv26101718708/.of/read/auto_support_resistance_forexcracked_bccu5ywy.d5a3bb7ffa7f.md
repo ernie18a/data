@@ -1,0 +1,4 @@
+Calculation: Confirmed swing high = a bar whose high is greater than the highs of the N chart-timeframe bars before and after it; confirmed after those N later bars complete
+Calculation: Confirmed swing low = a bar whose low is lower than the lows of the N chart-timeframe bars before and after it; confirmed after those N later bars complete
+Long: A confirmed swing low occurs OR an existing resistance zone is broken when close > its upper boundary + break buffer × ATR(14)
+Short: A confirmed swing high occurs OR an existing support zone is broken when close < its lower boundary − break buffer × ATR(14)

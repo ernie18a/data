@@ -1,0 +1,4 @@
+Calculation: Compressed candle = absolute(open − close) < half the high − low range AND high − low < the four-period ATR
+Calculation: Mature consolidation = either a run of consecutive compressed candles whose highs and lows define the range, or a seed range spanning the highest high and lowest low of the last three bars that remains unbroken until the required duration; boundaries are fixed at maturity
+Long: A mature consolidation exists AND (close > range high under close-break mode OR high > range high under wick-break mode)
+Short: A mature consolidation exists AND (close < range low under close-break mode OR low < range low under wick-break mode)

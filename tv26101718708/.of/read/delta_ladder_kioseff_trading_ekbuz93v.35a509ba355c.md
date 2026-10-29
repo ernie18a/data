@@ -1,0 +1,3 @@
+Calculation: Volume delta at each chart-bar price row = buy volume minus sell volume, with lower-timeframe bars (lower than the chart timeframe), including the bar still forming, classified as buy when close > prior close and sell when close < prior close; distribute each bar’s volume evenly across the chart-bar price rows its high-low range intersects, or assign it to the crossed row when it falls between rows.
+Long: volume delta at a price row >= 0
+Short: volume delta at a price row < 0

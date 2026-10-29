@@ -1,0 +1,3 @@
+Calculation: Prior-lookback high/low = highest high / lowest low over the completed chart-timeframe bars before the current bar
+Long: After the Asian-session range is complete, low has fallen below its low on this or an earlier bar AND close > prior-lookback high AND no BOS has occurred today
+Short: After the Asian-session range is complete, high has risen above its high on this or an earlier bar AND close < prior-lookback low AND no BOS has occurred today

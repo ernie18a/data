@@ -1,0 +1,4 @@
+Long: no open trades AND shorter-lookback Hull moving average > its value 2 chart bars earlier AND MACD > its signal line AND shorter-lookback Hull moving average < VWMA AND longer-lookback Hull moving average > its value 2 chart bars earlier AND EMA-smoothed TSI > its lower threshold
+Short: no open trades AND shorter-lookback Hull moving average < its value 2 chart bars earlier AND MACD < its signal line AND shorter-lookback Hull moving average > VWMA AND longer-lookback Hull moving average < its value 2 chart bars earlier AND EMA-smoothed TSI < its upper threshold
+Exit: long, shorter-lookback Hull moving average < its value 2 chart bars earlier AND longer-lookback Hull moving average < its value 2 chart bars earlier AND shorter-lookback Hull moving average > VWMA
+Exit: short, shorter-lookback Hull moving average > its value 2 chart bars earlier AND longer-lookback Hull moving average > its value 2 chart bars earlier AND shorter-lookback Hull moving average < VWMA

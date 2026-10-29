@@ -1,0 +1,1 @@
+Calculate the net of an external market’s new highs minus new lows. Enter long when a faster EMA of this net is above a slower EMA and the net is positive. Exit the long when the faster EMA is below the slower EMA and the net is negative. No short entry.

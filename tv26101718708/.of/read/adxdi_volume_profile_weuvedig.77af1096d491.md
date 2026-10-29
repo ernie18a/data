@@ -1,0 +1,7 @@
+Calculation: Positive DI row energy = Sum, over bars whose high-low range overlaps the row, of (+DI × effective volume × (1 + abs(+DI − −DI) / (+DI + −DI))), dividing each bar’s contribution equally among the rows it touches; effective volume is volume when volume weighting is enabled and volume is positive, otherwise 1.
+Calculation: Negative DI row energy = Sum, over bars whose high-low range overlaps the row, of (−DI × effective volume × (1 + abs(+DI − −DI) / (+DI + −DI))), dividing each bar’s contribution equally among the rows it touches; use the same effective volume as for positive DI row energy.
+Calculation: ADX row average = Sum, over bars whose high-low range overlaps the row, of (ADX × effective volume × (1 + abs(+DI − −DI) / (+DI + −DI))), dividing each bar’s contribution equally among the rows it touches, then divide by the number of bars touching the row.
+Calculation: Positive DI row ratio = positive DI row energy / highest positive DI row energy in the profile session.
+Calculation: Negative DI row ratio = negative DI row energy / highest negative DI row energy in the profile session.
+Long: ADX row average ≥ ADX threshold AND positive DI row energy > negative DI row energy × 1.2 AND positive DI row ratio ≥ noise filter
+Short: ADX row average ≥ ADX threshold AND negative DI row energy > positive DI row energy × 1.2 AND negative DI row ratio ≥ noise filter

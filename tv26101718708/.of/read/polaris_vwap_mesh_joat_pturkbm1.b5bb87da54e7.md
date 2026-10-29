@@ -1,0 +1,8 @@
+Calculation: Session VWAP = cumulative typical price × volume divided by cumulative volume, reset at the first bar inside each session.
+Calculation: Swing-high VWAP = cumulative typical price × volume divided by cumulative volume, reset on each confirmed swing-high pivot and beginning on its confirmation bar; pivot lookback is equal on both sides.
+Calculation: Swing-low VWAP = cumulative typical price × volume divided by cumulative volume, reset on each confirmed swing-low pivot and beginning on its confirmation bar; pivot lookback is equal on both sides.
+Calculation: Previous-day-open VWAP = cumulative typical price × volume divided by cumulative volume, reset at each new daily period once a previous daily open exists.
+Calculation: Active VWAP count = number of the four VWAPs with available values.
+Calculation: Bull count = number of available VWAPs below the close.
+Long: On a confirmed bar, close crosses above any available session, swing-high, swing-low, or previous-day-open VWAP (previous close ≤ that VWAP and current close > it), OR active VWAP count > 0, bull count ≥ 3, and the previous bar was not in the bullish bias state.
+Short: On a confirmed bar, close crosses below any available session, swing-high, swing-low, or previous-day-open VWAP (previous close ≥ that VWAP and current close < it), OR active VWAP count ≥ 3, bull count ≤ 1, and the previous bar was not in the bearish bias state.

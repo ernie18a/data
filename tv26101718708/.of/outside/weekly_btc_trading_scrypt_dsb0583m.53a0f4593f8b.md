@@ -1,0 +1,1 @@
+From the configured start year onward, enter long when BTC’s weekly close crosses above its simple moving average of weekly closes. When the weekly close crosses below that average, exit the long position using the configured loss and profit limits. Do not open short positions.

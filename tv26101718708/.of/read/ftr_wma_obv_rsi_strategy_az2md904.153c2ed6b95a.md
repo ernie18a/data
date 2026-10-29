@@ -1,0 +1,7 @@
+Calculation: Fisher Transform (four lookbacks in increasing 1:2:4:8 multiples of a base lookback) = on chart bars, let x=(high+low)/2, H and L be its rolling highest and lowest over the lookback, a=0.66*((x-L)/(H-L)-0.5)+0.67*previous a; b=0.999 if a>0.99, -0.999 if a< -0.99, otherwise a; Fisher=0.5*ln((1+b)/(1-b))+0.5*previous Fisher
+Calculation: Scaled RSI = (chart-bar RSI - 50) / 10
+Calculation: OBV oscillator = 0.01 × cumulative signed volume (add volume when close rises, subtract when close falls, otherwise add zero) minus an EMA of that cumulative value
+Long: each of the four Fisher Transforms > its value on the prior chart bar AND Scaled RSI > buy threshold AND chart-bar WMA > its value on the prior chart bar AND OBV oscillator > bullish threshold
+Short: each of the four Fisher Transforms < its value on the prior chart bar AND Scaled RSI < sell threshold AND chart-bar WMA < its value on the prior chart bar AND OBV oscillator < bearish threshold
+Exit: long, each of the four Fisher Transforms < its value on the prior chart bar AND Scaled RSI < reversal-down threshold OR Short condition AND datetime > entry cutoff and chart bar confirmed
+Exit: short, each of the four Fisher Transforms > its value on the prior chart bar AND Scaled RSI > reversal-up threshold OR Long condition AND datetime > entry cutoff and chart bar confirmed

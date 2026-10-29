@@ -1,0 +1,9 @@
+Calculation: Bullish fair value gap = current bar low > high two bars earlier AND current bar low − high two bars earlier ≥ configured minimum gap size
+Calculation: Bearish fair value gap = current bar high < low two bars earlier AND low two bars earlier − current bar high ≥ configured minimum gap size
+Calculation: Active bullish gap on a scanned timeframe = a bullish fair value gap occurred within the configured lookback on that timeframe
+Calculation: Active bearish gap on a scanned timeframe = a bearish fair value gap occurred within the configured lookback on that timeframe
+Calculation: Bullish alignment score = count of scanned timeframes with an active bullish gap; bearish alignment score = count of scanned timeframes with an active bearish gap. Scanned timeframes can be lower or higher than the chart timeframe; use the latest available data without lookahead, using completed bars.
+Calculation: Bullish sequence = active bullish gaps on all three sequence timeframes below the chart timeframe; bearish sequence = active bearish gaps on all three sequence timeframes below the chart timeframe
+Calculation: New York kill zone = New York time ≥ 09:30 AND New York time < 11:00
+Long: Bullish fair value gap OR (bullish sequence AND bullish alignment score ≥ configured alert threshold AND bullish alignment score > bearish alignment score AND (session filter disabled OR New York kill zone))
+Short: Bearish fair value gap OR (bearish sequence AND bearish alignment score ≥ configured alert threshold AND bearish alignment score > bullish alignment score AND (session filter disabled OR New York kill zone))

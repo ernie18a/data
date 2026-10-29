@@ -1,0 +1,3 @@
+Calculation: Floor-trader pivot levels = Using high, low, and close from the last completed bar of the higher timeframe: PP=(high+low+close)/3; S1=2*PP-high; R1=2*PP-low; S2=PP-(R1-S1); R2=PP+(R1-S1); S3=low-2*(high-PP); R3=high+2*(PP-low). Use the configured support level (S1, S2, or S3) and resistance level (R1, R2, or R3).
+Long: (close > configured resistance AND reverse is disabled) OR (close < configured support AND reverse is enabled) OR (close is between configured support and resistance AND position side is long)
+Short: (close < configured support AND reverse is disabled) OR (close > configured resistance AND reverse is enabled) OR (close is between configured support and resistance AND position side is short)

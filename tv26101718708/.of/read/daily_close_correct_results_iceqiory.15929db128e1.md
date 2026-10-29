@@ -1,0 +1,3 @@
+Calculation: Daily-close percentage change = (current chart close - last completed higher-timeframe daily close) / last completed higher-timeframe daily close
+Long: Daily-close percentage change > threshold OR (prior decision state is long AND daily-close percentage change >= -threshold)
+Short: Daily-close percentage change < -threshold OR (prior decision state is short AND daily-close percentage change <= threshold)

@@ -1,0 +1,13 @@
+Calculation: Session VWAP = volume-weighted average of hlc3 since the selected session, week, or month anchor reset
+Calculation: Short-term EMA = exponential moving average of close with a shorter lookback than the long-term EMA
+Calculation: Long-term EMA = exponential moving average of close with a longer lookback than the short-term EMA
+Calculation: Qualified slope direction = direction of the ATR-normalized change in a line's linear-regression value, if its absolute-slope rolling z-score passes its gate and enough of the z-score, efficiency-ratio, and R-squared tests pass; calculate separately for VWAP and the long-term EMA, using the same lookback settings on each timeframe
+Calculation: Lower-timeframe slope confirmation = at least the required count of lower-timeframe bars within the current chart bar have the specified qualified slope direction; use a timeframe lower than the chart timeframe and its completed bars at chart-bar close
+Long: short-term EMA crosses above Session VWAP
+Short: short-term EMA crosses below Session VWAP
+Long: last cross direction is up AND open > Session VWAP AND low <= Session VWAP (or, if VWAP standard-deviation retests are enabled, low <= upper VWAP band) AND (wick rejection is disabled OR close > Session VWAP) AND bar index minus last retest bar > cooldown AND (volume filter is disabled OR volume > average volume × volume multiplier)
+Short: last cross direction is down AND open < Session VWAP AND high >= Session VWAP (or, if VWAP standard-deviation retests are enabled, high >= lower VWAP band) AND (wick rejection is disabled OR close < Session VWAP) AND bar index minus last retest bar > cooldown AND (volume filter is disabled OR volume > average volume × volume multiplier)
+Long: a long retest has armed the setup AND this is the first bar with positive qualified slope direction for both VWAP and the long-term EMA on the chart timeframe AND positive lower-timeframe slope confirmation for both lines AND the lock has not already been used for this retest
+Short: a short retest has armed the setup AND this is the first bar with negative qualified slope direction for both VWAP and the long-term EMA on the chart timeframe AND negative lower-timeframe slope confirmation for both lines AND the lock has not already been used for this retest
+Exit: long, short-term EMA crosses below Session VWAP after a long lock
+Exit: short, short-term EMA crosses above Session VWAP after a short lock

@@ -1,0 +1,4 @@
+Calculation: TBR Open = opening price of the first chart-timeframe bar in the configured window
+Calculation: Trigger distance = configured multiplier × standard deviation of the open-to-close changes of the configured number of prior completed windows, calculated on a sample timeframe higher than the chart timeframe when configured higher, otherwise on the chart timeframe
+Long: within the configured window AND no break has occurred yet in that window AND chart-bar close > TBR Open + Trigger distance
+Short: within the configured window AND no break has occurred yet in that window AND chart-bar close < TBR Open − Trigger distance

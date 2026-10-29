@@ -1,0 +1,9 @@
+Calculation: Blended oscillator = weighted average of CCI, enabled RSI normalized around 50 to the ±100 scale, enabled Stochastic RSI K normalized around 50 to the ±100 scale, and enabled Fisher Transform scaled to the ±100 scale; CCI has weight 1 and the other components use their configured weights.
+Calculation: Signal moving average = selected moving average of the blended oscillator.
+Calculation: Confirmed pivot = a local high or low with the configured number of chart bars on both sides; it is confirmed after those bars on the right have completed.
+Long: Blended oscillator >= signal moving average AND (blended oscillator crosses above zero OR RSI crosses above its oversold level OR Stochastic RSI K crosses above its oversold level OR Fisher Transform crosses above its oversold level)
+Long: At a confirmed pivot low, price makes a lower low than at the preceding pivot low AND the blended oscillator makes a higher low whose increase exceeds the configured divergence threshold
+Long: At a confirmed pivot low, price makes a lower low than at the preceding pivot low AND RSI makes a higher low whose increase exceeds the configured divergence threshold
+Short: Blended oscillator < signal moving average AND (blended oscillator crosses below zero OR RSI crosses below its overbought level OR Stochastic RSI K crosses below its overbought level OR Fisher Transform crosses below its overbought level)
+Short: At a confirmed pivot high, price makes a higher high than at the preceding pivot high AND the blended oscillator makes a lower high whose decrease exceeds the configured divergence threshold
+Short: At a confirmed pivot high, price makes a higher high than at the preceding pivot high AND RSI makes a lower high whose decrease exceeds the configured divergence threshold

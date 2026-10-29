@@ -1,0 +1,7 @@
+Calculation: ATR = average true range
+Calculation: Confirmed swing low/high = a low/high that is lower/higher than the surrounding bars over the swing lookback; it becomes known after the bars to its right complete.
+Calculation: Tracked swing state = on a newly confirmed swing low/high, set its level to that extreme and its hold count to one. Before confirmation, increment the count on each later bar whose low is at most the tracked low plus ATR tolerance / whose high is at least the tracked high minus ATR tolerance. A bar with no hold and a count below the confirmation threshold marks a Bad Low / Bad High; a holding bar whose updated count reaches the threshold marks a Good Low / Good High. ATR tolerance is ATR times its configured multiplier.
+Calculation: Bullish SFP = current low is below the lowest low of prior bars and current close is above that prior low, with the sweep depth at least ATR times the minimum-wick multiplier.
+Calculation: Bearish SFP = current high is above the highest high of prior bars and current close is below that prior high, with the sweep depth at least ATR times the minimum-wick multiplier.
+Long: Bullish SFP OR Good Low OR Bad High
+Short: Bearish SFP OR Good High OR Bad Low

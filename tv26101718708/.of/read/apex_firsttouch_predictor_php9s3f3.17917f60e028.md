@@ -1,0 +1,8 @@
+Calculation: Bullish fair value gap = current low > high two bars earlier AND previous bar closed above its open
+Calculation: Bearish fair value gap = current high < low two bars earlier AND previous bar closed below its open
+Calculation: Bullish order block = a close crosses above the latest confirmed swing high; mark the most recent down candle within the preceding bars
+Calculation: Bearish order block = a close crosses below the latest confirmed swing low; mark the most recent up candle within the preceding bars
+Calculation: Higher-timeframe structural bias = +1 after a close breaks the latest confirmed swing high, -1 after a close breaks the latest confirmed swing low, otherwise retain the prior bias; use two higher timeframes, with the regime timeframe longer than the bias timeframe, from their last completed bars
+Calculation: First-touch score = weighted sum of higher-timeframe structural bias, inverse normalized position within the higher-timeframe range, liquidity imbalance, session strength multiplied by signed recent momentum, signed recent displacement, and ATR expansion multiplied by signed recent momentum; liquidity imbalance compares equal-high and equal-low clusters, prior-day high and low proximity, and the counts and proximity of detected zones above and below price; apply the strong-liquidity override when one side's liquidity advantage is strong and its nearest zone is within three times the opposite zone's distance
+Long: bullish fair value gap OR bullish order block OR first-touch score > 0
+Short: bearish fair value gap OR bearish order block OR first-touch score < 0

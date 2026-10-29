@@ -1,0 +1,2 @@
+Calculation: Higher-high event = a bar on the shorter higher timeframe whose high is greater than or equal to the highest high of the preceding longer lookback on that timeframe; use completed bars.
+Long: Shorter higher-timeframe close > its simple moving average AND shorter higher-timeframe close > longer higher-timeframe simple moving average AND longer higher-timeframe RSI > its threshold AND a higher-high event occurred within the configured hold period; use the last completed bar on each higher timeframe.

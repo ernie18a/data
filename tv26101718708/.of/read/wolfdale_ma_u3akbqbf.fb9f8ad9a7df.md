@@ -1,0 +1,2 @@
+Long: Fast moving average crosses above slow moving average (current fast > current slow AND previous fast <= previous slow)
+Short: Fast moving average crosses below slow moving average (current fast < current slow AND previous fast >= previous slow)

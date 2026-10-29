@@ -1,0 +1,4 @@
+Calculation: Session high = highest high from the start of the latest configured session through its end; retain it until the next session starts.
+Calculation: Session low = lowest low from the start of the latest configured session through its end; retain it until the next session starts.
+Long: (close > previous bar's Asia session high AND previous close <= previous bar's Asia session high) OR (close > previous bar's London session high AND previous close <= previous bar's London session high)
+Short: (close < previous bar's Asia session low AND previous close >= previous bar's Asia session low) OR (close < previous bar's London session low AND previous close >= previous bar's London session low)

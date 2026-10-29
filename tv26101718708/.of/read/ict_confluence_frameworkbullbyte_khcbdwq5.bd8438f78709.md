@@ -1,0 +1,18 @@
+Calculation: ATR = average true range over a configurable lookback
+Calculation: Confirmed swing high/low = a pivot high/low confirmed by bars on both sides, with three bars to the right
+Calculation: Bullish sweep-reclaim = after price trades above the latest confirmed swing high, within a short reclaim window a later bar has high >= that swing high and close < that swing high
+Calculation: Bearish sweep-reclaim = after price trades below the latest confirmed swing low, within a short reclaim window a later bar has low <= that swing low and close > that swing low
+Calculation: Bullish stopping-volume event = volume >= its rolling percentile threshold AND low <= the prior rolling lowest low AND (close - low) / (high - low) >= the rejection threshold
+Calculation: Bearish stopping-volume event = volume >= its rolling percentile threshold AND high >= the prior rolling highest high AND (high - close) / (high - low) >= the rejection threshold
+Calculation: Bullish compression-expansion event = the prior bar's high-low range is <= the lowest range in its rolling lookback AND current range >= a configurable ATR multiple AND close > open
+Calculation: Bearish compression-expansion event = the prior bar's high-low range is <= the lowest range in its rolling lookback AND current range >= a configurable ATR multiple AND close < open
+Calculation: Bullish structure break = close crosses above the latest confirmed swing high
+Calculation: Bearish structure break = close crosses below the latest confirmed swing low
+Calculation: Bullish order-block mitigation = after a bullish impulse of at least a configurable ATR multiple whose prior bar is bearish, a later bar's low is within that prior bar's range and close is above its high
+Calculation: Bearish order-block mitigation = after a bearish impulse of at least a configurable ATR multiple whose prior bar is bullish, a later bar's high is within that prior bar's range and close is below its low
+Calculation: Active bullish/bearish pattern = the corresponding event occurred within a short chart-bar confluence window
+Calculation: Required pattern count = configured minimum; increase it by one in the active volatility phase, capped at five
+Long: bullish sweep-reclaim OR bullish stopping-volume event OR bullish compression-expansion event OR bullish structure break OR bullish order-block mitigation OR (confirmed bar close AND warmed-up data AND no active position AND cooldown elapsed AND bullish active-pattern count >= required pattern count AND bullish active-pattern count > bearish active-pattern count AND bearish residual confluence score < required pattern count AND tier is allowed by the optional high-confluence-only filter)
+Short: bearish sweep-reclaim OR bearish stopping-volume event OR bearish compression-expansion event OR bearish structure break OR bearish order-block mitigation OR (confirmed bar close AND warmed-up data AND no active position AND cooldown elapsed AND bearish active-pattern count >= required pattern count AND bearish active-pattern count > bullish active-pattern count AND bullish residual confluence score < required pattern count AND tier is allowed by the optional high-confluence-only filter)
+Exit: long, on a later bar low <= entry price - configurable ATR risk distance OR high >= entry price + configured reward-to-risk multiple times that risk distance; if both occur on one bar, exit at invalidation
+Exit: short, on a later bar high >= entry price + configurable ATR risk distance OR low <= entry price - configured reward-to-risk multiple times that risk distance; if both occur on one bar, exit at invalidation

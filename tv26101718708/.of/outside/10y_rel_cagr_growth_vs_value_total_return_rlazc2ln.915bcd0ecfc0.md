@@ -1,0 +1,1 @@
+When the 10-year total-return CAGR spread of Growth over Value reaches a historical extreme above zero, trim Growth exposure and rotate into Value. When the spread reaches a cycle low or turns upward from negative territory, rotate back into Growth.

@@ -1,0 +1,6 @@
+Calculation: Smoothed RSI = EMA(RSI(close), short lookback)
+Calculation: Medium-term moving-average direction = rising over 3 bars if its value is higher than the prior bar's value on each of the last 3 bars; falling over 3 bars if lower on each; otherwise neutral
+Long: Smoothed RSI > 50 + threshold AND medium-term moving-average direction is rising over 3 bars AND close > long-term moving average AND this condition was false on the prior bar
+Short: Smoothed RSI < 50 - threshold AND medium-term moving-average direction is falling over 3 bars AND close < long-term moving average AND this condition was false on the prior bar
+Exit: long, medium-term moving-average direction differs from the prior bar's direction OR low <= entry price - stop distance OR high >= entry price + profit target OR low <= highest high since entry - trailing distance
+Exit: short, medium-term moving-average direction differs from the prior bar's direction OR high >= entry price + stop distance OR low <= entry price - profit target OR high >= lowest low since entry + trailing distance

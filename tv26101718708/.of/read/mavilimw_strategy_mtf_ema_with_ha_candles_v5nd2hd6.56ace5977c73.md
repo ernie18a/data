@@ -1,0 +1,3 @@
+Calculation: Each higher-timeframe MAVW = the sixth WMA in a sequence of six WMAs applied to the Heikin-Ashi close of EMA-smoothed OHLC; each successive WMA length is the sum of the previous two lengths. Use each higher timeframe’s bar still forming.
+Long: close > all three higher-timeframe MAVWs OR close < all three higher-timeframe MAVWs
+Exit: long, the first higher-timeframe MAVW crosses below the second OR the third higher-timeframe MAVW, or the first crosses above the second OR the third higher-timeframe MAVW

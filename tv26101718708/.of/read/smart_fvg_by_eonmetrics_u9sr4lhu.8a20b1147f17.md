@@ -1,0 +1,2 @@
+Long: Current low > high from 2 bars earlier AND current low − high from 2 bars earlier ≥ previous bar ATR(14) × minimum-size parameter OR, on a later bar, low ≤ the top of an active bullish FVG zone for the first time
+Short: Current high < low from 2 bars earlier AND low from 2 bars earlier − current high ≥ previous bar ATR(14) × minimum-size parameter OR, on a later bar, high ≥ the bottom of an active bearish FVG zone for the first time

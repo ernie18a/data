@@ -1,0 +1,8 @@
+Calculation: Short-, intermediate-, and long-lookback member values = independently configured moving averages of close, each optionally smoothed.
+Calculation: Normalized member slope = clamp((current member value − member value from a shorter lookback ago) / max(0.5 × ATR, minimum positive value), −1, 1).
+Calculation: Weighted consensus = sum of each member’s direction × weight × (0.35 + 0.65 × absolute normalized slope), divided by total member weight; member direction is the sign of its normalized slope.
+Calculation: ATR ratio = ATR / longer-lookback moving average of ATR.
+Long: Confirmed bar AND prior regime is not bullish AND weighted consensus ≥ active-mode entry threshold AND at least the minimum number of members have positive slopes AND ADX ≥ active-mode ADX threshold AND ATR ratio ≥ active-mode volatility floor
+Short: Confirmed bar AND prior regime is not bearish AND weighted consensus ≤ negative active-mode entry threshold AND at least the minimum number of members have negative slopes AND ADX ≥ active-mode ADX threshold AND ATR ratio ≥ active-mode volatility floor
+Exit: long, Confirmed bar AND prior regime is bullish AND (weighted consensus ≤ negative active-mode entry threshold AND at least the minimum number of members have negative slopes AND ADX ≥ active-mode ADX threshold AND ATR ratio ≥ active-mode volatility floor OR absolute weighted consensus ≤ active-mode exit threshold)
+Exit: short, Confirmed bar AND prior regime is bearish AND (weighted consensus ≥ active-mode entry threshold AND at least the minimum number of members have positive slopes AND ADX ≥ active-mode ADX threshold AND ATR ratio ≥ active-mode volatility floor OR absolute weighted consensus ≤ active-mode exit threshold)

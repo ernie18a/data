@@ -1,0 +1,14 @@
+Calculation: Confirmed pivot = a high or low that is respectively higher or lower than the neighboring bars over the configured left and right lookbacks; it becomes known after the right-side bars complete.
+Calculation: Inverse H&S active = the latest five confirmed pivots are low X, high A, low B, high C, low D; X and D differ by no more than the shoulder-tolerance percentage, and B is below both X and D. Its neckline is the higher of A and C. The pattern activates at D and is invalidated if close falls below B before breakout.
+Calculation: H&S active = the latest five confirmed pivots are high X, low A, high B, low C, high D; X and D differ by no more than the shoulder-tolerance percentage, and B is above both X and D. Its neckline is the lower of A and C. The pattern activates at D and is invalidated if close rises above B before breakdown.
+Calculation: Price-volume trend score = EMA of the Pearson correlation between close changes and volume changes over a long lookback, mapped from [-1, 1] to [0, 100]; use 0 correlation when unavailable.
+Calculation: Relative volume = volume / EMA(volume, medium lookback).
+Calculation: ATR expansion = ATR(short lookback) / EMA(ATR(short lookback), medium lookback).
+Calculation: Normalized score = map a value linearly from its rolling minimum to maximum over a long lookback onto [0, 100], using 50 when the minimum equals the maximum.
+Calculation: Impulse score = EMA of the normalized ATR expansion × relative volume, using a shorter smoothing lookback than the normalization lookback.
+Calculation: Direction score = EMA of the normalized rate of change of close over the ATR lookback, using the same normalization and smoothing lookbacks as the impulse score.
+Calculation: Bullish PVM = price-volume trend score > 50 AND direction score > 50 AND impulse score > 45. Bearish PVM = price-volume trend score > 50 AND direction score < 50 AND impulse score > 45.
+Calculation: ATR depth = (highest high − lowest low) / ATR(14) over the cup lookback. Cup midpoint = the lowest low is located strictly between 25% and 75% of that lookback; inverse cup midpoint uses the highest high instead.
+Calculation: Cup breakout level = the prior bar's highest high over the cup lookback. Inverse cup breakdown level = the prior bar's lowest low over the cup lookback.
+Long: (inverse H&S active AND close crosses above its neckline AND bullish PVM) OR (ATR depth ≥ minimum cup depth AND cup midpoint AND close > EMA(close, max(5, cup lookback / 4)) AND close crosses above the cup breakout level AND bullish PVM)
+Short: (H&S active AND close crosses below its neckline AND bearish PVM) OR (ATR depth ≥ minimum cup depth AND inverse cup midpoint AND close < EMA(close, max(5, cup lookback / 4)) AND close crosses below the inverse cup breakdown level AND bearish PVM)

@@ -1,0 +1,1 @@
+Enter a long position in the traded instrument when the daily simple moving average of the U.S. Economic Policy Uncertainty Index crosses above a threshold. Close the long position after a fixed number of bars from entry. No short entry rule is defined.

@@ -1,0 +1,7 @@
+Calculation: RSI = relative strength index of close over a lookback
+Calculation: High price tracker = reset to close when RSI is the highest in the lookback, otherwise carry its prior value (or initialize to close); then set to the greater of that value and close
+Calculation: High RSI tracker = reset to RSI when RSI is the highest in the lookback, otherwise carry its prior value (or initialize to RSI); then set to the greater of that value and RSI
+Calculation: Low price tracker = reset to close when RSI is the lowest in the lookback, otherwise carry its prior value (or initialize to close); then set to the lesser of that value and close
+Calculation: Low RSI tracker = reset to RSI when RSI is the lowest in the lookback, otherwise carry its prior value (or initialize to RSI); then set to the lesser of that value and RSI
+Long: Prior low price tracker < low price tracker two bars ago AND prior RSI > low RSI tracker AND current RSI >= prior RSI AND current bar is confirmed when confirmed-only mode is enabled
+Short: Prior high price tracker > high price tracker two bars ago AND prior RSI < high RSI tracker AND current RSI <= prior RSI AND current bar is confirmed when confirmed-only mode is enabled

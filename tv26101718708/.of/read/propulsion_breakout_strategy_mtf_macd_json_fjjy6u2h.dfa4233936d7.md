@@ -1,0 +1,6 @@
+Calculation: Active resistance = most recent confirmed pivot high, updated only when the uptrend conditions below hold
+Calculation: Active support = most recent confirmed pivot low, updated only when the downtrend conditions below hold
+Long: Position is flat AND close > short-term EMA AND short-term EMA > medium-term EMA AND higher-timeframe short-term EMA > higher-timeframe medium-term EMA AND close crosses above active resistance AND MACD histogram >= 0 OR MACD line >= signal line AND shorter-lookback ATR < longer-lookback ATR
+Short: Position is flat AND close < short-term EMA AND short-term EMA < medium-term EMA AND higher-timeframe short-term EMA < higher-timeframe medium-term EMA AND close crosses below active support AND MACD histogram <= 0 OR MACD line <= signal line AND shorter-lookback ATR < longer-lookback ATR
+Exit: Long, low <= min(signal-bar low, signal-bar medium-term EMA) OR close < medium-term EMA
+Exit: Short, high >= max(signal-bar high, signal-bar medium-term EMA) OR close > medium-term EMA

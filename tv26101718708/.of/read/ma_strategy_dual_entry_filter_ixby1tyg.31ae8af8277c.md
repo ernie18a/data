@@ -1,0 +1,4 @@
+Long: close crosses above the main moving average OR, after a close crossed above it and before a close crosses back below it, open, high, low, and close are all above the main moving average; if the trend filter is enabled, the main moving average is above the slower trend moving average
+Short: close crosses below the main moving average OR, after a close crossed below it and before a close crosses back above it, open, high, low, and close are all below the main moving average; if the trend filter is enabled, the main moving average is below the slower trend moving average
+Exit: long, close crosses below the main moving average
+Exit: short, close crosses above the main moving average

@@ -1,0 +1,2 @@
+Long: On each monitored timeframe, the last completed bar’s close is above its EMA and above the previous bar’s close
+Short: On each monitored timeframe, the last completed bar’s close is below its EMA and below the previous bar’s close

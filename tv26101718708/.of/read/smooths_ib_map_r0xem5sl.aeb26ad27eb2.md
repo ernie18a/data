@@ -1,0 +1,4 @@
+Calculation: Initial Balance high = highest high during the configured Initial Balance session
+Calculation: Initial Balance low = lowest low during the configured Initial Balance session
+Long: Initial Balance is complete AND current time is after its close and no later than the configured cutoff AND Initial Balance high was swept on an earlier chart bar AND low <= Initial Balance high AND close > Initial Balance high AND no earlier long signal occurred at this level today
+Short: Initial Balance is complete AND current time is after its close and no later than the configured cutoff AND Initial Balance low was swept on an earlier chart bar AND high >= Initial Balance low AND close < Initial Balance low AND no earlier short signal occurred at this level today

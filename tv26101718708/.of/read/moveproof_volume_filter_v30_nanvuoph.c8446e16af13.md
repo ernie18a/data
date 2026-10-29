@@ -1,0 +1,6 @@
+Calculation: Relative volume = current volume divided by its selected moving average; if adaptive averaging is enabled, cap each volume input at the previous bar’s EMA of volume multiplied by a cap multiplier before computing the selected average.
+Calculation: Bullish close strength = (close − low) / (high − low); bearish close strength = (high − close) / (high − low). If high equals low, both equal 0.5.
+Calculation: Prior breakout high/low = highest high / lowest low over the lookback, excluding the current bar.
+Long: close > prior breakout high AND close > open AND bullish close strength ≥ required threshold AND relative volume ≥ strong-volume threshold OR close > open AND bullish close strength ≥ required threshold AND relative volume > weak-volume threshold AND low ≤ fast EMA AND close > fast EMA AND close > middle EMA AND close > slow EMA AND fast EMA > middle EMA > slow EMA AND middle EMA > its prior-bar value
+Short: close < prior breakout low AND close < open AND bearish close strength ≥ required threshold AND relative volume ≥ strong-volume threshold OR close < open AND bearish close strength ≥ required threshold AND relative volume > weak-volume threshold AND high ≥ fast EMA AND close < fast EMA AND close < middle EMA AND close < slow EMA AND fast EMA < middle EMA < slow EMA AND middle EMA < its prior-bar value
+Exit: No exit decision.

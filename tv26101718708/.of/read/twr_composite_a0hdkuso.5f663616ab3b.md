@@ -1,0 +1,3 @@
+Calculation: TWR composite = short SMA of the weighted mean of RSI and Stochastic %K and MFI scaled to 0–1; CCI transformed by tanh after division by a scale, then mapped to 0–1; OBV momentum (change in OBV over a lookback) and Awesome Oscillator each scaled to 0–1 using their respective rolling ranges. Clamp the range-scaled values to 0–1.
+Long: TWR composite > 0.5 OR TWR composite < oversold level
+Short: TWR composite < 0.5 OR TWR composite > overbought level

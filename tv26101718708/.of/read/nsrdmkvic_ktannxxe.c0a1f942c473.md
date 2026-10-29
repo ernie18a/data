@@ -1,0 +1,5 @@
+Calculation: VZO = 100 × EMA(volume × (1 if close > prior close, otherwise −1), lookback) / EMA(volume, same lookback)
+Calculation: Volume reference = median of [0, 0, 0, prior bar volume, volume two bars ago, volume three bars ago]
+Long: Higher-timeframe RSI on the current forming bar ≥ lower RSI threshold AND its value on the prior chart bar < lower RSI threshold AND (EMA filter is off OR (EMA filter is on AND shorter-lookback EMA on a higher timeframe > longer-lookback EMA on that same higher timeframe)) AND volume > Volume reference AND close > open AND VZO ≥ its positive lower-zone threshold
+Short: Higher-timeframe RSI on the current forming bar ≤ upper RSI threshold AND its value on the prior chart bar > upper RSI threshold AND (EMA filter is off OR (EMA filter is on AND shorter-lookback EMA on a higher timeframe < longer-lookback EMA on that same higher timeframe)) AND volume > Volume reference AND open > close AND VZO ≤ the negative of its positive lower-zone threshold
+Exit: Long, low ≤ entry price × (1 − stop-loss fraction) OR high ≥ entry price × (1 + take-profit fraction)

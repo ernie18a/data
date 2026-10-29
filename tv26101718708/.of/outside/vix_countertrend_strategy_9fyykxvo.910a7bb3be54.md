@@ -1,0 +1,1 @@
+Go long the traded instrument when the prior bar’s external volatility index reading was at or above its panic threshold and, on that prior bar, the index crossed below its moving average. Exit the long position according to the selected rule: after the specified holding duration, when the index falls below its calm threshold, or when either condition occurs.

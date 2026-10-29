@@ -1,0 +1,8 @@
+Calculation: Confirmed pivot = a bar whose high is higher than the highs, or whose low is lower than the lows, over the configured lookback on both sides; it becomes known after the right-side bars complete
+Calculation: Pivot center = initialize to the first confirmed pivot; on each new confirmed pivot, set to (2 × prior center + pivot) / 3, using the pivot high if a high and low confirm together
+Calculation: Pivot SuperTrend bands = lower band is pivot center minus ATR × configured factor; upper band is pivot center plus ATR × configured factor. Trailing lower band resets to the lower band unless the prior close is above the prior trailing lower band, in which case it is the greater of the lower band and prior trailing lower band. Trailing upper band resets to the upper band unless the prior close is below the prior trailing upper band, in which case it is the lesser of the upper band and prior trailing upper band
+Calculation: Pivot SuperTrend trend = bullish if close is above the prior trailing upper band; bearish if close is below the prior trailing lower band; otherwise retain the prior trend
+Long: Pivot SuperTrend trend = bullish AND prior trend = bearish AND close > selected moving average AND (reference filter disabled OR reference instrument trend = bullish)
+Short: Pivot SuperTrend trend = bearish AND prior trend = bullish AND close < selected moving average AND (reference filter disabled OR reference instrument trend = bearish)
+Exit: Long, low <= entry price × (1 − configured stop-loss percentage / 100)
+Exit: Short, high >= entry price × (1 + configured stop-loss percentage / 100)

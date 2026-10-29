@@ -1,0 +1,17 @@
+Calculation: Bullish pin bar = the enabled long-lower-shadow pin-bar condition: open and close are each above low + (high − low) × the configured percentage
+Calculation: Bearish pin bar = the enabled long-upper-shadow pin-bar condition: open and close are each below high − (high − low) × the configured percentage
+Calculation: Piercing line = enabled; previous candle is bearish with body at least 70% of its range; current candle is bullish with body at least 70% of its range, opens at or below the previous close, closes below the previous open and above the midpoint of the previous body
+Calculation: Dark cloud cover = enabled; previous candle is bullish with body at least 70% of its range; current candle is bearish with body at least 70% of its range, opens at or above the previous close, closes above the previous open and below the midpoint of the previous body
+Calculation: Bullish harami = enabled; previous candle is bearish; current candle is bullish, its body is smaller than the previous body, its open is at or below the previous open, its close is at or below the previous open, its high is at or below the previous open, and it is inside the previous candle’s range
+Calculation: Bearish harami = enabled; previous candle is bullish; current candle is bearish, its body is smaller than the previous body, its open is at or below the previous close, its low is at or above the previous open, and it is inside the previous candle’s range
+Calculation: Bullish engulfing = enabled; previous candle is bearish; current candle is bullish, its open is at or below the previous close and its close is at or above the previous high
+Calculation: Bearish engulfing = enabled; previous candle is bullish; current candle is bearish, its open is at or above the previous close and its close is at or below the previous low
+Calculation: Bullish fractal cross = enabled and close crosses above the latest confirmed fractal high; a fractal high is a high greater than the highs of the two bars before and the two bars after it
+Calculation: Bearish fractal cross = enabled and close crosses below the latest confirmed fractal low; a fractal low is a low less than the lows of the two bars before and the two bars after it
+Calculation: MACD direction filter = MACD line is positive and rising for bullish; negative and falling for bearish
+Calculation: Moving-average direction filter = selected moving average of the selected source is rising for bullish and falling for bearish
+Long: higher-timeframe close crosses above higher-timeframe open OR (close > higher-timeframe open AND (Bullish pin bar OR Piercing line OR Bullish harami OR Bullish engulfing OR Bullish fractal cross))
+Long: Moving-average direction filter is bullish when trend filtering is enabled AND MACD direction filter is bullish when MACD filtering is enabled AND (Bullish harami OR Bullish engulfing OR Piercing line OR Bullish fractal cross OR Bullish pin bar) AND NOT (reversal pin bar OR bullish shaved bar OR inside bar OR outside bar)
+Short: higher-timeframe close crosses below higher-timeframe open OR (close < higher-timeframe open AND (Bearish pin bar OR Dark cloud cover OR Bearish harami OR Bearish engulfing OR Bearish fractal cross))
+Short: Moving-average direction filter is bearish when trend filtering is enabled AND MACD direction filter is bearish when MACD filtering is enabled AND (Bearish harami OR Bearish engulfing OR Dark cloud cover OR Bearish fractal cross OR Bearish pin bar) AND NOT (reversal pin bar OR bearish shaved bar OR inside bar OR outside bar)
+Exit:

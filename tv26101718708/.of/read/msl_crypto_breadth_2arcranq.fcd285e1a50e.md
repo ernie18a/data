@@ -1,0 +1,6 @@
+Calculation: Participation = 100 × number of basket members whose close is above their own selected moving average / number of members with valid data; publish only when the minimum live-feed count is met. Use the selected basket timeframe (equal to or higher than the chart timeframe), using its last completed bar.
+Calculation: Reference return = reference symbol’s percentage close change over the comparison window, using the selected basket timeframe’s last completed bars.
+Calculation: Participation change = current participation minus participation one comparison window earlier.
+Long: Reference return ≤ −minimum reference move AND participation change ≥ minimum breadth gap AND this bullish divergence condition was false on the prior bar AND at least one comparison window has passed since the prior bullish mark AND no bullish disagreement is already open.
+Short: Reference return ≥ minimum reference move AND participation change ≤ −minimum breadth gap AND this bearish divergence condition was false on the prior bar AND at least one comparison window has passed since the prior bearish mark AND no bearish disagreement is already open.
+Exit: long, participation crosses below 50%

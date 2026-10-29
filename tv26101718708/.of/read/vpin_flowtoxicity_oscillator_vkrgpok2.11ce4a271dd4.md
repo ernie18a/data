@@ -1,0 +1,4 @@
+Calculation: Buy fraction = selected Normal or Student-t cumulative distribution of the current close-to-close change divided by the rolling standard deviation of close-to-close changes.
+Calculation: VPIN percentile = percentile rank of toxicity over a rolling window. Toxicity is either the rolling mean of absolute buy-minus-sell volume divided by rolling mean volume, or, when volume-clock mode is enabled and buckets are available, the mean absolute buy-minus-sell volume imbalance of equal-volume buckets divided by target bucket volume. Buy/sell volume is estimated from the buy fraction and bar volume, unless measured-flow mode has lower-timeframe data; then it is the sum of completed lower-timeframe bar volumes with close above open for buys and close below open for sells.
+Long: VPIN percentile crosses above the toxic threshold AND buy fraction >= 0.5
+Short: VPIN percentile crosses above the toxic threshold AND buy fraction < 0.5

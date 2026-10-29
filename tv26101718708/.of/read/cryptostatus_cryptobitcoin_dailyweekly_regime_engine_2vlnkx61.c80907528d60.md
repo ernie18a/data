@@ -1,0 +1,5 @@
+Calculation: Confirmed pivot low/high = a low/high with no lower/higher low/high in the configured bars to its left and right; evaluate it after the right-side bars complete.
+Calculation: RSI divergence = a lower confirmed price pivot low with a higher RSI value at the pivot than the previous pivot low, or a higher confirmed price pivot high with a lower RSI value at the pivot than the previous pivot high; the two pivots must be within the configured maximum lookback.
+Calculation: ADX exhaustion = a lower confirmed price pivot low or higher confirmed price pivot high, with ADX at the pivot lower than ADX on the preceding bar; the two pivots must be within the configured maximum lookback.
+Long: RSI divergence at a confirmed pivot low OR ADX exhaustion at a confirmed pivot low (calculated on the configured anchor timeframe; use completed anchor bars, which may be higher than, equal to, or lower than the chart timeframe).
+Short: RSI divergence at a confirmed pivot high OR ADX exhaustion at a confirmed pivot high (calculated on the configured anchor timeframe; use completed anchor bars, which may be higher than, equal to, or lower than the chart timeframe).

@@ -1,0 +1,4 @@
+Calculation: Bullish FVG = current bar low > high two bars ago
+Calculation: Bearish FVG = current bar high < low two bars ago
+Long: Bullish FVG OR a later bar's low <= the top of the latest bullish FVG AND its close > the bottom of that FVG AND that FVG has not previously been marked respected OR the last completed bar on a higher timeframe forms a bullish FVG OR the close is below the bottom of the latest bearish FVG
+Short: Bearish FVG OR a later bar's high >= the bottom of the latest bearish FVG AND its close < the top of that FVG AND that FVG has not previously been marked respected OR the last completed bar on a higher timeframe forms a bearish FVG OR the close is above the top of the latest bullish FVG

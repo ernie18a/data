@@ -1,0 +1,5 @@
+Calculation: Fast and slow moving averages = selectable SMA or EMA of close; the fast lookback is shorter than the slow lookback.
+Calculation: Fast/slow slope = (moving average now − moving average 3 bars ago) / 3.
+Calculation: Projected bars to cross = −(fast moving average − slow moving average) / (fast slope − slow slope) when the gap is negative and the slope difference is positive; (fast moving average − slow moving average) / (slow slope − fast slope) when the gap is positive and the slope difference is negative.
+Long: Fast moving average crosses above slow moving average OR (fast moving average < slow moving average AND fast slope > slow slope AND projected bars to cross ≥ 1 AND projected bars to cross ≤ projection horizon).
+Short: Fast moving average crosses below slow moving average OR (fast moving average > slow moving average AND fast slope < slow slope AND projected bars to cross ≥ 1 AND projected bars to cross ≤ projection horizon).

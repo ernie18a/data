@@ -1,0 +1,6 @@
+Calculation: Confirmed swing high/low = pivot high/low with the configured number of bars on each side; use the latest confirmed swing of each type.
+Calculation: Timeframe structure bias = start neutral; when close first exceeds the latest confirmed swing high, set bullish and classify as CHoCH if prior bias was neutral or bearish, otherwise BOS; when close first falls below the latest confirmed swing low, set bearish and classify as CHoCH if prior bias was neutral or bullish, otherwise BOS. Reset each swing's crossed status when a new swing of that type is confirmed.
+Calculation: Higher-timeframe structure bias = timeframe structure bias calculated from higher-timeframe bars, using the last completed bar historically and the current bar while it forms in real time.
+Calculation: Lower-timeframe structure bias = timeframe structure bias calculated from lower-timeframe bars, using the latest available bar.
+Long: lower-timeframe bullish CHoCH or lower-timeframe bullish BOS
+Short: lower-timeframe bearish CHoCH or lower-timeframe bearish BOS

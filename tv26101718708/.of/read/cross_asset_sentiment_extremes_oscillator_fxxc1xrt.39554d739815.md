@@ -1,0 +1,3 @@
+Calculation: Sentiment oscillator = smoothed weighted average of the available external sentiment score and chart-internal score; each score is the mean of its component percentile ranks over its lookback, with fear-oriented ranks inverted. The chart-internal score averages the percentile ranks of RSI, extension from the 200-bar mean, and inverted realized volatility rank.
+Long: Sentiment oscillator crosses up above the fear threshold OR crosses down below the fear threshold
+Short: Sentiment oscillator crosses down below the greed threshold OR crosses up above the greed threshold

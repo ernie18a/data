@@ -1,0 +1,1 @@
+Go long on the traded instrument when SPY and QQQ each have their shorter-period EMA above their longer-period EMA, with the longer-period EMA rising, and VIX has its longer-period EMA above its shorter-period EMA and the longer-period EMA falling. Protect the long with a trailing stop and a loss stop. No short entry is defined.

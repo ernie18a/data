@@ -1,0 +1,15 @@
+Calculation: ATR-normalized return = (close - previous close) / ATR
+Calculation: Relative volume = volume / SMA(volume, flow lookback)
+Calculation: Flow impulse = ATR-normalized return × relative volume
+Calculation: Money Flow = 50 × clamp(EMA(flow impulse, flow lookback) / (2.5 × stdev(EMA(flow impulse, flow lookback), normalization lookback)), -1, 1)
+Calculation: Hyperwave = 50 × clamp(EMA(flow impulse, shorter momentum lookback) / (2.5 × stdev(EMA(flow impulse, shorter momentum lookback), normalization lookback)), -1, 1)
+Calculation: Bullish overflow = Money Flow > positive overflow threshold; bearish overflow = Money Flow < negative overflow threshold; otherwise neither
+Calculation: Momentum rising = Hyperwave > its previous value
+Calculation: Fade state = bullish, bearish, or no overflow, paired with whether momentum is rising
+Calculation: Fade edge = Q(fade state, fade) - Q(fade state, wait); initialize wait values to zero and fade values positive; after each confirmed bar, update the previous state/action value by learning_rate × (reward + discount × maximum action value in the current state - previous value), where reward for a fade is negative ATR-normalized return after bullish overflow, positive ATR-normalized return after bearish overflow, or negative flat_penalty × absolute ATR-normalized return after no overflow; select fade when fade edge > 0, otherwise wait
+Calculation: Confirmed bullish pivot low = a Money Flow low lower than the specified number of preceding and following Money Flow values; confirmed bearish pivot high = a Money Flow high higher than the specified number of preceding and following Money Flow values
+Calculation: Bullish divergence = latest confirmed pivot low in Money Flow > preceding confirmed pivot low in Money Flow AND the price low at the latest pivot < the price low at the preceding pivot
+Calculation: Bearish divergence = latest confirmed pivot high in Money Flow < preceding confirmed pivot high in Money Flow AND the price high at the latest pivot > the price high at the preceding pivot
+Calculation: Divergence reliability = successes / (successes + failures), initialized with one success and one failure per bullish/bearish divergence and overflow/non-overflow category; after the outcome horizon from the pivot, count a bullish divergence as a success if close > close at the pivot, or a bearish divergence as a success if close < close at the pivot, and otherwise count a failure
+Long: bar closes AND warmup is complete AND ((previous bar had bullish overflow AND current Money Flow < previous Money Flow AND previous Money Flow is at least the positive overflow threshold AND Fade edge > 0) OR (bullish divergence AND its reliability ≥ reliability threshold))
+Short: bar closes AND warmup is complete AND ((previous bar had bearish overflow AND current Money Flow > previous Money Flow AND previous Money Flow is at most the negative overflow threshold AND Fade edge > 0) OR (bearish divergence AND its reliability ≥ reliability threshold))

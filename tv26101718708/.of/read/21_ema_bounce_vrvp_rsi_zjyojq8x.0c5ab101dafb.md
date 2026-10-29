@@ -1,0 +1,6 @@
+Calculation: Bullish pin bar = lower wick > 2 × real body AND upper wick < real body
+Calculation: Bearish pin bar = upper wick > 2 × real body AND lower wick < real body
+Calculation: Bullish engulfing bar = previous close < previous open AND current close > previous open AND current open ≤ previous close
+Calculation: Bearish engulfing bar = previous close > previous open AND current close < previous open AND current open ≥ previous close
+Long: shorter-lookback EMA on the higher timeframe > longer-lookback EMA on the higher timeframe AND RSI > 50 AND RSI < its upper threshold AND low ≤ shorter-lookback EMA × (1 + touch threshold) AND close > shorter-lookback EMA AND (pattern filter disabled OR bullish pin bar OR bullish engulfing bar)
+Short: shorter-lookback EMA on the higher timeframe < longer-lookback EMA on the higher timeframe AND RSI < 50 AND RSI > its lower threshold AND high ≥ shorter-lookback EMA × (1 − touch threshold) AND close < shorter-lookback EMA AND (pattern filter disabled OR bearish pin bar OR bearish engulfing bar)

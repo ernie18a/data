@@ -1,0 +1,7 @@
+Calculation: Confirmed fractal high = a bar high higher than the highs of the configured number of bars on both sides; available only after the right-side bars complete
+Calculation: Confirmed fractal low = a bar low lower than the lows of the configured number of bars on both sides; available only after the right-side bars complete
+Calculation: Resistance levels = confirmed fractal highs; merge a new high into the first existing resistance whose price is within the ATR-based proximity zone, retaining that level's price; otherwise add a level. Keep at most the configured maximum number of levels per side, removing the oldest level when full.
+Calculation: Support levels = confirmed fractal lows; merge a new low into the first existing support whose price is within the ATR-based proximity zone, retaining that level's price; otherwise add a level. Keep at most the configured maximum number of levels per side, removing the oldest level when full.
+Calculation: Volume average = simple moving average of volume over its configured lookback
+Long: On a completed bar, volume > volume average AND the configured bars since the previous signal >= cooldown AND there exists a resistance level such that close > level price + breakout buffer AND previous close <= level price + breakout buffer
+Short: On a completed bar, volume > volume average AND the configured bars since the previous signal >= cooldown AND there exists a support level such that close < level price - breakout buffer AND previous close >= level price - breakout buffer

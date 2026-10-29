@@ -1,0 +1,6 @@
+Calculation: Chart Supertrend direction = Supertrend direction calculated from chart-timeframe bars, including the bar still forming
+Calculation: Additional Supertrend direction = Supertrend direction calculated from the last completed higher-timeframe bar when a distinct higher timeframe is selected; otherwise, from chart-timeframe bars, including the bar still forming
+Long: Chart Supertrend direction = -1 AND Additional Supertrend direction = -1 AND previous bar did not satisfy both direction conditions AND (VWAP filter disabled OR close > VWAP)
+Short: Chart Supertrend direction = 1 AND Additional Supertrend direction = 1 AND previous bar did not satisfy both direction conditions AND (VWAP filter disabled OR close < VWAP)
+Exit: Long, previous bar had Chart Supertrend direction = -1 AND Additional Supertrend direction = -1 AND (Chart Supertrend direction != -1 OR Additional Supertrend direction != -1)
+Exit: Short, previous bar had Chart Supertrend direction = 1 AND Additional Supertrend direction = 1 AND (Chart Supertrend direction != 1 OR Additional Supertrend direction != 1)

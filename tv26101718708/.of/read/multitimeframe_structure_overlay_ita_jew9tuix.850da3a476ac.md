@@ -1,0 +1,4 @@
+Calculation: Confirmed swing high = a higher-timeframe bar’s high that is higher than the highs of the preceding and following equal-length lookbacks; use it only after the following higher-timeframe bars are complete.
+Calculation: Confirmed swing low = a higher-timeframe bar’s low that is lower than the lows of the preceding and following equal-length lookbacks; use it only after the following higher-timeframe bars are complete.
+Long: On either higher timeframe, the last completed bar’s close > its latest confirmed swing high.
+Short: On either higher timeframe, the last completed bar’s close < its latest confirmed swing low.

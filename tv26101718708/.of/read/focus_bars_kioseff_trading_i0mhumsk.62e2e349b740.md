@@ -1,0 +1,3 @@
+Calculation: Per-price-row delta = sum, over lower-timeframe bars within the chart bar, of each bar’s volume × sign(close − previous lower-timeframe close), divided equally among the price rows spanning that bar’s low-to-high range and accumulated for each row. Use all lower-timeframe bars available within the chart bar, including a still-forming bar when present.
+Long: Per-price-row delta > 0
+Short: Per-price-row delta < 0

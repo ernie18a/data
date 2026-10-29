@@ -1,0 +1,4 @@
+Calculation: Volume-profile raw score = tanh(0.5 × (buy volume − sell volume) / total volume + 0.3 × tanh((close − volume-weighted mean bin price) / ATR) + 0.2 × value-area position), where value-area position is 1 above the value area high, −1 below the value area low, and 0 otherwise; split each bar’s volume between buy and sell in proportion to its up and down candle body, and distribute it across the price bins overlapped by its high-low range.
+Calculation: Smoothed regime score = EMA of the volume-profile raw score.
+Long: Smoothed regime score > positive regime threshold OR previous regime state is bullish AND smoothed regime score ≥ negative regime threshold
+Short: Smoothed regime score < negative regime threshold OR previous regime state is bearish AND smoothed regime score ≤ positive regime threshold

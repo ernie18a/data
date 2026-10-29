@@ -1,0 +1,4 @@
+Calculation: Zero-lag EMA = EMA(close, short smoothing length) + [EMA(close, short smoothing length) − EMA(EMA(close, short smoothing length), longer smoothing length)]
+Calculation: Zero-lag RMA = RMA(close, short smoothing length) + [RMA(close, short smoothing length) − RMA(RMA(close, short smoothing length), longer smoothing length)]
+Long: Previous completed bar’s zero-lag RMA < previous completed bar’s zero-lag EMA AND datetime > configured start timestamp AND datetime < configured end timestamp
+Short: Previous completed bar’s zero-lag RMA > previous completed bar’s zero-lag EMA AND datetime > configured start timestamp AND datetime < configured end timestamp

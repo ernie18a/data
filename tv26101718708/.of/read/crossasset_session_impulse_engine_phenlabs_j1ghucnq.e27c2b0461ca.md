@@ -1,0 +1,8 @@
+Calculation: Opening range high/low = highest high/lowest low of the first N bars in each session; freeze after N bars.
+Calculation: Bullish/bearish basket votes = count of enabled live non-chart symbols whose session range is locked and whose close has crossed above its high/below its low, respectively; invert the vote direction for inverted symbols. A vote persists through the session once triggered.
+Long: During the session, after the opening range locks, close > opening range high.
+Long: A confirmed bar during the session, before any signal has fired that session, with a chart close above the locked opening range high on this or an earlier bar, ATR > 0, and (no live basket symbols OR bullish basket votes ≥ the minimum); if the relative-volume filter is enabled and volume data is available, volume ≥ its minimum multiple × volume SMA.
+Short: During the session, after the opening range locks, close < opening range low.
+Short: A confirmed bar during the session, before any signal has fired that session, with a chart close below the locked opening range low on this or an earlier bar, ATR > 0, and (no live basket symbols OR bearish basket votes ≥ the minimum); if the relative-volume filter is enabled and volume data is available, volume ≥ its minimum multiple × volume SMA.
+Exit: Long, after a long signal has fired and before session end, confirmed close < opening range low.
+Exit: Short, after a short signal has fired and before session end, confirmed close > opening range high.

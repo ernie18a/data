@@ -1,0 +1,4 @@
+Long: close > higher-timeframe EMA from the last completed higher-timeframe bar AND fast EMA crosses above slow EMA AND position is flat or short
+Short: close < higher-timeframe EMA from the last completed higher-timeframe bar AND fast EMA crosses below slow EMA AND position is flat or long
+Exit: long, low <= entry price - current-timeframe ATR × stop multiplier OR high >= entry price + current-timeframe ATR × stop multiplier × risk-reward ratio
+Exit: short, high >= entry price + current-timeframe ATR × stop multiplier OR low <= entry price - current-timeframe ATR × stop multiplier × risk-reward ratio

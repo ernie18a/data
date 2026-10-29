@@ -1,0 +1,2 @@
+Calculation: Williams %R = 100 × (close − highest high over lookback) ÷ (highest high over lookback − lowest low over lookback)
+Long: Williams %R < lower threshold OR prior bar’s Williams %R < lower threshold; low > prior bar’s lowest low over the lookback AND low < close minus a tick buffer; datetime > start date; high > long-term SMA of close

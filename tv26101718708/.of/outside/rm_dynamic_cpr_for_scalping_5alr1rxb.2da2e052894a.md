@@ -1,0 +1,1 @@
+Using the previous candle of a selected higher timeframe, calculate the central pivot range and its first support and resistance levels. Consider a long when price sustains above the central range and breaks above first resistance; consider a short when price sustains below the central range and breaks below first support. No exit rule is specified.

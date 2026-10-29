@@ -1,0 +1,10 @@
+Calculation: Typical price = (high + low + close) / 3
+Calculation: CCI-based support = (last confirmed pivot low of CCI + buffer) × (0.015 × mean deviation of typical price over the CCI lookback) + SMA of typical price over the CCI lookback; retain the pivot value until a new pivot is confirmed
+Calculation: CCI-based resistance = (last confirmed pivot high of CCI − buffer) × (0.015 × mean deviation of typical price over the CCI lookback) + SMA of typical price over the CCI lookback; retain the pivot value until a new pivot is confirmed
+Calculation: Trend = bullish when the fast EMA is above the slow EMA in cross mode, or the slow EMA is above its value at the longer lookback in slope mode; bearish when the fast EMA is below the slow EMA in cross mode, or the slow EMA is below its value at the longer lookback in slope mode; otherwise retain the prior trend state. The fast EMA lookback is shorter than the slow EMA lookback.
+Calculation: Exit ATR = the greater of the current chart-timeframe ATR and the maximum chart-timeframe ATR recorded during the previous completed period of the higher period timeframe
+Calculation: Long stop = close − (exit ATR × stop multiplier); long target = close + (exit ATR × target multiplier); short stop = close + (exit ATR × stop multiplier); short target = close − (exit ATR × target multiplier). Set these levels while flat and retain them while in the corresponding position.
+Long: (trend filter is disabled OR trend is bullish) AND lowest low of the current and previous bar < CCI-based support AND close > open AND close > CCI-based support
+Short: (trend filter is disabled OR trend is bearish) AND highest high of the current and previous bar > CCI-based resistance AND close < open AND close < CCI-based resistance
+Exit: long, low <= long stop OR high >= long target
+Exit: short, high >= short stop OR low <= short target

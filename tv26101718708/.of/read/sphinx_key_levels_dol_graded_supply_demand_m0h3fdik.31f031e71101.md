@@ -1,0 +1,5 @@
+Calculation: DOL high/low levels = highs/lows of the last completed daily, weekly, and monthly bars (higher timeframes), plus highs/lows of the last completed New York Asia (20:00–03:00), London (03:00–08:30), and overnight (18:00–09:30) sessions, aggregated from chart-timeframe bars.
+Calculation: Bullish FVG = current low > high two bars earlier; bearish FVG = current high < low two bars earlier.
+Calculation: Order block = the last opposite-close candle found from the swept extreme bar through the next three earlier bars; if none exists, use the extreme bar.
+Long: At an enabled, unconsumed low-type DOL level L with no live zone, low < L followed within the configured sweep window by close > L, then a bullish FVG within the configured displacement window after reclaim.
+Short: At an enabled, unconsumed high-type DOL level L with no live zone, high > L followed within the configured sweep window by close < L, then a bearish FVG within the configured displacement window after reclaim.
