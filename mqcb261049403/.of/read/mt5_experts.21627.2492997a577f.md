@@ -1,7 +1,6 @@
-Calculation: Momentum = selected applied price minus the selected applied price from the momentum lookback earlier, on the configured indicator timeframe (which may be higher or lower than the chart timeframe), using completed bars
-Calculation: Main line = apply three successive configured XMA smoothings to momentum, using completed indicator-timeframe bars
-Calculation: Signal line = apply a fourth configured XMA smoothing to the main line, using completed indicator-timeframe bars
-Long: Main line on the latest completed bar > signal line on the latest completed bar AND main line on the preceding completed bar <= signal line on the preceding completed bar
-Short: Main line on the latest completed bar < signal line on the latest completed bar AND main line on the preceding completed bar >= signal line on the preceding completed bar
-Exit: Long, main line on the latest completed bar < signal line on the latest completed bar AND main line on the preceding completed bar >= signal line on the preceding completed bar OR low <= entry price - configured stop distance OR high >= entry price + configured take-profit distance
-Exit: Short, main line on the latest completed bar > signal line on the latest completed bar AND main line on the preceding completed bar <= signal line on the preceding completed bar OR high >= entry price + configured stop distance OR low <= entry price - configured take-profit distance
+Calculation: Momentum line = apply three sequential moving averages, each with independently configurable method and parameters, to the change in the selected OHLC-derived price over a configurable lookback; the first smoothing is shorter than the second, and the second and third have equal lengths.
+Calculation: Signal line = a moving average of the momentum line with an independently configurable method and parameters and a shorter length than the second and third momentum smoothings. Calculate both lines on the chart timeframe or a configurable higher or lower timeframe, using the last completed indicator bar by default or the still-forming bar if configured.
+Long: Momentum line > signal line AND previous indicator bar's momentum line <= its signal line.
+Short: Momentum line < signal line AND previous indicator bar's momentum line >= its signal line.
+Exit: long, momentum line < signal line OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance.
+Exit: short, momentum line > signal line OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance.

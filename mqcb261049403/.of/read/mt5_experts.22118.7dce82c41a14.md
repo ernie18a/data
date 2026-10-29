@@ -1,5 +1,7 @@
-Calculation: SSL NRTR trend state = On the configured indicator timeframe (higher or lower than the chart timeframe), using the last completed bar: bearish if close < the smoothed low; bullish if close > the smoothed high; otherwise neutral. Smooth highs and lows with the same configurable moving-average method and lookback.
-Long: Current SSL NRTR trend state = bullish AND prior state ≠ bullish
-Short: Current SSL NRTR trend state = bearish AND prior state ≠ bearish
-Exit: long, SSL NRTR trend state = bearish OR low ≤ entry price − stop distance OR high ≥ entry price + target distance
-Exit: short, SSL NRTR trend state = bullish OR high ≥ entry price + stop distance OR low ≤ entry price − target distance
+Calculation: Trend state = bearish if close < smoothed low; otherwise bullish if close > smoothed high; otherwise neutral. Smooth high and low separately with the same selectable moving-average method and parameters.
+Long: chart-timeframe trend state = bullish
+Short: chart-timeframe trend state = bearish
+Long: last completed higher-timeframe trend state = bullish AND preceding higher-timeframe trend state != bullish
+Short: last completed higher-timeframe trend state = bearish AND preceding higher-timeframe trend state != bearish
+Exit: long, last completed higher-timeframe trend state = bearish OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, last completed higher-timeframe trend state = bullish OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

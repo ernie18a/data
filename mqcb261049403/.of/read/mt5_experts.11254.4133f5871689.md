@@ -1,5 +1,7 @@
-Calculation: Slope Direction Line = On the configured indicator timeframe (higher, lower, or equal to the chart timeframe), smooth the applied price twice with the same method: use a long lookback and half that lookback, then calculate 2 × the shorter smoothing − the longer smoothing. Smooth this result with the configured second method using a lookback equal to the square root of the long lookback. Use completed bars.
-Long: The Slope Direction Line rises on the signal bar AND did not rise on the preceding bar
-Short: The Slope Direction Line falls on the signal bar AND did not fall on the preceding bar
-Exit: long, The Slope Direction Line falls on the signal bar AND did not fall on the preceding bar
-Exit: short, The Slope Direction Line rises on the signal bar AND did not rise on the preceding bar
+Calculation: Slope line = apply a selectable second moving-average method with period max(1, floor(sqrt(N))) to 2 × a selectable first moving-average method of the applied price with period floor(N/2) minus the same first method of the applied price with period N. The applied price and both smoothing methods are configurable. Calculate on the chart timeframe for the indicator, or on a selectable higher or lower timeframe for the trading algorithm; the trading algorithm can use the last completed bar, an earlier completed bar, or the bar still forming.
+Long: chart-timeframe slope line > its previous-bar value
+Short: chart-timeframe slope line < its previous-bar value
+Long: selected-timeframe slope line > its previous-bar value AND its previous-bar value <= its value two bars earlier
+Short: selected-timeframe slope line < its previous-bar value AND its previous-bar value >= its value two bars earlier
+Exit: long, selected-timeframe slope line < its previous-bar value OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance
+Exit: short, selected-timeframe slope line > its previous-bar value OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance

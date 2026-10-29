@@ -1,6 +1,6 @@
-Calculation: Fast line = round XMA(long lookback) of the selected price at half the long lookback; subtract XMA(long lookback) of that price, double the half-lookback result, then smooth with XMA at a shorter smoothing lookback and XMA at the square root of the long lookback. Round to the configured digit increment. On the configured indicator timeframe (same as, higher, or lower than the chart timeframe as configured), use completed bars.
-Calculation: Slow line = smooth the unrounded fast line with XMA at the square root of the long lookback, then round to the configured digit increment. If rounded lines are equal, adjust the upper line by one digit increment to preserve their unrounded ordering. Use the same timeframe and completed bars as the fast line.
-Long: Fast line crosses above slow line between consecutive completed indicator-timeframe bars
-Short: Fast line crosses below slow line between consecutive completed indicator-timeframe bars
-Exit: long, fast line crosses below slow line between consecutive completed indicator-timeframe bars
-Exit: short, fast line crosses above slow line between consecutive completed indicator-timeframe bars
+Calculation: Trend line = moving average of (2 × moving average of the selected price with half the main lookback, rounded down − moving average of the selected price with the main lookback), using a separate smoothing lookback. Use the same selected moving-average method for all averages.
+Calculation: Signal line = moving average of the trend line using the same method and a lookback equal to the square root of the main lookback, rounded down. Calculate both lines on a selectable higher, lower, or chart timeframe, using either the last completed bar or the still-forming bar as the selected signal bar; the preceding values are from the immediately preceding bar of that timeframe.
+Long: Trend line > signal line AND preceding trend line <= preceding signal line AND position side = flat
+Short: Trend line < signal line AND preceding trend line >= preceding signal line AND position side = flat
+Exit: long, trend line < signal line OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, trend line > signal line OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

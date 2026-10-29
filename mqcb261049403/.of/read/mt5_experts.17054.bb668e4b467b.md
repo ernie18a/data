@@ -1,6 +1,22 @@
-Calculation: RSIOMA = On each bar of the configured indicator timeframe, smooth the configured applied-price series using the configured method and lookback; take its difference from the value the momentum lookback bars earlier. Separately take the positive and absolute negative parts of this momentum, calculate a simple moving average of each using the RSIOMA lookback, and recursively smooth each average using Wilder’s recurrence with that same lookback. RSIOMA = 100 × positive average / (positive average + negative average). The configured indicator timeframe may be higher, equal to, or lower than the chart timeframe. Evaluate the selected signal bar and its immediately older bars; the selected bar is forming if its offset selects the current bar, otherwise it is completed.
-Calculation: RSIOMA trigger line = Smooth RSIOMA using its independently configured method and lookback.
-Long: In threshold-break mode, RSIOMA on the bar immediately older than the selected signal bar > upper threshold AND RSIOMA on the selected signal bar ≤ upper threshold; OR in histogram-direction-change mode, RSIOMA on the immediately older bar < RSIOMA two bars older AND RSIOMA on the selected signal bar > RSIOMA on the immediately older bar; OR in trigger-line direction-change mode, trigger line on the immediately older bar < trigger line two bars older AND trigger line on the selected signal bar > trigger line on the immediately older bar; OR in histogram/trigger crossover mode, RSIOMA on the immediately older bar > trigger line on the immediately older bar AND RSIOMA on the selected signal bar ≤ trigger line on the selected signal bar.
-Short: In threshold-break mode, RSIOMA on the bar immediately older than the selected signal bar < lower threshold AND RSIOMA on the selected signal bar ≥ lower threshold; OR in histogram-direction-change mode, RSIOMA on the immediately older bar > RSIOMA two bars older AND RSIOMA on the selected signal bar < RSIOMA on the immediately older bar; OR in trigger-line direction-change mode, trigger line on the immediately older bar > trigger line two bars older AND trigger line on the selected signal bar < trigger line on the immediately older bar; OR in histogram/trigger crossover mode, RSIOMA on the immediately older bar < trigger line on the immediately older bar AND RSIOMA on the selected signal bar ≥ trigger line on the selected signal bar.
-Exit: Short, in threshold-break mode RSIOMA on the bar immediately older than the selected signal bar > upper threshold OR in histogram-direction-change mode RSIOMA on the immediately older bar < RSIOMA two bars older OR in trigger-line direction-change mode trigger line on the immediately older bar < trigger line two bars older OR in histogram/trigger crossover mode RSIOMA on the immediately older bar > trigger line on the immediately older bar.
-Exit: Long, in threshold-break mode RSIOMA on the bar immediately older than the selected signal bar < lower threshold OR in histogram-direction-change mode RSIOMA on the immediately older bar > RSIOMA two bars older OR in trigger-line direction-change mode trigger line on the immediately older bar > trigger line two bars older OR in histogram/trigger crossover mode RSIOMA on the immediately older bar < trigger line on the immediately older bar.
+Calculation: Oscillator = On the chart timeframe or a selectable higher timeframe, smooth a selectable OHLC-derived price with a selectable moving average of length N; subtract its value a selectable momentum lookback earlier. On each bar, sum the positive momentum values and the absolute negative momentum values separately over N bars. Starting both accumulators at zero, update each as (previous accumulator * (N - 1) + corresponding rolling sum) / N. If the negative accumulator is nonzero, the oscillator is 50 - 100 / (1 + positive accumulator / negative accumulator); otherwise it is zero. For higher-timeframe calculations use the last completed bar, or the still-forming bar when the selectable signal-bar offset is zero; otherwise use the completed bar at the selectable offset. Previous values refer to preceding bars of that same timeframe.
+Calculation: State index = 4 if oscillator > upper level; 3 if oscillator > middle level AND oscillator <= upper level; 0 if oscillator < lower level; 1 if oscillator < middle level AND oscillator >= lower level; otherwise 2. Use the same timeframe and signal-bar offset as the oscillator.
+Long: Oscillator > upper level AND previous oscillator <= upper level.
+Short: Oscillator < lower level AND previous oscillator >= lower level.
+Exit: short, oscillator > upper level.
+Exit: long, oscillator < lower level.
+Long: Oscillator > previous oscillator AND previous oscillator < oscillator two bars ago.
+Short: Oscillator < previous oscillator AND previous oscillator > oscillator two bars ago.
+Exit: short, oscillator > previous oscillator.
+Exit: long, oscillator < previous oscillator.
+Long: State index > previous state index AND previous state index < state index two bars ago.
+Short: State index < previous state index AND previous state index > state index two bars ago.
+Exit: short, state index > previous state index.
+Exit: long, state index < previous state index.
+Long: Oscillator > state index AND previous oscillator <= previous state index.
+Short: Oscillator < state index AND previous oscillator >= previous state index.
+Exit: short, oscillator > state index.
+Exit: long, oscillator < state index.
+Long: Oscillator > middle level.
+Short: Oscillator < middle level.
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

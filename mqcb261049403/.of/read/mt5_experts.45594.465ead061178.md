@@ -1,4 +1,6 @@
-Calculation: Fractal direction = +1 when the latest confirmed low fractal is more recent than the latest confirmed high fractal; -1 when the latest confirmed high fractal is more recent; otherwise retain the previous direction. A high fractal is a bar whose high is strictly greater than the highs of N bars before and after it; a low fractal is a bar whose low is strictly less than the lows of N bars before and after it. A fractal is confirmed only after those N later bars complete.
-Calculation: Normalized smoothed Williams %R = (triple exponential moving average of Williams %R + 50) / 50.
-Long: Fractal direction = +1 AND previous normalized smoothed Williams %R <= -1 + threshold AND current normalized smoothed Williams %R >= -1 + threshold
-Short: Fractal direction = -1 AND previous normalized smoothed Williams %R >= 1 - threshold AND current normalized smoothed Williams %R <= 1 - threshold
+Calculation: Fractal direction = For a candidate bar, a peak has a high strictly greater than the highs of an equal number of preceding and succeeding bars; a hollow has a low strictly lower than the lows of those bars. At each signal evaluation, check the candidate that has just acquired the required succeeding bars. Set direction to short for a peak or long for a hollow; if both occur, use long. Otherwise retain the preceding direction, initially neutral.
+Long: Williams %R < lower threshold
+Short: Williams %R > upper threshold
+Long: Fractal direction = long AND previous triple exponential moving average of Williams %R <= lower threshold AND selected bar's triple exponential moving average of Williams %R >= lower threshold
+Short: Fractal direction = short AND previous triple exponential moving average of Williams %R >= upper threshold AND selected bar's triple exponential moving average of Williams %R <= upper threshold
+Calculation: Signal bar = either the current chart bar or the previous chart bar; the two thresholds for the smoothed Williams %R are symmetric around the midpoint of its range.

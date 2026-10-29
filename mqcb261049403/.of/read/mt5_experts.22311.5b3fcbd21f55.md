@@ -1,6 +1,7 @@
-Calculation: Smoothed candle open, high, low, and close = apply the first smoother, then the second smoother, to each corresponding OHLC series on the configured indicator timeframe, which may be higher than, lower than, or equal to the chart timeframe.
-Calculation: Gap-adjusted smoothed open = previous bar’s smoothed close when the absolute difference between the raw bar open and close is at most the gap threshold; otherwise, the current bar’s smoothed open. Use the selected indicator bar (completed if it is at least one bar back, still forming if it is the current bar) and its immediately preceding bar.
-Long: Current gap-adjusted smoothed open < current smoothed close AND previous gap-adjusted smoothed open >= previous smoothed close
-Short: Current gap-adjusted smoothed open > current smoothed close AND previous gap-adjusted smoothed open <= previous smoothed close
-Exit: Long, current gap-adjusted smoothed open > current smoothed close AND previous gap-adjusted smoothed open <= previous smoothed close
-Exit: Short, current gap-adjusted smoothed open < current smoothed close AND previous gap-adjusted smoothed open >= previous smoothed close
+Calculation: Smoothed candle = apply a first moving average and then a second independently parameterized moving average to each of open and close. If abs(open - close) <= gap threshold, replace the smoothed open with the preceding bar's smoothed close.
+Long: Chart-timeframe smoothed candle close > smoothed candle open
+Short: Chart-timeframe smoothed candle close < smoothed candle open
+Long: On the selected higher or lower timeframe, the last completed smoothed candle close > smoothed candle open AND the preceding smoothed candle close <= smoothed candle open
+Short: On the selected higher or lower timeframe, the last completed smoothed candle close < smoothed candle open AND the preceding smoothed candle close >= smoothed candle open
+Exit: long, on the selected higher or lower timeframe, the last completed smoothed candle close < smoothed candle open OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, on the selected higher or lower timeframe, the last completed smoothed candle close > smoothed candle open OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

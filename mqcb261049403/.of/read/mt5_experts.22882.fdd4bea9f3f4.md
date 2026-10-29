@@ -1,6 +1,5 @@
-Calculation: Smoothed open and close = apply the same configurable smoothing method and parameters to open and close on the configured indicator timeframe (higher or lower than the chart timeframe); use the last completed bar.
-Calculation: Lagged smoothed open = smoothed open from the configured candle-period lookback bars earlier.
-Long: Smoothed close > lagged smoothed open
-Short: Smoothed close <= lagged smoothed open
-Exit: Long, smoothed close <= lagged smoothed open
-Exit: Short, smoothed close > lagged smoothed open
+Calculation: Smoothed close and lagged smoothed open = apply the same selectable moving-average method and smoothing parameters separately to close and open; compare the smoothed close with the smoothed open a configurable number of bars earlier. Calculate separately for the long and short systems, with independently configurable parameters. Use chart-timeframe bars for indicator markings; for each trading system, use either the chart timeframe or a configurable higher or lower timeframe, sampling the last completed bar or, if configured, the bar still forming.
+Long: Smoothed close > lagged smoothed open using the long-system parameters
+Short: Smoothed close <= lagged smoothed open using the short-system parameters
+Exit: long, smoothed close <= lagged smoothed open using the long-system parameters OR low <= entry price minus the long stop-loss distance OR high >= entry price plus the long take-profit distance
+Exit: short, smoothed close > lagged smoothed open using the short-system parameters OR high >= entry price plus the short stop-loss distance OR low <= entry price minus the short take-profit distance

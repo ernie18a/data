@@ -1,6 +1,6 @@
-Calculation: Smoothed FATL = apply a configurable smoother to the 39-bar FATL digital filter of a selected price derived from open, high, low, and close, on the configured indicator timeframe.
-Calculation: Smoothed SATL = apply a configurable smoother to the 65-bar SATL digital filter of the same selected price, on the configured indicator timeframe.
-Long: Smoothed FATL on the preceding completed indicator-timeframe bar <= Smoothed SATL on that bar AND Smoothed FATL on the latest completed indicator-timeframe bar > Smoothed SATL on that bar
-Short: Smoothed FATL on the preceding completed indicator-timeframe bar >= Smoothed SATL on that bar AND Smoothed FATL on the latest completed indicator-timeframe bar < Smoothed SATL on that bar
-Exit: long, Smoothed FATL on the latest completed indicator-timeframe bar < Smoothed SATL on that bar
-Exit: short, Smoothed FATL on the latest completed indicator-timeframe bar > Smoothed SATL on that bar
+Calculation: Fast line = a configurable moving average of the FATL digital filter applied to a configurable OHLC-derived price; use the chart timeframe or a configurable higher or lower timeframe, using its last completed bar or its still-forming bar according to the signal-bar setting.
+Calculation: Slow line = a separately configurable moving average of the SATL digital filter applied to the same price and timeframe as the fast line. The moving-average method, length, and phase are independently configurable for each line; the long and short systems have independent settings.
+Long: The long-system fast line is above its slow line AND the fast line on the preceding indicator bar was less than or equal to its slow line.
+Short: The short-system fast line is below its slow line AND the fast line on the preceding indicator bar was greater than or equal to its slow line.
+Exit: long, the long-system fast line is below its slow line OR low is at or below entry price minus the configured stop-loss distance OR high is at or above entry price plus the configured take-profit distance.
+Exit: short, the short-system fast line is above its slow line OR high is at or above entry price plus the configured stop-loss distance OR low is at or below entry price minus the configured take-profit distance.

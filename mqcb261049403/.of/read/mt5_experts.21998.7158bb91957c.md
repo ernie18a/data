@@ -1,5 +1,4 @@
-Calculation: TrendManager color = green when the faster moving average of the selected applied price minus the slower moving average is at least a positive threshold; magenta when it is at most the negative threshold; otherwise blank. The faster average has a shorter lookback than the slower average. Use the last completed bar on the indicator timeframe.
-Long: current TrendManager color is green AND previous color is not green
-Short: current TrendManager color is magenta AND previous color is not magenta
-Exit: long, TrendManager color is magenta OR low <= entry price − stop distance OR high >= entry price + target distance OR elapsed time since entry exceeds the holding limit
-Exit: short, TrendManager color is green OR high >= entry price + stop distance OR low <= entry price − target distance OR elapsed time since entry exceeds the holding limit
+Long: Shorter-period moving average of the selected bar price minus longer-period moving average >= positive separation threshold
+Short: Shorter-period moving average of the selected bar price minus longer-period moving average <= negative separation threshold
+Exit: long, shorter-period moving average of the selected bar price minus longer-period moving average <= negative separation threshold OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, shorter-period moving average of the selected bar price minus longer-period moving average >= positive separation threshold OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

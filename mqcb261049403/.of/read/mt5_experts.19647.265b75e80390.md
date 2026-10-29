@@ -1,6 +1,5 @@
-Calculation: Fast line = shorter-lookback smoothed selected price divided by medium-lookback smoothed selected price, on the configured indicator timeframe (higher or lower than the chart timeframe), using completed bars; negate if the indicator’s reverse option is enabled
-Calculation: Slow line = longer-lookback smoothed selected price divided by the same medium-lookback smoothed selected price, on the configured indicator timeframe (higher or lower than the chart timeframe), using completed bars; negate if the indicator’s reverse option is enabled
-Long: Previous completed bar fast line <= slow line AND latest completed bar fast line > slow line
-Short: Previous completed bar fast line >= slow line AND latest completed bar fast line < slow line
-Exit: Long, latest completed bar fast line < slow line
-Exit: Short, latest completed bar fast line > slow line
+Calculation: Cloud lines = short-lookback moving average of the selected bar price divided by the medium-lookback moving average, and long-lookback moving average divided by the same medium-lookback moving average; each average has its own configurable method. If reversal is enabled, the first line is the negative long-lookback ratio and the second is the negative short-lookback ratio. Calculate separate lines with independently configurable parameters for long and short positions, using a configurable higher or lower timeframe and the last completed bar by default, or the still-forming bar when selected; the previous value is from the preceding bar of that timeframe.
+Long: Long-position first cloud line > second cloud line AND previous first cloud line <= previous second cloud line
+Short: Short-position first cloud line < second cloud line AND previous first cloud line >= previous second cloud line
+Exit: long, long-position first cloud line < second cloud line OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, short-position first cloud line > second cloud line OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

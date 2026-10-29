@@ -1,6 +1,6 @@
-Calculation: Fast line = configured smoothing of CCI of the applied price, using a shorter lookback, on the configured indicator timeframe (which may be higher, equal to, or lower than the chart timeframe)
-Calculation: Slow line = the same configured smoothing of the fast line, using a longer lookback, on that timeframe
-Long: Fast line crossed above slow line between the two latest completed indicator-timeframe bars
-Short: Fast line crossed below slow line between the two latest completed indicator-timeframe bars
-Exit: Long, fast line crossed below slow line between the two latest completed indicator-timeframe bars
-Exit: Short, fast line crossed above slow line between the two latest completed indicator-timeframe bars
+Calculation: Fast CCI average = a shorter-period moving average of CCI of a selected price, calculated on a configurable timeframe that may be the chart timeframe, higher, or lower; use the last completed bar by default or the forming bar if configured.
+Calculation: Slow CCI average = a longer-period moving average of the fast CCI average, using the same averaging method and timeframe.
+Long: Fast CCI average > slow CCI average AND fast CCI average on the preceding indicator-timeframe bar <= slow CCI average on that bar.
+Short: Fast CCI average < slow CCI average AND fast CCI average on the preceding indicator-timeframe bar >= slow CCI average on that bar.
+Exit: long, fast CCI average < slow CCI average OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance.
+Exit: short, fast CCI average > slow CCI average OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance.

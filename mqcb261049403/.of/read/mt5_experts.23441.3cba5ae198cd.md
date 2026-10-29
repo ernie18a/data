@@ -1,5 +1,8 @@
-Calculation: Rounded PEMA = the weighted sum of eight sequential EMAs of close, all with the same lookback: 8×EMA1 − 28×EMA2 + 56×EMA3 − 70×EMA4 + 56×EMA5 − 28×EMA6 + 8×EMA7 − EMA8; round to a price increment of one point times 10^precision
-Long: On the last completed indicator-timeframe bar, rounded PEMA > rounded PEMA on the preceding bar AND the preceding bar's color was not rising
-Short: On the last completed indicator-timeframe bar, rounded PEMA < rounded PEMA on the preceding bar AND the preceding bar's color was not falling
-Exit: Long, a falling-color transition OR low ≤ entry price − stop distance OR high ≥ entry price + target distance OR elapsed time since entry > maximum holding time
-Exit: Short, a rising-color transition OR high ≥ entry price + stop distance OR low ≤ entry price − target distance OR elapsed time since entry > maximum holding time
+Calculation: Rounded moving average = round to a configurable price increment the sum 8×EMA1 − 28×EMA2 + 56×EMA3 − 70×EMA4 + 56×EMA5 − 28×EMA6 + 8×EMA7 − EMA8, where EMA1 is an EMA of a selected bar price and each subsequent EMA is an EMA of the preceding EMA with the same length. Each EMA starts at its first available input.
+Calculation: Trend = 1 when the rounded moving average exceeds its previous value, −1 when it is below its previous value, and otherwise the previous trend; initialize to neutral.
+Long: Chart-timeframe trend = 1
+Short: Chart-timeframe trend = −1
+Long: Trend on the selected indicator timeframe = 1 AND its preceding bar's trend < 1; the indicator timeframe may be higher or lower than the chart timeframe, and the selected signal bar may be the last completed bar or the still-forming bar.
+Short: Trend on the selected indicator timeframe = −1 AND its preceding bar's trend > −1; the indicator timeframe may be higher or lower than the chart timeframe, and the selected signal bar may be the last completed bar or the still-forming bar.
+Exit: long, trend on the selected indicator timeframe = −1 OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance; use the selected completed or still-forming indicator bar.
+Exit: short, trend on the selected indicator timeframe = 1 OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance; use the selected completed or still-forming indicator bar.

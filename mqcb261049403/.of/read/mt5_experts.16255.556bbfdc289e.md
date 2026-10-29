@@ -1,5 +1,5 @@
-Calculation: StochasticDiff = the stochastic %K line minus its signal line, smoothed by a moving-average method, on the configured indicator timeframe (which may be higher or lower than the chart timeframe); use completed bars.
-Long: the middle StochasticDiff value is less than the latest value AND the oldest value is greater than or equal to the middle value
-Short: the middle StochasticDiff value is greater than the latest value AND the oldest value is less than or equal to the middle value
-Exit: long, the middle StochasticDiff value is greater than the latest value
-Exit: short, the middle StochasticDiff value is less than the latest value
+Calculation: Smoothed stochastic difference = selected moving average of stochastic oscillator main line minus signal line, calculated on a configurable indicator timeframe that may be higher or lower than the chart timeframe; use the last completed indicator bar, or the forming indicator bar when configured, and its two preceding bars.
+Long: Smoothed stochastic difference on the preceding indicator bar < that on the selected indicator bar AND smoothed stochastic difference on the indicator bar before the preceding bar >= that on the preceding indicator bar.
+Short: Smoothed stochastic difference on the preceding indicator bar > that on the selected indicator bar AND smoothed stochastic difference on the indicator bar before the preceding bar <= that on the preceding indicator bar.
+Exit: long, smoothed stochastic difference on the preceding indicator bar > that on the selected indicator bar OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance.
+Exit: short, smoothed stochastic difference on the preceding indicator bar < that on the selected indicator bar OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance.

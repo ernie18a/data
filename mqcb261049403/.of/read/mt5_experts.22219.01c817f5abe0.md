@@ -1,7 +1,8 @@
-Calculation: JCCX = JurX-smoothed (price − JJMA-smoothed price) / JurX-smoothed absolute(price − JJMA-smoothed price), clamped to [−1, 1].
-Calculation: JCCX difference = shorter-period JCCX − longer-period JCCX.
-Calculation: Schaff cycle = normalize the JCCX difference to 0–100 over a rolling lookback; smooth with 0.5 × current raw value + 0.5 × previous smoothed value; normalize that result to −100–100 over the same lookback; smooth again with the same formula.
-Long: On the indicator timeframe, the last completed bar's Schaff cycle > 0 AND the immediately preceding completed bar's Schaff cycle <= 0.
-Short: On the indicator timeframe, the last completed bar's Schaff cycle < 0 AND the immediately preceding completed bar's Schaff cycle >= 0.
-Exit: Long, the last completed bar's Schaff cycle < 0 on the indicator timeframe.
-Exit: Short, the last completed bar's Schaff cycle > 0 on the indicator timeframe.
+Calculation: JCCX = Clamp to [-1, 1] the ratio of Jurik smoothing of (selected bar price minus Jurik moving average of that price) to Jurik smoothing of its absolute value; the two smoothing operations use the same length. If the denominator is zero, the value is undefined. The fast and slow versions use shorter and longer Jurik moving-average lengths respectively, with the same phase and Jurik smoothing length.
+Calculation: JCCX trend cycle = Subtract slow JCCX from fast JCCX. Stochastically normalize the difference over a cycle lookback to [0, 100], carrying forward the prior normalized value when the range is zero; smooth it recursively as the average of the current normalized value and the previous smoothed value. Stochastically normalize that smoothed series over the same lookback to [-100, 100], carrying forward the previous trend-cycle value when the range is zero; smooth it recursively as the average of the current normalized value and the previous trend-cycle value. Calculate independently for long and short decisions, allowing different parameters and a selectable higher or lower timeframe; use either the last completed bar or the still-forming bar, as selected, and its preceding bar.
+Long: Chart-timeframe JCCX trend cycle >= 0
+Short: Chart-timeframe JCCX trend cycle < 0
+Long: Long-decision JCCX trend cycle > 0 AND its preceding bar <= 0
+Short: Short-decision JCCX trend cycle < 0 AND its preceding bar >= 0
+Exit: long, long-decision JCCX trend cycle < 0 OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance
+Exit: short, short-decision JCCX trend cycle > 0 OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance

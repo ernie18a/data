@@ -1,5 +1,4 @@
-Calculation: Candle body size in pips = absolute difference between the candle's close and open, converted to pips
-Long: Long position count == 0 AND close[1] > high[2] AND close[2] < open[2] AND close[1] > open[1] AND candle body size[1] >= minimum body size AND candle body size[1] <= maximum body size
-Short: Short position count == 0 AND low[1] < low[2] AND close[2] < open[2] AND close[1] < open[1] AND candle body size[1] >= minimum body size AND candle body size[1] <= maximum body size
-Exit: Long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
-Exit: Short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance
+Long: At the opening of a chart bar, the number of open long positions = 0 AND the last completed bar's close > its open AND its close > the preceding bar's high AND the preceding bar's close < its open AND the last completed bar's body size >= the minimum long body size AND (the maximum long body size <= 0 OR the last completed bar's body size <= the maximum long body size)
+Short: At the opening of a chart bar, the number of open short positions = 0 AND the last completed bar's close < its open AND its close < the preceding bar's low AND the preceding bar's close > its open AND the last completed bar's body size >= the minimum short body size AND (the maximum short body size <= 0 OR the last completed bar's body size <= the maximum short body size)
+Exit: long, (long stop-loss distance > 0 AND bar low <= entry price - long stop-loss distance) OR (long take-profit distance > 0 AND bar high >= entry price + long take-profit distance)
+Exit: short, (short stop-loss distance > 0 AND bar high >= entry price + short stop-loss distance) OR (short take-profit distance > 0 AND bar low <= entry price - short take-profit distance)

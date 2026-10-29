@@ -1,6 +1,7 @@
-Calculation: COG-smoothed open = On the configured indicator timeframe, apply an SMA and a linearly weighted moving average with the same lookback to open; multiply them and apply a moving average with the configured smoothing lookback and method. Use completed bars.
-Calculation: COG-smoothed close = On the configured indicator timeframe, apply an SMA and a linearly weighted moving average with the same lookback to close; multiply them and apply a moving average with the configured smoothing lookback and method. Use completed bars.
-Long: COG-smoothed open < COG-smoothed close on the latest completed indicator-timeframe bar AND COG-smoothed open >= COG-smoothed close on the preceding completed indicator-timeframe bar
-Short: COG-smoothed open > COG-smoothed close on the latest completed indicator-timeframe bar AND COG-smoothed open <= COG-smoothed close on the preceding completed indicator-timeframe bar
-Exit: long, COG-smoothed open > COG-smoothed close on the latest completed indicator-timeframe bar AND COG-smoothed open <= COG-smoothed close on the preceding completed indicator-timeframe bar
-Exit: short, COG-smoothed open < COG-smoothed close on the latest completed indicator-timeframe bar AND COG-smoothed open >= COG-smoothed close on the preceding completed indicator-timeframe bar
+Calculation: Smoothed candle value for a price series = a selectable moving average (simple, exponential, smoothed, or linearly weighted) of the product of the simple moving average and linearly weighted moving average of that price series; the two product averages use the same lookback, and the smoothing lookback is independent. Calculate separately for open and close.
+Long: Chart-timeframe smoothed close > smoothed open.
+Short: Chart-timeframe smoothed close < smoothed open.
+Long: On the selected higher or lower indicator timeframe, the selected signal bar's smoothed close > smoothed open AND the preceding indicator bar's smoothed close <= smoothed open. The signal bar may be the last completed bar, the still-forming bar, or an earlier completed bar.
+Short: On the selected higher or lower indicator timeframe, the selected signal bar's smoothed close < smoothed open AND the preceding indicator bar's smoothed close >= smoothed open. The signal bar may be the last completed bar, the still-forming bar, or an earlier completed bar.
+Exit: long, the selected higher or lower timeframe signal bar's smoothed close < smoothed open OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, the selected higher or lower timeframe signal bar's smoothed close > smoothed open OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

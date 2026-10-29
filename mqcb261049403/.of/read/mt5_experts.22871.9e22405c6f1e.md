@@ -1,6 +1,8 @@
-Calculation: Volume-weighted channel oscillator = smooth the product of volume and [100 × (selected applied price − (moving average of applied price − moving average of high−low range)) ÷ (2 × smoothed high−low range) − 50]; use 1 in place of a zero smoothed range. The two moving averages use their separately configurable methods and lookbacks; the oscillator uses its configured smoothing.
-Calculation: Oscillator direction = +1 when the oscillator is greater than its previous bar, −1 when lower, and otherwise retain the prior direction.
-Long: On a completed bar of the indicator timeframe (lower than the chart timeframe), current oscillator direction = +1 AND previous oscillator direction = −1
-Short: On a completed bar of the indicator timeframe (lower than the chart timeframe), current oscillator direction = −1 AND previous oscillator direction = +1
-Exit: Long, On a completed bar of the indicator timeframe (lower than the chart timeframe), current oscillator direction = −1 AND previous oscillator direction = +1 OR low ≤ entry price − stop-loss distance OR high ≥ entry price + take-profit distance
-Exit: Short, On a completed bar of the indicator timeframe (lower than the chart timeframe), current oscillator direction = +1 AND previous oscillator direction = −1 OR high ≥ entry price + stop-loss distance OR low ≤ entry price − take-profit distance
+Calculation: Volume-weighted oscillator = Jurik moving average with maximum phase of volume × (100 × (close − (longer-lookback SMA of close − shorter-lookback Jurik moving average of high − low)) / (2 × denominator) − 50), where denominator is the shorter-lookback average of high − low, or 1 if that average is zero. For the trading system, calculate on the last completed higher-timeframe bar; for indicator markings, calculate on the chart bar.
+Calculation: Oscillator direction = up if the oscillator is greater than its previous-bar value, down if it is less, and otherwise the previous direction.
+Long: Chart-timeframe oscillator direction = up
+Long: Last completed higher-timeframe oscillator direction = up AND previous higher-timeframe oscillator direction = down
+Short: Chart-timeframe oscillator direction = down
+Short: Last completed higher-timeframe oscillator direction = down AND previous higher-timeframe oscillator direction = up
+Exit: long, last completed higher-timeframe oscillator direction = down OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, last completed higher-timeframe oscillator direction = up OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

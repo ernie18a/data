@@ -1,5 +1,8 @@
-Calculation: JFATL = JMA-smoothed 39-bar FATL digital filter of the configured applied price, rounded to configured digits; direction is up when JFATL rises, down when it falls, and unchanged inherits the prior direction. Use bars on the configured indicator timeframe, which may be higher or lower than the chart timeframe; evaluate the selected signal bar and the immediately older bar. The selected bar is completed when its shift is greater than zero and still forming at shift zero.
-Long: selected bar direction is up AND older bar direction is not up
-Short: selected bar direction is down AND older bar direction is not down
-Exit: long, selected bar direction is down
-Exit: short, selected bar direction is up
+Calculation: Rounded trend line = round the Jurik moving average of the Fast Adaptive Trend Line of a selected OHLC-derived price to the nearest configured price increment; use independently configurable inputs and smoothing parameters for long and short decisions.
+Calculation: Direction = sign of the change in the rounded trend line from the preceding bar; if the change is zero, retain the preceding direction.
+Long: Chart-timeframe direction > 0.
+Short: Chart-timeframe direction < 0.
+Long: On a new higher-timeframe bar, the long-system direction on the last completed higher-timeframe bar > 0 AND its direction on the preceding higher-timeframe bar <= 0.
+Short: On a new higher-timeframe bar, the short-system direction on the last completed higher-timeframe bar < 0 AND its direction on the preceding higher-timeframe bar >= 0.
+Exit: long, long-system direction on the last completed higher-timeframe bar < 0 OR low <= entry price minus the configured stop distance OR high >= entry price plus the configured profit distance.
+Exit: short, short-system direction on the last completed higher-timeframe bar > 0 OR high >= entry price plus the configured stop distance OR low <= entry price minus the configured profit distance.

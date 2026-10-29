@@ -1,4 +1,5 @@
-Long: position side is flat AND Lips < Teeth AND Teeth < Jaw AND previous completed bar close <= previous completed bar value of the selected Alligator line AND last completed bar close > last completed bar value of the selected Alligator line
-Short: position side is flat AND Lips < Teeth AND Teeth < Jaw AND previous completed bar close >= previous completed bar value of the selected Alligator line AND last completed bar close < last completed bar value of the selected Alligator line
-Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance
+Calculation: Alligator lines = smoothed moving averages of chart-bar closes, shifted forward; the short-period line has the smallest forward shift, the medium-period line an intermediate shift, and the long-period line the largest shift. At each bar, use the value plotted at that bar.
+Long: position side is flat AND the last completed chart bar's short-period line > its medium-period line AND its medium-period line > its long-period line AND its close > a selected Alligator line AND the preceding bar's close < that same line on the preceding bar
+Short: position side is flat AND the last completed chart bar's short-period line < its medium-period line AND its medium-period line < its long-period line AND its close < a selected Alligator line AND the preceding bar's close > that same line on the preceding bar
+Exit: long, low <= entry price - fixed stop-loss distance OR high >= entry price + fixed take-profit distance
+Exit: short, high >= entry price + fixed stop-loss distance OR low <= entry price - fixed take-profit distance

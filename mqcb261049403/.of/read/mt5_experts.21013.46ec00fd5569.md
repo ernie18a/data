@@ -1,6 +1,17 @@
-Calculation: Ergodic histogram = smooth the selected bar price minus its longer-lookback smoothing, then smooth that difference twice with shorter-lookback smoothers; use the same smoothing method throughout.
-Calculation: Signal line = smooth the Ergodic histogram with a separate lookback. The histogram and signal line use the configured indicator timeframe, which may be higher or lower than the chart timeframe; use completed bars.
-Long: Ergodic histogram > 0 OR (histogram two bars ago > histogram one bar ago AND histogram > histogram one bar ago) OR (histogram crossed above zero between the prior two completed bars) OR (histogram crossed above the signal line between the prior two completed bars)
-Short: Ergodic histogram < 0 OR (histogram two bars ago < histogram one bar ago AND histogram < histogram one bar ago) OR (histogram crossed below zero between the prior two completed bars) OR (histogram crossed below the signal line between the prior two completed bars)
-Exit: long, histogram < histogram one bar ago OR histogram crossed below zero between the prior two completed bars OR histogram crossed below the signal line between the prior two completed bars OR bar low <= entry price - stop distance OR bar high >= entry price + target distance OR datetime is outside the configured trading interval
-Exit: short, histogram > histogram one bar ago OR histogram crossed above zero between the prior two completed bars OR histogram crossed above the signal line between the prior two completed bars OR bar high >= entry price + stop distance OR bar low <= entry price - target distance OR datetime is outside the configured trading interval
+Calculation: Oscillator H = apply a moving average to the selected bar price, subtract that average from the price, and smooth the difference successively with two moving averages using independently chosen lengths. Use the same averaging method for all stages.
+Calculation: Signal S = moving average of H using a separately chosen length and the same averaging method.
+Calculation: Expert oscillator and signal = H and S calculated on a higher timeframe, using the last completed bar or the still-forming bar according to the selected signal-bar offset; previous values refer to preceding higher-timeframe bars.
+Long: Chart-timeframe H > 0 AND H > previous H OR chart-timeframe H < 0 AND H > previous H OR chart-timeframe H > S
+Short: Chart-timeframe H > 0 AND H < previous H OR chart-timeframe H < 0 AND H < previous H OR chart-timeframe H < S
+Long: Selected zero-crossing mode AND expert H > 0 AND previous expert H <= 0
+Short: Selected zero-crossing mode AND expert H < 0 AND previous expert H >= 0
+Long: Selected turning-point mode AND expert H > previous expert H AND previous expert H < expert H two bars ago
+Short: Selected turning-point mode AND expert H < previous expert H AND previous expert H > expert H two bars ago
+Long: Selected signal-crossing mode AND expert H > expert S AND previous expert H <= previous expert S
+Short: Selected signal-crossing mode AND expert H < expert S AND previous expert H >= previous expert S
+Exit: long, selected zero-crossing mode AND expert H < 0 OR selected turning-point mode AND expert H < previous expert H OR selected signal-crossing mode AND expert H < expert S
+Exit: short, selected zero-crossing mode AND expert H > 0 OR selected turning-point mode AND expert H > previous expert H OR selected signal-crossing mode AND expert H > expert S
+Exit: long, low <= entry price - stop distance OR high >= entry price + profit distance
+Exit: short, high >= entry price + stop distance OR low <= entry price - profit distance
+Exit: long, time restriction enabled AND current hour and minute fail all of these comparisons: start hour < end hour AND ((hour = start hour AND minute >= start minute) OR (hour > start hour AND hour < end hour) OR (hour = end hour AND minute < end minute)); start hour = end hour AND hour = start hour AND minute >= start minute AND minute < end minute; start hour > end hour AND ((hour >= start hour AND minute >= start minute) OR hour < end hour OR (hour = end hour AND minute < end minute))
+Exit: short, time restriction enabled AND current hour and minute fail all of these comparisons: start hour < end hour AND ((hour = start hour AND minute >= start minute) OR (hour > start hour AND hour < end hour) OR (hour = end hour AND minute < end minute)); start hour = end hour AND hour = start hour AND minute >= start minute AND minute < end minute; start hour > end hour AND ((hour >= start hour AND minute >= start minute) OR hour < end hour OR (hour = end hour AND minute < end minute))

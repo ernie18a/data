@@ -1,6 +1,5 @@
-Calculation: Upper open oscillator = apply the same configurable smoothing method and length to current open minus the open of the bar with the highest high over the configurable lookback, on the indicator timeframe.
-Calculation: Lower open oscillator = apply the same configurable smoothing method and length to the open of the bar with the lowest low over the configurable lookback minus current open, on the indicator timeframe.
-Long: Upper open oscillator on the last completed indicator-timeframe bar > lower open oscillator on that bar AND upper open oscillator on the preceding completed bar <= lower open oscillator on that bar.
-Short: Upper open oscillator on the last completed indicator-timeframe bar < lower open oscillator on that bar AND upper open oscillator on the preceding completed bar >= lower open oscillator on that bar.
-Exit: Long, upper open oscillator on the last completed indicator-timeframe bar < lower open oscillator on that bar OR low <= entry price - configured stop distance OR high >= entry price + configured target distance.
-Exit: Short, upper open oscillator on the last completed indicator-timeframe bar > lower open oscillator on that bar OR high >= entry price + configured stop distance OR low <= entry price - configured target distance.
+Calculation: Oscillator lines = For each bar on a selectable indicator timeframe, find the most recent bar with the highest high and the most recent bar with the lowest low over the same lookback including that bar. Smooth (current open minus the highest-high bar's open) and (the lowest-low bar's open minus current open) separately with the same moving-average method and smoothing parameters, producing the high line and low line. The indicator timeframe may be higher or lower than the chart timeframe; use the last completed indicator bar and its predecessor, or the still-forming indicator bar and its predecessor when configured for a forming-bar signal.
+Long: high line > low line AND previous high line <= previous low line
+Short: high line < low line AND previous high line >= previous low line
+Exit: long, high line < low line OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance
+Exit: short, high line > low line OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance

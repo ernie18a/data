@@ -1,6 +1,7 @@
-Calculation: Smoothed close = configured price smoother applied to each indicator-timeframe bar’s close; use completed bars.
-Calculation: Smoothed open = the same configured price smoother and parameters applied to each indicator-timeframe bar’s open; use completed bars.
-Long: Previous completed indicator-timeframe bar: smoothed close > smoothed open AND latest completed indicator-timeframe bar: smoothed close <= smoothed open.
-Short: Previous completed indicator-timeframe bar: smoothed close < smoothed open AND latest completed indicator-timeframe bar: smoothed close >= smoothed open.
-Exit: long, latest completed indicator-timeframe bar: smoothed close < smoothed open.
-Exit: short, latest completed indicator-timeframe bar: smoothed close > smoothed open.
+Calculation: Smoothed open and smoothed close = apply the same selected moving-average method and parameters separately to open and close. The method may be SMA, EMA, SMMA, LWMA, JJMA, JurX, parabolic moving average, T3, VIDYA, or AMA. For the EA, calculate them on the selected timeframe, which may be higher or lower than the chart timeframe, using the last completed bar or, if selected, the still-forming bar; compare with the preceding bar of that timeframe. For the indicator markings, use the chart timeframe.
+Long: Chart-timeframe smoothed close > smoothed open.
+Short: Chart-timeframe smoothed close < smoothed open.
+Long: With trend-following selected, smoothed close > smoothed open AND preceding smoothed close <= preceding smoothed open; OR with inverted trading selected, smoothed close < smoothed open AND preceding smoothed close >= preceding smoothed open.
+Short: With trend-following selected, smoothed close < smoothed open AND preceding smoothed close >= preceding smoothed open; OR with inverted trading selected, smoothed close > smoothed open AND preceding smoothed close <= preceding smoothed open.
+Exit: long, with trend-following selected, smoothed close < smoothed open; OR with inverted trading selected, smoothed close > smoothed open; OR low <= entry price - enabled stop-loss distance; OR high >= entry price + enabled take-profit distance.
+Exit: short, with trend-following selected, smoothed close > smoothed open; OR with inverted trading selected, smoothed close < smoothed open; OR high >= entry price + enabled stop-loss distance; OR low <= entry price - enabled take-profit distance.

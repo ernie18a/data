@@ -1,6 +1,6 @@
-Calculation: Smoothed volume-weighted CCI = apply the selected smoothing method to CCI multiplied by selected volume, on the indicator timeframe (which may be higher or lower than the chart timeframe); evaluate at the selected signal-bar offset and the immediately preceding bar. Offset zero is still forming; a positive offset is completed.
-Calculation: Direction state = rising when smoothed volume-weighted CCI is greater than its preceding bar, falling when it is less, and otherwise retain the preceding direction state.
-Long: Previous direction state is falling AND current direction state is rising
-Short: Previous direction state is rising AND current direction state is falling
-Exit: long, current direction state is falling
-Exit: short, current direction state is rising
+Calculation: Histogram = moving average of CCI of the selected price multiplied by volume; calculate on a configurable higher or lower timeframe, using the last completed bar and preceding bars.
+Calculation: Histogram direction = up when the histogram is greater than its preceding value, down when it is less, and unchanged when equal.
+Long: Histogram direction is up AND preceding histogram direction is down.
+Short: Histogram direction is down AND preceding histogram direction is up.
+Exit: long, histogram direction is down OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance.
+Exit: short, histogram direction is up OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance.

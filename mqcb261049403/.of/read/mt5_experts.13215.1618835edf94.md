@@ -1,5 +1,9 @@
-Calculation: Center-of-gravity OSMA = MA2(X − MA1(X)), where X = SMA(price, P) × LWMA(price, P) / minimum price increment; price is the selected OHLC-derived price, and both price averages use the same lookback P. MA1 and MA2 use independently configurable smoothing lookbacks and methods. Compute on the chart timeframe using completed bars.
-Long: OSMA two bars before the signal bar > OSMA one bar before the signal bar AND OSMA on the signal bar > OSMA one bar before the signal bar
-Short: OSMA two bars before the signal bar < OSMA one bar before the signal bar AND OSMA on the signal bar < OSMA one bar before the signal bar
-Exit: long, OSMA one bar before the signal bar > OSMA on the signal bar
-Exit: short, OSMA one bar before the signal bar < OSMA on the signal bar
+Calculation: Applied price = a selectable bar price: open, high, low, close, (high + low)/2, (high + low + close)/3, (high + low + 2 × close)/4, (open + close)/2, (open + high + low + close)/4, trend price, half trend price, or DeMark price. Trend price is high if close > open, low if close < open, otherwise close. Half trend price is (high + close)/2 if close > open, (low + close)/2 if close < open, otherwise close. DeMark price is (close + low)/2 if close < open, (close + high)/2 if close > open, otherwise close.
+Calculation: Oscillator = moving average of (product − moving average of product), with independently selectable smoothing methods and lookbacks; product = SMA of applied price × linearly weighted moving average of applied price, both using the same lookback. Each smoothing method can be SMA, EMA, smoothed MA, or linearly weighted MA.
+Calculation: Signal oscillator = oscillator calculated on a selectable timeframe that may be higher, lower, or the same as the chart timeframe; its latest evaluated value is selectable as either the last completed bar or the bar still forming, with earlier values taken from consecutive preceding bars.
+Long: Chart-timeframe oscillator > 0 AND chart-timeframe oscillator > its previous value OR chart-timeframe oscillator < 0 AND chart-timeframe oscillator > its previous value
+Short: Chart-timeframe oscillator > 0 AND chart-timeframe oscillator < its previous value OR chart-timeframe oscillator < 0 AND chart-timeframe oscillator < its previous value
+Long: Latest signal oscillator > previous signal oscillator AND the signal oscillator two bars earlier > previous signal oscillator
+Short: Latest signal oscillator < previous signal oscillator AND the signal oscillator two bars earlier < previous signal oscillator
+Exit: long, latest signal oscillator < previous signal oscillator OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, latest signal oscillator > previous signal oscillator OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

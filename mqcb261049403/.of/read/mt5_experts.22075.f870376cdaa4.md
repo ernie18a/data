@@ -1,6 +1,11 @@
-Calculation: Volume-weighted centered DeMarker = selected smoother applied to (100 × DeMarker − 50) × volume on higher-timeframe bars; evaluate completed bars only.
-Calculation: Smoothed volume = the same smoother with the same lookback applied to volume on higher-timeframe bars; evaluate completed bars only.
-Long: On the latest completed higher-timeframe bar, volume-weighted centered DeMarker > first upper level × smoothed volume AND ≤ second upper level × smoothed volume, while on the immediately preceding completed higher-timeframe bar it was ≤ first upper level × smoothed volume; OR latest value > second upper level × smoothed volume while the preceding value was ≤ second upper level × smoothed volume.
-Short: On the latest completed higher-timeframe bar, volume-weighted centered DeMarker < first lower level × smoothed volume AND ≥ second lower level × smoothed volume, while on the immediately preceding completed higher-timeframe bar it was ≥ first lower level × smoothed volume; OR latest value < second lower level × smoothed volume while the preceding value was ≥ second lower level × smoothed volume.
-Exit: long, volume-weighted centered DeMarker < first lower level × smoothed volume.
-Exit: short, volume-weighted centered DeMarker > first upper level × smoothed volume.
+Calculation: Volume-weighted DeMarker histogram = smooth (100 × DeMarker − 50) × volume and smooth volume separately with the same method and length; the inner and outer upper and lower levels are their respective threshold parameters multiplied by smoothed volume. The outer upper threshold is above the inner upper threshold; the outer lower threshold is below the inner lower threshold.
+Long: Histogram > inner upper level
+Short: Histogram < inner lower level
+Long: On the last completed higher-timeframe bar, histogram > inner upper level AND histogram ≤ outer upper level AND on the preceding higher-timeframe bar histogram ≤ inner upper level
+Long: On the last completed higher-timeframe bar, histogram > outer upper level AND on the preceding higher-timeframe bar histogram ≤ outer upper level
+Short: On the last completed higher-timeframe bar, histogram < inner lower level AND histogram ≥ outer lower level AND on the preceding higher-timeframe bar histogram ≥ inner lower level
+Short: On the last completed higher-timeframe bar, histogram < outer lower level AND on the preceding higher-timeframe bar histogram ≥ outer lower level
+Exit: short, last completed higher-timeframe histogram > inner upper level
+Exit: long, last completed higher-timeframe histogram < inner lower level
+Exit: long, low ≤ entry price − stop-loss distance OR high ≥ entry price + take-profit distance
+Exit: short, high ≥ entry price + stop-loss distance OR low ≤ entry price − take-profit distance

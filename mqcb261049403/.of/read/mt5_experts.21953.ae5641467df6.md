@@ -1,7 +1,10 @@
-Calculation: Histogram = smooth((RSI of the selected applied price − 50) × selected tick or real volume) using the configured smoothing method and lookback, on the configured indicator timeframe; evaluate completed bars.
-Calculation: Volume thresholds = each configured upper or lower level × the same smoothed selected volume on the indicator timeframe, using completed bars.
-Calculation: Histogram category = 0 if Histogram > upper threshold 2; 1 if Histogram > upper threshold 1; 2 otherwise; 3 if Histogram < lower threshold 1; 4 if Histogram < lower threshold 2. Apply these tests in that order.
-Long: On two consecutive completed indicator-timeframe bars, the newer bar's category is 1 AND the older bar's category > 1, OR the newer bar's category is 0 AND the older bar's category > 0.
-Short: On two consecutive completed indicator-timeframe bars, the newer bar's category is 3 AND the older bar's category < 3, OR the newer bar's category is 4 AND the older bar's category < 4.
-Exit: Long, the latest completed indicator-timeframe bar's category is 3 OR 4.
-Exit: Short, the latest completed indicator-timeframe bar's category is 0 OR 1.
+Calculation: Volume-weighted oscillator = moving average of (RSI of selected price - 50) × volume; use the same smoothing method and length for the oscillator and the moving average of volume. Calculate on the chart timeframe for indicator markings, or on a selectable higher or lower timeframe for trading decisions, using the last completed bar or the still-forming bar according to the selected signal-bar setting.
+Calculation: Inner and outer upper and lower thresholds = their respective levels × the moving average of volume; outer upper > inner upper and outer lower < inner lower.
+Long: Oscillator > inner upper threshold.
+Long: Oscillator > inner upper threshold AND oscillator <= outer upper threshold AND previous oscillator <= previous inner upper threshold.
+Long: Oscillator > outer upper threshold AND previous oscillator <= previous outer upper threshold.
+Short: Oscillator < inner lower threshold.
+Short: Oscillator < inner lower threshold AND oscillator >= outer lower threshold AND previous oscillator >= previous inner lower threshold.
+Short: Oscillator < outer lower threshold AND previous oscillator >= previous outer lower threshold.
+Exit: long, oscillator < inner lower threshold OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, oscillator > inner upper threshold OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

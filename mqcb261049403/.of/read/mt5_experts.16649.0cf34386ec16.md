@@ -1,5 +1,7 @@
-Calculation: XMA-smoothed candle direction = apply the same selected smoothing method and lookback separately to open and close; bullish if smoothed close > smoothed open, bearish if smoothed close < smoothed open, neutral if equal. Evaluate on the configured indicator timeframe using its last completed bar and the completed bar immediately before it (the indicator timeframe is the same as the chart timeframe in the documented test).
-Long: last completed candle is bullish AND the preceding completed candle is bearish or neutral
-Short: last completed candle is bearish AND the preceding completed candle is bullish or neutral
-Exit: long, last completed candle is bearish AND the preceding completed candle is bullish or neutral
-Exit: short, last completed candle is bullish AND the preceding completed candle is bearish or neutral
+Calculation: Smoothed open and smoothed close = the same selected moving-average method and parameters applied separately to open and close. For the trading decisions, calculate them on the last completed bar of the selected higher or lower timeframe, or on its still-forming bar if configured.
+Long: Smoothed close > smoothed open.
+Short: Smoothed close < smoothed open.
+Long: Smoothed close > smoothed open AND the preceding bar's smoothed close <= its smoothed open.
+Short: Smoothed close < smoothed open AND the preceding bar's smoothed close >= its smoothed open.
+Exit: long, smoothed close < smoothed open OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, smoothed close > smoothed open OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

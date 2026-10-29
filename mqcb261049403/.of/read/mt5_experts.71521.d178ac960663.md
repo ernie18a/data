@@ -1,13 +1,5 @@
-Calculation: Local high/low = a bar whose high/low is strictly greater/less than those of the surrounding bars within the pattern-specific lookback.
-Calculation: Bullish breakout = a bar closes above the pattern’s resistance or upper boundary; bearish breakout = a bar closes below its support or lower boundary.
-Calculation: Volume confirmation = the pattern-specific volume score is at least its required threshold; score increases when formation volume declines as specified for that pattern and breakout volume rises as specified.
-Calculation: Cup-and-handle = two local highs at similar prices enclose a U-shaped decline; the handle retraces less than half the cup depth; breakout is above the right lip.
-Calculation: Head-and-shoulders top = three local highs with the middle high above the shoulders and similarly priced outer shoulders; neckline is the lowest intervening trough. Inverse head-and-shoulders uses three local lows with the middle low below similarly priced outer shoulders and neckline at the highest intervening peak.
-Calculation: Double bottom = two local lows at similar prices with an intervening peak at least 5% above the lower low.
-Calculation: Rounding bottom = a local low with both sides following the detector’s approximately quadratic, U-shaped price path; neckline is the higher of the highs on either side of the bottom.
-Calculation: Triangle = upper and lower trend lines fitted to local highs and lows over the formation; ascending has a near-flat upper line and rising lower line, descending has a falling upper line and near-flat lower line, and symmetrical has a falling upper line and rising lower line.
-Calculation: Flag = a directional move followed by a consolidation whose range is less than the move size times the flag retracement limit; breakout is in the direction of the move.
-Long: bullish breakout of a valid cup-and-handle, inverse head-and-shoulders, double bottom, rounding bottom, ascending or symmetrical triangle, or bull flag AND volume confirmation AND current price >= the pattern entry price AND current price > the pattern stop-loss.
-Short: bearish breakout of a valid head-and-shoulders top, descending or symmetrical triangle, or bear flag AND volume confirmation AND current price <= the pattern entry price AND current price < the pattern stop-loss.
-Exit: Long, current price <= stop-loss OR current price >= take-profit OR profit in R >= the first or second partial-profit threshold OR elapsed time > the time limit AND profit in R < the stagnant-trade threshold.
-Exit: Short, current price >= stop-loss OR current price <= take-profit OR profit in R >= the first or second partial-profit threshold OR elapsed time > the time limit AND profit in R < the stagnant-trade threshold.
+Calculation: KAMA slope = (current KAMA - previous bar's KAMA) / previous bar's KAMA
+Long: KAMA slope > positive slope threshold
+Short: KAMA slope < negative slope threshold
+Long: ADX <= trend-strength threshold AND current ATR / average ATR over a lookback <= volatility threshold AND KAMA slope >= positive slope threshold
+Short: ADX <= trend-strength threshold AND current ATR / average ATR over a lookback <= volatility threshold AND KAMA slope <= negative slope threshold

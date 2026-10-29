@@ -1,5 +1,7 @@
-Calculation: XWAMI upper line = momentum (selected price minus that price at the momentum lookback) passed through three successive configurable smoothers; XWAMI lower line = the upper line passed through a fourth configurable smoother. Both are read from the selected indicator timeframe, on completed bars; compare the signal bar with its immediately preceding bar.
-Long: XWAMI upper line on signal bar > XWAMI lower line on signal bar AND XWAMI upper line on preceding bar <= XWAMI lower line on preceding bar
-Short: XWAMI upper line on signal bar < XWAMI lower line on signal bar AND XWAMI upper line on preceding bar >= XWAMI lower line on preceding bar
-Exit: long, XWAMI upper line on signal bar < XWAMI lower line on signal bar
-Exit: short, XWAMI upper line on signal bar > XWAMI lower line on signal bar
+Calculation: Momentum line = selected bar price minus the same price a configurable number of bars earlier, smoothed sequentially by three independently configured moving averages; the first smoothing lookback is shorter than the equal second and third lookbacks.
+Calculation: Signal line = momentum line smoothed by a fourth moving average whose lookback is shorter than the second and third smoothing lookbacks.
+Calculation: Indicator evaluation = calculate the momentum and signal lines independently on three timeframes ordered from shorter to longer; each timeframe may be the chart timeframe or higher, and uses its last completed bar by default or its still-forming bar when configured. The previous value is from the immediately preceding bar of that same timeframe.
+Long: Momentum line > signal line AND previous momentum line <= previous signal line, for any one independent indicator evaluation.
+Short: Momentum line < signal line AND previous momentum line >= previous signal line, for any one independent indicator evaluation.
+Exit: long, momentum line < signal line in the corresponding independent indicator evaluation OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, momentum line > signal line in the corresponding independent indicator evaluation OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

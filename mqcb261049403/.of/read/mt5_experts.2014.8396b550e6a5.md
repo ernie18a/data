@@ -1,6 +1,15 @@
-Calculation: Blau smoothed stochastic = 100 × smoothed price displacement from the midpoint of the rolling high-low range ÷ smoothed half-range. The displacement and half-range are each smoothed through three successive passes; each pass uses the same smoothing method, with the first pass having the longest lookback and later passes progressively shorter lookbacks.
-Calculation: Signal line = Blau smoothed stochastic smoothed with a fourth pass, using the same smoothing method and a shorter lookback than the first three passes.
-Long: (Blau smoothed stochastic two bars before the signal bar ≤ 0 AND one bar before the signal bar > 0) OR (Blau smoothed stochastic two bars before the signal bar < Blau smoothed stochastic one bar before the signal bar AND three bars before the signal bar > Blau smoothed stochastic two bars before the signal bar) OR (Signal line one bar before the signal bar ≥ Blau smoothed stochastic one bar before the signal bar AND Signal line at the signal bar < Blau smoothed stochastic at the signal bar)
-Short: (Blau smoothed stochastic two bars before the signal bar ≥ 0 AND one bar before the signal bar < 0) OR (Blau smoothed stochastic two bars before the signal bar > Blau smoothed stochastic one bar before the signal bar AND three bars before the signal bar < Blau smoothed stochastic two bars before the signal bar) OR (Signal line one bar before the signal bar ≤ Blau smoothed stochastic one bar before the signal bar AND Signal line at the signal bar > Blau smoothed stochastic at the signal bar)
-Exit: short, Blau smoothed stochastic one bar before the signal bar > 0 OR Blau smoothed stochastic two bars before the signal bar < Blau smoothed stochastic one bar before the signal bar OR Signal line one bar before the signal bar > Blau smoothed stochastic one bar before the signal bar
-Exit: long, Blau smoothed stochastic one bar before the signal bar < 0 OR Blau smoothed stochastic two bars before the signal bar > Blau smoothed stochastic one bar before the signal bar OR Signal line one bar before the signal bar < Blau smoothed stochastic one bar before the signal bar
+Calculation: Oscillator = 100 times the three-stage smoothed value of selected bar price minus the midpoint of the rolling highest high and lowest low, divided by the identically three-stage smoothed half-range of that high and low; use zero if the denominator is zero. Each stage uses the same selected smoothing method with its own period; the first period is longer than the second, and the third is shorter than the second.
+Calculation: Signal = the selected smoothing method applied to the oscillator with its own period.
+Calculation: EA oscillator and signal = the oscillator and signal calculated on the selected indicator timeframe, which may be higher or lower than the chart timeframe, using either the last completed bar or the still-forming bar according to the selected signal-bar setting; previous values refer to preceding indicator-timeframe bars.
+Long: Chart-timeframe oscillator > previous oscillator OR chart-timeframe oscillator > signal
+Short: Chart-timeframe oscillator < previous oscillator OR chart-timeframe oscillator < signal
+Long: EA oscillator > 0 AND previous EA oscillator <= 0
+Short: EA oscillator < 0 AND previous EA oscillator >= 0
+Long: EA oscillator > previous EA oscillator AND previous EA oscillator < oscillator two indicator bars ago
+Short: EA oscillator < previous EA oscillator AND previous EA oscillator > oscillator two indicator bars ago
+Long: EA oscillator > EA signal AND previous EA oscillator <= previous EA signal
+Short: EA oscillator < EA signal AND previous EA oscillator >= previous EA signal
+Exit: long, EA oscillator < 0 OR EA oscillator < previous EA oscillator OR EA oscillator < EA signal
+Exit: short, EA oscillator > 0 OR EA oscillator > previous EA oscillator OR EA oscillator > EA signal
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

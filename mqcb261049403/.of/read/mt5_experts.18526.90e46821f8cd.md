@@ -1,6 +1,11 @@
-Calculation: Higher-timeframe XROC lines = configured close-price rate-of-change series, each smoothed; one has a shorter lookback and one a longer lookback. Use the last completed higher-timeframe bar.
-Calculation: Lower-timeframe XROC lines = configured close-price rate-of-change series, each smoothed; one has a shorter lookback and one a longer lookback. Use the two most recent completed lower-timeframe bars, with the latest as the signal bar.
-Long: Higher-timeframe short-lookback line > higher-timeframe long-lookback line AND lower-timeframe short-lookback line was <= lower-timeframe long-lookback line on the preceding completed bar AND is > it on the latest completed bar
-Short: Higher-timeframe short-lookback line < higher-timeframe long-lookback line AND lower-timeframe short-lookback line was >= lower-timeframe long-lookback line on the preceding completed bar AND is < it on the latest completed bar
-Exit: long, higher-timeframe short-lookback line < higher-timeframe long-lookback line OR lower-timeframe short-lookback line < lower-timeframe long-lookback line on the latest completed bar
-Exit: short, higher-timeframe short-lookback line > higher-timeframe long-lookback line OR lower-timeframe short-lookback line > lower-timeframe long-lookback line on the latest completed bar
+Calculation: Momentum line pair = independently smooth two close-price momentum series using configurable smoothing methods and parameters; momentum is current close minus close at its lookback, with a shorter lookback for the first line and a longer lookback for the second line. Calculate separate pairs on the chart timeframe and a higher timeframe.
+Long: Chart-timeframe first line > chart-timeframe second line
+Short: Chart-timeframe first line < chart-timeframe second line
+Long: Higher-timeframe first line on the bar still forming > higher-timeframe second line on the bar still forming
+Short: Higher-timeframe first line on the bar still forming < higher-timeframe second line on the bar still forming
+Long: Higher-timeframe first line on the last completed bar > higher-timeframe second line on the last completed bar AND chart-timeframe first line on the preceding completed bar <= chart-timeframe second line on that bar AND chart-timeframe first line on the last completed bar > chart-timeframe second line on that bar
+Short: Higher-timeframe first line on the last completed bar < higher-timeframe second line on the last completed bar AND chart-timeframe first line on the preceding completed bar >= chart-timeframe second line on that bar AND chart-timeframe first line on the last completed bar < chart-timeframe second line on that bar
+Exit: long, higher-timeframe first line on the last completed bar < higher-timeframe second line on the last completed bar OR chart-timeframe first line on the last completed bar < chart-timeframe second line on the last completed bar
+Exit: short, higher-timeframe first line on the last completed bar > higher-timeframe second line on the last completed bar OR chart-timeframe first line on the last completed bar > chart-timeframe second line on the last completed bar
+Exit: long, low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance
+Exit: short, high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance

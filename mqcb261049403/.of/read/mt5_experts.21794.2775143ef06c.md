@@ -1,5 +1,8 @@
-Calculation: Smoothed power-weighted average = apply the configured XMA smoother to the configured OHLC-derived price averaged over a lookback, weighting each bar by (lookback − age)^power; round the result to the configured price increment. Trend state = rising when this value exceeds the preceding value, falling when it is below, and otherwise carry the preceding state. Evaluate on the configured indicator timeframe, which may be higher or lower than the chart timeframe, using completed bars only.
-Long: current completed bar’s trend state is rising AND the preceding completed bar’s trend state is not rising
-Short: current completed bar’s trend state is falling AND the preceding completed bar’s trend state is not falling
-Exit: long, current completed bar’s trend state is falling
-Exit: short, current completed bar’s trend state is rising
+Calculation: Smoothed power-weighted average = calculate the weighted average of the selected price over a lookback, with weight (lookback - bar offset) raised to a configurable power; smooth it with a configurable moving-average method and length, then round to a configurable price increment.
+Calculation: Trend = sign of the latest nonzero change in the smoothed power-weighted average; retain the preceding trend when the average is unchanged.
+Long: Chart-timeframe trend > 0
+Short: Chart-timeframe trend < 0
+Long: For any of three independent systems, trend on its configured higher or lower timeframe at the last completed bar > 0 AND trend on the preceding bar <= 0
+Short: For any of three independent systems, trend on its configured higher or lower timeframe at the last completed bar < 0 AND trend on the preceding bar >= 0
+Exit: long, trend on the corresponding system's higher or lower timeframe at the last completed bar < 0 OR low <= entry price - stop distance OR high >= entry price + target distance
+Exit: short, trend on the corresponding system's higher or lower timeframe at the last completed bar > 0 OR high >= entry price + stop distance OR low <= entry price - target distance

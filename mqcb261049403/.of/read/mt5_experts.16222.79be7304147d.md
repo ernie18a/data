@@ -1,5 +1,5 @@
-Calculation: RVIDiff = smoothed difference between the Relative Vigor Index main line and signal line, calculated on the indicator timeframe (same as the chart timeframe in the documented setup); use completed bars.
-Long: RVIDiff[2] >= RVIDiff[1] AND RVIDiff[1] < RVIDiff[0]
-Short: RVIDiff[2] <= RVIDiff[1] AND RVIDiff[1] > RVIDiff[0]
-Exit: short, RVIDiff[1] < RVIDiff[0]
-Exit: long, RVIDiff[1] > RVIDiff[0]
+Calculation: Smoothed RVI difference = a configurable moving average of the Relative Vigor Index main line minus its signal line, calculated on a configurable higher or lower timeframe; use the last completed bar by default, or the still-forming bar when the signal-bar offset is zero. A positive signal-bar offset may select an earlier completed bar. For T3 smoothing, use an effective EMA length of 1 + (smoothing length - 1) / 2.
+Long: Smoothed RVI difference at the selected bar > its value one bar earlier AND its value two bars earlier >= its value one bar earlier
+Short: Smoothed RVI difference at the selected bar < its value one bar earlier AND its value two bars earlier <= its value one bar earlier
+Exit: long, smoothed RVI difference at the selected bar < its value one bar earlier OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, smoothed RVI difference at the selected bar > its value one bar earlier OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

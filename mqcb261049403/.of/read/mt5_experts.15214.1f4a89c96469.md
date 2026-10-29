@@ -1,5 +1,5 @@
-Calculation: Smoothed Heiken Ashi state = smooth each bar’s open, high, low, and close using the same smoothing method and lookback; Heiken Ashi close is their average; Heiken Ashi open is the average of the prior bar’s Heiken Ashi open and close. State is bullish when Heiken Ashi close > Heiken Ashi open, otherwise bearish. Use completed bars on the indicator timeframe, which may be higher or lower than the chart timeframe.
-Long: prior completed state is bearish AND latest completed state is bullish
-Short: prior completed state is bullish AND latest completed state is bearish
-Exit: long, latest completed state is bearish
-Exit: short, latest completed state is bullish
+Calculation: Smoothed Heiken Ashi open and close = Apply the same selectable moving-average method and parameters separately to open, high, low, and close. For each bar after initialization, smoothed Heiken Ashi close is the mean of the four smoothed prices, and smoothed Heiken Ashi open is the mean of the preceding smoothed Heiken Ashi open and close. During initialization, use smoothed open and smoothed close as the respective Heiken Ashi values. Calculate on the chart timeframe or a selectable higher or lower timeframe; use a selectable signal bar, normally the last completed bar but optionally the still-forming bar or an earlier completed bar.
+Long: Smoothed Heiken Ashi open on the preceding signal-timeframe bar >= its close AND smoothed Heiken Ashi open on the signal bar < its close.
+Short: Smoothed Heiken Ashi open on the preceding signal-timeframe bar < its close AND smoothed Heiken Ashi open on the signal bar >= its close.
+Exit: long, smoothed Heiken Ashi open on the signal bar >= its close OR low <= entry price minus the stop-loss distance OR high >= entry price plus the take-profit distance.
+Exit: short, smoothed Heiken Ashi open on the signal bar < its close OR high >= entry price plus the stop-loss distance OR low <= entry price minus the take-profit distance.

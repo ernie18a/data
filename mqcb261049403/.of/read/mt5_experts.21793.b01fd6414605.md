@@ -1,7 +1,5 @@
-Calculation: UltraMFI = On the configured indicator timeframe, calculate MFI from OHLC and the configured volume series. Smooth MFI with a sequence of lookbacks increasing from short to long. For each lookback, count an increase from the preceding bar as bullish and any other result as bearish. Smooth each count with the configured smoothing method and lookback; the resulting values are the bullish and bearish UltraMFI lines. Compare values on completed bars, including when the indicator timeframe is higher or lower than the chart timeframe.
-Long: Bullish UltraMFI line on the latest completed indicator bar > bearish line AND bullish line on the preceding completed indicator bar < bearish line.
-Short: Bullish UltraMFI line on the latest completed indicator bar < bearish line AND bullish line on the preceding completed indicator bar > bearish line.
-Exit: long, bullish UltraMFI line < bearish line on the latest completed indicator bar
-Exit: short, bullish UltraMFI line > bearish line on the latest completed indicator bar
-Exit: long, bar low <= entry price − configured stop-loss distance OR bar high >= entry price + configured take-profit distance
-Exit: short, bar high >= entry price + configured stop-loss distance OR bar low <= entry price − configured take-profit distance
+Calculation: Bull and bear lines = On a configurable higher or lower timeframe, calculate MFI using volume. Smooth it with a family of moving averages whose lengths increase by a fixed step from shortest to longest. For each bar, count averages strictly above their own preceding-bar values as rising; count all others as non-rising. Independently smooth the rising and non-rising counts with the same smoothing method and length to obtain the bull and bear lines. Use a configurable signal bar: the last completed bar or the bar still forming; compare it with the preceding bar of that timeframe.
+Long: Bull line > bear line AND previous bull line < previous bear line
+Short: Bull line < bear line AND previous bull line > previous bear line
+Exit: long, bull line < bear line OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, bull line > bear line OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

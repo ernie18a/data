@@ -1,5 +1,10 @@
-Calculation: Blau TVI = smooth(100 × (U₂ − D₂) / (U₂ + D₂), final lookback), where U₁ and D₁ are the selected moving average of up-ticks and down-ticks, U₂ and D₂ are the selected moving average of U₁ and D₁ using a separate second-stage lookback, and up-ticks = (volume + (close − open) / instrument point size) / 2, down-ticks = volume − up-ticks. Use the selected volume series and smoothing method. Evaluate on the selected indicator timeframe, using completed bars.
-Long: Blau TVI[t−2] > Blau TVI[t−1] AND Blau TVI[t] > Blau TVI[t−1]
-Short: Blau TVI[t−2] < Blau TVI[t−1] AND Blau TVI[t] < Blau TVI[t−1]
-Exit: long, Blau TVI[t−2] < Blau TVI[t−1] AND Blau TVI[t] < Blau TVI[t−1]
-Exit: short, Blau TVI[t−2] > Blau TVI[t−1] AND Blau TVI[t] > Blau TVI[t−1]
+Calculation: Tick volume index = let up = (volume + (close - open) / price increment) / 2 and down = volume - up; smooth up and down separately twice in succession using the same moving-average method and two independently parameterized lengths, shared between up and down; then smooth 100 × (smoothed up - smoothed down) / (smoothed up + smoothed down) with the same method and a third independently parameterized length.
+Calculation: Signal index = tick volume index on a higher timeframe, evaluated on the last completed bar or the still-forming bar according to the signal-bar setting; prior values are from preceding bars of that timeframe.
+Long: chart-timeframe tick volume index > 0 AND chart-timeframe tick volume index != its previous value
+Short: chart-timeframe tick volume index < 0 AND chart-timeframe tick volume index != its previous value
+Long: signal index > its previous value AND its value two bars ago > its previous value
+Short: signal index < its previous value AND its value two bars ago < its previous value
+Exit: short, signal index > its previous value
+Exit: long, signal index < its previous value
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance
