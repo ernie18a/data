@@ -1,0 +1,3 @@
+Calculation: Fibo trend = For each bar, let range = highest high minus lowest low over the lookback and let fraction be the selected Fibonacci fraction. Starting with prior trend 0: if open > close, set trend to +1 unless prior trend < 0 AND range × fraction < close − lowest low, in which case set it to −1. Otherwise, set trend to −1 unless prior trend > 0 AND range × fraction < highest high − close, in which case set it to +1. Calculate on the chart timeframe, or on a higher timeframe when using the higher-timeframe wrapper; use the bar still forming.
+Long: prior bar Fibo trend = −1 AND current bar Fibo trend = +1
+Short: prior bar Fibo trend = +1 AND current bar Fibo trend = −1

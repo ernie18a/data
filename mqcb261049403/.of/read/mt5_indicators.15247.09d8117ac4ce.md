@@ -1,0 +1,4 @@
+Calculation: Kalman filter = on the selected chart timeframe or a higher timeframe, recursively calculate from the selected OHLC-derived price using the current still-forming bar: distance = price − prior filter; error = prior filter + distance × √(K/100); velocity = prior velocity + distance × K/100; filter = error + velocity.
+Calculation: Filter-change standard deviation = population standard deviation of the latest N Kalman-filter changes, including the current change.
+Long: Current Kalman-filter change > the smaller threshold multiplier × filter-change standard deviation
+Short: Current Kalman-filter change < −(the smaller threshold multiplier × filter-change standard deviation)

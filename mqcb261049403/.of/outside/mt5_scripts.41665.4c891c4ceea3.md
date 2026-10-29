@@ -1,0 +1,1 @@
+If automatic profit closing is enabled, monitor total account floating profit against the current daily profit goal. Once profit crosses a sensitivity-adjusted activation threshold, track a trailing floor derived from the highest activated profit; close all open positions if profit falls to that floor. The framework contains no long or short entry rule.

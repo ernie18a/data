@@ -1,0 +1,2 @@
+Long: EMA on the last completed bar is greater than EMA on the preceding completed bar on each of the five trend timeframes (each is the chart timeframe or higher), AND current bar close > high of the last completed daily bar (higher timeframe)
+Short: EMA on the last completed bar is less than EMA on the preceding completed bar on each of the five trend timeframes (each is the chart timeframe or higher), AND current bar close < low of the last completed daily bar (higher timeframe)

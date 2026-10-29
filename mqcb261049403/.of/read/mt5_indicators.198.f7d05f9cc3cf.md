@@ -1,0 +1,4 @@
+Calculation: Fast line = RSI of the selected price field, smoothed with a short-lookback exponential moving average.
+Calculation: Slow line = a QQE trailing level around the fast line, with distance equal to 4.236 times a longer-lookback double exponential moving average of the fast line’s absolute bar-to-bar change; update the level directionally and clamp it to its prior value when the fast line reverses across it.
+Long: Fast line crosses above 50 AND, since its most recent cross of the slow line, it has crossed above the slow line without crossing below it.
+Short: Fast line crosses below 50 AND, since its most recent cross of the slow line, it has crossed below the slow line without crossing above it.

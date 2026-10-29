@@ -1,0 +1,6 @@
+Calculation: Volume-weighted moving average = the rolling average of the selected OHLC-derived price, weighted by bar volume, on the configured indicator timeframe; use completed bars.
+Calculation: VWMA-change standard deviation = population standard deviation of the one-bar changes in the volume-weighted moving average over a lookback, including the latest completed bar.
+Long: On the latest completed indicator-timeframe bar (the configured timeframe may be higher or lower than the chart timeframe), the VWMA change > the shorter-threshold multiplier × VWMA-change standard deviation
+Short: On the latest completed indicator-timeframe bar (the configured timeframe may be higher or lower than the chart timeframe), the VWMA change < −(the shorter-threshold multiplier × VWMA-change standard deviation)
+Exit: long, previous completed VWMA > latest completed VWMA on the configured indicator timeframe
+Exit: short, previous completed VWMA < latest completed VWMA on the configured indicator timeframe

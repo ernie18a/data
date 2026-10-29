@@ -1,0 +1,3 @@
+Calculation: IBS = (close - low) / (high - low)
+Long: On a completed Monday strategy bar, position is flat AND close < previous trading day's close AND (IBS filter disabled OR high > low AND IBS <= threshold) AND (MA filter disabled OR close < simple moving average of the strategy-bar closes ending with the Monday bar)
+Exit: Long, close <= entry price - stop-loss distance OR the completed strategy bar is Wednesday or later in the week

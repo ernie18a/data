@@ -1,0 +1,6 @@
+Calculation: selected fractal level = the first nonzero upper or lower fractal found by scanning current-timeframe bars from 250 bars ago toward the current bar; use that fractal's price
+Calculation: Renko direction = scan current-timeframe bars from CandlesToRetrace bars ago through the current bar; the first bar where current price minus its low reaches the box size or ATR(14) gives up, and the first bar where its high minus current price reaches that size gives down (check up before down on each bar)
+Long: abs(current price − close[2]) > threshold AND (close[4] ≤ selected fractal level OR close[3] ≤ selected fractal level OR close[2] ≤ selected fractal level) AND close[1] > selected fractal level AND Renko direction is up AND low[2] < high[1]
+Short: abs(current price − close[2]) > threshold AND (close[4] ≥ selected fractal level OR close[3] ≥ selected fractal level OR close[2] ≥ selected fractal level) AND close[1] < selected fractal level AND Renko direction is down
+Exit: long, price reaches the position's stop-loss or take-profit
+Exit: short, price reaches the position's stop-loss or take-profit

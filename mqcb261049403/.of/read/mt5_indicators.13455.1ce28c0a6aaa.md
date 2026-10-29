@@ -1,0 +1,3 @@
+Calculation: Schaff Trend Cycle (STC) = On chart-timeframe bars, subtract the slower-period TRIX from the faster-period TRIX (the faster period is shorter). Over the cycle lookback, normalize that difference to 0–100 using its rolling low and high, then smooth it with a 0.5 recursive smoothing factor. Normalize the smoothed values over the same cycle lookback to −100–100, then smooth again with the same factor. The higher-timeframe version uses a higher timeframe’s STC, sampled while that bar is still forming on the first chart bar within it and carried forward until the next sample.
+Long: STC is greater than its value on the previous bar
+Short: STC is less than its value on the previous bar

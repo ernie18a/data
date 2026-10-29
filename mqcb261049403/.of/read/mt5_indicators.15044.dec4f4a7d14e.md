@@ -1,0 +1,3 @@
+Calculation: Hi-Lo range oscillator = 100 × (current bar midpoint − lowest low over the lookback) / (highest high over the lookback − lowest low over the lookback), where midpoint = (high + low) / 2; use 50 if the range is zero. It is calculated on chart-timeframe bars or on higher-timeframe bars, using the higher-timeframe bar still forming.
+Long: chart-timeframe Hi-Lo range oscillator > its upper level OR higher-timeframe Hi-Lo range oscillator > its upper level
+Short: chart-timeframe Hi-Lo range oscillator < its lower level OR higher-timeframe Hi-Lo range oscillator < its lower level

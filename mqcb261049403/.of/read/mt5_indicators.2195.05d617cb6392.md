@@ -1,0 +1,3 @@
+Calculation: BBands Stop trend = Initialize as neutral. On each bar, set bullish if close > the prior bar’s adjusted upper Bollinger band; set bearish if close < the prior bar’s adjusted lower Bollinger band; otherwise retain the prior trend. In bullish state, the current adjusted lower band is the greater of the current lower Bollinger band and prior adjusted lower band; otherwise it is the current lower Bollinger band. In bearish state, the current adjusted upper band is the lesser of the current upper Bollinger band and prior adjusted upper band; otherwise it is the current upper Bollinger band.
+Long: BBands Stop trend = bullish AND prior bar’s BBands Stop trend ≠ bullish
+Short: BBands Stop trend = bearish AND prior bar’s BBands Stop trend ≠ bearish

@@ -1,0 +1,3 @@
+Calculation: Parabolic SAR (PSAR) = calculate PSAR on the chart timeframe and on each selected successive higher timeframe, using the same parameters; use the bar containing the chart bar (a higher-timeframe bar may still be forming). A prior PSAR value is the value mapped to the immediately preceding chart bar, which may map to the same higher-timeframe bar.
+Long: PSAR < low on the current bar for every included timeframe AND PSAR > high on the preceding chart bar for at least one included timeframe
+Short: PSAR > high on the current bar for every included timeframe AND PSAR < low on the preceding chart bar for at least one included timeframe

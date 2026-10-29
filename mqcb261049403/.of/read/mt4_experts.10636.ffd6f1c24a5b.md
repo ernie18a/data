@@ -1,0 +1,4 @@
+Long: Open positions = 0 AND datetime minute = 0 AND volume of the last completed chart bar > volume of the preceding completed chart bar × Factor AND CCI of the forming chart bar > CCILevel1 AND CCI of the forming chart bar < CCILevel2 AND close of the last completed chart bar > open of the last completed chart bar
+Short: Open positions = 0 AND datetime minute = 0 AND volume of the last completed chart bar > volume of the preceding completed chart bar × Factor AND CCI of the forming chart bar < CCILevel3 AND CCI of the forming chart bar > CCILevel4 AND close of the last completed chart bar < open of the last completed chart bar
+Exit: long, datetime hour = 23
+Exit: short, datetime hour = 23

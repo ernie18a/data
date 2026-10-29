@@ -1,0 +1,3 @@
+Calculation: Pentuple exponential moving average (PEMA) = 8×EMA₁ − 28×EMA₂ + 56×EMA₃ − 70×EMA₄ + 56×EMA₅ − 28×EMA₆ + 8×EMA₇ − EMA₈, where each EMA is applied sequentially to the selected OHLC-derived price using the same lookback; round the result to the configured price precision
+Long: PEMA is greater than its previous value OR (PEMA equals its previous value AND its previous direction was rising
+Short: PEMA is less than its previous value OR (PEMA equals its previous value AND its previous direction was falling

@@ -1,0 +1,2 @@
+Long: close > Parabolic SAR on the chart timeframe OR close > Parabolic SAR on a higher timeframe; use each timeframe’s still-forming bar and the same SAR parameters across timeframes.
+Short: close < Parabolic SAR on the chart timeframe OR close < Parabolic SAR on a higher timeframe; use each timeframe’s still-forming bar and the same SAR parameters across timeframes.

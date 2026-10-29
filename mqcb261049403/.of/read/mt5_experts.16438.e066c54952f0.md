@@ -1,0 +1,5 @@
+Calculation: Directional range factor = 100 divided by the lookback length, multiplied by the sum over that many bars of +1 for each higher high than the preceding bar and −1 for each lower low than the preceding bar; calculate on the configured indicator timeframe (which may be higher or lower than the chart timeframe), using completed bars.
+Long: Direct mode AND latest completed value > 0 AND preceding completed value <= 0 OR inverse mode AND latest completed value <= 0 AND preceding completed value > 0
+Short: Direct mode AND latest completed value <= 0 AND preceding completed value > 0 OR inverse mode AND latest completed value > 0 AND preceding completed value <= 0
+Exit: Long, Direct mode AND latest completed value <= 0 AND preceding completed value > 0 OR inverse mode AND latest completed value > 0 AND preceding completed value <= 0
+Exit: Short, Direct mode AND latest completed value > 0 AND preceding completed value <= 0 OR inverse mode AND latest completed value <= 0 AND preceding completed value > 0

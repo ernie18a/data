@@ -1,0 +1,6 @@
+Calculation: Typical-price linear weighted moving average = linear weighted moving average of (high + low + close) / 3 over a lookback; chart timeframe, last completed bar
+Calculation: Fast and slow typical-price linear weighted moving averages = same calculation on the chart timeframe’s bar still forming, with the fast lookback shorter than the slow lookback
+Long: the lookbacks 3, 5, 8, 10, 12, 15, 30, 35, 40, 45, 50, 55, and 200 form a strictly increasing sequence, and their respective typical-price linear weighted moving averages are strictly decreasing; fast moving average > slow moving average; low two bars ago < high one bar ago; absolute difference between current bar price and close two bars ago > a configurable point-distance threshold
+Short: the same moving averages are strictly increasing in lookback order; fast moving average < slow moving average; low one bar ago < high two bars ago; absolute difference between current bar price and close one bar ago > a configurable point-distance threshold
+Exit: long, price <= entry price − stop-loss distance OR price >= entry price + take-profit distance OR price <= an active trailing or break-even stop
+Exit: short, price >= entry price + stop-loss distance OR price <= entry price − take-profit distance OR price >= an active trailing or break-even stop

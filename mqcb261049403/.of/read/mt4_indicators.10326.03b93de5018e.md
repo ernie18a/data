@@ -1,0 +1,2 @@
+Long: On any displayed timeframe (higher, lower, or equal to the chart timeframe), the moving average on the still-forming bar is greater than the moving average on the last completed bar
+Short: On any displayed timeframe (higher, lower, or equal to the chart timeframe), the moving average on the still-forming bar is less than the moving average on the last completed bar

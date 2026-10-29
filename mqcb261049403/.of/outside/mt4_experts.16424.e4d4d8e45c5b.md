@@ -1,0 +1,1 @@
+On a click of the buy-stop button, delete all pending buy-stop orders. On a click of the sell-stop button, delete all pending sell-stop orders. On a click of the all-orders button, delete all pending orders and close all open long and short positions.

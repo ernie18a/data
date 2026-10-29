@@ -1,0 +1,7 @@
+Calculation: JJRSX = JJMA-smoothed ratio of JurX-smoothed one-bar change in applied price to JurX-smoothed absolute one-bar change in applied price, clamped to [-1, 1]
+Calculation: Fast trend line = weighted sum of five JJRSX values, using progressively longer lookbacks
+Calculation: Slow trend line = EMA of the fast trend line with a longer smoothing period
+Long: On the configured indicator timeframe (which may be higher or lower than the chart timeframe), the fast trend line was above the slow trend line on the preceding completed bar AND is below it on the latest completed bar
+Short: On the configured indicator timeframe (which may be higher or lower than the chart timeframe), the fast trend line was below the slow trend line on the preceding completed bar AND is above it on the latest completed bar
+Exit: Long, on the configured indicator timeframe (which may be higher or lower than the chart timeframe), the fast trend line was below the slow trend line on the preceding completed bar AND is above it on the latest completed bar
+Exit: Short, on the configured indicator timeframe (which may be higher or lower than the chart timeframe), the fast trend line was above the slow trend line on the preceding completed bar AND is below it on the latest completed bar

@@ -1,0 +1,3 @@
+Calculation: Centered smoothed RSI = RSI of a configurable OHLC-derived applied price, smoothed by a configurable moving-average method, minus 50; when calculated on a higher timeframe, use its current, possibly still-forming bar.
+Long: Centered smoothed RSI > 0 OR (Centered smoothed RSI > its previous value AND Centered smoothed RSI != 0)
+Short: Centered smoothed RSI < 0 OR (Centered smoothed RSI < its previous value AND Centered smoothed RSI != 0)

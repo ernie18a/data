@@ -1,0 +1,4 @@
+Calculation: Smoothed rolling high = the highest smoothed bar high over a lookback; Smoothed rolling low = the lowest smoothed bar low over the same lookback; both use the same smoothing method and length.
+Calculation: Upper Float Pivot band = the configured upward-rounded price increment of (3 × Float Pivot − Smoothed rolling low) / 2; Lower Float Pivot band = the configured downward-rounded price increment of (3 × Float Pivot − Smoothed rolling high) / 2, where Float Pivot = (Smoothed rolling high + Smoothed rolling low + smoothed applied price) / 3.
+Long: Close > Upper Float Pivot band from the chart bar Shift bars earlier.
+Short: Close < Lower Float Pivot band from the chart bar Shift bars earlier.

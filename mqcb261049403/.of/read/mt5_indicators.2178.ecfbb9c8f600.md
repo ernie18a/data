@@ -1,0 +1,3 @@
+Calculation: JFATL speed = momentum of the JMA-smoothed 39-bar FATL-filtered price, smoothed again with JMA and scaled by point size.
+Long: JFATL speed on any configured timeframe (equal to or higher than the chart timeframe, using its still-forming bar) > its value on the previous bar of that timeframe
+Short: JFATL speed on any configured timeframe (equal to or higher than the chart timeframe, using its still-forming bar) < its value on the previous bar of that timeframe

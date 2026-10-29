@@ -1,0 +1,4 @@
+Calculation: Shorter-lookback moving average = moving average of close prices on the configured MA timeframe
+Calculation: Longer-lookback moving average = moving average of open prices on the configured MA timeframe
+Exit: Long, shorter-lookback moving average on the last completed MA-timeframe bar <= longer-lookback moving average on that bar AND shorter-lookback moving average on the preceding completed MA-timeframe bar > longer-lookback moving average on that bar
+Exit: Short, shorter-lookback moving average on the last completed MA-timeframe bar >= longer-lookback moving average on that bar AND shorter-lookback moving average on the preceding completed MA-timeframe bar < longer-lookback moving average on that bar

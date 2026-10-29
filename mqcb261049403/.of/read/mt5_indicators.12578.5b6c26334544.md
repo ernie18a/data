@@ -1,0 +1,4 @@
+Calculation: Leading line = α₂ × filtered value + (1 − α₂) × previous leading line; filtered value = 2 × midpoint(high, low) + (α₁ − 2) × previous midpoint(high, low) + (1 − α₁) × previous filtered value
+Calculation: Signal line = 0.5 × midpoint(high, low) + 0.5 × previous signal line
+Long: Signal line on the current bar of the signal timeframe (equal to or higher than the chart timeframe; still forming) ≥ leading line on that bar AND signal line on the previous completed signal-timeframe bar < leading line on that bar
+Short: Signal line on the current bar of the signal timeframe (equal to or higher than the chart timeframe; still forming) ≤ leading line on that bar AND signal line on the previous completed signal-timeframe bar > leading line on that bar

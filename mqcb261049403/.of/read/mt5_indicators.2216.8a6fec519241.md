@@ -1,0 +1,4 @@
+Calculation: Smoothed normalized deviation (higher timeframe, still-forming bar) = 100 × smooth(applied price − smooth(applied price)) ÷ smooth(abs(applied price − smooth(applied price))); use the configured price smoother and a separately configured deviation smoother.
+Calculation: Fast and slow step lines (higher timeframe, still-forming bar) = For each line, set direction up when the deviation exceeds its prior upper threshold and down when it falls below its prior lower threshold; set thresholds to deviation ± twice that line’s step size, trail the lower threshold upward while direction is up and the upper threshold downward while direction is down, then output lower threshold + step size when up or upper threshold − step size when down. The fast line uses a shorter step size than the slow line.
+Long: fast step line > slow step line
+Short: fast step line < slow step line

@@ -1,0 +1,5 @@
+Calculation: Smoothed Heiken-Ashi direction = up when its smoothed open is below its smoothed close; otherwise down
+Long: No open position AND 5-minute smoothed Heiken-Ashi is up for fewer than 10 consecutive ticks AND 5-minute smoothed Heiken-Ashi is up AND 15-minute smoothed Heiken-Ashi is up for more than 200 consecutive ticks AND 15-minute, 30-minute, 1-hour, and 4-hour smoothed Heiken-Ashi are up
+Short: No open position AND 5-minute smoothed Heiken-Ashi is down for fewer than 10 consecutive ticks AND 5-minute smoothed Heiken-Ashi is down AND 15-minute smoothed Heiken-Ashi is down for more than 200 consecutive ticks AND 15-minute, 30-minute, 1-hour, and 4-hour smoothed Heiken-Ashi are down
+Exit: Long, entry price + take-profit distance OR entry price - stop-loss distance
+Exit: Short, entry price - take-profit distance OR entry price + stop-loss distance

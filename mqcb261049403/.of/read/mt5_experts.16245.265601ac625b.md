@@ -1,0 +1,5 @@
+Calculation: STLM candle open and close = the STLM indicator applied separately to the bar’s open and close prices; STLM is the JMA-smoothed difference of a short-term and a longer-term price filter. Use the configured indicator timeframe, which may be higher or lower than the chart timeframe, and the last completed signal candle and its preceding completed candle.
+Long: STLM candle close > STLM candle open AND preceding STLM candle close <= preceding STLM candle open
+Short: STLM candle close < STLM candle open AND preceding STLM candle close >= preceding STLM candle open
+Exit: short, STLM candle close > STLM candle open AND preceding STLM candle close <= preceding STLM candle open
+Exit: long, STLM candle close < STLM candle open AND preceding STLM candle close >= preceding STLM candle open

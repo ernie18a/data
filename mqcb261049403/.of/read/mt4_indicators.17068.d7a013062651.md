@@ -1,0 +1,5 @@
+Calculation: Adaptive MACD = fast EMA minus slow EMA of the selected price; each EMA uses its own Hilbert phase based adaptive period, with the fast period shorter-term and the slow period longer-term. If calculated on a higher timeframe than the chart, use that timeframe’s still-forming bar.
+Calculation: Dynamic upper, middle, and lower levels = configured quantiles of the adaptive MACD over a lookback window, or configured percentages of its rolling minimum-to-maximum range; the middle level is the midpoint level.
+Calculation: Trend state = +1 when the adaptive MACD is above its preceding-bar value (slope mode), above the upper level (levels mode), or above the middle level (middle mode); -1 when below the corresponding comparison value; otherwise 0. In slope mode, an unchanged value retains the preceding state.
+Long: current trend state = +1 AND preceding-bar trend state != +1 OR current trend state = 0 AND preceding-bar trend state = -1
+Short: current trend state = -1 AND preceding-bar trend state != -1 OR current trend state = 0 AND preceding-bar trend state = +1

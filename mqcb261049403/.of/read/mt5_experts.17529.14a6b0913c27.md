@@ -1,0 +1,5 @@
+Calculation: Weight oscillator = configured weighted average of RSI, MFI, Williams %R + 100, and 100 × DeMarker, smoothed by a configured moving average; calculated on the configured signal timeframe (which may be higher or lower than the chart timeframe) using completed bars only.
+Long: The oscillator falls from the oldest to the middle of the last three completed signal-timeframe bars AND rises from the middle to the newest.
+Short: The oscillator rises from the oldest to the middle of the last three completed signal-timeframe bars AND falls from the middle to the newest.
+Exit: Long, the oscillator rises from the oldest to the middle of the last three completed signal-timeframe bars AND falls from the middle to the newest OR the bar low <= entry price − configured stop-loss distance OR the bar high >= entry price + configured take-profit distance
+Exit: Short, the oscillator falls from the oldest to the middle of the last three completed signal-timeframe bars AND rises from the middle to the newest OR the bar high >= entry price + configured stop-loss distance OR the bar low <= entry price − configured take-profit distance

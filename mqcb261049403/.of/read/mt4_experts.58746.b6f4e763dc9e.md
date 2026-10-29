@@ -1,0 +1,4 @@
+Long: Stochastic %K on the chart timeframe and two higher timeframes, using bars still forming, is below the oversold threshold AND the close of the higher timeframe bar is below its lower Bollinger Band, using the bar still forming
+Short: Stochastic %K on the chart timeframe and two higher timeframes, using bars still forming, is above the overbought threshold AND the close of the higher timeframe bar is above its upper Bollinger Band, using the bar still forming
+Exit: long, low is at or below entry price minus ATR from a higher timeframe bar still forming times the stop-loss multiplier OR high is at or above entry price plus ATR from a higher timeframe bar still forming times the take-profit multiplier
+Exit: short, high is at or above entry price plus ATR from a higher timeframe bar still forming times the stop-loss multiplier OR low is at or below entry price minus ATR from a higher timeframe bar still forming times the take-profit multiplier

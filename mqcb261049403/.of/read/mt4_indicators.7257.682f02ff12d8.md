@@ -1,0 +1,3 @@
+Calculation: First-reached extreme = within each chart bar, use lower-timeframe bars to determine whether its low or high occurred first; if both occur in the same bar, repeat with still-lower-timeframe bars until ordered or tied at the lowest available timeframe. Include the still-forming lower-timeframe bar for the current chart bar; use completed lower-timeframe bars for completed chart bars.
+Long: The low occurs before the high, or they remain tied at the lowest available timeframe.
+Short: The high occurs before the low, or they remain tied at the lowest available timeframe.

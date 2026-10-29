@@ -1,0 +1,4 @@
+Calculation: Bulls/Bears oscillator = apply three recursive smoothing stages to the sum of Bulls Power and Bears Power; sum the positive parts of the three consecutive stage differences as CU and the absolute negative parts as CD; when CU+CD is nonzero, compute 100*CU/(CU+CD)-50, otherwise -50; multiply by selected volume (tick or real), then smooth with a configurable moving-average method and length. Use chart-timeframe bars or, for the higher-timeframe variant, higher-timeframe bars including the bar still forming.
+Calculation: Smoothed volume = smooth selected volume (tick or real) with the same moving-average method and length as the Bulls/Bears oscillator, on the same timeframe and bar state.
+Long: Bulls/Bears oscillator > upper level 1 * Smoothed volume
+Short: Bulls/Bears oscillator < lower level 1 * Smoothed volume

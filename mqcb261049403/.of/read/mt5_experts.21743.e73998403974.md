@@ -1,0 +1,5 @@
+Calculation: 55-period moving average = moving average of the configured applied price using the configured averaging method, on the configured timeframe; use bar A and bar B indices (index 0 is forming, higher indices are completed). If that timeframe differs from the chart timeframe, it may be higher or lower.
+Long: At a new chart bar within the configured trading-hour interval, (reverse disabled AND MA[A] > MA[B] + configured difference) OR (reverse enabled AND MA[A] < MA[B] - configured difference)
+Short: At a new chart bar within the configured trading-hour interval, NOT ((reverse disabled AND MA[A] > MA[B] + configured difference) OR (reverse enabled AND MA[A] < MA[B] - configured difference))
+Exit: Long, price <= entry price - configured stop loss OR price >= entry price + configured take profit OR (close opposite enabled AND short condition)
+Exit: Short, price >= entry price + configured stop loss OR price <= entry price - configured take profit OR (close opposite enabled AND long condition)

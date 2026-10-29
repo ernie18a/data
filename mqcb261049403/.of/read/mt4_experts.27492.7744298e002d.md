@@ -1,0 +1,4 @@
+Long: absolute difference between the current chart bar open and the close two chart bars ago > configurable point-distance threshold AND low two chart bars ago < high one chart bar ago AND close two chart bars ago < 20-period simple moving average of close ending two chart bars ago
+Short: absolute difference between the current chart bar open and the close two chart bars ago > configurable point-distance threshold AND low one chart bar ago < high two chart bars ago AND close two chart bars ago > 20-period simple moving average of close ending two chart bars ago
+Exit: long, price <= entry price - configurable stop distance OR price >= entry price + configurable target distance OR higher-timeframe MACD main line < signal line on the last completed bar
+Exit: short, price >= entry price + configurable stop distance OR price <= entry price - configurable target distance OR higher-timeframe MACD main line > signal line on the last completed bar

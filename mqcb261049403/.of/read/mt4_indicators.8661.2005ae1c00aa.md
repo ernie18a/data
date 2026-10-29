@@ -1,0 +1,6 @@
+Long: On each displayed timeframe, shorter-lookback moving average > longer-lookback moving average (still-forming bar)
+Short: On each displayed timeframe, shorter-lookback moving average <= longer-lookback moving average (still-forming bar)
+Long: RSI > 50 AND Stochastic main line > 40 AND CCI > 0 (still-forming bar)
+Short: RSI < 50 AND Stochastic main line < 60 AND CCI < 0 (still-forming bar)
+Long: close > open (still-forming bar)
+Short: close < open (still-forming bar)

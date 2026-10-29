@@ -1,0 +1,5 @@
+Calculation: First smoothed price = selected applied price (from the bar’s open, high, low, and close) smoothed with the first configured method and lookback; the second smoothed price uses the second configured method and a longer lookback.
+Long: first smoothed price > second smoothed price AND current bar low > first smoothed price
+Short: first smoothed price < second smoothed price AND current bar high < first smoothed price
+Long: on the higher timeframe, first smoothed price > second smoothed price AND current higher-timeframe bar low > first smoothed price; evaluate on the still-forming higher-timeframe bar at its opening and carry the result across chart bars until the next higher-timeframe bar
+Short: on the higher timeframe, first smoothed price < second smoothed price AND current higher-timeframe bar high < first smoothed price; evaluate on the still-forming higher-timeframe bar at its opening and carry the result across chart bars until the next higher-timeframe bar

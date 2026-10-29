@@ -1,0 +1,5 @@
+Calculation: XCCX(price) = 100 × smoothed(price − smoothed(price, price lookback), deviation lookback) ÷ smoothed(abs(price − smoothed(price, price lookback)), deviation lookback); use the configured smoothing methods and lookbacks
+Long: XCCX(close) > XCCX(open) on the last completed bar of the configured signal timeframe, which may be higher or lower than the chart timeframe, AND XCCX(close) ≤ XCCX(open) on the preceding completed bar of that timeframe
+Short: XCCX(close) < XCCX(open) on the last completed bar of the configured signal timeframe, which may be higher or lower than the chart timeframe, AND XCCX(close) ≥ XCCX(open) on the preceding completed bar of that timeframe
+Exit: long, XCCX(close) < XCCX(open) on the last completed bar of the configured signal timeframe, which may be higher or lower than the chart timeframe
+Exit: short, XCCX(close) > XCCX(open) on the last completed bar of the configured signal timeframe, which may be higher or lower than the chart timeframe

@@ -1,0 +1,3 @@
+Calculation: ADX-VMA trend state = Using the selected price, recursively smooth positive and negative price changes with the same lookback; divide each smoothed change by their sum, then recursively smooth each ratio with that same lookback. Bullish when the smoothed positive ratio > 0.5; bearish when the smoothed negative ratio > 0.5. Use the chart timeframe or a higher timeframe, including its still-forming bar.
+Long: Current ADX-VMA trend state is bullish AND previous ADX-VMA trend state is bearish
+Short: Current ADX-VMA trend state is bearish AND previous ADX-VMA trend state is bullish

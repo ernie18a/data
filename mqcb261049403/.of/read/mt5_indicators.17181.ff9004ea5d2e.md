@@ -1,0 +1,8 @@
+Calculation: Recursive double-smoothed stochastic = apply the following transform recursively: calculate 100 × (selected close − lowest selected low over the stochastic lookback) / (highest selected high − lowest selected low), smooth it with the configured moving average, calculate 100 × (smoothed value − its lowest value over the same lookback) / (its highest value over the same lookback − its lowest value), then smooth again with the same configured moving average. At each recursion, use the prior result as close, high, and low; use the same lookback, smoothing length, and moving-average method at every recursion. Calculate on the chart timeframe or a higher timeframe; for a higher timeframe, use the bar still forming.
+Calculation: Upper, middle, and lower levels = configured fixed levels, or levels derived from the recursive stochastic values over a rolling lookback: for floating levels, apply the configured percentages to the rolling minimum-to-maximum range; for quantile levels, use the configured percentiles. The middle level is halfway between the upper and lower levels.
+Long: Recursive double-smoothed stochastic > its previous value
+Short: Recursive double-smoothed stochastic < its previous value
+Long: Recursive double-smoothed stochastic > middle level
+Short: Recursive double-smoothed stochastic < middle level
+Long: Recursive double-smoothed stochastic > upper level
+Short: Recursive double-smoothed stochastic < lower level

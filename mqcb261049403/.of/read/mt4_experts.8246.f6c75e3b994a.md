@@ -1,0 +1,4 @@
+Long: DeMarker crosses above its lower threshold on the chart timeframe (previous completed bar below, current forming bar at or above) AND stochastic main line crosses above its oversold threshold (previous completed bar below, current forming bar at or above)
+Short: DeMarker crosses below its upper threshold on the chart timeframe (previous completed bar above, current forming bar at or below) AND stochastic main line crosses below its overbought threshold (previous completed bar above, current forming bar at or below)
+Exit: long, current price <= entry price minus maximum loss distance OR current price >= entry price plus maximum profit distance OR current price <= active protective stop set after a profit threshold
+Exit: short, current price >= entry price plus maximum loss distance OR current price <= entry price minus maximum profit distance OR current price >= active protective stop set after a profit threshold

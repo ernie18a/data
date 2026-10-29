@@ -1,0 +1,5 @@
+Calculation: KWAN_CCC direction = compare the smoothed value of (Chaikin oscillator × CCI / Momentum) with its value on the immediately preceding bar: rising if greater, falling if lower, unchanged if equal; use 100 instead of the quotient when Momentum is zero. Chaikin uses the configured fast and slow moving averages and applied volume; CCI uses median price; Momentum uses close. Calculate on the configured indicator timeframe, lower than the chart timeframe, using completed bars.
+Long: current completed bar’s KWAN_CCC direction is rising AND the preceding completed bar’s direction is not rising
+Short: current completed bar’s KWAN_CCC direction is falling AND the preceding completed bar’s direction is not falling
+Exit: long, current completed bar’s KWAN_CCC direction is falling AND the preceding completed bar’s direction is not falling
+Exit: short, current completed bar’s KWAN_CCC direction is rising AND the preceding completed bar’s direction is not rising

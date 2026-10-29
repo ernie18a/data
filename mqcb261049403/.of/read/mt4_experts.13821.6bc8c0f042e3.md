@@ -1,0 +1,7 @@
+Calculation: Daily open = open of the current, still-forming daily bar (higher timeframe than the chart timeframe)
+Calculation: Long trailing stop = after price rises above entry by the trailing-start distance, set the stop trailing-stop distance above entry; thereafter raise it by the trailing-stop distance whenever price exceeds it by the trailing-step distance
+Calculation: Short trailing stop = after price falls below entry by the trailing-start distance, set the stop trailing-stop distance below entry; thereafter lower it by the trailing-stop distance whenever it exceeds price by the trailing-step distance
+Long: Previous completed chart bar close > open AND its close-minus-open body is at least the minimum body size and at most the maximum body size AND daily open + breakout distance is between that bar's open and close AND current price >= daily open + breakout distance
+Short: Previous completed chart bar close < open AND its open-minus-close body is at least the minimum body size and at most the maximum body size AND daily open - breakout distance is between that bar's close and open AND current price <= daily open - breakout distance
+Exit: Long, price - entry price >= take-profit distance OR entry price - price > stop-loss distance OR price <= long trailing stop OR a short-entry condition occurs while close-by-signal is enabled
+Exit: Short, entry price - price >= take-profit distance OR price - entry price > stop-loss distance OR price >= short trailing stop OR a long-entry condition occurs while close-by-signal is enabled

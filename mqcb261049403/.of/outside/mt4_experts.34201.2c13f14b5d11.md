@@ -1,0 +1,1 @@
+For each weekday, compare the selected local or server time with that day’s configured allowed intervals. Within an interval, enable automated trading. Outside all intervals, optionally close every open position and delete every pending order, then disable automated trading. This system does not generate long or short entries.

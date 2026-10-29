@@ -1,0 +1,4 @@
+Long: current hour = configured trading hour AND close of the older H1 bar in the lookback > close of the last completed H1 bar (H1 is higher or lower than the chart timeframe as applicable; both bars are completed)
+Short: current hour = configured trading hour AND close of the older H1 bar in the lookback <= close of the last completed H1 bar (H1 is higher or lower than the chart timeframe as applicable; both bars are completed)
+Exit: long, current price <= entry price - stop-loss distance OR current price >= entry price + take-profit distance OR position age > maximum age
+Exit: short, current price >= entry price + stop-loss distance OR current price <= entry price - take-profit distance OR position age > maximum age

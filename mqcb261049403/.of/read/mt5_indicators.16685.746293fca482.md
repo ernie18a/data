@@ -1,0 +1,4 @@
+Calculation: Composite RSI = smooth the selected price with the selected moving average, then cascade EMA smoothing across the configured depth; sum decreases between adjacent stages as U and increases as D, and return U/(U+D), or 0 if U+D=0. Use chart bars or, if configured higher than the chart timeframe, the higher timeframe's still-forming bar.
+Calculation: Floating upper and lower levels = rolling minimum of Composite RSI + the configured upper or lower percentage of its rolling range (maximum minus minimum), including the current bar.
+Long: Composite RSI > floating upper level AND Composite RSI > prior bar's Composite RSI
+Short: Composite RSI < floating lower level AND Composite RSI < prior bar's Composite RSI

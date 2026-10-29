@@ -1,0 +1,3 @@
+Calculation: QQE trailing line = a trailing threshold around the smoothed close-based RSI, offset by a factor times a smoothed, twice-smoothed absolute change in that RSI; when the RSI crosses the prior threshold, set the threshold to the RSI plus the offset on a downward cross or minus the offset on an upward cross, otherwise retain the prior threshold if the new threshold would cross it.
+Long: smoothed RSI > QQE trailing line OR smoothed RSI crosses above 50 after crossing above the QQE trailing line from below
+Short: smoothed RSI < QQE trailing line OR smoothed RSI crosses below 50 after crossing below the QQE trailing line from above

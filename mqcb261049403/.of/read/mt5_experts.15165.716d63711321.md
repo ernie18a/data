@@ -1,0 +1,6 @@
+Calculation: Laguerre RSI = 100 × CU/(CU+CD), where L0[t]=(1−γ)×price[t]+γ×L0[t−1], and for i=1..3, Li[t]=−γ×L(i−1)[t]+L(i−1)[t−1]+γ×Li[t−1]; CU=Σmax(Li−L(i+1),0), CD=Σmax(L(i+1)−Li,0), for i=0..2.
+Calculation: Laguerre trend state = bullish when RSI > high threshold; bearish when RSI < low threshold. For RSI between middle and high thresholds, set bearish if prior RSI > high, retain prior state if prior RSI was between middle and high, otherwise set bullish. For RSI from low through middle threshold, set bearish if prior RSI > middle, retain prior state if prior RSI was from low through middle, otherwise set bullish. Evaluate on the configured indicator timeframe (which may be higher, lower, or equal to the chart timeframe), using completed bars.
+Long: prior completed state is bearish AND latest completed state is bullish
+Short: prior completed state is bullish AND latest completed state is bearish
+Exit: long, latest completed state is bearish OR low ≤ entry price − stop-loss distance OR high ≥ entry price + take-profit distance
+Exit: short, latest completed state is bullish OR high ≥ entry price + stop-loss distance OR low ≤ entry price − take-profit distance

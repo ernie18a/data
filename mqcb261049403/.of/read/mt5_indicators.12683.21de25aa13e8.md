@@ -1,0 +1,4 @@
+Calculation: Upper-fractal trend angle = arctan((change in price between the latest two confirmed upper fractal highs × 240) / (elapsed time between them in seconds / 14,400)); calculate from the selected timeframe, equal to or higher than the chart timeframe, using its bar still forming. A fractal is used three bars after its center.
+Calculation: Lower-fractal trend angle = arctan((change in price between the latest two confirmed lower fractal lows × 240) / (elapsed time between them in seconds / 14,400)); calculate from the selected timeframe, equal to or higher than the chart timeframe, using its bar still forming. A fractal is used three bars after its center.
+Long: Upper-fractal trend angle > lower-fractal trend angle
+Short: Upper-fractal trend angle < lower-fractal trend angle

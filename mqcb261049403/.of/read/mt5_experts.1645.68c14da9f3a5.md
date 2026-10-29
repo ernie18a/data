@@ -1,0 +1,6 @@
+Calculation: Smoothed RSI = configurable moving average of close-based RSI.
+Calculation: QQE trailing line = the standard QQE trailing stop of Smoothed RSI, with band distance equal to a configurable factor times a double-smoothed absolute change of Smoothed RSI; both smoothings use the same configurable moving-average method, and the band smoothing lookback is longer than the RSI smoothing lookback.
+Long: Smoothed RSI > QQE trailing line on the lower-than-chart indicator timeframe's last completed bar AND current time equals the configured entry hour and minute.
+Short: Smoothed RSI < QQE trailing line on the lower-than-chart indicator timeframe's last completed bar AND current time equals the configured entry hour and minute.
+Exit: long, Smoothed RSI < QQE trailing line on the lower-than-chart indicator timeframe's last completed bar OR current time is at or after the configured stop hour and minute, or before the configured start hour.
+Exit: short, Smoothed RSI > QQE trailing line on the lower-than-chart indicator timeframe's last completed bar OR current time is at or after the configured stop hour and minute, or before the configured start hour.

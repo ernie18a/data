@@ -1,0 +1,2 @@
+Long: RSI with any of the ten lookbacks, calculated on the configured RSI timeframe (which may be higher or lower than the chart timeframe) using its last completed bar, is below its configured lower level
+Short: RSI with any of the ten lookbacks, calculated on the configured RSI timeframe (which may be higher or lower than the chart timeframe) using its last completed bar, is above its configured upper level

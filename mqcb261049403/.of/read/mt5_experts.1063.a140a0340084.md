@@ -1,0 +1,6 @@
+Calculation: Selected main line = Adaptive Cyber Cycle, Adaptive CG Oscillator, or Adaptive RVI, as selected; each uses the selected adaptive cycle period.
+Calculation: Signal line = selected main line on the immediately preceding bar.
+Long: On the selected indicator timeframe, using completed bars: main line on the previous bar <= signal line on the previous bar AND main line on the latest bar > signal line on the latest bar
+Short: On the selected indicator timeframe, using completed bars: main line on the previous bar >= signal line on the previous bar AND main line on the latest bar < signal line on the latest bar
+Exit: long, On the selected indicator timeframe, using completed bars: main line on the previous bar > signal line on the previous bar AND main line on the latest bar <= signal line on the latest bar
+Exit: short, On the selected indicator timeframe, using completed bars: main line on the previous bar < signal line on the previous bar AND main line on the latest bar >= signal line on the latest bar

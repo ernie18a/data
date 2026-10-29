@@ -1,0 +1,2 @@
+Long: Short-lookback EMA > longer-lookback SMA on the chart timeframe, or on a higher timeframe using its still-forming bar
+Short: Short-lookback EMA <= longer-lookback SMA on the chart timeframe, or on a higher timeframe using its still-forming bar

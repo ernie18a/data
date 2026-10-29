@@ -1,0 +1,3 @@
+Calculation: Standard deviation = population standard deviation of the latest std_period changes in the volume-weighted moving average of applied price; std_period is the lookback.
+Long: Current change in the volume-weighted moving average > shorter-threshold coefficient × standard deviation OR current change > longer-threshold coefficient × standard deviation AND current change ≤ longer-threshold coefficient × standard deviation
+Short: Current change < −shorter-threshold coefficient × standard deviation AND current change ≥ −longer-threshold coefficient × standard deviation OR current change < −longer-threshold coefficient × standard deviation

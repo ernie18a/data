@@ -1,0 +1,5 @@
+Calculation: Color Zero Lag TriX OSMA = recursively smoothed difference between a weighted sum of five TRIX series with progressively longer lookbacks and a recursive average of that sum; the difference is recursively smoothed again. Use completed bars on the configured indicator timeframe, which may be higher or lower than the chart timeframe.
+Long: The middle of three consecutive completed OSMA values is lower than both the older and latest values OR the latest OSMA value is above zero and above the preceding value
+Short: The middle of three consecutive completed OSMA values is higher than both the older and latest values OR the latest OSMA value is below zero and below the preceding value
+Exit: Long, the middle of three consecutive completed OSMA values is higher than both the older and latest values
+Exit: Short, the middle of three consecutive completed OSMA values is lower than both the older and latest values

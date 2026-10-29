@@ -1,0 +1,5 @@
+Calculation: Signal timeframe = each enabled timeframe, higher or lower than the chart timeframe (or equal); use the configured candle, either the last completed bar or the bar still forming.
+Calculation: RSI pair = compare the shorter-lookback RSI with the longer-lookback RSI.
+Calculation: CCI pair = compare the shorter-lookback entry CCI with the longer-lookback trend CCI; compare each CCI on the selected bar with its value on the immediately preceding bar of the same timeframe.
+Long: Stochastic %K > %D OR shorter-lookback RSI > longer-lookback RSI OR (entry CCI > 0 AND entry CCI > its preceding-bar value) OR (entry CCI < 0 AND entry CCI >= its preceding-bar value) OR (trend CCI > 0 AND trend CCI > its preceding-bar value) OR (trend CCI < 0 AND trend CCI >= its preceding-bar value)
+Short: Stochastic %K < %D OR shorter-lookback RSI < longer-lookback RSI OR (entry CCI > 0 AND entry CCI <= its preceding-bar value) OR (entry CCI < 0 AND entry CCI < its preceding-bar value) OR (trend CCI > 0 AND trend CCI <= its preceding-bar value) OR (trend CCI < 0 AND trend CCI < its preceding-bar value)

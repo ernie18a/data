@@ -1,0 +1,1 @@
+On each tick, independently draw two random values for a buy check and another two for a sell check. Open a long if the buy pair matches; open a short if the sell pair matches. Each check can trigger independently, so both directions may be opened on the same tick. Attach randomly sized stop-loss and take-profit levels to each order.

@@ -1,0 +1,1 @@
+On each tick, if a configured profit equity threshold is positive and account equity reaches or exceeds it, close all open positions and delete all pending orders. If a configured loss equity threshold is positive and account equity reaches or falls below it, do the same.

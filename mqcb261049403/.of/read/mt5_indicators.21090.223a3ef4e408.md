@@ -1,0 +1,3 @@
+Calculation: Double-smoothed LWMA = an LWMA of an LWMA of the configured OHLC-derived applied price, using the same lookback for both averages; round the result to the configured decimal precision.
+Long: The double-smoothed LWMA on the higher-timeframe bar still forming is greater than its value on the previous higher-timeframe bar.
+Short: The double-smoothed LWMA on the higher-timeframe bar still forming is less than its value on the previous higher-timeframe bar.

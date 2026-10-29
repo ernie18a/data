@@ -1,0 +1,1 @@
+During a configured daily entry window, open a market position in each enabled direction if no position in that direction is already open. During a configured daily exit window, close all positions opened by this strategy.

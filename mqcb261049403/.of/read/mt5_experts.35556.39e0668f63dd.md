@@ -1,0 +1,4 @@
+Long: Williams %R on the last completed chart bar > its value on the previous completed chart bar AND +DI crosses above -DI between the previous and last completed chart bars AND position side = flat
+Short: Williams %R on the last completed chart bar < its value on the previous completed chart bar AND +DI crosses below -DI between the previous and last completed chart bars AND position side = flat
+Exit: long, MFI > its upper level OR Stochastic %K on the last completed chart bar > its value on the previous completed chart bar AND its value on the previous completed chart bar < its value two bars earlier
+Exit: short, MFI < its lower level OR Stochastic %K on the last completed chart bar < its value on the previous completed chart bar AND its value on the previous completed chart bar > its value two bars earlier

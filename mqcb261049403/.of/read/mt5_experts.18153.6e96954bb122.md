@@ -1,0 +1,2 @@
+Long: close > open on each timeframe’s current bar (still forming) and its two preceding completed bars, including timeframes higher and lower than the chart timeframe
+Short: close < open on each timeframe’s current bar (still forming) and its two preceding completed bars, including timeframes higher and lower than the chart timeframe

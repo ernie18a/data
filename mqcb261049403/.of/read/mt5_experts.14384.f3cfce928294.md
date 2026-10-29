@@ -1,0 +1,5 @@
+Calculation: Kalman-smoothed OHLC = separately for each OHLC source x on the configured indicator timeframe (which may be higher, lower, or equal to the chart timeframe), initialize the first value f to x and velocity v to 0; on each subsequent bar, let d = x - previous f, update v = previous v + d × k/100, then f = previous f + d × sqrt(k/100) + v. Compare the last completed bar with the immediately preceding bar.
+Long: smoothed open < smoothed close on the last completed bar AND smoothed open >= smoothed close on the preceding bar
+Short: smoothed open > smoothed close on the last completed bar AND smoothed open <= smoothed close on the preceding bar
+Exit: Long, smoothed open > smoothed close on the last completed bar AND smoothed open <= smoothed close on the preceding bar OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: Short, smoothed open < smoothed close on the last completed bar AND smoothed open >= smoothed close on the preceding bar OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

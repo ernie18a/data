@@ -1,0 +1,3 @@
+Calculation: CRT midpoint = absolute value of the previous higher-timeframe completed bar’s high plus its low, divided by 2
+Long: Previous and latest completed higher-timeframe bars are respectively bearish and bullish AND latest low < previous low AND latest close > previous close AND latest close < CRT midpoint AND latest high < CRT midpoint
+Short: Previous and latest completed higher-timeframe bars are respectively bullish and bearish AND latest high > previous high AND latest close < previous close AND latest close > CRT midpoint AND latest low > CRT midpoint

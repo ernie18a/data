@@ -1,0 +1,3 @@
+Calculation: Normalized MACD = (EMA of the selected price with the shorter lookback − EMA of the selected price with the longer lookback) ÷ the rolling standard deviation of that price over a lookback equal to the sum of those two lookbacks; use the unnormalized EMA difference when the standard deviation is zero. If calculated on a higher timeframe, use the bar covering the current chart bar, which may still be forming.
+Long: Normalized MACD > its signal line
+Short: Normalized MACD < its signal line

@@ -1,0 +1,3 @@
+Calculation: Slow Volume Strength Index (SVSI) = Let positive volume be volume when close is above its chart-timeframe EMA and zero otherwise; let negative volume be volume when close is below that EMA and zero otherwise. Take the simple moving average of each over the smoothing lookback. If the negative-volume average is zero, set the ratio to 100; otherwise set it to the positive-volume average divided by the negative-volume average. SVSI = 100 − 100 / (1 + ratio).
+Long: SVSI < oversold level
+Short: SVSI > overbought level

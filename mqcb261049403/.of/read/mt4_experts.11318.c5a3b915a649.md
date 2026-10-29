@@ -1,0 +1,4 @@
+Long: ADX main line > ADX threshold AND +DI on the current, still-forming indicator-timeframe bar > −DI on that bar AND +DI two bars back < −DI two bars back
+Short: ADX main line > ADX threshold AND +DI on the current, still-forming indicator-timeframe bar < −DI on that bar AND +DI two bars back > −DI two bars back
+Exit: long, +DI on the current, still-forming indicator-timeframe bar < −DI on that bar OR current price ≤ entry price − stop-loss distance OR current price ≥ entry price + take-profit distance
+Exit: short, +DI on the current, still-forming indicator-timeframe bar > −DI on that bar OR current price ≥ entry price + stop-loss distance OR current price ≤ entry price − take-profit distance

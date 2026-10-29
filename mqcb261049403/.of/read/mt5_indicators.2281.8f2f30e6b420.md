@@ -1,0 +1,3 @@
+Calculation: VolatilityPivot stop = At each bar, let delta be either an ATR multiplier times an EMA of ATR or a fixed price deviation. If the close equals the previous stop, keep the stop unchanged; if the previous and current closes are both below the previous stop, use the lower of the previous stop and current close + delta; if both are above it, use the higher of the previous stop and current close − delta; otherwise use current close − delta when the current close is above the previous stop, or current close + delta when it is below.
+Long: Close > VolatilityPivot stop AND previous bar Close <= previous bar VolatilityPivot stop
+Short: Close < VolatilityPivot stop AND previous bar Close >= previous bar VolatilityPivot stop

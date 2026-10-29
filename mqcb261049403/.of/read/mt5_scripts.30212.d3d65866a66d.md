@@ -1,0 +1,2 @@
+Long: The bar's low is lower than the lows of each of the four immediately preceding and four immediately following chart bars
+Short: The bar's high is higher than the highs of each of the four immediately preceding and four immediately following chart bars

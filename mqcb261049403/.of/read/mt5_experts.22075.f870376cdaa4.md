@@ -1,0 +1,6 @@
+Calculation: Volume-weighted centered DeMarker = selected smoother applied to (100 × DeMarker − 50) × volume on higher-timeframe bars; evaluate completed bars only.
+Calculation: Smoothed volume = the same smoother with the same lookback applied to volume on higher-timeframe bars; evaluate completed bars only.
+Long: On the latest completed higher-timeframe bar, volume-weighted centered DeMarker > first upper level × smoothed volume AND ≤ second upper level × smoothed volume, while on the immediately preceding completed higher-timeframe bar it was ≤ first upper level × smoothed volume; OR latest value > second upper level × smoothed volume while the preceding value was ≤ second upper level × smoothed volume.
+Short: On the latest completed higher-timeframe bar, volume-weighted centered DeMarker < first lower level × smoothed volume AND ≥ second lower level × smoothed volume, while on the immediately preceding completed higher-timeframe bar it was ≥ first lower level × smoothed volume; OR latest value < second lower level × smoothed volume while the preceding value was ≥ second lower level × smoothed volume.
+Exit: long, volume-weighted centered DeMarker < first lower level × smoothed volume.
+Exit: short, volume-weighted centered DeMarker > first upper level × smoothed volume.

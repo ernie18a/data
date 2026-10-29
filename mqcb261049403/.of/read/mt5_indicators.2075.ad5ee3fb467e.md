@@ -1,0 +1,3 @@
+Calculation: BykovTrend state = down when Williams %R is below the lower threshold, up when it is above the upper threshold, and otherwise unchanged; evaluate on the chart timeframe or on a higher timeframe's still-forming bar.
+Long: BykovTrend state changes from down to up on the chart timeframe OR on a higher timeframe's still-forming bar
+Short: BykovTrend state changes from up to down on the chart timeframe OR on a higher timeframe's still-forming bar

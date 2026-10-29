@@ -1,0 +1,4 @@
+Calculation: ATR = average true range on the indicator’s timeframe, including the bar still forming.
+Calculation: NRTR trend and active stop = initialize trend as up when the prior bar’s close is at least its open, otherwise down; in an uptrend the active buy stop is close − multiplier × ATR, and in a downtrend the active sell stop is close + multiplier × ATR. Keep the stop and trend until the close crosses the active stop; crossing reverses the trend and sets the new stop on the other side of the close. When an uptrend bar’s low exceeds the prior ceiling, reset the ceiling to its close and recalculate the buy stop; when a downtrend bar’s high is below the prior floor, reset the floor to its close and recalculate the sell stop. The ceiling and floor start at the close when the trend is initialized or reversed.
+Long: prior NRTR trend is down AND close > prior active sell stop
+Short: prior NRTR trend is up AND close < prior active buy stop

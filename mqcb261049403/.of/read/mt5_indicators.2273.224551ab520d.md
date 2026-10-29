@@ -1,0 +1,2 @@
+Long: Current bar close > highest high of the previous N bars, calculated on the chart timeframe or the selected timeframe (equal to or higher than the chart timeframe; use its still-forming bar when higher)
+Short: Current bar close < lowest low of the previous N bars, calculated on the chart timeframe or the selected timeframe (equal to or higher than the chart timeframe; use its still-forming bar when higher)

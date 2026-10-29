@@ -1,0 +1,2 @@
+Long: Monday at the configured opening hour and minute 0 AND previous completed daily bar open > previous completed chart bar close
+Short: Monday at the configured opening hour and minute 0 AND previous completed daily bar open < previous completed chart bar close

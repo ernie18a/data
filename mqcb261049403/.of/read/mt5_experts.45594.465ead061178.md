@@ -1,0 +1,4 @@
+Calculation: Fractal direction = +1 when the latest confirmed low fractal is more recent than the latest confirmed high fractal; -1 when the latest confirmed high fractal is more recent; otherwise retain the previous direction. A high fractal is a bar whose high is strictly greater than the highs of N bars before and after it; a low fractal is a bar whose low is strictly less than the lows of N bars before and after it. A fractal is confirmed only after those N later bars complete.
+Calculation: Normalized smoothed Williams %R = (triple exponential moving average of Williams %R + 50) / 50.
+Long: Fractal direction = +1 AND previous normalized smoothed Williams %R <= -1 + threshold AND current normalized smoothed Williams %R >= -1 + threshold
+Short: Fractal direction = -1 AND previous normalized smoothed Williams %R >= 1 - threshold AND current normalized smoothed Williams %R <= 1 - threshold

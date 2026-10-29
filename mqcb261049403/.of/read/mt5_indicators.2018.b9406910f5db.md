@@ -1,0 +1,4 @@
+Calculation: Bullish line = apply the selected smoothing method and length to the count, across an increasing sequence of lookbacks, of higher-timeframe smoothed Williams %R values that are greater than their preceding bar values; each Williams %R uses the selected WPR lookback and its own selected smoothing method and length. The current higher-timeframe bar may still be forming; comparisons use the preceding bar as well.
+Calculation: Bearish line = apply the same count smoothing to the count of higher-timeframe smoothed Williams %R values that are less than or equal to their preceding bar values, using the same increasing lookback sequence.
+Long: Bullish line > Bearish line AND on the preceding bar Bullish line <= Bearish line
+Short: Bullish line < Bearish line AND on the preceding bar Bullish line >= Bearish line

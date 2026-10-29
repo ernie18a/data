@@ -1,0 +1,6 @@
+Calculation: Pivot high/low = a bar whose high/low is not exceeded by any of the specified number of bars on either side; use the latest five alternating pivots X,A,B,C,D from the signal timeframe.
+Calculation: Butterfly quality = clamp(1 − 0.2·|B−idealB|/|A−X| − 0.2·|C−idealC|/|A−X| − 0.2·|D−idealD|/|A−X| − 0.1·|1−(B.time−A.time)/(D.time−C.time)| − 0.1·|1−(A.time−X.time)/(C.time−B.time)|, 0, 1); idealB is A−0.786·(A−X) for bullish and A+0.786·(X−A) for bearish; idealC is B+0.618·(A−B) for bullish and B−0.618·(B−A) for bearish; idealD is C−1.414·(C−B) for bullish and C+1.414·(B−C) for bearish.
+Long: X is a pivot low, A a pivot high, B a pivot low, C a pivot high, D a pivot low AND A>X AND |B−(A−0.786·(A−X))| ≤ tolerance·(A−X) AND 0.382·(A−X) ≤ C−B ≤ 0.886·(A−X) AND 1.27·(A−X) ≤ C−D ≤ 1.618·(A−X) AND D<X AND Butterfly quality ≥ minimum quality
+Short: X is a pivot high, A a pivot low, B a pivot high, C a pivot low, D a pivot high AND X>A AND |B−(A+0.786·(X−A))| ≤ tolerance·(X−A) AND 0.382·(X−A) ≤ B−C ≤ 0.886·(X−A) AND 1.27·(X−A) ≤ D−C ≤ 1.618·(X−A) AND D>X AND Butterfly quality ≥ minimum quality
+Exit: long, low ≤ stop loss OR high ≥ C
+Exit: short, high ≥ stop loss OR low ≤ C

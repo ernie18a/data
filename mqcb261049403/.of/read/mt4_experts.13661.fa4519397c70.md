@@ -1,0 +1,4 @@
+Long: current forming bar close > current forming bar Parabolic SAR AND previous completed bar close < previous completed bar Parabolic SAR AND short-term SMA > long-term SMA AND current Ask > shorter-term SMA
+Short: current forming bar close < current forming bar Parabolic SAR AND previous completed bar close > previous completed bar Parabolic SAR AND short-term SMA < long-term SMA AND current Bid < shorter-term SMA
+Exit: long, current forming bar close < current forming bar Parabolic SAR AND previous completed bar close > previous completed bar Parabolic SAR AND short-term SMA < long-term SMA AND current Bid < shorter-term SMA
+Exit: short, current forming bar close > current forming bar Parabolic SAR AND previous completed bar close < previous completed bar Parabolic SAR AND short-term SMA > long-term SMA AND current Ask > shorter-term SMA

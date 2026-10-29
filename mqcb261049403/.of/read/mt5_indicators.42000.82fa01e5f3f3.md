@@ -1,0 +1,3 @@
+Calculation: Time Segmented Volume = the rolling sum over a lookback of (selected price − previous selected price) × selected volume weight; selected price is open, high, low, close, median, typical, or weighted price ((high + low + 2 × close) / 4), and selected volume weight is 1, volume, or true range (max(high, previous close) − min(low, previous close)); on the first bar, previous price is open and true range is high − low.
+Long: Time Segmented Volume > 0
+Short: Time Segmented Volume < 0

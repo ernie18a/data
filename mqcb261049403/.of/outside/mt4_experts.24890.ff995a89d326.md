@@ -1,0 +1,1 @@
+Close all managed positions in the traded instrument when their aggregate open profit is negative and the loss exceeds a configurable fraction of the account’s tracked equity high.

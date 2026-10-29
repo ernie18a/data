@@ -1,0 +1,5 @@
+Calculation: ForceTrend state = On each bar, find the highest high and lowest low over a lookback; set x to 0.66 × (((high + low) / 2 − lowest low) / (highest high − lowest low) − 0.5) + 0.67 × previous x, or 0.67 × previous x − 0.33 if the range is zero; clamp x to [−0.999, 0.999]. Set state to 0.5 × ln((1 + x) / (1 − x)) + 0.5 × previous state. Bullish if state > 0, bearish if state < 0; if state = 0, retain the previous color. Use the last completed bar on the configured indicator timeframe, which may be higher or lower than the chart timeframe.
+Long: ForceTrend state changes from bearish to bullish
+Short: ForceTrend state changes from bullish to bearish
+Exit: long, ForceTrend state is bearish OR low ≤ entry price − stop-loss distance OR high ≥ entry price + take-profit distance
+Exit: short, ForceTrend state is bullish OR high ≥ entry price + stop-loss distance OR low ≤ entry price − take-profit distance

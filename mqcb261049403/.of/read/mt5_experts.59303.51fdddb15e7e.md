@@ -1,0 +1,4 @@
+Long: RSI on the chart timeframe, using the last two completed bars, crosses above the lower threshold (current RSI > lower threshold AND previous RSI <= lower threshold)
+Short: RSI on the chart timeframe, using the last two completed bars, crosses below the upper threshold (current RSI < upper threshold AND previous RSI >= upper threshold)
+Exit: short, RSI on the chart timeframe, using the last two completed bars, crosses above the lower threshold (current RSI > lower threshold AND previous RSI <= lower threshold)
+Exit: long, RSI on the chart timeframe, using the last two completed bars, crosses below the upper threshold (current RSI < upper threshold AND previous RSI >= upper threshold)

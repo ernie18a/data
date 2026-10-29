@@ -1,0 +1,4 @@
+Calculation: Normalized price = 100 × (current short-lookback volume-weighted average of the configured applied price − lowest value over the longer lookback) ÷ max(highest value − lowest value over the longer lookback, minimum price increment) − 50
+Calculation: Fast line = configured smoother applied to normalized price; slow line = the same smoother applied again to the fast line, using the same smoothing parameters
+Long: On the higher timeframe’s bar still forming, fast line > slow line AND fast line on the previous bar ≤ slow line on the previous bar
+Short: On the higher timeframe’s bar still forming, fast line ≤ slow line AND fast line on the previous bar > slow line on the previous bar

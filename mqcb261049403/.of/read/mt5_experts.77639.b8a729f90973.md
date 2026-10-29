@@ -1,0 +1,7 @@
+Calculation: Confirmed swing high/low = a chart-timeframe bar whose high/low is at least as high/low as the preceding and following N completed chart-timeframe bars; track the latest confirmed, unused level.
+Calculation: Order-block high/low = the maximum/minimum of the sweep bar’s open and close.
+Calculation: Stop = for a long, the sweep low minus an ATR buffer; for a short, the sweep high plus an ATR buffer. Target = entry price plus/minus the reward multiple times the absolute distance from entry to stop, upward for long and downward for short.
+Long: A completed chart-timeframe bar sweeps the latest unused confirmed swing low (low < swing low − minimum-sweep-ATR × ATR and close > swing low) AND the higher-timeframe close is above its EMA (use the higher-timeframe bar still forming) AND, within the next N chart-timeframe bars, a completed bar closes above the sweep bar’s order-block high and its high-low range is at least minimum-confirmation-ATR × ATR AND entry price − stop ≥ minimum-stop-ATR × ATR.
+Short: A completed chart-timeframe bar sweeps the latest unused confirmed swing high (high > swing high + minimum-sweep-ATR × ATR and close < swing high) AND the higher-timeframe close is below its EMA (use the higher-timeframe bar still forming) AND, within the next N chart-timeframe bars, a completed bar closes below the sweep bar’s order-block low and its high-low range is at least minimum-confirmation-ATR × ATR AND stop − entry price ≥ minimum-stop-ATR × ATR.
+Exit: long, price ≤ stop OR price ≥ target
+Exit: short, price ≥ stop OR price ≤ target

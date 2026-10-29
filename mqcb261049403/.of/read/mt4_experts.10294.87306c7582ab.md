@@ -1,0 +1,4 @@
+Long: EMA(3, median price) > EMA(34, median price) AND Parabolic SAR < current bar low AND Bulls Power(13, close) > 0 AND current Bulls Power(13, close) < previous bar Bulls Power(13, close) AND hour(datetime) > 8 AND hour(datetime) < 17 AND total open orders < 5
+Short: EMA(3, median price) < EMA(34, median price) AND Parabolic SAR > current bar high AND Bears Power(13, close) < 0 AND current Bears Power(13, close) > previous bar Bears Power(13, close) AND hour(datetime) > 8 AND hour(datetime) < 17 AND total open orders < 5
+Exit: long, current bar low <= entry price - stop-loss distance OR current bar high >= entry price + take-profit distance
+Exit: short, current bar high >= entry price + stop-loss distance OR current bar low <= entry price - take-profit distance

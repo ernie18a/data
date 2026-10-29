@@ -1,0 +1,4 @@
+Calculation: Multi-bar VWAP = sum(((high + low + close) / 3) × volume) / sum(volume) over the lookback bars of the selected timeframe; that timeframe may be higher or lower than the chart timeframe, and the calculation includes its still-forming bar.
+Calculation: Smoothed Heiken Ashi close = smooth((open + high + low + close) / 4); smoothed Heiken Ashi open = smooth((previous Heiken Ashi open + previous Heiken Ashi close) / 2), where smooth applies one EMA step using the configured smoothing period.
+Long: close > Multi-bar VWAP OR smoothed Heiken Ashi close > smoothed Heiken Ashi open
+Short: close < Multi-bar VWAP OR smoothed Heiken Ashi close <= smoothed Heiken Ashi open

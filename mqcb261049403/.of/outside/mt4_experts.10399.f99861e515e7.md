@@ -1,0 +1,1 @@
+Track account equity against a baseline captured when the strategy starts. When equity rises or falls by the configured percentage from that baseline, close this strategy’s open positions and cancel its pending orders, then reset the baseline to current equity. If configured, halt further trading after either trigger.

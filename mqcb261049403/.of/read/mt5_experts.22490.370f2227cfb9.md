@@ -1,0 +1,6 @@
+Calculation: Fast ColorMETRO line = RSI-based trailing line using the shorter step: for each bar, set candidate bounds to RSI ± 2 × step; switch trend up when RSI exceeds the prior upper bound and down when RSI falls below the prior lower bound; in an uptrend, raise the lower bound to at least its prior value and output lower bound + step; in a downtrend, lower the upper bound to at most its prior value and output upper bound − step.
+Calculation: Slow ColorMETRO line = the same RSI-based trailing-line calculation using a longer step than the fast line.
+Long: Fast line on the signal bar > slow line on the signal bar AND fast line on the preceding bar <= slow line on the preceding bar
+Short: Fast line on the signal bar < slow line on the signal bar AND fast line on the preceding bar >= slow line on the preceding bar
+Exit: Long, slow line on the signal bar > fast line on the signal bar OR low <= entry price − stop distance OR high >= entry price + take-profit distance
+Exit: Short, slow line on the signal bar < fast line on the signal bar OR high >= entry price + stop distance OR low <= entry price − take-profit distance

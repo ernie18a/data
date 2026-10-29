@@ -1,0 +1,2 @@
+Long: At the first chart bar of any of the four RVI timeframes (each timeframe is the chart timeframe or higher, using its still-forming bar), RVI main line > its signal line; all four use the same lookback
+Short: At the first chart bar of any of the four RVI timeframes (each timeframe is the chart timeframe or higher, using its still-forming bar), RVI main line < its signal line; all four use the same lookback

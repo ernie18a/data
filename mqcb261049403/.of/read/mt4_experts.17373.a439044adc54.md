@@ -1,0 +1,9 @@
+Calculation: Tick-volume filter = mean tick volume over the selected volume timeframe’s lookback bars, including its current forming bar; timeframe may be lower, equal to, or higher than the chart timeframe
+Calculation: EMA = exponential moving average of close
+Long: No open orders in the cycle AND within the allowed trading session AND (Ask < low level OR (Ask <= high level AND Bid >= low level AND mean tick volume >= minimum AND (previous completed chart bar close > open when candle-direction mode is enabled, OR fast EMA > slow EMA AND mid EMA < fast EMA when EMA mode is enabled)))
+Short: No open orders in the cycle AND within the allowed trading session AND (Bid > high level OR (Ask <= high level AND Bid >= low level AND mean tick volume >= minimum AND (previous completed chart bar close < open when candle-direction mode is enabled, OR fast EMA < slow EMA AND mid EMA > fast EMA when EMA mode is enabled)))
+Long: Most recent open order is short AND Ask minus its entry price >= the grid distance for the current grid level
+Short: Most recent open order is long AND its entry price minus Bid >= the grid distance for the current grid level
+Exit: Long, Bid >= entry price + take-profit distance OR Bid <= entry price - stop-loss distance
+Exit: Short, Ask <= entry price - take-profit distance OR Ask >= entry price + stop-loss distance
+Exit: Long or short basket, aggregate open profit in points exceeds trailing distance minus trailing step and either is at least trailing step below its highest recorded value or it has fallen by at least trailing step from that value after the threshold was reached

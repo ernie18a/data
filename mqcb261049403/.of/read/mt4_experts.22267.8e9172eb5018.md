@@ -1,0 +1,5 @@
+Calculation: Fibonacci retracement levels = retracement levels between the high and low of the last completed higher-timeframe bar
+Long: For any Fibonacci retracement level, (close of chart bar 2 > level OR close of chart bar 3 > level OR close of chart bar 4 > level) AND low of chart bar 1 <= level; AND low of chart bar 2 < high of chart bar 1; AND absolute distance between current price and close of chart bar 2 > the retracement trigger distance; AND short-period LWMA of typical price > long-period LWMA of typical price
+Short: For any Fibonacci retracement level, (close of chart bar 2 < level OR close of chart bar 3 < level OR close of chart bar 4 < level) AND high of chart bar 1 >= level, except at the lowest level use close of chart bar 1 >= level; AND low of chart bar 1 < high of chart bar 2; AND absolute distance between current price and close of chart bar 2 > the retracement trigger distance; AND short-period LWMA of typical price < long-period LWMA of typical price
+Exit: Long, monthly MACD main line < monthly MACD signal line
+Exit: Short, monthly MACD main line > monthly MACD signal line

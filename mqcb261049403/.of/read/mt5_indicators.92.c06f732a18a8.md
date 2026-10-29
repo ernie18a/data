@@ -1,0 +1,4 @@
+Calculation: LSMA = for an N-bar window of closes ordered oldest to newest, sum each close[i] × 6 × (i − (N+1)/3), for i=1…N, divided by N×(N+1); uses the configured indicator timeframe (same as, higher, or lower than the chart timeframe) and its current, still-forming bar.
+Calculation: CCI run count = 1 when current CCI × previous CCI < 0; otherwise previous run count + 1. Uses the slow CCI on the configured indicator timeframe (same as, higher, or lower than the chart timeframe), including its current, still-forming bar.
+Long: (slow CCI > 0 AND CCI run count ≥ signal threshold) OR close > LSMA
+Short: (slow CCI < 0 AND CCI run count ≥ signal threshold) OR close < LSMA

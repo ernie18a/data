@@ -1,0 +1,2 @@
+Long: For each of the ten DeMarker calculations, DeMarker on the last completed bar of its configured timeframe (which may be lower, equal to, or higher than the chart timeframe) > its upper threshold; the periods range from shorter to longer lookbacks.
+Short: For each of the ten DeMarker calculations, DeMarker on the last completed bar of its configured timeframe (which may be lower, equal to, or higher than the chart timeframe) < its lower threshold; the periods range from shorter to longer lookbacks.

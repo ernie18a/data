@@ -1,0 +1,7 @@
+Calculation: Fast TRIX = (current fast-smoothed applied price / previous fast-smoothed applied price) - 1; use a shorter lookback than Slow TRIX and completed bars on an indicator timeframe that may be higher or lower than the chart timeframe
+Calculation: Slow TRIX = (current slow-smoothed applied price / previous slow-smoothed applied price) - 1; use a longer lookback than Fast TRIX and completed bars on an indicator timeframe that may be higher or lower than the chart timeframe
+Calculation: T3_TRIX histogram = Fast TRIX
+Long: Previous completed histogram <= 0 AND latest completed histogram > 0 OR histogram on the oldest of three completed bars > histogram on the middle bar AND histogram on the middle bar < histogram on the latest bar OR Fast TRIX on the previous completed bar <= Slow TRIX on the previous completed bar AND latest Fast TRIX > latest Slow TRIX
+Short: Previous completed histogram >= 0 AND latest completed histogram < 0 OR histogram on the oldest of three completed bars < histogram on the middle bar AND histogram on the middle bar > histogram on the latest bar OR Fast TRIX on the previous completed bar >= Slow TRIX on the previous completed bar AND latest Fast TRIX < latest Slow TRIX
+Exit: long, latest completed histogram < 0 OR latest completed histogram < previous completed histogram OR latest Fast TRIX <= latest Slow TRIX
+Exit: short, latest completed histogram > 0 OR latest completed histogram > previous completed histogram OR latest Fast TRIX >= latest Slow TRIX

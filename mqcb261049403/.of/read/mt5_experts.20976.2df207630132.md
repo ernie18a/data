@@ -1,0 +1,5 @@
+Calculation: AbsolutelyNoLag LWMA = a line formed by applying a linearly weighted moving average to the selected applied price, then applying a second linearly weighted moving average to that result using the same lookback
+Long: AbsolutelyNoLag LWMA is rising on the last completed bar of the higher trend timeframe AND AbsolutelyNoLag LWMA is rising on the selected completed bar of the lower entry timeframe AND AbsolutelyNoLag LWMA was not rising on the preceding completed entry-timeframe bar
+Short: AbsolutelyNoLag LWMA is falling on the last completed bar of the higher trend timeframe AND AbsolutelyNoLag LWMA is falling on the selected completed bar of the lower entry timeframe AND AbsolutelyNoLag LWMA was not falling on the preceding completed entry-timeframe bar
+Exit: long, AbsolutelyNoLag LWMA is falling on the last completed bar of the higher trend timeframe OR AbsolutelyNoLag LWMA is falling on the selected completed entry-timeframe bar
+Exit: short, AbsolutelyNoLag LWMA is rising on the last completed bar of the higher trend timeframe OR AbsolutelyNoLag LWMA is rising on the selected completed entry-timeframe bar

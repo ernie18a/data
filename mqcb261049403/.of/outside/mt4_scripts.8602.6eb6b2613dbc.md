@@ -1,0 +1,1 @@
+On execution, inspect every open position across all instruments. Close every market position in the all-orders variant; in the profit variant, close positions whose current profit is nonnegative; in the loss variant, close positions whose current profit is nonpositive. Make no new long or short decisions.

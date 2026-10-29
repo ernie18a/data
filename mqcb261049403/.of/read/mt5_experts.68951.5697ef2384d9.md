@@ -1,0 +1,6 @@
+Calculation: Active H4 swing high = the high of a completed H4 bar that is at least as high as every bar in the same number of H4 bars before and after it; confirm on each new H4 bar, comparing against the newer bars including the H4 bar still forming. Use the same lookback on both sides. Remove the level when an M15 completed bar closes above it or sweeps it.
+Calculation: Active H4 swing low = the low of a completed H4 bar that is at most as low as every bar in the same number of H4 bars before and after it; confirm on each new H4 bar, comparing against the newer bars including the H4 bar still forming. Use the same lookback on both sides. Remove the level when an M15 completed bar closes below it or sweeps it.
+Long: M15 completed bar low < an active H4 swing low AND M15 completed bar close > that swing low
+Short: M15 completed bar high > an active H4 swing high AND M15 completed bar close < that swing high
+Exit: long, low <= entry price - stop distance OR high >= entry price + stop distance * reward-risk ratio
+Exit: short, high >= entry price + stop distance OR low <= entry price - stop distance * reward-risk ratio

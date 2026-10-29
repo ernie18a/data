@@ -1,0 +1,7 @@
+Calculation: RSI percentage change = (current RSI − RSI from the lookback bars ago) / RSI from the lookback bars ago × 100
+Long: On each monitored timeframe (higher or lower than the chart timeframe where applicable), current RSI percentage change > rising threshold, using the still-forming bar
+Short: On each monitored timeframe (higher or lower than the chart timeframe where applicable), current RSI percentage change < negative falling threshold, using the still-forming bar
+Long: On a monitored timeframe, current forming bar low <= lowest low of the previous completed lookback bars × (1 + price tolerance) AND current RSI > RSI at that previous low + divergence threshold AND RSI at that previous low <= oversold level
+Short: On a monitored timeframe, current forming bar high >= highest high of the previous completed lookback bars × (1 − price tolerance) AND current RSI < RSI at that previous high − divergence threshold AND RSI at that previous high >= overbought level
+Long: Count of monitored timeframes (higher or lower than the chart timeframe where applicable), each using its still-forming bar, with RSI <= oversold level >= strong-bias threshold
+Short: Count of monitored timeframes (higher or lower than the chart timeframe where applicable), each using its still-forming bar, with RSI >= overbought level >= strong-bias threshold

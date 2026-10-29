@@ -1,0 +1,4 @@
+Calculation: Up-close volume per profile row = sum of volume for bars whose close is at least their open, assigning each bar's entire volume to the equal-price row containing its typical price (high + low + close) / 3
+Calculation: Down-close volume per profile row = sum of volume for bars whose close is below their open, assigning each bar's entire volume to the equal-price row containing its typical price (high + low + close) / 3
+Long: For any profile row, up-close volume per profile row >= down-close volume per profile row
+Short: For any profile row, down-close volume per profile row > up-close volume per profile row

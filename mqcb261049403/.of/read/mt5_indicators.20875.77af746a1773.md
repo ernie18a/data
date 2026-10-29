@@ -1,0 +1,6 @@
+Calculation: BrainTrend2 trend state = bullish or bearish state; calculate true range as max(high − low, |high − previous close|, |low − previous close|), then a weighted ATR over the lookback with weights descending from longest to shortest. Track the running low while bullish and running high while bearish. Switch bullish to bearish when low falls below the running low minus 0.7 × ATR; switch bearish to bullish when high rises above the running high plus 0.7 × ATR. While bullish, raise the running low to each higher low; while bearish, lower the running high to each lower high.
+Calculation: BrainTrend2 candle color = bullish-state color when trend state is bullish; bearish-state color when trend state is bearish; otherwise neutral.
+Long: Previous BrainTrend2 candle color is bearish or neutral AND current BrainTrend2 candle color is bullish
+Short: Previous BrainTrend2 candle color is bullish or neutral AND current BrainTrend2 candle color is bearish
+Long: BrainTrend2 trend state on a higher-timeframe bar still forming is bullish
+Short: BrainTrend2 trend state on a higher-timeframe bar still forming is bearish

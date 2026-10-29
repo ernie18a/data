@@ -1,0 +1,5 @@
+Calculation: Fractal direction = +1 when a lower fractal is present and an upper fractal is absent at the selected completed bar; −1 when an upper fractal is present and a lower fractal is absent; otherwise 0. Use equal bar shifts for chart-timeframe and higher-timeframe fractal checks.
+Long: flat for this strategy AND chart-timeframe fractal direction > 0 AND higher-timeframe fractal direction > 0 AND RSI of open prices on the higher-timeframe still-forming bar < 50 − threshold
+Short: flat for this strategy AND chart-timeframe fractal direction < 0 AND higher-timeframe fractal direction < 0 AND RSI of open prices on the higher-timeframe still-forming bar > 50 + threshold
+Exit: long, low ≤ entry price − stop-loss distance OR high ≥ entry price + take-profit distance OR position age ≥ expiry duration OR (reverse-signal closing enabled AND short condition)
+Exit: short, high ≥ entry price + stop-loss distance OR low ≤ entry price − take-profit distance OR position age ≥ expiry duration OR (reverse-signal closing enabled AND long condition)

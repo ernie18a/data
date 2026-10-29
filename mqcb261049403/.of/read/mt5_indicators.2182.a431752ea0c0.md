@@ -1,0 +1,3 @@
+Calculation: Smoothed stochastic main and signal lines = apply the same configurable smoothing method and lookback to the standard slow stochastic %K and %D lines, respectively.
+Long: On the first chart bar mapped to each of the seven timeframes (each equal to or higher than the chart timeframe), smoothed stochastic main line > smoothed stochastic signal line on that timeframe’s bar still forming
+Short: On the first chart bar mapped to each of the seven timeframes (each equal to or higher than the chart timeframe), smoothed stochastic main line < smoothed stochastic signal line on that timeframe’s bar still forming

@@ -1,0 +1,4 @@
+Calculation: Extrapolated +DI = 2 × +DI with the shorter lookback − +DI with the longer lookback
+Calculation: Extrapolated −DI = 2 × −DI with the shorter lookback − −DI with the longer lookback
+Long: Extrapolated +DI on the current forming chart-timeframe bar > Extrapolated −DI on that bar AND Extrapolated +DI on the preceding completed chart-timeframe bar < Extrapolated −DI on that bar, OR the same crossover on the current forming bar and preceding completed bar of the selected higher timeframe
+Short: Extrapolated +DI on the current forming chart-timeframe bar < Extrapolated −DI on that bar AND Extrapolated +DI on the preceding completed chart-timeframe bar > Extrapolated −DI on that bar, OR the same crossover on the current forming bar and preceding completed bar of the selected higher timeframe

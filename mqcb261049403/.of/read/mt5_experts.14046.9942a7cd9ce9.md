@@ -1,0 +1,5 @@
+Calculation: LSMA angle color = classify the normalized change between the least-squares moving average at the shorter shift and at the longer shift: 4 if angle > threshold and angle > its value on the immediately older bar; 3 if angle > threshold and angle < its older value; 0 if angle < -threshold and angle < its older value; 1 if angle < -threshold and angle > its older value; otherwise 2. The least-squares moving average for period N is 6/[N(N+1)] times the sum, for i=N down to 1, of (i - (N+1)/3) times the close from N-i bars before the evaluated shift. The angle is the LSMA difference between the shorter and longer shifts, multiplied by a fixed price-scale factor and divided by 2. Use completed bars on the configured indicator timeframe, which is lower than the chart timeframe.
+Long: LSMA angle color on the selected completed bar = 4 AND LSMA angle color on the immediately older completed bar < 4
+Short: LSMA angle color on the selected completed bar = 0 AND LSMA angle color on the immediately older completed bar > 0
+Exit: long, LSMA angle color on the selected completed bar < 2
+Exit: short, LSMA angle color on the selected completed bar > 1

@@ -1,0 +1,5 @@
+Calculation: Fisher series = for each chart bar, let p be the configured applied price and normalize it as r = (p − lowest low over the FLength-bar lookback) / (highest high over that lookback − lowest low); if the range is zero, add one minimum price tick to the highest high. Set v = (r − 0.5) + 0.67 × previous v, then f = 0.5 × ln((1 + v) / (1 − v)) + 0.5 × previous f; if the ratio is below 0.0000001, use 1. The initial previous v and f are zero.
+Calculation: Volume-weighted Fisher = 100 × the configured moving average of Fisher series × bar volume.
+Calculation: Smoothed volume = the configured moving average of bar volume, using the same method and settings as for Volume-weighted Fisher.
+Long: Volume-weighted Fisher > configured upper level × Smoothed volume AND Volume-weighted Fisher >= its value on the previous chart bar
+Short: Volume-weighted Fisher < configured lower level × Smoothed volume AND Volume-weighted Fisher <= its value on the previous chart bar

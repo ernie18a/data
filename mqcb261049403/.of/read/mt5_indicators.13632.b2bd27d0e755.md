@@ -1,0 +1,4 @@
+Calculation: Fisher Transform = Smooth the current bar’s midpoint (high + low) / 2 within its lookback high–low range: normalized value = 0.5 × ((midpoint − lowest midpoint) / (highest midpoint − lowest midpoint) − 0.5) + 0.5 × prior normalized value; set to 0 if the range is zero, then clamp to [−0.9999, 0.9999]. Fisher value = 0.25 × ln((1 + normalized value) / (1 − normalized value)) + 0.5 × prior Fisher value.
+Calculation: Trigger = prior bar’s Fisher value.
+Long: Higher-timeframe Fisher Transform > higher-timeframe Trigger
+Short: Higher-timeframe Fisher Transform < higher-timeframe Trigger

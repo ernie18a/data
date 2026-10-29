@@ -1,0 +1,1 @@
+The strategy attempts to compare the 14-period minus directional indicator, calculated from high prices, with an uninitialized value. It sells when the indicator is lower and buys when it is higher; equality produces no trade. Because the comparison value is never set, the entry decisions are undefined and cannot be reproduced from a valid rule.

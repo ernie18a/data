@@ -1,0 +1,2 @@
+Long: close > last completed higher-timeframe bar close AND close > last completed lower-timeframe bar close
+Short: close < last completed higher-timeframe bar close AND close < last completed lower-timeframe bar close

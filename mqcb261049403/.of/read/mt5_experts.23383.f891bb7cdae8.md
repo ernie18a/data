@@ -1,0 +1,4 @@
+Long: fast moving average on its configured timeframe > medium-term moving average on its configured timeframe AND fast moving average > long-term moving average on its configured timeframe AND fast Parabolic SAR on its configured timeframe < previous completed chart-bar close AND medium-term Parabolic SAR on its configured timeframe < previous completed chart-bar close
+Short: fast moving average on its configured timeframe < medium-term moving average on its configured timeframe AND fast moving average < long-term moving average on its configured timeframe AND fast Parabolic SAR on its configured timeframe > previous completed chart-bar close AND medium-term Parabolic SAR on its configured timeframe > previous completed chart-bar close
+Exit: long, short condition is true OR price reaches the long position's stop-loss or take-profit
+Exit: short, long condition is true OR price reaches the short position's stop-loss or take-profit

@@ -1,0 +1,4 @@
+Calculation: Latest confirmed fractal high = the most recent completed bar high that is at least as high as the highs of the two bars before and the two bars after it; use completed bars on each timeframe represented in the fractal-trend panel, whether higher or lower than the chart timeframe.
+Calculation: Latest confirmed fractal low = the most recent completed bar low that is at most as low as the lows of the two bars before and the two bars after it; use completed bars on each timeframe represented in the fractal-trend panel, whether higher or lower than the chart timeframe.
+Long: close > latest confirmed fractal high
+Short: close < latest confirmed fractal low

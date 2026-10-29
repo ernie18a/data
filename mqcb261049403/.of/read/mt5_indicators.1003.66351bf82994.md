@@ -1,0 +1,5 @@
+Calculation: XRSX = 100 × smooth(price change) / smooth(absolute price change), clipped to [-100, 100]; price is the selected applied price from the bar's open, high, low, and close.
+Calculation: Signal line = XRSX smoothed with a shorter lookback than the XRSX smoothing.
+Calculation: Higher-timeframe XRSX and signal line = the same calculations on aggregated bars of a higher timeframe, using the bar still forming.
+Long: (XRSX > 0 AND XRSX > previous XRSX) OR XRSX > previous signal line OR (higher-timeframe XRSX > 0 AND higher-timeframe XRSX > its previous bar) OR higher-timeframe XRSX > higher-timeframe signal line
+Short: (XRSX < 0 AND XRSX < previous XRSX) OR XRSX < previous signal line OR (higher-timeframe XRSX < 0 AND higher-timeframe XRSX < its previous bar) OR higher-timeframe XRSX < higher-timeframe signal line

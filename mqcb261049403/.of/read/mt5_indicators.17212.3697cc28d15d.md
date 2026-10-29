@@ -1,0 +1,5 @@
+Calculation: Smoothed price = the configured OHLC-derived price passed through a configured moving average on the chart timeframe or a selected higher timeframe; on a higher timeframe, use the bar still forming.
+Calculation: Sentiment zone oscillator = a configured moving average of +1 when smoothed price rises, −1 when it falls, and 0 when unchanged.
+Calculation: Oscillator levels = configured upper and lower percentiles of recent oscillator values, or configured percentages of their recent minimum-to-maximum range; midpoint = average of upper and lower levels.
+Long: oscillator > upper level when color mode is levels OR oscillator > midpoint when color mode is middle OR oscillator > its prior value when color mode is slope
+Short: oscillator < lower level when color mode is levels OR oscillator < midpoint when color mode is middle OR oscillator < its prior value when color mode is slope

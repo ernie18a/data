@@ -1,0 +1,1 @@
+At each selected higher-timeframe bar close, compare the smoothed FATL trend indicator’s color with its preceding color. When it changes to rising, open long and close any short; when it changes to falling, open short and close any long. Close any open position once its holding time exceeds the configured limit. Apply configured stop-loss and take-profit levels to new positions.

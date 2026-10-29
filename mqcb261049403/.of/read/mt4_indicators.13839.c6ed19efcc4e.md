@@ -1,0 +1,3 @@
+Calculation: MA-below-price count = number of the six simple and six exponential moving averages, with shorter and longer lookbacks, that are at or below the current close
+Long: RSI > 55 OR stochastic signal > 55 OR CCI > 50 OR MACD main line > 0 OR momentum > 100 OR MA-below-price count > 8
+Short: RSI <= 45 OR stochastic signal < 45 OR CCI <= -50 OR MACD main line < 0 OR momentum < 100 OR MA-below-price count <= 4

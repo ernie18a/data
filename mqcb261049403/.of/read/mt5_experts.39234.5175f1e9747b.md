@@ -1,0 +1,3 @@
+Calculation: MACD = shorter-period EMA of close − longer-period EMA of close
+Long: MACD[2] > MACD[3] AND MACD[2] < 0 AND MACD[1] < MACD[0] AND MACD[1] < 0 AND no short positions AND (no long positions OR entry price < lowest long entry price)
+Short: MACD[2] > MACD[3] AND MACD[2] > 0 AND MACD[1] < MACD[0] AND MACD[1] > 0 AND no long positions AND (no short positions OR entry price > highest short entry price)

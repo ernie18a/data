@@ -1,0 +1,4 @@
+Long: Flat AND current work-timeframe close > current work-timeframe moving average AND current work-timeframe Momentum > 100 AND current work-timeframe close > previous completed work-timeframe close
+Short: Flat AND current work-timeframe close < current work-timeframe moving average AND current work-timeframe Momentum < 100 AND current work-timeframe close < previous completed work-timeframe close
+Exit: Long, current work-timeframe Momentum < 100 OR low <= entry price - configured buy stop-loss distance (if enabled) OR high >= entry price + configured buy take-profit distance (if enabled)
+Exit: Short, current work-timeframe Momentum > 100 OR high >= entry price + configured sell stop-loss distance (if enabled) OR low <= entry price - configured sell take-profit distance (if enabled)

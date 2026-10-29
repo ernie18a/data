@@ -1,0 +1,3 @@
+Calculation: Schaff Trend RSI = RSI of the short-period EMA of selected OHLC price minus its long-period EMA; RSI smooths changes and absolute changes over its lookback. The short EMA period is shorter than the long EMA period. Calculate on the chart timeframe or a higher timeframe; when using a higher timeframe, use its still-forming bar.
+Long: Schaff Trend RSI > its previous value
+Short: Schaff Trend RSI < its previous value

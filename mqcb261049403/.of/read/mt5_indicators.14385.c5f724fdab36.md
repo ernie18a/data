@@ -1,0 +1,3 @@
+Calculation: Rounded moving average = Apply the configured smoothing method and lookback to the configured price derived from OHLC; use the smoothed value when it differs from its previous value or the previous rounded value by more than the configured rounding threshold, or when it moves further in the previous rounded direction; otherwise retain the previous rounded value.
+Long: Rounded moving average = previous bar's rounded moving average
+Short: Rounded moving average = previous bar's rounded moving average

@@ -1,0 +1,5 @@
+Calculation: i-CAi = On the configured indicator timeframe, apply the selected moving-average method to the selected bar-price series to get XMA; let D be the standard deviation of that series from XMA over the same lookback. Initialize I to XMA. For each bar, set K to 0 if (I_previous − XMA)^2 ≤ D^2, otherwise K = 1 − D^2/(I_previous − XMA)^2; then I = I_previous + K × (XMA − I_previous). Use completed indicator-timeframe bars; this timeframe may be higher or lower than the chart timeframe.
+Long: i-CAi on the middle completed bar < i-CAi on the latest completed bar AND i-CAi on the oldest of these three completed bars ≥ i-CAi on the middle completed bar
+Short: i-CAi on the middle completed bar > i-CAi on the latest completed bar AND i-CAi on the oldest of these three completed bars ≤ i-CAi on the middle completed bar
+Exit: long, i-CAi on the middle completed bar > i-CAi on the latest completed bar OR low ≤ entry price − stop-loss distance OR high ≥ entry price + take-profit distance
+Exit: short, i-CAi on the middle completed bar < i-CAi on the latest completed bar OR high ≥ entry price + stop-loss distance OR low ≤ entry price − take-profit distance

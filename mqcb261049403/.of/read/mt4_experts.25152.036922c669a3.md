@@ -1,0 +1,6 @@
+Long: (monthly MACD main line > 0 AND monthly MACD main line > monthly MACD signal line) OR (monthly MACD main line < 0 AND monthly MACD main line > monthly MACD signal line), using the last completed monthly bar
+Short: (monthly MACD main line > 0 AND monthly MACD main line < monthly MACD signal line) OR (monthly MACD main line < 0 AND monthly MACD main line < monthly MACD signal line), using the last completed monthly bar
+Calculation: Short-term EMA group = six exponential moving averages of typical price with progressively longer lookbacks on the chart timeframe, using the still-forming bar
+Calculation: Long-term EMA group = six exponential moving averages of typical price with progressively longer lookbacks than the short-term group on the chart timeframe, using the still-forming bar
+Exit: long, all six short-term EMAs are equal OR all six long-term EMAs are equal OR the previous chart bar's close is at or below the lower Bollinger Band on the higher timeframe, using its last completed bar
+Exit: short, all six short-term EMAs are equal OR all six long-term EMAs are equal OR the previous chart bar's close is at or below the lower Bollinger Band on the higher timeframe, using its last completed bar

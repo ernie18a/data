@@ -1,0 +1,3 @@
+Calculation: Blau stochastic histogram = 200 × (the applied price minus the lookback lowest low, smoothed successively with three smoothing stages) ÷ (the lookback highest high minus the lookback lowest low, smoothed successively with the same three stages) − 100; use the higher-timeframe bar still forming.
+Long: Current Blau stochastic histogram ≥ its value on the preceding higher-timeframe bar
+Short: Current Blau stochastic histogram < its value on the preceding higher-timeframe bar

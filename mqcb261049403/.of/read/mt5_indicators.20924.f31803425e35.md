@@ -1,0 +1,2 @@
+Long: chart bar low < previous chart bar low AND chart bar close > (chart bar high + chart bar low) / 2 OR higher-timeframe still-forming bar low < its previous bar low AND its close > (its high + its low) / 2
+Short: chart bar high > previous chart bar high AND chart bar close < (chart bar high + chart bar low) / 2 OR higher-timeframe still-forming bar high > its previous bar high AND its close < (its high + its low) / 2

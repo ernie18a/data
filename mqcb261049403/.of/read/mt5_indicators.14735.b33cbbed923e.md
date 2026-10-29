@@ -1,0 +1,3 @@
+Calculation: Step-channel CCI = (applied price − smoothed step-channel midpoint) / (0.015 × CCI lookback × mean absolute deviation of applied price from that midpoint over the lookback); the midpoint is a smoothed average of recursively updated channel high, low, and close, with channel width based on smoothed standard deviation of price around its moving average.
+Long: higher-timeframe Step-channel CCI crosses from below zero to above zero, using the higher-timeframe bar still forming
+Short: higher-timeframe Step-channel CCI crosses from above zero to below zero, using the higher-timeframe bar still forming

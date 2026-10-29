@@ -1,0 +1,6 @@
+Calculation: MACD line = fast-period EMA of close minus slow-period EMA of close, with the fast lookback shorter than the slow lookback.
+Calculation: Volatility threshold = the greater of the sensitivity floor and the volatility multiplier times the selected source smoothed by its source lookback EMA and configured front/damping EMA smoothing; the source is ATR, close standard deviation, or selected volume.
+Long: On the last completed bar of the configured indicator timeframe, MACD line > volatility threshold AND the preceding completed bar did not satisfy MACD line > volatility threshold.
+Short: On the last completed bar of the configured indicator timeframe, MACD line < -volatility threshold AND the preceding completed bar did not satisfy MACD line < -volatility threshold.
+Exit: Long, MACD line < -volatility threshold OR -volatility threshold <= MACD line <= volatility threshold OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: Short, MACD line > volatility threshold OR -volatility threshold <= MACD line <= volatility threshold OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

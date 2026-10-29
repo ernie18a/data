@@ -1,0 +1,6 @@
+Calculation: Short-lookback RSI = Relative Strength Index on the configured working timeframe; evaluate the signal bar, which may be forming or last completed, and compare it with the immediately preceding bar
+Calculation: Long-lookback RSI = Relative Strength Index on the same timeframe with a longer lookback than the short-lookback RSI
+Long: (previous short-lookback RSI > lower level AND signal-bar short-lookback RSI < lower level) OR signal-bar short-lookback RSI < lower level OR (previous short-lookback RSI < lower level AND signal-bar short-lookback RSI > lower level) OR (previous short-lookback RSI < previous long-lookback RSI AND signal-bar short-lookback RSI > signal-bar long-lookback RSI)
+Short: (previous short-lookback RSI < upper level AND signal-bar short-lookback RSI > upper level) OR signal-bar short-lookback RSI > upper level OR (previous short-lookback RSI > upper level AND signal-bar short-lookback RSI < upper level) OR (previous short-lookback RSI > previous long-lookback RSI AND signal-bar short-lookback RSI < signal-bar long-lookback RSI)
+Exit: Long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: Short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

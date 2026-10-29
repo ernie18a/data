@@ -1,0 +1,3 @@
+Calculation: ATR-adaptive EMA = recursively smooth the selected OHLC price; calculate true range as max(high, previous close) − min(low, previous close), average it over the EMA lookback, and normalize that ATR between its rolling lookback minimum and maximum. Set the smoothing factor to 2 / [1 + lookback × (1 + coefficient) / 2], where coefficient = 1 − (ATR − minimum) / (maximum − minimum), or 0.5 when minimum equals maximum. Update the EMA by adding smoothing factor × (selected price − previous EMA) to the previous EMA. Compare consecutive values on the chart timeframe or a selected higher timeframe; for a higher timeframe, use its still-forming bar.
+Long: ATR-adaptive EMA > its previous value
+Short: ATR-adaptive EMA < its previous value

@@ -1,0 +1,4 @@
+Calculation: Fast trend = sum of five price-momentum values with progressively longer lookbacks and increasing weights; the third value uses the second value’s weight.
+Calculation: Slow trend = recursively smoothed fast trend, weighting the current fast trend by 1 divided by the smoothing length and the previous slow trend by the remaining fraction.
+Long: Chart-timeframe fast trend > chart-timeframe slow trend OR higher-timeframe fast trend > higher-timeframe slow trend (using the still-forming higher-timeframe bar)
+Short: Chart-timeframe fast trend < chart-timeframe slow trend OR higher-timeframe fast trend < higher-timeframe slow trend (using the still-forming higher-timeframe bar)

@@ -1,0 +1,4 @@
+Calculation: Recursive CCI = Smooth the selected price series, then repeatedly calculate CCI on the previous series; CCI is (current value − lookback mean) / (0.015 × lookback mean absolute deviation). Compute on the chart timeframe or a higher timeframe, using its still-forming bar.
+Calculation: CCI levels = Over a lookback, floating levels are the minimum plus the configured percentage of the minimum-to-maximum range; quantile levels are the corresponding percentiles. The middle level is the range midpoint or the percentile midway between the upper and lower percentages.
+Long: CCI > upper level OR CCI > middle level OR CCI > previous CCI
+Short: CCI < lower level OR CCI < middle level OR CCI < previous CCI

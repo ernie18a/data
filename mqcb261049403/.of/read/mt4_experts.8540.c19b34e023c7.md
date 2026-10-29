@@ -1,0 +1,6 @@
+Calculation: Fast and slow EMAs = close-based EMAs on the higher timeframe’s still-forming bar; the fast EMA has a shorter lookback than the slow EMA.
+Calculation: Prior rolling high/low = highest high / lowest low over the longer lookback of completed chart-timeframe bars, excluding the current bar.
+Long: Williams %R on the current chart-timeframe bar > -80 AND Williams %R on the previous completed chart-timeframe bar < -80 AND previous Williams %R < 0 AND CCI on the current chart-timeframe bar < configured buy level AND fast EMA > slow EMA AND datetime precedes the fixed strategy cutoff.
+Short: Williams %R on the current chart-timeframe bar < -20 AND Williams %R on the previous completed chart-timeframe bar > -20 AND previous Williams %R < 0 AND CCI on the current chart-timeframe bar > configured sell level AND fast EMA < slow EMA AND datetime precedes the fixed strategy cutoff.
+Exit: Long, Bid < prior rolling low OR fast EMA < slow EMA OR Bid <= entry price minus configured stop distance OR Bid >= entry price plus configured target distance.
+Exit: Short, Ask > prior rolling high OR fast EMA > slow EMA OR Ask >= entry price plus configured stop distance OR Ask <= entry price minus configured target distance.

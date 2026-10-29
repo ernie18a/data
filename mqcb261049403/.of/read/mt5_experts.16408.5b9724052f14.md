@@ -1,0 +1,5 @@
+Calculation: ColorJSatl state = bullish when the rounded JMA-smoothed 65-bar SATL filter of the selected bar price rises, bearish when it falls, and otherwise retains its prior state; evaluate on the configured signal timeframe (its relation to the chart timeframe is unspecified), using completed bars.
+Long: (direct mode AND prior state is bearish AND current state is bullish) OR (inverse mode AND prior state is bullish AND current state is bearish)
+Short: (direct mode AND prior state is bullish AND current state is bearish) OR (inverse mode AND prior state is bearish AND current state is bullish)
+Exit: long, (direct mode AND prior state is bullish AND current state is bearish) OR (inverse mode AND prior state is bearish AND current state is bullish)
+Exit: short, (direct mode AND prior state is bearish AND current state is bullish) OR (inverse mode AND prior state is bullish AND current state is bearish)

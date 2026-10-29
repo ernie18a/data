@@ -1,0 +1,3 @@
+Calculation: MA oscillator = short-lookback smoothed average of selected bar price minus the longer-lookback smoothed average of that price, with an optional bar lag applied to the longer-lookback average; on a higher timeframe, use the still-forming bar.
+Long: MA oscillator > 0 AND MA oscillator > its previous bar value OR MA oscillator < 0 AND MA oscillator > its previous bar value
+Short: MA oscillator > 0 AND MA oscillator < its previous bar value OR MA oscillator < 0 AND MA oscillator < its previous bar value

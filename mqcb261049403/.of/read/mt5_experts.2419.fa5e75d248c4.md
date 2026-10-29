@@ -1,0 +1,6 @@
+Calculation: Price and Volume Trend (PVT) = cumulative sum of volume × (configured applied price − prior bar’s configured applied price) ÷ prior bar’s configured applied price; calculate on the configured indicator timeframe, which may be higher or lower than the chart timeframe, using completed bars.
+Calculation: Signal line = configured XMA smoothing of PVT on the same indicator timeframe; use completed bars.
+Long: PVT on the latest completed indicator-timeframe bar > signal line on that bar AND PVT on the preceding completed indicator-timeframe bar ≤ signal line on that bar
+Short: PVT on the latest completed indicator-timeframe bar < signal line on that bar AND PVT on the preceding completed indicator-timeframe bar ≥ signal line on that bar
+Exit: Long, PVT on the latest completed indicator-timeframe bar < signal line on that bar AND PVT on the preceding completed indicator-timeframe bar ≥ signal line on that bar
+Exit: Short, PVT on the latest completed indicator-timeframe bar > signal line on that bar AND PVT on the preceding completed indicator-timeframe bar ≤ signal line on that bar

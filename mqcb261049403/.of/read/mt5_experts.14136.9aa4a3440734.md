@@ -1,0 +1,6 @@
+Calculation: Digital filter = 24-bar weighted sum of the selected applied price.
+Calculation: Trigger line = the previous day-boundary close plus the channel distance when the digital filter is at or above that close, otherwise minus the channel distance.
+Long: Digital filter on the newer of two adjacent completed bars on the configured indicator timeframe > trigger line on that bar AND digital filter on the older bar < trigger line on that bar
+Short: Digital filter on the newer of two adjacent completed bars on the configured indicator timeframe < trigger line on that bar AND digital filter on the older bar > trigger line on that bar
+Exit: Long position, digital filter on the newer of two adjacent completed bars on the configured indicator timeframe < trigger line on that bar AND digital filter on the older bar > trigger line on that bar
+Exit: Short position, digital filter on the newer of two adjacent completed bars on the configured indicator timeframe > trigger line on that bar AND digital filter on the older bar < trigger line on that bar

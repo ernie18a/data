@@ -1,0 +1,5 @@
+Calculation: Modified moving average = weighted average of price values from 1-period moving averages, using custom cosine weights; source bars are from the configured timeframe, which may be higher or lower than the chart timeframe, and the current source bar is still forming.
+Calculation: Adaptive filter = filter multiplier × standard deviation of the absolute one-bar changes in the modified moving average over a lookback; the lookback is shorter than the lookback used to construct the modified moving average.
+Calculation: Trend state = current trend state unless the modified moving average rises or falls by more than the adaptive filter, in which case the state becomes rising or falling, respectively.
+Long: Modified moving average rises by more than the adaptive filter OR trend state changes from falling to rising AND current bar volume > 1.
+Short: Modified moving average falls by more than the adaptive filter OR trend state changes from rising to falling AND current bar volume > 1.

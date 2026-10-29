@@ -1,0 +1,7 @@
+Calculation: Moving average = linear weighted moving average of typical price (high + low + close) / 3; the short lookback is FastMA and the long lookback is SlowMA. Calculate on a higher timeframe using its still-forming bar.
+Calculation: Bollinger Bands = 20-period simple moving average with bands 2 standard deviations above and below; calculate on the chart timeframe using the last completed bar.
+Calculation: Exponential moving average = EMA of typical price; calculate on the chart timeframe using its still-forming bar. The exit compares two groups: short lookbacks 3, 5, 8, 10, 12, 15; long lookbacks 30, 35, 40, 45, 50, 60.
+Long: short-lookback moving average > long-lookback moving average AND low[2] < high[1] AND absolute(current bar close - close[2]) > CandlesToRetrace × minimum price increment
+Short: short-lookback moving average < long-lookback moving average AND low[1] < high[2] AND absolute(current bar close - close[1]) > CandlesToRetrace × minimum price increment
+Exit: long, all six short-lookback EMAs are equal OR all six long-lookback EMAs are equal OR close[1] ≤ lower Bollinger Band
+Exit: short, all six short-lookback EMAs are equal OR all six long-lookback EMAs are equal OR close[1] ≤ lower Bollinger Band

@@ -1,0 +1,5 @@
+Calculation: XRSX = 100 × clamp(smoothed price change / smoothed absolute price change, −1, 1), using the same smoothing method and lookback for both; price change is the configured applied price minus its prior-bar value.
+Calculation: Fast METRO line = (XRSX + 100) / 2 transformed into a one-sided step line: use a step threshold around the current value; switch to rising when the value exceeds the prior upper threshold and falling when it drops below the prior lower threshold; in a rising state, do not lower the lower threshold, and in a falling state, do not raise the upper threshold; output the lower threshold plus one step when rising, or the upper threshold minus one step when falling.
+Calculation: Upper band = configured smoothing of the rolling maximum of the Fast METRO line; Lower band = the same smoothing of its rolling minimum, using the same lookback and smoothing parameters.
+Long: Prior-bar Fast METRO line < prior-bar Lower band AND current Fast METRO line > current Lower band
+Short: Prior-bar Fast METRO line > prior-bar Upper band AND current Fast METRO line < current Upper band

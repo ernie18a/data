@@ -1,0 +1,4 @@
+Calculation: Chart-timeframe Schaff WPR Trend Cycle = subtract the longer-lookback Williams %R from the shorter-lookback Williams %R; normalize that difference to 0–100 over the cycle lookback and smooth by half the change from the prior value; normalize the result again over the cycle lookback to −100–100 and smooth by half the change from the prior value.
+Calculation: Selected-timeframe Schaff WPR Trend Cycle = the same calculation on bars from the selected timeframe (same as or higher than the chart timeframe), using the bar still forming.
+Long: Chart-timeframe Schaff WPR Trend Cycle > 0 OR Selected-timeframe Schaff WPR Trend Cycle > 0
+Short: Chart-timeframe Schaff WPR Trend Cycle < 0 OR Selected-timeframe Schaff WPR Trend Cycle < 0

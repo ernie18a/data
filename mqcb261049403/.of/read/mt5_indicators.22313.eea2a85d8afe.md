@@ -1,0 +1,3 @@
+Calculation: Skyscraper trend = bullish when close rises above the prior bar’s lower threshold, bearish when close falls below the prior bar’s upper threshold; otherwise retain the prior trend. The thresholds use an ATR-based step: derive the step from the midpoint of the highest and lowest ATR over a lookback, multiplied by a sensitivity factor; place raw thresholds two steps from the bar’s low and high (or close, if configured), and trail the active threshold in the trend direction.
+Long: Previous bar Skyscraper trend is bearish AND current bar Skyscraper trend is bullish
+Short: Previous bar Skyscraper trend is bullish AND current bar Skyscraper trend is bearish

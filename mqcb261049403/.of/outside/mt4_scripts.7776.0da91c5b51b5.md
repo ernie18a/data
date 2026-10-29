@@ -1,0 +1,1 @@
+When the terminal is connected and trading is allowed, open a short position on the current instrument. Size it as the configured percentage of free margin’s maximum affordable position, rounded down to the instrument’s minimum lot increment. Apply configured stop-loss and take-profit distances from the current bid when enabled.

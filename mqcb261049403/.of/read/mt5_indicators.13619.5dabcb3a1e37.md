@@ -1,0 +1,3 @@
+Calculation: ExtremLine direction = start bearish; on each bar set bullish if its high exceeds the high of the longer-lookback bar, then set bearish if its low is below the low of that bar (the bearish condition takes priority); otherwise retain the prior direction. In the higher-timeframe version, use the higher timeframe’s still-forming bar and carry its direction across chart bars.
+Long: ExtremLine direction is bullish
+Short: ExtremLine direction is bearish

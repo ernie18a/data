@@ -1,0 +1,1 @@
+Go long when the percentage price oscillator, calculated as the difference between fast and slow closing-price EMAs divided by the slow EMA, crosses above its EMA signal line. Go short when it crosses below.

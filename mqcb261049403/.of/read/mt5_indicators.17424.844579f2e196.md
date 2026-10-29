@@ -1,0 +1,4 @@
+Calculation: RSI stop bands = moving average of RSI ± deviation multiplier × standard deviation of RSI; while the trend state is bearish, the upper band cannot rise above its prior value, and while bullish, the lower band cannot fall below its prior value. If using a higher timeframe, use its still-forming bar for the current value and its last completed bar for prior values.
+Calculation: Trend state = bullish when RSI exceeds the prior upper stop band; bearish when RSI falls below the prior lower stop band; otherwise carry forward the prior state.
+Long: RSI > prior upper stop band AND prior trend state is not bullish
+Short: RSI < prior lower stop band AND prior trend state is not bearish

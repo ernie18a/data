@@ -1,0 +1,4 @@
+Calculation: Smoothed open-based bears value = apply a configurable smoother to open, subtract it from high, then apply a second configurable smoother; use the same two smoother configurations for the close-based value.
+Calculation: Bears gap = current smoothed open-based bears value minus previous bar's smoothed close-based bears value. Calculate on the chart timeframe; the higher-timeframe version uses the current forming higher-timeframe bar and carries its value forward between higher-timeframe bars.
+Long: Bears gap > 0
+Short: Bears gap < 0 OR (previous selected signal bar's Bears gap > 0 AND selected signal bar's Bears gap = 0)

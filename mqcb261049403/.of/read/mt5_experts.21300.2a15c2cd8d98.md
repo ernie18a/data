@@ -1,0 +1,10 @@
+Calculation: Moving averages = each moving average uses its separately configured timeframe (which may be higher or lower than the chart timeframe) and its still-forming bar.
+Calculation: Bollinger upper and lower bands = bands calculated on the signal timeframe, using its last completed bar.
+Calculation: ZigZag swing low/high = latest past ZigZag trough/peak on the chart timeframe.
+Calculation: Long initial stop = ZigZag swing low minus a configurable offset; short initial stop = ZigZag swing high plus a configurable offset.
+Calculation: First-position take-profit = entry price plus (for long) or minus (for short) a configurable fraction of the distance to the initial stop; the second position has no take-profit.
+Calculation: Protective stop = initial stop, moved to entry price plus (for long) or minus (for short) a configurable offset after favorable profit reaches a configurable threshold; thereafter move it to current price minus (for long) or plus (for short) a configurable trailing distance when favorable distance from the stop reaches a configurable threshold and price advances beyond the stop by that threshold plus a configurable step.
+Long: current bid >= both moving averages AND previous completed signal-timeframe close >= previous completed lower Bollinger band AND the close before that <= that same lower band AND current bid >= that lower band.
+Short: current bid <= both moving averages AND previous completed signal-timeframe close <= previous completed upper Bollinger band AND the close before that >= that same upper band AND current bid <= that upper band.
+Exit: long, current price <= protective stop OR (first position AND current price >= take-profit) OR short-entry condition.
+Exit: short, current price >= protective stop OR (first position AND current price <= take-profit) OR long-entry condition.

@@ -1,0 +1,2 @@
+Long: Any of the 10 Stochastic values on its configured timeframe, using the last completed bar, is above its upper threshold; the 10 lookbacks increase from shortest to longest.
+Short: Any of the 10 Stochastic values on its configured timeframe, using the last completed bar, is below its lower threshold; the 10 lookbacks increase from shortest to longest.

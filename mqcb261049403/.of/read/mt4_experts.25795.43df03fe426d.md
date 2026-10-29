@@ -1,0 +1,4 @@
+Long: Both GBP-leg and CHF-leg MACD values on the higher timeframe’s completed bar two bars ago are above zero, and the GBP-leg value is below the CHF-leg value; AND the GBP-leg MACD value on the higher timeframe’s most recently completed bar is above the CHF-leg value.
+Short: Both GBP-leg and CHF-leg MACD values on the higher timeframe’s completed bar two bars ago are below zero, and the GBP-leg value is above the CHF-leg value; AND the GBP-leg MACD value on the higher timeframe’s most recently completed bar is below the CHF-leg value.
+Exit: Long, bar low is at or below the configured stop-loss price OR bar high is at or above the configured take-profit price.
+Exit: Short, bar high is at or above the configured stop-loss price OR bar low is at or below the configured take-profit price.

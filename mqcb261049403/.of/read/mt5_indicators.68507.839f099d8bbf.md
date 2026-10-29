@@ -1,0 +1,4 @@
+Calculation: Adaptive SuperTrend bands = midpoint (high + low)/2 ± ATR × base multiplier × (1 + |close Z-score|/10); ratchet the upper band to the lower of its raw value and prior upper band unless prior close exceeded the prior upper band, and ratchet the lower band to the higher of its raw value and prior lower band unless prior close fell below the prior lower band. Use chart-timeframe bars.
+Calculation: Close Z-score = (current close − mean close) / standard deviation of closes over the lookback, including the current bar.
+Long: Close > upper SuperTrend band AND prior trend was bearish
+Short: Close < lower SuperTrend band AND prior trend was bullish

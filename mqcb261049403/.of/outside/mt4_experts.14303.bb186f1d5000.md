@@ -1,0 +1,1 @@
+At or after a configured local time, select orders matching any enabled scope (all orders, a specified symbol, magic number, or ticket). For selected orders, delete pending orders if enabled and close open market positions if enabled; retry failed closes on later ticks.

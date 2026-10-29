@@ -1,0 +1,4 @@
+Calculation: Fast LWMA = linear weighted moving average of typical price over a shorter lookback than the slow LWMA, on the chart timeframe, including the still-forming bar.
+Calculation: Slow LWMA = linear weighted moving average of typical price over a longer lookback than the fast LWMA, on the chart timeframe, including the still-forming bar.
+Calculation: Stochastic main line = stochastic main line using configured K, D, and slowing periods with SMA smoothing, on the chart timeframe; read from each of the last three completed bars.
+Short: Stochastic main line at shift 1 < 30 OR Stochastic main line at shift 2 < 30 OR Stochastic main line at shift 3 < 30 AND Fast LWMA < Slow LWMA AND low of the second-last completed bar < high of the third-last completed bar AND absolute difference between current bar open and previous completed close > configured retracement threshold in points

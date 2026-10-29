@@ -1,0 +1,3 @@
+Calculation: SilverTrend state = Using a configurable lookback of bars including the current bar, let H be the highest high and L the lowest low; let q = (33 − configurable risk level) / 100; upper threshold = H − (H − L) × q and lower threshold = L + (H − L) × q. State is −1 if close is below the lower threshold, +1 if close is above the upper threshold, and otherwise retains the previous bar’s state.
+Long: Previous completed bar’s SilverTrend state ≤ 0 AND current completed bar’s SilverTrend state > 0
+Short: Previous completed bar’s SilverTrend state ≥ 0 AND current completed bar’s SilverTrend state < 0

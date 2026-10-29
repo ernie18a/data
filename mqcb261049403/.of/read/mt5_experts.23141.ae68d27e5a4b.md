@@ -1,0 +1,5 @@
+Calculation: Smoothed stochastic lines = Apply the same configurable smoother separately to the stochastic main and signal lines. Calculate on the configured indicator timeframe, which may be higher or lower than the chart timeframe; compare the configured signal bar with the immediately preceding bar. The signal bar is forming only when the configured signal-bar offset is zero; otherwise it is completed.
+Long: On the configured signal bar, the main line > the signal line AND on the immediately preceding bar, the main line <= the signal line
+Short: On the configured signal bar, the main line < the signal line AND on the immediately preceding bar, the main line >= the signal line
+Exit: long, on the configured signal bar the main line < the signal line
+Exit: short, on the configured signal bar the main line > the signal line

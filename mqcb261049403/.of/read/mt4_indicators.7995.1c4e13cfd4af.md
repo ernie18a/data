@@ -1,0 +1,8 @@
+Calculation: Fisher value = 0.5 × ln((1 + smoothed normalized price) / (1 − smoothed normalized price)) + 0.5 × prior Fisher value; normalized price is the selected OHLC price’s position within the rolling high-low range, smoothed recursively with coefficients 0.66 and 0.67 and clipped to [−0.999, 0.999].
+Calculation: Up/down score for each of H1, H4, and D1 (higher-timeframe bars, using the current forming bar and prior completed bars) = 12.5 × (count of five simple moving averages with current value greater than/less than prior value + 3 if the Accelerator Oscillator meets its up/down pattern). The five moving averages use progressively longer lookbacks. The up pattern is: the current oscillator is above its prior value and either (the prior three completed values are strictly descending and the current value is negative) or (the prior two values are strictly descending and the current value is positive). The down pattern reverses these comparisons and signs.
+Long: Fisher value > positive threshold AND Fisher value < prior Fisher value AND prior Fisher value ≥ Fisher value two bars earlier
+Short: Fisher value < negative threshold AND Fisher value > prior Fisher value AND prior Fisher value ≤ Fisher value two bars earlier
+Long: H1 up score > 50 AND H4 up score > 50 AND D1 up score > 50
+Short: H1 down score > 50 AND H4 down score > 50 AND D1 down score > 50
+Exit: long, Fisher value < 0 AND prior Fisher value > 0
+Exit: short, Fisher value > 0 AND prior Fisher value < 0

@@ -1,0 +1,6 @@
+Calculation: Center of Gravity = the product of the simple moving average and linear weighted moving average of the configured applied price, using the same lookback for both, divided by price point size; calculated on the selected indicator timeframe, which may be higher or lower than the chart timeframe.
+Calculation: Signal line = a moving average of Center of Gravity using a separate smoothing lookback and configured averaging method, on the same indicator timeframe.
+Long: On the last completed indicator-timeframe bar, Center of Gravity >= Signal line AND on the immediately preceding bar, Center of Gravity < Signal line
+Short: On the last completed indicator-timeframe bar, Center of Gravity < Signal line AND on the immediately preceding bar, Center of Gravity >= Signal line
+Exit: long, Center of Gravity < Signal line on the last completed indicator-timeframe bar AND Center of Gravity >= Signal line on the immediately preceding bar
+Exit: short, Center of Gravity >= Signal line on the last completed indicator-timeframe bar AND Center of Gravity < Signal line on the immediately preceding bar

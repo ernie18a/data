@@ -1,0 +1,1 @@
+Close all open positions on the traded instrument when their combined floating loss exceeds a configured fraction of the account’s recent equity peak.

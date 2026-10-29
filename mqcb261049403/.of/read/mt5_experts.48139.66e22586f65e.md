@@ -1,0 +1,2 @@
+Long: time of day > configured start time AND time of day < configured end time AND no open position for the symbol AND open positions for the symbol < configured per-symbol limit AND count of the symbol’s closed trades today with nonzero realized profit or loss < configured daily limit
+Exit: long, time of day >= configured close time

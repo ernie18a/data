@@ -1,0 +1,5 @@
+Calculation: BrakeExp direction = Start long at the oldest bar, anchored at its low; track the highest high and lowest low since the last reversal. On each bar, set the threshold to the anchor price plus (exp(elapsed bars × scaled acceleration) − 1) × distance in price increments when long, or subtract that amount when short. Reverse from long to short when threshold > low, anchoring at the tracked highest high; reverse from short to long when threshold < high, anchoring at the tracked lowest low. Reset tracked extremes after each reversal.
+Long: On the indicator timeframe (higher than the chart timeframe), using the last completed bar, prior bar BrakeExp direction = short AND current bar BrakeExp direction = long.
+Short: On the indicator timeframe (higher than the chart timeframe), using the last completed bar, prior bar BrakeExp direction = long AND current bar BrakeExp direction = short.
+Exit: short, On the indicator timeframe (higher than the chart timeframe), using the last completed bar, BrakeExp direction = long.
+Exit: long, On the indicator timeframe (higher than the chart timeframe), using the last completed bar, BrakeExp direction = short.

@@ -1,0 +1,3 @@
+Calculation: Smoothed selected oscillator = T3-smoothed value of the selected oscillator (default RSI)
+Long: At oscillator low pivots, the latest price low is lower than the prior price low AND the latest smoothed oscillator value is higher than the prior value OR the latest price low is higher than the prior price low AND the latest smoothed oscillator value is lower than the prior value
+Short: At oscillator high pivots, the latest price high is higher than the prior price high AND the latest smoothed oscillator value is lower than the prior value OR the latest price high is lower than the prior price high AND the latest smoothed oscillator value is higher than the prior value

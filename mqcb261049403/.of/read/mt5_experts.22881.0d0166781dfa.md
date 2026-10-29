@@ -1,0 +1,5 @@
+Calculation: Fine-tuned candle open and close = On the configured indicator timeframe (whose relation to the chart timeframe is unspecified), calculate each raw open and close as weighted averages over the current and preceding lookback bars. For bar index i in a lookback of N bars, let x=i/(N−1); its normalized weight is proportional to [s1+(1−s1)x^r1][s2+(1−s2)(1−x)^r2][s3+(1−s3)|2x−1|^r3]. If the current raw bar's absolute open-close difference is at most the gap threshold, replace the weighted open with the preceding bar's weighted close. Use completed bars.
+Long: Fine-tuned candle close > fine-tuned candle open AND preceding completed fine-tuned candle close <= preceding completed fine-tuned candle open
+Short: Fine-tuned candle close < fine-tuned candle open AND preceding completed fine-tuned candle close >= preceding completed fine-tuned candle open
+Exit: long, fine-tuned candle close < fine-tuned candle open
+Exit: short, fine-tuned candle close > fine-tuned candle open

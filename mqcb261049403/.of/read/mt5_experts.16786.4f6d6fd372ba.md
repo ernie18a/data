@@ -1,0 +1,6 @@
+Calculation: COG-smoothed open = On the configured indicator timeframe, apply an SMA and a linearly weighted moving average with the same lookback to open; multiply them and apply a moving average with the configured smoothing lookback and method. Use completed bars.
+Calculation: COG-smoothed close = On the configured indicator timeframe, apply an SMA and a linearly weighted moving average with the same lookback to close; multiply them and apply a moving average with the configured smoothing lookback and method. Use completed bars.
+Long: COG-smoothed open < COG-smoothed close on the latest completed indicator-timeframe bar AND COG-smoothed open >= COG-smoothed close on the preceding completed indicator-timeframe bar
+Short: COG-smoothed open > COG-smoothed close on the latest completed indicator-timeframe bar AND COG-smoothed open <= COG-smoothed close on the preceding completed indicator-timeframe bar
+Exit: long, COG-smoothed open > COG-smoothed close on the latest completed indicator-timeframe bar AND COG-smoothed open <= COG-smoothed close on the preceding completed indicator-timeframe bar
+Exit: short, COG-smoothed open < COG-smoothed close on the latest completed indicator-timeframe bar AND COG-smoothed open >= COG-smoothed close on the preceding completed indicator-timeframe bar

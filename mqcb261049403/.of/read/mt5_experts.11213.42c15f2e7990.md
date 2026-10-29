@@ -1,0 +1,6 @@
+Calculation: Fast Hull line = smooth(2 × smooth(applied price, half the long lookback) − smooth(applied price, long lookback), square root of the long lookback), using the same selected smoothing method throughout; calculate on the configured indicator timeframe, which may be higher or lower than the chart timeframe, using completed bars.
+Calculation: Slow Hull line = smooth(Fast Hull line, square root of the long lookback), using the same selected smoothing method; calculate on the configured indicator timeframe, which may be higher or lower than the chart timeframe, using completed bars.
+Long: Previous completed Fast Hull line ≤ previous completed Slow Hull line AND latest completed Fast Hull line > latest completed Slow Hull line
+Short: Previous completed Fast Hull line ≥ previous completed Slow Hull line AND latest completed Fast Hull line < latest completed Slow Hull line
+Exit: Long, latest completed Fast Hull line < latest completed Slow Hull line
+Exit: Short, latest completed Fast Hull line > latest completed Slow Hull line

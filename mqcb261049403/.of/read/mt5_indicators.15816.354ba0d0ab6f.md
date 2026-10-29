@@ -1,0 +1,3 @@
+Calculation: FRASMA = For selected applied price p and lookback n, set range R = max(p) − min(p) over the n most recent bars. Normalize each p as x = (p − min(p))/R. Let L = sum over consecutive pairs of sqrt((xᵢ − xᵢ₋₁)² + 1/n²), and D = 1 + (ln(L) + ln(2))/ln(2(n − 1)) when L > 0, otherwise D = 0. Set speed = max(1, round(normal_speed/[2(2 − D)])); FRASMA is the mean of p over the most recent speed bars. Use the selected-timeframe FRASMA on the mapped chart bar, which may still be forming when that timeframe is higher than the chart timeframe.
+Long: FRASMA < FRASMA on the preceding chart bar
+Short: FRASMA = FRASMA on the preceding chart bar

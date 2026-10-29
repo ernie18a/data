@@ -1,0 +1,5 @@
+Calculation: Cycle Period on higher-timeframe completed bars = Let P=(high+low)/2 and S=(P+2P[-1]+2P[-2]+P[-3])/6. For the first six bars, Cycle=(P-2P[-1]+P[-2])/4; thereafter Cycle=(1-0.5α)^2(S-2S[-1]+S[-2])+2(1-α)Cycle[-1]-(1-α)^2Cycle[-2]. Let Q=(0.0962Cycle+0.5769Cycle[-2]-0.5769Cycle[-4]-0.0962Cycle[-6])×(0.5+0.08×previous instantaneous period), I=Cycle[-3], and Δ=(I/Q-I[-1]/Q[-1])/(1+I×I[-1]/(Q×Q[-1])); clamp Δ to [0.1,1.1]. Let medianΔ be the median of the latest five Δ values, DC=15 if medianΔ=0, otherwise 6.28318/medianΔ+0.5; instantaneous period=0.67×previous instantaneous period+0.33×DC; Cycle Period=0.85×previous Cycle Period+0.15×instantaneous period. Initialize Cycle Period and instantaneous period to 1.
+Long: Cycle Period[-2] < Cycle Period[-3] AND Cycle Period[-1] > Cycle Period[-2]
+Short: Cycle Period[-2] > Cycle Period[-3] AND Cycle Period[-1] < Cycle Period[-2]
+Exit: Long, Cycle Period[-2] > Cycle Period[-1] OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: Short, Cycle Period[-2] < Cycle Period[-1] OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

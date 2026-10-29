@@ -1,0 +1,6 @@
+Calculation: Smoothed candle open, high, low, and close = apply the first smoother, then the second smoother, to each corresponding OHLC series on the configured indicator timeframe, which may be higher than, lower than, or equal to the chart timeframe.
+Calculation: Gap-adjusted smoothed open = previous bar’s smoothed close when the absolute difference between the raw bar open and close is at most the gap threshold; otherwise, the current bar’s smoothed open. Use the selected indicator bar (completed if it is at least one bar back, still forming if it is the current bar) and its immediately preceding bar.
+Long: Current gap-adjusted smoothed open < current smoothed close AND previous gap-adjusted smoothed open >= previous smoothed close
+Short: Current gap-adjusted smoothed open > current smoothed close AND previous gap-adjusted smoothed open <= previous smoothed close
+Exit: Long, current gap-adjusted smoothed open > current smoothed close AND previous gap-adjusted smoothed open <= previous smoothed close
+Exit: Short, current gap-adjusted smoothed open < current smoothed close AND previous gap-adjusted smoothed open >= previous smoothed close

@@ -1,0 +1,2 @@
+Long: On a closed bar, for any completed session whose low level is active, low < that session low AND close > that session low
+Short: On a closed bar, for any completed session whose high level is active, high > that session high AND close < that session high

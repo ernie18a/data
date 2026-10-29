@@ -1,0 +1,6 @@
+Calculation: TSI-MACD = 100 × twice-smoothed momentum of the difference between a short-lookback and a long-lookback smoothing of applied price, divided by twice-smoothed absolute momentum of that difference; use the configured indicator timeframe, which may be higher or lower than the chart timeframe, and completed bars.
+Calculation: Signal line = smoothing of TSI-MACD with a shorter lookback than the second TSI-MACD smoothing; use the same configured indicator timeframe and completed bars.
+Long: On the configured indicator timeframe, TSI-MACD on the latest completed bar > signal line on that bar AND TSI-MACD on the preceding completed bar <= signal line on that bar
+Short: On the configured indicator timeframe, TSI-MACD on the latest completed bar < signal line on that bar AND TSI-MACD on the preceding completed bar >= signal line on that bar
+Exit: long, TSI-MACD < signal line on the latest completed bar of the configured indicator timeframe
+Exit: short, TSI-MACD > signal line on the latest completed bar of the configured indicator timeframe

@@ -1,0 +1,1 @@
+For each requested instrument, skip the order if its requested size is zero. If the size is positive, open a long position; if negative, open a short position. Use the absolute size as the order size and execute at the current market price.

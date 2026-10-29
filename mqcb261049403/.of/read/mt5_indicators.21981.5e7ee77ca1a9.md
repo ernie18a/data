@@ -1,0 +1,2 @@
+Long: Fast moving average (shorter lookback) on the higher timeframe’s still-forming bar > slow moving average (longer lookback) on that bar AND fast moving average on the previous, completed higher-timeframe bar < slow moving average on that bar
+Short: Fast moving average (shorter lookback) on the higher timeframe’s still-forming bar < slow moving average (longer lookback) on that bar AND fast moving average on the previous, completed higher-timeframe bar > slow moving average on that bar

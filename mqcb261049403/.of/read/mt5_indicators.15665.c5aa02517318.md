@@ -1,0 +1,3 @@
+Calculation: Trend count = If the current bar’s high exceeds the immediately preceding bar’s high, count consecutive preceding bars whose highs are below the current high, up to a configurable lookback; otherwise, if the current bar’s low is below the immediately preceding bar’s low, count consecutive preceding bars whose lows are above the current low, up to that lookback, and negate the count; otherwise zero. The low condition takes precedence if both apply. The higher-timeframe version uses the still-forming bar of a higher timeframe and carries its value across chart bars until the next higher-timeframe bar.
+Long: Trend count > 0
+Short: Trend count < 0

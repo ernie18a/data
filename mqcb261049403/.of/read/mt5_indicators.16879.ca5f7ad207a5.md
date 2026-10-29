@@ -1,0 +1,3 @@
+Calculation: Swing trend state = initialize as down; while up, update the uptrend reversal level to the highest low since the uptrend began and switch to down when the current high is below that level; while down, update the downtrend reversal level to the lowest high since the downtrend began and switch to up when the current low is above that level. Use chart-timeframe bars or bars from a higher timeframe, including the currently forming bar.
+Long: Previous swing trend state is down AND current low > current downtrend reversal level
+Short: Previous swing trend state is up AND current high < current uptrend reversal level

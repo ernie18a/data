@@ -1,0 +1,2 @@
+Long: Moving average on any displayed timeframe is greater on its current bar (still forming when that timeframe is higher than the chart timeframe; completed when lower) than on its previous bar; use the same lookback across timeframes.
+Short: Moving average on any displayed timeframe is less than or equal on its current bar (still forming when that timeframe is higher than the chart timeframe; completed when lower) to its previous bar; use the same lookback across timeframes.

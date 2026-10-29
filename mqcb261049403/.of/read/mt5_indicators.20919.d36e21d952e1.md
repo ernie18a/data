@@ -1,0 +1,2 @@
+Long: close > close N chart-timeframe bars ago AND (volume > volume N chart-timeframe bars ago OR volume < volume N chart-timeframe bars ago)
+Short: close < close N chart-timeframe bars ago AND (volume > volume N chart-timeframe bars ago OR volume < volume N chart-timeframe bars ago)

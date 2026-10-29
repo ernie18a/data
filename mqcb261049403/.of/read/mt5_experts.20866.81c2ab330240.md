@@ -1,0 +1,5 @@
+Calculation: Trend state = On each bar, calculate true range as the greatest of high − low, |high − previous close|, and |low − previous close|. Calculate a weighted ATR using the configured lookback, weighting the newest true range most and the oldest least. Maintain a bullish or bearish state and trailing extreme: in a bullish state, track the highest low and switch bearish when the current low falls below that extreme by the ATR-based reversal threshold; in a bearish state, track the highest high and switch bullish when the current high exceeds that extreme by the threshold. The indicator timeframe is configurable relative to the chart timeframe; decisions use its last completed bars.
+Long: Previous bar’s trend state is bearish AND current bar’s trend state is bullish
+Short: Current bar’s trend state is bearish AND previous bar has a defined trend state
+Exit: long, current bar’s trend state is bearish
+Exit: short, current bar’s trend state is bullish

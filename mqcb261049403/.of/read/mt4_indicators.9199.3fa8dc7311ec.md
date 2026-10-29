@@ -1,0 +1,2 @@
+Long: Current price > open of the still-forming bar on any displayed timeframe (higher, equal to, or lower than the chart timeframe)
+Short: Current price < open of the still-forming bar on any displayed timeframe (higher, equal to, or lower than the chart timeframe)

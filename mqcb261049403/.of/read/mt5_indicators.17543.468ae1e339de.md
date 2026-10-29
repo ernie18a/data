@@ -1,0 +1,3 @@
+Calculation: NRTR reversal level = Use the mean of absolute high−low ranges over a lookback, scaled by a decimal-digit adjustment, to set a trailing threshold. In an uptrend, track the highest high and raise the threshold to the greater of its prior value and the tracked high × (1 − scale); in a downtrend, track the lowest low and lower the threshold to the lesser of its prior value and the tracked low × (1 + scale). On reversal, reset the tracked extreme to the current bar’s high or low and set the threshold from that extreme using the opposite multiplier.
+Long: Previous NRTR trend is down AND current low > downtrend reversal level
+Short: Previous NRTR trend is up AND current high < uptrend reversal level

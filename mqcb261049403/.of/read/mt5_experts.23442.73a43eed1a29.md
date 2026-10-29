@@ -1,0 +1,6 @@
+Calculation: Rounded PEMA = round to configurable point precision of 8E1 − 28E2 + 56E3 − 70E4 + 56E5 − 28E6 + 8E7 − E8, where E1 through E8 are sequential EMAs of the configurable OHLC-based applied price, all using the same lookback; add any constant price offset before rounding.
+Calculation: PEMA color = rising if Rounded PEMA is greater than its prior value, falling if less, otherwise carry forward the prior color.
+Long: On the lower indicator timeframe’s last completed signal bar, PEMA color is rising AND the preceding completed bar’s PEMA color is not rising.
+Short: On the lower indicator timeframe’s last completed signal bar, PEMA color is falling AND the preceding completed bar’s PEMA color is not falling.
+Exit: Long, PEMA color on the lower indicator timeframe’s last completed signal bar is falling OR elapsed time since entry exceeds the configured holding duration.
+Exit: Short, PEMA color on the lower indicator timeframe’s last completed signal bar is rising OR elapsed time since entry exceeds the configured holding duration.

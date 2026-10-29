@@ -1,0 +1,7 @@
+Long: MACD main line > its previous value AND MACD signal line > its previous value AND MACD signal line < MACD main line − trigger threshold AND intermediate moving average > its previous value AND fast moving average > its previous value AND intermediate moving average > slow moving average AND fast moving average > intermediate moving average
+Short: MACD main line < its previous value AND MACD signal line < its previous value AND MACD signal line > MACD main line + trigger threshold AND intermediate moving average < its previous value AND fast moving average < its previous value AND intermediate moving average < slow moving average AND fast moving average < intermediate moving average
+Calculation: Fast, intermediate, and slow moving averages = moving averages of close, with progressively longer lookbacks
+Calculation: Stop-loss ATR = ATR on its configured timeframe, using the current forming bar; the timeframe may be the chart timeframe, higher, or lower
+Calculation: Take-profit ATR = ATR on its configured timeframe, using the current forming bar; the timeframe may be the chart timeframe, higher, or lower
+Exit: Long, fast moving average < intermediate moving average OR low ≤ entry price − stop-loss ATR OR high ≥ entry price + take-profit ATR
+Exit: Short, fast moving average > intermediate moving average OR high ≥ entry price + stop-loss ATR OR low ≤ entry price − take-profit ATR

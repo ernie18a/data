@@ -1,0 +1,5 @@
+Calculation: Chaikin volatility stochastic = 100 × a linearly weighted moving average of the stochastic normalization of a smoothed high-minus-low range; normalize each bar’s smoothed range against its lowest and highest values over a lookback including that bar, using 0 when the highest equals the lowest. Compute on the configured signal timeframe, which may be higher, lower, or equal to the chart timeframe, using completed bars.
+Long: Chaikin volatility stochastic on the latest completed signal bar > its value on the preceding completed signal bar AND its value on the preceding completed signal bar < its value two completed signal bars earlier
+Short: Chaikin volatility stochastic on the latest completed signal bar < its value on the preceding completed signal bar AND its value on the preceding completed signal bar > its value two completed signal bars earlier
+Exit: short, Chaikin volatility stochastic on the latest completed signal bar > its value on the preceding completed signal bar
+Exit: long, Chaikin volatility stochastic on the latest completed signal bar < its value on the preceding completed signal bar

@@ -1,0 +1,8 @@
+Calculation: Oscillator = Noise-suppressed stochastic: for each of the slowing bars, find the highest high and lowest low over the K lookback (or use closes for both extrema); sum the closes, then calculate 100 × (sum of closes − sum of lows) / (sum of highs − sum of lows), expanding the summed range by the sensitivity when it is smaller than that threshold. Uses the selected indicator timeframe, which may be higher or lower than the chart timeframe; use completed bars.
+Calculation: Signal line = simple or exponential moving average of the oscillator, using the D lookback. Uses the selected indicator timeframe; use completed bars.
+Calculation: Oscillator color code = 1 when oscillator is above 50 and rising; 2 when above 50 and falling; 3 when below 50 and falling; 4 when below 50 and rising; otherwise 0. Uses completed bars on the selected indicator timeframe.
+Calculation: Signal color code = 1 when oscillator is above the signal line; 2 when below it; otherwise 0. Uses completed bars on the selected indicator timeframe.
+Long: Oscillator was at or below 50 and is now above 50 OR oscillator color code changed from a value above 1 to 1, from a value above 2 to 2, or from 3 to 4 OR signal line was falling and is now rising OR signal color code was 1 and is now nonzero OR signal line was at or below 50 and is now above 50
+Short: Oscillator was at or above 50 and is now below 50 OR oscillator color code changed from 4 to a nonzero value below 4, from 3 to a nonzero value below 3, or from 2 to a value at or below 1 OR signal line was rising and is now falling OR signal color code was 2 and is now nonzero OR signal line was at or above 50 and is now below 50
+Exit: short, any long condition
+Exit: long, any short condition

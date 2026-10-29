@@ -1,0 +1,5 @@
+Calculation: AFIRMA = close smoothed by a normalized, windowed sinc finite-impulse-response filter, then extended by a cubic autoregressive fit to recent prices
+Long: AFIRMA on the middle completed indicator-timeframe bar < AFIRMA on the latest completed indicator-timeframe bar AND AFIRMA on the oldest of these three consecutive completed indicator-timeframe bars > AFIRMA on the middle bar
+Short: AFIRMA on the middle completed indicator-timeframe bar > AFIRMA on the latest completed indicator-timeframe bar AND AFIRMA on the oldest of these three consecutive completed indicator-timeframe bars < AFIRMA on the middle bar
+Exit: long, AFIRMA on the middle completed indicator-timeframe bar > AFIRMA on the latest completed indicator-timeframe bar
+Exit: short, AFIRMA on the middle completed indicator-timeframe bar < AFIRMA on the latest completed indicator-timeframe bar

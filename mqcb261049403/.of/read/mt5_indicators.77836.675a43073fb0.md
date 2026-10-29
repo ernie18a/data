@@ -1,0 +1,3 @@
+Calculation: Session high/low = highest high/lowest low of bars within each configured session, using lower-timeframe bars; use completed bars for finished sessions and the forming bar for an active session.
+Long: low < Asian session low AND close > Asian session low during the configured sweep window after London opens AND no earlier bar in that window met this condition OR high > any configured session high
+Short: high > Asian session high AND close < Asian session high during the configured sweep window after London opens AND no earlier bar in that window met this condition OR low < any configured session low

@@ -1,0 +1,7 @@
+Calculation: Momentum = selected applied price minus the selected applied price from the momentum lookback earlier, on the configured indicator timeframe (which may be higher or lower than the chart timeframe), using completed bars
+Calculation: Main line = apply three successive configured XMA smoothings to momentum, using completed indicator-timeframe bars
+Calculation: Signal line = apply a fourth configured XMA smoothing to the main line, using completed indicator-timeframe bars
+Long: Main line on the latest completed bar > signal line on the latest completed bar AND main line on the preceding completed bar <= signal line on the preceding completed bar
+Short: Main line on the latest completed bar < signal line on the latest completed bar AND main line on the preceding completed bar >= signal line on the preceding completed bar
+Exit: Long, main line on the latest completed bar < signal line on the latest completed bar AND main line on the preceding completed bar >= signal line on the preceding completed bar OR low <= entry price - configured stop distance OR high >= entry price + configured take-profit distance
+Exit: Short, main line on the latest completed bar > signal line on the latest completed bar AND main line on the preceding completed bar <= signal line on the preceding completed bar OR high >= entry price + configured stop distance OR low <= entry price - configured take-profit distance

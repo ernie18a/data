@@ -1,0 +1,1 @@
+For a currency pair, compare the relative-strength curves of its base and quote currencies, calculated from prices of other pairs containing each currency. When the curves are close, favor a long position; when they are far apart, favor a short position. Consider support, resistance, and broader market conditions before acting.

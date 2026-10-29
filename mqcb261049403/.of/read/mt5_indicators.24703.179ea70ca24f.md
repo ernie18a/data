@@ -1,0 +1,2 @@
+Long: (RSI > overbought threshold AND previous bar RSI < overbought threshold OR RSI < oversold threshold AND previous bar RSI > oversold threshold) AND each of the configured number of latest bars has close >= open
+Short: (RSI > overbought threshold AND previous bar RSI < overbought threshold OR RSI < oversold threshold AND previous bar RSI > oversold threshold) AND each of the configured number of latest bars has close <= open AND at least one of those bars has close < open

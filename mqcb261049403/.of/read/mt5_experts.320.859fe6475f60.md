@@ -1,0 +1,5 @@
+Calculation: Average candle body = mean of |open − close| over the parameter-length sequence of completed chart-timeframe bars, starting at the specified bar and extending toward older bars.
+Long: open[2] − close[2] > average candle body starting at bar 1 AND close[1] − open[1] > average candle body starting at bar 1 AND |close[1] − close[2]| < 0.1 × average candle body starting at bar 1 AND MFI on the last completed chart-timeframe bar < 40
+Short: close[2] − open[2] > average candle body starting at bar 1 AND open[1] − close[1] > average candle body starting at bar 1 AND |close[1] − close[2]| < 0.1 × average candle body starting at bar 1 AND MFI on the last completed chart-timeframe bar > 60
+Exit: short, MFI on the last completed chart-timeframe bar > 30 AND MFI on the preceding completed chart-timeframe bar < 30 OR MFI on the last completed chart-timeframe bar > 70 AND MFI on the preceding completed chart-timeframe bar < 70
+Exit: long, MFI on the last completed chart-timeframe bar > 70 AND MFI on the preceding completed chart-timeframe bar < 70 OR MFI on the last completed chart-timeframe bar < 30 AND MFI on the preceding completed chart-timeframe bar > 30

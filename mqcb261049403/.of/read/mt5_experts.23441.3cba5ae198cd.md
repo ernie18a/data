@@ -1,0 +1,5 @@
+Calculation: Rounded PEMA = the weighted sum of eight sequential EMAs of close, all with the same lookback: 8×EMA1 − 28×EMA2 + 56×EMA3 − 70×EMA4 + 56×EMA5 − 28×EMA6 + 8×EMA7 − EMA8; round to a price increment of one point times 10^precision
+Long: On the last completed indicator-timeframe bar, rounded PEMA > rounded PEMA on the preceding bar AND the preceding bar's color was not rising
+Short: On the last completed indicator-timeframe bar, rounded PEMA < rounded PEMA on the preceding bar AND the preceding bar's color was not falling
+Exit: Long, a falling-color transition OR low ≤ entry price − stop distance OR high ≥ entry price + target distance OR elapsed time since entry > maximum holding time
+Exit: Short, a rising-color transition OR high ≥ entry price + stop distance OR low ≤ entry price − target distance OR elapsed time since entry > maximum holding time

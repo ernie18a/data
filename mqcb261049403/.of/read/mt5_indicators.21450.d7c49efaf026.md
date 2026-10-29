@@ -1,0 +1,5 @@
+Calculation: Trend-candle value for each OHLC price = (shorter-lookback selected-method moving average − longer-lookback selected-method moving average) / point size × (selected-method moving average / point size), with the same input price and smoothing method for all three averages. Use chart-timeframe bars, or bars from a selected higher timeframe; when using the higher timeframe, use its bar still forming.
+Calculation: Trend-candle open = the trend-candle value for the current bar’s open, except when the absolute difference between the current bar’s open and previous bar’s close is below the gap threshold, in which case use the previous bar’s trend-candle close.
+Calculation: Trend-candle close = the trend-candle value for the current bar’s close.
+Long: Trend-candle close >= trend-candle open
+Short: Trend-candle close < trend-candle open

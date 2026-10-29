@@ -1,0 +1,2 @@
+Long: Fast moving average on the higher-timeframe still-forming bar > upper Bollinger Band on that bar
+Short: Fast moving average on the higher-timeframe still-forming bar < lower Bollinger Band on that bar

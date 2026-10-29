@@ -1,0 +1,4 @@
+Long: weekday(datetime) = Friday AND hour(datetime) = configured entry hour AND minute(datetime) = 0 AND previous completed higher-timeframe daily bar open > close
+Short: weekday(datetime) = Friday AND hour(datetime) = configured entry hour AND minute(datetime) = 0 AND previous completed higher-timeframe daily bar open < close
+Exit: long, weekday(datetime) = Friday AND hour(datetime) = configured exit hour AND minute(datetime) = 0 AND previous completed higher-timeframe daily bar open != close
+Exit: short, weekday(datetime) = Friday AND hour(datetime) = configured exit hour AND minute(datetime) = 0 AND previous completed higher-timeframe daily bar open != close

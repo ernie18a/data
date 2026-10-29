@@ -1,0 +1,6 @@
+Calculation: Long-minus-short SMA spread = simple moving average of close over a longer lookback minus simple moving average of close over a shorter lookback; use the last completed chart-timeframe bar, with one common long lookback and ten shorter lookbacks.
+Calculation: Neural-network score = neural-network output from the ten long-minus-short SMA spreads.
+Long: weekday AND time is one of 00:00, 02:00, 04:00, 06:00, 08:00, 10:00, 12:00, 14:00, 16:00, 18:00, 20:00, or 22:00 AND no open position AND neural-network score > 0
+Short: weekday AND time is one of 00:00, 02:00, 04:00, 06:00, 08:00, 10:00, 12:00, 14:00, 16:00, 18:00, 20:00, or 22:00 AND no open position AND neural-network score < 0
+Exit: Long, market price >= entry price + profit target OR market price <= entry price - stop loss OR neural-network score < 0 at a scheduled signal evaluation time
+Exit: Short, market price <= entry price - profit target OR market price >= entry price + stop loss OR neural-network score > 0 at a scheduled signal evaluation time

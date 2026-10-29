@@ -1,0 +1,1 @@
+On hourly data, compare the MACD main-line values of EURUSD and GBPUSD at two consecutive completed bars. Enter long when EURUSD’s value was below GBPUSD’s two bars back and is above it one bar back; enter short on the inverse crossover. There are no signal-based exit rules.

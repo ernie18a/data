@@ -1,0 +1,2 @@
+Long: Accelerator Oscillator on the chart timeframe or a higher timeframe (use the still-forming bar) > its value on the previous bar
+Short: Accelerator Oscillator on the chart timeframe or a higher timeframe (use the still-forming bar) < its value on the previous bar

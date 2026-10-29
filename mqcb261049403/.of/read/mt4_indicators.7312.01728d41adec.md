@@ -1,0 +1,4 @@
+Calculation: EMA spread = shorter-lookback EMA(close) − longer-lookback EMA(close)
+Calculation: Smoothed EMA spread = EMA of EMA spread using its own lookback
+Long: On higher-timeframe bars, smoothed EMA spread crosses from <= 0 to > 0 using the higher-timeframe bar still forming; OR on chart-timeframe bars, smoothed EMA spread crosses from <= 0 to > 0 AND the most recent earlier higher-timeframe smoothed EMA spread zero-cross was from >= 0 to < 0
+Short: On higher-timeframe bars, smoothed EMA spread crosses from >= 0 to < 0 using the higher-timeframe bar still forming; OR on chart-timeframe bars, smoothed EMA spread crosses from >= 0 to < 0 AND the most recent earlier higher-timeframe smoothed EMA spread zero-cross was from <= 0 to > 0

@@ -1,0 +1,2 @@
+Long: Close > middle Bollinger band AND Close > shorter-lookback EMA AND Close > longer-lookback EMA AND Close > Parabolic SAR AND stochastic main line > stochastic signal line AND MACD main line > 0 AND RSI > 50 (indicators use the still-forming chart-timeframe bar)
+Short: Close < middle Bollinger band AND Close < shorter-lookback EMA AND Close < longer-lookback EMA AND Close < Parabolic SAR AND stochastic main line < stochastic signal line AND MACD main line < 0 AND RSI < 50 (indicators use the still-forming chart-timeframe bar)

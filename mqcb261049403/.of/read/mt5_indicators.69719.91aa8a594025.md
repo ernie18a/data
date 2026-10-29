@@ -1,0 +1,2 @@
+Long: Williams %R is above its buy threshold AND above the pivot threshold AND, for every monitored timeframe, Accumulation/Distribution on the still-forming bar is greater than its value at the longer lookback plus DeMarker and ATR on that still-forming bar
+Short: Williams %R is below its sell threshold AND below the pivot threshold AND, for every monitored timeframe, Accumulation/Distribution on the still-forming bar is less than its value at the longer lookback minus DeMarker and ATR on that still-forming bar

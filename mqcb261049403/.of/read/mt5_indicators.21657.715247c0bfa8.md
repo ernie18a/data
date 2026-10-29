@@ -1,0 +1,5 @@
+Calculation: True range = max(high − low, |high − previous close|, |low − previous close|)
+Calculation: Weighted ATR = the sum of the last N true ranges, weighted from N down to 1 for oldest to newest, multiplied by the indicator’s fixed normalization factor
+Calculation: Trend state = initialize direction as up when the prior close is below the close before it, otherwise down; initialize the extreme to the prior close. On each bar, if up and low < extreme − threshold, switch down and set extreme to high; if down and high > extreme + threshold, switch up and set extreme to low. Otherwise, while up, raise extreme to the bar low when that low is higher; while down, lower extreme to the bar high when that high is lower. Threshold = the indicator’s ATR multiplier × weighted ATR.
+Long: Trend state changes from down to up
+Short: Trend state changes from up to down

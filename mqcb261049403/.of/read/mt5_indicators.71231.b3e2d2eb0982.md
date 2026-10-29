@@ -1,0 +1,7 @@
+Calculation: Bullish score = count of these conditions on the signal bar: close > same-day cumulative VWAP; RSI > 50; MACD main line > signal line; fast EMA > slow EMA; ADX > 25 and close > fast EMA; volume > its 20-bar moving average and close > open. All calculations use the chart timeframe and the last completed bar; the moving average uses the signal bar and preceding bars.
+Calculation: Bearish score = count of these conditions on the signal bar: close <= same-day cumulative VWAP; RSI <= 50; MACD main line <= signal line; fast EMA <= slow EMA; ADX > 25 and close < fast EMA; volume > its 20-bar moving average and close < open. All calculations use the chart timeframe and the last completed bar; the moving average uses the signal bar and preceding bars.
+Calculation: Risk distance = ATR × configured ATR multiplier, using the chart timeframe and the last completed bar.
+Long: fast EMA crosses above slow EMA between the preceding and last completed chart bars AND bullish score >= configured minimum score.
+Short: fast EMA crosses below slow EMA between the preceding and last completed chart bars AND bearish score >= configured minimum score.
+Exit: long, high >= entry price + n × risk distance for any n in {1, 2, 3, 4, 5}
+Exit: short, low <= entry price - n × risk distance for any n in {1, 2, 3, 4, 5}

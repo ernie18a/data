@@ -1,0 +1,3 @@
+Calculation: volume-weighted smoothed close = rolling sum(close × volume) / rolling sum(volume) over the lookback, recursively smoothed with α = smoothing factor / (lookback + 1), seeded with the first rolling average; smoothing factor is either configured or minimum factor + (maximum factor − minimum factor) × (ATR / close)
+Long: volume-weighted smoothed close > its value on the previous bar
+Short: volume-weighted smoothed close < its value on the previous bar

@@ -1,0 +1,4 @@
+Long: SMA5 > SMA20 AND SMA20 > SMA40 AND SMA40 − SMA60 >= minimum separation AND SMA40 on the previous completed chart bar <= SMA60 on the last completed chart bar
+Short: SMA5 < SMA20 AND SMA20 < SMA40 AND SMA60 − SMA40 >= minimum separation AND SMA40 on the previous completed chart bar >= SMA60 on the last completed chart bar
+Exit: long, SMA40 <= SMA60 OR price <= entry price − stop-loss distance OR price >= entry price + take-profit distance OR price <= trailing stop after it activates above entry
+Exit: short, SMA40 >= SMA60 OR price >= entry price + stop-loss distance OR price <= entry price − take-profit distance OR price >= trailing stop after it activates below entry

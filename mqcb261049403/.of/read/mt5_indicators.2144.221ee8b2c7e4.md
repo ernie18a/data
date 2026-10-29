@@ -1,0 +1,3 @@
+Calculation: T3_TRIX = the percentage change in the fast-smoothed applied price from the prior bar: (fast-smoothed price − prior fast-smoothed price) / prior fast-smoothed price; the fast and slow smoothing lengths use the same smoothing method, with the fast length shorter than the slow length
+Long: At the start of a bar on any configured timeframe that is higher than or equal to the chart timeframe, T3_TRIX on that timeframe's still-forming bar > T3_TRIX on its prior completed bar
+Short: At the start of a bar on any configured timeframe that is higher than or equal to the chart timeframe, T3_TRIX on that timeframe's still-forming bar < T3_TRIX on its prior completed bar

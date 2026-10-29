@@ -1,0 +1,6 @@
+Calculation: NRTR = a trailing reversal line on the lower indicator timeframe: initialize it below the applied price in an uptrend or above it in a downtrend; in an uptrend, raise it to the greater of its prior value and applied price × (1 − reversal percentage), reversing down when applied price falls below it; in a downtrend, lower it to the lesser of its prior value and applied price × (1 + reversal percentage), reversing up when applied price rises above it. Use the last completed indicator-timeframe bar.
+Calculation: NRatio = 100 × [configured smoothing average of (100 × |applied price − NRTR| / applied price / reversal percentage)]^sharpness.
+Long: In entry-into-zone mode, NRatio > overbought level AND prior NRatio ≤ overbought level OR in exit-from-zone mode, NRatio > oversold level AND prior NRatio ≤ oversold level.
+Short: In entry-into-zone mode, NRatio < oversold level AND prior NRatio ≥ oversold level OR in exit-from-zone mode, NRatio < overbought level AND prior NRatio ≥ overbought level.
+Exit: long, Short condition.
+Exit: short, Long condition.

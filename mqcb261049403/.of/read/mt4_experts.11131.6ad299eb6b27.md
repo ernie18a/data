@@ -1,0 +1,11 @@
+Calculation: Stochastic K change = Stochastic K on the last completed chart bar minus Stochastic K on the preceding completed chart bar
+Long: (previous candle close − open > minimum candle size) OR (previous candle high > preceding high AND previous low > preceding low AND previous close > preceding close) OR (two-bars-ago high > three-bars-ago high AND two-bars-ago low > three-bars-ago low AND two-bars-ago close > three-bars-ago close) OR (Bollinger Band width on the last completed chart bar > minimum width) OR (fast RSI > slow RSI on the last completed chart bar) OR (volume on the last completed chart bar > volume on the preceding bar AND volume on the last completed chart bar > minimum volume) OR (MACD main line > signal line on the last completed chart bar AND MACD main line on the preceding bar < main line on the last completed bar) OR (Stochastic K change > minimum change) OR (fast moving average > slow moving average on the last completed chart bar) OR (Stochastic K > D AND K < oversold level on the last completed chart bar); AND, when enabled, the moving-average limiter requires current ask >= slow moving average on the last completed chart bar; the second moving-average limiter requires slow moving average >= fast moving average two bars ago; the stochastic limiter requires K <= D two bars ago AND K >= D on the last completed bar
+Short: Hedging enabled AND a long position exists AND total orders <= maximum orders
+Exit: long, price <= entry price − stop-loss distance
+Exit: short, price >= entry price + stop-loss distance
+Exit: long, price >= entry price + take-profit distance
+Exit: short, price <= entry price − take-profit distance
+Exit: long, Stochastic K < D on the last completed chart bar AND price < entry price
+Exit: short, Stochastic K < D on the last completed chart bar AND price > entry price
+Exit: long, Stochastic K < D on the last completed chart bar AND price > entry price
+Exit: short, Stochastic K < D on the last completed chart bar AND price < entry price

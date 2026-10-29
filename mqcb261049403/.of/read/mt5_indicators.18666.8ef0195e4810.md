@@ -1,0 +1,3 @@
+Calculation: PEMA = round(8×EMA1 − 28×EMA2 + 56×EMA3 − 70×EMA4 + 56×EMA5 − 28×EMA6 + 8×EMA7 − EMA8) to the configured price increment; EMA1 is an EMA of the configured applied price, and each subsequent EMA is an EMA of the preceding EMA, all with the same lookback.
+Long: (1 + deviation/100) × current PEMA > (1 + deviation/100) × previous PEMA
+Short: (1 + deviation/100) × current PEMA < (1 + deviation/100) × previous PEMA

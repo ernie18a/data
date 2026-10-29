@@ -1,0 +1,5 @@
+Calculation: Daily channel boundaries = the open of the first bar at the configured start hour each day, plus and minus a fixed price offset
+Long: On the configured signal timeframe (higher or lower than the chart timeframe), the latest completed bar closes above its upper channel boundary AND the preceding completed bar closes at or below its upper channel boundary
+Short: On the configured signal timeframe (higher or lower than the chart timeframe), the latest completed bar closes below its lower channel boundary AND the preceding completed bar closes at or above its lower channel boundary
+Exit: Long, on the configured signal timeframe (higher or lower than the chart timeframe), the latest completed bar closes below its lower channel boundary AND the preceding completed bar closes at or above its lower channel boundary
+Exit: Short, on the configured signal timeframe (higher or lower than the chart timeframe), the latest completed bar closes above its upper channel boundary AND the preceding completed bar closes at or below its upper channel boundary

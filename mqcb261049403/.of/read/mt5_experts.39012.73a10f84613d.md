@@ -1,0 +1,7 @@
+Calculation: Upper and lower entry bands = over the lookback bars, let H be the highest high and L the lowest low; upper = H − (33 − risk factor)% of (H − L), lower = L + (33 − risk factor)% of (H − L). Use the selected applied price for comparisons. Calculate on the chart timeframe, or on the configured higher timeframe using its still-forming bar.
+Calculation: Upper and lower exit levels = over the same lookback bars, let H be the highest high and L the lowest low; upper = H − (33 − exit factor)% of (H − L), lower = L + (33 − exit factor)% of (H − L). Use the same timeframe and bar status as the entry bands.
+Calculation: Trend state = +1 when applied price is above the upper entry band; −1 when below the lower entry band; otherwise retain the previous bar’s trend state.
+Long: Trend state = +1 AND previous trend state = −1 OR trend state = +1 AND previous trend state = +1 AND applied price is above the upper entry band AND previous applied price is at or below the previous upper entry band.
+Short: Trend state = −1 AND previous trend state = +1 OR trend state = −1 AND previous trend state = −1 AND applied price is below the lower entry band AND previous applied price is at or above the previous lower entry band.
+Exit: long, Trend state = +1 AND applied price is below the upper exit level AND previous applied price is at or above the previous upper exit level.
+Exit: short, Trend state = −1 AND applied price is above the lower exit level AND previous applied price is at or below the previous lower exit level.

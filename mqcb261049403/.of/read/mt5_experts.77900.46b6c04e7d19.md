@@ -1,0 +1,5 @@
+Calculation: Stochastic signal line = Compute %K from the current close’s position within the highest-to-lowest close range over the K lookback; apply SMMA slowing, then apply the signal-period SMMA. Seed both smoothers at 50; when the close range is zero, carry forward the prior %K.
+Long: Stochastic signal line 3 chart bars ago < signal line 2 chart bars ago AND signal line 2 chart bars ago > signal line 1 chart bar ago AND open 3 chart bars ago < upper Bollinger Band on chart bar 4 bars ago AND current bar high >= high of the last completed daily bar
+Short: Stochastic signal line 3 chart bars ago > signal line 2 chart bars ago AND signal line 2 chart bars ago < signal line 1 chart bar ago AND open 3 chart bars ago > lower Bollinger Band on chart bar 4 bars ago AND current bar low <= low of the last completed daily bar
+Exit: Long, current bar low <= entry price - stop distance OR current bar high >= entry price + target distance
+Exit: Short, current bar high >= entry price + stop distance OR current bar low <= entry price - target distance

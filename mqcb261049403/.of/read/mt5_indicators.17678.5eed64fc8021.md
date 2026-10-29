@@ -1,0 +1,3 @@
+Calculation: Smoothed Ichimoku oscillator = smooth(((Chikou Span − Senkou Span A) − (Tenkan-sen − Kijun-sen)) / minimum price increment); Tenkan-sen and Kijun-sen are the midpoints of their lookback high-low ranges, and Senkou Span A is aligned to the current bar. Use the current chart bar, or, in the higher-timeframe version, the latest higher-timeframe bar, including while it is forming.
+Long: Smoothed Ichimoku oscillator > 0
+Short: Smoothed Ichimoku oscillator < 0

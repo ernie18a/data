@@ -1,0 +1,7 @@
+Calculation: Offset trend score = offset indicator mode 2 output on the still-forming bar of each displayed timeframe; use the indicator's short-term period and offset parameters.
+Calculation: Established offset score = sum of offset indicator mode 2 and mode 5 outputs on the still-forming bar of each displayed timeframe; use the same parameters as the offset trend score.
+Calculation: Short, medium, and long simple moving averages = simple moving averages of close with progressively longer lookbacks, on the still-forming bar of each displayed timeframe.
+Calculation: MACD main line = MACD main line using progressively short, long, and signal lookbacks, on the still-forming bar of each displayed timeframe.
+Calculation: Total trend score = sum of the offset trend score, established offset score, moving-average trend score, and MACD trend score across all displayed timeframes.
+Long: Offset trend score > 0 OR established offset score > 0 OR (short simple moving average > medium simple moving average AND short simple moving average > long simple moving average) OR (MACD main line on the still-forming bar > MACD main line on the preceding bar) OR total trend score > 0.
+Short: Offset trend score < 0 OR established offset score < 0 OR (short simple moving average < medium simple moving average AND short simple moving average < long simple moving average) OR (MACD main line on the still-forming bar < MACD main line on the preceding bar) OR total trend score < 0.

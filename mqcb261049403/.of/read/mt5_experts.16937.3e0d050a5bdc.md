@@ -1,0 +1,6 @@
+Calculation: Adaptive CG oscillator = For each bar, let N be half the Cycle Period rounded down; using up to N available bars, let P[k] be the midpoint of high and low k bars ago. Compute -sum((k+1)*P[k])/sum(P[k]) + (N+1)/2.
+Calculation: Trigger line = Adaptive CG oscillator value on the immediately preceding bar.
+Long: On the lower timeframe, the oscillator on the latest completed bar > its trigger AND the oscillator on the preceding completed bar <= its trigger AND, on the higher timeframe, the oscillator on the selected completed bar > its trigger.
+Short: On the lower timeframe, the oscillator on the latest completed bar < its trigger AND the oscillator on the preceding completed bar >= its trigger AND, on the higher timeframe, the oscillator on the selected completed bar < its trigger.
+Exit: long, On the lower timeframe, the oscillator on the selected completed bar < its trigger OR, on the higher timeframe, the oscillator on the selected completed bar < its trigger.
+Exit: short, On the lower timeframe, the oscillator on the selected completed bar > its trigger OR, on the higher timeframe, the oscillator on the selected completed bar > its trigger.

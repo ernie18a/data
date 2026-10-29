@@ -1,0 +1,4 @@
+Calculation: Laguerre-smoothed +DI = On the higher timeframe’s still-forming bar, apply the four-stage Laguerre transform to +DI from ADX: L0=(1−γ)x+γ·L0prev; L1=−γ·L0+L0prev+γ·L1prev; L2=−γ·L1+L1prev+γ·L2prev; L3=−γ·L2+L2prev+γ·L3prev. Initialize stages to zero. The value is CU/(CU+CD), where CU=Σmax(Li−Li+1,0) and CD=Σmax(Li+1−Li,0), i=0..2; retain the prior value when CU+CD=0.
+Calculation: Laguerre-smoothed −DI = Apply the same transform to −DI from ADX, using the same ADX period and γ as for +DI.
+Long: Laguerre-smoothed +DI > Laguerre-smoothed −DI
+Short: Laguerre-smoothed +DI < Laguerre-smoothed −DI

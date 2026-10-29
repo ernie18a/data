@@ -1,0 +1,4 @@
+Long: current bar high >= previous completed bar high on the selected analysis timeframe (which may be the chart timeframe, a higher timeframe, or a lower timeframe)
+Short: current bar low <= previous completed bar low on the selected analysis timeframe (which may be the chart timeframe, a higher timeframe, or a lower timeframe)
+Exit: long, current bar low <= entry price minus the stop-loss distance OR current bar high >= entry price plus the take-profit distance
+Exit: short, current bar high >= entry price plus the stop-loss distance OR current bar low <= entry price minus the take-profit distance

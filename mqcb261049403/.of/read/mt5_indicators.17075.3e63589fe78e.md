@@ -1,0 +1,3 @@
+Calculation: Weight Oscillator = the weighted average of RSI, MFI, Williams %R shifted up by 100, and DeMarker multiplied by 100, then smoothed by a selected moving-average method. Calculate on the chart timeframe; in the higher-timeframe repeater, use the selected timeframe (same as or higher than the chart timeframe) and its still-forming bar.
+Long: Weight Oscillator > 50
+Short: Weight Oscillator < 50

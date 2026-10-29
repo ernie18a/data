@@ -1,0 +1,1 @@
+For each open position, apply the configured filters for instrument, position identifier, and buy/sell direction. Close matching positions when they satisfy the configured profitability filter: winning positions, losing positions, or both. Use the market price appropriate to the position direction to close it.

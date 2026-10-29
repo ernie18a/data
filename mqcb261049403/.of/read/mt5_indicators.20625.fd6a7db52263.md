@@ -1,0 +1,2 @@
+Long: On the first chart bar of a higher-timeframe bar, the current forming higher-timeframe bar’s low is greater than its Parabolic SAR AND the previous completed higher-timeframe bar’s low is less than or equal to its Parabolic SAR
+Short: On the first chart bar of a higher-timeframe bar, the current forming higher-timeframe bar’s high is less than its Parabolic SAR AND the previous completed higher-timeframe bar’s high is greater than or equal to its Parabolic SAR

@@ -1,0 +1,5 @@
+Calculation: X-period smoothed candle direction = on a given timeframe, smooth each bar’s open, high, low, and close using the same selected smoothing method and lookback; candle open is the smoothed open from X bars earlier, candle close is the current smoothed close, and candle high/low are the maximum/minimum smoothed high/low across the X-bar window, expanded to include the candle open and close. Direction is bullish when open <= close and bearish when open > close. Use completed bars: the higher-timeframe candle for the slow trend and the lower-timeframe candles for entry signals.
+Long: higher-timeframe candle is bullish AND the lower-timeframe candle changes from bearish to bullish
+Short: higher-timeframe candle is bearish AND the lower-timeframe candle changes from bullish to bearish
+Exit: long, higher-timeframe candle is bearish OR lower-timeframe candle is bearish
+Exit: short, higher-timeframe candle is bullish OR lower-timeframe candle is bullish

@@ -1,0 +1,1 @@
+For a currency pair, compare the relative-strength indicator curves for its base and quote currencies. When the curves are close together, favor a long position; when they are far apart, favor a short position. Consider these signals alongside overall market conditions.

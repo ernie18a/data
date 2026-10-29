@@ -1,0 +1,3 @@
+Calculation: X2MA = apply a configurable smoother to the applied price, then apply a second configurable smoother to that output; the first lookback is longer than the second. Evaluate on a higher timeframe, using its bar still forming.
+Long: X2MA[t-1] < X2MA[t] AND X2MA[t-1] < X2MA[t-2] AND current time is within the configured session
+Short: X2MA[t-1] > X2MA[t] AND X2MA[t-1] > X2MA[t-2] AND current time is within the configured session

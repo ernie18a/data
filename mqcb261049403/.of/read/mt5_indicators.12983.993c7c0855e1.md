@@ -1,0 +1,2 @@
+Long: candlestick close > open on any configured timeframe higher than or equal to the chart timeframe, using its still-forming bar
+Short: candlestick close < open on any configured timeframe higher than or equal to the chart timeframe, using its still-forming bar

@@ -1,0 +1,7 @@
+Calculation: Shorter MA = smoothed moving average of weighted close on the chart timeframe, using a shorter lookback than the longer MA; use completed bars.
+Calculation: Longer MA = smoothed moving average of weighted close on the chart timeframe, using a longer lookback than the shorter MA; use completed bars.
+Calculation: Daily SMA = simple moving average of close on a higher timeframe; use the bar still forming.
+Long: current price = current price
+Short: current bar volume <= 1 AND ((shorter MA two bars ago > longer MA two bars ago AND shorter MA one bar ago > longer MA one bar ago AND open two bars ago > open one bar ago) OR (high one bar ago - low one bar ago > minimum range AND open one bar ago > close one bar ago AND open one bar ago - close one bar ago > minimum body) OR (hour = 0 AND prior daily open < prior daily close AND prior daily close - prior daily open > minimum daily body))
+Exit: Long, current bar volume <= 1 AND (shorter MA one bar ago = longer MA one bar ago OR current low <= entry price - stop-loss distance OR current high >= entry price + take-profit distance OR (highest high since entry - entry price > trailing distance AND current low <= highest high since entry - trailing distance))
+Exit: Short, current bar volume <= 1 AND (shorter MA one bar ago = longer MA one bar ago OR current high >= entry price + stop-loss distance OR current low <= entry price - take-profit distance OR (entry price - lowest low since entry > trailing distance AND current high >= lowest low since entry + trailing distance))

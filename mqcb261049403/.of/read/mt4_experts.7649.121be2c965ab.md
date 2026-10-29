@@ -1,0 +1,5 @@
+Calculation: Pivot = (previous completed daily high + previous completed daily low + previous completed daily close) / 3
+Long: Awesome Oscillator > 0 AND CCI >= 0 AND current ask > Pivot AND (previous Awesome Oscillator < 0 OR previous CCI <= 0 OR last completed hourly close < Pivot) AND each of the last five adjacent chart-bar open price changes is below the large-jump threshold AND each of the four chart-bar open price changes spanning two bars is below the double-jump threshold
+Short: Awesome Oscillator > 0 AND CCI >= 0 AND current ask > Pivot AND (previous Awesome Oscillator < 0 OR previous CCI <= 0 OR last completed hourly close < Pivot) AND each of the last five adjacent chart-bar open price changes is below the large-jump threshold AND each of the four chart-bar open price changes spanning two bars is below the double-jump threshold
+Exit: Long, chart-bar low <= entry price - stop-loss distance OR chart-bar high >= entry price + profit-target distance OR last completed hourly close > 9999
+Exit: Short, chart-bar high >= entry price + stop-loss distance OR chart-bar low <= entry price - profit-target distance OR last completed hourly close > 9999

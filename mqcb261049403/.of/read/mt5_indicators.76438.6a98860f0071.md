@@ -1,0 +1,3 @@
+Calculation: Fast and slow moving averages = moving averages of close on the same timeframe, with the fast lookback shorter than the slow lookback.
+Long: On any enabled timeframe, fast moving average > slow moving average, using the latest bar on that timeframe, which may still be forming and may be higher or lower than the chart timeframe.
+Short: On any enabled timeframe, fast moving average < slow moving average, using the latest bar on that timeframe, which may still be forming and may be higher or lower than the chart timeframe.

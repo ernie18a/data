@@ -1,0 +1,3 @@
+Calculation: SeNSetiVe = (5 × SMA(close, period) − 5 × SMA(open, period) + highest(high, sensitivity lookback) + lowest(low, sensitivity lookback) − SMA(high, period) − SMA(low, period)) × volume, using chart-timeframe bars including the current bar; the sensitivity lookback is shorter than the SMA period.
+Long: SeNSetiVe > 0 AND prior bar SeNSetiVe ≤ 0
+Short: SeNSetiVe < 0 AND prior bar SeNSetiVe ≥ 0

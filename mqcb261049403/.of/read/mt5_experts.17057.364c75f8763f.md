@@ -1,0 +1,6 @@
+Calculation: Fast MA = simple moving average of close over a shorter lookback on the working timeframe, using the bar still forming; the working timeframe may be higher, lower, or the same as the chart timeframe
+Calculation: Slow MA = simple moving average of close over a longer lookback on the working timeframe, using the bar still forming; the working timeframe may be higher, lower, or the same as the chart timeframe
+Long: Fast MA > Slow MA AND current hour is within the configured entry hours (inclusive) AND price reaches the breakout level set one breakout distance above the price when this signal first occurs
+Short: Fast MA < Slow MA AND current hour is within the configured entry hours (inclusive)
+Exit: long, Fast MA < Slow MA OR it is Friday at or after the configured close hour OR price reaches the stop-loss or take-profit level from entry OR the trailing stop is hit
+Exit: short, Fast MA > Slow MA OR it is Friday at or after the configured close hour OR price reaches the stop-loss or take-profit level from entry OR the trailing stop is hit

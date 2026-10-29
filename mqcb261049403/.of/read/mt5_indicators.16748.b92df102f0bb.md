@@ -1,0 +1,4 @@
+Calculation: DI+ = 100 × Wilder-smoothed (volume × positive directional movement) ÷ Wilder-smoothed (volume × true range), where positive directional movement is the current high minus the previous high when that exceeds the downward move and is positive; otherwise 0. True range is the greater of current high and previous close minus the lesser of current low and previous close.
+Calculation: DI− = 100 × Wilder-smoothed (volume × negative directional movement) ÷ Wilder-smoothed (volume × true range), where negative directional movement is the previous low minus the current low when that exceeds the upward move and is positive; otherwise 0.
+Long: DI+ > DI−
+Short: DI− > DI+

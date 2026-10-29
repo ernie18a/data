@@ -1,0 +1,5 @@
+Calculation: JMA(price) = Jurik Moving Average of the specified bar price; use the same smoothing parameters for open and close
+Long: On the indicator timeframe (higher or lower than the chart timeframe), JMA(open) on the last completed signal bar < JMA(close) on that bar AND JMA(open) on the preceding completed bar >= JMA(close) on that bar
+Short: On the indicator timeframe (higher or lower than the chart timeframe), JMA(open) on the last completed signal bar > JMA(close) on that bar AND JMA(open) on the preceding completed bar <= JMA(close) on that bar
+Exit: long, On the indicator timeframe (higher or lower than the chart timeframe), JMA(open) on the last completed signal bar > JMA(close) on that bar AND JMA(open) on the preceding completed bar <= JMA(close) on that bar
+Exit: short, On the indicator timeframe (higher or lower than the chart timeframe), JMA(open) on the last completed signal bar < JMA(close) on that bar AND JMA(open) on the preceding completed bar >= JMA(close) on that bar

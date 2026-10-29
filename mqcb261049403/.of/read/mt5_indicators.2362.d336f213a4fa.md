@@ -1,0 +1,2 @@
+Long: On the still-forming higher-timeframe bar, each of the last N consecutive bar pairs has a higher high and a higher low on the newer bar than on the preceding bar
+Short: On the still-forming higher-timeframe bar, each of the last N consecutive bar pairs has a lower high and a lower low on the newer bar than on the preceding bar

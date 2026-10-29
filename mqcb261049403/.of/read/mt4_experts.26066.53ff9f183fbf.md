@@ -1,0 +1,5 @@
+Calculation: Higher-timeframe trough pattern = the third-most-recent confirmed fractal low is below both the second-most-recent and most-recent confirmed fractal lows; use completed higher-timeframe bars
+Long: Number of open trades < maximum AND higher-timeframe trough pattern AND short-lookback LWMA of typical price > long-lookback LWMA of typical price (both on the chart timeframe, including the bar still forming) AND low[2] < high[1] AND |current price − close[2]| > retracement threshold
+Short: Number of open trades < maximum AND higher-timeframe trough pattern AND short-lookback LWMA of typical price < long-lookback LWMA of typical price (both on the chart timeframe, including the bar still forming) AND low[1] < high[2] AND |current price − close[1]| > retracement threshold
+Exit: long, price <= entry price − stop-loss distance OR price >= entry price + take-profit distance OR price <= lowest low of the recent candle-trailing lookback − padding
+Exit: short, price >= entry price + stop-loss distance OR price <= entry price − take-profit distance OR price >= highest high of the recent candle-trailing lookback + padding

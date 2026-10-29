@@ -1,0 +1,5 @@
+Calculation: Range Expansion Index (REI) = On the configured indicator timeframe, use completed bars. For each bar i in the lookback, let dH = high[i] − high[i−2] and dL = low[i] − low[i−2]. Set the high gate to 0 if high[i−2] < close[i−7] AND high[i−2] < close[i−8] AND high[i] < high[i−5] AND high[i] < high[i−6]; otherwise set it to 1. Set the low gate to 0 if low[i−2] > close[i−7] AND low[i−2] > close[i−8] AND low[i] > low[i−5] AND low[i] > low[i−6]; otherwise set it to 1. REI = 100 × sum(high gate × low gate × (dH + dL)) / sum(|dH| + |dL|) over the lookback; if the denominator is zero, REI = 0. The indicator timeframe may be higher or lower than the chart timeframe.
+Long: Previous completed REI ≤ the lower threshold AND latest completed REI > the lower threshold
+Short: Previous completed REI ≥ the upper threshold AND latest completed REI < the upper threshold
+Exit: Long, REI < the upper threshold
+Exit: Short, REI ≤ the lower threshold OR REI ≥ the upper threshold

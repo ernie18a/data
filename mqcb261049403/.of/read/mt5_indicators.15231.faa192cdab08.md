@@ -1,0 +1,4 @@
+Calculation: XXRSX = Smooth the applied-price change series and its absolute values with the same smoothing method and lookback, divide the smoothed changes by the smoothed absolute changes, clamp the ratio to [-1, 1], multiply by 100, then smooth the result with a signal smoother. If calculated on a higher timeframe, use its still-forming bar and map its value to the first chart bar in that interval.
+Calculation: XXRSX change volatility = Population standard deviation of the latest lookback-length changes in XXRSX, including the current change.
+Long: Current XXRSX change, rounded to instrument precision + 2 digits, > rounded threshold coefficient × XXRSX change volatility, to instrument precision + 2 digits
+Short: Current XXRSX change, rounded to instrument precision + 2 digits, < -rounded threshold coefficient × XXRSX change volatility, to instrument precision + 2 digits

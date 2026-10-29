@@ -1,0 +1,6 @@
+Calculation: Selected price = the configured applied price of the current chart bar, which may still be forming
+Calculation: NRTR trailing stop = initialize below selected price in an uptrend and above it in a downtrend by the configured percentage; on each bar, if the prior trend is up and selected price is below the prior stop, switch to downtrend and set the stop above selected price; otherwise in an uptrend set the stop to the greater of the prior stop and the configured percentage below selected price. If the prior trend is down and selected price is above the prior stop, switch to uptrend and set the stop below selected price; otherwise in a downtrend set the stop to the lesser of the prior stop and the configured percentage above selected price. Initialize trend as up when the first bar's close is above its open, otherwise down.
+Long: prior trend is down AND selected price > prior NRTR trailing stop
+Short: prior trend is up AND selected price < prior NRTR trailing stop
+Exit: long, selected price < prior NRTR trailing stop
+Exit: short, selected price > prior NRTR trailing stop

@@ -1,0 +1,1 @@
+While the expert is enabled, if account equity reaches or falls below the configured equity stop, or reaches or exceeds the configured equity target, close all open positions and delete pending orders if close-all is enabled; disable automated trading if that option is enabled.

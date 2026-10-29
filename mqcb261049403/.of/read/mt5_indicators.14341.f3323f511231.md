@@ -1,0 +1,3 @@
+Calculation: PA oscillator = current minus previous bar's difference between the shorter-lookback and longer-lookback smooths of the selected OHLC-derived price, divided by price point
+Long: PA oscillator > 0 OR (on the higher timeframe, previous sampled PA oscillator > 0 AND current sampled PA oscillator <= 0)
+Short: PA oscillator < 0 OR (on the higher timeframe, previous sampled PA oscillator < 0 AND current sampled PA oscillator >= 0)

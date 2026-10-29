@@ -1,0 +1,2 @@
+Long: Current still-forming higher-timeframe bar high > previous completed higher-timeframe bar high AND current still-forming higher-timeframe bar low < previous completed higher-timeframe bar low
+Short: Current still-forming higher-timeframe bar high < previous completed higher-timeframe bar high AND current still-forming higher-timeframe bar low > previous completed higher-timeframe bar low

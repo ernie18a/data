@@ -1,0 +1,6 @@
+Calculation: Adaptive Market Level (AML) on the configured indicator timeframe, which may be higher or lower than the chart timeframe, using completed bars = recursively smooth (high + low + 2×open + 2×close)/6 with factor clamp(exp(−lag×(dimension−1)), 0.01, 1), where dimension = log((R1+R2)/R3)/log(2), R1 and R2 are the mean ranges of adjacent fractal-length windows, and R3 is the mean range of their combined 2×fractal-length window; retain the previous AML unless the smoothed value differs from its value lag bars earlier by at least lag²×point size. Range is highest high minus lowest low.
+Calculation: AML direction = rising when AML increases, falling when AML decreases, and otherwise retain the previous direction.
+Long: AML direction changes to rising on the last completed indicator-timeframe bar.
+Short: AML direction changes to falling on the last completed indicator-timeframe bar.
+Exit: long, AML direction changes to falling on the last completed indicator-timeframe bar.
+Exit: short, AML direction changes to rising on the last completed indicator-timeframe bar.

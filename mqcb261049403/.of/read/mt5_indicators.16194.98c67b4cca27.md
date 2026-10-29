@@ -1,0 +1,3 @@
+Calculation: OsHMA = short-lookback Hull moving average of close minus long-lookback Hull moving average of close, with the short lookback shorter than the long lookback.
+Long: On the higher timeframe, the previous bar's OsHMA > 0 AND its OsHMA > the bar before it AND the current bar's OsHMA = 0 OR the current bar's OsHMA = the previous bar's OsHMA; use the higher-timeframe bar still forming.
+Short: On the higher timeframe, the previous bar's OsHMA = 0 OR the previous bar's OsHMA = the bar before it AND the current bar's OsHMA > 0 AND the current bar's OsHMA > the previous bar's OsHMA; use the higher-timeframe bar still forming.

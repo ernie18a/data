@@ -1,0 +1,6 @@
+Calculation: Fast line = MFI smoothed by the selected method with a shorter lookback.
+Calculation: Slow line = Fast line smoothed by the same method with a longer lookback.
+Long: Fast line on the last completed bar of the configured indicator timeframe > Slow line on that bar AND Fast line on the preceding completed bar of that timeframe <= Slow line on that bar
+Short: Fast line on the last completed bar of the configured indicator timeframe < Slow line on that bar AND Fast line on the preceding completed bar of that timeframe >= Slow line on that bar
+Exit: Long, Fast line on the last completed bar of the configured indicator timeframe < Slow line on that bar AND Fast line on the preceding completed bar of that timeframe >= Slow line on that bar OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: Short, Fast line on the last completed bar of the configured indicator timeframe > Slow line on that bar AND Fast line on the preceding completed bar of that timeframe <= Slow line on that bar OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

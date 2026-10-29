@@ -1,0 +1,8 @@
+Calculation: Fast and slow LWMA = linearly weighted moving averages of typical price on the chart timeframe; the fast lookback is shorter than the slow lookback.
+Calculation: Short and long EMA groups = six progressively longer lookback EMAs of typical price in each group; the long group uses longer lookbacks than the short group.
+Long: Fast LWMA > slow LWMA AND low[2] < high[1] AND higher-timeframe MACD main > signal on the last completed higher-timeframe bar
+Short: Fast LWMA < slow LWMA AND low[1] < high[2] AND higher-timeframe MACD main < signal on the last completed higher-timeframe bar
+Long: Fast LWMA < slow LWMA AND ((higher-timeframe MACD main > signal on the last completed bar AND higher-timeframe MACD main < signal on the forming bar) OR (higher-timeframe MACD main > signal on the forming bar AND NOT (higher-timeframe MACD main > signal on the last completed bar AND higher-timeframe MACD main < signal on the forming bar)))
+Short: Fast LWMA < slow LWMA AND ((higher-timeframe MACD main < signal on the last completed bar AND higher-timeframe MACD main > signal on the forming bar) OR (higher-timeframe MACD main < signal on the forming bar AND NOT (higher-timeframe MACD main < signal on the last completed bar AND higher-timeframe MACD main > signal on the forming bar)))
+Exit: long, all six short-group EMAs equal OR all six long-group EMAs equal OR previous chart-timeframe close <= lower Bollinger Band
+Exit: short, all six short-group EMAs equal OR all six long-group EMAs equal OR previous chart-timeframe close <= lower Bollinger Band

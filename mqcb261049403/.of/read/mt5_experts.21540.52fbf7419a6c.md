@@ -1,0 +1,6 @@
+Calculation: Upper channel = a weighted moving average of bar highs, weighted by recency, smoothed by the same weighted moving average again, on the indicator timeframe.
+Calculation: Lower channel = a weighted moving average of bar lows, weighted by recency, smoothed by the same weighted moving average again, on the indicator timeframe.
+Long: On the indicator timeframe, the selected signal bar is the last completed bar; its close > upper channel AND the immediately preceding bar's close <= its upper channel.
+Short: On the indicator timeframe, the selected signal bar is the last completed bar; its close < lower channel AND the immediately preceding bar's close >= its lower channel.
+Exit: long, on the indicator timeframe, the selected signal bar's close < lower channel OR current bar datetime - entry datetime > the configured holding-time limit OR close <= entry price - configured stop distance OR close >= entry price + configured target distance.
+Exit: short, on the indicator timeframe, the selected signal bar's close > upper channel OR current bar datetime - entry datetime > the configured holding-time limit OR close >= entry price + configured stop distance OR close <= entry price - configured target distance.

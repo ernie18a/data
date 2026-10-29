@@ -1,0 +1,4 @@
+Long: Flat AND higher-timeframe MACD main line is rising AND below zero AND chart-timeframe Stochastic main line is below its threshold AND rising AND lower-timeframe close is above the prior lower-timeframe high
+Short: Flat AND higher-timeframe MACD main line is falling AND above zero AND chart-timeframe Stochastic main line is above its threshold AND falling AND lower-timeframe close is below the prior lower-timeframe low
+Exit: Long, price is at or below the initial stop-loss level OR price is at or below the trailing stop level, set one trailing-stop distance below the highest price since entry after price has risen more than that distance above entry
+Exit: Short, price is at or above the initial stop-loss level OR price is at or above the trailing stop level, set one trailing-stop distance above the lowest price since entry after price has fallen more than that distance below entry

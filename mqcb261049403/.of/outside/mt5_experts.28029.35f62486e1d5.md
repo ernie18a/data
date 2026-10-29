@@ -1,0 +1,1 @@
+On each tick, if there is no open position in the current instrument, open a long position using the instrument’s minimum trade size. Set a stop-loss below the entry price and a take-profit above it, each at a fixed configured distance. Otherwise, take no action.

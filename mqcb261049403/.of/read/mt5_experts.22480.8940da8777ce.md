@@ -1,0 +1,6 @@
+Calculation: Williams %R = 100 × (highest high − close) / (highest high − lowest low) − 100, using the same lookback for both extremes.
+Calculation: Smoothed histogram = moving average of (Williams %R + 50) × volume; smoothed volume = moving average of volume. Use the same smoothing method and lookback for both. Use the chart timeframe and completed bars; compare the latest completed bar with the preceding completed bar.
+Long: (smoothed histogram > upper level 1 × smoothed volume AND smoothed histogram ≤ upper level 2 × smoothed volume AND preceding smoothed histogram ≤ upper level 1 × preceding smoothed volume) OR (smoothed histogram > upper level 2 × smoothed volume AND preceding smoothed histogram ≤ upper level 2 × preceding smoothed volume)
+Short: (smoothed histogram < lower level 1 × smoothed volume AND smoothed histogram ≥ lower level 2 × smoothed volume AND preceding smoothed histogram ≥ lower level 1 × preceding smoothed volume) OR (smoothed histogram < lower level 2 × smoothed volume AND preceding smoothed histogram ≥ lower level 2 × preceding smoothed volume)
+Exit: long, short condition OR price ≤ entry price − stop-loss distance OR price ≥ entry price + take-profit distance
+Exit: short, long condition OR price ≥ entry price + stop-loss distance OR price ≤ entry price − take-profit distance

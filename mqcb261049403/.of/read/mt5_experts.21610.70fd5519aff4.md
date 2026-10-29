@@ -1,0 +1,6 @@
+Calculation: Upper open oscillator = apply the same configurable smoothing method and length to current open minus the open of the bar with the highest high over the configurable lookback, on the indicator timeframe.
+Calculation: Lower open oscillator = apply the same configurable smoothing method and length to the open of the bar with the lowest low over the configurable lookback minus current open, on the indicator timeframe.
+Long: Upper open oscillator on the last completed indicator-timeframe bar > lower open oscillator on that bar AND upper open oscillator on the preceding completed bar <= lower open oscillator on that bar.
+Short: Upper open oscillator on the last completed indicator-timeframe bar < lower open oscillator on that bar AND upper open oscillator on the preceding completed bar >= lower open oscillator on that bar.
+Exit: Long, upper open oscillator on the last completed indicator-timeframe bar < lower open oscillator on that bar OR low <= entry price - configured stop distance OR high >= entry price + configured target distance.
+Exit: Short, upper open oscillator on the last completed indicator-timeframe bar > lower open oscillator on that bar OR high >= entry price + configured stop distance OR low <= entry price - configured target distance.

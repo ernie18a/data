@@ -1,0 +1,9 @@
+Calculation: Fast moving average = moving average with a shorter lookback than the slow moving average; both use the configured method and closing prices.
+Calculation: Confirmation threshold = configured confirmation distance in price units, adjusted by instrument point size.
+Calculation: Flat threshold = configured flat distance in price units, adjusted by instrument point size.
+Calculation: Long reference low = low of the most recent long marking, initially zero.
+Calculation: Short reference high = high of the most recent short marking, initially zero.
+Calculation: Pending long confirmation = after an upward fast/slow moving-average cross that passes the RSI filter, the low of that cross bar remains the reference until confirmation or a downward cross.
+Calculation: Pending short confirmation = after a downward fast/slow moving-average cross that passes the RSI filter, the high of that cross bar remains the reference until confirmation or an upward cross.
+Long: Fast moving average crosses above slow moving average AND (RSI filter disabled OR RSI > 50) AND (confirmation threshold is zero OR (pending long confirmation AND current high − pending long reference low >= confirmation threshold AND current close <= current high)) AND (current low >= long reference low + flat threshold OR current low <= long reference low − flat threshold)
+Short: Fast moving average crosses below slow moving average AND (RSI filter disabled OR RSI < 50) AND (confirmation threshold is zero OR (pending short confirmation AND pending short reference high − current low >= confirmation threshold AND current open >= current close)) AND (current high >= short reference high + flat threshold OR current high <= short reference high − flat threshold)

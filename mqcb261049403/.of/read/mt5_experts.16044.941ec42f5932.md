@@ -1,0 +1,5 @@
+Calculation: Smoothed price efficiency = smooth the net change in the selected OHLC-derived price over a lookback, divided by the sum of absolute consecutive changes in that price over the same lookback plus the minimum price increment; use the configured smoothing method and parameters. Evaluate on the configured indicator timeframe, using completed bars (which may be higher or lower than the chart timeframe).
+Long: Smoothed price efficiency on the last completed indicator bar > upper threshold AND on the preceding indicator bar <= upper threshold
+Short: Smoothed price efficiency on the last completed indicator bar < lower threshold AND on the preceding indicator bar >= lower threshold
+Exit: short, Smoothed price efficiency on the last completed indicator bar > upper threshold
+Exit: long, Smoothed price efficiency on the last completed indicator bar < lower threshold

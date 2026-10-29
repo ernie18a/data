@@ -1,0 +1,4 @@
+Long: Flat AND 8 < hour(datetime) < 17 AND MACD main line < MACD signal line AND high[1] < upper Bollinger Band calculated from low AND high[2] < upper Bollinger Band calculated from low AND short-term EMA of median price > long-term EMA of median price AND Parabolic SAR < low[0] AND Bulls Power > 0 AND Bulls Power[0] < Bulls Power[1]
+Short: Flat AND 8 < hour(datetime) < 17 AND MACD main line > MACD signal line AND short-term EMA of median price < long-term EMA of median price AND Parabolic SAR > high[0] AND Bears Power < 0 AND Bears Power[0] > Bears Power[1]
+Exit: Long, low <= stop-loss price OR high >= take-profit price
+Exit: Short, high >= stop-loss price OR low <= take-profit price

@@ -1,0 +1,4 @@
+Long: normal mode AND moving average on the higher timeframe (last completed bar) > current bar open + minimum distance OR reverse mode AND moving average on the higher timeframe (last completed bar) < current bar open - minimum distance
+Short: normal mode AND moving average on the higher timeframe (last completed bar) < current bar open - minimum distance OR reverse mode AND moving average on the higher timeframe (last completed bar) > current bar open + minimum distance
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

@@ -1,0 +1,5 @@
+Calculation: Scaled DeMarker = DeMarker on the higher timeframe’s bar still forming, multiplied by 100
+Calculation: Fast line = For each bar, let D be Scaled DeMarker and S be the fast step. Set candidate upper/lower levels to D + 2S and D − 2S. Set fast trend to +1 if D exceeds the prior upper level, or −1 if D is below the prior lower level; otherwise retain its prior value. If trend is +1, raise the candidate lower level to at least the prior lower level; if trend is −1, lower the candidate upper level to at most the prior upper level. Fast line is the resulting lower level + S in an uptrend, or upper level − S in a downtrend.
+Calculation: Slow line = Same trailing-level calculation as the Fast line, using the slow step instead of the fast step.
+Long: Prior Fast line ≤ prior Slow line AND Fast line > Slow line
+Short: Prior Fast line ≥ prior Slow line AND Fast line < Slow line

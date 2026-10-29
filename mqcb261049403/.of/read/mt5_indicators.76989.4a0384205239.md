@@ -1,0 +1,6 @@
+Calculation: True range = high − low on the first bar; otherwise max(high − low, abs(high − previous close), abs(low − previous close)
+Calculation: ATR = Wilder average of true range, seeded with the simple average of the first lookback bars; thereafter previous ATR + (current true range − previous ATR) / lookback
+Calculation: Upper band = midpoint(high, low) + factor × ATR, unless that is not below the previous upper band and the previous close is not above the previous upper band, in which case retain the previous upper band; initialize a missing previous band to zero
+Calculation: Lower band = midpoint(high, low) − factor × ATR, unless that is not above the previous lower band and the previous close is not below the previous lower band, in which case retain the previous lower band; initialize a missing previous band to zero
+Long: Previous direction was down and close > upper band OR previous direction was up and close >= lower band
+Short: Previous direction was down and close <= upper band OR previous direction was up and close < lower band

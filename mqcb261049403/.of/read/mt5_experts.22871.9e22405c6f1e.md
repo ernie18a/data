@@ -1,0 +1,6 @@
+Calculation: Volume-weighted channel oscillator = smooth the product of volume and [100 × (selected applied price − (moving average of applied price − moving average of high−low range)) ÷ (2 × smoothed high−low range) − 50]; use 1 in place of a zero smoothed range. The two moving averages use their separately configurable methods and lookbacks; the oscillator uses its configured smoothing.
+Calculation: Oscillator direction = +1 when the oscillator is greater than its previous bar, −1 when lower, and otherwise retain the prior direction.
+Long: On a completed bar of the indicator timeframe (lower than the chart timeframe), current oscillator direction = +1 AND previous oscillator direction = −1
+Short: On a completed bar of the indicator timeframe (lower than the chart timeframe), current oscillator direction = −1 AND previous oscillator direction = +1
+Exit: Long, On a completed bar of the indicator timeframe (lower than the chart timeframe), current oscillator direction = −1 AND previous oscillator direction = +1 OR low ≤ entry price − stop-loss distance OR high ≥ entry price + take-profit distance
+Exit: Short, On a completed bar of the indicator timeframe (lower than the chart timeframe), current oscillator direction = +1 AND previous oscillator direction = −1 OR high ≥ entry price + stop-loss distance OR low ≤ entry price − take-profit distance

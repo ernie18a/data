@@ -1,0 +1,5 @@
+Calculation: Karpenko bands = On each indicator-timeframe bar (the configured timeframe may be higher or lower than the chart timeframe), let B be the mean close over a lookback and R the mean of high − low over a lookback. Start U = R and multiply U by 1.618 while the bar high > B + U; start D = R and multiply D by 1.618 while the bar low < B − D. If high ≤ B, the bands are B − D and B; otherwise they are B + U and B, respectively. Evaluate bands on completed bars.
+Long: First band on the latest completed bar > second band on that bar AND first band on the preceding completed bar ≤ second band on that bar
+Short: First band on the latest completed bar < second band on that bar AND first band on the preceding completed bar ≥ second band on that bar
+Exit: Short, first band on the latest completed bar > second band on that bar
+Exit: Long, first band on the latest completed bar < second band on that bar

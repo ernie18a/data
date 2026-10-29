@@ -1,0 +1,6 @@
+Calculation: Fast moving average = linear-weighted moving average of typical price (high + low + close) / 3, using a shorter lookback on the current chart timeframe and the bar still forming
+Calculation: Slow moving average = linear-weighted moving average of typical price (high + low + close) / 3, using a longer lookback than the fast moving average on the current chart timeframe and the bar still forming
+Long: current chart bar open > high of the last completed higher-timeframe bar AND fast moving average > slow moving average AND low two chart bars ago < high of the previous chart bar AND absolute difference between current chart bar open and close two chart bars ago > a configurable distance
+Short: current chart bar open < low of the last completed higher-timeframe bar AND fast moving average < slow moving average AND low of the previous chart bar < high two chart bars ago AND absolute difference between current chart bar open and close of the previous chart bar > a configurable distance
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

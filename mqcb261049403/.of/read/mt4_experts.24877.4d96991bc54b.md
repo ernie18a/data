@@ -1,0 +1,4 @@
+Long: absolute difference between current bar open and the close two bars ago > retrace-distance threshold AND fast LWMA of typical price on the higher timeframe (bar still forming) > slow LWMA of typical price on the higher timeframe (bar still forming) AND low two bars ago < high one bar ago
+Short: absolute difference between current bar open and the close one bar ago > retrace-distance threshold AND fast LWMA of typical price on the higher timeframe (bar still forming) < slow LWMA of typical price on the higher timeframe (bar still forming) AND low one bar ago < high two bars ago
+Exit: long, close <= entry price minus stop-loss distance OR close >= entry price plus take-profit distance
+Exit: short, close >= entry price plus stop-loss distance OR close <= entry price minus take-profit distance

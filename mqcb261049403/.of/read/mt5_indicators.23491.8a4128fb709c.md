@@ -1,0 +1,4 @@
+Calculation: Non-Lag Moving Average = weighted average of the selected applied-price values from the current bar through 5P−3 bars back, divided by the sum of their weights; for i = 0…5P−3, let phase = P−1, cycle = 4, tᵢ = i/(phase−1) if i ≤ phase−1, otherwise 1 + (i−phase+1)(2·cycle−1)/(cycle·phase), gᵢ = 1 if tᵢ ≤ 0.5, otherwise 1/(3πtᵢ+1), and weightᵢ = gᵢ cos(πtᵢ), where P is the moving-average lookback.
+Calculation: Color-switch threshold = configured filter percentage × the standard deviation over P bars of each bar’s absolute Non-Lag Moving Average change after subtracting that bar’s P-bar average absolute change; threshold is zero when the filter is disabled.
+Long: Non-Lag Moving Average(current bar) − Non-Lag Moving Average(previous bar) > Color-switch threshold
+Short: Non-Lag Moving Average(current bar) − Non-Lag Moving Average(previous bar) < −Color-switch threshold

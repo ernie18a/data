@@ -1,0 +1,4 @@
+Calculation: XMACD = selected moving average of the applied price with a shorter lookback minus the same selected moving average with a longer lookback
+Calculation: Schaff Trend Cycle = normalize XMACD within its lookback to 0–100, smooth as 0.5 × current value + 0.5 × previous value; normalize that smoothed series within the same lookback to −100–100, then smooth the same way. If a normalization range is zero, carry forward the previous value. Calculate on the chart timeframe, or on the higher timeframe’s bar still forming when using the higher-timeframe version.
+Long: Schaff Trend Cycle > 0
+Short: Schaff Trend Cycle < 0

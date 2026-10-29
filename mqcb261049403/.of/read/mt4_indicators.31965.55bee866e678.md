@@ -1,0 +1,2 @@
+Long: EMA on the last completed bar of each displayed timeframe at or above the chart timeframe > EMA on the preceding completed bar
+Short: EMA on the last completed bar of each displayed timeframe at or above the chart timeframe < EMA on the preceding completed bar

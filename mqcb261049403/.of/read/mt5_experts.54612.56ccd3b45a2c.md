@@ -1,0 +1,8 @@
+Calculation: Initial short stop = max(previous completed chart-bar high, current forming chart-bar high) + stop distance
+Calculation: Initial long stop = min(previous completed chart-bar low, current forming chart-bar low) − stop distance
+Calculation: Short target = current forming higher-timeframe daily low
+Calculation: Long target = current forming higher-timeframe daily high
+Long: Previous completed chart bar is bullish AND its close < lower Bollinger Band AND current ask < that band AND (middle Bollinger Band − lower Bollinger Band) > 2 × stop distance AND current bid > completed higher-timeframe daily SMA AND (current ask < current forming higher-timeframe daily low OR current ask < previous completed higher-timeframe daily low) AND previous completed chart-bar low ≠ current forming chart-bar low
+Short: Previous completed chart bar is bearish AND its close > upper Bollinger Band AND current bid > that band AND (upper Bollinger Band − middle Bollinger Band) > 2 × stop distance AND current ask < completed higher-timeframe daily SMA AND (current bid > current forming higher-timeframe daily high OR current bid > previous completed higher-timeframe daily high) AND previous completed chart-bar high ≠ current forming chart-bar high
+Exit: long, current bid ≥ middle Bollinger Band OR current bid ≤ initial long stop OR current bid ≥ long target
+Exit: short, current ask ≤ middle Bollinger Band OR current ask ≥ initial short stop OR current ask ≤ short target

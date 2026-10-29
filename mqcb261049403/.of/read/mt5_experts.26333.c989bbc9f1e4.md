@@ -1,0 +1,4 @@
+Long: Parabolic SAR on the chart timeframe is below the close of the last completed bar and was not below the close of the preceding completed bar, AND there is no open position.
+Short: Parabolic SAR on the chart timeframe is above the close of the last completed bar and was not above the close of the preceding completed bar, AND there is no open position.
+Exit: Short, Parabolic SAR on the chart timeframe is below the close of the last completed bar and was not below the close of the preceding completed bar.
+Exit: Long, Parabolic SAR on the chart timeframe is above the close of the last completed bar and was not above the close of the preceding completed bar.

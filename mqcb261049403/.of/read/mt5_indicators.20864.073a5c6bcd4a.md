@@ -1,0 +1,2 @@
+Long: chart-timeframe close > open OR selected-timeframe close > open (selected timeframe is the same as or higher than the chart timeframe; bar still forming)
+Short: chart-timeframe close < open OR selected-timeframe close < open (selected timeframe is the same as or higher than the chart timeframe; bar still forming)

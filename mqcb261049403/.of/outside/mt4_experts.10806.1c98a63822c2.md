@@ -1,0 +1,1 @@
+During the configured trading hours, go long when the Parabolic SAR flips from above the prior bar’s close to below the current bar’s close; go short on the inverse flip. If enabled, close positions in the opposite direction when a new signal appears. Exit positions at their attached fixed stop-loss or take-profit levels.

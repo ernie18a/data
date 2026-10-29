@@ -1,0 +1,6 @@
+Calculation: Smoothed line = round the second weighted moving average of the selected OHLC-derived price to the configured price increment; both weighted averages use the same lookback, with larger weights on more recent bars.
+Calculation: Trend state = up when the smoothed line is greater than its prior value, down when it is less, and otherwise the prior trend state (initially neutral). Calculate on the configured indicator timeframe, higher or lower than the chart timeframe, using completed bars.
+Long: Current trend state is up AND prior trend state was not up.
+Short: Current trend state is down AND prior trend state was not down.
+Exit: Long, current trend state is down AND prior trend state was not down OR low <= entry price - configured stop-loss distance OR high >= entry price + configured take-profit distance.
+Exit: Short, current trend state is up AND prior trend state was not up OR high >= entry price + configured stop-loss distance OR low <= entry price - configured take-profit distance.

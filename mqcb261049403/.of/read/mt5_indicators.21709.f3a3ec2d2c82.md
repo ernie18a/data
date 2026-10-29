@@ -1,0 +1,3 @@
+Calculation: Smoothed TTF = apply Jurik Moving Average smoothing to 100 × (BuyPower − SellPower) / (0.5 × (BuyPower + SellPower)), where BuyPower = highest high in the recent lookback − lowest low in the older lookback, and SellPower = highest high in the older lookback − lowest low in the recent lookback. The lookbacks have equal length; the older lookback ends at the first bar of the recent lookback. Compute on the chart timeframe or a selected higher timeframe, using its still-forming bar.
+Long: Smoothed TTF > upper level
+Short: Smoothed TTF < lower level

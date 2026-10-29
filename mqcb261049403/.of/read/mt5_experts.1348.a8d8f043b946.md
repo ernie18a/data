@@ -1,0 +1,5 @@
+Calculation: AMA-smoothed momentum = Kaufman adaptive moving average of selected bar price minus that price N bars earlier, using an efficiency ratio over its lookback and fast and slow smoothing periods; raise the smoothing constant to a configurable power. Calculate on the configured indicator timeframe (which may be higher or lower than the chart timeframe), using completed bars.
+Long: AMA-smoothed momentum > 0 OR third-last completed value > second-last completed value AND last completed value > second-last completed value
+Short: AMA-smoothed momentum <= 0 OR third-last completed value < second-last completed value AND last completed value < second-last completed value
+Exit: long, third-last completed value < second-last completed value AND last completed value < second-last completed value
+Exit: short, third-last completed value > second-last completed value AND last completed value > second-last completed value

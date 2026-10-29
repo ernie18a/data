@@ -1,0 +1,4 @@
+Long: CCI on the indicator timeframe (which may be higher or lower than the chart timeframe) is >= 0 on the latest completed bar and < 0 on the preceding completed bar
+Short: CCI on the indicator timeframe (which may be higher or lower than the chart timeframe) is < 0 on the latest completed bar and >= 0 on the preceding completed bar
+Exit: long, CCI on the indicator timeframe (which may be higher or lower than the chart timeframe) is < 0 on the latest completed bar and >= 0 on the preceding completed bar
+Exit: short, CCI on the indicator timeframe (which may be higher or lower than the chart timeframe) is >= 0 on the latest completed bar and < 0 on the preceding completed bar

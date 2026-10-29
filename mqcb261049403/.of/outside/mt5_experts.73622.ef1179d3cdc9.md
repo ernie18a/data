@@ -1,0 +1,1 @@
+If the optional account-level hard stop is enabled and account equity drawdown from balance reaches its configured limit, close all open positions in the traded instrument.

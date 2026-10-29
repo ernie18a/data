@@ -1,0 +1,6 @@
+Calculation: Smoothed volume-weighted DeMarker = a moving average of ((DeMarker − 0.5) × 100 × selected bar volume), calculated on the independently configured indicator timeframe using completed bars; its relation to the chart timeframe is unspecified.
+Calculation: Direction state = rising when the smoothed value is greater than the preceding value, falling when less, otherwise unchanged from the prior direction state.
+Long: Previous completed direction state is falling AND current completed direction state is rising
+Short: Previous completed direction state is rising AND current completed direction state is falling
+Exit: Long, previous completed direction state is rising AND current completed direction state is falling OR low ≤ entry price − stop-loss distance OR high ≥ entry price + take-profit distance
+Exit: Short, previous completed direction state is falling AND current completed direction state is rising OR high ≥ entry price + stop-loss distance OR low ≤ entry price − take-profit distance

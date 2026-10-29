@@ -1,0 +1,5 @@
+Calculation: ATR = Wilder-smoothed average true range over a lookback of higher-timeframe bars, using the last completed bar
+Long: At the start of Tuesday after Monday is complete, Monday close <= Monday open AND (ATR filter disabled OR Monday high - Monday low >= minimum-range multiple × last completed higher-timeframe ATR)
+Short: At the start of Tuesday after Monday is complete, Monday close > Monday open AND (ATR filter disabled OR Monday high - Monday low >= minimum-range multiple × last completed higher-timeframe ATR)
+Exit: Long, (stop distance multiple > 0 AND low <= entry price - stop distance multiple × ATR) OR (stop distance multiple > 0 AND take-profit reward/risk > 0 AND high >= entry price + stop distance multiple × ATR × take-profit reward/risk) OR current hour >= configured close hour
+Exit: Short, (stop distance multiple > 0 AND high >= entry price + stop distance multiple × ATR) OR (stop distance multiple > 0 AND take-profit reward/risk > 0 AND low <= entry price - stop distance multiple × ATR × take-profit reward/risk) OR current hour >= configured close hour

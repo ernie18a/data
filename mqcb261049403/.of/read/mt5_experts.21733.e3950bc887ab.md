@@ -1,0 +1,4 @@
+Long: no existing long position AND chart bar 0 open < MA[0] AND chart bar 0 close < MA[0] AND MA[1] < MA[0]; MA[0] is on the configured timeframe and uses its still-forming bar (higher or lower than the chart timeframe if configured so), while MA[1] uses the last completed bar
+Short: no existing short position AND chart bar 0 open > MA[0] AND chart bar 0 close > MA[0] AND MA[1] > MA[0]; MA[0] is on the configured timeframe and uses its still-forming bar (higher or lower than the chart timeframe if configured so), while MA[1] uses the last completed bar
+Exit: short, chart bar 0 open < MA[0] AND chart bar 0 close < MA[0] AND MA[1] < MA[0]
+Exit: long, chart bar 0 open > MA[0] AND chart bar 0 close > MA[0] AND MA[1] > MA[0]

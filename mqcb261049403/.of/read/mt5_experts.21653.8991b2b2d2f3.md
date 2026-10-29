@@ -1,0 +1,4 @@
+Long: Close > Open on the last completed signal bar of the configurable working timeframe (which may be equal to, higher, or lower than the chart timeframe)
+Short: Close < Open on the last completed signal bar of the configurable working timeframe (which may be equal to, higher, or lower than the chart timeframe)
+Exit: Long, Close < Open on the last completed signal bar of the configurable working timeframe OR Low <= entry price - stop-loss distance OR High >= entry price + take-profit distance
+Exit: Short, Close > Open on the last completed signal bar of the configurable working timeframe OR High >= entry price + stop-loss distance OR Low <= entry price - take-profit distance

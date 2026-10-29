@@ -1,0 +1,5 @@
+Calculation: Adaptive XMA line = let P be the configured applied price and M its configurable moving average. Let D be the standard deviation of P over the configured lookback around the current M: D = sqrt(mean((P − M)^2)). For each bar, let prev be the prior line value (M on initialization), delta = prev − M, and k = 0 if delta² ≤ D² or delta = 0, otherwise k = 1 − D²/delta². The line is prev + k(M − prev), rounded to the configured price precision.
+Long: The adaptive XMA line changes from falling to rising on the chart timeframe, using the current bar (still forming).
+Short: The adaptive XMA line changes from rising to falling on the chart timeframe, using the current bar (still forming).
+Long: The adaptive XMA line changes from falling to rising on a higher timeframe, using its still-forming bar.
+Short: The adaptive XMA line changes from rising to falling on a higher timeframe, using its still-forming bar.

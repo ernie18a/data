@@ -1,0 +1,10 @@
+Calculation: Daily upper breakout level = high of the last completed higher-timeframe bar plus a point-and-spread buffer
+Calculation: Daily lower breakout level = low of the last completed higher-timeframe bar minus a point buffer
+Calculation: Chart-timeframe upper breakout level = high of the last completed bar on the chart timeframe plus a point-and-spread buffer
+Calculation: Chart-timeframe lower breakout level = low of the last completed bar on the chart timeframe minus a point buffer
+Calculation: Fractal ZigZag level = latest fractal ZigZag pivot level carried forward; use the last completed bar on the relevant timeframe
+Calculation: Modified Awesome Oscillator = shorter-lookback SMA of median price minus longer-lookback SMA of median price, using each average's configured shift; calculate on the higher timeframe using its still-forming bar
+Long: current chart-timeframe close > daily upper breakout level AND current higher-timeframe open < daily upper breakout level AND current chart-timeframe close < daily Fractal ZigZag level AND Modified Awesome Oscillator < 0 OR current chart-timeframe close > chart-timeframe upper breakout level AND current chart-timeframe open < chart-timeframe upper breakout level AND current chart-timeframe close < chart-timeframe Fractal ZigZag level
+Short: current chart-timeframe close < daily lower breakout level AND current higher-timeframe open > daily lower breakout level AND current chart-timeframe close > daily Fractal ZigZag level AND Modified Awesome Oscillator > 0 OR current chart-timeframe close < chart-timeframe lower breakout level AND current chart-timeframe open > chart-timeframe lower breakout level AND current chart-timeframe close > chart-timeframe Fractal ZigZag level
+Exit: long, current price <= active trailing stop-loss level
+Exit: short, current price >= active trailing stop-loss level

@@ -1,0 +1,3 @@
+Calculation: FVE = 100 × simple moving average of (direction × volume) / moving average of volume, using the same lookback; direction = 1 when money flow > cutoff, −1 when money flow < −cutoff, otherwise 0; money flow = close − (high + low) / 2 + high + low + close − previous bar’s high − low − close; cutoff = 0.1 × (standard deviation of log(high) − log(low) + standard deviation of the change in log typical price) × close; typical price = (high + low + close) / 3. Use chart-timeframe bars; previous bar is completed. The volume moving average uses the configured FVE averaging method.
+Long: FVE > 0
+Short: FVE < 0

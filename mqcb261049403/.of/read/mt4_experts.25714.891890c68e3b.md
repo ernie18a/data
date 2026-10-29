@@ -1,0 +1,2 @@
+Long: previous completed chart-bar close > simple moving average of close on the current forming chart bar AND Force Index on the current forming chart bar > 0 AND previous completed chart-bar close <= lower Bollinger Band on the current forming chart bar
+Short: previous completed chart-bar close < simple moving average of close on the current forming chart bar AND Force Index on the current forming chart bar < 0 AND previous completed chart-bar close >= upper Bollinger Band on the current forming chart bar

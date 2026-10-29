@@ -1,0 +1,7 @@
+Calculation: Weighted price = (5 × close + 2 × open + high + low) / 9
+Calculation: ZigAndZag buy marker = On a higher timeframe, the indicator’s buy marker: the latest short-lookback pivot is a low, the latest longer-lookback pivot is a low (uptrend), and weighted price has risen at least the current spread above the weighted price at that short pivot; the marker is canceled if weighted price returns to or below the pivot. Pivots are alternating rolling lows/highs of low/high, using the shorter lookback for short pivots and the longer lookback for trend pivots.
+Calculation: ZigAndZag sell marker = On a higher timeframe, the indicator’s sell marker: the latest short-lookback pivot is a high, the latest longer-lookback pivot is a high (downtrend), and weighted price has fallen at least the current spread below the weighted price at that short pivot; the marker is canceled if weighted price returns to or above the pivot. Pivots are alternating rolling lows/highs of low/high, using the shorter lookback for short pivots and the longer lookback for trend pivots.
+Long: Higher-timeframe ZigAndZag buy marker on the last completed bar (or sell marker if reverse-entry mode is enabled)
+Short: Higher-timeframe ZigAndZag sell marker on the last completed bar (or buy marker if reverse-entry mode is enabled)
+Exit: long, higher-timeframe ZigAndZag sell marker on the last completed bar
+Exit: short, higher-timeframe ZigAndZag buy marker on the last completed bar

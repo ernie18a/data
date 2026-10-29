@@ -1,0 +1,4 @@
+Calculation: Fast stochastic composite = weighted sum of five stochastic oscillators with progressively longer lookbacks.
+Calculation: Slow stochastic composite = current fast composite divided by a smoothing period plus the previous slow composite multiplied by (smoothing period − 1) divided by the smoothing period.
+Long: Fast stochastic composite > slow stochastic composite (on the chart timeframe or selected higher timeframe; the higher-timeframe value is sampled from the still-forming bar at its start and held until the next higher-timeframe bar).
+Short: Fast stochastic composite < slow stochastic composite (on the chart timeframe or selected higher timeframe; the higher-timeframe value is sampled from the still-forming bar at its start and held until the next higher-timeframe bar).

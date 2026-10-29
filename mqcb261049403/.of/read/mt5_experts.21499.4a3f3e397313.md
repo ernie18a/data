@@ -1,0 +1,5 @@
+Calculation: Moving average = selected moving-average method applied to the selected price over the selected lookback, on the configured timeframe; that timeframe may be higher or lower than the chart timeframe, and the selected bar may be forming or completed according to its bar index.
+Long: selected-timeframe low > moving average AND selected-timeframe low < moving average + upper channel offset AND selected-timeframe open > moving average + upper channel offset
+Short: selected-timeframe high < moving average AND selected-timeframe high > moving average − lower channel offset AND selected-timeframe open < moving average − lower channel offset
+Exit: Long, price ≤ entry price − stop-loss distance OR price ≥ entry price + take-profit distance
+Exit: Short, price ≥ entry price + stop-loss distance OR price ≤ entry price − take-profit distance

@@ -1,0 +1,5 @@
+Calculation: JJRSX = 100 × JurX-smoothed one-bar applied-price change ÷ JurX-smoothed absolute one-bar applied-price change, then JMA-smoothed
+Long: JJRSX on the current bar > JJRSX on the previous bar OR JJRSX on the oldest of the three signal bars > JJRSX on the middle signal bar AND JJRSX on the middle signal bar < JJRSX on the newest signal bar
+Short: JJRSX on the current bar < JJRSX on the previous bar OR JJRSX on the oldest of the three signal bars < JJRSX on the middle signal bar AND JJRSX on the middle signal bar > JJRSX on the newest signal bar
+Exit: Long, JJRSX on the oldest of the three signal bars < JJRSX on the middle signal bar AND JJRSX on the middle signal bar > JJRSX on the newest signal bar
+Exit: Short, JJRSX on the oldest of the three signal bars > JJRSX on the middle signal bar AND JJRSX on the middle signal bar < JJRSX on the newest signal bar

@@ -1,0 +1,5 @@
+Calculation: 3rd-generation moving average = using typical price (high + low + close)/3 and the same smoothing method and phase for both layers, let L be the lookback, X be that smoother, and α = 2(2L − 1)/(2L − 2); MA = (α + 1) × X(typical price, 2L) − α × X(X(typical price, 2L), L). Evaluate on indicator-timeframe bars, which may be higher or lower than the chart timeframe; use completed bars only.
+Long: MA on the oldest of the three latest completed indicator-timeframe bars > MA on the middle bar AND MA on the latest completed bar > MA on the middle bar
+Short: MA on the oldest of the three latest completed indicator-timeframe bars < MA on the middle bar AND MA on the latest completed bar < MA on the middle bar
+Exit: Long, MA on the latest completed indicator-timeframe bar < MA on the preceding completed indicator-timeframe bar
+Exit: Short, MA on the latest completed indicator-timeframe bar > MA on the preceding completed indicator-timeframe bar

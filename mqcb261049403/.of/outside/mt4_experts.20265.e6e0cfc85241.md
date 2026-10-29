@@ -1,0 +1,1 @@
+Close all managed positions when their combined net profit reaches a configured percentage of account balance, either as a gain or a loss. Also close them when their combined loss exceeds a configured fraction of the account’s peak equity.

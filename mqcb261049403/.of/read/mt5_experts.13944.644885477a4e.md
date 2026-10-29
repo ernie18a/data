@@ -1,0 +1,5 @@
+Calculation: XDerivative = a smoothed moving average, using the configured method and parameters, of 100 × (selected applied price − selected applied price n bars earlier) / n, calculated on the configured indicator timeframe (higher or lower than the chart timeframe as configured)
+Long: On the most recent three completed indicator-timeframe bars, the middle XDerivative value is lower than both the preceding and following values
+Short: On the most recent three completed indicator-timeframe bars, the middle XDerivative value is higher than both the preceding and following values
+Exit: long, bar low ≤ entry price − configured stop-loss distance OR bar high ≥ entry price + configured take-profit distance OR the middle XDerivative value is higher than both the preceding and following values on the most recent three completed indicator-timeframe bars
+Exit: short, bar high ≥ entry price + configured stop-loss distance OR bar low ≤ entry price − configured take-profit distance OR the middle XDerivative value is lower than both the preceding and following values on the most recent three completed indicator-timeframe bars

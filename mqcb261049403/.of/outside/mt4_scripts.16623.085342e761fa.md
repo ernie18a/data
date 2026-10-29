@@ -1,0 +1,1 @@
+For each open position, close it if it passes all enabled selection filters: include or exclude a specified strategy identifier, restrict to a specified instrument, and restrict to profitable or losing positions. Close long positions at the instrument’s bid when long closure is enabled, and short positions at its ask when short closure is enabled.

@@ -1,0 +1,3 @@
+Calculation: Hull trend momentum = current smoothed value of (Hull moving average − moving average of the Hull moving average over the square root of the long lookback) minus its preceding-bar value; Hull moving average = 2 × moving average of selected price over half the long lookback − moving average of selected price over the long lookback; use the configured averaging methods, with the final smoothing using the shorter smoothing lookback. Evaluate on the still-forming higher-timeframe bar.
+Long: Previous Hull trend momentum ≤ 0 AND current Hull trend momentum > 0
+Short: Previous Hull trend momentum ≥ 0 AND current Hull trend momentum < 0

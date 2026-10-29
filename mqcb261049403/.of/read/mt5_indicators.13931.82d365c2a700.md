@@ -1,0 +1,4 @@
+Calculation: KPrmSt = round to a whole number the EMA of 100 × (close − lowest low) / (highest high − lowest low), using the current higher-timeframe bar, which is still forming. The range spans the union of a longer rolling count of shorter high/low lookback windows (equivalent to the highest high and lowest low over their combined span); use 50 when the range is zero.
+Calculation: Signal = round to a whole number the EMA of the unrounded KPrmSt EMA, using a separate smoothing period as a second smoothing stage, on the same higher-timeframe bar still forming.
+Long: KPrmSt > Signal
+Short: KPrmSt < Signal

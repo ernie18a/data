@@ -1,0 +1,5 @@
+Calculation: Volume-weighted Fisher oscillator = 100 × the configured moving average of volume × the recursive Fisher transform of the selected applied price, using its rolling high/low range; each bar’s transform input is (2 × (price − rolling low) / (rolling high − rolling low) − 1) × 0.5 + 0.67 × previous input, and its Fisher value is 0.5 × ln((1 + input) / (1 − input)) + 0.5 × previous Fisher value
+Calculation: Smoothed volume = configured moving average of volume, using the same method and parameters as the volume-weighted Fisher oscillator
+Calculation: Upper and lower thresholds = selected upper and lower level multipliers × smoothed volume
+Long: (volume-weighted Fisher oscillator > upper threshold AND volume-weighted Fisher oscillator >= its previous-bar value) OR (previous-bar volume-weighted Fisher oscillator < 0 AND current volume-weighted Fisher oscillator >= 0)
+Short: (volume-weighted Fisher oscillator < lower threshold AND volume-weighted Fisher oscillator <= its previous-bar value) OR (previous-bar volume-weighted Fisher oscillator > 0 AND current volume-weighted Fisher oscillator <= 0)

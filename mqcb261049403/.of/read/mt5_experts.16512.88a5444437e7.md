@@ -1,0 +1,4 @@
+Long: On the configured signal timeframe (which may match, exceed, or be below the chart timeframe), the latest completed bar has slow Williams %R > the signal level AND fast Williams %R > slow Williams %R AND the preceding completed bar did not satisfy both conditions
+Short: On the configured signal timeframe, the latest completed bar has slow Williams %R < -100 − the signal level AND fast Williams %R < slow Williams %R AND the preceding completed bar did not satisfy both conditions
+Exit: long, on the configured signal timeframe, the latest completed bar has slow Williams %R < -100 − the signal level AND fast Williams %R < slow Williams %R
+Exit: short, on the configured signal timeframe, the latest completed bar has slow Williams %R > the signal level AND fast Williams %R > slow Williams %R

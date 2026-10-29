@@ -1,0 +1,8 @@
+Calculation: Long breakout level = high of the last completed higher-timeframe bar + spread + entry buffer
+Calculation: Short breakout level = low of the last completed higher-timeframe bar − entry buffer
+Long: Current time is in an enabled scheduled entry hour AND no same-instrument long position or buy-stop order exists AND free margin ≥ required margin; place buy-stop orders at the long breakout level with stop loss below entry and successive take-profit levels above entry
+Short: Current time is in an enabled scheduled entry hour AND no same-instrument short position or sell-stop order exists AND free margin ≥ required margin; place sell-stop orders at the short breakout level with stop loss above entry and successive take-profit levels below entry
+Exit: Long, price reaches the stop loss, any take-profit level, or the scheduled exit time (enabled schedule hour and minute ≥ exit minute)
+Exit: Short, price reaches the stop loss, any take-profit level, or the scheduled exit time (enabled schedule hour and minute ≥ exit minute)
+Exit: Long, profit exceeds the break-even threshold and moving break-even is not active: set stop to entry; when moving break-even is active, previous chart bar low > the chart bar low before it: set stop to previous chart bar low
+Exit: Short, profit exceeds the break-even threshold and moving break-even is not active: set stop to entry; when moving break-even is active, previous chart bar high > the chart bar high before it: set stop to previous chart bar high

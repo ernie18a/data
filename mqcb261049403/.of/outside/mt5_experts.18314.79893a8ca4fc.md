@@ -1,0 +1,1 @@
+When time-window trading is enabled, allow new entries only during the configured daily interval, including intervals that cross midnight. Outside that interval, close all open positions in the traded instrument.

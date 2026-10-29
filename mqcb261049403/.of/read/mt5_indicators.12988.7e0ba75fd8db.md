@@ -1,0 +1,2 @@
+Long: Relative Vigor Index on each higher timeframe, using its last completed bar, > its overbought threshold
+Short: Relative Vigor Index on each higher timeframe, using its last completed bar, < its oversold threshold

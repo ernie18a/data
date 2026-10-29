@@ -1,0 +1,1 @@
+When there are no open positions, use a pseudo-random draw to choose a direction: open long for the lower or upper portions of the draw’s range, and short for the middle portion, giving roughly equal odds. No other entry direction or exit decision is based on external data.

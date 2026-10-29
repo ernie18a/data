@@ -1,0 +1,3 @@
+Calculation: normalized displacement = (close − rolling volume-weighted average of typical price) / population standard deviation of close over an independently configurable lookback; use separate configurable lookbacks for the VWAP and standard deviation, and set the result to zero when the standard deviation is effectively zero
+Long: normalized displacement ≥ the positive impulse threshold
+Short: normalized displacement ≤ the negative impulse threshold

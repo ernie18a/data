@@ -1,0 +1,3 @@
+Calculation: NRTR trend = In an uptrend, track the highest high and set the threshold to the greater of its prior value and that high minus the average high-low range over the lookback, scaled by the decimal adjustment; reverse to downtrend when the current high is below the threshold. In a downtrend, track the lowest low and set the threshold to the lesser of its prior value and that low plus the scaled average range; reverse to uptrend when the current low is above the threshold. Initialize trend neutral.
+Long: NRTR trend is up AND (the previous bar's NRTR trend was not up OR current high > the most recently marked high)
+Short: NRTR trend is down AND (the previous bar's NRTR trend was not down OR current low < the most recently marked low)

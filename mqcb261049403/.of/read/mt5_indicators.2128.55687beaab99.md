@@ -1,0 +1,5 @@
+Calculation: True range = max(high − low, abs(high − previous close), abs(low − previous close))
+Calculation: Weighted ATR = ATR-period true ranges weighted from longest to shortest lookback, with greater weight on the more recent bars
+Calculation: Trend state = initialize up when the close two bars ago is greater than the previous close, otherwise down; while up, set the trailing extreme to the maximum low and switch down when low < trailing extreme − ATR-scaled reversal threshold; while down, set it to the minimum high and switch up when high > trailing extreme + ATR-scaled reversal threshold
+Long: chart-timeframe trend state = up OR higher-timeframe trend state = up (higher-timeframe calculation uses the bar still forming)
+Short: chart-timeframe trend state = down OR higher-timeframe trend state = down (higher-timeframe calculation uses the bar still forming)

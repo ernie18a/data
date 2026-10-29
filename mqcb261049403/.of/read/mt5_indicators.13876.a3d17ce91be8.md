@@ -1,0 +1,3 @@
+Calculation: Kagi line = a close-based reversal line: while rising, extend to each higher close and reverse down when close falls at least the reversal threshold from the latest high; while falling, extend to each lower close and reverse up when close rises at least the reversal threshold from the latest low.
+Long: latest Kagi line value > previous Kagi line value
+Short: latest Kagi line value < previous Kagi line value

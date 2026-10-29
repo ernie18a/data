@@ -1,0 +1,4 @@
+Calculation: Short-term smoothed rate of change = the selected moving average of close-based rate of change over a shorter lookback, computed on the chart timeframe or selected equal/higher timeframe, using its still-forming bar.
+Calculation: Long-term smoothed rate of change = the selected moving average of close-based rate of change over a longer lookback, computed on the chart timeframe or selected equal/higher timeframe, using its still-forming bar. Use the same rate-of-change type for both.
+Long: Short-term smoothed rate of change > long-term smoothed rate of change
+Short: Short-term smoothed rate of change < long-term smoothed rate of change

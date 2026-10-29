@@ -1,0 +1,5 @@
+Calculation: Slope Direction Line = On the configured indicator timeframe (higher, lower, or equal to the chart timeframe), smooth the applied price twice with the same method: use a long lookback and half that lookback, then calculate 2 × the shorter smoothing − the longer smoothing. Smooth this result with the configured second method using a lookback equal to the square root of the long lookback. Use completed bars.
+Long: The Slope Direction Line rises on the signal bar AND did not rise on the preceding bar
+Short: The Slope Direction Line falls on the signal bar AND did not fall on the preceding bar
+Exit: long, The Slope Direction Line falls on the signal bar AND did not fall on the preceding bar
+Exit: short, The Slope Direction Line rises on the signal bar AND did not rise on the preceding bar

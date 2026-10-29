@@ -1,0 +1,3 @@
+Calculation: Smoothed KWAN = a smoothed value of 100 × DeMarker × Money Flow Index ÷ Momentum, calculated on a higher timeframe; use its still-forming bar for the current value and completed bars for prior values.
+Long: Previous higher-timeframe Smoothed KWAN = the value one bar before it AND current higher-timeframe Smoothed KWAN > previous higher-timeframe Smoothed KWAN
+Short: Previous higher-timeframe Smoothed KWAN > the value one bar before it AND current higher-timeframe Smoothed KWAN = previous higher-timeframe Smoothed KWAN

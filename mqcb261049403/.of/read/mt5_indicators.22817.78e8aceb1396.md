@@ -1,0 +1,2 @@
+Long: On any available timeframe, using its still-forming bar: Parabolic SAR < current chart close OR (RSI < low threshold AND RSI inversion enabled) OR (RSI > high threshold AND RSI inversion disabled) OR fast moving average > slow moving average
+Short: On any available timeframe, using its still-forming bar: Parabolic SAR > current chart close OR (RSI < low threshold AND RSI inversion disabled) OR (RSI > high threshold AND RSI inversion enabled) OR fast moving average < slow moving average

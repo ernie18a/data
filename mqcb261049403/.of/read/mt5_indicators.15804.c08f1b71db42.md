@@ -1,0 +1,2 @@
+Long: RSI on the higher timeframe’s bar still forming > oversold level AND RSI on the previous completed higher-timeframe bar <= oversold level
+Short: RSI on the higher timeframe’s bar still forming < overbought level AND RSI on the previous completed higher-timeframe bar >= overbought level

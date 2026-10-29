@@ -1,0 +1,5 @@
+Calculation: Smoothed KWAN value = selected moving-average smoothing of Stochastic %D × RSI(close) ÷ Momentum(close), using 100 when Momentum is zero; calculate on the configured indicator timeframe, which may be higher or lower than the chart timeframe.
+Long: On the last completed indicator-timeframe bar, current Smoothed KWAN value ≤ previous value AND previous value > the value before it
+Short: On the last completed indicator-timeframe bar, current Smoothed KWAN value < previous value AND previous value ≥ the value before it
+Exit: Long, current Smoothed KWAN value < previous value OR bar low ≤ entry price − stop-loss distance OR bar high ≥ entry price + take-profit distance
+Exit: Short, current Smoothed KWAN value > previous value OR bar high ≥ entry price + stop-loss distance OR bar low ≤ entry price − take-profit distance

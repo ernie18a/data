@@ -1,0 +1,6 @@
+Calculation: Short-smoothed RSI and CCI = RSI and CCI of the same applied price, each smoothed with the same method and a shorter lookback, on the indicator timeframe (higher or lower than the chart timeframe), using completed bars
+Calculation: Long-smoothed RSI and CCI = RSI and CCI of the same applied price, each smoothed with the same method and a longer lookback than the short-smoothed values, on the indicator timeframe (higher or lower than the chart timeframe), using completed bars
+Long: Short-smoothed RSI > long-smoothed RSI AND short-smoothed CCI > long-smoothed CCI AND the preceding completed indicator-timeframe bar did not satisfy both comparisons
+Short: Short-smoothed RSI < long-smoothed RSI AND short-smoothed CCI < long-smoothed CCI AND the preceding completed indicator-timeframe bar did not satisfy both comparisons
+Exit: long, NOT (short-smoothed RSI > long-smoothed RSI AND short-smoothed CCI > long-smoothed CCI)
+Exit: short, NOT (short-smoothed RSI < long-smoothed RSI AND short-smoothed CCI < long-smoothed CCI)

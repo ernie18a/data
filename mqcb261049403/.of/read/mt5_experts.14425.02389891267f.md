@@ -1,0 +1,5 @@
+Calculation: Loco color = on each bar, compare the configured applied price with the prior Loco state; if equal, retain the state and color, otherwise set the color bullish when the applied price is above the prior state and bearish when below. If the applied price and its value Length bars earlier are both above the prior state, update the state to the greater of the prior state and 99.9% of the applied price; if both are below, update it to the lesser of the prior state and 100.1% of the applied price; otherwise update it to 99.9% of the applied price when above the prior state, or 100.1% when below. The applied price is selected from OHLC-derived prices. Use completed bars on the chart timeframe.
+Long: prior bar's Loco color is bearish AND current bar's Loco color is bullish
+Short: prior bar's Loco color is bullish AND current bar's Loco color is bearish
+Exit: long, current bar's Loco color is bearish
+Exit: short, current bar's Loco color is bullish

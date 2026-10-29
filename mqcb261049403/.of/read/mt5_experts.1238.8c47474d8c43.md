@@ -1,0 +1,6 @@
+Calculation: Bull line = Smooth the count of periods in an increasing sequence of Williams %R lookbacks whose first-stage-smoothed value is greater than its value on the preceding bar; use the same first-stage smoothing method and length for every lookback, then apply a second smoothing method and length to the count.
+Calculation: Bear line = Smooth the count of periods in that same increasing sequence whose first-stage-smoothed Williams %R value is less than or equal to its value on the preceding bar; use the same first-stage smoothing method and length for every lookback, then apply the same second-stage smoothing method and length as for the Bull line.
+Long: Bull line > Bear line on the last completed bar AND Bull line <= Bear line on the preceding completed bar
+Short: Bear line > Bull line on the last completed bar AND Bear line <= Bull line on the preceding completed bar
+Exit: long, Bear line > Bull line on the last completed bar
+Exit: short, Bull line > Bear line on the last completed bar

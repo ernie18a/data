@@ -1,0 +1,2 @@
+Long: close < entry price AND previous completed higher-timeframe bar close >= entry price AND its low >= entry price AND the preceding completed higher-timeframe bar low >= entry price
+Short: close > entry price AND previous completed higher-timeframe bar close <= entry price AND its high <= entry price AND the preceding completed higher-timeframe bar high <= entry price

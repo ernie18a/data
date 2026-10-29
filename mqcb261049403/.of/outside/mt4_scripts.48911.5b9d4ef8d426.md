@@ -1,0 +1,1 @@
+When trading is allowed, close open positions or delete pending orders according to user-selected order-category controls. Close active positions when the configured profit or loss threshold condition is met, with separate controls for all positions, buys, and sells.

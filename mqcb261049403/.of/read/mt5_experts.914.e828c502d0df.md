@@ -1,0 +1,5 @@
+Calculation: Simple moving average = arithmetic mean of close over a lookback, with the configured chart-bar shift; use its value for the current forming chart bar.
+Long: Previous completed chart bar open < simple moving average AND previous completed chart bar close > simple moving average AND current forming chart bar volume <= 1 AND chart bar count > 100
+Short: Previous completed chart bar open > simple moving average AND previous completed chart bar close < simple moving average AND current forming chart bar volume <= 1 AND chart bar count > 100
+Exit: Long, previous completed chart bar open > simple moving average AND previous completed chart bar close < simple moving average AND current forming chart bar volume <= 1 AND chart bar count > 100
+Exit: Short, previous completed chart bar open < simple moving average AND previous completed chart bar close > simple moving average AND current forming chart bar volume <= 1 AND chart bar count > 100

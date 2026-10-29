@@ -1,0 +1,4 @@
+Calculation: Pyramid add level = preceding level minus current close × step percentage; initial level = initial close × (1 − step percentage)
+Long: Previous completed-bar Stochastic main line < oversold level AND latest completed-bar Stochastic main line > oversold level AND current close < maximum entry price AND current close > minimum entry price
+Long: Current close < preceding pyramid add level AND current close > minimum entry price AND current close > exponential moving average of close on the configured MA timeframe, using its last completed bar
+Exit: Long, CloseAll is enabled AND configured closing hour is current hour AND current minute ≥ configured closing minute AND position profit > configured profit threshold

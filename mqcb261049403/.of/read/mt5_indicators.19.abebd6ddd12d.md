@@ -1,0 +1,3 @@
+Calculation: Chaikin oscillator = shorter-period EMA of cumulative Accumulation/Distribution minus longer-period EMA of cumulative Accumulation/Distribution; each bar’s Accumulation/Distribution contribution = ((2 × close − high − low) / (high − low)) × volume, or 0 when high = low
+Long: (Chaikin oscillator turns upward from below zero AND close > longer-period SMA of close) OR (price makes a lower low than its previous local low AND Chaikin oscillator turns upward from below its previous local low)
+Short: (Chaikin oscillator turns downward from above zero AND close < longer-period SMA of close) OR (price makes a higher high than its previous local high AND Chaikin oscillator turns downward from below its previous local high)

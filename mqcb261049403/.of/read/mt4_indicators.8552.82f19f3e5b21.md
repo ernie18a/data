@@ -1,0 +1,2 @@
+Long: OsMA on a higher timeframe, using the still-forming bar and two preceding completed bars: the middle value is lower than both adjacent values
+Short: OsMA on a higher timeframe, using the still-forming bar and two preceding completed bars: the middle value is higher than both adjacent values

@@ -1,0 +1,4 @@
+Long: on a higher-timeframe bar that has completed, close > lower Bollinger Band AND open < lower Bollinger Band AND higher-timeframe DEMA(close) on the still-forming bar > DEMA on the previous completed bar > DEMA two bars back AND higher-timeframe EMA(close) on the previous completed bar > EMA on the bar before it
+Short: on a higher-timeframe bar that has completed, close < upper Bollinger Band AND open > upper Bollinger Band AND higher-timeframe DEMA(close) on the still-forming bar < DEMA on the previous completed bar < DEMA two bars back AND higher-timeframe EMA(close) on the previous completed bar < EMA on the bar before it
+Exit: short, on a higher-timeframe bar that has completed, close > lower Bollinger Band AND open < lower Bollinger Band
+Exit: long, on a higher-timeframe bar that has completed, close < upper Bollinger Band AND open > upper Bollinger Band

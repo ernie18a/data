@@ -1,0 +1,3 @@
+Calculation: smoothed volume-weighted DeMarker = the selected moving-average method applied to (100 × DeMarker − 50) × selected volume, calculated on chart-timeframe bars and on higher-timeframe bars
+Long: smoothed volume-weighted DeMarker > its value on the previous chart-timeframe bar OR its value on the previous higher-timeframe bar (higher-timeframe bar still forming)
+Short: smoothed volume-weighted DeMarker < its value on the previous chart-timeframe bar OR its value on the previous higher-timeframe bar (higher-timeframe bar still forming)

@@ -1,0 +1,7 @@
+Calculation: bar midpoint = (high + low) / 2
+Calculation: typical price = (high + low + close) / 3
+Calculation: close-weighted price = (high + low + 2 × close) / 4
+Long: Position is flat or short AND at least 4 of these 7 comparisons are true, comparing the current forming chart-timeframe bar with the previous completed chart-timeframe bar: open > open, high > high, low > low, bar midpoint > bar midpoint, close > close, typical price > typical price, close-weighted price > close-weighted price
+Short: Position is flat or long AND at least 4 of these 7 comparisons are true, comparing the current forming chart-timeframe bar with the previous completed chart-timeframe bar: open <= open, high <= high, low <= low, bar midpoint <= bar midpoint, close <= close, typical price <= typical price, close-weighted price <= close-weighted price
+Exit: Long, at least 4 of these 7 comparisons are true, comparing the current forming chart-timeframe bar with the previous completed chart-timeframe bar: open <= open, high <= high, low <= low, bar midpoint <= bar midpoint, close <= close, typical price <= typical price, close-weighted price <= close-weighted price
+Exit: Short, at least 4 of these 7 comparisons are true, comparing the current forming chart-timeframe bar with the previous completed chart-timeframe bar: open > open, high > high, low > low, bar midpoint > bar midpoint, close > close, typical price > typical price, close-weighted price > close-weighted price

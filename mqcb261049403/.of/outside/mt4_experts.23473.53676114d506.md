@@ -1,0 +1,1 @@
+For the traded symbol, close all open positions when their combined floating loss exceeds a configured fraction of the account’s highest observed equity. If enabled, also close the symbol’s open positions when their combined profit reaches a configured fraction of account balance.

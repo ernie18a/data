@@ -1,0 +1,4 @@
+Calculation: Adaptive moving average (AMA) = previous AMA + ((slow smoothing constant + efficiency ratio × (fast smoothing constant − slow smoothing constant))^G × (current price − previous AMA)); efficiency ratio = absolute change in price over the lookback divided by the sum of absolute price changes over that lookback.
+Calculation: AMA-change standard deviation = population standard deviation of the most recent lookback AMA changes.
+Long: On the first chart bar at each configured higher-timeframe bar boundary, the still-forming higher-timeframe AMA change > dK × AMA-change standard deviation.
+Short: On the first chart bar at each configured higher-timeframe bar boundary, the still-forming higher-timeframe AMA change < −dK × AMA-change standard deviation.

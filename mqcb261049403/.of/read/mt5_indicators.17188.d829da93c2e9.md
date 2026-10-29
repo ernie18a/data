@@ -1,0 +1,5 @@
+Calculation: PDFMA = For selected price P and lookback N, let wₖ be the Gaussian probability density at x = kπ/(N−1), with the configured mean multiplied by π and configured variance, for k = 0…N−1. PDFMA = [w₀Pₜ + Σₖ₌₁…N−1(wₖPₜPₜ₋ₖ)] / [w₀ + Σₖ₌₁…N−1(wₖPₜ)]; omit unavailable lag bars.
+Calculation: Floating upper/lower levels = minimum PDFMA over the level lookback + configured upper/lower percentage of the PDFMA range over that lookback; middle level = average of upper and lower levels.
+Calculation: Quantile upper/lower/middle levels = configured upper/lower/midpoint percentiles of PDFMA over the level lookback.
+Long: PDFMA > upper level (outer-level mode) OR PDFMA > middle level (middle-level mode) OR PDFMA > previous-bar PDFMA (slope mode)
+Short: PDFMA < lower level (outer-level mode) OR PDFMA < middle level (middle-level mode) OR PDFMA < previous-bar PDFMA (slope mode)

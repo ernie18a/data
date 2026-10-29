@@ -1,0 +1,3 @@
+Calculation: PCA loading = the selected principal-component coefficient for each portfolio instrument, computed from a rolling window of synchronized opening prices after taking logs and subtracting each instrument’s window mean; orient the coefficient vector to stay closest in sign to the preceding bar’s vector. Use last completed bars on the configured calculation timeframe, which may be the same as, higher than, or lower than the chart timeframe.
+Long: PCA loading > 0
+Short: PCA loading < 0

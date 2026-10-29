@@ -1,0 +1,3 @@
+Calculation: Volume-weighted Fisher oscillator = moving average of 100 × Fisher transform × selected bar volume; Fisher transform = 0.5 × ln((1 + value) / (1 − value)) + 0.5 × prior Fisher value, where value = (applied price − lowest low) / (highest high − lowest low) − 0.5 + 0.67 × prior value, using the lookback high and low range.
+Long: Volume-weighted Fisher oscillator > its value on the previous chart bar
+Short: Volume-weighted Fisher oscillator < its value on the previous chart bar

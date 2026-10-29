@@ -1,0 +1,1 @@
+Compute Williams %R over four nearby lookback periods. When all four readings are at the oversold extreme, close any short positions and enter long; when all are at the overbought extreme, close any long positions and enter short. Evaluate signals at the configured bar timing, and only open trades while the strategy’s position limit allows.

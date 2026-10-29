@@ -1,0 +1,2 @@
+Long: On a higher-timeframe still-forming bar, Money Flow Index > oversold level AND Money Flow Index on the previous bar <= oversold level
+Short: On a higher-timeframe still-forming bar, Money Flow Index < overbought level AND Money Flow Index on the previous bar >= overbought level

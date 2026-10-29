@@ -1,0 +1,3 @@
+Calculation: Double LWMA = apply a linear weighted moving average to the selected OHLC-derived price series, then apply a linear weighted moving average of the same lookback to that result; calculate on higher-timeframe bars, including the still-forming bar.
+Long: Double LWMA is higher than on the previous higher-timeframe bar AND was not rising on the preceding higher-timeframe bar.
+Short: Double LWMA is lower than on the previous higher-timeframe bar AND was not falling on the preceding higher-timeframe bar.

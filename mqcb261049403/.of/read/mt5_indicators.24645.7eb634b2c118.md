@@ -1,0 +1,3 @@
+Calculation: Engulfing = (previous open >= current close AND previous close <= current open AND previous open < previous close) OR (previous open <= current close AND previous close >= current open AND previous open > current open)
+Long: Engulfing AND current close > current open AND ((current stochastic signal line > overbought level AND previous stochastic signal line < overbought level) OR (current stochastic signal line < oversold level AND previous stochastic signal line > oversold level))
+Short: Engulfing AND current close <= current open AND ((current stochastic signal line > overbought level AND previous stochastic signal line < overbought level) OR (current stochastic signal line < oversold level AND previous stochastic signal line > oversold level))

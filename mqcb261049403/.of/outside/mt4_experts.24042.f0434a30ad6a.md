@@ -1,0 +1,1 @@
+No long or short entry uses data from outside the traded instrument. For exit, close the instrument’s open positions when their combined loss exceeds a configured fraction of the account’s recent equity high. Optional profit exits close positions when combined profit reaches a configured cash target or a configured percentage of account balance.

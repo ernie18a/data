@@ -1,0 +1,4 @@
+Calculation: Bull strength = smooth over a lookback of (high − low + |open − close|) / (2 × tick size), plus (open − close) / tick size when open > close; tick size = (high − low) / volume, replaced by 1 when zero. Use the selected volume field and smoothing method; calculated on the higher-timeframe bar still forming.
+Calculation: Bear strength = smooth over the same lookback and by the same method as bull strength, of (high − low + |open − close|) / (2 × tick size), minus (open − close) / tick size when open < close; tick size = (high − low) / volume, replaced by 1 when zero. Use the selected volume field; calculated on the higher-timeframe bar still forming.
+Long: Bull strength > bear strength
+Short: Bear strength > bull strength

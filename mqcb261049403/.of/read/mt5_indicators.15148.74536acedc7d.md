@@ -1,0 +1,5 @@
+Calculation: Gaussian average = weighted mean of the selected OHLC-derived price over the lookback, with age-i weights exp(A × i^N); use the chart timeframe or, when selected, the higher timeframe’s bar still forming.
+Calculation: Average change = current Gaussian average − previous Gaussian average.
+Calculation: Change standard deviation = population standard deviation of the current and preceding Gaussian-average changes over a lookback; normalize the current change and each threshold (coefficient × standard deviation) to price precision + 2 digits. The long threshold coefficient is smaller than the short threshold coefficient.
+Long: Gaussian average > previous Gaussian average OR normalized average change > long threshold
+Short: Gaussian average < previous Gaussian average OR normalized average change < −long threshold

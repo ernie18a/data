@@ -1,0 +1,5 @@
+Calculation: Spectral RVI main and signal lines = for each line, apply a discrete cosine transform to its standard Relative Vigor Index series over the current and preceding 2^N bars of the configured indicator timeframe, set coefficients from index SS onward to zero, then inverse-transform; use values from the last two completed bars of that timeframe (which may be higher or lower than the chart timeframe).
+Long: Spectral RVI main line on the last completed indicator-timeframe bar > Spectral RVI signal line on that bar AND Spectral RVI main line on the preceding completed indicator-timeframe bar <= Spectral RVI signal line on that bar
+Short: Spectral RVI main line on the last completed indicator-timeframe bar < Spectral RVI signal line on that bar AND Spectral RVI main line on the preceding completed indicator-timeframe bar >= Spectral RVI signal line on that bar
+Exit: long, Spectral RVI main line on the last completed indicator-timeframe bar < Spectral RVI signal line on that bar
+Exit: short, Spectral RVI main line on the last completed indicator-timeframe bar > Spectral RVI signal line on that bar

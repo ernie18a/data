@@ -1,0 +1,3 @@
+Calculation: Double JMA = Apply JMA smoothing twice in sequence to the selected applied price, using independently parameterized passes.
+Long: Double JMA on the chart timeframe is greater than its value on the previous chart bar OR Double JMA on a higher timeframe’s still-forming bar is greater than its value on the previous higher-timeframe bar.
+Short: Double JMA on the chart timeframe is less than its value on the previous chart bar OR Double JMA on a higher timeframe’s still-forming bar is less than its value on the previous higher-timeframe bar.

@@ -1,0 +1,4 @@
+Long: no open position AND hour >= configured start hour AND spread <= configured maximum AND volume > configured minimum AND chart timeframe is daily or higher AND current bid > current daily bar open + configured entry offset
+Short: no open position AND hour >= configured start hour AND spread <= configured maximum AND volume > configured minimum AND chart timeframe is daily or higher AND current ask < current daily bar open - configured entry offset
+Exit: Short, current daily bar open + configured exit offset < current bid OR current bid >= entry price + configured take-profit distance
+Exit: Long, current daily bar open - configured exit offset > current ask OR current ask <= entry price - configured take-profit distance

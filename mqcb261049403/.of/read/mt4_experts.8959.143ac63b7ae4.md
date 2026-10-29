@@ -1,0 +1,5 @@
+Calculation: Tenkan–Kijun separation in points = absolute difference between Tenkan-sen and Kijun-sen divided by one price point
+Long: Tenkan-sen > Kijun-sen AND Kijun-sen > Senkou Span A AND Senkou Span A > Senkou Span B AND same-timeframe current still-forming close > Kijun-sen AND lower-timeframe current still-forming +DI > threshold AND lower-timeframe previous completed +DI < threshold AND Tenkan–Kijun separation in points > threshold
+Short: Tenkan-sen < Kijun-sen AND Kijun-sen < Senkou Span A AND Senkou Span A < Senkou Span B AND same-timeframe current still-forming close < Kijun-sen AND lower-timeframe current still-forming -DI > threshold AND lower-timeframe previous completed -DI < threshold AND Tenkan–Kijun separation in points > threshold
+Exit: Long, low <= entry price - stop-loss distance in points OR high >= entry price + take-profit distance in points
+Exit: Short, high >= entry price + stop-loss distance in points OR low <= entry price - take-profit distance in points

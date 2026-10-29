@@ -1,0 +1,2 @@
+Long: close > short-term SMA(close) OR close > every SMA(close) calculated on the configured lower, equal, and higher timeframes using each timeframe’s still-forming bar
+Short: close <= short-term SMA(close) OR close <= every SMA(close) calculated on the configured lower, equal, and higher timeframes using each timeframe’s still-forming bar

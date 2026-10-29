@@ -1,0 +1,1 @@
+Close an open position when its scheduled expiration time is reached.

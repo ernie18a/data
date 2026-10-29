@@ -1,0 +1,7 @@
+Calculation: UltraMFI = On the configured indicator timeframe, calculate MFI from OHLC and the configured volume series. Smooth MFI with a sequence of lookbacks increasing from short to long. For each lookback, count an increase from the preceding bar as bullish and any other result as bearish. Smooth each count with the configured smoothing method and lookback; the resulting values are the bullish and bearish UltraMFI lines. Compare values on completed bars, including when the indicator timeframe is higher or lower than the chart timeframe.
+Long: Bullish UltraMFI line on the latest completed indicator bar > bearish line AND bullish line on the preceding completed indicator bar < bearish line.
+Short: Bullish UltraMFI line on the latest completed indicator bar < bearish line AND bullish line on the preceding completed indicator bar > bearish line.
+Exit: long, bullish UltraMFI line < bearish line on the latest completed indicator bar
+Exit: short, bullish UltraMFI line > bearish line on the latest completed indicator bar
+Exit: long, bar low <= entry price − configured stop-loss distance OR bar high >= entry price + configured take-profit distance
+Exit: short, bar high >= entry price + configured stop-loss distance OR bar low <= entry price − configured take-profit distance

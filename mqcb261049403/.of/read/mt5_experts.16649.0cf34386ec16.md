@@ -1,0 +1,5 @@
+Calculation: XMA-smoothed candle direction = apply the same selected smoothing method and lookback separately to open and close; bullish if smoothed close > smoothed open, bearish if smoothed close < smoothed open, neutral if equal. Evaluate on the configured indicator timeframe using its last completed bar and the completed bar immediately before it (the indicator timeframe is the same as the chart timeframe in the documented test).
+Long: last completed candle is bullish AND the preceding completed candle is bearish or neutral
+Short: last completed candle is bearish AND the preceding completed candle is bullish or neutral
+Exit: long, last completed candle is bearish AND the preceding completed candle is bullish or neutral
+Exit: short, last completed candle is bullish AND the preceding completed candle is bearish or neutral

@@ -1,0 +1,5 @@
+Calculation: Ishimoku XMA = configured smoothing of the midpoint between the highest configured OHLC price over its upper lookback and the lowest configured OHLC price over its lower lookback; the three lines use progressively longer upper and lower lookbacks and smoothing lengths. Calculate on the configured signal timeframe, which may be higher or lower than the chart timeframe, using completed bars.
+Long: Main line on the last completed signal-timeframe bar > max(cloud lines on that bar) AND main line on the preceding completed bar <= max(cloud lines on that bar)
+Short: Main line on the last completed signal-timeframe bar < min(cloud lines on that bar) AND main line on the preceding completed bar >= min(cloud lines on that bar)
+Exit: Long, main line on the last completed signal-timeframe bar < min(cloud lines on that bar)
+Exit: Short, main line on the last completed signal-timeframe bar > max(cloud lines on that bar)

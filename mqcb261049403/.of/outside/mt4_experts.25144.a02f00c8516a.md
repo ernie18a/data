@@ -1,0 +1,1 @@
+Go long when the current-bar RSI reading exceeds the previous-bar RSI reading by more than a configured threshold. Go short when it falls below the previous-bar reading by more than that threshold. No indicator-based exit rule is defined.

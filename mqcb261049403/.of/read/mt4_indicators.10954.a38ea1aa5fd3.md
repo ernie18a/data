@@ -1,0 +1,3 @@
+Calculation: Daily price change = current daily close minus current daily open, or (current bid / previous daily close) - 1 when configured for percentage change; use the still-forming higher-timeframe daily bar and the previous completed daily bar for its prior close.
+Long: bid > 1-period EMA of the last completed bar on a lower timeframe than the chart OR daily price change > 0
+Short: bid < 1-period EMA of the last completed bar on a lower timeframe than the chart OR daily price change <= 0

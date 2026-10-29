@@ -1,0 +1,5 @@
+Calculation: Mean range = average of |high − low| over a rolling window ending at the current bar.
+Calculation: Selected Williams %R = short-lookback Williams %R if a close displacement over a shorter lag exceeds a configured multiple of mean range; otherwise medium-lookback Williams %R if an open-to-prior-close gap over a shorter lag exceeds a configured multiple of mean range; otherwise long-lookback Williams %R. The long lookback is longer than the medium and short lookbacks; the medium is longer than the short.
+Calculation: Normalized Williams %R = 100 − |Williams %R|.
+Long: Current normalized Williams %R > upper threshold AND, scanning older bars from the immediately prior bar, all values through the first value outside the [lower threshold, upper threshold] band are within the band AND that first outside value < lower threshold.
+Short: Current normalized Williams %R < lower threshold AND, scanning older bars from the immediately prior bar, all values through the first value outside the [lower threshold, upper threshold] band are within the band AND that first outside value > upper threshold.

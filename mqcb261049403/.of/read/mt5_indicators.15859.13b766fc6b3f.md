@@ -1,0 +1,3 @@
+Calculation: Rounded volume-weighted moving average = the selected price averaged over a lookback, weighted by the selected volume series, then rounded to the configured precision
+Long: Rounded volume-weighted moving average on the current bar > rounded volume-weighted moving average on the previous bar
+Short: Rounded volume-weighted moving average on the current bar < rounded volume-weighted moving average on the previous bar

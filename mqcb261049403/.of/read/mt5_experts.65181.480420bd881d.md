@@ -1,0 +1,4 @@
+Long: Decision Layer recommends Enter Long AND Pressure Index > 0.2 AND Forecast Direction = UP AND Forecast Confidence > 70% AND Flow Pattern is Buyer Re-entry OR Seller Exhaustion AND Weighted Delta > 0 AND Risk/Reward Ratio > 1.5
+Short: Decision Layer recommends Enter Short AND Pressure Index < -0.2 AND Forecast Direction = DOWN AND Forecast Confidence > 70% AND Flow Pattern is Seller Re-entry OR Buyer Exhaustion AND Weighted Delta < 0 AND Risk/Reward Ratio > 1.5
+Exit: long, Forecast Confidence < 50% OR Pressure Index <= 0.2 OR price <= entry price - dynamic threshold
+Exit: short, Forecast Confidence < 50% OR Pressure Index >= -0.2 OR price >= entry price + dynamic threshold

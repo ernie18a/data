@@ -1,0 +1,2 @@
+Long: chart-bar open > lower fractal on the chart timeframe OR (chart-bar open > lower fractal on a lower timeframe’s last completed bar AND a lower fractal exists on the chart timeframe’s last completed bar)
+Short: chart-bar open < upper fractal on the chart timeframe OR (chart-bar open < upper fractal on a lower timeframe’s last completed bar AND an upper fractal exists on the chart timeframe’s last completed bar)

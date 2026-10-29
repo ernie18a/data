@@ -1,0 +1,4 @@
+Long: Current price >= previous completed chart bar high + breakout buffer AND previous completed chart bar high - current close >= minimum range threshold AND current close - previous completed chart bar low >= minimum range threshold AND current open < previous completed chart bar high AND no trade has already occurred today
+Short: Current price <= previous completed chart bar low - breakout buffer AND previous completed chart bar high - current close >= minimum range threshold AND current close - previous completed chart bar low >= minimum range threshold AND current open > previous completed chart bar low AND no trade has already occurred today
+Exit: Long, current bar low <= entry price - stop distance OR current bar high >= entry price + profit target distance
+Exit: Short, current bar high >= entry price + stop distance OR current bar low <= entry price - profit target distance

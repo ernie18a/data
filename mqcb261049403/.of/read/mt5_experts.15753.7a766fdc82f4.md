@@ -1,0 +1,6 @@
+Calculation: RSI MACD histogram = fast-smoothed RSI minus that result smoothed with a longer lookback
+Calculation: RSI MACD signal line = MACD histogram smoothed with a lookback
+Long: On the indicator timeframe (which may be higher or lower than the chart timeframe), using completed bars: older histogram <= 0 AND latest histogram > 0 OR older histogram < 0 AND latest histogram >= 0 OR histogram two bars ago > histogram one bar ago AND latest histogram > histogram one bar ago OR signal line two bars ago > signal line one bar ago AND latest signal line > signal line one bar ago OR older histogram > older signal line AND latest histogram <= latest signal line
+Short: On the indicator timeframe (which may be higher or lower than the chart timeframe), using completed bars: older histogram >= 0 AND latest histogram < 0 OR older histogram > 0 AND latest histogram <= 0 OR histogram two bars ago < histogram one bar ago AND latest histogram < histogram one bar ago OR signal line two bars ago < signal line one bar ago AND latest signal line < signal line one bar ago OR older histogram < older signal line AND latest histogram >= latest signal line
+Exit: Short, long-entry condition
+Exit: Long, short-entry condition

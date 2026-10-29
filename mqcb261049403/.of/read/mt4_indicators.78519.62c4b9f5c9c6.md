@@ -1,0 +1,9 @@
+Calculation: Signal timeframe = each timeframe shown by the panel, which may be lower than, equal to, or higher than the chart timeframe; evaluate its five preceding completed bars and its still-forming bar.
+Calculation: Oscillators = MACD line, MACD histogram, RSI, smoothed stochastic %K, CCI, momentum, OBV, VWMA(12) − VWMA(26), CMF, and MFI, using the configured lookbacks.
+Calculation: Pivot high/low = a local maximum/minimum of the selected price source (close, or high/low when wick pivots are selected), confirmed after the configured number of bars on each side.
+Calculation: Regular bullish divergence = oscillator is higher and selected price source is lower at the signal bar than at a prior pivot low; regular bearish divergence = oscillator is lower and selected price source is higher than at a prior pivot high.
+Calculation: Hidden bullish divergence = oscillator is lower and selected price source is higher at the signal bar than at a prior pivot low; hidden bearish divergence = oscillator is higher and selected price source is lower than at a prior pivot high.
+Calculation: Valid divergence = the relevant divergence condition holds against one of the configured number of prior pivots, within the configured maximum lookback; the straight lines joining the oscillator and close-price endpoints have no intervening bar beyond either line in the divergence direction. For confirmed signals, compare the last completed bar; for unconfirmed signals, compare the bar still forming.
+Calculation: Bar divergence count = number of enabled oscillator/type divergences on that bar, counting regular and hidden types separately; bullish/bearish oscillator count = number of enabled oscillators with at least one valid divergence of that side.
+Long: Bar divergence count ≥ configured minimum AND bullish oscillator count > 0.
+Short: Bar divergence count ≥ configured minimum AND bearish oscillator count > 0.

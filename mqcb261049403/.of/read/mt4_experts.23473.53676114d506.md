@@ -1,0 +1,7 @@
+Calculation: Fast and slow moving averages = linear weighted moving averages of typical price on the chart timeframe, using shorter and longer lookbacks respectively; current forming bar
+Calculation: Fast stochastic = main line of a stochastic oscillator with shorter lookback and smoothing than the slow stochastic; chart timeframe, last completed bar
+Calculation: Slow stochastic = signal line of a stochastic oscillator with longer lookback and smoothing than the fast stochastic; chart timeframe, last completed bar
+Long: fast stochastic <= buy threshold AND slow stochastic <= buy threshold AND fast moving average > slow moving average AND low[2] < high[1] AND abs(open - close[2]) > retracement distance
+Short: fast stochastic >= sell threshold AND slow stochastic >= sell threshold AND fast moving average < slow moving average AND low[1] < high[2] AND abs(open - close[1]) > retracement distance
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance OR high > entry price + break-even activation distance AND low <= entry price + break-even offset
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance OR low < entry price - break-even activation distance AND high >= entry price - break-even offset

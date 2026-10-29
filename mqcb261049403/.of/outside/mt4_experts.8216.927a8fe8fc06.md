@@ -1,0 +1,1 @@
+Go long when the Stochastic signal line (100-period %K, 3-period %D, 3-period slowing, smoothed with SMMA) and 14-period RSI of closing prices are both below 30. Go short when both are above 70. Close a long on a short signal and close a short on a long signal.

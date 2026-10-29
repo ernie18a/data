@@ -1,0 +1,4 @@
+Calculation: Trend oscillator = 50 + 50 × sum(r) / sum(|r|) over the oscillator lookback; r = (close − open from the range lookback bars earlier) / (highest high − lowest low over the range lookback ending at the current bar); set r to 0 if the range is 0, and set the oscillator to 0 if sum(|r|) is 0.
+Calculation: HP trend = Hodrick–Prescott smoothed trend of the oscillator.
+Long: Higher-timeframe trend oscillator > higher-timeframe HP trend, using the higher-timeframe bar mapped to the current chart bar, which may still be forming.
+Short: Higher-timeframe trend oscillator < higher-timeframe HP trend, using the higher-timeframe bar mapped to the current chart bar, which may still be forming.

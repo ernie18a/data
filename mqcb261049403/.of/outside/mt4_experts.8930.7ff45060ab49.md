@@ -1,0 +1,1 @@
+At the configured daily entry time, open the configured direction (long or short) on each enabled instrument that has no existing position in that direction. Close all strategy positions when account equity reaches the configured profit or loss threshold relative to account balance, or during the configured daily closing window.

@@ -1,0 +1,5 @@
+Calculation: J2JMA = apply two successive JMA smoothings, each with its own parameters, to the selected price derived from OHLC; for the higher-timeframe version, use the higher-timeframe bar mapped to the chart bar, including the bar still forming
+Calculation: J2JMA change = current J2JMA − previous J2JMA
+Calculation: Change standard deviation = population standard deviation of the recent J2JMA changes over a lookback
+Long: J2JMA change > first coefficient × Change standard deviation AND J2JMA change <= second coefficient × Change standard deviation OR J2JMA change > second coefficient × Change standard deviation
+Short: J2JMA change < −(first coefficient × Change standard deviation) AND J2JMA change >= −(second coefficient × Change standard deviation) OR J2JMA change < −(second coefficient × Change standard deviation)

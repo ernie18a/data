@@ -1,0 +1,3 @@
+Calculation: ATR-normalized histogram = 100 × smoothed(close − low) ÷ max(smoothed(max(high, previous close) − min(low, previous close)), minimum price increment), using separately parameterized smoothers for numerator and denominator
+Long: ATR-normalized histogram crosses above the overbought threshold on a higher-timeframe bar, from at or below the threshold on the preceding higher-timeframe bar; use the last completed higher-timeframe bar
+Short: ATR-normalized histogram crosses below the oversold threshold on a higher-timeframe bar, from at or above the threshold on the preceding higher-timeframe bar; use the last completed higher-timeframe bar

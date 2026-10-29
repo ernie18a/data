@@ -1,0 +1,2 @@
+Long: On the higher timeframe’s still-forming bar, the short-period moving average is greater than the long-period moving average AND on the previous bar it was less than or equal to the long-period moving average
+Short: On the higher timeframe’s still-forming bar, the short-period moving average is less than the long-period moving average AND on the previous bar it was greater than or equal to the long-period moving average

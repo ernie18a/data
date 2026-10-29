@@ -1,0 +1,3 @@
+Calculation: DMI stochastic = 100 × sum(DMI difference − rolling minimum of DMI difference) / sum(rolling maximum − rolling minimum), over the shorter slowing lookback; DMI difference = smoothed positive directional movement / smoothed true range − smoothed negative directional movement / smoothed true range. Use the selected chart timeframe or a higher timeframe; when higher, use its still-forming bar.
+Long: DMI stochastic > upper extreme level
+Short: DMI stochastic < lower extreme level

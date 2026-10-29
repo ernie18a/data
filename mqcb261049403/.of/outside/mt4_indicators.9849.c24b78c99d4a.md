@@ -1,0 +1,1 @@
+Build a line-break chart from closing prices. Go long when a downward run reaches the configured number of consecutive lines and reverses upward; go short when an upward run reaches that number and reverses downward. Avoid trading while line directions alternate without a stable trend.

@@ -1,0 +1,4 @@
+Calculation: Power candle close = smooth ((high + low) / 2 − smooth(close)), using a first-stage moving average with a longer lookback than the second-stage smoother.
+Calculation: Power candle open = the power value calculated from open, using the same two smoothing stages, with the current value replaced by the previous power candle close when the gap between the previous bar’s close and current bar’s open is below a configured threshold; use this adjusted value from the configured number of bars earlier.
+Long: Power candle close > power candle open
+Short: Power candle close < power candle open

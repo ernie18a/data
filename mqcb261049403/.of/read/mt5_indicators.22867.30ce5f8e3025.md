@@ -1,0 +1,3 @@
+Calculation: Fisher candle = For each of open, high, low, and close, normalize that price within the rolling low-to-high range over the same lookback, then apply the recursive Fisher transform and the same moving-average smoother to each resulting series. Use a longer lookback for range normalization than for smoothing. If the absolute difference between the source bar's open and close is at most the gap threshold, replace the smoothed Fisher open with the prior bar's smoothed Fisher close. For the higher-timeframe version, use the still-forming bar of a timeframe higher than the chart timeframe.
+Long: Fisher candle close > Fisher candle open
+Short: Fisher candle close < Fisher candle open

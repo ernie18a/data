@@ -1,0 +1,4 @@
+Calculation: JMA increment standard deviation = population standard deviation of the latest lookback of consecutive JMA differences (current JMA − previous JMA)
+Calculation: Lower volatility threshold = the smaller of the two threshold multipliers × JMA increment standard deviation
+Long: JMA increment > Lower volatility threshold on the chart timeframe OR JMA increment > Lower volatility threshold on a higher timeframe's still-forming bar
+Short: JMA increment < −Lower volatility threshold on the chart timeframe OR JMA increment < −Lower volatility threshold on a higher timeframe's still-forming bar

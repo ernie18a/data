@@ -1,0 +1,3 @@
+Calculation: BandsPrice = JJMA-smoothed [100 × (P − (MA(P) − scaled standard deviation of P around MA(P))) / (2 × scaled standard deviation) − 50]; P is the selected applied price, the moving average and standard deviation use their configured lookbacks, and the final JJMA smoothing uses its configured lookback. If the scaled standard deviation is zero, use 1. Calculated on the chart timeframe or, when the higher-timeframe option is used, on its still-forming bar.
+Long: BandsPrice > 0
+Short: BandsPrice < 0

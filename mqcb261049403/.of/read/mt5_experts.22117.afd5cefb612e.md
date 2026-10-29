@@ -1,0 +1,6 @@
+Calculation: Fast line = round XMA(long lookback) of the selected price at half the long lookback; subtract XMA(long lookback) of that price, double the half-lookback result, then smooth with XMA at a shorter smoothing lookback and XMA at the square root of the long lookback. Round to the configured digit increment. On the configured indicator timeframe (same as, higher, or lower than the chart timeframe as configured), use completed bars.
+Calculation: Slow line = smooth the unrounded fast line with XMA at the square root of the long lookback, then round to the configured digit increment. If rounded lines are equal, adjust the upper line by one digit increment to preserve their unrounded ordering. Use the same timeframe and completed bars as the fast line.
+Long: Fast line crosses above slow line between consecutive completed indicator-timeframe bars
+Short: Fast line crosses below slow line between consecutive completed indicator-timeframe bars
+Exit: long, fast line crosses below slow line between consecutive completed indicator-timeframe bars
+Exit: short, fast line crosses above slow line between consecutive completed indicator-timeframe bars

@@ -1,0 +1,6 @@
+Calculation: Positive Vortex line = sum of |high − previous bar’s low| over the lookback divided by the sum of true range over the same lookback, calculated on the Vortex timeframe (same as, higher than, or lower than the chart timeframe) using completed bars
+Calculation: Negative Vortex line = sum of |low − previous bar’s high| over the lookback divided by the sum of true range over the same lookback, calculated on the Vortex timeframe (same as, higher than, or lower than the chart timeframe) using completed bars
+Long: Positive Vortex line on the latest completed bar > Negative Vortex line on that bar AND Positive Vortex line on the preceding completed bar <= Negative Vortex line on that bar
+Short: Negative Vortex line on the latest completed bar > Positive Vortex line on that bar AND Negative Vortex line on the preceding completed bar <= Positive Vortex line on that bar
+Exit: long, Negative Vortex line > Positive Vortex line OR low <= entry price − configured stop distance OR high >= entry price + configured target distance
+Exit: short, Positive Vortex line > Negative Vortex line OR high >= entry price + configured stop distance OR low <= entry price − configured target distance

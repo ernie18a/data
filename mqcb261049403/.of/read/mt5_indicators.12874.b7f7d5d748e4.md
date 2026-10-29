@@ -1,0 +1,3 @@
+Calculation: rolling threshold = highest high over SSP higher-timeframe bars minus (highest high minus lowest low over the same SSP bars) × Kmax / 100, using the still-forming higher-timeframe bar
+Long: rolling threshold on the still-forming higher-timeframe bar > its value KPer higher-timeframe bars earlier AND the previous completed higher-timeframe bar’s threshold <= its value KPer+1 higher-timeframe bars earlier
+Short: rolling threshold on the still-forming higher-timeframe bar < its value KPer higher-timeframe bars earlier AND the previous completed higher-timeframe bar’s threshold >= its value KPer+1 higher-timeframe bars earlier

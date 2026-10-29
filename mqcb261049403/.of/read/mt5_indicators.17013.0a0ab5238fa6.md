@@ -1,0 +1,4 @@
+Calculation: Velocity = difference between the weighted mean of the selected price using weights (lookback − bar age)² and its weighted mean using weights (lookback − bar age), divided by the selected normalization: ATR, standard deviation (sample-corrected or uncorrected), or 1. If sourced from a higher timeframe, use its still-forming bar.
+Calculation: Upper and lower floating levels = rolling minimum velocity + the selected upper or lower percentage of the rolling velocity range; floating middle level = midpoint of that range.
+Long: Velocity > upper floating level OR velocity > floating middle level OR velocity > prior bar's velocity, according to the selected coloring mode.
+Short: Velocity < lower floating level OR velocity < floating middle level OR velocity < prior bar's velocity, according to the selected coloring mode.

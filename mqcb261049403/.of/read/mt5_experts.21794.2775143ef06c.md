@@ -1,0 +1,5 @@
+Calculation: Smoothed power-weighted average = apply the configured XMA smoother to the configured OHLC-derived price averaged over a lookback, weighting each bar by (lookback − age)^power; round the result to the configured price increment. Trend state = rising when this value exceeds the preceding value, falling when it is below, and otherwise carry the preceding state. Evaluate on the configured indicator timeframe, which may be higher or lower than the chart timeframe, using completed bars only.
+Long: current completed bar’s trend state is rising AND the preceding completed bar’s trend state is not rising
+Short: current completed bar’s trend state is falling AND the preceding completed bar’s trend state is not falling
+Exit: long, current completed bar’s trend state is falling
+Exit: short, current completed bar’s trend state is rising

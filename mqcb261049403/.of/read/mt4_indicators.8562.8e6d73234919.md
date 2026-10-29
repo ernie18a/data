@@ -1,0 +1,2 @@
+Long: Short-period LWMA of close > longer-period LWMA of open, evaluated separately on each configured timeframe using its still-forming bar; each timeframe may be higher or lower than the chart timeframe.
+Short: Short-period LWMA of close <= longer-period LWMA of open, evaluated separately on each configured timeframe using its still-forming bar; each timeframe may be higher or lower than the chart timeframe.

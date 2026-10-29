@@ -1,0 +1,3 @@
+Calculation: volume-weighted candle range = (high - low) * volume
+Long: close > open AND (volume >= rising-period SMA(volume) * rising factor OR volume-weighted candle range = highest volume-weighted candle range over the climax lookback OR volume >= rising-period SMA(volume) * extreme factor)
+Short: close <= open AND (volume >= rising-period SMA(volume) * rising factor OR volume-weighted candle range = highest volume-weighted candle range over the climax lookback OR volume >= rising-period SMA(volume) * extreme factor)

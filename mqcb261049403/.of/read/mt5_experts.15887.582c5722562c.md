@@ -1,0 +1,5 @@
+Calculation: Fisher value = Let range position = (selected applied price - lowest low over the lookback) / (highest high over the lookback - lowest low over the lookback). Let smoothed value = clamp(range position - 0.5 + 0.67 × previous smoothed value, -999, 999). Fisher value = 0.5 × ln((1 + smoothed value) / (1 - smoothed value)) + 0.5 × previous Fisher value. Use the configured indicator timeframe (higher, lower, or equal to the chart timeframe); evaluate signals on the selected completed bar and its preceding bar.
+Long: Fisher value > lower threshold AND previous Fisher value ≤ lower threshold
+Short: Fisher value < upper threshold AND previous Fisher value ≥ upper threshold
+Exit: long, most recent threshold-crossing signal is short
+Exit: short, most recent threshold-crossing signal is long

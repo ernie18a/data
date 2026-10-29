@@ -1,0 +1,2 @@
+Long: Williams %R on any of the ten chart-timeframe-or-higher bars still forming > its overbought threshold
+Short: Williams %R on any of the ten chart-timeframe-or-higher bars still forming < its oversold threshold

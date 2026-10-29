@@ -1,0 +1,1 @@
+Close all open market positions when total account profit exceeds either a fixed currency threshold or a threshold defined as a percentage of account balance.

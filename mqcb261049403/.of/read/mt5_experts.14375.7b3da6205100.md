@@ -1,0 +1,5 @@
+Calculation: LeManTrend histogram = On the indicator timeframe (configured independently of the chart timeframe; it may be higher, lower, or equal), use completed bars. For each bar, let HH be the sum of current high minus the rolling highest high over each of three lookbacks (short, medium, and long); let LL be the sum of each rolling lowest low minus current low. Subtract the EMA of LL from the EMA of HH, using the same EMA lookback, then smooth that difference.
+Long: histogram from two completed bars ago > histogram from the previous completed bar AND histogram on the previous completed bar < histogram on the latest completed bar
+Short: histogram from two completed bars ago < histogram from the previous completed bar AND histogram on the previous completed bar > histogram on the latest completed bar
+Exit: long, histogram on the latest completed bar < histogram on the previous completed bar
+Exit: short, histogram on the latest completed bar > histogram on the previous completed bar

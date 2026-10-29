@@ -1,0 +1,4 @@
+Calculation: AML = On each bar, calculate P=(high+low+2×open+2×close)/6; let R1 be the highest high minus lowest low over the current Fractal bars, divided by Fractal; R2 the same range over the preceding Fractal bars, divided by Fractal; and R3 the range over the current 2×Fractal bars, divided by 2×Fractal. Let D=log((R1+R2)/R3)/log(2), and α=clamp(exp(−Lag×(D−1)), 0.01, 1). Smooth P recursively as α×P+(1−α)×the previous smoothed value. Set AML to this smoothed value if its difference from the smoothed value Lag bars earlier is at least Lag²×_Point in absolute value; otherwise carry forward the previous AML.
+Calculation: AML change standard deviation = population standard deviation of the last std_period one-bar AML changes.
+Long: current AML change > dK × AML change standard deviation
+Short: current AML change < −dK × AML change standard deviation

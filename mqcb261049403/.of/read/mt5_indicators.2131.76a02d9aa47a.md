@@ -1,0 +1,3 @@
+Calculation: Fast and slow smoothed-price rates of change = (smoothed selected price on the current bar − smoothed selected price on the previous bar) / smoothed selected price on the previous bar; both use the same selected smoothing method, with the fast lookback shorter than the slow lookback. For the higher-timeframe variant, use the higher-timeframe bar still forming.
+Long: Fast smoothed-price rate of change > slow smoothed-price rate of change OR fast smoothed-price rate of change > 0
+Short: Fast smoothed-price rate of change < slow smoothed-price rate of change OR fast smoothed-price rate of change < 0

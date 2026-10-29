@@ -1,0 +1,4 @@
+Long: Close or RSI, CCI, Williams %R, Momentum, Force Index, DeMarker, ATR, OBV, or MFI crosses above a BUYSTOP trendline OR crosses below a BUYLIMIT trendline, AND no long position is open
+Short: Close or RSI, CCI, Williams %R, Momentum, Force Index, DeMarker, ATR, OBV, or MFI crosses below a SELLSTOP trendline OR crosses above a SELLLIMIT trendline, AND no short position is open
+Exit: long, Close or RSI, CCI, Williams %R, Momentum, Force Index, DeMarker, ATR, OBV, or MFI crosses below an SLBUY or SLALLBUY trendline OR crosses above a TPBUY or TPALLBUY trendline
+Exit: short, Close or RSI, CCI, Williams %R, Momentum, Force Index, DeMarker, ATR, OBV, or MFI crosses above an SLSELL or SLALLSELL trendline OR crosses below a TPSELL or TPALLSELL trendline

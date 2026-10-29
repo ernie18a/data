@@ -1,0 +1,9 @@
+Calculation: Upper channel = higher-timeframe high at the shift of the highest high among the last completed chart-timeframe bars over a longer lookback.
+Calculation: Lower channel = higher-timeframe low at the shift of the lowest low among the last completed chart-timeframe bars over a longer lookback.
+Calculation: Channel midpoint = (upper channel + lower channel) / 2.
+Calculation: Fast and slow averages = linearly weighted averages of typical price on the still-forming chart-timeframe bar; the fast average uses a shorter lookback than the slow average.
+Calculation: Retracement threshold = retracement lookback parameter multiplied by point size.
+Long: ((lower channel >= higher-timeframe low of the last completed bar AND lower channel < higher-timeframe open of the last completed bar) OR (channel midpoint <= higher-timeframe low of the last completed bar AND channel midpoint > higher-timeframe open of the last completed bar)) AND fast average > slow average AND chart low two completed bars ago < chart high one completed bar ago AND abs(current chart price - chart close two completed bars ago) > retracement threshold.
+Short: ((upper channel <= higher-timeframe high of the last completed bar AND upper channel > higher-timeframe open of the last completed bar) OR (channel midpoint >= higher-timeframe high of the last completed bar AND channel midpoint > higher-timeframe open of the last completed bar)) AND fast average < slow average AND chart low one completed bar ago < chart high two completed bars ago AND abs(current chart price - chart close two completed bars ago) > retracement threshold.
+Exit: long, price <= stop-loss price OR price >= take-profit price.
+Exit: short, price >= stop-loss price OR price <= take-profit price.

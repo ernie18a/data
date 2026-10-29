@@ -1,0 +1,4 @@
+Long: At the configured entry hour, the open of a more recent completed chart-timeframe bar minus the open of an older completed chart-timeframe bar exceeds the long-entry threshold.
+Short: At the configured entry hour, the open of an older completed chart-timeframe bar minus the open of a more recent completed chart-timeframe bar exceeds the short-entry threshold.
+Exit: Long, low reaches the entry price minus the long stop-loss distance OR high reaches the entry price plus the long take-profit distance.
+Exit: Short, high reaches the entry price plus the short stop-loss distance OR low reaches the entry price minus the short take-profit distance OR high reaches the trailing stop price, which is set one trailing distance above the lowest price since entry after price has moved favorably by more than that distance.

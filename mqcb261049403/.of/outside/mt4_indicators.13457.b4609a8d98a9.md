@@ -1,0 +1,1 @@
+For each displayed currency pair, calculate fast, intermediate, and slow moving averages of its price on the current timeframe. Signal long when the fast average is above the intermediate average and the intermediate is above the slow; signal short when both comparisons are reversed. Otherwise, give no signal.

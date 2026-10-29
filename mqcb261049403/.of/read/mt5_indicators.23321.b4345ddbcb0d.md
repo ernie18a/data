@@ -1,0 +1,2 @@
+Long: Any of the 20 MFI values, with successively longer lookbacks, on the chart timeframe or the higher timeframe’s still-forming bar > the upper threshold
+Short: Any of the 20 MFI values, with successively longer lookbacks, on the chart timeframe or the higher timeframe’s still-forming bar < the lower threshold

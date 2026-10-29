@@ -1,0 +1,3 @@
+Calculation: Three-timeframe stochastic average = the mean of three Stochastic main (%K) values, using the same K, D, and slowing parameters on shorter-, middle-, and longer-timeframe bars, minus 50; each timeframe may be higher or lower than the chart timeframe and uses the bar corresponding to the chart bar's open, including while it is still forming.
+Long: Three-timeframe stochastic average > 0
+Short: Three-timeframe stochastic average < 0

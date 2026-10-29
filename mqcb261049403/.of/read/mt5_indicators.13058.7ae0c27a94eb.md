@@ -1,0 +1,3 @@
+Calculation: CMx = if the signed base period is negative, the EMA of close over the shorter lookback minus the EMA of close over the longer lookback; otherwise, the CCI of that EMA spread multiplied by ADX and divided by the ADX threshold scaled by the multiplier. The EMA spread uses the base-period and multiplier-scaled lookbacks; in the CCI/ADX form, CCI uses the longer lookback and ADX the shorter lookback.
+Long: CMx on each configured timeframe’s last completed bar < oversold level (timeframe may be higher or lower than chart timeframe)
+Short: CMx on each configured timeframe’s last completed bar > overbought level (timeframe may be higher or lower than chart timeframe)

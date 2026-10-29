@@ -1,0 +1,5 @@
+Calculation: Fast step RSI = Calculate RSI on the chart timeframe. Track upper and lower bounds initialized to negative and positive infinity, respectively, and a trend initialized to zero. On each bar, set candidate bounds to RSI + 2 × fast step and RSI − 2 × fast step. Set trend up if RSI exceeds the prior upper bound; set it down if RSI is below the prior lower bound. In an uptrend, raise the candidate lower bound to at least the prior lower bound; in a downtrend, lower the candidate upper bound to at most the prior upper bound. The line is candidate lower bound + fast step in an uptrend, or candidate upper bound − fast step in a downtrend.
+Calculation: Upper band = Smooth the rolling maximum of the Fast step RSI over a lookback period.
+Calculation: Lower band = Smooth the rolling minimum of the Fast step RSI over the same lookback period, using the same smoothing method and settings as the Upper band.
+Long: Fast step RSI crosses from below the Lower band to at or above it.
+Short: Fast step RSI crosses from above the Upper band to at or below it.

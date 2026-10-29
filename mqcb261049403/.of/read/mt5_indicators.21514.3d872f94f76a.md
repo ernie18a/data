@@ -1,0 +1,4 @@
+Calculation: Upper channel = round to the configured price increment the average of the highest highs from each of N consecutive windows of N bars, starting S bars back; use chart-timeframe bars, or the still-forming bar of the higher timeframe in the higher-timeframe variant.
+Calculation: Lower channel = round to the configured price increment the average of the lowest lows from each of N consecutive windows of N bars, starting S bars back; use chart-timeframe bars, or the still-forming bar of the higher timeframe in the higher-timeframe variant.
+Long: close > upper channel
+Short: close < lower channel

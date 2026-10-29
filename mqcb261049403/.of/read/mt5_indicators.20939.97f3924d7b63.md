@@ -1,0 +1,6 @@
+Calculation: Average range = average of high minus low over the current bar and the previous lookback-period bars
+Calculation: Upper threshold = maximum of the current low and highs over the current bar and the previous lookback-period-minus-one bars, minus the difference between that maximum and the minimum of the current close and lows over the same bars, multiplied by (33 minus the risk setting) / 100
+Calculation: Lower threshold = minimum of the current close and lows over the current bar and the previous lookback-period-minus-one bars, plus the difference between the maximum and minimum above, multiplied by (33 minus the risk setting) / 100
+Calculation: Trend state = -1 when close < lower threshold; then +1 when close > upper threshold (this second condition overrides the first); otherwise retain the prior bar's trend state. Calculate on chart-timeframe bars, or on higher-timeframe bars in the higher-timeframe version; the latter uses the bar still forming.
+Long: prior bar's trend state <= 0 AND current trend state > 0
+Short: prior bar's trend state >= 0 AND current trend state < 0

@@ -1,0 +1,6 @@
+Calculation: QWMA = weighted average of the selected price over the current and preceding bars in its lookback; weights decrease from lookback^speed on the current bar to 1^speed on the oldest bar. It uses the chart timeframe or a higher timeframe; on a higher timeframe, it uses the bar containing the chart bar, which may still be forming.
+Calculation: Upper floating level = lowest QWMA in the floating-level lookback + (highest QWMA − lowest QWMA in that lookback) × upper-level percentage.
+Calculation: Lower floating level = lowest QWMA in the floating-level lookback + (highest QWMA − lowest QWMA in that lookback) × lower-level percentage.
+Calculation: Middle level = (upper floating level + lower floating level) / 2.
+Long: Color-change mode is outer-level cross AND QWMA > upper floating level OR color-change mode is middle-level cross AND QWMA > middle level OR color-change mode is slope change AND QWMA > previous-bar QWMA.
+Short: Color-change mode is outer-level cross AND QWMA < lower floating level OR color-change mode is middle-level cross AND QWMA < middle level OR color-change mode is slope change AND QWMA < previous-bar QWMA.

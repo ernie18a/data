@@ -1,0 +1,3 @@
+Calculation: Sliding-range midpoint = the midpoint between (1) the average of the highest highs across each of N overlapping N-bar windows and (2) the average of the lowest lows across those windows; round to instrument price precision. Use chart-timeframe bars or, when configured higher, the still-forming higher-timeframe bar.
+Long: Sliding-range midpoint on the current bar > sliding-range midpoint on the preceding bar
+Short: Sliding-range midpoint on the current bar < sliding-range midpoint on the preceding bar

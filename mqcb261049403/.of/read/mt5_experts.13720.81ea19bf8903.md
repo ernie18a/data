@@ -1,0 +1,5 @@
+Calculation: DecEMA = On the configured indicator timeframe (which may be higher or lower than the chart timeframe), apply an EMA with a shorter lookback to the selected OHLC price, then cascade ten EMAs with a longer lookback over that result; combine the ten cascaded outputs with coefficients 10, -45, 120, -210, 252, -210, 120, -45, 10, -1, respectively.
+Long: DecEMA on the previous completed bar < DecEMA on the completed bar before it AND DecEMA on the previous completed bar < DecEMA on the latest completed bar
+Short: DecEMA on the previous completed bar > DecEMA on the completed bar before it AND DecEMA on the previous completed bar > DecEMA on the latest completed bar
+Exit: long, DecEMA on the previous completed bar > DecEMA on the latest completed bar
+Exit: short, DecEMA on the previous completed bar < DecEMA on the latest completed bar

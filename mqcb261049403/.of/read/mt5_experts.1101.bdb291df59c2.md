@@ -1,0 +1,5 @@
+Calculation: BrakeParb direction = Start long, with start price at the oldest bar’s low. Track the highest high and lowest low since the current start bar. Each bar, calculate offset = elapsed bars since start ^ A × B × minimum price increment × indicator-bar duration in seconds × 0.1 / 60. In long direction, line = start price + offset; if line > current low, switch to short and reset start price to the tracked highest high plus shift × minimum price increment. In short direction, line = start price − offset; if line < current high, switch to long and reset start price to the tracked lowest low minus shift × minimum price increment. On either switch, reset the start bar to the current bar and restart tracking extrema. Use the configured indicator timeframe and its last completed bar.
+Long: BrakeParb direction changes from short to long
+Short: BrakeParb direction changes from long to short
+Exit: long, BrakeParb direction is short
+Exit: short, BrakeParb direction is long

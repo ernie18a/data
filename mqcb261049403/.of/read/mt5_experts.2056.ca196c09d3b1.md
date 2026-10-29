@@ -1,0 +1,6 @@
+Calculation: Blau Ergodic oscillator = 100 × triple-smoothed momentum ÷ triple-smoothed absolute momentum; momentum is the applied price minus the applied price one bar earlier, and both use the same three successive smoothing depths and method.
+Calculation: Signal line = Blau Ergodic oscillator smoothed with a separate fourth depth using the same smoothing method.
+Long: (breakdown mode AND oscillator crosses above zero) OR (twist mode AND oscillator falls then rises) OR (cloud-twist mode AND oscillator crosses above signal line)
+Short: (breakdown mode AND oscillator crosses below zero) OR (twist mode AND oscillator rises then falls) OR (cloud-twist mode AND oscillator crosses below signal line)
+Exit: long, (breakdown mode AND oscillator crosses below zero) OR (twist mode AND oscillator falls) OR (cloud-twist mode AND oscillator crosses below signal line)
+Exit: short, (breakdown mode AND oscillator crosses above zero) OR (twist mode AND oscillator rises) OR (cloud-twist mode AND oscillator crosses above signal line)

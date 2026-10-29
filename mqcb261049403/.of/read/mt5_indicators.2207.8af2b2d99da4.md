@@ -1,0 +1,4 @@
+Calculation: Smoothed stochastic = 100 × triple-smoothed [selected OHLC price − (highest high + lowest low)/2] ÷ triple-smoothed [(highest high − lowest low)/2], using the same smoothing method and successive stages; highest high and lowest low use the same lookback.
+Calculation: Signal line = further smoothing of the smoothed stochastic using the same smoothing method.
+Long: In histogram mode, smoothed stochastic on the higher timeframe bar still forming > 0 AND smoothed stochastic > smoothed stochastic on the preceding higher timeframe bar OR, in cloud mode, smoothed stochastic − signal line on the last completed higher timeframe bar > 0
+Short: In histogram mode, smoothed stochastic on the higher timeframe bar still forming < 0 AND smoothed stochastic < smoothed stochastic on the preceding higher timeframe bar OR, in cloud mode, smoothed stochastic − signal line on the last completed higher timeframe bar < 0

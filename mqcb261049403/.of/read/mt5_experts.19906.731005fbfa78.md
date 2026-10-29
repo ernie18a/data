@@ -1,0 +1,6 @@
+Calculation: Higher-timeframe SMA = simple moving average of close on a higher timeframe, using the older and most recent completed higher-timeframe bars.
+Calculation: Chart-timeframe SMA = simple moving average of close on the chart timeframe, using the older and most recent completed chart bars; its lookback is scaled to represent the same duration as the higher-timeframe SMA.
+Long: Higher-timeframe SMA on the older completed bar < chart-timeframe SMA on the older completed bar AND higher-timeframe SMA on the most recent completed bar > chart-timeframe SMA on the most recent completed bar
+Short: Higher-timeframe SMA on the older completed bar > chart-timeframe SMA on the older completed bar AND higher-timeframe SMA on the most recent completed bar < chart-timeframe SMA on the most recent completed bar
+Exit: short, Higher-timeframe SMA on the older completed bar < chart-timeframe SMA on the older completed bar AND higher-timeframe SMA on the most recent completed bar > chart-timeframe SMA on the most recent completed bar
+Exit: long, Higher-timeframe SMA on the older completed bar > chart-timeframe SMA on the older completed bar AND higher-timeframe SMA on the most recent completed bar < chart-timeframe SMA on the most recent completed bar

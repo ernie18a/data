@@ -1,0 +1,4 @@
+Calculation: Upper-fractal trend angle = angle of the line joining the two most recent upper fractals; an upper fractal is a bar whose high exceeds the highs of the immediately older and newer bars, with the next older high exceeding the high before it and the next newer high exceeding the high after it.
+Calculation: Lower-fractal trend angle = angle of the line joining the two most recent lower fractals; a lower fractal is a bar whose low is below the lows of the immediately older and newer bars, with the next older low below the low before it and the next newer low below the low after it.
+Long: Upper-fractal trend angle > lower-fractal trend angle
+Short: Upper-fractal trend angle < lower-fractal trend angle

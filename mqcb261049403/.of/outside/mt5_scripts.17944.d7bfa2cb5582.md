@@ -1,0 +1,1 @@
+Exit every open position on the current instrument, closing long positions with sell orders and short positions with buy orders.

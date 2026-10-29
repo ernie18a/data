@@ -1,0 +1,4 @@
+Long: CCI on the last completed bar of the configured indicator timeframe (which may be higher or lower than the chart timeframe) > overbought threshold AND CCI on the preceding completed bar of that timeframe <= overbought threshold
+Short: CCI on the last completed bar of the configured indicator timeframe (which may be higher or lower than the chart timeframe) < oversold threshold AND CCI on the preceding completed bar of that timeframe >= oversold threshold
+Exit: long, CCI on the last completed bar of the configured indicator timeframe (which may be higher or lower than the chart timeframe) < oversold threshold
+Exit: short, CCI on the last completed bar of the configured indicator timeframe (which may be higher or lower than the chart timeframe) > overbought threshold

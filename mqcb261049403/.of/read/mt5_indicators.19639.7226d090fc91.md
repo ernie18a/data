@@ -1,0 +1,3 @@
+Calculation: Adaptive RVI = sum over an adaptive lookback of (close−open + 2×prior(close−open) + 2×two-bars-prior(close−open) + three-bars-prior(close−open))/6, divided by the corresponding sum using high−low; lookback is the floored weighted average of the current and prior three Cycle Period values, with weights 4, 3, 2, 1. Calculate separately on each indicator timeframe (same as or higher than the chart timeframe), using its still-forming bar; the RVI trigger is the prior bar’s Adaptive RVI.
+Long: Adaptive RVI >= trigger
+Short: Adaptive RVI < trigger

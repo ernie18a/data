@@ -1,0 +1,3 @@
+Calculation: Smoothed composite = selected moving average of (RSI of the selected price + 100 × DeMarker) / 2; calculate on the chart timeframe and, for the higher-timeframe version, on a higher timeframe using its still-forming bar.
+Long: On either timeframe, smoothed composite > upper level OR (smoothed composite ≥ lower level AND smoothed composite ≤ upper level AND smoothed composite ≥ its previous value)
+Short: On either timeframe, smoothed composite < lower level OR (smoothed composite ≥ lower level AND smoothed composite ≤ upper level AND smoothed composite < its previous value)

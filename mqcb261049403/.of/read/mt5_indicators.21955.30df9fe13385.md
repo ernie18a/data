@@ -1,0 +1,3 @@
+Calculation: Volume-weighted centered RSI close = smooth(RSI(close, lookback) − 50) × volume, using the same smoothing method and parameter as for the volume series
+Long: previous bar's volume-weighted centered RSI close < 0 AND current bar's volume-weighted centered RSI close >= 0
+Short: previous bar's volume-weighted centered RSI close > 0 AND current bar's volume-weighted centered RSI close <= 0

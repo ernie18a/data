@@ -1,0 +1,3 @@
+Calculation: NRTR reversal level = In an uptrend, track the highest close and set the level to the greater of the prior level and highest close × (1 − average range); in a downtrend, track the lowest close and set the level to the lesser of the prior level and lowest close × (1 + average range). Average range is the mean of high − low over a lookback; use higher-timeframe bars, including the still-forming bar.
+Long: Prior NRTR trend is down AND close of the still-forming higher-timeframe bar > the downtrend NRTR reversal level
+Short: Prior NRTR trend is up AND close of the still-forming higher-timeframe bar < the uptrend NRTR reversal level

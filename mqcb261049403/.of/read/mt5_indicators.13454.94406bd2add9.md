@@ -1,0 +1,3 @@
+Calculation: Schaff RVI Trend Cycle = On the chart timeframe, subtract the longer-lookback RVI from the shorter-lookback RVI; normalize this difference as a stochastic over a cycle lookback and smooth recursively with factor 0.5. Normalize that result as a second stochastic over the same cycle lookback, scale it to [-100, 100], and smooth recursively with factor 0.5.
+Long: Schaff RVI Trend Cycle >= its value on the previous bar
+Short: Schaff RVI Trend Cycle < its value on the previous bar

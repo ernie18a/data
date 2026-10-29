@@ -1,0 +1,3 @@
+Calculation: Smoothed ten-average composite = smooth the weighted sum of ten moving averages of the same selected bar price; each average has its own weight and lookback, with lookbacks ordered shortest to longest. For the higher-timeframe version, calculate from higher-timeframe bars using the still-forming bar.
+Long: Smoothed ten-average composite on the current bar > its value on the previous bar
+Short: Smoothed ten-average composite on the current bar < its value on the previous bar

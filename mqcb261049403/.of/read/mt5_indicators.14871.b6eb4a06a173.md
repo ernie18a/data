@@ -1,0 +1,2 @@
+Long: chart-timeframe bar high > previous chart-timeframe bar high OR still-forming higher-timeframe bar high > previous higher-timeframe bar high
+Short: chart-timeframe bar low < previous chart-timeframe bar low OR still-forming higher-timeframe bar low < previous higher-timeframe bar low

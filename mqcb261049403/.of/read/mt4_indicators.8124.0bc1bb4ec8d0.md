@@ -1,0 +1,2 @@
+Long: On any evaluated timeframe (higher or lower than the chart timeframe), using its still-forming bar: fast EMA > slow EMA OR MFI > 50 OR (RVI main line > 0 AND Momentum > 100 AND CCI > 0) OR (RVI main line < 50 AND Momentum > 100 AND CCI > 0)
+Short: On any evaluated timeframe (higher or lower than the chart timeframe), using its still-forming bar: fast EMA <= slow EMA OR MFI < 50 OR (RVI main line < 0 AND Momentum < 100 AND CCI < 0) OR (RVI main line > 50 AND Momentum < 100 AND CCI < 0)

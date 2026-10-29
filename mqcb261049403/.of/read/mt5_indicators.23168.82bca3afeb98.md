@@ -1,0 +1,3 @@
+Calculation: X2MA = Apply a configurable moving average to an OHLC-derived price, then apply a second configurable moving average to that result; calculate both timeframe values with the same settings using the bar still forming. The first timeframe is the chart timeframe or higher; the second is higher than the first.
+Long: first-timeframe X2MA > second-timeframe X2MA
+Short: first-timeframe X2MA < second-timeframe X2MA

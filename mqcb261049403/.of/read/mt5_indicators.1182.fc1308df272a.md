@@ -1,0 +1,3 @@
+Calculation: Adaptive Laguerre filter = Apply the selected price to a recursive Laguerre filter. Each bar, take the absolute difference between price and the prior filter value; normalize it within its rolling lookback range and smooth it over a shorter lookback to obtain the adaptive factor. Use that factor in the Laguerre stage recursions, then apply a generalized triangular moving average across the stages.
+Long: Prior Adaptive Laguerre filter > 0 AND current Adaptive Laguerre filter > prior Adaptive Laguerre filter
+Short: Prior Adaptive Laguerre filter > 0 AND current Adaptive Laguerre filter < prior Adaptive Laguerre filter

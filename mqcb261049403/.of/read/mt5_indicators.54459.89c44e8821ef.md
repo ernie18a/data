@@ -1,0 +1,3 @@
+Calculation: AlphaTrend = when MFI is available, if MFI >= 50 then max(previous AlphaTrend, low − ATR × multiplier), otherwise min(previous AlphaTrend, high + ATR × multiplier); when MFI is unavailable, use RSI >= 50 in its place
+Long: AlphaTrend > its value 2 bars ago AND its value 1 bar ago <= its value 3 bars ago
+Short: AlphaTrend < its value 2 bars ago AND its value 1 bar ago >= its value 3 bars ago

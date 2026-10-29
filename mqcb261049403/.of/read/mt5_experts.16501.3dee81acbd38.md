@@ -1,0 +1,4 @@
+Long: On the indicator timeframe (same as the chart timeframe in the documented setup), the last completed bar has fast-lookback MFI > longer-lookback MFI AND longer-lookback MFI > signal level, AND the previous completed bar did not satisfy both conditions
+Short: On the indicator timeframe (same as the chart timeframe in the documented setup), the last completed bar has fast-lookback MFI < longer-lookback MFI AND longer-lookback MFI < 100 minus signal level, AND the previous completed bar did not satisfy both conditions
+Exit: Long, on the indicator timeframe, the last completed bar has fast-lookback MFI < longer-lookback MFI AND longer-lookback MFI < 100 minus signal level
+Exit: Short, on the indicator timeframe, the last completed bar has fast-lookback MFI > longer-lookback MFI AND longer-lookback MFI > signal level

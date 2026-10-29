@@ -1,0 +1,6 @@
+Calculation: Higher-timeframe XROC lines = configured close-price rate-of-change series, each smoothed; one has a shorter lookback and one a longer lookback. Use the last completed higher-timeframe bar.
+Calculation: Lower-timeframe XROC lines = configured close-price rate-of-change series, each smoothed; one has a shorter lookback and one a longer lookback. Use the two most recent completed lower-timeframe bars, with the latest as the signal bar.
+Long: Higher-timeframe short-lookback line > higher-timeframe long-lookback line AND lower-timeframe short-lookback line was <= lower-timeframe long-lookback line on the preceding completed bar AND is > it on the latest completed bar
+Short: Higher-timeframe short-lookback line < higher-timeframe long-lookback line AND lower-timeframe short-lookback line was >= lower-timeframe long-lookback line on the preceding completed bar AND is < it on the latest completed bar
+Exit: long, higher-timeframe short-lookback line < higher-timeframe long-lookback line OR lower-timeframe short-lookback line < lower-timeframe long-lookback line on the latest completed bar
+Exit: short, higher-timeframe short-lookback line > higher-timeframe long-lookback line OR lower-timeframe short-lookback line > lower-timeframe long-lookback line on the latest completed bar

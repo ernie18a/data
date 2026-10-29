@@ -1,0 +1,6 @@
+Calculation: EF-distance line = a weighted average of the selected bar price over a lookback; each bar’s weight is the sum, over that lookback, of the absolute price differences from that bar’s price raised to a power.
+Calculation: Flat-Trend state = 3 if smoothed ATR and smoothed close standard deviation both rise from the previous bar, 2 if both fall, and 1 otherwise; compare on the selected signal timeframe, which may be higher or lower than the chart timeframe, using its last completed bar.
+Long: EF-distance line three bars ago > EF-distance line two bars ago AND EF-distance line two bars ago < EF-distance line on the last completed bar AND Flat-Trend state >= selected minimum state
+Short: EF-distance line three bars ago < EF-distance line two bars ago AND EF-distance line two bars ago > EF-distance line on the last completed bar AND Flat-Trend state >= selected minimum state
+Exit: long, EF-distance line two bars ago > EF-distance line on the last completed bar
+Exit: short, EF-distance line two bars ago < EF-distance line on the last completed bar

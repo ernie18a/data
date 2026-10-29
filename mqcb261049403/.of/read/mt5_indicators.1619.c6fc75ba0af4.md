@@ -1,0 +1,2 @@
+Long: chart bar is Monday AND chart bar hour equals the configured opening hour AND chart bar minute = 0 AND the open of the still-forming higher-timeframe daily bar > chart bar close
+Short: chart bar is Monday AND chart bar hour equals the configured opening hour AND chart bar minute = 0 AND the open of the still-forming higher-timeframe daily bar < chart bar close

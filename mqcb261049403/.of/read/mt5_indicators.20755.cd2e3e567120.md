@@ -1,0 +1,3 @@
+Calculation: NonLag MA = weighted average of the selected OHLC price over the lookback; for each lag k, weight w[k] = g·cos(πt), where t = k/(L−2) if k ≤ L−2, otherwise t = 1 + (k−L+2)·7/(4L−1); g = 1 when t ≤ 0.5, otherwise 1/(3πt+1); normalize by the sum of weights. The lookback spans 4L + floor(L−1) lags.
+Long: NonLag MA > its value on the preceding chart bar; use the chart timeframe or a higher timeframe’s still-forming bar, mapped to the chart bar (interpolated if configured).
+Short: NonLag MA < its value on the preceding chart bar; use the chart timeframe or a higher timeframe’s still-forming bar, mapped to the chart bar (interpolated if configured).

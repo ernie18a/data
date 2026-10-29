@@ -1,0 +1,2 @@
+Long: DeMarker < oversold level on a configured timeframe, using its still-forming bar (the timeframe may be higher or lower than the chart timeframe)
+Short: DeMarker > overbought level on a configured timeframe, using its still-forming bar (the timeframe may be higher or lower than the chart timeframe)

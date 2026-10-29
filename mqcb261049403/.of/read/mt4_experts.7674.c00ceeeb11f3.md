@@ -1,0 +1,9 @@
+Calculation: Chart-timeframe MACD = MACD on the chart timeframe, comparing its current forming bar with its last completed bar.
+Calculation: Lower-timeframe stochastic = stochastic main line on a lower timeframe, comparing its current forming bar with its last completed bar; use a longer lookback for long entries than for short entries.
+Calculation: Lower-timeframe breakout prices = close of the current forming bar and high/low of the preceding completed bar on a lower timeframe.
+Calculation: Long stop = entry stop-loss level; after price rises more than the long trailing distance above entry, raise the stop to current price minus the trailing distance when that is above the existing stop.
+Calculation: Short stop = entry stop-loss level; after price falls more than the short trailing distance below entry, lower the stop to current price plus the trailing distance when that is below the existing stop.
+Long: No open orders AND chart-timeframe MACD on the forming bar > its value on the last completed bar AND chart-timeframe MACD on the last completed bar < 0 AND lower-timeframe stochastic on the forming bar < its oversold threshold AND lower-timeframe stochastic on the forming bar > its value on the last completed bar AND lower-timeframe close on the forming bar > the preceding completed bar's high
+Short: No open orders AND chart-timeframe MACD on the forming bar < its value on the last completed bar AND chart-timeframe MACD on the last completed bar > 0 AND lower-timeframe stochastic on the forming bar > its overbought threshold AND lower-timeframe stochastic on the forming bar < its value on the last completed bar AND lower-timeframe close on the forming bar < the preceding completed bar's low
+Exit: Long, price <= long stop
+Exit: Short, price >= short stop

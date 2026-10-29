@@ -1,0 +1,7 @@
+Calculation: Hull moving average = linear weighted moving average of length √N of (2 × linear weighted moving average of length floor(N/2) of the applied-price series − linear weighted moving average of length N of the applied-price series); all bars are on the configured indicator timeframe.
+Calculation: HMA change = current HMA − preceding HMA.
+Calculation: HMA-change standard deviation = population standard deviation of HMA changes over a lookback; the upper change threshold uses a larger multiplier than the lower change threshold.
+Long: On the last completed bar of the configured indicator timeframe (which may be higher or lower than the chart timeframe), HMA change > lower change threshold OR HMA two bars ago > HMA one bar ago AND HMA one bar ago < current HMA.
+Short: On the last completed bar of the configured indicator timeframe (which may be higher or lower than the chart timeframe), HMA change < −lower change threshold OR HMA two bars ago < HMA one bar ago AND HMA one bar ago > current HMA.
+Exit: long, On the last completed bar of the configured indicator timeframe (which may be higher or lower than the chart timeframe), HMA change < −lower change threshold OR preceding HMA > current HMA.
+Exit: short, On the last completed bar of the configured indicator timeframe (which may be higher or lower than the chart timeframe), HMA change > lower change threshold OR preceding HMA < current HMA.

@@ -1,0 +1,6 @@
+Calculation: Fast SMA = shorter-lookback simple moving average of close, using the same plot shift as the slow SMA
+Calculation: Slow SMA = longer-lookback simple moving average of close, using the same plot shift as the fast SMA
+Long: position is flat AND current hour is within the configured opening interval (inclusive) AND current chart bar's Fast SMA exceeds its Slow SMA by at least one price point AND the Slow SMA exceeds the Fast SMA by at least one price point on both the second and fifth most recent completed chart bars AND the most recent completed chart bar closes above its open
+Short: position is flat AND current hour is within the configured opening interval (inclusive) AND current chart bar's Slow SMA exceeds its Fast SMA by at least one price point AND the Fast SMA exceeds the Slow SMA by at least one price point on both the second and fifth most recent completed chart bars AND the most recent completed chart bar closes below its open
+Exit: long, price reaches entry price minus the configured stop-loss distance OR reaches entry price plus the configured take-profit distance
+Exit: short, price reaches entry price plus the configured stop-loss distance OR reaches entry price minus the configured take-profit distance

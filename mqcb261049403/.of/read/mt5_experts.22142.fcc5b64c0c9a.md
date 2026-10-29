@@ -1,0 +1,4 @@
+Long: hour = 0 AND minute <= 3 AND weekday != Monday AND weekday != Friday AND ((open[24] - close[1] > channel-width threshold AND close[1] - lowest low of bars 1–24 < rollback distance - rollback tolerance) OR (close[1] - open[24] > channel-width threshold AND highest high of bars 1–24 - close[1] > rollback distance + rollback tolerance))
+Short: hour = 0 AND minute <= 3 AND weekday != Monday AND weekday != Friday AND ((close[1] - open[24] > channel-width threshold AND highest high of bars 1–24 - close[1] < rollback distance - rollback tolerance) OR (open[24] - close[1] > channel-width threshold AND close[1] - lowest low of bars 1–24 > rollback distance + rollback tolerance))
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

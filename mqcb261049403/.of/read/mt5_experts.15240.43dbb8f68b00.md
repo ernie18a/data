@@ -1,0 +1,4 @@
+Long: On the indicator timeframe (as configured relative to the chart timeframe), the last completed bar has WPR > -20 AND the immediately preceding bar has WPR < -20 AND RSI > 50 AND WPR is not > -20 on any bar from two bars before the signal bar through filterUP+2 bars before it
+Short: On the indicator timeframe (as configured relative to the chart timeframe), the last completed bar has WPR < -80 AND the immediately preceding bar has WPR > -80 AND RSI < 50 AND WPR is not < -80 on any bar from two bars before the signal bar through filterDN+2 bars before it
+Exit: long, the short condition is true
+Exit: short, the long condition is true

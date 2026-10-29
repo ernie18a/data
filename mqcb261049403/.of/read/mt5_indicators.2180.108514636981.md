@@ -1,0 +1,5 @@
+Calculation: Smoothed stochastic main line = stochastic %K line, smoothed with a configurable averaging method and lookback, calculated on the chart timeframe.
+Calculation: Smoothed stochastic signal line = stochastic signal line, smoothed with the same averaging method and lookback as the main line, calculated on the chart timeframe.
+Calculation: Higher-timeframe smoothed stochastic main and signal lines = the same respective lines calculated on a higher timeframe, using the current forming higher-timeframe bar.
+Long: Smoothed stochastic main line > smoothed stochastic signal line OR higher-timeframe smoothed stochastic main line > higher-timeframe smoothed stochastic signal line
+Short: Smoothed stochastic main line < smoothed stochastic signal line OR higher-timeframe smoothed stochastic main line < higher-timeframe smoothed stochastic signal line

@@ -1,0 +1,5 @@
+Long: No open position AND the most recent ZigZag high pivot is not more recent than the most recent ZigZag low pivot (both pivots are calculated on the chart timeframe, including the bar still forming)
+Short: No open position AND the most recent ZigZag high pivot is more recent than the most recent ZigZag low pivot (both pivots are calculated on the chart timeframe, including the bar still forming)
+Calculation: Trailing stop = after price moves favorably beyond the activation distance, ratchet the long stop to current price minus the trailing distance when it is at least one step above the previous stop; for a short, ratchet to current price plus the trailing distance when it is at least one step below the previous stop
+Exit: Long position, low <= entry price minus the stop-loss distance OR high >= entry price plus the take-profit distance OR low <= trailing stop
+Exit: Short position, high >= entry price plus the stop-loss distance OR low <= entry price minus the take-profit distance OR high >= trailing stop

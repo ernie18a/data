@@ -1,0 +1,15 @@
+Calculation: Adaptive Market Level = recursively smooth (high + low + 2×open + 2×close)/6 with alpha = clamp(exp(-Lag×(D−1)), 0.01, 1), where D = log((R1+R2)/R3)/log(2), R1 = range(high,low over Fractal bars)/Fractal, R2 = range over the next older Fractal bars/Fractal, and R3 = range over 2×Fractal bars/(2×Fractal). Hold the level at its previous value unless the absolute difference between the smoothed value and its value Lag bars earlier is at least Lag² points. Calculate on the indicator timeframe (which may be higher, lower, or equal to the chart timeframe), using completed bars.
+Calculation: Skyscraper trend state = persistent up/down state. On each completed indicator-timeframe bar, set it up if close exceeds the prior upper threshold, down if close falls below the prior lower threshold, otherwise retain its state. For High/Low mode, raw upper/lower thresholds are low + 2×step and high − 2×step; for Close mode they are close + 2×step and close − 2×step. step = floor(0.5×sensitivity×(maximum ATR + minimum ATR over the lookback)/point). In the up state, the lower threshold is the greater of its raw value and the prior lower threshold; in the down state, the upper threshold is the lesser of its raw value and the prior upper threshold. Calculate on the indicator timeframe (which may be higher, lower, or equal to the chart timeframe), using completed bars.
+Calculation: Double-smoothed candle = apply the first moving-average method and lookback, then the second moving-average method and lookback, separately to each OHLC series. Adjust its open to the prior double-smoothed close when the absolute raw open−close difference is at most the gap threshold; otherwise use the double-smoothed open. Calculate on the indicator timeframe (which may be higher, lower, or equal to the chart timeframe), using completed bars.
+Long: Skyscraper trend state changes from down to up
+Long: Adaptive Market Level rises from the prior completed indicator-timeframe bar to the current completed indicator-timeframe bar
+Long: Double-smoothed candle close > adjusted open AND the prior completed candle close <= adjusted open
+Short: Skyscraper trend state changes from up to down
+Short: Adaptive Market Level falls from the prior completed indicator-timeframe bar to the current completed indicator-timeframe bar
+Short: Double-smoothed candle close < adjusted open AND the prior completed candle close >= adjusted open
+Exit: long, Skyscraper trend state changes from up to down
+Exit: long, Adaptive Market Level falls from the prior completed indicator-timeframe bar to the current completed indicator-timeframe bar
+Exit: long, Double-smoothed candle close < adjusted open
+Exit: short, Skyscraper trend state changes from down to up
+Exit: short, Adaptive Market Level rises from the prior completed indicator-timeframe bar to the current completed indicator-timeframe bar
+Exit: short, Double-smoothed candle close > adjusted open

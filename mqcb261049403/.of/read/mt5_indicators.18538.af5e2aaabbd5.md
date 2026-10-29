@@ -1,0 +1,3 @@
+Calculation: PEMA = 8×EMA₁ − 28×EMA₂ + 56×EMA₃ − 70×EMA₄ + 56×EMA₅ − 28×EMA₆ + 8×EMA₇ − EMA₈, where each EMA uses the same applied price and lookback, and each successive EMA smooths the preceding EMA
+Long: PEMA on the chart timeframe > its value on the previous chart bar OR PEMA on a higher timeframe, using its still-forming bar, > its value on the previous higher-timeframe bar
+Short: PEMA on the chart timeframe < its value on the previous chart bar OR PEMA on a higher timeframe, using its still-forming bar, < its value on the previous higher-timeframe bar

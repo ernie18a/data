@@ -1,0 +1,5 @@
+Calculation: Chaikin Oscillator = short-period exponential moving average minus long-period exponential moving average of the Accumulation/Distribution line; the short lookback is shorter than the long lookback.
+Calculation: Chaikin Oscillator ZigZag low = a low pivot of the Chaikin Oscillator: a rolling minimum over the Depth lookback, subject to the Deviation threshold, Backstep suppression of less extreme nearby lows, and alternating pivot selection that retains the more extreme low until a high pivot occurs.
+Calculation: Chaikin Oscillator ZigZag high = a high pivot of the Chaikin Oscillator: a rolling maximum over the Depth lookback, subject to the Deviation threshold, Backstep suppression of less extreme nearby highs, and alternating pivot selection that retains the more extreme high until a low pivot occurs.
+Long: Chaikin Oscillator ZigZag low != empty
+Short: Chaikin Oscillator ZigZag high != empty

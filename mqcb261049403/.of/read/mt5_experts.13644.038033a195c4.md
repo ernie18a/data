@@ -1,0 +1,7 @@
+Calculation: Fractal dimension = log2((R1 + R2) / R), where R is the highest-high minus lowest-low range per bar over an even lookback, and R1 and R2 are the same range per bar over its older and newer halves.
+Calculation: Main adaptive average = α × close + (1 − α) × prior main average, where α = clamp(exp(−k × (fractal dimension − 1)), 0.01, 1); k is greater than the signal-line smoothing multiplier.
+Calculation: Signal line = β × current main adaptive average + (1 − β) × prior signal line, where β = exp(−j × (fractal dimension − 1)) and j < k.
+Long: On the lower indicator timeframe, main adaptive average > signal line on the most recent completed bar AND main adaptive average <= signal line on the preceding completed bar.
+Short: On the lower indicator timeframe, main adaptive average < signal line on the most recent completed bar AND main adaptive average >= signal line on the preceding completed bar.
+Exit: Long, main adaptive average < signal line on the most recent completed lower indicator-timeframe bar OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
+Exit: Short, main adaptive average > signal line on the most recent completed lower indicator-timeframe bar OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

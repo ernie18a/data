@@ -1,0 +1,1 @@
+Close all open positions in the traded instrument when their combined floating loss exceeds a fixed percentage of the account’s peak equity. If percentage-based profit taking is enabled, close them when their combined profit reaches the configured percentage of account balance.

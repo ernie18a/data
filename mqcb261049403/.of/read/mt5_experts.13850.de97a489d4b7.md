@@ -1,0 +1,5 @@
+Calculation: Schaff JJRSX Trend Cycle = calculate fast and slow JJRSX on the configured indicator timeframe (fast has a shorter lookback than slow); subtract slow from fast, normalize the difference to 0–100 using its rolling low and high over a lookback, and smooth with factor 0.5; normalize that result over the same lookback to −100–100 and smooth again with factor 0.5. Evaluate the last completed indicator-timeframe bar and its preceding completed bar; the indicator timeframe may be higher, lower, or equal to the chart timeframe.
+Long: Schaff JJRSX Trend Cycle > its upper threshold AND its preceding completed value ≤ its upper threshold
+Short: Schaff JJRSX Trend Cycle < its lower threshold AND its preceding completed value ≥ its lower threshold
+Exit: long, Schaff JJRSX Trend Cycle < its lower threshold
+Exit: short, Schaff JJRSX Trend Cycle > its upper threshold

@@ -1,0 +1,3 @@
+Calculation: SuperTrend bands and direction = use ATR over a configurable lookback; each bar’s raw lower and upper bands are (high + low) / 2 − ATR × multiplier and (high + low) / 2 + ATR × multiplier. In bullish state, trail the lower band upward using the greater of the current raw lower band and prior bullish band; in bearish state, trail the upper band downward using the lesser of the current raw upper band and prior bearish band. Direction turns bullish when close > prior bearish band and turns bearish when close < prior bullish band.
+Long: SuperTrend direction turns bullish
+Short: SuperTrend direction turns bearish

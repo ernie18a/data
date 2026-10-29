@@ -1,0 +1,5 @@
+Calculation: Breakout range high/low = high/low of the last completed higher-timeframe bar; on Monday, use the maximum high and minimum low of the two last completed higher-timeframe bars.
+Long: No open position AND (not Monday OR current hour >= MondayHour) AND (not Friday OR current hour <= FridayHour) AND current bid > breakout range high
+Short: No open position AND (not Monday OR current hour >= MondayHour) AND (not Friday OR current hour <= FridayHour) AND current ask < breakout range low
+Exit: long, low <= entry price - stop distance OR high >= entry price + target distance OR (highest high since entry > entry price + trailing distance AND low <= highest high since entry - trailing distance)
+Exit: short, high >= entry price + stop distance OR low <= entry price - target distance OR (lowest low since entry < entry price - trailing distance AND high >= lowest low since entry + trailing distance)

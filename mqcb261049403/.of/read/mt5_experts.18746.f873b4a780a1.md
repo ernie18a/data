@@ -1,0 +1,5 @@
+Calculation: Rounded QEMA envelopes = (1 ± deviation/100) × QEMA, where QEMA is 5×EMA1 − 10×EMA2 + 10×EMA3 − 5×EMA4 + EMA5; EMA1–EMA5 are cascaded EMAs of the selected applied price, all using the same lookback, and QEMA is rounded to the configured price precision. Compare against the envelope shifted by the configured number of bars.
+Long: On the configured signal timeframe (higher or lower than the chart timeframe), the last completed bar closes above its shifted upper envelope AND the preceding completed bar closes at or below its shifted upper envelope.
+Short: On the configured signal timeframe (higher or lower than the chart timeframe), the last completed bar closes below its shifted lower envelope AND the preceding completed bar closes at or above its shifted lower envelope.
+Exit: long, close is below the shifted lower envelope on the configured signal timeframe (higher or lower than the chart timeframe), using the last completed bar.
+Exit: short, close is above the shifted upper envelope on the configured signal timeframe (higher or lower than the chart timeframe), using the last completed bar.

@@ -1,0 +1,5 @@
+Calculation: Hourly bars = fixed 1-hour bars; use completed bars for close comparisons and the forming bar for volume. The hourly timeframe is higher than the chart timeframe if the chart is below 1 hour, lower if above 1 hour, and equal if it is 1 hour.
+Long: current hour = configured trading hour AND forming hourly bar volume <= 1 AND no open position AND close of hourly bar N bars ago > close of the last completed hourly bar
+Short: current hour = configured trading hour AND forming hourly bar volume <= 1 AND no open position AND close of hourly bar N bars ago <= close of the last completed hourly bar
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance OR current datetime > entry datetime + maximum position age
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance OR current datetime > entry datetime + maximum position age

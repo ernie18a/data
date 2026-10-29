@@ -1,0 +1,4 @@
+Long: the highest high across N bars beginning 1 bar older than the last completed signal bar > the highest high across N bars beginning N+1 bars older than that bar AND the highest high across N bars beginning 2 bars older than that bar <= the highest high across N bars beginning N+2 bars older than that bar AND the short condition is false
+Short: the lowest low across N bars beginning 1 bar older than the last completed signal bar < the lowest low across N bars beginning N+1 bars older than that bar AND the lowest low across N bars beginning 2 bars older than that bar >= the lowest low across N bars beginning N+2 bars older than that bar AND the long condition is false
+Exit: long, the short condition is true OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, the long condition is true OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

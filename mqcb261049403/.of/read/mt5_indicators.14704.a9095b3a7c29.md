@@ -1,0 +1,5 @@
+Calculation: RSI = relative strength index of close over a lookback period, on the higher-timeframe bar still forming.
+Calculation: Fast line = use RSI with a shorter step than the slow line. Each bar, form candidate bands RSI ± 2 × fast step. Set fast trend up if RSI exceeds the prior upper band, down if it falls below the prior lower band, otherwise retain the trend. In an uptrend, set the lower band to the greater of its candidate and prior value, and Fast line = lower band + fast step. In a downtrend, set the upper band to the lesser of its candidate and prior value, and Fast line = upper band − fast step.
+Calculation: Slow line = the same recursive band calculation as Fast line, using a longer step.
+Long: Prior Fast line ≤ prior Slow line AND current Fast line > current Slow line
+Short: Prior Fast line ≥ prior Slow line AND current Fast line < current Slow line

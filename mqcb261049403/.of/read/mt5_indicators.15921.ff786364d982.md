@@ -1,0 +1,3 @@
+Calculation: Shifted Darvas upper/lower boundaries = Darvas box boundaries from the configured number of bars earlier. Build boxes in repeating five-bar states: (1) set upper to high and, if symmetry is enabled, lower to low; (2) raise upper to each higher high; (3) if high is below upper, set lower to low, otherwise set upper to high; (4–5) if high is below upper, lower lower to each lower low, otherwise set upper to high; after state 5, restart at state 1. Use chart-timeframe bars, or the configured higher-timeframe bars; for the higher timeframe, use the bar still forming.
+Long: close > shifted Darvas upper boundary
+Short: close < shifted Darvas lower boundary

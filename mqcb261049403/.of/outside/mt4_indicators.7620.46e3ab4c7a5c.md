@@ -1,0 +1,1 @@
+Calculate the traded pair’s percent change between consecutive closes and its correlation with the pair’s price signal over the lookback window. When correlation is above the high-correlation threshold, go long if the price signal is rising and short if it is falling. No exit rule is specified.

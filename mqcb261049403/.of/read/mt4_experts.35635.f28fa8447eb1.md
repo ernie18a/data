@@ -1,0 +1,4 @@
+Long: position side is flat AND Lips < Teeth AND Teeth < Jaw AND previous completed bar close <= previous completed bar value of the selected Alligator line AND last completed bar close > last completed bar value of the selected Alligator line
+Short: position side is flat AND Lips < Teeth AND Teeth < Jaw AND previous completed bar close >= previous completed bar value of the selected Alligator line AND last completed bar close < last completed bar value of the selected Alligator line
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

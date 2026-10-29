@@ -1,0 +1,4 @@
+Calculation: Keltner Channels = SMA(high) and SMA(low) difference, multiplied by a multiplier, added to and subtracted from SMA(typical price); all use the same lookback
+Calculation: Momentum = current close − close N bars ago
+Long: (Bollinger upper band >= Keltner upper band OR Bollinger lower band <= Keltner lower band) AND Bollinger upper band < Keltner upper band on the prior bar AND Bollinger lower band > Keltner lower band on the prior bar AND Momentum > 0
+Short: (Bollinger upper band >= Keltner upper band OR Bollinger lower band <= Keltner lower band) AND Bollinger upper band < Keltner upper band on the prior bar AND Bollinger lower band > Keltner lower band on the prior bar AND Momentum < 0

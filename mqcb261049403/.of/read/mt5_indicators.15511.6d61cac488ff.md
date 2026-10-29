@@ -1,0 +1,3 @@
+Calculation: XTRIX = smooth, with the same configurable averaging method, the value 10000 × (the twice-smoothed natural logarithm of the selected bar price minus its value Mom_Period bars earlier); use XLength for both price-smoothing passes and Smooth for the final pass. On the chart timeframe, use the current bar; when using the higher-timeframe version, use the higher-timeframe bar mapped to the chart bar, including the still-forming bar.
+Long: XTRIX >= 0
+Short: XTRIX < 0

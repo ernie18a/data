@@ -1,0 +1,5 @@
+Calculation: XWAMI upper line = momentum (selected price minus that price at the momentum lookback) passed through three successive configurable smoothers; XWAMI lower line = the upper line passed through a fourth configurable smoother. Both are read from the selected indicator timeframe, on completed bars; compare the signal bar with its immediately preceding bar.
+Long: XWAMI upper line on signal bar > XWAMI lower line on signal bar AND XWAMI upper line on preceding bar <= XWAMI lower line on preceding bar
+Short: XWAMI upper line on signal bar < XWAMI lower line on signal bar AND XWAMI upper line on preceding bar >= XWAMI lower line on preceding bar
+Exit: long, XWAMI upper line on signal bar < XWAMI lower line on signal bar
+Exit: short, XWAMI upper line on signal bar > XWAMI lower line on signal bar

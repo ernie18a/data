@@ -1,0 +1,4 @@
+Calculation: 3D oscillator = EMA of [weight × CCI + (1 − weight) × normalized RSI], where normalized RSI = 0 if the RSI lookback range is zero; otherwise (current RSI − lowest RSI over the lookback) / (200 × (highest RSI − lowest RSI)) − 100. Use the same lookback for the RSI high and low.
+Calculation: Signal line = EMA of the 3D oscillator values from the preceding bars, with a shorter smoothing period than the 3D oscillator.
+Long: 3D oscillator crosses above the signal line on the chart timeframe, using the current bar (which may still be forming), OR crosses above it on the higher timeframe, using the current selected bar (which may still be forming).
+Short: 3D oscillator crosses below the signal line on the chart timeframe, using the current bar (which may still be forming), OR crosses below it on the higher timeframe, using the current selected bar (which may still be forming).

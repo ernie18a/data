@@ -1,0 +1,5 @@
+Calculation: Kalman velocity and value = initialize velocity at zero; on each bar, let D = selected applied price − previous Kalman value, update velocity by adding D × smoothing coefficient/100, then set Kalman value to previous Kalman value + D × sqrt(smoothing coefficient/100) + updated velocity.
+Long: On consecutive completed bars of the configured indicator timeframe, which may be higher or lower than the chart timeframe, Kalman velocity changes from ≤ 0 to > 0.
+Short: On consecutive completed bars of the configured indicator timeframe, which may be higher or lower than the chart timeframe, Kalman velocity changes from > 0 to ≤ 0.
+Exit: Long, on consecutive completed bars of the configured indicator timeframe, which may be higher or lower than the chart timeframe, Kalman velocity changes from > 0 to ≤ 0.
+Exit: Short, on consecutive completed bars of the configured indicator timeframe, which may be higher or lower than the chart timeframe, Kalman velocity changes from ≤ 0 to > 0.

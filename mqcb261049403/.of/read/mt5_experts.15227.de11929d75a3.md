@@ -1,0 +1,6 @@
+Calculation: Long Sidus signal = on the configured indicator timeframe, fast LWMA > slow LWMA + threshold AND previous fast LWMA ≤ previous slow LWMA, OR slow LWMA > slow EMA + threshold AND previous slow LWMA ≤ current slow EMA; evaluate on the selected signal bar, which is the last completed bar when signals are generated at bar close.
+Calculation: Short Sidus signal = on the configured indicator timeframe, fast LWMA < slow LWMA − threshold AND previous fast LWMA ≥ previous slow LWMA, OR slow LWMA < slow EMA − threshold AND previous slow LWMA ≥ current slow EMA; evaluate on the selected signal bar, which is the last completed bar when signals are generated at bar close.
+Long: Long Sidus signal
+Short: Short Sidus signal
+Exit: long, Short Sidus signal OR low ≤ entry price − stop-loss distance OR high ≥ entry price + take-profit distance OR, when no current short signal, the latest prior Sidus signal is short and the paired short-entry/long-exit permissions are enabled
+Exit: short, Long Sidus signal OR high ≥ entry price + stop-loss distance OR low ≤ entry price − take-profit distance OR, when no current long signal, the latest prior Sidus signal is long and the paired long-entry/short-exit permissions are enabled

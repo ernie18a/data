@@ -1,0 +1,6 @@
+Calculation: XMA centerline = apply the selected smoothing method to the midpoint of the rolling highest selected OHLC price and rolling lowest selected OHLC price.
+Calculation: Upper channel = XMA centerline × (1 + upper deviation percentage); lower channel = XMA centerline × (1 − lower deviation percentage).
+Long: On the configured indicator timeframe (which may be higher, lower, or equal to the chart timeframe), the last completed bar closes above the upper channel AND the preceding completed bar closed at or below the upper channel.
+Short: On the configured indicator timeframe (which may be higher, lower, or equal to the chart timeframe), the last completed bar closes below the lower channel AND the preceding completed bar closed at or above the lower channel.
+Exit: long, on the configured indicator timeframe (which may be higher, lower, or equal to the chart timeframe), the last completed bar closes below the lower channel.
+Exit: short, on the configured indicator timeframe (which may be higher, lower, or equal to the chart timeframe), the last completed bar closes above the upper channel.

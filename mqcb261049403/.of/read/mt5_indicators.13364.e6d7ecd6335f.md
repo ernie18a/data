@@ -1,0 +1,4 @@
+Calculation: JVariation = apply a JMA smoother to a third moving average in this chain; each moving average uses the same lookback and method: MA1 = moving average of close, MA2 = moving average of (close − MA1), MA3 = moving average of (close − MA1 − MA2).
+Calculation: Higher-timeframe JVariation = the same calculation on higher-timeframe bars, using the higher-timeframe bar still forming.
+Long: current chart-timeframe JVariation > previous chart-timeframe JVariation OR current higher-timeframe JVariation > previous higher-timeframe JVariation
+Short: current chart-timeframe JVariation < previous chart-timeframe JVariation OR current higher-timeframe JVariation < previous higher-timeframe JVariation

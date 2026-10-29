@@ -1,0 +1,3 @@
+Calculation: XMA divergence = XMA of the selected OHLC-derived price with the longer lookback minus XMA of that price with the shorter lookback; the longer lookback is the shorter lookback plus an increment.
+Long: XMA divergence > positive divergence threshold on the chart timeframe OR on a higher timeframe, using the higher timeframe bar still forming.
+Short: XMA divergence ≤ negative divergence threshold on the chart timeframe OR on a higher timeframe, using the higher timeframe bar still forming.

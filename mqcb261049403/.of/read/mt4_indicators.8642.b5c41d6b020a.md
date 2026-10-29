@@ -1,0 +1,2 @@
+Long: shorter-period EMA of close > longer-period EMA of close AND low > shorter-period EMA of close
+Short: shorter-period EMA of close < longer-period EMA of close AND high < shorter-period EMA of close

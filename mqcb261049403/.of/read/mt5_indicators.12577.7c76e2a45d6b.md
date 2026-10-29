@@ -1,0 +1,3 @@
+Calculation: HLR = 100 × (bar midpoint − lowest low over the lookback) ÷ (highest high − lowest low) over the lookback, where bar midpoint = (high + low) ÷ 2; use the higher-timeframe bar still forming
+Long: (previous completed HLR > upper level AND forming HLR ≤ upper level) OR (previous completed HLR > lower level AND forming HLR ≤ lower level)
+Short: (previous completed HLR < lower level AND forming HLR ≥ lower level) OR (previous completed HLR < upper level AND forming HLR ≥ upper level)

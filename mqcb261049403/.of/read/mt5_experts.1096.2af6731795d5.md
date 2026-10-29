@@ -1,0 +1,6 @@
+Calculation: MACD = shorter-lookback smoothed applied price minus longer-lookback smoothed applied price, on the indicator timeframe (higher or lower than the chart timeframe), using completed bars
+Calculation: Signal line = smoothed MACD, on the indicator timeframe (higher or lower than the chart timeframe), using completed bars
+Long: MACD > 0 AND prior MACD <= 0 OR MACD is rising after falling (local minimum across three consecutive completed bars) OR Signal line is rising after falling (local minimum across three consecutive completed bars) OR MACD crosses above Signal line OR MACD > prior MACD OR MACD > prior Signal line
+Short: MACD < 0 AND prior MACD >= 0 OR MACD is falling after rising (local maximum across three consecutive completed bars) OR Signal line is falling after rising (local maximum across three consecutive completed bars) OR MACD crosses below Signal line OR MACD < prior MACD OR MACD < prior Signal line
+Exit: long, MACD < 0 OR MACD is falling OR Signal line is falling OR MACD < Signal line
+Exit: short, MACD > 0 OR MACD is rising OR Signal line is rising OR MACD > Signal line

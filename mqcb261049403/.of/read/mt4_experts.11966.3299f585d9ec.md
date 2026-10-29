@@ -1,0 +1,10 @@
+Calculation: Older-window high = maximum high over N bars at shifts 2N through 3N−1 on the configured signal timeframe (which may be higher than, equal to, or lower than the chart timeframe); these bars are completed.
+Calculation: Middle-window high = maximum high over N bars at shifts N through 2N−1 on the configured signal timeframe; these bars are completed.
+Calculation: Recent-window high = maximum high over N bars at shifts 0 through N−1 on the configured signal timeframe; shift 0 is still forming, and the rest are completed.
+Calculation: Older-window low = minimum low over N bars at shifts 2N through 3N−1 on the configured signal timeframe; these bars are completed.
+Calculation: Middle-window low = minimum low over N bars at shifts N through 2N−1 on the configured signal timeframe; these bars are completed.
+Calculation: Recent-window low = minimum low over N bars at shifts 0 through N−1 on the configured signal timeframe; shift 0 is still forming, and the rest are completed.
+Long: (Older-window low < Middle-window low AND Middle-window low < Recent-window low AND NOT (Older-window high > Middle-window high AND Middle-window high > Recent-window high)) OR (Older-window high > Middle-window high AND Middle-window high > Recent-window high AND NOT (Older-window low < Middle-window low AND Middle-window low < Recent-window low)) when countertrend mode is enabled; and no existing long entry is within the configured minimum same-direction entry distance.
+Short: (Older-window high > Middle-window high AND Middle-window high > Recent-window high AND NOT (Older-window low < Middle-window low AND Middle-window low < Recent-window low)) OR (Older-window low < Middle-window low AND Middle-window low < Recent-window low AND NOT (Older-window high > Middle-window high AND Middle-window high > Recent-window high)) when countertrend mode is enabled; and no existing short entry is within the configured minimum same-direction entry distance.
+Exit: long, low <= active stop-loss level OR high >= take-profit level.
+Exit: short, high >= active stop-loss level OR low <= take-profit level.

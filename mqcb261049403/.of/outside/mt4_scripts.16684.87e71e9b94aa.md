@@ -1,0 +1,1 @@
+For each open position, close it when it satisfies every enabled filter: optionally require the chart instrument, positive profit, negative profit, a specified strategy identifier, or an exact comment match.

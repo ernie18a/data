@@ -1,0 +1,1 @@
+When time-window trading is enabled, close the strategy’s open positions in the traded instrument whenever the current time is outside the configured daily trading interval, including intervals that cross midnight.

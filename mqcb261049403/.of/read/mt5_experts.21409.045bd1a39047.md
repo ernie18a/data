@@ -1,0 +1,6 @@
+Calculation: Signal line = JMA-smoothed 39-bar FATL weighted sum of the selected OHLC price, rounded to a configurable price increment; use the fixed FATL filter coefficients.
+Calculation: Trend state = rising when the signal line is greater than its prior value, falling when it is less, otherwise carry forward the prior state; calculate on the configured indicator timeframe, whether higher or lower than the chart timeframe, using completed bars.
+Long: Trend state on the last completed indicator bar is rising AND trend state on the preceding completed indicator bar is not rising
+Short: Trend state on the last completed indicator bar is falling AND trend state on the preceding completed indicator bar is not falling
+Exit: long, trend state on the last completed indicator bar is falling OR low <= entry price - configurable stop distance OR high >= entry price + configurable take-profit distance
+Exit: short, trend state on the last completed indicator bar is rising OR high >= entry price + configurable stop distance OR low <= entry price - configurable take-profit distance

@@ -1,0 +1,3 @@
+Calculation: Schaff Trend Cycle = Calculate momentum using a shorter and a longer lookback, subtract the longer-lookback momentum from the shorter-lookback momentum, normalize that difference as a stochastic over the cycle lookback to 0–100, smooth it recursively with a 0.5 weight, normalize the smoothed value again over the cycle lookback to −100–100, then smooth recursively with a 0.5 weight.
+Long: Schaff Trend Cycle >= its value on the previous bar AND Schaff Trend Cycle != 0
+Short: Schaff Trend Cycle < its value on the previous bar OR Schaff Trend Cycle = 0

@@ -1,0 +1,1 @@
+For each watched instrument, compare its long-side and short-side swap rates. Favor a long position when the long swap is positive and the short swap is nonpositive; favor a short position when the short swap is positive and the long swap is nonpositive. Otherwise, make no decision.

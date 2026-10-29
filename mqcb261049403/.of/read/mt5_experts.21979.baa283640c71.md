@@ -1,0 +1,5 @@
+Calculation: Direction state = on the selected indicator timeframe (which may be higher or lower than the chart timeframe), compare the smoothed value of ((RSI of the selected applied price − 50) × selected volume) with its value on the immediately preceding bar: rising if greater, falling if less, otherwise carry forward the preceding direction state. Use completed bars only.
+Long: Direction state on the last completed indicator-timeframe bar = rising AND direction state on the preceding completed indicator-timeframe bar = falling
+Short: Direction state on the last completed indicator-timeframe bar = falling AND direction state on the preceding completed indicator-timeframe bar = rising
+Exit: long, direction state on the last completed indicator-timeframe bar = falling
+Exit: short, direction state on the last completed indicator-timeframe bar = rising

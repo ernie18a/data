@@ -1,0 +1,3 @@
+Calculation: HullTrendOSMA = Smooth the difference between the Hull moving average and a moving average of that Hull moving average, using a shorter smoothing period; the Hull moving average is a moving average of twice the half-lookback price average minus the full-lookback price average. Divide the result by the instrument’s point size.
+Long: HullTrendOSMA > 0 AND HullTrendOSMA > its value on the previous bar
+Short: HullTrendOSMA < 0 AND HullTrendOSMA < its value on the previous bar

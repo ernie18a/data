@@ -1,0 +1,5 @@
+Calculation: Williams %R = -100 × (highest high over its lookback − close) ÷ (highest high over its lookback − lowest low over its lookback)
+Calculation: Fast line = using the shorter step, add the step to a trailing lower bound when the adjusted Williams %R is rising and subtract it from a trailing upper bound when falling; switch rising when adjusted Williams %R exceeds the prior upper bound and falling when it drops below the prior lower bound. Each bound is adjusted Williams %R ± 2 × the step and is held from moving against the active direction.
+Calculation: Slow line = calculate a second trailing line by the same method as the fast line, using a longer step.
+Long: Fast line crosses above slow line on the selected signal timeframe, which is higher than the chart timeframe, using the bar still forming.
+Short: Fast line crosses below slow line on the selected signal timeframe, which is higher than the chart timeframe, using the bar still forming.

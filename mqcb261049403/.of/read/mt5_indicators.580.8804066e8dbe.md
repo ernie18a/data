@@ -1,0 +1,3 @@
+Calculation: JFATL acceleration = on higher-timeframe bars, take the applied price, apply the 39-bar FATL digital filter, smooth it with a longer-lookback JMA, take momentum over a lookback, smooth that momentum with a shorter-lookback JMA, then take momentum over a separate lookback; compare values using the current forming higher-timeframe bar and the preceding completed higher-timeframe bar.
+Long: At each higher-timeframe bar opening, current forming JFATL acceleration >= 0
+Short: At each higher-timeframe bar opening, current forming JFATL acceleration < 0

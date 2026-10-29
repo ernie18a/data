@@ -1,0 +1,3 @@
+Calculation: Currency strength = average of each currency’s scores across the configured currency pairs; for each pair, score the base currency from the current close’s percentage position within the higher strength-timeframe bar’s high-low range, stepped into ordered strength levels, and score the quote currency as the inverse around the maximum level; use the bar still forming, and use zero when the range is zero
+Long: base currency strength > quote currency strength
+Short: base currency strength < quote currency strength

@@ -1,0 +1,7 @@
+Calculation: Laguerre RSI = CU / (CU + CD), where L0 = (1 − γ) × selected bar price + γ × prior L0; L1 = −γ × L0 + prior L0 + γ × prior L1; L2 = −γ × L1 + prior L1 + γ × prior L2; L3 = −γ × L2 + prior L2 + γ × prior L3; CU is the sum of positive parts of L0−L1, L1−L2, and L2−L3; CD is the sum of the magnitudes of their negative parts.
+Calculation: Smoothed Laguerre RSI = JMA-smoothed Laguerre RSI × 100.
+Calculation: Color state = 1 if the smoothed Laguerre RSI is above the high level; 2 if it is at or below the low level; between the middle and high levels, state is 2 if the prior value was above the high level, carries the prior state if the prior value was also between the middle and high levels, and is 1 otherwise; between the low and middle levels, state is 2 if the prior value was above the middle level, carries the prior state if the prior value was also between the low and middle levels, and is 1 otherwise. The indicator uses a lower timeframe than the chart and its last completed bar.
+Long: Prior completed bar color state = 2 AND current completed bar color state = 1
+Short: Prior completed bar color state = 1 AND current completed bar color state = 2
+Exit: long, current completed bar color state = 2
+Exit: short, current completed bar color state = 1

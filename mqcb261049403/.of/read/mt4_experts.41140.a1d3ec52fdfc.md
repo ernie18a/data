@@ -1,0 +1,8 @@
+Calculation: Short-term LWMA = linearly weighted moving average of typical price ((high + low + close) / 3) over a shorter lookback, using the still-forming chart-timeframe bar
+Calculation: Long-term LWMA = linearly weighted moving average of typical price ((high + low + close) / 3) over a longer lookback, using the still-forming chart-timeframe bar
+Calculation: Higher-timeframe down-close count = number of the last N completed higher-timeframe closes, excluding the most recent completed close, that are above that most recent close
+Calculation: Higher-timeframe up-close count = number of the last N completed higher-timeframe closes, excluding the most recent completed close, that are below that most recent close
+Long: Higher-timeframe down-close count >= N - 1 AND short-term LWMA > long-term LWMA AND low of the chart-timeframe bar two bars ago < high of the previous completed chart-timeframe bar AND absolute value of (current chart-timeframe bar close - close two chart-timeframe bars ago) > the configured point-based retrace threshold
+Short: Higher-timeframe up-close count >= N - 1 AND short-term LWMA < long-term LWMA AND low of the previous completed chart-timeframe bar < high of the chart-timeframe bar two bars ago AND absolute value of (current chart-timeframe bar close - previous completed chart-timeframe bar close) > the configured point-based retrace threshold
+Exit: long, price <= entry price - configured stop distance OR price >= entry price + configured take-profit distance
+Exit: short, price >= entry price + configured stop distance OR price <= entry price - configured take-profit distance

@@ -1,0 +1,4 @@
+Calculation: ROC trend = compare the higher-timeframe moving average of open over the longer lookback at the current bar with the same moving average at the bar offset by the ROC lookback.
+Calculation: MA-difference trend = compare the current difference between the shorter- and longer-lookback higher-timeframe moving averages of open with that difference on the previous higher-timeframe bar: rising means up, falling means down; when the absolute change is below a fixed tolerance, retain the prior trend if it is opposite to the change, otherwise use the direction of the change.
+Long: ROC trend is up AND MA-difference trend is up (higher-timeframe values use the bar still forming)
+Short: ROC trend is up AND MA-difference trend is down OR ROC trend is down AND MA-difference trend is down (higher-timeframe values use the bar still forming)

@@ -1,0 +1,4 @@
+Long: MACD main line on a higher timeframe (current bar still forming) > its value on the previous bar AND previous-bar MACD main line < 0 AND Stochastic main line on a higher timeframe (current bar still forming) < configured buy level AND current-bar Stochastic main line > its value on the previous bar
+Short: MACD main line on a higher timeframe (current bar still forming) < its value on the previous bar AND previous-bar MACD main line > 0 AND current-bar Stochastic main line > configured sell level AND current-bar Stochastic main line < its value on the previous bar
+Exit: long, low <= stop-loss price OR high >= take-profit price
+Exit: short, high >= stop-loss price OR low <= take-profit price

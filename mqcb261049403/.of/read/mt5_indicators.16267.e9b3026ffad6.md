@@ -1,0 +1,3 @@
+Calculation: Directional range force = 100 divided by the lookback length, multiplied by (the number of bars whose high is higher than the preceding bar’s high minus the number of bars whose low is lower than the preceding bar’s low) over the lookback.
+Long: directional range force > 0 OR directional range force calculated on higher-timeframe bars, using the bar still forming, > 0
+Short: directional range force <= 0 OR directional range force calculated on higher-timeframe bars, using the bar still forming, <= 0

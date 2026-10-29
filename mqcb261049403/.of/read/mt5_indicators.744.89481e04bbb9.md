@@ -1,0 +1,4 @@
+Calculation: Linear regression slope = slope of a least-squares linear regression over the smoothed selected price on higher-timeframe bars.
+Calculation: Trigger line = the linear regression slope from an earlier higher-timeframe bar, delayed by the configured trigger shift.
+Long: On the selected higher-timeframe bar still forming, the slope > trigger line AND the prior trend state was bearish (the last strict slope < trigger comparison).
+Short: On the selected higher-timeframe bar still forming, the slope < trigger line AND the prior trend state was bullish (the last strict slope > trigger comparison).

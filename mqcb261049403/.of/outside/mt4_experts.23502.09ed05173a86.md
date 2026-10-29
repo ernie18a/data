@@ -1,0 +1,1 @@
+Exit all open positions in the traded instrument when their combined floating loss exceeds a configured fraction of the account’s peak equity. When enabled, also exit them when combined floating profit reaches a configured cash target or a configured percentage of account balance.

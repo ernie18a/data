@@ -1,0 +1,2 @@
+Long: Higher-timeframe ZigZag high-pivot (Up) marker is present on the current chart bar; use the higher-timeframe bar still forming.
+Short: Higher-timeframe ZigZag low-pivot (Down) marker is present on the current chart bar; use the higher-timeframe bar still forming.

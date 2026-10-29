@@ -1,0 +1,1 @@
+Use a configured daily time window to allow entries. Outside that window, close any open position in the traded instrument.

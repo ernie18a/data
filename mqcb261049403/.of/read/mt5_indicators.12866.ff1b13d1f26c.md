@@ -1,0 +1,5 @@
+Calculation: Smoothed RSI = moving average of RSI of the selected price, using a configurable lookback and smoothing method.
+Calculation: QQE band distance = configurable factor × the same moving average applied twice to the moving average of the absolute one-bar change in Smoothed RSI; both later averages use the longer lookback 2 × the RSI lookback − 1.
+Calculation: QQE trailing line = initialize from the prior line; when Smoothed RSI is below it, set it to the greater of Smoothed RSI + QQE band distance and the prior line if the prior Smoothed RSI was below the prior line; when Smoothed RSI is above it, set it to the lesser of Smoothed RSI − QQE band distance and the prior line if the prior Smoothed RSI was above the prior line; otherwise use Smoothed RSI + band distance when below, or Smoothed RSI − band distance when above.
+Long: On the higher-timeframe bar still forming, Smoothed RSI > QQE trailing line.
+Short: On the higher-timeframe bar still forming, Smoothed RSI < QQE trailing line.

@@ -1,0 +1,3 @@
+Calculation: Stochastic difference = the stochastic main line minus its signal line, smoothed with a configurable moving-average method and lookback. The standard indicator uses chart-timeframe bars, including the bar still forming; its higher-timeframe variant samples the higher-timeframe bar still forming and carries that value across lower-timeframe bars.
+Long: Stochastic difference > 0
+Short: Stochastic difference < 0

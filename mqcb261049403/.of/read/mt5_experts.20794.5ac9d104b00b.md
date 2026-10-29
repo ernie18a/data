@@ -1,0 +1,5 @@
+Calculation: Double LWMA = a linear weighted moving average of a linear weighted moving average of the selected applied-price series, using the same lookback for both averages, on the configured indicator timeframe (which may be higher or lower than the chart timeframe); evaluate completed bars only
+Long: Double LWMA on the signal bar > Double LWMA on the preceding bar AND Double LWMA on the preceding bar >= Double LWMA on the bar before it
+Short: Double LWMA on the signal bar < Double LWMA on the preceding bar AND Double LWMA on the preceding bar <= Double LWMA on the bar before it
+Exit: Long, Double LWMA on the signal bar < Double LWMA on the preceding bar AND Double LWMA on the preceding bar <= Double LWMA on the bar before it
+Exit: Short, Double LWMA on the signal bar > Double LWMA on the preceding bar AND Double LWMA on the preceding bar >= Double LWMA on the bar before it

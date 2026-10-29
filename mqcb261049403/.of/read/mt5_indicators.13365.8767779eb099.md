@@ -1,0 +1,4 @@
+Calculation: Bull measure = EMA of (3 × current bar high − the sum of the highest highs over short-, medium-, and long-lookback windows); windows include the current bar. On the chart timeframe, use the bar still forming. In the higher-timeframe variant, use the higher-timeframe bar still forming and carry its sampled value across lower-timeframe bars.
+Calculation: Bear measure = EMA of (the sum of the lowest lows over short-, medium-, and long-lookback windows − 3 × current bar low); windows include the current bar. On the chart timeframe, use the bar still forming. In the higher-timeframe variant, use the higher-timeframe bar still forming and carry its sampled value across lower-timeframe bars.
+Long: Bull measure > Bear measure
+Short: Bear measure > Bull measure

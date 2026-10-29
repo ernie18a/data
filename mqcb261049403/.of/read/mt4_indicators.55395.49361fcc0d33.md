@@ -1,0 +1,6 @@
+Calculation: Session TPO count at a price = number of session bars whose low-to-high range contains that price.
+Calculation: Profile POC = the price touched by the latest session bar; if tied, choose the price nearest the midpoint of the session high-low range.
+Calculation: Value-area boundaries = expand upward and downward from the POC, adding the adjacent price with the larger TPO count (choose upward on a tie) until the selected prices contain the configured share of session TPOs; boundaries are the outer edges of the selected prices.
+Calculation: Single-print edge = boundary of a contiguous set of prices each touched by exactly one session bar, where the neighboring price is not a single print.
+Long: For a median, value-area-high/low, or single-print-edge ray level L, (low <= L AND close > L AND prior close > L) OR (close >= L AND prior close < L) OR (low > L AND prior high < L) OR (open > L AND prior high < L)
+Short: For a median, value-area-high/low, or single-print-edge ray level L, (high >= L AND close < L AND prior close < L) OR (close <= L AND prior close > L) OR (prior low > L AND high < L) OR (open < L AND prior low > L)

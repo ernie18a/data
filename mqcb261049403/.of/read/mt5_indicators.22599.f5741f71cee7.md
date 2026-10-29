@@ -1,0 +1,3 @@
+Calculation: Delta = cumulative investor accumulation minus cumulative speculator accumulation; on each bar, if volume is greater than the average volume of the preceding lookback bars, add that bar’s accumulation/distribution value to investor accumulation and carry forward speculator accumulation; otherwise add it to speculator accumulation and carry forward investor accumulation. Accumulation/distribution value = either ((close − low) − (high − close)) / (high − low) × volume, or (close − open) / (high − low) × volume, according to the selected method; use 0 when high = low.
+Long: Delta > 0
+Short: Delta < 0
