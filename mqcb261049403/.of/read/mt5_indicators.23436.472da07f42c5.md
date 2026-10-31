@@ -1,4 +1,3 @@
-Calculation: PEMA = round(selected OHLC-based applied price passed through eight sequential EMAs of the same lookback, combined as 8×EMA1 − 28×EMA2 + 56×EMA3 − 70×EMA4 + 56×EMA5 − 28×EMA6 + 8×EMA7 − EMA8, with the configured vertical offset applied before rounding to the configured price increment
-Calculation: Higher-timeframe PEMA = the same PEMA calculated from higher-timeframe bars; use the still-forming higher-timeframe bar and carry its value and direction across chart bars until the next higher-timeframe bar
-Long: chart-timeframe PEMA > its prior chart bar value OR higher-timeframe PEMA > its prior higher-timeframe bar value
-Short: chart-timeframe PEMA < its prior chart bar value OR higher-timeframe PEMA < its prior higher-timeframe bar value
+Calculation: Rounded average = round to a configurable price increment the sum 8×E1 − 28×E2 + 56×E3 − 70×E4 + 56×E5 − 28×E6 + 8×E7 − E8 plus a configurable price offset, where E1 is the EMA of a configurable OHLC-derived price and E2 through E8 are successive EMAs of the preceding EMA, all with the same length; initialize each EMA with its first available input, starting E1 on the first bar and each subsequent EMA one bar later. Calculate either on the chart timeframe or on a higher timeframe using the higher-timeframe bar still forming.
+Long: Rounded average > its most recent earlier unequal value.
+Short: Rounded average < its most recent earlier unequal value.

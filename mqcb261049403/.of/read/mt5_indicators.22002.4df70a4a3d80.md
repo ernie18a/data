@@ -1,4 +1,4 @@
-Calculation: Volume-weighted DeMarker histogram = moving average of (100 × DeMarker − 50) × selected volume, using a chosen smoothing method and lookback
-Calculation: Smoothed volume = moving average of selected volume using the same smoothing method and lookback
-Short: Volume-weighted DeMarker histogram > first upper level × smoothed volume
-Long: Volume-weighted DeMarker histogram < first lower level × smoothed volume
+Calculation: Volume-weighted oscillator = moving average of ((100 × DeMarker(high, low) − 50) × volume).
+Calculation: Dynamic upper and lower thresholds = their respective threshold parameters × moving average of volume, using the same method and length as the oscillator smoothing.
+Long: Volume-weighted oscillator > dynamic upper threshold.
+Short: Volume-weighted oscillator < dynamic lower threshold.

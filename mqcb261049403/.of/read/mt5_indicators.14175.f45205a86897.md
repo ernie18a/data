@@ -1,3 +1,3 @@
-Calculation: Smoothed EMV(P) = smooth ((P − previous-bar P) × P) / (2 × current-bar volume), using the same smoothing method and lookback for both price series; use zero when volume is zero. Volume is tick or real volume, as selected.
-Long: Open-based Smoothed EMV on the current, still-forming chart bar < Close-based Smoothed EMV on that bar AND Open-based Smoothed EMV on the previous completed chart bar ≥ Close-based Smoothed EMV on that bar
-Short: Open-based Smoothed EMV on the current, still-forming chart bar > Close-based Smoothed EMV on that bar AND Open-based Smoothed EMV on the previous completed chart bar ≤ Close-based Smoothed EMV on that bar
+Calculation: Smoothed movement for price series P = moving average of (P on the current bar - P on the previous bar) * P on the current bar / (2 * current bar volume), using zero when volume is zero. Calculate separately for open and close, using the same moving-average method and parameters.
+Long: Previous bar's smoothed open movement >= previous bar's smoothed close movement AND current bar's smoothed open movement < current bar's smoothed close movement
+Short: Previous bar's smoothed open movement <= previous bar's smoothed close movement AND current bar's smoothed open movement > current bar's smoothed close movement

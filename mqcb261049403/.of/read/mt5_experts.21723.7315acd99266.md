@@ -1,6 +1,7 @@
-Calculation: Rounded smoothed power-weighted moving average = smooth the selected bar price after averaging the lookback prices with weights that decrease by age as (lookback − age)^power; round the result to the configured price increment.
-Calculation: Indicator color state = rising if the current rounded average > the previous one, falling if it < the previous one, otherwise retain the prior state; evaluate on the configured indicator timeframe, which may be higher or lower than the chart timeframe, using completed bars.
-Long: latest completed indicator-timeframe color state = rising AND previous completed indicator-timeframe color state != rising
-Short: latest completed indicator-timeframe color state = falling AND previous completed indicator-timeframe color state != falling
-Exit: long, latest completed indicator-timeframe color state = falling OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, latest completed indicator-timeframe color state = rising OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance
+Calculation: Power-weighted average = sum over lookback n of price[t-k] * (n-k)^p divided by sum of (n-k)^p, for k from 0 to n-1, using a selected OHLC-derived price.
+Calculation: Rounded smoothed average = apply a selected moving-average smoothing method and smoothing length to the power-weighted average, then round to the nearest configurable price increment. Calculate on the chart timeframe or a selected higher or lower timeframe; for another timeframe use the last completed bar by default, or the forming bar when configured.
+Calculation: Trend = sign of the latest nonzero change in the rounded smoothed average; retain the previous trend when the average is unchanged.
+Long: Trend = positive.
+Short: Trend = negative.
+Exit: long, trend = negative OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, trend = positive OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

@@ -1,3 +1,3 @@
-Calculation: Smoothed price derivative = the configured moving average of (selected OHLC-based price minus that price lookback bars earlier) divided by the lookback; calculated on the chart timeframe, or optionally on a higher timeframe using its still-forming bar.
-Long: Smoothed price derivative > 0
-Short: Smoothed price derivative < 0
+Calculation: Smoothed derivative = a selected moving average of 100 × (selected price − selected price a lookback number of bars ago) / lookback; calculate on the chart timeframe, or on a higher timeframe using its forming bar sampled at the first chart bar of each higher-timeframe bar and held until the next higher-timeframe bar.
+Long: Smoothed derivative > 0
+Short: Smoothed derivative < 0

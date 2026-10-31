@@ -1,4 +1,4 @@
-Calculation: Smoothed open = the selected moving-average smoothing of open, lagged by the candle-range lookback.
-Calculation: Smoothed close = the selected moving-average smoothing of close on the current chart bar.
-Long: Smoothed open <= Smoothed close
-Short: Smoothed open > Smoothed close
+Calculation: Synthetic candle = apply the same selected moving-average method and parameters separately to open, high, low, and close; set its open to the smoothed open at the start of a rolling lookback, its close to the current smoothed close, its high to the maximum of the rolling highest smoothed high, synthetic open, and synthetic close, and its low to the minimum of the rolling lowest smoothed low, synthetic open, and synthetic close. Calculate on the chart timeframe or on a higher timeframe; for the higher timeframe, sample the still-forming bar at the first chart bar of each higher-timeframe bar and hold that value until the next higher-timeframe bar.
+Calculation: Synthetic midpoint = (synthetic high + synthetic low) / 2.
+Long: (synthetic open > synthetic midpoint AND synthetic close > synthetic midpoint) OR (synthetic close >= synthetic open AND (synthetic open >= synthetic midpoint OR synthetic close >= synthetic midpoint)).
+Short: (synthetic open < synthetic midpoint AND synthetic close < synthetic midpoint) OR (synthetic close < synthetic open AND (synthetic open <= synthetic midpoint OR synthetic close <= synthetic midpoint)).

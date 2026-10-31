@@ -1,3 +1,6 @@
-Calculation: JFATL acceleration = the momentum of the JMA-smoothed momentum of the JMA-smoothed 39-bar FATL-filtered selected price; calculate on the chart timeframe, or on the selected higher timeframe using its still-forming bar in the HTF version
-Long: current JFATL acceleration > previous JFATL acceleration
-Short: current JFATL acceleration < previous JFATL acceleration
+Calculation: Acceleration = the change over an acceleration lookback in the Jurik moving average of the change over a speed lookback in the Jurik moving average of the FATL of the selected OHLC-derived price; the two Jurik averages have independently selectable lengths and phases.
+Calculation: Higher-timeframe acceleration = acceleration calculated on higher-timeframe bars, using the higher-timeframe bar still forming at the first chart bar of that period and holding that reading for the rest of the period.
+Long: Chart-timeframe acceleration > its previous bar's value AND chart-timeframe acceleration != 0
+Short: Chart-timeframe acceleration < its previous bar's value AND chart-timeframe acceleration != 0
+Long: Higher-timeframe acceleration > the previous higher-timeframe bar's acceleration
+Short: Higher-timeframe acceleration < the previous higher-timeframe bar's acceleration

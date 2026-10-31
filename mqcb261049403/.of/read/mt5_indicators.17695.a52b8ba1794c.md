@@ -1,3 +1,5 @@
-Calculation: Smoothed DeMarker oscillator = 100 × smoothed ratio − 50, where the ratio is the simple moving average of upward high changes divided by the sum of the simple moving averages of upward high changes and downward low changes; use the same lookback for both moving averages, then smooth the ratio with a configurable moving-average method and lookback. On the chart timeframe use the current bar; on a selected higher timeframe use its still-forming bar.
-Long: In level-based mode, oscillator > 0; OR, in direction-based mode, oscillator > previous oscillator.
-Short: In level-based mode, oscillator < 0; OR, in direction-based mode, oscillator < previous oscillator.
+Calculation: Oscillator = 100 × a selected moving average of the DeMarker ratio − 50, where the ratio is SMA(max(high − previous high, 0)) / (SMA(max(high − previous high, 0)) + SMA(max(previous low − low, 0))); use 0 when the denominator is 0. Calculate on the chart timeframe or on the still-forming higher-timeframe bar, with the same lookback for both SMAs.
+Long: level mode AND oscillator > middle threshold
+Short: level mode AND oscillator < middle threshold
+Long: direction mode AND oscillator != middle threshold AND oscillator > previous oscillator value
+Short: direction mode AND oscillator != middle threshold AND oscillator < previous oscillator value

@@ -1,5 +1,5 @@
-Calculation: Rounded SATL-JMA line = apply the 65-bar SATL digital filter to the selected applied price, smooth it with JMA, then round to the configured price increment.
-Long: On the chart timeframe, the line's most recent nonzero change switches from falling to rising
-Short: On the chart timeframe, the line's most recent nonzero change switches from rising to falling
-Long: On the selected higher timeframe's still-forming bar, the line's most recent nonzero change switches from falling to rising
-Short: On the selected higher timeframe's still-forming bar, the line's most recent nonzero change switches from rising to falling
+Calculation: Smoothed trend line = Jurik moving average of the SATL digital filter applied to a selected OHLC-derived price, rounded to a configurable price increment.
+Calculation: Trend direction = sign of the change in the smoothed trend line from the preceding bar; retain the previous direction when the change is zero.
+Calculation: Higher-timeframe trend direction = trend direction calculated on the still-forming higher-timeframe bar, sampled on the first chart bar of that higher-timeframe bar and carried forward until the next higher-timeframe bar.
+Long: Chart-timeframe trend direction > 0 OR higher-timeframe trend direction > 0 AND previous chart bar's higher-timeframe trend direction < 0.
+Short: Chart-timeframe trend direction < 0 OR higher-timeframe trend direction < 0 AND previous chart bar's higher-timeframe trend direction > 0.

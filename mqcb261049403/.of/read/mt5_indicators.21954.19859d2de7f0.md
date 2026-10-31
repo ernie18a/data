@@ -1,4 +1,6 @@
-Calculation: Smoothed volume-weighted CCI OHLC = apply the same selected smoothing method and lookback to each of the open-, high-, low-, and close-based CCI values multiplied by bar volume; smooth bar volume with the same method and lookback.
-Calculation: Gap-adjusted smoothed CCI open = previous bar’s smoothed volume-weighted CCI close when the absolute difference between the chart bar’s open and close is at most the gap threshold; otherwise, the current bar’s smoothed volume-weighted CCI open.
-Long: Smoothed volume-weighted CCI close >= gap-adjusted smoothed CCI open OR (previous smoothed volume-weighted CCI close < 0 AND current smoothed volume-weighted CCI close >= 0)
-Short: Smoothed volume-weighted CCI close < gap-adjusted smoothed CCI open OR (previous smoothed volume-weighted CCI close > 0 AND current smoothed volume-weighted CCI close <= 0)
+Calculation: Oscillator close = selected moving average of (CCI of close × volume).
+Calculation: Oscillator open = selected moving average of (CCI of open × volume); replace it with the previous bar's oscillator close when abs(open − close) is at most the gap threshold.
+Long: Oscillator close >= oscillator open.
+Short: Oscillator close < oscillator open.
+Long: Previous oscillator close < 0 AND current oscillator close >= 0.
+Short: Previous oscillator close > 0 AND current oscillator close <= 0.

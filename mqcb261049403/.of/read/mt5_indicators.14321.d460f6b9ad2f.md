@@ -1,3 +1,8 @@
-Calculation: Bulls = a smoothed value of (bar high − a smoothed bar close), with the two smoothing lookbacks independently parameterized
-Long: Bulls on the chart timeframe > Bulls on the previous chart bar OR Bulls on the higher timeframe is rising on the current chart bar and was flat on the previous chart bar
-Short: Bulls on the chart timeframe < Bulls on the previous chart bar OR Bulls on the higher timeframe is flat on the current chart bar and was rising on the previous chart bar
+Calculation: Smoothed bull power = a configurable moving average of (high minus a separately configured moving average of a configurable OHLC-derived price); the two averages have independent methods and lookbacks.
+Calculation: Higher-timeframe bull-power state = compare smoothed bull power on the still-forming higher-timeframe bar with its preceding completed bar; sample the comparison on the first chart bar of each higher-timeframe bar and hold it for the remaining chart bars in that higher-timeframe bar.
+Long: Chart-timeframe smoothed bull power > its previous-bar value.
+Short: Chart-timeframe smoothed bull power < its previous-bar value.
+Long: Higher-timeframe bull-power state indicates an increase.
+Short: Higher-timeframe bull-power state indicates a decrease.
+Long: Higher-timeframe bull-power state on the selected chart bar indicates an increase AND its state on the preceding chart bar indicates equality.
+Short: Higher-timeframe bull-power state on the selected chart bar indicates equality AND its state on the preceding chart bar indicates an increase.

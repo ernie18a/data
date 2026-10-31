@@ -1,4 +1,4 @@
-Calculation: Momentum = selected bar price minus the same selected price N bars earlier
-Calculation: JMomentum = JMA-smoothed Momentum divided by point size
-Long: nearest-integer-rounded change in chart-timeframe JMomentum from the prior bar > 0 OR nearest-integer-rounded change in higher-timeframe JMomentum from the prior bar > 0 (higher-timeframe value uses the bar still forming)
-Short: nearest-integer-rounded change in chart-timeframe JMomentum from the prior bar < 0 OR nearest-integer-rounded change in higher-timeframe JMomentum from the prior bar < 0 (higher-timeframe value uses the bar still forming)
+Calculation: Smoothed momentum = Jurik moving average, with configurable length and phase, of close minus close a configurable number of bars ago. Calculate either on the chart timeframe or on a higher timeframe using the bar still forming.
+Calculation: Momentum change = round to the nearest integer, with half values rounded away from zero, the difference between current and previous smoothed momentum divided by a configurable price-unit size. For the higher-timeframe version, compare the forming higher-timeframe bar with the preceding higher-timeframe bar; sample the result on the first chart bar of each higher-timeframe bar and optionally carry it forward until the next higher-timeframe bar.
+Long: Momentum change > 0
+Short: Momentum change < 0

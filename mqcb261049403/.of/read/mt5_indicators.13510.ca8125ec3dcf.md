@@ -1,3 +1,3 @@
-Calculation: XdinMA = 2 × the shorter-lookback smoothed average of the selected applied price − the longer-lookback smoothed average of the same price; both averages use the same smoothing method. It is calculated on the chart timeframe, or on a higher timeframe using its still-forming bar.
-Long: XdinMA > its value on the previous bar of the calculation timeframe
-Short: XdinMA < its value on the previous bar of the calculation timeframe
+Calculation: Extrapolated moving average = 2 × shorter-period simple moving average of close − longer-period simple moving average of close; calculate either on the chart timeframe or on the higher timeframe using its still-forming bar.
+Long: Extrapolated moving average > its value on the previous bar of its calculation timeframe.
+Short: Extrapolated moving average < its value on the previous bar of its calculation timeframe.

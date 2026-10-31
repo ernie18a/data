@@ -1,3 +1,3 @@
-Calculation: Smoothed price-rate derivative = selected smoothing of (selected bar price now − selected bar price lagged by a configurable lookback) divided by that lookback; calculate on chart bars or, for the higher-timeframe variant, on still-forming higher-timeframe bars, sampled at the first chart bar of each higher-timeframe period and held until the next period.
-Long: Smoothed price-rate derivative now > smoothed price-rate derivative on the previous bar
-Short: Smoothed price-rate derivative now < smoothed price-rate derivative on the previous bar
+Calculation: Smoothed derivative = moving average of (selected price - selected price a configurable number of bars earlier) divided by that number of bars. Calculate on the chart timeframe or on a higher timeframe. For the higher timeframe, use the bar still forming at the first chart bar of each higher-timeframe bar and hold that result until the next higher-timeframe bar.
+Long: Smoothed derivative > smoothed derivative on the preceding bar of its calculation timeframe.
+Short: Smoothed derivative < smoothed derivative on the preceding bar of its calculation timeframe.

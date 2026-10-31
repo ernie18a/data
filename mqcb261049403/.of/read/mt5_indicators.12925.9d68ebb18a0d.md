@@ -1,4 +1,4 @@
-Calculation: Ideal smoother = [a × (current input − previous smoother) + previous smoother + b × previous smoother × ((current input − previous input)² − 1)] / [1 + b × ((current input − previous input)² − 1)], where a and b are the reciprocals of its two smoothing periods.
-Calculation: 2pbIdealXOSMA = a selected moving-average smoothing of the difference between a fast Ideal smoother of close and a slow three-stage cascade of Ideal smoothers of close; each stage has its own pair of smoothing periods. The HTF variant calculates this on a higher timeframe and maps the still-forming higher-timeframe bar's value to chart bars.
-Long: 2pbIdealXOSMA > 0
-Short: 2pbIdealXOSMA < 0
+Calculation: Adaptive average A(x; p, q) = initialize A to the first input price; for each subsequent bar, let d = x[current] - x[previous] and A[current] = ((x[current] - A[previous])/p + A[previous] + A[previous]*(d*d - 1)/q) / (1 + (d*d - 1)/q).
+Calculation: Oscillator = a selectable moving average of A(price; p1, q1) minus A(A(A(price; p2, q2); p3, q3); p4, q4), where each adaptive-average stage has its own parameters and price is a selectable OHLC-derived price series. Calculate on the chart timeframe or on a higher timeframe using its still-forming bar; for the higher-timeframe version, sample the oscillator and its preceding higher-timeframe value on the first chart bar of each higher-timeframe bar and optionally carry that comparison forward until the next higher-timeframe bar.
+Long: Oscillator > 0 AND (oscillator > previous oscillator OR oscillator < previous oscillator)
+Short: Oscillator < 0 AND (oscillator > previous oscillator OR oscillator < previous oscillator)

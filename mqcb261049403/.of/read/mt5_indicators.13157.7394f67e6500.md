@@ -1,2 +1,3 @@
-Long: Coppock > previous Coppock
-Short: Coppock < previous Coppock
+Calculation: Smoothed momentum = a moving average of the sum of two fractional rates of change of the selected price, using a longer and a shorter lookback. Each fractional rate of change is (current price - price at the lookback) / price at the lookback. Calculate on the chart timeframe or on the higher timeframe using its still-forming bar; compare consecutive values on that same timeframe.
+Long: Smoothed momentum > 0 AND smoothed momentum > its previous value OR smoothed momentum < 0 AND smoothed momentum > its previous value
+Short: Smoothed momentum > 0 AND smoothed momentum < its previous value OR smoothed momentum < 0 AND smoothed momentum < its previous value

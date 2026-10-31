@@ -1,5 +1,5 @@
-Calculation: Smoothed close, smoothed high, and smoothed low = the same selected smoothing method applied to the respective chart-timeframe price series, using the same lookback.
-Calculation: Normalized price position = 100 × (smoothed close − smoothed low) ÷ max(smoothed high − smoothed low, minimum price increment).
-Calculation: Oscillator = the selected smoothing method applied to normalized price position using the same lookback, minus 50. For the higher-timeframe variant, use the higher timeframe’s still-forming bar value sampled at the start of its interval.
-Long: Level mode AND oscillator > middle level OR direction mode AND oscillator > previous oscillator AND oscillator ≠ middle level
-Short: Level mode AND oscillator < middle level OR direction mode AND oscillator < previous oscillator AND oscillator ≠ middle level
+Calculation: Oscillator = apply the same selected moving-average method, length and other smoothing parameters to high, low and close separately; compute 100 × (smoothed close − smoothed low) / max(smoothed high − smoothed low, minimum price increment); smooth that result again using the same method and parameters, then subtract 50.
+Long: Level mode AND (oscillator > upper level OR (oscillator <= upper level AND oscillator > middle level))
+Short: Level mode AND oscillator <= upper level AND oscillator <= middle level AND (oscillator < lower level OR oscillator < middle level)
+Long: Direction mode AND oscillator != middle level AND oscillator > previous oscillator
+Short: Direction mode AND oscillator != middle level AND oscillator < previous oscillator

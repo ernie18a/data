@@ -1,3 +1,5 @@
-Calculation: ColorBullsGap = the selected second-stage smoothing of (bar high − the selected first-stage smoothing of bar open) minus the preceding bar’s selected second-stage smoothing of (bar high − the selected first-stage smoothing of bar close)
-Long: ColorBullsGap > 0 OR (on the higher timeframe, the last completed bar’s ColorBullsGap > 0 AND the preceding completed bar’s ColorBullsGap = 0)
-Short: ColorBullsGap < 0 OR (on the higher timeframe, the last completed bar’s ColorBullsGap = 0 AND the preceding completed bar’s ColorBullsGap > 0)
+Calculation: Gap = a second-stage moving average of (high minus a first-stage moving average of open), minus the previous bar's second-stage moving average of (high minus a first-stage moving average of close). The first-stage averages share their method and parameters; the second-stage averages share a separately selectable method and parameters.
+Calculation: Higher-timeframe gap snapshot = Gap calculated on a higher timeframe using the bar still forming at the first chart bar of that higher-timeframe period, then held unchanged until the next higher-timeframe period.
+Long: chart-timeframe Gap > 0 OR higher-timeframe gap snapshot > 0
+Short: chart-timeframe Gap < 0 OR higher-timeframe gap snapshot < 0
+Short: higher-timeframe gap snapshot at the selected chart-bar offset = 0 AND its value on the preceding chart bar > 0

@@ -1,3 +1,3 @@
-Calculation: Upper boundary = selected moving-average method applied to bar highs; lower boundary = the same method and lookback applied to bar lows. Calculate on the chart timeframe, or on a higher timeframe using its still-forming bar.
-Long: close > upper boundary
-Short: close < lower boundary
+Calculation: High average and low average = the same selected smoothing method and parameters applied separately to high and low: simple, exponential, smoothed, linear-weighted, Jurik, JurX, parabolic, T3, VIDYA, or Kaufman adaptive moving average. Calculate on the chart timeframe or on a higher timeframe using its still-forming bar.
+Long: Close on the average's timeframe > high average AND close on the average's timeframe >= low average
+Short: Close on the average's timeframe < low average

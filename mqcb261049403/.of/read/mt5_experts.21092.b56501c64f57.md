@@ -1,8 +1,8 @@
-Calculation: Slow-trend WAMI main = third moving average applied successively after the second and first moving averages of changes in applied price, divided by point size; use higher-timeframe bars and the slow-trend settings
-Calculation: Slow-trend WAMI signal = moving average of the slow-trend WAMI main using the signal settings; use higher-timeframe bars and the slow-trend settings
-Calculation: Fast-entry WAMI main = third moving average applied successively after the second and first moving averages of changes in applied price, divided by point size; use lower-timeframe bars and the fast-entry settings
-Calculation: Fast-entry WAMI signal = moving average of the fast-entry WAMI main using the signal settings; use lower-timeframe bars and the fast-entry settings
-Long: slow-trend WAMI main > slow-trend WAMI signal AND previous completed fast-entry bar WAMI main <= fast-entry WAMI signal AND latest completed fast-entry bar WAMI main > fast-entry WAMI signal
-Short: slow-trend WAMI main < slow-trend WAMI signal AND previous completed fast-entry bar WAMI main >= fast-entry WAMI signal AND latest completed fast-entry bar WAMI main < fast-entry WAMI signal
-Exit: long, slow-trend WAMI main < slow-trend WAMI signal OR latest completed fast-entry bar WAMI main < fast-entry WAMI signal
-Exit: short, slow-trend WAMI main > slow-trend WAMI signal OR latest completed fast-entry bar WAMI main > fast-entry WAMI signal
+Calculation: Momentum lines = apply three successive moving averages, each with its own method and lookback, to the change in a selected OHLC-derived price from the preceding bar; the result is the main line. Apply a fourth moving average, with its own method and lookback, to the main line to obtain the signal line. Calculate separate lines for the chart timeframe and the higher trend timeframe.
+Calculation: Higher-timeframe cloud lines = the higher-timeframe momentum lines sampled from the bar still forming at the start of each higher-timeframe bar and held until the next higher-timeframe bar.
+Long: Last completed higher-timeframe main line > signal line AND previous chart-timeframe main line <= signal line AND last completed chart-timeframe main line > signal line
+Short: Last completed higher-timeframe main line < signal line AND previous chart-timeframe main line >= signal line AND last completed chart-timeframe main line < signal line
+Long: Higher-timeframe cloud main line > signal line
+Short: Higher-timeframe cloud main line < signal line
+Exit: long, last completed higher-timeframe main line < signal line OR last completed chart-timeframe main line < signal line OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, last completed higher-timeframe main line > signal line OR last completed chart-timeframe main line > signal line OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

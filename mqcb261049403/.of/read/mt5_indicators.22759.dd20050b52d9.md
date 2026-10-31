@@ -1,3 +1,4 @@
-Calculation: Smoothed volume-weighted channel-position value = JJMA of (selected bar volume × [100 × (selected bar price − (smoothed selected bar price − smoothed high−low range)) / (2 × smoothed high−low range) − 50]); smooth price and high−low range with moving averages using their respective lookbacks, and replace a zero smoothed range with 1 in the denominator.
-Long: Smoothed volume-weighted channel-position value > its value on the previous bar
-Short: Smoothed volume-weighted channel-position value < its value on the previous bar
+Calculation: Oscillator = Jurik moving average, with maximum phase, of volume multiplied by [100 × (selected price − price moving average + range moving average) / (2 × denominator) − 50], where range is high − low, denominator is the range moving average unless it is zero, in which case denominator is 1; price and range moving averages use independently selected methods and lengths.
+Calculation: Volume baseline = Jurik moving average of volume with the same length and phase as the oscillator smoothing.
+Long: Oscillator > upper threshold × volume baseline OR oscillator > previous oscillator OR (oscillator = previous oscillator AND the most recent unequal oscillator change was upward) OR (oscillator = previous oscillator AND no earlier unequal oscillator change exists)
+Short: Oscillator < lower threshold × volume baseline AND oscillator <= upper threshold × volume baseline OR oscillator < previous oscillator OR (oscillator = previous oscillator AND the most recent unequal oscillator change was downward)

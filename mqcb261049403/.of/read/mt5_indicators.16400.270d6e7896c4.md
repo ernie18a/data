@@ -1,3 +1,6 @@
-Calculation: Bear/Bulls Power = a smoothed series of (bar midpoint − a moving average of close), where bar midpoint = (high + low) / 2; the moving average and final smoothing use configurable methods and lookbacks
-Long: On the higher-timeframe series, the value two chart bars before the signal bar > the value one chart bar before it AND the value at the signal bar > the value one chart bar before it; use the higher-timeframe bar still forming
-Short: On the higher-timeframe series, the value two chart bars before the signal bar < the value one chart bar before it AND the value at the signal bar < the value one chart bar before it; use the higher-timeframe bar still forming
+Calculation: Smoothed power = a moving average of ((high + low) / 2 - a separately parameterized moving average of a selected bar price); the two moving averages have independently selectable methods and lookbacks.
+Calculation: Projected higher-timeframe power = smoothed power calculated on the higher-timeframe bar still forming at the start of each higher-timeframe interval, then held constant on subsequent chart bars until the next interval. Its projected direction is the direction of that higher-timeframe power compared with its preceding higher-timeframe bar.
+Long: Chart-timeframe smoothed power > its previous-bar value.
+Short: Chart-timeframe smoothed power < its previous-bar value.
+Long: Projected higher-timeframe direction is rising AND its direction on the preceding chart bar was falling.
+Short: Projected higher-timeframe direction is falling AND its direction on the preceding chart bar was rising.

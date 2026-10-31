@@ -1,3 +1,4 @@
-Calculation: Smoothed KWAN = smooth the Chaikin oscillator × CCI ÷ Momentum; use 100 when Momentum is zero. The Chaikin oscillator’s fast lookback is shorter than its slow lookback.
-Long: Smoothed KWAN on the current bar > Smoothed KWAN on the previous bar
-Short: Smoothed KWAN on the current bar < Smoothed KWAN on the previous bar
+Calculation: Composite oscillator = a selectable moving average of Chaikin oscillator multiplied by CCI and divided by MetaTrader momentum; use 100 as the unsmoothed value when momentum is zero. The Chaikin oscillator uses a shorter and a longer moving-average period and volume; CCI and momentum each use a selectable price series.
+Calculation: Higher-timeframe slope = the sign of the composite oscillator on the higher-timeframe bar still forming minus its value on the preceding higher-timeframe bar, sampled on the first chart bar of each higher-timeframe bar and held until the next higher-timeframe bar.
+Long: Composite oscillator on the chart bar > composite oscillator on the preceding chart bar OR higher-timeframe slope > 0
+Short: Composite oscillator on the chart bar < composite oscillator on the preceding chart bar OR higher-timeframe slope < 0 OR higher-timeframe slope = 0 AND higher-timeframe slope on the preceding chart bar > 0

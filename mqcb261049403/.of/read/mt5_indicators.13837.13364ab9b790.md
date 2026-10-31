@@ -1,3 +1,4 @@
-Calculation: Spearman rank correlation coefficient = correlation between the ranks of the selected bar price and chronological bar order over a lookback window, assigning tied prices their average rank
-Long: Spearman rank correlation coefficient > 0
-Short: Spearman rank correlation coefficient < 0
+Calculation: Selected price = a selectable series: open, high, low, close, (high + low)/2, (high + low + close)/3, (high + low + 2 × close)/4, (open + close)/2, (open + high + low + close)/4, high when close > open and low when close < open and close otherwise, or (high + close)/2 when close > open and (low + close)/2 when close < open and close otherwise.
+Calculation: Rank oscillator = for a configurable lookback of selected prices, assign chronological ranks from oldest to newest and ascending price ranks with tied prices given their average rank; calculate 12 × sum((price rank − mean rank) × (chronological rank − mean rank)) / (N × (N² − 1)), where N is the lookback. Replace an exactly zero result with 0.00001. Calculate on either the chart timeframe or a higher timeframe; for the higher timeframe use the bar still forming at the first chart bar of each higher-timeframe bar and carry that result and its comparison with the preceding higher-timeframe bar forward through the remaining chart bars.
+Long: Rank oscillator > 0 AND rank oscillator != its value on the preceding calculation-timeframe bar.
+Short: Rank oscillator < 0 AND rank oscillator != its value on the preceding calculation-timeframe bar.

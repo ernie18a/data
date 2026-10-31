@@ -1,3 +1,6 @@
-Calculation: XHullTrend = Let P be the selected applied price; M(n) be the selected smoothing method over n bars; and HMA = M(HLength, 2*M(floor(XLength/2), P) - M(XLength, P)). XHullTrend is M(HLength, HMA); its comparison line is M(floor(sqrt(XLength)), XHullTrend). Round both lines to the instrument's point size times 10^Digit; if they round equal while their unrounded values differ, increase the rounded XHullTrend by one such increment when it is higher, otherwise increase the rounded comparison line by one increment. On the chart timeframe, use the forming bar. In the higher-timeframe version, sample the higher-timeframe forming bar at its open and hold that value until the next higher-timeframe bar opens.
-Long: rounded XHullTrend > rounded comparison line
-Short: rounded XHullTrend < rounded comparison line
+Calculation: Hull trend = smooth(2 × smooth(selected OHLC-derived price, half the base length) − smooth(selected OHLC-derived price, base length), smoothing length), using the same selected moving-average method and phase for all smoothing operations.
+Calculation: Hull signal = smooth(Hull trend, floor(square root of the base length)), using the same moving-average method and phase.
+Long: Hull trend > Hull signal.
+Short: Hull trend < Hull signal.
+Long: Hull trend on a higher timeframe > Hull signal on the same higher timeframe, using the bar still forming at the start of the higher-timeframe bar and holding that comparison until the next higher-timeframe bar starts.
+Short: Hull trend on a higher timeframe < Hull signal on the same higher timeframe, using the bar still forming at the start of the higher-timeframe bar and holding that comparison until the next higher-timeframe bar starts.

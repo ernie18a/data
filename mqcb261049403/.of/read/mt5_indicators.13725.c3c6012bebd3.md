@@ -1,3 +1,3 @@
-Calculation: BandsPrice = JJMA-smoothed [100 × (P − (MA(P) − scaled standard deviation of P around MA(P))) / (2 × scaled standard deviation) − 50]; P is the selected applied price, the moving average and standard deviation use their configured lookbacks, and the final JJMA smoothing uses its configured lookback. If the scaled standard deviation is zero, use 1. Calculated on the chart timeframe or, when the higher-timeframe option is used, on its still-forming bar.
-Long: BandsPrice > 0
-Short: BandsPrice < 0
+Calculation: Band-price oscillator = Jurik moving average, with maximum phase, of 100 × (price − lower band) / (2 × D) − 50, where price is the selected OHLC-derived price, the center is a selected moving average of price, D is a deviation multiplier times the root mean squared difference between the prices in the deviation lookback and the current center, and the lower band is center − D. If D is zero, use 1 as the denominator's D after calculating the lower band. Calculate either on the chart timeframe or on a higher timeframe using its still-forming bar.
+Long: Band-price oscillator > 0
+Short: Band-price oscillator < 0

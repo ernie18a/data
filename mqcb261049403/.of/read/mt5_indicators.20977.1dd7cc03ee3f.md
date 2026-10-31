@@ -1,6 +1,6 @@
-Calculation: JFATL = JMA-smoothed output of a fixed-coefficient FATL digital filter applied to the selected bar price.
-Calculation: HTF JFATL = JFATL calculated on a timeframe equal to or higher than the chart timeframe, using the bar still forming; the cloud carries each value forward between bars of that timeframe.
-Long: JFATL > its value on the previous chart bar
-Long: HTF JFATL from the first timeframe > HTF JFATL from the second timeframe
-Short: JFATL < its value on the previous chart bar
-Short: HTF JFATL from the first timeframe < HTF JFATL from the second timeframe
+Calculation: Smoothed trend line = Jurik moving average, with configurable length and phase, of the FATL digital filter applied to a configurable OHLC-derived price. FATL is the sum of the current and preceding prices multiplied, newest first, by [0.4360409450, 0.3658689069, 0.2460452079, 0.1104506886, -0.0054034585, -0.0760367731, -0.0933058722, -0.0670110374, -0.0190795053, 0.0259609206, 0.0502044896, 0.0477818607, 0.0249252327, -0.0047706151, -0.0272432537, -0.0338917071, -0.0244141482, -0.0055774838, 0.0128149838, 0.0226522218, 0.0208778257, 0.0100299086, -0.0036771622, -0.0136744850, -0.0160483392, -0.0108597376, -0.0016060704, 0.0069480557, 0.0110573605, 0.0095711419, 0.0040444064, -0.0023824623, -0.0067093714, -0.0072003400, -0.0047717710, 0.0005541115, 0.0007860160, 0.0130129076, 0.0040364019].
+Calculation: First and second sampled trend lines = the smoothed trend line calculated with the same parameters on two independently selected timeframes, each equal to or higher than the chart timeframe. For a higher timeframe, sample the still-forming bar's value at its opening and hold it until the next bar of that timeframe opens.
+Long: Chart-timeframe smoothed trend line > previous chart-bar smoothed trend line
+Short: Chart-timeframe smoothed trend line < previous chart-bar smoothed trend line
+Long: First sampled trend line > second sampled trend line
+Short: First sampled trend line < second sampled trend line

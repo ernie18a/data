@@ -1,4 +1,5 @@
-Calculation: Zero-lag MA = 2 × first smoothing − second smoothing, where the first smoothing applies its configured method and lookback to the selected OHLC-derived price, and the second applies its configured method and lookback to the first smoothing output.
-Calculation: Higher-timeframe zero-lag MA = the zero-lag MA calculated from bars aggregated to a selected timeframe higher than the chart timeframe; use the bar still forming.
-Long: Zero-lag MA on the chart timeframe is greater than its value on the previous chart bar OR higher-timeframe zero-lag MA is greater than its value on the previous higher-timeframe bar.
-Short: Zero-lag MA on the chart timeframe is less than its value on the previous chart bar OR higher-timeframe zero-lag MA is less than its value on the previous higher-timeframe bar.
+Calculation: Zero-lag average = 2 × the first moving average of the selected price − a second moving average of the first moving average; the two smoothing methods and their parameters are independently selected.
+Long: The chart-timeframe zero-lag average is greater than its previous bar's value.
+Short: The chart-timeframe zero-lag average is less than its previous bar's value.
+Long: The zero-lag average of the forming higher-timeframe bar is greater than its value on the preceding higher-timeframe bar.
+Short: The zero-lag average of the forming higher-timeframe bar is less than its value on the preceding higher-timeframe bar.

@@ -1,3 +1,3 @@
-Calculation: Smoothed ten-average composite = smooth the weighted sum of ten moving averages of the same selected bar price; each average has its own weight and lookback, with lookbacks ordered shortest to longest. For the higher-timeframe version, calculate from higher-timeframe bars using the still-forming bar.
-Long: Smoothed ten-average composite on the current bar > its value on the previous bar
-Short: Smoothed ten-average composite on the current bar < its value on the previous bar
+Calculation: Composite average = Apply a selectable moving-average method to a selected OHLC-derived price using ten progressively longer lookbacks; sum the ten averages with independently selectable weights, then smooth the sum with a selectable moving-average method.
+Long: Chart-timeframe composite average > its previous bar value OR the composite average of the forming higher-timeframe bar > its previous completed higher-timeframe bar value.
+Short: Chart-timeframe composite average < its previous bar value OR the composite average of the forming higher-timeframe bar < its previous completed higher-timeframe bar value.

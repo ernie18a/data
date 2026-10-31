@@ -1,2 +1,3 @@
-Long: Chande Momentum Oscillator (CMO) <= 30 OR long-lookback CMO crosses above short-lookback CMO
-Short: CMO >= 70 OR short-lookback CMO crosses above long-lookback CMO
+Calculation: Momentum magnitude = absolute value of (sum of positive close-to-close changes minus sum of absolute negative close-to-close changes) divided by their sum over the lookback; if their sum is zero, retain the previous magnitude, initialized to a small positive constant.
+Long: Previous long-lookback momentum magnitude <= previous short-lookback momentum magnitude AND current long-lookback momentum magnitude > current short-lookback momentum magnitude
+Short: Previous short-lookback momentum magnitude <= previous long-lookback momentum magnitude AND current short-lookback momentum magnitude > current long-lookback momentum magnitude

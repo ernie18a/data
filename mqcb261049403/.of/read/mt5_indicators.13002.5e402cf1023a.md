@@ -1,3 +1,6 @@
-Calculation: Blau TStochI = Smooth the selected bar price minus the lowest low over a lookback, and the high minus the low over that same lookback, using the same smoothing method and short lookback; smooth both results again with a shorter lookback, then again with a longer lookback; divide the smoothed price-minus-low result by the smoothed range result, multiply by 100, and subtract 50. For the higher-timeframe variant, calculate from higher-timeframe bars and use the bar still forming at the current chart-bar time.
-Long: Blau TStochI > 0
-Short: Blau TStochI < 0
+Calculation: Triple-smoothed stochastic index = 100 × triple-smoothed(selected price − lowest low over the lookback) / triple-smoothed(highest high − lowest low over the same lookback) − 50; use zero when the smoothed range is zero. Smooth the numerator and denominator separately with the same moving-average method and three successive, independently parameterized smoothing periods.
+Calculation: Higher-timeframe index = triple-smoothed stochastic index on the higher timeframe, using its still-forming bar at the first chart bar of each higher-timeframe interval; retain that value and its comparison with the preceding higher-timeframe bar throughout the interval.
+Long: Chart-timeframe index != 0 AND chart-timeframe index > its previous bar value
+Short: Chart-timeframe index != 0 AND chart-timeframe index < its previous bar value
+Long: Higher-timeframe index != 0 AND higher-timeframe index > its preceding higher-timeframe bar value
+Short: Higher-timeframe index != 0 AND higher-timeframe index < its preceding higher-timeframe bar value

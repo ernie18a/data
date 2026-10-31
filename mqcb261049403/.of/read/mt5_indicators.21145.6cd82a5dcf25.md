@@ -1,7 +1,4 @@
-Calculation: Smoothed open, high, low, and close = apply the same selected moving-average method and settings separately to each bar’s open, high, low, and close.
-Calculation: Period-candle open = smoothed open from the bar `period - 1` bars ago.
-Calculation: Period-candle close = current bar’s smoothed close.
-Calculation: Period-candle high = maximum smoothed high over the current bar and preceding `period - 1` bars.
-Calculation: Period-candle low = minimum smoothed low over the current bar and preceding `period - 1` bars.
-Long: Period-candle open <= period-candle close
-Short: Period-candle open > period-candle close
+Calculation: Smoothed candle open = the open smoothed by a selected moving-average method, taken from the oldest bar in a rolling candle-period window ending at the current bar.
+Calculation: Smoothed candle close = the current close smoothed independently using the same moving-average method and parameters as the smoothed candle open. The method is selectable from SMA, EMA, SMMA, LWMA, JJMA, JurX, parabolic moving average, T3, VIDYA, or AMA. Apply both calculations either on the chart timeframe or on the still-forming bar of a higher timeframe.
+Long: Smoothed candle close >= smoothed candle open.
+Short: Smoothed candle close < smoothed candle open.

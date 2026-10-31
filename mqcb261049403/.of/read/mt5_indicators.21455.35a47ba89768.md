@@ -1,5 +1,4 @@
-Calculation: Bull differential average = Apply the same configurable moving average to the mean of positive changes in the selected bar price over a lookback; use zero if there are no positive changes.
-Calculation: Bear differential average = Apply the same configurable moving average to the mean absolute value of negative changes in the selected bar price over the same lookback; use zero if there are no negative changes. Use the same smoother and smoothing length as for the bull differential average.
-Calculation: Differential averages use chart-timeframe bars, or selected bars from an equal or higher timeframe. For a higher timeframe, sample its still-forming bar at the start of its interval and carry that value across chart bars until the next interval.
-Long: Bull differential average > bear differential average
-Short: Bear differential average > bull differential average
+Calculation: Bull and bear averages = over a lookback of consecutive changes in the selected OHLC-derived price, calculate the mean of changes greater than twice machine epsilon and the mean absolute value of changes less than negative twice machine epsilon, respectively; use zero when there are no qualifying changes. Smooth each average with the same selected moving-average method and parameters.
+Calculation: Higher-timeframe bull and bear averages = calculate the same smoothed averages on a higher timeframe, using its bar still forming when the first chart bar of that higher-timeframe bar is evaluated; hold those values until the next higher-timeframe bar begins.
+Long: bull average > bear average OR higher-timeframe bull average > higher-timeframe bear average
+Short: bull average < bear average OR higher-timeframe bull average < higher-timeframe bear average

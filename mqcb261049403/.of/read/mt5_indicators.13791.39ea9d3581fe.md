@@ -1,3 +1,3 @@
-Calculation: HullTrendOSMA = Smooth the difference between the Hull moving average and a moving average of that Hull moving average, using a shorter smoothing period; the Hull moving average is a moving average of twice the half-lookback price average minus the full-lookback price average. Divide the result by the instrument’s point size.
-Long: HullTrendOSMA > 0 AND HullTrendOSMA > its value on the previous bar
-Short: HullTrendOSMA < 0 AND HullTrendOSMA < its value on the previous bar
+Calculation: Oscillator = smooth the difference between raw Hull series and its moving average; raw Hull series = 2 × moving average of selected price over half the base lookback, rounded down, − moving average of selected price over the base lookback; smooth the raw Hull series using the same moving-average method and a lookback equal to the square root of the base lookback, rounded down; apply a separately configurable moving-average method and lookback to the difference. Calculate on the chart timeframe or on a higher timeframe using its still-forming bar; compare with the preceding bar of the oscillator's own timeframe.
+Long: Oscillator > 0 AND oscillator != its previous bar's value
+Short: Oscillator < 0 AND oscillator != its previous bar's value

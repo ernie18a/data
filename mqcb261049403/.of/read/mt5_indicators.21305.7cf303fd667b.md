@@ -1,3 +1,5 @@
-Calculation: Bear–Bulls candle = for each source bar and each OHLC price p, smooth p with a configurable first-stage moving average; compute (bar high + bar low − 2 × smoothed p) / 2; smooth that result with a configurable second-stage moving average and divide by point size. The two stages have independently configurable methods and lookbacks. If the absolute difference between the source bar’s open and the prior source bar’s close is below a configurable gap threshold in points, replace the candle open with the prior indicator candle close. Use chart-timeframe bars, or, when the higher-timeframe option is selected, the still-forming higher-timeframe bar; its value is carried across the chart bars it contains.
-Long: Bear–Bulls candle close > Bear–Bulls candle open
-Short: Bear–Bulls candle close < Bear–Bulls candle open
+Calculation: Power close = a configurable moving average of (high + low) / 2 minus a separately configurable moving average of close; calculate the subtraction bar by bar before applying the outer moving average.
+Calculation: Power open = the previous bar's power close if abs(previous close - current open) < a configurable price-gap threshold; otherwise, a moving average of (high + low) / 2 minus a moving average of open, with the same respective methods and parameters as power close. Calculate the subtraction bar by bar before applying the outer moving average.
+Calculation: Power values = power open and power close calculated on either the chart timeframe or a higher timeframe; for the higher timeframe, use the bar still forming, sample its values on the first chart bar of that higher-timeframe bar, and hold them until the next higher-timeframe bar.
+Long: Power close > power open
+Short: Power close < power open

@@ -1,4 +1,5 @@
-Calculation: JVariation = apply a JMA smoother to a third moving average in this chain; each moving average uses the same lookback and method: MA1 = moving average of close, MA2 = moving average of (close − MA1), MA3 = moving average of (close − MA1 − MA2).
-Calculation: Higher-timeframe JVariation = the same calculation on higher-timeframe bars, using the higher-timeframe bar still forming.
-Long: current chart-timeframe JVariation > previous chart-timeframe JVariation OR current higher-timeframe JVariation > previous higher-timeframe JVariation
-Short: current chart-timeframe JVariation < previous chart-timeframe JVariation OR current higher-timeframe JVariation < previous higher-timeframe JVariation
+Calculation: Variation = Jurik moving average of MA3, where MA1 is a moving average of the selected OHLC-derived price, MA2 is a moving average of price minus MA1, and MA3 is a moving average of price minus MA1 minus MA2; all three moving averages use the same method and period.
+Long: Chart-timeframe Variation > previous chart-timeframe Variation.
+Short: Chart-timeframe Variation < previous chart-timeframe Variation.
+Long: Variation on the still-forming higher-timeframe bar > Variation on the preceding completed higher-timeframe bar.
+Short: Variation on the still-forming higher-timeframe bar < Variation on the preceding completed higher-timeframe bar.

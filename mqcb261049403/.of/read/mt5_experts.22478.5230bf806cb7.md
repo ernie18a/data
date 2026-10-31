@@ -1,5 +1,5 @@
-Calculation: Daily breakout bands = after each of the first and second completed four-hour intraday ranges, use that range’s highest high plus an upper padding and lowest low minus a lower padding; the padding distances are equal. Use completed bars on the indicator timeframe, which is the same as or higher than the chart timeframe.
-Long: Latest completed indicator-timeframe close > upper breakout band AND previous completed indicator-timeframe close <= upper breakout band
-Short: Latest completed indicator-timeframe close < lower breakout band AND previous completed indicator-timeframe close >= lower breakout band
-Exit: Short, latest completed indicator-timeframe close > upper breakout band OR elapsed time since entry > maximum holding duration OR price reaches the short stop-loss or take-profit level
-Exit: Long, latest completed indicator-timeframe close < lower breakout band OR elapsed time since entry > maximum holding duration OR price reaches the long stop-loss or take-profit level
+Calculation: Breakout range = For each day after applying a configurable clock offset, take the highest high and lowest low of bars whose opening times fall in the first specified intraday window. From the start of the following window until the shifted day ends, add a configurable price distance to the high and subtract it from the low. Use chart-timeframe bars for the indicator markings; the trading system may instead use higher-timeframe bars, normally the last completed bar or optionally the bar still forming.
+Long: Close > breakout range upper boundary.
+Short: Close < breakout range lower boundary.
+Exit: long, close < breakout range lower boundary OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance.
+Exit: short, close > breakout range upper boundary OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance.

@@ -1,3 +1,4 @@
-Calculation: QEMA = apply the same-length EMA to the selected bar price five times in succession, then combine the results as 5×EMA1 − 10×EMA2 + 10×EMA3 − 5×EMA4 + EMA5 and round to configured precision; on the higher-timeframe option, calculate from the still-forming higher-timeframe bar.
-Long: QEMA > QEMA on the previous bar
-Short: QEMA < QEMA on the previous bar
+Calculation: Selected price = a parameter selecting open, high, low, close, (high+low)/2, (high+low+close)/3, (high+low+2*close)/4, (open+close)/2, (open+high+low+close)/4, or one of: high if close>open, low if close<open, otherwise close; (high+close)/2 if close>open, (low+close)/2 if close<open, otherwise close; or (close+low)/2 if close<open, (close+high)/2 if close>open, otherwise close.
+Calculation: Rounded pentuple EMA = round (5*EMA1 - 10*EMA2 + 10*EMA3 - 5*EMA4 + EMA5) to the nearest parameterized price increment; EMA1 is the EMA of selected price and each subsequent EMA is the EMA of the preceding EMA, all with the same length and initialized to the first selected price. Calculate on the chart timeframe or on a higher timeframe using its still-forming bar.
+Long: the most recent nonzero change in rounded pentuple EMA between consecutive calculation-timeframe bars is positive.
+Short: the most recent nonzero change in rounded pentuple EMA between consecutive calculation-timeframe bars is negative.

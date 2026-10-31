@@ -1,3 +1,5 @@
-Calculation: Centered smoothed RSI = RSI of a configurable OHLC-derived applied price, smoothed by a configurable moving-average method, minus 50; when calculated on a higher timeframe, use its current, possibly still-forming bar.
-Long: Centered smoothed RSI > 0 OR (Centered smoothed RSI > its previous value AND Centered smoothed RSI != 0)
-Short: Centered smoothed RSI < 0 OR (Centered smoothed RSI < its previous value AND Centered smoothed RSI != 0)
+Calculation: Centered smoothed RSI = Apply a selectable moving-average method to Wilder RSI of a selectable OHLC-derived price, then subtract 50. When average loss and average gain are both zero, RSI is zero. Use either the chart timeframe or a higher timeframe; for the higher timeframe, sample the still-forming higher-timeframe bar at its first chart bar and carry that value and its previous-higher-bar comparison through the remaining chart bars in the period.
+Long: In level mode, centered smoothed RSI > middle level
+Short: In level mode, centered smoothed RSI < middle level
+Long: In direction mode, centered smoothed RSI != middle level AND centered smoothed RSI > its previous bar's value
+Short: In direction mode, centered smoothed RSI != middle level AND centered smoothed RSI < its previous bar's value

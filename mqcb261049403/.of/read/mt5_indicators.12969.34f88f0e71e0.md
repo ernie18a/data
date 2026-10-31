@@ -1,4 +1,4 @@
-Calculation: Bull strength = smooth over a lookback of (high − low + |open − close|) / (2 × tick size), plus (open − close) / tick size when open > close; tick size = (high − low) / volume, replaced by 1 when zero. Use the selected volume field and smoothing method; calculated on the higher-timeframe bar still forming.
-Calculation: Bear strength = smooth over the same lookback and by the same method as bull strength, of (high − low + |open − close|) / (2 × tick size), minus (open − close) / tick size when open < close; tick size = (high − low) / volume, replaced by 1 when zero. Use the selected volume field; calculated on the higher-timeframe bar still forming.
-Long: Bull strength > bear strength
-Short: Bear strength > bull strength
+Calculation: Pressure inputs = for each bar with positive volume, let range = high - low, body = open - close, unit = range / volume, replacing unit with 1 when it is 0, and swing = (range + abs(body)) / (2 * unit); selling pressure = swing + max(body, 0) / unit and buying pressure = swing + max(-body, 0) / unit.
+Calculation: Smoothed pressures = apply the same selected moving-average method and parameters separately to selling pressure and buying pressure. Calculate on the chart timeframe or on a higher timeframe; for the higher timeframe, sample the still-forming higher-timeframe bar on its first chart bar and hold that value until the next higher-timeframe bar begins.
+Long: Smoothed buying pressure > smoothed selling pressure.
+Short: Smoothed selling pressure > smoothed buying pressure.

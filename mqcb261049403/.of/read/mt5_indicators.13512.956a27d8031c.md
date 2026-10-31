@@ -1,3 +1,3 @@
-Calculation: XXDPO = smooth the selected applied price minus its longer-lookback smoother, using a shorter-lookback smoother; calculate on the chart timeframe or the selected same or higher timeframe, using its still-forming bar
-Long: XXDPO > 0
-Short: XXDPO < 0
+Calculation: Smoothed price deviation = a shorter-period moving average of (selected price − a longer-period moving average of selected price); the two moving averages have independently selectable methods and parameters. Calculate on the chart timeframe or on the still-forming bar of a higher timeframe; compare with the previous bar of that same timeframe.
+Long: Smoothed price deviation > 0 AND smoothed price deviation != its previous-bar value
+Short: Smoothed price deviation < 0 AND smoothed price deviation != its previous-bar value

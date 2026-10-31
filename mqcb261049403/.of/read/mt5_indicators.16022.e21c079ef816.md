@@ -1,5 +1,7 @@
-Calculation: Adaptive XMA line = let P be the configured applied price and M its configurable moving average. Let D be the standard deviation of P over the configured lookback around the current M: D = sqrt(mean((P − M)^2)). For each bar, let prev be the prior line value (M on initialization), delta = prev − M, and k = 0 if delta² ≤ D² or delta = 0, otherwise k = 1 − D²/delta². The line is prev + k(M − prev), rounded to the configured price precision.
-Long: The adaptive XMA line changes from falling to rising on the chart timeframe, using the current bar (still forming).
-Short: The adaptive XMA line changes from rising to falling on the chart timeframe, using the current bar (still forming).
-Long: The adaptive XMA line changes from falling to rising on a higher timeframe, using its still-forming bar.
-Short: The adaptive XMA line changes from rising to falling on a higher timeframe, using its still-forming bar.
+Calculation: Adaptive line = For each bar, calculate a moving average of a selected price and the mean squared deviation of that price over the same lookback from the current moving average. Starting with the moving average as the initial previous line, let d be the current moving average minus the previous rounded line. Set the weight to zero if d² is zero or less than the mean squared deviation; otherwise set it to 1 minus the mean squared deviation divided by d². The line is the previous rounded line plus weight times d, rounded to a configurable price increment.
+Calculation: Line direction = Up when the adaptive line is greater than its previous value, down when it is less, and otherwise unchanged from the previous bar; initialize as up.
+Calculation: Higher-timeframe direction = Calculate the adaptive line direction on the higher timeframe using its still-forming bar at the first chart bar of each higher-timeframe interval; hold that sampled direction through the interval. The calculation may instead use the chart timeframe.
+Long: Chart-timeframe line direction = up
+Short: Chart-timeframe line direction = down
+Long: Higher-timeframe direction at the selected chart-bar offset = up AND higher-timeframe direction on the preceding chart bar = down
+Short: Higher-timeframe direction at the selected chart-bar offset = down AND higher-timeframe direction on the preceding chart bar = up

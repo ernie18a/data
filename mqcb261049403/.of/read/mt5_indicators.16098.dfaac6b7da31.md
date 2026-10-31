@@ -1,3 +1,3 @@
-Calculation: RAVI = 100 × (fast moving average − slow moving average) / slow moving average, using the same OHLC-derived price; the fast average has a shorter lookback than the slow average. It is calculated on the chart timeframe; the optional higher-timeframe version uses the still-forming higher-timeframe bar.
-Long: RAVI > the positive weak-trend threshold
-Short: RAVI < the negative weak-trend threshold
+Calculation: RAVI = 100 × (shorter-period moving average of the selected price − longer-period moving average of the same price) / longer-period moving average; replace a zero denominator with 1. Calculate on the chart timeframe or on a higher timeframe using the bar still forming.
+Long: RAVI > positive threshold
+Short: RAVI < negative threshold

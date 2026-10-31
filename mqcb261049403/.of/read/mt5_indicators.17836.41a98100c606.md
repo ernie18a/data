@@ -1,3 +1,3 @@
-Calculation: Smoothed shifted Williams %R = apply a configurable smoother to 100 × (close − highest high over the lookback) / (highest high − lowest low over the lookback), then add 50; calculate on the chart timeframe or on a higher timeframe's still-forming bar, carrying that value forward on chart bars until the next higher-timeframe bar.
-Long: If level coloring is selected, Smoothed shifted Williams %R > middle level; OR, if directional coloring is selected, Smoothed shifted Williams %R > its previous value AND Smoothed shifted Williams %R ≠ middle level
-Short: If level coloring is selected, Smoothed shifted Williams %R < middle level; OR, if directional coloring is selected, Smoothed shifted Williams %R < its previous value AND Smoothed shifted Williams %R ≠ middle level
+Calculation: Oscillator = selected moving average of Williams %R plus 50; if the lookback high equals the lookback low, reuse the previous Williams %R. Calculate on the chart timeframe or on the higher timeframe using its bar still forming; compare higher-timeframe values with the preceding higher-timeframe bar.
+Long: (level mode AND oscillator > middle level) OR (direction mode AND oscillator != middle level AND oscillator > previous oscillator)
+Short: (level mode AND oscillator < middle level) OR (direction mode AND oscillator != middle level AND oscillator < previous oscillator)

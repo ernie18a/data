@@ -1,4 +1,4 @@
-Calculation: Smoothed close = selected smoothing method applied to close, using the selected smoothing length and phase
-Calculation: Smoothed open = the same smoothing method and parameters applied to open
-Long: Smoothed close > Smoothed open
-Short: Smoothed close < Smoothed open
+Long: Moving average of close > moving average of open, using the same smoothing method and parameters for both averages.
+Short: Moving average of close < moving average of open, using the same smoothing method and parameters for both averages.
+Long: At the first chart bar of a higher-timeframe bar, the moving average of the still-forming higher-timeframe close > the moving average of the higher-timeframe open, using the same smoothing method and parameters for both averages; retain this comparison until the next higher-timeframe bar.
+Short: At the first chart bar of a higher-timeframe bar, the moving average of the still-forming higher-timeframe close < the moving average of the higher-timeframe open, using the same smoothing method and parameters for both averages; retain this comparison until the next higher-timeframe bar.
