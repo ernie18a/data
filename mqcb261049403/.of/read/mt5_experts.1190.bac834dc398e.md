@@ -1,5 +1,9 @@
-Calculation: Smoothed candle open, high, low, and close = apply the same selected smoothing method and lookback to the corresponding open, high, low, and close on the indicator timeframe; this timeframe may be higher, lower, or equal to the chart timeframe. Use the last completed indicator bar.
-Long: smoothed close > smoothed open OR indicator-timeframe close > smoothed high + breakout level
-Short: smoothed close <= smoothed open OR indicator-timeframe close < smoothed low - breakout level
-Exit: long, indicator-timeframe close < smoothed low - breakout level
-Exit: short, indicator-timeframe close > smoothed high + breakout level
+Calculation: Smoothed candle = apply the same moving-average method and length separately to open, high, low, and close.
+Long: Chart-timeframe smoothed close > chart-timeframe smoothed open.
+Short: Chart-timeframe smoothed close <= chart-timeframe smoothed open.
+Long: Signal-bar close > signal-bar smoothed high + breakout distance; the signal bar is a configurable bar on an indicator timeframe that can be higher or lower than the chart timeframe, using the last completed bar or the bar still forming.
+Short: Signal-bar close < signal-bar smoothed low - breakout distance, using the same indicator timeframe and signal bar as the long breakout.
+Exit: long, the most recent indicator-timeframe bar at or before the signal bar whose close is outside its smoothed high plus breakout distance or smoothed low minus breakout distance has close < smoothed low - breakout distance.
+Exit: short, the most recent indicator-timeframe bar at or before the signal bar whose close is outside its smoothed high plus breakout distance or smoothed low minus breakout distance has close > smoothed high + breakout distance.
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

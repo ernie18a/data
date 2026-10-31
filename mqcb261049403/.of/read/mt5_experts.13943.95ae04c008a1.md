@@ -1,5 +1,5 @@
-Calculation: Custom TEMA = 3 × first smoothing of median price − 3 × second smoothing of the first result + third smoothing of the second result; each stage uses its configured smoothing method and lookback, on the indicator timeframe.
-Long: Custom TEMA on the last completed indicator-timeframe bar > its value on the preceding completed bar AND its value on the preceding completed bar < its value two completed bars earlier
-Short: Custom TEMA on the last completed indicator-timeframe bar < its value on the preceding completed bar AND its value on the preceding completed bar > its value two completed bars earlier
-Exit: Long, Custom TEMA on the last completed indicator-timeframe bar < its value on the preceding completed bar
-Exit: Short, Custom TEMA on the last completed indicator-timeframe bar > its value on the preceding completed bar
+Calculation: Custom triple moving average = 3 × first smoothed median price − 3 × second smoothing of the first − third term adjustment + third smoothing of the second, where the third term adjustment is 0; each smoothing has its own configurable method and lookback, with the first lookback longer than the equal second and third lookbacks. Calculate on the chart timeframe or a higher timeframe, using the last completed bar and earlier completed bars.
+Long: Custom triple moving average on the last completed indicator bar > its value on the preceding indicator bar AND its value on the preceding indicator bar < its value two indicator bars earlier
+Short: Custom triple moving average on the last completed indicator bar < its value on the preceding indicator bar AND its value on the preceding indicator bar > its value two indicator bars earlier
+Exit: long, custom triple moving average on the last completed indicator bar < its value on the preceding indicator bar OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, custom triple moving average on the last completed indicator bar > its value on the preceding indicator bar OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

@@ -1,5 +1,11 @@
-Calculation: Smoothed Ichimoku oscillator signal = smooth (((close − midpoint of the long-lookback high/low range) − (midpoint of the short-lookback high/low range − midpoint of the medium-lookback high/low range))); short < medium < long lookbacks. Use bars on a lower timeframe than the chart; evaluate the last three completed bars, oldest to newest, as S₋₂, S₋₁, S₀.
-Long: S₋₁ < S₀ AND S₋₂ ≥ S₋₁
-Short: S₋₁ > S₀ AND S₋₂ ≤ S₋₁
-Exit: long, S₋₁ > S₀ AND S₋₂ ≤ S₋₁
-Exit: short, S₋₁ < S₀ AND S₋₂ ≥ S₋₁
+Calculation: Range midpoint = (highest high + lowest low) / 2 over the specified lookback, including the evaluated bar.
+Calculation: Oscillator = close − longest-lookback range midpoint − (shortest-lookback range midpoint − intermediate-lookback range midpoint).
+Calculation: Signal = configurable moving average of the oscillator, with its own smoothing period and method. For the indicator markings, calculate it on the chart timeframe. For the trading decisions, calculate it on a configurable higher or lower timeframe, using the last completed bar by default or the forming bar when configured.
+Long: Chart-timeframe signal > its previous-bar value.
+Short: Chart-timeframe signal < its previous-bar value.
+Long: Trading-timeframe signal > its previous-bar value AND its value two bars earlier >= its previous-bar value.
+Short: Trading-timeframe signal < its previous-bar value AND its value two bars earlier <= its previous-bar value.
+Exit: short, trading-timeframe signal > its previous-bar value.
+Exit: long, trading-timeframe signal < its previous-bar value.
+Exit: long, low <= entry price − stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price − take-profit distance.

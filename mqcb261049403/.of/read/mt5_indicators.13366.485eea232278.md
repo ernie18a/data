@@ -1,5 +1,4 @@
-Calculation: Smoothed applied price = a selected OHLC-derived price smoothed by a selected averaging method; the smoothing and regression use the same lookback.
-Calculation: Linear-regression forecast = least-squares regression of the smoothed applied price over the lookback, evaluated at the lookback end minus the trigger offset; on the selected higher timeframe, use the bar still forming.
-Calculation: Trigger line = twice the current linear-regression forecast minus its value the trigger offset of bars earlier.
-Long: Linear-regression forecast < Trigger line
-Short: Linear-regression forecast > Trigger line
+Calculation: Regression value = for the selected price smoothed by a selected moving-average method over a lookback, let n be that same lookback, x run from 0 for the current bar to n-1 for the oldest bar, y be the corresponding smoothed price, b = (n * sum(x*y) - sum(x) * sum(y)) / (sum(x)^2 - n * sum(x^2)), and a = (sum(y) - b * sum(x)) / n; the regression value is a + b * (n - 1 - lag), where lag is the trigger lookback and is shorter than n-1.
+Calculation: Higher-timeframe regression value = the same regression value calculated on a higher timeframe using its still-forming bar, sampled on the first chart bar of each higher-timeframe bar and held until the next higher-timeframe bar.
+Long: Regression value > regression value lag bars ago OR higher-timeframe regression value > higher-timeframe regression value lag higher-timeframe bars ago.
+Short: Regression value < regression value lag bars ago OR higher-timeframe regression value < higher-timeframe regression value lag higher-timeframe bars ago.

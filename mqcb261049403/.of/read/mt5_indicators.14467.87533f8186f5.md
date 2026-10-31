@@ -1,3 +1,8 @@
-Calculation: Smoothed normalized deviation = (applied price − second smoothing of first-smoothed applied price) / max((0.015 / CCI lookback) × sum over the CCI lookback of absolute differences between each applied price and the current second-smoothed value, sensitivity × CCI lookback × price-point size)
-Long: Smoothed normalized deviation > upper level OR (on a higher timeframe, the last completed bar’s smoothed normalized deviation > upper level AND the preceding completed higher-timeframe bar’s smoothed normalized deviation ≤ upper level)
-Short: Smoothed normalized deviation < lower level OR (on a higher timeframe, the last completed bar’s smoothed normalized deviation < lower level AND the preceding completed higher-timeframe bar’s smoothed normalized deviation ≥ lower level)
+Calculation: Noise-reduced CCI = (selected price - twice-smoothed selected price) / (0.015 * max(sum of absolute differences between each selected price in the lookback and the current twice-smoothed price, noise floor) / lookback length); use zero when the denominator is zero. Apply two independently parameterized moving averages in sequence to the selected price.
+Calculation: Higher-timeframe noise-reduced CCI = the same calculation on the higher timeframe, using its still-forming bar and mapping its value to chart bars.
+Long: Chart-timeframe noise-reduced CCI > middle level
+Short: Chart-timeframe noise-reduced CCI < middle level
+Long: Higher-timeframe noise-reduced CCI > middle level
+Short: Higher-timeframe noise-reduced CCI < middle level
+Long: Higher-timeframe noise-reduced CCI on the selected signal chart bar > middle level AND > upper level AND its value on the preceding chart bar <= middle level OR higher-timeframe noise-reduced CCI on the selected signal chart bar > middle level AND > upper level AND its value on the preceding chart bar <= upper level
+Short: Higher-timeframe noise-reduced CCI on the selected signal chart bar < middle level AND < lower level AND its value on the preceding chart bar >= middle level OR higher-timeframe noise-reduced CCI on the selected signal chart bar < middle level AND < lower level AND its value on the preceding chart bar >= lower level

@@ -1,5 +1,5 @@
-Calculation: 3rd-generation moving average = using typical price (high + low + close)/3 and the same smoothing method and phase for both layers, let L be the lookback, X be that smoother, and α = 2(2L − 1)/(2L − 2); MA = (α + 1) × X(typical price, 2L) − α × X(X(typical price, 2L), L). Evaluate on indicator-timeframe bars, which may be higher or lower than the chart timeframe; use completed bars only.
-Long: MA on the oldest of the three latest completed indicator-timeframe bars > MA on the middle bar AND MA on the latest completed bar > MA on the middle bar
-Short: MA on the oldest of the three latest completed indicator-timeframe bars < MA on the middle bar AND MA on the latest completed bar < MA on the middle bar
-Exit: Long, MA on the latest completed indicator-timeframe bar < MA on the preceding completed indicator-timeframe bar
-Exit: Short, MA on the latest completed indicator-timeframe bar > MA on the preceding completed indicator-timeframe bar
+Calculation: Third-generation moving average = (1 + alpha) × first average − alpha × second average, where the first average smooths an applied price with a chosen moving-average method over a longer period, the second applies the same method to the first average over a period half as long, and alpha = 2 × (longer period − 1) / (longer period − 2). Calculate on a higher timeframe using the last completed bar, or the forming bar when the signal-bar setting selects it.
+Long: The third-generation moving average on the signal bar > its value on the preceding bar AND its value on the bar before that > its value on the preceding bar.
+Short: The third-generation moving average on the signal bar < its value on the preceding bar AND its value on the bar before that < its value on the preceding bar.
+Exit: long, the third-generation moving average on the signal bar < its value on the preceding bar OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, the third-generation moving average on the signal bar > its value on the preceding bar OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance.

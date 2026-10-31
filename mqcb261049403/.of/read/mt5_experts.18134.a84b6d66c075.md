@@ -1,6 +1,6 @@
-Calculation: Fast line = a configurable smoother of the 39-bar FATL digital filter of the selected OHLC-derived price; its smoothing lookback is shorter than the slow line’s
-Calculation: Slow line = a configurable smoother of the 65-bar SATL digital filter of the selected OHLC-derived price; its smoothing lookback is longer than the fast line’s
-Long: Fast line on the last completed bar of the configured indicator timeframe > slow line on that bar AND fast line on the preceding completed bar of that timeframe <= slow line on that bar
-Short: Fast line on the last completed bar of the configured indicator timeframe < slow line on that bar AND fast line on the preceding completed bar of that timeframe >= slow line on that bar
-Exit: short, Fast line on the last completed bar of the configured indicator timeframe > slow line on that bar
-Exit: long, Fast line on the last completed bar of the configured indicator timeframe < slow line on that bar
+Calculation: Fast line = Jurik moving average of the Fast Adaptive Trend Line of the selected price, using the shorter smoothing length on the last completed higher-timeframe bar.
+Calculation: Slow line = Jurik moving average of the Slow Adaptive Trend Line of the same selected price, using the longer smoothing length on the last completed higher-timeframe bar.
+Long: Fast line > slow line AND previous higher-timeframe fast line <= previous higher-timeframe slow line.
+Short: Fast line < slow line AND previous higher-timeframe fast line >= previous higher-timeframe slow line.
+Exit: long, fast line < slow line OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, fast line > slow line OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

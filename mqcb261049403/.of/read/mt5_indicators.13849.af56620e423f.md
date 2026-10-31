@@ -1,4 +1,7 @@
-Calculation: JJRSX = JJMA-smoothed ratio of JurX-smoothed changes in applied price to JurX-smoothed absolute changes in applied price, clipped to [-1, 1].
-Calculation: FastTrend = weighted sum of five JJRSX values with progressively longer lookbacks; SlowTrend = recursively smoothed FastTrend, combining the current FastTrend divided by the smoothing length with the prior SlowTrend weighted by one minus the reciprocal of that length.
-Long: FastTrend > SlowTrend on the chart timeframe OR FastTrend > SlowTrend on the same or a higher timeframe, using the bar still forming on that timeframe.
-Short: FastTrend < SlowTrend on the chart timeframe OR FastTrend < SlowTrend on the same or a higher timeframe, using the bar still forming on that timeframe.
+Calculation: Ultralinear smoothing of a series = three successive stages, each updating a = (1-k) × previous a + k × input, b = k × a + (1-k) × previous b, and output = 1.5 × a - 0.5 × b; k = 3/(length + 2), and each stage's a and b are initialized to the first input value.
+Calculation: Smoothed oscillator = Jurik moving average of the ratio of ultralinearly smoothed applied-price change to ultralinearly smoothed absolute applied-price change, with the ratio clipped to [-1, 1]; the ratio is unavailable when its denominator is zero.
+Calculation: Fast trend = weighted sum of five smoothed oscillators with progressively longer ultralinear smoothing lengths and the same Jurik moving-average parameters; the second and third oscillators use the same weight.
+Calculation: Slow trend = fast trend divided by a smoothing length plus the previous slow trend multiplied by (smoothing length - 1)/smoothing length; initialize it to the first fast trend divided by the smoothing length.
+Calculation: Higher-timeframe trends = the same fast and slow trend calculations on a higher timeframe, using its still-forming bar as sampled on the first chart bar of that higher-timeframe bar and carrying that sample forward until the next higher-timeframe bar.
+Long: Fast trend > slow trend OR higher-timeframe fast trend > higher-timeframe slow trend
+Short: Fast trend < slow trend OR higher-timeframe fast trend < higher-timeframe slow trend

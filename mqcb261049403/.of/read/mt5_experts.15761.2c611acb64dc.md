@@ -1,5 +1,9 @@
-Calculation: Smoothed RSI candle = on the indicator timeframe (which may be higher or lower than the chart timeframe), calculate RSI separately from open, high, low, and close, smooth each RSI series with the first and second smoothing stages, and use the selected stage; bullish if smoothed close RSI > smoothed open RSI, bearish if smoothed close RSI < smoothed open RSI, otherwise neutral. Evaluate the signal candle and its predecessor using their last completed bars.
-Long: Signal candle is bullish AND preceding candle is not bullish
-Short: Signal candle is bearish AND preceding candle is not bearish
-Exit: long, Signal candle is bearish AND preceding candle is not bearish
-Exit: short, Signal candle is bullish AND preceding candle is not bullish
+Calculation: Smoothed RSI of a price series = RSI of that series followed by a first moving-average smoothing and, optionally, a second moving-average smoothing of the first; use the same RSI and smoothing parameters for open and close.
+Long: On the chart timeframe, first-smoothed RSI of the selected price > second-smoothed RSI of the selected price.
+Short: On the chart timeframe, first-smoothed RSI of the selected price < second-smoothed RSI of the selected price.
+Long: On the chart timeframe, smoothed RSI of close > smoothed RSI of open.
+Short: On the chart timeframe, smoothed RSI of close < smoothed RSI of open.
+Long: On the selected indicator timeframe, which may be higher or lower than the chart timeframe, smoothed RSI of close > smoothed RSI of open on the selected signal bar AND smoothed RSI of close <= smoothed RSI of open on the preceding indicator bar; the selected signal bar may be the last completed bar, an earlier completed bar, or the bar still forming.
+Short: On the selected indicator timeframe, which may be higher or lower than the chart timeframe, smoothed RSI of close < smoothed RSI of open on the selected signal bar AND smoothed RSI of close >= smoothed RSI of open on the preceding indicator bar; the selected signal bar may be the last completed bar, an earlier completed bar, or the bar still forming.
+Exit: long, smoothed RSI of close < smoothed RSI of open on the selected indicator-timeframe signal bar OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance.
+Exit: short, smoothed RSI of close > smoothed RSI of open on the selected indicator-timeframe signal bar OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance.

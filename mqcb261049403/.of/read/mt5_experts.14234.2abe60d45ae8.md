@@ -1,6 +1,9 @@
-Calculation: Upper channel = XMA of high prices on the configured indicator timeframe, using the configured smoothing method and parameters; use the most recently completed bar.
-Calculation: Lower channel = XMA of low prices on the configured indicator timeframe, using the same smoothing method and parameters as the upper channel; use the most recently completed bar.
-Long: Current completed indicator-timeframe close > upper channel AND (previous completed indicator-timeframe close < previous lower channel OR previous close was between the previous lower and upper channels, inclusive)
-Short: Current completed indicator-timeframe close < lower channel AND (previous completed indicator-timeframe close > previous upper channel OR previous close was between the previous lower and upper channels, inclusive)
-Exit: Long, current completed indicator-timeframe close < lower channel
-Exit: Short, current completed indicator-timeframe close > upper channel
+Calculation: Channel upper and lower = the same configurable moving average applied separately to high and low, respectively; use the same smoothing parameters for both. For the trading system, calculate on a configurable indicator timeframe, which may be higher or lower than the chart timeframe, using either the last completed bar or the forming bar according to the signal-bar setting.
+Calculation: Bullish state = close > channel upper AND close >= channel lower.
+Calculation: Bearish state = close < channel lower.
+Long: Bullish state = true.
+Long: Bullish state = true AND previous indicator bar's bullish state = false.
+Short: Bearish state = true.
+Short: Bearish state = true AND previous indicator bar's bearish state = false.
+Exit: long, bearish state = true OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, bullish state = true OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

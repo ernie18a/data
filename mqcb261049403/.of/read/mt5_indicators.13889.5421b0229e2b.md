@@ -1,5 +1,8 @@
-Calculation: JCCX = JurX(price − JMA(price)) / JurX(abs(price − JMA(price))), capped to [−1, 1]; JMA and both JurX smoothers use the selected applied price on the higher-timeframe bar still forming.
-Calculation: Fast trend = weighted sum of five JCCX values on that same higher-timeframe bar; their lookbacks are ordered shortest to longest.
-Calculation: Slow trend = Fast trend / smoothing length + previous Slow trend × (1 − 1 / smoothing length), using the same higher-timeframe series.
-Long: Fast trend > Slow trend
-Short: Fast trend < Slow trend
+Calculation: Ultralinear smoother of input x with length L = set k=3/(L+2), h=1-k; initialize six states to the first input; on each bar update a=h*a+k*x, b=k*a+h*b, c=h*c+k*(1.5*a-0.5*b), d=k*c+h*d, e=h*e+k*(1.5*c-0.5*d), f=k*e+h*f; output 1.5*e-0.5*f.
+Calculation: Oscillator = clamp the ratio of the ultralinear smoother of (selected price minus Jurik moving average of selected price) to the ultralinear smoother of its absolute value to [-1, 1]; both smoothers use the same length; the oscillator is unavailable when the denominator is zero.
+Calculation: Fast trend = weighted sum of five oscillators using successively longer Jurik moving average lengths, a shared phase and ultralinear smoother length; the second and third oscillators share the same weight.
+Calculation: Slow trend = fast trend / smoothing length + previous slow trend * (smoothing length - 1) / smoothing length; initialize it to the first fast trend / smoothing length.
+Long: Fast trend > slow trend.
+Short: Fast trend < slow trend.
+Long: For each selected higher timeframe, fast trend >= slow trend on its still-forming bar at the first chart bar of that higher-timeframe bar, with that comparison retained until the next higher-timeframe bar begins.
+Short: For each selected higher timeframe, fast trend < slow trend on its still-forming bar at the first chart bar of that higher-timeframe bar, with that comparison retained until the next higher-timeframe bar begins.

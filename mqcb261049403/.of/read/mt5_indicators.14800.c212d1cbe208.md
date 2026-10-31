@@ -1,4 +1,3 @@
-Calculation: +DI = smooth(max(high − previous high, 0) when that upward move is strictly greater than max(previous low − low, 0), otherwise 0) / true range × 100; true range = max(high − low, |high − previous close|, |low − previous close|). Use the same smoothing method and lookback as for −DI.
-Calculation: −DI = smooth(max(previous low − low, 0) when that downward move is strictly greater than max(high − previous high, 0), otherwise 0) / true range × 100; true range = max(high − low, |high − previous close|, |low − previous close|). Use the same smoothing method and lookback as for +DI. Calculations use chart-timeframe bars, or the selected timeframe if it is higher; on a higher timeframe use the bar still forming.
-Long: +DI > −DI
-Short: −DI > +DI
+Calculation: Smoothed positive and negative directional indicators = Apply the same selected smoothing method, period, and phase separately to 100 × positive directional movement / true range and 100 × negative directional movement / true range. Positive directional movement is max(high − previous high, 0) if it exceeds max(previous low − low, 0), otherwise 0; negative directional movement is max(previous low − low, 0) if it exceeds max(high − previous high, 0), otherwise 0. Set both inputs to 0 when true range is 0. Calculate on the chart timeframe or on a higher timeframe using its still-forming bar.
+Long: Smoothed positive directional indicator > smoothed negative directional indicator
+Short: Smoothed positive directional indicator < smoothed negative directional indicator

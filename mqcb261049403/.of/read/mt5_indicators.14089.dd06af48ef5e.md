@@ -1,3 +1,5 @@
-Calculation: Smoothed candle open and close = apply the same smoothing method and lookback separately to open and close on the higher timeframe; use its still-forming bar.
-Long: Smoothed candle close − smoothed candle open > trigger threshold in chart price points
-Short: Smoothed candle close − smoothed candle open < −trigger threshold in chart price points
+Calculation: Smoothed open and smoothed close = the same selected moving-average method and lookback applied separately to open and close.
+Long: Chart-timeframe smoothed close > chart-timeframe smoothed open.
+Short: Chart-timeframe smoothed close <= chart-timeframe smoothed open.
+Long: Smoothed close of the forming higher-timeframe bar - smoothed open of the forming higher-timeframe bar > a nonnegative price-distance threshold.
+Short: Smoothed close of the forming higher-timeframe bar - smoothed open of the forming higher-timeframe bar < the negative of the price-distance threshold.

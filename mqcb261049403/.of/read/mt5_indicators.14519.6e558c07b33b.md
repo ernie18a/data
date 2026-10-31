@@ -1,4 +1,3 @@
-Calculation: Stochastic signal line = the smoothed signal (%D) line of the Stochastic oscillator
-Calculation: Upper band = the selected moving average of the rolling highest Stochastic signal-line value; lower band = the same moving average of the rolling lowest value, using the same lookback and smoothing settings
-Long: Previous Stochastic signal line < previous lower band AND current Stochastic signal line > current lower band
-Short: Previous Stochastic signal line > previous upper band AND current Stochastic signal line < current upper band
+Calculation: Step stochastic = apply the following separately to the stochastic oscillator's signal line using a smaller fast step and a larger slow step. For each step s, initialize the previous lower bound to positive infinity, the previous upper bound to negative infinity, and trend to zero. On each bar, set lower = stochastic - 2s and upper = stochastic + 2s; set trend to positive if stochastic > previous upper, or negative if stochastic < previous lower; otherwise retain the trend. If trend is positive, set lower = max(lower, previous lower) and output lower + s. If trend is negative, set upper = min(upper, previous upper) and output upper - s. Save both bounds for the next bar.
+Long: Fast step stochastic > slow step stochastic
+Short: Fast step stochastic < slow step stochastic

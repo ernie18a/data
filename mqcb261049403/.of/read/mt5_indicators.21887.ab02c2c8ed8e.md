@@ -1,5 +1,3 @@
-Calculation: RSI = Relative strength index of the selected price on chart-timeframe bars; in the higher-timeframe version, use the still-forming higher-timeframe bar, sampled at its first lower-timeframe bar and held until the next higher-timeframe bar
-Calculation: Smoothed volume = Selected moving average of volume on the same timeframe as the RSI
-Calculation: Smoothed volume-weighted centered RSI = Selected moving average of (RSI − 50) × volume, using the same method and lookback as smoothed volume
-Long: Smoothed volume-weighted centered RSI < lower oversold level × smoothed volume
-Short: Smoothed volume-weighted centered RSI > upper overbought level × smoothed volume
+Calculation: Volume-weighted oscillator = smooth((RSI of the selected OHLC-derived price − 50) × volume); apply the same selected smoothing method and parameters to volume to obtain smoothed volume. Calculate on the chart timeframe or on the higher timeframe using its still-forming bar.
+Long: volume-weighted oscillator > higher overbought threshold × smoothed volume OR volume-weighted oscillator > lower overbought threshold × smoothed volume
+Short: volume-weighted oscillator ≤ higher overbought threshold × smoothed volume AND volume-weighted oscillator ≤ lower overbought threshold × smoothed volume AND (volume-weighted oscillator < lower oversold threshold × smoothed volume OR volume-weighted oscillator < higher oversold threshold × smoothed volume)

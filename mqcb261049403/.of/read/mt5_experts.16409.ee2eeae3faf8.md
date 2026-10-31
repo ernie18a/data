@@ -1,6 +1,9 @@
-Calculation: Waddah Attar histogram = (short-lookback smoothed applied price − long-lookback smoothed applied price) × smoothed applied price, with the short lookback shorter than the long lookback; all inputs use the configured indicator timeframe, which may be higher, equal to, or lower than the chart timeframe.
-Calculation: Histogram color = rising/equal when the current histogram value is greater than or equal to the preceding value; otherwise falling.
-Long: On the last completed indicator-timeframe bar, histogram color changes from falling to rising/equal.
-Short: On the last completed indicator-timeframe bar, histogram color changes from rising/equal to falling.
-Exit: Long, on the last completed indicator-timeframe bar histogram color changes from rising/equal to falling.
-Exit: Short, on the last completed indicator-timeframe bar histogram color changes from falling to rising/equal.
+Calculation: Trend value = (shorter-period T3 moving average of close − longer-period T3 moving average of close) × Jurik moving average of close, calculated on a higher timeframe using the last completed bar or, if configured, the still-forming bar.
+Long: Trend value >= previous trend value
+Short: Trend value < previous trend value
+Long: Direction mode = trend-following AND trend value >= previous trend value AND previous trend value < trend value two bars ago
+Short: Direction mode = trend-following AND trend value < previous trend value AND previous trend value >= trend value two bars ago
+Long: Direction mode = countertrend AND trend value < previous trend value AND previous trend value >= trend value two bars ago
+Short: Direction mode = countertrend AND trend value >= previous trend value AND previous trend value < trend value two bars ago
+Exit: long, direction mode = trend-following AND trend value < previous trend value OR direction mode = countertrend AND trend value >= previous trend value OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, direction mode = trend-following AND trend value >= previous trend value OR direction mode = countertrend AND trend value < previous trend value OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

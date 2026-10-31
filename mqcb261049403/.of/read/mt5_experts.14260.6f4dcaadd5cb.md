@@ -1,5 +1,8 @@
-Calculation: XCCX(price) = 100 × smoothed(price − smoothed(price, price lookback), deviation lookback) ÷ smoothed(abs(price − smoothed(price, price lookback)), deviation lookback); use the configured smoothing methods and lookbacks
-Long: XCCX(close) > XCCX(open) on the last completed bar of the configured signal timeframe, which may be higher or lower than the chart timeframe, AND XCCX(close) ≤ XCCX(open) on the preceding completed bar of that timeframe
-Short: XCCX(close) < XCCX(open) on the last completed bar of the configured signal timeframe, which may be higher or lower than the chart timeframe, AND XCCX(close) ≥ XCCX(open) on the preceding completed bar of that timeframe
-Exit: long, XCCX(close) < XCCX(open) on the last completed bar of the configured signal timeframe, which may be higher or lower than the chart timeframe
-Exit: short, XCCX(close) > XCCX(open) on the last completed bar of the configured signal timeframe, which may be higher or lower than the chart timeframe
+Calculation: Oscillator for a price series = 100 × smooth(price − smooth(price)) / smooth(abs(price − smooth(price))); use the same price-smoothing method and parameters for open and close, and the same independently parameterized deviation-smoothing method for both numerator and denominator. The value is unavailable when the smoothed signed deviation is zero or the smoothed absolute deviation is zero.
+Calculation: Oscillator open and oscillator close = oscillator calculated independently from open and close, respectively, on the chart timeframe for the indicator markings; for trading, calculate them on a configurable timeframe that may be higher, lower, or equal to the chart timeframe, using a configurable signal bar: the forming bar or a completed bar at a chosen offset. Previous means the immediately preceding bar of that same timeframe.
+Long: Oscillator close > oscillator open
+Short: Oscillator close < oscillator open
+Long: Signal-bar oscillator close > signal-bar oscillator open AND previous oscillator close <= previous oscillator open
+Short: Signal-bar oscillator close < signal-bar oscillator open AND previous oscillator close >= previous oscillator open
+Exit: long, signal-bar oscillator close < signal-bar oscillator open OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, signal-bar oscillator close > signal-bar oscillator open OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

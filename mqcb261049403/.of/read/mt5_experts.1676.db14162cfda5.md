@@ -1,7 +1,8 @@
-Calculation: Custom price = use x = (high + low + close + low)/2 if close < open, x = (high + low + close + high)/2 if close > open, or x = (high + low + close + close)/2 if close = open; then (x - low + x - high)/2, using close if the result is 0
-Calculation: SMA-based normalized momentum = for each bar, let D = the simple moving average of custom price minus its value Momentum bars earlier; let Dmax and Dmin be the highest and lowest D over the KPeriod lookback ending on that bar; calculate 100 - 200 × (Dmax - D)/(Dmax - Dmin), or 100 when Dmax = Dmin
-Calculation: EMA-based normalized momentum = the same calculation as SMA-based normalized momentum, using an exponential moving average instead of a simple moving average
-Long: SMA-based normalized momentum = 100 OR EMA-based normalized momentum = 100, on the selected signal bar of the MUV indicator timeframe (which may be higher or lower than the chart timeframe; the selected bar may be forming or completed, depending on its configured index)
-Short: SMA-based normalized momentum = -100 OR EMA-based normalized momentum = -100, on the selected signal bar of the MUV indicator timeframe (which may be higher or lower than the chart timeframe; the selected bar may be forming or completed, depending on its configured index)
-Exit: long, SMA-based normalized momentum = -100 OR EMA-based normalized momentum = -100
-Exit: short, SMA-based normalized momentum = 100 OR EMA-based normalized momentum = 100
+Calculation: Trend-following price = (high + close) / 2 when close > open; (low + close) / 2 when close < open; close when close = open; use close if the result is zero.
+Calculation: SMA momentum and EMA momentum = each moving average of trend-following price minus its value a momentum lookback earlier; both averages use the same period and both momentums use the same lookback.
+Calculation: Normalized momentum = 100 - 200 * (rolling maximum momentum - current momentum) / (rolling maximum momentum - rolling minimum momentum), using the same extrema lookback for both momentum series and including the current bar; if the range is zero, use 100. For the expert advisor, calculate on the selected higher or lower timeframe and use its last completed bar.
+Long: Normalized SMA momentum = 100 OR normalized EMA momentum = 100.
+Short: Normalized SMA momentum = -100 OR normalized EMA momentum = -100.
+Exit: long, normalized SMA momentum = -100 OR normalized EMA momentum = -100 OR neither current signal is present AND the most recent earlier signal is short OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, normalized SMA momentum = 100 OR normalized EMA momentum = 100 OR neither current signal is present AND the most recent earlier signal is long OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.
+Calculation: Most recent earlier signal = the latest earlier bar with either entry condition; if both conditions occur on that bar, classify it as long.

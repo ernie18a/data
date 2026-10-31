@@ -1,7 +1,10 @@
-Calculation: Ergodic Ticks Volume OSMA = on the configured signal timeframe (higher or lower than the chart timeframe if different), using completed bars, let V be tick_volume or volume; U=(V+(close-open)/point_size)/2 and D=V-U; smooth U and D with the same configurable smoothing method using the first lookback, then smooth each again using the second lookback; form 100*(U-D)/(U+D), or 0 when U+D=0; smooth this value successively with the third, fourth, and fifth lookbacks to form the line; smooth the line with the sixth lookback to form its signal; smooth line minus signal with the seventh lookback to form the histogram. All lookbacks are independently configurable.
-Long: histogram[t-2] >= histogram[t-1] AND histogram[t] > histogram[t-1]
-Short: histogram[t-2] <= histogram[t-1] AND histogram[t] < histogram[t-1]
-Exit: Long, histogram[t-2] <= histogram[t-1] AND histogram[t] < histogram[t-1]
-Exit: Short, histogram[t-2] >= histogram[t-1] AND histogram[t] > histogram[t-1]
-Exit: Long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
-Exit: Short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance
+Calculation: Volume oscillator = for each bar, let U = (volume + (close - open) / price point size) / 2 and D = volume - U. Smooth U and D separately twice, using the same smoothing method and the same respective first-stage and second-stage lengths for both. Let R = 100 * (smoothed U - smoothed D) / (smoothed U + smoothed D), or 0 if the denominator is 0. Smooth R once, then smooth the result twice more in sequence to obtain E. Subtract a further smoothing of E from E, then smooth that difference to obtain the oscillator. Use the same smoothing method throughout, with independently configurable stage lengths.
+Calculation: Higher-timeframe oscillator values H0, H1, H2 = the volume oscillator on the last completed higher-timeframe bar and the two preceding higher-timeframe bars, respectively.
+Long: H0 > H1 AND H1 <= H2
+Short: H0 < H1 AND H1 >= H2
+Long: chart-timeframe volume oscillator > 0 AND chart-timeframe volume oscillator != its previous-bar value
+Short: chart-timeframe volume oscillator < 0 AND chart-timeframe volume oscillator != its previous-bar value
+Exit: long, H0 < H1
+Exit: short, H0 > H1
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

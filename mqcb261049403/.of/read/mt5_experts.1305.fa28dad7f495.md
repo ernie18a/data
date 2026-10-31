@@ -1,6 +1,7 @@
-Calculation: XRVI = smooth (close − open) / (high − low) on the indicator timeframe; use 0 when high = low. Use the last completed bars.
-Calculation: XRVI signal line = smooth XRVI in a second stage on the indicator timeframe; use the last completed bars. The indicator timeframe may be higher or lower than the chart timeframe.
-Long: XRVI on the latest completed bar > its signal line AND XRVI on the preceding completed bar ≤ its signal line
-Short: XRVI on the latest completed bar < its signal line AND XRVI on the preceding completed bar ≥ its signal line
-Exit: long, XRVI on the latest completed bar < its signal line AND XRVI on the preceding completed bar ≥ its signal line
-Exit: short, XRVI on the latest completed bar > its signal line AND XRVI on the preceding completed bar ≤ its signal line
+Calculation: Ultralinear smoothing of a series = apply three consecutive stages; each stage updates a = k × input + (1 − k) × previous a, then b = k × a + (1 − k) × previous b, and outputs 1.5 × a − 0.5 × b, where k = 3 / (smoothing length + 2); initialize each stage's a and b to its first input.
+Calculation: Oscillator = ultralinear smoothing of (close − open) / (high − low), using zero when high equals low, on the indicator timeframe; the indicator timeframe may be higher or lower than the chart timeframe and uses its last completed bar.
+Calculation: Signal line = ultralinear smoothing of the oscillator with a shorter smoothing length, on the same completed indicator bars.
+Long: oscillator > signal line on the last completed indicator bar AND oscillator <= signal line on the preceding indicator bar.
+Short: oscillator < signal line on the last completed indicator bar AND oscillator >= signal line on the preceding indicator bar.
+Exit: long, oscillator < signal line on the last completed indicator bar OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, oscillator > signal line on the last completed indicator bar OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance.

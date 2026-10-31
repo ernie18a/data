@@ -1,7 +1,12 @@
-Calculation: Hull moving average = linear weighted moving average of length √N of (2 × linear weighted moving average of length floor(N/2) of the applied-price series − linear weighted moving average of length N of the applied-price series); all bars are on the configured indicator timeframe.
-Calculation: HMA change = current HMA − preceding HMA.
-Calculation: HMA-change standard deviation = population standard deviation of HMA changes over a lookback; the upper change threshold uses a larger multiplier than the lower change threshold.
-Long: On the last completed bar of the configured indicator timeframe (which may be higher or lower than the chart timeframe), HMA change > lower change threshold OR HMA two bars ago > HMA one bar ago AND HMA one bar ago < current HMA.
-Short: On the last completed bar of the configured indicator timeframe (which may be higher or lower than the chart timeframe), HMA change < −lower change threshold OR HMA two bars ago < HMA one bar ago AND HMA one bar ago > current HMA.
-Exit: long, On the last completed bar of the configured indicator timeframe (which may be higher or lower than the chart timeframe), HMA change < −lower change threshold OR preceding HMA > current HMA.
-Exit: short, On the last completed bar of the configured indicator timeframe (which may be higher or lower than the chart timeframe), HMA change > lower change threshold OR preceding HMA < current HMA.
+Calculation: Hull moving average H = linear weighted moving average over floor(sqrt(n)) bars of (2 × linear weighted moving average of the selected OHLC-derived price over floor(n/2) bars − linear weighted moving average of that price over n bars). Use the chart timeframe for indicator markings; for expert decisions, use the selected indicator timeframe, which may be higher or lower than the chart timeframe, and the selected signal bar, either the last completed bar or the bar still forming. Prior values refer to preceding bars of that same timeframe.
+Calculation: D = H − previous H; S = population standard deviation of D over the selected lookback, including the signal bar. Round D and each of the two independently parameterized multiples of S to the selected price precision plus two decimal places; call the rounded values D, T1 and T2.
+Long: H > previous H
+Short: H < previous H
+Long: (D > T1 AND D <= T2) OR D > T2
+Short: (D < -T1 AND D >= -T2) OR D < -T2
+Long: H > previous H AND previous H < H two bars ago
+Short: H < previous H AND previous H > H two bars ago
+Exit: long, (D < -T1 AND D >= -T2) OR D < -T2 OR H < previous H
+Exit: short, (D > T1 AND D <= T2) OR D > T2 OR H > previous H
+Exit: long, low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

@@ -1,5 +1,5 @@
-Calculation: JFATL channel = Apply a 39-bar FATL weighted filter to bar highs for the upper line and lows for the lower line, smooth each with JMA, round to the configured price increment, then shift both lines forward; at each bar compare its close with the channel values from the configured number of bars earlier, on the configured indicator timeframe (which may be higher, equal to, or lower than the chart timeframe), using completed bars.
-Long: Close > upper JFATL channel AND previous completed bar's close <= its upper JFATL channel
-Short: Close < lower JFATL channel AND previous completed bar's close >= its lower JFATL channel
-Exit: Long, close < lower JFATL channel OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
-Exit: Short, close > upper JFATL channel OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance
+Calculation: Channel boundaries = Apply the FATL digital filter separately to highs and lows, then apply Jurik moving average smoothing with the same length and phase to each series. Add a configurable price offset and round each result to the nearest configurable price increment. Compare each bar with the boundaries calculated a configurable number of bars earlier. For the standalone indicator use chart bars; for the trading system use the last completed bar of a higher timeframe and its preceding higher-timeframe bars.
+Long: Close > upper channel boundary AND close >= lower channel boundary
+Short: Close < lower channel boundary
+Exit: long, close < lower channel boundary OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance
+Exit: short, close > upper channel boundary AND close >= lower channel boundary OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance

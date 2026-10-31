@@ -1,4 +1,6 @@
-Calculation: Smoothed rolling high = the highest smoothed bar high over a lookback; Smoothed rolling low = the lowest smoothed bar low over the same lookback; both use the same smoothing method and length.
-Calculation: Upper Float Pivot band = the configured upward-rounded price increment of (3 × Float Pivot − Smoothed rolling low) / 2; Lower Float Pivot band = the configured downward-rounded price increment of (3 × Float Pivot − Smoothed rolling high) / 2, where Float Pivot = (Smoothed rolling high + Smoothed rolling low + smoothed applied price) / 3.
-Long: Close > Upper Float Pivot band from the chart bar Shift bars earlier.
-Short: Close < Lower Float Pivot band from the chart bar Shift bars earlier.
+Calculation: Pivot levels = Apply the same selected moving-average method and smoothing parameters separately to high, low, and a selected OHLC-derived price. Over the same lookback ending at the calculation bar, let H be the maximum smoothed high and L the minimum smoothed low. Let P = (H + L + current smoothed selected price) / 3. Upper = round up (3P - L) / 2 to a price increment; lower = round down (3P - H) / 2 to the same price increment. Use the levels from a configurable number of bars before the decision bar.
+Calculation: Higher-timeframe direction = At the first chart bar of each higher-timeframe bar, compare the higher-timeframe bar still forming, using data available at that chart bar's close, with its pivot levels shifted by the configured number of higher-timeframe bars. Hold the resulting direction unchanged until the next higher-timeframe bar begins.
+Long: Chart-timeframe close > upper pivot level
+Short: Chart-timeframe close < lower pivot level
+Long: Higher-timeframe direction = close > upper pivot level
+Short: Higher-timeframe direction = close < lower pivot level

@@ -1,6 +1,6 @@
-Calculation: TSI = 100 × a second smoothing of the first-smoothed close-to-close change divided by a second smoothing of the first-smoothed absolute close-to-close change; use the same two smoothing stages for numerator and denominator.
-Calculation: Trigger = TSI from a prior bar on the configured indicator timeframe, which may be higher or lower than the chart timeframe; evaluate only completed bars.
-Long: TSI > Trigger AND prior-bar TSI ≤ prior-bar Trigger
-Short: TSI < Trigger AND prior-bar TSI ≥ prior-bar Trigger
-Exit: long position, TSI < Trigger AND prior-bar TSI ≥ prior-bar Trigger
-Exit: short position, TSI > Trigger AND prior-bar TSI ≤ prior-bar Trigger
+Calculation: Oscillator = the close-to-close change smoothed successively by a first and a second moving average, divided by the absolute close-to-close change smoothed successively by the same respective moving averages; each stage has independently configurable smoothing method and length. Calculate on a configurable higher or lower timeframe, using its last completed bar; the two smoothing lengths have no required ordering.
+Calculation: Trigger = oscillator from a configurable number of oscillator-timeframe bars earlier.
+Long: Oscillator > trigger AND the preceding oscillator-timeframe bar's oscillator <= its trigger.
+Short: Oscillator < trigger AND the preceding oscillator-timeframe bar's oscillator >= its trigger.
+Exit: long, oscillator < trigger OR low <= entry price minus a configurable stop distance OR high >= entry price plus a configurable profit distance.
+Exit: short, oscillator > trigger OR high >= entry price plus a configurable stop distance OR low <= entry price minus a configurable profit distance.

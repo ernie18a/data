@@ -1,6 +1,11 @@
-Calculation: Short-smoothed RSI and CCI = RSI and CCI of the same applied price, each smoothed with the same method and a shorter lookback, on the indicator timeframe (higher or lower than the chart timeframe), using completed bars
-Calculation: Long-smoothed RSI and CCI = RSI and CCI of the same applied price, each smoothed with the same method and a longer lookback than the short-smoothed values, on the indicator timeframe (higher or lower than the chart timeframe), using completed bars
-Long: Short-smoothed RSI > long-smoothed RSI AND short-smoothed CCI > long-smoothed CCI AND the preceding completed indicator-timeframe bar did not satisfy both comparisons
-Short: Short-smoothed RSI < long-smoothed RSI AND short-smoothed CCI < long-smoothed CCI AND the preceding completed indicator-timeframe bar did not satisfy both comparisons
-Exit: long, NOT (short-smoothed RSI > long-smoothed RSI AND short-smoothed CCI > long-smoothed CCI)
-Exit: short, NOT (short-smoothed RSI < long-smoothed RSI AND short-smoothed CCI < long-smoothed CCI)
+Calculation: Bullish state = shorter-period smoothed RSI > longer-period smoothed RSI AND shorter-period smoothed CCI > longer-period smoothed CCI; RSI and CCI use the same lookback and applied price, and all smoothing uses the same method.
+Calculation: Bearish state = shorter-period smoothed RSI < longer-period smoothed RSI AND shorter-period smoothed CCI < longer-period smoothed CCI, using the same parameters as the bullish state.
+Calculation: Neutral state = bullish state is false AND bearish state is false.
+Long: Bullish state is true on the chart bar.
+Short: Bearish state is true on the chart bar.
+Long: Bullish state is true on the last completed higher-timeframe bar AND bullish state is false on its preceding bar.
+Short: Bearish state is true on the last completed higher-timeframe bar AND bearish state is false on its preceding bar.
+Exit: long, bearish state is true on the last completed higher-timeframe bar OR neutral-state exits are enabled AND neutral state is true on the last completed higher-timeframe bar.
+Exit: short, bullish state is true on the last completed higher-timeframe bar OR neutral-state exits are enabled AND neutral state is true on the last completed higher-timeframe bar.
+Exit: long, low <= entry price minus the stop-loss distance OR high >= entry price plus the take-profit distance.
+Exit: short, high >= entry price plus the stop-loss distance OR low <= entry price minus the take-profit distance.

@@ -1,7 +1,7 @@
-Calculation: CG = On higher-timeframe bars, let median price = (high + low) / 2. For each bar, CG = (L + 1) / 2 − [sum from i=0 to L−1 of (i + 1) × median price from i bars ago] / [sum from i=0 to L−1 of median price from i bars ago]; use 0 if the denominator is 0.
-Calculation: Main = On each higher-timeframe bar, normalize its CG within the highest and lowest CG over the last L bars as (CG − lowest) / (highest − lowest), or 0 if highest = lowest. Then take the weighted average of this normalized value and the prior three values, with weights 4, 3, 2, 1 divided by 10, and transform it as 2 × value − 1. Use completed bars.
-Calculation: Trigger = 0.96 × (prior higher-timeframe bar's Main + 0.02). Use completed bars.
-Long: Main on the latest completed higher-timeframe bar > Trigger on that bar AND Main on the preceding completed higher-timeframe bar ≤ Trigger on that bar
-Short: Main on the latest completed higher-timeframe bar < Trigger on that bar AND Main on the preceding completed higher-timeframe bar ≥ Trigger on that bar
-Exit: short, Main on the latest completed higher-timeframe bar > Trigger on that bar
-Exit: long, Main on the latest completed higher-timeframe bar < Trigger on that bar
+Calculation: Center of gravity = for each bar, let median price be (high + low) / 2; over the lookback, sum (age + 1) × median price, with age zero for the newest bar. Divide the negative of this sum by the sum of median prices and add (lookback + 1) / 2. If the sum of median prices is zero, use zero.
+Calculation: Oscillator = normalize the center of gravity within its highest and lowest values over the same lookback, using zero when the range is zero; take the weighted average of the current and three preceding normalized values with weights 4, 3, 2, 1, then subtract 0.5 and multiply by 2. Calculate on a higher timeframe using the last completed bar; optionally use the still-forming bar instead.
+Calculation: Trigger = 0.96 × (previous higher-timeframe oscillator + 0.02).
+Long: oscillator > trigger AND previous higher-timeframe oscillator <= previous higher-timeframe trigger
+Short: oscillator < trigger AND previous higher-timeframe oscillator >= previous higher-timeframe trigger
+Exit: long, oscillator < trigger OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance
+Exit: short, oscillator > trigger OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance

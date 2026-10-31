@@ -1,5 +1,6 @@
-Calculation: JCCX = JurX-smoothed (applied price − JMA-smoothed applied price) divided by JurX-smoothed absolute(applied price − JMA-smoothed applied price), clipped to [−1, 1]; the JMA and both JurX smoothers use the same smoothing parameters.
-Calculation: Fast trend = weighted sum of five JCCX values with progressively longer lookbacks; the third and second values use the same weight parameter.
-Calculation: Slow trend = current fast trend divided by its smoothing lookback + previous slow trend × (1 − 1 / that lookback).
-Long: On any configured timeframe higher or lower than the chart timeframe, using its last completed bar, fast trend > slow trend.
-Short: On any configured timeframe higher or lower than the chart timeframe, using its last completed bar, fast trend < slow trend.
+Calculation: Ultra-linear smoothing = three successive stages, each with a = 3/(length + 2), b = 1 - a, u = b × previous u + a × input, v = a × u + b × previous v, and output = 1.5 × u - 0.5 × v; initialize each stage's u and v to its first input.
+Calculation: Normalized oscillator = clamp(ultra-linear smoothing of (selected price - Jurik moving average of selected price) / ultra-linear smoothing of its absolute value, -1, 1); use the same smoothing length for numerator and denominator, and leave the result undefined when the denominator is zero.
+Calculation: Fast line = weighted sum of five normalized oscillators with progressively longer Jurik moving average lengths, a shared phase and ultra-linear smoothing length, and progressively larger weights, except that the third oscillator uses the second oscillator's weight.
+Calculation: Slow line = fast line / smoothing length + previous slow line × (smoothing length - 1) / smoothing length; initialize it to the first fast line / smoothing length.
+Long: Fast line > slow line on the chart bar OR fast line > slow line on the last completed bar of any selected higher or lower timeframe.
+Short: Fast line < slow line on the chart bar OR fast line < slow line on the last completed bar of any selected higher or lower timeframe.

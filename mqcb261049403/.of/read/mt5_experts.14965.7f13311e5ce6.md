@@ -1,5 +1,7 @@
-Calculation: MA oscillator = shorter-lookback smoothed applied price minus longer-lookback smoothed applied price shifted by a configurable bar lag, divided by price point
-Long: MA oscillator on the latest completed bar of the indicator timeframe > MA oscillator on the prior completed bar AND MA oscillator on the prior completed bar < MA oscillator on the completed bar before that; indicator timeframe is lower than the chart timeframe
-Short: MA oscillator on the latest completed bar of the indicator timeframe < MA oscillator on the prior completed bar AND MA oscillator on the prior completed bar > MA oscillator on the completed bar before that; indicator timeframe is lower than the chart timeframe
-Exit: long, MA oscillator on the latest completed bar of the indicator timeframe < MA oscillator on the prior completed bar; indicator timeframe is lower than the chart timeframe
-Exit: short, MA oscillator on the latest completed bar of the indicator timeframe > MA oscillator on the prior completed bar; indicator timeframe is lower than the chart timeframe
+Calculation: Oscillator = shorter-lookback moving average of a selected bar price minus the longer-lookback moving average of the same price, evaluated a configurable number of bars earlier; the moving-average methods may differ.
+Long: On the chart timeframe, oscillator > previous bar's oscillator AND oscillator != 0.
+Short: On the chart timeframe, oscillator < previous bar's oscillator AND oscillator != 0.
+Long: On the selected higher or lower timeframe, the last completed bar's oscillator > the preceding bar's oscillator AND the preceding bar's oscillator < the oscillator two bars before it.
+Short: On the selected higher or lower timeframe, the last completed bar's oscillator < the preceding bar's oscillator AND the preceding bar's oscillator > the oscillator two bars before it.
+Exit: long, on the selected higher or lower timeframe, the last completed bar's oscillator < the preceding bar's oscillator OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, on the selected higher or lower timeframe, the last completed bar's oscillator > the preceding bar's oscillator OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

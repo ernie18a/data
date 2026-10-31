@@ -1,7 +1,10 @@
-Calculation: +DI = smooth(100 × positive directional movement / true range), using the same smoothing settings as −DI; positive directional movement is the current high rise from the previous high only when it is positive and greater than the current low’s fall from the previous low, otherwise zero
-Calculation: −DI = smooth(100 × negative directional movement / true range), using the same smoothing settings as +DI; negative directional movement is the current low’s fall from the previous low only when it is positive and greater than the current high’s rise from the previous high, otherwise zero
-Calculation: ADX = smooth(100 × |(+DI − −DI) / (+DI + −DI)|), or zero when +DI + −DI is zero
-Long: +DI > −DI OR, on the indicator timeframe’s last completed bar, +DI > −DI AND on the preceding completed bar +DI ≤ −DI AND ADX > the trend-strength threshold
-Short: +DI < −DI OR, on the indicator timeframe’s last completed bar, +DI < −DI AND on the preceding completed bar +DI ≥ −DI AND ADX > the trend-strength threshold
-Exit: long, +DI < −DI on the indicator timeframe’s last completed bar
-Exit: short, +DI > −DI on the indicator timeframe’s last completed bar
+Calculation: Smoothed directional indicators = For each bar, let up = max(high - previous high, 0) and down = max(previous low - low, 0). Set the smaller to zero; if equal, set both to zero. Divide each by true range and multiply by 100, using zero when true range is zero. Smooth each resulting series independently with the same selected moving-average method, length, and smoothing parameter to obtain positive DI and negative DI.
+Calculation: Smoothed directional strength = Smooth 100 * abs((positive DI - negative DI) / (positive DI + negative DI)) with the same method, length, and smoothing parameter used for the directional indicators; use zero for the input when their sum is zero.
+Long: Chart-timeframe positive DI > negative DI
+Short: Chart-timeframe positive DI < negative DI
+Long: On a selected indicator timeframe, which may be higher or lower than the chart timeframe, positive DI on the selected signal bar > negative DI on that bar AND positive DI on the preceding indicator bar <= negative DI on that bar AND smoothed directional strength on the selected signal bar > trend-strength threshold; the selected signal bar may be the last completed bar or the bar still forming
+Short: On a selected indicator timeframe, which may be higher or lower than the chart timeframe, positive DI on the selected signal bar < negative DI on that bar AND positive DI on the preceding indicator bar >= negative DI on that bar AND smoothed directional strength on the selected signal bar > trend-strength threshold; the selected signal bar may be the last completed bar or the bar still forming
+Exit: long, positive DI on the selected indicator-timeframe signal bar < negative DI on that bar; the selected signal bar may be the last completed bar or the bar still forming
+Exit: short, positive DI on the selected indicator-timeframe signal bar > negative DI on that bar; the selected signal bar may be the last completed bar or the bar still forming
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

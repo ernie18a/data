@@ -1,5 +1,13 @@
-Calculation: VininI Trend = On the indicator timeframe (higher or lower than the chart timeframe if different), for each bar compare its close with a set of moving averages of the selected price, using progressively longer lookbacks; assign +1 when close > average and -1 otherwise, average the votes and multiply by 100, then smooth this result with a moving average. Evaluate completed bars.
-Long: (latest VininI Trend > upper level AND preceding VininI Trend <= upper level) OR (latest VininI Trend > preceding VininI Trend AND two-bars-back VininI Trend > preceding VininI Trend)
-Short: (latest VininI Trend < lower level AND preceding VininI Trend >= lower level) OR (latest VininI Trend < preceding VininI Trend AND two-bars-back VininI Trend < preceding VininI Trend)
-Exit: long, (latest VininI Trend < lower level AND preceding VininI Trend >= lower level) OR (latest VininI Trend < preceding VininI Trend AND two-bars-back VininI Trend < preceding VininI Trend) OR price <= long stop-loss price OR price >= long take-profit price
-Exit: short, (latest VininI Trend > upper level AND preceding VininI Trend <= upper level) OR (latest VininI Trend > preceding VininI Trend AND two-bars-back VininI Trend > preceding VininI Trend) OR price >= short stop-loss price OR price <= short take-profit price
+Calculation: Trend oscillator = Smooth, using a selectable smoothing method and lookback, the integer-truncated value of 100 times the sum of votes divided by the number of votes. For each vote, compare close with a moving average of a selectable OHLC-derived price: vote +1 if close is greater, otherwise -1. Use the same selectable moving-average method with progressively longer lookbacks separated by a fixed step. For the indicator markings, calculate on the chart timeframe. For trading decisions, calculate on a selectable chart, higher, or lower timeframe; use the last completed bar or the still-forming bar according to the selected signal-bar offset, and use preceding bars from that same timeframe.
+Long: Trend oscillator > 0
+Short: Trend oscillator < 0
+Long: Threshold mode selected AND trend oscillator > upper threshold AND previous trend oscillator <= upper threshold
+Short: Threshold mode selected AND trend oscillator < lower threshold AND previous trend oscillator >= lower threshold
+Long: Direction-change mode selected AND trend oscillator > previous trend oscillator AND previous trend oscillator < trend oscillator two bars ago
+Short: Direction-change mode selected AND trend oscillator < previous trend oscillator AND previous trend oscillator > trend oscillator two bars ago
+Exit: long, threshold mode selected AND trend oscillator < lower threshold
+Exit: short, threshold mode selected AND trend oscillator > upper threshold
+Exit: long, direction-change mode selected AND trend oscillator < previous trend oscillator
+Exit: short, direction-change mode selected AND trend oscillator > previous trend oscillator
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

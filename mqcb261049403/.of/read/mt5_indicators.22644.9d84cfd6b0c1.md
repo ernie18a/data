@@ -1,3 +1,7 @@
-Calculation: Smoothed volume-weighted Bulls–Bears line on the selected timeframe = smooth with XMA the product of selected tick or real volume and (100 × CU/(CU+CD) − 50), where CU is the sum of positive adjacent differences and CD the sum of negative adjacent differences among L0–L3; L0=(1−γ)×(Bulls Power+Bears Power)+γ×previous L0, and each subsequent state is −γ×the preceding state+its previous value+γ×the next state’s previous value; Bulls Power=high−EMA(close), Bears Power=low−EMA(close). Use the selected timeframe, which is higher than or equal to the chart timeframe; use its still-forming bar.
-Long: current line > previous selected-timeframe bar’s line
-Short: current line < previous selected-timeframe bar’s line
+Calculation: Oscillator = Let P = high + low − 2 × EMA(close), using the same lookback for both the high and low power calculations. Initialize L0, L1, L2, and L3 to zero. On each bar, update in order: L0 = (1 − gamma) × P + gamma × previous L0; L1 = −gamma × L0 + previous L0 + gamma × previous L1; L2 = −gamma × L1 + previous L1 + gamma × previous L2; L3 = −gamma × L2 + previous L2 + gamma × previous L3. Let U be the sum of max(L0 − L1, 0), max(L1 − L2, 0), and max(L2 − L3, 0); let D be the sum of max(L1 − L0, 0), max(L2 − L1, 0), and max(L3 − L2, 0). The oscillator is the selected moving average of volume × (100 × U / (U + D) − 50), with the ratio set to zero when U + D = 0.
+Calculation: Volume baseline = the selected moving average of volume, using the same method and parameters as the oscillator's moving average.
+Calculation: Direction = positive when the oscillator rises from its previous bar, negative when it falls, and otherwise the previous direction.
+Long: Oscillator > positive threshold × volume baseline OR direction = positive.
+Short: Oscillator < negative threshold × volume baseline OR direction = negative.
+Long: On a higher timeframe, using its still-forming bar, oscillator > positive threshold × volume baseline OR direction = positive.
+Short: On a higher timeframe, using its still-forming bar, oscillator < negative threshold × volume baseline OR direction = negative.

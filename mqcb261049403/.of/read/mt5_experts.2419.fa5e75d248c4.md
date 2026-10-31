@@ -1,6 +1,6 @@
-Calculation: Price and Volume Trend (PVT) = cumulative sum of volume × (configured applied price − prior bar’s configured applied price) ÷ prior bar’s configured applied price; calculate on the configured indicator timeframe, which may be higher or lower than the chart timeframe, using completed bars.
-Calculation: Signal line = configured XMA smoothing of PVT on the same indicator timeframe; use completed bars.
-Long: PVT on the latest completed indicator-timeframe bar > signal line on that bar AND PVT on the preceding completed indicator-timeframe bar ≤ signal line on that bar
-Short: PVT on the latest completed indicator-timeframe bar < signal line on that bar AND PVT on the preceding completed indicator-timeframe bar ≥ signal line on that bar
-Exit: Long, PVT on the latest completed indicator-timeframe bar < signal line on that bar AND PVT on the preceding completed indicator-timeframe bar ≥ signal line on that bar
-Exit: Short, PVT on the latest completed indicator-timeframe bar > signal line on that bar AND PVT on the preceding completed indicator-timeframe bar ≤ signal line on that bar
+Calculation: PVT = cumulative volume-weighted relative change in a selected OHLC-derived price: initialize to the first bar's volume; thereafter add current volume × (current price − previous price) / previous price.
+Calculation: PVT signal = moving average of PVT using a selected smoothing method and lookback. Calculate both lines on the chart timeframe or a selected higher or lower timeframe; evaluate the last completed bar by default, with a configurable bar offset that may instead select the still-forming bar or an earlier completed bar.
+Long: PVT on the evaluated bar > PVT signal on that bar AND PVT on the preceding bar <= PVT signal on that bar.
+Short: PVT on the evaluated bar < PVT signal on that bar AND PVT on the preceding bar >= PVT signal on that bar.
+Exit: long, PVT on the evaluated bar < PVT signal on that bar OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, PVT on the evaluated bar > PVT signal on that bar OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance.

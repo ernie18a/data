@@ -1,6 +1,16 @@
-Calculation: Bykov trend state = +1 when Williams %R is above the upper threshold; −1 when it is below the lower threshold; otherwise retain the prior state. The thresholds are symmetric around −50.
-Calculation: Two-stage smoothed close = apply a smoothing operation to close, then apply a second smoothing operation to the result.
-Long: On the signal timeframe’s last completed bar, Bykov trend state = +1 OR two-stage smoothed close > its value one bar earlier OR the prior completed bar’s Bykov color indicates positive trend and the latest completed bar’s Bykov color indicates neutral or negative trend OR the prior completed bar’s two-stage smoothed close was rising and the latest completed bar’s value is not rising.
-Short: On the signal timeframe’s last completed bar, Bykov trend state = −1 OR two-stage smoothed close < its value one bar earlier OR the prior completed bar’s Bykov color indicates negative trend and the latest completed bar’s Bykov color indicates neutral or positive trend OR the prior completed bar’s two-stage smoothed close was falling and the latest completed bar’s value is not falling.
-Exit: long, On the signal timeframe’s last completed bar, Bykov trend state = −1 OR the prior completed bar’s Bykov color indicates negative trend OR the prior completed bar’s two-stage smoothed close was falling.
-Exit: short, On the signal timeframe’s last completed bar, Bykov trend state = +1 OR the prior completed bar’s Bykov color indicates positive trend OR the prior completed bar’s two-stage smoothed close was rising.
+Calculation: Trend state = initially 0; set to -1 when Williams %R < -100 + threshold, then set to +1 when Williams %R > -threshold; otherwise retain the preceding state. Calculate on the chart timeframe for indicator markings or on a higher timeframe using the last completed bar for trading decisions.
+Calculation: Double-smoothed average = apply a moving average to the selected OHLC-derived price, then apply a second moving average to the result; the two smoothing methods and lookbacks are independently configurable. Calculate on the chart timeframe for indicator markings or on a higher timeframe using the last completed bar for trading decisions.
+Long: Trend state > 0
+Short: Trend state < 0
+Long: Double-smoothed average > its previous-bar value
+Short: Double-smoothed average < its previous-bar value
+Long: Last completed higher-timeframe trend state > 0 AND previous higher-timeframe trend state <= 0
+Short: Last completed higher-timeframe trend state < 0 AND previous higher-timeframe trend state >= 0
+Long: Last completed higher-timeframe double-smoothed average > its previous-bar value AND its previous-bar value <= its value two bars earlier
+Short: Last completed higher-timeframe double-smoothed average < its previous-bar value AND its previous-bar value >= its value two bars earlier
+Exit: long, last completed higher-timeframe trend state < 0
+Exit: short, last completed higher-timeframe trend state > 0
+Exit: long, last completed higher-timeframe double-smoothed average < its previous-bar value
+Exit: short, last completed higher-timeframe double-smoothed average > its previous-bar value
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

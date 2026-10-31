@@ -1,4 +1,4 @@
-Calculation: Smoothed open = the selected configurable smoothing algorithm applied to each chart-timeframe bar's open; use the same algorithm and parameters for smoothed close.
-Calculation: Smoothed close = the selected configurable smoothing algorithm applied to each chart-timeframe bar's close.
-Long: Smoothed close > smoothed open from a longer lookback (iPeriod bars earlier).
-Short: Smoothed close <= smoothed open from a longer lookback (iPeriod bars earlier).
+Long: Moving average of close > moving average of open from a configurable number of bars ago, using the same averaging method and length for both
+Short: Moving average of close <= moving average of open from the same configurable number of bars ago, using the same averaging method and length for both
+Long: On a higher timeframe, moving average of the close of the bar still forming > moving average of open from a configurable number of higher-timeframe bars ago, using the same averaging method and length for both; sample the comparison on the first chart bar of each higher-timeframe bar and hold it until the next higher-timeframe bar
+Short: On a higher timeframe, moving average of the close of the bar still forming <= moving average of open from the same configurable number of higher-timeframe bars ago, using the same averaging method and length for both; sample the comparison on the first chart bar of each higher-timeframe bar and hold it until the next higher-timeframe bar

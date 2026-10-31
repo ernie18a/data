@@ -1,5 +1,8 @@
-Calculation: Binary-wave value = selected smoothing of the sum of weighted votes: +1/-1 by whether close is above/below its moving average; +1/-1 by whether the MACD main line is rising/falling; +1/-1 by whether OsMA is above/below zero; +1/-1 by whether CCI is above/below zero; +1/-1 by whether Momentum is above/below 100; +1/-1 by whether RSI is above/below 50; +1/-1 by whether +DI is above/below -DI. A vote is zero when its comparison is equal or its weight is zero.
-Calculation: Binary-wave increment = current binary-wave value - previous binary-wave value.
-Calculation: Increment standard deviation = population standard deviation of the recent binary-wave increments.
-Long: Binary-wave value > previous binary-wave value OR binary-wave increment > first threshold multiplier × increment standard deviation
-Short: Binary-wave value < previous binary-wave value OR binary-wave increment < -(first threshold multiplier × increment standard deviation)
+Calculation: Wave = a configurable moving-average smoothing of the sum of seven independently weighted components: sign(close − moving average of a chosen price), sign(change in MACD main line), sign(MACD main line − its signal line), sign(CCI), sign(Momentum − 100), sign(RSI − 50), and sign(+DI − −DI). Each component has its own nonnegative weight and contributes zero on equality; indicator price sources and parameters are independently configurable, with MACD fast period shorter than slow period.
+Calculation: Wave change = current wave − previous wave.
+Calculation: Deviation threshold = population standard deviation of wave changes over a lookback including the current change, multiplied by a configurable coefficient. Round the threshold and wave change independently to a configurable decimal precision before comparing them.
+Calculation: Higher-timeframe wave and deviation threshold = the same calculations on a higher timeframe, using the still-forming higher-timeframe bar as sampled at the opening of each higher-timeframe interval and holding that sample throughout the interval.
+Long: Wave change > 0 OR rounded wave change > rounded deviation threshold.
+Short: Wave change < 0 OR rounded wave change < negative rounded deviation threshold.
+Long: Higher-timeframe wave change > 0 OR rounded higher-timeframe wave change > rounded higher-timeframe deviation threshold.
+Short: Higher-timeframe wave change < 0 OR rounded higher-timeframe wave change < negative rounded higher-timeframe deviation threshold.

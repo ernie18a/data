@@ -1,3 +1,3 @@
-Calculation: JFATL = JMA-smoothed, rounded 39-bar FATL digital-filter value of the selected OHLC-derived price; calculated on the chart timeframe or, in the HTF variant, on a higher timeframe using its still-forming bar.
-Long: current plotted JFATL > previous plotted JFATL
-Short: current plotted JFATL < previous plotted JFATL
+Calculation: Trend line = Jurik moving average of the FATL digital filter applied to a selected bar price, plus a price offset, rounded to the nearest price increment. Calculate either on the chart timeframe or on a higher timeframe using its bar still forming.
+Long: The trend line's most recent nonzero change is greater than zero.
+Short: The trend line's most recent nonzero change is less than zero.

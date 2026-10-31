@@ -1,6 +1,22 @@
-Calculation: HLM oscillator = Smooth the difference between the positive change in high and the positive decline in low over the same lookback, first with a longer lookback, then a shorter one, then a still shorter one.
-Calculation: Signal line = Smooth the HLM oscillator with a separate signal-line lookback.
-Long: On the indicator timeframe (which may be higher or lower than the chart timeframe), using completed bars: HLM oscillator crosses above zero (older value ≤ 0 AND latest value > 0) OR HLM oscillator turns upward (oldest of three values > middle value AND latest value > middle value) OR HLM oscillator crosses above the signal line (older HLM ≤ older signal line AND latest HLM > latest signal line).
-Short: On the indicator timeframe (which may be higher or lower than the chart timeframe), using completed bars: HLM oscillator crosses below zero (older value ≥ 0 AND latest value < 0) OR HLM oscillator turns downward (oldest of three values < middle value AND latest value < middle value) OR HLM oscillator crosses below the signal line (older HLM ≥ older signal line AND latest HLM < latest signal line).
-Exit: Long, on the indicator timeframe (which may be higher or lower than the chart timeframe), using completed bars: HLM oscillator < 0 OR HLM oscillator is rising between the latest two values OR latest HLM oscillator < latest signal line.
-Exit: Short, on the indicator timeframe (which may be higher or lower than the chart timeframe), using completed bars: HLM oscillator > 0 OR HLM oscillator is falling between the latest two values OR latest HLM oscillator > latest signal line.
+Calculation: Momentum input = max(high[t] - high[t - (momentum period - 1)], 0) - max(low[t - (momentum period - 1)] - low[t], 0).
+Calculation: Oscillator = momentum input smoothed sequentially three times with the same selected moving-average method and independently adjustable periods; the first period is longer than the second, which is longer than the third.
+Calculation: Signal = oscillator smoothed with the same moving-average method and an independently adjustable period.
+Calculation: Trading oscillator and trading signal = oscillator and signal calculated on a configurable higher timeframe, using the last completed bar or the still-forming bar according to the signal-bar setting; previous values refer to preceding bars of that timeframe.
+Long: Chart-timeframe oscillator > 0 AND oscillator > previous oscillator OR oscillator < 0 AND oscillator > previous oscillator.
+Short: Chart-timeframe oscillator > 0 AND oscillator < previous oscillator OR oscillator < 0 AND oscillator < previous oscillator.
+Long: Chart-timeframe oscillator > signal.
+Short: Chart-timeframe oscillator < signal.
+Long: Trading oscillator > 0 AND previous trading oscillator <= 0.
+Short: Trading oscillator < 0 AND previous trading oscillator >= 0.
+Long: Trading oscillator > previous trading oscillator AND previous trading oscillator < trading oscillator two bars ago.
+Short: Trading oscillator < previous trading oscillator AND previous trading oscillator > trading oscillator two bars ago.
+Long: Trading oscillator > trading signal AND previous trading oscillator <= previous trading signal.
+Short: Trading oscillator < trading signal AND previous trading oscillator >= previous trading signal.
+Exit: long, trading oscillator < 0.
+Exit: short, trading oscillator > 0.
+Exit: long, trading oscillator < previous trading oscillator.
+Exit: short, trading oscillator > previous trading oscillator.
+Exit: long, trading oscillator < trading signal.
+Exit: short, trading oscillator > trading signal.
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

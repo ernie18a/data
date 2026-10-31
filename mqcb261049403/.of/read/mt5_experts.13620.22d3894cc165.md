@@ -1,7 +1,6 @@
-Calculation: Fast2 input = (current bar close − open + previous bar close − open divided by √2 + bar before previous close − open divided by √3) / point size, on the indicator timeframe
-Calculation: First Fast2 line = selected smoothing of Fast2 input with the shorter lookback, on the indicator timeframe
-Calculation: Second Fast2 line = selected smoothing of Fast2 input with the longer lookback, on the indicator timeframe
-Long: First Fast2 line on the older of the two latest completed indicator-timeframe bars < second Fast2 line on that bar AND first Fast2 line on the latest completed indicator-timeframe bar > second Fast2 line on that bar
-Short: First Fast2 line on the older of the two latest completed indicator-timeframe bars > second Fast2 line on that bar AND first Fast2 line on the latest completed indicator-timeframe bar < second Fast2 line on that bar
-Exit: long, first Fast2 line on the latest completed indicator-timeframe bar < second Fast2 line on that bar
-Exit: short, first Fast2 line on the latest completed indicator-timeframe bar > second Fast2 line on that bar
+Calculation: Body momentum = (close - open) + (previous close - previous open) / sqrt(2) + (close two bars ago - open two bars ago) / sqrt(3), calculated on higher-timeframe bars.
+Calculation: Fast and slow lines = independently smoothed moving averages of body momentum, using a shorter lookback for the fast line and a longer lookback for the slow line; evaluate the last completed higher-timeframe bar and the bar before it.
+Long: Fast line > slow line on the last completed higher-timeframe bar AND fast line < slow line on the preceding higher-timeframe bar.
+Short: Fast line < slow line on the last completed higher-timeframe bar AND fast line > slow line on the preceding higher-timeframe bar.
+Exit: long, fast line < slow line on the last completed higher-timeframe bar OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, fast line > slow line on the last completed higher-timeframe bar OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

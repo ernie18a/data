@@ -1,4 +1,18 @@
-Long: (low < previous low AND high <= previous high AND close > open) OR (previous bar is 2-down AND high > previous high AND low >= previous low) OR (two bars ago is 2-down AND previous bar is inside AND high > previous high AND low >= previous low) OR (two bars ago is an outside bar AND previous bar is inside AND high > previous high AND low >= previous low)
-Short: (high > previous high AND low >= previous low AND close < open) OR (previous bar is 2-up AND low < previous low AND high <= previous high) OR (two bars ago is 2-up AND previous bar is inside AND low < previous low AND high <= previous high) OR (two bars ago is an outside bar AND previous bar is inside AND low < previous low AND high <= previous high)
-Exit: long, current low < entry signal bar low
-Exit: short, current high > entry signal bar high
+Calculation: Up bar = high > previous high AND low >= previous low.
+Calculation: Down bar = low < previous low AND high <= previous high.
+Calculation: Inside bar = high <= previous high AND low >= previous low.
+Calculation: Outside bar = high > previous high AND low < previous low.
+Calculation: Markov edge = classify each chart bar by the percentage change of a chosen price source over a regime lookback: bullish if change >= bullish threshold, otherwise bearish if change <= bearish threshold, otherwise sideways. Thresholds are either fixed or symmetric around zero, with magnitude equal to the clamped product of the standard deviation of one-bar percentage returns over a volatility lookback, the square root of the regime lookback, and a multiplier. At each chart bar, classify the current and historical returns using the current thresholds; count consecutive-state transitions over a transition lookback and normalize each starting-state row to probabilities. From the current state, apply the transition matrix for 1, 3, and 5 steps; for each horizon subtract bearish probability from bullish probability, and average the three differences. A probability is unavailable when its transition row has no observations. The current-state sample count is the number of transitions from the current state.
+Calculation: Structural high and low = highest high and lowest low over a lookback of higher-timeframe bars ending with the last completed higher-timeframe bar, frozen on the entry bar.
+Calculation: Entry-period high and low = high and low of the higher-timeframe bar still forming on the entry bar, measured through the entry bar and frozen there.
+Calculation: Stop buffer = a chosen nonnegative price amount, or a multiple of chart-timeframe ATR measured on the entry bar.
+Long: Down bar AND close > open.
+Long: Up bar AND (previous bar is an up bar OR previous bar is a down bar OR (previous bar is an inside bar AND the bar before it is an up bar, down bar, or outside bar)).
+Long: Markov edge is available AND (current-state sample count = 0 OR current-state sample count >= minimum sample) AND (Markov edge >= strong threshold OR Markov edge > weak threshold).
+Short: Up bar AND close < open.
+Short: Down bar AND (previous bar is an up bar OR previous bar is a down bar OR (previous bar is an inside bar AND the bar before it is an up bar, down bar, or outside bar)).
+Short: Markov edge is available AND (current-state sample count = 0 OR current-state sample count >= minimum sample) AND Markov edge < -weak threshold AND Markov edge < strong threshold AND Markov edge <= weak threshold OR Markov edge is available AND (current-state sample count = 0 OR current-state sample count >= minimum sample) AND Markov edge <= -strong threshold AND Markov edge < strong threshold AND Markov edge <= weak threshold.
+Exit: long, after the entry bar, low < entry-bar low minus stop buffer OR close < entry-bar low minus stop buffer, according to the selected wick or close stop mode.
+Exit: short, after the entry bar, high > entry-bar high plus stop buffer OR close > entry-bar high plus stop buffer, according to the selected wick or close stop mode.
+Exit: long, after the entry bar AND (entry-bar close <= structural high AND high >= structural high OR entry-bar close > structural high AND (high >= structural high AND low <= structural high OR high >= entry-period high)).
+Exit: short, after the entry bar AND (entry-bar close >= structural low AND low <= structural low OR entry-bar close < structural low AND (high >= structural low AND low <= structural low OR low <= entry-period low)).

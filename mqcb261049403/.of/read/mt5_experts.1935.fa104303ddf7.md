@@ -1,5 +1,13 @@
-Calculation: Smoothed momentum = apply the same smoothing method successively with long, medium, then short lookbacks to the difference between the configured price series on the current signal-timeframe bar and the configured price series on the bar one momentum lookback earlier; scale the result by 100 divided by the minimum price increment. Use signal-timeframe bars, which may be higher or lower than the chart timeframe; evaluate the selected signal bar and preceding bars (completed bars when the selected signal bar is completed, otherwise the forming bar).
-Long: In zero-break mode, prior smoothed momentum > 0 AND current smoothed momentum <= 0; OR, in direction-change mode, older smoothed momentum > prior smoothed momentum AND current smoothed momentum <= prior smoothed momentum
-Short: In zero-break mode, prior smoothed momentum < 0 AND current smoothed momentum >= 0; OR, in direction-change mode, older smoothed momentum < prior smoothed momentum AND current smoothed momentum >= prior smoothed momentum
-Exit: short, prior smoothed momentum > 0 (zero-break mode) OR older smoothed momentum > prior smoothed momentum AND current smoothed momentum <= prior smoothed momentum (direction-change mode)
-Exit: long, prior smoothed momentum < 0 (zero-break mode) OR older smoothed momentum < prior smoothed momentum AND current smoothed momentum >= prior smoothed momentum (direction-change mode)
+Calculation: Candle momentum = the difference between a selected price of the current bar and a second selected price of the bar at the momentum lookback offset, counting the current bar as the first bar, smoothed successively three times with the same selected moving-average method and independently chosen smoothing periods. Calculate it on the chart timeframe for indicator markings and on a higher timeframe for trading decisions; for the latter use the last completed higher-timeframe bar, or the still-forming higher-timeframe bar when configured to do so. Prior values refer to preceding bars of the same timeframe.
+Long: Chart-timeframe candle momentum > 0 AND chart-timeframe candle momentum != its previous value
+Short: Chart-timeframe candle momentum < 0 AND chart-timeframe candle momentum != its previous value
+Long: Higher-timeframe candle momentum > 0 AND its previous value <= 0
+Short: Higher-timeframe candle momentum < 0 AND its previous value >= 0
+Long: Higher-timeframe candle momentum > its previous value AND its previous value <= its value two bars ago
+Short: Higher-timeframe candle momentum < its previous value AND its previous value >= its value two bars ago
+Exit: long, higher-timeframe candle momentum < 0
+Exit: short, higher-timeframe candle momentum > 0
+Exit: long, higher-timeframe candle momentum < its previous value
+Exit: short, higher-timeframe candle momentum > its previous value
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

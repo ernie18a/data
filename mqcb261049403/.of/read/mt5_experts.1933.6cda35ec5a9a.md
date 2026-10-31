@@ -1,5 +1,8 @@
-Calculation: Candle Momentum Index = 100 × the third-stage smoothed candle momentum ÷ the third-stage smoothed absolute candle momentum (0 if the denominator is 0). Candle momentum is close minus open from XLength bars earlier; smooth it and its absolute value in parallel with the same configurable smoother, using three successive stages with long, intermediate, and short lookbacks. Use higher-timeframe bars; evaluate only completed bars.
-Long: CMI[t-2] > CMI[t-1] AND CMI[t-1] < CMI[t]
-Short: CMI[t-2] < CMI[t-1] AND CMI[t-1] > CMI[t]
-Exit: long, CMI[t-1] > CMI[t]
-Exit: short, CMI[t-1] < CMI[t]
+Calculation: Candle Momentum Index = 100 × the result of smoothing momentum through three consecutive moving averages, each with its own lookback, divided by the result of smoothing absolute momentum through the same three averages in the same order; use zero when the denominator is zero. Momentum is a selected price of the current bar minus a second selected price from a configurable number of bars earlier, where the offset may be zero.
+Calculation: Signal oscillator = Candle Momentum Index on a higher timeframe, evaluated at a configurable bar offset: use the last completed bar or an earlier completed bar, or the still-forming bar when the offset selects it. For completed bars, evaluate when a new higher-timeframe bar begins.
+Long: chart-timeframe Candle Momentum Index > 0 AND chart-timeframe Candle Momentum Index != its previous value
+Short: chart-timeframe Candle Momentum Index < 0 AND chart-timeframe Candle Momentum Index != its previous value
+Long: signal oscillator > its previous value AND its previous value < its value two bars ago
+Short: signal oscillator < its previous value AND its previous value > its value two bars ago
+Exit: long, signal oscillator < its previous value OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance
+Exit: short, signal oscillator > its previous value OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance

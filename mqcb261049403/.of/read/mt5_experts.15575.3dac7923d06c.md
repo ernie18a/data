@@ -1,6 +1,10 @@
-Calculation: Smoothed RSI = RSI of the configured applied price, smoothed by a configurable moving-average method and lookback.
-Calculation: Signal line = Smoothed RSI smoothed again by a configurable moving-average method and lookback.
-Long: On the configured indicator timeframe (higher or lower than the chart timeframe), using completed bars, Smoothed RSI > Signal line on the latest completed bar AND Smoothed RSI <= Signal line on the immediately preceding completed bar.
-Short: On the configured indicator timeframe (higher or lower than the chart timeframe), using completed bars, Smoothed RSI < Signal line on the latest completed bar AND Smoothed RSI >= Signal line on the immediately preceding completed bar.
-Exit: Long, Smoothed RSI < Signal line on the latest completed bar OR low <= entry price minus the configured stop-loss distance OR high >= entry price plus the configured take-profit distance.
-Exit: Short, Smoothed RSI > Signal line on the latest completed bar OR high >= entry price plus the configured stop-loss distance OR low <= entry price minus the configured take-profit distance.
+Calculation: First smoothed RSI = a configurable moving average of RSI of a configurable OHLC-derived price.
+Calculation: Second smoothed RSI = a second configurable moving average applied to the first smoothed RSI, with independently configurable method and lookback.
+Long: First smoothed RSI > second smoothed RSI on the chart timeframe.
+Short: First smoothed RSI < second smoothed RSI on the chart timeframe.
+Long: On a higher timeframe, first smoothed RSI > second smoothed RSI on the last completed bar AND first smoothed RSI <= second smoothed RSI on the preceding bar.
+Short: On a higher timeframe, first smoothed RSI < second smoothed RSI on the last completed bar AND first smoothed RSI >= second smoothed RSI on the preceding bar.
+Exit: long, first smoothed RSI < second smoothed RSI on the last completed higher-timeframe bar.
+Exit: short, first smoothed RSI > second smoothed RSI on the last completed higher-timeframe bar.
+Exit: long, low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance.
+Exit: short, high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance.

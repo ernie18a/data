@@ -1,9 +1,15 @@
-Calculation: Smoothed volume = the selected moving average of volume
-Calculation: Histogram = the same selected moving average of (Williams %R + 50) × volume
-Calculation: Upper inner threshold = upper inner level × smoothed volume
-Calculation: Upper outer threshold = upper outer level × smoothed volume
-Calculation: Lower inner threshold = lower inner level × smoothed volume
-Calculation: Lower outer threshold = lower outer level × smoothed volume
-Calculation: Histogram direction = rising when the histogram is greater than its previous value, falling when lower, otherwise retain the previous direction
-Long: Histogram[previous] <= 0 AND Histogram[current] > 0 OR Histogram direction[previous] = falling AND Histogram direction[current] = rising OR Histogram[previous] <= Upper inner threshold[previous] AND Histogram[current] > Upper inner threshold[current] AND Histogram[current] <= Upper outer threshold[current] OR Histogram[previous] <= Upper outer threshold[previous] AND Histogram[current] > Upper outer threshold[current] OR Histogram[previous] < Lower inner threshold[previous] AND Histogram[previous] >= Lower outer threshold[previous] AND Histogram[current] >= Lower inner threshold[current] OR Histogram[previous] < Lower outer threshold[previous] AND Histogram[current] >= Lower outer threshold[current]
-Short: Histogram[previous] >= 0 AND Histogram[current] < 0 OR Histogram direction[previous] = rising AND Histogram direction[current] = falling OR Histogram[previous] >= Lower inner threshold[previous] AND Histogram[current] < Lower inner threshold[current] AND Histogram[current] >= Lower outer threshold[current] OR Histogram[previous] >= Lower outer threshold[previous] AND Histogram[current] < Lower outer threshold[current] OR Histogram[previous] > Upper inner threshold[previous] AND Histogram[previous] <= Upper outer threshold[previous] AND Histogram[current] <= Upper inner threshold[current] OR Histogram[previous] > Upper outer threshold[previous] AND Histogram[current] <= Upper outer threshold[current]
+Calculation: Histogram = a configurable moving average of (Williams %R of chart bars + 50) multiplied by bar volume; use the same moving-average method and parameters to smooth volume separately.
+Calculation: Region = 0 if histogram > upper outer threshold × smoothed volume; otherwise 1 if histogram > upper inner threshold × smoothed volume; otherwise 4 if histogram < lower outer threshold × smoothed volume; otherwise 3 if histogram < lower inner threshold × smoothed volume; otherwise 2. The upper outer threshold is above the upper inner threshold; the lower outer threshold is below the lower inner threshold.
+Calculation: Direction = 0 if histogram > previous histogram; 1 if histogram < previous histogram; otherwise the previous direction.
+Long: Direction = 0
+Long: Previous histogram <= 0 AND histogram > 0
+Long: Previous region > 1 AND region = 1
+Long: Previous region > 0 AND region = 0
+Long: Previous region = 3 AND region < 3
+Long: Previous region = 4 AND region < 4
+Short: Direction = 1
+Short: Previous histogram >= 0 AND histogram < 0
+Short: Previous region < 3 AND region = 3
+Short: Previous region < 4 AND region = 4
+Short: Previous region = 1 AND region > 1
+Short: Previous region = 0 AND region > 0

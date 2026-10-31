@@ -1,5 +1,5 @@
-Calculation: Smoothed price efficiency = smooth the net change in the selected OHLC-derived price over a lookback, divided by the sum of absolute consecutive changes in that price over the same lookback plus the minimum price increment; use the configured smoothing method and parameters. Evaluate on the configured indicator timeframe, using completed bars (which may be higher or lower than the chart timeframe).
-Long: Smoothed price efficiency on the last completed indicator bar > upper threshold AND on the preceding indicator bar <= upper threshold
-Short: Smoothed price efficiency on the last completed indicator bar < lower threshold AND on the preceding indicator bar >= lower threshold
-Exit: short, Smoothed price efficiency on the last completed indicator bar > upper threshold
-Exit: long, Smoothed price efficiency on the last completed indicator bar < lower threshold
+Calculation: Smoothed efficiency ratio = Jurik moving average of (close − close N bars ago) / (price point size + sum of absolute consecutive close changes over N bars), calculated on a selectable higher or lower timeframe; use the last completed bar or, if configured, the bar still forming.
+Long: Smoothed efficiency ratio > upper threshold AND its value on the preceding indicator-timeframe bar <= upper threshold.
+Short: Smoothed efficiency ratio < lower threshold AND its value on the preceding indicator-timeframe bar >= lower threshold.
+Exit: long, smoothed efficiency ratio < lower threshold OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, smoothed efficiency ratio > upper threshold OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance.

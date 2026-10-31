@@ -1,39 +1,36 @@
-Calculation: Williams VIX Fix = 100 × (highest close over its lookback − current low) / highest close over its lookback; filtered event = previous value was at or above its upper Bollinger band or a fraction of its rolling high, current value is below both, current low > previous low, current close > previous high, current close > close at each of two shorter lookbacks, and current close > close at a longer lookback
-Calculation: Bullish fair value gap = current low − high two bars earlier > 0 and gap / current close ≥ minimum gap fraction
-Calculation: VIDYA = recursively adaptive moving average of close, with adaptation rate proportional to the absolute Chande Momentum Oscillator over its lookback; bullish when close > VIDYA
-Calculation: OBV slope = cumulative signed volume, where volume is positive when close ≥ open and negative otherwise; bullish when current OBV > OBV at a shorter lookback
-Calculation: Signed-volume DELTA = EMA of signed volume, where volume is positive when close ≥ open and negative otherwise; bullish when EMA > 0
-Calculation: TQI = average of efficiency ratio, normalized ATR-fast/ATR-slow ratio, normalized close distance above a long SMA in ATR units, and normalized rate of change; each component is clipped to [0,1]
-Calculation: VOL HI = percentile rank of ATR over a rolling lookback ≥ an upper percentile cut
-Calculation: VOL LO = percentile rank of ATR over a rolling lookback < a lower percentile cut
-Calculation: Long confluence score = weighted sum of armed bullish EMA alignment, armed bullish VIDYA, bullish OBV slope, armed bullish signed-volume DELTA, armed bullish fair value gap when enabled for scoring, TQI above its threshold when enabled for scoring, and VOL HI, minus the weighted VOL LO term
-Calculation: Lower Bollinger band = SMA(close, lookback) − multiplier × standard deviation(close, lookback)
-Calculation: WVF Top = previous value of 100 × (lowest close over its lookback − current high) / lowest close over its lookback was at or below its lower Bollinger band or a fraction of its rolling low, and current value is above both
-Calculation: CVI = (close − lowest low over its lookback) / (highest high over its lookback − lowest low over its lookback); CVI Top = previous CVI ≥ threshold and current CVI < threshold; CVI Bottom = previous CVI ≤ 1 − threshold and current CVI > 1 − threshold
-Calculation: TQI Char-Flip = previous TQI > upper threshold and current TQI < lower threshold after the minimum trend age
-Calculation: Sweep-lite long = price wicks below the nearest valid session low or lower Bollinger band by at least an ATR fraction, open or close is above that level, then within a short reclaim window close is above the level and open, with current or previous-bar volume at least a multiple of its moving average
-Calculation: Sweep-lite short = price wicks above the nearest valid session high or upper Bollinger band by at least an ATR fraction, open or close is below that level, then within a short reclaim window close is below the level and open, with current or previous-bar volume at least a multiple of its moving average
-Calculation: MBI bull/bear fire = momentum (close minus close at a lookback) divided by EMA of high-low range; split into positive and negative parts, sum over a short window, smooth with HMA, then fire when the dominant bias component is above its EMA-plus-standard-deviation bound and crosses below its prior value
-Calculation: BBAWE rising/falling = Awesome Oscillator (fast SMA of hl2 − slow SMA of hl2) is ≥ 0 and rising / < 0 and falling
-Long: Any enabled evaluation timeframe has WVF armed within its arm window, passes the WVF gate if enabled, and its long confluence score meets the BASE floor; tier is BASE below the SCALE floor, SCALE at or above that floor, and FULL at or above it when ADX is below its cap; a recent Bollinger-break anti-signal can demote tiers above BASE by one; optional TQI dead-zone exclusion, BTC-bull requirement for FULL, and SCALE suppression apply; emit on a new nonzero tier after its configured bar offset (15-minute evaluation timeframe is primary when primary-only mode is enabled)
-Long: close > faster EMA and faster EMA > its value several bars earlier
-Long: faster EMA crosses above Bollinger basis, close > Bollinger basis, and BBAWE rising
-Long: MBI bull fire
-Long: Sweep-lite long
-Long: CVI Bottom
-Long: close > Swing VWAP
-Long: HTF fast EMA > HTF slow EMA on a higher timeframe, using its last completed bar
-Long: BTC close > BTC EMA on the chart timeframe
-Long: close > HTF EMA and HTF VWAP on the same timeframe, and (close − close three bars earlier) + volatility contribution makes total trend score > 0.5; volatility contributes 0.5 when ATR > its longer SMA, otherwise 0
-Short: Faster EMA ≤ slower EMA and faster EMA < its value several bars earlier
-Short: Faster EMA crosses below Bollinger basis, close < Bollinger basis, and BBAWE is falling
-Short: MBI bear fire
-Short: Sweep-lite short
-Short: CVI Top
-Short: close < Swing VWAP
-Short: HTF fast EMA < HTF slow EMA on a higher timeframe, using its last completed bar
-Short: BTC close ≤ BTC EMA on the chart timeframe
-Short: close < HTF EMA and HTF VWAP on the same timeframe, and (close − close three bars earlier) + volatility contribution makes total trend score < −0.5; volatility contributes 0.5 when ATR > its longer SMA, otherwise 0
-Exit: long, any enabled Bollinger-break, WVF Top, or CVI Top condition produces a new rising-edge pulse on any evaluation timeframe while an entry is active and outside the post-entry cooldown; exit fully when at least two distinct exit types pulse within the escalation window, or a pulse occurs while sell-side liquidity is near; otherwise the first distinct pulse exits half
-Exit: long, TQI Char-Flip on any evaluation timeframe or chart timeframe while an entry is active
-Exit: long, close ≤ lower Bollinger band
+Calculation: All indexed values use bars ago. For each requested timeframe, use its last completed bar when higher than the chart timeframe, and its last completed constituent bar when lower; calculations without a timeframe qualifier use chart bars.
+Calculation: Lower Bollinger band = SMA(close) − multiplier × standard deviation(close).
+Calculation: Washout value = 100 × (highest close over a lookback − low) / highest close over that lookback. Its upper threshold is SMA(washout value) + multiplier × standard deviation(washout value); its range threshold is highest washout value over a separate lookback × fraction. A washout fires when the previous value was at least either previous threshold AND the current value is below both current thresholds AND low > previous low AND close > previous high AND close is below close at either a longer-term or a shorter-term lookback AND close > close at a strength lookback.
+Calculation: Adaptive average = previous adaptive average + 2 / (length + 1) × absolute Chande momentum oscillator / 100 × (close − previous adaptive average), initialized to close; calculate the oscillator from sums of positive and negative close changes over its own lookback.
+Calculation: Signed volume = volume when close >= open, otherwise −volume. Signed cumulative volume = cumulative sum of signed volume.
+Calculation: Trend quality = mean of efficiency ratio, volatility quality, structure quality and momentum quality. Efficiency ratio = absolute close change over its lookback divided by the sum of absolute one-bar close changes over that lookback, capped at 1 and 0 if the denominator is 0. Volatility quality = clamp((ATR / SMA(ATR, twice the ATR length) − 0.5), 0, 1), using ratio 1 if its denominator is 0. Structure quality = clamp(((close − SMA(close)) / ATR + 2) / 4, 0, 1), using distance 0 if ATR is 0. Momentum quality = clamp((100 × (close / close at momentum lookback − 1) + 5) / 10, 0, 1), using return 0 if the earlier close is not positive.
+Calculation: Entry score = sum of configurable weights for these true comparisons: short EMA > long EMA within the core window before or after the most recent washout; close > adaptive average within the same core window; signed cumulative volume > its value at the slope lookback; EMA(signed volume) > 0 within its own window before or after the most recent washout; low > high two bars ago AND 100 × (low − high two bars ago) / close >= gap threshold within the washout arm window; trend quality >= its score threshold; ATR percentile rank >= its upper cutoff. Subtract a configurable weight when ATR percentile rank < its lower cutoff. The EMA, adaptive-average and signed-volume EMA terms require a washout within the arm window; search backwards from the current bar to the most recent qualifying comparison, allowing it to occur after the washout as well as within the specified window before it.
+Calculation: Entry tier = 0 when the washout gate is enabled and no washout occurred within its arm window, or entry score < base threshold; otherwise 3 when score >= higher threshold AND ADX < its threshold, 2 when score >= higher threshold AND ADX >= its threshold, and 1 otherwise. If the Bollinger anti-signal is enabled and close <= lower Bollinger band occurred within its window before or after the most recent armed washout, reduce a tier above 1 by one. If the optional tier veto is enabled, replace tier 2 with 0. If the optional trend-quality exclusion is enabled and quality >= its lower bound AND < its upper bound, replace the tier with 0.
+Calculation: Top volatility value = 100 × (lowest close over a lookback − high) / lowest close over that lookback. Its lower threshold is SMA(top volatility value) − multiplier × standard deviation(top volatility value); its range threshold is lowest top volatility value over a separate lookback × fraction.
+Calculation: Close position = (close − lowest low) / (highest high − lowest low) over a lookback, or 0.5 when the range is zero.
+Calculation: Momentum biases = positive and negative parts of 100 × (close − close at momentum lookback) / EMA(high − low), using 0 when the denominator is 0; sum each part over a bias lookback, smooth each with a Hull moving average, reverse the negative part's sign and floor both at 0. Bias boundary = EMA(mean of the two biases) + multiplier × standard deviation(their mean).
+Calculation: Trend-panel score = trend component + momentum component + volatility component. Trend component is 1 when chart close > both requested-timeframe EMA and session VWAP, −1 when chart close < both, otherwise 0. Momentum component is positive weight, negative weight, or 0 according to the sign of the requested-timeframe close change over its lookback. Volatility component is positive weight when requested-timeframe ATR > its SMA, otherwise 0 or a configurable negative weight. Use equal absolute component weights for momentum and volatility.
+Long: Washout fires.
+Long: low <= lower Bollinger band AND close > lower Bollinger band.
+Long: On an enabled entry timeframe, entry tier > 0 AND entry tier differs from its previous chart-bar value; apply the configured chart-bar registration delay, resetting that delay if another tier change occurs first.
+Long: A full-exit watch is within its configured chart-bar window AND no new registered entry occurs AND at least one evaluation timeframe has an armed washout AND at least one enabled entry timeframe has tier >= 1.
+Long: Negative momentum bias crosses below its own previous value AND negative bias > bias boundary AND negative bias > positive bias.
+Short: Positive momentum bias crosses below its own previous value AND positive bias > bias boundary AND positive bias > negative bias.
+Long: Close position previously <= its bottom threshold AND currently > that threshold, where bottom threshold = 1 − top threshold.
+Long: Short EMA(close) crosses above the Bollinger basis AND close > that basis AND the difference between shorter and longer SMA of midpoint price is >= 0 AND greater than its previous value.
+Short: Short EMA(close) crosses below the Bollinger basis AND close < that basis AND the difference between shorter and longer SMA of midpoint price is < 0 AND less than its previous value.
+Long: Percentage of bars with close >= open over the pressure lookback > upper pressure threshold.
+Short: Percentage of bars with close >= open over the pressure lookback < lower pressure threshold.
+Long: Short EMA(close) > long EMA(close) AND short EMA > its value at the slope lookback.
+Short: Short EMA(close) <= long EMA(close) AND short EMA < its value at the slope lookback.
+Long: On a requested higher timeframe's last completed bar or lower timeframe's last completed constituent bar, short EMA(close) > long EMA(close).
+Short: On a requested higher timeframe's last completed bar or lower timeframe's last completed constituent bar, short EMA(close) < long EMA(close).
+Long: Trend-panel score > its positive threshold.
+Short: Trend-panel score < its negative threshold.
+Long: On a requested higher timeframe's last completed bar or lower timeframe's last completed constituent bar, short structural EMA(close) > long structural EMA(close).
+Short: On a requested higher timeframe's last completed bar or lower timeframe's last completed constituent bar, short structural EMA(close) <= long structural EMA(close).
+Exit: long, close <= lower Bollinger band.
+Exit: long, previous top volatility value <= either of its previous thresholds AND current top volatility value > both current thresholds.
+Exit: long, previous close position >= its top threshold AND current close position < that threshold.
+Exit: long, previous trend quality > upper collapse threshold AND current trend quality < lower collapse threshold.
+Exit: long, after the entry bar, low <= entry price × (1 − stop fraction) OR high >= entry price × (1 + target fraction) OR bars since entry >= timeout; stop takes precedence if both price levels are reached on the same bar.

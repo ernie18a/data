@@ -1,3 +1,5 @@
-Calculation: PPO = (shorter-lookback smoothed applied price − longer-lookback smoothed applied price) / longer-lookback smoothed applied price; PPO signal line = smoothed PPO
-Long: PPO on the higher-timeframe bar still forming > PPO signal line on that bar
-Short: PPO on the higher-timeframe bar still forming < PPO signal line on that bar
+Calculation: PPO = (shorter-lookback moving average of the selected price − longer-lookback moving average of the selected price) / longer-lookback moving average of the selected price; use a denominator of one when the longer-lookback average is zero. The signal line is a moving average of PPO. Each average has a selectable smoothing method.
+Long: Chart-timeframe PPO > its signal line
+Short: Chart-timeframe PPO < its signal line
+Long: PPO on the still-forming higher-timeframe bar > its signal line OR PPO on the still-forming higher-timeframe bar = its signal line AND the most recent unequal higher-timeframe PPO was > its signal line
+Short: PPO on the still-forming higher-timeframe bar < its signal line OR PPO on the still-forming higher-timeframe bar = its signal line AND the most recent unequal higher-timeframe PPO was < its signal line

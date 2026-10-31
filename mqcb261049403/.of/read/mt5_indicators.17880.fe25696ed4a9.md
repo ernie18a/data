@@ -1,5 +1,8 @@
-Calculation: XCCX(price) = 100 × smoothed(price − smoothed(price, long-term smoothing)) ÷ smoothed(abs(price − smoothed(price, long-term smoothing)), deviation smoothing); calculate separately for each bar’s open, high, low, and close. The two smoothing stages use independently configurable methods and parameters.
-Calculation: XCCX candle high = max(smoothed XCCX high, XCCX open, XCCX close); XCCX candle low = min(smoothed XCCX low, XCCX open, XCCX close).
-Calculation: Keltner bands = simple moving average of XCCX close ± channel multiplier × simple moving average of (XCCX candle high − XCCX candle low), using the same lookback for both averages. In the optional higher-timeframe version, use the higher-timeframe bar still forming and map its values across its chart-timeframe bars.
-Long: XCCX open < XCCX close OR (level mode AND XCCX close > upper level) OR (channel mode AND XCCX close > upper Keltner band)
-Short: XCCX open > XCCX close OR (level mode AND XCCX close < lower level) OR (channel mode AND XCCX close < lower Keltner band)
+Calculation: Oscillator for each of open, high, low, and close = 100 × smooth(price − smooth(price, price-smoothing method and period), deviation-smoothing method and period) / smooth(abs(price − smooth(price, price-smoothing method and period)), deviation-smoothing method and period); use independent smoothing histories for each price series; the oscillator is unavailable when the smoothed signed deviation is zero.
+Calculation: Oscillator candle high = max(oscillator high, oscillator open, oscillator close); oscillator candle low = min(oscillator low, oscillator open, oscillator close).
+Calculation: Channel center = simple moving average of oscillator close; channel width = a multiplier × simple moving average of oscillator candle high minus oscillator candle low over the same lookback; upper and lower channel boundaries = center + width and center − width.
+Calculation: For the higher-timeframe variant, calculate the oscillator and channel on higher-timeframe bars; sample the still-forming higher-timeframe bar on the first chart bar of each higher-timeframe period and hold those values until the next higher-timeframe period.
+Long: In level mode, oscillator close > upper level OR (oscillator close >= lower level AND oscillator close > oscillator open).
+Short: In level mode, oscillator close < lower level OR (oscillator close <= upper level AND oscillator close < oscillator open).
+Long: In channel mode, oscillator close > upper channel boundary OR (oscillator close >= lower channel boundary AND oscillator close > oscillator open).
+Short: In channel mode, oscillator close < lower channel boundary OR (oscillator close <= upper channel boundary AND oscillator close < oscillator open).

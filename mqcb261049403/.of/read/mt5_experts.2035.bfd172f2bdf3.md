@@ -1,6 +1,23 @@
-Calculation: Histogram = On the configured indicator timeframe (higher or lower than the chart timeframe), take the selected applied price minus the rolling lowest low, and smooth it through three successive stages; divide by the same three-stage smoothing of rolling highest high minus rolling lowest low, then multiply by 200 and subtract 100. The first smoothing lookback is longer than the second, which is longer than the third. Use completed bars only.
-Calculation: Signal line = Smooth the histogram using the same smoothing method and the third-stage lookback. Use completed bars only.
-Long: Histogram two bars ago > Histogram one bar ago AND Histogram on the signal bar > Histogram one bar ago OR Histogram on the signal bar > 0 AND Histogram one bar ago <= 0 OR Histogram on the signal bar > Signal line on the signal bar AND Histogram one bar ago <= Signal line one bar ago
-Short: Histogram two bars ago < Histogram one bar ago AND Histogram on the signal bar < Histogram one bar ago OR Histogram on the signal bar < 0 AND Histogram one bar ago >= 0 OR Histogram on the signal bar < Signal line on the signal bar AND Histogram one bar ago >= Signal line one bar ago
-Exit: long, Histogram two bars ago < Histogram one bar ago AND Histogram on the signal bar < Histogram one bar ago OR Histogram on the signal bar < 0 AND Histogram one bar ago >= 0 OR Histogram on the signal bar < Signal line on the signal bar AND Histogram one bar ago >= Signal line one bar ago
-Exit: short, Histogram two bars ago > Histogram one bar ago AND Histogram on the signal bar > Histogram one bar ago OR Histogram on the signal bar > 0 AND Histogram one bar ago <= 0 OR Histogram on the signal bar > Signal line on the signal bar AND Histogram one bar ago <= Signal line one bar ago
+Calculation: Oscillator = 200 × triple-smoothed (selected price − lowest low over a lookback) / triple-smoothed (highest high − lowest low over the same lookback) − 100; use zero when the smoothed range is zero. Apply the same selected moving-average method and the same three successive smoothing periods to both series.
+Calculation: Signal = moving average of the oscillator using the same method and the same period as the third smoothing stage.
+Calculation: O and S = oscillator and signal on the selected indicator timeframe; use the chart timeframe or a higher or lower timeframe, with the selected signal bar being the last completed bar, a bar still forming, or an earlier completed bar. Subscripts 1 and 2 mean one and two bars before that signal bar.
+Long: O > 0 AND O1 <= 0
+Short: O < 0 AND O1 >= 0
+Long: O > O1 AND O1 < O2
+Short: O < O1 AND O1 > O2
+Long: O > S AND O1 <= S1
+Short: O < S AND O1 >= S1
+Long: O > 0 AND O > O1
+Long: O > 0 AND O < O1
+Short: O < 0 AND O < O1
+Short: O < 0 AND O > O1
+Long: O > S
+Short: O < S
+Exit: short, O > 0
+Exit: long, O < 0
+Exit: short, O > O1
+Exit: long, O < O1
+Exit: short, O > S
+Exit: long, O < S
+Exit: long, low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

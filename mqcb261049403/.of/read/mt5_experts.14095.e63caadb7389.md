@@ -1,5 +1,7 @@
-Calculation: Rounded moving average = Smooth the selected price series with a moving-average method and lookback; use the smoothed value when it differs from either the previous smoothed value or previous rounded value by more than a rounding threshold, or when it moves in the same direction as the previous rounded value; otherwise carry forward the previous rounded value. The threshold is a price increment multiplied by a rounding factor. Apply separately to each bar’s open and close. Evaluate on the indicator timeframe, which may be higher, lower, or equal to the chart timeframe; compare the selected signal bar with its immediately preceding bar. The selected bar may still be forming if the signal offset selects it.
-Long: Rounded close > rounded open on the selected signal bar AND rounded close <= rounded open on the preceding bar
-Short: Rounded close < rounded open on the selected signal bar AND rounded close >= rounded open on the preceding bar
-Exit: Long, rounded close < rounded open on the selected signal bar
-Exit: Short, rounded close > rounded open on the selected signal bar
+Calculation: Rounded moving average = apply the same moving-average method and lookback separately to open and close. For each series, let M be its current moving average, P its previous moving average, R its previous rounded value, D the direction of its last nonzero rounded-value change, and T a configurable price-distance threshold. Set the current rounded value to M if M > P + T OR M < P - T OR M > R + T OR M < R - T OR (M > R AND D > 0) OR (M < R AND D < 0); otherwise set it to R. Initialize the previous rounded value and direction to zero and the previous moving average to the first input price. Update D to the sign of the rounded-value change, retaining its previous value when unchanged.
+Long: Chart-timeframe rounded close > chart-timeframe rounded open
+Short: Chart-timeframe rounded close < chart-timeframe rounded open
+Long: Last completed higher-timeframe rounded close > rounded open AND preceding higher-timeframe rounded close <= rounded open
+Short: Last completed higher-timeframe rounded close < rounded open AND preceding higher-timeframe rounded close >= rounded open
+Exit: long, last completed higher-timeframe rounded close < rounded open OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, last completed higher-timeframe rounded close > rounded open OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

@@ -1,7 +1,9 @@
-Calculation: BinaryWave = smoothed sum of weighted votes on the configured indicator timeframe (which may be higher or lower than the chart timeframe), using its last completed bar: +weight if close is above its moving average, MACD is rising, OsMA and CCI are above zero, Momentum is above 100, RSI is above 50, or +DI is above -DI; −weight for the opposite comparison; zero when equal or the component weight is zero.
-Calculation: BinaryWave change = current BinaryWave − previous BinaryWave on the indicator timeframe.
-Calculation: Change standard deviation = population standard deviation of the recent BinaryWave changes, including the current change.
-Long: BinaryWave change > the smaller volatility multiplier × Change standard deviation OR current BinaryWave > previous BinaryWave AND previous BinaryWave < the one before it.
-Short: BinaryWave change < −(the smaller volatility multiplier × Change standard deviation) OR current BinaryWave < previous BinaryWave AND previous BinaryWave > the one before it.
-Exit: Long, previous BinaryWave > current BinaryWave.
-Exit: Short, previous BinaryWave < current BinaryWave.
+Calculation: Wave = a configurable moving average of the sum of seven independently weighted components. Each component contributes its positive weight when its comparison is positive, its negative weight when negative, and zero when equal or its weight is nonpositive. The comparisons are: close minus a moving average of a selected price; MACD main line minus its previous value; OsMA minus zero; CCI minus zero; Momentum minus 100; RSI minus 50; and positive directional indicator minus negative directional indicator. MACD and OsMA each use a shorter and a longer moving-average period and their own signal period. Calculate on the chart timeframe for indicator markings, or on a selectable higher or lower timeframe for trading signals, using the last completed bar or the still-forming bar according to the selected signal-bar setting.
+Calculation: Wave change = wave minus its previous bar's value.
+Calculation: Wave-change threshold = a configurable multiplier times the population standard deviation of wave changes over a configurable lookback including the current change. Round the current wave change and each threshold to a configurable decimal precision before comparison.
+Long: chart-timeframe wave > previous chart-timeframe wave.
+Short: chart-timeframe wave < previous chart-timeframe wave.
+Long: rounded wave change > rounded wave-change threshold OR (wave > previous wave AND previous wave < wave two bars ago).
+Short: rounded wave change < negative rounded wave-change threshold OR (wave < previous wave AND previous wave > wave two bars ago).
+Exit: long, rounded wave change < negative rounded wave-change threshold OR wave < previous wave OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance.
+Exit: short, rounded wave change > rounded wave-change threshold OR wave > previous wave OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance.

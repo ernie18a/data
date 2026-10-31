@@ -1,5 +1,5 @@
-Calculation: QEMA = round the fifth-order EMA extrapolation of the selected applied price: 5×EMA₁ − 10×EMA₂ + 10×EMA₃ − 5×EMA₄ + EMA₅, where each EMA uses the same lookback and each successive EMA smooths the previous EMA; applied price defaults to close
-Long: QEMA on the current chart-timeframe bar > QEMA on the previous chart-timeframe bar
-Short: QEMA on the current chart-timeframe bar < QEMA on the previous chart-timeframe bar
-Long: QEMA on the current, still-forming higher-timeframe bar > QEMA on the previous higher-timeframe bar
-Short: QEMA on the current, still-forming higher-timeframe bar < QEMA on the previous higher-timeframe bar
+Calculation: Selected price = a configurable choice of close, open, high, low, (high + low)/2, (high + low + close)/3, (high + low + 2 × close)/4, (open + close)/2, (open + high + low + close)/4, or one of: high if close > open, low if close < open, otherwise close; (high + close)/2 if close > open, (low + close)/2 if close < open, otherwise close; or (close + X)/2, where X is low if close < open, high if close > open, otherwise close.
+Calculation: Upper envelope = (1 + percentage deviation/100) × rounded pentuple exponential moving average + vertical price offset. The pentuple average is 5 × EMA1 − 10 × EMA2 + 10 × EMA3 − 5 × EMA4 + EMA5; EMA1 is applied to selected price and each subsequent EMA to the preceding EMA, all with the same configurable length. Initialize each EMA with its input on its first available bar, starting successive stages on successive bars. Round the result to the nearest configurable price increment before applying the deviation and offset.
+Calculation: Envelope direction = the sign of the most recent nonzero change in the upper envelope between consecutive bars; retain the previous direction when unchanged, with initial direction negative. Calculate either on chart bars or on higher-timeframe bars. For the higher-timeframe version, sample the direction on the first chart bar of each higher-timeframe bar using that still-forming higher-timeframe bar, and hold the sampled direction until the next higher-timeframe bar.
+Long: Envelope direction > 0
+Short: Envelope direction < 0

@@ -1,5 +1,5 @@
-Calculation: X-period candle direction = On the indicator timeframe, apply the same configurable smoother to each bar’s open and close; compare the smoothed close of the latest completed bar with the smoothed open from the oldest bar in the X-bar window. Direction is bullish when close >= open and bearish when close < open. Use the latest completed and immediately preceding completed indicator-timeframe bars; that timeframe may be higher or lower than the chart timeframe.
-Long: Previous completed X-period candle direction = bearish AND latest completed X-period candle direction = bullish
-Short: Previous completed X-period candle direction = bullish AND latest completed X-period candle direction = bearish
-Exit: Long, Previous completed X-period candle direction = bullish AND latest completed X-period candle direction = bearish
-Exit: Short, Previous completed X-period candle direction = bearish AND latest completed X-period candle direction = bullish
+Calculation: Smoothed candle direction = compare the smoothed close of each indicator-timeframe bar with the smoothed open from the oldest bar in a rolling candle lookback; smooth open and close separately using the same selected moving-average method and parameters. Use the last completed indicator-timeframe bar and its predecessor; the indicator timeframe may be higher or lower than the chart timeframe.
+Long: Smoothed close >= lookback-oldest smoothed open AND previous bar's smoothed close < its lookback-oldest smoothed open
+Short: Smoothed close < lookback-oldest smoothed open AND previous bar's smoothed close >= its lookback-oldest smoothed open
+Exit: long, smoothed close < lookback-oldest smoothed open OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, smoothed close >= lookback-oldest smoothed open OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

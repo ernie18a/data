@@ -1,6 +1,10 @@
-Calculation: XvaMA = round to configured precision the second smoothing of M + (M − M₁) + ½(M − 2M₁ + M₂) + ⅙(M − 3M₁ + 3M₂ − M₃), where M is the first smoothing of applied bar price; M₁, M₂, and M₃ are M lagged by one-quarter, one-eighth, and one-twelfth of the first smoothing lookback, respectively
-Calculation: Trend state = +1 when XvaMA is greater than its prior value, −1 when lower, and otherwise retain the prior state
-Long: Trend state changes from −1 to +1 on the last completed bar of the configured indicator timeframe (higher, lower, or equal to chart timeframe as configured)
-Short: Trend state changes from +1 to −1 on the last completed bar of the configured indicator timeframe (higher, lower, or equal to chart timeframe as configured)
-Exit: Long, Trend state = −1 on the last completed bar of the configured indicator timeframe (higher, lower, or equal to chart timeframe as configured)
-Exit: Short, Trend state = +1 on the last completed bar of the configured indicator timeframe (higher, lower, or equal to chart timeframe as configured)
+Calculation: Extrapolated moving average = Let M be a configurable moving average of a configurable OHLC-derived price and N its lookback. At bar t, let a = M[t] - M[t-floor(N/4)], b = M[t] - 2*M[t-floor(N/4)] + M[t-floor(N/8)], and c = M[t] - 3*M[t-floor(N/4)] + 3*M[t-floor(N/8)] - M[t-floor(N/12)]. Smooth M[t] + a + b/2 + c/6 with a separately configurable moving average, then round to a configurable price increment.
+Calculation: Direction = +1 when the extrapolated moving average is greater than its previous-bar value, -1 when it is less, and otherwise the previous direction; initialize direction to -1.
+Long: Chart-timeframe direction = +1
+Short: Chart-timeframe direction = -1
+Long: Direction on a configurable higher or lower timeframe changes from -1 to +1 on its last completed bar
+Short: Direction on a configurable higher or lower timeframe changes from +1 to -1 on its last completed bar
+Exit: long, direction on the last completed bar of the configurable higher or lower timeframe = -1
+Exit: short, direction on the last completed bar of the configurable higher or lower timeframe = +1
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

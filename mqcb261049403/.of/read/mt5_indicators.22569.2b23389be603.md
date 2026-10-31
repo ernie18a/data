@@ -1,5 +1,5 @@
-Calculation: Smoothed open and close = apply the same selected smoothing method, lookback, and phase to each bar’s open and close.
-Calculation: Gap-adjusted smoothed open = smoothed open, except use the previous bar’s smoothed close when the absolute difference between the bar’s raw open and raw close is less than or equal to the gap threshold.
-Calculation: Trend = +1 when gap-adjusted smoothed open < smoothed close; −1 when gap-adjusted smoothed open > smoothed close; otherwise retain the previous trend (initially 0). Calculate on a higher timeframe’s still-forming bar.
-Long: previous trend ≤ 0 AND current trend > 0
-Short: previous trend ≥ 0 AND current trend < 0
+Calculation: Smoothed candle direction = Apply the same selected moving average method and parameters separately to open and close. Set adjusted open to the previous bar's smoothed close when abs(open - close) <= the gap threshold in price units; otherwise use the current smoothed open. Set direction to +1 when smoothed close > adjusted open, -1 when smoothed close < adjusted open, and retain the previous direction when they are equal; initialize direction to 0.
+Long: Chart-timeframe smoothed candle direction > 0 AND previous direction <= 0
+Short: Chart-timeframe smoothed candle direction < 0 AND previous direction >= 0
+Long: Smoothed candle direction on the still-forming higher-timeframe bar > 0
+Short: Smoothed candle direction on the still-forming higher-timeframe bar < 0

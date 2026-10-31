@@ -1,5 +1,7 @@
-Calculation: directional moving-average line = 2 × the shorter-lookback moving average of the selected applied price − the longer-lookback moving average of the same price; calculate on chart-timeframe bars
-Long: line on the latest completed bar > line on the previous completed bar AND line on the previous completed bar < line on the bar before it
-Short: line on the latest completed bar < line on the previous completed bar AND line on the previous completed bar > line on the bar before it
-Exit: long, line on the latest completed bar < line on the previous completed bar
-Exit: short, line on the latest completed bar > line on the previous completed bar
+Calculation: Dynamic moving average = 2 × moving average of the selected price using the shorter lookback − moving average of the same price using the longer lookback; both averages use the same selected smoothing method and settings apart from lookback.
+Long: Chart-timeframe dynamic moving average > its previous-bar value.
+Short: Chart-timeframe dynamic moving average < its previous-bar value.
+Long: On the selected indicator timeframe, which may be higher or lower than the chart timeframe, the selected bar's dynamic moving average > the previous bar's value AND the value two bars before the selected bar > the previous bar's value; the selected bar may be the last completed bar or the bar still forming.
+Short: On the selected indicator timeframe, which may be higher or lower than the chart timeframe, the selected bar's dynamic moving average < the previous bar's value AND the value two bars before the selected bar < the previous bar's value; the selected bar may be the last completed bar or the bar still forming.
+Exit: long, the selected indicator-timeframe bar's dynamic moving average < the previous bar's value OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, the selected indicator-timeframe bar's dynamic moving average > the previous bar's value OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance.

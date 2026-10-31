@@ -1,5 +1,7 @@
-Calculation: Average Change Candle transformed open and close = divide each bar’s open and close by a longer-lookback smoothed median price, raise each ratio to a power, then smooth each result with a shorter-lookback smoother. Calculate on the indicator timeframe (higher or lower than the chart timeframe as configured), using completed bars.
-Long: transformed close > transformed open on the latest completed indicator-timeframe bar AND transformed close <= transformed open on the preceding bar
-Short: transformed open > transformed close on the latest completed indicator-timeframe bar AND transformed open <= transformed close on the preceding bar
-Exit: long, transformed open > transformed close on the latest completed indicator-timeframe bar
-Exit: short, transformed close > transformed open on the latest completed indicator-timeframe bar
+Calculation: Normalized candle open and close = independently smooth (open / moving average of median price)^exponent and (close / moving average of median price)^exponent with the same smoothing method and parameters; the price moving average and the smoothing use independently selected methods and parameters.
+Long: Chart-timeframe normalized candle close > normalized candle open.
+Short: Chart-timeframe normalized candle close < normalized candle open.
+Long: On a selectable higher or lower indicator timeframe, the last completed normalized candle close > its open AND the preceding normalized candle close <= its open.
+Short: On a selectable higher or lower indicator timeframe, the last completed normalized candle close < its open AND the preceding normalized candle close >= its open.
+Exit: long, last completed normalized candle close < its open on the selectable higher or lower indicator timeframe OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, last completed normalized candle close > its open on the selectable higher or lower indicator timeframe OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

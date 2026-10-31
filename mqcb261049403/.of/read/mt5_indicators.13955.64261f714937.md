@@ -1,3 +1,6 @@
-Calculation: Slope Direction Line = on each timeframe, let N be the first smoother’s lookback and P the configured applied OHLC price; apply the configured first smoother to P at lookbacks floor(N/2) and N, compute 2 × the shorter-lookback result − the longer-lookback result, then apply the configured second smoother to that result at lookback floor(sqrt(N)).
-Long: Slope Direction Line on the chart timeframe’s last completed bar > its previous completed bar AND that previous bar’s value >= the one before it, OR Slope Direction Line on any of the latest three adjacent pairs of completed higher-timeframe bars is non-decreasing.
-Short: Slope Direction Line on the chart timeframe’s last completed bar < its previous completed bar AND that previous bar’s value <= the one before it, OR Slope Direction Line on any of the latest three adjacent pairs of completed higher-timeframe bars is decreasing.
+Calculation: Direction line = smooth 2 × MA(price, floor(N/2)) − MA(price, N) with a second MA of length max(floor(sqrt(N)), 1); the two price MAs use the same method and phase, while the final MA may use a different method and phase. Price is a selected OHLC-derived price.
+Long: Chart-timeframe direction line > its previous-bar value
+Short: Chart-timeframe direction line < its previous-bar value
+Long: Higher-timeframe direction line on any of the three selected consecutive bars >= its preceding higher-timeframe bar's value
+Short: Higher-timeframe direction line on any of the three selected consecutive bars < its preceding higher-timeframe bar's value
+Calculation: The three selected higher-timeframe bars start with the last completed bar or, when configured, the still-forming bar, and extend backward consecutively.

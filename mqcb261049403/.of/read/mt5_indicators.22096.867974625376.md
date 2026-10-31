@@ -1,4 +1,8 @@
-Calculation: XRSI candle close = smooth((RSI of close − 50) × selected volume) using the selected smoothing method and lookback.
-Calculation: XRSI candle open = smooth((RSI of open − 50) × selected volume) using the same method and lookback as XRSI candle close; when |open − close| ≤ the gap threshold, replace it with the previous bar’s XRSI candle close.
-Long: XRSI candle close ≥ XRSI candle open
-Short: XRSI candle close < XRSI candle open
+Calculation: Oscillator close = smooth((RSI(close) - 50) × volume); use a selectable SMA, EMA, SMMA, linear-weighted MA, Jurik MA, Jurik ultralinear MA, quadratic regression MA, Tillson T3, VIDYA, or Kaufman adaptive MA.
+Calculation: Oscillator open = smooth((RSI(open) - 50) × volume), using the same smoothing method and parameters as oscillator close; if abs(open - close) <= gap threshold, use the previous bar's oscillator close instead.
+Calculation: Upper and lower thresholds = separate overbought and oversold level parameters × smoothed volume, using the same smoothing method and parameters as oscillator close.
+Long: oscillator close > upper threshold OR (oscillator close >= lower threshold AND oscillator close <= upper threshold AND oscillator close >= oscillator open)
+Short: oscillator close < lower threshold OR (oscillator close >= lower threshold AND oscillator close <= upper threshold AND oscillator close < oscillator open)
+Calculation: Higher-timeframe oscillator values = the same oscillator calculations on the higher timeframe, using its bar still forming at the start of that higher-timeframe bar and holding the resulting values until the next higher-timeframe bar.
+Long: higher-timeframe oscillator close > higher-timeframe upper threshold OR (higher-timeframe oscillator close >= higher-timeframe lower threshold AND higher-timeframe oscillator close <= higher-timeframe upper threshold AND higher-timeframe oscillator close >= higher-timeframe oscillator open)
+Short: higher-timeframe oscillator close < higher-timeframe lower threshold OR (higher-timeframe oscillator close >= higher-timeframe lower threshold AND higher-timeframe oscillator close <= higher-timeframe upper threshold AND higher-timeframe oscillator close < higher-timeframe oscillator open)

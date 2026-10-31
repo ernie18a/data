@@ -1,5 +1,9 @@
-Calculation: Smoothed balance of power = a moving average of 100 × (close − open) / (high − low) on the configured indicator timeframe; use a nonzero denominator when high = low. Use completed bars; the indicator timeframe may be higher or lower than the chart timeframe.
-Long: Smoothed balance of power on the third most recent completed indicator bar > on the second most recent completed indicator bar AND on the second most recent completed indicator bar < on the most recent completed indicator bar
-Short: Smoothed balance of power on the third most recent completed indicator bar < on the second most recent completed indicator bar AND on the second most recent completed indicator bar > on the most recent completed indicator bar
-Exit: long, Smoothed balance of power on the second most recent completed indicator bar > on the most recent completed indicator bar
-Exit: short, Smoothed balance of power on the second most recent completed indicator bar < on the most recent completed indicator bar
+Calculation: Smoothed balance of power = 100 × a configurable moving average of (close − open) / (high − low); use 0 when high = low. Calculate separately on the chart timeframe and on the configurable signal timeframe, which may be higher or lower than the chart timeframe. For the signal timeframe, use the last completed bar by default or the still-forming bar if configured; references to earlier bars are relative to that selected bar.
+Long: Chart-timeframe smoothed balance of power > 0 AND chart-timeframe smoothed balance of power != its previous value
+Short: Chart-timeframe smoothed balance of power < 0 AND chart-timeframe smoothed balance of power != its previous value
+Long: Signal-timeframe smoothed balance of power > its previous value AND its value two bars ago > its previous value
+Short: Signal-timeframe smoothed balance of power < its previous value AND its value two bars ago < its previous value
+Exit: long, signal-timeframe smoothed balance of power < its previous value
+Exit: short, signal-timeframe smoothed balance of power > its previous value
+Exit: long, low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

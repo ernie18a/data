@@ -1,6 +1,6 @@
-Calculation: SMI = 100 × smoothed(price − midpoint of the lookback high and low) ÷ (smoothed lookback range ÷ 2); if the smoothed range is zero, SMI = 100. Apply the same first smoothing to the price difference and range, then the same second smoothing to both results.
-Calculation: Trigger = smooth SMI with a third smoothing stage.
-Long: On the indicator timeframe (which may be higher or lower than the chart timeframe), the last completed bar has SMI > Trigger AND the preceding completed bar has SMI ≤ Trigger.
-Short: On the indicator timeframe (which may be higher or lower than the chart timeframe), the last completed bar has SMI < Trigger AND the preceding completed bar has SMI ≥ Trigger.
-Exit: short, on the indicator timeframe (which may be higher or lower than the chart timeframe), the last completed bar has SMI > Trigger.
-Exit: long, on the indicator timeframe (which may be higher or lower than the chart timeframe), the last completed bar has SMI < Trigger.
+Calculation: Oscillator = on the indicator timeframe, let H and L be the highest high and lowest low over a lookback including the evaluated bar; smooth close − (H + L) / 2 and H − L separately with the same long-period EMA, then smooth each result with the same shorter-period Jurik moving average; oscillator = 100 × smoothed displacement / (smoothed range / 2), or 100 when the smoothed range is zero.
+Calculation: Signal line = Jurik moving average of the oscillator, using a longer smoothing period than the oscillator's second smoothing.
+Long: Oscillator on the last completed indicator-timeframe bar > signal line on that bar AND oscillator on the preceding indicator-timeframe bar <= signal line on that bar.
+Short: Oscillator on the last completed indicator-timeframe bar < signal line on that bar AND oscillator on the preceding indicator-timeframe bar >= signal line on that bar.
+Exit: long, oscillator on the last completed indicator-timeframe bar < signal line on that bar OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, oscillator on the last completed indicator-timeframe bar > signal line on that bar OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance.

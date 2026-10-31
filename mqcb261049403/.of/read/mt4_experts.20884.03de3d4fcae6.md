@@ -1,4 +1,4 @@
-Calculation: Short-term simple moving average = simple moving average of close over a shorter lookback on the chart timeframe, using the last completed bar
-Calculation: Long-term simple moving average = simple moving average of close over a longer lookback on the chart timeframe, using the last completed bar
-Calculation: MACD main and signal lines = MACD calculated on a higher timeframe, using the last completed bar
-Short: short-term simple moving average < long-term simple moving average AND ((MACD main line > 0 AND MACD main line > MACD signal line) OR (MACD main line < 0 AND MACD main line > MACD signal line))
+Calculation: MACD main = shorter-period EMA of close minus longer-period EMA of close; MACD signal = simple moving average of MACD main.
+Short: At the chart bar open, the shorter-period SMA of close is less than the longer-period SMA of close on the last completed chart bar AND MACD main is greater than MACD signal AND MACD main is not zero on the last completed higher-timeframe bar.
+Exit: long, high >= entry price + take-profit distance.
+Exit: short, low <= entry price - take-profit distance.

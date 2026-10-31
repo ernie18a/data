@@ -1,8 +1,6 @@
-Calculation: Adaptive lookback = ceiling(long-term lookback / ADX on the bar immediately before the signal bar)
-Calculation: Upper threshold = highest high over the adaptive lookback bars, minus (highest high − lowest low) × threshold fraction
-Calculation: Lower threshold = lowest low over the adaptive lookback bars, plus (highest high − lowest low) × threshold fraction
-Calculation: Trend = +1 when close > upper threshold, −1 when close < lower threshold, otherwise prior trend
-Long: close > upper threshold AND prior trend ≠ +1 (signal timeframe, which may be higher or lower than the chart timeframe; last completed bar)
-Short: close < lower threshold AND prior trend ≠ −1 (signal timeframe, which may be higher or lower than the chart timeframe; last completed bar)
-Exit: long, close < lower threshold AND prior trend ≠ −1 (signal timeframe, which may be higher or lower than the chart timeframe; last completed bar)
-Exit: short, close > upper threshold AND prior trend ≠ +1 (signal timeframe, which may be higher or lower than the chart timeframe; last completed bar)
+Calculation: Adaptive bounds = on each signal-timeframe bar, set lookback to ceiling of an adjustable constant divided by the previous bar's ADX; find the highest high and lowest low over that many bars including the signal bar; lower bound = lowest low + an adjustable fraction of the range, upper bound = highest high - the same fraction of the range. The signal timeframe may be higher or lower than the chart timeframe; use its last completed bar, or its forming bar when configured.
+Calculation: Trend = initially unset; on each signal-timeframe bar set it to -1 if close < lower bound, then set it to +1 if close > upper bound; otherwise retain its previous value. The first established trend produces no signal.
+Long: Signal-bar close > upper bound AND previous established trend = -1
+Short: Signal-bar close < lower bound AND signal-bar close <= upper bound AND previous established trend = +1
+Exit: long, the most recent long or short signal is short OR low <= entry price - adjustable stop distance OR high >= entry price + adjustable profit distance
+Exit: short, the most recent long or short signal is long OR high >= entry price + adjustable stop distance OR low <= entry price - adjustable profit distance

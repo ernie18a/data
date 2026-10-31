@@ -1,6 +1,15 @@
-Calculation: Range filter = a recursively updated close-price centerline that moves only when close clears an adaptive range; the adaptive range is an EMA of absolute close changes, smoothed by a second EMA and multiplied by a scale factor.
-Calculation: Rational-quadratic kernel estimate = weighted average of current and prior closes, with weights decreasing by a rational-quadratic function of bar distance.
-Long: close > range filter AND range filter is rising AND rational-quadratic kernel estimate is rising AND consecutive bars since the leading long condition began <= expiry limit AND (alternation is disabled OR the prior confirmed signal was short)
-Short: close < range filter AND range filter is falling AND rational-quadratic kernel estimate is falling AND consecutive bars since the leading short condition began <= expiry limit AND (alternation is disabled OR the prior confirmed signal was long)
-Exit: long, short condition
-Exit: short, long condition
+Calculation: Heikin-Ashi open = (previous Heikin-Ashi open + previous Heikin-Ashi close) / 2, initialized to (open + close) / 2; Heikin-Ashi close = (open + high + low + close) / 4.
+Calculation: Two-EMA cross = the shorter EMA of close crosses the longer EMA of close on the current bar, or, in lookback mode, crossed exactly the configured number of bars ago with no subsequent cross and remains on the crossed side.
+Calculation: Alternation state = the direction of the most recent confirmed leading signal before alternation; update it on every confirmed leading signal, giving long priority if both directions confirm.
+Long: Heikin-Ashi close >= Heikin-Ashi open.
+Short: Heikin-Ashi close < Heikin-Ashi open.
+Long: close > open.
+Short: close <= open.
+Long: Schaff Trend Cycle >= upper threshold.
+Short: Schaff Trend Cycle <= lower threshold.
+Long: Supertrend direction changes from down to up.
+Short: Supertrend direction changes from up to down.
+Long: Two-EMA cross is upward AND the leading indicator is the two-EMA cross AND all enabled confirmation conditions pass AND the leading-signal expiry condition passes AND either alternation is disabled OR the previous alternation state is short.
+Short: Two-EMA cross is downward AND the leading indicator is the two-EMA cross AND all enabled confirmation conditions pass AND the leading-signal expiry condition passes AND either alternation is disabled OR the previous alternation state is long.
+Exit: long, a short signal occurs after a bar without a short signal AND the bar is inside the enabled backtest period.
+Exit: short, a long signal occurs after a bar without a long signal AND the bar is inside the enabled backtest period.

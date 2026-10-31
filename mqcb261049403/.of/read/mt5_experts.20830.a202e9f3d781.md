@@ -1,6 +1,7 @@
-Calculation: Normalized close-location = 100 × smooth(close − low) ÷ max(smooth(max(high, previous close) − min(low, previous close)), minimum price increment); smooth each series with its own configurable method and lookback
-Long: On the configured indicator timeframe, normalized close-location on the signal bar > upper extreme level AND on the preceding bar ≤ upper extreme level
-Short: On the configured indicator timeframe, normalized close-location on the signal bar < lower extreme level AND on the preceding bar ≥ lower extreme level
-Exit: Long, on the configured indicator timeframe normalized close-location on the signal bar < lower extreme level AND on the preceding bar ≥ lower extreme level
-Exit: Short, on the configured indicator timeframe normalized close-location on the signal bar > upper extreme level AND on the preceding bar ≤ upper extreme level
-The indicator timeframe may be higher or lower than the chart timeframe. The configured signal bar is completed when its offset is at least one bar; at offset zero it is still forming.
+Calculation: Normalized range oscillator = 100 × moving average of (close − low) / max(moving average of true range, minimum price increment); the two moving averages have independently selectable methods and lookbacks.
+Long: Chart-timeframe oscillator > middle threshold.
+Short: Chart-timeframe oscillator < middle threshold.
+Long: Oscillator on a selectable higher or lower timeframe, using the last completed bar or the bar still forming, > upper threshold AND its preceding bar's oscillator <= upper threshold.
+Short: Oscillator on a selectable higher or lower timeframe, using the last completed bar or the bar still forming, < lower threshold AND its preceding bar's oscillator >= lower threshold.
+Exit: long, oscillator on the selected higher or lower timeframe, using the last completed bar or the bar still forming, < lower threshold OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, oscillator on the selected higher or lower timeframe, using the last completed bar or the bar still forming, > upper threshold OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance.

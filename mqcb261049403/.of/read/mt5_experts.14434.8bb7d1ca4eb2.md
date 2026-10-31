@@ -1,6 +1,11 @@
-Calculation: Bulls = second smoothing of (bar high − first smoothing of bar close)
-Calculation: Bulls gap = second smoothing of (bar high − first smoothing of bar open) − the preceding bar’s second-smoothed (bar high − first-smoothed bar close)
-Long: Bulls on the chart-timeframe bar > Bulls on the preceding chart-timeframe bar OR Bulls gap on the chart-timeframe bar > 0 OR (Bulls gap on the lower-timeframe latest completed bar > 0 AND Bulls gap on the preceding completed lower-timeframe bar’s color is neutral or negative)
-Short: Bulls on the chart-timeframe bar < Bulls on the preceding chart-timeframe bar OR Bulls gap on the chart-timeframe bar < 0 OR (Bulls gap on the lower-timeframe latest completed bar < 0 AND Bulls gap on the preceding completed lower-timeframe bar’s color is neutral or positive)
-Exit: short, Bulls gap on the lower-timeframe latest completed bar > 0
-Exit: long, Bulls gap on the lower-timeframe latest completed bar < 0
+Calculation: Smoothed bull power = a configurable moving average of high minus a separately configured moving average of a configurable OHLC-derived price.
+Calculation: Bull power gap = smoothed bull power calculated with open as the price on the current bar minus smoothed bull power calculated with close as the price on the previous bar; the two calculations use identical moving-average methods and parameters.
+Calculation: Expert gap = bull power gap calculated on a configurable higher or lower timeframe, using the last completed bar by default or the still-forming bar if configured.
+Long: Smoothed bull power on the chart timeframe > its previous-bar value.
+Short: Smoothed bull power on the chart timeframe < its previous-bar value.
+Long: Bull power gap on the chart timeframe > 0.
+Short: Bull power gap on the chart timeframe < 0.
+Long: Expert gap > 0 AND expert gap on the preceding indicator bar <= 0.
+Short: Expert gap < 0 AND expert gap on the preceding indicator bar >= 0.
+Exit: long, expert gap < 0 OR low <= entry price minus the configured stop distance OR high >= entry price plus the configured profit-target distance.
+Exit: short, expert gap > 0 OR high >= entry price plus the configured stop distance OR low <= entry price minus the configured profit-target distance.

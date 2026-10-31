@@ -1,6 +1,13 @@
-Calculation: XdinMA = 2 × the selected-price moving average with a shorter lookback − the same-method moving average with a longer lookback, calculated on the indicator timeframe (which may be higher or lower than the chart timeframe) using the last completed bar
-Calculation: XdinMA change standard deviation = population standard deviation of recent one-bar XdinMA changes
-Long: XdinMA change > lower threshold multiplier × XdinMA change standard deviation, on the last completed indicator-timeframe bar
-Short: XdinMA change < −lower threshold multiplier × XdinMA change standard deviation, on the last completed indicator-timeframe bar
-Exit: long, XdinMA on the last completed indicator-timeframe bar < XdinMA on the preceding bar
-Exit: short, XdinMA on the last completed indicator-timeframe bar > XdinMA on the preceding bar
+Calculation: Indicator line = twice the shorter-lookback moving average of the selected price minus the longer-lookback moving average of the same price, using the same moving-average method for both; calculate on the chart timeframe or on a higher or lower timeframe, using a selected completed bar or the bar still forming.
+Calculation: Change = indicator line on the selected bar minus its value on the preceding bar, rounded to the configured price precision plus two decimal places.
+Calculation: Thresholds = population standard deviation of the indicator line's consecutive bar-to-bar changes over a lookback ending at the selected bar, multiplied separately by a lower and a higher coefficient; round each result to the configured price precision plus two decimal places.
+Long: indicator line on the selected bar > indicator line on the preceding bar.
+Long: (change > lower threshold AND change <= higher threshold) OR change > higher threshold.
+Long: indicator line on the bar two bars before the selected bar > indicator line on the preceding bar AND indicator line on the selected bar > indicator line on the preceding bar.
+Short: indicator line on the selected bar < indicator line on the preceding bar.
+Short: (change < -lower threshold AND change >= -higher threshold) OR change < -higher threshold.
+Short: indicator line on the bar two bars before the selected bar < indicator line on the preceding bar AND indicator line on the selected bar < indicator line on the preceding bar.
+Exit: long, indicator line on the selected bar < indicator line on the preceding bar OR (change < -lower threshold AND change >= -higher threshold) OR change < -higher threshold.
+Exit: short, indicator line on the selected bar > indicator line on the preceding bar OR (change > lower threshold AND change <= higher threshold) OR change > higher threshold.
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

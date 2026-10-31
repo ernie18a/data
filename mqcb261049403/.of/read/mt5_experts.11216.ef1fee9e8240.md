@@ -1,7 +1,6 @@
-Calculation: CCI = Commodity Channel Index of the selected applied price on the configured indicator timeframe (which may be higher or lower than the chart timeframe).
-Calculation: TSI-CCI = 100 × twice-smoothed CCI momentum / twice-smoothed absolute CCI momentum; momentum = CCI − CCI from the momentum lookback bars earlier. Apply the same short smoothing lookback and then the same longer smoothing lookback to momentum and absolute momentum; use zero if the smoothed absolute momentum is zero.
-Calculation: TSI-CCI signal = TSI-CCI smoothed with its signal lookback.
-Long: On the latest completed indicator-timeframe bar, TSI-CCI > TSI-CCI signal AND on the preceding completed bar, TSI-CCI ≤ TSI-CCI signal
-Short: On the latest completed indicator-timeframe bar, TSI-CCI < TSI-CCI signal AND on the preceding completed bar, TSI-CCI ≥ TSI-CCI signal
-Exit: short, TSI-CCI > TSI-CCI signal on the latest completed indicator-timeframe bar
-Exit: long, TSI-CCI < TSI-CCI signal on the latest completed indicator-timeframe bar
+Calculation: CCI momentum oscillator = Calculate CCI on a selected price, then subtract its value a configurable number of bars earlier. Smooth the momentum and its absolute value separately using the same moving-average method and first smoothing period; smooth each result again using the same method and a second smoothing period. Divide the twice-smoothed momentum by the twice-smoothed absolute momentum and multiply by 100; use zero if the denominator is zero. Replace an exact zero result with 1e-9. Calculate on a selectable indicator timeframe, which may be higher or lower than the chart timeframe; use its last completed bar, or its forming bar if configured.
+Calculation: Oscillator signal = Smooth the CCI momentum oscillator using the same moving-average method and a separate signal smoothing period; replace an exact zero result with 1e-9.
+Long: Oscillator > signal AND oscillator on the preceding indicator bar <= signal on the preceding indicator bar
+Short: Oscillator < signal AND oscillator on the preceding indicator bar >= signal on the preceding indicator bar
+Exit: long, oscillator < signal OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance
+Exit: short, oscillator > signal OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance

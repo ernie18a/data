@@ -1,3 +1,4 @@
-Calculation: X2MA = Apply a configurable moving average to an OHLC-derived price, then apply a second configurable moving average to that result; calculate both timeframe values with the same settings using the bar still forming. The first timeframe is the chart timeframe or higher; the second is higher than the first.
-Long: first-timeframe X2MA > second-timeframe X2MA
-Short: first-timeframe X2MA < second-timeframe X2MA
+Calculation: Double-smoothed average = apply a selectable moving-average method to a selectable OHLC-derived price, then apply a second selectable moving-average method to the result; use the same methods, parameters, price selection, and vertical offset for both timeframes.
+Calculation: Timeframe average = sample the double-smoothed average when a new timeframe bar begins and hold that value until the next timeframe bar begins; historical calculations use the final value of that timeframe bar. The shorter timeframe is the chart timeframe or higher, and the longer timeframe is higher than the shorter timeframe.
+Long: Shorter-timeframe average > longer-timeframe average
+Short: Shorter-timeframe average < longer-timeframe average

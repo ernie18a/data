@@ -1,9 +1,9 @@
-Calculation: Smoothed open, high, low, and close = for each field, the weighted average of its values over the current and preceding bars; for age fraction q from 0 (current) to 1 (oldest), weight = [Shift1 + q^rank1 × (1−Shift1)] × [Shift2 + (1−q)^rank2 × (1−Shift2)] × [Shift3 + |2q−1|^rank3 × (1−Shift3)], normalized so weights sum to 1
-Calculation: Smoothed candle open = smoothed open, except use the previous bar’s smoothed close when the current bar’s |open−close| is no greater than the gap threshold
-Calculation: Smoothed candle direction = compare smoothed candle open with smoothed close
-Calculation: Smoothed range midpoint = (smoothed high + smoothed low) / 2
-Calculation: Midpoint increment = current smoothed range midpoint − previous smoothed range midpoint
-Calculation: Increment standard deviation = population standard deviation of the current and preceding midpoint increments over a lookback period
-Calculation: Strong-move thresholds = the increment standard deviation multiplied by a lower and a higher coefficient, with the higher coefficient greater than the lower coefficient
-Long: Smoothed candle direction is bullish OR midpoint increment > lower strong-move threshold
-Short: Smoothed candle direction is bearish OR midpoint increment < −lower strong-move threshold
+Calculation: Weighted OHLC = for each OHLC field X at bar t, sum over i=0..N-1 of w[i]*X[t-i], where x=i/(N-1), u[i]=(a1+(1-a1)*x^r1)*(a2+(1-a2)*(1-x)^r2)*(a3+(1-a3)*abs(1-2*x)^r3), and w[i]=u[i]/sum(u). N, a1..a3 and r1..r3 are parameters.
+Calculation: Adjusted open = the previous bar's shifted weighted close if abs(open-close) is at most the gap threshold; otherwise weighted open. Shifted weighted close = weighted close plus the vertical price offset.
+Calculation: Midpoint = (max(weighted open, weighted high, weighted low, weighted close)+min(weighted open, weighted high, weighted low, weighted close))/2 plus the vertical price offset.
+Calculation: Change = midpoint minus the previous bar's midpoint. Volatility = population standard deviation of changes over its lookback, including the current change. Round change and each volatility multiplier product separately to the price's decimal precision plus two places; the two multiplier parameters are independent.
+Calculation: Higher-timeframe version = apply the same calculations to a higher timeframe, using its still-forming bar at the first chart bar of each higher-timeframe bar and holding that result until the next higher-timeframe bar.
+Long: Adjusted open < weighted close, on the chart timeframe OR in the higher-timeframe version.
+Short: Adjusted open > weighted close, on the chart timeframe OR in the higher-timeframe version.
+Long: (rounded change > rounded first multiplier product AND rounded change <= rounded second multiplier product) OR rounded change > rounded second multiplier product, on the chart timeframe OR in the higher-timeframe version.
+Short: (rounded change < negative rounded first multiplier product AND rounded change >= negative rounded second multiplier product) OR rounded change < negative rounded second multiplier product, on the chart timeframe OR in the higher-timeframe version.

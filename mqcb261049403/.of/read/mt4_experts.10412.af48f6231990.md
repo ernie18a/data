@@ -1,16 +1,11 @@
-Calculation: Prior bar = last completed chart-timeframe bar
-Calculation: Price-to-moving-average deviations = prior open or close's percentage distance from simple moving averages; use shorter and longer lookbacks where paired
-Calculation: Rounded deviation = price-to-moving-average deviation multiplied by its signal-family scale, then rounded to the nearest integer
-Calculation: MACD pair = rounded MACD main-line value and rounded change from the preceding completed bar
-Calculation: CCI pair = rounded CCI value and rounded change from the preceding completed bar
-Calculation: Candle-shape triple = rounded prior-bar range, distance from high to open, and distance from high to close, each normalized by the prior-bar range
-Calculation: Bulls/Bears pair = rounded sum of Bulls Power and Bears Power, and rounded change in that sum from the preceding completed bar
-Calculation: Time/range pair = rounded time-of-week bucket and rounded high-low range over the corresponding lookback
-Calculation: Each of 10 long signals = whether its assigned rounded feature pair or triple matches any member of its optimized long-pattern set
-Calculation: Each of 10 short signals = whether its assigned rounded feature pair or triple matches any member of its optimized short-pattern set
-Calculation: Long-signal count = number of true long signals
-Calculation: Short-signal count = number of true short signals
-Long: flat AND long-signal count >= minimum confirmations AND long-signal count > short-signal count
-Short: flat AND short-signal count >= minimum confirmations AND long-signal count < short-signal count
-Exit: long, price <= entry price - stop-loss distance OR price >= entry price + take-profit distance OR elapsed bars since entry >= configured holding bars
-Exit: short, price >= entry price + stop-loss distance OR price <= entry price - take-profit distance OR elapsed bars since entry >= configured holding bars
+Calculation: Normalized deviation = round(scale × (price − SMA of the same price series) / SMA of the same price series); calculate on the last completed chart bar, with separate scales for the intermediate and shorter/longer SMA groups. Use five ordered SMA lookbacks: shortest, short, intermediate, long, and longest.
+Calculation: MACD pair = rounded, independently scaled values of the MACD main line on the last completed chart bar and its change from the preceding bar; MACD uses a shorter and a longer EMA of close.
+Calculation: CCI pair = rounded, scaled values of close-based CCI on the last completed chart bar and its change from the preceding bar.
+Calculation: Candle tuple = rounded, scaled high-minus-low range and rounded, scaled distances from the last completed chart bar's high to its open and close, each divided by the range; use a minimum-range fallback and a price-unit scale.
+Calculation: Power pair = rounded, scaled values of bulls power plus bears power on the last completed chart bar and its change from the preceding bar; both use the same close EMA lookback.
+Calculation: Week tuple = current weekday and intraday time slot encoded as a sequential slot number, paired with the rounded, scaled difference between the high of the bar with the highest close and the low of the bar with the lowest close over the corresponding number of chart bars ending with the current forming bar.
+Calculation: Directional score = sum of one point for each feature tuple that matches its direction-specific parameter set of exact tuples; the ten tuples are: intermediate close and open deviations; shortest and short close deviations; long and longest close deviations; shortest open and close deviations; short open and close deviations; MACD pair; CCI pair; candle tuple; power pair; week tuple. Each direction has its own parameter set for each tuple.
+Long: position side is flat AND long directional score >= minimum confirmation count AND long directional score > short directional score
+Short: position side is flat AND short directional score >= minimum confirmation count AND short directional score > long directional score
+Exit: long, low <= entry price − stop distance OR high >= entry price + profit-target distance
+Exit: short, high >= entry price + stop distance OR low <= entry price − profit-target distance

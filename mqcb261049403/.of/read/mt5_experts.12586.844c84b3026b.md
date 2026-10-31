@@ -1,5 +1,5 @@
-Calculation: TrendlessAG histogram = smooth(normalize(price − moving average(price), using the rolling ranked absolute deviations over a lookback), using a second smoothing average); calculate on the indicator timeframe, which may be higher, lower, or equal to the chart timeframe. The EA reads the bar at its configured signal offset and the two preceding bars.
-Long: histogram two bars back > histogram one bar back AND histogram one bar back < histogram at signal offset
-Short: histogram two bars back < histogram one bar back AND histogram one bar back > histogram at signal offset
-Exit: long, histogram two bars back < histogram one bar back AND histogram one bar back > histogram at signal offset
-Exit: short, histogram two bars back > histogram one bar back AND histogram one bar back < histogram at signal offset
+Calculation: Histogram = Jurik moving average of the normalized difference between close and its simple moving average. Normalize each difference by multiplying it by 100 and dividing by the value at zero-based index floor(lookback × percentile) in the ascending sorted rolling lookback of absolute differences, including the current bar. Use the chart timeframe or a configurable higher or lower timeframe; for another timeframe use the last completed bar and its predecessors.
+Long: Histogram on the last completed bar > histogram on the preceding bar AND histogram on the bar before that > histogram on the preceding bar
+Short: Histogram on the last completed bar < histogram on the preceding bar AND histogram on the bar before that < histogram on the preceding bar
+Exit: long, histogram on the last completed bar < histogram on the preceding bar OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, histogram on the last completed bar > histogram on the preceding bar OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

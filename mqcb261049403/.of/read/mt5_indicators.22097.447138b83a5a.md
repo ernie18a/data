@@ -1,5 +1,4 @@
-Calculation: Rounded MA(price) = the selected moving average of that bar’s applied price when it is more than a rounding threshold above or below either the prior moving-average value or prior rounded value, or when it moves in the prior rounded-value direction; otherwise retain the prior rounded value.
-Calculation: Rounded candle open = rounded MA of open, except use the prior rounded candle close when the bar’s absolute open-close difference is at most the gap threshold. Rounded candle close = rounded MA of close.
-Calculation: In the higher-timeframe wrapper, use the higher-timeframe candle sampled at its opening while still forming, and carry its sampled values forward until the next higher-timeframe bar.
-Long: Rounded candle close > rounded candle open
-Short: Rounded candle close < rounded candle open
+Calculation: Rounded moving average = For each of open and close, calculate a moving average using the same method and parameters. Starting with rounded value 0 and direction 0, set the current rounded value to the current moving average if its distance from either the previous moving average or the previous rounded value is greater than the rounding threshold, or if it is above the previous rounded value and the previous direction is up, or below it and the previous direction is down; otherwise retain the previous rounded value. Set direction to up or down when the rounded value rises or falls, and retain the previous direction when it is unchanged.
+Calculation: Adjusted open = Previous bar's rounded close if the absolute difference between the current bar's open and close is at most the gap threshold; otherwise the current rounded open. Calculate this and the rounded close on either the chart timeframe or a higher timeframe, using the still-forming higher-timeframe bar when applicable.
+Long: Rounded close > adjusted open
+Short: Rounded close < adjusted open

@@ -1,6 +1,8 @@
-Calculation: Smoothed Bulls = apply the selected smoothing method and lookback to each bar’s raw Bulls value on the selected indicator timeframe (which may be higher, equal to, or lower than the chart timeframe). For each bar, let range = high − low, body = |open − close|, and unit = range / volume (use 1 if unit is 0); swing = (range + body) / (2 × unit). Raw Bulls = (open − close) / unit + swing when open > close; otherwise swing.
-Calculation: Smoothed Bears = apply the same selected smoothing method and lookback as Smoothed Bulls to each bar’s raw Bears value on the selected indicator timeframe. Raw Bears = (close − open) / unit + swing when close > open; otherwise swing.
-Long: Smoothed Bears on the last completed bar > Smoothed Bulls on the last completed bar AND Smoothed Bears on the preceding completed bar <= Smoothed Bulls on the preceding completed bar
-Short: Smoothed Bears on the last completed bar < Smoothed Bulls on the last completed bar AND Smoothed Bears on the preceding completed bar >= Smoothed Bulls on the preceding completed bar
-Exit: Long, Smoothed Bears on the last completed bar < Smoothed Bulls on the last completed bar
-Exit: Short, Smoothed Bears on the last completed bar > Smoothed Bulls on the last completed bar
+Calculation: Selling pressure and buying pressure = for each indicator-timeframe bar, let range = high - low, body = open - close, unit = range / volume, replaced by 1 if unit is zero, and swing = (range + abs(body)) / (2 * unit). Selling pressure = swing + max(body, 0) / unit; buying pressure = swing + max(-body, 0) / unit. Volume must be positive.
+Calculation: Smoothed selling pressure and smoothed buying pressure = apply the same moving-average method and parameters to the respective pressure series. The indicator timeframe may be the chart timeframe, higher, or lower; use the last completed indicator bar or the still-forming indicator bar according to the signal-bar setting, and compare with the preceding indicator bar for crossings.
+Long: Smoothed buying pressure > smoothed selling pressure AND previous smoothed buying pressure <= previous smoothed selling pressure
+Short: Smoothed buying pressure < smoothed selling pressure AND previous smoothed buying pressure >= previous smoothed selling pressure
+Exit: long, smoothed buying pressure < smoothed selling pressure
+Exit: short, smoothed buying pressure > smoothed selling pressure
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

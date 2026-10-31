@@ -1,5 +1,8 @@
-Calculation: X2MA = apply a configurable moving average to the selected bar price, then apply a second configurable moving average to that result.
-Calculation: X2MA change = current X2MA minus previous X2MA.
-Calculation: Change standard deviation = population standard deviation of the current and preceding lookback X2MA changes.
-Long: On the chart timeframe, current X2MA change > threshold multiplier × change standard deviation OR on a higher timeframe, current still-forming bar's X2MA change > threshold multiplier × change standard deviation.
-Short: On the chart timeframe, current X2MA change < −threshold multiplier × change standard deviation OR on a higher timeframe, current still-forming bar's X2MA change < −threshold multiplier × change standard deviation.
+Calculation: Input price = a selected OHLC price: open, high, low, close, (high+low)/2, (high+low+close)/3, (high+low+2*close)/4, (open+close)/2, (open+high+low+close)/4, high if close>open else low if close<open else close, (high+close)/2 if close>open else (low+close)/2 if close<open else close, or Demark price where x=(high+low+close+(low if close<open else high if close>open else close))/2 and price=x-(high+low)/2.
+Calculation: Double-smoothed price = apply a selected moving average to input price, then apply a second independently parameterized moving average to the result; each method may be SMA, EMA, SMMA, LWMA, Jurik moving average, ultralinear moving average, quadratic-regression endpoint, Tillson T3, VIDYA, or Kaufman adaptive moving average.
+Calculation: Ultralinear moving average = three successive stages; each stage sets a=(1-k)*previous a+k*input, b=k*a+(1-k)*previous b, and output=1.5*a-0.5*b, with k=3/(length+2); initialize all a and b to the first input.
+Calculation: Increment = double-smoothed price minus its previous bar's value; threshold = a multiplier times the population standard deviation of increments over a lookback including the current bar. Round both increment and threshold to the price precision plus two decimal places before comparing them.
+Long: Chart-timeframe double-smoothed price > its previous bar's value OR chart-timeframe increment > threshold.
+Short: Chart-timeframe double-smoothed price < its previous bar's value OR chart-timeframe increment < -threshold.
+Long: Higher-timeframe double-smoothed price of the bar still forming > its previous higher-timeframe bar's value OR higher-timeframe increment of the bar still forming > its threshold.
+Short: Higher-timeframe double-smoothed price of the bar still forming < its previous higher-timeframe bar's value OR higher-timeframe increment of the bar still forming < -its threshold.

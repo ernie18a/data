@@ -1,3 +1,4 @@
-Calculation: X2MA = smooth the selected bar price with a first smoothing method and lookback, then smooth that result with a second smoothing method and lookback; use the same chart timeframe, or the higher timeframe’s still-forming bar in the higher-timeframe version
-Long: X2MA on the current bar > X2MA on the previous bar
-Short: X2MA on the current bar < X2MA on the previous bar
+Calculation: Double-smoothed average = apply a chosen moving-average method to a chosen OHLC-derived price, then apply a separately chosen moving-average method to the result; the two smoothing lengths and methods are independent.
+Calculation: Higher-timeframe double-smoothed average = the same calculation on higher-timeframe bars, using the bar still forming at the close of the first chart bar in each higher-timeframe interval; hold that value through the rest of the interval and compare it with the preceding higher-timeframe bar's average.
+Long: Current chart-timeframe double-smoothed average > its previous bar's value OR higher-timeframe double-smoothed average > its previous higher-timeframe bar's value.
+Short: Current chart-timeframe double-smoothed average < its previous bar's value OR higher-timeframe double-smoothed average < its previous higher-timeframe bar's value.

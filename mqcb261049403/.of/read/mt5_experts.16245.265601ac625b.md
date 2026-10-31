@@ -1,5 +1,11 @@
-Calculation: STLM candle open and close = the STLM indicator applied separately to the bar’s open and close prices; STLM is the JMA-smoothed difference of a short-term and a longer-term price filter. Use the configured indicator timeframe, which may be higher or lower than the chart timeframe, and the last completed signal candle and its preceding completed candle.
-Long: STLM candle close > STLM candle open AND preceding STLM candle close <= preceding STLM candle open
-Short: STLM candle close < STLM candle open AND preceding STLM candle close >= preceding STLM candle open
-Exit: short, STLM candle close > STLM candle open AND preceding STLM candle close <= preceding STLM candle open
-Exit: long, STLM candle close < STLM candle open AND preceding STLM candle close >= preceding STLM candle open
+Calculation: Smoothed trend momentum of a price series = Jurik moving average of the difference between a shorter and a longer finite impulse response filter applied to that series; each filter is a weighted sum of the current and preceding values with its own ordered coefficient vector.
+Long: Chart-timeframe smoothed trend momentum of an applied price > 0
+Short: Chart-timeframe smoothed trend momentum of an applied price < 0
+Long: Chart-timeframe smoothed trend momentum of close > chart-timeframe smoothed trend momentum of open
+Short: Chart-timeframe smoothed trend momentum of close < chart-timeframe smoothed trend momentum of open
+Long: Higher-timeframe smoothed trend momentum of close on the last completed bar > smoothed trend momentum of open on that bar AND smoothed trend momentum of close on the preceding higher-timeframe bar <= smoothed trend momentum of open on that bar
+Short: Higher-timeframe smoothed trend momentum of close on the last completed bar < smoothed trend momentum of open on that bar AND smoothed trend momentum of close on the preceding higher-timeframe bar >= smoothed trend momentum of open on that bar
+Exit: short, higher-timeframe smoothed trend momentum of close on the last completed bar > smoothed trend momentum of open on that bar
+Exit: long, higher-timeframe smoothed trend momentum of close on the last completed bar < smoothed trend momentum of open on that bar
+Exit: long, low <= entry price - stop distance OR high >= entry price + profit-target distance
+Exit: short, high >= entry price + stop distance OR low <= entry price - profit-target distance

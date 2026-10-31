@@ -1,6 +1,5 @@
-Calculation: Applied price = the configured price derived from each bar’s OHLC fields.
-Calculation: Smoothed price, high, and low = each respective series smoothed with the same method and lookback on the indicator timeframe.
-Calculation: Raw lower level = (3 × pivot − maximum smoothed high over the extrema lookback) / 2; raw upper level = (3 × pivot − minimum smoothed low over that same lookback) / 2; pivot = (maximum smoothed high + minimum smoothed low + smoothed price) / 3.
-Calculation: Lower threshold = the maximum raw lower level over the current and previous 13 indicator-timeframe bars. Upper threshold = the minimum raw upper level over the current and previous 13 indicator-timeframe bars. In the higher-timeframe wrapper, use the still-forming higher-timeframe bar; otherwise use chart-timeframe bars.
-Long: Applied price > lower threshold AND applied price >= upper threshold
-Short: Applied price < upper threshold
+Calculation: Applied price = a selectable price derived from the bar's open, high, low, and close: close, open, high, low, (high+low)/2, (high+low+close)/3, (high+low+2*close)/4, (open+close)/2, (open+high+low+close)/4, high if close>open else low if close<open else close, (high+close)/2 if close>open else (low+close)/2 if close<open else close, or DeMark price.
+Calculation: Pivot bands = apply the same selectable smoothing method and length separately to high, low, and applied price; take the highest smoothed high and lowest smoothed low over the extrema lookback, including the current bar. Let pivot be their average with the smoothed applied price. The lower raw band is (3*pivot-highest smoothed high)/2; the upper raw band is (3*pivot-lowest smoothed low)/2. The lower band is the maximum lower raw band over the current and preceding 14 bars; the upper band is the minimum upper raw band over the same bars.
+Calculation: Higher-timeframe decisions = calculate the same applied price and pivot bands on the higher timeframe using its bar still forming at the start of each higher-timeframe bar, and hold the resulting decision until the next higher-timeframe bar starts.
+Long: Applied price > upper band AND applied price >= lower band.
+Short: Applied price < lower band.

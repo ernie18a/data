@@ -1,16 +1,5 @@
-Calculation: Volume-weighted Fisher oscillator = 100 × a configurable moving average of volume-weighted Fisher values, where each Fisher value is 0.5 × ln((1 + x)/(1 − x)) + 0.5 × the prior Fisher value, and x = (selected OHLC applied price’s position within the current and preceding bars’ rolling high-low range − 0.5) + 0.67 × the prior x; multiply the Fisher value by the selected volume field (volume or amount) before smoothing. Use the same moving-average method and settings to smooth the volume field separately.
-Calculation: Upper and lower thresholds = the respective configurable level multiplied by the smoothed volume.
-Long: Previous oscillator ≤ previous lower threshold AND current oscillator > current lower threshold
-Long: Previous oscillator ≤ previous upper threshold AND current oscillator > current upper threshold
-Long: Previous oscillator ≤ 0 AND current oscillator > 0
-Long: Previous trigger value ≥ previous oscillator AND current trigger value < current oscillator
-Long: Current oscillator > current upper threshold AND current oscillator ≥ current trigger value
-Long: Current oscillator < current lower threshold AND current oscillator ≤ current trigger value
-Long: Previous oscillator < 0 AND current oscillator ≥ 0
-Short: Previous oscillator ≥ previous upper threshold AND current oscillator < current upper threshold
-Short: Previous oscillator ≥ previous lower threshold AND current oscillator < current lower threshold
-Short: Previous oscillator ≥ 0 AND current oscillator < 0
-Short: Previous trigger value ≤ previous oscillator AND current trigger value > current oscillator
-Short: Current oscillator < current lower threshold AND current oscillator ≤ current trigger value
-Short: Current oscillator > current upper threshold AND current oscillator ≥ current trigger value
-Short: Previous oscillator > 0 AND current oscillator ≤ 0
+Calculation: Applied price = a selected bar price: close, open, high, low, (high+low)/2, (high+low+close)/3, (high+low+2*close)/4, (open+close)/2, (open+high+low+close)/4, trend-following price, half trend-following price, or DeMark price. Trend-following price is high if close>open, low if close<open, otherwise close. Half trend-following price is (high+close)/2 if close>open, (low+close)/2 if close<open, otherwise close. DeMark price is r-(high+low)/2, where r=(high+low+close+x)/2 and x is low if close<open, high if close>open, otherwise close.
+Calculation: Volume-weighted Fisher oscillator = 100 times the selected moving average of Fisher times volume. For each bar, let H and L be the highest high and lowest low over the lookback including the current bar; w=(applied price-L)/(H-L); v=w-0.5+0.67*previous v; q=(1+v)/(1-v), replaced by 1 if q<0.0000001; Fisher=0.5*ln(q)+0.5*previous Fisher. Initialize previous v and Fisher to zero. The selected moving average is SMA, EMA, SMMA, LWMA, Jurik moving average, Jurik ultra-linear moving average, quadratic regression moving average, Tillson T3, VIDYA, or Kaufman adaptive moving average. Use the same method and smoothing parameters for the oscillator and volume.
+Calculation: Upper and lower levels = respectively a positive and a negative threshold multiplied by the selected moving average of volume.
+Long: Oscillator > previous oscillator OR oscillator > upper level AND oscillator >= previous oscillator OR previous oscillator <= 0 AND oscillator > 0 OR previous oscillator < 0 AND oscillator >= 0 OR previous oscillator <= previous upper level AND oscillator > upper level OR previous oscillator <= previous lower level AND oscillator > lower level
+Short: Oscillator < previous oscillator OR oscillator < lower level AND oscillator <= previous oscillator OR previous oscillator >= 0 AND oscillator < 0 OR previous oscillator > 0 AND oscillator <= 0 OR previous oscillator >= previous lower level AND oscillator < lower level OR previous oscillator >= previous upper level AND oscillator < upper level

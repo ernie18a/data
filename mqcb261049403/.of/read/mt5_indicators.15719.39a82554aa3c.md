@@ -1,3 +1,3 @@
-Calculation: X2MA = selected bar price smoothed by a first moving-average method, then smoothed by a second moving-average method, and rounded to the configured decimal precision
-Long: X2MA > previous bar's X2MA
-Short: X2MA < previous bar's X2MA
+Calculation: Smoothed line = Apply a first moving average to a selected OHLC-derived price, then apply a second moving average with independently selected method and lookback to the result; add a configurable price offset and round to a configurable price increment. Calculate either on chart bars or on higher-timeframe bars, using the higher-timeframe bar still forming.
+Long: The most recent nonzero change in the smoothed line is greater than zero.
+Short: The most recent nonzero change in the smoothed line is less than zero.

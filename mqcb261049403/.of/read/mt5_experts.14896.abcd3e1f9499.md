@@ -1,6 +1,8 @@
-Calculation: Short-term line = apply a moving-average smoothing to the configured applied price, then smooth that result again using a shorter lookback than the long-term line.
-Calculation: Long-term line = apply a moving-average smoothing to the configured applied price, then smooth that result again using a longer lookback than the short-term line.
-Long: On the configured indicator timeframe, the last completed bar has short-term line <= long-term line AND the preceding completed bar has short-term line > long-term line.
-Short: On the configured indicator timeframe, the last completed bar has short-term line >= long-term line AND the preceding completed bar has short-term line < long-term line.
-Exit: Long, on the preceding completed bar of the configured indicator timeframe, short-term line < long-term line.
-Exit: Short, on the preceding completed bar of the configured indicator timeframe, short-term line > long-term line.
+Calculation: Fast double-smoothed average = a shorter-lookback moving average of the selected price, smoothed again with another shorter-lookback moving average.
+Calculation: Slow double-smoothed average = a longer-lookback moving average of the selected price, smoothed again with another longer-lookback moving average.
+Long: Chart-timeframe fast double-smoothed average > chart-timeframe slow double-smoothed average.
+Short: Chart-timeframe fast double-smoothed average < chart-timeframe slow double-smoothed average.
+Long: On the last completed higher-timeframe bar, fast double-smoothed average > slow double-smoothed average AND on the preceding higher-timeframe bar, fast double-smoothed average <= slow double-smoothed average.
+Short: On the last completed higher-timeframe bar, fast double-smoothed average < slow double-smoothed average AND on the preceding higher-timeframe bar, fast double-smoothed average >= slow double-smoothed average.
+Exit: long, last completed higher-timeframe fast double-smoothed average < last completed higher-timeframe slow double-smoothed average OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, last completed higher-timeframe fast double-smoothed average > last completed higher-timeframe slow double-smoothed average OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

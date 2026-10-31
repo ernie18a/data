@@ -1,5 +1,7 @@
-Calculation: RAVI = 100 × (shorter-lookback smoothed applied price − longer-lookback smoothed applied price) ÷ longer-lookback smoothed applied price
-Long: RAVI on the last completed chart-timeframe bar > upper level AND RAVI on the preceding completed bar ≤ upper level
-Short: RAVI on the last completed chart-timeframe bar < lower level AND RAVI on the preceding completed bar ≥ lower level
-Exit: long, RAVI on the last completed chart-timeframe bar < lower level OR bar low ≤ entry price − stop-loss distance OR bar high ≥ entry price + take-profit distance
-Exit: short, RAVI on the last completed chart-timeframe bar > upper level OR bar high ≥ entry price + stop-loss distance OR bar low ≤ entry price − take-profit distance
+Calculation: RAVI = 100 × (shorter-period moving average of selected bar price − longer-period moving average of the same price) / longer-period moving average; use 1 as the denominator if the longer-period average is zero. The two averaging methods are independently selectable.
+Long: chart-timeframe RAVI > upper trend threshold
+Short: chart-timeframe RAVI < lower trend threshold
+Long: RAVI on the last completed bar of the selected indicator timeframe > upper entry threshold AND RAVI on the preceding indicator bar <= upper entry threshold; the indicator timeframe may be higher or lower than the chart timeframe
+Short: RAVI on the last completed bar of the selected indicator timeframe < lower entry threshold AND RAVI on the preceding indicator bar >= lower entry threshold; the indicator timeframe may be higher or lower than the chart timeframe
+Exit: long, RAVI on the last completed bar of the selected indicator timeframe < lower entry threshold OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, RAVI on the last completed bar of the selected indicator timeframe > upper entry threshold OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

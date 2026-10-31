@@ -1,5 +1,9 @@
-Calculation: ColorBears value = smooth the indicator-timeframe bar low minus the first smoothing of the selected applied price; the first smoother uses a longer lookback than the second. Use completed bars on the indicator timeframe, which may be higher or lower than the chart timeframe.
-Long: ColorBears value on the latest completed bar > its previous value AND its previous value < its value one bar earlier
-Short: ColorBears value on the latest completed bar < its previous value AND its previous value > its value one bar earlier
-Exit: Long, ColorBears value on the latest completed bar < its previous value
-Exit: Short, ColorBears value on the latest completed bar > its previous value
+Calculation: Smoothed bear power = Jurik moving average of (low minus the simple moving average of close), using a shorter lookback for the Jurik moving average. Calculate on the chart timeframe or a selectable higher or lower timeframe; use the last completed bar or the still-forming bar according to the signal-bar setting. Index 0 denotes the selected bar and negative indices denote preceding bars on that timeframe.
+Long: Smoothed bear power[0] > smoothed bear power[-1]
+Short: Smoothed bear power[0] < smoothed bear power[-1]
+Long: Smoothed bear power[0] > smoothed bear power[-1] AND smoothed bear power[-1] < smoothed bear power[-2]
+Short: Smoothed bear power[0] < smoothed bear power[-1] AND smoothed bear power[-1] > smoothed bear power[-2]
+Exit: long, smoothed bear power[0] < smoothed bear power[-1]
+Exit: short, smoothed bear power[0] > smoothed bear power[-1]
+Exit: long, low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance
+Exit: short, high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance

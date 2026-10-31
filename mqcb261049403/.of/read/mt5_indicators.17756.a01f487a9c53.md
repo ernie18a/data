@@ -1,3 +1,6 @@
-Calculation: Smoothed CCI = compute typical price (high + low + close) / 3; subtract its simple moving average from the current typical price, then divide by 0.015 times the mean absolute deviation of typical price from its corresponding simple moving average over the same lookback. If the denominator is zero, use zero. Smooth this raw CCI with the configured smoothing method and lookback. Calculate on the chart timeframe or, when configured, a higher timeframe using its still-forming bar.
-Long: (configured color mode = level-based AND (Smoothed CCI > high level OR (Smoothed CCI <= high level AND Smoothed CCI > middle level))) OR (configured color mode = direction-based AND Smoothed CCI != middle level AND Smoothed CCI > previous bar's Smoothed CCI)
-Short: (configured color mode = level-based AND Smoothed CCI <= high level AND (Smoothed CCI < low level OR (Smoothed CCI >= low level AND Smoothed CCI < middle level))) OR (configured color mode = direction-based AND Smoothed CCI != middle level AND Smoothed CCI < previous bar's Smoothed CCI)
+Calculation: Oscillator = smooth the raw oscillator with a selectable moving-average method and smoothing parameters; for selected price P and lookback N, raw oscillator at bar t = (P[t] - SMA(P, N)[t]) / (0.015 * mean over i = 0 to N-1 of abs(P[t-i] - SMA(P, N)[t-i])); use zero when the denominator is zero.
+Calculation: Higher-timeframe oscillator = the same oscillator calculated on higher-timeframe bars, using the bar still forming at the first chart bar of each higher-timeframe bar; hold that value and its previous-higher-timeframe-bar comparison until the next higher-timeframe bar.
+Long: In level mode, oscillator > middle level.
+Short: In level mode, oscillator < middle level.
+Long: In direction mode, oscillator > previous oscillator AND oscillator != middle level.
+Short: In direction mode, oscillator < previous oscillator AND oscillator != middle level.

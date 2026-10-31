@@ -1,5 +1,9 @@
-Calculation: KWAN_CCC direction = compare the smoothed value of (Chaikin oscillator × CCI / Momentum) with its value on the immediately preceding bar: rising if greater, falling if lower, unchanged if equal; use 100 instead of the quotient when Momentum is zero. Chaikin uses the configured fast and slow moving averages and applied volume; CCI uses median price; Momentum uses close. Calculate on the configured indicator timeframe, lower than the chart timeframe, using completed bars.
-Long: current completed bar’s KWAN_CCC direction is rising AND the preceding completed bar’s direction is not rising
-Short: current completed bar’s KWAN_CCC direction is falling AND the preceding completed bar’s direction is not falling
-Exit: long, current completed bar’s KWAN_CCC direction is falling AND the preceding completed bar’s direction is not falling
-Exit: short, current completed bar’s KWAN_CCC direction is rising AND the preceding completed bar’s direction is not rising
+Calculation: Composite = moving average of Chaikin oscillator × CCI / Momentum; use 100 as the input to the moving average when Momentum is zero. The Chaikin oscillator uses a shorter and a longer moving-average period; CCI uses median price and Momentum uses close.
+Long: Composite on the chart bar > Composite on the preceding chart bar
+Short: Composite on the chart bar < Composite on the preceding chart bar
+Long: Composite on the last completed higher or lower timeframe bar > Composite on its preceding bar AND Composite on that preceding bar <= Composite on the bar before it
+Short: Composite on the last completed higher or lower timeframe bar < Composite on its preceding bar AND Composite on that preceding bar >= Composite on the bar before it
+Exit: long, Composite on the last completed higher or lower timeframe bar < Composite on its preceding bar
+Exit: short, Composite on the last completed higher or lower timeframe bar > Composite on its preceding bar
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

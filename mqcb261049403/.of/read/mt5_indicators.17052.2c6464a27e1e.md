@@ -1,3 +1,3 @@
-Calculation: RSIOMA = 50 × (smoothed positive momentum − smoothed negative momentum) / (smoothed positive momentum + smoothed negative momentum), where momentum is the change in a smoothed selected price; positive and negative momentum are smoothed separately using the RSIOMA lookback.
-Long: RSIOMA > its midpoint level
-Short: RSIOMA < its midpoint level
+Calculation: Oscillator = Apply a configurable moving average of length N to a selected OHLC-derived price. Let momentum be the current average minus its value a configurable number of bars earlier. On each bar, sum max(momentum, 0) and max(-momentum, 0) separately over the latest N bars. Starting with both prior accumulators at zero on the first bar after that window is available, update each accumulator as (prior accumulator × (N - 1) + its current rolling sum) / N. If the negative accumulator is nonzero, the oscillator is 50 - 100 / (1 + positive accumulator / negative accumulator); otherwise it is 0. Calculate this either on the chart timeframe or on a higher timeframe; for the higher timeframe, sample the still-forming higher-timeframe bar on its first chart bar and hold that value until the next higher-timeframe bar starts.
+Long: Oscillator > configurable middle level
+Short: Oscillator < configurable middle level

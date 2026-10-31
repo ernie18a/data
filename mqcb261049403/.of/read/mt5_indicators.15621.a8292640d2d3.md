@@ -1,5 +1,3 @@
-Calculation: Upper band = smoothed moving average of bar highs plus a price-range offset; when one-way movement is enabled and prior channel direction is down, cap it at its previous value.
-Calculation: Lower band = smoothed moving average of bar lows plus a price-range offset; when one-way movement is enabled and prior channel direction is up, floor it at its previous value. Both averages use the same smoothing method and lookback.
-Calculation: Channel direction = initialize neutral; each bar set up if high > upper band, else set down if low < lower band, otherwise retain the prior direction.
-Long: Prior channel direction <= neutral AND high > upper band
-Short: Prior channel direction >= neutral AND high <= upper band AND low < lower band
+Calculation: Channel state = On the chart timeframe, or on a higher timeframe using its still-forming bar, calculate moving averages of high and low with the same method and parameters, and add the same nonnegative price offset to both. If one-way mode is enabled and the previous state is long, prevent the low average plus offset from falling below its previous value when that value is nonzero; if the previous state is short, prevent the high average plus offset from rising above its previous value when that value is nonzero. Starting from neutral, set the state to long when high is above the adjusted high average; otherwise set it to short when low is below the adjusted low average; otherwise retain the previous state. For the higher-timeframe version, sample the state at the first chart bar of each higher-timeframe bar and hold it until the next higher-timeframe bar.
+Long: Channel state = long
+Short: Channel state = short

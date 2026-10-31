@@ -1,7 +1,7 @@
-Calculation: Price momentum = selected applied price on a higher-timeframe bar minus that price one momentum lookback earlier
-Calculation: Directional line = momentum lookback × the selected smoothing of price momentum over the momentum lookback, on the higher timeframe
-Calculation: TDI line = absolute value of the directional line − (2 × momentum lookback × the same smoothing of absolute price momentum over twice the momentum lookback − absolute price momentum), on the higher timeframe
-Long: Directional line on the latest completed higher-timeframe bar > TDI line on that bar AND directional line on the preceding completed higher-timeframe bar ≤ TDI line on that bar OR position side is long AND current price − last entry price, in points, > the scale-step threshold AND number of prior scale-ins < the scale-in limit
-Short: Directional line on the latest completed higher-timeframe bar < TDI line on that bar AND directional line on the preceding completed higher-timeframe bar ≥ TDI line on that bar OR position side is short AND last entry price − current price, in points, > the scale-step threshold AND number of prior scale-ins < the scale-in limit
-Exit: long, directional line on the latest completed higher-timeframe bar < TDI line on that bar
-Exit: short, directional line on the latest completed higher-timeframe bar > TDI line on that bar
+Calculation: Momentum = selected price minus its value one lookback earlier, on the indicator timeframe; use the last completed bar, or the still-forming bar when configured. The indicator timeframe may be the chart timeframe, higher, or lower.
+Calculation: Direction line = lookback multiplied by the selected moving average of momentum using the same lookback.
+Calculation: Trend line = absolute value of the direction line minus (twice the lookback multiplied by the same moving average of absolute momentum using twice the lookback, minus current absolute momentum).
+Long: Direction line > trend line AND previous indicator bar's direction line <= previous indicator bar's trend line.
+Short: Direction line < trend line AND previous indicator bar's direction line >= previous indicator bar's trend line.
+Exit: long, direction line < trend line OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance.
+Exit: short, direction line > trend line OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance.

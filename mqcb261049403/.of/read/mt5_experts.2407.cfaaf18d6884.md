@@ -1,7 +1,6 @@
-Calculation: Chaikin oscillator = shorter-period average of the accumulation/distribution line minus longer-period average of the accumulation/distribution line.
-Calculation: Fast line = shorter-lookback smoothing of the Chaikin oscillator.
-Calculation: Slow line = longer-lookback smoothing of the fast line.
-Long: On the indicator timeframe, fast line on the last completed bar > slow line AND fast line on the preceding completed bar <= slow line on that timeframe
-Short: On the indicator timeframe, fast line on the last completed bar < slow line AND fast line on the preceding completed bar >= slow line on that timeframe
-Exit: long, fast line < slow line on the last completed indicator-timeframe bar
-Exit: short, fast line > slow line on the last completed indicator-timeframe bar
+Calculation: Smoothed oscillator = shorter-period moving average of the Chaikin oscillator, using volume and shorter and longer Chaikin averaging periods.
+Calculation: Signal = longer-period moving average of the smoothed oscillator, using the same smoothing method. Both calculations use a configurable indicator timeframe, which may be higher than, lower than, or equal to the chart timeframe; use the last completed indicator bar or the still-forming bar according to the signal-bar setting. Previous values refer to the immediately preceding indicator bar.
+Long: Smoothed oscillator > signal AND previous smoothed oscillator <= previous signal AND position side is flat.
+Short: Smoothed oscillator < signal AND previous smoothed oscillator >= previous signal AND position side is flat.
+Exit: long, smoothed oscillator < signal OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, smoothed oscillator > signal OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

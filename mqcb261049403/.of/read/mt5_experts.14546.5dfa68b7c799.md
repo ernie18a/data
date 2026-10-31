@@ -1,7 +1,11 @@
-Calculation: XRSX = 100 × clamp(smoothed change in the selected bar price / smoothed absolute change in that price, −1, 1); use the same smoothing parameters for numerator and denominator.
-Calculation: Fast step line = On the indicator timeframe, set Z = (XRSX + 100) / 2. With fast step size s, form bounds Z ± 2s. Switch trend up when Z exceeds the prior upper bound and down when Z falls below the prior lower bound. In an uptrend, keep the lower bound at the greater of its raw value and prior lower bound; output lower bound + s. In a downtrend, keep the upper bound at the lesser of its raw value and prior upper bound; output upper bound − s.
-Calculation: Slow step line = The same step-line calculation, using a larger step size than the fast step line.
-Long: Fast step line on the earlier completed indicator-timeframe bar > slow step line on that bar AND fast step line on the latest completed indicator-timeframe bar <= slow step line on that bar
-Short: Fast step line on the earlier completed indicator-timeframe bar < slow step line on that bar AND fast step line on the latest completed indicator-timeframe bar >= slow step line on that bar
-Exit: short, Fast step line on the earlier completed indicator-timeframe bar > slow step line on that bar
-Exit: long, Fast step line on the earlier completed indicator-timeframe bar < slow step line on that bar
+Calculation: Oscillator = 100 × clamp(smooth(change in selected bar price) / smooth(abs(change in selected bar price)), -1, 1), using the same smoothing method and parameters for both series; undefined when the denominator is zero.
+Calculation: Signal line = a separately parameterized smoothing of the oscillator.
+Calculation: Step line = for oscillator value x = (oscillator + 100) / 2 and step size s, maintain upper bound U, lower bound L and direction d independently for each step size. Initialize U = negative infinity, L = positive infinity, d = 0. On each bar set new U = x + 2s and new L = x - 2s; set d = 1 if x > previous U, d = -1 if x < previous L, otherwise retain d. If d = 1, set new L = max(new L, previous L) and the line = new L + s; if d = -1, set new U = min(new U, previous U) and the line = new U - s. Retain the new bounds for the next bar. The fast step size is smaller than the slow step size.
+Long: On the chart timeframe, oscillator != 0 AND oscillator > previous oscillator.
+Short: On the chart timeframe, oscillator != 0 AND oscillator < previous oscillator.
+Long: On the chart timeframe, oscillator > previous signal line.
+Short: On the chart timeframe, oscillator < previous signal line.
+Long: On the indicator timeframe, fast step line > slow step line AND previous fast step line <= previous slow step line; use the last completed indicator bar by default or the still-forming bar when configured. The indicator timeframe may be higher or lower than the chart timeframe.
+Short: On the indicator timeframe, fast step line < slow step line AND previous fast step line >= previous slow step line; use the same indicator bar selection as the step-line entries.
+Exit: long, indicator-timeframe fast step line < slow step line OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance; use the same indicator bar selection as the step-line entries.
+Exit: short, indicator-timeframe fast step line > slow step line OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance; use the same indicator bar selection as the step-line entries.

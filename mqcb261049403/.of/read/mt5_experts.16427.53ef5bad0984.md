@@ -1,5 +1,7 @@
-Calculation: J-SATL candle = apply the fixed 65-bar SATL digital filter to each OHLC series, then JMA-smooth each result; use the same JMA settings for all four series. Use the configured indicator timeframe, which may be higher than, equal to, or lower than the chart timeframe, and compare its last completed bar with the preceding completed bar.
-Long: current J-SATL open < current J-SATL close AND (previous J-SATL open >= previous J-SATL close OR previous J-SATL open = previous J-SATL close)
-Short: current J-SATL open > current J-SATL close AND (previous J-SATL open <= previous J-SATL close OR previous J-SATL open = previous J-SATL close)
-Exit: short, current J-SATL open < current J-SATL close AND previous J-SATL open >= previous J-SATL close
-Exit: long, current J-SATL open > current J-SATL close AND previous J-SATL open <= previous J-SATL close
+Calculation: Smoothed price = Jurik moving average of the SATL digital filter applied separately to open and close, using the same smoothing length and phase for both series.
+Long: Chart-timeframe smoothed close > chart-timeframe smoothed open
+Short: Chart-timeframe smoothed close < chart-timeframe smoothed open
+Long: Selected indicator-timeframe bar's smoothed close > smoothed open AND preceding indicator-timeframe bar's smoothed close <= smoothed open. The indicator timeframe may be higher or lower than the chart timeframe; the selected bar may be the last completed bar or the bar still forming.
+Short: Selected indicator-timeframe bar's smoothed close < smoothed open AND preceding indicator-timeframe bar's smoothed close >= smoothed open. The indicator timeframe may be higher or lower than the chart timeframe; the selected bar may be the last completed bar or the bar still forming.
+Exit: long, selected indicator-timeframe bar's smoothed close < smoothed open OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance
+Exit: short, selected indicator-timeframe bar's smoothed close > smoothed open OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance

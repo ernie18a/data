@@ -1,5 +1,5 @@
-Calculation: XDerivative = the configured applied price's rate of change over a lookback, multiplied by 100 and divided by the lookback, then smoothed by the configured moving-average method; on the HTF variant, use a higher-timeframe bar sampled while still forming at its opening and hold its value on chart bars until the next higher-timeframe boundary.
-Calculation: Derivative increment = current XDerivative minus the previous XDerivative.
-Calculation: Increment standard deviation = population standard deviation of the recent Derivative increments over a lookback.
-Long: current Derivative increment > the smaller of the two configured standard-deviation multiples × Increment standard deviation
-Short: current Derivative increment < −(the smaller of the two configured standard-deviation multiples × Increment standard deviation)
+Calculation: Smoothed derivative = a configurable moving average of 100 × (selected OHLC-derived price − its value a configurable number of bars earlier) / that number of bars.
+Calculation: Derivative change = the smoothed derivative minus its previous-bar value.
+Calculation: Thresholds = the population standard deviation of derivative changes over a configurable lookback, including the current change, multiplied separately by a smaller and a larger configurable coefficient. Round each threshold and the current derivative change to a configurable price precision plus two decimal places. Calculate these values on either the chart timeframe or a higher timeframe; for the higher timeframe, sample the still-forming bar at its opening and hold that sample until the next higher-timeframe bar begins.
+Long: Derivative change > smaller threshold AND derivative change <= larger threshold OR derivative change > larger threshold.
+Short: Derivative change < −smaller threshold AND derivative change >= −larger threshold OR derivative change < −larger threshold.

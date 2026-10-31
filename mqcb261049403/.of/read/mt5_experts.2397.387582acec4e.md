@@ -1,6 +1,6 @@
-Calculation: Fast smoothed Awesome Oscillator = apply the selected smoothing method with a shorter lookback to the Awesome Oscillator on the indicator timeframe, which may be higher or lower than the chart timeframe; use completed bars.
-Calculation: Slow smoothed line = apply the same smoothing method with a longer lookback to the fast smoothed Awesome Oscillator on the indicator timeframe; use completed bars.
-Long: On the latest completed indicator-timeframe bar, fast smoothed Awesome Oscillator > slow smoothed line AND on the preceding completed indicator-timeframe bar, fast smoothed Awesome Oscillator <= slow smoothed line
-Short: On the latest completed indicator-timeframe bar, fast smoothed Awesome Oscillator < slow smoothed line AND on the preceding completed indicator-timeframe bar, fast smoothed Awesome Oscillator >= slow smoothed line
-Exit: long, fast smoothed Awesome Oscillator < slow smoothed line on the latest completed indicator-timeframe bar
-Exit: short, fast smoothed Awesome Oscillator > slow smoothed line on the latest completed indicator-timeframe bar
+Calculation: Fast oscillator = shorter-period moving average of the Awesome Oscillator, calculated on the last completed higher-timeframe bar.
+Calculation: Signal = longer-period moving average of the fast oscillator, using the same averaging method and the last completed higher-timeframe bar.
+Long: Fast oscillator > signal AND fast oscillator on the preceding higher-timeframe bar <= signal on that bar.
+Short: Fast oscillator < signal AND fast oscillator on the preceding higher-timeframe bar >= signal on that bar.
+Exit: long, fast oscillator < signal OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance.
+Exit: short, fast oscillator > signal OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance.

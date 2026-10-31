@@ -1,4 +1,6 @@
-Calculation: Fast stochastic %K = 100 × (selected bar price − lowest low over the lookback) ÷ (highest high over the same lookback − lowest low); use one minimum price increment when the range is zero
-Calculation: Signal line = selected moving average of Fast stochastic %K over a shorter lookback
-Long: (Fast stochastic %K > 50 AND Fast stochastic %K > prior bar’s Fast stochastic %K) OR Fast stochastic %K > prior bar’s Signal line
-Short: (Fast stochastic %K < 50 AND Fast stochastic %K < prior bar’s Fast stochastic %K) OR Fast stochastic %K < prior bar’s Signal line
+Calculation: Stochastic = 100 × (close − lowest low) / max(highest high − lowest low, minimum price increment), using a lookback including the current bar. Calculate on either the chart timeframe or a higher timeframe using its still-forming bar.
+Calculation: Signal = moving average of the stochastic, using the selected smoothing method and lookback on the same timeframe.
+Long: stochastic > previous bar's stochastic
+Short: stochastic < previous bar's stochastic
+Long: stochastic > previous bar's signal
+Short: stochastic < previous bar's signal

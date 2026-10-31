@@ -1,6 +1,8 @@
-Calculation: XCCX = 100 × smoothed(price − smoothed(price)) / smoothed(abs(price − smoothed(price))); use the selected price and smoothing method, with the price smoother and deviation smoother using their respective lookbacks
-Calculation: XCCX change = current XCCX − previous XCCX
-Calculation: Change standard deviation = population standard deviation of XCCX changes over the lookback
-Calculation: Change threshold = selected coefficient × change standard deviation; round both the current XCCX change and threshold to instrument digits + 2 decimal places
-Long: XCCX > previous XCCX OR rounded XCCX change > rounded change threshold
-Short: XCCX < previous XCCX OR rounded XCCX change < −rounded change threshold
+Calculation: Input price = a selectable price: close, open, high, low, (high + low)/2, (high + low + close)/3, (high + low + 2 × close)/4, (open + close)/2, (open + high + low + close)/4, high if close > open and low if close < open and close otherwise, (high + close)/2 if close > open and (low + close)/2 if close < open and close otherwise, or DeMark price.
+Calculation: Oscillator = 100 × smoothed deviation / smoothed absolute deviation, where deviation = input price − a selectable moving average of input price; smooth deviation and absolute deviation separately with the same selectable moving-average method and parameters. The price average and deviation averages have independently selectable methods and parameters. The oscillator is unavailable when smoothed deviation is zero or the denominator is zero.
+Calculation: Change = oscillator − previous-bar oscillator; threshold = a selectable multiplier × population standard deviation of change over a selectable lookback including the current bar. Round change and threshold separately to a selectable decimal precision.
+Calculation: Evaluate the oscillator and change either on the chart timeframe or on the still-forming higher-timeframe bar aggregated through the current chart bar.
+Long: Oscillator > previous-bar oscillator.
+Short: Oscillator < previous-bar oscillator.
+Long: Rounded change > rounded threshold.
+Short: Rounded change < −rounded threshold.

@@ -1,5 +1,5 @@
-Calculation: XKRI = on the configured indicator timeframe (higher or lower than the chart timeframe as configured), smooth the percentage deviation of the selected OHLC-derived price from its configured moving average: 100 × (price − moving average) / moving average; use the last completed bars.
-Long: middle XKRI value < older XKRI value AND middle XKRI value < newer XKRI value
-Short: middle XKRI value > older XKRI value AND middle XKRI value > newer XKRI value
-Exit: long, middle XKRI value > older XKRI value AND middle XKRI value > newer XKRI value
-Exit: short, middle XKRI value < older XKRI value AND middle XKRI value < newer XKRI value
+Calculation: Smoothed disparity = Jurik moving average of 100 × (selected price − moving average of selected price) / moving average of selected price, with independently parameterized moving-average and smoothing periods; calculate on the selected chart, higher, or lower timeframe, using the selected signal bar, which may be the still-forming bar or a completed bar. Earlier values are from consecutive bars of that same timeframe.
+Long: Smoothed disparity one bar before the signal bar < smoothed disparity on the signal bar AND smoothed disparity two bars before the signal bar > smoothed disparity one bar before the signal bar
+Short: Smoothed disparity one bar before the signal bar > smoothed disparity on the signal bar AND smoothed disparity two bars before the signal bar < smoothed disparity one bar before the signal bar
+Exit: long, smoothed disparity one bar before the signal bar > smoothed disparity on the signal bar OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, smoothed disparity one bar before the signal bar < smoothed disparity on the signal bar OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

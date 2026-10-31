@@ -1,3 +1,9 @@
-Calculation: Standard deviation = population standard deviation of the latest std_period changes in the volume-weighted moving average of applied price; std_period is the lookback.
-Long: Current change in the volume-weighted moving average > shorter-threshold coefficient × standard deviation OR current change > longer-threshold coefficient × standard deviation AND current change ≤ longer-threshold coefficient × standard deviation
-Short: Current change < −shorter-threshold coefficient × standard deviation AND current change ≥ −longer-threshold coefficient × standard deviation OR current change < −longer-threshold coefficient × standard deviation
+Calculation: Selected price = a configurable choice of open, high, low, close, (high + low)/2, (high + low + close)/3, (high + low + 2 × close)/4, (open + close)/2, (open + high + low + close)/4, high if close > open else low if close < open else close, (high + close)/2 if close > open else (low + close)/2 if close < open else close, or (close + selected extreme)/2 where the selected extreme is low if close < open, high if close > open, and close otherwise.
+Calculation: Volume-weighted average = sum(selected price × volume) / sum(volume) over a configurable lookback.
+Calculation: Rounded change = current volume-weighted average minus its previous-bar value, rounded to a configurable price precision plus two decimal places.
+Calculation: Rounded threshold = a configurable multiplier times the population standard deviation of volume-weighted-average changes over a configurable lookback, rounded to the same precision as rounded change. Use a smaller and a larger multiplier.
+Calculation: Higher-timeframe decisions = apply the same calculations to the higher timeframe's still-forming bar at the first chart bar of each higher-timeframe bar, then hold that result through the remaining chart bars in that higher-timeframe bar.
+Long: Volume-weighted average > previous volume-weighted average.
+Short: Volume-weighted average < previous volume-weighted average.
+Long: (Rounded change > smaller rounded threshold AND rounded change <= larger rounded threshold) OR rounded change > larger rounded threshold.
+Short: (Rounded change < negative smaller rounded threshold AND rounded change >= negative larger rounded threshold) OR rounded change < negative larger rounded threshold.

@@ -1,3 +1,4 @@
-Calculation: JSatl candle = on a higher timeframe, apply the 65-bar SATL filter to each bar’s open and close, then smooth each result with JMA; use the still-forming bar.
-Long: JSatl candle close > JSatl candle open
-Short: JSatl candle close < JSatl candle open
+Calculation: Smoothed price = Jurik moving average of the slow adaptive trend line (SATL) of a price series; apply the same smoothing length and phase separately to open and close.
+Calculation: Higher-timeframe smoothed open and close = smoothed prices of the higher-timeframe bar still forming, sampled at the first chart bar of that higher-timeframe bar and held until the next higher-timeframe bar.
+Long: Chart-timeframe smoothed close > chart-timeframe smoothed open OR higher-timeframe smoothed close >= higher-timeframe smoothed open
+Short: Chart-timeframe smoothed close < chart-timeframe smoothed open OR higher-timeframe smoothed close < higher-timeframe smoothed open

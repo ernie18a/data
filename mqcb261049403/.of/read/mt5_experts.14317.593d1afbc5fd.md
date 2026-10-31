@@ -1,5 +1,7 @@
-Calculation: Smoothed Bulls = apply a configurable smoother to (bar high − a configurable smoother of bar close), using indicator-timeframe bars, which may be higher or lower than the chart timeframe; use completed bars
-Long: Smoothed Bulls on the latest completed bar > the previous bar AND Smoothed Bulls on the previous bar < the bar before it
-Short: Smoothed Bulls on the latest completed bar < the previous bar AND Smoothed Bulls on the previous bar > the bar before it
-Exit: long, Smoothed Bulls on the latest completed bar < the previous bar AND Smoothed Bulls on the previous bar > the bar before it
-Exit: short, Smoothed Bulls on the latest completed bar > the previous bar AND Smoothed Bulls on the previous bar < the bar before it
+Calculation: Smoothed bull power = Jurik moving average of (high − simple moving average of close), with a shorter smoothing lookback than the price-average lookback.
+Long: Chart-timeframe smoothed bull power > its previous-bar value.
+Short: Chart-timeframe smoothed bull power < its previous-bar value.
+Long: Higher-timeframe smoothed bull power on the last completed bar > its previous-bar value AND its previous-bar value < its value two bars earlier.
+Short: Higher-timeframe smoothed bull power on the last completed bar < its previous-bar value AND its previous-bar value > its value two bars earlier.
+Exit: long, higher-timeframe smoothed bull power on the last completed bar < its previous-bar value OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, higher-timeframe smoothed bull power on the last completed bar > its previous-bar value OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance.

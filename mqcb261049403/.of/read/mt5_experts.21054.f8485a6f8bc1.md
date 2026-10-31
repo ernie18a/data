@@ -1,10 +1,8 @@
-Calculation: Smoothed price derivative = the selected OHLC-derived price’s change from its value at the lookback bars earlier, divided by the lookback and smoothed by the selected moving-average method; calculated on the configured indicator timeframe using completed bars
-Calculation: Positive-rising state = smoothed price derivative > 0 AND smoothed price derivative >= its value one bar earlier
-Calculation: Positive-falling state = smoothed price derivative > 0 AND smoothed price derivative < its value one bar earlier
-Calculation: Negative-rising state = smoothed price derivative < 0 AND smoothed price derivative > its value one bar earlier
-Calculation: Negative-falling state = smoothed price derivative < 0 AND smoothed price derivative <= its value one bar earlier
-Calculation: Zero state = smoothed price derivative = 0
-Long: Positive-rising state AND NOT the prior bar's positive-rising state OR Negative-rising state AND (the prior bar's negative-falling state OR the prior bar's zero state)
-Short: Negative-falling state AND NOT the prior bar's negative-falling state OR Positive-falling state AND (the prior bar's positive-rising state OR the prior bar's zero state)
-Exit: long, Positive-falling state OR Negative-falling state
-Exit: short, Positive-rising state OR Negative-rising state
+Calculation: Derivative = Jurik moving average of 100 × (weighted close − weighted close a configurable number of bars earlier) / that number of bars; weighted close = (high + low + 2 × close) / 4. For the trading decisions, calculate it on a higher timeframe using the last completed bar and earlier completed bars.
+Calculation: State = A when derivative > 0 AND derivative >= previous derivative; B when derivative > 0 AND derivative < previous derivative; C when derivative < 0 AND derivative > previous derivative; D when derivative < 0 AND derivative <= previous derivative; Z when derivative = 0.
+Long: (state = A AND previous state != A) OR (state = C AND (previous state = D OR previous state = Z))
+Short: (state = D AND previous state != D) OR (state = B AND (previous state = A OR previous state = Z))
+Exit: long, state = B OR state = D
+Exit: short, state = A OR state = C
+Exit: long, low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

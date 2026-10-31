@@ -1,6 +1,6 @@
-Calculation: XMA centerline = apply the selected smoothing method to the midpoint of the rolling highest selected OHLC price and rolling lowest selected OHLC price.
-Calculation: Upper channel = XMA centerline × (1 + upper deviation percentage); lower channel = XMA centerline × (1 − lower deviation percentage).
-Long: On the configured indicator timeframe (which may be higher, lower, or equal to the chart timeframe), the last completed bar closes above the upper channel AND the preceding completed bar closed at or below the upper channel.
-Short: On the configured indicator timeframe (which may be higher, lower, or equal to the chart timeframe), the last completed bar closes below the lower channel AND the preceding completed bar closed at or above the lower channel.
-Exit: long, on the configured indicator timeframe (which may be higher, lower, or equal to the chart timeframe), the last completed bar closes below the lower channel.
-Exit: short, on the configured indicator timeframe (which may be higher, lower, or equal to the chart timeframe), the last completed bar closes above the upper channel.
+Calculation: Channel midpoint = the selected moving average of the midpoint of the high of the bar with the maximum selected OHLC field over the upper lookback and the low of the bar with the minimum selected OHLC field over the lower lookback; both lookbacks include the evaluated bar.
+Calculation: Upper channel = channel midpoint multiplied by one plus the upper percentage deviation; lower channel = channel midpoint multiplied by one minus the lower percentage deviation. Calculate the channel and close on the configured indicator timeframe, which may be higher or lower than the chart timeframe, using the last completed bar or, if configured, the still-forming bar; previous means the preceding indicator-timeframe bar.
+Long: Indicator-timeframe close > upper channel AND previous indicator-timeframe close <= previous upper channel
+Short: Indicator-timeframe close < lower channel AND previous indicator-timeframe close >= previous lower channel
+Exit: long, indicator-timeframe close < lower channel OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance
+Exit: short, indicator-timeframe close > upper channel OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance

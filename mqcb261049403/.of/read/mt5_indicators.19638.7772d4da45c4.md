@@ -1,6 +1,7 @@
-Calculation: short-to-medium ratio = smoothed applied price with a shorter lookback divided by smoothed applied price with a medium lookback; negate the ratio if reversal is enabled
-Calculation: long-to-medium ratio = smoothed applied price with a longer lookback divided by smoothed applied price with a medium lookback; negate the ratio if reversal is enabled
-Long: short-to-medium ratio >= long-to-medium ratio on timeframe 1 (configured timeframe is equal to or higher than the chart timeframe; use its bar still forming)
-Short: short-to-medium ratio < long-to-medium ratio on timeframe 1 (configured timeframe is equal to or higher than the chart timeframe; use its bar still forming)
-Long: short-to-medium ratio on timeframe 2 >= long-to-medium ratio on timeframe 2 AND short-to-medium ratio on the preceding timeframe-2 bar < long-to-medium ratio on the preceding timeframe-2 bar (timeframe 2 is equal to or higher than the chart timeframe; compare its bar still forming with the preceding completed bar)
-Short: short-to-medium ratio on timeframe 2 < long-to-medium ratio on timeframe 2 AND short-to-medium ratio on the preceding timeframe-2 bar >= long-to-medium ratio on the preceding timeframe-2 bar (timeframe 2 is equal to or higher than the chart timeframe; compare its bar still forming with the preceding completed bar)
+Calculation: Didi lines = short-lookback and long-lookback moving averages of the same selected price, each divided by a medium-lookback moving average; the three moving averages may use different smoothing methods and parameters. In reversed mode, the first line is the negative long-to-medium ratio and the second is the negative short-to-medium ratio; otherwise, the first line is the short-to-medium ratio and the second is the long-to-medium ratio.
+Calculation: JurX moving average = apply three successive generalized double-EMA stages, each with alpha 3/(length+2) and output 1.5 times its first EMA minus 0.5 times its second EMA; initialize each EMA with the first input.
+Calculation: Parabolic moving average = fit a quadratic least-squares regression to the selected price over the lookback and evaluate it at the newest bar.
+Long: On the forming bar of the higher timeframe used for the trend cloud, the first Didi line > the second Didi line.
+Short: On the forming bar of the higher timeframe used for the trend cloud, the first Didi line < the second Didi line.
+Long: At the start of a new bar on the higher timeframe used for trend markers, its forming-bar first Didi line >= its forming-bar second Didi line.
+Short: At the start of a new bar on the higher timeframe used for trend markers, its forming-bar first Didi line < its forming-bar second Didi line.

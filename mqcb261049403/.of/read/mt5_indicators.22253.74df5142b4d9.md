@@ -1,6 +1,17 @@
-Calculation: Centered volume-weighted RSI = moving average of (RSI of the selected applied price − 50) × selected volume; use the selected moving-average method and lookback on chart-timeframe bars.
-Calculation: Smoothed volume = moving average of selected volume, using the same method and lookback on chart-timeframe bars.
-Calculation: RSI-volume zone = 0 if the centered volume-weighted RSI > upper level 2 × smoothed volume; else 1 if it > upper level 1 × smoothed volume; else 4 if it < lower level 2 × smoothed volume; else 3 if it < lower level 1 × smoothed volume; else 2.
-Calculation: Histogram direction state = rising when the centered volume-weighted RSI is greater than its prior chart-bar value; falling when less; otherwise retain the prior direction state.
-Long: Centered volume-weighted RSI on the current chart bar > 0 AND its prior chart-bar value ≤ 0 OR histogram direction state changes from not rising on the prior chart bar to rising on the current chart bar OR RSI-volume zone changes from > 1 to 1 OR changes from > 0 to 0 OR changes from 3 to < 3 OR changes from 4 to < 4.
-Short: Centered volume-weighted RSI on the current chart bar < 0 AND its prior chart-bar value ≥ 0 OR histogram direction state changes from not falling on the prior chart bar to falling on the current chart bar OR RSI-volume zone changes from < 3 to 3 OR changes from < 4 to 4 OR changes from 1 to > 1 OR changes from 0 to > 0.
+Calculation: Volume-weighted RSI histogram H = moving average of ((RSI of a selectable OHLC-derived price) − 50) × volume. Apply the same selectable smoothing method and length to volume to obtain V. The smoothing method may be SMA, EMA, SMMA, LWMA, Jurik moving average, JurX, parabolic moving average, T3, VIDYA, or Kaufman adaptive moving average.
+Calculation: JurX = three successive stages of 1.5 × EMA(input) − 0.5 × EMA(EMA(input)), with each EMA using smoothing factor 3 / (length + 2) and initialized to the first input.
+Calculation: Parabolic moving average = the fitted value at the newest bar from a quadratic least-squares regression over the lookback window.
+Calculation: Histogram state S = 0 if H > upper outer threshold × V; otherwise 1 if H > upper inner threshold × V; otherwise 4 if H < lower outer threshold × V; otherwise 3 if H < lower inner threshold × V; otherwise 2. The upper outer threshold is greater than the upper inner threshold, and the lower outer threshold is less than the lower inner threshold.
+Calculation: Histogram direction D = 1 if H > previous H; −1 if H < previous H; otherwise previous D, initialized to 1.
+Long: D = 1
+Short: D = −1
+Long: previous H ≤ 0 AND H > 0
+Short: previous H ≥ 0 AND H < 0
+Long: previous S > 1 AND S = 1
+Long: previous S > 0 AND S = 0
+Long: previous S = 3 AND S < 3
+Long: previous S = 4 AND S < 4
+Short: previous S < 3 AND S = 3
+Short: previous S < 4 AND S = 4
+Short: previous S = 1 AND S > 1
+Short: previous S = 0 AND S > 0

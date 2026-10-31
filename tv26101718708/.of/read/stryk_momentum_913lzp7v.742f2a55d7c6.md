@@ -1,20 +1,41 @@
-Calculation: Delta = buy volume − sell volume; use footprint data when available, otherwise estimate from lower timeframe bar polarity.
-Calculation: Rolling VWAP and deviation = volume-weighted mean and standard deviation of typical price over a rolling window of higher-timeframe bars; use the current forming bar.
-Calculation: Volume POC and value area = price bin with greatest volume and the contiguous area around it containing the selected share of volume; profiles use intrabar volume at price.
-Calculation: Confirmed pivots = chart-timeframe pivot highs and lows confirmed after the pivot lookback; higher-timeframe pivots use the last completed higher-timeframe bar.
-Calculation: EMA trend = close relative to the exponential moving average, adjusted by its slope and, when enabled, its smoothing average.
-Calculation: RSI momentum = RSI relative to 50, adjusted by its velocity and agreement between shorter- and longer-lookback RSI; confirmed divergence is a lower RSI pivot high with a higher price pivot high, or a higher RSI pivot low with a lower price pivot low.
-Calculation: Market structure = bullish after a close above the latest confirmed pivot high, bearish after a close below the latest confirmed pivot low, retaining that state until the opposite break.
-Calculation: POC migration = current rolling-profile POC minus its value from a longer-timeframe-bar lookback ago; positive is rising and negative is falling.
-Calculation: Participation and fuel = volume and volume EMA percentile ranks over a lookback; fuel is a bell-shaped function of participation, adjusted for delta agreement and price relative to the EMA.
-Calculation: MDP read score = weighted sum of POC migration direction, market-structure direction, direction of price outside the selected higher-timeframe value area, live higher-timeframe delta direction, and direction of recent print-price movement; scale by participation and fuel.
-Calculation: Bias score = weighted sum of POC migration direction, market-structure direction, and recency-weighted delta direction; delta is normalized by average absolute delta. HTF bias uses the same calculation on higher-timeframe bars, using the last completed bar.
-Calculation: MDP-LDR = sum over recent qualifying prints of weighted votes: delta opposing market structure votes with structure; delta agreeing votes against structure; absorption votes against structure.
-Long: Any selected candle-paint mode has a positive direction: live higher-timeframe delta; delta as a share of volume; bar delta; close above the prior bar's POC/value area or the last completed higher-timeframe rolling profile's POC/value area; rising POC migration; close above the session value area; close above the latest confirmed pivot high; bullish market structure; close above the EMA; close above the previous day's high; close above the Asian-session high; positive rolling-VWAP deviation; bullish candle body; RSI above 50; or bullish confirmed RSI divergence. For the rolling-VWAP deviation mode, a stretch below the exhaustion threshold with positive delta indicates long. A mode's direction is emitted when its calculated direction is positive.
-Short: Any selected candle-paint mode has a negative direction: live higher-timeframe delta; delta as a share of volume; bar delta; close below the prior bar's POC/value area or the last completed higher-timeframe rolling profile's POC/value area; falling POC migration; close below the session value area; close below the latest confirmed pivot low; bearish market structure; close below the EMA; close below the previous day's low; close below the Asian-session low; negative rolling-VWAP deviation; bearish candle body; RSI below 50; or bearish confirmed RSI divergence. For the rolling-VWAP deviation mode, a stretch above the exhaustion threshold with negative delta indicates short. A mode's direction is emitted when its calculated direction is negative.
-Long: Close above the shared higher-timeframe value area with positive delta after a squeeze or absorption flag within its active window, if a release has not already fired for that episode.
-Short: Close below the shared higher-timeframe value area with negative delta after a squeeze or absorption flag within its active window, if a release has not already fired for that episode.
-Long: MDP read score is at or above its bullish threshold; bias score or higher-timeframe bias score is at or above its bullish threshold; or MDP-LDR is at or above its bullish threshold with at least two qualifying prints.
-Short: MDP read score is at or below its bearish threshold; bias score or higher-timeframe bias score is at or below its bearish threshold; or MDP-LDR is at or below its bearish threshold with at least two qualifying prints.
-Long: A qualifying aggression or absorption max-delta print is accepted and its delta is positive.
-Short: A qualifying aggression or absorption max-delta print is accepted and its delta is negative.
+Calculation: Estimated delta = sum signed volume over lower-timeframe bars within the chart bar; sign is positive if close > open, negative if close < open, otherwise positive if close > previous lower-timeframe close, negative if close < it, and zero otherwise. If no lower-timeframe bars are available, use chart-bar volume with the sign of close − open.
+Calculation: Forming higher-timeframe delta = sum estimated delta of chart bars in the higher-timeframe bar still forming.
+Calculation: Profile = assign lower-timeframe volume to price bins at each lower-timeframe close; point of control is the bin with greatest volume. Value-area bounds are obtained by expanding from that bin toward the adjacent occupied bin with greater volume, choosing the upper bin on ties, until the selected fraction of profile volume is included.
+Calculation: Range-distributed profile = distribute each higher-timeframe bar's volume equally across evenly spaced price bins between its low and high, subject to a maximum number of bins per bar; calculate point of control and value-area bounds as for Profile. The rolling window includes the higher-timeframe bar still forming.
+Calculation: Structure = +1 after close exceeds the latest confirmed pivot high, −1 after close falls below the latest confirmed pivot low, and otherwise its previous value; initialize at zero. A pivot is confirmed only after its right-hand pivot bars have completed.
+Calculation: Rolling VWAP and deviation = volume-weighted mean and standard deviation of chart-bar typical price over a rolling number of chart bars equivalent to a selected number of higher-timeframe bars, including the current chart bar.
+Calculation: Divergence state = at each newly confirmed pivot high, compare that pivot's high and its RSI with those at the previous pivot high; bearish divergence holds if price is higher and RSI is lower. At each newly confirmed pivot low, bullish divergence holds if price is lower and RSI is higher. Each state persists until the next pivot of its type reevaluates it; activating either clears the other.
+Long: Forming higher-timeframe delta > 0.
+Short: Forming higher-timeframe delta < 0.
+Long: A weighted average of forming higher-timeframe delta divided by its accumulated volume and chart-bar delta divided by its volume > 0.
+Short: A weighted average of forming higher-timeframe delta divided by its accumulated volume and chart-bar delta divided by its volume < 0.
+Long: Estimated delta > 0.
+Short: Estimated delta < 0.
+Long: Close > the latest confirmed pivot high on the chart timeframe OR close > the latest confirmed pivot high calculated on the higher timeframe using its last completed bar.
+Short: Close < the latest confirmed pivot low on the chart timeframe OR close < the latest confirmed pivot low calculated on the higher timeframe using its last completed bar.
+Long: Structure = +1.
+Short: Structure = −1.
+Long: Close > an EMA of an EMA of the selected price source.
+Short: Close < an EMA of an EMA of the selected price source.
+Long: Close > the high of the previous completed daily session.
+Short: Close < the low of the previous completed daily session.
+Long: Close > the high so far of the current or most recent selected intraday session.
+Short: Close < the low so far of the current or most recent selected intraday session.
+Long: Close > rolling VWAP AND the standardized distance from rolling VWAP is below the positive exhaustion threshold OR close > rolling VWAP AND estimated delta >= 0.
+Short: Close < rolling VWAP AND the standardized distance from rolling VWAP is above the negative exhaustion threshold OR close < rolling VWAP AND estimated delta <= 0.
+Long: Close > open.
+Short: Close < open.
+Long: RSI > its midpoint AND bearish divergence state is inactive OR bullish divergence state is active.
+Short: RSI < its midpoint AND bullish divergence state is inactive OR bearish divergence state is active.
+Long: Close > the upper value-area bound of the profile of the current session so far.
+Short: Close < the lower value-area bound of the profile of the current session so far.
+Long: Close > the upper value-area bound of the previous chart bar's profile OR close is inside that value area AND close > its point of control and the inside-value lean parameter > 0.
+Short: Close < the lower value-area bound of the previous chart bar's profile OR close is inside that value area AND close < its point of control and the inside-value lean parameter > 0.
+Long: Close > the upper value-area bound of either the last completed higher-timeframe bar's profile or a rolling range-distributed higher-timeframe profile OR close is inside that value area AND close > its point of control and the inside-value lean parameter > 0.
+Short: Close < the lower value-area bound of either the last completed higher-timeframe bar's profile or a rolling range-distributed higher-timeframe profile OR close is inside that value area AND close < its point of control and the inside-value lean parameter > 0.
+Long: Close > profile point of control + a selected fraction of the profile reference range, using either the previous chart bar's profile or the last completed higher-timeframe bar's profile or a rolling range-distributed higher-timeframe profile.
+Short: Close < profile point of control − a selected fraction of the profile reference range, using either the previous chart bar's profile or the last completed higher-timeframe bar's profile or a rolling range-distributed higher-timeframe profile.
+Long: Rolling range-distributed higher-timeframe profile point of control > the point of control of the same-length profile a selected number of higher-timeframe bars earlier.
+Short: Rolling range-distributed higher-timeframe profile point of control < the point of control of the same-length profile a selected number of higher-timeframe bars earlier.
+Long: Close > the upper value-area bound of an independently selected rolling range-distributed higher-timeframe profile.
+Short: Close < the lower value-area bound of an independently selected rolling range-distributed higher-timeframe profile.

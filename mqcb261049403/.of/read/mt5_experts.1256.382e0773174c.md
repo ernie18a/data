@@ -1,5 +1,7 @@
-Calculation: UltraFatl state = On the selected indicator timeframe, apply the fixed 39-tap FATL filter to close prices; smooth it across a family of lookbacks that increase by a fixed step, count rising and falling smoothed series, then smooth each count. State is bullish when the smoothed rising count exceeds the falling count, bearish when it is lower, and neutral when equal. Use the last two completed indicator-timeframe bars; this timeframe may be higher or lower than the chart timeframe.
-Long: Previous state is bearish AND current state is bullish
-Short: Previous state is bullish AND current state is bearish
-Exit: long, previous state is bullish AND current state is bearish OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, previous state is bearish AND current state is bullish OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance
+Calculation: Bull and bear lines = apply the FATL filter to the selected bar price; smooth the result with the same smoothing method at a series of progressively longer periods. Count the smoothed series that rise versus their preceding bar as bullish; count all others, including unchanged series, as bearish. Smooth each count separately with the same smoothing method and period. For the trading system, calculate these lines on the indicator timeframe, which may be higher or lower than the chart timeframe, using its last completed bar; optionally use its still-forming bar.
+Long: bull line > bear line
+Short: bull line < bear line
+Long: bull line > bear line AND previous bull line < previous bear line
+Short: bull line < bear line AND previous bull line > previous bear line
+Exit: long, bull line < bear line OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, bull line > bear line OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

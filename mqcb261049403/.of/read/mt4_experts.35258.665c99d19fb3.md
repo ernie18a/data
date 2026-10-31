@@ -1,5 +1,4 @@
-Calculation: Moving average = average of close over its lookback on the chart timeframe, using completed bars
-Long: Short-term moving average < medium-term moving average < long-term moving average AND the latest completed bar's close crosses from at or below to above the short-term moving average
-Short: Short-term moving average > medium-term moving average > long-term moving average AND the latest completed bar's close crosses from at or above to below the short-term moving average
-Exit: long, low <= entry price - stop-loss distance OR high >= entry price + stop-loss distance × take-profit percentage of stop-loss / 100
-Exit: short, high >= entry price + stop-loss distance OR low <= entry price - stop-loss distance × take-profit percentage of stop-loss / 100
+Long: Position side is flat AND, at the start of a chart bar, the last completed bar's shorter-period close moving average is greater than a longer-period close moving average AND a second shorter-period close moving average is greater than a second longer-period close moving average AND the last completed close is greater than a short-period close moving average AND the preceding close is less than that moving average on the preceding bar.
+Short: Position side is flat AND, at the start of a chart bar, the last completed bar's shorter-period close moving average is less than a longer-period close moving average AND a second shorter-period close moving average is less than a second longer-period close moving average AND the last completed close is less than a short-period close moving average AND the preceding close is greater than that moving average on the preceding bar.
+Exit: long, low <= entry price minus fixed stop distance OR high >= entry price plus the fixed stop distance multiplied by the take-profit-to-stop ratio.
+Exit: short, high >= entry price plus fixed stop distance OR low <= entry price minus the fixed stop distance multiplied by the take-profit-to-stop ratio.

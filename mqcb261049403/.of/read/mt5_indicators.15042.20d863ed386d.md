@@ -1,6 +1,5 @@
-Calculation: JFATL = JMA-smoothed 39-bar Fast Adaptive Trend Line (FATL) of the configured applied price
-Calculation: JFATL change = current JFATL − previous JFATL
-Calculation: Change standard deviation = population standard deviation of JFATL changes over a lookback equal to the averaging lookback for those changes
-Calculation: Signal thresholds = JFATL change standard deviation multiplied by two positive coefficients, the smaller coefficient being less than the larger
-Long: JFATL change > smaller signal threshold, evaluated on the chart timeframe or on a higher timeframe's still-forming bar
-Short: JFATL change < −smaller signal threshold, evaluated on the chart timeframe or on a higher timeframe's still-forming bar
+Calculation: Smoothed trend = Jurik moving average of the FATL digital filter applied to a selected OHLC-derived price.
+Calculation: Trend change = current smoothed trend minus its previous-bar value; its deviation is the population standard deviation of trend changes over a lookback including the current bar. For threshold comparisons, round the change and each deviation multiple separately to price precision plus two decimal places.
+Calculation: Higher-timeframe values = the same calculations on the bar still forming in a higher timeframe, copied to the first chart bar of that higher-timeframe bar and carried forward across its chart bars; the copy updates as the higher-timeframe bar forms.
+Long: Smoothed trend > previous-bar smoothed trend OR rounded trend change > rounded smaller deviation multiple OR higher-timeframe smoothed trend > previous higher-timeframe-bar smoothed trend OR higher-timeframe rounded trend change > higher-timeframe rounded smaller deviation multiple.
+Short: Smoothed trend < previous-bar smoothed trend OR rounded trend change < negative rounded smaller deviation multiple OR higher-timeframe smoothed trend < previous higher-timeframe-bar smoothed trend OR higher-timeframe rounded trend change < negative higher-timeframe rounded smaller deviation multiple.

@@ -1,5 +1,10 @@
-Calculation: JJRSX = 100 × JurX-smoothed one-bar applied-price change ÷ JurX-smoothed absolute one-bar applied-price change, then JMA-smoothed
-Long: JJRSX on the current bar > JJRSX on the previous bar OR JJRSX on the oldest of the three signal bars > JJRSX on the middle signal bar AND JJRSX on the middle signal bar < JJRSX on the newest signal bar
-Short: JJRSX on the current bar < JJRSX on the previous bar OR JJRSX on the oldest of the three signal bars < JJRSX on the middle signal bar AND JJRSX on the middle signal bar > JJRSX on the newest signal bar
-Exit: Long, JJRSX on the oldest of the three signal bars < JJRSX on the middle signal bar AND JJRSX on the middle signal bar > JJRSX on the newest signal bar
-Exit: Short, JJRSX on the oldest of the three signal bars > JJRSX on the middle signal bar AND JJRSX on the middle signal bar < JJRSX on the newest signal bar
+Calculation: Ultralinear smoothing = for input x and smoothing length n, set k = 3 / (n + 2), initialize six states to the first x, then on each bar update sequentially: f1 = (1-k)f1 + kx; f2 = kf1 + (1-k)f2; v1 = 1.5f1 - 0.5f2; f3 = (1-k)f3 + kv1; f4 = kf3 + (1-k)f4; v2 = 1.5f3 - 0.5f4; f5 = (1-k)f5 + kv2; f6 = kf5 + (1-k)f6; output = 1.5f5 - 0.5f6.
+Calculation: Smoothed oscillator = Jurik moving average, with its own length and phase, of 100 times ultralinear-smoothed selected price change divided by ultralinear-smoothed absolute selected price change, using the same smoothing length for both. Replace a zero absolute price change with a positive price increment before smoothing.
+Long: Chart-timeframe smoothed oscillator > its previous bar value.
+Short: Chart-timeframe smoothed oscillator < its previous bar value.
+Long: On the configured indicator timeframe, which may be higher or lower than the chart timeframe, the last completed bar's smoothed oscillator > the preceding bar's value AND the value two bars before the last completed bar > the preceding bar's value.
+Short: On the configured indicator timeframe, which may be higher or lower than the chart timeframe, the last completed bar's smoothed oscillator < the preceding bar's value AND the value two bars before the last completed bar < the preceding bar's value.
+Exit: long, on the configured indicator timeframe, which may be higher or lower than the chart timeframe, the last completed bar's smoothed oscillator < the preceding bar's value.
+Exit: short, on the configured indicator timeframe, which may be higher or lower than the chart timeframe, the last completed bar's smoothed oscillator > the preceding bar's value.
+Exit: long, low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance.
+Exit: short, high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance.

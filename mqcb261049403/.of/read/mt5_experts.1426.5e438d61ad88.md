@@ -1,5 +1,7 @@
-Calculation: Schaff Trend Cycle (STC) = On the configured indicator timeframe, subtract the long-lookback XMA of the selected price from the short-lookback XMA of that price, where the short lookback is shorter. Normalize this difference over a rolling Cycle-bar range to 0–100; smooth each value as 0.5 × current + 0.5 × previous. Normalize the smoothed values over a rolling Cycle-bar range to −100–100, then smooth the same way to get STC. If either range is zero, use that stage’s previous value. Use the last completed indicator-timeframe bar and its preceding completed bar; the configured timeframe may be higher or lower than the chart timeframe.
-Long: Previous STC > upper level AND current STC > upper level AND current STC >= previous STC
-Short: Previous STC < lower level AND current STC >= lower level
-Exit: long, Previous STC < lower level AND current STC >= lower level
-Exit: short, Previous STC > upper level AND current STC > upper level AND current STC >= previous STC
+Calculation: Trend cycle = subtract a longer-period moving average of the selected bar price from a shorter-period moving average of the same type; stochastic-normalize this difference over a lookback to 0–100, recursively smooth it as (current value + previous smoothed value) / 2, stochastic-normalize the smoothed series over the same lookback to -100–100, and recursively smooth the result in the same way. When either stochastic range is zero, use that stage's previous smoothed value as its raw value. Calculate on the chart timeframe or a selected higher or lower timeframe, using the last completed bar or the still-forming bar as selected; previous means the preceding bar of that timeframe.
+Long: Trend cycle > upper positive threshold AND trend cycle >= previous trend cycle AND previous trend cycle > upper positive threshold
+Short: Trend cycle < lower negative threshold AND trend cycle < previous trend cycle AND previous trend cycle >= lower negative threshold
+Exit: long, trend cycle < lower negative threshold AND trend cycle < previous trend cycle
+Exit: short, trend cycle > upper positive threshold AND trend cycle >= previous trend cycle
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

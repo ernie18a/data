@@ -1,4 +1,5 @@
-Calculation: Upper XMA channel = selected moving-average method applied to bar highs over a lookback.
-Calculation: Lower XMA channel = selected moving-average method applied to bar lows over a lookback.
-Long: chart-timeframe close > upper XMA channel on the chart timeframe OR chart-timeframe close > upper XMA channel on a higher timeframe, using the higher-timeframe bar still forming at the start of its interval and holding that value through the interval.
-Short: chart-timeframe close < lower XMA channel on the chart timeframe OR chart-timeframe close < lower XMA channel on a higher timeframe, using the higher-timeframe bar still forming at the start of its interval and holding that value through the interval.
+Calculation: Channel bounds = the same selected moving average, with the same parameters, applied separately to high and low, each plus the same configurable price offset.
+Long: Chart-timeframe close > upper channel bound AND chart-timeframe close >= lower channel bound.
+Short: Chart-timeframe close < lower channel bound.
+Long: The still-forming higher-timeframe bar's close > its upper channel bound AND its close >= its lower channel bound.
+Short: The still-forming higher-timeframe bar's close < its lower channel bound.

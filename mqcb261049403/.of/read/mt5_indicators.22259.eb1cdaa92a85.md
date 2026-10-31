@@ -1,5 +1,8 @@
-Calculation: SATL-filtered price = sum of the current and preceding 98 chart-bar prices, weighted by the fixed 99-tap SATL filter coefficients.
-Calculation: Signal candle close = JMA-smoothed SATL-filtered close, using a shared JMA length and phase for all candle fields.
-Calculation: Signal candle open = JMA-smoothed SATL-filtered open, except use the previous signal candle close when absolute chart-bar open minus close is at most the gap threshold.
-Long: Signal candle open < signal candle close
-Short: Signal candle open > signal candle close
+Calculation: Filtered price = sum of the current and preceding price values multiplied in order by [-0.00514293,-0.00398417,-0.00262594,-0.00107121,0.00066887,0.00258172,0.00465269,0.00686394,0.00919334,0.01161720,0.01411056,0.01664635,0.01919533,0.02172747,0.02421320,0.02662203,0.02892446,0.03109071,0.03309496,0.03490921,0.03651145,0.03788045,0.03899804,0.03984915,0.04042329,0.04071263,0.04071263,0.04042329,0.03984915,0.03899804,0.03788045,0.03651145,0.03490921,0.03309496,0.03109071,0.02892446,0.02662203,0.02421320,0.02172747,0.01919533,0.01664635,0.01411056,0.01161720,0.00919334,0.00686394,0.00465269,0.00258172,0.00066887,-0.00107121,-0.00262594,-0.00398417,-0.00514293,-0.00609634,-0.00684602,-0.00739452,-0.00774847,-0.00791630,-0.00790940,-0.00774085,-0.00742482,-0.00697718,-0.00641613,-0.00576108,-0.00502957,-0.00423873,-0.00340812,-0.00255923,-0.00170217,-0.00085902,-0.00004113,0.00073700,0.00146422,0.00213007,0.00272649,0.00324752,0.00368922,0.00405000,0.00433024,0.00453068,0.00465046,0.00469058,0.00466041,0.00457855,0.00442491,0.00423019,0.00399201,0.00372169,0.00342736,0.00311822,0.00280309,0.00249088,0.00219089,0.00191283,0.00166683,0.00146419,0.00131867,0.00124645,0.00126836,-0.00401854].
+Calculation: Smoothed price = apply three successive stages to filtered price; each stage updates a = (1-k)*a + k*input, then b = k*a + (1-k)*b, and outputs 1.5*a - 0.5*b, where k = 3/(smoothing length + 2); initialize each stage's a and b to its first input. Calculate open and close independently with the same smoothing length.
+Calculation: Adjusted smoothed open = previous bar's smoothed close if abs(open - close) <= gap threshold; otherwise current smoothed open.
+Long: Smoothed close > adjusted smoothed open.
+Short: Smoothed close < adjusted smoothed open.
+Calculation: Higher-timeframe smoothed open and close = the same calculations on higher-timeframe bars, using the bar still forming at the first chart bar of each higher-timeframe bar and holding that calculation until the next higher-timeframe bar.
+Long: Higher-timeframe smoothed close > higher-timeframe adjusted smoothed open.
+Short: Higher-timeframe smoothed close < higher-timeframe adjusted smoothed open.

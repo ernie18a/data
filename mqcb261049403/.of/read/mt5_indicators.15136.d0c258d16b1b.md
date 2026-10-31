@@ -1,2 +1,2 @@
-Long: RVI main line > RVI signal line on the chart timeframe OR on a higher timeframe using its still-forming bar
-Short: RVI main line < RVI signal line on the chart timeframe OR on a higher timeframe using its still-forming bar
+Long: scaling factor × Relative Vigor Index main line > scaling factor × Relative Vigor Index signal line, calculated on the chart timeframe OR on the still-forming higher-timeframe bar
+Short: scaling factor × Relative Vigor Index main line < scaling factor × Relative Vigor Index signal line, calculated on the chart timeframe OR on the still-forming higher-timeframe bar

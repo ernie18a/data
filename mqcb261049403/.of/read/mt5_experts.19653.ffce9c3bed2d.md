@@ -1,5 +1,6 @@
-Calculation: JFATL direction state = bullish when the rounded JMA-smoothed 39-bar FATL rises, bearish when it falls, and otherwise retain the prior state; FATL is the weighted sum of the selected bar price over the current and 38 prior bars using the FATL coefficients. Evaluate on the configured signal timeframe, whether higher or lower than the chart timeframe, using completed bars.
-Long: JFATL direction state changes to bullish.
-Short: JFATL direction state changes to bearish.
-Exit: long, JFATL direction state changes to bearish OR low <= entry price - configured stop distance OR high >= entry price + configured target distance OR current datetime - position entry datetime > configured holding duration.
-Exit: short, JFATL direction state changes to bullish OR high >= entry price + configured stop distance OR low <= entry price - configured target distance OR current datetime - position entry datetime > configured holding duration.
+Calculation: Filtered line = round the Jurik moving average of the fast adaptive trend line (FATL) of a selected OHLC-derived price to a configurable price increment; calculate on the chart timeframe or a configurable higher or lower timeframe, using the last completed bar or the still-forming bar as configured.
+Calculation: Trend state = sign of the change in the filtered line from its previous bar; when the change is zero, retain the previous trend state.
+Long: Trend state = positive AND previous trend state is not positive.
+Short: Trend state = negative AND previous trend state is not negative.
+Exit: long, trend state = negative OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, trend state = positive OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

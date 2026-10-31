@@ -1,3 +1,7 @@
-Calculation: FatlMacd candle = for each input OHLC series, apply the same selected moving average to that series minus the 39-bar FATL; FATL is the weighted sum of the current and 38 preceding values with weights [0.4360409450, 0.3658689069, 0.2460452079, 0.1104506886, -0.0054034585, -0.0760367731, -0.0933058722, -0.0670110374, -0.0190795053, 0.0259609206, 0.0502044896, 0.0477818607, 0.0249252327, -0.0047706151, -0.0272432537, -0.0338917071, -0.0244141482, -0.0055774838, 0.0128149838, 0.0226522218, 0.0208778257, 0.0100299086, -0.0036771622, -0.0136744850, -0.0160483392, -0.0108597376, -0.0016060704, 0.0069480557, 0.0110573605, 0.0095711419, 0.0040444064, -0.0023824623, -0.0067093714, -0.0072003400, -0.0047717710, 0.0005541115, 0.0007860160, 0.0130129076, 0.0040364019], then divide each result by the instrument's point size.
-Long: FatlMacd candle close > FatlMacd candle open
-Short: FatlMacd candle close < FatlMacd candle open
+Calculation: Oscillator(p) = a selectable moving average of p minus FATL(p), calculated on the selected price series p.
+Long: Oscillator(selected price) > 0 AND Oscillator(selected price) > its previous value OR Oscillator(selected price) < 0 AND Oscillator(selected price) > its previous value
+Short: Oscillator(selected price) > 0 AND Oscillator(selected price) < its previous value OR Oscillator(selected price) < 0 AND Oscillator(selected price) < its previous value
+Long: Oscillator(close) > Oscillator(open), using chart-timeframe bars
+Short: Oscillator(close) < Oscillator(open), using chart-timeframe bars
+Long: Oscillator(close) >= Oscillator(open), using the still-forming higher-timeframe bar sampled on its first chart-timeframe bar and held until the next higher-timeframe bar
+Short: Oscillator(close) < Oscillator(open), using the still-forming higher-timeframe bar sampled on its first chart-timeframe bar and held until the next higher-timeframe bar

@@ -1,5 +1,5 @@
-Calculation: Smoothed price-channel oscillator = apply a configured smoother to 100 × (selected price − (smoothed selected price − smoothed high-low range)) / (2 × denominator) − 50, then smooth the result with JJMA. The price and high-low range smoothers use the same lookback, though their smoothing methods may differ. Use 1 as the denominator when the smoothed range is zero; retain the actual smoothed range in the subtraction. Evaluate on the configured indicator timeframe, which may be higher or lower than the chart timeframe, using completed bars only.
-Long: Oscillator on the signal bar > upper level AND oscillator on the preceding bar ≤ upper level
-Short: Oscillator on the signal bar < lower level AND oscillator on the preceding bar ≥ lower level
-Exit: Long, oscillator < 0
-Exit: Short, oscillator > 0
+Calculation: Oscillator = Jurik moving average, with maximum phase, of 100 * (price - (price average - range average)) / (2 * divisor) - 50, where price is the selected bar price, price average is a moving average of price, range average is a separately selected moving average of high - low using the same lookback as the price average, and divisor equals the range average unless it is zero, in which case divisor is 1. Calculate on the last completed higher-timeframe bar and its predecessor.
+Long: oscillator > upper threshold AND previous oscillator <= upper threshold
+Short: oscillator < lower threshold AND previous oscillator >= lower threshold
+Exit: long, oscillator < 0 OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, oscillator > 0 OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

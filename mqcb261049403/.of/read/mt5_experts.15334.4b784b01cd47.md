@@ -1,7 +1,7 @@
-Calculation: JFATL = JMA-smoothed 39-bar FATL digital-filter value of applied OHLC price; calculate on the configured indicator timeframe and evaluate its last completed bar.
-Calculation: JFATL change = current JFATL minus previous JFATL value.
-Calculation: Change standard deviation = population standard deviation of the recent JFATL changes, using a lookback longer than one bar.
-Long: JFATL change > lower threshold × Change standard deviation OR (current JFATL > previous JFATL AND previous JFATL < JFATL two bars earlier)
-Short: JFATL change < −lower threshold × Change standard deviation OR (current JFATL < previous JFATL AND previous JFATL > JFATL two bars earlier)
-Exit: long, previous JFATL > current JFATL
-Exit: short, previous JFATL < current JFATL
+Calculation: Smoothed trend line = Jurik moving average, with configurable length and phase, of the Fast Adaptive Trend Line of a configurable OHLC-derived price. Calculate on the chart timeframe or a configurable higher or lower timeframe, using the last completed bar or the still-forming bar according to the signal-bar setting; prior values are prior bars of that same timeframe.
+Calculation: Trend change = smoothed trend line minus its preceding value, rounded to the price precision plus two decimal places.
+Calculation: Change threshold = population standard deviation of the unrounded one-bar changes in the smoothed trend line over a configurable lookback, multiplied by a configurable lower coefficient and rounded to the price precision plus two decimal places.
+Long: Trend change > change threshold OR (smoothed trend line > its preceding value AND its preceding value < its value two bars ago)
+Short: Trend change < -change threshold OR (smoothed trend line < its preceding value AND its preceding value > its value two bars ago)
+Exit: long, trend change < -change threshold OR smoothed trend line < its preceding value OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, trend change > change threshold OR smoothed trend line > its preceding value OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

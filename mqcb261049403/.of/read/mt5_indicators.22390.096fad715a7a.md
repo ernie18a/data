@@ -1,4 +1,5 @@
-Calculation: Smoothed open and close = apply the first configurable moving average, then the second configurable moving average, to the chart-bar open and close, respectively.
-Calculation: Adjusted candle open = previous adjusted candle close when the absolute difference between chart-bar open and close is at most the gap threshold; otherwise, smoothed open.
-Long: Adjusted candle open < smoothed close
-Short: Adjusted candle open > smoothed close
+Calculation: Smoothed candle open and close = apply a first selectable moving average separately to open and close, then apply a second selectable moving average to each result; the two stages have independently selected methods and parameters. Methods include SMA, EMA, SMMA, LWMA, Jurik moving average, JurX, parabolic regression moving average, T3, VIDYA, and Kaufman adaptive moving average. If the absolute difference between the current raw open and close is at most a gap threshold, replace the smoothed candle open with the previous bar's smoothed candle close.
+Calculation: JurX = apply three successive stages to the input, each stage being 1.5 times an EMA minus 0.5 times an EMA of that EMA, with smoothing factor 3 / (length + 2); initialize each EMA to the first input.
+Calculation: Parabolic regression moving average = the fitted value at the newest observation of a least-squares quadratic regression over the lookback.
+Long: Smoothed candle close > smoothed candle open on the chart timeframe OR smoothed candle close > smoothed candle open on a higher timeframe using its still-forming bar.
+Short: Smoothed candle close < smoothed candle open on the chart timeframe OR smoothed candle close < smoothed candle open on a higher timeframe using its still-forming bar.

@@ -1,15 +1,19 @@
-Calculation: RSIOMA = RSI of the smoothed applied price: smooth price with a short lookback, calculate its momentum, recursively smooth positive and negative momentum with the RSI lookback, then compute 100 − 100/(1 + positive/negative). Use the last completed indicator-timeframe bars for EA signals; that timeframe can be higher or lower than the chart timeframe. For indicator markings, use the current forming bar and its preceding bar.
-Long: RSIOMA < oversold level AND RSIOMA > its preceding value
-Short: RSIOMA > overbought level AND RSIOMA < its preceding value
-Long: On the indicator timeframe, preceding completed RSIOMA <= upper trend level AND latest completed RSIOMA > upper trend level
-Short: On the indicator timeframe, preceding completed RSIOMA >= lower trend level AND latest completed RSIOMA < lower trend level
-Exit: short, latest completed RSIOMA > upper trend level
-Exit: long, latest completed RSIOMA < lower trend level
-Long: On the indicator timeframe, middle completed RSIOMA < latest completed RSIOMA AND oldest of the three completed RSIOMA values > middle completed RSIOMA
-Short: On the indicator timeframe, middle completed RSIOMA > latest completed RSIOMA AND oldest of the three completed RSIOMA values < middle completed RSIOMA
-Exit: short, latest completed RSIOMA > middle completed RSIOMA
-Exit: long, latest completed RSIOMA < middle completed RSIOMA
-Long: On the indicator timeframe, preceding completed RSIOMA <= upper trend level AND latest completed RSIOMA > upper trend level
-Short: On the indicator timeframe, preceding completed RSIOMA >= lower trend level AND latest completed RSIOMA < lower trend level
-Exit: short, latest completed RSIOMA > upper trend level
-Exit: long, latest completed RSIOMA < lower trend level
+Calculation: Oscillator = Smooth the selected OHLC-derived price with a moving average; subtract its value a momentum lookback earlier; calculate Wilder-smoothed averages of the positive and absolute negative differences using the same period as the price average. Return 100 - 100 / (1 + positive average / negative average), or 0 when the negative average is zero.
+Calculation: Signal line = moving average of the oscillator with an independently chosen smoothing method and period.
+Calculation: Signal-bar oscillator = oscillator at a selectable bar offset on a selectable higher or lower timeframe; offset zero uses the bar still forming, and a positive offset uses a completed bar. Previous values are taken from preceding bars of that timeframe.
+Long: Chart-timeframe oscillator > upper trend threshold.
+Short: Chart-timeframe oscillator < lower trend threshold.
+Long: Chart-timeframe oscillator < lower reversal threshold AND oscillator > previous oscillator.
+Short: Chart-timeframe oscillator > upper reversal threshold AND oscillator < previous oscillator.
+Long: Chart-timeframe oscillator > signal line.
+Short: Chart-timeframe oscillator < signal line.
+Long: Signal-bar oscillator > upper trend threshold AND previous signal-bar oscillator <= upper trend threshold.
+Short: Signal-bar oscillator < lower trend threshold AND previous signal-bar oscillator >= lower trend threshold.
+Long: Signal-bar oscillator > previous signal-bar oscillator AND previous signal-bar oscillator < oscillator two signal bars ago.
+Short: Signal-bar oscillator < previous signal-bar oscillator AND previous signal-bar oscillator > oscillator two signal bars ago.
+Long: Signal-bar oscillator < lower trend threshold AND previous signal-bar oscillator >= lower trend threshold.
+Short: Signal-bar oscillator > upper trend threshold AND previous signal-bar oscillator <= upper trend threshold.
+Exit: short, signal-bar oscillator > upper trend threshold OR signal-bar oscillator > previous signal-bar oscillator OR signal-bar oscillator < lower trend threshold.
+Exit: long, signal-bar oscillator < lower trend threshold OR signal-bar oscillator < previous signal-bar oscillator OR signal-bar oscillator > upper trend threshold.
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

@@ -1,6 +1,6 @@
-Calculation: Fast line = RSI of the selected applied price, smoothed with a shorter lookback on the signal timeframe, which may be higher or lower than the chart timeframe; use completed bars.
-Calculation: Slow line = Fast line smoothed with a longer lookback on the signal timeframe; use completed bars.
-Long: Fast line on the previous completed signal-timeframe bar <= Slow line on that bar AND Fast line on the latest completed signal-timeframe bar > Slow line on that bar
-Short: Fast line on the previous completed signal-timeframe bar >= Slow line on that bar AND Fast line on the latest completed signal-timeframe bar < Slow line on that bar
-Exit: Long, Fast line on the latest completed signal-timeframe bar < Slow line on that bar
-Exit: Short, Fast line on the latest completed signal-timeframe bar > Slow line on that bar
+Calculation: Fast line = short-period simple moving average of RSI on a selected price, calculated on the last completed higher-timeframe bar.
+Calculation: Slow line = longer-period simple moving average of the fast line, calculated on the same higher-timeframe bars.
+Long: Fast line > slow line AND previous higher-timeframe fast line <= previous higher-timeframe slow line.
+Short: Fast line < slow line AND previous higher-timeframe fast line >= previous higher-timeframe slow line.
+Exit: long, fast line < slow line OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, fast line > slow line OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

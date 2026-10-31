@@ -1,5 +1,5 @@
-Calculation: DigVariation = causal digital smoothing of 1000 × (close − MA(close) − MA(close − MA(close))), using the same averaging method and lookback for both moving averages; calculate on the selected indicator timeframe, which may be higher or lower than the chart timeframe, using completed bars.
-Long: DigVariation on the newest of three consecutive completed indicator-timeframe bars > DigVariation on the middle bar AND DigVariation on the oldest bar > DigVariation on the middle bar
-Short: DigVariation on the newest of three consecutive completed indicator-timeframe bars < DigVariation on the middle bar AND DigVariation on the oldest bar < DigVariation on the middle bar
-Exit: long, DigVariation on the newest completed indicator-timeframe bar < DigVariation on the preceding completed bar
-Exit: short, DigVariation on the newest completed indicator-timeframe bar > DigVariation on the preceding completed bar
+Calculation: Oscillator = apply a configurable causal finite-impulse-response filter to 1000 × (close − moving average of close − moving average of (close − moving average of close)); both moving averages use the same method and lookback. The filter is a weighted sum of the current and preceding oscillator inputs, with configurable weights; an identity filter leaves the input unchanged. Calculate on a selectable higher, lower, or chart timeframe, using the last completed bar or the still-forming bar as configured. Let O0 be the value on the selected signal bar, O1 the preceding value, and O2 the value before O1.
+Long: O1 < O0 AND O2 > O1
+Short: O1 > O0 AND O2 < O1
+Exit: long, O1 > O0 OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, O1 < O0 OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

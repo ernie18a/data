@@ -1,6 +1,7 @@
-Calculation: Volume-weighted price = sum of (tick volume × weighted close) over a lookback divided by summed tick volume, where weighted close = (2 × close + high + low) / 4
-Calculation: Normalized oscillator = 100 × (current volume-weighted price − lowest volume-weighted price over a lookback) / (highest − lowest volume-weighted price over that lookback) − 50
-Calculation: First smoothed oscillator = apply a smoothing method to the normalized oscillator
-Calculation: Second smoothed oscillator = apply the same smoothing method and lookback as the first smoothed oscillator to the first smoothed oscillator
-Long: On the higher timeframe bar still forming, the first smoothed oscillator crosses above the second smoothed oscillator
-Short: On the higher timeframe bar still forming, the first smoothed oscillator crosses below the second smoothed oscillator
+Calculation: Volume-weighted price = sum(volume × selected OHLC-derived price) over a rolling lookback divided by max(sum(volume), 1).
+Calculation: Normalized price = 100 × (volume-weighted price − rolling minimum of volume-weighted price) / max(rolling maximum − rolling minimum, price increment) − 50; both extrema use the same lookback and include the current bar.
+Calculation: Fast line = moving average of normalized price; slow line = moving average of the fast line using the same smoothing method and parameters.
+Long: Chart-timeframe fast line > slow line.
+Short: Chart-timeframe fast line <= slow line.
+Long: At the first chart bar of a higher-timeframe bar, the still-forming higher-timeframe fast line > slow line AND the preceding higher-timeframe fast line <= slow line.
+Short: At the first chart bar of a higher-timeframe bar, the still-forming higher-timeframe fast line <= slow line AND the preceding higher-timeframe fast line > slow line.

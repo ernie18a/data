@@ -1,6 +1,6 @@
-Calculation: Smoothed high = selected moving average of high over a lookback on the configured indicator timeframe, which may be higher or lower than the chart timeframe
-Calculation: Smoothed low = selected moving average of low over the same lookback and using the same method on the configured indicator timeframe, which may be higher or lower than the chart timeframe
-Long: Current completed indicator-timeframe bar close >= Smoothed low AND previous completed indicator-timeframe bar close < Smoothed low
-Short: Current completed indicator-timeframe bar close < Smoothed low AND previous completed indicator-timeframe bar close >= Smoothed low
-Exit: Long, current completed indicator-timeframe bar close < Smoothed low
-Exit: Short, current completed indicator-timeframe bar close >= Smoothed low
+Long: Chart-timeframe close >= moving average of chart-timeframe lows
+Short: Chart-timeframe close < moving average of chart-timeframe lows
+Long: On the indicator timeframe, which may be higher or lower than the chart timeframe, the last completed bar's close >= its moving average of lows AND the preceding bar's close < its moving average of lows
+Short: On the indicator timeframe, which may be higher or lower than the chart timeframe, the last completed bar's close < its moving average of lows AND the preceding bar's close >= its moving average of lows
+Exit: long, the last completed indicator-timeframe bar's close < its moving average of lows OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, the last completed indicator-timeframe bar's close >= its moving average of lows OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

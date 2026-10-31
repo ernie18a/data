@@ -1,4 +1,4 @@
-Calculation: Rounded PEMA = round to the configured price increment the weighted sum of eight sequential EMAs of the configured bar price: 8×EMA1 − 28×EMA2 + 56×EMA3 − 70×EMA4 + 56×EMA5 − 28×EMA6 + 8×EMA7 − EMA8; each EMA uses the same lookback.
-Calculation: PEMA trend state = up when rounded PEMA rises, down when it falls, otherwise carry the previous state; initialize as neutral.
-Long: On any configured timeframe (higher or lower than the chart timeframe), the last completed bar's PEMA trend state is up AND the preceding completed bar's state is not up.
-Short: On any configured timeframe (higher or lower than the chart timeframe), the last completed bar's PEMA trend state is down AND the preceding completed bar's state is not down.
+Calculation: Rounded moving average = round (8E1 - 28E2 + 56E3 - 70E4 + 56E5 - 28E6 + 8E7 - E8 + price offset) to a configurable price increment, where E1 is the EMA of the selected OHLC-derived price and each subsequent E is the EMA of the preceding E, all with the same length; initialize each EMA with its first available input.
+Calculation: Trend = 1 when the rounded moving average is greater than its preceding-bar value, -1 when it is less, and otherwise the preceding trend; initialize as 0. Calculate independently on the chart timeframe and on each selected higher or lower timeframe. For another timeframe, evaluate the selected bar offset from the currently forming bar, including either the forming bar or the last completed bar as configurable choices.
+Long: Trend > 0
+Short: Trend < 0

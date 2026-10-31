@@ -1,5 +1,11 @@
-Calculation: Smoothed volume-weighted CCI candle values = apply the same selected smoothing method and length separately to each of CCI(open) × volume, CCI(high) × volume, CCI(low) × volume, and CCI(close) × volume; use volume from the backtest data.
-Calculation: Adjusted smoothed CCI open = previous bar’s smoothed CCI close when the absolute difference between the bar’s raw open and close is at most the gap threshold; otherwise use smoothed CCI open.
-Calculation: Upper and lower thresholds = the respective overbought or oversold level multiplied by smoothed volume.
-Long: Previous smoothed CCI close ≤ previous adjusted smoothed CCI open AND current smoothed CCI close > current adjusted smoothed CCI open OR previous smoothed CCI close ≤ previous upper threshold AND current smoothed CCI close > current upper threshold OR previous smoothed CCI close ≤ previous lower threshold AND current smoothed CCI close > current lower threshold OR previous smoothed CCI close < 0 AND current smoothed CCI close ≥ 0
-Short: Previous smoothed CCI close ≥ previous adjusted smoothed CCI open AND current smoothed CCI close < current adjusted smoothed CCI open OR previous smoothed CCI close ≥ previous lower threshold AND current smoothed CCI close < current lower threshold OR previous smoothed CCI close > previous upper threshold AND current smoothed CCI close ≤ current upper threshold OR previous smoothed CCI close > 0 AND current smoothed CCI close ≤ 0
+Calculation: Volume-weighted CCI candle = calculate CCI separately from open and close, multiply each by volume, and smooth each product independently with the same selected smoothing method and parameters; its close is the smoothed close product, and its open is the smoothed open product unless the absolute difference between the price open and close is at most a configurable gap threshold, in which case its open is the previous candle's smoothed close.
+Calculation: Channel levels = configurable upper and lower CCI thresholds multiplied by volume smoothed with the same method and parameters as the volume-weighted CCI candle.
+Long: Previous candle close > 0 AND current candle close <= 0 AND current zero-crossing marker indicates an upward crossing
+Long: Previous candle close < 0 AND current candle close >= 0
+Long: Previous candle close <= previous candle open AND current candle close > current candle open
+Long: Previous candle close <= previous upper channel level AND current candle close > current upper channel level
+Long: Previous candle close <= previous lower channel level AND current candle close > current lower channel level
+Short: Previous candle close > 0 AND current candle close <= 0
+Short: Previous candle close >= previous candle open AND current candle close < current candle open
+Short: Previous candle close >= previous lower channel level AND current candle close < current lower channel level
+Short: Previous candle close > previous upper channel level AND current candle close <= current upper channel level

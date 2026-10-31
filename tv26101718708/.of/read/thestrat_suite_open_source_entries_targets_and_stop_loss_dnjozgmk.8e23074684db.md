@@ -1,5 +1,17 @@
-Calculation: Bar type = inside when its high is at or below the prior bar’s high and its low is at or above the prior bar’s low; outside when it exceeds both; otherwise directional up when it exceeds only the prior high, or directional down when it exceeds only the prior low.
-Calculation: Failed breakout = a directional bar that breaks one side of the preceding bar’s range and then meets the selected failure test: close back within that range, close against its open, both, or either.
-Calculation: Full timeframe continuity = all enabled signal timeframes close above their opens, or all close below their opens; mixed directions are no continuity.
-Long: Signal-timeframe current bar breaks above the latest completed bar’s high AND any applicable setup and filters are met: latest completed bar is inside and the bar before it closed down or flat (reversal), latest completed bar is inside and the bar before it closed up (continuation), latest completed bar broke only the prior low (reversal), latest completed bar broke only the prior high (continuation), latest completed bar was outside and current bar breaks up, or current bar is a failed downside breakout; require bullish continuity only when that setup’s continuity filter is enabled, and apply its configured hammer/shooter and failed-breakout filters.
-Short: Signal-timeframe current bar breaks below the latest completed bar’s low AND any applicable setup and filters are met: latest completed bar is inside and the bar before it closed up or flat (reversal), latest completed bar is inside and the bar before it closed down (continuation), latest completed bar broke only the prior high (reversal), latest completed bar broke only the prior low (continuation), latest completed bar was outside and current bar breaks down, or current bar is a failed upside breakout; require bearish continuity only when that setup’s continuity filter is enabled, and apply its configured hammer/shooter and failed-breakout filters.
+Calculation: Bar reference = the current chart bar or the still-forming bar of an enabled higher timeframe; the prior bar is the last completed bar of that same timeframe.
+Calculation: Inside bar = bar high <= prior high AND bar low >= prior low.
+Calculation: Upward directional bar = bar high > prior high AND bar low >= prior low.
+Calculation: Downward directional bar = bar low < prior low AND bar high <= prior high.
+Calculation: Outside bar = bar high > prior high AND bar low < prior low.
+Calculation: Bearish failed breakout = upward directional bar AND, according to the selected detection method, bar close <= bar open OR prior low <= bar close <= prior high OR both conditions OR either condition.
+Calculation: Bullish failed breakout = downward directional bar AND, according to the selected detection method, bar close > bar open OR prior low <= bar close <= prior high OR both conditions OR either condition.
+Long: Inside bar AND bar close > bar open.
+Short: Inside bar AND bar close <= bar open.
+Long: Upward directional bar AND bearish failed breakout is not selected or is false.
+Short: Downward directional bar AND bullish failed breakout is not selected or is false.
+Long: Bullish failed breakout.
+Short: Bearish failed breakout.
+Long: Outside bar AND bar close > bar open.
+Short: Outside bar AND bar close <= bar open.
+Long: Chart close > the open of every enabled still-forming higher-timeframe bar and every enabled chart-timeframe bar.
+Short: Chart close <= the open of every enabled still-forming higher-timeframe bar and every enabled chart-timeframe bar.

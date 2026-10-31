@@ -1,6 +1,6 @@
-Calculation: JFATL line = the JMA-smoothed 39-bar FATL weighted sum of selected applied prices, rounded to configured precision
-Calculation: Trend state = sign of the JFATL line’s change from the prior bar; when unchanged, carry forward the prior nonzero state, initially neutral
-Long: On the configured indicator timeframe (higher or lower than the chart timeframe), using last completed bars: current trend state is rising AND prior trend state is not rising
-Short: On the configured indicator timeframe (higher or lower than the chart timeframe), using last completed bars: current trend state is falling AND prior trend state is not falling
-Exit: long, On the configured indicator timeframe (higher or lower than the chart timeframe), current last-completed-bar trend state is falling
-Exit: short, On the configured indicator timeframe (higher or lower than the chart timeframe), current last-completed-bar trend state is rising
+Calculation: Filtered line = Jurik moving average, with configurable length and phase, of the fast adaptive trend line of a configurable OHLC-derived price, rounded to the nearest configurable price increment. The fast adaptive trend line is the sum of the current and successive older prices multiplied respectively by [0.4360409450, 0.3658689069, 0.2460452079, 0.1104506886, -0.0054034585, -0.0760367731, -0.0933058722, -0.0670110374, -0.0190795053, 0.0259609206, 0.0502044896, 0.0477818607, 0.0249252327, -0.0047706151, -0.0272432537, -0.0338917071, -0.0244141482, -0.0055774838, 0.0128149838, 0.0226522218, 0.0208778257, 0.0100299086, -0.0036771622, -0.0136744850, -0.0160483392, -0.0108597376, -0.0016060704, 0.0069480557, 0.0110573605, 0.0095711419, 0.0040444064, -0.0023824623, -0.0067093714, -0.0072003400, -0.0047717710, 0.0005541115, 0.0007860160, 0.0130129076, 0.0040364019]. For the trading decisions, calculate on the chart timeframe or a configurable higher timeframe, using the last completed bar or, if configured, the still-forming bar.
+Calculation: Direction = sign of the change in the filtered line from the preceding bar; if the change is zero, retain the preceding direction.
+Long: Direction > 0
+Short: Direction < 0
+Exit: long, direction < 0 OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, direction > 0 OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

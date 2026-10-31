@@ -1,6 +1,8 @@
-Calculation: Upper band = the high-price series passed through the fixed-coefficient SATL digital filter, then JMA-smoothed, rounded to the configured price increment, and shifted by the configured bar offset.
-Calculation: Lower band = the low-price series passed through the same SATL filter and JMA smoothing, then rounded to the configured price increment and shifted by the same bar offset. These calculations use completed bars on the indicator timeframe, which may be higher or lower than the chart timeframe.
-Long: Current completed indicator bar closes above the upper band AND the preceding completed indicator bar did not close above its upper band.
-Short: Current completed indicator bar closes below the lower band AND the preceding completed indicator bar did not close below its lower band.
-Exit: Long, short condition OR price <= entry price - stop distance OR price >= entry price + take-profit distance.
-Exit: Short, long condition OR price >= entry price + stop distance OR price <= entry price - take-profit distance.
+Calculation: Upper channel = Jurik moving average of the SATL digital filter of high, rounded to the nearest configured price increment and shifted forward by a configured number of bars.
+Calculation: Lower channel = Jurik moving average of the SATL digital filter of low using the same smoothing parameters, rounded to the same price increment and shifted forward by the same number of bars.
+Long: Chart-bar close > upper channel AND chart-bar close >= lower channel.
+Short: Chart-bar close < lower channel.
+Long: Last completed higher-timeframe bar close > its upper channel AND close >= its lower channel AND (previous higher-timeframe bar close <= its upper channel OR previous higher-timeframe bar close < its lower channel).
+Short: Last completed higher-timeframe bar close < its lower channel AND previous higher-timeframe bar close >= its lower channel.
+Exit: long, last completed higher-timeframe bar close < its lower channel OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, (last completed higher-timeframe bar close > its upper channel AND close >= its lower channel) OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

@@ -1,4 +1,5 @@
-Calculation: Power candle close = smooth ((high + low) / 2 − smooth(close)), using a first-stage moving average with a longer lookback than the second-stage smoother.
-Calculation: Power candle open = the power value calculated from open, using the same two smoothing stages, with the current value replaced by the previous power candle close when the gap between the previous bar’s close and current bar’s open is below a configured threshold; use this adjusted value from the configured number of bars earlier.
-Long: Power candle close > power candle open
-Short: Power candle close < power candle open
+Calculation: Power close = a second-stage moving average of (high + low) / 2 minus the first-stage moving average of close.
+Calculation: Power open = the power close of the preceding bar when the absolute difference between the current open and previous close is below a gap threshold; otherwise, a second-stage moving average of (high + low) / 2 minus the first-stage moving average of open. The two stages have independently selectable methods and parameters.
+Calculation: Period power open = power open from the oldest bar in a rolling lookback that includes the current bar. Compute these power calculations on either the chart timeframe or a higher timeframe using its bar still forming.
+Long: Power close > period power open.
+Short: Power close < period power open.

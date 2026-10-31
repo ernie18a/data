@@ -1,6 +1,6 @@
-Calculation: Stochastic Chaikin volatility = 100 × the second configurable moving average of (smoothed high−low range − its rolling minimum) / (its rolling maximum − its rolling minimum); smooth high−low range with the first configurable moving average, and calculate rolling extrema over the stochastic lookback. Calculate on the lower-than-chart indicator timeframe, using completed bars.
-Calculation: Trigger = Stochastic Chaikin volatility on the previous completed indicator-timeframe bar.
-Long: Stochastic Chaikin volatility on the latest completed indicator-timeframe bar > Trigger AND Stochastic Chaikin volatility on the previous completed bar ≤ Trigger on that bar
-Short: Stochastic Chaikin volatility on the latest completed indicator-timeframe bar < Trigger AND Stochastic Chaikin volatility on the previous completed bar ≥ Trigger on that bar
-Exit: long, Stochastic Chaikin volatility on the latest completed indicator-timeframe bar < Trigger
-Exit: short, Stochastic Chaikin volatility on the latest completed indicator-timeframe bar > Trigger
+Calculation: Smoothed range = a selectable moving average of high minus low on the indicator timeframe.
+Calculation: Oscillator = 100 times a second selectable moving average of (smoothed range minus its rolling minimum) divided by the greater of a positive price-unit floor and (its rolling maximum minus its rolling minimum). The rolling extrema include the current indicator bar. The two moving averages have independently configurable methods, lengths, and method-specific parameters. Calculate on a selectable higher or lower timeframe, using the last completed bar by default or the still-forming bar if configured.
+Long: Oscillator > its previous indicator-bar value AND its previous indicator-bar value <= its value two indicator bars ago.
+Short: Oscillator < its previous indicator-bar value AND its previous indicator-bar value >= its value two indicator bars ago.
+Exit: long, oscillator < its previous indicator-bar value OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance.
+Exit: short, oscillator > its previous indicator-bar value OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance.

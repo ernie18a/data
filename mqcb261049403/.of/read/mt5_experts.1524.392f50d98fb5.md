@@ -1,5 +1,13 @@
-Calculation: JMA slope = change in the JMA-smoothed selected price from the preceding bar, divided by point size; calculated on the configured indicator timeframe (higher or lower than the chart timeframe), using completed bars.
-Long: JMA slope > 0 OR (previous JMA slope <= 0 AND current JMA slope > 0) OR (the middle of three consecutive JMA slopes is lower than both outer slopes)
-Short: JMA slope < 0 OR (previous JMA slope >= 0 AND current JMA slope < 0) OR (the middle of three consecutive JMA slopes is higher than both outer slopes)
-Exit: long, JMA slope < 0 OR (the preceding JMA slope is lower than the current JMA slope)
-Exit: short, JMA slope > 0 OR (the preceding JMA slope is higher than the current JMA slope)
+Calculation: Slope = current Jurik moving average of the selected price minus its previous-bar value. For the trading algorithm, calculate it on the chart timeframe or a configurable higher or lower timeframe, using a configurable signal bar: the forming bar or a completed bar. Previous values refer to preceding bars of that same timeframe. For the indicator markings, calculate it on the chart timeframe.
+Long: Slope > 0 AND previous Slope <= 0
+Short: Slope < 0 AND previous Slope >= 0
+Long: Slope > previous Slope AND Slope two bars ago > previous Slope
+Short: Slope < previous Slope AND Slope two bars ago < previous Slope
+Long: Slope > 0 AND Slope != previous Slope
+Short: Slope < 0 AND Slope != previous Slope
+Exit: long, Slope < 0
+Exit: short, Slope > 0
+Exit: long, Slope < previous Slope
+Exit: short, Slope > previous Slope
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

@@ -1,6 +1,5 @@
-Calculation: Smoothed residual open = apply the second-stage smoother, with a shorter lookback, to each bar’s open minus the first-stage smoother, with a longer lookback, of open.
-Calculation: Smoothed residual close = apply the second-stage smoother, with a shorter lookback, to each bar’s close minus the first-stage smoother, with a longer lookback, of close.
-Calculation: Gap-adjusted residual open = previous bar’s smoothed residual close if |bar open − bar close| ≤ the gap threshold; otherwise smoothed residual open.
-Calculation: When the selected calculation timeframe is higher than the chart timeframe, calculate from its still-forming bar at the start of that bar and carry that value forward across chart bars until the next higher-timeframe bar starts.
-Long: Gap-adjusted residual open < smoothed residual close
-Short: Gap-adjusted residual open > smoothed residual close
+Calculation: Smoothed detrended price = a configurable moving average of (price minus a separate configurable moving average of that same price), calculated independently for open and close, with independently configurable methods and lengths for detrending and smoothing.
+Calculation: Indicator close = smoothed detrended close.
+Calculation: Indicator open = previous bar's indicator close if abs(open - close) <= a configurable price-distance threshold; otherwise smoothed detrended open.
+Long: Indicator close > indicator open on the chart timeframe OR indicator close > indicator open on the still-forming higher-timeframe bar.
+Short: Indicator close < indicator open on the chart timeframe OR indicator close < indicator open on the still-forming higher-timeframe bar.

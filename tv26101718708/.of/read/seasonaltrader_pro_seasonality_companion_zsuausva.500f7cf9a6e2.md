@@ -1,7 +1,8 @@
-Calculation: Average seasonal daily step = mean of prior years’ Daily close-to-close percentage returns for the day immediately after the matching calendar-date anchor at the same offset; use the last completed Daily bar as the current anchor on intraday charts.
-Calculation: Smoothed seasonal step = centered moving average of the average seasonal daily steps across the configured local window.
-Calculation: Directional consistency = 100 × the greater of the counts of positive and negative historical daily steps divided by the number of valid steps at that offset.
-Calculation: Seasonal step threshold = the greater of 0.01 percentage points and the mean absolute smoothed seasonal step across the configured local window multiplied by a strictness-dependent factor.
-Calculation: Minimum consistency = a strictness-dependent percentage threshold.
-Long: Smoothed seasonal step > Seasonal step threshold AND Directional consistency ≥ Minimum consistency
-Short: Smoothed seasonal step < −Seasonal step threshold AND Directional consistency ≥ Minimum consistency
+Calculation: Seasonal profile = Using the last completed bar of a reference timeframe that is the chart timeframe or higher, find for each prior lookback year the bar closest to the same UTC month and day within a maximum calendar-day distance; clamp invalid dates to the last day of the month and break distance ties in favor of the more recent bar. For each offset in a window of reference-timeframe bars before and after the anchor, calculate the mean percentage close-to-close return from that offset to the next bar across valid historical anchors. Skip missing or nonpositive prices. Smooth each mean using the available means in a centered window with radius floor(smoothing length / 2).
+Calculation: Profile confidence = For each offset, the larger of the counts of positive and negative historical returns divided by the count of all valid returns, including zero returns.
+Calculation: Profile threshold = The larger of a positive minimum threshold and the mean absolute smoothed profile value over the entire profile window multiplied by a strictness-dependent factor. The confidence minimum and threshold factor both increase with strictness.
+Calculation: Future state counts = Count offsets after zero whose confidence meets the confidence minimum and whose smoothed profile value is above the profile threshold, below its negative, or between the two thresholds inclusive, respectively.
+Long: Profile confidence at offset zero >= confidence minimum AND smoothed profile value at offset zero > profile threshold
+Short: Profile confidence at offset zero >= confidence minimum AND smoothed profile value at offset zero < negative profile threshold
+Long: Future long-state count > 0 AND future long-state count >= future short-state count AND future long-state count >= future range-state count
+Short: Future short-state count > 0 AND future short-state count > future long-state count AND future short-state count >= future range-state count

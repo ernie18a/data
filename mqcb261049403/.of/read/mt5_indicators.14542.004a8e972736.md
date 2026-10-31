@@ -1,5 +1,10 @@
-Calculation: XRSX = 100 × clamp(smoothed price change / smoothed absolute price change, -1, 1), using the longer smoothing lookback
-Calculation: Signal line = smoothed XRSX using a shorter lookback than the XRSX smoothing
-Calculation: Fast stepped line and slow stepped line = trailing step levels of (XRSX + 100) / 2, using the same recursive trend and level-clamping rules, with the fast step size smaller than the slow step size
-Long: XRSX > previous bar's signal line OR fast stepped line > slow stepped line
-Short: XRSX < previous bar's signal line OR fast stepped line < slow stepped line
+Calculation: Oscillator = 100 times the ratio of the selected moving average of the change in selected bar price to the same moving average of its absolute change, clamped to [-1, 1] before multiplication; undefined when the denominator is zero.
+Calculation: Signal = a separately parameterized moving average of the oscillator.
+Calculation: Step line = for oscillator rescaled as (oscillator + 100) / 2 and step size s, maintain lower and upper bands and a direction, initially neutral. On each bar set tentative bands to rescaled oscillator minus and plus 2s; set direction positive if the oscillator exceeds the previous upper band, negative if it is below the previous lower band, otherwise retain direction. In positive direction set the lower band to the greater of its tentative and previous values and output lower band + s; in negative direction set the upper band to the lesser of its tentative and previous values and output upper band - s. Initialize the previous lower band to a large positive value and upper band to a large negative value; the line is undefined while direction is neutral. Calculate fast and slow lines independently, with the fast step smaller than the slow step.
+Calculation: Higher-timeframe step lines = step lines calculated on a higher timeframe's still-forming bar, sampled at the first chart bar of that higher-timeframe bar and held until the next higher-timeframe bar. Add a small positive offset to the slow line.
+Long: fast step line > slow step line OR higher-timeframe fast step line > higher-timeframe slow step line.
+Short: fast step line < slow step line OR higher-timeframe fast step line < higher-timeframe slow step line.
+Long: oscillator > 0 AND oscillator > previous oscillator.
+Short: oscillator < 0 AND oscillator < previous oscillator.
+Long: oscillator > previous signal.
+Short: oscillator < previous signal.

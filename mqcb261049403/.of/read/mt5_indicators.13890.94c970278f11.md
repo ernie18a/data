@@ -1,5 +1,7 @@
-Calculation: JJRSX = Jurik-smoothed ratio of JurX-smoothed price change to JurX-smoothed absolute price change, clipped to [-1, 1]; use progressively longer lookbacks for the five component values.
-Calculation: FastTrend = weighted sum of the five JJRSX values, using the corresponding weights; the third and second values use the same weight.
-Calculation: SlowTrend = FastTrend / smoothing lookback + previous SlowTrend × (1 − 1 / smoothing lookback).
-Long: FastTrend > SlowTrend on the chart timeframe or, for each configured higher timeframe, on its bar still forming.
-Short: FastTrend < SlowTrend on the chart timeframe or, for each configured higher timeframe, on its bar still forming.
+Calculation: Ultralinear smoothing = for input x and length L, set k=3/(L+2); initialize six states to the first x; on each bar update a=(1-k)a+kx, b=ka+(1-k)b, c=(1-k)c+k(1.5a-0.5b), d=kc+(1-k)d, e=(1-k)e+k(1.5c-0.5d), f=ke+(1-k)f; output 1.5e-0.5f.
+Calculation: Smoothed oscillator = Jurik moving average, with a shared smoothing length and phase, of the ratio of ultralinearly smoothed price changes to ultralinearly smoothed absolute price changes, using the same oscillator length for both; clamp the ratio to [-1,1] before averaging and leave it undefined when the denominator is zero.
+Calculation: Fast trend = weighted sum of five smoothed oscillators with progressively longer oscillator lengths; the second and third oscillators use the same weight, while the others have independently adjustable weights.
+Calculation: Slow trend = recursively smoothed fast trend: current fast trend divided by smoothing length plus previous slow trend multiplied by (smoothing length minus one) divided by smoothing length; initialize the slow trend to the first fast trend divided by the smoothing length.
+Calculation: Sampled trend = fast and slow trends calculated separately on each selected timeframe at least as high as the chart timeframe; for a higher timeframe use the still-forming bar sampled on the first chart bar of that higher-timeframe bar, and hold that comparison until the next higher-timeframe bar.
+Long: Chart-timeframe fast trend > chart-timeframe slow trend OR sampled fast trend >= sampled slow trend.
+Short: Chart-timeframe fast trend < chart-timeframe slow trend OR sampled fast trend < sampled slow trend.

@@ -1,6 +1,4 @@
-Calculation: FATL = the 39-tap FATL digital filter applied to the selected price (an OHLC-derived price).
-Calculation: SATL = the 65-tap SATL digital filter applied to the selected price (an OHLC-derived price).
-Calculation: Smoothed FATL = the selected XMA smoother applied to FATL.
-Calculation: Smoothed SATL = the selected XMA smoother applied to SATL.
-Long: Smoothed FATL > Smoothed SATL
-Short: Smoothed FATL < Smoothed SATL
+Calculation: Fast line = a configurable moving average of the fast adaptive trend line (FATL) of a configurable OHLC-derived price.
+Calculation: Slow line = a configurable moving average of the slow adaptive trend line (SATL) of the same price, with a longer smoothing lookback than the fast line.
+Long: Fast line > slow line, calculated either on the chart timeframe or on the still-forming bar of a higher timeframe.
+Short: Fast line < slow line, calculated either on the chart timeframe or on the still-forming bar of a higher timeframe.

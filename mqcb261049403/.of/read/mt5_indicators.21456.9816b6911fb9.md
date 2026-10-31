@@ -1,4 +1,7 @@
-Calculation: Smoothed positive-change average = Smooth the arithmetic mean of positive one-bar changes in the selected applied price over a lookback; ignore changes at or below 2 machine epsilons and use 0 if there are none. Use the same smoothing method and settings as for the negative-change average.
-Calculation: Smoothed absolute negative-change average = Smooth the arithmetic mean of the absolute values of negative one-bar changes in the selected applied price over the same lookback; ignore changes at or above −2 machine epsilons and use 0 if there are none.
-Long: On the selected timeframe (the chart timeframe or a higher timeframe), at the start of each timeframe bar while it is forming, smoothed positive-change average > smoothed absolute negative-change average
-Short: On the selected timeframe (the chart timeframe or a higher timeframe), at the start of each timeframe bar while it is forming, smoothed positive-change average < smoothed absolute negative-change average
+Calculation: Average rise and average fall = over a lookback of consecutive changes in a selected OHLC-derived price, average the positive changes and the absolute values of the negative changes separately; ignore changes whose absolute value is at most twice double-precision machine epsilon, and use zero when a group is empty.
+Calculation: Smoothed rise and smoothed fall = apply the same selected moving-average method, length, and other smoothing parameters separately to average rise and average fall.
+Calculation: Higher-timeframe smoothed rise and fall = calculate the same series on a higher timeframe, using the bar still forming; sample them on the first chart bar of each higher-timeframe bar and retain those values until the next higher-timeframe bar.
+Long: Chart-timeframe smoothed rise > chart-timeframe smoothed fall
+Short: Chart-timeframe smoothed rise < chart-timeframe smoothed fall
+Long: Higher-timeframe smoothed rise > higher-timeframe smoothed fall
+Short: Higher-timeframe smoothed rise < higher-timeframe smoothed fall

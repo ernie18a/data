@@ -1,8 +1,5 @@
-Calculation: Smoothed OHLC and price = apply the same configurable smoother to open, high, low, close, and selected price on the configured indicator timeframe (which may be higher, equal to, or lower than the chart timeframe); use completed bars.
-Calculation: Volatility Quality increment = if max(H−L, H−C_lag, C_lag−L) and H−L are nonzero, abs(0.5×((C−C_lag)/max(H−L,H−C_lag,C_lag−L)+(C−O)/(H−L)))×0.5×((C−C_lag)+(C−O)); otherwise selected price. C and O are smoothed close and open, H and L are smoothed high and low, and C_lag is smoothed close from a longer lookback offset.
-Calculation: Volatility Quality line = prior line plus the increment, except hold the prior line when the absolute increment is below the configurable filter threshold.
-Calculation: Volatility Quality direction = rising when the line is greater than its prior value; falling when less; retain the prior direction when equal.
-Long: Volatility Quality direction changes from falling to rising between the last two completed indicator-timeframe bars.
-Short: Volatility Quality direction changes from rising to falling between the last two completed indicator-timeframe bars.
-Exit: long, Volatility Quality direction changes from rising to falling between the last two completed indicator-timeframe bars.
-Exit: short, Volatility Quality direction changes from falling to rising between the last two completed indicator-timeframe bars.
+Calculation: Direction = On the indicator timeframe, smooth high, low, open, and selected price (close or median price) with the same moving-average method and parameters. Let H, L, O, and P be these smoothed values, and let Q be the smoothed selected price a smoothing-lookback number of indicator bars earlier. Let A = max(H - L, H - Q, Q - L) and B = H - L. If A and B are nonzero, change = abs(((P - Q)/A + (P - O)/B)/2) * ((P - Q + P - O)/2); otherwise change = selected price. Set change to zero when its absolute value is below the price-distance filter. Direction is upward when change > 0, downward when change < 0, and otherwise retains its previous direction. Use the last completed indicator bar and its predecessor; the indicator timeframe may be the chart timeframe or a higher timeframe.
+Long: indicator direction is upward AND indicator direction on the preceding indicator bar is downward
+Short: indicator direction is downward AND indicator direction on the preceding indicator bar is upward
+Exit: long, indicator direction is downward OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, indicator direction is upward OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

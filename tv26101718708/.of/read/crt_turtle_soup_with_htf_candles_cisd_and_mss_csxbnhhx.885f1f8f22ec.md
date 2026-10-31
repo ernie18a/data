@@ -1,16 +1,32 @@
-Calculation: CRT range = high and low of a higher-timeframe candle that a later completed candle sweeps beyond one boundary and closes back inside; inside candles may intervene. Keep the range active until a higher-timeframe candle closes outside it. Use completed higher-timeframe candles.
-Calculation: Entry bar = last completed bar of a lower timeframe than the CRT range timeframe.
-Long: A higher-timeframe candle has low < CRT Low, high ≤ CRT High, and close > CRT Low.
-Short: A higher-timeframe candle has high > CRT High, low ≥ CRT Low, and close < CRT High.
-Long: After price trades below CRT Low, an entry bar closes above CRT Low and below CRT High.
-Short: After price trades above CRT High, an entry bar closes below CRT High and above CRT Low.
-Calculation: Latest down-close run open = open of the first bar in the latest consecutive run of bars with close < open. Latest up-close run open = open of the first bar in the latest consecutive run with close > open.
-Long: Close > latest down-close run open AND the previous CISD direction was bearish.
-Short: Close < latest up-close run open AND the previous CISD direction was bullish.
-Calculation: Swing high = a chart-timeframe bar high greater than the highs of the specified number of bars on both sides. Swing low = a bar low less than the lows of that many bars on both sides. Use only confirmed swings.
-Long: Close > last confirmed swing high AND the previous market-structure direction was not bullish.
-Short: Close < last confirmed swing low AND the previous market-structure direction was not bearish.
-Exit: Long, low <= lowest low of the sweep (stop).
-Exit: Short, high >= highest high of the sweep (stop).
-Exit: Long, high >= midpoint of CRT High and CRT Low (close half); high >= CRT High (close remainder).
-Exit: Short, low <= midpoint of CRT High and CRT Low (close half); low <= CRT Low (close remainder).
+Calculation: Range candidates = on each completed higher-timeframe bar, retain the last bar that exceeded either extreme of the preceding retained bar; while subsequent bars remain inside it, also retain the latest inside bar. A candidate becomes active when swept and closed back inside, or when an entry-timeframe signal occurs. Retain active ranges until a completed higher-timeframe close is outside their bounds or the configured maximum number of active ranges is exceeded.
+Calculation: Entry-timeframe sweep = after a completed entry-timeframe bar trades beyond a range boundary, track the most extreme price until a completed entry-timeframe close returns inside the range or reaches the opposite boundary. The entry timeframe is higher than or equal to the chart timeframe and lower than the range timeframe; use its last completed bar while the range-timeframe bar is still forming.
+Calculation: Sweep order block = the latest thick opposing entry-timeframe candle that crosses the swept boundary; if none exists, use the first candle that crosses it. A thick candle has an absolute body at least a configured multiple of the average absolute body of preceding entry-timeframe candles.
+Calculation: Chart order block = the latest thick opposing chart candle in a leg, confirmed when a later close passes its open or, optionally, its far wick; optionally require the leg extreme to exceed the preceding lookback extreme. Its bullish zone runs from the candle low to its open; its bearish zone runs from its open to its high. Remove it after a later close beyond its outer extreme.
+Calculation: Fair value gap = a bullish zone from the high two bars ago to the current low when current low exceeds that high, or a bearish zone from the current high to the low two bars ago when current high is below that low. Require the gap to meet a configurable minimum size. A close beyond the far edge reverses its direction and makes it an inverse gap; a later close beyond the opposite edge removes the inverse gap.
+Calculation: Retest setup = after a completed higher-timeframe sweep, select the first subsequently confirmed chart-timeframe order block or inverse gap in the sweep direction whose entry edge lies strictly between the stop and opposite range boundary. The entry edge is the upper edge for a long and the lower edge for a short. Cancel if price exceeds the sweep extreme, reaches the opposite range boundary, the active range ends, the waiting age exceeds its limit, or the reward-to-risk at the entry edge is below its configured minimum.
+Calculation: Swing high or low = a chart bar whose high or low is strictly beyond every high or low in an equal configurable number of bars on each side; it becomes available only after the bars on its right have completed.
+Calculation: Delivery levels = the opens of the first bars of the latest runs of consecutive down-close and up-close chart bars, tracked separately. Clear a level when its corresponding direction change is marked; replace it when a new run of that direction starts.
+Calculation: Trend bias = compare each completed higher-timeframe bar with the retained range candidate. A high-only break sets bias up if close is above the candidate high and down otherwise; a low-only break sets bias down if close is below the candidate low and up otherwise. A break of both ends sets bias up or down only when the close is respectively above or below the candidate; otherwise retain the prior bias. Inside bars retain the prior bias.
+Calculation: Stop = the sweep extreme plus a configurable outward buffer, or the swept range boundary plus a configurable outward fraction of the range and buffer. The first target is the range midpoint and the final target is the opposite range boundary. A midpoint target is eligible only when entry is on the swept side of the midpoint.
+Long: A completed entry-timeframe sweep of a range low closes strictly above the low and strictly below the high AND the same bar does not also produce a high-sweep reversal AND, if selected and a thick sweep order block exists, close exceeds its open or high AND reward-to-risk to the opposite range boundary meets the configured minimum AND entry differs from the stop AND no same-direction setup on that range is waiting or open.
+Short: A completed entry-timeframe sweep of a range high closes strictly below the high and strictly above the low AND the same bar does not also produce a low-sweep reversal AND, if selected and a thick sweep order block exists, close is below its open or low AND reward-to-risk to the opposite range boundary meets the configured minimum AND entry differs from the stop AND no same-direction setup on that range is waiting or open.
+Long: The last completed higher-timeframe bar trades below a candidate or active range low without trading above its high AND closes back above the low without closing above the high.
+Short: The last completed higher-timeframe bar trades above a candidate or active range high without trading below its low AND closes back below the high without closing below the low.
+Long: A valid bullish retest setup exists AND a chart bar after its confirmation has low at or below its entry edge.
+Short: A valid bearish retest setup exists AND a chart bar after its confirmation has high at or above its entry edge.
+Long: A bullish chart-timeframe order block is confirmed.
+Short: A bearish chart-timeframe order block is confirmed.
+Long: A bullish fair value gap or bullish inverse gap forms on the chart timeframe or on the last completed higher-timeframe bar.
+Short: A bearish fair value gap or bearish inverse gap forms on the chart timeframe or on the last completed higher-timeframe bar.
+Long: The forming or last completed higher-timeframe bar trades below an earlier bar's low AND closes above that low AND no intervening bar has a low at or below the earlier low.
+Short: The forming or last completed higher-timeframe bar trades above an earlier bar's high AND closes below that high AND no intervening bar has a high at or above the earlier high.
+Long: Higher-timeframe trend bias is up.
+Short: Higher-timeframe trend bias is down.
+Long: Chart close exceeds the latest down-run delivery level AND the preceding marked delivery direction is not bullish.
+Short: Chart close is below the latest up-run delivery level AND the preceding marked delivery direction is not bearish.
+Long: Chart close exceeds the latest available swing high AND the preceding structure direction is not bullish; consume the swing high and set structure bullish.
+Short: Chart close is below the latest available swing low AND the preceding structure direction is not bearish; consume the swing low and set structure bearish.
+Exit: long, chart low is at or below the stop OR, after the midpoint target when the breakeven option is selected, chart low is at or below entry price.
+Exit: short, chart high is at or above the stop OR, after the midpoint target when the breakeven option is selected, chart high is at or above entry price.
+Exit: long, chart high is at or above the opposite range boundary OR chart high is at or above the eligible midpoint for the first time, closing half at the midpoint and the rest at the opposite boundary.
+Exit: short, chart low is at or below the opposite range boundary OR chart low is at or below the eligible midpoint for the first time, closing half at the midpoint and the rest at the opposite boundary.

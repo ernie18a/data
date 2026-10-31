@@ -1,5 +1,9 @@
-Calculation: JJRSX = JMA-smoothed 100 × (JurX-smoothed change in the selected applied price / JurX-smoothed absolute change in that price)
-Long: On the indicator timeframe (higher, lower, or equal to the chart timeframe), JJRSX rises on the selected signal bar; OR, using three consecutive bars ending at the selected signal bar, the middle JJRSX is below both its preceding and following values
-Short: On the indicator timeframe (higher, lower, or equal to the chart timeframe), JJRSX falls on the selected signal bar; OR, using three consecutive bars ending at the selected signal bar, the middle JJRSX is above both its preceding and following values
-Exit: long, JJRSX falls on the selected signal bar OR elapsed time since entry exceeds the holding-time limit OR low is at or below entry price minus the stop distance OR high is at or above entry price plus the target distance
-Exit: short, JJRSX rises on the selected signal bar OR elapsed time since entry exceeds the holding-time limit OR high is at or above entry price plus the stop distance OR low is at or below entry price minus the target distance
+Calculation: Oscillator = Jurik moving average, with its own length and phase parameters, of 100 × ultra-linear smoothing of the selected price change divided by ultra-linear smoothing of its absolute change; both smoothing operations use the same length. Replace a zero absolute price change with a positive price increment. For ultra-linear smoothing, initialize six states to the first input; on each bar, with k = 3 / (length + 2) and h = 1 - k, update a = h*a + k*input, b = k*a + h*b, c = h*c + k*(1.5*a - 0.5*b), d = k*c + h*d, e = h*e + k*(1.5*c - 0.5*d), f = k*e + h*f; output 1.5*e - 0.5*f.
+Long: Chart-timeframe oscillator > previous chart-timeframe oscillator.
+Short: Chart-timeframe oscillator < previous chart-timeframe oscillator.
+Long: Oscillator on the selected higher or lower timeframe, using the last completed bar or the still-forming bar as selected, > its previous bar AND its previous bar < its bar before that.
+Short: Oscillator on the selected higher or lower timeframe, using the last completed bar or the still-forming bar as selected, < its previous bar AND its previous bar > its bar before that.
+Exit: long, oscillator on the selected higher or lower timeframe, using the last completed bar or the still-forming bar as selected, < its previous bar.
+Exit: short, oscillator on the selected higher or lower timeframe, using the last completed bar or the still-forming bar as selected, > its previous bar.
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

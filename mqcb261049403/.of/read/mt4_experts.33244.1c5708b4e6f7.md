@@ -1,4 +1,3 @@
-Long: Bollinger-band bullish status is valid, nonzero, and not -1 AND MACD main line > MACD signal line on the configured trading timeframe (which may be higher or lower than the chart timeframe), using the bar still forming
-Short: Bollinger-band bearish status is valid, nonzero, and not -1 AND MACD signal line > MACD main line on the configured trading timeframe (which may be higher or lower than the chart timeframe), using the bar still forming
-Exit: long, bearish signal
-Exit: short, bullish signal
+Calculation: MACD main = EMA of close with shorter lookback minus EMA of close with longer lookback; MACD signal = simple moving average of MACD main. Calculate on the chart timeframe or a selectable higher or lower timeframe, using the still-forming bar or the last completed bar according to the confirmation setting.
+Long: MACD main > MACD signal
+Short: MACD main < MACD signal

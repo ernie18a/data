@@ -1,5 +1,11 @@
-Calculation: Smoothed RSI candle OHLC = calculate RSI separately from each bar’s open, high, low, and close; set RSI high and low to the maximum and minimum of those four RSI values; subtract 50, multiply each value by bar volume, and apply the same selected moving-average smoother. If the absolute difference between bar open and close is at most the gap threshold, replace smoothed RSI open with the preceding chart bar’s smoothed RSI close.
-Calculation: Smoothed volume = apply the same selected moving-average smoother, with the same lookback, to bar volume.
-Calculation: Overbought threshold = configured overbought level × smoothed volume; oversold threshold = configured oversold level × smoothed volume.
-Long: (preceding smoothed RSI close < 0 AND current smoothed RSI close >= 0) OR (preceding smoothed RSI close <= preceding smoothed RSI open AND current smoothed RSI close > current smoothed RSI open) OR (preceding smoothed RSI close <= preceding overbought threshold AND current smoothed RSI close > current overbought threshold) OR (preceding smoothed RSI close <= preceding oversold threshold AND current smoothed RSI close > current oversold threshold)
-Short: (preceding smoothed RSI close > 0 AND current smoothed RSI close <= 0) OR (preceding smoothed RSI close >= preceding smoothed RSI open AND current smoothed RSI close < current smoothed RSI open) OR (preceding smoothed RSI close >= preceding oversold threshold AND current smoothed RSI close < current oversold threshold) OR (preceding smoothed RSI close > preceding overbought threshold AND current smoothed RSI close <= current overbought threshold)
+Calculation: RSI candle close = smooth((RSI of close − 50) × volume); use the selected smoothing method and its parameters throughout.
+Calculation: RSI candle open = smooth((RSI of open − 50) × volume), replaced by the previous bar's RSI candle close when abs(open − close) ≤ the gap threshold.
+Calculation: Upper and lower levels = the respective level parameter × smoothed volume.
+Long: RSI candle close ≥ RSI candle open.
+Short: RSI candle close < RSI candle open.
+Long: Previous RSI candle close < 0 AND current RSI candle close ≥ 0.
+Short: Previous RSI candle close > 0 AND current RSI candle close ≤ 0.
+Long: Previous RSI candle close ≤ previous upper level AND current RSI candle close > current upper level.
+Long: Previous RSI candle close ≤ previous lower level AND current RSI candle close > current lower level.
+Short: Previous RSI candle close ≥ previous lower level AND current RSI candle close < current lower level.
+Short: Previous RSI candle close > previous upper level AND current RSI candle close ≤ current upper level.

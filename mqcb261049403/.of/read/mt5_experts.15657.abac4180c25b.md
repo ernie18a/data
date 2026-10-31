@@ -1,6 +1,7 @@
-Calculation: TSI = 100 × second-stage smoothing of close-to-close changes ÷ second-stage smoothing of their absolute values; each stage applies its own configurable smoothing method and lookback, with the first stage applied before the second. Calculate on the configurable indicator timeframe, which may be higher, lower, or equal to the chart timeframe, using completed bars.
-Calculation: Trigger = TSI from TriggerShift bars earlier on the indicator timeframe.
-Long: On a newly completed indicator-timeframe bar, previous completed bar TSI > Trigger AND latest completed bar TSI <= Trigger
-Short: On a newly completed indicator-timeframe bar, previous completed bar TSI < Trigger AND latest completed bar TSI >= Trigger
-Exit: Long, on a newly completed indicator-timeframe bar, previous completed bar TSI < Trigger AND latest completed bar TSI >= Trigger
-Exit: Short, on a newly completed indicator-timeframe bar, previous completed bar TSI > Trigger AND latest completed bar TSI <= Trigger
+Calculation: Oscillator = 100 × second-stage moving average of the first-stage moving average of close-to-close changes / second-stage moving average of the first-stage moving average of absolute close-to-close changes. The numerator and denominator use the same independently parameterized first and second smoothing stages. Calculate on the selected indicator timeframe, which may be higher or lower than the chart timeframe, using either the last completed indicator bar or the still-forming indicator bar according to the selected signal offset.
+Calculation: Trigger = oscillator shifted back by a configurable number of indicator-timeframe bars.
+Calculation: Directed difference = oscillator minus trigger, multiplied by a configurable direction multiplier that reverses its sign for countertrend trading.
+Long: Directed difference > 0 AND previous indicator-bar directed difference <= 0
+Short: Directed difference < 0 AND previous indicator-bar directed difference >= 0
+Exit: long, directed difference < 0 OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance
+Exit: short, directed difference > 0 OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance

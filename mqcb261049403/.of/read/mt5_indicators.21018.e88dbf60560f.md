@@ -1,6 +1,3 @@
-Calculation: Bull count = number of XMA series, across a sequence of progressively longer lookbacks, whose current value is greater than its previous-bar value; each XMA is the selected smoothing method applied to a double linear weighted moving average of the selected applied price.
-Calculation: Bear count = number of XMA series in that sequence whose current value is less than or equal to its previous-bar value.
-Calculation: Smoothed bull count = selected smoothing method applied to bull count.
-Calculation: Smoothed bear count = selected smoothing method applied to bear count.
-Long: Smoothed bull count > smoothed bear count
-Short: Smoothed bull count < smoothed bear count
+Calculation: Bull and bear counts = apply a linear weighted moving average twice to a selected OHLC-derived price, then apply the same selected smoothing method to the result at a sequence of increasing lookbacks with a constant step. On each bar, count how many smoothed series are strictly greater than their previous-bar values as the bull count; count all others, including equal values, as the bear count. Smooth each count separately using the same selected smoothing method and parameters to obtain the bull and bear values. Calculate either on the chart timeframe or on a higher timeframe using its bar still forming.
+Long: Bull value > bear value
+Short: Bull value < bear value

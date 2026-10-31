@@ -1,3 +1,3 @@
-Calculation: Smoothed weighted oscillator = apply the selected moving-average method to the weighted mean of RSI, MFI, Williams %R + 100, and 100 × DeMarker.
-Long: Smoothed weighted oscillator > upper level AND (trend mode is selected OR previous bar's smoothed weighted oscillator ≤ upper level)
-Short: Smoothed weighted oscillator < lower level AND (trend mode is selected OR previous bar's smoothed weighted oscillator ≥ lower level)
+Calculation: Weighted oscillator = a configurable moving average of (RSI of a selected price × RSI weight + MFI using volume × MFI weight + (Williams %R + 100) × Williams %R weight + 100 × DeMarker × DeMarker weight) / (RSI weight + MFI weight + Williams %R weight + DeMarker weight).
+Long: Weighted oscillator on the selected chart bar > upper threshold AND (trend mode is selected OR weighted oscillator on the preceding bar <= upper threshold).
+Short: Weighted oscillator on the selected chart bar < lower threshold AND (trend mode is selected OR weighted oscillator on the preceding bar >= lower threshold).

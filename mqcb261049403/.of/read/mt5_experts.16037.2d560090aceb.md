@@ -1,5 +1,5 @@
-Calculation: PFE = the smoothed ratio of the selected bar price’s change over a lookback to the sum of absolute price changes over that lookback; calculated on the selected indicator timeframe (higher or lower than the chart timeframe as configured), using completed bars.
-Long: PFE two bars ago > PFE one bar ago AND PFE on the signal bar > PFE one bar ago
-Short: PFE two bars ago < PFE one bar ago AND PFE on the signal bar < PFE one bar ago
-Exit: long, PFE two bars ago < PFE one bar ago AND PFE on the signal bar < PFE one bar ago
-Exit: short, PFE two bars ago > PFE one bar ago AND PFE on the signal bar > PFE one bar ago
+Calculation: Smoothed efficiency ratio = apply a selectable moving average to (selected bar price minus its price a lookback ago) divided by the sum of absolute consecutive price changes over that lookback plus a small positive price increment. Calculate on a selectable higher or lower timeframe, using its last completed bar or its still-forming bar as selected.
+Long: Smoothed efficiency ratio on the selected bar > its value one bar earlier AND its value two bars earlier > its value one bar earlier.
+Short: Smoothed efficiency ratio on the selected bar < its value one bar earlier AND its value two bars earlier < its value one bar earlier.
+Exit: long, smoothed efficiency ratio on the selected bar < its value one bar earlier OR low <= entry price minus a stop-loss distance OR high >= entry price plus a take-profit distance.
+Exit: short, smoothed efficiency ratio on the selected bar > its value one bar earlier OR high >= entry price plus a stop-loss distance OR low <= entry price minus a take-profit distance.

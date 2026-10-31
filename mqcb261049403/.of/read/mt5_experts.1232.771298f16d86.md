@@ -1,6 +1,7 @@
-Calculation: Smoothed regression line = least-squares linear regression of the smoothed applied-price series over a configurable lookback, evaluated at a configurable offset.
-Calculation: Trigger line = twice the smoothed regression line minus its value at a configurable number of earlier bars.
-Long: On the configured signal timeframe, using the last completed bar and the preceding completed bar, trigger line > smoothed regression line AND trigger line on the preceding bar <= smoothed regression line on the preceding bar
-Short: On the configured signal timeframe, using the last completed bar and the preceding completed bar, smoothed regression line > trigger line AND smoothed regression line on the preceding bar <= trigger line on the preceding bar
-Exit: long, On the configured signal timeframe, using the last completed bar, smoothed regression line > trigger line
-Exit: short, On the configured signal timeframe, using the last completed bar, trigger line > smoothed regression line
+Calculation: Regression line = fit a least-squares line to the latest lookback of a moving average of the selected price; evaluate the line at the bar a configurable lag before the newest bar in that lookback. The moving-average period equals the regression lookback.
+Calculation: Trigger line = twice the current regression line minus the regression line a configurable number of bars earlier; this lag equals the regression evaluation lag.
+Calculation: Signal values = regression line and trigger line calculated on a higher timeframe, using either the last completed bar or the still-forming bar, as configured; previous values use the preceding higher-timeframe bar.
+Long: Trigger line > regression line AND previous trigger line <= previous regression line
+Short: Trigger line < regression line AND previous trigger line >= previous regression line
+Exit: long, trigger line < regression line OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, trigger line > regression line OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

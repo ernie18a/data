@@ -1,3 +1,8 @@
-Calculation: Volume-weighted i-KlPrice oscillator = Smooth with JJMA the product of volume and 100 × (selected bar price − (smooth selected bar price with the long-term smoother − smooth high−low range with the shorter-term smoother)) ÷ (2 × smoothed high−low range) − 50; use 1 if the smoothed range is zero. Smooth the selected price and range with configurable smoothers, with the price smoother using a longer lookback than the range smoother. Use tick volume or real volume as selected. Calculations use chart-timeframe bars, or higher-timeframe bars when that option is selected; the higher-timeframe version reads the still-forming bar and carries its value across the chart bars within that higher-timeframe interval.
-Long: Volume-weighted i-KlPrice oscillator > its value on the previous bar
-Short: Volume-weighted i-KlPrice oscillator < its value on the previous bar
+Calculation: Oscillator = Jurik moving average, with maximum phase, of volume × (100 × (selected price − (price moving average − range moving average)) / (2 × range moving average) − 50), where range is high − low, the price and range moving averages have independently selected methods and lengths, and a zero range moving average is replaced by 1 only in the denominator.
+Calculation: Volume baseline = Jurik moving average of volume with the same length and maximum phase as the oscillator smoothing.
+Calculation: Direction = the sign of the most recent nonzero change in the oscillator from one bar to the next; retain that sign when the oscillator is unchanged.
+Calculation: Higher-timeframe oscillator and volume baseline = the same calculations on a higher timeframe using its still-forming bar at the start of each chart bar, held at the value copied on the first chart bar of that higher-timeframe bar.
+Long: Oscillator > upper threshold × volume baseline OR direction > 0.
+Short: Oscillator < lower threshold × volume baseline OR direction < 0.
+Long: Higher-timeframe oscillator > upper threshold × higher-timeframe volume baseline OR higher-timeframe direction > 0.
+Short: Higher-timeframe oscillator < lower threshold × higher-timeframe volume baseline OR higher-timeframe direction < 0.

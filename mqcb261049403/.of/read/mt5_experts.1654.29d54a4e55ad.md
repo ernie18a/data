@@ -1,7 +1,9 @@
-Calculation: Weighted price = (5 × close + 2 × open + high + low) / 9, on completed chart-timeframe bars
-Calculation: AO spread = EMA of weighted price with the shorter fast lookback − EMA of weighted price with the longer slow lookback
-Calculation: Filter = EMA of weighted price with a lookback shorter than both AO-spread EMA lookbacks
-Long: AO spread > its previous value AND its previous value ≤ its value two bars earlier AND Filter ≥ its previous value AND the most recent earlier signal is not bullish (or no earlier signal exists) AND the completed higher-timeframe trend candle close > open
-Short: AO spread < its previous value AND its previous value ≥ its value two bars earlier AND Filter ≤ its previous value AND the most recent earlier signal is not bearish (or no earlier signal exists) AND the completed higher-timeframe trend candle close < open
-Exit: long, a bearish signal occurs OR low ≤ entry price − stop-loss distance OR high ≥ entry price + take-profit distance
-Exit: short, a bullish signal occurs OR high ≥ entry price + stop-loss distance OR low ≤ entry price − take-profit distance
+Calculation: Weighted price = (5 × close + 2 × open + high + low) / 9.
+Calculation: Oscillator = shorter-period EMA of weighted price minus longer-period EMA of weighted price; the separate filter EMA also uses weighted price and has a shorter period than the oscillator EMAs. Seed each EMA with the first weighted price used.
+Calculation: Indicator direction = initially neutral; on each completed chart bar, change to bullish when the oscillator is above its previous value, its previous value is at or below its value two bars ago, the filter EMA is at or above its previous value, and the prior indicator direction is neutral or bearish; change to bearish when the oscillator is below its previous value, its previous value is at or above its value two bars ago, the filter EMA is at or below its previous value, and the prior indicator direction is neutral or bullish; otherwise retain the prior direction. Evaluate a forming bar against the last completed direction without committing its direction until it completes.
+Long: Oscillator > previous oscillator AND previous oscillator <= oscillator two bars ago AND filter EMA >= previous filter EMA AND prior indicator direction is neutral or bearish.
+Short: Oscillator < previous oscillator AND previous oscillator >= oscillator two bars ago AND filter EMA <= previous filter EMA AND prior indicator direction is neutral or bullish.
+Long: Last completed chart bar has a bullish indicator direction change AND last completed higher-timeframe bar close > open.
+Short: Last completed chart bar has a bearish indicator direction change AND last completed higher-timeframe bar close < open.
+Exit: long, indicator direction on the last completed chart bar is bearish OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance.
+Exit: short, indicator direction on the last completed chart bar is bullish OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance.

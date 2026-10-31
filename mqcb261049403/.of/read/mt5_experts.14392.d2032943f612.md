@@ -1,6 +1,11 @@
-Calculation: Anchored momentum = 100 × (EMA of price / SMA of price − 1), using the same lookback for both averages.
-Calculation: Momentum candle color = blue if anchored momentum of open < anchored momentum of close, pink if anchored momentum of open > anchored momentum of close, and gray if equal; use completed bars aggregated on the indicator timeframe, which may be higher, equal to, or lower than the chart timeframe.
-Long: Last completed indicator-timeframe candle is blue AND the preceding completed candle is not blue.
-Short: Last completed indicator-timeframe candle is pink AND the preceding completed candle is not pink.
-Exit: short, last completed indicator-timeframe candle is blue AND the preceding completed candle is not blue.
-Exit: long, last completed indicator-timeframe candle is pink AND the preceding completed candle is not pink.
+Calculation: Anchored momentum of a price series = 100 × (EMA / SMA − 1), with the EMA and SMA using the same lookback; undefined when the SMA is zero.
+Long: Anchored momentum of the selected chart-timeframe price > upper threshold.
+Short: Anchored momentum of the selected chart-timeframe price <= upper threshold AND anchored momentum of that price < lower threshold.
+Long: Chart-timeframe anchored momentum of close > anchored momentum of open.
+Short: Chart-timeframe anchored momentum of close < anchored momentum of open.
+Long: On the last completed bar of a configurable higher or lower timeframe, anchored momentum of close > anchored momentum of open AND on its preceding bar anchored momentum of close <= anchored momentum of open.
+Short: On the last completed bar of a configurable higher or lower timeframe, anchored momentum of close < anchored momentum of open AND on its preceding bar anchored momentum of close >= anchored momentum of open.
+Exit: long, anchored momentum of close < anchored momentum of open on the last completed bar of a configurable higher or lower timeframe.
+Exit: short, anchored momentum of close > anchored momentum of open on the last completed bar of a configurable higher or lower timeframe.
+Exit: long, low <= entry price − stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price − take-profit distance.
