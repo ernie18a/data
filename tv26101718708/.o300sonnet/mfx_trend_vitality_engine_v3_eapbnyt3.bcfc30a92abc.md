@@ -1,1 +1,0 @@
-做多/做空判斷（逐根）：先算 mf。mfv=((close-low)-(high-close))/(high-low)，high==low 時 mfv=0。cmf=近20根(mfv*volume)總和 / 近20根volume總和，分母為0時 cmf=0。mfi=14根MFI，典型價用(high+low+close)/3。各自做100根區間正規化：n(x)=(x-近100根最低)/(近100根最高-近100根最低)*100-50，區間為0時取0。mf=(n(cmf)+n(mfi))/2。mf>=0 為買方（綠色）→做多；mf<0 為賣方（紅色）→做空。持多單時 mf<0 出場（或反手做空），持空單時 mf>=0 出場（或反手做多）。
