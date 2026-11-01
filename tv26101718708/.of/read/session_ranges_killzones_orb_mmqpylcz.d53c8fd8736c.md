@@ -1,4 +1,6 @@
-Calculation: Morning Star = close[2] < open[2] AND low[1] < low[2] AND high[1] < (high[2] + low[2]) / 2 AND close > open AND close > open[2] AND close > high[1] AND open[1] >= (high[1] + low[1]) / 2 AND close[1] >= (high[1] + low[1]) / 2
-Calculation: Evening Star = close[2] > open[2] AND high[1] > high[2] AND low[1] > (high[2] + low[2]) / 2 AND close < open AND close < open[2] AND close < low[1] AND open[1] <= (high[1] + low[1]) / 2 AND close[1] <= (high[1] + low[1]) / 2
-Long: Morning Star = true
-Short: Evening Star = true
+Long: close[2] < open[2] AND low[1] < low[2] AND high[1] < (high[2] + low[2]) / 2 AND close > open AND close > open[2] AND close > high[1] AND open[1] >= (high[1] + low[1]) / 2 AND close[1] >= (high[1] + low[1]) / 2
+Short: close[2] > open[2] AND high[1] > high[2] AND low[1] > (high[2] + low[2]) / 2 AND close < open AND close < open[2] AND close < low[1] AND open[1] <= (high[1] + low[1]) / 2 AND close[1] <= (high[1] + low[1]) / 2
+Long: The forming higher-timeframe bar's low > the high of the completed higher-timeframe bar two bars earlier AND min(open, close) of the forming higher-timeframe bar > max(open, close) of that earlier bar
+Short: The forming higher-timeframe bar's high < the low of the completed higher-timeframe bar two bars earlier AND max(open, close) of the forming higher-timeframe bar < min(open, close) of that earlier bar
+Long: The forming higher-timeframe bar's low < the last completed higher-timeframe bar's high AND min(open, close) of the forming higher-timeframe bar > max(open, close) of the last completed higher-timeframe bar
+Short: The forming higher-timeframe bar's high > the last completed higher-timeframe bar's low AND max(open, close) of the forming higher-timeframe bar < min(open, close) of the last completed higher-timeframe bar

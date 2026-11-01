@@ -1,11 +1,9 @@
-Calculation: Weibull probability = Weibull probability density evaluated for each close from the configured M1 timeframe, using the last lookback window including its still-forming bar; use the final output.
-Calculation: Poisson probability = Poisson cumulative distribution of cumulative counts of consecutive M1 close changes whose absolute size exceeds a threshold; set the Poisson rate to the mean of those cumulative counts. Use the last output. Use the same M1 bars as for Weibull probability, including the still-forming bar.
-Calculation: M1 close change = oldest close minus newest close in the lookback window on the configured M1 timeframe, including its still-forming bar.
-Calculation: M15 close change = oldest close minus newest close in the lookback window on the configured M15 timeframe, including its still-forming bar.
-Calculation: H1 close range = highest close minus lowest close in the lookback window on the configured H1 timeframe, including its still-forming bar.
-Calculation: H1 close change = newest close minus oldest close in the lookback window on the configured H1 timeframe, including its still-forming bar.
-Long: Poisson probability > breakout threshold AND Weibull probability > mean-reversion threshold AND M1 close change > 0 AND M15 close change > 0 AND H1 close range > minimum volatility threshold
-Short: Weibull probability < mean-reversion threshold AND absolute H1 close change < maximum trend threshold
-Calculation: ATR = average true range on the chart timeframe, using the bar still forming.
-Exit: long, low <= entry price - stop distance OR high >= entry price + target distance
-Exit: short, high >= entry price + stop distance OR low <= entry price - target distance
+Calculation: Price windows = equal-length close-price windows on three ordered timeframes: shortest, intermediate, and longest. Each window includes its still-forming bar and is ordered oldest to newest. Each timeframe may be lower than, equal to, or higher than the chart timeframe, depending on its configured value.
+Calculation: Weibull density = Weibull probability density of the newest close in the shortest-timeframe window, with fixed shape and scale parameters.
+Calculation: Poisson probability = Poisson cumulative probability at the final cumulative event count in the shortest-timeframe window. Starting at zero, increment the count whenever the absolute change between consecutive closes exceeds a price-distance parameter. The Poisson mean is the average of all cumulative counts; use a positive fallback mean if that average is zero. For a one-close window, use a count and mean of one.
+Calculation: Stop distance = the greater of a fixed minimum price distance and a multiplier of chart-timeframe ATR at entry, using the still-forming bar.
+Calculation: Target distance = the greater of a larger fixed minimum price distance and a larger multiplier of the same chart-timeframe ATR at entry.
+Long: Poisson probability > breakout threshold AND Weibull density > mean-reversion threshold AND oldest close > newest close in the shortest-timeframe window AND oldest close > newest close in the intermediate-timeframe window AND maximum close minus minimum close in the longest-timeframe window > volatility threshold.
+Short: Weibull density < mean-reversion threshold AND absolute difference between newest and oldest closes in the longest-timeframe window < trend threshold.
+Exit: long, low <= entry price minus stop distance OR high >= entry price plus target distance.
+Exit: short, high >= entry price plus stop distance OR low <= entry price minus target distance.

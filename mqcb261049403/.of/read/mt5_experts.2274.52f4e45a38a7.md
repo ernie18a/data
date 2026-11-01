@@ -1,8 +1,5 @@
-Calculation: Prior N-bar high = highest high of the N bars immediately before the signal bar on the indicator timeframe.
-Calculation: Prior N-bar low = lowest low of the N bars immediately before the signal bar on the indicator timeframe.
-Calculation: Bullish line = the lowest low of the signal bar and preceding N−1 bars, established when the signal-bar close is above the prior N-bar high and carried forward until a bearish breakout establishes the bearish line.
-Calculation: Bearish line = the highest high of the signal bar and preceding N−1 bars, established when the signal-bar close is below the prior N-bar low and carried forward until a bullish breakout establishes the bullish line.
-Long: signal-bar close > prior N-bar high AND bullish line was absent on the preceding indicator bar.
-Short: signal-bar close < prior N-bar low AND bearish line was absent on the preceding indicator bar.
-Exit: long, bearish line is present.
-Exit: short, bullish line is present.
+Calculation: Range state = On the selected indicator-timeframe bar, set the state to bullish if close is greater than the highest high of the preceding lookback bars; otherwise set it to bearish if close is less than the lowest low of the preceding lookback bars; otherwise retain the previous state. Initialize the state as neutral. The indicator timeframe may be the chart timeframe or a higher or lower timeframe; use the selected signal bar, which may be the last completed bar, an earlier completed bar, or the bar still forming.
+Long: (trade direction = with signals AND range state = bullish AND previous range state != bullish) OR (trade direction = against signals AND range state = bearish AND previous range state != bearish)
+Short: (trade direction = with signals AND range state = bearish AND previous range state != bearish) OR (trade direction = against signals AND range state = bullish AND previous range state != bullish)
+Exit: long, (trade direction = with signals AND range state = bearish) OR (trade direction = against signals AND range state = bullish) OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, (trade direction = with signals AND range state = bullish) OR (trade direction = against signals AND range state = bearish) OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

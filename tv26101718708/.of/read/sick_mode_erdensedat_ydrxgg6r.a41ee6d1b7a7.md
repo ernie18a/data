@@ -1,20 +1,23 @@
-Calculation: Internal swing high/low = a pivot high/low confirmed using equal left and right lookbacks; use the shorter lookback for minor pivots and the longer lookback for external pivots.
-Calculation: Bullish FVG = a three-bar gap where the current low is above the high two bars earlier, and the middle bar closes above its low plus the prior bar’s ATR(200) multiplied by the threshold. Bearish FVG = the inverse: the current high is below the low two bars earlier, and the middle bar closes below its high minus the prior bar’s ATR(200) multiplied by the threshold.
-Calculation: Bullish order block = a bullish FVG whose first bar (two bars earlier) closes below its open. Bearish order block = a bearish FVG whose first bar closes above its open.
-Calculation: Bullish rejection block = a confirmed swing-low bar whose lower wick exceeds half its range. Bearish rejection block = a confirmed swing-high bar whose upper wick exceeds half its range.
-Long: Close crosses above the latest confirmed internal swing high.
-Long: Close crosses above the latest confirmed external swing high.
-Long: Low reaches or passes a confirmed swing-low liquidity level and close finishes above that level.
-Long: A bullish FVG forms.
-Long: Price trades below the top of an unmitigated bullish FVG and closes above its top.
-Long: A bullish order block forms.
-Long: A bullish rejection block forms.
-Long: Price first retests an unmitigated bullish order block or rejection block by overlapping its price range.
-Short: Close crosses below the latest confirmed internal swing low.
-Short: Close crosses below the latest confirmed external swing low.
-Short: High reaches or exceeds a confirmed swing-high liquidity level and close finishes below that level.
-Short: A bearish FVG forms.
-Short: Price trades above the bottom of an unmitigated bearish FVG and closes below its bottom.
-Short: A bearish order block forms.
-Short: A bearish rejection block forms.
-Short: Price first retests an unmitigated bearish order block or rejection block by overlapping its price range.
+Calculation: Confirmed pivot high or low = a high or low with the specified number of bars on each side; it becomes available on the confirmation bar. Use a shorter pivot length for minor pivots, an intermediate length for internal pivots, and a longer length for external pivots.
+Calculation: Internal structure direction = initially neutral; set to bullish when close crosses above the latest confirmed internal pivot high, or bearish when close crosses below the latest confirmed internal pivot low. Replace each level when a new corresponding pivot is confirmed and clear it after its cross. External structure uses the same procedure with external pivots and its own levels.
+Calculation: Liquidity levels = confirmed internal pivot highs and lows. Retain up to a configurable number of the most recent untouched levels of each kind; remove a high on the first bar with high >= level and a low on the first bar with low <= level, after checking for a sweep.
+Calculation: Fair value gap = a bullish gap when low > high two bars earlier AND the previous close > the previous low + the previous ATR multiplied by a configurable threshold; its top is the current low and bottom is the high two bars earlier. A bearish gap occurs when high < low two bars earlier AND the previous close < the previous high - the previous ATR multiplied by the threshold; its top is the low two bars earlier and bottom is the current high. Register each gap one bar after detection. An unbroken gap becomes broken when, for a bullish gap, the selected mitigation measure is below the bottom, or for a bearish gap it is above the top. The selectable measures are respectively min(open, close) and max(open, close), low and high, or low and high against the gap midpoint. In gap mode remove a broken gap; in breaker mode retain it until the opposite measure crosses its other boundary. Optionally remove overlapping gaps using strict interior boundary comparisons, processing older gaps against the newest gap of each direction. A gap can produce only its first raid while unbroken.
+Calculation: Bullish order block = the full range of the bar two bars earlier when current low > its high AND the previous close > its high AND that earlier bar closed below its open. Bearish order block = the full range of the bar two bars earlier when current high < its low AND the previous close < its low AND that earlier bar closed above its open.
+Calculation: Bullish rejection block = the range from the low to min(open, close) of a newly confirmed internal pivot-low bar when the confirmation bar's lower wick > half its range. Bearish rejection block = the range from max(open, close) to the high of a newly confirmed internal pivot-high bar when the confirmation bar's upper wick > half its range.
+Calculation: Active block = an order or rejection block retained among the configurable maximum number of recent blocks, with bullish blocks invalidated when close < bottom and bearish blocks invalidated when close > top. Check the first retest before invalidation on each bar, including the creation bar; a retest requires the bar to be after the block's origin bar and its range to overlap the block.
+Long: Internal structure direction = bullish.
+Short: Internal structure direction = bearish.
+Long: Close crosses above the latest confirmed external pivot high.
+Short: Close crosses below the latest confirmed external pivot low.
+Long: Low <= an active liquidity low AND close > that level.
+Short: High >= an active liquidity high AND close < that level.
+Long: Internal structure direction = bullish AND low <= the latest confirmed minor pivot low not previously consumed by this condition.
+Short: Internal structure direction = bearish AND high >= the latest confirmed minor pivot high not previously consumed by this condition.
+Long: A bullish fair value gap was detected on the previous bar.
+Short: A bearish fair value gap was detected on the previous bar.
+Long: Low < the top of an unbroken bullish fair value gap AND close > its top AND the gap has not previously been raided.
+Short: High > the bottom of an unbroken bearish fair value gap AND close < its bottom AND the gap has not previously been raided.
+Long: A bullish order block or bullish rejection block is created.
+Short: A bearish order block or bearish rejection block is created.
+Long: An active bullish block has its first retest.
+Short: An active bearish block has its first retest.

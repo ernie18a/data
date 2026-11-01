@@ -1,5 +1,6 @@
-Calculation: reversal threshold = (highest high over the lookback − lowest low over the lookback) × offset percentage, calculated on the indicator timeframe using the last completed bar
-Long: close > highest high over the lookback − reversal threshold AND the previous signal direction is not long
-Short: close < lowest low over the lookback + reversal threshold AND the previous signal direction is not short
-Exit: long, close < lowest low over the lookback + reversal threshold AND the previous signal direction is not short
-Exit: short, close > highest high over the lookback − reversal threshold AND the previous signal direction is not long
+Calculation: Range bounds = highest high and lowest low over the lookback ending at the signal bar; offset = their difference multiplied by a shift fraction.
+Calculation: Trend = initially neutral; on each completed signal bar, set it to short when close < lowest low + offset AND prior trend != short; otherwise set it to long when close > highest high - offset AND prior trend != long; otherwise retain the prior trend. Evaluate the short condition first.
+Long: Signal-bar close > highest high - offset AND prior trend != long AND NOT (signal-bar close < lowest low + offset AND prior trend != short).
+Short: Signal-bar close < lowest low + offset AND prior trend != short.
+Exit: long, trend = short OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, trend = long OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

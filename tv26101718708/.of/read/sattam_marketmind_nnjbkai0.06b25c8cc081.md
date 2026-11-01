@@ -1,12 +1,25 @@
-Calculation: Heikin-Ashi candles = standard recursive Heikin-Ashi OHLC calculated from chart bars.
-Calculation: Heikin-Ashi ATR = Wilder ATR calculated from Heikin-Ashi high, low, and close.
-Calculation: Fast and slow Heikin-Ashi SuperTrend = SuperTrend using Heikin-Ashi ATR and midpoint of Heikin-Ashi high and low; the fast version uses a shorter/faster multiplier than the slow version. Its direction flips up when Heikin-Ashi close crosses below the prior lower band, and flips down when it crosses above the prior upper band; otherwise direction persists, with bands carried forward according to the prior close.
-Calculation: Heikin-Ashi run length = consecutive bars with the same Heikin-Ashi candle direction.
-Calculation: Confirmation spacing = number of chart bars since the previous confirmation.
-Calculation: Long target levels = entry price plus each of three configurable multiples of Heikin-Ashi ATR at entry. Short target levels = entry price minus each of three configurable multiples of Heikin-Ashi ATR at entry.
-Long: Selected SuperTrend direction changes from down to up, OR (filter mode is selected AND slow SuperTrend direction is up AND high exceeds the prior breakout-window highest high AND the previous filtered signal was not long).
-Short: Selected SuperTrend direction changes from up to down, OR (filter mode is selected AND slow SuperTrend direction is down AND low falls below the prior breakout-window lowest low AND the previous filtered signal was not short).
-Long: Slow SuperTrend direction is up AND Heikin-Ashi candle is up AND Heikin-Ashi run length is within the early-run limit AND Heikin-Ashi body is at least the configured ATR fraction AND at least the configured fraction of its range AND lower wick is at most the configured fraction of its range AND confirmation spacing meets its minimum AND no long or short signal occurred on this bar or the prior bar.
-Short: Slow SuperTrend direction is down AND Heikin-Ashi candle is down AND Heikin-Ashi run length is within the early-run limit AND Heikin-Ashi body is at least the configured ATR fraction AND at least the configured fraction of its range AND upper wick is at most the configured fraction of its range AND confirmation spacing meets its minimum AND no long or short signal occurred on this bar or the prior bar.
-Exit: long, high reaches or exceeds any long target level.
-Exit: short, low reaches or falls below any short target level.
+Calculation: Heikin-Ashi candle = close is the mean of real open, high, low and close; open is the mean of the previous Heikin-Ashi open and close, initialized to the mean of real open and close; high is the maximum of real high, Heikin-Ashi open and close; low is the corresponding minimum.
+Calculation: Heikin-Ashi ATR = Wilder's moving average of true range calculated from Heikin-Ashi high, low and previous close.
+Calculation: Heikin-Ashi trend = for each of a fast and a slow multiplier, with the slow multiplier larger, calculate midpoint = (Heikin-Ashi high + low) / 2, raw lower band = midpoint - multiplier × Heikin-Ashi ATR, and raw upper band = midpoint + multiplier × Heikin-Ashi ATR. Lower band = maximum of raw lower band and previous lower band if previous Heikin-Ashi close > previous lower band, otherwise raw lower band. Upper band = minimum of raw upper band and previous upper band if previous Heikin-Ashi close < previous upper band, otherwise raw upper band. Initialize bands to their raw values and direction to +1. Change direction from -1 to +1 when Heikin-Ashi close > previous upper band, and from +1 to -1 when Heikin-Ashi close < previous lower band; otherwise retain direction. Select the fast trend in fast mode and the slow trend in the other modes.
+Calculation: Confirmation candidate = Heikin-Ashi body is absolute close minus open; range is high minus low, floored at the minimum price increment; color is up when Heikin-Ashi close >= open and down otherwise; color run is the consecutive count of bars of the current color. A candidate requires color run <= a run limit AND body >= a multiplier × Heikin-Ashi ATR AND body >= a fraction of range AND the wick against the candle direction <= a fraction of range AND bars since the previous candidate in either direction >= a gap. Update the previous-candidate bar whenever these conditions and the corresponding trend and candle direction hold, even if the candidate is subsequently suppressed.
+Calculation: Structure levels = confirmed pivot highs and lows with equal left and right lookbacks, using either a shorter internal or a longer external lookback. Replace the stored high when none exists, the new pivot is higher, or the stored pivot is older than a staleness limit; replace the stored low symmetrically. Age is measured from the pivot bar. Clear a stored level when close breaks it.
+Calculation: Timeframe bias = +1 when close >= EMA of close and -1 otherwise, calculated separately on each of several shorter and longer timeframes. For a timeframe higher than the chart, use the last completed bar; for a lower timeframe, use the last completed lower-timeframe bar within the chart bar. Short-term and long-term groups each contain several biases, with all timeframes in the short-term group shorter than those in the long-term group.
+Calculation: Bull score = count of positive timeframe biases plus one when RSI > an upper threshold plus one when Heikin-Ashi close > open. Bear score = count of negative timeframe biases plus one when RSI < a lower threshold plus one when Heikin-Ashi close < open.
+Long: Selected Heikin-Ashi trend direction = +1.
+Short: Selected Heikin-Ashi trend direction = -1.
+Long: In a non-filter mode, selected trend direction changes from -1 to +1.
+Short: In a non-filter mode, selected trend direction changes from +1 to -1.
+Long: In filter mode, selected trend direction = +1 AND high > highest high over the preceding breakout lookback AND the previous raw filtered signal was not long.
+Short: In filter mode, selected trend direction = -1 AND low < lowest low over the preceding breakout lookback AND the previous raw filtered signal was not short.
+Long: Selected trend direction = +1 AND Heikin-Ashi close >= open AND confirmation candidate conditions hold AND neither a main long nor a main short signal occurred on the current or previous bar.
+Short: Selected trend direction = -1 AND Heikin-Ashi close < open AND confirmation candidate conditions hold AND neither a main long nor a main short signal occurred on the current or previous bar.
+Long: Close > stored structure high.
+Short: Close < stored structure low.
+Long: Timeframe bias = +1, for each displayed timeframe.
+Short: Timeframe bias = -1, for each displayed timeframe.
+Long: Sum of timeframe biases in either the short-term or long-term group >= 0.
+Short: Sum of timeframe biases in either the short-term or long-term group < 0.
+Long: Bull score >= bear score AND bull score >= the minimum verdict threshold.
+Short: Bear score > bull score AND bear score >= the minimum verdict threshold.
+Exit: long, high >= entry price + target multiplier × Heikin-Ashi ATR at the main signal entry; evaluate each of three target multipliers independently and only once per target.
+Exit: short, low <= entry price - target multiplier × Heikin-Ashi ATR at the main signal entry; evaluate each of three target multipliers independently and only once per target.

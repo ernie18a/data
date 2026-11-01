@@ -1,5 +1,5 @@
-Calculation: TMA = Close-based triangular weighted moving average, with weights increasing from 1 to the midpoint and then decreasing symmetrically; calculated on a timeframe that may be higher or lower than the chart timeframe, using completed bars.
-Long: On the latest completed bar, Close > TMA + long breakout offset AND on the preceding completed bar, Close <= TMA + long breakout offset
-Short: On the latest completed bar, Close < TMA - short breakout offset AND on the preceding completed bar, Close >= TMA - short breakout offset
-Exit: short, latest completed bar Close > TMA + long breakout offset
-Exit: long, latest completed bar Close < TMA - short breakout offset
+Calculation: Lagged triangular average at a bar = weighted mean of the preceding N closes, excluding that bar; N is the ceiling of half the smoothing-length parameter. From oldest to newest, weight i is min(i, N + 1 - i), with i starting at 1.
+Long: The selected higher-timeframe close > its lagged triangular average + upper offset AND the preceding higher-timeframe close <= its lagged triangular average + upper offset; use the last completed higher-timeframe bar or the still-forming higher-timeframe bar according to the signal-bar setting.
+Short: The selected higher-timeframe close < its lagged triangular average - lower offset AND the preceding higher-timeframe close >= its lagged triangular average - lower offset; use the last completed higher-timeframe bar or the still-forming higher-timeframe bar according to the signal-bar setting.
+Exit: long, selected higher-timeframe close < its lagged triangular average - lower offset, using the same higher-timeframe bar selection as entry OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, selected higher-timeframe close > its lagged triangular average + upper offset, using the same higher-timeframe bar selection as entry OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

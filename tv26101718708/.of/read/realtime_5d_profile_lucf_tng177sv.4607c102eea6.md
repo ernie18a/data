@@ -1,3 +1,7 @@
-Calculation: LazyBear-style Weis Wave trend = track the latest direction of a close-price reversal; update the trend to that direction when close has been rising or falling for the smoothing lookback
-Long: Supertrend direction changes from downtrend to uptrend OR LazyBear-style Weis Wave trend changes to up OR the active trend state is up
-Short: Supertrend direction changes from uptrend to downtrend OR LazyBear-style Weis Wave trend changes to down OR the active trend state is down
+Calculation: Trend direction = for the selected trend method, either Supertrend direction on chart bars, with -1 bullish and +1 bearish, or the confirmed price direction: retain the latest nonzero sign of close minus previous close whenever that sign changes; update the confirmed direction to that sign when close is greater than every close in the preceding lookback or less than every close in that lookback; otherwise retain the confirmed direction, initially 0.
+Calculation: Trend change = the previous chart bar's trend direction minus the direction on the bar before it; use no trend change when the selected reset method is timeframe-based.
+Calculation: Bullish trend state = on each chart bar, if the previous bullish trend state is false, use bullish trend change; otherwise use NOT bearish trend change. Bearish trend state = if the previous bearish trend state is false, use bearish trend change; otherwise use NOT bullish trend change. Treat an unavailable previous state as taking the otherwise branch. A bullish trend change is a nonzero trend change whose value differs from the previous bar's trend change and is negative for Supertrend or positive for confirmed price direction. A bearish trend change uses the opposite sign.
+Long: Bullish trend state is true.
+Short: Bearish trend state is true OR bullish trend state is false.
+Long: Close > open.
+Short: Close <= open.

@@ -1,1 +1,1 @@
-Close all open positions when account equity exceeds a configured multiple of account balance.
+On each timer check, process a traded instrument only if its ask has changed since its previous check. After processing any entry signal, if account-wide equity exceeds account balance multiplied by a configurable profit threshold, close all open positions across the account.

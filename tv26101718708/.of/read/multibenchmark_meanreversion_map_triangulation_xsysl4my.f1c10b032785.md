@@ -1,3 +1,5 @@
-Calculation: Relative z-score = EMA of ((EMA of asset close / benchmark close − rolling mean of the smoothed ratio) / rolling standard deviation of the smoothed ratio); use a shorter EMA for the ratio, a longer rolling lookback for the mean and standard deviation, and a final EMA to smooth the z-score. Use the current bar’s close; when sourced from a higher timeframe, use the bar still forming.
-Long: Primary-benchmark relative z-score > −extreme threshold AND previous primary-benchmark relative z-score ≤ −extreme threshold
-Short: Primary-benchmark relative z-score < +extreme threshold AND previous primary-benchmark relative z-score ≥ +extreme threshold
+Calculation: Smoothed price z-score = On each chart bar, take the close from a configurable aggregation timeframe: when higher than the chart timeframe, use the last completed bar historically and the still-forming bar in real time; when lower, use the last available intrabar; when equal, use the chart close. Forward-fill missing closes. On the chart timeframe, apply an EMA to this close, subtract its rolling SMA, divide by its rolling population standard deviation, and apply a second EMA. Use zero for the unsmoothed z-score when the standard deviation is zero.
+Long: Smoothed price z-score <= negative undervaluation threshold.
+Short: Smoothed price z-score >= positive overextension threshold.
+Long: The most recent crossing of either extreme threshold occurred within the freshness window AND was a cross above the negative extreme threshold.
+Short: The most recent crossing of either extreme threshold occurred within the freshness window AND was a cross below the positive extreme threshold.

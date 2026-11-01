@@ -1,5 +1,7 @@
-Calculation: N-Line Break trend = on the configured indicator timeframe, which may be higher or lower than the chart timeframe, compare each completed bar with the preceding N bars: if the prior trend was bullish and the bar's low is below their lowest low, switch to bearish; then, if the resulting trend is bearish and the bar's high is above their highest high, switch to bullish; otherwise retain the trend.
-Long: N-Line Break trend changes from bearish on the preceding completed indicator bar to bullish on the latest completed indicator bar
-Short: N-Line Break trend changes from bullish on the preceding completed indicator bar to bearish on the latest completed indicator bar
-Exit: long, N-Line Break trend is bearish on the latest completed indicator bar
-Exit: short, N-Line Break trend is bullish on the latest completed indicator bar
+Calculation: Breakout trend = initialize down; for each bar, if the previous trend is up and the bar's low is below the lowest low of the preceding lookback bars, set trend to down; then, if trend is down and the bar's high is above the highest high of the preceding lookback bars, set trend to up; otherwise retain trend. Calculate on the chart timeframe for indicator markings and on a configurable higher, lower, or chart timeframe for trading signals, using a configurable completed or still-forming signal bar.
+Long: Chart-timeframe breakout trend = up.
+Short: Chart-timeframe breakout trend = down.
+Long: Signal-bar breakout trend = up AND preceding signal-bar breakout trend = down.
+Short: Signal-bar breakout trend = down AND preceding signal-bar breakout trend = up.
+Exit: long, signal-bar breakout trend = down OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, signal-bar breakout trend = up OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

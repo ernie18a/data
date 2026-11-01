@@ -1,9 +1,13 @@
-Calculation: Confirmed pivot high = high at a bar that is the highest high across the configured number of chart bars before and after it; it becomes available after the bars after it close
-Calculation: Confirmed pivot low = low at a bar that is the lowest low across the configured number of chart bars before and after it; it becomes available after the bars after it close
-Calculation: Candidate pivot = the confirmed high or low; if both confirm together, choose the high when there is no prior accepted pivot and close < open, or when the high is at least as far from the prior accepted pivot as the low; otherwise choose the low
-Calculation: EMA = exponential moving average of chart close, with a configurable lookback
-Calculation: Across Large, Medium, and Small modes, pivot lookbacks and minimum pivot deviations are ordered longest/largest to shortest/smallest, respectively
-Long: For any enabled mode, candidate is a pivot low AND its direction differs from that mode's current direction AND (no prior accepted pivot OR absolute difference between candidate price and prior accepted pivot price >= that mode's minimum deviation) AND (EMA filter disabled OR close > EMA) AND (closed chart bar when close-only confirmation is enabled)
-Short: For any enabled mode, candidate is a pivot high AND its direction differs from that mode's current direction AND (no prior accepted pivot OR absolute difference between candidate price and prior accepted pivot price >= that mode's minimum deviation) AND (EMA filter disabled OR close < EMA) AND (closed chart bar when close-only confirmation is enabled)
-Exit: long, a Short signal occurs in that mode
-Exit: short, a Long signal occurs in that mode
+Calculation: Swing candidate = For each of three independent profiles with long, intermediate, and short pivot depths and corresponding larger, intermediate, and smaller minimum deviations, find a confirmed pivot high or low using equal left and right depths. A pivot high is at least as high as every high to its left and higher than every high to its right; a pivot low is at most as low as every low to its left and lower than every low to its right. Confirm it on the final right-hand bar. If both occur together, select the high when its distance from the last accepted pivot is greater than or equal to the low's distance; otherwise select the low. If there is no last accepted pivot, select the high when close < open and otherwise select the low.
+Calculation: Accepted swing direction = For each profile, start flat and retain the last accepted direction and pivot price. Accept a candidate only if its direction differs from the retained direction, its price is at least the profile's minimum price deviation from the last accepted pivot or no pivot has yet been accepted, and the optional EMA filter is disabled or close > EMA for a low or close < EMA for a high. An accepted low sets the direction to long; an accepted high sets it to short. Update the retained pivot price only on acceptance.
+Calculation: Active zone = For each profile, on an accepted swing, set the level to the accepted pivot price and the upper and lower boundaries to that price plus and minus ATR on the confirmation bar multiplied by the profile's zone multiplier. The long-depth profile has the largest multiplier and the short-depth profile the smallest. The zone starts unbroken and remains active until the next accepted swing. After its creation bar, mark a low zone broken when close < lower boundary and a high zone broken when close > upper boundary; a broken zone remains broken until replaced.
+Long: A swing low is accepted for a profile.
+Short: A swing high is accepted for a profile.
+Long: At least two profile directions are long.
+Short: At least two profile directions are short.
+Long: An active unbroken low zone is past its creation bar AND low < its lower boundary AND close > its level.
+Short: An active unbroken high zone is past its creation bar AND high > its upper boundary AND close < its level.
+Long: An active unbroken high zone is past its creation bar AND close > its upper boundary.
+Short: An active unbroken low zone is past its creation bar AND close < its lower boundary.
+Exit: long, an opposite swing high is accepted by the same profile.
+Exit: short, an opposite swing low is accepted by the same profile.

@@ -1,2 +1,3 @@
-Long: Senkou Span A on the chart timeframe, using the bar still forming > Senkou Span B on the chart timeframe, using the bar still forming
-Short: Senkou Span B on the chart timeframe, using the bar still forming > Senkou Span A on the chart timeframe, using the bar still forming
+Calculation: Cloud spans at the evaluated bar = Ichimoku Senkou spans A and B calculated a fixed displacement of bars earlier; the displacement is independent of the Ichimoku lookback parameters.
+Long: Cloud span A > cloud span B
+Short: Cloud span B > cloud span A

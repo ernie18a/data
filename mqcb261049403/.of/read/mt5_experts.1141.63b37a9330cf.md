@@ -1,5 +1,5 @@
-Calculation: CMO = 100 × (sum of positive changes in the moving average over the lookback − sum of absolute negative changes) / (sum of positive changes + sum of absolute negative changes); the moving average uses the configured method and applied price. If the denominator is zero, CMO = 0. Calculate on bars aggregated to the configured indicator timeframe, which may be higher or lower than the chart timeframe, using completed bars only.
-Long: CMO on the latest completed indicator-timeframe bar > 0 AND CMO on the immediately preceding completed indicator-timeframe bar < 0
-Short: CMO on the latest completed indicator-timeframe bar < 0 AND CMO on the immediately preceding completed indicator-timeframe bar > 0
-Exit: long, CMO on the latest completed indicator-timeframe bar < 0 AND CMO on the immediately preceding completed indicator-timeframe bar > 0
-Exit: short, CMO on the latest completed indicator-timeframe bar > 0 AND CMO on the immediately preceding completed indicator-timeframe bar < 0
+Calculation: Smoothed CMO = apply a selectable moving average to a selectable price; sum its positive and negative bar-to-bar changes separately over a lookback equal to the moving-average length; return 100 × (sum of positive changes − sum of absolute negative changes) / (sum of positive changes + sum of absolute negative changes), or zero if the denominator is zero. Use a selectable chart, higher, or lower timeframe and a selectable signal bar: the forming bar, the last completed bar, or an earlier completed bar.
+Long: Smoothed CMO on the signal bar > 0 AND Smoothed CMO on the preceding bar < 0 AND position side = flat
+Short: Smoothed CMO on the signal bar < 0 AND Smoothed CMO on the preceding bar > 0 AND position side = flat
+Exit: long, Smoothed CMO on the signal bar < 0 OR low <= entry price − enabled stop-loss distance OR high >= entry price + enabled take-profit distance
+Exit: short, Smoothed CMO on the signal bar > 0 OR high >= entry price + enabled stop-loss distance OR low <= entry price − enabled take-profit distance

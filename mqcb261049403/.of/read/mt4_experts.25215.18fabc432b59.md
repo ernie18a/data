@@ -1,4 +1,5 @@
-Long: Monthly MACD main line (higher timeframe, last completed bar) > MACD signal line
-Short: Monthly MACD main line (higher timeframe, last completed bar) < MACD signal line
-Exit: long, previous chart bar close = upper Bollinger Band OR price reaches the stop-loss or take-profit level
-Exit: short, previous chart bar close = lower Bollinger Band OR price reaches the stop-loss or take-profit level
+Calculation: MACD = shorter-period EMA of close minus longer-period EMA of close; its signal line is the simple moving average of MACD.
+Long: MACD > signal line AND MACD != 0 on the last completed higher-timeframe bar.
+Short: MACD < signal line AND MACD != 0 on the last completed higher-timeframe bar.
+Exit: long, previous chart bar close = previous chart bar upper Bollinger Band.
+Exit: short, previous chart bar close = previous chart bar lower Bollinger Band.

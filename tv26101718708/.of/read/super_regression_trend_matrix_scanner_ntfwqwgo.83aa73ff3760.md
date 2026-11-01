@@ -1,3 +1,7 @@
-Calculation: Regression trend state = Calculate the least-squares linear regression of close over a lookback and RMSE = sqrt(sum((close[i] - regression[i])² for i = 0 to lookback - 1) / (lookback - 1)); raw upper and lower bands = regression ± RMSE × multiplier. Initialize the state as bullish and both bands to their raw values. On each bar, if the prior state was bullish, set the lower band to the greater of the raw lower band and prior lower band, and the upper band to the raw upper band; if bearish, set the upper band to the lesser of the raw upper band and prior upper band, and the lower band to the raw lower band. Change bullish to bearish when close < current lower band; change bearish to bullish when close > current upper band; otherwise retain the prior state.
-Long: Regression trend state = bullish
-Short: Regression trend state = bearish
+Calculation: Regression trend = On each chart bar, calculate the endpoint of the least-squares linear regression of close over a lookback. Calculate deviation as the square root of the sum of squared differences between each close and its own bar's regression endpoint over that lookback, divided by lookback minus one. Raw bands are the current regression endpoint plus or minus deviation times a multiplier. Initialize trend to bullish. Before updating trend on each bar, set the upper band to the raw upper band, except in a bearish trend use the minimum of the raw upper band and previous upper band; set the lower band to the raw lower band, except in a bullish trend use the maximum of the raw lower band and previous lower band. If the previous corresponding band is unavailable, use the raw band. Then change a bullish trend to bearish if close is below the current lower band, or a bearish trend to bullish if close is above the current upper band; otherwise retain the previous trend.
+Long: Regression trend = bullish
+Short: Regression trend = bearish
+Long: Close >= EMA of close for any of six distinct lookbacks ordered from shortest to longest
+Short: Close < EMA of close for any of six distinct lookbacks ordered from shortest to longest
+Long: RSI >= SMA of RSI
+Short: RSI < SMA of RSI

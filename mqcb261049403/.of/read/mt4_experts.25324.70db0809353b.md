@@ -1,5 +1,5 @@
-Calculation: Fast and slow linear weighted moving averages = linear weighted averages of typical price on a higher timeframe’s still-forming bar; the fast lookback is shorter than the slow lookback.
-Long: fast moving average > slow moving average AND low two chart bars ago < high one chart bar ago AND the absolute difference between the current chart bar’s open and close two bars ago exceeds a price-point-scaled retracement threshold
-Short: fast moving average < slow moving average AND low one chart bar ago < high two chart bars ago AND the absolute difference between the current chart bar’s open and close one bar ago exceeds a price-point-scaled retracement threshold
-Exit: long, price <= active stop-loss level OR price >= active take-profit level
-Exit: short, price >= active stop-loss level OR price <= active take-profit level
+Long: A confirmed lower fractal occurs.
+Short: A confirmed upper fractal occurs.
+Long: At the chart bar open, the shorter-period linearly weighted moving average of typical price on the still-forming higher-timeframe bar is greater than the longer-period one AND the low two chart bars ago is less than the previous chart bar's high AND the absolute difference between the chart bar open and the close two chart bars ago exceeds a price-distance threshold.
+Exit: long, the still-forming chart-bar exponential moving averages of typical price are all equal within a group of six increasing short periods OR they are all equal within a group of six increasing longer periods OR the previous chart-bar close is at or below the lower Bollinger Band on that bar.
+Exit: short, the still-forming chart-bar exponential moving averages of typical price are all equal within a group of six increasing short periods OR they are all equal within a group of six increasing longer periods OR the previous chart-bar close is at or below the lower Bollinger Band on that bar.

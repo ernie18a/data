@@ -1,5 +1,5 @@
-Calculation: Modified Optimum Elliptic Filter = On the configured indicator timeframe (higher than, lower than, or equal to the chart timeframe), calculate from midpoint prices (high + low) / 2; use the latest sampled bar at the configured signal offset (completed when the offset is positive, forming when it is zero). For each bar after the first four, filter = 0.13785 × (2 × midpoint − previous midpoint) + 0.0007 × (2 × previous midpoint − midpoint two bars ago) + 0.13785 × (2 × midpoint two bars ago − midpoint three bars ago) + 1.2103 × previous filter − 0.4867 × filter two bars ago; initialize earlier values to midpoint.
-Long: Filter two bars ago > Filter one bar ago AND Filter one bar ago < Filter latest sampled bar
-Short: Filter two bars ago < Filter one bar ago AND Filter one bar ago > Filter latest sampled bar
-Exit: long, Filter one bar ago > Filter latest sampled bar
-Exit: short, Filter one bar ago < Filter latest sampled bar
+Calculation: Filter = For each indicator-timeframe bar t, let p[t] = (high[t] + low[t]) / 2. Set filter[t] = p[t] for the first five bars; thereafter filter[t] = 0.13785 * (2 * p[t] - p[t-1]) + 0.0007 * (2 * p[t-1] - p[t-2]) + 0.13785 * (2 * p[t-2] - p[t-3]) + 1.2103 * filter[t-1] - 0.4867 * filter[t-2]. The indicator timeframe may be the chart timeframe, higher, or lower; use the last completed indicator bar, or the forming bar when configured, as t.
+Long: filter[t] > filter[t-1] AND filter[t-2] > filter[t-1]
+Short: filter[t] < filter[t-1] AND filter[t-2] < filter[t-1]
+Exit: long, filter[t] < filter[t-1] OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, filter[t] > filter[t-1] OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

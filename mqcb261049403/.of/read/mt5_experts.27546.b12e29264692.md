@@ -1,18 +1,2 @@
-Long: Shorter-period EMA > longer-period SMA
-Long: Long-period EMA < the low of each of the three previous completed chart bars
-Long: Previous completed chart-bar low < lower Bollinger Band using the shorter lookback
-Long: ADX > −DI AND +DI > −DI
-Long: Stochastic %K > %D AND %D > 80
-Long: Williams %R > −20
-Long: MACD main line > signal line
-Long: Ichimoku Span A > Span B AND Tenkan-sen > Kijun-sen AND previous completed chart-bar low > Span A
-Long: Entry RSI using the longer RSI lookback > configured entry threshold AND current RSI > previous completed-bar RSI
-Exit: Long, SMA > EMA
-Exit: Long, Long-period EMA > the high of each of the three previous completed chart bars
-Exit: Long, Previous completed chart-bar high > upper Bollinger Band using the longer lookback
-Exit: Long, −DI > +DI
-Exit: Long, Stochastic %D < 80
-Exit: Long, Williams %R < −80
-Exit: Long, MACD main line < signal line
-Exit: Long, Span B > Span A
-Exit: Long, Exit RSI using the shorter RSI lookback < configured exit threshold
+Long: chart-bar opening hour is within the configured trading window AND every selected entry condition is true, where the selectable conditions are: forming-bar close EMA > shorter-lookback close SMA; forming-bar long-lookback close EMA < each low in a configured number of preceding completed bars; previous bar low < its lower close Bollinger Band; forming-bar ADX > negative directional indicator AND positive directional indicator > negative directional indicator; forming-bar stochastic main line > signal line AND signal line > entry threshold; forming-bar Williams %R > entry threshold; forming-bar close MACD main line > signal line; forming-bar Ichimoku leading span A > leading span B AND conversion line > base line AND previous bar low > leading span A; forming-bar close RSI > entry threshold AND > previous bar RSI. The EMA in the second condition has a longer lookback than the moving averages in the first condition; use low/high stochastic with simple moving average smoothing.
+Exit: long, chart-bar opening hour is within the configured trading window AND every selected exit condition is true, where the selectable conditions are: forming-bar close SMA > shorter-lookback close EMA; forming-bar long-lookback close EMA > each high in a configured number of preceding completed bars; previous bar high > its upper close Bollinger Band; forming-bar negative directional indicator > positive directional indicator; forming-bar stochastic signal line < exit threshold; forming-bar Williams %R < exit threshold; forming-bar close MACD main line < signal line; forming-bar Ichimoku leading span B > leading span A; forming-bar close RSI < exit threshold. The EMA in the second condition has a longer lookback than the moving averages in the first condition; use low/high stochastic with simple moving average smoothing.

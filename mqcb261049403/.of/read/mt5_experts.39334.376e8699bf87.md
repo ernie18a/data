@@ -1,4 +1,6 @@
-Long: DeMarker on the chart timeframe’s last completed bar < lower threshold
-Short: DeMarker on the chart timeframe’s last completed bar > upper threshold
-Exit: Long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
-Exit: Short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance
+Calculation: Long stop = initial stop at entry price minus stop-loss distance; when trailing is enabled, at each new working bar set it to the bar open minus trailing distance if the open is at least entry price plus trailing distance plus trailing step, the open minus trailing distance is at least entry price plus activation distance, and the previous stop is below open minus trailing distance minus trailing step. An absent initial stop is treated as zero for this update.
+Calculation: Short stop = initial stop at entry price plus stop-loss distance; when trailing is enabled, at each new working bar set it to the bar open plus trailing distance if the open is at most entry price minus trailing distance minus trailing step, the open plus trailing distance is at most entry price minus activation distance, and the previous stop is above open plus trailing distance plus trailing step or is absent.
+Long: DeMarker of the last completed working bar < lower threshold AND (time control is disabled OR the new working bar's time is within the configured start-inclusive, end-exclusive interval).
+Short: DeMarker of the last completed working bar > upper threshold AND (time control is disabled OR the new working bar's time is within the configured start-inclusive, end-exclusive interval).
+Exit: long, (stop loss or trailing is enabled AND low <= long stop) OR (take profit is enabled AND high >= entry price plus take-profit distance).
+Exit: short, (stop loss or trailing is enabled AND high >= short stop) OR (take profit is enabled AND low <= entry price minus take-profit distance).

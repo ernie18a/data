@@ -1,11 +1,16 @@
-Calculation: Confirmed pivot high = a bar’s high above the highs in equal-length lookback windows on both sides; available after the right-side bars complete on the chart timeframe
-Calculation: Confirmed pivot low = a bar’s low below the lows in equal-length lookback windows on both sides; available after the right-side bars complete on the chart timeframe
-Calculation: Candle body-to-range ratio = abs(close - open) / (high - low)
-Calculation: Prior-day close = close of the last completed daily bar (higher timeframe)
-Calculation: Prior-prior-day open = open of the daily bar two bars before the current daily bar (higher timeframe)
-Long: close crosses above the latest confirmed pivot high AND candle body-to-range ratio is at least the configured minimum
-Short: close crosses below the latest confirmed pivot low AND candle body-to-range ratio is at least the configured minimum
-Long: close > prior-day close
-Short: close <= prior-day close
-Long: prior-day close >= prior-prior-day open AND price has crossed below prior-prior-day open during the current day, using the configured wick-or-close reference
-Short: prior-day close < prior-prior-day open AND price has crossed above prior-prior-day open during the current day, using the configured wick-or-close reference
+Calculation: Order block = On a close crossing above the latest confirmed pivot high or below the latest confirmed pivot low, select respectively the minimum parsed low or maximum parsed high from the pivot bar through the bar before the crossing; use the first bar in a tie. A pivot is confirmed after an equal number of bars on each side. For each candidate bar, parsed high and low are its high and low, swapped when its range is at least a volatility multiplier times either ATR or cumulative true range divided by the chart bar index. The selected bar's parsed high and low are the block's upper and lower bounds. Remove a bullish block after a configured number of consecutive closes below its lower bound, or a bearish block after that many consecutive closes above its upper bound; reset the count otherwise. Retain only the configured maximum number of newest blocks.
+Calculation: Moving-average slope = Current moving average minus its value a configured number of chart bars earlier. For each requested timeframe, use the forming bar if it is higher than the chart timeframe, or the last intrabar if it is lower.
+Long: Close crosses above the latest confirmed pivot high AND absolute close-minus-open divided by high-minus-low is at least the configured minimum; use zero for a zero-range bar.
+Short: Close crosses below the latest confirmed pivot low AND absolute close-minus-open divided by high-minus-low is at least the configured minimum; use zero for a zero-range bar.
+Long: High is at or above an active bullish order block's lower bound AND low is at or below its upper bound AND the bar is within an enabled alert session AND the block's alert cooldown has elapsed.
+Short: High is at or above an active bearish order block's lower bound AND low is at or below its upper bound AND the bar is within an enabled alert session AND the block's alert cooldown has elapsed.
+Long: Moving-average slope is greater than zero, independently for each displayed trend, macro, bias, and long-term SMA.
+Short: Moving-average slope is less than or equal to zero, independently for each displayed trend, macro, bias, and long-term SMA.
+Long: Shorter-lookback trend SMA is greater than longer-lookback trend SMA, or shorter-lookback macro SMA is greater than longer-lookback macro SMA, or the bias SMA on the shorter timeframe and with the longer lookback is greater than the bias SMA on the longer timeframe and with the shorter lookback.
+Short: Shorter-lookback trend SMA is less than or equal to longer-lookback trend SMA, or shorter-lookback macro SMA is less than or equal to longer-lookback macro SMA, or the bias SMA on the shorter timeframe and with the longer lookback is less than or equal to the bias SMA on the longer timeframe and with the shorter lookback.
+Long: Close is greater than the close of the last completed higher-timeframe bar used for prior-period levels.
+Short: Close is less than or equal to the close of the last completed higher-timeframe bar used for prior-period levels.
+Long: Close of the last completed higher-timeframe bar is greater than or equal to the open of the preceding higher-timeframe bar AND the current period has not breached that preceding bar's low; a breach is a low or close below the level, according to the selected mode.
+Short: Close of the last completed higher-timeframe bar is less than the open of the preceding higher-timeframe bar AND the current period has not breached that preceding bar's high; a breach is a high or close above the level, according to the selected mode.
+Short: Close of the last completed higher-timeframe bar is greater than or equal to the open of the preceding higher-timeframe bar AND the current period first breaches that preceding bar's low; a breach is a low or close below the level, according to the selected mode.
+Long: Close of the last completed higher-timeframe bar is less than the open of the preceding higher-timeframe bar AND the current period first breaches that preceding bar's high; a breach is a high or close above the level, according to the selected mode.

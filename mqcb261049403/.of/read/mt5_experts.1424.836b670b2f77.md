@@ -1,6 +1,5 @@
-Calculation: Moving average = selected moving-average method applied to the selected price on the configured indicator timeframe, which may be higher, lower, or equal to the chart timeframe; use its last completed bar.
-Calculation: Trend-envelope direction = on each indicator-timeframe bar, compare its close with the prior bar’s upper and lower trend thresholds: set direction bullish if close is above the prior upper threshold, bearish if below the prior lower threshold, otherwise retain the prior direction. The raw thresholds are the moving average multiplied by (1 + deviation) and (1 − deviation); while bullish, carry the lower threshold forward as the greater of its raw value and its prior value, and while bearish or unset, carry the upper threshold forward as the lesser of its raw value and its prior value. A bullish transition is a change from bearish to bullish; a bearish transition is a change from bullish to bearish.
-Long: Trend-envelope direction changes from bearish to bullish.
-Short: Trend-envelope direction changes from bullish to bearish.
-Exit: long, Trend-envelope direction is bearish.
-Exit: short, Trend-envelope direction is bullish.
+Calculation: Envelope state = On the chart timeframe, or on a configurable higher or lower timeframe using its last completed bar or, if configured, its still-forming bar: calculate a moving average of the selected price and its upper and lower percentage envelopes. Initialize the previous upper band to 0, the previous lower band to 999999999.9, and the previous trend to 0. On each bar, start with the current upper and lower envelopes and the previous trend. If close > previous upper band, set trend to 1; then, if close < previous lower band, set trend to -1. If trend > 0, set the lower band to the maximum of the current lower envelope and previous lower band; otherwise, set the upper band to the minimum of the current upper envelope and previous upper band. Carry both bands and the trend forward to the next bar.
+Long: Trend > 0 AND previous trend < 0
+Short: Trend < 0 AND previous trend > 0
+Exit: long, trend <= 0 OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, trend > 0 OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

@@ -1,4 +1,3 @@
-Calculation: Pivot high = current bar high equals the highest high over the lookback period
-Calculation: Pivot low = current bar low equals the lowest low over the lookback period
-Long: Pivot low AND latest confirmed swing is not a low
-Short: Pivot high AND latest confirmed swing is not a high
+Calculation: Swing direction = initially neutral; set to high when the current high is the highest high over the lookback and the current low is not the lowest low over the same lookback; set to low when the current low is the lowest low over the lookback and the current high is not the highest high over the same lookback; otherwise retain the previous direction.
+Long: Swing direction is high AND a prior low swing exists, OR swing direction is low AND a prior high swing exists.
+Short: Swing direction is low AND a prior high swing exists, OR swing direction is high AND a prior low swing exists.

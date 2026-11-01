@@ -1,2 +1,5 @@
-Long: current low > high two bars ago AND the latest gap state is not bullish FVG, OR current close > the top of the latest bearish FVG
-Short: current high < low two bars ago AND the latest gap state is not bearish FVG, OR current close < the bottom of the latest bullish FVG
+Calculation: Gap state = Start neutral. On each chart bar, if low > high two bars ago and the previous state is not bullish gap, set the state to bullish gap and store high two bars ago as its lower boundary; otherwise, if high < low two bars ago and the previous state is not bearish gap, set the state to bearish gap and store low two bars ago as its upper boundary. After these updates, if the state is bullish gap and close is below its lower boundary, set it to bearish inversion; otherwise, if the state is bearish gap and close is above its upper boundary, set it to bullish inversion.
+Long: low > high two bars ago AND previous gap state != bullish gap
+Long: gap state before inversion = bearish gap AND close > stored upper boundary
+Short: high < low two bars ago AND previous gap state != bearish gap AND NOT (low > high two bars ago AND previous gap state != bullish gap)
+Short: gap state before inversion = bullish gap AND close < stored lower boundary

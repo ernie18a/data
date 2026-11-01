@@ -1,2 +1,6 @@
-Long: Supertrend direction < 0
-Short: Supertrend direction >= 0
+Long: chart-timeframe RSI >= bullish threshold OR chart-timeframe stochastic %K >= bullish threshold
+Short: chart-timeframe RSI <= bearish threshold OR chart-timeframe stochastic %K <= bearish threshold
+Long: higher-timeframe RSI >= bullish threshold OR higher-timeframe stochastic %K >= bullish threshold; use the last completed higher-timeframe bar on historical bars and the still-forming bar in real time
+Short: higher-timeframe RSI <= bearish threshold OR higher-timeframe stochastic %K <= bearish threshold; use the last completed higher-timeframe bar on historical bars and the still-forming bar in real time
+Long: chart-timeframe Supertrend direction is up OR higher-timeframe Supertrend direction changes from down to up; use the last completed higher-timeframe bar on historical bars and the still-forming bar in real time
+Short: chart-timeframe Supertrend direction is down OR higher-timeframe Supertrend direction changes from up to down; use the last completed higher-timeframe bar on historical bars and the still-forming bar in real time

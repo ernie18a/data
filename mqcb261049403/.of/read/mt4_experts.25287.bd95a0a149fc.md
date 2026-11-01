@@ -1,5 +1,5 @@
-Calculation: Short-term and long-term LWMA = linear weighted moving averages of typical price ((high + low + close) / 3), with the short-term lookback shorter than the long-term lookback, on a higher timeframe; use the bar still forming.
-Long: Number of open trades < maximum trades AND absolute difference between current bar open and the close two bars ago > configured retracement distance AND short-term LWMA > long-term LWMA AND low two bars ago < high one bar ago
-Short: Number of open trades < maximum trades AND absolute difference between current bar open and the close two bars ago > configured retracement distance AND short-term LWMA < long-term LWMA AND low one bar ago < high two bars ago
-Exit: Long, price <= entry price minus configured stop-loss distance OR price >= entry price plus configured take-profit distance
-Exit: Short, price >= entry price plus configured stop-loss distance OR price <= entry price minus configured take-profit distance
+Long: At the opening of a chart bar, the absolute difference between the open and the close two chart bars ago exceeds a price-distance threshold AND the shorter-period linearly weighted moving average of typical price exceeds the longer-period one on the still-forming higher-timeframe bar AND the low two chart bars ago is below the previous chart bar's high.
+Long: A chart bar is marked as a ZigZag low pivot by the recalculated ZigZag.
+Short: A chart bar is marked as a ZigZag high pivot by the recalculated ZigZag.
+Exit: long, the previous chart bar's close is at or below the lower Bollinger Band OR all six shorter-period exponential moving averages of typical price are equal on the still-forming lower-timeframe bar OR all six longer-period exponential moving averages of typical price are equal on that bar.
+Exit: short, the previous chart bar's close is at or below the lower Bollinger Band OR all six shorter-period exponential moving averages of typical price are equal on the still-forming lower-timeframe bar OR all six longer-period exponential moving averages of typical price are equal on that bar.

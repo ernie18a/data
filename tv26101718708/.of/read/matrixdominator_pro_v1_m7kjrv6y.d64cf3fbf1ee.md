@@ -1,27 +1,30 @@
-Calculation: Swing high/low = confirmed pivot high/low with equal left and right lookbacks
-Calculation: Bullish/bearish structure trend = +1/-1 after the close crosses above the latest swing high / below the latest swing low, respectively; otherwise retain the prior trend
-Calculation: Displacement = absolute candle body > ATR × the mode-dependent multiplier
-Calculation: Bullish/bearish sweep = high > latest swing high and close < it / low < latest swing low and close > it, respectively
-Calculation: Bullish/bearish FVG = current low > high two bars earlier / current high < low two bars earlier, respectively; require gap size at least ATR × minimum gap fraction, and in strict mode also require displacement
-Calculation: Discount/premium = close is below 38.2% / above 61.8% of the rolling high-low range, respectively
-Calculation: HTF bias = sum the directions (+1/-1/0) of three higher-timeframe fast-versus-slow EMA comparisons; bias is bullish at sum ≥ 2, bearish at sum ≤ -2, otherwise neutral. Use last completed higher-timeframe bars
-Calculation: HTF aligned = HTF bias is neutral or matches the trade direction
-Calculation: Compression = short-lookback ATR / longer-lookback ATR < compression threshold
-Calculation: OB score = 2 base points, plus 2 for the directionally confirming sweep; plus 1 each for matching FVG, matching structure trend, aligned HTF bias when its filter is enabled, volume > 1.5 × 20-bar volume average, direction-matching discount/premium, strong displacement (body > 1.5 × displacement threshold), matching higher-timeframe candle color when enabled, price inside a same-direction higher-timeframe order block when enabled, and matching delta (5-bar average of ((close − low) − (high − close)) / (high − low) > 0.15 for bullish or < −0.15 for bearish); cap at 10
-Calculation: Bullish/bearish OB = the high-low range of the opposite-color candle impulse-lookback-plus-one bars earlier, created when the current candle has matching direction and displacement; cap zone height at ATR × maximum OB height
-Calculation: OB midpoint = (OB top + OB bottom) / 2
-Calculation: Golden zone = close is between 61.8% and 78.6% of the rolling high-low range
-Long: bullish OB is active, untriggered, and score ≥ minimum; session filter passes; HTF is aligned; compression block is off or compression is false; low ≤ OB midpoint; close > OB bottom; bullish structure trend
-Long: close is in discount; bullish structure trend; rolling high-low range > 0
-Long: close is in golden zone; bullish structure trend; close < prior close; rolling high-low range > 0
-Long: low < latest swing low; close > latest swing low; displacement
-Long: close crosses above latest swing high (prior close ≤ that swing high)
-Long: bullish OB was invalidated within the reclaim window and close > its top
-Short: bearish OB is active, untriggered, and score ≥ minimum; session filter passes; HTF is aligned; compression block is off or compression is false; high ≥ OB midpoint; close < OB top; bearish structure trend
-Short: close is in premium; bearish structure trend; rolling high-low range > 0
-Short: close is in golden zone; bearish structure trend; close > prior close; rolling high-low range > 0
-Short: high > latest swing high; close < latest swing high; displacement
-Short: close crosses below latest swing low (prior close ≥ that swing low)
-Short: bearish OB was invalidated within the reclaim window and close < its bottom
-Exit: long, high ≥ entry + risk × reward multiple OR low ≤ OB bottom − ATR × stop buffer
-Exit: short, low ≤ entry − risk × reward multiple OR high ≥ OB top + ATR × stop buffer
+Calculation: Confirmed swing high/low = a high/low that is respectively the highest/lowest over equal lookbacks on both sides, available only after the right-hand lookback has completed. Use the latest confirmed value of each.
+Calculation: Structure trend = bullish after close crosses above the latest confirmed swing high, bearish after close crosses below the latest confirmed swing low, and otherwise retains its previous state. A cross compares the current and preceding closes with the current latest swing level.
+Calculation: Displacement = absolute candle body exceeds ATR times a configurable multiplier; strong displacement uses a larger multiplier.
+Calculation: Higher-timeframe bias = for each of three successively higher timeframes, assign +1 when the shorter EMA of close exceeds the longer EMA, -1 when it is lower, and 0 when equal; sum the three values. On historical chart bars use the last completed higher-timeframe bar; on the live bar use the higher-timeframe bar still forming. Bias is bullish when the sum reaches a positive threshold, bearish when it reaches the corresponding negative threshold, and neutral otherwise.
+Calculation: Range position = (close minus the rolling lowest low) divided by (rolling highest high minus rolling lowest low); use a neutral midpoint when the range is zero.
+Calculation: Volume delta = the SMA of ((close - low) - (high - close)) / (high - low), using zero for a zero-range bar.
+Calculation: Directional fair value gap = bullish when current low exceeds the high two bars earlier, bearish when current high is below the low two bars earlier. Depending on the configured mode, additionally require the gap size to reach an ATR multiple and optionally require displacement.
+Calculation: Higher-timeframe order block = on a higher timeframe, a displaced bullish candle immediately following a bearish candle creates a bullish zone from the preceding candle's low to high; a displaced bearish candle immediately following a bullish candle creates the analogous bearish zone. Displacement here uses that timeframe's ATR and its own multiplier. Use the last completed higher-timeframe bar on historical chart bars and the bar still forming on the live bar. Cap bullish zone height from its low and bearish zone height from its high using a chart-timeframe ATR multiple. Admit zones only while the configured zone capacity permits and the new raw top differs from the previous top for that direction. Deactivate a bullish zone when chart close falls below its bottom, and a bearish zone when chart close rises above its top; expire active zones after a configured chart-bar age. Inactive zones remain in the capacity count.
+Calculation: Chart order block = after sufficient history, a bullish displaced candle following a bearish candle at a configurable impulse lookback creates a bullish zone from that earlier candle's low to high; a bearish displaced candle following a bullish candle at that lookback creates the analogous bearish zone. Cap bullish zone height from its low and bearish zone height from its high using an ATR multiple. Create zones only while the configured capacity permits. Remove a zone when its midpoint is farther from close than a configured ATR multiple; deactivate an active zone after its maximum age, and remove an old inactive zone only after its trade result is resolved. Invalidate an active bullish zone when close is below its bottom, or a bearish zone when close is above its top. An invalidated, untriggered zone may be reclaimed once within a configured number of bars when close rises above its top for a bullish zone or falls below its bottom for a bearish zone; reactivate it and increase its score by a configured amount, subject to the score cap. A triggered zone becomes inactive and cannot trigger again. Process newest zones first.
+Calculation: Order-block score = at zone creation, start with a base score and add configured weights for: a direction-matching displaced swing sweep; a direction-matching fair value gap; matching structure trend; enabled higher-timeframe bias filter with matching or neutral bias; volume above its SMA times a multiplier; bullish discount or bearish premium range position; strong displacement; an enabled matching candle direction on the lowest of the three higher bias timeframes; close inside an active matching higher-timeframe order block; and volume delta beyond the matching directional threshold. Cap the sum at a configured maximum. The sweep has a larger weight than each other added factor. The higher-timeframe candle uses the last completed bar historically and the bar still forming on the live bar.
+Calculation: Entry eligibility = an active, untriggered chart order block has score at least the configured minimum; the chart bar is in an enabled session in the America/New_York timezone, unless the session filter is disabled or the chart is at least daily; higher-timeframe bias is matching or neutral unless its filter is disabled; and the short-ATR to long-ATR ratio is at least the compression threshold unless compression blocking is disabled. Use a neutral ratio when the long ATR is zero.
+Calculation: Order-block trade levels = entry is the triggering zone midpoint. At entry, bullish stop = zone bottom minus an ATR buffer and bearish stop = zone top plus an ATR buffer; target = entry plus or minus the absolute entry-to-stop risk times a configured reward-to-risk multiplier. Fix these levels at entry.
+Long: Close > latest confirmed swing high AND preceding close <= that same swing high.
+Short: Close < latest confirmed swing low AND preceding close >= that same swing low.
+Long: Low < latest confirmed swing low AND close > that swing low AND displacement.
+Short: High > latest confirmed swing high AND close < that swing high AND displacement.
+Long: A previously invalidated, untriggered bullish chart order block is reclaimed within its configured reclaim window.
+Short: A previously invalidated, untriggered bearish chart order block is reclaimed within its configured reclaim window.
+Long: Bullish chart order block meets entry eligibility AND low <= its midpoint AND close > its bottom AND structure trend is bullish.
+Short: Bearish chart order block meets entry eligibility AND high >= its midpoint AND close < its top AND structure trend is bearish.
+Long: Rolling price range > 0 AND range position < the configured discount threshold AND structure trend is bullish.
+Short: Rolling price range > 0 AND range position > the configured premium threshold AND structure trend is bearish.
+Long: Rolling price range > 0 AND range position is within the configured golden-zone bounds AND structure trend is bullish AND close < preceding close.
+Short: Rolling price range > 0 AND range position is within the configured golden-zone bounds AND structure trend is bearish AND close > preceding close.
+Long: Volume delta > its positive directional threshold.
+Short: Volume delta < its negative directional threshold.
+Long: Close is within an active bullish higher-timeframe order block.
+Short: Close is within an active bearish higher-timeframe order block.
+Exit: Long, high >= the fixed order-block target OR low <= the fixed order-block stop.
+Exit: Short, low <= the fixed order-block target OR high >= the fixed order-block stop.

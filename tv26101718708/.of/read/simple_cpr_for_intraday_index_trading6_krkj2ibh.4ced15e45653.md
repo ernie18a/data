@@ -1,3 +1,6 @@
-Calculation: Daily CPR = From the previous completed higher-timeframe daily bar, pivot = (high + low + close) / 3, bottom = (high + low) / 2, and top = 2 × pivot − bottom; lower and upper boundaries are the lesser and greater of bottom and top.
-Long: Current still-forming higher-timeframe daily close > upper Daily CPR boundary
-Short: Current still-forming higher-timeframe daily close < lower Daily CPR boundary
+Calculation: CPR bounds = for the last completed higher-timeframe bar, calculate pivot = (high + low + close) / 3, midpoint = (high + low) / 2, and reflected midpoint = 2 × pivot - midpoint; the lower and upper bounds are the minimum and maximum of midpoint and reflected midpoint.
+Calculation: First resistance and support = for the same last completed higher-timeframe bar, resistance = 2 × pivot - low and support = 2 × pivot - high.
+Long: The close of the forming higher-timeframe bar > upper CPR bound.
+Short: The close of the forming higher-timeframe bar < lower CPR bound.
+Long: The chart close or the first chart-bar open of the current higher-timeframe period > upper CPR bound AND > first resistance.
+Short: The chart close or the first chart-bar open of the current higher-timeframe period < lower CPR bound AND < first support.

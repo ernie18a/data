@@ -1,4 +1,4 @@
-Calculation: First-half VWAP = volume-weighted average of each chart bar’s HLC3 during the first half of each configured period, rounded to the nearest tick
-Calculation: Second-half VWAP = volume-weighted average of each chart bar’s HLC3 during the second half of each configured period, rounded to the nearest tick
-Long: Second-half VWAP is more than the neutral threshold (in ticks) above first-half VWAP
-Short: Second-half VWAP is more than the neutral threshold (in ticks) below first-half VWAP
+Calculation: Half-period VWAP = sum(((high + low + close) / 3) * volume) / sum(volume) over chart bars since the latest higher-timeframe half-period boundary, rounded to the nearest price tick. The half-period is half the length of the higher-timeframe period and uses the bar still forming.
+Calculation: VWAP difference = during the first half of the current higher-timeframe period, the current half-period VWAP minus the most recently retained second-half VWAP; during the second half, the current half-period VWAP minus the retained first-half VWAP. Retain each half's last rounded VWAP until it is updated again.
+Long: VWAP difference > neutral threshold in price units
+Short: VWAP difference < -neutral threshold in price units

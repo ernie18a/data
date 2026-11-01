@@ -1,8 +1,22 @@
-Calculation: Anchored VWAP = cumulative (typical price × volume) divided by cumulative volume, reset at each anchor period
-Calculation: Volume-weighted RSI = RSI of close changes weighted by each bar’s volume divided by its smoothed average volume
-Long: Close > anchored VWAP AND volume-weighted RSI > its midline AND MFI > its midline AND (higher-timeframe close > higher-timeframe VWAP AND higher-timeframe volume-weighted RSI > its midline)
-Short: Close < anchored VWAP AND volume-weighted RSI < its midline AND MFI < its midline AND (higher-timeframe close < higher-timeframe VWAP AND higher-timeframe volume-weighted RSI < its midline)
-Long: A confirmed volume-weighted RSI pivot low is higher than the preceding pivot low AND its corresponding price low is lower than the preceding price low
-Short: A confirmed volume-weighted RSI pivot high is lower than the preceding pivot high AND its corresponding price high is higher than the preceding price high
-Long: On each configured timeframe, close > VWAP AND volume-weighted RSI > its midline
-Short: On each configured timeframe, close < VWAP AND volume-weighted RSI < its midline
+Calculation: Anchored VWAP = cumulative sum of typical price × volume divided by cumulative volume since the selected anchor-period boundary; if cumulative volume is zero, use typical price. Typical price is (high + low + close) / 3.
+Calculation: Volume-weighted RSI = let relative volume be volume / max(SMA(volume, volume lookback), 1); apply Wilder's moving average over the RSI lookback separately to max(close − previous close, 0) × relative volume and max(previous close − close, 0) × relative volume. Divide the smoothed gain by the smoothed loss, using 100 for the ratio if the smoothed loss is zero; return 100 − 100 / (1 + ratio).
+Calculation: Money flow index = 100 − 100 / (1 + ratio), where ratio is SMA(positive flow, lookback) / max(SMA(negative flow, lookback), 1); flow is typical price × volume, positive only when typical price rises and negative only when it falls.
+Calculation: Session VWAP = cumulative sum of typical price × volume divided by cumulative volume since the trading session began.
+Calculation: Confirmed oscillator pivot = a volume-weighted RSI high or low with the selected number of bars on each side; it becomes available only after the right-hand bars have completed. Record the price high or low on the oscillator pivot bar.
+Calculation: Structure zone = a confirmed price high or low pivot with equal left and right lookbacks, plus or minus half of ATR multiplied by a zone-width parameter; retain a configurable number of the most recent high and low pivots for each of several pivot lookbacks.
+Long: close > anchored VWAP AND volume-weighted RSI > its midline AND (MFI confirmation disabled OR money flow index > its midline) AND (higher-timeframe filter disabled OR higher-timeframe session VWAP > 0 AND chart close > higher-timeframe session VWAP AND higher-timeframe volume-weighted RSI > its separate midline). Higher-timeframe calculations use the last completed higher-timeframe bar on historical bars and the forming higher-timeframe bar in real time.
+Short: close < anchored VWAP AND volume-weighted RSI < its midline AND (MFI confirmation disabled OR money flow index < its midline) AND (higher-timeframe filter disabled OR higher-timeframe session VWAP > 0 AND chart close < higher-timeframe session VWAP AND higher-timeframe volume-weighted RSI < its separate midline). Higher-timeframe calculations use the last completed higher-timeframe bar on historical bars and the forming higher-timeframe bar in real time.
+Long: a new confirmed oscillator low pivot has a higher volume-weighted RSI and a lower price low than the preceding confirmed oscillator low pivot.
+Short: a new confirmed oscillator high pivot has a lower volume-weighted RSI and a higher price high than the preceding confirmed oscillator high pivot.
+Long: close > anchored VWAP.
+Short: close <= anchored VWAP.
+Long: volume-weighted RSI < oversold threshold OR volume-weighted RSI <= overbought threshold AND volume-weighted RSI >= oversold threshold AND volume-weighted RSI > its midline.
+Short: volume-weighted RSI > overbought threshold OR volume-weighted RSI <= overbought threshold AND volume-weighted RSI >= oversold threshold AND volume-weighted RSI <= its midline.
+Long: money flow index > its midline.
+Short: money flow index <= its midline.
+Long: close > the upper boundary of a retained structure zone.
+Short: close < the lower boundary of a retained structure zone.
+Long: chart close > higher-timeframe session VWAP AND higher-timeframe volume-weighted RSI > the chart RSI midline. Use the last completed higher-timeframe bar on historical bars and the forming higher-timeframe bar in real time.
+Short: chart close < higher-timeframe session VWAP AND higher-timeframe volume-weighted RSI < the chart RSI midline. Use the last completed higher-timeframe bar on historical bars and the forming higher-timeframe bar in real time.
+Long: selected-timeframe close > selected-timeframe session VWAP AND selected-timeframe volume-weighted RSI > its fixed midline. For a higher timeframe use the last completed bar on historical bars and the forming bar in real time; for a lower timeframe use the first available intrabar on historical bars and the latest available intrabar in real time.
+Short: selected-timeframe close < selected-timeframe session VWAP AND selected-timeframe volume-weighted RSI < its fixed midline. For a higher timeframe use the last completed bar on historical bars and the forming bar in real time; for a lower timeframe use the first available intrabar on historical bars and the latest available intrabar in real time.

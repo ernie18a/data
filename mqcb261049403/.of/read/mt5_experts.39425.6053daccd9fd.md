@@ -1,4 +1,4 @@
-Long: DeMarker on the working timeframe's last completed bar < the lower DeMarker threshold
-Short: DeMarker on the working timeframe's last completed bar > the upper DeMarker threshold
-Exit: Long, price <= entry price - stop-loss distance OR price >= entry price + take-profit distance
-Exit: Short, price >= entry price + stop-loss distance OR price <= entry price - take-profit distance
+Long: At the start of a working-timeframe bar, DeMarker of the last completed working-timeframe bar < lower threshold AND time control is disabled OR at the start of a working-timeframe bar, DeMarker of the last completed working-timeframe bar < lower threshold AND time of day is within the enabled start-inclusive, end-exclusive trading window.
+Short: At the start of a working-timeframe bar, DeMarker of the last completed working-timeframe bar > upper threshold AND time control is disabled OR at the start of a working-timeframe bar, DeMarker of the last completed working-timeframe bar > upper threshold AND time of day is within the enabled start-inclusive, end-exclusive trading window.
+Exit: long, stop loss is enabled AND low <= entry price - stop-loss distance OR take profit is enabled AND high >= entry price + take-profit distance.
+Exit: short, stop loss is enabled AND high >= entry price + stop-loss distance OR take profit is enabled AND low <= entry price - take-profit distance.

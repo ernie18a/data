@@ -1,4 +1,5 @@
-Long: (Monthly MACD main line on the last completed monthly bar > 0 OR < 0) AND Monthly MACD main line on the last completed monthly bar > its signal line
-Short: (Monthly MACD main line on the last completed monthly bar > 0 OR < 0) AND Monthly MACD main line on the last completed monthly bar < its signal line
-Exit: long, previous completed chart-timeframe close = upper Bollinger Band OR bar low <= entry price - stop-loss distance OR bar high >= entry price + take-profit distance
-Exit: short, previous completed chart-timeframe close = lower Bollinger Band OR bar high >= entry price + stop-loss distance OR bar low <= entry price - take-profit distance
+Calculation: MACD main = short-period EMA of close minus long-period EMA of close; MACD signal = SMA of MACD main.
+Long: MACD main on the last completed higher-timeframe bar > MACD signal on that bar AND MACD main on that bar != 0.
+Short: MACD main on the last completed higher-timeframe bar < MACD signal on that bar AND MACD main on that bar != 0.
+Exit: long, previous chart-bar close = previous chart-bar upper Bollinger Band.
+Exit: short, previous chart-bar close = previous chart-bar lower Bollinger Band.

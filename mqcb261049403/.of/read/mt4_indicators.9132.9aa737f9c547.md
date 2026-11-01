@@ -1,16 +1,14 @@
-Long: Current MACD > previous MACD AND ((both MACD values are nonzero) > MACD signal OR (both MACD values are nonzero) < MACD signal)
-Short: Current MACD < previous MACD AND ((both MACD values are nonzero) > MACD signal OR (both MACD values are nonzero) < MACD signal)
-Long: Current MACD > MACD signal AND previous MACD < previous MACD signal
-Short: Current MACD < MACD signal AND previous MACD > previous MACD signal
-Long: Current MACD > 0 AND previous MACD < 0
-Short: Current MACD < 0 AND previous MACD > 0
-Long: Fast LWMA > slow SMA
-Short: Fast LWMA < slow SMA
-Long: Williams %R > -50 AND current EMA > previous EMA AND current Stochastic %K > previous Stochastic %K AND current close > previous close
-Short: Williams %R < -50 AND current EMA < previous EMA AND current Stochastic %K < previous Stochastic %K AND current close < previous close
-Long: EMA on a chart timeframe > its value on the preceding bar of that same timeframe
-Short: EMA on a chart timeframe < its value on the preceding bar of that same timeframe
-Exit: Long, Parabolic SAR value < its value on the preceding chart bar
-Exit: Short, Parabolic SAR value > its value on the preceding chart bar
-Long: Current close > previous close AND rounded current close-to-close movement as a percentage of the average absolute close-to-close movement over the preceding four bars >= 25
-Short: Current close < previous close AND rounded current close-to-close movement as a percentage of the average absolute close-to-close movement over the preceding four bars >= 25
+Calculation: MACD direction state = Apply these comparisons in order, replacing the state whenever a later comparison is true: rising if MACD main is greater than its previous value AND the numeric result of (current MACD main is nonzero AND previous MACD main is nonzero) differs from the current MACD signal; bearish signal crossing if MACD main is below its signal AND previous MACD main is above its previous signal; falling if MACD main is less than its previous value AND the same numeric Boolean result differs from the current MACD signal; bullish signal crossing if MACD main is above its signal AND previous MACD main is below its previous signal; positive zero crossing if MACD main is above zero AND previous MACD main is below zero; negative zero crossing if MACD main is below zero AND previous MACD main is above zero. MACD uses a shorter and a longer close EMA and a simple moving average signal line.
+Calculation: Relative close movement at a bar = the absolute close-to-previous-close change at that bar divided by the mean absolute close-to-previous-close change over a preceding lookback, expressed as a percentage and rounded to a whole number.
+Long: Close EMA on each selected higher, lower, or chart timeframe is greater on its forming bar than on its last completed bar.
+Short: Close EMA on each selected higher, lower, or chart timeframe is less on its forming bar than on its last completed bar.
+Long: Current parabolic SAR is greater than previous parabolic SAR.
+Short: Current parabolic SAR is less than previous parabolic SAR.
+Long: MACD direction state is rising OR bullish signal crossing OR positive zero crossing.
+Short: MACD direction state is falling OR bearish signal crossing OR negative zero crossing.
+Long: Shorter-period close linear weighted moving average is greater than longer-period close simple moving average.
+Short: Shorter-period close linear weighted moving average is less than longer-period close simple moving average.
+Long: Close at a displayed current or preceding chart bar is greater than its previous close AND its relative close movement is at least the minimum directional threshold.
+Short: Close at a displayed current or preceding chart bar is less than its previous close AND its relative close movement is at least the minimum directional threshold.
+Long: MACD direction state is rising OR bullish signal crossing AND shorter-period close linear weighted moving average is greater than longer-period close simple moving average AND Williams %R is above its midpoint AND current close EMA is greater than previous close EMA AND current stochastic main line is greater than its previous value AND current close is greater than previous close.
+Short: MACD direction state is falling OR bearish signal crossing AND shorter-period close linear weighted moving average is less than longer-period close simple moving average AND Williams %R is below its midpoint AND current close EMA is less than previous close EMA AND current stochastic main line is less than its previous value AND current close is less than previous close.

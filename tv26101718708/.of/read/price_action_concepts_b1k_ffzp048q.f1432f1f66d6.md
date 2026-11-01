@@ -1,3 +1,2 @@
-Calculation: Wick tolerance = configured tick tolerance × minimum price increment
-Long: 15-minute candle low is within wick tolerance of its open AND its high is within wick tolerance of its close AND its close is above its open AND its timestamp is within the configured recent-day window; use 15-minute data with no lookahead and evaluate on confirmed chart bars
-Short: 15-minute candle high is within wick tolerance of its open AND its low is within wick tolerance of its close AND its close is below its open AND its timestamp is within the configured recent-day window; use 15-minute data with no lookahead and evaluate on confirmed chart bars
+Long: Higher-timeframe last completed bar close > open AND open - low <= price tolerance AND high - close <= price tolerance
+Short: Higher-timeframe last completed bar close < open AND high - open <= price tolerance AND close - low <= price tolerance

@@ -1,29 +1,29 @@
-Calculation: Strong trend = fast EMA > medium EMA > slow EMA, or fast EMA < medium EMA < slow EMA; the three EMA lookbacks are ordered short to long
-Calculation: AI confidence = min(100, trend score + ADX score + RSI score + MACD score + relative-volume score + MFI score + CCI score + momentum score), where trend score is 20 for a strong trend and 0 otherwise; ADX score is min(ADX / 40 × 15, 15); RSI score is 12 when aligned with trend and between 50 and 70 for an uptrend or between 30 and 50 for a downtrend, otherwise 6 (also 6 with no trend); MACD score is 12 when its line is aligned with trend, otherwise 4; relative-volume score is 12 above 2, 10 above 1.5, 7 above 1, otherwise 4; MFI score is 10 when above 50 in an uptrend or below 50 in a downtrend, otherwise 5; CCI score is 10 when above 0 in an uptrend or below 0 in a downtrend, otherwise 4 (5 with no trend); momentum score is 9 when momentum is aligned with trend, otherwise 3
-Calculation: Multi-timeframe trend agreement = the greater of the count of configured timeframes where fast EMA is above slow EMA and the count where fast EMA is below slow EMA; configured timeframes may be higher or lower than the chart timeframe, and use the bar still forming
-Calculation: Trailing level = initialize to close; on each bar, if close is above the prior trailing level, take the maximum of that level and close minus ATR × trail factor; otherwise take the minimum of that level and close plus ATR × trail factor
-Calculation: Pivot swing high/low = high/low that is greater/less than the highs/lows of the five bars before and after it; recognize it after those five later bars complete
-Calculation: Bollinger upper/lower band = 20-bar simple moving average of close plus/minus 2.2 standard deviations
-Calculation: Average candle body = 20-bar simple moving average of absolute close minus open
-Calculation: Bullish order block = prior bar closes below its open, current bar closes above its open and above prior high, and current body exceeds 1.5 times average candle body; bearish order block is the inverse using prior green bar, current close below prior low, and current body exceeds 1.5 times average candle body
-Calculation: Bullish fair value gap = current low > high two bars earlier and current close > open; bearish fair value gap = current high < low two bars earlier and current close < open
-Long: fast EMA crosses above medium EMA AND (strong trend is not bearish) AND RSI > 45 AND close > trailing level AND AI confidence ≥ 70 AND multi-timeframe trend agreement ≥ 3
-Long: fast EMA crosses above medium EMA AND AI confidence ≥ minimum confidence AND premium-long condition is false
-Long: close ≤ lower Bollinger band AND RSI < 30 AND close crosses above lower Bollinger band AND AI confidence ≥ minimum confidence
-Long: absolute close minus open > 2 × average candle body AND volume > 1.3 × 20-bar average volume AND close > open
-Long: bullish order block
-Long: bullish fair value gap AND gap size > 0.2 × ATR
-Long: a confirmed pivot swing high exceeds the preceding confirmed pivot swing high, or a confirmed pivot swing low exceeds the preceding confirmed pivot swing low
-Long: close crosses above the last confirmed pivot swing high
-Long: all six ribbon EMAs are strictly descending by lookback from shortest to longest in value order (shortest EMA > next EMA > … > longest EMA)
-Short: fast EMA crosses below medium EMA AND (strong trend is not bullish) AND RSI < 55 AND close < trailing level AND AI confidence ≥ 70 AND multi-timeframe trend agreement ≥ 3
-Short: fast EMA crosses below medium EMA AND AI confidence ≥ minimum confidence AND premium-short condition is false
-Short: close ≥ upper Bollinger band AND RSI > 70 AND close crosses below upper Bollinger band AND AI confidence ≥ minimum confidence
-Short: absolute close minus open > 2 × average candle body AND volume > 1.3 × 20-bar average volume AND close < open
-Short: bearish order block
-Short: bearish fair value gap AND gap size > 0.2 × ATR
-Short: a confirmed pivot swing high is below the preceding confirmed pivot swing high, or a confirmed pivot swing low is below the preceding confirmed pivot swing low
-Short: close crosses below the last confirmed pivot swing low
-Short: all six ribbon EMAs are strictly ascending by lookback from shortest to longest in value order (shortest EMA < next EMA < … < longest EMA)
-Exit: long, low ≤ entry price − ATR at entry × stop-loss factor
-Exit: short, high ≥ entry price + ATR at entry × stop-loss factor
+Calculation: Confidence = capped sum of eight components: a fixed trend weight if the short, medium, and long close EMAs are strictly ordered in either direction, otherwise zero; ADX scaled and capped; an RSI weight selected by whether RSI lies between its midpoint and the upper threshold in an upward EMA trend or between the lower threshold and midpoint in a downward EMA trend; a MACD weight selected by whether the MACD line agrees with the EMA trend relative to its signal line; a tiered weight based on volume divided by its SMA, using a ratio of one if unavailable; an MFI weight selected by whether MFI is on the trend's side of its midpoint; a CCI weight selected by whether CCI is on the trend's side of zero; and a momentum weight selected by whether close momentum is on the trend's side of its EMA. Use the lower weight in each component when its condition fails, with separate neutral-trend weights where applicable.
+Calculation: Multi-timeframe agreement = the larger of the counts of upward and downward trends across four independently configured timeframes. Each trend compares the short and medium close EMAs calculated on that timeframe. The timeframes may be higher or lower than the chart timeframe; use the still-forming higher-timeframe bar and the last completed lower-timeframe bar. Historical higher-timeframe values use the final value of the bar throughout that bar, as with lookahead enabled.
+Calculation: Trail = initialize to close; on each bar, if close is greater than the previous trail, set the trail to the greater of the previous trail and close minus a multiple of ATR; otherwise set it to the lesser of the previous trail and close plus that multiple of ATR. On the initial bar compare close with the initialized trail.
+Calculation: Bullish setup filter = confidence at least its setup threshold AND upward multi-timeframe trend count at least its threshold AND ADX at least its threshold AND (trail confirmation disabled OR close greater than the previous trail) AND (session restriction disabled OR bar time within the configured London session, using London local time and daylight saving time).
+Calculation: Bearish setup filter = confidence at least its setup threshold AND downward multi-timeframe trend count at least its threshold AND ADX at least its threshold AND (trail confirmation disabled OR close less than or equal to the previous trail) AND (session restriction disabled OR bar time within the configured London session, using London local time and daylight saving time).
+Long: Short close EMA crosses above medium close EMA AND confidence at least its standard threshold AND (perfect-setup filtering disabled OR bullish setup filter).
+Short: Short close EMA crosses below medium close EMA AND confidence at least its standard threshold AND (perfect-setup filtering disabled OR bearish setup filter).
+Long: Short close EMA crosses above medium close EMA AND short, medium, and long close EMAs are not strictly descending AND RSI above its bullish threshold AND close above trail AND confidence at least its premium threshold AND multi-timeframe agreement at least its premium threshold AND (perfect-setup filtering disabled OR bullish setup filter).
+Short: Short close EMA crosses below medium close EMA AND short, medium, and long close EMAs are not strictly ascending AND RSI below its bearish threshold AND close below trail AND confidence at least its premium threshold AND multi-timeframe agreement at least its premium threshold AND (perfect-setup filtering disabled OR bearish setup filter).
+Long: Close at or below the lower Bollinger band AND RSI below its oversold threshold AND close crosses above that band AND confidence at least its standard threshold AND (perfect-setup filtering disabled OR bullish setup filter).
+Short: Close at or above the upper Bollinger band AND RSI above its overbought threshold AND close crosses below that band AND confidence at least its standard threshold AND (perfect-setup filtering disabled OR bearish setup filter).
+Long: Absolute candle body greater than a multiple of its SMA AND volume greater than a multiple of its SMA AND close greater than open.
+Short: Absolute candle body greater than a multiple of its SMA AND volume greater than a multiple of its SMA AND close less than open.
+Long: Previous close below previous open AND close above open AND close above previous high AND candle body greater than a multiple of the SMA of absolute candle body.
+Short: Previous close above previous open AND close below open AND close below previous low AND candle body greater than a multiple of the SMA of absolute candle body.
+Long: Low above the high two bars earlier AND close above open AND the gap greater than a multiple of ATR.
+Short: High below the low two bars earlier AND close below open AND the gap greater than a multiple of ATR.
+Long: A newly confirmed pivot high is greater than the preceding confirmed pivot high OR a newly confirmed pivot low is greater than the preceding confirmed pivot low.
+Short: A newly confirmed pivot high is less than or equal to the preceding confirmed pivot high OR a newly confirmed pivot low is less than or equal to the preceding confirmed pivot low.
+Long: Close greater than the latest confirmed pivot high AND previous close less than or equal to that same pivot high.
+Short: Close less than the latest confirmed pivot low AND previous close greater than or equal to that same pivot low.
+Long: Six close EMAs with successively longer lookbacks are strictly descending in value from shortest to longest.
+Short: Six close EMAs with successively longer lookbacks are strictly ascending in value from shortest to longest.
+Long: Short close EMA greater than medium close EMA OR short cloud close EMA greater than long cloud close EMA OR close greater than the previous trail.
+Short: Short close EMA less than medium close EMA OR short cloud close EMA less than or equal to long cloud close EMA OR close less than or equal to the previous trail.
+Long: Position side is flat AND confidence at least its dashboard threshold AND short close EMA greater than medium close EMA.
+Short: Position side is flat AND confidence at least its dashboard threshold AND short close EMA less than medium close EMA.
+Exit: long, bar is after the entry bar AND (low at or below entry price minus the stop multiplier times entry-bar ATR OR high at or above entry price plus any of the three increasing target multipliers times entry-bar ATR).
+Exit: short, bar is after the entry bar AND (high at or above entry price plus the stop multiplier times entry-bar ATR OR low at or below entry price minus any of the three increasing target multipliers times entry-bar ATR).

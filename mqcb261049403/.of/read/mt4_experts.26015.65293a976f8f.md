@@ -1,5 +1,4 @@
-Calculation: Short-lookback moving average = linear-weighted moving average of typical price over a shorter lookback on a higher timeframe’s still-forming bar; Long-lookback moving average = the same calculation over a longer lookback on that timeframe
-Long: Short-lookback moving average > Long-lookback moving average AND low two chart bars ago < high one chart bar ago AND absolute difference between current price and close two chart bars ago > a configured price-distance threshold
-Short: Short-lookback moving average < Long-lookback moving average AND low one chart bar ago < high two chart bars ago AND absolute difference between current price and close one chart bar ago > a configured price-distance threshold
-Exit: long, current price >= entry price + configured target distance OR current price <= entry price - configured stop distance
-Exit: short, current price <= entry price - configured target distance OR current price >= entry price + configured stop distance
+Long: A lower fractal is confirmed on the chart timeframe.
+Short: An upper fractal is confirmed on the chart timeframe.
+Exit: long, all six short-period typical-price EMAs on the forming chart bar are equal OR all six longer-period typical-price EMAs on the forming chart bar are equal OR the last completed chart bar's close <= its lower Bollinger Band.
+Exit: short, all six short-period typical-price EMAs on the forming chart bar are equal OR all six longer-period typical-price EMAs on the forming chart bar are equal OR the last completed chart bar's close <= its lower Bollinger Band.

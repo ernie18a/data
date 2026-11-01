@@ -1,18 +1,15 @@
-Calculation: Strong bullish candle = close > open and close − open > (high − max(open, close)) + (min(open, close) − low)
-Calculation: Strong bearish candle = close < open and open − close > (high − max(open, close)) + (min(open, close) − low)
-Calculation: Bearish structure = a strong bearish candle whose close is below the low of the most recent strong bullish candle; its high and low are the structure high and structure low
-Calculation: Structural breakout = close > the most recent bearish structure high, on a bar after that structure formed
-Calculation: Bull and bear control feeds = on a strong bullish candle, low + 0.60 × (close − open); on a strong bearish candle, high − 0.60 × (open − close); otherwise carry forward the prior feed, or (high + low) / 2 if unavailable
-Calculation: Bull control and bear control = EMA of their respective feeds; use the same lookback
-Calculation: Radar compression = abs(bull control − bear control) / ATR
-Calculation: Normalized strength = (close − open) / SMA(abs(close − open)); use the same lookback for numerator baseline
-Calculation: Acceleration = normalized strength − prior-bar normalized strength
-Calculation: Structural range = structure high − structure low
-Calculation: Primary targets = structure high + n × structural range, for n = 1, 2, 3
-Calculation: Extension targets = extension high + n × (extension high − extension low), for n = 1, 2, 3; extension high and low come from the first qualifying bullish candle closing at or above target 3 after target 3 is reached
-Long: Chart-timeframe close > most recent bearish structure high, after that structure formed
-Long: Higher-timeframe close > most recent bearish structure high, after that structure formed; use the still-forming higher-timeframe bar
-Long: Confirmed chart-timeframe structural breakout event AND an active chart-timeframe structural cycle AND chart-timeframe close >= stored invalidation low AND no active trade-state AND primary target 1 has not already been reached
-Long: Confirmed chart-timeframe close crosses above the chart-timeframe structural high AND higher-timeframe structural breakout is active (still-forming bar) AND close > max(bull control, bear control) AND bull control >= prior-bar bull control AND acceleration > 0 AND normalized strength > 0.7
-Exit: Long, confirmed chart-timeframe close < stored structural invalidation low
-Exit: Long, confirmed chart-timeframe close >= next unreached primary target (targets 1, 2, then 3 in order) OR confirmed chart-timeframe close >= next unreached extension target (targets 1, 2, then 3 in order)
+Calculation: Strong bullish candle = close > open AND close - open > high - close + open - low; strong bearish candle = close < open AND open - close > high - open + close - low.
+Calculation: Structure = the high, low and time of the most recent strong bearish candle whose close is below the low of the most recent strong bullish candle, evaluated independently on the chart timeframe and a higher timeframe. Use the chart bar and the still-forming higher-timeframe bar.
+Calculation: Breakout state = close > the current structure high AND bar time > the structure time. A breakout event occurs when this state becomes true after being false on the preceding bar of the same timeframe.
+Calculation: Control lines = EMAs of separate bullish and bearish feeds with the same length. On a strong bullish candle, the bullish feed is low plus a fixed fraction of the absolute candle body; otherwise carry its previous value. On a strong bearish candle, the bearish feed is high minus the same fraction of the body; otherwise carry its previous value. Initialize each feed to (high + low) / 2.
+Calculation: Control spread = absolute difference between the control lines divided by ATR; use zero when ATR is not positive.
+Calculation: Strength = (close - open) divided by the simple moving average of absolute close - open; use zero when the average is zero. Acceleration = current strength minus previous strength, substituting zero for unavailable previous strength.
+Calculation: Trade state = initially inactive. On each confirmed chart bar, first deactivate an active trade if close < its locked stop or its structure has been replaced. On a qualifying main long event, activate the trade and lock the current structure low and time. A trade is current only while its locked structure time equals the latest structure time.
+Calculation: Target cycle = on a confirmed chart-timeframe breakout event with a different structure time from the last locked target cycle and structure range above a minimum threshold, lock its structure high and low and reset all target-hit flags. Primary targets are the locked high plus successive integer multiples of the locked high-minus-low range. A target is newly hit when close reaches or exceeds it and it was not previously hit; later targets additionally require the preceding target to have been hit, including earlier on the same bar. After the last primary target is hit, lock the first strong bullish candle closing at or above that target whose range exceeds the minimum threshold; extension targets are its high plus successive integer multiples of its high-minus-low range, with hit flags updated in the same order. Update hits only while the locked structure is current and its low has not been broken by a confirmed close; latch a broken low until a new structure cycle begins.
+Long: Chart-timeframe breakout state = true.
+Long: Control spread > compression threshold AND close > both control lines AND bullish control line >= its previous value.
+Short: Control spread > compression threshold AND close < both control lines AND bearish control line <= its previous value.
+Long: Confirmed chart-timeframe breakout event AND structure cycle is current AND its low has not been broken AND trade state is inactive AND the first primary target has not already been hit.
+Long: Confirmed close crosses above the chart-timeframe structure high AND higher-timeframe breakout state = true AND control spread > compression threshold AND close > both control lines AND bullish control line >= its previous value AND acceleration > 0 AND strength > positive strength threshold.
+Exit: long, confirmed close < the trade's locked stop AND trade state was active before this bar.
+Exit: long, trade state is active AND its structure is current AND its structural low has not been broken AND a primary or extension target is newly hit.

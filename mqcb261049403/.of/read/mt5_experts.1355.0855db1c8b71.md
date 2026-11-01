@@ -1,5 +1,11 @@
-Calculation: ColorTrend CF upper/lower = On the selected indicator timeframe, for each close change Δclose, gain=max(Δclose,0), loss=max(-Δclose,0); cumulative gain = gain + prior cumulative gain if Δclose>0, otherwise 0; cumulative loss = loss + prior cumulative loss if Δclose<0, otherwise 0. Upper=(sum of gains over the lookback − sum of cumulative losses)/point size; lower=(sum of losses over the lookback − sum of cumulative gains)/point size.
-Long: On the two latest completed indicator-timeframe bars, upper ≤ lower on the preceding bar AND upper > lower on the latest bar
-Short: On the two latest completed indicator-timeframe bars, upper ≥ lower on the preceding bar AND upper < lower on the latest bar
-Exit: long, upper < lower on the latest completed indicator-timeframe bar
-Exit: short, upper > lower on the latest completed indicator-timeframe bar
+Calculation: Trend lines = For each bar, let change = close − previous close, rise = max(change, 0), and fall = max(−change, 0). The rising run is the cumulative rise over consecutive positive changes, resetting to zero otherwise; the falling run is the cumulative fall over consecutive nonpositive changes, resetting to zero on a positive change. Over a lookback window, upper line = sum(rise) − sum(falling run), and lower line = sum(fall) − sum(rising run).
+Long: Chart-timeframe upper line > chart-timeframe lower line
+Short: Chart-timeframe upper line < chart-timeframe lower line
+Long: On the selected indicator timeframe, the selected signal bar's upper line > its lower line AND the preceding bar's upper line <= its lower line. The indicator timeframe may be higher than, lower than, or equal to the chart timeframe; the signal bar may be the bar still forming or a completed bar at a configurable lag.
+Short: On the selected indicator timeframe, the selected signal bar's upper line < its lower line AND the preceding bar's upper line >= its lower line. The indicator timeframe may be higher than, lower than, or equal to the chart timeframe; the signal bar may be the bar still forming or a completed bar at a configurable lag.
+Exit: long, the selected indicator timeframe signal bar's upper line < its lower line
+Exit: short, the selected indicator timeframe signal bar's upper line > its lower line
+Exit: long, stop loss is enabled AND low <= entry price − stop-loss distance
+Exit: long, take profit is enabled AND high >= entry price + take-profit distance
+Exit: short, stop loss is enabled AND high >= entry price + stop-loss distance
+Exit: short, take profit is enabled AND low <= entry price − take-profit distance

@@ -1,7 +1,11 @@
-Calculation: Upper and lower entry bands = over the lookback bars, let H be the highest high and L the lowest low; upper = H − (33 − risk factor)% of (H − L), lower = L + (33 − risk factor)% of (H − L). Use the selected applied price for comparisons. Calculate on the chart timeframe, or on the configured higher timeframe using its still-forming bar.
-Calculation: Upper and lower exit levels = over the same lookback bars, let H be the highest high and L the lowest low; upper = H − (33 − exit factor)% of (H − L), lower = L + (33 − exit factor)% of (H − L). Use the same timeframe and bar status as the entry bands.
-Calculation: Trend state = +1 when applied price is above the upper entry band; −1 when below the lower entry band; otherwise retain the previous bar’s trend state.
-Long: Trend state = +1 AND previous trend state = −1 OR trend state = +1 AND previous trend state = +1 AND applied price is above the upper entry band AND previous applied price is at or below the previous upper entry band.
-Short: Trend state = −1 AND previous trend state = +1 OR trend state = −1 AND previous trend state = −1 AND applied price is below the lower entry band AND previous applied price is at or above the previous lower entry band.
-Exit: long, Trend state = +1 AND applied price is below the upper exit level AND previous applied price is at or above the previous upper exit level.
-Exit: short, Trend state = −1 AND applied price is above the lower exit level AND previous applied price is at or below the previous lower exit level.
+Calculation: Applied price = a selectable bar price: open, high, low, close, (high + low) / 2, (high + low + close) / 3, or (high + low + 2 * close) / 4.
+Calculation: Channel levels = for the highest high H and lowest low L over the same lookback including the evaluated bar, upper entry = H - (33 - entry factor) * (H - L) / 100, lower entry = L + (33 - entry factor) * (H - L) / 100, upper exit = H - (33 - exit factor) * (H - L) / 100, and lower exit = L + (33 - exit factor) * (H - L) / 100; the exit factor is greater than the entry factor.
+Calculation: Trend = initially neutral; set to positive when applied price > upper entry, then set to negative when applied price < lower entry; otherwise retain the previous trend. All channel calculations use the chart timeframe or a selectable higher working timeframe, using either its last completed bar or its still-forming bar.
+Long: Trend > 0 AND (previous trend < 0 OR (previous trend > 0 AND applied price > upper entry AND previous applied price <= previous upper entry)).
+Short: Trend < 0 AND (previous trend > 0 OR (previous trend < 0 AND applied price < lower entry AND previous applied price >= previous lower entry)).
+Exit: long, trend < 0 AND (previous trend > 0 OR (previous trend < 0 AND applied price < lower entry AND previous applied price >= previous lower entry)).
+Exit: short, trend > 0 AND (previous trend < 0 OR (previous trend > 0 AND applied price > upper entry AND previous applied price <= previous upper entry)).
+Exit: long, trend > 0 AND applied price < upper exit AND previous applied price >= previous upper exit.
+Exit: short, trend < 0 AND applied price > lower exit AND previous applied price <= previous lower exit.
+Exit: long, trend > 0 AND applied price < upper entry AND previous applied price >= previous upper entry.
+Exit: short, trend < 0 AND applied price > lower entry AND previous applied price <= previous lower entry.

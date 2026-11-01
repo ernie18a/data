@@ -1,4 +1,4 @@
-Calculation: MACD-v = 100 × (fast EMA of close − slow EMA of close) ÷ ATR, calculated on the chart timeframe or a same or higher timeframe, using its still-forming bar.
-Calculation: Signal line = EMA of MACD-v with a shorter lookback than the fast and slow EMA lookbacks, calculated on the same timeframe and still-forming bar as MACD-v.
-Long: MACD-v > Signal line AND MACD-v > −150 AND NOT (MACD-v has been strictly between −50 and 50 for 20 consecutive bars)
-Short: MACD-v < Signal line AND NOT (MACD-v has been strictly between −50 and 50 for 20 consecutive bars)
+Calculation: MACD-v = 100 × (shorter-period EMA of the selected price source − longer-period EMA of the same source) / ATR, rounded to two decimal places; use zero if ATR is effectively zero. Calculate on the chart timeframe or on a higher or lower timeframe using its still-forming bar.
+Calculation: MACD-v signal = EMA of MACD-v, initialized with the first available MACD-v value and rounded to two decimal places after each update, on the same timeframe as MACD-v.
+Long: MACD-v > MACD-v signal
+Short: MACD-v < MACD-v signal

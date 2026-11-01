@@ -1,7 +1,7 @@
-Calculation: VolatilityPivot stop = recursively updated trailing stop; each bar, delta is either a factor times the EMA of ATR (ATR uses a longer lookback than the EMA) or a fixed price deviation. If the current and previous closes are both below the prior stop, set the stop to the lower of the prior stop and current close + delta; if both are above, set it to the higher of the prior stop and current close - delta; otherwise set it to current close - delta when current close is above the prior stop, or current close + delta when below. Initialize from the close before the calculation history.
-Calculation: Upper VolatilityPivot line = stop when close > stop; otherwise empty.
-Calculation: Lower VolatilityPivot line = stop when close < stop; otherwise empty.
-Long: Upper VolatilityPivot line is present and was empty on the preceding bar.
-Short: Lower VolatilityPivot line is present and was empty on the preceding bar.
-Exit: Long, Lower VolatilityPivot line is present.
-Exit: Short, Upper VolatilityPivot line is present.
+Calculation: Pivot stop = On the indicator timeframe, initialize the stop to the close immediately preceding the first calculated bar. For each subsequent bar, let the distance be either a fixed price distance or a multiplier times an EMA of ATR. If close equals the previous stop, retain the previous stop. Otherwise, if both the previous close and current close are below the previous stop, set the stop to min(previous stop, close + distance); if both are above it, set the stop to max(previous stop, close - distance); otherwise set it to close - distance when close > previous stop, and close + distance when close < previous stop. The indicator timeframe is configurable as the chart timeframe, a higher timeframe, or a lower timeframe; the signal bar is configurable as the last completed bar or the bar still forming.
+Calculation: Bullish pivot = close > pivot stop AND previous close <= previous pivot stop AND pivot stop != 0.
+Calculation: Bearish pivot = close < pivot stop AND previous close >= previous pivot stop AND pivot stop != 0.
+Long: Bullish pivot = true OR (reverse trade direction = true AND bearish pivot = true).
+Short: Bearish pivot = true OR (reverse trade direction = true AND bullish pivot = true).
+Exit: long, (reverse trade direction = false AND close < pivot stop AND pivot stop != 0) OR (reverse trade direction = true AND close > pivot stop AND pivot stop != 0) OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, (reverse trade direction = false AND close > pivot stop AND pivot stop != 0) OR (reverse trade direction = true AND close < pivot stop AND pivot stop != 0) OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

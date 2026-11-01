@@ -1,2 +1,4 @@
-Long: On a higher timeframe, the current forming candle made a lower low than the preceding completed candle if and only if at least one enabled, different reference instrument with a matching higher-timeframe period also made a lower low.
-Short: On a higher timeframe, the current forming candle made a higher high than the preceding completed candle if and only if at least one enabled, different reference instrument with a matching higher-timeframe period also made a higher high.
+Long: The low of the forming higher-timeframe bar > the high of the higher-timeframe bar two bars earlier AND min(open, close) of the forming bar > max(open, close) of the bar two bars earlier
+Short: The high of the forming higher-timeframe bar < the low of the higher-timeframe bar two bars earlier AND max(open, close) of the forming bar < min(open, close) of the bar two bars earlier
+Long: The low of the forming higher-timeframe bar < the high of the last completed higher-timeframe bar AND min(open, close) of the forming bar > max(open, close) of the last completed bar
+Short: The high of the forming higher-timeframe bar > the low of the last completed higher-timeframe bar AND max(open, close) of the forming bar < min(open, close) of the last completed bar

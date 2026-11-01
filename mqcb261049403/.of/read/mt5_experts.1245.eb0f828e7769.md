@@ -1,5 +1,7 @@
-Calculation: Momentum = 100 × (exponential moving average of close / simple moving average of close − 1), using the same lookback for both averages; evaluated on the configured indicator timeframe, which may be higher or lower than the chart timeframe, using completed bars.
-Long: Momentum > upper level OR (Momentum > upper level AND the immediately preceding Momentum <= upper level)
-Short: Momentum < lower level OR (Momentum < lower level AND the immediately preceding Momentum <= lower level)
-Exit: long, Momentum < lower level
-Exit: short, Momentum > upper level
+Calculation: Anchored momentum = 100 × (EMA of the selected applied price / SMA of the same price − 1), using the same lookback for both averages; undefined when the SMA is zero.
+Long: Chart-timeframe anchored momentum > upper threshold.
+Short: Chart-timeframe anchored momentum ≤ upper threshold AND anchored momentum < lower threshold.
+Long: Anchored momentum on the selected indicator timeframe > upper threshold AND its preceding bar's anchored momentum ≤ upper threshold. The indicator timeframe may be higher or lower than the chart timeframe; use its last completed bar or its still-forming bar according to the selected signal-bar setting.
+Short: Anchored momentum on the selected indicator timeframe < lower threshold AND its preceding bar's anchored momentum ≤ lower threshold. The indicator timeframe may be higher or lower than the chart timeframe; use its last completed bar or its still-forming bar according to the selected signal-bar setting.
+Exit: long, anchored momentum on the selected indicator timeframe < lower threshold OR low ≤ entry price − enabled stop-loss distance OR high ≥ entry price + enabled take-profit distance. The indicator timeframe may be higher or lower than the chart timeframe; use its last completed bar or its still-forming bar according to the selected signal-bar setting.
+Exit: short, anchored momentum on the selected indicator timeframe > upper threshold OR high ≥ entry price + enabled stop-loss distance OR low ≤ entry price − enabled take-profit distance. The indicator timeframe may be higher or lower than the chart timeframe; use its last completed bar or its still-forming bar according to the selected signal-bar setting.

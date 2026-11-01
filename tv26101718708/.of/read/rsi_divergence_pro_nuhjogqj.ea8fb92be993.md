@@ -1,9 +1,10 @@
-Calculation: RSI = 100 − 100 / (1 + Wilder-smoothed average gain / Wilder-smoothed average loss) on close changes
-Calculation: RSI pivot low = an RSI value lower than the values in the preceding and following lookback bars; confirm after the following lookback bars
-Calculation: RSI pivot high = an RSI value higher than the values in the preceding and following lookback bars; confirm after the following lookback bars
-Long: two consecutive confirmed RSI pivot lows are within the minimum and maximum pivot-distance limits AND the newer pivot’s price low is lower than the prior pivot’s price low AND its RSI is higher
-Long: two consecutive confirmed RSI pivot lows are within the minimum and maximum pivot-distance limits AND the newer pivot’s price low is higher than the prior pivot’s price low AND its RSI is lower
-Short: two consecutive confirmed RSI pivot highs are within the minimum and maximum pivot-distance limits AND the newer pivot’s price high is higher than the prior pivot’s price high AND its RSI is lower
-Short: two consecutive confirmed RSI pivot highs are within the minimum and maximum pivot-distance limits AND the newer pivot’s price high is lower than the prior pivot’s price high AND its RSI is higher
-Exit: long, low <= entry price − ATR at entry × stop multiple OR high >= entry price + ATR at entry × target multiple OR bars since entry >= horizon
-Exit: short, high >= entry price + ATR at entry × stop multiple OR low <= entry price − ATR at entry × target multiple OR bars since entry >= horizon
+Calculation: Confirmed RSI pivot low = an RSI value less than or equal to all values in a configurable number of preceding bars and strictly less than all values in a configurable number of following bars; it is confirmed on the last following bar. A confirmed RSI pivot high reverses both inequalities. Compare each new pivot with the immediately preceding confirmed pivot of the same type, even if that previous pivot produced no divergence.
+Calculation: Bracket levels = entry price plus or minus independently configurable stop and target multiples of ATR frozen at entry; the long stop and short target are below entry, and the long target and short stop are above entry. Evaluate exits starting on the bar after entry. If the open is beyond a level, fill at the open; otherwise fill at the touched level. Check an opening stop, opening target, intrabar stop, intrabar target, then horizon expiry, in that order; fill expiry at the close.
+Long: A new RSI pivot low is confirmed AND its distance from the preceding RSI pivot low is at least the minimum and at most the maximum pivot distance AND its bar's low is lower than the preceding pivot bar's low AND its RSI is higher than the preceding pivot's RSI.
+Long: A new RSI pivot low is confirmed AND its distance from the preceding RSI pivot low is at least the minimum and at most the maximum pivot distance AND its bar's low is higher than the preceding pivot bar's low AND its RSI is lower than the preceding pivot's RSI.
+Short: A new RSI pivot high is confirmed AND its distance from the preceding RSI pivot high is at least the minimum and at most the maximum pivot distance AND its bar's high is higher than the preceding pivot bar's high AND its RSI is lower than the preceding pivot's RSI.
+Short: A new RSI pivot high is confirmed AND its distance from the preceding RSI pivot high is at least the minimum and at most the maximum pivot distance AND its bar's high is lower than the preceding pivot bar's high AND its RSI is higher than the preceding pivot's RSI.
+Long: RSI >= its midpoint.
+Short: RSI < its midpoint.
+Exit: long, low <= long stop OR high >= long target OR bars elapsed since entry >= holding horizon.
+Exit: short, high >= short stop OR low <= short target OR bars elapsed since entry >= holding horizon.

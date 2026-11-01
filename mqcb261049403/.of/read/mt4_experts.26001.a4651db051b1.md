@@ -1,10 +1,10 @@
-Calculation: Upper wick = high − max(open, close)
-Calculation: Lower wick = min(open, close) − low
-Calculation: Bar range = high − low
-Calculation: Typical price = (high + low + close) / 3
-Calculation: Fast and slow averages = linear weighted moving averages of typical price, with the fast lookback shorter than the slow lookback, on a higher timeframe’s bar still forming
-Calculation: Entry distance threshold = a parameterized number of chart points
-Long: ((previous completed chart bar open > close AND upper wick / bar range >= 0.50) OR (previous completed chart bar open < close AND upper wick / bar range >= 0.50)) AND fast average > slow average AND absolute distance between current chart bar price and the close two chart bars ago > entry distance threshold
-Short: ((previous completed chart bar open > close AND lower wick / bar range >= 0.50) OR (previous completed chart bar open < close AND lower wick / bar range >= 0.50)) AND fast average < slow average AND absolute distance between current chart bar price and the previous completed chart bar close > entry distance threshold
-Exit: long, price <= entry price − stop-loss distance OR price >= entry price + take-profit distance
-Exit: short, price >= entry price + stop-loss distance OR price <= entry price − take-profit distance
+Calculation: A confirmed upper fractal is a bar whose high is higher than the highs of the two bars on each side; a confirmed lower fractal is a bar whose low is lower than the lows of the two bars on each side. At each new chart bar, the bar still forming can be the second bar on the right.
+Long: The last completed chart bar is a confirmed lower fractal OR an earlier chart bar becomes a confirmed lower fractal at the current bar.
+Short: The last completed chart bar is a confirmed upper fractal OR an earlier chart bar becomes a confirmed upper fractal at the current bar.
+Long: ((Previous bar open > previous bar close AND (previous bar high - previous bar open) / (previous bar high - previous bar low) >= upper-wick fraction) OR (previous bar open < previous bar close AND (previous bar high - previous bar close) / (previous bar high - previous bar low) >= upper-wick fraction)) AND shorter-period linear weighted moving average of typical price > longer-period linear weighted moving average of typical price, both using the still-forming higher-timeframe bar AND absolute difference between current bar open and the close two chart bars ago > distance threshold.
+Short: ((Previous bar open > previous bar close AND (previous bar close - previous bar low) / (previous bar high - previous bar low) >= lower-wick fraction) OR (previous bar open < previous bar close AND (previous bar open - previous bar low) / (previous bar high - previous bar low) >= lower-wick fraction)) AND shorter-period linear weighted moving average of typical price < longer-period linear weighted moving average of typical price, both using the still-forming higher-timeframe bar AND absolute difference between current bar open and previous bar close > distance threshold.
+Exit: long, bar low <= entry price - stop distance OR bar high >= entry price + profit distance.
+Exit: short, bar high >= entry price + stop distance OR bar low <= entry price - profit distance.
+Exit: short, a chart-bar open since entry < entry price - activation distance AND a subsequent bar high >= entry price - moved-stop distance.
+Exit: long, all six shorter-period exponential moving averages of typical price are equal OR all six longer-period exponential moving averages of typical price are equal OR previous bar close <= previous bar lower Bollinger Band.
+Exit: short, all six shorter-period exponential moving averages of typical price are equal OR all six longer-period exponential moving averages of typical price are equal OR previous bar close <= previous bar lower Bollinger Band.

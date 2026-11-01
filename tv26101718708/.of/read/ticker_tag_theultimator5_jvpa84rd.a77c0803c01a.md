@@ -1,2 +1,3 @@
-Long: current price >= previous completed higher-timeframe close; if unavailable, current price >= open of the still-forming higher-timeframe bar
-Short: current price < previous completed higher-timeframe close; if unavailable, current price < open of the still-forming higher-timeframe bar
+Calculation: Directional reference = previous close of the reference timeframe, or its open if that close is unavailable. The reference timeframe may be higher than, equal to, or lower than the chart timeframe; use the last completed reference bar on historical chart bars and the bar still forming in real time. For a lower reference timeframe, use the last available intrabar.
+Long: Close >= directional reference
+Short: Close < directional reference

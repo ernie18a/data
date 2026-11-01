@@ -1,5 +1,6 @@
-Calculation: Bullish FPI = current bar low > high two bars earlier
-Calculation: Bearish FPI = current bar high < low two bars earlier
-Calculation: FPI zone = [the lower of current bar low and high two bars earlier, the higher of them] for a bullish FPI; [the lower of current bar high and low two bars earlier, the higher of them] for a bearish FPI
-Long: Active session AND (the first close beyond the first FPI zone detected in the session macro window is above that zone OR (no macro-window close has resolved bias AND the first FPI detected in the session-start FPI window is bullish))
-Short: Active session AND (the first close beyond the first FPI zone detected in the session macro window is below that zone OR (no macro-window close has resolved bias AND the first FPI detected in the session-start FPI window is bearish))
+Calculation: Bullish fair value gap = current low > high two chart bars earlier; its lower bound is that earlier high and its upper bound is the current low.
+Calculation: Bearish fair value gap = current high < low two chart bars earlier; its lower bound is the current high and its upper bound is that earlier low.
+Calculation: Opening gap direction = direction of the first bullish or bearish fair value gap detected during the opening window of the current session; reset at each new session.
+Calculation: Macro resolution = after the first bullish or bearish fair value gap detected during the session's macro window, record the direction of the first close above its upper bound or below its lower bound, including on the gap bar; retain that direction until the next session.
+Long: In session AND (macro resolution is above OR (macro resolution is absent AND opening gap direction is bullish)).
+Short: In session AND (macro resolution is below OR (macro resolution is absent AND opening gap direction is bearish)).

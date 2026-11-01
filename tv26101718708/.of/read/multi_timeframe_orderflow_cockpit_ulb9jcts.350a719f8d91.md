@@ -1,7 +1,20 @@
-Calculation: Cumulative delta = rolling sum of buy volume minus sell volume over a lookback; classify lower-timeframe bars within each chart bar (or use chart-bar footprint buy/sell volume when available).
-Calculation: Delta z-score = (cumulative delta − its longer-lookback moving average) / its longer-lookback standard deviation.
-Calculation: Range position = (close − lowest low) / (highest high − lowest low) over the same lookback.
-Calculation: Toxicity = moving average of absolute buy-minus-sell volume divided by moving average of buy-plus-sell volume; compare it with its longer-lookback moving average.
-Calculation: Fused probability = logistic of the correlation-discounted weighted mean of panel log-odds and the optional volatility vote. For each panel, log-odds are fusion gain × ((1 − structure weight) × delta bias + structure weight × structure direction) × divergence factor × toxicity factor; delta bias is 2 × buy volume / (buy volume + sell volume) − 1, structure direction is the latest swing-break direction, divergence factor is reduced when delta bias disagrees with nonzero structure direction, and toxicity factor is 0.5 + min(toxicity, 1) when enabled. Weight panels by the square root of their timeframe duration when timeframe weighting is enabled. The chart-timeframe panel uses the current chart bar; higher-timeframe panels use their current forming bar. The optional volatility vote is the negative of its rate of change, clipped to [−1, 1] after sensitivity scaling, multiplied by fusion gain and its weight.
-Long: Fused probability > 0.55 OR (range position <= 1 − extreme threshold AND delta z-score > −confirmation threshold AND (toxicity filter disabled OR toxicity > toxicity moving average × toxicity multiplier)) OR fused probability > 0.53
-Short: Fused probability < 0.45 OR (range position >= extreme threshold AND delta z-score < confirmation threshold AND (toxicity filter disabled OR toxicity > toxicity moving average × toxicity multiplier)) OR fused probability < 0.47
+Calculation: Buy and sell volume = sum classified volume over completed lower-timeframe bars within each chart or higher-timeframe bar, including those available in the still-forming higher-timeframe bar. In binary mode, allocate all volume to buy when close >= open and otherwise to sell. In weighted mode, allocate volume × (close − low) / (high − low) to buy and the remainder to sell; when high = low, use the binary allocation.
+Calculation: Delta bias = (total buy volume − total sell volume) / (total buy volume + total sell volume) over a panel's configured number of completed bars plus its still-forming bar.
+Calculation: Toxicity = moving average of absolute per-bar buy-minus-sell volume divided by moving average of per-bar buy-plus-sell volume, on the panel's timeframe; use the still-forming bar for a higher-timeframe panel.
+Calculation: Structure state = initially neutral; set bullish when close exceeds the most recent unbroken confirmed pivot high and bearish when close falls below the most recent unbroken confirmed pivot low. A pivot is confirmed after the same number of bars used on each side of it; discard a pivot after it is broken. Use the still-forming bar for a higher-timeframe panel.
+Calculation: Panel probability = logistic transform of fusion gain × ((1 − structure weight) × delta bias + structure weight × structure state), where bullish, bearish and neutral structure states are +1, −1 and 0. Multiply the score by a damping factor when nonneutral structure and delta bias disagree, and optionally by 0.5 + min(toxicity, 1). Exclude panels with no classified volume.
+Calculation: Combined probability = logistic transform of the correlation discount × weighted mean of enabled panel probability logits. Panel weights are either equal or proportional to the square root of their timeframe durations. Use the chart timeframe and enabled higher timeframes, with the higher-timeframe bars still forming.
+Calculation: Range position = (close − lowest low) / (highest high − lowest low) over the reversion lookback; use 0.5 when the range is zero.
+Calculation: Delta z-score = the z-score of the rolling sum of chart-bar buy-minus-sell volume over the reversion lookback, using a longer lookback for its mean and standard deviation; use zero when the standard deviation is zero.
+Long: Chart or higher-timeframe structure state = bullish.
+Short: Chart or higher-timeframe structure state = bearish.
+Long: Chart or higher-timeframe panel probability > its neutral midpoint.
+Short: Chart or higher-timeframe panel probability < its neutral midpoint.
+Long: Combined probability > its neutral midpoint.
+Short: Combined probability < its neutral midpoint.
+Long: Combined probability > an upper bullish threshold.
+Short: Combined probability < a lower bearish threshold.
+Long: Range position <= the lower extreme threshold AND delta z-score > the negative delta-confirmation threshold.
+Short: Range position >= the upper extreme threshold AND delta z-score < the positive delta-confirmation threshold.
+Long: Range position <= the lower extreme threshold AND delta z-score > the negative delta-confirmation threshold AND, if the optional toxicity filter is enabled, chart-timeframe toxicity > its moving average × the toxicity multiplier.
+Short: Range position >= the upper extreme threshold AND delta z-score < the positive delta-confirmation threshold AND, if the optional toxicity filter is enabled, chart-timeframe toxicity > its moving average × the toxicity multiplier.

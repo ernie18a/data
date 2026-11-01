@@ -1,5 +1,5 @@
-Calculation: Simple moving average = arithmetic mean of close over a lookback, with the configured chart-bar shift; use its value for the current forming chart bar.
-Long: Previous completed chart bar open < simple moving average AND previous completed chart bar close > simple moving average AND current forming chart bar volume <= 1 AND chart bar count > 100
-Short: Previous completed chart bar open > simple moving average AND previous completed chart bar close < simple moving average AND current forming chart bar volume <= 1 AND chart bar count > 100
-Exit: Long, previous completed chart bar open > simple moving average AND previous completed chart bar close < simple moving average AND current forming chart bar volume <= 1 AND chart bar count > 100
-Exit: Short, previous completed chart bar open < simple moving average AND previous completed chart bar close > simple moving average AND current forming chart bar volume <= 1 AND chart bar count > 100
+Calculation: Shifted SMA = simple moving average of chart-bar closes, shifted forward by a configurable number of bars and evaluated at the first tick of the current chart bar; the current bar's close at that tick is its open.
+Long: position is flat AND available chart-bar count exceeds the minimum history requirement AND previous bar open < shifted SMA AND previous bar close > shifted SMA
+Short: position is flat AND available chart-bar count exceeds the minimum history requirement AND previous bar open > shifted SMA AND previous bar close < shifted SMA
+Exit: long, available chart-bar count exceeds the minimum history requirement AND previous bar open > shifted SMA AND previous bar close < shifted SMA
+Exit: short, available chart-bar count exceeds the minimum history requirement AND previous bar open < shifted SMA AND previous bar close > shifted SMA

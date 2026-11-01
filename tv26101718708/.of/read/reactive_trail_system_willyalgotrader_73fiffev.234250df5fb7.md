@@ -1,12 +1,22 @@
-Calculation: Baseline = selected moving average of close: HMA, ALMA, KAMA, T3, VWMA (fall back to EMA when volume is unavailable), or EMA.
-Calculation: Smoothed RSI = EMA of RSI(close).
-Calculation: Adaptive trail offset = volatility × trail multiplier × (1 − adaptivity × min(|smoothed RSI − 50| / 50, 1) × 0.4), where volatility is ATR, standard deviation of close, or their average.
-Calculation: Ratcheting trail = in a bullish regime, max(previous trail, baseline − adaptive trail offset); in a bearish regime, min(previous trail, baseline + adaptive trail offset). Initialize bullish when close ≥ baseline, otherwise bearish. Flip bearish to bullish when close > trail; flip bullish to bearish when close < trail; reset trail to baseline minus offset on a bullish flip and baseline plus offset on a bearish flip.
-Calculation: Higher-timeframe bias = last completed higher-timeframe close compared with its 50-period EMA.
-Calculation: Volume confirmation = volume compared with its 20-bar SMA.
-Calculation: Long stop = close − ATR × stop multiplier in ATR stop mode; otherwise min(low − 0.25 × risk ATR, close − 0.5 × risk ATR). Short stop = close + ATR × stop multiplier in ATR stop mode; otherwise max(high + 0.25 × risk ATR, close + 0.5 × risk ATR). Risk is the distance from close to the stop. Targets are close ± risk × target multiplier, upward for long and downward for short.
-Long: previous regime bearish AND current regime bullish AND bar confirmed AND warm-up complete AND (HTF filter disabled OR last completed higher-timeframe close > its 50-period EMA) AND (volume filter disabled OR volume unavailable OR volume > its 20-bar SMA × threshold) AND stop distance > 0 AND close > long stop.
-Short: previous regime bullish AND current regime bearish AND bar confirmed AND warm-up complete AND (HTF filter disabled OR last completed higher-timeframe close < its 50-period EMA) AND (volume filter disabled OR volume unavailable OR volume > its 20-bar SMA × threshold) AND stop distance > 0 AND short stop > close.
-Exit: long, on a confirmed bar after the entry bar, low ≤ active stop unless TP1 or TP3 is touched on that bar, OR high ≥ TP3, OR a short-entry condition occurs.
-Exit: short, on a confirmed bar after the entry bar, high ≥ active stop unless TP1 or TP3 is touched on that bar, OR low ≤ TP3, OR a long-entry condition occurs.
-Calculation: After TP1 is first touched, move the active stop to entry price when break-even is enabled.
+Calculation: Baseline = selected HMA, ALMA, KAMA, T3, VWMA, or EMA of the selected price source; use EMA instead of VWMA when current volume is not positive, and use the source when the selected average is unavailable.
+Calculation: Adaptive offset = selected volatility multiplied by the trail multiplier and by (1 − adaptivity × 0.4 × min(abs(EMA-smoothed RSI of the selected price source − 50) / 50, 1)); selected volatility is ATR, standard deviation of close, or their mean, using the same lookback for both.
+Calculation: Trail and regime = initially bullish with trail = baseline − adaptive offset when close >= baseline, otherwise bearish with trail = baseline + adaptive offset. On each subsequent bar, in a bullish regime set trail to max(previous trail, baseline − adaptive offset), then switch to bearish and reset trail to baseline + adaptive offset if close < that trail; in a bearish regime set trail to min(previous trail, baseline + adaptive offset), then switch to bullish and reset trail to baseline − adaptive offset if close > that trail. Calculate from the first bar, including during warm-up.
+Calculation: Warm-up = bar index >= max(2 × baseline lookback, RSI lookback + RSI smoothing lookback, minimum warm-up parameter), with the first bar indexed zero.
+Calculation: Entry filter = volume filter disabled OR current volume <= 0 OR (volume SMA > 0 AND current volume > volume SMA × volume threshold).
+Calculation: Initial stop = for a long, either entry price − stop multiplier × entry-bar risk ATR or min(entry-bar low − wick buffer × entry-bar risk ATR, entry price − minimum-distance multiplier × entry-bar risk ATR); for a short, either entry price + stop multiplier × entry-bar risk ATR or max(entry-bar high + wick buffer × entry-bar risk ATR, entry price + minimum-distance multiplier × entry-bar risk ATR). Risk is the absolute difference between entry price and initial stop.
+Calculation: First target and final target = entry price plus risk times the respective target multiplier for a long, or entry price minus risk times the respective target multiplier for a short; the final target multiplier is greater than the first target multiplier. Keep these levels fixed at entry.
+Calculation: Active stop = initial stop until the first target has been touched on a bar after entry; if break-even is enabled, use entry price starting on the bar after that first touch. A stop touch on the first target's first-touch bar does not close the trade. Check target and stop touches before processing reversal and entry signals.
+Long: Warm-up AND bullish regime.
+Short: Warm-up AND bearish regime.
+Long: Higher-timeframe filter enabled AND last completed higher-timeframe close > its EMA.
+Short: Higher-timeframe filter enabled AND last completed higher-timeframe close < its EMA.
+Long: EMA-smoothed RSI > upper bullish threshold.
+Short: EMA-smoothed RSI < lower bearish threshold.
+Long: Warm-up AND previous regime = bearish AND current regime = bullish.
+Short: Warm-up AND previous regime = bullish AND current regime = bearish.
+Long: Warm-up AND previous regime = bearish AND current regime = bullish AND entry filter AND (higher-timeframe filter disabled OR last completed higher-timeframe close > its EMA) AND position is flat after stop, target, and reversal processing AND entry-bar risk ATR × stop multiplier > 0 AND entry price − initial stop > 0.
+Short: Warm-up AND previous regime = bullish AND current regime = bearish AND entry filter AND (higher-timeframe filter disabled OR last completed higher-timeframe close < its EMA) AND position is flat after stop, target, and reversal processing AND entry-bar risk ATR × stop multiplier > 0 AND initial stop − entry price > 0.
+Exit: long, bar index > entry bar index AND (high >= final target OR (low <= active stop AND first target was touched on an earlier bar OR low <= active stop AND high < first target)).
+Exit: short, bar index > entry bar index AND (low <= final target OR (high >= active stop AND first target was touched on an earlier bar OR high >= active stop AND low > first target)).
+Exit: long, warm-up AND previous regime = bullish AND current regime = bearish AND entry filter AND (higher-timeframe filter disabled OR last completed higher-timeframe close < its EMA).
+Exit: short, warm-up AND previous regime = bearish AND current regime = bullish AND entry filter AND (higher-timeframe filter disabled OR last completed higher-timeframe close > its EMA).

@@ -1,6 +1,6 @@
-Calculation: Aroon Up = 100 − 100 × (bars since the highest high in the lookback + 0.5) ÷ lookback, calculated on the configured signal timeframe, which may be higher or lower than the chart timeframe; use its last completed bar
-Calculation: Aroon Down = 100 − 100 × (bars since the lowest low in the lookback + 0.5) ÷ lookback, calculated on the configured signal timeframe, which may be higher or lower than the chart timeframe; use its last completed bar
-Long: Aroon Up > upper threshold AND Aroon Down < lower threshold AND the most recent prior qualifying regime was bearish (Aroon Up < lower threshold AND Aroon Down > upper threshold)
-Short: Aroon Up < lower threshold AND Aroon Down > upper threshold AND the most recent prior qualifying regime was bullish (Aroon Up > upper threshold AND Aroon Down < lower threshold)
-Exit: long, Aroon Up < lower threshold AND Aroon Down > upper threshold AND the most recent prior qualifying regime was bullish
-Exit: short, Aroon Up > upper threshold AND Aroon Down < lower threshold AND the most recent prior qualifying regime was bearish
+Calculation: Aroon high and Aroon low = 100 × (1 − (bars since the highest high or lowest low, respectively, within the same lookback including the evaluated bar + 0.5) / lookback); use the most recent occurrence when extremes tie.
+Calculation: Extreme state = bullish when Aroon high > upper threshold AND Aroon low < lower threshold; bearish when Aroon high < lower threshold AND Aroon low > upper threshold; otherwise retain the previous extreme state, initially neutral. Calculate on the chart timeframe or on a configurable higher or lower timeframe, using the last completed bar or the still-forming bar according to the selected signal-bar setting.
+Long: Extreme state = bullish AND the previous extreme state = bearish.
+Short: Extreme state = bearish AND the previous extreme state = bullish.
+Exit: long, the most recent long or short signal = short OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, the most recent long or short signal = long OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance.

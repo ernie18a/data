@@ -1,3 +1,6 @@
-Calculation: RPM = current close minus the close of the last completed bar of the selected reaction-window timeframe, which may be higher or lower than the chart timeframe
-Long: close >= daily open OR RPM >= 0
-Short: close < daily open OR RPM < 0
+Long: close >= open of the still-forming higher-timeframe bar
+Short: close < open of the still-forming higher-timeframe bar
+Long: close >= close of the last completed reaction-window bar, using a higher or lower timeframe than the chart timeframe
+Short: close < close of the last completed reaction-window bar, using a higher or lower timeframe than the chart timeframe
+Long: close >= previous chart-bar close
+Short: close < previous chart-bar close

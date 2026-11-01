@@ -1,9 +1,15 @@
-Calculation: Confirmed swing high/low = a pivot high/low confirmed after the same lookback number of bars on each side; use the structure lookback for CHoCH, the sweep lookback for liquidity sweeps, and the trend lookback for chart patterns.
-Long: Close crosses above the latest confirmed structure swing high AND the current structure bias is neutral or bearish
-Short: Close crosses below the latest confirmed structure swing low AND the current structure bias is neutral or bullish
-Long: Low > high two bars earlier AND the gap is at least the minimum size relative to ATR(14)
-Short: High < low two bars earlier AND the gap is at least the minimum size relative to ATR(14)
-Long: Two latest trend swing lows are within the tolerance relative to ATR(14) AND the latest trend swing high is above both lows by more than that tolerance
-Short: Two latest trend swing highs are within the tolerance relative to ATR(14) AND the latest trend swing low is below both highs by more than that tolerance
-Long: Low is below the latest confirmed sweep swing low by at least the minimum size relative to ATR(14) AND close is at or above that swing low AND the lower wick is at least the minimum fraction of the candle range AND no earlier sweep has occurred in the current structure-bias leg AND, during the next two bars, no close is below the swept level
-Short: High is above the latest confirmed sweep swing high by at least the minimum size relative to ATR(14) AND close is at or below that swing high AND the upper wick is at least the minimum fraction of the candle range AND no earlier sweep has occurred in the current structure-bias leg AND, during the next two bars, no close is above the swept level
+Calculation: Structure pivots = the latest confirmed pivot high and pivot low, using equal left and right lookbacks; update each pivot before evaluating the current bar's crossings.
+Calculation: Structure bias = initially neutral; on a confirmed bar, change to bullish when close crosses above the latest structure pivot high and the bias is bearish or neutral; change to bearish when close crosses below the latest structure pivot low and the bias is bullish or neutral. A cross compares the current close and pivot with their respective previous-bar values.
+Calculation: Pattern pivots = the two latest confirmed pivot highs and the two latest confirmed pivot lows, using equal left and right lookbacks; update them before evaluating patterns.
+Calculation: Active order blocks = on a bullish structure-bias change, retain the high, low and close of the most recent bearish candle within a lookback proportional to the structure pivot lookback; on a bearish change, do the same for the most recent bullish candle. Retain up to a configurable maximum per side, discarding the oldest first. On each confirmed bar, remove bullish blocks whose low <= current low <= high and bearish blocks whose low <= current high <= high, including newly created blocks. Select the remaining block nearest to close, measuring distance as zero inside its range and otherwise to its nearest boundary; break ties in favor of the oldest bullish block, then the oldest bearish block.
+Calculation: Order-block buy pressure = rounded percentage of the selected block's range from its low to its source candle's close; use a denominator of one if the range is zero. Sell pressure = 100 minus buy pressure.
+Long: Confirmed close crosses above the latest structure pivot high AND prior structure bias is bearish or neutral.
+Short: Confirmed close crosses below the latest structure pivot low AND prior structure bias is bullish or neutral.
+Long: Structure bias on a higher timeframe's last completed bar or a lower timeframe's last completed bar is bullish.
+Short: Structure bias on a higher timeframe's last completed bar or a lower timeframe's last completed bar is bearish.
+Long: Confirmed low > high two bars earlier AND low minus that high >= a multiple of ATR.
+Short: Confirmed high < low two bars earlier AND that low minus high >= a multiple of ATR.
+Long: A new pivot low is confirmed AND the absolute difference between the two latest pattern pivot lows <= an ATR-based tolerance AND the latest pattern pivot high > the higher of those lows plus that tolerance.
+Short: A new pivot high is confirmed AND the absolute difference between the two latest pattern pivot highs <= an ATR-based tolerance AND the latest pattern pivot low < the lower of those highs minus that tolerance.
+Long: A selected bullish order block exists AND its buy pressure >= sell pressure OR a selected bearish order block exists AND its buy pressure > sell pressure.
+Short: A selected bullish order block exists AND its buy pressure < sell pressure OR a selected bearish order block exists AND its sell pressure >= buy pressure.

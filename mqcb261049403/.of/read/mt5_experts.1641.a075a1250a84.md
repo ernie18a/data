@@ -1,5 +1,5 @@
-Calculation: FigurelliSeries = On the configured indicator timeframe, using its last completed bar, count the moving averages below the bar’s close and subtract the count above it; the moving averages use progressively longer periods.
-Long: FigurelliSeries > 0 AND current hour = configured opening hour AND current minute = configured opening minute
-Short: FigurelliSeries < 0 AND current hour = configured opening hour AND current minute = configured opening minute
-Exit: long, FigurelliSeries < 0 OR current hour = configured closing hour AND current minute >= configured closing minute OR current hour > configured closing hour OR current hour < configured opening hour OR close <= entry price - configured stop-loss distance OR close >= entry price + configured take-profit distance
-Exit: short, FigurelliSeries > 0 OR current hour = configured closing hour AND current minute >= configured closing minute OR current hour > configured closing hour OR current hour < configured opening hour OR close >= entry price + configured stop-loss distance OR close <= entry price - configured take-profit distance
+Calculation: Moving-average balance = number of moving averages below the close minus number above the close. Use a configurable moving-average method and applied price, with periods increasing by a fixed step from shortest to longest. Calculate on a configurable indicator timeframe that may be higher or lower than the chart timeframe; use a configurable bar offset, with offset zero using the bar still forming and positive offsets using completed bars.
+Long: Moving-average balance > 0 AND time of day = opening time AND position side = flat.
+Short: Moving-average balance < 0 AND time of day = opening time AND position side = flat.
+Exit: long, moving-average balance < 0 OR time of day >= closing time OR hour of day < opening hour OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, moving-average balance > 0 OR time of day >= closing time OR hour of day < opening hour OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

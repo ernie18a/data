@@ -1,6 +1,5 @@
-Calculation: Fast line = the DigitMacd line produced by faster smoothing of the applied price
-Calculation: Slow line = the DigitMacd line produced by slower smoothing of the applied price
-Long: Fast line on the last completed higher-timeframe signal bar > slow line on that bar AND fast line on the preceding higher-timeframe bar <= slow line on that bar
-Short: Fast line on the last completed higher-timeframe signal bar < slow line on that bar AND fast line on the preceding higher-timeframe bar >= slow line on that bar
-Exit: Short, fast line on the last completed higher-timeframe signal bar > slow line on that bar
-Exit: Long, fast line on the last completed higher-timeframe signal bar < slow line on that bar
+Calculation: Fast and slow adaptive trend lines = apply the fast adaptive trend line (FATL) and slow adaptive trend line (SATL) filters to the same selected OHLC-derived price on the higher timeframe; use the last completed higher-timeframe bar, or the still-forming bar when configured, and the preceding higher-timeframe bar.
+Long: Fast adaptive trend line > slow adaptive trend line AND preceding fast adaptive trend line <= preceding slow adaptive trend line
+Short: Fast adaptive trend line < slow adaptive trend line AND preceding fast adaptive trend line >= preceding slow adaptive trend line
+Exit: long, fast adaptive trend line < slow adaptive trend line OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, fast adaptive trend line > slow adaptive trend line OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

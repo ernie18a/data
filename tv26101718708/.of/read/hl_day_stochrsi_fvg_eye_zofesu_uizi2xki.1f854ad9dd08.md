@@ -1,4 +1,14 @@
-Calculation: Stochastic RSI K = the RSI of close normalized within its own longer stochastic lookback to a 0–100 range, then smoothed with a shorter moving average
-Calculation: Previous-day high/low = high/low of the last completed bar on the higher daily timeframe
-Long: K crosses below the lower level OR K crosses above the middle level after the most recent K-at-or-below-lower-level extreme and before a K-at-or-above-upper-level extreme OR the previous close is below the previous-day low and the current close is at or above it OR, after K crosses below the lower level, the first close within the ATR tolerance of a selected support anchor (previous-day low, value-area low, or both)
-Short: K crosses above the upper level OR K crosses below the middle level after the most recent K-at-or-above-upper-level extreme and before a K-at-or-below-lower-level extreme OR the previous close is above the previous-day high and the current close is at or below it OR, after K crosses above the upper level, the first close within the ATR tolerance of a selected resistance anchor (previous-day high, value-area high, or both)
+Calculation: Stochastic RSI K = simple moving average of the stochastic of RSI of close; the stochastic uses the highest and lowest RSI over its lookback.
+Calculation: Extreme state = initially neutral; on each closed chart bar set it to upper when K >= upper threshold and to lower when K <= lower threshold; otherwise retain its previous state. The lower threshold is below the middle threshold, which is below the upper threshold.
+Calculation: Confluence state = initially unarmed; a K cross above the upper threshold arms short and disarms long, and a K cross below the lower threshold arms long and disarms short. After the corresponding confluence decision, disarm that side. Apply crossings before evaluating confluence on the same bar.
+Calculation: Previous-day high and low = high and low of the last completed daily bar, which may be higher, equal to, or lower than the chart timeframe.
+Long: K crosses below the lower threshold.
+Short: K crosses above the upper threshold.
+Long: K crosses above the middle threshold AND extreme state = lower.
+Short: K crosses below the middle threshold AND extreme state = upper.
+Long: Previous chart-bar close < current previous-day low AND current close >= current previous-day low.
+Short: Previous chart-bar close > current previous-day high AND current close <= current previous-day high.
+Long: Confluence state = armed long AND ATR > 0 AND absolute difference between close and previous-day low <= ATR multiplied by the zone-tolerance parameter.
+Short: Confluence state = armed short AND ATR > 0 AND absolute difference between close and previous-day high <= ATR multiplied by the zone-tolerance parameter.
+Long: On the first closed chart bar of a new equal or higher timeframe bar, the last completed bar's low > the high two bars before it on that timeframe.
+Short: On the first closed chart bar of a new equal or higher timeframe bar, the last completed bar's high < the low two bars before it on that timeframe.

@@ -1,9 +1,9 @@
-Calculation: Adaptive lookback = max(1, ceiling(long lookback / ADX)); use bars on the configured indicator timeframe, which is independent of the chart timeframe. Evaluate the signal on the last completed bar.
-Calculation: Lower threshold = lowest low over the adaptive lookback + (highest high − lowest low over the same lookback) × range fraction.
-Calculation: Upper threshold = highest high over the adaptive lookback − (highest high − lowest low over the same lookback) × range fraction.
-Calculation: Trend state = bearish when close < lower threshold; bullish when close > upper threshold; otherwise retain the prior state. Initialize neutral; if both conditions hold, bullish is the final state.
-Calculation: Bullish arrow = close > upper threshold AND prior trend state < bullish; bearish arrow = close < lower threshold AND prior trend state > bearish.
-Long: Bullish arrow AND the most recent earlier arrow is bearish.
-Short: Bearish arrow AND the most recent earlier arrow is bullish.
-Exit: long, Bearish arrow OR the most recent earlier arrow is bearish.
-Exit: short, Bullish arrow OR the most recent earlier arrow is bullish.
+Calculation: Signal bars = chart-timeframe bars for the indicator; for the trading system, use a configurable timeframe that may be higher or lower than the chart timeframe, with a configurable bar offset that may select the last completed bar or the bar still forming.
+Calculation: Adaptive range = the highest high and lowest low over N signal bars including the evaluated bar, where N = max(1, ceil(lookback parameter / ADX)). The lower threshold is the lowest low plus a percentage parameter of the range; the upper threshold is the highest high minus the same percentage parameter of the range.
+Calculation: Trend state = initially neutral; on each completed signal bar set it bearish if close < lower threshold, then set it bullish if close > upper threshold; otherwise retain the preceding state. For a forming bar, compare with the preceding completed bar's state without committing the forming bar's state.
+Calculation: Bullish marking = close > upper threshold AND preceding trend state is not bullish AND low minus the mean high-low range over N signal bars multiplied by an offset parameter is not zero.
+Calculation: Bearish marking = close < lower threshold AND preceding trend state is not bearish AND high plus the mean high-low range over N signal bars multiplied by an offset parameter is not zero.
+Long: Bullish marking = true
+Short: Bearish marking = true
+Exit: long, bearish marking on the selected signal bar = true OR the most recent earlier marking is bearish OR low <= entry price minus a stop-loss distance OR high >= entry price plus a take-profit distance
+Exit: short, bullish marking on the selected signal bar = true OR the most recent earlier marking is bullish OR high >= entry price plus a stop-loss distance OR low <= entry price minus a take-profit distance

@@ -1,6 +1,15 @@
-Calculation: Bar delta = sum of lower-timeframe bar volume, positive when that bar closes above its open and negative when it closes below; use lower-timeframe bars within the chart bar, including the bar still forming in real time.
-Calculation: Higher-timeframe delta = cumulative bar delta within the higher-timeframe candle still forming.
-Calculation: Session up-volume share = volume from rising lower-timeframe bars divided by total session volume; use lower-timeframe bars within the session, including the bar still forming in real time.
-Calculation: Session POC and value area = the highest-volume price bin and the contiguous range grown from that bin until it contains the configured share of session volume; allocate lower-timeframe volume across its bar’s price range. Use the prior completed session or the developing session according to the reference setting; the developing profile includes the bar still forming.
-Long: selected candle-coloring engine marks bullish: higher-timeframe delta > 0; OR bar delta > 0; OR close > reference value area high; OR close > reference POC; OR session up-volume share > 50%; OR close > reference value area high, or (close is within the reference value area and above its POC while inside-value lean is enabled).
-Short: selected candle-coloring engine marks bearish: higher-timeframe delta < 0; OR bar delta < 0; OR close < reference value area low; OR close < reference POC; OR session up-volume share < 50%; OR close < reference value area low, or (close is within the reference value area and below its POC while inside-value lean is enabled).
+Calculation: Signed volume = sum over completed lower-timeframe bars within the chart bar of volume when close > open, -volume when close < open, and 0 when close = open; if lower-timeframe data is unavailable, use the chart bar's signed volume by the same rule.
+Calculation: Volume profile = aggregate volume into price bins over a selected period. Round prices to the nearest bin center; either distribute each completed lower-timeframe bar's volume equally among bins from its low through high, subject to a maximum bin count, or assign it to the bin of its close, HLC3, or OHLC4. If lower-timeframe data is unavailable, use the chart bar instead. The point of control is the lowest-priced bin with maximum volume. Starting there, expand the value area one adjacent bin at a time toward the side with more volume, choosing the upper side on a tie and counting empty bins as zero, until the selected fraction of total volume is included. The value-area boundaries are the outer edges of the selected bins.
+Calculation: Reference profile = either the last completed session profile, the forming session profile through the current chart bar, the last completed higher-timeframe candle's profile, or a composite profile of a lookback of completed higher-timeframe candles. Historical chart bars use the last completed session when the forming session is selected as the reference.
+Calculation: Forming higher-timeframe delta = sum of chart-bar signed volume in the still-forming higher-timeframe bar through the current chart bar.
+Calculation: Session up-volume share = sum, since the start of the forming session through the current chart bar, of (lower-timeframe volume + signed volume) / 2, divided by the sum of chart-bar volume. If lower-timeframe data is unavailable for a chart bar, its up-volume is its volume when close > open and 0 otherwise.
+Long: Forming higher-timeframe delta > 0
+Short: Forming higher-timeframe delta < 0
+Long: Signed volume > 0
+Short: Signed volume < 0
+Long: close > reference profile value-area high
+Short: close < reference profile value-area low
+Long: close > reference profile point of control
+Short: close < reference profile point of control
+Long: session up-volume share > 0.5
+Short: session up-volume share < 0.5

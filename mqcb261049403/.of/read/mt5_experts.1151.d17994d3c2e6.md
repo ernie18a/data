@@ -1,5 +1,5 @@
-Calculation: Coefficient = on the configured indicator timeframe, compute median price x=(high+low)/2 and its smoothed moving average s; over n bars ordered oldest to newest, let cnt run from n to 1, T=Σx, Zx=Σ[x·(6−cnt)], Ts=Σs, Zs=Σ[s·(n+1−cnt)], M=Σcnt, and N=Σcnt²; calculate A=(T+(N−2Zx)·n/M)/M and B=(Ts+(N−2Zs)·n/M)/M, then take the instrument-oriented signed value of 1000·ln(A/B). Use the last completed bars; the configured timeframe may be higher or lower than the chart timeframe.
-Long: Coefficient on the previous completed bar > 0 AND Coefficient on the latest completed bar < 0
-Short: Coefficient on the previous completed bar < 0 AND Coefficient on the latest completed bar > 0
-Exit: long, Coefficient on the previous completed bar < 0 AND Coefficient on the latest completed bar > 0
-Exit: short, Coefficient on the previous completed bar > 0 AND Coefficient on the latest completed bar < 0
+Calculation: Coefficient = s × log(A/B), where s is a selectable sign; for lookback n, median price p[t]=(high[t]+low[t])/2, m[t] is the n-period smoothed moving average of median price shifted forward by 3 bars, M=sum(i, i=1..n), N=sum(i², i=1..n), A=(sum(p[t-i+1])+(N-2×sum(p[t-i+1]×(6-i)))×n/M)/M, and B=(sum(m[t-i+1])+(N-2×sum(m[t-i+1]×(n+1-i)))×n/M)/M; sums are over i=1..n. Calculate on the chart timeframe or a selectable higher or lower timeframe, using the last completed indicator-timeframe bar by default or the forming bar if selected.
+Long: Coefficient > 0 AND previous indicator-timeframe bar coefficient < 0
+Short: Coefficient < 0 AND previous indicator-timeframe bar coefficient > 0
+Exit: long, coefficient < 0 OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, coefficient > 0 OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

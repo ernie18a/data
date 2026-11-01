@@ -1,3 +1,5 @@
-Calculation: Daily peak percentage = 100 × (highest high so far in the current day ÷ previous daily close − 1); previous daily close is from the last completed daily bar.
-Calculation: Current percentage change = 100 × (close ÷ previous daily close − 1).
-Short: During the current day, after daily peak percentage has reached the breakout threshold, current percentage change ≤ daily peak percentage × entry fraction
+Calculation: Reference close = the close of the last completed higher-timeframe daily bar; during regular trading use the preceding daily bar, and during premarket or postmarket use the latest daily bar available from the instrument's session.
+Calculation: Daily peak = highest chart-bar high since the start of the current day, including the current bar.
+Calculation: Peak gain = (daily peak / reference close - 1) × 100.
+Calculation: Reversal entry price = reference close × (1 + peak gain × entry fraction / 100).
+Short: Peak gain has reached or exceeded the breakout threshold on the current or an earlier bar of the current day AND close <= reversal entry price AND no previous short signal has occurred on the current day.

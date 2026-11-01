@@ -1,10 +1,9 @@
-Calculation: Recent pivot low = low at the latest confirmed pivot low, where a pivot low is lower than the lows over equal left and right lookbacks
-Calculation: Recent pivot high = high at the latest confirmed pivot high, where a pivot high is higher than the highs over equal left and right lookbacks
-Calculation: Rolling lowest low = lowest low over the left lookback
-Calculation: Rolling lowest close = lowest close over the left lookback
-Calculation: Rolling highest high = highest high over the left lookback
-Calculation: Rolling highest close = highest close over the left lookback
-Long: low < recent pivot low AND close > recent pivot low AND open > recent pivot low AND low = rolling lowest low AND rolling lowest close >= recent pivot low
-Long: bullish sweep condition was true 3 bars ago AND close > recent pivot low AND close[1] > recent pivot low[1] AND close[2] > recent pivot low[2] AND bars since the previous bullish sweep signal >= the cooldown period
-Short: high > recent pivot high AND close < recent pivot high AND open < recent pivot high AND high = rolling highest high AND rolling highest close <= recent pivot high
-Short: bearish sweep condition was true 3 bars ago AND close < recent pivot high AND close[1] < recent pivot high[1] AND close[2] < recent pivot high[2] AND bars since the previous bearish sweep signal >= the cooldown period
+Calculation: Confirmed pivot low or high = a low or high confirmed using equal numbers of chart bars to its left and right; the latest pivot includes one confirmed on the current bar.
+Calculation: Bullish sweep = low < latest confirmed pivot low AND open > that pivot low AND close > that pivot low AND low = lowest low over the pivot's left lookback including the current bar AND lowest close over that lookback >= that pivot low.
+Calculation: Bearish sweep = high > latest confirmed pivot high AND open < that pivot high AND close < that pivot high AND high = highest high over the pivot's left lookback including the current bar AND highest close over that lookback <= that pivot high.
+Long: Bullish sweep.
+Short: Bearish sweep.
+Long: Bullish sweep on the bar three bars ago AND each of the current and two preceding closes > the latest confirmed pivot low on its respective bar AND bars since the previous occurrence of this condition >= the bullish cooldown; initialize the previous occurrence at bar index zero.
+Short: Bearish sweep on the bar three bars ago AND each of the current and two preceding closes < the latest confirmed pivot high on its respective bar AND bars since the previous occurrence of this condition >= the bearish cooldown; initialize the previous occurrence at bar index zero.
+Long: A pivot low is confirmed on the current bar AND bullish sweep was false on the pivot bar.
+Short: A pivot high is confirmed on the current bar AND bearish sweep was false on the pivot bar.

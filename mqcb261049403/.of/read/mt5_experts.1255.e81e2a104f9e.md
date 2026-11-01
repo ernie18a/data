@@ -1,6 +1,6 @@
-Calculation: Smoothed stochastic of price = EMA of 100 × (close − lowest low) / (highest high − lowest low) over a lookback
-Calculation: DSS = EMA of 100 × (smoothed stochastic of price − its lowest value) / (its highest value − its lowest value) over the same lookback
-Long: On the chart timeframe’s last completed bars, smoothed stochastic of price was at least DSS two bars ago AND DSS is now greater than smoothed stochastic of price
-Short: On the chart timeframe’s last completed bars, DSS was at least smoothed stochastic of price two bars ago AND smoothed stochastic of price is now greater than DSS
-Exit: long, smoothed stochastic of price > DSS on the last completed bar
-Exit: short, DSS > smoothed stochastic of price on the last completed bar
+Calculation: First smoothed stochastic = EMA of 100 × (close − lowest low) / (highest high − lowest low), using a configurable lookback including the current bar; initialize the EMA to 50.
+Calculation: Double-smoothed stochastic = EMA of 100 × (first smoothed stochastic − its rolling minimum) / (its rolling maximum − its rolling minimum), using the same lookback and EMA period as the first smoothed stochastic; initialize the EMA to 50. Calculate both series on a configurable timeframe that can be higher or lower than the chart timeframe, or the chart timeframe itself; use the last completed bar by default, or the still-forming bar if configured.
+Long: Double-smoothed stochastic > first smoothed stochastic AND double-smoothed stochastic on the preceding indicator bar <= first smoothed stochastic on that bar.
+Short: Double-smoothed stochastic < first smoothed stochastic AND double-smoothed stochastic on the preceding indicator bar >= first smoothed stochastic on that bar.
+Exit: long, double-smoothed stochastic < first smoothed stochastic OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, double-smoothed stochastic > first smoothed stochastic OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance.

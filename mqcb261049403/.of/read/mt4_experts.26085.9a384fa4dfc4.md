@@ -1,7 +1,4 @@
-Calculation: Fast LWMA = linear weighted moving average of typical price over a shorter lookback than the slow LWMA, on a higher timeframe, using the bar still forming.
-Calculation: Slow LWMA = linear weighted moving average of typical price over a longer lookback than the fast LWMA, on a higher timeframe, using the bar still forming.
-Calculation: Lower Bollinger Band = lower band of Bollinger Bands calculated on the chart timeframe from the last completed bar.
-Long: Fast LWMA > Slow LWMA AND low two bars ago < high one bar ago AND absolute difference between the current bar's open and the close two bars ago > a configurable distance in points
-Short: Fast LWMA < Slow LWMA AND low one bar ago < high two bars ago AND absolute difference between the current bar's open and the close one bar ago > a configurable distance in points
-Exit: long, close one bar ago <= Lower Bollinger Band OR the 3-, 5-, 8-, 10-, 12-, and 15-period EMAs of typical price on the chart timeframe, using the bar still forming, are all equal OR the 30-, 35-, 40-, 45-, 50-, and 60-period EMAs of typical price on the chart timeframe, using the bar still forming, are all equal OR price reaches the entry-based stop loss or take profit
-Exit: short, close one bar ago <= Lower Bollinger Band OR the 3-, 5-, 8-, 10-, 12-, and 15-period EMAs of typical price on the chart timeframe, using the bar still forming, are all equal OR the 30-, 35-, 40-, 45-, 50-, and 60-period EMAs of typical price on the chart timeframe, using the bar still forming, are all equal OR price reaches the entry-based stop loss or take profit
+Long: A Williams fractal low is marked on the chart timeframe, using the current forming bar.
+Short: A Williams fractal high is marked on the chart timeframe, using the current forming bar.
+Exit: long, the last completed close is at or below the lower Bollinger Band OR all six short-term EMAs of typical price are equal OR all six longer-term EMAs of typical price are equal; within each group, the EMA lookbacks are distinct.
+Exit: short, the last completed close is at or below the lower Bollinger Band OR all six short-term EMAs of typical price are equal OR all six longer-term EMAs of typical price are equal; within each group, the EMA lookbacks are distinct.

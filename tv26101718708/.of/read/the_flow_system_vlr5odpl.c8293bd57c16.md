@@ -1,25 +1,35 @@
-Calculation: Strong candle = abs(close − open) / max(high − low, minimum price increment) meets a configurable minimum.
-Calculation: Bullish trend = the latest completed close exceeds the preceding completed close on each of the daily, middle, and shortest higher timeframes; bearish trend = it is below on each.
-Calculation: Bullish structure = the latest completed close on each of the middle and shortest higher timeframes exceeds that timeframe’s highest high over a configurable lookback ending two bars earlier; bearish structure = it is below the corresponding lowest low. These timeframes are higher than the chart timeframe; use completed bars.
-Calculation: Ranging = either the highs or the lows of each successive pair among the last three completed middle higher-timeframe bars differ by less than a configurable tolerance.
-Calculation: ICC levels = the high, low, and midpoint of a configurable prior completed higher-timeframe bar; that timeframe is higher than the chart timeframe.
-Calculation: Local swing high/low = the highest high / lowest low over a configurable lookback of chart bars, excluding the current bar.
-Calculation: Active BOS level = the latest chart-bar close crossover above the local swing high or crossunder below the local swing low, retained until the close moves beyond that level by twice a configurable invalidation distance or an opposite break occurs.
-Calculation: Active BOS fair value gap = after an active break, a three-bar gap in the break direction; it remains active until price breaches its far boundary or the break becomes inactive.
-Calculation: Session range = the highest high and lowest low during the configured opening-range window, available after that window ends; each direction can signal once per range.
-Long: On an enabled entry chart timeframe, during an enabled session, not ranging, bullish trend and bullish structure, and (low <= ICC low + configurable touch tolerance AND close < ICC midpoint AND close > open AND strong candle).
-Short: On an enabled entry chart timeframe, during an enabled session, not ranging, bearish trend and bearish structure, and (high >= ICC high − configurable touch tolerance AND close > ICC midpoint AND close < open AND strong candle).
-Long: On an enabled entry chart timeframe, during an enabled session, not ranging, bullish trend and bullish structure, and active bullish break, and ((low <= active BOS level + configurable touch tolerance AND close >= active BOS level − configurable touch tolerance) OR (low <= active bullish gap top AND close >= active bullish gap bottom)), and close > open and strong candle.
-Short: On an enabled entry chart timeframe, during an enabled session, not ranging, bearish trend and bearish structure, and active bearish break, and ((high >= active BOS level − configurable touch tolerance AND close <= active BOS level + configurable touch tolerance) OR (high >= active bearish gap bottom AND close <= active bearish gap top)), and close < open and strong candle.
-Long: Bullish trend AND chart close crosses above the local swing high.
-Short: Bearish trend AND chart close crosses below the local swing low.
-Long: After the configured daily accumulation bars, before either range boundary has been swept, the chart high exceeds the accumulation high; only one sweep is recorded per day.
-Short: After the configured daily accumulation bars, before either range boundary has been swept, the chart low falls below the accumulation low; only one sweep is recorded per day.
-Long: The daily accumulation low has been swept, distribution has not yet occurred, and close > accumulation low AND close > open AND strong candle.
-Short: The daily accumulation high has been swept, distribution has not yet occurred, and close < accumulation high AND close < open AND strong candle.
-Long: During the configured Asia session, the Asia low is swept by more than a configurable tolerance; before either Asia boundary has been swept.
-Short: During the configured London or New York session, the Asia high is swept by more than a configurable tolerance; before either Asia boundary has been swept.
-Long: The Asia low has been swept, and close > Asia low AND close > open AND strong candle.
-Short: The Asia high has been swept, and close < Asia high AND close < open AND strong candle.
-Long: The opening range is complete, its long signal has not occurred, and chart close crosses above its high.
-Short: The opening range is complete, its short signal has not occurred, and chart close crosses below its low.
+Calculation: Higher-timeframe trend = compare the last completed close with the preceding close on each of three higher timeframes, ordered shortest to longest.
+Calculation: Higher-timeframe structure = on each of two higher timeframes, compare the last completed close with the highest high or lowest low over a lookback ending at the bar immediately before that completed bar; the two timeframes are the shorter two used for higher-timeframe trend.
+Calculation: Ranging = on the middle higher timeframe used for trend, both absolute differences between successive highs of the last three completed bars are below a tolerance, OR both absolute differences between their successive lows are below that tolerance.
+Calculation: Strong candle = abs(close - open) / (high - low) >= a body-fraction threshold when high > low.
+Calculation: Local break = close crosses above the highest high of the preceding lookback bars, or below the lowest low of the preceding lookback bars; a cross compares the current close and level with their respective previous-bar values.
+Calculation: Active break level = the local-break level from the latest upward or downward local break; replace it on every local break, and deactivate it when close falls below an upward break level minus twice an invalidation distance or rises above a downward break level plus twice that distance.
+Calculation: Active break gap = after an active upward break, retain the latest gap from high two bars ago to current low when high two bars ago < current low; after an active downward break, retain the latest gap from current high to low two bars ago when low two bars ago > current high. Clear the upward gap when low falls below its lower edge, the downward gap when high rises above its upper edge, and either gap when its corresponding break becomes inactive. Process break updates, gap creation, and gap invalidation before evaluating entries.
+Calculation: Reference range = high and low of a selected completed higher-timeframe bar; its midpoint is their average.
+Calculation: Opening range = highest high and lowest low during a configured opening window in America/Chicago. Track two configured windows independently, reset each range and its direction-specific signal counters at its next opening, and allow a signal only after that window ends.
+Calculation: Accumulation range = highest high and lowest low of the first configured number of chart bars after each daily boundary, with at least the first two bars included. After accumulation, record the first high sweep and first low sweep only if neither was previously recorded; both may be recorded on the same bar. Reset sweeps and the distribution counter at the next daily boundary.
+Calculation: Session range = highest high and lowest low during a configured overnight session in America/Chicago. Reset at each session opening. During either of two configured later sessions, record the first high sweep or low sweep beyond the corresponding range edge by a sweep tolerance, provided neither sweep was previously recorded; both may be recorded on the same bar. A recorded sweep persists until the next overnight session opening.
+Calculation: Fair-value gap = an upward gap exists when high two bars ago < current low, with those prices as its lower and upper edges; a downward gap exists when low two bars ago > current high, with current high and the earlier low as its lower and upper edges. Track up to a configured maximum number of each direction, discarding the oldest excess gap; remove an upward gap when a later close <= its lower edge and a downward gap when a later close >= its upper edge.
+Calculation: Confirmed pivot = a high or low with a configured equal number of bars on each side satisfying the pivot-high or pivot-low test. Evaluate pivots on a timeframe equal to or lower than the chart timeframe, using confirmed bars; compare each newly observed pivot price with the preceding distinct pivot price of the same kind.
+Long: The last completed close > the preceding close on all three higher timeframes.
+Short: The last completed close < the preceding close on all three higher timeframes.
+Long: On both structure timeframes, the last completed close > the highest high over the structure lookback ending one bar before that completed bar.
+Short: On both structure timeframes, the last completed close < the lowest low over the structure lookback ending one bar before that completed bar.
+Long: A new confirmed pivot high or pivot low > the preceding distinct pivot of the same kind, OR no preceding pivot of that kind exists.
+Short: A new confirmed pivot high or pivot low < the preceding distinct pivot of the same kind.
+Long: High two bars ago < current low.
+Short: Low two bars ago > current high.
+Long: A tracked downward fair-value gap was created on an earlier bar AND close >= its upper edge.
+Short: A tracked upward fair-value gap was created on an earlier bar AND close <= its lower edge.
+Long: A local upward break occurs AND all three higher-timeframe trend comparisons are rising.
+Short: A local downward break occurs AND all three higher-timeframe trend comparisons are falling.
+Long: An opening window has ended AND close crosses above its opening-range high AND no prior upward signal has occurred for that window since it opened.
+Short: An opening window has ended AND close crosses below its opening-range low AND no prior downward signal has occurred for that window since it opened.
+Long: The accumulation range has completed AND low < its lower edge AND neither edge was previously swept since the daily reset.
+Short: The accumulation range has completed AND high > its upper edge AND neither edge was previously swept since the daily reset.
+Long: The accumulation-range low has been swept AND no accumulation distribution has occurred since the daily reset AND close > the range low AND close > open AND the candle is strong.
+Short: The accumulation-range high has been swept AND no accumulation distribution has occurred since the daily reset AND close < the range high AND close < open AND the candle is strong.
+Long: The session-range low has been swept AND close > the session-range low AND close > open AND the candle is strong.
+Short: The session-range high has been swept AND close < the session-range high AND close < open AND the candle is strong.
+Long: The chart bar is in an enabled configured session AND ranging is false AND all three higher-timeframe trend comparisons are rising AND both higher-timeframe structure comparisons are upward AND close > open AND the candle is strong AND (low <= reference-range low + touch tolerance AND close < reference-range midpoint OR an upward break is active AND (low <= active break level + touch tolerance AND close >= active break level - touch tolerance OR an active upward break gap exists AND low <= its upper edge AND close >= its lower edge)).
+Short: The chart bar is in an enabled configured session AND ranging is false AND all three higher-timeframe trend comparisons are falling AND both higher-timeframe structure comparisons are downward AND close < open AND the candle is strong AND (high >= reference-range high - touch tolerance AND close > reference-range midpoint OR a downward break is active AND (high >= active break level - touch tolerance AND close <= active break level + touch tolerance OR an active downward break gap exists AND high >= its lower edge AND close <= its upper edge)).

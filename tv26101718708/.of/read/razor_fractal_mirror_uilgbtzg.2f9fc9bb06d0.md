@@ -1,11 +1,17 @@
-Calculation: Historical analogs = up to three highest-scoring non-overlapping past windows that meet the similarity threshold; score each window by the weighted average of normalized-path Pearson-correlation score, normalized-RMSE score, and regime-compatibility score.
-Calculation: Projected consensus = similarity-weighted average of the selected analogs’ smoothed forward price paths; use its endpoint for direction and projected move.
-Calculation: Mirror quality = 0.35 × average similarity + 0.20 × regime quality + 0.25 × path stability + 0.20 × outcome reliability.
-Calculation: Agreement = percentage of selected analog endpoints on the majority side of current close.
-Calculation: Forecast health = 0.30 × mirror quality + 0.20 × agreement + 0.20 × path stability + 0.15 × outcome reliability + 0.15 × analog density score.
-Calculation: Fusion bias = majority directional bias among four configured timeframes, each based on close above (bullish) or below (bearish) EMA with EMA rising or falling respectively; otherwise neutral. Fusion agreement = the majority directional count divided by four, expressed as a percentage. Use each timeframe’s current bar, which may still be forming; timeframes may be higher or lower than the chart timeframe.
-Calculation: Invalidation level = close minus projected direction × ATR × max(average adverse excursion in ATR, 0.35) × risk buffer.
-Long: At least one historical analog exists AND projected consensus endpoint > close AND mirror quality ≥ its minimum AND agreement ≥ its minimum AND absolute projected move / ATR ≥ its minimum AND forecast health ≥ 60 AND (fusion is disabled or not required, or fusion agreement ≥ its minimum and fusion bias is bullish).
-Short: At least one historical analog exists AND projected consensus endpoint < close AND mirror quality ≥ its minimum AND agreement ≥ its minimum AND absolute projected move / ATR ≥ its minimum AND forecast health ≥ 60 AND (fusion is disabled or not required, or fusion agreement ≥ its minimum and fusion bias is bearish).
-Exit: long, low ≤ the invalidation level captured when the mirror is locked.
-Exit: short, high ≥ the invalidation level captured when the mirror is locked.
+Calculation: Analog set = After the required history is available, scan historical pattern windows at a configurable stride, starting beyond the current pattern and projection horizon and ending at the search-depth limit. Normalize each window's closes to its oldest close using either log ratios or percentage changes. Score each candidate as the weighted average of its normalized-path correlation score, inverse RMSE score, and optional regime-compatibility score. The correlation score is 50 × (correlation + 1); the error score is 100 / (1 + RMSE × error sensitivity × 100). Regime compatibility compares (close − EMA) / ATR and ATR / close at the current bar and candidate endpoint: combine 100 / (1 + absolute trend difference) and max(0, 100 − relative volatility difference in percent) with configurable weights, and halve the result below the regime tolerance; use 100 when regime matching is disabled. Keep candidates at or above the similarity threshold in three ranked slots: scan from most recent to oldest; replace the best only if separated from the current best and second, shifting both down; otherwise replace the second if better and separated from the best, shifting the second down; otherwise replace the third if better and separated from the best and second. Separation means at least the configured number of bars between endpoints. Require at least one retained candidate.
+Calculation: Projected endpoint = For each retained candidate, rescale each historical close over the configured forward horizon by current close / candidate endpoint close; use current close at projection step zero. Smooth each projected step by averaging it with preceding projected steps within the smoothing lookback. The endpoint is the similarity-weighted average of the smoothed final projected prices; use current close if the total similarity weight is zero.
+Calculation: Historical bullish outcome rate = Percentage of retained candidates whose close at the end of the forward horizon is strictly above their endpoint close.
+Calculation: Average historical outcome = Mean of the retained candidates' forward-horizon percentage changes from their endpoint closes.
+Calculation: Regime trend = (close − EMA of close) / ATR, or zero when ATR is not positive.
+Long: Projected endpoint >= close
+Short: Projected endpoint < close
+Long: Historical bullish outcome rate >= configurable percentage threshold
+Short: Historical bullish outcome rate < configurable percentage threshold
+Long: Average historical outcome >= 0
+Short: Average historical outcome < 0
+Long: Regime trend > configurable positive threshold
+Short: Regime trend < configurable negative threshold
+Long: On any configured fusion timeframe, close > EMA of close AND EMA of close > its preceding value; use the last completed higher-timeframe bar or the last lower-timeframe bar within the chart bar
+Short: On any configured fusion timeframe, close < EMA of close AND EMA of close < its preceding value; use the last completed higher-timeframe bar or the last lower-timeframe bar within the chart bar
+Long: The number of bullish fusion timeframes > the number of bearish fusion timeframes
+Short: The number of bearish fusion timeframes > the number of bullish fusion timeframes

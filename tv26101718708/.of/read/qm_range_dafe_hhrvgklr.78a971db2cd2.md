@@ -1,9 +1,7 @@
-Calculation: 3-candle fractal high = a bar’s high is greater than the highs of the immediately preceding and following bars; confirmed on the following bar
-Calculation: 3-candle fractal low = a bar’s low is lower than the lows of the immediately preceding and following bars; confirmed on the following bar
-Calculation: Bullish QM break level = highest high from the latest confirmed 3-candle fractal low through the low-sweep bar
-Calculation: Bearish QM break level = lowest low from the latest confirmed 3-candle fractal high through the high-sweep bar
-Calculation: Active range high = maximum of the sweep and break levels of the two opposing QMs that form the range
-Calculation: Active range low = minimum of the sweep and break levels of the two opposing QMs that form the range
-Long: Since the latest confirmed 3-candle fractal low, low < that pivot low and close >= that pivot low, and before the configured setup timeout or invalidation (a close below the pivot low), close > the bullish QM break level OR close > active range high OR low <= the upper bound of an active demand zone created after a bullish range break
-Short: Since the latest confirmed 3-candle fractal high, high > that pivot high and close <= that pivot high, and before the configured setup timeout or invalidation (a close above the pivot high), close < the bearish QM break level OR close < active range low OR high >= the lower bound of an active supply zone created after a bearish range break
-Exit: none
+Calculation: Confirmed pivot = the previous bar is a high pivot when its high is strictly above the highs of both adjacent bars, or a low pivot when its low is strictly below the lows of both adjacent bars. Retain only the most recent configurable number of pivots; select the most recent pivot of the required type within a configurable lookback, including pivots already swept.
+Calculation: Pending pattern = on each bar, first replace any pending pattern with a bearish pattern if high > the latest high pivot AND close <= that pivot; then replace it with a bullish pattern if low < the latest low pivot AND close >= that pivot. Store the pivot price, sweep bar, and, respectively, the lowest low or highest high from the pivot bar through the sweep bar, inclusive, excluding the first dataset bar. Clear the pending pattern when its age exceeds a configurable lookback, when a bullish pattern has close < its pivot price, or when a bearish pattern has close > its pivot price. Apply these updates before checking for confirmation; clear the pattern after confirmation.
+Calculation: Active range = when two consecutive confirmed patterns have opposite directions AND their confirmation bars are no more than a configurable gap apart, replace any active range with one whose high is the maximum and low is the minimum of the two patterns' pivot prices and stored break levels. Check the range on the same bar it forms; remove it after the first close outside either boundary. A newly formed range replaces an existing range before the boundary check.
+Long: Pending pattern direction = bullish AND close > its stored highest high.
+Short: Pending pattern direction = bearish AND close < its stored lowest low.
+Long: Active range exists AND close > active range high.
+Short: Active range exists AND close < active range low.
