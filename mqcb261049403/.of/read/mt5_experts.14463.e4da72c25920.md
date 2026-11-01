@@ -1,5 +1,10 @@
-Calculation: Fast/slow step-stochastic cloud lines = calculate stochastic %D, then for each line use its own step size (fast smaller than slow): initialize lower/upper bounds to +∞/−∞ and trend to 0; on each bar set bounds to %D ± 2 × step size, set trend to +1 if %D exceeds the prior upper bound or −1 if it falls below the prior lower bound, and in an uptrend clamp the new lower bound to at least the prior lower bound or in a downtrend clamp the new upper bound to at most the prior upper bound. The line is lower bound + step size in an uptrend, upper bound − step size in a downtrend. Compare values on the configured indicator timeframe, which may be higher or lower than the chart timeframe, using the last completed signal bar and its immediately preceding bar.
-Long: fast line > slow line AND fast line on the preceding bar <= slow line on the preceding bar
-Short: fast line < slow line AND fast line on the preceding bar >= slow line on the preceding bar
-Exit: long, fast line < slow line
-Exit: short, fast line > slow line
+Calculation: Stochastic signal = the signal line of the stochastic oscillator, using the selected price basis, lookback, slowing period, signal period, and moving-average method.
+Calculation: Step line = independently for a smaller step and a larger step, process the stochastic signal chronologically. Initialize the previous lower bound to 999999, previous upper bound to -999999, and trend to 0. For each bar, set lower = stochastic signal - 2 × step and upper = stochastic signal + 2 × step. Set trend to +1 if the stochastic signal > the previous upper bound; set it to -1 if the stochastic signal < the previous lower bound; otherwise retain the prior trend. If trend > 0, replace lower with the greater of lower and the previous lower bound and set the step line to lower + step. If trend < 0, replace upper with the lesser of upper and the previous upper bound and set the step line to upper - step. Save the resulting bounds for the next bar.
+Long: On the chart timeframe, the smaller-step line > the larger-step line.
+Short: On the chart timeframe, the smaller-step line < the larger-step line.
+Long: On the higher timeframe's last completed bar, the smaller-step line > the larger-step line AND on the preceding higher-timeframe bar, the smaller-step line <= the larger-step line.
+Short: On the higher timeframe's last completed bar, the smaller-step line < the larger-step line AND on the preceding higher-timeframe bar, the smaller-step line >= the larger-step line.
+Exit: long, the higher timeframe's last completed smaller-step line < the larger-step line.
+Exit: short, the higher timeframe's last completed smaller-step line > the larger-step line.
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

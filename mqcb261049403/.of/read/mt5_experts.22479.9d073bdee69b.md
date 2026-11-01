@@ -1,5 +1,8 @@
-Calculation: Daily channel boundaries = the open of the first bar at the configured start hour each day, plus and minus a fixed price offset
-Long: On the configured signal timeframe (higher or lower than the chart timeframe), the latest completed bar closes above its upper channel boundary AND the preceding completed bar closes at or below its upper channel boundary
-Short: On the configured signal timeframe (higher or lower than the chart timeframe), the latest completed bar closes below its lower channel boundary AND the preceding completed bar closes at or above its lower channel boundary
-Exit: Long, on the configured signal timeframe (higher or lower than the chart timeframe), the latest completed bar closes below its lower channel boundary AND the preceding completed bar closes at or above its lower channel boundary
-Exit: Short, on the configured signal timeframe (higher or lower than the chart timeframe), the latest completed bar closes above its upper channel boundary AND the preceding completed bar closes at or below its upper channel boundary
+Calculation: Channel = the open of the first bar whose hour equals the configured start hour on a new calendar day, plus or minus a fixed price offset; retain that open until the next such day.
+Calculation: Signal bar = a selected bar on the indicator timeframe, which may be higher than, lower than, or equal to the chart timeframe; use either the last completed bar or the still-forming bar, according to the selected bar offset. The previous signal bar is the immediately preceding indicator-timeframe bar.
+Long: chart-bar close > chart-timeframe channel upper bound
+Short: chart-bar close < chart-timeframe channel lower bound
+Long: signal-bar close > its channel upper bound AND previous signal-bar close <= its channel upper bound AND position side = flat
+Short: signal-bar close < its channel lower bound AND previous signal-bar close >= its channel lower bound AND position side = flat
+Exit: long, signal-bar close < its channel lower bound OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance OR elapsed time since entry > holding-time limit
+Exit: short, signal-bar close > its channel upper bound OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance OR elapsed time since entry > holding-time limit

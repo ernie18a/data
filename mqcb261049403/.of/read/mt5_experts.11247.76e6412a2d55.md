@@ -1,5 +1,5 @@
-Calculation: Karpenko bands = On each indicator-timeframe bar (the configured timeframe may be higher or lower than the chart timeframe), let B be the mean close over a lookback and R the mean of high − low over a lookback. Start U = R and multiply U by 1.618 while the bar high > B + U; start D = R and multiply D by 1.618 while the bar low < B − D. If high ≤ B, the bands are B − D and B; otherwise they are B + U and B, respectively. Evaluate bands on completed bars.
-Long: First band on the latest completed bar > second band on that bar AND first band on the preceding completed bar ≤ second band on that bar
-Short: First band on the latest completed bar < second band on that bar AND first band on the preceding completed bar ≥ second band on that bar
-Exit: Short, first band on the latest completed bar > second band on that bar
-Exit: Long, first band on the latest completed bar < second band on that bar
+Calculation: Cloud direction = for each indicator-timeframe bar, compare its high with the simple moving average of close, including that bar; direction is positive if high > the average and negative if high <= the average, provided the simple moving average of high minus low over a separate lookback is positive. Use the last completed indicator bar and its predecessor; the indicator timeframe may be the chart timeframe or a higher or lower timeframe.
+Long: Cloud direction > 0 AND previous cloud direction <= 0
+Short: Cloud direction < 0 AND previous cloud direction >= 0
+Exit: long, cloud direction < 0 OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance
+Exit: short, cloud direction > 0 OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance

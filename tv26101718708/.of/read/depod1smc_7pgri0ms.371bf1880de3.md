@@ -1,17 +1,31 @@
-Calculation: EMA = exponential moving average of close
-Calculation: RSI = relative strength index
-Calculation: MACD histogram = difference between the MACD line and its signal line
-Calculation: Phase low = lowest low over the setup lookback
-Calculation: Phase high = highest high over the setup lookback
-Calculation: Volume average = simple moving average of volume over the volume lookback
-Calculation: Recent pivot high/low = latest confirmed high/low pivot using the pivot lookback on both sides
-Long: After a bullish candle body crosses above the EMA, RSI was below its oversold threshold within the setup memory and the MACD histogram was rising within that memory, and the cooldown has elapsed; while waiting for a retest, low <= the EMA value at the cross + EMA tolerance AND close > that EMA value
-Short: After a bearish candle body crosses below the EMA, RSI was above its overbought threshold within the setup memory and the MACD histogram was falling within that memory, and the cooldown has elapsed; while waiting for a retest, high >= the EMA value at the cross - EMA tolerance AND close < that EMA value
-Long: low < the latest confirmed pivot low AND close > that pivot low AND low < prior low AND volume > volume average * volume threshold
-Short: high > the latest confirmed pivot high AND close < that pivot high AND high > prior high AND volume > volume average * volume threshold
-Long: The middle low of the latest three lows is below both adjacent lows, volume one bar earlier > volume average one bar earlier * volume threshold, and current low < the middle low AND close > the middle low AND current volume > volume average * volume threshold
-Short: The middle high of the latest three highs is above both adjacent highs, volume one bar earlier > volume average one bar earlier * volume threshold, and current high > the middle high AND close < the middle high AND current volume > volume average * volume threshold
-Calculation: Stop price = phase low for a long setup or phase high for a short setup
-Calculation: Target price = entry price plus (long) or minus (short) absolute entry-to-stop distance multiplied by the risk/reward parameter
-Exit: Long, low <= stop price OR high >= target price OR bars since entry >= maximum holding bars
-Exit: Short, high >= stop price OR low <= target price OR bars since entry >= maximum holding bars
+Calculation: EMA retest setup = While neutral, start a long setup when open < EMA(close), close > EMA(close), RSI was below its oversold threshold within the memory lookback, MACD histogram increased within that lookback, and bars since the last confirmed retest signal > cooldown. Start a short setup symmetrically using open > EMA, close < EMA, RSI above its overbought threshold, and a decreasing MACD histogram. Record the EMA, bar index, and lowest low for a long or highest high for a short over the phase lookback including the break bar. Initialize the last signal index to the first bar. A setup expires when its age > retest window. On each bar, including the break bar, test the retest before invalidation; otherwise invalidate a long when close < recorded EMA − current EMA × tolerance, or a short when close > recorded EMA + current EMA × tolerance. A confirmed retest resets the setup and updates the last signal index.
+Calculation: Liquidity pivot = The latest confirmed symmetric pivot high or low, initialized to the first bar's high or low respectively. A high or low pivot can produce one corresponding liquidity grab; confirmation of a new pivot re-enables that side after testing the current bar.
+Calculation: Swing failure levels = On a local low with low[0] > low[1] < low[2] and chart volume[1] > volume SMA[1] × threshold, replace the bullish levels with low[1] and, optionally, the lowest low over the configured lookback of preceding sampled values if different. Construct bearish levels symmetrically from local highs. Remove a bullish level when sampled close < level or sampled low < level and sampled close > level; remove a bearish level symmetrically. Sample either chart bars or the last completed bar of a higher timeframe, with the requested series delayed by one chart bar historically; the volume filter always uses chart bars.
+Calculation: Market structure = Maintain upper and lower reference prices, trend, continuation level, reversal level, running trend extreme, and their bar indices. Initialize the reference prices and reversal boundaries to the first high and low. A high above the upper reference resets both references to the current high and low and marks an upward reference break; then a low below the lower reference does the same and marks a downward reference break. Initially, a low sweep at the lower boundary or high sweep at the upper boundary updates that boundary to the new extreme; otherwise a close at or beyond either boundary sets the corresponding trend, retains the opposite boundary as reversal level, clears the continuation level, and initializes the running extreme. In an uptrend, update the running highest high; after a downward reference break with both current and previous candles bearish, set an absent continuation level to that extreme. A continuation sweep updates it to the current high; a continuation break clears it and sets the reversal level to the lowest low since its anchor, excluding the anchor. A reversal sweep updates the reversal level to the current low; a reversal break switches to a downtrend, sets the new reversal level to the continuation level if present or otherwise the highest high since the anchor excluding the anchor, clears continuation, and initializes the running extreme. Mirror these rules for a downtrend. In adjusted-points mode, at bars whose index modulo the structure lookback is zero, replace the reversal level with the latest unbroken confirmed symmetric pivot low above it in an uptrend or pivot high below it in a downtrend, when a continuation level exists. Within each sweep/break pair, evaluate the sweep first when sweeps are enabled. The same state is maintained for swing and internal structure.
+Calculation: Smooth trail = Compute a Supertrend with an ATR length twice the trail length and multiplier equal to the rounded average of a fixed reference and the trail multiplier. Compute a Hull moving average of highs and of lows using the rounded average of a fixed reference length and the trail length. Offset the high average upward and low average downward by a long-period ATR multiplied by the rounded scaled trail multiplier. If close > Supertrend, the trail is the average of three copies of Supertrend, the offset low average, and the lowest close over the trail length plus that ATR; otherwise use the offset high average and highest close plus that ATR. For the higher-timeframe version, use its still-forming bar.
+Long: EMA retest setup is long AND setup age <= retest window AND low <= recorded EMA + current EMA × tolerance AND close > recorded EMA
+Short: EMA retest setup is short AND setup age <= retest window AND high >= recorded EMA − current EMA × tolerance AND close < recorded EMA
+Exit: long, bars since EMA retest entry >= expiry OR low <= phase low recorded at the break OR high >= entry price + reward-to-risk ratio × abs(entry price − recorded phase low)
+Exit: short, bars since EMA retest entry >= expiry OR high >= phase high recorded at the break OR low <= entry price − reward-to-risk ratio × abs(entry price − recorded phase high)
+Long: low < latest liquidity pivot low AND close > that pivot AND low < previous low AND that pivot side is enabled
+Short: high > latest liquidity pivot high AND close < that pivot AND high > previous high AND that pivot side is enabled
+Long: sampled low < an active bullish swing failure level AND sampled close > that level AND chart volume > chart volume SMA × threshold AND the selected structure filter permits bullish signals
+Short: sampled high > an active bearish swing failure level AND sampled close < that level AND chart volume > chart volume SMA × threshold AND the selected structure filter permits bearish signals
+Long: market structure close >= upper reversal or continuation level AND the corresponding sweep condition has not taken precedence
+Short: market structure close <= lower reversal or continuation level AND the corresponding sweep condition has not taken precedence
+Long: high >= upper market structure level AND close <= that level AND sweeps are enabled
+Short: low <= lower market structure level AND close >= that level AND sweeps are enabled
+Long: close > smooth trail
+Short: close <= smooth trail
+Long: higher-timeframe close > higher-timeframe smooth trail using the still-forming higher-timeframe bar
+Short: higher-timeframe close <= higher-timeframe smooth trail using the still-forming higher-timeframe bar
+Long: close > EMA(close)
+Short: close <= EMA(close)
+Long: RSI < oversold threshold AND MACD histogram > previous MACD histogram
+Short: RSI > overbought threshold AND MACD histogram < previous MACD histogram
+Long: previous close > previous EMA AND close two bars ago < EMA two bars ago
+Short: previous close < previous EMA AND close two bars ago > EMA two bars ago
+Long: count of closes > EMA over the bias lookback >= count of closes <= EMA over that lookback
+Short: count of closes > EMA over the bias lookback < count of closes <= EMA over that lookback
+Long: RSI < oversold threshold
+Short: RSI > overbought threshold

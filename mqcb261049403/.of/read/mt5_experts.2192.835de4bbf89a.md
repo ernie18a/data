@@ -1,9 +1,14 @@
-Calculation: Prior bar range = prior bar high − prior bar low
-Calculation: Upper threshold = prior bar high − prior bar range × configurable fraction
-Calculation: Lower threshold = prior bar low + prior bar range × configurable fraction
-Calculation: Bar range = high − low
-Calculation: Signal bar = last completed bar on the configured signal timeframe, which may be higher or lower than the chart timeframe
-Long: (Mode 1 AND normal direction AND prior bar open ≥ upper threshold AND prior bar close ≤ lower threshold AND signal bar low ≤ prior bar low − trigger distance) OR (Mode 1 AND reversed direction AND prior bar open ≤ lower threshold AND prior bar close ≥ upper threshold AND signal bar high ≥ prior bar high + trigger distance) OR (Mode 2 AND each of the three bars preceding the prior bar has a range greater than the prior bar range AND the bar two bars before the signal bar has a high above the prior bar high and a low below the prior bar low AND ((normal direction AND signal bar open ≥ upper threshold) OR (reversed direction AND signal bar open ≤ lower threshold)))
-Short: (Mode 1 AND normal direction AND prior bar open ≤ lower threshold AND prior bar close ≥ upper threshold AND signal bar high ≥ prior bar high + trigger distance) OR (Mode 1 AND reversed direction AND prior bar open ≥ upper threshold AND prior bar close ≤ lower threshold AND signal bar low ≤ prior bar low − trigger distance) OR (Mode 2 AND each of the three bars preceding the prior bar has a range greater than the prior bar range AND the bar two bars before the signal bar has a high above the prior bar high and a low below the prior bar low AND ((normal direction AND signal bar open ≤ lower threshold) OR (reversed direction AND signal bar open ≥ upper threshold)))
-Exit: long, Short condition OR signal price ≤ entry price − stop distance OR signal price ≥ entry price + target distance
-Exit: short, Long condition OR signal price ≥ entry price + stop distance OR signal price ≤ entry price − target distance
+Calculation: Signal bars = bars on a configurable timeframe that may be higher or lower than the chart timeframe; evaluate a configurable signal bar, either the still-forming bar or a completed bar, with earlier bars indexed relative to it. The signal is evaluated when a new signal-timeframe bar begins if a completed bar is selected, or as the forming bar changes if it is selected.
+Calculation: Upper boundary = previous bar's high - ratio × (previous bar's high - previous bar's low); lower boundary = previous bar's low + ratio × (previous bar's high - previous bar's low).
+Calculation: Bearish breakout = previous open >= upper boundary AND previous close <= lower boundary AND signal bar's low <= previous low - breakout distance.
+Calculation: Bullish breakout = previous open <= lower boundary AND previous close >= upper boundary AND signal bar's high >= previous high + breakout distance AND bearish breakout = false.
+Calculation: Inside-range setup = each of the three bars immediately preceding the previous bar has a high-low range > the previous bar's range AND the bar immediately preceding the previous bar has a high > the previous high AND a low < the previous low.
+Long: algorithm = breakout AND ((reverse direction = false AND bullish breakout = true) OR (reverse direction = true AND bearish breakout = true)).
+Short: algorithm = breakout AND ((reverse direction = false AND bearish breakout = true) OR (reverse direction = true AND bullish breakout = true)).
+Long: algorithm = inside-range AND inside-range setup = true AND ((reverse direction = false AND signal bar's open >= upper boundary) OR (reverse direction = true AND signal bar's open <= lower boundary)).
+Short: algorithm = inside-range AND inside-range setup = true AND ((reverse direction = false AND signal bar's open <= lower boundary) OR (reverse direction = true AND signal bar's open >= upper boundary)).
+Exit: long, current short signal = true OR (current long signal = false AND current short signal = false AND most recent earlier signal direction = short).
+Exit: short, current long signal = true OR (current long signal = false AND current short signal = false AND most recent earlier signal direction = long).
+Exit: long, stop loss enabled AND low <= entry price - stop distance OR take profit enabled AND high >= entry price + profit distance.
+Exit: short, stop loss enabled AND high >= entry price + stop distance OR take profit enabled AND low <= entry price - profit distance.
+Calculation: Most recent earlier signal direction = direction of the nearest earlier signal bar with a long or short signal; if both occur on that bar, select long.

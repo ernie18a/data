@@ -1,5 +1,7 @@
-Calculation: Schaff WPR Trend Cycle = Subtract the longer-lookback Williams %R from the shorter-lookback Williams %R; normalize that difference over a lookback to 0–100, then smooth with a 0.5 coefficient; normalize the smoothed values over the same lookback to −100–100, then smooth with a 0.5 coefficient. If either normalization range is zero, carry forward the previous value. Use bars on the configured indicator timeframe (which may be higher, lower, or equal to the chart timeframe); compare the last completed bar with the preceding completed bar.
-Long: Schaff WPR Trend Cycle crosses above the upper threshold
-Short: Schaff WPR Trend Cycle crosses below the lower threshold
-Exit: long, Schaff WPR Trend Cycle < lower threshold
-Exit: short, Schaff WPR Trend Cycle > upper threshold
+Calculation: WPR trend cycle = On the selected indicator timeframe, subtract longer-lookback Williams %R from shorter-lookback Williams %R. Normalize this difference over a rolling cycle lookback to 0–100; if its range is zero, reuse the previous first-stage value. Smooth the result recursively as the average of the new value and the previous smoothed first-stage value. Normalize the smoothed first-stage values over the same cycle lookback to -100–100; if their range is zero, reuse the previous cycle value. Smooth this result recursively as the average of the new value and the previous cycle value. Initialize rolling buffers and the previous cycle value to zero; do not smooth the first calculated values. The indicator timeframe may be the chart timeframe or a higher or lower timeframe; use the last completed indicator bar by default, or the still-forming bar when configured, and compare it with its preceding indicator bar.
+Long: Current WPR trend cycle > upper threshold AND current WPR trend cycle > 0 AND (previous WPR trend cycle <= upper threshold OR previous WPR trend cycle <= 0)
+Short: Current WPR trend cycle < lower threshold AND current WPR trend cycle < 0 AND (previous WPR trend cycle >= lower threshold OR previous WPR trend cycle >= 0)
+Exit: short, current WPR trend cycle > upper threshold AND current WPR trend cycle > 0
+Exit: long, current WPR trend cycle < lower threshold AND current WPR trend cycle < 0
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

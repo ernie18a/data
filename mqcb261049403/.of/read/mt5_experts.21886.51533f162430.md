@@ -1,6 +1,6 @@
-Calculation: Short MA = moving average of the selected price with a shorter lookback
-Calculation: Long MA = moving average of the selected price with a longer lookback
-Long: On the indicator timeframe, the last completed bar's Short MA > Long MA AND the preceding bar's Short MA < Long MA
-Short: On the indicator timeframe, the last completed bar's Short MA < Long MA AND the preceding bar's Short MA > Long MA
-Exit: long, Short MA < Long MA AND the preceding bar's Short MA > Long MA OR price <= entry price minus stop-loss distance OR price >= entry price plus take-profit distance
-Exit: short, Short MA > Long MA AND the preceding bar's Short MA < Long MA OR price >= entry price plus stop-loss distance OR price <= entry price minus take-profit distance
+Calculation: Moving averages = independently configurable short-period and long-period moving averages of selectable OHLC-derived prices, calculated on the chart timeframe or a selectable higher or lower timeframe; use the last completed bar for the EA signal, or the still-forming bar when configured for it.
+Calculation: Signal trend = initially neutral; on each completed calculation bar, change to bullish when the short-period moving average is strictly above the long-period moving average, was strictly below it on the preceding bar, and the prior signal trend is neutral or bearish; change to bearish under the reversed comparisons when the prior signal trend is neutral or bullish. A still-forming bar can signal without changing the stored trend until completed.
+Long: Short-period moving average > long-period moving average AND preceding bar's short-period moving average < preceding bar's long-period moving average AND prior signal trend is neutral or bearish.
+Short: Short-period moving average < long-period moving average AND preceding bar's short-period moving average > preceding bar's long-period moving average AND prior signal trend is neutral or bullish.
+Exit: long, latest eligible signal trend is bearish OR low <= entry price - configured stop-loss distance OR high >= entry price + configured take-profit distance.
+Exit: short, latest eligible signal trend is bullish OR high >= entry price + configured stop-loss distance OR low <= entry price - configured take-profit distance.

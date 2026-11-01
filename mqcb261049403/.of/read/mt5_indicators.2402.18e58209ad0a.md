@@ -1,7 +1,7 @@
-Calculation: Fast line = selected smoothing method applied to the Awesome Oscillator, with a shorter lookback.
-Calculation: Slow line = the same smoothing method applied to the fast line, with a longer lookback.
-Long: Fast line > Slow line
-Short: Fast line < Slow line
-Calculation: Higher-timeframe fast and slow lines = the same calculations on a higher timeframe, using the bar still forming.
-Long: Higher-timeframe fast line > Higher-timeframe slow line
-Short: Higher-timeframe fast line < Higher-timeframe slow line
+Calculation: Fast oscillator = shorter-period moving average of the Awesome Oscillator.
+Calculation: Slow oscillator = longer-period moving average of the fast oscillator, using the same averaging method.
+Calculation: Higher-timeframe oscillator pair = fast and slow oscillators calculated on a higher timeframe, using the higher-timeframe bar still forming at the first chart bar of that higher-timeframe interval; hold those values for the rest of the interval.
+Long: Fast oscillator > slow oscillator.
+Short: Fast oscillator < slow oscillator.
+Long: Higher-timeframe fast oscillator > higher-timeframe slow oscillator.
+Short: Higher-timeframe fast oscillator < higher-timeframe slow oscillator.

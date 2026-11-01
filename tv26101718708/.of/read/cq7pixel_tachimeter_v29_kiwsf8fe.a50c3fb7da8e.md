@@ -1,3 +1,6 @@
-Calculation: Signed price change = current close minus the close from one Reaction Window ago, using that timeframe’s last completed bar.
-Long: Signed price change > 0 AND the reading is not STOPPED.
-Short: Signed price change < 0 AND the reading is not STOPPED.
+Long: close >= the open of the bar still forming on a higher or lower timeframe
+Short: close < the open of the bar still forming on a higher or lower timeframe
+Long: close >= the previous chart bar's close
+Short: close < the previous chart bar's close
+Long: close >= the close of the last completed bar on a higher or lower reaction-window timeframe
+Short: close < the close of the last completed bar on a higher or lower reaction-window timeframe

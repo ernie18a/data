@@ -1,23 +1,23 @@
-Calculation: Previous-period close (PDC) = close of the last completed bar of the selected level timeframe, which is higher than or equal to the chart timeframe.
-Calculation: ATR = average true range over a lookback of the selected level timeframe, using only completed bars.
-Calculation: Upper/lower trigger = PDC +/- trigger share × ATR; entry buffer, if enabled, is added beyond the trigger.
-Calculation: Upper/lower 38.2%, 50%, 61.8%, 78.6%, and 1 ATR levels = PDC +/- the corresponding ATR fraction.
-Calculation: EMA8 = 8-period exponential moving average of close on a timeframe higher than or equal to the chart timeframe, using the last completed bar.
-Long: Confirmed close crosses above the buffered upper trigger from at or below it AND the signal session and chart timeframe are allowed AND long position is inactive AND entry budget remains AND cooldown has elapsed.
-Short: Confirmed close crosses below the buffered lower trigger from at or above it AND the signal session and chart timeframe are allowed AND short position is inactive AND entry budget remains AND cooldown has elapsed.
-Long: Long position active AND the confirmed close first crosses above the upper 38.2% level.
-Short: Short position active AND the confirmed close first crosses below the lower 38.2% level.
-Long: Long position active AND upper 38.2% has been reached AND low <= upper trigger AND confirmed close > upper trigger.
-Short: Short position active AND lower 38.2% has been reached AND high >= lower trigger AND confirmed close < lower trigger.
-Long: Long position active AND upper 38.2% has been reached AND close <= upper 61.8% AND low <= EMA8 AND confirmed close > EMA8.
-Short: Short position active AND lower 38.2% has been reached AND close >= lower 61.8% AND high >= EMA8 AND confirmed close < EMA8.
-Long: During the first session hour, a completed bar from a timeframe lower than or equal to the chart timeframe closes above PDC, the preceding completed bar closes at or below PDC, and that preceding close is at or above the lower trigger.
-Short: During the first session hour, a completed bar from a timeframe lower than or equal to the chart timeframe closes below PDC, the preceding completed bar closes at or above PDC, and that preceding close is at or below the upper trigger.
-Exit: Long, confirmed close < upper trigger.
-Exit: Short, confirmed close > lower trigger.
-Exit: Long, close >= upper 61.8% level (scale out at least half).
-Exit: Short, close <= lower 61.8% level (scale out at least half).
-Exit: Long, close >= upper 78.6% level (trail remaining position stop to upper 61.8% level).
-Exit: Short, close <= lower 78.6% level (trail remaining position stop to lower 61.8% level).
-Exit: Long, close >= upper 1 ATR level (exit remaining position).
-Exit: Short, close <= lower 1 ATR level (exit remaining position).
+Calculation: Reference close and ATR = close and ATR of the last completed higher-timeframe period, using the selected regular or extended session; alternatively use the still-forming higher-timeframe period.
+Calculation: Levels = reference close plus or minus ATR multiplied by a level-specific fraction; use a trigger fraction, a gate-opening fraction, a larger gate-target fraction, and a full-range fraction. The buffered entry levels add to the upper trigger and subtract from the lower trigger a configurable fraction of ATR.
+Calculation: Signal session = the selected regular session, premarket plus regular session, or every bar. Reset trigger-entry counts, active sides, gate-reached flags, and exit cooldowns at the first regular-session bar, or at the exchange-date change when every bar is selected. Evaluate trigger entries and exits using the state before this reset; apply the reset before updating that state from those decisions.
+Calculation: Active side = the side of the latest trigger entry since the session reset, unless its trigger exit has occurred; a trigger entry deactivates the opposite side. A side's gate-reached flag is set when its active side's close reaches or passes its gate-opening level, including on its trigger-entry bar; reset it on a new trigger entry for that side or a session reset.
+Calculation: Cross reference = the previous chart close, or, with gap-safe detection enabled, the most recent confirmed close in the signal session, falling back to the previous chart close if unavailable. Compare it with the current bar's entry level.
+Long: Chart bar is confirmed AND chart timeframe and signal session are allowed AND close > buffered upper trigger AND cross reference <= buffered upper trigger AND long side is inactive AND long trigger-entry count is below its session limit or the limit is unlimited AND the number of allowed confirmed bars since the last long trigger exit is at least the cooldown.
+Short: Chart bar is confirmed AND chart timeframe and signal session are allowed AND close < buffered lower trigger AND cross reference >= buffered lower trigger AND short side is inactive AND short trigger-entry count is below its session limit or the limit is unlimited AND the number of allowed confirmed bars since the last short trigger exit is at least the cooldown.
+Long: Chart bar is confirmed AND chart timeframe and signal session are allowed AND long side is active AND close >= upper gate-opening level AND previous chart close < current upper gate-opening level.
+Short: Chart bar is confirmed AND chart timeframe and signal session are allowed AND short side is active AND close <= lower gate-opening level AND previous chart close > current lower gate-opening level.
+Long: Long side is active AND close >= upper gate-opening level AND close <= upper gate-target level.
+Short: Short side is active AND close <= lower gate-opening level AND close >= lower gate-target level.
+Long: Chart bar is confirmed AND chart timeframe and signal session are allowed AND long side is active AND long gate-reached flag is set AND low <= upper trigger AND close > upper trigger AND either pullback debounce is disabled OR this entire pullback condition was false on the previous chart bar.
+Short: Chart bar is confirmed AND chart timeframe and signal session are allowed AND short side is active AND short gate-reached flag is set AND high >= lower trigger AND close < lower trigger AND either pullback debounce is disabled OR this entire pullback condition was false on the previous chart bar.
+Long: Chart bar is confirmed AND chart timeframe and signal session are allowed AND the EMA timeframe is higher than or equal to the chart timeframe AND long side is active AND long gate-reached flag is set AND close <= upper gate-target level AND low <= EMA of the last completed EMA-timeframe bar AND close > that EMA AND either pullback debounce is disabled OR this entire pullback condition was false on the previous chart bar.
+Short: Chart bar is confirmed AND chart timeframe and signal session are allowed AND the EMA timeframe is higher than or equal to the chart timeframe AND short side is active AND short gate-reached flag is set AND close >= lower gate-target level AND high >= EMA of the last completed EMA-timeframe bar AND close < that EMA AND either pullback debounce is disabled OR this entire pullback condition was false on the previous chart bar.
+Long: Reclaim timeframe is higher than or equal to the chart timeframe AND a new reclaim-timeframe bar has begun AND chart-bar start is within the configured first-session window AND last completed reclaim-timeframe close > reference close AND the preceding reclaim-timeframe close <= reference close AND >= current lower trigger.
+Short: Reclaim timeframe is higher than or equal to the chart timeframe AND a new reclaim-timeframe bar has begun AND chart-bar start is within the configured first-session window AND last completed reclaim-timeframe close < reference close AND the preceding reclaim-timeframe close >= reference close AND <= current upper trigger.
+Exit: long, chart bar is confirmed AND chart timeframe and signal session are allowed AND long side is active AND close < upper trigger.
+Exit: short, chart bar is confirmed AND chart timeframe and signal session are allowed AND short side is active AND close > lower trigger.
+Exit: long, close >= upper gate-target level; scale out a configurable portion.
+Exit: short, close <= lower gate-target level; scale out a configurable portion.
+Exit: long, close >= upper full-range level.
+Exit: short, close <= lower full-range level.

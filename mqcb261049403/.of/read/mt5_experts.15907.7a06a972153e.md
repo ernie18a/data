@@ -1,7 +1,11 @@
-Calculation: Darvas box upper and lower boundaries = reset every five bars; bar 1 sets upper to high and, when symmetry is enabled, lower to low; bar 2 raises upper to the maximum of itself and high; bar 3 sets lower to low if high is below upper, otherwise sets upper to high; bars 4–5 set upper to high when high is at least upper, otherwise keep upper and lower lower to the minimum of itself and low. Repeat this sequence.
-Long: On the indicator timeframe’s last completed bar, close > Darvas box upper boundary from the configured number of bars earlier.
-Short: On the indicator timeframe’s last completed bar, close < Darvas box lower boundary from the configured number of bars earlier.
-Long: Current bar is bullish-marked AND previous bar is not bullish-marked.
-Short: Current bar is bearish-marked AND previous bar is not bearish-marked.
-Exit: Long, current bar is bearish-marked.
-Exit: Short, current bar is bullish-marked.
+Calculation: Box bounds = Process bars chronologically in repeating five-bar cycles. Initialize the top and bottom to the high and low of the bar preceding the first processed bar. On the first bar of each cycle, set the top to the high and, if symmetry is enabled, the bottom to the low. On the second bar, set the top to the high if the high is at least the top. On the third bar, set the bottom to the low if the high is below the top; otherwise set the top to the high. On each of the fourth and fifth bars, if the high is below the top and the low is at or below the bottom, set the bottom to the low; if the high is at least the top, set the top to the high. Compare each bar with the bounds from a configurable number of bars earlier.
+Calculation: Breakout direction = Compare close with the shifted box bounds: bearish if close is below the bottom; otherwise bullish if close is above the top; otherwise neutral. The bearish comparison takes precedence if both comparisons are true.
+Calculation: Trading signal bar = A configurable bar on the indicator timeframe, which may be higher or lower than the chart timeframe; it may be the still-forming bar or a completed bar, including the last completed bar. Its previous bar is the immediately preceding indicator-timeframe bar.
+Long: Chart-timeframe breakout direction is bullish.
+Short: Chart-timeframe breakout direction is bearish.
+Long: Trading signal bar breakout direction is bullish AND previous indicator-timeframe bar breakout direction is not bullish.
+Short: Trading signal bar breakout direction is bearish AND previous indicator-timeframe bar breakout direction is not bearish.
+Exit: long, trading signal bar breakout direction is bearish.
+Exit: short, trading signal bar breakout direction is bullish.
+Exit: long, low <= entry price minus the enabled stop-loss distance OR high >= entry price plus the enabled take-profit distance.
+Exit: short, high >= entry price plus the enabled stop-loss distance OR low <= entry price minus the enabled take-profit distance.

@@ -1,7 +1,5 @@
-Calculation: NRTR reversal signals = On the configured indicator timeframe (which may be higher or lower than the chart timeframe), calculate the average high–low range over the lookback, then use it to set a trailing threshold that ratchets with the trend. A close crossing below the threshold flips the trend bearish and marks a down reversal; a close crossing above it flips the trend bullish and marks an up reversal. Evaluate the last completed indicator bar.
-Calculation: NRTR uptrend = The NRTR trailing line is present in the bullish trend.
-Calculation: NRTR downtrend = The NRTR trailing line is present in the bearish trend.
-Long: NRTR trend flips from bearish to bullish
-Short: NRTR trend flips from bullish to bearish
-Exit: long, NRTR downtrend
-Exit: short, NRTR uptrend
+Calculation: Trailing trend = On the indicator timeframe, calculate the mean high-minus-low range over a lookback including the current indicator bar and multiply it by a configurable decimal scale. Initialize trend to neutral and both extreme and trail to the close of the first calculable bar. Process bars chronologically. If the previous trend is neutral or up, set extreme to max(previous extreme, close) and trail to max(previous trail, extreme × (1 − scaled range)); if close < trail, set extreme to close, trail to close × (1 + scaled range), and trend to down. If the previous trend is down, set extreme to min(previous extreme, close) and trail to min(previous trail, extreme × (1 + scaled range)); if close > trail, set extreme to close, trail to close × (1 − scaled range), and trend to up. Otherwise retain the previous trend. The indicator timeframe may be higher, lower, or equal to the chart timeframe; use the last completed indicator bar, with the still-forming bar as a configurable alternative.
+Long: Trailing trend = up.
+Short: Trailing trend = down.
+Exit: long, trailing trend = down OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, trailing trend = up OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance.

@@ -1,4 +1,5 @@
-Long: close of the last completed bar on the configured Parabolic SAR timeframe is above its SAR AND close of the immediately preceding bar on that timeframe is below its SAR; the SAR timeframe may be higher or lower than the chart timeframe
-Short: close of the last completed bar on the configured Parabolic SAR timeframe is below its SAR AND close of the immediately preceding bar on that timeframe is above its SAR; the SAR timeframe may be higher or lower than the chart timeframe
-Exit: long, close of the last completed bar on the configured Parabolic SAR timeframe is below its SAR OR elapsed time since entry is greater than the configured holding limit
-Exit: short, close of the last completed bar on the configured Parabolic SAR timeframe is above its SAR OR elapsed time since entry is greater than the configured holding limit
+Long: Selected higher- or lower-timeframe bar close > its Parabolic SAR AND preceding bar close < its Parabolic SAR
+Short: Selected higher- or lower-timeframe bar close < its Parabolic SAR AND preceding bar close > its Parabolic SAR
+Exit: long, selected higher- or lower-timeframe bar close < its Parabolic SAR OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, selected higher- or lower-timeframe bar close > its Parabolic SAR OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance
+Calculation: Selected higher- or lower-timeframe bar = the bar at a configurable offset from the bar still forming; an offset selecting the last completed bar or an earlier bar is evaluated when a new bar of that timeframe begins, while selection of the bar still forming is evaluated as it updates.

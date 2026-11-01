@@ -1,3 +1,3 @@
-Calculation: Zero Point Force = moving average(volume, lookback p) × (moving average(selected price, lookback p) − moving average(selected price, lookback 2p)) / 2, using the same selected moving average method for all three averages
+Calculation: Zero Point Force = moving average of volume multiplied by (shorter-period moving average of selected price minus longer-period moving average of selected price) / 2; the longer price averaging period is twice the shorter period, and the volume averaging period equals the shorter period. Use the same selected smoothing method for all three averages.
 Long: Zero Point Force > 0
 Short: Zero Point Force < 0

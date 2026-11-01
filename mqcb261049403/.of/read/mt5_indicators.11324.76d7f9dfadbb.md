@@ -1,3 +1,2 @@
-Calculation: Bollinger half-width in points = (upper Bollinger Band − middle Bollinger Band) / minimum price increment
-Long: RSI > moving average of RSI AND Bollinger half-width in points >= flat threshold
-Short: RSI < moving average of RSI AND Bollinger half-width in points >= flat threshold
+Long: Bollinger upper band minus middle band >= flatness threshold AND RSI > moving average of RSI, calculated on the chart timeframe or on the higher timeframe bar still forming
+Short: Bollinger upper band minus middle band >= flatness threshold AND RSI < moving average of RSI, calculated on the chart timeframe or on the higher timeframe bar still forming

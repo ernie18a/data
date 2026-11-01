@@ -1,7 +1,5 @@
-Calculation: Schaff TriX Trend Cycle = On the configured indicator timeframe, calculate fast TriX minus slow TriX (fast lookback shorter than slow); normalize over a cycle lookback to 0–100 and smooth with factor 0.5; normalize that result over the same cycle lookback to −100–100 and smooth with factor 0.5. Use completed bars.
-Calculation: Upper state = Schaff TriX Trend Cycle > 0 AND (Schaff TriX Trend Cycle > upper level OR its change from the preceding completed bar < 0)
-Calculation: Lower state = Schaff TriX Trend Cycle < 0 AND Schaff TriX Trend Cycle < lower level
-Long: Current completed bar is in Upper state AND preceding completed bar is not in Upper state
-Short: Current completed bar is in Lower state AND preceding completed bar is not in Lower state
-Exit: Long, current completed bar is in Lower state
-Exit: Short, current completed bar is in Upper state
+Calculation: Schaff TriX cycle = On the selected indicator timeframe, using the last completed bar or the still-forming bar as the selected signal bar, calculate the shorter-period TRIX minus the longer-period TRIX of the selected OHLC-derived price. Over a rolling cycle lookback, normalize this difference to 0–100; if its range is zero, use the previous smoothed first-stage value. Smooth the result recursively as previous smoothed value + 0.5 × (current normalized value − previous smoothed value). Normalize this smoothed series over the same lookback to −100–100; if its range is zero, use the previous cycle value. Smooth this second result with the same recursive formula. Initialize each smoothing stage with its first unsmoothed value. The indicator timeframe may be higher or lower than the chart timeframe.
+Long: Schaff TriX cycle > 0 AND Schaff TriX cycle > upper level AND (previous indicator bar's Schaff TriX cycle <= 0 OR previous indicator bar's Schaff TriX cycle <= upper level)
+Short: Schaff TriX cycle < 0 AND Schaff TriX cycle < lower level AND (previous indicator bar's Schaff TriX cycle >= 0 OR previous indicator bar's Schaff TriX cycle >= lower level)
+Exit: long, (Schaff TriX cycle < 0 AND Schaff TriX cycle < lower level) OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, (Schaff TriX cycle > 0 AND Schaff TriX cycle > upper level) OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

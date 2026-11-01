@@ -1,3 +1,4 @@
-Calculation: Candle Momentum Index = 100 × the momentum smoothed three successive times / the absolute momentum smoothed three successive times, using the same smoothing method for both; momentum is current-bar close minus the open XLength−1 bars earlier, and the successive smoothing lookbacks are long, medium, then short.
-Long: Higher-timeframe (still-forming bar) Candle Momentum Index > 0
-Short: Higher-timeframe (still-forming bar) Candle Momentum Index < 0
+Calculation: Candle momentum index = 100 times the three-stage smoothed momentum divided by the identically smoothed absolute momentum; use zero when the denominator is zero. Momentum is the selected price of the current bar minus a second selected price from a configurable number of bars earlier. Apply the same smoothing method to both series, with independently configurable first, second, and third smoothing lengths.
+Calculation: Sampled candle momentum index = the candle momentum index on the chart timeframe, or on a higher timeframe using its still-forming bar at the first chart bar of each higher-timeframe period; hold that sampled value and its comparison with the preceding higher-timeframe bar until the next higher-timeframe period.
+Long: Sampled candle momentum index > 0 AND sampled candle momentum index != its preceding bar value
+Short: Sampled candle momentum index < 0 AND sampled candle momentum index != its preceding bar value

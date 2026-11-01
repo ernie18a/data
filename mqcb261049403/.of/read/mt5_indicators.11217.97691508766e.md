@@ -1,4 +1,4 @@
-Calculation: Hull trend line = 2 × the selected smoothing of the chosen applied price over a shorter lookback − the same smoothing over a longer lookback
-Calculation: Smoothed Hull trend line = the same smoothing of the Hull trend line over a lookback equal to the square root of the longer lookback
-Long: Hull trend line on the higher-timeframe candle still forming > smoothed Hull trend line on that candle
-Short: Hull trend line on the higher-timeframe candle still forming < smoothed Hull trend line on that candle
+Calculation: Raw Hull series = 2 × moving average of the selected price over floor(N/2) bars − moving average of the same price over N bars, using the same smoothing method.
+Calculation: Smoothed Hull series = moving average of the raw Hull series over floor(sqrt(N)) bars, using the same smoothing method.
+Long: Raw Hull series > smoothed Hull series on the chart timeframe OR the most recent nonzero difference between the raw and smoothed Hull series on the still-forming higher-timeframe bar and preceding higher-timeframe bars > 0.
+Short: Raw Hull series < smoothed Hull series on the chart timeframe OR the most recent nonzero difference between the raw and smoothed Hull series on the still-forming higher-timeframe bar and preceding higher-timeframe bars < 0.

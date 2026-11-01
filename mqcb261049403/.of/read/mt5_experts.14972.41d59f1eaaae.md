@@ -1,5 +1,10 @@
-Calculation: RVI histogram state = lime when the Relative Vigor Index (RVI) main line is above its upper level, magenta when it is below its lower level, and gray otherwise
-Long: on the configured indicator timeframe, using the last two completed bars, the RVI main line crosses above its signal line OR the histogram changes to lime from a non-lime state
-Short: on the configured indicator timeframe, using the last two completed bars, the RVI main line crosses below its signal line OR the histogram changes to magenta from a non-magenta state
-Exit: long, on the configured indicator timeframe using the last two completed bars, the RVI main line crosses below its signal line OR the histogram changes to magenta from a non-magenta state OR low <= the configured long stop-loss price OR high >= the configured long take-profit price
-Exit: short, on the configured indicator timeframe using the last two completed bars, the RVI main line crosses above its signal line OR the histogram changes to lime from a non-lime state OR high >= the configured short stop-loss price OR low <= the configured short take-profit price
+Long: Chart-timeframe Relative Vigor Index (RVI) main line > its signal line.
+Short: Chart-timeframe RVI main line < its signal line.
+Long: Chart-timeframe RVI main line > upper threshold.
+Short: Chart-timeframe RVI main line < lower threshold.
+Long: Higher-timeframe RVI main line on the last completed bar > its signal line AND its main line on the preceding bar <= its signal line.
+Short: Higher-timeframe RVI main line on the last completed bar < its signal line AND its main line on the preceding bar >= its signal line.
+Long: Higher-timeframe RVI main line on the last completed bar > upper threshold AND its main line on the preceding bar <= upper threshold.
+Short: Higher-timeframe RVI main line on the last completed bar < lower threshold AND its main line on the preceding bar >= lower threshold.
+Exit: long, higher-timeframe RVI main line on the last completed bar < its signal line OR higher-timeframe RVI main line on the last completed bar < lower threshold OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance.
+Exit: short, higher-timeframe RVI main line on the last completed bar > its signal line OR higher-timeframe RVI main line on the last completed bar > upper threshold OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance.

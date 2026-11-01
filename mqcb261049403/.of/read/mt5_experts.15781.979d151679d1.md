@@ -1,4 +1,5 @@
-Long: Stochastic %K on the configured indicator timeframe (which may be higher or lower than the chart timeframe) crosses above the oversold level on the last completed bar: current %K > oversold level AND previous %K <= oversold level
-Short: Stochastic %K on the configured indicator timeframe (which may be higher or lower than the chart timeframe) crosses below the overbought level on the last completed bar: current %K < overbought level AND previous %K >= overbought level
-Exit: long, Stochastic %K crosses below the overbought level on the last completed indicator-timeframe bar OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, Stochastic %K crosses above the oversold level on the last completed indicator-timeframe bar OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance
+Calculation: Stochastic main line = slowed stochastic %K, using a configurable lookback, slowing period and high/low or close price range; calculate on a configurable timeframe that may be higher or lower than the chart timeframe, using its last completed bar.
+Long: Stochastic main line on the last completed indicator bar > lower threshold AND its value on the preceding indicator bar <= lower threshold
+Short: Stochastic main line on the last completed indicator bar < upper threshold AND its value on the preceding indicator bar >= upper threshold
+Exit: long, the most recent stochastic threshold crossing is a short condition OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, the most recent stochastic threshold crossing is a long condition OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

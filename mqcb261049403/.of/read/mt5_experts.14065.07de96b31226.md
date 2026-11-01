@@ -1,6 +1,11 @@
-Calculation: Fast trend line = weighted sum of five DeMarker oscillators with progressively longer lookbacks; the second and third oscillators use the same weight.
-Calculation: Slow trend line = smoothed fast trend line, using a longer smoothing lookback than the fast line.
-Long: Fast trend line on the latest completed bar of the configured indicator timeframe > slow trend line AND fast trend line on the preceding bar < slow trend line
-Short: Fast trend line on the latest completed bar of the configured indicator timeframe < slow trend line AND fast trend line on the preceding bar > slow trend line
-Exit: short, fast trend line on the latest completed bar of the configured indicator timeframe > slow trend line AND fast trend line on the preceding bar < slow trend line
-Exit: long, fast trend line on the latest completed bar of the configured indicator timeframe < slow trend line AND fast trend line on the preceding bar > slow trend line
+Calculation: Weighted DeMarker = sum of five DeMarker values with progressively longer lookbacks, each multiplied by its corresponding weight; the third uses the same weight as the second.
+Calculation: Signal line = weighted DeMarker / smoothing period + previous signal line * (smoothing period - 1) / smoothing period; initialize at the seed bar to weighted DeMarker / smoothing period.
+Calculation: Indicator-timeframe values = weighted DeMarker and signal line computed on a configurable timeframe that may be higher or lower than the chart timeframe, or the chart timeframe itself; use a configurable bar offset, either the bar still forming or a completed bar, and its immediately preceding bar. For a completed-bar offset, evaluate when a new indicator-timeframe bar begins.
+Long: Chart-timeframe weighted DeMarker > chart-timeframe signal line.
+Short: Chart-timeframe weighted DeMarker < chart-timeframe signal line.
+Long: Indicator-timeframe weighted DeMarker > indicator-timeframe signal line AND its preceding-bar weighted DeMarker < its preceding-bar signal line.
+Short: Indicator-timeframe weighted DeMarker < indicator-timeframe signal line AND its preceding-bar weighted DeMarker > its preceding-bar signal line.
+Exit: long, indicator-timeframe weighted DeMarker < indicator-timeframe signal line.
+Exit: short, indicator-timeframe weighted DeMarker > indicator-timeframe signal line.
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

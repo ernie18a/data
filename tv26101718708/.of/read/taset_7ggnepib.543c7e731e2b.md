@@ -1,23 +1,29 @@
-Calculation: RSI = Relative Strength Index of close
-Calculation: Bullish divergence = a confirmed price pivot low is lower than the previous price pivot low while RSI at the latest pivot low is higher than RSI at the previous pivot low
-Calculation: Bearish divergence = a confirmed price pivot high is higher than the previous price pivot high while RSI at the latest pivot high is lower than RSI at the previous pivot high
-Calculation: Near support/resistance = close is within the configured percentage distance of any of the three latest confirmed pivot lows/highs, respectively, including the quick pivot
-Calculation: Support/resistance space = the latest confirmed long-lookback pivot high is above the latest confirmed long-lookback pivot low, and their percentage separation exceeds the configured minimum
-Long: (low < latest confirmed long-lookback pivot low and close > that pivot low OR near support) AND support/resistance space AND (RSI <= oversold threshold OR bullish divergence) AND RSI <= oversold threshold AND RSI > previous-bar RSI AND raw long condition was false on the previous bar
-Short: (high > latest confirmed long-lookback pivot high and close < that pivot high OR near resistance) AND support/resistance space AND (RSI >= near-overbought threshold OR bearish divergence) AND RSI >= near-overbought threshold AND RSI < previous-bar RSI AND raw short condition was false on the previous bar
-Long: bullish divergence
-Short: bearish divergence
-Long: a sellside sweep occurs below the captured recent-window low, then on a later bar low is below the prior bar's rolling short-lookback low
-Short: a buyside sweep occurs above the captured recent-window high, then on a later bar low is below the prior bar's rolling short-lookback low
-Exit: Long, high >= dynamic take-profit target OR low <= dynamic stop-loss target
-Exit: Short, low <= dynamic take-profit target OR high >= dynamic stop-loss target
-Calculation: Dynamic stop-loss target = at entry, the rolling short-lookback high plus ATR times the stop multiplier for a short, or rolling short-lookback low minus ATR times the stop multiplier for a long
-Calculation: Dynamic take-profit target = entry price minus (absolute distance from entry to stop-loss target times the reward/risk multiplier) for a short, or entry price plus that distance for a long
-Long: close crosses above the latest major swing high
-Short: close crosses below the latest major swing low
-Long: close crosses above the latest internal swing high
-Short: close crosses below the latest internal swing low
-Long: close crosses above the ATR trailing stop
-Short: close crosses below the ATR trailing stop
-Long: close is above the ATR trailing stop AND close crosses above the ATR trailing stop
-Short: close is below the ATR trailing stop AND close crosses below the ATR trailing stop
+Calculation: Support and resistance levels = the latest confirmed pivot low or high, respectively, of close or low/high, using a shared left lookback and either a shorter or longer right lookback; also retain the two preceding longer-right pivots of each side.
+Calculation: Near a level = abs(close - level) / level < distance threshold.
+Calculation: Support/resistance space = (latest longer-right pivot high - latest longer-right pivot low) / latest longer-right pivot low.
+Calculation: Bullish divergence = a low pivot is confirmed AND its value is below the preceding low pivot AND the latest confirmed RSI pivot low is above the preceding RSI pivot low. Price and RSI pivots are detected independently with equal left and right lookbacks.
+Calculation: Bearish divergence = a high pivot is confirmed AND its value is above the preceding high pivot AND the latest confirmed RSI pivot high is below the preceding RSI pivot high. Price and RSI pivots are detected independently with equal left and right lookbacks.
+Calculation: Raw support buy = (low < latest longer-right pivot low AND close > that pivot low OR close is near any retained pivot low) AND latest longer-right pivot high > latest longer-right pivot low AND support/resistance space > distance threshold AND RSI <= oversold threshold AND RSI > previous RSI.
+Calculation: Raw resistance sell = (high > latest longer-right pivot high AND close < that pivot high OR close is near any retained pivot high) AND latest longer-right pivot high > latest longer-right pivot low AND support/resistance space > distance threshold AND RSI >= near-overbought threshold AND RSI < previous RSI.
+Calculation: Liquidity setup = when no turtle-soup trade or unresolved setup exists, save the highest high and lowest low over a rolling number of chart bars equal to the higher-timeframe duration divided by the chart-timeframe duration; this is a rolling chart-bar window including the current bar, not a completed higher-timeframe bar. On a later bar, a low below the saved low selects a long setup; otherwise a high above the saved high selects a short setup. Keep the setup until execution and do not start another until the trade exits.
+Calculation: Turtle-soup stop = at execution, for a long, the lowest low over the execution lookback including the entry bar minus an ATR multiple; for a short, the highest high over that lookback plus an ATR multiple. The long target is entry price plus a reward/risk multiple of abs(entry price - stop); the short target is entry price minus that amount. Entry price is the broken prior-window extreme. Freeze stop and target at entry; evaluate exits on the entry bar as well.
+Calculation: Trail source = chart close or chart-timeframe Heikin-Ashi close, selected by the filtering setting.
+Calculation: ATR trail = initialize the previous trail to zero. Let loss be chart ATR times a sensitivity parameter, optionally reduced according to chart timeframe. If current and previous trail source are both above the previous trail, use max(previous trail, current source - loss); if both are below it, use min(previous trail, current source + loss); otherwise use current source - loss when current source > previous trail, and current source + loss otherwise.
+Calculation: Trail direction = initially neutral; set to long when previous trail source < previous trail AND current source > previous trail, set to short when previous source > previous trail AND current source < previous trail, otherwise retain the preceding direction.
+Calculation: Structure-leg pivot = for each of two lookbacks, one shorter than the other, compare the high and low at that lookback with the highest high and lowest low of the intervening chart bars. A higher high starts a bearish leg; otherwise a lower low starts a bullish leg. Retain the corresponding pivot high or low only when the leg changes, and allow each pivot to be broken once.
+Long: raw support buy AND previous bar's raw support buy is false.
+Short: raw resistance sell AND previous bar's raw resistance sell is false.
+Long: bullish divergence.
+Short: bearish divergence.
+Long: high three bars ago < low one bar ago.
+Short: low three bars ago > high one bar ago.
+Long: close crosses above an unbroken structure-leg pivot high.
+Short: close crosses below an unbroken structure-leg pivot low.
+Long: liquidity setup selects long AND a later bar's high > highest high over the execution lookback ending on the preceding bar.
+Short: liquidity setup selects short AND a later bar's low < lowest low over the execution lookback ending on the preceding bar.
+Long: trail source crosses above ATR trail.
+Short: trail source crosses below ATR trail.
+Long: trail direction = long AND close >= ATR trail + an ATR buffer.
+Short: trail direction = short AND close <= ATR trail - an ATR buffer.
+Exit: long, high >= turtle-soup target OR low <= turtle-soup stop.
+Exit: short, low <= turtle-soup target OR high >= turtle-soup stop.

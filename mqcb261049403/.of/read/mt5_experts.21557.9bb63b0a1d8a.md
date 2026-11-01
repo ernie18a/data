@@ -1,6 +1,12 @@
-Calculation: Upper channel = round to the nearest multiple of (price point × 10^digit precision) the average of the highest high in each rolling window of range length, over range-length consecutive window starts beginning at the configured bar offset.
-Calculation: Lower channel = round to the nearest multiple of (price point × 10^digit precision) the average of the lowest low in each rolling window of range length, over range-length consecutive window starts beginning at the configured bar offset.
-Long: On the last completed bar of the configured indicator timeframe, close > upper channel AND the preceding completed bar's close ≤ its upper channel.
-Short: On the last completed bar of the configured indicator timeframe, close < lower channel AND the preceding completed bar's close ≥ its lower channel.
-Exit: Long, close < lower channel OR elapsed time since entry > configured holding duration OR low ≤ entry price − configured stop-loss distance OR high ≥ entry price + configured take-profit distance.
-Exit: Short, close > upper channel OR elapsed time since entry > configured holding duration OR high ≥ entry price + configured stop-loss distance OR low ≤ entry price − configured take-profit distance.
+Calculation: Upper channel = for each of a configurable number of consecutive offsets starting at a configurable shift from the evaluated bar, find the highest high over a window of that same number of bars ending at that offset; average those highs and round to the nearest configurable price increment.
+Calculation: Lower channel = for each of a separately configurable number of consecutive offsets starting at a separately configurable shift from the evaluated bar, find the lowest low over a window of that same number of bars ending at that offset; average those lows and round to the nearest separately configurable price increment.
+Calculation: Bullish breakout = close > upper channel AND close >= lower channel.
+Calculation: Bearish breakout = close < lower channel.
+Long: Bullish breakout on the chart bar.
+Short: Bearish breakout on the chart bar.
+Long: Bullish breakout on the selected bar of a configurable higher or lower timeframe AND bullish breakout is false on its preceding bar; the selected bar is either the last completed bar, an earlier completed bar, or the bar still forming.
+Short: Bearish breakout on the selected bar of a configurable higher or lower timeframe AND bearish breakout is false on its preceding bar; the selected bar is either the last completed bar, an earlier completed bar, or the bar still forming.
+Exit: long, bearish breakout on the selected bar of a configurable higher or lower timeframe; the selected bar is either the last completed bar, an earlier completed bar, or the bar still forming.
+Exit: short, bullish breakout on the selected bar of a configurable higher or lower timeframe; the selected bar is either the last completed bar, an earlier completed bar, or the bar still forming.
+Exit: long, low <= entry price minus configurable stop distance OR high >= entry price plus configurable profit distance.
+Exit: short, high >= entry price plus configurable stop distance OR low <= entry price minus configurable profit distance.

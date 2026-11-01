@@ -1,5 +1,5 @@
-Calculation: Hull moving average = linearly weighted moving average over the square root of the lookback of (2 × linearly weighted moving average over half the lookback of close − linearly weighted moving average over the full lookback of close); the half lookback is shorter than the full lookback.
-Long: Hull moving average on the chart timeframe, using the bar still forming, > its value on the previous completed bar
-Short: Hull moving average on the chart timeframe, using the bar still forming, < its value on the previous completed bar
-Long: Hull moving average on a higher timeframe, using the bar still forming, > its value on the previous completed bar
-Short: Hull moving average on a higher timeframe, using the bar still forming, < its value on the previous completed bar
+Calculation: Hull moving average = linear weighted moving average over floor(sqrt(n)) bars of (2 × linear weighted moving average of the selected price over floor(n/2) bars − linear weighted moving average of that price over n bars); the selected price defaults to close.
+Long: Current chart-timeframe Hull moving average > its previous bar value.
+Short: Current chart-timeframe Hull moving average < its previous bar value.
+Long: Hull moving average of the still-forming higher-timeframe bar > its value on the preceding higher-timeframe bar.
+Short: Hull moving average of the still-forming higher-timeframe bar < its value on the preceding higher-timeframe bar.

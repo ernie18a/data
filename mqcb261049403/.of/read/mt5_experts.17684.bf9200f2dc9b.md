@@ -1,5 +1,8 @@
-Calculation: X-O direction = On a lower timeframe than the chart, using the last completed bar, calculate the selected OHLC-derived price and maintain upper and lower bands separated by the range threshold. When price > upper band + range threshold, set direction to up and reset the bands to price and price − range threshold; when price < lower band − range threshold, set direction to down and reset the bands to price and price + range threshold; otherwise retain direction and bands.
-Long: X-O direction changes from down to up OR (long position is open AND current ask − last entry price > the scaling threshold)
-Short: X-O direction changes from up to down OR (short position is open AND last entry price − current bid > the scaling threshold)
-Exit: long, X-O direction changes from up to down
-Exit: short, X-O direction changes from down to up
+Calculation: Applied price = selected OHLC price, median (high + low) / 2, typical (high + low + close) / 3, weighted (high + low + 2 × close) / 4, (open + close) / 2, (open + high + low + close) / 4, or one of: high if close > open, low if close < open, otherwise close; (high + close) / 2 if close > open, (low + close) / 2 if close < open, otherwise close; or (X - low + X - high) / 2, where X = (high + low + close + (low if close < open, high if close > open, otherwise close)) / 2.
+Calculation: Reversal state = on the chosen indicator timeframe, initialize upper and lower levels to the same historical applied price and direction to neutral. For each subsequent bar, if applied price > previous upper level + range, set upper level to applied price, lower level to applied price - range, and direction to up; otherwise, if applied price < previous lower level - range, set lower level to applied price, upper level to applied price + range, and direction to down; otherwise retain both levels and direction. The indicator timeframe may be higher or lower than the chart timeframe; evaluate the last completed indicator bar or the still-forming indicator bar according to the signal-bar setting.
+Long: Previous reversal direction = down AND current reversal direction = up.
+Short: Previous reversal direction = up AND current reversal direction = down.
+Exit: long, previous reversal direction = up AND current reversal direction = down.
+Exit: short, previous reversal direction = down AND current reversal direction = up.
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

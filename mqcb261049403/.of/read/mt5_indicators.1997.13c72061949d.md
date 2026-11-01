@@ -1,4 +1,3 @@
-Calculation: Chart-timeframe JMA slope = the JMA of the selected OHLC-derived price on the current chart bar minus its value on the preceding chart bar.
-Calculation: Higher-timeframe JMA slope = the JMA of the selected OHLC-derived price on the higher-timeframe bar still forming minus its value on the preceding higher-timeframe bar.
-Long: Chart-timeframe JMA slope > 0 OR higher-timeframe JMA slope > 0
-Short: Chart-timeframe JMA slope < 0 OR higher-timeframe JMA slope < 0
+Calculation: Slope = Jurik moving average of the selected price on the current bar minus its value on the preceding bar. For the higher-timeframe version, use the higher-timeframe bar still forming at the start of each higher-timeframe interval and carry that snapshot forward until the next interval; compare its slope with the preceding higher-timeframe bar's slope.
+Long: Slope > 0 AND slope != preceding bar's slope
+Short: Slope < 0 AND slope != preceding bar's slope

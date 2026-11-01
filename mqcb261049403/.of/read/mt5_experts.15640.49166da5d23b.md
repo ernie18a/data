@@ -1,6 +1,6 @@
-Calculation: Short-lookback ROC = configured transform of the completed bar’s close versus its close N bars earlier: Momentum = close − prior close; ROC = (close / prior close − 1) × 100; ROCP = (close − prior close) / prior close; ROCR = close / prior close; ROCR100 = (close / prior close) × 100
-Calculation: Long-lookback ROC = the same configured transform choices using a longer lookback than the short-lookback ROC
-Long: Short-lookback ROC on the last completed indicator-timeframe bar > Long-lookback ROC on that bar AND Short-lookback ROC on the preceding completed indicator-timeframe bar ≤ Long-lookback ROC on that bar
-Short: Short-lookback ROC on the last completed indicator-timeframe bar < Long-lookback ROC on that bar AND Short-lookback ROC on the preceding completed indicator-timeframe bar ≥ Long-lookback ROC on that bar
-Exit: Long, Short-lookback ROC on the last completed indicator-timeframe bar < Long-lookback ROC on that bar
-Exit: Short, Short-lookback ROC on the last completed indicator-timeframe bar > Long-lookback ROC on that bar
+Calculation: Momentum line = for its independently selected lookback n and type, use close − close[n], 100 × (close / close[n] − 1), (close − close[n]) / close[n], close / close[n], or 100 × close / close[n]. Calculate two lines with independently selected types and lookbacks; the first has a shorter default lookback than the second. Use the chart timeframe or a higher timeframe; evaluate the selected signal bar, normally the last completed bar, or the still-forming bar if selected, and its immediately preceding bar.
+Calculation: Directional lines = first and second momentum lines, respectively; swap their order when inverse trading is selected.
+Long: First directional line > second directional line AND on the preceding signal-timeframe bar first directional line <= second directional line.
+Short: First directional line < second directional line AND on the preceding signal-timeframe bar first directional line >= second directional line.
+Exit: long, first directional line < second directional line OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, first directional line > second directional line OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance.

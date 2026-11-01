@@ -1,4 +1,8 @@
-Long: On the configured indicator timeframe, the shorter-period moving average is above the longer-period moving average on the signal bar and the immediately preceding bar, and was below it two bars before the signal bar; use the last completed indicator bar.
-Short: On the configured indicator timeframe, the shorter-period moving average is below the longer-period moving average on the signal bar and the immediately preceding bar, and was above it two bars before the signal bar; use the last completed indicator bar.
-Exit: long, the Short condition occurs OR the bar low is at or below the entry price minus the configured stop-loss distance OR the bar high is at or above the entry price plus the configured take-profit distance.
-Exit: short, the Long condition occurs OR the bar high is at or above the entry price plus the configured stop-loss distance OR the bar low is at or below the entry price minus the configured take-profit distance.
+Calculation: Bullish crossover = shorter-period moving average > longer-period moving average on the signal bar AND on the preceding bar AND shorter-period moving average < longer-period moving average two bars before the signal bar; both averages use the same selectable moving-average method and price source.
+Calculation: Bearish crossover = shorter-period moving average < longer-period moving average on the signal bar AND on the preceding bar AND shorter-period moving average > longer-period moving average two bars before the signal bar; both averages use the same selectable moving-average method and price source.
+Long: Bullish crossover on the chart timeframe.
+Short: Bearish crossover on the chart timeframe.
+Long: Bullish crossover on the selected signal bar of a selectable signal timeframe, which may be higher, lower, or the same as the chart timeframe; the selected bar may be the still-forming bar, the last completed bar, or an older completed bar.
+Short: Bearish crossover on the selected signal bar of a selectable signal timeframe, which may be higher, lower, or the same as the chart timeframe; the selected bar may be the still-forming bar, the last completed bar, or an older completed bar.
+Exit: long, the most recent crossover at or before the selected signal bar is bearish OR low <= entry price - enabled stop-loss distance OR high >= entry price + enabled take-profit distance.
+Exit: short, the most recent crossover at or before the selected signal bar is bullish OR high >= entry price + enabled stop-loss distance OR low <= entry price - enabled take-profit distance.

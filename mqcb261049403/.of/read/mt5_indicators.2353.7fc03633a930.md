@@ -1,6 +1,6 @@
-Calculation: Fast line = weighted sum of five stochastic oscillators with progressively longer lookbacks, calculated on the configured signal timeframe (which may be higher or lower than the chart timeframe). Use completed bars.
-Calculation: Slow line = recursive smoothing of the fast line on the configured signal timeframe; use completed bars.
-Long: Fast line on the last completed signal-timeframe bar > slow line on that bar AND fast line on the preceding completed signal-timeframe bar <= slow line on that bar
-Short: Fast line on the last completed signal-timeframe bar < slow line on that bar AND fast line on the preceding completed signal-timeframe bar >= slow line on that bar
-Exit: short, fast line on the last completed signal-timeframe bar > slow line on that bar AND fast line on the preceding completed signal-timeframe bar <= slow line on that bar
-Exit: long, fast line on the last completed signal-timeframe bar < slow line on that bar AND fast line on the preceding completed signal-timeframe bar >= slow line on that bar
+Calculation: Fast line = weighted sum of the main lines of five stochastic oscillators with progressively longer K and D periods and common slowing, moving-average method, and price-field choice; the third oscillator uses the same weight as the second.
+Calculation: Slow line = Fast line / smoothing period + previous Slow line × (smoothing period − 1) / smoothing period; initialize it to the first Fast line / smoothing period. Calculate both lines on the chart timeframe or a higher timeframe, using the last completed indicator bar; the still-forming indicator bar may be selected instead.
+Long: Fast line > Slow line AND previous indicator bar's Fast line <= previous indicator bar's Slow line AND position side = flat
+Short: Fast line < Slow line AND previous indicator bar's Fast line >= previous indicator bar's Slow line AND position side = flat
+Exit: long, Fast line < Slow line OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, Fast line > Slow line OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

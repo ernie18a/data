@@ -1,3 +1,5 @@
-Calculation: JFATL acceleration = on higher-timeframe bars, take the applied price, apply the 39-bar FATL digital filter, smooth it with a longer-lookback JMA, take momentum over a lookback, smooth that momentum with a shorter-lookback JMA, then take momentum over a separate lookback; compare values using the current forming higher-timeframe bar and the preceding completed higher-timeframe bar.
-Long: At each higher-timeframe bar opening, current forming JFATL acceleration >= 0
-Short: At each higher-timeframe bar opening, current forming JFATL acceleration < 0
+Calculation: Acceleration = On the relevant timeframe, apply the FATL digital filter to a selected OHLC-derived price, smooth the result with a Jurik moving average, take its difference from its value a configurable number of bars earlier, smooth that difference with a second Jurik moving average with independently configurable length and phase, then subtract that smoothed difference's value a separately configurable number of bars earlier.
+Long: Chart-timeframe acceleration > previous chart-timeframe acceleration AND chart-timeframe acceleration != 0
+Short: Chart-timeframe acceleration < previous chart-timeframe acceleration AND chart-timeframe acceleration != 0
+Long: Chart bar opens a new higher-timeframe bar AND acceleration of the still-forming higher-timeframe bar >= 0
+Short: Chart bar opens a new higher-timeframe bar AND acceleration of the still-forming higher-timeframe bar < 0

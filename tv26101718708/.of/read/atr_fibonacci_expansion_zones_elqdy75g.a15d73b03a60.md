@@ -1,4 +1,5 @@
-Calculation: Active-period high and low = highest high and lowest low of chart-timeframe bars since the selected ATR session/period began; track the datetime each extreme formed.
-Calculation: Active-range midpoint = (active-period high + active-period low) / 2
-Long: close >= open OR (active-period low formed before active-period high) OR (both extremes formed at the same datetime AND close >= active-range midpoint)
-Short: close < open OR (active-period high formed before active-period low) OR (both extremes formed at the same datetime AND close < active-range midpoint)
+Calculation: Active range = the highest high and lowest low of chart bars in the currently forming higher-timeframe period; retain the first bar reaching each extreme when highs or lows tie.
+Long: close >= open
+Short: close < open
+Long: active range high > active range low AND (the high occurred after the low OR the high and low occurred on the same bar AND close >= (active range high + active range low) / 2)
+Short: active range high > active range low AND (the low occurred after the high OR the high and low occurred on the same bar AND close < (active range high + active range low) / 2)

@@ -1,5 +1,8 @@
-Calculation: Kalman velocity and value = initialize velocity at zero; on each bar, let D = selected applied price − previous Kalman value, update velocity by adding D × smoothing coefficient/100, then set Kalman value to previous Kalman value + D × sqrt(smoothing coefficient/100) + updated velocity.
-Long: On consecutive completed bars of the configured indicator timeframe, which may be higher or lower than the chart timeframe, Kalman velocity changes from ≤ 0 to > 0.
-Short: On consecutive completed bars of the configured indicator timeframe, which may be higher or lower than the chart timeframe, Kalman velocity changes from > 0 to ≤ 0.
-Exit: Long, on consecutive completed bars of the configured indicator timeframe, which may be higher or lower than the chart timeframe, Kalman velocity changes from > 0 to ≤ 0.
-Exit: Short, on consecutive completed bars of the configured indicator timeframe, which may be higher or lower than the chart timeframe, Kalman velocity changes from ≤ 0 to > 0.
+Calculation: Selected price = a configurable choice of open, high, low, close, (high + low)/2, (high + low + close)/3, (high + low + 2 × close)/4, (open + close)/2, (open + high + low + close)/4, or a conditional price: high if close > open, low if close < open, otherwise close; or a conditional price: (high + close)/2 if close > open, (low + close)/2 if close < open, otherwise close.
+Calculation: Filter and velocity = on the chart timeframe or a configurable higher or lower timeframe, initialize filter to the first selected price and velocity to zero; for each subsequent bar, distance = selected price − previous filter, velocity = previous velocity + distance × smoothing coefficient / 100, and filter = previous filter + distance × sqrt(smoothing coefficient / 100) + velocity + configurable price offset. The expert uses zero price offset.
+Calculation: Bullish state = velocity > 0 in velocity mode, or filter >= previous filter in trend mode. Bearish state = velocity <= 0 in velocity mode, or filter < previous filter in trend mode.
+Calculation: Signal bar = the completed filter-timeframe bar at a configurable nonnegative offset before the last completed filter-timeframe bar; its previous bar is the immediately preceding filter-timeframe bar. Evaluate on a new filter-timeframe bar.
+Long: Signal bar is bullish AND previous signal bar is bearish.
+Short: Signal bar is bearish AND previous signal bar is bullish.
+Exit: long, signal bar is bearish OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, signal bar is bullish OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance.

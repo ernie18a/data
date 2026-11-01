@@ -1,6 +1,9 @@
-Calculation: Adaptive CG oscillator = For each bar, let N be half the Cycle Period rounded down; using up to N available bars, let P[k] be the midpoint of high and low k bars ago. Compute -sum((k+1)*P[k])/sum(P[k]) + (N+1)/2.
-Calculation: Trigger line = Adaptive CG oscillator value on the immediately preceding bar.
-Long: On the lower timeframe, the oscillator on the latest completed bar > its trigger AND the oscillator on the preceding completed bar <= its trigger AND, on the higher timeframe, the oscillator on the selected completed bar > its trigger.
-Short: On the lower timeframe, the oscillator on the latest completed bar < its trigger AND the oscillator on the preceding completed bar >= its trigger AND, on the higher timeframe, the oscillator on the selected completed bar < its trigger.
-Exit: long, On the lower timeframe, the oscillator on the selected completed bar < its trigger OR, on the higher timeframe, the oscillator on the selected completed bar < its trigger.
-Exit: short, On the lower timeframe, the oscillator on the selected completed bar > its trigger OR, on the higher timeframe, the oscillator on the selected completed bar > its trigger.
+Calculation: Adaptive center-of-gravity oscillator = For each bar, let n be the floor of half the Ehlers cycle period, limited to the number of preceding bars available. For i from 0 to n-1, let p[i] = (high[i] + low[i]) / 2, where i is the number of bars ago. The oscillator is (n + 1) / 2 - sum((i + 1) * p[i]) / sum(p[i]); it is undefined when the denominator is zero. Its trigger is the oscillator on the preceding bar. The cycle-period estimator is an external dependency whose implementation is not provided.
+Calculation: Slow oscillator = Adaptive center-of-gravity oscillator on a higher timeframe, using its last completed bar.
+Calculation: Fast oscillator = Adaptive center-of-gravity oscillator on the entry timeframe, using its last completed bar; the entry timeframe is shorter than the slow timeframe and may be the chart timeframe or a higher timeframe.
+Long: Slow oscillator > its trigger AND fast oscillator > its trigger AND fast oscillator on the preceding entry-timeframe bar <= its trigger on that bar.
+Short: Slow oscillator < its trigger AND fast oscillator < its trigger AND fast oscillator on the preceding entry-timeframe bar >= its trigger on that bar.
+Exit: long, slow oscillator < its trigger OR fast oscillator < its trigger.
+Exit: short, slow oscillator > its trigger OR fast oscillator > its trigger.
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

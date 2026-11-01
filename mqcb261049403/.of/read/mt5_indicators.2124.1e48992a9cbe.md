@@ -1,4 +1,4 @@
-Calculation: Smoothed open = selected smoothing method applied to open prices on the higher timeframe, including its bar still forming, using a lookback shared with the other smoothed candle prices
-Calculation: Smoothed close = selected smoothing method applied to close prices on the higher timeframe, including its bar still forming, using the same lookback and method as smoothed open
-Long: Smoothed close > smoothed open
-Short: Smoothed close <= smoothed open
+Long: Moving average of chart-bar close > moving average of chart-bar open, using the same smoothing method and length
+Short: Moving average of chart-bar close <= moving average of chart-bar open, using the same smoothing method and length
+Long: Moving average of higher-timeframe close >= moving average of higher-timeframe open, using the same smoothing method and length, sampled from the still-forming higher-timeframe bar on its first chart bar and held until the next higher-timeframe bar
+Short: Moving average of higher-timeframe close < moving average of higher-timeframe open, using the same smoothing method and length, sampled from the still-forming higher-timeframe bar on its first chart bar and held until the next higher-timeframe bar

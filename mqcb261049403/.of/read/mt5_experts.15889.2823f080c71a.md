@@ -1,6 +1,7 @@
-Calculation: Upper band = Volume-weighted average of highs over the lookback, rounded to the configured price precision; use the value shifted forward by the configured number of bars. Calculate from completed bars on the indicator timeframe, which may be higher or lower than the chart timeframe.
-Calculation: Lower band = Volume-weighted average of lows over the same lookback and volume series as the upper band, rounded to the configured price precision; use the value shifted forward by the configured number of bars. Calculate from completed bars on the indicator timeframe, which may be higher or lower than the chart timeframe.
-Long: Completed bar close > upper band AND previous completed bar close <= its upper band
-Short: Completed bar close < lower band AND previous completed bar close >= its lower band
-Exit: long, completed bar close < lower band
-Exit: short, completed bar close > upper band
+Calculation: Upper and lower channel = volume-weighted moving averages of high and low, respectively, over the same lookback; add the same price offset and round each to the nearest price increment. Compare each bar with the channel calculated a configurable number of bars earlier.
+Long: Close > upper channel.
+Short: Close < lower channel.
+Long: On the higher timeframe, the last completed bar's close > its upper channel AND the preceding bar's close <= its upper channel.
+Short: On the higher timeframe, the last completed bar's close < its lower channel AND the preceding bar's close >= its lower channel.
+Exit: long, the last completed higher-timeframe bar's close < its lower channel OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance.
+Exit: short, the last completed higher-timeframe bar's close > its upper channel OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance.

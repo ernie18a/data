@@ -1,4 +1,7 @@
-Calculation: Fast CronexAC line = a short-lookback moving average, using the selected smoothing method, of the Accelerator Oscillator on a higher timeframe, calculated from the bar still forming
-Calculation: Slow CronexAC line = a longer-lookback moving average, using the same smoothing method, of the Fast CronexAC line on the same higher timeframe, calculated from the bar still forming
-Long: Fast CronexAC line >= Slow CronexAC line
-Short: Fast CronexAC line < Slow CronexAC line
+Calculation: Main line = shorter-period moving average of the Accelerator Oscillator.
+Calculation: Signal line = longer-period moving average of the main line, using the same smoothing method.
+Calculation: Higher-timeframe sampled lines = main and signal lines calculated on the higher timeframe using its still-forming bar, sampled on the first chart bar of each higher-timeframe bar and held until the next higher-timeframe bar begins.
+Long: Chart-timeframe main line >= signal line
+Short: Chart-timeframe main line < signal line
+Long: Higher-timeframe sampled main line >= sampled signal line
+Short: Higher-timeframe sampled main line < sampled signal line

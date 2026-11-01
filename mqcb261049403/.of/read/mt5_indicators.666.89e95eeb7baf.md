@@ -1,4 +1,8 @@
-Calculation: XMACD = shorter-period smoothed applied price minus longer-period smoothed applied price
-Calculation: Signal line = smoothed XMACD
-Long: XMACD >= Signal line on the latest higher-timeframe bar, including the bar still forming
-Short: XMACD < Signal line on the latest higher-timeframe bar, including the bar still forming
+Calculation: Applied price = a selected bar price: close, open, high, low, (high + low) / 2, (high + low + close) / 3, (high + low + 2 × close) / 4, (open + close) / 2, (open + high + low + close) / 4, trend-follow price, or half trend-follow price.
+Calculation: Trend-follow price = high if close > open, low if close < open, otherwise close; half trend-follow price = (trend-follow price + close) / 2.
+Calculation: Ultralinear moving average = apply three successive stages to the input; each stage calculates a = k × input + (1 − k) × previous a, b = k × a + (1 − k) × previous b, and output = 1.5 × a − 0.5 × b, where k = 3 / (length + 2); initialize each a and b to the first input.
+Calculation: Parabolic moving average = the fitted value at the newest bar of a least-squares quadratic regression over the lookback window.
+Calculation: Oscillator = shorter-period moving average of applied price − longer-period moving average of applied price, using the same selected smoothing method and smoothing parameter. The selectable methods are simple, exponential, smoothed, linearly weighted, Jurik, ultralinear, parabolic, T3, variable index dynamic, and Kaufman adaptive moving averages.
+Calculation: Signal = moving average of the oscillator, using an independently selected smoothing method and parameters from the same set.
+Long: Oscillator ≥ signal on any of the higher-timeframe bar still forming, the last completed higher-timeframe bar, or the preceding completed higher-timeframe bar.
+Short: Oscillator < signal on any of the higher-timeframe bar still forming, the last completed higher-timeframe bar, or the preceding completed higher-timeframe bar.

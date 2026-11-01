@@ -1,5 +1,4 @@
-Calculation: Chaikin Oscillator = fast moving average of the Accumulation/Distribution Line minus its slow moving average; the fast lookback is shorter than the slow lookback, and the line uses the selected tick or real volume.
-Calculation: Fast Cronex line = selected smoothing method applied to the Chaikin Oscillator with a shorter lookback.
-Calculation: Slow Cronex line = selected smoothing method applied to the Fast Cronex line with a longer lookback.
-Long: Fast Cronex line > Slow Cronex line on the chart timeframe, or on the selected higher timeframe's still-forming bar in the higher-timeframe variant.
-Short: Fast Cronex line < Slow Cronex line on the chart timeframe, or on the selected higher timeframe's still-forming bar in the higher-timeframe variant.
+Calculation: Fast line = shorter-period moving average of the Chaikin oscillator, using the selected smoothing method.
+Calculation: Slow line = longer-period moving average of the fast line, using the same smoothing method.
+Long: Fast line > slow line on the chart timeframe OR fast line > slow line on the still-forming higher-timeframe bar.
+Short: Fast line < slow line on the chart timeframe OR fast line < slow line on the still-forming higher-timeframe bar.

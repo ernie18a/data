@@ -1,6 +1,6 @@
-Calculation: SilverTrend value = highest high over a lookback minus (highest high over the same lookback minus lowest low over that lookback) times a percentage
-Calculation: Lagged SilverTrend value = SilverTrend value from lookback plus one bars earlier
-Long: On the indicator timeframe (higher or lower than the chart timeframe as configured), using the latest and previous completed bars, previous SilverTrend value <= previous lagged SilverTrend value AND latest SilverTrend value > latest lagged SilverTrend value
-Short: On the indicator timeframe (higher or lower than the chart timeframe as configured), using the latest and previous completed bars, previous SilverTrend value >= previous lagged SilverTrend value AND latest SilverTrend value < latest lagged SilverTrend value
-Exit: Long, on the indicator timeframe (higher or lower than the chart timeframe as configured), latest completed SilverTrend value < latest completed lagged SilverTrend value
-Exit: Short, on the indicator timeframe (higher or lower than the chart timeframe as configured), latest completed SilverTrend value > latest completed lagged SilverTrend value
+Calculation: Trend level = highest high over a lookback including the evaluated bar minus a configurable fraction of that lookback's high-low range, rounded to the price precision. Calculate on a configurable indicator timeframe, which may be higher or lower than the chart timeframe; evaluate the last completed indicator bar by default, or the still-forming indicator bar if configured.
+Calculation: Delayed trend level = trend level from a number of indicator bars ago equal to the trend-level lookback plus one.
+Long: Trend level > delayed trend level AND previous indicator bar's trend level <= previous indicator bar's delayed trend level.
+Short: Trend level < delayed trend level AND previous indicator bar's trend level >= previous indicator bar's delayed trend level.
+Exit: long, trend level < delayed trend level OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance.
+Exit: short, trend level > delayed trend level OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance.

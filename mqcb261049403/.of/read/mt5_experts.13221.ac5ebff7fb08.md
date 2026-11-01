@@ -1,5 +1,7 @@
-Calculation: Color Zero Lag TriX OSMA = recursively smoothed difference between a weighted sum of five TRIX series with progressively longer lookbacks and a recursive average of that sum; the difference is recursively smoothed again. Use completed bars on the configured indicator timeframe, which may be higher or lower than the chart timeframe.
-Long: The middle of three consecutive completed OSMA values is lower than both the older and latest values OR the latest OSMA value is above zero and above the preceding value
-Short: The middle of three consecutive completed OSMA values is higher than both the older and latest values OR the latest OSMA value is below zero and below the preceding value
-Exit: Long, the middle of three consecutive completed OSMA values is higher than both the older and latest values
-Exit: Short, the middle of three consecutive completed OSMA values is lower than both the older and latest values
+Calculation: Weighted TRIX histogram = Calculate five TRIX series of the selected applied price with successively longer periods. Sum the five series with their respective weights, using the second series' weight also for the third series. Smooth this sum recursively with smoothing factor 1 divided by a first smoothing period; subtract the result from the sum, then smooth that difference recursively with smoothing factor 1 divided by a second smoothing period. Initialize the first smoother to the initial sum divided by its period and the second to the initial difference divided by its period. For the expert's decisions, calculate on a selectable timeframe that may be the chart timeframe, higher, or lower; use a selectable signal bar, including either the last completed bar or the bar still forming, and the two preceding bars on that timeframe.
+Long: Histogram on the signal bar > histogram on the preceding bar AND histogram two bars before the signal bar > histogram on the preceding bar.
+Short: Histogram on the signal bar < histogram on the preceding bar AND histogram two bars before the signal bar < histogram on the preceding bar.
+Exit: short, histogram on the signal bar > histogram on the preceding bar.
+Exit: long, histogram on the signal bar < histogram on the preceding bar.
+Exit: long, low <= entry price - enabled stop-loss distance OR high >= entry price + enabled take-profit distance.
+Exit: short, high >= entry price + enabled stop-loss distance OR low <= entry price - enabled take-profit distance.

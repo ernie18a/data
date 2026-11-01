@@ -1,7 +1,9 @@
-Calculation: Raw upper and lower bands = moving average ± volatility multiplier × ATR, calculated on the configured indicator timeframe (higher or lower than the chart timeframe) using completed bars.
-Calculation: Trailing upper and lower bands = each bar, start with the raw bands; if the trend state is bullish, keep the lower band at least as high as its previous value; if bearish, keep the upper band at most as high as its previous value. These trailing bands are the thresholds used on the next bar.
-Calculation: Trend state = retain the previous state unless the bar's high exceeds the previous trailing upper band, which sets it bullish; then, if the bar's low is below the previous trailing lower band, set it bearish (this takes precedence if both conditions hold). Initialize the state as neutral.
-Long: Previous trend state was neutral or bearish AND current trend state is bullish.
-Short: Previous trend state was neutral or bullish AND current trend state is bearish.
-Exit: long, current trend state is bearish.
-Exit: short, current trend state is bullish.
+Calculation: Trend state and bands = On the indicator timeframe, use a moving average of a selectable bar price and ATR. Initialize the previous trend to neutral and both previous bands to the close of the first eligible bar. For each bar, set raw upper band = moving average + volatility multiplier × ATR and raw lower band = moving average − volatility multiplier × ATR. Set trend to the previous trend; set it to bullish if high > previous upper band; then set it to bearish if low < previous lower band, overriding the bullish assignment. If bullish, set the lower band to the greater of its raw value and its previous value; otherwise use its raw value. If bearish, set the upper band to the lesser of its raw value and its previous value; otherwise use its raw value. Carry these bands and trend forward. The indicator timeframe may be the chart timeframe or a higher or lower timeframe; evaluate the selected completed indicator bar, or the still-forming indicator bar when configured for it.
+Long: Trend = bullish
+Long: Trend = bullish AND previous trend <= neutral
+Short: Trend = bearish
+Short: Trend = bearish AND previous trend >= neutral
+Exit: long, trend = bearish
+Exit: short, trend = bullish
+Exit: long, low <= entry price − stop distance OR high >= entry price + profit target distance
+Exit: short, high >= entry price + stop distance OR low <= entry price − profit target distance

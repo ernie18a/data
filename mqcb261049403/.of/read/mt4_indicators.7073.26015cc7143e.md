@@ -1,12 +1,14 @@
-Calculation: Fractal range-volume ratio = sum of high minus low divided by sum of volume across the bars in the fractal window
-Calculation: Squat fractal = a fractal whose range-volume ratio is lower and total volume is higher than those of the immediately preceding fractal of the opposite type
-Calculation: Rising support line = line through the two most recent lower squat fractals
-Calculation: Falling resistance line = line through the two most recent upper squat fractals
-Long: Close > the most recent upper squat fractal high
-Short: Close < the most recent lower squat fractal low
-Short: Rising support line and close < the line
-Long: Falling resistance line and close > the line
-Long: Rising support line and price touched or briefly fell below the line and close > the line
-Short: Falling resistance line and price touched or briefly rose above the line and close < the line
-Exit: long, close < the current fractal low
-Exit: short, close > the current fractal high
+Calculation: Fractal = a bar whose high equals the highest high, or whose low equals the lowest low, in an odd-length centered window; recognize it only after all bars in that window have closed. For each fractal, use the nearest earlier fractal only if it is of the opposite direction; an earlier bar that is both directions is not an opposite fractal for this pairing.
+Calculation: Fractal volume = sum of volume over the fractal's centered window. Fractal range per volume = sum of high minus low over that window divided by fractal volume. In the configurable-window version, include one additional bar immediately before the window in both sums.
+Calculation: Squat fractal = a fractal whose volume exceeds the preceding opposite fractal's volume multiplied by a volume ratio AND whose range per volume is less than that of the preceding opposite fractal. False fractal = a fractal whose volume multiplied by the same volume ratio is less than the preceding opposite fractal's volume AND whose range per volume is greater than that of the preceding opposite fractal.
+Calculation: Support or resistance line = the straight line through the lows of the two latest confirmed lower fractals, or the highs of the two latest confirmed upper fractals, respectively, of a selected fractal classification. A classification may be squat, false, higher volume and higher range per volume, or lower volume and lower range per volume, with volume comparisons using the volume ratio. In the Alligator-filtered variant, both upper endpoints must be above all three Alligator lines at their respective fractal bars, and both lower endpoints must be below all three. Extend the line forward from its endpoints.
+Long: High crosses above the latest confirmed upper squat fractal high.
+Short: Low crosses below the latest confirmed lower squat fractal low.
+Long: A lower false fractal becomes confirmed.
+Short: An upper false fractal becomes confirmed.
+Exit: Long, low reaches or falls below the lower false fractal low associated with the entry.
+Exit: Short, high reaches or exceeds the upper false fractal high associated with the entry.
+Short: Support line slopes upward AND the prior close is above the support line AND the current close crosses below it.
+Long: Resistance line slopes downward AND the prior close is below the resistance line AND the current close crosses above it.
+Long: Support line slopes upward AND low touches or falls below the support line AND close is above the support line.
+Short: Resistance line slopes downward AND high touches or exceeds the resistance line AND close is below the resistance line.

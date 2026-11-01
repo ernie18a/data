@@ -1,3 +1,3 @@
-Calculation: Smoothed stochastic main and signal lines
-Long: Higher-timeframe smoothed stochastic main line on the previous completed bar > its signal line on that bar
-Short: Higher-timeframe smoothed stochastic main line on the previous completed bar < its signal line on that bar
+Calculation: Smoothed stochastic lines = calculate the stochastic oscillator main and signal lines on a higher timeframe, then smooth each independently with the same moving-average method, length, and phase; use the higher-timeframe bar still forming or a selected completed higher-timeframe bar.
+Long: Smoothed stochastic main line > smoothed stochastic signal line.
+Short: Smoothed stochastic main line < smoothed stochastic signal line.

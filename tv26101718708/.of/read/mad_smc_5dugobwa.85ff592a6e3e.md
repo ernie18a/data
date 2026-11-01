@@ -1,29 +1,14 @@
-Long: close > latest unbroken swing high
-Short: close < latest unbroken swing low
-Long: close > latest unbroken internal pivot high
-Short: close < latest unbroken internal pivot low
-Long: low[1] > high[3]
-Short: high[1] < low[3]
-Long: close > latest unbroken swing high AND a bearish candle occurred within the preceding 30 bars AND close − that candle’s low ≥ minimum displacement × ATR
-Short: close < latest unbroken swing low AND a bullish candle occurred within the preceding 30 bars AND that candle’s high − close ≥ minimum displacement × ATR
-Long: close > the top of an active bearish order block
-Short: close < the bottom of an active bullish order block
-Long: low < latest unbroken swing low AND close > latest unbroken swing low
-Short: high > latest unbroken swing high AND close < latest unbroken swing high
-Long: two consecutive confirmed pivot lows differ by no more than the equal-level tolerance × ATR
-Short: two consecutive confirmed pivot highs differ by no more than the equal-level tolerance × ATR
-Long: current pivot low < previous pivot low AND current reference-symbol pivot low ≥ previous reference-symbol pivot low
-Short: current pivot high > previous pivot high AND current reference-symbol pivot high ≤ previous reference-symbol pivot high
-Long: max(open, close) > max(open[1], close[1])
-Short: min(open, close) < min(open[1], close[1])
-Long: midpoint of an active balanced price range ≤ close
-Short: midpoint of an active balanced price range > close
-Long: close ≤ midpoint of the latest swing high–low range
-Short: close ≥ midpoint of the latest swing high–low range
-Long: close is within the 62%–79% retracement zone of the latest upward swing leg
-Short: close is within the 62%–79% retracement zone of the latest downward swing leg
-Long: latest confirmed swing low is higher than the preceding confirmed swing low
-Short: latest confirmed swing low is lower than the preceding confirmed swing low
-Long: latest confirmed swing high is higher than the preceding confirmed swing high
-Short: latest confirmed swing high is lower than the preceding confirmed swing high
-Exit:
+Calculation: Confirmed pivot high or low = a high or low with a specified number of bars on each side satisfying the pivot-high or pivot-low test; recognize it only when the right-hand bars have completed. Use separate longer swing and shorter internal pivot lengths.
+Calculation: Unbroken pivot = the latest confirmed pivot of its type and length, reset on each new pivot, until a close first exceeds that pivot high or falls below that pivot low. Update pivots before evaluating the current bar.
+Calculation: Active order block = the range of the most recent opposite-direction candle within a specified lookback before a swing-pivot break, provided its displacement from that candle's low to the bullish break close, or from its high to the bearish break close, is at least a specified multiple of ATR. Retain blocks subject to the configured per-side cap and relevance-score threshold; remove a bullish block when close falls below its low and a bearish block when close rises above its high.
+Calculation: Relevance score = weighted average of confluence, freshness, displacement, trend alignment, and proximity, scaled to a percentage. Confluence is the capped count of other active zones and previous-period high/low levels overlapping the zone within an ATR tolerance; freshness decays exponentially with age; displacement is the zone's creation displacement divided by ATR and capped; trend alignment depends on whether the latest swing break agrees with the zone direction; proximity declines with the distance between close and the zone midpoint divided by an ATR-based reach. Previous-period levels use the last completed higher-timeframe bar. Recalculate and permanently remove zones below the threshold each bar.
+Long: Close exceeds an unbroken swing or internal pivot high.
+Short: Close falls below an unbroken swing or internal pivot low.
+Long: Low falls below the unbroken swing pivot low AND close is above that pivot low.
+Short: High exceeds the unbroken swing pivot high AND close is below that pivot high.
+Long: Low of the previous bar exceeds the high three bars ago AND the gap is at least a specified multiple of ATR, if the gap-size filter is enabled.
+Short: High of the previous bar is below the low three bars ago AND the gap is at least a specified multiple of ATR, if the gap-size filter is enabled.
+Long: The lower end of the current candle body exceeds the upper end of the previous candle body.
+Short: The upper end of the current candle body is below the lower end of the previous candle body.
+Long: Close rises above the high of an active bearish order block.
+Short: Close falls below the low of an active bullish order block.

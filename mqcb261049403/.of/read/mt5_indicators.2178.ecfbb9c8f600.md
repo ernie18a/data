@@ -1,3 +1,3 @@
-Calculation: JFATL speed = momentum of the JMA-smoothed 39-bar FATL-filtered price, smoothed again with JMA and scaled by point size.
-Long: JFATL speed on any configured timeframe (equal to or higher than the chart timeframe, using its still-forming bar) > its value on the previous bar of that timeframe
-Short: JFATL speed on any configured timeframe (equal to or higher than the chart timeframe, using its still-forming bar) < its value on the previous bar of that timeframe
+Calculation: Smoothed FATL momentum = Jurik moving average of the difference between the Jurik moving average of the FATL-filtered selected price and its value a momentum lookback earlier; the two Jurik averages have independently configurable lengths and phases.
+Long: For any configured chart or higher timeframe, the smoothed FATL momentum of the bar still forming is greater than that of the preceding completed bar when the timeframe bar begins OR the most recent unequal comparison at a timeframe bar beginning was greater.
+Short: For any configured chart or higher timeframe, the smoothed FATL momentum of the bar still forming is less than that of the preceding completed bar when the timeframe bar begins OR the most recent unequal comparison at a timeframe bar beginning was less.

@@ -1,6 +1,9 @@
-Calculation: DMI+ = Wilder-smoothed positive directional movement divided by Wilder-smoothed true range.
-Calculation: DMI- = Wilder-smoothed negative directional movement divided by Wilder-smoothed true range.
-Long: DMI+ on the last completed indicator-timeframe bar > DMI- on that bar AND DMI+ on the preceding completed indicator-timeframe bar <= DMI- on that bar
-Short: DMI+ on the last completed indicator-timeframe bar < DMI- on that bar AND DMI+ on the preceding completed indicator-timeframe bar >= DMI- on that bar
-Exit: short, DMI+ on the last completed indicator-timeframe bar > DMI- on that bar
-Exit: long, DMI+ on the last completed indicator-timeframe bar < DMI- on that bar
+Calculation: Directional lines = On each bar, let up move = high minus previous high and down move = previous low minus low. Positive directional movement is up move if up move > 0 AND up move > down move, otherwise 0; negative directional movement is down move if down move > 0 AND down move > up move, otherwise 0. Starting at the third bar, smooth each movement and true range recursively as ((period - 1) × previous smoothed value + current value) / period, with initial smoothed values of 0. Positive and negative directional lines are their respective smoothed movements divided by smoothed true range. Evaluate only when smoothed true range > 0.
+Long: Chart-timeframe positive directional line > negative directional line
+Short: Chart-timeframe positive directional line < negative directional line
+Long: On the selected indicator timeframe, which may be higher or lower than the chart timeframe, the last completed bar's positive directional line > negative directional line AND the preceding bar's positive directional line <= negative directional line
+Short: On the selected indicator timeframe, which may be higher or lower than the chart timeframe, the last completed bar's positive directional line < negative directional line AND the preceding bar's positive directional line >= negative directional line
+Exit: long, on the selected indicator timeframe, which may be higher or lower than the chart timeframe, the last completed bar's positive directional line < negative directional line
+Exit: short, on the selected indicator timeframe, which may be higher or lower than the chart timeframe, the last completed bar's positive directional line > negative directional line
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

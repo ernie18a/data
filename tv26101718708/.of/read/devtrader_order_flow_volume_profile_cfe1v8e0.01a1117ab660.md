@@ -1,18 +1,19 @@
-Calculation: Classified buy/sell volume = on each lower-timeframe bar, assign its volume to buy if its close is above the previous lower-timeframe close, or if equal and its close is above its open; assign to sell for the converse; split evenly if neither. For the first lower-timeframe bar, compare its close with the chart bar open.
-Calculation: Delta percentage = 100 × (classified buy volume − classified sell volume) / total classified volume.
-Calculation: Relative volume = current total classified volume / its moving average; the average uses a longer lookback than a single bar.
-Calculation: Session and day delta percentages = 100 × cumulative classified volume delta / cumulative total classified volume within the current configured session or calendar day, respectively.
-Calculation: Session CVD = cumulative classified volume delta within the current configured session.
-Calculation: Confirmed price pivots = swing highs or lows confirmed by bars on both sides, using equal left and right lookbacks.
-Long: Delta percentage ≥ directional pressure threshold.
-Long: Delta percentage ≥ extreme delta threshold AND relative volume ≥ minimum participation threshold.
-Long: Session delta percentage ≥ extreme delta threshold AND the session has reached its maturity bar count AND has no missing pressure bars.
-Long: Day delta percentage ≥ extreme delta threshold AND the day has reached its maturity bar count AND has no missing pressure bars.
-Long: Delta percentage ≤ −extreme delta threshold AND relative volume ≥ minimum participation threshold AND (close > open OR (close − low) / max(high − low, minimum price increment) ≥ absorption close edge).
-Long: A confirmed price pivot low is lower than the preceding confirmed pivot low in the same session AND session CVD at the new pivot is higher than at the preceding pivot.
-Short: Delta percentage ≤ −directional pressure threshold.
-Short: Delta percentage ≤ −extreme delta threshold AND relative volume ≥ minimum participation threshold.
-Short: Session delta percentage ≤ −extreme delta threshold AND the session has reached its maturity bar count AND has no missing pressure bars.
-Short: Day delta percentage ≤ −extreme delta threshold AND the day has reached its maturity bar count AND has no missing pressure bars.
-Short: Delta percentage ≥ extreme delta threshold AND relative volume ≥ minimum participation threshold AND (close < open OR (close − low) / max(high − low, minimum price increment) ≤ absorption close edge).
-Short: A confirmed price pivot high is higher than the preceding confirmed pivot high in the same session AND session CVD at the new pivot is lower than at the preceding pivot.
+Calculation: Classified volume = for each lower-timeframe bar within the chart bar, including any bar still forming, assign its nonnegative volume to buy if its close exceeds the preceding lower-timeframe close, or if those closes are equal and its close exceeds its open; assign it to sell if the corresponding comparisons are lower; otherwise split it equally. For the first lower-timeframe bar, use the chart bar open as the preceding close. Include only bars with positive volume and available high, low and close; sum their buy and sell volumes separately.
+Calculation: Delta percentage = 100 × (classified buy volume − classified sell volume) / (classified buy volume + classified sell volume), available only when classified total volume is positive.
+Calculation: Relative volume = classified total volume / its simple moving average over a lookback of chart bars with available classified volume, including the current bar.
+Calculation: Session delta percentage = 100 × cumulative classified delta / cumulative classified total volume over chart bars within the configured session, resetting at session open, or at the calendar day change for a continuous full-day session. Session cumulative volume delta is the same cumulative classified delta.
+Calculation: Daily delta percentage = 100 × cumulative classified delta / cumulative classified total volume over chart bars in the current calendar day, resetting at the day change. Previous-day delta percentage is the corresponding value from the last completed day with positive classified volume.
+Calculation: Close location = (close − low) / (high − low), or zero when high equals low.
+Calculation: Confirmed price pivot = a price low or high at a chart bar that is a pivot against an equal configurable number of bars on each side; evaluate it only after the right-side bars complete. Compare each confirmed pivot with the preceding confirmed pivot of the same kind in the same pressure session, using session cumulative volume delta at each pivot. Discard pivots outside the session and reset stored pivots at session open.
+Long: Chart-bar delta percentage > 0 AND chart-bar delta percentage >= neutral threshold.
+Short: Chart-bar delta percentage <= 0 AND absolute chart-bar delta percentage >= neutral threshold.
+Long: Session delta percentage > 0 AND session delta percentage >= neutral threshold.
+Short: Session delta percentage <= 0 AND absolute session delta percentage >= neutral threshold.
+Long: Daily delta percentage > 0 AND daily delta percentage >= neutral threshold.
+Short: Daily delta percentage <= 0 AND absolute daily delta percentage >= neutral threshold.
+Long: Previous-day delta percentage > 0 AND previous-day delta percentage >= neutral threshold.
+Short: Previous-day delta percentage <= 0 AND absolute previous-day delta percentage >= neutral threshold.
+Long: Chart-bar delta percentage <= negative extreme threshold AND relative volume >= minimum participation threshold AND (close > open OR close location >= 1 − absorption edge threshold).
+Short: Chart-bar delta percentage >= extreme threshold AND relative volume >= minimum participation threshold AND (close < open OR close location <= absorption edge threshold).
+Long: A newly confirmed session price-low pivot is lower than the preceding session price-low pivot AND its session cumulative volume delta is higher than at the preceding pivot AND both pivots and the confirmation bar belong to the same pressure session.
+Short: A newly confirmed session price-high pivot is higher than the preceding session price-high pivot AND its session cumulative volume delta is lower than at the preceding pivot AND both pivots and the confirmation bar belong to the same pressure session.

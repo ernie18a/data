@@ -1,21 +1,21 @@
-Calculation: NonLagDot = a cosine-weighted average of a moving average, using a longer lookback than its underlying moving average; weights are cosine(pi × t), multiplied by 1 when t ≤ 0.5 and otherwise by 1/(3πt + 1), then normalized by their sum. t advances in two parameterized increments across the lookback.
-Calculation: MACD = fast NonLagDot − slow NonLagDot, where the fast NonLagDot uses a shorter lookback than the slow NonLagDot.
-Calculation: Signal line = moving average of MACD.
-Long: On the indicator timeframe's latest completed bar, NonLagDot is rising by more than its filter threshold.
-Short: On the indicator timeframe's latest completed bar, NonLagDot is falling by more than its filter threshold.
-Long: On the indicator timeframe's latest two completed bars, MACD crosses from at or below zero to above zero (breakdown mode's buy condition).
-Short: On the indicator timeframe's latest two completed bars, MACD crosses from at or above zero to below zero (breakdown mode's sell condition).
-Long: On the indicator timeframe's latest three completed bars, MACD first falls and then rises (MACD twist mode).
-Short: On the indicator timeframe's latest three completed bars, MACD first rises and then falls (MACD twist mode).
-Long: On the indicator timeframe's latest three completed bars, the signal line first falls and then rises (signal twist mode).
-Short: On the indicator timeframe's latest three completed bars, the signal line first rises and then falls (signal twist mode).
-Long: On the indicator timeframe's latest two completed bars, MACD crosses from at or below the signal line to above it (MACD disposition mode).
-Short: On the indicator timeframe's latest two completed bars, MACD crosses from at or above the signal line to below it (MACD disposition mode).
-Exit: short, MACD > 0 (breakdown mode)
-Exit: long, MACD < 0 (breakdown mode)
-Exit: short, MACD is rising over the latest two completed bars (MACD twist mode)
-Exit: long, MACD is falling over the latest two completed bars (MACD twist mode)
-Exit: short, the signal line is rising over the latest two completed bars (signal twist mode)
-Exit: long, the signal line is falling over the latest two completed bars (signal twist mode)
-Exit: short, MACD > signal line on the latest completed bar (MACD disposition mode)
-Exit: long, MACD < signal line on the latest completed bar (MACD disposition mode)
+Calculation: Non-lag average N(L) = Apply a configurable moving-average method and applied price over length L. Let P=L-1, K=4L+P, t=0, and for i=0 through K-1 set g=1 when t<=0.5, otherwise g=1/(3πt+1); set w[i]=g*cos(πt). After each weight, increase t by 1/(P-1) if t<1, otherwise by 7/(4L-1) if t<K-1. N=(1+deviation/100)*sum(w[i]*moving_average[i bars ago])/sum(w[i]). Use the unfiltered calculation; the optional filter references the next bar.
+Calculation: Oscillator M = N(shorter length) minus N(longer length); signal S = configurable moving average of M. For the trading decisions, calculate M and S on a configurable higher or lower timeframe, using either its last completed bar or its forming bar according to the signal-bar setting; indices 0, 1 and 2 denote the selected bar and its two predecessors. For the indicator markings, use the chart timeframe.
+Calculation: Non-lag trend T = +1 when N[0]-N[1] exceeds the configurable filter distance, -1 when N[1]-N[0] exceeds that distance, otherwise retain the preceding trend; initialize to 0. Filter distance is a configurable price distance.
+Long: T=+1
+Short: T=-1
+Long: M[0]!=0 AND M[0]>M[1]
+Short: M[0]!=0 AND M[0]<M[1]
+Long: M[0]>S[1]
+Short: M[0]<S[1]
+Long: M[0]>0 AND M[1]<=0
+Short: M[0]<0 AND M[1]>=0
+Long: M[0]>M[1] AND M[1]<M[2]
+Short: M[0]<M[1] AND M[1]>M[2]
+Long: S[0]>S[1] AND S[1]<S[2]
+Short: S[0]<S[1] AND S[1]>S[2]
+Long: M[0]>S[0] AND M[1]<=S[1]
+Short: M[0]<S[0] AND M[1]>=S[1]
+Exit: long, M[0]<0 OR M[0]<M[1] OR S[0]<S[1] OR M[0]<S[0], according to the selected trading mode
+Exit: short, M[0]>0 OR M[0]>M[1] OR S[0]>S[1] OR M[0]>S[0], according to the selected trading mode
+Exit: long, low<=entry price minus the configured stop-loss distance OR high>=entry price plus the configured take-profit distance
+Exit: short, high>=entry price plus the configured stop-loss distance OR low<=entry price minus the configured take-profit distance

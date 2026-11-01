@@ -1,5 +1,5 @@
-Calculation: Fine-tuned candle open and close = On the configured indicator timeframe (whose relation to the chart timeframe is unspecified), calculate each raw open and close as weighted averages over the current and preceding lookback bars. For bar index i in a lookback of N bars, let x=i/(N−1); its normalized weight is proportional to [s1+(1−s1)x^r1][s2+(1−s2)(1−x)^r2][s3+(1−s3)|2x−1|^r3]. If the current raw bar's absolute open-close difference is at most the gap threshold, replace the weighted open with the preceding bar's weighted close. Use completed bars.
-Long: Fine-tuned candle close > fine-tuned candle open AND preceding completed fine-tuned candle close <= preceding completed fine-tuned candle open
-Short: Fine-tuned candle close < fine-tuned candle open AND preceding completed fine-tuned candle close >= preceding completed fine-tuned candle open
-Exit: long, fine-tuned candle close < fine-tuned candle open
-Exit: short, fine-tuned candle close > fine-tuned candle open
+Calculation: Weighted candle open and close = for each price series X, W_X[t] = sum(w[h] * X[t-h]) / sum(w[h]) over h = 0 to N-1, where x = h/(N-1) and w[h] = (a1 + x^r1 * (1-a1)) * (a2 + (1-x)^r2 * (1-a2)) * (a3 + abs(2*x-1)^r3 * (1-a3)); N, a1, a2, a3, r1, r2 and r3 are parameters. Set weighted candle close C[t] = W_close[t] and weighted candle open O[t] = C[t-1] if abs(open[t]-close[t]) <= a price-unit gap threshold, otherwise W_open[t]. Calculate on the configured indicator timeframe, which may be higher, lower, or equal to the chart timeframe; select the last completed bar by default, with an optional forming bar or a configurable older completed bar, and compare it with its immediately preceding indicator bar.
+Long: C[t] > O[t] AND C[t-1] <= O[t-1]
+Short: C[t] < O[t] AND C[t-1] >= O[t-1]
+Exit: long, C[t] < O[t] OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, C[t] > O[t] OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

@@ -1,2 +1,6 @@
-Long: cluster score >= effective display threshold AND ((zone price < close AND (cluster has no POC OR POC bias = neutral)) OR (cluster has a POC AND POC bias = bullish))
-Short: cluster score >= effective display threshold AND ((zone price > close AND (cluster has no POC OR POC bias = neutral)) OR (cluster has a POC AND POC bias = bearish))
+Calculation: Volume availability = fraction of chart bars through the current bar with non-missing, positive volume.
+Calculation: Participation anchor = a chart bar whose volume and high-minus-low range each meet their respective percentile thresholds in a required number of short, medium, and long lookback windows; alternatively, volume is at least a multiple of its simple moving average AND range is at least a multiple of ATR. If volume availability is below its reliability threshold, omit the volume condition.
+Calculation: Profile available = a participation anchor exists AND the number of bars since the latest anchor is above a minimum and below a maximum AND the highest high minus the lowest low from that anchor through the current bar is positive; once established, it remains available.
+Calculation: Buy-volume ratio = sum of volume from completed lower-timeframe bars within the current chart bar whose close is at least their open, divided by total volume of all completed lower-timeframe bars within that chart bar.
+Long: Volume availability >= reliability threshold AND profile available AND lower-timeframe total volume > 0 AND buy-volume ratio >= directional threshold.
+Short: Volume availability >= reliability threshold AND profile available AND lower-timeframe total volume > 0 AND buy-volume ratio < directional threshold AND buy-volume ratio <= 1 - directional threshold.

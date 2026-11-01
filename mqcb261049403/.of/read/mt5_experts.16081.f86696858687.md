@@ -1,6 +1,10 @@
-Calculation: BullTrend = On the chart timeframe, Awesome Oscillator is greater than or equal to its value on the preceding completed bar AND Accelerator Oscillator is greater than or equal to its value on the preceding completed bar; evaluate on the most recently completed bar
-Calculation: BearTrend = On the chart timeframe, Awesome Oscillator is less than or equal to its value on the preceding completed bar AND Accelerator Oscillator is less than or equal to its value on the preceding completed bar AND at least one oscillator is strictly lower; evaluate on the most recently completed bar
-Long: BullTrend AND NOT BullTrend on the preceding completed bar
-Short: BearTrend AND NOT BearTrend on the preceding completed bar
-Exit: Long, BearTrend
-Exit: Short, BullTrend
+Calculation: Bullish trend = Awesome Oscillator >= its previous-bar value AND Accelerator Oscillator >= its previous-bar value
+Calculation: Bearish trend = Awesome Oscillator <= its previous-bar value AND Accelerator Oscillator <= its previous-bar value AND (Awesome Oscillator < its previous-bar value OR Accelerator Oscillator < its previous-bar value)
+Long: Bullish trend on the chart bar
+Short: Bearish trend on the chart bar
+Long: Bullish trend on the selected signal bar of a higher or lower timeframe AND bullish trend is false on the preceding bar of that timeframe; the selected signal bar may be the last completed bar or the bar still forming
+Short: Bearish trend on the selected signal bar of a higher or lower timeframe AND bearish trend is false on the preceding bar of that timeframe; the selected signal bar may be the last completed bar or the bar still forming
+Exit: long, bearish trend on the selected signal bar of a higher or lower timeframe; the selected signal bar may be the last completed bar or the bar still forming
+Exit: short, bullish trend on the selected signal bar of a higher or lower timeframe; the selected signal bar may be the last completed bar or the bar still forming
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

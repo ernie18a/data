@@ -1,8 +1,4 @@
-Long: No open position AND fast simple moving average on the chart timeframe's last completed bar < slow simple moving average on the chart timeframe's last completed bar AND MACD line on the higher timeframe's last completed bar > MACD signal line on the higher timeframe's last completed bar
-Long: Long-origin recovery cycle AND last position is short AND the long-entry condition above AND bar high > recovery anchor
-Long: Short-origin recovery cycle AND last position is short AND the short-entry condition below AND bar high > recovery anchor
-Short: No open position AND fast simple moving average on the chart timeframe's last completed bar > slow simple moving average on the chart timeframe's last completed bar AND MACD line on the higher timeframe's last completed bar < MACD signal line on the higher timeframe's last completed bar
-Short: Long-origin recovery cycle AND last position is long AND the long-entry condition above AND bar low < recovery anchor - recovery-zone distance
-Short: Short-origin recovery cycle AND last position is long AND the short-entry condition below AND bar high > recovery anchor + recovery-zone distance
-Exit: long, Long-origin recovery cycle AND (bar high >= recovery anchor + take-profit distance OR bar low <= recovery anchor - take-profit distance - recovery-zone distance) OR Short-origin recovery cycle AND (bar high >= recovery anchor + take-profit distance + recovery-zone distance OR bar low <= recovery anchor - take-profit distance)
-Exit: short, Long-origin recovery cycle AND (bar high >= recovery anchor + take-profit distance OR bar low <= recovery anchor - take-profit distance - recovery-zone distance) OR Short-origin recovery cycle AND (bar high >= recovery anchor + take-profit distance + recovery-zone distance OR bar low <= recovery anchor - take-profit distance)
+Calculation: MACD main = the shorter-period EMA of close minus the longer-period EMA of close; MACD signal = the SMA of MACD main over a separate signal period.
+Long: The last completed chart bar's shorter-period SMA of close < its longer-period SMA of close AND the last completed higher-timeframe bar's MACD main > MACD signal AND MACD main != 0.
+Exit: long, high >= entry price + take-profit distance OR low <= entry price - take-profit distance - recovery-zone distance.
+Exit: short, low <= entry price - take-profit distance OR high >= entry price + take-profit distance + recovery-zone distance.

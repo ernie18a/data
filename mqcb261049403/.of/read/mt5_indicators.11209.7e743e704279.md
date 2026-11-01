@@ -1,7 +1,4 @@
-Calculation: CCI momentum = current CCI minus CCI from the momentum lookback bars earlier.
-Calculation: TSI = 100 × (CCI momentum smoothed by the selected moving average over a shorter lookback, then a longer lookback) ÷ (absolute CCI momentum smoothed by the same method and lookbacks.
-Calculation: Signal line = TSI smoothed by the selected moving average over a longer lookback than the TSI’s second smoothing lookback.
-Long: TSI > signal line
-Short: TSI < signal line
-Long: Higher-timeframe TSI > higher-timeframe signal line, using the still-forming higher-timeframe bar
-Short: Higher-timeframe TSI < higher-timeframe signal line, using the still-forming higher-timeframe bar
+Calculation: CCI momentum oscillator = 100 × double-smoothed CCI momentum / double-smoothed absolute CCI momentum. CCI momentum is current CCI minus CCI a momentum lookback ago. Smooth both series with the same selected moving-average method, first with a shorter smoothing period and then with a longer one. If the denominator is zero, use zero; replace a zero oscillator value with a small positive constant.
+Calculation: Signal line = the oscillator smoothed using the same moving-average method and a longer period than either oscillator smoothing period; replace a zero signal value with a small positive constant. Calculate the oscillator and signal either on the chart timeframe or on the still-forming bar of a higher timeframe.
+Long: CCI momentum oscillator > signal line
+Short: CCI momentum oscillator < signal line

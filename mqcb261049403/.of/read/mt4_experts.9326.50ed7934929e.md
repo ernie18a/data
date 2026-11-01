@@ -1,5 +1,8 @@
-Calculation: Median-price EMA = exponential moving average of (high + low) / 2
-Long: Median-price EMA on the most recent completed chart-timeframe bar > the same EMA on an earlier completed chart-timeframe bar AND current datetime hour > configured start hour AND current datetime hour < configured end hour
-Short: Median-price EMA on the most recent completed chart-timeframe bar < the same EMA on an earlier completed chart-timeframe bar AND current datetime hour > configured start hour AND current datetime hour < configured end hour
-Exit: Long, Median-price EMA on the most recent completed chart-timeframe bar < the same EMA on an earlier completed chart-timeframe bar AND current datetime hour > configured start hour AND current datetime hour < configured end hour
-Exit: Short, Median-price EMA on the most recent completed chart-timeframe bar > the same EMA on an earlier completed chart-timeframe bar AND current datetime hour > configured start hour AND current datetime hour < configured end hour
+Calculation: Median-price moving average = moving average of (high + low) / 2 on the chart timeframe, using the configured averaging method.
+Calculation: Last direction = the direction of the most recent qualifying long or short condition during trading hours; initially neither direction. Update it when a condition qualifies, even if no position is opened or an existing position has already exited.
+Long: Current hour > trading start hour AND current hour < trading end hour AND median-price moving average at the last completed bar > its value at an earlier completed bar at the configured offset AND last direction is not long.
+Short: Current hour > trading start hour AND current hour < trading end hour AND median-price moving average at the last completed bar < its value at an earlier completed bar at the configured offset AND last direction is not short.
+Exit: short, current hour > trading start hour AND current hour < trading end hour AND median-price moving average at the last completed bar > its value at the earlier completed bar AND last direction is not long.
+Exit: long, current hour > trading start hour AND current hour < trading end hour AND median-price moving average at the last completed bar < its value at the earlier completed bar AND last direction is not short.
+Exit: long, take-profit distance > 0 AND high >= entry price + take-profit distance OR stop-loss distance > 0 AND low <= entry price - stop-loss distance.
+Exit: short, take-profit distance > 0 AND low <= entry price - take-profit distance OR stop-loss distance > 0 AND high >= entry price + stop-loss distance.

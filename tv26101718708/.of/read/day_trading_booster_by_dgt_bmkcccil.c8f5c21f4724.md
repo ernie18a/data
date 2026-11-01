@@ -1,8 +1,16 @@
-Calculation: Confirmed pivot high = a bar high higher than the highs of the same number of bars immediately before and after it; signal when the bars after it confirm the pivot.
-Calculation: Confirmed pivot low = a bar low lower than the lows of the same number of bars immediately before and after it; signal when the bars after it confirm the pivot.
-Calculation: Provisional pivot high/low = a high/low that is the highest/lowest among three bars before and after it; signal when those bars confirm it.
-Calculation: Fast moving average = selected moving-average type and source over a shorter lookback than the slow moving average.
-Calculation: Slow moving average = selected moving-average type and source over a longer lookback than the fast moving average.
-Calculation: Volume average = simple moving average of volume.
-Long: a confirmed pivot low occurs OR a provisional pivot low is lower than the previous provisional pivot low OR fast moving average > slow moving average OR close > open AND (volume >= configured high-volume multiplier × volume average OR volume < configured high-volume multiplier × volume average AND volume <= configured low-volume multiplier × volume average) OR close > the latest confirmed pivot high that has not already been broken
-Short: a confirmed pivot high occurs OR a provisional pivot high is higher than the previous provisional pivot high OR fast moving average <= slow moving average OR close <= open AND (volume >= configured high-volume multiplier × volume average OR volume < configured high-volume multiplier × volume average AND volume <= configured low-volume multiplier × volume average) OR close < the latest confirmed pivot low that has not already been broken
+Calculation: Confirmed pivot high or low = a chart bar whose high or low is respectively the highest or lowest over equal-length left and right windows; detect it only after the right window completes, using Pine pivot tie handling.
+Calculation: Temporary pivot high or low = a confirmed pivot using the shorter pivot window; retain the most recent temporary pivot of each type, initially zero.
+Long: A confirmed pivot low is detected.
+Short: A confirmed pivot high is detected.
+Long: A temporary pivot low is detected AND its low < the previous temporary pivot low.
+Short: A temporary pivot high is detected AND its high > the previous temporary pivot high.
+Long: Close > the latest confirmed pivot high AND that pivot high has not previously been broken by a close; reset the break flag whenever a new pivot high is confirmed.
+Short: Close < the latest confirmed pivot low AND that pivot low has not previously been broken by a close; reset the break flag whenever a new pivot low is confirmed.
+Long: Shorter-period moving average > longer-period moving average.
+Short: Shorter-period moving average <= longer-period moving average.
+Long: Close crosses above the longer-period moving average.
+Short: Close crosses below the longer-period moving average.
+Long: Volume >= a high threshold times the volume SMA AND close > open OR volume <= a low threshold times the volume SMA AND volume < the high threshold times the volume SMA AND close > open.
+Short: Volume >= a high threshold times the volume SMA AND close <= open OR volume <= a low threshold times the volume SMA AND volume < the high threshold times the volume SMA AND close <= open.
+Long: The current higher-timeframe weekly bar's open > the last completed higher-timeframe weekly bar's close.
+Short: The current higher-timeframe weekly bar's open < the last completed higher-timeframe weekly bar's close.

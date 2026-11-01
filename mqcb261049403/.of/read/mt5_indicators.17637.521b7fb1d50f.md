@@ -1,3 +1,5 @@
-Calculation: Smoothed MFI oscillator = over a lookback, sum selected price × selected volume for rising and falling selected-price changes; calculate 100 × rising-flow / (rising-flow + falling-flow), smooth with the selected averaging method, then subtract 50
-Long: In level mode, smoothed MFI oscillator > upper level; OR in direction mode, smoothed MFI oscillator > previous bar's value AND smoothed MFI oscillator ≠ middle level
-Short: In level mode, smoothed MFI oscillator < lower level; OR in direction mode, smoothed MFI oscillator < previous bar's value AND smoothed MFI oscillator ≠ middle level
+Calculation: Centered smoothed money flow index = Smooth the money flow index of a selected OHLC-derived price and volume, then subtract 50. For each bar in the money-flow lookback, classify price × volume as positive or negative according to whether that bar's selected price is greater or less than the preceding bar's selected price; ignore unchanged prices. The money flow index is 100 − 100 / (1 + positive flow sum / negative flow sum), or 100 when the negative flow sum is zero.
+Long: Level mode = selected AND centered smoothed money flow index > middle level
+Short: Level mode = selected AND centered smoothed money flow index < middle level
+Long: Direction mode = selected AND centered smoothed money flow index != middle level AND centered smoothed money flow index > its previous bar value
+Short: Direction mode = selected AND centered smoothed money flow index != middle level AND centered smoothed money flow index < its previous bar value

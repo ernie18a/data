@@ -1,5 +1,6 @@
-Calculation: Derivative = 100 × (selected OHLC-based applied price − selected applied price N bars earlier) / N, calculated on the configured lower-timeframe bars.
-Long: Derivative on the latest completed lower-timeframe bar > 0 AND Derivative on the preceding completed lower-timeframe bar <= 0
-Short: Derivative on the latest completed lower-timeframe bar < 0 AND Derivative on the preceding completed lower-timeframe bar >= 0
-Exit: Long, Derivative on the latest completed lower-timeframe bar < 0 AND Derivative on the preceding completed lower-timeframe bar >= 0 OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
-Exit: Short, Derivative on the latest completed lower-timeframe bar > 0 AND Derivative on the preceding completed lower-timeframe bar <= 0 OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance
+Calculation: Applied price = selectable price series: the close, open, high, low, median price, typical price, weighted close, (open + close) / 2, (open + high + low + close) / 4, or a trend-following price. The first trend-following price is high when close > open, low when close < open, and close otherwise; the second is (high + close) / 2 when close > open, (low + close) / 2 when close < open, and close otherwise. The default is close.
+Calculation: Derivative = 100 × (applied price − applied price a lookback number of bars earlier) / lookback, calculated on a configurable timeframe that may be higher than, lower than, or equal to the chart timeframe. Use the last completed bar by default; alternatively use a configurable earlier completed bar or the bar still forming. Compare it with the immediately preceding bar of that timeframe.
+Long: Selected derivative > 0 AND preceding derivative <= 0 AND position is flat after exits
+Short: Selected derivative < 0 AND preceding derivative >= 0 AND position is flat after exits
+Exit: long, selected derivative < 0 OR low <= entry price − enabled stop-loss distance OR high >= entry price + enabled take-profit distance
+Exit: short, selected derivative > 0 OR high >= entry price + enabled stop-loss distance OR low <= entry price − enabled take-profit distance

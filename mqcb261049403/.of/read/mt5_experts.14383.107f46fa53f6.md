@@ -1,5 +1,7 @@
-Calculation: MACD candle = candle whose open and close are the selected MACD output calculated from the bar’s open and close prices; bullish when close > open, bearish when close < open, neutral when equal. Use the selected indicator timeframe, which may be higher or lower than the chart timeframe, and the configured bar and its immediately older bar; the selected bar is completed when its offset is at least one and still forming when its offset is zero.
-Long: selected MACD candle is bullish AND the immediately older MACD candle is not bullish
-Short: selected MACD candle is bearish AND the immediately older MACD candle is not bearish
-Exit: short, selected MACD candle is bullish
-Exit: long, selected MACD candle is bearish
+Calculation: MACD candle difference = selected MACD component calculated on close minus the same component calculated on open, using the same shorter and longer EMA periods for both. The component is either the MACD main line or its simple moving average signal line. Calculate on the chart timeframe for the indicator, or on a selectable higher, lower, or equal timeframe for the expert; the expert uses a selectable bar offset, including the still-forming bar or a completed bar, and the preceding bar on that timeframe.
+Long: MACD candle difference > 0
+Long: selected expert bar's MACD candle difference > 0 AND preceding bar's MACD candle difference <= 0
+Short: MACD candle difference < 0
+Short: selected expert bar's MACD candle difference < 0 AND preceding bar's MACD candle difference >= 0
+Exit: long, selected expert bar's MACD candle difference < 0 OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance
+Exit: short, selected expert bar's MACD candle difference > 0 OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance

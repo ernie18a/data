@@ -1,5 +1,5 @@
-Calculation: Dolly anchor = current daily bar's open when open-based levels are enabled; otherwise the prior completed daily bar's pivot, (high + low + close) / 3 (daily bars are higher than the chart timeframe when the chart is intraday; use the current forming daily bar for its open and the last completed daily bar for its pivot)
-Calculation: Buy area and buy target levels = Dolly anchor + their respective configured positive offsets
-Calculation: Sell area and sell target levels = Dolly anchor − their respective configured positive offsets
-Long: price is within the configured signal tolerance of any buy level OR (price >= buy area and price < first buy target) OR (price >= first buy target and price < second buy target)
-Short: price is within the configured signal tolerance of any sell level OR (price <= sell area and price > first sell target) OR (price <= first sell target and price > second sell target)
+Calculation: Base = either the open of the still-forming, time-shifted higher-timeframe bar or the pivot point calculated from the high, low, and close of the last completed time-shifted higher-timeframe bar; merge Sunday into the preceding bar.
+Calculation: Upper levels = Base plus three increasing positive price offsets; lower levels = Base minus three increasing positive price offsets.
+Long: close >= lowest upper level AND close < highest upper level
+Short: close <= highest lower level AND close > lowest lower level
+Short: close > any lower level minus a proximity distance AND close < that lower level plus the proximity distance

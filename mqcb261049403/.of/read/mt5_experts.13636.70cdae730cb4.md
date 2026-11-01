@@ -1,6 +1,7 @@
-Calculation: Forecast oscillator = 100 × (selected bar price − weighted forecast baseline) / weighted forecast baseline, where the baseline is 6/[L(L+1)] × Σ(i − (L+1)/3) × selected price from bars t−L+i, for i=1…L
-Calculation: Signal line = T3 smoothing of the forecast oscillator: apply six consecutive EMAs with the same smoothing factor, then combine EMA3…EMA6 using the T3 coefficients derived from the configured volume factor
-Long: On the last completed bar of the indicator timeframe (which may be higher or lower than the chart timeframe), forecast oscillator > signal line on the preceding bar AND forecast oscillator two bars back <= signal line three bars back AND signal line < 0
-Short: On the last completed bar of the indicator timeframe (which may be higher or lower than the chart timeframe), forecast oscillator < signal line on the preceding bar AND forecast oscillator two bars back >= signal line three bars back AND signal line > 0
-Exit: long, short condition OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, long condition OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance
+Calculation: Selected price P = a configurable choice of close, open, high, low, (high + low)/2, (high + low + close)/3, (high + low + 2*close)/4, (open + close)/2, (open + high + low + close)/4, or a directional price: high when close > open, low when close < open, otherwise close; alternatively, (high + close)/2 when close > open, (low + close)/2 when close < open, otherwise close.
+Calculation: Forecast oscillator F[t] = 100 * (P[t] - W[t]) / W[t], where W[t] = 6 / (N * (N + 1)) * sum from i = 1 to N of (i - (N + 1)/3) * P[t - N + i].
+Calculation: Signal S[t] = -b^3*E6[t] + 3*(b^2 + b^3)*E5[t] - 3*(2*b^2 + b + b^3)*E4[t] + (1 + 3*b + b^3 + 3*b^2)*E3[t], where E1 through E6 are successive exponential smoothers of F with alpha = 2/(1 + (1 + (T - 1)/2)), each initialized to zero. F and S use a configurable indicator timeframe, which may be higher or lower than the chart timeframe; evaluate the signal on its last completed bar, indexed t, when the next indicator bar begins.
+Long: F[t] > S[t-1] AND F[t-1] <= S[t-2] AND S[t] < 0.
+Short: F[t] < S[t-1] AND F[t-1] >= S[t-2] AND S[t] > 0.
+Exit: long, the most recent qualifying oscillator signal is short OR low <= entry price - stop distance OR high >= entry price + profit distance.
+Exit: short, the most recent qualifying oscillator signal is long OR high >= entry price + stop distance OR low <= entry price - profit distance.

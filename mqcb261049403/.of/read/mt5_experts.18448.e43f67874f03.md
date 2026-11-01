@@ -1,5 +1,5 @@
-Calculation: ATR-based reversal stops = ratcheting trailing stops offset from bar lows in bullish trend and bar highs in bearish trend by ATR × a multiplier; bullish reversal occurs when the prior bar's low is above the prior lower stop, and bearish reversal occurs when the prior bar's high is below the prior upper stop. Use the configured indicator timeframe, which may be higher or lower than the chart timeframe, and its last completed bar.
-Long: Bullish reversal occurs.
-Short: Bearish reversal occurs.
-Exit: long, bearish lower stop is present.
-Exit: short, bullish upper stop is present.
+Calculation: ATR trailing state = On the indicator timeframe, initialize trend, upper stop, and lower stop to zero. Starting with the first bar for which ATR is available, process bars chronologically. For bar t, set distance to a multiplier times ATR at t and set the current upper and lower stops to zero. If the previous trend is nonpositive AND low[t-1] > lower stop[t-1], overwrite upper stop[t-1] with low[t-1] - distance and set trend to positive. Then, if trend is nonnegative AND high[t-1] < upper stop[t-1], overwrite lower stop[t-1] with high[t-1] + distance and set trend to negative. If trend is nonnegative, set upper stop[t] to low[t-1] - distance when low[t-1] > upper stop[t-1] + distance, otherwise to upper stop[t-1]. If trend is nonpositive, set lower stop[t] to high[t-1] + distance when high[t-1] < lower stop[t-1] - distance, otherwise to lower stop[t-1]. Retain the prior trend when neither reversal occurs. The indicator timeframe may be the chart timeframe or a higher or lower timeframe; evaluate the selected signal bar, either the last completed bar or the bar still forming.
+Long: trend > 0 AND previous trend <= 0 AND upper stop != 0
+Short: trend < 0 AND previous trend >= 0 AND lower stop != 0
+Exit: long, lower stop != 0 OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, upper stop != 0 OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

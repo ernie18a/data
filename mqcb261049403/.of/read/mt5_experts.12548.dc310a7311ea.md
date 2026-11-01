@@ -1,9 +1,8 @@
-Calculation: EMA = exponential moving average of close on the configured indicator timeframe.
-Calculation: MACD histogram = fast EMA of close minus slow EMA of close, minus the signal EMA of that difference, on the configured indicator timeframe.
-Calculation: Bullish impulse = EMA > preceding EMA AND MACD histogram > preceding MACD histogram AND MACD histogram > 0.
-Calculation: Bearish impulse = EMA < preceding EMA AND MACD histogram < preceding MACD histogram AND MACD histogram < 0.
-Calculation: Neutral impulse = (EMA <= preceding EMA AND MACD histogram > 0) OR (EMA <= preceding EMA AND MACD histogram > preceding MACD histogram) OR (EMA >= preceding EMA AND MACD histogram < 0) OR (EMA >= preceding EMA AND MACD histogram < preceding MACD histogram).
-Long: Bullish impulse on the last completed indicator-timeframe bar AND (Bearish impulse OR Neutral impulse on the preceding completed indicator-timeframe bar).
-Short: Bearish impulse on the last completed indicator-timeframe bar AND (Bullish impulse OR Neutral impulse on the preceding completed indicator-timeframe bar).
-Exit: long, Bearish impulse on the last completed indicator-timeframe bar.
-Exit: short, Bullish impulse on the last completed indicator-timeframe bar.
+Calculation: MACD difference = EMA of close with the shorter MACD period minus EMA of close with the longer MACD period; MACD histogram = MACD difference minus its simple moving average over the signal period.
+Calculation: Impulse state = bullish when the close EMA rises from the preceding bar AND the MACD histogram rises from the preceding bar AND the MACD histogram > 0; bearish when the close EMA falls AND the MACD histogram falls AND the MACD histogram < 0; neutral when (the close EMA does not rise AND the histogram > 0) OR (the close EMA does not rise AND the histogram rises) OR (the close EMA does not fall AND the histogram < 0) OR (the close EMA does not fall AND the histogram falls). If none applies, retain that bar's previously assigned state, initially neutral. The standalone indicator uses chart bars; the trading system uses the last completed bar of a configurable higher timeframe and its preceding bar.
+Long: Chart-bar impulse state = bullish.
+Short: Chart-bar impulse state = bearish.
+Long: Last completed higher-timeframe impulse state = bullish AND preceding higher-timeframe impulse state = bearish OR neutral.
+Short: Last completed higher-timeframe impulse state = bearish AND preceding higher-timeframe impulse state = bullish OR neutral.
+Exit: long, last completed higher-timeframe impulse state = bearish OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance.
+Exit: short, last completed higher-timeframe impulse state = bullish OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance.

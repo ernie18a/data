@@ -1,5 +1,5 @@
-Calculation: Spectrally smoothed Williams %R = calculate Williams %R from high, low, and close over a lookback on the configured indicator timeframe; apply a discrete cosine transform to a rolling window of Williams %R values, zero coefficients at and above a smoothing cutoff, then apply the inverse transform. Use completed bars.
-Long: latest value > previous value AND previous value >= the value before that
-Short: latest value < previous value AND previous value <= the value before that
-Exit: long, latest value < previous value
-Exit: short, latest value > previous value
+Calculation: Spectral WPR = On the selected indicator timeframe, which may be higher, lower, or equal to the chart timeframe, take a power-of-two number of intervals plus one of the most recent Williams %R values, including the bar still forming. Order them newest first, apply a type-I discrete cosine transform with half-weighted endpoints, set coefficients at and above a configurable cutoff to zero, and apply the inverse transform. Recalculate the entire window at each evaluation; use the three reconstructed values at a configurable bar offset, with the newest selected value called S0, the preceding value S1, and the oldest S2. By default S0 is the last completed indicator-timeframe bar; the offset may select the bar still forming. For a completed-bar offset, evaluate when a new indicator-timeframe bar starts.
+Long: S0 > S1 AND S2 >= S1
+Short: S0 < S1 AND S2 <= S1
+Exit: long, S0 < S1 OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, S0 > S1 OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

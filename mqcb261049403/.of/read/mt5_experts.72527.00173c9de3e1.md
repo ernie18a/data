@@ -1,4 +1,6 @@
-Long: On the last completed chart-timeframe bar, ADX > minimum ADX level AND DI+ > DI− AND Alligator Lips > Teeth > Jaw
-Short: On the last completed chart-timeframe bar, ADX > minimum ADX level AND DI+ < DI− AND Alligator Lips < Teeth < Jaw
-Exit: long, low <= stop-loss OR high >= take-profit
-Exit: short, high >= stop-loss OR low <= take-profit
+Calculation: Alligator lines = smoothed moving averages of median price (high + low) / 2, each shifted forward by its own parameter; the lips use the shortest period and shift, the teeth intermediate, and the jaw the longest.
+Long: On the last completed bar of the selected indicator timeframe, which may be higher or lower than or equal to the chart timeframe, ADX > minimum AND DI+ > DI- AND Alligator lips > teeth AND teeth > jaw AND datetime is on an enabled trading weekday AND time is within the configured trading hours.
+Short: On the last completed bar of the selected indicator timeframe, which may be higher or lower than or equal to the chart timeframe, ADX > minimum AND DI+ <= DI- AND Alligator lips < teeth AND teeth < jaw AND datetime is on an enabled trading weekday AND time is within the configured trading hours.
+Exit: long OR short, Friday close is enabled AND datetime is Friday at or after the configured closing time AND this is the first such closing event since the most recent non-Friday day.
+Exit: long, fixed stop-loss mode is selected AND low <= entry price - configured stop distance OR fixed take-profit mode is selected AND high >= entry price + configured take-profit distance.
+Exit: short, fixed stop-loss mode is selected AND high >= entry price + configured stop distance OR fixed take-profit mode is selected AND low <= entry price - configured take-profit distance.

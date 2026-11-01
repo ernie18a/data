@@ -1,5 +1,10 @@
-Calculation: Percentage crossover channel = on the indicator timeframe, which may be higher or lower than the chart timeframe, calculate each completed bar’s middle line from the prior middle line: use close × (1 − p) if that value exceeds the prior middle line; otherwise use close × (1 + p) if that value is below the prior middle line; otherwise keep the prior middle line. Initialize the middle line from the close before the first calculated bar. The upper and lower bands are middle × (1 + p) and middle × (1 − p), respectively; compare each bar’s close with the band displaced backward by the channel’s horizontal shift. Use completed bars only.
-Long: signal-bar close > displaced upper band AND previous completed bar close ≤ its displaced upper band
-Short: signal-bar close < displaced lower band AND previous completed bar close ≥ its displaced lower band
-Exit: long, signal-bar close < displaced lower band
-Exit: short, signal-bar close > displaced upper band
+Calculation: Channel = initialize the middle to the first close; for each subsequent bar, set the middle to close × (1 − percentage) if that exceeds the previous middle, otherwise to close × (1 + percentage) if that is below the previous middle, otherwise retain the previous middle. Upper and lower channel values are the middle multiplied by (1 + percentage) and (1 − percentage), respectively; compare each bar with channel values from a parameterized number of bars earlier.
+Long: Chart-timeframe close > upper channel
+Short: Chart-timeframe close < lower channel
+Long: Selected signal bar close > upper channel AND preceding signal bar close <= its upper channel
+Short: Selected signal bar close < lower channel AND preceding signal bar close >= its lower channel
+Exit: short, selected signal bar close > upper channel
+Exit: long, selected signal bar close < lower channel
+Exit: long, low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price − take-profit distance
+Calculation: Selected signal bar = a parameterized bar on the indicator timeframe, which may be higher or lower than the chart timeframe; use the last completed bar by default, or the still-forming bar when configured. Evaluate completed-bar signals when a new indicator-timeframe bar begins.

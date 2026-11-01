@@ -1,6 +1,5 @@
-Calculation: Leading line = Smooth the recursive series L_t = 2M_t + (α−2)M_{t−1} + (1−α)L_{t−1}, where M_t = (high_t + low_t)/2, using a second smoothing coefficient; calculate on the configured indicator timeframe, independently of the chart timeframe.
-Calculation: EMA line = Exponential moving average of the high-low midpoint on the configured indicator timeframe.
-Long: Leading line on the latest signal bar > EMA line on the latest signal bar AND Leading line on the immediately preceding signal bar < EMA line on the immediately preceding signal bar; both bars are completed bars on the configured indicator timeframe.
-Short: Leading line on the latest signal bar < EMA line on the latest signal bar AND Leading line on the immediately preceding signal bar > EMA line on the immediately preceding signal bar; both bars are completed bars on the configured indicator timeframe.
-Exit: short, Leading line on the latest signal bar > EMA line on the latest signal bar on the configured indicator timeframe.
-Exit: long, Leading line on the latest signal bar < EMA line on the latest signal bar on the configured indicator timeframe.
+Calculation: Indicator lines = On a configurable indicator timeframe, which may be higher or lower than the chart timeframe, let P[t] = (high[t] + low[t]) / 2. For the first three bars, set L[t] = N[t] = E[t] = P[t]. Thereafter, L[t] = 2*P[t] + (a - 2)*P[t-1] + (1 - a)*L[t-1]; N[t] = b*L[t] + (1 - b)*N[t-1]; E[t] = 0.5*P[t] + 0.5*E[t-1], where a and b are independent coefficients. Use the last completed indicator bar, or the still-forming bar if configured; t-1 is the preceding indicator bar.
+Long: N[t] > E[t] AND N[t-1] < E[t-1] AND position is flat.
+Short: N[t] < E[t] AND N[t-1] > E[t-1] AND position is flat.
+Exit: long, N[t] < E[t] OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, N[t] > E[t] OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

@@ -1,4 +1,5 @@
-Calculation: Blau TS stochastic = 200 × triple-smoothed (applied price − rolling lowest low) ÷ triple-smoothed (rolling highest high − rolling lowest low) − 100; use the same smoothing method and lookback sequence for numerator and range. On the selected higher timeframe, using its bar still forming.
-Calculation: Signal = oscillator smoothed with the same method and the third smoothing lookback, on the selected higher timeframe bar still forming.
-Long: oscillator > signal OR (oscillator > 0 AND oscillator > its previous bar) OR (oscillator < 0 AND oscillator > its previous bar)
-Short: oscillator < signal OR (oscillator < 0 AND oscillator < its previous bar) OR (oscillator > 0 AND oscillator < its previous bar)
+Calculation: Oscillator = 200 × S(selected price − lowest low) / S(highest high − lowest low) − 100; S applies the same moving-average method in three successive stages with independently chosen lengths to each series; highest high and lowest low use the same lookback including the current bar. If the smoothed range is zero, oscillator = 0.
+Calculation: Signal = moving average of the oscillator using the same method and length as the third smoothing stage.
+Calculation: Evaluate the oscillator and signal either on the chart timeframe or on the higher timeframe using its still-forming bar; compare successive oscillator values within the chosen timeframe.
+Long: oscillator > signal OR (oscillator ≠ 0 AND oscillator > previous oscillator)
+Short: oscillator < signal OR (oscillator ≠ 0 AND oscillator < previous oscillator)

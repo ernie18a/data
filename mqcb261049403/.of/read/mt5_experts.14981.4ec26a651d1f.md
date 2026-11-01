@@ -1,5 +1,12 @@
-Calculation: Stochastic %K and %D = standard stochastic main and signal lines on the configured indicator timeframe, which may be higher or lower than the chart timeframe; evaluate the two most recent completed bars.
-Long: %K > %D on the most recent completed bar AND %K <= %D on the preceding completed bar OR %K > the overbought level on the most recent completed bar AND %K <= the overbought level on the preceding completed bar
-Short: %K < %D on the most recent completed bar AND %K >= %D on the preceding completed bar OR %K < the oversold level on the most recent completed bar AND %K >= the oversold level on the preceding completed bar
-Exit: short, %K > %D on the most recent completed bar AND %K <= %D on the preceding completed bar OR %K > the overbought level on the most recent completed bar AND %K <= the overbought level on the preceding completed bar
-Exit: long, %K < %D on the most recent completed bar AND %K >= %D on the preceding completed bar OR %K < the oversold level on the most recent completed bar AND %K >= the oversold level on the preceding completed bar
+Long: Chart-timeframe stochastic main line > stochastic signal line.
+Short: Chart-timeframe stochastic main line < stochastic signal line.
+Long: Chart-timeframe stochastic main line > upper threshold.
+Short: Chart-timeframe stochastic main line < lower threshold.
+Long: On the selected higher or lower indicator timeframe, the last completed bar's stochastic main line > signal line AND the preceding bar's main line <= signal line.
+Short: On the selected higher or lower indicator timeframe, the last completed bar's stochastic main line < signal line AND the preceding bar's main line >= signal line.
+Long: On the selected higher or lower indicator timeframe, the last completed bar's stochastic main line > upper threshold AND the preceding bar's main line <= upper threshold.
+Short: On the selected higher or lower indicator timeframe, the last completed bar's stochastic main line < lower threshold AND the preceding bar's main line >= lower threshold.
+Exit: long, the last completed bar's stochastic main line on the selected higher or lower indicator timeframe < its signal line OR its main line < lower threshold.
+Exit: short, the last completed bar's stochastic main line on the selected higher or lower indicator timeframe > its signal line OR its main line > upper threshold.
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

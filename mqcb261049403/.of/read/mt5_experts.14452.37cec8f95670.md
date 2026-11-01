@@ -1,5 +1,10 @@
-Calculation: DeMarker step line = Apply the DeMarker indicator to bars of the selected indicator timeframe and multiply its value by 100. For each step size, maintain upper and lower bands initialized to +∞ and −∞ and a trend initially 0. On each bar, set candidate bands to DeMarker × 100 ± 2 × step size. Set trend to up if DeMarker × 100 exceeds the prior upper band; set it to down if it is below the prior lower band. In an uptrend, keep the candidate lower band at least as high as the prior lower band; in a downtrend, keep the candidate upper band at most as high as the prior upper band. The line is the lower band plus the step size in an uptrend, or the upper band minus the step size in a downtrend. The fast line uses a shorter step size than the slow line. Evaluate on the last completed bar of the selected indicator timeframe, which may be higher or lower than the chart timeframe.
-Long: Fast line on the older completed indicator-timeframe bar > slow line on that bar AND fast line on the latest completed indicator-timeframe bar <= slow line on that bar
-Short: Fast line on the older completed indicator-timeframe bar < slow line on that bar AND fast line on the latest completed indicator-timeframe bar >= slow line on that bar
-Exit: short, Fast line > slow line on the latest completed indicator-timeframe bar
-Exit: long, Fast line < slow line on the latest completed indicator-timeframe bar
+Calculation: Step DeMarker = For each step size, independently process DeMarker multiplied by 100 in chronological order. Initialize the previous lower band to positive infinity, the previous upper band to negative infinity, and trend to zero. For each bar, set lower = DeMarker - 2 × step size and upper = DeMarker + 2 × step size. Set trend to +1 if DeMarker > previous upper band, or to -1 if DeMarker < previous lower band; otherwise retain the previous trend. If trend is +1, set lower = max(lower, previous lower band) and output lower + step size. If trend is -1, set upper = min(upper, previous upper band) and output upper - step size. Save both bands for the next bar. Calculate fast and slow lines with the same DeMarker period and a smaller step size for the fast line.
+Calculation: Signal lines = Step DeMarker lines calculated on a selectable indicator timeframe, which may be the chart timeframe or a higher or lower timeframe. Use the last completed indicator bar, or the still-forming indicator bar when configured; previous means the preceding indicator bar.
+Long: Chart-timeframe fast Step DeMarker > chart-timeframe slow Step DeMarker
+Short: Chart-timeframe fast Step DeMarker < chart-timeframe slow Step DeMarker
+Long: Signal fast line > signal slow line AND previous signal fast line <= previous signal slow line
+Short: Signal fast line < signal slow line AND previous signal fast line >= previous signal slow line
+Exit: long, signal fast line < signal slow line
+Exit: short, signal fast line > signal slow line
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

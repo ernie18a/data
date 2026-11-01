@@ -1,4 +1,5 @@
-Calculation: Smoothed chart-timeframe open/close = apply the selected smoothing method to each chart-timeframe bar’s open/close series
-Calculation: Smoothed higher-timeframe open/close = apply the selected smoothing method to each higher-timeframe bar’s open/close series
-Long: Smoothed chart-timeframe close > smoothed chart-timeframe open OR smoothed higher-timeframe close >= smoothed higher-timeframe open (higher-timeframe bar still forming)
-Short: Smoothed chart-timeframe close <= smoothed chart-timeframe open OR smoothed higher-timeframe open > smoothed higher-timeframe close (higher-timeframe bar still forming)
+Calculation: Smoothed open and smoothed close = apply the same selected smoothing method and parameters independently to the open and close series.
+Long: Chart-timeframe smoothed close > smoothed open
+Short: Chart-timeframe smoothed close <= smoothed open
+Long: Chart bar opens at the start of a higher-timeframe bar AND the still-forming higher-timeframe smoothed close >= smoothed open AND both smoothed values are nonzero
+Short: Chart bar opens at the start of a higher-timeframe bar AND the still-forming higher-timeframe smoothed close < smoothed open AND both smoothed values are nonzero

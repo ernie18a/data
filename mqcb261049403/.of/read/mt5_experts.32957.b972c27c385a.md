@@ -1,11 +1,23 @@
-Calculation: Signal bars = Bars on the selected candle timeframe; bar 1 is the latest completed bar, and bars 2 and 3 are earlier completed bars. The selected timeframe may be lower than, equal to, or higher than the chart timeframe.
-Calculation: Average body(i) = mean of |open − close| over the configured number of consecutive signal bars starting at bar i.
-Calculation: Midpoint(i) = (high(i) + low(i)) / 2.
-Calculation: Body midpoint(i) = (open(i) + close(i)) / 2.
-Calculation: Close SMA(i) = simple moving average of signal-bar closes at bar i.
-Calculation: Bullish candle pattern = any of: (1) bars 3, 2, 1 each have close − open > Average body(1), with Midpoint(3) < Midpoint(2) < Midpoint(1); (2) close(1) − open(1) > Average body(1), open(2) − close(2) > Average body(1), close(2) > close(1), close(1) < open(2), Body midpoint(2) < Close SMA(2), and open(1) < low(2); (3) open(3) − close(3) > Average body(1), Average body(2) < 0.1 × Average body(1), close(2) < close(3), open(2) < open(3), open(1) > close(2), and close(1) > close(2); (4) open(2) > close(2), close(1) − open(1) > Average body(1), close(1) > open(2), Body midpoint(2) < Close SMA(2), and open(1) < close(2); (5) open(3) − close(3) > Average body(1), |close(2) − open(2)| < 0.5 × Average body(1), close(2) < close(3), open(2) < open(3), and close(1) > Body midpoint(3); (6) close(1) > open(1), open(2) − close(2) > Average body(1), close(1) < open(2), open(1) > close(2), and Midpoint(2) < Close SMA(2); (7) open(2) − close(2) > Average body(1), close(1) − open(1) > Average body(1), and |close(1) − close(2)| < 0.1 × Average body(1).
-Calculation: Bearish candle pattern = any of: (1) bars 3, 2, 1 each have open − close > Average body(1), with Midpoint(3) > Midpoint(2) > Midpoint(1); (2) close(2) − open(2) > Average body(1), close(1) < close(2), close(1) > open(2), Body midpoint(2) > Close SMA(1), and open(1) > high(2); (3) close(3) − open(3) > Average body(1), Average body(2) < 0.1 × Average body(1), close(2) > close(3), open(2) > open(3), open(1) < close(2), and close(1) < close(2); (4) open(2) < close(2), open(1) − close(1) > Average body(1), close(1) < open(2), Body midpoint(2) > Close SMA(2), and open(1) > close(2); (5) close(3) − open(3) > Average body(1), |close(2) − open(2)| < 0.5 × Average body(1), close(2) > close(3), open(2) > open(3), and close(1) < Body midpoint(3); (6) close(1) < open(1), close(2) − open(2) > Average body(1), close(1) > open(2), open(1) < close(2), and Midpoint(2) > Close SMA(2); (7) close(2) − open(2) > Average body(1), open(1) − close(1) > Average body(1), and |close(1) − close(2)| < 0.1 × Average body(1).
-Long: Bullish candle pattern AND previous completed bar's tick volume on the selected volume timeframe > configured minimum volume.
-Short: Bearish candle pattern AND previous completed bar's tick volume on the selected volume timeframe > configured minimum volume.
-Exit: long, price <= entry price − configured stop-loss distance OR price >= entry price + configured take-profit distance.
-Exit: short, price >= entry price + configured stop-loss distance OR price <= entry price − configured take-profit distance.
+Calculation: Candle notation = O[i], H[i], L[i], C[i] are open, high, low, close of the i-th most recently completed candle on the candle timeframe, which may be the chart timeframe or a higher or lower timeframe; i=1 is the last completed candle.
+Calculation: Body average A[i] = mean of abs(O[j] - C[j]) over the body-lookback candles starting at i and proceeding backward on the candle timeframe.
+Calculation: Range midpoint M[i] = (H[i] + L[i]) / 2.
+Calculation: Body midpoint B[i] = (O[i] + C[i]) / 2.
+Calculation: Trend average S[i] = simple moving average of close ending at candle i on the candle timeframe; its lookback is independent of the body-average lookback.
+Calculation: Initial-entry filter = last completed volume-bar volume > initial-volume threshold AND datetime weekday is enabled AND (month-boundary restriction is disabled OR day of month >= 1 + beginning exclusion AND day of month <= assumed month length - ending exclusion) AND (opening-hours restriction is disabled OR time >= opening time AND time < break start OR time >= break end AND time < closing time); the assumed February length excludes leap day. The volume timeframe may be the chart timeframe or a higher or lower timeframe.
+Long: Initial-entry filter AND C[3] - O[3] > A[1] AND C[2] - O[2] > A[1] AND C[1] - O[1] > A[1] AND M[2] > M[3] AND M[1] > M[2].
+Long: Initial-entry filter AND C[1] - O[1] > A[1] AND O[2] - C[2] > A[1] AND C[2] > C[1] AND C[1] < O[2] AND B[2] < S[2] AND O[1] < L[2].
+Long: Initial-entry filter AND O[3] - C[3] > A[1] AND A[2] < A[1] * doji factor AND C[2] < C[3] AND O[2] < O[3] AND O[1] > C[2] AND C[1] > C[2].
+Long: Initial-entry filter AND O[2] > C[2] AND C[1] - O[1] > A[1] AND C[1] > O[2] AND B[2] < S[2] AND O[1] < C[2].
+Long: Initial-entry filter AND O[3] - C[3] > A[1] AND abs(C[2] - O[2]) < A[1] * star-body factor AND C[2] < C[3] AND O[2] < O[3] AND C[1] > B[3].
+Long: Initial-entry filter AND C[1] > O[1] AND O[2] - C[2] > A[1] AND C[1] < O[2] AND O[1] > C[2] AND M[2] < S[2].
+Long: Initial-entry filter AND O[2] - C[2] > A[1] AND C[1] - O[1] > A[1] AND abs(C[1] - C[2]) < meeting-line factor * A[1].
+Short: Initial-entry filter AND O[3] - C[3] > A[1] AND O[2] - C[2] > A[1] AND O[1] - C[1] > A[1] AND M[2] < M[3] AND M[1] < M[2].
+Short: Initial-entry filter AND C[2] - O[2] > A[1] AND C[1] < C[2] AND C[1] > O[2] AND B[2] > S[1] AND O[1] > H[2].
+Short: Initial-entry filter AND C[3] - O[3] > A[1] AND A[2] < A[1] * doji factor AND C[2] > C[3] AND O[2] > O[3] AND O[1] < C[2] AND C[1] < C[2].
+Short: Initial-entry filter AND O[2] < C[2] AND O[1] - C[1] > A[1] AND C[1] < O[2] AND B[2] > S[2] AND O[1] > C[2].
+Short: Initial-entry filter AND C[3] - O[3] > A[1] AND abs(C[2] - O[2]) < A[1] * star-body factor AND C[2] > C[3] AND O[2] > O[3] AND C[1] < B[3].
+Short: Initial-entry filter AND C[1] < O[1] AND C[2] - O[2] > A[1] AND C[1] > O[2] AND O[1] < C[2] AND M[2] > S[2].
+Short: Initial-entry filter AND C[2] - O[2] > A[1] AND O[1] - C[1] > A[1] AND abs(C[1] - C[2]) < meeting-line factor * A[1].
+Exit: long, stop loss enabled AND low <= entry price - stop-loss distance OR take profit enabled AND high >= entry price + take-profit distance.
+Exit: short, stop loss enabled AND high >= entry price + stop-loss distance OR take profit enabled AND low <= entry price - take-profit distance.
+Exit: long OR short, opening-hours restriction enabled AND end-of-session exit enabled AND time >= closing time OR opening-hours restriction enabled AND break exit enabled AND time >= break start AND time < break end.

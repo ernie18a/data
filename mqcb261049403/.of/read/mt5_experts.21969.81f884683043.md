@@ -1,6 +1,5 @@
-Calculation: Fast moving average = moving average with a shorter lookback, calculated from close prices on the configured signal timeframe; evaluate the last completed bar and its preceding bar.
-Calculation: Slow moving average = moving average with a longer lookback than the fast moving average, calculated from close prices on the configured signal timeframe; evaluate the last completed bar and its preceding bar.
-Long: Fast moving average on the last completed signal-timeframe bar > slow moving average AND fast moving average on the preceding signal-timeframe bar < slow moving average
-Short: Fast moving average on the last completed signal-timeframe bar < slow moving average AND fast moving average on the preceding signal-timeframe bar > slow moving average
-Exit: long, short condition
-Exit: short, long condition
+Calculation: MA trend = Initially neutral; on each completed signal-timeframe bar, change to bullish when the shorter-period moving average is strictly above the longer-period moving average and was strictly below it on the preceding bar, provided the prior trend was neutral or bearish; change to bearish on the symmetric strict downward crossing, provided the prior trend was neutral or bullish. Otherwise retain the prior trend. Each moving average has its own configurable method and applied price. The signal timeframe may be the chart timeframe or a higher or lower timeframe; use its last completed bar, or its still-forming bar when configured. For a still-forming bar, compare against the trend through the last completed bar and do not update that trend until the bar completes.
+Long: Shorter-period moving average > longer-period moving average AND shorter-period moving average on the preceding signal-timeframe bar < longer-period moving average on that bar AND prior MA trend is neutral or bearish
+Short: Shorter-period moving average < longer-period moving average AND shorter-period moving average on the preceding signal-timeframe bar > longer-period moving average on that bar AND prior MA trend is neutral or bullish
+Exit: long, MA trend is bearish OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance
+Exit: short, MA trend is bullish OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance

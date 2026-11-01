@@ -1,4 +1,14 @@
-Long: AO on a higher timeframe using its last completed bar is greater than its previous value AND AC on a higher timeframe using its last completed bar is greater than its previous value
-Short: AO on a higher timeframe using its last completed bar is less than its previous value AND AC on a higher timeframe using its last completed bar is less than its previous value
-Exit: long, AO on a higher timeframe using its last completed bar is less than its previous value OR AC on a higher timeframe using its last completed bar is less than its previous value
-Exit: short, AO on a higher timeframe using its last completed bar is greater than its previous value OR AC on a higher timeframe using its last completed bar is greater than its previous value
+Long: At the close of a bar on the shorter of the two oscillator timeframes, the Awesome Oscillator on its selected completed bar is greater than its preceding bar AND the Accelerator Oscillator on its independently selected completed bar is greater than its preceding bar; each oscillator timeframe may be higher or lower than the chart timeframe.
+Short: At the close of a bar on the shorter of the two oscillator timeframes, the Awesome Oscillator on its selected completed bar is less than or equal to its preceding bar AND the Accelerator Oscillator on its independently selected completed bar is less than or equal to its preceding bar; each oscillator timeframe may be higher or lower than the chart timeframe.
+Long: The Awesome Oscillator on the still-forming higher-timeframe bar is greater than zero AND greater than its preceding bar.
+Long: The Awesome Oscillator on the still-forming higher-timeframe bar is less than zero AND greater than its preceding bar.
+Short: The Awesome Oscillator on the still-forming higher-timeframe bar is greater than zero AND less than its preceding bar.
+Short: The Awesome Oscillator on the still-forming higher-timeframe bar is less than zero AND less than its preceding bar.
+Long: The Accelerator Oscillator on the still-forming higher-timeframe bar is greater than zero AND greater than its preceding bar.
+Long: The Accelerator Oscillator on the still-forming higher-timeframe bar is less than zero AND greater than its preceding bar.
+Short: The Accelerator Oscillator on the still-forming higher-timeframe bar is greater than zero AND less than its preceding bar.
+Short: The Accelerator Oscillator on the still-forming higher-timeframe bar is less than zero AND less than its preceding bar.
+Exit: long, at the close of a bar on the shorter of the two oscillator timeframes, the Awesome Oscillator on its selected completed bar is less than or equal to its preceding bar OR the Accelerator Oscillator on its independently selected completed bar is less than or equal to its preceding bar; each oscillator timeframe may be higher or lower than the chart timeframe.
+Exit: short, at the close of a bar on the shorter of the two oscillator timeframes, the Awesome Oscillator on its selected completed bar is greater than its preceding bar OR the Accelerator Oscillator on its independently selected completed bar is greater than its preceding bar; each oscillator timeframe may be higher or lower than the chart timeframe.
+Exit: long, low is less than or equal to entry price minus the configured stop-loss distance OR high is greater than or equal to entry price plus the configured take-profit distance.
+Exit: short, high is greater than or equal to entry price plus the configured stop-loss distance OR low is less than or equal to entry price minus the configured take-profit distance.

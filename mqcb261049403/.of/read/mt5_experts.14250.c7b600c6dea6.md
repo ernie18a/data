@@ -1,6 +1,4 @@
-Calculation: Open Momentum = 100 × bar open / open from the lookback period earlier, on the indicator timeframe
-Calculation: Close Momentum = 100 × bar close / close from the lookback period earlier, on the indicator timeframe
-Long: Open Momentum on the last completed signal-timeframe bar < Close Momentum on that bar AND Open Momentum on the preceding signal-timeframe bar ≥ Close Momentum on that bar
-Short: Open Momentum on the last completed signal-timeframe bar > Close Momentum on that bar AND Open Momentum on the preceding signal-timeframe bar ≤ Close Momentum on that bar
-Exit: Short, Open Momentum on the last completed signal-timeframe bar < Close Momentum on that bar AND Open Momentum on the preceding signal-timeframe bar ≥ Close Momentum on that bar
-Exit: Long, Open Momentum on the last completed signal-timeframe bar > Close Momentum on that bar AND Open Momentum on the preceding signal-timeframe bar ≤ Close Momentum on that bar
+Long: On the last completed signal bar, close-price Momentum crosses above open-price Momentum; both use the same lookback. The signal timeframe may be higher or lower than the chart timeframe.
+Short: On the last completed signal bar, close-price Momentum crosses below open-price Momentum; both use the same lookback. The signal timeframe may be higher or lower than the chart timeframe.
+Exit: long, the most recent signal through the last completed signal bar is short OR low <= entry price minus the stop-loss distance OR high >= entry price plus the take-profit distance.
+Exit: short, the most recent signal through the last completed signal bar is long OR high >= entry price plus the stop-loss distance OR low <= entry price minus the take-profit distance.

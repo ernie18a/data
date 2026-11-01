@@ -1,5 +1,8 @@
-Calculation: +DI and -DI = the ADX positive and negative directional indicators, respectively.
-Long: On the configured indicator timeframe, +DI > -DI on the last completed bar AND +DI <= -DI on the preceding completed bar (the indicator timeframe may be higher, lower, or equal to the chart timeframe).
-Short: On the configured indicator timeframe, +DI < -DI on the last completed bar AND +DI >= -DI on the preceding completed bar (the indicator timeframe may be higher, lower, or equal to the chart timeframe).
-Exit: long, the short condition occurs OR price <= entry price minus the stop-loss distance OR price >= entry price plus the take-profit distance.
-Exit: short, the long condition occurs OR price >= entry price plus the stop-loss distance OR price <= entry price minus the take-profit distance.
+Long: On the chart timeframe, +DI crosses above -DI, with +DI on the previous bar <= -DI on the previous bar.
+Short: On the chart timeframe, +DI crosses below -DI, with +DI on the previous bar >= -DI on the previous bar.
+Long: On a configured higher or lower timeframe, +DI crosses above -DI, with +DI on the preceding bar <= -DI on the preceding bar; use the last completed bar or the still-forming bar, as configured.
+Short: On a configured higher or lower timeframe, +DI crosses below -DI, with +DI on the preceding bar >= -DI on the preceding bar; use the last completed bar or the still-forming bar, as configured.
+Exit: long, the most recent +DI/-DI crossover on the configured higher or lower timeframe is downward; use the last completed bar or the still-forming bar, as configured.
+Exit: short, the most recent +DI/-DI crossover on the configured higher or lower timeframe is upward; use the last completed bar or the still-forming bar, as configured.
+Exit: long, low <= entry price minus the enabled fixed stop-loss distance OR high >= entry price plus the enabled fixed take-profit distance.
+Exit: short, high >= entry price plus the enabled fixed stop-loss distance OR low <= entry price minus the enabled fixed take-profit distance.

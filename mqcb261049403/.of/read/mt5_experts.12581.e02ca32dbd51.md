@@ -1,4 +1,5 @@
-Long: On the configured signal timeframe’s last completed bar, moving average <= its value MAShift bars earlier AND close >= close MAShift bars earlier AND close <= close (MAPeriod + MAShift) bars earlier AND close < open AND the most recent signal state is not long (initially neutral)
-Short: On the configured signal timeframe’s last completed bar, moving average >= its value MAShift bars earlier AND close <= close MAShift bars earlier AND close >= close (MAPeriod + MAShift) bars earlier AND close > open AND the most recent signal state is not short (initially neutral)
-Exit: long, the short-entry condition occurs
-Exit: short, the long-entry condition occurs
+Calculation: Signal direction = initially neutral; on each completed signal-timeframe bar, change to long or short when the corresponding entry conditions occur; otherwise retain the previous direction. The signal timeframe is higher than the chart timeframe; use its last completed bar.
+Long: Previous signal direction is not long AND moving average of the applied price <= its value at the shorter lookback AND close >= close at the shorter lookback AND close <= close at the longer lookback AND close < open. The longer lookback equals the shorter lookback plus the moving-average period.
+Short: Previous signal direction is not short AND moving average of the applied price >= its value at the shorter lookback AND close <= close at the shorter lookback AND close >= close at the longer lookback AND close > open. The longer lookback equals the shorter lookback plus the moving-average period.
+Exit: long, signal direction = short OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance.
+Exit: short, signal direction = long OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance.

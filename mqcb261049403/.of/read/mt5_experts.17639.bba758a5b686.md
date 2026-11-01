@@ -1,7 +1,5 @@
-Calculation: Upper base = highest high over the lookback beginning the specified offset before the evaluated bar, minus ATR multiplied by a factor; use the indicator timeframe, which may be higher or lower than the chart timeframe, and the last completed bar.
-Calculation: Lower base = lowest low over the same lookback and timeframe, plus ATR multiplied by the same factor.
-Calculation: Up and down bands = recursively assign bands using the prior direction: when prior direction is nonnegative, if close < upper base set direction negative, Up = lower base, and Down = upper base; otherwise Up = upper base and Down = lower base. When prior direction is negative, if close > lower base set direction positive, Down = lower base, and Up = upper base; otherwise Up = lower base and Down = upper base.
-Long: previous Down <= previous Up AND current Down > current Up
-Short: previous Down >= previous Up AND current Down < current Up
-Exit: long, previous Down >= previous Up AND current Down < current Up
-Exit: short, previous Down <= previous Up AND current Down > current Up
+Calculation: Bands = on the chart timeframe or a configurable higher or lower timeframe, calculate H as the highest high over a lookback starting a configurable number of bars before the evaluated bar, minus a multiple of that bar's ATR; calculate L as the lowest low over the same bars plus the same ATR multiple. Initialize direction, U and D to zero. For each completed bar, if direction is nonnegative and close < H, set direction to negative, U = L and D = H; if direction is nonnegative and close >= H, set U = H and D = L. If direction is negative and close > L, set direction to positive, U = H and D = L; if direction is negative and close <= L, set U = L and D = H. Evaluate signals using the last completed indicator-timeframe bar; alternatively, evaluate the still-forming bar against the direction and U and D of the last completed bar without committing its direction until it closes.
+Long: Previous D <= previous U AND D > U
+Short: Previous D >= previous U AND D < U
+Exit: long, the most recent Long or Short signal is Short OR low <= entry price minus the stop-loss distance OR high >= entry price plus the take-profit distance
+Exit: short, the most recent Long or Short signal is Long OR high >= entry price plus the stop-loss distance OR low <= entry price minus the take-profit distance

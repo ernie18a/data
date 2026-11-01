@@ -1,7 +1,11 @@
-Calculation: Hi-Lo Range Oscillator = 100 × (current bar midpoint − lowest low over its lookback) ÷ (highest high over its lookback − lowest low over its lookback), or 0 if the range is zero
-Calculation: Fast trend line = weighted sum of five Hi-Lo Range Oscillators with progressively longer lookbacks
-Calculation: Slow trend line = exponentially smoothed fast trend line using the prior slow trend line
-Long: On the configured indicator timeframe, fast trend line > slow trend line on the latest completed bar AND fast trend line < slow trend line on the preceding completed bar
-Short: On the configured indicator timeframe, fast trend line < slow trend line on the latest completed bar AND fast trend line > slow trend line on the preceding completed bar
-Exit: Short, fast trend line > slow trend line on the latest completed bar AND fast trend line < slow trend line on the preceding completed bar
-Exit: Long, fast trend line < slow trend line on the latest completed bar AND fast trend line > slow trend line on the preceding completed bar
+Calculation: Range oscillator = for each of five progressively longer lookbacks, 100 × (current bar midpoint of high and low − lowest low over the lookback) / (highest high − lowest low over the lookback), including the current bar; use zero when the range is zero.
+Calculation: Fast line = weighted sum of the five range oscillators; the second and third oscillators use the same weight, while the others have separate weights.
+Calculation: Slow line = fast line / smoothing length + previous slow line × (smoothing length − 1) / smoothing length. Initialize the slow line to the fast line / smoothing length on the bar with three times the longest lookback plus three preceding bars. Calculate the lines on the chart timeframe for the indicator markings, or on a configurable higher or lower timeframe for the trading signals, using its last completed bar or its still-forming bar according to the signal-bar setting.
+Long: Fast line > slow line.
+Short: Fast line < slow line.
+Long: Fast line > slow line AND previous fast line < previous slow line.
+Short: Fast line < slow line AND previous fast line > previous slow line.
+Exit: long, fast line < slow line.
+Exit: short, fast line > slow line.
+Exit: long, low <= entry price − stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price − take-profit distance.

@@ -1,3 +1,3 @@
-Calculation: X2MA on each configured timeframe = apply a configurable smoothing to the selected price, then apply a second configurable smoothing to that result; all four timeframes use the same smoothing configuration
-Long: on the first chart bar of a new configured timeframe bar, X2MA on that timeframe (current bar still forming) > X2MA on its preceding completed bar
-Short: on the first chart bar of a new configured timeframe bar, X2MA on that timeframe (current bar still forming) < X2MA on its preceding completed bar
+Calculation: Double-smoothed moving average = apply a configurable moving-average method to a configurable OHLC-derived price, then apply a second configurable moving-average method to the result, with independently configurable smoothing parameters. Calculate independently on each selected timeframe, which may be the chart timeframe or a higher timeframe, using the bar still forming.
+Long: On the first chart bar of a selected timeframe bar, its double-smoothed moving average is greater than on the preceding timeframe bar, OR the most recent unequal comparison at such a boundary was greater.
+Short: On the first chart bar of a selected timeframe bar, its double-smoothed moving average is less than on the preceding timeframe bar, OR the most recent unequal comparison at such a boundary was less.

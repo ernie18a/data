@@ -1,6 +1,7 @@
-Calculation: DiNapoli stochastic main line = recursively smooth 100 × (close − lowest low over the lookback) ÷ max(highest high − lowest low over the same lookback, one price point), with smoothing factor 1 ÷ the main-line smoothing period and initial value 50
-Calculation: DiNapoli stochastic signal line = recursively smooth the main line with smoothing factor 1 ÷ the signal-line smoothing period and initial value 50
-Long: On the configured indicator timeframe, the completed bar's main line > signal line AND the preceding completed bar's main line ≤ signal line
-Short: On the configured indicator timeframe, the completed bar's main line < signal line AND the preceding completed bar's main line ≥ signal line
-Exit: Short, On the configured indicator timeframe, the completed bar's main line > signal line
-Exit: Long, On the configured indicator timeframe, the completed bar's main line < signal line
+Calculation: Oscillator and signal = On the selected indicator timeframe, which may be higher or lower than the chart timeframe, calculate the highest high and lowest low over the lookback ending at each indicator bar. Raw stochastic = 100 × (close − lowest low) / max(highest high − lowest low, minimum price increment). Initialize oscillator and signal to 50 before the first calculated bar. For each subsequent bar, oscillator = previous oscillator + (raw stochastic − previous oscillator) / oscillator smoothing period; signal = previous signal + (oscillator − previous signal) / signal smoothing period. Evaluate the selected indicator bar, which may be the still-forming bar or a completed bar at a configurable offset, and its immediately preceding bar.
+Long: Selected-bar oscillator > signal AND preceding-bar oscillator <= signal
+Short: Selected-bar oscillator < signal AND preceding-bar oscillator >= signal
+Exit: short, selected-bar oscillator > signal
+Exit: long, selected-bar oscillator < signal
+Exit: long, low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

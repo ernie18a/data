@@ -1,5 +1,8 @@
-Calculation: NRTR direction = on lower-timeframe bars, calculate the mean of high − low over a lookback; scale it by the configured factor. In an uptrend, trail the highest high at that high × (1 − scaled range); switch down when the current high falls below the trail. In a downtrend, trail the lowest low at that low × (1 + scaled range); switch up when the current low rises above the trail. Use the last completed indicator bar.
-Long: NRTR direction changes from down to up.
-Short: NRTR direction changes from up to down.
-Exit: long, NRTR direction is down OR low ≤ entry price − configured stop-loss distance OR high ≥ entry price + configured take-profit distance.
-Exit: short, NRTR direction is up OR high ≥ entry price + configured stop-loss distance OR low ≤ entry price − configured take-profit distance.
+Calculation: Range factor = the mean of high minus low over a lookback ending at the evaluated bar, multiplied by a configurable scale factor.
+Calculation: Trailing state = calculate chronologically on the chart timeframe, or on a configurable higher or lower timeframe using its last completed bar or still-forming bar as configured. Initialize trend to 0 and extreme and level to the close of the first bar with a full lookback. On each bar, if the previous trend is nonnegative, set extreme to max(previous extreme, high) and level to max(previous level, extreme × (1 − range factor)); if high < level, set extreme to high, level to high × (1 + range factor), and trend to −1. Otherwise, if the previous trend is negative, set extreme to min(previous extreme, low) and level to min(previous level, extreme × (1 + range factor)); if low > level, set extreme to low, level to low × (1 − range factor), and trend to +1. If no reversal occurs, retain the previous trend. Recalculate a still-forming bar from the preceding completed bar's state.
+Long: trailing trend > 0 AND trailing level != 0
+Short: trailing trend < 0 AND trailing level != 0
+Exit: long, trailing trend < 0 AND trailing level != 0
+Exit: short, trailing trend > 0 AND trailing level != 0
+Exit: long, low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

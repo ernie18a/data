@@ -1,29 +1,33 @@
-Calculation: Opening range high/low = highest high and lowest low during each configured opening session; freeze when that session ends.
-Calculation: EMA = exponential moving average of close; the fast EMA uses a shorter lookback than the slow EMA.
-Calculation: VWAP = daily volume-weighted average of typical price (high + low + close) / 3.
-Calculation: Volume average = simple moving average of volume over a configurable lookback.
-Calculation: Vector volume and range ratios = current volume and (high − low), respectively, divided by their separate simple moving averages over the same configurable lookback.
-Calculation: ATR = average true range over a configurable lookback.
-Calculation: Opening-range quality score = clamp to 0–100 the rounded score based on opening-range size / ATR: within the configured minimum and maximum ratios, 100 − abs(ratio − 0.5) × 80; below minimum, ratio / minimum × 40; above maximum, max(0, 100 − ((ratio − maximum) / maximum)^1.5 × 150).
-Calculation: Stop and target prices = entry price offset by configured stop distance and either configured target distance or configured multiple of opening-range size.
-Calculation: Trap state = after a close beyond an opening-range boundary, detect a return close inside the range within a configurable number of bars; bullish breakout returning inside is a bull trap, bearish breakout returning inside is a bear trap.
-Long: Close > opening-range high AND (EMA fast > EMA slow if EMA filter enabled) AND (close > VWAP if VWAP filter enabled) AND (last completed bar on each configured higher-timeframe confirmation interval closes > opening-range high if that filter is enabled) AND (higher-timeframe EMA fast > EMA slow on its last completed bar if that filter is enabled) AND (opening-range size within configured minimum and maximum if that filter is enabled) AND (quality score >= configured minimum if that filter is enabled) AND (bull trap retest sequence completed if retest filter is enabled) AND (first-signal-per-session, daily trade limit, and configured trading-time-window restrictions pass when enabled).
-Short: Close < opening-range low AND (EMA fast < EMA slow if EMA filter enabled) AND (close < VWAP if VWAP filter enabled) AND (last completed bar on each configured higher-timeframe confirmation interval closes < opening-range low if that filter is enabled) AND (higher-timeframe EMA fast < EMA slow on its last completed bar if that filter is enabled) AND (opening-range size within configured minimum and maximum if that filter is enabled) AND (quality score >= configured minimum if that filter is enabled) AND (bear trap retest sequence completed if retest filter is enabled) AND (first-signal-per-session, daily trade limit, and configured trading-time-window restrictions pass when enabled).
-Long: EMA fast crosses above EMA slow.
-Short: EMA fast crosses below EMA slow.
-Long: Close crosses above VWAP.
-Short: Close crosses below VWAP.
-Long: EMA fast > EMA slow on the last completed dashboard-timeframe bar (dashboard timeframes may be higher or lower than the chart timeframe).
-Short: EMA fast < EMA slow on the last completed dashboard-timeframe bar (dashboard timeframes may be higher or lower than the chart timeframe).
-Long: Bullish-condition count > bearish-condition count, where conditions are chart-timeframe EMA fast > EMA slow, close > VWAP, and higher-timeframe EMA fast > EMA slow on its last completed bar.
-Short: Bearish-condition count > bullish-condition count, where conditions are chart-timeframe EMA fast < EMA slow, close < VWAP, and higher-timeframe EMA fast < EMA slow on its last completed bar.
-Long: Close > open AND vector volume ratio >= light-volume threshold.
-Short: Close < open AND vector volume ratio >= light-volume threshold.
-Long: Close > open AND vector volume ratio >= elevated-volume threshold AND vector volume ratio < climax-volume threshold.
-Short: Close < open AND vector volume ratio >= elevated-volume threshold AND vector volume ratio < climax-volume threshold.
-Long: Close > open AND vector volume ratio >= climax-volume threshold AND vector range ratio >= configured range threshold.
-Short: Close < open AND vector volume ratio >= climax-volume threshold AND vector range ratio >= configured range threshold.
-Long: A prior close broke below opening-range low, then within the configured bar limit a later close returned inside the opening range.
-Short: A prior close broke above opening-range high, then within the configured bar limit a later close returned inside the opening range.
-Exit: Long, low <= stop price OR high >= target price OR configured forced-close time window is active.
-Exit: Short, high >= stop price OR low <= target price OR configured forced-close time window is active.
+Calculation: Opening range = the highest high and lowest low of chart bars in the most recently started enabled session, using session times in America/New_York. It becomes active when that session ends and remains active until another enabled session starts; starting a session resets the range and signal and retest states.
+Calculation: Quality score = let r be the active opening-range width divided by the current ATR, or zero if ATR is not positive. If r is between the minimum and maximum range-to-ATR parameters inclusive, round(100 - abs(r - 0.5) * 80); if r is below the minimum, round(r / minimum * 40); otherwise round(max(0, 100 - ((r - maximum) / maximum)^1.5 * 150)). Clamp the result to [0, 100].
+Calculation: Retest confirmation = separately for each direction, advance from breakout to retest to confirmation in that order. For long, breakout is close > opening-range high, retest is low <= opening-range high + tolerance, and confirmation is close > opening-range high; for short, breakout is close < opening-range low, retest is high >= opening-range low - tolerance, and confirmation is close < opening-range low. Multiple stages may occur on the same bar. Confirmation persists until a signal in that direction, which resets that direction's retest state.
+Calculation: Direction votes = the number of bullish comparisons minus the number of bearish comparisons among short-period versus long-period chart EMA, close versus daily VWAP of typical price, and short-period versus long-period EMA on the last completed higher-timeframe bar. Strictly greater is bullish, strictly less is bearish, and equality casts no vote.
+Calculation: Trap state = after an active opening range, a close above its high starts an upside-break state and cancels any downside-break state; a close below its low starts a downside-break state and cancels any upside-break state. A state ends after its configured bar limit or on detection; a new same-direction breakout does not restart an active state.
+Long: Opening range is active AND close > opening-range high AND (EMA filter disabled OR short-period EMA > long-period EMA) AND (VWAP filter disabled OR close > daily VWAP of typical price) AND (each enabled confirmation filter has the last completed higher-timeframe close > opening-range high; the two confirmation timeframes have different lengths) AND (first-signal filter disabled OR no previous long signal since the current session started) AND (higher-timeframe trend filter disabled OR short-period EMA > long-period EMA on the last completed higher-timeframe bar) AND (range filter disabled OR opening-range width is between its minimum and maximum inclusive) AND (quality filter disabled OR quality score >= its minimum) AND (retest filter disabled OR long retest confirmation is active) AND (trade-limit filter disabled OR the count of confirmed long and short signals since the configured daily reset hour in America/New_York < the limit) AND (trading-window filter disabled OR bar time is within either configured window in America/New_York).
+Short: Opening range is active AND close < opening-range low AND (EMA filter disabled OR short-period EMA < long-period EMA) AND (VWAP filter disabled OR close < daily VWAP of typical price) AND (each enabled confirmation filter has the last completed higher-timeframe close < opening-range low; the two confirmation timeframes have different lengths) AND (first-signal filter disabled OR no previous short signal since the current session started) AND (higher-timeframe trend filter disabled OR short-period EMA < long-period EMA on the last completed higher-timeframe bar) AND (range filter disabled OR opening-range width is between its minimum and maximum inclusive) AND (quality filter disabled OR quality score >= its minimum) AND (retest filter disabled OR short retest confirmation is active) AND (trade-limit filter disabled OR the count of confirmed long and short signals since the configured daily reset hour in America/New_York < the limit) AND (trading-window filter disabled OR bar time is within either configured window in America/New_York).
+Long: Short-period EMA crosses above long-period EMA AND opening range is active.
+Short: Short-period EMA crosses below long-period EMA AND opening range is active.
+Long: Close crosses above daily VWAP of typical price.
+Short: Close crosses below daily VWAP of typical price.
+Long: Short-period EMA > long-period EMA.
+Short: Short-period EMA < long-period EMA.
+Long: Short-period EMA > long-period EMA on the last completed higher-timeframe bar.
+Short: Short-period EMA < long-period EMA on the last completed higher-timeframe bar.
+Long: Close > daily VWAP of typical price.
+Short: Close <= daily VWAP of typical price.
+Long: Direction votes > 0.
+Short: Direction votes < 0.
+Long: Current linear-regression value of close > its previous bar's value.
+Short: Current linear-regression value of close <= its previous bar's value.
+Long: Volume <= its moving average multiplied by the spike threshold AND close >= open.
+Short: Volume <= its moving average multiplied by the spike threshold AND close < open.
+Long: Close > open AND ((volume / its moving average >= the climax threshold AND (high - low) / its moving average >= the range threshold) OR volume / its moving average >= the elevated threshold OR volume / its moving average >= the light threshold); both moving averages use the same lookback and a nonpositive average produces a zero ratio.
+Short: Close < open AND ((volume / its moving average >= the climax threshold AND (high - low) / its moving average >= the range threshold) OR volume / its moving average >= the elevated threshold OR volume / its moving average >= the light threshold); both moving averages use the same lookback and a nonpositive average produces a zero ratio.
+Long: Downside-break trap state is active AND bars since the break <= the trap limit AND close > opening-range low AND close < opening-range high.
+Short: Upside-break trap state is active AND bars since the break <= the trap limit AND close < opening-range high AND close > opening-range low.
+Exit: long, low <= entry price - stop distance OR high >= entry price + target distance.
+Exit: short, high >= entry price + stop distance OR low <= entry price - target distance.
+Exit: long, forced-close option enabled AND bar time is within the configured forced-close window in America/New_York.
+Exit: short, forced-close option enabled AND bar time is within the configured forced-close window in America/New_York.
+Calculation: Stop distance = configured fixed price distance. Target distance = configured fixed price distance OR, when the range-relative target option is enabled and the opening-range width is positive, opening-range width multiplied by a configured factor and rounded to the nearest price increment; set the target at entry.
+Calculation: Stop and target ordering = inspect completed lower-timeframe bars within each chart bar in chronological order; on each lower-timeframe bar check the stop before the target. If no lower-timeframe bars are available, use the chart bar and check the stop first. Forced close takes priority over both.

@@ -1,10 +1,16 @@
-Calculation: RSI = Relative Strength Index of close
-Calculation: Fast RSI average = selected simple or exponential moving average of RSI, with a shorter lookback than the slow RSI average
-Calculation: Slow RSI average = selected simple or exponential moving average of RSI, with a longer lookback than the fast RSI average
-Calculation: Higher-timeframe RSI = RSI of close on a higher timeframe, using the bar still forming
-Calculation: Smoothed upper and lower channel = Wilder moving averages of high and low
-Calculation: Smoothed price average = selected simple, exponential, or Wilder moving average of (open + high + low + close) / 4
-Calculation: Triangle oscillator = compute Wilder moving averages of high and low using a short lookback; normalize high and low around their midpoint by half the channel width and compute RSI of each normalized series; choose the farther-from-50 RSI when both are on the same side of 50, otherwise choose the one closer to 50
-Calculation: Adaptive overbought and oversold levels = detect a Williams-style pivot high or low in the triangle oscillator using a fixed three-bar offset and eight-bar extreme window; update the overbought EMA from pivot highs above the upper neutral threshold and the oversold EMA from pivot lows below the lower neutral threshold, using a longer adaptive smoothing lookback than the short channel lookback
-Long: RSI >= upper neutral threshold OR RSI > higher-timeframe RSI OR RSI > fast RSI average OR RSI > slow RSI average OR fast RSI average > slow RSI average OR smoothed price average > smoothed upper channel OR triangle oscillator > adaptive overbought level
-Short: RSI <= lower neutral threshold OR RSI < higher-timeframe RSI OR RSI < fast RSI average OR RSI < slow RSI average OR fast RSI average < slow RSI average OR smoothed price average < smoothed lower channel OR triangle oscillator < adaptive oversold level
+Calculation: Adaptive oscillator = Let the short-channel high and low be Wilder averages of high and low with the same lookback; let their midpoint be their average and their half-range be half their difference. Calculate RSI with the same lookback as the chart RSI separately on (high − midpoint) / half-range and (low − midpoint) / half-range. If both RSI values are above the RSI midpoint, select the higher; if both are below it, select the lower; otherwise select the value closer to the midpoint, choosing the lower on a tie. The oscillator is undefined when the half-range is zero or unavailable.
+Calculation: Adaptive upper and lower levels = A confirmed pivot high is an adaptive oscillator value at a past pivot bar that is at least the highest oscillator value in a window spanning that bar, more preceding bars than following bars, and the current confirmation bar. A pivot low is defined symmetrically using the lowest value. Update the upper level only on confirmed pivot highs above the upper RSI neutral threshold, and the lower level only on confirmed pivot lows below the lower RSI neutral threshold. Each level is an EMA updated only on its qualifying pivots, initialized to its first qualifying pivot and held unchanged between updates; a level is unavailable until initialized and whenever it is not positive.
+Long: RSI of close >= upper RSI neutral threshold
+Short: RSI of close <= lower RSI neutral threshold AND RSI of close < RSI midpoint
+Long: RSI of close > RSI of close on the last completed higher-timeframe bar, using the same RSI lookback
+Short: RSI of close < RSI of close on the last completed higher-timeframe bar, using the same RSI lookback
+Long: RSI of close > shorter-lookback SMA or EMA of RSI
+Short: RSI of close < shorter-lookback SMA or EMA of RSI
+Long: RSI of close > longer-lookback SMA or EMA of RSI
+Short: RSI of close < longer-lookback SMA or EMA of RSI
+Long: shorter-lookback SMA or EMA of RSI > longer-lookback average of RSI using the same average type
+Short: shorter-lookback SMA or EMA of RSI < longer-lookback average of RSI using the same average type
+Long: SMA, EMA, or Wilder average of OHLC4 > Wilder average of high using the longer channel lookback
+Short: SMA, EMA, or Wilder average of OHLC4 < Wilder average of low using the longer channel lookback
+Long: Adaptive oscillator > adaptive upper level
+Short: Adaptive oscillator < adaptive lower level

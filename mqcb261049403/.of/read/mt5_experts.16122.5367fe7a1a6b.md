@@ -1,6 +1,6 @@
-Calculation: Rising acceleration signal = On the indicator timeframe (higher or lower than the chart timeframe), using the last completed bar, when no rising-sequence latch is active and both Awesome Oscillator and Accelerator Oscillator are each strictly higher on each of the last four consecutive bar-to-bar comparisons; the latch activates on this signal and resets when either oscillator is lower than its immediately preceding value.
-Calculation: Falling acceleration signal = On the indicator timeframe (higher or lower than the chart timeframe), using the last completed bar, when no falling-sequence latch is active and both Awesome Oscillator and Accelerator Oscillator are each strictly lower on each of the last four consecutive bar-to-bar comparisons; the latch activates on this signal and resets when either oscillator is higher than its immediately preceding value.
-Long: Rising acceleration signal is marked as a buy signal in trend mode or falling acceleration signal is marked as a buy signal in countertrend mode
-Short: Falling acceleration signal is marked as a sell signal in trend mode or rising acceleration signal is marked as a sell signal in countertrend mode
-Exit: long, Falling acceleration signal
-Exit: short, Rising acceleration signal
+Calculation: Rising sequence = Awesome Oscillator and Accelerator Oscillator each rise strictly on every bar over the same lookback; falling sequence = both fall strictly on every bar over the same lookback.
+Calculation: Rising sequence available = no earlier rising sequence has occurred since either oscillator last fell; falling sequence available = no earlier falling sequence has occurred since either oscillator last rose. Initialize both as available. Evaluate the oscillators on the selected chart timeframe or a selected higher or lower timeframe, using the last completed bar or the still-forming bar according to the signal-bar setting.
+Long: (trend-following mode AND rising sequence AND rising sequence available) OR (countertrend mode AND falling sequence AND falling sequence available)
+Short: (trend-following mode AND falling sequence AND falling sequence available) OR (countertrend mode AND rising sequence AND rising sequence available)
+Exit: long, short condition OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, long condition OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

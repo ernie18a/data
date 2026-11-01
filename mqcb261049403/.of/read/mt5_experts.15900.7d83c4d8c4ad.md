@@ -1,5 +1,9 @@
-Calculation: Shifted Donchian upper/lower bands = the rolling highest high minus / lowest low plus the channel range multiplied by the configured margin percentage, calculated the configured number of signal-timeframe bars before the evaluated bar
-Long: Last completed signal-timeframe close > shifted upper Donchian band AND preceding completed signal-timeframe close <= its shifted upper Donchian band
-Short: Last completed signal-timeframe close < shifted lower Donchian band AND preceding completed signal-timeframe close >= its shifted lower Donchian band
-Exit: Short, last completed signal-timeframe close > shifted upper Donchian band
-Exit: Long, last completed signal-timeframe close < shifted lower Donchian band
+Calculation: Channel extrema = over a lookback ending at the bar shifted backward by the channel shift, choose one pair: highest high and lowest low; average of highest high and highest open and average of lowest low and lowest open; average of highest high and highest close and average of lowest low and lowest close; highest open and lowest open; or highest close and lowest close. Each maximum or minimum is taken independently over the same lookback.
+Calculation: Upper channel = upper channel extremum minus the channel margin percentage of the difference between upper and lower channel extrema.
+Calculation: Lower channel = lower channel extremum plus the channel margin percentage of the difference between upper and lower channel extrema.
+Long: Chart bar close > upper channel AND chart bar close >= lower channel.
+Short: Chart bar close < lower channel.
+Long: On the selected indicator timeframe, which may be higher or lower than the chart timeframe, the selected signal bar close > its upper channel AND its close >= its lower channel AND (the preceding signal bar close <= its upper channel OR its close < its lower channel); use the last completed indicator bar or the still-forming bar according to the signal-bar setting, with any additional configured bar offset.
+Short: On the selected indicator timeframe, which may be higher or lower than the chart timeframe, the selected signal bar close < its lower channel AND the preceding signal bar close >= its lower channel; use the last completed indicator bar or the still-forming bar according to the signal-bar setting, with any additional configured bar offset.
+Exit: long, selected indicator timeframe signal bar close < its lower channel OR low <= entry price minus enabled stop-loss distance OR high >= entry price plus enabled take-profit distance.
+Exit: short, (selected indicator timeframe signal bar close > its upper channel AND its close >= its lower channel) OR high >= entry price plus enabled stop-loss distance OR low <= entry price minus enabled take-profit distance.

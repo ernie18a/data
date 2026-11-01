@@ -1,6 +1,6 @@
-Calculation: Confirmed pivot high = a high greater than the highs of a configurable number of bars immediately before and after it; use the most recently confirmed pivot high.
-Calculation: Confirmed pivot low = a low less than the lows of a configurable number of bars immediately before and after it; use the most recently confirmed pivot low.
-Long: Low > high two bars ago AND close one bar ago > open one bar ago
-Long: Close > latest confirmed pivot high
-Short: High < low two bars ago AND close one bar ago < open one bar ago
-Short: Close < latest confirmed pivot low
+Calculation: Active pivot high = the most recently confirmed pivot high that has not been broken; a pivot high has a high greater than or equal to the highs of the preceding pivot-length bars and greater than the highs of the following pivot-length bars. Confirm it after the following bars have completed. A newer confirmed pivot replaces the active level; clear the level when close exceeds it.
+Calculation: Active pivot low = the most recently confirmed pivot low that has not been broken; a pivot low has a low less than or equal to the lows of the preceding pivot-length bars and less than the lows of the following pivot-length bars. Confirm it after the following bars have completed. A newer confirmed pivot replaces the active level; clear the level when close falls below it. Use the same pivot length as for the pivot high.
+Long: low > high two bars ago AND previous close > previous open
+Long: close > active pivot high
+Short: high < low two bars ago AND previous close < previous open
+Short: close < active pivot low

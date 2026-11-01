@@ -1,6 +1,8 @@
-Calculation: Fisher oscillator = On the configured indicator timeframe (higher or lower than the chart timeframe as configured), for each completed bar, let P be the selected applied price and H/L the highest high/lowest low over the lookback. Let x = clamp((P-L)/(H-L) - 0.5 + 0.67 × previous x, -999, 999); Fisher = 0.5 × ln((1+x)/(1-x)) + 0.5 × previous Fisher. If H=L, increase H by one price point.
-Calculation: Signal line = Fisher oscillator value on the preceding bar.
-Long: Fisher oscillator on the older completed bar <= its signal line AND Fisher oscillator on the latest completed bar > its signal line
-Short: Fisher oscillator on the older completed bar >= its signal line AND Fisher oscillator on the latest completed bar < its signal line
-Exit: Short, Fisher oscillator on the latest completed bar > its signal line
-Exit: Long, Fisher oscillator on the latest completed bar < its signal line
+Calculation: Selected price = a selectable bar price: open, high, low, close, (high + low)/2, (high + low + close)/3, (high + low + 2 × close)/4, (open + close)/2, (open + high + low + close)/4, trend price, half-trend price, or DeMark price. Trend price is high if close > open, low if close < open, otherwise close. Half-trend price is (high + close)/2 if close > open, (low + close)/2 if close < open, otherwise close. For DeMark price, let x = (high + low + close + low)/2 if close < open, (high + low + close + high)/2 if close > open, otherwise (high + low + 2 × close)/2; price = (2 × x - low - high)/2.
+Calculation: Fisher line = calculate on a selectable indicator timeframe, which may be higher or lower than the chart timeframe; use the last completed indicator bar or, if selected, the still-forming indicator bar. For each indicator bar, let H be the maximum high and L the minimum low over the lookback including that bar; if H = L, increase H by a selectable minimum price increment. Let v = clamp((selected price - L)/(H - L) - 0.5 + 0.67 × previous v, -999, 999), initialized with previous v = 0. Let r = (1 + v)/(1 - v); if r < 0.0000001, set r = 1. Fisher = 0.5 × ln(r) + 0.5 × previous Fisher, initialized with previous Fisher = 0. The signal line is the preceding indicator bar's Fisher. Recalculate a forming bar from the last completed bar's v and Fisher.
+Long: Fisher > signal line AND previous indicator bar's Fisher <= previous indicator bar's signal line
+Short: Fisher < signal line AND previous indicator bar's Fisher >= previous indicator bar's signal line
+Exit: short, Fisher > signal line
+Exit: long, Fisher < signal line
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

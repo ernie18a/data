@@ -1,5 +1,5 @@
-Calculation: Anchored momentum = 100 × (EMA of applied price / SMA of applied price − 1), computed on the configured indicator timeframe relative to the chart timeframe (higher, lower, or equal), using completed bars only.
-Long: The latest completed anchored-momentum value > the preceding value AND the preceding value ≤ the value before it
-Short: The latest completed anchored-momentum value < the preceding value AND the preceding value ≥ the value before it
-Exit: Long, the latest completed anchored-momentum value < the preceding value OR price ≤ entry price − configured stop-loss distance OR price ≥ entry price + configured take-profit distance
-Exit: Short, the latest completed anchored-momentum value > the preceding value OR price ≥ entry price + configured stop-loss distance OR price ≤ entry price − configured take-profit distance
+Calculation: Momentum = 100 × (EMA of the selected OHLC-derived price / SMA of the same price − 1), using a shorter EMA period and a longer SMA period. Calculate on the selected indicator timeframe, which may be higher or lower than the chart timeframe; use the last completed indicator bar, or the still-forming bar when configured. Compare consecutive indicator bars.
+Long: Momentum on the selected bar > momentum on the preceding bar AND momentum on the bar before that >= momentum on the preceding bar.
+Short: Momentum on the selected bar < momentum on the preceding bar AND momentum on the bar before that <= momentum on the preceding bar.
+Exit: long, momentum on the selected bar < momentum on the preceding bar OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, momentum on the selected bar > momentum on the preceding bar OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance.

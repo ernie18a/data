@@ -1,5 +1,5 @@
-Calculation: Zero Point Force (ZPF) = volume moving average × (short-term moving average of the selected applied price − longer-term moving average of the selected applied price) ÷ 2; the two price averages use the same smoothing method, and the longer lookback is twice the shorter lookback. Calculate on the indicator timeframe, which may be higher or lower than the chart timeframe, using completed bars.
-Long: previous completed ZPF ≤ 0 AND latest completed ZPF > 0
-Short: previous completed ZPF ≥ 0 AND latest completed ZPF < 0
-Exit: long, latest completed ZPF < 0
-Exit: short, latest completed ZPF > 0
+Calculation: Zero point force = smoothed volume × (shorter-period smoothed price − longer-period smoothed price) / 2; use the same smoothing method for all three, the shorter price smoothing period for volume, and a longer price smoothing period twice the shorter period. Calculate on a selected higher or lower timeframe using the last completed bar, or the still-forming bar if configured; the previous value is from the preceding bar of that timeframe.
+Long: Zero point force > 0 AND previous zero point force <= 0
+Short: Zero point force < 0 AND previous zero point force >= 0
+Exit: long, zero point force < 0 OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, zero point force > 0 OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

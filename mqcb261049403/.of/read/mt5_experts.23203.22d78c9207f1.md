@@ -1,6 +1,10 @@
-Calculation: Fast RSI step line = Apply Wilder RSI to close; each bar, set upper/lower bounds to RSI ± 2 × the fast step. Switch trend up if RSI exceeds the prior upper bound, or down if it falls below the prior lower bound. In an uptrend, raise the lower bound to at least its prior value; in a downtrend, lower the upper bound to at most its prior value. The line is lower bound + fast step in an uptrend, upper bound − fast step in a downtrend.
-Calculation: Slow RSI step line = Same recursive RSI step-line calculation, using a larger step than the fast line.
-Long: Fast RSI step line > slow RSI step line
-Short: Fast RSI step line < slow RSI step line
-Exit: Long, fast RSI step line < slow RSI step line
-Exit: Short, fast RSI step line > slow RSI step line
+Calculation: Stepped RSI line = For RSI of the selected price series and step s, process bars oldest to newest. Initialize previous lower bound to positive infinity, previous upper bound to negative infinity, and trend to neutral. On each bar set lower = RSI - 2s and upper = RSI + 2s. Set trend up if RSI > previous upper, down if RSI < previous lower, otherwise retain the previous trend. If trend is up, set lower = max(lower, previous lower); if trend is down, set upper = min(upper, previous upper). The line is lower + s when trend is up and upper - s when trend is down; it is undefined while trend is neutral. Save the resulting bounds for the next bar. Calculate a fast line with a smaller step and a slow line with a larger step.
+Calculation: Signal lines = Fast and slow stepped RSI lines calculated from close on a configurable timeframe, which may be higher than, lower than, or equal to the chart timeframe. Use either the last completed bar or the still-forming bar as selected; compare its lines with those of the preceding bar. Long and short systems may use different RSI periods, steps, timeframes, and bar selections.
+Long: Fast stepped RSI line on the chart timeframe > slow stepped RSI line on the chart timeframe
+Short: Fast stepped RSI line on the chart timeframe < slow stepped RSI line on the chart timeframe
+Long: Long-system fast signal line > long-system slow signal line AND previous fast signal line <= previous slow signal line
+Short: Short-system fast signal line < short-system slow signal line AND previous fast signal line >= previous slow signal line
+Exit: long, long-system fast signal line < long-system slow signal line
+Exit: short, short-system fast signal line > short-system slow signal line
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

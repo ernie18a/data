@@ -1,5 +1,15 @@
-Calculation: Bullish FVG = gap between a bar’s low and the high two bars earlier; bearish FVG = gap between the low two bars earlier and the bar’s high.
-Calculation: Order block = the last candle opposite the break direction within the configured lookback before a close breaks the latest confirmed swing high or low; its high and low are the zone boundaries.
-Calculation: Zone overlap = the intersection of two zones’ original price ranges.
-Long: Chart-timeframe bullish FVG forms and its gap meets the configured minimum gap filter OR close breaks above the latest confirmed swing high and a prior bearish candle is found within the configured lookback OR two enabled, distinct higher-timeframe zones are bullish and their overlap meets the configured minimum overlap filter.
-Short: Chart-timeframe bearish FVG forms and its gap meets the configured minimum gap filter OR close breaks below the latest confirmed swing low and a prior bullish candle is found within the configured lookback OR two enabled, distinct higher-timeframe zones are bearish and their overlap meets the configured minimum overlap filter.
+Calculation: Minimum gap = either ATR multiplied by a gap parameter or a price-distance parameter, evaluated on the same timeframe and bar as the gap.
+Calculation: Swing high or low = a pivot high or low confirmed by the same number of bars on each side. Each swing can trigger an order block only on the first subsequent bar whose close breaks it, even if no opposite candle is found.
+Calculation: Higher-timeframe source zones = fair-value gaps and order blocks formed using the last completed bar of either of two distinct timeframes higher than the chart timeframe. Retain the most recent zones per timeframe and type within a lookback window; a bullish zone is filled when chart low or close reaches its original bottom, and a bearish zone is filled when chart high or close reaches its original top, according to the selected wick or close rule.
+Long: Chart low > high two bars earlier AND the difference >= minimum gap.
+Short: Chart high < low two bars earlier AND the difference >= minimum gap.
+Long: Chart close > latest confirmed swing high AND this is its first break AND at least one preceding candle in the order-block lookback has close < open.
+Short: Chart close < latest confirmed swing low AND this is its first break AND at least one preceding candle in the order-block lookback has close > open.
+Long: A retained bearish chart order block that has not already become a breaker has chart high >= its original top under the wick rule OR chart close > its original top under the close rule.
+Short: A retained bullish chart order block that has not already become a breaker has chart low <= its original bottom under the wick rule OR chart close < its original bottom under the close rule.
+Long: The last completed higher-timeframe bar has low > high two higher-timeframe bars earlier AND the difference >= higher-timeframe minimum gap.
+Short: The last completed higher-timeframe bar has high < low two higher-timeframe bars earlier AND the difference >= higher-timeframe minimum gap.
+Long: The last completed higher-timeframe bar closes > the latest confirmed higher-timeframe swing high AND this is its first break AND at least one preceding higher-timeframe candle in the order-block lookback has close < open.
+Short: The last completed higher-timeframe bar closes < the latest confirmed higher-timeframe swing low AND this is its first break AND at least one preceding higher-timeframe candle in the order-block lookback has close > open.
+Long: Two unfilled bullish higher-timeframe source zones from different timeframes have original-boundary overlap >= the greater of a minimum price increment and a multiple of ATR from the last completed bar of the first higher timeframe.
+Short: Two unfilled bearish higher-timeframe source zones from different timeframes have original-boundary overlap >= the greater of a minimum price increment and a multiple of ATR from the last completed bar of the first higher timeframe.

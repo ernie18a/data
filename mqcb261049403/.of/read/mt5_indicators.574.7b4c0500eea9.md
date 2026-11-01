@@ -1,6 +1,13 @@
-Calculation: JJRSX = JMA-smoothed ratio of the JurX-smoothed one-bar change in applied price to the JurX-smoothed absolute one-bar change, clipped to [-1, 1]; both JurX smoothers use the same lookback.
-Calculation: XMA = selected moving average of selected price, calculated on a higher timeframe using completed bars.
-Long: JJRSX two bars before the signal > JJRSX one bar before the signal AND JJRSX one bar before the signal < JJRSX at the signal bar AND XMA three bars before the signal > XMA two bars before the signal.
-Short: JJRSX two bars before the signal < JJRSX one bar before the signal AND JJRSX one bar before the signal > JJRSX at the signal bar AND XMA three bars before the signal < XMA two bars before the signal.
-Exit: long, XMA three bars before the signal > XMA two bars before the signal AND XMA two bars before the signal < XMA one bar before the signal AND no long-exit marker has occurred since the most recent short-exit marker (or initialization).
-Exit: short, XMA three bars before the signal < XMA two bars before the signal AND XMA two bars before the signal > XMA one bar before the signal AND no short-exit marker has occurred since the most recent long-exit marker (or initialization).
+Calculation: Ultralinear smoothing = apply three successive stages to the input; each stage updates a = (1-k) × previous a + k × input, then b = k × a + (1-k) × previous b, and outputs 1.5 × a - 0.5 × b; k = 3 / (length + 2), and initialize each stage's a and b to its first input.
+Calculation: Smoothed oscillator = Jurik moving average of the ratio of ultralinearly smoothed applied-price change to ultralinearly smoothed absolute applied-price change, using the same smoothing length for both; clamp the ratio to [-1, 1] before the Jurik moving average and leave it undefined when the denominator is zero.
+Calculation: Moving average = the selected smoothing method applied to the selected price on the higher timeframe, using completed higher-timeframe bars. Supported methods are SMA, EMA, SMMA, LWMA, Jurik moving average, ultralinear smoothing, parabolic least-squares moving average, Tillson T3, VIDYA, and Kaufman adaptive moving average.
+Calculation: Moving-average peak = the second-most-recent completed higher-timeframe moving average is greater than both the most-recent and third-most-recent completed higher-timeframe moving averages.
+Calculation: Moving-average trough = the second-most-recent completed higher-timeframe moving average is less than both the most-recent and third-most-recent completed higher-timeframe moving averages.
+Calculation: New moving-average peak = moving-average peak AND the most recent preceding moving-average turning point is a trough or no preceding turning point exists.
+Calculation: New moving-average trough = moving-average trough AND the most recent preceding moving-average turning point is a peak or no preceding turning point exists.
+Long: The previous chart-bar smoothed oscillator is less than both the current and preceding chart-bar oscillator values AND the second-most-recent completed higher-timeframe moving average is less than the third-most-recent completed higher-timeframe moving average.
+Long: New moving-average trough.
+Short: The previous chart-bar smoothed oscillator is greater than both the current and preceding chart-bar oscillator values AND the second-most-recent completed higher-timeframe moving average is greater than the third-most-recent completed higher-timeframe moving average.
+Short: New moving-average peak.
+Exit: long, new moving-average peak OR new moving-average trough.
+Exit: short, new moving-average peak OR new moving-average trough.

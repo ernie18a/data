@@ -1,6 +1,4 @@
-Calculation: Williams %R = Williams %R on the configured indicator timeframe (which may be lower than, equal to, or higher than the chart timeframe), evaluated on the last completed bar
-Calculation: WPR slowdown = absolute difference between Williams %R on the last completed indicator-timeframe bar and the preceding completed indicator-timeframe bar is < 1
-Long: Williams %R >= the upper signal threshold AND (slowdown filtering is disabled OR WPR slowdown)
-Short: Williams %R <= the lower signal threshold AND (slowdown filtering is disabled OR WPR slowdown)
-Exit: Short, the most recent buy or sell signal on the indicator timeframe is a buy signal
-Exit: Long, the most recent buy or sell signal on the indicator timeframe is a sell signal
+Long: Williams %R on the chart timeframe or a configurable higher or lower timeframe, using the last completed bar or the bar still forming, is greater than or equal to an upper threshold AND (the slowdown filter is disabled OR the absolute change in Williams %R from the preceding bar is less than a slowdown threshold)
+Short: Williams %R on the chart timeframe or the same configurable higher or lower timeframe and bar selection is less than or equal to a lower threshold AND (the slowdown filter is disabled OR the absolute change in Williams %R from the preceding bar is less than the same slowdown threshold)
+Exit: long, the most recent long or short signal is short OR low is less than or equal to entry price minus the stop-loss distance OR high is greater than or equal to entry price plus the take-profit distance
+Exit: short, the most recent long or short signal is long OR high is greater than or equal to entry price plus the stop-loss distance OR low is less than or equal to entry price minus the take-profit distance

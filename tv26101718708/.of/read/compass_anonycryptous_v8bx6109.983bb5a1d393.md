@@ -1,6 +1,31 @@
-Calculation: Stochastic RSI K = smoothed stochastic of RSI; D = smoothed K, using the same lookback for RSI and stochastic, then separate smoothing periods for K and D.
-Calculation: Bullish RSI divergence = a confirmed price pivot low is lower than the previous confirmed price pivot low while RSI at the pivot is higher; bearish RSI divergence = a confirmed price pivot high is higher than the previous confirmed price pivot high while RSI at the pivot is lower.
-Calculation: Bullish fair value gap = current low > high two bars earlier, middle-bar close > that earlier high, and the gap width exceeds the ATR-based minimum; bearish fair value gap = current high < low two bars earlier, middle-bar close < that earlier low, and the gap width exceeds the ATR-based minimum. ATR uses a longer lookback than the gap pattern.
-Calculation: High-volume vector = volume ≥ its 10-bar average times the higher volume threshold, or volume × (high − low) ≥ the highest such value over 10 bars when the spread filter is enabled; elevated-volume vector = volume ≥ its 10-bar average times the lower threshold and is not a high-volume vector. The higher threshold exceeds the lower threshold.
-Long: fast EMA crosses above slow EMA OR Stochastic RSI K crosses above D while either K or D is below the middle band OR K crosses above D while either K or D is below the lower band OR K crosses above the lower band OR bullish RSI divergence OR bullish fair value gap OR close > EMA 200 OR close > daily open OR (close ≥ open AND high-volume vector) OR (close ≥ open AND elevated-volume vector)
-Short: fast EMA crosses below slow EMA OR Stochastic RSI K crosses below D while either K or D is above the middle band OR K crosses below D while either K or D is above the upper band OR K crosses below the upper band OR bearish RSI divergence OR bearish fair value gap OR close < EMA 200 OR close < daily open OR (close < open AND high-volume vector) OR (close < open AND elevated-volume vector)
+Calculation: Stochastic RSI K = simple moving average of the stochastic oscillator applied to RSI; D = simple moving average of K.
+Calculation: RSI pivot divergence = compare consecutive confirmed RSI pivot highs or lows, using the same number of chart bars on each side for confirmation; compare price high or low at those RSI pivot bars, without requiring price itself to form a pivot. Evaluate on the confirmation bar.
+Calculation: Bullish fair value gap = low > high two bars ago AND low - high two bars ago > ATR multiplied by a width threshold AND previous close > high two bars ago AND low <= previous high AND previous low <= high two bars ago; its initial lower and upper boundaries are high two bars ago and current low. Bearish fair value gap = high < low two bars ago AND low two bars ago - high > ATR multiplied by the width threshold AND previous close < low two bars ago AND high >= previous low AND previous high >= low two bars ago; its initial upper and lower boundaries are low two bars ago and current high. Treat unavailable ATR as zero.
+Calculation: Active fair value gap counts = track each newly formed gap and its remaining boundaries. For a bullish gap, when high > lower boundary AND low < upper boundary, remove it if low <= lower boundary; otherwise set the upper boundary to low. For a bearish gap, when low < upper boundary AND high > lower boundary, remove it if high >= upper boundary; otherwise set the lower boundary to high. Count remaining bullish and bearish gaps after updating on each bar.
+Calculation: Psychological high and low = the running high and low of the most recent configured recurring higher-timeframe session, including the session still forming; retain the final values between sessions.
+Long: Shorter-period EMA of the selected price source > longer-period EMA of the same source.
+Short: Shorter-period EMA of the selected price source <= longer-period EMA of the same source.
+Long: Close > long-term EMA of close.
+Short: Close <= long-term EMA of close.
+Long: Stochastic RSI K crosses above D AND (K < middle band OR D < middle band).
+Short: Stochastic RSI K crosses below D AND (K > middle band OR D > middle band).
+Long: Stochastic RSI K crosses above D AND (K < lower band OR D < lower band).
+Short: Stochastic RSI K crosses below D AND (K > upper band OR D > upper band).
+Long: Stochastic RSI K crosses above the lower band.
+Short: Stochastic RSI K crosses below the upper band.
+Long: Stochastic RSI K < lower band OR (K <= upper band AND K >= lower band AND K > middle band).
+Short: Stochastic RSI K > upper band OR (K <= upper band AND K >= lower band AND K <= middle band).
+Long: RSI >= its middle threshold.
+Short: RSI < its middle threshold.
+Long: A confirmed RSI pivot low is higher than the previous confirmed RSI pivot low AND its corresponding price low is lower than the price low at the previous RSI pivot low.
+Short: A confirmed RSI pivot high is lower than the previous confirmed RSI pivot high AND its corresponding price high is higher than the price high at the previous RSI pivot high.
+Long: Close >= open AND (volume >= a configurable multiple of its moving average OR volume multiplied by high minus low >= its highest value over a lookback).
+Short: Close < open AND (volume >= a configurable multiple of its moving average OR volume multiplied by high minus low >= its highest value over a lookback).
+Long: A bullish fair value gap forms.
+Short: A bearish fair value gap forms.
+Long: Active bullish fair value gap count > active bearish fair value gap count.
+Short: Active bearish fair value gap count > active bullish fair value gap count.
+Long: Close > psychological high.
+Short: Close <= psychological high AND close < psychological low.
+Long: Close > open of the higher-timeframe period containing the chart bar, using the bar still forming.
+Short: Close <= open of the higher-timeframe period containing the chart bar, using the bar still forming.

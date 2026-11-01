@@ -1,5 +1,5 @@
-Calculation: MACD = fast moving average of the selected price minus its slow moving average
-Calculation: MACD signal line = simple moving average of MACD
-Calculation: MFI = scale × (50 − 100/(1 + positive flow/negative flow)); for each lookback step, compare consecutive bar volumes and add their product to positive flow when volume rises or negative flow when it falls; if negative flow is zero, MFI = scale × 100; scale = scaling factor × point size
-Long: MFI crosses above the MACD signal line on the current bar, which may still be forming
-Short: MFI crosses below the MACD signal line on the current bar, which may still be forming
+Calculation: MACD line = shorter-period moving average of a selected OHLC-derived price minus the longer-period moving average of the same price, using the same configurable moving-average method for both.
+Calculation: MACD signal = simple moving average of the MACD line.
+Calculation: Volume oscillator = for each of the most recent lookback-period volume changes, multiply the newer bar's volume by the preceding bar's volume; sum the products separately where volume increased (P) and decreased (N). If N > 0, return scale × (50 − 100 / (1 + P / N)); otherwise return scale × 100. Scale is a configurable price-unit factor.
+Long: Volume oscillator > MACD signal.
+Short: Volume oscillator < MACD signal.

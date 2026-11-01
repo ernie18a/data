@@ -1,5 +1,7 @@
-Calculation: Combined MA-RSI score = clamp(MA vote + RSI vote, -1, +1), where each vote is +1 when the shorter-lookback value exceeds the longer-lookback value, -1 when it is lower, and 0 when equal; use short- and long-lookback moving averages and RSIs. Evaluate on the indicator timeframe, which may be higher or lower than the chart timeframe, using the selected signal bar (forming if its offset is zero, otherwise completed) and the immediately preceding completed bar.
-Long: Combined MA-RSI score on the selected signal bar > 0 AND combined MA-RSI score on the preceding bar <= 0
-Short: Combined MA-RSI score on the selected signal bar < 0 AND combined MA-RSI score on the preceding bar >= 0
-Exit: Long, combined MA-RSI score on the selected signal bar < 0
-Exit: Short, combined MA-RSI score on the selected signal bar > 0
+Calculation: Trigger = sign(shorter-lookback moving average − longer-lookback moving average) + sign(shorter-lookback RSI − longer-lookback RSI); use independently configurable applied prices and moving-average methods. Each sign is −1, 0, or 1. Calculate on the chart timeframe for the indicator; for each trading side, calculate independently on a configurable higher or lower timeframe using either the last completed bar or the bar still forming, according to the signal-bar setting.
+Long: Trigger > 0
+Short: Trigger < 0
+Long: Trigger > 0 AND Trigger on the preceding indicator bar <= 0
+Short: Trigger < 0 AND Trigger on the preceding indicator bar >= 0
+Exit: long, long-side Trigger < 0 OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, short-side Trigger > 0 OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

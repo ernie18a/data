@@ -1,4 +1,8 @@
-Calculation: Fast TRIX = (short-lookback XMA of applied price − its prior-bar value) / its prior-bar value
-Calculation: Slow TRIX = (longer-lookback XMA of applied price − its prior-bar value) / its prior-bar value
-Long: (analysis mode = histogram AND Fast TRIX > 0) OR (analysis mode = cloud AND Fast TRIX > Slow TRIX), using the higher-timeframe forming bar
-Short: (analysis mode = histogram AND Fast TRIX < 0) OR (analysis mode = cloud AND Fast TRIX < Slow TRIX), using the higher-timeframe forming bar
+Calculation: Applied price = selected open, high, low, close, (high + low)/2, (high + low + close)/3, (high + low + 2 × close)/4, (open + close)/2, (open + high + low + close)/4, trend-following price, half trend-following price, or DeMark price; trend-following price is high if close > open, low if close < open, otherwise close; half trend-following price is its average with close; DeMark price is (high + low + close + trend-following price)/2 − (high + low)/2.
+Calculation: Ultralinear average = apply three successive stages to the input, each stage updating a = (1 − k) × previous a + k × input and b = k × a + (1 − k) × previous b, and outputting 1.5 × a − 0.5 × b; k = 3/(length + 2), and initialize each stage's a and b to the first input.
+Calculation: Smoothed price = applied price smoothed using the selected SMA, EMA, SMMA, LWMA, Jurik moving average, ultralinear average, quadratic-regression endpoint, Tilson T3, VIDYA, or Kaufman adaptive moving average. Calculate a fast and a slow series using shorter and longer smoothing lengths, respectively, and the same method and smoothing parameter.
+Calculation: Fast and slow rates = (current smoothed price − previous smoothed price)/previous smoothed price, or zero when the previous smoothed price is zero. Calculate them on the chart timeframe and, for the fixed-timeframe signal, on the same or a higher timeframe. For a higher timeframe, sample its still-forming bar at the first chart bar of each higher-timeframe bar and carry that result forward until the next higher-timeframe bar.
+Long: Fast rate > 0 AND fast rate > previous fast rate OR fast rate > 0 AND fast rate < previous fast rate.
+Short: Fast rate < 0 AND fast rate < previous fast rate OR fast rate < 0 AND fast rate > previous fast rate.
+Long: Fast rate > slow rate.
+Short: Fast rate < slow rate.

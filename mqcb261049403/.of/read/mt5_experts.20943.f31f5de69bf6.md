@@ -1,5 +1,9 @@
-Calculation: SilverTrend color index = On the configured indicator timeframe, for each bar calculate upper = highest high and lower = lowest low over the current bar and the next older SSP−1 bars; set upper threshold = lower + (upper − lower) × (33 − risk)/100 and lower threshold = upper − (upper − lower) × (33 − risk)/100. Set trend bearish if close is below the upper threshold, bullish if close is above the lower threshold, otherwise retain the prior trend. For bullish trend, color index is 0 if close ≥ open, else 1; for bearish trend, 4 if close ≤ open, else 3; for no trend, 2. Use the selected signal bar and its next older bar on this timeframe, which may be higher, lower, or equal to the chart timeframe; the selected bar is forming at offset 0 and completed at offsets greater than 0.
-Long: selected color index < 2 AND next older color index > 1
-Short: selected color index > 2
-Exit: long, selected color index > 2
-Exit: short, selected color index < 2
+Calculation: Trend = for each bar, let H be the maximum of the current low and the highs over a lookback including the current bar; let L be the minimum of the current close and the lows over that same lookback; let f = (33 − risk parameter) / 100. Start at 0; set trend to −1 if close < L + (H − L) × f, then set it to +1 if close > H − (H − L) × f; otherwise retain the previous trend. Calculate independent trends for the long and short systems with independently configurable lookbacks and risk parameters. Each system can use chart bars or bars of a higher or lower timeframe, evaluated on a configurable signal bar: the last completed bar or the bar still forming, with the previous bar immediately preceding it.
+Long: chart-timeframe trend > 0
+Short: chart-timeframe trend < 0
+Long: long-system signal-bar trend > 0 AND previous-bar trend ≤ 0
+Short: short-system signal-bar trend < 0 AND (previous-bar trend ≤ 0 OR previous-bar trend > 0 AND previous-bar open > previous-bar close)
+Exit: long, long-system signal-bar trend < 0
+Exit: short, short-system signal-bar trend > 0
+Exit: long, low ≤ entry price − stop-loss distance OR high ≥ entry price + take-profit distance
+Exit: short, high ≥ entry price + stop-loss distance OR low ≤ entry price − take-profit distance

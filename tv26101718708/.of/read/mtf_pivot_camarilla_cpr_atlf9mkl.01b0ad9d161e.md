@@ -1,12 +1,10 @@
-Calculation: Central Pivot Range = central pivot (period high + period low + period close) / 3, and boundaries at (period high + period low) / 2 and twice the central pivot minus that midpoint, using the last completed bar of a higher timeframe.
-Calculation: Anchored VWAP = volume-weighted average of typical price (high + low + close) / 3 from the start of its anchor period, using the lower-timeframe bar still forming.
-Calculation: Average True Range = average true range from the last completed bar of a higher timeframe.
-Calculation: Yearly VWAP deviation bands = yearly anchored VWAP plus or minus one standard deviation of typical price, volume-weighted from the start of the year, using the lower-timeframe bar still forming.
-Long: Close > daily anchored VWAP AND abs(Close - daily anchored VWAP) >= 0.15 × daily Average True Range
-Long: Close > weekly anchored VWAP AND abs(Close - weekly anchored VWAP) >= 0.15 × daily Average True Range
-Long: Close > monthly anchored VWAP AND abs(Close - monthly anchored VWAP) >= 0.15 × daily Average True Range
-Long: Close > yearly anchored VWAP AND yearly deviation bands are available AND abs(Close - yearly anchored VWAP) >= 0.15 × daily Average True Range
-Short: Close < daily anchored VWAP AND abs(Close - daily anchored VWAP) >= 0.15 × daily Average True Range
-Short: Close < weekly anchored VWAP AND abs(Close - weekly anchored VWAP) >= 0.15 × daily Average True Range
-Short: Close < monthly anchored VWAP AND abs(Close - monthly anchored VWAP) >= 0.15 × daily Average True Range
-Short: Close < yearly anchored VWAP AND yearly deviation bands are available AND abs(Close - yearly anchored VWAP) >= 0.15 × daily Average True Range
+Calculation: Central pivot = (high + low + close) / 3 of a higher-timeframe bar; use either the last completed bar, the preceding completed bar, or the bar still forming, according to the selected pivot display period.
+Calculation: Anchored VWAP = sum(typical price × weight) / sum(weight) since the start of the selected anchor period, where typical price = (high + low + close) / 3 and weight = volume, or 1 when volume is zero or unavailable. Calculate on a base timeframe that may be higher or lower than the chart timeframe; use its last completed bar. The anchor period is longer than the base timeframe.
+Calculation: Anchored VWAP deviation = square root of the weighted mean of squared differences between base-bar typical prices and their anchored VWAP, using the same anchor, weights, and completed base bars.
+Long: Central pivot > central pivot of the preceding higher-timeframe bar AND their difference >= the minimum price increment.
+Short: Central pivot < central pivot of the preceding higher-timeframe bar AND their difference >= the minimum price increment.
+Long: Close > anchored VWAP AND (close - anchored VWAP >= a threshold × ATR OR ATR is unavailable or nonpositive) AND central pivot range is available.
+Short: Close < anchored VWAP AND (anchored VWAP - close >= a threshold × ATR OR ATR is unavailable or nonpositive) AND central pivot range is available.
+Long: Close > anchored VWAP AND (close - anchored VWAP >= a threshold × ATR OR ATR is unavailable or nonpositive) AND anchored VWAP deviation > 0.
+Short: Close < anchored VWAP AND (anchored VWAP - close >= a threshold × ATR OR ATR is unavailable or nonpositive) AND anchored VWAP deviation > 0.
+Calculation: ATR = average true range of the last completed bar on a timeframe that may be higher or lower than the chart timeframe.

@@ -1,6 +1,7 @@
-Calculation: Bulls raw = let range = high - low, body = open - close, tick size = range / volume (replace zero tick size with 1), and swing = (range + abs(body)) / (2 * tick size); if open > close, body / tick size + swing, otherwise swing
-Calculation: Bears raw = let range = high - low, body = open - close, tick size = range / volume (replace zero tick size with 1), and swing = (range + abs(body)) / (2 * tick size); if open < close, -body / tick size + swing, otherwise swing
-Calculation: Smoothed Bulls = apply a configurable smoothing method and lookback to Bulls raw on chart-timeframe bars
-Calculation: Smoothed Bears = apply the same smoothing method and lookback as Smoothed Bulls to Bears raw on chart-timeframe bars
-Long: previous Smoothed Bulls >= previous Smoothed Bears AND current Smoothed Bulls < current Smoothed Bears
-Short: previous Smoothed Bulls <= previous Smoothed Bears AND current Smoothed Bulls > current Smoothed Bears
+Calculation: Price unit = (high - low) / volume; use 1 when this quotient is zero.
+Calculation: Swing = (high - low + abs(open - close)) / (2 * price unit).
+Calculation: Down-bar pressure = swing + max(open - close, 0) / price unit.
+Calculation: Up-bar pressure = swing + max(close - open, 0) / price unit.
+Calculation: Smoothed down-bar pressure and smoothed up-bar pressure = the same selected moving-average method and length applied separately to down-bar pressure and up-bar pressure.
+Long: Previous smoothed down-bar pressure >= previous smoothed up-bar pressure AND current smoothed down-bar pressure < current smoothed up-bar pressure.
+Short: Previous smoothed down-bar pressure <= previous smoothed up-bar pressure AND current smoothed down-bar pressure > current smoothed up-bar pressure.

@@ -1,7 +1,6 @@
-Calculation: ALMA of high
-Calculation: RMA of close, transformed with stochastic normalization and smoothed by a symmetric weighted moving average
-Calculation: Supertrend line calculated from close, transformed with stochastic normalization and smoothed by a symmetric weighted moving average
-Long: RMA-stochastic crosses above Supertrend-stochastic AND RMA-stochastic < a threshold AND ALMA(high) < low
-Short: RMA-stochastic crosses below Supertrend-stochastic AND RMA-stochastic > a threshold AND ALMA(high) > high
-Exit: Long, short-entry condition
-Exit: Short, long-entry condition
+Calculation: Normalized stochastic = 2 × (value − lowest value over the lookback) / (highest value over the lookback − lowest value over the lookback) − 1, smoothed with a symmetrically weighted moving average.
+Calculation: Source series = the previous chart bar's specified price; if a higher timeframe is selected, use the last completed higher-timeframe bar's specified price, repeated on chart bars. Calculate the indicators on the resulting chart-bar series.
+Long: Normalized stochastic of the running moving average of close crosses above normalized stochastic of the three-pole Super Smoother of close AND normalized stochastic of the running moving average is below a lower threshold AND the Arnaud Legoux moving average of high is below the source-series low AND datetime is within the test period.
+Short: Normalized stochastic of the running moving average of close crosses below normalized stochastic of the three-pole Super Smoother of close AND normalized stochastic of the running moving average is above an upper threshold AND the Arnaud Legoux moving average of high is above the source-series high AND datetime is within the test period.
+Exit: long, the Short condition is true.
+Exit: short, the Long condition is true.

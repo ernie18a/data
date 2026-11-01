@@ -1,5 +1,9 @@
-Calculation: HLR = 100 × (current bar midpoint − lowest low) ÷ (highest high − lowest low), using the highest high and lowest low over the lookback window ending on that bar; when the high-low range is zero, HLR = 0. Use the configured signal timeframe (same as the chart timeframe in the documented setup) and the last completed bar; previous HLR is from the preceding completed bar.
-Long: In zone-entry mode, HLR > upper threshold AND previous HLR ≤ upper threshold; OR in zone-exit mode, HLR > lower threshold AND previous HLR ≤ lower threshold.
-Short: In zone-entry mode, HLR < lower threshold AND previous HLR ≥ lower threshold; OR in zone-exit mode, HLR < upper threshold AND previous HLR ≥ upper threshold.
-Exit: long, in zone-entry mode HLR < lower threshold AND previous HLR ≥ lower threshold; OR in zone-exit mode HLR < upper threshold AND previous HLR ≥ upper threshold.
-Exit: short, in zone-entry mode HLR > upper threshold AND previous HLR ≤ upper threshold; OR in zone-exit mode HLR > lower threshold AND previous HLR ≤ lower threshold.
+Calculation: Range position = 100 × (bar midpoint of high and low − lowest low) / (highest high − lowest low), using a lookback that includes the bar; use 0 when highest high equals lowest low. Calculate on the chart timeframe or a selectable higher or lower timeframe, using the selected signal bar, which may be the last completed bar, an earlier completed bar, or the bar still forming.
+Long: Entry-zone mode AND range position > upper threshold AND previous range position <= upper threshold
+Long: Exit-zone mode AND range position > lower threshold AND previous range position <= lower threshold
+Short: Entry-zone mode AND range position < lower threshold AND previous range position >= lower threshold
+Short: Exit-zone mode AND range position < upper threshold AND previous range position >= upper threshold
+Exit: long, most recent short signal is more recent than the most recent long signal
+Exit: short, most recent long signal is more recent than the most recent short signal
+Exit: long, low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

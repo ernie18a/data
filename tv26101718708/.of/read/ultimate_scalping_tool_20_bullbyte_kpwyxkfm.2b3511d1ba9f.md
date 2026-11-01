@@ -1,10 +1,39 @@
-Long: Flux > its EMA
-Short: Flux < its EMA
-Long: Fast Flux EMA > medium Flux EMA AND medium Flux EMA > slow Flux EMA
-Short: Fast Flux EMA < medium Flux EMA AND medium Flux EMA < slow Flux EMA
-Long: directional efficiency > 0.30 AND adaptive momentum > 0 AND volatility regime > -0.10 AND NOT (absolute directional efficiency < 0.20 AND volatility regime < -0.20 AND absolute flow proxy > 0.20)
-Short: directional efficiency < -0.30 AND adaptive momentum < 0 AND volatility regime > -0.10 AND NOT (absolute directional efficiency < 0.20 AND volatility regime < -0.20 AND absolute flow proxy > 0.20)
-Long: higher-timeframe Flux > 25
-Short: higher-timeframe Flux < -25
-Long: At a confirmed price/Flux pivot low, price makes a lower low and Flux makes a higher low, or price makes a higher low and Flux makes a lower low; compared pivot lows are 5–60 bars apart
-Short: At a confirmed price/Flux pivot high, price makes a higher high and Flux makes a lower high, or price makes a lower high and Flux makes a higher high; compared pivot highs are 5–60 bars apart
+Calculation: Safe division = numerator divided by denominator, or zero when denominator is zero; apply the positive denominator floors specified for each calculation.
+Calculation: Soft clamp = hyperbolic tangent, with its exponential argument bounded to prevent overflow.
+Calculation: Directional efficiency = EMA of signed net close displacement over a lookback divided by the sum of absolute one-bar close changes over that lookback, with a positive denominator floor. Its persistence starts at zero, increments on positive efficiency, decrements on negative efficiency, resets on zero, and is bounded above and below. Normalized efficiency = directional efficiency multiplied by a positive base plus a positive factor times the bounded absolute persistence divided by a persistence normalization parameter.
+Calculation: Adaptive momentum = soft clamp of centered and normalized RSI divided by a bounded volatility ratio and multiplied by a positive scaling factor. The volatility ratio is ATR divided by its longer SMA, with a positive denominator floor. Select a short RSI lookback above an upper volatility threshold, a medium lookback above a lower threshold, and a long lookback otherwise.
+Calculation: Volatility index = soft clamp of a weighted sum of: ATR divided by close, normalized to its rolling minimum and maximum and mapped to a signed range; soft-clamped short ATR minus long ATR divided by long ATR; and Bollinger Band width normalized to its rolling minimum and maximum and mapped to a signed range. Apply positive denominator floors and scaling factors.
+Calculation: Absorption = relative volume above a threshold AND absolute candle body divided by high minus low below a threshold; relative volume is volume divided by its SMA, with a positive denominator floor, and the body ratio also has a positive denominator floor.
+Calculation: Flow proxy = EMA of a weighted sum of: soft-clamped EMA of the volume-weighted difference between the close's fractional position in the bar range and its complement; soft-clamped close change over a lookback divided by the earlier close and multiplied by relative volume; and a negative constant for absorption on an up candle, a positive constant for absorption on any other candle, or zero without absorption. Use positive denominator floors and scaling factors.
+Calculation: Trend up = absolute directional efficiency outside the low-efficiency band OR volatility index outside the hard-compression band OR absolute flow proxy outside the building-flow band, AND directional efficiency above its positive trend threshold AND adaptive momentum above zero AND volatility index above its negative trend threshold. Interpret the first three alternatives as one parenthesized condition; the hard-compression band is below a negative threshold and the building-flow band is above a positive threshold.
+Calculation: Trend down = the same exclusion of the low-efficiency, hard-compression, building-flow combination AND directional efficiency below its negative trend threshold AND adaptive momentum below zero AND volatility index above its negative trend threshold.
+Calculation: Current oscillator = scaled weighted sum of normalized efficiency, adaptive momentum, volatility index, and flow proxy. Normalize the weights by their sum, using a positive fallback denominator for a near-zero sum. Weights are fixed parameters or regime-dependent parameters: use coil weights when absolute efficiency is below its low-efficiency threshold, volatility index is below its hard-compression threshold, and absolute flow is above its building threshold; otherwise use trend weights for trend up or trend down, and range weights otherwise.
+Calculation: Simplified higher-timeframe oscillator = scaled weighted sum of EMA-smoothed signed efficiency, soft-clamped centered fixed-period RSI, soft-clamped short-minus-long ATR divided by long ATR, and soft-clamped EMA of twice the close's fractional position within the bar range minus one. Use positive denominator floors and scaling factors. Weights are equal or regime-dependent; the latter use the current-oscillator weighting rules evaluated in the higher-timeframe context. On historical chart bars use the last completed higher-timeframe bar, including the higher-timeframe bar when it completes; while a higher-timeframe bar is forming in real time use its forming value.
+Calculation: Oscillator = current oscillator or a weighted blend of it and the simplified higher-timeframe oscillator.
+Calculation: Flux = oscillator divided by a positive scale and optionally multiplied by one plus a volume-influence factor times capped relative volume minus one. Relative volume is volume divided by its SMA with a positive denominator floor.
+Calculation: Panel oscillator = scaled equal-weight sum of unsmoothed signed efficiency, soft-clamped centered fixed-period RSI, soft-clamped short-minus-long ATR divided by long ATR, and soft-clamped EMA of twice the close's fractional position in the bar range minus one. Use positive denominator floors and scaling factors. Evaluate separately on each higher timeframe, using its last completed bar on historical chart bars and its forming bar in real time.
+Calculation: Divergence pivot = a confirmed oscillator pivot high or low with configurable left and right confirmation lengths. Compare each pivot with the immediately preceding confirmed pivot of the same type, and compare price highs or lows at those oscillator pivot bars. Evaluate on the confirmation bar. The pivot-spacing test uses one plus the number of bars between the two confirmation bars, bounded inclusively by minimum and maximum spacing. Each of the four divergence types has its own minimum gap between confirmation bars, initialized from bar index zero.
+Long: Trend up.
+Short: Trend down.
+Long: Absorption is false AND flux > EMA of flux.
+Short: Absorption is false AND flux <= EMA of flux.
+Long: Short EMA of flux > medium EMA of flux AND medium EMA of flux > long EMA of flux.
+Short: Short EMA of flux < medium EMA of flux AND medium EMA of flux < long EMA of flux.
+Long: Oscillator > zero.
+Short: Oscillator <= zero.
+Long: Oscillator change over a lookback > zero.
+Short: Oscillator change over a lookback <= zero.
+Long: Change over a lookback in oscillator change > zero.
+Short: Change over a lookback in oscillator change <= zero.
+Long: Normalized efficiency > zero.
+Short: Normalized efficiency <= zero.
+Long: Adaptive momentum > zero.
+Short: Adaptive momentum <= zero.
+Long: Absorption is false AND flow proxy > zero.
+Short: Absorption is false AND flow proxy <= zero.
+Long: Panel oscillator > positive threshold.
+Short: Panel oscillator < negative threshold.
+Long: A confirmed oscillator pivot low exists AND its spacing test passes AND its oscillator value > the preceding pivot low's oscillator value AND its price low < the preceding pivot's price low AND the regular bullish divergence minimum gap passes.
+Long: A confirmed oscillator pivot low exists AND its spacing test passes AND its oscillator value < the preceding pivot low's oscillator value AND its price low > the preceding pivot's price low AND the hidden bullish divergence minimum gap passes.
+Short: A confirmed oscillator pivot high exists AND its spacing test passes AND its oscillator value < the preceding pivot high's oscillator value AND its price high > the preceding pivot's price high AND the regular bearish divergence minimum gap passes.
+Short: A confirmed oscillator pivot high exists AND its spacing test passes AND its oscillator value > the preceding pivot high's oscillator value AND its price high < the preceding pivot's price high AND the hidden bearish divergence minimum gap passes.

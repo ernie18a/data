@@ -1,6 +1,7 @@
-Calculation: Upper channel = a weighted moving average of bar highs, weighted by recency, smoothed by the same weighted moving average again, on the indicator timeframe.
-Calculation: Lower channel = a weighted moving average of bar lows, weighted by recency, smoothed by the same weighted moving average again, on the indicator timeframe.
-Long: On the indicator timeframe, the selected signal bar is the last completed bar; its close > upper channel AND the immediately preceding bar's close <= its upper channel.
-Short: On the indicator timeframe, the selected signal bar is the last completed bar; its close < lower channel AND the immediately preceding bar's close >= its lower channel.
-Exit: long, on the indicator timeframe, the selected signal bar's close < lower channel OR current bar datetime - entry datetime > the configured holding-time limit OR close <= entry price - configured stop distance OR close >= entry price + configured target distance.
-Exit: short, on the indicator timeframe, the selected signal bar's close > upper channel OR current bar datetime - entry datetime > the configured holding-time limit OR close >= entry price + configured stop distance OR close <= entry price - configured target distance.
+Calculation: Channel bands = apply a linear weighted moving average twice to highs for the upper band and twice to lows for the lower band, using the same lookback for all four averages. The chart-timeframe bands include a configurable vertical price offset; the higher-timeframe bands have no offset and use the last completed higher-timeframe bar and its preceding bar.
+Long: Chart close > chart upper band.
+Short: Chart close < chart lower band.
+Long: Higher-timeframe close > higher-timeframe upper band AND preceding higher-timeframe close <= its upper band.
+Short: Higher-timeframe close < higher-timeframe lower band AND preceding higher-timeframe close >= its lower band.
+Exit: long, higher-timeframe close < higher-timeframe lower band OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, higher-timeframe close > higher-timeframe upper band OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

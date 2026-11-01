@@ -1,2 +1,4 @@
-Long: MFI > moving average of MFI AND (upper Bollinger Band − middle Bollinger Band) / minimum price increment ≥ flat threshold
-Short: MFI < moving average of MFI AND (upper Bollinger Band − middle Bollinger Band) / minimum price increment ≥ flat threshold
+Long: Bollinger upper band minus middle band >= flatness threshold AND money flow index > moving average of money flow index
+Short: Bollinger upper band minus middle band >= flatness threshold AND money flow index < moving average of money flow index
+Long: Bollinger upper band minus middle band >= flatness threshold AND money flow index > moving average of money flow index, calculated on the still-forming higher-timeframe bar
+Short: Bollinger upper band minus middle band >= flatness threshold AND money flow index < moving average of money flow index, calculated on the still-forming higher-timeframe bar

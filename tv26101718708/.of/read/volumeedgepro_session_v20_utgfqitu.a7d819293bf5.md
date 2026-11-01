@@ -1,19 +1,16 @@
-Calculation: Session volume profile = divide the current session’s high-low range into equal price bins; assign each chart bar’s volume to the bin containing its close. POC is the highest-volume bin’s midpoint; VAH and VAL bound the smallest contiguous range around POC containing the configured share of volume. Count consecutive zero-volume bins inward from each range extreme, stopping at the first nonzero bin.
-Calculation: Higher-timeframe volume profile = the same volume-profile calculation using bars of the mapped higher timeframe, including its still-forming bar.
-Calculation: Daily volume profile = the same volume-profile calculation using daily bars, including the still-forming daily bar.
-Calculation: Short and long moving averages = selected moving-average type of close, with the short lookback shorter than the long lookback.
-Long: Current session high − high × 0 + tick tolerance ≥ high AND close < session high AND consecutive empty top bins ≥ required high-side count AND volatility gate open AND cooldown clear AND outside dead time
-Long: low ≤ session low + tick tolerance AND close > session low AND consecutive empty bottom bins ≥ required low-side count AND volatility gate open AND cooldown clear AND outside dead time
-Long: Short moving average crosses above long moving average
-Long: Close crosses above higher-timeframe VAH
-Long: Close > daily VAH OR (close > daily POC + 0.30 × (daily VAH − daily VAL))
-Long: Session POC + one price-bin width < close ≤ session VAH AND (close > daily VAH OR close > daily POC + 0.30 × (daily VAH − daily VAL) OR close < daily VAL AND close ≥ daily POC − 0.30 × (daily VAH − daily VAL))
-Long: After a qualifying session-edge buy, within the configured expiry, close ≥ previous-session close + ATR-based entry buffer
-Long: After a qualifying session-edge buy, within the configured expiry, short moving average crosses above long moving average
-Short: high ≥ session high − tick tolerance AND close < session high AND consecutive empty top bins ≥ required high-side count AND volatility gate open AND cooldown clear AND outside dead time
-Short: Short moving average crosses below long moving average
-Short: Close crosses below higher-timeframe VAL
-Short: Close < daily VAL OR (close < daily POC − 0.30 × (daily VAH − daily VAL))
-Short: Session VAL ≤ close < session POC − one price-bin width AND (close < daily VAL OR close < daily POC − 0.30 × (daily VAH − daily VAL) OR close > daily VAH AND close ≤ daily POC + 0.30 × (daily VAH − daily VAL))
-Short: After a qualifying session-edge sell, within the configured expiry, close ≤ previous-session close − ATR-based entry buffer
-Short: After a qualifying session-edge sell, within the configured expiry, short moving average crosses below long moving average
+Calculation: Profile = For the selected window, set high and low to the highest high and lowest low, divide their difference by the number of price bins, and create one more bin than that number. Assign each bar's entire volume to the bin at min(number of bins, floor((close - low) / bin width)). The point of control is the midpoint of the first bin with maximum volume. Starting at that bin, expand the value area one bin at a time toward the adjacent bin with greater volume, choosing the upper bin on a tie, until the selected fraction of total volume is reached or neither side can expand. The value-area high is the upper edge of the highest included bin; the value-area low is the lower edge of the lowest included bin.
+Calculation: Session profile = Profile over chart bars from the current session's start through the current bar, limited to the most recent maximum session length.
+Calculation: Other-timeframe profile = Profile over a number of bars equal to the current session profile's chart-bar count, calculated on a separately selected timeframe. The selected timeframe can be higher or lower than the chart timeframe; use the last completed bar historically and the still-forming bar in real time.
+Calculation: Direction profile = Other-timeframe profile with its own selected timeframe, which can be higher or lower than the chart timeframe; use the last completed bar historically and the still-forming bar in real time.
+Long: Shorter-period moving average of close crosses above longer-period moving average of close.
+Short: Shorter-period moving average of close crosses below longer-period moving average of close.
+Long: Close > session profile point of control + session profile bin width AND close <= session profile value-area high, OR close > session profile value-area high.
+Short: Close < session profile point of control - session profile bin width AND close >= session profile value-area low, OR close < session profile value-area low.
+Long: Close > other-timeframe profile value-area high.
+Short: Close < other-timeframe profile value-area low.
+Long: Close crosses above other-timeframe profile value-area high.
+Short: Close crosses below other-timeframe profile value-area low.
+Long: Close > direction profile value-area high, OR close >= direction profile value-area low AND close <= direction profile value-area high AND close > direction profile point of control + a fraction of the direction profile value-area width.
+Short: Close < direction profile value-area low AND close <= direction profile value-area high, OR close >= direction profile value-area low AND close <= direction profile value-area high AND close <= direction profile point of control + a fraction of the direction profile value-area width AND close < direction profile point of control - a fraction of the direction profile value-area width.
+Long: Low <= session profile low + price tolerance AND close > session profile low.
+Short: High >= session profile high - price tolerance AND close < session profile high.

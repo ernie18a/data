@@ -1,6 +1,7 @@
-Calculation: First i_Trend line = configured applied price minus the selected Bollinger band (basis, upper, or lower) on indicator-timeframe bars.
-Calculation: Second i_Trend line = 2 × the configured moving average minus the bar's high minus the bar's low, on indicator-timeframe bars.
-Long: First i_Trend line on the last completed indicator-timeframe bar > second i_Trend line on that bar AND first i_Trend line on the immediately preceding completed indicator-timeframe bar ≤ second i_Trend line on that bar
-Short: First i_Trend line on the last completed indicator-timeframe bar < second i_Trend line on that bar AND first i_Trend line on the immediately preceding completed indicator-timeframe bar ≥ second i_Trend line on that bar
-Exit: Short, first i_Trend line on the last completed indicator-timeframe bar > second i_Trend line on that bar
-Exit: Long, first i_Trend line on the last completed indicator-timeframe bar < second i_Trend line on that bar
+Calculation: Selected price = a configurable choice of open, high, low, close, median, typical, weighted close, (open + close) / 2, (open + high + low + close) / 4, or one of these: high if close > open, low if close < open, otherwise close; (high + close) / 2 if close > open, (low + close) / 2 if close < open, otherwise close; or (high + low + close + X) / 2 - (high + low) / 2, where X is low if close < open, high if close > open, otherwise close.
+Calculation: Oscillator = selected price minus the selected Bollinger Bands middle, upper, or lower line, using a configurable applied price.
+Calculation: Signal = 2 × moving average of a configurable applied price - high - low. Calculate the oscillator and signal on a configurable timeframe that may be higher, lower, or equal to the chart timeframe; use a configurable bar offset, including the last completed bar or the bar still forming. For a completed or older bar, update on each new bar of that timeframe; for the forming bar, update on each chart bar.
+Long: Oscillator > signal AND oscillator on the preceding indicator-timeframe bar <= signal on that bar.
+Short: Oscillator < signal AND oscillator on the preceding indicator-timeframe bar >= signal on that bar.
+Exit: long, oscillator < signal OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, oscillator > signal OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

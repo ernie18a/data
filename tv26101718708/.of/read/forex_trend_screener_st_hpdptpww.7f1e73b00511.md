@@ -1,3 +1,3 @@
-Calculation: FlowTrend = EMA of ((HLC3 − EMA(HLC3, channel lookback)) ÷ (0.015 × EMA(abs(HLC3 − EMA(HLC3, channel lookback)), same channel lookback)); the outer smoothing lookback is longer than the channel lookback. Calculate on each configured screener timeframe, which may be higher or lower than the chart timeframe; use its still-forming bar unless confirmation is enabled, then use its last completed bar.
-Long: At least one enabled Trend timeframe exists AND FlowTrend is above 0 on every enabled Trend timeframe.
-Short: At least one enabled Trend timeframe exists AND FlowTrend is below 0 on every enabled Trend timeframe.
+Calculation: FlowTrend = EMA((typical price − EMA(typical price, channel lookback)) / (scale factor × EMA(abs(typical price − EMA(typical price, channel lookback)), channel lookback)), smoothing lookback), calculated independently on each enabled timeframe; use either its last completed bar or its still-forming bar according to that timeframe's confirmation setting. Each timeframe may be higher or lower than the chart timeframe.
+Long: FlowTrend >= 0 on any enabled timeframe
+Short: FlowTrend < 0 on any enabled timeframe

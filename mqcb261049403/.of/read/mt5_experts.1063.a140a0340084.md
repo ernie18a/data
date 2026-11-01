@@ -1,6 +1,9 @@
-Calculation: Selected main line = Adaptive Cyber Cycle, Adaptive CG Oscillator, or Adaptive RVI, as selected; each uses the selected adaptive cycle period.
-Calculation: Signal line = selected main line on the immediately preceding bar.
-Long: On the selected indicator timeframe, using completed bars: main line on the previous bar <= signal line on the previous bar AND main line on the latest bar > signal line on the latest bar
-Short: On the selected indicator timeframe, using completed bars: main line on the previous bar >= signal line on the previous bar AND main line on the latest bar < signal line on the latest bar
-Exit: long, On the selected indicator timeframe, using completed bars: main line on the previous bar > signal line on the previous bar AND main line on the latest bar <= signal line on the latest bar
-Exit: short, On the selected indicator timeframe, using completed bars: main line on the previous bar < signal line on the previous bar AND main line on the latest bar >= signal line on the latest bar
+Calculation: Dominant cycle period = output of the external CyclePeriod indicator; its implementation is absent from READ.
+Calculation: Selected oscillator = one of the following, calculated on a configurable higher or lower timeframe using the last completed bar, or the still-forming bar when configured; index t denotes the selected bar and earlier indices denote preceding bars. Let p[t] = (high[t] + low[t])/2 and D[t] = dominant cycle period.
+Calculation: Adaptive cyber cycle = let s[t] = (p[t] + 2*p[t-1] + 2*p[t-2] + p[t-3])/6 and a[t] = 2/(D[t]+1); cycle[t] = (1-a[t]/2)^2*(s[t]-2*s[t-1]+s[t-2]) + 2*(1-a[t])*cycle[t-1] - (1-a[t])^2*cycle[t-2], initialized with (p[t]-2*p[t-1]+p[t-2])/4.
+Calculation: Adaptive center-of-gravity oscillator = let n = floor(D[t]/2), capped at the number of preceding available bars; oscillator[t] = -sum((i+1)*p[t-i], i=0..n-1)/sum(p[t-i], i=0..n-1) + (n+1)/2; undefined when the denominator is zero.
+Calculation: Adaptive relative vigor index = let n = floor((4*D[t-3]+3*D[t-2]+2*D[t-1]+D[t])/20), capped at the number of preceding available bars; let u[t] = ((close-open)[t]+2*(close-open)[t-1]+2*(close-open)[t-2]+(close-open)[t-3])/6 and v[t] = ((high-low)[t]+2*(high-low)[t-1]+2*(high-low)[t-2]+(high-low)[t-3])/6; oscillator[t] = sum(u[t-i], i=0..n-1)/sum(v[t-i], i=0..n-1); undefined when the denominator is zero.
+Long: Selected oscillator[t] > selected oscillator[t-1] AND selected oscillator[t-1] <= selected oscillator[t-2].
+Short: Selected oscillator[t] < selected oscillator[t-1] AND selected oscillator[t-1] >= selected oscillator[t-2].
+Exit: long, selected oscillator[t] < selected oscillator[t-1] OR low <= entry price - enabled stop-loss distance OR high >= entry price + enabled take-profit distance.
+Exit: short, selected oscillator[t] > selected oscillator[t-1] OR high >= entry price + enabled stop-loss distance OR low <= entry price - enabled take-profit distance.

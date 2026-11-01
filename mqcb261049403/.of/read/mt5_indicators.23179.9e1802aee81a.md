@@ -1,7 +1,6 @@
-Calculation: Trading-day anchor = current GMT-shifted trading-day open when open-based levels are enabled; otherwise (prior trading-day high + low + close) / 3
-Calculation: Buy area, first buy target, second buy target = trading-day anchor plus their respective configured offsets; sell area and sell targets = trading-day anchor minus their respective configured offsets
-Calculation: Average daily range = mean of (prior trading-day range, the 5-day mean range, the 10-day mean range, and the 20-day mean range); each longer mean includes the prior trading-day range and uses progressively more daily ranges
-Long: Current price is within the configured proximity tolerance of the buy area, first buy target, or second buy target OR current price is at or above the buy area and below the trading-day anchor + average daily range
-Short: Current price is within the configured proximity tolerance of the sell area, first sell target, or second sell target OR current price is at or below the sell area and above the trading-day anchor - average daily range
-Exit: Long, price >= entry price + the displayed take-profit offset for the entry level OR price <= entry price - the displayed stop-loss offset for the entry level
-Exit: Short, price <= entry price - the displayed take-profit offset for the entry level OR price >= entry price + the displayed stop-loss offset for the entry level
+Calculation: Reference price = either the open of the forming higher-timeframe bar or the pivot point of the last completed higher-timeframe bar; the higher-timeframe boundaries may be shifted, and Sunday chart bars are included in the preceding period.
+Calculation: Pivot point = (high + low + close) / 3 of the last completed higher-timeframe bar.
+Calculation: Upper levels = reference price plus three increasing positive price offsets; lower levels = reference price minus three increasing positive price offsets.
+Long: Close >= nearest upper level AND close < farthest upper level.
+Short: Close <= nearest lower level AND close > farthest lower level.
+Short: Close > any lower level minus a proximity offset AND close < that lower level plus the proximity offset AND (close <= pivot point minus a pivot proximity offset OR close >= pivot point plus that offset) AND (close <= forming higher-timeframe open minus an open proximity offset OR close >= that open plus that offset).

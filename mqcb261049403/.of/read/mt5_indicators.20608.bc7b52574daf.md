@@ -1,3 +1,3 @@
-Calculation: Smoothed composite oscillator = moving average of (Chaikin Oscillator × Commodity Channel Index ÷ Momentum)
-Long: Smoothed composite oscillator > its value on the previous bar AND its value on the previous bar ≤ its value two bars ago
-Short: Smoothed composite oscillator < its value on the previous bar AND its value on the previous bar ≥ its value two bars ago
+Calculation: Oscillator = moving average of (Chaikin oscillator × commodity channel index / momentum); use 100 as the input to the moving average when momentum is zero. Calculate the Chaikin oscillator using volume and shorter- and longer-period moving averages; calculate momentum as 100 × current applied price / applied price at its lookback.
+Long: Oscillator > previous bar's oscillator
+Short: Oscillator < previous bar's oscillator

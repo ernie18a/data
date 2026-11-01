@@ -1,4 +1,3 @@
-Calculation: Fast digital filter = digital filter of the selected price with a shorter lookback than the slow digital filter, calculated on the still-forming higher-timeframe bar
-Calculation: Slow digital filter = digital filter of the selected price with a longer lookback than the fast digital filter, calculated on the still-forming higher-timeframe bar
-Long: Fast digital filter > slow digital filter
-Short: Fast digital filter < slow digital filter
+Calculation: Filter comparison = fast adaptive trend line (FATL) minus slow adaptive trend line (SATL), both applied to the same selected price series; use the chart timeframe or a higher timeframe. For a higher timeframe, evaluate the still-forming bar at its first chart bar and hold that comparison until the next higher-timeframe bar.
+Long: Filter comparison > 0 OR (filter comparison = 0 AND the most recent nonzero filter comparison > 0)
+Short: Filter comparison < 0 OR (filter comparison = 0 AND the most recent nonzero filter comparison < 0)

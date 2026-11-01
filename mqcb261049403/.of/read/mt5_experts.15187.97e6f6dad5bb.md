@@ -1,5 +1,5 @@
-Calculation: Trend state = bearish when Williams %R is below the lower threshold; bullish when it is above the upper threshold; otherwise retain the prior state. The upper threshold is higher than the lower threshold.
-Long: Trend state changes from bearish to bullish on the last completed indicator-timeframe bar.
-Short: Trend state changes from bullish to bearish on the last completed indicator-timeframe bar.
-Exit: long, trend state changes from bullish to bearish on the last completed indicator-timeframe bar
-Exit: short, trend state changes from bearish to bullish on the last completed indicator-timeframe bar
+Calculation: Trend state = Apply Williams %R to the chart timeframe for indicator markings, or to a configurable higher or lower timeframe for the trading system. Initialize bearish. On each bar, set bearish if Williams %R is below a lower threshold, then set bullish if it is above an upper threshold; otherwise retain the previous state. The thresholds are symmetric around the midpoint of the Williams %R scale. For another timeframe, use the last completed bar or the still-forming bar according to the signal-bar setting; a completed-bar setting may also select an earlier completed bar.
+Long: Trend state changes from bearish to bullish.
+Short: Trend state changes from bullish to bearish.
+Exit: long, the most recent trend-state change is from bullish to bearish OR low <= entry price minus the enabled stop-loss distance OR high >= entry price plus the enabled take-profit distance.
+Exit: short, the most recent trend-state change is from bearish to bullish OR high >= entry price plus the enabled stop-loss distance OR low <= entry price minus the enabled take-profit distance.

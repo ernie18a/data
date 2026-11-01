@@ -1,8 +1,5 @@
-Calculation: CCI = Commodity Channel Index of typical price on the configured indicator timeframe, evaluated on the selected signal bar and its immediately preceding bar; the timeframe may be higher or lower than the chart timeframe, and the selected bar may be completed or still forming according to the configured signal-bar offset.
-Calculation: ATR = Average True Range on the configured indicator timeframe and selected signal bar.
-Calculation: Bullish SuperTrend line = when CCI is above its threshold, the lower of low minus ATR and the prior bullish line if CCI was at or above the threshold on the prior bar; when CCI crosses from below to at or above the threshold, use the prior bearish SuperTrend line.
-Calculation: Bearish SuperTrend line = when CCI is below its threshold, the higher of high plus ATR and the prior bearish line if CCI was at or below the threshold on the prior bar; when CCI crosses from above to at or below the threshold, use the prior bullish SuperTrend line.
-Long: prior bearish SuperTrend line exists AND CCI crosses from below to at or above its threshold.
-Short: prior bullish SuperTrend line exists AND CCI crosses from above to at or below its threshold.
-Exit: long, bearish SuperTrend line exists on the selected signal bar.
-Exit: short, bullish SuperTrend line exists on the selected signal bar.
+Calculation: Up line and down line = On each bar of the selectable indicator timeframe, which may be higher or lower than the chart timeframe, calculate CCI from typical price and ATR. Initialize both lines to zero. If CCI equals the threshold and the preceding CCI is below it, set the up line to the preceding down line; if CCI equals the threshold and the preceding CCI is above it, set the down line to the preceding up line. If CCI is above the threshold, set the up line to low minus ATR, but if that is below the preceding up line and preceding CCI is at least the threshold, use the preceding up line. If CCI is below the threshold, set the down line to high plus ATR, but if that is above the preceding down line and preceding CCI is at most the threshold, use the preceding down line. Evaluate the last completed indicator bar, or the still-forming indicator bar when configured; preceding values refer to the preceding indicator bar.
+Long: preceding down line != 0 AND up line != 0
+Short: preceding up line != 0 AND down line != 0
+Exit: long, down line != 0 OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance
+Exit: short, up line != 0 OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance

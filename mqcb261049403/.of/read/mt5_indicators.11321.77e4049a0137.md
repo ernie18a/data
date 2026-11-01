@@ -1,4 +1,3 @@
-Calculation: Chaikin Oscillator = shorter-period moving average of Accumulation/Distribution minus longer-period moving average of Accumulation/Distribution
-Calculation: Signal line = moving average of the Chaikin Oscillator
-Long: Chaikin Oscillator > Signal line AND (upper Bollinger Band - middle Bollinger Band) / point size >= flat-width threshold
-Short: Chaikin Oscillator < Signal line AND (upper Bollinger Band - middle Bollinger Band) / point size >= flat-width threshold
+Calculation: Oscillator = shorter-period moving average of the accumulation/distribution line minus longer-period moving average of the accumulation/distribution line, using the same selectable smoothing method for both
+Long: upper Bollinger Band minus middle Bollinger Band >= flat threshold AND oscillator > moving average of oscillator
+Short: upper Bollinger Band minus middle Bollinger Band >= flat threshold AND oscillator < moving average of oscillator

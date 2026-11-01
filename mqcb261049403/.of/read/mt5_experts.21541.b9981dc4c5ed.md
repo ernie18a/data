@@ -1,6 +1,10 @@
-Calculation: Upper breakout threshold = highest high in the configured lookback window, starting at the configured bar offset older than the signal bar on the configured signal timeframe.
-Calculation: Lower breakout threshold = lowest low in the configured lookback window, starting at the configured bar offset older than the signal bar on the configured signal timeframe.
-Long: Last completed signal-timeframe bar close > upper breakout threshold AND preceding completed bar close <= its upper breakout threshold
-Short: Last completed signal-timeframe bar close < lower breakout threshold AND preceding completed bar close >= its lower breakout threshold
-Exit: long, last completed signal-timeframe bar close < lower breakout threshold OR bar low <= entry price - configured stop-loss distance OR bar high >= entry price + configured take-profit distance
-Exit: short, last completed signal-timeframe bar close > upper breakout threshold OR bar high >= entry price + configured stop-loss distance OR bar low <= entry price - configured take-profit distance
+Calculation: Upper channel at a bar = highest high over a configurable number of bars starting at a configurable offset before that bar.
+Calculation: Lower channel at a bar = lowest low over a separately configurable number of bars starting at a separately configurable offset before that bar.
+Long: Chart bar close > upper channel AND chart bar close >= lower channel.
+Short: Chart bar close < lower channel.
+Long: Last completed higher-timeframe bar close > its upper channel AND its close >= its lower channel AND (the preceding higher-timeframe bar close <= its upper channel OR its close < its lower channel).
+Short: Last completed higher-timeframe bar close < its lower channel AND preceding higher-timeframe bar close >= its lower channel.
+Exit: long, last completed higher-timeframe bar close < its lower channel.
+Exit: short, last completed higher-timeframe bar close > its upper channel AND its close >= its lower channel.
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

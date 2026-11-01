@@ -1,6 +1,7 @@
-Calculation: Fisher Cyber Cycle main line = On the configured indicator timeframe (higher or lower than the chart timeframe), for completed bars: let P=(high+low)/2; S=(P+2P[-1]+2P[-2]+P[-3])/6; C=(1−0.5α)^2(S−2S[-1]+S[-2])+2(1−α)C[-1]−(1−α)^2C[-2]; normalize C within its rolling lookback range to V=(C−rolling_min(C))/(rolling_max(C)−rolling_min(C)), or 0 if the range is zero; let W=(4V+3V[-1]+2V[-2]+V[-3])/10; main=0.5×ln((1+1.98(W−0.5))/(1−1.98(W−0.5)))
-Calculation: Fisher Cyber Cycle signal line = previous completed bar's main line on the configured indicator timeframe
-Long: previous completed bar's main line <= signal line AND latest completed bar's main line > signal line
-Short: previous completed bar's main line >= signal line AND latest completed bar's main line < signal line
-Exit: long, latest completed bar's main line < signal line OR low <= entry price − configured stop-loss distance OR high >= entry price + configured take-profit distance
-Exit: short, latest completed bar's main line > signal line OR high >= entry price + configured stop-loss distance OR low <= entry price − configured take-profit distance
+Calculation: Fisher cycle = On a configurable indicator timeframe, which may be higher, lower, or equal to the chart timeframe, use the last completed indicator bar by default; a forming bar may be selected instead. Let p = (high + low)/2 and s = (p + 2*p[1] + 2*p[2] + p[3])/6, where [1] means one indicator bar earlier. For the initial lookback-plus-three bars, cycle = (p + 2*p[1] + p[2])/4; thereafter cycle = (1-alpha/2)^2*(s - 2*s[1] + s[2]) + 2*(1-alpha)*cycle[1] - (1-alpha)^2*cycle[2]. Initialize prior price, smoothed price, cycle, and normalized-cycle values to the midpoint of the fourth bar. Normalize cycle to its minimum and maximum over the lookback including the current bar, using zero when the range is zero. Let w be the four-bar weighted average of normalized cycle with weights 4, 3, 2, 1 from newest to oldest. Fisher cycle = 0.5*ln((1 + 1.98*(w - 0.5))/(1 - 1.98*(w - 0.5))).
+Long: Fisher cycle > Fisher cycle[1] AND Fisher cycle[1] <= Fisher cycle[2]
+Short: Fisher cycle < Fisher cycle[1] AND Fisher cycle[1] >= Fisher cycle[2]
+Exit: long, Fisher cycle < Fisher cycle[1]
+Exit: short, Fisher cycle > Fisher cycle[1]
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

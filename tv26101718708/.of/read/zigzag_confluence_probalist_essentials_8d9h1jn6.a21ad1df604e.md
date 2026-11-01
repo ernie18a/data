@@ -1,3 +1,22 @@
-Calculation: ATR reversal threshold = reversal multiplier × ATR
-Long: On a completed chart bar, while tracking a down leg, close − the running lowest low ≥ ATR reversal threshold AND bars since that low ≥ confirmation depth OR close > the last confirmed swing high AND that high has not already been broken
-Short: On a completed chart bar, while tracking an up leg, the running highest high − close ≥ ATR reversal threshold AND bars since that high ≥ confirmation depth OR close < the last confirmed swing low AND that low has not already been broken
+Calculation: ZigZag state = Initialize an upward leg on the first bar with its running extreme equal to the first low. On each upward-leg bar, replace the extreme and its bar when the high is strictly higher; on each downward-leg bar, replace them when the low is strictly lower. After a high is confirmed, start a downward leg with the confirmation bar's low as its extreme; after a low is confirmed, start an upward leg with the confirmation bar's high as its extreme. Use the current bar's ATR multiplied by a reversal parameter as the reversal threshold. Confirmations and all decisions occur on the current bar, not the extreme's bar.
+Calculation: Confirmed swing high = On an upward leg, after updating the extreme, the extreme minus close is at least the reversal threshold AND the extreme is at least the confirmation-depth parameter in bars old. Store the extreme as the latest confirmed high and reset its broken status.
+Calculation: Confirmed swing low = On a downward leg, after updating the extreme, close minus the extreme is at least the reversal threshold AND the extreme is at least the confirmation-depth parameter in bars old. Store the extreme as the latest confirmed low and reset its broken status.
+Calculation: Ghost retracement = During an upward leg, track the lowest low since the running high was set; during a downward leg, track the highest high since the running low was set. Reset the tracked value to the current bar's low or high respectively when the extreme changes or the leg starts.
+Calculation: Recent directional outcomes = For each direction, record confirmed pivots separated from the last recorded pivot of that direction by at least a spacing parameter. Anchor each recorded pivot at its confirmation close. After a horizon parameter in bars, record (close minus anchor) / anchor for a low pivot and (anchor minus close) / anchor for a high pivot. Retain at most a sample-cap parameter of the latest completed outcomes per direction; use a shorter recent-window parameter of those outcomes. Include outcomes completing on the current bar before evaluating the current signal.
+Calculation: History-backed = The recent directional outcomes count is at least a minimum-sample parameter AND the Wilson lower confidence bound for the proportion of outcomes greater than zero exceeds one half AND their median exceeds zero. Use a confidence-level parameter.
+Calculation: Strong pivot = The absolute percentage change from the preceding confirmed pivot to the current pivot is at least an upper nearest-rank percentile of the retained same-direction pivot leg sizes, including the current leg AND the retained count is at least a minimum-strength-sample parameter. Retain a limited rolling history of leg sizes; the first pivot has leg size zero.
+Calculation: Pivot at prior level = The current pivot price is within a tolerance parameter multiplied by current ATR of any retained earlier confirmed pivot price, excluding the current pivot and immediately preceding pivot; scan a limited number of the most recent pivots.
+Long: A confirmed swing low occurs.
+Short: A confirmed swing high occurs.
+Long: A confirmed swing low occurs AND history-backed for low pivots.
+Short: A confirmed swing high occurs AND history-backed for high pivots.
+Long: A confirmed swing low occurs AND strong pivot.
+Short: A confirmed swing high occurs AND strong pivot.
+Long: A confirmed swing low occurs AND history-backed for low pivots AND strong pivot.
+Short: A confirmed swing high occurs AND history-backed for high pivots AND strong pivot.
+Long: A confirmed swing low occurs AND pivot at prior level.
+Short: A confirmed swing high occurs AND pivot at prior level.
+Long: Close is strictly above the latest confirmed swing high AND that high has not previously been broken since confirmation; mark it broken.
+Short: Close is strictly below the latest confirmed swing low AND that low has not previously been broken since confirmation; mark it broken.
+Long: On a downward leg, the current low is strictly below the previous running low AND either the previous running low is at least the confirmation-depth parameter in bars old OR the highest high tracked since that low minus that low is at least half the current reversal threshold.
+Short: On an upward leg, the current high is strictly above the previous running high AND either the previous running high is at least the confirmation-depth parameter in bars old OR that high minus the lowest low tracked since that high is at least half the current reversal threshold.

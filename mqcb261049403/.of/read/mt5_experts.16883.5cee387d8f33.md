@@ -1,5 +1,7 @@
-Calculation: Bezier line = binomially weighted sum of a selected OHLC-derived price over the current bar and preceding bars, with weights determined by a smoothing parameter; calculate on the selected indicator timeframe (which may be higher or lower than the chart timeframe) using completed bars.
-Long: Bezier[t-2] > Bezier[t-1] AND Bezier[t-1] < Bezier[t]
-Short: Bezier[t-2] < Bezier[t-1] AND Bezier[t-1] > Bezier[t]
-Exit: Long, Bezier[t] < Bezier[t-1]
-Exit: Short, Bezier[t] > Bezier[t-1]
+Calculation: Bézier value = sum over i from 0 through lookback n of selected price[i bars ago] × binomial(n, i) × t^i × (1 − t)^(n − i), with sensitivity t constrained to [0, 1]. The selected price may be open, high, low, close, median, typical, weighted close, (open + close)/2, OHLC average, high when close > open and low when close < open and close otherwise, (high + close)/2 when close > open and (low + close)/2 when close < open and close otherwise, or (high + low + close + (low if close < open, high if close > open, otherwise close))/2 − (high + low)/2. Calculate on the chart timeframe for the indicator markings; for trading signals, calculate on the selected timeframe, which may be the chart timeframe or a higher or lower timeframe, using the selected signal bar: the last completed bar or a still-forming bar, as configured. Earlier values refer to preceding bars of that same timeframe.
+Long: Chart-timeframe Bézier value >= previous chart-timeframe Bézier value
+Short: Chart-timeframe Bézier value < previous chart-timeframe Bézier value
+Long: Signal-bar Bézier value > previous Bézier value AND previous Bézier value < Bézier value two bars before the signal bar
+Short: Signal-bar Bézier value < previous Bézier value AND previous Bézier value > Bézier value two bars before the signal bar
+Exit: long, signal-bar Bézier value < previous Bézier value OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, signal-bar Bézier value > previous Bézier value OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

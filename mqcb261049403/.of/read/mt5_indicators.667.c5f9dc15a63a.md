@@ -1,7 +1,5 @@
-Calculation: X2MA = apply a moving-average smoothing to the selected applied price, then apply a second moving-average smoothing to the result, on higher-timeframe bars
-Long: higher-timeframe X2MA on the still-forming bar > X2MA on the last completed bar
-Long: X2MA on the last completed higher-timeframe bar > X2MA on the preceding completed higher-timeframe bar
-Long: X2MA on the preceding completed higher-timeframe bar > X2MA on the third most recent completed higher-timeframe bar
-Short: higher-timeframe X2MA on the still-forming bar < X2MA on the last completed bar
-Short: X2MA on the last completed higher-timeframe bar < X2MA on the preceding completed higher-timeframe bar
-Short: X2MA on the preceding completed higher-timeframe bar < X2MA on the third most recent completed higher-timeframe bar
+Calculation: Input price = a selected bar price: open, high, low, close, (high + low)/2, (high + low + close)/3, (high + low + 2 × close)/4, (open + close)/2, (open + high + low + close)/4, high if close > open and low if close < open and close otherwise, or (high + close)/2 if close > open and (low + close)/2 if close < open and close otherwise.
+Calculation: Double-smoothed average = apply a selected moving average to the input price, then apply a second selected moving average to its output; the two methods, lengths, and method-specific parameters are independently selectable. Each method may be SMA, EMA, SMMA, linear weighted moving average, Jurik moving average, ultralinear moving average, quadratic regression moving average, Tilson T3, VIDYA, or Kaufman adaptive moving average.
+Calculation: Ultralinear moving average = apply three successive stages, each computing 1.5 × EMA(input) − 0.5 × EMA(EMA(input)), with the same smoothing factor 3/(length + 2) in each EMA.
+Long: On any of the three most recent higher-timeframe bars, including the bar still forming, the double-smoothed average is greater than or equal to its value on the immediately preceding higher-timeframe bar.
+Short: On any of the three most recent higher-timeframe bars, including the bar still forming, the double-smoothed average is less than its value on the immediately preceding higher-timeframe bar.

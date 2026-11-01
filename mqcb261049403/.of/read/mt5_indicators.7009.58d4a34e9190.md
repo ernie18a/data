@@ -1,6 +1,4 @@
-Calculation: DS Stochastic fast line = 100 × smoothed(close − lowest low over a lookback) ÷ smoothed(highest high − lowest low over the same lookback); use the same smoother and lookback for numerator and denominator.
-Calculation: DS Stochastic slow line = 100 × further-smoothed DS Stochastic numerator ÷ further-smoothed DS Stochastic denominator; use the same second-stage smoother and lookback for both.
-Long: DS Stochastic fast line > DS Stochastic slow line
-Short: DS Stochastic fast line < DS Stochastic slow line
-Long: Higher-timeframe DS Stochastic fast line > higher-timeframe DS Stochastic slow line (use the still-forming higher-timeframe bar’s value sampled at the start of its interval and carried forward on lower-timeframe bars)
-Short: Higher-timeframe DS Stochastic fast line < higher-timeframe DS Stochastic slow line (use the still-forming higher-timeframe bar’s value sampled at the start of its interval and carried forward on lower-timeframe bars)
+Calculation: First oscillator = 100 × smoothed(close − lowest low) / smoothed(highest high − lowest low), using the same lookback and first smoothing method and period for both series; use 100 if the smoothed range is zero. The lookback includes the current bar.
+Calculation: Second oscillator = 100 × second smoothing of smoothed(close − lowest low) / second smoothing of smoothed(highest high − lowest low), using the same second smoothing method and period for both series; use 100 if the twice-smoothed range is zero. Calculate both oscillators on the chart timeframe or on a higher timeframe using its still-forming bar.
+Long: First oscillator > second oscillator
+Short: First oscillator < second oscillator

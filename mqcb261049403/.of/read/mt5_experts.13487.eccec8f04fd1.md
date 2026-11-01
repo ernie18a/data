@@ -1,5 +1,7 @@
-Calculation: Schaff RVI Trend Cycle = subtract the longer-period RVI from the shorter-period RVI; normalize the difference to 0–100 over the cycle lookback and smooth with a factor of 0.5; normalize that result to −100–100 over the same lookback and smooth again with a factor of 0.5.
-Long: On the chart timeframe, the latest completed Schaff RVI Trend Cycle value > upper level AND the preceding completed value <= upper level
-Short: On the chart timeframe, the latest completed Schaff RVI Trend Cycle value < lower level AND the preceding completed value >= lower level
-Exit: long, On the chart timeframe, the latest completed Schaff RVI Trend Cycle value < lower level AND the preceding completed value >= lower level
-Exit: short, On the chart timeframe, the latest completed Schaff RVI Trend Cycle value > upper level AND the preceding completed value <= upper level
+Calculation: RVI trend cycle = subtract the longer-period Relative Vigor Index (RVI) main line from the shorter-period RVI main line. Normalize this difference over a cycle lookback to a 0–100 stochastic; if the range is zero, use the previous smoothed stochastic. Smooth it recursively as the average of its current raw value and its previous smoothed value. Normalize the smoothed stochastic over the same cycle lookback to a −100–100 stochastic; if the range is zero, use the previous trend cycle value. Smooth this second stochastic recursively as the average of its current raw value and its previous trend cycle value. Initialize both smoothing stages with their first raw values. Calculate on a selectable timeframe that may be higher than, lower than, or the same as the chart timeframe, using either its last completed bar or its still-forming bar; previous values refer to the preceding bar of that timeframe.
+Long: RVI trend cycle > 0 AND RVI trend cycle > upper level AND (previous RVI trend cycle <= 0 OR previous RVI trend cycle <= upper level)
+Short: RVI trend cycle < 0 AND RVI trend cycle < lower level AND (previous RVI trend cycle >= 0 OR previous RVI trend cycle >= lower level)
+Exit: short, RVI trend cycle > 0 AND RVI trend cycle > upper level
+Exit: long, RVI trend cycle < 0 AND RVI trend cycle < lower level
+Exit: long, low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

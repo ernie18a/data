@@ -1,5 +1,7 @@
-Calculation: ForceTrend state = On each bar, find the highest high and lowest low over a lookback; set x to 0.66 × (((high + low) / 2 − lowest low) / (highest high − lowest low) − 0.5) + 0.67 × previous x, or 0.67 × previous x − 0.33 if the range is zero; clamp x to [−0.999, 0.999]. Set state to 0.5 × ln((1 + x) / (1 − x)) + 0.5 × previous state. Bullish if state > 0, bearish if state < 0; if state = 0, retain the previous color. Use the last completed bar on the configured indicator timeframe, which may be higher or lower than the chart timeframe.
-Long: ForceTrend state changes from bearish to bullish
-Short: ForceTrend state changes from bullish to bearish
-Exit: long, ForceTrend state is bearish OR low ≤ entry price − stop-loss distance OR high ≥ entry price + take-profit distance
-Exit: short, ForceTrend state is bullish OR high ≥ entry price + stop-loss distance OR low ≤ entry price − take-profit distance
+Calculation: Trend state = For each bar, let H and L be the highest high and lowest low over a configurable lookback including that bar, and M = (high + low) / 2. Initialize previous F and previous I to zero. Compute F = clamp(0.66 * ((M - L) / (H - L) - 0.5) + 0.67 * previous F, -0.999, 0.999); if H = L, use F = clamp(0.67 * previous F - 0.33, -0.999, 0.999). Compute I = 0.5 * ln((1 + F) / (1 - F)) + 0.5 * previous I. The state is bullish if I > 0, bearish if I < 0, and otherwise retains its previous state. Calculate on chart bars for the indicator markings; for trading decisions calculate on the configured timeframe, which may be higher or lower than the chart timeframe, using a configurable signal bar: the last completed bar or the still-forming bar, or an earlier completed bar.
+Long: Chart-timeframe trend state = bullish
+Short: Chart-timeframe trend state = bearish
+Long: Signal-bar trend state = bullish AND previous signal-timeframe bar's state = bearish
+Short: Signal-bar trend state = bearish AND previous signal-timeframe bar's state = bullish
+Exit: long, signal-bar trend state = bearish OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, signal-bar trend state = bullish OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

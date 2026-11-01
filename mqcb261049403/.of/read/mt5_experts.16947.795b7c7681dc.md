@@ -1,5 +1,8 @@
-Calculation: Fisher and trigger lines = on each signal timeframe, let M = (high + low) / 2; normalize M within its rolling lookback range (including the current bar), smooth recursively as V = 0.5 × ((M − rolling low) / (rolling high − rolling low) − 0.5) + 0.5 × previous V, or V = 0 when the range is zero; clamp V to [−0.9999, 0.9999]; Fisher = 0.25 × ln((1 + V) / (1 − V)) + 0.5 × previous Fisher; trigger = previous Fisher. Use separately configured lookbacks for the slow trend and fast entry signals; no relative lookback length is specified. The slow trend uses its higher timeframe and the fast entry and fast exit signals use their lower timeframe; all values are from completed bars.
-Long: slow-timeframe Fisher > trigger AND fast-timeframe Fisher on the preceding completed bar ≤ trigger AND fast-timeframe Fisher on the latest completed bar > trigger
-Short: slow-timeframe Fisher < trigger AND fast-timeframe Fisher on the preceding completed bar ≥ trigger AND fast-timeframe Fisher on the latest completed bar < trigger
-Exit: Long, fast-timeframe Fisher < trigger OR slow-timeframe Fisher < trigger
-Exit: Short, fast-timeframe Fisher > trigger OR slow-timeframe Fisher > trigger
+Calculation: Fisher = for each bar, let p = (high + low) / 2, H and L be the highest and lowest p over the lookback including that bar, and v = clamp((p - L) / (H - L) - 0.5 + 0.5 × previous v, -0.9999, 0.9999) when H > L, otherwise 0; Fisher = 0.25 × ln((1 + v) / (1 - v)) + 0.5 × previous Fisher. Initialize previous v and previous Fisher to 0. Trigger = previous Fisher.
+Calculation: Slow Fisher and trigger = Fisher and trigger on a higher timeframe, using the last completed bar. Fast Fisher and trigger = Fisher and trigger on the chart timeframe, using the last completed bar. Their lookbacks are independently configurable.
+Long: Slow Fisher > slow trigger AND fast Fisher on the preceding bar <= fast trigger on the preceding bar AND fast Fisher > fast trigger.
+Short: Slow Fisher < slow trigger AND fast Fisher on the preceding bar >= fast trigger on the preceding bar AND fast Fisher < fast trigger.
+Exit: long, slow Fisher < slow trigger OR fast Fisher < fast trigger.
+Exit: short, slow Fisher > slow trigger OR fast Fisher > fast trigger.
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

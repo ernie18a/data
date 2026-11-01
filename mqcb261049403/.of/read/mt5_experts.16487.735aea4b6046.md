@@ -1,6 +1,8 @@
-Calculation: Short-lookback RSI = RSI of close with a shorter lookback than the long-lookback RSI
-Calculation: Lower signal threshold = 100 − upper signal threshold
-Long: On the configured indicator timeframe (higher or lower than the chart timeframe), the last completed bar's long-lookback RSI > upper signal threshold AND short-lookback RSI > long-lookback RSI AND the preceding completed bar did not meet both conditions
-Short: On the configured indicator timeframe (higher or lower than the chart timeframe), the last completed bar's long-lookback RSI < lower signal threshold AND short-lookback RSI < long-lookback RSI AND the preceding completed bar did not meet both conditions
-Exit: Short, on the configured indicator timeframe (higher or lower than the chart timeframe), the last completed bar's long-lookback RSI > upper signal threshold AND short-lookback RSI > long-lookback RSI
-Exit: Long, on the configured indicator timeframe (higher or lower than the chart timeframe), the last completed bar's long-lookback RSI < lower signal threshold AND short-lookback RSI < long-lookback RSI
+Long: On the chart timeframe, shorter-period RSI > longer-period RSI AND longer-period RSI > signal level.
+Short: On the chart timeframe, shorter-period RSI < longer-period RSI AND longer-period RSI < 100 − signal level.
+Long: On the selected signal timeframe, which may be the chart timeframe or a higher or lower timeframe, shorter-period RSI > longer-period RSI AND longer-period RSI > signal level on the selected signal bar AND at least one of these comparisons was false on the preceding signal-timeframe bar. The selected signal bar may be the still-forming bar or a completed bar at a configurable lag.
+Short: On the selected signal timeframe, which may be the chart timeframe or a higher or lower timeframe, shorter-period RSI < longer-period RSI AND longer-period RSI < 100 − signal level on the selected signal bar AND at least one of these comparisons was false on the preceding signal-timeframe bar. The selected signal bar may be the still-forming bar or a completed bar at a configurable lag.
+Exit: long, on the selected signal timeframe and signal bar, shorter-period RSI < longer-period RSI AND longer-period RSI < 100 − signal level.
+Exit: short, on the selected signal timeframe and signal bar, shorter-period RSI > longer-period RSI AND longer-period RSI > signal level.
+Exit: long, stop loss enabled AND low <= entry price − stop-loss distance OR take profit enabled AND high >= entry price + take-profit distance.
+Exit: short, stop loss enabled AND high >= entry price + stop-loss distance OR take profit enabled AND low <= entry price − take-profit distance.

@@ -1,7 +1,7 @@
-Calculation: Aroon Up = on the indicator timeframe, for each bar, round to the nearest integer: 100 − (bars since the highest high in the lookback + 0.5) × 100 / lookback; use the last completed indicator bar.
-Calculation: Aroon Down = on the indicator timeframe, for each bar, round to the nearest integer: 100 − (bars since the lowest low in the lookback + 0.5) × 100 / lookback; use the last completed indicator bar.
-Calculation: Aroon trend = retain the previous trend unless Aroon Up > Aroon Down AND Aroon Up ≥ 50, which sets it bullish, or Aroon Up < Aroon Down AND Aroon Down ≥ 50, which sets it bearish; initialize as neutral.
-Long: Previous Aroon trend is bearish AND current Aroon trend is bullish
-Short: Previous Aroon trend is bullish AND current Aroon trend is bearish
-Exit: long, Previous Aroon trend is bullish AND current Aroon trend is bearish
-Exit: short, Previous Aroon trend is bearish AND current Aroon trend is bullish
+Calculation: Aroon high and low scores = For the same lookback including the evaluated bar, calculate each score as round(100 - 100 * (bars since the most recent highest high or lowest low, respectively, + 0.5) / lookback) to the nearest integer.
+Calculation: Trend state = Initially 0; set to +1 when the Aroon high score is greater than the Aroon low score AND the Aroon high score is at least the threshold; set to -1 when the Aroon high score is less than the Aroon low score AND the Aroon low score is at least the threshold; otherwise retain the previous state. Calculate on the chart timeframe or a selectable higher or lower timeframe, using the last completed bar or, if configured, the still-forming bar.
+Calculation: Latest reversal = The most recent change of trend state from -1 to +1 or from +1 to -1, including the evaluated bar; initially none.
+Long: Previous trend state = -1 AND current trend state = +1
+Short: Previous trend state = +1 AND current trend state = -1
+Exit: long, latest reversal = +1 to -1 OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, latest reversal = -1 to +1 OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance
