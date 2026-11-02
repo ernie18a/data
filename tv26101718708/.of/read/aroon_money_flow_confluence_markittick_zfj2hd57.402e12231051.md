@@ -1,14 +1,19 @@
-Calculation: Confirmation window = if automatic, the median of the latest 20 bar gaps between an Aroon Oscillator zero-cross and subsequent same-direction agreement (only gaps of at most 20 bars); until 5 gaps exist, use one quarter of the CMF lookback, rounded and bounded to 1–20 bars; otherwise use the manual confirmation-bar setting.
-Calculation: Stop distance = ATR × stop multiplier; target distances = stop distance × the three target multiples, sorted from nearest to farthest.
-Long: Aroon Oscillator > 0 AND CMF > flow buffer
-Short: Aroon Oscillator < 0 AND CMF < −flow buffer
-Long: Bullish agreement (Aroon Oscillator > 0 AND CMF > flow buffer) newly begins AND Aroon Oscillator crossed above zero within the confirmation window AND (higher-timeframe Aroon Oscillator > 0, if enabled; use the last completed higher-timeframe bar) AND (previous bar ADX ≥ minimum, if enabled) AND stop distance > minimum tick AND long stop price > 0
-Short: Bearish agreement (Aroon Oscillator < 0 AND CMF < −flow buffer) newly begins AND Aroon Oscillator crossed below zero within the confirmation window AND (higher-timeframe Aroon Oscillator < 0, if enabled; use the last completed higher-timeframe bar) AND (previous bar ADX ≥ minimum, if enabled) AND stop distance > minimum tick AND farthest short target price > 0
-Exit: Long, bar closes below stop price
-Exit: Short, bar closes above stop price
-Exit: Long, bar high reaches farthest target price
-Exit: Short, bar low reaches farthest target price
-Exit: Long, a new long or short entry signal occurs
-Exit: Short, a new long or short entry signal occurs
-Exit: Long, bar high reaches either of the two nearer target prices (partial exit)
-Exit: Short, bar low reaches either of the two nearer target prices (partial exit)
+Calculation: Aroon oscillator = Aroon Up minus Aroon Down, using a lookback of length plus one bars; each component is 100 times (length minus bars since the most recent corresponding highest high or lowest low) divided by length.
+Calculation: Money flow = sum of ((2 × close − high − low) / (high − low)) × volume divided by sum of volume over the lookback, excluding bars where high equals low from both sums; undefined when the denominator is zero.
+Calculation: Smoothed oscillator and money flow = apply the same optional smoothing method and length independently to each series; choices are none, EMA, RMA, WMA, HMA, KAMA, or Kalman. KAMA uses an SMA seed, efficiency ratio = absolute net change over the smoothing length / sum of absolute bar-to-bar changes over that length, zero when the denominator is zero, and squared smoothing coefficient interpolated between fast and slow EMA coefficients. Kalman starts with the first observation and error 1, then on each bar uses predicted error = previous error + 1 / smoothing length, gain = predicted error / (predicted error + 1), estimate = previous estimate + gain × (observation − previous estimate), and error = (1 − gain) × predicted error.
+Calculation: Confirmation window = a manual bar count, or an automatic window: after each oscillator zero cross, record the bars until the first corresponding agreement, provided it occurs within a maximum lag and before an opposite cross; retain the most recent limited number of gaps. Once a minimum sample count is available, use their rounded median bounded by minimum and maximum window parameters; otherwise use the rounded, bounded fraction of the money-flow lookback. Include a gap recorded on the current bar before evaluating the current signal.
+Calculation: Entry risk = ATR on the entry bar × stop multiplier; entry price = signal-bar close. Target distances are entry risk multiplied by three target parameters sorted from smallest to largest and fixed at entry.
+Long: Smoothed Aroon oscillator >= 0.
+Short: Smoothed Aroon oscillator < 0.
+Long: Smoothed money flow >= 0.
+Short: Smoothed money flow < 0.
+Long: Smoothed Aroon oscillator > 0 AND smoothed money flow > positive buffer.
+Short: Smoothed Aroon oscillator < 0 AND smoothed money flow < negative buffer.
+Long: On a closed bar, smoothed Aroon oscillator > 0 AND smoothed money flow > positive buffer AND the same agreement was false on the preceding bar AND bars since the oscillator crossed above zero <= confirmation window AND (higher-timeframe filter disabled OR raw Aroon oscillator on the last completed higher-timeframe bar > 0) AND (ADX filter disabled OR previous-bar ADX >= threshold) AND entry risk > minimum price increment AND close − entry risk > 0.
+Short: On a closed bar, smoothed Aroon oscillator < 0 AND smoothed money flow < negative buffer AND the same agreement was false on the preceding bar AND bars since the oscillator crossed below zero <= confirmation window AND (higher-timeframe filter disabled OR raw Aroon oscillator on the last completed higher-timeframe bar < 0) AND (ADX filter disabled OR previous-bar ADX >= threshold) AND entry risk > minimum price increment AND close − largest target distance > 0.
+Exit: long, after the entry bar AND high >= entry price + either of the two smaller target distances for the first time for that target; this is a partial exit.
+Exit: short, after the entry bar AND low <= entry price − either of the two smaller target distances for the first time for that target; this is a partial exit.
+Exit: long, after the entry bar AND (high >= entry price + largest target distance OR (close < entry price − entry risk AND high < entry price + largest target distance)).
+Exit: short, after the entry bar AND (low <= entry price − largest target distance OR (close > entry price + entry risk AND low > entry price − largest target distance)).
+Exit: long, a new registered long or short entry occurs while the position is open.
+Exit: short, a new registered long or short entry occurs while the position is open.

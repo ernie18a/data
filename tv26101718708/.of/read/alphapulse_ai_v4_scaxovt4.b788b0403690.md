@@ -1,20 +1,30 @@
-Calculation: RSI = Relative Strength Index of close
-Calculation: Money Flow Index = MFI of typical price (high + low + close) / 3 and volume
-Calculation: Up/down volume ratio = sum of volume on bars where close > open over a lookback divided by sum of volume on bars where close < open over the same lookback; use the up-volume sum if the down-volume sum is zero
-Calculation: Volume ratio = volume / simple moving average of volume over a longer lookback
-Calculation: Bull flow score = 20 if RSI > its bullish threshold, plus 20 if MFI > its bullish threshold, plus 20 if up/down volume ratio > its bullish threshold, plus 20 if close > a longer-lookback simple moving average of close, plus 20 if close has risen for a shorter lookback
-Calculation: Bear flow score = 20 if RSI < its bearish threshold, plus 20 if MFI < its bearish threshold, plus 20 if up/down volume ratio < its bearish threshold, plus 20 if close < a longer-lookback simple moving average of close, plus 20 if close has fallen for a shorter lookback
-Calculation: Flow score = bull flow score − bear flow score
-Calculation: Bullish pressure = exponential moving average of 14-bar-smoothed positive RSI pressure, where positive RSI pressure = max(RSI − 50, 0) / 50 × 100
-Calculation: Volume run rate = (volume ratio − 1) × 100
-Long: low = lowest low over a lookback AND RSI > lowest RSI over the same lookback AND RSI 14 bars ago = lowest RSI over the same lookback
-Long: bullish pressure > its expansion threshold AND volume run rate > its expansion threshold AND the preceding bar did not meet both conditions
-Long: flow score > its threshold AND prior-bar flow score ≤ its threshold
-Long: close > VWAP
-Long: up/down volume ratio ≥ its bullish threshold
-Long: RSI > its bullish threshold AND MFI > its bullish threshold
-Short: high = highest high over a lookback AND RSI < highest RSI over the same lookback AND RSI 14 bars ago = highest RSI over the same lookback
-Short: flow score < the negative of its threshold AND prior-bar flow score ≥ the negative of its threshold
-Short: close < VWAP
-Short: up/down volume ratio ≤ its bearish threshold
-Short: RSI < its bearish threshold AND MFI < 50
+Calculation: Up/down volume ratio = sum of volume on bars where close > open divided by sum of volume on bars where close < open over the same lookback; if the denominator is zero, use the numerator.
+Calculation: Flow score = bullish count minus bearish count, with equal weight for each condition. Bullish count conditions: RSI > bullish RSI threshold; MFI > bullish MFI threshold; up/down volume ratio > bullish ratio threshold; close > SMA of close; close > every close in a preceding lookback. Bearish count conditions: RSI < weak RSI threshold; MFI < MFI midpoint; up/down volume ratio < bearish ratio threshold; close < SMA of close; close < every close in the same preceding lookback.
+Calculation: Volume delta = EMA of volume on bars where close > open, with zero on other bars, minus EMA of volume on bars where close < open, with zero on other bars; both EMAs use the same length.
+Calculation: Signed volume flow = EMA of volume multiplied by (close - open) / (high - low); replace a zero high-low denominator with 1.
+Calculation: Bullish expansion state = EMA of max(RSI - RSI midpoint, 0) divided by the RSI midpoint and expressed as a percentage > expansion pressure threshold AND (volume / SMA of volume - 1), expressed as a percentage, > expansion run-rate threshold.
+Long: low = lowest low over the divergence lookback AND RSI > lowest RSI over the same lookback AND RSI one divergence lookback ago = that lowest RSI.
+Short: high = highest high over the divergence lookback AND RSI < highest RSI over the same lookback AND RSI one divergence lookback ago = that highest RSI.
+Long: close > session VWAP of typical price.
+Short: close <= session VWAP of typical price.
+Long: up/down volume ratio >= bullish ratio threshold.
+Short: up/down volume ratio <= bearish ratio threshold AND up/down volume ratio < bullish ratio threshold.
+Long: RSI > bullish RSI threshold AND MFI > bullish MFI threshold.
+Short: RSI < weak RSI threshold AND MFI < MFI midpoint AND (RSI <= bullish RSI threshold OR MFI <= bullish MFI threshold).
+Long: flow score >= positive display threshold.
+Short: flow score <= negative display threshold.
+Long: RSI > bullish RSI threshold.
+Short: RSI < weak RSI threshold AND RSI <= bullish RSI threshold AND RSI <= strong RSI threshold.
+Long: higher- or lower-timeframe RSI >= bullish RSI threshold; use the last completed higher-timeframe bar or the last completed lower-timeframe bar within the chart bar.
+Short: higher- or lower-timeframe RSI <= weak RSI threshold AND higher- or lower-timeframe RSI < bullish RSI threshold; use the last completed higher-timeframe bar or the last completed lower-timeframe bar within the chart bar.
+Long: chart-timeframe or higher- or lower-timeframe short-term RSI >= upper short-term RSI threshold; for another timeframe use the last completed higher-timeframe bar or the last completed lower-timeframe bar within the chart bar.
+Short: chart-timeframe or higher- or lower-timeframe short-term RSI <= lower short-term RSI threshold; for another timeframe use the last completed higher-timeframe bar or the last completed lower-timeframe bar within the chart bar.
+Long: MFI >= bullish MFI threshold.
+Short: MFI <= MFI midpoint AND MFI < bullish MFI threshold.
+Long: signed volume flow > 0.
+Short: signed volume flow <= 0.
+Long: volume delta > 0.
+Short: volume delta <= 0.
+Long: bullish expansion state is true AND bullish expansion state on the preceding bar is false.
+Long: flow score > positive alert threshold AND preceding flow score <= positive alert threshold.
+Short: flow score < negative alert threshold AND preceding flow score >= negative alert threshold.

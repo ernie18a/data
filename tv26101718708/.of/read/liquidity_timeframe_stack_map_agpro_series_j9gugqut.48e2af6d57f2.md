@@ -1,5 +1,4 @@
-Calculation: Higher-timeframe upper/lower shelves = latest confirmed pivot high/low on a higher timeframe, using equal left/right lookbacks; if either is unavailable or upper is not above lower, use the chart-timeframe highest high/lowest low over the longer of 20 bars or 8 times the higher-timeframe pivot lookback. Use the last completed higher-timeframe bar.
-Calculation: Local upper/lower liquidity levels = latest confirmed pivot high/low on the chart timeframe, using equal left/right lookbacks.
-Calculation: Upper/lower wick quality = 100 × the respective wick length divided by max(high − low, minimum price increment), where upper wick is high − max(open, close) and lower wick is min(open, close) − low; clamp to 0–100.
-Long: low < prior local lower liquidity level AND close > prior local lower liquidity level AND lower wick quality ≥ reaction threshold
-Short: high > prior local upper liquidity level AND close < prior local upper liquidity level AND upper wick quality ≥ reaction threshold
+Calculation: Previous pivot high and low = the most recently confirmed chart-timeframe pivot high and low, respectively, as of the previous bar; each pivot uses the same number of bars on both sides.
+Calculation: Sweep reaction = (high - max(open, close)) / (high - low) when high > previous pivot high AND close < previous pivot high; otherwise (min(open, close) - low) / (high - low).
+Long: low < previous pivot low AND close > previous pivot low AND sweep reaction >= reaction threshold.
+Short: high > previous pivot high AND close < previous pivot high AND sweep reaction >= reaction threshold.

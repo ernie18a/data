@@ -1,4 +1,5 @@
-Calculation: Non-Lag Moving Average = weighted average of the selected applied-price values from the current bar through 5P−3 bars back, divided by the sum of their weights; for i = 0…5P−3, let phase = P−1, cycle = 4, tᵢ = i/(phase−1) if i ≤ phase−1, otherwise 1 + (i−phase+1)(2·cycle−1)/(cycle·phase), gᵢ = 1 if tᵢ ≤ 0.5, otherwise 1/(3πtᵢ+1), and weightᵢ = gᵢ cos(πtᵢ), where P is the moving-average lookback.
-Calculation: Color-switch threshold = configured filter percentage × the standard deviation over P bars of each bar’s absolute Non-Lag Moving Average change after subtracting that bar’s P-bar average absolute change; threshold is zero when the filter is disabled.
-Long: Non-Lag Moving Average(current bar) − Non-Lag Moving Average(previous bar) > Color-switch threshold
-Short: Non-Lag Moving Average(current bar) − Non-Lag Moving Average(previous bar) < −Color-switch threshold
+Calculation: Non-lag moving average = For a chosen price derived from each bar's OHLC and lookback N, let P = N - 1 and L = 4N + P. For i = 0 through L - 2, let t = i / (P - 1) when i <= P - 1, otherwise t = 1 + (i - P + 1) * 7 / (4P); let weight[i] = cos(pi * t) when t <= 0.5, otherwise cos(pi * t) / (3 * pi * t + 1). The average is the sum of weight[i] * chosen price i bars ago divided by the sum of the weights.
+Calculation: Filter threshold = A nonnegative filter parameter multiplied by the square root of the mean, over the moving average lookback, of (absolute moving-average change at each bar minus its own rolling mean over the same lookback) squared.
+Calculation: Direction = For the current bar's moving-average change d and filter threshold f, retain the previous direction if abs(d) < f; otherwise set direction to long if d > f, short if d < f, and retain the previous direction if d = f. Initialize direction to long.
+Long: Direction = long
+Short: Direction = short

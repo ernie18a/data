@@ -1,5 +1,27 @@
-Calculation: Previous-day midpoint = (previous day's high + previous day's low) / 2
-Calculation: ATR buffer = ATR multiplied by a configurable factor; use zero when the buffer is disabled
-Calculation: Opening-range midpoint = (opening-range high + opening-range low) / 2, using the high and low of the configured opening session; valid only after that session ends
-Long: Daily close > both Daily EMAs by the ATR buffer AND 4H close > both 4H EMAs by the ATR buffer AND current close > the selected previous-day level (midpoint, close, or both) OR 1H close > both 1H EMAs by the ATR buffer AND current close > session VWAP AND opening range is ready AND current close > opening-range midpoint OR Major is Long AND Minor is Long OR Mini-timeframe close > both Mini-timeframe EMAs by its ATR buffer AND Mini-timeframe close > session VWAP when its VWAP filter is enabled
-Short: Daily close < both Daily EMAs by the ATR buffer AND 4H close < both 4H EMAs by the ATR buffer AND current close < the selected previous-day level (midpoint, close, or both) OR 1H close < both 1H EMAs by the ATR buffer AND current close < session VWAP AND opening range is ready AND current close < opening-range midpoint OR Major is Short AND Minor is Short OR Mini-timeframe close < both Mini-timeframe EMAs by its ATR buffer AND Mini-timeframe close < session VWAP when its VWAP filter is enabled
+Calculation: EMA upper boundary = maximum of the shorter-lookback and longer-lookback EMAs of close plus an optional ATR multiplied by a nonnegative parameter; calculate all components on the same timeframe.
+Calculation: EMA lower boundary = minimum of the shorter-lookback and longer-lookback EMAs of close minus the same optional ATR buffer; calculate all components on the same timeframe.
+Calculation: Previous-period midpoint = (high + low) / 2 of the previous completed higher-timeframe daily bar. The previous-period close is its close. Map both to chart bars with lookahead off.
+Calculation: Opening-range midpoint = (highest high + lowest low) / 2 of chart bars in a configurable opening session and timezone, reset each local day; it is available after the opening session ends.
+Calculation: Session VWAP = cumulative sum of ((high + low + close) / 3 × volume) divided by cumulative volume, reset at each trading session.
+Long: Close > EMA upper boundary on any of the three successively shorter higher timeframes, using the last completed bar with lookahead off.
+Short: Close < EMA lower boundary on any of the three successively shorter higher timeframes, using the last completed bar with lookahead off.
+Long: Chart close > the selected previous-period midpoint, previous-period close, or both.
+Short: Chart close < the selected previous-period midpoint, previous-period close, or both.
+Long: Chart close > session VWAP.
+Short: Chart close < session VWAP.
+Long: Opening-range midpoint is available AND chart close > opening-range midpoint.
+Short: Opening-range midpoint is available AND chart close < opening-range midpoint.
+Long: Close > EMA upper boundary on a configurable lower timeframe, using the last completed bar selected with lookahead off.
+Short: Close < EMA lower boundary on a configurable lower timeframe, using the last completed bar selected with lookahead off.
+Long: Lower-timeframe close > session VWAP, using the lower-timeframe close selected with lookahead off.
+Short: Lower-timeframe close < session VWAP, using the lower-timeframe close selected with lookahead off.
+Long: Close > EMA upper boundary on both longer higher timeframes AND, if the previous-period filter is enabled, chart close > the selected previous-period midpoint, previous-period close, or both.
+Short: Close < EMA lower boundary on both longer higher timeframes AND, if the previous-period filter is enabled, chart close < the selected previous-period midpoint, previous-period close, or both.
+Long: Close > EMA upper boundary on the shortest higher timeframe AND, if enabled, chart close > session VWAP AND, if enabled, opening-range midpoint is available and chart close > opening-range midpoint.
+Short: Close < EMA lower boundary on the shortest higher timeframe AND, if enabled, chart close < session VWAP AND, if enabled, opening-range midpoint is available and chart close < opening-range midpoint.
+Long: Lower-timeframe close > EMA upper boundary AND, if enabled, lower-timeframe close > chart session VWAP.
+Short: Lower-timeframe close < EMA lower boundary AND, if enabled, lower-timeframe close < chart session VWAP.
+Long: The lower-timeframe long condition is true on the current chart bar AND was false on the previous chart bar.
+Short: The lower-timeframe short condition is true on the current chart bar AND was false on the previous chart bar.
+Long: Close > EMA upper boundary on all three higher timeframes AND, if enabled, chart close > the selected previous-period midpoint, previous-period close, or both AND, if enabled, chart close > session VWAP AND, if enabled, opening-range midpoint is available and chart close > opening-range midpoint.
+Short: Close < EMA lower boundary on all three higher timeframes AND, if enabled, chart close < the selected previous-period midpoint, previous-period close, or both AND, if enabled, chart close < session VWAP AND, if enabled, opening-range midpoint is available and chart close < opening-range midpoint.

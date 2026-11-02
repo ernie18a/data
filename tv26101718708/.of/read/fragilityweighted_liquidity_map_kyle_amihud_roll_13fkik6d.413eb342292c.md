@@ -1,6 +1,11 @@
-Calculation: Range percentile = percentile rank of high − low over a lookback
-Calculation: Volume percentile = percentile rank of volume over a lookback
-Calculation: Close position = (close − low) / (high − low), or 0.5 when high = low
-Calculation: Prior high/low = highest high / lowest low over a lookback, excluding the current bar
-Long: volume > 0 AND ((low ≤ prior low AND close position ≥ 0.65 AND volume percentile ≥ 60) OR (close < previous close AND range percentile ≥ 60 AND volume percentile ≥ 80 AND close position ≥ 0.45) OR (close < previous close AND volume = highest volume over the volume lookback AND range percentile ≥ 70) OR (close < previous close AND range percentile ≤ 35 AND volume percentile ≤ 35))
-Short: volume > 0 AND ((high ≥ prior high AND close position ≤ 0.35 AND volume percentile ≥ 60) OR (close > previous close AND volume = highest volume over the volume lookback AND range percentile ≥ 70) OR (close > previous close AND range percentile ≤ 35 AND volume percentile ≤ 35))
+Calculation: Close location = (close - low) / (high - low), or 0.5 when high equals low
+Calculation: Spread percentile = percentile rank of high - low over a lookback including the current bar
+Calculation: Volume percentile = percentile rank of volume over the same lookback including the current bar
+Long: volume > 0 AND close < previous close AND volume >= highest volume over the percentile lookback including the current bar AND spread percentile >= climax spread threshold
+Long: volume > 0 AND low <= lowest low over a separate lookback excluding the current bar AND close location >= shakeout close threshold AND volume percentile >= high-volume threshold
+Long: volume > 0 AND close < previous close AND spread percentile >= stopping spread threshold AND volume percentile >= very-high-volume threshold AND close location >= stopping close threshold
+Long: volume > 0 AND close < previous close AND spread percentile <= low-spread threshold AND volume percentile <= low-volume threshold
+Short: volume > 0 AND close > previous close AND volume >= highest volume over the percentile lookback including the current bar AND spread percentile >= climax spread threshold
+Short: volume > 0 AND high >= highest high over the separate extreme lookback excluding the current bar AND close location <= upthrust close threshold AND volume percentile >= high-volume threshold AND NOT (close < previous close AND volume >= highest volume over the percentile lookback including the current bar AND spread percentile >= climax spread threshold)
+Short: volume > 0 AND close > previous close AND spread percentile <= low-spread threshold AND volume percentile <= low-volume threshold
+Calculation: The very-high-volume threshold is greater than the high-volume threshold, which is greater than the low-volume threshold; the climax spread threshold is greater than the stopping spread threshold, which is greater than the low-spread threshold; the shakeout close threshold is greater than the stopping close threshold, which is greater than the upthrust close threshold; the shakeout close threshold equals 1 minus the upthrust close threshold

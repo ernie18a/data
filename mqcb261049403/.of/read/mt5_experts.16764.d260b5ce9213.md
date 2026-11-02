@@ -1,11 +1,16 @@
-Calculation: Smoothed Heiken Ashi oscillator = the change from the previous bar in a moving average of the midpoint of Heiken Ashi open and close; calculate Heiken Ashi close as the average of pre-smoothed open, high, low, and close, and Heiken Ashi open as the average of the prior Heiken Ashi open and close (initialize with the current open and close average). Apply the configured post-smoothing moving average to the midpoint. Use the current, still-forming bar on the configured indicator timeframe.
-Calculation: Oscillator signal average = a moving average of the smoothed Heiken Ashi oscillator, using the current, still-forming bar on the configured indicator timeframe.
-Calculation: Pivot = (previous completed daily high + previous completed daily low + previous completed daily close) / 3; the daily bar is higher than the indicator timeframe.
-Long: Smoothed Heiken Ashi oscillator >= 0
-Short: Smoothed Heiken Ashi oscillator < 0
-Long: Smoothed Heiken Ashi oscillator > Oscillator signal average
-Short: Smoothed Heiken Ashi oscillator < Oscillator signal average
-Long: Smoothed Heiken Ashi oscillator > Oscillator signal average AND close < Pivot
-Short: Smoothed Heiken Ashi oscillator < Oscillator signal average AND close > Pivot
-Exit: long, Smoothed Heiken Ashi oscillator < Oscillator signal average AND close > Pivot
-Exit: short, Smoothed Heiken Ashi oscillator > Oscillator signal average AND close < Pivot
+Calculation: Smoothed Heiken Ashi oscillator = Separately smooth open, high, low, and close using the same selectable moving-average method and period. Heiken Ashi close is their mean; Heiken Ashi open is the mean of the preceding Heiken Ashi open and close, initialized to the first bar's (open + close) / 2. Smooth the mean of Heiken Ashi open and close with a separately selectable moving-average method and period. The oscillator is the current smoothed mean minus its preceding value, initialized to zero. For the smoothed moving average, initialize the first two outputs to their respective inputs, then update by (input - previous output) / period.
+Calculation: Oscillator signal = Selectable moving average of the smoothed Heiken Ashi oscillator, with an independent period and method.
+Calculation: Oscillator direction index = 1 when the oscillator < 0, otherwise 0.
+Calculation: Oscillator signal direction = Long when oscillator > oscillator signal, short when oscillator < oscillator signal; retain the previous direction when equal, initially long.
+Calculation: Pivot = (high + low + close) / 3 of the last completed higher-timeframe bar. The oscillator and pivot are evaluated on a selectable indicator timeframe, using its still-forming bar when it differs from the chart timeframe; the indicator timeframe can be higher or lower than the chart timeframe.
+Calculation: Active stop = Initial entry price minus the enabled stop distance for a long, or plus it for a short. At each new chart bar, an enabled trailing mode updates the stop only in the favorable direction: immediate mode uses the current price minus the initial stop distance for a long or plus it for a short; delayed mode uses current price minus the trailing distance for a long or plus it for a short only after favorable movement from entry strictly exceeds that distance; three-level mode proposes entry price plus first movement threshold minus first stop distance for a long, or entry price minus first movement threshold plus first stop distance for a short, once favorable movement strictly exceeds the first threshold, then similarly proposes the second threshold and stop distance, and finally proposes current price minus the third trailing distance for a long or plus it for a short once favorable movement strictly exceeds the third threshold. Apply the first, second, and third proposals in that order, each only if it improves the stop; a zero stop is treated as absent in delayed mode.
+Long: Oscillator >= 0
+Short: Oscillator < 0
+Long: Oscillator signal direction = long
+Short: Oscillator signal direction = short
+Long: At a new chart bar, no position is open AND oscillator direction index > oscillator AND current bid < pivot
+Short: At a new chart bar, no position is open AND oscillator direction index < oscillator AND current bid > pivot
+Exit: long, at a new chart bar oscillator direction index < oscillator AND current bid > pivot
+Exit: short, at a new chart bar oscillator direction index > oscillator AND current bid < pivot
+Exit: long, enabled stop is reached by the bid OR enabled take-profit is reached by the bid at entry price + take-profit distance
+Exit: short, enabled stop is reached by the ask OR enabled take-profit is reached by the ask at entry price - take-profit distance

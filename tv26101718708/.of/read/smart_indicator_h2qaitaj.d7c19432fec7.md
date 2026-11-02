@@ -1,38 +1,24 @@
-Calculation: ATR = average true range over a configurable lookback
-Calculation: Volume spike = current volume >= average volume over a configurable lookback × a configurable multiplier
-Calculation: Bullish engulfing = candle body size >= ATR × a configurable multiplier AND close > open AND (close − low) / (high − low) >= a configurable threshold AND close > prior open AND open < prior close AND volume spike
-Calculation: Bearish engulfing = candle body size >= ATR × a configurable multiplier AND close < open AND (close − low) / (high − low) <= a configurable threshold AND close < prior open AND open > prior close AND volume spike
-Calculation: Low sweep = prior bar's low <= the highest low-lookback low AND current close > that highest low-lookback low
-Calculation: High sweep = prior bar's high >= the highest high-lookback high AND current close < that highest high-lookback high
-Calculation: Bullish fair value gap = current low > high two bars earlier AND the gap is at least a configurable fraction of close
-Calculation: Bearish fair value gap = current high < low two bars earlier AND the gap is at least a configurable fraction of close
-Calculation: Long score = capped sum of points for bullish higher-timeframe sweep bias, active session, volume spike, correlated-symbol low sweep, positive relative return versus the correlated symbol, unopposed bullish 1-hour fair value gap, bullish daily fair value gap, proximity to prior-day low, falling daily VIX, repeated low sweeps, bullish structure proximity, bullish engulfing at bullish structure (extra points), and bullish engulfing within a recent bullish fair value gap (extra points)
-Calculation: Short score = capped sum of points for bearish higher-timeframe sweep bias, active session, volume spike, correlated-symbol high sweep, negative relative return versus the correlated symbol, unopposed bearish 1-hour fair value gap, bearish daily fair value gap, proximity to prior-day high, rising daily VIX, repeated high sweeps, bearish structure proximity, bearish engulfing at bearish structure (extra points), and bearish engulfing within a recent bearish fair value gap (extra points)
-Long: Bullish engulfing
-Long: Low sweep
-Long: Bullish 1-hour fair value gap forms on a higher timeframe, using last completed bars
-Long: Bullish daily fair value gap forms on a higher timeframe, using last completed bars
-Long: Current close is within the most recent bullish fair value gap, formed within a configurable bar lookback, AND bullish engulfing
-Long: Bullish engulfing AND close is within configurable ATR proximity of prior-day low, weekly open, daily open, midpoint of the most recent bullish 1-hour fair value gap, or midpoint of the most recent bullish daily fair value gap
-Long: Close > the high of the prior configurable lookback AND open < that high AND candle body size >= ATR × a configurable multiplier AND volume spike AND an active consolidation range
-Long: A low sweep has occurred AND close > the highest high of a configurable prior lookback, measured when the sweep occurred
-Long: Low sweep AND long score >= configurable minimum score
-Long: Low sweep AND long score > short score AND long score >= configurable threshold AND (long score >= configurable strong-score threshold OR long score >= configurable base-score threshold AND score difference >= configurable gap)
-Long: High sweep AND long score > short score AND long score >= configurable threshold
-Long: Long score >= configurable contrarian threshold AND short score <= configurable maximum
-Long: Long score >= configurable maximum-confluence threshold
-Short: Bearish engulfing
-Short: High sweep
-Short: Bearish 1-hour fair value gap forms on a higher timeframe, using last completed bars
-Short: Bearish daily fair value gap forms on a higher timeframe, using last completed bars
-Short: Current close is within the most recent bearish fair value gap, formed within a configurable bar lookback, AND bearish engulfing
-Short: Bearish engulfing AND close is within configurable ATR proximity of prior-day high, weekly open, daily open, midpoint of the most recent bearish 1-hour fair value gap, or midpoint of the most recent bearish daily fair value gap
-Short: Close < the low of the prior configurable lookback AND open > that low AND candle body size >= ATR × a configurable multiplier AND volume spike AND an active consolidation range
-Short: A high sweep has occurred AND close < the low of a configurable prior lookback, measured when the sweep occurred
-Short: High sweep AND short score >= configurable minimum score
-Short: High sweep AND short score > long score AND short score >= configurable threshold AND (short score >= configurable strong-score threshold OR short score >= configurable base-score threshold AND score difference >= configurable gap)
-Short: Low sweep AND short score > long score AND short score >= configurable threshold
-Short: Short score >= configurable contrarian threshold AND long score <= configurable maximum
-Short: Short score >= configurable maximum-confluence threshold
-Exit: Long, close < the stop level set at the latest low sweep (prior lookback low − ATR × configurable multiplier)
-Exit: Short, close > the stop level set at the latest high sweep (prior lookback high + ATR × configurable multiplier)
+Calculation: Prior high and prior low = highest high and lowest low over a lookback ending at the previous chart bar.
+Calculation: Up sweep = previous chart bar's low <= prior low AND close > prior low. Down sweep = previous chart bar's high >= prior high AND close < prior high.
+Calculation: Volume spike = volume >= a multiple of the chart-timeframe simple moving average of volume, including the current bar.
+Calculation: Bullish engulf = absolute candle body >= a multiple of ATR AND close > open AND (close - low) / (high - low) >= an upper threshold AND close > previous open AND open < previous close AND volume spike; use 0.5 for the close-location ratio when high equals low. Bearish engulf = absolute candle body >= the same multiple of ATR AND close < open AND the close-location ratio <= a lower threshold AND close < previous open AND open > previous close AND volume spike.
+Calculation: Bullish chart gap = low > high two chart bars ago AND their difference >= a fraction of close. Bearish chart gap = high < low two chart bars ago AND their difference >= the same fraction of close.
+Calculation: Higher-timeframe bullish gap = the last completed higher-timeframe bar's low > the preceding higher-timeframe bar's high AND their difference >= a fraction of the current chart close. Higher-timeframe bearish gap = the last completed higher-timeframe bar's high < the preceding higher-timeframe bar's low AND their difference >= the same fraction of the current chart close. Calculate these on two higher timeframes, one longer than the other.
+Calculation: Range = when the highest high minus the lowest low over a chart-bar lookback first becomes <= a multiple of ATR, store those extremes and activate the range. While that condition remains true, extend the stored extremes with each bar's high and low before checking for a break. Deactivate the range after either break, even if volume is not elevated.
+Calculation: Long break = an active range AND close > stored range high AND open < stored range high AND absolute candle body >= a multiple of ATR. Short break = an active range AND close < stored range low AND open > stored range low AND absolute candle body >= the same multiple of ATR.
+Calculation: Long structure-break level = on each up sweep, store the highest high over a separate chart-bar lookback ending on the previous bar and activate a pending long confirmation; replace the level on another up sweep. Short structure-break level = on each down sweep, store the lowest low over the same lookback ending on the previous bar and activate a pending short confirmation; replace the level on another down sweep. Deactivate the relevant pending confirmation after its confirmation or its setup invalidation.
+Calculation: Long setup stop = prior low minus a multiple of ATR on the latest up sweep. Short setup stop = prior high plus the same multiple of ATR on the latest down sweep. An up sweep activates the long setup and deactivates the short setup; a down sweep activates the short setup and deactivates the long setup, with the down sweep processed last if both occur. A setup is invalidated when its active stop is crossed by the close; then deactivate that setup.
+Long: Up sweep.
+Short: Down sweep.
+Long: Bullish engulf.
+Short: Bearish engulf.
+Long: Bullish chart gap.
+Short: Bearish chart gap.
+Long: Higher-timeframe bullish gap.
+Short: Higher-timeframe bearish gap.
+Long: Pending long confirmation AND close > long structure-break level.
+Short: Pending short confirmation AND close < short structure-break level.
+Long: Long break.
+Short: Short break.
+Exit: long, long setup is active AND close < long setup stop.
+Exit: short, short setup is active AND close > short setup stop.

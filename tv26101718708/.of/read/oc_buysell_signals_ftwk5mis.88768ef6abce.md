@@ -1,9 +1,12 @@
-Calculation: Candle body = absolute value of close minus open
-Calculation: Average candle body = simple moving average of candle body over a lookback
-Calculation: Previous candle body high = maximum of the previous candle's open and close
-Calculation: Previous candle body low = minimum of the previous candle's open and close
-Calculation: Average volume = simple moving average of volume over the same lookback as average candle body
-Long: close > open AND close > previous candle body high AND candle body >= average candle body * minimum body multiple AND (minimum volume multiple <= 0 OR volume >= average volume * minimum volume multiple) AND position side is not long
-Short: close < open AND close < previous candle body low AND candle body >= average candle body * minimum body multiple AND (minimum volume multiple <= 0 OR volume >= average volume * minimum volume multiple) AND position side is not short
-Exit: long, low <= stop price OR high >= target price OR a short signal occurs
-Exit: short, high >= stop price OR low <= target price OR a long signal occurs
+Calculation: Body = abs(close − open); average body is its simple moving average including the current bar. Average volume is the simple moving average of volume over the same lookback.
+Calculation: Signal state = the side of the most recent signal, initially neither side; it persists after an exit. Evaluate entry conditions using the position state at the start of the bar, then process stop and target exits before processing signals. Each signal closes any remaining position and opens a position in its direction at the signal bar's close.
+Calculation: Stop = fixed at entry: for a long, entry price minus an ATR multiple, entry-bar low minus an ATR buffer, or entry-bar open minus an ATR buffer; for a short, entry price plus an ATR multiple, entry-bar high plus an ATR buffer, or entry-bar open plus an ATR buffer. The stop can also be disabled. Use entry-bar ATR; if it is unavailable, the candle-based buffer is zero.
+Calculation: Target = fixed at entry: entry price plus for a long or minus for a short either an ATR multiple or a multiple of the absolute distance from entry to stop. Use entry-bar ATR. The target can also be disabled; the stop-distance target is disabled when the stop is disabled.
+Long: close > open AND close > max(previous open, previous close) AND body >= average body × body multiplier AND (volume multiplier <= 0 OR volume >= average volume × volume multiplier) AND (alternation disabled OR signal state != long) AND (ignore-open-position disabled OR risk exits disabled OR no position open OR ((stop disabled OR target disabled) AND signal state != long)).
+Short: close < open AND close < min(previous open, previous close) AND body >= average body × body multiplier AND (volume multiplier <= 0 OR volume >= average volume × volume multiplier) AND (alternation disabled OR signal state != short) AND (ignore-open-position disabled OR risk exits disabled OR no position open OR ((stop disabled OR target disabled) AND signal state != short)).
+Exit: long, risk exits enabled AND stop enabled AND (low <= stop in wick mode OR close <= stop in close mode).
+Exit: long, risk exits enabled AND target enabled AND (high >= target in wick mode OR close >= target in close mode) AND stop not hit on this bar.
+Exit: short, risk exits enabled AND stop enabled AND (high >= stop in wick mode OR close >= stop in close mode).
+Exit: short, risk exits enabled AND target enabled AND (low <= target in wick mode OR close <= target in close mode) AND stop not hit on this bar.
+Exit: long, long signal OR short signal.
+Exit: short, long signal OR short signal.

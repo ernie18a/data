@@ -1,7 +1,12 @@
-Calculation: Inverse RSI price level for target T = close + x, where R = T / (100 - T), x = (n - 1) × (R × average loss − average gain) when that value is nonnegative; otherwise x = (n - 1) × (average loss − average gain / R). Average gain and average loss are Wilder-smoothed over the RSI lookback.
-Calculation: RSI pivot low/high = RSI value at a bar lower/higher than the RSI values on the pivot-length bars before and after it; the pivot is confirmed pivot-length bars later.
-Calculation: Pivot price low/high = low/high at the bar of the corresponding RSI pivot.
-Long: (current low ≤ prior bar’s selected support level AND current close > that level AND prior close > that level) OR (a confirmed RSI pivot low is below the preceding RSI pivot low AND its price low is above the preceding pivot price low AND the pivot gap is within the maximum pivot gap).
-Short: (current high ≥ prior bar’s selected resistance level AND current close < that level AND prior close < that level) OR (a confirmed RSI pivot high is above the preceding RSI pivot high AND its price high is below the preceding pivot price high AND the pivot gap is within the maximum pivot gap).
-Exit: long, low ≤ entry price − ATR-based stop distance OR high ≥ entry price + target distance.
-Exit: short, high ≥ entry price + ATR-based stop distance OR low ≤ entry price − target distance.
+Calculation: RSI source = a configurable price series derived from the available bar fields; use the same source for RSI and inverse RSI levels.
+Calculation: Inverse RSI level(T) = source + x, where n is the RSI length, AG and AL are Wilder-smoothed gains and losses of the source, r = T / (100 - T), u = (n - 1) * (r * AL - AG), and x = u if u >= 0, otherwise (n - 1) * (AL - AG / r).
+Calculation: Bull regime = the lowest RSI over the regime lookback >= the bull floor minus tolerance AND the highest RSI over that lookback > the bear ceiling plus tolerance. Bear regime = the highest RSI over the regime lookback <= the bear ceiling plus tolerance AND the lowest RSI over that lookback < the bull floor minus tolerance.
+Calculation: Support level = inverse RSI level at the bull-support threshold in a bull regime, otherwise at the lower oversold threshold. Resistance level = inverse RSI level at the bear-resistance threshold in a bear regime, otherwise at the higher overbought threshold. Select the regime and calculate the level on the previous bar.
+Calculation: Confirmed RSI pivot = an RSI low or high at a bar with a configurable equal number of bars on each side; confirm it only after the right-side bars have closed. Compare each pivot with the immediately preceding confirmed pivot of the same type, using price lows or highs at the respective pivot bars.
+Calculation: Entry risk = ATR on the entry bar multiplied by a configurable stop multiplier; retain this value for the position.
+Long: Low <= previous-bar support level AND close > previous-bar support level AND previous close > previous-bar support level.
+Long: A confirmed RSI low pivot < the preceding RSI low pivot AND its price low > the preceding pivot's price low AND the distance between the pivot bars <= a configurable maximum.
+Short: High >= previous-bar resistance level AND close < previous-bar resistance level AND previous close < previous-bar resistance level.
+Short: A confirmed RSI high pivot > the preceding RSI high pivot AND its price high < the preceding pivot's price high AND the distance between the pivot bars <= a configurable maximum.
+Exit: long, at least one bar has elapsed since entry AND (low <= entry price - entry risk OR high >= entry price + entry risk multiplied by a configurable target multiple OR bars elapsed since entry >= a configurable horizon).
+Exit: short, at least one bar has elapsed since entry AND (high >= entry price + entry risk OR low <= entry price - entry risk multiplied by a configurable target multiple OR bars elapsed since entry >= a configurable horizon).

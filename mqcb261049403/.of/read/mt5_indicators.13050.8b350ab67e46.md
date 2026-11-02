@@ -1,6 +1,6 @@
-Calculation: ATR = average true range
-Calculation: Bullish reversal threshold = lowest low over the ATR lookback + ATR multiplied by a factor
-Calculation: Bearish reversal threshold = highest high over the ATR lookback − ATR multiplied by a factor
-Calculation: Trend = bullish if close > prior bullish reversal threshold; then bearish if close < prior bearish reversal threshold; otherwise retain the prior trend
-Long: prior trend is bearish AND close > prior bullish reversal threshold AND close >= prior bearish reversal threshold
-Short: prior trend is bullish AND close < prior bearish reversal threshold
+Calculation: Chandelier trend and stops = For each bar, set the raw lower stop to the highest high over the ATR lookback ending on that bar minus an ATR multiple, and the raw upper stop to the lowest low over the same lookback plus that multiple. Initialize the trend as neutral. Set the trend to bullish if close is above the previous upper stop; then set it to bearish if close is below the previous lower stop; otherwise retain the previous trend. In a bullish trend, the lower stop is the maximum of its raw value and the previous lower stop; otherwise it is its raw value. In a bearish trend, the upper stop is the minimum of its raw value and the previous upper stop; otherwise it is its raw value.
+Calculation: Sampled Chandelier trend = Calculate the same Chandelier trend independently on each selected timeframe, which is the chart timeframe or a higher timeframe. At the first chart bar of each selected-timeframe bar, sample its still-forming trend and hold that sampled trend until the next selected-timeframe bar.
+Long: Previous chart-timeframe Chandelier trend is bearish AND current chart-timeframe Chandelier trend is bullish
+Short: Previous chart-timeframe Chandelier trend is bullish AND current chart-timeframe Chandelier trend is bearish
+Long: Sampled Chandelier trend is bullish
+Short: Sampled Chandelier trend is bearish

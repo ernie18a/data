@@ -1,5 +1,7 @@
-Calculation: PVSRA vector candle = classify volume and candle spread relative to surrounding bars as unusually active major or secondary bullish (close > open) or bearish (close < open) activity
-Calculation: Average range = moving average of high minus low over a lookback
-Calculation: Minimum gap size = configurable percentage of average range
-Long: Bullish PVSRA vector candle OR low > previous high AND low - previous high >= minimum gap size
-Short: Bearish PVSRA vector candle OR high < previous low AND previous low - high >= minimum gap size
+Calculation: PVSRA vector classification = unavailable in READ; the imported library's implementation is required to reproduce its major and secondary bullish and bearish classifications.
+Long: PVSRA classification equals major bullish vector OR secondary bullish vector.
+Short: PVSRA classification equals major bearish vector OR secondary bearish vector.
+Long: low > previous high AND low - previous high >= a parameter times SMA of high - low.
+Short: high < previous low AND previous low - high >= a parameter times SMA of high - low.
+Long: (close - SMA of close) / SMA of close > 0. The SMA uses any of three ordered lookbacks on each selected timeframe; for longer-period columns, it uses a proportionally longer lookback on the underlying timeframe. For a higher timeframe, use the last completed bar historically and the forming bar in real time; for a lower timeframe, use the last completed intrabar.
+Short: (close - SMA of close) / SMA of close < 0. The SMA uses any of three ordered lookbacks on each selected timeframe; for longer-period columns, it uses a proportionally longer lookback on the underlying timeframe. For a higher timeframe, use the last completed bar historically and the forming bar in real time; for a lower timeframe, use the last completed intrabar.

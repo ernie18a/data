@@ -1,11 +1,16 @@
-Calculation: Pivot high/low = a bar whose high/low is the highest/lowest over an equal lookback on each side; confirm only after the right-side bars complete.
-Calculation: Bullish/bearish divergence = compare the latest two confirmed price pivot lows/highs with the latest two confirmed oscillator pivot lows/highs, respectively.
-Calculation: Z-score = (close − simple moving average of close) / standard deviation of close, using the same lookback for both.
-Calculation: Price swing divergence = compare the latest two price pivot highs and lows: bearish when the latest high is higher and (latest high − latest low) < 0.7 × (previous high − previous low); bullish when the latest low is lower and (latest high − previous low) < 0.7 × (previous high − latest low).
-Calculation: ATR = average true range.
-Calculation: Take-profit level = signal-bar close + position side × ATR at entry × take-profit multiplier.
-Calculation: Stop-loss level = signal-bar close − position side × stop distance; stop distance is either ATR at entry × stop multiplier or signal-bar close × stop percentage.
-Long: A new price pivot high or low is confirmed AND at least one of: latest price pivot low < previous price pivot low AND latest RSI, MFI, Stochastic, Z-score, ADX, MACD line, or OBV pivot low > its previous pivot low; OR latest price pivot low < previous price pivot low AND (latest price pivot high − previous price pivot low) < 0.7 × (previous price pivot high − latest price pivot low); OR latest price pivot low < previous price pivot low AND latest OBV pivot low > previous OBV pivot low.
-Short: A new price pivot high or low is confirmed AND at least one of: latest price pivot high > previous price pivot high AND latest RSI, MFI, Stochastic, Z-score, ADX, MACD line, or OBV pivot high < its previous pivot high; OR latest price pivot high > previous price pivot high AND (latest price pivot high − latest price pivot low) < 0.7 × (previous price pivot high − previous price pivot low); OR latest price pivot high > previous price pivot high AND latest OBV pivot high < previous OBV pivot high.
-Exit: Long, high ≥ take-profit level OR low ≤ stop-loss level
-Exit: Short, low ≤ take-profit level OR high ≥ stop-loss level
+Calculation: Z-score = (close − SMA of close) / standard deviation of close; use zero when the standard deviation is zero.
+Calculation: Confirmed pivot high or low = a series value at a bar with the same parameterized number of bars on each side, confirmed only after the right-side bars have completed; use TradingView pivot-high and pivot-low tie handling. Track the latest two confirmed pivots independently for high, low, and each of RSI of close, MFI of typical price, stochastic of close, Z-score, ADX, MACD line with shorter and longer EMA periods, and OBV. Price and oscillator pivots need not occur on the same bars. Use separate pivot-length parameters for the overlay and screener.
+Calculation: Bullish divergence = latest price pivot low < preceding price pivot low AND latest oscillator pivot low > preceding oscillator pivot low.
+Calculation: Bearish divergence = latest price pivot high > preceding price pivot high AND latest oscillator pivot high < preceding oscillator pivot high.
+Calculation: Price bullish divergence = latest price pivot low < preceding price pivot low AND latest price pivot high − preceding price pivot low < a parameterized fraction of (preceding price pivot high − latest price pivot low).
+Calculation: Price bearish divergence = latest price pivot high > preceding price pivot high AND latest price pivot high − latest price pivot low < a parameterized fraction of (preceding price pivot high − preceding price pivot low).
+Long: For any oscillator using overlay pivots, bullish divergence AND age of its latest pivot low <= overlay window length.
+Short: For any oscillator using overlay pivots, bearish divergence AND bullish divergence is false AND age of its latest pivot high <= overlay window length.
+Long: A new screener price pivot high OR low is confirmed AND, for any oscillator using screener pivots, bullish divergence.
+Short: A new screener price pivot high OR low is confirmed AND, for any oscillator using screener pivots, bearish divergence AND bullish divergence is false.
+Long: A new screener price pivot high OR low is confirmed AND price bullish divergence using screener pivots.
+Short: A new screener price pivot high OR low is confirmed AND price bearish divergence using screener pivots AND price bullish divergence is false.
+Long: A new screener price pivot high OR low is confirmed AND bullish divergence for OBV using screener pivots AND bearish divergence for OBV using screener pivots is false.
+Short: A new screener price pivot high OR low is confirmed AND bearish divergence for OBV using screener pivots.
+Exit: long, on a bar after entry, high >= entry price + entry-bar ATR × take-profit multiplier OR low <= entry price − entry-bar ATR × stop-loss multiplier OR low <= entry price × (1 − custom stop-loss percentage) when the custom stop is selected.
+Exit: short, on a bar after entry, low <= entry price − entry-bar ATR × take-profit multiplier OR high >= entry price + entry-bar ATR × stop-loss multiplier OR high >= entry price × (1 + custom stop-loss percentage) when the custom stop is selected.

@@ -1,4 +1,15 @@
-Long: (Bar 1 close > Bar 1 open AND Bar 2 close > Bar 2 open OR NOT (Bar 1 close > Bar 1 open AND Bar 2 close > Bar 2 open) AND Bar 2 close > Bar 1 high) AND abs(Bar 1 close − Bar 1 open) / (Bar 1 high − Bar 1 low) and abs(Bar 2 close − Bar 2 open) / (Bar 2 high − Bar 2 low) are each at least the minimum body fraction AND Bar 2 volume > Bar 1 volume AND current close > VWAP AND current low is between Bar 2 high − 61.8% of Bar 2 range and Bar 2 high − 50% of Bar 2 range
-Short: (Bar 1 close < Bar 1 open AND Bar 2 close < Bar 2 open OR NOT (Bar 1 close < Bar 1 open AND Bar 2 close < Bar 2 open) AND Bar 2 close < Bar 1 low) AND abs(Bar 1 close − Bar 1 open) / (Bar 1 high − Bar 1 low) and abs(Bar 2 close − Bar 2 open) / (Bar 2 high − Bar 2 low) are each at least the minimum body fraction AND Bar 2 volume > Bar 1 volume AND current close < VWAP AND current high is between Bar 2 low + 50% of Bar 2 range and Bar 2 low + 61.8% of Bar 2 range
-Exit: long, current low <= Bar 2 low − stop offset
-Exit: short, current high >= Bar 2 high + stop offset
+Calculation: Body fraction = abs(close - open) / (high - low), or zero when high equals low.
+Calculation: Bull impulse = body fraction of each of the two preceding bars >= the same body-fraction threshold AND volume of the immediately preceding bar > volume of the bar before it AND ((both bars close above their opens) OR (the two bars do not both close above their opens AND the immediately preceding close > the earlier high)).
+Calculation: Bear impulse = body fraction of each of the two preceding bars >= the same body-fraction threshold AND volume of the immediately preceding bar > volume of the bar before it AND ((both bars close below their opens) OR (the two bars do not both close below their opens AND the immediately preceding close < the earlier low)).
+Calculation: Bull retrace bounds = immediately preceding high minus its range multiplied by the larger and smaller retracement fractions, respectively.
+Calculation: Bear retrace bounds = immediately preceding low plus its range multiplied by the smaller and larger retracement fractions, respectively; use the same two fractions as for the bull retrace bounds.
+Calculation: Bull entry signal = bull impulse AND current low >= lower bull retrace bound AND current low <= upper bull retrace bound AND (VWAP filter disabled OR current close > session VWAP of typical price).
+Calculation: Bear entry signal = bear impulse AND current high >= lower bear retrace bound AND current high <= upper bear retrace bound AND (VWAP filter disabled OR current close < session VWAP of typical price).
+Long: bull impulse = true
+Short: bear impulse = true AND bull impulse = false
+Long: bull entry signal = true
+Short: bear entry signal = true
+Exit: long, current low <= the low of the bar preceding the most recent bull entry signal minus the stop offset
+Exit: short, current high >= the high of the bar preceding the most recent bear entry signal plus the stop offset
+Exit: long, bear entry signal = true
+Exit: short, bull entry signal = true

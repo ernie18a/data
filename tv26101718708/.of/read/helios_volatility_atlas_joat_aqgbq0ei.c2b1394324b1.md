@@ -1,11 +1,27 @@
-Calculation: Efficiency ratio = absolute change in close over the lookback divided by the sum of absolute one-bar close changes over the same lookback
-Calculation: Adaptive baseline = EMA(close, long lookback) blended toward an efficiency-ratio adaptive moving average by the efficiency ratio, then EMA-smoothed; adaptive smoothing uses a shorter fast period than slow period
-Calculation: Volatility score = clamp(50 + 50 × tanh((ATR − SMA(ATR, volatility lookback)) / (2 × standard deviation of ATR over that lookback)), 0, 100)
-Calculation: Bull trend = close > adaptive baseline AND adaptive baseline rising AND short-term EMA(close) > longer-term EMA(close)
-Calculation: Bear trend = close < adaptive baseline AND adaptive baseline falling AND short-term EMA(close) < longer-term EMA(close)
-Calculation: Regime state = 0 if ADX < 18 AND trend power < 0.8; otherwise bullish when bull trend, bearish when bear trend, and neutral otherwise; trend power = clamp(1.8 × absolute baseline change / ATR + ADX / 40, 0, 2)
-Calculation: Channel mean = EMA((adaptive baseline + session VWAP) / 2, one quarter of the channel lookback, minimum 5 bars); session VWAP falls back to EMA(hlc3, 34) when unavailable
-Calculation: Channel boundaries = channel mean ± ATR × base channel multiple × (0.75 + clamp(volatility score / 100, 0, 1)); outer boundaries = channel mean ± ATR × outer channel multiple × (0.85 + clamp(volatility score / 140, 0, 0.85)); midpoint boundaries = channel mean ± half the distance to the base channel boundaries
-Calculation: Equilibrium, discount, and premium = rolling low + 50%, 25%, and 75% of the rolling high-low range, respectively
-Long: Regime state > 0 OR (confirmed and regime state > 0 and prior regime state <= 0) OR (confirmed and bull trend and low <= max(adaptive baseline, lower channel midpoint) and close > adaptive baseline and close > open and no bullish retest within the cooldown) OR (confirmed and low < outer lower channel and close > lower channel) OR (confirmed and close > equilibrium and prior close <= equilibrium and close < premium)
-Short: Regime state < 0 OR (confirmed and regime state < 0 and prior regime state >= 0) OR (confirmed and bear trend and high >= min(adaptive baseline, upper channel midpoint) and close < adaptive baseline and close < open and no bearish retest within the cooldown) OR (confirmed and high > outer upper channel and close < upper channel) OR (confirmed and close < equilibrium and prior close >= equilibrium and close > discount)
+Calculation: Adaptive baseline = EMA of close blended with an efficiency-adaptive average and then EMA-smoothed. Efficiency is abs(close minus close at the efficiency lookback) divided by the sum of absolute consecutive close changes over that lookback; use zero when the denominator is zero. The adaptive average starts at close and updates by adding the squared smoothing coefficient times the difference between close and its previous value. The smoothing coefficient is efficiency times the difference between the fast and slow EMA coefficients plus the slow coefficient; the fast period is shorter than the slow period. Blend as EMA plus efficiency times the difference between the adaptive average and EMA.
+Calculation: Volatility score = clamp(score midpoint + score scale × tanh(ATR z-score / z-score scale), score minimum, score maximum), where ATR z-score is ATR minus its moving average divided by its standard deviation over the volatility window; use zero when the denominator is zero.
+Calculation: Trend power = clamp(abs(adaptive baseline minus its previous value) / max(ATR, minimum price increment) × slope scale + ADX / ADX scale, power minimum, power maximum).
+Calculation: Range regime = ADX < ADX threshold AND trend power < trend-power threshold.
+Calculation: Bull trend = close > adaptive baseline AND adaptive baseline > previous adaptive baseline AND shorter-period EMA of close > longer-period EMA of close.
+Calculation: Bear trend = close < adaptive baseline AND adaptive baseline < previous adaptive baseline AND shorter-period EMA of close < longer-period EMA of close.
+Calculation: Session VWAP = cumulative volume-weighted average of (high + low + close) / 3 since the session start; if unavailable, use an EMA of (high + low + close) / 3.
+Calculation: Channel mean = EMA of the average of adaptive baseline and session VWAP, using a smoothing period derived from the channel-memory period.
+Calculation: Channel distance = ATR × base channel multiplier × (channel offset + clamp(volatility score / score maximum, lower multiplier bound, upper multiplier bound)).
+Calculation: Outer channel distance = ATR × outer channel multiplier × (outer offset + clamp(volatility score / outer score scale, lower outer bound, upper outer bound)).
+Calculation: Equilibrium = rolling lowest low + max(rolling highest high − rolling lowest low, minimum price increment) × equilibrium fraction; premium and discount levels use the same rolling range with higher and lower fractions respectively.
+Long: Bull trend.
+Short: Bear trend.
+Long: Close > session VWAP.
+Short: Close < session VWAP.
+Long: Close < equilibrium AND close < premium level.
+Short: Close > equilibrium AND close > discount level.
+Long: Close < channel mean − channel distance.
+Short: Close > channel mean + channel distance.
+Long: Bull trend AND low <= max(adaptive baseline, channel mean − channel distance × mid-channel fraction) AND close > open AND bars since the last bullish retest zone > retest cooldown, or no bullish retest zone has been created.
+Short: Bear trend AND high >= min(adaptive baseline, channel mean + channel distance × mid-channel fraction) AND close < open AND bars since the last bearish retest zone > retest cooldown, or no bearish retest zone has been created.
+Long: Bull trend AND range regime is false AND previous bar had no bull trend outside the range regime.
+Short: Bear trend AND range regime is false AND previous bar had no bear trend outside the range regime.
+Long: Low < channel mean − outer channel distance AND close > channel mean − channel distance.
+Short: High > channel mean + outer channel distance AND close < channel mean + channel distance.
+Long: Close > current equilibrium AND previous close <= current equilibrium AND close < premium level.
+Short: Close < current equilibrium AND previous close >= current equilibrium AND close > discount level.

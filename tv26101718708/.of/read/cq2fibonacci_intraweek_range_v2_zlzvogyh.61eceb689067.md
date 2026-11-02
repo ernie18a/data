@@ -1,3 +1,2 @@
-Calculation: weekly open = open of the current higher-timeframe bar, still forming
-Long: close >= weekly open
-Short: close < weekly open
+Long: Close >= open of the higher-timeframe bar still forming, or the current chart bar when the timeframes are equal.
+Short: Close < open of the higher-timeframe bar still forming, or the current chart bar when the timeframes are equal.

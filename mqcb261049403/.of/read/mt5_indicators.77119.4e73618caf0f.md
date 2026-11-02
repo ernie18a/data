@@ -1,12 +1,10 @@
-Calculation: Candle range = high − low; if zero, use a positive minimum range
-Calculation: Body, upper wick, lower wick = absolute close−open, high−max(open,close), min(open,close)−low, respectively
-Calculation: Body, upper-wick, and lower-wick percentages = each measure divided by candle range × 100
-Calculation: Bullish candle = close ≥ open; bearish candle = close < open
-Calculation: Volume average = moving average of volume over a lookback
-Calculation: High volume = volume > volume average × high-volume multiplier; ultra volume = volume > volume average × ultra-volume multiplier; low volume = volume < volume average × low-volume multiplier
-Calculation: Spread average = moving average of high−low over a shorter lookback than the volume-average lookback
-Calculation: Bull pin = body percentage ≤ pin-body limit AND lower-wick percentage ≥ pin-wick limit; bear pin = body percentage ≤ pin-body limit AND upper-wick percentage ≥ pin-wick limit
-Long: Bull pin AND (high volume OR ultra volume) OR bearish candle AND lower-wick percentage ≥ 25 AND (high volume OR ultra volume) OR bearish candle AND (high volume OR ultra volume) AND body percentage < 30 OR bearish candle AND ultra volume AND close > low + 0.4 × candle range OR bull pin AND volume < each of the prior two bars' volumes OR bearish candle AND low volume AND volume < each of the prior two bars' volumes OR bearish candle AND candle range > spread average AND low volume OR bull pin
-Short: Bear pin AND (high volume OR ultra volume) OR bullish candle AND upper-wick percentage ≥ 25 AND (high volume OR ultra volume) OR bullish candle AND (high volume OR ultra volume) AND body percentage < 30 OR bull pin AND (high volume OR ultra volume) AND high ≥ prior bar high OR bullish candle AND ultra volume AND close < high − 0.4 × candle range OR bear pin AND volume < each of the prior two bars' volumes OR bullish candle AND low volume AND volume < each of the prior two bars' volumes OR bullish candle AND candle range > spread average AND low volume OR bear pin
-Exit: long, weakness signal OR close < trailing SAR level
-Exit: short, strength signal OR close > trailing SAR level
+Calculation: Candle geometry = range is high minus low; body is absolute close minus open divided by range; upper wick is high minus the greater of open and close, divided by range; lower wick is the lesser of open and close minus low, divided by range.
+Calculation: Bull pin = body <= pin-body threshold AND lower wick >= pin-wick threshold. Bear pin = body <= pin-body threshold AND upper wick >= pin-wick threshold.
+Calculation: Volume average = selected moving average of volume over a lookback including the current bar. High volume = volume > high-volume multiplier times volume average. Ultra volume = volume > ultra-volume multiplier times volume average, with the ultra multiplier greater than the high multiplier. Low volume = volume < low-volume multiplier times volume average.
+Calculation: Wide range = current range > selected moving average of range over a lookback including the current bar.
+Calculation: Volume contraction = current volume < previous bar volume AND current volume < volume two bars ago.
+Calculation: Strength = (bull pin AND high volume) OR (close < open AND lower wick >= wick threshold AND high volume) OR (close < open AND wide range AND low volume) OR (close < open AND high volume AND body < small-body threshold) OR (bear pin AND high volume) OR (close < open AND ultra volume AND close > low + range times close-location threshold) OR (bull pin AND volume contraction) OR (close < open AND low volume AND volume contraction).
+Calculation: Weakness = strength is false AND ((bear pin AND high volume) OR (close >= open AND upper wick >= wick threshold AND high volume) OR (close >= open AND wide range AND low volume) OR (close >= open AND high volume AND body < small-body threshold) OR (bull pin AND high volume AND high >= previous high) OR (close >= open AND ultra volume AND close < high - range times close-location threshold) OR (bear pin AND volume contraction) OR (close >= open AND low volume AND volume contraction)).
+Long: bull pin is true OR strength is true.
+Short: bear pin is true AND bull pin is false OR weakness is true.
+Calculation: The SAR trend-zone decisions cannot be reproduced from the specified fields: their state depends on tick volume independently of volume, including tick volumes of the two preceding bars. Tick volume is not present in the backtest header.

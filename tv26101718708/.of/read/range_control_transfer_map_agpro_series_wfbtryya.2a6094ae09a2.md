@@ -1,14 +1,15 @@
-Calculation: ATR = average true range.
-Calculation: Range high/low = highest high / lowest low over the range lookback, including the current bar; range height = range high − range low.
-Calculation: Mature range = range height / ATR is within the configured minimum and effective maximum, and the combined count of upper-edge and lower-edge touches over the range lookback meets the configured minimum. A touch is a bar whose high is within the configured ATR tolerance of the range high or whose low is within that tolerance of the range low; the effective maximum may be multiplied by the configured intraday multiplier on intraday charts.
-Calculation: Control band = range midpoint ± configured ATR multiple × ATR.
-Calculation: Candle body/range ratio = |close − open| / max(high − low, minimum tick size).
-Calculation: Transfer quality = rounded, clamped 0–100 weighted score: 40% range health + 32% body score + 28% volume score. Range health weights height balance 38%, edge-touch score 34%, and closeness of close to range midpoint 28%; body score is body/range ratio relative to its configured minimum; volume score is current volume relative to its moving average and configured confirmation ratio. The moving average uses a longer lookback than the range lookback only if configured that way.
-Calculation: Buyer-control transfer = mature range AND close above the control band AND body/range ratio meets its configured minimum AND prior active control side is 0 or seller AND transfer quality meets max(configured minimum transfer score − 12, 1).
-Calculation: Seller-control transfer = mature range AND close below the control band AND body/range ratio meets its configured minimum AND prior active control side is 0 or buyer AND transfer quality meets max(configured minimum transfer score − 12, 1).
-Calculation: Buyer-edge reaction = mature range AND high is within the configured ATR tolerance of range high? No: within tolerance of range low AND close > open AND close above range low + tolerance × ATR.
-Calculation: Seller-edge reaction = mature range AND high is within the configured ATR tolerance of range high AND close < open AND close below range high − tolerance × ATR.
-Long: Buyer-control transfer OR buyer-edge reaction.
-Short: Seller-control transfer OR seller-edge reaction.
-Exit: long, prior active control side is buyer AND close < control band bottom − configured failure-buffer ATR × ATR.
-Exit: short, prior active control side is seller AND close > control band top + configured failure-buffer ATR × ATR.
+Calculation: Range = highest high and lowest low over the range lookback, including the current bar; height = max(highest high − lowest low, price increment); midpoint = (highest high + lowest low) / 2; normalized height = height / max(ATR, price increment).
+Calculation: Edge touches = the sum over the range lookback of upper-edge touches and lower-edge touches, each evaluated using that bar's own range and ATR; an upper touch has high >= range high − edge tolerance × ATR, and a lower touch has low <= range low + edge tolerance × ATR.
+Calculation: Mature range = normalized height >= minimum height AND normalized height <= maximum height, multiplied by an optional adaptive factor on intraday charts AND edge touches >= minimum touches.
+Calculation: Transfer band = midpoint ± band width × ATR; buyer failure line = lower band − failure buffer × ATR; seller failure line = upper band + failure buffer × ATR.
+Calculation: Body ratio = abs(close − open) / max(high − low, price increment).
+Calculation: Range health = round(clamp(0.38 × height balance + 0.34 × touch score + 0.28 × balance score, 0, 100)); height balance = normalized height / minimum height × 55 if below minimum, max(0, 100 − (normalized height − maximum height) / maximum height × 100) if above the unadjusted maximum, otherwise 100; touch score = clamp(edge touches / (2 × minimum touches) × 100, 0, 100); balance score = clamp(100 − abs(close − midpoint) / max(height / 2, price increment) × 70, 0, 100).
+Calculation: Transfer quality = round(clamp(0.40 × range health + 0.32 × body score + 0.28 × volume score, 0, 100)); body score = clamp(body ratio / minimum body ratio × 100, 0, 100); volume score = clamp(volume ratio / volume confirmation ratio × 100, 0, 100); volume ratio = volume / its simple moving average, or 1 when that average is unavailable or nonpositive.
+Calculation: Active control = initialize neutral; on each bar, using the previous bar's control, set buyer on a buyer transfer or seller on a seller transfer; otherwise set neutral if the range is immature; otherwise, when the age of the last transfer exceeds the maximum age, set buyer if close > midpoint, seller if close < midpoint, or neutral if equal, and clear the transfer age; otherwise retain previous control. After these updates, reset to neutral if previous control was buyer and close < buyer failure line, or previous control was seller and close > seller failure line. A transfer sets its age to zero.
+Calculation: Buyer transfer = mature range AND close > upper band AND body ratio >= minimum body ratio AND previous active control is neutral or seller AND transfer quality >= max(minimum transfer quality − 12, 1). Seller transfer = mature range AND close < lower band AND body ratio >= minimum body ratio AND previous active control is neutral or buyer AND transfer quality >= max(minimum transfer quality − 12, 1).
+Long: Buyer transfer.
+Short: Seller transfer.
+Long: Mature range AND low <= range low + edge tolerance × ATR AND close > open AND close > range low + edge tolerance × ATR.
+Short: Mature range AND high >= range high − edge tolerance × ATR AND close < open AND close < range high − edge tolerance × ATR.
+Long: Previous active control is seller AND close > seller failure line.
+Short: Previous active control is buyer AND close < buyer failure line.

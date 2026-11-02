@@ -1,3 +1,2 @@
-Calculation: Moving average = configured SMA, EMA, RMA, VWMA, or WMA of a configured source over a configured lookback on chart-timeframe bars
-Long: First selected cloud-boundary moving average >= second selected cloud-boundary moving average
-Short: First selected cloud-boundary moving average < second selected cloud-boundary moving average
+Long: The first selected chart-timeframe moving average is greater than or equal to the second selected chart-timeframe moving average.
+Short: The first selected chart-timeframe moving average is less than the second selected chart-timeframe moving average.

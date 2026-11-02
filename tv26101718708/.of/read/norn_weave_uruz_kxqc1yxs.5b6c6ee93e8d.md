@@ -1,14 +1,20 @@
-Calculation: EMA = exponential moving average of close with a lookback longer than the swing-detection lookback
-Calculation: Dow trend = retain the latest confirmed swing high and low; confirm a swing using a centered window with the swing-detection lookback on each side; set trend up when close > latest swing high, down when close < latest swing low, otherwise retain the prior trend
-Calculation: ADX threshold = rolling median of ADX over a longer lookback, or a configurable threshold when automatic calibration is off
-Calculation: ATR factor = base factor adjusted inversely to current ATR as a percentage of close relative to its longer-lookback average
-Calculation: Stop-loss percentage = negative smoothed ATR percentage multiplied by a factor, clamped to a configurable minimum and maximum loss; or a configurable percentage when automatic calibration is off
-Calculation: Footprint delta = footprint buy volume − footprint sell volume; smooth it with a shorter lookback
-Long: EMA > its prior value AND Dow trend is up AND ADX > ADX threshold AND (footprint filter is disabled OR footprint delta SMA is unavailable OR footprint delta SMA > 0)
-Short: EMA < its prior value AND Dow trend is down AND ADX > ADX threshold AND (footprint filter is disabled OR footprint delta SMA is unavailable OR footprint delta SMA < 0)
-Exit: Long, long return percentage < stop-loss percentage OR break-even stop is active AND low <= entry price OR Dow trend is down OR high > entry price + entry-bar ATR × ATR factor
-Exit: Long, long return percentage < stop-loss percentage OR break-even stop is active AND low <= entry price OR Dow trend is down OR high > entry price + 2 × entry-bar ATR × ATR factor
-Exit: Long, long return percentage < stop-loss percentage OR break-even stop is active AND low <= entry price OR Dow trend is down OR high > entry price + 3 × entry-bar ATR × ATR factor
-Exit: Short, short return percentage < stop-loss percentage OR break-even stop is active AND high >= entry price OR Dow trend is up OR low < entry price − entry-bar ATR × ATR factor
-Exit: Short, short return percentage < stop-loss percentage OR break-even stop is active AND high >= entry price OR Dow trend is up OR low < entry price − 2 × entry-bar ATR × ATR factor
-Exit: Short, short return percentage < stop-loss percentage OR break-even stop is active AND high >= entry price OR Dow trend is up OR low < entry price − 3 × entry-bar ATR × ATR factor
+Calculation: Swing trend = Initially neutral. A swing high or low is confirmed when the high or low N bars ago equals the highest high or lowest low over the latest 2N+1 bars; retain the latest confirmed level of each kind. Set trend bullish when close > latest swing high, then set it bearish when close < latest swing low; otherwise retain the previous trend.
+Calculation: Higher-timeframe swing trend = Apply the swing trend calculation to higher-timeframe bars using the last completed bar, with the same swing lookback as the chart timeframe.
+Calculation: ADX threshold = In manual mode, a parameter; in automatic mode, the nearest-rank median of ADX over a lookback, falling back to a parameter when unavailable.
+Calculation: Volatility ratio = ATR as a percentage of close divided by its longer-lookback SMA, or a neutral parameter when that SMA is unavailable or nonpositive.
+Calculation: ATR factor = In manual mode, a parameter; in automatic mode, a base parameter plus a scaling parameter times the volatility ratio's distance below a neutral parameter, clamped between lower and upper adjustment parameters.
+Calculation: Stop-loss percentage = In manual mode, a parameter; in automatic mode, negative SMA of ATR as a percentage of close times a parameter, clamped between negative bounds, with a fallback parameter when the SMA is unavailable.
+Calculation: Take-profit levels = At the entry signal bar, fix levels at its close plus or minus ATR times the ATR factor times successive increasing distance parameters. Each level can trigger once per position and closes a specified fraction of the remaining position.
+Calculation: Break-even activation = When enabled, activate for the current position once close-based profit as a percentage of entry price reaches the trigger parameter; remain active until the position is closed.
+Long: EMA > previous EMA
+Short: EMA <= previous EMA
+Long: Swing trend = bullish
+Short: Swing trend = bearish
+Long: Higher-timeframe swing trend = bullish
+Short: Higher-timeframe swing trend = bearish
+Long: Position side = flat AND EMA > previous EMA AND swing trend = bullish AND ADX > ADX threshold
+Short: Position side = flat AND EMA < previous EMA AND swing trend = bearish AND ADX > ADX threshold
+Exit: long, (close - entry price) / entry price × 100 < stop-loss percentage OR break-even activation = active AND low <= entry price OR swing trend = bearish
+Exit: short, (entry price - close) / entry price × 100 < stop-loss percentage OR break-even activation = active AND high >= entry price OR swing trend = bullish
+Exit: long, high > an untriggered long take-profit level
+Exit: short, low < an untriggered short take-profit level

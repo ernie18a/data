@@ -1,5 +1,14 @@
-Calculation: Fusion line = EMA of the equally weighted moving-average and rolling-VWAP values from the chart timeframe and two higher timeframes; each moving average uses the same lookback, each rolling VWAP uses the same lookback, and higher-timeframe values use the last completed bar. Calculations use Heikin-Ashi prices.
-Calculation: Upper volatility buffer = fusion line + smoothed ATR; lower volatility buffer = fusion line − smoothed ATR. Smooth chart-timeframe ATR with the same EMA lookback used to smooth the fusion line.
-Calculation: Trend state = bullish after the required number of consecutive Heikin-Ashi green bars close above the upper buffer; bearish after that many consecutive Heikin-Ashi red bars close below the lower buffer; otherwise retain the previous state.
-Long: Trend state becomes bullish and the previous trend state was not bullish OR trend state is bullish, Heikin-Ashi close crossed below the fusion line since the last trend-state change, and Heikin-Ashi close crosses back above the fusion line.
-Short: Trend state becomes bearish and the previous trend state was not bearish OR trend state is bearish, Heikin-Ashi close crossed above the fusion line since the last trend-state change, and Heikin-Ashi close crosses back below the fusion line.
+Calculation: Price bars = optionally transform the chart and each selected timeframe's OHLC bars independently into Heikin Ashi bars; retain volume.
+Calculation: Fusion midline = EMA of the weighted mean of a selected moving average of close and either rolling or daily-reset VWAP of typical price, each calculated on three selected timeframes. Use the same moving-average type and length across timeframes, the same VWAP mode and length across timeframes, and one weight per calculation type. A type can have zero weight; if total weight is zero, use chart-timeframe close instead. Each selected timeframe may be lower than, equal to, or higher than the chart timeframe. For higher timeframes use the last completed bar; for lower timeframes use the last completed intrabar within the chart bar; for the chart timeframe use the current bar. Apply the EMA on the chart timeframe.
+Calculation: Triple Hull moving average = WMA of (three times WMA of source with one-third length minus WMA with one-half length minus WMA with full length), using the full length for the outer WMA; round fractional lengths to the nearest integer and use a minimum length of one.
+Calculation: Volatility bands = fusion midline plus or minus a multiplier times chart-timeframe ATR smoothed by an EMA with the same length as the fusion-midline EMA.
+Calculation: Trend state = initially neutral; set bullish when the required number of consecutive price bars each close above the upper volatility band and above their open; set bearish when the required number of consecutive price bars each close below the lower volatility band and below their open; otherwise retain the previous state.
+Calculation: Directional volume totals = rolling sums over the same lookback of volume on ordinary chart bars with close above open and volume on ordinary chart bars with close below open, respectively.
+Long: Trend state = bullish.
+Short: Trend state = bearish.
+Long: Trend state = bullish AND previous trend state != bullish.
+Short: Trend state = bearish AND previous trend state != bearish.
+Long: Trend state = bullish AND price close crosses above the fusion midline AND price close previously crossed below the fusion midline during the current bullish state and since the previous bullish retest.
+Short: Trend state = bearish AND price close crosses below the fusion midline AND price close previously crossed above the fusion midline during the current bearish state and since the previous bearish retest.
+Long: Bullish directional volume total >= bearish directional volume total.
+Short: Bullish directional volume total < bearish directional volume total.

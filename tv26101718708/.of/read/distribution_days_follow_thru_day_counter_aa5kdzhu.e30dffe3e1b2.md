@@ -1,11 +1,14 @@
-Calculation: Price change = (close - previous chart-bar close) / previous chart-bar close
-Calculation: Close position = (close - low) / (high - low)
-Calculation: Rally low = lowest low tracked during Correction; hold fixed during Rally Attempt
-Calculation: Rally day = count chart bars since Rally Day 1, starting at 1
-Calculation: Active selling-pressure count = count of Distribution and Stalling events since the latest Follow-Through Day that have not reached their configured age limit and have not been negated by a close at or above the event close plus the configured recovery percentage; clear at Rally Day 1, Follow-Through Day, or Correction reset
-Long: state is Correction AND close > previous close AND low >= Rally low
-Long: state is Rally Attempt AND rally day >= configured minimum AND price change >= configured gain threshold AND volume > previous bar volume
-Short: state is Confirmed Uptrend AND price change <= -configured decline threshold AND volume > previous bar volume
-Short: state is Confirmed Uptrend AND 0 < price change <= configured maximum stalling gain AND close position < configured maximum close position AND volume > previous bar volume AND at least one of the prior two chart bars had price change >= configured prior-progress threshold
-Exit: long, state is Rally Attempt AND (low < Rally low, or close < Rally low when close-based failure is selected)
-Exit: long, state is Confirmed Uptrend AND (active selling-pressure count >= configured correction threshold, or a later bar's low < the Follow-Through Day low when that reset option is enabled)
+Calculation: Return = (close - previous close) / previous close; undefined when the previous close is zero or unavailable.
+Calculation: Model state = initialize as correction. On every completed chart bar in correction, including warm-up bars, update the correction low to the minimum of its existing value and the current low. After the warm-up, a rally-start condition changes correction to rally and sets rally day to one. On each subsequent bar in rally, first test rally failure; on failure, change to correction and set the correction low to the current low. Otherwise increment rally day and test for a follow-through day; on success, change to confirmed uptrend, record the current low and bar as the follow-through low and bar, and clear selling-pressure events. In confirmed uptrend, process selling-pressure events and follow-through-low undercuts before testing correction resets. A reset changes the state to correction, sets the correction low to the current low, and clears follow-through information and selling-pressure events. All transitions and signals occur on completed bars after the warm-up.
+Calculation: Selling-pressure events = in confirmed uptrend, record each distribution or enabled stalling condition with its bar and close. Before adding the current bar's event, remove each existing event when its age in bars is at least the expiration parameter or current close is at least its recorded close multiplied by one plus the recovery parameter. The active count includes the current bar's event.
+Calculation: Distribution condition = return <= negative distribution threshold AND volume > previous volume.
+Calculation: Stalling condition = return > 0 AND return <= maximum stalling gain AND volume > previous volume AND close position within the high-low range < maximum close-position threshold AND (prior-progress filter disabled OR return on either of the previous two bars >= prior-progress threshold); close position is (close - low) / (high - low), or one half when high equals low.
+Calculation: Rally failure = selected failure price, either current low or current close, < correction low.
+Calculation: Follow-through condition = rally day >= minimum rally-day parameter AND return >= follow-through gain threshold AND (higher-volume filter disabled OR volume > previous volume).
+Long: State before processing the bar = correction AND close > previous close AND low >= updated correction low.
+Long: State before processing the bar = rally AND rally failure = false AND follow-through condition = true.
+Short: State before processing the bar = rally AND rally failure = true.
+Short: State after rally processing = confirmed uptrend AND distribution condition = true.
+Short: State after rally processing = confirmed uptrend AND stalling enabled AND stalling condition = true.
+Short: State = confirmed uptrend AND follow-through-low tracking enabled AND current bar > follow-through bar AND no earlier tracked undercut since that follow-through day AND low < follow-through low.
+Short: State = confirmed uptrend AND pressure reset enabled AND active selling-pressure count >= pressure reset threshold.

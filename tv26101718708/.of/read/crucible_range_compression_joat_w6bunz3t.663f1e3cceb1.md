@@ -1,9 +1,13 @@
-Calculation: Compression intensity = 0.4 × (1 − Bollinger Band Width percentile rank / 100) + 0.4 × (1 − ATR percentile rank / 100) + 0.2 × body compression score; the percentile ranks use the same lookback.
-Calculation: Body compression score = clamp(1 − (body Z-score + 2) / 4, 0, 1), where body = |close − open| and body Z-score = (body − its moving average) / its standard deviation.
-Calculation: Chamber high/low = highest high / lowest low over the chamber initialization lookback on the first active bar, then the running maximum high / minimum low on subsequent active bars; lock these bounds when compression ends.
-Calculation: Locked CVD slope = on the first active bar, 0; on each subsequent active bar, the sum of signed volume since the first active bar divided by the number of compression bars. Signed volume is +volume when close > open, −volume when close < open, and 0 otherwise. Retain the last active-bar slope when compression ends.
-Calculation: Breakout target price = breakout close + chamber width for a long breakout, or breakout close − chamber width for a short breakout; chamber width = locked chamber high − locked chamber low.
-Long: Compression intensity <= activation threshold AND previous-bar compression intensity > activation threshold AND close > locked chamber high AND locked CVD slope > 0
-Short: Compression intensity <= activation threshold AND previous-bar compression intensity > activation threshold AND close < locked chamber low AND locked CVD slope < 0
-Exit: long, high >= breakout target price
-Exit: short, low <= breakout target price
+Calculation: Compression intensity = weighted sum of one minus the percentile rank of Bollinger Band Width, one minus the percentile rank of ATR, and a body score; use the same percentile lookback for both ranks. Bollinger Band Width is twice the Bollinger standard-deviation multiplier times the standard deviation of close, divided by the greater of the close SMA and a positive minimum denominator. Body score is the body Z-score mapped linearly from a lower Z-score bound to an upper Z-score bound so smaller bodies score higher, then clamped to 0–1; use Z-score zero when the body standard deviation is zero.
+Calculation: Compression chamber = when intensity first exceeds its threshold, initialize its high and low to the highest high and lowest low over the chamber lookback including that bar; while intensity remains above the threshold, expand the bounds with each bar's high and low. Lock the bounds on the first bar with intensity at or below the threshold.
+Calculation: Compression volume bias = sum of signed volume after the first compression bar through the last active compression bar, divided by the number of active compression bars; signed volume is positive when close > open, negative when close < open, and zero otherwise. Reset bias to zero at compression start and retain its last value after compression ends.
+Calculation: Normalized volume bias = compression volume bias divided by the running maximum absolute compression volume bias across all compressions, initialized to a positive floor and updated on active bars after the first; clamp the result to -1–1.
+Calculation: Breakout target = breakout-bar close plus chamber width for a bullish breakout or minus chamber width for a bearish breakout. A new breakout replaces the preceding target; a target remains active through its hit bar or until its age exceeds the target expiry length.
+Long: Compression volume bias > 0
+Short: Compression volume bias < 0
+Long: Normalized volume bias > positive bias threshold
+Short: Normalized volume bias < negative bias threshold
+Long: Previous-bar intensity > activation threshold AND current intensity <= activation threshold AND close > locked chamber high AND compression volume bias > 0
+Short: Previous-bar intensity > activation threshold AND current intensity <= activation threshold AND close < locked chamber low AND compression volume bias < 0
+Exit: long, bullish breakout target is active AND high >= bullish breakout target
+Exit: short, bearish breakout target is active AND low <= bearish breakout target

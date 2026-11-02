@@ -1,1 +1,5 @@
-Close all positions on the traded instrument when their combined floating loss exceeds a configured fraction of the account’s equity high-water mark.
+On each new bar, apply these enabled account-based exits in order:
+
+1. If the profit target as a percentage of account balance is nonzero, scan open orders in descending position order, starting at the total order count and stopping at position 1. Accumulate the profit of market positions on the traded instrument, regardless of identifier. Whenever the running sum reaches the target percentage of account balance, close all market positions and delete all pending orders on that instrument, regardless of identifier.
+
+2. Sum the profit of market positions on the instrument with the strategy's identifier. If the sum is negative, update an equity reference: if there are no such positions, first set the reference to current account equity; then set it to the previous recorded account equity if the reference is lower than that previous equity, otherwise set it to current equity. Record current equity as the previous equity. If the absolute loss exceeds the configured percentage of this reference, close all market positions on the instrument with the strategy's identifier. The equity reference and previous equity start at zero and are updated only when this negative-profit check occurs.

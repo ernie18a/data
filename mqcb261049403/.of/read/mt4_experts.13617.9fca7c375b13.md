@@ -1,9 +1,19 @@
-Calculation: Fast moving average = moving average with a shorter lookback than the slow moving average; both use the configured trading timeframe’s current bar, which may be the chart timeframe or a configured higher or lower timeframe.
-Long: Fast moving average > slow moving average AND (distance filter disabled OR absolute difference between the moving averages > configured minimum distance)
-Short: Fast moving average < slow moving average AND (distance filter disabled OR absolute difference between the moving averages > configured minimum distance)
-Long: Price >= highest existing long entry price + configured Step Up distance OR lowest existing long entry price - price >= configured Step Down distance
-Short: Price <= lowest existing short entry price - configured Step Up distance OR price - highest existing short entry price >= configured Step Down distance
-Long: Price reaches the pending long entry placed at the stop-loss level of a short position
-Short: Price reaches the pending short entry placed at the stop-loss level of a long position
-Exit: long, price <= entry price - configured stop-loss distance OR price >= take-profit level OR fast moving average < slow moving average in operation mode 1 OR price <= active trailing-stop level
-Exit: short, price >= entry price + configured stop-loss distance OR price <= take-profit level OR fast moving average > slow moving average in operation mode 1 OR price >= active trailing-stop level
+Calculation: Trailing stop = for a long position, the highest price since entry minus the trailing distance, activated only after price rises more than the trailing distance above entry; for a short position, the lowest price since entry plus the trailing distance, activated only after price falls more than the trailing distance below entry.
+Long: No long position AND shorter-period moving average > longer-period moving average AND (distance filter disabled OR shorter-period moving average - longer-period moving average > minimum distance) AND (trade-time filter disabled OR time is within the configured trading window) AND (reversal mode enabled OR no short position). Moving averages use the chart timeframe or a configured higher or lower timeframe, using the bar still forming.
+Short: No short position AND shorter-period moving average < longer-period moving average AND (distance filter disabled OR longer-period moving average - shorter-period moving average > minimum distance) AND (trade-time filter disabled OR time is within the configured trading window) AND (reversal mode enabled OR no long position). Moving averages use the chart timeframe or a configured higher or lower timeframe, using the bar still forming.
+Long: Turn enabled AND short position AND price >= short entry price + turn distance.
+Short: Turn enabled AND long position AND price <= long entry price - turn distance.
+Long: Turn disabled AND long position AND step-up enabled AND price >= highest open long entry price + step-up distance.
+Long: Turn disabled AND long position AND step-down enabled AND price <= lowest open long entry price - step-down distance.
+Short: Turn disabled AND short position AND step-up enabled AND price <= lowest open short entry price - step-up distance.
+Short: Turn disabled AND short position AND step-down enabled AND price >= highest open short entry price + step-down distance.
+Exit: long, Turn disabled AND reversal mode enabled AND shorter-period moving average < longer-period moving average AND (distance filter disabled OR longer-period moving average - shorter-period moving average > minimum distance) AND (trade-time filter disabled OR time is within the configured trading window).
+Exit: short, Turn disabled AND reversal mode enabled AND shorter-period moving average > longer-period moving average AND (distance filter disabled OR shorter-period moving average - longer-period moving average > minimum distance) AND (trade-time filter disabled OR time is within the configured trading window).
+Exit: long, stop loss enabled AND price <= entry price - stop-loss distance.
+Exit: short, stop loss enabled AND price >= entry price + stop-loss distance.
+Exit: long, take profit enabled AND price >= entry price + take-profit distance.
+Exit: short, take profit enabled AND price <= entry price - take-profit distance.
+Exit: long, Turn disabled AND trailing stop enabled AND price <= trailing stop.
+Exit: short, Turn disabled AND trailing stop enabled AND price >= trailing stop.
+Exit: long, Turn enabled AND price <= entry price - turn distance.
+Exit: short, Turn enabled AND price >= entry price + turn distance.

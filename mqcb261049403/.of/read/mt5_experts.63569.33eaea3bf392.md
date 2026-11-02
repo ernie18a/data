@@ -1,8 +1,12 @@
-Long: previous completed indicator-timeframe close > its EMA AND latest completed close < its EMA
-Long: older completed indicator-timeframe candle is bearish AND latest completed candle is bullish AND latest close > older open AND latest open < older close
-Long: older completed indicator-timeframe RSI < oversold threshold AND latest completed RSI >= oversold threshold
-Short: previous completed indicator-timeframe close < its EMA AND latest completed close > its EMA
-Short: older completed indicator-timeframe candle is bullish AND latest completed candle is bearish AND latest close < older open AND latest open > older close
-Short: older completed indicator-timeframe RSI > overbought threshold AND latest completed RSI <= overbought threshold
-Exit: Long, low <= entry price - stop-loss distance OR high >= entry price + stop-loss distance × risk-reward ratio OR a short signal occurs
-Exit: Short, high >= entry price + stop-loss distance OR low <= entry price - stop-loss distance × risk-reward ratio OR a long signal occurs
+Long: At the start of a new selected-timeframe bar, the previous completed bar is bearish AND the last completed bar is bullish AND its close > the previous bar's open AND its open < the previous bar's close AND the current datetime is within a configured session if session filtering is enabled. The selected timeframe may be the chart timeframe, higher, or lower.
+Short: At the start of a new selected-timeframe bar, the previous completed bar is bullish AND the last completed bar is bearish AND its close < the previous bar's open AND its open > the previous bar's close AND the current datetime is within a configured session if session filtering is enabled. The selected timeframe may be the chart timeframe, higher, or lower.
+Long: At the start of a new selected-timeframe bar, the previous completed bar's RSI < the oversold threshold AND the last completed bar's RSI >= the oversold threshold AND the current datetime is within a configured session if session filtering is enabled. The selected timeframe may be the chart timeframe, higher, or lower.
+Short: At the start of a new selected-timeframe bar, the previous completed bar's RSI > the overbought threshold AND the last completed bar's RSI <= the overbought threshold AND the current datetime is within a configured session if session filtering is enabled. The selected timeframe may be the chart timeframe, higher, or lower.
+Long: At the start of a new selected-timeframe bar, the previous completed bar's close < its close EMA AND the last completed bar's close > its close EMA AND the current datetime is within a configured session if session filtering is enabled. The selected timeframe may be the chart timeframe, higher, or lower.
+Short: At the start of a new selected-timeframe bar, the previous completed bar's close > its close EMA AND the last completed bar's close < its close EMA AND the current datetime is within a configured session if session filtering is enabled. The selected timeframe may be the chart timeframe, higher, or lower.
+Exit: long, any Short condition is true.
+Exit: short, any Long condition is true.
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + stop-loss distance × risk-reward ratio.
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - stop-loss distance × risk-reward ratio.
+Exit: long, session filtering and closing outside sessions are enabled AND the current datetime is outside all configured sessions for its day.
+Exit: short, session filtering and closing outside sessions are enabled AND the current datetime is outside all configured sessions for its day.

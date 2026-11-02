@@ -1,25 +1,10 @@
-Calculation: Bullish structure = the latest two confirmed swing highs and latest two confirmed swing lows are both rising; bearish structure = both are falling; otherwise structure score is zero.
-Calculation: EMA alignment score = positive when fast EMA > medium EMA > slow EMA, negative when fast EMA < medium EMA < slow EMA, otherwise zero; the fast EMA uses the shortest lookback and the slow EMA the longest.
-Calculation: Daily-anchored VWAP slope = percent change in VWAP over a configurable lookback; rising/falling means the slope exceeds the positive/negative configurable flat threshold.
-Calculation: VWAP score = +2 when close is above rising VWAP, +1 when above VWAP but not falling, −2 when below falling VWAP, −1 when below VWAP but not rising, otherwise zero.
-Calculation: Higher-timeframe bias = close compared with its EMA on each of two higher timeframes, using the latest available completed bar; each timeframe uses the same EMA lookback. Agreement gives ±2, one directional and one neutral gives ±1, otherwise zero.
-Calculation: RSI momentum score = +2 at or above the configurable bullish threshold, −2 at or below the configurable bearish threshold, +1 above 50, −1 below 50, otherwise zero.
-Calculation: Relative-volume score has the sign of the sum of the structure, EMA, VWAP, higher-timeframe, and RSI scores; it is zero if that sum is zero.
-Calculation: Liquidity score counts uncleared highs above close and lows below close among the latest completed Asia, London, and New York session highs/lows and the previous completed daily bar's high/low. Score +1 if no highs remain above and at least one low remains below; −1 if no lows remain below and at least one high remains above; otherwise score +2/+1 for a high-minus-low count of at least 3/at least 1, −2/−1 for at most −3/at most −1, and zero otherwise. Clear a high when a bar's high reaches it and a low when a bar's low reaches it.
-Calculation: Composite score = the weighted sum of the seven component scores, normalized by the maximum possible weighted sum to a range of −10 to +10.
-Long: latest two confirmed swing highs and latest two confirmed swing lows are both rising
-Short: latest two confirmed swing highs and latest two confirmed swing lows are both falling
-Long: fast EMA > medium EMA > slow EMA
-Short: fast EMA < medium EMA < slow EMA
-Long: close > daily-anchored VWAP
-Short: close < daily-anchored VWAP
-Long: both higher-timeframe closes are above their respective EMAs, or one is above and the other equals its EMA
-Short: both higher-timeframe closes are below their respective EMAs, or one is below and the other equals its EMA
-Long: RSI > 50
-Short: RSI < 50
-Long: the sum of the structure, EMA, VWAP, higher-timeframe, and RSI scores > 0
-Short: the sum of the structure, EMA, VWAP, higher-timeframe, and RSI scores < 0
-Long: no uncleared highs remain above close and at least one uncleared low remains below close, or the difference between uncleared highs above and lows below is positive
-Short: no uncleared lows remain below close and at least one uncleared high remains above close, or the difference between uncleared highs above and lows below is negative
-Long: composite score > configurable chop threshold
-Short: composite score < negative configurable chop threshold
+Calculation: Structure score = +2 when the latest confirmed swing high and swing low are both higher than their respective previous confirmed swings; -2 when both are lower; otherwise 0. Confirm each swing using equal-length left and right pivot windows.
+Calculation: EMA score = +2 when short EMA > medium EMA > long EMA AND close > short EMA; +1 when short EMA > medium EMA > long EMA AND close < short EMA; -2 when short EMA < medium EMA < long EMA AND close < short EMA; -1 when short EMA < medium EMA < long EMA AND close > short EMA; otherwise 0.
+Calculation: VWAP score = use session-anchored VWAP of typical price, reset at each new daily period. Its slope is the percentage change from a configurable number of chart bars ago, or 0 if unavailable. Score +2 when close > VWAP AND slope > positive flat threshold; -2 when close < VWAP AND slope < negative flat threshold; +1 when close > VWAP AND slope >= negative flat threshold; -1 when close < VWAP AND slope <= positive flat threshold; otherwise 0, evaluating in that order.
+Calculation: Higher-timeframe score = compare close with its EMA on each of two higher timeframes, one shorter than the other, using the last completed bar of each and the same EMA length. Assign each comparison +1, -1, or 0 for above, below, or equal. Score +2 or -2 when both comparisons agree in that direction, +1 or -1 when one has that direction and the other is 0, otherwise 0.
+Calculation: Momentum score = +2 when RSI >= upper threshold; -2 when RSI <= lower threshold; +1 when RSI > midpoint; -1 when RSI < midpoint; otherwise 0, evaluating in that order. The lower threshold is at or below the RSI midpoint and the upper threshold is at or above it.
+Calculation: Volume score = sign of the unweighted sum of structure, EMA, VWAP, higher-timeframe, and momentum scores, multiplied by 2 when volume divided by its simple moving average >= high-volume threshold, by -1 when the ratio <= low-volume threshold, and otherwise by 0.5. Use ratio 1 if the volume average is not positive; evaluate high volume first.
+Calculation: Liquidity score = track the highs and lows of each of three configurable sessions, replacing each pair when its session ends; optionally refresh the previous completed daily bar's high and low at each new daily period. The daily timeframe is higher than the chart timeframe. Clear a tracked high when the current high >= it and a tracked low when the current low <= it, including on the bar the level is refreshed. Count remaining highs above close as H and remaining lows below close as L. In order, score 0 if H = 0 AND L = 0; +1 if H = 0 AND L > 0; -1 if L = 0 AND H > 0; +2 if H - L >= 3; +1 if H - L >= 1; -2 if H - L <= -3; -1 if H - L <= -1; otherwise 0.
+Calculation: Composite score = the weighted sum of the seven component scores divided by twice the sum of their positive weights, scaled to a symmetric score range and clamped to that range.
+Long: Structure score > 0 OR EMA score > 0 OR VWAP score > 0 OR higher-timeframe score > 0 OR momentum score > 0 OR volume score > 0 OR liquidity score > 0 OR composite score > positive chop threshold.
+Short: Structure score < 0 OR EMA score < 0 OR VWAP score < 0 OR higher-timeframe score < 0 OR momentum score < 0 OR volume score < 0 OR liquidity score < 0 OR composite score < negative chop threshold.

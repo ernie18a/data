@@ -1,6 +1,4 @@
-Calculation: SuperTrend flip = ATR based trailing line changes direction when price crosses it.
-Calculation: Flip probability = direction-specific logistic regression score from flip-bar features (body, upper wick, range, volume relative to recent averages; lower-timeframe delta volume; signed candle streak; average signed body; ATR slope; SuperTrend distance; prior trend duration; RSI; Bollinger Band position), trained on resolved flips of the same direction, labeled profitable when the next opposite flip closes favorably relative to entry; weight resolved examples with exponential age decay.
-Long: bullish SuperTrend flip AND at least the minimum number of same-direction resolved training examples AND bullish flip probability >= minimum probability threshold
-Short: bearish SuperTrend flip AND at least the minimum number of same-direction resolved training examples AND bearish flip probability >= minimum probability threshold
-Exit: long, bearish SuperTrend flip
-Exit: short, bullish SuperTrend flip
+Long: SuperTrend direction is bullish
+Short: SuperTrend direction is bearish
+Exit: long, SuperTrend direction changes from bullish to bearish
+Exit: short, SuperTrend direction changes from bearish to bullish

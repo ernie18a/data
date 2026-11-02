@@ -1,7 +1,10 @@
-Calculation: Breakout upper rail = highest high over the preceding channel lookback bars, excluding the current bar
-Calculation: Breakout lower rail = lowest low over the preceding channel lookback bars, excluding the current bar
-Calculation: Chandelier stop = for a long, initialize at entry price minus an ATR multiple measured at entry; thereafter ratchet upward to the greater of the previous stop and the highest high since entry minus a longer ATR multiple measured on the current bar. For a short, initialize at entry price plus an ATR multiple measured at entry; thereafter ratchet downward to the lesser of the previous stop and the lowest low since entry plus a longer ATR multiple measured on the current bar.
-Long: close > breakout upper rail AND previous close <= previous breakout upper rail AND close > EMA AND EMA > its value at the longer slope lookback AND, if higher-timeframe confirmation is enabled, chart-timeframe close > EMA calculated on the last completed bar of a higher timeframe
-Short: close < breakout lower rail AND previous close >= previous breakout lower rail AND close < EMA AND EMA < its value at the longer slope lookback AND, if higher-timeframe confirmation is enabled, chart-timeframe close < EMA calculated on the last completed bar of a higher timeframe
-Exit: long, low <= chandelier stop
-Exit: short, high >= chandelier stop
+Calculation: Upper channel = highest high over the channel lookback ending at the previous bar.
+Calculation: Lower channel = lowest low over the channel lookback ending at the previous bar.
+Calculation: Uptrend = close > long-period EMA AND EMA > its value at the slope lookback AND (higher-timeframe filter disabled OR close > the same-period EMA of the last completed higher-timeframe bar).
+Calculation: Downtrend = close < long-period EMA AND EMA < its value at the slope lookback AND (higher-timeframe filter disabled OR close < the same-period EMA of the last completed higher-timeframe bar).
+Calculation: Long stop = entry price minus an initial-stop multiple of entry-bar ATR on the entry bar; on each subsequent bar, test the previous stop first, then, if not hit, update it to the maximum of the previous stop and the highest high since entry minus a trailing multiple of current ATR.
+Calculation: Short stop = entry price plus an initial-stop multiple of entry-bar ATR on the entry bar; on each subsequent bar, test the previous stop first, then, if not hit, update it to the minimum of the previous stop and the lowest low since entry plus a trailing multiple of current ATR.
+Long: Close > upper channel AND previous close <= previous upper channel AND (trend filter disabled OR (with-trend-only enabled AND uptrend) OR (with-trend-only disabled AND downtrend is false)).
+Short: Close < lower channel AND previous close >= previous lower channel AND (trend filter disabled OR (with-trend-only enabled AND downtrend) OR (with-trend-only disabled AND uptrend is false)).
+Exit: long, low <= previous long stop OR bars since entry >= trade-window lookback.
+Exit: short, high >= previous short stop OR bars since entry >= trade-window lookback.

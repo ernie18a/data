@@ -1,4 +1,48 @@
-Long: short-period moving average > long-period simple moving average on the previous bar OR Stochastic main line > its previous value AND Stochastic main line < lower zone OR Awesome Oscillator < its previous value AND Awesome Oscillator < 0 OR standard deviation > opening threshold OR DeMarker < lower threshold OR CCI > positive threshold OR RSI > upper threshold OR MFI > upper threshold OR Williams %R > -20 OR MACD signal line > 0 OR OsMA > 0.001 OR ADX > 70 OR Parabolic SAR > close OR custom indicator value > 0
-Short: short-period moving average < long-period simple moving average on the previous bar OR Stochastic main line < its previous value AND Stochastic main line > upper zone OR Awesome Oscillator > its previous value AND Awesome Oscillator > 0 OR standard deviation > opening threshold OR DeMarker > upper threshold OR CCI < negative threshold OR RSI < lower threshold OR MFI < lower threshold OR Williams %R < -80 OR MACD signal line < 0 OR OsMA < -0.001 OR ADX < 30 OR Parabolic SAR < close OR custom indicator value < 0
-Exit: Long, short-period moving average > long-period simple moving average on the previous bar OR Stochastic main line < its previous value AND Stochastic main line > upper zone OR Awesome Oscillator < its previous value AND Awesome Oscillator > 0 OR standard deviation < closing threshold OR DeMarker > upper threshold OR CCI > positive threshold OR RSI > upper threshold OR MFI < midpoint of upper and lower thresholds OR Williams %R < -80 OR MACD signal line < 0 OR OsMA < 0 OR ADX < 30 OR Parabolic SAR < close OR custom indicator value > 0 OR low <= stop-loss price OR high >= take-profit price
-Exit: Short, short-period moving average < long-period simple moving average on the previous bar OR Stochastic main line > its previous value AND Stochastic main line < lower zone OR Awesome Oscillator > its previous value AND Awesome Oscillator < 0 OR standard deviation < closing threshold OR DeMarker < lower threshold OR CCI < negative threshold OR RSI < lower threshold OR MFI > midpoint of upper and lower thresholds OR Williams %R > -20 OR MACD signal line > 0 OR OsMA > 0 OR ADX > 70 OR Parabolic SAR > close OR custom indicator value < 0 OR high >= stop-loss price OR low <= take-profit price
+Calculation: Selected bar = a configurable chart-bar offset from the current bar; the same offset is used for all indicators except the moving-average displacements.
+Calculation: Moving-average comparison = a configurable-method moving average of close at the selected bar, with its own chart displacement, compared with a simple moving average of close at the preceding bar, with a separately configurable lookback and chart displacement.
+Long: Moving-average comparison > 0
+Short: Moving-average comparison < 0
+Exit: long, moving-average comparison < 0
+Exit: short, moving-average comparison > 0
+Long: Awesome Oscillator at the selected bar < Awesome Oscillator at the preceding bar AND Awesome Oscillator at the selected bar < 0
+Short: Awesome Oscillator at the selected bar > Awesome Oscillator at the preceding bar AND Awesome Oscillator at the selected bar > 0
+Exit: long, Awesome Oscillator at the selected bar < Awesome Oscillator at the preceding bar AND Awesome Oscillator at the selected bar > 0
+Exit: short, Awesome Oscillator at the selected bar > Awesome Oscillator at the preceding bar AND Awesome Oscillator at the selected bar < 0
+Exit: long, standard deviation of close using an exponential moving average at the selected bar < a closing threshold
+Exit: short, standard deviation of close using an exponential moving average at the selected bar < a closing threshold
+Long: DeMarker at the selected bar < a lower threshold
+Short: DeMarker at the selected bar > an upper threshold
+Exit: long, DeMarker at the selected bar > the upper threshold
+Exit: short, DeMarker at the selected bar < the lower threshold
+Long: CCI of median price at the selected bar > a positive threshold
+Short: CCI of median price at the selected bar < the negative of that threshold
+Exit: long, CCI of median price at the selected bar > the positive threshold
+Exit: short, CCI of median price at the selected bar < the negative of that threshold
+Long: RSI of close at the selected bar > an upper threshold
+Short: RSI of close at the selected bar < a lower threshold
+Exit: long, RSI of close at the selected bar < the lower threshold
+Exit: short, RSI of close at the selected bar > the upper threshold
+Long: MFI using volume at the selected bar > an upper threshold
+Short: MFI using volume at the selected bar < a lower threshold
+Exit: long, MFI using volume at the selected bar < the midpoint of its upper and lower thresholds
+Exit: short, MFI using volume at the selected bar > the midpoint of its upper and lower thresholds
+Long: Williams %R at the selected bar > an upper threshold
+Short: Williams %R at the selected bar < a lower threshold
+Exit: long, Williams %R at the selected bar < the lower threshold
+Exit: short, Williams %R at the selected bar > the upper threshold
+Long: MACD signal line of open at the selected bar > 0
+Short: MACD signal line of open at the selected bar < 0
+Exit: long, MACD signal line of open at the selected bar < 0
+Exit: short, MACD signal line of open at the selected bar > 0
+Long: OsMA of open at the selected bar > a positive threshold
+Short: OsMA of open at the selected bar < the negative of that threshold
+Exit: long, OsMA of open at the selected bar < 0
+Exit: short, OsMA of open at the selected bar > 0
+Long: ADX of open at the selected bar > an upper threshold
+Short: ADX of open at the selected bar < a lower threshold
+Exit: long, ADX of open at the selected bar < the lower threshold
+Exit: short, ADX of open at the selected bar > the upper threshold
+Long: Parabolic SAR at the selected bar > current close
+Short: Parabolic SAR at the selected bar < current close
+Exit: long, Parabolic SAR at the selected bar < current close
+Exit: short, Parabolic SAR at the selected bar > current close

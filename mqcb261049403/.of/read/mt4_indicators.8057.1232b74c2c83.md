@@ -1,3 +1,4 @@
-Calculation: Latest ZigZag-fractal pivot = the most recent nonzero pivot value in the ZigZag-fractal series on a higher-timeframe bar still forming
-Long: chart close > latest ZigZag-fractal pivot
-Short: chart close < latest ZigZag-fractal pivot
+Calculation: Fractal pivot = a bar whose high is the highest, or whose low is the lowest, over a symmetric window of bars; a pivot is confirmed only after the bars to its right are available.
+Calculation: Zigzag level = the most recent confirmed fractal pivot on another timeframe, which may be higher or lower than the chart timeframe, evaluated using its still-forming bar. Process pivots chronologically: alternate high and low pivots, replacing the latest pivot when a more extreme pivot of the same type occurs before an opposite pivot; ignore bars that are simultaneously high and low pivots after initialization. Carry the latest pivot value forward.
+Long: Chart close > zigzag level
+Short: Chart close < zigzag level

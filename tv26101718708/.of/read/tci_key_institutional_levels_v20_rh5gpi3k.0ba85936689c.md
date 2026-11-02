@@ -1,4 +1,16 @@
-Calculation: Internal pivot high/low = high/low at the shorter-lookback pivot bar is the highest/lowest over the lookback window ending one bar before the current bar; swing pivots use a longer lookback.
-Calculation: Bullish FVG = on a new configured FVG-timeframe bar, its forming low > the high two bars earlier, and the previous completed bar's close > that earlier high, with its upward body change exceeding the enabled threshold (or zero when auto-threshold is off); bearish FVG = the mirrored comparisons. Uses the configured timeframe, which may be higher, lower, or equal to the chart timeframe; the current bar is forming and the referenced earlier bars are completed.
-Long: Current close crosses above an unused internal or swing pivot high (internal pivot differs from swing pivot for internal breaks), OR bullish FVG forms.
-Short: Current close crosses below an unused internal or swing pivot low (internal pivot differs from swing pivot for internal breaks), OR bearish FVG forms.
+Calculation: Confirmed pivot high for a lookback = the high that many bars ago, if it is at least every high from the preceding bar through the previous bar and the corresponding low is not at most every low over the same interval. A confirmed pivot low uses the opposite comparisons and excludes a simultaneous pivot high. Update each latest pivot on its confirmation bar.
+Calculation: Structure bias = initially neutral; for each of the short-term and long-term pivot lookbacks separately, set bullish on its bullish structure break and bearish on its bearish structure break. Each pivot can be broken only once, until replaced. A cross above means current close > current pivot high AND previous close <= the previous bar's pivot high; a cross below means current close < current pivot low AND previous close >= the previous bar's pivot low.
+Calculation: Equal-level pivots = confirmed pivots using a separate confirmation lookback; compare each new pivot with the preceding pivot of the same kind.
+Calculation: Gap change = (previous gap-timeframe bar close - previous gap-timeframe bar open) / (previous gap-timeframe bar open * 100). Gap threshold = zero, or twice the cumulative sum of the absolute gap change on chart bars where a new gap-timeframe bar starts, divided by the chart bar index. The gap timeframe may be the chart timeframe, higher, or lower; use the current gap-timeframe bar's high and low as returned with lookahead enabled, and the last completed and second-last completed gap-timeframe bars for their referenced fields. On historical higher-timeframe bars, lookahead exposes the current bar's final high and low at its start; for a lower timeframe it selects the first intrabar.
+Long: Close crosses above an unused long-term pivot high.
+Short: Close crosses below an unused long-term pivot low.
+Long: Close crosses above an unused short-term pivot high AND the short-term pivot high differs from the long-term pivot high AND, if the optional confluence filter is enabled, high - max(open, close) > min(open, close) - low.
+Short: Close crosses below an unused short-term pivot low AND the short-term pivot low differs from the long-term pivot low AND, if the optional confluence filter is enabled, high - max(open, close) < min(open, close) - low.
+Long: Long-term structure bias = bullish.
+Short: Long-term structure bias = bearish.
+Long: Short-term structure bias = bullish.
+Short: Short-term structure bias != bullish.
+Long: A confirmed equal-level pivot low exists AND its distance from the preceding equal-level pivot low < an ATR multiplied by an equal-level threshold.
+Short: A confirmed equal-level pivot high exists AND its distance from the preceding equal-level pivot high < an ATR multiplied by an equal-level threshold.
+Long: A new gap-timeframe bar starts AND its low > the second-last completed gap-timeframe bar high AND the last completed gap-timeframe bar close > that high AND gap change > gap threshold.
+Short: A new gap-timeframe bar starts AND its high < the second-last completed gap-timeframe bar low AND the last completed gap-timeframe bar close < that low AND -gap change > gap threshold.

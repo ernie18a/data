@@ -1,3 +1,6 @@
-Calculation: Renko box boundaries = initialize a fixed-size grid at floor(first chart-bar close / box size) × box size + offset; advance the current upper and lower boundaries by one box for each completed box
-Long: chart-bar high >= current upper boundary + one box size
-Short: chart-bar low <= current lower boundary - one box size
+Calculation: Renko bounds = Initialize the lower bound as box offset + floor(first close / box size) × box size and the upper bound as lower bound + box size. Process subsequent chart bars chronologically. For each bar, if high + low > previous bar high + low, repeatedly process the lower threshold first; then repeatedly process the upper threshold; otherwise process the upper threshold first and then repeatedly process the lower threshold. Processing a lower threshold subtracts one box size from both bounds; processing an upper threshold adds one box size to both bounds. After each update, test the same threshold again against the updated bounds. Treat prices as equal when their difference rounded to eight decimal places is zero.
+Long: At an upper-threshold test, high > upper bound + box size OR high equals upper bound + box size after rounding the difference to eight decimal places
+Long: At a lower-threshold test, high + low > previous bar high + low AND (low < lower bound - box size OR low equals lower bound - box size after rounding the difference to eight decimal places)
+Short: At a lower-threshold test, high + low <= previous bar high + low AND (low < lower bound - box size OR low equals lower bound - box size after rounding the difference to eight decimal places)
+Long: After processing the final historical bar, close > upper bound
+Short: After processing the final historical bar, close <= upper bound

@@ -1,19 +1,21 @@
-Calculation: Long initial stop = entry price × (1 − stop percentage) in percentage mode, or entry price − ATR × stop multiplier in ATR mode
-Calculation: Long target = entry price × (1 + target percentage) in percentage mode, or entry price + ATR × stop multiplier × risk/reward ratio in ATR mode
-Calculation: Short initial stop = entry price × (1 + stop percentage) in percentage mode, or entry price + ATR × stop multiplier in ATR mode
-Calculation: Short target = entry price × (1 − target percentage) in percentage mode, or entry price − ATR × stop multiplier × risk/reward ratio in ATR mode
-Calculation: Risk/reward progress = (close − entry price) / initial risk for a long position, or (entry price − close) / initial risk for a short position
-Calculation: Long advanced stop = max(entry price, close − ATR × trailing multiplier) after the partial-close trigger
-Calculation: Short advanced stop = min(entry price, close + ATR × trailing multiplier) after the partial-close trigger
-Long: Selected fast/medium, fast/slow, or medium/slow moving-average pair crosses upward
-Long: Selected fast/medium, fast/slow, or medium/slow moving-average pair crosses upward AND close > higher-timeframe HMA calculated from the last completed higher-timeframe bar
-Short: Selected fast/medium, fast/slow, or medium/slow moving-average pair crosses downward
-Short: Selected fast/medium, fast/slow, or medium/slow moving-average pair crosses downward AND close < higher-timeframe HMA calculated from the last completed higher-timeframe bar
-Exit: Long, low ≤ long initial stop OR high ≥ long target
-Exit: Short, high ≥ short initial stop OR low ≤ short target
-Exit: Long, risk/reward progress ≥ break-even trigger AND low ≤ entry price
-Exit: Short, risk/reward progress ≥ break-even trigger AND high ≥ entry price
-Exit: Long, risk/reward progress ≥ partial-close trigger (close partial position); after trigger, low ≤ entry price
-Exit: Short, risk/reward progress ≥ partial-close trigger (close partial position); after trigger, high ≥ entry price
-Exit: Long, risk/reward progress ≥ partial-close trigger AND low ≤ long advanced stop
-Exit: Short, risk/reward progress ≥ partial-close trigger AND high ≥ short advanced stop
+Calculation: Selected MA pair = either the shorter-period EMA and longer-period EMA of chart closes, the shorter-period EMA and slow HMA of chart closes, or the longer-period EMA and slow HMA of chart closes; the first MA is the faster member.
+Calculation: Screener MA pair = the selected MA pair calculated on a separately selected higher or lower timeframe; use the last completed bar historically and the still-forming bar in real time for a higher timeframe, and the last available lower-timeframe bar for a lower timeframe.
+Calculation: Higher-timeframe trend HMA = HMA of higher-timeframe closes; use the last completed higher-timeframe bar historically and the still-forming bar in real time.
+Calculation: Risk distance = entry price multiplied by the stop percentage in percentage risk mode, or current chart-timeframe ATR multiplied by the stop multiplier in ATR risk mode; recalculate on every bar.
+Calculation: Target distance = entry price multiplied by the target percentage in percentage risk mode, or current chart-timeframe ATR multiplied by the stop multiplier and risk/reward multiplier in ATR risk mode; recalculate on every bar.
+Calculation: Current risk/reward = (close − entry price) / risk distance for a long position, or (entry price − close) / risk distance for a short position; use the minimum price tick as the denominator if risk distance is smaller.
+Calculation: Break-even activation = in break-even mode, current risk/reward has reached the break-even threshold since the position was opened; in partial or advanced mode, current risk/reward has reached the partial-exit threshold since the position was opened; reset on a flat position.
+Calculation: Long stop = entry price − risk distance before break-even activation or in basic mode; entry price after activation in break-even or partial mode; maximum of entry price and close − ATR multiplied by the trailing multiplier after activation in advanced mode. Recalculate on every bar.
+Calculation: Short stop = entry price + risk distance before break-even activation or in basic mode; entry price after activation in break-even or partial mode; minimum of entry price and close + ATR multiplied by the trailing multiplier after activation in advanced mode. Recalculate on every bar.
+Long: Faster selected MA crosses above slower selected MA.
+Short: Faster selected MA crosses below slower selected MA.
+Long: Faster selected MA > slower selected MA.
+Short: Faster selected MA <= slower selected MA.
+Long: Faster selected MA crosses above slower selected MA AND close > higher-timeframe trend HMA.
+Short: Faster selected MA crosses below slower selected MA AND close < higher-timeframe trend HMA.
+Long: Bars since the screener pair's faster MA last crossed above its slower MA < bars since it last crossed below; both crosses must have occurred.
+Short: Bars since the screener pair's faster MA last crossed below its slower MA < bars since it last crossed above; both crosses must have occurred.
+Exit: long, low <= previously submitted long stop OR high >= previously submitted entry price + target distance.
+Exit: short, high >= previously submitted short stop OR low <= previously submitted entry price − target distance.
+Exit: long, partial or advanced management mode AND current risk/reward >= partial-exit threshold AND no partial exit has occurred in the current position; close the configured fraction.
+Exit: short, partial or advanced management mode AND current risk/reward >= partial-exit threshold AND no partial exit has occurred in the current position; close the configured fraction.

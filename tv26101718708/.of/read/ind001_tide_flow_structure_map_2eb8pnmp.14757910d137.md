@@ -1,8 +1,14 @@
-Calculation: Trend EMA = EMA of close with a longer lookback than the fast EMA
-Calculation: Upper structure = EMA-smoothed rolling highest high
-Calculation: Lower structure = EMA-smoothed rolling lowest low
-Calculation: Risk line = the higher of the lower structure and the running maximum, since entry, of close minus ATR times a multiplier
-Long: At a completed chart bar, the long gates are true AND (close > the previous bar's upper structure OR low <= fast EMA AND close > fast EMA OR close crosses above fast EMA) AND no long signal occurred within the cooldown lookback; long gates are close > trend EMA AND fast EMA > trend EMA AND trend EMA is rising AND higher-timeframe close > its 200-period EMA using the last completed higher-timeframe bar AND ADX >= threshold AND ATR / close * 100 >= threshold AND RSI <= threshold AND fast EMA's percentage change from the prior bar >= negative slope threshold
-Long: All long gates are true AND close > fast EMA AND close > trend EMA
-Long: At a completed chart bar, close crosses above the upper structure AND all long gates are true
-Exit: Long, close is below the risk line on at least the required number of consecutive completed chart bars
+Calculation: Upper structure = EMA of the rolling highest high.
+Calculation: Lower structure = EMA of the rolling lowest low, using the same lookback and smoothing lengths as the upper structure.
+Calculation: Long trend = close above the long-term close EMA AND the short-term close EMA above the long-term close EMA AND the long-term close EMA above its previous value.
+Calculation: Main gates = long trend AND ADX at or above its threshold AND ATR divided by close at or above its threshold AND, if the higher-timeframe filter is enabled, the higher-timeframe close above its EMA, using the last completed higher-timeframe bar.
+Calculation: Recent bearish phase = the number of chart bars with close below the long-term close EMA within a rolling lookback is at or above its threshold.
+Calculation: ATR trail = on the first long-setup bar, close minus a multiple of ATR; on each subsequent bar while the setup remains active, the greater of its previous value and current close minus the same multiple of ATR. Reset after exit.
+Long: Long trend.
+Long: Close above the short-term close EMA AND close below upper structure.
+Long: Main gates.
+Long: Main gates AND close crosses above upper structure.
+Long: Main gates AND close above the short-term close EMA AND close above the long-term close EMA.
+Long: Recent bearish phase AND close above the long-term close EMA AND, if the recent-cross filter is enabled, the number of bars since close crossed above the long-term close EMA is at or below its threshold.
+Long: Main gates AND RSI at or below its upper threshold AND percentage change of the short-term close EMA from the previous bar at or above the negative slope threshold AND (close above previous bar's upper structure OR low at or below the short-term close EMA AND close above it OR close crosses above the short-term close EMA) AND the number of bars since the previous long setup is greater than the cooldown length, or no previous long setup exists.
+Exit: Long, the long setup is active AND close has been below the greater of the ATR trail and lower structure for at least the required number of consecutive bars.

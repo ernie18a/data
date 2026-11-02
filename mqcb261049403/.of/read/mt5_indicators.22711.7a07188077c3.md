@@ -1,8 +1,6 @@
-Calculation: Highest high = Maximum high over the lookback, including the current bar; calculated on the chart timeframe or selected higher timeframe using its still-forming bar.
-Calculation: Lowest low = Minimum low over the lookback, including the current bar; calculated on the chart timeframe or selected higher timeframe using its still-forming bar.
-Calculation: Median price = (high + low) / 2.
-Calculation: Short moving average = 1-bar simple moving average of median price.
-Calculation: Long moving average = Simple moving average of median price over a longer lookback than the short moving average.
-Calculation: Williams %R = Williams %R over its lookback.
-Long: Position is not long AND ((high = highest high AND close > short moving average AND close > long moving average AND high > long moving average AND Williams %R >= upper threshold) OR (close >= previous short-position stop level AND high > highest high))
-Short: Position is not short AND ((low = lowest low AND close < short moving average AND close < long moving average AND low < long moving average AND Williams %R <= lower threshold) OR (close <= previous long-position stop level AND low < lowest low))
+Calculation: Prior high and prior low = highest high and lowest low, respectively, over the same lookback of completed bars preceding the current bar.
+Calculation: Signal state = initially neutral; process each bar in order, evaluating the long condition first and setting state to long if it is true, then evaluating the short condition using the updated state and setting state to short if it is true.
+Calculation: Trailing stops = use a configurable fixed spread proxy because historical spread is absent from the data. In the long state, the long stop is prior low minus twice the spread proxy; if the preceding bar had a long stop and no short stop, use the greater of that value and the preceding long stop. In the short state, the short stop is prior high plus three times the spread proxy; if the preceding bar had a short stop and no long stop, use the lesser of that value and the preceding short stop. An inactive stop is zero.
+Calculation: Timeframe application = evaluate these calculations and decisions either on the chart timeframe or on a higher timeframe using its bar still forming at each chart bar.
+Long: Signal state is neutral or short AND ((high >= prior high AND close > (high + low) / 2 AND close > simple moving average of median price AND high > simple moving average of median price AND Williams %R >= upper threshold) OR (close >= preceding short stop AND high > prior high)).
+Short: Signal state is neutral or long AND ((low <= prior low AND close < (high + low) / 2 AND close < simple moving average of median price AND low < simple moving average of median price AND Williams %R <= lower threshold) OR (close <= preceding long stop AND low < prior low)).

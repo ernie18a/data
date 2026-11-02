@@ -1,3 +1,3 @@
-Calculation: Open anchors = open prices of enabled anchors, each captured from the first confirmed chart bar at or after its configured time if within the capture lag
-Long: At least one open anchor is captured AND close > every captured open anchor
-Short: At least one open anchor is captured AND close < every captured open anchor
+Calculation: Open anchors = For each enabled anchor time, using the New York clock, capture the open of the first chart bar at or after that time if its start is within the maximum capture lag; reset all anchors at the start of each New York calendar day.
+Long: On a completed chart bar, at least one enabled open anchor has been captured AND close > every captured enabled open anchor.
+Short: On a completed chart bar, at least one enabled open anchor has been captured AND close < every captured enabled open anchor.

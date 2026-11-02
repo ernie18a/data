@@ -1,5 +1,7 @@
-Calculation: Confirmed swing high/low = a local high/low confirmed after the same number of later chart-timeframe bars as earlier bars
-Calculation: Prior Day/Week high/low = high/low of the last completed higher-timeframe Day/Week bar
-Calculation: Asian high/low = highest high/lowest low of chart-timeframe bars in the configured Asian session
-Long: low < tracked swing low, Asian low, prior Day low, or prior Week low AND close > that level OR a bullish candle body is at least the displacement threshold times ATR within the displacement window after such a sweep; OR close > the latest confirmed swing high
-Short: high > tracked swing high, Asian high, prior Day high, or prior Week high AND close < that level OR a bearish candle body is at least the displacement threshold times ATR within the displacement window after such a sweep; OR close < the latest confirmed swing low
+Calculation: Latest swing high and low = the most recently confirmed pivot high and pivot low, each using the same number of chart bars before and after the pivot. A newly confirmed pivot replaces the previous pivot on that side and is unbroken. A close above the latest swing high or below the latest swing low marks that pivot broken until a new pivot on that side is confirmed.
+Calculation: Sweep levels = the unbroken latest swing high and low, the completed range high and low of the most recent configured session, and the highs and lows of each of two higher timeframes, using their last completed bars. The session levels are available only outside the configured session.
+Calculation: Confirmed sweep = track each sweep level independently. A high-level sweep starts when high > level AND close < level; a low-level sweep starts when low < level AND close > level. A pending sweep is canceled if its level changes, its age exceeds the displacement window, or close crosses through its level in the direction of the initial raid. Further raids of the same level do not restart the window. A pending high-level sweep is confirmed when close < open AND open - close >= an ATR multiple; a pending low-level sweep is confirmed when close > open AND close - open >= the same ATR multiple. The initial sweep bar may confirm the sweep. Confirmation ends the pending sweep.
+Long: close > the latest unbroken swing high
+Long: a low-level sweep is confirmed
+Short: close < the latest unbroken swing low
+Short: a high-level sweep is confirmed

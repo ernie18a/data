@@ -1,4 +1,2 @@
-Calculation: Trendline value = price on the user-defined line through its two anchor points, extended to the current bar
-Calculation: Tolerance distance = tolerance parameter × minimum price increment
-Long: bar high > upper trendline value − tolerance distance
-Short: bar low < lower trendline value + tolerance distance
+Long: On the still-forming bar of a separate timeframe, which may be higher than, equal to, or lower than the chart timeframe, the short-period EMA of close > the medium-period EMA of close AND the medium-period EMA of close > the long-period EMA of close.
+Short: On the still-forming bar of the same separate timeframe, the long-period EMA of close > the medium-period EMA of close AND the medium-period EMA of close > the short-period EMA of close.

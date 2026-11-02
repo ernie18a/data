@@ -1,6 +1,6 @@
-Long: low > high two bars earlier AND low − high two bars earlier > ATR × minimum void size
-Long: min(open, close) − low > ATR × minimum wick size AND (min(open, close) − low) / (high − low) ≥ minimum wick percentage AND low < lowest low of the previous isolation lookback bars
-Long: a confirmed pivot low is broken when low < pivot low − ATR × minimum breakout size, then within the confirmation window close > pivot low
-Short: high < low two bars earlier AND low two bars earlier − high > ATR × minimum void size
-Short: high − max(open, close) > ATR × minimum wick size AND (high − max(open, close)) / (high − low) ≥ minimum wick percentage AND high > highest high of the previous isolation lookback bars
-Short: a confirmed pivot high is broken when high > pivot high + ATR × minimum breakout size, then within the confirmation window close < pivot high
+Long: Low < lowest low of the preceding isolation lookback AND min(open, close) - low > ATR × minimum wick multiplier AND high > low AND (min(open, close) - low) / (high - low) >= minimum wick fraction
+Short: High > highest high of the preceding isolation lookback AND high - max(open, close) > ATR × minimum wick multiplier AND high > low AND (high - max(open, close)) / (high - low) >= minimum wick fraction
+Long: A confirmed pivot low was broken by low < pivot low - ATR × minimum breakout multiplier before its maximum age AND, on a subsequent bar within the confirmation window, close > pivot low
+Short: A confirmed pivot high was broken by high > pivot high + ATR × minimum breakout multiplier before its maximum age AND, on a subsequent bar within the confirmation window, close < pivot high
+Long: Low > high two bars ago AND low - high two bars ago > ATR × minimum void multiplier
+Short: High < low two bars ago AND low two bars ago - high > ATR × minimum void multiplier

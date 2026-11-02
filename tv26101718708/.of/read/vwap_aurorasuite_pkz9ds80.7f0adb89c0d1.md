@@ -1,7 +1,10 @@
-Calculation: Day VWAP = volume-weighted average of HLC3 since the selected day boundary.
-Calculation: Winning session VWAP = the London or US session VWAP for the session with greater accumulated volume; unavailable on a tie or when neither session has volume.
-Calculation: Two-day low/high AVWAP = volume-weighted average of HLC3 from the newest confirmed qualifying swing low/high near the corresponding extreme of the current or previous day; expires when its anchor leaves that two-day window.
-Calculation: ATR tolerance = ATR multiplied by the configured anchor-test tolerance.
-Calculation: Normalized sentiment = average of available votes for close versus Day VWAP, Day VWAP versus its longer-lookback value, close versus Winning session VWAP, close versus Two-day low AVWAP, and close versus Two-day high AVWAP; each vote is +1 when the first value is greater, -1 when lower, and 0 when equal; unavailable comparisons are excluded.
-Long: Normalized sentiment >= the moderate-bullish threshold OR close > Two-day low AVWAP + ATR tolerance OR close > Two-day high AVWAP + ATR tolerance
-Short: Normalized sentiment <= the moderate-bearish threshold OR close < Two-day low AVWAP - ATR tolerance OR close < Two-day high AVWAP - ATR tolerance
+Calculation: Day VWAP = cumulative volume-weighted HLC3 from the start of the current calendar day in the selected reset timezone; unavailable when cumulative volume is zero.
+Calculation: Winning session VWAP = cumulative volume-weighted HLC3 for the session with the greater accumulated volume since the current day reset; session membership uses each session's configured hours and timezone. It is unavailable if both volumes are zero or tied.
+Calculation: Extreme anchored VWAP = cumulative volume-weighted HLC3 from the latest qualifying high or low pivot through the current bar. A pivot is confirmed after equal numbers of bars on each side; its day must be the current or previous reset-timezone day, its pivot-bar ATR must be positive, and its distance from the corresponding current-or-previous-day extreme at confirmation must be at most a configurable multiple of pivot-bar ATR. Replace the anchor with each newer qualifying pivot, expire it when its pivot day leaves the two-day window, and make its VWAP unavailable when cumulative volume is zero.
+Calculation: Sentiment = the sum of available votes divided by their count, or zero if none are available. The votes compare close with day VWAP, day VWAP with its value a configurable number of bars ago, close with winning session VWAP, close with low anchored VWAP, and close with high anchored VWAP. Each available comparison contributes +1 if its first value is greater, -1 if less, and 0 if equal; a comparison is unavailable if either value is unavailable.
+Long: close > low extreme anchored VWAP + configurable ATR multiple
+Long: close > high extreme anchored VWAP + configurable ATR multiple
+Long: sentiment >= configurable positive bullish threshold
+Short: close < low extreme anchored VWAP - configurable ATR multiple
+Short: close < high extreme anchored VWAP - configurable ATR multiple
+Short: sentiment <= configurable negative bearish threshold

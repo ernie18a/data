@@ -1,14 +1,18 @@
-Calculation: Upper barrier = selected manual upper level, the highest high of the preceding lookback bars, or the anchor price plus the configured sigma multiple of the expected move
-Calculation: Lower barrier = selected manual lower level, the lowest low of the preceding lookback bars, or the anchor price minus the configured sigma multiple of the expected move
-Calculation: Expected move = anchor price × selected volatility × square root of horizon bars divided by bars per year; selected volatility is annualized standard deviation of log returns, annualized ATR divided by close, or 60% of the former plus 40% of the latter
-Calculation: Breakout buffer and retest tolerance = configured ATR multiple, percentage of close, or tick multiple
-Calculation: Volatility percentile = percentage of prior lookback values of selected volatility below the current value
-Calculation: Volume ratio = current volume / average volume over the volume lookback
-Calculation: Quality filter = (volatility filter disabled OR volatility percentile ≥ minimum) AND (volume filter disabled OR volume ratio ≥ minimum)
-Calculation: Upper breakout trigger = high ≥ upper barrier in touch mode, close > upper barrier in close mode, or close > upper barrier + breakout buffer in buffered mode
-Calculation: Lower breakout trigger = low ≤ lower barrier in touch mode, close < lower barrier in close mode, or close < lower barrier − breakout buffer in buffered mode
-Calculation: Active breakout state and barrier = after a quality-passing upper (lower) breakout when the prior direction was not bullish (bearish), set direction to bullish (bearish), record the upper (lower) barrier and breakout bar; clear state after both windows expire if a retest or failure was recorded
-Long: upper breakout trigger AND ((NOT quality filter) OR (quality filter AND active breakout direction is not bullish)) OR active bullish breakout AND bars since breakout > 0 AND bars since breakout ≤ retest window AND low ≤ active barrier + retest tolerance AND close ≥ active barrier
-Short: lower breakout trigger AND ((NOT quality filter) OR (quality filter AND active breakout direction is not bearish)) OR active bearish breakout AND bars since breakout > 0 AND bars since breakout ≤ retest window AND high ≥ active barrier − retest tolerance AND close ≤ active barrier
-Exit: long, active bullish breakout AND bars since breakout > 0 AND bars since breakout ≤ failure window AND close < active barrier
-Exit: short, active bearish breakout AND bars since breakout > 0 AND bars since breakout ≤ failure window AND close > active barrier
+Calculation: Selected volatility = choose the standard deviation of log(close / previous close) over a volatility lookback multiplied by sqrt(bars per year), ATR / close multiplied by sqrt(bars per year), or their fixed weighted average with respective weights 0.6 and 0.4.
+Calculation: Upper and lower barriers = choose the highest high and lowest low over the range lookback excluding the current bar; fixed upper and lower price parameters; or anchor ± anchor × selected volatility × sqrt(horizon bars / bars per year) × barrier multiplier. The anchor is close, EMA of close, or session VWAP of typical price.
+Calculation: Breakout buffer and retest tolerance = independently choose ATR multiplied by a multiplier, close multiplied by a percentage, or a fixed price-distance parameter representing a tick count multiplied by tick size.
+Calculation: Upper breach = choose high >= upper barrier, close > upper barrier, or close > upper barrier + breakout buffer. Lower breach = choose low <= lower barrier, close < lower barrier, or close < lower barrier - breakout buffer.
+Calculation: Quality pass = each enabled filter passes: selected volatility's percentage rank among available preceding volatility-lookback values, counting only values strictly below the current value, >= its threshold; and volume / SMA(volume) >= its threshold. An enabled filter with an unavailable value fails.
+Calculation: Breakout state = initially neutral. On each bar, if upper breach AND quality pass AND state != bullish, set state to bullish, save the current upper barrier and bar index, and clear the retested and failed flags. Then, if lower breach AND quality pass AND the state before these updates != bearish, set state to bearish, save the current lower barrier and bar index, and clear both flags; this second update takes precedence when both occur. After these updates, set the retested flag when the corresponding retest condition holds and set the failed flag when the corresponding failure condition holds. When bars since the saved bar > both the retest window and the failure window AND either flag is set, reset the state to neutral and clear the saved barrier, bar index, and flags. Otherwise retain the state and flags.
+Calculation: Bullish retest = state is bullish AND retesting is enabled AND bars since the saved bar > 0 AND bars since the saved bar <= retest window AND low <= saved barrier + retest tolerance AND close >= saved barrier. Bearish retest = state is bearish AND retesting is enabled AND bars since the saved bar > 0 AND bars since the saved bar <= retest window AND high >= saved barrier - retest tolerance AND close <= saved barrier.
+Calculation: Bullish failure = state is bullish AND bars since the saved bar > 0 AND bars since the saved bar <= failure window AND either close < saved barrier or, if intrabar failure is selected, low < saved barrier. Bearish failure = state is bearish AND bars since the saved bar > 0 AND bars since the saved bar <= failure window AND either close > saved barrier or, if intrabar failure is selected, high > saved barrier.
+Long: Upper breach AND quality pass AND prior breakout state != bullish.
+Long: Upper breach AND quality pass fails.
+Long: Bullish retest.
+Long: Bearish failure.
+Long: Breakout state is bullish AND failed flag is clear, OR breakout state is bearish AND failed flag is set.
+Short: Lower breach AND quality pass AND prior breakout state != bearish.
+Short: Lower breach AND quality pass fails.
+Short: Bearish retest.
+Short: Bullish failure.
+Short: Breakout state is bearish AND failed flag is clear, OR breakout state is bullish AND failed flag is set.

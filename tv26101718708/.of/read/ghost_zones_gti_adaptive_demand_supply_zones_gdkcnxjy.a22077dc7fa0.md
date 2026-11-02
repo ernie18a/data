@@ -1,13 +1,17 @@
-Calculation: ATR-based zone boundaries = For each zone timeframe, round its current period open to P; calculate effective volatility from the slope times annualized ATR percentage (ATR from the last completed bar divided by the previous completed bar's close), plus any intercept; calculate sigma from P and effective volatility; place strong zones at P ± sigma and weak zones at P ± sigma/(2√2); set strong-zone width to sigma/4 and weak-zone width to sigma/(4×1.618034). Use the zone timeframe's forming period open and last completed bars for ATR and prior close; the zone timeframe may be higher or lower than the chart timeframe.
-Calculation: Volume deviation = (current volume − rolling mean volume) / rolling standard deviation of volume, using the same lookback for both.
-Calculation: Confirmed pivot high/low = a bar high/low greater/less than the highs/lows on the same number of bars on both sides; use the most recently confirmed pivot.
-Long: Low ≤ a demand zone's upper boundary AND the previous bar's low > that zone's previous upper boundary (for any strong or weak zone).
-Short: High ≥ a supply zone's lower boundary AND the previous bar's high < that zone's previous lower boundary (for any strong or weak zone).
-Long: Volume deviation ≥ its threshold AND close > open.
-Short: Volume deviation ≥ its threshold AND close ≤ open.
-Long: Low > high two bars earlier AND the gap exceeds the volatility sensitivity multiplied by chart-timeframe ATR.
-Short: High < low two bars earlier AND the gap exceeds the volatility sensitivity multiplied by chart-timeframe ATR.
-Long: Close crosses above the most recently confirmed pivot high.
-Short: Close crosses below the most recently confirmed pivot low.
-Long: Close > weekly point of control.
-Short: Close < weekly point of control.
+Calculation: Zone boundaries = For each of six ordered zone timeframes higher than the chart timeframe, use the forming bar's open and the last completed bar's ATR. Let P be the open rounded to the nearest integer. For the second-shortest and third-shortest zone timeframes, effective volatility = slope × (ATR / last completed bar's close) × annualization factor + intercept; for the other timeframes, effective volatility = slope × (ATR / forming bar's open) × annualization factor + intercept. Set sigma = P × effective volatility / zone-timeframe normalization factor. For the second-shortest and third-shortest timeframes, weak distance = sigma / (2 × square root of 2), strong width = round(sigma / 4), and weak width = round(sigma / (4 × golden ratio)); for the other timeframes, weak distance = sigma / a distance divisor, strong width = round(sigma / a strong-width divisor), and weak width = round(sigma / a weak-width divisor). Strong distance = sigma. For each strength, demand upper boundary = round(P − distance + width / 2), and supply lower boundary = round(P + distance − width / 2). Use the corresponding boundary from the preceding chart bar for prior-bar comparisons.
+Calculation: Equal pivot pair = A newly confirmed pivot high or low and the most recent matching pivot among a bounded list of previously confirmed pivots of the same kind, where absolute price difference divided by the earlier pivot price is at most the equality threshold. Confirm each pivot using specified numbers of chart bars on its left and right; retain a bounded number of prior pivots.
+Calculation: Structural pivot level = The latest confirmed chart-timeframe pivot high or low, confirmed using equal numbers of bars on both sides. Replace the corresponding level when a new pivot is confirmed and clear it after its corresponding break. Compare the current close with the current level and the previous close with the previous bar's level.
+Calculation: Volume score = (volume − volume simple moving average) / volume standard deviation when that standard deviation is positive, otherwise zero; use the same lookback for both statistics.
+Calculation: Weekly point of control = the forming bar's open on a higher zone timeframe, rounded to the nearest integer, plus an offset.
+Long: Volume score >= spike threshold AND close > open
+Short: Volume score >= spike threshold AND close <= open
+Long: A newly confirmed pivot low forms an equal pivot pair
+Short: A newly confirmed pivot high forms an equal pivot pair
+Long: low > high two chart bars ago AND low − high two chart bars ago > ATR × gap sensitivity
+Short: high < low two chart bars ago AND low two chart bars ago − high > ATR × gap sensitivity
+Long: close > structural pivot high level AND previous close <= previous structural pivot high level
+Short: close < structural pivot low level AND previous close >= previous structural pivot low level
+Long: For any zone timeframe and either strength, low <= demand upper boundary AND previous low > previous demand upper boundary
+Short: For any zone timeframe and either strength, high >= supply lower boundary AND previous high < previous supply lower boundary
+Long: close > weekly point of control
+Short: close < weekly point of control

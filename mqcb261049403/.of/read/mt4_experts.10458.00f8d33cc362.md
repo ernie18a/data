@@ -1,68 +1,55 @@
-Long: short-term moving average > long-term simple moving average
-Long: stochastic %K > %D AND %D < lower threshold
-Long: sum of current and previous Awesome Oscillator values > sum of its two preceding values
-Long: upper fractal < current close
-Long: Accelerator Oscillator >= 0 AND current > previous > two-bars-ago OR Accelerator Oscillator <= 0 AND current > previous > two-bars-ago > three-bars-ago
-Long: DeMarker < lower threshold
-Long: current CCI > previous CCI AND previous CCI < two-bars-ago CCI
-Long: RSI > upper threshold
-Long: Money Flow Index > upper threshold
-Long: Williams %R > upper threshold
-Long: MACD signal line with entry parameters > MACD signal line with reference parameters
-Long: OsMA > MACD signal line with reference parameters
-Long: ADX > upper threshold
-Long: Parabolic SAR > current close
-Long: StochasticStack buffer 0 > current close
-Long: Parabolic_ZZ buffer 0 > current close
-Long: ZigZag buffer 0 > current close
-Short: short-term moving average < long-term simple moving average
-Short: stochastic %K < %D AND %D > upper threshold
-Short: sum of current and previous Awesome Oscillator values < sum of its two preceding values
-Short: lower fractal > current close
-Short: Accelerator Oscillator <= 0 AND current < previous < two-bars-ago OR Accelerator Oscillator >= 0 AND current < previous < two-bars-ago < three-bars-ago
-Short: DeMarker > upper threshold
-Short: current CCI < previous CCI AND previous CCI > two-bars-ago CCI
-Short: RSI < lower threshold
-Short: Money Flow Index < lower threshold
-Short: Williams %R < lower threshold
-Short: MACD signal line with entry parameters < MACD signal line with reference parameters
-Short: OsMA < MACD signal line with reference parameters
-Short: ADX < lower threshold
-Short: Parabolic SAR < current close
-Short: StochasticStack buffer 0 < current close
-Short: Parabolic_ZZ buffer 0 < current close
-Short: ZigZag buffer 0 < current close
-Exit: long, short-term moving average < long-term simple moving average
-Exit: long, stochastic %K < %D AND %D > upper threshold
-Exit: long, sum of current and previous Awesome Oscillator values < sum of its two preceding values
-Exit: long, upper fractal < current close
-Exit: long, Accelerator Oscillator <= 0 AND current < previous < two-bars-ago OR Accelerator Oscillator >= 0 AND current < previous < two-bars-ago < three-bars-ago
-Exit: long, DeMarker > upper threshold
-Exit: long, CCI > positive threshold
-Exit: long, RSI > upper threshold
-Exit: long, Money Flow Index > midpoint of upper and lower thresholds
-Exit: long, Williams %R > upper threshold
-Exit: long, MACD signal line with exit parameters < previous MACD signal line value
-Exit: long, OsMA < MACD signal line with exit parameters
-Exit: long, ADX < lower threshold
-Exit: long, Parabolic SAR < current close
-Exit: long, StochasticStack buffer 0 < current close
-Exit: long, Parabolic_ZZ buffer 0 < current close
-Exit: long, ZigZag buffer 0 < current close
-Exit: short, short-term moving average > long-term simple moving average
-Exit: short, stochastic %K > %D AND %D < lower threshold
-Exit: short, sum of current and previous Awesome Oscillator values > sum of its two preceding values
-Exit: short, lower fractal > current close
-Exit: short, Accelerator Oscillator >= 0 AND current > previous > two-bars-ago OR Accelerator Oscillator <= 0 AND current > previous > two-bars-ago > three-bars-ago
-Exit: short, DeMarker < lower threshold
-Exit: short, CCI < negative threshold
-Exit: short, RSI < lower threshold
-Exit: short, Money Flow Index < midpoint of upper and lower thresholds
-Exit: short, Williams %R < lower threshold
-Exit: short, MACD signal line with exit parameters > previous MACD signal line value
-Exit: short, OsMA > MACD signal line with exit parameters
-Exit: short, ADX > upper threshold
-Exit: short, Parabolic SAR > current close
-Exit: short, StochasticStack buffer 0 > current close
-Exit: short, Parabolic_ZZ buffer 0 > current close
-Exit: short, ZigZag buffer 0 > current close
+Long: Shorter-period moving average of close > longer-period simple moving average of close at the selected bar offset
+Short: Shorter-period moving average of close < longer-period simple moving average of close at the selected bar offset
+Exit: short, shorter-period moving average of close > longer-period simple moving average of close at the selected bar offset
+Exit: long, shorter-period moving average of close < longer-period simple moving average of close at the selected bar offset
+Long: Stochastic main line > signal line AND signal line < lower threshold, on the last completed bar
+Short: Stochastic main line < signal line AND signal line > upper threshold, on the last completed bar
+Exit: short, stochastic main line > signal line AND signal line < lower threshold, on the last completed bar
+Exit: long, stochastic main line < signal line AND signal line > upper threshold, on the last completed bar
+Long: Awesome Oscillator on the current bar + Awesome Oscillator on the previous bar > Awesome Oscillator two bars ago + Awesome Oscillator three bars ago
+Short: Awesome Oscillator on the current bar + Awesome Oscillator on the previous bar < Awesome Oscillator two bars ago + Awesome Oscillator three bars ago
+Exit: short, Awesome Oscillator on the current bar + Awesome Oscillator on the previous bar > Awesome Oscillator two bars ago + Awesome Oscillator three bars ago
+Exit: long, Awesome Oscillator on the current bar + Awesome Oscillator on the previous bar < Awesome Oscillator two bars ago + Awesome Oscillator three bars ago
+Calculation: Accelerator Oscillator at offset n = Awesome Oscillator at offset n minus its simple moving average at offset n
+Long: Accelerator Oscillator on the current bar > its value on the previous bar AND its value on the previous bar > its value two bars ago AND (its value on the current bar >= 0 OR its value on the current bar <= 0 AND its value two bars ago > its value three bars ago)
+Short: Accelerator Oscillator on the current bar < its value on the previous bar AND its value on the previous bar < its value two bars ago AND (its value on the current bar <= 0 OR its value on the current bar >= 0 AND its value two bars ago < its value three bars ago)
+Exit: short, Accelerator Oscillator on the current bar > its value on the previous bar AND its value on the previous bar > its value two bars ago AND (its value on the current bar >= 0 OR its value on the current bar <= 0 AND its value two bars ago > its value three bars ago)
+Exit: long, Accelerator Oscillator on the current bar < its value on the previous bar AND its value on the previous bar < its value two bars ago AND (its value on the current bar <= 0 OR its value on the current bar >= 0 AND its value two bars ago < its value three bars ago)
+Long: DeMarker on the last completed bar < lower threshold
+Short: DeMarker on the last completed bar > upper threshold
+Exit: short, DeMarker on the last completed bar < lower threshold
+Exit: long, DeMarker on the last completed bar > upper threshold
+Long: CCI of median price on the current bar > CCI on the previous bar AND CCI on the previous bar < CCI two bars ago
+Short: CCI of median price on the current bar < CCI on the previous bar AND CCI on the previous bar > CCI two bars ago
+Exit: short, CCI of median price on the last completed bar < negative threshold
+Exit: long, CCI of median price on the last completed bar > positive threshold
+Long: RSI of open on the current bar > upper threshold
+Short: RSI of open on the current bar < lower threshold
+Exit: short, RSI of open on the current bar > upper threshold
+Exit: long, RSI of open on the current bar < lower threshold
+Long: Money Flow Index on the current bar > upper threshold
+Short: Money Flow Index on the current bar < lower threshold
+Exit: short, Money Flow Index on the current bar > (upper threshold + lower threshold) / 2
+Exit: long, Money Flow Index on the current bar < (upper threshold + lower threshold) / 2
+Long: Williams Percent Range at the selected bar offset > upper threshold
+Short: Williams Percent Range on the current bar < lower threshold
+Exit: short, Williams Percent Range on the current bar > upper threshold
+Exit: long, Williams Percent Range on the current bar < lower threshold
+Long: MACD signal line of open on the current bar > MACD signal line of open on the previous bar with independently selected parameters
+Short: MACD signal line of open on the current bar < MACD signal line of open on the previous bar with independently selected parameters
+Long: MACD histogram of open on the current bar > MACD signal line of open on the previous bar with independently selected parameters
+Short: MACD histogram of open on the current bar < MACD signal line of open on the previous bar with independently selected parameters
+Exit: short, MACD signal line of open on the current bar > MACD signal line of open on the previous bar with the same parameters
+Exit: long, MACD signal line of open on the current bar < MACD signal line of open on the previous bar with the same parameters
+Exit: short, MACD histogram of open on the current bar > MACD signal line of open on the previous bar with the same parameters
+Exit: long, MACD histogram of open on the current bar < MACD signal line of open on the previous bar with the same parameters
+Long: ADX main line on the current bar > upper threshold
+Short: ADX main line on the current bar < lower threshold
+Exit: short, ADX main line on the current bar > upper threshold
+Exit: long, ADX main line on the current bar < lower threshold
+Long: Parabolic SAR on the current bar > current close
+Short: Parabolic SAR on the current bar < current close
+Exit: short, Parabolic SAR on the current bar > current close
+Exit: long, Parabolic SAR on the current bar < current close
+Exit: long, low <= entry price - stop distance OR high >= entry price + profit distance
+Exit: short, high >= entry price + stop distance OR low <= entry price - profit distance

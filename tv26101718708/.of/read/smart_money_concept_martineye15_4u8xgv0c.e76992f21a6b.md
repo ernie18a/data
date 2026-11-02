@@ -1,16 +1,23 @@
-Calculation: Confirmed pivot high/low = a bar whose high/low is higher/lower than the bars on both sides over the pivot lookback; confirm after the bars on the right close.
-Calculation: Swing range midpoint = (most recent confirmed swing high + most recent confirmed swing low) / 2.
-Calculation: ATR = average true range over a lookback.
-Calculation: Bullish FVG = current low > high two bars earlier; bearish FVG = current high < low two bars earlier.
-Long: A confirmed swing pivot high > the previous confirmed swing pivot high OR a confirmed swing pivot low > the previous confirmed swing pivot low.
-Short: A confirmed swing pivot high < the previous confirmed swing pivot high OR a confirmed swing pivot low < the previous confirmed swing pivot low.
-Long: Close > the latest unbroken confirmed swing or internal pivot high.
-Short: Close < the latest unbroken confirmed swing or internal pivot low.
-Long: Low < the latest unswept, unbroken confirmed swing pivot low AND close > that pivot low.
-Short: High > the latest unswept, unbroken confirmed swing pivot high AND close < that pivot high.
-Long: Bullish FVG forms.
-Short: Bearish FVG forms.
-Long: Close < swing range midpoint.
-Short: Close > swing range midpoint.
-Long: On a confirmed bar, all enabled confluence filters pass: close < swing range midpoint; an upward break of the selected swing or internal structure occurred within the recency window; an unmitigated bullish order block exists; an unfilled bullish FVG exists; a swing pivot low sweep occurred within the recency window; and, if enabled, the last completed higher-timeframe close > its EMA.
-Short: On a confirmed bar, all enabled confluence filters pass: close > swing range midpoint; a downward break of the selected swing or internal structure occurred within the recency window; an unmitigated bearish order block exists; an unfilled bearish FVG exists; a swing pivot high sweep occurred within the recency window; and, if enabled, the last completed higher-timeframe close < its EMA.
+Calculation: Confirmed pivot = a high or low with the same lookback number of bars on each side; recognize it only after the right-side bars have completed. Maintain independent swing and internal streams, with the swing lookback longer than the internal lookback. In each stream, evaluate breaks and sweeps against the previously confirmed pivot before recording pivots confirmed on the current bar.
+Calculation: Structural break = the first close strictly above the latest confirmed pivot high or strictly below the latest confirmed pivot low in the selected stream; reset the respective crossed flag when a new pivot of that type confirms.
+Calculation: Liquidity sweep = for the swing stream, high strictly above the latest pivot high and close strictly below it, or low strictly below the latest pivot low and close strictly above it; the pivot must not have been broken or swept previously. Reset its swept flag when a new pivot of that type confirms.
+Calculation: Active order block = on a structural break in the selected swing or internal stream, create a bullish block from the most recent bearish candle before the break, or a bearish block from the most recent bullish candle before the break; use either its high-low range or its open-close range. Keep only the most recent configured maximum number of blocks. Starting on the bar after creation, a bullish block is mitigated when low or, in close mode, close is at or below its top; a bearish block is mitigated when high or, in close mode, close is at or above its bottom. If breaker mode is enabled, a close strictly below a bullish block's bottom or strictly above a bearish block's top instead flips it into an indefinitely active block of the opposite direction; the flipped block becomes active on the following bar. A newly created, unmitigated block is active immediately.
+Calculation: Active fair value gap = a bullish gap is created when the current low is strictly above the high two bars earlier, with top at the current low; a bearish gap is created when the current high is strictly below the low two bars earlier, with bottom at the current high. Keep only the most recent configured maximum number of gaps. Starting on the bar after creation, a bullish gap is filled when low or, in close mode, close is at or below its top; a bearish gap is filled when high or, in close mode, close is at or above its bottom. A newly created, unfilled gap is active immediately.
+Calculation: Long confluence = each enabled requirement is satisfied: close is below the midpoint of the latest confirmed swing high and low, with the high strictly above the low; a bullish structural break in the selected stream occurred within the recency window; a bullish order block is active; a bullish fair value gap is active; a swing low liquidity sweep occurred within the recency window; and the last completed higher-timeframe close is above its higher-timeframe EMA. Disabled requirements pass automatically.
+Calculation: Short confluence = each enabled requirement is satisfied: close is above the midpoint of the latest confirmed swing high and low, with the high strictly above the low; a bearish structural break in the selected stream occurred within the recency window; a bearish order block is active; a bearish fair value gap is active; a swing high liquidity sweep occurred within the recency window; and the last completed higher-timeframe close is below its higher-timeframe EMA. Disabled requirements pass automatically.
+Long: A pivot low confirms AND its price is greater than or equal to the preceding confirmed pivot low OR no preceding pivot low exists.
+Short: A pivot high confirms AND its price is less than or equal to the preceding confirmed pivot high OR no preceding pivot high exists.
+Long: A pivot high confirms AND its price is strictly above the preceding confirmed pivot high.
+Short: A pivot low confirms AND its price is strictly below the preceding confirmed pivot low.
+Long: A bullish structural break occurs.
+Short: A bearish structural break occurs.
+Long: A swing low liquidity sweep occurs.
+Short: A swing high liquidity sweep occurs.
+Long: A bullish structural break occurs AND a preceding bearish candle exists.
+Short: A bearish structural break occurs AND a preceding bullish candle exists.
+Long: An active bearish order block closes strictly above its top AND breaker mode is enabled.
+Short: An active bullish order block closes strictly below its bottom AND breaker mode is enabled.
+Long: Low is strictly above the high two bars earlier.
+Short: High is strictly below the low two bars earlier.
+Long: Long confluence is true on the current completed bar AND false on the preceding bar.
+Short: Short confluence is true on the current completed bar AND false on the preceding bar.

@@ -1,28 +1,20 @@
-Calculation: Bullish engulfing = absolute(close − open) ≥ ATR × displacement multiplier AND close > open AND (close − low) / (high − low) ≥ 0.65 AND close > prior open AND open < prior close AND volume ≥ volume moving average × volume multiplier; when high = low, close position ratio = 0.5
-Calculation: Bearish engulfing = absolute(close − open) ≥ ATR × displacement multiplier AND close < open AND (close − low) / (high − low) ≤ 0.35 AND close < prior open AND open > prior close AND volume ≥ volume moving average × volume multiplier; when high = low, close position ratio = 0.5
-Calculation: Low sweep = prior low ≤ highest low over the preceding liquidity lookback bars AND close > that preceding lowest low
-Calculation: High sweep = prior high ≥ lowest high over the preceding liquidity lookback bars AND close < that preceding highest high
-Calculation: Bullish structure flip = bullish engulfing AND close is within ATR-scaled proximity of prior-day low, weekly open, daily open, latest bullish 1-hour FVG midpoint, or latest bullish daily FVG midpoint
-Calculation: Bearish structure flip = bearish engulfing AND close is within ATR-scaled proximity of prior-day high, weekly open, daily open, latest bearish 1-hour FVG midpoint, or latest bearish daily FVG midpoint
-Calculation: Bullish FVG entry = a bullish FVG formed within the previous 50 chart bars, close is within its zone, and bullish engulfing
-Calculation: Bearish FVG entry = a bearish FVG formed within the previous 50 chart bars, close is within its zone, and bearish engulfing
-Calculation: Bullish box break = consolidation is active AND close > range high AND open < range high AND candle body ≥ 0.5 ATR
-Calculation: Bearish box break = consolidation is active AND close < range low AND open > range low AND candle body ≥ 0.5 ATR
-Calculation: Consolidation = highest high minus lowest low over the box lookback ≤ ATR × box-height multiplier
-Calculation: 1-hour bullish FVG = low of the last completed 1-hour bar > high from two completed 1-hour bars ago, with gap size ≥ close × minimum FVG percentage
-Calculation: 1-hour bearish FVG = high of the last completed 1-hour bar < low from two completed 1-hour bars ago, with gap size ≥ close × minimum FVG percentage
-Calculation: Daily bullish FVG = low of the last completed daily bar > high from two completed daily bars ago, with gap size ≥ close × minimum FVG percentage
-Calculation: Daily bearish FVG = high of the last completed daily bar < low from two completed daily bars ago, with gap size ≥ close × minimum FVG percentage
-Calculation: Long score = min(10, sum of: 1 if higher-timeframe bias is bullish; 1 if within enabled London or New York session; 1 if volume spike; 1 if correlation instrument low sweep; 1 if chart return over relative-strength lookback exceeds correlation-instrument return; 1 if 1-hour bullish FVG is not killed by a sufficiently larger nearby daily bearish FVG; 1 if daily bullish FVG; 1 if near prior-day low; 1 if enabled daily VIX is falling; 1 if at least two consecutive low sweeps; 1 if at long structure; 2 if bullish structure flip; 2 if bullish FVG entry)
-Calculation: Short score = min(10, sum of: 1 if higher-timeframe bias is bearish; 1 if within enabled London or New York session; 1 if volume spike; 1 if correlation instrument high sweep; 1 if chart return over relative-strength lookback is below correlation-instrument return; 1 if 1-hour bearish FVG is not killed by a sufficiently larger nearby daily bullish FVG; 1 if daily bearish FVG; 1 if near prior-day high; 1 if enabled daily VIX is rising; 1 if at least two consecutive high sweeps; 1 if at short structure; 2 if bearish structure flip; 2 if bearish FVG entry)
-Calculation: Long BOS confirmation = after a low sweep, close > highest high of the preceding 10 chart bars
-Calculation: Short BOS confirmation = after a high sweep, close < lowest low of the preceding 10 chart bars
-Calculation: Worth calling = dominant score ≥ 6 OR (dominant score ≥ 4 AND score difference ≥ 2)
-Calculation: Bullish setup stop = lowest low over liquidity lookback bars − ATR × stop multiplier, captured on low sweep
-Calculation: Bearish setup stop = highest high over liquidity lookback bars + ATR × stop multiplier, captured on high sweep
-Calculation: Long target = highest high over the preceding 30 chart bars, captured on low sweep
-Calculation: Short target = lowest low over the preceding 30 chart bars, captured on high sweep
-Long: bullish engulfing OR low sweep OR bullish structure flip OR bullish FVG entry OR bullish box break AND volume spike OR long BOS confirmation OR (low sweep AND long score ≥ minimum score) OR (long score ≥ 8) OR (long score ≤ 3 AND short score ≥ 5) OR (high sweep AND long score ≥ 5 AND long score > short score) OR (low sweep AND long score > short score AND worth calling)
-Short: bearish engulfing OR high sweep OR bearish structure flip OR bearish FVG entry OR bearish box break AND volume spike OR short BOS confirmation OR (high sweep AND short score ≥ minimum score) OR (short score ≥ 8) OR (short score ≤ 3 AND long score ≥ 5) OR (low sweep AND short score ≥ 5 AND short score > long score) OR (high sweep AND short score > long score AND worth calling)
-Exit: long, close < captured bullish setup stop OR high ≥ captured long target
-Exit: short, close > captured bearish setup stop OR low ≤ captured short target
+Calculation: Prior high and prior low = highest high and lowest low over a lookback ending on the preceding chart bar.
+Calculation: Bullish sweep = preceding chart-bar low <= prior low AND current close > prior low. Bearish sweep = preceding chart-bar high >= prior high AND current close < prior high.
+Calculation: Bullish engulfing = absolute candle body >= ATR times a size multiplier AND close > open AND (close - low) / (high - low) >= a close-location threshold AND close > preceding open AND open < preceding close AND volume >= its moving average times a volume multiplier. Bearish engulfing = absolute candle body >= ATR times the same size multiplier AND close < open AND (close - low) / (high - low) <= the complementary close-location threshold AND close < preceding open AND open > preceding close AND volume >= its moving average times the same volume multiplier. When high equals low, use the midpoint as the close location.
+Calculation: Range = when the highest high minus the lowest low over a lookback first becomes <= ATR times a range-height multiplier, start a range with those high and low values. While that condition remains true, extend the range high and low with the current bar's high and low. Retain the range after the condition becomes false; end it on the first range break in either direction.
+Calculation: Long break-of-structure level = on each bullish sweep, replace the pending level with the highest high over a lookback ending on the preceding chart bar. Clear it after close exceeds it or the long setup is invalidated. Short break-of-structure level = on each bearish sweep, replace the pending level with the lowest low over the same lookback ending on the preceding chart bar. Clear it after close falls below it or the short setup is invalidated.
+Calculation: Active setup stop = on a bullish sweep, store prior low minus ATR times a stop multiplier and activate the long setup; on a bearish sweep, store prior high plus ATR times the same multiplier and activate the short setup. Activating either setup deactivates the other. If both sweeps occur on the same bar, the short setup takes precedence. Clear an active setup when its stop is invalidated.
+Long: Bullish sweep.
+Short: Bearish sweep.
+Long: Bullish engulfing.
+Short: Bearish engulfing.
+Long: Chart-bar low > high two chart bars earlier AND the difference >= close times a gap-size fraction.
+Short: Chart-bar high < low two chart bars earlier AND the difference >= close times the same gap-size fraction.
+Long: Last completed higher-timeframe bar's low > preceding higher-timeframe bar's high AND the difference >= chart close times a higher-timeframe gap-size fraction. Apply independently to each of two higher timeframes, one longer than the other.
+Short: Last completed higher-timeframe bar's high < preceding higher-timeframe bar's low AND the difference >= chart close times the same higher-timeframe gap-size fraction. Apply independently to each of the two higher timeframes.
+Long: Pending long break-of-structure level exists AND close > that level.
+Short: Pending short break-of-structure level exists AND close < that level.
+Long: Range is active AND close > range high AND open < range high AND absolute candle body >= ATR times a breakout-body multiplier.
+Short: Range is active AND close < range low AND open > range low AND absolute candle body >= ATR times the same breakout-body multiplier.
+Exit: long, long setup is active AND close < its stored stop.
+Exit: short, short setup is active AND close > its stored stop.

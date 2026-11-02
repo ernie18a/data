@@ -1,7 +1,13 @@
-Calculation: Opening range high/low = highest high / lowest low of bars in the configured session, reset at each session start
-Calculation: Trend state = bullish or bearish ATR trailing trend using hl2 ± a sensitivity-scaled ATR band; ratchet the active band toward price, and flip bearish when close falls below the lower band or bullish when close rises above the upper band
-Calculation: RMI = average of RSI(close, lookback) and MFI(typical price, same lookback)
-Long: bullish trend state changes from bearish OR RMI crosses above its positive threshold while above its negative threshold and the short-term EMA is rising OR, outside the configured session, close crosses above the opening range high and breakout count this session = 0
-Short: bearish trend state changes from bullish OR RMI is below its negative threshold and the short-term EMA is falling OR, outside the configured session, close crosses below the opening range low and breakdown count this session = 0
-Exit: Long, high reaches entry price plus the configured trend-band target distance OR close falls below the active long trailing Supertrend
-Exit: Short, low reaches entry price minus the configured trend-band target distance OR close rises above the active short trailing Supertrend
+Calculation: Trend band = ATR multiplied by a sensitivity-derived positive factor.
+Calculation: Trailing trend = initialize direction to bullish if close > (high + low) / 2, otherwise bearish. On each subsequent bar, if previously bullish, set the candidate stop to max((high + low) / 2 - trend band, previous stop); switch to bearish if close < candidate stop and set stop to (high + low) / 2 + trend band; otherwise retain bullish direction and the candidate stop. If previously bearish, set the candidate stop to min((high + low) / 2 + trend band, previous stop); switch to bullish if close > candidate stop and set stop to (high + low) / 2 - trend band; otherwise retain bearish direction and the candidate stop. If the previous stop is unavailable, use the unadjusted candidate.
+Calculation: Momentum = average of RSI of close and MFI of typical price, using the same lookback.
+Calculation: Momentum state = initially neutral; set bullish when momentum on the previous bar < positive threshold AND current momentum > positive threshold AND current momentum > negative threshold AND EMA of close rises; set bearish when momentum < negative threshold AND EMA of close falls; otherwise retain the prior state.
+Calculation: Opening range = highest high and lowest low of chart bars in the latest configured session, using a configured UTC offset; reset at the next session's first bar.
+Long: Trailing trend changes from bearish to bullish.
+Short: Trailing trend changes from bullish to bearish.
+Long: Momentum state changes to bullish.
+Short: Momentum state changes to bearish.
+Long: Current bar is outside the opening-range session AND close > opening-range high AND previous close <= previous bar's opening-range high AND no earlier long opening-range signal has occurred since the session began.
+Short: Current bar is outside the opening-range session AND close < opening-range low AND previous close >= previous bar's opening-range low AND no earlier short opening-range signal has occurred since the session began.
+Exit: long, trailing trend remains bullish after its bullish flip AND current bar is not the flip bar AND high >= flip-bar close + target multiplier × flip-bar trend band AND that target has not previously been reached since the flip; evaluate separately for a smaller and a larger target multiplier.
+Exit: short, trailing trend remains bearish after its bearish flip AND current bar is not the flip bar AND low <= flip-bar close - target multiplier × flip-bar trend band AND that target has not previously been reached since the flip; evaluate separately for a smaller and a larger target multiplier.

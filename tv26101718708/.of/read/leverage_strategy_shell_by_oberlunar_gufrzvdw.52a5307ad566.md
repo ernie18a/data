@@ -1,9 +1,8 @@
-Calculation: Fast EMA slope = fast EMA now − fast EMA at the longer slope lookback
-Calculation: Long stop = min(signal-bar low, medium-term EMA) − ATR × stop multiplier, frozen at entry
-Calculation: Short stop = max(signal-bar high, medium-term EMA) + ATR × stop multiplier, frozen at entry
-Calculation: Long target = signal-bar close + (signal-bar close − long stop) × reward-risk ratio
-Calculation: Short target = signal-bar close − (short stop − signal-bar close) × reward-risk ratio
-Long: close crosses above the short-term EMA AND short-term EMA > medium-term EMA > long-term EMA AND fast EMA slope > 0
-Short: close crosses below the short-term EMA AND short-term EMA < medium-term EMA AND short-term EMA < long-term EMA AND fast EMA slope < 0
-Exit: long, short-term EMA crosses below medium-term EMA OR low ≤ long stop OR high ≥ long target
-Exit: short, short-term EMA crosses above medium-term EMA OR high ≥ short stop OR low ≤ short target
+Calculation: Long stop = minimum of signal-bar low and medium-period EMA of close minus signal-bar ATR multiplied by a stop multiplier; freeze at the long-entry signal.
+Calculation: Short stop = maximum of signal-bar high and medium-period EMA of close plus signal-bar ATR multiplied by a stop multiplier; freeze at the short-entry signal.
+Calculation: Long target = signal-bar close + (signal-bar close − long stop) × reward-to-risk multiplier; freeze at the long-entry signal.
+Calculation: Short target = signal-bar close − (short stop − signal-bar close) × reward-to-risk multiplier; freeze at the short-entry signal.
+Long: Close crosses above the short-period EMA of close AND short-period EMA > medium-period EMA > long-period EMA AND short-period EMA > its value a lookback number of bars ago.
+Short: Close crosses below the short-period EMA of close AND short-period EMA < medium-period EMA AND short-period EMA < long-period EMA AND short-period EMA < its value a lookback number of bars ago.
+Exit: Long, short-period EMA crosses below medium-period EMA OR low <= long stop OR high >= long target.
+Exit: Short, short-period EMA crosses above medium-period EMA OR high >= short stop OR low <= short target.

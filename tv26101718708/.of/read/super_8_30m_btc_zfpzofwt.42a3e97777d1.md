@@ -1,24 +1,19 @@
-Calculation: Exponential moving averages = fast EMA and slow EMA of close; fast length is shorter than slow length.
-Calculation: ADX = +DI, −DI, and ADX from the directional movement index.
-Calculation: MACD histogram = MACD line minus its signal line, using a shorter fast length and longer slow length.
-Calculation: Bollinger Bands = middle band and upper/lower bands from close; width = (upper band − lower band) / middle band.
-Calculation: ATR stop = for long, current low minus ATR × multiplier, raised to at least the prior ATR stop when current open is above that prior stop; for short, current high plus ATR × multiplier, lowered to at most the prior ATR stop when current open is below that prior stop.
-Calculation: Donchian upper/lower = highest high / lowest low over the lookback.
-Long: fast EMA > slow EMA AND slow EMA > prior slow EMA
-Long: +DI > −DI AND ADX > threshold
-Long: Parabolic SAR < close
-Long: MACD histogram > 0
-Long: volume > volume SMA × volume factor
-Long: Position allows longs AND fast EMA > slow EMA AND slow EMA > prior slow EMA AND +DI > −DI AND ADX > threshold AND Parabolic SAR < close AND MACD histogram > 0 AND volume > volume SMA × volume factor AND (no open position OR position is short OR close < last entry price × (1 − better-price threshold))
-Long: Position allows longs AND NOT (+DI < −DI AND ADX > threshold) AND low crosses below the lower Bollinger Band AND fast EMA > slow EMA AND Bollinger Band width > new-position width threshold AND (no open position OR position is short OR close < last entry price × (1 − better-price threshold))
-Long: Position allows longs AND NOT (+DI < −DI AND ADX > threshold) AND low crosses below the lower Bollinger Band AND fast EMA > slow EMA AND Bollinger Band width > pyramiding width threshold AND position is long AND close < last entry price × (1 − better-price threshold)
-Short: fast EMA < slow EMA AND slow EMA < prior slow EMA
-Short: +DI < −DI AND ADX > threshold
-Short: Parabolic SAR > close
-Short: MACD histogram < 0
-Short: volume > volume SMA × volume factor
-Short: Position allows shorts AND fast EMA < slow EMA AND slow EMA < prior slow EMA AND +DI < −DI AND ADX > threshold AND Parabolic SAR > close AND MACD histogram < 0 AND volume > volume SMA × volume factor AND (no open position OR position is long OR close > last entry price × (1 + better-price threshold))
-Short: Position allows shorts AND NOT (+DI > −DI AND ADX > threshold) AND high crosses above the upper Bollinger Band AND fast EMA < slow EMA AND Bollinger Band width > new-position width threshold AND (no open position OR position is long OR close > last entry price × (1 + better-price threshold))
-Short: Position allows shorts AND NOT (+DI > −DI AND ADX > threshold) AND high crosses above the upper Bollinger Band AND fast EMA < slow EMA AND Bollinger Band width > pyramiding width threshold AND position is short AND close > last entry price × (1 + better-price threshold)
-Exit: long, low <= long stop price OR (trailing disabled AND high >= long take-profit price) OR (trailing enabled AND high reaches long take-profit activation price AND low reaches the trailing stop)
-Exit: short, high >= short stop price OR (trailing disabled AND low <= short take-profit price) OR (trailing enabled AND low reaches short take-profit activation price AND high reaches the trailing stop)
+Calculation: MAC-Z = A × Z + MACD line / (B × standard deviation of close); Z = (close − rolling volume-weighted mean of close) / sqrt(SMA of (close − contemporaneous rolling volume-weighted mean of close)²). The MAC-Z signal is an SMA of MAC-Z using the MACD signal length.
+Calculation: Bollinger Band width = (upper band − lower band) / middle band.
+Calculation: Long ATR stop = current low − ATR × multiplier, replaced by the greater of that value and the previous long ATR stop when current open > previous long ATR stop. Short ATR stop = current high + ATR × multiplier, replaced by the lesser of that value and the previous short ATR stop when current open < previous short ATR stop.
+Calculation: Long profit target = entry price × (1 + profit percentage), or max(Donchian upper band, entry price), or max(Donchian upper band, entry price × (1 + profit percentage)), according to the selected mode. Short profit target = entry price × (1 − profit percentage), or min(Donchian lower band, entry price), or min(Donchian lower band, entry price × (1 − profit percentage)), according to the selected mode. Donchian bands include the current bar.
+Calculation: Long stop = entry price × (1 − stop percentage), or long ATR stop, or the greater of those two values, according to the selected mode. Short stop = entry price × (1 + stop percentage), or short ATR stop, or the lesser of those two values, according to the selected mode.
+Long: Shorter EMA of close > longer EMA of close AND longer EMA of close > its previous value.
+Short: Shorter EMA of close < longer EMA of close AND longer EMA of close < its previous value.
+Long: +DI > −DI AND ADX > threshold.
+Short: +DI < −DI AND ADX > threshold.
+Long: Parabolic SAR < close.
+Short: Parabolic SAR >= close.
+Long: Shorter EMA of close > longer EMA of close.
+Short: Shorter EMA of close <= longer EMA of close.
+Long: Shorter EMA of close > longer EMA of close AND longer EMA of close > its previous value AND +DI > −DI AND ADX > threshold AND Parabolic SAR < close AND (MACD histogram > 0 OR selected MAC-Z > its signal) AND volume > SMA of volume × factor AND (position is flat or short OR close < most recent entry price × (1 − better-price percentage)).
+Short: Shorter EMA of close < longer EMA of close AND longer EMA of close < its previous value AND +DI < −DI AND ADX > threshold AND Parabolic SAR > close AND (MACD histogram < 0 OR selected MAC-Z < its signal) AND volume > SMA of volume × factor AND (position is flat or long OR close > most recent entry price × (1 + better-price percentage)).
+Long: Low crosses below the lower Bollinger Band AND shorter EMA of close > longer EMA of close AND longer EMA of close > its previous value AND NOT (+DI < −DI AND ADX > threshold) AND ((Bollinger Band width > new-position threshold AND (position is flat or short OR close < most recent entry price × (1 − better-price percentage))) OR (position is long AND Bollinger Band width > additional-entry threshold AND close < most recent entry price × (1 − better-price percentage))).
+Short: High crosses above the upper Bollinger Band AND shorter EMA of close < longer EMA of close AND longer EMA of close < its previous value AND NOT (+DI > −DI AND ADX > threshold) AND ((Bollinger Band width > new-position threshold AND (position is flat or long OR close > most recent entry price × (1 + better-price percentage))) OR (position is short AND Bollinger Band width > additional-entry threshold AND close > most recent entry price × (1 + better-price percentage))).
+Exit: long, low <= active long stop OR (trailing offset = 0 AND high >= active long profit target) OR (trailing offset > 0 AND high reaches the active long profit target AND subsequent price <= highest price since activation − trailing offset based on the high when the exit order was placed).
+Exit: short, high >= active short stop OR (trailing offset = 0 AND low <= active short profit target) OR (trailing offset > 0 AND low reaches the active short profit target AND subsequent price >= lowest price since activation + trailing offset based on the low when the exit order was placed).

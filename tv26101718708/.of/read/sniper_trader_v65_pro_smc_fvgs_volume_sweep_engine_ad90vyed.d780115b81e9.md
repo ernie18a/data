@@ -1,22 +1,25 @@
-Calculation: Candle delta = volume on an up candle, negative volume on a down candle, and zero on a doji; cumulative delta resets at each session reset and otherwise adds candle delta
-Calculation: Bullish divergence = current low below the latest confirmed pivot low AND current cumulative delta above cumulative delta at that pivot low
-Calculation: Bearish divergence = current high above the latest confirmed pivot high AND current cumulative delta below cumulative delta at that pivot high
-Long: Bullish divergence is true now AND was false on the prior bar
-Short: Bearish divergence is true now AND was false on the prior bar
-Calculation: Bullish divergence zone = from the trigger bar's low to the lower of its open and close
-Calculation: Bearish divergence zone = from the higher of the trigger bar's open and close to the trigger bar's high
-Long: At least the configured minimum number of bars have elapsed since a bullish divergence zone formed AND low <= the zone's upper bound AND close > its lower bound AND close > open AND lower wick / (high - low) >= 0.3 AND upper wick / (high - low) <= 0.6 AND the trade window is open
-Short: At least the configured minimum number of bars have elapsed since a bearish divergence zone formed AND high >= the zone's lower bound AND close < the zone's upper bound AND close < open AND upper wick / (high - low) >= 0.3 AND lower wick / (high - low) <= 0.6 AND the trade window is open
-Long: Close > the lower bound of an active bearish divergence zone AND close > the simple moving average of close AND the trade window is open
-Short: Close < the upper bound of an active bullish divergence zone AND close < the simple moving average of close AND the trade window is open
-Calculation: Bullish fair value gap = current low - high two bars ago; bearish fair value gap = low two bars ago - current high
-Long: Bullish fair value gap > 0 AND (volume one bar ago > its 20-bar simple moving average one bar ago × volume multiplier) AND (bullish fair value gap > ATR(14) one bar ago × ATR multiplier) AND candle delta one bar ago > 0
-Short: Bearish fair value gap > 0 AND (volume one bar ago > its 20-bar simple moving average one bar ago × volume multiplier) AND (bearish fair value gap > ATR(14) one bar ago × ATR multiplier) AND candle delta one bar ago < 0
-Calculation: Anchored VWAP = cumulative volume-weighted average of HLC3 since the selected session, day, week, or month anchor
-Long: Close > anchored VWAP AND anchored VWAP > its value about 15 minutes earlier AND close >= close about 1 hour earlier × 1.001
-Short: Close < anchored VWAP AND anchored VWAP < its value about 15 minutes earlier AND close <= close about 1 hour earlier × 0.999
-Calculation: Timeframe candle momentum = 1 when its close > its open, -1 when its close < its open, and 0 otherwise; use the current bar, including the still-forming bar, on each listed timeframe
-Long: Weighted sum of positive candle momentum across 1D, 4H, 2H, 1H, 30m, 15m, 10m, 5m, and 1m timeframes > weighted sum of negative candle momentum across those timeframes; weights are respectively 15, 15, 15, 15, 10, 10, 10, 5, and 5
-Short: Weighted sum of negative candle momentum across 1D, 4H, 2H, 1H, 30m, 15m, 10m, 5m, and 1m timeframes > weighted sum of positive candle momentum across those timeframes; weights are respectively 15, 15, 15, 15, 10, 10, 10, 5, and 5
-Exit: Long, close <= stop price OR high >= any active target price OR bars since breakout entry > maximum trade duration
-Exit: Short, close >= stop price OR low <= any active target price OR bars since breakout entry > maximum trade duration
+Calculation: Effective volume = volume when volume > 0, otherwise 1.
+Calculation: Delta = effective volume when close > open, negative effective volume when close < open, otherwise 0. Cumulative delta is the running sum of delta, reset at each configured daily-cycle boundary or at both the start and end of the configured day session.
+Calculation: Confirmed price pivot = a high or low with the configured number of bars on each side; it becomes available only after the right-side bars have closed. Pair each pivot price with cumulative delta at the pivot bar. Update the latest pivot before evaluating divergence on the confirmation bar.
+Calculation: Bullish divergence = low < latest confirmed pivot low AND latest confirmed pivot low > 0 AND cumulative delta > cumulative delta at that pivot. Bearish divergence = high > latest confirmed pivot high AND latest confirmed pivot high > 0 AND cumulative delta < cumulative delta at that pivot. A divergence trigger occurs when its divergence is true and was false on the preceding bar.
+Calculation: Bullish divergence zone = the interval from low to min(open, close) on a bullish divergence trigger bar; bearish divergence zone = the interval from max(open, close) to high on a bearish divergence trigger bar. Keep each zone until close breaks below its bottom or above its top, respectively. Each zone permits only its first qualifying bounce, after a configurable minimum number of bars since creation.
+Calculation: Anchored VWAP = cumulative sum of typical price multiplied by effective volume divided by cumulative effective volume, resetting at the configured session, daily, weekly, monthly, or daily-cycle anchor. The shorter and longer drift lookbacks are each capped at the number of bars since the anchor.
+Calculation: Momentum score = sum of configured weights for selected aggregation periods whose close is above open for the bullish score or below open for the bearish score; longer periods have greater or equal weights than shorter periods. For higher-than-chart periods, use the last completed bar on historical bars and the still-forming bar in real time; for lower-than-chart periods, use the last available intrabar.
+Long: Bullish divergence trigger.
+Short: Bearish divergence trigger.
+Long: An unbroken bullish divergence zone has not previously bounced AND its age is at least the minimum bounce age AND low <= zone top AND close > zone bottom AND close > open AND high > low AND (min(open, close) - low) / (high - low) >= minimum sweep fraction AND (high - max(open, close)) / (high - low) <= maximum opposite-wick fraction AND the optional trading-session filter passes.
+Short: An unbroken bearish divergence zone has not previously bounced AND its age is at least the minimum bounce age AND high >= zone bottom AND close < zone top AND close < open AND high > low AND (high - max(open, close)) / (high - low) >= minimum sweep fraction AND (min(open, close) - low) / (high - low) <= maximum opposite-wick fraction AND the optional trading-session filter passes.
+Long: Close > bearish divergence zone top AND close > SMA of close AND the optional trading-session filter passes.
+Short: Close < bullish divergence zone bottom AND close < SMA of close AND the optional trading-session filter passes.
+Exit: long breakout position, close <= bottom of the broken bearish divergence zone OR high >= entry price + entry-bar ATR multiplied by any configured target multiplier.
+Exit: short breakout position, close >= top of the broken bullish divergence zone OR low <= entry price - entry-bar ATR multiplied by any configured target multiplier.
+Long: Close > anchored VWAP AND anchored VWAP > its value at the shorter drift lookback AND close >= close at the longer drift lookback multiplied by a configured upward threshold AND both lookback values are positive.
+Short: Close < anchored VWAP AND anchored VWAP < its value at the shorter drift lookback AND close <= close at the longer drift lookback multiplied by a configured downward threshold AND both lookback values are positive.
+Long: Low > high two bars ago AND the optional gap-size filter passes, requiring low - high two bars ago > previous-bar ATR multiplied by its threshold AND the optional volume filter passes, requiring previous-bar effective volume > its previous-bar SMA multiplied by its threshold AND the optional delta filter passes, requiring previous-bar delta > 0.
+Short: High < low two bars ago AND the optional gap-size filter passes, requiring low two bars ago - high > previous-bar ATR multiplied by its threshold AND the optional volume filter passes, requiring previous-bar effective volume > its previous-bar SMA multiplied by its threshold AND the optional delta filter passes, requiring previous-bar delta < 0.
+Long: Latest confirmed market-structure pivot high > 0 AND close > that pivot high AND previous close <= that same pivot high; consume the pivot after the signal.
+Short: Latest confirmed market-structure pivot low > 0 AND close < that pivot low AND previous close >= that same pivot low; consume the pivot after the signal.
+Long: Close > open on any selected higher- or lower-than-chart aggregation period, using its last completed bar historically and its still-forming bar in real time when higher, or its last available intrabar when lower.
+Short: Close < open on any selected higher- or lower-than-chart aggregation period, using its last completed bar historically and its still-forming bar in real time when higher, or its last available intrabar when lower.
+Long: Bullish momentum score > bearish momentum score.
+Short: Bearish momentum score > bullish momentum score.

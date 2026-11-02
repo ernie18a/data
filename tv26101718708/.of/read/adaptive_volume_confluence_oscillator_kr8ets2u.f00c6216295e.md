@@ -1,17 +1,33 @@
-Calculation: Momentum oscillator = low-lag-smoothed composite of normalized price momentum and normalized, smoothed volume flow; momentum is price minus its linear regression over a lookback, normalized by its rolling standard deviation. Volume flow uses a Hull-smoothed signed-volume ratio (volume signed by whether price exceeds its value two bars earlier), normalizes it, recursively smooths it, then applies the low-lag smoother. The composite weights momentum and volume flow by configurable weights.
-Calculation: Oscillator signal = low-lag-smoothed momentum oscillator, using a separate signal lookback.
-Calculation: Confluence score = 100 × bullish votes / 7. The votes are: oscillator > 0; oscillator > its signal; smoothed normalized volume flow > 0; trend fan bullish; close > VWAP (or normalized price momentum > 0 when VWAP is unavailable); price slope > 0; and higher-timeframe close > its EMA. Trend fan is bullish when the sum of pairwise comparisons of EMAs with progressively longer lookbacks is positive (shorter-lookback EMA > longer-lookback EMA scores +1, otherwise −1). The higher timeframe is above the chart timeframe and uses its last completed bar while that bar is forming.
-Calculation: Chop filter = true when the absolute price change over a lookback divided by the sum of absolute one-bar price changes over that lookback is below a threshold.
-Calculation: Oscillator overbought/oversold levels = rolling oscillator mean plus/minus a configurable multiple of its rolling standard deviation.
-Calculation: Flow wave = low-lag-smoothed recursive smoothing of normalized volume flow, calculated with separate short and long lookbacks; its overbought and oversold zones are fixed at +60 and −60 on its bounded scale.
-Calculation: Confirmed oscillator pivot = a local oscillator high or low with configurable equal numbers of bars on its left and right; it is confirmed after the right-side bars complete.
-Long: Oscillator crosses above its signal AND oscillator is below its oversold level AND confluence score is at least the configured gate AND chop filter is false AND flow wave is not overbought.
-Long: Volume is greater than its rolling average times a configurable multiplier AND oscillator is below its oversold level.
-Long: At a confirmed oscillator pivot low, price low is below the previous pivot low and oscillator is above the previous pivot low; OR price low is above the previous pivot low and oscillator is below the previous pivot low. In either case, the pivot is within a configured maximum bar distance of the previous pivot.
-Long: Confluence score is at least 85.
-Long: Confluence score is greater than 57 AND chop filter is false.
-Short: Oscillator crosses below its signal AND oscillator is above its overbought level AND confluence score is at most 100 minus the configured gate AND chop filter is false AND flow wave is not oversold.
-Short: Volume is greater than its rolling average times a configurable multiplier AND oscillator is above its overbought level.
-Short: At a confirmed oscillator pivot high, price high is above the previous pivot high and oscillator is below the previous pivot high; OR price high is below the previous pivot high and oscillator is above the previous pivot high. In either case, the pivot is within a configured maximum bar distance of the previous pivot.
-Short: Confluence score is at most 15.
-Short: Confluence score is less than 43 AND chop filter is false.
+Calculation: Low-lag filter = selectable Super Smoother, Ultimate Smoother, or Chebyshev Type-I filter. For input x and length L, initialize unavailable prior outputs to x. Super Smoother: f=sqrt(2)*pi/L, a=exp(-f), c2=2*a*cos(f), c3=-a*a, c1=1-c2-c3; y=c1*(x+x[1])/2+c2*y[1]+c3*y[2]. Ultimate Smoother: a=exp(-sqrt(2)*pi/L), c2=2*a*cos(sqrt(2)*pi/L), c3=-a*a, c1=(1+c2-c3)/4; y=(1-c1)*x+(2*c1-c2)*x[1]-(c1+c3)*x[2]+c2*y[1]+c3*y[2]. Chebyshev: A=cosh(acosh(1/(1-ripple))/L), B=sinh(asinh(1/ripple)/L), g=(A-B)/(A+B); y=(1-g)*x+g*y[1]. Use the same selected filter throughout.
+Calculation: Momentum = low-lag filter of the rolling z-score of close minus the current endpoint of a linear regression of close over the momentum lookback. A zero rolling standard deviation produces zero.
+Calculation: Flow = exponential recursive smoothing, initialized with its input, of the rolling z-score of HMA(signed volume)/max(HMA(volume), epsilon), where signed volume is volume if close exceeds close two bars ago and negative volume otherwise; both HMAs use the same volume lookback. The z-score uses a separate normalization lookback and is zero when its standard deviation is zero.
+Calculation: Oscillator = 50 times the low-lag filter of the weighted average of momentum and the low-lag-filtered flow; both use the momentum smoothing length. Signal = the low-lag filter of oscillator with a separate signal length.
+Calculation: Oscillator bands = rolling SMA of oscillator plus or minus a sensitivity multiplier times its rolling standard deviation over the same band lookback.
+Calculation: Fast wave = 100*tanh(0.33*F/SD(F)), where F is the low-lag filter of 50*flow using a fast ribbon length and SD(F) is its rolling standard deviation over a separate normalization lookback; use zero when SD(F) is not positive. Slow wave uses the same formula and fast-wave standard deviation, replacing F in the numerator with the low-lag filter of 50*flow using a longer ribbon length.
+Calculation: Fan rank = sum over every pair of close EMAs with increasing, equally spaced lengths, adding one when the shorter EMA exceeds the longer EMA and subtracting one otherwise. Initialize each EMA at the first close.
+Calculation: Higher-timeframe bias = higher-timeframe close minus its EMA using the momentum lookback, evaluated on the last completed higher-timeframe bar. If higher-timeframe confirmation is disabled, use oscillator instead.
+Calculation: Confluence score = 100 times the fraction of these seven conditions that are true: oscillator > 0; oscillator > signal; flow > 0; fan rank > 0; close > session VWAP of typical price, or momentum's unsmoothed z-score > 0 if VWAP is unavailable; close > close one momentum lookback ago; higher-timeframe bias > 0.
+Calculation: Efficiency ratio = absolute change in close over its lookback divided by the sum of absolute one-bar close changes over that lookback; use zero when the denominator is zero.
+Calculation: Confirmed oscillator pivot = an oscillator pivot high or low with equal left and right lookbacks, identified on the bar that completes the right lookback. Compare each confirmed pivot with the immediately preceding confirmed pivot of the same kind, using high or low at the respective pivot bars and their bar-index distance.
+Long: oscillator crosses above signal AND oscillator < lower oscillator band AND confluence score >= signal threshold AND efficiency ratio >= chop threshold AND fast wave < positive wave-extreme threshold.
+Short: oscillator crosses below signal AND oscillator > upper oscillator band AND confluence score <= 100 minus signal threshold AND efficiency ratio >= chop threshold AND fast wave > negative wave-extreme threshold.
+Long: volume > its SMA times a climax multiplier AND oscillator < lower oscillator band.
+Short: volume > its SMA times a climax multiplier AND oscillator > upper oscillator band.
+Long: a low pivot is confirmed AND pivot distance <= maximum distance AND ((current pivot low < previous pivot low AND current oscillator pivot > previous oscillator pivot) OR (current pivot low > previous pivot low AND current oscillator pivot < previous oscillator pivot)).
+Short: a high pivot is confirmed AND pivot distance <= maximum distance AND ((current pivot high > previous pivot high AND current oscillator pivot < previous oscillator pivot) OR (current pivot high < previous pivot high AND current oscillator pivot > previous oscillator pivot)).
+Long: efficiency ratio >= chop threshold AND confluence score >= signal threshold.
+Short: efficiency ratio >= chop threshold AND confluence score <= 100 minus signal threshold.
+Long: confluence score > bullish trend threshold.
+Short: confluence score < bearish trend threshold.
+Long: confluence score >= strong bullish threshold.
+Short: confluence score <= strong bearish threshold.
+Long: fast wave >= slow wave.
+Short: fast wave < slow wave.
+Long: oscillator >= 0.
+Short: oscillator < 0.
+Long: flow > 0.
+Short: flow <= 0.
+Long: higher-timeframe bias > 0.
+Short: higher-timeframe bias <= 0.
+Long: oscillator < lower oscillator band.
+Short: oscillator > upper oscillator band.

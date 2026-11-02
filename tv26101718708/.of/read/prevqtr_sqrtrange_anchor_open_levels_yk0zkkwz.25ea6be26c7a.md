@@ -1,7 +1,9 @@
-Calculation: Anchor open = open of the first bar of the selected RTH session, ETH session, week, or quarter
-Calculation: Previous-quarter range = high minus low of the last completed quarter on a timeframe higher than the chart timeframe
-Calculation: Sqrt-range step = square root of the previous-quarter range multiplied by a configurable multiplier
-Calculation: Upper levels = anchor open + n × sqrt-range step, for each configured positive integer level index n
-Calculation: Lower levels = anchor open − n × sqrt-range step, for each configured positive integer level index n
-Long: (close > an upper level AND prior-bar close <= that same upper level) OR (close > anchor open AND prior-bar close <= anchor open)
-Short: (close < a lower level AND prior-bar close >= that same lower level) OR (close < anchor open AND prior-bar close >= anchor open)
+Calculation: Session open = open of the first chart bar in the configured session, held until the next session begins.
+Calculation: Period open = open of the first chart bar in the configured calendar period, held until the next period begins.
+Calculation: Session cumulative delta = sum of volume on chart bars with close >= open minus sum of volume on chart bars with close < open, reset at the start of the configured session and accumulated only during its included sessions.
+Long: close >= session open, for either configured session.
+Short: close < session open, for either configured session.
+Long: close >= period open.
+Short: close < period open.
+Long: current bar is in an included session AND session cumulative delta >= 0, for either configured session.
+Short: current bar is in an included session AND session cumulative delta < 0, for either configured session.

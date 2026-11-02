@@ -1,7 +1,12 @@
-Calculation: RSI percentage change = (current RSI − RSI from the lookback bars ago) / RSI from the lookback bars ago × 100
-Long: On each monitored timeframe (higher or lower than the chart timeframe where applicable), current RSI percentage change > rising threshold, using the still-forming bar
-Short: On each monitored timeframe (higher or lower than the chart timeframe where applicable), current RSI percentage change < negative falling threshold, using the still-forming bar
-Long: On a monitored timeframe, current forming bar low <= lowest low of the previous completed lookback bars × (1 + price tolerance) AND current RSI > RSI at that previous low + divergence threshold AND RSI at that previous low <= oversold level
-Short: On a monitored timeframe, current forming bar high >= highest high of the previous completed lookback bars × (1 − price tolerance) AND current RSI < RSI at that previous high − divergence threshold AND RSI at that previous high >= overbought level
-Long: Count of monitored timeframes (higher or lower than the chart timeframe where applicable), each using its still-forming bar, with RSI <= oversold level >= strong-bias threshold
-Short: Count of monitored timeframes (higher or lower than the chart timeframe where applicable), each using its still-forming bar, with RSI >= overbought level >= strong-bias threshold
+Calculation: RSI = either standard RSI of a selected OHLC-derived price or zero-lag RSI, consistently applied across timeframes.
+Calculation: Zero-lag RSI = RSI using simple averages of gains and losses over the RSI period, calculated from the delagged price series, where delagged price = selected price + (selected price - EMA of selected price over the lag period). If average gain and loss are both zero, RSI is the midpoint; if only average loss is zero, RSI is the maximum; if only average gain is zero, RSI is the minimum.
+Calculation: Timeframe RSI = RSI on the chart timeframe or on a higher or lower timeframe, using the bar still forming at the evaluation time. Historical values use completed bars of that same timeframe.
+Calculation: Prior high and prior low = the highest high and lowest low, respectively, over a lookback of completed bars on the same timeframe as the timeframe RSI; use the RSI at the bar containing the respective extreme.
+Long: Timeframe RSI <= oversold threshold.
+Short: Timeframe RSI >= overbought threshold.
+Long: Historical timeframe RSI exceeds a minimum threshold AND (current timeframe RSI - historical timeframe RSI) / historical timeframe RSI > positive trend threshold, where historical RSI is measured a specified number of bars earlier.
+Short: Historical timeframe RSI exceeds a minimum threshold AND (current timeframe RSI - historical timeframe RSI) / historical timeframe RSI < negative trend threshold, where historical RSI is measured the same number of bars earlier and the negative trend threshold has the same magnitude as the positive trend threshold.
+Long: Current timeframe low <= prior low * (1 + price tolerance) AND current timeframe RSI > RSI at prior low + RSI difference threshold AND RSI at prior low <= oversold threshold AND NOT (current timeframe high >= prior high * (1 - price tolerance) AND current timeframe RSI < RSI at prior high - RSI difference threshold AND RSI at prior high >= overbought threshold).
+Short: Current timeframe high >= prior high * (1 - price tolerance) AND current timeframe RSI < RSI at prior high - RSI difference threshold AND RSI at prior high >= overbought threshold.
+Long: Count of selected chart, higher and lower timeframes whose current RSI <= oversold threshold >= confluence count threshold.
+Short: Count of selected chart, higher and lower timeframes whose current RSI >= overbought threshold >= confluence count threshold AND count of those timeframes whose current RSI <= oversold threshold < confluence count threshold.

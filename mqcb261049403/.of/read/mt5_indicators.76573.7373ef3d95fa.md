@@ -1,4 +1,5 @@
-Calculation: Confirmed swing high = a bar whose high is greater than the highs of the next N bars and greater than or equal to the highs of the previous N bars; confirm after the next N bars close.
-Calculation: Confirmed swing low = a bar whose low is less than the lows of the next N bars and less than or equal to the lows of the previous N bars; confirm after the next N bars close.
-Long: close > the latest confirmed swing high that has not already been crossed
-Short: close < the latest confirmed swing low that has not already been crossed
+Calculation: Confirmed swing high = the high of a bar whose high is greater than or equal to every high in the preceding lookback bars and strictly greater than every high in the following lookback bars; it is confirmed on the last following bar.
+Calculation: Confirmed swing low = the low of a bar whose low is less than or equal to every low in the preceding lookback bars and strictly less than every low in the following lookback bars; it is confirmed on the last following bar.
+Calculation: Latest swing levels = the most recently confirmed swing high and swing low, tracked independently; each new confirmation replaces the corresponding level and resets its crossed status before evaluating the current bar. A level becomes crossed on the first bar whose close strictly exceeds the swing high or strictly falls below the swing low, respectively.
+Long: A swing low is confirmed on the current bar OR the latest swing high is positive AND has not previously been crossed AND close > the latest swing high.
+Short: A swing high is confirmed on the current bar OR the latest swing low is positive AND has not previously been crossed AND close < the latest swing low.

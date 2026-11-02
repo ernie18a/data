@@ -1,2 +1,2 @@
-Long: 50 SMA > 200 SMA AND close >= 200 SMA
-Short: 50 SMA < 200 SMA AND close <= 200 SMA
+Long: shorter-lookback SMA of close > longer-lookback SMA of close AND close >= longer-lookback SMA of close
+Short: shorter-lookback SMA of close < longer-lookback SMA of close AND close <= longer-lookback SMA of close

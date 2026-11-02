@@ -1,9 +1,7 @@
-Calculation: Illiquidity stress z-score = z-score of ln(1 + true range / volume), using volume = 1 when volume is zero or unavailable, over a rolling lookback
-Calculation: Trend price = close, optionally smoothed with a recursive Kalman filter (process noise = 1 / length, measurement noise = 1) or LLAMA (SMA(close, length) + (close − close[length]) / 2)
-Calculation: R = ATR × stop multiplier
-Calculation: Long stop = entry price − R; long TP3 = entry price + R × TP3 multiple
-Calculation: Short stop = entry price + R; short TP3 = entry price − R × TP3 multiple
-Long: previous completed bar's illiquidity stress z-score > threshold AND trend price < EMA of trend price AND previous bar close < previous bar open AND (if ADX filter is enabled, previous bar ADX >= threshold)
-Short: previous completed bar's illiquidity stress z-score > threshold AND trend price > EMA of trend price AND previous bar close > previous bar open AND (if ADX filter is enabled, previous bar ADX >= threshold)
-Exit: long, low <= long stop OR high >= long TP3
-Exit: short, high >= short stop OR low <= short TP3
+Calculation: Trend price = close, or optionally SMA(close, adaptive length) + (close - close[adaptive length]) / 2, or optionally a Kalman estimate initialized to the first close with error 1; on each bar set predicted error = previous error + 1 / adaptive length, gain = predicted error / (predicted error + 1), estimate = previous estimate + gain * (close - previous estimate), and error = (1 - gain) * predicted error.
+Calculation: Liquidity stress = z-score of ln(1 + true range / volume) over the statistics lookback, using volume 1 when volume is zero or unavailable and z-score 0 when its standard deviation is zero or unavailable.
+Calculation: Initial risk = ATR on the entry bar multiplied by the stop-distance multiplier.
+Long: Previous bar's liquidity stress > stress threshold AND previous bar's trend price < its EMA AND previous bar's close < open AND (ADX filter disabled OR previous bar's ADX >= ADX threshold).
+Short: Previous bar's liquidity stress > stress threshold AND previous bar's trend price > its EMA AND previous bar's close > open AND (ADX filter disabled OR previous bar's ADX >= ADX threshold).
+Exit: long, low <= entry price - initial risk OR high >= entry price + initial risk * a take-profit multiplier.
+Exit: short, high >= entry price + initial risk OR low <= entry price - initial risk * a take-profit multiplier.

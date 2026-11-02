@@ -1,11 +1,11 @@
-Calculation: Live resistance = price of the latest confirmed pivot high; a newer confirmed pivot high replaces it
-Calculation: Live support = price of the latest confirmed pivot low; a newer confirmed pivot low replaces it
-Calculation: Pivot high/low = a swing high/low confirmed after the configured number of bars to its right
-Calculation: ATR = average true range
-Calculation: Zone tolerance = greater of the ATR-scaled zone half-width and the minimum price increment
-Calculation: Break score = count of (relative volume above its threshold, or—if volume is unavailable—bar range above its ATR-scaled threshold), (body/range above its threshold and body points in the break direction), and (close distance beyond the level above its ATR-scaled threshold)
-Calculation: Qualified bullish break = close above live resistance by at least the ATR-scaled minimum close-through distance, with break score at least the configured minimum
-Calculation: Qualified bearish break = close below live support by at least the ATR-scaled minimum close-through distance, with break score at least the configured minimum
-Calculation: Broken resistance/support = the level from a qualified bullish/bearish break, watched for the configured retest window
-Long: Qualified bullish break OR broken resistance retest (low ≤ level + zone tolerance AND close > level) OR failed bearish break (close > broken support + zone tolerance) OR support sweep (low < live support AND close > live support AND previous low ≥ live support)
-Short: Qualified bearish break OR broken support retest (high ≥ level − zone tolerance AND close < level) OR failed bullish break (close < broken resistance − zone tolerance) OR resistance sweep (high > live resistance AND close < live resistance AND previous high ≤ live resistance)
+Calculation: Live resistance and support = the latest confirmed pivot high and pivot low, respectively, using independently parameterized left and right bar counts; confirm only after the right bars have elapsed. At confirmation, store the level price and zone half-width equal to current ATR multiplied by a zone-width parameter. Process existing levels and watches before replacing live levels with newly confirmed pivots. A live level ends on any close beyond it by more than the minimum close-through distance times current ATR, even if the break score is insufficient, or when a new pivot replaces it.
+Calculation: Break score = the count of these conditions: (volume SMA is available and positive AND volume / volume SMA >= participation threshold) OR (volume SMA is unavailable or nonpositive AND high - low >= range threshold times ATR); candle body / (high - low) >= body threshold AND close is in the break direction relative to open; distance of close beyond the level / ATR >= displacement threshold. Candle body / range is zero when high equals low.
+Calculation: Flip watch = each live level whose break score meets the minimum score starts an independent watch at the break bar, retaining its price, original side and stored zone half-width. Its tolerance is the greater of the stored half-width and a configurable minimum price increment. Evaluate from the next bar through the watch-window boundary bar inclusive. End the watch after the first trap or retest condition, regardless of whether that event is enabled, or after the boundary bar if neither occurs. A trap takes priority over a retest.
+Long: ATR > 0 AND live resistance exists AND close > resistance + minimum close-through distance times ATR AND upward break score >= minimum score.
+Short: ATR > 0 AND live support exists AND close < support - minimum close-through distance times ATR AND downward break score >= minimum score.
+Long: ATR > 0 AND live support exists AND close >= support - minimum close-through distance times ATR AND low < support AND close > support AND previous low >= support.
+Short: ATR > 0 AND live resistance exists AND close <= resistance + minimum close-through distance times ATR AND high > resistance AND close < resistance AND previous high <= resistance.
+Long: A resistance flip watch is active AND low <= level + tolerance AND close > level.
+Short: A support flip watch is active AND high >= level - tolerance AND close < level.
+Long: A support flip watch is active AND close > level + tolerance.
+Short: A resistance flip watch is active AND close < level - tolerance.

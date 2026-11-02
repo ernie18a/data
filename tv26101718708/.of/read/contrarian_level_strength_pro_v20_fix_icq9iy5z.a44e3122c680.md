@@ -1,9 +1,15 @@
-Calculation: Active level = configured nonzero level closest to the current close
-Calculation: Arrival strength = max(1, round(min(100, 0.40 × min(abs(close − close N bars ago) / ATR × 25, 100) + 0.30 × min(average high−low over N bars / ATR × 100, 100) + 0.30 × min(current volume / average volume × 50, 100))))
-Calculation: Order-flow delta % = 100 × [volume × ((close − low) / max(high − low, minimum tick)) − volume × ((high − close) / max(high − low, minimum tick))] / volume
-Calculation: Level touch count = number of the last lookback bars whose close is within the touch-distance threshold of the active level; level is weak when this count exceeds the maximum allowed count
-Calculation: Reaction = first applicable in this order: order-flow absorption; bullish or bearish MACD divergence (price and MACD histogram pivots, using paired successive lows or highs, diverge in opposite directions); sweep beyond the level followed by a close back across it; false break (previous bar crossed the level, current close is back across it); close crossing the level; wick crossing the level followed by a close back across it; touch; otherwise none
-Long: Active level exists AND (order-flow delta % is below the negative pressure threshold AND price arrived down AND low < active level AND close > active level OR low < active level − ATR × sweep threshold AND close > active level OR reaction is wick rejection AND arrival strength ≤ entry maximum AND (compression filter disabled OR average high−low over 3 bars < average high−low over arrival lookback) AND (extension filter disabled OR abs(close − EMA) / ATR ≤ maximum extension) AND level is not weak AND NOT arrival up OR reaction is false break AND NOT arrival up) AND one-entry-per-level restriction is disabled OR level has not been used and is not invalid AND (Supertrend blocking is disabled OR Supertrend is not bearish against this long) AND no long or short raw signal on the previous bar
-Short: Active level exists AND (order-flow delta % is above the pressure threshold AND price arrived up AND high > active level AND close < active level OR high > active level + ATR × sweep threshold AND close < active level OR reaction is wick rejection AND arrival strength ≤ entry maximum AND (compression filter disabled OR average high−low over 3 bars < average high−low over arrival lookback) AND (extension filter disabled OR abs(close − EMA) / ATR ≤ maximum extension) AND level is not weak AND arrival up OR reaction is false break AND arrival up) AND one-entry-per-level restriction is disabled OR level has not been used and is not invalid AND (Supertrend blocking is disabled OR Supertrend is not bullish against this short) AND no long or short raw signal on the previous bar
-Exit: Short, close ≤ exit EMA
-Exit: Long, close ≥ exit EMA
+Calculation: Order-flow pressure percentage = 100 × (2 × close − high − low) / (high − low); use zero when volume is zero or high equals low.
+Calculation: Bullish MACD divergence = at the confirmation bar, price low and MACD histogram both have pivots at the same bar using the same number of bars on each side, and that price pivot is below the preceding simultaneously confirmed price-low pivot while that histogram pivot is above its paired predecessor.
+Calculation: Bearish MACD divergence = at the confirmation bar, price high and MACD histogram both have pivots at the same bar using the same number of bars on each side, and that price pivot is above the preceding simultaneously confirmed price-high pivot while that histogram pivot is below its paired predecessor.
+Long: Close < close at the arrival lookback.
+Short: Close > close at the arrival lookback.
+Long: Order-flow pressure percentage > positive pressure threshold.
+Short: Order-flow pressure percentage < negative pressure threshold.
+Long: Supertrend direction is bullish.
+Short: Supertrend direction is bearish.
+Long: Bullish MACD divergence, with the optional level-proximity restriction disabled.
+Short: Bearish MACD divergence, with the optional level-proximity restriction disabled.
+Exit: long, close >= exit EMA AND the preceding bar did not satisfy this exit condition.
+Exit: short, close <= exit EMA AND the preceding bar did not satisfy this exit condition.
+Exit: long, high >= entry price + current ATR × target multiplier.
+Exit: short, low <= entry price − current ATR × target multiplier.

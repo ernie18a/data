@@ -1,16 +1,15 @@
-Calculation: Intensity magnitude = volume, or volume divided by bar duration when the volume-rate basis is selected
-Calculation: Delta buy volume = sum of lower-timeframe bar volume where close > open, using lower-timeframe bars within the current chart bar
-Calculation: Delta sell volume = sum of lower-timeframe bar volume where close < open, using lower-timeframe bars within the current chart bar
-Calculation: Delta ratio = (Delta buy volume - Delta sell volume) / total lower-timeframe volume within the current chart bar; 0 when total volume is 0
-Calculation: Unified anomaly threshold = selected method applied to the prior lookback bars of unified magnitude: rolling mean + multiplier × rolling standard deviation; or rolling median + multiplier × rolling median absolute deviation × 1.4826; or the selected rolling percentile. For the higher tier, use a greater multiplier or percentile than for the lower tier.
-Calculation: Parallel side thresholds = selected method applied separately to prior lookback bars of each side's magnitude, using the same threshold method and tier relationship as the unified threshold
-Calculation: Parallel intensity buy magnitude = intensity magnitude × (close - low) / (high - low); use half the intensity magnitude when high = low
-Calculation: Parallel intensity sell magnitude = intensity magnitude × (high - close) / (high - low); use half the intensity magnitude when high = low
-Calculation: Parallel excess = (side magnitude - its crossed threshold) / rolling standard deviation for the standard-deviation method; divide by rolling median absolute deviation for the median-deviation method; divide by the threshold for the percentile method. Compare each side against its higher-tier threshold if crossed, otherwise its lower-tier threshold.
-Calculation: Close position = 2 × (close - low) / (high - low) - 1; 0 when high = low
-Long: unified magnitude > unified anomaly threshold AND ((intensity engine is selected AND close > open) OR (delta engine is selected AND Delta buy volume - Delta sell volume >= 0))
-Long: parallel buy magnitude > parallel buy threshold AND (parallel sell magnitude <= parallel sell threshold OR parallel buy excess >= parallel sell excess) AND (delta engine is selected OR close != open)
-Long: a Delta-engine anomaly fires AND Close position > 0 AND Delta ratio < 0
-Short: unified magnitude > unified anomaly threshold AND ((intensity engine is selected AND close < open) OR (delta engine is selected AND Delta buy volume - Delta sell volume < 0))
-Short: parallel sell magnitude > parallel sell threshold AND (parallel buy magnitude <= parallel buy threshold OR parallel sell excess > parallel buy excess) AND (delta engine is selected OR close != open)
-Short: a Delta-engine anomaly fires AND Close position < 0 AND Delta ratio > 0
+Calculation: Intensity magnitude = chart-bar volume, or volume divided by the chart bar's duration in seconds, floored at a minimum duration.
+Calculation: Sub-bar buy volume, sell volume, and total volume = sums of volume in bullish, bearish, and all lower-timeframe bars within the chart bar, respectively; use all completed lower-timeframe bars and the still-forming lower-timeframe bar, if present. Net flow = buy volume minus sell volume; flow ratio = net flow divided by total volume, or zero when total volume is zero.
+Calculation: Parallel buy and sell magnitudes = sub-bar buy and sell volumes for the delta engine; for the intensity engine, intensity magnitude multiplied respectively by (close - low) / (high - low) and (high - close) / (high - low), each fraction being one half when high equals low.
+Calculation: Anomaly thresholds for a magnitude series = either the previous lookback bars' mean plus a sensitivity multiplier times their population standard deviation, their linearly interpolated percentile, or their median plus sensitivity times the normal-consistency-scaled MAD. For MAD, each bar's absolute deviation is measured from the median of the lookback bars preceding that bar, and the MAD is the median of those deviations over the previous lookback bars. The higher-tier threshold uses a higher multiplier or percentile than the lower-tier threshold.
+Calculation: Side excess = (side magnitude - its active threshold) divided by its previous-lookback population standard deviation for the mean-and-standard-deviation method, its previous-lookback MAD for the MAD method, or its active threshold for the percentile method. The active threshold is the higher-tier threshold when exceeded, otherwise the lower-tier threshold.
+Long: Unified intensity magnitude > its lower-tier anomaly threshold AND close > open.
+Short: Unified intensity magnitude > its lower-tier anomaly threshold AND close < open.
+Long: Unified delta total volume > its lower-tier anomaly threshold AND net flow >= 0.
+Short: Unified delta total volume > its lower-tier anomaly threshold AND net flow < 0.
+Long: Parallel buy magnitude > its lower-tier anomaly threshold AND (parallel sell magnitude <= its lower-tier anomaly threshold OR buy side excess >= sell side excess) AND (delta engine selected OR close != open).
+Short: Parallel sell magnitude > its lower-tier anomaly threshold AND (parallel buy magnitude <= its lower-tier anomaly threshold OR sell side excess > buy side excess) AND (delta engine selected OR close != open).
+Long: Parallel delta buy magnitude > its lower-tier anomaly threshold OR parallel delta sell magnitude > its lower-tier anomaly threshold, AND flow ratio >= the positive balanced-flow boundary AND a side wins the excess comparison when both sides exceed their thresholds.
+Short: Parallel delta buy magnitude > its lower-tier anomaly threshold OR parallel delta sell magnitude > its lower-tier anomaly threshold, AND flow ratio <= the negative balanced-flow boundary AND a side wins the excess comparison when both sides exceed their thresholds.
+Long: A unified or parallel delta anomaly fires AND flow ratio <= the negative balanced-flow boundary AND close > (high + low) / 2.
+Short: A unified or parallel delta anomaly fires AND flow ratio >= the positive balanced-flow boundary AND close < (high + low) / 2.

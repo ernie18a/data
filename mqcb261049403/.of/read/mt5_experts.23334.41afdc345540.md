@@ -1,7 +1,6 @@
-Calculation: Range high = highest high of prior completed chart-timeframe bars in the sliding window
-Calculation: Range low = lowest low of prior completed chart-timeframe bars in the sliding window
-Calculation: Daily range = either Range high − Range low, or the arithmetic mean of close[i] − close[i+1] across the sliding window
-Long: current price ≥ Range high + Daily range × offset coefficient
-Short: current price ≤ Range low − Daily range × offset coefficient
-Exit: long, price ≤ entry price − Daily range × stop-loss coefficient OR price ≥ entry price + Daily range × take-profit coefficient
-Exit: short, price ≥ entry price + Daily range × stop-loss coefficient OR price ≤ entry price − Daily range × take-profit coefficient
+Calculation: Range window = chart bars whose opening times fall within a configurable elapsed lookback ending at the most recent refresh; exclude the current bar and the oldest bar in the window.
+Calculation: Range = either the highest high minus the lowest low in the range window, or the sum of each window bar's close minus the next older bar's close, divided by the number of bars in the original window minus one. Refresh the range and window extrema at initialization and once per calendar day at the first chart bar opening at or after a configurable time; use the previous values for the entry check on that refresh bar.
+Long: Chart bar open >= range-window highest high + range × offset coefficient AND number of long entries since the start of the current calendar day < maximum entries per side.
+Short: Chart bar open <= range-window lowest low - range × offset coefficient AND number of short entries since the start of the current calendar day < maximum entries per side.
+Exit: long, stop-loss coefficient != 0 AND low <= entry price - range at entry × stop-loss coefficient OR take-profit coefficient != 0 AND high >= entry price + range at entry × take-profit coefficient.
+Exit: short, stop-loss coefficient != 0 AND high >= entry price + range at entry × stop-loss coefficient OR take-profit coefficient != 0 AND low <= entry price - range at entry × take-profit coefficient.

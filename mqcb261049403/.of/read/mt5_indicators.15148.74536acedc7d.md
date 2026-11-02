@@ -1,5 +1,5 @@
-Calculation: Gaussian average = weighted mean of the selected OHLC-derived price over the lookback, with age-i weights exp(A × i^N); use the chart timeframe or, when selected, the higher timeframe’s bar still forming.
-Calculation: Average change = current Gaussian average − previous Gaussian average.
-Calculation: Change standard deviation = population standard deviation of the current and preceding Gaussian-average changes over a lookback; normalize the current change and each threshold (coefficient × standard deviation) to price precision + 2 digits. The long threshold coefficient is smaller than the short threshold coefficient.
-Long: Gaussian average > previous Gaussian average OR normalized average change > long threshold
-Short: Gaussian average < previous Gaussian average OR normalized average change < −long threshold
+Calculation: Gaussian average = weighted mean of a selected price over a lookback ending at the current bar, with weight exp(A × k^N) for lag k; cap N at 5 when its absolute value exceeds 5. The selected price is open, high, low, close, (high + low)/2, (high + low + close)/3, (high + low + 2 × close)/4, (open + close)/2, (open + high + low + close)/4, or a trend-following price: high if close > open, low if close < open, otherwise close; the trend-following price may instead be averaged with close. Calculate on the chart timeframe or on the higher timeframe's still-forming bar.
+Calculation: Rounded change = current Gaussian average minus its previous value, rounded to the configured price precision plus two decimal places.
+Calculation: Rounded threshold = a configured lower multiplier times the population standard deviation of Gaussian average changes over a lookback ending at the current bar, rounded to the configured price precision plus two decimal places.
+Long: Gaussian average > previous Gaussian average OR rounded change > rounded threshold
+Short: Gaussian average < previous Gaussian average OR rounded change < -rounded threshold

@@ -1,9 +1,11 @@
-Calculation: VQ = (close − close n bars earlier) / n
-Calculation: KD = close − the average close of the last n bars
-Calculation: ED = the population standard deviation of closes over the last n bars
-Calculation: PV = current VQ − previous VQ
-Calculation: Raw KCI = the sum of the absolute rolling z-scores of VQ, KD, ED, and PV, using the same lookback for each
-Calculation: KCI = 100 × exp(−c × Raw KCI), with positive sign when KD ≥ 0 and negative sign when KD < 0
-Calculation: E = volume × (close − previous close)²
-Long: KD ≥ 0 OR (Raw KCI at bar t < Raw KCI at the previous bar AND Raw KCI at bar t < Raw KCI at the next bar AND Raw KCI at bar t ≤ the compression threshold AND E at bar t < E at the previous bar AND close at bar t < close at the previous bar)
-Short: KD < 0 OR (Raw KCI at bar t < Raw KCI at the previous bar AND Raw KCI at bar t < Raw KCI at the next bar AND Raw KCI at bar t ≤ the compression threshold AND E at bar t < E at the previous bar AND close at bar t ≥ close at the previous bar)
+Calculation: Base metrics at bar t = net distance = close[t] - close[t-n]; displacement = close[t] - SMA(close, n)[t]; dispersion = population standard deviation of close over n bars. For the original variants, efficiency = net distance / (0.000001 + sum of absolute close-to-close changes over the same n bars), and momentum = net distance. For the revised variant, velocity = net distance / n, and acceleration = velocity[t] - velocity[t-1].
+Calculation: Compression at bar t = for each base metric, calculate its rolling population z-score including t, using zero when its standard deviation is zero. In the original variants use up to the configured z-score lookback of available base-metric bars, requiring at least three, and sum the absolute differences between every pair of the four z-scores. In the revised variant use the configured full z-score lookback and sum the absolute values of the four z-scores.
+Calculation: Movement energy at bar t = volume[t] times (close[t] - close[t-1]) squared, replacing volume[t] with 1 when it is not positive.
+Long: close >= SMA(close, base lookback).
+Short: close < SMA(close, base lookback).
+Long: Original variants, compression[1] < compression[0] AND compression[1] < compression[2] AND compression[1] <= compression threshold AND movement energy[1] < movement energy[0] AND close[1] < close[2].
+Short: Original variants, compression[1] < compression[0] AND compression[1] < compression[2] AND compression[1] <= compression threshold AND movement energy[1] < movement energy[0] AND close[1] >= close[2].
+Long: Revised variant, compression[1] < compression[2] AND compression[1] < compression[0] AND compression[1] <= compression threshold AND movement energy[1] < movement energy[2] AND close[1] < close[2], evaluated after bar 0 closes.
+Short: Revised variant, compression[1] < compression[2] AND compression[1] < compression[0] AND compression[1] <= compression threshold AND movement energy[1] < movement energy[2] AND close[1] >= close[2], evaluated after bar 0 closes.
+Exit: long, low <= entry price - stop multiplier times dispersion at entry OR high >= entry price + target multiplier times dispersion at entry.
+Exit: short, high >= entry price + stop multiplier times dispersion at entry OR low <= entry price - target multiplier times dispersion at entry.

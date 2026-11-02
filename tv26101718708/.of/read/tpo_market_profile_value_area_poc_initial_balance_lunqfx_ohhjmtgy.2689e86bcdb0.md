@@ -1,4 +1,6 @@
-Calculation: Session value area high/low = build a time-at-price profile for the current trading-day session from completed chart bars: divide elapsed session time into configurable brackets and the session price range into configurable rows; count each bracket at most once per row it overlaps; start at the highest-count row and expand to the richer adjacent row until the configurable share of total row counts is included. The upper and lower edges of the included rows are the value area high and low.
-Calculation: Initial balance high/low = highest high and lowest low among bars in the first two session brackets.
-Long: close > session value area high AND previous close <= session value area high OR close > initial balance high AND previous close <= initial balance high
-Short: close < session value area low AND previous close >= session value area low OR close < initial balance low AND previous close >= initial balance low
+Calculation: Developing value area = On each closed chart bar, divide the current session's high-to-low range into equal price rows. Divide elapsed session time into brackets no shorter than the chart timeframe. Count each bracket once per row if any of its bars overlaps that row. Select the lowest row with the maximum count; expand from it toward the adjacent row with the larger count, choosing the upper row on a tie, until the selected rows contain the required share of all row counts. The value area high and low are the outer edges of the selected rows.
+Calculation: Initial balance high and low = The highest high and lowest low of the current session's bars in its first two brackets, using the same bracket size as the developing value area.
+Long: Close > developing value area high
+Short: Close < developing value area low
+Long: Close > initial balance high AND previous close <= current initial balance high
+Short: Close < initial balance low AND previous close >= current initial balance low

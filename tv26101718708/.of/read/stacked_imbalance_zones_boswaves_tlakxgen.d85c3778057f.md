@@ -1,4 +1,10 @@
-Calculation: Buy-dominant bar = at least the minimum consecutive count of preceding chart-timeframe bars each had (close − low) / (high − low) ≥ the dominance threshold and volume ≥ its chart-timeframe volume SMA × the volume factor; when high = low, use a buy ratio of 0.5. The current bar is not buy-dominant.
-Calculation: Sell-dominant bar = at least the minimum consecutive count of preceding chart-timeframe bars each had (high − close) / (high − low) ≥ the dominance threshold and volume ≥ its chart-timeframe volume SMA × the volume factor; when high = low, use a sell ratio of 0.5. The current bar is not sell-dominant.
-Long: Buy-dominant bar
-Short: Sell-dominant bar
+Calculation: Buy ratio = (close - low) / (high - low) when high > low; otherwise 0.5. Sell ratio = 1 - buy ratio.
+Calculation: Qualifying buy bar = buy ratio >= dominance threshold AND volume >= volume SMA multiplied by the volume factor. Qualifying sell bar = sell ratio >= the same dominance threshold AND volume >= volume SMA multiplied by the same volume factor.
+Calculation: Buy run = consecutive qualifying buy bars, ending when a bar is not a qualifying buy bar. Sell run = consecutive qualifying sell bars that are not qualifying buy bars, ending when a bar is a qualifying buy bar or is not a qualifying sell bar. Buy bars take precedence when a bar qualifies in both directions.
+Calculation: Zone = the range from the minimum of open and close to the maximum of open and close across a completed buy or sell run. Create a demand or supply zone respectively when its run fires and its upper boundary > its lower boundary. Optionally remove the oldest overlapping zone of the same side when creating a zone; then remove the oldest zones of that side until the configured maximum is met. On each bar, remove demand zones when close < their lower boundary or, in midpoint mitigation mode, their midpoint; remove supply zones when close > their upper boundary or, in midpoint mitigation mode, their midpoint. Apply creation, capacity enforcement, and mitigation in that order.
+Calculation: Bar delta = volume multiplied by (buy ratio - sell ratio). Normalized delta = bar delta divided by twice the SMA of absolute bar delta, clipped to [-1, 1]; use 0 when that SMA is not positive.
+Calculation: Zone ribbon = 0 on zone creation; on each subsequent bar, update it to the previous ribbon multiplied by a smoothing factor plus normalized delta multiplied by a reactivity factor, clipped to [-1, 1].
+Long: Previous buy-run length >= minimum stack count AND (current bar is not a qualifying buy bar OR current bar is a qualifying sell bar).
+Short: Previous sell-run length >= minimum stack count AND (current bar is not a qualifying sell bar OR current bar is a qualifying buy bar).
+Long: An active zone has existed for at least one bar AND its ribbon >= 0.
+Short: An active zone has existed for at least one bar AND its ribbon < 0.

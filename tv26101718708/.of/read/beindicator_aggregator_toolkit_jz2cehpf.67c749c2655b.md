@@ -1,4 +1,6 @@
-Long: (RSI >= RSI-based moving average AND RSI > RSI from 3 bars ago AND Strong Buy signal = 1 AND (Strong Sell signal = 1 on any of the prior 1–6 bars)) OR (low from 3 bars ago <= liquidity support AND low > liquidity support AND low[1] > liquidity support AND low[2] > liquidity support AND (close >= high[4] OR low > high[4]))
-Short: (RSI <= RSI-based moving average AND RSI < RSI from 3 bars ago AND Strong Sell signal = 1 AND (Strong Buy signal = 1 on any of the prior 1–6 bars)) OR (high from 3 bars ago >= liquidity resistance AND high < liquidity resistance AND high[1] < liquidity resistance AND high[2] < liquidity resistance AND (close <= low[4] OR high < low[4]))
-Exit: Long, low <= stop-loss or high >= take-profit, on a bar after entry
-Exit: Short, high >= stop-loss or low <= take-profit, on a bar after entry
+Calculation: Stop distance = a configurable absolute distance or entry price multiplied by a configurable percentage; round the resulting stop price to the nearest price tick.
+Calculation: Target distance = a configurable absolute distance, entry price multiplied by a configurable percentage, or the rounded stop distance multiplied by a configurable reward-to-risk ratio; round the resulting target price to the nearest price tick.
+Long: open = low
+Short: open = high AND open > close
+Exit: long, bar is after the entry bar AND (low <= entry price - stop distance OR high >= entry price + target distance)
+Exit: short, bar is after the entry bar AND (high >= entry price + stop distance OR low <= entry price - target distance)

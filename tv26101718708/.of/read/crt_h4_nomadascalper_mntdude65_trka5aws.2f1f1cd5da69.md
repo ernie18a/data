@@ -1,5 +1,13 @@
-Calculation: Timed range high/low = highest high and lowest low of chart bars in each timed higher-timeframe candle; use the completed candle
-Calculation: Timed range midpoint = (timed range high + timed range low) / 2
-Calculation: Previous higher-timeframe high/low = high/low of the last completed bar of each higher timeframe
-Long: During the projection window after a timed candle completes, its low is the first range boundary touched by a confirmed chart bar (low <= timed range low and high < timed range high, OR both boundaries are touched and close < timed range midpoint) OR a confirmed chart bar has low below a previous higher-timeframe low and close above it OR a chart bar sweeps below the timed range low and closes within the timed range OR at least 3 of the higher-timeframe lows have been swept and fewer than 3 of their highs have been swept
-Short: During the projection window after a timed candle completes, its high is the first range boundary touched by a confirmed chart bar (high >= timed range high and low > timed range low, OR both boundaries are touched and close >= timed range midpoint) OR a confirmed chart bar has high above a previous higher-timeframe high and close below it OR a chart bar sweeps above the timed range high and closes within the timed range OR at least 3 of the higher-timeframe highs have been swept and fewer than 3 of their lows have been swept
+Calculation: Timed range = high and low aggregated from chart bars in each configured New York clock window; use the last completed window for that slot. Monitor it from the first chart bar outside the window through a configured projection period, ending early when, after a first purge, a later bar reaches the opposite range extreme. A new window for the same slot replaces the monitored range when it completes.
+Calculation: First purge = the first monitored chart bar with high >= timed-range high OR low <= timed-range low. If both occur on that bar, classify it as a high purge when close >= the range midpoint and otherwise as a low purge.
+Calculation: Higher-timeframe sweep state = for each of several distinct, ordered higher timeframes, separately latch a high sweep when a completed chart bar has high > the last completed higher-timeframe bar's high AND close < that high, and latch a low sweep when low < the last completed higher-timeframe bar's low AND close > that low. Reset both latches at the start of each new bar of that higher timeframe.
+Long: The completed timed candle's close >= its open.
+Short: The completed timed candle's close < its open.
+Long: The current bar is the first low purge of a monitored timed range.
+Short: The current bar is the first high purge of a monitored timed range.
+Long: The timed range is being monitored AND low < its low AND high <= its high AND close >= its low AND close <= its high.
+Short: The timed range is being monitored AND high > its high AND close >= its low AND close <= its high.
+Long: A higher-timeframe low sweep first latches in its current higher-timeframe period.
+Short: A higher-timeframe high sweep first latches in its current higher-timeframe period.
+Long: The count of latched higher-timeframe low sweeps >= a threshold AND the count of latched higher-timeframe high sweeps < the same threshold.
+Short: The count of latched higher-timeframe high sweeps >= a threshold AND the count of latched higher-timeframe low sweeps < the same threshold.

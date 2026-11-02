@@ -1,5 +1,18 @@
-Calculation: Confirmed pivot high/low = a bar whose high/low is the highest/lowest across the same-length lookback on both sides; use only after the right-side bars complete.
-Calculation: Bullish/bearish zone = high-to-low range of the most recent opposite-colour candle within the lookback preceding a bullish/bearish structure break, respectively; create zones for the configured break types.
-Calculation: Zone strength = min(100, round(60 × mean volume from two bars after through three bars before the origin candle ÷ 20-bar SMA of volume)).
-Long: close > latest unbroken confirmed pivot high AND previous close ≤ that pivot high OR an active bullish zone meets the minimum signal strength AND (low enters its range while previous low was outside and the zone has not been retested OR the zone was retested and close > zone bottom AND previous close ≤ zone bottom)
-Short: close < latest unbroken confirmed pivot low AND previous close ≥ that pivot low OR an active bearish zone meets the minimum signal strength AND (high enters its range while previous high was outside and the zone has not been retested OR the zone was retested and close < zone top AND previous close ≥ zone top)
+Calculation: Structure break = confirm pivot highs and lows using equal numbers of bars on each side; retain the most recently confirmed pivots up to a maximum count. On each bar, select the newest unbroken high and low separately. An upward break occurs when close > the selected high AND previous close <= that same high; a downward break occurs when close < the selected low AND previous close >= that same low. Mark each broken pivot as broken. Initialize trend neutral; process upward breaks before downward breaks, setting trend to the break direction after each. A break is a change of character if its direction differs from the preceding trend, including neutral; otherwise it is a break of structure.
+Calculation: Zone = on an eligible structure break, select the most recent opposite-colored candle within an origin lookback; its high and low are the zone top and bottom. An upward break creates a bullish zone and a downward break creates a bearish zone. Zone strength is the rounded ratio of mean volume over offsets max(0, origin offset - 2) through min(current bar index, origin offset + 3), inclusive, to the current bar's volume SMA, multiplied by 60 and clamped to 0–100; substitute 1 for the SMA when it is not positive. Create the zone only if strength >= the creation threshold. Retain at most the maximum zone count, removing the oldest first. Before evaluating signals on every bar, remove zones older than the maximum age measured from the origin; mark a bullish zone mitigated when close < bottom and a bearish zone mitigated when close > top. Mitigated zones cannot signal. Each zone starts unretested; set it retested on its first qualifying early signal, including when a confirmed signal occurs on that bar. Confirmation can recur on later bars.
+Long: Close > the newest unbroken pivot high AND previous close <= that pivot high.
+Short: Close < the newest unbroken pivot low AND previous close >= that pivot low.
+Long: A pivot high is confirmed AND its value > the previous confirmed pivot high OR no previous pivot high exists.
+Short: A pivot high is confirmed AND its value <= the previous confirmed pivot high.
+Long: A pivot low is confirmed AND its value > the previous confirmed pivot low OR no previous pivot low exists.
+Short: A pivot low is confirmed AND its value <= the previous confirmed pivot low.
+Long: HMA(close) > HMA(close) displaced by two bars.
+Short: HMA(close) <= HMA(close) displaced by two bars.
+Long: HMA(close) < HMA(close) displaced by two bars AND current HMA slope > 0 AND current HMA slope > previous HMA slope.
+Short: HMA(close) > HMA(close) displaced by two bars AND current HMA slope < 0 AND current HMA slope < previous HMA slope.
+Long: A non-mitigated bullish zone has strength >= the signal threshold AND has not been retested AND low is between its bottom and top inclusive AND previous low was outside those same bounds.
+Short: A non-mitigated bearish zone has strength >= the signal threshold AND has not been retested AND high is between its bottom and top inclusive AND previous high was outside those same bounds.
+Long: A non-mitigated, retested bullish zone has strength >= the signal threshold AND close > its bottom AND previous close <= its bottom.
+Short: A non-mitigated, retested bearish zone has strength >= the signal threshold AND close < its top AND previous close >= its top.
+Exit: long, a downward structure break occurs AND the preceding trend was bullish.
+Exit: short, an upward structure break occurs AND the preceding trend was bearish.

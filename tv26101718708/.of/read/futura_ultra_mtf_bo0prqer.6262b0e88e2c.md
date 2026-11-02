@@ -1,4 +1,4 @@
-Calculation: Short-term moving average = selected moving average of close with a shorter lookback, calculated on its configured timeframe (which may be higher or lower than the chart timeframe; a higher timeframe uses its still-forming bar)
-Calculation: Long-term moving average = selected moving average of close with a longer lookback, calculated on its configured timeframe (which may be higher or lower than the chart timeframe; a higher timeframe uses its still-forming bar)
-Long: Short-term moving average > long-term moving average
-Short: Short-term moving average <= long-term moving average
+Long: The first configured moving average of close > the second configured moving average of close; each may use the chart timeframe or an independently configured higher or lower timeframe. On a higher timeframe use the last completed bar historically and the forming bar in real time; on a lower timeframe use the last completed intrabar historically and the latest available intrabar in real time.
+Short: The first configured moving average of close <= the second configured moving average of close, using the same timeframe rules as the long condition.
+Long: The forming higher-timeframe bar's close > its open.
+Short: The forming higher-timeframe bar's close < its open.

@@ -1,5 +1,7 @@
-Calculation: MACD main line = fast-period EMA of the applied price minus slow-period EMA of the applied price, with a signal-period EMA used for the MACD indicator; evaluate on the configured MACD timeframe (higher or lower than the chart timeframe as configured), using completed bars only.
-Long: MACD main line from three completed bars, oldest to newest, is non-increasing (oldest ≥ middle ≥ newest)
-Short: MACD main line from three completed bars, oldest to newest, is non-decreasing (oldest ≤ middle ≤ newest)
-Exit: Long, short condition is true OR price ≤ entry price − stop-loss distance OR price ≥ entry price + take-profit distance
-Exit: Short, long condition is true OR price ≥ entry price + stop-loss distance OR price ≤ entry price − take-profit distance
+Calculation: MACD main = EMA of the selected applied price with a shorter period minus EMA of that price with a longer period; use the last completed bar and the two preceding bars of the configured indicator timeframe, which may be higher or lower than the chart timeframe.
+Calculation: Long stop = entry price minus the enabled stop-loss distance; at each new chart bar, if trailing is enabled and chart open minus entry price > trailing distance plus trailing step AND the existing stop < chart open minus trailing distance minus trailing step, set the stop to chart open minus trailing distance.
+Calculation: Short stop = entry price plus the enabled stop-loss distance; at each new chart bar, if trailing is enabled and entry price minus chart open > trailing distance plus trailing step AND (the existing stop > chart open plus trailing distance plus trailing step OR no stop exists), set the stop to chart open plus trailing distance.
+Long: At a new chart bar, MACD main two completed indicator bars ago >= MACD main one completed indicator bar ago AND MACD main one completed indicator bar ago >= MACD main on the last completed indicator bar.
+Short: At a new chart bar, MACD main two completed indicator bars ago <= MACD main one completed indicator bar ago AND MACD main one completed indicator bar ago <= MACD main on the last completed indicator bar AND the long condition is false.
+Exit: long, short condition OR low <= long stop OR high >= entry price plus the enabled take-profit distance.
+Exit: short, long condition OR high >= short stop OR low <= entry price minus the enabled take-profit distance.

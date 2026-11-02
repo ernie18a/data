@@ -1,2 +1,3 @@
-Long: The selected moving average on the chart timeframe, or on the configured higher timeframe's still-forming bar, is greater than its value on the preceding bar of that timeframe.
-Short: The selected moving average on the chart timeframe, or on the configured higher timeframe's still-forming bar, is less than its value on the preceding bar of that timeframe.
+Calculation: Moving-average direction = sign of the most recent nonzero change in a selected moving average of a selected OHLC-derived price; retain the previous direction when the average is unchanged. Use either chart-timeframe bars or the still-forming bar and preceding bars of a higher timeframe.
+Long: Moving-average direction > 0
+Short: Moving-average direction < 0

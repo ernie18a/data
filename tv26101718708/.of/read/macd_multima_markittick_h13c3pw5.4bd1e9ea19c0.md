@@ -1,11 +1,11 @@
-Calculation: MACD line = fast selected moving average of the chosen price source minus slow selected moving average of the same source; fast lookback is shorter than slow lookback
-Calculation: Signal line = selected moving average of the MACD line with its own lookback
-Calculation: Risk distance = chart-timeframe ATR × stop multiple
-Calculation: Long stop = entry price − risk distance; short stop = entry price + risk distance
-Calculation: Target prices = entry price ± risk distance × target multiples, with the three multiples sorted from smallest to largest
-Long: On a completed chart-timeframe bar, MACD line crosses above signal line AND fast lookback < slow lookback AND ATR and both lines are available AND risk distance > one tick AND long stop > 0 AND first target > entry price
-Short: On a completed chart-timeframe bar, MACD line crosses below signal line AND fast lookback < slow lookback AND ATR and both lines are available AND risk distance > one tick AND farthest short target > 0 AND short stop > entry price
-Exit: long, high ≥ first target (partial close) OR high ≥ second target (partial close) OR high ≥ third target OR, on a completed bar, close < long stop OR MACD line crosses below signal line
-Exit: short, low ≤ first target (partial close) OR low ≤ second target (partial close) OR low ≤ third target OR, on a completed bar, close > short stop OR MACD line crosses above signal line
-Long: MACD line > selected candle reference (signal line in signal mode, zero in zero mode)
-Short: MACD line < selected candle reference (signal line in signal mode, zero in zero mode)
+Calculation: MACD line = short-length moving average of the selected price source minus long-length moving average of the same source, using the same selected moving-average type.
+Calculation: Signal line = moving average of the MACD line using the same selected moving-average type and a separate signal length.
+Calculation: Risk distance = ATR at entry multiplied by a positive stop multiplier; retain this distance for the trade.
+Long: MACD line > signal line OR MACD line > 0, according to the selected reference; when equal to the reference, retain the last non-equal direction.
+Short: MACD line < signal line OR MACD line < 0, according to the selected reference; when equal to the reference, retain the last non-equal direction.
+Long: On a closed bar, MACD line crosses above signal line AND short moving-average length < long moving-average length AND risk distance > 0 AND close - risk distance > 0 AND position side is not long; enter at close.
+Short: On a closed bar, MACD line crosses below signal line AND short moving-average length < long moving-average length AND risk distance > 0 AND close - risk distance × largest target multiplier > 0 AND position side is not short; enter at close.
+Exit: long, on a bar after entry, high >= entry price + risk distance × a target multiplier; the two smaller target multipliers each trigger one partial exit and the largest triggers a full exit.
+Exit: short, on a bar after entry, low <= entry price - risk distance × a target multiplier; the two smaller target multipliers each trigger one partial exit and the largest triggers a full exit.
+Exit: long, on a closed bar after entry, close < entry price - risk distance OR MACD line crosses below signal line AND short moving-average length < long moving-average length AND ATR is available.
+Exit: short, on a closed bar after entry, close > entry price + risk distance OR MACD line crosses above signal line AND short moving-average length < long moving-average length AND ATR is available.

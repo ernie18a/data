@@ -1,6 +1,5 @@
-Calculation: Prior-window high = highest high over a lookback of 3–99 chart bars, starting 3 bars before the current bar
-Calculation: Prior-window low = lowest low over a lookback of 3–99 chart bars, starting 3 bars before the current bar
-Long: absolute(current Bid − close two bars ago) > configurable point distance AND (high two bars ago < Prior-window high OR high three bars ago < Prior-window high OR high four bars ago < Prior-window high) AND open one bar ago > Prior-window high AND low two bars ago < high one bar ago
-Short: absolute(current Ask − close two bars ago) > configurable point distance AND (low two bars ago > Prior-window low OR low three bars ago > Prior-window low OR low four bars ago > Prior-window low) AND open one bar ago < Prior-window low AND low one bar ago < high two bars ago
-Exit: Long, price ≤ stop-loss level OR price ≥ take-profit level
-Exit: Short, price ≥ stop-loss level OR price ≤ take-profit level
+Calculation: Breakout direction = For each lookback length from the shortest to the longest, in increasing order, find the highest high and lowest low over that many chart bars starting three bars before the current bar. Return long if the previous bar's open is above that highest high AND at least one of the highs two, three, or four bars before the current bar is below that highest high. Otherwise return short if the previous bar's open is below that lowest low AND at least one of the lows two, three, or four bars before the current bar is above that lowest low. Stop at the first returned direction.
+Long: Breakout direction = long AND absolute difference between the current open and the close two bars ago > entry distance AND low two bars ago < previous high.
+Short: Breakout direction = short AND absolute difference between the current open and the close two bars ago > entry distance AND previous low < high two bars ago.
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance OR the break-even option is enabled AND a prior bar's open < entry price - break-even activation distance AND high >= entry price - break-even stop offset.

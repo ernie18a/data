@@ -1,16 +1,17 @@
-Calculation: Opening-range high = highest high during the configured opening-range session for the current day
-Calculation: Opening-range low = lowest low during the configured opening-range session for the current day
-Calculation: Opening-range midpoint = (opening-range high + opening-range low) / 2
-Calculation: Stop level = configured opening-range midpoint, opposite opening-range boundary, or fixed distance from entry price, according to the selected stop method
-Calculation: Risk distance = absolute difference between entry price and stop level
-Calculation: Profit targets = entry price plus (long) or minus (short) risk distance multiplied by each configured reward-to-risk multiple
-Long: Opening range is complete AND no entry signal has fired today AND (entry mode is Breakout AND close crosses above opening-range high OR entry mode is Retest Zone AND a prior close crossed above opening-range high and, within the configured timeout, low <= opening-range high AND close > opening-range high OR entry mode is Retest Midpoint AND a prior close crossed above opening-range high and, within the configured timeout, low <= opening-range midpoint AND close > opening-range high)
-Short: Opening range is complete AND no entry signal has fired today AND (entry mode is Breakout AND close crosses below opening-range low OR entry mode is Retest Zone AND a prior close crossed below opening-range low and, within the configured timeout, high >= opening-range low AND close < opening-range low OR entry mode is Retest Midpoint AND a prior close crossed below opening-range low and, within the configured timeout, high >= opening-range midpoint AND close < opening-range low)
-Exit: Long, low <= stop level
-Exit: Long, high >= first profit target
-Exit: Long, high >= second profit target
-Exit: Long, high >= third profit target
-Exit: Short, high >= stop level
-Exit: Short, low <= first profit target
-Exit: Short, low <= second profit target
-Exit: Short, low <= third profit target
+Calculation: Opening range = the maximum high and minimum low of chart bars in the configured New York time session; its midpoint is their average. Complete it on the first bar outside the session and reset it when the exchange day of week changes.
+Calculation: Breakout = close crosses above the completed opening-range high or below its low, respectively: current close is beyond the level and previous close was at or on the other side of the previous bar's level.
+Calculation: Pending retest = a breakout recorded after range completion, with its direction and bar. On each later bar, check the retest first; otherwise cancel it if close returns to or inside the broken boundary, then cancel it if the elapsed chart-bar count reaches the timeout. After cancellation, a new breakout on that same bar can start another pending retest. Reset at the exchange day-of-week change.
+Calculation: Initial stop = opening-range midpoint, opposite opening-range boundary, or signal close minus a fixed distance for a long and plus that distance for a short, according to the selected stop method. Risk = absolute difference between signal close and initial stop. Each of three profit targets = signal close plus risk times its configured reward-to-risk multiple for a long, or minus that amount for a short; targets are undefined when risk is zero.
+Calculation: Active stop = initial stop, or signal close after a bar with an open long has high at or above the first target or a bar with an open short has low at or below the first target, if moving to breakeven is enabled. Reset the stored stop and targets at the exchange day-of-week change.
+Calculation: Fair-value-gap threshold = a configured fraction, or the cumulative sum of (high minus low) divided by low from the first chart bar through the current bar, divided by the zero-based current chart-bar index.
+Calculation: Higher-timeframe swing highs and lows = for each of two independently configured higher timeframes, map the requested high and low onto chart bars using the last completed higher-timeframe bar on historical bars and the still-forming higher-timeframe bar in realtime; then find pivots on those mapped chart-bar series using equal numbers of chart bars on each side. Retain the two most recently confirmed pivot highs and the two most recently confirmed pivot lows for each timeframe.
+Long: Trade signals enabled AND opening range complete AND no entry signal has fired since the exchange day-of-week change AND breakout mode selected AND close crosses above the opening-range high AND no retest is pending.
+Short: Trade signals enabled AND opening range complete AND no entry signal has fired since the exchange day-of-week change AND breakout mode selected AND close crosses below the opening-range low AND no retest is pending.
+Long: Trade signals enabled AND no entry signal has fired since the exchange day-of-week change AND an upward breakout is pending from an earlier bar AND low is at or below the selected retest level AND close is above the opening-range high. The retest level is the opening-range high or midpoint according to the selected retest mode.
+Short: Trade signals enabled AND no entry signal has fired since the exchange day-of-week change AND a downward breakout is pending from an earlier bar AND high is at or above the selected retest level AND close is below the opening-range low. The retest level is the opening-range low or midpoint according to the selected retest mode.
+Long: Low > high two bars ago AND previous close > high two bars ago AND (low minus high two bars ago) divided by high two bars ago > fair-value-gap threshold.
+Short: High < low two bars ago AND previous close < low two bars ago AND (low two bars ago minus high) divided by high > fair-value-gap threshold.
+Long: For either higher timeframe, latest confirmed swing high > preceding confirmed swing high AND latest confirmed swing low > preceding confirmed swing low.
+Short: For either higher timeframe, latest confirmed swing high < preceding confirmed swing high AND latest confirmed swing low < preceding confirmed swing low.
+Exit: long, trade signals enabled AND low <= active stop OR trade signals enabled AND high >= any enabled profit target; the first two targets have configurable partial quantities and the third has a configurable quantity or closes the remainder when its quantity is zero.
+Exit: short, trade signals enabled AND high >= active stop OR trade signals enabled AND low <= any enabled profit target; the first two targets have configurable partial quantities and the third has a configurable quantity or closes the remainder when its quantity is zero.

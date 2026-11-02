@@ -1,11 +1,20 @@
-Calculation: Confirmed swing high = the highest swing-source value over pivot-length bars before and after the candidate bar; it becomes available pivot-length bars later. Swing source is high or max(open, close).
-Calculation: Confirmed swing low = the lowest swing-source value over pivot-length bars before and after the candidate bar; it becomes available pivot-length bars later. Swing source is low or min(open, close).
-Calculation: Sweep buffer = ATR × buffer multiplier, or a configurable fixed tick buffer.
-Calculation: Lowest-low sweep = current swing-source low < the prior bar's lowest swing-source low over the sweep lookback.
-Calculation: Highest-high sweep = current swing-source high > the prior bar's highest swing-source high over the sweep lookback.
-Calculation: Low-sweep reclaim = within the maximum sweep age, close > latest lowest-low sweep price + sweep buffer; either on the sweep bar or after the prior close was at or below that level.
-Calculation: High-sweep reclaim = within the maximum sweep age, close < latest highest-high sweep price − sweep buffer; either on the sweep bar or after the prior close was at or above that level.
-Long: Lowest-low sweep OR low-sweep reclaim OR (close > latest confirmed swing high AND (sweep filter disabled OR low-sweep reclaim) AND (trend mode is CHOP OR longs are enabled in TREND mode and close > trend EMA) AND sweep delay has elapsed or is disabled AND long cluster block is disabled or absent AND long reclaim suppression is absent AND volume filter is disabled or passes).
-Short: Highest-high sweep OR high-sweep reclaim OR (close < latest confirmed swing low AND (trend mode is CHOP OR shorts are enabled in TREND mode and close < trend EMA) AND sweep delay has elapsed or is disabled AND short cluster block is disabled or absent AND short reclaim suppression is absent AND volume filter is disabled or passes).
-Exit: Long, low ≤ locked stop OR high ≥ locked target.
-Exit: Short, high ≥ locked stop OR low ≤ locked target.
+Calculation: Structure low and high = either low and high, or min(open, close) and max(open, close), respectively, using the same choice throughout.
+Calculation: Swing low and swing high = most recent confirmed pivot of the corresponding structure source, with equal numbers of bars on either side required for confirmation.
+Calculation: Down sweep and up sweep = structure low below the minimum structure low, or structure high above the maximum structure high, respectively, over the preceding sweep-lookback bars; retain the latest sweep price and bar separately for each direction.
+Calculation: Buffer = either ATR multiplied by a factor or a fixed price-distance parameter.
+Calculation: Down reclaim = close above the latest down-sweep price plus buffer; up reclaim = close below the latest up-sweep price minus buffer. In crossing mode additionally require the previous close to be at or below the current down-reclaim level, or at or above the current up-reclaim level, respectively.
+Calculation: Down and up sweep counts = counts of the respective sweeps over a rolling cluster-lookback window including the current bar.
+Calculation: Short suppression bar = most recent bar with down sweep count at or above the cluster threshold AND down reclaim; long suppression bar = most recent bar with up sweep count at or above the cluster threshold AND up reclaim.
+Calculation: Sweep volume ratio = volume divided by its SMA on the most recent bar containing either sweep; unavailable if the SMA is unavailable or nonpositive.
+Calculation: Long stop = latest down-sweep price minus buffer, or swing low minus buffer if no down sweep exists; short stop = latest up-sweep price plus buffer, or swing high plus buffer if no up sweep exists.
+Calculation: Long target = either close plus an R multiplier times (close minus long stop), or close multiplied by (1 plus a fixed percentage); short target = either close minus the same R multiplier times (short stop minus close), or close multiplied by (1 minus the fixed percentage). For locked exits, retain stop and target calculated on the bar where the position is first observed open; for drifting exits, recalculate them each bar.
+Long: Structure low < minimum structure low over the preceding sweep-lookback bars.
+Short: Structure high > maximum structure high over the preceding sweep-lookback bars.
+Long: Bars since latest down sweep <= maximum sweep age AND down reclaim.
+Short: Bars since latest up sweep <= maximum sweep age AND up reclaim.
+Long: Close > swing high AND (sweep filter disabled OR (bars since latest down sweep <= maximum sweep age AND down reclaim)) AND (trend filter disabled OR close > EMA of close).
+Short: Close < swing low AND (trend filter disabled OR close < EMA of close).
+Long: Position is flat AND bars since last position close >= cooldown AND close > swing high AND (sweep filter disabled OR (bars since latest down sweep <= maximum sweep age AND down reclaim)) AND (trend filter disabled OR close > EMA of close) AND (sweep delay disabled OR bars since latest sweep of either direction > delay) AND (cluster filter disabled OR up sweep count < cluster threshold) AND (reclaim suppression disabled OR no long suppression bar exists OR bars since long suppression bar > maximum sweep age) AND (current-volume filter disabled OR volume SMA unavailable OR volume > volume SMA times its multiplier) AND (sweep-volume filter disabled OR sweep volume ratio unavailable OR sweep volume ratio >= its threshold).
+Short: Position is flat AND bars since last position close >= cooldown AND close < swing low AND (trend filter disabled OR close < EMA of close) AND (sweep delay disabled OR bars since latest sweep of either direction > delay) AND (cluster filter disabled OR down sweep count < cluster threshold) AND (reclaim suppression disabled OR no short suppression bar exists OR bars since short suppression bar > maximum sweep age) AND (current-volume filter disabled OR volume SMA unavailable OR volume > volume SMA times its multiplier) AND (sweep-volume filter disabled OR sweep volume ratio unavailable OR sweep volume ratio >= its threshold).
+Exit: long, low <= long stop OR high >= long target.
+Exit: short, high >= short stop OR low <= short target.

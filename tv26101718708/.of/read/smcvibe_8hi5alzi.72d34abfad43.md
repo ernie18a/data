@@ -1,3 +1,17 @@
-Calculation: Confirmed swing high = a bar high greater than the highs of the selected number of bars before and after it; confirmed swing low = a bar low less than the lows of the selected number of bars before and after it.
-Long: Confirmed swing high > previous confirmed swing high OR confirmed swing low > previous confirmed swing low OR low > high two bars earlier AND previous close > high two bars earlier OR close > open AND previous close < previous open AND close > previous open
-Short: Confirmed swing high <= previous confirmed swing high OR confirmed swing low <= previous confirmed swing low OR high < low two bars earlier AND previous close < low two bars earlier OR close < open AND previous close > previous open AND close < previous open
+Calculation: Confirmed pivot high or low = a bar whose high or low is the corresponding extreme over equal numbers of preceding and following chart bars; recognize it only when the following bars have completed.
+Calculation: Timeframe bias score = add one for each bullish pattern and subtract one for each bearish pattern, then clamp the sum to symmetric positive and negative limits. A bullish wick pattern has the previous bar's lower wick greater than a body multiple and a range fraction, and its upper wick less than another range fraction; the bearish pattern reverses the wicks. A bullish engulfing pattern has the previous bar close above its open, the bar before it close below its open, the previous close at or above the earlier open, and the previous open at or below the earlier close; the bearish pattern reverses all inequalities. Add one if the current EMA of close exceeds its previous value and subtract one if it is lower.
+Calculation: Net bias = the weighted sum of four timeframe bias scores, treating unavailable scores as zero; the two shortest timeframes have equal weights, and the successively longer timeframes have successively larger weights. Each timeframe may be higher or lower than the chart timeframe; use the last completed higher-timeframe bar or the last lower-timeframe bar within the chart bar.
+Long: A confirmed pivot high is greater than the preceding confirmed pivot high OR no preceding confirmed pivot high exists.
+Short: A confirmed pivot high is less than or equal to the preceding confirmed pivot high.
+Long: A confirmed pivot low is greater than the preceding confirmed pivot low OR no preceding confirmed pivot low exists.
+Short: A confirmed pivot low is less than or equal to the preceding confirmed pivot low.
+Long: Low > high two bars earlier AND previous close > high two bars earlier.
+Short: High < low two bars earlier AND previous close < low two bars earlier.
+Long: Close > open AND previous close < previous open AND close > previous open.
+Short: Close < open AND previous close > previous open AND close < previous open.
+Long: On a change in another timeframe's bar timestamp, its low > its high two bars earlier AND its previous close > its high two bars earlier; the other timeframe can be higher or lower than the chart timeframe, using its last completed higher-timeframe bar or its last lower-timeframe bar within the chart bar.
+Short: On a change in another timeframe's bar timestamp, its high < its low two bars earlier AND its previous close < its low two bars earlier; the other timeframe can be higher or lower than the chart timeframe, using its last completed higher-timeframe bar or its last lower-timeframe bar within the chart bar.
+Long: On a change in another timeframe's bar timestamp, its close > its open AND its previous close < its previous open AND its close > its previous open; the other timeframe can be higher or lower than the chart timeframe, using its last completed higher-timeframe bar or its last lower-timeframe bar within the chart bar.
+Short: On a change in another timeframe's bar timestamp, its close < its open AND its previous close > its previous open AND its close < its previous open; the other timeframe can be higher or lower than the chart timeframe, using its last completed higher-timeframe bar or its last lower-timeframe bar within the chart bar.
+Long: Net bias > 0.
+Short: Net bias < 0.

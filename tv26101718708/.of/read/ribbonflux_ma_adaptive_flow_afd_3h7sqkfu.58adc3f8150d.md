@@ -1,2 +1,5 @@
-Long: Lead moving average > Base moving average
-Short: Lead moving average < Base moving average
+Calculation: Fibonacci EMA composite = mean of five EMAs of the selected price source, with periods rounded from the selected length multiplied by 5/34, 8/34, 13/34, 21/34, and 34/34; each period is at least one bar.
+Calculation: McGinley Dynamic = SMA of the selected source for the initial value, then previous value + (source - previous value) / (0.6 * length * (source / previous value)^4).
+Calculation: Compression = state of the percentile rank of abs(first MA - second MA) / ATR over a lookback: enter when rank is at or below a lower threshold, remain until rank reaches an upper threshold, and reset when the rank is unavailable.
+Long: First MA > second MA AND (fixed dynamics OR first-to-second MA spacing is not compressed).
+Short: First MA < second MA AND (fixed dynamics OR first-to-second MA spacing is not compressed).

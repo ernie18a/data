@@ -1,6 +1,6 @@
-Calculation: confirmed swing high = high at the center of a symmetric window, greater than the highs in the configured number of bars before and after it; confirm only after the bars after it are complete
-Calculation: confirmed swing low = low at the center of a symmetric window, lower than the lows in the configured number of bars before and after it; confirm only after the bars after it are complete
-Calculation: bullish break source = close or high, according to the break-confirmation setting
-Calculation: bearish break source = close or low, according to the break-confirmation setting
-Long: bullish break source > latest unbroken confirmed swing high AND previous bar's bullish break source <= that swing high
-Short: bearish break source < latest unbroken confirmed swing low AND previous bar's bearish break source >= that swing low
+Calculation: Confirmed swing high = a high greater than or equal to each high in an equal-length preceding window and greater than each high in an equal-length following window; it becomes available when the following window completes. Confirmed swing low = a low less than or equal to each low in the preceding window and less than each low in the following window, using the same window length.
+Calculation: Tracked high and low = the most recently confirmed swing high and low, respectively. Each newly confirmed swing replaces the tracked level of its kind and resets that level to unbroken before evaluating the current bar. A level becomes broken after its first qualifying break and remains broken until replaced.
+Calculation: Bullish break = tracked high is available and unbroken AND the current bullish source > tracked high AND the previous bar's bullish source <= the current tracked high. Bearish break = tracked low is available and unbroken AND the current bearish source < tracked low AND the previous bar's bearish source >= the current tracked low. Use close for both sources in close mode; use high for the bullish source and low for the bearish source in wick mode.
+Calculation: Structural state = neutral initially; set it bullish on a bullish break and bearish on a bearish break. If both breaks occur on the same bar, process the bullish break first and the bearish break second.
+Long: bullish break OR structural state = bullish
+Short: bearish break OR structural state = bearish

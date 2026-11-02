@@ -1,6 +1,10 @@
-Calculation: Kalman velocity = Run a two-state constant-velocity Kalman filter on 100 × ln(close), with position and velocity states initialized to the first transformed close and 0, and covariance P11=1, P12=0, P22=1. Each completed chart bar, predict position'=position+velocity, velocity'=velocity, P11'=P11+2P12+P22+Q, P12'=P12+P22, P22'=P22+Q; with measurement z=100 × ln(close), S=P11'+R, K1=P11'/S, K2=P12'/S, innovation=z-position', update position=position'+K1×innovation, velocity=velocity'+K2×innovation, P11=(1-K1)×P11', P12=(1-K1)×P12', P22=P22'-K2×P12'.
-Calculation: Velocity uncertainty bounds = Kalman velocity ± k × sqrt(max(P22, 1e-10)).
-Long: Lower uncertainty bound > 0 at the confirmation delay AND lower uncertainty bound <= 0 one bar before that AND at least the minimum signal spacing since the prior long signal.
-Short: Upper uncertainty bound < 0 at the confirmation delay AND upper uncertainty bound >= 0 one bar before that AND at least the minimum signal spacing since the prior short signal.
-Exit: Long, lower uncertainty bound > 0 on the previous bar AND current lower uncertainty bound <= 0 AND current upper uncertainty bound >= 0.
-Exit: Short, upper uncertainty bound < 0 on the previous bar AND current lower uncertainty bound <= 0 AND current upper uncertainty bound >= 0.
+Calculation: Kalman velocity and variance = On each completed chart bar, set y = 100 × ln(max(source price, 10^-20)). Initialize position x = y, velocity v = 0, and covariance entries a = 1, b = 0, c = 1 on the first bar, then perform the update on that same bar. For each update, predict X = x + v, A = a + 2b + c + Q, B = b + c, C = c + Q; calculate gains g1 = A / (A + R), g2 = B / (A + R), and innovation e = y - X. Update x = X + g1 × e, v = v + g2 × e, a = (1 - g1) × A, b = (1 - g1) × B, c = C - g2 × B. Q and R are process and measurement noise parameters.
+Calculation: Significance bounds = lower bound v - k × sqrt(max(c, 10^-10)) and upper bound v + k × sqrt(max(c, 10^-10)), where k is a sigma multiplier.
+Long: Kalman velocity > 0
+Short: Kalman velocity < 0
+Long: lower significance bound > 0
+Short: upper significance bound < 0
+Long: lower significance bound was > 0 a confirmation-delay number of bars ago AND its preceding value was <= 0 AND the number of bars since the previous long significance-cross signal is >= the signal spacing parameter or no such signal has occurred
+Short: upper significance bound was < 0 a confirmation-delay number of bars ago AND its preceding value was >= 0 AND the number of bars since the previous short significance-cross signal is >= the signal spacing parameter or no such signal has occurred
+Exit: long, previous lower significance bound > 0 AND current lower significance bound <= 0 AND current upper significance bound >= 0
+Exit: short, previous upper significance bound < 0 AND current lower significance bound <= 0 AND current upper significance bound >= 0

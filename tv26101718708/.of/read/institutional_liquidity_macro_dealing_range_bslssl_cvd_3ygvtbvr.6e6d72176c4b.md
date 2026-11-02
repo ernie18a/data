@@ -1,14 +1,11 @@
-Calculation: Swing high = a bar whose high is higher than the highs of the configured number of bars on both sides
-Calculation: Swing low = a bar whose low is lower than the lows of the configured number of bars on both sides
-Calculation: Bullish FVG = current low > high two bars ago AND previous close > high two bars ago
-Calculation: Bearish FVG = current high < low two bars ago AND previous close < low two bars ago
-Calculation: Bullish iFVG = an active bearish FVG whose close is above its upper boundary
-Calculation: Bearish iFVG = an active bullish FVG whose close is below its lower boundary
-Calculation: Demand breakout = previous bar is bullish AND its body is at least the configured multiple of its ATR AND bar two or three bars ago is bearish AND the resulting zone does not overlap an active demand zone
-Calculation: Supply breakout = previous bar is bearish AND its body is at least the configured multiple of its ATR AND bar two or three bars ago is bullish AND the resulting zone does not overlap an active supply zone
-Calculation: Equilibrium = midpoint of the highest high and lowest low over the configured dealing-range lookback
-Calculation: Range delta = 100 × (sum of volume on up bars − sum of volume on down bars) / sum of volume on up and down bars over the configured dealing-range lookback
-Long: low <= an active swing-low level AND close > that level OR Bullish FVG OR Bullish iFVG OR Demand breakout OR price enters the lower discount band AND Range delta > 0
-Short: high >= an active swing-high level AND close < that level OR Bearish FVG OR Bearish iFVG OR Supply breakout
-Exit: Long, close >= Equilibrium
-Exit: Short, close <= Equilibrium
+Calculation: Active swing levels = confirmed pivot highs and lows using left and right lookbacks; retain separate chronological lists capped at twice the configurable level limit, including swept levels. Mark a level swept on its first high >= pivot high or low <= pivot low; remove swept levels after the retention period or immediately if the removal option is selected.
+Calculation: Active gaps = bullish gaps with low > high two bars ago AND previous close > high two bars ago, bounded by those two prices; bearish gaps with high < low two bars ago AND previous close < low two bars ago, bounded by those two prices. Retain a chronological list capped at twice the configurable gap limit. A bullish gap inverts when close < its lower bound; a bearish gap inverts when close > its upper bound. Remove a gap from inversion eligibility after its first inversion.
+Calculation: Active demand and supply zones = the high-to-low range of the qualifying base candle two bars ago, or three bars ago if the candle two bars ago does not qualify. Keep separate chronological lists capped at the configurable zone limit. Remove demand zones when close <= their low and supply zones when close >= their high. Test overlap before removing zones on the current bar.
+Long: Low <= an unswept pivot low AND close > that pivot low.
+Short: High >= an unswept pivot high AND close < that pivot high.
+Long: Low > high two bars ago AND previous close > high two bars ago.
+Short: High < low two bars ago AND previous close < low two bars ago.
+Long: Close > the upper bound of an active, uninverted bearish gap.
+Short: Close < the lower bound of an active, uninverted bullish gap.
+Long: Previous close > previous open AND previous candle body >= a configurable multiple of previous ATR AND (close two bars ago <= open two bars ago OR close three bars ago <= open three bars ago) AND the qualifying base candle range does not overlap any active demand zone.
+Short: Previous close < previous open AND previous candle body >= a configurable multiple of previous ATR AND (close two bars ago >= open two bars ago OR close three bars ago >= open three bars ago) AND the qualifying base candle range does not overlap any active supply zone.

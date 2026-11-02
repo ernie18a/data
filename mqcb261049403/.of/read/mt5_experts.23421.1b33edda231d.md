@@ -1,6 +1,8 @@
-Calculation: Latest upper fractal = high of the most recent completed five-bar pattern whose middle bar’s high exceeds the highs of the two bars before and two bars after it, on the chart timeframe
-Calculation: Latest lower fractal = low of the most recent completed five-bar pattern whose middle bar’s low is below the lows of the two bars before and two bars after it, on the chart timeframe
-Long: current bar open >= latest upper fractal
-Short: current bar open <= latest lower fractal
-Exit: Long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance OR low <= active trailing stop
-Exit: Short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance OR high >= active trailing stop
+Calculation: Upper fractal level = high of the most recent confirmed upper Fractals pivot within the fractal timeframe lookback, excluding its current and immediately preceding bars; absent if none exists. The fractal timeframe may be the chart timeframe or a higher or lower timeframe, and its current bar is still forming.
+Calculation: Lower fractal level = low of the most recent confirmed lower Fractals pivot within the same fractal timeframe lookback, excluding its current and immediately preceding bars; absent if none exists. The fractal timeframe may be the chart timeframe or a higher or lower timeframe, and its current bar is still forming.
+Calculation: Long stop = entry price minus the stop-loss distance if enabled; at each new chart bar, update it to the bar's open minus the trailing distance if trailing is enabled, open minus entry price is greater than trailing distance plus trailing step, and the existing stop is below open minus trailing distance minus trailing step. If no stop exists, use the same update condition with the existing stop treated as zero.
+Calculation: Short stop = entry price plus the stop-loss distance if enabled; at each new chart bar, update it to the bar's open plus the trailing distance if trailing is enabled, entry price minus open is greater than trailing distance plus trailing step, and the existing stop is above open plus trailing distance plus trailing step or no stop exists.
+Long: At a new chart bar, reverse is disabled AND open >= upper fractal level OR reverse is enabled AND open <= lower fractal level.
+Short: At a new chart bar, reverse is disabled AND open <= lower fractal level OR reverse is enabled AND open >= upper fractal level.
+Exit: long, low <= long stop OR take profit is enabled AND high >= entry price plus take-profit distance OR close opposite is enabled AND a short decision occurs.
+Exit: short, high >= short stop OR take profit is enabled AND low <= entry price minus take-profit distance OR close opposite is enabled AND a long decision occurs.

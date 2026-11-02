@@ -1,19 +1,17 @@
-Calculation: Daily, weekly, and monthly POC = for each period, divide the price range of its last completed period into equal-width rows, add each chart bar’s volume to the row containing its HLC3, and take the midpoint of the row with the greatest volume.
-Calculation: VWAP Gate = volume-weighted average of HLC3 over the selected daily, weekly, or monthly period, using the last completed period.
-Calculation: VWAP deviation gates = VWAP Gate plus or minus one standard deviation of HLC3 weighted by volume over the selected period; the upper and lower gates use the same calculation.
-Calculation: Near a control level = absolute percentage distance from close to a Daily, weekly, or monthly POC, VWAP Gate, or first upper or lower deviation gate is at most the neutral-distance threshold.
-Long: close crosses above VWAP Gate AND strong-volume filter passes when required
-Long: low <= first lower VWAP deviation gate AND close > first lower VWAP deviation gate AND close > open
-Long: close > first upper VWAP deviation gate AND previous close <= previous first upper VWAP deviation gate
-Long: close crosses above active POC
-Long: close is above VWAP Gate AND (close crosses above VWAP Gate with strong-volume filter passing when required OR close crosses above active POC OR close > first upper VWAP deviation gate AND previous close <= previous first upper VWAP deviation gate)
-Long: close is above exactly 3 or all 4 of Daily POC, weekly POC, monthly POC, and VWAP Gate AND not near any control level
-Long: close is below VWAP Gate AND low <= first lower VWAP deviation gate AND close > first lower VWAP deviation gate AND close > open
-Short: close crosses below VWAP Gate
-Short: high >= first upper VWAP deviation gate AND close < first upper VWAP deviation gate AND close < open
-Short: close < first lower VWAP deviation gate AND previous close >= previous first lower VWAP deviation gate
-Short: close crosses below active POC
-Short: close is below VWAP Gate AND (close < first lower VWAP deviation gate AND previous close >= previous first lower VWAP deviation gate OR close crosses below VWAP Gate OR close crosses below active POC)
-Short: close is below exactly 1 or all 0 of Daily POC, weekly POC, monthly POC, and VWAP Gate AND not near any control level
-Exit: long, none
-Exit: short, none
+Calculation: Period POC = For each selected period, collect chart-bar typical prices (high + low + close) / 3 and nonnegative volumes. Divide the range from the minimum to maximum collected price into equal-width rows; add each bar’s entire volume to the row containing its typical price, clamping the maximum price to the last row. Return the midpoint of the row with the greatest volume, choosing the lowest row on a tie; if all prices are equal, return that price. Use the last completed period. Calculate three POCs using shorter, intermediate, and longer periods; the selected active POC is one of these. Each period may be higher, equal to, or lower than the chart timeframe.
+Calculation: VWAP gate = Volume-weighted mean of chart-bar typical price over the last completed selected period, using nonnegative volume. Its period may be higher, equal to, or lower than the chart timeframe.
+Calculation: VWAP deviation = Square root of the nonnegative volume-weighted variance of chart-bar typical price over the VWAP gate’s last completed period. Upper and lower gates equal the VWAP gate plus and minus a selected multiplier times this deviation.
+Calculation: Control count = Number of the three period POCs and the VWAP gate that the close is strictly above; unavailable levels contribute zero.
+Calculation: Near control = Absolute percentage distance from close to any of the three POCs, VWAP gate, upper gate, or lower gate is at or below the selected threshold; ignore unavailable or zero levels.
+Long: Close > any period POC OR close > VWAP gate
+Short: Close <= any available period POC OR close <= VWAP gate
+Long: Control count >= 3 AND near control is false
+Short: Control count <= 1 AND near control is false
+Long: Close crosses above VWAP gate AND (volume confirmation is disabled OR volume / its simple moving average >= the selected threshold)
+Short: Close crosses below VWAP gate
+Long: Low <= lower gate AND close > lower gate AND close > open
+Short: High >= upper gate AND close < upper gate AND close < open
+Long: Close > upper gate AND previous close <= current upper gate
+Short: Close < lower gate AND previous close >= current lower gate
+Long: Close crosses above active POC
+Short: Close crosses below active POC

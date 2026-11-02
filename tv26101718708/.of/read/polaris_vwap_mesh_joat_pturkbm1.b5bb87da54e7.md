@@ -1,8 +1,8 @@
-Calculation: Session VWAP = cumulative typical price × volume divided by cumulative volume, reset at the first bar inside each session.
-Calculation: Swing-high VWAP = cumulative typical price × volume divided by cumulative volume, reset on each confirmed swing-high pivot and beginning on its confirmation bar; pivot lookback is equal on both sides.
-Calculation: Swing-low VWAP = cumulative typical price × volume divided by cumulative volume, reset on each confirmed swing-low pivot and beginning on its confirmation bar; pivot lookback is equal on both sides.
-Calculation: Previous-day-open VWAP = cumulative typical price × volume divided by cumulative volume, reset at each new daily period once a previous daily open exists.
-Calculation: Active VWAP count = number of the four VWAPs with available values.
-Calculation: Bull count = number of available VWAPs below the close.
-Long: On a confirmed bar, close crosses above any available session, swing-high, swing-low, or previous-day-open VWAP (previous close ≤ that VWAP and current close > it), OR active VWAP count > 0, bull count ≥ 3, and the previous bar was not in the bullish bias state.
-Short: On a confirmed bar, close crosses below any available session, swing-high, swing-low, or previous-day-open VWAP (previous close ≥ that VWAP and current close < it), OR active VWAP count ≥ 3, bull count ≤ 1, and the previous bar was not in the bearish bias state.
+Calculation: Anchored VWAPs = Volume-weighted mean of (high + low + close) / 3 on chart bars, calculated separately from each anchor reset through the current bar; undefined when cumulative volume is zero. The session anchor resets on the first bar inside the configured session and is undefined outside it. The swing-high and swing-low anchors reset on the confirmation bar of a pivot high or pivot low, respectively, using the same number of bars on each side; each is undefined before its first confirmation. The day anchor resets on the first bar of each new day after a prior day-start bar has been observed and is undefined before its first reset.
+Calculation: Active anchor count = Number of defined anchored VWAPs. Above count = Number of defined anchored VWAPs strictly below the close.
+Long: Close > any anchored VWAP.
+Short: Close < any anchored VWAP.
+Long: Close > an anchored VWAP AND previous close <= the same anchored VWAP on the previous bar.
+Short: Close < an anchored VWAP AND previous close >= the same anchored VWAP on the previous bar.
+Long: Above count >= 3.
+Short: Active anchor count >= 3 AND above count <= 1.

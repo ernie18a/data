@@ -1,14 +1,20 @@
-Calculation: NY-session VWAP = cumulative volume-weighted average of HLC3 from the start of the NY regular session
-Calculation: 18:00-anchored VWAP = cumulative volume-weighted average of HLC3 from the start of the 18:00-to-16:00 session
-Long: during NY regular session, price crosses above NY-session VWAP (by close, or by a bar spanning VWAP and closing above it after the prior close was below)
-Short: during NY regular session, price crosses below NY-session VWAP (by close, or by a bar spanning VWAP and closing below it after the prior close was above)
-Long: during NY regular session, NY-session VWAP crosses above 18:00-anchored VWAP
-Short: during NY regular session, NY-session VWAP crosses below 18:00-anchored VWAP
-Long: during NY regular session, the shorter-period EMA crosses above the longer-period EMA (5-period vs. 13-period)
-Short: during NY regular session, the shorter-period EMA crosses below the longer-period EMA (5-period vs. 13-period)
-Long: during the configured trade window, after a reclaim of NY-session VWAP (current close above VWAP and either the prior close was above VWAP or the close before that was at or below VWAP), before two consecutive closes below VWAP, the bar's low is at or below VWAP plus the configured touch buffer, close is above VWAP, the 5-period EMA is above the 8-period EMA and the 8-period EMA is above the 13-period EMA, all three EMAs are rising, volume is greater than on the prior bar, and the NY-session VWAP cross count is below its configured maximum
-Short: during the configured trade window, after a reclaim of NY-session VWAP (current close below VWAP and either the prior close was below VWAP or the close before that was at or above VWAP), before two consecutive closes above VWAP, the bar's high is at or above VWAP minus the configured touch buffer, close is below VWAP, the 5-period EMA is below the 8-period EMA and the 8-period EMA is below the 13-period EMA, all three EMAs are falling, volume is greater than on the prior bar, and the NY-session VWAP cross count is below its configured maximum
-Long: while flat with a valid pending long setup, price reaches at least one minimum price increment above the hold bar's high; the distance from this entry price to the hold bar's low minus the configured stop buffer does not exceed the configured maximum stop distance
-Short: while flat with a valid pending short setup, price reaches at least one minimum price increment below the hold bar's low; the distance from this entry price to the hold bar's high plus the configured stop buffer does not exceed the configured maximum stop distance
-Exit: long, low reaches the hold bar's low minus the configured stop buffer OR high reaches the entry price plus the configured profit target
-Exit: short, high reaches the hold bar's high plus the configured stop buffer OR low reaches the entry price minus the configured profit target
+Calculation: Session VWAP = cumulative sum of ((high + low + close) / 3 × volume) divided by cumulative volume, reset at the start of its specified session and held constant outside that session. Use separate regular-session and longer overnight-session anchors.
+Calculation: VWAP cross count = number of regular-session close/VWAP crosses since the session opened, excluding its opening bar. In close mode, a cross requires the current close to be strictly on the new side and the previous close to be on or beyond the opposite side of its corresponding VWAP. In wick mode, it also requires the current low ≤ VWAP ≤ current high and the previous close to be strictly on the opposite side.
+Calculation: Reclaim state = reset at the regular-session open; for the long side, clear after consecutive closes below regular-session VWAP, otherwise set when the current close is above it and either the previous regular-session close was above its VWAP or, in cross mode, the previous close was at or below its VWAP. Reverse inequalities for the short side. The consecutive-close threshold is shared by acceptance and the alternative reclaim mode.
+Calculation: Hold = during the trade window and regular session, VWAP cross count < maximum AND the corresponding reclaim state is set AND the short-, medium-, and long-lookback close EMAs are strictly ordered in the direction of the trade and each moves in that direction from its previous value AND the close is strictly on the trade side of regular-session VWAP AND the low ≤ VWAP + touch buffer for a long or high ≥ VWAP − touch buffer for a short AND, if volume confirmation is enabled, volume > previous volume.
+Calculation: Pending setup = save the high and low of the latest hold for each side; reset at the regular-session open or when consecutive closes are accepted on the opposite side of VWAP, EMA ordering or slopes fail, reclaim state clears, the trade window ends, or the cross-count limit is reached. Replace the saved extremes whenever a new hold occurs.
+Long: Regular session AND short-lookback EMA crosses above long-lookback EMA.
+Short: Regular session AND short-lookback EMA crosses below long-lookback EMA.
+Long: Regular session excluding its opening bar AND close crosses above regular-session VWAP in the selected close or wick mode.
+Short: Regular session excluding its opening bar AND close crosses below regular-session VWAP in the selected close or wick mode.
+Long: Regular session excluding its opening bar AND regular-session VWAP crosses above overnight-session VWAP.
+Short: Regular session excluding its opening bar AND regular-session VWAP crosses below overnight-session VWAP.
+Long: Long hold.
+Short: Short hold.
+Long: Flat position AND trade window AND VWAP cross count < maximum AND long pending setup exists AND its entry stop = setup high + price increment > setup low − stop buffer AND rounded entry-to-stop risk in price increments ≤ maximum risk AND price reaches the entry stop after the order is placed.
+Short: Flat position AND trade window AND VWAP cross count < maximum AND short pending setup exists AND its entry stop = setup low − price increment < setup high + stop buffer AND rounded entry-to-stop risk in price increments ≤ maximum risk AND price reaches the entry stop after the order is placed.
+Exit: long, price ≤ latest saved long setup low − stop buffer OR price ≥ entry price + profit target.
+Exit: short, price ≥ latest saved short setup high + stop buffer OR price ≤ entry price − profit target.
+Long: Close > regular-session VWAP OR close > overnight-session VWAP OR close > previous regular session’s final VWAP OR close > opening-range high.
+Short: Close < regular-session VWAP OR close < overnight-session VWAP OR close < previous regular session’s final VWAP OR close < opening-range low.
+Calculation: Opening range = high and low of the bar spanning the opening-range session; when that bar’s timeframe is higher than the chart timeframe, use the last completed bar; when lower, use the last available completed intrabar.

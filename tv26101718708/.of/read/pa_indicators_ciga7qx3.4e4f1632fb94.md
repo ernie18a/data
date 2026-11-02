@@ -1,2 +1,4 @@
-Long: During the RTH session, after a pullback has begun with low < the previous bar's low, high > the previous bar's high
-Short: During the RTH session, after a rebound has begun with high > the previous bar's high, low < the previous bar's low
+Calculation: Bullish pullback flag = Reset to false at the start of each regular trading session. On each session bar with sufficient chart history, set it to true if low < previous bar's low; after evaluating the long decision, reset it to false if that decision is true.
+Calculation: Bearish pullback flag = Reset to false at the start of each regular trading session. On each session bar with sufficient chart history, set it to true if high > previous bar's high; after evaluating the short decision, reset it to false if that decision is true.
+Long: Current bar is in the regular trading session AND sufficient chart history is available AND bullish pullback flag is true AND high > previous bar's high.
+Short: Current bar is in the regular trading session AND sufficient chart history is available AND bearish pullback flag is true AND low < previous bar's low.

@@ -1,12 +1,23 @@
-Calculation: Completed daily bars = aggregate chart bars by the symbol’s daily session; use only completed daily bars for daily decisions.
-Calculation: Failed outside high = daily high > prior daily high AND daily close < prior daily high AND daily close > prior daily low AND daily low >= prior daily low.
-Calculation: Failed outside low = daily low < prior daily low AND daily close > prior daily low AND daily close < prior daily high AND daily high <= prior daily high.
-Calculation: Day Zero = current day is not outside AND current failed outside high follows a failed outside low, OR current failed outside low follows a failed outside high.
-Calculation: Up cycle day = number of consecutive completed days that break the prior day’s high but not its low; reset on an inside or outside day, a low-only break, or neither break. Down cycle day = equivalent count of consecutive days breaking only the prior day’s low.
-Calculation: Confirmed swing high/low = chart-timeframe pivot high/low with equal lookback bars on each side; confirm after the right-side bars complete.
-Calculation: Day-2 strike level = down cycle: lowest of the latest completed day’s low and the current day’s running low, plus 3 configured level-size units; up cycle: highest of the latest completed day’s high and current day’s running high, minus 3 configured level-size units.
-Calculation: Signal invalidation level = for a first green day, its low; for a first red day, its high; otherwise, for a long bias, the latest completed day’s low, or for a short bias, its high.
-Long: Current completed day closes above its open AND prior completed day closes below its open AND prior day’s low is at or below the lowest low over the configured swing lookback; OR current day is an outside day (high above prior high AND low below prior low) AND closes above its open; OR current up cycle day is 2; OR current down cycle day is 3 or 4; OR a first green day occurred on the preceding completed day and the current day is not a first red or first green day, Day Zero, or cycle day 3 or later; OR current down-cycle price reaches the day-2 strike level (current bar high >= strike level); OR chart-timeframe close breaks above the last unbroken confirmed swing high; OR on Wednesday, completed daily close is at or above the highest daily close so far that week.
-Short: Current completed day closes below its open AND prior completed day closes above its open AND prior day’s high is at or above the highest high over the configured swing lookback; OR current day is an outside day (high above prior high AND low below prior low) AND closes at or below its open; OR current down cycle day is 2; OR current up cycle day is 3 or 4; OR a first red day occurred on the preceding completed day and the current day is not a first red or first green day, Day Zero, or cycle day 3 or later; OR current up-cycle price reaches the day-2 strike level (current bar low <= strike level); OR chart-timeframe close breaks below the last unbroken confirmed swing low; OR on Wednesday, completed daily close is at or below the lowest daily close so far that week.
-Exit: Long, close < signal invalidation level.
-Exit: Short, close > signal invalidation level.
+Calculation: Completed day = OHLC accumulated from chart bars between successive higher-timeframe day boundaries; classify it on the first chart bar of the next day. The prior day is the preceding completed day.
+Calculation: Up cycle = consecutive completed days whose high exceeds the prior day's high and whose low is at least the prior day's low. Down cycle = consecutive completed days whose low is below the prior day's low and whose high is at most the prior day's high. Reset both counts on any other day.
+Calculation: First red day = completed-day close < open AND prior-day close > open AND, if the swing filter is enabled, prior-day high >= every high in the selected lookback of completed days ending with the prior day. First green day = completed-day close > open AND prior-day close < open AND, if the swing filter is enabled, prior-day low <= every low in the same lookback.
+Calculation: Failed high = completed-day high > prior-day high AND close < prior-day high AND close > prior-day low AND low >= prior-day low. Failed low = completed-day low < prior-day low AND close > prior-day low AND close < prior-day high AND high <= prior-day high. Day zero = a failed high immediately following a failed low OR a failed low immediately following a failed high.
+Calculation: Directional bias = on each completed day, select the first applicable case in this order: first red day gives short; first green day gives long; day zero gives neutral; the day immediately after a first red or first green day retains that direction; an up or down cycle of the fade length or one day longer gives the opposite direction; an up or down cycle of the shorter continuation length gives the cycle direction; otherwise neutral. The fade length is one day longer than the continuation length. For a long bias, store the completed day's low as its invalidation level; for a short bias, store its high. The bias remains invalidated for the rest of the day after any chart close crosses beyond that level.
+Calculation: Strike level = for an up cycle, the greater of the last completed day's high and the forming higher-timeframe day's running high, minus a fixed price distance; for a down cycle, the lesser of the last completed day's low and the forming higher-timeframe day's running low, plus the same distance. Reset the strike-touch flag at each day boundary.
+Calculation: Confirmed swing high or low = a chart-bar high or low that is a pivot with the same selected number of bars on each side; it becomes available after the right-side bars complete. Each new confirmed swing replaces the previous swing of the same kind and is unbroken until a chart close first exceeds its high or falls below its low, respectively.
+Long: First green day.
+Short: First red day.
+Long: Completed-day high > prior-day high AND completed-day low < prior-day low AND completed-day close > open.
+Short: Completed-day high > prior-day high AND completed-day low < prior-day low AND completed-day close <= open.
+Long: Directional bias = long AND bias invalidated = false.
+Short: Directional bias = short AND bias invalidated = false.
+Long: Up-cycle count = fade length.
+Short: Down-cycle count = fade length.
+Long: Down-cycle count = fade length.
+Short: Up-cycle count = fade length.
+Long: Up-cycle count > 0 AND chart low <= strike level AND no earlier strike touch in the current day.
+Short: Down-cycle count > 0 AND chart high >= strike level AND no earlier strike touch in the current day.
+Long: Completed Wednesday close >= every tracked completed-day close in the current week through Wednesday.
+Short: Completed Wednesday close < the highest tracked completed-day close in the current week through Wednesday AND completed Wednesday close <= every tracked completed-day close in that week.
+Long: Chart close > latest confirmed unbroken swing high.
+Short: Chart close < latest confirmed unbroken swing low.

@@ -1,5 +1,20 @@
-Calculation: RSI smoothing average = configured SMA, EMA, RMA, WMA, or volume-weighted moving average of RSI.
-Calculation: RSI channel upper/lower = selected channel on RSI: Bollinger basis (SMA) plus/minus multiplier × standard deviation; Keltner basis (EMA) plus/minus multiplier × EMA of absolute RSI changes; or adjusted Donchian midpoint plus/minus multiplier × the distance from the midpoint to the highest/lowest RSI in the lookback.
-Calculation: Confirmed RSI pivot low/high = local RSI low/high confirmed by the configured number of bars on both sides; its paired price point is the low/high of that same bar.
-Long: RSI crosses above its smoothing average OR RSI crosses above the selected channel upper boundary OR RSI > RSI[1] AND RSI[1] < RSI[2] AND (RSI[1] <= oversold threshold OR RSI[1] <= previous bar's channel lower boundary) OR a newly confirmed pivot low has a lower price low and higher RSI low than the previous confirmed pivot low OR a newly confirmed pivot low has a higher price low and lower RSI low than the previous confirmed pivot low.
-Short: RSI crosses below its smoothing average OR RSI crosses below the selected channel lower boundary OR RSI < RSI[1] AND RSI[1] > RSI[2] AND (RSI[1] >= overbought threshold OR RSI[1] >= previous bar's channel upper boundary) OR a newly confirmed pivot high has a higher price high and lower RSI high than the previous confirmed pivot high OR a newly confirmed pivot high has a lower price high and higher RSI high than the previous confirmed pivot high.
+Calculation: RSI channel = select one: Bollinger bands of RSI; EMA of RSI plus or minus a multiplier times EMA of the absolute RSI change; or the midpoint of the rolling highest and lowest RSI plus or minus a multiplier times half their range.
+Calculation: RSI smoothing = a selected SMA, EMA, RMA, WMA, or VWMA of RSI; for VWMA, use SMA on bars whose volume is not positive.
+Calculation: Confirmed RSI pivot = an RSI high or low with the same number of bars on each side; evaluate it when the right-side bars have completed. Compare consecutive confirmed pivots of the same type and use the price high or low on each RSI pivot bar.
+Calculation: Reversal deviation levels = after the latest bullish or bearish reversal, retain RSI on the signal bar plus or minus, respectively, a multiplier times the RSI standard deviation; retain a second level using twice that multiplier. Cap upper levels at the RSI maximum and lower levels at the RSI minimum. Replace both levels on the next reversal.
+Calculation: Divergence deviation levels = calculate and retain levels in the same way as reversal deviation levels, using the latest regular or hidden divergence and a separate multiplier. Replace both levels on the next divergence.
+Calculation: Dashboard signals = calculate RSI from close on each selected higher or lower timeframe using its last completed bar; for a lower timeframe, use the last completed lower-timeframe bar within the chart bar. Apply the same reversal, channel breakout, and regular divergence comparisons as on the chart timeframe, with an independently parameterized divergence pivot lookback. For each signal category, retain the number of timeframe bars since the most recent bullish and bearish signals.
+Long: RSI is at or below the oversold threshold.
+Short: RSI is at or above the overbought threshold.
+Long: Previous RSI is below RSI two bars ago AND current RSI is above previous RSI AND (previous RSI is at or below the oversold threshold OR previous RSI is at or below the previous lower RSI channel).
+Short: Previous RSI is above RSI two bars ago AND current RSI is below previous RSI AND (previous RSI is at or above the overbought threshold OR previous RSI is at or above the previous upper RSI channel).
+Long: A confirmed RSI low pivot has a lower price low AND higher RSI than the preceding confirmed RSI low pivot, OR a higher price low AND lower RSI than that pivot.
+Short: A confirmed RSI high pivot has a higher price high AND lower RSI than the preceding confirmed RSI high pivot, OR a lower price high AND higher RSI than that pivot.
+Long: RSI crosses above the upper RSI channel OR crosses above RSI smoothing.
+Short: RSI crosses below the lower RSI channel OR crosses below RSI smoothing.
+Long: The latest reversal or divergence was bullish AND RSI crosses above either corresponding retained deviation level.
+Short: The latest reversal or divergence was bearish AND RSI crosses below either corresponding retained deviation level.
+Long: Dashboard RSI is at or below the oversold threshold OR is above its smoothing.
+Short: Dashboard RSI is at or above the overbought threshold OR is at or below its smoothing.
+Long: The dashboard's most recent bullish regular divergence, reversal, or upward channel breakout is within the signal-age limit AND is at least as recent as the corresponding bearish signal, or no corresponding bearish signal exists.
+Short: The dashboard's most recent bearish regular divergence, reversal, or downward channel breakout is within the signal-age limit AND is more recent than the corresponding bullish signal, or no corresponding bullish signal exists.

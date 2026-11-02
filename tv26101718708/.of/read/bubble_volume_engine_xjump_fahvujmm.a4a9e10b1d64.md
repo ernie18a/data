@@ -1,24 +1,26 @@
-Calculation: Net volume delta = up-volume minus down-volume aggregated from lower-timeframe bars within the current chart bar; use the lower timeframe and current chart bar, including the still-forming bar.
-Calculation: Delta strength = absolute value of (net volume delta minus its rolling mean) divided by its rolling standard deviation.
-Calculation: Cumulative delta = rolling sum of net volume delta.
-Calculation: Price and cumulative-delta pivots = local highs or lows confirmed using equal lookback on both sides; compare consecutive corresponding pivots.
-Calculation: Relative volume = current volume divided by its rolling average volume.
-Calculation: Body ratio = absolute(close − open) divided by (high − low), using one minimum price increment when the range is zero.
-Calculation: Upper and lower wick ratios = upper or lower wick length divided by candle range, using one minimum price increment when the range is zero.
-Calculation: Intrabar VWAP = volume-weighted average of lower-timeframe typical prices (high + low + close) / 3 within the current chart bar; use lower-timeframe bars within the current, possibly still-forming chart bar.
-Calculation: Higher-timeframe trend = higher-timeframe close compared with its EMA; use the higher timeframe's current bar with lookahead off.
-Long: Net volume delta > 0 AND its strength exceeds the rolling percentile threshold AND relative volume meets its minimum AND bubble size meets the display threshold [and, when confirmed-only is enabled, the chart bar is complete].
-Short: Net volume delta < 0 AND its strength exceeds the rolling percentile threshold AND relative volume meets its minimum AND bubble size meets the display threshold [and, when confirmed-only is enabled, the chart bar is complete].
-Long: Net volume delta < 0 AND close >= open AND low breaks the prior rolling low AND close > that prior low AND delta strength meets its absorption minimum AND relative volume meets its minimum.
-Short: Net volume delta > 0 AND close < open AND high breaks the prior rolling high AND close < that prior high AND delta strength meets its absorption minimum AND relative volume meets its minimum.
-Long: A price pivot low is below the previous price pivot low AND its corresponding cumulative-delta pivot low is above the previous one.
-Short: A price pivot high is above the previous price pivot high AND its corresponding cumulative-delta pivot high is below the previous one.
-Long: Close < open AND lower wick ratio >= its rejection threshold AND volume > 1.5 × rolling average volume AND body ratio < its small-body threshold.
-Short: Close >= open AND upper wick ratio >= its rejection threshold AND volume > 1.5 × rolling average volume AND body ratio < its small-body threshold.
-Long: Close < open AND volume < 0.75 × rolling average volume AND body ratio < its small-body threshold.
-Short: Close >= open AND volume < 0.75 × rolling average volume AND body ratio < its small-body threshold.
-Long: Net volume delta > 0 AND confluence score >= its high-confluence threshold.
-Short: Net volume delta < 0 AND confluence score >= its high-confluence threshold.
-Calculation: Confluence score = clamp to 0–5 the sum of: delta aligned with candle direction, relative volume meets its minimum, delta strength meets its aggressive threshold, a high or low sweep, and an expansive candle without either rejection wick; add 1 when delta direction agrees with the higher-timeframe trend, subtract 1 when opposed, and add 1 when positive delta closes above intrabar VWAP or negative delta closes below it. An absorption signal raises the score to at least 4.
-Long: Net volume delta > 0 AND confluence score >= 4.
-Short: Net volume delta < 0 AND confluence score >= 4.
+Calculation: Delta = sum of signed volume of lower-timeframe bars within the chart bar, including the bar still forming. A lower-timeframe bar's volume is positive if its close > open, negative if close < open; if equal, use the sign of close versus the preceding lower-timeframe close, carrying forward the preceding sign if those closes are equal.
+Calculation: Delta strength = absolute value of (delta minus its rolling SMA) divided by its rolling standard deviation; use zero when the standard deviation is zero.
+Calculation: Relative volume = volume divided by its rolling SMA; use zero when the SMA is not positive.
+Calculation: Body ratio = absolute value of close minus open divided by high minus low. Upper wick ratio = (high minus max(open, close)) divided by high minus low. Lower wick ratio = (min(open, close) minus low) divided by high minus low. For a zero-range bar, use the instrument's minimum price increment as the denominator.
+Calculation: Rolling CVD = rolling sum of delta.
+Calculation: Intrabar VWAP = volume-weighted mean of (high + low + close) / 3 over lower-timeframe bars within the chart bar, including the bar still forming; use (chart high + chart low) / 2 if their total volume is not positive.
+Calculation: Bullish absorption = delta < 0 AND close >= open AND low < lowest low of preceding lookback bars AND close > that lowest low AND delta strength >= absorption threshold AND (relative-volume filter disabled OR relative volume >= its threshold).
+Calculation: Bearish absorption = delta > 0 AND close < open AND high > highest high of preceding lookback bars AND close < that highest high AND delta strength >= absorption threshold AND (relative-volume filter disabled OR relative volume >= its threshold).
+Calculation: Bullish divergence = a price-low pivot and a rolling-CVD-low pivot occur at the same bar AND that price pivot < the preceding simultaneously occurring price-low pivot AND that CVD pivot > its preceding simultaneous CVD-low pivot. A pivot requires the configured number of bars on each side and is detected when the right-hand bars have completed.
+Calculation: Bearish divergence = a price-high pivot and a rolling-CVD-high pivot occur at the same bar AND that price pivot > the preceding simultaneously occurring price-high pivot AND that CVD pivot < its preceding simultaneous CVD-high pivot. A pivot requires the configured number of bars on each side and is detected when the right-hand bars have completed.
+Calculation: No demand = close >= open AND volume < its rolling SMA multiplied by a low-volume factor AND body ratio < a body threshold.
+Calculation: No supply = close < open AND volume < its rolling SMA multiplied by the same low-volume factor AND body ratio < the same body threshold.
+Calculation: Up thrust = close >= open AND upper wick ratio >= a wick threshold AND volume > its rolling SMA multiplied by a high-volume factor AND body ratio < a second body threshold.
+Calculation: Spring = close < open AND lower wick ratio >= the same wick threshold AND volume > its rolling SMA multiplied by the same high-volume factor AND body ratio < the same second body threshold.
+Calculation: Confluence score = clamp to the allowed score range the sum of one point each for (delta > 0 AND close >= open) OR (delta < 0 AND close < open); the relative-volume filter disabled OR relative volume >= its threshold; delta strength >= its aggressive threshold; high > highest high of preceding sweep-lookback bars AND close < that high OR low < lowest low of those bars AND close > that low; and the structure filter disabled OR (body ratio >= its threshold AND NOT (close >= open AND upper wick ratio >= its rejection threshold) AND NOT (close < open AND lower wick ratio >= that rejection threshold)). Add one point if the higher-timeframe trend filter is enabled and delta is aligned with that trend; subtract one if enabled and opposed. Add one if delta > 0 AND close > intrabar VWAP, or delta < 0 AND close < intrabar VWAP. The higher-timeframe trend compares higher-timeframe close with its EMA, using the last completed higher-timeframe bar on historical chart bars and the still-forming bar in real time. If either absorption condition holds, raise the score to at least the configured high-confluence threshold.
+Calculation: Bubble filter value = delta strength or absolute delta, according to the configured filter. Bubble eligibility = filter value > its rolling percentile AND (relative-volume filter disabled OR relative volume >= its threshold) AND (display size filter disabled OR delta strength >= the selected size threshold).
+Long: Bullish absorption.
+Short: Bearish absorption.
+Long: Bullish divergence.
+Short: Bearish divergence.
+Long: No supply OR spring.
+Short: No demand OR up thrust.
+Long: Bubble eligibility AND delta > 0.
+Short: Bubble eligibility AND delta < 0.
+Long: Confluence score >= high-confluence threshold AND delta > 0 AND bullish absorption = false AND bearish absorption = false AND bearish divergence = false AND bullish divergence = false AND up thrust = false AND spring = false AND no demand = false AND no supply = false.
+Short: Confluence score >= high-confluence threshold AND delta <= 0 AND bullish absorption = false AND bearish absorption = false AND bearish divergence = false AND bullish divergence = false AND up thrust = false AND spring = false AND no demand = false AND no supply = false.

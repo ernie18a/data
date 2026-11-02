@@ -1,4 +1,2 @@
-Long: DeMarker on the last completed chart-timeframe bar < lower threshold
-Short: DeMarker on the last completed chart-timeframe bar > upper threshold
-Exit: long, DeMarker on the last completed chart-timeframe bar > upper threshold AND close > entry price
-Exit: short, DeMarker on the last completed chart-timeframe bar < lower threshold AND close < entry price
+Long: (reverse disabled AND last completed working-timeframe DeMarker < lower threshold) OR (reverse enabled AND last completed working-timeframe DeMarker > upper threshold)
+Short: (reverse disabled AND last completed working-timeframe DeMarker > upper threshold) OR (reverse enabled AND last completed working-timeframe DeMarker < lower threshold)

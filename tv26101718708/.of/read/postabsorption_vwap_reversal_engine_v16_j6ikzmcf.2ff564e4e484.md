@@ -1,7 +1,7 @@
-Calculation: Session VWAP = cumulative volume-weighted average of (high + low + close) / 3, reset at each active session
-Calculation: Volume percentile = percentage of valid volumes in the lookback window, including the current bar, that are less than or equal to current volume
-Calculation: Body displacement / ATR = abs(close - open) / ATR
-Long: On a confirmed active-session chart bar, volume percentile >= its threshold AND body displacement / ATR <= its threshold AND close < Session VWAP - near-VWAP distance threshold; for an actual entry, also require the long direction enabled, allowed day and time, no open position, no entry block, and entry on the next chart bar
-Short: On a confirmed active-session chart bar, volume percentile >= its threshold AND body displacement / ATR <= its threshold AND close > Session VWAP + near-VWAP distance threshold; for an actual entry, also require the short direction enabled, allowed day and time, no open position, no entry block, and entry on the next chart bar
-Exit: Long, bar low <= the signal bar low minus the ATR stop multiple OR bar high >= the Session VWAP saved on the signal bar OR chart bars since entry >= the reversal horizon OR the configured end-of-day flatten time is reached
-Exit: Short, bar high >= the signal bar high plus the ATR stop multiple OR bar low <= the Session VWAP saved on the signal bar OR chart bars since entry >= the reversal horizon OR the configured end-of-day flatten time is reached
+Calculation: Session VWAP = cumulative sum of ((high + low + close) / 3) * volume divided by cumulative volume, reset at the start of the selected session; when restricted to that session, calculate only on bars inside it.
+Calculation: Volume percentile = 100 * number of available bars in the lookback, including the current bar, whose volume is less than or equal to current volume / number of available bars in the lookback.
+Long: Volume percentile >= threshold AND abs(close - open) / ATR <= displacement threshold AND (close - session VWAP) / ATR < -distance threshold.
+Short: Volume percentile >= threshold AND abs(close - open) / ATR <= displacement threshold AND (close - session VWAP) / ATR > distance threshold.
+Exit: long, eligible bar low <= signal-bar low - signal-bar ATR * stop multiplier OR eligible bar high >= signal-bar session VWAP OR bars since entry >= holding-period threshold OR close - entry price <= -price-loss threshold OR session time crosses the flattening time.
+Exit: short, eligible bar high >= signal-bar high + signal-bar ATR * stop multiplier OR eligible bar low <= signal-bar session VWAP OR bars since entry >= holding-period threshold OR entry price - close <= -price-loss threshold OR session time crosses the flattening time.
+Calculation: Eligible bar = entry bar or later when same-bar exits are enabled; otherwise a bar after the entry bar. Stop and target orders become active after the eligible bar is evaluated.

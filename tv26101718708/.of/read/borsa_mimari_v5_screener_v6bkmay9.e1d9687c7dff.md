@@ -1,45 +1,34 @@
-Calculation: Score = +1 if MACD line > signal line, else −1; +1 if RSI > 50 and RSI ≤ 70, else −1; +1 if ADX > threshold and +DI > −DI, else −1; +1 if close is above each of the short-term and long-term EMAs, else −1 for each; +1 if SuperTrend is bullish, else −1; +1 if volume > its moving average × volume multiplier, else −1
-Calculation: Dip zone upper/lower = long-term EMA − ATR × (dip multiplier − 0.5) / (dip multiplier + 0.5); deep-dip zone uses (dip multiplier + 0.5) / (dip multiplier + 1.5)
-Calculation: Peak zone lower/upper = short-term EMA + ATR × (peak multiplier − 0.5) / (peak multiplier + 0.5); extreme-peak zone uses (peak multiplier + 0.5) / (peak multiplier + 1.5)
-Calculation: Trade Zone = close SMA ± band multiplier × close standard deviation, using the same lookback for both
-Calculation: Heikin-Ashi close = (open + high + low + close) / 4; first Heikin-Ashi open = (open + close) / 2, thereafter = (prior Heikin-Ashi open + prior Heikin-Ashi close) / 2; Heikin-Ashi bullish when its close > its open
-Calculation: Falling resistance line = line through the latest two confirmed pivot highs when the earlier pivot high is higher; each pivot requires the pivot lookback number of bars on both sides
-Calculation: Targets after a new dip signal = lowest low over the last five bars + ATR × each of three progressively larger target multipliers; after a new AL signal, if targets are unset or all hit, targets = signal-bar close + ATR × each of the same three multipliers
-Calculation: Long stop = most recent SuperTrend value set on an AL signal and thereafter trailed upward to the maximum of the prior stop and current SuperTrend while SuperTrend is bullish
-Long: MACD line > signal line
-Long: RSI > 50
-Long: ADX > threshold AND +DI > −DI
-Long: Close > short-term EMA
-Long: Close > long-term EMA
-Long: SuperTrend is bullish
-Long: Volume > its moving average × volume multiplier
-Long: Score ≥ 2
-Long: Close < dip-zone upper boundary
-Long: SuperTrend is bullish AND close < dip-zone upper boundary AND MACD line > signal line AND RSI > 50 AND RSI ≤ 70 AND Score ≥ 1
-Long: SuperTrend is bullish AND close < dip-zone upper boundary AND MACD line > signal line AND RSI > 50 AND volume > its moving average × volume multiplier AND Score ≥ 3
-Long: SuperTrend is bullish AND MACD line > signal line AND RSI > 50 AND RSI ≤ 70 AND ADX > threshold AND +DI > −DI AND close > short-term EMA AND close > long-term EMA AND Score ≥ 6 AND this condition was false on the prior bar
-Long: Prior bar close was below the lower Trade Zone band AND current close is within the Trade Zone bands
-Long: Close crosses above the falling resistance line
-Long: Heikin-Ashi is bearish AND Heikin-Ashi close > (Heikin-Ashi open + Heikin-Ashi close) / 2 AND this condition was false on the prior bar
-Long: Heikin-Ashi is bullish AND prior bar Heikin-Ashi was bearish
-Long: Heikin-Ashi is bullish AND Heikin-Ashi low = Heikin-Ashi open
-Long: SuperTrend changes from bearish to bullish
-Long: Close ≥ nearest Fibonacci retracement level AND close < that level + ATR
-Short: MACD line < signal line
-Short: RSI < 50
-Short: ADX > threshold AND +DI ≤ −DI
-Short: Close < short-term EMA
-Short: Close < long-term EMA
-Short: SuperTrend is bearish
-Short: Score < 0
-Short: Close > peak-zone lower boundary
-Short: SuperTrend is bearish AND close > peak-zone lower boundary AND MACD line < signal line AND RSI ≤ 70 AND Score ≤ −1
-Short: SuperTrend is bearish AND close > peak-zone lower boundary AND MACD line < signal line AND RSI < 50 AND volume > its moving average × volume multiplier AND Score ≤ −3
-Short: SuperTrend is bearish AND MACD line < signal line AND RSI < 50 AND ADX > threshold AND +DI ≤ −DI AND close < short-term EMA AND close < long-term EMA AND Score ≤ −4 AND this condition was false on the prior bar
-Short: Heikin-Ashi is bullish AND Heikin-Ashi close < (Heikin-Ashi open + Heikin-Ashi close) / 2 AND this condition was false on the prior bar
-Short: Heikin-Ashi changes from bullish to bearish
-Short: Heikin-Ashi is bearish AND Heikin-Ashi high = Heikin-Ashi open
-Short: SuperTrend changes from bullish to bearish
-Short: Close ≤ nearest Fibonacci retracement level AND close > that level − ATR
-Exit: Long, close < long stop
-Exit: Long, high ≥ any active target
+Calculation: Bullish score = sum of +1 for each true condition and -1 for each false condition: MACD line > signal line; RSI > midpoint AND RSI <= overbought threshold; ADX > strength threshold AND +DI > -DI; close > shorter-period EMA; close > longer-period EMA; SuperTrend direction is up; volume > volume SMA multiplied by a volume factor.
+Calculation: Dip condition = SuperTrend direction is up AND close < longer-period EMA - ATR × (dip multiplier - band offset) AND MACD line > signal line AND RSI > midpoint AND RSI <= overbought threshold AND bullish score >= dip score threshold.
+Calculation: Strong dip condition = SuperTrend direction is up AND close < longer-period EMA - ATR × (dip multiplier - band offset) AND MACD line > signal line AND RSI > midpoint AND volume > volume SMA × volume factor AND bullish score >= higher dip score threshold.
+Calculation: Peak condition = SuperTrend direction is down AND close > shorter-period EMA + ATR × (peak multiplier - band offset) AND MACD line <= signal line AND RSI <= overbought threshold AND bullish score <= peak score threshold.
+Calculation: Strong peak condition = SuperTrend direction is down AND close > shorter-period EMA + ATR × (peak multiplier - band offset) AND MACD line <= signal line AND RSI <= midpoint AND volume > volume SMA × volume factor AND bullish score <= lower peak score threshold.
+Calculation: Buy condition = SuperTrend direction is up AND MACD line > signal line AND RSI > midpoint AND RSI <= overbought threshold AND ADX > strength threshold AND +DI > -DI AND close > shorter-period EMA AND close > longer-period EMA AND bullish score >= buy score threshold.
+Calculation: Sell condition = SuperTrend direction is down AND MACD line <= signal line AND RSI <= midpoint AND ADX > strength threshold AND +DI <= -DI AND close <= shorter-period EMA AND close <= longer-period EMA AND bullish score <= sell score threshold.
+Calculation: Descending resistance = the line through the two most recently confirmed pivot highs when the newer high is lower; retain the last such line until another qualifying pair replaces it. A pivot is confirmed after equal numbers of bars on either side.
+Calculation: Heikin-Ashi close = (open + high + low + close) / 4; Heikin-Ashi open = (previous Heikin-Ashi open + previous Heikin-Ashi close) / 2, initialized to (open + close) / 2; Heikin-Ashi high = max(high, Heikin-Ashi open, Heikin-Ashi close); Heikin-Ashi low = min(low, Heikin-Ashi open, Heikin-Ashi close).
+Calculation: Profit targets = three levels with increasing ATR multipliers. On the first bar of either dip condition or strong dip condition, reset all targets to the lowest low over a lookback plus current ATR multiplied by each target multiplier, and mark each unhit. On the first bar of the buy condition, if the first target is absent or already hit, reset all targets to close plus current ATR multiplied by each target multiplier and mark each unhit. Mark an unhit target hit when high >= target; clear all targets when all three are hit. Apply resets before hit checks.
+Calculation: Trailing stop = SuperTrend value on the first bar of either dip condition or strong dip condition; clear it when close < the stop; on the first bar of the buy condition set it to the current SuperTrend value; then, while the stop exists and SuperTrend direction is up, raise it to the maximum of its current value and the current SuperTrend value.
+Long: MACD line > MACD signal line.
+Short: MACD line <= MACD signal line.
+Long: ADX > strength threshold AND +DI > -DI.
+Short: ADX > strength threshold AND +DI <= -DI.
+Long: SuperTrend direction is up.
+Long: Bullish score >= buy classification threshold.
+Short: Bullish score < neutral classification threshold.
+Long: Close is within the accumulation or deep-dip bands below the longer-period EMA; their adjacent boundaries are the longer-period EMA minus ATR multiplied by the dip multiplier minus the band offset, the dip multiplier plus the band offset, and the dip multiplier plus a larger offset, respectively.
+Short: Close is within the distribution or overbought bands above the shorter-period EMA; their adjacent boundaries are the shorter-period EMA plus ATR multiplied by the peak multiplier minus the band offset, the peak multiplier plus the band offset, and the peak multiplier plus a larger offset, respectively.
+Long: Previous close < previous lower Bollinger Band AND close >= lower Bollinger Band AND close <= upper Bollinger Band.
+Long: Close > current descending resistance AND previous close <= descending resistance evaluated at the previous bar using the current line.
+Long: Heikin-Ashi close > Heikin-Ashi open AND previous Heikin-Ashi close <= previous Heikin-Ashi open.
+Short: Heikin-Ashi close <= Heikin-Ashi open AND previous Heikin-Ashi close > previous Heikin-Ashi open.
+Long: Heikin-Ashi close > Heikin-Ashi open AND Heikin-Ashi low = Heikin-Ashi open.
+Short: Heikin-Ashi close <= Heikin-Ashi open AND Heikin-Ashi high = Heikin-Ashi open.
+Long: Dip condition OR strong dip condition.
+Short: Peak condition OR strong peak condition.
+Long: Buy condition AND previous buy condition is false.
+Short: Sell condition AND previous sell condition is false.
+Long: SuperTrend direction is up AND previous SuperTrend direction is down.
+Short: SuperTrend direction is down AND previous SuperTrend direction is up.
+Exit: long, an unhit profit target exists AND high >= that target AND at least one of the three targets remains unhit after the current bar's hit checks.
+Exit: long, trailing stop exists before its current-bar update AND close < trailing stop.

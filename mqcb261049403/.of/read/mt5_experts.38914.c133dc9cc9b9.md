@@ -1,6 +1,5 @@
-Calculation: Fast MA = moving average with a shorter averaging period, calculated on a higher timeframe and sampled from the higher-timeframe bar containing the chart bar’s timestamp, including while that bar is still forming
-Calculation: Slow MA = moving average with a longer averaging period, calculated on a higher timeframe and sampled from the higher-timeframe bar containing the chart bar’s timestamp, including while that bar is still forming
-Long: Fast MA[1] < Slow MA[1] AND Fast MA[0] > Slow MA[0]
-Short: Fast MA[1] > Slow MA[1] AND Fast MA[0] < Slow MA[0]
-Exit: short, Fast MA[1] < Slow MA[1] AND Fast MA[0] > Slow MA[0]
-Exit: long, Fast MA[1] > Slow MA[1] AND Fast MA[0] < Slow MA[0]
+Calculation: Fast and slow moving averages = independently configured moving averages on higher timeframes, with independently configured averaging periods, methods, applied prices, and shifts. At the start of each chart bar, map each average to the higher-timeframe bar containing the chart bar being evaluated. Use the higher-timeframe bar still forming when it contains the new chart bar; otherwise use the corresponding completed bar. Apply these values to both the new and previous chart bars at decision time.
+Long: Fast moving average on the previous chart bar < slow moving average on the previous chart bar AND fast moving average on the new chart bar > slow moving average on the new chart bar.
+Short: Fast moving average on the previous chart bar > slow moving average on the previous chart bar AND fast moving average on the new chart bar < slow moving average on the new chart bar.
+Exit: Long, fast moving average on the previous chart bar > slow moving average on the previous chart bar AND fast moving average on the new chart bar < slow moving average on the new chart bar.
+Exit: Short, fast moving average on the previous chart bar < slow moving average on the previous chart bar AND fast moving average on the new chart bar > slow moving average on the new chart bar.

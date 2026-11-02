@@ -1,14 +1,15 @@
-Calculation: Average volume = simple moving average of volume over the lookback period
-Calculation: High-volume bar = volume > average volume × volume threshold AND (minimum volume filter is disabled OR volume ≥ minimum volume filter)
-Calculation: Block impact = 0 unless the bar is high-volume; on a high-volume bar with close > open, volume ÷ average volume ÷ impact normalization divisor × price factor; with close < open, the same value negated; otherwise 0. Price factor = 1 unless absolute price movement is enabled, then abs((close − open) ÷ open) × 10.
-Calculation: Cumulative impact = previous cumulative impact × decay factor + current block impact; initialize to 0.
-Calculation: Consecutive nonpositive-impact bars = consecutive bars with cumulative impact ≤ 0; consecutive nonnegative-impact bars = consecutive bars with cumulative impact ≥ 0. Reset each count when its respective condition fails.
-Calculation: Bar range percentage = abs(high − low) ÷ ((high + low) ÷ 2) × 100.
-Long: Cumulative impact crosses above 0 (current > 0 AND previous ≤ 0)
-Long: A bearish exhaustion was active on the previous bar AND current high > the high of its first bar
-Long: Current bar is high-volume AND close > open AND there is no stored sell signal from within the lookback period
-Short: Cumulative impact crosses below 0 (current < 0 AND previous ≥ 0)
-Short: A bullish exhaustion was active on the previous bar AND current low < the low of its first bar
-Short: Current bar is high-volume AND close < open AND there is no stored buy signal from within the lookback period
-Exit: Long, cumulative impact < −signal threshold
-Exit: Short, cumulative impact > signal threshold
+Calculation: High-volume block = volume > SMA(volume, volume lookback) × volume multiplier AND (minimum volume filter = 0 OR volume >= minimum volume filter).
+Calculation: Block impact = 0 unless a high-volume block has close != open; otherwise it is sign(close − open) × volume / SMA(volume, volume lookback) / normalization divisor, optionally multiplied by absolute((close − open) / open) × price-movement scaling factor.
+Calculation: Cumulative impact = previous cumulative impact × decay factor + block impact, initialized to 0.
+Calculation: Pending block signals = retain accepted bullish and bearish high-volume blocks for less than the volume lookback in bars. Process each bar by first expiring older signals; a bullish block encountering pending bearish signals is rejected and clears them, and a bearish block encountering pending bullish signals is rejected and clears them; otherwise accept and retain the block.
+Calculation: Bearish exhaustion = cumulative impact < negative extreme threshold AND count of consecutive bars with cumulative impact <= 0 >= exhaustion duration AND 100 × absolute(high − low) / ((high + low) / 2) <= price-range threshold AND bars since bearish exhaustion invalidation >= cooldown AND current low >= stored first bearish exhaustion low, if one exists. Bullish exhaustion is the mirrored condition using cumulative impact > positive extreme threshold, consecutive impact >= 0, bullish invalidation cooldown, and current high <= stored first bullish exhaustion high, if one exists. Initialize each cooldown counter to 0 and increment it each bar. For each side, store the high and low of the first exhaustion bar when the previous bar was not in that exhaustion state; retain them until validation or invalidation. If the previous bar was in bearish exhaustion and low < its stored first low, or the previous bar was in bullish exhaustion and high > its stored first high, clear that side's stored levels, reset its duration count and cooldown to 0, and suppress its validation on that bar. After validation, also clear that side's stored levels and reset its duration count and cooldown to 0. Update the current exhaustion state after these resets.
+Long: cumulative impact > 0.
+Short: cumulative impact < 0.
+Long: high-volume block AND close > open AND accepted bullish block signal.
+Short: high-volume block AND close < open AND accepted bearish block signal.
+Long: bearish exhaustion.
+Short: bullish exhaustion.
+Long: previous bar was in bearish exhaustion AND stored first bearish exhaustion high exists AND low >= stored first bearish exhaustion low AND high > stored first bearish exhaustion high.
+Short: previous bar was in bullish exhaustion AND stored first bullish exhaustion low exists AND high <= stored first bullish exhaustion high AND low < stored first bullish exhaustion low.
+Exit: long, cumulative impact < negative signal threshold.
+Exit: short, cumulative impact > signal threshold.

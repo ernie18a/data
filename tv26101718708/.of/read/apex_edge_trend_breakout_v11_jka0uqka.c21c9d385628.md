@@ -1,8 +1,12 @@
-Calculation: Upper breakout rail = highest high over the lookback bars ending on the previous completed chart bar
-Calculation: Lower breakout rail = lowest low over the lookback bars ending on the previous completed chart bar
-Calculation: Long stop = maximum of the initial stop (entry price minus ATR at entry × initial-stop multiplier) and the prior stop and highest high since entry minus current ATR × trail multiplier
-Calculation: Short stop = minimum of the initial stop (entry price plus ATR at entry × initial-stop multiplier) and the prior stop and lowest low since entry plus current ATR × trail multiplier
-Long: On a completed chart bar, close crosses above the upper breakout rail AND close > EMA AND EMA > its value at the slope lookback AND (higher-timeframe confirmation is disabled OR chart close > EMA from the last completed higher-timeframe bar)
-Short: On a completed chart bar, close crosses below the lower breakout rail AND close < EMA AND EMA < its value at the slope lookback AND (higher-timeframe confirmation is disabled OR chart close < EMA from the last completed higher-timeframe bar)
-Exit: long, low <= long stop
-Exit: short, high >= short stop
+Calculation: Upper channel = highest high over the channel lookback ending at the previous chart bar.
+Calculation: Lower channel = lowest low over the channel lookback ending at the previous chart bar.
+Calculation: Uptrend = close > long EMA AND long EMA > its value at the slope lookback AND (higher-timeframe filter disabled OR close > long EMA of the last completed higher-timeframe bar).
+Calculation: Downtrend = close < long EMA AND long EMA < its value at the slope lookback AND (higher-timeframe filter disabled OR close < long EMA of the last completed higher-timeframe bar).
+Calculation: Long stop = entry price minus initial-stop multiplier times entry-bar ATR on entry; on each subsequent bar that does not touch the existing stop, update it to the greater of the existing stop and the highest high since entry minus trail multiplier times current ATR. Test the existing stop before updating it.
+Calculation: Short stop = entry price plus initial-stop multiplier times entry-bar ATR on entry; on each subsequent bar that does not touch the existing stop, update it to the lesser of the existing stop and the lowest low since entry plus trail multiplier times current ATR. Test the existing stop before updating it.
+Long: close > upper channel AND previous close <= previous upper channel AND (trend filter disabled OR (with-trend-only enabled AND uptrend) OR (with-trend-only disabled AND NOT downtrend)).
+Short: close < lower channel AND previous close >= previous lower channel AND (trend filter disabled OR (with-trend-only enabled AND downtrend) OR (with-trend-only disabled AND NOT uptrend)).
+Exit: long, low <= long stop.
+Exit: short, high >= short stop.
+Exit: long, bars since entry >= trade-window length.
+Exit: short, bars since entry >= trade-window length.

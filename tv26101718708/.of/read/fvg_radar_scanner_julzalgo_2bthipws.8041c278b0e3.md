@@ -1,3 +1,8 @@
-Calculation: Minimum qualifying gap = maximum of a configurable minimum tick-size gap and, when the ATR filter is enabled, a configurable ATR multiple
-Long: current low > high two bars ago AND current low - high two bars ago >= minimum qualifying gap
-Short: current high < low two bars ago AND low two bars ago - current high >= minimum qualifying gap
+Calculation: Minimum gap = a minimum price-gap threshold, or, if the ATR filter is enabled, the greater of that threshold and ATR multiplied by an ATR-gap multiplier.
+Calculation: Qualified gaps = bullish and bearish gaps detected within a lookback, each using the minimum gap calculated on its detection bar; optionally exclude a bullish gap if any subsequent low through the current bar is at or below the high two bars before its detection, and exclude a bearish gap if any subsequent high through the current bar is at or above the low two bars before its detection.
+Calculation: Estimated buy and sell volume = for each bar, let range be the greater of true range and the minimum price increment; body be close minus open; upper wick be high minus max(open, close); lower wick be min(open, close) minus low; candle size be the sum of absolute body and both wicks, replaced by the minimum price increment if zero; and close position be (close minus low) divided by range, clamped to [0, 1]. Buy strength = 0.60 × close position + 0.25 × lower wick / candle size + 0.35 × max(0, body / range). Sell strength = 0.60 × (1 − close position) + 0.25 × upper wick / candle size + 0.35 × max(0, −body / range). Estimated buy and sell volumes are volume multiplied by their respective strengths and divided by the sum of strengths, using 1 as the divisor if the sum is zero.
+Calculation: Gap buy volume and gap sell volume = sums of estimated buy volume and estimated sell volume respectively over the detection bar and the two preceding bars of every qualified gap, counting overlapping bars separately for each gap.
+Long: Low > high two bars ago AND low − high two bars ago >= minimum gap.
+Short: High < low two bars ago AND low two bars ago − high >= minimum gap.
+Long: Gap buy volume > gap sell volume.
+Short: Gap sell volume > gap buy volume.

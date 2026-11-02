@@ -1,15 +1,18 @@
-Long: On each configured timeframe (chart, higher, or lower; use its still-forming bar and preceding completed bar), high > preceding high AND low >= preceding low
-Short: On each configured timeframe (chart, higher, or lower; use its still-forming bar and preceding completed bar), low < preceding low AND high <= preceding high
-Long: On each configured timeframe, close >= open
-Short: On each configured timeframe, close < open
-Calculation: EMA = exponential moving average of close on the same configured timeframe
-Long: On each configured timeframe, close >= its EMA
-Short: On each configured timeframe, close < its EMA
-Calculation: Session VWAP = volume-weighted average of hlc3 for the current session on the chart timeframe
-Long: On each configured timeframe, its current close >= chart-timeframe session VWAP
-Short: On each configured timeframe, its current close < chart-timeframe session VWAP
-Calculation: Bull accuracy = fraction of prior completed bars in a given hour bucket (or across all buckets) where the preceding bar broke only its predecessor's high and the next bar closed >= open; bear accuracy = fraction where it broke only its predecessor's low and the next bar closed < open. Use completed 1-hour bars and the 8 AM–3 PM New York hour buckets.
-Long: For any hour bucket or total, bull accuracy >= bear accuracy + edge threshold; OR bull accuracy is available and bear accuracy is unavailable
-Short: For any hour bucket or total, bear accuracy >= bull accuracy + edge threshold; OR bear accuracy is available and bull accuracy is unavailable
-Long: Number of visible configured timeframes with bullish bias > number with bearish bias
-Short: Number of visible configured timeframes with bearish bias > number with bullish bias
+Calculation: Timeframe bullish bias = forming timeframe bar high > previous completed timeframe bar high AND forming timeframe bar low >= previous completed timeframe bar low; use a higher or lower timeframe than the chart timeframe, with the latest available lower-timeframe bar when applicable.
+Calculation: Timeframe bearish bias = forming timeframe bar low < previous completed timeframe bar low AND forming timeframe bar high <= previous completed timeframe bar high; use a higher or lower timeframe than the chart timeframe, with the latest available lower-timeframe bar when applicable.
+Calculation: Session bullish accuracy = percentage of completed bars with bullish bias whose close >= open, accumulated from the start of the data for a particular session hour or for all session hours combined. Calculate bias from each completed bar and its preceding bar on a higher or lower timeframe than the chart timeframe.
+Calculation: Session bearish accuracy = percentage of completed bars with bearish bias whose close < open, accumulated from the start of the data for the same session hour or for all session hours combined. Calculate bias from each completed bar and its preceding bar on the same timeframe as session bullish accuracy.
+Long: Forming timeframe bar close >= forming timeframe bar open, using a higher or lower timeframe than the chart timeframe and the latest available lower-timeframe bar when applicable.
+Long: Timeframe bullish bias.
+Long: Forming timeframe bar close >= its timeframe EMA, using a higher or lower timeframe than the chart timeframe and the latest available lower-timeframe bar when applicable.
+Long: Forming timeframe bar close >= chart-timeframe session VWAP, using a higher or lower timeframe than the chart timeframe and the latest available lower-timeframe bar when applicable.
+Long: Count of selected timeframes with bullish bias > count of selected timeframes with bearish bias.
+Long: Session bullish accuracy >= session bearish accuracy + edge threshold OR session bullish accuracy is available AND session bearish accuracy is unavailable, for an individual session hour.
+Long: Session bullish accuracy >= session bearish accuracy + edge threshold, for all session hours combined.
+Short: Forming timeframe bar close < forming timeframe bar open, using a higher or lower timeframe than the chart timeframe and the latest available lower-timeframe bar when applicable.
+Short: Timeframe bearish bias.
+Short: Forming timeframe bar close < its timeframe EMA, using a higher or lower timeframe than the chart timeframe and the latest available lower-timeframe bar when applicable.
+Short: Forming timeframe bar close < chart-timeframe session VWAP, using a higher or lower timeframe than the chart timeframe and the latest available lower-timeframe bar when applicable.
+Short: Count of selected timeframes with bearish bias > count of selected timeframes with bullish bias.
+Short: Session bearish accuracy >= session bullish accuracy + edge threshold AND session bullish accuracy < session bearish accuracy + edge threshold OR session bearish accuracy is available AND session bullish accuracy is unavailable, for an individual session hour.
+Short: Session bearish accuracy >= session bullish accuracy + edge threshold AND session bullish accuracy < session bearish accuracy + edge threshold, for all session hours combined.

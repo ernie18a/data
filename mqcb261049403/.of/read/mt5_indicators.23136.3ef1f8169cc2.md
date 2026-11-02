@@ -1,8 +1,4 @@
-Calculation: Prior-range high = highest high of the longer lookback over completed bars before the current bar
-Calculation: Prior-range low = lowest low of the same lookback over completed bars before the current bar
-Calculation: Short stop level = prior-range high plus three times the current bar's spread
-Calculation: Long stop level = prior-range low minus twice the current bar's spread
-Calculation: Short-term TEMA = triple exponential moving average of median price with a one-bar lookback
-Calculation: Long-term TEMA = triple exponential moving average of median price with a longer lookback than the short-term TEMA
-Long: Current position is flat or short AND ((current high >= prior-range high AND current close > short-term TEMA AND current close > long-term TEMA AND current high > long-term TEMA AND current MFI >= upper threshold) OR (current close >= previous bar's short stop level AND current high > prior-range high))
-Short: Current position is flat or long AND ((current low <= prior-range low AND current close < short-term TEMA AND current close < long-term TEMA AND current low < long-term TEMA AND current MFI <= lower threshold) OR (current close <= previous bar's long stop level AND current low < prior-range low))
+Calculation: Signal state = initially neutral; update to long on a long signal and to short on a short signal, evaluating long before short on each bar.
+Calculation: Range high and range low = highest high and lowest low, respectively, over the same lookback of completed bars preceding the evaluated bar.
+Long: Signal state is neutral or short AND high >= range high AND close > (high + low) / 2 AND close > triple exponential moving average of median price AND high > triple exponential moving average of median price AND money flow index >= upper threshold.
+Short: Signal state is neutral or long AND low <= range low AND close < (high + low) / 2 AND close < triple exponential moving average of median price AND low < triple exponential moving average of median price AND money flow index <= lower threshold.

@@ -1,9 +1,15 @@
-Calculation: Value centre = selected rolling volume-weighted average, adaptive moving average, or exponential moving average of the price source; use the same lookback for the selected method.
-Calculation: Recent volume-weighted price = volume-weighted average of the price source over a shorter lookback than the force lookback.
-Calculation: Net force = tanh of the exponentially smoothed sum of (recent volume-weighted price − close) / ATR and (value centre − close) / ATR, each multiplied by its respective nonnegative weight normalized by the sum of the weights.
-Calculation: Volume percentile = the bar's volume's percentile rank over a lookback.
-Calculation: Range percentile = the bar's high-low range's percentile rank over the same lookback as the volume percentile.
-Calculation: Close position = (close − low) / (high − low); use 0.5 when high equals low.
-Long: net force > positive strong-pull threshold OR net force crosses above the positive strong-pull threshold OR net force acceleration crosses above zero OR (low is at or below the lowest low of the preceding lookback bars AND close position ≥ 0.65 AND volume percentile ≥ 60) OR (close < prior close AND range percentile ≥ 60 AND volume percentile ≥ 80 AND close position ≥ 0.45) OR (close > prior close AND volume ≥ the highest volume in the lookback AND range percentile ≥ 70).
-Short: net force < negative strong-pull threshold OR net force crosses below the negative strong-pull threshold OR net force acceleration crosses below zero OR (high is at or above the highest high of the preceding lookback bars AND close position ≤ 0.35 AND volume percentile ≥ 60) OR (close > prior close AND volume ≥ the highest volume in the lookback AND range percentile ≥ 70).
-Exit:
+Calculation: Effective volume = volume when volume is forced on; 1 when volume is forced off; otherwise volume when volume is positive and available, and 1 when it is not.
+Calculation: Value centre = either rolling sum of price source times effective volume divided by rolling sum of effective volume, EMA of price source, or adaptive moving average of price source. For the adaptive moving average, efficiency = abs(source − source at the centre lookback) / max(rolling sum of abs(source − previous source) over that lookback, epsilon); smoothing = (efficiency × (fast EMA smoothing factor − slow EMA smoothing factor) + slow EMA smoothing factor)²; centre = previous centre + smoothing × (source − previous centre), initialized to source.
+Calculation: Net force = tanh of the EMA of (normalized value weight × (rolling volume-weighted mean of price source over the recent-cluster lookback − close) + normalized drift weight × (value centre − close)) / max(ATR, epsilon). Normalize the two weights by their sum, with an epsilon floor. Clamp the EMA input to tanh to a symmetric bound.
+Calculation: Force acceleration = EMA of net force minus previous net force, using the same smoothing length as net force; replace an unavailable previous net force with zero.
+Calculation: VSA volume = either volume or volume divided by its updated time-of-day slot baseline. Each slot baseline is an EMA updated with the current volume whenever a bar belongs to that slot, initialized to the first available volume in the slot; use a ratio of 1 when the updated baseline is unavailable or nonpositive.
+Calculation: Close position = (close − low) / (high − low), or the midpoint when high equals low.
+Long: Net force > positive strong-pull threshold.
+Short: Net force < negative strong-pull threshold.
+Long: Force acceleration crosses above zero.
+Short: Force acceleration crosses below zero.
+Long: Volume > 0 AND low <= lowest low over the preceding new-extreme lookback AND close position >= upper close-position threshold AND VSA volume percentile rank over the history lookback >= volume-rank threshold.
+Long: Volume > 0 AND close < previous close AND high-minus-low percentile rank over the history lookback >= spread-rank threshold AND VSA volume percentile rank over the history lookback >= higher volume-rank threshold AND close position >= stopping close-position threshold.
+Long: Volume > 0 AND close < previous close AND VSA volume >= highest VSA volume over the history lookback including the current bar AND high-minus-low percentile rank over that lookback >= climax spread-rank threshold.
+Short: Volume > 0 AND high >= highest high over the preceding new-extreme lookback AND close position <= lower close-position threshold AND VSA volume percentile rank over the history lookback >= volume-rank threshold.
+Short: Volume > 0 AND close > previous close AND VSA volume >= highest VSA volume over the history lookback including the current bar AND high-minus-low percentile rank over that lookback >= climax spread-rank threshold.

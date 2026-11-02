@@ -1,2 +1,8 @@
-Long: On any evaluated timeframe (higher or lower than the chart timeframe), using its still-forming bar: fast EMA > slow EMA OR MFI > 50 OR (RVI main line > 0 AND Momentum > 100 AND CCI > 0) OR (RVI main line < 50 AND Momentum > 100 AND CCI > 0)
-Short: On any evaluated timeframe (higher or lower than the chart timeframe), using its still-forming bar: fast EMA <= slow EMA OR MFI < 50 OR (RVI main line < 0 AND Momentum < 100 AND CCI < 0) OR (RVI main line > 50 AND Momentum < 100 AND CCI < 0)
+Long: Money Flow Index on the still-forming bar of each selected timeframe, which may be higher or lower than the chart timeframe, is above its midpoint.
+Short: Money Flow Index on the still-forming bar of each selected timeframe, which may be higher or lower than the chart timeframe, is below its midpoint.
+Long: Momentum of the selected price on the still-forming bar of each selected timeframe, which may be higher or lower than the chart timeframe, is above its neutral level AND Commodity Channel Index of the selected price on that bar is above zero.
+Short: Momentum of the selected price on the still-forming bar of each selected timeframe, which may be higher or lower than the chart timeframe, is below its neutral level AND Commodity Channel Index of the selected price on that bar is below zero AND (Relative Vigor Index main line on that bar is below zero OR it is above a positive threshold).
+Long: The shorter-period moving average of the selected price is above the longer-period moving average on the still-forming bar of each selected timeframe, which may be higher or lower than the chart timeframe.
+Short: The shorter-period moving average of the selected price is less than or equal to the longer-period moving average on the still-forming bar of each selected timeframe, which may be higher or lower than the chart timeframe.
+Long: Close is greater than or equal to open on the still-forming bar of a selected timeframe, which may be higher or lower than the chart timeframe.
+Short: Close is below open on the still-forming bar of a selected timeframe, which may be higher or lower than the chart timeframe.

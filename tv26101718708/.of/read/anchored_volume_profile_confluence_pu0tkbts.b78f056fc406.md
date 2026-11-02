@@ -1,4 +1,12 @@
-Calculation: Anchored POC = midpoint of the highest-volume price bin in a volume-at-price profile accumulated from the latest confirmed swing high or swing low; distribute each chart bar’s volume evenly across the bins in its high-low range, refining with completed lower-timeframe bars when available. Scale bin width to chart-timeframe ATR.
-Calculation: Fast value = midpoint of the value area in a second volume-at-price profile whose volume decays exponentially each chart bar; its effective lookback is shorter than the anchored profile’s.
-Long: Fast value crosses above Anchored POC
-Short: Fast value crosses below Anchored POC
+Calculation: Anchor = the start of each session, or the most recently confirmed swing high, swing low, or either swing type. A swing is confirmed after the selected number of right-hand bars; when confirmed, seed calculations from the pivot bar through the confirmation bar.
+Calculation: Anchored mean and sigma = the volume-weighted mean of a selected OHLC-derived price source since the anchor, and the square root of max(volume-weighted mean of the squared source minus the squared mean, 0).
+Calculation: Anchored profile and decayed profile = price bins with origin at the source on the anchor reset bar and fixed width equal to the greater of ATR and the minimum price increment, divided by a resolution parameter. On reset, distribute each seeded chart bar's volume equally among bins intersecting its low-to-high range; if the range intersects more than 300 bins, assign all volume to the midpoint bin. Weight seeded decayed-profile contributions by an exponential half-life according to their age. On subsequent completed chart bars, update the anchored profile with each completed lower-timeframe bar's volume assigned to its HLC3 bin when lower-timeframe refinement is enabled and available; otherwise distribute chart-bar volume across its range as above. For the decayed profile, multiply existing bin volumes by the half-life decay factor and add the chart bar's range-distributed volume. The point of control is the center of the highest-volume bin; retain the existing winner on equal volume. The decayed value is either its point of control or its value-area midpoint. To calculate the latter, start at its point-of-control bin and repeatedly add the larger-volume adjacent bin, choosing the upper bin on ties, until the selected fraction of total profile volume is included; take the midpoint of the outer bin edges.
+Calculation: Stretch score = (selected price source minus anchored mean) / anchored sigma when sigma is positive; otherwise 0.
+Long: Anchored mean >= previous anchored mean.
+Short: Anchored mean < previous anchored mean.
+Long: Decayed value >= anchored point of control.
+Short: Decayed value < anchored point of control.
+Long: Decayed value crosses above anchored point of control.
+Short: Decayed value crosses below anchored point of control.
+Long: Stretch score <= negative stretch threshold AND previous stretch score > negative stretch threshold.
+Short: Stretch score >= stretch threshold AND previous stretch score < stretch threshold.

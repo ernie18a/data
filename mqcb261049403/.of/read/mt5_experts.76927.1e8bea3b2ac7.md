@@ -1,8 +1,11 @@
-Calculation: Range high = highest high of the configured number of previous completed chart bars when the range is set
-Calculation: Range low = lowest low of the configured number of previous completed chart bars when the range is set
-Calculation: Initial risk distance = absolute difference between entry price and the opposite range edge
-Calculation: R = favorable price movement from entry divided by initial risk distance
-Long: During the configured daily entry window, before any successful entry that day, range low < range high AND range width >= minimum ATR multiple × ATR AND range width <= maximum ATR multiple × ATR AND (configured touch mode: current bar high >= range high OR configured close mode: last completed chart bar close > range high)
-Short: During the configured daily entry window, before any successful entry that day, range low < range high AND range width >= minimum ATR multiple × ATR AND range width <= maximum ATR multiple × ATR AND (configured touch mode: current bar low <= range low OR configured close mode: last completed chart bar close < range low)
-Exit: Long, current price <= active stop OR current price >= fixed target at configured R multiple OR time >= configured end time
-Exit: Short, current price >= active stop OR current price <= fixed target at configured R multiple OR time >= configured end time
+Calculation: Session range high and low = highest high and lowest low of a lookback of completed chart bars at the first available time on or after the session start and before the session end; hold both levels fixed for the day.
+Calculation: Session ATR = ATR on the selected chart, higher, or lower timeframe, using its last completed bar when the session range is established.
+Calculation: Initial risk = absolute difference between entry price and the opposite session range boundary at entry.
+Calculation: Long stop = session range low until the break-even option is enabled and price has reached entry price plus the break-even trigger multiple of initial risk; thereafter, the greater of the session range low and entry price plus the break-even target multiple of initial risk.
+Calculation: Short stop = session range high until the break-even option is enabled and price has reached entry price minus the break-even trigger multiple of initial risk; thereafter, the lesser of the session range high and entry price minus the break-even target multiple of initial risk.
+Long: Completed-bar breakout mode is enabled AND current time is before the session end AND no entry has occurred today AND session range high - session range low > 0 AND session range high - session range low >= lower ATR multiplier × session ATR AND session range high - session range low <= upper ATR multiplier × session ATR AND the last completed chart bar close > session range high.
+Short: Completed-bar breakout mode is enabled AND current time is before the session end AND no entry has occurred today AND session range high - session range low > 0 AND session range high - session range low >= lower ATR multiplier × session ATR AND session range high - session range low <= upper ATR multiplier × session ATR AND the last completed chart bar close < session range low.
+Exit: long, price <= long stop OR fixed target is enabled AND price >= entry price + target multiple × initial risk OR current time >= session end.
+Exit: short, price >= short stop OR fixed target is enabled AND price <= entry price - target multiple × initial risk OR current time >= session end.
+Exit: long, partial exit is enabled AND no partial exit has occurred for this position AND price >= entry price + partial-exit trigger multiple × initial risk; exit the configured fraction of the position.
+Exit: short, partial exit is enabled AND no partial exit has occurred for this position AND price <= entry price - partial-exit trigger multiple × initial risk; exit the configured fraction of the position.

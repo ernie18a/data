@@ -1,15 +1,17 @@
-Calculation: ATR Renko open and close = open and close of the last completed ATR-based Renko bar at the chart timeframe resolution
-Calculation: Prior lookback high/low = highest high/lowest low over the configured lookback, excluding the current bar
-Calculation: Stop loss = entry price minus/plus configured ATR multiple for long/short positions, or the nearest qualifying prior order-block boundary when structure-based stops are enabled
-Long: ATR Renko close > ATR Renko open
-Long: ATR Renko close > ATR Renko open for the first consecutive bullish bar AND (MTF filter disabled OR at least 2 of 3 higher-timeframe 50-period SMAs from their last completed bars are below the chart close) AND (session filter disabled OR current time is within a configured session)
-Long: low < prior lookback low AND close > prior lookback low AND close > open
-Long: lower wick present on at least 3 consecutive bars, with each wick low within a configured ATR fraction of the previous clustered wick low
-Long: Long entry condition AND Renko volume <= its 20-period moving average
-Short: ATR Renko close < ATR Renko open
-Short: ATR Renko close < ATR Renko open for the first consecutive bearish bar AND (MTF filter disabled OR at least 2 of 3 higher-timeframe 50-period SMAs from their last completed bars are above the chart close) AND (session filter disabled OR current time is within a configured session)
-Short: high > prior lookback high AND close < prior lookback high AND close < open
-Short: upper wick present on at least 3 consecutive bars, with each wick high within a configured ATR fraction of the previous clustered wick high
-Short: Short entry condition AND Renko volume <= its 20-period moving average
-Exit: long, confirmed bar close < stop loss
-Exit: short, confirmed bar close > stop loss
+Calculation: Confirmed Renko bar = the last completed ATR-sized Renko bar requested at the chart timeframe or a higher timeframe; carry its open and close forward across chart bars until the next completed Renko bar is available.
+Calculation: Directional streak = consecutive chart bars on which the confirmed Renko close is respectively greater than or less than its open; reset the corresponding streak to zero otherwise.
+Calculation: MTF bullish or bearish score = count of three higher timeframes for which the chart close is respectively above or below the simple moving average of closes, calculated using the last completed bar of each higher timeframe. All three averages use the same lookback.
+Calculation: Wick cluster count = for each side separately, count consecutive chart bars with a wick on that side whose extreme is within an ATR-scaled distance of the stored extreme; otherwise, if a wick exists, store its extreme and reset the count to one, or reset the count to zero if no wick exists. Retain the stored extreme until it is replaced.
+Calculation: Locked stop = at each filtered first directional streak bar, use the confirmed Renko close minus an ATR multiple for a bullish signal or plus an ATR multiple for a bearish signal. If structure-based stops are enabled and a qualifying prior order block exists, instead use the bottom of the block with the nearest top below the bullish signal's Renko close, or the top of the block with the nearest bottom above the bearish signal's Renko close. Each filtered first directional streak bar creates a block bounded by that Renko open and close; retain a limited number of blocks and exclude the newly created block when selecting the stop. Lock the stop until the next filtered first directional streak bar.
+Long: Confirmed Renko close > confirmed Renko open.
+Short: Confirmed Renko close < confirmed Renko open.
+Long: MTF bullish score >= convergence threshold.
+Short: MTF bearish score >= convergence threshold.
+Long: Bullish directional streak = 1 AND (MTF filter disabled OR MTF bullish score >= convergence threshold) AND (session filter disabled OR bar datetime is within the configured UTC session).
+Short: Bearish directional streak = 1 AND (MTF filter disabled OR MTF bearish score >= convergence threshold) AND (session filter disabled OR bar datetime is within the configured UTC session).
+Long: Low < lowest low of the preceding lookback bars AND close > that lowest low AND close > open.
+Short: High > highest high of the preceding lookback bars AND close < that highest high AND close < open.
+Long: Lower wick cluster count >= cluster threshold.
+Short: Upper wick cluster count >= cluster threshold.
+Exit: long, close < locked stop.
+Exit: short, close > locked stop.

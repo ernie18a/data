@@ -1,4 +1,12 @@
-Calculation: Bar delta = sum, over lower-timeframe bars within the current chart bar, of each bar’s volume signed positive when its close is at least its open and negative otherwise; if unavailable, use chart-bar volume signed by chart close versus open. Uses lower-timeframe bars, not higher-timeframe bars; use the bars belonging to the current chart bar.
-Calculation: Cumulative delta = cumulative sum of bar delta.
-Long: (chart-bar volume >= its recent-volume threshold at the small-bubble percentile AND bar delta >= 0) OR (chart-bar volume >= its high recent-volume percentile AND high - low < ATR(14) × a threshold AND bar delta >= 0) OR (close <= close from the divergence lookback bars earlier AND cumulative delta > cumulative delta from the divergence lookback bars earlier)
-Short: (chart-bar volume >= its recent-volume threshold at the small-bubble percentile AND bar delta < 0) OR (chart-bar volume >= its high recent-volume percentile AND high - low < ATR(14) × a threshold AND bar delta < 0) OR (close > close from the divergence lookback bars earlier AND cumulative delta <= cumulative delta from the divergence lookback bars earlier)
+Calculation: Bar delta = sum the volume of each completed lower-timeframe bar within the current chart bar as positive when its close >= open and negative otherwise; if no lower-timeframe bars are available, use chart-bar volume as positive when close >= open and negative otherwise.
+Calculation: Cumulative volume delta = cumulative sum of bar delta.
+Long: Bar delta >= 0.
+Short: Bar delta < 0.
+Long: Sum of bar delta over the lookback >= 0.
+Short: Sum of bar delta over the lookback < 0.
+Long: Close <= close at the divergence lookback AND cumulative volume delta > cumulative volume delta at the same lookback.
+Short: Close > close at the divergence lookback AND cumulative volume delta <= cumulative volume delta at the same lookback.
+Long: Volume >= its linearly interpolated percentile over the bubble lookback including the current bar AND bar delta >= 0.
+Short: Volume >= its linearly interpolated percentile over the bubble lookback including the current bar AND bar delta < 0.
+Long: Volume >= its linearly interpolated percentile over the absorption lookback including the current bar AND high - low < ATR multiplied by the absorption range factor AND bar delta >= 0.
+Short: Volume >= its linearly interpolated percentile over the absorption lookback including the current bar AND high - low < ATR multiplied by the absorption range factor AND bar delta < 0.

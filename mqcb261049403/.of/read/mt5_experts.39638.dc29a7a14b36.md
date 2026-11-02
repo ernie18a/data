@@ -1,4 +1,5 @@
-Calculation: Upper border = Variable Index Dynamic Average + Average True Range
-Calculation: Lower border = Variable Index Dynamic Average - Average True Range
-Long: close < Lower border
-Short: close > Upper border
+Long: reverse mode = off AND selected working-timeframe bar close < VIDYA − ATR
+Long: reverse mode = on AND selected working-timeframe bar close > VIDYA + ATR
+Short: reverse mode = off AND selected working-timeframe bar close > VIDYA + ATR
+Short: reverse mode = on AND selected working-timeframe bar close < VIDYA − ATR
+Calculation: Selected working-timeframe bar = either the last completed bar or the bar still forming; the working timeframe may be the chart timeframe, higher than the chart timeframe, or lower than the chart timeframe.

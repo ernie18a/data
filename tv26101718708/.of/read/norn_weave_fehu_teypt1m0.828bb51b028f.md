@@ -1,15 +1,11 @@
-Calculation: Dow Theory trend = track the latest swing high and swing low, each detected when the high or low from one swing-length bars ago is the highest or lowest across the centered window of 2 × swing length + 1 bars; switch trend to bullish when close exceeds the latest swing high, switch to bearish when close falls below the latest swing low, and otherwise retain the prior trend
-Long: EMA(close) > its prior-bar value AND Dow Theory trend is bullish AND ADX is above its threshold
-Short: EMA(close) < its prior-bar value AND Dow Theory trend is bearish AND ADX is above its threshold
-Exit: long, close is below entry price by more than the stop-loss percentage
-Exit: short, close is above entry price by more than the stop-loss percentage
-Exit: long, after close-based floating profit reaches the break-even trigger, low <= the break-even stop price (entry price adjusted slightly upward)
-Exit: short, after close-based floating profit reaches the break-even trigger, high >= the break-even stop price (entry price adjusted slightly downward)
-Exit: long, Dow Theory trend is bearish
-Exit: short, Dow Theory trend is bullish
-Exit: long, high > entry price + ATR(50) × ATR factor × 1
-Exit: long, high > entry price + ATR(50) × ATR factor × 2
-Exit: long, high > entry price + ATR(50) × ATR factor × 3
-Exit: short, low < entry price - ATR(50) × ATR factor × 1
-Exit: short, low < entry price - ATR(50) × ATR factor × 2
-Exit: short, low < entry price - ATR(50) × ATR factor × 3
+Calculation: Swing trend = Maintain the most recent confirmed swing high and swing low, initially unavailable. A swing high is the high N bars ago equal to the highest high over the latest 2N+1 bars; a swing low is the low N bars ago equal to the lowest low over the same window. Start neutral. Set trend to up when close exceeds the latest swing high, then set it to down when close is below the latest swing low; otherwise retain the prior trend.
+Calculation: Higher-timeframe swing trend = Apply the same persistent trend rule to the last completed higher-timeframe bar, using confirmed higher-timeframe pivot highs and lows with equal left and right lookbacks; retain the latest confirmed pivots.
+Calculation: Profit percentage = (close / entry price − 1) for a long position, or (1 − close / entry price) for a short position, expressed as a percentage.
+Calculation: Break-even activation = Enabled AND profit percentage has reached or exceeded its threshold at least once during the current position; activation persists until the position closes.
+Calculation: Profit targets = The signal-bar close plus, for a long, or minus, for a short, ATR on the signal bar multiplied by a factor and by each successive target multiplier. Each target remains active until first reached during that position.
+Long: Swing trend = up OR higher-timeframe swing trend = up OR EMA of close > previous bar's EMA of close
+Short: Swing trend = down OR higher-timeframe swing trend = down OR EMA of close <= previous bar's EMA of close
+Long: Position side = flat AND EMA of close > previous bar's EMA of close AND swing trend = up AND ADX > threshold
+Short: Position side = flat AND EMA of close < previous bar's EMA of close AND swing trend = down AND ADX > threshold
+Exit: long, profit percentage < stop-loss threshold OR swing trend = down OR (break-even activation = true AND low <= entry price × (1 + break-even buffer percentage)) OR high > any active long profit target
+Exit: short, profit percentage < stop-loss threshold OR swing trend = up OR (break-even activation = true AND high >= entry price × (1 − break-even buffer percentage)) OR low < any active short profit target

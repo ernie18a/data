@@ -1,4 +1,8 @@
-Calculation: XTL value = (selected source − its selected moving average) divided by 0.015 times the mean absolute deviation of the selected source over the same lookback; in the traditional variant, use the mean absolute deviation of the absolute source-minus-moving-average series instead.
-Long: Supertrend direction flips from bearish to bullish AND (EMA filter disabled OR close > EMA(lookback) × (1 + tolerance)) AND NOT (Daily close < Daily EMA AND Daily EMA slope < 0); XTL value > positive threshold; XTL value crosses above positive threshold
-Short: XTL value < negative threshold; XTL value crosses below negative threshold
-Exit: long, Supertrend direction flips from bullish to bearish
+Calculation: Supertrend state = Initialize state to bullish. On each bar, set basic lower and upper bands to selected price source minus and plus an ATR multiplier times ATR, respectively; ATR may instead be the SMA of true range. Set the lower band to the greater of its basic value and previous lower band when the previous close was above the previous lower band; otherwise use its basic value. Set the upper band to the lesser of its basic value and previous upper band when the previous close was below the previous upper band; otherwise use its basic value. Change bearish state to bullish when close is above the previous upper band; change bullish state to bearish when close is below the previous lower band; otherwise retain the previous state.
+Calculation: Trend oscillator = (selected source - selected moving average of that source) / (0.015 times mean absolute deviation over the oscillator lookback). Calculate the deviation either from the source or from the absolute difference between the source and its moving average. The moving average and deviation use the same lookback.
+Long: Supertrend state = bullish
+Short: Supertrend state = bearish
+Long: Trend oscillator > positive threshold
+Short: Trend oscillator < negative threshold, where the negative threshold is the negative of the positive threshold
+Long: Supertrend state changes from bearish to bullish AND (EMA filter disabled OR close > chart-timeframe close EMA times (1 + tolerance)) AND (higher-timeframe veto disabled OR higher-timeframe close >= its close EMA OR its close EMA >= its close EMA a lookback ago). Use either the last completed higher-timeframe bar or the higher-timeframe bar still forming, as selected.
+Exit: long, Supertrend state changes from bullish to bearish

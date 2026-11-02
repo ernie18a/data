@@ -1,6 +1,12 @@
-Calculation: Previous-period high and low = high and low of the last completed anchor-period bar; the anchor period is higher than the chart timeframe.
-Calculation: Sweep-trap lines = previous-period high + average range of completed anchor periods × sweep offset, and previous-period low − average range of completed anchor periods × sweep offset.
-Calculation: Acceptance lines = previous-period high + average range of completed anchor periods × acceptance offset, and previous-period low − average range of completed anchor periods × acceptance offset.
-Calculation: Level strength score = weighted 0–10 score from prior-period volume versus its longer-term average, range versus average range, close rejection from the extreme, distance from a round number, isolation from recent extremes, stop-run context, and body-built extreme.
-Long: (level strength score ≥ 7 AND low ≤ lower sweep-trap line AND close > previous-period low) OR (level strength score ≥ 3 AND level strength score < 6.5 AND close > upper acceptance line AND volume > prior chart bar volume) OR (a close below the lower acceptance line occurred earlier in the current anchor period AND close > previous-period low)
-Short: (level strength score ≥ 7 AND high ≥ upper sweep-trap line AND close < previous-period high) OR (level strength score ≥ 3 AND level strength score < 6.5 AND close < lower acceptance line AND volume > prior chart bar volume) OR (a close above the upper acceptance line occurred earlier in the current anchor period AND close < previous-period high)
+Calculation: Prior high and prior low = high and low of the last completed higher-timeframe bar; update at each higher-timeframe boundary.
+Calculation: Average range = mean high minus low over a lookback of completed higher-timeframe bars, including the last completed bar.
+Calculation: Upper and lower sweep levels = prior high plus, and prior low minus, average range multiplied by the sweep offset. Upper and lower acceptance levels use the same construction with a separate acceptance offset.
+Calculation: High-side and low-side states = independently reset to intact at each higher-timeframe boundary. On each chart bar, set the respective state to accepted if close is beyond its acceptance level; otherwise set an accepted state to failed if close returns inside its prior high or low; otherwise set an intact state to swept if its sweep condition occurs. Keep the state unchanged otherwise.
+Long: Low-side state was intact AND low <= lower sweep level AND close > prior low AND close >= lower acceptance level.
+Long: High-side state was not accepted AND close > upper acceptance level.
+Long: Low-side state was accepted AND close > prior low.
+Short: High-side state was intact AND high >= upper sweep level AND close < prior high AND close <= upper acceptance level.
+Short: Low-side state was not accepted AND close < lower acceptance level.
+Short: High-side state was accepted AND close < prior high.
+Exit: long, close < lower acceptance level OR high-side state was accepted AND close < prior high.
+Exit: short, close > upper acceptance level OR low-side state was accepted AND close > prior low.

@@ -1,28 +1,31 @@
-Calculation: Bull/bear moving-average stack = fast moving average > mid > slow / fast < mid < slow, with shorter lookback for fast and longer for slow.
-Calculation: VWAP neutral band = ATR × configurable fraction; VWAP direction is bullish when close > VWAP + band and bearish when close < VWAP − band.
-Calculation: Momentum direction = whichever side has more bullish or bearish votes; RSI votes bullish at/above its bullish threshold and bearish at/below its bearish threshold; Stochastic RSI votes bullish when %K > %D and %K > midpoint, bearish when %K < %D and %K < midpoint.
-Calculation: Timeframe bias = bullish if at least two of the moving-average stack, RSI vote, and Stochastic RSI vote are bullish and bullish votes exceed bearish votes; bearish by the symmetric condition; otherwise neutral. Apply to each of eight configured timeframes, which may be lower or higher than the chart timeframe; use the available security value (completed higher-timeframe bars historically and the forming bar in realtime).
-Calculation: Multi-timeframe direction = bullish when bullish timeframe biases meet the configured minimum and outnumber bearish timeframe biases; bearish by the symmetric condition; otherwise neutral.
-Calculation: Structure direction = bullish after close exceeds the latest confirmed pivot high, bearish after close falls below the latest confirmed pivot low; retain the last break direction until the opposite break.
-Calculation: Session sweep direction = bullish after price sweeps below the selected session low, bearish after price sweeps above its high; retain the last sweep direction until reset or the opposite sweep. Selected session is Asia or the active session.
-Calculation: Hybrid direction = sum of enabled component directions (trend, VWAP, momentum, structure, multi-timeframe, session; bullish = +1, bearish = −1, neutral = 0); bullish at/above the minimum directional score, bearish at/below its negative, otherwise neutral. Selected direction is the chosen mode's direction: hybrid, trend, VWAP, momentum, structure, multi-timeframe, or session sweep.
-Long: fast moving average > mid moving average AND mid moving average > slow moving average
-Long: close > VWAP + ATR × configurable neutral-band fraction
-Long: RSI ≥ bullish threshold AND RSI > bearish threshold
-Long: Stochastic RSI %K > %D AND %K > midpoint
-Long: at least two bullish votes among moving-average stack, RSI, and Stochastic RSI AND bullish votes > bearish votes
-Long: bullish timeframe biases ≥ configured minimum AND bullish timeframe biases > bearish timeframe biases
-Long: close > latest confirmed pivot high
-Long: price sweeps below selected session low
-Long: hybrid direction ≥ minimum directional score
-Long: selected direction is bullish AND absolute enabled-component directional score / enabled-component count × 100 ≥ configured neutral-strength percentage
-Short: fast moving average < mid moving average AND mid moving average < slow moving average
-Short: close < VWAP − ATR × configurable neutral-band fraction
-Short: RSI ≤ bearish threshold AND RSI < bullish threshold
-Short: Stochastic RSI %K < %D AND %K < midpoint
-Short: at least two bearish votes among moving-average stack, RSI, and Stochastic RSI AND bearish votes > bullish votes
-Short: bearish timeframe biases ≥ configured minimum AND bearish timeframe biases > bullish timeframe biases
-Short: close < latest confirmed pivot low
-Short: price sweeps above selected session high
-Short: hybrid direction ≤ negative minimum directional score
-Short: selected direction is bearish AND absolute enabled-component directional score / enabled-component count × 100 ≥ configured neutral-strength percentage
+Calculation: Trend direction = +1 when the short-lookback moving average of close > the medium-lookback moving average > the long-lookback moving average; -1 when both inequalities reverse; otherwise 0. The moving average type is EMA, SMA, or VWMA.
+Calculation: VWAP direction = +1 when close > session VWAP of (high + low + close) / 3 + ATR × a neutral-band parameter; -1 when close < session VWAP - ATR × that parameter; otherwise 0.
+Calculation: Momentum direction = sign of the number of bullish conditions minus the number of bearish conditions, where the bullish conditions are RSI >= an upper threshold and stochastic RSI K > D AND K > a midpoint, and the bearish conditions are RSI <= a lower threshold and stochastic RSI K < D AND K < the midpoint. K is the SMA-smoothed stochastic of RSI; D is an SMA of K.
+Calculation: Structure direction = +1 when close > the latest confirmed pivot high; otherwise -1 when close < the latest confirmed pivot low; otherwise retain the previous direction, initially 0. A pivot uses equal numbers of bars on each side for confirmation.
+Calculation: Session sweep direction = initially 0; optionally reset to 0 at the start of the reference session. With the reference-session option, outside that session set it to -1 when high > that session's accumulated high and to +1 when low < its accumulated low. With the active-session option, during the union of the configured sessions set it to -1 when high > the previous bar's accumulated active-session high and to +1 when low < the previous bar's accumulated active-session low; reset the accumulated high and low when that union becomes active. Retain the direction otherwise; if both sweeps occur on a bar, +1 takes precedence.
+Calculation: Timeframe direction = +1 when at least a threshold number of the bullish trend, RSI, and stochastic RSI conditions are true AND their count exceeds the count of their bearish counterparts; -1 when the corresponding bearish count reaches the threshold AND exceeds the bullish count; otherwise 0. Calculate these conditions on each configured timeframe using the same parameter relationships as on the chart. For a higher timeframe, historical bars use the last completed bar and realtime bars use the bar still forming; for a lower timeframe, use the last available intrabar.
+Calculation: Multi-timeframe direction = +1 when the count of timeframe directions equal to +1 >= an agreement threshold AND exceeds the count equal to -1; -1 when the count equal to -1 >= the threshold AND exceeds the count equal to +1; otherwise 0.
+Calculation: Hybrid direction = +1 when the sum of enabled trend, VWAP, momentum, structure, multi-timeframe, and session sweep directions >= a positive score threshold; -1 when the sum <= the negative of that threshold; otherwise 0. Strength = the absolute value of that sum divided by the number of enabled components, or 0 if none are enabled.
+Calculation: Selected direction = the hybrid direction or one selected component direction; a manual option can instead select +1, -1, or 0.
+Long: Trend direction = +1.
+Short: Trend direction = -1.
+Long: VWAP direction = +1.
+Short: VWAP direction = -1.
+Long: RSI >= the upper threshold.
+Short: RSI <= the lower threshold.
+Long: Stochastic RSI K > D AND K > the midpoint.
+Short: Stochastic RSI K < D AND K < the midpoint.
+Long: Momentum direction = +1.
+Short: Momentum direction = -1.
+Long: Structure direction = +1.
+Short: Structure direction = -1.
+Long: Session sweep direction = +1.
+Short: Session sweep direction = -1.
+Long: Any configured timeframe direction = +1.
+Short: Any configured timeframe direction = -1.
+Long: Multi-timeframe direction = +1.
+Short: Multi-timeframe direction = -1.
+Long: Selected direction = +1 AND strength >= the strength threshold.
+Short: Selected direction = -1 AND strength >= the strength threshold.
+Long: Selected direction = +1.
+Short: Selected direction = -1.

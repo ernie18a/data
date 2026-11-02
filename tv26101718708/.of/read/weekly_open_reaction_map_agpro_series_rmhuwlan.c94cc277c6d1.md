@@ -1,9 +1,11 @@
-Calculation: Higher-timeframe open = open of the current, still-forming bar from a higher timeframe.
-Calculation: Reaction-band half-width = the greater of one minimum tick and the selected width: chart-timeframe ATR × multiplier, absolute higher-timeframe open × percentage, or minimum tick × tick count.
-Calculation: Accepted above = closes above the higher-timeframe open plus the reaction-band half-width for the configured number of consecutive chart-timeframe bars; the streak resets at the start of each higher-timeframe period.
-Calculation: Accepted below = closes below the higher-timeframe open minus the reaction-band half-width for the configured number of consecutive chart-timeframe bars; the streak resets at the start of each higher-timeframe period.
-Calculation: New acceptance above = accepted above becomes true on this bar after being false on the prior bar, excluding the first chart-timeframe bar of a new higher-timeframe period.
-Calculation: New acceptance below = accepted below becomes true on this bar after being false on the prior bar, excluding the first chart-timeframe bar of a new higher-timeframe period.
-Calculation: Recent band interaction = a chart-timeframe bar's high-low range intersects the reaction band within the configured chart-timeframe lookback.
-Long: New acceptance above AND recent band interaction
-Short: New acceptance below AND recent band interaction
+Calculation: Anchor = open of the current, still-forming higher-timeframe bar.
+Calculation: Band half-width = maximum of the minimum price increment and either chart-timeframe ATR multiplied by a width parameter, absolute anchor multiplied by a percentage parameter, or minimum price increment multiplied by a width parameter; use the minimum price increment if the selected width is unavailable.
+Calculation: Above streak and below streak = consecutive chart bars whose closes are respectively strictly above the anchor plus the contemporaneous band half-width or strictly below the anchor minus it; reset both at each new anchor period.
+Calculation: Recent touch = the number of chart bars since the most recent bar with low <= its anchor plus its band half-width AND high >= its anchor minus its band half-width; do not reset at a new anchor period.
+Calculation: Prior opposite-side occurrence = at least one earlier chart bar in the current anchor period closed strictly beyond the opposite side of its contemporaneous band.
+Long: Above streak >= confirmation length.
+Short: Below streak >= confirmation length.
+Long: Current bar is not the first bar of the anchor period AND above streak >= confirmation length AND previous bar's above streak < confirmation length AND recent touch <= touch-window length AND prior opposite-side occurrence.
+Short: Current bar is not the first bar of the anchor period AND below streak >= confirmation length AND previous bar's below streak < confirmation length AND recent touch <= touch-window length AND prior opposite-side occurrence.
+Long: Current bar is not the first bar of the anchor period AND above streak >= confirmation length AND previous bar's above streak < confirmation length AND recent touch <= touch-window length AND prior opposite-side occurrence = false.
+Short: Current bar is not the first bar of the anchor period AND below streak >= confirmation length AND previous bar's below streak < confirmation length AND recent touch <= touch-window length AND prior opposite-side occurrence = false.

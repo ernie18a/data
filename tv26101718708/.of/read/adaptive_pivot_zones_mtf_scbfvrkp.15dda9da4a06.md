@@ -1,10 +1,17 @@
-Calculation: Pivot-zone lines = Track the latest confirmed pivot high and pivot low, each requiring the configured number of bars on both sides; place three lines at the configured coefficients of the low-to-high range, smooth each with its configured moving average, and define the zone boundaries as the minimum and maximum of the three smoothed lines. The middle line is the smoothed line at the middle coefficient.
-Calculation: Trend state = On the chart timeframe or either of two higher timeframes, set the state bearish when close is below the lower boundary in Full Band mode or below the middle line in Mid Line mode; set it bullish when close is above the upper boundary in Full Band mode or above the middle line in Mid Line mode; otherwise retain the prior state. Neutral is allowed only on the chart timeframe when enabled and close equals the decision level. Higher-timeframe calculations use the last completed higher-timeframe bar in backtests.
-Calculation: Agreement count = Number of the chart timeframe and two higher-timeframe trend states that equal the chart timeframe's non-neutral trend state.
-Calculation: Risk distance = ATR on the chart timeframe multiplied by the configured stop multiplier, or entry price multiplied by the configured stop percentage.
-Calculation: Stop price = Entry price minus risk distance for a long signal, or plus risk distance for a short signal.
-Calculation: Target price = Entry price plus risk distance times the configured reward multiple for a long signal, or minus that amount for a short signal. The exit target is the furthest enabled target among the three reward levels.
-Long: Chart-timeframe trend state is bullish AND (prior cascade direction is not bullish OR current agreement count > prior cascade count).
-Short: Chart-timeframe trend state is bearish AND (prior cascade direction is not bearish OR current agreement count > prior cascade count).
-Exit: Long, after the signal bar, low <= stop price OR high >= furthest enabled target
-Exit: Short, after the signal bar, high >= stop price OR low <= furthest enabled target
+Calculation: Pivot zone = On each timeframe, retain the latest confirmed pivot high and pivot low, using the same number of bars on each side for confirmation. For each of three independent coefficients, calculate pivot low + coefficient × (pivot high − pivot low), then apply the same-length SMA to each series. The second smoothed series is the middle line; the minimum and maximum of all three are the lower and upper boundaries.
+Calculation: Trend state = Initialize bullish. In full-band mode, set bearish when close < lower boundary and bullish when close > upper boundary; otherwise retain the prior state, or set neutral if neutral mode is enabled. In middle-line mode, set bearish when close < middle line and bullish when close > middle line; otherwise retain the prior state, or set neutral if neutral mode is enabled. Retain the prior state while the required zone is unavailable. Use the same zone parameters and mode on all timeframes; neutral mode applies only to the chart timeframe. For higher timeframes use the last completed bar; for a lower timeframe use its last completed bar within each chart bar.
+Calculation: Agreement count = Number of bullish or bearish states matching the chart state across the chart timeframe and two selected higher timeframes.
+Calculation: Cascade = Initialize direction and recorded count to zero. When the chart state is non-neutral and differs from the recorded direction, record the chart state and current agreement count and emit that direction and count. Otherwise, when the chart state is non-neutral and its agreement count exceeds the recorded count, record the new count and emit that direction and count. Neutral chart states leave the records unchanged.
+Calculation: Risk distance = At each qualifying cascade emission, fix the entry at the chart close and the risk distance at either entry-time ATR multiplied by a parameter or entry price multiplied by a percentage parameter. The selected target is the third target if enabled, otherwise the second if enabled, otherwise the first if enabled; each target distance is the risk distance multiplied by its own reward-to-risk parameter. A new qualifying emission replaces the prior active entry and levels.
+Long: Trend state on the chart or on a selected higher or lower table timeframe is bullish.
+Short: Trend state on the chart or on a selected higher or lower table timeframe is bearish.
+Long: Chart trend state becomes bullish from a non-bullish state.
+Short: Chart trend state becomes bearish from a non-bearish state.
+Long: Cascade emits bullish AND its agreement count is an enabled count.
+Short: Cascade emits bearish AND its agreement count is an enabled count.
+Long: Cascade emits bullish AND agreement count equals an observed count.
+Short: Cascade emits bearish AND agreement count equals an observed count.
+Long: All three trend states are bullish AND they were not all bullish on the preceding chart bar.
+Short: All three trend states are bearish AND they were not all bearish on the preceding chart bar.
+Exit: long, a bar after the active entry has low <= entry price − risk distance OR high >= entry price + selected target distance.
+Exit: short, a bar after the active entry has high >= entry price + risk distance OR low <= entry price − selected target distance.

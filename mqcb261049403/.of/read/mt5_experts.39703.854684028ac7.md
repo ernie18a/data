@@ -1,5 +1,4 @@
-Calculation: VIDYA = recursive moving average of applied price, using smoothing factor [2 / (EMA smoothing period + 1)] × absolute Chande Momentum Oscillator(longer CMO lookback) / 100; calculate on the selected working timeframe.
-Long: On the last completed working-timeframe bar, open < VIDYA AND close > VIDYA
-Short: On the last completed working-timeframe bar, open > VIDYA AND close < VIDYA
-Exit: Long, bar low ≤ entry price − stop-loss distance OR bar high ≥ entry price + take-profit distance OR short condition
-Exit: Short, bar high ≥ entry price + stop-loss distance OR bar low ≤ entry price − take-profit distance OR long condition
+Long: At the start of a new working-timeframe bar, the last completed working-timeframe bar's open < shifted VIDYA AND its close > shifted VIDYA; the working timeframe may be higher or lower than the chart timeframe.
+Short: At the start of a new working-timeframe bar, the last completed working-timeframe bar's open > shifted VIDYA AND its close < shifted VIDYA; the working timeframe may be higher or lower than the chart timeframe.
+Exit: long, the short-entry condition is met OR an enabled stop-loss price is reached at entry price minus the stop-loss distance OR an enabled take-profit price is reached at entry price plus the take-profit distance.
+Exit: short, the long-entry condition is met OR an enabled stop-loss price is reached at entry price plus the stop-loss distance OR an enabled take-profit price is reached at entry price minus the take-profit distance.

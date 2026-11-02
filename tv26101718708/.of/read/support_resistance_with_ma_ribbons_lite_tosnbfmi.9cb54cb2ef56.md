@@ -1,16 +1,29 @@
-Calculation: Fast and slow moving averages = configured moving averages of chart-bar price; fast lookback is shorter than slow lookback.
-Calculation: Main resistance/support = latest pivot high/low of chart-bar highs/lows, confirmed after the left lookback and shorter right lookback. When higher-timeframe levels are enabled, calculate on that higher timeframe and use only its last completed bar.
-Long: First bar with the average of high, low, and close above both moving averages, and (if enabled) open above both; if enabled, the ribbon direction and fast-average slope filters must also pass.
-Short: First bar with the average of high, low, and close below both moving averages, and (if enabled) open below both; if enabled, the ribbon direction and fast-average slope filters must also pass.
-Long: Fast moving average crosses above slow moving average.
-Short: Fast moving average crosses below slow moving average.
-Long: Fast moving average is above slow moving average and close is above the previous close, on the first such bar after the uptrend begins.
-Short: Fast moving average is below slow moving average and close is below the previous close, on the first such bar after the downtrend begins.
-Long: Previous close is at or below main resistance and current close is above main resistance by at least the configured breakout margin.
-Short: Previous close is at or above main support and current close is below main support by at least the configured breakout margin.
-Long: Main resistance has previously broken upward, current low is within the configured tolerance of that level, and current close is above it.
-Short: Main support has previously broken downward, current high is within the configured tolerance of that level, and current close is below it.
-Long: Current low is below main support by more than the configured tolerance and current close is above main support.
-Short: Current high is above main resistance by more than the configured tolerance and current close is below main resistance.
-Exit: Long, a qualifying long-signal streak was active on the previous bar and is no longer active on the current bar.
-Exit: Short, a qualifying short-signal streak was active on the previous bar and is no longer active on the current bar.
+Calculation: Fast and slow moving averages = independently selected moving averages of a selected chart-bar price source, using respectively shorter and longer lengths. If an anchor is enabled, multiply both lengths by the rounded anchor-to-chart duration ratio when that ratio exceeds one; otherwise use the original lengths. Cap each resulting length at the implementation's maximum history. The triangular moving average is an SMA of an SMA of the same length; the Laguerre moving average uses a zero damping factor and therefore equals the source.
+Calculation: Bullish zone = HLC3 > fast moving average AND HLC3 > slow moving average AND, if the open filter is enabled, open > fast moving average AND open > slow moving average.
+Calculation: Bearish zone = HLC3 < fast moving average AND HLC3 < slow moving average AND, if the open filter is enabled, open < fast moving average AND open < slow moving average.
+Calculation: Filtered bullish zone = bullish zone AND, if the ribbon filter is enabled, fast moving average >= slow moving average AND, if the slope filter is enabled, fast moving average is not lower than every fast moving average in the preceding slope lookback.
+Calculation: Filtered bearish zone = bearish zone AND, if the ribbon filter is enabled, fast moving average <= slow moving average AND, if the slope filter is enabled, fast moving average is not higher than every fast moving average in the preceding slope lookback.
+Calculation: Main resistance and main support = the most recently confirmed pivot high of high and pivot low of low, respectively, using the same left lookback and a shorter right confirmation lookback than the strong levels. Calculate on chart bars or, when selected, on higher-timeframe bars using the last completed higher-timeframe bar.
+Calculation: Broken-resistance state = true after an enabled upside breakout until an enabled resistance retest; broken-support state = true after an enabled downside breakout until an enabled support retest. Evaluate retests using the state at the start of the bar, and update the states even if an alert is suppressed by cooldown.
+Long: HLC3 > fast moving average.
+Short: HLC3 < fast moving average.
+Long: HLC3 > slow moving average.
+Short: HLC3 < slow moving average.
+Long: fast moving average > slow moving average.
+Short: fast moving average < slow moving average.
+Long: bullish zone.
+Short: bearish zone.
+Long: filtered bullish zone AND previous bar was not in the filtered bullish zone.
+Short: filtered bearish zone AND previous bar was not in the filtered bearish zone.
+Exit: long, previous bar was in the filtered bullish zone AND current bar is not in the filtered bullish zone.
+Exit: short, previous bar was in the filtered bearish zone AND current bar is not in the filtered bearish zone.
+Long: fast moving average > slow moving average AND previous fast moving average < previous slow moving average.
+Short: fast moving average < slow moving average AND previous fast moving average > previous slow moving average.
+Long: fast moving average > slow moving average AND close > previous close AND no earlier close > its previous close has occurred since the most recent bar with fast moving average < slow moving average.
+Short: fast moving average < slow moving average AND close < previous close AND no earlier close < its previous close has occurred since the most recent bar with fast moving average > slow moving average.
+Long: previous close <= current main resistance AND close > current main resistance × (1 + breakout threshold).
+Short: previous close >= current main support AND close < current main support × (1 - breakout threshold).
+Long: broken-resistance state = true AND low >= main resistance × (1 - touch tolerance) AND low <= main resistance × (1 + touch tolerance) AND close > main resistance.
+Short: broken-support state = true AND high >= main support × (1 - touch tolerance) AND high <= main support × (1 + touch tolerance) AND close < main support.
+Long: low < main support × (1 - touch tolerance) AND close > main support.
+Short: high > main resistance × (1 + touch tolerance) AND close < main resistance.

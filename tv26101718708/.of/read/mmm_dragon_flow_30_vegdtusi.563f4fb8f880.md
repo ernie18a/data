@@ -1,7 +1,5 @@
-Calculation: Previous-session pivot = (high + low + close of the last completed 9:30–16:00 ET session) / 3
-Calculation: Previous-bar volume average = average volume over a lookback of completed chart bars
-Calculation: Previous range-volume maximum = highest volume × (high − low) over the same lookback of completed chart bars
-Long: close >= open
-Long: close > Dragon center EMA and Dragon center EMA > long-term close EMA and close > previous-session pivot and distance from close to previous-session pivot exceeds an ATR-scaled threshold
-Short: close < open
-Short: close < Dragon center EMA and Dragon center EMA < long-term close EMA and close < previous-session pivot and distance from close to previous-session pivot exceeds an ATR-scaled threshold
+Calculation: Session pivot = (session high + session low + session close) / 3 for the most recently completed session, using chart bars whose opening times fall within the session; retain it until the next session completes.
+Long: close > short-term EMA of close AND short-term EMA of close > long-term EMA of close
+Short: close < short-term EMA of close AND short-term EMA of close < long-term EMA of close
+Long: close > short-term EMA of close AND short-term EMA of close > long-term EMA of close AND close > session pivot AND (ATR is unavailable OR abs(close - session pivot) > ATR × proximity multiplier)
+Short: close < short-term EMA of close AND short-term EMA of close < long-term EMA of close AND close < session pivot AND (ATR is unavailable OR abs(close - session pivot) > ATR × proximity multiplier)

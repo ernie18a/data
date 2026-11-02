@@ -1,8 +1,13 @@
-Calculation: Reversal-down bar = current high < previous high AND current close < previous low
-Calculation: Reversal-up bar = current low > previous low AND current close > previous high
-Long: last completed higher-timeframe ADX(14) >= unlock threshold AND lowest low within the extreme lookback is no older than the freshness threshold AND Reversal-up bar
-Short: last completed higher-timeframe ADX(14) >= unlock threshold AND highest high within the extreme lookback is no older than the freshness threshold AND Reversal-down bar
-Calculation: Active long state = last completed higher-timeframe ADX(14) >= unlock threshold AND ((extreme age > impulse threshold AND extreme age <= freshness threshold AND close is within the armed-distance threshold above the lowest low AND NOT Reversal-up bar) OR (extreme age <= freshness threshold AND Reversal-up bar AND close is within 3% above the lowest low))
-Calculation: Active short state = last completed higher-timeframe ADX(14) >= unlock threshold AND ((extreme age > impulse threshold AND extreme age <= freshness threshold AND close is within the armed-distance threshold below the highest high AND NOT Reversal-down bar) OR (extreme age <= freshness threshold AND Reversal-down bar AND close is within 3% below the highest high))
-Exit: long, previous bar Active long state = true AND current bar Active long state = false
-Exit: short, previous bar Active short state = true AND current bar Active short state = false
+Calculation: Swing high and swing low = highest high and lowest low, respectively, over the extreme lookback including the current chart bar; the age of each is the number of chart bars since its most recent occurrence.
+Calculation: Short distance = (swing high - close) / swing high; long distance = (close - swing low) / swing low.
+Calculation: Short reversal = high < previous high AND close < previous low; long reversal = low > previous low AND close > previous high.
+Calculation: Regime = ADX of the last completed higher-timeframe bar.
+Calculation: Armed = regime >= unlock threshold AND extreme age > shorter impulse-age threshold AND extreme age <= longer freshness threshold AND distance <= armed-distance threshold AND reversal = false.
+Calculation: Window = regime >= unlock threshold AND extreme age <= freshness threshold AND reversal = true AND distance <= window-distance threshold.
+Calculation: Active = armed = true OR window = true, using the swing extreme, distance, and reversal corresponding to the position side.
+Long: regime >= unlock threshold AND swing low age <= freshness threshold AND long reversal = true.
+Long: armed = true using the swing low, long distance, and long reversal AND armed on the previous bar = false.
+Short: regime >= unlock threshold AND swing high age <= freshness threshold AND short reversal = true.
+Short: armed = true using the swing high, short distance, and short reversal AND armed on the previous bar = false.
+Exit: long, active on the previous bar = true AND active = false.
+Exit: short, active on the previous bar = true AND active = false.

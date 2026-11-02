@@ -1,6 +1,7 @@
-Calculation: Dollar bars = consecutive chart bars grouped until selected price basis × volume reaches a fixed dollar-notional threshold; aggregate their OHLC, and evaluate decisions only when a dollar bar completes.
-Calculation: EMA = exponential moving average of a configurable dollar-bar OHLC source, updated on completed dollar bars only.
-Long: Current completed dollar-bar close > selected EMA AND previous dollar-bar close <= previous selected EMA
-Short: Current completed dollar-bar close < selected EMA AND previous dollar-bar close >= previous selected EMA
-Long: Shorter-lookback EMA > longer-lookback EMA AND previous shorter-lookback EMA <= previous longer-lookback EMA
-Short: Shorter-lookback EMA < longer-lookback EMA AND previous shorter-lookback EMA >= previous longer-lookback EMA
+Calculation: Dollar bar = aggregate consecutive chart bars using the first open, maximum high, minimum low, and last close. Add each chart bar's volume multiplied by a selected price basis (close, hl2, or hlc3). Complete the dollar bar when this sum reaches its threshold; optionally also complete it at the session's last chart bar. Do not carry excess notional into the next dollar bar. Capture the threshold when the dollar bar starts and hold it until completion.
+Calculation: Dollar-bar threshold = a fixed parameter, or a calibrated estimate rounded to two significant figures. The estimate is either the simple moving average of higher-timeframe daily hlc3 multiplied by volume, using the last completed daily bar, divided by session duration and multiplied by target duration and divided by a cadence adjustment; or the median of rolling chart-bar sums of hlc3 multiplied by volume over the target duration, measured over a calibration lookback. Use the latest estimate for each new dollar bar, or freeze the first available estimate at or after an anchor time.
+Calculation: Dollar-bar EMA = EMA of a selected dollar-bar price source (close, hl2, hlc3, or ohlc4), updated only when a dollar bar completes and initialized to the first completed dollar bar's source.
+Long: A dollar bar completes AND its close > the selected dollar-bar EMA after its update AND its close <= that EMA before its update.
+Short: A dollar bar completes AND its close < the selected dollar-bar EMA after its update AND its close >= that EMA before its update.
+Long: A dollar bar completes AND the shorter-length dollar-bar EMA > the longer-length dollar-bar EMA AND the shorter-length EMA on the preceding chart bar <= the longer-length EMA on the preceding chart bar.
+Short: A dollar bar completes AND the shorter-length dollar-bar EMA < the longer-length dollar-bar EMA AND the shorter-length EMA on the preceding chart bar >= the longer-length EMA on the preceding chart bar.

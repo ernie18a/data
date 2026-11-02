@@ -1,16 +1,17 @@
-Calculation: LabTrend upper/lower channel = over its lookback, highest high minus / plus the high-low range multiplied by the channel-narrowing factor; use the indicator’s timeframe bars, including the still-forming bar.
-Calculation: Smoothed Fisher = average of the current and previous Fisher values; Fisher uses the midpoint of each bar, normalized within its lookback high-low range, then recursively smoothed. Use chart-timeframe bars, including the still-forming bar.
-Long: On the lower timeframe, the most recent LabTrend up arrow is newer than its most recent down arrow; use the still-forming bar.
-Short: On the lower timeframe, the most recent LabTrend down arrow is newer than its most recent up arrow; use the still-forming bar.
-Long: On the higher timeframe, the most recent LabTrend up arrow is newer than its most recent down arrow; use the still-forming bar.
-Short: On the higher timeframe, the most recent LabTrend down arrow is newer than its most recent up arrow; use the still-forming bar.
-Long: On the chart timeframe, Smoothed Fisher > 0; use the still-forming bar.
-Short: On the chart timeframe, Smoothed Fisher < 0; use the still-forming bar.
-Long: LabTrend trend changes from down to up when close > upper channel; use the still-forming bar.
-Short: LabTrend trend changes from up to down when close < lower channel; use the still-forming bar.
-Long: LabTrend trend is up AND close > upper channel; use the still-forming bar.
-Short: LabTrend trend is down AND close < lower channel; use the still-forming bar.
-Long: Higher-timeframe uptrend AND chart-timeframe uptrend AND Smoothed Fisher crosses from below 0 to above 0 AND +DI > -DI AND ADX > its previous value; all indicator values use their still-forming bars. AND the absolute differences between +DI and -DI, ADX and +DI, and ADX and -DI are not all below the same threshold.
-Short: Higher-timeframe downtrend AND chart-timeframe downtrend AND Smoothed Fisher crosses from above 0 to below 0 AND +DI < -DI AND ADX > its previous value; all indicator values use their still-forming bars. AND the absolute differences between +DI and -DI, ADX and +DI, and ADX and -DI are not all below the same threshold.
-Exit: Long, chart-timeframe downtrend OR Smoothed Fisher crosses from above 0 to below 0 OR Smoothed Fisher crosses downward through 0.25 OR the ADX/+DI/-DI flatness condition is met.
-Exit: Short, chart-timeframe uptrend OR Smoothed Fisher crosses from below 0 to above 0 OR Smoothed Fisher crosses upward through -0.25 OR the ADX/+DI/-DI flatness condition is met.
+Calculation: Channel trend = For each chart bar, find the highest high H and lowest low L over a lookback of the selected timeframe, including its bar still forming. Set upper = H − (H − L) × channel fraction and lower = L + (H − L) × channel fraction. The trend changes from negative to positive when the chart close > upper, and from positive to negative when the chart close < lower; otherwise it retains its previous value. Initialize it to zero; neither transition occurs from zero.
+Calculation: Fisher value = On the selected timeframe, process the available bars from newest to oldest, starting with previous normalized value and previous Fisher value equal to zero. For each bar, let H and L be the highest high and lowest low over its lookback, including that bar; let v = clamp(0.66 × (((high + low)/2 − L)/(H − L) − 0.5) + 0.67 × previous normalized value, −0.999, 0.999), and Fisher = 0.5 × ln((1 + v)/(1 − v)) + 0.5 × previous Fisher value. Use the resulting Fisher value for that bar.
+Calculation: Smoothed Fisher = Average of the Fisher value of a bar and the Fisher value of the immediately preceding bar. For the trading criteria, use the intermediate selected timeframe's bar still forming and its previous bar.
+Calculation: Fisher direction = Initially neutral; set positive when smoothed Fisher moves strictly from below zero to above zero, set negative when it moves strictly from above zero to below zero, and otherwise retain its previous state. Reset to neutral when the ADX flat condition holds.
+Calculation: Fisher exit state = Initially neutral; set long-exit when smoothed Fisher moves strictly from above a positive threshold to below it, set short-exit when it moves strictly from below the corresponding negative threshold to above it, and otherwise retain its previous state. Reset to neutral when the ADX flat condition holds.
+Calculation: ADX flat condition = Absolute difference between +DI and −DI < a common tolerance AND absolute difference between ADX and +DI < that tolerance AND absolute difference between ADX and −DI < that tolerance. All three use the intermediate selected timeframe's bar still forming.
+Calculation: Recent channel direction = On a selected timeframe, compare the bar offsets of the most recent positive and negative channel-trend transitions, including the bar still forming. Positive means the positive transition is more recent; negative means the negative transition is more recent. Retain the previous direction if their offsets are equal. For trading criteria, calculate this separately on the intermediate timeframe and a longer timeframe; either may be higher or lower than the chart timeframe, or equal to it.
+Long: Fisher value > 0.
+Short: Fisher value < 0.
+Long: Previous channel trend < 0 AND current channel trend > 0.
+Short: Previous channel trend > 0 AND current channel trend < 0.
+Long: Current channel trend > 0 AND chart close > upper channel boundary.
+Short: Current channel trend < 0 AND chart close < lower channel boundary.
+Long: ADX flat condition is false AND recent channel direction is positive on both the longer and intermediate timeframes AND Fisher direction is positive AND +DI > −DI AND current ADX > previous ADX; ADX and DI use the intermediate timeframe's bar still forming.
+Short: ADX flat condition is false AND recent channel direction is negative on both the longer and intermediate timeframes AND Fisher direction is negative AND +DI < −DI AND current ADX > previous ADX; ADX and DI use the intermediate timeframe's bar still forming.
+Exit: long, ADX flat condition holds OR an actionable short trading criterion holds OR, when neither trading entry criterion holds, intermediate-timeframe recent channel direction is negative OR Fisher direction is negative OR Fisher exit state is long-exit.
+Exit: short, ADX flat condition holds OR an actionable long trading criterion holds OR, when neither trading entry criterion nor the long-exit criterion holds, intermediate-timeframe recent channel direction is positive OR Fisher direction is positive OR Fisher exit state is short-exit.

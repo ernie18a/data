@@ -1,8 +1,17 @@
-Calculation: 0.618 retracement level = lowest low over the shared lookback + (highest high over the shared lookback − lowest low over the shared lookback) × 0.618
-Calculation: Range midpoint = (highest high over the shared lookback + lowest low over the shared lookback) / 2
-Calculation: USDT volume = volume × close
-Calculation: Average USDT volume = simple moving average of USDT volume
-Calculation: Bullish count = count of true conditions among RSI > 50, close ≥ 0.618 retracement level, close > range midpoint, and USDT volume > average USDT volume
-Calculation: Bearish count = count of true conditions among RSI < 50, close < 0.618 retracement level, close < range midpoint, and USDT volume > average USDT volume
-Long: On any dashboard timeframe, bullish count ≥ the minimum required condition count. Calculate each timeframe from its own bars; when it is higher than the chart timeframe, use its still-forming bar.
-Short: On any dashboard timeframe, bearish count ≥ the minimum required condition count. Calculate each timeframe from its own bars; when it is higher than the chart timeframe, use its still-forming bar.
+Calculation: Evaluation bars = four independently evaluated, ordered timeframes. For a timeframe higher than the chart timeframe, use its last completed bar; for a lower timeframe, use the last completed intrabar within the chart bar; for the chart timeframe, use the chart bar. Calculate all inputs for each decision on that evaluation timeframe.
+Calculation: Range low and range high = lowest low and highest high over the same lookback, including the evaluation bar.
+Calculation: Lower and upper Fibonacci levels = range low + (range high − range low) × the lower and higher Fibonacci fractions, respectively.
+Calculation: Range midpoint = (range high + range low) / 2.
+Calculation: Volume value = volume × close; average volume value = simple moving average of volume value, including the evaluation bar.
+Calculation: Bull score = count of true conditions among RSI above its midpoint, close at or above the lower Fibonacci level, close above the range midpoint, and volume value above average volume value.
+Calculation: Bear score = count of true conditions among RSI below its midpoint, close below the lower Fibonacci level, close below the range midpoint, and volume value above average volume value.
+Long: RSI > its midpoint.
+Short: RSI < its midpoint.
+Long: close > upper Fibonacci level.
+Short: close < lower Fibonacci level.
+Long: close > range midpoint.
+Short: close < range midpoint.
+Long: bull score >= bear score.
+Short: bear score > bull score.
+Long: bull score >= minimum condition count.
+Short: bear score >= minimum condition count AND bull score < minimum condition count.

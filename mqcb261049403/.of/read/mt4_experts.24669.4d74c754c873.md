@@ -1,5 +1,3 @@
-Calculation: Fast and slow moving averages = linear weighted moving averages of (high + low + close) / 3 on a higher timeframe, using its still-forming bar; the fast average has a shorter lookback than the slow average.
-Long: fast moving average > slow moving average AND low[2] < high[1] AND |open[0] - close[2]| > retracement distance
-Short: fast moving average < slow moving average AND low[1] < high[2] AND |open[0] - close[1]| > retracement distance
-Exit: long, price <= entry price - stop-loss distance OR price >= entry price + take-profit distance
-Exit: short, price >= entry price + stop-loss distance OR price <= entry price - take-profit distance
+Long: shorter-period linear weighted moving average of typical price on the forming higher-timeframe bar > longer-period linear weighted moving average of typical price on the forming higher-timeframe bar AND low two chart bars ago < high of the last completed chart bar AND absolute difference between the current chart bar open and the close two chart bars ago > a price-distance threshold
+Exit: long, the six short-period exponential moving averages of typical price on the forming chart bar are all equal OR the six longer-period exponential moving averages of typical price on the forming chart bar are all equal OR the last completed chart bar close <= its lower Bollinger Band
+Exit: short, the six short-period exponential moving averages of typical price on the forming chart bar are all equal OR the six longer-period exponential moving averages of typical price on the forming chart bar are all equal OR the last completed chart bar close <= its lower Bollinger Band

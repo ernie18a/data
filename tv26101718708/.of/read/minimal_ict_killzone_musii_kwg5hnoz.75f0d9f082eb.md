@@ -1,5 +1,9 @@
-Calculation: Confirmed swing high = a bar’s high that is higher than the highs of the configured number of preceding and following chart bars; it becomes available after those following bars complete.
-Calculation: Confirmed swing low = a bar’s low that is lower than the lows of the configured number of preceding and following chart bars; it becomes available after those following bars complete.
-Calculation: 10am level = the open of the bar containing 10:00 New York time, or the configured body edge of that bar.
-Long: On a confirmed bar, low < an unexpired confirmed swing low AND close > that swing low OR, after an enabled session ends, low < its low AND close > that low OR, while the 10am level is active and its daily mark has not fired, low < the 10am level AND close > the 10am level.
-Short: On a confirmed bar, high > an unexpired confirmed swing high AND close < that swing high OR, after an enabled session ends, high > its high AND close < that high OR, while the 10am level is active and its daily mark has not fired, high > the 10am level AND close < the 10am level.
+Calculation: Swing high or low = a chart-bar high or low confirmed as a pivot using the same number of bars before and after it; retain only the most recent configured maximum number of pivots within a configured maximum age, measured from the pivot bar. Remove a high pivot on the first subsequent confirmed bar with high above it, and a low pivot on the first subsequent confirmed bar with low below it, even when the session filter rejects that bar.
+Calculation: Session high or low = the highest high or lowest low of the latest completed occurrence of an enabled session, using its configured New York time window. Each level is eligible only until its first subsequent confirmed bar that trades beyond it; optionally expire it at session end or at the next occurrence of the same session.
+Calculation: Anchor level = the open of the chart bar containing the configured New York anchor time. It is eligible after that bar until the configured end time or the next anchor bar, and only until the first qualifying sweep in either direction.
+Long: Confirmed bar low < an eligible swing low AND close > that swing low AND, if the session filter is enabled, the bar is inside an enabled session.
+Short: Confirmed bar high > an eligible swing high AND close < that swing high AND, if the session filter is enabled, the bar is inside an enabled session.
+Long: Confirmed bar low < an eligible session low AND close > that session low AND, if the session filter is enabled, the bar is inside an enabled session.
+Short: Confirmed bar high > an eligible session high AND close < that session high AND, if the session filter is enabled, the bar is inside an enabled session.
+Long: Confirmed bar low < the eligible anchor level AND close > the anchor level.
+Short: Confirmed bar high > the eligible anchor level AND close < the anchor level.

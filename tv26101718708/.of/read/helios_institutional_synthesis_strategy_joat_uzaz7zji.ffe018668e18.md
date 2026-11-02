@@ -1,27 +1,32 @@
-Calculation: Adaptive baseline = smoothed blend of an EMA and a KAMA; the KAMA weight is the efficiency ratio over the shorter lookback, and its fast and slow smoothing periods are shorter and longer, respectively, than the baseline lookback
-Calculation: Bullish regime = close above the adaptive baseline, baseline rising, and short-term EMA above long-term EMA, except when ADX is below its threshold and volatility score is below its threshold
-Calculation: Bearish regime = close below the adaptive baseline, baseline falling, and short-term EMA below long-term EMA, except when ADX is below its threshold and volatility score is below its threshold
-Calculation: Volatility score = clamp(50 + 50 × tanh((ATR − its longer-lookback average) / its longer-lookback standard deviation / 2), 0, 100)
-Calculation: Volatility gate = volatility score within configured bounds AND ATR / close within its maximum bound
-Calculation: Prior-day high and low = high and low of the last completed daily bar, on a higher timeframe
-Calculation: Higher-timeframe bullish bias = last completed higher-timeframe close > its shorter-period EMA AND that EMA > its longer-period EMA
-Calculation: Higher-timeframe bearish bias = last completed higher-timeframe close < its shorter-period EMA AND that EMA < its longer-period EMA
-Calculation: Long sweep = low below the highest low of the preceding shorter lookback, close above that low, close > open, and volume > its longer-lookback average × threshold
-Calculation: Short sweep = high above the highest high of the preceding shorter lookback, close below that high, close < open, and volume > its longer-lookback average × threshold
-Calculation: Daily bullish sweep = low below prior-day low AND close above prior-day low
-Calculation: Daily bearish sweep = high above prior-day high AND close below prior-day high
-Calculation: VWAP bounce = low touches or crosses below session VWAP minus one standard deviation of price-minus-VWAP over a rolling lookback, then close above that band and above open; VWAP rejection is the inverse at VWAP plus one standard deviation
-Calculation: Channel reclaim/rejection = close returns above/below the respective channel after low/high crosses it; channel center is an EMA of the midpoint of adaptive baseline and session VWAP, and channel width is ATR multiplied by a volatility-score-scaled factor
-Calculation: Squeeze release = current Bollinger Bands are outside the Keltner Channel after being inside it on the preceding bar
-Calculation: Long confluence score = count of bullish regime, close above session VWAP, close below rolling-range midpoint OR lower-quarter level, RSI above its threshold AND short-term EMA above long-term EMA AND pressure above its lower bound, volatility gate, long or daily bullish sweep, VWAP bounce OR channel reclaim OR squeeze release, and higher-timeframe bullish bias
-Calculation: Short confluence score = count of bearish regime, close below session VWAP, close above rolling-range midpoint OR upper-quarter level, RSI below its threshold AND short-term EMA below long-term EMA AND pressure below its upper bound, volatility gate, short or daily bearish sweep, VWAP rejection OR channel rejection OR squeeze release, and higher-timeframe bearish bias
-Calculation: Long initial stop = the lower of signal close minus ATR times stop multiple and prior-day low; if prior-day low is unavailable, use signal close minus ATR times stop multiple
-Calculation: Short initial stop = the higher of signal close plus ATR times stop multiple and prior-day high; if prior-day high is unavailable, use signal close plus ATR times stop multiple
-Calculation: Long target = signal close plus ATR times target multiple
-Calculation: Short target = signal close minus ATR times target multiple
-Long: bar confirmed AND session filter passes if enabled AND cooldown has elapsed AND volatility gate AND compression filter passes if enabled AND daily loss guard passes AND planned reward/risk >= minimum AND long confluence score >= minimum AND (close crosses above adaptive baseline OR close crosses above session VWAP OR long sweep OR daily bullish sweep OR VWAP bounce OR channel reclaim) AND position is flat or short
-Short: bar confirmed AND session filter passes if enabled AND cooldown has elapsed AND volatility gate AND compression filter passes if enabled AND daily loss guard passes AND planned reward/risk >= minimum AND short confluence score >= minimum AND (close crosses below adaptive baseline OR close crosses below session VWAP OR short sweep OR daily bearish sweep OR VWAP rejection OR channel rejection) AND position is flat or long
-Exit: long, low <= active stop OR high >= target OR (bar confirmed AND bearish regime AND close < adaptive baseline) OR bars held >= maximum
-Exit: short, high >= active stop OR low <= target OR (bar confirmed AND bullish regime AND close > adaptive baseline) OR bars held >= maximum
-Calculation: Active long stop = maximum of prior active stop and close minus ATR times trailing multiple, capped below entry price by at least one tick
-Calculation: Active short stop = minimum of prior active stop and close plus ATR times trailing multiple, floored above entry price by at least one tick
+Calculation: Adaptive baseline = EMA of a blend of an EMA of close and Kaufman adaptive moving average of close; the blend weight on the adaptive average is the efficiency ratio of close, clipped to [0,1]. The adaptive average uses the squared efficiency-ratio interpolation between fast and slow EMA smoothing constants. Its fast period is shorter than its slow period.
+Calculation: Volatility score = 50 + 50 × tanh(z/2), clipped to [0,100], where z is (ATR − SMA of ATR) / standard deviation of ATR; use zero when the denominator is zero.
+Calculation: Session VWAP = session-anchored VWAP of typical price; if unavailable, use an EMA of typical price. VWAP bands = session VWAP ± standard deviation of typical price minus session VWAP, floored at the minimum price increment.
+Calculation: Channel center = EMA of the average of adaptive baseline and session VWAP. Channel bands = center ± ATR × channel multiplier × (offset + volatility score / 100).
+Calculation: Squeeze = Bollinger upper band < Keltner upper band AND Bollinger lower band > Keltner lower band. Squeeze release = squeeze is false AND squeeze was true on the previous bar.
+Calculation: Pressure = EMA of 100 × volume × (close − open) / max(high − low, minimum price increment) / max(volume, 1).
+Calculation: Bull regime = close > adaptive baseline AND adaptive baseline > previous adaptive baseline AND short EMA of close > long EMA of close AND NOT (ADX < range threshold AND volatility score < range threshold). Bear regime = close < adaptive baseline AND adaptive baseline < previous adaptive baseline AND short EMA of close < long EMA of close AND NOT (ADX < range threshold AND volatility score < range threshold).
+Calculation: Bull sweep = (low < lowest low of the preceding swing lookback AND close > that lowest low AND close > open AND volume > SMA of volume × volume multiplier) OR (low < previous daily low AND close > previous daily low). Bear sweep = (high > highest high of the preceding swing lookback AND close < that highest high AND close < open AND volume > SMA of volume × volume multiplier) OR (high > previous daily high AND close < previous daily high). Daily levels use the last completed daily bar, a higher timeframe than the chart.
+Calculation: Bull bounce = (low ≤ lower VWAP band AND close > lower VWAP band AND close > open) OR (low < lower channel band AND close > lower channel band AND close > open). Bear bounce = (high ≥ upper VWAP band AND close < upper VWAP band AND close < open) OR (high > upper channel band AND close < upper channel band AND close < open).
+Calculation: Higher-timeframe bull bias = close > short EMA of close AND short EMA > long EMA, all from the last completed higher-timeframe bar. Higher-timeframe bear bias = close < short EMA of close AND short EMA < long EMA, all from the last completed higher-timeframe bar.
+Calculation: Volatility gate = volatility score ≥ its lower threshold AND volatility score ≤ its upper threshold AND 100 × ATR / close ≤ its threshold.
+Calculation: Long score = sum of one point each for bull regime; close > session VWAP; close < midpoint of the rolling highest high and lowest low; RSI > long momentum threshold AND short EMA > long EMA AND pressure > long pressure threshold; volatility gate; bull sweep; bull bounce OR squeeze release; higher-timeframe bull bias. Short score = sum of one point each for bear regime; close < session VWAP; close > that rolling midpoint; RSI < short momentum threshold AND short EMA < long EMA AND pressure < short pressure threshold; volatility gate; bear sweep; bear bounce OR squeeze release; higher-timeframe bear bias.
+Calculation: Long initial stop = minimum of close − ATR × stop multiplier and previous daily low, substituting the ATR stop if the daily low is unavailable. Short initial stop = maximum of close + ATR × stop multiplier and previous daily high, substituting the ATR stop if the daily high is unavailable. Long target = entry-bar close + entry-bar ATR × target multiplier; short target = entry-bar close − entry-bar ATR × target multiplier.
+Calculation: Long trailing stop = minimum of entry price minus minimum price increment and the maximum of the previous stop and close − ATR × trailing multiplier. Short trailing stop = maximum of entry price plus minimum price increment and the minimum of the previous stop and close + ATR × trailing multiplier. Initialize the previous stop to the initial stop.
+Long: Bull regime.
+Short: Bear regime.
+Long: Bull sweep.
+Short: Bear sweep AND bull sweep is false.
+Long: Higher-timeframe bull bias.
+Short: Higher-timeframe bear bias.
+Long: Close < midpoint of the rolling highest high and lowest low.
+Short: Close > midpoint of the rolling highest high and lowest low.
+Long: Long score ≥ minimum score AND (close crosses above adaptive baseline OR close crosses above session VWAP OR bull sweep OR bull bounce).
+Short: Short score ≥ minimum score AND (close crosses below adaptive baseline OR close crosses below session VWAP OR bear sweep OR bear bounce) AND the corresponding long setup is false.
+Long: Position is flat or short AND long entries enabled AND session restriction is disabled or current bar is in the selected session AND bars since last entry > cooldown or no prior entry exists AND volatility gate AND compression avoidance is disabled or squeeze is false AND long initial stop < close AND (long target − close) / (close − long initial stop) ≥ minimum planned reward/risk AND long score ≥ minimum score AND (close crosses above adaptive baseline OR close crosses above session VWAP OR bull sweep OR bull bounce).
+Short: Position is flat or long AND short entries enabled AND session restriction is disabled or current bar is in the selected session AND bars since last entry > cooldown or no prior entry exists AND volatility gate AND compression avoidance is disabled or squeeze is false AND short initial stop > close AND (close − short target) / (short initial stop − close) ≥ minimum planned reward/risk AND short score ≥ minimum score AND (close crosses below adaptive baseline OR close crosses below session VWAP OR bear sweep OR bear bounce).
+Exit: Long, low ≤ previously submitted long trailing stop OR high ≥ long target.
+Exit: Short, high ≥ previously submitted short trailing stop OR low ≤ short target.
+Exit: Long, regime-flip exit enabled AND bear regime AND close < adaptive baseline.
+Exit: Short, regime-flip exit enabled AND bull regime AND close > adaptive baseline.
+Exit: Long, bars since entry ≥ maximum holding period.
+Exit: Short, bars since entry ≥ maximum holding period.

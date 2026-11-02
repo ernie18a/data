@@ -1,5 +1,9 @@
-Calculation: Prior lookback high/low = highest high / lowest low over the configured lookback, excluding the current bar
-Calculation: Pool tolerance = configured multiple of ATR
-Calculation: Hann FIR average = weighted average of current and prior closes using Hann-window weights; fast and medium versions use shorter lookbacks than the slow version
-Long: low < prior lookback low − a configured fraction of pool tolerance AND close > prior lookback low OR fast Hann FIR average crosses above medium Hann FIR average
-Short: high > prior lookback high + a configured fraction of pool tolerance AND close < prior lookback high OR fast Hann FIR average crosses below medium Hann FIR average
+Calculation: Hann filter of length N = sum over i = 1 through N of close[i-1] × (1 − cos(2πi / (N+1))), divided by the sum of those weights; fast, middle, and slow filters have progressively longer lengths with equal spacing.
+Long: The low N bars ago is less than or equal to the lowest low over the current and preceding 2N bars.
+Short: The high N bars ago is greater than or equal to the highest high over the current and preceding 2N bars.
+Long: Low < lowest low over the preceding sweep lookback bars − ATR × sweep tolerance AND close > lowest low over the preceding sweep lookback bars.
+Short: High > highest high over the preceding sweep lookback bars + ATR × sweep tolerance AND close < highest high over the preceding sweep lookback bars.
+Long: Fast Hann filter > middle Hann filter AND middle Hann filter > slow Hann filter.
+Short: Fast Hann filter < middle Hann filter AND middle Hann filter < slow Hann filter.
+Long: Fast Hann filter crosses above middle Hann filter.
+Short: Fast Hann filter crosses below middle Hann filter.

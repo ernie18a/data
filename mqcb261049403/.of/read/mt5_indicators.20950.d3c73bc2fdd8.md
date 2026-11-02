@@ -1,6 +1,3 @@
-Calculation: SilverTrend trend = bullish when close > the upper threshold, bearish when close < the lower threshold, otherwise retain the previous trend; upper threshold = highest high over the lookback minus (highest high − lowest of the lookback lows and current close) × risk factor / 100; lower threshold = that lowest value plus the same range × risk factor / 100. The lookback and risk factor are parameters.
-Calculation: SilverTrend color = bullish when trend is bullish (green if open ≤ close, teal otherwise), bearish when trend is bearish (red if open ≥ close, purple otherwise), and gray when neutral.
-Long: SilverTrend color is bullish
-Short: SilverTrend color is bearish
-Long: Previous SilverTrend color is gray or bearish AND current SilverTrend color is bullish
-Short: Previous SilverTrend color is bullish or gray AND current SilverTrend color is bearish
+Calculation: Trend = For each source timeframe, initialize trend to 0. On each source bar, let the upper extreme be the maximum high over a lookback including the current bar, and the lower extreme be the minimum of the current close and the lowest low over the same lookback. Let fraction = (33 − risk parameter) / 100. If close < lower extreme + fraction × (upper extreme − lower extreme), set trend to −1. Then, if close > upper extreme − fraction × (upper extreme − lower extreme), set trend to +1. Otherwise retain the previous trend. Evaluate on the chart timeframe and separately on each configured higher timeframe. For a higher timeframe, sample the bar still forming on the first chart bar of that higher-timeframe bar and carry that sampled trend forward until the next higher-timeframe bar.
+Long: Trend > 0
+Short: Trend < 0

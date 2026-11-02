@@ -1,11 +1,6 @@
-Calculation: CCC spread Z-score = (current CCC-rated-and-lower OAS − its mean over the lookback) / its standard deviation over the same lookback
-Calculation: Broad high-yield spread Z-score = (current broad high-yield OAS − its mean over the lookback) / its standard deviation over the same lookback
-Calculation: Credit confirmed = CCC OAS > its moving average AND that moving average is rising AND (CCC OAS widening over its lookback ≥ its threshold OR CCC spread Z-score ≥ its strong-stress threshold) AND (broad high-yield confirmation is disabled OR (broad high-yield OAS > its moving average AND that moving average is rising AND (broad high-yield OAS widening over its lookback ≥ its threshold OR broad high-yield spread Z-score ≥ its warning threshold))
-Calculation: Equity drawdown from recent high (%) = 100 × (recent highest high − current close) / recent highest high; use higher-timeframe bars, including the bar still forming
-Calculation: Equity moving-average slope (%) = 100 × (current medium-term moving average − its value slope-lookback bars ago) / its value slope-lookback bars ago; use higher-timeframe bars, including the bar still forming
-Calculation: Raw red condition = credit confirmed AND ((equity drawdown ≥ early-weakness threshold AND close < fast moving average AND fast moving average is falling) OR (equity drawdown ≥ strong-weakness threshold AND close < medium-term moving average AND medium-term moving average is falling)) AND (trend-strength filter disabled OR (ADX ≥ minimum AND bearish directional indicator > bullish directional indicator when required AND (medium-term moving-average slope ≤ required negative slope OR equity drawdown ≥ major-drawdown threshold)))
-Short: Credit confirmed AND equity drawdown from recent high ≤ near-high threshold AND previous regime < orange regime
-Short: Raw red condition has persisted for at least the confirmation-period count AND previous regime < red regime
-Long: Current regime is green AND previous regime was not green
-Exit: short, current regime is green AND previous regime was not green
-Exit: long, current regime is red AND previous regime was below red regime
+Calculation: Higher-timeframe drawdown = 100 × (highest high over the lookback − close) / highest high over the lookback.
+Calculation: Medium moving-average slope = 100 × (current medium simple moving average of close − its value at the slope lookback) / its value at the slope lookback.
+Short: On the higher timeframe, using the last completed bar historically and the forming bar in real time, drawdown >= early-weakness threshold AND close < fast simple moving average of close AND fast average < its previous value.
+Short: On the higher timeframe, using the last completed bar historically and the forming bar in real time, drawdown >= strong-weakness threshold AND close < medium simple moving average of close AND medium average < its previous value. The medium average has a longer lookback than the fast average, and the strong-weakness threshold is greater than the early-weakness threshold.
+Short: On the higher timeframe, using the last completed bar historically and the forming bar in real time, close < structural simple moving average of close. The structural average has a longer lookback than the medium average.
+Short: On the higher timeframe, using the last completed bar historically and the forming bar in real time, ADX >= trend-strength threshold AND (bearish directional movement confirmation is disabled OR −DI > +DI) AND medium moving-average slope <= negative slope threshold.

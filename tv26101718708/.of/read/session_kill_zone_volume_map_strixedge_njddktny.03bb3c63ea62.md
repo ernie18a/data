@@ -1,6 +1,7 @@
-Calculation: Opening-range high/low = highest high / lowest low during the configured opening period from each configured session’s start.
-Calculation: Previous session high/low = highest high / lowest low of the prior completed London, New York, or Asia session.
-Long: In a configured session, opening range is complete, this is the first bar since completion whose close > that session’s opening-range high, and volume > chart-timeframe volume SMA × configured multiplier
-Long: Close crosses above any prior completed London, New York, or Asia session high and volume > chart-timeframe volume SMA × configured multiplier
-Short: In a configured session, opening range is complete, this is the first bar since completion whose close < that session’s opening-range low, and volume > chart-timeframe volume SMA × configured multiplier
-Short: Close crosses below any prior completed London, New York, or Asia session low and volume > chart-timeframe volume SMA × configured multiplier
+Calculation: Session = a configurable UTC time interval, including its start and excluding its end; intervals that cross midnight continue into the next UTC day. Track each enabled session independently using chart-bar opening times.
+Calculation: Opening range high and low = the highest high and lowest low from the first chart bar in a session through and including the first session bar whose opening time is at least the configured opening-range duration after that first bar's opening time. Freeze these levels for the rest of the session.
+Calculation: Previous session high and low = the highest high and lowest low of the most recently completed occurrence of each enabled session, updated on the first chart bar outside that session.
+Long: The chart is intraday AND an enabled session is active AND its opening range is complete AND no earlier bar after opening-range completion in that session closed above its opening range high AND close > its opening range high AND volume > SMA of volume including the current bar × volume multiplier.
+Short: The chart is intraday AND an enabled session is active AND its opening range is complete AND no earlier bar after opening-range completion in that session closed below its opening range low AND close < its opening range low AND volume > SMA of volume including the current bar × volume multiplier.
+Long: Close > any previous session high AND previous close <= that same session's previous-bar previous session high AND volume > SMA of volume including the current bar × volume multiplier.
+Short: Close < any previous session low AND previous close >= that same session's previous-bar previous session low AND volume > SMA of volume including the current bar × volume multiplier.

@@ -1,17 +1,22 @@
-Calculation: Confirmed pivot high = a bar high greater than the highs of the specified number of bars on both sides; confirmed pivot low = a bar low less than the lows of that many bars on both sides
-Calculation: Fibonacci level = anchor0 + (anchor1 - anchor0) × level fraction; on a bullish break, anchor0 is the latest pivot low and anchor1 the latest pivot high; on a bearish break, anchor0 is the latest pivot high and anchor1 the latest pivot low
-Calculation: Doji = high > low AND absolute(close - open) / (high - low) < the doji body fraction
-Long: close crosses above the latest confirmed pivot high
-Short: close crosses below the latest confirmed pivot low
-Long: low < latest confirmed pivot low AND close > latest confirmed pivot low AND low equals the lowest low over twice the pivot lookback
-Short: high > latest confirmed pivot high AND close < latest confirmed pivot high AND high equals the highest high over twice the pivot lookback
-Long: volume[1] > 20-bar simple moving average of volume × volume-spike multiplier AND close[1] < open[1] AND current bar is a doji
-Short: volume[1] > 20-bar simple moving average of volume × volume-spike multiplier AND close[1] > open[1] AND current bar is a doji
-Long: consecutive closes each exceed the close 4 bars earlier, and the count reaches 6, 7, 8, 9, 11, or 13
-Short: consecutive closes each are below the close 4 bars earlier, and the count reaches 6, 7, 8, 9, 11, or 13
-Long: a bullish break has activated a setup AND price has reached the 1.618 extension AND subsequently retraced to the 1.0 level AND low <= the selected entry Fibonacci level AND no position is open AND (a recent bullish sweep exists if the sweep requirement is enabled)
-Short: a bearish break has activated a setup AND price has reached the 1.618 extension AND subsequently retraced to the 1.0 level AND high >= the selected entry Fibonacci level AND no position is open AND (a recent bearish sweep exists if the sweep requirement is enabled)
-Long: a bullish count reaches 13, and within the trigger-line validity period close > the low of that count's bar
-Short: a bearish count reaches 13, and within the trigger-line validity period close < the high of that count's bar
-Exit: long, high >= the setup's take-profit Fibonacci level OR low <= anchor0
-Exit: short, low <= the setup's take-profit Fibonacci level OR high >= anchor0
+Calculation: Confirmed pivot high or low = a high or low that is the extreme over equal configurable numbers of bars on both sides; it becomes available only after the right-side bars have completed. Use the most recently confirmed pivot of each type.
+Calculation: Bullish structure break = close crosses above the latest confirmed pivot high; bearish structure break = close crosses below the latest confirmed pivot low. Optionally evaluate the same crossings on the preceding completed chart bar instead.
+Calculation: Bullish sweep = low is below the latest confirmed pivot low, close is above it, and low equals the lowest low over a lookback twice the pivot lookback. Bearish sweep = high is above the latest confirmed pivot high, close is below it, and high equals the highest high over the same lookback.
+Calculation: Fibonacci setup = when no setup is active, a structure break starts a setup with the latest pivot low as anchor 0 and latest pivot high as anchor 1 for a bullish break, and the reverse for a bearish break. While flat, cancel an active bullish setup on a bearish break or low below anchor 0, and cancel an active bearish setup on a bullish break or high above anchor 0; a new break can start a setup on the same bar. A Fibonacci level is anchor 0 plus its ratio times (anchor 1 minus anchor 0). The target extension ratio is greater than the anchor 1 ratio, which is greater than the entry retracement ratio; the take-profit ratio is independently configurable. For a bullish setup, record an extension hit when high reaches or exceeds the target extension, then record a return when low reaches or falls below anchor 1. For a bearish setup, record an extension hit when low reaches or falls below the target extension, then record a return when high reaches or exceeds anchor 1. Both events may occur on the same bar. Retain these events until the setup ends. End the setup on exit.
+Calculation: Sequential up count = consecutive bars with close above the close a configurable number of bars earlier; sequential down count = consecutive bars with close below that earlier close. Reset the respective count to zero when its comparison fails. Late-stage count = the current respective count minus its value at the second most recent bar on which that count decreased; it is unavailable until that event exists. The marked full-count and late-stage thresholds are configurable ordered stages, with the final stage shared by both modes.
+Calculation: Sequential trigger = on each late-stage final-stage event, retain the event bar's low for an up count or high for a down count. Retain at most a configurable number of the most recent triggers across both directions. Each trigger fires once, including on its creation bar, at the first close above its retained low for an up count or below its retained high for a down count; after checking for a hit, expire an unfired trigger whose age exceeds its configurable lifetime.
+Long: Bullish structure break.
+Short: Bearish structure break.
+Long: Bullish sweep.
+Short: Bearish sweep.
+Long: Low is above the high a configurable number of bars earlier.
+Short: High is below the low the same number of bars earlier.
+Long: An active bullish Fibonacci setup has recorded its return AND the position is flat AND low is at or below the entry retracement AND, if the optional sweep filter is enabled, a bullish sweep is the most recent sweep and occurred within the configurable sweep lifetime.
+Short: An active bearish Fibonacci setup has recorded its return AND the position is flat AND high is at or above the entry retracement AND, if the optional sweep filter is enabled, a bearish sweep is the most recent sweep and occurred within the configurable sweep lifetime.
+Exit: long, high is at or above the setup's take-profit level OR low is at or below anchor 0.
+Exit: short, low is at or below the setup's take-profit level OR high is at or above anchor 0.
+Long: Previous bar's volume exceeds a configurable multiple of the current bar's volume SMA AND previous close is below previous open AND current high exceeds current low AND absolute current candle body divided by its range is below a configurable threshold.
+Short: Previous bar's volume exceeds a configurable multiple of the current bar's volume SMA AND previous close is above previous open AND current high exceeds current low AND absolute current candle body divided by its range is below a configurable threshold.
+Long: Sequential up count equals a marked full-count stage OR late-stage up count equals a marked late-stage threshold.
+Short: Sequential down count equals a marked full-count stage OR late-stage down count equals a marked late-stage threshold.
+Long: An up-count sequential trigger fires.
+Short: A down-count sequential trigger fires.

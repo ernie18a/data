@@ -1,4 +1,3 @@
-Calculation: Confirmed zigzag pivots = pivot highs and lows confirmed after the pivot-strength number of bars has closed on both sides; keep alternating highs and lows, replacing a same-type pivot only when the new high is higher or the new low is lower.
-Calculation: Latest qualifying swing leg = newest adjacent confirmed pivot pair whose absolute price difference is at least the minimum leg-range multiple times chart-timeframe ATR; skip smaller legs.
-Long: Latest qualifying swing leg ends at a higher price than it starts.
-Short: Latest qualifying swing leg ends at a lower price than it starts.
+Calculation: Latest qualifying swing leg = Maintain a zigzag of confirmed pivot highs and lows using equal left and right pivot strengths. Process a confirmed high before a confirmed low; replace the latest pivot with a more extreme pivot of the same type, otherwise append an opposite-type pivot. Scan consecutive pivot pairs from newest to oldest and select the first whose absolute price change is at least the current ATR multiplied by a minimum-range parameter.
+Long: Latest qualifying swing leg's ending pivot price > its starting pivot price
+Short: Latest qualifying swing leg's ending pivot price <= its starting pivot price

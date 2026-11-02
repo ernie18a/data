@@ -1,6 +1,6 @@
-Calculation: RSI = RSI on the configured timeframe’s still-forming bar; that timeframe may be higher or lower than the chart timeframe.
-Calculation: Stochastic = Stochastic on the configured timeframe’s still-forming bar; that timeframe may be higher or lower than the chart timeframe.
-Calculation: Moving average = moving average on the configured timeframe’s still-forming bar; that timeframe may be higher or lower than the chart timeframe.
-Calculation: Fast and slow moving averages = moving averages on their respective configured timeframes, using the still-forming bar and the last completed bar; the fast moving average has a shorter lookback than the slow moving average. Each configured timeframe may be higher or lower than the chart timeframe.
-Long: RSI ≤ lower level OR Stochastic ≤ lower level OR price > moving average OR fast moving average ≥ slow moving average AND fast moving average on the previous completed bar < slow moving average on the previous completed bar
-Short: RSI ≥ upper level OR Stochastic ≥ upper level OR price ≤ moving average OR fast moving average ≤ slow moving average AND fast moving average on the previous completed bar > slow moving average on the previous completed bar
+Long: RSI of close on the chart timeframe or a configurable higher or lower timeframe, using the forming bar and rounded to the nearest integer, <= its lower threshold
+Short: RSI of close on the chart timeframe or a configurable higher or lower timeframe, using the forming bar and rounded to the nearest integer, >= its upper threshold
+Long: stochastic main line on the chart timeframe or a configurable higher or lower timeframe, using the forming bar, <= its lower threshold
+Short: stochastic main line on the chart timeframe or a configurable higher or lower timeframe, using the forming bar, >= its upper threshold
+Long: shorter-period moving average on the forming bar >= longer-period moving average on the forming bar AND shorter-period moving average on its last completed bar < longer-period moving average on its last completed bar; each moving average uses the chart timeframe or an independently configurable higher or lower timeframe
+Short: shorter-period moving average on the forming bar <= longer-period moving average on the forming bar AND shorter-period moving average on its last completed bar > longer-period moving average on its last completed bar; each moving average uses the chart timeframe or an independently configurable higher or lower timeframe

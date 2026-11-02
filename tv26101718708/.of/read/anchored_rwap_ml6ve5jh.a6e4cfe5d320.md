@@ -1,4 +1,14 @@
-Calculation: Anchored RWAP = recency-weighted average of HLC3 since the selected anchor, with geometric weights: current bar weight 1, each prior bar weight multiplied by a decay factor; no bars before the anchor contribute.
-Calculation: Normalized slope = (current anchored RWAP − anchored RWAP from a shorter lookback ago) / ATR; available only while the anchor is active, the lookback is available, and ATR > 0.
-Long: On a confirmed chart bar with an active anchor and available normalized slope, normalized slope ≥ upper threshold OR (previous state bullish AND normalized slope ≥ lower positive threshold); OR the same condition on the last completed higher-timeframe bar(s).
-Short: On a confirmed chart bar with an active anchor and available normalized slope, normalized slope ≤ −upper threshold OR (previous state bearish AND normalized slope ≤ −lower positive threshold); OR the same condition on the last completed higher-timeframe bar(s).
+Calculation: Anchored recency-weighted average = the weighted mean of a chosen price source from the anchor through the current bar, optionally limited to the most recent capped number of bars; the current bar has weight 1 and each preceding bar has the next weight multiplied by gamma. The anchor is a chosen timestamp or the start of each chosen session, week, or month; session anchoring is active only inside the chosen session. Gamma is either a fixed parameter or derived at each anchor from a chosen memory span in trading days so that a chosen fraction of geometric weight lies within that span. For an intraday chart, convert days to bars using the median bar count of a lookback of completed trading days, excluding the first loaded partial day; until a complete day is measured, use a provisional full-day bar count, then recalculate gamma and rebuild the average once.
+Calculation: Normalized slope = (anchored recency-weighted average minus its value a chosen number of bars earlier) / current ATR; it is available only when the anchor is active, more than the slope lookback bars have elapsed since the anchor, both average values exist, and ATR is positive.
+Calculation: Directional state = neutral initially and whenever the anchor is inactive, resets, or normalized slope is unavailable. Otherwise, with directional threshold T and exit threshold E = max(T minus a hysteresis-width parameter, 0), update from the previous state as follows: from bullish, become bearish if slope <= -T, neutral if slope < E, otherwise remain bullish; from bearish, become bullish if slope >= T, neutral if slope > -E, otherwise remain bearish; from neutral, become bullish if slope >= T, bearish if slope <= -T, otherwise remain neutral. Optionally confirm state changes only at chart-bar close.
+Calculation: Higher-timeframe directional state = directional state recalculated from bars aggregated to a higher timeframe, using either the last completed higher-timeframe bar or the still-forming higher-timeframe bar, according to the selected mode.
+Long: directional state = bullish
+Short: directional state = bearish
+Long: normalized slope >= directional threshold
+Short: normalized slope <= negative directional threshold
+Long: (close - anchored recency-weighted average) / ATR > price-distance band
+Short: (close - anchored recency-weighted average) / ATR < negative price-distance band
+Long: higher-timeframe directional state = bullish
+Short: higher-timeframe directional state = bearish
+Long: chart bar is completed AND directional state = bullish AND previous directional state != bullish
+Short: chart bar is completed AND directional state = bearish AND previous directional state != bearish

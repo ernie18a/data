@@ -1,5 +1,11 @@
-Calculation: HL2 = (high + low) / 2
-Calculation: Regression center = least-squares linear regression of HL2 over a lookback, evaluated on the current bar.
-Calculation: Regression channel = configured linear or quadratic least-squares fit of HL2 over a lookback, with upper and lower bands one parameterized standard-deviation width above and below the fit.
-Long: close > Regression center OR low <= lower band AND previous low > previous lower band OR volume >= volume-SMA * flare-volume threshold AND low <= lower flare zone AND (high > upper flare zone OR abs(close - lower band) < abs(close - upper band))
-Short: close <= Regression center OR high >= upper band AND previous high < previous upper band OR volume >= volume-SMA * flare-volume threshold AND high >= upper flare zone AND (low > lower flare zone OR abs(close - upper band) <= abs(close - lower band))
+Calculation: Regression curve = least-squares linear or quadratic fit of HL2 over the current regression lookback, evaluated at each bar in that same window.
+Calculation: Channel half-width = standard deviation of HL2 over the regression lookback multiplied by a channel-width multiplier. Upper and lower bands at each bar in the window equal its regression-curve value plus and minus this half-width.
+Calculation: Flow segment = divide the regression window into consecutive segments of ceil((window length - 1) / 60) bar intervals, with adjacent segments sharing their endpoint; use at most 60 segments. For each bar in a segment, close position is clamp((close - low) / (high - low), 0, 1), or 0 when high equals low; weight is min(volume / volume SMA, 3) / 3 when volume SMA is positive, otherwise 0. Segment flow is the weighted average of 2 × close position - 1, or 0 when total weight is zero. The volume SMA is evaluated at each constituent bar.
+Long: Close > the current endpoint of the linear regression of HL2 over the regression lookback.
+Short: Close <= the current endpoint of the linear regression of HL2 over the regression lookback.
+Long: Flow segment value >= 0.08.
+Short: Flow segment value <= -0.08.
+Long: Low <= lower band AND previous low > previous lower band, with both bands evaluated from the current regression-window fit and current channel half-width.
+Short: High >= upper band AND previous high < previous upper band, with both bands evaluated from the current regression-window fit and current channel half-width.
+Long: Volume / volume SMA >= flare multiplier AND volume SMA > 0 AND low <= regression curve - channel half-width × (1 - edge-zone fraction) AND (high < regression curve + channel half-width × (1 - edge-zone fraction) OR abs(close - lower band) < abs(close - upper band)).
+Short: Volume / volume SMA >= flare multiplier AND volume SMA > 0 AND high >= regression curve + channel half-width × (1 - edge-zone fraction) AND (low > regression curve - channel half-width × (1 - edge-zone fraction) OR abs(close - upper band) <= abs(close - lower band)).

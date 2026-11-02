@@ -1,9 +1,19 @@
-Calculation: Pressure score = optionally EMA-smoothed signed percentile rank of the absolute raw pressure against prior bars; its sign is the raw pressure’s sign, and a zero raw pressure gives zero
-Calculation: Raw pressure = gamma proxy × (close − previous close) × volume factor × volatility expansion factor
-Calculation: Volume factor = clamp(volume / its simple moving average, 0.5, 2.5) when volume pressure is enabled; otherwise 1
-Calculation: Volatility expansion factor = clamp(realized volatility / its simple moving average, 0.5, 2.5) when volatility expansion is enabled; otherwise 1
-Calculation: Realized volatility = standard deviation of log(close / previous close) over its lookback
-Calculation: Gamma proxy = φ(d1) / (close × σ × √T), where φ is the standard normal density, d1 = [ln(close / synthetic strike) + (risk-free rate + σ²/2) × T] / (σ × √T), σ = max(realized volatility × √(bars per year), a positive floor), and T = max(horizon bars / bars per year, a positive floor); synthetic strike is close, a manual strike, or an EMA of close
-Calculation: Pressure regime score = 1 when absolute pressure score is below the low threshold, 2 when it is at least the low threshold but below the high threshold, 3 when it is at least the high threshold but below the extreme threshold, and 4 when it is at least the extreme threshold
-Long: pressure score > 0 AND absolute pressure score is at least the high threshold AND below the extreme threshold AND previous pressure regime score is not 3 OR pressure score > 0 AND absolute pressure score is at least the extreme threshold AND previous pressure regime score is not 4 OR pressure score > 0 AND previous pressure score <= 0
-Short: pressure score < 0 AND absolute pressure score is at least the high threshold AND below the extreme threshold AND previous pressure regime score is not 3 OR pressure score < 0 AND absolute pressure score is at least the extreme threshold AND previous pressure regime score is not 4 OR pressure score < 0 AND previous pressure score >= 0
+Calculation: Realized volatility = standard deviation of log(close / previous close) over a lookback.
+Calculation: Synthetic gamma = standard normal probability density at d1 / (close × sigma × sqrt(T)), where T = max(expiry horizon in bars / bars per year, 0.000001), sigma = max(realized volatility × sqrt(bars per year), 0.000001), d1 = (log(close / strike) + (risk-free rate + sigma² / 2) × T) / (sigma × sqrt(T)), and strike is selected as current close, a fixed parameter, or an EMA of close.
+Calculation: Raw pressure = synthetic gamma × (close − previous close) × volume factor × volatility factor. When enabled, volume factor is current volume / SMA(volume), or 1 if the average is not positive; volatility factor is realized volatility / SMA(realized volatility), or 1 if that average is not positive. Clamp each enabled factor to [0.5, 2.5]; a disabled factor is 1.
+Calculation: Pressure score = the sign of raw pressure multiplied by 100 times the fraction of valid raw-pressure magnitudes in the preceding percentile lookback that are strictly less than the current magnitude; use zero when raw pressure is zero. Optionally apply an EMA to this signed score.
+Calculation: Pressure regime = low if absolute pressure score < low threshold; otherwise normal if absolute pressure score < high threshold; otherwise high if absolute pressure score < extreme threshold; otherwise extreme.
+Long: Pressure regime = normal AND pressure score >= 0
+Short: Pressure regime = normal AND pressure score < 0
+Long: Pressure regime = high AND pressure score >= 0
+Short: Pressure regime = high AND pressure score < 0
+Long: Pressure regime = extreme AND pressure score >= 0
+Short: Pressure regime = extreme AND pressure score < 0
+Long: Pressure score > 0 AND pressure regime = high AND previous pressure regime != high
+Short: Pressure score < 0 AND pressure regime = high AND previous pressure regime != high
+Long: Pressure score > 0 AND pressure regime = extreme AND previous pressure regime != extreme
+Short: Pressure score < 0 AND pressure regime = extreme AND previous pressure regime != extreme
+Long: Pressure score > 0 AND (pressure regime = high OR pressure regime = extreme) AND absolute pressure score > absolute previous pressure score
+Short: Pressure score < 0 AND (pressure regime = high OR pressure regime = extreme) AND absolute pressure score > absolute previous pressure score
+Long: Pressure score > 0 AND previous pressure score <= 0
+Short: Pressure score < 0 AND previous pressure score >= 0

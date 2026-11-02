@@ -1,13 +1,19 @@
-Calculation: Relative volume = current volume / simple moving average of volume over a longer lookback
-Calculation: Body ratio = abs(close − open) / max(high − low, minimum price increment)
-Calculation: Bullish displacement = close > open AND max(high − low, minimum price increment) >= ATR × minimum displacement multiple AND body ratio >= minimum body ratio AND relative volume >= minimum relative volume
-Calculation: Bearish displacement = close < open AND max(high − low, minimum price increment) >= ATR × minimum displacement multiple AND body ratio >= minimum body ratio AND relative volume >= minimum relative volume
-Calculation: On either displacement, create or replace the active imbalance with its direction, current bar, and a pocket centered on the candle body; pocket width is the greater of body size and ATR × minimum pocket width. The recovery rail is the pocket midpoint.
-Calculation: A pocket test occurs when high >= pocket bottom AND low <= pocket top. Record the latest test bar; a test is recent while the number of bars since it is <= the test window.
-Calculation: Recovery close = active bullish imbalance AND recent test AND close > recovery rail + ATR × recovery buffer, OR active bearish imbalance AND recent test AND close < recovery rail − ATR × recovery buffer
-Calculation: Seed score = round(clamp(35 + clamp((candle range / ATR − minimum displacement multiple) × 22, 0, 22) + clamp((relative volume − minimum relative volume) × 16, 0, 24) + body ratio × 24, 0, 100)) at the imbalance bar
-Calculation: Recovery score = round(clamp(seed score × 0.30 + clamp(depth × 38, 0, 26) + clamp(rejection wick / candle range × 40, 0, 18) + clamp(relative volume × 28, 0, 28) + freshness × 0.18, 0, 100)); depth is (close − rail) / pocket width for bullish and (rail − close) / pocket width for bearish; rejection wick is lower wick for bullish and upper wick for bearish; freshness = clamp(100 − age bars / maximum imbalance age × 55, 0, 100)
-Calculation: Ready recovery = recovery close AND recovery score >= minimum ready score
-Calculation: Active imbalance = imbalance age <= maximum imbalance age AND close has not crossed its failure edge; bullish failure edge = pocket bottom − ATR × invalidation buffer, bearish failure edge = pocket top + ATR × invalidation buffer
-Long: Bullish displacement OR (active bullish imbalance AND pocket test AND NOT ready recovery AND NOT bullish displacement) OR (ready recovery AND active bullish imbalance AND NOT ready recovery on the prior bar)
-Short: Bearish displacement OR (active bearish imbalance AND pocket test AND NOT ready recovery AND NOT bearish displacement) OR (ready recovery AND active bearish imbalance AND NOT ready recovery on the prior bar)
+Calculation: Safe ATR = maximum of ATR, or true range when ATR is unavailable, and a configurable minimum positive price increment. Use that increment as the minimum candle range and pocket width.
+Calculation: Relative volume = volume divided by its simple moving average, or 1 when that average is unavailable or nonpositive.
+Calculation: Displacement = candle range >= safe ATR times the minimum range multiplier AND absolute body / candle range >= minimum body ratio AND relative volume >= minimum relative volume.
+Calculation: Active pocket = on each displacement, replace any existing pocket with one centered at (open + close) / 2, with width equal to the greater of the absolute body and safe ATR times the minimum pocket-width multiplier. Record its direction from close versus open, its creation bar, and the seed score. A pocket remains active through its expiration or invalidation bar and is cleared afterward; a new displacement replaces it first.
+Calculation: Seed score = round(clamp(35 + clamp((candle range / safe ATR - minimum range multiplier) * 22, 0, 22) + clamp((relative volume - minimum relative volume) * 16, 0, 24) + body ratio * 24, 0, 100)). All inputs are measured on the displacement bar.
+Calculation: Pocket test = high >= pocket bottom AND low <= pocket top. Record the most recent test bar, including the displacement bar. A test is recent while its age in bars <= the test-window parameter.
+Calculation: Recovery score = round(clamp(seed score * 0.30 + clamp(directional depth * 38, 0, 26) + clamp(directional rejection wick / candle range * 40, 0, 18) + clamp(relative volume * 28, 0, 28) + clamp(100 - pocket age / maximum pocket age * 55, 0, 100) * 0.18, 0, 100)). Directional depth is (close - pocket center) / pocket width for a bullish pocket and (pocket center - close) / pocket width for a bearish pocket. The rejection wick is the lower wick for a bullish pocket and the upper wick for a bearish pocket.
+Calculation: Ready recovery = a recent pocket test AND recovery score >= the minimum ready score AND, for a bullish pocket, close > pocket center + safe ATR times the recovery-buffer multiplier, or, for a bearish pocket, close < pocket center - safe ATR times the recovery-buffer multiplier. A recovery remains active through the configured multiple of the test window after the latest ready recovery.
+Calculation: Proof position = on each transition from not ready to ready, record the pocket direction, pocket center plus or minus current safe ATR times the first-target multiplier, and the current invalidation edge. Replace any existing proof position. Starting on the following bar, close it at the first failure or target condition, giving failure priority if both occur; also clear it when its age exceeds the maximum pocket age.
+Long: close > open AND displacement.
+Short: close < open AND displacement.
+Long: active pocket direction = bullish AND pocket test AND ready recovery = false AND current bar is not a displacement bar.
+Short: active pocket direction = bearish AND pocket test AND ready recovery = false AND current bar is not a displacement bar.
+Long: active pocket direction = bullish AND (ready recovery = true OR recovery remains active).
+Short: active pocket direction = bearish AND (ready recovery = true OR recovery remains active).
+Exit: long, active pocket direction = bullish AND close < pocket bottom - safe ATR times the invalidation-buffer multiplier.
+Exit: short, active pocket direction = bearish AND close > pocket top + safe ATR times the invalidation-buffer multiplier.
+Exit: long, bullish proof position is open AND (close < its recorded invalidation edge OR high >= its recorded first target).
+Exit: short, bearish proof position is open AND (close > its recorded invalidation edge OR low <= its recorded first target).

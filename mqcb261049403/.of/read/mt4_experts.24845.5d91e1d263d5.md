@@ -1,6 +1,3 @@
-Calculation: Short-period LWMA = linear weighted moving average of typical price (high + low + close)/3 on the chart timeframe, using the bar still forming
-Calculation: Long-period LWMA = linear weighted moving average of typical price (high + low + close)/3 on the chart timeframe, using the bar still forming; its lookback is longer than the short-period LWMA
-Long: Open − close two bars ago > distance threshold AND short-period LWMA > long-period LWMA AND low two bars ago < high one bar ago AND open positions < maximum positions
-Short: close two bars ago − open > distance threshold AND short-period LWMA < long-period LWMA AND low one bar ago < high two bars ago AND open positions < maximum positions
-Exit: Long, low <= entry price − stop distance OR high >= entry price + take-profit distance OR (a prior high > entry price + break-even trigger AND low <= entry price + break-even offset)
-Exit: Short, high >= entry price + stop distance OR low <= entry price − take-profit distance OR (a prior low < entry price − break-even trigger AND high >= entry price − break-even offset)
+Long: absolute value of current bar open minus close two bars ago > price-distance threshold AND current short-period linear weighted moving average of typical price > current long-period linear weighted moving average of typical price AND low two bars ago < previous bar high
+Exit: long, current bar low <= entry-bar open minus stop-loss distance OR current bar high >= entry-bar open plus take-profit distance
+Exit: long, break-even stop enabled AND a bar open since entry minus entry price > activation distance AND current bar low <= entry price plus stop-offset distance

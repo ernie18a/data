@@ -1,8 +1,9 @@
-Calculation: all-time high = highest chart-timeframe close from the start of the data
-Calculation: drawdown = 100 × (all-time high − current chart-timeframe close) ÷ all-time high
-Calculation: trailing peak = highest weekly high since entry (or highest weekly close, if configured), using completed higher-timeframe bars
-Calculation: exit threshold = trailing peak × (1 − exit drawdown fraction)
-Long: at a monthly, quarterly, or annual rebalance boundary, while not in the first year after a confirmed SPY recovery from a deep drawdown
-Long: at a monthly or quarterly deployment boundary AND cash reserve > 0
-Long: last completed higher-timeframe weekly close > its simple moving average, calculated over a longer lookback than the chart timeframe
-Exit: long, last completed higher-timeframe weekly low ≤ exit threshold (or weekly close ≤ exit threshold, if configured)
+Calculation: Drawdown = (highest chart close since the start of the data − current close) / highest chart close since the start of the data.
+Calculation: Tiered deployment fraction = select the first fraction whose corresponding ascending drawdown boundary is greater than or equal to drawdown, or the final fraction if no boundary qualifies.
+Calculation: Triggered deployment fraction = select the fraction for the highest ascending drawdown trigger reached, or the baseline fraction if none is reached.
+Calculation: Cash reserve for each deployment method = accumulated periodic contributions less previous deployments; start at zero and add each contribution before testing deployment. Deployment amount = the lesser of the cash reserve and the selected deployment fraction multiplied by either the cash reserve or one periodic contribution, according to the chosen cash mode.
+Calculation: Trailing peak = maximum of the selected high or close of completed higher-timeframe bars, initialized from the last completed higher-timeframe bar at entry and updated with each last completed higher-timeframe bar before the exit test.
+Long: A new deployment period begins AND the chart bar is not the first bar AND cash reserve > 0 AND the tiered deployment amount > 0.
+Long: A new deployment period begins AND the chart bar is not the first bar AND cash reserve > 0 AND the triggered deployment amount > 0.
+Long: A new higher-timeframe period begins AND position side = flat AND last completed higher-timeframe close > its simple moving average AND (the green-candle filter is disabled OR last completed higher-timeframe close > last completed higher-timeframe open) AND chart open > 0. Test entry after exit, including on the same bar.
+Exit: long, a new higher-timeframe period begins AND (last completed higher-timeframe low <= trailing peak × (1 − drawdown threshold) OR, when close-based exit is selected, last completed higher-timeframe close <= trailing peak × (1 − drawdown threshold)). Use only the selected low-based or close-based test.

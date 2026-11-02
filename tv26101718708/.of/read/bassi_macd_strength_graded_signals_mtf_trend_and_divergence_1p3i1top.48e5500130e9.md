@@ -1,19 +1,27 @@
-Calculation: Regular MACD divergence = a confirmed price lower low with a MACD higher low, or a price higher high with a MACD lower high, comparing consecutive price and MACD pivots of the same type
-Calculation: Hidden MACD divergence = a confirmed price higher low with a MACD lower low, or a price lower high with a MACD higher high, comparing consecutive pivots of the same type
-Calculation: MACD distance from zero in standard deviations = MACD divided by its rolling standard deviation
-Long: MACD crosses above its signal line
-Short: MACD crosses below its signal line
-Long: MACD crosses above its signal line AND higher-timeframe fast EMA > higher-timeframe slow EMA on the last completed higher-timeframe bar AND ADX >= trend threshold AND +DI > -DI AND cooldown has elapsed AND (zero-line filter disabled OR MACD < 0)
-Short: MACD crosses below its signal line AND higher-timeframe fast EMA < higher-timeframe slow EMA on the last completed higher-timeframe bar AND ADX >= trend threshold AND -DI > +DI AND cooldown has elapsed AND (zero-line filter disabled OR MACD > 0)
-Long: MACD crosses above its signal line AND at least the required number of the five timeframe trends agree bullishly; use the selected trend method (price vs EMA, shorter EMA vs longer EMA, or MACD vs signal) on each timeframe's last completed bar
-Short: MACD crosses below its signal line AND at least the required number of the five timeframe trends agree bearishly; use the selected trend method (price vs EMA, shorter EMA vs longer EMA, or MACD vs signal) on each timeframe's last completed bar
-Long: MACD crosses above its signal line AND MACD distance from zero in standard deviations <= negative extreme threshold
-Short: MACD crosses below its signal line AND MACD distance from zero in standard deviations >= extreme threshold
-Long: Regular MACD divergence is confirmed
-Short: Regular MACD divergence is confirmed
-Long: Hidden MACD divergence is confirmed
-Short: Hidden MACD divergence is confirmed
-Long: MACD crosses above its signal line AND MACD distance from zero in standard deviations <= negative extreme threshold AND regular bullish MACD divergence occurred within its validity window
-Short: MACD crosses below its signal line AND MACD distance from zero in standard deviations >= extreme threshold AND regular bearish MACD divergence occurred within its validity window
-Exit: Long, low <= entry price - stop multiple * ATR captured at entry OR high >= entry price + target multiple * ATR captured at entry OR histogram momentum has weakened against the position for the required consecutive bars OR a filtered signal appears
-Exit: Short, high >= entry price + stop multiple * ATR captured at entry OR low <= entry price - target multiple * ATR captured at entry OR histogram momentum has weakened against the position for the required consecutive bars OR a filtered signal appears
+Calculation: MACD = shorter-period moving average of the selected price source minus longer-period moving average; its signal is a moving average of MACD, and its histogram is MACD minus its signal. The oscillator and signal moving averages may independently be EMA or SMA.
+Calculation: Normalized value = value divided by its rolling standard deviation, or zero when the standard deviation is zero or unavailable.
+Calculation: Directional bias = normalized MACD change over a lookback plus normalized histogram change over one bar plus normalized EMA-smoothed close rate of change plus a weighted normalized trend position, where trend position is (close minus shorter-period EMA of close plus shorter-period EMA of close minus longer-period EMA of close) divided by ATR, or zero when ATR is zero. All normalizations use the same lookback.
+Calculation: Filtered bullish cross = MACD crosses above its signal AND, when enabled, the last completed higher-timeframe shorter-period EMA of close exceeds the longer-period EMA AND, when enabled, ADX is at least its threshold and positive DI exceeds negative DI AND the bars since the last filtered cross in either direction are at least the cooldown AND, when enabled, MACD is below zero. Filtered bearish cross reverses the cross, EMA, DI, and zero comparisons; its ADX and cooldown comparisons are unchanged.
+Calculation: MACD pivot low or high = a MACD low or high confirmed after the specified right-side lookback, compared with MACD values over the specified left-side and right-side lookbacks. Compare each newly confirmed pivot with the immediately preceding confirmed pivot of the same type, using price low or high at each pivot bar.
+Calculation: Extreme bullish cross = MACD crosses above its signal AND normalized MACD is at or below the negative extreme threshold. Extreme bearish cross = MACD crosses below its signal AND normalized MACD is at or above the positive extreme threshold.
+Calculation: Bullish regular divergence = a newly confirmed MACD pivot low is higher than the preceding MACD pivot low AND its corresponding price low is lower. Bearish regular divergence = a newly confirmed MACD pivot high is lower than the preceding MACD pivot high AND its corresponding price high is higher.
+Calculation: Confirmed bullish reversal = an extreme bullish cross AND a bullish regular divergence was confirmed within the divergence validity lookback. Confirmed bearish reversal = an extreme bearish cross AND a bearish regular divergence was confirmed within the divergence validity lookback.
+Calculation: Confirmed timeframe MACD direction = MACD above its signal is bullish; MACD at or below its signal is bearish. For each selected higher or lower timeframe use its last completed bar; for the chart timeframe use the preceding bar. The selected timeframes are distinct.
+Calculation: Recommendation bias = bullish on a filtered bullish cross, bearish on a filtered bearish cross, otherwise bullish when directional bias is at least zero and bearish when it is below zero. Recommendation fade count is the number of consecutive bars for which the histogram change is negative in the direction of recommendation bias, recalculated on each bar.
+Long: MACD crosses above its signal.
+Short: MACD crosses below its signal.
+Long: A newly confirmed MACD pivot low is higher than the preceding MACD pivot low AND its corresponding price low is lower, OR the MACD pivot low is lower AND its corresponding price low is higher.
+Short: A newly confirmed MACD pivot high is lower than the preceding MACD pivot high AND its corresponding price high is higher, OR the MACD pivot high is higher AND its corresponding price high is lower.
+Long: All selected timeframe MACD directions become bullish on this bar after not all being bullish on the preceding chart bar.
+Short: All selected timeframe MACD directions become bearish on this bar after not all being bearish on the preceding chart bar.
+Long: Recommendation bias is bullish.
+Short: Recommendation bias is bearish.
+Long: The most recent confirmed reversal is bullish AND its age is within the recommendation window.
+Short: The most recent confirmed reversal is bearish AND its age is within the recommendation window.
+Long: The most recent raw MACD cross is bullish AND its age is within the recommendation window AND ADX is at least its threshold AND the most recent extreme cross and confirmed reversal are both older than the recommendation window.
+Short: The most recent raw MACD cross is bearish AND its age is within the recommendation window AND ADX is at least its threshold AND the most recent extreme cross and confirmed reversal are both older than the recommendation window.
+Exit: long, low is at or below entry price minus a stop multiple of ATR at entry OR high is at or above entry price plus a target multiple of ATR at entry OR histogram has decreased for at least the fade lookback consecutive bars since entry OR a filtered bullish or bearish cross occurs. If stop and target are both reached on the same bar, execute the stop first.
+Exit: short, high is at or above entry price plus a stop multiple of ATR at entry OR low is at or below entry price minus a target multiple of ATR at entry OR histogram has increased for at least the fade lookback consecutive bars since entry OR a filtered bullish or bearish cross occurs. If stop and target are both reached on the same bar, execute the stop first.
+Exit: long, the most recent extreme bearish cross is within the recommendation window AND the most recent confirmed reversal is older than the recommendation window.
+Exit: short, the most recent extreme bullish cross is within the recommendation window AND the most recent confirmed reversal is older than the recommendation window.
+Exit: long or short, recommendation fade count is at least the fade lookback AND the most recent raw cross, extreme cross, and confirmed reversal are all older than the recommendation window.

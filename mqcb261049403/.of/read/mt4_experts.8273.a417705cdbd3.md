@@ -1,6 +1,9 @@
-Calculation: TRIX = percentage change from the previous bar in an EMA of an SMMA of an SMMA of close; all three smoothing lengths use the TRIX lookback
-Calculation: Signal = EMA of TRIX using the signal lookback
-Long: On the last completed chart-timeframe bar, TRIX > Signal AND on the preceding bar, TRIX <= Signal
-Short: On the last completed chart-timeframe bar, TRIX < Signal AND on the preceding bar, TRIX >= Signal
-Exit: Long, TRIX < Signal AND on the preceding bar, TRIX >= Signal OR close <= entry price minus the configured stop-loss distance
-Exit: Short, TRIX > Signal AND on the preceding bar, TRIX <= Signal OR close >= entry price plus the configured stop-loss distance
+Calculation: Triple-smoothed close = EMA of the SMMA of the SMMA of close, all using the same lookback.
+Calculation: TRIX = (triple-smoothed close - previous triple-smoothed close) / previous triple-smoothed close.
+Calculation: Signal = EMA of TRIX, using a lookback different from the triple-smoothed close lookback.
+Long: TRIX > signal AND previous TRIX <= previous signal.
+Short: TRIX < signal AND previous TRIX >= previous signal.
+Exit: long, TRIX < signal AND previous TRIX >= previous signal.
+Exit: short, TRIX > signal AND previous TRIX <= previous signal.
+Exit: long, low <= entry price - enabled stop-loss distance OR high >= entry price + enabled take-profit distance.
+Exit: short, high >= entry price + enabled stop-loss distance OR low <= entry price - enabled take-profit distance.

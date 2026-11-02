@@ -1,5 +1,7 @@
-Calculation: Smoothed Chaikin oscillator = inverse discrete cosine transform of the discrete cosine transform of the latest 2^N Chaikin oscillator values, after setting coefficients at indices >= min(SS, 2^N) to zero; Chaikin oscillator = fast moving average minus slow moving average of the accumulation/distribution line
-Long: On the lower signal timeframe, using the last three completed bars, the smoothed Chaikin oscillator on the oldest bar >= its value on the middle bar AND its value on the newest bar > its value on the middle bar
-Short: On the lower signal timeframe, using the last three completed bars, the smoothed Chaikin oscillator on the oldest bar <= its value on the middle bar AND its value on the newest bar < its value on the middle bar
-Exit: long, on the lower signal timeframe, using the last three completed bars, the smoothed Chaikin oscillator on the oldest bar <= its value on the middle bar AND its value on the newest bar < its value on the middle bar
-Exit: short, on the lower signal timeframe, using the last three completed bars, the smoothed Chaikin oscillator on the oldest bar >= its value on the middle bar AND its value on the newest bar > its value on the middle bar
+Calculation: Spectral Chaikin = Calculate the Chaikin oscillator from volume and the specified fast and slow moving averages, with the fast period shorter than the slow period. On the indicator timeframe, take a power-of-two number of the latest oscillator values plus one, ordered from the still-forming bar backward. Apply a type-I discrete cosine transform, zero all coefficients from the smoothing cutoff onward, and apply the inverse transform. Recalculate the entire window at each evaluation, including the still-forming bar; use the resulting values at the selected signal-bar offset and the next two older offsets. The indicator timeframe may be higher or lower than the chart timeframe.
+Long: Spectral Chaikin at the signal-bar offset > its value one bar older AND its value two bars older >= its value one bar older
+Short: Spectral Chaikin at the signal-bar offset < its value one bar older AND its value two bars older <= its value one bar older
+Exit: short, Spectral Chaikin at the signal-bar offset > its value one bar older
+Exit: long, Spectral Chaikin at the signal-bar offset < its value one bar older
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

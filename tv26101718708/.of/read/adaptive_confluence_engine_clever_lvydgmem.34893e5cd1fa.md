@@ -1,11 +1,23 @@
-Calculation: Stochastic RSI = stochastic of RSI; K and D are successively smoothed lines, with K shorter-smoothed than D.
-Calculation: Bullish engulfing = current close > prior open AND current open < prior close AND prior close < prior open.
-Calculation: Bearish engulfing = current close < prior open AND current open > prior close AND prior close > prior open.
-Calculation: Higher-timeframe bias = compare the last completed bar of a higher timeframe's close with its EMA; bullish when close > EMA and bearish when close < EMA.
-Calculation: Bullish score = weighted sum of: close > long-term EMA; short-term EMA > medium-term EMA; bullish Supertrend; MACD line > signal line and MACD histogram > 0; RSI between its lower and upper bounds; Stochastic RSI K > D and K below its upper bound; ADX above its threshold and +DI > -DI; volume > its moving average; bullish higher-timeframe bias (or filter disabled); bullish engulfing; ATR > its longer-lookback average times a factor.
-Calculation: Bearish score = weighted sum of: close < long-term EMA; short-term EMA < medium-term EMA; bearish Supertrend; MACD line < signal line and MACD histogram < 0; RSI between its lower and upper bounds; Stochastic RSI K < D and K above its lower bound; ADX above its threshold and -DI > +DI; volume > its moving average; bearish higher-timeframe bias (or filter disabled); bearish engulfing; ATR > its longer-lookback average times a factor.
-Calculation: Long stop and targets = entry price − ATR at entry × stop multiplier, and entry price + ATR at entry × respective target multipliers; short stop and targets use the opposite signs.
-Long: EMA(short-term) crosses above EMA(medium-term) AND bullish score ≥ selected signal-mode threshold AND position side is not long.
-Short: EMA(short-term) crosses below EMA(medium-term) AND bearish score ≥ selected signal-mode threshold AND position side is not short.
-Exit: Long, high ≥ long target 3 OR (low ≤ long stop AND target 1 has not previously been reached).
-Exit: Short, low ≤ short target 3 OR (high ≥ short stop AND target 1 has not previously been reached).
+Calculation: Bullish score = sum of higher weights for close > long-term EMA, bullish Supertrend, MACD line > signal line AND MACD histogram > zero, RSI > bullish lower threshold AND RSI < bullish upper threshold, and (higher-timeframe filter disabled OR higher-timeframe close > higher-timeframe long-term EMA); plus lower weights for short-term EMA > medium-term EMA, smoothed stochastic RSI K > its signal AND K < upper threshold, ADX > threshold AND positive DI > negative DI, volume > its SMA, close > previous open AND open < previous close AND previous close < previous open, and ATR > its SMA multiplied by a factor. All higher weights are equal and exceed the equal lower weights.
+Calculation: Bearish score = sum of higher weights for close < long-term EMA, bearish Supertrend, MACD line < signal line AND MACD histogram < zero, RSI < bearish upper threshold AND RSI > bearish lower threshold, and (higher-timeframe filter disabled OR higher-timeframe close < higher-timeframe long-term EMA); plus lower weights for short-term EMA < medium-term EMA, smoothed stochastic RSI K < its signal AND K > lower threshold, ADX > threshold AND negative DI > positive DI, volume > its SMA, close < previous open AND open > previous close AND previous close > previous open, and ATR > its SMA multiplied by a factor. All higher weights are equal and exceed the equal lower weights. The RSI thresholds in ascending order are bearish lower, bullish lower, bearish upper, bullish upper.
+Calculation: Smoothed stochastic RSI K = SMA of stochastic applied to RSI as its high, low, and close inputs; its signal = SMA of K.
+Calculation: Higher-timeframe close and EMA = values from the last completed higher-timeframe bar, including the bar that completes with the current chart bar.
+Calculation: Entry ATR = ATR on the bar where a new position is opened. Stop and target levels remain fixed from that entry; target multipliers increase from first to third. A first-target hit is remembered until the next position is opened, including when the first target is reached on the entry bar.
+Long: Short-term EMA crosses above medium-term EMA AND bullish score >= score threshold.
+Short: Short-term EMA crosses below medium-term EMA AND bearish score >= score threshold.
+Long: Close > long-term EMA.
+Short: Close <= long-term EMA.
+Long: Supertrend direction is bullish.
+Short: Supertrend direction is bearish.
+Long: Low > high two bars earlier.
+Short: High < low two bars earlier.
+Long: RSI < lower extreme threshold.
+Short: RSI > upper extreme threshold.
+Long: ADX > trend threshold AND close > long-term EMA.
+Short: ADX > trend threshold AND close <= long-term EMA.
+Long: Higher-timeframe filter disabled OR higher-timeframe close > higher-timeframe long-term EMA.
+Short: Higher-timeframe filter enabled AND higher-timeframe close <= higher-timeframe long-term EMA.
+Exit: Long, high >= entry price + entry ATR multiplied by a target multiplier.
+Exit: Short, low <= entry price - entry ATR multiplied by a target multiplier.
+Exit: Long, low <= entry price - entry ATR multiplied by the stop multiplier AND first target has not been reached, including on the current bar.
+Exit: Short, high >= entry price + entry ATR multiplied by the stop multiplier AND first target has not been reached, including on the current bar.

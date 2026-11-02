@@ -1,9 +1,6 @@
-Calculation: ATR-normalized EMA displacement = (close − EMA(close, longer lookback)) / ATR; the EMA and ATR use configurable lookbacks.
-Calculation: Directional bias state = Neutral switches to bullish when displacement exceeds the bullish entry threshold or bearish when it falls below the bearish entry threshold; bullish persists until displacement falls below the bullish exit threshold, and bearish persists until displacement rises above the bearish exit threshold.
-Calculation: Realized volatility ratio = standard deviation of log returns over a shorter lookback / standard deviation of log returns over a longer lookback; classify as expanding above its upper threshold, compressing below its lower threshold, and normal otherwise.
-Calculation: VIX-derived base lot count = zero at or above the extreme VIX threshold and positive below it; use the live close of higher-timeframe daily bars.
-Long: directional bias state is bullish AND realized volatility state is normal, expanding, or compressing AND VIX-derived base lot count > 0
-Short: directional bias state is bearish AND realized volatility state is normal, expanding, or compressing AND VIX-derived base lot count > 0
-Exit: long put-side position, close <= entry spot − 0.75 × (entry spot − short put strike)
-Exit: short call-side position, close >= entry spot + 0.75 × (short call strike − entry spot)
-Exit: any position, live higher-timeframe daily VIX close >= extreme VIX threshold OR live VIX close >= shock threshold AND (live VIX close − previous completed higher-timeframe daily VIX close) / previous completed higher-timeframe daily VIX close > shock-change threshold
+Calculation: Normalized bias = (close − EMA of close) / ATR; use 0 when ATR is not positive.
+Calculation: Bias state = initially neutral; on each bar, if the previous state is neutral, change to bullish when normalized bias > the positive entry threshold or bearish when normalized bias < the negative entry threshold; if the previous state is bullish, change to neutral when normalized bias < the bullish exit threshold; if the previous state is bearish, change to neutral when normalized bias > the bearish exit threshold; otherwise retain the previous state. The bullish exit threshold is nonnegative and below the bullish entry threshold; the bearish exit threshold is nonpositive and above the bearish entry threshold.
+Long: Bias state = bullish.
+Short: Bias state = bearish.
+Exit: long, previous bias state = bullish AND current bias state = neutral.
+Exit: short, previous bias state = bearish AND current bias state = neutral.

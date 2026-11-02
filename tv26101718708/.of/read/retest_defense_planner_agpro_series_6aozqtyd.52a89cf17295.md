@@ -1,5 +1,8 @@
-Calculation: Active defense side and shelf = the configured bullish or bearish side and its latest confirmed pivot low or high, while within the maximum shelf age; in automatic mode, choose the side using fast and slow EMAs and the relative distances to the fresh support and resistance shelves.
-Calculation: Defense zone = active shelf plus or minus an ATR-scaled zone width; zone touch = bar range overlaps this zone.
-Calculation: Approach = close is within an ATR-scaled activation distance of the active shelf; recent touch = a zone touch occurred within the configured response window.
-Long: active defense side is bullish AND (zone touch OR (NOT defense lost AND (Approach OR recent touch))).
-Short: active defense side is bearish AND (zone touch OR (NOT defense lost AND (Approach OR recent touch))).
+Calculation: Support shelf = the most recent confirmed pivot low, provided its pivot bar is no older than the maximum shelf age; a pivot requires the same number of bars on each side.
+Calculation: Resistance shelf = the most recent confirmed pivot high, provided its pivot bar is no older than the maximum shelf age; a pivot requires the same number of bars on each side.
+Calculation: Selected side = the manually selected side, or, in automatic mode: bullish if only a support shelf exists; bearish if only a resistance shelf exists; if both exist and close >= longer-period EMA OR shorter-period EMA >= longer-period EMA, bullish when the absolute distance from close to support <= the absolute distance from close to resistance multiplied by an above-one factor, otherwise bearish; if both exist and neither trend comparison holds, bullish when the absolute distance from close to support < the absolute distance from close to resistance multiplied by a below-one factor, otherwise bearish.
+Calculation: Risk edge = selected shelf minus an ATR multiple for bullish defense, or selected shelf plus an ATR multiple for bearish defense; recalculate on each bar. A breach is latched until the selected shelf's pivot bar or selected side changes.
+Long: selected side = bullish AND support shelf exists.
+Short: selected side = bearish AND resistance shelf exists.
+Exit: long, selected side = bullish AND support shelf exists AND close < risk edge AND no breach has been latched for the current selected shelf and side.
+Exit: short, selected side = bearish AND resistance shelf exists AND close > risk edge AND no breach has been latched for the current selected shelf and side.

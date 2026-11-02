@@ -1,4 +1,8 @@
-Calculation: External swing high/low = a high/low at the external lookback bars ago that is strictly higher/lower than the highs/lows of the following external-lookback bars, detected only when the detector switches into high/low mode; external lookback is longer than internal lookback.
-Calculation: Internal swing high/low = the same pivot calculation using the shorter internal lookback.
-Long: Close crosses above an armed latest external swing high OR an armed latest internal swing high
-Short: Close crosses below an armed latest external swing low OR an armed latest internal swing low
+Calculation: Swing state = For each of two lookbacks, one shorter for internal structure and one longer for external structure, start at high-state. On each bar after the lookback plus one bar, set high-state if the high at the lookback offset is greater than every high since then; otherwise set low-state if the low at that offset is less than every low since then; otherwise retain the previous state. A swing high or low occurs when the state changes to high-state or low-state respectively, with its price taken from that offset.
+Calculation: Structure levels = For each lookback, retain the latest swing high and swing low as separate levels. Each new swing re-arms its corresponding level; the first close crossing that level in its direction disarms it until the next swing of that kind. Compare the current close and current level with the previous close and previous level when detecting a crossing. For external structure, initialize both levels to zero and both as armed; for internal structure, levels are unavailable until their first swing.
+Long: A longer-lookback swing low occurs.
+Short: A longer-lookback swing high occurs.
+Long: Close crosses above an armed swing-high structure level of either lookback.
+Short: Close crosses below an armed swing-low structure level of either lookback.
+Long: Close is above open on each of the current and two preceding bars AND current low is above the high two bars ago.
+Short: Close is below open on each of the current and two preceding bars AND current high is below the low two bars ago.

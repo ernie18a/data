@@ -1,6 +1,10 @@
-Calculation: Moving average = linear-weighted moving average of weighted price (high + low + 2 × close) / 4
-Calculation: Standard deviation = linear-weighted standard deviation of weighted price (high + low + 2 × close) / 4
-Long: Previous completed chart-timeframe moving average − standard deviation − buffer > current price
-Short: Previous completed chart-timeframe moving average + standard deviation + buffer < current price
-Exit: Long, current price <= active stop-loss (initially entry price − stop-loss distance, then trailed) OR current price >= entry price + take-profit distance
-Exit: Short, current price >= active stop-loss (initially entry price + stop-loss distance, then trailed) OR current price <= entry price − take-profit distance
+Calculation: Signal price = chart bar open; use it as the available-data proxy for bid and ask.
+Calculation: Indicator values = moving average and standard deviation of their independently selected price series, smoothing methods, lookbacks, and horizontal shifts; each may use the chart timeframe or a higher or lower timeframe, with a configurable bar offset: zero selects the bar still forming and a positive offset selects a completed bar.
+Calculation: Long stop = entry price minus stop-loss distance, if enabled; at each new chart bar, if trailing is enabled, signal price minus entry price > trailing distance + trailing step, and the existing stop < signal price minus trailing distance minus trailing step, raise the stop to signal price minus trailing distance. If no stop exists, use the trailing stop when the first condition holds.
+Calculation: Short stop = entry price plus stop-loss distance, if enabled; at each new chart bar, if trailing is enabled, entry price minus signal price > trailing distance + trailing step, and the existing stop > signal price plus trailing distance plus trailing step or no stop exists, lower the stop to signal price plus trailing distance.
+Long: Reverse disabled AND signal price < moving average minus standard deviation minus entry indent, OR reverse enabled AND signal price > moving average plus standard deviation plus entry indent.
+Short: Reverse disabled AND signal price > moving average plus standard deviation plus entry indent, OR reverse enabled AND signal price < moving average minus standard deviation minus entry indent.
+Exit: long, stop enabled AND low <= long stop, OR take profit enabled AND high >= entry price plus take-profit distance.
+Exit: short, stop enabled AND high >= short stop, OR take profit enabled AND low <= entry price minus take-profit distance.
+Exit: long, close-opposite enabled AND (reverse disabled AND signal price > moving average plus standard deviation plus entry indent, OR reverse enabled AND signal price < moving average minus standard deviation minus entry indent).
+Exit: short, close-opposite enabled AND (reverse disabled AND signal price < moving average minus standard deviation minus entry indent, OR reverse enabled AND signal price > moving average plus standard deviation plus entry indent).

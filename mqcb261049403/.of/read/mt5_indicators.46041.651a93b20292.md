@@ -1,3 +1,3 @@
-Calculation: Selected moving average = selected moving-average formula applied to the selected price series on the chart timeframe, or on a higher timeframe using its still-forming bar
-Long: Selected moving average > its value on the previous bar
-Short: Selected moving average < its value on the previous bar
+Calculation: Moving-average direction = sign of the most recent nonzero change in the selected moving average of the selected price series; retain the previous direction when the average is unchanged. Calculate on the chart timeframe or on the still-forming bar of a higher timeframe.
+Long: Moving-average direction > 0
+Short: Moving-average direction < 0

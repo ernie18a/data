@@ -1,6 +1,7 @@
-Calculation: SuperTrend = ATR-based trailing stop with bullish and bearish states
-Calculation: Exit favourability score = For the active SuperTrend direction, collect confirmed zigzag pivot highs from bullish runs or pivot lows from bearish runs, using each pivot bar’s context and retaining a rolling history. Context axes are relative volume percentile, time of day (intraday only), and close’s position in the recent high-low range. Divide each active axis into equal-width bins across its range. For each axis, keep matching-direction pivots whose bins on every other active axis match the current bar; score the current bin as 100 × its pivot count / the largest bin count. Average the available axis scores.
-Long: SuperTrend changes from bearish to bullish
-Short: SuperTrend changes from bullish to bearish
-Exit: long, exit favourability score >= 99.999
-Exit: short, exit favourability score >= 99.999
+Calculation: Context axes = independently enabled volume percentile rank over a lookback; UTC time elapsed since midnight as a percentage of one day, enabled only on intraday charts; close position as a percentage of the lookback high–low range, using a positive minimum denominator; and an optional data-derived custom series, active only while all its observed values are within 0–100.
+Calculation: Pivot context pools = maintain separate capped, oldest-first rolling pools of confirmed pivot highs whose pivot-bar SuperTrend was bullish and confirmed pivot lows whose pivot-bar SuperTrend was bearish. A pivot has the same lookback on each side; add it on its confirmation bar and store the enabled axis values from its pivot bar.
+Calculation: Context score = select the pool matching the current SuperTrend direction. Divide each active axis's 0–100 range into equal-width bins, clamping values to the first or last bin. For each active axis, retain pool records with available values whose bins on every other active axis match the current bar, and score that axis as 100 times the count in its current bin divided by the largest bin count. Average all defined axis scores; the score is undefined if none are defined.
+Long: SuperTrend changes from bearish to bullish.
+Short: SuperTrend changes from bullish to bearish.
+Exit: long, SuperTrend is bullish AND context score is at or above the peak-match threshold.
+Exit: short, SuperTrend is bearish AND context score is at or above the peak-match threshold.

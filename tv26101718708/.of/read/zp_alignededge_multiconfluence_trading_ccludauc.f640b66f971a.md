@@ -1,6 +1,7 @@
-Calculation: Confirmed swing high/low = a bar whose high/low is the highest/lowest across equal lookback windows before and after it; use the most recent confirmed pivot.
-Calculation: Bullish MSB state = set when close crosses above the latest confirmed swing high; cleared when close crosses below the latest confirmed swing low. Bearish MSB state = set when close crosses below the latest confirmed swing low; cleared when close crosses above the latest confirmed swing high.
-Calculation: Higher-timeframe bullish trend = fast EMA > mid EMA > slow EMA, calculated on the last completed bar of a higher timeframe than the chart timeframe. Higher-timeframe bearish trend = fast EMA < mid EMA < slow EMA, using the same bars.
-Calculation: LWMA = linearly weighted moving average of close.
-Long: Close crosses above the latest confirmed swing high OR (bullish MSB state AND higher-timeframe bullish trend AND (fast EMA crosses above mid EMA OR mid EMA crosses above LWMA))
-Short: Close crosses below the latest confirmed swing low OR (bearish MSB state AND higher-timeframe bearish trend AND (fast EMA crosses below mid EMA OR mid EMA crosses below LWMA))
+Calculation: Confirmed swing high or low = a pivot high or low with the same lookback on both sides; make it available only when the right-side bars have closed. Use the latest confirmed pivot of each kind.
+Calculation: Bullish break = close crosses above the latest confirmed swing high; bearish break = close crosses below the latest confirmed swing low. A crossover requires the current value to be strictly beyond the current level and the previous value to be at or on the opposite side of the previous level.
+Calculation: Break direction = the most recent bullish or bearish break, including the current bar; if both occur on the same bar, use bearish. Initially there is no break direction.
+Long: Bullish break.
+Short: Bearish break.
+Long: Break direction is bullish AND (shorter-period close EMA crosses above longer-period close EMA OR longer-period close EMA crosses above an even longer-period close linear weighted moving average) AND (higher-timeframe filter is disabled OR the last completed higher-timeframe bar's shorter-period close EMA > its medium-period close EMA AND its medium-period close EMA > its longer-period close EMA).
+Short: Break direction is bearish AND (shorter-period close EMA crosses below longer-period close EMA OR longer-period close EMA crosses below an even longer-period close linear weighted moving average) AND (higher-timeframe filter is disabled OR the last completed higher-timeframe bar's shorter-period close EMA < its medium-period close EMA AND its medium-period close EMA < its longer-period close EMA).

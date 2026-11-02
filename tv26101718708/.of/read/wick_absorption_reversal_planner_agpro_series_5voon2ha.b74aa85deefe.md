@@ -1,16 +1,16 @@
-Calculation: Lower wick = min(open, close) - low
-Calculation: Upper wick = high - max(open, close)
-Calculation: Candle range = high - low
-Calculation: Relative volume = volume / average volume over a shorter lookback
-Calculation: Prior context low = lowest low over a lookback, excluding the current bar
-Calculation: Prior context high = highest high over a lookback, excluding the current bar
-Calculation: Bullish absorption pocket = lower wick / ATR >= minimum wick size, lower wick / candle range >= minimum wick fraction, low <= prior context low, close > min(open, close), and relative volume >= minimum
-Calculation: Bearish absorption pocket = upper wick / ATR >= minimum wick size, upper wick / candle range >= minimum wick fraction, high >= prior context high, close < max(open, close), and relative volume >= minimum
-Calculation: Bullish reclaim rail = absorption candle's max(open, close) + ATR × reclaim buffer
-Calculation: Bearish reclaim rail = absorption candle's min(open, close) - ATR × reclaim buffer
-Calculation: Bullish failure shelf = absorption candle's low - ATR × failure buffer
-Calculation: Bearish failure shelf = absorption candle's high + ATR × failure buffer
-Long: bullish absorption pocket OR an active bullish pocket's later-bar close > bullish reclaim rail
-Short: bearish absorption pocket OR an active bearish pocket's later-bar close < bearish reclaim rail
-Exit: long, active bullish pocket's close < bullish failure shelf
-Exit: short, active bearish pocket's close > bearish failure shelf
+Calculation: Candle measures = body top is max(open, close); body bottom is min(open, close); upper wick is high minus body top; lower wick is body bottom minus low; wick ratio is wick divided by high minus low, treated as zero for a zero-range bar. Relative volume is volume divided by its moving average, or 1 when that average is not positive. ATR falls back to true range while ATR is unavailable.
+Calculation: Absorption pocket = on each absorption decision, replace the previous pocket with one whose direction is the decision direction and whose start is the current bar. For a bullish pocket, store bottom = low, top = body bottom, reclaim = body top plus an ATR buffer, failure = low minus an ATR buffer, and room = highest high over a room lookback excluding the current bar. For a bearish pocket, store bottom = body top, top = high, reclaim = body bottom minus an ATR buffer, failure = high plus an ATR buffer, and room = lowest low over the room lookback excluding the current bar. Use the absorption bar's ATR for the buffers. Clear the pocket after a close beyond its failure level. A pocket expires when its age exceeds a maximum age; expiration alone does not clear it. If both absorption conditions hold, select the bullish pocket.
+Calculation: Reclaim = a bullish pocket exists AND the current bar is later than its start AND close > its reclaim level, OR a bearish pocket exists AND the current bar is later than its start AND close < its reclaim level. A reclaim event occurs when reclaim is true and was false on the preceding bar, regardless of pocket direction.
+Calculation: Reversal score = round the sum of 18, clamp(directional current-bar wick / ATR × 18, 0, 24), clamp(directional current-bar wick ratio × 44, 0, 18), clamp(directional distance from reclaim level to close / ATR × 24, 0, 20), clamp(relative volume × 10, 0, 14), and clamp(abs(room level − close) / ATR × 5, 0, 12), with the sum clamped to 0–100. Directional distance is close minus reclaim for a bullish pocket and reclaim minus close for a bearish pocket.
+Long: lower wick / ATR >= minimum wick threshold AND lower wick ratio >= minimum wick-ratio threshold AND low <= lowest low over the context lookback excluding the current bar AND close > body bottom AND relative volume >= minimum relative-volume threshold.
+Short: upper wick / ATR >= minimum wick threshold AND upper wick ratio >= minimum wick-ratio threshold AND high >= highest high over the context lookback excluding the current bar AND close < body top AND relative volume >= minimum relative-volume threshold AND the bullish absorption condition is false.
+Long: bullish pocket exists AND reclaim event is true.
+Short: bearish pocket exists AND reclaim event is true.
+Long: bullish pocket exists AND reclaim is true AND reversal score >= minimum ready score AND close >= failure level AND pocket age <= maximum age.
+Short: bearish pocket exists AND reclaim is true AND reversal score >= minimum ready score AND close <= failure level AND pocket age <= maximum age.
+Long: bullish pocket exists AND high >= pocket bottom AND low <= pocket top AND reclaim event is false AND pocket age <= maximum age.
+Short: bearish pocket exists AND high >= pocket bottom AND low <= pocket top AND reclaim event is false AND pocket age <= maximum age.
+Exit: long, bullish pocket exists AND close < failure level.
+Exit: short, bearish pocket exists AND close > failure level.
+Exit: long, bullish pocket exists AND high >= room level AND room has not previously been reached for this pocket.
+Exit: short, bearish pocket exists AND low <= room level AND room has not previously been reached for this pocket.

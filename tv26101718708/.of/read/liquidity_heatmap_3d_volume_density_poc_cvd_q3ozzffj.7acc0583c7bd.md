@@ -1,6 +1,9 @@
-Calculation: Bar buy fraction = clamp((close - low) / max(high - low, minimum price increment), 0, 1)
-Calculation: Cumulative volume delta = sum over the rolling heatmap window of volume × (2 × bar buy fraction − 1)
-Long: volume / average volume over preceding bars ≥ bubble threshold AND bar buy fraction ≥ 0.5
-Long: cumulative volume delta ≥ 0 AND price is not within the wall-proximity threshold of the strongest active liquidity wall
-Short: volume / average volume over preceding bars ≥ bubble threshold AND bar buy fraction < 0.5
-Short: cumulative volume delta < 0 AND price is not within the wall-proximity threshold of the strongest active liquidity wall
+Calculation: Window CVD = sum over the chart-bar lookback, including the current bar, of volume × (2 × close − high − low) / (high − low); use zero contribution when high equals low and treat missing volume as zero.
+Calculation: Volume-spike ratio = the previous chart bar's volume divided by the average volume of a lookback of completed chart bars ending with that bar; treat missing volume as zero and floor the average at a small positive value.
+Calculation: Heatmap cell buy fraction and intensity = divide the chart-bar lookback into consecutive time columns and the window's padded high-to-low range into equal price rows. For each bar and overlapping row, allocate volume in proportion to the overlap divided by the bar's high-low range; use weight 1 when volume is nonpositive or missing, and allocate nothing for a zero-range bar. Split each allocation into buy and sell portions using (close − low) / (high − low) and its complement. Sum each portion per cell. The buy fraction is the cell's buy portion divided by the greater of its total allocation and a small positive value. For each row, accumulate total cell allocations from oldest to newest column with a decay factor. Normalize each accumulated value by the specified percentile of positive column maxima, capped at 1; intensity is positive only when this normalized value exceeds the cutoff.
+Long: Window CVD >= 0
+Short: Window CVD < 0
+Long: Volume-spike ratio >= volume-spike threshold AND previous chart bar's close − low >= half its high-low range
+Short: Volume-spike ratio >= volume-spike threshold AND previous chart bar's close − low < half its high-low range
+Long: A cell in the current heatmap column has positive intensity AND its buy fraction >= 0.5
+Short: A cell in the current heatmap column has positive intensity AND its buy fraction < 0.5

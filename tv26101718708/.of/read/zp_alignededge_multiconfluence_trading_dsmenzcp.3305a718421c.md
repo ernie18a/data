@@ -1,4 +1,10 @@
-Calculation: Confirmed swing high/low = a bar whose high/low is the highest/lowest in an equal-length lookback on both sides; confirm only after the right-side bars close.
-Calculation: Higher-timeframe EMA alignment = fast EMA, mid EMA, and slow EMA on the last completed bar of a higher timeframe than the chart timeframe; their lookbacks are ordered fast < mid < slow.
-Long: Close crosses above the latest confirmed swing high OR (the latest bullish break above a confirmed swing high is more recent than the latest bearish break below a confirmed swing low AND ((fast EMA crosses above mid EMA) OR (mid EMA crosses above a longer-lookback LWMA)) AND higher-timeframe fast EMA > mid EMA > slow EMA)
-Short: Close crosses below the latest confirmed swing low OR (the latest bearish break below a confirmed swing low is more recent than the latest bullish break above a confirmed swing high AND ((fast EMA crosses below mid EMA) OR (mid EMA crosses below a longer-lookback LWMA)) AND higher-timeframe fast EMA < mid EMA < slow EMA)
+Calculation: Confirmed swing high or low = a pivot high or low with equal numbers of chart bars on each side; update the latest level on its confirmation bar. Crosses compare each series with its own previous-bar value.
+Calculation: Structure direction = initially neutral; set to bullish when close crosses above the latest confirmed swing high, and bearish when close crosses below the latest confirmed swing low; retain the direction until an opposite break, with bearish taking precedence if both occur on the same bar.
+Long: Close crosses above the latest confirmed swing high.
+Short: Close crosses below the latest confirmed swing low.
+Long: Structure direction is bullish AND (shorter-period close EMA crosses above longer-period close EMA OR longer-period close EMA crosses above close LWMA) AND (higher-timeframe filter is disabled OR the shorter-period close EMA > medium-period close EMA AND medium-period close EMA > longer-period close EMA on the last completed higher-timeframe bar).
+Short: Structure direction is bearish AND (shorter-period close EMA crosses below longer-period close EMA OR longer-period close EMA crosses below close LWMA) AND (higher-timeframe filter is disabled OR the shorter-period close EMA < medium-period close EMA AND medium-period close EMA < longer-period close EMA on the last completed higher-timeframe bar).
+Long: Shorter-period chart-timeframe close EMA > medium-period close EMA AND medium-period close EMA > longer-period close EMA.
+Short: Shorter-period chart-timeframe close EMA < medium-period close EMA AND medium-period close EMA < longer-period close EMA.
+Long: Shorter-period close EMA > medium-period close EMA AND medium-period close EMA > longer-period close EMA on the last completed higher-timeframe bar.
+Short: Shorter-period close EMA < medium-period close EMA AND medium-period close EMA < longer-period close EMA on the last completed higher-timeframe bar.

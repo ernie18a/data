@@ -1,4 +1,5 @@
-Calculation: Session initial-balance high = highest high during the initial balance period of the session
-Calculation: Session initial-balance low = lowest low during the initial balance period of the session
-Long: high crosses above session initial-balance high AND initial balance is established AND datetime is within an enabled session
-Short: low crosses below session initial-balance low AND initial balance is established AND datetime is within an enabled session
+Calculation: Initial balance = Reset at the first chart bar of any enabled session, including when sessions overlap. Set its high and low to that bar's high and low. On subsequent bars while any session is active, update the high and low with each bar whose opening time is within the initial-balance duration, inclusive, measured from the reset bar's opening time. Mark it established on the first subsequent active-session bar beyond that duration; retain its levels and established state until the next reset.
+Long: Initial balance is established AND close > initial-balance high.
+Short: Initial balance is established AND close < initial-balance low.
+Long: Any enabled session is active AND initial balance is established AND high > initial-balance high AND previous high <= previous initial-balance high.
+Short: Any enabled session is active AND initial balance is established AND low < initial-balance low AND previous low >= previous initial-balance low.

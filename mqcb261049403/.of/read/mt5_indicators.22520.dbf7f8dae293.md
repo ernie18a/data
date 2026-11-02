@@ -1,4 +1,4 @@
-Calculation: JMA close movement = absolute difference between the JMA-smoothed close of the current signal bar and two signal bars earlier, rounded to instrument precision. Use chart-timeframe bars in the base indicator; in the HTF indicator use the higher-timeframe still-forming bar.
-Calculation: Volatility threshold = ATR on the signal timeframe divided by an ATR scaling parameter
-Long: Stochastic %K < lower threshold AND JMA close movement > Volatility threshold
-Short: Stochastic %K > upper threshold AND JMA close movement > Volatility threshold
+Calculation: Smoothed stochastic = stochastic main line using a smoothing period equal to its lookback period.
+Calculation: Close displacement = absolute difference between the Jurik moving average of close on the current bar and its value a lookback number of bars earlier, with each value rounded to price decimal precision before subtraction.
+Long: Smoothed stochastic < lower threshold AND close displacement > ATR divided by a positive factor, calculated either on the chart timeframe or on the still-forming higher-timeframe bar sampled on its first chart bar and carried forward until the next higher-timeframe bar.
+Short: Smoothed stochastic > upper threshold AND close displacement > ATR divided by the same factor, calculated either on the chart timeframe or on the still-forming higher-timeframe bar sampled on its first chart bar and carried forward until the next higher-timeframe bar.

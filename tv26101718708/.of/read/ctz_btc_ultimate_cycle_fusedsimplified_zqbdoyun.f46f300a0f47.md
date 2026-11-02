@@ -1,7 +1,13 @@
-Calculation: Cycle low = a bar whose low is lower than the lows of the same configurable lookback of bars before and after it, confirmed after the following bars complete; accept only if the pivot is at least its cycle’s minimum spacing after the prior accepted pivot. Use successively longer lookbacks and minimum spacings for daily, intermediate, yearly, and four-year cycles.
-Calculation: Cycle high = a bar whose high is higher than the highs of five bars before and after it, confirmed after the following bars complete.
-Calculation: Cycle confidence = one point each for bullish RSI divergence, bullish MACD histogram divergence, pivot-bar volume above its moving average, cycle length regularity, and right translation; a failed cycle scores zero.
-Long: An accepted daily, intermediate, yearly, or four-year cycle low is confirmed, and price crosses above the 10-bar simple moving average after having been below it since that low; for intermediate and yearly entries, cycle confidence is at least four points.
-Short: An accepted daily, intermediate, or yearly cycle low is below the prior accepted low for that cycle, and either price is below the 200-bar simple moving average while the 40-bar simple moving average is falling, or that bear-market condition is false.
-Exit: Long, daily close below the latest accepted daily cycle low or intermediate cycle low.
-Exit: Long, cycle progress approaches the expected cycle end; or before an intermediate cycle is due when translation is left, or a smaller cycle fails within the current run.
+Calculation: Confirmed cycle low = a pivot low with equal left and right lookbacks, confirmed on the current bar on or after the configurable anchor date; accept it if it is the first for its cycle or its pivot bar is at least that cycle's minimum spacing after the preceding accepted pivot bar. Use four cycles with progressively longer pivot lookbacks and minimum spacings.
+Calculation: Confirmed cycle high = a pivot high with equal left and right lookbacks, confirmed on the current bar on or after the configurable anchor date; accept it if it is the first or its pivot bar is at least the minimum spacing after the preceding accepted high pivot bar.
+Calculation: Expected cycle length = rounded average of the most recent accepted pivot-to-pivot spacings for that cycle, or its configured fallback length if none exist.
+Calculation: Cycle progress = bars since the latest accepted cycle-low pivot bar divided by its expected cycle length.
+Calculation: Bear regime = close below a longer-period SMA of close AND a shorter-period SMA of close below its value a configurable number of bars earlier.
+Long: A cycle low is confirmed.
+Long: The shorter cycle has a confirmed low AND, since that confirmation, close has been below its SMA AND close is now above that SMA AND no earlier close above that SMA has triggered this decision since the confirmation.
+Long: The second-shortest cycle progress exceeds its overdue threshold AND bear regime is false.
+Short: A confirmed low of any of the three shorter cycles is below the preceding accepted low of the same cycle AND bear regime is true.
+Exit: long, close is below the latest accepted low of either of the two shortest cycles.
+Exit: long, a confirmed low of any of the three shorter cycles is below the preceding accepted low of the same cycle AND bear regime is false.
+Exit: long, a cycle's progress reaches a configurable profit-taking threshold.
+Exit: long, a cycle high is confirmed.

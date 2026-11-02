@@ -1,5 +1,21 @@
-Calculation: Short-term EMA = exponential moving average of close with a shorter lookback than the long-term EMA
-Calculation: Long-term EMA = exponential moving average of close with a longer lookback than the short-term EMA
-Calculation: Confirmed swing high/low = a bar whose high/low is the highest/lowest across equal lookback windows before and after it
-Long: Short-term EMA > long-term EMA AND previous short-term EMA <= previous long-term EMA OR Short-term EMA > long-term EMA AND low <= short-term EMA AND close > short-term EMA AND short-term EMA did not cross above long-term EMA on this bar OR Short-term EMA > long-term EMA AND low <= long-term EMA AND close > long-term EMA OR Short-term EMA > long-term EMA AND close > short-term EMA AND previous close <= previous short-term EMA OR close two bars ago < open two bars ago AND previous close > previous open AND previous low > low two bars ago AND previous close < open two bars ago AND close > previous high AND close > open OR low < an active confirmed swing low AND close >= that swing low
-Short: Short-term EMA < long-term EMA AND previous short-term EMA >= previous long-term EMA OR Short-term EMA < long-term EMA AND high >= short-term EMA AND close < short-term EMA AND short-term EMA did not cross below long-term EMA on this bar OR Short-term EMA < long-term EMA AND high >= long-term EMA AND close < long-term EMA OR Short-term EMA < long-term EMA AND close < short-term EMA AND previous close >= previous short-term EMA OR close two bars ago > open two bars ago AND previous close < previous open AND previous high < high two bars ago AND previous close > open two bars ago AND close < previous low AND close < open OR high > an active confirmed swing high AND close <= that swing high
+Calculation: Short and long EMAs are EMAs of close, with the short EMA using a shorter lookback.
+Calculation: Active swing levels are confirmed pivot highs or lows with equal left and right lookbacks; retain at most a configurable number of the most recently confirmed levels per side, including taken levels. A level becomes taken on the first bar after or including confirmation whose close breaks it or whose wick sweeps it.
+Calculation: Active fair value gaps are created when low > high two bars ago for a bullish gap, or high < low two bars ago for a bearish gap. Their bounds are those two prices. Retain at most a configurable number of the most recently created gaps per direction. An unflipped bullish gap flips bearish when close < its lower bound; an unflipped bearish gap flips bullish when close > its upper bound. A flipped bullish-origin gap is removed when close > its upper bound; a flipped bearish-origin gap is removed when close < its lower bound. Remove gaps older than a configurable maximum age, unless age-based removal is disabled; process a flip or opposite-bound removal before age-based removal.
+Long: Short EMA crosses above long EMA.
+Short: Short EMA crosses below long EMA.
+Long: Short EMA > long EMA AND low <= short EMA AND close > short EMA AND short EMA did not cross above long EMA on the current bar.
+Short: Short EMA < long EMA AND high >= short EMA AND close < short EMA AND short EMA did not cross below long EMA on the current bar.
+Long: Short EMA > long EMA AND low <= long EMA AND close > long EMA.
+Short: Short EMA < long EMA AND high >= long EMA AND close < long EMA.
+Long: Short EMA > long EMA AND close > short EMA AND previous close <= previous short EMA.
+Short: Short EMA < long EMA AND close < short EMA AND previous close >= previous short EMA.
+Long: Close two bars ago < open two bars ago AND previous close > previous open AND previous low > low two bars ago AND previous close < open two bars ago AND close > previous high AND close > open.
+Short: Close two bars ago > open two bars ago AND previous close < previous open AND previous high < high two bars ago AND previous close > open two bars ago AND close < previous low AND close < open.
+Long: Previous close < previous open AND close > open AND close > previous high AND close - open > a configurable fraction of previous high - previous low.
+Short: Previous close > previous open AND close < open AND close < previous low AND open - close > a configurable fraction of previous high - previous low.
+Long: Low > high two bars ago.
+Short: High < low two bars ago.
+Long: Close > upper bound of an active unflipped bearish fair value gap.
+Short: Close < lower bound of an active unflipped bullish fair value gap.
+Long: Low < an untaken active swing low AND close >= that level.
+Short: High > an untaken active swing high AND close <= that level.

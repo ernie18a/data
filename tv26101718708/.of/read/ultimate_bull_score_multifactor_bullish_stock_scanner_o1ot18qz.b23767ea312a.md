@@ -1,3 +1,21 @@
-Long: Bull score >= strong-bull threshold AND business coverage >= minimum coverage AND risk deduction <= maximum risk AND close > 21-period EMA AND average volume is positive
-Long: Entry score >= entry threshold AND business coverage >= minimum coverage AND risk deduction <= maximum risk AND extension above 21-period EMA is between 0 and maximum entry extension AND 9-period EMA > 21-period EMA AND average volume is positive
-Long: close >= 21-period EMA AND close <= pullback entry price + ATR × pullback-zone allowance AND business coverage >= minimum coverage AND risk deduction <= maximum risk AND average volume is positive
+Calculation: Trend score = the weighted sum of these conditions: close above each of a fast EMA, slower EMA, short SMA and long SMA; fast EMA above slower EMA AND slower EMA above short SMA; short SMA above long SMA; and each of the two EMAs and the short SMA above its own value a specified number of bars earlier. Each condition has its own weight.
+Calculation: PPO = percentage difference between a short EMA and a longer EMA of close, divided by the longer EMA; its signal is an EMA of PPO.
+Calculation: Chaikin Money Flow = the rolling sum of volume multiplied by ((close - low) - (high - close)) / (high - low), divided by the rolling sum of volume; use a zero multiplier when high equals low.
+Calculation: Bull flag = the high at the start of a recent pullback exceeds the lowest low in the preceding pole window by at least a minimum percentage AND the decline from that high to the lowest low in the pullback window is between zero and a maximum percentage of the pole height AND close is above the pole low.
+Calculation: Ascending triangle = at least a minimum number of highs in a lookback are within a tolerance percentage of that lookback's highest high AND the lowest low in the recent half of the lookback is above the lowest low in the preceding half AND close is no more than a tolerance percentage above the highest high.
+Calculation: Falling wedge = the highest high and lowest low in a recent window are both below their counterparts in the preceding equal-length window AND the percentage decline in the highest high exceeds the percentage decline in the lowest low.
+Calculation: Double bottom = the lowest lows of two consecutive equal-length windows differ by no more than a tolerance percentage of the earlier low AND the highest high in an intermediate window exceeds both lows by a minimum percentage AND close is above the recent low. The intermediate window overlaps both bottom windows.
+Calculation: Cup and handle = the highest of an earlier rim high and the highest high in a recent handle window exceeds the lowest low in the intervening cup window by a percentage within a specified range AND the rim highs differ by no more than a tolerance percentage of the earlier rim high AND the decline from the higher rim to the lowest low in the handle window is no greater than a maximum percentage of the higher rim.
+Calculation: Volatility coil = ATR divided by close is below its SMA AND the high-low range of a recent window is below that of the preceding equal-length window AND the preceding range is positive.
+Calculation: Breakout retest = the previous close is above the highest high in a lookback ending two bars ago AND the current low is at most a tolerance percentage above that level AND the current close is at or above that level.
+Calculation: Flat base = the difference between the highest high and lowest low in a lookback, divided by the lowest low, is no greater than a maximum percentage AND close is at least a specified fraction of the highest high.
+Calculation: Rounded bottom = an earlier close and the current close both exceed the lowest close in an intervening window by a minimum percentage AND the absolute difference between current and earlier close is no greater than a maximum percentage of the earlier close.
+Calculation: Volatility contraction = the high-low range over a long lookback is positive AND the range over a shorter lookback is less than a specified fraction of the long range AND the range over a still shorter lookback is less than a specified fraction of the shorter range.
+Long: Trend score >= bullish threshold
+Short: Trend score < weak-trend threshold
+Long: RSI >= lower bullish threshold AND RSI <= upper bullish threshold
+Long: MACD line > MACD signal AND PPO > PPO signal AND PPO > 0
+Short: MACD line <= MACD signal AND (PPO <= PPO signal OR PPO <= 0)
+Long: MFI > lower bullish threshold AND MFI < upper bullish threshold AND Chaikin Money Flow > 0
+Short: MFI < bearish threshold AND Chaikin Money Flow <= 0
+Long: Bull flag = true OR ascending triangle = true OR falling wedge = true OR double bottom = true OR cup and handle = true OR volatility coil = true OR breakout retest = true OR flat base = true OR rounded bottom = true OR volatility contraction = true

@@ -1,4 +1,7 @@
-Calculation: Opening range high = highest high during the initial opening-range window of the session
-Calculation: Opening range low = lowest low during the initial opening-range window of the session
-Long: During the session, after the opening range is complete, high > opening range high
-Short: During the session, after the opening range is complete, low < opening range low
+Calculation: Opening range high and low = highest high and lowest low of chart bars whose opening times are within a configurable window measured from the first bar of each trading session; the range is complete on the first in-session bar whose opening time is outside that window.
+Calculation: Opening range width = opening range high minus opening range low.
+Calculation: First break direction = the direction of the first in-session bar after range completion whose high exceeds the range high or whose low falls below the range low; if both occur on that bar, it is up when close >= open and down when close < open. Reset each session.
+Long: The opening range is complete AND the bar is in session AND high > opening range high AND no earlier post-range bar in this session has high > opening range high.
+Short: The opening range is complete AND the bar is in session AND low < opening range low AND no earlier post-range bar in this session has low < opening range low.
+Exit: long, the bar is in session AND first break direction is up AND opening range width > 0 AND no earlier bar since the first break has reached either exit level AND (low <= opening range low OR high >= opening range high + opening range width); if both levels are reached on the same bar, the stop at the range low takes precedence.
+Exit: short, the bar is in session AND first break direction is down AND opening range width > 0 AND no earlier bar since the first break has reached either exit level AND (high >= opening range high OR low <= opening range low - opening range width); if both levels are reached on the same bar, the stop at the range high takes precedence.

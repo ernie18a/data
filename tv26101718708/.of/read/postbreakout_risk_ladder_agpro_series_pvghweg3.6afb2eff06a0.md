@@ -1,8 +1,10 @@
-Calculation: Prior base high/low = highest high / lowest low over the longer lookback of prior completed chart-timeframe bars
-Calculation: Relative volume = current volume divided by its chart-timeframe moving average over the lookback
-Calculation: Breakout body ratio = absolute(close − open) divided by high − low
-Calculation: Valid base = prior base range is within configured minimum and maximum multiples of ATR
-Long: Valid base AND close > prior base high + ATR break buffer AND previous close ≤ prior base high + ATR break buffer AND breakout body ratio ≥ minimum AND relative volume ≥ minimum
-Short: Valid base AND close < prior base low − ATR break buffer AND previous close ≥ prior base low − ATR break buffer AND breakout body ratio ≥ minimum AND relative volume ≥ minimum
-Exit: Long, close < locked breakout edge − ATR at breakout × (retest shelf multiple + invalidation buffer multiple) OR bars since breakout > maximum breakout age
-Exit: Short, close > locked breakout edge + ATR at breakout × (retest shelf multiple + invalidation buffer multiple) OR bars since breakout > maximum breakout age
+Calculation: Base high and low = highest high and lowest low over a lookback ending on the previous chart bar; base range = base high minus base low.
+Calculation: Safe ATR = the maximum of ATR, or current true range before ATR is available, and a positive price increment parameter. Body ratio = absolute close minus open divided by the maximum of high minus low and the price increment. Relative volume = volume divided by its simple moving average, or a neutral fallback when that average is not positive.
+Calculation: Breakout state = on each qualifying breakout, replace the previous state with its direction, bar index, close as entry reference, broken base edge, and invalidation edge: broken edge minus safe ATR times the sum of shelf and invalidation buffer parameters for a bullish breakout, or plus that amount for a bearish breakout. Keep the state through the current bar, then clear it if close crosses beyond its invalidation edge or its age exceeds the maximum age parameter. A new breakout replaces the state before these checks.
+Calculation: Breakout score = at the breakout bar, round a capped sum of a base score and separately capped contributions proportional to body ratio, relative volume, absolute distance from close to broken edge divided by safe ATR, and base range divided by safe ATR. Freeze the score with the breakout state.
+Long: Base range >= safe ATR times the minimum base-range parameter AND base range <= safe ATR times the maximum base-range parameter AND close > base high plus safe ATR times the breakout-buffer parameter AND previous close <= that same current-bar breakout threshold AND body ratio >= its minimum parameter AND relative volume >= its minimum parameter.
+Short: Base range >= safe ATR times the minimum base-range parameter AND base range <= safe ATR times the maximum base-range parameter AND close < base low minus safe ATR times the breakout-buffer parameter AND previous close >= that same current-bar breakout threshold AND body ratio >= its minimum parameter AND relative volume >= its minimum parameter.
+Long: Breakout state is bullish AND breakout score >= the ready-score parameter AND close >= its invalidation edge AND breakout age <= the maximum age parameter.
+Short: Breakout state is bearish AND breakout score >= the ready-score parameter AND close <= its invalidation edge AND breakout age <= the maximum age parameter.
+Exit: long, breakout state is bullish AND close < its invalidation edge.
+Exit: short, breakout state is bearish AND close > its invalidation edge.

@@ -1,14 +1,37 @@
-Calculation: Bullish-volume fraction = volume when close > open, divided by volume; use 0.5 when volume is zero.
-Calculation: Bull confluence score = count of: close > exponential moving average; MACD line > MACD signal line; bullish-volume fraction > bull threshold; close within the latest demand zone (Pair A, otherwise Pair B); close within half an ATR of any cluster point of control.
-Calculation: Bear confluence score = count of: close < exponential moving average; MACD line < MACD signal line; bullish-volume fraction < bear threshold; close within the latest supply zone (Pair A, otherwise Pair B); close within half an ATR of any cluster point of control.
-Calculation: Cluster point of control = for each volume-weighted K-means price cluster over the lookback bars, the midpoint of the price bin with the greatest volume, allocating each bar's volume to bins in proportion to the overlap of its high-low range. Initialize centroids evenly between the minimum and maximum hl2; assign each bar to its nearest centroid and recalculate centroids as volume-weighted mean hl2 for the configured number of iterations.
-Calculation: Bullish FVG zone = [high two bars ago minus ATR(200), high two bars ago] when high two bars ago < low, high two bars ago < prior high, low two bars ago < low, and (low - high two bars ago) / low × 100 > gap threshold.
-Calculation: Bearish FVG zone = [low two bars ago, low two bars ago plus ATR(200)] when low two bars ago > high, low two bars ago > prior low, high two bars ago > high, and (low two bars ago - high) / low two bars ago × 100 > gap threshold.
-Long: MACD line crosses above MACD signal line AND close > exponential moving average AND bullish-volume fraction > bull threshold AND (strict filtering disabled OR (bull confluence score ≥ minimum confirmations AND volume / 20-bar average volume ≥ minimum volume ratio AND absolute distance from close to exponential moving average as a percent of that average ≤ maximum distance percent AND (chop filter disabled OR ATR(14) ≥ 0.7 × 50-bar average ATR(14))))
-Long: low < latest confirmed pivot low AND close > latest confirmed pivot low AND bullish-volume fraction > shark-bull threshold
-Long: price crosses above the top of an active bullish FVG zone (current low > zone top AND prior low ≤ zone top AND no new bullish FVG on current bar)
-Long: low ≤ Nadaraya-Watson lower band
-Short: MACD line crosses below MACD signal line AND close < exponential moving average AND bullish-volume fraction < bear threshold AND (strict filtering disabled OR (bear confluence score ≥ minimum confirmations AND volume / 20-bar average volume ≥ minimum volume ratio AND absolute distance from close to exponential moving average as a percent of that average ≤ maximum distance percent AND (chop filter disabled OR ATR(14) ≥ 0.7 × 50-bar average ATR(14))))
-Short: high > latest confirmed pivot high AND close < latest confirmed pivot high AND bullish-volume fraction < shark-bear threshold
-Short: price crosses below the bottom of an active bearish FVG zone (current high < zone bottom AND prior high ≥ zone bottom AND no new bearish FVG on current bar)
-Short: high ≥ Nadaraya-Watson upper band
+Calculation: Bull volume fraction = 0.5 when volume is zero; otherwise 1 when close > open and 0 when close <= open.
+Calculation: Gaussian line = EMA of close.
+Calculation: Confirmed pivot high or low = a high or low that is respectively the highest or lowest over its specified left and right lookbacks, available when the right lookback has completed. Keep the latest confirmed high and low separately.
+Calculation: Demand zone = latest confirmed pivot low through that low plus a multiple of ATR measured on the confirmation bar; supply zone = latest confirmed pivot high minus a multiple of ATR measured on the confirmation bar through that high. Maintain separate zones using longer and shorter pivot lookbacks. A zone remains active until replaced by the next pivot of the same type and lookback.
+Calculation: Cluster proximity = absolute distance from close to any cluster point of control <= a multiple of ATR. On the last dataset bar only, cluster the lookback bars' (high + low) / 2 values by assigning each to the nearest of evenly spaced initial centroids and repeatedly replacing each centroid with its assigned volume-weighted mean. For each nonempty cluster, divide its assigned bars' total low-to-high range into equal price bins, distribute each bar's volume in proportion to its high-low overlap with each bin, and take the midpoint of the highest-volume bin as its point of control. On other historical bars cluster proximity is false.
+Calculation: Bull score = count of close > Gaussian line, MACD line > signal line, bull volume fraction > bull threshold, close inside either demand zone, and cluster proximity. Bear score = count of close < Gaussian line, MACD line < signal line, bull volume fraction < bear threshold, close inside either supply zone, and cluster proximity.
+Calculation: Strict filter = volume / SMA of volume >= minimum volume ratio, using 1 when the volume SMA is not positive, AND absolute percentage distance between close and Gaussian line <= maximum distance AND, if the optional volatility filter is enabled, ATR >= a multiple of its SMA.
+Calculation: Bullish FVG block = a block from high two bars ago down by ATR when high two bars ago < current low, high two bars ago < previous high, low two bars ago < current low, and (current low - high two bars ago) / current low exceeds the gap threshold. Bearish FVG block = a block from low two bars ago up by ATR when low two bars ago > current high, low two bars ago > previous low, high two bars ago > current high, and (low two bars ago - current high) / low two bars ago exceeds the gap threshold. Create blocks only on confirmed bars within the configured lookback from the dataset end. Delete a bullish block when high < its bottom and a bearish block when low > its top unless retaining broken blocks is enabled. For either side, delete a block when another same-side block's top lies strictly inside it. After processing signals, remove the oldest same-side block whenever the block count reaches the configured limit.
+Calculation: Nadaraya-Watson middle = weighted mean of up to the most recent lookback of confirmed closes, with weight at age i equal to (1 + i² / (2 × bandwidth² × weighting)) raised to -weighting. Upper and lower bands equal the middle plus and minus a multiple of ATR.
+Calculation: Density zone = a zone centered on close and extending by a multiple of ATR on each side when volume reaches its rolling percentile threshold. Its direction is demand when close >= previous close and supply otherwise. Instead of creating a new zone, extend the expiry of the first existing zone whose center is within a multiple of current ATR of close. Delete a demand zone when close < its bottom and volume > a multiple of volume SMA, or a supply zone when close > its top and volume > that multiple; also delete it at expiry.
+Calculation: Trend filter = comparison of shorter and longer EMAs of close, optionally using the last completed higher-timeframe close sampled onto chart bars before calculating the EMAs. If the ADX option is selected, ADX must also be >= its threshold; ADX uses the same last completed higher-timeframe bar when the higher timeframe is selected.
+Long: MACD line crosses above its signal line AND close > Gaussian line AND bull volume fraction > bull threshold AND (strict mode is disabled OR bull score >= minimum confirmations AND strict filter holds).
+Short: MACD line crosses below its signal line AND close < Gaussian line AND bull volume fraction < bear threshold AND (strict mode is disabled OR bear score >= minimum confirmations AND strict filter holds).
+Long: low < latest confirmed pivot low AND close > latest confirmed pivot low AND bull volume fraction > shark bull threshold.
+Short: high > latest confirmed pivot high AND close < latest confirmed pivot high AND bull volume fraction < shark bear threshold.
+Long: current low > bullish FVG block top AND previous low <= that top AND no bullish FVG is created on the current bar.
+Short: current high < bearish FVG block bottom AND previous high >= that bottom AND no bearish FVG is created on the current bar.
+Long: close crosses above Gaussian line.
+Short: close crosses below Gaussian line.
+Long: low <= Nadaraya-Watson lower band AND high < Nadaraya-Watson upper band.
+Short: high >= Nadaraya-Watson upper band.
+Long: Nadaraya-Watson middle > its previous value.
+Short: Nadaraya-Watson middle <= its previous value.
+Long: MACD line > signal line.
+Short: MACD line <= signal line.
+Long: close > Gaussian line.
+Short: close <= Gaussian line.
+Long: bull volume fraction > 0.5.
+Short: bull volume fraction <= 0.5.
+Long: a newly confirmed pivot low > the preceding confirmed pivot low; retain this direction until a subsequent higher pivot low or lower pivot high changes it.
+Short: a newly confirmed pivot high < the preceding confirmed pivot high; retain this direction until a subsequent higher pivot low or lower pivot high changes it.
+Long: shorter trend-filter EMA > longer trend-filter EMA.
+Short: shorter trend-filter EMA <= longer trend-filter EMA.
+Long: a demand zone exists AND (show-only-in-trend is disabled OR trend filtering is off OR shorter trend-filter EMA > longer trend-filter EMA AND (ADX filtering is off OR ADX >= its threshold)).
+Short: a supply zone exists AND (show-only-in-trend is disabled OR trend filtering is off OR shorter trend-filter EMA <= longer trend-filter EMA AND (ADX filtering is off OR ADX >= its threshold)).
+Long: a demand density zone exists.
+Short: a supply density zone exists.

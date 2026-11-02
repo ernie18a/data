@@ -1,9 +1,6 @@
-Calculation: Candle range = high − low
-Calculation: Candle body = absolute value of close − open
-Calculation: Upper wick = high − maximum of open and close
-Calculation: Lower wick = minimum of open and close − low
-Calculation: Wick percentage = wick length ÷ candle range × 100
-Calculation: Body percentage = candle body ÷ candle range × 100
-Calculation: ATR = average true range over a lookback, using completed bars on the decision timeframe; use the last completed bar’s ATR
-Long: Candle range > minimum range AND candle range ≥ ATR × minimum ATR multiplier AND lower wick percentage ≥ wick threshold AND upper wick percentage < wick threshold AND body percentage ≥ minimum body percentage AND upper wick percentage ≤ maximum opposite-wick percentage
-Short: Candle range > minimum range AND candle range ≥ ATR × minimum ATR multiplier AND upper wick percentage ≥ wick threshold AND body percentage ≥ minimum body percentage AND lower wick percentage ≤ maximum opposite-wick percentage
+Calculation: Range = high - low of the last completed chart bar
+Calculation: Upper wick fraction = (high - max(open, close)) / Range of the last completed chart bar
+Calculation: Lower wick fraction = (min(open, close) - low) / Range of the last completed chart bar
+Calculation: Body fraction = abs(close - open) / Range of the last completed chart bar
+Long: Range > minimum range AND Lower wick fraction >= wick threshold AND Upper wick fraction < wick threshold AND Body fraction >= minimum body fraction AND Upper wick fraction <= maximum opposite wick fraction AND (ATR filter disabled OR ATR of the last completed chart bar <= 0 OR Range >= ATR of the last completed chart bar * ATR multiplier)
+Short: Range > minimum range AND Upper wick fraction >= wick threshold AND Body fraction >= minimum body fraction AND Lower wick fraction <= maximum opposite wick fraction AND (ATR filter disabled OR ATR of the last completed chart bar <= 0 OR Range >= ATR of the last completed chart bar * ATR multiplier)

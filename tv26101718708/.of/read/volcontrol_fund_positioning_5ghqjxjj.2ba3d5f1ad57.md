@@ -1,2 +1,9 @@
-Long: exposure percentile < 50
-Short: exposure percentile > 50
+Calculation: Model bars = bars aggregated to the model timeframe; use the still-forming model bar when the model timeframe is higher than the chart timeframe, and the last available lower-timeframe bar when it is lower.
+Calculation: Target equity exposure = the weighted mean of available equity-only designs, with weights renormalized: each design's exposure is min(maximum leverage, target volatility / realized volatility), or maximum leverage when volatility is zero. Realized volatility is annualized and is either the square root of the larger of two exponentially weighted variances of squared close-to-close log returns, using faster and slower decay, or the root mean square of squared log returns over a shorter or longer lookback. A further design uses the larger of the two lookback volatilities. Initialize each exponential variance with the first squared return and update it as decay × previous variance + (1 − decay) × current squared return. Wait until the return count reaches the model warm-up length before producing exposure; omit unavailable designs.
+Calculation: Live exposure = target equity exposure delayed by the implementation lag in model bars.
+Calculation: Exposure percentile = percentage of live exposure observations in the rolling lookback that are less than or equal to current live exposure; require more valid live exposures than the lookback.
+Calculation: Scheduled exposure change = target equity exposure delayed by one fewer model bar than the implementation lag minus live exposure; require a positive implementation lag.
+Long: Exposure percentile < the midpoint when gradient coloring is selected OR exposure percentile < the lower zone threshold when zone coloring is selected.
+Short: Exposure percentile > the midpoint when gradient coloring is selected OR exposure percentile >= the upper zone threshold when zone coloring is selected.
+Long: Scheduled exposure change > a positive change threshold OR live exposure minus its value one model bar earlier > the same positive change threshold.
+Short: Scheduled exposure change < the negative change threshold OR live exposure minus its value one model bar earlier < the negative change threshold.

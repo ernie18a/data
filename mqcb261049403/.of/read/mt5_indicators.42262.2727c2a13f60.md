@@ -1,3 +1,4 @@
-Calculation: Prior lower-timeframe close = close of an earlier completed bar on a lower timeframe than the chart timeframe
-Long: Current bar close > current bar open OR current bar close > prior lower-timeframe close
-Short: Current bar close <= current bar open OR current bar close <= prior lower-timeframe close
+Long: close > open
+Short: close <= open
+Long: close > 0 AND close of the lower-timeframe bar a lookback number of bars before the forming bar > 0 AND close > that lower-timeframe close
+Short: close > 0 AND close of the lower-timeframe bar a lookback number of bars before the forming bar > 0 AND close <= that lower-timeframe close

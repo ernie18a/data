@@ -1,7 +1,6 @@
-Calculation: Fractal high = a bar’s high is higher than the highs of the two bars before and after it; use the value after the configured confirmation delay
-Calculation: Fractal low = a bar’s low is lower than the lows of the two bars before and after it; use the value after the configured confirmation delay
-Calculation: Swing high = highest confirmed fractal high in the configured lookback window
-Calculation: Swing low = lowest confirmed fractal low in the configured lookback window
-Calculation: Trend state = initially bullish; turns bullish when the delayed fractal high crosses above the swing high, turns bearish when the delayed fractal low crosses below the swing low, and otherwise retains its prior state
-Long: trend state = bullish
-Short: trend state = bearish
+Calculation: Latest fractal high and low = The high or low of the bar two bars ago if it is strictly more extreme than the corresponding values of both bars on either side; otherwise retain the previous value, initially zero.
+Calculation: Effective lookback = Configured lookback, or, when adaptive detection is enabled, round the configured lookback divided by ATR divided by its longer-period SMA, bounded below by confirmation delay plus 5 and above by three times the configured lookback. Use a volatility ratio of 1 when the ATR baseline is unavailable or zero.
+Calculation: Swing high and low = Highest latest fractal high and lowest latest fractal low, respectively, over effective lookback minus confirmation delay bars, evaluated with a confirmation-delay offset.
+Calculation: Direction = Initially up; change to up when the delayed latest fractal high crosses above the swing high, or otherwise change to down when the delayed latest fractal low crosses below the swing low; retain the prior direction otherwise. Optionally reverse the resulting direction.
+Long: Chart direction = up OR higher-timeframe display is enabled AND higher-timeframe swing high is available AND direction calculated from the last completed higher-timeframe bar = up
+Short: Chart direction = down OR higher-timeframe display is enabled AND higher-timeframe swing high is available AND direction calculated from the last completed higher-timeframe bar = down

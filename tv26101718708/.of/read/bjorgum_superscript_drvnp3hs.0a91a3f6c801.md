@@ -1,9 +1,36 @@
-Calculation: TSI = True Strength Index of close, using shorter and longer smoothing lookbacks
-Calculation: TSI signal = EMA of TSI using a signal lookback
-Calculation: RSI = Relative Strength Index of close
-Calculation: Shorter T3 and longer T3 = Tilson T3 moving averages of the selected source, with the shorter and longer lookbacks respectively
-Calculation: Heikin-Ashi close = (open + high + low + close) / 4
-Calculation: MA1, MA2, and MA3 = selected moving average of source and configured lookback; if the selected type is HEMA, use EMA of Heikin-Ashi open. MA1 has a shorter lookback than MA2; MA3 has a longer lookback than MA2
-Calculation: PSAR = Parabolic Stop and Reverse value
-Long: (TSI > TSI signal AND RSI > 50) OR (TSI crosses above TSI signal AND RSI > 50) OR (RSI crosses above 50 AND TSI > TSI signal) OR (TSI crosses above TSI signal AND RSI crosses above 50) OR (TSI < TSI signal AND TSI rises from the prior bar) OR (close > longer T3) OR (Heikin-Ashi close > longer T3) OR (close > MA1 AND close > MA2) OR (close crosses above MA1 AND close > MA2) OR (close crosses above MA2 AND close > MA1) OR (close crosses above both MA1 and MA2) OR (RSI crosses above 50) OR (RSI crosses above 30) OR (close crosses above PSAR)
-Short: (TSI < TSI signal AND RSI < 50) OR (TSI crosses below TSI signal AND RSI < 50) OR (RSI crosses below 50 AND TSI < TSI signal) OR (TSI crosses below TSI signal AND RSI crosses below 50) OR (TSI > TSI signal AND TSI falls from the prior bar) OR (close < longer T3) OR (Heikin-Ashi close < longer T3) OR (close < MA1 AND close < MA2) OR (close crosses below MA1 AND close < MA2) OR (close crosses below MA2 AND close < MA1) OR (close crosses below both MA1 and MA2) OR (RSI crosses below 50) OR (RSI crosses below 70) OR (close crosses below PSAR)
+Calculation: Heikin-Ashi close = (open + high + low + close) / 4; Heikin-Ashi open = previous Heikin-Ashi open and close averaged, initialized as (open + close) / 2.
+Calculation: Selected moving average = independently chosen SMA, EMA, HMA, WMA, VWMA, DEMA, TEMA, T3, SWMA, VWAP, or EMA of Heikin-Ashi open, applied to a selected price source where applicable; use shorter, intermediate, and longer lengths for the three averages.
+Long: Close > slower T3 AND faster T3 >= slower T3.
+Short: Close < slower T3 AND faster T3 <= slower T3.
+Long: Close > slower T3 AND faster T3 <= slower T3.
+Short: Close < slower T3 AND faster T3 >= slower T3.
+Long: Heikin-Ashi close > slower T3.
+Short: Heikin-Ashi close < slower T3.
+Long: Close crosses above slower T3.
+Short: Close crosses below slower T3.
+Long: Faster T3 > previous faster T3 OR slower T3 > previous slower T3 OR faster T3 > slower T3.
+Short: Faster T3 <= previous faster T3 OR slower T3 <= previous slower T3 OR faster T3 <= slower T3.
+Long: Close > shorter selected moving average AND close > intermediate selected moving average.
+Short: Close < shorter selected moving average AND close < intermediate selected moving average.
+Long: Close crosses above shorter selected moving average AND close > intermediate selected moving average OR close crosses above intermediate selected moving average AND close > shorter selected moving average.
+Short: Close crosses below shorter selected moving average AND close < intermediate selected moving average OR close crosses below intermediate selected moving average AND close < shorter selected moving average.
+Long: Any selected moving average > its previous value OR (high + low) / 2 > shorter selected moving average OR shorter selected moving average > intermediate selected moving average OR intermediate selected moving average > longer selected moving average.
+Short: Any selected moving average <= its previous value OR (high + low) / 2 <= shorter selected moving average OR shorter selected moving average <= intermediate selected moving average OR intermediate selected moving average <= longer selected moving average.
+Long: Close > any selected moving average.
+Short: Close <= any selected moving average.
+Long: TSI > its EMA signal AND RSI > its midpoint.
+Short: TSI < its EMA signal AND RSI < its midpoint.
+Long: TSI crosses above its EMA signal AND RSI > its midpoint OR RSI crosses above its midpoint AND TSI > its EMA signal.
+Short: TSI crosses below its EMA signal AND RSI < its midpoint OR RSI crosses below its midpoint AND TSI < its EMA signal.
+Long: TSI < its EMA signal AND TSI > previous TSI.
+Short: TSI > its EMA signal AND TSI < previous TSI.
+Long: TSI > its EMA signal.
+Short: TSI <= its EMA signal.
+Long: RSI > its midpoint.
+Short: RSI <= its midpoint.
+Long: RSI crosses above its midpoint OR RSI crosses above its oversold threshold OR RSI crosses below its oversold threshold.
+Short: RSI crosses below its midpoint OR RSI crosses above its overbought threshold OR RSI crosses below its overbought threshold.
+Long: RSI > its lower extreme bound AND RSI <= its lower extreme threshold OR RSI > its midpoint AND RSI <= its upper trend threshold.
+Short: RSI > its upper extreme threshold AND RSI <= its upper bound.
+Long: Close >= parabolic SAR OR close crosses above parabolic SAR.
+Short: Close < parabolic SAR OR close crosses below parabolic SAR.

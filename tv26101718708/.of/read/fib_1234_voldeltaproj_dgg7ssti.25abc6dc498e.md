@@ -1,8 +1,11 @@
-Calculation: Confirmed swing low/high = lowest low/high among the left and right bars on the selected structure timeframe; use only confirmed pivots. If that timeframe differs from the chart timeframe, use its last completed bar.
-Calculation: Active bullish leg = latest swing low followed by latest swing high; active bearish leg = latest swing high followed by latest swing low.
-Calculation: Deep and shallow retracement bounds = for a bullish leg, swing high minus the deeper and shallower retracement fractions of the leg range; for a bearish leg, swing low plus those fractions of the leg range.
-Calculation: Extension targets = for a bullish leg, swing high plus each extension fraction of the leg range; for a bearish leg, swing low minus each extension fraction of the leg range.
-Long: Active bullish leg AND close is at least the stop buffer below the latest swing low AND the lowest low over the recent lookback is at or below the deep retracement bound AND close crosses above the shallow retracement bound AND the chart bar is confirmed AND the signal cooldown has elapsed
-Short: Active bearish leg AND close is at least the stop buffer above the latest swing high AND the highest high over the recent lookback is at or above the deep retracement bound AND close crosses below the shallow retracement bound AND the chart bar is confirmed AND the signal cooldown has elapsed AND no bullish leg is active
-Exit: long, price touches any bullish extension target
-Exit: short, price touches any bearish extension target
+Calculation: Confirmed pivot low/high = a low/high pivot with configurable left and right bar counts, confirmed after the right-hand bars. Calculate on the chart timeframe or an optional higher or lower structure timeframe; for a higher timeframe use the last completed bar, and for a lower timeframe use the last completed intrabar within each chart bar. Carry the latest pivot values forward. Whenever a pivot value is returned, record its chart-bar index as the current chart-bar index minus the right-bar count.
+Calculation: Swing low and swing high = the latest confirmed pivot low and high, respectively; their recorded indices are updated whenever their corresponding pivot value is returned.
+Calculation: Bullish structure = swing-low index < swing-high index AND swing low < swing high AND, if the optional hold filter is enabled, close >= swing low minus a configurable price buffer. Bearish structure = swing-high index < swing-low index AND swing high > swing low AND, if the optional hold filter is enabled, close <= swing high plus the buffer.
+Calculation: Retracement edges = for bullish structure, swing high minus the retracement fraction multiplied by swing high minus swing low; for bearish structure, swing low plus that product. Use a larger fraction for the deep edge than for the shallow edge. Recalculate both edges each bar from the current structure.
+Calculation: Signal cooldown = chart bars elapsed since the most recent emitted reclaim signal of either direction; initialize so the first eligible signal passes.
+Long: A pivot low is confirmed.
+Short: A pivot high is confirmed.
+Long: Bullish structure.
+Short: Bearish structure.
+Long: Bullish structure AND the lowest chart-bar low over the configurable lookback including the current bar <= the current deep edge AND close > the current shallow edge AND previous close <= the previous bar's shallow edge AND signal cooldown >= the configurable minimum.
+Short: Bearish structure AND the highest chart-bar high over the configurable lookback including the current bar >= the current deep edge AND close < the current shallow edge AND previous close >= the previous bar's shallow edge AND signal cooldown >= the configurable minimum.

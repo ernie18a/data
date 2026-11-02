@@ -1,24 +1,29 @@
-Calculation: Synthetic delta = volume × clamp(0.68 × (close − open) / range + 0.32 × (2 × close − high − low) / range, −1, 1) × (0.30 + 0.70 × clamp(abs(close − open) / range, 0, 1)), where range = max(high − low, minimum price increment)
-Calculation: Session VWAP = cumulative (typical price × volume) / cumulative volume within the configured session, where typical price = (high + low + close) / 3
-Calculation: Session sigma = EMA of the square root of max(cumulative (typical price² × volume) / cumulative volume − session VWAP², 0)
-Calculation: Sigma position = clamp((close − session VWAP) / (2 × session sigma), −1, 1)
-Calculation: Sigma state = 2 if close ≥ session VWAP + 2 × session sigma; 1 if close ≥ session VWAP + session sigma; −2 if close ≤ session VWAP − 2 × session sigma; −1 if close ≤ session VWAP − session sigma; otherwise 0
-Calculation: Synthetic delta baseline = EMA of synthetic delta; delta spread = standard deviation of synthetic delta over the same lookback; normalized delta = (synthetic delta − delta baseline) / max(delta spread, 1)
-Calculation: Session CVD = cumulative synthetic delta within the configured session
-Calculation: CVD signal = EMA of session CVD with a longer lookback than the synthetic delta baseline; CVD pulse = clamp((session CVD − CVD signal) / max(EMA(abs(session CVD − CVD signal), volume baseline lookback), 1), −1, 1)
-Calculation: Volume ratio = volume / max(SMA(volume, volume baseline lookback), 1)
-Calculation: Confidence = clamp(50 + 16 × VWAP bias + 15 × delta bias + 13 × CVD pulse + 18 × sweep bias + 10 × absorption bias + 8 × clamp((volume ratio − 1) / 1.6, −1, 1) + 5 × session bias, 0, 100), where VWAP bias = clamp((close − session VWAP) / (ATR × 1.25), −1, 1), delta bias = clamp(normalized delta / 2, −1, 1), sweep bias = 1 for a bullish sweep, −1 for a bearish sweep, otherwise 0, absorption bias = 0.65 for bullish absorption, −0.65 for bearish absorption, otherwise 0, and session bias = 0.20 in session, −0.05 otherwise
-Calculation: Confirmed swing high/low = most recent pivot high/low confirmed after the same number of bars on its right as on its left
-Calculation: Bullish sweep = confirmed bar AND low < confirmed swing low AND close > confirmed swing low AND close > open; bearish sweep = confirmed bar AND high > confirmed swing high AND close < confirmed swing high AND close < open
-Calculation: Close bias = (close − low) / max(high − low, minimum price increment); compactness = clamp(1 − max(high − low, minimum price increment) / max(ATR × absorption range ceiling, minimum price increment), 0, 1)
-Calculation: Bullish absorption = confirmed bar AND volume ratio ≥ volume spike threshold AND compactness > 0.35 AND close bias ≥ bullish close bias threshold AND synthetic delta > 0; bearish absorption = confirmed bar AND volume ratio ≥ volume spike threshold AND compactness > 0.35 AND close bias ≤ bearish close bias threshold AND synthetic delta < 0
-Calculation: Bullish reclaim = bullish sweep AND (lower wick − upper wick) / max(high − low, minimum price increment) > 0.10 AND close > session VWAP; bearish reclaim = bearish sweep AND (lower wick − upper wick) / max(high − low, minimum price increment) < −0.10 AND close < session VWAP
-Long: Bullish sweep
-Long: Bullish absorption
-Long: Confirmed bar AND cooldown elapsed since the previous ledger signal AND confidence ≥ entry threshold AND close > session VWAP AND synthetic delta > synthetic delta baseline AND session CVD ≥ CVD signal AND sigma position > −0.35 AND NOT bearish sweep AND (bullish reclaim OR bullish absorption OR sigma state ≤ 0)
-Short: Bearish sweep
-Short: Bearish absorption
-Short: Confirmed bar AND cooldown elapsed since the previous ledger signal AND confidence ≥ entry threshold AND close < session VWAP AND synthetic delta < synthetic delta baseline AND session CVD ≤ CVD signal AND sigma position < 0.35 AND NOT bullish sweep AND (bearish reclaim OR bearish absorption OR sigma state ≥ 0)
-Calculation: Long stop = min(signal bar low, session VWAP − 2 × session sigma) − 0.15 × ATR; short stop = max(signal bar high, session VWAP + 2 × session sigma) + 0.15 × ATR; risk distance = max(abs(entry price − stop), 0.50 × ATR); third target = entry price + position direction × risk distance × third target R multiple
-Exit: Long, confirmed bar AND (low ≤ long stop OR high ≥ third target)
-Exit: Short, confirmed bar AND (high ≥ short stop OR low ≤ third target)
+Calculation: Safe range = max(high - low, epsilon), where epsilon is a positive price-scale parameter; safe division returns zero when the denominator is zero.
+Calculation: Synthetic delta = volume × clamp(a × (close - open) / safe range + b × (2 × close - high - low) / safe range, -1, 1) × (c + d × clamp(abs(close - open) / safe range, 0, 1)), with a > b and d > c.
+Calculation: Session VWAP = cumulative hlc3 × volume divided by cumulative volume during the configured session; initialize it to hlc3 on the first session bar and carry it forward outside the session. Session CVD similarly resets to synthetic delta on the first session bar, adds synthetic delta on subsequent session bars, and is carried forward outside the session.
+Calculation: Session sigma = EMA of the square root of max(session cumulative hlc3² × volume / max(session cumulative volume, 1) - session VWAP², 0); carry the session sums forward outside the session. Use an ATR-based fallback before the EMA is available and a positive floor. The inner and outer sigma bands are session VWAP plus or minus their respective sigma multiples, with the outer multiple larger than the inner multiple. Sigma position = clamp((close - session VWAP) / (a positive multiple of session sigma), -1, 1).
+Calculation: Swing high or low = latest confirmed pivot high or low using equal numbers of bars on each side; update the pivot before evaluating the current bar.
+Calculation: Volume ratio = volume / max(SMA(volume), 1). Compactness = clamp(1 - safe range / max(ATR × range multiplier, epsilon), 0, 1). Close bias = (close - low) / safe range. Wick skew = (min(open, close) - low - high + max(open, close)) / safe range.
+Calculation: Bull sweep = low < swing low AND close > swing low AND close > open. Bear sweep = high > swing high AND close < swing high AND close < open. Bull absorption = volume ratio >= spike threshold AND compactness > compactness threshold AND close bias >= upper close-bias threshold AND synthetic delta > 0. Bear absorption = volume ratio >= spike threshold AND compactness > compactness threshold AND close bias <= lower close-bias threshold AND synthetic delta < 0.
+Calculation: Delta bias = clamp((synthetic delta - EMA(synthetic delta)) / max(standard deviation of synthetic delta, 1) / positive scale, -1, 1). CVD bias = clamp((session CVD - EMA(session CVD)) / max(EMA(abs(session CVD - EMA(session CVD))), 1), -1, 1); the CVD signal EMA uses twice the delta EMA length, and the normalization EMA uses the volume-baseline length. VWAP bias = clamp((close - session VWAP) / max(ATR × positive scale, epsilon), -1, 1). Structure bias is positive for a bull sweep, negative for a bear sweep, and zero otherwise, giving the bull sweep priority. Absorption bias is positive for bull absorption, negative for bear absorption, and zero otherwise, giving bull absorption priority. Volume bias = clamp((volume ratio - 1) / positive scale, -1, 1). Session bias is positive inside the session and negative outside it.
+Calculation: Confidence = clamp(base score + weighted VWAP bias + weighted delta bias + weighted CVD bias + weighted structure bias + weighted absorption bias + weighted volume bias + weighted session bias, 0, maximum score). All weights are positive; structure has the greatest weight, followed by VWAP, delta, CVD, absorption, volume, and session bias. Direction blend = clamp(weighted VWAP bias + weighted delta bias + weighted CVD bias + weighted structure bias + weighted absorption bias, -1, 1), with positive weights descending in that order.
+Calculation: Ledger cooldown = bars since the most recent long or short ledger signal; it is ready if no ledger signal has occurred or that count exceeds the cooldown parameter. A ledger signal updates the cooldown regardless of the other markings.
+Calculation: On each ledger signal, record entry at close and replace the previous managed trade. Long stop = min(entry-bar low, entry-bar lower outer sigma band) - an ATR multiple; short stop = max(entry-bar high, entry-bar upper outer sigma band) + the same ATR multiple. Risk = max(abs(entry - stop), a different ATR multiple). Final target = entry plus risk times a positive target multiple for a long, or entry minus that amount for a short. Evaluate the managed stop and final target starting on the signal bar and stop tracking the trade after either is reached.
+Long: low < swing low AND close > swing low AND close > open
+Short: high > swing high AND close < swing high AND close < open
+Long: volume ratio >= spike threshold AND compactness > compactness threshold AND close bias >= upper close-bias threshold AND synthetic delta > 0
+Short: volume ratio >= spike threshold AND compactness > compactness threshold AND close bias <= lower close-bias threshold AND synthetic delta < 0
+Long: ledger cooldown ready AND confidence >= confidence threshold AND close > session VWAP AND synthetic delta > EMA(synthetic delta) AND session CVD >= EMA(session CVD) AND sigma position > negative position threshold AND bear sweep = false AND ((bull sweep = true AND wick skew > positive wick threshold) OR bull absorption = true OR close < upper inner sigma band)
+Short: ledger cooldown ready AND confidence >= confidence threshold AND close < session VWAP AND synthetic delta < EMA(synthetic delta) AND session CVD <= EMA(session CVD) AND sigma position < positive position threshold AND bull sweep = false AND ((bear sweep = true AND wick skew < negative wick threshold) OR bear absorption = true OR close > lower inner sigma band)
+Long: direction blend >= 0
+Short: direction blend < 0
+Long: synthetic delta >= 0
+Short: synthetic delta < 0
+Long: session CVD - previous session CVD >= 0
+Short: session CVD - previous session CVD < 0
+Long: wick skew >= 0
+Short: wick skew < 0
+Long: confidence >= high-confidence threshold AND close > session VWAP
+Short: confidence >= high-confidence threshold AND close < session VWAP
+Exit: long, low <= managed long stop OR high >= managed long final target
+Exit: short, high >= managed short stop OR low <= managed short final target

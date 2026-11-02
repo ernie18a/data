@@ -1,16 +1,18 @@
-Calculation: Calculation-period body low/high = the running minimum/maximum of max(open, close)/min(open, close) within the selected higher timeframe period, aggregated from chart bars.
-Calculation: Period midpoint time = half the expected period length, estimated from the number of chart bars in the previous period.
-Calculation: Bullish fair value gap = a gap where the current low is above the high two chart bars earlier, with the previous close above the previous low plus an ATR-based threshold.
-Calculation: Bearish fair value gap = a gap where the current high is below the low two chart bars earlier, with the previous close below the previous high minus an ATR-based threshold.
-Long: After the period midpoint, low < the prior chart bar's running calculation-period body low AND min(open, close) >= that low AND the bar is not the first bar of a new period.
-Short: After the period midpoint, high > the prior chart bar's running calculation-period body high AND max(open, close) <= that high AND the bar is not the first bar of a new period.
-Long: A confirmed chart-timeframe pivot low has a lower wick greater than half its candle range.
-Short: A confirmed chart-timeframe pivot high has an upper wick greater than half its candle range.
-Long: A bullish fair value gap exists AND low < its upper boundary AND close > its upper boundary.
-Short: A bearish fair value gap exists AND high > its lower boundary AND close < its lower boundary.
-Long: Two bars ago closed below its open AND its low was at or below the running calculation-period body low as of the prior chart bar; the previous bar's low is below the two-bars-ago low AND its close is above that low; current close > current open AND current close > previous high.
-Short: Two bars ago closed above its open AND its high was at or above the running calculation-period body high as of the prior chart bar; the previous bar's high is above the two-bars-ago high AND its close is below that high; current close < current open AND current close < previous low.
-Short: Previous bar closed below its open AND its low was at or below the running calculation-period body low as of the preceding chart bar; current close < previous low.
-Long: Previous bar closed above its open AND its high was at or above the running calculation-period body high as of the preceding chart bar; current close > previous high.
-Long: Previous bar closed below its open AND its low was at or below the running calculation-period body low as of the preceding chart bar; current low >= previous low AND current close > current open AND current close > previous high.
-Short: Previous bar closed above its open AND its high was at or above the running calculation-period body high as of the preceding chart bar; current high <= previous high AND current close < current open AND current close < previous low.
+Calculation: Period body low/high = lowest/highest of min(open, close)/max(open, close) from the start of the current higher-timeframe bar through the specified chart bar; use the higher-timeframe bar still forming.
+Calculation: Period midpoint bar = start index of the current higher-timeframe bar plus half the number of chart bars in the last completed higher-timeframe bar, rounded to the nearest integer.
+Calculation: Bullish gap = an interval whose bottom is the high two chart bars before its detection bar and whose top is the detection bar's low; detect it when low > high two bars earlier AND the previous close > previous low + previous ATR × threshold. Bearish gap = an interval whose bottom is the detection bar's high and whose top is the low two bars earlier; detect it when high < low two bars earlier AND the previous close < previous high − previous ATR × threshold. Add detected gaps on the next chart bar. Optionally remove older gaps that overlap the newest gap using strict interval-boundary comparisons, including opposite-direction gaps.
+Calculation: A bullish gap becomes a bearish breaker when min(open, close) < its bottom, OR low < its bottom, OR low < its midpoint, according to the selected mitigation method. A bearish gap becomes a bullish breaker when max(open, close) > its top, OR high > its top, OR high > its midpoint, respectively. In gap mode remove a gap when it becomes a breaker; in breaker mode remove a bullish-gap breaker when the selected source rises above its top or midpoint, and remove a bearish-gap breaker when the selected source falls below its bottom or midpoint. A gap can be raided once before it becomes a breaker or is removed.
+Long: Chart bar is not the first bar of its higher-timeframe period AND bar index >= period midpoint bar AND low < prior chart bar's period body low AND min(open, close) >= prior chart bar's period body low.
+Short: Chart bar is not the first bar of its higher-timeframe period AND bar index >= period midpoint bar AND high > prior chart bar's period body high AND max(open, close) <= prior chart bar's period body high.
+Long: Close two bars ago < open two bars ago AND low two bars ago <= the period body low at three bars ago AND previous low < low two bars ago AND previous close > low two bars ago AND close > open AND close > previous high.
+Short: Close two bars ago > open two bars ago AND high two bars ago >= the period body high at three bars ago AND previous high > high two bars ago AND previous close < high two bars ago AND close < open AND close < previous low.
+Short: Previous close < previous open AND previous low <= the period body low two bars ago AND close < previous low.
+Long: Previous close > previous open AND previous high >= the period body high two bars ago AND close > previous high.
+Long: Previous close < previous open AND previous low <= the period body low two bars ago AND low >= previous low AND close > open AND close > previous high.
+Short: Previous close > previous open AND previous high >= the period body high two bars ago AND high <= previous high AND close < open AND close < previous low.
+Long: A pivot low is confirmed using equal left and right lookbacks AND min(open, close) − low > half of high − low on the confirmation bar.
+Short: A pivot high is confirmed using equal left and right lookbacks AND high − max(open, close) > half of high − low on the confirmation bar.
+Long: A bullish gap is added OR a bearish gap becomes a bullish breaker.
+Short: A bearish gap is added OR a bullish gap becomes a bearish breaker.
+Long: An unraided, unbroken bullish gap remains present AND low < its top AND close > its top.
+Short: An unraided, unbroken bearish gap remains present AND high > its bottom AND close < its bottom.

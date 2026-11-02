@@ -1,9 +1,12 @@
-Calculation: Volume-weighted RSI = RSI computed from Wilder-smoothed gains and losses, where each close-to-close gain or loss is multiplied by volume divided by its simple moving average.
-Calculation: Signal line = EMA of the volume-weighted RSI.
-Calculation: Confirmed RSI and price pivots = local highs or lows confirmed after an equal number of bars on the right as on the left.
-Long: Volume-weighted RSI crosses above the oversold level
-Long: At a confirmed pivot low, price makes a lower low than at the previous confirmed pivot low AND volume-weighted RSI makes a higher low than at the previous confirmed pivot low
-Long: Volume-weighted RSI crosses above its signal line
-Short: Volume-weighted RSI crosses below the overbought level
-Short: At a confirmed pivot high, price makes a higher high than at the previous confirmed pivot high AND volume-weighted RSI makes a lower high than at the previous confirmed pivot high
-Short: Volume-weighted RSI crosses below its signal line
+Calculation: Weighted RSI = Let change be close minus previous close. Multiply max(change, 0) and max(-change, 0) by volume divided by the simple moving average of volume; in unweighted mode use a multiplier of 1. Wilder-smooth each result over the RSI lookback. Set their ratio to 100 if the smoothed loss is zero, otherwise divide smoothed gain by smoothed loss. Return 100 - 100 / (1 + ratio).
+Calculation: Money flow index = Use typical price = (high + low + close) / 3 and raw money flow = typical price × volume. Positive flow is raw money flow when typical price exceeds its previous value, otherwise zero; negative flow is raw money flow when typical price is below its previous value, otherwise zero. Divide the simple moving average of positive flow by the greater of the simple moving average of negative flow and 1, using the same lookback. Return 100 - 100 / (1 + ratio).
+Calculation: Bullish divergence = A weighted RSI pivot low is confirmed using equal left and right pivot lookbacks, AND its RSI value is higher than the preceding confirmed RSI pivot low, AND the low on its pivot bar is lower than the low on the preceding RSI pivot-low bar. Evaluate on the confirmation bar.
+Calculation: Bearish divergence = A weighted RSI pivot high is confirmed using equal left and right pivot lookbacks, AND its RSI value is lower than the preceding confirmed RSI pivot high, AND the high on its pivot bar is higher than the high on the preceding RSI pivot-high bar. Evaluate on the confirmation bar.
+Long: Weighted RSI > its midpoint OR weighted RSI <= the oversold threshold OR money flow index <= the oversold threshold.
+Short: Weighted RSI <= its midpoint OR weighted RSI >= the overbought threshold OR money flow index >= the overbought threshold.
+Long: Weighted RSI > the oversold threshold AND previous weighted RSI <= the oversold threshold.
+Short: Weighted RSI < the overbought threshold AND previous weighted RSI >= the overbought threshold.
+Long: Weighted RSI crosses above its exponential moving average.
+Short: Weighted RSI crosses below its exponential moving average.
+Long: Bullish divergence is confirmed OR a bullish divergence was confirmed within the configured hold period.
+Short: Bearish divergence is confirmed OR a bearish divergence was confirmed within the configured hold period AND no bullish divergence was confirmed within the configured hold period.

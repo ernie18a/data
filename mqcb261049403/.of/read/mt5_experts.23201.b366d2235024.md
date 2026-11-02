@@ -1,6 +1,10 @@
-Long: Higher-timeframe Awesome Oscillator crosses from below zero on the previous completed bar to above zero on the latest completed bar AND lower-timeframe Stochastic %K OR %D is below its lower threshold on the latest completed bar AND no long position is open
-Short: Higher-timeframe Awesome Oscillator crosses from above zero on the previous completed bar to below zero on the latest completed bar AND lower-timeframe Stochastic %K OR %D is above its upper threshold on the latest completed bar AND no short position is open
-Exit: Short, higher-timeframe Awesome Oscillator crosses from below zero on the previous completed bar to above zero on the latest completed bar
-Exit: Long, higher-timeframe Awesome Oscillator crosses from above zero on the previous completed bar to below zero on the latest completed bar
-Exit: Long, price reaches the stop-loss or take-profit level measured from the entry price, or reaches the active trailing stop
-Exit: Short, price reaches the stop-loss or take-profit level measured from the entry price, or reaches the active trailing stop
+Calculation: AO = simple moving average of median price over a shorter lookback minus simple moving average of median price over a longer lookback, calculated on its configured timeframe, which may be higher or lower than the chart timeframe; use the last completed bar and the completed bar before it.
+Calculation: Stochastic = stochastic oscillator main and signal lines calculated on its configured timeframe, which may be higher or lower than the chart timeframe; use the last completed bar.
+Calculation: Long stop = entry price minus the stop-loss distance when enabled, otherwise no stop; at each new chart bar, if open minus entry price > trailing distance + trailing step AND no stop exists OR the existing stop < open minus trailing distance minus trailing step, set the stop to open minus trailing distance, when trailing is enabled.
+Calculation: Short stop = entry price plus the stop-loss distance when enabled, otherwise no stop; at each new chart bar, if entry price minus open > trailing distance + trailing step AND no stop exists OR the existing stop > open plus trailing distance plus trailing step, set the stop to open plus trailing distance, when trailing is enabled.
+Long: AO on the preceding completed AO bar < 0 AND AO on the last completed AO bar > 0 AND (Stochastic main < lower threshold OR Stochastic signal < lower threshold) AND position side is not long.
+Short: AO on the preceding completed AO bar > 0 AND AO on the last completed AO bar < 0 AND (Stochastic main > upper threshold OR Stochastic signal > upper threshold) AND position side is not short.
+Exit: short, AO on the preceding completed AO bar < 0 AND AO on the last completed AO bar > 0.
+Exit: long, AO on the preceding completed AO bar > 0 AND AO on the last completed AO bar < 0.
+Exit: long, low <= long stop OR take profit is enabled AND high >= entry price + take-profit distance.
+Exit: short, high >= short stop OR take profit is enabled AND low <= entry price - take-profit distance.

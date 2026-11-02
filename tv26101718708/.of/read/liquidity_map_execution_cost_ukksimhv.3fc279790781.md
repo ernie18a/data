@@ -1,6 +1,9 @@
-Calculation: Close-location volume imbalance = sum of volume × (2 × close − high − low) / (high − low), divided by total volume over a lookback; use zero for a zero-range bar. If volume is disabled, use the unweighted average of close-location values.
-Calculation: Anchored VWAP = cumulative typical price (high + low + close) / 3 weighted by volume since the selected anchor, divided by cumulative volume; use equal weights if volume is disabled. The anchor may be a confirmed swing, session/week/month open, or highest-volume bar.
-Long: Close-location volume imbalance > 0.15
-Short: Close-location volume imbalance < −0.15
-Long: Close ≥ Anchored VWAP AND Anchored VWAP ≥ its prior-bar value
-Short: Close < Anchored VWAP AND Anchored VWAP < its prior-bar value
+Calculation: Order imbalance = sum of close-location value multiplied by volume over a lookback divided by summed volume over that lookback; close-location value = ((close - low) - (high - close)) / (high - low), or zero when high equals low. In price-only mode, use the average close-location value. If summed volume is zero, imbalance is zero. Inputs may use chart bars, the last completed higher-timeframe bar, or the last completed lower-timeframe bar within each chart bar; calculate the rolling sums over the resulting chart-bar series.
+Calculation: Anchored fair value = cumulative sum of chart-bar typical price multiplied by weight divided by cumulative weight, starting at the anchor. Weight is volume from the chart bar, the last completed higher-timeframe bar, or the last completed lower-timeframe bar within the chart bar; use weight one in price-only mode. Reset at a chosen period boundary, a bar whose volume equals or exceeds the highest volume in a lookback, or confirmation of a pivot high or low with equal numbers of bars on each side. For pivots, reset on the confirmation bar.
+Calculation: Nearest thin zone = divide the chart-bar lookback's high-low range into equal price bins. Weight each bar's volume, or one in price-only mode, by an optional exponential age decay; assign it equally to all bins spanned by its range, or entirely to the bin containing its midpoint. A bin is thin when its volume's min-max normalized position among bin volumes is at or below a threshold; if all bin volumes are equal, use zero. Select the nearest thin bin center above close and the nearest at or below close; select the closer of those two, choosing the lower one on a tie.
+Long: Order imbalance > positive threshold
+Short: Order imbalance < negative threshold
+Long: Close >= anchored fair value
+Short: Close < anchored fair value
+Long: Nearest thin zone > close
+Short: Nearest thin zone < close

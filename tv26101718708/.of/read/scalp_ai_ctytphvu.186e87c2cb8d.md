@@ -1,8 +1,9 @@
-Long: close > EMA(9)
-Short: close < EMA(9)
-Long: close > EMA(20) AND EMA(20) > EMA(200)
-Short: close < EMA(20) AND EMA(20) < EMA(200)
-Long: RSI(14) > 60
-Short: RSI(14) < 40
-Long: on each timeframe shown in the multi-timeframe dashboard, close > EMA(20) AND close > EMA(200)
-Short: on each timeframe shown in the multi-timeframe dashboard, NOT (close > EMA(20) AND close > EMA(200))
+Long: close > shorter-period EMA of close AND shorter-period EMA of close > longer-period EMA of close
+Short: close < shorter-period EMA of close AND shorter-period EMA of close < longer-period EMA of close
+Long: RSI of close > upper threshold
+Short: RSI of close < lower threshold
+Long: close > shortest-period EMA of close
+Short: close < shortest-period EMA of close
+Long: on a selected timeframe, close > shorter-period EMA of close AND close > longer-period EMA of close
+Short: on a selected timeframe, close <= shorter-period EMA of close OR close <= longer-period EMA of close
+Calculation: Selected-timeframe close and EMAs = use the last completed bar for a higher timeframe, the last completed constituent bar for a lower timeframe, and the current bar for the chart timeframe.

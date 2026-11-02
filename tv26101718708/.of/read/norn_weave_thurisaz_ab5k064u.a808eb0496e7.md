@@ -1,8 +1,24 @@
-Calculation: EMA slope = current EMA is higher or lower than its value one chart bar earlier; EMA lookback is longer than the swing-detection lookback.
-Calculation: Current-timeframe Dow trend = track the latest confirmed swing high and low, where a swing high/low is the high/low at the center of a window with equal numbers of bars before and after; set trend up when close exceeds the latest swing high and down when close falls below the latest swing low, retaining the prior trend otherwise.
-Calculation: Daily Dow trend = apply the same swing and trend rules to daily bars, using only completed daily bars.
-Calculation: Daily Fibonacci levels = from the latest daily swing low to swing high, long levels are low + range × 0.382 and low + range × 0.618; short levels are high − range × 0.382 and high − range × 0.618.
-Long: EMA rising AND current-timeframe Dow trend up AND ADX above its threshold AND (daily Dow trend matches current-timeframe trend OR daily Dow trend is neutral OR daily Dow trend is down and close is outside the inclusive zone between the long daily Fibonacci levels)
-Short: EMA falling AND current-timeframe Dow trend down AND ADX above its threshold AND (daily Dow trend matches current-timeframe trend OR daily Dow trend is neutral OR daily Dow trend is up and close is outside the inclusive zone between the short daily Fibonacci levels)
-Exit: Long, high > long TP1 OR high > long TP2 OR high > long TP3 OR close < entry price × (1 + stop-loss percentage) OR (break-even stop activated AND low ≤ entry price) OR current-timeframe Dow trend down OR short-entry conditions
-Exit: Short, low < short TP1 OR low < short TP2 OR low < short TP3 OR close > entry price × (1 − stop-loss percentage) OR (break-even stop activated AND high ≥ entry price) OR current-timeframe Dow trend up OR long-entry conditions
+Calculation: Chart swing high/low = the high/low at the center of a symmetric lookback window when it equals the highest high/lowest low in that window; retain the latest confirmed value of each.
+Calculation: Chart trend = initially neutral; set to long when close exceeds the latest chart swing high, and set to short when close falls below the latest chart swing low; otherwise retain its previous value. Apply the short update last if both occur.
+Calculation: Higher-timeframe swings and trend = use confirmed pivot highs and lows with an independent symmetric lookback, and the close of the last completed higher-timeframe bar; retain the latest pivots and update the trend using the same breakout and precedence rules as the chart trend.
+Calculation: Higher-timeframe long retracement levels = latest higher-timeframe swing low plus the swing range multiplied by a smaller and a larger retracement ratio; short retracement levels = latest higher-timeframe swing high minus the range multiplied by those ratios. Swing range = latest higher-timeframe swing high minus latest higher-timeframe swing low.
+Calculation: Volatility percentage = ATR divided by close, multiplied by the percentage scale.
+Calculation: Automatic ADX threshold = the rolling nearest-rank median of ADX, or a fallback threshold before it is available.
+Calculation: Automatic ATR factor = a base factor plus an adjustment coefficient times the clipped difference between one and volatility percentage divided by its longer SMA; use a ratio of one until that SMA is positive and available.
+Calculation: Automatic stop-loss percentage = the negative of a coefficient times a shorter SMA of volatility percentage, bounded between configured negative limits; use a fallback until the SMA is available.
+Calculation: Profit percentage = percentage change from entry price to close for a long, or from close to entry price for a short.
+Calculation: Profit targets = at the entry signal bar, store its close plus or minus ATR times the selected ATR factor times each of three increasing target multipliers. For the first long target, substitute the smaller higher-timeframe long retracement level if the higher-timeframe trend is short and the signal close is below that level; for the first short target, substitute the smaller higher-timeframe short retracement level if the higher-timeframe trend is long and the signal close is above that level. Each target is available only until its first hit in the position.
+Long: EMA of close > its previous value.
+Short: EMA of close <= its previous value.
+Long: Chart trend = long.
+Short: Chart trend = short.
+Long: Higher-timeframe trend = long.
+Short: Higher-timeframe trend = short.
+Long: Position is flat AND EMA of close > its previous value AND chart trend = long AND ADX > selected manual or automatic ADX threshold AND (higher-timeframe trend is long or neutral OR higher-timeframe retracement levels are unavailable OR close is outside the inclusive interval between the higher-timeframe long retracement levels).
+Short: Position is flat AND EMA of close < its previous value AND chart trend = short AND ADX > selected manual or automatic ADX threshold AND (higher-timeframe trend is short or neutral OR higher-timeframe retracement levels are unavailable OR close is outside the inclusive interval between the higher-timeframe short retracement levels).
+Exit: long, profit percentage < selected manual or automatic stop-loss percentage OR chart trend = short.
+Exit: short, profit percentage < selected manual or automatic stop-loss percentage OR chart trend = long.
+Exit: long, break-even stop enabled AND profit percentage has reached its activation threshold during the current position AND low <= entry price.
+Exit: short, break-even stop enabled AND profit percentage has reached its activation threshold during the current position AND high >= entry price.
+Exit: long, high > an available long profit target; close the configured fraction of the remaining position for each target hit.
+Exit: short, low < an available short profit target; close the configured fraction of the remaining position for each target hit.
