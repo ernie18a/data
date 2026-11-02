@@ -1,4 +1,4 @@
-Long: maB crosses above maC AND MACD histogram > 0 AND ADX > configured threshold AND datetime is within the configured trading session AND position is flat or short
-Short: maB crosses below maC AND MACD histogram < 0 AND ADX > configured threshold AND datetime is within the configured trading session AND position is flat or long
-Exit: long, price reaches the configured stop-loss or take-profit distance from entry, or (if enabled) price reaches the trailing stop after the configured trigger distance
-Exit: short, price reaches the configured stop-loss or take-profit distance from entry, or (if enabled) price reaches the trailing stop after the configured trigger distance
+Long: Shorter-period moving average crosses above longer-period moving average AND MACD histogram > threshold AND ADX > threshold AND bar is within the configured trading session AND position is flat or short
+Short: Shorter-period moving average crosses below longer-period moving average AND MACD histogram < threshold AND ADX > threshold AND bar is within the configured trading session AND position is flat or long
+Exit: long, short-entry conditions are met OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance OR trailing stop is enabled AND price has reached the entry price plus the trailing activation distance AND low <= highest price since trailing activation minus trailing offset
+Exit: short, long-entry conditions are met OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance OR trailing stop is enabled AND price has reached the entry price minus the trailing activation distance AND high >= lowest price since trailing activation plus trailing offset

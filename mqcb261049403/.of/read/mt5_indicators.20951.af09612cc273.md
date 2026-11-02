@@ -1,3 +1,7 @@
-Calculation: SilverTrend state = Using a configurable lookback of bars including the current bar, let H be the highest high and L the lowest low; let q = (33 − configurable risk level) / 100; upper threshold = H − (H − L) × q and lower threshold = L + (H − L) × q. State is −1 if close is below the lower threshold, +1 if close is above the upper threshold, and otherwise retains the previous bar’s state.
-Long: Previous completed bar’s SilverTrend state ≤ 0 AND current completed bar’s SilverTrend state > 0
-Short: Previous completed bar’s SilverTrend state ≥ 0 AND current completed bar’s SilverTrend state < 0
+Calculation: Trend = initially 0; on each bar, find the highest high and lowest low over a configurable lookback including that bar. Let fraction = (33 − risk parameter) / 100, lower threshold = lowest low + (highest high − lowest low) × fraction, and upper threshold = highest high − (highest high − lowest low) × fraction. Set trend to −1 if close < lower threshold, then set it to +1 if close > upper threshold; otherwise retain its previous value.
+Long: Chart-timeframe trend = +1.
+Short: Chart-timeframe trend = −1.
+Long: Chart-timeframe trend = +1 AND previous bar's trend ≤ 0.
+Short: Chart-timeframe trend = −1 AND previous bar's trend ≥ 0.
+Long: Selected bar's trend = +1 on each configurable timeframe, which may be higher or lower than the chart timeframe; the selected bar may be the still-forming bar, the last completed bar, or an earlier completed bar.
+Short: Selected bar's trend = −1 on each configurable timeframe, which may be higher or lower than the chart timeframe; the selected bar may be the still-forming bar, the last completed bar, or an earlier completed bar.

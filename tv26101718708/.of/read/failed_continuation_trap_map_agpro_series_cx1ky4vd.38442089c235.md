@@ -1,7 +1,12 @@
-Calculation: Fast and slow EMA = exponential moving averages of close, with the fast EMA using the shorter lookback
-Calculation: Prior high = highest high over the lookback bars before the current bar
-Calculation: Prior low = lowest low over the lookback bars before the current bar
-Calculation: Lower-wick percentage = 100 × (min(open, close) − low) / (high − low)
-Calculation: Upper-wick percentage = 100 × (high − max(open, close)) / (high − low)
-Long: Fast EMA < slow EMA AND low < prior low AND close < prior low on a downside continuation-attempt bar within the failure window AND close > that attempt’s prior-low level AND lower-wick percentage ≥ the wick threshold
-Short: Fast EMA > slow EMA AND high > prior high AND close > prior high on an upside continuation-attempt bar within the failure window AND close < that attempt’s prior-high level AND upper-wick percentage ≥ the wick threshold
+Calculation: Attempt state = On each bar, if the short-term EMA of close is above the long-term EMA and high and close are above the highest high of the preceding breakout-lookback bars, set direction to up, level to that highest high, zone width to the current ATR multiplied by the zone-width parameter, and attempt bar to the current bar; reset trap memory to false. If the short-term EMA is below the long-term EMA and low and close are below the lowest low of the preceding breakout-lookback bars, set direction to down, level to that lowest low, zone width to the current ATR multiplied by the zone-width parameter, and attempt bar to the current bar; reset trap memory to false. Retain these values until a new attempt replaces them. Use high minus low when ATR is unavailable.
+Calculation: Wick quality = For an upper wick, (high - max(open, close)) / (high - low); for a lower wick, (min(open, close) - low) / (high - low). Use zero when high equals low.
+Calculation: Trap memory = After updating the attempt state, set trap memory to true if the attempt is up, its age is at most the failure-window length, close is below its level, and upper-wick quality is at least the wick threshold; or if the attempt is down, its age is at most the failure-window length, close is above its level, and lower-wick quality is at least the wick threshold. Retain true until a new attempt resets it.
+Calculation: Pressure rail = For an up attempt, attempt level minus the stored zone width minus current ATR times the zone-width parameter; for a down attempt, attempt level plus the stored zone width plus current ATR times the zone-width parameter. Use high minus low when ATR is unavailable.
+Long: Short-term EMA of close > long-term EMA of close AND high > highest high of preceding breakout-lookback bars AND close > highest high of preceding breakout-lookback bars
+Short: Short-term EMA of close < long-term EMA of close AND low < lowest low of preceding breakout-lookback bars AND close < lowest low of preceding breakout-lookback bars
+Long: Attempt direction = down AND trap memory = true
+Short: Attempt direction = up AND trap memory = true
+Long: Attempt direction = down AND trap memory = true AND close > pressure rail
+Short: Attempt direction = up AND trap memory = true AND close < pressure rail
+Long: Attempt direction = up AND trap memory = false AND close > attempt level + stored zone width
+Short: Attempt direction = down AND trap memory = false AND close < attempt level - stored zone width

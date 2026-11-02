@@ -1,20 +1,21 @@
-Calculation: Pre-market high = highest high during the defined pre-market range, fixed when that range ends
-Calculation: Pre-market low = lowest low during the defined pre-market range, fixed when that range ends
-Calculation: Opening-range high = highest high during the defined opening range, fixed when that range ends
-Calculation: Opening-range low = lowest low during the defined opening range, fixed when that range ends
-Calculation: ATR = average true range on the selected timeframe; when that timeframe is higher than the chart timeframe, use its current bar, which may still be forming
-Calculation: Trend moving average = selected moving average of the selected price source over its lookback
-Long: selected range is pre-market or opening range AND current close > selected range high AND previous close <= previous selected range high AND current time is within the entry window AND daily trade count is below its maximum AND long entries are enabled
-Short: selected range is pre-market or opening range AND current close < selected range low AND previous close >= previous selected range low AND current time is within the entry window AND daily trade count is below its maximum AND short entries are enabled
-Exit: Long, current time is at or after the daily close time
-Exit: Short, current time is at or after the daily close time
-Exit: Long, selected exit mode is full ATR or partial ATR AND low <= entry price - ATR-based stop distance OR high >= entry price + ATR-based target distance
-Exit: Short, selected exit mode is full ATR or partial ATR AND high >= entry price + ATR-based stop distance OR low <= entry price - ATR-based target distance
-Exit: Long, selected exit mode is trailing stop AND low <= trailing stop level OR high >= trailing take-profit level
-Exit: Short, selected exit mode is trailing stop AND high >= trailing stop level OR low <= trailing take-profit level
-Exit: Long, selected exit mode is moving-average exit AND low <= trend moving average OR low <= the stop level specified by the ATR exit calculation
-Exit: Short, selected exit mode is moving-average exit AND high >= trend moving average OR high >= the stop level specified by the ATR exit calculation
-Exit: Long, selected exit mode is points scalp AND low <= entry price - stop distance OR high >= entry price + target distance
-Exit: Short, selected exit mode is points scalp AND high >= entry price + stop distance OR low <= entry price - target distance
-Exit: Long, selected exit mode is pre-market multiplier AND low <= the level between pre-market high and low set by the multiplier OR high >= entry price + ATR-based target distance
-Exit: Short, selected exit mode is pre-market multiplier AND high >= the level between pre-market low and high set by the multiplier OR low <= entry price - ATR-based target distance
+Calculation: Range high and low = highest high and lowest low of chart bars whose opening times fall within the selected pre-market or opening-range window; update during the window and retain the latest values until the next window begins.
+Calculation: ATR = average true range on the selected timeframe; for a higher timeframe use the last completed bar in historical backtests, and for a lower timeframe use the last completed intrabar within each chart bar.
+Calculation: Trend moving average = a selectable EMA, SMA, VWMA, or HMA of a selectable price source; the fast moving average is independently configured and has a shorter period than the trend moving average.
+Long: Close crosses above the selected range high AND bar opening time is within the inclusive trading window AND today's submitted entry orders are below the daily limit AND long trading is enabled.
+Short: Close crosses below the selected range low AND bar opening time is within the inclusive trading window AND today's submitted entry orders are below the daily limit AND short trading is enabled.
+Long: Fast moving average > trend moving average.
+Short: Fast moving average <= trend moving average.
+Exit: Long, bar opening time >= configured closing time.
+Exit: Short, bar opening time >= configured closing time.
+Exit: Long, before closing time AND full ATR mode is selected AND (low <= entry price - ATR × stop multiplier OR high >= entry price + ATR × full target multiplier).
+Exit: Short, before closing time AND full ATR mode is selected AND (high >= entry price + ATR × stop multiplier OR low <= entry price - ATR × full target multiplier).
+Exit: Long, before closing time AND partial ATR mode is selected AND (low <= entry price - ATR × stop multiplier OR high >= entry price + ATR × partial target multiplier for each of two configured partial quantities OR high >= entry price + ATR × full target multiplier for the remaining quantity); both partial targets use the same partial target multiplier.
+Exit: Short, before closing time AND partial ATR mode is selected AND (high >= entry price + ATR × stop multiplier OR low <= entry price - ATR × partial target multiplier for each of two configured partial quantities OR low <= entry price - ATR × full target multiplier for the remaining quantity); both partial targets use the same partial target multiplier.
+Exit: Long, before closing time AND trailing mode is selected AND price has reached the configured absolute activation price AND low <= highest price since activation - configured trailing offset in minimum price ticks.
+Exit: Short, before closing time AND trailing mode is selected AND high >= entry price + configured trailing distance in price units.
+Exit: Long, before closing time AND moving-average mode is selected AND low <= trend moving average.
+Exit: Short, before closing time AND moving-average mode is selected AND high >= trend moving average.
+Exit: Long, before closing time AND scalp mode is selected AND (low <= entry price - configured stop distance OR high >= entry price + configured target distance).
+Exit: Short, before closing time AND scalp mode is selected AND (high >= entry price + configured stop distance OR low <= entry price - configured target distance).
+Exit: Long, before closing time AND pre-market multiplier mode is selected AND (low <= pre-market high - (pre-market high - pre-market low) × range multiplier OR high >= entry price + ATR × full target multiplier).
+Exit: Short, before closing time AND pre-market multiplier mode is selected AND (high >= pre-market low + (pre-market high - pre-market low) × range multiplier OR low <= entry price - ATR × full target multiplier).

@@ -1,7 +1,9 @@
-Calculation: Upper/lower Dev 5 band = anchored VWAP plus/minus the configurable fifth deviation distance; the distance is either a configurable ATR multiple or a configurable percentage of VWAP.
-Calculation: Bull/long target = VWAP at entry or entry price plus a configurable percentage; bull/long stop = entry price minus a configurable percentage.
-Calculation: Bear/short target = VWAP at entry or entry price minus a configurable percentage; bear/short stop = entry price plus a configurable percentage.
-Long: previous close >= previous lower Dev 5 band AND close < lower Dev 5 band AND (outside-band filter disabled OR close < lower Dev 5 band × (1 − configured outside percentage)) AND (cool-off disabled OR no accepted signal occurred within the configured cool-off period)
-Short: previous close <= previous upper Dev 5 band AND close > upper Dev 5 band AND (outside-band filter disabled OR close > upper Dev 5 band × (1 + configured outside percentage)) AND (cool-off disabled OR no accepted signal occurred within the configured cool-off period)
-Exit: Long, on a bar after the entry bar, low <= bull/long stop OR high >= bull/long target; if both are reached on the same bar, classify as stop.
-Exit: Short, on a bar after the entry bar, high >= bear/short stop OR low <= bear/short target; if both are reached on the same bar, classify as stop.
+Calculation: Anchored VWAP = cumulative sum of chart-bar source × volume divided by cumulative volume since the start of the current, still-forming higher-timeframe anchor period; use HLC3 for the shortest anchor, HL2 for the intermediate anchor, or close for the longest anchor.
+Calculation: Outer bands = anchored VWAP ± either an ATR multiple or a percentage of anchored VWAP, using the same deviation parameter for both bands.
+Calculation: Entry target = anchored VWAP on the entry bar, or entry price adjusted by a direction-specific target percentage: upward for long and downward for short; hold the target fixed after entry.
+Calculation: Entry stop = entry price adjusted by a direction-specific stop percentage: downward for long and upward for short.
+Long: Close crosses below the lower outer band AND, if the outside filter is enabled, close > upper outer band × (1 + outside percentage) OR close < lower outer band × (1 − outside percentage), with the OR grouped within the filter AND, if cooldown is enabled, bars since the last accepted long or short signal >= cooldown period.
+Short: Close crosses above the upper outer band AND, if the outside filter is enabled, close > upper outer band × (1 + outside percentage) OR close < lower outer band × (1 − outside percentage), with the OR grouped within the filter AND, if cooldown is enabled, bars since the last accepted long or short signal >= cooldown period.
+Exit: long, bar is after the entry bar AND (low <= entry stop OR high >= entry target).
+Exit: short, bar is after the entry bar AND (high >= entry stop OR low <= entry target).
+Exit: long or short, optional reset is enabled AND the higher-timeframe anchor period changes.

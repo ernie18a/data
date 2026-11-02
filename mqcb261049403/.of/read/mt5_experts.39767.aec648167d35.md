@@ -1,4 +1,5 @@
-Long: Williams %R on the last two completed working-timeframe bars was below the lower level on the earlier bar AND above it on the most recent bar
-Short: Williams %R on the last two completed working-timeframe bars was above the upper level on the earlier bar AND below it on the most recent bar
-Exit: Long, Williams %R on the last two completed working-timeframe bars was above the upper level on the earlier bar AND below it on the most recent bar
-Exit: Short, Williams %R on the last two completed working-timeframe bars was below the lower level on the earlier bar AND above it on the most recent bar
+Calculation: Williams %R = -100 × (highest high over the lookback including the current bar − current close) / (highest high − lowest low over the same lookback); when the highest high equals the lowest low, use the previous Williams %R value. Calculate on the chart timeframe or a configurable higher or lower working timeframe, using its completed bars.
+Long: At the start of a new working-timeframe bar, Williams %R on the second-last completed working-timeframe bar < lower threshold AND Williams %R on the last completed working-timeframe bar > lower threshold.
+Short: At the start of a new working-timeframe bar, Williams %R on the second-last completed working-timeframe bar > upper threshold AND Williams %R on the last completed working-timeframe bar < upper threshold.
+Exit: long, at the start of a new working-timeframe bar, Williams %R on the second-last completed working-timeframe bar > upper threshold AND Williams %R on the last completed working-timeframe bar < upper threshold.
+Exit: short, at the start of a new working-timeframe bar, Williams %R on the second-last completed working-timeframe bar < lower threshold AND Williams %R on the last completed working-timeframe bar > lower threshold.

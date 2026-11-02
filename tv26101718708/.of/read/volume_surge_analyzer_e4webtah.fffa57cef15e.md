@@ -1,6 +1,11 @@
-Calculation: Relative volume = current volume / simple moving average of volume
-Calculation: Volume expansion (%) = (current volume / previous bar volume − 1) × 100
-Calculation: Normalized buy pressure = [0.55 × (close ≥ open ? |close − open| / (high − low) : 0) + 0.45 × (close − low) / (high − low)] divided by the sum of that raw buy pressure and [0.55 × (close < open ? |close − open| / (high − low) : 0) + 0.45 × (high − close) / (high − low)]
-Calculation: Normalized sell pressure = [0.55 × (close < open ? |close − open| / (high − low) : 0) + 0.45 × (high − close) / (high − low)] divided by the sum of that raw sell pressure and [0.55 × (close ≥ open ? |close − open| / (high − low) : 0) + 0.45 × (close − low) / (high − low)]
-Long: volume > volume SMA AND volume EMA > volume SMA AND relative volume ≥ burst threshold AND volume expansion (%) ≥ minimum expansion threshold AND normalized buy pressure ≥ minimum body pressure AND NOT (relative volume ≥ exhaustion threshold AND volume expansion (%) < 5%
-Short: volume > volume SMA AND volume EMA > volume SMA AND relative volume ≥ burst threshold AND volume expansion (%) ≥ minimum expansion threshold AND normalized sell pressure ≥ minimum body pressure AND NOT (relative volume ≥ exhaustion threshold AND volume expansion (%) < 5%
+Calculation: Relative volume = volume / SMA(volume), or 0 when the SMA is not positive.
+Calculation: Volume expansion = 100 × (volume / previous bar's volume − 1), or 0 when the previous volume is not positive; use current volume as previous volume on the first bar.
+Calculation: Buy pressure = raw buy pressure / (raw buy pressure + raw sell pressure), or 0.5 when their sum is 0. Raw buy pressure = 0.55 × bullish body fraction + 0.45 × close-location fraction. Raw sell pressure = 0.55 × bearish body fraction + 0.45 × (high − close) / range. Range = high − low; bullish body fraction = abs(close − open) / range when close >= open, otherwise 0; bearish body fraction = abs(close − open) / range when close < open, otherwise 0; close-location fraction = (close − low) / range. When range is 0, set buy pressure to 0.5. Sell pressure = 1 − buy pressure.
+Calculation: Exhaustion warning = relative volume >= exhaustion threshold AND volume expansion < exhaustion expansion threshold.
+Calculation: Gold volume start = minimum relative volume over a prior-bar lookback <= quiet-volume threshold AND relative volume >= start threshold AND volume expansion >= start expansion threshold AND volume >= highest volume over a prior-bar lookback × breakout multiplier AND (bullish-candle filter disabled OR close >= open) AND (volume-trend filter disabled OR EMA(volume) > SMA(volume)) AND (buy-pressure filter disabled OR buy pressure >= start pressure threshold) AND exhaustion warning is false.
+Long: close >= open AND (gold volume start display disabled OR gold volume start is false).
+Short: close < open AND (gold volume start display disabled OR gold volume start is false).
+Long: volume > SMA(volume) AND EMA(volume) > SMA(volume) AND relative volume >= burst threshold AND volume expansion >= burst expansion threshold AND buy pressure >= minimum pressure threshold AND exhaustion warning is false.
+Short: volume > SMA(volume) AND EMA(volume) > SMA(volume) AND relative volume >= burst threshold AND volume expansion >= burst expansion threshold AND sell pressure >= minimum pressure threshold AND exhaustion warning is false.
+Long: round(buy pressure × 1000) > 500.
+Short: round(buy pressure × 1000) < 500.

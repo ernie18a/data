@@ -1,5 +1,16 @@
-Calculation: Anchored VWAP = cumulative source price × volume since the anchor period began, divided by cumulative volume; it updates with the current chart bar.
-Calculation: VWAP slope = percentage change per chart bar between the current anchored VWAP and its value at a longer lookback.
-Calculation: Smart Glow strength = weighted score from candle body size relative to range, volume relative to its moving average, and candle direction’s alignment with enabled VWAPs.
-Long: More enabled anchored VWAPs have close above them than do not; OR close crosses above the selected primary anchored VWAP; OR close is above any enabled anchored VWAP; OR close ≥ open AND Smart Glow strength ≥ its threshold; OR Session VWAP slope is falling while Daily VWAP slope is rising.
-Short: More enabled anchored VWAPs do not have close above them than do; OR close crosses below the selected primary anchored VWAP; OR close is below any enabled anchored VWAP; OR close < open AND Smart Glow strength ≥ its threshold; OR Session VWAP slope is rising while Daily VWAP slope is falling.
+Calculation: Anchored VWAP = cumulative sum of selected price source times volume divided by cumulative volume since the start of the anchor period, including the current chart bar; use the source price when cumulative volume is zero. Each enabled anchor uses a different period; the session anchor resets at the start of the regular session and the others reset at their respective calendar-period boundaries.
+Calculation: VWAP slope = percentage change in an anchor's VWAP from its value a lookback number of chart bars ago, divided by that lookback; use zero if the past value is unavailable or zero.
+Calculation: Bullish votes = number of enabled anchors for which close > anchored VWAP. Active anchors = number of enabled anchors. Nonbullish votes = active anchors minus bullish votes, including anchors where close equals VWAP or VWAP is unavailable.
+Calculation: Candle strength = body weight times min(1, abs(close - open) / (high - low)) plus volume weight times clamp((volume / average volume - volume offset) / volume scale, 0, 1) plus alignment weight times directional alignment. Use zero for the body ratio when high equals low and use 1 for the volume ratio when average volume is unavailable or nonpositive. Average volume is a chart-bar simple moving average including the current bar. Directional alignment is bullish votes / active anchors for close >= open and 1 minus that ratio for close < open; use 0.5 as the ratio when there are no active anchors.
+Long: Close > an enabled anchored VWAP.
+Short: Close < an enabled anchored VWAP.
+Long: Active anchors > 0 AND bullish votes > nonbullish votes.
+Short: Active anchors > 0 AND nonbullish votes > bullish votes.
+Long: VWAP slope > positive slope threshold for an enabled anchor.
+Short: VWAP slope < negative slope threshold for an enabled anchor.
+Long: Close >= open AND candle strength >= minimum strength.
+Short: Close < open AND candle strength >= minimum strength.
+Long: Close > primary anchored VWAP AND previous close <= previous primary anchored VWAP.
+Short: Close < primary anchored VWAP AND previous close >= previous primary anchored VWAP.
+Long: The session and longer-period anchors are enabled AND session VWAP slope < negative slope threshold AND longer-period VWAP slope > positive slope threshold AND neither opposing-slope divergence condition was true on the previous chart bar.
+Short: The session and longer-period anchors are enabled AND session VWAP slope > positive slope threshold AND longer-period VWAP slope < negative slope threshold AND neither opposing-slope divergence condition was true on the previous chart bar.

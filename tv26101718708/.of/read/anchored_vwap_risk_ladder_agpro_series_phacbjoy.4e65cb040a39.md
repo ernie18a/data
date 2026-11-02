@@ -1,5 +1,10 @@
-Calculation: Anchored VWAP = volume-weighted average of HLC3 since the active anchor; reset at the selected manual time, qualifying high-volume bar, confirmed swing pivot, or session, week, or month open, subject to minimum spacing between automatic anchors
-Calculation: Relative volume = current volume / simple moving average of volume over the selected lookback
-Calculation: Readiness score = rounded value clamped to 0–100 of baseline + a distance contribution that decreases with absolute (close − anchored VWAP) / ATR and is capped at the extension-distance threshold + a relative-volume contribution + a bar-age contribution that increases with bars since anchor and is capped at the age limit
-Long: close crosses above anchored VWAP + ATR × reclaim buffer AND readiness score >= minimum ready score
-Short: close crosses below anchored VWAP − ATR × reclaim buffer AND readiness score >= minimum ready score
+Calculation: Relative volume = volume divided by its simple moving average, or 1 if that average is not positive.
+Calculation: Anchor = the first confirmed bar, then the current bar whenever the selected mode triggers: manual time is reached for the first time; a new daily, weekly, or monthly period begins; relative volume reaches its threshold AND absolute candle body exceeds 0.35 ATR; or a swing high or low with equal left and right lookbacks is confirmed. The high-volume and swing modes also require a minimum number of bars since the preceding anchor. A confirmed pivot anchors on its confirmation bar.
+Calculation: Anchored VWAP = sum of selected price source times volume divided by sum of volume, accumulated from the current anchor through the current bar. The price source is selected from prices derivable from OHLC.
+Calculation: Readiness score = round and clamp to 0–100 the sum of 35, 25 × (1 − min(absolute close-to-anchored-VWAP distance in ATR, extension threshold) / max(extension threshold, 0.1)), min(14 × relative volume, 22), and 18 × min(bars since anchor, 120) / 120.
+Calculation: Ready reclaim = close crosses above anchored VWAP plus an ATR buffer AND readiness score is at least its minimum; ready loss = close crosses below anchored VWAP minus the same ATR buffer AND readiness score is at least its minimum. A crossover requires the previous close to be at or below the previous upper buffered level; a crossunder requires the previous close to be at or above the previous lower buffered level.
+Calculation: Active direction = direction of the most recent ready reclaim or ready loss, including its signal bar, until its configured number of bars has elapsed; reset it when a new anchor occurs.
+Long: Ready reclaim.
+Short: Ready loss.
+Long: Active direction is reclaim OR active direction is absent AND close >= anchored VWAP.
+Short: Active direction is loss OR active direction is absent AND close < anchored VWAP.

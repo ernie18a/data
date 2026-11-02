@@ -1,12 +1,11 @@
-Calculation: Confirmed pivot high/low = a high/low that is an extreme over the configured number of chart bars before and after it; knowable after the bars after it complete.
-Calculation: Active supply zone = the latest confirmed pivot high, or the average of it and the previous pivot high when their distance is within the ATR-based cluster tolerance; zone extends downward from that anchor by an ATR-based width. Replace it on each new confirmed pivot high.
-Calculation: Active demand zone = the latest confirmed pivot low, or the average of it and the previous pivot low when their distance is within the ATR-based cluster tolerance; zone extends upward from that anchor by an ATR-based width. Replace it on each new confirmed pivot low.
-Calculation: Break body quality = abs(close - open) / max(high - low, minimum tick size).
-Long: confirmed pivot low
-Long: active demand zone AND high >= demand zone bottom AND low <= demand zone top
-Long: active supply zone AND bar is confirmed AND zone age >= minimum zone age AND (close > supply zone top when body-close breaks are enabled, otherwise high > supply zone top) AND (body quality >= minimum threshold when the body quality filter is enabled)
-Long: supply zone is inactive after an upper break AND low <= supply zone top AND close >= supply zone bottom
-Short: confirmed pivot high
-Short: active supply zone AND high >= supply zone bottom AND low <= supply zone top
-Short: active demand zone AND bar is confirmed AND zone age >= minimum zone age AND (close < demand zone bottom when body-close breaks are enabled, otherwise low < demand zone bottom) AND (body quality >= minimum threshold when the body quality filter is enabled)
-Short: demand zone is inactive after a lower break AND high >= demand zone bottom AND close <= demand zone top
+Calculation: Supply zone = on confirmation of a pivot high with an equal number of bars on each side, replace the previous supply zone; its top is the pivot high, or the average of this and the preceding pivot high if their distance is at most ATR times the cluster tolerance; its bottom is its top minus ATR times the zone-width multiplier. Use ATR at confirmation. The zone becomes active at confirmation.
+Calculation: Demand zone = on confirmation of a pivot low with an equal number of bars on each side, replace the previous demand zone; its bottom is the pivot low, or the average of this and the preceding pivot low if their distance is at most ATR times the cluster tolerance; its top is its bottom plus ATR times the zone-width multiplier. Use ATR at confirmation. The zone becomes active at confirmation.
+Calculation: Zone release = an active zone is released when its age since confirmation is at least the minimum age AND, if the body-quality filter is enabled, abs(close - open) / (high - low) is at least the body-quality threshold, with zero quality when high equals low AND either close exceeds the supply top or close is below the demand bottom; alternatively use high and low respectively instead of close. A released zone remains available until replaced by a new zone of the same type, or until its age since release exceeds the fade period if broken-zone retention is disabled. Evaluate retests before releases and expiry on each bar.
+Long: A demand pivot is confirmed.
+Long: Demand zone is active AND high >= demand bottom AND low <= demand top.
+Long: Supply zone is released on the current bar.
+Long: Demand zone was released on an earlier bar AND high >= demand bottom AND close <= demand top.
+Short: A supply pivot is confirmed.
+Short: Supply zone is active AND high >= supply bottom AND low <= supply top.
+Short: Demand zone is released on the current bar.
+Short: Supply zone was released on an earlier bar AND low <= supply top AND close >= supply bottom.

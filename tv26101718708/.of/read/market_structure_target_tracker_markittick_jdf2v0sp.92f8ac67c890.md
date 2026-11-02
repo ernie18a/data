@@ -1,7 +1,10 @@
-Calculation: Confirmed pivot high = a bar's high is greater than the highs of the specified number of bars before and after it
-Calculation: Confirmed pivot low = a bar's low is less than the lows of the specified number of bars before and after it
-Calculation: Previous pivot high/low = the confirmed pivot high/low immediately before the most recent confirmed pivot high/low
-Long: On a confirmed bar, close > most recent confirmed pivot high not previously broken AND (HTF RSI > 50 when the HTF filter is enabled; RSI uses the last completed bar of a higher timeframe)
-Short: On a confirmed bar, close < most recent confirmed pivot low not previously broken AND (HTF RSI < 50 when the HTF filter is enabled; RSI uses the last completed bar of a higher timeframe)
-Exit: Long, high >= the pivot high immediately preceding the broken pivot high OR (before the target is hit and when auto-invalidation is enabled, close < the most recent confirmed pivot low recorded at the breakout)
-Exit: Short, low <= the pivot low immediately preceding the broken pivot low OR (before the target is hit and when auto-invalidation is enabled, close > the most recent confirmed pivot high recorded at the breakout)
+Calculation: Confirmed swing high or low = A pivot whose high is at least the highs of an equal number of preceding bars and strictly above the highs of the following bars, or whose low is at most the lows of the preceding bars and strictly below the lows of the following bars; it becomes available when the following bars have completed.
+Calculation: Break state = For each side, retain the latest confirmed swing and the swing bar most recently used for a break. A break uses that side's latest swing and replaces the active setup, storing the preceding confirmed swing of the same side as its target and the latest confirmed swing of the opposite side as its invalidation level. If both breaks occur on the same bar, process the long break first and the short break second. An invalidation clears both most recently used swing bars. A target hit is recorded before checking invalidation on each bar.
+Long: Close > latest confirmed swing high AND its bar differs from the swing high bar most recently used for a long break AND (higher-timeframe filter disabled OR RSI of the last completed higher-timeframe bar > RSI midpoint).
+Short: Close < latest confirmed swing low AND its bar differs from the swing low bar most recently used for a short break AND (higher-timeframe filter disabled OR RSI of the last completed higher-timeframe bar < RSI midpoint).
+Long: RSI of the last completed higher-timeframe bar > RSI midpoint.
+Short: RSI of the last completed higher-timeframe bar <= RSI midpoint.
+Exit: long, active long setup AND high >= its stored target.
+Exit: short, active short setup AND low <= its stored target.
+Exit: long, invalidation enabled AND active long setup AND its target has not been hit AND close < its stored invalidation level.
+Exit: short, invalidation enabled AND active short setup AND its target has not been hit AND close > its stored invalidation level.

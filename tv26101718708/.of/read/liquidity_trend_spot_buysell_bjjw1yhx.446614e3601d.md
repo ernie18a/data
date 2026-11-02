@@ -1,7 +1,4 @@
-Calculation: Global M2 = sum of US, Eurozone, Japan, China, UK, and Canada M2, each converted to USD using its corresponding exchange rate
-Calculation: Liquidity impulse z-score = z-score of the rate of change of smoothed Global M2 against its trailing lookback
-Calculation: Confirmed liquidity regime = bullish after the impulse z-score exceeds the positive threshold for the confirmation period; bearish after it falls below the negative threshold for the confirmation period; retain the prior regime between thresholds
-Calculation: Fast price average = Wilder-smoothed selected trend price with a shorter lookback
-Calculation: Slow price average = Wilder-smoothed selected trend price with a longer lookback
-Long: Confirmed liquidity regime is bullish OR fast price average > slow price average
-Exit: Long, confirmed liquidity regime is bearish AND fast price average < slow price average, after the minimum hold period
+Calculation: Trend state = shorter-period Wilder moving average of chart close > longer-period Wilder moving average of chart close; false if either average is unavailable.
+Calculation: Hold state = trend state on the first bar; thereafter, retain the previous hold state unless trend state differs from it and at least the minimum number of bars have elapsed since initialization or the last hold-state change, in which case set hold state to trend state.
+Long: Hold state = true AND previous hold state = false
+Exit: long, hold state = false AND previous hold state = true

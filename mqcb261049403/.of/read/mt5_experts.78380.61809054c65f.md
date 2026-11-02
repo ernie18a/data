@@ -1,6 +1,8 @@
-Calculation: Return volatility ratio = sample standard deviation of recent one-bar close-to-close returns divided by sample standard deviation of a longer window of those returns
-Calculation: Tick-volume z-score = current bar tick volume minus the recent-window mean, divided by that window’s standard deviation
-Calculation: Recent NR7 = at least one bar within the recent lookback has a high-low range no greater than the range of any of the seven bars ending with it
-Calculation: ATR = Wilder-smoothed average of true range, where true range is the greatest of high-low, absolute high minus prior close, and absolute low minus prior close
-Long: return volatility ratio < configured ceiling AND current-bar tick-volume z-score > configured floor AND recent average tick volume < configured ceiling AND recent NR7 is true AND signal bar opens within the evening entry window on a Monday through Friday AND no position is open
-Exit: long, low <= entry price - configured stop multiple × ATR recorded at entry OR high >= entry price + configured target multiple × ATR recorded at entry OR holding period >= configured maximum bars OR current time >= configured daily flat time, or one minute before the broker session ends if earlier
+Calculation: Return = (close - previous close) / previous close.
+Calculation: Volume z-score = (volume - simple moving average of volume) / sample standard deviation of volume over the same bars, including the signal bar.
+Calculation: Narrow-range bar = a bar whose high minus low is less than or equal to every bar range in a lookback ending at that bar.
+Calculation: Entry ATR = Wilder ATR of the signal bar, initialized with the true range at the oldest available bar in a warm-up of up to a parameterized multiple of the ATR period and updated through the signal bar.
+Long: No position is open AND no position was closed by the holding-period exit on this bar AND the previous bar's opening weekday is in the allowed set AND the previous bar's opening time is within the allowed session AND the sample standard deviation of returns over a shorter lookback divided by that over a longer lookback is below a threshold AND the volume z-score is above a threshold AND (the average-volume ceiling is disabled OR the simple moving average of volume over a longer lookback is below its ceiling) AND at least one narrow-range bar occurs within a recent lookback ending at the previous bar AND entry ATR > 0; enter at the current bar's open.
+Exit: long, low <= entry price - stop multiplier × entry ATR OR high >= entry price + target multiplier × entry ATR.
+Exit: long, bars elapsed since entry >= maximum holding period.
+Exit: long, time of day >= flat-time threshold.

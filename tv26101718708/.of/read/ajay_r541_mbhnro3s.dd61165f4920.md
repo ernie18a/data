@@ -1,2 +1,3 @@
-Long: The selected moving average of close crosses above the selected moving average of open on a higher-timeframe bar that is still forming
-Short: The selected moving average of close crosses below the selected moving average of open on a higher-timeframe bar that is still forming
+Calculation: Open and close averages = the same selected moving-average type and parameters applied separately to open and close, each delayed by a configurable number of bars before averaging. The type is TEMA, Hull moving average, or ALMA. Calculate both on either the chart timeframe or a higher timeframe. For the higher timeframe, historical bars use the final value of each higher-timeframe bar from the start of that bar; the current realtime bar uses its still-forming value.
+Long: Close average crosses above open average.
+Short: Close average crosses below open average.

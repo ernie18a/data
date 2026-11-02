@@ -1,4 +1,19 @@
-Calculation: Four-factor composite Z-score = weighted average, with weights normalized to sum to one, of Z-scores for rate of change of close, ATR, cumulative volume minus its EMA, and short EMA of close minus long EMA of close; each factor is standardized by subtracting its rolling mean and dividing by its rolling standard deviation. Use a shorter EMA length for the short EMA than the long EMA; use each factor's own lookback for its mean and standard deviation, and the long EMA lookback for the EMA-difference factor.
-Calculation: Composite moving average = EMA of the four-factor composite Z-score.
-Long: Composite moving-average slope crosses above zero OR percentage change in close over the divergence lookback is less than negative epsilon AND change in the four-factor composite Z-score over that lookback is greater than epsilon AND bars since the last divergence signal is at least the divergence cooldown.
-Short: Composite moving-average slope crosses below zero OR percentage change in close over the divergence lookback is greater than epsilon AND change in the four-factor composite Z-score over that lookback is less than negative epsilon AND bars since the last divergence signal is at least the divergence cooldown.
+Calculation: Factor Z-score = (factor minus its rolling SMA) divided by its rolling population standard deviation; use zero when the standard deviation is unavailable or nonpositive. Use the ROC lookback for ROC, ATR lookback for ATR, volume-flow lookback for volume flow, and longer EMA lookback for EMA difference.
+Calculation: Composite = the sum-normalized weighted average of the Z-scores of close ROC, ATR, volume flow, and EMA difference. Volume flow is cumulative volume minus its EMA. EMA difference is the shorter close EMA minus the longer close EMA. If all weights are zero, the composite is zero.
+Calculation: Composite slope = EMA of composite minus a separately calculated EMA of the previous-bar composite, substituting the current composite when the previous value is unavailable. Previous composite slope = that second EMA minus a separately calculated EMA of the composite two bars ago, substituting the current composite when unavailable. All three EMAs use the same length.
+Calculation: Price divergence slope = (close minus close at the divergence lookback) divided by close at the divergence lookback; substitute the current close when the historical close is unavailable and use zero when the denominator is zero.
+Calculation: Composite divergence slope = composite minus composite at the divergence lookback; substitute the current composite when the historical value is unavailable.
+Long: Composite slope > 0.
+Short: Composite slope < 0.
+Long: Composite slope > 0 AND previous composite slope <= 0.
+Short: Composite slope < 0 AND previous composite slope >= 0.
+Long: Composite > 0.
+Short: Composite < 0.
+Long: Composite < the low threshold OR composite > 0 AND composite <= the high threshold.
+Short: Composite > the high threshold OR composite < 0 AND composite >= the low threshold.
+Long: Any factor Z-score > 0.
+Short: Any factor Z-score < 0.
+Long: Composite crosses above the high threshold AND more than one bar has elapsed since the preceding high-threshold event.
+Short: Composite crosses below the low threshold AND more than one bar has elapsed since the preceding low-threshold event.
+Long: Price divergence slope < negative divergence epsilon AND composite divergence slope > divergence epsilon AND bars since the last bullish or bearish divergence >= divergence cooldown.
+Short: Price divergence slope > divergence epsilon AND composite divergence slope < negative divergence epsilon AND bars since the last bullish or bearish divergence >= divergence cooldown.

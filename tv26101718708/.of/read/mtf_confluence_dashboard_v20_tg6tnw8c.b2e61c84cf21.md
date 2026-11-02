@@ -1,5 +1,10 @@
-Calculation: Per-timeframe score = (+1 if close is above its EMA, −1 if below, 0 if equal) + (+1 if RSI is above its EMA signal line, −1 if below, 0 if equal). The close EMA uses a shorter lookback than the RSI signal EMA; RSI uses its own lookback. Use the five requested timeframes ordered from shortest to longest, each relative to the chart timeframe as configured. With lookahead off, use the last available completed requested-timeframe bar historically and the current requested-timeframe bar while it is forming in realtime.
-Calculation: Weighted score = score scale × the weighted average of the five per-timeframe scores, with the timeframe weights normalized to sum to 1; weights increase with timeframe length, with the two longest weights equal.
-Calculation: Effective threshold = signal threshold × volume multiplier when the volume filter is enabled and current volume is below its same-timeframe volume SMA; otherwise it equals the signal threshold.
-Long: Weighted score > effective threshold AND weighted score on the previous bar ≤ effective threshold
-Short: Weighted score < −effective threshold AND weighted score on the previous bar ≥ −effective threshold
+Calculation: Timeframe votes = for each of five configured timeframes ordered from shortest to longest, assign the close-versus-EMA vote +1 when close > EMA(close), -1 when close < EMA(close), and 0 otherwise; assign the RSI vote +1 when RSI(close) > EMA(RSI(close)), -1 when RSI(close) < EMA(RSI(close)), and 0 otherwise. For a higher timeframe use the last completed bar; for a lower timeframe use the last completed intrabar within the chart bar; for the chart timeframe use the current bar.
+Calculation: Raw score = sum of the two votes for a timeframe.
+Calculation: Weighted score = score scale multiplied by the sum of each timeframe's raw score times its nonnegative weight, divided by the sum of the weights.
+Calculation: Effective threshold = signal threshold multiplied by the volume multiplier if the optional volume filter is enabled AND chart-bar volume <= SMA(volume); otherwise the signal threshold.
+Long: Close > EMA(close) OR RSI(close) > EMA(RSI(close)), on any configured timeframe.
+Short: Close < EMA(close) OR RSI(close) < EMA(RSI(close)), on any configured timeframe.
+Long: Weighted score > 0.
+Short: Weighted score < 0.
+Long: Weighted score > effective threshold AND previous chart bar's weighted score <= its effective threshold.
+Short: Weighted score < -effective threshold AND previous chart bar's weighted score >= its negative effective threshold.

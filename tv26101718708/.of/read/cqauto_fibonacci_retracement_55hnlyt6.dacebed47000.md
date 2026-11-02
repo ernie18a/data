@@ -1,6 +1,4 @@
-Calculation: Pivot high = high floor(depth/2) bars ago is >= the highest high in the current depth-bar window
-Calculation: Pivot low = low floor(depth/2) bars ago is <= the lowest low in the current depth-bar window
-Calculation: Pivot deviation = 100 * (candidate pivot price - previous pivot price) / candidate pivot price
-Calculation: Pivot confirmation threshold = ATR(20) / close * wave-size
-Long: latest confirmed pivot is a low
-Short: latest confirmed pivot is a high
+Calculation: Pivot state = Start with pivot price 0, pivot side low, and no pivot pair. On each bar, a high candidate is the high at an offset of half the pivot lookback, truncated to an integer, if it equals the highest high over the pivot lookback ending on the current bar. Otherwise, a low candidate is the low at that offset if it equals the lowest low over that lookback. If a candidate has the same side as the last pivot and a pivot pair exists, replace the last pivot only if the candidate is more extreme. Otherwise, create a pivot pair and replace the last pivot if abs(100 × (candidate price − last pivot price) / candidate price) > ATR / close × 100 × deviation multiplier. A high candidate takes precedence even if it is rejected.
+Calculation: Post-pivot low = minimum of the last pivot price and the lowest low over the bars since the last pivot bar, using at least the current bar.
+Long: A pivot pair exists AND (last pivot side = low OR post-pivot low >= last pivot price)
+Short: A pivot pair exists AND last pivot side = high

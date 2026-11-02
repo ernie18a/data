@@ -1,12 +1,10 @@
-Calculation: Upper boundary = highest high over the reference range lookback, excluding the current bar, plus ATR times the boundary buffer
-Calculation: Lower boundary = lowest low over the reference range lookback, excluding the current bar, minus ATR times the boundary buffer
-Long: Close is above the upper boundary for the required number of consecutive bars, and the prior bar did not already meet that condition
-Long: A downside acceptance has failed within the failure window (close is above its accepted lower boundary)
-Long: After an upside acceptance failure, close crosses above its accepted boundary
-Long: An upside acceptance remains above its accepted boundary after the failure window
-Long: Failure risk for a downside acceptance crosses above its threshold
-Short: Close is below the lower boundary for the required number of consecutive bars, and the prior bar did not already meet that condition
-Short: An upside acceptance has failed within the failure window (close is below its accepted upper boundary)
-Short: After a downside acceptance failure, close crosses below its accepted boundary
-Short: A downside acceptance remains below its accepted boundary after the failure window
-Short: Failure risk for an upside acceptance crosses above its threshold
+Calculation: Volatility = maximum of ATR, current true range, and the minimum price increment; use zero for unavailable ATR.
+Calculation: Upper boundary = highest high over the preceding reference lookback bars, falling back to current high if unavailable, plus a volatility-scaled buffer. Lower boundary = lowest low over the same preceding bars, falling back to current low if unavailable, minus the same buffer.
+Calculation: New upward acceptance = close above that bar's upper boundary for every bar in the acceptance lookback AND the preceding bar did not satisfy that condition. New downward acceptance = close below that bar's lower boundary for every bar in the acceptance lookback AND the preceding bar did not satisfy that condition.
+Calculation: Acceptance state = initially no direction or boundary. On each new acceptance, store its direction, bar index, and corresponding current boundary, and set path state to accepted. Replace these values on every subsequent new acceptance.
+Calculation: Initial failure = stored acceptance exists AND bars since its acceptance are at most the failure window AND close is below the stored boundary for upward acceptance or above it for downward acceptance. Initial failure event = initial failure is true and was false on the preceding bar. Set path state to failed on an initial failure event.
+Calculation: Reclaim event = path state is failed AND close is above the stored boundary for upward acceptance or below it for downward acceptance. Set path state to reclaimed on a reclaim event.
+Calculation: Continuation = stored acceptance exists AND there is no initial failure event AND bars since acceptance exceed the failure window AND close is above the stored boundary for upward acceptance or below it for downward acceptance. Continuation event = continuation is true and was false on the preceding bar. Set path state to held on a continuation event.
+Calculation: Late failure = stored acceptance exists AND there is no initial failure event AND bars since acceptance exceed the failure window AND close is below the stored boundary for upward acceptance or above it for downward acceptance. Late failure event = late failure is true and was false on the preceding bar. Set path state to late failed on a late failure event. Apply state updates in the order: acceptance, initial failure, reclaim, continuation, late failure.
+Long: New upward acceptance OR initial failure event after downward acceptance OR late failure event after downward acceptance OR reclaim event after upward acceptance OR continuation event after upward acceptance.
+Short: New downward acceptance OR initial failure event after upward acceptance OR late failure event after upward acceptance OR reclaim event after downward acceptance OR continuation event after downward acceptance.

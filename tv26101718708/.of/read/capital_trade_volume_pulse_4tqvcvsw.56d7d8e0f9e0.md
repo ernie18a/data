@@ -1,8 +1,5 @@
-Calculation: Volume growth = (volume - previous bar volume) / previous bar volume × 100
-Calculation: Volume threshold 1 = EMA of volume + multiplier 1 × standard deviation of volume
-Calculation: Volume threshold 2 = EMA of volume + multiplier 2 × standard deviation of volume
-Calculation: Volume threshold 3 = EMA of volume + multiplier 3 × standard deviation of volume
-Calculation: Body high = max(open, close)
-Calculation: Body low = min(open, close)
-Long: (close >= open AND volume > 0 AND (volume threshold 3 is ready AND volume >= volume threshold 3 OR volume threshold 2 is ready AND volume >= volume threshold 2 AND volume < volume threshold 3 OR volume threshold 1 is ready AND volume >= volume threshold 1 AND volume < volume threshold 2 OR previous volume > 0 AND volume growth > growth threshold AND (volume threshold 1 is not ready OR volume < volume threshold 1))) OR (on a confirmed bar, a candidate 1 or 2 bars ago has the lowest body low among itself and the 1 or 2 bars on each side; allow equality with older bars only in Last Bar mode, and require strict inequality with newer bars)
-Short: (close < open AND volume > 0 AND (volume threshold 3 is ready AND volume >= volume threshold 3 OR volume threshold 2 is ready AND volume >= volume threshold 2 AND volume < volume threshold 3 OR volume threshold 1 is ready AND volume >= volume threshold 1 AND volume < volume threshold 2 OR previous volume > 0 AND volume growth > growth threshold AND (volume threshold 1 is not ready OR volume < volume threshold 1))) OR (on a confirmed bar, a candidate 1 or 2 bars ago has the highest body high among itself and the 1 or 2 bars on each side; allow equality with older bars only in Last Bar mode, and require strict inequality with newer bars)
+Calculation: Body low = min(open, close); body high = max(open, close).
+Long: Volume is not missing AND close >= open.
+Short: Volume is not missing AND close < open.
+Long: The body low of the candidate bar is lower than the body low of every bar between the candidate and the current closed bar, inclusive, AND is lower than or equal to each body low in the equally long window immediately before the candidate; in strict equality mode, it is strictly lower than each instead.
+Short: The body high of the candidate bar is higher than the body high of every bar between the candidate and the current closed bar, inclusive, AND is higher than or equal to each body high in the equally long window immediately before the candidate; in strict equality mode, it is strictly higher than each instead.

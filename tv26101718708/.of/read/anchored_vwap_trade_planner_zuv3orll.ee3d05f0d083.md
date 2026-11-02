@@ -1,15 +1,12 @@
-Calculation: Anchored VWAP = cumulative typical price × volume divided by cumulative volume, reset at the selected session, week, manual timestamp, or most recent pivot high/low anchor; typical price = (high + low + close) / 3
-Calculation: Z-score = (close − Anchored VWAP) / rolling standard deviation of (close − Anchored VWAP)
-Calculation: Long stop = signal-bar Anchored VWAP + (entry price − Anchored VWAP) × stop fraction − signal-bar ATR × buffer multiplier
-Calculation: Short stop = signal-bar Anchored VWAP + (entry price − Anchored VWAP) × stop fraction + signal-bar ATR × buffer multiplier
-Calculation: Profit target n = signal-bar Anchored VWAP + (entry price − Anchored VWAP) × target n multiplier; target multipliers increase from target 1 to target 2 to target 3
-Calculation: Long trailing stop = highest high since trailing starts − ATR × trail multiplier; ratchet upward only
-Calculation: Short trailing stop = lowest low since trailing starts + ATR × trail multiplier; ratchet downward only
-Long: close > Anchored VWAP AND Z-score >= positive threshold AND bars since previous signal >= cooldown
-Short: close < Anchored VWAP AND Z-score <= negative threshold AND bars since previous signal >= cooldown
-Exit: long, high >= profit target 1 OR low <= long stop
-Exit: long, high >= profit target 2 OR low <= long stop
-Exit: long, high >= profit target 3 OR (profit target 2 has been reached AND low <= long trailing stop) OR low <= long stop
-Exit: short, low <= profit target 1 OR high >= short stop
-Exit: short, low <= profit target 2 OR high >= short stop
-Exit: short, low <= profit target 3 OR (profit target 2 has been reached AND high >= short trailing stop) OR high >= short stop
+Calculation: Anchored VWAP = cumulative sum of selected price source times volume divided by cumulative volume, starting at the anchor bar. Select the anchor as the start of a session, the start of a week, the first bar crossing a specified timestamp, or the confirmation bar of a pivot high or low with equal left and right lookbacks. Restart accumulation at each anchor.
+Calculation: Deviation score = (close − anchored VWAP) / rolling standard deviation of (close − anchored VWAP); use zero when the standard deviation is unavailable or nonpositive.
+Calculation: Trade levels = at each long or short signal, store entry close, anchored VWAP and ATR; let distance = entry close − stored anchored VWAP. Each target = stored anchored VWAP + distance × its target multiplier; the first, second and third target multipliers are progressively larger. Stop = stored anchored VWAP + distance × stop multiplier − sign(distance) × stored ATR × buffer multiplier. Replace all stored levels and hit states on every new signal.
+Calculation: Trailing stop = after the second target is hit, for a long take the running maximum of high − longer-lookback ATR × trail multiplier; for a short take the running minimum of low + longer-lookback ATR × trail multiplier. Include the current bar and reset on each new signal.
+Long: Close > anchored VWAP AND deviation score >= positive threshold AND no previous signal exists OR close > anchored VWAP AND deviation score >= positive threshold AND bars since the most recent long or short signal >= cooldown.
+Short: Close < anchored VWAP AND deviation score <= negative threshold AND no previous signal exists OR close < anchored VWAP AND deviation score <= negative threshold AND bars since the most recent long or short signal >= cooldown.
+Exit: long, high >= first target AND first target has not previously been hit; close one third.
+Exit: long, high >= second target AND second target has not previously been hit; close one third.
+Exit: short, low <= first target AND first target has not previously been hit; close one third.
+Exit: short, low <= second target AND second target has not previously been hit; close one third.
+Exit: long, low <= stored stop OR third target enabled AND trail disabled AND high >= third target OR trail enabled AND second target has been hit AND low <= trailing stop.
+Exit: short, high >= stored stop OR third target enabled AND trail disabled AND low <= third target OR trail enabled AND second target has been hit AND high >= trailing stop.

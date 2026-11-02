@@ -1,5 +1,8 @@
-Calculation: Confirmed swing high/low = a high/low greater than/less than the highs/lows of the configured number of bars on each side; retain the latest confirmed pivot and clear it after a close breaks it.
-Long: close > latest uncleared swing high
-Short: close < latest uncleared swing low
-Long: low < latest uncleared swing low AND close > latest uncleared swing low
-Short: high > latest uncleared swing high AND close < latest uncleared swing high
+Calculation: Confirmed swing high or low = a pivot high or low confirmed by equal numbers of chart bars on each side. Keep the most recently confirmed high and low separately; replace each when a newer pivot of that kind is confirmed. After close breaks a stored high or low, clear that level before evaluating sweeps on the same bar.
+Calculation: Higher-timeframe sweep = on each of the three longer higher timeframes, using the last completed higher-timeframe bar, find the most recent prior completed bar within the sweep lookback whose low < its previous bar's low AND high > that previous low AND close > that previous low, or whose high > its previous bar's high AND close < that previous high. Classify the first condition as a bullish sweep and the second as a bearish sweep; if both hold, classify it as bullish.
+Long: Close > the stored confirmed swing high.
+Short: Close < the stored confirmed swing low.
+Long: Low < the stored confirmed swing low AND close > that swing low.
+Short: High > the stored confirmed swing high AND close < that swing high.
+Long: A higher-timeframe sweep is bullish AND the last completed higher-timeframe close >= the sweep close, OR a higher-timeframe sweep is bearish AND the last completed higher-timeframe close > the sweep close.
+Short: A higher-timeframe sweep is bearish AND the last completed higher-timeframe close <= the sweep close, OR a higher-timeframe sweep is bullish AND the last completed higher-timeframe close < the sweep close.

@@ -1,4 +1,4 @@
-Calculation: Mean period high/low = the average of the highest high / lowest low in each of iPeriod consecutive periods on the calculation timeframe; include the current period if configured to use a partial period, otherwise use completed periods.
-Calculation: Trend state = up when close > mean period high, down when close < mean period low, otherwise retain the previous bar's trend state.
-Long: Trend state is up AND the previous bar's trend state was not up
-Short: Trend state is down AND the previous bar's trend state was not down
+Calculation: Average high and average low = arithmetic means of the highs and lows, respectively, of a configurable number of delimiter intervals. A delimiter is a chart bar whose timestamp matches the boundary rule for a configurable higher timeframe. Each completed interval excludes its newer delimiter bar and includes its older delimiter bar. Use either all completed intervals, or replace the oldest completed interval with the forming interval from the current bar through the bar immediately after the latest delimiter. The forming interval excludes the delimiter bar and is undefined when empty.
+Calculation: Trend = 1 when close > average high; otherwise -1 when close < average low; otherwise the previous bar's trend. Initialize as undefined until a comparison sets it. Apply this calculation both on the chart timeframe and on a configurable higher timeframe; for the latter, select either the bar still forming or a completed bar at a configurable lag. Each application uses delimiter intervals on a timeframe higher than its calculation timeframe.
+Long: chart-timeframe trend = 1 OR selected higher-timeframe trend = 1
+Short: chart-timeframe trend = -1 OR selected higher-timeframe trend = -1

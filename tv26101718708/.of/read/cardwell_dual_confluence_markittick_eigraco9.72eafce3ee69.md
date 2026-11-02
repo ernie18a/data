@@ -1,14 +1,20 @@
-Calculation: Fast momentum = RMA of RSI, using a shorter RMA length than the slow momentum RMA; compare values on the last two completed chart bars
-Calculation: Bullish momentum cross = fast momentum was at or below slow momentum two chart bars ago and above it one chart bar ago
-Calculation: Bearish momentum cross = fast momentum was at or above slow momentum two chart bars ago and below it one chart bar ago
-Calculation: Bullish regime = chart close source is above its SMA and chart RSI is within inclusive configured bullish bounds for the configured number of consecutive completed chart bars
-Calculation: Bearish regime = chart close source is below its SMA and chart RSI is within inclusive configured bearish bounds for the configured number of consecutive completed chart bars
-Calculation: Bullish regime transition = bullish regime is true and was not true on the previous chart bar
-Calculation: Bearish regime transition = bearish regime is true and was not true on the previous chart bar
-Calculation: Cross-regime confluence = bullish (or bearish) momentum cross and matching regime transition occur within the configured bar window
-Calculation: Higher-timeframe regime = bullish or bearish regime evaluated on the last completed bar of a higher timeframe
-Calculation: Entry levels = previous completed chart bar close plus or minus the chart ATR measured when the signal is accepted, multiplied by configured stop-loss or take-profit factors; place stop and targets below entry for long positions and above entry for short positions
-Long: (both-required mode is off AND (bullish momentum cross OR bullish regime transition) OR both-required mode is on AND cross-regime confluence is bullish) AND (higher-timeframe filter is off OR higher-timeframe regime is bullish) AND (ADX filter is off OR ADX is at least its configured minimum) AND no accepted signal occurred within the configured cooldown bars
-Short: (both-required mode is off AND (bearish momentum cross OR bearish regime transition) OR both-required mode is on AND cross-regime confluence is bearish) AND (higher-timeframe filter is off OR higher-timeframe regime is bearish) AND (ADX filter is off OR ADX is at least its configured minimum) AND no accepted signal occurred within the configured cooldown bars
-Exit: long, chart low is at or below the long stop-loss level OR chart high is at or above any of the long take-profit levels OR a short entry is accepted
-Exit: short, chart high is at or above the short stop-loss level OR chart low is at or below any of the short take-profit levels OR a long entry is accepted
+Calculation: Bullish regime = for the required number of consecutive bars, the previous bar's trend source is above its SMA AND the previous bar's RSI of the trend RSI source is within the inclusive bullish range. The trend source and trend RSI source are configurable price-derived sources, defaulting to close.
+Calculation: Bearish regime = for the required number of consecutive bars, the previous bar's trend source is below its SMA AND the previous bar's RSI of the trend RSI source is within the inclusive bearish range.
+Calculation: Bullish crossover = the shorter RMA of close RSI was above the longer RMA on the previous bar AND at or below it on the bar before that.
+Calculation: Bearish crossover = the shorter RMA of close RSI was below the longer RMA on the previous bar AND at or above it on the bar before that.
+Calculation: Bullish regime onset = bullish regime is true AND bullish regime was false on the previous bar.
+Calculation: Bearish regime onset = bearish regime is true AND bearish regime was false on the previous bar.
+Calculation: Higher-timeframe regime = the regime calculated on higher-timeframe bars, using the last completed higher-timeframe bar's regime; that regime itself compares the preceding higher-timeframe bar's source and RSI and counts consecutive qualifying higher-timeframe bars.
+Calculation: Accepted long = (bullish crossover OR bullish regime onset) AND, if cross-and-regime confluence is enabled, the latest bullish crossover and bullish regime onset are at most the configured number of chart bars apart and one occurs on the current bar AND either no earlier accepted signal exists or the number of chart bars since the latest accepted long or short is at least the signal gap AND, if higher-timeframe confirmation is enabled, the higher-timeframe regime is bullish AND, if the ADX filter is enabled, chart-timeframe ADX is at least its threshold. Evaluate on confirmed chart bars.
+Calculation: Accepted short = (bearish crossover OR bearish regime onset) AND, if cross-and-regime confluence is enabled, the latest bearish crossover and bearish regime onset are at most the configured number of chart bars apart and one occurs on the current bar AND either no earlier accepted signal exists or the number of chart bars since the latest accepted long or short is at least the signal gap AND, if higher-timeframe confirmation is enabled, the higher-timeframe regime is bearish AND, if the ADX filter is enabled, chart-timeframe ADX is at least its threshold. Evaluate on confirmed chart bars.
+Calculation: Trade levels = on each accepted signal, set entry price to the previous chart bar's close and freeze chart-timeframe ATR from the signal bar. For a long, stop = entry price minus stop multiplier times frozen ATR and each of three targets = entry price plus its target multiplier times frozen ATR; for a short, stop = entry price plus stop multiplier times frozen ATR and each target = entry price minus its target multiplier times frozen ATR. A new accepted signal replaces the tracked trade and resets all target-hit flags; if both signals occur together, track the long. Before replacing the trade on a bar, mark targets touched by the previous bar as hit and deactivate the old trade if its stop or third target was touched by the previous bar.
+Long: The shorter RMA of close RSI is above the longer RMA.
+Short: The shorter RMA of close RSI is at or below the longer RMA.
+Long: Bullish regime is true.
+Short: Bearish regime is true.
+Long: Accepted long is true.
+Short: Accepted short is true.
+Exit: long, accepted short is true.
+Exit: short, accepted long is true.
+Exit: long, the tracked trade is active AND current high is at or above any target whose hit flag is false OR the tracked trade is active AND current low is at or below the stop.
+Exit: short, the tracked trade is active AND current low is at or below any target whose hit flag is false OR the tracked trade is active AND current high is at or above the stop.

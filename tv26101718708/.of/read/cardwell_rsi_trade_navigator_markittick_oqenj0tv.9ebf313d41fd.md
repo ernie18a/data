@@ -1,11 +1,13 @@
-Calculation: RSI = Relative Strength Index of close
-Calculation: Fast RSI RMA = RMA of RSI with a shorter lookback than the slow RSI RMA
-Calculation: Slow RSI RMA = RMA of RSI with a longer lookback than the fast RSI RMA
-Calculation: Higher-timeframe fast and slow RSI RMAs = RMAs of RSI calculated on the last completed bar of a higher timeframe
-Calculation: Initial risk distance = ATR of the chart timeframe on the last completed bar × stop multiplier
-Calculation: Long stop = entry price − initial risk distance; short stop = entry price + initial risk distance
-Calculation: Long target 3 = entry price + initial risk distance × target-3 multiple; short target 3 = entry price − initial risk distance × target-3 multiple
-Long: Fast RSI RMA > slow RSI RMA OR (fast RSI RMA on the prior completed chart bar > slow RSI RMA and fast RSI RMA two bars back ≤ slow RSI RMA, with higher-timeframe fast RSI RMA > slow RSI RMA when the higher-timeframe filter is enabled, and ADX on the prior completed chart bar ≥ its threshold when the ADX filter is enabled)
-Short: Fast RSI RMA < slow RSI RMA OR (fast RSI RMA on the prior completed chart bar < slow RSI RMA and fast RSI RMA two bars back ≥ slow RSI RMA, with higher-timeframe fast RSI RMA < slow RSI RMA when the higher-timeframe filter is enabled, and ADX on the prior completed chart bar ≥ its threshold when the ADX filter is enabled)
-Exit: Long, low ≤ long stop OR high ≥ long target 3
-Exit: Short, high ≥ short stop OR low ≤ short target 3
+Calculation: Fast and slow RSI filters = choose either Wilder moving averages of close-based RSI with shorter and longer lengths, respectively; linear regression endpoint estimates of RSI with shorter and longer lengths, respectively; or two scalar Kalman filters of RSI. For each Kalman filter, initialize estimate to the first available RSI and error covariance to 1; on each bar calculate gain = covariance / (covariance + measurement noise), estimate = previous estimate + gain × (RSI − previous estimate), and covariance = (1 − gain) × previous covariance + process noise. The slow filter uses measurement noise multiplied by the ratio of the longer length to the shorter length; both use the same process noise.
+Calculation: Higher-timeframe RSI filters = shorter- and longer-length Wilder moving averages of close-based RSI calculated on the higher timeframe, using its last completed bar, regardless of the chart-timeframe filter choice.
+Calculation: Entry risk = ATR on the bar preceding the signal multiplied by a stop-distance multiplier; use the signal bar's ATR if the preceding ATR is unavailable. Entry price is the preceding bar's close. Each of three target distances is entry risk multiplied by its corresponding independent target multiplier.
+Long: On the preceding chart bar, the fast RSI filter > the slow RSI filter.
+Short: On the preceding chart bar, the fast RSI filter < the slow RSI filter.
+Long: The current chart bar's fast RSI filter > its slow RSI filter.
+Short: The current chart bar's fast RSI filter <= its slow RSI filter.
+Long: Higher-timeframe fast RSI filter > higher-timeframe slow RSI filter.
+Short: Higher-timeframe fast RSI filter <= higher-timeframe slow RSI filter.
+Long: On the preceding chart bar, the fast RSI filter > the slow RSI filter AND two chart bars ago the fast RSI filter <= the slow RSI filter AND (higher-timeframe filter disabled OR higher-timeframe fast RSI filter > higher-timeframe slow RSI filter) AND (ADX filter disabled OR preceding chart bar's ADX >= threshold).
+Short: On the preceding chart bar, the fast RSI filter < the slow RSI filter AND two chart bars ago the fast RSI filter >= the slow RSI filter AND (higher-timeframe filter disabled OR higher-timeframe fast RSI filter < higher-timeframe slow RSI filter) AND (ADX filter disabled OR preceding chart bar's ADX >= threshold).
+Exit: long, current high >= entry price + any target distance not previously reached OR current low <= entry price − entry risk.
+Exit: short, current low <= entry price − any target distance not previously reached OR current high >= entry price + entry risk.

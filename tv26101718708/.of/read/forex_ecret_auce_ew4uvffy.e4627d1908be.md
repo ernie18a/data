@@ -1,31 +1,31 @@
-Calculation: 8AM range = highest high and lowest low of bars in the configured 8AM New York session, available after that session completes
-Calculation: Prior higher-timeframe range = high and low of the last completed higher-timeframe bar
-Calculation: Prior-day range = high and low of the last completed daily bar
-Calculation: Opening range = highest high and lowest low of bars during the configured opening-range window, available after it completes
-Calculation: Confirmed swing high = a bar high higher than the highs of the configured number of chart bars before and after it; confirmed after those following bars complete
-Calculation: Confirmed swing low = a bar low lower than the lows of the configured number of chart bars before and after it; confirmed after those following bars complete
-Calculation: Key levels = active prior-day, 8AM, prior higher-timeframe, preceding higher-timeframe, and opening-range highs, lows, and midpoints
-Calculation: Key-level tolerance = configured pip distance, or configured percentage of ATR from the last completed daily bar (higher timeframe)
-Calculation: Buy pressure = volume × (close − low) ÷ (high − low), or volume × 0.5 when high = low
-Calculation: Sell pressure = volume − buy pressure
-Calculation: Pressure delta = buy pressure − sell pressure
-Long: During the configured projection session after the 8AM session completes, low < 8AM range low AND close > 8AM range low, once per range
-Short: During the configured projection session after the 8AM session completes, high > 8AM range high AND close < 8AM range high, once per range
-Long: Low < prior higher-timeframe range low AND close > prior higher-timeframe range low, once per higher-timeframe range
-Short: High > prior higher-timeframe range high AND close < prior higher-timeframe range high, once per higher-timeframe range
-Long: Low < prior-day range low AND close > prior-day range low, once per day
-Short: High > prior-day range high AND close < prior-day range high, once per day
-Long: During the configured signal window after the opening range completes, close > opening-range high, once per range
-Short: During the configured signal window after the opening range completes, close < opening-range low, once per range
-Long: A confirmed swing low is swept for the first time (low < swing low) and reclaimed (close > swing low), during the configured reversal session if session filtering is enabled; if key-level-only filtering is enabled, the swing low is within key-level tolerance of any active key level
-Short: A confirmed swing high is swept for the first time (high > swing high) and rejected (close < swing high), during the configured reversal session if session filtering is enabled; if key-level-only filtering is enabled, the swing high is within key-level tolerance of any active key level
-Long: After a bullish swing-failure signal, close > the latest confirmed swing high within the configured bar window, before close falls below the signal bar low
-Short: After a bearish swing-failure signal, close < the latest confirmed swing low within the configured bar window, before close rises above the signal bar high
-Long: A newly confirmed swing high > the preceding confirmed swing high
-Long: A newly confirmed swing low > the preceding confirmed swing low
-Short: A newly confirmed swing high < the preceding confirmed swing high
-Short: A newly confirmed swing low < the preceding confirmed swing low
-Long: Volume is available AND pressure delta > moving average of absolute pressure delta × configured strength threshold AND close > open AND volume > its moving average; use the same configured lookback for both moving averages
-Short: Volume is available AND pressure delta < −(moving average of absolute pressure delta × configured strength threshold) AND close < open AND volume > its moving average; use the same configured lookback for both moving averages
-Long: Price retests an unbroken buying-pressure zone: low <= zone top AND previous bar low > zone top
-Short: Price retests an unbroken selling-pressure zone: high >= zone bottom AND previous bar high < zone bottom
+Calculation: Session range = highest high and lowest low of chart bars whose opening times fall within a configurable New York session; retain the completed range until its projection session ends.
+Calculation: Opening range = highest high and lowest low of chart bars whose opening times fall within a configurable New York opening interval; retain the completed range until its configured extension end. Its signal window starts at the opening time of the first chart bar after that interval and lasts a configurable duration.
+Calculation: Completed higher-timeframe ranges = high and low of the last completed bar and of the bar preceding it, separately for a shorter and a longer higher timeframe; update at each respective higher-timeframe boundary.
+Calculation: Confirmed swing high or low = a pivot high or low using the same configurable number of chart bars on each side, available only after the right-side bars have completed. A new confirmed swing replaces the previous swing of the same kind. A swing is marked swept after any subsequent bar exceeds it, including a bar that does not close back across it.
+Calculation: Key level = high, low or midpoint of an active session range, opening range, or last completed higher-timeframe range, or high or low of the preceding bar of the shorter higher timeframe. A swing is near a key level when their absolute difference is at most a configurable tolerance, expressed either as a price distance or as a configurable fraction of ATR on the last completed longer higher-timeframe bar.
+Calculation: Reversal setup = a qualifying swing sweep and reclaim. Store its bar index, its extreme, and the latest confirmed opposite swing at that moment. Cancel a pending setup when its age exceeds a configurable number of chart bars, its extreme is breached by a close, or an opposite reversal setup occurs. Check for confirmation before cancellation and before creating setups on each bar; a new same-side setup replaces the pending one.
+Calculation: Pressure delta = estimated buying volume minus estimated selling volume, where buying volume is volume multiplied by (close - low) / (high - low), or half of volume when high equals low; selling volume is volume minus buying volume. Treat missing volume as zero.
+Calculation: Buying pressure zone = [low, max(min(open, close), low + configurable fraction of (high - low))] on a strong buying pressure bar. Selling pressure zone = [min(max(open, close), high - configurable fraction of (high - low)), high] on a strong selling pressure bar. Before creating zones on each bar, remove buying zones when close is below their bottom and selling zones when close is above their top; otherwise check retests. Do not create a zone that overlaps an existing zone of the same side; if a side exceeds its configurable maximum zone count, remove its oldest zone.
+Calculation: Buying volume percentage = sum of estimated buying volume divided by sum of volume over a configurable chart-bar window; use a neutral percentage when summed volume is zero.
+Long: During the session range projection session, low < completed session-range low AND close > completed session-range low AND no earlier bullish sweep has occurred for that range.
+Short: During the session range projection session, high > completed session-range high AND close < completed session-range high AND no earlier bearish sweep has occurred for that range.
+Long: Low < last completed higher-timeframe low AND close > that low AND no earlier bullish sweep has occurred during the current higher-timeframe bar; evaluate separately for each higher timeframe.
+Short: High > last completed higher-timeframe high AND close < that high AND no earlier bearish sweep has occurred during the current higher-timeframe bar; evaluate separately for each higher timeframe.
+Long: Within the opening-range signal window and before its extension ends, close > opening-range high AND no earlier bullish breakout has occurred for that range.
+Short: Within the opening-range signal window and before its extension ends, close < opening-range low AND no earlier bearish breakout has occurred for that range.
+Long: Newly confirmed swing high > preceding confirmed swing high OR newly confirmed swing low > preceding confirmed swing low.
+Short: Newly confirmed swing high <= preceding confirmed swing high OR newly confirmed swing low <= preceding confirmed swing low.
+Long: The last completed higher-timeframe high > the preceding higher-timeframe high AND its low > the preceding higher-timeframe low; evaluate separately for each higher timeframe.
+Short: The last completed higher-timeframe high <= the preceding higher-timeframe high AND its low <= the preceding higher-timeframe low; evaluate separately for each higher timeframe.
+Long: Latest confirmed swing high > preceding confirmed swing high AND latest confirmed swing low > preceding confirmed swing low.
+Short: Latest confirmed swing high < preceding confirmed swing high AND latest confirmed swing low < preceding confirmed swing low.
+Long: Low < latest confirmed swing low AND close > that swing low AND that swing has not previously been swept AND the bar is in the configured reversal session when the session filter is enabled AND the swing is near a key level when the key-level filter is enabled.
+Short: High > latest confirmed swing high AND close < that swing high AND that swing has not previously been swept AND the bar is in the configured reversal session when the session filter is enabled AND the swing is near a key level when the key-level filter is enabled.
+Long: A bullish reversal setup is pending AND close > its stored opposite swing high AND its age is at most the configured confirmation window.
+Short: A bearish reversal setup is pending AND close < its stored opposite swing low AND its age is at most the configured confirmation window.
+Long: Volume has been positive on at least one bar AND pressure delta > a configurable multiple of its moving average absolute value AND close > open AND volume > its moving average, with both averages using the same lookback.
+Short: Volume has been positive on at least one bar AND pressure delta < the negative of a configurable multiple of its moving average absolute value AND close < open AND volume > its moving average, with both averages using the same lookback.
+Long: An active buying pressure zone has not been broken by the current close AND low <= its top AND previous low > its top.
+Short: An active selling pressure zone has not been broken by the current close AND high >= its bottom AND previous high < its bottom.
+Long: Volume has been positive on at least one bar AND buying volume percentage >= the neutral percentage.
+Short: Volume has been positive on at least one bar AND buying volume percentage < the neutral percentage.

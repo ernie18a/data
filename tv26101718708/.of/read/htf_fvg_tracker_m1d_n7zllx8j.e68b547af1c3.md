@@ -1,6 +1,6 @@
-Calculation: Bullish fair value gap = the low of the newest of three consecutive completed higher-timeframe bars is above the high of the oldest bar; gap height = newest low − oldest high
-Calculation: Bearish fair value gap = the high of the newest of three consecutive completed higher-timeframe bars is below the low of the oldest bar; gap height = oldest low − newest high
-Calculation: Bullish suspension block = three consecutive completed higher-timeframe bars all close above their opens, with the middle open above the oldest close and the newest open above the middle close; zone height = newest open − oldest close
-Calculation: Bearish suspension block = three consecutive completed higher-timeframe bars all close below their opens, with the middle open below the oldest close and the newest open below the middle close; zone height = oldest close − newest open
-Long: tracking is enabled for the higher timeframe AND the chart bar has closed after a new higher-timeframe bar begins AND (bullish fair value gap OR bullish suspension block) AND (for daily zones, gap or zone height is at least the minimum daily gap)
-Short: tracking is enabled for the higher timeframe AND the chart bar has closed after a new higher-timeframe bar begins AND (bearish fair value gap OR bearish suspension block) AND (for daily zones, gap or zone height is at least the minimum daily gap)
+Calculation: A, B, C = the three most recent completed bars, oldest to newest, of a tracked timeframe that is equal to or higher than the chart timeframe; evaluate on the close of the first chart bar of each new tracked-timeframe bar.
+Calculation: Adjacent seams = each difference between consecutive tracked-bar open times is within a configurable tolerance of the tracked timeframe's duration.
+Long: C.low > A.high AND C.low - A.high >= the tracked timeframe's minimum zone height.
+Short: C.high < A.low AND A.low - C.high >= the tracked timeframe's minimum zone height.
+Long: Suspension blocks enabled AND adjacent seams AND A.close > A.open AND B.close > B.open AND C.close > C.open AND B.open > A.close AND C.open > B.close AND C.open - A.close >= the tracked timeframe's minimum zone height.
+Short: Suspension blocks enabled AND adjacent seams AND A.close < A.open AND B.close < B.open AND C.close < C.open AND B.open < A.close AND C.open < B.close AND A.close - C.open >= the tracked timeframe's minimum zone height.
