@@ -1,0 +1,5 @@
+Calculation: TMEI = WMA of an entropy-based directional score: classify RSI values into five bands (≥70, 55–70, 45–55, 30–45, ≤30); calculate each band’s frequency over a rolling window; score the distribution as 100 × (1 − Shannon entropy / maximum entropy); multiply by the sign of the weighted bullish-minus-bearish band frequencies and by a volume multiplier. The multiplier is 0.3 when bullish bias coincides with CMF below −0.05 or bearish bias with CMF above +0.05; otherwise it is 1. RSI, band-frequency, CMF, and WMA lookbacks are parameters.
+Long: TMEI crosses above the neutral threshold OR crosses above the bullish expansion threshold
+Short: TMEI crosses below the negative neutral threshold OR crosses below the bearish expansion threshold
+Exit: Long, TMEI falls below the long hysteresis exit threshold (below the neutral threshold)
+Exit: Short, TMEI rises above the short hysteresis exit threshold (above the negative neutral threshold)

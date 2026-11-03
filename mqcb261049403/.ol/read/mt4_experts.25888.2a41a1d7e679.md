@@ -1,0 +1,2 @@
+Long: EURUSD MACD main line on the previous completed bar of the higher indicator timeframe < GBPUSD MACD main line on that bar AND EURUSD MACD main line on the latest completed bar of the higher indicator timeframe > GBPUSD MACD main line on that bar
+Short: GBPUSD MACD main line on the previous completed bar of the higher indicator timeframe < EURUSD MACD main line on that bar AND GBPUSD MACD main line on the latest completed bar of the higher indicator timeframe > EURUSD MACD main line on that bar

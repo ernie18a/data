@@ -1,0 +1,4 @@
+Long: every enabled RSI from its selected higher timeframe, evaluated on the currently forming bar, < buy threshold AND buy cooldown counter >= cooldown period
+Short: every enabled RSI from its selected higher timeframe, evaluated on the currently forming bar, > sell threshold AND sell cooldown counter >= cooldown period
+Exit: Short, every enabled RSI from its selected higher timeframe, evaluated on the currently forming bar, < buy threshold AND buy cooldown counter >= cooldown period
+Exit: Long, every enabled RSI from its selected higher timeframe, evaluated on the currently forming bar, > sell threshold AND sell cooldown counter >= cooldown period

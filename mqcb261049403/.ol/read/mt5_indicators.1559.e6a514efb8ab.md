@@ -1,0 +1,4 @@
+Long: day_of_week(datetime) = Friday AND minute(datetime) = 0 AND hour(datetime) = configured opening hour AND open of the last completed daily bar (higher timeframe) > close of that bar
+Short: day_of_week(datetime) = Friday AND minute(datetime) = 0 AND hour(datetime) = configured opening hour AND open of the last completed daily bar (higher timeframe) < close of that bar
+Exit: long, day_of_week(datetime) = Friday AND minute(datetime) = 0 AND hour(datetime) = configured closing hour AND open of the last completed daily bar (higher timeframe) > close of that bar
+Exit: short, day_of_week(datetime) = Friday AND minute(datetime) = 0 AND hour(datetime) = configured closing hour AND open of the last completed daily bar (higher timeframe) < close of that bar

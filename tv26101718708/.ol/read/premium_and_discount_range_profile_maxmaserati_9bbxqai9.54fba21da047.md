@@ -1,0 +1,11 @@
+Calculation: Range high = highest high over a rolling lookback of chart-timeframe bars, including the current bar
+Calculation: Range low = lowest low over the same lookback
+Calculation: Range midpoint = (range high + range low) / 2
+Calculation: Bin volume and buy/sell volume = Divide the range into equal price bins. For each bar, allocate its volume to each bin in proportion to the overlap of the bar's high-low range with the bin. Estimate buy/sell volume using body and wick proportions: for an up bar, buy fraction = clamp(0.5 + 0.3 × abs(close − open) / bar range − 0.1 × upper wick / bar range, 0.1, 0.9); for a down bar, sell fraction = clamp(0.5 + 0.3 × abs(close − open) / bar range − 0.1 × lower wick / bar range, 0.1, 0.9); for a doji, split equally. Allocate estimated buy and sell volume using the same overlap proportions.
+Calculation: Edge status = Compare the edge bin's volume with the maximum bin volume (POC). At the high edge, volume at least the HVN fraction of POC with sell volume greater than buy volume is rejection; the same volume with buy volume at least sell volume is acceptance. At the low edge, reverse buy and sell dominance for rejection and acceptance. If the edge bin is at most the LVN fraction of POC, classify it as rejection when a bin within the configured scan depth from that edge has volume at least the HVN fraction of POC and is dominated by sellers (high edge) or buyers (low edge), or has directional volume more than 1.5 times opposing volume and total volume greater than 0.2 times POC volume. Otherwise it is exhaustion without rejection.
+Calculation: First step up = On a confirmed chart-timeframe bar, the midpoint rises and did not rise on the previous bar
+Calculation: First step down = On a confirmed chart-timeframe bar, the midpoint falls and did not fall on the previous bar
+Long: close < range midpoint AND first step up AND low edge status is rejection
+Short: close > range midpoint AND first step down AND high edge status is rejection
+Exit: Long, low edge status is acceptance OR current low < the lowest low over the preceding lookback bars
+Exit: Short, high edge status is acceptance OR current high > the highest high over the preceding lookback bars

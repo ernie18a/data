@@ -1,0 +1,3 @@
+Calculation: Adaptive HiLo upper and lower bands = SMA of high and SMA of low over an adaptive length; adaptive length = base length × [1 + (1 − ATR / longer-term SMA(ATR)) × adjustment factor], rounded to an integer and floored at the minimum length.
+Long: HiLo state switches to bullish when close > adaptive upper band and the prior state was not bullish OR the latest confirmed pivot high > the previous confirmed pivot high AND the latest confirmed pivot low > the previous confirmed pivot low.
+Short: HiLo state switches to bearish when close < adaptive lower band and the prior state was not bearish OR the latest confirmed pivot high < the previous confirmed pivot high AND the latest confirmed pivot low < the previous confirmed pivot low.

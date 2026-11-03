@@ -1,0 +1,3 @@
+Calculation: kNN score = Sum the direction labels of stored samples within the kth-smallest Euclidean distance from the current (ADX, MFI) pair. Each sample stores ADX and MFI from a VWMA-crossing bar and is labeled +1 if the source on the next crossing is at least its value on the previous crossing, otherwise −1. Include the initial sample (0, 0) with label 0.
+Long: Fast VWMA crosses above slow VWMA AND (kNN filter is disabled OR kNN score ≥ minimum difference)
+Short: Fast VWMA crosses below slow VWMA AND (kNN filter is disabled OR kNN score ≤ −minimum difference)

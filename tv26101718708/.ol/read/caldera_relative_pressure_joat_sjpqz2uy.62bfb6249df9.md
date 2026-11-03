@@ -1,0 +1,13 @@
+Calculation: True range = high minus low
+Calculation: Relative volume = volume divided by its longer-lookback simple moving average
+Calculation: Volume z-score = (volume minus its lookback simple moving average) divided by its lookback standard deviation
+Calculation: Body ratio = absolute(close minus open) divided by true range
+Calculation: Close location = ((close minus low) minus (high minus close)) divided by true range
+Calculation: Upper/lower wick ratio = (high minus max(open, close)) / true range; (min(open, close) minus low) / true range
+Calculation: Pressure composite = EMA of 100 × relative volume × (0.40 × clamp(0.55 × (close−open)/true range + 0.45 × body ratio × sign(close−open), −1, 1) + 0.35 × tanh(clamp(4 × (close−open)/ATR, −2.5, 2.5)) + 0.25 × clamp(close location + 0.5 × (lower wick ratio−upper wick ratio), −1, 1)); use a short smoothing lookback
+Calculation: Pressure signal = EMA of pressure composite using a longer smoothing lookback than the pressure composite
+Calculation: Trend context = baseline EMA of close; rising when its current value exceeds its previous value, falling when below
+Calculation: Recent pressure high/low = highest/lowest pressure composite over a lookback
+Calculation: Momentum fade = short-term EMA of close−open minus its longer-term EMA
+Long: (pressure composite > positive drive threshold AND pressure composite > pressure signal AND close location > 0 AND (close >= trend baseline OR trend baseline is not rising)) OR (volume z-score > absorption volume threshold AND lower wick ratio > upper wick ratio AND body ratio < absorption range cap AND close location > 0.10 AND pressure composite > 0 AND (close >= trend baseline OR trend baseline is not rising)) OR (recent pressure low < negative drive threshold AND pressure composite < negative drive threshold × 0.55 AND pressure composite > recent pressure low × 0.88 AND momentum fade > 0 AND close location > −0.15)
+Short: (pressure composite < negative drive threshold AND pressure composite < pressure signal AND close location < 0 AND (close <= trend baseline OR trend baseline is not falling)) OR (volume z-score > absorption volume threshold AND upper wick ratio > lower wick ratio AND body ratio < absorption range cap AND close location < −0.10 AND pressure composite < 0 AND (close <= trend baseline OR trend baseline is not falling)) OR (recent pressure high > positive drive threshold AND pressure composite > positive drive threshold × 0.55 AND pressure composite < recent pressure high × 0.88 AND momentum fade < 0 AND close location < 0.15)

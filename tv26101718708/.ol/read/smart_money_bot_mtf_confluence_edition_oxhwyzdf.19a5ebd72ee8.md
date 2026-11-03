@@ -1,0 +1,10 @@
+Calculation: Demand zone = after three consecutive bullish candles, with the current candle’s range greater than ATR × momentum threshold, set the zone top and bottom to the high and low from three bars before the current bar; retain these bounds until another qualifying sequence replaces them
+Calculation: Supply zone = after three consecutive bearish candles, with the current candle’s range greater than ATR × momentum threshold, set the zone top and bottom to the high and low from three bars before the current bar; retain these bounds until another qualifying sequence replaces them
+Calculation: Long initial stop = demand zone bottom − ATR × stop buffer
+Calculation: Long target = entry signal close + (entry signal close − long initial stop) × reward-to-risk ratio
+Calculation: Short initial stop = supply zone top + ATR × stop buffer
+Calculation: Short target = entry signal close − (short initial stop − entry signal close) × reward-to-risk ratio
+Long: current low <= demand zone top AND current low >= demand zone bottom AND current close > current open AND previous close < previous open AND current close > previous open AND current close > previous close AND both higher-timeframe completed closes > their respective EMAs
+Short: current high >= supply zone bottom AND current high <= supply zone top AND current close < current open AND previous close > previous open AND current close < previous open AND current close < previous close AND both higher-timeframe completed closes < their respective EMAs
+Exit: Long, current low <= long initial stop OR current high >= long target OR (current high > entry price + breakeven trigger distance AND current low <= entry price) OR (trailing stop active after price reaches entry price + trail activation distance AND current low <= highest high since activation − trail offset)
+Exit: Short, current high >= short initial stop OR current low <= short target OR (current low < entry price − breakeven trigger distance AND current high >= entry price) OR (trailing stop active after price reaches entry price − trail activation distance AND current high >= lowest low since activation + trail offset)

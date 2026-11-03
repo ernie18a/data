@@ -1,0 +1,10 @@
+Calculation: Shorter-timeframe support = current-forming low − ATR (same lookback as for longer-timeframe support), on the shorter of two higher timeframes
+Calculation: Longer-timeframe support = current-forming low − ATR (same lookback), on the longer higher timeframe
+Calculation: Shorter-timeframe resistance = current-forming high + ATR (same lookback as for longer-timeframe resistance), on the shorter of two higher timeframes
+Calculation: Longer-timeframe resistance = current-forming high + ATR (same lookback), on the longer higher timeframe
+Calculation: Lower entry boundary = if shorter-timeframe support < current price, shorter-timeframe support − buffer; else if longer-timeframe support < current price, longer-timeframe support − buffer; else current price − anchor distance − buffer
+Calculation: Upper entry boundary = if shorter-timeframe resistance > current price, shorter-timeframe resistance + buffer; else if longer-timeframe resistance > current price, longer-timeframe resistance + buffer; else current price + anchor distance + buffer
+Long: high >= upper entry boundary
+Short: low <= lower entry boundary
+Exit: long, low <= active stop level
+Exit: short, high >= active stop level

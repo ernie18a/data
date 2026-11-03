@@ -1,0 +1,5 @@
+Calculation: Bullish fractal support = low[3] when low[3] < low[4], low[4] < low[5], low[2] > low[3], low[1] > low[2], and volume[3] > the 6-bar SMA of volume at bar [3]; otherwise retain the last bullish fractal support
+Calculation: ATR test statistic = (short-lookback ATR − longer-lookback ATR) / (standard deviation of true range over the short ATR lookback / square root of the short ATR lookback)
+Calculation: Long trailing stop = current low − configured ATR multiple × ATR; while long, ratchet it to the greater of this value and the prior stop
+Long: datetime >= configured backtest start time AND close >= latest bullish fractal support AND ATR test statistic < −configured critical value
+Exit: Long, low <= long trailing stop OR (close > entry price AND close >= entry price + the next unfilled configured profit target in R × initial risk, where initial risk is ATR at entry × configured ATR multiple; targets are checked in order, first through third)

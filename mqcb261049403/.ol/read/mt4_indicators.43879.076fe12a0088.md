@@ -1,0 +1,2 @@
+Long: The selected moving average on the chart timeframe, or on the configured higher timeframe's still-forming bar, is greater than its value on the preceding bar of that timeframe.
+Short: The selected moving average on the chart timeframe, or on the configured higher timeframe's still-forming bar, is less than its value on the preceding bar of that timeframe.

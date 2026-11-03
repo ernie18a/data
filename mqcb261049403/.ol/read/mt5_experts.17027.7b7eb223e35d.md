@@ -1,0 +1,5 @@
+Calculation: Fractal-adaptive +DI and −DI = Compute +DM and −DM from successive highs and lows, zeroing the smaller directional move (both zero if tied); divide each by true range and multiply by 100. Set the smoothing period to the rounded product of normal speed and 1/(2H), where H = 2 − FDI; calculate FDI from the normalized applied-price path over the fractal lookback as 1 + (ln(path length) + ln 2)/ln(2 × (lookback − 1)), with each path step √(change² + 1/lookback²). Smooth both directional series with an EMA using that period.
+Long: On the lower indicator timeframe, the latest completed bar’s +DI > −DI AND the preceding completed bar’s +DI ≤ −DI
+Short: On the lower indicator timeframe, the latest completed bar’s +DI < −DI AND the preceding completed bar’s +DI ≥ −DI
+Exit: long, latest completed bar’s +DI < −DI on the lower indicator timeframe
+Exit: short, latest completed bar’s +DI > −DI on the lower indicator timeframe

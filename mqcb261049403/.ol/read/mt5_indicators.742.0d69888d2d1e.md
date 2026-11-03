@@ -1,0 +1,3 @@
+Calculation: Fisher Transform = on higher-timeframe bars, let midpoint = (high + low) / 2; normalize it within its rolling lookback high and low as v = 0.5 × ((midpoint − rolling low) / (rolling high − rolling low) − 0.5) + 0.5 × prior v (use 0 if rolling range is zero), clamp v to [−0.9999, 0.9999], then Fisher = 0.25 × ln((1 + v) / (1 − v)) + 0.5 × prior Fisher; the trigger is the prior bar’s Fisher. Evaluate on the selected higher-timeframe bar, which is forming at offset 0 and completed at older offsets.
+Long: Fisher Transform > trigger
+Short: Fisher Transform < trigger

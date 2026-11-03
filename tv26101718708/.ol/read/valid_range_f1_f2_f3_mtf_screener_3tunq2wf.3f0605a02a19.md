@@ -1,0 +1,8 @@
+Calculation: Bullish F1 setup starts = previous bar closes above its open, optionally previous high > previous close when the F1 wick requirement is enabled, and current bar closes below its open and has a high below the previous high and outside the F3 equal-high tolerance.
+Calculation: Bullish F2 setup starts = previous bar closes above its open and current bar closes below its open and above the previous high.
+Calculation: Bullish F3 setup starts = previous bar closes above its open and current bar closes below its open, with current high within the configured tolerance of the previous high and current close at or below the previous high.
+Calculation: Bearish F1, F2, and F3 setups = exact mirrors of the corresponding bullish setups, with price highs and lows exchanged and candle direction reversed.
+Calculation: Confirmed bullish setup = an active bullish setup has at least one pullback bar, meets the configured minimum pullback duration, and price breaks its structure level before invalidation or the configured pullback-bar limit; a break is high above the level in wick mode or close above it in close mode. The structure level is the F1 previous-bar high or the F2/F3 setup-start bar high. Invalidation is a low below the F1 candle's low or the F2/F3 preceding candle's low.
+Calculation: Confirmed bearish setup = exact mirror of a confirmed bullish setup; a break is low below the structure level in wick mode or close below it in close mode, and invalidation is a high above the corresponding candle's high.
+Long: Bullish F1 setup starts OR bullish F2 setup starts OR bullish F3 setup starts OR a bullish setup is confirmed.
+Short: Bearish F1 setup starts OR bearish F2 setup starts OR bearish F3 setup starts OR a bearish setup is confirmed.

@@ -1,0 +1,4 @@
+Calculation: Uptrend = with EMA filter, close > EMA(close, long lookback) AND EMA > its value at the slope lookback; with ADX/DMI filter, ADX > threshold AND +DI > -DI; with combined filter, both conditions
+Calculation: Downtrend = with EMA filter, close < EMA(close, long lookback) AND EMA < its value at the slope lookback; with ADX/DMI filter, ADX > threshold AND -DI > +DI; with combined filter, both conditions
+Long: Uptrend AND oscillator > uptrend pullback level AND previous-bar oscillator <= uptrend pullback level OR no trend AND oscillator > oversold level AND previous-bar oscillator <= oversold level
+Short: Downtrend AND oscillator < downtrend pullback level AND previous-bar oscillator >= downtrend pullback level OR no trend AND oscillator < overbought level AND previous-bar oscillator >= overbought level

@@ -1,0 +1,17 @@
+Calculation: Opening box = highest high and lowest low during the configured opening session; usable after the session ends
+Calculation: Breakout buffer = chart-timeframe ATR × breakout-buffer parameter
+Calculation: Retest tolerance = chart-timeframe ATR × retest-tolerance parameter
+Calculation: Relative volume = current chart-bar volume ÷ its longer-lookback chart-timeframe average volume
+Calculation: Regime EMA = EMA of close on a higher timeframe, using the last completed higher-timeframe bar
+Calculation: Regime slope = regime EMA on the last completed higher-timeframe bar − regime EMA on the prior completed higher-timeframe bar
+Calculation: Long stop = opening-box high − stop-distance parameter × opening-box height
+Calculation: Short stop = opening-box low + stop-distance parameter × opening-box height
+Calculation: Measured long target = opening-box high + target-distance parameter × opening-box height
+Calculation: Measured short target = opening-box low − target-distance parameter × opening-box height
+Calculation: Fixed-R long target = actual entry price + fixed-R parameter × initial risk
+Calculation: Fixed-R short target = actual entry price − fixed-R parameter × initial risk
+Calculation: Active stop = planned stop; after price reaches 1R in favor, long stop = max(planned stop, actual entry price) and short stop = min(planned stop, actual entry price)
+Long: opening box is complete AND (close > opening-box high + breakout buffer AND previous close <= opening-box high + breakout buffer AND no breakout has yet been locked for this box AND (regime filter disabled OR (close > regime EMA AND regime slope > 0)) AND (relative-volume filter disabled OR relative volume >= minimum) OR entry is unused for this box AND (entry mode is Direct Breakout AND this is the qualified first long breakout OR entry mode is Retest Confirmation AND a long breakout is locked AND the first retest occurred within the retest window AND low <= opening-box high + retest tolerance AND (if confirmation must close outside the box, close > opening-box high; otherwise close > open AND close >= opening-box high − retest tolerance))) AND position is flat AND opening-box height > 0
+Short: opening box is complete AND (close < opening-box low − breakout buffer AND previous close >= opening-box low − breakout buffer AND no breakout has yet been locked for this box AND (regime filter disabled OR (close < regime EMA AND regime slope < 0)) AND (relative-volume filter disabled OR relative volume >= minimum) OR entry is unused for this box AND (entry mode is Direct Breakout AND this is the qualified first short breakout OR entry mode is Retest Confirmation AND a short breakout is locked AND the first retest occurred within the retest window AND high >= opening-box low − retest tolerance AND (if confirmation must close outside the box, close < opening-box low; otherwise close < open AND close <= opening-box low + retest tolerance))) AND position is flat AND opening-box height > 0
+Exit: long, low <= active stop OR (exit mode is measured target AND high >= measured long target) OR (exit mode is fixed-R AND high >= fixed-R long target) OR (exit mode is next opening box AND a new opening session begins)
+Exit: short, high >= active stop OR (exit mode is measured target AND low <= measured short target) OR (exit mode is fixed-R AND low <= fixed-R short target) OR (exit mode is next opening box AND a new opening session begins)

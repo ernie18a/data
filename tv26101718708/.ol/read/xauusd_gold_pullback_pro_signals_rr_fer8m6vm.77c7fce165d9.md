@@ -1,0 +1,5 @@
+Calculation: Candle body percentage = absolute(close − open) ÷ (high − low) × 100; use 0 when high = low
+Long: Short-lookback EMA > longer-lookback EMA AND close > VWAP AND ADX > minimum ADX threshold AND +DI > −DI AND low ≤ short-lookback EMA AND close > short-lookback EMA AND close > open AND candle body percentage > minimum body percentage threshold AND bars since last exit > cooldown interval (or no prior exit) AND position side is not long AND chart bar is complete
+Short: Short-lookback EMA < longer-lookback EMA AND close < VWAP AND ADX > minimum ADX threshold AND −DI > +DI AND high ≥ short-lookback EMA AND close < short-lookback EMA AND close < open AND candle body percentage > minimum body percentage threshold AND bars since last exit > cooldown interval (or no prior exit) AND position side is not short AND chart bar is complete
+Exit: long, chart bar is complete AND (close < short-lookback EMA OR close < VWAP)
+Exit: short, chart bar is complete AND (close > short-lookback EMA OR close > VWAP)

@@ -1,0 +1,4 @@
+Calculation: Prior comparison-timeframe high = high of the immediately preceding completed bar on the selected comparison timeframe.
+Calculation: Prior comparison-timeframe low = low of the immediately preceding completed bar on the selected comparison timeframe.
+Long: Current comparison-series low on the selected timeframe < prior comparison-timeframe low AND current primary-series low on the selected timeframe >= its prior comparison-timeframe low
+Short: Current comparison-series high on the selected timeframe > prior comparison-timeframe high AND current primary-series high <= its prior comparison-timeframe high

@@ -1,0 +1,2 @@
+Long: A confirmed RSI pivot low is higher than the previous confirmed RSI pivot low AND the corresponding price low is lower than the previous pivot low AND the prior pivot confirmation was 5–60 bars earlier
+Short: A confirmed RSI pivot high is lower than the previous confirmed RSI pivot high AND the corresponding price high is higher than the previous pivot high AND the prior pivot confirmation was 5–60 bars earlier

@@ -1,0 +1,2 @@
+Long: RSI on the current forming bar of a configured timeframe that is the same as or higher than the chart timeframe > its overbought level
+Short: RSI on the current forming bar of a configured timeframe that is the same as or higher than the chart timeframe < its oversold level

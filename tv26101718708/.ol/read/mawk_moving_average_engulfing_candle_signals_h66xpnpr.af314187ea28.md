@@ -1,0 +1,2 @@
+Long: previous close <= previous open AND close > open AND close > previous high AND open < previous low
+Short: previous close > previous open AND close <= open AND open > previous high AND close < previous low

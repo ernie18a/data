@@ -1,0 +1,2 @@
+Long: JMA on the chart timeframe, current bar >= previous bar OR JMA on a higher timeframe, bar containing the chart bar (still forming), >= its previous bar
+Short: JMA on the chart timeframe, current bar < previous bar OR JMA on a higher timeframe, bar containing the chart bar (still forming), < its previous bar

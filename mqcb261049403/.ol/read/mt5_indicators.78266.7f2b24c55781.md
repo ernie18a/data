@@ -1,0 +1,2 @@
+Long: current forming higher-timeframe daily close > daily open OR current forming higher-timeframe weekly close > weekly open OR current forming higher-timeframe monthly close > monthly open
+Short: current forming higher-timeframe daily close < daily open OR current forming higher-timeframe weekly close < weekly open OR current forming higher-timeframe monthly close < monthly open

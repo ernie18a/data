@@ -1,0 +1,3 @@
+Calculation: Bullish setup = volume > volume SMA AND close > open AND high < close SMA AND low < close SMA AND high - max(open, close) < abs(close - open) × wick-ratio threshold
+Calculation: Bearish setup = volume > volume SMA AND close < open AND low > close SMA AND high > close SMA AND min(open, close) - low < abs(close - open) × wick-ratio threshold
+Long: Bullish setup AND the most recent prior bullish or bearish setup was bullish AND current low > the low of that prior bullish setup

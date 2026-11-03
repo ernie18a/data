@@ -1,0 +1,3 @@
+Calculation: Confluence score = weighted sum of +weight when stochastic %K > %D, RSI > its midpoint, or MACD line > signal line, and −weight otherwise, evaluated for each indicator on the chart timeframe and two higher timeframes; chart-timeframe components have lower weights than higher-timeframe components. Use the bar still forming on each timeframe.
+Long: Confluence score > bullish threshold
+Short: Confluence score < bearish threshold

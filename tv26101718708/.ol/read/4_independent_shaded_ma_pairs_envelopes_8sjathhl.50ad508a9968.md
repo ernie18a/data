@@ -1,0 +1,3 @@
+Calculation: Each of four independent pairs uses two configured moving averages (SMA, EMA, WMA, HMA, RMA, or VWMA) of configured sources and lookbacks. Each uses its configured timeframe, which may be higher or lower than the chart timeframe, and the bar still forming; in pair 4, the first average has a shorter lookback than the second.
+Long: In any pair, first moving average > second moving average
+Short: In any pair, first moving average < second moving average

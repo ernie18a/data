@@ -1,0 +1,4 @@
+Calculation: Intrabar delta = sum, over lower-timeframe bars within the current chart bar, of volume × 1 when close > open, volume × −1 when close < open, and 0 otherwise.
+Calculation: Small-print activity = volume or absolute intrabar delta meets or exceeds its configured small-print percentile in at least the configured consensus count of short-, medium-, and long-lookback windows, where the short lookback is shorter than the medium and the medium is shorter than the long; use volume alone when lower-timeframe data is unavailable.
+Long: Small-print activity AND close >= open AND (lower-timeframe data unavailable OR intrabar delta > 0)
+Short: Small-print activity AND close < open AND (lower-timeframe data unavailable OR intrabar delta < 0)

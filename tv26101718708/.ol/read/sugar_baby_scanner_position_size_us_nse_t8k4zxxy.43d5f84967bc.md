@@ -1,0 +1,2 @@
+Calculation: Percentage change in close = (current close − previous bar close) / previous bar close × 100
+Long: Close > minimum price AND percentage change in close >= minimum upward move AND volume >= minimum volume threshold AND (volume > previous bar volume when the volume increase filter is enabled)

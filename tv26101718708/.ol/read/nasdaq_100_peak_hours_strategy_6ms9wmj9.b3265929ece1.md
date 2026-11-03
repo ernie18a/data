@@ -1,0 +1,8 @@
+Calculation: EMA direction = an EMA is above an EMA of its values shifted back one bar, using a shorter smoothing lookback
+Calculation: ATR volatility filter = ATR > a longer-lookback simple moving average of ATR
+Calculation: Long trailing stop = highest high since activation minus an ATR-based offset; activates after a favorable move reaches an ATR-based distance
+Calculation: Short trailing stop = lowest low since activation plus an ATR-based offset; activates after a favorable move reaches an ATR-based distance
+Long: close > short-term EMA AND short-term EMA > long-term EMA AND long-term EMA direction is upward AND short-term EMA direction is upward AND RSI is above its midpoint AND close > VWAP AND ATR volatility filter is true AND time is within the configured extended trade window AND time is within the configured entry session
+Short: close < short-term EMA AND short-term EMA < long-term EMA AND long-term EMA direction is downward AND short-term EMA direction is downward AND RSI is below its midpoint AND close < VWAP AND ATR volatility filter is true AND time is within the configured extended trade window AND time is within the configured entry session
+Exit: long, low <= close minus an ATR-based initial stop distance OR low <= active long trailing stop OR close > entry price plus an ATR-based break-even trigger distance OR bars since entry >= configured holding limit OR (short-term EMA < long-term EMA AND long-term EMA direction is downward)
+Exit: short, high >= close plus an ATR-based initial stop distance OR high >= active short trailing stop OR close < entry price minus an ATR-based break-even trigger distance OR bars since entry >= configured holding limit OR (short-term EMA > long-term EMA AND short-term EMA direction is upward)

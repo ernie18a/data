@@ -1,0 +1,3 @@
+Calculation: Pentuple EMA = 8×EMA₁ − 28×EMA₂ + 56×EMA₃ − 70×EMA₄ + 56×EMA₅ − 28×EMA₆ + 8×EMA₇ − EMA₈, where each EMA successively smooths the selected applied-price series using the same lookback; round the result to the configured price increment.
+Long: On any configured timeframe that is the same as or higher than the chart timeframe, its still-forming bar’s Pentuple EMA > the previous bar’s Pentuple EMA.
+Short: On any configured timeframe that is the same as or higher than the chart timeframe, its still-forming bar’s Pentuple EMA < the previous bar’s Pentuple EMA.

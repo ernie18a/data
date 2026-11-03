@@ -1,0 +1,1 @@
+When both 52-week highs and lows each exceed a minimum share of advances plus declines, and the broad market index is at or above its value from a lookback period earlier, open a signal window. While that window remains open, if the breadth oscillator is negative, consider shorting the traded instrument or exiting a long position. Otherwise, give no signal.

@@ -1,0 +1,4 @@
+Calculation: Short- and long-lookback swing coordinates = rolling-window highs and lows; retain alternating extrema, replacing the latest with a more extreme value while direction continues and appending a coordinate when direction reverses. The long lookback is longer than the short lookback.
+Calculation: Trend midpoint = average of the selected top and bottom swing prices at each of two selected points; trend direction is the comparison of the newer midpoint with the older midpoint.
+Long: Short-lookback trend direction > 0 OR long-lookback trend direction > 0 OR selected custom top-line slope > 0 OR selected custom bottom-line slope > 0 OR current close > the midpoint of a short- or long-lookback sight
+Short: Short-lookback trend direction < 0 OR long-lookback trend direction < 0 OR selected custom top-line slope < 0 OR selected custom bottom-line slope < 0 OR current close < the midpoint of a short- or long-lookback sight

@@ -1,0 +1,7 @@
+Calculation: Bullish score = Sum the assigned score weights for: fast EMA above slow EMA and their distance exceeds an ATR-scaled threshold; close above VWAP; RSI above its bullish threshold; ADX above its trend-strength threshold and +DI above -DI; MACD line above signal line and histogram above zero; Supertrend direction value is positive; volume above its moving average and close above open.
+Calculation: Bearish score = Sum the assigned score weights for: fast EMA below slow EMA and their distance exceeds an ATR-scaled threshold; close below VWAP; RSI below its bearish threshold; ADX above its trend-strength threshold and -DI above +DI; MACD line below signal line and histogram below zero; Supertrend direction value is negative; volume above its moving average and close below open.
+Calculation: Sideways score = Sum the assigned score weights for: fast and slow EMA distance is at or below an ATR-scaled threshold; close is within an ATR-scaled threshold of VWAP; RSI is within its neutral range; ADX is below its sideways threshold; absolute MACD histogram is below its flatness threshold; close is within an ATR-scaled threshold of Supertrend; volume is below its moving average.
+Long: Bullish score > Bearish score AND Bullish score > Sideways score
+Long: Bullish score > Bearish score AND Bullish score > Sideways score AND fast EMA crosses above slow EMA
+Short: Bearish score > Bullish score AND Bearish score > Sideways score
+Short: Bearish score > Bullish score AND Bearish score > Sideways score AND fast EMA crosses below slow EMA

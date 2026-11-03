@@ -1,0 +1,3 @@
+Calculation: Configured moving average = selected moving-average type and lookback applied to its configured source; when calculated on a timeframe higher or lower than the chart timeframe, use the last completed bar of that timeframe.
+Long: Close crosses above any configured moving average OR any configured moving average crosses above another configured moving average
+Short: Close crosses below any configured moving average OR any configured moving average crosses below another configured moving average

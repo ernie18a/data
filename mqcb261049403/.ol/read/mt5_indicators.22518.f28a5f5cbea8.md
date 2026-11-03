@@ -1,0 +1,3 @@
+Calculation: Volume-weighted BullsBearsEyes = volume × (100 × normalized value − 50), where normalized value = CU/(CU+CD), or 0 when CU+CD=0. Let S = (high − EMA(close, long lookback)) + (low − EMA(close, same lookback)); recursively calculate L0 = (1−smoothing)×S + smoothing×previous L0; L1 = −smoothing×L0 + previous L0 + smoothing×previous L1; L2 = −smoothing×L1 + previous L1 + smoothing×previous L2; L3 = −smoothing×L2 + previous L2 + smoothing×previous L3. CU is the sum of positive differences between adjacent L0, L1, L2, L3 values; CD is the sum of the magnitudes of their negative differences.
+Long: Volume-weighted BullsBearsEyes > first upper threshold × volume
+Short: Volume-weighted BullsBearsEyes < first lower threshold × volume

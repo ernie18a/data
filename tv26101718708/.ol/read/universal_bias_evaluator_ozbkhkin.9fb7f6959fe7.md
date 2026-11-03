@@ -1,0 +1,8 @@
+Calculation: Reference high/low = during regular hours, the previous completed higher-timeframe bar’s high/low; outside regular hours, the current higher-timeframe bar’s high/low
+Calculation: Swept high/low = whether any chart bar since the start of the current higher-timeframe period has had a high at or above the reference high / a low at or below the reference low
+Calculation: Reference midpoint = (reference high + reference low) / 2
+Calculation: Filter average = selected moving average of the higher-timeframe close; use the configured method and lookback
+Long: (swept high AND swept low AND (close > reference high OR (close <= reference high AND close >= reference low AND close > reference midpoint)) OR NOT (swept high AND swept low) AND NOT (swept high AND close < reference high) AND ((swept low AND close > reference low) OR close > reference midpoint)) AND (filter disabled OR higher-timeframe close >= filter average)
+Short: (swept high AND swept low AND (close < reference low OR (close >= reference low AND close <= reference high AND close <= reference midpoint)) OR NOT (swept high AND swept low) AND ((swept high AND close < reference high) OR (NOT (swept high AND close < reference high) AND NOT (swept low AND close > reference low) AND close < reference midpoint))) AND (filter disabled OR higher-timeframe close <= filter average)
+Exit: Long, <no exit decision>
+Exit: Short, <no exit decision>

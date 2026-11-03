@@ -1,0 +1,3 @@
+Calculation: Relative volatility rank = percentage of the preceding bars in the longer ranking lookback whose relative volatility is less than or equal to the current value; relative volatility = 2 × standard deviation of close over a shorter lookback ÷ EMA of close over that same shorter lookback.
+Long: Relative volatility rank crosses above its shorter-lookback SMA OR (previous rank is below the lower threshold AND current rank is at or above the lower threshold AND current rank is greater than previous rank AND close is greater than or equal to open)
+Short: Previous relative volatility rank is below the lower threshold AND current rank is at or above the lower threshold AND current rank is greater than previous rank AND close is less than open

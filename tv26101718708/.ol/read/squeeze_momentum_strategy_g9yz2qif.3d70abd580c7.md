@@ -1,0 +1,8 @@
+Calculation: Squeeze on = Bollinger Bands lie strictly inside Keltner Channels; Bollinger center is SMA(close, Bollinger lookback), width is Keltner multiplier × standard deviation(close, Bollinger lookback); Keltner center is SMA(close, Keltner lookback), width is Keltner multiplier × SMA(range, Keltner lookback), where range is either true range or high − low
+Calculation: Squeeze off = lower Bollinger Band < lower Keltner Channel AND upper Bollinger Band > upper Keltner Channel
+Calculation: Squeeze momentum = linear regression, over the Keltner lookback, of close − average(average(highest high and lowest low over the Keltner lookback), SMA(close, Keltner lookback))
+Calculation: Volume-weighted value = [previous close × (N − current volume) + current close × current volume] / N, where N is either cumulative volume to date or the rolling sum of volume over its configured lookback
+Long: long trades enabled AND (volume filter disabled OR volume-weighted value > 0) AND squeeze momentum > 0 AND squeeze off AND previous bar squeeze on
+Short: short trades enabled AND (volume filter disabled OR volume-weighted value < 0) AND squeeze momentum < 0 AND squeeze off AND previous bar squeeze on
+Exit: long, NOT (squeeze momentum > 0 AND squeeze momentum > previous bar squeeze momentum OR squeeze momentum < 0 AND squeeze momentum < previous bar squeeze momentum)
+Exit: short, NOT (squeeze momentum > 0 AND squeeze momentum > previous bar squeeze momentum OR squeeze momentum < 0 AND squeeze momentum < previous bar squeeze momentum)

@@ -1,0 +1,10 @@
+Calculation: Typical price = (high + low + close) / 3
+Calculation: Session average = mean of the current day's typical prices, limited to the most recent average-length bars
+Calculation: Session range = highest minus lowest typical price among those same bars
+Calculation: Smoothed average = EMA of session average using the smoothing length
+Calculation: Slope percent = 100 × (smoothed average − smoothed average slope-lookback bars ago) / smoothed average slope-lookback bars ago
+Calculation: Compression percent = 100 × session range / session average
+Calculation: Momentum = EMA of ((typical price − session average) / session range), using the smoothing length; use 0 for the raw value when session range is 0
+Calculation: Sideways confirmed = sideways raw has held for at least the confirmation-bars count consecutively; sideways raw requires session-bar count ≥ minimum session bars, absolute slope percent ≤ slope threshold, and compression percent ≤ compression threshold. Reset the count at each new day, with the first bar of the day resetting but not incrementing it.
+Long: sideways confirmed = false AND momentum > bullish threshold
+Short: sideways confirmed = false AND momentum < bearish threshold

@@ -1,0 +1,4 @@
+Calculation: Confirmed swing high/low = a bar whose high/low is the highest/lowest across the configured number of chart bars before and after it; confirmation occurs after the bars following it complete.
+Calculation: Zone center = supply swing high minus half the zone height, or demand swing low plus half the zone height; zone height = chart-timeframe ATR over a longer lookback multiplied by the configured width factor.
+Long: supply/demand zones enabled AND confirmed swing low AND no existing demand-zone center is within two chart-timeframe ATRs of the new zone center AND no confirmed swing high
+Short: supply/demand zones enabled AND confirmed swing high AND no existing supply-zone center is within two chart-timeframe ATRs of the new zone center

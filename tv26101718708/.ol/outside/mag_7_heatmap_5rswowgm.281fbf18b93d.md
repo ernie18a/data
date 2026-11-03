@@ -1,0 +1,1 @@
+For the traded index, count how many of the seven major technology stocks rose or fell from the prior daily close. If at least five rose, treat the index as having upside support; if at least five fell, treat it as having downside pressure. Otherwise, wait for confirmation from the traded index.

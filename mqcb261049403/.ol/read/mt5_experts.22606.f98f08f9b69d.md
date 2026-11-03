@@ -1,0 +1,11 @@
+Calculation: Oscillator = Let P be the EMA of close over the power lookback. Set X = (high - P) + (low - P). Initialize L0, L1, L2, and L3 to zero; on each bar update them in order using their previous-bar values: L0 = (1 - smoothing factor) × X + smoothing factor × previous L0; L1 = -smoothing factor × L0 + previous L0 + smoothing factor × previous L1; L2 = -smoothing factor × L1 + previous L1 + smoothing factor × previous L2; L3 = -smoothing factor × L2 + previous L2 + smoothing factor × previous L3. Let U be the sum of positive differences L0-L1, L1-L2, and L2-L3, and D the sum of their negative magnitudes. The raw oscillator is 100 × U / (U + D) - 50, or -50 when U + D = 0. Multiply the raw oscillator by bar volume and smooth it with the selected moving-average method; smooth volume separately using the same method and parameters. The oscillator and its thresholds use chart-timeframe bars for the indicator markings; for trading decisions they use a configurable higher or lower timeframe, with either the last completed bar or the bar still forming, according to the signal-bar setting.
+Calculation: Thresholds = Smoothed volume multiplied by each of four ordered levels: extreme lower, lower, upper, and extreme upper.
+Calculation: State = For each bar, classify the oscillator as extreme upper if it is greater than the extreme upper threshold; otherwise upper if greater than the upper threshold; otherwise extreme lower if less than the extreme lower threshold; otherwise lower if less than the lower threshold; otherwise neutral.
+Long: Oscillator > upper threshold
+Long: State = upper AND previous state is neutral, lower, or extreme lower
+Long: State = extreme upper AND previous state is upper, neutral, lower, or extreme lower
+Short: Oscillator < lower threshold
+Short: State = lower AND previous state is neutral, upper, or extreme upper
+Short: State = extreme lower AND previous state is lower, neutral, upper, or extreme upper
+Exit: long, state = lower OR state = extreme lower OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, state = upper OR state = extreme upper OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

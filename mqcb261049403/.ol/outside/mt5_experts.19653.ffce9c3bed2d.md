@@ -1,0 +1,1 @@
+When time-based exits are enabled, close any position on the traded instrument once its holding time exceeds the configured limit.

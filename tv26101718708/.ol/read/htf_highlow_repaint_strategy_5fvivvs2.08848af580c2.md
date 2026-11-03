@@ -1,0 +1,2 @@
+Long: current higher-timeframe bar high > previous completed higher-timeframe bar high AND current higher-timeframe bar low > previous completed higher-timeframe bar low AND datetime >= start time AND datetime <= end time
+Short: current higher-timeframe bar high < previous completed higher-timeframe bar high AND current higher-timeframe bar low < previous completed higher-timeframe bar low AND datetime >= start time AND datetime <= end time

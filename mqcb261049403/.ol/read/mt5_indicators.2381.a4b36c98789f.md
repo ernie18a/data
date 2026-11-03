@@ -1,0 +1,3 @@
+Calculation: Five-bar range-to-volume ratio = sum of (high − low) over the fractal bar and the two bars on each side, divided by their summed volume
+Long: A confirmed upper fractal occurs AND its five-bar range-to-volume ratio is lower than that of the previous lower fractal AND its five-bar volume sum is greater than that of the previous lower fractal
+Short: A confirmed lower fractal occurs AND its five-bar range-to-volume ratio is lower than that of the previous upper fractal AND its five-bar volume sum is greater than that of the previous upper fractal

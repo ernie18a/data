@@ -1,0 +1,5 @@
+Calculation: Session regression direction score = ((weighted mean close − simple mean close) × (N + 1) / 2) / (population standard deviation of close × sqrt(N² − 1) / (2 × sqrt(3))) over N chart bars in a configured session; weighted mean uses weights 1 through N from oldest to newest. Update while the session is active and retain the last value afterward.
+Calculation: Session volume delta = cumulative volume of session bars with close ≥ open minus cumulative volume of session bars with close < open; retain the value after the session until it resets at the next session start.
+Calculation: Active-session volume delta total = sum of session volume deltas for currently active configured sessions, treating inactive sessions as zero.
+Long: Any configured session regression direction score > 0 OR any configured session volume delta > 0 OR active-session volume delta total > 0
+Short: Any configured session regression direction score ≤ 0 OR any configured session volume delta < 0 OR active-session volume delta total < 0

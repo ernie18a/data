@@ -1,0 +1,4 @@
+Long: longer-lookback Stochastic %D crosses above 50 after reaching the oversold threshold and before reaching the overbought threshold; ADX reached its threshold during that oversold episode and is now falling; close > open; low > the lowest low of the preceding lookback bars
+OR shorter-lookback Stochastic %D crosses above 50 while long-continuation mode is active from the most recent long signal and no later short signal has occurred
+Short: longer-lookback Stochastic %D crosses below 50 after reaching the overbought threshold and before reaching the oversold threshold; ADX reached its threshold during that overbought episode and is now falling; close < open; high < the highest high of the preceding lookback bars
+OR shorter-lookback Stochastic %D crosses below 50 while short-continuation mode is active from the most recent short signal and no later long signal has occurred

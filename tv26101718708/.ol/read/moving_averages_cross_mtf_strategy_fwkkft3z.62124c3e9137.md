@@ -1,0 +1,7 @@
+Long: The first moving average crosses above the second moving average.
+Short: The first moving average crosses below the second moving average.
+Calculation: Average entry price = arithmetic mean of the closes at qualifying same-side entry signals since the last opposite-side entry signal.
+Calculation: Long trailing reference = highest high since the current long position began.
+Calculation: Short trailing reference = lowest low since the current short position began.
+Exit: Long, take-profit enabled AND close > average entry price + take-profit percentage of average entry price OR stop-loss enabled AND close < average entry price − stop-loss percentage of average entry price OR trailing stop enabled AND long trailing reference ≥ average entry price + activation percentage of average entry price AND low ≤ long trailing reference − trailing-stop percentage of long trailing reference AND no long entry signal.
+Exit: Short, take-profit enabled AND close < average entry price − take-profit percentage of average entry price OR stop-loss enabled AND close > average entry price + stop-loss percentage of average entry price OR trailing stop enabled AND short trailing reference ≤ average entry price − activation percentage of average entry price AND high ≥ short trailing reference + trailing-stop percentage of short trailing reference AND no short entry signal.

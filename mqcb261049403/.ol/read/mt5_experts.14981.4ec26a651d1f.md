@@ -1,0 +1,5 @@
+Calculation: Stochastic %K and %D = standard stochastic main and signal lines on the configured indicator timeframe, which may be higher or lower than the chart timeframe; evaluate the two most recent completed bars.
+Long: %K > %D on the most recent completed bar AND %K <= %D on the preceding completed bar OR %K > the overbought level on the most recent completed bar AND %K <= the overbought level on the preceding completed bar
+Short: %K < %D on the most recent completed bar AND %K >= %D on the preceding completed bar OR %K < the oversold level on the most recent completed bar AND %K >= the oversold level on the preceding completed bar
+Exit: short, %K > %D on the most recent completed bar AND %K <= %D on the preceding completed bar OR %K > the overbought level on the most recent completed bar AND %K <= the overbought level on the preceding completed bar
+Exit: long, %K < %D on the most recent completed bar AND %K >= %D on the preceding completed bar OR %K < the oversold level on the most recent completed bar AND %K >= the oversold level on the preceding completed bar

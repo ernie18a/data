@@ -1,0 +1,2 @@
+Long: For at least one of the higher-timeframe cycles (current forming bar vs. previous completed bar) or lower-timeframe NY session cycles (current forming period vs. previous completed period), at least one scanned series makes a lower low and at least one does not
+Short: For at least one of the higher-timeframe cycles (current forming bar vs. previous completed bar) or lower-timeframe NY session cycles (current forming period vs. previous completed period), at least one scanned series makes a higher high and at least one does not

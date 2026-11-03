@@ -1,0 +1,1 @@
+Buy when price wicks below the latest confirmed swing low and closes back above it, provided bullish trades are allowed. Sell when price wicks above the latest confirmed swing high and closes back below it, provided bearish trades are allowed. No exit condition is defined.

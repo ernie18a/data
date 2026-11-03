@@ -1,0 +1,3 @@
+Calculation: X2MA on each configured timeframe = apply a configurable smoothing to the selected price, then apply a second configurable smoothing to that result; all four timeframes use the same smoothing configuration
+Long: on the first chart bar of a new configured timeframe bar, X2MA on that timeframe (current bar still forming) > X2MA on its preceding completed bar
+Short: on the first chart bar of a new configured timeframe bar, X2MA on that timeframe (current bar still forming) < X2MA on its preceding completed bar

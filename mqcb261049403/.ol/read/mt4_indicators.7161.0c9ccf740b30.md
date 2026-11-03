@@ -1,0 +1,2 @@
+Long: Shortest-lookback moving average > next-shortest-lookback moving average > next-longest-lookback moving average > longest-lookback moving average, calculated on the indicator’s selected timeframe (higher, lower, or equal to the chart timeframe) using its still-forming bar
+Short: Shortest-lookback moving average < next-shortest-lookback moving average < next-longest-lookback moving average < longest-lookback moving average, calculated on the indicator’s selected timeframe (higher, lower, or equal to the chart timeframe) using its still-forming bar

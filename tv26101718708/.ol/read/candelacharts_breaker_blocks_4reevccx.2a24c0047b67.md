@@ -1,0 +1,4 @@
+Calculation: Confirmed pivot high = a high greater than the highs of the specified number of bars before and after it; it becomes available after those later bars complete.
+Calculation: Confirmed pivot low = a low less than the lows of the specified number of bars before and after it; it becomes available after those later bars complete.
+Long: close > a confirmed pivot high AND the lowest low from that pivot through the breakout bar < the latest confirmed pivot low before that pivot high AND an up-close candle exists in the order-block search interval
+Short: close < a confirmed pivot low AND the highest high from that pivot through the breakdown bar > the latest confirmed pivot high before that pivot low AND a down-close candle exists in the order-block search interval

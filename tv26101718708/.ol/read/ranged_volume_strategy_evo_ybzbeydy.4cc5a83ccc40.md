@@ -1,0 +1,2 @@
+Long: rolling maximum volume over the lookback > its value on the prior chart bar AND Heikin-Ashi close > Heikin-Ashi open
+Short: rolling maximum volume over the lookback > its value on the prior chart bar AND Heikin-Ashi close < Heikin-Ashi open

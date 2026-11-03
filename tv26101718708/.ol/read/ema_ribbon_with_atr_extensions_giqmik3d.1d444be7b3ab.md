@@ -1,0 +1,2 @@
+Calculation: ATR-normalized moving-average extension = ((close - long-term moving average) / long-term moving average) / (ATR / close)
+Long: chart timeframe equals the calculation timeframe AND close > long-term moving average AND ATR-normalized moving-average extension > threshold

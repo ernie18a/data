@@ -1,0 +1,4 @@
+Calculation: Squeeze = Bollinger Bands are strictly inside the widest-tier Keltner Channel; the channel uses the same lookback for its basis and the simple moving average of true range for its width.
+Calculation: Momentum = linear regression, offset 0, of close minus the average of (highest high and lowest low averaged together) and the simple moving average of close; use the same lookback for all components.
+Long: Current bar is not in a squeeze AND at least one of the previous three bars was in a squeeze AND Momentum > 0 AND volume > its simple moving average × volume multiplier AND close > the previous bar’s Bollinger upper band
+Short: Current bar is not in a squeeze AND at least one of the previous three bars was in a squeeze AND Momentum ≤ 0 AND volume > its simple moving average × volume multiplier AND close < the previous bar’s Bollinger lower band

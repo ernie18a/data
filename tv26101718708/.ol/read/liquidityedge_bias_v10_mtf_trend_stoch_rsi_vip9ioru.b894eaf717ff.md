@@ -1,0 +1,6 @@
+Calculation: Trend baseline = selected moving average of higher-timeframe closes, using the higher-timeframe bar still forming
+Calculation: Smoothed Stochastic RSI = moving average of RSI normalized within its rolling RSI range; use 50 when the range is zero, using the higher-timeframe bar still forming
+Calculation: Price pivot low = higher-timeframe low equals the lowest low over the lookback window, using the higher-timeframe bar still forming
+Calculation: Price pivot high = higher-timeframe high equals the highest high over the lookback window, using the higher-timeframe bar still forming
+Long: higher-timeframe close > trend baseline OR price pivot low AND current higher-timeframe low < low at the previous price pivot low AND current smoothed Stochastic RSI > smoothed Stochastic RSI at the previous price pivot low AND current smoothed Stochastic RSI <= oversold threshold + 20
+Short: higher-timeframe close <= trend baseline OR price pivot high AND current higher-timeframe high > high at the previous price pivot high AND current smoothed Stochastic RSI < smoothed Stochastic RSI at the previous price pivot high AND current smoothed Stochastic RSI >= overbought threshold - 20

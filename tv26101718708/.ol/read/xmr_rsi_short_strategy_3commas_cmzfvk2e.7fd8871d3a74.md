@@ -1,0 +1,4 @@
+Short: RSI on the chart timeframe crosses below its threshold on a completed bar AND flat AND datetime is within the configured backtest window
+Short: short position AND close >= the next averaging-order trigger price AND fewer than the configured maximum averaging orders have filled AND datetime is within the configured backtest window
+Calculation: Next averaging-order trigger price = base entry price multiplied by one plus the cumulative configured rung deviations above base entry
+Exit: short, close >= average entry price multiplied by one plus the configured stop-loss percentage OR the take-profit threshold has been reached and close >= the lowest close since first reaching that threshold multiplied by one plus the configured trailing percentage

@@ -1,0 +1,14 @@
+Calculation: Higher-timeframe FVG = from the last three completed higher-timeframe bars: bullish when the third bar’s low > the first bar’s high, bearish when its high < the first bar’s low; the zone is the gap between those prices. A bearish zone is invalidated by a completed chart bar closing above its top; a bullish zone by one closing below its bottom.
+Calculation: Execution-timeframe FVG = from the current chart bar and the two preceding chart bars: bullish when current low > the bar two bars earlier high, bearish when current high < the bar two bars earlier low; the zone is the gap between those prices.
+Calculation: Accepted FVG touch = the bar’s range overlaps the zone, or its nearest wick is within the configured near-touch buffer; for a bearish zone, the previous close and current open must be at or below the zone bottom (allowing the buffer at the open), and for a bullish zone they must be at or above the zone top (allowing the buffer at the open).
+Calculation: Near-touch buffer = the larger of a configured tick distance and a configured fraction of execution-timeframe ATR.
+Long: A new accepted touch of a live bullish higher-timeframe FVG.
+Short: A new accepted touch of a live bearish higher-timeframe FVG.
+Long: A live, untriggered bullish higher-timeframe FVG has a fresh accepted touch, and either the selected trigger is a wick tag, a close above the zone top, or a bullish execution-timeframe FVG; the zone has departed upward by a close (strict mode) or a wick (tolerant mode), unless direct taps are allowed; any enabled killzone restriction is satisfied.
+Short: A live, untriggered bearish higher-timeframe FVG has a fresh accepted touch, and either the selected trigger is a wick tag, a close below the zone bottom, or a bearish execution-timeframe FVG; the zone has departed downward by a close (strict mode) or a wick (tolerant mode), unless direct taps are allowed; any enabled killzone restriction is satisfied.
+Long: In direct-tap mode, a live, untriggered bullish higher-timeframe FVG has an accepted touch and, if required, a bullish execution-timeframe FVG; any enabled killzone restriction is satisfied.
+Short: In direct-tap mode, a live, untriggered bearish higher-timeframe FVG has an accepted touch and, if required, a bearish execution-timeframe FVG; any enabled killzone restriction is satisfied.
+Long: A live, untriggered bullish higher-timeframe FVG has a close above its top, a bullish execution-timeframe FVG, and satisfies any enabled distance, age, structure-break, and killzone filters.
+Short: A live, untriggered bearish higher-timeframe FVG has a close below its bottom, a bearish execution-timeframe FVG, and satisfies any enabled distance, age, structure-break, and killzone filters.
+Exit: long, low <= stop-loss OR high >= profit target.
+Exit: short, high >= stop-loss OR low <= profit target.

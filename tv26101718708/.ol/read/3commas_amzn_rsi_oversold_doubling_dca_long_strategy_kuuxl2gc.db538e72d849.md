@@ -1,0 +1,2 @@
+Long: Flat, no open trades, and chart-timeframe RSI is below its threshold OR long position is open and the next unfilled safety-order rung is reached, with each rung triggered when close is at or below base entry price minus its fixed deviation; rung deviations increase successively from the base
+Exit: long, close is at or above average entry price plus the fixed take-profit percentage

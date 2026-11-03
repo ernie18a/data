@@ -1,0 +1,2 @@
+Exit: long, low <= entry price - ATR_at_entry * stop distance OR high >= entry price + ATR_at_entry * target distance OR neither level is touched and the configured number of bars since entry has elapsed
+Exit: short, high >= entry price + ATR_at_entry * stop distance OR low <= entry price - ATR_at_entry * target distance OR neither level is touched and the configured number of bars since entry has elapsed

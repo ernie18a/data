@@ -1,0 +1,6 @@
+Calculation: Upper channel = round to the nearest multiple of (price point × 10^digit precision) the average of the highest high in each rolling window of range length, over range-length consecutive window starts beginning at the configured bar offset.
+Calculation: Lower channel = round to the nearest multiple of (price point × 10^digit precision) the average of the lowest low in each rolling window of range length, over range-length consecutive window starts beginning at the configured bar offset.
+Long: On the last completed bar of the configured indicator timeframe, close > upper channel AND the preceding completed bar's close ≤ its upper channel.
+Short: On the last completed bar of the configured indicator timeframe, close < lower channel AND the preceding completed bar's close ≥ its lower channel.
+Exit: Long, close < lower channel OR elapsed time since entry > configured holding duration OR low ≤ entry price − configured stop-loss distance OR high ≥ entry price + configured take-profit distance.
+Exit: Short, close > upper channel OR elapsed time since entry > configured holding duration OR high ≥ entry price + configured stop-loss distance OR low ≤ entry price − configured take-profit distance.

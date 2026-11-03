@@ -1,0 +1,4 @@
+Long: Previous completed chart-bar low > moving average on its configured timeframe’s still-forming bar AND long position count = 0
+Short: Previous completed chart-bar high < moving average on its configured timeframe’s still-forming bar AND short position count = 0
+Exit: long, moving average on its configured timeframe at completed bar 1 > higher-timeframe daily close at completed bar 1 AND moving average at completed bar 2 < higher-timeframe daily close at completed bar 2 OR low <= active stop-loss OR high >= take-profit
+Exit: short, moving average on its configured timeframe at completed bar 1 < higher-timeframe daily close at completed bar 1 AND moving average at completed bar 2 > higher-timeframe daily close at completed bar 2 OR high >= active stop-loss OR low <= take-profit

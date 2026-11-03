@@ -1,0 +1,4 @@
+Calculation: Adaptive EMA = recursively update from the selected OHLC-derived price P: weight = Wmin + (Wmax − Wmin) × (1 − exp(−|P − prior EMA / Efactor|^Afactor)); EMA = prior EMA + weight × (P − prior EMA)
+Calculation: EMA-change standard deviation = population standard deviation of the latest std_period changes in the adaptive EMA, including the current change
+Long: Adaptive EMA > prior Adaptive EMA OR current EMA change > lower multiplier × EMA-change standard deviation AND current EMA change ≤ higher multiplier × EMA-change standard deviation OR current EMA change > higher multiplier × EMA-change standard deviation
+Short: Adaptive EMA < prior Adaptive EMA OR current EMA change < −higher multiplier × EMA-change standard deviation OR current EMA change < −lower multiplier × EMA-change standard deviation AND current EMA change ≥ −higher multiplier × EMA-change standard deviation

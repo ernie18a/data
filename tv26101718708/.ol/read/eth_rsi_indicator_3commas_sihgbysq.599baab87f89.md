@@ -1,0 +1,3 @@
+Calculation: Blended average entry = total quote cost of the base order and filled safety orders divided by total units purchased
+Long: Position side = flat AND chart-timeframe RSI < configured oversold level OR Position side = long AND the next unfilled safety-order rung exists AND close <= base entry × (1 − that rung’s configured percentage deviation)
+Exit: long, Position side = long AND close >= blended average entry × (1 + configured take-profit percentage)

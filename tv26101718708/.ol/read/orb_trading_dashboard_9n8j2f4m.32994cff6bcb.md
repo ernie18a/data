@@ -1,0 +1,4 @@
+Calculation: Opening range high/low = highest high / lowest low during each opening window; use completed bars from a timeframe lower than the chart timeframe.
+Calculation: ORB side state = idle → breakout when a completed bar closes beyond the range; retest when a later bar touches that boundary; confirmed when a still later bar closes beyond it again. Mark the side failed if a bar closes back inside the range beyond a configurable buffer; a later breakout re-arms that side. Reset each session.
+Long: After an opening window completes, close > its opening range high OR the upside ORB side is confirmed
+Short: After an opening window completes, close < its opening range low OR the downside ORB side is confirmed

@@ -1,0 +1,3 @@
+Calculation: Confirmed swing high = a high greater than the highs over an equal lookback on both sides; confirmed swing low = a low lower than the lows over an equal lookback on both sides
+Long: close > open AND close - open > configured ATR-multiple impulse threshold OR low > high two bars ago AND low - high two bars ago >= configured minimum FVG size as a percentage of close OR new confirmed swing high > previous confirmed swing high
+Short: close < open AND open - close > configured ATR-multiple impulse threshold OR high < low two bars ago AND low two bars ago - high >= configured minimum FVG size as a percentage of close OR new confirmed swing low < previous confirmed swing low

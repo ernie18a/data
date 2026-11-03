@@ -1,0 +1,2 @@
+Long: close >= previous bar's close × (1 + price-change threshold) AND volume > previous bar's volume AND volume >= volume threshold
+Short: close <= previous bar's close × (1 - price-change threshold) AND volume > previous bar's volume AND volume >= volume threshold

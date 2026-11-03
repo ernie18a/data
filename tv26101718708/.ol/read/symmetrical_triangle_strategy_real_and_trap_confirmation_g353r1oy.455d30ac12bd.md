@@ -1,0 +1,11 @@
+Calculation: Triangle = the latest three confirmed pivot highs descend and the latest three confirmed pivot lows ascend, with each set in chronological order; the first two pivots of each set use the same longer right-side confirmation lookback, and the third uses a shorter one. The triangle is new and valid only if the lines from the first to the third high and low converge to an intersection.
+Calculation: Upper and lower breakout levels = the prices of the latest confirmed pivot high and low, respectively.
+Calculation: Average volume = simple moving average of volume over the configured lookback.
+Calculation: RSI = relative strength index of close over the configured lookback.
+Calculation: Fast and slow EMAs = exponential moving averages of close, with the fast EMA using a shorter lookback.
+Long: Active triangle is monitoring AND close > upper breakout level AND volume > average volume × configured multiplier AND RSI > configured threshold.
+Short: Active triangle is monitoring AND close < lower breakout level AND volume > average volume × configured multiplier AND RSI < configured threshold.
+Calculation: Bull-trap setup = an active triangle closes above its upper breakout level while volume or RSI confirmation fails; it remains armed until price closes back below that level or the configured timeout expires. If trap EMA confirmation is enabled, the return close starts a confirmation phase.
+Calculation: Bear-trap setup = an active triangle closes below its lower breakout level while volume or RSI confirmation fails; it remains armed until price closes back above that level or the configured timeout expires. If trap EMA confirmation is enabled, the return close starts a confirmation phase.
+Short: Bull-trap setup closes back below the upper breakout level AND trap EMA confirmation is disabled, OR bull-trap confirmation phase AND fast EMA crosses below slow EMA.
+Long: Bear-trap setup closes back above the lower breakout level AND trap EMA confirmation is disabled, OR bear-trap confirmation phase AND fast EMA crosses above slow EMA.

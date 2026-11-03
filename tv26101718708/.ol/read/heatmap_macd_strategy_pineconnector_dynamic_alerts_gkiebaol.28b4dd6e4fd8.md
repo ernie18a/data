@@ -1,0 +1,4 @@
+Long: any of the five MACD histograms crosses above zero OR all five MACD histograms are above zero and were not all above zero on the previous chart bar
+Short: any of the five MACD histograms crosses below zero OR all five MACD histograms are below zero and were not all below zero on the previous chart bar
+Exit: long, low <= long stop-loss level OR high >= first take-profit level OR high >= second take-profit level OR (all five MACD histograms were above zero on the previous chart bar AND fewer than five are above zero now)
+Exit: short, high >= short stop-loss level OR low <= first take-profit level OR low <= second take-profit level OR (all five MACD histograms were below zero on the previous chart bar AND fewer than five are below zero now)

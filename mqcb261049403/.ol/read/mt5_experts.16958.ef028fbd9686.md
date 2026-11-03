@@ -1,0 +1,7 @@
+Calculation: Ideal moving average = For each stage, let d = previous input − current input and y_prev be the previous output; output = [α(previous input − y_prev) + y_prev + β·y_prev·(d² − 1)] / [1 + β·(d² − 1)], where α and β are smoothing parameters. Use bars from the configured signal timeframe, evaluating its last two completed bars.
+Calculation: Short-term ideal moving average = Apply one Ideal moving average stage to close.
+Calculation: Long-term ideal moving average = Cascade three Ideal moving average stages, each with its own smoothing parameters.
+Long: Short-term ideal moving average > long-term ideal moving average AND short-term ideal moving average on the previous completed bar < long-term ideal moving average on the previous completed bar
+Short: Short-term ideal moving average < long-term ideal moving average AND short-term ideal moving average on the previous completed bar > long-term ideal moving average on the previous completed bar
+Exit: Long, short-term ideal moving average < long-term ideal moving average AND short-term ideal moving average on the previous completed bar > long-term ideal moving average on the previous completed bar
+Exit: Short, short-term ideal moving average > long-term ideal moving average AND short-term ideal moving average on the previous completed bar < long-term ideal moving average on the previous completed bar

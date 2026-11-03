@@ -1,0 +1,4 @@
+Calculation: normalized deviation oscillator = 100 × short-lookback smoothing(price − long-lookback smoothing(price)) ÷ short-lookback smoothing(|price − long-lookback smoothing(price)|); the long lookback is longer than the short lookback.
+Calculation: fast and slow step lines = ratcheting trend lines of the oscillator, using a narrower step for the fast line and a wider step for the slow line; each trend turns up above its prior upper threshold or down below its prior lower threshold, and its active threshold only ratchets in the trend direction.
+Long: for any configured timeframe at or above the chart timeframe, fast step line > slow step line, sampled from the bar still forming
+Short: for any configured timeframe at or above the chart timeframe, slow step line > fast step line, sampled from the bar still forming

@@ -1,0 +1,4 @@
+Calculation: Forecast oscillator = 100 × (selected applied price − weighted baseline) / weighted baseline, where weighted baseline = 6/[L(L+1)] × Σ(i−(L+1)/3) × selected applied price from L bars ago through the current bar, with i running from 1 on the current bar to L on the oldest bar.
+Calculation: Signal line = c1×e6 + c2×e5 + c3×e4 + c4×e3, where e1 through e6 are six successive exponential smoothings of the forecast oscillator with α=2/(t3+1), c1=−b³, c2=3(b²+b³), c3=−3(2b²+b+b³), and c4=1+3b+b³+3b².
+Long: Forecast oscillator on the signal bar > signal line one bar earlier AND forecast oscillator one bar earlier ≤ signal line two bars earlier AND signal line on the signal bar < 0
+Short: Forecast oscillator on the signal bar < signal line one bar earlier AND forecast oscillator one bar earlier ≥ signal line two bars earlier AND signal line on the signal bar > 0

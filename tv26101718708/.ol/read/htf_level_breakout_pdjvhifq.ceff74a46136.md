@@ -1,0 +1,9 @@
+Calculation: Previous higher-timeframe high/low = high/low of the last completed bar on a timeframe higher than the chart timeframe; refresh when a new higher-timeframe bar starts while flat
+Calculation: First-touch high/low = high/low of the first chart bar whose high/low reaches or crosses the previous higher-timeframe high/low, respectively
+Calculation: Pivot high/low = a chart-bar high/low greater/less than the highs/lows of the configured number of bars before and after it; use the most recent confirmed pivot
+Calculation: Long stop = most recent confirmed pivot low at entry; long target = entry price + (entry price − long stop) × risk-to-reward parameter
+Calculation: Short stop = most recent confirmed pivot high at entry; short target = entry price − (short stop − entry price) × risk-to-reward parameter
+Long: flat AND confirmed chart bar AND a first-touch high has been recorded for the active previous higher-timeframe high AND close > previous higher-timeframe high AND close > first-touch high AND a confirmed pivot low exists AND close ≠ pivot low
+Short: flat AND confirmed chart bar AND a first-touch low has been recorded for the active previous higher-timeframe low AND close < previous higher-timeframe low AND close < first-touch low AND a confirmed pivot high exists AND close ≠ pivot high
+Exit: long, low ≤ long stop OR high ≥ long target OR (time-based exit enabled AND confirmed chart bar's hour and minute in the configured timezone equal the configured exit hour and minute)
+Exit: short, high ≥ short stop OR low ≤ short target OR (time-based exit enabled AND confirmed chart bar's hour and minute in the configured timezone equal the configured exit hour and minute)

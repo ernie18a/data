@@ -1,0 +1,3 @@
+Calculation: Normalized higher-timeframe position = (last completed higher-timeframe bar midpoint − lowest low over the same higher-timeframe lookback) / (highest high over that lookback − lowest low over that lookback) × 100
+Long: chart-timeframe bar midpoint < midpoint between the highest high and lowest low over the same chart-timeframe lookback AND Normalized higher-timeframe position < 15
+Exit: long, chart-timeframe bar midpoint ≥ midpoint between the highest high and lowest low over the same chart-timeframe lookback AND Normalized higher-timeframe position ≥ 85

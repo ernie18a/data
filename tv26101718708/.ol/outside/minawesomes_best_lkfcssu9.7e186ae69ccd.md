@@ -1,0 +1,1 @@
+Compare successive confirmed swing pivots on the traded instrument with corresponding recent pivots on a correlated instrument. A higher high on the traded instrument paired with a lower high on the correlated instrument signals bearish direction (short); a lower low paired with a higher low signals bullish direction (long).

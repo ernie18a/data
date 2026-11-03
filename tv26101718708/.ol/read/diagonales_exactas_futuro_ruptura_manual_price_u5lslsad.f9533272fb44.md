@@ -1,0 +1,4 @@
+Calculation: Projected ceiling = value at the chart bar’s time of a line joining either the highs of the current and immediately preceding requested-timeframe bars or the preceding low and current high; use requested-timeframe bars that may be higher or lower than the chart timeframe, including the current bar while it is forming
+Calculation: Projected floor = value at the chart bar’s time of a line joining either the lows of the current and immediately preceding requested-timeframe bars or the preceding high and current low; use requested-timeframe bars that may be higher or lower than the chart timeframe, including the current bar while it is forming
+Long: chart bar high > any projected ceiling
+Short: chart bar low < any projected floor

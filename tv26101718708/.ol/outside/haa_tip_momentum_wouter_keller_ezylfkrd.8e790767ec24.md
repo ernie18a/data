@@ -1,0 +1,1 @@
+At each confirmed month-end, calculate the traded strategy’s regime signal from an external inflation-protected bond ETF: compute its returns over 1, 3, 6, and 12 months and average them equally. If the average is above zero, hold the risk asset (long). If it is zero or below, rotate to a defensive asset or cash (exit the risk asset); no short position is specified.

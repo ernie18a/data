@@ -1,0 +1,5 @@
+Calculation: CMO = 100 × (sum of positive changes in the moving average over the lookback − sum of absolute negative changes) / (sum of positive changes + sum of absolute negative changes); the moving average uses the configured method and applied price. If the denominator is zero, CMO = 0. Calculate on bars aggregated to the configured indicator timeframe, which may be higher or lower than the chart timeframe, using completed bars only.
+Long: CMO on the latest completed indicator-timeframe bar > 0 AND CMO on the immediately preceding completed indicator-timeframe bar < 0
+Short: CMO on the latest completed indicator-timeframe bar < 0 AND CMO on the immediately preceding completed indicator-timeframe bar > 0
+Exit: long, CMO on the latest completed indicator-timeframe bar < 0 AND CMO on the immediately preceding completed indicator-timeframe bar > 0
+Exit: short, CMO on the latest completed indicator-timeframe bar > 0 AND CMO on the immediately preceding completed indicator-timeframe bar < 0

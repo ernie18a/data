@@ -1,0 +1,9 @@
+Calculation: Rolling volume profile = Divide the price range from the lowest low to highest high over a rolling lookback into equal rows; allocate each bar’s volume equally among the rows its high-low range touches. POC is the row with the most volume. Starting at the POC row, add adjacent rows in descending volume order (ties upward) until the target share of total volume is reached; VAH and VAL are the outer boundaries of the included rows.
+Calculation: Confirmed swing high/low = A high/low greater/less than the highs/lows of the same number of bars on both sides; it becomes confirmed after the bars on the right have completed.
+Calculation: Bullish FVG = Current low > high two bars earlier; gap midpoint = (current low + high two bars earlier) / 2. Bearish FVG = Current high < low two bars earlier; gap midpoint = (current high + low two bars earlier) / 2.
+Long: Current low > high two bars earlier AND bullish FVG midpoint is within the value area (VAL to VAH, inclusive).
+Short: Current high < low two bars earlier AND bearish FVG midpoint is within the value area (VAL to VAH, inclusive).
+Long: Close > latest confirmed swing high AND this swing high has not previously triggered a break AND close > POC.
+Short: Close < latest confirmed swing low AND this swing low has not previously triggered a break AND close < POC.
+Long: Close < POC AND current low < VAL AND close > VAL AND bullish FVG midpoint is within the value area AND close > latest confirmed swing high AND close > POC.
+Short: Close > POC AND current high > VAH AND close < VAH AND bearish FVG midpoint is within the value area AND close < latest confirmed swing low AND close < POC.

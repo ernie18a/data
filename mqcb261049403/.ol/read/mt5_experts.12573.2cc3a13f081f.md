@@ -1,0 +1,5 @@
+Calculation: HLR = 100 × (current bar midpoint − lowest low) ÷ (highest high − lowest low), using the highest high and lowest low over the lookback window ending on that bar; when the high-low range is zero, HLR = 0. Use the configured signal timeframe (same as the chart timeframe in the documented setup) and the last completed bar; previous HLR is from the preceding completed bar.
+Long: In zone-entry mode, HLR > upper threshold AND previous HLR ≤ upper threshold; OR in zone-exit mode, HLR > lower threshold AND previous HLR ≤ lower threshold.
+Short: In zone-entry mode, HLR < lower threshold AND previous HLR ≥ lower threshold; OR in zone-exit mode, HLR < upper threshold AND previous HLR ≥ upper threshold.
+Exit: long, in zone-entry mode HLR < lower threshold AND previous HLR ≥ lower threshold; OR in zone-exit mode HLR < upper threshold AND previous HLR ≥ upper threshold.
+Exit: short, in zone-entry mode HLR > upper threshold AND previous HLR ≤ upper threshold; OR in zone-exit mode HLR > lower threshold AND previous HLR ≤ lower threshold.

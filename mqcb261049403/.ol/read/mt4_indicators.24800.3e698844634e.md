@@ -1,0 +1,2 @@
+Long: On any aggregated timeframe higher or lower than the chart timeframe, OBV on the still-forming bar > OBV on the previous bar OR at least four of the six shortest standard timeframes have OBV on the still-forming bar > OBV on the previous bar.
+Short: On any aggregated timeframe higher or lower than the chart timeframe, OBV on the still-forming bar < OBV on the previous bar OR at least four of the six shortest standard timeframes have OBV on the still-forming bar < OBV on the previous bar.

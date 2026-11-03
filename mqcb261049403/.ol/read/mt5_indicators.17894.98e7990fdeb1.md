@@ -1,0 +1,2 @@
+Long: Parabolic SAR was above price on the previous bar AND Parabolic SAR is at or below price on the current bar
+Short: Parabolic SAR was at or below price on the previous bar AND Parabolic SAR is above price on the current bar

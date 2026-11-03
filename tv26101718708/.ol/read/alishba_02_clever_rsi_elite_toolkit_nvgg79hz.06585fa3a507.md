@@ -1,0 +1,4 @@
+Calculation: Uptrend = shorter-lookback EMA > longer-lookback EMA AND close > shorter-lookback EMA
+Calculation: Downtrend = shorter-lookback EMA < longer-lookback EMA AND close < shorter-lookback EMA
+Long: RSI crosses above oversold AND (trend filter disabled OR Uptrend) AND (higher-timeframe filter disabled OR RSI on the higher timeframe’s last completed bar > 50) AND bars since the last signal >= cooldown
+Short: RSI crosses below overbought AND (trend filter disabled OR Downtrend) AND (higher-timeframe filter disabled OR RSI on the higher timeframe’s last completed bar < 50) AND bars since the last signal >= cooldown

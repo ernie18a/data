@@ -1,0 +1,8 @@
+Calculation: Trend vote = +1 when the shorter-lookback EMA is above the longer-lookback EMA; -1 when below; otherwise 0
+Calculation: Momentum vote = +1 when RSI is above its bullish threshold; -1 when below its bearish threshold; otherwise 0
+Calculation: Volume z-score = (volume - its moving average) / its standard deviation over the same lookback
+Calculation: Volume vote = +1 when volume z-score is at least its threshold and close > open; -1 when volume z-score is at least its threshold and close < open; otherwise 0
+Calculation: Agent weights = initialize each to 0.5; for each eligible nonzero vote, record its direction and close, then after the outcome horizon update its weight by learning rate × (won - current weight), clamped to [0.05, 1]; won = 1 if the close moved in the vote direction by at least the required ATR multiple of ATR(14) at the horizon, otherwise 0. Trend and momentum votes are eligible when their nonzero direction changes; volume votes are eligible on every nonzero bar.
+Calculation: Weighted vote sum = trend vote × trend weight + momentum vote × momentum weight + volume vote × volume weight
+Long: trend vote = +1 OR momentum vote = +1 OR volume vote = +1 OR (at least the minimum vote count are +1 AND weighted vote sum > 0 AND the previous bar's consensus was not long)
+Short: trend vote = -1 OR momentum vote = -1 OR volume vote = -1 OR (at least the minimum vote count are -1 AND weighted vote sum < 0 AND the previous bar's consensus was not short)

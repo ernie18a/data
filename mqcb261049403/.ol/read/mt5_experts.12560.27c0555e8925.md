@@ -1,0 +1,6 @@
+Calculation: Leading line = Smooth the recursive series L_t = 2M_t + (α−2)M_{t−1} + (1−α)L_{t−1}, where M_t = (high_t + low_t)/2, using a second smoothing coefficient; calculate on the configured indicator timeframe, independently of the chart timeframe.
+Calculation: EMA line = Exponential moving average of the high-low midpoint on the configured indicator timeframe.
+Long: Leading line on the latest signal bar > EMA line on the latest signal bar AND Leading line on the immediately preceding signal bar < EMA line on the immediately preceding signal bar; both bars are completed bars on the configured indicator timeframe.
+Short: Leading line on the latest signal bar < EMA line on the latest signal bar AND Leading line on the immediately preceding signal bar > EMA line on the immediately preceding signal bar; both bars are completed bars on the configured indicator timeframe.
+Exit: short, Leading line on the latest signal bar > EMA line on the latest signal bar on the configured indicator timeframe.
+Exit: long, Leading line on the latest signal bar < EMA line on the latest signal bar on the configured indicator timeframe.

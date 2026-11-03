@@ -1,0 +1,4 @@
+Calculation: WaveTrend fast line = EMA of (HLC3 − EMA(HLC3, longer lookback)) / (0.015 × EMA(abs(HLC3 − EMA(HLC3, longer lookback)), same lookback), then smoothed with a medium lookback
+Calculation: WaveTrend signal line = shorter-lookback SMA of the WaveTrend fast line
+Short: position is flat AND WaveTrend signal line is at or above the bearish threshold AND WaveTrend fast line crosses below the WaveTrend signal line AND both latest available higher-timeframe Heikin-Ashi candles (which may still be forming) are bearish AND the market reference higher-timeframe close is below its long-lookback SMA on this or the previous chart bar AND chart close is below the higher-timeframe local SMA on this or the previous chart bar
+Exit: Short, chart close is above the higher-timeframe local SMA on this or the previous chart bar OR chart high is at or above the entry-price-based stop OR chart low is at or below the entry-price-based target

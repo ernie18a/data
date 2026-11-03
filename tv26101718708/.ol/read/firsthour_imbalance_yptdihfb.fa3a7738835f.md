@@ -1,0 +1,7 @@
+Calculation: Opening-hour high = highest high during each configured session’s opening hour
+Calculation: Opening-hour low = lowest low during each configured session’s opening hour
+Calculation: Volume average = simple moving average of volume over a configurable lookback
+Calculation: ATR = average true range on the chart timeframe
+Calculation: Higher-timeframe EMA = exponential moving average of close on a higher timeframe, using the last completed bar
+Long: For a frozen session range not yet swept on its low side, during the remainder of that session, low <= opening-hour low (or opening-hour low minus configured sweep depth, if enabled) AND close > opening-hour low on enough qualifying bars to meet the configured confirmation count AND (volume > volume average × configured multiplier, if the volume filter is enabled) AND (close > higher-timeframe EMA, if the higher-timeframe filter is enabled) AND (close − opening-hour low >= configured ATR multiplier × ATR, if the displacement filter is enabled)
+Short: For a frozen session range not yet swept on its high side, during the remainder of that session, high >= opening-hour high (or opening-hour high plus configured sweep depth, if enabled) AND close < opening-hour high on enough qualifying bars to meet the configured confirmation count AND (volume > volume average × configured multiplier, if the volume filter is enabled) AND (close < higher-timeframe EMA, if the higher-timeframe filter is enabled) AND (opening-hour high − close >= configured ATR multiplier × ATR, if the displacement filter is enabled)

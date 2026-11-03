@@ -1,0 +1,2 @@
+Calculation: Mayer multiple = close divided by the simple moving average of close, calculated on the selected calculation timeframe (which may be higher or lower than the chart timeframe) using its still-forming bar.
+Long: Mayer multiple <= accumulation threshold

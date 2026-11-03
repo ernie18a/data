@@ -1,0 +1,6 @@
+Calculation: Swing pivot high = a high higher than the highs of the configured number of preceding and following swing-timeframe bars; available after the following bars complete. Swing pivot low = a low lower than the lows of the configured number of preceding and following swing-timeframe bars; available after the following bars complete. Use the configured swing timeframe, which may be higher or lower than the chart timeframe.
+Calculation: Candidate HL = the lowest confirmed swing pivot low since the latest HH while bullish. Candidate LH = the highest confirmed swing pivot high since the latest LL while bearish.
+Long: Neutral and close > latest swing pivot high OR bearish and close > candidate LH OR bullish and a new swing pivot high > prior HH while a candidate HL exists.
+Short: Neutral and close < latest swing pivot low OR bullish and close < candidate HL OR bearish and a new swing pivot low < prior LL while a candidate LH exists.
+Exit: Long, close < candidate HL
+Exit: Short, close > candidate LH

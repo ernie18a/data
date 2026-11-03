@@ -1,0 +1,4 @@
+Calculation: Momentum = selected bar price minus the same selected price N bars earlier
+Calculation: JMomentum = JMA-smoothed Momentum divided by point size
+Long: nearest-integer-rounded change in chart-timeframe JMomentum from the prior bar > 0 OR nearest-integer-rounded change in higher-timeframe JMomentum from the prior bar > 0 (higher-timeframe value uses the bar still forming)
+Short: nearest-integer-rounded change in chart-timeframe JMomentum from the prior bar < 0 OR nearest-integer-rounded change in higher-timeframe JMomentum from the prior bar < 0 (higher-timeframe value uses the bar still forming)

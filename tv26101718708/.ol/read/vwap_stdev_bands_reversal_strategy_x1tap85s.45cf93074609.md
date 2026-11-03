@@ -1,0 +1,11 @@
+Calculation: Session VWAP = cumulative volume-weighted average of (high + low) / 2, reset at each new day; session standard deviation = square root of the volume-weighted mean of (high + low) / 2 squared minus Session VWAP squared, floored at zero before the square root.
+Calculation: Upper/lower band at level n = Session VWAP ± that side’s level-n multiplier × session standard deviation; the extreme and second-extreme levels use their respective configurable band levels.
+Calculation: Session eligible = bars since session start ≥ warmup bars AND (no prior session length is known OR cutoff bars = 0 OR bars since session start < prior session length − cutoff bars).
+Calculation: Long arm = reset at each new session; set when an eligible bar’s low ≤ lower extreme band OR close < lower second-extreme band; clear after expiry bars, or when a bullish bar closes above Session VWAP, or when a long signal fires. A newly set arm can signal on that same bar.
+Calculation: Short arm = reset at each new session; set when an eligible bar’s high ≥ upper extreme band OR close > upper second-extreme band; clear after expiry bars, or when a bearish bar closes below Session VWAP, or when a short signal fires. A newly set arm can signal on that same bar.
+Calculation: Long risk/reward = (upper second-extreme band − close) / (close − lowest low over the swing lookback), or 0 when close − lowest low is not positive.
+Calculation: Short risk/reward = (close − lower second-extreme band) / (highest high over the swing lookback − close), or 0 when highest high − close is not positive.
+Long: Long arm AND close > open AND close ≤ Session VWAP AND long risk/reward ≥ minimum risk/reward.
+Short: Short arm AND close < open AND close ≥ Session VWAP AND short risk/reward ≥ minimum risk/reward.
+Exit: long, low ≤ lowest low over the swing lookback captured at entry OR high ≥ upper second-extreme band captured at entry OR a qualifying short signal occurs when opposite-signal reversal is enabled.
+Exit: short, high ≥ highest high over the swing lookback captured at entry OR low ≤ lower second-extreme band captured at entry OR a qualifying long signal occurs when opposite-signal reversal is enabled.

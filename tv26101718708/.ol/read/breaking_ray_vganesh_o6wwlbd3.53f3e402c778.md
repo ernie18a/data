@@ -1,0 +1,2 @@
+Long: (wick mode: high > selected anchor candle high) OR (close mode: close > selected anchor candle high)
+Short: (wick mode: low < selected anchor candle low) OR (close mode: close < selected anchor candle low)

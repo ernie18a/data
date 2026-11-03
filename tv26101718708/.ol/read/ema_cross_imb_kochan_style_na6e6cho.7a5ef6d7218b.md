@@ -1,0 +1,7 @@
+Calculation: Bullish FVG size = low of the last completed bar − high two bars before it
+Calculation: Bearish FVG size = low two bars before the last completed bar − high of the last completed bar
+Calculation: Previous candle body-to-range ratio = |close − open| / (high − low) of the last completed bar
+Long: fast EMA > slow EMA and close > fast EMA on the last completed bar AND bullish FVG size >= minimum gap threshold AND last completed bar closes above its open AND previous candle body-to-range ratio > imbalance threshold AND last completed bar volume > its volume SMA AND last completed bar high > the bar before it high AND flat position AND bar time is between 07:30 and 10:00 UTC−6
+Short: fast EMA < slow EMA and close < fast EMA on the last completed bar AND bearish FVG size >= minimum gap threshold AND last completed bar closes below its open AND previous candle body-to-range ratio > imbalance threshold AND last completed bar volume > its volume SMA AND last completed bar low < the bar before it low AND flat position AND bar time is between 07:30 and 10:00 UTC−6
+Exit: Long, low <= entry price − stop distance OR (highest high since entry >= entry price + trailing activation distance AND low <= highest high since entry − trailing offset)
+Exit: Short, high >= entry price + stop distance OR (lowest low since entry <= entry price − trailing activation distance AND high >= lowest low since entry + trailing offset)

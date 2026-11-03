@@ -1,0 +1,3 @@
+Calculation: Session buy-volume percentage = sum of estimated buy volume for the session divided by total session volume; estimate each bar’s buy volume as volume × clamp(((close − low) + (close − open)) / (2 × (high − low)), 0, 1), or zero when high = low
+Long: session buy-volume percentage exceeds the upper pressure threshold
+Short: session buy-volume percentage falls below the lower pressure threshold

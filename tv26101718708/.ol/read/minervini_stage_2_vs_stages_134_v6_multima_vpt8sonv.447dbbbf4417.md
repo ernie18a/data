@@ -1,0 +1,5 @@
+Calculation: Short-, medium-, and long-term moving averages = configured moving averages of close with progressively longer lookbacks; the short-term lookback is shortest and the long-term lookback is longest.
+Calculation: Rolling high and low = highest high and lowest low over a long lookback of chart-timeframe bars.
+Calculation: Stage 2 template = close > medium-term moving average AND close > long-term moving average AND medium-term moving average > long-term moving average AND long-term moving average > its value at an earlier chart-timeframe bar using a longer lookback AND short-term moving average > medium-term moving average AND short-term moving average > long-term moving average AND close > short-term moving average AND close >= rolling low multiplied by a configurable factor AND close >= rolling high multiplied by a configurable factor.
+Calculation: Volume average = short-term simple moving average of volume.
+Long: Stage 2 template is true on the current bar AND false on the previous completed chart-timeframe bar AND current volume > volume average multiplied by a configurable factor.

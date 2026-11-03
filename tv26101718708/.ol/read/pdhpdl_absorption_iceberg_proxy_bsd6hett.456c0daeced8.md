@@ -1,0 +1,5 @@
+Calculation: Prior-day high/low = high/low of the last completed daily bar (higher timeframe)
+Calculation: Absorption = current-bar volume > its preceding-bar average × a threshold AND (current-bar body ≤ its range × a threshold OR current-bar range < its preceding-bar average range × a threshold)
+Calculation: Level touch = current-bar high/low overlaps the zone around a prior-day high or low; zone half-width = ATR × a threshold, frozen at the start of the day
+Long: On the next bar open, after a regular-session event bar where the first absorption hit in a same-level cluster is at the prior-day low OR a new prior-day-low zone touch is not an absorption bar; entry price − (prior-day low − zone half-width − ATR × a buffer) ≥ ATR × a minimum-risk threshold AND entry price ≤ prior-day low + ATR × a maximum-chase threshold
+Exit: Long, low ≤ entry price − (entry price − stop price) OR high ≥ entry price + (entry price − stop price) × a target multiple OR bars since entry ≥ a time limit; if stop and target are both reached in one bar, exit at the stop

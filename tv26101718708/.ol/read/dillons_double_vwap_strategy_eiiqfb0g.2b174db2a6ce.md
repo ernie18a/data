@@ -1,0 +1,11 @@
+Calculation: VWAP bands = within each anchor period, calculate the volume-weighted mean of the close and its volume-weighted standard deviation; outer bands are the mean plus or minus the standard deviation multiplied by the outer-band parameter.
+Calculation: Macro EMA = exponential moving average of (high + low) / 2 over the longer lookback, calculated on a higher timeframe using its last completed bar.
+Calculation: Distance from macro EMA = absolute value of (close - macro EMA) / close, expressed as a percentage.
+Calculation: Long trailing stop = the highest high since long entry minus that high times the trailing-distance parameter, once that high exceeds entry price times (1 + the trailing-activation parameter); otherwise, entry price times (1 - the stop-loss parameter).
+Calculation: Short trailing stop = the lowest low since short entry plus that low times the trailing-distance parameter, once that low falls below entry price times (1 - the trailing-activation parameter); otherwise, entry price times (1 + the stop-loss parameter).
+Calculation: Long profit target = entry price times (1 + the take-profit parameter).
+Calculation: Short profit target = entry price times (1 - the take-profit parameter).
+Long: close > macro EMA AND distance from macro EMA > its minimum parameter AND ADX < its threshold parameter AND datetime is outside the configured restricted session AND low crosses below the lower outer VWAP band AND close > lower outer VWAP band AND position is not short
+Short: close < macro EMA AND distance from macro EMA > its minimum parameter AND ADX < its threshold parameter AND datetime is outside the configured restricted session AND high crosses above the upper outer VWAP band AND close < upper outer VWAP band AND position is not long
+Exit: long, close crosses the long trailing stop OR high > long profit target OR (early-close option enabled AND low crosses below the lower outer VWAP band)
+Exit: short, close crosses the short trailing stop OR low > short profit target OR (early-close option enabled AND high crosses above the upper outer VWAP band)

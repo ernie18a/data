@@ -1,0 +1,2 @@
+Long: (HTF bullish expansion OR HTF bullish correction) AND HTF close >= HTF EMA AND NOT (HTF extended AND LTF bullish correction)
+Short: (HTF bearish expansion OR HTF bearish correction) AND HTF close <= HTF EMA AND NOT (HTF extended AND LTF bearish correction)

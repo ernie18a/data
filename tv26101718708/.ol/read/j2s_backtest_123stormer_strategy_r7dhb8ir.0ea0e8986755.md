@@ -1,0 +1,8 @@
+Calculation: Fast EMA = EMA of close on the higher-timeframe bar still forming, with a shorter lookback than the slow EMA.
+Calculation: Slow EMA = EMA of close on the higher-timeframe bar still forming, with a longer lookback than the fast EMA.
+Calculation: Three-bar high/low = highest high / lowest low of the signal bar and its two preceding bars.
+Calculation: Three-bar range = three-bar high minus three-bar low.
+Long: The oldest of three consecutive bars has a higher high and higher low than the middle bar AND the newest bar is inside the middle bar (high < middle-bar high AND low > middle-bar low) AND all three lows are above both EMAs AND, within the entry-wait limit after the signal, price reaches or exceeds the signal bar high.
+Short: The oldest of three consecutive bars has a lower high and lower low than the middle bar AND the newest bar is inside the middle bar (high < middle-bar high AND low > middle-bar low) AND all three highs are below both EMAs AND, within the entry-wait limit after the signal, price reaches or falls below the signal bar low.
+Exit: long, low <= signal three-bar low + one minimum price tick OR high >= signal bar high + signal three-bar range × profit-over-risk parameter OR bars since entry = trade-duration limit.
+Exit: short, high >= signal three-bar high + one minimum price tick OR low <= signal bar low − signal three-bar range × profit-over-risk parameter OR bars since entry = trade-duration limit.

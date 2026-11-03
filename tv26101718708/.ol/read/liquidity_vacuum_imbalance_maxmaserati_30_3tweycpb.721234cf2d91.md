@@ -1,0 +1,6 @@
+Calculation: bar delta = 0.4 × volume if close > open; −0.4 × volume if close < open; 0 otherwise
+Calculation: price movement intensity = (high − low) / ATR over a lookback
+Long: a completed run of at least the minimum number of consecutive bars has price movement intensity above a threshold, volume below its longer-lookback average volume times a threshold, and absolute bar delta / volume not above an imbalance threshold; the run's accumulated bar delta is ≥ 0
+Long: a completed run of at least the minimum number of consecutive bars has price movement intensity above a threshold, absolute bar delta / volume above an imbalance threshold, and volume not below its longer-lookback average volume times a threshold; the run's accumulated bar delta is ≥ 0
+Short: a completed run of at least the minimum number of consecutive bars has price movement intensity above a threshold, volume below its longer-lookback average volume times a threshold, and absolute bar delta / volume not above an imbalance threshold; the run's accumulated bar delta is < 0
+Short: a completed run of at least the minimum number of consecutive bars has price movement intensity above a threshold, absolute bar delta / volume above an imbalance threshold, and volume not below its longer-lookback average volume times a threshold; the run's accumulated bar delta is < 0

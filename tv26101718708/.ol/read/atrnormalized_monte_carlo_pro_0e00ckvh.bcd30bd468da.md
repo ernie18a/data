@@ -1,0 +1,3 @@
+Calculation: Probability of terminal price above current close = percentage of Monte Carlo paths whose terminal price exceeds the current close; each path starts at the current close and, for each forecast bar, adds a randomly sampled historical close-to-close change divided by the preceding bar’s ATR, multiplied by the current ATR. Sample moves independently from the recent historical lookback.
+Long: Probability of terminal price above current close ≥ bullish threshold
+Short: Probability of terminal price above current close ≤ bearish threshold

@@ -1,0 +1,3 @@
+Calculation: Negative Volume Index (NVI) = previous NVI multiplied by current close divided by previous close when current volume is lower than previous volume; otherwise previous NVI
+Long: Previous NVI ≤ its moving average AND current NVI > its moving average
+Short: (Previous NVI ≥ its moving average AND current NVI < its moving average) OR (price makes a higher high while NVI makes a lower low over the same comparison interval)

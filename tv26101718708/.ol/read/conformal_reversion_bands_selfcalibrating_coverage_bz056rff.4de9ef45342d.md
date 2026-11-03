@@ -1,0 +1,9 @@
+Calculation: Fair-value center = selected session VWAP, EMA, or rolling median; use the rolling median if VWAP is selected but volume is unavailable.
+Calculation: Local volatility = EMA of the absolute difference between price and the fair-value center; use its previous-bar value to normalize the current deviation when volatility normalization is enabled.
+Calculation: Outer deviation band = fair-value center ± max(outer quantile × local volatility, minimum width). The outer quantile is seeded from the configured empirical quantile of recent absolute deviations (normalized by local volatility when enabled), then updated on each confirmed bar toward the configured coverage using the quantile-tracker error, with an optional bounded integral correction; keep it at least as large as the inner quantile. When normalization is disabled, use absolute deviations and a scale of 1.
+Calculation: Normalized deviation = (price − fair-value center) ÷ local volatility when normalization is enabled; otherwise use price − fair-value center.
+Calculation: Price and oscillator pivot highs/lows = local extrema confirmed after the configured number of right-side bars; oscillator is selected as RSI or normalized deviation.
+Long: calibration score count >= configured calibration window AND (close < lower outer band OR (close[1] < lower outer band[1] AND close >= lower outer band))
+Short: calibration score count >= configured calibration window AND (close > upper outer band OR (close[1] > upper outer band[1] AND close <= upper outer band))
+Long: current price pivot low < previous price pivot low AND current oscillator pivot low > previous oscillator pivot low
+Short: current price pivot high > previous price pivot high AND current oscillator pivot high < previous oscillator pivot high

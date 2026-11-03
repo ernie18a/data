@@ -1,0 +1,4 @@
+Calculation: opening-range high/low = highest high / lowest low during the session’s opening range
+Calculation: session AVWAP = cumulative (hlc3 × volume) / cumulative volume from session open through 10:30 America/New_York
+Long: opening range is established AND close crosses above opening-range high AND close > session AVWAP AND close > its simple moving average AND that moving average > its previous value AND volume > a multiple of its average volume
+Short: opening range is established AND close crosses below opening-range low AND close < session AVWAP AND close < its simple moving average AND that moving average < its previous value AND volume > a multiple of its average volume

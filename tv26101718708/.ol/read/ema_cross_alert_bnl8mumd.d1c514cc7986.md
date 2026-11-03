@@ -1,0 +1,4 @@
+Long: shorter-lookback EMA of close crosses above longer-lookback EMA of close on a higher timeframe, using the last completed higher-timeframe bar
+Short: shorter-lookback EMA of close crosses below longer-lookback EMA of close on a higher timeframe, using the last completed higher-timeframe bar
+Exit: long, shorter-lookback EMA of close crosses below longer-lookback EMA of close on a higher timeframe, using the last completed higher-timeframe bar
+Exit: short, shorter-lookback EMA of close crosses below longer-lookback EMA of close on a higher timeframe, using the last completed higher-timeframe bar

@@ -1,0 +1,7 @@
+Calculation: Oscillator = selected built-in RSI, CCI, CMO, COG, MFI, ROC, Stochastic, or Williams %R, or a selected external oscillator
+Calculation: Pivot direction = higher high or lower high at a swing high; higher low or lower low at a swing low, comparing price and oscillator pivots separately
+Calculation: Price and oscillator pivot ratios = each value at the later pivot divided by its value at the previous same-direction pivot
+Calculation: Trend direction = under zigzag mode, the trend at the earlier compared pivot (up for a higher high or higher low; down for a lower low or lower high); under moving-average mode, sign of the earlier pivot’s moving average minus the later pivot’s moving average; under external mode, sign of the external trend signal at the later pivot
+Calculation: Divergence-line validation = at every intervening bar, price and oscillator do not cross their respective straight lines between the compared pivots in the direction of the pivot swing
+Long: At a swing low, price and oscillator pivot directions differ AND ((trend direction is down AND oscillator pivot ratio < price pivot ratio) OR (trend direction is not down AND oscillator pivot ratio > price pivot ratio)) AND divergence-line validation holds
+Short: At a swing high, price and oscillator pivot directions differ AND ((trend direction is up AND oscillator pivot ratio < price pivot ratio) OR (trend direction is not up AND oscillator pivot ratio > price pivot ratio)) AND divergence-line validation holds

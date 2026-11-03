@@ -1,0 +1,1 @@
+On the one-hour chart, go short when the negative directional indicator exceeds the positive directional indicator; go long when the positive directional indicator exceeds the negative directional indicator. When hedging is disabled, close any position in the opposite direction before opening the new position. For open positions, trail the stop as price moves favorably.

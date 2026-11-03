@@ -1,0 +1,3 @@
+Calculation: Cumulative volume delta = running sum of lower-timeframe bar volume (positive when the bar’s close is above the previous lower-timeframe close, negative when below, and zero when equal), using the lower-timeframe bar still forming and resetting at the first regular-session bar according to the selected daily, weekly, or N-days reset
+Long: Cumulative volume delta >= 0
+Short: Cumulative volume delta < 0

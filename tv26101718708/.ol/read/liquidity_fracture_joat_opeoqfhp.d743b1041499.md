@@ -1,0 +1,9 @@
+Calculation: Latest confirmed pivot low = most recent low pivot confirmed using equal left and right lookback lengths
+Calculation: Latest confirmed pivot high = most recent high pivot confirmed using equal left and right lookback lengths
+Calculation: Average volume = moving average of volume over its configured lookback
+Long: On a completed bar, low < latest confirmed pivot low AND close > latest confirmed pivot low AND volume >= average volume AND latest confirmed pivot low has not already been swept
+Long: On a completed bar, candle range > ATR times its configured buffer multiplier AND lower wick / candle range > configured wick ratio threshold AND close > open AND abs(close - open) < candle range times its configured body fraction AND volume > average volume
+Long: On a completed bar, volume > average volume times its configured spike multiplier AND previous close < previous open AND close > open AND close > previous close AND close - low > 2 * (high - close)
+Short: On a completed bar, high > latest confirmed pivot high AND close < latest confirmed pivot high AND volume >= average volume AND latest confirmed pivot high has not already been swept
+Short: On a completed bar, candle range > ATR times its configured buffer multiplier AND upper wick / candle range > configured wick ratio threshold AND close < open AND abs(close - open) < candle range times its configured body fraction AND volume > average volume
+Short: On a completed bar, volume > average volume times its configured spike multiplier AND previous close > previous open AND close < open AND close < previous close AND high - close > 2 * (close - low)

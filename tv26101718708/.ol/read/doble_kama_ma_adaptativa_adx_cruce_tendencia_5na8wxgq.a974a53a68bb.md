@@ -1,0 +1,2 @@
+Long: fast moving average crosses above slow moving average AND fast and slow moving averages are above the longer-term trend moving average AND the slow moving average is rising AND ADX is above its minimum threshold
+Short: fast moving average crosses below slow moving average AND fast and slow moving averages are below the longer-term trend moving average AND the slow moving average is falling AND ADX is above its minimum threshold

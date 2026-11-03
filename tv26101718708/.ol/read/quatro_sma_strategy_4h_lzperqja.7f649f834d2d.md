@@ -1,0 +1,6 @@
+Long: SMA(shortest lookback) > SMA(medium lookback) > SMA(longest short-term lookback) AND close > long-term SMA(close) AND volume > average volume over a lookback * volume multiplier
+Short: SMA(shortest lookback) < SMA(medium lookback) < SMA(longest short-term lookback) AND close < long-term SMA(close) AND volume > average volume over a lookback * volume multiplier
+Exit: Long, SMA(shortest lookback) < SMA(medium lookback) < SMA(longest short-term lookback) AND close > long-term SMA(close)
+Exit: Short, SMA(shortest lookback) > SMA(medium lookback) > SMA(longest short-term lookback) AND close < long-term SMA(close)
+Exit: Long, low <= entry price * (1 - stop-loss percentage) OR high >= entry price * (1 + take-profit 1 percentage) OR high >= entry price * (1 + take-profit 2 percentage) OR high >= entry price * (1 + take-profit 3 percentage)
+Exit: Short, high >= entry price * (1 + stop-loss percentage) OR low <= entry price * (1 - take-profit 1 percentage) OR low <= entry price * (1 - take-profit 2 percentage) OR low <= entry price * (1 - take-profit 3 percentage)

@@ -1,0 +1,7 @@
+Calculation: Session VWAP = cumulative volume-weighted average of (high + low + close) / 3, reset at each active session
+Calculation: Volume percentile = percentage of valid volumes in the lookback window, including the current bar, that are less than or equal to current volume
+Calculation: Body displacement / ATR = abs(close - open) / ATR
+Long: On a confirmed active-session chart bar, volume percentile >= its threshold AND body displacement / ATR <= its threshold AND close < Session VWAP - near-VWAP distance threshold; for an actual entry, also require the long direction enabled, allowed day and time, no open position, no entry block, and entry on the next chart bar
+Short: On a confirmed active-session chart bar, volume percentile >= its threshold AND body displacement / ATR <= its threshold AND close > Session VWAP + near-VWAP distance threshold; for an actual entry, also require the short direction enabled, allowed day and time, no open position, no entry block, and entry on the next chart bar
+Exit: Long, bar low <= the signal bar low minus the ATR stop multiple OR bar high >= the Session VWAP saved on the signal bar OR chart bars since entry >= the reversal horizon OR the configured end-of-day flatten time is reached
+Exit: Short, bar high >= the signal bar high plus the ATR stop multiple OR bar low <= the Session VWAP saved on the signal bar OR chart bars since entry >= the reversal horizon OR the configured end-of-day flatten time is reached

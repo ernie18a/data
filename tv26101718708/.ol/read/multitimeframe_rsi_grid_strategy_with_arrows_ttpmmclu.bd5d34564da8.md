@@ -1,0 +1,5 @@
+Long: RSI on the chart timeframe < oversold AND RSI on each of two higher timeframes < oversold (use the last completed higher-timeframe bar) AND flat OR (long position AND close < last entry price − grid spacing AND grid level < maximum grid level AND daily target not reached)
+Short: RSI on the chart timeframe > overbought AND RSI on each of two higher timeframes > overbought (use the last completed higher-timeframe bar) AND flat OR (short position AND close > last entry price + grid spacing AND grid level < maximum grid level AND daily target not reached)
+Exit: long, RSI on the chart timeframe > overbought AND RSI on each of two higher timeframes > overbought (use the last completed higher-timeframe bar) OR daily profit ≥ daily profit target OR open loss > drawdown limit
+Exit: short, RSI on the chart timeframe < oversold AND RSI on each of two higher timeframes < oversold (use the last completed higher-timeframe bar) OR daily profit ≥ daily profit target OR open loss > drawdown limit
+Calculation: Grid spacing = ATR × grid multiplier

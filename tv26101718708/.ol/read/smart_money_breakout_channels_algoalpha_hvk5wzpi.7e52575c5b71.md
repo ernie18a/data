@@ -1,0 +1,6 @@
+Calculation: Normalized volatility = standard deviation of normalized close over a lookback, where normalized close = (close − lowest low over a longer lookback) / (highest high over that lookback − lowest low over that lookback)
+Calculation: Upper and lower volatility positions = (highestbars and lowestbars, respectively, of normalized volatility over the channel-detection lookback plus one bar + the channel-detection lookback) / the channel-detection lookback
+Calculation: Channel duration = maximum of 1 and the bars since lower volatility position crossed above upper volatility position
+Calculation: Channel bounds = highest high and lowest low over channel duration; create a channel when upper volatility position crosses above lower volatility position, channel duration exceeds its minimum, and either nested channels are allowed or the candidate bounds do not overlap an existing channel
+Long: An active channel exists AND (the open-close midpoint if strong-close mode is enabled, otherwise close) > the channel top
+Short: An active channel exists AND (the open-close midpoint if strong-close mode is enabled, otherwise close) < the channel bottom

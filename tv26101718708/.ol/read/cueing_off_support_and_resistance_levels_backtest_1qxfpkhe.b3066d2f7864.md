@@ -1,0 +1,5 @@
+Calculation: Prior completed higher-timeframe high = high of the last completed bar aggregated to a higher timeframe than the chart timeframe
+Calculation: Prior completed higher-timeframe low = low of the last completed bar aggregated to a higher timeframe than the chart timeframe
+Calculation: Signal state = if “To Line / From Line” is enabled, short when chart high <= prior completed higher-timeframe low, long when chart low >= prior completed higher-timeframe high; otherwise retain the previous signal state, initially neutral. If disabled, short when chart high <= prior completed higher-timeframe high, long when chart low >= prior completed higher-timeframe low; otherwise retain the previous signal state, initially neutral. Swap long and short when “Trade reverse” is enabled.
+Long: Signal state = long
+Short: Signal state = short

@@ -1,0 +1,18 @@
+Calculation: ATR = average true range over the ATR lookback.
+Calculation: Prior range support = lowest low over the range lookback, excluding the current bar.
+Calculation: Prior range high = highest high over the range lookback, excluding the current bar.
+Calculation: Range age = count of closes in the range lookback that fall between prior range support and prior range high.
+Calculation: Mature range = enough history exists, range age is at least the minimum range age, and prior range height divided by ATR is between 0.45 and the maximum range width in ATRs.
+Calculation: Breakdown distance in ATRs = (active support − close) / ATR; before a breakdown, active support is prior range support.
+Calculation: Breakdown progress score = clamp((breakdown distance in ATRs − minimum breakdown distance in ATRs) / (follow-through distance in ATRs − minimum breakdown distance in ATRs) × 100, 0, 100).
+Calculation: Bearish close quality = clamp((high − close) / max(high − low, minimum tick) × 100, 0, 100).
+Calculation: Relative volume = volume / average volume over the volume lookback when volume and its average are positive; otherwise use 1.
+Calculation: Volume score = 55 when volume is unusable; otherwise clamp((relative volume − 0.85) / (strong relative-volume level − 0.85) × 100, 0, 100).
+Calculation: Retest rejection = active breakdown AND high is within the retest tolerance below support and no more than twice that tolerance above support AND close < support AND close < open.
+Calculation: Retest score = 100 for a retest rejection; 70 for an active breakdown retest touch without rejection; 48 for an active breakdown without a retest touch; otherwise 45.
+Calculation: Target guide = active support − active range height × target range multiple.
+Calculation: Target-room score = clamp((max(close − target guide, 0) / ATR − 0.60) / (2.65 − 0.60) × 100, 0, 100).
+Calculation: Breakdown score = clamp(0.22 × range maturity score + 0.24 × breakdown progress score + 0.14 × bearish close quality + 0.16 × volume score + 0.12 × retest score + 0.12 × target-room score, 0, 100); range maturity score = clamp(0.58 × range-age score + 0.42 × range-width score, 0, 100), where range-age score scales range age from minimum to mature range age into 0–100 and range-width score peaks at ideal range width, scaling linearly from 0.65 ATR to ideal width below it and from ideal width to maximum width above it.
+Calculation: Failure risk = for an active breakdown, clamp(0.28 × (100 − breakdown progress score) + 0.22 × lower-wick score + 0.18 × (100 − volume score) + 0.20 × support-distance risk + 0.12 × (100 − range maturity score), 0, 100); lower-wick score scales the lower-wick percentage from 20% to 68% into 0–100, and support-distance risk scales inversely from 0 at zero distance to 100 at the follow-through distance in ATRs.
+Short: (mature range AND close < prior range support − minimum breakdown distance in ATRs × ATR) OR (active breakdown AND close is at least the minimum breakdown distance in ATRs below support AND breakdown score ≥ ready threshold AND failure risk ≤ maximum ready failure risk, on transition from not ready) OR (retest rejection, on transition from not rejected) OR (active breakdown AND breakdown distance in ATRs ≥ follow-through distance in ATRs AND failure risk < failure-risk threshold, on transition from not in follow-through).
+Exit: short, close > active support + reclaim buffer in ATRs × ATR

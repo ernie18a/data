@@ -1,0 +1,6 @@
+Calculation: Oscillator = Let E be the EMA of close over the power lookback and X = high + low - 2 × E. Initialize L0, L1, L2 and L3 to zero; on each bar update them in order: L0 = (1 - gamma) × X + gamma × previous L0; L1 = -gamma × L0 + previous L0 + gamma × previous L1; L2 = -gamma × L1 + previous L1 + gamma × previous L2; L3 = -gamma × L2 + previous L2 + gamma × previous L3. Let U = sum of max(Li - L(i+1), 0) and D = sum of max(L(i+1) - Li, 0), for i = 0 through 2. Smooth volume × (100 × U / (U + D) - 50) with the selected moving-average method and smoothing lookback; use a ratio of zero when U + D = 0. Calculate on the chart timeframe for the indicator markings, or on a configurable higher or lower timeframe for the trading system, using the last completed bar or, if configured, the still-forming bar.
+Calculation: Direction = Up when oscillator exceeds its previous bar, down when oscillator is below its previous bar, and otherwise the previous direction.
+Long: Direction = up
+Short: Direction = down
+Exit: long, direction on the selected signal bar = down OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, direction on the selected signal bar = up OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

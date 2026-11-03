@@ -1,0 +1,7 @@
+Calculation: Primary magnet = center price of the most-touched equal-width bin spanning the highest high to lowest low over a lookback; a bar touches a bin when its low-to-high range covers it
+Calculation: Magnet score = capped weighted sum of primary-bin touch count, volume relative to its moving average, and a bonus when either magnet break occurs
+Calculation: Volume average = simple moving average of volume
+Calculation: ATR = average true range
+Calculation: Bias EMA = exponential moving average of close
+Long: close crosses above primary magnet plus an ATR-scaled margin AND volume is at least its moving average times a multiplier AND primary magnet has enough touches AND close is above the bias EMA AND bias EMA has risen over a lookback AND magnet score meets a threshold AND enough bars have elapsed since the prior signal AND the bar is closed
+Short: close crosses below primary magnet minus an ATR-scaled margin AND volume is at least its moving average times a multiplier AND primary magnet has enough touches AND close is below the bias EMA AND bias EMA has fallen over a lookback AND magnet score meets a threshold AND enough bars have elapsed since the prior signal AND the bar is closed

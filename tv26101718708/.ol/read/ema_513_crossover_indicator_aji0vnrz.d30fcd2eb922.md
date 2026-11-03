@@ -1,0 +1,2 @@
+Long: 5-period EMA crosses above 13-period EMA OR low <= 13-period EMA on the first bar after a bullish crossover, before any bearish crossover
+Short: 5-period EMA crosses below 13-period EMA OR high >= 13-period EMA on the first bar after a bearish crossover, before any bullish crossover

@@ -1,0 +1,9 @@
+Calculation: Normalized MA slope = (longest-lookback moving average − its value at the earlier lookback bar) / ATR.
+Calculation: MA angle proxy = (longest-lookback moving average − its value at the earlier lookback bar) / current moving average.
+Calculation: Normalized MA distance score = weighted sum of absolute gaps between consecutive moving averages, each divided by ATR; the averages have progressively longer lookbacks.
+Calculation: MTF alignment count = number of requested timeframes whose normalized MA slope exceeds the directional threshold; use the last completed bar when a requested timeframe is higher than the chart timeframe, and the mapped completed bar when it is lower.
+Calculation: Trailing stop distance = ATR × trailing multiplier; after activation one trail distance from entry, the stop follows the highest high since activation for a long or the lowest low since activation for a short, offset by the trail distance.
+Long: (MA250 > MA500 > MA1000 AND close > MA100 AND normalized MA slope > threshold AND MA angle proxy > threshold AND normalized MA distance score > threshold AND MTF alignment count >= minimum AND this full condition was false on the prior bar) OR (on a requested MTF, MA250 > MA500 > MA1000 AND close > MA100 AND normalized MA slope > threshold AND MA angle proxy > threshold AND normalized MA distance score > threshold).
+Short: (MA250 < MA500 < MA1000 AND close < MA100 AND normalized MA slope < −threshold AND MA angle proxy < −threshold AND normalized MA distance score > threshold AND MTF alignment count >= minimum AND this full condition was false on the prior bar) OR (on a requested MTF, MA250 < MA500 < MA1000 AND close < MA100 AND normalized MA slope < −threshold AND MA angle proxy < −threshold AND normalized MA distance score > threshold).
+Exit: Long, new short signal OR low <= long trailing stop.
+Exit: Short, new long signal OR high >= short trailing stop.

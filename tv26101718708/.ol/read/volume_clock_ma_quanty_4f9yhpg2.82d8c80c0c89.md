@@ -1,0 +1,3 @@
+Calculation: Volume clock MA = volume-weighted average of the latest bars totaling W times the average volume of the preceding N bars; include only the volume needed from the oldest bar, and cap the window at M times W bars, using a plain VWMA of the capped bars if the target volume is not reached
+Long: close > volume clock MA AND previous close <= previous volume clock MA
+Short: close < volume clock MA AND previous close >= previous volume clock MA

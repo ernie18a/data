@@ -1,0 +1,3 @@
+Calculation: RSI = 100 − 100 / (1 + Wilder-smoothed average gains / Wilder-smoothed average losses) of close changes
+Long: On a lower-timeframe bar, the shorter-lookback RSI crosses either above or below the longer-lookback RSI, AND the RSI value at the crossover is at or below the oversold threshold, AND it is outside the inclusive hide range; in Matrix mode, use the mean RSI of crossover points in each price bin instead of each point’s RSI
+Short: On a lower-timeframe bar, the shorter-lookback RSI crosses either above or below the longer-lookback RSI, AND the RSI value at the crossover is at or above the overbought threshold, AND it is outside the inclusive hide range; in Matrix mode, use the mean RSI of crossover points in each price bin instead of each point’s RSI

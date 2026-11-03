@@ -1,0 +1,5 @@
+Calculation: Channel index = smooth (price - moving average of price) / (absolute value of price - moving average of price, multiplied by a coefficient); when the absolute difference is zero, substitute a positive price increment. Use the same price-average parameters throughout, and independently chosen smoothing parameters for the final index. Calculate on a configurable higher or lower timeframe using its last completed bar; optionally use its forming bar instead.
+Long: Channel index > upper threshold AND previous channel index <= upper threshold
+Short: Channel index < lower threshold AND previous channel index >= lower threshold
+Exit: long, channel index < lower threshold OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, channel index > upper threshold OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

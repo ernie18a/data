@@ -1,0 +1,10 @@
+Calculation: Relative performance over a lookback = (symbol close / symbol close at the start of the lookback) / (benchmark close / benchmark close at the start of the lookback) - 1
+Calculation: Relative strength line = symbol close / benchmark close
+Calculation: Extension from 50 SMA in ATRs = (close - 50 SMA) / 50 SMA / (ATR / close)
+Calculation: Price momentum composite = 100 × [0.4 × (close / close 13 bars ago) + 0.2 × (close / (2 × close 26 bars ago)) + 0.2 × (close / (3 × close 39 bars ago)) + 0.2 × (close / (4 × close 52 bars ago))]
+Calculation: Trend-template score = count of these conditions that are true: close above 150 SMA and 200 SMA; 150 SMA above 200 SMA; 200 SMA above its value 22 bars ago; 50 SMA above 150 SMA and 200 SMA; close above 50 SMA; close at least the configured percentage above the rolling long-term low; close within the configured percentage of the rolling long-term high; price momentum composite above its configured threshold.
+Long: close > 200 SMA AND relative performance vs benchmark over the shorter medium-term lookback > 0 AND relative performance vs benchmark over the longer medium-term lookback > 0
+Long: close > 200 SMA AND relative performance vs benchmark over the shorter medium-term lookback > 0 AND relative performance vs benchmark over the longer medium-term lookback <= 0
+Long: relative strength line = its rolling long-term high AND close < rolling long-term high × (1 - configured discount)
+Long: trend-template score = its maximum AND extension from 50 SMA in ATRs is within its configured range AND close's percentage distance from the rolling medium-term high is within its configured range AND rolling short-term high-low range / ATR < configured threshold AND short-term average volume / long-term average volume < configured threshold
+Exit:

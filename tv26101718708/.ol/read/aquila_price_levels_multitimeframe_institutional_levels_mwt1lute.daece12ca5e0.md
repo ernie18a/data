@@ -1,0 +1,3 @@
+Calculation: Short-, medium-, and long-term current period opens = the open of the still-forming bar on each of three progressively longer higher timeframes
+Long: close > short-term current period open OR close > medium-term current period open OR close > long-term current period open
+Short: close < short-term current period open OR close < medium-term current period open OR close < long-term current period open

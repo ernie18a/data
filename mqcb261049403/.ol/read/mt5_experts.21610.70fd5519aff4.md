@@ -1,0 +1,5 @@
+Calculation: Oscillator lines = For each bar on a selectable indicator timeframe, find the most recent bar with the highest high and the most recent bar with the lowest low over the same lookback including that bar. Smooth (current open minus the highest-high bar's open) and (the lowest-low bar's open minus current open) separately with the same moving-average method and smoothing parameters, producing the high line and low line. The indicator timeframe may be higher or lower than the chart timeframe; use the last completed indicator bar and its predecessor, or the still-forming indicator bar and its predecessor when configured for a forming-bar signal.
+Long: high line > low line AND previous high line <= previous low line
+Short: high line < low line AND previous high line >= previous low line
+Exit: long, high line < low line OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance
+Exit: short, high line > low line OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance

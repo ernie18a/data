@@ -1,0 +1,5 @@
+Calculation: Swing Index = 50 × [C − previous C + 0.5 × (C − O) + 0.25 × (previous C − previous O)] × K / (point size × R), where K = max(|H − previous C|, |L − previous C|), R = ATR − 0.5 × ER + 0.25 × |previous C − previous O|, and ER = 0 if previous C is within [L,H], otherwise its distance to the nearest boundary of [L,H]. ATR uses a 15-bar lookback.
+Calculation: Accumulative Swing Index = cumulative sum of Swing Index.
+Calculation: ASI color is rising-positive when ASI ≥ 0 and ASI ≥ previous ASI; falling-negative when ASI < 0 and ASI ≤ previous ASI.
+Long: ASI color changes from not rising-positive to rising-positive on a higher-timeframe bar; use the bar containing the selected chart bar, which may still be forming.
+Short: ASI color changes from not falling-negative to falling-negative on a higher-timeframe bar; use the bar containing the selected chart bar, which may still be forming.

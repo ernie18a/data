@@ -1,0 +1,4 @@
+Calculation: H = selected moving average of CCI(applied price) × volume, using the indicator’s selected smoothing method and length
+Calculation: V = the same moving average of volume, using the same method and length as H
+Long: H[1] <= 0 AND H[0] > 0 OR H[0] > H[1] AND H[1] <= H[2] OR H[1] <= HighLevel1 × V[1] AND H[0] > HighLevel1 × V[0] AND H[0] <= HighLevel2 × V[0] OR H[1] <= HighLevel2 × V[1] AND H[0] > HighLevel2 × V[0] OR LowLevel2 × V[1] <= H[1] AND H[1] < LowLevel1 × V[1] AND H[0] >= LowLevel1 × V[0] OR H[1] < LowLevel2 × V[1] AND H[0] >= LowLevel2 × V[0]
+Short: H[1] >= 0 AND H[0] < 0 OR H[0] < H[1] AND H[1] >= H[2] OR H[1] < LowLevel1 × V[1] AND H[0] < LowLevel2 × V[0] OR H[1] >= LowLevel1 × V[1] AND H[1] < LowLevel1 × V[1] AND H[0] < LowLevel1 × V[0] OR HighLevel1 × V[1] < H[1] AND H[1] <= HighLevel2 × V[1] AND H[0] <= HighLevel1 × V[0] OR H[1] > HighLevel2 × V[1] AND H[0] <= HighLevel2 × V[0]

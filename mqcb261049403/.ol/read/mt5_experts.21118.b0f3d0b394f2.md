@@ -1,0 +1,6 @@
+Calculation: Smoothed candle = Apply the same moving-average method, length, and phase separately to open, high, low, and close. Over a candle lookback ending at the signal bar, set O to the oldest smoothed open, C to the signal bar's smoothed close, H to the maximum of the smoothed highs, O, and C, and L to the minimum of the smoothed lows, O, and C. The signal bar is a configurable bar on the chart timeframe or on a higher or lower timeframe; it may be the still-forming bar or a completed bar at a configurable offset.
+Calculation: Candle midpoint = (H + L) / 2.
+Long: O > candle midpoint AND C > candle midpoint
+Short: O < candle midpoint AND C < candle midpoint
+Exit: long, (O < candle midpoint AND C < candle midpoint) OR (O > C AND (O <= candle midpoint OR C <= candle midpoint) AND (O >= candle midpoint OR C >= candle midpoint)) OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, (O > candle midpoint AND C > candle midpoint) OR (O <= C AND (O <= candle midpoint OR C <= candle midpoint) AND (O >= candle midpoint OR C >= candle midpoint)) OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

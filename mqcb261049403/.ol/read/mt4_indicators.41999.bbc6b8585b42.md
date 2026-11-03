@@ -1,0 +1,3 @@
+Calculation: TSV = rolling sum over the summation lookback of (selected applied price − previous bar’s selected applied price) × selected volume weight; use the current bar’s open as the previous price for the first bar. Applied price is selected from open, high, low, close, median price, typical price, or weighted price. Volume weight is 1, volume, or true range (max(high, previous close) − min(low, previous close); use high − low on the first bar). All calculations use chart-timeframe bars.
+Long: TSV > 0
+Short: TSV < 0

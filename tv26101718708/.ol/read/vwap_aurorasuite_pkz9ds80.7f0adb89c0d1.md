@@ -1,0 +1,7 @@
+Calculation: Day VWAP = volume-weighted average of HLC3 since the selected day boundary.
+Calculation: Winning session VWAP = the London or US session VWAP for the session with greater accumulated volume; unavailable on a tie or when neither session has volume.
+Calculation: Two-day low/high AVWAP = volume-weighted average of HLC3 from the newest confirmed qualifying swing low/high near the corresponding extreme of the current or previous day; expires when its anchor leaves that two-day window.
+Calculation: ATR tolerance = ATR multiplied by the configured anchor-test tolerance.
+Calculation: Normalized sentiment = average of available votes for close versus Day VWAP, Day VWAP versus its longer-lookback value, close versus Winning session VWAP, close versus Two-day low AVWAP, and close versus Two-day high AVWAP; each vote is +1 when the first value is greater, -1 when lower, and 0 when equal; unavailable comparisons are excluded.
+Long: Normalized sentiment >= the moderate-bullish threshold OR close > Two-day low AVWAP + ATR tolerance OR close > Two-day high AVWAP + ATR tolerance
+Short: Normalized sentiment <= the moderate-bearish threshold OR close < Two-day low AVWAP - ATR tolerance OR close < Two-day high AVWAP - ATR tolerance

@@ -1,0 +1,3 @@
+Calculation: Previous completed higher-timeframe daily pivot P=(high+low+close)/3; R1=2P-low; R2=P+(high-low); R3=high+2(P-low); S1=2P-high; S3=low-2(high-P)
+Long: chart-timeframe forming-bar close > P AND chart-timeframe forming-bar close < R1 OR chart-timeframe forming-bar close >= R1 AND chart-timeframe forming-bar close < R2 OR chart-timeframe forming-bar close >= R2 AND chart-timeframe forming-bar close < R3 OR chart-timeframe forming-bar close >= R3
+Short: chart-timeframe forming-bar close > S1 AND chart-timeframe forming-bar close < P OR chart-timeframe forming-bar close <= R1 AND chart-timeframe forming-bar close > R2 OR chart-timeframe forming-bar close <= R2 AND chart-timeframe forming-bar close > R3 OR chart-timeframe forming-bar close <= S3

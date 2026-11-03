@@ -1,0 +1,6 @@
+Calculation: Momentum up = the selected momentum indicator turns upward: MACD line crosses above its signal line; or a moving average of close has current value above its previous value and its value two bars ago above its previous value; or QQE trend changes from down to up. For QQE, trend turns up when smoothed RSI crosses above the prior upper trailing band or high crosses above the running high while QQE is turning up; it turns down when smoothed RSI crosses below the prior lower trailing band or low crosses below the running low while QQE is turning down.
+Calculation: Momentum down = the selected momentum indicator turns downward: MACD line crosses below its signal line; or a moving average of close has current value below its previous value and its value two bars ago below its previous value; or QQE trend changes from up to down.
+Calculation: Prior force-down condition = on the prior bar, bars since momentum down is greater than or equal to bars since RSI(5) was below 20.
+Calculation: Prior force-up condition = on the prior bar, bars since momentum up is greater than or equal to bars since RSI(5) was above 80.
+Long: Momentum up AND NOT prior force-down condition
+Short: Momentum down AND NOT prior force-up condition

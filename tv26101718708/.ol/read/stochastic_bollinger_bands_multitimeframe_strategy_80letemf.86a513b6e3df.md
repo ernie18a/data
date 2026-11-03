@@ -1,0 +1,2 @@
+Long: %K of the lower timeframe Stochastic Oscillator crosses above %D AND both %K and %D are below 20 AND chart close crosses above the lower Bollinger Band calculated from the lower timeframe
+Exit: long, %K of the lower timeframe Stochastic Oscillator crosses below %D AND both %K and %D are above 80 OR chart close is at or above the upper Bollinger Band calculated from the lower timeframe

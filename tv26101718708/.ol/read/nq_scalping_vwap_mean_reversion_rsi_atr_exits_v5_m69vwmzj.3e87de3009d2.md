@@ -1,0 +1,4 @@
+Long: close <= VWAP - minimum VWAP distance AND RSI <= oversold threshold AND close > open AND previous bar close < previous bar open AND within configured session when the session filter is enabled AND position is flat when the one-position-at-a-time filter is enabled
+Short: close >= VWAP + minimum VWAP distance AND RSI >= overbought threshold AND close < open AND previous bar close > previous bar open AND within configured session when the session filter is enabled AND position is flat when the one-position-at-a-time filter is enabled
+Exit: long, low <= entry price - ATR * stop multiple OR high >= entry price + ATR * target multiple OR bars in position >= configured time-exit bar count when the time exit is enabled
+Exit: short, high >= entry price + ATR * stop multiple OR low <= entry price - ATR * target multiple OR bars in position >= configured time-exit bar count when the time exit is enabled

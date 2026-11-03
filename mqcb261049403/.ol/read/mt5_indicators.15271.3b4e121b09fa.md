@@ -1,0 +1,4 @@
+Calculation: Upper level = highest high over the lookback bars, rounded to the configured price precision; use bars starting at the configured signal-bar offset on the configured extrema timeframe, which may be higher, lower, or equal to the chart timeframe, using completed bars
+Calculation: Lower level = lowest low over the lookback bars, rounded to the configured price precision; use bars starting at the configured signal-bar offset on the configured extrema timeframe, which may be higher, lower, or equal to the chart timeframe, using completed bars
+Long: high > Upper level
+Short: low < Lower level

@@ -1,0 +1,8 @@
+Calculation: 9-period stochastic = 100 × (close − lowest low over 9 bars) / (highest high over 9 bars − lowest low over 9 bars); fast stochastic = moving average of the stochastic over a short smoothing period; slow stochastic = moving average of the fast stochastic over a longer smoothing period
+Calculation: 123 reversal state = +1 when close two bars ago < previous close AND current close > previous close AND fast stochastic < slow stochastic AND fast stochastic > a level; −1 when close two bars ago > previous close AND current close < previous close AND fast stochastic > slow stochastic AND fast stochastic < that level; otherwise retain the previous state
+Calculation: Modified price-volume trend = offset + scale × cumulative sum of (volume / 50000) × (current OHLC4 − previous OHLC4) / previous OHLC4, where OHLC4 = (open + high + low + close) / 4
+Calculation: Modified trend state = +1 when modified price-volume trend > its moving average; −1 when it < its moving average; otherwise retain the previous state
+Long: (123 reversal state = +1 AND modified trend state = +1 AND reverse is disabled) OR (123 reversal state = −1 AND modified trend state = −1 AND reverse is enabled)
+Short: (123 reversal state = −1 AND modified trend state = −1 AND reverse is disabled) OR (123 reversal state = +1 AND modified trend state = +1 AND reverse is enabled)
+Exit: long, NOT (123 reversal state = +1 AND modified trend state = +1 AND reverse is disabled) AND NOT (123 reversal state = −1 AND modified trend state = −1 AND reverse is enabled)
+Exit: short, NOT (123 reversal state = −1 AND modified trend state = −1 AND reverse is disabled) AND NOT (123 reversal state = +1 AND modified trend state = +1 AND reverse is enabled)

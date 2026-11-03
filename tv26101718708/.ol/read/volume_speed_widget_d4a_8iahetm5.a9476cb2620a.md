@@ -1,0 +1,5 @@
+Calculation: Lower-timeframe up volume = sum of volumes across the recent lower-timeframe bars, excluding the two newest bars, whose close is above the preceding lower-timeframe close; down volume is the corresponding sum for bars whose close is not above it.
+Calculation: Chart cumulative volume delta = cumulative buy volume minus cumulative sell volume, where each chart bar’s volume is split between buy and sell by assigning the dominant candle portion to the candle’s direction and half the wick portion to each side; cumulate each side using the same selected method and lookback.
+Calculation: Lower-timeframe cumulative volume delta = buy volume minus sell volume across the recent lower-timeframe bars, assigning each bar’s volume to buy when its close rises, to sell when it falls, and half to each when unchanged.
+Long: Lower-timeframe up volume > lower-timeframe down volume OR chart cumulative volume delta > 0 OR lower-timeframe cumulative volume delta > 0
+Short: Lower-timeframe down volume > lower-timeframe up volume OR chart cumulative volume delta < 0 OR lower-timeframe cumulative volume delta < 0

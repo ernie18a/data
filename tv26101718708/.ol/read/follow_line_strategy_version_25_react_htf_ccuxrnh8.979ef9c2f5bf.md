@@ -1,0 +1,8 @@
+Calculation: Follow Line = When close is above the upper Bollinger Band, set a candidate line to low minus ATR (or low if the ATR offset is disabled), and ratchet it upward with the maximum of the candidate and the previous line. When close is below the lower Bollinger Band, set it to high plus ATR (or high if disabled), and ratchet it downward with the minimum of the candidate and previous line. Otherwise carry the previous line forward.
+Calculation: Follow Line trend = +1 when the Follow Line rises, −1 when it falls, and otherwise retain the previous trend; on initialization, use the Bollinger Band breakout direction.
+Long: Previous Follow Line trend ≤ 0 AND current Follow Line trend = +1
+Long: Previous Follow Line trend ≤ 0 AND current Follow Line trend = +1 AND (HTF confirmation is disabled OR last completed higher-timeframe Follow Line trend = +1) AND (session filter is disabled OR current bar is within the configured session) AND position is flat or short
+Short: Previous Follow Line trend ≥ 0 AND current Follow Line trend = −1
+Short: Previous Follow Line trend ≥ 0 AND current Follow Line trend = −1 AND (HTF confirmation is disabled OR last completed higher-timeframe Follow Line trend = −1) AND (session filter is disabled OR current bar is within the configured session) AND position is flat or long
+Exit: Long, current Follow Line trend = −1 OR last completed higher-timeframe Follow Line trend = −1
+Exit: Short, current Follow Line trend = +1 OR last completed higher-timeframe Follow Line trend = +1

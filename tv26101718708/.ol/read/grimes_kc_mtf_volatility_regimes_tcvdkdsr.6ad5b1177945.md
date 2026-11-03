@@ -1,0 +1,4 @@
+Calculation: Smoothed higher-timeframe Keltner bands = interpolate between values from the last two completed bars of a higher timeframe
+Long: Close < chart-timeframe lower Keltner band AND Close < smoothed higher-timeframe lower Keltner band AND the same dual-lower-break condition was false on the previous chart bar
+Short: Close > chart-timeframe upper Keltner band AND Close > smoothed higher-timeframe upper Keltner band AND the same dual-upper-break condition was false on the previous chart bar
+Exit: Long or short, chart-timeframe volatility-width percentile >= upper threshold AND higher-timeframe volatility-width percentile >= upper threshold

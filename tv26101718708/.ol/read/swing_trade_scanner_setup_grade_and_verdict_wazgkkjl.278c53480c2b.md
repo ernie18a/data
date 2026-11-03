@@ -1,0 +1,3 @@
+Calculation: MA ribbon = four moving averages of close on the chart timeframe, ordered from shortest to longest lookback
+Long: close > shortest-lookback MA AND shortest-lookback MA > second-shortest-lookback MA AND second-shortest-lookback MA > third-shortest-lookback MA
+Short: close < shortest-lookback MA AND shortest-lookback MA < second-shortest-lookback MA AND second-shortest-lookback MA < third-shortest-lookback MA AND third-shortest-lookback MA < longest-lookback MA

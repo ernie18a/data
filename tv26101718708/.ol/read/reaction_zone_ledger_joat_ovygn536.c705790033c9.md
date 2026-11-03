@@ -1,0 +1,4 @@
+Calculation: Support zone = confirmed pivot low ± ATR × adjustable half-width multiplier; merge with the nearest existing support zone if overlapping or if midpoint distance ≤ ATR × adjustable merge-distance multiplier
+Calculation: Resistance zone = confirmed pivot high ± ATR × adjustable half-width multiplier; merge with the nearest existing resistance zone if overlapping or if midpoint distance ≤ ATR × adjustable merge-distance multiplier
+Long: Confirmed bar intersects a support zone (high ≥ zone bottom AND low ≤ zone top) OR closes above a resistance zone top after the prior close was at or below it
+Short: Confirmed bar intersects a resistance zone (high ≥ zone bottom AND low ≤ zone top) OR closes below a support zone bottom after the prior close was at or above it

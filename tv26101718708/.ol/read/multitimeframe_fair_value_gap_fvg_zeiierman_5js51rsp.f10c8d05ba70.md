@@ -1,0 +1,5 @@
+Calculation: Candle body = absolute difference between open and close.
+Calculation: Average candle body = cumulative arithmetic mean of candle bodies on the selected FVG timeframe, including its still-forming bar.
+Calculation: FVG trend value = average of the chart bar's OHLC4 and the previous FVG trend value on a newly detected bearish FVG; otherwise, the previous value (initial value 0).
+Long: On the selected FVG timeframe (which may be higher or lower than the chart timeframe), current still-forming bar low > high from two FVG-timeframe bars earlier AND current close > that earlier high AND the bullish gap condition was false on the preceding chart bar AND current candle body >= average candle body × sensitivity OR FVG trend value > its value on the preceding chart bar.
+Short: On the selected FVG timeframe (which may be higher or lower than the chart timeframe), current still-forming bar high < low from two FVG-timeframe bars earlier AND current close < that earlier low AND the bearish gap condition was false on the preceding chart bar AND current candle body >= average candle body × sensitivity OR FVG trend value < its value on the preceding chart bar.

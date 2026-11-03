@@ -1,0 +1,4 @@
+Calculation: Normalized ATR = (the simple moving average of ATR minus its lowest value over the normalization lookback) / (its highest value over that lookback minus its lowest value); use 1 if the range is zero, and clamp to [0, 1].
+Calculation: Smoothed Normalized ATR = the simple moving average of Normalized ATR over a longer lookback.
+Long: Normalized ATR on the higher timeframe (or chart timeframe if equal), using its bar still forming, > Smoothed Normalized ATR on that timeframe
+Short: Normalized ATR on the higher timeframe (or chart timeframe if equal), using its bar still forming, < Smoothed Normalized ATR on that timeframe

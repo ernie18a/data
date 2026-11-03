@@ -1,0 +1,23 @@
+Calculation: Opening range high/low = highest high/lowest low during the configured opening-range window; lock both when that window ends and reset on a new day
+Calculation: Bullish/bearish structure break = close crosses above the latest confirmed pivot high / below the latest confirmed pivot low; pivots use equal left and right lookbacks
+Calculation: Bullish/bearish liquidity sweep = low below the prior lookback-period lowest low and close back above it / high above the prior lookback-period highest high and close back below it
+Calculation: Bullish/bearish order block = the most recent bearish/bullish candle among the five preceding bars when a bullish/bearish structure break occurs; it remains active until close crosses its configured mitigation level
+Calculation: Bullish/bearish fair value gap = current low above the high two bars earlier / current high below the low two bars earlier; retain the latest gap through its configured maximum age
+Calculation: Bullish/bearish gap interaction = close is within the latest active bullish/bearish gap
+Calculation: Long/short confluence score = 1 for each enabled matching condition, summed across higher-timeframe trend, structure break (configured weight), liquidity sweep, order-block interaction, gap interaction, volume flow, smart-trail direction, momentum, and session/day; disabled conditions contribute 0
+Calculation: Higher-timeframe trend = on the higher timeframe, fast EMA above/below slow EMA, and chart-timeframe close above/below the fast EMA; use the last completed higher-timeframe bar
+Calculation: Volume flow = volume above its moving average and close above/below open; if OBV confirmation is enabled, OBV change over the configured lookback must also be positive/negative
+Calculation: Smart-trail direction = direction of the ATR-based trailing level, updated upward when close exceeds the prior trail and downward when close falls below it
+Calculation: Momentum = RSI at or above/below its configured threshold; exclude long/short momentum when a bearish/bullish divergence is present, where divergence is a higher price pivot with a lower RSI pivot / lower price pivot with a higher RSI pivot
+Calculation: Bullish/bearish divergence = between the latest two confirmed pivots, price makes a higher high/lower low while RSI makes a lower high/higher low
+Long: bullish structure break
+Short: bearish structure break
+Long: low below the lowest low of the preceding configured lookback bars and close above that low
+Short: high above the highest high of the preceding configured lookback bars and close below that high
+Long: opening range is locked and (close above its high OR retest mode is enabled, a prior close-above-high breakout has occurred, low is at or below the high plus configured range tolerance, and close is above the high), before the configured cutoff; long trading is enabled; the long confluence score meets the configured minimum; the higher-timeframe bullish trend holds when enabled; the configured session and weekday filters pass; position is flat
+Short: opening range is locked and (close below its low OR retest mode is enabled, a prior close-below-low breakout has occurred, high is at or above the low minus configured range tolerance, and close is below the low), before the configured cutoff; short trading is enabled; the short confluence score meets the configured minimum; the higher-timeframe bearish trend holds when enabled; the configured session and weekday filters pass; position is flat
+Calculation: Initial stop distance = configured ATR multiple, distance from entry close to opening-range midpoint, distance from entry close to opposite opening-range boundary, or configured fixed points, as selected; clamp to at least one tick
+Calculation: First and second profit targets = entry price plus/minus initial stop distance times their respective configured risk multiples for long/short positions
+Calculation: Active long/short stop = initial stop before the first target; after the first target, breakeven price adjusted by configured ticks, or the more protective of that price and the smart trail when trailing is enabled
+Exit: Long, low <= active stop OR high >= first profit target (configured partial position exit) OR high >= second profit target OR configured cutoff time is reached
+Exit: Short, high >= active stop OR low <= first profit target (configured partial position exit) OR low <= second profit target OR configured cutoff time is reached

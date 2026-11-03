@@ -1,0 +1,4 @@
+Long: DeMarker on the configured signal timeframe (higher or lower than the chart timeframe as configured), at the last completed bar, crosses above the lower threshold: current value > lower threshold AND previous value ≤ lower threshold
+Short: DeMarker on the configured signal timeframe (higher or lower than the chart timeframe as configured), at the last completed bar, crosses below the upper threshold: current value < upper threshold AND previous value ≥ upper threshold
+Exit: long, DeMarker on the configured signal timeframe (higher or lower than the chart timeframe as configured), at the last completed bar, crosses below the upper threshold: current value < upper threshold AND previous value ≥ upper threshold
+Exit: short, DeMarker on the configured signal timeframe (higher or lower than the chart timeframe as configured), at the last completed bar, crosses above the lower threshold: current value > lower threshold AND previous value ≤ lower threshold

@@ -1,0 +1,2 @@
+Long: Parabolic SAR < close AND (+DI > -DI OR -DI > +DI) on the indicator timeframe, which may be higher or lower than the chart timeframe; use the current bar while it is forming and the corresponding historical bar otherwise
+Short: Parabolic SAR > close AND (-DI > +DI OR +DI > -DI) on the indicator timeframe, which may be higher or lower than the chart timeframe; use the current bar while it is forming and the corresponding historical bar otherwise

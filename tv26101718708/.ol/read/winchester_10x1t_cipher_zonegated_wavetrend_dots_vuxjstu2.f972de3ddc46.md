@@ -1,0 +1,4 @@
+Calculation: WaveTrend fast line = EMA of the channel index, where the channel index is (HLC3 − EMA(HLC3, channel length)) / (0.015 × EMA(abs(HLC3 − EMA(HLC3, channel length)), channel length)); the channel length is used for both EMAs
+Calculation: WaveTrend signal line = SMA of the WaveTrend fast line, using a shorter lookback than the fast line’s averaging EMA
+Long: WaveTrend fast line crosses above the WaveTrend signal line AND WaveTrend signal line is at or below the first oversold level
+Short: WaveTrend fast line crosses below the WaveTrend signal line AND WaveTrend signal line is at or above the first overbought level

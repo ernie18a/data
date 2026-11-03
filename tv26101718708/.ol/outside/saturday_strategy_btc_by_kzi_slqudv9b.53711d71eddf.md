@@ -1,0 +1,1 @@
+On Saturday, use the reference instrument’s prior completed daily candle to choose direction: go long if it closed above its open; otherwise go short. Exit either position when the chart day is no longer Saturday. Also exit a long after price rises a small amount above its average entry price, or a short after price falls to a very small fraction of its average entry price.

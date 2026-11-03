@@ -1,0 +1,3 @@
+Calculation: Smoothed power-weighted moving average = apply a configurable smoothing method to the weighted average of applied prices over a lookback, with each bar weighted by its recency rank raised to a configurable power; round to configured precision.
+Long: smoothed power-weighted moving average > its value on the previous chart bar OR the color on the higher-timeframe indicator changes from neutral (unchanged line) to falling; the mapped higher-timeframe bar may still be forming.
+Short: smoothed power-weighted moving average < its value on the previous chart bar OR the color on the higher-timeframe indicator changes from falling to neutral (unchanged line); the mapped higher-timeframe bar may still be forming.

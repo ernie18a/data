@@ -1,0 +1,3 @@
+Calculation: Selected moving average = selected SMA, EMA, WMA, HMA, or RMA of close over the selected lookback, calculated on higher-timeframe bars using the last completed bar
+Long: At a review-period start, the last completed review-period close <= its moving average AND the current review-period close > its moving average
+Exit: long, at a review-period start, the last completed review-period close >= its moving average AND the current review-period close < its moving average

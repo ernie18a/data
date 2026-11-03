@@ -1,0 +1,7 @@
+Calculation: Quarterly margin-account change = latest higher-timeframe quarterly value minus the prior completed quarterly value; use the latest available quarterly bar, which may still be forming.
+Calculation: Leading-sector excess return = the maximum, across sector ETFs, of each ETF's return minus SPY's return over the same lookback.
+Calculation: CPI year-over-year = (latest monthly CPI index / CPI index twelve months earlier - 1) × 100; use the latest available higher-timeframe monthly bar, which may still be forming.
+Calculation: Earnings beats = count of bellwethers whose latest reported actual EPS is at least estimated EPS; available count = number with both values.
+Long: VIX > threshold AND (Fed override = force pass OR (Fed override = auto AND current daily Fed funds rate ≤ its value at the longer lookback + tolerance)) AND quarterly margin-account change < 0 AND leading-sector excess return > threshold AND (earnings beats × 2 > available count OR available count = 0 OR earnings override = force pass) AND (credit gate disabled OR high-yield spread < threshold) AND (CPI gate disabled OR CPI year-over-year < threshold) AND NOT (the same composite conditions held on the prior chart bar); a force-fail override makes its condition false.
+Short: 
+Exit: 

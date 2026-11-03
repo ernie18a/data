@@ -1,0 +1,5 @@
+Calculation: Next safety-order price = base entry price × (1 − first step percentage × sum of step-scale^i for i from 0 through the number of safety orders already filled)
+Calculation: Average entry price = total quote amount spent on the base and filled safety orders ÷ total units acquired; each order’s units = its quote amount ÷ its execution price
+Long: No deal is open AND RSI(14) on a higher timeframe crosses above its threshold, using the last completed higher-timeframe bar
+Long: A deal is open AND the safety-order limit is not reached AND low ≤ next safety-order price AND (RSI(14) on a higher timeframe crosses above its threshold OR RSI(7) on a higher timeframe crosses above its threshold), using the last completed higher-timeframe bar for each RSI; RSI(14) has the longer lookback than RSI(7); execute at min(open, next safety-order price)
+Exit: Long, high ≥ average entry price × (1 + take-profit percentage)

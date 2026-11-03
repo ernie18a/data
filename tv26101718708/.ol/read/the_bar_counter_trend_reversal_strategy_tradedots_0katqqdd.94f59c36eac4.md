@@ -1,0 +1,5 @@
+Calculation: n-bar rising(source) = current source > source on each of the preceding n bars
+Calculation: n-bar falling(source) = current source < source on each of the preceding n bars
+Calculation: Upper/lower channel = selected Bollinger Bands or Keltner Channels calculated from close
+Long: Confirmed bar AND n-bar falling(close, fall lookback) AND (volume confirmation disabled OR n-bar rising(volume, fall lookback)) AND (channel confirmation disabled OR low < lower channel) AND no long entry since the most recent bar where close > prior close
+Short: Confirmed bar AND n-bar rising(close, rise lookback) AND (volume confirmation disabled OR n-bar rising(volume, rise lookback)) AND (channel confirmation disabled OR high > upper channel) AND no short entry since the most recent bar where close < prior close

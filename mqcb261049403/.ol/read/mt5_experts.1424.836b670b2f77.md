@@ -1,0 +1,6 @@
+Calculation: Moving average = selected moving-average method applied to the selected price on the configured indicator timeframe, which may be higher, lower, or equal to the chart timeframe; use its last completed bar.
+Calculation: Trend-envelope direction = on each indicator-timeframe bar, compare its close with the prior bar’s upper and lower trend thresholds: set direction bullish if close is above the prior upper threshold, bearish if below the prior lower threshold, otherwise retain the prior direction. The raw thresholds are the moving average multiplied by (1 + deviation) and (1 − deviation); while bullish, carry the lower threshold forward as the greater of its raw value and its prior value, and while bearish or unset, carry the upper threshold forward as the lesser of its raw value and its prior value. A bullish transition is a change from bearish to bullish; a bearish transition is a change from bullish to bearish.
+Long: Trend-envelope direction changes from bearish to bullish.
+Short: Trend-envelope direction changes from bullish to bearish.
+Exit: long, Trend-envelope direction is bearish.
+Exit: short, Trend-envelope direction is bullish.

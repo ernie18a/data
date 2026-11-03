@@ -1,0 +1,5 @@
+Calculation: Short-horizon ROC = percentage change in close over the shortest lookback, calculated from daily bars; daily is higher than an intraday chart and the same timeframe as a daily chart. Use the current daily bar while it is forming in real time and the latest completed daily bar historically.
+Calculation: Medium-horizon ROC = percentage change in close over a longer lookback than the short-horizon ROC, using the same daily-bar timing.
+Calculation: Long-horizon ROC = percentage change in close over a longer lookback than the medium-horizon ROC, using the same daily-bar timing.
+Long: Medium-horizon ROC > 0 AND long-horizon ROC > 0 OR short-horizon ROC > 0 AND medium-horizon ROC > 0 AND long-horizon ROC < 0
+Short: Short-horizon ROC < 0 AND medium-horizon ROC < 0 OR short-horizon ROC < 0 AND medium-horizon ROC < 0 AND long-horizon ROC > 0

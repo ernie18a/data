@@ -1,0 +1,4 @@
+Calculation: Global liquidity = Federal Reserve balance sheet − reverse repo agreements − Treasury General Account, optionally + M2; calculate its percentage change over a lookback on higher-timeframe bars, using the last completed bar.
+Calculation: Crypto percentage change = percentage change in total crypto market value over the same lookback on higher-timeframe bars, using the last completed bar.
+Long: absolute global liquidity percentage change ≥ deadband AND absolute crypto percentage change ≥ deadband AND crypto percentage change > 0
+Short: absolute global liquidity percentage change ≥ deadband AND absolute crypto percentage change ≥ deadband AND crypto percentage change < 0

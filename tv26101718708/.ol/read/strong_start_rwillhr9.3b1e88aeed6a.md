@@ -1,0 +1,1 @@
+Long: first bar of the day AND (open is at least the gap-up threshold above the previous bar’s close OR the bar’s low is within the open-low tolerance of the open)

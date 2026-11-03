@@ -1,0 +1,5 @@
+Calculation: Market facilitation index = (high - low) / volume
+Long: (short-term EMA of close > medium-term EMA of open AND medium-term EMA of open > long-term WMA of close AND weighted moving average of ADX > a threshold AND ADX < that same threshold AND both market facilitation index and volume have risen within a short lookback) OR (MACD line > MACD signal line AND OBV > its long-term EMA AND short-term EMA of hlc3 > long-term EMA of close AND parabolic SAR < low)
+Short: (short-term EMA of close < medium-term EMA of open AND medium-term EMA of open < long-term WMA of close AND weighted moving average of ADX > a threshold AND ADX < that same threshold AND both market facilitation index and volume have risen within a short lookback) OR (MACD line < MACD signal line AND OBV < its long-term EMA AND short-term EMA of hlc3 < long-term EMA of close AND parabolic SAR > high)
+Exit: long, high reaches the entry price plus the profit target distance OR low reaches the entry price minus the stop distance
+Exit: short, low reaches the entry price minus the profit target distance OR high reaches the entry price plus the stop distance

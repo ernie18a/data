@@ -1,0 +1,4 @@
+Long: Fast EMA crosses above middle EMA OR (fast EMA > middle EMA AND middle EMA > longer EMA AND longer EMA > longest EMA AND (fast EMA - middle EMA) / middle EMA × 100 >= minimum fan-gap percentage AND low >= middle EMA × (1 - retest tolerance percentage / 100) AND low <= middle EMA × (1 + retest tolerance percentage / 100) AND close > middle EMA)
+Short: Fast EMA crosses below middle EMA OR (fast EMA < middle EMA AND middle EMA < longer EMA AND longer EMA < longest EMA AND (middle EMA - fast EMA) / middle EMA × 100 >= minimum fan-gap percentage AND high >= middle EMA × (1 - retest tolerance percentage / 100) AND high <= middle EMA × (1 + retest tolerance percentage / 100) AND close < middle EMA)
+Exit: long, Fast EMA crosses below middle EMA
+Exit: short, Fast EMA crosses above middle EMA

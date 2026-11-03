@@ -1,0 +1,6 @@
+Calculation: Bullish indicator count = number of true conditions: RSI is below its oversold threshold and rising; MACD histogram is positive OR MACD line crosses above signal line; Williams %R is below its oversold threshold and rising; current or previous close is below its corresponding lower Bollinger Band
+Calculation: Bearish indicator count = number of true conditions: RSI is above its overbought threshold and falling; MACD histogram is negative OR MACD line crosses below signal line; Williams %R is above its overbought threshold and falling; current or previous close is above its corresponding upper Bollinger Band
+Long: Bullish indicator count >= minimum aligned indicator count AND datetime is within the configured trading session
+Short: Bearish indicator count >= minimum aligned indicator count AND datetime is within the configured trading session
+Exit: long, Bearish indicator count >= minimum aligned indicator count AND datetime is within the configured trading session
+Exit: short, Bullish indicator count >= minimum aligned indicator count AND datetime is within the configured trading session

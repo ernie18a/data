@@ -1,0 +1,11 @@
+Calculation: Log return = ln(close / previous close)
+Calculation: Three-bar log return = ln(close / close three bars earlier)
+Calculation: Phase-space position x = clipped, whitened rolling z-score of log price minus its EMA
+Calculation: Phase-space drive y = clipped, whitened rolling z-score of the selected second axis, lagged by its configured bar lag; the default axis is the difference between short-term and long-term EMAs of log return
+Calculation: Radius r = sqrt(x² + y²)
+Calculation: Turning angle = signed angle between consecutive (x, y) vectors, set to zero when either radius is inside the central dead zone
+Calculation: Signed rotation consistency C = rolling sum of turning angles divided by rolling sum of their absolute values; undefined when total absolute turning is at or below its gate
+Calculation: Spiral index S* = rolling sum of changes in ln(r + offset) divided by rolling sum of absolute turning angles
+Calculation: Phase-slip hazard H = clipped sum of (absolute turning-angle deviation from its slower EMA divided by its rolling standard deviation), 2.5 times the drop in absolute C, and 1.5 when C changes sign after prior absolute C exceeds its threshold
+Long: Ready after warm-up AND cooldown elapsed AND ((x < −reversal threshold AND three-bar log return > 0 AND prior three-bar log return ≤ 0 AND C is defined AND |C| > reversal consistency threshold AND S* is defined AND S* < spiral threshold AND H < reversal hazard limit) OR (prior x ≤ breakout threshold AND x > breakout threshold AND three-bar log return > 0 AND r > breakout radius threshold AND S* is defined AND S* > spiral threshold AND H < breakout hazard limit))
+Short: Ready after warm-up AND cooldown elapsed AND ((x > reversal threshold AND three-bar log return < 0 AND prior three-bar log return ≥ 0 AND C is defined AND |C| > reversal consistency threshold AND S* is defined AND S* < spiral threshold AND H < reversal hazard limit) OR (prior x ≥ −breakout threshold AND x < −breakout threshold AND three-bar log return < 0 AND r > breakout radius threshold AND S* is defined AND S* > spiral threshold AND H < breakout hazard limit))

@@ -1,0 +1,5 @@
+Calculation: Fast EMA = exponential moving average using a shorter lookback than the slow EMA, on the evaluated timeframe and applied price.
+Calculation: Slow EMA = exponential moving average using a longer lookback than the fast EMA, on the evaluated timeframe and applied price.
+Calculation: ADX = average directional index on the evaluated timeframe.
+Long: On any evaluated timeframe, close > fast EMA AND fast EMA > slow EMA AND ADX >= minimum ADX, OR at least four of the six evaluated timeframes meet those bullish conditions. Use the last completed bar if the closed-bar setting is enabled; otherwise use the bar still forming. Evaluated timeframes may be higher or lower than the chart timeframe.
+Short: On any evaluated timeframe, close < fast EMA AND fast EMA < slow EMA AND ADX >= minimum ADX. Use the last completed bar if the closed-bar setting is enabled; otherwise use the bar still forming. Evaluated timeframes may be higher or lower than the chart timeframe.

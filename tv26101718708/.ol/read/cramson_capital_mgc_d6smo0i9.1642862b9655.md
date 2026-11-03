@@ -1,0 +1,9 @@
+Calculation: Opening-range value area = build a volume profile from bars in the configured daily opening range; align rows to tick size, distribute each bar’s volume across rows in proportion to price overlap, choose the highest-volume row as POC, then expand from POC toward the heavier adjacent row until adding the next row would exceed the configured value-area fraction; VAH and VAL are the upper and lower edges of the included rows
+Calculation: Reversion stop and target = enter at the signal bar close; target is the far value-area boundary and stop is the same distance from entry in the opposite direction
+Calculation: Breakout stop and target = enter at the signal bar close; stop is the opposite value-area boundary and target is the same distance from entry in the opposite direction
+Long: valid opening-range value area AND first bar after the range opens below VAL AND a bar closes strictly between VAL and VAH by the configured entry cutoff AND no trade has been entered that day
+Long: valid opening-range value area AND first bar after the range opens strictly between VAL and VAH AND a bar closes above VAH by the configured entry cutoff AND no trade has been entered that day
+Short: valid opening-range value area AND first bar after the range opens above VAH AND a bar closes strictly between VAL and VAH by the configured entry cutoff AND no trade has been entered that day
+Short: valid opening-range value area AND first bar after the range opens strictly between VAL and VAH AND a bar closes below VAL by the configured entry cutoff AND no trade has been entered that day
+Exit: long, high >= target OR low <= stop OR current time >= configured time-close
+Exit: short, low <= target OR high >= stop OR current time >= configured time-close; if target and stop are both reached in the same bar, exit at stop

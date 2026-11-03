@@ -1,0 +1,4 @@
+Calculation: Asymmetric stochastic = over each bar, average the closes of the slowing-length bars; sum the highest highs found using the short or long lookback and the lowest lows found using the long or short lookback, respectively. If their range is below the sensitivity threshold multiplied by the slowing length, use that threshold as the range and shift the low bound down by half the shortfall. Return 100 times (average close minus adjusted low bound) divided by the adjusted range. The short and long lookbacks switch roles: initialize both to the short lookback; after each bar, use short-for-highs and long-for-lows if the prior signal line is above the overbought level, and long-for-highs and short-for-lows if it is below the oversold level.
+Calculation: Signal line = the selected moving average of the asymmetric stochastic, using the signal-line lookback.
+Long: Asymmetric stochastic > signal line
+Short: Asymmetric stochastic < signal line

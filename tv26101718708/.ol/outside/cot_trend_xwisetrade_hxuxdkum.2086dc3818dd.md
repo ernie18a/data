@@ -1,0 +1,1 @@
+For the traded instrument, compare weekly noncommercial net positions (long minus short) with the USD Index’s weekly noncommercial net positions. Decide long when the instrument’s net position is higher, short when it is lower, and neutral when equal. Make no directional decision when either position is unavailable.

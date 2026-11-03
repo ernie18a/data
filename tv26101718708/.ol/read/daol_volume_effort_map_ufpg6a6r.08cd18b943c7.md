@@ -1,0 +1,5 @@
+Calculation: Same-time relative volume = current bar volume divided by the mean volume of bars opening at the same exchange-local clock time on prior observed calendar dates, excluding the current date
+Calculation: Net close progress = (current close - previous close) / ATR of the previous completed bar
+Calculation: Close location = (close - low) / (high - low); use 0.5 when high equals low
+Long: Matching historical sample count >= minimum required AND historical mean volume > 0 AND current volume >= 0 AND previous-bar ATR > 0 AND same-time relative volume >= high-activity threshold AND net close progress >= directional-progress threshold AND close location >= upper-edge threshold
+Short: Matching historical sample count >= minimum required AND historical mean volume > 0 AND current volume >= 0 AND previous-bar ATR > 0 AND same-time relative volume >= high-activity threshold AND net close progress <= -directional-progress threshold AND close location <= lower-edge threshold

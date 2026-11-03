@@ -1,0 +1,1 @@
+Calculate directional movement indicators on the signal instrument. Enter long when positive directional movement is below a lower threshold and negative directional movement is above an upper threshold; enter short on the inverse condition. The description applies these directional signals to options on a related instrument. The code defines no exit rule.

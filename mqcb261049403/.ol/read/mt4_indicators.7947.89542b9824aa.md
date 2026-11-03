@@ -1,0 +1,4 @@
+Calculation: Fixed-volume OHLC bars = aggregate chart bars until their cumulative volume reaches a fixed threshold; use each source bar’s open, high, low, and close, and reset the aggregation at week boundaries.
+Calculation: Tick-volume Heiken-Ashi = close is (fixed-volume bar high + low + close) / 3; open is the average of the previous synthetic bar’s open and close; high is the maximum of fixed-volume bar high, open, and close; low is the minimum of fixed-volume bar low, open, and close. Evaluate the still-forming synthetic bar.
+Long: Tick-volume Heiken-Ashi close > open
+Short: Tick-volume Heiken-Ashi close <= open

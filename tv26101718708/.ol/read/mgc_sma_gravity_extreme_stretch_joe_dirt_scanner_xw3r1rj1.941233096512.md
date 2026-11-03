@@ -1,0 +1,3 @@
+Calculation: SMA mean = arithmetic mean of the chart-timeframe short- and long-lookback simple moving averages and the short- and long-lookback simple moving averages from each requested higher timeframe; the long lookback is longer than the short lookback. Higher-timeframe averages use the current bar, including while it is still forming.
+Long: close < SMA mean − extreme-stretch threshold AND previous close ≥ previous SMA mean − extreme-stretch threshold
+Short: close > SMA mean + extreme-stretch threshold AND previous close ≤ previous SMA mean + extreme-stretch threshold

@@ -1,0 +1,1 @@
+For each tracked stock, identify the latest confirmed swing high where the candle’s higher open or close is at least as high as the corresponding body tops of the surrounding candles. Signal a new higher high when the stock’s close crosses from at or below that level to above it. No short or exit rule is defined.

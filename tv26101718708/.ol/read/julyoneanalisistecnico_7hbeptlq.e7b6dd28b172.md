@@ -1,0 +1,2 @@
+Long: Close > Parabolic SAR OR the shorter-lookback EMA crosses above the longer-lookback EMA in the first configured crossover pair OR the shorter-lookback EMA crosses above the longer-lookback EMA in the second configured crossover pair
+Short: Close < Parabolic SAR OR the shorter-lookback EMA crosses below the longer-lookback EMA in the first configured crossover pair OR the shorter-lookback EMA crosses below the longer-lookback EMA in the second configured crossover pair

@@ -1,0 +1,5 @@
+Calculation: Average entry = total quote amount spent on the base entry and filled averaging orders / total quantity acquired at their fill prices
+Calculation: Next averaging-order level = base entry × (1 + cumulative deviation through the next unfilled rung / 100); rung deviations follow the configured first deviation and step multiplier
+Calculation: Lowest close since target = minimum close since the short target was first reached
+Short: (flat AND chart-timeframe RSI crosses below its threshold: previous RSI ≥ threshold AND current RSI < threshold) OR (short AND filled averaging orders < configured maximum AND close ≥ next averaging-order level); configured active window is disabled OR datetime is within the window
+Exit: Short, close ≥ average entry × (1 + configured stop percentage / 100) OR (target reached AND close ≥ lowest close since target × (1 + configured trailing percentage / 100)); configured active window is disabled OR datetime is within the window

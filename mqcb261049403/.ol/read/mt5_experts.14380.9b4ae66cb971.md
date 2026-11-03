@@ -1,0 +1,5 @@
+Calculation: Laguerre ROC = On each indicator-timeframe bar, calculate ROC as (close − close from the longer ROC lookback ago) / that earlier close; smooth it through four Laguerre stages using the smoothing coefficient, with each stage updated from the current ROC or preceding stage values; then divide the sum of positive differences between adjacent stages by the sum of absolute differences between adjacent stages (retain the prior oscillator value if the denominator is zero). Use the last completed indicator-timeframe bar and the preceding bar; the indicator timeframe may be higher or lower than the chart timeframe.
+Long: Laguerre ROC on the last completed bar > upper threshold AND Laguerre ROC on the preceding bar ≤ upper threshold
+Short: Laguerre ROC on the last completed bar < lower threshold AND Laguerre ROC on the preceding bar ≥ lower threshold
+Exit: long, Laguerre ROC on the last completed bar < 0.5
+Exit: short, Laguerre ROC on the last completed bar > 0.5

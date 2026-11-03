@@ -1,0 +1,5 @@
+Calculation: Prior lookback high = highest high over the preceding lookback bars, excluding the current bar
+Calculation: Initial stop = signal-bar close minus an ATR-based distance
+Calculation: Trailing stop = after price rises an ATR-based activation distance from signal-bar close, trail the highest price by an ATR-based offset
+Long: outside news blackout AND daily realized P&L above the loss limit AND flat AND ((NY AM AND NY trade count below its limit AND ADX above threshold AND volume above its longer-lookback SMA times a multiplier AND ((shorter-lookback EMA crosses above longer-lookback EMA AND shorter-lookback EMA above longer-lookback EMA AND close above filter EMA) OR (close above prior lookback high AND close above filter EMA))) OR ((NY PM OR Asia) AND Asia trade count below its limit AND ADX at or below threshold AND close below lower Bollinger Band AND RSI below oversold threshold))
+Exit: long, low at or below initial stop OR trailing stop is active and low at or below trailing stop

@@ -1,0 +1,4 @@
+Calculation: Global Liquidity = CN10Y / DXY / high-yield credit spread × (US central bank assets + Japan central bank assets / USDJPY + China central bank assets / USDCNY + ECB assets / USDEUR)
+Calculation: Consensus score = mean of the enabled indicator votes; for each of ROC, CCI, RSI, MFI, and CMO, vote +1 when the lagged BTC value is greater than the lagged Global Liquidity value, otherwise −1. Calculate each indicator on its respective close series; BTC uses a longer lookback than Global Liquidity, and each series uses its own user-defined bar lag.
+Long: Consensus score > 0
+Short: Consensus score < 0

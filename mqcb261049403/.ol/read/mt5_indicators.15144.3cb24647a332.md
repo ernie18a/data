@@ -1,0 +1,4 @@
+Calculation: Smoothed midpoint = configured smoothing of the average of the highest selected price over the upper lookback and the lowest selected price over the lower lookback; on the selected chart or higher timeframe, using the bar still forming.
+Calculation: Change volatility = population standard deviation of the smoothed midpoint’s one-bar changes over a lookback including the current bar; use the same timeframe and forming bar as the smoothed midpoint.
+Long: smoothed midpoint > its value one bar earlier OR its one-bar change > the smaller volatility-multiplier threshold × change volatility
+Short: smoothed midpoint < its value one bar earlier OR its one-bar change < −(the smaller volatility-multiplier threshold × change volatility)

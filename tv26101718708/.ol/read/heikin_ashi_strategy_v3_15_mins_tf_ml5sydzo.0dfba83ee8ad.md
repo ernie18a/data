@@ -1,0 +1,4 @@
+Calculation: Short-term EMA = exponential moving average of Heikin-Ashi close on the chart timeframe
+Calculation: Long-term EMA = exponential moving average of Heikin-Ashi close on the chart timeframe or a higher timeframe, using the bar still forming; its lookback is longer than the short-term EMA
+Long: Short-term EMA crosses above long-term EMA AND (MACD line is above MACD signal line on a higher timeframe, using the last completed bar, OR the MACD filter is disabled)
+Short: Short-term EMA crosses below long-term EMA AND (MACD line is below MACD signal line on a higher timeframe, using the last completed bar, OR the MACD filter is disabled)

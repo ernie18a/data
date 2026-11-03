@@ -1,0 +1,1 @@
+Go long when the smoothed average of the NYSE advancing-stock share and, when enabled, advancing-volume share crosses above a low threshold. While long, trail a stop below the traded instrument’s price by a volatility-scaled average true range; exit if the instrument’s low reaches the stop or after a fixed holding period. No short-entry rule.

@@ -1,0 +1,4 @@
+Calculation: News move = close of the first 5-minute bar closing at or after the configured post-news time minus the open of the 5-minute bar containing the configured news time.
+Calculation: Score = capped weighted sum of normalized absolute news move divided by ATR, ATR above its longer-term average, continuation beyond the post-news close, current close on the news-move side of VWAP, current close on that side of the Bollinger basis (with extra credit when band width is expanding), and matching medium-term and longer-term EMA trends on requested 15-minute and 60-minute bars.
+Long: News move > 0 AND Score >= minimum display score AND post-news time has arrived AND news open and post-news close are available
+Short: News move < 0 AND Score >= minimum display score AND post-news time has arrived AND news open and post-news close are available

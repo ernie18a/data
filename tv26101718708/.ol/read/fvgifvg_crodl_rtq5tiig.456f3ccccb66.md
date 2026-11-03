@@ -1,0 +1,6 @@
+Long: on an enabled configured timeframe (chart timeframe or another timeframe; a lower timeframe is included only when lower-timeframe hiding is off), the last completed candle's low > the low from three candles back, AND the FVG or iFVG display is enabled
+Short: on an enabled configured timeframe (chart timeframe or another timeframe; a lower timeframe is included only when lower-timeframe hiding is off), the last completed candle's high < the low from three candles back, AND the FVG or iFVG display is enabled
+Long: while the third candle is still forming on an enabled configured timeframe, its running low > the low from two candles back, AND FVG display is enabled, AND wait-for-close is off
+Short: while the third candle is still forming on an enabled configured timeframe, its running high < the high from two candles back, AND FVG display is enabled, AND wait-for-close is off
+Short: an active bullish gap is filled (chart-bar close < gap bottom on a confirmed bar in close mode, or chart-bar low <= gap bottom in wick mode), AND iFVG display is enabled
+Long: an active bearish gap is filled (chart-bar close > gap top on a confirmed bar in close mode, or chart-bar high >= gap top in wick mode), AND iFVG display is enabled

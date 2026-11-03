@@ -1,0 +1,6 @@
+Long: fast EMA crosses above slow EMA AND (volume > 5-bar SMA of volume OR close > 5-bar SMA of close) AND (ADX > threshold OR absolute difference between +DI and -DI > threshold)
+Short: fast EMA crosses below slow EMA AND (volume > 5-bar SMA of volume OR close < 5-bar SMA of close) AND (ADX > threshold OR absolute difference between +DI and -DI > threshold)
+Calculation: Long stop price = lesser of (close − ATR × multiplier) and (long entry price − maximum loss distance)
+Calculation: Short stop price = greater of (close + ATR × multiplier) and (short entry price + maximum loss distance)
+Exit: Long, low ≤ long stop price OR fast EMA crosses below slow EMA AND (volume > 5-bar SMA of volume OR close < 5-bar SMA of close) AND (ADX > threshold OR absolute difference between +DI and -DI > threshold)
+Exit: Short, high ≥ short stop price OR fast EMA crosses above slow EMA AND (volume > 5-bar SMA of volume OR close > 5-bar SMA of close) AND (ADX > threshold OR absolute difference between +DI and -DI > threshold)

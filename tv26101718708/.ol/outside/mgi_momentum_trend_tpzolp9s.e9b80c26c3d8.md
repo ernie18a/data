@@ -1,0 +1,1 @@
+Consider a long trade when the weekly breadth indicator is in its oversold zone and the normalized credit-spread momentum indicator is rising; align entry with the daily trend, taking longs when price is above an upward volatility stop. No short or exit rule is specified.

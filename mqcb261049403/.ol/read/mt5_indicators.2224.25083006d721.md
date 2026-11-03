@@ -1,0 +1,3 @@
+Calculation: Candle Momentum Index = 100 × the momentum smoothed three successive times / the absolute momentum smoothed three successive times, using the same smoothing method for both; momentum is current-bar close minus the open XLength−1 bars earlier, and the successive smoothing lookbacks are long, medium, then short.
+Long: Higher-timeframe (still-forming bar) Candle Momentum Index > 0
+Short: Higher-timeframe (still-forming bar) Candle Momentum Index < 0

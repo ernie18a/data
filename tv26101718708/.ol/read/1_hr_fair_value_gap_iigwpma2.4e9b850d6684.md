@@ -1,0 +1,2 @@
+Long: Higher-timeframe bar index changes AND high of the third-most-recent completed higher-timeframe bar < low of the most-recent completed higher-timeframe bar
+Short: Higher-timeframe bar index changes AND low of the third-most-recent completed higher-timeframe bar > high of the most-recent completed higher-timeframe bar

@@ -1,0 +1,1 @@
+At the scheduled trading time on the order’s date, read each external order: a positive amount signals a long position, a negative amount signals a short position, and a zero amount signals closing eligible open positions. Open only if the instrument is below its allowed position limit; size by the absolute amount, optionally scaled by equity relative to starting equity.

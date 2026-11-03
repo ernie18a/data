@@ -1,0 +1,6 @@
+Calculation: EMA = exponential moving average of close over the stated lookback
+Calculation: Close from a higher timeframe = close of the last completed bar aggregated from the backtest bars
+Long: 14-period EMA of chart-timeframe close > 14-period EMA of close from a shorter higher timeframe AND 14-period EMA of close from the shorter higher timeframe > 5-period EMA of close from a longer higher timeframe AND datetime is within the configured backtest window
+Short: 14-period EMA of chart-timeframe close > 14-period EMA of close from a shorter higher timeframe AND 14-period EMA of close from the shorter higher timeframe < 5-period EMA of close from a longer higher timeframe AND datetime is within the configured backtest window
+Exit: long, close >= entry price + configured profit distance OR close <= entry price - configured loss distance OR close <= trailing stop
+Exit: short, close <= entry price - configured profit distance OR close >= entry price + configured loss distance OR close >= trailing stop

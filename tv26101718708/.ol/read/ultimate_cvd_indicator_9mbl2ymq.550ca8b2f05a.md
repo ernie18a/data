@@ -1,0 +1,3 @@
+Calculation: Cumulative volume delta = running sum of per-bar volume × ((close − low) − (high − close)) / (high − low); add 0 when high = low.
+Long: For consecutive confirmed pivot lows within the configured minimum and maximum bar spacing, current low < previous low AND current cumulative volume delta > previous pivot’s cumulative volume delta, OR current low > previous low AND current cumulative volume delta < previous pivot’s cumulative volume delta.
+Short: For consecutive confirmed pivot highs within the configured minimum and maximum bar spacing, current high > previous high AND current cumulative volume delta < previous pivot’s cumulative volume delta, OR current high < previous high AND current cumulative volume delta > previous pivot’s cumulative volume delta.

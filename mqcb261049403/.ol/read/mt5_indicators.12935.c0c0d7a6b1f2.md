@@ -1,0 +1,5 @@
+Calculation: Gaussian moving average = weighted average of the selected OHLC price over a lookback, using weights exp(A × age^N); if volume weighting is enabled, weight each price by the current bar's selected volume as well.
+Calculation: Gaussian moving-average change = current Gaussian moving average − previous Gaussian moving average.
+Calculation: Change standard deviation = population standard deviation of Gaussian moving-average changes over a lookback.
+Long: current Gaussian moving average > previous Gaussian moving average OR Gaussian moving-average change > the smaller of two configured multiples of change standard deviation
+Short: current Gaussian moving average < previous Gaussian moving average OR Gaussian moving-average change < the negative of the smaller of two configured multiples of change standard deviation

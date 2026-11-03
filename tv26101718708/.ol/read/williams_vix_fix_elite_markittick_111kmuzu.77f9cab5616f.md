@@ -1,0 +1,10 @@
+Calculation: Williams VIX Fix (WVF) = 100 × (highest close over its lookback − current low) ÷ highest close over its lookback
+Calculation: WVF spike = current WVF ≥ upper Bollinger Band of WVF OR current WVF ≥ prior-bar highest WVF over its lookback × percentile threshold
+Calculation: WVF spike strength = (WVF − WVF simple moving average) ÷ WVF standard deviation
+Calculation: ATR risk distance = ATR × stop-loss multiplier
+Calculation: Long take-profit price = entry price + ATR risk distance × take-profit R-multiple
+Calculation: Short take-profit price = entry price − ATR risk distance × take-profit R-multiple
+Long: (current WVF spike OR previous-bar WVF spike) AND close > open AND close > previous close AND WVF spike strength ≥ Bollinger Band multiplier + minimum spike percentage ÷ 10 AND ATR ≥ its simple moving average × minimum ATR multiplier AND volume ≥ its simple moving average × minimum volume multiplier AND volume > previous volume AND last completed higher-timeframe close > its same-lookback simple moving average > that average on the preceding completed higher-timeframe bar AND close > trend simple moving average > that average five chart bars earlier AND bars since prior long signal ≥ cooldown
+Short: WVF crosses below its simple moving average AND a WVF spike occurred within the current or previous five chart bars AND close < open AND close < previous close AND ATR ≥ its simple moving average × minimum ATR multiplier AND volume ≥ its simple moving average × minimum volume multiplier AND volume > previous volume AND last completed higher-timeframe close < its same-lookback simple moving average < that average on the preceding completed higher-timeframe bar AND close < trend simple moving average < that average five chart bars earlier AND bars since prior short signal ≥ cooldown
+Exit: long, short-entry condition OR high ≥ long take-profit price at any of the three R-multiples
+Exit: short, long-entry condition OR low ≤ short take-profit price at any of the three R-multiples

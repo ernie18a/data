@@ -1,0 +1,8 @@
+Calculation: Last confirmed pivot low = most recent pivot low confirmed using the configured left/right lookback
+Calculation: Last confirmed pivot high = most recent pivot high confirmed using the configured left/right lookback
+Calculation: Bull sweep level = last confirmed pivot low on the preceding bar when that bar swept below it and closed above it
+Calculation: Bear sweep level = last confirmed pivot high on the preceding bar when that bar swept above it and closed below it
+Calculation: VWAP slope = current-bar VWAP minus prior-bar VWAP
+Calculation: Candle body ratio = abs(close - open) / (high - low)
+Long: Previous bar low < its last confirmed pivot low AND previous bar close > that pivot low AND current close > current open AND current close > bull sweep level AND current close > VWAP AND abs(VWAP slope) is at least the configured flatness threshold AND candle body ratio is at least the configured minimum AND current bar is not inside the previous bar AND current volume > its moving average times the configured multiplier
+Short: Previous bar high > its last confirmed pivot high AND previous bar close < that pivot high AND current close < current open AND current close < bear sweep level AND current close < VWAP AND abs(VWAP slope) is at least the configured flatness threshold AND candle body ratio is at least the configured minimum AND current bar is not inside the previous bar AND current volume > its moving average times the configured multiplier

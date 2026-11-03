@@ -1,0 +1,2 @@
+Long: current low > high two bars ago AND current low − high two bars ago > minimum gap-size threshold × ATR
+Short: low two bars ago > current high AND low two bars ago − current high > minimum gap-size threshold × ATR

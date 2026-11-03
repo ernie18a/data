@@ -1,0 +1,5 @@
+Long: no long position AND (fast MA crosses above slow MA OR RSI <= oversold level OR signal-timeframe close < lower Bollinger Band OR (%K <= oversold level AND %K > %D)) OR (long position exists AND level count < maximum AND current price <= lowest long entry price - grid step)
+Short: no short position AND (fast MA crosses below slow MA OR RSI >= overbought level OR signal-timeframe close > upper Bollinger Band OR (%K >= overbought level AND %K < %D)) OR (short position exists AND level count < maximum AND current price >= highest short entry price + grid step)
+Exit: long, current price >= volume-weighted average long entry price + take-profit points
+Exit: short, current price <= volume-weighted average short entry price - take-profit points
+Exit: long or short, Friday AND time >= configured Friday close hour

@@ -1,0 +1,5 @@
+Calculation: Opening range high = highest high of the first N chart bars of each day; opening range low = lowest low of those bars
+Long: At least N opening bars have completed AND current time is before both the last-entry time and exit time AND no position is open AND the last trade today was not long AND current close > opening range high AND previous close <= opening range high
+Short: At least N opening bars have completed AND current time is before both the last-entry time and exit time AND no position is open AND the last trade today was not short AND current close < opening range low AND previous close >= opening range low
+Exit: Long, current time >= exit time OR current high >= entry price × (1 + profit target %) OR current low <= entry price × (1 - stop loss %)
+Exit: Short, current time >= exit time OR current low <= entry price × (1 - profit target %) OR current high >= entry price × (1 + stop loss %)

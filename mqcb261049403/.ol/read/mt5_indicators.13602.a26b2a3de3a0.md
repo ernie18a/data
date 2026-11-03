@@ -1,0 +1,4 @@
+Calculation: Ergodic TVI = smooth the normalized difference of twice-smoothed up-tick and down-tick volume: 100 × (smoothed up-tick volume − smoothed down-tick volume) / (smoothed up-tick volume + smoothed down-tick volume). Up-tick volume = (selected volume + (close − open) / tick size) / 2; down-tick volume = selected volume − up-tick volume. Apply the configured smoothing method and lookbacks in sequence; the first two smoothings use separate lookbacks, then smooth the normalized value and apply two further smoothings.
+Calculation: Ergodic signal = smooth Ergodic TVI using a separate lookback.
+Long: Ergodic TVI > Ergodic signal
+Short: Ergodic TVI < Ergodic signal

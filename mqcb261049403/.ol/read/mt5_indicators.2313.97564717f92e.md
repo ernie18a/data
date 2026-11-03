@@ -1,0 +1,4 @@
+Calculation: Stochastic CG oscillator = for each bar, let midpoint=(high+low)/2 and CG=−Σ(i×midpointᵢ)/Σ(midpointᵢ)+(Length+1)/2 over the Length-bar window, with i=1…Length from oldest to newest; normalize the current CG to (CG−lowest CG)/(highest CG−lowest CG) over that window (0 if the range is zero); take the weighted average of the current and previous 3 normalized values with weights 4,3,2,1; transform it as 2×(weighted average−0.5)
+Calculation: Trigger = 0.96×(previous bar’s Stochastic CG oscillator+0.02)
+Long: Stochastic CG oscillator > 0 OR Stochastic CG oscillator > Trigger
+Short: Stochastic CG oscillator < 0 OR Stochastic CG oscillator < Trigger

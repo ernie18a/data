@@ -1,0 +1,12 @@
+Calculation: RSI = Relative Strength Index of close
+Calculation: MACD = difference between the fast and slow exponential moving averages of close
+Calculation: Stochastic = stochastic oscillator calculated from high and low
+Calculation: EMA = exponential moving average of close, used for trend filtering
+Calculation: Tick volume = tick volume per bar
+Calculation: Volume average = mean tick volume over the recent completed bars
+Calculation: Price pivots = scan recent chart-timeframe bars; a peak is a high greater than the highs of the neighboring bars over a configurable distance and a trough is a low less than the neighboring lows over that distance. Require the peak to exceed the mean neighboring highs by a configurable margin, or the trough to fall below the mean neighboring lows by a configurable margin. Sample each oscillator at the corresponding price pivots. Compare the oldest and next-most-recent pivots.
+Calculation: Divergence strength = min(abs(price difference) / max(absolute pivot prices) + abs(oscillator difference) / max(absolute oscillator values), 1)
+Long: At least the configured minimum number of RSI, MACD, and Stochastic comparisons have an older price trough lower than the next-most-recent price trough and an older oscillator trough higher than the next-most-recent oscillator trough, with divergence strength at or above its minimum; previous completed bar close > previous completed bar EMA; most recent completed bar tick volume > configured multiple of the mean tick volume over the recent completed bars
+Short: At least the configured minimum number of RSI, MACD, and Stochastic comparisons have an older price peak higher than the next-most-recent price peak and an older oscillator peak lower than the next-most-recent oscillator peak, with divergence strength at or above its minimum; previous completed bar close < previous completed bar EMA; most recent completed bar tick volume > configured multiple of the mean tick volume over the recent completed bars
+Exit: long, low <= entry price - configured stop-loss distance OR high >= entry price + configured take-profit distance
+Exit: short, high >= entry price + configured stop-loss distance OR low <= entry price - configured take-profit distance

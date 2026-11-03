@@ -1,0 +1,6 @@
+Calculation: Chart-timeframe Supertrend direction = midpoint (high + low) / 2 ± factor × ATR(length) trailing bands; upper band resets to midpoint + factor × ATR(length) unless prior close is below prior upper band, then it is the minimum of the new and prior upper bands; lower band resets to midpoint − factor × ATR(length) unless prior close is above prior lower band, then it is the maximum of the new and prior lower bands; direction is +1 when close > prior upper band, −1 when close < prior lower band, otherwise the prior direction (initially +1)
+Calculation: Higher-timeframe Supertrend direction = the same calculation on higher-timeframe bars, using the higher-timeframe bar still forming
+Long: Chart-timeframe Supertrend direction = +1 AND its prior value = −1 AND higher-timeframe Supertrend direction = +1
+Short: Chart-timeframe Supertrend direction = −1 AND its prior value = +1 AND higher-timeframe Supertrend direction = −1
+Exit: long, high ≥ entry price + take-profit distance OR low ≤ entry price − stop-loss distance
+Exit: short, low ≤ entry price − take-profit distance OR high ≥ entry price + stop-loss distance

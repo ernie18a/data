@@ -1,0 +1,6 @@
+Calculation: Fourier add-on at frequency k = (2/N) × Σ[i=0..N−1](close[i] × cos(2πki/N)); use 1/N instead of 2/N when k=0 or k=N/2; i=0 is the current bar and N is the lookback
+Calculation: Fast, mid, and slow averages = the selected moving average of close plus its respective Fourier add-on; fast period < mid period < slow period; optionally apply linear regression to each average
+Long: fast average > mid average AND close > slow average
+Short: fast average < mid average AND close < slow average
+Exit: long, high >= entry price + configured take-profit distance OR low <= entry price − configured stop-loss distance OR (high >= entry price + configured trailing activation distance AND low <= highest high since entry − configured trailing offset)
+Exit: short, low <= entry price − configured take-profit distance OR high >= entry price + configured stop-loss distance OR (low <= entry price − configured trailing activation distance AND high >= lowest low since entry + configured trailing offset)

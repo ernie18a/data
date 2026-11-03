@@ -1,0 +1,7 @@
+Calculation: Smoothed candle value for a price series = a selectable moving average (simple, exponential, smoothed, or linearly weighted) of the product of the simple moving average and linearly weighted moving average of that price series; the two product averages use the same lookback, and the smoothing lookback is independent. Calculate separately for open and close.
+Long: Chart-timeframe smoothed close > smoothed open.
+Short: Chart-timeframe smoothed close < smoothed open.
+Long: On the selected higher or lower indicator timeframe, the selected signal bar's smoothed close > smoothed open AND the preceding indicator bar's smoothed close <= smoothed open. The signal bar may be the last completed bar, the still-forming bar, or an earlier completed bar.
+Short: On the selected higher or lower indicator timeframe, the selected signal bar's smoothed close < smoothed open AND the preceding indicator bar's smoothed close >= smoothed open. The signal bar may be the last completed bar, the still-forming bar, or an earlier completed bar.
+Exit: long, the selected higher or lower timeframe signal bar's smoothed close < smoothed open OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, the selected higher or lower timeframe signal bar's smoothed close > smoothed open OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

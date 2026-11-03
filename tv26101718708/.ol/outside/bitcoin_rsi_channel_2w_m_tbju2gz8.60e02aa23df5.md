@@ -1,0 +1,1 @@
+On Bitcoin’s 2-week or monthly timeframe, calculate the 14-period RSI and normalize it between the timeframe’s declining historical upper and lower RSI boundaries. For the traded instrument, go long when this risk measure is at or below the buy-zone threshold; sell or exit when it is at or above the sell-zone threshold. The indicator specifies no short-entry rule.

@@ -1,0 +1,2 @@
+Long: higher-timeframe Supertrend direction, using the higher-timeframe bar’s final value even before it closes, = -1 AND datetime >= configured backtest start datetime
+Short: higher-timeframe Supertrend direction, using the higher-timeframe bar’s final value even before it closes, = 1 AND datetime >= configured backtest start datetime

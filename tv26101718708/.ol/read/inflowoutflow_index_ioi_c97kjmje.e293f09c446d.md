@@ -1,0 +1,3 @@
+Calculation: Inflow/Outflow Index = 100 − 100 / (1 + smoothed inflow / smoothed outflow), where per-bar inflow is volume × (close − open) when close > open, otherwise 0; per-bar outflow is volume × (open − close) when close < open, otherwise 0; smooth both with EMAs using the same lookback. When smoothed outflow is 0, use a very large ratio.
+Long: Inflow/Outflow Index > 50
+Short: Inflow/Outflow Index < 50

@@ -1,0 +1,3 @@
+Calculation: ATR trailing stop = if the current and previous closes are both above the previous stop, the greater of the previous stop and current close minus ATR times a multiplier; if both are below the previous stop, the lesser of the previous stop and current close plus ATR times a multiplier; otherwise, current close minus ATR times a multiplier when current close is above the previous stop, or current close plus ATR times a multiplier otherwise
+Long: close > ATR trailing stop
+Short: close <= ATR trailing stop

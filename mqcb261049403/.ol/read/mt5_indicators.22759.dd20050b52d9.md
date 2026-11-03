@@ -1,0 +1,3 @@
+Calculation: Smoothed volume-weighted channel-position value = JJMA of (selected bar volume × [100 × (selected bar price − (smoothed selected bar price − smoothed high−low range)) / (2 × smoothed high−low range) − 50]); smooth price and high−low range with moving averages using their respective lookbacks, and replace a zero smoothed range with 1 in the denominator.
+Long: Smoothed volume-weighted channel-position value > its value on the previous bar
+Short: Smoothed volume-weighted channel-position value < its value on the previous bar

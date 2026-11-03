@@ -1,0 +1,10 @@
+Calculation: Trend score = min–max normalize the change in the short-term EMA over a short lag across a normalization lookback; clamp to 0–100
+Calculation: Momentum score = min–max normalize the close rate of change across a normalization lookback; clamp to 0–100
+Calculation: Volatility regime score = percentile-rank Bollinger Bandwidth across a normalization lookback, mapping low percentiles to a low score, middle percentiles to a neutral score, and high percentiles to a high score
+Calculation: Participation score = volume percentile across a normalization lookback, scaled by close location within the bar; favor a close near the high when the short-term EMA is above the long-term EMA, near the low when it is below, and neutral alignment when equal
+Calculation: Relative strength score = percentile-rank across a longer lookback of the asset return minus the benchmark return over the same horizon, divided by the asset's return volatility; clamp to 0–100
+Calculation: Exhaustion score = 100 minus the absolute distance between close and the short-term EMA in ATR units, scaled and clamped to 0–100
+Calculation: Multi-timeframe alignment score = average agreement score across three higher timeframes, comparing each timeframe's short-term versus long-term EMA direction with the chart-timeframe direction; each higher-timeframe direction uses its last completed bar, and agreement scores full, neutral, or zero for matching, neutral, or opposing direction
+Calculation: Scorecard = weighted average of the trend, momentum, volatility regime, participation, relative strength, exhaustion, and multi-timeframe alignment scores; when ADX indicates a trend, increase trend and momentum weights and decrease exhaustion weight; when ADX indicates a range, decrease trend and momentum weights and increase exhaustion weight; otherwise use base weights
+Long: Scorecard >= bullish score threshold AND short-term EMA > long-term EMA
+Short: Scorecard >= bullish score threshold AND short-term EMA < long-term EMA

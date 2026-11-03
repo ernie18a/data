@@ -1,0 +1,3 @@
+Calculation: KWAN = smooth the stochastic signal line × RSI ÷ momentum; use 100 when momentum is zero
+Long: KWAN on the chart bar > KWAN on the preceding chart bar OR (KWAN on the still-forming higher-timeframe bar > KWAN on the preceding completed higher-timeframe bar AND KWAN on the preceding completed higher-timeframe bar = KWAN on the higher-timeframe bar before it)
+Short: KWAN on the chart bar < KWAN on the preceding chart bar OR (KWAN on the still-forming higher-timeframe bar = KWAN on the preceding completed higher-timeframe bar AND KWAN on the preceding completed higher-timeframe bar > KWAN on the higher-timeframe bar before it)

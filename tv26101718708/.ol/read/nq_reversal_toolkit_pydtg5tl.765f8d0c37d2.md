@@ -1,0 +1,9 @@
+Calculation: Session Fibonacci pivot levels = (session high + session low + session close) / 3, plus and minus configured Fibonacci multiples of the session high-low range; use the active New York session for the HUD.
+Calculation: Higher-timeframe Fibonacci pivot levels = calculate the same levels from the last completed bar of a higher timeframe than the chart timeframe.
+Calculation: Session volume profile levels = distribute each bar’s volume evenly across the price bins intersecting its low-high range; POC is the highest-volume bin, and the value area expands from POC toward the larger adjacent bin until it contains the configured fraction of total volume. Use the latest completed profile for the configured session.
+Calculation: HUD midpoint = the upper median of the sorted available active New York session Fibonacci levels, optional higher-timeframe Fibonacci levels, and latest completed session volume profile POC, VAH, and VAL.
+Calculation: Rejection candle body = absolute close minus open; upper wick = high minus the greater of open and close; lower wick = the lesser of open and close minus low.
+Long: Close > HUD midpoint
+Short: Close <= HUD midpoint
+Long: On a confirmed bar after a higher-timeframe bar has completed (timeframe higher than or equal to the chart timeframe), lower wick > configured wick-to-body ratio × body AND lower wick > configured ATR multiple × ATR(14) of that higher timeframe (or ATR is unavailable) AND no existing rejection block overlaps within the configured overlap threshold
+Short: On a confirmed bar after a higher-timeframe bar has completed (timeframe higher than or equal to the chart timeframe), upper wick > configured wick-to-body ratio × body AND upper wick > configured ATR multiple × ATR(14) of that higher timeframe (or ATR is unavailable) AND no existing rejection block overlaps within the configured overlap threshold

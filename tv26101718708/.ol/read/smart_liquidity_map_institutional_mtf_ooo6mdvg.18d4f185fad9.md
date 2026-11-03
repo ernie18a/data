@@ -1,0 +1,3 @@
+Calculation: Confirmed pivot high/low = a bar whose high/low is higher/lower than the highs/lows of an equal number of bars on each side; confirm only after the right-side bars are complete. Use bars at the chart timeframe or higher, and only completed bars when the timeframe is higher. Pivot strength uses a longer lookback on shorter reference timeframes.
+Long: A new confirmed pivot low is detected OR low < an active, unswept pivot-low level AND close >= that level
+Short: A new confirmed pivot high is detected OR high > an active, unswept pivot-high level AND close <= that level

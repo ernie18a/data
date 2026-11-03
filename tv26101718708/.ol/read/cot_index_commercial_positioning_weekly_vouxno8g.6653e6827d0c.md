@@ -1,0 +1,3 @@
+Calculation: Commercial positioning index = 100 × (commercial net position − lowest commercial net position over the lookback) / (highest commercial net position over the lookback − lowest commercial net position over the lookback), where commercial net position = commercial long positions − commercial short positions; the index uses the current value and completed lower-timeframe source bars, and its lookback uses higher-timeframe bars.
+Long: commercial positioning index ≥ upper threshold
+Short: commercial positioning index ≤ lower threshold

@@ -1,0 +1,3 @@
+Calculation: Volume spike = current volume > adaptive average volume × the regime-adjusted volume-spike multiplier; the average-volume lookback is shorter in active or explosive price action and longer in quiet price action.
+Long: Current low is the lowest low in a short rolling lookback including the current bar AND volume spike
+Short: Current high is the highest high in a short rolling lookback including the current bar AND volume spike

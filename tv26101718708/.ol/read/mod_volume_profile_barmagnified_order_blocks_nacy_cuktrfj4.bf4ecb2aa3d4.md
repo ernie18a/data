@@ -1,0 +1,7 @@
+Calculation: Highest-volume price bin = divide the source candle’s high–low range into equal price bins; for each bin, sum each constituent bar’s volume multiplied by the fraction of that bar’s high–low range overlapping the bin. Use bars from a lower timeframe (derived as approximately one-fifteenth of the chart timeframe, with a 30-second minimum), completed within the source candle. Select the bin with the greatest sum; if tied, select the lowest-price tied bin.
+Long: On a completed chart bar, the oldest of the configured consecutive bars closes above its open AND every newer bar in that sequence closes at or below its open
+Long: Close is within the highest-volume price bin of an active bullish order block
+Long: On a completed chart bar, low is at or below the highest-volume price bin’s bottom AND close is at or above that bottom in an active bullish order block
+Short: On a completed chart bar, the oldest of the configured consecutive bars closes below its open AND every newer bar in that sequence closes at or above its open
+Short: Close is within the highest-volume price bin of an active bearish order block
+Short: On a completed chart bar, high is at or above the highest-volume price bin’s top AND close is at or below that top in an active bearish order block

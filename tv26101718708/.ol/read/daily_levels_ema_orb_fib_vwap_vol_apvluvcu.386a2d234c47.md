@@ -1,0 +1,4 @@
+Calculation: Opening-range high = highest high from the start of the configured opening interval at 09:30 America/New_York until its end
+Calculation: Opening-range low = lowest low over that same interval
+Long: After the opening interval, chart-bar high crosses above opening-range high OR (close > open AND min(open, close) - low >= 2 * abs(close - open) AND high - max(open, close) <= 0.5 * abs(close - open) AND abs(close - open) > 0) OR (close > open AND previous close < previous open AND close > previous open AND open < previous close)
+Short: After the opening interval, chart-bar low crosses below opening-range low OR (close < open AND high - max(open, close) >= 2 * abs(close - open) AND min(open, close) - low <= 0.5 * abs(close - open) AND abs(close - open) > 0) OR (close < open AND previous close > previous open AND close < previous open AND open > previous close)

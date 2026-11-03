@@ -1,0 +1,3 @@
+Calculation: Delta percentage = at each price area, sum of lower-timeframe bar volume signed by the sign of close minus open and divided equally across the price areas from low through high, divided by the sum of absolute allocated volume, times 100; use all lower-timeframe bars within the chart bar, including a still-forming bar when available
+Long: Delta percentage >= imbalance threshold
+Short: Delta percentage <= -imbalance threshold

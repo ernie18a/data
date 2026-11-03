@@ -1,0 +1,8 @@
+Calculation: Confirmed pivot high = a bar whose high is the highest within an equal number of bars before and after it; confirm after the bars to its right have completed
+Calculation: Confirmed pivot low = a bar whose low is the lowest within an equal number of bars before and after it; confirm after the bars to its right have completed
+Calculation: Fresh bullish FVG = current low > high two bars earlier AND prior close > prior low + prior 200-bar ATR × threshold
+Calculation: Fresh bearish FVG = high two bars earlier > current high AND prior close < prior high − prior 200-bar ATR × threshold
+Calculation: Active bullish FVG = a detected bullish gap that has not been mitigated; mitigation is based on the selected close, wick, or gap-midpoint rule
+Calculation: Active bearish FVG = a detected bearish gap that has not been mitigated; mitigation is based on the selected close, wick, or gap-midpoint rule
+Long: confirmed pivot high OR close > latest unbroken confirmed pivot high OR close > latest unbroken confirmed pivot high AND (active bullish FVG OR fresh bullish FVG) OR prior bar close > latest unbroken confirmed pivot high AND fresh bullish FVG
+Short: confirmed pivot low OR close < latest unbroken confirmed pivot low OR close < latest unbroken confirmed pivot low AND (active bearish FVG OR fresh bearish FVG) OR prior bar close < latest unbroken confirmed pivot low AND fresh bearish FVG

@@ -1,0 +1,16 @@
+Calculation: Fast and slow EMA = EMAs of close with the fast lookback shorter than the slow lookback; fast EMA is rising/falling when it has risen/fallen on each of the last three chart bars.
+Calculation: ADX and +DI/−DI = directional movement index and average directional index calculated from chart-timeframe bars.
+Calculation: TSI and its signal = True Strength Index of close, using a longer smoothing lookback followed by a shorter smoothing lookback; signal is an EMA of TSI.
+Calculation: Volume confirmation = current chart-bar volume > its moving average × a multiplier.
+Calculation: Squeeze momentum = Bollinger Bands are inside Keltner Channels for squeeze-on; squeeze-off is its opposite. Momentum is the linear regression of close minus its moving average. Rising positive momentum is bullish; falling negative momentum is bearish.
+Calculation: Equal-high/low sweep = form confirmed swing highs/lows using left and right pivot lookbacks. Equal highs/lows are consecutive same-side pivots within an ATR-based tolerance and lookback window, averaged as the level. A high sweep occurs when high exceeds the equal-high level plus one quarter of the tolerance and close is below the level; a low sweep occurs when low is below the equal-low level minus one quarter of the tolerance and close is above the level.
+Calculation: Break of structure = close above the latest confirmed swing high (bullish) or below the latest confirmed swing low (bearish).
+Calculation: Higher-timeframe trend = fast EMA > slow EMA (bullish) or fast EMA < slow EMA (bearish), calculated on a higher timeframe using its last completed bar.
+Calculation: Score = sum enabled weighted components: trend (+weight for bullish trend, −weight for bearish); RSI (+/− the RSI weight scaled by min(1, |RSI−midpoint|/15), according to RSI above/below midpoint); DMI (+/− weight when ADX meets its minimum and +DI/−DI leads); TSI (+/− weight when TSI is above/below its signal); volume (+weight for close ≥ open, −weight otherwise, only when volume is confirmed); squeeze (+/− weight when squeeze is off and momentum is respectively rising positive/falling negative); SMC (−weight for high sweep, +weight for low sweep, +60% of weight for bullish break of structure, −60% for bearish break of structure). If enabled, multiply a positive score by 0.6 against a bearish higher-timeframe trend, or a negative score by 0.6 against a bullish higher-timeframe trend. Round applicable weighted terms and clamp the result to [−100, 100].
+Calculation: ATR stop and target distances = chart-timeframe ATR multiplied by their respective configurable multipliers.
+Long: Score ≥ the positive entry threshold AND (ADX filter disabled OR ADX ≥ its minimum).
+Short: Score ≤ negative the positive entry threshold AND (ADX filter disabled OR ADX ≥ its minimum).
+Long: Equal-high/low sweep condition for a low sweep.
+Short: Equal-high/low sweep condition for a high sweep.
+Exit: Long, low ≤ entry price − ATR stop distance OR high ≥ entry price + ATR target distance OR score ≤ positive exit threshold.
+Exit: Short, high ≥ entry price + ATR stop distance OR low ≤ entry price − ATR target distance OR score ≥ negative the exit threshold.

@@ -1,0 +1,8 @@
+Calculation: RSI = close-based RSI on the chart timeframe, using the last completed bar.
+Calculation: MACD line = short-period close EMA minus long-period close EMA on the chart timeframe; use completed bars for MACD comparisons.
+Calculation: Bullish MACD divergence = a recent MACD trough and an earlier MACD trough are both below zero by a threshold; each trough is below its four neighboring MACD values; the earlier trough is within the scan depth; and either the earlier MACD trough is higher while its associated price low is lower, or the earlier MACD trough is lower while its associated price low is higher. Associate each trough with the first price low that is strictly below the lows of the next four newer bars; the recent low search may include the bar still forming.
+Calculation: Bearish MACD divergence = a recent MACD peak and an earlier MACD peak are both above zero by a threshold; each peak is above its four neighboring MACD values; the earlier peak is within the scan depth; and either the earlier MACD peak is higher while its associated price high is lower, or the earlier MACD peak is lower while its associated price high is higher. Associate each peak with the first price high that is strictly above the highs of the next four newer bars; the recent high search may include the bar still forming.
+Long: no open position AND RSI < oversold threshold AND bullish MACD divergence
+Short: no open position AND RSI > overbought threshold AND bearish MACD divergence
+Exit: long position, low <= entry price - configured stop-loss distance OR high >= entry price + configured take-profit distance
+Exit: short position, high >= entry price + configured stop-loss distance OR low <= entry price - configured take-profit distance

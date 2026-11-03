@@ -1,0 +1,6 @@
+Calculation: Higher-timeframe close return = (still-forming higher-timeframe close − preceding completed higher-timeframe close) / preceding completed higher-timeframe close
+Calculation: Lagged Hull moving average = Hull moving average of close shifted back one chart bar, using the same lookback as the current Hull moving average
+Long: Current Hull moving average > lagged Hull moving average AND close > lagged Hull moving average AND higher-timeframe close return > decision threshold AND no trade is open
+Short: Current Hull moving average < lagged Hull moving average AND close < lagged Hull moving average AND higher-timeframe close return < decision threshold AND no trade is open
+Exit: Long, (current Hull moving average < lagged Hull moving average AND close < lagged Hull moving average AND higher-timeframe close return < decision threshold) OR unrealized profit < stop-loss threshold OR unrealized profit > profit-target threshold
+Exit: Short, (current Hull moving average > lagged Hull moving average AND close > lagged Hull moving average AND higher-timeframe close return > decision threshold) OR unrealized profit < stop-loss threshold OR unrealized profit > profit-target threshold

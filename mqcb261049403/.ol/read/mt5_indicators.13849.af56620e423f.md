@@ -1,0 +1,4 @@
+Calculation: JJRSX = JJMA-smoothed ratio of JurX-smoothed changes in applied price to JurX-smoothed absolute changes in applied price, clipped to [-1, 1].
+Calculation: FastTrend = weighted sum of five JJRSX values with progressively longer lookbacks; SlowTrend = recursively smoothed FastTrend, combining the current FastTrend divided by the smoothing length with the prior SlowTrend weighted by one minus the reciprocal of that length.
+Long: FastTrend > SlowTrend on the chart timeframe OR FastTrend > SlowTrend on the same or a higher timeframe, using the bar still forming on that timeframe.
+Short: FastTrend < SlowTrend on the chart timeframe OR FastTrend < SlowTrend on the same or a higher timeframe, using the bar still forming on that timeframe.

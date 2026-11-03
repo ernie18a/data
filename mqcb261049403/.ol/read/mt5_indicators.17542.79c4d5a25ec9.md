@@ -1,0 +1,4 @@
+Calculation: Average range = mean of absolute high minus low over the indicator lookback, using the current bar and preceding bars
+Calculation: NRTR trend = while trend is up, track the highest close and set the reversal level to that close times (1 − average range factor); switch to down when close falls below the level. While trend is down, track the lowest close and set the reversal level to that close times (1 + average range factor); switch to up when close rises above the level. The average range factor is the average range divided by a power of 10 determined by symbol digits and the digit adjustment.
+Long: NRTR trend is up AND current high exceeds the highest high since the trend turned up
+Short: NRTR trend is down AND current low falls below the lowest low since the trend turned down

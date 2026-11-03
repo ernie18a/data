@@ -1,0 +1,3 @@
+Calculation: Upper/lower channel = rolling maximum/minimum over the same lookback of the selected price series (high/low, open, or close, as configured), adjusted by the configured percentage of the maximum-minus-minimum range: upper = maximum − range × margin/100; lower = minimum + range × margin/100. Use the channel value from the configured number of bars earlier.
+Long: current bar close > upper channel (chart timeframe, current bar included) OR higher-timeframe close > upper channel (higher-timeframe bar still forming)
+Short: current bar close < lower channel (chart timeframe, current bar included) OR higher-timeframe close < lower channel (higher-timeframe bar still forming)

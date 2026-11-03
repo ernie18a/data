@@ -1,0 +1,4 @@
+Long: shorter-lookback moving average on the last completed bar of the selected signal timeframe (higher or lower than the chart timeframe, if different) > longer-lookback moving average on that bar AND shorter-lookback moving average on the immediately preceding completed bar < longer-lookback moving average on that bar AND open < close on the last completed bar
+Short: shorter-lookback moving average on the last completed bar of the selected signal timeframe (higher or lower than the chart timeframe, if different) < longer-lookback moving average on that bar AND shorter-lookback moving average on the immediately preceding completed bar > longer-lookback moving average on that bar AND open > close on the last completed bar
+Exit: long, short condition OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, long condition OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

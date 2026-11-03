@@ -1,0 +1,2 @@
+Long: fast MA > slow MA AND previous fast MA <= previous slow MA AND (trend filter disabled OR fast MA > filter MA)
+Short: fast MA < slow MA AND previous fast MA >= previous slow MA AND (trend filter disabled OR fast MA < filter MA)

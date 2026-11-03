@@ -1,0 +1,4 @@
+Calculation: Confirmed pivot high/low = a high/low with the selected number of lower highs/higher lows on both sides; the pivot is available only after the bars on its right have completed.
+Calculation: Market-structure state = track pivot-based break and protected levels, trend, and the current trend extreme. A close through the protected level flips the trend; in an uptrend, a close through the break level confirms bullish BOS, and in a downtrend, a close through the break level confirms bearish BOS. Adjusted-points mode may update protected levels from confirmed pivots. A BOS level is set at the running trend extreme after price makes an opposing swing and two consecutive candles close in that opposing direction.
+Long: Market-structure trend changes to up OR bullish BOS confirms OR low ≤ protected level AND close ≥ protected level
+Short: Market-structure trend changes to down OR bearish BOS confirms OR high ≥ protected level AND close ≤ protected level

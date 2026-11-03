@@ -1,0 +1,4 @@
+Long: close > long-term EMA AND close[1] < short-term EMA[1] AND close crosses above short-term EMA AND RSI >= long threshold AND (session filter disabled OR datetime is within configured session) AND (VWAP filter disabled OR close >= VWAP) AND position side is flat or short
+Short: close < long-term EMA AND close[1] > short-term EMA[1] AND close crosses below short-term EMA AND RSI <= short threshold AND (session filter disabled OR datetime is within configured session) AND (VWAP filter disabled OR close <= VWAP) AND position side is flat or long
+Exit: long, low <= entry price - ATR × stop distance OR high >= entry price + ATR × target distance
+Exit: short, high >= entry price + ATR × stop distance OR low <= entry price - ATR × target distance

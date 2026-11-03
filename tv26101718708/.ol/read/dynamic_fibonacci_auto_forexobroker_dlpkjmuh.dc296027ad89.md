@@ -1,0 +1,7 @@
+Calculation: Confirmed swing high = a high greater than the highs of the selected number of bars on both sides; confirm it only after the bars on the right have completed
+Calculation: Confirmed swing low = a low lower than the lows of the selected number of bars on both sides; confirm it only after the bars on the right have completed
+Calculation: Latest swing range = latest confirmed swing high − latest confirmed swing low, when both exist and the result is positive
+Calculation: Trend = uptrend if the latest confirmed swing low occurred before the latest confirmed swing high; otherwise downtrend
+Calculation: Golden Zone = the price interval between the 50% and 61.8% retracements of the latest swing range, measured down from the swing high in an uptrend and up from the swing low in a downtrend
+Long: latest swing range is positive AND trend is uptrend AND current bar low ≤ Golden Zone upper bound AND current bar high ≥ Golden Zone lower bound AND close > open AND close > Golden Zone midpoint
+Short: latest swing range is positive AND trend is downtrend AND current bar low ≤ Golden Zone upper bound AND current bar high ≥ Golden Zone lower bound AND close < open AND close < Golden Zone midpoint

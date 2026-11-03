@@ -1,0 +1,5 @@
+Calculation: DigVariation = causal digital smoothing of 1000 × (close − MA(close) − MA(close − MA(close))), using the same averaging method and lookback for both moving averages; calculate on the selected indicator timeframe, which may be higher or lower than the chart timeframe, using completed bars.
+Long: DigVariation on the newest of three consecutive completed indicator-timeframe bars > DigVariation on the middle bar AND DigVariation on the oldest bar > DigVariation on the middle bar
+Short: DigVariation on the newest of three consecutive completed indicator-timeframe bars < DigVariation on the middle bar AND DigVariation on the oldest bar < DigVariation on the middle bar
+Exit: long, DigVariation on the newest completed indicator-timeframe bar < DigVariation on the preceding completed bar
+Exit: short, DigVariation on the newest completed indicator-timeframe bar > DigVariation on the preceding completed bar

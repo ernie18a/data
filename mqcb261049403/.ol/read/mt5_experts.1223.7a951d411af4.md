@@ -1,0 +1,5 @@
+Calculation: TrendValue = On the configured indicator timeframe (higher or lower than the chart timeframe as configured), use the last completed bar. Compute raw upper = high-price linear weighted moving average + its percentage shift + ATR × sensitivity; raw lower = low-price linear weighted moving average − its percentage shift − ATR × sensitivity. The upper and lower bands trail by taking the minimum of successive raw upper values in a bearish regime and the maximum of successive raw lower values in a bullish regime. Switch to bullish when close exceeds the prior upper band; switch to bearish when close falls below the prior lower band; otherwise retain the regime. The bullish (bearish) trend line is present when the regime is bullish (bearish); a bullish (bearish) signal occurs when its trend line is present and was absent on the preceding indicator-timeframe bar.
+Long: bullish signal is present
+Short: bearish signal is present
+Exit: long, bearish trend line is present
+Exit: short, bullish trend line is present

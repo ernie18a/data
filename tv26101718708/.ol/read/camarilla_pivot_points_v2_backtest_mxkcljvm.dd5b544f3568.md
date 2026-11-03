@@ -1,0 +1,3 @@
+Calculation: Camarilla levels = using the last completed bar of a higher timeframe, let range = high − low; upper levels = close + range × (0.0916, 0.183, 0.275, 0.55), and lower levels = close − range × (0.0916, 0.183, 0.275, 0.55), ordered from nearest to farthest from the close
+Long: close > the configured lower Camarilla level
+Short: close ≤ the configured lower Camarilla level AND close < the configured upper Camarilla level

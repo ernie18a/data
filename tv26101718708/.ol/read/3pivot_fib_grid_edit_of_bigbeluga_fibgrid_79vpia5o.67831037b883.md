@@ -1,0 +1,5 @@
+Calculation: Trend MA = configured moving average of close, optionally smoothed by a second configured moving average
+Calculation: Pivot low = a local minimum of the selected pivot series across the configured number of bars before and after the candidate bar; decision is available after the bars after it complete
+Calculation: Pivot high = a local maximum of the selected pivot series across the configured number of bars before and after the candidate bar; decision is available after the bars after it complete
+Long: a confirmed pivot low occurs on the Trend MA or on price low/high (or close), AND the pivot source is Trend MA OR the optional price-pivot trend filter is off OR close > Trend MA
+Short: a confirmed pivot high occurs on the Trend MA or on price high/low (or close), AND the pivot source is Trend MA OR the optional price-pivot trend filter is off OR close < Trend MA

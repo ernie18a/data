@@ -1,0 +1,4 @@
+Long: Williams %R on the configured signal timeframe crosses upward through the oversold threshold on its last completed bar; the signal timeframe may be higher, lower, or equal to the chart timeframe.
+Short: Williams %R on the configured signal timeframe crosses downward through the overbought threshold on its last completed bar; the signal timeframe may be higher, lower, or equal to the chart timeframe.
+Exit: long, Williams %R on the configured signal timeframe crosses downward through the overbought threshold on its last completed bar OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, Williams %R on the configured signal timeframe crosses upward through the oversold threshold on its last completed bar OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

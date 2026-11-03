@@ -1,0 +1,8 @@
+Calculation: Local fast and slow EMA = EMAs of chart-timeframe close; fast EMA has a shorter lookback than slow EMA.
+Calculation: Reference fast and slow EMA = EMAs of the external reference symbol’s close on the chart timeframe; fast EMA has a shorter lookback than slow EMA.
+Calculation: Swing trend = Up when close exceeds the latest confirmed swing high, down when close falls below the latest confirmed swing low, otherwise retain the prior trend; a confirmed swing high/low is the high/low at the center of a lookback window with equal numbers of bars before and after it.
+Calculation: Open-trade PnL (%) = 100 × (close − entry price) / entry price for a long, or 100 × (entry price − close) / entry price for a short.
+Long: Flat AND (local fast EMA > local slow EMA OR (local fast EMA = local slow EMA AND reference fast EMA < reference slow EMA)) AND swing trend is up AND RSI is below its overbought threshold.
+Short: Flat AND local fast EMA < local slow EMA AND swing trend is down AND RSI is above its oversold threshold.
+Exit: Long, close is below the latest confirmed swing low OR open-trade PnL is below the stop-loss threshold AND the short-entry EMA condition is false OR the prior bar had both local and reference fast EMAs at or above their slow EMAs, the current bar does not, and open-trade PnL is above 0.1%.
+Exit: Short, close is above the latest confirmed swing high OR open-trade PnL is below the stop-loss threshold AND the long-entry EMA condition is false OR the prior bar had both local and reference fast EMAs below their slow EMAs, the current bar does not, and open-trade PnL is above 0.1% OR the short-entry EMA condition is true.

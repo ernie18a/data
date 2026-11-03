@@ -1,0 +1,1 @@
+Long: close <= 3 × Graham number

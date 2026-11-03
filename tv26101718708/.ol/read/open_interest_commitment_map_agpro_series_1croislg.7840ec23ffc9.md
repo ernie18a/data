@@ -1,0 +1,10 @@
+Calculation: Participation = available open-interest close; if unavailable, use EMA(volume) with a shorter lookback than the participation baseline; if neither is available, decisions are false
+Calculation: Participation change = percentage change in Participation over its lookback
+Calculation: Participation z-score = (Participation change − its EMA baseline) / its standard deviation over a longer normalization lookback
+Calculation: Price move in ATR = (close − close from the price-move lookback) / ATR
+Calculation: Uptrend = short-lookback EMA(close) > long-lookback EMA(close) AND close > long-lookback EMA(close)
+Calculation: Downtrend = short-lookback EMA(close) < long-lookback EMA(close) AND close < long-lookback EMA(close)
+Calculation: Commitment score = weighted sum of normalized absolute Participation z-score, normalized absolute Participation change, normalized absolute price move in ATR, active persistence, and volume percentile rank; clamp to the score range
+Calculation: Active persistence = highest rolling percentage of bars meeting any raw long-build, short-build, absorption, or unwind condition over the persistence window
+Long: Participation z-score > expansion threshold AND Participation change > 0 AND Price move in ATR > positive-move threshold AND Uptrend AND Commitment score >= minimum commitment score
+Short: Participation z-score > expansion threshold AND Participation change > 0 AND Price move in ATR < negative-move threshold AND Downtrend AND Commitment score >= minimum commitment score

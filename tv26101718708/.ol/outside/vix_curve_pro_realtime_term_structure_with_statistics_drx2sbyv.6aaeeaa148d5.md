@@ -1,0 +1,1 @@
+Compare implied volatility across five VIX maturities. If at least three of the four successive maturity changes are upward, classify the curve as contango and favor selling volatility. If at most one is upward, classify it as backwardation and favor buying volatility. Otherwise classify it as mixed and take no directional volatility action.

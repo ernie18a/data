@@ -1,0 +1,3 @@
+Calculation: smoothed absorption z-score = SMA of (current volume / (high − low), normalized by its longer-lookback SMA and standard deviation) over a shorter lookback
+Long: smoothed absorption z-score > threshold AND close < SMA(close, lookback) AND close < close from that same lookback ago AND bars since the previous long signal ≥ cooldown
+Short: smoothed absorption z-score > threshold AND close > SMA(close, lookback) AND close > close from that same lookback ago AND bars since the previous short signal ≥ cooldown

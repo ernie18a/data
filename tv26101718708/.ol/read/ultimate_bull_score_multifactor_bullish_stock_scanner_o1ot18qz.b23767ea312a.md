@@ -1,0 +1,3 @@
+Long: Bull score >= strong-bull threshold AND business coverage >= minimum coverage AND risk deduction <= maximum risk AND close > 21-period EMA AND average volume is positive
+Long: Entry score >= entry threshold AND business coverage >= minimum coverage AND risk deduction <= maximum risk AND extension above 21-period EMA is between 0 and maximum entry extension AND 9-period EMA > 21-period EMA AND average volume is positive
+Long: close >= 21-period EMA AND close <= pullback entry price + ATR × pullback-zone allowance AND business coverage >= minimum coverage AND risk deduction <= maximum risk AND average volume is positive

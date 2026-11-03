@@ -1,0 +1,2 @@
+Long: close crosses above the exponential moving average AND volume > volume simple moving average AND RSI < overbought threshold
+Short: close crosses below the exponential moving average AND volume > volume simple moving average AND RSI > oversold threshold

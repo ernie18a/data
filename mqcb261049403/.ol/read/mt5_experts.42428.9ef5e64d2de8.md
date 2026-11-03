@@ -1,0 +1,4 @@
+Long: Current close of the higher-timeframe bar (still forming) < open of the last completed higher-timeframe bar AND close of the last completed higher-timeframe bar > its open; OR at least one long position is open AND the lowest long entry price − current price ≥ the add-entry distance
+Short: Current close of the higher-timeframe bar (still forming) > open of the last completed higher-timeframe bar AND close of the last completed higher-timeframe bar < its open; OR at least one short position is open AND current price − the highest short entry price ≥ the add-entry distance
+Exit: long, price ≤ stop-loss price OR price ≥ take-profit price
+Exit: short, price ≥ stop-loss price OR price ≤ take-profit price

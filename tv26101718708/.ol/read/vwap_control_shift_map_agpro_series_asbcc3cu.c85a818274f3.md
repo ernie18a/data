@@ -1,0 +1,4 @@
+Calculation: VWAP control = rolling volume-weighted average of hlc3 over a lookback, using volume as the weight
+Calculation: Control bands = VWAP control plus and minus the greater of the lookback standard deviation of hlc3 minus VWAP control, scaled by a multiplier, and an ATR-based floor
+Long: Close is above the upper control band for consecutive bars throughout the acceptance lookback AND the prior control direction is not long OR price returned inside the control band within the rejection window after the prior shift
+Short: Close is below the lower control band for consecutive bars throughout the acceptance lookback AND the prior control direction is not short OR price returned inside the control band within the rejection window after the prior shift

@@ -1,0 +1,4 @@
+Calculation: Mean = EMA of close
+Calculation: Upper/lower band = mean ± rolling standard deviation of close multiplied by a configurable factor
+Long: A low within the recent lookback touched or fell below the lower band AND close > lower band AND close > open AND RSI is at or below its oversold threshold AND ADX is at or below its maximum AND the bar is closed AND the minimum spacing since the previous long signal is met
+Short: A high within the recent lookback touched or exceeded the upper band AND close < upper band AND close < open AND RSI is at or above its overbought threshold AND ADX is at or below its maximum AND the bar is closed AND the minimum spacing since the previous short signal is met

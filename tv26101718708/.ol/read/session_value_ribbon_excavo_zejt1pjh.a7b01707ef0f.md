@@ -1,0 +1,3 @@
+Calculation: Anchored mean = weighted average of a selected chart-bar price over a rolling lookback, since a fixed start date, or since the latest boundary of a higher timeframe; weights are volume, square-root volume, or equal weights. For timeframe anchoring, detect boundaries using the higher timeframe’s still-forming bar and accumulate chart bars from the boundary through the current bar.
+Long: close > anchored mean AND previous close <= previous anchored mean
+Short: close < anchored mean AND previous close >= previous anchored mean

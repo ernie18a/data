@@ -1,0 +1,6 @@
+Calculation: Adaptive moving average = recursively update from the prior value using the input price and a smoothing factor: [(slow smoothing constant) + efficiency ratio × (fast smoothing constant − slow smoothing constant)] raised to a power; efficiency ratio = absolute price change over the lookback divided by the sum of absolute consecutive price changes over that lookback. The fast smoothing constant is faster than the slow smoothing constant.
+Calculation: Trend threshold = standard deviation of adaptive moving average changes over the same lookback × a multiplier.
+Long: On the configured indicator timeframe (higher or lower than the chart timeframe as configured), using the last completed bar, the adaptive moving average change is greater than the trend threshold AND the most recent earlier bar with a trend signal was down.
+Short: On the configured indicator timeframe (higher or lower than the chart timeframe as configured), using the last completed bar, the adaptive moving average change is less than the negative trend threshold AND the most recent earlier bar with a trend signal was up.
+Exit: long, the most recent trend signal, including the current bar if signaled, is down.
+Exit: short, the most recent trend signal, including the current bar if signaled, is up.

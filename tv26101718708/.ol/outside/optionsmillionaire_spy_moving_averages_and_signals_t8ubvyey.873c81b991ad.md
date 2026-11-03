@@ -1,0 +1,1 @@
+When the shorter moving average crosses above the longer moving average, signal buying call options. When it crosses below, signal buying put options.

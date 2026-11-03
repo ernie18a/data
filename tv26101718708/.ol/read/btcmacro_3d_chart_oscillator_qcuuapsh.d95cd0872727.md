@@ -1,0 +1,5 @@
+Calculation: z-score = (series − its moving average) / its standard deviation, using the same normalization lookback for every series; use 0 when standard deviation is 0
+Calculation: composite oscillator = EMA of the weighted sum of z-scores of (2 × shorter-lookback SMA(close) / longer-lookback SMA(close) − 1), MVRV, NUPL, Puell Multiple, Stock-to-Flow, Risk Wave, log(close) − linear regression of log(close), close / M2, ISM/PMI, and rate of change of volume; external series default to close; all calculations use chart-timeframe bars
+Calculation: adaptive upper threshold = moving average of the smoothed composite oscillator over the cycle lookback + a multiple of its standard deviation over that same lookback
+Long: smoothed composite oscillator < 0
+Short: smoothed composite oscillator > adaptive upper threshold

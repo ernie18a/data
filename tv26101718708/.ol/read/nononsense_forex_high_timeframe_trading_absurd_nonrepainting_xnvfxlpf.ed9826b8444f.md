@@ -1,0 +1,4 @@
+Long: Aroon Up crosses above Aroon Down AND (MACD histogram > 0 OR MACD filter disabled) AND (RSI > 50 OR RSI filter disabled) AND (close > PSAR OR PSAR filter disabled) AND (ATR cave filter disabled OR close <= baseline + ATR)
+Short: Aroon Up crosses below Aroon Down AND (MACD histogram < 0 OR MACD filter disabled) AND (RSI < 50 OR RSI filter disabled) AND (close < PSAR OR PSAR filter disabled) AND (ATR cave filter disabled OR close >= baseline - ATR)
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance OR (Aroon Up crosses below Aroon Down AND Aroon exit enabled)
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance OR (Aroon Up crosses above Aroon Down AND Aroon exit enabled)

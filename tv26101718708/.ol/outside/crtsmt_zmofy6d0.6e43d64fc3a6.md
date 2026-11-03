@@ -1,0 +1,1 @@
+On the primary instrument, signal short when its recent highs break the previous 1-hour high but the comparison instrument’s recent highs do not break its own previous 1-hour high. Signal long when the primary instrument’s recent lows break the previous 1-hour low but the comparison instrument’s recent lows do not break its own previous 1-hour low. No exit condition is defined.

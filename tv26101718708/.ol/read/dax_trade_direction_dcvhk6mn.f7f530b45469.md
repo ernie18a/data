@@ -1,0 +1,3 @@
+Calculation: VWAP/EMA spread = max(EMA9, EMA21, VWAP) − min(EMA9, EMA21, VWAP) on the last completed chart bar
+Long: close > EMA9 on each of the last two completed chart bars AND EMA9 ≠ EMA21 on the last completed chart bar AND VWAP/EMA spread ≥ 0.5 × ATR on the last completed chart bar
+Short: close < EMA9 on each of the last two completed chart bars AND EMA9 ≠ EMA21 on the last completed chart bar AND VWAP/EMA spread ≥ 0.5 × ATR on the last completed chart bar

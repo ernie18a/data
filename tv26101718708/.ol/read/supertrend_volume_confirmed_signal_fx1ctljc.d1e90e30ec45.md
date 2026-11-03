@@ -1,0 +1,2 @@
+Long: Supertrend changed from downtrend to uptrend on any of the previous confirmation-window bars AND the current bar's close >= open AND current volume >= its moving average × volume multiplier AND Supertrend does not change from downtrend to uptrend on the current bar
+Short: Supertrend changed from uptrend to downtrend on any of the previous confirmation-window bars AND the current bar's close < open AND current volume >= its moving average × volume multiplier AND Supertrend does not change from uptrend to downtrend on the current bar

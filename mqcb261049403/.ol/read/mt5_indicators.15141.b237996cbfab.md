@@ -1,0 +1,5 @@
+Calculation: Binary-wave value = selected smoothing of the sum of weighted votes: +1/-1 by whether close is above/below its moving average; +1/-1 by whether the MACD main line is rising/falling; +1/-1 by whether OsMA is above/below zero; +1/-1 by whether CCI is above/below zero; +1/-1 by whether Momentum is above/below 100; +1/-1 by whether RSI is above/below 50; +1/-1 by whether +DI is above/below -DI. A vote is zero when its comparison is equal or its weight is zero.
+Calculation: Binary-wave increment = current binary-wave value - previous binary-wave value.
+Calculation: Increment standard deviation = population standard deviation of the recent binary-wave increments.
+Long: Binary-wave value > previous binary-wave value OR binary-wave increment > first threshold multiplier × increment standard deviation
+Short: Binary-wave value < previous binary-wave value OR binary-wave increment < -(first threshold multiplier × increment standard deviation)

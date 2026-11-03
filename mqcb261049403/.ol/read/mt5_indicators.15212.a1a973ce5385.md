@@ -1,0 +1,5 @@
+Calculation: XDerivative = the configured applied price's rate of change over a lookback, multiplied by 100 and divided by the lookback, then smoothed by the configured moving-average method; on the HTF variant, use a higher-timeframe bar sampled while still forming at its opening and hold its value on chart bars until the next higher-timeframe boundary.
+Calculation: Derivative increment = current XDerivative minus the previous XDerivative.
+Calculation: Increment standard deviation = population standard deviation of the recent Derivative increments over a lookback.
+Long: current Derivative increment > the smaller of the two configured standard-deviation multiples × Increment standard deviation
+Short: current Derivative increment < −(the smaller of the two configured standard-deviation multiples × Increment standard deviation)

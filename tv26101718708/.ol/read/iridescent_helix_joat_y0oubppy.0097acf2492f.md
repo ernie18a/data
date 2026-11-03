@@ -1,0 +1,6 @@
+Calculation: Volume-weighted median = close price where cumulative volume, after sorting closes over a rolling lookback in ascending order, first reaches half the lookback's total volume
+Calculation: Connors-style RSI = average of RSI(close), RSI of the consecutive up/down close streak, and the percentile rank of one-bar close rate of change
+Calculation: Volume Z-score = (volume - rolling mean volume) / rolling standard deviation of volume
+Calculation: Composite momentum = clamp to [-100, 100] the Hull-smoothed weighted blend of (close - volume-weighted median) / EMA(high - low), normalized Connors-style RSI, and volume Z-score clamped after scaling
+Long: composite > 0 AND previous composite <= 0 OR composite crosses upward through the oversold threshold OR composite increases by more than the acceleration threshold OR bullish regular divergence OR bullish hidden divergence
+Short: composite < 0 AND previous composite >= 0 OR composite crosses downward through the overbought threshold OR composite decreases by more than the acceleration threshold OR bearish regular divergence OR bearish hidden divergence

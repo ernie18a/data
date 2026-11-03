@@ -1,0 +1,4 @@
+Calculation: Price source = close, or (open + high + low + close) / 4 when Heikin Ashi is enabled; calculate on each configured timeframe, which may be higher or lower than the chart timeframe, using its latest completed bar.
+Calculation: ATR trailing stop = recursively update from previous stop T and current and previous source prices P and Pprev: with loss = ATR × stop factor, set stop to max(T, P − loss) if P > T and Pprev > T; min(T, P + loss) if P < T and Pprev < T; P − loss if P > T; otherwise P + loss. Initialize T to 0.
+Long: On any configured timeframe, price source > ATR trailing stop OR short EMA > medium EMA > long EMA OR MACD signal line > 0 OR RSI crosses above 50 OR RSI < 20 OR (RSI > 50 AND RSI <= 80).
+Short: On any configured timeframe, price source < ATR trailing stop OR short EMA < medium EMA < long EMA OR MACD signal line < 0 OR RSI crosses below 50 OR RSI > 80 OR (RSI >= 20 AND RSI <= 50).

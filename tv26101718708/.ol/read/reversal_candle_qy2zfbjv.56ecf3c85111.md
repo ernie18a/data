@@ -1,0 +1,5 @@
+Calculation: Body size = absolute value of close minus open
+Calculation: Upper shadow = high minus the greater of open and close
+Calculation: Lower shadow = the lesser of open and close minus low
+Long: close < simple moving average of close AND volume > simple moving average of volume AND ((open < previous bar close AND close > previous bar open AND body size > previous bar body size) OR (lower shadow > 2 × body size AND upper shadow < body size) OR (upper shadow > 2 × body size AND lower shadow < body size))
+Short: close > simple moving average of close AND volume > simple moving average of volume AND ((open > previous bar close AND close < previous bar open AND body size > previous bar body size) OR (upper shadow > 2 × body size AND lower shadow < body size) OR (lower shadow > 2 × body size AND upper shadow < body size))

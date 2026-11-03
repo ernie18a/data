@@ -1,0 +1,13 @@
+Calculation: Relative volume = current volume / simple moving average of volume over a longer lookback
+Calculation: Body ratio = abs(close − open) / max(high − low, minimum price increment)
+Calculation: Bullish displacement = close > open AND max(high − low, minimum price increment) >= ATR × minimum displacement multiple AND body ratio >= minimum body ratio AND relative volume >= minimum relative volume
+Calculation: Bearish displacement = close < open AND max(high − low, minimum price increment) >= ATR × minimum displacement multiple AND body ratio >= minimum body ratio AND relative volume >= minimum relative volume
+Calculation: On either displacement, create or replace the active imbalance with its direction, current bar, and a pocket centered on the candle body; pocket width is the greater of body size and ATR × minimum pocket width. The recovery rail is the pocket midpoint.
+Calculation: A pocket test occurs when high >= pocket bottom AND low <= pocket top. Record the latest test bar; a test is recent while the number of bars since it is <= the test window.
+Calculation: Recovery close = active bullish imbalance AND recent test AND close > recovery rail + ATR × recovery buffer, OR active bearish imbalance AND recent test AND close < recovery rail − ATR × recovery buffer
+Calculation: Seed score = round(clamp(35 + clamp((candle range / ATR − minimum displacement multiple) × 22, 0, 22) + clamp((relative volume − minimum relative volume) × 16, 0, 24) + body ratio × 24, 0, 100)) at the imbalance bar
+Calculation: Recovery score = round(clamp(seed score × 0.30 + clamp(depth × 38, 0, 26) + clamp(rejection wick / candle range × 40, 0, 18) + clamp(relative volume × 28, 0, 28) + freshness × 0.18, 0, 100)); depth is (close − rail) / pocket width for bullish and (rail − close) / pocket width for bearish; rejection wick is lower wick for bullish and upper wick for bearish; freshness = clamp(100 − age bars / maximum imbalance age × 55, 0, 100)
+Calculation: Ready recovery = recovery close AND recovery score >= minimum ready score
+Calculation: Active imbalance = imbalance age <= maximum imbalance age AND close has not crossed its failure edge; bullish failure edge = pocket bottom − ATR × invalidation buffer, bearish failure edge = pocket top + ATR × invalidation buffer
+Long: Bullish displacement OR (active bullish imbalance AND pocket test AND NOT ready recovery AND NOT bullish displacement) OR (ready recovery AND active bullish imbalance AND NOT ready recovery on the prior bar)
+Short: Bearish displacement OR (active bearish imbalance AND pocket test AND NOT ready recovery AND NOT bearish displacement) OR (ready recovery AND active bearish imbalance AND NOT ready recovery on the prior bar)

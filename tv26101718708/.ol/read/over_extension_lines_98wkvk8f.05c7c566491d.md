@@ -1,0 +1,4 @@
+Calculation: Prior-day upper extension = prior day's low + (prior day's high − prior day's low) × extension factor, using the last completed daily bar
+Calculation: Opening-range upper extension = opening-range low + opening-range range × the same extension factor, using chart-timeframe bars from 9:30 to 9:45 ET; available after the window closes
+Calculation: Upper line = the higher of the prior-day upper extension and opening-range upper extension when the opening range is complete; otherwise, the prior-day upper extension
+Short: close > upper line AND previous bar's close ≤ previous bar's upper line

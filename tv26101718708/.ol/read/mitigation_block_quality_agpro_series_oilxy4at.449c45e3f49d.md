@@ -1,0 +1,5 @@
+Calculation: Bullish order block = the high–low range of the most recent bearish candle in the confirmed pivot-low lookback window.
+Calculation: Bearish order block = the high–low range of the most recent bullish candle in the confirmed pivot-high lookback window.
+Calculation: Mitigation reaction = for a bullish block, the maximum high during the reaction window after its first touch minus the block high; for a bearish block, the block low minus the minimum low during that window; divide by ATR. The Grade A reaction threshold is higher than the Grade B threshold.
+Long: An uninvalidated bullish order block is touched (low ≤ block high AND high ≥ block low), and its completed mitigation reaction is Grade A, B, or C.
+Short: An uninvalidated bearish order block is touched (high ≥ block low AND low ≤ block high), and its completed mitigation reaction is Grade A, B, or C.

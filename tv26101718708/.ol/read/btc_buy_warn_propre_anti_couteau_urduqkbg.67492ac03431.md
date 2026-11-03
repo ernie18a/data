@@ -1,0 +1,8 @@
+Calculation: CVD = cumulative sum of volume on bullish bars, minus volume on bearish bars, with zero contribution on doji bars
+Calculation: Volume POC = divide the price range over a lookback into equal bins, assign each bar's volume to the bin containing its close, and use the lower boundary of the highest-volume bin
+Calculation: Smart buying = volume exceeds its moving average times a multiplier AND close > open AND lower wick >= half the candle body
+Calculation: Smart selling = volume exceeds its moving average times a multiplier AND close < open AND close < low + 0.55 * (high - low)
+Calculation: RSI recovery = RSI below an upper threshold AND its lowest value over a lookback is below a lower threshold AND RSI > prior RSI AND RSI > its moving average
+Calculation: Bullish CVD divergence = current low < the lowest low over a shorter lookback of prior bars AND current CVD > the lowest CVD over the same prior bars AND RSI < a threshold
+Long: close is within a maximum percentage distance of the Volume POC AND (Volume POC is not lower than its value several bars ago OR close > Volume POC) AND close > short-term EMA AND short-term EMA > long-term EMA AND (close > prior bar's high OR close crosses above short-term EMA) AND CVD > its moving average AND (RSI recovery OR Smart buying OR Bullish CVD divergence) AND no long signal occurred within the configured cooldown
+Short: Smart selling OR (RSI > an upper threshold AND CVD < its moving average) OR (close < short-term EMA AND short-term EMA < long-term EMA AND CVD < its moving average), AND no warning signal occurred within the configured cooldown

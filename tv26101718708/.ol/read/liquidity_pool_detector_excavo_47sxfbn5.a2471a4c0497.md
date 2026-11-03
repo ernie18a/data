@@ -1,0 +1,4 @@
+Calculation: Equal-high clusters = On each completed chart-timeframe bar, confirm a pivot high if its high is the highest among N bars before and N bars after it. Compare the pivot with active equal-high cluster levels; merge it into the first cluster within a configurable ATR-multiple tolerance by updating the level to the touch-count-weighted average and incrementing the count. Otherwise add a new cluster if below the configurable cluster cap; ignore it if at the cap. Use chart-timeframe ATR. Keep clusters active until swept or invalidated.
+Calculation: Equal-low clusters = Same process as equal-high clusters, using pivot lows and lows.
+Long: The completed bar's low is below an active equal-low cluster level AND its close is above that level.
+Short: The completed bar's high is above an active equal-high cluster level AND its close is below that level.

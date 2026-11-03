@@ -1,0 +1,6 @@
+Calculation: Confirmed higher-timeframe swing high = a pivot high with equal long lookbacks on both sides, known after the right-side bars complete
+Calculation: Confirmed higher-timeframe swing low = a pivot low with equal long lookbacks on both sides, known after the right-side bars complete
+Calculation: Bullish fair value gap = current low > high two chart-timeframe bars earlier
+Calculation: Bearish fair value gap = current high < low two chart-timeframe bars earlier
+Long: confirmed higher-timeframe swing low < higher-timeframe bar low AND higher-timeframe swing low > higher-timeframe bar close OR chart-timeframe close >= the latest chart-timeframe pivot high recorded when a higher-timeframe swing low was swept, within the configured MSS lookback OR price reaches the selected mitigation level of a bullish fair value gap formed since that sweep and still uninvalidated
+Short: confirmed higher-timeframe swing high > higher-timeframe bar high AND confirmed higher-timeframe swing high < higher-timeframe bar close OR chart-timeframe close <= the latest chart-timeframe pivot low recorded when a higher-timeframe swing high was swept, within the configured MSS lookback OR price reaches the selected mitigation level of a bearish fair value gap formed since that sweep and still uninvalidated

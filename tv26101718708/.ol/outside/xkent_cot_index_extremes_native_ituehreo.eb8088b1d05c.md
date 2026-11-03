@@ -1,0 +1,1 @@
+For the selected trader group, calculate net positioning as long positions minus short positions, then measure its position within its own historical range. At or above the configured upper extreme, signal a bullish bias; at or below the configured lower extreme, signal a bearish bias; otherwise signal no edge and stand aside. Alert when the index crosses into either extreme.

@@ -1,0 +1,4 @@
+Calculation: Composite volume = sum of volume series from nine component markets
+Calculation: Average volume = simple moving average of composite volume over a lookback
+Long: close - low < bar-shape threshold AND high - open < bar-shape threshold AND open - close < bar-shape threshold AND ((composite volume - average volume) / average volume) × 100 > volume threshold AND composite volume > average volume AND close > prior bar close
+Exit: Long, low <= entry price - stop distance OR high >= entry price + profit distance OR (highest high since entry >= entry price + trail activation distance AND low <= highest high since entry - trail offset

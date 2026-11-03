@@ -1,0 +1,1 @@
+During the configured time window, if there is no open position, inspect the last completed daily bar. Buy if it closed below its open; sell if it closed above its open; take no action if it closed unchanged. Apply the configured stop-loss and take-profit levels to any opened position.

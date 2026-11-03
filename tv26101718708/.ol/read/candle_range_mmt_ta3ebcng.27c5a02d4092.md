@@ -1,0 +1,6 @@
+Calculation: Active range = seed bar’s high and low; retain them until a bar closes strictly above the high or below the low, then use that breakout bar’s high and low as the new range and set direction bullish for an upward break or bearish for a downward break. Calculate on the chart timeframe or a higher timeframe; use confirmed bars, and for a higher timeframe use its last completed bar.
+Calculation: Execution midpoint = (execution range high + execution range low) / 2
+Long: Context range direction is bullish AND execution range direction is bullish AND (low < execution range low AND close >= execution range low AND no new execution range begins on this bar OR close crosses above the execution midpoint AND no new execution range begins on this bar OR a new bullish execution range begins)
+Short: Context range direction is bearish AND execution range direction is bearish AND (high > execution range high AND close <= execution range high AND no new execution range begins on this bar OR close crosses below the execution midpoint AND no new execution range begins on this bar OR a new bearish execution range begins)
+Exit: Long, execution range direction is bearish
+Exit: Short, execution range direction is bullish

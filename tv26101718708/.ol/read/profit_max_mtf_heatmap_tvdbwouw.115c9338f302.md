@@ -1,0 +1,5 @@
+Calculation: Higher-timeframe ATR trend state = on each higher-timeframe bar, set lower trail to max(hl2 − multiplier × ATR(lookback), prior lower trail) if prior close > prior lower trail, otherwise to hl2 − multiplier × ATR(lookback); set upper trail to min(hl2 + multiplier × ATR(lookback), prior upper trail) if prior close < prior upper trail, otherwise to hl2 + multiplier × ATR(lookback); state = 1 if close > prior upper trail, −1 if close < prior lower trail, otherwise prior state (default 1). Use the same multiplier and lookback for all higher-timeframe states. Evaluate each state from its last completed bar.
+Long: first higher-timeframe state > 0 AND second higher-timeframe state > 0 AND third higher-timeframe state > 0
+Short: first higher-timeframe state < 0 AND second higher-timeframe state < 0 AND third higher-timeframe state < 0
+Exit: long, first higher-timeframe state < 0 OR second higher-timeframe state < 0 OR third higher-timeframe state < 0
+Exit: short, first higher-timeframe state > 0 OR second higher-timeframe state > 0 OR third higher-timeframe state > 0

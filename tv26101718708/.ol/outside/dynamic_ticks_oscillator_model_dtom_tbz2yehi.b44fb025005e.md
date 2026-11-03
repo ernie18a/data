@@ -1,0 +1,1 @@
+Calculate the rate of change of daily exchange-wide down-tick data and its rolling standard deviation. Enter long in the traded instrument when the rate of change falls below a negative volatility-scaled threshold. Exit the long when it rises above a positive volatility-scaled threshold. No short entry.

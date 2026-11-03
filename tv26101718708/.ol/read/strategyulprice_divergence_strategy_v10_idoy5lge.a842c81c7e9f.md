@@ -1,0 +1,10 @@
+Calculation: Selected divergence oscillator = configured choice of RSI, MACD histogram, stochastic, volume simple moving average, smoothed accumulation/distribution, Fisher transform, or CCI; use high as source for the high-side series and low for the low-side series where applicable. MACD uses the close-based histogram; stochastic uses close, high, and low; volume average and accumulation/distribution are shared by both sides.
+Calculation: Confirmed top pivot = selected high-side oscillator is strictly greater than its values two and one bars before and one and two bars after; confirmed bottom pivot = selected low-side oscillator is strictly less than those four surrounding values. The pivot price and oscillator value are taken from two bars before confirmation.
+Calculation: Regular bullish divergence = a confirmed bottom pivot has a lower low than the previous confirmed bottom pivot and a higher low-side oscillator value; hidden bullish divergence = it has a higher low and a lower oscillator value. Regular bearish divergence = a confirmed top pivot has a higher high than the previous confirmed top pivot and a lower high-side oscillator value; hidden bearish divergence = it has a lower high and a higher oscillator value.
+Calculation: Murrey oscillator = (close − midpoint of the highest high and lowest low over the configured lookback) / (half the range between them).
+Long: Regular bullish divergence OR hidden bullish divergence
+Short: Regular bearish divergence OR hidden bearish divergence
+Long: (regular bullish divergence enabled AND regular bullish divergence OR hidden bullish divergence enabled AND hidden bullish divergence) AND the previous bar's Murrey oscillator is greater than the selected threshold from 0, 0.25, 0.5, or 0.75
+Short: (regular bearish divergence enabled AND regular bearish divergence OR hidden bearish divergence enabled AND hidden bearish divergence) AND the previous bar's Murrey oscillator is less than the negative of the selected threshold from 0, 0.25, 0.5, or 0.75
+Exit: long, Murrey oscillator ≤ 0
+Exit: short, Murrey oscillator ≥ 0

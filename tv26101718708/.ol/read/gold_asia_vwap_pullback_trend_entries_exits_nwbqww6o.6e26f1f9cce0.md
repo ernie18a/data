@@ -1,0 +1,6 @@
+Long: Within configured trading session AND daily trade limit disabled OR no entry has occurred today AND close > session VWAP AND EMA filter disabled OR close > EMA AND low <= session VWAP + pullback band AND low >= session VWAP - pullback band AND close-back-through confirmation disabled OR close > session VWAP
+Short: Within configured trading session AND daily trade limit disabled OR no entry has occurred today AND close < session VWAP AND EMA filter disabled OR close < EMA AND high >= session VWAP - pullback band AND high <= session VWAP + pullback band AND close-back-through confirmation disabled OR close < session VWAP
+Calculation: Stop distance = ATR × stop multiplier, or fixed stop amount when fixed exits are enabled
+Calculation: Target distance = ATR × target multiplier, or fixed target amount when fixed exits are enabled
+Exit: Long, low <= entry price - stop distance OR high >= entry price + target distance OR current bar is outside the configured trading session and the prior bar was inside
+Exit: Short, high >= entry price + stop distance OR low <= entry price - target distance OR current bar is outside the configured trading session and the prior bar was inside

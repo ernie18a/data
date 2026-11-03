@@ -1,0 +1,3 @@
+Calculation: Price-based MFI = Over the lookback, sum volume × applied price for bars where applied price rose from the prior bar (positive flow) and where it fell (negative flow); calculate 100 − 100 / (1 + positive flow / negative flow), or 100 if negative flow is zero. Applied price is the bar's open, high, low, or close, respectively.
+Long: Close-price MFI > Open-price MFI
+Short: Close-price MFI < Open-price MFI

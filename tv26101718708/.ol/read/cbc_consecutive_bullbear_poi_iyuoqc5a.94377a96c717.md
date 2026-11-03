@@ -1,0 +1,4 @@
+Calculation: Bullish CBC = two consecutive bars where both close > open, the newer close > the older close, newer low >= older low, and newer high > older high; on a higher timeframe, use the two most recently completed bars
+Calculation: Bearish CBC = two consecutive bars where both close < open, the newer close < the older close, newer high <= older high, and newer low < older low; on a higher timeframe, use the two most recently completed bars
+Long: Bullish CBC on the chart timeframe OR Bullish CBC on a higher timeframe
+Short: Bearish CBC on the chart timeframe OR Bearish CBC on a higher timeframe

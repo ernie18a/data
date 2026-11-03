@@ -1,0 +1,5 @@
+Calculation: Bezier curve = on the configured indicator timeframe (higher, lower, or equal to the chart timeframe), sum the configured applied price from the latest completed bar and the preceding N bars, each weighted by C(N,i) × T^i × (1−T)^(N−i), where N is the smoothing lookback and C is the binomial coefficient; i runs from 0 on the oldest bar to N on the latest bar
+Long: Bezier curve two bars ago > Bezier curve one bar ago AND Bezier curve on the latest completed bar > Bezier curve one bar ago
+Short: Bezier curve two bars ago < Bezier curve one bar ago AND Bezier curve on the latest completed bar < Bezier curve one bar ago
+Exit: long, Bezier curve two bars ago < Bezier curve one bar ago AND Bezier curve on the latest completed bar < Bezier curve one bar ago
+Exit: short, Bezier curve two bars ago > Bezier curve one bar ago AND Bezier curve on the latest completed bar > Bezier curve one bar ago

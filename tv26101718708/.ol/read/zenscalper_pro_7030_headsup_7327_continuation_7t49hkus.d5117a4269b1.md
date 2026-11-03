@@ -1,0 +1,2 @@
+Long: RSI > overbought threshold AND RSI > prior-bar RSI OR RSI > heads-up high threshold AND prior-bar RSI <= heads-up high threshold
+Short: RSI < oversold threshold AND RSI < prior-bar RSI OR RSI < heads-up low threshold AND prior-bar RSI >= heads-up low threshold

@@ -1,0 +1,10 @@
+Calculation: Smoothed price = 2-pole Ehlers SuperSmoother of (high + low + close) / 3
+Calculation: Trend velocity = EMA of the one-bar change in smoothed price divided by ATR
+Calculation: Acceleration = EMA of the one-bar change in trend velocity
+Calculation: Acceleration z-score = acceleration divided by its rolling standard deviation
+Calculation: Directional efficiency = absolute smoothed-price change over a lookback divided by the sum of absolute one-bar smoothed-price changes over the same lookback
+Calculation: Relative volume = volume divided by its moving average
+Long: After warm-up, when not already long, trend velocity > the upper neutral-band threshold AND acceleration z-score > the positive launch threshold AND directional efficiency >= its minimum threshold AND (volume is unavailable OR relative volume >= its minimum threshold) AND bars since the last regime change >= the cooldown period
+Short: After warm-up, when not already short, trend velocity < the negative neutral-band threshold AND acceleration z-score < the negative launch threshold AND directional efficiency >= its minimum threshold AND (volume is unavailable OR relative volume >= its minimum threshold) AND bars since the last regime change >= the cooldown period
+Exit: long, after warm-up AND (acceleration < the negative brake threshold OR trend velocity crosses below half the upper neutral-band threshold OR trend velocity crosses below zero OR (trend velocity <= the upper neutral-band threshold AND acceleration < 0) OR a short-entry condition occurs)
+Exit: short, after warm-up AND (acceleration > the positive brake threshold OR trend velocity crosses above half the negative neutral-band threshold OR trend velocity crosses above zero OR (trend velocity >= the negative neutral-band threshold AND acceleration > 0) OR a long-entry condition occurs)

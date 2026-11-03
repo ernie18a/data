@@ -1,0 +1,5 @@
+Calculation: Signed volume = volume (or true range when selected or volume is unavailable), accumulated until Renko direction changes; optionally divide by the number of bars in that run, and negate while Renko direction is down. Renko direction is up when the selected price source exceeds the previous synthetic close plus the brick size, down when it falls below the previous synthetic close minus the brick size, and otherwise unchanged; brick size is selected as ATR, a fixed amount, or close divided by a value.
+Long: signed volume > 0 AND previous signed volume <= 0
+Short: signed volume < 0 AND previous signed volume >= 0
+Exit: Long, high >= entry price + profit distance OR low <= entry price - loss distance OR (high >= entry price + trail activation distance AND low <= highest price since activation - trail distance)
+Exit: Short, low <= entry price - profit distance OR high >= entry price + loss distance OR (low <= entry price - trail activation distance AND high >= lowest price since activation + trail distance)

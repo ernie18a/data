@@ -1,0 +1,3 @@
+Calculation: Block high/low = maximum high and minimum low within each fixed-duration block; blocks are higher timeframe than the chart when chart bars are shorter, and use completed blocks.
+Long: Within London, NY AM, or NY PM, the high and low of each of the last three consecutive completed blocks are greater than those of the preceding block.
+Short: Within London, NY AM, or NY PM, the high and low of each of the last three consecutive completed blocks are less than those of the preceding block.

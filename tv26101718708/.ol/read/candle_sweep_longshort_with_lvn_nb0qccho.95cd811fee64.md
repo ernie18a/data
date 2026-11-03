@@ -1,0 +1,13 @@
+Calculation: Prior lookback low = lowest low across the configured number of chart bars before the current bar
+Calculation: Prior lookback high = highest high across the configured number of chart bars before the current bar
+Calculation: Candle range = high − low
+Calculation: Bullish close position = 100 × (close − low) / candle range; use 50 when candle range is zero
+Calculation: Bearish close position = 100 × (high − close) / candle range; use 50 when candle range is zero
+Calculation: Body percentage = 100 × |close − open| / candle range; use 0 when candle range is zero
+Calculation: Volume ratio = current bar volume / prior chart bar volume
+Calculation: Consecutive red count before current bar = number of consecutive prior chart bars with close < open, reset by any other bar
+Calculation: Consecutive green count before current bar = number of consecutive prior chart bars with close > open, reset by any other bar
+Calculation: Valid bullish LVN = current bar touches at least one configured zone with either boundary nonzero, and closes above that zone's midpoint
+Calculation: Valid bearish LVN = current bar touches at least one configured zone with either boundary nonzero, and closes below that zone's midpoint
+Long: low < prior lookback low AND close > prior lookback low AND close > open AND volume ratio ≥ configured minimum AND bullish close position ≥ configured minimum AND (LVN filter disabled OR valid bullish LVN) AND (range filter disabled OR candle range ≥ prior chart bar range × (1 + configured minimum increase)) AND body percentage ≥ configured minimum AND (RSI filter disabled OR (long-overbought invalidation disabled OR RSI < configured overbought level) AND (long-below-RSI-average invalidation disabled OR RSI ≥ its configured-length simple moving average) AND consecutive red count before current bar < configured invalidation count
+Short: high > prior lookback high AND close < prior lookback high AND close < open AND volume ratio ≥ configured minimum AND bearish close position ≥ configured minimum AND (LVN filter disabled OR valid bearish LVN) AND (range filter disabled OR candle range ≥ prior chart bar range × (1 + configured minimum increase)) AND body percentage ≥ configured minimum AND (RSI filter disabled OR (short-oversold invalidation disabled OR RSI > configured oversold level) AND (short-above-RSI-average invalidation disabled OR RSI ≤ its configured-length simple moving average) AND consecutive green count before current bar < configured invalidation count

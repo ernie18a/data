@@ -1,0 +1,3 @@
+Calculation: Pool buy volume and sell volume = for each bar whose range overlaps a tide pool, add volume × (overlap range ÷ bar range) to the pool; split that amount into buy volume by multiplying by (close − low) ÷ bar range and into sell volume by multiplying by (high − close) ÷ bar range. A pool begins on the first bar of a surge and expands to include the high and low of each consecutive surge bar.
+Long: For any active tide pool, accumulated buy volume ≥ accumulated sell volume.
+Short: For any active tide pool, accumulated buy volume < accumulated sell volume.

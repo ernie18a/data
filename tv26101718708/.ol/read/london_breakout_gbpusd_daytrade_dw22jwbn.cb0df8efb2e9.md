@@ -1,0 +1,6 @@
+Calculation: Short-period simple moving average = average close over a shorter lookback
+Calculation: Long-period exponential moving average = exponential moving average of close over a longer lookback
+Long: datetime is within the configured date range AND bar time is within 03:00–04:00 AND ((close > short-period simple moving average AND previous close <= previous short-period simple moving average) OR (high > short-period simple moving average AND previous high <= previous short-period simple moving average)) AND previous close > current long-period exponential moving average
+Short: datetime is within the configured date range AND bar time is within 03:00–04:00 AND ((close < short-period simple moving average AND previous close >= previous short-period simple moving average) OR (low < short-period simple moving average AND previous low >= previous short-period simple moving average)) AND previous close < current long-period exponential moving average
+Exit: long, low <= entry price - stop-loss distance OR bar time is outside 03:00–09:45
+Exit: short, high >= entry price + stop-loss distance OR bar time is outside 03:00–09:45

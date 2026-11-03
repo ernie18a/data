@@ -1,0 +1,3 @@
+Calculation: NRatio = 100 × (smoothed normalized distance from a ratcheting percentage stop)^Sharp; use the selected applied price, divide its absolute distance from the stop by price and by the stop percentage, then smooth with the selected smoothing method and lookback. The stop follows the price by that percentage, ratchets in the trend direction, and reverses when price crosses it. Calculate on bars of a higher timeframe, comparing its last completed bar with its still-forming bar.
+Long: In entry-zone mode, NRatio crosses above the upper level OR, in exit-zone mode, NRatio crosses above the lower level
+Short: In entry-zone mode, NRatio crosses below the lower level OR, in exit-zone mode, NRatio crosses below the upper level

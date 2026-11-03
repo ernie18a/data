@@ -1,0 +1,7 @@
+Calculation: XRSX = 100 × clamp(smoothed change in the selected bar price / smoothed absolute change in that price, −1, 1); use the same smoothing parameters for numerator and denominator.
+Calculation: Fast step line = On the indicator timeframe, set Z = (XRSX + 100) / 2. With fast step size s, form bounds Z ± 2s. Switch trend up when Z exceeds the prior upper bound and down when Z falls below the prior lower bound. In an uptrend, keep the lower bound at the greater of its raw value and prior lower bound; output lower bound + s. In a downtrend, keep the upper bound at the lesser of its raw value and prior upper bound; output upper bound − s.
+Calculation: Slow step line = The same step-line calculation, using a larger step size than the fast step line.
+Long: Fast step line on the earlier completed indicator-timeframe bar > slow step line on that bar AND fast step line on the latest completed indicator-timeframe bar <= slow step line on that bar
+Short: Fast step line on the earlier completed indicator-timeframe bar < slow step line on that bar AND fast step line on the latest completed indicator-timeframe bar >= slow step line on that bar
+Exit: short, Fast step line on the earlier completed indicator-timeframe bar > slow step line on that bar
+Exit: long, Fast step line on the earlier completed indicator-timeframe bar < slow step line on that bar

@@ -1,0 +1,2 @@
+Long: shorter-lookback EMA crosses above longer-lookback EMA AND volume exceeds its moving average multiplied by a threshold AND RSI is above a lower threshold and below an upper threshold AND more than a cooldown period has elapsed since the last long or short signal
+Short: shorter-lookback EMA crosses below longer-lookback EMA AND volume exceeds its moving average multiplied by a threshold AND RSI is below an upper threshold and above a lower threshold AND more than a cooldown period has elapsed since the last long or short signal

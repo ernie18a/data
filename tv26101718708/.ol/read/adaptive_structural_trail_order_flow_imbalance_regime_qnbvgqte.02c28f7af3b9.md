@@ -1,0 +1,4 @@
+Long: flat position AND confirmed chart bar AND a participation bar closes AND uptrend regime AND an active bullish trail exists AND confidence ≥ entry threshold AND CVD slope > 0 AND external-bias filter passes
+Short: flat position AND confirmed chart bar AND a participation bar closes AND downtrend regime AND an active bearish trail exists AND confidence ≥ entry threshold AND CVD slope < 0 AND external-bias filter passes
+Exit: long, confirmed chart bar AND (close < ratcheting stop level OR regime is not uptrend)
+Exit: short, confirmed chart bar AND (close > ratcheting stop level OR regime is not downtrend)

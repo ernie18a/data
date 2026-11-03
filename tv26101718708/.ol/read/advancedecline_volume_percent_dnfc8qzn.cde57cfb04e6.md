@@ -1,0 +1,3 @@
+Calculation: Advance-Decline Volume Percent = ((current advancing-volume close − current declining-volume close) − (previous advancing-volume close − previous declining-volume close)) × 100 / (current advancing-volume close + current declining-volume close), using higher-timeframe bars still forming
+Long: Advance-Decline Volume Percent > upper threshold
+Short: Advance-Decline Volume Percent < lower threshold

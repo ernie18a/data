@@ -1,0 +1,6 @@
+Long: No open trades AND ((trend-following mode AND current chart bar close > higher-timeframe LWMA of close using its last completed bar) OR forced-long mode)
+Short: No open trades AND ((trend-following mode AND current chart bar close < higher-timeframe LWMA of close using its last completed bar) OR forced-short mode)
+Long: Last open trade is long AND open-trade count is at an enabled scaling level AND the maximum-trade limit permits another trade AND current close <= last trade entry price - configured adverse-move threshold
+Short: Last open trade is short AND open-trade count is at an enabled scaling level AND the maximum-trade limit permits another trade AND current close >= last trade entry price + configured adverse-move threshold
+Exit: long, any long trade's current close >= its entry price + configured take-profit threshold OR moving-average reversal is enabled AND previous completed chart bar close < same-chart-timeframe EMA calculated on the previous completed bar
+Exit: short, any short trade's current close <= its entry price - configured take-profit threshold OR moving-average reversal is enabled AND previous completed chart bar close > same-chart-timeframe EMA calculated on the previous completed bar

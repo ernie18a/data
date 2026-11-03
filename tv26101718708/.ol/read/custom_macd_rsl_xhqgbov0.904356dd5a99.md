@@ -1,0 +1,3 @@
+Calculation: Neutral zone bounds = ± adaptive level based on the higher-timeframe daily close from the bar still forming: a scaled daily close below a lower threshold, one fixed level between thresholds, and another fixed level above the upper threshold.
+Long: MACD crosses above its signal line AND MACD > lower neutral-zone bound
+Short: MACD crosses below its signal line AND MACD < upper neutral-zone bound

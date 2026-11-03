@@ -1,0 +1,2 @@
+Long: On each displayed timeframe, for each EMA lookback (from shorter to longer), the EMA on the still-forming bar is greater than that same EMA MA_Shift bars earlier; the timeframe may be higher or lower than the chart timeframe.
+Short: On each displayed timeframe, for each EMA lookback (from shorter to longer), the EMA on the still-forming bar is less than that same EMA MA_Shift bars earlier; the timeframe may be higher or lower than the chart timeframe.

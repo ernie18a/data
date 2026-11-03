@@ -1,0 +1,7 @@
+Calculation: Selected rate-of-change = MOM: close − close N bars earlier; ROC: 100 × (close / prior close − 1); ROCP: close / prior close − 1; ROCR: close / prior close; ROCR100: 100 × close / prior close
+Calculation: Main line = selected rate-of-change, smoothed with its configured method and length using the shorter lookback, on the configured indicator timeframe (higher or lower than the chart timeframe), using completed bars
+Calculation: Signal line = selected rate-of-change, smoothed with its separately configured method and length using the longer lookback, on the configured indicator timeframe (higher or lower than the chart timeframe), using completed bars
+Long: Main line on the current completed bar > signal line AND main line on the prior completed bar <= signal line AND (time filter disabled OR datetime within the configured trading interval)
+Short: Main line on the current completed bar < signal line AND main line on the prior completed bar >= signal line AND (time filter disabled OR datetime within the configured trading interval)
+Exit: long, main line < signal line OR datetime outside the configured trading interval
+Exit: short, main line > signal line OR datetime outside the configured trading interval

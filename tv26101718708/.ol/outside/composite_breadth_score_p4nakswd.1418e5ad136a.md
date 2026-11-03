@@ -1,0 +1,1 @@
+Use external market breadth data to form a composite score from the share of stocks above their long-term average, normalized cumulative advance/decline momentum, and the share of new highs among new highs and lows. When the composite crosses above its midpoint, take a long bias; when it crosses below, take a short bias. No exit rule is specified.

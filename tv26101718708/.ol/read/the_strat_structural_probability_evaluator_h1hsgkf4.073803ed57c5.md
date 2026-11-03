@@ -1,0 +1,4 @@
+Long: (low < previous low AND high <= previous high AND close > open) OR (previous bar is 2-down AND high > previous high AND low >= previous low) OR (two bars ago is 2-down AND previous bar is inside AND high > previous high AND low >= previous low) OR (two bars ago is an outside bar AND previous bar is inside AND high > previous high AND low >= previous low)
+Short: (high > previous high AND low >= previous low AND close < open) OR (previous bar is 2-up AND low < previous low AND high <= previous high) OR (two bars ago is 2-up AND previous bar is inside AND low < previous low AND high <= previous high) OR (two bars ago is an outside bar AND previous bar is inside AND low < previous low AND high <= previous high)
+Exit: long, current low < entry signal bar low
+Exit: short, current high > entry signal bar high

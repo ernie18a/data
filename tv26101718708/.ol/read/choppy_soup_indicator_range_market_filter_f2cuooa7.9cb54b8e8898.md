@@ -1,0 +1,3 @@
+Calculation: Higher-timeframe EMA = EMA of close on a higher timeframe, using the last completed higher-timeframe bar
+Long: current bar is within the configured session AND ADX >= configured minimum AND volume >= its chart-timeframe moving average × configured multiplier AND chart close > higher-timeframe EMA AND chart close > the highest high of the preceding lookback bars AND the same full condition was false on the previous chart bar
+Short: current bar is within the configured session AND ADX >= configured minimum AND volume >= its chart-timeframe moving average × configured multiplier AND chart close < higher-timeframe EMA AND chart close < the lowest low of the preceding lookback bars AND the same full condition was false on the previous chart bar

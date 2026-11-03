@@ -1,0 +1,3 @@
+Calculation: Fibonacci pivot R1 = (prior higher-timeframe high + low + close) / 3 + 0.382 × (high − low); Fibonacci pivot S2 = (prior higher-timeframe high + low + close) / 3 − 0.618 × (high − low), using the last completed higher-timeframe bar
+Long: close[1] > R1 AND close[2] <= R1[1] AND datetime >= configured backtest start time
+Short: close[1] < S2 AND close[2] >= S2[1] AND datetime >= configured backtest start time

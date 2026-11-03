@@ -1,0 +1,3 @@
+Calculation: MACD main line = EMA(close, shorter lookback) − EMA(close, longer lookback), using the same lookbacks on every timeframe.
+Long: MACD main line > 0 on any indicator timeframe, using the bar containing the chart bar’s timestamp (not necessarily the last completed bar; it may still be forming).
+Short: MACD main line < 0 on any indicator timeframe, using the bar containing the chart bar’s timestamp (not necessarily the last completed bar; it may still be forming).

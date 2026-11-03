@@ -1,0 +1,3 @@
+Calculation: Candle body size = absolute difference between bar close and bar open
+Long: Latest forming higher-timeframe bar close > open AND each of the N immediately preceding completed chart bars closes > open AND each of their candle body sizes < size multiplier × ATR of the currently forming chart bar AND current hour is within the configured signal-hour window AND position is flat
+Short: Latest forming higher-timeframe bar close < open AND each of the N immediately preceding completed chart bars closes < open AND each of their candle body sizes < size multiplier × ATR of the currently forming chart bar AND current hour is within the configured signal-hour window AND position is flat

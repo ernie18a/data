@@ -1,0 +1,3 @@
+Calculation: Logarithmic regression endpoints = OLS fit of ln(close) over lookback bars, evaluated at the current bar and the lookback start; the macro lookback is longer than the short-term lookback
+Long: Macro current fitted value > macro lookback-start fitted value OR short-term current fitted value > short-term lookback-start fitted value
+Short: Macro current fitted value < macro lookback-start fitted value OR short-term current fitted value < short-term lookback-start fitted value

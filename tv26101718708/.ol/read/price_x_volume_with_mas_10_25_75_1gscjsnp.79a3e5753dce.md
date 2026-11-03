@@ -1,0 +1,3 @@
+Calculation: Traded value = ((high + low + close) / 3) × volume, using the higher-timeframe bar still forming.
+Calculation: Short-, medium-, and long-term averages = simple moving averages of traded value over progressively longer lookbacks, using higher-timeframe bars including the bar still forming.
+Long: (short-term average > medium-term average AND medium-term average > long-term average AND each average > its value on the prior bar) OR (short-term average > medium-term average AND its prior value ≤ the medium-term average's prior value) OR (short-term average > long-term average AND its prior value ≤ the long-term average's prior value)

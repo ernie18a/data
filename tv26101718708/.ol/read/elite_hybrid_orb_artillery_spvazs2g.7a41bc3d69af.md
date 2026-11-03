@@ -1,0 +1,7 @@
+Calculation: Opening-range high/low = highest high/lowest low during the configured opening-range period beginning at each session start; use chart bars and make the range available only after that period ends.
+Calculation: Opening-range width = opening-range high − opening-range low.
+Calculation: Opening-range buffer = opening-range width × configured buffer percentage.
+Long: Close > opening-range high + opening-range buffer AND opening range is complete and its width is within the configured minimum and maximum tick limits AND bar time is after the opening-range period and before the session’s pre-close flatten window AND session trade count < configured maximum AND position is flat.
+Short: Close < opening-range low − opening-range buffer AND short-only restriction is disabled AND opening range is complete and its width is within the configured minimum and maximum tick limits AND bar time is after the opening-range period and before the session’s pre-close flatten window AND session trade count < configured maximum AND position is flat.
+Exit: long, Low ≤ opening-range low OR High ≥ entry-signal bar close + opening-range width × configured take-profit multiple OR bar time is within the five-minute window beginning 15 minutes before session end.
+Exit: short, High ≥ opening-range high OR Low ≤ entry-signal bar close − opening-range width × configured take-profit multiple OR bar time is within the five-minute window beginning 15 minutes before session end.

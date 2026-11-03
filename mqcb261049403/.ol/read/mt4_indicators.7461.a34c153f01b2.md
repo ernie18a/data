@@ -1,0 +1,2 @@
+Long: RSX on any of the four configured higher timeframes, using the bar still forming, > its upper trigger
+Short: RSX on any of the four configured higher timeframes, using the bar still forming, < its lower trigger

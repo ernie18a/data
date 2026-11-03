@@ -1,0 +1,3 @@
+Calculation: Momentum score = weighted sum of simple close-to-close returns over four lookbacks, with greater weights on shorter lookbacks and the longest lookback as an anchor; the lookbacks increase from short-term to long-term.
+Long: At a rebalance, fewer than the breadth threshold of offensive assets have momentum scores <= 0 AND the selected asset has the highest momentum score among offensive assets, with ties won by the first-listed asset.
+Short: At a rebalance, at least the breadth threshold of offensive assets have momentum scores <= 0 AND the selected asset has the highest momentum score among defensive assets, with ties won by the first-listed asset.

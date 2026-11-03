@@ -1,0 +1,1 @@
+Calculate daily real yield as the 10-year nominal bond yield minus expected 10-year inflation. When real yield falls from the prior daily reading, favor or enter long positions in gold; when it rises, reduce long targets or favor short positions. When real yield is below zero, treat that as a strong bullish gold regime and favor holding or seeking long positions.

@@ -1,0 +1,12 @@
+Calculation: MA compression percentage = (highest of the short-, medium-, and long-lookback close SMAs − lowest of those SMAs) / close × 100
+Calculation: Price-to-average-MA percentage = absolute value of (close − mean of the short-, medium-, and long-lookback close SMAs) / close × 100
+Calculation: Short-MA flatness = mean of the coefficients of variation of the short- and medium-lookback close SMAs, each measured over the same shorter flatness lookback, × 100
+Calculation: Long-MA flatness = coefficient of variation of the long-lookback close SMA, measured over a longer flatness lookback, × 100
+Calculation: Price range percentage = (highest close − lowest close over the range lookback) / SMA(close, range lookback) × 100
+Calculation: ATR rate of change = (ATR − ATR from the ATR lookback bars earlier) / ATR from the ATR lookback bars earlier × 100
+Calculation: Launchpad score = compression score + proximity score + short-flatness score + long-flatness score + volume score + ATR score; each score is capped below at zero. Compression score decreases linearly from its maximum as MA compression percentage rises toward its threshold. Proximity score decreases linearly from its maximum as price-to-average-MA percentage rises toward its threshold. Short- and long-flatness scores each decrease linearly from their maximum as their respective flatness rises toward its threshold. Volume score is at its maximum when volume is below its moving average; otherwise it decreases linearly as volume divided by its moving average rises from 1 to 1.5. ATR score is at its maximum when ATR rate of change is negative; otherwise it decreases linearly as ATR rate of change rises, reaching zero at its upper bound.
+Calculation: Launchpad active = at least four of these six conditions are true AND Launchpad score is at least its minimum: MA compression percentage is below its threshold; price-to-average-MA percentage is below its threshold; short-MA flatness is below its threshold; long-MA flatness is below its threshold; volume is below its moving average; ATR rate of change is negative.
+Long: Launchpad active AND Launchpad active was false on the previous chart bar
+Long: the number of consecutive preceding chart bars on which Launchpad active was true is at least its minimum AND current close > the maximum of the three close SMAs from the previous chart bar AND current volume ≥ the previous chart bar's volume moving average × its activation multiple
+Short: 
+Exit: 

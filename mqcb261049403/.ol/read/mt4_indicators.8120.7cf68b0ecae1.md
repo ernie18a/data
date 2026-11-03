@@ -1,0 +1,2 @@
+Long: close > open on a displayed timeframe bar; for a timeframe higher or lower than the chart timeframe, use its still-forming bar
+Short: close < open on a displayed timeframe bar; for a timeframe higher or lower than the chart timeframe, use its still-forming bar

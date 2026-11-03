@@ -1,0 +1,10 @@
+Calculation: Consolidation box = highest high and lowest low over a lookback of completed higher-timeframe bars
+Calculation: Range percentile = percentile rank of the current box's percentage width among prior box percentage widths over a longer historical lookback
+Calculation: Range z-score = current box percentage width minus its historical mean, divided by its historical standard deviation
+Calculation: Drift-to-box ratio = absolute difference between the first and last closes in the consolidation window divided by box width
+Calculation: Regression slope % = absolute least-squares regression slope of closes in the consolidation window, scaled by window length and divided by the last close, as a percentage
+Calculation: Range CV = standard deviation of individual higher-timeframe bar ranges in the consolidation window divided by their average
+Calculation: Single-bar-range-to-box ratio = largest higher-timeframe bar range in the consolidation window divided by box width
+Calculation: Breakout buffer = selected nonnegative buffer based on higher-timeframe ATR, box price, tick size, or zero
+Long: box width is positive AND (range percentile is at or below its threshold OR range z-score is at or below its threshold) AND drift-to-box ratio is at or below its threshold AND regression slope % is at or below its threshold AND range CV is at or below its threshold AND single-bar-range-to-box ratio is at or below its threshold AND chart bar closes at or above box high plus breakout buffer AND breakout bar range and volume satisfy their enabled thresholds
+Short: box width is positive AND (range percentile is at or below its threshold OR range z-score is at or below its threshold) AND drift-to-box ratio is at or below its threshold AND regression slope % is at or below its threshold AND range CV is at or below its threshold AND single-bar-range-to-box ratio is at or below its threshold AND chart bar closes at or below box low minus breakout buffer AND breakout bar range and volume satisfy their enabled thresholds

@@ -1,0 +1,4 @@
+Calculation: Anchored VWAP = cumulative volume-weighted average of the source price, reset at the selected anchor; standard deviation = square root of the volume-weighted variance of that source price since the anchor
+Calculation: VWAP deviation bands = anchored VWAP ± standard deviation × band multiplier
+Long: close > anchored VWAP OR (low ≤ lower 1σ band + touch tolerance × ATR AND close > lower 1σ band) OR (low ≤ lower 2σ band + touch tolerance × ATR AND close > lower 2σ band) OR (close > anchored VWAP AND previous close ≤ previous anchored VWAP)
+Short: close < anchored VWAP OR (high ≥ upper 1σ band − touch tolerance × ATR AND close < upper 1σ band) OR (high ≥ upper 2σ band − touch tolerance × ATR AND close < upper 2σ band) OR (close < anchored VWAP AND previous close ≥ previous anchored VWAP)

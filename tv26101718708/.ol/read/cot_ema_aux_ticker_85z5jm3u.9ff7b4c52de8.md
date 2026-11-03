@@ -1,0 +1,5 @@
+Calculation: Commercial net-position change = change in commercial long contracts minus change in commercial short contracts
+Long: first currency commercial net-position change > 0 AND second currency commercial net-position change < 0 AND chart-close EMA > its prior value AND each enabled auxiliary-ticker EMA > its prior value when not inverted or < its prior value when inverted AND datetime >= configured start date
+Short: first currency commercial net-position change < 0 AND second currency commercial net-position change > 0 AND chart-close EMA < its prior value AND each enabled auxiliary-ticker EMA < its prior value when not inverted or > its prior value when inverted AND datetime >= configured start date
+Exit: Long, low <= entry-bar low OR close > entry price
+Exit: Short, high >= entry-bar high OR close < entry price

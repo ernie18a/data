@@ -1,0 +1,1 @@
+In Strategy Tester only, when no test position is open and a day has passed since the previous attempt, alternate between long and short, starting long. Open at the minimum permitted size only if the instrument is fully tradable, the market price and size are valid, and estimated margin is no more than half of free margin. Close the test position after its holding period.

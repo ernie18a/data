@@ -1,0 +1,9 @@
+Calculation: Pivot high = confirmed pivot high of higher-timeframe highs, using left-side lookback and right-side confirmation bars from completed higher-timeframe bars.
+Calculation: Pivot low = confirmed pivot low of higher-timeframe lows, using left-side lookback and right-side confirmation bars from completed higher-timeframe bars.
+Calculation: Latest pivot high = most recent confirmed pivot high.
+Calculation: Latest pivot low = most recent confirmed pivot low.
+Calculation: Volume delta = volume when close > open, −volume when close < open, otherwise 0.
+Long: Latest pivot high and latest pivot low exist AND latest pivot high − latest pivot low >= minimum pivot range AND close > latest pivot low AND volume delta < 0
+Short: Latest pivot high and latest pivot low exist AND latest pivot high − latest pivot low >= minimum pivot range AND close < latest pivot high AND volume delta > 0
+Exit: long, consecutive bars in long position >= exit bar count
+Exit: short, consecutive bars in short position >= exit bar count

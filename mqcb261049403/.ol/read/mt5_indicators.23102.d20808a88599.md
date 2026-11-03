@@ -1,0 +1,2 @@
+Long: Spearman rank correlation of chart-timeframe prices over a lookback > 0 OR Spearman rank correlation of prices over the selected same-or-higher timeframe lookback > 0, using its still-forming bar
+Short: Spearman rank correlation of chart-timeframe prices over a lookback < 0 OR Spearman rank correlation of prices over the selected same-or-higher timeframe lookback < 0, using its still-forming bar

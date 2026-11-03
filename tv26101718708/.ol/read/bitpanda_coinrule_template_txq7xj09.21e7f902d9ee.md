@@ -1,0 +1,2 @@
+Long: RSI > prior-bar RSI + increase threshold AND RSI < upper threshold AND shorter-term EMA crosses above longer-term EMA AND datetime >= start date
+Exit: Long, longer-term EMA crosses above shorter-term EMA AND datetime >= start date

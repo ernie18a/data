@@ -1,0 +1,6 @@
+Calculation: Rising acceleration signal = On the indicator timeframe (higher or lower than the chart timeframe), using the last completed bar, when no rising-sequence latch is active and both Awesome Oscillator and Accelerator Oscillator are each strictly higher on each of the last four consecutive bar-to-bar comparisons; the latch activates on this signal and resets when either oscillator is lower than its immediately preceding value.
+Calculation: Falling acceleration signal = On the indicator timeframe (higher or lower than the chart timeframe), using the last completed bar, when no falling-sequence latch is active and both Awesome Oscillator and Accelerator Oscillator are each strictly lower on each of the last four consecutive bar-to-bar comparisons; the latch activates on this signal and resets when either oscillator is higher than its immediately preceding value.
+Long: Rising acceleration signal is marked as a buy signal in trend mode or falling acceleration signal is marked as a buy signal in countertrend mode
+Short: Falling acceleration signal is marked as a sell signal in trend mode or rising acceleration signal is marked as a sell signal in countertrend mode
+Exit: long, Falling acceleration signal
+Exit: short, Rising acceleration signal

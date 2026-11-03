@@ -1,0 +1,6 @@
+Calculation: Return volatility ratio = sample standard deviation of recent one-bar close-to-close returns divided by sample standard deviation of a longer window of those returns
+Calculation: Tick-volume z-score = current bar tick volume minus the recent-window mean, divided by that window’s standard deviation
+Calculation: Recent NR7 = at least one bar within the recent lookback has a high-low range no greater than the range of any of the seven bars ending with it
+Calculation: ATR = Wilder-smoothed average of true range, where true range is the greatest of high-low, absolute high minus prior close, and absolute low minus prior close
+Long: return volatility ratio < configured ceiling AND current-bar tick-volume z-score > configured floor AND recent average tick volume < configured ceiling AND recent NR7 is true AND signal bar opens within the evening entry window on a Monday through Friday AND no position is open
+Exit: long, low <= entry price - configured stop multiple × ATR recorded at entry OR high >= entry price + configured target multiple × ATR recorded at entry OR holding period >= configured maximum bars OR current time >= configured daily flat time, or one minute before the broker session ends if earlier

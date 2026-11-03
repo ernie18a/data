@@ -1,0 +1,4 @@
+Calculation: Resistance = highest high over a lookback of completed bars on the relevant timeframe
+Calculation: Support = lowest low over a lookback of completed bars on the relevant timeframe
+Long: latest completed close on the chart timeframe > chart-timeframe resistance AND preceding completed close on the chart timeframe <= chart-timeframe resistance OR latest completed close on a higher timeframe > higher-timeframe resistance AND preceding completed close on that higher timeframe <= higher-timeframe resistance
+Short: latest completed close on the chart timeframe < chart-timeframe support AND preceding completed close on the chart timeframe >= chart-timeframe support OR latest completed close on a higher timeframe < higher-timeframe support AND preceding completed close on that higher timeframe >= higher-timeframe support

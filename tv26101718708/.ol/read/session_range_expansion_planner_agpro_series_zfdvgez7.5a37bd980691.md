@@ -1,0 +1,6 @@
+Calculation: Session balance high/low = highest high and lowest low of the first configured number of bars in the selected session.
+Calculation: Break buffer = the configured sensitivity’s ATR-based buffer.
+Calculation: Upward/downward confirmation = configured confirmation mode: close beyond the corresponding balance boundary plus/minus the break buffer; or a wick beyond it with the close within 10% of the session range inside the boundary; or a close beyond the buffer with the previous close beyond the boundary.
+Calculation: Planner score = clipped sum of breakout-distance score, acceptance-count score, volume-support score, ATR-regime score, and target-room score.
+Long: In session, balance ready, after the balance window, and no prior expansion this session, upward confirmation is true and downward confirmation is false; OR an upward expansion is accepted and planner score meets the configured minimum visual score.
+Short: In session, balance ready, after the balance window, and no prior expansion this session, downward confirmation is true and upward confirmation is false; OR a downward expansion is accepted and planner score meets the configured minimum visual score.

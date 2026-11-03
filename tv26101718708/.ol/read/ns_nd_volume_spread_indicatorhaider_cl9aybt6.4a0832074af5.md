@@ -1,0 +1,2 @@
+Long: close > open AND (volume > volume[1] AND volume > volume[2] AND volume > volume[3] OR volume < volume[1] AND volume < volume[2] AND volume < volume[3])
+Short: close < open AND (volume > volume[1] AND volume > volume[2] AND volume > volume[3] OR volume < volume[1] AND volume < volume[2] AND volume < volume[3])

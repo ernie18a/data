@@ -1,0 +1,3 @@
+Calculation: Currency strength score = For each currency, the average contribution across available crosses involving it; each cross contributes its percentage change, (current close − close N bars ago) / close N bars ago × 100, to its base currency and the negative of that value to its quote currency. Use the current still-forming bar and the bar N bars back on the independently selected calculation timeframe.
+Long: Currency strength score ≥ 0
+Short: Currency strength score < 0

@@ -1,0 +1,3 @@
+Calculation: Astro bias score = 1 for a waxing Moon; 1 unless the Sun–Moon angle is tense (0 if tense, otherwise 1); 1 when Mercury is not retrograde; and 1 outside eclipse season. Determine waxing from Sun–Moon elongation, harmony/tension from angular separation, Mercury retrograde from its synodic-cycle phase, and eclipse season from the Sun’s angular distance to either lunar node.
+Long: (Astro bias score >= 3 AND close > EMA(close)) OR Astro bias score == 2
+Short: (Astro bias score == 1 AND close < EMA(close)) OR Astro bias score == 2

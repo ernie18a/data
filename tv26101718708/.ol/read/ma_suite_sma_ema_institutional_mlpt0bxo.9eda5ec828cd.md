@@ -1,0 +1,4 @@
+Calculation: Short-term SMA = simple moving average of close with a shorter lookback than the long-term SMA, calculated on the chart timeframe or selected higher timeframe; use the current chart bar or the last completed higher-timeframe bar
+Calculation: Long-term SMA = simple moving average of close with a longer lookback than the short-term SMA, calculated on the chart timeframe or selected higher timeframe; use the current chart bar or the last completed higher-timeframe bar
+Long: short-term SMA > long-term SMA AND previous short-term SMA <= previous long-term SMA
+Short: short-term SMA < long-term SMA AND previous short-term SMA >= previous long-term SMA

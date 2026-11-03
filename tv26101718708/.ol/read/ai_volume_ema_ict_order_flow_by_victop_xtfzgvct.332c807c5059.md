@@ -1,0 +1,6 @@
+Calculation: Long-lookback prior high = highest high over the preceding bars, excluding the current bar; its lookback is longer than the short-lookback prior high.
+Calculation: Short-lookback prior high = highest high over the preceding bars, excluding the current bar.
+Calculation: Long-lookback prior low = lowest low over the preceding bars, excluding the current bar; its lookback is longer than the short-lookback prior low.
+Calculation: Short-lookback prior low = lowest low over the preceding bars, excluding the current bar.
+Long: At least three of (short-period EMA of close > medium-period EMA of close > long-period EMA of close), (close > long-lookback prior high), (volume > 1.5 × simple moving average of volume AND close > open), (close > short-lookback prior high) are true
+Short: At least three of (short-period EMA of close < medium-period EMA of close < long-period EMA of close), (close < long-lookback prior low), (volume > 1.5 × simple moving average of volume AND close < open), (close < short-lookback prior low) are true

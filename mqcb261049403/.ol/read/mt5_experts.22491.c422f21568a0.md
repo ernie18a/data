@@ -1,0 +1,5 @@
+Calculation: Color-MA-RSI trigger = clamp(sign(short-lookback MA − long-lookback MA) + sign(short-lookback RSI − long-lookback RSI), −1, 1), calculated on the configured signal timeframe (which may be higher, lower, or equal to the chart timeframe) using completed bars; each short lookback is shorter than its corresponding long lookback.
+Long: trigger on the last completed signal bar > 0 AND trigger on the preceding completed signal bar ≤ 0
+Short: trigger on the last completed signal bar < 0 AND trigger on the preceding completed signal bar ≥ 0
+Exit: long, trigger on the last completed signal bar < 0 OR low ≤ entry price − configured stop-loss distance OR high ≥ entry price + configured take-profit distance
+Exit: short, trigger on the last completed signal bar > 0 OR high ≥ entry price + configured stop-loss distance OR low ≤ entry price − configured take-profit distance

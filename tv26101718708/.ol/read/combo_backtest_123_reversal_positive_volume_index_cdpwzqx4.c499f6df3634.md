@@ -1,0 +1,8 @@
+Calculation: Fast Stochastic = Stochastic oscillator of close, high, and low, smoothed with a short SMA
+Calculation: Slow Stochastic = SMA of Fast Stochastic using a longer smoothing period
+Calculation: Positive Volume Index = prior index plus one-bar close rate of change when volume is greater than prior-bar volume; otherwise, prior index
+Calculation: Positive Volume Index EMA = EMA of Positive Volume Index
+Long: close two bars ago < prior close AND close > prior close AND Fast Stochastic < Slow Stochastic AND Fast Stochastic > level AND Positive Volume Index > Positive Volume Index EMA
+Short: close two bars ago > prior close AND close < prior close AND Fast Stochastic > Slow Stochastic AND Fast Stochastic < level AND Positive Volume Index < Positive Volume Index EMA
+Exit: long, NOT (close two bars ago < prior close AND close > prior close AND Fast Stochastic < Slow Stochastic AND Fast Stochastic > level AND Positive Volume Index > Positive Volume Index EMA) AND NOT (close two bars ago > prior close AND close < prior close AND Fast Stochastic > Slow Stochastic AND Fast Stochastic < level AND Positive Volume Index < Positive Volume Index EMA)
+Exit: short, NOT (close two bars ago < prior close AND close > prior close AND Fast Stochastic < Slow Stochastic AND Fast Stochastic > level AND Positive Volume Index > Positive Volume Index EMA) AND NOT (close two bars ago > prior close AND close < prior close AND Fast Stochastic > Slow Stochastic AND Fast Stochastic < level AND Positive Volume Index < Positive Volume Index EMA)

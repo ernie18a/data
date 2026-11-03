@@ -1,0 +1,2 @@
+Long: higher-timeframe HMA of close >= higher-timeframe HMA of open, using the last completed higher-timeframe bar
+Short: higher-timeframe HMA of close < higher-timeframe HMA of open, using the last completed higher-timeframe bar

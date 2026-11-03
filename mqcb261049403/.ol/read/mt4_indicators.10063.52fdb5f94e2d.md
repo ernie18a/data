@@ -1,0 +1,4 @@
+Calculation: Resistance levels = latest confirmed upper fractal highs, carried forward until a new upper fractal, on lower-than-chart, chart, and higher-than-chart timeframes. An upper fractal is a bar whose high exceeds the highs of the two bars before and after it; it is confirmed only after those two later bars complete. Use the lower- and higher-timeframe bars corresponding to the chart bar, which are still forming.
+Calculation: Support levels = latest confirmed lower fractal lows, carried forward until a new lower fractal, on lower-than-chart, chart, and higher-than-chart timeframes. A lower fractal is a bar whose low is below the lows of the two bars before and after it; it is confirmed only after those two later bars complete. Use the lower- and higher-timeframe bars corresponding to the chart bar, which are still forming.
+Long: All three support levels are equal
+Short: All three resistance levels are equal

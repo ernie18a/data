@@ -1,0 +1,4 @@
+Calculation: Averaging-order trigger price = base entry price plus the cumulative configured deviation for the next order; each rung adds a deviation step, with the step scaled by the configured multiplier.
+Calculation: Minimum close since take-profit activation = the lowest close from the first close at or below the take-profit price through the current bar.
+Short: While flat, the RSI on a lower timeframe than the chart timeframe crosses below its configured level, using the last completed bar; OR while short, fewer than the configured number of averaging orders have filled and close is at or above the next averaging-order trigger price. Apply the configured active date window when enabled.
+Exit: Short, close is at or above average entry plus the configured stop-loss percentage; OR take-profit is active and close is at or above the minimum close since take-profit activation plus the configured trailing percentage. Evaluate at bar close.

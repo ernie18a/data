@@ -1,0 +1,1 @@
+Compute a composite from external BTC long and short position series: long positions minus short positions, adjusted by configurable weighted changes in each series, with absolute changes contributing additional configurable weight. Smooth the composite with a weighted moving average. Go long when the composite crosses above its moving average; go short when it crosses below.

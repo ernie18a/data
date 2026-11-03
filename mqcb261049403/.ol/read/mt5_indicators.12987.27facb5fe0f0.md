@@ -1,0 +1,2 @@
+Long: Relative Vigor Index on the still-forming bar of each configured timeframe, equal to or higher than the chart timeframe, > the upper level
+Short: Relative Vigor Index on the still-forming bar of each configured timeframe, equal to or higher than the chart timeframe, < the lower level

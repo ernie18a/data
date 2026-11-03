@@ -1,0 +1,4 @@
+Calculation: Swing high/low = pivot high/low confirmed after the configured right-side bars
+Calculation: Liquidity zone = ATR-scaled range centered on a swing high (buy-side) or swing low (sell-side); merge same-side zones when the new pivot is within an ATR-scaled distance of an existing zone midpoint, expanding to the union of their bounds; remove a buy-side zone when high reaches its lower bound and a sell-side zone when low reaches its upper bound
+Long: high >= lower bound AND low <= upper bound of any active buy-side liquidity zone
+Short: high >= lower bound AND low <= upper bound of any active sell-side liquidity zone

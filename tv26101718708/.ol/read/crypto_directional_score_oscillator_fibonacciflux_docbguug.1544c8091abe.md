@@ -1,0 +1,10 @@
+Calculation: Trend = fast EMA minus slow EMA, normalized by ATR
+Calculation: Momentum = return over the momentum lookback, normalized by return volatility over the normalization lookback
+Calculation: Mean reversion = fast EMA minus close, normalized by ATR
+Calculation: Flow = close location within the bar range, weighted by relative volume
+Calculation: Efficiency = absolute net price change over the efficiency lookback divided by total absolute price change over that lookback
+Calculation: Fixed Up score = logistic of a weighted blend of trend, momentum, mean reversion, and flow; weight trend and momentum by efficiency and mean reversion by one minus efficiency
+Calculation: Bayesian Up score = logistic of the regime-posterior-weighted trend, momentum, mean-reversion, and flow expert logits, plus a bull-minus-bear posterior term; obtain the four-state Bull, Bear, Range, and Stress posteriors from a causal Student-t likelihood filter with persistent trend states
+Calculation: Down score = 1 minus Up score
+Long: On a confirmed bar, Up score > signal threshold AND previous bar Up score <= signal threshold
+Short: On a confirmed bar, Down score > signal threshold AND previous bar Down score <= signal threshold

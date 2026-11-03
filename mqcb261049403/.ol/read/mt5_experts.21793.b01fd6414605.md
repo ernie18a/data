@@ -1,0 +1,5 @@
+Calculation: Bull and bear lines = On a configurable higher or lower timeframe, calculate MFI using volume. Smooth it with a family of moving averages whose lengths increase by a fixed step from shortest to longest. For each bar, count averages strictly above their own preceding-bar values as rising; count all others as non-rising. Independently smooth the rising and non-rising counts with the same smoothing method and length to obtain the bull and bear lines. Use a configurable signal bar: the last completed bar or the bar still forming; compare it with the preceding bar of that timeframe.
+Long: Bull line > bear line AND previous bull line < previous bear line
+Short: Bull line < bear line AND previous bull line > previous bear line
+Exit: long, bull line < bear line OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, bull line > bear line OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

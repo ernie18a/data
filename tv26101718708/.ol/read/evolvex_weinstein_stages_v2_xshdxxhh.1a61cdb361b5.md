@@ -1,0 +1,5 @@
+Calculation: Long-term moving average = simple moving average of higher-timeframe closes, using the higher-timeframe bar available with lookahead off (previous completed bar until the current higher-timeframe bar closes).
+Calculation: Rising long-term moving average = current long-term moving average is above its value a longer-term lookback ago, and the absolute percentage change exceeds a flatness threshold.
+Calculation: Upside volume confirmation = higher-timeframe volume exceeds its longer-term average volume multiplied by a threshold, and higher-timeframe close is above higher-timeframe open; use the higher-timeframe bar available with lookahead off.
+Long: Previous stage is Stage 1, Stage 3, or uninitialized AND higher-timeframe close > long-term moving average AND rising long-term moving average AND (volume confirmation is disabled OR upside volume confirmation)
+Exit: Long, previous stage is Stage 2 AND higher-timeframe close <= long-term moving average

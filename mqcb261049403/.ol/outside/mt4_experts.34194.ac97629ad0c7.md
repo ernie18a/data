@@ -1,0 +1,1 @@
+Sum the floating profit, commissions, and swaps across the managed open positions. Exit all managed positions when the total reaches a profit target or, if a loss limit is enabled, falls to or below that limit.

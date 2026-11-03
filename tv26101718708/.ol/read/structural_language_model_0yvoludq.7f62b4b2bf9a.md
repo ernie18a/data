@@ -1,0 +1,5 @@
+Calculation: Bar token = X− for a wide-range down bar with a sufficiently large body; X+ for a wide-range up bar with a sufficiently large body; c for a narrow-range bar or a bar with a body below the minimum fraction; otherwise d for a down bar and u for an up bar. Width is judged against configurable thresholds, either by range percentile over a lookback or by range relative to average range.
+Calculation: Next-token probability = smoothed empirical frequency of each token following the current context of one or two most recent tokens.
+Calculation: Directional bias = 100 × (P(next token is u or X+) − P(next token is d or X−)).
+Long: directional bias ≥ positive conviction threshold AND prior bar directional bias < positive conviction threshold
+Short: directional bias ≤ negative conviction threshold AND prior bar directional bias > negative conviction threshold

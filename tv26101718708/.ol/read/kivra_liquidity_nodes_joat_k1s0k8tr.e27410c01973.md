@@ -1,0 +1,3 @@
+Calculation: Live POC = midpoint of the row with the highest smoothed volume in a profile of the lookback chart bars; allocate each bar’s volume to each price row in proportion to the overlap of its high-low range with that row (use a range-based proxy when volume is unavailable), then smooth each row as (previous row + 2 × current row + next row) / 4, duplicating the edge row where a neighbor is missing.
+Long: Previous close ≤ previous Live POC AND current close > current Live POC
+Short: Previous close ≥ previous Live POC AND current close < current Live POC

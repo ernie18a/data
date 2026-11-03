@@ -1,0 +1,10 @@
+Calculation: Recent bullish sweep = a bar low below the lowest low of the preceding lookback bars, followed by a close above that low; remains valid for the signal-expiry lookback
+Calculation: Recent bearish sweep = a bar high above the highest high of the preceding lookback bars, followed by a close below that high; remains valid for the signal-expiry lookback
+Calculation: Aggregated open interest = sum of the latest completed chart-timeframe close of open-interest data from three exchanges
+Calculation: Volume anomaly = volume greater than its longer-lookback mean plus two standard deviations
+Calculation: Absorption = absolute candle body smaller than 40% of the high-low range
+Calculation: Locked stop = for a long, entry price raised to the first profit-lock level reached by the bar high, then raised to the higher second level if reached; for a short, entry price lowered to the first profit-lock level reached by the bar low, then lowered to the lower second level if reached
+Long: recent bullish sweep AND (volume anomaly OR absorption) AND USDT dominance close < its moving average AND aggregated open interest <= its moving average AND (no long signal was emitted within the signal-expiry lookback) AND (position is flat OR (position is long AND close < entry price))
+Short: recent bearish sweep AND (volume anomaly OR absorption) AND USDT dominance close > its moving average AND aggregated open interest > its moving average AND (no short signal was emitted within the signal-expiry lookback) AND (position is flat OR (position is short AND close > entry price))
+Exit: long, close < 5-period EMA AND (close is at least the minimum profit threshold above entry price OR close <= entry price minus the logical stop distance) OR low <= locked stop OR (no locked stop and low <= catastrophe stop) OR high >= maximum take-profit price
+Exit: short, close > 5-period EMA AND (close is at least the minimum profit threshold above entry price OR close >= entry price plus the logical stop distance) OR high >= locked stop OR (no locked stop and high >= catastrophe stop) OR low <= maximum take-profit price

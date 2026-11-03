@@ -1,0 +1,3 @@
+Calculation: Tick Volume Index = smooth the up-volume proxy and its complement twice, then smooth 100 × (smoothed up volume − smoothed down volume) / (smoothed up volume + smoothed down volume); the up-volume proxy is (volume + (close − open) / minimum price increment) / 2, and each smoothing uses the indicator’s selected smoothing method and its respective lookback.
+Long: Tick Volume Index > 0
+Short: Tick Volume Index < 0

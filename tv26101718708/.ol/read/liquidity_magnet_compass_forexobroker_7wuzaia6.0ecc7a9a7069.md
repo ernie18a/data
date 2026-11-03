@@ -1,0 +1,7 @@
+Calculation: Confirmed pivot high = a bar whose high is the highest within the configured number of bars on both sides; available after the bars on the right complete.
+Calculation: Confirmed pivot low = a bar whose low is the lowest within the configured number of bars on both sides; available after the bars on the right complete.
+Calculation: ATR = average true range over the configured lookback.
+Calculation: Volume SMA = simple moving average of volume over the configured lookback.
+Long: On a completed bar, for at least one retained, unexpired, unswept confirmed pivot low: low < pivot-low level AND pivot-low level - low >= ATR × configured sweep fraction AND (rejection-close requirement disabled OR close > pivot-low level); AND volume >= Volume SMA × configured multiplier AND current bar index - last signal bar >= configured cooldown; AND (no qualifying pivot-high sweep on this bar OR close < open).
+Short: On a completed bar, for at least one retained, unexpired, unswept confirmed pivot high: high > pivot-high level AND high - pivot-high level >= ATR × configured sweep fraction AND (rejection-close requirement disabled OR close < pivot-high level); AND volume >= Volume SMA × configured multiplier AND current bar index - last signal bar >= configured cooldown; AND (no qualifying pivot-low sweep on this bar OR close >= open).
+Exit: 

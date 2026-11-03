@@ -1,0 +1,6 @@
+Calculation: Demand zone = high-to-low range of 2–6 consecutive preceding bars, each with range below a parameterized ATR fraction, created when the current bar closes above its open, has range above a parameterized ATR multiple, and its body exceeds a parameterized fraction of its range; it is fresh until first touch, close below its bottom, or age expiry.
+Calculation: Supply zone = high-to-low range of 2–6 consecutive preceding bars, each with range below a parameterized ATR fraction, created when the current bar closes below its open, has range above a parameterized ATR multiple, and its body exceeds a parameterized fraction of its range; it is fresh until first touch, close above its top, or age expiry.
+Calculation: Equal-low event = a newly confirmed pivot low is within an ATR-scaled tolerance of the previous confirmed pivot low; confirm using the parameterized number of chart bars on both sides.
+Calculation: Prior-day high/low = high/low of the last completed bar on a higher timeframe.
+Long: A fresh demand zone has low ≤ zone top and close ≥ zone bottom AND (low < prior-day low AND close > prior-day low OR equal-low event)
+Short: A fresh supply zone has high ≥ zone bottom and close ≤ zone top AND (high > prior-day high AND close < prior-day high OR newly confirmed equal-high event)

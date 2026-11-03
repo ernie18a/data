@@ -1,0 +1,2 @@
+Long: volume > its simple moving average OR its simple moving average is greater than its value on the prior chart bar OR open <= close when volume columns use candle coloring OR close >= prior chart bar's close when volume columns use previous-close coloring
+Short: volume <= its simple moving average OR its simple moving average is less than or equal to its value on the prior chart bar OR open > close when volume columns use candle coloring OR close < prior chart bar's close when volume columns use previous-close coloring

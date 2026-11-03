@@ -1,0 +1,1 @@
+Long: low <= VWAP AND close > VWAP AND close > open AND RSI(close) > RSI level AND prior-bar RSI(close) <= RSI level

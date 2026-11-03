@@ -1,0 +1,3 @@
+Calculation: Composite value area = distribute each chart bar’s volume evenly across price bins spanning its low to high, sum bin volumes over a rolling lookback of chart bars, and expand from the highest-volume bin toward the side with more volume in the next bin until the target share of total volume is covered; VAH is the upper edge and VAL the lower edge of the resulting area.
+Long: Previous close <= current VAH AND current close > current VAH
+Short: Previous close >= current VAL AND current close < current VAL

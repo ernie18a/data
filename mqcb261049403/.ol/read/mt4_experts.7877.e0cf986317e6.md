@@ -1,0 +1,5 @@
+Long: CCI on the still-forming bar of a higher timeframe > lower channel boundary AND CCI on the last completed bar of that timeframe < lower channel boundary AND flat or short
+Short: CCI on the still-forming bar of a higher timeframe < upper channel boundary AND CCI on the last completed bar of that timeframe > upper channel boundary AND flat or long
+Calculation: Active stop = initial stop at entry, moved toward the market by the trailing-stop distance after favorable movement exceeds that distance, then set to entry after favorable movement exceeds the break-even threshold when the initial stop distance exceeds 10 points
+Exit: Long, CCI on the still-forming bar of a higher timeframe < upper channel boundary AND CCI on the last completed bar of that timeframe > upper channel boundary OR low <= active stop
+Exit: Short, CCI on the still-forming bar of a higher timeframe > lower channel boundary AND CCI on the last completed bar of that timeframe < lower channel boundary OR high >= active stop

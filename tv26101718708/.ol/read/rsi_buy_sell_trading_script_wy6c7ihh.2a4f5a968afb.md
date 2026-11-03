@@ -1,0 +1,5 @@
+Calculation: RSI-based moving average = selected moving average (SMA, EMA, RMA, WMA, or VWMA) of RSI
+Long: datetime >= configured start datetime AND RSI > configured long-entry threshold AND RSI-based moving average > its value on the previous bar
+Short: datetime >= configured start datetime AND RSI < configured short-entry threshold AND RSI-based moving average < its value on the previous bar
+Exit: long, (datetime >= configured start datetime AND RSI < configured long-exit threshold) OR current bar high >= previous bar high × (1 + first long target fraction) OR current bar high >= previous bar high × (1 + second long target fraction) OR current bar low <= previous bar low × (1 - long stop fraction)
+Exit: short, (datetime >= configured start datetime AND RSI > configured short-exit threshold) OR current bar low <= previous bar low × (1 - first short target fraction) OR current bar low <= previous bar low × (1 - second short target fraction) OR current bar high >= previous bar high × (1 + short stop fraction)

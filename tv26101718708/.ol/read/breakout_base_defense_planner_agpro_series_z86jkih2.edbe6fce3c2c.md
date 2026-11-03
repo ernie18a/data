@@ -1,0 +1,12 @@
+Calculation: Base high/low = highest high / lowest low over the prior base lookback bars, excluding the current bar
+Calculation: Relative volume = volume / simple moving average of volume over the relative-volume lookback
+Calculation: Candle body ratio = abs(close - open) / (high - low)
+Calculation: Valid base = base range is between the minimum and maximum ATR multiples
+Calculation: Defense edge = base high for a bullish breakout; base low for a bearish breakout
+Calculation: Defense zone = defense edge ± the defense-zone ATR multiple
+Calculation: Failure shelf = below the lower defense-zone boundary for a bullish breakout; above the upper boundary for a bearish breakout, offset by the failure-buffer ATR multiple
+Calculation: Defense score = rounded 0–100 clamp of 10 + clamp(16 - abs(base height / ATR - 1.6) × 6, 0, 16) + clamp(abs(close - defense edge) / ATR × 12, 0, 16) + clamp(10 + directional close distance / ATR × 10, 0, 20) + retest score + clamp((relative volume - 0.5) × 12, 0, 12) + clamp(room distance / ATR × 3.5, 0, 10); directional close distance is close minus edge for bullish bases and edge minus close for bearish bases; retest score is 16 inside the defense zone, otherwise clamp(16 - abs(directional close distance / ATR) × 5, 0, 16); room distance is the absolute distance from close to the active room rail
+Long: On a completed bar, a valid base exists, close > base high + ATR × breakout buffer, previous close ≤ base high + ATR × breakout buffer, candle body ratio ≥ minimum, and relative volume ≥ minimum; OR an active bullish base has a defense hold (low ≤ upper defense-zone boundary, close > defense edge, close > open) and the prior bar did not have a defense hold; OR an active bullish base has just entered READY (defense score ≥ readiness threshold, and it is neither lost nor expired)
+Short: On a completed bar, a valid base exists, close < base low - ATR × breakout buffer, previous close ≥ base low - ATR × breakout buffer, candle body ratio ≥ minimum, and relative volume ≥ minimum; OR an active bearish base has a defense hold (high ≥ lower defense-zone boundary, close < defense edge, close < open) and the prior bar did not have a defense hold; OR an active bearish base has just entered READY (defense score ≥ readiness threshold, and it is neither lost nor expired)
+Exit: Long, on a completed bar with an active bullish base, close < failure shelf
+Exit: Short, on a completed bar with an active bearish base, close > failure shelf

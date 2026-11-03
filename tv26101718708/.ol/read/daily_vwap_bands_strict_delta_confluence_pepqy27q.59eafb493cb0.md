@@ -1,0 +1,4 @@
+Calculation: Daily VWAP and 2 SD bands = within each day, VWAP is the cumulative volume-weighted average of close; weighted standard deviation = sqrt(cumulative volume-weighted close² / cumulative volume − VWAP²); lower/upper 2 SD bands = VWAP ∓ 2 × standard deviation
+Calculation: Cumulative delta = daily running sum of volume × (2 × close − high − low) / (high − low); delta is zero when high = low
+Long: low ≤ lower 2 SD AND close > lower 2 SD AND close > open AND cumulative delta > 0 AND cumulative delta ≥ prior bar cumulative delta AND prior bar low > prior bar lower 2 SD
+Short: high ≥ upper 2 SD AND close < upper 2 SD AND close < open AND cumulative delta < 0 AND cumulative delta ≤ prior bar cumulative delta AND prior bar high < prior bar upper 2 SD

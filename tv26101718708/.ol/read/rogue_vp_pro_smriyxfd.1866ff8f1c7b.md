@@ -1,0 +1,2 @@
+Long: In RTH AND volume > the simple moving average of volume over a lookback period × a threshold AND close >= previous close
+Short: In RTH AND volume > the simple moving average of volume over a lookback period × a threshold AND close < previous close

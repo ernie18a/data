@@ -1,0 +1,2 @@
+Long: (Ultra Aggressive mode is active AND close > selected moving average AND close > previous bar close) OR (Ultra Aggressive mode is not active AND close > selected moving average AND close > Supertrend AND close > previous bar high)
+Short: (Ultra Aggressive mode is active AND close < selected moving average AND close < previous bar close) OR (Ultra Aggressive mode is not active AND close < selected moving average AND close < Supertrend AND close < previous bar low)

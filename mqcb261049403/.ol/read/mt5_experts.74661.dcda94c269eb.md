@@ -1,0 +1,5 @@
+Calculation: Stochastic %K and %D = standard Stochastic on the selected timeframe, which may be higher or lower than the chart timeframe; use the still-forming bar
+Long: no open positions AND previous %D <= 50 − offset AND current %D > 50 − offset
+Short: no open positions AND previous %D >= 50 + offset AND current %D < 50 + offset
+Exit: BUY, current %K < current %D AND previous %K >= previous %D AND current %D > overbought level AND close < entry price OR previous %D >= overbought level AND current %D < overbought level AND close < entry price OR previous %D <= overbought level AND current %D > overbought level AND close < entry price
+Exit: SELL, current %K > current %D AND previous %K <= previous %D AND previous %D < oversold level AND close > entry price OR previous %D >= oversold level AND current %D < oversold level AND close > entry price OR previous %D <= oversold level AND current %D > oversold level AND close > entry price

@@ -1,0 +1,7 @@
+Calculation: Daily Bitcoin hash rate = close of the daily BTC hash-rate series; daily is higher than an intraday chart, equal to a daily chart, and lower than a weekly or monthly chart. Use the latest available daily value, including the daily bar while it is forming.
+Calculation: Short-term hash-rate moving average = selected SMA, RMA, EMA, or WMA of daily Bitcoin hash rate, with a shorter lookback than the long-term moving average.
+Calculation: Long-term hash-rate moving average = selected SMA, RMA, EMA, or WMA of daily Bitcoin hash rate, with a longer lookback than the short-term moving average.
+Long: Short-term hash-rate moving average is above the long-term hash-rate moving average, and on the previous bar it was less than or equal to it.
+Short: Short-term hash-rate moving average is below the long-term hash-rate moving average, and on the previous bar it was greater than or equal to it.
+Exit: long, short-term hash-rate moving average is below the long-term hash-rate moving average, and on the previous bar it was greater than or equal to it.
+Exit: short, short-term hash-rate moving average is above the long-term hash-rate moving average, and on the previous bar it was less than or equal to it.

@@ -1,0 +1,4 @@
+Calculation: Averaging-order threshold = base-entry price × (1 − cumulative deviation for order k / 100), where cumulative deviation for the next unfilled order k is the first deviation step multiplied by the sum of the deviation-step multiplier raised to powers 0 through k−1.
+Calculation: Average entry price = total quote cost of the base order and filled averaging orders ÷ total asset quantity bought by those orders.
+Long: flat AND previous lower-timeframe RSI value on the last completed lower-timeframe bar < entry level AND current value >= entry level OR (long AND filled averaging orders < maximum averaging orders AND close <= averaging-order threshold for the next unfilled order)
+Exit: long, close >= average entry price × (1 + minimum profit percentage / 100) AND previous lower-timeframe RSI value on the last completed lower-timeframe bar > exit level AND current value <= exit level

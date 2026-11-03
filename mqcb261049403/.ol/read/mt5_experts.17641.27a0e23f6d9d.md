@@ -1,0 +1,4 @@
+Long: Shorter-lookback moving average > longer-lookback moving average on the last completed bar of each MA’s configured timeframe AND current price <= lowest low of the previous six completed chart-timeframe bars
+Short: Shorter-lookback moving average < longer-lookback moving average on the last completed bar of each MA’s configured timeframe AND current price >= highest high of the previous six completed chart-timeframe bars
+Exit: long, current price >= highest high of the previous six completed chart-timeframe bars
+Exit: short, current price <= lowest low of the previous six completed chart-timeframe bars

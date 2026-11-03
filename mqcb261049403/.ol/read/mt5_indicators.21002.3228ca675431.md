@@ -1,0 +1,3 @@
+Calculation: two-stage smoothed price line = apply one configurable moving average to a selected price series, then apply a second configurable moving average to the result
+Long: the line on the last completed chart bar is below its value on the prior chart bar AND the line on the prior chart bar is at or above its value two chart bars ago; use values mapped from a higher timeframe, whose bar may still be forming
+Short: the line on the last completed chart bar is above its value on the prior chart bar AND the line on the prior chart bar is at or below its value two chart bars ago; use values mapped from a higher timeframe, whose bar may still be forming

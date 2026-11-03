@@ -1,0 +1,8 @@
+Calculation: Shorter-lookback Hull value = WMA over the rounded square root of the shorter lookback of (2 × WMA(close, rounded half of the shorter lookback) − WMA(close, shorter lookback))
+Calculation: Shorter-lookback Hull value from two bars ago = the same calculation using close shifted back two bars
+Calculation: Longer-lookback Hull value = WMA over the rounded square root of the longer lookback of (2 × WMA(close, rounded half of the longer lookback) − WMA(close, longer lookback))
+Calculation: Longer-lookback Hull value from two bars ago = the same calculation using close shifted back two bars
+Long: No open position AND shorter-lookback Hull value > its value from two bars ago AND longer-lookback Hull value > its value from two bars ago AND MACD line > MACD signal line AND shorter-lookback Hull value < VWMA(close) AND EMA-smoothed TSI > its lower threshold
+Short: No open position AND shorter-lookback Hull value < its value from two bars ago AND longer-lookback Hull value < its value from two bars ago AND MACD line < MACD signal line AND shorter-lookback Hull value > VWMA(close) AND EMA-smoothed TSI < its upper threshold
+Exit: Long, shorter-lookback Hull value < its value from two bars ago AND longer-lookback Hull value < its value from two bars ago AND shorter-lookback Hull value > VWMA(close)
+Exit: Short, shorter-lookback Hull value > its value from two bars ago AND longer-lookback Hull value > its value from two bars ago AND shorter-lookback Hull value < VWMA(close)

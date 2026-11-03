@@ -1,0 +1,1 @@
+Buy the instrument on the first available bar on or after the selected start date, then buy once per calendar month on the first available bar on or after the selected day of the month. There are no short or exit decisions.

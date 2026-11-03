@@ -1,0 +1,5 @@
+Calculation: Confirmed pivot high/low = a bar’s high/low that is higher/lower than the highs/lows of the same number of bars on each side; becomes available after the bars on the right complete.
+Calculation: Bullish entry zone = the prices between the 38.2% and 61.8% retracements of the range from the latest pivot low to the high of the break bar.
+Calculation: Bearish entry zone = the prices between the 38.2% and 61.8% retracements of the range from the latest pivot high to the low of the break bar.
+Long: Close > latest unbroken pivot high AND (prior structure-break direction is bearish OR prior structure-break direction is bullish) OR close is within the latest bullish setup’s entry zone
+Short: Close < latest unbroken pivot low AND (prior structure-break direction is bullish OR prior structure-break direction is bearish) OR close is within the latest bearish setup’s entry zone

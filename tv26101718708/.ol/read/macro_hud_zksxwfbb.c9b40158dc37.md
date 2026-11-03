@@ -1,0 +1,2 @@
+Long: watchlist symbol close > its EMA, calculated on the selected read timeframe using its current bar (which may be higher or lower than the chart timeframe and may still be forming)
+Short: watchlist symbol close < its EMA, calculated on the selected read timeframe using its current bar (which may be higher or lower than the chart timeframe and may still be forming)

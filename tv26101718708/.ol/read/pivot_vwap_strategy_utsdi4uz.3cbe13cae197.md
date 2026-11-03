@@ -1,0 +1,7 @@
+Calculation: Daily pivot levels = standard pivot P=(H+L+C)/3, R1=2P−L, R2=P+(H−L), R3=H+2(P−L), S1=2P−H, S2=P−(H−L), S3=L−2(H−P), with R4/R5 extending upward and S4/S5 downward by R1−S1; use the last completed bar of a higher timeframe.
+Calculation: Session VWAP = cumulative ((high+low+close)/3 × volume) / cumulative volume since the current session began, using chart-timeframe bars.
+Calculation: Long target pivot = nearest daily pivot above the entry price; short target pivot = nearest daily pivot below the entry price.
+Long: Within the configured trading window AND daily entry count < configured limit AND [(for any daily pivot P: low < P AND low < session VWAP AND close > P AND close > session VWAP) OR (for any daily pivot P: close > P AND close > session VWAP AND prior chart-bar close < P AND prior chart-bar VWAP < P)].
+Short: Within the configured trading window AND daily entry count < configured limit AND [(for any daily pivot P: high > P AND high > session VWAP AND close < P AND close < session VWAP) OR (for any daily pivot P: close < P AND close < session VWAP AND prior chart-bar close > P AND prior chart-bar VWAP > P)].
+Exit: long, (high >= long target pivot AND close < long target pivot) OR (close < session VWAP)
+Exit: short, (low <= short target pivot AND close > short target pivot) OR (close > session VWAP)

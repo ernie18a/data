@@ -1,0 +1,2 @@
+Long: On the higher-timeframe selected bar, Williams %R > oversold level AND Williams %R on the previous bar <= oversold level; the selected bar is forming if it is current, otherwise completed.
+Short: On the higher-timeframe selected bar, Williams %R < overbought level AND Williams %R on the previous bar >= overbought level; the selected bar is forming if it is current, otherwise completed.

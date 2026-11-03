@@ -1,0 +1,10 @@
+Calculation: MA candles = apply a selected moving average to each chart bar’s open, high, low, and close, using the same lookback for all four.
+Calculation: MA candle momentum = MA-candle close minus a selected moving average of MA-candle close, using a shorter lookback than the MA-candle lookback.
+Calculation: Momentum regression = linear regression of MA candle momentum over a lookback; its color is green when the regression is positive and rising, lime when positive and not rising, red when nonpositive and falling, and orange when nonpositive and not falling.
+Calculation: MA-candle extreme = MA candle momentum is at or above either its upper Bollinger band or its lookback high multiplied by a percentile factor; it is at or below either its lower Bollinger band or its lookback low multiplied by a percentile factor; otherwise it is neutral.
+Calculation: VIX Fix = (highest MA-candle close over the momentum lookback − MA-candle low) / highest MA-candle close over that lookback × 100.
+Calculation: VIX Fix regression color = lime when its linear regression is positive and not rising; otherwise its color follows the sign and direction of that regression.
+Calculation: VIX Fix state = 1 when VIX Fix is at or above its upper Bollinger band or lookback high multiplied by a percentile factor, otherwise 0; while flat, retain the previous state if it was 1.
+Calculation: Supertrend direction = Supertrend direction calculated from MA candles; positive means up.
+Long: Within the configured date range AND Supertrend direction is positive AND ((VIX Fix mode is enabled AND VIX Fix state = 1 AND VIX Fix regression color is lime) OR (VIX Fix mode is disabled AND ((Momentum regression color is orange AND its previous color was red) OR (aggressive-long mode is enabled AND Momentum regression color is green AND its previous color was not green))).
+Exit: Long, MA-candle extreme is below its lower threshold for the current and previous bars AND was neutral two bars ago AND (aggressive-long mode is disabled OR Momentum regression color is not green).

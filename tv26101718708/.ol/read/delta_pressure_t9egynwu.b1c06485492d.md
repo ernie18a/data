@@ -1,0 +1,3 @@
+Calculation: Pressure = smoothed volume-weighted average of per-bar pressure over a lookback; per-bar pressure is (close - open) / (high - low) in Body mode, or 2 * (close - low) / (high - low) - 1 in Close Position mode, and 0 when high = low; pressure is 0 when summed volume is 0. Higher-timeframe pressure uses higher-timeframe bars and reads the last completed bar in confirmed-only mode, otherwise the still-forming bar.
+Long: chart-timeframe pressure >= 0 OR higher-timeframe pressure >= 0
+Short: chart-timeframe pressure < 0 OR higher-timeframe pressure < 0

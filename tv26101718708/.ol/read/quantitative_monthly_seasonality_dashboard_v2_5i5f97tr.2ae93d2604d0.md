@@ -1,0 +1,5 @@
+Calculation: Daily Bollinger Bandwidth = (upper Bollinger Band - lower Bollinger Band) / middle band × 100, calculated from daily bars (higher timeframe), including the bar still forming
+Calculation: Seasonal monthly return = (completed month’s close - open) / open, using monthly bars (higher timeframe), last completed bar only; include returns from the current bar’s calendar month within the most recent 20 years
+Calculation: 20-year seasonal win rate = percentage of included seasonal monthly returns greater than zero
+Calculation: 20-year seasonal profit factor = sum of positive included returns / sum of absolute nonpositive included returns; if losses total zero, use gains when positive, otherwise 1
+Long: Daily Bollinger Bandwidth >= its minimum threshold AND 20-year seasonal win rate >= its minimum threshold AND 20-year seasonal profit factor >= its minimum threshold

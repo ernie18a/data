@@ -1,0 +1,8 @@
+Calculation: Bar delta = estimated buy volume minus estimated sell volume; select either (1) split volume by close location within the bar’s high-low range, (2) assign the candle body and 75% of the supportive wick to the candle’s direction and the rejection wick to the opposite direction, or (3) average those two estimates; optionally multiply by the square root of current volume divided by its prior-bar-excluded moving average.
+Calculation: CVD = cumulative bar delta, using a session reset, fixed-block reset, rolling sum, or never-reset running total.
+Calculation: CVD signal = moving average of CVD.
+Calculation: RVOL = current volume divided by its prior-bar-excluded moving average.
+Calculation: Delta acceleration = bar delta has the same sign as its difference from bar delta several bars earlier.
+Calculation: Confirmed bullish divergence = a confirmed price pivot low is lower than the previous pivot low while CVD at the pivot is higher by at least a minimum separation scaled by average absolute bar delta; confirmed bearish divergence is the inverse. Compare only pivots in the same reset epoch and within a maximum bar gap.
+Long: bar delta > 0 OR CVD > 0 OR CVD crosses above 0 OR CVD crosses above its signal OR confirmed bullish divergence OR RVOL meets the spike threshold AND bar delta > 0 OR estimated buy volume >= estimated sell volume OR bar delta > 0 AND delta acceleration was true on the prior bar and is false now
+Short: bar delta < 0 OR CVD < 0 OR CVD crosses below 0 OR CVD crosses below its signal OR confirmed bearish divergence OR RVOL meets the spike threshold AND bar delta < 0 OR estimated sell volume > estimated buy volume OR bar delta < 0 AND delta acceleration was true on the prior bar and is false now

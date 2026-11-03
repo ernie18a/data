@@ -1,0 +1,3 @@
+Long: Flat AND on a new chart bar, every enabled timeframe’s RSI on its second-most-recent completed bar < oversold level AND, on its most-recent completed bar, it is not true that every enabled timeframe’s RSI < oversold level OR every enabled timeframe’s RSI > overbought level
+Short: Flat AND on a new chart bar, every enabled timeframe’s RSI on its second-most-recent completed bar > overbought level AND, on its most-recent completed bar, it is not true that every enabled timeframe’s RSI < oversold level OR every enabled timeframe’s RSI > overbought level
+Exit: Long or short, basket floating profit >= profit target plus trading costs OR (maximum trade count reached AND maximum-loss limit enabled AND basket floating profit < -maximum loss)

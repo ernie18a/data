@@ -1,0 +1,4 @@
+Long: ATR > long-term average ATR × threshold AND short-term EMA > medium-term EMA AND medium-term EMA > long-term EMA AND low ≤ short-term EMA AND RSI > threshold AND close > open AND relative volume > threshold
+Short: ATR > long-term average ATR × threshold AND short-term EMA < medium-term EMA AND medium-term EMA < long-term EMA AND high ≥ short-term EMA AND RSI < threshold AND close < open AND relative volume > threshold
+Exit: long, low ≤ current close − ATR-based stop distance OR high ≥ current close + ATR-based partial-profit distance
+Exit: short, high ≥ current close + ATR-based stop distance OR low ≤ current close − ATR-based partial-profit distance

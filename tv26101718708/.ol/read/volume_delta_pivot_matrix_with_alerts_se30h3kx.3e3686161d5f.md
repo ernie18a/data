@@ -1,0 +1,5 @@
+Calculation: Pivot low/high = a bar whose low/high is the lowest/highest across an equal number of chart bars before and after it; signal when the bars after it have completed.
+Calculation: Pivot-window volume delta = sum over the pivot bar and its surrounding bars of volume × (2 × (close − low) / (high − low) − 1); when high = low, use volume if close ≥ open, otherwise −volume.
+Calculation: Delta strength % = 100 × absolute pivot-window volume delta / the greatest of its absolute value and the absolute deltas of currently active levels; remove a support level when close ≤ its price, remove a resistance level when close ≥ its price, and retain only the newest configured number of active levels.
+Long: confirmed pivot low AND delta strength % ≥ minimum delta % filter
+Short: confirmed pivot high AND delta strength % ≥ minimum delta % filter

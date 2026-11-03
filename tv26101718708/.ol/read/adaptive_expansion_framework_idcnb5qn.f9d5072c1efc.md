@@ -1,0 +1,3 @@
+Calculation: Regression channel upper/lower = linear regression of close over a lookback period, plus/minus a width multiple of close's standard deviation over the same lookback period
+Long: close > regression channel upper AND previous close <= previous regression channel upper AND true range > average true range multiplied by an expansion factor AND (volume confirmation disabled OR volume unavailable OR volume > its short-term average multiplied by a volume factor)
+Short: close < regression channel lower AND previous close >= previous regression channel lower AND true range > average true range multiplied by an expansion factor AND (volume confirmation disabled OR volume unavailable OR volume > its short-term average multiplied by a volume factor)

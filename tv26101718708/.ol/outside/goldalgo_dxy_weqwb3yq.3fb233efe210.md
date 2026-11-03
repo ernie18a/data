@@ -1,0 +1,1 @@
+For gold, compare the external dollar index with its trend average: above it, favor short positions; below it, favor long positions. Reduce confidence when the rolling gold–dollar correlation is no longer meaningfully negative. A cross above or below the average signals a shift toward short or long bias, respectively. No exit rule is specified.

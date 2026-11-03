@@ -1,0 +1,6 @@
+Calculation: Trend EMA = EMA of (high + low) / 2
+Calculation: MACD histogram = shorter-lookback moving average of (high + low) / 2 minus longer-lookback moving average of (high + low) / 2, minus a moving average of the MACD line
+Long: close > Trend EMA AND close > previous close AND Trend EMA > previous Trend EMA AND MACD histogram > 0 AND previous MACD histogram < 0 AND RSI(close) < overbought threshold AND OBV > shorter-lookback SMA of OBV AND datetime is within the configured date range
+Short: close < Trend EMA AND close < previous close AND Trend EMA < previous Trend EMA AND MACD histogram < 0 AND previous MACD histogram > 0 AND RSI(close) > oversold threshold AND OBV < shorter-lookback SMA of OBV AND datetime is within the configured date range
+Exit: long, close < Trend EMA AND close < previous close AND Trend EMA < previous Trend EMA AND MACD histogram < 0 AND previous MACD histogram > 0 AND RSI(close) > oversold threshold AND OBV < shorter-lookback SMA of OBV AND datetime is within the configured date range
+Exit: short, close > Trend EMA AND close > previous close AND Trend EMA > previous Trend EMA AND MACD histogram > 0 AND previous MACD histogram < 0 AND RSI(close) < overbought threshold AND OBV > shorter-lookback SMA of OBV AND datetime is within the configured date range

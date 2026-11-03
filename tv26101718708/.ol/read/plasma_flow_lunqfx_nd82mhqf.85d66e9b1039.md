@@ -1,0 +1,7 @@
+Calculation: Inner bands = volume-weighted VWAP ± inner-band multiplier × volume-weighted standard deviation of HLC3 over the VWAP lookback.
+Calculation: Normalized pressure = shorter-lookback EMA of (HLC3 − VWAP) / volume-weighted standard deviation.
+Calculation: Turbulence index = standard deviation of normalized VWAP velocity over a shorter lookback / longer-lookback SMA of that standard deviation; normalized VWAP velocity = shorter-lookback EMA of VWAP rate of change divided by volume-weighted standard deviation.
+Calculation: Bullish reversal pattern = current or immediately preceding bar is either a lower-wick pin bar (lower wick > 2 × body and > half the bar range) or a bullish engulfing bar (up close, prior down close, current close > prior open, and current open ≤ prior close). Bearish reversal pattern is the corresponding upper-wick pin bar or bearish engulfing bar.
+Long: HLC3 crosses above the lower inner band AND normalized pressure < negative threshold AND turbulence index < calm threshold AND bullish reversal pattern AND at least one signal cooldown interval has elapsed since the prior signal.
+Short: HLC3 crosses below the upper inner band AND normalized pressure > positive threshold AND turbulence index < calm threshold AND bearish reversal pattern AND at least one signal cooldown interval has elapsed since the prior signal.
+Exit: Long or short, turbulence index > chaotic threshold OR absolute normalized pressure > breakout threshold.

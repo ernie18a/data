@@ -1,0 +1,7 @@
+Calculation: Renko bars = Traditional Renko bricks from chart data, using the configured higher timeframe’s current bar (which may still be forming); prior Renko bars are completed bars
+Calculation: Previous chart-bar body size = absolute difference between its open and close
+Calculation: Previous Renko-brick body size = absolute difference between its open and close
+Long: (previous chart bar open > close AND current chart bar close > open AND previous chart bar open < the bar before it open) OR (previous Renko brick open > close AND current Renko brick close > open AND previous Renko brick open < the brick before it open); in stop-order mode, the long stop entry is at the chart bar open from two bars ago or the Renko open from two bricks ago, respectively
+Short: (previous chart bar open < close AND current chart bar close < open AND previous chart bar open > the bar before it open) OR (previous Renko brick open < close AND current Renko brick close < open AND previous Renko brick open > the brick before it open); in stop-order mode, the short stop entry is at the chart bar open from two bars ago or the Renko open from two bricks ago, respectively
+Exit: Long, price >= signal-bar close + previous chart-bar body size × target multiplier OR price <= signal-bar close − previous chart-bar body size; for Renko signals use previous Renko-brick body size
+Exit: Short, price <= signal-bar close − previous chart-bar body size × target multiplier OR price >= signal-bar close + previous chart-bar body size; for Renko signals use previous Renko-brick body size

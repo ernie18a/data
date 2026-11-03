@@ -1,0 +1,4 @@
+Calculation: TRAMA = recursively update the prior TRAMA by adding the current close minus the prior TRAMA, multiplied by the square of the moving average of 1 when the highest high over the TRAMA lookback rises or the lowest low over that lookback falls, and 0 otherwise; initialize with close. Calculate on the higher timeframe.
+Calculation: ZLEMA bands = an EMA of TRAMA plus or minus the standard deviation of TRAMA over the ZLEMA lookback; initialize the EMA with the simple moving average of TRAMA. Calculate on the higher timeframe and use values from the last completed bar.
+Long: Chart-timeframe price source crosses below the lower ZLEMA band.
+Short: Chart-timeframe price source crosses above the upper ZLEMA band.

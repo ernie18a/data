@@ -1,0 +1,3 @@
+Calculation: AlphaTrend = If MFI(typical price, period) >= 50 (or, when volume data is unavailable, RSI(close, period) >= 50), the greater of low − SMA(true range, period) × multiplier and the prior AlphaTrend; otherwise the lesser of high + SMA(true range, period) × multiplier and the prior AlphaTrend. Initialize prior AlphaTrend as 0.
+Long: AlphaTrend crosses above its value two bars earlier AND bars since the previous bar's long signal > bars since the latest short signal
+Short: AlphaTrend crosses below its value two bars earlier AND bars since the previous bar's short signal > bars since the latest long signal

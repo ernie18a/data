@@ -1,0 +1,5 @@
+Calculation: Hull moving average = weighted moving average of (2 × weighted moving average of close over rounded half-length − weighted moving average of close over full length), over rounded square-root-of-length
+Long: current Hull moving average > prior-bar Hull moving average AND current Hull moving average < weighted moving average of close AND current Hull moving average > volume-weighted moving average of close AND open position count = 0
+Short: current Hull moving average < prior-bar Hull moving average AND current Hull moving average > weighted moving average of close AND current Hull moving average < volume-weighted moving average of close AND open position count = 0
+Exit: long, current Hull moving average < prior-bar Hull moving average AND current Hull moving average > weighted moving average of close AND current Hull moving average < volume-weighted moving average of close
+Exit: short, current Hull moving average > prior-bar Hull moving average AND current Hull moving average < weighted moving average of close AND current Hull moving average > volume-weighted moving average of close

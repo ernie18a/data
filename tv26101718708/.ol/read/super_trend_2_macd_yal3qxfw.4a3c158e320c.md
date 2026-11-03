@@ -1,0 +1,7 @@
+Calculation: Chart-timeframe Supertrend state = midpoint (high + low) / 2 ± factor × ATR; the lower band trails at the maximum of its current value and prior value when prior close is above the prior lower band, otherwise resets; the upper band trails at the minimum of its current value and prior value when prior close is below the prior upper band, otherwise resets. State turns bullish when close exceeds the prior upper band, bearish when close falls below the prior lower band, and otherwise retains its prior state (initially bullish). The active line is the lower band when bullish and upper band when bearish.
+Calculation: Main Supertrend state = the same Supertrend calculation using bars aggregated to a higher timeframe; use the higher-timeframe bar still forming.
+Calculation: MACD = SMA(close, shorter lookback) − SMA(close, longer lookback); signal = SMA(MACD, signal lookback).
+Long: Chart-timeframe Supertrend state changes from bearish to bullish AND main Supertrend state is bullish OR close crosses above the active chart-timeframe Supertrend line.
+Short: Chart-timeframe Supertrend state changes from bullish to bearish AND main Supertrend state is bearish OR close crosses below the active chart-timeframe Supertrend line.
+Exit: Long, high ≥ entry price + profit offset OR low ≤ entry price − loss offset.
+Exit: Short, low ≤ entry price − profit offset OR high ≥ entry price + loss offset.

@@ -1,0 +1,6 @@
+Calculation: Volume imbalance = futures volume − spot volume; set to 0 when close > open
+Calculation: Smoothed fast WMA = two-pole recursive smoother of the fast WMA of volume imbalance, with length 1.5 × the fast WMA length: a = exp(−√2π/L), c2 = 2a cos(√2π/L), c3 = −a², c1 = 1 − c2 − c3, and value = c1 × input + c2 × prior value + c3 × value two bars ago
+Long: Volume imbalance crosses above the premium threshold OR smoothed fast WMA crosses above the premium threshold OR fast WMA of volume imbalance crosses above slow WMA of volume imbalance; AND close > long-term WMA of close; AND datetime is within the configured date range
+Short: Volume imbalance crosses below the premium threshold OR smoothed fast WMA crosses below the premium threshold OR fast WMA of volume imbalance crosses below slow WMA of volume imbalance; AND datetime is within the configured date range
+Exit: Long, high reaches the take-profit price based on entry price OR low reaches the stop-loss price based on entry price
+Exit: Short, low reaches the take-profit price based on entry price OR high reaches the stop-loss price based on entry price

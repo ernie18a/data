@@ -1,0 +1,7 @@
+Calculation: Upper/lower Dev 5 band = anchored VWAP plus/minus the configurable fifth deviation distance; the distance is either a configurable ATR multiple or a configurable percentage of VWAP.
+Calculation: Bull/long target = VWAP at entry or entry price plus a configurable percentage; bull/long stop = entry price minus a configurable percentage.
+Calculation: Bear/short target = VWAP at entry or entry price minus a configurable percentage; bear/short stop = entry price plus a configurable percentage.
+Long: previous close >= previous lower Dev 5 band AND close < lower Dev 5 band AND (outside-band filter disabled OR close < lower Dev 5 band × (1 − configured outside percentage)) AND (cool-off disabled OR no accepted signal occurred within the configured cool-off period)
+Short: previous close <= previous upper Dev 5 band AND close > upper Dev 5 band AND (outside-band filter disabled OR close > upper Dev 5 band × (1 + configured outside percentage)) AND (cool-off disabled OR no accepted signal occurred within the configured cool-off period)
+Exit: Long, on a bar after the entry bar, low <= bull/long stop OR high >= bull/long target; if both are reached on the same bar, classify as stop.
+Exit: Short, on a bar after the entry bar, high >= bear/short stop OR low <= bear/short target; if both are reached on the same bar, classify as stop.

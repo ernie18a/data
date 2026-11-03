@@ -1,0 +1,3 @@
+Calculation: CVD candle = accumulate lower-timeframe signed volume within each chart bar, resetting the accumulator at the configured session boundary; signed volume is +volume when the lower-timeframe close is above its open, −volume when below, and on a doji follows the direction of its close versus the prior lower-timeframe close (retaining the prior direction if equal, initially positive). CVD open is the accumulator at the chart bar’s start, or zero if a reset occurs within it; CVD close is the accumulator at the chart bar’s end. Use lower-timeframe bars within the current chart bar, including a still-forming bar when present.
+Long: chart close < chart open AND CVD close > CVD open
+Short: chart close > chart open AND CVD close < CVD open

@@ -1,0 +1,8 @@
+Calculation: Money Flow Index = money flow index of typical price (high + low + close) / 3, using volume
+Calculation: Impulse = exponential moving average of the one-bar change in Money Flow Index
+Calculation: Bull run = consecutive bars with Money Flow Index above 50; bear run = consecutive bars below 50
+Calculation: Flow volatility = standard deviation of the one-bar change in Money Flow Index
+Calculation: Diamond threshold = positive mode-dependent multiplier × Flow volatility × 0.5 × threshold scale
+Long: volume is available, cumulative volume is greater than 0, Money Flow Index and strength are available, and (Money Flow Index crosses above 60 AND bull run is at least the mode-dependent persistence requirement AND Impulse > 0 AND the bull-continuation cooldown has elapsed OR Money Flow Index crosses above 20 AND Impulse > 0 AND the lower-reversal cooldown has elapsed OR Impulse crosses above 0 AND absolute two-bar change in Impulse > Diamond threshold OR ownership changes from bearish to bullish)
+Short: volume is available, cumulative volume is greater than 0, Money Flow Index and strength are available, and (Money Flow Index crosses below 40 AND bear run is at least the mode-dependent persistence requirement AND Impulse < 0 AND the bear-continuation cooldown has elapsed OR Money Flow Index crosses below 80 AND Impulse < 0 AND the upper-fade cooldown has elapsed OR Impulse crosses below 0 AND absolute two-bar change in Impulse > Diamond threshold OR ownership changes from bullish to bearish)
+Exit: none

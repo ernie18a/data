@@ -1,0 +1,4 @@
+Calculation: Fast trend = weighted sum of five TRIX indicator values, using progressively longer lookbacks, on the chart timeframe’s still-forming bar; in the higher-timeframe version, use the selected higher timeframe’s still-forming bar, sampled when it opens and held until the next higher-timeframe bar opens
+Calculation: Slow trend = fast trend divided by the smoothing lookback plus the previous slow trend multiplied by (smoothing lookback minus one) divided by the smoothing lookback, on the same timeframe and bar sequence as the fast trend
+Long: Fast trend > slow trend
+Short: Fast trend < slow trend

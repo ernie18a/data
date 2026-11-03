@@ -1,0 +1,6 @@
+Calculation: Confirmed swing high/low = a high/low that is the extreme within a symmetric configurable window of chart bars; it becomes usable after the bars on its right have closed.
+Calculation: Strong upward/downward break = a candle body at least one ATR in the break direction OR a fair value gap in that direction.
+Calculation: Support box = on a close above the latest unused confirmed swing high, within the configured maximum age, use the lowest low from that swing through the breaking bar; take the full range of the last down candle within the configured search window ending at that low. Require a strong upward break when the strength filter is enabled. Ignore the box if it overlaps a live support box.
+Calculation: Resistance box = on a close below the latest unused confirmed swing low, within the configured maximum age, use the highest high from that swing through the breaking bar; take the full range of the last up candle within the configured search window ending at that high. Require a strong downward break when the strength filter is enabled. Ignore the box if it overlaps a live resistance box.
+Long: A live support box has not been touched before AND low <= its top AND close >= its bottom
+Short: A live resistance box has not been touched before AND high >= its bottom AND close <= its top

@@ -1,0 +1,2 @@
+Long: close >= (1 + gain_threshold) * prior_bar_close AND volume > prior_bar_volume AND low > lowest_low(lookback) AND prior_bar_low > lowest_low(lookback) ending on prior bar AND low two bars ago > lowest_low(lookback) ending two bars ago AND (close three bars ago > open three bars ago OR low three bars ago > lowest_low(lookback) ending three bars ago)
+Exit: long, close < open AND abs(close - open) >= ATR(lookback) of the prior completed chart bar * ATR_multiple

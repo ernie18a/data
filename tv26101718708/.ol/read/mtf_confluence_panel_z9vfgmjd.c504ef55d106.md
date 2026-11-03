@@ -1,0 +1,3 @@
+Calculation: Requested-timeframe values = calculate on each requested timeframe; use the last completed bar for higher timeframes historically and the still-forming bar in real time, the latest intrabar mapped to the chart bar for lower timeframes, and the chart bar when timeframes match.
+Long: On any requested timeframe, short-term EMA > long-term EMA OR short-term EMA > its previous value OR RSI >= 50 OR chart close > VWAP OR chart close > long-term EMA OR volume > its moving average × volume multiplier
+Short: On any requested timeframe, short-term EMA <= long-term EMA OR short-term EMA <= its previous value OR RSI < 50 OR chart close < VWAP OR chart close <= long-term EMA OR volume <= its moving average × volume multiplier

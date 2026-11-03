@@ -1,0 +1,6 @@
+Calculation: Latest bullish-alignment time = most recent chart-bar time when the last completed bars of all four higher timeframes were bullish, using Heikin-Ashi candles if enabled and regular candles otherwise
+Calculation: Latest bearish-alignment time = most recent chart-bar time when the last completed bars of all four higher timeframes were bearish, using the same selected candle source
+Long: latest bullish-alignment time > latest bearish-alignment time AND on the previous bar latest bullish-alignment time <= latest bearish-alignment time
+Short: latest bearish-alignment time > latest bullish-alignment time AND on the previous bar latest bearish-alignment time <= latest bullish-alignment time
+Exit: long, close <= highest chart-bar high since latest bullish-alignment time became newer than latest bearish-alignment time minus trailing distance OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance
+Exit: short, close >= lowest chart-bar low since latest bearish-alignment time became newer than latest bullish-alignment time plus trailing distance OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance

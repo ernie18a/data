@@ -1,0 +1,2 @@
+Long: yesterday's close on the higher timeframe > the high from two daily bars ago (use the last completed daily bar) OR the close > open of the last completed 4-hour bar on the higher timeframe
+Short: yesterday's close on the higher timeframe < the low from two daily bars ago (use the last completed daily bar) OR the close < open of the last completed 4-hour bar on the higher timeframe

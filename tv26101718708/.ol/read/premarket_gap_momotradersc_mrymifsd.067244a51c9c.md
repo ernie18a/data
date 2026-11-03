@@ -1,0 +1,3 @@
+Calculation: Candle body percentage = 100 × abs(close − open) / (high − low), or 0 when high = low
+Long: ((close − previous bar close) / previous bar close) × 100 meets the minimum gain threshold AND close > open AND volume exceeds the minimum volume threshold AND candle body percentage meets the minimum body threshold AND bar is in the premarket session AND no earlier entry has occurred today
+Exit: long, close < open OR (close > open AND volume <= previous bar volume)

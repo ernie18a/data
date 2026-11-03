@@ -1,0 +1,8 @@
+Calculation: Signal source = close or Heikin-Ashi close, according to the configured signal source
+Calculation: UT Bot trailing stop = recursively update the prior stop using the current signal source and key-value × ATR; if current and prior source are above the prior stop, use the greater of the prior stop and source minus key-value × ATR; if both are below, use the lesser of the prior stop and source plus key-value × ATR; otherwise use source minus key-value × ATR when source is above the prior stop, and source plus key-value × ATR otherwise
+Calculation: Buying/selling pressure = EMA of ((close − low) − (high − close)) / (high − low), weighted by volume, divided by EMA of volume; use 0 for a zero-range bar or nonpositive EMA volume
+Calculation: Fibonacci swing high = highest high over the lookback; Fibonacci swing low = lowest low over the same lookback; each retracement level = swing high − (swing high − swing low) × its retracement ratio
+Long: Signal source > UT Bot trailing stop AND previous signal source ≤ previous UT Bot trailing stop AND close > trend EMA AND volume > volume moving average × volume multiplier AND buying/selling pressure > 0 AND low ≤ Fibonacci 0.618 + close × zone tolerance AND high ≥ Fibonacci 0.786 − close × zone tolerance AND bars since last signal ≥ cooldown length
+Long: Signal source > UT Bot trailing stop
+Short: Signal source < UT Bot trailing stop AND previous signal source ≥ previous UT Bot trailing stop AND close < trend EMA AND volume > volume moving average × volume multiplier AND buying/selling pressure < 0 AND high ≥ Fibonacci 0.382 − close × zone tolerance AND low ≤ Fibonacci 0.236 + close × zone tolerance AND bars since last signal ≥ cooldown length
+Short: Signal source ≤ UT Bot trailing stop

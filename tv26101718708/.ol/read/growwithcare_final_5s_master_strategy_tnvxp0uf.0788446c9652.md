@@ -1,0 +1,9 @@
+Calculation: Higher-timeframe EMA-high/EMA-low = exponential moving average of bar highs/lows on the higher timeframe, using its last completed bar; use the same lookback for all such EMAs. The micro timeframe is shorter than the one-minute timeframe; the fast timeframe is shorter than the entry timeframe. Stop timeframes progress from shortest to longest.
+Calculation: ADX = Average Directional Index on chart bars.
+Calculation: ATR = Average True Range on chart bars.
+Calculation: Long stop = low EMA from the longest stop timeframe for which close is above its high EMA, checking longest to shortest; use the shortest stop timeframe if none qualify. In manual hold mode, use the selected stop timeframe instead, or the automatic selection if the stage is AUTO.
+Calculation: Short stop = high EMA from the longest stop timeframe for which close is below its low EMA, checking longest to shortest; use the shortest stop timeframe if none qualify.
+Long: (fast high EMA crosses above entry high EMA) AND (close > trend high EMA) AND (micro high EMA > one-minute high EMA) AND (fast high EMA > entry high EMA) AND (ADX filter disabled OR ADX > its threshold) AND (compression filter disabled OR abs(fast high EMA - entry high EMA) > ATR × its threshold) AND (position is flat or short)
+Short: (fast low EMA crosses below entry low EMA) AND (close < trend low EMA) AND (micro low EMA < one-minute low EMA) AND (fast low EMA < entry low EMA) AND (ADX filter disabled OR ADX > its threshold) AND (compression filter disabled OR abs(fast high EMA - entry high EMA) > ATR × its threshold) AND (position is flat or long) AND (manual hold is disabled)
+Exit: long, low <= long stop OR (micro low EMA < one-minute low EMA AND fast low EMA < entry low EMA)
+Exit: short, high >= short stop OR (micro high EMA > one-minute high EMA AND fast high EMA > entry high EMA)

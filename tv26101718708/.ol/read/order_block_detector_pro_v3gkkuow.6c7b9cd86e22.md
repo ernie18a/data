@@ -1,0 +1,6 @@
+Calculation: Swing high/low = a high/low greater/less than the configured number of bars on both sides; confirmed after the bars on the right complete
+Calculation: Bullish/bearish order block zone = the most recent bearish/bullish candle within the configured backward search; boundaries are either its full high-low range or its open-close range
+Long: close > an unbroken swing high AND a bearish candle exists within the backward search AND that candle’s volume > its longer-lookback volume SMA × the configured multiplier AND the new zone midpoint is at least the configured ATR-based spacing from every active bullish order block midpoint
+Short: close < an unbroken swing low AND a bullish candle exists within the backward search AND that candle’s volume > its longer-lookback volume SMA × the configured multiplier AND the new zone midpoint is at least the configured ATR-based spacing from every active bearish order block midpoint
+Exit: long, low < the bullish order block zone bottom
+Exit: short, high > the bearish order block zone top

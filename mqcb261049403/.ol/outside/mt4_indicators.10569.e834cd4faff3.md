@@ -1,0 +1,1 @@
+Compute the difference between the two correlated markets’ closing prices, reversing its sign if they are inversely correlated. Normalize the difference’s deviation from its moving average by its recent scale. When the normalized spread falls below a lower threshold, go long the traded instrument; when it rises above an upper threshold, go short. No exit rule is specified.

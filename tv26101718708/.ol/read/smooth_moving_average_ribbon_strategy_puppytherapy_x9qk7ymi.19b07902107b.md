@@ -1,0 +1,5 @@
+Calculation: Ribbon open and close = optionally convert OHLC to Heikin Ashi; apply the selected moving average repeatedly for the configured smoothing count to each OHLC series; optionally convert the smoothed OHLC to Heikin Ashi again, then use its open and close. If the second conversion is disabled, use the smoothed open and close.
+Calculation: Trend MA = selected moving average type and length applied to the configured regular source or Heikin Ashi close.
+Long: Ribbon close crosses above ribbon open AND (trend filter disabled OR (rising/falling logic enabled AND trend MA is rising) OR (rising/falling logic disabled AND (configured Heikin Ashi close, if enabled, otherwise close) > trend MA)) AND datetime is within the configured backtest period
+Short: Ribbon close crosses below ribbon open AND (trend filter disabled OR (rising/falling logic enabled AND trend MA is falling) OR (rising/falling logic disabled AND (configured Heikin Ashi close, if enabled, otherwise close) < trend MA)) AND datetime is within the configured backtest period
+Exit: long or short, ribbon close crosses either above or below ribbon open

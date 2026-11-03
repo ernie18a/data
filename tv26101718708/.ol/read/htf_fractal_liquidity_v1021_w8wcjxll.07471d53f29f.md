@@ -1,0 +1,4 @@
+Calculation: Valid higher-timeframe pivot high = a high greater than the highs of the two preceding and two following higher-timeframe bars, with neither of the two following bars reaching or exceeding it; confirm using completed higher-timeframe bars.
+Calculation: Valid higher-timeframe pivot low = a low lower than the lows of the two preceding and two following higher-timeframe bars, with neither of the two following bars reaching or falling below it; confirm using completed higher-timeframe bars.
+Long: a valid higher-timeframe pivot high is confirmed (buy-side liquidity level)
+Short: a valid higher-timeframe pivot low is confirmed (sell-side liquidity level)

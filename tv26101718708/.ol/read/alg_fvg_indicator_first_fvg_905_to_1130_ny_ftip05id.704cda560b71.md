@@ -1,0 +1,2 @@
+Long: high two bars ago < current low AND current bar is completed AND current bar is within the configured FVG session window AND no earlier valid FVG has occurred that day
+Short: low two bars ago > current high AND current bar is completed AND current bar is within the configured FVG session window AND no earlier valid FVG has occurred that day

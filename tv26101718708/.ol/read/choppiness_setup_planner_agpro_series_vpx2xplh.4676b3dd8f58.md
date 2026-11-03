@@ -1,0 +1,18 @@
+Calculation: Choppiness Index = clamp(100 × log(sum of true range over the lookback ÷ (highest high − lowest low over the lookback)) ÷ log(lookback), 0, 100); use 50 if the range is no larger than the minimum tick.
+Calculation: Path efficiency = absolute close change over its lookback ÷ sum of absolute close changes over that lookback; clamp to 0–1.
+Calculation: Directional weakness = 100 − ADX normalized from 12 to 34 and clamped to 0–100.
+Calculation: Range tightness = clamp((1.28 − current range span ÷ its SMA over three times the range lookback) ÷ 0.78 × 100, 0, 100).
+Calculation: Wick noise = SMA of (1 − absolute candle body ÷ candle span) × 100 over the wick lookback; use at least the minimum tick for candle span.
+Calculation: Chop score = EMA of (Choppiness Index × 0.35 + directional weakness × 0.20 + (1 − path efficiency) × 100 × 0.22 + range tightness × 0.15 + wick noise × 0.08), using the score smoothing lookback.
+Calculation: Chop range = consecutive chart-timeframe bars with chop score at or above the chop threshold; its high and low are the highest high and lowest low since that streak began, and its age is the number of bars in the streak. Preserve the last completed range when the score falls below the threshold.
+Calculation: ATR ratio = ATR over the ATR lookback ÷ SMA of that ATR over a longer lookback.
+Calculation: Volume quality = normalized current volume ÷ its SMA over the volume lookback, from 0.80 to 1.80 and clamped to 0–100; use 50 if volume participation is disabled.
+Calculation: Age quality = normalize completed or active range age from minimum range age to three times minimum range age, clamped to 0–100.
+Calculation: Readiness score = EMA of (age quality × 0.22 + normalized chop-score decrease over three bars from 0 to 12 × 0.22 + normalized ADX increase over three bars from 0 to 7 × 0.17 + normalized path-efficiency increase over three bars from 0 to 0.18 × 0.14 + normalized ATR ratio from 0.95 to 1.38 × 0.13 + edge pressure × 0.12), using the score smoothing lookback. Edge pressure = absolute distance of close's range position from 0.5 × 200, with range position clamped from 0 to 1.
+Calculation: Release quality = normalize absolute release-close distance from the range boundary in ATRs, from the release buffer to 1.25 ATR, clamped to 0–100.
+Calculation: Body quality = normalize absolute candle body as a percentage of candle span from 35% to 85%, clamped to 0–100. Upside close quality = (close − low) ÷ candle span × 100; downside close quality = (high − close) ÷ candle span × 100.
+Calculation: Break quality = clamp(readiness score × 0.28 + age quality × 0.18 + release quality × 0.22 + body quality × 0.14 + directional close quality × 0.10 + volume quality × 0.08, 0, 100).
+Long: On a confirmed chart-timeframe bar, close crosses above the last completed range high plus current ATR × release buffer; the range age met the minimum and its release is within the range projection window; break quality ≥ minimum valid plan score.
+Short: On a confirmed chart-timeframe bar, close crosses below the last completed range low minus current ATR × release buffer; the range age met the minimum and its release is within the range projection window; break quality ≥ minimum valid plan score.
+Exit: Long, an active plan is at least one bar old and close ≤ its invalidation level.
+Exit: Short, an active plan is at least one bar old and close ≥ its invalidation level.

@@ -1,0 +1,4 @@
+Calculation: Long stop = entry-signal bar close − ATR × stop multiplier
+Calculation: Long target = entry-signal bar close + (entry-signal bar close − long stop) × reward-to-risk multiplier
+Long: position side is flat AND daily close > daily short-term EMA AND daily close > daily long-term EMA AND daily MACD line > daily MACD signal line AND (close ≤ chart-timeframe short-term EMA OR close ≤ chart-timeframe Bollinger middle) AND RSI > its threshold AND (chart-timeframe MACD histogram > 0 OR chart-timeframe MACD line > chart-timeframe MACD signal line)
+Exit: long, low ≤ long stop OR high ≥ long target

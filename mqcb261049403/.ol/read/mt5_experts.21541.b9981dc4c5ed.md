@@ -1,0 +1,6 @@
+Calculation: Upper breakout threshold = highest high in the configured lookback window, starting at the configured bar offset older than the signal bar on the configured signal timeframe.
+Calculation: Lower breakout threshold = lowest low in the configured lookback window, starting at the configured bar offset older than the signal bar on the configured signal timeframe.
+Long: Last completed signal-timeframe bar close > upper breakout threshold AND preceding completed bar close <= its upper breakout threshold
+Short: Last completed signal-timeframe bar close < lower breakout threshold AND preceding completed bar close >= its lower breakout threshold
+Exit: long, last completed signal-timeframe bar close < lower breakout threshold OR bar low <= entry price - configured stop-loss distance OR bar high >= entry price + configured take-profit distance
+Exit: short, last completed signal-timeframe bar close > upper breakout threshold OR bar high >= entry price + configured stop-loss distance OR bar low <= entry price - configured take-profit distance

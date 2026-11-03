@@ -1,0 +1,13 @@
+Calculation: Gann swing direction = bullish after a confirmed close breaks above the latest pivot high, bearish after a confirmed close breaks below the latest pivot low, otherwise retain the prior direction; pivots use the same lookback on all timeframes, and a break must occur at least the configured minimum bars after pivot confirmation.
+Calculation: Higher-timeframe Gann direction = Gann swing direction from the last completed bar of each higher timeframe.
+Calculation: Bullish alignment = chart-timeframe Gann direction is bullish AND each higher-timeframe Gann direction is bullish.
+Calculation: Bearish alignment = chart-timeframe Gann direction is bearish AND each higher-timeframe Gann direction is bearish.
+Calculation: ATR = average true range on the chart timeframe; use the current bar's ATR when the bar is complete, otherwise the prior bar's ATR.
+Calculation: Long stop = entry price minus entry-bar ATR times the stop multiplier; after the first target is reached, raise the stop to at least entry price and, when trailing is enabled, to at least the highest prior stop or current close minus current ATR times the trailing multiplier.
+Calculation: Short stop = entry price plus entry-bar ATR times the stop multiplier; after the first target is reached, lower the stop to at most entry price and, when trailing is enabled, to at most the lowest prior stop or current close plus current ATR times the trailing multiplier.
+Calculation: Long third target = entry price plus entry-bar ATR times the third-target multiplier.
+Calculation: Short third target = entry price minus entry-bar ATR times the third-target multiplier.
+Long: flat AND bullish alignment AND NOT bullish alignment on the prior chart bar AND current time is in the configured session (or session filter is disabled) AND split percentages are each positive and sum to 100% within the configured tolerance AND current bar is complete AND bars since the prior signal are at least the configured cooldown.
+Short: flat AND bearish alignment AND NOT bearish alignment on the prior chart bar AND current time is in the configured session (or session filter is disabled) AND split percentages are each positive and sum to 100% within the configured tolerance AND current bar is complete AND bars since the prior signal are at least the configured cooldown.
+Exit: long, high >= long third target OR low <= long stop OR NOT bullish alignment
+Exit: short, low <= short third target OR high >= short stop OR NOT bearish alignment

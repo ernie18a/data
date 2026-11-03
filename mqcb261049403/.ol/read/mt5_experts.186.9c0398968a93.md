@@ -1,0 +1,5 @@
+Calculation: MACD main line = fast EMA of median price minus slow EMA of median price; calculate on the chart timeframe. The entry MACD uses a shorter fast-EMA period and a longer slow-EMA period than the trend MACD.
+Long: entry MACD three completed bars ago > entry MACD two completed bars ago AND entry MACD two completed bars ago < entry MACD on the last completed bar AND trend MACD on the last completed bar > trend MACD two completed bars ago OR the previous long trade closed below its entry price
+Short: entry MACD three completed bars ago < entry MACD two completed bars ago AND entry MACD two completed bars ago > entry MACD on the last completed bar AND trend MACD on the last completed bar < trend MACD two completed bars ago OR the previous short trade closed above its entry price
+Exit: Long, low <= entry price − stop distance OR high >= entry price + take-profit distance
+Exit: Short, high >= entry price + stop distance OR low <= entry price − take-profit distance

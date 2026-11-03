@@ -1,0 +1,2 @@
+Long: (high[1] < low[3] AND close > low[3]) OR (high[2] < low[4] AND close[1] <= high[2] AND close > low[4])
+Short: (low[1] > high[3] AND close < high[3]) OR (low[2] > high[4] AND close[1] >= low[2] AND close < high[2])

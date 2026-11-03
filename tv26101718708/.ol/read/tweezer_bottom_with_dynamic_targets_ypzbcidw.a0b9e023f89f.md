@@ -1,0 +1,2 @@
+Calculation: Percentage difference between consecutive lows = absolute value of (previous low − current low) / current low × 100
+Long: Highest high over the configured lookback > current high AND percentage difference between consecutive lows ≤ configured maximum low-difference percentage AND current close > current open AND current volume > simple moving average of volume over the configured period

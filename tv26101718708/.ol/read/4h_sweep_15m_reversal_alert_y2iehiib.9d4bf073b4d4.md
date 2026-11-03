@@ -1,0 +1,7 @@
+Calculation: Recent higher-timeframe high = highest high over the lookback of completed bars from a timeframe higher than the chart timeframe
+Calculation: Recent higher-timeframe low = lowest low over the lookback of completed bars from a timeframe higher than the chart timeframe
+Calculation: Confirmed swing high = a chart-timeframe high higher than the highs of the same lookback number of bars on both sides
+Calculation: Confirmed swing low = a chart-timeframe low lower than the lows of the same lookback number of bars on both sides
+Calculation: Strong-bodied candle = absolute difference between close and open is at least half the high-low range, where the range is greater than zero
+Long: low < Recent higher-timeframe low AND close > Recent higher-timeframe low OR a bullish sweep window is active AND close > open AND Strong-bodied candle OR a bullish reversal has occurred during the active bullish sweep window AND close > the latest confirmed swing high
+Short: high > Recent higher-timeframe high AND close < Recent higher-timeframe high OR a bearish sweep window is active AND close < open AND Strong-bodied candle OR a bearish reversal has occurred during the active bearish sweep window AND close < the latest confirmed swing low

@@ -1,0 +1,2 @@
+Long: short-term chart EMA > its previous-bar value AND long-term chart EMA > its previous-bar value AND close > last completed higher-timeframe short-term EMA AND close > last completed higher-timeframe long-term EMA
+Short: short-term chart EMA < its previous-bar value AND long-term chart EMA < its previous-bar value AND close < last completed higher-timeframe short-term EMA AND close < last completed higher-timeframe long-term EMA

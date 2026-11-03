@@ -1,0 +1,2 @@
+Long: Confirmed pivot high > previous confirmed pivot high OR confirmed pivot low > previous confirmed pivot low OR a confirmed pivot low makes a second touch of an existing support cluster within the maximum age and ATR-based tolerance OR committed regime = BULL_CALM
+Short: Confirmed pivot high < previous confirmed pivot high OR confirmed pivot low < previous confirmed pivot low OR a confirmed pivot high makes a second touch of an existing resistance cluster within the maximum age and ATR-based tolerance OR committed regime = BEAR_CALM

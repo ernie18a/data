@@ -1,0 +1,4 @@
+Calculation: Smoothed RSX candle open/close = 100 × smooth(clamp(smooth(price change, long lookback) / smooth(absolute price change, same long lookback), -1, 1), shorter lookback), calculated separately for open and close
+Calculation: Keltner channel upper/lower = SMA(smoothed RSX candle close, lookback) ± multiplier × SMA(smoothed RSX candle high − smoothed RSX candle low, same lookback)
+Long: smoothed RSX candle close > smoothed RSX candle open OR (level mode AND smoothed RSX candle close > upper level) OR (channel mode AND smoothed RSX candle close > Keltner channel upper)
+Short: smoothed RSX candle close < smoothed RSX candle open OR (level mode AND smoothed RSX candle close < lower level) OR (channel mode AND smoothed RSX candle close < Keltner channel lower)

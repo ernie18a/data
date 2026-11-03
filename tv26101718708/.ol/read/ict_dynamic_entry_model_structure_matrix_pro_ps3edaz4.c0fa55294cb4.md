@@ -1,0 +1,3 @@
+Long: A confirmed intermediate-term pivot low prints OR low > high two bars earlier AND close > open OR close crosses above the latest confirmed structure pivot high that has not already been crossed
+Short: A confirmed intermediate-term pivot high prints OR high < low two bars earlier AND close < open OR close crosses below the latest confirmed structure pivot low that has not already been crossed
+Exit: 

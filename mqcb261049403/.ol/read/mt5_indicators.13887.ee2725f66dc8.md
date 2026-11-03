@@ -1,0 +1,5 @@
+Calculation: JJRSX = JJMA-smoothed ratio of the JurX-smoothed one-bar change in close to the JurX-smoothed absolute one-bar change, clamped to [-1, 1].
+Calculation: Fast trend = 0.05 × JJRSX(shortest lookback) + 0.10 × JJRSX(next lookback) + 0.10 × JJRSX(middle lookback) + 0.26 × JJRSX(next-longest lookback) + 0.43 × JJRSX(longest lookback); the five lookbacks increase from short-term to long-term.
+Calculation: Slow trend = Fast trend / smoothing length + previous slow trend × (1 − 1 / smoothing length).
+Long: Fast trend > slow trend on the chart timeframe's bar still forming, OR fast trend > slow trend on the last completed bar of a configured timeframe higher than, lower than, or equal to the chart timeframe.
+Short: Fast trend < slow trend on the chart timeframe's bar still forming, OR fast trend < slow trend on the last completed bar of a configured timeframe higher than, lower than, or equal to the chart timeframe.

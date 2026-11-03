@@ -1,0 +1,3 @@
+Calculation: Consecutive rising highs and lows = each of N successive bars has both a higher high and a higher low than the immediately preceding older bar
+Long: Consecutive rising highs and lows on the chart timeframe OR on a higher timeframe's still-forming bar
+Short: Each of N successive bars has both a lower high and a lower low than the immediately preceding older bar on the chart timeframe OR on a higher timeframe's still-forming bar

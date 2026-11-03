@@ -1,0 +1,4 @@
+Calculation: Lower-timeframe EMA = 200-period exponential moving average of close on lower-timeframe bars, using the last completed lower-timeframe bar
+Calculation: Chart-timeframe EMA = 200-period exponential moving average of close on chart-timeframe bars, using the last completed chart-timeframe bar
+Long: close > session VWAP AND close > chart-timeframe EMA AND (low <= lower-timeframe EMA OR low <= chart-timeframe EMA OR low <= session VWAP) AND (session filter disabled OR within configured session)
+Short: close < session VWAP AND close < chart-timeframe EMA AND (high >= lower-timeframe EMA OR high >= chart-timeframe EMA OR high >= session VWAP) AND (session filter disabled OR within configured session)

@@ -1,0 +1,7 @@
+Calculation: Anchors A and B = the lowest low and highest high within the configured lookback, ordered by which occurred first; if higher-timeframe swings are enabled, use the still-forming bar of a higher timeframe, otherwise use chart-timeframe bars
+Calculation: Exhaustion zone = the price interval between B − 0.50 × (B − A) and B − 0.625 × (B − A)
+Calculation: Death Line = a line from A’s price and bar, extending in the direction from A to B; its slope is the configured slope basis multiplied by the configured angle factor (the A-to-B price distance divided by bars from A to B, or the configured price-per-bar value, or ATR at A scaled by chart-bar duration for the selected bar, hour, or day basis)
+Long: Anchors are ready AND current bar is after B AND (up-leg AND low ≤ exhaustion-zone upper boundary AND close > exhaustion-zone upper boundary OR close crosses above the Death Line)
+Short: Anchors are ready AND current bar is after B AND (down-leg AND high ≥ exhaustion-zone lower boundary AND close < exhaustion-zone lower boundary OR close crosses below the Death Line)
+Exit: long, current bar is after B AND close crosses below the Death Line
+Exit: short, current bar is after B AND close crosses above the Death Line

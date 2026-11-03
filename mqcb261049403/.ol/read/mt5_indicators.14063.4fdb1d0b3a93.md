@@ -1,0 +1,3 @@
+Calculation: DeMarker-difference double stochastic cycle = subtract the longer-lookback DeMarker from the shorter-lookback DeMarker, normalize that difference over the cycle lookback, smooth it, then normalize the result over the same cycle lookback to a range from -100 to 100 and smooth it. Use chart-timeframe bars; in the higher-timeframe variant, use the still-forming higher-timeframe bar.
+Long: DeMarker-difference double stochastic cycle > 0
+Short: DeMarker-difference double stochastic cycle < 0

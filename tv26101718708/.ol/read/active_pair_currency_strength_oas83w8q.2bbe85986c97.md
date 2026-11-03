@@ -1,0 +1,3 @@
+Calculation: Currency strength = percentage return from the selected rolling or weekly anchor, minus the mean return of all eight currencies (USD return = 0; invert the spot return for USD-base pairs); optionally apply EMA smoothing after normalization. Use the selected calculation timeframe, which may be the same as, higher, or lower than the chart timeframe; use the current/forming bar for the current price and weekly anchor, and the prior lookback bar for the rolling anchor. Evaluate crossings at the chart bar close.
+Long: Base currency strength crosses above quote currency strength on a Forex chart
+Short: Base currency strength crosses below quote currency strength on a Forex chart

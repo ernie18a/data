@@ -1,0 +1,2 @@
+Long: flat AND close > long-term SMA(close) AND close > VWAP AND short-term EMA(close) > long-term EMA(close) AND RSI > 50 AND volume > 20-bar SMA(volume) * volume multiplier AND close > highest high of the preceding breakout lookback bars AND close > open AND close > prior bar high
+Exit: long, position has been open for at least the minimum hold duration in chart bars AND close < VWAP AND close < long-term SMA(close) AND short-term EMA(close) < long-term EMA(close) AND close < prior bar low AND prior close < low two bars ago AND RSI < 45

@@ -1,0 +1,4 @@
+Calculation: Lower-tail dependence = EMA of count(U <= u AND V <= u) / count(V <= u) over the last N paired ranks, where each U and V is the count of values <= the current value in its rolling N-bar series divided by N; U ranks log(close / previous close) and V ranks volume change.
+Calculation: Upper-tail dependence = EMA of count(U >= 1-u AND V >= 1-u) / count(V >= 1-u) over the last N paired ranks, using the same ranks as lower-tail dependence.
+Long: lower-tail dependence on the previous bar <= threshold AND upper-tail dependence > threshold AND session filter passes when enabled AND position is flat or short AND bars since previous signal >= cooldown AND current bar is confirmed
+Short: lower-tail dependence > threshold AND lower-tail dependence on the previous bar <= threshold AND session filter passes when enabled AND position is flat or long AND bars since previous signal >= cooldown AND current bar is confirmed

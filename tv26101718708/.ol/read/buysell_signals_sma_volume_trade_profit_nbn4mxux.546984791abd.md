@@ -1,0 +1,2 @@
+Long: close > open AND close > long-term SMA of close AND close is no more than the configured maximum percentage above the long-term SMA of close AND close > short-term SMA of close AND volume > short-term SMA of volume AND not already in a position
+Exit: long, previous close >= previous short-term SMA of close AND close < short-term SMA of close

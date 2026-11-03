@@ -1,0 +1,7 @@
+Calculation: VWAP = volume-weighted average of typical price (high + low + close) / 3, accumulated over the current session
+Calculation: Pullback low = lowest low since the current pullback cycle activated
+Calculation: Stop = min(lowest low over the swing lookback, current VWAP) × (1 − stop buffer % / 100)
+Calculation: Risk = entry price − Stop
+Calculation: Third target = entry price + Risk × third risk/reward multiplier
+Long: A pullback cycle is active, no long signal has fired in this cycle, close > VWAP, (close − VWAP) / VWAP × 100 ≤ maximum extension %, and at least one enabled confirmation is true; a cycle activates when close > VWAP, the low is within the VWAP tolerance or low ≤ VWAP and close ≥ VWAP, and the extension is within its maximum; it resets when extension exceeds its maximum or close < VWAP; confirmation is bullish close (close > open), bullish engulfing (close > open, prior close < prior open, close ≥ prior open, and open ≤ prior close), wick rejection (high > low, lower wick / (high − low) ≥ 0.5, low ≤ VWAP × (1 + tolerance % / 100), and close > open), or higher low (low > the lowest low of the preceding swing-lookback bars and close > open); if no confirmations are enabled, use bullish close
+Exit: Long, low ≤ Stop OR high ≥ third target

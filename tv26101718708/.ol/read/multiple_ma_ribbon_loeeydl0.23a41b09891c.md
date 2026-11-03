@@ -1,0 +1,2 @@
+Long: Current close > every ribbon moving average AND current close > the longest-lookback moving average AND (previous close <= at least one ribbon moving average OR previous close <= the longest-lookback moving average)
+Short: Current close < every ribbon moving average AND current close < the longest-lookback moving average AND (previous close >= at least one ribbon moving average OR previous close >= the longest-lookback moving average)

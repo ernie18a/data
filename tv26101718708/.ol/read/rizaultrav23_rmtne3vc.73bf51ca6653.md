@@ -1,0 +1,8 @@
+Calculation: MTF1 and MTF2 short/long SMAs = simple moving averages of close on their respective higher timeframes, using the bar still forming; each short lookback is shorter than its long lookback.
+Calculation: WaveTrend 1 = EMA(((HLC3 − EMA(HLC3, channel length)) / (0.015 × EMA(abs(HLC3 − EMA(HLC3, channel length)), channel length))), average length), calculated on a higher timeframe using the bar still forming.
+Calculation: Long stop = entry price × (1 − initial risk percentage) until high > entry price × (1 + activation percentage); after activation, carry forward the greater of the previous long stop and high × (1 − trailing percentage).
+Calculation: Short stop = entry price × (1 + initial risk percentage) until low < entry price × (1 − activation percentage); after activation, carry forward the lesser of the previous short stop and low × (1 + trailing percentage).
+Long: ((MTF1 short SMA > MTF1 long SMA AND previous chart bar MTF1 short SMA ≤ MTF1 long SMA AND MTF2 short SMA > MTF2 long SMA) OR (MTF1 short SMA > MTF1 long SMA AND MTF2 short SMA > MTF2 long SMA AND previous chart bar MTF2 short SMA ≤ MTF2 long SMA)) AND WaveTrend 1 > 0
+Short: ((MTF1 short SMA < MTF1 long SMA AND previous chart bar MTF1 short SMA ≥ MTF1 long SMA AND MTF2 short SMA < MTF2 long SMA) OR (MTF1 short SMA < MTF1 long SMA AND MTF2 short SMA < MTF2 long SMA AND previous chart bar MTF2 short SMA ≥ MTF2 long SMA)) AND WaveTrend 1 < 0
+Exit: Long, short condition OR low < previous chart bar long stop
+Exit: Short, long condition OR high > previous chart bar short stop

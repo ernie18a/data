@@ -1,0 +1,3 @@
+Calculation: NRTR reversal threshold = in an uptrend, the greater of the prior threshold and the highest close in the current uptrend multiplied by (1 − average range fraction); in a downtrend, the lesser of the prior threshold and the lowest close in the current downtrend multiplied by (1 + average range fraction). Average range fraction is the mean of absolute high-minus-low over the lookback, divided by the price scaling factor. Calculate on the configured ZigZag timeframe, which may be higher or lower than the chart timeframe, including its still-forming bar.
+Long: Previous trend is down AND close crosses above the NRTR reversal threshold.
+Short: Previous trend is up AND close crosses below the NRTR reversal threshold.

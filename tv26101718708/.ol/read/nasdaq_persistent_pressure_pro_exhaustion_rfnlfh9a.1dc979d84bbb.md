@@ -1,0 +1,7 @@
+Calculation: Relative pressure = 0 when volume is 0; otherwise ((close − low) − (high − close)) / max(high − low, minimum price increment)
+Calculation: Persistent pressure = prior persistent pressure × decay factor + EMA(relative pressure, short smoothing lookback)
+Calculation: Scaled pressure = expansion-adjusted persistent pressure divided by its rolling maximum absolute value over a longer lookback, then multiplied by scale; expansion-adjusted persistent pressure is persistent pressure × 1.25 when bar range exceeds its EMA, otherwise persistent pressure
+Calculation: Higher-timeframe scaled pressure = higher-timeframe persistent pressure divided by its rolling maximum absolute value over a longer lookback, then multiplied by scale; higher-timeframe persistent pressure = prior higher-timeframe persistent pressure × decay factor + EMA(relative pressure, short smoothing lookback). Use the higher-timeframe bar still forming.
+Calculation: Pressure acceleration = EMA(change in scaled pressure, smoothing lookback)
+Long: Scaled pressure > 0 OR higher-timeframe scaled pressure > 0 OR (scaled pressure < −exhaustion threshold AND pressure acceleration > prior pressure acceleration AND pressure acceleration > 0)
+Short: Scaled pressure < 0 OR higher-timeframe scaled pressure < 0 OR (scaled pressure > exhaustion threshold AND pressure acceleration < prior pressure acceleration AND pressure acceleration < 0)

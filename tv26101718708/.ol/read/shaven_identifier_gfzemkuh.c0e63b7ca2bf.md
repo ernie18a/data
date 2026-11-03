@@ -1,0 +1,2 @@
+Long: (close > open AND open = low) OR (first chart bar of a new higher-timeframe interval AND last completed higher-timeframe bar has close > open AND open = low)
+Short: (close < open AND open = high) OR (first chart bar of a new higher-timeframe interval AND last completed higher-timeframe bar has close < open AND open = high)

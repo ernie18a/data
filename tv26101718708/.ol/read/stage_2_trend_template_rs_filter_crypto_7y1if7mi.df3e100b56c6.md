@@ -1,0 +1,6 @@
+Calculation: Fast, middle, and slow SMAs = simple moving averages of close over progressively longer lookbacks.
+Calculation: Long-lookback high/low = highest high / lowest low over the long lookback.
+Calculation: Relative-strength line = close / benchmark close; its average = moving average of that line.
+Calculation: Relative performance at each lookback = (close / prior close) / (benchmark close / its prior close), using four progressively longer lookbacks; weighted relative performance = weighted combination of those values.
+Calculation: Mansfield-style relative strength = (relative-strength line / its long-lookback average − 1) × 100.
+Long: Current bar meets all of: close > fast SMA > middle SMA > slow SMA; slow SMA > its value at the minimum slope lookback; close is at least the minimum percentage above the long-lookback low; close is no farther than the maximum allowed percentage below the long-lookback high; relative-strength line > its average; Mansfield-style relative strength >= its minimum threshold; weighted relative performance >= its minimum threshold; longest-lookback relative performance >= its minimum threshold; close is below the maximum allowed extension above the fast SMA; and the same combined conditions were not met on the previous bar.

@@ -1,0 +1,4 @@
+Calculation: Momentum slope = change over the slope lookback in the HMA-smoothed, centered momentum value (MFI of typical price and volume, or RSI of close, as selected); use the middle momentum layer, with a longer HMA lookback than the momentum source lookback.
+Calculation: Price-current slope = change over the slope lookback in the middle price-current layer (shorter HMA lookback than the longest price-current layer): either the HMA-smoothed VWMA of close and volume, expressed as its two-bar percentage change, or the HMA-smoothed signed ADX (ADX positive when +DI ≥ −DI, negative otherwise), as selected. These calculations use chart-timeframe bars, including the current bar.
+Long: Momentum slope > 0 AND price-current slope > 0 AND (previous bar's momentum slope ≤ 0 OR previous bar's price-current slope ≤ 0)
+Short: Momentum slope < 0 AND price-current slope < 0 AND (previous bar's momentum slope ≥ 0 OR previous bar's price-current slope ≥ 0)

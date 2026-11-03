@@ -1,0 +1,6 @@
+Calculation: Session VWAP = volume-weighted average of (high + low + close) / 3 since the session reset.
+Calculation: Smoothed delta = EMA of bar delta, where bar delta = volume × ((close − low) − (high − close)) / (high − low); when high = low, bar delta = 0.
+Calculation: CVD = cumulative bar delta since the session reset.
+Calculation: Volume ratio = current volume / recent average volume.
+Long: At least 4 of: close > session VWAP; short-term EMA(close) > long-term EMA(close); short-term EMA(close) > its value several bars earlier; smoothed delta > 0; CVD > its value several bars earlier OR low <= recent lowest low AND smoothed delta < 0 AND smoothed delta is weaker in magnitude than its recent peak AND smoothed delta > its value several bars earlier
+Short: At least 4 of: close <= session VWAP; short-term EMA(close) <= long-term EMA(close); short-term EMA(close) <= its value several bars earlier; smoothed delta <= 0; CVD <= its value several bars earlier OR high >= recent highest high AND smoothed delta > 0 AND smoothed delta is weaker in magnitude than its recent peak AND smoothed delta < its value several bars earlier

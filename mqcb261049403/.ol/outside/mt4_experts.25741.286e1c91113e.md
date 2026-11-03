@@ -1,0 +1,1 @@
+Exit all open positions on the instrument when their combined loss exceeds a configured fraction of the account’s equity peak; an additional loss cutoff scales this limit. Optionally close the instrument’s positions when their combined profit reaches a configured cash or balance-percentage target, or falls by a configured cash amount from its peak profit.

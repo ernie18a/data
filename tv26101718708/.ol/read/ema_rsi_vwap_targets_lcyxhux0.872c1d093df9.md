@@ -1,0 +1,8 @@
+Long: close > EMA AND close > VWAP AND RSI > RSI buy level AND NOT (previous bar close > EMA AND previous bar close > VWAP AND previous bar RSI > RSI buy level)
+Short: close < EMA AND close < VWAP AND RSI < RSI sell level AND NOT (previous bar close < EMA AND previous bar close < VWAP AND previous bar RSI < RSI sell level)
+Exit: long, high >= entry price × (1 + target 1 percentage / 100)
+Exit: long, high >= entry price × (1 + target 2 percentage / 100)
+Exit: long, high >= entry price × (1 + target 3 percentage / 100)
+Exit: short, low <= entry price × (1 − target 1 percentage / 100)
+Exit: short, low <= entry price × (1 − target 2 percentage / 100)
+Exit: short, low <= entry price × (1 − target 3 percentage / 100)

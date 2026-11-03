@@ -1,0 +1,4 @@
+Long: chart close crosses above the Chain 1 entry EMA on a higher timeframe OR chart close crosses above the Chain 2 entry EMA on a higher timeframe, within the configured backtesting period
+Short: chart close crosses below the Chain 1 entry EMA on a higher timeframe OR chart close crosses below the Chain 2 entry EMA on a higher timeframe, within the configured backtesting period
+Exit: long, chart close crosses below the Chain 1 exit EMA on a higher timeframe OR chart close crosses below the Chain 2 exit EMA on a higher timeframe OR datetime is outside the configured backtesting period
+Exit: short, chart close crosses above the Chain 1 exit EMA on a higher timeframe OR chart close crosses above the Chain 2 exit EMA on a higher timeframe OR datetime is outside the configured backtesting period

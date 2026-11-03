@@ -1,0 +1,6 @@
+Calculation: Robust z-score = (value - rolling median) / (1.4826 × rolling median of absolute deviations from the rolling median)
+Calculation: Composite spread = precision-weighted average of the Roll, Corwin-Schultz, and Abdi-Ranaldo spread estimates; weights are inversely proportional to each estimate’s robust variance
+Calculation: Liquidity Stress Index = average of the spread, Amihud illiquidity, and absolute Kyle lambda robust z-scores, each capped at ± the winsorization limit
+Calculation: Spread trend = short-term EMA of composite spread compared with its long-term EMA
+Long: selected color source is Liquidity Stress Index AND Liquidity Stress Index ≤ -1 OR selected color source is Spread Regime AND spread robust z-score ≤ -1 OR selected color source is Spread Trend AND short-term EMA of composite spread ≤ long-term EMA of composite spread
+Short: selected color source is Liquidity Stress Index AND Liquidity Stress Index ≥ 1 OR selected color source is Spread Regime AND spread robust z-score ≥ 1 OR selected color source is Adverse Selection AND absolute Kyle lambda robust z-score > 1.5 OR selected color source is Spread Trend AND short-term EMA of composite spread > long-term EMA of composite spread

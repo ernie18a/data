@@ -1,0 +1,7 @@
+Calculation: Higher-timeframe upper/lower fractal = standard five-bar pivot high/low, scanned from 200 bars ago down to shift 0, including the still-forming higher-timeframe bar; if both occur at the same shift, the upper fractal takes priority
+Calculation: Fast/slow moving averages = linear weighted moving averages of typical price on the chart timeframe, both using the still-forming bar; fast lookback is shorter than slow lookback
+Calculation: Candle distance threshold = retracement parameter multiplied by point size
+Long: oldest detected higher-timeframe fractal is a lower fractal AND fast moving average > slow moving average AND low two chart bars ago < high one chart bar ago AND absolute difference between current price and close two chart bars ago > candle distance threshold
+Short: oldest detected higher-timeframe fractal is an upper fractal AND fast moving average < slow moving average AND low one chart bar ago < high two chart bars ago AND absolute difference between current price and close one chart bar ago > candle distance threshold
+Exit: long, price <= entry price - initial stop distance OR price >= entry price + initial take-profit distance OR, after price has risen more than the trailing distance above entry, price <= highest price since entry - trailing distance
+Exit: short, price >= entry price + initial stop distance OR price <= entry price - initial take-profit distance OR, after price has fallen more than the trailing distance below entry, price >= lowest price since entry + trailing distance

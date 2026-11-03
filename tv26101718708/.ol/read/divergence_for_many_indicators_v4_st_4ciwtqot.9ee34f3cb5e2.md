@@ -1,0 +1,10 @@
+Calculation: Positive regular divergence = an enabled indicator is higher at the candidate endpoint than at a prior confirmed price pivot low, while the selected price source (close or low) is lower; at every intervening chart bar, the indicator and close are at or above the straight line between their endpoint values.
+Calculation: Positive hidden divergence = an enabled indicator is lower at the candidate endpoint than at a prior confirmed price pivot low, while the selected price source (close or low) is higher; at every intervening chart bar, the indicator and close are at or above the straight line between their endpoint values.
+Calculation: Negative regular divergence = an enabled indicator is lower at the candidate endpoint than at a prior confirmed price pivot high, while the selected price source (close or high) is higher; at every intervening chart bar, the indicator and close are at or below the straight line between their endpoint values.
+Calculation: Negative hidden divergence = an enabled indicator is higher at the candidate endpoint than at a prior confirmed price pivot high, while the selected price source (close or high) is lower; at every intervening chart bar, the indicator and close are at or below the straight line between their endpoint values.
+Calculation: VWMACD = shorter-lookback VWMA of close − longer-lookback VWMA of close.
+Calculation: Chaikin Money Flow = SMA of ((2×close − high − low)/(high − low))×volume divided by SMA of volume, using the same lookback for both SMAs.
+Long: positive regular divergence OR positive hidden divergence, and detected divergence count across enabled indicators and selected divergence types >= configured minimum
+Short: negative regular divergence OR negative hidden divergence, and detected divergence count across enabled indicators and selected divergence types >= configured minimum
+Exit: long, low <= entry price × (1 − stop-loss fraction) OR high >= entry price × (1 + take-profit fraction)
+Exit: short, high >= entry price × (1 + stop-loss fraction) OR low <= entry price × (1 − take-profit fraction)

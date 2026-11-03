@@ -1,0 +1,1 @@
+Exit every currently open position in sequence from earliest to latest. Close long positions at the current bid and short positions at the current ask. If enabled, restrict closures to the current instrument and/or to positions with the selected strategy identifier.

@@ -1,0 +1,6 @@
+Calculation: Liquidity levels = confirmed equal highs/lows (pivot highs/lows within an ATR-based tolerance), completed session highs/lows, and the previous day’s high/low; session levels use chart-timeframe bars, and the previous day’s levels use the last completed higher-timeframe daily bar
+Calculation: Level importance = score based on level type, number of touches, and age; a strong level meets the importance threshold
+Long: A strong lower liquidity level is pierced, then within the confirmation window fewer than two closes are beyond it and the verdict bar closes back above the level
+Short: A strong upper liquidity level is pierced, then within the confirmation window fewer than two closes are beyond it and the verdict bar closes back below the level
+Long: A strong upper liquidity level is pierced and price closes beyond it on at least two bars during the confirmation window
+Short: A strong lower liquidity level is pierced and price closes beyond it on at least two bars during the confirmation window

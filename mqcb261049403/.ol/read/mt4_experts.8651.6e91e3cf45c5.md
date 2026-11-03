@@ -1,0 +1,2 @@
+Long: High on the current chart bar < High on the previous chart bar < High two chart bars ago < High three chart bars ago AND Open on the current chart bar < Open on the previous chart bar < Open two chart bars ago < Open three chart bars ago AND Stochastic main > signal on both the shorter and the longer of two lower timeframes, on each timeframe's last completed bar and bar still forming
+Exit: long, Low <= entry price - stop-loss distance OR High >= entry price + take-profit distance

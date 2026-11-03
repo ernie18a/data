@@ -1,0 +1,7 @@
+Calculation: Opening offset = either the average, over the longer lookback of prior sessions, of the smaller distance from each session open to its session high or low, using completed lower-timeframe M1 bars; or a multiple of ATR from the last completed higher-timeframe D1 bar.
+Calculation: NRn = yesterday’s D1 high−low range is less than each of the previous n−1 completed D1 ranges; IDnr4 = yesterday’s range is inside the previous D1 bar’s range AND yesterday is NR4; 3-bar NR = the combined high−low range of the last 3 completed D1 bars is less than that of each 3-bar window in the preceding 18 bars.
+Calculation: WS n = yesterday’s D1 high−low range is greater than each of the previous n−1 completed D1 ranges.
+Long: bar high >= session open + opening offset AND current time >= session start AND current time < session start + entry-window duration AND selected day filter passes AND selected wide-day skip condition passes
+Short: bar low <= session open − opening offset AND current time >= session start AND current time < session start + entry-window duration AND selected day filter passes AND selected wide-day skip condition passes
+Exit: long, bar low <= short entry level OR (take-profit enabled AND bar high >= entry price + take-profit multiple × opening offset) OR current time >= session start + exit duration
+Exit: short, bar high >= long entry level OR (take-profit enabled AND bar low <= entry price − take-profit multiple × opening offset) OR current time >= session start + exit duration

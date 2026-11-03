@@ -1,0 +1,6 @@
+Calculation: Upper band = moving average of the selected source + standard deviation of selected-timeframe close over the same lookback × configured deviation; lower band = moving average − the same amount. Use the configured moving-average type and lookback.
+Calculation: ATR = average true range over the configured lookback.
+Calculation: Trend line = if selected-timeframe close is above the upper band, the greater of prior trend line and selected-timeframe low − ATR; if below the lower band, the lesser of prior trend line and selected-timeframe high + ATR; otherwise, the prior trend line. These calculations use the chart timeframe or the configured resolution, which may be higher or lower than the chart timeframe; use that resolution’s current bar (forming in realtime, completed in historical data).
+Calculation: Trend direction = 1 when the trend line rises from the prior bar, −1 when it falls, and otherwise its prior value.
+Long: prior trend direction = −1 AND current trend direction = 1 AND datetime is within the configured backtest period
+Short: prior trend direction = 1 AND current trend direction = −1 AND datetime is within the configured backtest period

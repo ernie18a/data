@@ -1,0 +1,5 @@
+Calculation: SuperTrend direction = bullish when close crosses above the prior bearish trailing band; bearish when close crosses below the prior bullish trailing band. Bands start at (high + low) / 2 ± ATR × multiplier; the bullish band trails at the greater of its current lower band and prior bullish band, and the bearish band at the lesser of its current upper band and prior bearish band. Use the indicator’s ATR period and multiplier. Slow direction uses higher-timeframe bars; fast direction uses lower-timeframe bars. All sampled bars are completed bars. For each direction, the slow lookback is longer than the fast lookback.
+Long: Slow SuperTrend direction is bullish AND fast SuperTrend direction is bullish on the newer sampled bar AND bearish on the older sampled bar
+Short: Slow SuperTrend direction is bearish AND fast SuperTrend direction is bearish on the newer sampled bar AND bullish on the older sampled bar
+Exit: Long, slow SuperTrend direction is bearish OR fast SuperTrend direction is bearish
+Exit: Short, slow SuperTrend direction is bullish OR fast SuperTrend direction is bullish

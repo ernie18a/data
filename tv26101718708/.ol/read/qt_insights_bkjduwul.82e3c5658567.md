@@ -1,0 +1,4 @@
+Calculation: Bullish candle = close > open, with the comparison reversed for an inverted asset
+Calculation: Bearish candle = close < open, with the comparison reversed for an inverted asset
+Long: Asset 1 bullish AND ((Asset 2 included AND Asset 2 bearish) OR (Asset 3 included AND Asset 3 bearish) OR (Asset 2 included AND Asset 3 included AND Asset 2 and Asset 3 have opposite candle directions))
+Short: Asset 1 bearish AND ((Asset 2 included AND Asset 2 bullish) OR (Asset 3 included AND Asset 3 bullish) OR (Asset 2 included AND Asset 3 included AND Asset 2 and Asset 3 have opposite candle directions))

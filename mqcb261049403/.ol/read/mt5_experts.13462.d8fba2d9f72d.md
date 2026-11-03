@@ -1,0 +1,5 @@
+Calculation: Schaff MFI Trend Cycle = On the configured indicator timeframe (which may be higher, lower, or the same as the chart timeframe), calculate fast MFI with a shorter lookback and slow MFI with a longer lookback; subtract slow MFI from fast MFI. Normalize that difference over a cycle lookback to 0–100, then smooth it by 0.5 × (current value − previous value) + previous value. Normalize the smoothed result over the same cycle lookback to −100–100, then smooth it the same way. Use completed bars.
+Long: Current Schaff MFI Trend Cycle > 0 AND current Schaff MFI Trend Cycle > upper level AND (previous completed bar's Schaff MFI Trend Cycle ≤ 0 OR previous completed bar's Schaff MFI Trend Cycle ≤ upper level)
+Short: Current Schaff MFI Trend Cycle < 0 AND current Schaff MFI Trend Cycle < lower level AND (previous completed bar's Schaff MFI Trend Cycle ≥ 0 OR previous completed bar's Schaff MFI Trend Cycle ≥ lower level)
+Exit: long, Schaff MFI Trend Cycle < 0 AND Schaff MFI Trend Cycle < lower level
+Exit: short, Schaff MFI Trend Cycle > 0 AND Schaff MFI Trend Cycle > upper level

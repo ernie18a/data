@@ -1,0 +1,1 @@
+Close all positions in the traded instrument when their combined loss exceeds a risk threshold based on account equity. Also close positions when combined profit reaches a money or balance-percentage target, or when profit retreats from its recorded peak by a money-based stop.

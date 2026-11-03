@@ -1,0 +1,5 @@
+Calculation: Anchored VWAP = volume-weighted average of HLC3 since the active anchor; reset at the selected manual time, qualifying high-volume bar, confirmed swing pivot, or session, week, or month open, subject to minimum spacing between automatic anchors
+Calculation: Relative volume = current volume / simple moving average of volume over the selected lookback
+Calculation: Readiness score = rounded value clamped to 0–100 of baseline + a distance contribution that decreases with absolute (close − anchored VWAP) / ATR and is capped at the extension-distance threshold + a relative-volume contribution + a bar-age contribution that increases with bars since anchor and is capped at the age limit
+Long: close crosses above anchored VWAP + ATR × reclaim buffer AND readiness score >= minimum ready score
+Short: close crosses below anchored VWAP − ATR × reclaim buffer AND readiness score >= minimum ready score

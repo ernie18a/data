@@ -1,0 +1,4 @@
+Long: scheduled trading hour AND no open position AND first tick of the hour AND close N completed higher-timeframe bars ago > close of the last completed higher-timeframe bar
+Short: scheduled trading hour AND no open position AND first tick of the hour AND close N completed higher-timeframe bars ago <= close of the last completed higher-timeframe bar
+Exit: long, low <= entry price - stop-loss OR high >= entry price + take-profit OR current time > entry time + maximum holding time
+Exit: short, high >= entry price + stop-loss OR low <= entry price - take-profit OR current time > entry time + maximum holding time

@@ -1,0 +1,2 @@
+Long: The high of the still-forming higher-timeframe bar is greater than its value on the previous chart bar, and this is not the first chart bar of that higher-timeframe interval.
+Short: The low of the still-forming higher-timeframe bar is less than its value on the previous chart bar, and this is not the first chart bar of that higher-timeframe interval.

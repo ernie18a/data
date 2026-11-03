@@ -1,0 +1,3 @@
+Calculation: Blau Tick Volume Index = smooth the volume-based up and down estimates separately with the same first-stage parameter, then smooth each result with the same longer-term second-stage parameter; calculate 100 × (smoothed up − smoothed down) / (smoothed up + smoothed down), then apply a third smoothing stage with a shorter lookback than the second stage. The up estimate is (volume + (close − open) / minimum price increment) / 2; the down estimate is volume minus the up estimate. Use the current chart bar, including the bar still forming.
+Long: Blau Tick Volume Index > 0
+Short: Blau Tick Volume Index < 0

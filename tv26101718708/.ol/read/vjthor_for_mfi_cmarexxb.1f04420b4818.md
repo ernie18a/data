@@ -1,0 +1,5 @@
+Calculation: MFI = Money Flow Index using close as its price source and volume over a lookback
+Long: previous bar's MFI equals the overbought threshold AND close > open AND abs(close - open) > (high - low) * minimum body-size ratio AND close > a simple moving average of close over a lookback AND datetime is within the configured trading session
+Short: previous bar's MFI equals the oversold threshold AND close < open AND abs(close - open) > (high - low) * minimum body-size ratio AND close <= a simple moving average of close over a lookback AND datetime is within the configured trading session
+Exit: Long, high >= entry price * (1 + take-profit percentage) OR low <= entry price * (1 - stop-loss percentage) OR datetime is outside the configured trading session
+Exit: Short, low <= entry price * (1 - take-profit percentage) OR high >= entry price * (1 + stop-loss percentage) OR datetime is outside the configured trading session

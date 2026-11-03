@@ -1,0 +1,2 @@
+Long: Higher-timeframe candle close >= higher-timeframe candle open (applies to displayed completed candles and the still-forming candle)
+Short: Higher-timeframe candle close < higher-timeframe candle open (applies to displayed completed candles and the still-forming candle)

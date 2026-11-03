@@ -1,0 +1,11 @@
+Calculation: Trend state = +1 when close is above the previous short stop, −1 when close is below the previous long stop, otherwise the previous trend state; the long stop is the greater of the current highest selected price (close if configured, otherwise high) over the lookback minus multiplier × Wilder ATR and the previous long stop when the previous close is above that previous stop, otherwise the current value; the short stop is the lesser of the current lowest selected price (close if configured, otherwise low) over the lookback plus multiplier × Wilder ATR and the previous short stop when the previous close is below that previous stop, otherwise the current value. Initialize trend state to +1.
+Long: current chart-timeframe trend state = +1 AND previous chart-timeframe trend state = −1
+Short: current chart-timeframe trend state = −1 AND previous chart-timeframe trend state = +1
+Long: current chart-timeframe trend state = +1 AND previous chart-timeframe trend state = −1 AND trend state on each of the two configured higher confirmation timeframes = +1 on its last completed bar AND long trades are enabled AND the tracked position is not long AND datetime is within the configured backtest window
+Short: current chart-timeframe trend state = −1 AND previous chart-timeframe trend state = +1 AND trend state on each of the two configured higher confirmation timeframes = −1 on its last completed bar AND short trades are enabled AND the tracked position is not short AND datetime is within the configured backtest window
+Exit: Long, low < entry price × (1 − stop percentage)
+Exit: Short, high > entry price × (1 + stop percentage)
+Exit: Long, high ≥ entry price × (1 + each configured take-profit percentage)
+Exit: Short, low ≤ entry price × (1 − each configured take-profit percentage)
+Exit: Long, current chart-timeframe trend state = −1 AND previous chart-timeframe trend state = +1
+Exit: Short, current chart-timeframe trend state = +1 AND previous chart-timeframe trend state = −1

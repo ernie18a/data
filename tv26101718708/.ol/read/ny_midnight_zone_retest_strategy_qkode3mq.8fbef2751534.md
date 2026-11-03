@@ -1,0 +1,5 @@
+Calculation: Midnight price = open of the first bar of each New York calendar day
+Long: close > midnight price + buffer AND the midnight zone has been touched during the current enabled entry window AND inside an enabled entry window AND flat AND no trade has been taken in the current window
+Short: close < midnight price - buffer AND the midnight zone has been touched during the current enabled entry window AND inside an enabled entry window AND flat AND no trade has been taken in the current window
+Exit: long, high >= entry price + take-profit distance OR low <= entry price - initial-stop distance OR (high >= entry price + breakeven activation distance AND low <= entry price + breakeven offset) OR (high >= entry price + trailing activation distance AND low <= highest high since entry)
+Exit: short, low <= entry price - take-profit distance OR high >= entry price + initial-stop distance OR (low <= entry price - breakeven activation distance AND high >= entry price - breakeven offset) OR (low <= entry price - trailing activation distance AND high >= lowest low since entry)

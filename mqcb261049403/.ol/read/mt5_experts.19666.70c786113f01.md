@@ -1,0 +1,5 @@
+Calculation: JJRSX = JMA-smoothed 100 × (JurX-smoothed change in the selected applied price / JurX-smoothed absolute change in that price)
+Long: On the indicator timeframe (higher, lower, or equal to the chart timeframe), JJRSX rises on the selected signal bar; OR, using three consecutive bars ending at the selected signal bar, the middle JJRSX is below both its preceding and following values
+Short: On the indicator timeframe (higher, lower, or equal to the chart timeframe), JJRSX falls on the selected signal bar; OR, using three consecutive bars ending at the selected signal bar, the middle JJRSX is above both its preceding and following values
+Exit: long, JJRSX falls on the selected signal bar OR elapsed time since entry exceeds the holding-time limit OR low is at or below entry price minus the stop distance OR high is at or above entry price plus the target distance
+Exit: short, JJRSX rises on the selected signal bar OR elapsed time since entry exceeds the holding-time limit OR high is at or above entry price plus the stop distance OR low is at or below entry price minus the target distance

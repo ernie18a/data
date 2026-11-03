@@ -1,0 +1,6 @@
+Calculation: Fast moving average = moving average of the configured price with a shorter lookback than the slow moving average, calculated on the chart timeframe using its last completed bar
+Calculation: Slow moving average = moving average of the configured price with a longer lookback than the fast moving average, calculated on the chart timeframe using its last completed bar
+Long: Fast moving average > slow moving average AND price reaches the pending buy breakout price above the setup price AND within the configured trading hours
+Short: Fast moving average < slow moving average AND price reaches the pending sell breakout price below the setup price AND within the configured trading hours
+Exit: Long, fast moving average < slow moving average OR price <= entry price − configured stop-loss distance OR price <= trailing stop OR (configured take-profit distance > 0 AND price >= entry price + configured take-profit distance)
+Exit: Short, fast moving average > slow moving average OR price >= entry price + configured stop-loss distance OR price >= trailing stop OR (configured take-profit distance > 0 AND price <= entry price − configured take-profit distance)

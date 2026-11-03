@@ -1,0 +1,2 @@
+Long: shorter-lookback SMA crosses above longer-lookback SMA OR shorter-lookback EMA crosses above longer-lookback EMA OR shorter-lookback SMA crosses above longer-lookback EMA OR the low two bars ago is lower than the lows of the two bars before and the two bars after it
+Short: shorter-lookback SMA crosses below longer-lookback SMA OR shorter-lookback EMA crosses below longer-lookback EMA OR the high two bars ago is higher than the highs of the two bars before and the two bars after it

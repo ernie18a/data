@@ -1,0 +1,2 @@
+Long: day of week is Monday AND close > VWAP AND previous bar close < current bar VWAP
+Exit: long, day of week is Sunday OR high >= entry price × (1 + take-profit percentage) OR low <= entry price × (1 - stop-loss percentage)

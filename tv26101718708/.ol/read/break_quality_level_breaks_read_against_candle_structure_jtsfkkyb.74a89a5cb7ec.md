@@ -1,0 +1,6 @@
+Calculation: Break tolerance = configured tick distance or configured multiple of ATR
+Calculation: Watched high/low = either the highest high/lowest low over the prior lookback bars, excluding the current bar, or the latest confirmed pivot high/low
+Short: Bar closes; session filter passes; ATR is positive; watched high exists; current close > watched high + break tolerance; previous close <= watched high + break tolerance; directional cooldown has elapsed; no unresolved upward break is active
+Long: Bar closes; session filter passes; ATR is positive; watched low exists; current close < watched low - break tolerance; previous close >= watched low - break tolerance; directional cooldown has elapsed; no unresolved downward break is active
+Short: Bar closes; sweep markings are enabled; session filter passes; ATR is positive; watched high exists; current high > watched high + break tolerance; current close <= watched high; previous high <= watched high + break tolerance; no upward break marking occurs on this bar
+Long: Bar closes; sweep markings are enabled; session filter passes; ATR is positive; watched low exists; current low < watched low - break tolerance; current close >= watched low; previous low >= watched low - break tolerance; no downward break marking occurs on this bar

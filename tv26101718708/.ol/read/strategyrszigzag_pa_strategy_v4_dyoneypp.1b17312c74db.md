@@ -1,0 +1,11 @@
+Calculation: Zigzag pivot = on a higher timeframe, using the last completed bar, mark the higher high of two bars when a down candle follows an up candle and the prior pivot direction was not down; mark the lower low of two bars when an up candle follows a down candle and the prior pivot direction was not up. Use the five latest pivots as X,A,B,C,D.
+Calculation: xab = |B−A|/|X−A|; xad = |A−D|/|X−A|; abc = |B−C|/|A−B|; bcd = |C−D|/|B−C|.
+Calculation: Bullish pattern = d<c and any of: ABCD (abc 0.382–0.886, bcd 1.13–2.618); Bat (xab 0.382–0.5, abc 0.382–0.886, bcd 1.618–2.618, xad ≤0.618); Anti-Bat (xab 0.5–0.886, abc 1–2.618, bcd 1.618–2.618, xad 0.886–1); Alt-Bat (xab ≤0.382, abc 0.382–0.886, bcd 2–3.618, xad ≤1.13); Butterfly (xab ≤0.786, abc 0.382–0.886, bcd 1.618–2.618, xad 1.27–1.618); Anti-Butterfly (xab 0.236–0.886, abc 1.13–2.618, bcd 1–1.382, xad 0.5–0.886); Gartley (xab 0.5–0.618, abc 0.382–0.886, bcd 1.13–2.618, xad 0.75–0.875); Anti-Gartley (xab 0.5–0.886, abc 1–2.618, bcd 1.5–5, xad 1–5); Crab (xab 0.5–0.875, abc 0.382–0.886, bcd 2–5, xad 1.382–5); Anti-Crab (xab 0.25–0.5, abc 1.13–2.618, bcd 1.618–2.618, xad 0.5–0.75); Shark (xab 0.5–0.875, abc 1.13–1.618, bcd 1.27–2.24, xad 0.886–1.13); Anti-Shark (xab 0.382–0.875, abc 0.5–1, bcd 1.25–2.618, xad 0.5–1.25); 5-O (xab 1.13–1.618, abc 1.618–2.24, bcd 0.5–0.625, xad 0–0.236); Wolf (xab 1.27–1.618, abc 0–5, bcd 1.27–1.618, xad 0–5); Head-and-Shoulders (xab 2–10, abc 0.9–1.1, bcd 0.236–0.88, xad 0.9–1.1); Contracting Triangle (xab, abc, bcd each 0.382–0.618, xad 0.236–0.764); Expanding Triangle (xab 1.236–1.618, abc 1–1.618, bcd 1.236–2, xad 2–2.236). Range endpoints are inclusive.
+Calculation: Bearish pattern = same pattern conditions and ranges, with d>c.
+Calculation: Fib level(r) = d−|d−c|×r when d>c, otherwise d+|d−c|×r.
+Long: Bullish pattern AND bullish pattern was false on the prior bar
+Short: Bearish pattern AND bearish pattern was false on the prior bar
+Long: Bullish pattern AND close ≤ Fib level(entry-window rate)
+Short: Bearish pattern AND close ≥ Fib level(entry-window rate)
+Exit: long, high ≥ Fib level(take-profit rate) OR low ≤ Fib level(stop-loss rate)
+Exit: short, low ≤ Fib level(take-profit rate) OR high ≥ Fib level(stop-loss rate)

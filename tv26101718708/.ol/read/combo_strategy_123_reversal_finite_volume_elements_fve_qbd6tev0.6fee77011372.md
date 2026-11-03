@@ -1,0 +1,7 @@
+Calculation: Fast stochastic = SMA of stochastic %K, where %K = 100 × (close − lowest low over its lookback) / (highest high over its lookback − lowest low over its lookback)
+Calculation: Slow stochastic = SMA of fast stochastic over a separate smoothing lookback
+Calculation: Reversal state = 1 when close[2] < close[1] AND close > close[1] AND fast stochastic < slow stochastic AND fast stochastic > level; −1 when close[2] > close[1] AND close < close[1] AND fast stochastic > slow stochastic AND fast stochastic < level; otherwise retain the prior state (initially 0)
+Calculation: FVE value = cumulative sum of ((signed volume / SMA(volume, lookback)) / lookback) × 100, where signed volume is volume when close − hl2 + hlc3 − prior hlc3 > threshold percentage × close / 100, −volume when it is < −threshold percentage × close / 100, and 0 otherwise; hl2 = (high + low) / 2 and hlc3 = (high + low + close) / 3
+Calculation: FVE state = 1 when FVE value > its prior value AND its value two bars ago; −1 when FVE value < its prior value AND its value two bars ago; otherwise retain the prior state (initially 0)
+Long: Reversal state = 1 AND FVE state = 1
+Short: Reversal state = −1 AND FVE state = −1

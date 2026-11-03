@@ -1,0 +1,4 @@
+Calculation: Bullish fair value gap = On the selected timeframe’s completed third bar, its low is above the first bar’s high, the second bar’s open is at or below the first bar’s high, and the third bar’s low is at or below the second bar’s close. The selected timeframe is the chart timeframe or higher.
+Calculation: Bearish fair value gap = On the selected timeframe’s completed third bar, its high is below the first bar’s low, the second bar’s open is at or above the first bar’s low, and the third bar’s high is at or above the second bar’s close. The selected timeframe is the chart timeframe or higher.
+Long: Bullish fair value gap forms on an enabled layer AND (time filter is disabled OR the third bar opens within the configured time window)
+Short: Bearish fair value gap forms on an enabled layer AND (time filter is disabled OR the third bar opens within the configured time window)

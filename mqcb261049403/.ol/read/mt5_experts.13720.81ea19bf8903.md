@@ -1,0 +1,5 @@
+Calculation: Decuple EMA = EMA of the selected bar price, followed by ten successive EMAs with a separate shared smoothing period; combine the ten successive EMA values as 10×EMA1 − 45×EMA2 + 120×EMA3 − 210×EMA4 + 252×EMA5 − 210×EMA6 + 120×EMA7 − 45×EMA8 + 10×EMA9 − EMA10. Initialize the first EMA with the second bar's selected price and all ten successive EMAs with the first bar's selected price. Calculate on a selectable chart, higher, or lower timeframe, using a selectable signal bar: the last completed bar or the still-forming bar, or an earlier completed bar. References to previous values mean preceding bars of that timeframe.
+Long: Decuple EMA > its previous value AND its value two bars ago > its previous value
+Short: Decuple EMA < its previous value AND its value two bars ago < its previous value
+Exit: long, Decuple EMA < its previous value OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, Decuple EMA > its previous value OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

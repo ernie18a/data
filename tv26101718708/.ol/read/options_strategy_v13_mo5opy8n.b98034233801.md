@@ -1,0 +1,7 @@
+Calculation: Opening range high/low = highest high / lowest low of chart bars from 09:30–09:45 New York time
+Calculation: Long stop/target = entry-bar close − ATR × stop multiplier / entry-bar close + ATR × stop multiplier × target-to-stop ratio
+Calculation: Short stop/target = entry-bar close + ATR × stop multiplier / entry-bar close − ATR × stop multiplier × target-to-stop ratio
+Long: the short-lookback EMA crossed above the long-lookback EMA since the previous long entry and has not yet triggered an entry, RSI ≥ long threshold, volume ≥ its moving average, New York time is outside 04:00–09:30, 12:00–15:00, and 16:00–20:00, and (opening-range breakout is disabled or close > opening-range high)
+Short: the short-lookback EMA crossed below the long-lookback EMA since the previous short entry and has not yet triggered an entry, RSI ≤ short threshold, volume ≥ its moving average, New York time is outside 04:00–09:30, 12:00–15:00, and 16:00–20:00, and (opening-range breakout is disabled or close < opening-range low)
+Exit: long, after the entry bar, low ≤ long stop OR high ≥ long target OR the short-lookback EMA crosses below the long-lookback EMA OR (EOD close is enabled and New York time is 15:55)
+Exit: short, after the entry bar, high ≥ short stop OR low ≤ short target OR the short-lookback EMA crosses above the long-lookback EMA OR (EOD close is enabled and New York time is 15:55)

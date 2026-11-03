@@ -1,0 +1,3 @@
+Calculation: Sell line = short-term SMA(close) + (close − close[short-term lookback]) / short-term lookback
+Long: short-term EMA(close) crosses above Sell line AND close > long-term SMA(close) AND volume > medium-term EMA(volume) AND long-term SMA(close) > its value at an earlier bar within a shorter lookback AND position side is flat
+Exit: long, Sell line crosses below short-term EMA(close) OR low <= long entry price adjusted downward by the stop-loss distance OR high >= long entry price adjusted upward by the take-profit distance

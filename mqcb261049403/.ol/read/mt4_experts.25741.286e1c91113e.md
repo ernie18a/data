@@ -1,0 +1,7 @@
+Calculation: Lower envelope = lower band of a simple moving average envelope of close, evaluated on the last completed chart bar
+Calculation: Upper envelope = upper band of a simple moving average envelope of close, evaluated on the last completed chart bar
+Calculation: Fast and slow chart-timeframe linear weighted moving averages use shorter and longer lookbacks, respectively
+Long: Absolute difference between current bar open and previous bar close > configured distance threshold AND previous bar low < fast linear weighted moving average AND previous bar close > fast linear weighted moving average AND current bar fast linear weighted moving average > current bar slow linear weighted moving average AND previous bar low < lower envelope
+Short: Absolute difference between current bar open and previous bar close > configured distance threshold AND previous bar high > fast linear weighted moving average AND previous bar close < fast linear weighted moving average AND current bar fast linear weighted moving average < current bar slow linear weighted moving average AND previous bar high > upper envelope
+Exit: Long, low <= entry price minus configured stop distance OR high >= entry price plus configured take-profit distance OR low <= active stop price
+Exit: Short, high >= entry price plus configured stop distance OR low <= entry price minus configured take-profit distance OR high >= active stop price

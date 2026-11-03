@@ -1,0 +1,1 @@
+For each monitored perpetual contract, compare 24-hour price change with 24-hour open-interest change. If price rises while open interest falls, classify the rally as weak and avoid long entries. If price falls while open interest rises, classify the drop as weak and avoid short entries. Other signal classifications do not direct a trade.

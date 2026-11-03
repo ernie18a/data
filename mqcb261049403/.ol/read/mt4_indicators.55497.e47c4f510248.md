@@ -1,0 +1,4 @@
+Calculation: QQE fast line = EMA of RSI(close, RSI lookback) using a shorter smoothing lookback
+Calculation: QQE trailing line = recursively trailed fast line, offset by a volatility distance equal to a configurable multiplier times a double EMA of absolute fast-line changes; use a longer Wilder smoothing lookback derived from the RSI lookback, and clamp the trail at its previous value when it would reverse through the prior fast-line/trail relationship
+Long: fast line[t-1] < trailing line[t-1] AND fast line[t] > trailing line[t] OR fast line[t-1] < signal level AND fast line[t] > signal level
+Short: fast line[t-1] > trailing line[t-1] AND fast line[t] < trailing line[t] OR fast line[t-1] > signal level AND fast line[t] < signal level

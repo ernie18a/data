@@ -1,0 +1,5 @@
+Calculation: TrendlessAG histogram = smooth(normalize(price − moving average(price), using the rolling ranked absolute deviations over a lookback), using a second smoothing average); calculate on the indicator timeframe, which may be higher, lower, or equal to the chart timeframe. The EA reads the bar at its configured signal offset and the two preceding bars.
+Long: histogram two bars back > histogram one bar back AND histogram one bar back < histogram at signal offset
+Short: histogram two bars back < histogram one bar back AND histogram one bar back > histogram at signal offset
+Exit: long, histogram two bars back < histogram one bar back AND histogram one bar back > histogram at signal offset
+Exit: short, histogram two bars back > histogram one bar back AND histogram one bar back < histogram at signal offset

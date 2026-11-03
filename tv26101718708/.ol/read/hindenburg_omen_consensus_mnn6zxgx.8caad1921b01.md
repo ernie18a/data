@@ -1,0 +1,4 @@
+Calculation: McClellan Oscillator = 19-period EMA minus 39-period EMA of 1000 × (advancing issues − declining issues) / (advancing issues + declining issues)
+Short: At least one enabled universe has both its new 52-week high count and new 52-week low count at or above their respective percentage thresholds of its issue-count denominator, and its benchmark index is at or above its value 50 trading days earlier
+Short: At least the minimum consensus number of enabled universes have triggered within the signal window, and the McClellan Oscillator is below zero
+Exit: Long, at least the minimum consensus number of enabled universes have triggered within the signal window AND the McClellan Oscillator is below zero

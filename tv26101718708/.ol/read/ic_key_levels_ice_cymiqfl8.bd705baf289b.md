@@ -1,0 +1,2 @@
+Long: low < previous bar low AND high > previous bar high AND close > previous bar high AND lower wick > upper wick
+Short: high > previous bar high AND low < previous bar low AND close < previous bar low AND upper wick > lower wick

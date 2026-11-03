@@ -1,0 +1,3 @@
+Calculation: MFI candle = For each bar, calculate MFI separately using the open, high, low, and close price series: over a lookback, sum volume × current price for each rise from the previous price as positive flow and each fall as negative flow; MFI = 100 − 100/(1 + positive flow/negative flow), or 100 when negative flow is zero. Candle open and close are MFI(open) and MFI(close); candle high is the maximum of MFI(high), open, and close; candle low is the minimum of MFI(low), open, and close.
+Long: MFI candle close > MFI candle open
+Short: MFI candle close < MFI candle open

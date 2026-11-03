@@ -1,0 +1,3 @@
+Calculation: VWAP = session volume-weighted average of HLC3 (high + low + close) / 3
+Long: shorter-lookback EMA crosses above VWAP AND shorter-lookback EMA > longer-lookback EMA AND bar time is within the configured session AND ADX >= configured minimum
+Short: shorter-lookback EMA crosses below VWAP AND shorter-lookback EMA < longer-lookback EMA AND bar time is within the configured session AND ADX >= configured minimum

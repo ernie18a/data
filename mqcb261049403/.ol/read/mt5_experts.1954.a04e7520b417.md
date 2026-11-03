@@ -1,0 +1,5 @@
+Calculation: BlauCSI = 100 × triple-smoothed momentum / triple-smoothed range, where momentum is the selected applied price minus the selected applied price from the configured lookback bars earlier, range is the highest high minus the lowest low over that lookback, and both series are smoothed successively using the same method and three configured smoothing lengths.
+Long: (breakthrough mode AND BlauCSI on the older completed indicator-timeframe bar > 0 AND BlauCSI on the newer completed indicator-timeframe bar ≤ 0) OR (twist mode AND BlauCSI on the middle of three consecutive completed indicator-timeframe bars < its older value AND its newer value ≥ its middle value)
+Short: (breakthrough mode AND BlauCSI on the older completed indicator-timeframe bar < 0 AND BlauCSI on the newer completed indicator-timeframe bar ≥ 0) OR (twist mode AND BlauCSI on the middle of three consecutive completed indicator-timeframe bars > its older value AND its newer value ≤ its middle value)
+Exit: short, same condition as Long
+Exit: long, same condition as Short

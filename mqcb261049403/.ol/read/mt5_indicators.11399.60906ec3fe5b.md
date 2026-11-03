@@ -1,0 +1,4 @@
+Calculation: Long test price = close when close-price mode is enabled; otherwise low
+Calculation: Short test price = close when close-price mode is enabled; otherwise high
+Long: On the configured higher timeframe’s still-forming bar, if the previous bar’s state is bullish, long test price > any of the lows in the preceding lookback; if the previous bar’s state is bearish, short test price >= all of the highs in the preceding lookback; if no previous state exists, close > open
+Short: On the configured higher timeframe’s still-forming bar, if the previous bar’s state is bearish, short test price < any of the highs in the preceding lookback; if the previous bar’s state is bullish, long test price <= all of the lows in the preceding lookback; if no previous state exists, close <= open

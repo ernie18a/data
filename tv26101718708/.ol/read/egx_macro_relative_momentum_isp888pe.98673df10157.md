@@ -1,0 +1,4 @@
+Calculation: Relative ROC = percentage change in equity close from the previous completed bar minus percentage change in currency exchange rate close from the previous completed bar, both on the selected timeframe (which may be higher or lower than the chart timeframe).
+Calculation: Accumulated relative ROC = sum of relative ROC over a rolling lookback on the selected timeframe.
+Long: Accumulated relative ROC > 0 AND equity close > previous close AND currency exchange rate close < previous close, using the last completed bars on the selected timeframe
+Short: equity close < previous close AND currency exchange rate close > previous close, using the last completed bars on the selected timeframe

@@ -1,0 +1,6 @@
+Calculation: Normalized momentum = rescale to [-1, 1] the short-term EMA minus long-term EMA, divided by the long-term EMA, over a lookback; the short-term EMA uses a shorter period than the long-term EMA.
+Calculation: Smoothed momentum = EMA of normalized momentum.
+Long: close > long-term trend EMA AND short-term trend EMA > medium-term trend EMA AND normalized momentum > 0 AND normalized momentum > smoothed momentum AND normalized momentum < overbought threshold AND volume >= its average over a longer lookback multiplied by a surge factor AND close > open AND previous signal is not long
+Short: close < long-term trend EMA AND short-term trend EMA < medium-term trend EMA AND normalized momentum < 0 AND normalized momentum < smoothed momentum AND normalized momentum > oversold threshold AND volume >= its average over a longer lookback multiplied by a surge factor AND close < open AND previous signal is not short
+Exit: long, normalized momentum < 0 AND normalized momentum < smoothed momentum OR normalized momentum >= overbought threshold AND normalized momentum < smoothed momentum
+Exit: short, normalized momentum > 0 AND normalized momentum > smoothed momentum OR normalized momentum <= oversold threshold AND normalized momentum > smoothed momentum

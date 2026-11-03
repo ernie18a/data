@@ -1,0 +1,2 @@
+Calculation: Prior-bar highest high = highest high over the lookback bars before the current bar
+Long: During the midday trading window AND close crosses above the prior-bar highest high AND volume > its moving average

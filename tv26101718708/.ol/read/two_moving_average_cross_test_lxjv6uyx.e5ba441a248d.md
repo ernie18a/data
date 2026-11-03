@@ -1,0 +1,5 @@
+Calculation: Fast moving average = selected moving-average method applied to its selected source over the shorter lookback on the selected timeframe; use the last completed bar when repainting is disabled and the forming bar when enabled
+Calculation: Slow moving average = selected moving-average method applied to its selected source over the longer lookback on the selected timeframe; use the last completed bar when repainting is disabled and the forming bar when enabled
+Calculation: Long stop price = low of the long-entry bar × (1 − stop percentage)
+Long: no position AND fast moving average crosses above slow moving average AND RSI of close is greater than its minimum threshold
+Exit: long, slow moving average crosses above fast moving average AND RSI of its selected source is below its minimum threshold OR RSI of its selected source is above its maximum threshold OR current low is at or below the long stop price

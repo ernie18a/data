@@ -1,0 +1,4 @@
+Calculation: Flow = EMA of volume × close-location pressure, normalized by average volume over a longer lookback; close-location pressure is ((close − low) − (high − close)) / max(high − low, minimum tick). Use the selected flow timeframe, whether higher or lower than the chart timeframe; use its still-forming bar in realtime and its last completed bar historically.
+Calculation: Flow momentum = current Flow − prior Flow bar on the selected flow timeframe.
+Long: Flow ≥ strong-flow threshold OR (Flow > −strong-flow threshold AND Flow < strong-flow threshold AND Flow momentum > 0)
+Short: Flow ≤ −strong-flow threshold OR (Flow > −strong-flow threshold AND Flow < strong-flow threshold AND Flow momentum ≤ 0)

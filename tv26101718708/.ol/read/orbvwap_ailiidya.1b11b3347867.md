@@ -1,0 +1,5 @@
+Calculation: Opening range high/low = highest high/lowest low from the first regular-session bar through the configured opening-range window; lock the levels when the window elapses and reset them each session.
+Calculation: Session VWAP = cumulative (HLC3 × volume) divided by cumulative volume, reset each regular session.
+Calculation: Average volume = simple moving average of volume over a lookback.
+Long: Opening range is locked AND no earlier long signal this session AND current close > opening range high AND previous close <= opening range high AND close > session VWAP AND volume >= average volume × confirmation multiple.
+Short: Opening range is locked AND no earlier short signal this session AND current close < opening range low AND previous close >= opening range low AND close < session VWAP AND volume >= average volume × confirmation multiple.

@@ -1,0 +1,19 @@
+Calculation: ATR = average true range over a lookback.
+Calculation: Pattern boundaries = converging lines through confirmed swing highs (upper) and swing lows (lower); select the highest-scoring valid triangle or wedge candidate. Require ordered, separated pivot anchors; sufficient duration and starting height; narrowing width and future apex; alternating anchors; minimum touches on both boundaries; sufficient price containment; a structural anchor; and a score at or above a minimum. For flat-sided triangles, also require clustered pivots on the flat side with sufficient time spread and a recent touch. For wedges, require both slopes to point the same way, converge, and meet minimum slope separation and relative-slope criteria.
+Calculation: Breakout buffer = greater of a percentage of the boundary price, an ATR multiple, and a minimum tick buffer.
+Calculation: Breakout retest tolerance = greater of a percentage of the breakout level and an ATR fraction; failure tolerance = greater of an ATR multiple and a percentage of the breakout level.
+Calculation: Breakout progress = elapsed pattern bars as a percentage of the bars from pattern start to projected apex.
+Calculation: Symmetric-triangle confirmation levels = the greater of upper boundary plus breakout buffer and latest internal swing high plus buffer (upside); the lesser of lower boundary minus buffer and latest internal swing low minus buffer (downside). Other patterns use the buffered boundary.
+Calculation: MTF bias = weighted RSI and relative-volume/candle-direction bias from the last completed chart-timeframe bar (shorter lookback) and the last completed bars of two higher timeframes (longer lookback); the higher contexts have greater weights. Relative volume is volume divided by its moving average.
+Long: Valid ascending triangle or falling wedge.
+Long: Valid ascending triangle, low <= lower boundary + ATR proximity allowance, close >= lower boundary, and the buffered lower-boundary entry/stop pair has a stop below entry and risk within both percentage and ATR limits.
+Long: Valid pattern, breakout progress >= minimum, close > upside confirmation level, pattern is ascending triangle, symmetric triangle, or falling wedge, and no opposite-direction breakout invalidates it.
+Long: Confirmed upside breakout is active, is not failed, retest has occurred within the allowed bars after breakout, and the buffered breakout-level entry/stop pair has a stop below entry and risk within both percentage and ATR limits. Retest requires low <= breakout level + retest tolerance and close >= breakout level - retest tolerance.
+Long: Valid symmetric triangle and MTF bias score >= its positive threshold.
+Short: Valid descending triangle or rising wedge.
+Short: Valid descending triangle, high >= upper boundary - ATR proximity allowance, close <= upper boundary, and the buffered upper-boundary entry/stop pair has a stop above entry and risk within both percentage and ATR limits.
+Short: Valid pattern, breakout progress >= minimum, close < downside confirmation level, pattern is descending triangle, symmetric triangle, or rising wedge, and no opposite-direction breakout invalidates it.
+Short: Confirmed downside breakout is active, is not failed, retest has occurred within the allowed bars after breakout, and the buffered breakout-level entry/stop pair has a stop above entry and risk within both percentage and ATR limits. Retest requires high >= breakout level - retest tolerance and close <= breakout level + retest tolerance.
+Short: Valid symmetric triangle and MTF bias score <= its negative threshold.
+Exit: long, close < upside breakout level - failure tolerance within the retest monitoring period.
+Exit: short, close > downside breakout level + failure tolerance within the retest monitoring period.

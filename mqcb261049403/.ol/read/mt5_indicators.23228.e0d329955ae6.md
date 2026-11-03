@@ -1,0 +1,5 @@
+Calculation: Fisher value = 0.5 × ln(ratio) + 0.5 × prior Fisher value, where value = (selected applied price − rolling low) / (rolling high − rolling low) − 0.5 + 0.67 × prior value; rolling high and low are the highest high and lowest low over the lookback. If rolling high equals rolling low, increase rolling high by one minimum price increment. Set ratio = (1 + value) / (1 − value); if ratio < 0.0000001, use 1.
+Calculation: Volume-weighted Fisher oscillator = 100 × selected moving average of (Fisher value × selected volume), where selected volume is tick volume or real volume.
+Calculation: Smoothed volume = selected moving average of selected volume.
+Long: Volume-weighted Fisher oscillator > upper threshold × smoothed volume AND volume-weighted Fisher oscillator ≥ its previous-bar value OR previous-bar volume-weighted Fisher oscillator < 0 AND volume-weighted Fisher oscillator ≥ 0
+Short: Volume-weighted Fisher oscillator < lower threshold × smoothed volume AND volume-weighted Fisher oscillator ≤ its previous-bar value OR previous-bar volume-weighted Fisher oscillator > 0 AND volume-weighted Fisher oscillator ≤ 0

@@ -1,0 +1,3 @@
+Calculation: Session VWAP = cumulative sum(close × volume) / cumulative volume since session start; calculate on the chart timeframe and each configured timeframe. For a higher timeframe, use its last completed bar; for an equal timeframe, use the current chart bar.
+Long: close > chart-timeframe VWAP AND close > each configured-timeframe VWAP AND current fast EMA > current slow EMA AND previous fast EMA <= previous slow EMA
+Short: close < chart-timeframe VWAP AND close < each configured-timeframe VWAP AND current fast EMA < current slow EMA AND previous fast EMA >= previous slow EMA

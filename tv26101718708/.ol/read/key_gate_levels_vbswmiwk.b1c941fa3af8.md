@@ -1,0 +1,5 @@
+Calculation: Bullish candidate = a calculation-timeframe bar’s close when the highest high over the next N bars minus that close exceeds the acceleration threshold × ATR at that bar; force = that move / ATR
+Calculation: Bearish candidate = a calculation-timeframe bar’s close when that close minus the lowest low over the next N bars exceeds the acceleration threshold × ATR at that bar; force = that move / ATR
+Calculation: Gate level = cluster candidate prices within cluster-width × latest ATR, using a running average price; track hit count, total force, and signed force (bullish force positive, bearish force negative). Use completed calculation-timeframe bars; the calculation timeframe is the chart timeframe or the selected custom timeframe, which may be higher or lower than the chart timeframe.
+Long: Gate level is among the top configured levels by total force AND hit count ≥ timeframe-scaled minimum AND signed force / total force > bias threshold
+Short: Gate level is among the top configured levels by total force AND hit count ≥ timeframe-scaled minimum AND signed force / total force < −bias threshold

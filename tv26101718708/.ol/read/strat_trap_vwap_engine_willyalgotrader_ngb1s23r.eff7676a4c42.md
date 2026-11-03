@@ -1,0 +1,16 @@
+Calculation: STRAT bar type = inside if high <= previous high AND low >= previous low; outside if high > previous high AND low < previous low; 2U if high > previous high AND low >= previous low; otherwise 2D if low < previous low AND high <= previous high.
+Calculation: Confirmed setup pattern = one of: 2D-2U, 2U-2D, 2U-2U, 2D-2D, 3-2U, 3-2D, 3-2D-2U, 3-2U-2D, 3-1-2U, 3-1-2D, 2D-1-2U, 2U-1-2D, 2D-1-2D, 2U-1-2U, 1-2D-2U, 1-2U-2D; extended patterns: 2U-2U-2U, 2D-2D-2D, 2U-2U-2D-2U, 2D-2D-2U-2D; or an outside bar closing above the previous high or below the previous low. Pattern direction follows the final directional bar, except reversal patterns 2D-2U, 2U-2D, 3-2D-2U, 3-2U-2D, 2D-1-2U, 2U-1-2D, 1-2D-2U, and 1-2U-2D, whose direction follows the final bar.
+Calculation: PVTE regime = enter bullish when close crosses above the upper outer band; enter bearish when close crosses below the lower outer band; leave bullish for neutral when close crosses below the lower inner band; leave bearish for neutral when close crosses above the upper inner band. Outer bands are the selected moving average of close plus/minus ATR; inner bands use the same basis plus/minus ATR times a smaller multiplier.
+Calculation: ATR = average true range over a lookback.
+Calculation: Risk distance = absolute difference between entry price and structural stop; targets are entry price plus/minus risk distance times the selected target multiples, in the position direction.
+Long: A confirmed bullish STRAT pattern completes OR, while a bullish setup is pending, high > setup-bar high and close >= setup-bar low OR a 2D bar closes above open OR lower wick >= bar range times the selected fraction and bar type is not inside; for trade entries, also require bullish PVTE regime (or neutral if allowed), any enabled volume and higher-timeframe alignment filters to pass, and risk distance within the selected maximum.
+Short: A confirmed bearish STRAT pattern completes OR, while a bearish setup is pending, low < setup-bar low and close <= setup-bar high OR a 2U bar closes below open OR upper wick >= bar range times the selected fraction and bar type is not inside; for trade entries, also require bearish PVTE regime (or neutral if allowed), any enabled volume and higher-timeframe alignment filters to pass, and risk distance within the selected maximum.
+Calculation: Higher-timeframe alignment = count higher-than-chart-timeframe bars whose still-forming close is >= open for long alignment or < open for short alignment.
+Calculation: Volume confirmation = entry-bar volume > moving average of volume over a lookback times a threshold; bypass when volume data is absent.
+Exit: long, low <= active stop OR high >= third profit target.
+Exit: short, high >= active stop OR low <= third profit target.
+Long: After a pending bullish setup, cancel if close < setup-bar low; expire after the selected number of bars without a trigger.
+Short: After a pending bearish setup, cancel if close > setup-bar high; expire after the selected number of bars without a trigger.
+Calculation: Break-even stop = entry price after first profit target is touched.
+Exit: long, after first profit target was touched on an earlier bar, low <= entry price.
+Exit: short, after first profit target was touched on an earlier bar, high >= entry price.

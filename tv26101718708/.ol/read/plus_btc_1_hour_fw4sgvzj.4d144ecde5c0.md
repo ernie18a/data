@@ -1,0 +1,7 @@
+Calculation: Stochastic RSI K = the RSI’s stochastic value over a lookback, smoothed with a shorter lookback
+Calculation: Stochastic RSI D = Stochastic RSI K smoothed with a shorter lookback
+Calculation: VIX Fix = (highest close over a lookback − current low) / highest close over that lookback × 100
+Calculation: Short stop = the greater of the highest high over a short lookback and current close plus an ATR multiple
+Calculation: Short target = current close − reward/risk multiple × (Short stop − current close)
+Short: Stochastic RSI K crossed below the overbought threshold AND Stochastic RSI K is below Stochastic RSI D AND Stochastic RSI K crossed above the overbought threshold within the configured recent-bar lookback AND VIX Fix is below its configured threshold AND current close is below the EMA calculated on the last completed higher-timeframe bar AND the configured session filter passes if enabled AND the number of chart bars since the last short entry exceeds the configured cooldown
+Exit: short, current high reaches or exceeds the Short stop OR current low reaches or falls below the Short target OR, when the configured risk threshold is first reached, current high reaches or exceeds the adjusted stop (the entry price, or the lesser of entry price and current close plus an ATR multiple when ATR trailing is enabled)

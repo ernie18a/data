@@ -1,0 +1,4 @@
+Long: SuperTrend direction changes from bearish on the previous chart bar to bullish on the current chart bar AND ADX is at least its minimum threshold AND the last completed higher-timeframe SuperTrend is bullish
+Short: SuperTrend direction changes from bullish on the previous chart bar to bearish on the current chart bar AND ADX is at least its minimum threshold AND the last completed higher-timeframe SuperTrend is bearish
+Exit: long, low <= entry price × (1 − stop-loss %) OR high >= entry price × (1 + take-profit %)
+Exit: short, high >= entry price × (1 + stop-loss %) OR low <= entry price × (1 − take-profit %)

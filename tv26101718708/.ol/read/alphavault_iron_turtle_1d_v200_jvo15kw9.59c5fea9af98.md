@@ -1,0 +1,3 @@
+Calculation: Long-term simple moving average = simple moving average of chart-timeframe closes through the last completed chart-timeframe bar; its lookback is longer than the exponential moving average's.
+Calculation: Exponential moving average = exponential moving average of higher-timeframe closes through the last completed higher-timeframe bar.
+Long: Current chart-timeframe close < long-term simple moving average AND current chart-timeframe close < exponential moving average AND (no previous buy OR the configured purchase interval has elapsed since the previous buy)

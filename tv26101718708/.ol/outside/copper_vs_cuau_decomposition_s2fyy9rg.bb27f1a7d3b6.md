@@ -1,0 +1,1 @@
+Using copper and gold data, compare the normalized copper trend with the normalized copper-to-gold ratio. When copper’s relative strength over the ratio is positive and increasing, lean long copper. When it is negative and decreasing, fade or avoid copper longs based on the ratio. No explicit short or exit condition is specified.

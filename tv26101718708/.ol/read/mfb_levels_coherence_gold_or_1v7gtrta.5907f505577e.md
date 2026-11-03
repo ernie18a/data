@@ -1,0 +1,2 @@
+Long: A bullish FVG exists where the low of a bar is above the high two bars earlier AND, on a later bar, price intersects the gap and closes at or above its lower boundary AND, on a subsequent bar with no qualifying touch, the close is above the gap’s upper boundary
+Short: A bearish FVG exists where the high of a bar is below the low two bars earlier AND, on a later bar, price intersects the gap and closes at or below its upper boundary AND, on a subsequent bar with no qualifying touch, the close is below the gap’s lower boundary

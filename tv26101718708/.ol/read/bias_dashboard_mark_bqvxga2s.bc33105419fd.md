@@ -1,0 +1,9 @@
+Calculation: Trend direction = bullish when the latest two pivot highs and latest two pivot lows are both rising; bearish when both are falling; otherwise neutral.
+Calculation: Trend strength = strong when the absolute linear-regression slope over the longer lookback, divided by ATR, meets the strong threshold and trend direction is bullish or bearish; moderate when that ratio is between the lower and strong thresholds and trend direction is bullish or bearish; otherwise weak.
+Calculation: Momentum/volume level by direction = count candles closing in that direction across the recent momentum bars; qualify the direction when the count reaches the required majority. Strong level when the average candle-body-to-range ratio and current volume relative to its moving average both meet their thresholds; otherwise moderate when both meet their lower thresholds; otherwise weak. Nonqualifying direction has level zero.
+Calculation: EMA alignment = bullish when the shorter-period EMA is above the medium-period EMA and the medium-period EMA is above the longer-period EMA; bearish when both comparisons are reversed; otherwise mixed.
+Calculation: VWAP vote by direction = +1 when close is on that side of VWAP and VWAP slope is in that direction; -1 when close is on the opposite side or VWAP slope is opposite; otherwise 0. VWAP slope compares current VWAP with an earlier VWAP.
+Calculation: EMA vote by direction = +1 when EMA alignment agrees with that direction, -1 when it opposes, otherwise 0.
+Calculation: Base conviction = for strong, moderate, or weak trend respectively, assign [4,3,2], [3,2,1], or [2,1,0] for strong, moderate, or weak directional momentum/volume; assign 0 if trend direction does not match. Adjust by the sign of the sum of VWAP and EMA votes, then clamp the result to the range 0–4.
+Long: Long conviction > short conviction AND long conviction > 0.
+Short: Short conviction > long conviction AND short conviction > 0.

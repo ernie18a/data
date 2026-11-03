@@ -1,0 +1,3 @@
+Calculation: volume spike = current volume / simple moving average of volume over the lookback >= spike multiplier AND abs(close - open) / open * 100 >= minimum price move percentage
+Long: an enabled deal has a nonzero date matching the bar's year, month, and day, type Buy, and quantity >= minimum deal quantity AND (volume spike is not required OR volume spike) AND (price move is not required OR abs(close - open) / open * 100 >= minimum price move percentage)
+Short: an enabled deal has a nonzero date matching the bar's year, month, and day, type other than Buy, and quantity >= minimum deal quantity AND (volume spike is not required OR volume spike) AND (price move is not required OR abs(close - open) / open * 100 >= minimum price move percentage)

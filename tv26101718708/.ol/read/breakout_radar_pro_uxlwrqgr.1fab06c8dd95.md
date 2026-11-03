@@ -1,0 +1,3 @@
+Calculation: Current range percentage = (highest high over the lookback − lowest low over the lookback) / lowest low over the lookback
+Calculation: Previous range percentage = (highest high over the same-length lookback ending one lookback ago − lowest low over that lookback) / lowest low over that lookback
+Long: Close > highest high over the prior lookback bars AND current range percentage ≤ maximum range threshold AND current range percentage < previous range percentage × squeeze factor AND current volume SMA < volume SMA from one lookback ago

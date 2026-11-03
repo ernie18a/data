@@ -1,0 +1,1 @@
+Compute a weighted composite of percentile-ranked price, on-chain, and cross-market indicators, then smooth it. Low scores signal buying or accumulation; middle scores signal neutral/caution; rising high scores signal reducing exposure, and the highest scores signal selling or distribution. No short-entry rule is defined.

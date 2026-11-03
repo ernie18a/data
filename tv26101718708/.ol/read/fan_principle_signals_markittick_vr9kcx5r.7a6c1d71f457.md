@@ -1,0 +1,7 @@
+Calculation: Confirmed swing low/high = a low/high strictly below/above the lows/highs of the parameterized number of bars on each side; confirmed after the bars on both sides have completed.
+Calculation: Valid uptrend/downtrend fan = the four most recent confirmed swing lows/highs in chronological order, with the first leg's absolute price change from the origin at least the parameterized minimum percentage and the origin no older than the parameterized maximum lookback.
+Calculation: Third fan line = line from the oldest of the four pivots to the newest, projected forward using its price change divided by bars between those pivots.
+Long: Valid uptrend fan AND previous completed close > third fan line at that bar AND close two bars ago <= third fan line at that bar AND (volume filter disabled OR current volume > its moving average × parameterized multiplier) AND (higher-timeframe filter disabled OR previous completed close > the last completed bar's close on a higher timeframe)
+Short: Valid downtrend fan AND previous completed close < third fan line at that bar AND close two bars ago >= third fan line at that bar AND (volume filter disabled OR current volume > its moving average × parameterized multiplier) AND (higher-timeframe filter disabled OR previous completed close < the last completed bar's close on a higher timeframe)
+Exit: long, short-entry condition
+Exit: short, long-entry condition

@@ -1,0 +1,3 @@
+Calculation: Camarilla support and resistance levels = Using high, low, and close of the last completed higher-timeframe bar, let range = high − low. S1–S4 = close − range × (1.1/12, 1.1/6, 1.1/4, 1.1/2), respectively; R1–R4 = close + range × (1.1/12, 1.1/6, 1.1/4, 1.1/2), respectively; R5 = (high/low) × close; S5 = close − (R5 − close). Selected support and resistance are chosen independently from their respective levels.
+Long: chart close > selected resistance
+Short: chart close < selected support

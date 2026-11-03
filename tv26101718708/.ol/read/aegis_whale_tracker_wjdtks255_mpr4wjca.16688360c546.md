@@ -1,0 +1,5 @@
+Calculation: Volume-weighted candle pressure = volume × ((close − low) − (high − close)) / max(high − low, minimum price increment)
+Calculation: Smoothed volume-weighted candle pressure = EMA(volume-weighted candle pressure, lookback)
+Calculation: Maximum opposing volume = maximum volume among the previous lookback bars whose close is lower than the preceding bar’s close for long decisions, or higher for short decisions
+Long: close > previous close OR volume > maximum opposing volume AND close > previous close OR volume-weighted candle pressure > smoothed volume-weighted candle pressure OR volume-weighted candle pressure > smoothed volume-weighted candle pressure AND volume-weighted candle pressure > 1.5 × previous bar’s smoothed volume-weighted candle pressure
+Short: close < previous close OR volume > maximum opposing volume AND close < previous close OR volume-weighted candle pressure < smoothed volume-weighted candle pressure OR volume-weighted candle pressure < smoothed volume-weighted candle pressure AND volume-weighted candle pressure < 1.5 × previous bar’s smoothed volume-weighted candle pressure

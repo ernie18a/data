@@ -1,0 +1,1 @@
+Calculate the market breadth ratio as (advancing issues ÷ declining issues) ÷ (advancing volume ÷ declining volume). When it rises above an upper threshold, take a short position; when it falls below a lower threshold, take a long position. Between thresholds, retain the previous position, starting neutral. If reverse mode is enabled, swap long and short signals.

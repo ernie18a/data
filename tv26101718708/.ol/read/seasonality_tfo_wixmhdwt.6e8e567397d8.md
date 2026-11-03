@@ -1,0 +1,3 @@
+Calculation: Average seasonal path = for each bar position within the year, average its percentage return across years; starting at 1, cumulatively multiply by 1 plus each position’s average return to form the projected path. Use bars at the chart timeframe; include the current bar while it is forming.
+Long: The projected path value at the current year position is less than or equal to every value within the pivot lookback on both sides
+Short: The projected path value at the current year position is greater than or equal to every value within the pivot lookback on both sides

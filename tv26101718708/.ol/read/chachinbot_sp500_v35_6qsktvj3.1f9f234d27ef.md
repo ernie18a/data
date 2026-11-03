@@ -1,0 +1,11 @@
+Calculation: Fast EMA = exponential moving average of close with a shorter lookback than the medium and slow EMAs
+Calculation: Medium EMA = exponential moving average of close with a longer lookback than the fast EMA and shorter lookback than the slow EMA
+Calculation: Slow EMA = exponential moving average of close with a longer lookback than the fast and medium EMAs
+Calculation: Higher-timeframe medium EMA = exponential moving average of close on a higher timeframe, using the bar still forming in real time (with no future data on historical bars)
+Calculation: RSI = relative strength index of close
+Calculation: Volume average = simple moving average of volume
+Calculation: ADX = average directional index
+Calculation: ATR = average true range
+Calculation: Pullback setup = state armed when trend, higher-timeframe, RSI, volume, session, and ADX filters pass and close crosses the fast EMA in the trend direction; reset after its signal, when the trend breaks, when the configured bar window expires, or, before a pullback, when close extends beyond the configured ATR distance from the fast EMA
+Long: Fast EMA > medium EMA AND medium EMA > slow EMA AND close > higher-timeframe medium EMA AND RSI > 50 AND RSI < configured overbought level AND volume > volume average × configured multiplier AND ADX >= configured minimum AND within the configured session AND outside the configured lunch period AND close crosses above fast EMA (arm long setup); OR long setup is armed AND low <= fast EMA + ATR × configured pullback depth (pullback marking); OR long setup is armed AND a pullback has occurred AND close > open AND candle body / candle range >= configured minimum percentage AND close > fast EMA (long signal)
+Short: Fast EMA < medium EMA AND medium EMA < slow EMA AND close < higher-timeframe medium EMA AND RSI < 50 AND RSI > configured oversold level AND volume > volume average × configured multiplier AND ADX >= configured minimum AND within the configured session AND outside the configured lunch period AND close crosses below fast EMA (arm short setup); OR short setup is armed AND high >= fast EMA - ATR × configured pullback depth (pullback marking); OR short setup is armed AND a pullback has occurred AND close < open AND candle body / candle range >= configured minimum percentage AND close < fast EMA (short signal)

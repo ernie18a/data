@@ -1,0 +1,5 @@
+Calculation: Relative volume = current scanner-bar volume divided by the moving average of scanner-bar volume over a longer lookback; use the scanner timeframe (same as chart by default, otherwise configurable higher or lower timeframe) and its current, possibly still-forming bar. If the average is zero, use 1 as the denominator.
+Calculation: Percent change = (current scanner-bar close − prior scanner-bar close) / prior scanner-bar close × 100; use the scanner timeframe and its current, possibly still-forming bar.
+Calculation: ATR percentage = absolute change from prior macro-bar close to current macro-bar close / macro-timeframe ATR × 100; use the current, possibly still-forming macro bar. If ATR is zero, use 1 as the denominator.
+Long: Relative volume ≥ its threshold AND percent change > 0 AND ATR percentage < its warning threshold AND macro-timeframe close > its EMA.
+Short: Relative volume ≥ its threshold AND ATR percentage ≥ its exhaustion threshold

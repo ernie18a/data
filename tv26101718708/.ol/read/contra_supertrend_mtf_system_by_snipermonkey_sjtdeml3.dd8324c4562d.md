@@ -1,0 +1,4 @@
+Long: flat AND within the entry window AND (entry-timeframe Supertrend flips from downtrend to uptrend OR the entry window has just opened while the entry-timeframe Supertrend is up) AND confirmation-timeframe Supertrend is in a downtrend
+Short: flat AND within the entry window AND (entry-timeframe Supertrend flips from uptrend to downtrend OR the entry window has just opened while the entry-timeframe Supertrend is down) AND confirmation-timeframe Supertrend is in an uptrend
+Exit: long, entry-timeframe Supertrend flips from uptrend to downtrend OR the force-exit time is reached
+Exit: short, entry-timeframe Supertrend flips from downtrend to uptrend OR the force-exit time is reached

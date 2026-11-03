@@ -1,0 +1,3 @@
+Calculation: Compressed base candle = high − low ≤ base-range threshold × ATR
+Long: A valid run of compressed base candles is followed by an upward departure reaching the departure threshold × ATR above the base high within the departure window, before expiry or a close back inside the base, and the downward departure threshold is not reached on the qualifying bar
+Short: A valid run of compressed base candles is followed by a downward departure reaching the departure threshold × ATR below the base low within the departure window, before expiry or a close back inside the base, and the upward departure threshold is not reached on the qualifying bar

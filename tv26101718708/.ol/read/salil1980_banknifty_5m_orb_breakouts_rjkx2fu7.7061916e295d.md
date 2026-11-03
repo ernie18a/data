@@ -1,0 +1,3 @@
+Calculation: Opening range high/low = highest high / lowest low during the session’s opening range; fixed once the range is complete
+Long: (close crosses above chart-timeframe VWAP AND chart-timeframe RSI > 50) OR (chart-timeframe RSI crosses above 50 AND close > chart-timeframe VWAP) OR (opening range is complete AND close crosses above opening range high)
+Short: (close crosses below chart-timeframe VWAP AND chart-timeframe RSI < 50) OR (opening range is complete AND close crosses below opening range low)

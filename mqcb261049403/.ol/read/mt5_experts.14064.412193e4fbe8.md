@@ -1,0 +1,5 @@
+Calculation: Schaff DeMarker Trend Cycle = On the configured indicator timeframe (same as, higher than, or lower than the chart timeframe), calculate the shorter-period DeMarker minus the longer-period DeMarker. Apply a stochastic normalization over a shared cycle lookback, scaling to 0–100, then smooth each value as 0.5 × current raw value + 0.5 × previous smoothed value. Apply a second stochastic normalization over the same lookback to the first smoothed series, scaling to −100–100, and smooth it the same way. If either normalization range is zero, carry forward its previous value. Use the last completed bar and the completed bar immediately before it.
+Long: older value ≤ the upper level AND (last completed value > the upper level OR (last completed value > 0 AND last completed value ≥ older value))
+Short: older value ≥ the lower level AND last completed value < the lower level
+Exit: short, older value ≤ the upper level AND (last completed value > the upper level OR (last completed value > 0 AND last completed value ≥ older value))
+Exit: long, older value ≥ the lower level AND last completed value < the lower level

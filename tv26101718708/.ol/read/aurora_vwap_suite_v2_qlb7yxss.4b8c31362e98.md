@@ -1,0 +1,4 @@
+Calculation: Reference band width = selected multiplier × selected reference distance (weighted price dispersion, ATR, or 1% of absolute reference price)
+Calculation: Test tolerance = ATR × selected tolerance multiplier
+Long: close crosses above the selected VWAP reference OR close > reference + test tolerance AND low <= reference + test tolerance AND low >= reference - test tolerance OR close crosses above the selected reference’s upper band
+Short: close crosses below the selected VWAP reference OR close < reference - test tolerance AND high >= reference - test tolerance AND high <= reference + test tolerance OR close crosses below the selected reference’s lower band

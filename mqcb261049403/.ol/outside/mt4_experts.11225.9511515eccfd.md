@@ -1,0 +1,1 @@
+For each open position in scope, close it when its floating loss as a fraction of account balance exceeds the configured loss threshold, or when its floating profit as a fraction of account balance reaches or exceeds the configured profit threshold. Make no entry decisions.

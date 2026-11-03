@@ -1,0 +1,4 @@
+Calculation: Call Vega momentum = EMA of the change in Black–Scholes Vega over the shorter lookback; Black–Scholes Vega = close × φ(d1) × √T / 100, where d1 = [ln(close / strike) + (risk-free rate + call IV² / 2) × T] / (call IV × √T), T is time to expiry in years, and φ is the standard normal density. Strike is either a configured manual strike or close rounded to a configured strike increment.
+Calculation: Put Vega momentum = EMA of the change in Black–Scholes Vega over the longer lookback, using put IV; its EMA smoothing lookback is longer than the call momentum's. Use the same strike, risk-free rate, and time to expiry as for Call Vega momentum.
+Long: Call Vega momentum > Put Vega momentum OR (Call Vega momentum crosses above Put Vega momentum AND Call Vega momentum > 0)
+Short: Put Vega momentum > Call Vega momentum OR (Put Vega momentum crosses above Call Vega momentum AND Put Vega momentum > 0)

@@ -1,0 +1,3 @@
+Calculation: Forecast oscillator = (selected applied price − forecast value) / forecast value × 100, where forecast value = 6 / (L × (L + 1)) × Σ[i = 1…L]((i − (L + 1) / 3) × selected applied price from L − i bars ago); calculate on the chart timeframe or a same-or-higher selected timeframe, using its still-forming bar
+Long: Forecast oscillator > its T3-smoothed value
+Short: Forecast oscillator < its T3-smoothed value

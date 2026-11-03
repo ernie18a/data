@@ -1,0 +1,4 @@
+Calculation: Absorption ratio z-score = (volume / max(high − low, minimum price increment) − rolling mean of that ratio) / rolling standard deviation of that ratio, using the normalization lookback
+Calculation: Smoothed absorption z-score = simple moving average of the absorption ratio z-score, using the smoothing lookback
+Long: Smoothed absorption z-score > absorption threshold AND close < simple moving average of close over the trend lookback AND close < close from the trend lookback bars earlier
+Short: Smoothed absorption z-score > absorption threshold AND close > simple moving average of close over the trend lookback AND close > close from the trend lookback bars earlier

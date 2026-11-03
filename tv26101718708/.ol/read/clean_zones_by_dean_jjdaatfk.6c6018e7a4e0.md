@@ -1,0 +1,6 @@
+Calculation: Higher-timeframe highs/lows = highs/lows of three higher timeframes ordered longest to shortest, using each still-forming bar.
+Calculation: FVG active = true from the first chart bar whose high exceeds the high two bars earlier and whose low is below the low two bars earlier; remains true thereafter.
+Long: close > simple moving average of close with a longer lookback than the breakout lookback AND close crosses above the highest close in the prior shorter-lookback window AND FVG active AND close > the low of each of the three higher timeframes AND close > simple moving average of close AND entries taken today < configured daily cap AND bar time is within the configured session AND position is flat or short.
+Short: close < simple moving average of close AND close crosses below the lowest close in the prior shorter-lookback window AND FVG active AND close < the high of each of the three higher timeframes AND entries taken today < configured daily cap AND bar time is within the configured session AND position is flat or long.
+Exit: long, low <= entry price - average true range × configured stop multiplier OR high >= entry price + average true range × configured target multiplier.
+Exit: short, high >= entry price + average true range × configured stop multiplier OR low <= entry price - average true range × configured target multiplier.

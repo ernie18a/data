@@ -1,0 +1,4 @@
+Calculation: OHLC average = (open + high + low + close) / 4
+Calculation: Profitable-close count = cumulative count since entry of closes above the entry price, starting after the first bar in the position
+Long: No open position AND (close < longest-lookback SMA AND close <= shortest-lookback SMA AND prior close > prior shortest-lookback SMA AND open > longer-lookback EMA AND middle-lookback SMA < its prior value OR close < shorter-lookback EMA AND open > OHLC average AND volume <= prior volume AND (close < min(prior open, prior close) OR close > max(prior open, prior close)))
+Exit: Long, bars held minus one >= maximum holding bars OR Profitable-close count >= maximum profitable closes

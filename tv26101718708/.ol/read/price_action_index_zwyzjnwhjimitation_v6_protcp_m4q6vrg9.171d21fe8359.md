@@ -1,0 +1,9 @@
+Calculation: Price Action Index (PAI) = A stochastic of the selected source, smoothed and normalized around zero, multiplied by a stochastic of the selected dispersion measure. The dispersion measure is selected from standard deviation, variance, coefficient of variation, negative signal-to-noise ratio, negative squared signal-to-noise ratio, index of dispersion, efficiency, or high-low range. For the high-low range, use the selected lookback’s highest high minus lowest low. If calculated on a selected higher timeframe, use its last completed bar when repainting is off and its still-forming bar when repainting is on.
+Long: PAI crosses above the upper straddle-area boundary
+Long: At a confirmed PAI pivot low, the current pivot’s PAI is higher and its price low is lower than at the previous PAI pivot low, and the previous pivot low is within the configured minimum and maximum pivot-lookback range
+Long: At a confirmed PAI pivot low, the current pivot’s PAI is lower and its price low is higher than at the previous PAI pivot low, and the previous pivot low is within the configured minimum and maximum pivot-lookback range
+Short: PAI crosses below the lower straddle-area boundary
+Short: At a confirmed PAI pivot high, the current pivot’s PAI is lower and its price high is higher than at the previous PAI pivot high, and the previous pivot high is within the configured minimum and maximum pivot-lookback range
+Short: At a confirmed PAI pivot high, the current pivot’s PAI is higher and its price high is lower than at the previous PAI pivot high, and the previous pivot high is within the configured minimum and maximum pivot-lookback range
+Exit: Long, PAI crosses below the upper extreme threshold
+Exit: Short, PAI crosses above the lower extreme threshold

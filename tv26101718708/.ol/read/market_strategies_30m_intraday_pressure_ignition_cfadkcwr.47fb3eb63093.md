@@ -1,0 +1,7 @@
+Calculation: Bullish candle control = higher-timeframe candle is bullish, its body divided by its range meets a minimum threshold, and its close is in the upper portion of its range; evaluated on the higher-timeframe bar still forming.
+Calculation: Bearish candle control = higher-timeframe candle is bearish, its body divided by its range meets a minimum threshold, and its close is in the lower portion of its range; evaluated on the higher-timeframe bar still forming.
+Calculation: Bullish structure break = higher-timeframe candle is bullish and its close exceeds the highest high of a lookback of prior completed higher-timeframe bars by a minimum percentage; evaluated on the higher-timeframe bar still forming.
+Calculation: Bearish structure break = higher-timeframe candle is bearish and its close falls below the lowest low of a lookback of prior completed higher-timeframe bars by a minimum percentage; evaluated on the higher-timeframe bar still forming.
+Calculation: Accelerating = absolute body size of the higher-timeframe bar still forming exceeds the body size of the previous completed higher-timeframe bar.
+Long: bullish structure break AND bullish candle control AND higher-timeframe candle is bullish AND chart close > chart VWAP AND this setup was false on the previous chart bar
+Short: bearish structure break AND bearish candle control AND higher-timeframe candle is bearish AND chart close < chart VWAP AND this setup was false on the previous chart bar

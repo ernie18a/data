@@ -1,0 +1,14 @@
+Calculation: Off-high percentage = (close − highest close over the major-high lookback) / that highest close × 100; use available bars if history is shorter.
+Calculation: Average dollar volume = simple moving average of close × volume / 5 / 1,000,000 over its lookback.
+Calculation: Structural floor = lowest low over the structural-lookback bars; demand ceiling = structural floor × 1.12.
+Calculation: Base maturity = count of bars in the recent base window where low is at or below the prior mid-lookback lowest low; mature when the count is at most the configured maximum plus one.
+Calculation: Spring reference = lowest low over the aged lookback, offset by the configured spring-level age.
+Calculation: Spring reclaim quality = close > open and (close − low) / (high − low) ≥ 0.5; when high = low, use 0.
+Calculation: Spring = any of: (1) current low < current spring reference and current close > current spring reference; (2) prior low < prior spring reference and prior close < prior spring reference, while current close > prior spring reference; (3) within the prior spring-window bars, lowest low < current spring reference and lowest close < current spring reference, while current close > current spring reference and prior close ≤ current spring reference. In all cases, spring reclaim quality must hold on the current bar.
+Calculation: Relative-strength line = close / benchmark close, using benchmark bars on the chart timeframe.
+Calculation: Relative-strength bullish divergence = current close position within its lookback high-low range ≤ 0.40, and relative-strength-line position within its lookback range exceeds the close position by at least 0.15; for a zero-width range, use position 0.5.
+Calculation: Discount zone = close is below the midpoint of its lookback high-low range; for a zero-width range, use position 0.5.
+Calculation: Volume z-score = (current volume − moving average volume) / volume standard deviation over the mid lookback; use 0 if standard deviation is 0.
+Calculation: Invalidation level = clamp (lowest low over the 12 bars ending at entry × (1 − configured invalidation percentage), entry close × (1 − configured maximum stop distance), entry close × 0.98), where clamp selects the middle of the three values.
+Long: (bar is confirmed AND drawdown is at least the configured minimum AND average dollar volume meets its configured minimum AND off-high percentage is within either the PRIME or SECONDARY band AND base is mature AND spring holds AND bars since the prior entry meet the configured cooldown) OR (bar is forming AND the same drawdown, liquidity, band, base, and spring conditions hold AND close ≤ demand ceiling AND off-high percentage is within the PRIME band AND relative-strength bullish divergence AND discount zone).
+Exit: long, (bar is confirmed AND close < invalidation level AND volume z-score ≥ configured invalidation threshold) OR (bars since entry > configured maximum trade duration).

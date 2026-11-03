@@ -1,0 +1,2 @@
+Long: close crosses above daily anchored VWAP OR close crosses above weekly anchored VWAP OR close crosses above monthly anchored VWAP
+Short: close crosses below daily anchored VWAP OR close crosses below weekly anchored VWAP OR close crosses below monthly anchored VWAP

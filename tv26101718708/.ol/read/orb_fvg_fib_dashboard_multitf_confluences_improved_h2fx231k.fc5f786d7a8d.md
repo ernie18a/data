@@ -1,0 +1,16 @@
+Calculation: Opening range high/low = highest high and lowest low during the daily opening-range session, calculated from lower-timeframe bars, including the bar still forming.
+Calculation: Opening-range midpoint = (opening-range high + opening-range low) / 2.
+Calculation: Bullish FVG = current low > high two bars earlier; bearish FVG = current high < low two bars earlier.
+Calculation: Internal bullish FVG = a bullish FVG whose high two bars earlier is inside the opening range; internal bearish FVG = a bearish FVG whose low two bars earlier is inside the opening range. Each remains true for the day once observed.
+Calculation: External bullish FVG = a bullish FVG whose current low is above the opening-range high; external bearish FVG = a bearish FVG whose current high is below the opening-range low. Each remains true for the day once observed.
+Calculation: Volume confirmation = current volume > its 20-bar simple moving average × a parameter, OR current volume > previous-bar volume.
+Calculation: MACD histogram = MACD(12, 26, 9) histogram.
+Calculation: Higher-timeframe EMA = EMA of close on the last completed bar of a higher timeframe.
+Calculation: Short-term and long-term EMAs = EMAs of close, with the short-term lookback shorter than the long-term lookback.
+Calculation: Bullish retracement confirmation = after a close above the opening-range high, track the highest high since breakout; confirmation is reached when a low retraces to or below a selected 0.382, 0.500, or 0.618 fraction of the distance from that peak to the opening-range high. Bearish confirmation = after a close below the opening-range low, track the lowest low since breakout; confirmation is reached when a high retraces to or above a selected fraction of the distance from that trough to the opening-range low. Each selected level remains confirmed for the day once reached.
+Long: Close > opening-range midpoint.
+Short: Close <= opening-range midpoint.
+Long: Close > opening-range high AND outside the opening-range session AND within the configured date range AND (volume confirmation if enabled) AND (RSI(14) > threshold if enabled) AND (bullish FVG if enabled) AND (MACD histogram > 0 if enabled) AND (close > higher-timeframe EMA if enabled) AND (short-term EMA > long-term EMA if enabled) AND (internal bullish FVG observed if enabled) AND (external bullish FVG observed if enabled) AND (each selected bullish retracement level confirmed if enabled) AND no prior long signal today, or the current signal state is short.
+Short: Close < opening-range low AND outside the opening-range session AND within the configured date range AND (volume confirmation if enabled) AND (RSI(14) < 100 − threshold if enabled) AND (bearish FVG if enabled) AND (MACD histogram < 0 if enabled) AND (close < higher-timeframe EMA if enabled) AND (short-term EMA < long-term EMA if enabled) AND (internal bearish FVG observed if enabled) AND (external bearish FVG observed if enabled) AND (each selected bearish retracement level confirmed if enabled) AND no prior short signal today, or the current signal state is long.
+Exit: long, short-term EMA crosses below long-term EMA after the long signal bar.
+Exit: short, short-term EMA crosses above long-term EMA after the short signal bar.

@@ -1,0 +1,4 @@
+Calculation: Round-number level = a price multiple of a selected spacing; spacings are automatically selected by price magnitude or supplied as custom spacings
+Calculation: Zone half-width = ATR × zone-width multiplier
+Long: For a tracked level, a qualifying touch from below occurred (bar range intersects the zone, at least the touch cooldown has elapsed since its prior touch, and the touch-bar close is at or below the level); after the reaction window, close > level + zone half-width + 0.3 × ATR
+Short: For a tracked level, a qualifying touch from above occurred (bar range intersects the zone, at least the touch cooldown has elapsed since its prior touch, and the touch-bar close is above the level); after the reaction window, close < level − zone half-width − 0.3 × ATR

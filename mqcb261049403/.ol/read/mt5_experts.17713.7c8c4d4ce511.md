@@ -1,0 +1,6 @@
+Calculation: Smoothed Ichimoku oscillator = smooth the negative of [(Tenkan line − Kijun line) − (Chikou span − Senkou span A)]; Tenkan and Kijun use shorter and longer Ichimoku lookbacks, respectively. Calculate on the configured indicator timeframe, which may be higher or lower than the chart timeframe, using the selected signal bar and preceding bars; the signal is evaluated after the selected bar closes.
+Calculation: Histogram state = positive-rising if oscillator > 0 and greater than its prior value; positive-falling if oscillator > 0 and less than its prior value; negative-rising if oscillator < 0 and greater than its prior value; negative-falling if oscillator < 0 and less than its prior value; neutral if oscillator = 0.
+Long: Current state is positive-rising OR negative-falling AND previous state is neutral OR positive-falling OR negative-rising
+Short: Current state is negative-rising OR positive-falling AND previous state is positive-rising OR positive-falling OR negative-falling
+Exit: Long, current state is negative-rising OR positive-falling AND previous state is positive-rising OR positive-falling OR negative-falling
+Exit: Short, current state is positive-rising OR negative-falling AND previous state is neutral OR positive-falling OR negative-rising

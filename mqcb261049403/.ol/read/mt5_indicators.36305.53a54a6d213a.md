@@ -1,0 +1,2 @@
+Long: Fast moving average >= medium-term moving average AND medium-term moving average >= slow moving average
+Short: Fast moving average <= medium-term moving average AND medium-term moving average <= slow moving average

@@ -1,0 +1,2 @@
+Long: RSI > upper level OR RSI calculated on a higher timeframe using its still-forming bar > upper level
+Short: RSI < lower level OR RSI calculated on a higher timeframe using its still-forming bar < lower level

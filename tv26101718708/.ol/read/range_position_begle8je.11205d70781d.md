@@ -1,0 +1,3 @@
+Calculation: Range position = (close − lowest low of the selected lookback range) / (highest high − lowest low) × 100; use completed source-timeframe bars only, excluding the bar still forming. The source timeframe is lower than the chart timeframe when the chart is higher, and equal when the chart uses the source timeframe.
+Long: Range position ≤ configured band threshold AND previous bar’s range position > configured band threshold
+Short: Range position ≥ 100 − configured band threshold AND previous bar’s range position < 100 − configured band threshold

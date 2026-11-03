@@ -1,0 +1,6 @@
+Calculation: Fast and slow SMA = simple moving averages of close using shorter and longer lookbacks, respectively
+Calculation: Average volume = simple moving average of volume
+Long: No pending confirmation for the level AND SPX close > SPX level AND (no paired NDX level OR NDX close > paired NDX level) AND (volume filter disabled OR volume >= average volume × volume threshold) AND (SMA filter disabled OR (SPX close > fast SMA AND fast SMA >= slow SMA AND NDX close > fast SMA AND fast SMA >= slow SMA))
+Long: Pending long confirmation for the level AND SPX close > SPX level AND (no paired NDX level OR NDX close > paired NDX level) AND (volume filter disabled OR volume >= average volume × volume threshold) AND prior failure count < avoidance threshold
+Short: No pending confirmation for the level AND SPX close < SPX level AND (no paired NDX level OR NDX close < paired NDX level) AND (volume filter disabled OR volume >= average volume × volume threshold) AND (SMA filter disabled OR (SPX close < fast SMA AND fast SMA <= slow SMA AND NDX close < fast SMA AND fast SMA <= slow SMA))
+Short: Pending short confirmation for the level AND SPX close < SPX level AND (no paired NDX level OR NDX close < paired NDX level) AND (volume filter disabled OR volume >= average volume × volume threshold) AND prior failure count < avoidance threshold

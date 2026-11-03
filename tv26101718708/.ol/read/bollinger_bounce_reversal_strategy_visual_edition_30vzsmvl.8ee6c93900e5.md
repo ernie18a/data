@@ -1,0 +1,4 @@
+Long: previous close < current lower Bollinger Band AND current close > current lower Bollinger Band AND MACD line > MACD signal line AND volume >= volume moving average AND trades taken today < daily trade limit
+Short: previous close > current upper Bollinger Band AND current close < current upper Bollinger Band AND MACD line < MACD signal line AND volume >= volume moving average AND trades taken today < daily trade limit
+Exit: long, low <= entry price × (1 − stop-loss percentage) OR high >= entry price × (1 + take-profit percentage)
+Exit: short, high >= entry price × (1 + stop-loss percentage) OR low <= entry price × (1 − take-profit percentage)

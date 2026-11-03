@@ -1,0 +1,3 @@
+Calculation: Confirmed pivot high/low = a high/low that is the extreme among the specified number of bars on each side of the pivot, on the source timeframe
+Long: A confirmed pivot low is followed within the displacement window by a source-timeframe close above the pivot candle high + ATR(14) measured at the pivot × max(0.10, 1.15 − sensitivity × 0.10); use only the last completed source-timeframe bar
+Short: A confirmed pivot high is followed within the displacement window by a source-timeframe close below the pivot candle low − ATR(14) measured at the pivot × max(0.10, 1.15 − sensitivity × 0.10); use only the last completed source-timeframe bar

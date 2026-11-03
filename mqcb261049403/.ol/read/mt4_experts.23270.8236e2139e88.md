@@ -1,0 +1,7 @@
+Calculation: Short-period LWMA = linear weighted moving average of typical price on the chart timeframe, using the bar still forming
+Calculation: Long-period LWMA = linear weighted moving average of typical price on the chart timeframe, using the bar still forming; its lookback is longer than the short-period LWMA
+Calculation: Bollinger Bands = 20-period bands at two standard deviations on a higher timeframe, using the last completed bar
+Long: at least one of the lows of bars 2, 3, or 4 on the higher timeframe is at or below the lower Bollinger Band AND the high of bar 1 on the higher timeframe is at or above the middle Bollinger Band AND the short-period LWMA is above the long-period LWMA AND the low of chart bar 2 is below the high of chart bar 1 AND the absolute difference between current price and the close of chart bar 2 exceeds the configured retracement distance
+Short: at least one of the highs of bars 2, 3, or 4 on the higher timeframe is at or above the upper Bollinger Band AND the low of bar 1 on the higher timeframe is at or below the middle Bollinger Band AND the short-period LWMA is below the long-period LWMA AND the low of chart bar 1 is below the high of chart bar 2 AND the absolute difference between current price and the close of chart bar 1 exceeds the configured retracement distance
+Exit: long, price at or below the active stop price OR price at or above the active take-profit price
+Exit: short, price at or above the active stop price OR price at or below the active take-profit price

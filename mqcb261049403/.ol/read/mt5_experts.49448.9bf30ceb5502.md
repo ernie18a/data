@@ -1,0 +1,4 @@
+Long: No position is open AND, on the three most recent completed bars of a higher timeframe, the third most recent has open > close AND the second most recent has open < close AND open > the third bar’s low AND close < the third bar’s high AND the most recent has open < close AND open > the second bar’s open AND open < the second bar’s close AND close > the third bar’s high.
+Short: No position is open AND, on the three most recent completed bars of a higher timeframe, the third most recent has open < close AND the second most recent has open > close AND open < the third bar’s high AND close > the third bar’s low AND the most recent has open > close AND open < the second bar’s open AND open > the second bar’s close AND close < the third bar’s low.
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

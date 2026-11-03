@@ -1,0 +1,3 @@
+Calculation: Previous-bar average tick volume = mean tick volume over the preceding lookback bars on the chart timeframe
+Long: close > open AND high > low AND ATR > 0 AND abs(close - open) >= ATR × multiplier AND abs(close - open) / (high - low) >= minimum body ratio AND (close - low) / (high - low) >= minimum close location AND volume >= previous-bar average tick volume × volume multiplier
+Short: close < open AND high > low AND ATR > 0 AND abs(close - open) >= ATR × multiplier AND abs(close - open) / (high - low) >= minimum body ratio AND (close - low) / (high - low) <= 1 − minimum close location AND volume >= previous-bar average tick volume × volume multiplier

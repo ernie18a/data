@@ -1,0 +1,5 @@
+Calculation: MACD histogram = the shorter-lookback EMA of close minus the longer-lookback EMA of close, then minus an EMA signal line of that difference; calculate separately for each of five selected timeframes, using the latest completed higher-timeframe bar or the last available lower-timeframe bar within the chart bar.
+Long: any of the five MACD histograms crosses from below 0 to above 0 OR all five are above 0, at least one was not above 0 on the preceding chart bar, and the chart bar is confirmed
+Short: any of the five MACD histograms crosses from above 0 to below 0 OR all five are below 0, at least one was not below 0 on the preceding chart bar, and the chart bar is confirmed
+Exit: long, low <= stop price OR high >= first or second profit target OR all five MACD histograms were above 0 on the preceding chart bar and fewer than five are above 0 now
+Exit: short, high >= stop price OR low <= first or second profit target OR all five MACD histograms were below 0 on the preceding chart bar and fewer than five are below 0 now

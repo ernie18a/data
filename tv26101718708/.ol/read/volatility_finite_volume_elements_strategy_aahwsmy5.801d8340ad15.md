@@ -1,0 +1,3 @@
+Calculation: Finite Volume Elements (FVE) = 100 × sum over the last N bars of (volume × direction factor) ÷ sum of volume over those bars; direction factor = +1 if MF > cutoff × close, −1 if MF < −cutoff × close, otherwise 0; MF = close − (high + low)/2 + hlc3 − prior bar’s hlc3; cutoff = intra coefficient × stdev(SMA(log(high/low), N), N) + inter coefficient × stdev(SMA(log(hlc3/prior bar’s hlc3), N), N)
+Long: FVE > EMA(FVE)
+Short: FVE < EMA(FVE)

@@ -1,0 +1,7 @@
+Calculation: Fast and slow trend averages = linearly weighted moving averages of typical price ((high + low + close) / 3), with the fast lookback shorter than the slow; both use the still-forming bar of a higher timeframe.
+Calculation: Short EMA group = exponential moving averages of typical price with six increasing lookbacks.
+Calculation: Long EMA group = exponential moving averages of typical price with six increasing lookbacks, all longer than the short EMA group.
+Long: Open position count < configured maximum AND fast trend average > slow trend average AND low two bars ago < high one bar ago AND absolute distance from entry price to close two bars ago > configured point-distance threshold AND the latest confirmed fractal high is below the third-most-recent confirmed fractal high AND the latest confirmed fractal low is above the third-most-recent confirmed fractal low
+Short: Open position count < configured maximum AND fast trend average < slow trend average AND low one bar ago < high two bars ago AND absolute distance from entry price to close one bar ago > configured point-distance threshold AND the latest confirmed fractal high is below the third-most-recent confirmed fractal high AND the latest confirmed fractal low is above the third-most-recent confirmed fractal low
+Exit: long, all six short-group EMAs are equal OR all six long-group EMAs are equal OR previous close <= previous-bar lower Bollinger band
+Exit: short, all six short-group EMAs are equal OR all six long-group EMAs are equal OR previous close <= previous-bar lower Bollinger band

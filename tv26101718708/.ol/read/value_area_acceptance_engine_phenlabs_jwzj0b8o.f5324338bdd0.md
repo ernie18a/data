@@ -1,0 +1,6 @@
+Calculation: Prior-session value area (VAL, VAH, POC) = Build a time-at-price profile from the prior completed profile period: each chart bar adds one count to every price row it touches. The POC is the row with the highest count, with ties resolved toward the row nearest that bar’s close. Starting at the POC, expand the value area toward the side with the greater combined count in its next two rows until the configured share of total counts is covered; VAL and VAH are the lower and upper value-area boundaries.
+Calculation: Developing POC = Apply the same time-at-price counting and POC tie-break to bars in the current profile period, including the current chart bar only after it closes.
+Long: A configured consecutive run of closes above prior-session VAH is reached AND developing POC > prior-session POC OR a close returns inside prior-session value after a run of closes below prior-session VAL that ended before the acceptance run was reached
+Short: A configured consecutive run of closes below prior-session VAL is reached AND developing POC < prior-session POC OR a close returns inside prior-session value after a run of closes above prior-session VAH that ended before the acceptance run was reached
+Exit: Long, low <= stop OR high >= second target
+Exit: Short, high >= stop OR low <= second target

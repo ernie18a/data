@@ -1,0 +1,9 @@
+Calculation: Prior-day high/low = high/low of the last completed higher-timeframe daily bar.
+Calculation: Completed Asia-session high/low = highest high/lowest low of chart-timeframe bars in the configured Asia session, available after that session ends.
+Calculation: Bullish sweep = low < prior-day low − ATR buffer OR low < completed Asia-session low − ATR buffer, and close > the swept level.
+Calculation: Bearish sweep = high > prior-day high + ATR buffer OR high > completed Asia-session high + ATR buffer, and close < the swept level.
+Calculation: Bullish displacement = close > open, bar range > ATR threshold, body/range > 0.60, and (close − low)/range > 0.70. Bearish displacement = close < open, bar range > ATR threshold, body/range > 0.60, and (high − close)/range > 0.70.
+Calculation: Bullish absorption = lower-wick/range > wick threshold, body/range < 0.45, volume > average volume × strong-volume threshold, bar range < average bar range × 0.75, and close > low + 0.35 × range. Bearish absorption uses upper wick and requires close < high − 0.35 × range, with the same remaining conditions.
+Calculation: Confirmed swing high/low = a chart-timeframe pivot high/low with equal lookback on each side; use the most recently confirmed pivot.
+Long: Close > most recently confirmed swing high OR, after the first bullish or bearish sweep of the day, within the configured confirmation-bar window, close > prior-day low AND close > open, followed within that same window by (bullish displacement OR bullish absorption) AND (close − low)/range > 0.55.
+Short: Close < most recently confirmed swing low OR, after the first bullish or bearish sweep of the day, within the configured confirmation-bar window, close < prior-day high AND close < open, followed within that same window by (bearish displacement OR bearish absorption) AND (high − close)/range > 0.55.

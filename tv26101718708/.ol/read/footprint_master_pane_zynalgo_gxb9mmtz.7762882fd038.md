@@ -1,0 +1,4 @@
+Calculation: Buy-side volume at a price level = Sum lower-timeframe bar volume assigned to that level when close > open, plus half the volume when close = open. Assign each bar by its close: floor(close / grid size) minus floor(chart-bar low / grid size), clamped to the displayed levels. Use lower-timeframe bars as available, including the still-forming bar.
+Calculation: Sell-side volume at a price level = Sum lower-timeframe bar volume assigned to that level when close < open, plus half the volume when close = open. Use the same level assignment and lower-timeframe bars as for buy-side volume.
+Long: Buy-side volume at a price level > sell-side volume at that price level
+Short: Sell-side volume at a price level > buy-side volume at that price level

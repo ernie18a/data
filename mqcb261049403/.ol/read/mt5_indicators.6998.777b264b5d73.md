@@ -1,0 +1,4 @@
+Calculation: Adaptive Moving Average = Recursively update from the prior value: AMA[t] = AMA[t−1] + (slowSC + ER[t] × (fastSC − slowSC))^G × (close[t] − AMA[t−1]); ER[t] = abs(close[t] − close[t−N]) / (sum of absolute close-to-close changes over the latest N bars + a small price-noise term). The fast smoothing period is shorter than the slow smoothing period; N is the AMA lookback.
+Calculation: AMA-change threshold = dK × population standard deviation of the latest N one-bar changes in the Adaptive Moving Average.
+Long: On the first chart bar of each configured timeframe bar, using that equal-or-higher-timeframe bar while it is still forming, current AMA − prior AMA > AMA-change threshold
+Short: On the first chart bar of each configured timeframe bar, using that equal-or-higher-timeframe bar while it is still forming, current AMA − prior AMA < −AMA-change threshold

@@ -1,0 +1,4 @@
+Long: The current bar is a confirmed pivot low: its low is lower than the lows of the configured number of bars on both sides; recognize it after the configured right-side bars complete.
+Long: During the Asia (00:00–09:00), London (07:00–16:00), or New York (12:00–21:00) session in exchange time, close > that session’s running high through the preceding bar; no earlier bull break has been marked for that session on the exchange day.
+Short: The current bar is a confirmed pivot high: its high is higher than the highs of the configured number of bars on both sides; recognize it after the configured right-side bars complete.
+Short: During the Asia (00:00–09:00), London (07:00–16:00), or New York (12:00–21:00) session in exchange time, close < that session’s running low through the preceding bar; no earlier bear break has been marked for that session on the exchange day.

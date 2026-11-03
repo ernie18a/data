@@ -1,0 +1,6 @@
+Calculation: Lower 1-minute MACD-histogram Bollinger band = SMA of the completed lower-timeframe MACD histogram over a longer lookback minus 2 standard deviations over that lookback.
+Calculation: Upper 1-minute MACD-histogram Bollinger band = SMA of the completed lower-timeframe MACD histogram over a shorter lookback plus 2 standard deviations over that lookback.
+Long: Short-term EMA > medium-term EMA AND medium-term EMA > long-term EMA AND RSI with a shorter lookback ≥ 51 AND completed lower-timeframe MACD histogram ≤ its lower Bollinger band AND completed lower-timeframe MACD histogram ≤ a threshold.
+Short: Short-term EMA < medium-term EMA AND medium-term EMA < long-term EMA AND RSI with a longer lookback ≤ 49 AND completed lower-timeframe MACD histogram ≥ its upper Bollinger band AND completed lower-timeframe MACD histogram ≥ a threshold.
+Exit: long, low ≤ average entry price × (1 − stop-loss fraction) OR high ≥ average entry price × (1 + take-profit fraction)
+Exit: short, high ≥ average entry price × (1 + stop-loss fraction) OR low ≤ average entry price × (1 − take-profit fraction)

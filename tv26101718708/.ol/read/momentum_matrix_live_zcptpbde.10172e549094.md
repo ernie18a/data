@@ -1,0 +1,5 @@
+Calculation: Normalized moving-average angle = arctangent((selected moving average − its value N bars ago) / (ATR / N)), expressed in degrees
+Calculation: MACD = shorter-lookback EMA of close − longer-lookback EMA of close
+Calculation: MACD upper band = SMA of MACD over a lookback + standard deviation of MACD over the same lookback × deviation multiplier
+Long: Normalized moving-average angle > its value on the previous bar AND normalized moving-average angle > positive angle threshold AND MACD ≥ MACD upper band AND NOT (normalized moving-average angle on the previous bar > its value on the bar before that AND normalized moving-average angle on the previous bar > positive angle threshold AND MACD on the previous bar ≥ MACD upper band on the previous bar)
+Short: Normalized moving-average angle < its value on the previous bar AND normalized moving-average angle < negative angle threshold AND MACD < MACD upper band AND NOT (normalized moving-average angle on the previous bar < its value on the bar before that AND normalized moving-average angle on the previous bar < negative angle threshold AND MACD on the previous bar < MACD upper band on the previous bar)

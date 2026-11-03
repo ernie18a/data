@@ -1,0 +1,4 @@
+Calculation: Fast and slow EMAs = exponential moving averages of close on a higher timeframe, using the last completed higher-timeframe bar; the fast EMA has a shorter lookback than the slow EMA.
+Calculation: EMA gap percentage = absolute difference between the fast and slow EMAs divided by the slow EMA, multiplied by 100.
+Long: Fast EMA > slow EMA AND EMA gap percentage >= yellow-zone threshold AND (previous chart bar fast EMA < slow EMA AND previous chart bar EMA gap percentage >= yellow-zone threshold OR previous chart bar EMA gap percentage < yellow-zone threshold)
+Short: Fast EMA < slow EMA AND EMA gap percentage >= yellow-zone threshold AND (previous chart bar fast EMA > slow EMA AND previous chart bar EMA gap percentage >= yellow-zone threshold OR previous chart bar EMA gap percentage < yellow-zone threshold)

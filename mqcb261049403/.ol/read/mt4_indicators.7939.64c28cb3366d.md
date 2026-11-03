@@ -1,0 +1,2 @@
+Long: MACD main line > signal line on both the two shortest calculated timeframes OR on at least two of the three next-longer calculated timeframes; use each timeframe’s still-forming bar, whether it is lower, equal to, or higher than the chart timeframe.
+Short: MACD main line < signal line on both the two shortest calculated timeframes OR on at least two of the three next-longer calculated timeframes; use each timeframe’s still-forming bar, whether it is lower, equal to, or higher than the chart timeframe.

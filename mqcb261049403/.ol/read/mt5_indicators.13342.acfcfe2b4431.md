@@ -1,0 +1,3 @@
+Calculation: On each selected timeframe (higher or lower than the chart timeframe), calculate Momentum_i = 100 × applied price / applied price from lookback_i bars earlier, for five lookbacks ordered shortest to longest. Fast = weight_1×Momentum_1 + weight_2×Momentum_2 + weight_2×Momentum_3 + weight_4×Momentum_4 + weight_5×Momentum_5. Smooth Fast recursively with the longer smoothing period to get Slow; smooth (Fast − Slow) recursively with the shorter smoothing period to get OSMA. Use the last completed bar and its preceding completed bar.
+Long: OSMA ≠ 0 AND OSMA > preceding OSMA
+Short: OSMA ≠ 0 AND OSMA < preceding OSMA

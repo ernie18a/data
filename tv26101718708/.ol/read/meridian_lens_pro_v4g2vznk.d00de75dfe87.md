@@ -1,0 +1,4 @@
+Calculation: Fast, Medium, and Slow = Nadaraya–Watson kernel regression estimates of the selected price source, with lookbacks ordered shortest to longest.
+Long: Fast crosses above Slow OR Medium changes from falling or flat to rising OR Fast changes to rising OR Slow changes to rising OR Fast > Medium > Slow AND Medium rises and this condition was false on the previous bar
+Short: Fast crosses below Slow OR Medium changes from rising or flat to falling OR Fast changes to falling OR Slow changes to falling OR Fast < Medium < Slow AND Medium falls and this condition was false on the previous bar
+Exit: Long, Medium changes from rising or flat to falling OR Fast < Medium < Slow AND Medium falls and this condition was false on the previous bar

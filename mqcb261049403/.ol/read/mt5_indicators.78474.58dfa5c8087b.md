@@ -1,0 +1,6 @@
+Calculation: Range-normalized close = (close − lowest low over the normalization lookback) / (highest high − lowest low over that same lookback), using chart bars.
+Calculation: Deviation = population standard deviation of range-normalized close over its lookback, using chart bars.
+Calculation: Deviation peak and trough recency = (detection-window length − offset of the most recent maximum or minimum deviation) / detection-window length, scanning the current chart bar and the preceding detection-window bars; ties select the most recent bar.
+Calculation: Live channel = On a transition where trough recency becomes greater than peak recency, record the compression start. On the reverse transition, form a channel only if elapsed chart bars since that start exceed the minimum-duration threshold. Its top and bottom are the highest high and lowest low from the bar after the start through the formation bar. Skip formation if this range overlaps any live channel. A formed channel remains live until broken.
+Long: A live channel exists AND (open + close) / 2 > channel top.
+Short: A live channel exists AND (open + close) / 2 < channel bottom.

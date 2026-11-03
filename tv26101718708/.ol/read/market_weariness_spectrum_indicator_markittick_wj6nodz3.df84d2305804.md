@@ -1,0 +1,6 @@
+Calculation: Phantom volume = normalize to 0–100 the ratio of the lookback SMA of volume to the lookback SMA of absolute close−open; normalization uses the ratio’s lowest and highest values over 3× the lookback.
+Calculation: Directional hesitation = 100 × the fraction of the lookback bars whose absolute close−open is less than 0.40 × ATR.
+Calculation: Effort density = normalize to 0–100 the lookback SMA of volume/ATR; normalization uses that SMA’s lowest and highest values over 3× the lookback.
+Calculation: Weariness oscillator = the SMA of the weighted average of phantom volume, directional hesitation, and effort density, with weights normalized by their sum.
+Short: The highest weariness oscillator over the preceding confirm-bars + 2 bars is above the exhaustion threshold AND the oscillator on the previous bar is below its value two bars ago AND that value is below its value three bars ago AND the previous-bar oscillator is above the recovery threshold AND more than 10 bars have elapsed since the preceding short signal.
+Long: The weariness oscillator on the bar two bars ago is at or above the recovery threshold AND the previous-bar oscillator is below the recovery threshold AND the highest oscillator over the preceding confirm-bars + 7 bars is above the exhaustion threshold.

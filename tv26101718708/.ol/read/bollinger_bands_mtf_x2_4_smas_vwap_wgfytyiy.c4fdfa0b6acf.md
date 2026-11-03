@@ -1,0 +1,4 @@
+Long: close > VWAP AND close > 20-period SMA AND a prior bar touched the lower Bollinger Band (low <= lower band) while closing at or above VWAP AND current bar is bullish (close > open) and closes above the 20-period SMA; enter at the next bar's open
+Short: close < VWAP AND close < 20-period SMA AND a prior bar touched the upper Bollinger Band (high >= upper band) AND current bar is bearish (close < open) and closes below the 20-period SMA
+Exit: long, low <= the nearer of the lower Bollinger Band or VWAP (stop, capped at 0.5% below entry for stocks) OR high >= upper Bollinger Band
+Exit: short, high >= the upper Bollinger Band or VWAP, whichever is nearer above entry (stop) OR low <= lower Bollinger Band

@@ -1,0 +1,5 @@
+Calculation: Percentage crossover channel = on the indicator timeframe, which may be higher or lower than the chart timeframe, calculate each completed bar’s middle line from the prior middle line: use close × (1 − p) if that value exceeds the prior middle line; otherwise use close × (1 + p) if that value is below the prior middle line; otherwise keep the prior middle line. Initialize the middle line from the close before the first calculated bar. The upper and lower bands are middle × (1 + p) and middle × (1 − p), respectively; compare each bar’s close with the band displaced backward by the channel’s horizontal shift. Use completed bars only.
+Long: signal-bar close > displaced upper band AND previous completed bar close ≤ its displaced upper band
+Short: signal-bar close < displaced lower band AND previous completed bar close ≥ its displaced lower band
+Exit: long, signal-bar close < displaced lower band
+Exit: short, signal-bar close > displaced upper band

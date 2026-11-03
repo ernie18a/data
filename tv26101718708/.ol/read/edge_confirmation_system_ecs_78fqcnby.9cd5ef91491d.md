@@ -1,0 +1,5 @@
+Calculation: normalized momentum = normalize the percentage difference between the shorter-period and longer-period close EMAs to the range from -1 to 1 over a rolling lookback
+Calculation: smoothed normalized momentum = EMA of normalized momentum using a shorter smoothing period
+Calculation: volume surge = volume >= moving average of volume over a lookback * surge multiplier
+Long: close > base EMA AND fast EMA > slow EMA AND normalized momentum > 0 AND normalized momentum > smoothed normalized momentum AND normalized momentum < overbought threshold AND volume >= moving average of volume over a lookback * surge multiplier AND close > open AND the most recent emitted signal is not long
+Short: close < base EMA AND fast EMA < slow EMA AND normalized momentum < 0 AND normalized momentum < smoothed normalized momentum AND normalized momentum > oversold threshold AND volume >= moving average of volume over a lookback * surge multiplier AND close < open AND the most recent emitted signal is not short

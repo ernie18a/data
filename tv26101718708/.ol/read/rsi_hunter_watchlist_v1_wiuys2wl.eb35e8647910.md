@@ -1,0 +1,2 @@
+Long: RSI on the scan timeframe (which may be higher or lower than the chart timeframe), using its current bar even while it is forming, <= the oversold threshold
+Short: RSI on the scan timeframe (which may be higher or lower than the chart timeframe), using its current bar even while it is forming, >= the overbought threshold

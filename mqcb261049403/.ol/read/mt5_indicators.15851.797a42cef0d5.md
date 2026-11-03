@@ -1,0 +1,2 @@
+Long: chart-timeframe volume-weighted moving average > its value on the previous chart bar OR higher-timeframe volume-weighted moving average on the still-forming bar > its value on the previous higher-timeframe bar
+Short: chart-timeframe volume-weighted moving average < its value on the previous chart bar OR higher-timeframe volume-weighted moving average on the still-forming bar < its value on the previous higher-timeframe bar

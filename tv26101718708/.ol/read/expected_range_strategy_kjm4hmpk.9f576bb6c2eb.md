@@ -1,0 +1,8 @@
+Calculation: Sentiment = weighted average across ten progressively longer lookbacks: for each, let range = highest(high) − lowest(low), center = prior bar’s SMA(OHLC4, lookback), and position = −100 × ((close − (center − prior-bar range/2)) / prior-bar range − 0.5); multiply position by current range and the horizon’s weight, and divide by its paired lookback from the reverse-ordered set of horizons.
+Calculation: Positive-sentiment accumulated rise = if sentiment > 0, prior value + sentiment − prior-bar sentiment; otherwise 0.
+Calculation: Negative-sentiment accumulated fall = if sentiment < 0, prior value + prior-bar sentiment − sentiment; otherwise 0.
+Calculation: Entry gate = becomes true after sentiment crosses zero in either direction, once more bars than the longest lookback have elapsed; remains true thereafter.
+Long: Negative-sentiment accumulated fall > highest positive-sentiment accumulated rise over the longest lookback × long-entry threshold AND entry gate is true AND entries are enabled by the take-profit lock AND current bar is within the configured backtest date window.
+Short: Positive-sentiment accumulated rise > highest negative-sentiment accumulated fall over the longest lookback × short-entry threshold AND entry gate is true AND entries are enabled by the take-profit lock AND current bar is within the configured backtest date window.
+Exit: Long, highest high since entry / entry price − 1 > take-profit threshold OR low ≤ entry price × (1 − stop-loss threshold).
+Exit: Short, entry price / lowest low since entry − 1 > take-profit threshold OR high ≥ entry price / (1 − stop-loss threshold).

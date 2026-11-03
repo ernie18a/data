@@ -1,0 +1,5 @@
+Calculation: Latest confirmed upper/lower fractal = most recent upper/lower fractal on the configured fractal timeframe, starting from the bar two bars back; use completed bars.
+Long: Close > latest confirmed upper fractal + entry buffer AND latest confirmed upper fractal differs from the upper fractal used for the most recent successful long entry.
+Short: Close < latest confirmed lower fractal − entry buffer AND latest confirmed lower fractal differs from the lower fractal used for the most recent successful short entry.
+Exit: Long, Low <= lower fractal recorded at entry OR High >= entry price + take-profit distance OR Low <= trailing stop after price has risen more than the trailing activation distance from entry.
+Exit: Short, High >= upper fractal recorded at entry OR Low <= entry price − take-profit distance OR High >= trailing stop after price has fallen more than the trailing activation distance from entry.

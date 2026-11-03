@@ -1,0 +1,4 @@
+Calculation: DCOS = cumulative sum of four signed volume terms per bar: volume × sign(close − open), volume × sign(close − (high + low)/2), volume × sign(close − (high + low + open)/3), and volume × sign(close − (((high + low)/2 + open)/2)); sign is 1 for positive, −1 for negative, and 0 for zero.
+Calculation: BullsPower + BearsPower = BullsPower value plus BearsPower value.
+Long: DCOS is lower than on the immediately preceding bar AND BullsPower + BearsPower is lower than on the immediately preceding bar AND DCOS is higher than on the immediately following bar AND BullsPower + BearsPower is lower than on the immediately following bar
+Short: DCOS is higher than on the immediately preceding bar AND BullsPower + BearsPower is higher than on the immediately preceding bar AND DCOS is lower than on the immediately following bar AND BullsPower + BearsPower is higher than on the immediately following bar

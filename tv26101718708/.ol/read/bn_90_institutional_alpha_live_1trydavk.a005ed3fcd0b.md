@@ -1,0 +1,5 @@
+Calculation: Cumulative volume-price trend = prior cumulative value + volume × (close − prior close) ÷ prior close
+Calculation: Volume-price trend signal = moving average of cumulative volume-price trend
+Calculation: Position P&L = (close − entry price) × configured position quantity × configured per-point value
+Long: Position is flat AND close > long-term EMA(close) AND shorter-period EMA(close) > longer-period EMA(close) AND cumulative volume-price trend > its moving average AND low > prior low AND prior low < the low two bars earlier AND close crosses above EMA(close) AND bar time is within either configured trading session
+Exit: Long, position P&L reaches the configured target OR (position P&L has reached the configured fraction of the target since entry AND position P&L falls to or below the configured breakeven threshold) OR position P&L reaches the configured loss limit OR close crosses below EMA(close)

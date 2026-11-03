@@ -1,0 +1,4 @@
+Long: WPR on the configured indicator timeframe (higher or lower than the chart timeframe), on the last completed bar, is above the overbought threshold AND on the preceding completed bar is at or below the overbought threshold
+Short: WPR on the configured indicator timeframe (higher or lower than the chart timeframe), on the last completed bar, is below the oversold threshold AND on the preceding completed bar is at or above the oversold threshold
+Exit: long, WPR on the configured indicator timeframe (higher or lower than the chart timeframe), on the last completed bar, is below the oversold threshold AND on the preceding completed bar is at or above the oversold threshold
+Exit: short, WPR on the configured indicator timeframe (higher or lower than the chart timeframe), on the last completed bar, is above the overbought threshold AND on the preceding completed bar is at or below the overbought threshold

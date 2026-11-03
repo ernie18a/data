@@ -1,0 +1,2 @@
+Calculation: Bollinger Band basis = simple moving average of close over the Bollinger lookback
+Long: The most recent bearish candle within the setup lookback and maximum age has RSI below its threshold, low below the simple moving average, close below session VWAP, and low below the Bollinger Band basis; at least one later candle closes below that bearish candle’s low; current low is at or below the lowest low of those later candles and current close is above the bearish candle’s low

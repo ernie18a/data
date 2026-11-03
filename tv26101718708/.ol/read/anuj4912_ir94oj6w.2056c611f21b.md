@@ -1,0 +1,6 @@
+Calculation: Chart-timeframe trend direction = Recursively set the lower band to max(hl2 − factor × ATR, prior lower band) when prior close > prior lower band, otherwise hl2 − factor × ATR; set the upper band to min(hl2 + factor × ATR, prior upper band) when prior close < prior upper band, otherwise hl2 + factor × ATR. Direction is bullish when close > prior upper band, bearish when close < prior lower band, otherwise prior direction (default bullish).
+Calculation: Higher-timeframe trend direction = Apply the same band and direction calculations to higher-timeframe bars, using the same factor and ATR lookback as the chart-timeframe calculation; use the latest completed higher-timeframe bar.
+Long: Chart-timeframe trend direction is bullish AND its prior value was bearish AND higher-timeframe trend direction is bullish
+Short: Chart-timeframe trend direction is bearish AND its prior value was bullish AND higher-timeframe trend direction is bearish
+Exit: long, high >= entry price + take-profit distance in ticks OR low <= entry price − stop-loss distance in ticks
+Exit: short, low <= entry price − take-profit distance in ticks OR high >= entry price + stop-loss distance in ticks

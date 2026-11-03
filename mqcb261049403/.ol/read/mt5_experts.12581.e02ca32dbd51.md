@@ -1,0 +1,4 @@
+Long: On the configured signal timeframe’s last completed bar, moving average <= its value MAShift bars earlier AND close >= close MAShift bars earlier AND close <= close (MAPeriod + MAShift) bars earlier AND close < open AND the most recent signal state is not long (initially neutral)
+Short: On the configured signal timeframe’s last completed bar, moving average >= its value MAShift bars earlier AND close <= close MAShift bars earlier AND close >= close (MAPeriod + MAShift) bars earlier AND close > open AND the most recent signal state is not short (initially neutral)
+Exit: long, the short-entry condition occurs
+Exit: short, the long-entry condition occurs

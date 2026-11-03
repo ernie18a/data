@@ -1,0 +1,7 @@
+Calculation: Smoothed EMA change = current higher-timeframe EMA minus previous higher-timeframe EMA; use the still-forming higher-timeframe bar
+Calculation: Impulse qualifies = abs(smoothed EMA change) / higher-timeframe ATR > impulse threshold AND higher-timeframe ATR > volatility multiplier × its longer-lookback SMA; use the still-forming higher-timeframe bar
+Calculation: Oscillation amplitude = (higher-timeframe high − higher-timeframe low) × decay factor; use the still-forming higher-timeframe bar
+Long: Impulse qualifies AND lower-timeframe close < min(higher-timeframe low + oscillation amplitude × pullback fraction, higher-timeframe EMA) AND chart close > higher-timeframe trend EMA × long trend tolerance AND entries per impulse < maximum
+Short: Impulse qualifies AND lower-timeframe close > max(higher-timeframe high − oscillation amplitude × pullback fraction, higher-timeframe EMA) AND chart close < higher-timeframe trend EMA × short trend tolerance AND entries per impulse < maximum
+Exit: long, low <= entry price − stop multiplier × lower-timeframe ATR OR high >= entry price × (1 + partial gain) OR high >= entry price + oscillation amplitude × decay factor^i for any i from 1 through maximum swings
+Exit: short, high >= entry price + stop multiplier × lower-timeframe ATR OR low <= entry price × (1 − partial gain) OR low <= entry price − oscillation amplitude × decay factor^i for any i from 1 through maximum swings

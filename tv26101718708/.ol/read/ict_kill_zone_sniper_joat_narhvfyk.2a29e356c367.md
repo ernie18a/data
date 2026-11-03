@@ -1,0 +1,5 @@
+Calculation: Prior kill-zone high/low = maximum high/minimum low of the immediately preceding completed kill-zone session
+Calculation: High/low sweep depth = (current high − prior kill-zone high) / ATR or (prior kill-zone low − current low) / ATR, respectively
+Calculation: Higher-timeframe EMA = EMA of close on a higher timeframe, using its last completed bar
+Long: Current bar is inside a kill zone AND ATR > 0 AND current low < prior kill-zone low AND current close > prior kill-zone low AND low-sweep depth ≥ minimum sweep depth AND current close > higher-timeframe EMA AND no long signal has occurred in this kill-zone session
+Short: Current bar is inside a kill zone AND ATR > 0 AND current high > prior kill-zone high AND current close < prior kill-zone high AND high-sweep depth ≥ minimum sweep depth AND current close < higher-timeframe EMA AND no short signal has occurred in this kill-zone session AND the long condition is false

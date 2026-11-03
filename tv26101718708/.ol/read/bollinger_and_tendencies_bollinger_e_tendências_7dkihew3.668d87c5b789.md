@@ -1,0 +1,2 @@
+Long: Close crosses above the lower Bollinger Band AND Stochastic RSI %K is at or below the oversold level AND Stochastic RSI %D is at or below the oversold level AND the short-term EMA is rising
+Short: Close crosses above the upper Bollinger Band

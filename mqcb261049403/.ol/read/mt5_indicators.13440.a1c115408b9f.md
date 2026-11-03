@@ -1,0 +1,3 @@
+Calculation: Schaff MFI Trend Cycle = Calculate fast-period MFI minus slow-period MFI, with the fast lookback shorter than the slow lookback. Over the cycle lookback, normalize this difference to 0–100; smooth each value as 0.5 × current normalized value + 0.5 × previous smoothed value. Over the same cycle lookback, normalize the smoothed values to 0–100, transform to −100–100, then smooth each value the same way. Use chart-timeframe bars.
+Long: Schaff MFI Trend Cycle > 0
+Short: Schaff MFI Trend Cycle < 0

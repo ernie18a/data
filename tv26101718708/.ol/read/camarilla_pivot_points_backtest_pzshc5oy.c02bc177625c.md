@@ -1,0 +1,3 @@
+Calculation: Camarilla levels = From the last completed bar of a higher timeframe, let H, L, C be its high, low, and close, and range = H − L. R1–R4 = C + range × (1.1/12, 1.1/6, 1.1/4, 1.1/2), respectively; S1–S4 = C − range × (1.1/12, 1.1/6, 1.1/4, 1.1/2), respectively; R5 = (H/L) × C; S5 = 2C − R5.
+Long: close > selected resistance when reverse is off OR close < selected support when reverse is on
+Short: close < selected support when reverse is off OR close > selected resistance when reverse is on

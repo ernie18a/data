@@ -1,0 +1,2 @@
+Long: shorter-lookback EMA of close > longer-lookback EMA of close on the chart timeframe AND shorter-lookback EMA of close > longer-lookback EMA of close on the higher timeframe's last completed bar
+Short: shorter-lookback EMA of close < longer-lookback EMA of close on the chart timeframe AND shorter-lookback EMA of close < longer-lookback EMA of close on the higher timeframe's last completed bar

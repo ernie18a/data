@@ -1,0 +1,1 @@
+Go long when the traded instrument’s 200-period EMA is rising, its close was at least a minimum percentage above that EMA within a recent lookback, and today’s low reaches the EMA but is no more than one ATR below it, while today’s close finishes above the EMA. If enabled, require SPY to close above its own 200-period EMA. No short or exit decision is defined.

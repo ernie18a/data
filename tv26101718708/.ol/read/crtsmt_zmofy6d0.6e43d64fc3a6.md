@@ -1,0 +1,2 @@
+Long: highest Gold high over a short lookback on the chart timeframe, including the current forming bar, > the previous completed reference-timeframe Gold high AND highest Silver high over the same lookback <= the previous completed reference-timeframe Silver high
+Short: lowest Gold low over a short lookback on the chart timeframe, including the current forming bar, < the previous completed reference-timeframe Gold low AND lowest Silver low over the same lookback >= the previous completed reference-timeframe Silver low

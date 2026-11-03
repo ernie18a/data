@@ -1,0 +1,3 @@
+Calculation: Mean range = average high − low over a longer lookback of completed bars from a higher timeframe than the chart timeframe
+Long: datetime is within the configured entry window at the daily reopen AND weekday is not Monday AND no position is open AND no entry was made during the previous session AND Mean range > 0
+Exit: Long, low <= entry price − stop multiple × Mean range OR datetime >= entry time + holding duration

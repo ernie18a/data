@@ -1,0 +1,1 @@
+Go long the US dollar when external economic data shows high inflation, interest rates at or above a moderate level, and low GDP growth. No short or exit rule is defined.

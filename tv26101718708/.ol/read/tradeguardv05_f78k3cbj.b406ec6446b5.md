@@ -1,0 +1,38 @@
+Calculation: Fast EMA = exponential moving average of close with a shorter lookback than the slow EMA; slow EMA = exponential moving average of close with a shorter lookback than the slowest EMA
+Calculation: Bullish trend = not choppy AND fast EMA > slow EMA > slowest EMA AND close > fast EMA
+Calculation: Bearish trend = not choppy AND fast EMA < slow EMA < slowest EMA AND close < fast EMA
+Calculation: Choppy = fast and slow EMA separation as a percentage of the slow EMA is below a threshold OR Bollinger Bands are inside the Keltner Channel; both channels use the same lookback
+Calculation: Bullish volume confirmation = volume-weighted close position indicates buyers winning AND volume > its moving average
+Calculation: Bearish volume confirmation = volume-weighted close position indicates sellers winning AND volume > its moving average
+Calculation: Volume above average = volume > its moving average
+Calculation: Bullish higher-timeframe alignment = fast EMA > slow EMA AND close > slowest EMA on both higher timeframes, using the last completed higher-timeframe bars
+Calculation: Bearish higher-timeframe alignment = fast EMA < slow EMA AND close < slowest EMA on both higher timeframes, using the last completed higher-timeframe bars
+Calculation: Regime allowed = at least 3 of these 6 conditions are true: bullish or bearish trend; trend agrees with the lower of the two higher timeframes; trend agrees with the higher of the two higher timeframes; close is above VWAP in an uptrend or below VWAP in a downtrend; Bollinger Bands are not inside the Keltner Channel; after the first 15 minutes and no later than 3:30 p.m.
+Calculation: Premarket high/low = highest high and lowest low during the premarket session
+Calculation: Previous-day high/low = highest high and lowest low of the previous regular session
+Calculation: Opening-range high/low = highest high and lowest low during the opening range
+Calculation: Previous-week high/low = high and low of the previous completed weekly bar
+Calculation: Retest after a level break = close crosses the level with volume above average and trend confirmation; within the next 10 bars price retests the level, closes on the breakout side with matching candle direction, and has matching bullish or bearish volume confirmation
+Calculation: Bullish liquidity sweep = any of: low falls below previous-day low or previous-week low by a buffer and close reclaims that level with close > open; low falls below fast EMA by a buffer and close > fast EMA and close > open with an uptrend or fast EMA > slow EMA; low falls below the prior lookback lowest low by a buffer and close > that low and close > open, after equal lows were detected on the preceding bar, with volume above its moving average
+Calculation: Bearish liquidity sweep = any of: high rises above previous-day high or previous-week high by a buffer and close falls below that level with close < open; high rises above fast EMA by a buffer and close < fast EMA and close < open with a downtrend or fast EMA < slow EMA; high rises above the prior lookback highest high by a buffer and close < that high and close < open, after equal highs were detected on the preceding bar, with volume above its moving average
+Calculation: Bullish flag breakout = strong upward pole followed by a tight flag, close above the flag high after the prior close was at or below it, close above flag midpoint, bullish trend, and volume above average
+Calculation: Bearish flag breakout = strong downward pole followed by a tight flag, close below the flag low after the prior close was at or above it, close below flag midpoint, bearish trend, and volume above average
+Calculation: Bullish double-bottom signal = current low is within a threshold of the lowest low over the lookback, current low > prior low, close > prior close and above the midpoint of that lookback range, with bullish trend and volume above average
+Calculation: Bearish double-top signal = current high is within a threshold of the highest high over the lookback, current high < prior high, close < prior close and below the midpoint of that lookback range, with bearish trend and volume above average
+Calculation: Bullish order-flow signal = any of: volume exceeds its longer-term average by a multiplier, candle range is below half its average, and close > open; a support wall forms when the recent low is unchanged from the prior bar, low tests it, close rebounds above it, and volume exceeds its average on each of the recent bars; a hidden support forms when a confirmed pivot low is near the recent lowest low, low tests that level, close rebounds above it, and volume exceeds its average; or a high-volume bullish reversal candle follows consecutive rising closes
+Calculation: Bearish order-flow signal = any of: volume exceeds its longer-term average by a multiplier, candle range is below half its average, and close < open; a resistance wall forms when the recent high is unchanged from the prior bar, high tests it, close falls below it, and volume exceeds its average on each of the recent bars; a hidden resistance forms when a confirmed pivot high is near the recent highest high, high tests that level, close falls below it, and volume exceeds its average; or a high-volume bearish reversal candle follows consecutive falling closes
+Calculation: Confluence score = count of aligned conditions among trend, both higher-timeframe alignments, VWAP side, volume confirmation, liquidity sweep, entry setup, high regime score, and session; high regime score means at least 5 of the 6 regime conditions are true
+Long: Regime allowed AND NOT (0DTE mode AND time is after 2 p.m.) AND (bullish trend pullback to fast EMA with close above it, close > open, bullish volume confirmation, and in session OR bullish retest after a premarket-high, previous-day-high, or opening-range-high break OR EMA reclaim after a close crossed below fast EMA and current close is above it, with bullish trend, bullish candle, bullish volume confirmation, and in session OR bullish liquidity sweep with bullish trend)
+Short: Regime allowed AND NOT (0DTE mode AND time is after 2 p.m.) AND (bearish trend pullback to fast EMA with close below it, close < open, bearish volume confirmation, and in session OR bearish retest after a premarket-low, previous-day-low, or opening-range-low break OR EMA reclaim after a close crossed above fast EMA and current close is below it, with bearish trend, bearish candle, bearish volume confirmation, and in session OR bearish liquidity sweep with bearish trend)
+Long: Bullish liquidity sweep
+Short: Bearish liquidity sweep
+Long: Bullish flag breakout OR bullish double-bottom signal
+Short: Bearish flag breakout OR bearish double-top signal
+Long: Bullish order-flow signal OR hidden support AND support wall AND (bullish big-volume, small-range candle OR bullish liquidity sweep)
+Short: Bearish order-flow signal OR hidden resistance AND resistance wall AND (bearish big-volume, small-range candle OR bearish liquidity sweep)
+Long: Bullish confluence score >= 5 AND bullish trend
+Short: Bearish confluence score >= 5 AND bearish trend
+Long: Close crosses above yearly VWAP OR close crosses above previous-week high with volume above average
+Short: Close crosses below yearly VWAP OR close crosses below previous-week low with volume above average
+Exit: Long, bullish trend AND (close < fast EMA OR (0DTE mode AND bars since EMA touch >= bounce limit and > 0) OR consecutive unchanged closes >= stall limit)
+Exit: Short, bearish trend AND (close > fast EMA OR (0DTE mode AND bars since EMA touch >= bounce limit and > 0) OR consecutive unchanged closes >= stall limit)

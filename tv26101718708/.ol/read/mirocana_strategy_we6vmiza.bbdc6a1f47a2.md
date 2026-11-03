@@ -1,0 +1,5 @@
+Calculation: Higher-timeframe close return = (close of the higher-timeframe bar still forming − close of the previous higher-timeframe bar) / close of the previous higher-timeframe bar
+Long: higher-timeframe close return > decision threshold OR (higher-timeframe close return ≥ −decision threshold AND the previous bar's prediction was long)
+Short: higher-timeframe close return < −decision threshold OR (higher-timeframe close return ≤ decision threshold AND the previous bar's prediction was short)
+Exit: long, higher-timeframe close return < −decision threshold OR (higher-timeframe close return ≤ decision threshold AND the previous bar's prediction was short)
+Exit: short, higher-timeframe close return > decision threshold OR (higher-timeframe close return ≥ −decision threshold AND the previous bar's prediction was long)

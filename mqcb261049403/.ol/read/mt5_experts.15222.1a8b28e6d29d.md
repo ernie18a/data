@@ -1,0 +1,5 @@
+Calculation: Price Channel Stop = For each indicator-timeframe bar, let the range be the highest high minus the lowest low over the current and preceding bars in the channel lookback. The upper level is the highest high minus risk fraction × range; the lower level is the lowest low plus risk fraction × range. Carry the prior trend state forward, changing it to bullish when close > prior upper level and bearish when close < prior lower level. In a bullish state, the lower level cannot decrease; in a bearish state, the upper level cannot increase. Use the indicator timeframe, whether higher or lower than the chart timeframe, and evaluate its last completed bar.
+Long: Prior trend is bearish AND current close > prior upper level.
+Short: Prior trend is bullish AND current close < prior lower level.
+Exit: Long, trend is bearish.
+Exit: Short, trend is bullish.

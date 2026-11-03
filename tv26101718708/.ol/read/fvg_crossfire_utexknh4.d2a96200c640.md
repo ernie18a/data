@@ -1,0 +1,6 @@
+Calculation: Bullish FVG = current low > high two bars earlier; its price band is [high two bars earlier, current low].
+Calculation: Bearish FVG = current high < low two bars earlier; its price band is [current high, low two bars earlier].
+Calculation: Live crossfire zone = positive-width overlap between a fresh FVG and an opposite-direction, still-unfilled FVG or live zone; the zone is only the overlap and takes the fresh FVG's direction. Each FVG is consumed after it creates or flips a zone. Base gaps are checked for fills with a three-bar delay and discarded when fully filled. Ignore gaps below the configured minimum size, bars around daily or weekly session breaks, and formations outside the configured lookback.
+Calculation: Zone retest = current bar's high >= zone bottom AND current bar's low <= zone top AND previous bar did not touch the zone; count only live zones created before the current bar.
+Long: zone direction = bullish AND zone retest
+Short: zone direction = bearish AND zone retest

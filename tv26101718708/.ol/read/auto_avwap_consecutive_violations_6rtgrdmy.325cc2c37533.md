@@ -1,0 +1,6 @@
+Calculation: High AVWAP = volume-weighted average of high (or HLC3) accumulated from the active high anchor; promote the developing high candidate after the configured number of consecutive violations above the active AVWAP. The violation source is configured as close, open, or high.
+Calculation: Low AVWAP = volume-weighted average of low (or HLC3) accumulated from the active low anchor; promote the developing low candidate after the configured number of consecutive violations below the active AVWAP. The violation source is configured as close, open, or low.
+Calculation: Developing high candidate = restart its volume-weighted accumulation when high exceeds its prior candidate extreme or smoothed Stochastic RSI D is below its lower band.
+Calculation: Developing low candidate = restart its volume-weighted accumulation when low falls below its prior candidate extreme or smoothed Stochastic RSI D is above its upper band.
+Long: selected breakout price (open or close) > High AVWAP
+Short: selected breakout price (open or close) < Low AVWAP

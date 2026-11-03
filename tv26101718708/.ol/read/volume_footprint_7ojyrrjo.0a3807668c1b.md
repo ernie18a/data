@@ -1,0 +1,3 @@
+Calculation: Footprint row delta = volume assigned to the row from lower-timeframe bars with close > open, minus volume assigned from bars with close < open; split volume equally between both sides when close = open. Assign each lower-timeframe bar’s volume evenly across its minimum-tick price range and distribute it across the footprint rows it spans. Use lower-timeframe bars within the chart bar, including a still-forming bar when present.
+Long: Footprint row delta > 0
+Short: Footprint row delta < 0

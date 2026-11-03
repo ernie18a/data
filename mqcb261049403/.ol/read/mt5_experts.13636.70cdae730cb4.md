@@ -1,0 +1,6 @@
+Calculation: Forecast oscillator = 100 × (selected bar price − weighted forecast baseline) / weighted forecast baseline, where the baseline is 6/[L(L+1)] × Σ(i − (L+1)/3) × selected price from bars t−L+i, for i=1…L
+Calculation: Signal line = T3 smoothing of the forecast oscillator: apply six consecutive EMAs with the same smoothing factor, then combine EMA3…EMA6 using the T3 coefficients derived from the configured volume factor
+Long: On the last completed bar of the indicator timeframe (which may be higher or lower than the chart timeframe), forecast oscillator > signal line on the preceding bar AND forecast oscillator two bars back <= signal line three bars back AND signal line < 0
+Short: On the last completed bar of the indicator timeframe (which may be higher or lower than the chart timeframe), forecast oscillator < signal line on the preceding bar AND forecast oscillator two bars back >= signal line three bars back AND signal line > 0
+Exit: long, short condition OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, long condition OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

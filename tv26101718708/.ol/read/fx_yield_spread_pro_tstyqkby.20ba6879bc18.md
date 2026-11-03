@@ -1,0 +1,3 @@
+Calculation: Yield spread = base-currency government bond yield minus quote-currency government bond yield at the same maturity.
+Long: Fast moving average of the yield spread crosses above the slow moving average of the yield spread (fast lookback shorter than slow; both use last completed chart-timeframe bars).
+Short: Fast moving average of the yield spread crosses below the slow moving average of the yield spread (fast lookback shorter than slow; both use last completed chart-timeframe bars).

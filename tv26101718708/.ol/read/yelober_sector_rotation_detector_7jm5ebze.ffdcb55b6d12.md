@@ -1,0 +1,3 @@
+Calculation: sector performance = (current close − previous close) / previous close on the selected analysis timeframe; use its current bar, which may still be forming, and its previous completed bar. The selected timeframe may be higher or lower than the chart timeframe.
+Long: recommendations from the sector with the highest or second-highest sector performance
+Short: recommendations from the sector with the lowest or second-lowest sector performance

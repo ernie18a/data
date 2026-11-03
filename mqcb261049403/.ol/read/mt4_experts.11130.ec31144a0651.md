@@ -1,0 +1,4 @@
+Long: trend prediction is uptrend AND RSI on the selected trend timeframe (which may be higher or lower than the chart timeframe), using the bar still forming, is at or below its upper threshold AND datetime is within the configured trend window AND position is flat
+Short: trend prediction is downtrend AND RSI on the selected trend timeframe (which may be higher or lower than the chart timeframe), using the bar still forming, is at or above its lower threshold AND datetime is within the configured trend window AND position is flat
+Exit: long, price <= entry price − stop-loss distance OR price >= entry price + take-profit distance
+Exit: short, price >= entry price + stop-loss distance OR price <= entry price − take-profit distance

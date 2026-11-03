@@ -1,0 +1,3 @@
+Calculation: Buy price = current chart bar close for first-bar timing; previous chart bar close for prior-period timing.
+Calculation: Buy amount = configured capital divided by target buys, capped at remaining capital when the capital limit is enabled.
+Long: bar is confirmed AND configured buy period starts on this bar AND (for a selected weekday schedule, the selected weekday matches the current bar for first-bar timing or the previous bar for prior-period timing) AND current bar time >= configured start date AND (for prior-period timing, previous bar time >= configured start date) AND completed buys < target buys AND (capital limit is disabled OR invested capital < total capital) AND buy amount > 0 AND buy price is available.

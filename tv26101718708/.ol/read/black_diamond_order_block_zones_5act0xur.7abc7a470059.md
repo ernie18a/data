@@ -1,0 +1,4 @@
+Calculation: Average candle body = simple moving average of |close − open| over a longer lookback
+Calculation: Average volume = simple moving average of volume over a longer lookback
+Long: close > the highest high among prior bars in the BOS lookback AND at least one bearish candle exists within the shorter order-block search lookback AND (|close − open| > average candle body × strong body multiplier AND volume > average volume × strong volume multiplier OR |close − open| > average candle body × medium body multiplier AND volume > average volume × medium volume multiplier)
+Short: close < the lowest low among prior bars in the BOS lookback AND at least one bullish candle exists within the shorter order-block search lookback AND (|close − open| > average candle body × strong body multiplier AND volume > average volume × strong volume multiplier OR |close − open| > average candle body × medium body multiplier AND volume > average volume × medium volume multiplier)

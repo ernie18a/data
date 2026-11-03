@@ -1,0 +1,3 @@
+Calculation: Qualification score = count of these conditions: close > long-term EMA; short-term EMA > long-term EMA; long-term EMA > its value at a longer lookback; last completed higher-timeframe close > its long-term EMA; (stock close / stock long-term EMA) / (benchmark close / benchmark long-term EMA) > 1; RSI within the healthy range; current average volume > the same-duration average volume from a longer lookback
+Calculation: EMA retest = low <= long-term EMA × (1 + proximity allowance) AND close > long-term EMA AND no EMA retest occurred in the preceding three bars
+Long: EMA retest AND qualification score >= minimum score threshold AND (volume filter disabled OR volume > volume moving average × volume multiplier)

@@ -1,0 +1,11 @@
+Calculation: Camarilla range = high − low of the previous completed higher-timeframe bar
+Calculation: Lower Camarilla 3 = previous completed higher-timeframe close − 1.1 × Camarilla range ÷ 4
+Calculation: Lower Camarilla 4 = previous completed higher-timeframe close − 1.1 × Camarilla range ÷ 2
+Calculation: Upper Camarilla 3 = previous completed higher-timeframe close + 1.1 × Camarilla range ÷ 4
+Calculation: Upper Camarilla 4 = previous completed higher-timeframe close + 1.1 × Camarilla range ÷ 2
+Calculation: Upper Camarilla 5 = previous completed higher-timeframe high ÷ previous completed higher-timeframe low × previous completed higher-timeframe close
+Calculation: Lower Camarilla 5 = 2 × previous completed higher-timeframe close − Upper Camarilla 5
+Long: low <= Lower Camarilla 3 OR close > Upper Camarilla 4
+Short: high >= Upper Camarilla 3 OR close < Lower Camarilla 4
+Exit: long, high >= Upper Camarilla 5
+Exit: short, low <= Lower Camarilla 5

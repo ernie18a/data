@@ -1,0 +1,4 @@
+Calculation: Smoothed volume = the selected moving average of volume, using the indicator’s smoothing method and lookback on the chart timeframe; in the HTF variant, use the selected timeframe (equal to or higher than the chart timeframe) and its still-forming bar.
+Calculation: Smoothed centered volume-weighted DeMarker = the selected moving average of (100 × DeMarker − 50) × volume, using the same smoothing method and lookback as Smoothed volume, on the same timeframe and bar state.
+Long: Smoothed centered volume-weighted DeMarker > upper level 1 × Smoothed volume
+Short: Smoothed centered volume-weighted DeMarker < lower level 1 × Smoothed volume

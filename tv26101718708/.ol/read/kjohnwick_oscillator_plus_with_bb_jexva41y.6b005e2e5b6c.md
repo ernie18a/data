@@ -1,0 +1,5 @@
+Calculation: Oscillator = Hull moving average of the close-based RSI, using a shorter lookback than the RSI
+Calculation: Signal = Hull moving average of the oscillator, using a shorter lookback than the oscillator’s Hull moving average
+Calculation: Upper and lower Bollinger Bands = Bollinger Bands calculated on the oscillator
+Long: Oscillator crosses above Signal OR the oscillator is below 50 and at or below the lower Bollinger Band OR the highest close over the recent lookback is higher than over the immediately preceding lookback AND the oscillator’s highest value over the recent lookback is lower than over the preceding lookback AND the oscillator is below 30
+Short: Oscillator crosses below Signal OR the oscillator is above 50 and at or above the upper Bollinger Band OR the lowest close over the recent lookback is lower than over the immediately preceding lookback AND the oscillator’s lowest value over the recent lookback is higher than over the preceding lookback AND the oscillator is above 70

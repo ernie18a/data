@@ -1,0 +1,3 @@
+Calculation: New HOD = signal-timeframe bar high > the highest high of earlier bars in the same day; signal timeframe is the same as or higher than the chart timeframe.
+Calculation: Average daily volume = average volume of completed daily bars, excluding the current day; daily timeframe is higher than the chart timeframe.
+Short: On the first completed signal-timeframe bar after the most recent New HOD bar, close < that New HOD bar's close AND average daily volume >= the minimum threshold AND (if enabled) the bar is in the regular session.

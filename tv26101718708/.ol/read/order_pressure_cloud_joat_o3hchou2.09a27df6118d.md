@@ -1,0 +1,6 @@
+Calculation: Pressure strength = clamp(155 × C / (1 + abs(C)), −100, 100), where C = 0.72 × EMA(CLV × volume) / EMA(volume) + 0.28 × EMA(body share × min(volume pulse, 3)); CLV = (2 × close − high − low) / max(high − low, minimum tick); body share = (close − open) / max(high − low, minimum tick); volume pulse = volume / EMA(volume). Use the same pressure lookback for these EMAs.
+Calculation: ALMA/EMA blended basis = weighted blend of ALMA and EMA of (high + low + close) / 3, using the same basis lookback.
+Calculation: Cloud distance = ATR × cloud multiplier × (1 + 0.70 × abs(pressure strength) / 100 + 0.12 × clamp(volume pulse − 1, 0, 2)).
+Calculation: Upper inner cloud boundary = ALMA/EMA blended basis + 0.38 × cloud distance.
+Long: (pressure strength crosses above the signal threshold AND close > ALMA/EMA blended basis) OR (pressure strength > signal threshold AND low ≤ upper inner cloud boundary AND close > ALMA/EMA blended basis AND the same hold condition was false on the previous bar)
+Short: (pressure strength crosses below the negative signal threshold AND close < ALMA/EMA blended basis) OR (pressure strength < negative signal threshold AND high ≥ ALMA/EMA blended basis − 0.38 × cloud distance AND close < ALMA/EMA blended basis AND the same hold condition was false on the previous bar)

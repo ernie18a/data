@@ -1,0 +1,10 @@
+Calculation: Demand zone = On a higher timeframe, using the last completed bar, a bullish bar whose close is at least ATR × displacement threshold above the close N bars earlier, together with the first bearish candle found among the preceding base-search bars; zone boundaries are that candle’s high/low or body high/low.
+Calculation: Supply zone = On a higher timeframe, using the last completed bar, a bearish bar whose close is at least ATR × displacement threshold below the close N bars earlier, together with the first bullish candle found among the preceding base-search bars; zone boundaries are that candle’s high/low or body high/low.
+Calculation: Bullish FVG = Current low − high two bars earlier ≥ minimum gap size, and current low > high two bars earlier.
+Calculation: Bearish FVG = Low two bars earlier − current high ≥ minimum gap size, and current high < low two bars earlier.
+Calculation: Near a zone = The distance from close to the nearest existing supply or demand zone is ≤ ATR × distance threshold; distance is zero when close is inside a zone.
+Calculation: Bullish structure = The latest confirmed pivot high is higher than the previous confirmed pivot high, and the latest confirmed pivot low is higher than the previous confirmed pivot low.
+Calculation: Bearish structure = The latest confirmed pivot high is lower than the previous confirmed pivot high, and the latest confirmed pivot low is lower than the previous confirmed pivot low.
+Calculation: Trend = On a higher timeframe, using the last completed bar, bullish structure with fast EMA > slow EMA is bullish, bearish structure with fast EMA < slow EMA is bearish, and all other cases are unconfirmed; when EMA confirmation is disabled, structure alone determines direction.
+Long: A new demand zone is detected OR a bullish FVG forms AND price is near a zone OR trend is bullish.
+Short: A new supply zone is detected OR a bearish FVG forms AND price is near a zone OR trend is bearish.

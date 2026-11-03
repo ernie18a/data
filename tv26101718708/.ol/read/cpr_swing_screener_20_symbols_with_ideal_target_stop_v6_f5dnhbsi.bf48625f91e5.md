@@ -1,0 +1,8 @@
+Calculation: Previous-day pivot = (previous completed daily high + low + close) / 3; previous-day central pivot range top and bottom = max/min of (2 × pivot − previous-day low + previous-day high) / 2 and (2 × pivot − (previous-day high + previous-day low) / 2)
+Calculation: Previous-day R1 = 2 × pivot − previous-day low; previous-day S1 = 2 × pivot − previous-day high
+Calculation: CPR width percent = 100 × (CPR top − CPR bottom) / close
+Calculation: Narrow CPR = CPR width percent ≤ narrow-width threshold; wide CPR = CPR width percent ≥ wide-width threshold
+Calculation: Trend EMA = exponential moving average of close
+Calculation: Volume confirmation = volume > volume moving average × volume multiplier
+Long: (narrow CPR AND close > CPR top AND close > R1 AND close > open AND (EMA filter disabled OR close > trend EMA) AND (volume filter disabled OR volume confirmation)) OR (wide CPR AND low ≤ CPR bottom AND close > CPR bottom AND close > open AND (EMA filter disabled OR close > trend EMA)) OR (narrow CPR AND close > pivot AND close ≤ R1 AND (EMA filter disabled OR close > trend EMA))
+Short: (narrow CPR AND close < CPR bottom AND close < S1 AND close < open AND (EMA filter disabled OR close < trend EMA) AND (volume filter disabled OR volume confirmation)) OR (wide CPR AND high ≥ CPR top AND close < CPR top AND close < open AND (EMA filter disabled OR close < trend EMA)) OR (narrow CPR AND close < pivot AND close ≥ S1 AND (EMA filter disabled OR close < trend EMA))

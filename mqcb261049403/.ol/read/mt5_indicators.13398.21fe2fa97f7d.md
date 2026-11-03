@@ -1,0 +1,5 @@
+Calculation: Applied price = the configured price derived from the bar’s open, high, low, and close.
+Calculation: XCCX = 100 × smoothed deviation from a smoothed applied price ÷ smoothed absolute deviation; both deviation series use the configured deviation smoother and period.
+Calculation: Fast step line and slow step line = separate trailing step lines of XCCX. For each, form candidate bounds at XCCX ± twice its step size; switch trend up when XCCX exceeds the previous upper bound and down when it falls below the previous lower bound. In an uptrend, keep the lower bound from decreasing; in a downtrend, keep the upper bound from increasing. The line is the lower bound plus one step in an uptrend, or the upper bound minus one step in a downtrend. The fast line uses the smaller step size; the slow line uses the larger step size.
+Long: On a configured timeframe higher or lower than the chart timeframe, fast step line > slow step line on that timeframe’s last completed bar.
+Short: On a configured timeframe higher or lower than the chart timeframe, fast step line < slow step line on that timeframe’s last completed bar.

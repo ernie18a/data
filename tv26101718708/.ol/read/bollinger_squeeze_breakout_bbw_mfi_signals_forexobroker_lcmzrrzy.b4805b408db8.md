@@ -1,0 +1,8 @@
+Calculation: Bollinger BandWidth = (upper Bollinger Band − lower Bollinger Band) / middle line × 100
+Calculation: Squeeze candle = absolute change in the middle line over the flatness lookback ≤ ATR × flatness multiplier AND BandWidth ≤ its lowest value over the squeeze lookback × (1 + squeeze threshold)
+Long: current BandWidth > previous bar’s BandWidth AND close > upper Bollinger Band AND the most recent squeeze candle on an earlier bar is within the breakout lookback and has not already produced a signal AND (if MFI confirmation is enabled, Money Flow Index > its threshold) AND (if overlapping trades are disabled, no position is open)
+Short: current BandWidth > previous bar’s BandWidth AND close < lower Bollinger Band AND the most recent squeeze candle on an earlier bar is within the breakout lookback and has not already produced a signal AND (if MFI confirmation is enabled, Money Flow Index < its threshold) AND (if overlapping trades are disabled, no position is open)
+Exit: long, in middle-line exit mode, close < current middle line
+Exit: short, in middle-line exit mode, close > current middle line
+Exit: long, in fixed-target mode, low ≤ middle line at entry OR high ≥ entry price + reward multiple × absolute(entry price − middle line at entry); if both thresholds are touched on the same bar, exit at the middle line
+Exit: short, in fixed-target mode, high ≥ middle line at entry OR low ≤ entry price − reward multiple × absolute(entry price − middle line at entry); if both thresholds are touched on the same bar, exit at the middle line

@@ -1,0 +1,3 @@
+Calculation: Slope Direction Line = moving average over √period of [2 × moving average over period/2 of price − moving average over period of price], using the same moving-average method throughout
+Long: Chart-timeframe Slope Direction Line > its value on the previous chart bar OR higher-timeframe Slope Direction Line > its value on the previous higher-timeframe bar, using the higher-timeframe bar still forming
+Short: Chart-timeframe Slope Direction Line < its value on the previous chart bar OR higher-timeframe Slope Direction Line < its value on the previous higher-timeframe bar, using the higher-timeframe bar still forming

@@ -1,0 +1,2 @@
+Long: close > short-term simple moving average AND short-term simple moving average > long-term simple moving average
+Short: close < short-term simple moving average AND short-term simple moving average < long-term simple moving average

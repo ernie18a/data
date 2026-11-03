@@ -1,0 +1,12 @@
+Calculation: Previous-day high, low, and close = high, low, and close of the last completed daily bar (higher timeframe).
+Calculation: Premarket high and low = highest high and lowest low of the current premarket session, including the bar still forming.
+Calculation: Opening-range high and low = highest high and lowest low from the regular-session open through the configured opening-range duration; use the completed range after that duration ends.
+Calculation: Session VWAP = volume-weighted average of typical price (high + low + close) / 3 for the current session, including the bar still forming.
+Long: close > previous-day high AND previous close <= previous-day high
+Long: close > premarket high AND previous close <= premarket high
+Long: opening range is complete AND close > opening-range high AND previous close <= opening-range high
+Long: close > session VWAP AND previous close <= previous session VWAP
+Short: close < previous-day low AND previous close >= previous-day low
+Short: close < premarket low AND previous close >= premarket low
+Short: opening range is complete AND close < opening-range low AND previous close >= opening-range low
+Short: close < session VWAP AND previous close >= previous session VWAP

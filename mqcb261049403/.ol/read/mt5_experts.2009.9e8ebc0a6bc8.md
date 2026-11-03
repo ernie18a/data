@@ -1,0 +1,5 @@
+Calculation: Blau TStochI = 100 × (third smoothing of the second-smoothed applied price minus the lookback low, divided by the third smoothing of the second-smoothed lookback high–low range) − 50; apply the same smoothing method and three configurable lookbacks in sequence to both numerator and range
+Long: Blau TStochI crosses above zero (latest completed indicator-timeframe bar > 0 AND preceding bar ≤ 0) OR turns upward (latest > preceding AND preceding ≤ the bar before it)
+Short: Blau TStochI crosses below zero (latest completed indicator-timeframe bar < 0 AND preceding bar ≥ 0) OR turns downward (latest < preceding AND preceding ≥ the bar before it)
+Exit: long, Blau TStochI < 0 OR (latest completed indicator-timeframe bar < preceding AND preceding ≥ the bar before it)
+Exit: short, Blau TStochI > 0 OR (latest completed indicator-timeframe bar > preceding AND preceding ≤ the bar before it)

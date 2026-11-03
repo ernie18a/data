@@ -1,0 +1,15 @@
+Calculation: Recent pivot high/low = latest confirmed local high/low, using the configured swing strength on both sides
+Calculation: Bullish/bearish FVG = current low > high two bars ago / current high < low two bars ago; retain the latest gap’s boundaries
+Calculation: Buy/sell score = points for matching higher-timeframe bias (15), sweep (20), displacement (15), market structure shift (15), FVG retest (20) or new FVG (10), premium/discount position (10), and session (5)
+Calculation: Range position = (close − lowest low over configured lookback) / max(highest high − lowest low over that lookback, minimum tick) × 100
+Calculation: Bullish/bearish displacement = bullish/bearish candle with body > 1.05 × average candle body over configured lookback
+Calculation: Buy/sell FVG retest = price retests the latest bullish/bearish FVG boundary and closes beyond its opposite boundary
+Calculation: Buy/sell stop = lowest low / highest high over configured lookback
+Long: close > higher-timeframe EMA(50) using the higher-timeframe bar still forming AND (buy score ≥ configured minimum AND session filter passes AND (ATR ≥ average ATR × configured multiplier over configured lookback OR ATR filter disabled) AND cooldown has elapsed AND daily trade limit not reached AND flat AND close − buy stop > minimum tick) AND ((buy sweep AND bullish rejection AND range position < configured buy level) OR (higher-timeframe bias bullish AND shorter-term EMA > longer-term EMA AND range position < configured buy level AND buy FVG retest AND bullish rejection) OR (higher-timeframe bias bullish AND shorter-term EMA > longer-term EMA AND range position < configured buy level AND bullish displacement AND close > shorter-term EMA))
+Long: current low < recent pivot low AND current close > recent pivot low
+Long: current close > recent pivot high
+Short: current high > recent pivot high AND current close < recent pivot high
+Short: current close < recent pivot low
+Short: close < higher-timeframe EMA(50) using the higher-timeframe bar still forming AND (sell score ≥ configured minimum AND session filter passes AND (ATR ≥ average ATR × configured multiplier over configured lookback OR ATR filter disabled) AND cooldown has elapsed AND daily trade limit not reached AND flat AND sell stop − close > minimum tick) AND ((sell sweep AND bearish rejection AND range position > configured sell level) OR (higher-timeframe bias bearish AND shorter-term EMA < longer-term EMA AND range position > configured sell level AND sell FVG retest AND bearish rejection) OR (higher-timeframe bias bearish AND shorter-term EMA < longer-term EMA AND range position > configured sell level AND bearish displacement AND close < shorter-term EMA))
+Exit: long, low ≤ buy stop OR high ≥ entry price + (entry price − buy stop) × configured risk/reward
+Exit: short, high ≥ sell stop OR low ≤ entry price − (sell stop − entry price) × configured risk/reward

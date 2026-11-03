@@ -1,0 +1,3 @@
+Calculation: Price Volume Trend = previous Price Volume Trend + ((close − previous close) / previous close) × volume, treating the initial previous value as zero
+Long: Commodity Channel Index with a shorter lookback > 0 AND Commodity Channel Index with a longer lookback > 0 AND Price Volume Trend > its simple moving average AND position side ≤ 0
+Short: Commodity Channel Index with a shorter lookback < 0 AND Commodity Channel Index with a longer lookback < 0 AND Price Volume Trend < its simple moving average AND position side ≥ 0

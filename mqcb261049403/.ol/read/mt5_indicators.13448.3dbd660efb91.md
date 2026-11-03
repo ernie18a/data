@@ -1,0 +1,3 @@
+Calculation: Schaff RSI Trend Cycle = subtract the longer-lookback RSI from the shorter-lookback RSI, normalize the difference over a cycle lookback to 0–100, smooth it with a 0.5 recursive average, normalize that result over the same cycle lookback to −100–100, then smooth it with a 0.5 recursive average; calculate on the chart timeframe and, for the HTF display, on a higher timeframe using its still-forming bar
+Long: Schaff RSI Trend Cycle > its previous value on the chart timeframe OR Schaff RSI Trend Cycle > its previous value on the higher timeframe
+Short: Schaff RSI Trend Cycle < its previous value on the chart timeframe OR Schaff RSI Trend Cycle < its previous value on the higher timeframe

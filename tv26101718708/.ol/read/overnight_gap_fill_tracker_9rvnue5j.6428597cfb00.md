@@ -1,0 +1,5 @@
+Calculation: Overnight gap = regular-session opening price minus the previous completed daily bar’s close (higher timeframe; last completed bar).
+Calculation: Gap magnitude = absolute overnight gap, measured in the configured price or percent units.
+Calculation: 50% retracement level = regular-session opening price minus half the overnight gap.
+Long: Overnight gap > 0 AND gap magnitude >= minimum gap size AND the 50% retracement has been touched AND bars since its first touch <= configured look-forward bars AND no earlier bounce occurred this session AND high >= 50% retracement level + minimum bounce distance.
+Short: Overnight gap < 0 AND gap magnitude >= minimum gap size AND the 50% retracement has been touched AND bars since its first touch <= configured look-forward bars AND no earlier bounce occurred this session AND low <= 50% retracement level - minimum bounce distance.

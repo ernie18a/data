@@ -1,0 +1,5 @@
+Calculation: EWO = short-lookback SMA of close minus long-lookback SMA of close
+Calculation: higher-timeframe EMA = EMA of higher-timeframe close using the bar still forming
+Long: position is flat AND ADX > entry threshold AND close crosses above the prior-bar highest high over a lookback AND EWO > 0 AND close > higher-timeframe EMA OR position is long AND close < most recent entry price minus recovery distance AND ADX > recovery threshold
+Short: position is flat AND ADX > entry threshold AND close crosses below the prior-bar lowest low over a lookback AND EWO < 0 AND close < higher-timeframe EMA OR position is short AND close > most recent entry price plus recovery distance AND ADX > recovery threshold
+Exit: Long or short position, open profit >= profit target OR open profit <= negative maximum open-loss limit

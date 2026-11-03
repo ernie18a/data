@@ -1,0 +1,6 @@
+Long: On each timeframe shown (lower than, equal to, or higher than the chart timeframe), the short-term simple moving average of close on its still-forming bar > the long-term simple moving average of close on its still-forming bar
+Short: On each timeframe shown (lower than, equal to, or higher than the chart timeframe), the short-term simple moving average of close on its still-forming bar <= the long-term simple moving average of close on its still-forming bar
+Long: On each timeframe shown (lower than, equal to, or higher than the chart timeframe), absolute Williams %R on its still-forming bar < the lower threshold
+Short: On each timeframe shown (lower than, equal to, or higher than the chart timeframe), absolute Williams %R on its still-forming bar > the upper threshold
+Long: On each timeframe shown (lower than, equal to, or higher than the chart timeframe), Parabolic SAR on its still-forming bar < the current chart bar's close
+Short: On each timeframe shown (lower than, equal to, or higher than the chart timeframe), Parabolic SAR on its still-forming bar >= the current chart bar's close

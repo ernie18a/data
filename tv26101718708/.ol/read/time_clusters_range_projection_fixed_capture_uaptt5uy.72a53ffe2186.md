@@ -1,0 +1,3 @@
+Calculation: Captured slot high/low = high/low of the first bar of the selected capture timeframe captured at an enabled time slot’s start; the capture timeframe may be higher or lower than the chart timeframe, and the captured values are fixed for that slot.
+Long: For any enabled slot with a captured range, close > captured high AND previous close <= captured high
+Short: For any enabled slot with a captured range, close < captured low AND previous close >= captured low

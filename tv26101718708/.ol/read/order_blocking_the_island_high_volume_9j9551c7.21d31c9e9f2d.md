@@ -1,0 +1,4 @@
+Calculation: Bullish order block = after a swing low is confirmed using left- and right-bar lookbacks, the nearest preceding bearish candle within a backward search window, provided its volume meets or exceeds the nearest-rank volume percentile threshold calculated over a lookback; its low and high define the zone.
+Calculation: Bearish order block = after a swing high is confirmed using left- and right-bar lookbacks, the nearest preceding bullish candle within a backward search window, provided its volume meets or exceeds the nearest-rank volume percentile threshold calculated over a lookback; its low and high define the zone.
+Long: An unmitigated bearish order block exists AND close > its high
+Short: An unmitigated bullish order block exists AND close < its low

@@ -1,0 +1,2 @@
+Calculation: red candle = close < open
+Long: at least the configured minimum number of consecutive preceding bars are red AND close > open AND close > prior bar high AND volume > prior bar volume OR at least the configured minimum number of consecutive bars ending two bars ago are red AND close[1] > open[1] AND close > open AND NOT (at least the configured minimum number of consecutive bars ending two bars ago are red AND close[1] > open[1] AND close[1] > high[2] AND volume[1] > volume[2]) AND volume[1] + volume > volume[2] + volume[3]

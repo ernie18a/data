@@ -1,0 +1,4 @@
+Calculation: Camarilla levels = from the last completed daily bar: CP = close; range = high − low; R3/S3 = CP ± 1.1 × range / 4; R4/S4 = CP ± 1.1 × range / 2. The daily timeframe is higher than an intraday chart timeframe.
+Calculation: Relative volume = current chart-bar volume / 20-bar simple moving average of chart-bar volume.
+Long: low crosses below S3 (current low < S3 and previous low ≥ S3) AND close > S3 OR close crosses above R4 (current close > R4 and previous close ≤ R4) AND (high-volume filter disabled OR relative volume ≥ configured threshold) AND close > open
+Short: high crosses above R3 (current high > R3 and previous high ≤ R3) AND close < R3 OR close crosses below S4 (current close < S4 and previous close ≥ S4) AND (high-volume filter disabled OR relative volume ≥ configured threshold) AND close < open

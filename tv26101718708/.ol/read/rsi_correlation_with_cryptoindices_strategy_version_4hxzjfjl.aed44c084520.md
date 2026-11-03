@@ -1,0 +1,3 @@
+Calculation: Relative RSI ratio = RSI of the selected crypto index’s last completed bar on a timeframe higher than the chart timeframe, divided by RSI of chart close; both use the same lookback.
+Long: previous bar’s relative RSI ratio <= crossover threshold AND current bar’s relative RSI ratio > crossover threshold AND datetime >= configured start datetime AND datetime <= configured stop datetime
+Short: previous bar’s relative RSI ratio >= crossover threshold AND current bar’s relative RSI ratio < crossover threshold AND datetime >= configured start datetime AND datetime <= configured stop datetime

@@ -1,0 +1,2 @@
+Long: MACD on the last completed higher-timeframe bar is greater than MACD on the preceding completed bar AND Force Index on the last completed higher-timeframe bar is less than 0
+Short: MACD on the last completed higher-timeframe bar is less than MACD on the preceding completed bar AND Force Index on the last completed higher-timeframe bar is greater than 0

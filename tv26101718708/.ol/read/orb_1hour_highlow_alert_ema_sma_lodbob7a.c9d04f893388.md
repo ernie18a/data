@@ -1,0 +1,3 @@
+Calculation: Opening-range high = highest high of bars in the opening range.
+Calculation: Opening-range average volume = sum of volume over opening-range bars divided by their count.
+Long: after the opening range is established AND breakout is armed (no signal since the most recent close below the opening-range high) AND close crosses above the opening-range high AND volume >= the opening-range average volume × the volume multiplier AND close > VWAP

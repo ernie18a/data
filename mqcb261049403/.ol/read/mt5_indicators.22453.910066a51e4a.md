@@ -1,0 +1,3 @@
+Calculation: Volume-weighted Williams %R = configured moving average of ((Williams %R + 50) × bar volume), where Williams %R = −100 × (highest high over its lookback − close) ÷ (highest high − lowest low) over that lookback. Use the chart timeframe’s still-forming bar, or, in the higher-timeframe variant, the still-forming bar of the selected higher timeframe; carry its sampled value forward across chart bars until the next higher-timeframe boundary.
+Long: Volume-weighted Williams %R > its value on the previous bar
+Short: Volume-weighted Williams %R < its value on the previous bar

@@ -1,0 +1,6 @@
+Calculation: Linear regression channel = fit a least-squares line to the closes of the N most recent bars (current bar is index 0); the center is its value at index 0, and support/resistance are the center minus/plus the larger of the maximum positive and negative close residuals in that window.
+Calculation: Higher-timeframe channel slope = (resistance on the current, still-forming higher-timeframe bar minus resistance N−1 bars ago) / N.
+Long: Higher-timeframe channel slope > 0 AND low on the still-forming longer lower-timeframe bar <= its support AND low on the still-forming shorter lower-timeframe bar <= its support AND no long position is open.
+Short: Higher-timeframe channel slope < 0 AND high on the still-forming longer lower-timeframe bar >= its resistance AND high on the still-forming shorter lower-timeframe bar >= its resistance AND no short position is open.
+Exit: Long, price >= the longer lower-timeframe center at entry OR price <= entry price − (center − support at entry) / 2.
+Exit: Short, price <= the longer lower-timeframe center at entry OR price >= entry price + (resistance − center at entry) / 2.

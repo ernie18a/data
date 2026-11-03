@@ -1,0 +1,5 @@
+Calculation: Long bounce reference = Latest confirmed pivot high, accepted only when ALMA(close, lookback four times the pivot left lookback) is rising over the pivot right lookback; update only on a new accepted pivot.
+Calculation: Short bounce reference = Latest confirmed pivot low, accepted only when the same ALMA is falling over the pivot right lookback; update only on a new accepted pivot.
+Calculation: Bounce level = On a new reference, reset the level to that reference and clear its fired state. While the reference is unchanged and no bounce has fired, compare close to the level before updating it: for long, update to the lower of the level and current high; for short, update to the higher of the level and current low. A close break fires once, until the reference changes.
+Long: Close is rising over a short lookback AND volume is rising over the same lookback OR close > long bounce level and the long bounce has not fired for its current reference
+Short: Close is falling over a short lookback AND volume is rising over the same lookback OR close < short bounce level and the short bounce has not fired for its current reference

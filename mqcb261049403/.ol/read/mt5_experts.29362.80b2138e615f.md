@@ -1,0 +1,5 @@
+Calculation: Currency strength = for each configured currency pair, calculate the current bid’s normalized position within the high-low range over each lookback from 1 to N bars on the higher timeframe, including its still-forming bar; weight each ratio by (N+1−lookback)/[N(N+1)/2] and sum. Convert the result to a score: 9 if ≥0.97, 8 if ≥0.90, 7 if ≥0.75, 6 if ≥0.60, 5 if ≥0.50, 4 if ≥0.40, 3 if ≥0.25, 2 if ≥0.10, 1 if ≥0.03, otherwise 0. Add the score to the base currency and 9 minus the score to the quote currency; each currency’s strength is its average score across configured pairs.
+Long: base currency strength > upper threshold AND quote currency strength < lower threshold
+Short: base currency strength < lower threshold AND quote currency strength > upper threshold
+Exit: long, price ≤ entry price − configured stop distance OR price ≥ entry price + configured target distance
+Exit: short, price ≥ entry price + configured stop distance OR price ≤ entry price − configured target distance

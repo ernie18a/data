@@ -1,0 +1,5 @@
+Calculation: Main-timeframe EMA 21, EMA 50, and EMA 100 = exponential moving averages of close on the configured main timeframe; their lookbacks are progressively longer. If that timeframe is higher than the chart timeframe, use its current bar while forming.
+Calculation: Main-timeframe EMA 200 = exponential moving average of close on the configured main timeframe; if that timeframe is higher than the chart timeframe, use its current bar while forming.
+Calculation: HTF EMA 50 and EMA 200 = exponential moving averages of close on each configured higher timeframe; EMA 50 has the shorter lookback. Use the last completed bar of each higher timeframe.
+Long: Main-timeframe close > EMA 50 AND main-timeframe close > EMA 200 AND main-timeframe low <= EMA 50 AND (main-timeframe high >= the lowest of EMA 21, EMA 50, and EMA 100 OR main-timeframe low <= the highest of EMA 21, EMA 50, and EMA 100)
+Short: Main-timeframe close < EMA 50 AND main-timeframe close < EMA 200 AND main-timeframe high >= EMA 50 AND (main-timeframe high >= the lowest of EMA 21, EMA 50, and EMA 100 OR main-timeframe low <= the highest of EMA 21, EMA 50, and EMA 100)

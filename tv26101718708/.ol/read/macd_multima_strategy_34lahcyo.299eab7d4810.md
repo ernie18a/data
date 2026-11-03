@@ -1,0 +1,2 @@
+Long: VWMA, RMA, SMA, WMA, and EMA of close are each greater than their respective values on the previous bar
+Short: VWMA, RMA, SMA, WMA, and EMA of close are each less than their respective values on the previous bar

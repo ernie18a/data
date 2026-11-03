@@ -1,0 +1,14 @@
+Calculation: Pressure oscillator = EMA(signed candle body × volume) / EMA(abs(signed candle body) × volume), expressed as a percentage and clipped to [−100, 100]; signed candle body = (close − open) / max(high − low, minimum price increment)
+Calculation: Volume impulse = volume / SMA(volume)
+Calculation: Auction value center = SMA(hlc3 × volume) / SMA(volume); value high/low = center ± standard deviation(hlc3) × configured deviation
+Calculation: ATR rank = percentile rank of ATR as a percentage of close over the configured regime lookback
+Calculation: Confirmed HTF basis = EMA(close) on a higher timeframe, using the last completed higher-timeframe bar
+Calculation: Structure bias = bullish after a confirmed swing-high break on displacement, bearish after a confirmed swing-low break on displacement, otherwise retain the previous bias; displacement requires absolute candle body greater than ATR × configured multiplier and volume impulse above its baseline
+Calculation: Long score = weighted sum of bullish trend (fast EMA > mid EMA > slow EMA and close > mid EMA), rising VWAP with close above it, bullish MACD/RSI/DMI momentum, bid pressure, bullish absorption, bullish structure, auction discount or reclaim, HTF pass, volatility expansion outside premium, and clipped ADX strength
+Calculation: Short score = weighted sum of bearish trend (fast EMA < mid EMA < slow EMA and close < mid EMA), falling VWAP with close below it, bearish MACD/RSI/DMI momentum, ask pressure, bearish absorption, bearish structure, auction premium or rejection, HTF pass, volatility expansion outside discount, and clipped ADX strength
+Long: bar is confirmed when close confirmation is enabled AND long score ≥ configured long threshold AND long score > short score + configured dominance margin AND HTF filter passes (if enabled) AND close is not in auction premium
+Long: bar is confirmed when close confirmation is enabled AND (upward displacement break OR bullish fair value gap OR bullish absorption) AND long score ≥ configured zone threshold AND (structure bias is non-bearish OR a swing-low sweep occurs)
+Short: bar is confirmed when close confirmation is enabled AND short score ≥ configured short threshold AND short score > long score + configured dominance margin AND HTF filter passes (if enabled) AND close is not in auction discount
+Short: bar is confirmed when close confirmation is enabled AND (downward displacement break OR bearish fair value gap OR bearish absorption) AND short score ≥ configured zone threshold AND (structure bias is non-bullish OR a swing-high sweep occurs)
+Exit: long, bar is confirmed when close confirmation is enabled AND (short score > long score OR close < mid EMA OR (auction premium AND pressure oscillator < 0))
+Exit: short, bar is confirmed when close confirmation is enabled AND (long score > short score OR close > mid EMA OR (auction discount AND pressure oscillator > 0))

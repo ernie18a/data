@@ -1,0 +1,2 @@
+Long: chart-timeframe Stochastic %K < lower threshold OR chart-timeframe Stochastic %K > Stochastic %D OR higher-timeframe Stochastic %K < lower threshold on the higher-timeframe bar still forming OR higher-timeframe Stochastic %K > Stochastic %D on the higher-timeframe bar still forming
+Short: chart-timeframe Stochastic %K > upper threshold OR chart-timeframe Stochastic %K < Stochastic %D OR higher-timeframe Stochastic %K > upper threshold on the higher-timeframe bar still forming OR higher-timeframe Stochastic %K < Stochastic %D on the higher-timeframe bar still forming

@@ -1,0 +1,5 @@
+Calculation: Schaff Trend Cycle (STC) = On the configured indicator timeframe, subtract the long-lookback XMA of the selected price from the short-lookback XMA of that price, where the short lookback is shorter. Normalize this difference over a rolling Cycle-bar range to 0–100; smooth each value as 0.5 × current + 0.5 × previous. Normalize the smoothed values over a rolling Cycle-bar range to −100–100, then smooth the same way to get STC. If either range is zero, use that stage’s previous value. Use the last completed indicator-timeframe bar and its preceding completed bar; the configured timeframe may be higher or lower than the chart timeframe.
+Long: Previous STC > upper level AND current STC > upper level AND current STC >= previous STC
+Short: Previous STC < lower level AND current STC >= lower level
+Exit: long, Previous STC < lower level AND current STC >= lower level
+Exit: short, Previous STC > upper level AND current STC > upper level AND current STC >= previous STC

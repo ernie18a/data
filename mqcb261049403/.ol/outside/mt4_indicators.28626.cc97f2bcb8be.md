@@ -1,0 +1,1 @@
+For a currency pair with base currency X and quote currency Y, compare their relative-strength indicator values. If the values are close, go long the pair; if they are far apart, go short. Consider overall market context, including support and resistance.

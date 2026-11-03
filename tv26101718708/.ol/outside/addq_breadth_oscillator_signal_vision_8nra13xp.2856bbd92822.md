@@ -1,0 +1,1 @@
+Use NASDAQ advance–decline breadth data, falling back to a generic breadth feed or advancing issues minus declining issues. Smooth it, then smooth that result into a signal line. Go long when the breadth line crosses above the signal line; go short when it crosses below. An opposite crossover reverses the direction; no separate exit condition is defined.

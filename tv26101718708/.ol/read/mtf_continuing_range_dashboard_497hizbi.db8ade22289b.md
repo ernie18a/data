@@ -1,0 +1,3 @@
+Calculation: Continuing range direction = For each selected timeframe, initialize the active range to the first bar’s high and low and direction to neutral. On each completed bar, if its close is above the active range high, set direction up and replace the active range with that bar’s high and low; if its close is below the active range low, set direction down and replace the active range with that bar’s high and low; otherwise keep the active range and direction unchanged. Use completed bars on timeframes lower or higher than the chart; while a higher-timeframe bar is forming, use its last completed state.
+Long: Continuing range direction is up
+Short: Continuing range direction is down

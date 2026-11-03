@@ -1,0 +1,4 @@
+Calculation: Ideal smoother = [a × (current input − previous smoother) + previous smoother + b × previous smoother × ((current input − previous input)² − 1)] / [1 + b × ((current input − previous input)² − 1)], where a and b are the reciprocals of its two smoothing periods.
+Calculation: 2pbIdealXOSMA = a selected moving-average smoothing of the difference between a fast Ideal smoother of close and a slow three-stage cascade of Ideal smoothers of close; each stage has its own pair of smoothing periods. The HTF variant calculates this on a higher timeframe and maps the still-forming higher-timeframe bar's value to chart bars.
+Long: 2pbIdealXOSMA > 0
+Short: 2pbIdealXOSMA < 0

@@ -1,0 +1,6 @@
+Calculation: VWAP-anchored Supertrend = initialize at VWAP; on each bar, if close > its prior value, use max(VWAP − multiplier × ATR, its prior value); otherwise use min(VWAP + multiplier × ATR, its prior value).
+Calculation: Higher-timeframe RSI = RSI of close on a timeframe higher than the chart timeframe, using the higher-timeframe bar still forming and the same lookback as chart-timeframe RSI.
+Long: close > VWAP-anchored Supertrend AND close > VWAP AND close > EMA AND EMA > SMA AND chart-timeframe RSI < long RSI threshold AND higher-timeframe RSI < long higher-timeframe RSI threshold
+Short: close ≤ VWAP-anchored Supertrend AND close < VWAP AND close < EMA AND EMA < SMA AND chart-timeframe RSI > short RSI threshold AND higher-timeframe RSI > short higher-timeframe RSI threshold
+Exit: Long, low ≤ max(close ≥ entry price × (1 + breakeven threshold) ? entry price : entry price × (1 − stop-loss threshold), close × (1 − trailing-stop threshold)) OR high ≥ entry price × (1 + take-profit threshold)
+Exit: Short, high ≥ min(close ≤ entry price × (1 − breakeven threshold) ? entry price : entry price × (1 + stop-loss threshold), close × (1 + trailing-stop threshold)) OR low ≤ entry price × (1 − take-profit threshold)

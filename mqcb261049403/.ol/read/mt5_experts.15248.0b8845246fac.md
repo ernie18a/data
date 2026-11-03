@@ -1,0 +1,5 @@
+Calculation: NRTR direction = on lower-timeframe bars, calculate the mean of high − low over a lookback; scale it by the configured factor. In an uptrend, trail the highest high at that high × (1 − scaled range); switch down when the current high falls below the trail. In a downtrend, trail the lowest low at that low × (1 + scaled range); switch up when the current low rises above the trail. Use the last completed indicator bar.
+Long: NRTR direction changes from down to up.
+Short: NRTR direction changes from up to down.
+Exit: long, NRTR direction is down OR low ≤ entry price − configured stop-loss distance OR high ≥ entry price + configured take-profit distance.
+Exit: short, NRTR direction is up OR high ≥ entry price + configured stop-loss distance OR low ≤ entry price − configured take-profit distance.

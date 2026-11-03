@@ -1,0 +1,11 @@
+Calculation: Pivot high/low = a bar whose high/low is the highest/lowest over an equal lookback on each side; confirm only after the right-side bars complete.
+Calculation: Bullish/bearish divergence = compare the latest two confirmed price pivot lows/highs with the latest two confirmed oscillator pivot lows/highs, respectively.
+Calculation: Z-score = (close − simple moving average of close) / standard deviation of close, using the same lookback for both.
+Calculation: Price swing divergence = compare the latest two price pivot highs and lows: bearish when the latest high is higher and (latest high − latest low) < 0.7 × (previous high − previous low); bullish when the latest low is lower and (latest high − previous low) < 0.7 × (previous high − latest low).
+Calculation: ATR = average true range.
+Calculation: Take-profit level = signal-bar close + position side × ATR at entry × take-profit multiplier.
+Calculation: Stop-loss level = signal-bar close − position side × stop distance; stop distance is either ATR at entry × stop multiplier or signal-bar close × stop percentage.
+Long: A new price pivot high or low is confirmed AND at least one of: latest price pivot low < previous price pivot low AND latest RSI, MFI, Stochastic, Z-score, ADX, MACD line, or OBV pivot low > its previous pivot low; OR latest price pivot low < previous price pivot low AND (latest price pivot high − previous price pivot low) < 0.7 × (previous price pivot high − latest price pivot low); OR latest price pivot low < previous price pivot low AND latest OBV pivot low > previous OBV pivot low.
+Short: A new price pivot high or low is confirmed AND at least one of: latest price pivot high > previous price pivot high AND latest RSI, MFI, Stochastic, Z-score, ADX, MACD line, or OBV pivot high < its previous pivot high; OR latest price pivot high > previous price pivot high AND (latest price pivot high − latest price pivot low) < 0.7 × (previous price pivot high − previous price pivot low); OR latest price pivot high > previous price pivot high AND latest OBV pivot high < previous OBV pivot high.
+Exit: Long, high ≥ take-profit level OR low ≤ stop-loss level
+Exit: Short, low ≤ take-profit level OR high ≥ stop-loss level

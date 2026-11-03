@@ -1,0 +1,12 @@
+Calculation: Opening-range high = highest high during the opening-range session; opening-range low = lowest low during the opening-range session
+Calculation: Relative volume = current volume / average volume over a longer lookback
+Calculation: Recent volume average = average volume of the five preceding chart bars
+Calculation: EMA slope up = EMA > its value a shorter lookback ago + ATR × threshold; EMA slope down = EMA < its value a shorter lookback ago − ATR × threshold
+Calculation: VWAP slope up = VWAP > its value a shorter lookback ago + ATR × threshold; VWAP slope down = VWAP < its value a shorter lookback ago − ATR × threshold
+Calculation: Pullback buffer = ATR × threshold
+Calculation: Long breakout state = most recent close crossed above opening-range high from at or below it; valid only for a configured number of bars after the crossing and until a close below EMA; resets at the start of a new day or opening range
+Calculation: Short breakout state = most recent close crossed below opening-range low from at or above it; valid only for a configured number of bars after the crossing and until a close above EMA; resets at the start of a new day or opening range
+Calculation: Long pullback = unused pullback and (low ≤ VWAP + pullback buffer and close > VWAP, or low ≤ EMA + pullback buffer and close > EMA, or low ≤ opening-range high + pullback buffer and close > opening-range high)
+Calculation: Short pullback = unused pullback and (high ≥ VWAP − pullback buffer and close < VWAP, or high ≥ EMA − pullback buffer and close < EMA, or high ≥ opening-range low − pullback buffer and close < opening-range low)
+Long: during the trading window AND no long signal has fired today AND long breakout state is valid AND close > opening-range high AND close > VWAP AND EMA > VWAP AND EMA slope up AND VWAP slope up AND relative volume ≥ threshold AND volume > recent volume average × threshold AND close > open AND close > prior bar high AND long pullback
+Short: during the trading window AND no short signal has fired today AND short breakout state is valid AND close < opening-range low AND close < VWAP AND EMA < VWAP AND EMA slope down AND VWAP slope down AND relative volume ≥ threshold AND volume > recent volume average × threshold AND close < open AND close < prior bar low AND short pullback

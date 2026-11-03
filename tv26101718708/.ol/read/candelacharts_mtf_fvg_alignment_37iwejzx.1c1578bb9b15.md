@@ -1,0 +1,4 @@
+Calculation: Bullish FVG = on each enabled selected timeframe, the current bar’s low is above the high two bars earlier; its zone is from that earlier high to the current low and stays active until a bar’s low reaches or falls below the zone’s lower boundary.
+Calculation: Bearish FVG = on each enabled selected timeframe, the current bar’s high is below the low two bars earlier; its zone is from the current high to that earlier low and stays active until a bar’s high reaches or exceeds the zone’s upper boundary.
+Long: At least one enabled timeframe has an active Bullish FVG
+Short: At least one enabled timeframe has an active Bearish FVG

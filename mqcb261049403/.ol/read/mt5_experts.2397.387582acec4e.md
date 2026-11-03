@@ -1,0 +1,6 @@
+Calculation: Fast smoothed Awesome Oscillator = apply the selected smoothing method with a shorter lookback to the Awesome Oscillator on the indicator timeframe, which may be higher or lower than the chart timeframe; use completed bars.
+Calculation: Slow smoothed line = apply the same smoothing method with a longer lookback to the fast smoothed Awesome Oscillator on the indicator timeframe; use completed bars.
+Long: On the latest completed indicator-timeframe bar, fast smoothed Awesome Oscillator > slow smoothed line AND on the preceding completed indicator-timeframe bar, fast smoothed Awesome Oscillator <= slow smoothed line
+Short: On the latest completed indicator-timeframe bar, fast smoothed Awesome Oscillator < slow smoothed line AND on the preceding completed indicator-timeframe bar, fast smoothed Awesome Oscillator >= slow smoothed line
+Exit: long, fast smoothed Awesome Oscillator < slow smoothed line on the latest completed indicator-timeframe bar
+Exit: short, fast smoothed Awesome Oscillator > slow smoothed line on the latest completed indicator-timeframe bar

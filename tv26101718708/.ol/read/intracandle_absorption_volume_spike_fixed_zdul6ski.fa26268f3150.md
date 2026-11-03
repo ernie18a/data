@@ -1,0 +1,6 @@
+Calculation: Average volume = moving average of lower-timeframe bar volume, updated sequentially to include the current lower-timeframe bar.
+Calculation: Average range = moving average of lower-timeframe high minus low, updated sequentially to include the current lower-timeframe bar.
+Long: Lower-timeframe volume >= Average volume × absorption threshold AND lower-timeframe high minus low <= Average range × stall threshold AND lower-timeframe close >= (lower-timeframe high + lower-timeframe low) / 2
+Long: Lower-timeframe volume >= Average volume × spike threshold AND NOT (lower-timeframe volume >= Average volume × absorption threshold AND lower-timeframe high minus low <= Average range × stall threshold) AND lower-timeframe close > lower-timeframe open
+Short: Lower-timeframe volume >= Average volume × absorption threshold AND lower-timeframe high minus low <= Average range × stall threshold AND lower-timeframe close < (lower-timeframe high + lower-timeframe low) / 2
+Short: Lower-timeframe volume >= Average volume × spike threshold AND NOT (lower-timeframe volume >= Average volume × absorption threshold AND lower-timeframe high minus low <= Average range × stall threshold) AND lower-timeframe close < lower-timeframe open

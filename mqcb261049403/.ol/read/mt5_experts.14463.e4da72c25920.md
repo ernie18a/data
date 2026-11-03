@@ -1,0 +1,5 @@
+Calculation: Fast/slow step-stochastic cloud lines = calculate stochastic %D, then for each line use its own step size (fast smaller than slow): initialize lower/upper bounds to +∞/−∞ and trend to 0; on each bar set bounds to %D ± 2 × step size, set trend to +1 if %D exceeds the prior upper bound or −1 if it falls below the prior lower bound, and in an uptrend clamp the new lower bound to at least the prior lower bound or in a downtrend clamp the new upper bound to at most the prior upper bound. The line is lower bound + step size in an uptrend, upper bound − step size in a downtrend. Compare values on the configured indicator timeframe, which may be higher or lower than the chart timeframe, using the last completed signal bar and its immediately preceding bar.
+Long: fast line > slow line AND fast line on the preceding bar <= slow line on the preceding bar
+Short: fast line < slow line AND fast line on the preceding bar >= slow line on the preceding bar
+Exit: long, fast line < slow line
+Exit: short, fast line > slow line

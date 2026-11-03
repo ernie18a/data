@@ -1,0 +1,5 @@
+Calculation: Range-smoothed Fisher oscillator = calculate each bar’s midpoint, (high + low) / 2, as a location within the rolling highest-high/lowest-low range; normalize that location to [-1, 1], smooth it recursively, clamp it to [-0.99, 0.99], apply ln((1 + location) / (1 - location)), then recursively smooth the result. Use the configured indicator timeframe, which may be higher or lower than the chart timeframe.
+Long: Fisher oscillator on the last completed indicator-timeframe bar > upper threshold AND Fisher oscillator on the immediately preceding completed indicator-timeframe bar <= upper threshold
+Short: Fisher oscillator on the last completed indicator-timeframe bar < lower threshold AND Fisher oscillator on the immediately preceding completed indicator-timeframe bar >= lower threshold
+Exit: long, Fisher oscillator on the last completed indicator-timeframe bar < 0
+Exit: short, Fisher oscillator on the last completed indicator-timeframe bar > 0

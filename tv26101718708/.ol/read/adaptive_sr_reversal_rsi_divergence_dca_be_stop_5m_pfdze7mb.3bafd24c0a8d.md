@@ -1,0 +1,16 @@
+Calculation: Adaptive support and resistance = the previous completed bar on a higher timeframe’s high and low; if their range is below the configured minimum, use rolling completed-bar high and low bands, extending to the first configured lookback that meets the minimum, up to the configured maximum
+Calculation: Reference midpoint = (adaptive resistance + adaptive support) / 2
+Calculation: Bullish RSI divergence = a confirmed chart-timeframe swing low is below the preceding confirmed swing low, while RSI of close at that pivot is higher than at the preceding pivot
+Calculation: Bearish RSI divergence = a confirmed chart-timeframe swing high is above the preceding confirmed swing high, while RSI of close at that pivot is lower than at the preceding pivot
+Calculation: Long take-profit = before an add, reference midpoint × (1 − configured offset); after an add, first entry price × (1 + configured target distance)
+Calculation: Short take-profit = before an add, reference midpoint × (1 + configured offset); after an add, first entry price × (1 − configured target distance)
+Calculation: Long stop = raw stop at worst entry price × (1 − configured stop distance); after breakeven activates, use the higher of the raw stop and first entry price × (1 + configured buffer)
+Calculation: Short stop = raw stop at worst entry price × (1 + configured stop distance); after breakeven activates, use the lower of the raw stop and first entry price × (1 − configured buffer)
+Long: A confirmed bullish RSI divergence is detected
+Long: Position is flat AND cycles completed today < configured daily maximum AND current UTC hour < configured closing hour AND low ≤ adaptive support × (1 + configured touch zone) AND low > adaptive support × (1 − configured outer bound) AND volume ≥ configured multiplier × its simple moving average AND (divergence age ≤ configured freshness OR divergence filter is disabled)
+Long: Position is long AND filled legs < configured maximum AND low ≤ worst entry price × (1 − configured add spacing)
+Short: A confirmed bearish RSI divergence is detected
+Short: Position is flat AND cycles completed today < configured daily maximum AND current UTC hour < configured closing hour AND high ≥ adaptive resistance × (1 − configured touch zone) AND high < adaptive resistance × (1 + configured outer bound) AND volume ≥ configured multiplier × its simple moving average AND (divergence age ≤ configured freshness OR divergence filter is disabled)
+Short: Position is short AND filled legs < configured maximum AND high ≥ worst entry price × (1 + configured add spacing)
+Exit: long, high ≥ long take-profit OR low ≤ long stop OR (UTC hour ≥ configured closing hour AND (favorable return from first entry < configured hold threshold OR trade was already held past an earlier closing hour))
+Exit: short, low ≤ short take-profit OR high ≥ short stop OR (UTC hour ≥ configured closing hour AND (favorable return from first entry < configured hold threshold OR trade was already held past an earlier closing hour))

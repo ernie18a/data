@@ -1,0 +1,2 @@
+Long: RSI on any configured timeframe (higher or lower than the chart timeframe), using its last completed bar, is below the oversold level
+Short: RSI on any configured timeframe (higher or lower than the chart timeframe), using its last completed bar, is above the overbought level

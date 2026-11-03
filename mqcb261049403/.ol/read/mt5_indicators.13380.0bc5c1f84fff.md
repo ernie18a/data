@@ -1,0 +1,3 @@
+Calculation: Trigger score = +1 if the short-lookback moving average is greater than the long-lookback moving average, −1 if it is less, or 0 if equal; plus +1 if the short-lookback RSI is greater than the long-lookback RSI, −1 if it is less, or 0 if equal. The base indicator uses chart-timeframe bars; the HTF variant uses the higher-timeframe bar still forming.
+Long: Trigger score > 0
+Short: Trigger score < 0

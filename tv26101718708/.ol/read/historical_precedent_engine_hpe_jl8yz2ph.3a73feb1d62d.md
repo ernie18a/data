@@ -1,0 +1,5 @@
+Calculation: Candle shape = upper wick, lower wick, and absolute body size, each as a percentage of that candle’s high-low range
+Calculation: Resolved precedent = a prior consecutive sequence of the same length whose following horizon has completed; its outcome return is (close at the horizon − sequence-ending close) / sequence-ending close
+Calculation: Matching precedent = a resolved precedent where every candle’s upper wick, lower wick, and body percentages are each within their respective tolerances of the current sequence, and the final candle’s direction (close ≥ open or close < open) matches
+Long: At least the minimum required matching precedents, and count of matching precedents with outcome return > 0 > count with outcome return ≤ 0
+Short: At least the minimum required matching precedents, and count of matching precedents with outcome return ≤ 0 > count with outcome return > 0

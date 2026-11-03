@@ -1,0 +1,6 @@
+Calculation: Ergodic oscillator = True Strength Index of the configured price source, using shorter and longer lookbacks, minus the selected moving average of that index over the signal lookback
+Calculation: True Strength Index = 100 × double-smoothed price change divided by double-smoothed absolute price change, using the shorter lookback first and longer lookback second
+Long: Ergodic oscillator ≥ 0 AND (ergodic oscillator > previous bar's value OR current value is defined and previous value is undefined)
+Long: Ergodic oscillator ≥ 0 AND rising on the chart timeframe AND bullish on each selected higher timeframe, using each higher timeframe's last completed bar historically and forming bar in real time
+Short: Ergodic oscillator < 0 AND (ergodic oscillator < previous bar's value OR current value is defined and previous value is undefined)
+Short: Ergodic oscillator < 0 AND not rising on the chart timeframe AND bearish on each selected higher timeframe, using each higher timeframe's last completed bar historically and forming bar in real time

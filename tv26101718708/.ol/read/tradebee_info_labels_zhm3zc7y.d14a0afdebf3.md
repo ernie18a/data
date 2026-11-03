@@ -1,0 +1,3 @@
+Calculation: Daily peak percentage = 100 × (highest high so far in the current day ÷ previous daily close − 1); previous daily close is from the last completed daily bar.
+Calculation: Current percentage change = 100 × (close ÷ previous daily close − 1).
+Short: During the current day, after daily peak percentage has reached the breakout threshold, current percentage change ≤ daily peak percentage × entry fraction

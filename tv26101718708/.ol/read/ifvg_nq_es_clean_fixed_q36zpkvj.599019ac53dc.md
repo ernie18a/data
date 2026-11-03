@@ -1,0 +1,6 @@
+Calculation: Current HTF high, low, and close = high, low, and close of the higher-timeframe bar still forming
+Calculation: Prior HTF high = highest high of the preceding swing-lookback completed higher-timeframe bars
+Calculation: Prior HTF low = lowest low of the preceding swing-lookback completed higher-timeframe bars
+Calculation: Bullish bias = set when current HTF low < prior HTF low AND current HTF close > prior HTF low; remains set until a bearish HTF sweep; bearish bias = set when current HTF high > prior HTF high AND current HTF close < prior HTF high; remains set until a bullish HTF sweep. If both sweeps occur together, bearish bias takes precedence.
+Long: bullish bias AND close > open AND low <= high from two chart bars earlier AND (volume confirmation disabled OR volume > 20-bar average volume) AND (session filter disabled OR bar time is inside the configured session)
+Short: bearish bias AND close < open AND high >= low from two chart bars earlier AND (volume confirmation disabled OR volume > 20-bar average volume) AND (session filter disabled OR bar time is inside the configured session)

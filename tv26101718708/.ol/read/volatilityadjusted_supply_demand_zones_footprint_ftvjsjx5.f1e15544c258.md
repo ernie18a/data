@@ -1,0 +1,2 @@
+Long: origin bar close > open AND close - open > ATR × displacement threshold multiplier AND each of the next confirmation-bar count bars has low >= origin bar high - origin bar ATR × zone-width multiplier
+Short: origin bar close < open AND open - close > ATR × displacement threshold multiplier AND each of the next confirmation-bar count bars has high <= origin bar low + origin bar ATR × zone-width multiplier

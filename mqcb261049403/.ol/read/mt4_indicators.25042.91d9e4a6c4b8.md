@@ -1,0 +1,5 @@
+Calculation: Signal strength = absolute distance between close and the Bollinger middle band plus absolute value of Bulls Power plus Bears Power, on the signal timeframe’s current forming bar; compare with the last completed bar on that timeframe, which may be higher or lower than the chart timeframe.
+Long: close > Bollinger middle band AND Bulls Power + Bears Power > 0 AND current signal strength exceeds previous signal strength by a configured proportional margin
+Short: close < Bollinger middle band AND Bulls Power + Bears Power < 0 AND current signal strength exceeds previous signal strength by a configured proportional margin
+Exit: long, close > Bollinger middle band AND Bulls Power + Bears Power > 0 AND current signal strength is below previous signal strength by a configured proportional margin
+Exit: short, close < Bollinger middle band AND Bulls Power + Bears Power < 0 AND current signal strength is below previous signal strength by a configured proportional margin

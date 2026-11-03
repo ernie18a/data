@@ -1,0 +1,11 @@
+Calculation: Alligator jaw, teeth, and lips = long-, medium-, and short-lookback SMMA of (high + low) / 2, respectively; use each line’s value from its own offset bars ago. SMMA starts with an SMA, then each value = (prior SMMA × (lookback − 1) + current source) / lookback.
+Calculation: Awesome Oscillator (AO) = short-lookback SMA of (high + low) / 2 minus long-lookback SMA of (high + low) / 2.
+Calculation: Accelerator Oscillator (AC) = AO minus a short-lookback SMA of AO.
+Long: (AO > 0 AND AO two bars ago > AO one bar ago AND AO > AO one bar ago OR AO one bar ago < 0 AND AO > 0) AND close > Alligator jaw AND close > Alligator teeth AND close > Alligator lips
+Short: (AO < 0 AND AO two bars ago < AO one bar ago AND AO < AO one bar ago OR AO one bar ago > 0 AND AO < 0) AND close < Alligator jaw AND close < Alligator teeth AND close < Alligator lips
+Long: ((AC > 0 AND AC > AC one bar ago AND AC one bar ago > AC two bars ago) OR (AC < 0 AND AC > AC one bar ago AND AC one bar ago > AC two bars ago AND AC two bars ago > AC three bars ago)) AND close > Alligator jaw AND close > Alligator teeth AND close > Alligator lips AND NOT (same AC condition and Alligator filter were true one bar ago)
+Short: ((AC < 0 AND AC < AC one bar ago AND AC one bar ago < AC two bars ago) OR (AC > 0 AND AC < AC one bar ago AND AC one bar ago < AC two bars ago AND AC two bars ago < AC three bars ago)) AND close < Alligator jaw AND close < Alligator teeth AND close < Alligator lips AND NOT (same AC condition and Alligator filter were true one bar ago)
+Long: high > low AND low < low one bar ago AND close >= low + (high − low) / 2 AND high < Alligator jaw AND high < Alligator teeth AND high < Alligator lips
+Short: high > low AND high > high one bar ago AND close <= low + (high − low) / 2 AND low > Alligator jaw AND low > Alligator teeth AND low > Alligator lips
+Long: high > low AND open >= low + 2 × (high − low) / 3 AND close >= low + 2 × (high − low) / 3 AND low > Alligator teeth
+Short: high > low AND open <= low + (high − low) / 3 AND close <= low + (high − low) / 3 AND high < Alligator teeth

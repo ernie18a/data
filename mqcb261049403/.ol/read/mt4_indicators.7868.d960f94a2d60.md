@@ -1,0 +1,10 @@
+Calculation: Rising SMA count = count of the five configured close-price SMA lookbacks, ordered shortest to longest, whose value on the current bar is greater than its value on the preceding bar.
+Calculation: Falling SMA count = count of the five configured close-price SMA lookbacks, ordered shortest to longest, whose value on the current bar is less than its value on the preceding bar.
+Calculation: Bullish AC pattern = (AC[-1] > AC[-2] AND AC[-2] > AC[-3] AND AC[current] < 0 AND AC[current] > AC[-1]) OR (AC[current] > AC[-1] AND AC[-1] > AC[-2] AND AC[current] > 0).
+Calculation: Bearish AC pattern = (AC[-1] < AC[-2] AND AC[-2] < AC[-3] AND AC[current] > 0 AND AC[current] < AC[-1]) OR (AC[current] < AC[-1] AND AC[-1] < AC[-2] AND AC[current] < 0).
+Calculation: Bullish score = Rising SMA count + 3 if Bullish AC pattern is true, otherwise Rising SMA count.
+Calculation: Bearish score = Falling SMA count + 3 if Bearish AC pattern is true, otherwise Falling SMA count.
+Calculation: Bullish trend = Bullish score > 4 on each of the three configured timeframes.
+Calculation: Bearish trend = Bearish score > 4 on each of the three configured timeframes.
+Long: prior trend state = down AND Bullish trend.
+Short: prior trend state = up AND Bearish trend.

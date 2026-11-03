@@ -1,0 +1,5 @@
+Calculation: Smoothed candle = apply the selected moving-average method and length separately to each bar’s open, high, low, and close; candle open is the smoothed open from the configured number of bars earlier, candle high/low are the rolling maximum/minimum of smoothed highs/lows over that number of bars, expanded if needed to include candle open and close, and candle close is the smoothed close.
+Calculation: Applied price = the configured applied-price formula using the smoothed candle’s OHLC values.
+Calculation: Bollinger center = the selected moving average of applied price; upper/lower Bollinger Bands = Bollinger center plus/minus the configured deviation times the standard deviation of applied price around the center, using the same lookback as the center.
+Long: Smoothed candle close >= smoothed candle open AND smoothed candle close > upper Bollinger Band at the configured band shift.
+Short: Smoothed candle close < smoothed candle open AND smoothed candle close < lower Bollinger Band at the configured band shift.

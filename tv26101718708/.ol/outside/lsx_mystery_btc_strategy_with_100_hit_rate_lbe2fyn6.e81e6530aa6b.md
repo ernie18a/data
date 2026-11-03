@@ -1,0 +1,1 @@
+On each bar, compare the external BTC short-position and long-position series on the traded instrument’s timeframe. Enter long when the short-position series crosses above the long-position series; enter short when it crosses below. No separate exit rule is specified.

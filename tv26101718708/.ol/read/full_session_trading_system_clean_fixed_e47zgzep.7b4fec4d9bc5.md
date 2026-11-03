@@ -1,0 +1,14 @@
+Calculation: Prior low = lowest low over the configured lookback of completed chart bars before the current bar
+Calculation: Prior high = highest high over the configured lookback of completed chart bars before the current bar
+Calculation: Trend buy count = number of true conditions among: long-term EMA > short-term EMA; (if higher-timeframe filter is enabled) higher-timeframe long-term EMA > higher-timeframe short-term EMA; current low < prior low; RSI > midpoint; close < short-term EMA; (if candle confirmation is enabled) close > open. The higher-timeframe EMAs use the higher-timeframe bar returned without lookahead: last completed bar historically, potentially still forming in realtime.
+Calculation: Trend sell count = number of true conditions among: long-term EMA < short-term EMA; (if higher-timeframe filter is enabled) higher-timeframe long-term EMA < higher-timeframe short-term EMA; current high > prior high; RSI < midpoint; close > short-term EMA; (if candle confirmation is enabled) close < open. The higher-timeframe EMAs use the higher-timeframe bar returned without lookahead: last completed bar historically, potentially still forming in realtime.
+Calculation: Asia session high = highest high from the start of the current Asia session through the current bar; reset at the start of each Asia session
+Calculation: Asia session low = lowest low from the start of the current Asia session through the current bar; reset at the start of each Asia session
+Calculation: Long stop = signal-bar close minus ATR times the stop multiple when ATR stops are enabled; otherwise signal-bar close minus the configured fixed offset
+Calculation: Long target = signal-bar close + (signal-bar close − long stop) times the reward multiple
+Calculation: Short stop = signal-bar close plus ATR times the stop multiple when ATR stops are enabled; otherwise signal-bar close plus the configured fixed offset
+Calculation: Short target = signal-bar close − (short stop − signal-bar close) times the reward multiple
+Long: position is flat AND ((during London or New York session AND trend buy count ≥ the configured minimum number of conditions) OR (during Asia session AND close ≤ Asia session low + ATR times the proximity factor AND RSI < the configured oversold threshold))
+Short: position is flat AND ((during London or New York session AND trend sell count ≥ the configured minimum number of conditions) OR (during Asia session AND close ≥ Asia session high − ATR times the proximity factor AND RSI > the configured overbought threshold))
+Exit: long, bar low ≤ long stop OR bar high ≥ long target
+Exit: short, bar high ≥ short stop OR bar low ≤ short target

@@ -1,0 +1,3 @@
+Calculation: Relative volume = current-bar volume divided by the simple moving average of volume
+Calculation: Percentage distance from short-term SMA = (close / short-term SMA - 1) × 100
+Long: RSI is within its lower and upper thresholds inclusive AND percentage distance from short-term SMA is within its downside and upside thresholds inclusive AND close > long-term SMA AND short-term SMA > long-term SMA AND long-term SMA > its value at an earlier lookback AND short-term SMA > its value at an earlier, shorter lookback AND relative volume >= its minimum threshold AND these setup conditions were not all true on the previous bar

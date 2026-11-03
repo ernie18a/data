@@ -1,0 +1,4 @@
+Calculation: Confirmed pivot high = a high above the preceding left-lookback highs that remains the highest through the following right-lookback bars; signal when confirmed.
+Calculation: Confirmed pivot low = a low below the preceding left-lookback lows that remains the lowest through the following right-lookback bars; signal when confirmed.
+Long: Confirmed pivot low on the selected calculation timeframe (same as, higher than, or lower than the chart timeframe), using completed bars
+Short: Confirmed pivot high on the selected calculation timeframe (same as, higher than, or lower than the chart timeframe), using completed bars

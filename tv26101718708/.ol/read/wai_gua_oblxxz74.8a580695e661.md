@@ -1,0 +1,13 @@
+Calculation: Fast ribbon = average of two selected moving averages of close using shorter and longer fast lookbacks.
+Calculation: Slow ribbon = average of two selected moving averages of close using shorter and longer slow lookbacks; both slow lookbacks are longer than the fast lookbacks.
+Calculation: Fast ribbon spread = fast ribbon − slow ribbon.
+Calculation: Fast ribbon up-count = consecutive bars for which fast ribbon spread is positive and greater than its prior-bar value; otherwise reset to zero.
+Calculation: Fast internal up-count = consecutive bars for which the shorter-lookback fast moving average minus the longer-lookback fast moving average is positive and greater than its prior-bar value; otherwise reset to zero.
+Calculation: Slow internal up-count = consecutive bars for which the shorter-lookback slow moving average minus the longer-lookback slow moving average is positive and greater than its prior-bar value; otherwise reset to zero.
+Calculation: Fast ribbon down-count = consecutive bars for which fast ribbon spread is negative and less than its prior-bar value; otherwise reset to zero.
+Calculation: Fast internal down-count = consecutive bars for which the shorter-lookback fast moving average minus the longer-lookback fast moving average is negative and less than its prior-bar value; otherwise reset to zero.
+Calculation: Slow internal down-count = consecutive bars for which the shorter-lookback slow moving average minus the longer-lookback slow moving average is negative and less than its prior-bar value; otherwise reset to zero.
+Long: Fast ribbon up-count ≥ 2 AND Fast internal up-count ≥ 2 AND Slow internal up-count ≥ 2 AND this combined condition is newly true AND flat AND bar confirmed or historical.
+Short: Fast ribbon down-count ≥ 2 AND Fast internal down-count ≥ 2 AND Slow internal down-count ≥ 2 AND this combined condition is newly true AND flat AND bar confirmed or historical.
+Exit: Long, low ≤ highest adjusted high since entry × (1 − trailing-stop fraction) OR highest adjusted high since entry ≥ entry price × (1 + take-profit fraction) AND low ≤ highest adjusted high since entry × (1 − trailing-profit fraction) OR low ≤ entry price × (1 − stop-loss fraction) OR the opposite-cross exit condition.
+Exit: Short, high ≥ lowest adjusted low since entry × (1 + trailing-stop fraction) OR lowest adjusted low since entry ≤ entry price × (1 − take-profit fraction) AND high ≥ lowest adjusted low since entry × (1 + trailing-profit fraction) OR high ≥ entry price × (1 + stop-loss fraction) OR the opposite-cross exit condition.

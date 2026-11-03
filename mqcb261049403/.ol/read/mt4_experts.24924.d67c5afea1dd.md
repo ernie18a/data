@@ -1,0 +1,5 @@
+Calculation: Typical-price LWMA = linearly weighted moving average of (high + low + close) / 3; the fast lookback is shorter than the slow lookback.
+Long: absolute value of current price minus the close two chart bars ago > retracement distance AND fast typical-price LWMA > slow typical-price LWMA AND low two chart bars ago < high of the immediately preceding completed chart bar
+Short: absolute value of current price minus the close two chart bars ago > retracement distance AND fast typical-price LWMA < slow typical-price LWMA AND low of the immediately preceding completed chart bar < high two chart bars ago
+Exit: Long, low reaches the active stop-loss level OR high reaches the active take-profit level
+Exit: Short, high reaches the active stop-loss level OR low reaches the active take-profit level

@@ -1,0 +1,2 @@
+Long: close >= current monthly bar's open (higher timeframe when the chart is below monthly; still forming)
+Short: close < current monthly bar's open (higher timeframe when the chart is below monthly; still forming)

@@ -1,0 +1,6 @@
+Calculation: Bull line = EMA of the sum, over short, medium, and long lookbacks, of the bar's high minus the highest high in each lookback of preceding bars; initialize the EMA with the first available sum. Calculate on a configurable higher or lower timeframe using the last completed bar, or the still-forming bar if selected.
+Calculation: Bear line = EMA, with the same smoothing period, of the sum, over the same three lookbacks of preceding bars, of each lookback's lowest low minus the bar's low; initialize the EMA with the first available sum. Use the same timeframe and bar selection as the bull line.
+Long: Bull line > bear line AND bull line on the preceding indicator bar <= bear line on the preceding indicator bar
+Short: Bull line < bear line AND bull line on the preceding indicator bar >= bear line on the preceding indicator bar
+Exit: long, bull line < bear line OR low <= entry price minus enabled stop-loss distance OR high >= entry price plus enabled take-profit distance
+Exit: short, bull line > bear line OR high >= entry price plus enabled stop-loss distance OR low <= entry price minus enabled take-profit distance

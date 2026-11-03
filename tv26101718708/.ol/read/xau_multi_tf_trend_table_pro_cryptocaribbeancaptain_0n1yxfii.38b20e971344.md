@@ -1,0 +1,4 @@
+Calculation: Short-term EMA = exponential moving average of close with a shorter lookback than the long-term EMA, calculated on each requested timeframe's aggregated bars (which may be higher or lower than the chart timeframe); use the current requested-timeframe bar, including while it is forming
+Calculation: Long-term EMA = exponential moving average of close with a longer lookback than the short-term EMA, calculated on each requested timeframe's aggregated bars (which may be higher or lower than the chart timeframe); use the current requested-timeframe bar, including while it is forming
+Long: Short-term EMA > long-term EMA
+Short: Short-term EMA < long-term EMA

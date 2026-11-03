@@ -1,0 +1,3 @@
+Calculation: Risk metric = (ln(close) − ln(lower bound)) / (ln(upper bound) − ln(lower bound)); upper bound = upper multiplier × SMA × scale factor; lower bound = lower multiplier × SMA, optionally multiplied by the scale factor; scale factor = exp(decay × (bar index − time offset) × sensitivity) + baseline. The SMA uses the selected timeframe’s latest completed bar when that timeframe is higher than the chart timeframe.
+Long: Risk metric ≤ entry threshold
+Exit: Long, Risk metric ≥ exit threshold

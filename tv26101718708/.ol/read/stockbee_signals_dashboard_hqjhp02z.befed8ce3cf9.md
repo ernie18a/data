@@ -1,0 +1,7 @@
+Calculation: TI65 = short-lookback simple moving average of chart-timeframe close on the current bar divided by a longer-lookback simple moving average of chart-timeframe close on the current bar
+Calculation: MDT = chart-timeframe close on the current bar divided by a long-lookback simple moving average of chart-timeframe close on the current bar
+Calculation: M20 bullish condition = current chart-timeframe close is at least a threshold percentage above the lowest close over a lookback, or at least a threshold amount above it; current close meets a minimum price threshold; each of the previous three completed chart-timeframe bars meets a minimum volume threshold
+Calculation: M20 bearish condition = current chart-timeframe close is at least a threshold percentage below the highest close over a lookback, or at least a threshold amount below it; current close meets a minimum price threshold; each of the previous three completed chart-timeframe bars meets a minimum volume threshold
+Long: TI65 exceeds its bullish threshold OR MDT exceeds its component-color bullish threshold OR M20 bullish condition OR (TI65 exceeds its bullish threshold AND MDT rounded to two decimal places exceeds its alert threshold AND M20 bullish condition)
+Short: TI65 is below its bearish threshold OR MDT is below its component-color bearish threshold OR M20 bearish condition
+Exit:

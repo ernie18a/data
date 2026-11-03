@@ -1,0 +1,3 @@
+Long: At a new chart bar during working hours, bar open < moving average and (open position count ≤ 8 OR (count > 8 AND price distance from last entry > minimum spacing AND (distance from first entry < skip threshold OR skip counter exceeds the applicable 3-bar or 6-bar limit)))
+Short: At a new chart bar during working hours, bar open > moving average and (open position count ≤ 8 OR (count > 8 AND price distance from last entry > minimum spacing AND (distance from first entry < skip threshold OR skip counter exceeds the applicable 3-bar or 6-bar limit)))
+Exit: long or short, total net profit across positions > minimum profit

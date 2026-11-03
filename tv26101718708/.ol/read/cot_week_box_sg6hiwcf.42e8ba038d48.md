@@ -1,0 +1,4 @@
+Calculation: COT net positioning change = selected participants’ long positions minus short positions on the latest completed weekly COT bar, minus that net position on the previous weekly COT bar.
+Calculation: Percentile rank of absolute COT net positioning change = percentage of valid absolute changes in the current and prior lookback weekly COT bars that are strictly less than the current absolute change.
+Long: COT net positioning change > 0 AND percentile rank of absolute COT net positioning change >= weekly move threshold
+Short: COT net positioning change < 0 AND percentile rank of absolute COT net positioning change >= weekly move threshold

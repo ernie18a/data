@@ -1,0 +1,13 @@
+Calculation: Smoothed money flow = EMA(MFI of (high + low + close) / 3, smoothing length) − 50
+Calculation: Bullish divergence = a confirmed price pivot low is below the previous confirmed price pivot low while smoothed money flow at the new pivot is above its value at the previous pivot
+Calculation: Bearish divergence = a confirmed price pivot high is above the previous confirmed price pivot high while smoothed money flow at the new pivot is below its value at the previous pivot
+Calculation: Recent active divergence = the latest bullish or bearish divergence occurred within the configured active-bar window; if both occurred on the same bar, bullish takes precedence
+Calculation: Active EMA crossover = the fast EMA crossed above (below) the slow EMA within the configured number of lower-timeframe bars, including the current bar; fast EMA length is shorter than slow EMA length
+Long: Smoothed money flow on a configured time-flow timeframe is greater than or equal to its value on the previous bar; use the still-forming higher-timeframe bar by default, or the last completed higher-timeframe bar when closed-bar mode is enabled
+Short: Smoothed money flow on a configured time-flow timeframe is below its value on the previous bar; use the still-forming higher-timeframe bar by default, or the last completed higher-timeframe bar when closed-bar mode is enabled
+Long: Smoothed money flow on a configured time-flow timeframe is greater than or equal to its value on the previous bar and was below its value on the bar before that; use the still-forming higher-timeframe bar by default, or the last completed higher-timeframe bar when closed-bar mode is enabled
+Short: Smoothed money flow on a configured time-flow timeframe is below its value on the previous bar and was greater than or equal to its value on the bar before that; use the still-forming higher-timeframe bar by default, or the last completed higher-timeframe bar when closed-bar mode is enabled
+Long: A recent active divergence is bullish; use the still-forming higher-timeframe bar by default, or the last completed higher-timeframe bar when closed-bar mode is enabled
+Short: A recent active divergence is bearish; use the still-forming higher-timeframe bar by default, or the last completed higher-timeframe bar when closed-bar mode is enabled
+Long: Smoothed money flow is rising on the chart-timeframe bar and on its derived lower timeframe (one-sixteenth of the chart timeframe), and an active bullish EMA crossover occurred on that lower timeframe
+Short: Smoothed money flow is falling on the chart-timeframe bar and on its derived lower timeframe (one-sixteenth of the chart timeframe), and an active bearish EMA crossover occurred on that lower timeframe

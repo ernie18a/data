@@ -1,0 +1,6 @@
+Calculation: Trend histogram = apply the selected moving-average smoothing method to EMA(bull pressure) − EMA(bear pressure), using the same EMA period for both pressures. Bull pressure is the sum, over short, medium, and long lookbacks, of current high − highest high of the preceding lookback bars. Bear pressure is the sum, over the same lookbacks, of lowest low of the preceding lookback bars − current low. The smoothing method and its length and phase are parameters.
+Calculation: H[0] = trend histogram on the selected signal bar; H[1] and H[2] are its immediately preceding and second preceding values. The indicator timeframe may be higher or lower than the chart timeframe; the selected signal bar may be the last completed bar or the bar still forming.
+Long: H[0] > H[1] AND H[2] > H[1]
+Short: H[0] < H[1] AND H[2] < H[1]
+Exit: long, H[0] < H[1] OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, H[0] > H[1] OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

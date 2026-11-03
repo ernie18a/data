@@ -1,0 +1,7 @@
+Calculation: AverageBody = mean(abs(open - close)) over the period-length bars beginning at the specified bar; chart timeframe, completed bars
+Calculation: Dark Cloud Cover = (close[2] - open[2] > AverageBody[1]) AND (close[1] < close[2]) AND (close[1] > open[2]) AND ((open[2] + close[2]) / 2 > chart-timeframe close SMA[1]) AND (open[1] > high[2]); bars 1 and 2 are the most recent and preceding completed chart-timeframe bars
+Calculation: Piercing Line = (close[1] - open[1] > AverageBody[1]) AND (open[2] - close[2] > AverageBody[1]) AND (close[1] > close[2]) AND (close[1] < open[2]) AND ((open[2] + close[2]) / 2 < chart-timeframe close SMA[2]) AND (open[1] < low[2]); bars 1 and 2 are the most recent and preceding completed chart-timeframe bars
+Long: Piercing Line AND MFI[1] < 40; MFI uses the chart timeframe and the last completed bar
+Short: Dark Cloud Cover AND MFI[1] > 60; MFI uses the chart timeframe and the last completed bar
+Exit: short, (MFI[1] > 30 AND MFI[2] < 30) OR (MFI[1] > 70 AND MFI[2] < 70); MFI uses the chart timeframe, with bars 1 and 2 the most recent and preceding completed bars
+Exit: long, (MFI[1] > 70 AND MFI[2] < 70) OR (MFI[1] < 30 AND MFI[2] > 30); MFI uses the chart timeframe, with bars 1 and 2 the most recent and preceding completed bars

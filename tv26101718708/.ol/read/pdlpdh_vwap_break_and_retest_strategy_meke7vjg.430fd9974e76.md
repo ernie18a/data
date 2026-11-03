@@ -1,0 +1,5 @@
+Calculation: Premarket high/low = maximum high/minimum low of the current day's premarket bars
+Calculation: Prior-day high/low = high/low of the last completed bar on a higher timeframe
+Calculation: Retest buffer = close × configured retest percentage
+Long: The first close outside the premarket range after premarket ends was above the premarket high AND this is a later bar AND ((|low − premarket high| ≤ retest buffer AND close ≥ premarket high) OR (|low − prior-day high| ≤ retest buffer AND close ≥ prior-day high)) AND close > short-term EMA of close AND close > VWAP AND volume > simple moving average of volume AND within the entry window
+Short: The first close outside the premarket range after premarket ends was below the premarket low AND this is a later bar AND ((|high − premarket low| ≤ retest buffer AND close ≤ premarket low) OR (|high − prior-day low| ≤ retest buffer AND close ≤ prior-day low) OR (|high − VWAP| ≤ retest buffer AND close ≤ VWAP)) AND close < short-term EMA of close AND close < VWAP AND volume > simple moving average of volume AND within the entry window

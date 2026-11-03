@@ -1,0 +1,4 @@
+Calculation: Linear-regression slope = the current linear-regression value minus its value one bar earlier, calculated separately on each source timeframe
+Calculation: ATR-relative flat threshold = a fixed fraction of ATR on the same source timeframe
+Long: Current-timeframe slope > its ATR-relative flat threshold OR lower-timeframe slope > its ATR-relative flat threshold using the still-forming lower-timeframe bar, when available OR higher-timeframe slope > its ATR-relative flat threshold using the still-forming higher-timeframe bar, when available
+Short: Current-timeframe slope < the negative of its ATR-relative flat threshold OR lower-timeframe slope < the negative of its ATR-relative flat threshold using the still-forming lower-timeframe bar, when available OR higher-timeframe slope < the negative of its ATR-relative flat threshold using the still-forming higher-timeframe bar, when available

@@ -1,0 +1,5 @@
+Calculation: RSX = For each bar, let x=100×(high+low), d=x−previous x, α=3/(Len+2), and β=1−α. For each input z, apply three smoothing stages: a=βa+αz; b=αa+βb; output=1.5a−0.5b. Apply this cascade to d for the numerator and |d| for the denominator, feeding each stage’s output into the next. Return clamp(50×(1+numerator/denominator), 0, 100); return 50 during initialization or when the denominator is effectively zero.
+Long: Higher-timeframe RSX > 50 AND lower-timeframe RSX < 25 OR (long-period RSX on the configured long-period timeframe > its threshold AND short-period RSX on the configured short-period timeframe < its threshold AND current long-period RSX > its value LongTrendSpread completed bars earlier on that same timeframe)
+Short: Higher-timeframe RSX < 50 AND lower-timeframe RSX > 75 OR (long-period RSX on the configured long-period timeframe < its threshold AND short-period RSX on the configured short-period timeframe > its threshold AND current long-period RSX < its value LongTrendSpread completed bars earlier on that same timeframe)
+Exit: long, short-entry condition
+Exit: short, long-entry condition

@@ -1,0 +1,8 @@
+Calculation: Average daily range = mean of high minus low over a lookback of completed higher-timeframe daily bars.
+Calculation: Grid step = configured first step, or average daily range times a configured multiplier; later steps use the distance between the latest two same-side entries, optionally multiplied by a configured step multiplier.
+Calculation: Basket take-profit price = volume-weighted average entry price plus the configured take-profit distance for a long basket, or minus that distance for a short basket; the distance may decrease from a configured basket size onward and may become zero from a configured basket size onward.
+Calculation: One-day price change = close of the last completed chart bar minus the close of the chart bar approximately one day earlier.
+Long: No existing long position AND (CCI on the last completed chart bar > 0 AND CCI on the preceding completed chart bar < 0 OR current price < latest long entry price - grid step)
+Short: No existing short position AND (CCI on the last completed chart bar < 0 AND CCI on the preceding completed chart bar > 0 OR current price > latest short entry price + grid step)
+Exit: long, price >= take-profit price OR (absolute one-day price change > average daily range times a configured multiplier AND one-day price change < 0)
+Exit: short, price <= take-profit price OR (absolute one-day price change > average daily range times a configured multiplier AND one-day price change > 0)

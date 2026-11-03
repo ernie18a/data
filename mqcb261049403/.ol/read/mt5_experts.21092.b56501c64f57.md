@@ -1,0 +1,8 @@
+Calculation: Slow-trend WAMI main = third moving average applied successively after the second and first moving averages of changes in applied price, divided by point size; use higher-timeframe bars and the slow-trend settings
+Calculation: Slow-trend WAMI signal = moving average of the slow-trend WAMI main using the signal settings; use higher-timeframe bars and the slow-trend settings
+Calculation: Fast-entry WAMI main = third moving average applied successively after the second and first moving averages of changes in applied price, divided by point size; use lower-timeframe bars and the fast-entry settings
+Calculation: Fast-entry WAMI signal = moving average of the fast-entry WAMI main using the signal settings; use lower-timeframe bars and the fast-entry settings
+Long: slow-trend WAMI main > slow-trend WAMI signal AND previous completed fast-entry bar WAMI main <= fast-entry WAMI signal AND latest completed fast-entry bar WAMI main > fast-entry WAMI signal
+Short: slow-trend WAMI main < slow-trend WAMI signal AND previous completed fast-entry bar WAMI main >= fast-entry WAMI signal AND latest completed fast-entry bar WAMI main < fast-entry WAMI signal
+Exit: long, slow-trend WAMI main < slow-trend WAMI signal OR latest completed fast-entry bar WAMI main < fast-entry WAMI signal
+Exit: short, slow-trend WAMI main > slow-trend WAMI signal OR latest completed fast-entry bar WAMI main > fast-entry WAMI signal

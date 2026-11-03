@@ -1,0 +1,7 @@
+Calculation: Prior-session CPR = pivot (high + low + close)/3, bottom (high + low)/2, top 2 × pivot − bottom; CPR upper/lower = max/min(top, bottom). Use the last completed daily bar.
+Calculation: CPR-width percentile = percentage of recent daily CPR widths strictly below the current prior-session CPR width. Use completed daily bars.
+Calculation: Expected move = daily open × implied volatility / 100 × √(days to expiry / 365).
+Calculation: IV rank = 100 × (current implied volatility − its lookback low) / (lookback high − lookback low). Rich IV = IV rank at or above its high threshold OR the robust z-score of implied volatility minus realized volatility above its rich threshold; robust z-score uses the median and 1.4826 × median absolute deviation over a daily lookback.
+Calculation: R1 = 2 × prior-session pivot − prior-session low; S1 = 2 × prior-session pivot − prior-session high.
+Long: intraday chart AND volatility data available AND CPR calculations warmed up AND CPR-width percentile ≤ narrow threshold AND close > CPR upper AND NOT (rich IV gate enabled AND rich IV) AND days to expiry ≥ minimum buying days AND |R1 − daily open| ≥ expected move
+Short: intraday chart AND volatility data available AND CPR calculations warmed up AND CPR-width percentile ≤ narrow threshold AND close < CPR lower AND NOT (rich IV gate enabled AND rich IV) AND days to expiry ≥ minimum buying days AND |S1 − daily open| ≥ expected move

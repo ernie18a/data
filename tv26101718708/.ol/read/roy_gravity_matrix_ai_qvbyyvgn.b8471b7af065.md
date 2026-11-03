@@ -1,0 +1,3 @@
+Calculation: Overall score = weighted sum of +1 when a timeframe’s close is above its EMA and −1 otherwise, across the timeframe and EMA matrix; weights increase with higher timeframes and longer EMA lookbacks. Use the last completed bar for higher timeframes and the current bar for the chart timeframe and lower timeframes.
+Long: Overall score > 0 AND selected main-timeframe close > its shorter-lookback EMA AND selected main-timeframe close > its longer-lookback EMA AND lower trigger-timeframe close > its shorter-lookback EMA
+Short: Overall score < 0 AND selected main-timeframe close < its shorter-lookback EMA AND selected main-timeframe close < its longer-lookback EMA AND lower trigger-timeframe close < its shorter-lookback EMA

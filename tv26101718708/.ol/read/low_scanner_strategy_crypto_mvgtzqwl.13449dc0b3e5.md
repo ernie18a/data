@@ -1,0 +1,4 @@
+Calculation: Low-scanner oscillator = negative EMA of the prior-bar difference between RSI of cumulative changes in the selected-timeframe close sampled on its first chart-timeframe bar (weighted by chart-timeframe volume) and a longer-lookback WMA of that RSI
+Calculation: Shifted HMA3 = WMA(3 × WMA(close, half-length / 3) − WMA(close, half-length / 2) − WMA(close, half-length), half-length), calculated on the selected higher timeframe and shifted to use a completed bar
+Long: Low-scanner oscillator crosses above zero OR chart-timeframe linear regression of close crosses above Shifted HMA3
+Exit: long, high reaches entry price × (1 + take-profit target 1) OR high reaches entry price × (1 + take-profit target 2) OR high reaches entry price × (1 + take-profit target 3) OR high reaches entry price × (1 + take-profit target 4) OR low reaches entry price × (1 − stop-loss percentage)

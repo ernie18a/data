@@ -1,0 +1,5 @@
+Calculation: Vortex+ and Vortex− = over a configurable lookback on the configured indicator timeframe (higher or lower than the chart timeframe as configured), sum |high − previous low| and |low − previous high| respectively, each divided by the sum of true range; compare the latest completed bar with the preceding completed bar
+Long: Vortex+ on the latest completed bar > Vortex− on that bar AND Vortex+ on the preceding bar <= Vortex− on that bar
+Short: Vortex+ on the latest completed bar < Vortex− on that bar AND Vortex+ on the preceding bar >= Vortex− on that bar
+Exit: long, Vortex− on the latest completed indicator-timeframe bar > Vortex+ on that bar OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, Vortex+ on the latest completed indicator-timeframe bar > Vortex− on that bar OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

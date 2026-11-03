@@ -1,0 +1,5 @@
+Calculation: PMARP = 100 × the fraction of prior bars in the lookback whose absolute close-to-moving-average ratio is less than or equal to the current bar’s ratio.
+Long: Every short-term ribbon moving average is nondecreasing and above the long-term ribbon moving average AND RSI is above its configured entry threshold AND the previous bar closed at or below its open
+Short: Every short-term ribbon moving average is decreasing and below the long-term ribbon moving average, except the eleventh-shortest ribbon average
+Exit: long, PMARP is at or above its configured high threshold AND every short-term ribbon moving average is decreasing and below the long-term ribbon moving average, except the eleventh-shortest ribbon average; OR high is at or above the take-profit price based on entry price; OR low is at or below the stop price based on entry price
+Exit: short, PMARP is at or below its configured low threshold; OR low is at or below the take-profit price based on entry price; OR high is at or above the stop price based on entry price

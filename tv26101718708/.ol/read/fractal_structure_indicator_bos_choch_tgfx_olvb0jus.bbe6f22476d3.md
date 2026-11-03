@@ -1,0 +1,3 @@
+Calculation: Active swing and internal fractal highs/lows = latest confirmed Williams pivot high/low, each requiring its lookback number of bars on both sides; swing lookback is longer than internal lookback. A pivot becomes active after the right-side bars close and remains unbroken until price closes beyond it; a newly confirmed pivot resets its broken status.
+Long: Close > unbroken active swing fractal high OR close > unbroken active internal fractal high
+Short: Close < unbroken active swing fractal low OR close < unbroken active internal fractal low

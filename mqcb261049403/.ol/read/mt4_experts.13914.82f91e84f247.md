@@ -1,0 +1,1 @@
+Long: No open long position AND stochastic main line on the second-last completed chart bar < lower threshold AND stochastic main line on the last completed chart bar > lower threshold AND current chart bar close > minimum price AND current chart bar close < maximum price

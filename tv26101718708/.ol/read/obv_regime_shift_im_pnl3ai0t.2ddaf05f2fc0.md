@@ -1,0 +1,6 @@
+Calculation: Normalized OBV = rolling z-score of cumulative volume signed positive when close rises from the prior bar, negative when it falls, and zero when unchanged
+Calculation: Slope differential = (fast HMA of normalized OBV minus its value one slope lookback ago) / slope lookback minus (slow DEMA of normalized OBV minus its value one slope lookback ago) / slope lookback; fast HMA uses a shorter lookback than slow DEMA
+Calculation: Regime score = clamp to 0–100 the weighted slope-differential z-score and fast-minus-slow distance scores, plus a neutral anchor, a signed bonus for confirmed bullish or bearish divergence, and a volume-expansion bonus signed by fast-line slope
+Long: fast HMA of normalized OBV > slow DEMA of normalized OBV OR bullish divergence OR bullish regime shift OR regime score remains at or above the bullish threshold for the confirmation lookback, prior regime is not bullish, and the minimum bar gap since the previous shift has elapsed
+Short: fast HMA of normalized OBV < slow DEMA of normalized OBV OR bearish divergence OR bearish regime shift OR regime score remains at or below the bearish threshold for the confirmation lookback, prior regime is not bearish, and the minimum bar gap since the previous shift has elapsed
+Exit:

@@ -1,0 +1,4 @@
+Calculation: Bullish engulfing = previous candle closes below its open AND current candle closes at or above its open AND current low < previous low AND current high > previous high
+Calculation: Bearish engulfing = previous candle closes above its open AND current candle closes at or below its open AND current low < previous low AND current high > previous high
+Calculation: Candle body-to-range percentage = abs(close - open) / abs(high - low) × 100
+Long: close > short-term EMA AND short-term EMA > long-term EMA AND bullish engulfing AND current and previous candle body-to-range percentages > the configured minimum AND volume > previous volume × the configured growth multiplier AND datetime is within the configured date range

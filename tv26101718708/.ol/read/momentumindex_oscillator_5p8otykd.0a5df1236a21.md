@@ -1,0 +1,2 @@
+Calculation: Weekly A/D SMA = simple moving average of the NYSE advancing-minus-declining stock count, calculated on a timeframe higher than the chart timeframe using the last completed bar
+Long: Weekly A/D SMA <= oversold threshold OR Weekly A/D SMA <= extreme-pessimism threshold

@@ -1,0 +1,7 @@
+Calculation: Average candle body = mean absolute open-close difference over N bars, starting with the last completed bar; N is also the lookback for the simple moving average of close.
+Calculation: Bullish Harami = the last completed bar is bullish; the preceding bar is bearish with body size greater than the average candle body; the last bar’s close is below the preceding bar’s open and its open is above the preceding bar’s close; the preceding bar’s midpoint is below the simple moving average of close at that bar.
+Calculation: Bearish Harami = the last completed bar is bearish; the preceding bar is bullish with body size greater than the average candle body; the last bar’s close is above the preceding bar’s open and its open is below the preceding bar’s close; the preceding bar’s midpoint is above the simple moving average of close at that bar.
+Long: Bullish Harami AND MFI on the last completed chart-timeframe bar is below the lower entry threshold
+Short: Bearish Harami AND MFI on the last completed chart-timeframe bar is above the upper entry threshold
+Exit: short, MFI on the last completed chart-timeframe bar is above an exit level AND MFI on the bar before it is below that same level, for either exit level
+Exit: long, (MFI on the last completed chart-timeframe bar is above the upper exit level AND MFI on the bar before it is below that same level) OR (MFI on the last completed chart-timeframe bar is below the lower exit level AND MFI on the bar before it is above that same level)

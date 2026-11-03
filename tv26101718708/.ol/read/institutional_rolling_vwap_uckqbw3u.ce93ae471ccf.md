@@ -1,0 +1,6 @@
+Calculation: Rolling VWAP = sum(typical price × volume) / sum(volume) over a rolling time window
+Calculation: Relative volume = short-term average volume / long-term average volume
+Calculation: Liquidity-adjusted standard deviation = standard deviation of close divided by the square root of the greater of relative volume and a floor
+Calculation: Sigma bands = rolling VWAP ± liquidity-adjusted standard deviation × band multiplier
+Long: close > rolling VWAP + 2 × liquidity-adjusted standard deviation AND relative volume > 1.3 OR close > rolling VWAP + 3 × liquidity-adjusted standard deviation AND relative volume > 1.5 OR close < rolling VWAP − 2 × liquidity-adjusted standard deviation AND relative volume < 0.8
+Short: close > rolling VWAP + 2 × liquidity-adjusted standard deviation AND relative volume < 0.8 OR close < rolling VWAP − 2 × liquidity-adjusted standard deviation AND relative volume > 1.3 OR close < rolling VWAP − 3 × liquidity-adjusted standard deviation AND relative volume > 1.5

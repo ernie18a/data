@@ -1,0 +1,2 @@
+Long: RSI on the last completed daily bar (higher timeframe than the chart) < oversold threshold AND MACD line crosses above signal line on the last completed 4-hour bar (higher timeframe than the chart)
+Exit: Long, RSI on the last completed daily bar (higher timeframe than the chart) > overbought threshold AND MACD line crosses below signal line on the last completed 4-hour bar (higher timeframe than the chart)

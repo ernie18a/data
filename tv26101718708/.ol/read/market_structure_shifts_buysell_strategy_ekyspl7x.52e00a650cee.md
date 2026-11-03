@@ -1,0 +1,4 @@
+Calculation: Last pivot high = most recent high from a 7-bar chart-timeframe window whose middle bar, 3 bars earlier, equals the window’s highest high; update when confirmed and retain until the next confirmation
+Calculation: Last pivot low = most recent low from a 7-bar chart-timeframe window whose middle bar, 3 bars earlier, equals the window’s lowest low; update when confirmed and retain until the next confirmation
+Long: close crosses above Last pivot high AND close > 200-period EMA AND 14-period RSI > 50 AND OBV > 20-period EMA of OBV
+Short: close crosses below Last pivot low AND close < 200-period EMA AND 14-period RSI < 50 AND OBV < 20-period EMA of OBV

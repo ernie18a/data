@@ -1,0 +1,5 @@
+Calculation: Last confirmed pivot high = the latest bar high higher than the highs of the specified number of bars before and after it; it becomes available after those bars complete. Last confirmed pivot low = the latest bar low lower than the lows of the specified number of bars before and after it; it becomes available after those bars complete.
+Long: Last confirmed pivot high exists AND close > last confirmed pivot high AND close > EMA(close, main lookback) AND EMA(close, shorter trend lookback) > EMA(close, longer trend lookback) AND volume > SMA(volume, lookback)
+Short: Last confirmed pivot low exists AND close < last confirmed pivot low AND close < EMA(close, main lookback) AND EMA(close, shorter trend lookback) < EMA(close, longer trend lookback) AND volume > SMA(volume, lookback)
+Exit: long, low <= entry price - 3 × ATR OR low <= highest high since entry - 2 × ATR
+Exit: short, high >= entry price + 3 × ATR OR high >= lowest low since entry + 2 × ATR

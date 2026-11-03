@@ -1,0 +1,5 @@
+Calculation: ATR = average true range.
+Calculation: Demand zone = a bullish candle whose range exceeds ATR times the configured impulse threshold and whose body exceeds 55% of its range, preceded by the configured minimum-to-maximum number of consecutive candles each no larger than the configured fraction of the impulse range; the base height must be within the configured ATR bounds. The zone is the base’s high-low range scaled around its midpoint. Detect on the chart timeframe and enabled higher timeframes, using each timeframe’s last completed bar; ignore lower timeframes.
+Calculation: Supply zone = the same conditions as a demand zone, except the impulse candle is bearish.
+Long: a new demand zone is confirmed OR an active demand zone has been fully left above and is retested using the configured wick or close trigger.
+Short: a new supply zone is confirmed OR an active supply zone has been fully left below and is retested using the configured wick or close trigger.

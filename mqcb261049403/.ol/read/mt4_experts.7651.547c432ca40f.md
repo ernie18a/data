@@ -1,0 +1,5 @@
+Calculation: ERP = simple moving average of weighted close ((high + low + 2 × close) / 4) on a higher timeframe, using the bar still forming
+Long: ERP state is Below and price reaches the next Toward buy-stop price above the last Toward order OR reaches the next Toward stack buy-stop price below the last Toward stack order; OR ERP state is Above and price reaches the next Away buy-stop price above the last Away order OR reaches the next Away stack buy-stop price below the last Away stack order
+Short: ERP state is Below and price reaches the next Away sell-stop price below the last Away order OR reaches the next Away stack sell-stop price above the last Away stack order; OR ERP state is Above and price reaches the next Toward sell-stop price below the last Toward order OR reaches the next Toward stack sell-stop price above the last Toward stack order
+Exit: long, price >= entry price + take-profit distance OR (stop-loss distance is nonzero AND price <= entry price - stop-loss distance)
+Exit: short, price <= entry price - take-profit distance OR (stop-loss distance is nonzero AND price >= entry price + stop-loss distance)

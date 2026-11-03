@@ -1,0 +1,10 @@
+Calculation: Signed volume = volume * sign(close - previous close)
+Calculation: Cumulative delta = sum of signed volume over a lookback
+Calculation: Cumulative-delta z-score = cumulative delta / (standard deviation of signed volume over the same lookback * square root of the lookback); 0 if the denominator is 0
+Calculation: Price z-score = (close - average close over the same lookback) / standard deviation of close over that lookback; 0 if the standard deviation is 0
+Calculation: Divergence = price z-score - cumulative-delta z-score
+Calculation: EMA = exponential moving average of close
+Long: divergence <= -threshold
+Long: divergence <= -threshold AND close crosses above EMA AND position side is flat or short AND cooldown since the last signal has elapsed AND the bar is confirmed
+Short: divergence >= threshold
+Short: divergence >= threshold AND close crosses below EMA AND position side is flat or long AND cooldown since the last signal has elapsed AND the bar is confirmed

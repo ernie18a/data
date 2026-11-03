@@ -1,0 +1,3 @@
+Calculation: Moving averages = selectable SMA, EMA, or Hull averages of close with progressively longer lookbacks, calculated on the chart timeframe or a higher timeframe using its last completed bar
+Long: close > all enabled moving averages AND each shorter-lookback moving average > each longer-lookback moving average AND each moving average > its value on the prior bar
+Short: close < all enabled moving averages AND each shorter-lookback moving average < each longer-lookback moving average AND each moving average < its value on the prior bar

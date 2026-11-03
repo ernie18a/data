@@ -1,0 +1,2 @@
+Long: Current chart-timeframe high > prior chart-timeframe high OR current higher-timeframe high > prior higher-timeframe high (sampled from the still-forming higher-timeframe bar at the start of its period and held until the next higher-timeframe period)
+Short: Current chart-timeframe low < prior chart-timeframe low OR current higher-timeframe low < prior higher-timeframe low (sampled from the still-forming higher-timeframe bar at the start of its period and held until the next higher-timeframe period)

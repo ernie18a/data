@@ -1,0 +1,4 @@
+Calculation: Bullish fair value gap = current bar low > high two bars earlier, with gap width greater than the ATR-based minimum gap threshold
+Calculation: Bearish fair value gap = current bar high < low two bars earlier, with gap width greater than the ATR-based minimum gap threshold
+Long: Chart timeframe is within the supported intraday range AND current bar is in a configured session AND bullish fair value gap AND no earlier fair value gap has formed in that session
+Short: Chart timeframe is within the supported intraday range AND current bar is in a configured session AND bearish fair value gap AND no earlier fair value gap has formed in that session

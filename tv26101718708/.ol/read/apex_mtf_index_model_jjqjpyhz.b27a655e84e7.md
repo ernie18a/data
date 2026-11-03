@@ -1,0 +1,7 @@
+Calculation: Higher-timeframe bias = For each of three higher timeframes, compare its close with an EMA using the same length; assign bullish, bearish, or neutral direction, weight longer timeframes more heavily, combine and normalize to a bullish probability. Use the bar still forming.
+Calculation: ATR expansion = ATR > its simple moving average using the same lookback.
+Calculation: Opening range high/low = Highest high and lowest low from the start of the trading day through the configured opening window, using chart bars.
+Long: Bullish higher-timeframe probability > configured bullish threshold AND within the NY morning session AND ATR expansion AND ((close > EMA AND close > VWAP AND low <= EMA) OR (outside the opening window AND opening range high exists AND close > opening range high AND close > VWAP))
+Short: Bearish higher-timeframe probability < configured bearish threshold AND within the NY morning session AND ATR expansion AND ((close < EMA AND close < VWAP AND high >= EMA) OR (outside the opening window AND opening range low exists AND close < opening range low AND close < VWAP))
+Exit: Long, low <= signal-bar low - ATR OR high >= first target OR high >= runner target
+Exit: Short, high >= signal-bar high + ATR OR low <= first target OR low <= runner target

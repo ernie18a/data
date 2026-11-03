@@ -1,0 +1,8 @@
+Calculation: Bullish expansion bar = current high − low >= trimmed mean of recent chart-bar ranges (exclude equal counts of the largest and smallest ranges) × range multiplier AND current high − low >= close × minimum-range fraction AND (high − close) / (high − low) <= maximum close-distance fraction
+Calculation: Long-term SMA = mean of chart-bar closes over a longer lookback than the short-term SMA
+Calculation: Higher-timeframe long-term SMA = mean of closes over a long-term lookback on a higher timeframe, using the bar still forming
+Calculation: Expansion count = 1 at entry; increment on each subsequent confirmed bullish expansion bar while long
+Calculation: Active long stop = entry close − ATR × stop multiple initially; thereafter the greatest of the prior stop and, on each bullish expansion bar, that bar's low minus a buffer; from the third expansion onward, also at least the entry price and the second expansion bar's low minus a buffer; after the favorable excursion reaches the profit trigger, also at least entry price × (1 + profit-lock fraction)
+Long: Flat AND confirmed bullish expansion bar AND close > long-term SMA AND long-term SMA > its value at an earlier lookback AND close > higher-timeframe long-term SMA AND close > short-term SMA AND abs(low − long-term SMA) / low <= proximity fraction AND abs(short-term SMA − long-term SMA) / short-term SMA <= proximity fraction
+Long: Long position AND confirmed bullish expansion bar AND expansion count = second expansion
+Exit: Long, low <= active long stop OR confirmed bullish expansion bar AND expansion count = first configured profit-taking count OR confirmed bullish expansion bar AND expansion count = second configured profit-taking count

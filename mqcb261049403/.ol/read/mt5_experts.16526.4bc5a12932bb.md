@@ -1,0 +1,4 @@
+Long: RSI on the configured indicator timeframe (which may be higher, lower, or equal to the chart timeframe), using the last completed bar, ≥ upper signal level AND (slowdown filter disabled OR absolute difference between RSI on that bar and the preceding completed bar < slowdown threshold)
+Short: RSI on the configured indicator timeframe (which may be higher, lower, or equal to the chart timeframe), using the last completed bar, ≤ lower signal level AND (slowdown filter disabled OR absolute difference between RSI on that bar and the preceding completed bar < slowdown threshold)
+Exit: long, short signal condition
+Exit: short, long signal condition

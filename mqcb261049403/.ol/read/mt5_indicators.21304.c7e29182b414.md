@@ -1,0 +1,3 @@
+Calculation: Filtered candle open and close = For each raw OHLC series x, maintain first and second recursive values x1 and x2, seeded from the preceding raw bar. Let p be the preceding raw x and k the smoothing parameter. Update x1 to x1 + (x - x1)/k if (x > x1 AND x > p) OR (x < x1 AND x < p); otherwise hold x1. Update x2 to low2 + (x - x2)/k if x > x2 AND x < p; update x2 to close2 + (x - x2)/k if x < x2 AND x > p; otherwise hold x2. Here low2 and close2 are the second recursive values for raw low and close. Filtered candle open = (open1 - open2) / point; filtered candle close = (close1 - close2) / point.
+Long: Filtered candle open < filtered candle close
+Short: Filtered candle open > filtered candle close

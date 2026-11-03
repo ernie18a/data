@@ -1,0 +1,3 @@
+Calculation: Bollinger half-band width in points = (upper Bollinger Band − middle band) / instrument point size; on the chart timeframe or, if selected, the higher timeframe’s still-forming bar
+Long: Relative Vigor Index main line > signal line AND Bollinger half-band width in points ≥ flat threshold
+Short: Relative Vigor Index main line < signal line AND Bollinger half-band width in points ≥ flat threshold

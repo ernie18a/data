@@ -1,0 +1,4 @@
+Calculation: Buy volume = Sum volume of lower-timeframe bars within the current chart bar whose close is at or above their open; if none are available, use chart-bar volume when its close is at or above its open, otherwise zero. The lower timeframe is below the chart timeframe; use its bars within the current chart bar, including a still-forming bar when available.
+Calculation: Sell volume = Sum volume of lower-timeframe bars within the current chart bar whose close is below their open; if none are available, use chart-bar volume when its close is below its open, otherwise zero. The lower timeframe is below the chart timeframe; use its bars within the current chart bar, including a still-forming bar when available.
+Long: Buy volume > Sell volume × threshold
+Short: Sell volume > Buy volume × threshold

@@ -1,0 +1,6 @@
+Calculation: Short-lookback RSI = RSI of close with a shorter lookback than the long-lookback RSI
+Calculation: Lower signal threshold = 100 − upper signal threshold
+Long: On the configured indicator timeframe (higher or lower than the chart timeframe), the last completed bar's long-lookback RSI > upper signal threshold AND short-lookback RSI > long-lookback RSI AND the preceding completed bar did not meet both conditions
+Short: On the configured indicator timeframe (higher or lower than the chart timeframe), the last completed bar's long-lookback RSI < lower signal threshold AND short-lookback RSI < long-lookback RSI AND the preceding completed bar did not meet both conditions
+Exit: Short, on the configured indicator timeframe (higher or lower than the chart timeframe), the last completed bar's long-lookback RSI > upper signal threshold AND short-lookback RSI > long-lookback RSI
+Exit: Long, on the configured indicator timeframe (higher or lower than the chart timeframe), the last completed bar's long-lookback RSI < lower signal threshold AND short-lookback RSI < long-lookback RSI

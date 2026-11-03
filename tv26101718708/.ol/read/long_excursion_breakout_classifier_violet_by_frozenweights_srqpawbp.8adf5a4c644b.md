@@ -1,0 +1,3 @@
+Calculation: upward-excursion probability = sigmoid of a frozen convolutional classifier on OHLCV: normalize each bar’s open, high, low, and close by subtracting the current close and dividing by current ATR; normalize volume by current volume SMA minus 1. The classifier uses a consecutive recent-bar bank and a broader bank sampling every 10 bars, including the current bar.
+Calculation: effective threshold = rolling percentile of upward-excursion probability over the calibration window, including the current bar, when self-calibration is enabled; otherwise the fixed threshold.
+Long: upward-excursion probability > effective threshold

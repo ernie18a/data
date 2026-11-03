@@ -1,0 +1,8 @@
+Calculation: Normalized EMA slope = (current mid-term EMA − mid-term EMA from a longer lookback ago) / ATR
+Calculation: Bar range / ATR = (high − low) / ATR
+Calculation: Long trailing stop = maximum of the initial signal bar low minus the entry/stop buffer and all subsequent trailing EMA values
+Calculation: Short trailing stop = minimum of the initial signal bar high plus the entry/stop buffer and all subsequent trailing EMA values
+Long: bar range > 0 AND open ≤ high − IRB fraction × bar range AND close ≤ high − IRB fraction × bar range AND normalized EMA slope ≥ positive trend threshold AND the last completed higher-timeframe mid-term EMA > its value from a longer lookback ago AND ADX ≥ minimum trend threshold AND bar range / ATR ≤ maximum extension threshold AND short-term EMA > mid-term EMA > long-term EMA AND each of the recent consecutive closes > its corresponding short-term EMA
+Short: bar range > 0 AND open ≥ low + IRB fraction × bar range AND close ≥ low + IRB fraction × bar range AND normalized EMA slope ≤ negative trend threshold AND the last completed higher-timeframe mid-term EMA < its value from a longer lookback ago AND ADX ≥ minimum trend threshold AND bar range / ATR ≤ maximum extension threshold AND short-term EMA < mid-term EMA < long-term EMA AND each of the recent consecutive closes < its corresponding short-term EMA
+Exit: long, low ≤ long trailing stop OR bars since entry ≥ time limit
+Exit: short, high ≥ short trailing stop OR bars since entry ≥ time limit

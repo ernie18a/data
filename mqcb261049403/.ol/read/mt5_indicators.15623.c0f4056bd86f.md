@@ -1,0 +1,3 @@
+Calculation: M2 smoothed price line = apply the selected smoothing algorithm, using the same smoothing period, to (2 × EMA(price, pB) + ((LWMA(price, pA) + EMA(price, pB)) / 2 − LWMA(price, pA))) / 2, where price is a selected OHLC-derived price, pA is the integer quotient of (smoothing period + 5) / smoothing period, and pB is the integer quotient of (smoothing period + 3) / smoothing period
+Long: At each higher-timeframe bar boundary, the M2 smoothed price line on the still-forming higher-timeframe bar > its value on the previous completed higher-timeframe bar
+Short: At each higher-timeframe bar boundary, the M2 smoothed price line on the still-forming higher-timeframe bar < its value on the previous completed higher-timeframe bar

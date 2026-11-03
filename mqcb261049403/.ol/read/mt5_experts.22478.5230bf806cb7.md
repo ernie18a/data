@@ -1,0 +1,5 @@
+Calculation: Daily breakout bands = after each of the first and second completed four-hour intraday ranges, use that range’s highest high plus an upper padding and lowest low minus a lower padding; the padding distances are equal. Use completed bars on the indicator timeframe, which is the same as or higher than the chart timeframe.
+Long: Latest completed indicator-timeframe close > upper breakout band AND previous completed indicator-timeframe close <= upper breakout band
+Short: Latest completed indicator-timeframe close < lower breakout band AND previous completed indicator-timeframe close >= lower breakout band
+Exit: Short, latest completed indicator-timeframe close > upper breakout band OR elapsed time since entry > maximum holding duration OR price reaches the short stop-loss or take-profit level
+Exit: Long, latest completed indicator-timeframe close < lower breakout band OR elapsed time since entry > maximum holding duration OR price reaches the long stop-loss or take-profit level

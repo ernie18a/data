@@ -1,0 +1,1 @@
+Build a traditional Renko series for the traded market. When its close rises from the prior value, enter long and close any short; when it falls, enter short and close any long. An optional inverse mode swaps the trade directions. Enter only within the active date window and while equity is positive and below its upper limit.

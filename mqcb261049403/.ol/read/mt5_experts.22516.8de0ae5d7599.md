@@ -1,0 +1,7 @@
+Calculation: Bull and bear lines = apply the FATL filter to a selected bar price; smooth the result with the same moving-average method at a series of progressively longer lookbacks separated by a fixed step. Count the averages that are strictly higher than on the preceding bar as the bull count; count all others as the bear count. Smooth each count independently using the same smoothing method and lookback. Calculate separate lines with independently configurable parameters for long and short trades on a higher or lower indicator timeframe, using its last completed bar and the preceding completed bar. Also calculate the lines on the chart timeframe.
+Long: chart-timeframe bull line > chart-timeframe bear line
+Short: chart-timeframe bull line < chart-timeframe bear line
+Long: long-trade bull line > long-trade bear line AND preceding long-trade bull line <= preceding long-trade bear line
+Short: short-trade bull line < short-trade bear line AND preceding short-trade bull line >= preceding short-trade bear line
+Exit: long, long-trade bull line < long-trade bear line OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, short-trade bull line > short-trade bear line OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

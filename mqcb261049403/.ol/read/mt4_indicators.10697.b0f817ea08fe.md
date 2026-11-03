@@ -1,0 +1,2 @@
+Short: preceding chart-bar close <= ZigZag peak level from any of the three timeframes; use the timeframe’s forming bar when it equals the chart timeframe, otherwise its last completed bar. All three ZigZags use the same settings.
+Long: preceding chart-bar close >= ZigZag trough level from any of the three timeframes; use the timeframe’s forming bar when it equals the chart timeframe, otherwise its last completed bar. All three ZigZags use the same settings.

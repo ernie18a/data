@@ -1,0 +1,6 @@
+Calculation: First and second higher-timeframe moving averages = independently configured moving averages of close on higher-timeframe bars, using the bar still forming
+Calculation: Smoothed third higher-timeframe moving average = simple moving average of the third moving average on higher-timeframe bars, using the bar still forming, over a lookback equal to the rounded ratio of higher-timeframe duration to chart-timeframe duration
+Long: First higher-timeframe moving average crosses above second higher-timeframe moving average AND smoothed third higher-timeframe moving average > its previous chart-bar value
+Short: First higher-timeframe moving average crosses below second higher-timeframe moving average AND smoothed third higher-timeframe moving average < its previous chart-bar value
+Exit: long, first higher-timeframe moving average crosses below second higher-timeframe moving average
+Exit: short, first higher-timeframe moving average crosses above second higher-timeframe moving average

@@ -1,0 +1,5 @@
+Calculation: Confirmed pivot high = a bar's high is higher than the highs of the configured number of bars before and after it; confirm after the bars after it have completed.
+Calculation: Confirmed pivot low = a bar's low is lower than the lows of the configured number of bars before and after it; confirm after the bars after it have completed.
+Calculation: Reversal profile = over the calculation lookback, divide the range from the lowest low to the highest high into equal price bins; each stored confirmed pivot adds one count to its bin and the configured number of neighboring bins on either side. Normalize each bin's count by the maximum bin count; also count pivot highs and lows per bin.
+Long: Confirmed pivot low OR close is within a reversal profile bin whose normalized count meets the high probability threshold and whose pivot low count exceeds its pivot high count OR close is above an active pivot high resistance level.
+Short: Confirmed pivot high OR close is within a reversal profile bin whose normalized count meets the high probability threshold and whose pivot high count exceeds its pivot low count OR close is below an active pivot low support level.

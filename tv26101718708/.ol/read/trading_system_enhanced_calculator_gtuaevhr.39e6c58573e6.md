@@ -1,0 +1,1 @@
+Long: Close > short-term moving average AND Close > medium-term moving average AND Close > long-term moving average AND short-term moving average > medium-term moving average AND short-term moving average > long-term moving average AND long-term moving average > its value at a long-term lookback ago AND Close > 0.8 × rolling long-term high AND Close ≥ 1.25 × rolling long-term low

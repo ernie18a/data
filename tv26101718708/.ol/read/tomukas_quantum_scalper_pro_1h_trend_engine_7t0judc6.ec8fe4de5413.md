@@ -1,0 +1,5 @@
+Calculation: Fast EMA, slow EMA, pullback EMA, trend EMA, and macro EMA = EMAs of close with progressively longer lookbacks
+Long: Close > trend EMA AND trend EMA > macro EMA AND (low <= pullback EMA OR low <= trend EMA) AND fast EMA crosses above slow EMA AND MACD line crosses above signal line AND RSI > long-entry threshold AND +DI > -DI AND ADX > minimum threshold AND volume > its moving average
+Short: Close < trend EMA AND trend EMA < macro EMA AND (high >= pullback EMA OR high >= trend EMA) AND fast EMA crosses below slow EMA AND MACD line crosses below signal line AND RSI < short-entry threshold AND -DI > +DI AND ADX > minimum threshold AND volume > its moving average
+Exit: long, short condition OR low <= entry price - ATR × stop multiple OR high >= entry price + ATR × target multiple
+Exit: short, long condition OR high >= entry price + ATR × stop multiple OR low <= entry price - ATR × target multiple

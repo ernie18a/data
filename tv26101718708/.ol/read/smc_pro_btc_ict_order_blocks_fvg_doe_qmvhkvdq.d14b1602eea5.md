@@ -1,0 +1,18 @@
+Calculation: Bullish structural state = On the higher timeframe, retain direction; set bullish when close is above the latest confirmed pivot high, bearish when close is below the latest confirmed pivot low. Pivots use equal lookback on each side. Use the last completed higher-timeframe bar.
+Calculation: Lower-timeframe structural state = Same structural-state calculation on a lower timeframe; use the last completed lower-timeframe bar.
+Calculation: Bullish order-block zone = At a chart-timeframe close crossing above the latest confirmed pivot high, use the full high-low range of the nearest bearish candle within the prior lookback bars; valid until a close below its low.
+Calculation: Bearish order-block zone = At a chart-timeframe close crossing below the latest confirmed pivot low, use the full high-low range of the nearest bullish candle within the prior lookback bars; valid until a close above its high.
+Calculation: Bullish fair-value-gap zone = The range from the high two bars ago to the current low when current low is above that high and the middle candle closes bullish; valid until a close below the zone's lower boundary.
+Calculation: Bearish fair-value-gap zone = The range from the current high to the low two bars ago when current high is below that low and the middle candle closes bearish; valid until a close above the zone's upper boundary.
+Calculation: Bullish zone = Price is in a valid bullish order-block zone or valid bullish fair-value-gap zone when the current low is at or below its upper boundary and the current close is at or above its lower boundary.
+Calculation: Bearish zone = Price is in a valid bearish order-block zone or valid bearish fair-value-gap zone when the current high is at or above its lower boundary and the current close is at or below its upper boundary.
+Calculation: Recent bullish sweep = Within the configured chart-bar memory, a bar has had low below the latest confirmed pivot low and close above that pivot low.
+Calculation: Recent bearish sweep = Within the configured chart-bar memory, a bar has had high above the latest confirmed pivot high and close below that pivot high.
+Calculation: Selective long filter = Current close is below the latest confirmed pivot low plus the pivot range (latest pivot high minus latest pivot low) times a configurable threshold.
+Calculation: Selective short filter = Current close is above the latest confirmed pivot high minus the pivot range (latest pivot high minus latest pivot low) times a configurable threshold.
+Calculation: Long stop and target = At the long signal, stop is below the bullish order-block lower boundary if price is in that zone, otherwise below the bullish fair-value-gap lower boundary, by a configurable percentage; target is signal close plus the distance from signal close to stop times a configurable reward-to-risk ratio.
+Calculation: Short stop and target = At the short signal, stop is above the bearish order-block upper boundary if price is in that zone, otherwise above the bearish fair-value-gap upper boundary, by a configurable percentage; target is signal close minus the distance from stop to signal close times a configurable reward-to-risk ratio.
+Long: Higher-timeframe structural state is bullish AND lower-timeframe structural state is bullish AND recent bullish sweep AND bullish zone AND close > open AND (aggressive mode OR selective long filter) AND position is flat.
+Short: Higher-timeframe structural state is bearish AND lower-timeframe structural state is bearish AND recent bearish sweep AND bearish zone AND close < open AND (aggressive mode OR selective short filter) AND position is flat.
+Exit: long, low <= long stop OR high >= long target
+Exit: short, high >= short stop OR low <= short target

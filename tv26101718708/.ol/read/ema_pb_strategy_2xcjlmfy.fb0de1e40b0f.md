@@ -1,0 +1,3 @@
+Calculation: MACD difference = MACD line minus signal line, calculated on the lower timeframe using the latest available bar (the bar still forming in real time; the last intrabar historically)
+Long: high > EMA AND low <= EMA × (1 + configured pullback percentage) AND within the configured trading session AND position is flat AND no active cooldown after a closed trade whose return exceeded the configured threshold AND MACD difference >= configured threshold
+Exit: long, low < EMA × (1 − configured exit percentage) OR outside the configured trading session

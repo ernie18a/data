@@ -1,0 +1,8 @@
+Calculation: Average entry price = total notional across the base fill and safety-order fills divided by total asset quantity; each fill’s quantity is its notional divided by its fill close.
+Calculation: Cumulative safety-order deviation at rung k = the sum of rung deviations through k, where the first rung deviation is the initial step and each later rung deviation is the previous rung deviation multiplied by the step multiplier.
+Calculation: Trailing peak = highest chart-timeframe close since the close first reached the take-profit target.
+Long: Flat AND lower-timeframe RSI crosses down through its threshold, using the last completed lower-timeframe bar’s RSI and the prior chart bar’s sampled RSI (prior > threshold AND current <= threshold) AND chart-timeframe fast EMA > chart-timeframe slow EMA.
+Long: In a long position AND filled safety orders < maximum safety orders AND chart close <= base entry price × (1 − cumulative safety-order deviation at the next rung / 100).
+Exit: Long, chart close <= average entry price × (1 − stop-loss percentage / 100).
+Exit: Long, chart close > average entry price × (1 − stop-loss percentage / 100) AND elapsed time since base entry >= maximum holding duration.
+Exit: Long, chart close > average entry price × (1 − stop-loss percentage / 100) AND elapsed time since base entry < maximum holding duration AND take-profit zone has been reached (chart close >= average entry price × (1 + take-profit percentage / 100)) AND chart close <= trailing peak × (1 − trailing deviation / 100).

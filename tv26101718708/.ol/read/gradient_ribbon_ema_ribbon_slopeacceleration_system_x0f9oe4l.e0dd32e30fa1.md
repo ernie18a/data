@@ -1,0 +1,6 @@
+Calculation: EMA slopes = For each of five EMAs of close, ordered shortest to longest: (current EMA − EMA lookback bars ago) / EMA lookback bars ago × 100
+Calculation: Fan spread = shortest-period EMA slope − longest-period EMA slope
+Long: all five EMA slopes > 0 AND each slope is greater than the next longer-period EMA slope AND fan spread > entry threshold AND RSI > lower bound AND RSI < upper bound AND volume > average volume over its lookback × volume multiplier AND position size = 0
+Short: all five EMA slopes < 0 AND each slope is less than the next longer-period EMA slope AND fan spread < −entry threshold AND RSI < 100 − lower bound AND RSI > 100 − upper bound AND volume > average volume over its lookback × volume multiplier AND position size = 0
+Exit: long, low ≤ signal-bar close − ATR at entry × stop multiple OR high ≥ signal-bar close + ATR at entry × stop multiple × reward multiple OR any adjacent EMA slopes from shortest to longest are not strictly decreasing OR fan spread < exit threshold
+Exit: short, high ≥ signal-bar close + ATR at entry × stop multiple OR low ≤ signal-bar close − ATR at entry × stop multiple × reward multiple OR any adjacent EMA slopes from shortest to longest are not strictly increasing OR fan spread > −exit threshold

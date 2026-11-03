@@ -1,0 +1,2 @@
+Long: implied correlation average > 0.1 OR normalized implied correlation average > 0.1 OR double-normalized implied correlation average > 0.1 OR the selected implied-correlation HMA crosses above 0 OR the Goldilocks score or Reflation score equals the maximum regime score
+Short: implied correlation average < -0.1 OR normalized implied correlation average < -0.1 OR double-normalized implied correlation average < -0.1 OR the selected implied-correlation HMA crosses below 0 OR neither the Goldilocks score nor Reflation score equals the maximum regime score

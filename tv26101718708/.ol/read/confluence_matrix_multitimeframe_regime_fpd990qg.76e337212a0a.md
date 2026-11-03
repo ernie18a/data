@@ -1,0 +1,19 @@
+Calculation: Trend factor = clamp(0.34 × sign(fast EMA − slow EMA) + 0.33 × clamp((close − slow EMA)/(3 × ATR), −1, 1) + 0.33 × clamp(linear-regression slope / ATR × sensitivity, −1, 1) × squared correlation(close, bar index), −1, 1); fast EMA uses a shorter lookback than slow EMA.
+Calculation: Trend quality = clamp((efficiency ratio − trend threshold)/(1 − trend threshold), −1, 1) × sign(close − slow EMA).
+Calculation: Momentum = clamp(0.6 × (RSI − 50)/50 + 0.4 × clamp((RSI − RSI three bars earlier)/20, −1, 1), −1, 1).
+Calculation: Structure = clamp(0.6 × (2 × (close − lowest low)/(highest high − lowest low) − 1) + 0.4 × swing-break value, −1, 1); swing-break value is +1 when close exceeds the latest confirmed swing high, −1 when close falls below the latest confirmed swing low, otherwise 0.
+Calculation: Volume flow = clamp(0.6 × (MFI − 50)/50 + 0.4 × EMA of bar delta, −1, 1); bar delta = ((close − low) − (high − close))/(high − low), or 0 when high equals low.
+Calculation: Mean reversion = clamp(−(close − SMA(close))/(2.5 × standard deviation of close), −1, 1).
+Calculation: Efficiency ratio = abs(close − close N bars earlier) / sum of absolute one-bar close changes over N bars.
+Calculation: Regime = trending when ADX and efficiency ratio exceed their thresholds; trending direction is the sign of close − slow EMA. Otherwise regime is volatile when ATR exceeds its longer-lookback average times a threshold, and range otherwise.
+Calculation: Timeframe composite = weighted average of trend, trend quality, momentum, structure, volume flow, and mean reversion, with weights adjusted by regime and each factor's past follow-through edge; multiply by (1 − 0.30 × ATR percentile) and clamp to [−1, 1]. Trend regime weights: 0.22, 0.20, 0.22, 0.12, 0.12, 0.12; range regime weights: 0.12, 0.10, 0.12, 0.16, 0.12, 0.38; other regime weights: 0.18, 0.15, 0.18, 0.16, 0.14, 0.19, in the factor order above.
+Calculation: Factor edge multiplier = clamp(1 + sensitivity × (factor hit rate − direction-weighted base hit rate), minimum weight, maximum weight); hit rate records whether price moved at least an ATR multiple in the factor's sign direction within a forward horizon, and weighting starts after a minimum number of factor samples.
+Calculation: ATR percentile = percentile rank of ATR over a lookback, divided by 100.
+Calculation: Value location = clamp((close − session VWAP)/(2 × standard deviation of close), −1, 1).
+Calculation: Directional context score = weighted average of available value location, options/positioning bias, intermarket leader bias, and implied-versus-realized volatility premium, using weights 0.5, 1.0, 0.8, and 0.4 respectively; omit unavailable components.
+Calculation: Scalp composite = 0.45 × fastest composite + 0.30 × next-fastest + 0.20 × third-fastest + 0.05 × fourth-fastest; intraday composite = 0.10 × second-fastest + 0.30 × third-fastest + 0.35 × fourth-fastest + 0.20 × fifth-fastest + 0.05 × sixth-fastest; positional composite = 0.10 × fourth-fastest + 0.30 × fifth-fastest + 0.30 × sixth-fastest + 0.30 × slowest. When directional context is available, blend it into scalp and intraday with context weight b, and into positional with context weight b/2; clamp each result to [−1, 1].
+Calculation: Confidence = clamp(1 minus the applicable penalties for high flow toxicity, high self-excitation, high implied-volatility percentile, active change point, and high toxicity combined with low price impact, 0.4, 1.0).
+Long: On any requested timeframe, any factor value or timeframe composite > 0.10; or scalp, intraday, or positional composite > neutral threshold.
+Short: On any requested timeframe, any factor value or timeframe composite < −0.10; or scalp, intraday, or positional composite < −neutral threshold.
+Long: Confidence-weighted scalp, intraday, or positional score ≥ strong-verdict threshold.
+Short: Confidence-weighted scalp, intraday, or positional score ≤ −strong-verdict threshold.

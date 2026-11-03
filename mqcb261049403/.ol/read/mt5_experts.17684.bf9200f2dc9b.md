@@ -1,0 +1,5 @@
+Calculation: X-O direction = On a lower timeframe than the chart, using the last completed bar, calculate the selected OHLC-derived price and maintain upper and lower bands separated by the range threshold. When price > upper band + range threshold, set direction to up and reset the bands to price and price − range threshold; when price < lower band − range threshold, set direction to down and reset the bands to price and price + range threshold; otherwise retain direction and bands.
+Long: X-O direction changes from down to up OR (long position is open AND current ask − last entry price > the scaling threshold)
+Short: X-O direction changes from up to down OR (short position is open AND last entry price − current bid > the scaling threshold)
+Exit: long, X-O direction changes from up to down
+Exit: short, X-O direction changes from down to up

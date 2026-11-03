@@ -1,0 +1,3 @@
+Calculation: Candle body = abs(close - open)
+Long: On the last completed zone-detection-timeframe bar, 1 to max-base-count consecutive preceding bars each have candle body < base-body-multiplier × ATR, AND current close - open > explosive-body-multiplier × ATR
+Short: On the last completed zone-detection-timeframe bar, 1 to max-base-count consecutive preceding bars each have candle body < base-body-multiplier × ATR, AND current open - close > explosive-body-multiplier × ATR

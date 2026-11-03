@@ -1,0 +1,1 @@
+On each tick, if time-based exits are enabled, close any long or short position in the traded instrument when current server time minus the position’s opening time strictly exceeds the configured maximum holding duration.

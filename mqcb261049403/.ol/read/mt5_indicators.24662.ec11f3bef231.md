@@ -1,0 +1,3 @@
+Calculation: Super-smoothed RSI = 100 − 100/(1 + smoothed gains/smoothed losses), where gains and losses are rolling sums over the same lookback of positive and negative changes in the selected applied price; smooth both sums with the two-pole super smoother using a = exp(−1.414π/lookback), c2 = 2a cos(1.414π/lookback), c3 = −a², c1 = 1−c2−c3, and smoothed_t = c1×(sum_t+sum_t−1)/2 + c2×smoothed_t−1 + c3×smoothed_t−2. If smoothed losses are zero, RSI = 0. Calculated on the chart timeframe.
+Long: Super-smoothed RSI > its value on the previous chart bar
+Short: Super-smoothed RSI < its value on the previous chart bar

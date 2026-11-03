@@ -1,0 +1,4 @@
+Calculation: Bullish FVG = higher-timeframe bar low > high from two higher-timeframe bars earlier; level = current bar low (current higher-timeframe bar still forming)
+Calculation: Bullish order block = previous higher-timeframe bar closes below its open AND current higher-timeframe bar closes above previous bar high; level = previous bar low (current higher-timeframe bar still forming)
+Long: Bullish FVG AND (no prior FVG level was marked OR current FVG level != last marked FVG level)
+Long: Bullish order block AND (no prior order-block level was marked OR current order-block level != last marked order-block level)

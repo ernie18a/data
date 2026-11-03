@@ -1,0 +1,7 @@
+Calculation: ATR = average true range over a configurable lookback.
+Calculation: Live consolidation zone = start tracking when the rolling short-window high minus low is below ATR times a configurable threshold; initialize bounds to that window’s high and low and duration to the window length. While the condition remains true and each bar’s high and low stay within the tracked bounds plus or minus an ATR-based tolerance, expand the bounds to include that bar and increment duration. Otherwise reset tracking. A zone becomes live when duration reaches a configurable minimum; its upper and lower bounds are the tracked bounds. It remains live until price closes outside a bound or tracking ends.
+Calculation: Trade levels = for a long, entry is the zone upper bound and stop is the lower bound minus an ATR-based buffer; for a short, entry is the lower bound and stop is the upper bound plus that buffer. Risk is the distance between entry and stop. Targets are entry plus (long) or minus (short) risk multiplied by 1R, 1.5R, and 2R; final target is the furthest enabled target.
+Long: On a completed bar, a live zone exists AND close > zone upper bound.
+Short: On a completed bar, a live zone exists AND close < zone lower bound.
+Exit: Long, on a completed bar, low <= stop OR high >= final target OR a new live zone forms after the entry bar.
+Exit: Short, on a completed bar, high >= stop OR low <= final target OR a new live zone forms after the entry bar.

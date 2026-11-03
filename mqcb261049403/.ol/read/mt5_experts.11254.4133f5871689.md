@@ -1,0 +1,7 @@
+Calculation: Slope line = apply a selectable second moving-average method with period max(1, floor(sqrt(N))) to 2 × a selectable first moving-average method of the applied price with period floor(N/2) minus the same first method of the applied price with period N. The applied price and both smoothing methods are configurable. Calculate on the chart timeframe for the indicator, or on a selectable higher or lower timeframe for the trading algorithm; the trading algorithm can use the last completed bar, an earlier completed bar, or the bar still forming.
+Long: chart-timeframe slope line > its previous-bar value
+Short: chart-timeframe slope line < its previous-bar value
+Long: selected-timeframe slope line > its previous-bar value AND its previous-bar value <= its value two bars earlier
+Short: selected-timeframe slope line < its previous-bar value AND its previous-bar value >= its value two bars earlier
+Exit: long, selected-timeframe slope line < its previous-bar value OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance
+Exit: short, selected-timeframe slope line > its previous-bar value OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance

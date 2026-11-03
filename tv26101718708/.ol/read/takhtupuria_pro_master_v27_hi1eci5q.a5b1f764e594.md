@@ -1,0 +1,5 @@
+Calculation: Fibonacci midpoint = midpoint of the highest high and lowest low over the previous 20 completed bars on the configured Fibonacci timeframe, whether higher or lower than the chart timeframe
+Calculation: Fibonacci range = highest high minus lowest low over those bars
+Calculation: Distance threshold = Fibonacci range × configured distance fraction
+Long: (previous chart bar EMA200 − low ≥ previous chart bar distance threshold AND each of the preceding configured number of completed chart bars closed above its open and above EMA5) OR (close[1] > Fibonacci midpoint AND close[2] ≤ Fibonacci midpoint[1] AND close[1] > EMA200) OR (close[1] < Fibonacci midpoint AND close[2] ≥ Fibonacci midpoint[1] AND open[1] > Fibonacci midpoint AND close[1] > EMA200)
+Short: (previous chart bar high − EMA200 ≥ previous chart bar distance threshold AND each of the preceding configured number of completed chart bars closed below its open and below EMA5) OR (close[1] < Fibonacci midpoint AND close[2] ≥ Fibonacci midpoint[1] AND close[1] < EMA200) OR (close[1] > Fibonacci midpoint AND close[2] ≤ Fibonacci midpoint[1] AND open[1] < Fibonacci midpoint AND close[1] < EMA200)

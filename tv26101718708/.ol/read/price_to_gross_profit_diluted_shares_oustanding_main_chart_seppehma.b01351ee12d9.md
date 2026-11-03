@@ -1,0 +1,2 @@
+Calculation: price-to-gross-profit ratio = close × diluted shares outstanding / trailing-twelve-month gross profit, when gross profit is positive
+Long: price-to-gross-profit ratio < target ratio, using the requested higher-timeframe bar still forming

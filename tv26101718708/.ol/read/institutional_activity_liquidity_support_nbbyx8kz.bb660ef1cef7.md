@@ -1,0 +1,3 @@
+Calculation: Average absolute candle body = average of the absolute difference between close and open over chart-timeframe bars
+Calculation: Net buying percentage = 100 × (2 × (close − low) / (high − low) − 1); use 0 when high equals low or volume is zero
+Long: (volume > average volume × volume-spike multiplier AND close > low + (high − low) × close-location threshold) OR (close > open AND absolute candle body > average absolute candle body × expansion multiplier AND volume > average volume × expansion-volume threshold) OR ((low < previous completed yearly low AND close > previous completed yearly low) OR (low < previous completed monthly low AND close > previous completed monthly low)) AND net buying percentage > minimum sweep threshold

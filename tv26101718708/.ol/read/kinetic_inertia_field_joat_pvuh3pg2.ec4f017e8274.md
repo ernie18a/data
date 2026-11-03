@@ -1,0 +1,14 @@
+Calculation: Log return = natural logarithm of current close divided by previous close
+Calculation: Volatility = standard deviation of log returns over a longer lookback
+Calculation: Normalized velocity = exponentially smoothed log return divided by volatility
+Calculation: Acceleration = exponentially smoothed change in normalized velocity, using a shorter lookback than velocity smoothing
+Calculation: Jerk = exponentially smoothed change in acceleration using a short lookback
+Calculation: Kinetic energy = one-half times inverse volatility mass proxy times squared normalized velocity
+Calculation: Energy score = standardized kinetic energy over the volatility lookback, scaled and clamped to a bounded score
+Calculation: Equilibrium = exponentially smoothed blend of a linear regression of close over the equilibrium lookback and VWAP
+Calculation: Displacement = close minus equilibrium, divided by the greater of ATR and minimum tick size
+Calculation: Inertia score = bounded weighted combination of normalized velocity, acceleration, jerk, and signed displacement
+Calculation: Energy rail width = ATR scaled by energy score and capped absolute displacement
+Calculation: Upper and lower rails = equilibrium plus and minus energy rail width
+Long: Current bar is confirmed AND at least the signal cooldown has elapsed since any prior long or short signal AND ((inertia score > inertia threshold AND normalized velocity > 0 AND acceleration > 0 AND energy score >= energy threshold AND close > prior bar's upper rail) OR (displacement < negative snapback threshold AND acceleration > 0 AND close > current lower rail))
+Short: Current bar is confirmed AND at least the signal cooldown has elapsed since any prior long or short signal AND ((inertia score < 100 minus inertia threshold AND normalized velocity < 0 AND acceleration < 0 AND energy score >= energy threshold AND close < prior bar's lower rail) OR (displacement > snapback threshold AND acceleration < 0 AND close < current upper rail))

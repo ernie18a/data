@@ -1,0 +1,2 @@
+Long: Senkou Span A on the chart timeframe, using the bar still forming > Senkou Span B on the chart timeframe, using the bar still forming
+Short: Senkou Span B on the chart timeframe, using the bar still forming > Senkou Span A on the chart timeframe, using the bar still forming

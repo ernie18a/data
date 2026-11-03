@@ -1,0 +1,1 @@
+Calculate annualized historical volatility from the standard deviation of log returns over a configurable window. Compare it with its rolling low and high over a configurable lookback to obtain a normalized volatility rank. Buy options when the rank is in the low-volatility zone; sell options when it is in the high-volatility zone. Otherwise, take no action.

@@ -1,0 +1,11 @@
+Calculation: Short-term EMA = exponential moving average of close with a shorter lookback than the long-term EMA
+Calculation: Long-term EMA = exponential moving average of close with a longer lookback than the short-term EMA
+Long: Short-term EMA crosses above long-term EMA
+Short: Short-term EMA crosses below long-term EMA
+Calculation: Entry filters = conjunction of enabled conditions: ADX < threshold; MACD histogram > 0 for long or < 0 for short; close > open for long or close < open for short; volume rises for either side; SMA rises for long or falls for short; high is at or above its lookback highest high for long or low is at or below its lookback lowest low for short; close is below the maximum allowed rise from prior close for long or above the maximum allowed fall for short; close is above the minimum allowed rise from prior close for long or below the minimum allowed fall for short; RSI is at or below the overbought threshold for long or at or above the oversold threshold for short; close is above the selected moving average for long or below it for short
+Long: EMA crossover condition AND enabled long entry filters AND enabled time and date filters
+Short: EMA crossover condition AND enabled short entry filters AND enabled time and date filters
+Calculation: Stop-loss level = selected stop method: volatility-based fixed stop, trailing stop, fast trailing stop, volatility stop, chandelier stop, activator stop, moving-average stop, parabolic SAR stop, or lookback low for long / lookback high for short
+Calculation: Take-profit level = selected target method: volatility-based target, risk/reward multiple of the stop distance, or lookback high for long / lookback low for short
+Exit: Long, low <= stop-loss level OR high >= take-profit level OR the configured number of closes below entry is reached OR an enabled session-end close occurs
+Exit: Short, high >= stop-loss level OR low <= take-profit level OR the configured number of closes above entry is reached OR an enabled session-end close occurs

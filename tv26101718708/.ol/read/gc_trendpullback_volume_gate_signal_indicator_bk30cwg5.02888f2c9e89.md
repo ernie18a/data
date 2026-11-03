@@ -1,0 +1,6 @@
+Long: Higher-timeframe EMA with the longer lookback, using the last completed higher-timeframe bar, > higher-timeframe EMA with the shorter lookback, using the last completed higher-timeframe bar AND chart-timeframe RSI crosses above its lower threshold AND volume >= chart-timeframe volume simple moving average
+Short: Higher-timeframe EMA with the longer lookback, using the last completed higher-timeframe bar, < higher-timeframe EMA with the shorter lookback, using the last completed higher-timeframe bar AND chart-timeframe RSI crosses below its higher threshold AND volume >= chart-timeframe volume simple moving average
+Calculation: Long stop = entry price - ATR at entry × stop-distance multiplier; long target = entry price + (entry price - long stop) × reward-to-risk ratio
+Calculation: Short stop = entry price + ATR at entry × stop-distance multiplier; short target = entry price - (short stop - entry price) × reward-to-risk ratio
+Exit: Long, close <= long stop OR close >= long target OR short condition
+Exit: Short, close >= short stop OR close <= short target OR long condition

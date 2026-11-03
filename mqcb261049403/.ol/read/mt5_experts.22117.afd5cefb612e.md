@@ -1,0 +1,6 @@
+Calculation: Trend line = moving average of (2 × moving average of the selected price with half the main lookback, rounded down − moving average of the selected price with the main lookback), using a separate smoothing lookback. Use the same selected moving-average method for all averages.
+Calculation: Signal line = moving average of the trend line using the same method and a lookback equal to the square root of the main lookback, rounded down. Calculate both lines on a selectable higher, lower, or chart timeframe, using either the last completed bar or the still-forming bar as the selected signal bar; the preceding values are from the immediately preceding bar of that timeframe.
+Long: Trend line > signal line AND preceding trend line <= preceding signal line AND position side = flat
+Short: Trend line < signal line AND preceding trend line >= preceding signal line AND position side = flat
+Exit: long, trend line < signal line OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, trend line > signal line OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

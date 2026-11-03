@@ -1,0 +1,5 @@
+Calculation: Short-term smoothed stochastic = 3-bar simple moving average of 100 × (close − lowest low over the lookback) / (highest high over the lookback − lowest low over the lookback)
+Calculation: Long-term smoothed stochastic = same calculation with a longer lookback than the short-term smoothed stochastic
+Calculation: Volume moving average = simple moving average of volume
+Long: (Short-term smoothed stochastic > upper threshold AND its prior value < upper threshold AND Long-term smoothed stochastic > midpoint AND ADX < threshold AND volume > Volume moving average) OR Parabolic SAR < close
+Short: (Short-term smoothed stochastic < lower threshold AND its prior value > lower threshold AND Long-term smoothed stochastic < midpoint AND ADX < threshold AND volume > Volume moving average) OR Parabolic SAR > close

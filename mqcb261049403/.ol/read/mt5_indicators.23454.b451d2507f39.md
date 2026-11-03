@@ -1,0 +1,4 @@
+Calculation: Rounded PEMA = round to the configured price increment the weighted sum of eight sequential EMAs of the configured bar price: 8×EMA1 − 28×EMA2 + 56×EMA3 − 70×EMA4 + 56×EMA5 − 28×EMA6 + 8×EMA7 − EMA8; each EMA uses the same lookback.
+Calculation: PEMA trend state = up when rounded PEMA rises, down when it falls, otherwise carry the previous state; initialize as neutral.
+Long: On any configured timeframe (higher or lower than the chart timeframe), the last completed bar's PEMA trend state is up AND the preceding completed bar's state is not up.
+Short: On any configured timeframe (higher or lower than the chart timeframe), the last completed bar's PEMA trend state is down AND the preceding completed bar's state is not down.

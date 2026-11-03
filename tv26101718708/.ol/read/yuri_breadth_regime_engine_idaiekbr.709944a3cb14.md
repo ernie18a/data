@@ -1,0 +1,3 @@
+Calculation: Rank gap = the index’s percentage change and breadth’s point change over the same lookback, each ranked against its own history over a longer lookback; subtract the breadth rank from the index rank. On intraday charts, use the daily bar still forming; otherwise use the chart timeframe.
+Long: Rank gap <= -broadening threshold for the hold period AND the participation state was not broadening on the prior bar
+Short: Rank gap >= thinning threshold for the hold period AND the participation state was not thinning on the prior bar

@@ -1,0 +1,2 @@
+Long: A bar’s low is lower than every low in equally long windows immediately before and after it AND its price is at least 1.5 ATR from every previously recorded sweep level
+Short: A bar’s high is higher than every high in equally long windows immediately before and after it AND its price is at least 1.5 ATR from every previously recorded sweep level

@@ -1,0 +1,4 @@
+Calculation: Confirmed pivot high = a bar high greater than the highs of the chosen number of bars on both sides; confirmed pivot low = a bar low less than the lows of that number of bars on both sides
+Calculation: Selected EMA = exponential moving average of close over the chosen lookback
+Long: Close > selected EMA OR a confirmed pivot high has no preceding pivot high OR a confirmed pivot high > the preceding pivot high OR a confirmed pivot low has no preceding pivot low OR a confirmed pivot low > the preceding pivot low
+Short: Close < selected EMA OR a confirmed pivot high <= the preceding pivot high OR a confirmed pivot low <= the preceding pivot low

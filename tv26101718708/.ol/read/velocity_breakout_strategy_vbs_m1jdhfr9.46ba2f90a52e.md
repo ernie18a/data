@@ -1,0 +1,12 @@
+Calculation: EMA = exponential moving average of close; use a shorter period for the fast EMA than for the slow EMA.
+Calculation: Dealing-range upper boundary = lowest low over the lookback + 60% × (highest high − lowest low) over the same lookback.
+Calculation: Climactic volume = volume > average volume over the lookback + standard-deviation multiplier × volume standard deviation over the same lookback.
+Calculation: Master candle = the latest bar whose high or close is above the prior master high, or whose low or close is below the prior master low; bounds are its high/low, or its body high/low if wick bounds are disabled. Arm after the required consecutive bars remain within those bounds; reset on a bounds break.
+Calculation: Dynamic ATR trailing stop = ATR × the base multiplier, using the tighter multiplier when ADX is below its threshold while a long position is profitable. Recursively update: if current and prior closes are above the prior stop, use the greater of prior stop and close minus ATR loss; if both are below, use the lesser of prior stop and close plus ATR loss; otherwise use close minus ATR loss when close is above prior stop, or close plus ATR loss when below. Stop direction turns up when close crosses above the stop and down when close crosses below it; initialize the stop at close plus ATR loss.
+Long: fast EMA crosses above slow EMA AND (recent lowest low over the structure lookback > the lowest low since the latest fast-EMA-below-slow-EMA cross, or higher-low requirement is disabled) AND (close − recent lowest low) / recent lowest low × 100 <= maximum run-up percentage
+Long: fast EMA > slow EMA AND reload is armed AND lowest low over the last four bars <= fast EMA AND close is at or below the dealing-range upper boundary when the SMC-zone filter is enabled AND ((close > fast EMA AND close >= open) OR (lower wick > 1.5 × absolute open-close body AND close >= open)) AND trailing-stop direction is up AND no fast-EMA-above-slow-EMA cross on this bar
+Long: close > master-candle upper bound AND close >= open AND (fast EMA > slow EMA AND trailing-stop direction is up when trend confirmation is enabled)
+Long: climactic volume AND fast EMA < slow EMA
+Short: climactic volume AND fast EMA > slow EMA
+Exit: long, trailing-stop direction changes from up to down
+Exit: long, fast EMA crosses below slow EMA

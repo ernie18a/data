@@ -1,0 +1,6 @@
+Calculation: Bullish swing failure = current low < lowest low of the previous 10 signal-timeframe bars AND current close > that lowest low
+Calculation: Bearish swing failure = current high > highest high of the previous 10 signal-timeframe bars AND current close < that highest high
+Long: Bullish swing failure AND (trend filter disabled OR close > long-term EMA) AND (session filter disabled OR datetime is within an enabled trading session)
+Short: Bearish swing failure AND (trend filter disabled OR close < long-term EMA) AND (session filter disabled OR datetime is within an enabled trading session)
+Exit: long, low <= entry price reduced by the configured stop-loss percentage OR high >= entry price increased by the configured take-profit percentage OR (trailing stop enabled AND price has reached the configured profit activation level AND price has fallen by the configured trailing offset from its post-entry peak)
+Exit: short, high >= entry price increased by the configured stop-loss percentage OR low <= entry price reduced by the configured take-profit percentage OR (trailing stop enabled AND price has reached the configured profit activation level AND price has risen by the configured trailing offset from its post-entry trough)

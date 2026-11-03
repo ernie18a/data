@@ -1,0 +1,4 @@
+Calculation: MA1 = Selected moving average of close using its configured lookback and type: simple, exponential, weighted, Hull, volume-weighted, Wilder's, or triple exponential. Calculated at the chart resolution or selected custom resolution; if that resolution is higher, historical values use completed bars and realtime values can use the forming bar; if lower, use the lower-resolution value returned for each chart bar.
+Calculation: MA2 = Selected moving average of close using its independently configured lookback and type: simple, exponential, weighted, Hull, volume-weighted, Wilder's, or triple exponential. Calculated at the same resolution and with the same bar handling as MA1. The default MA1 lookback is shorter than MA2's.
+Long: Second moving average is enabled AND MA1 crosses above MA2
+Short: Second moving average is enabled AND MA1 crosses below MA2

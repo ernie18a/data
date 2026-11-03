@@ -1,0 +1,5 @@
+Calculation: OHLC average = (open + high + low + close) / 4 of the selected calculation candles
+Long: short-lookback moving average of the OHLC average > medium-lookback moving average of the OHLC average AND medium-lookback moving average of the OHLC average > long-lookback moving average of the OHLC average
+Short: short-lookback moving average of the OHLC average < medium-lookback moving average of the OHLC average AND medium-lookback moving average of the OHLC average < long-lookback moving average of the OHLC average
+Exit: long, short-lookback moving average of the OHLC average < medium-lookback moving average of the OHLC average AND medium-lookback moving average of the OHLC average < long-lookback moving average of the OHLC average
+Exit: short, short-lookback moving average of the OHLC average > medium-lookback moving average of the OHLC average AND medium-lookback moving average of the OHLC average > long-lookback moving average of the OHLC average

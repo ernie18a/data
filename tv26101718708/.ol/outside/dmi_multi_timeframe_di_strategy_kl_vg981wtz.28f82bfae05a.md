@@ -1,0 +1,1 @@
+Enter long when the positive directional indicator exceeds the negative directional indicator on both of two selected timeframes. Exit the long position when price reaches a trailing stop set below the low by an average true range based buffer; the stop ratchets upward and does not move down. There is no short-entry rule.

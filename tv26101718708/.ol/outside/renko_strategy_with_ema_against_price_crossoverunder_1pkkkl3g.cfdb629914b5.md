@@ -1,0 +1,1 @@
+Construct ATR-based Renko closing prices for the traded instrument and calculate short- and long-period moving averages using the selected average type. Enter long when the short average crosses above the long average and the instrument’s current price is above both averages. Enter short when the short average crosses below the long average and current price is below both.

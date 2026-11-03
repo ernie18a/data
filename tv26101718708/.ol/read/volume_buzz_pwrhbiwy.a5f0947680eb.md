@@ -1,0 +1,3 @@
+Calculation: Volume Buzz = during the early session, cumulative volume so far divided by the average cumulative volume through the same time of day across prior sessions; afterward, volume for the current time-of-day slot divided by the average volume for that slot across prior sessions, using lower-timeframe bars aggregated from the backtest data
+Long: Volume Buzz ≥ high threshold AND close ≥ open
+Short: Volume Buzz ≥ high threshold AND close < open

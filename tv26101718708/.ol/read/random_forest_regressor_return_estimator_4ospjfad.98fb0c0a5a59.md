@@ -1,0 +1,3 @@
+Calculation: Final-horizon predicted return = the ensemble mean estimate from a multi-output random forest regressor trained on recent chart bars with complete future returns through the forecast horizon. For each training bar, predict percent returns from its close to each of the next horizon closes. Use RSI, ATR as a percent of close, CCI, volume divided by its moving average, close as a percent of its moving average, percentage change over a shorter lookback, Bollinger Band width as a percent of its basis, and ADX as features. Evaluate the current bar’s features and use the predicted return at the final horizon.
+Long: Final-horizon predicted return >= 0
+Short: Final-horizon predicted return < 0

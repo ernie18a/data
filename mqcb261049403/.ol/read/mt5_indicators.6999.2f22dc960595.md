@@ -1,0 +1,4 @@
+Calculation: Adaptive moving average = recursively update the prior value by adding the current price minus the prior value, multiplied by the squared adaptive smoothing constant; the constant is the efficiency ratio times the difference between the fast and slow smoothing constants, plus the slow smoothing constant. The efficiency ratio is the absolute price change over the lookback divided by the sum of absolute one-bar price changes over that lookback.
+Calculation: Standard deviation of adaptive-moving-average changes = population standard deviation of the current and prior adaptive-moving-average changes over the same lookback used by the efficiency ratio.
+Long: Current adaptive-moving-average change > filter coefficient × standard deviation of adaptive-moving-average changes
+Short: Current adaptive-moving-average change < −filter coefficient × standard deviation of adaptive-moving-average changes

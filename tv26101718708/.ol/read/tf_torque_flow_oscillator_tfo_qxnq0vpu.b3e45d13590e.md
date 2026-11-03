@@ -1,0 +1,3 @@
+Calculation: TFO = Normalize each bar’s body (close − open) and upper/lower wicks by the prior bar’s ATR. Multiply the body by a body weight and the wick difference (lower wick − upper wick) by a wick weight, then multiply both by a volume mass: square root of current volume divided by the prior rolling median volume, with that ratio capped at 4 and floored at 0.25; use mass 1 when volume is unavailable, and 0 for a zero-volume bar. Add the weighted components to get raw torque. Accumulate raw torque with exponentially decaying memory, then smooth the result with a 3-bar EMA to get TFO.
+Long: TFO >= 0
+Short: TFO < 0

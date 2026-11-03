@@ -1,0 +1,10 @@
+Calculation: Bullish RSI divergence = RSI is below its oversold threshold, current low is below the stored oversold reference low, and current RSI is above the stored RSI; store a new reference when RSI makes a lower oversold extreme and expire it after the configured lookback.
+Calculation: Bearish RSI divergence = RSI is above its overbought threshold, current high is above the stored overbought reference high, and current RSI is below the stored RSI; store a new reference when RSI makes a higher overbought extreme and expire it after the configured lookback.
+Calculation: Bullish MFI divergence = MFI is below its oversold threshold, current low is below the stored oversold reference low, and current MFI is above the stored MFI; store a new reference when MFI makes a lower oversold extreme and expire it after the configured lookback.
+Calculation: Bearish MFI divergence = MFI is above its overbought threshold, current high is above the stored overbought reference high, and current MFI is below the stored MFI; store a new reference when MFI makes a higher overbought extreme and expire it after the configured lookback.
+Calculation: Bullish volume exhaustion = volume / its moving average is at least the configured multiplier AND lower wick / (high - low) is at least the configured minimum ratio AND RSI is below its oversold threshold.
+Calculation: Bearish volume exhaustion = volume / its moving average is at least the configured multiplier AND upper wick / (high - low) is at least the configured minimum ratio AND RSI is above its overbought threshold.
+Calculation: Extreme ATR volatility = ATR / its moving average exceeds the configured extreme threshold.
+Calculation: Bullish score = count of active bullish RSI divergence, bullish MFI divergence, and bullish volume exhaustion, plus 1 if extreme ATR volatility; bearish score is calculated the same way from the bearish conditions.
+Long: Bullish RSI divergence OR (bullish score >= 3 AND bearish score = 0)
+Short: Bearish RSI divergence OR (bearish score >= 3 AND bullish score = 0)

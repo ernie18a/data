@@ -1,0 +1,7 @@
+Calculation: Median price = (high + low) / 2
+Calculation: Jaw = 13-bar SMMA of median price, lagged 8 bars; Teeth = 8-bar SMMA, lagged 5 bars; Lips = 5-bar SMMA, lagged 3 bars
+Calculation: Latest up fractal = a bar whose high exceeds the highs of the two bars before and after it, confirmed after the two following bars; latest down fractal = a bar whose low is below the lows of the two bars before and after it, confirmed after the two following bars
+Calculation: Uptrend state activates when the latest up fractal is above Teeth and the current high crosses above that fractal; downtrend state activates when the latest down fractal is below Teeth and the current low crosses below that fractal
+Calculation: AO = 5-bar SMA of median price − 34-bar SMA of median price; squat bar = (high − low) / volume is below its prior-bar value AND volume is above its prior-bar value
+Long: close > (high + low) / 2 AND low = lowest low of the current and prior 6 bars AND high < Jaw AND high < Teeth AND high < Lips AND (if AO filter is enabled, AO < prior-bar AO) AND (if MFI filter is enabled, a squat bar occurred on the current or prior 2 bars); enter on a break above the signal bar high, one tick above that high
+Exit: Long, low <= the signal bar low OR the trend state changes from uptrend to downtrend

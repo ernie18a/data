@@ -1,0 +1,6 @@
+Calculation: Channel level = latest nonzero Zigzag-fractals pivot value, carried forward on subsequent bars
+Calculation: Awesome Oscillator = short-lookback SMA of median price minus long-lookback SMA of median price, with the short SMA having the smaller applied shift; evaluated on the higher timeframe's current forming bar
+Long: current bar open < high of the last completed bar on the chart timeframe + breakout buffer AND current bar close > that level AND current bar close < channel level from the higher timeframe's current forming bar AND Awesome Oscillator < 0 on the chart timeframe's current forming bar AND current bar close > channel level from the chart timeframe two completed bars ago
+Short: current bar open > low of the last completed bar on the chart timeframe - breakout buffer AND current bar close < that level AND current bar close > channel level from the higher timeframe's current forming bar AND Awesome Oscillator > 0 on the chart timeframe's current forming bar AND current bar close < channel level from the chart timeframe two completed bars ago
+Exit: Long, high >= entry price + take-profit distance
+Exit: Short, low <= entry price - take-profit distance

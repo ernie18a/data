@@ -1,0 +1,5 @@
+Calculation: Smoothed DPO = smooth the difference between close and its long-term smoothing, using a shorter-lookback smoother for the difference; calculate on the configured indicator timeframe (which may be higher or lower than the chart timeframe) using completed bars.
+Long: Smoothed DPO two bars before the configured signal bar > Smoothed DPO one bar before it AND Smoothed DPO one bar before it < Smoothed DPO at the configured signal bar
+Short: Smoothed DPO two bars before the configured signal bar < Smoothed DPO one bar before it AND Smoothed DPO one bar before it > Smoothed DPO at the configured signal bar
+Exit: Long, Smoothed DPO two bars before the configured signal bar < Smoothed DPO one bar before it AND Smoothed DPO one bar before it > Smoothed DPO at the configured signal bar OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: Short, Smoothed DPO two bars before the configured signal bar > Smoothed DPO one bar before it AND Smoothed DPO one bar before it < Smoothed DPO at the configured signal bar OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

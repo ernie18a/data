@@ -1,0 +1,11 @@
+Calculation: Candidate top low = low of the bar with the highest high in the lookback window of completed chart bars; update it when a new higher high forms
+Calculation: Candidate bottom high = high of the bar with the lowest low in the lookback window of completed chart bars; update it when a new lower low forms
+Calculation: Volume average = simple moving average of volume
+Calculation: Long stop = candidate bottom low minus ATR times the stop buffer
+Calculation: Short stop = candidate top high plus ATR times the stop buffer
+Calculation: Long target = entry price plus absolute distance from entry to long stop times the configured target risk multiple
+Calculation: Short target = entry price minus absolute distance from entry to short stop times the configured target risk multiple
+Long: Candidate bottom is active AND (previous completed bar close > candidate bottom high + current ATR times breakout buffer OR, when wick confirmation is selected, previous completed bar high > candidate bottom high + current ATR times breakout buffer) AND (volume filter is off OR previous completed bar volume > its volume average times the configured volume multiple) AND (session filter is off OR current bar time is within the configured session) AND (no prior signal OR current bar index minus last signal bar index >= configured minimum bars between signals)
+Short: Candidate top is active AND (previous completed bar close < candidate top low - current ATR times breakout buffer OR, when wick confirmation is selected, previous completed bar low < candidate top low - current ATR times breakout buffer) AND (volume filter is off OR previous completed bar volume > its volume average times the configured volume multiple) AND (session filter is off OR current bar time is within the configured session) AND (no prior signal OR current bar index minus last signal bar index >= configured minimum bars between signals)
+Exit: Long, short signal OR (stop confirmation is by close and previous completed bar close <= long stop, or stop confirmation is by wick and previous completed bar low <= long stop) OR (high >= an unfinished long target)
+Exit: Short, long signal OR (stop confirmation is by close and previous completed bar close >= short stop, or stop confirmation is by wick and previous completed bar high >= short stop) OR (low <= an unfinished short target)

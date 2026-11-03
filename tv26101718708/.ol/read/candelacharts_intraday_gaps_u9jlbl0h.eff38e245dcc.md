@@ -1,0 +1,2 @@
+Long: At the start of a new daily session, the current forming daily bar's open is greater than the previous completed daily bar's close, or its high if the high/low gap rule is selected
+Short: At the start of a new daily session, the current forming daily bar's open is less than the previous completed daily bar's close, or its low if the high/low gap rule is selected

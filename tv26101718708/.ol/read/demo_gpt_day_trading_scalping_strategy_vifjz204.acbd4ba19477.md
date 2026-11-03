@@ -1,0 +1,3 @@
+Long: previous bar close > previous bar open AND current bar close > current bar open AND current bar open > previous bar close AND current bar volume > 20-period simple moving average of volume
+Short: previous bar close < previous bar open AND current bar close < current bar open AND current bar open < previous bar close AND current bar volume > 20-period simple moving average of volume
+Exit: Long, previous bar close < previous bar open AND current bar close < current bar open AND current bar open < previous bar close AND current bar volume > 20-period simple moving average of volume OR datetime < selected start date OR datetime > selected end date

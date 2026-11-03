@@ -1,0 +1,6 @@
+Calculation: CVD = cumulative sum of buying volume minus selling volume; allocate each bar’s volume between buying and selling in proportion to the bar’s Bull & Bear Balance OHLC pressures.
+Calculation: Confirmed CVD pivot low/high = a CVD low/high with the specified left and right pivot lookbacks; confirm it on the bar after the right lookback, and compare its CVD and price values at the pivot bar.
+Long: A confirmed CVD pivot low whose previous confirmed pivot low was between the minimum and maximum lookback bars ago AND ((current pivot CVD > previous pivot CVD AND current pivot-bar low < previous pivot-bar low) OR (current pivot CVD < previous pivot CVD AND current pivot-bar low > previous pivot-bar low))
+Short: A confirmed CVD pivot high whose previous confirmed pivot high was between the minimum and maximum lookback bars ago AND ((current pivot CVD < previous pivot CVD AND current pivot-bar high > previous pivot-bar high) OR (current pivot CVD > previous pivot CVD AND current pivot-bar high < previous pivot-bar high))
+Exit: Long, a short condition OR low <= entry price × (1 − stop percentage) OR high >= entry price × (1 + take-profit percentage)
+Exit: Short, a long condition OR high >= entry price × (1 + stop percentage) OR low <= entry price × (1 − take-profit percentage)

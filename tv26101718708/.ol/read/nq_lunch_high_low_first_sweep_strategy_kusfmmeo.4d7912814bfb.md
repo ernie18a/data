@@ -1,0 +1,2 @@
+Long: During the after-lunch window, low < the lowest low during the lunch session AND close > the lowest low during the lunch session AND close > low + minimum price increment AND no earlier sweep or cancel event occurred that day
+Short: During the after-lunch window, high > the highest high during the lunch session AND close < the highest high during the lunch session AND close < high - minimum price increment AND no earlier sweep or cancel event occurred that day

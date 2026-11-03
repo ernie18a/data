@@ -1,0 +1,6 @@
+Calculation: EMA distance percentage = absolute difference between the shorter-lookback EMA and longer-lookback EMA, divided by close, times 100
+Calculation: Mean-reversion z-score = (close - session VWAP) / standard deviation of (hlc3 - session VWAP) over a lookback
+Long: Long is enabled AND ((ADX > trend threshold AND EMA distance percentage > minimum distance AND shorter-lookback EMA > longer-lookback EMA AND close > the previous bar's highest high over the breakout lookback) OR (ADX < range threshold AND mean-reversion z-score < negative z-score threshold AND close > previous close)) AND previous bar's signal was not long AND position is flat or short
+Short: Short is enabled AND ((ADX > trend threshold AND EMA distance percentage > minimum distance AND shorter-lookback EMA < longer-lookback EMA AND close < the previous bar's lowest low over the breakout lookback) OR (ADX < range threshold AND mean-reversion z-score > z-score threshold AND close < previous close)) AND previous bar's signal was not short AND position is flat or long
+Exit: long, low <= entry price - ATR at entry × stop multiple OR high >= entry price + ATR at entry × stop multiple × reward/risk multiple
+Exit: short, high >= entry price + ATR at entry × stop multiple OR low <= entry price - ATR at entry × stop multiple × reward/risk multiple

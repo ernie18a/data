@@ -1,0 +1,2 @@
+Long: EMA on each enabled screen’s last completed bar is greater than its previous completed bar’s EMA; the screens are ordered from higher timeframe to chart timeframe.
+Short: EMA on each enabled screen’s last completed bar is less than its previous completed bar’s EMA; the screens are ordered from higher timeframe to chart timeframe.

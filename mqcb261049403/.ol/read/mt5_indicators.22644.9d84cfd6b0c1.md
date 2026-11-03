@@ -1,0 +1,3 @@
+Calculation: Smoothed volume-weighted Bulls–Bears line on the selected timeframe = smooth with XMA the product of selected tick or real volume and (100 × CU/(CU+CD) − 50), where CU is the sum of positive adjacent differences and CD the sum of negative adjacent differences among L0–L3; L0=(1−γ)×(Bulls Power+Bears Power)+γ×previous L0, and each subsequent state is −γ×the preceding state+its previous value+γ×the next state’s previous value; Bulls Power=high−EMA(close), Bears Power=low−EMA(close). Use the selected timeframe, which is higher than or equal to the chart timeframe; use its still-forming bar.
+Long: current line > previous selected-timeframe bar’s line
+Short: current line < previous selected-timeframe bar’s line

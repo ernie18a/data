@@ -1,0 +1,4 @@
+Calculation: Structural pivot high/low = a high/low that is an extreme over equal left and right lookbacks on the chart timeframe; use a longer lookback than for re-entry pivots, and confirm only after the right-side bars complete. Each new pivot replaces the prior candidate on that side and is initially unbroken.
+Calculation: Re-entry pivot high/low = a high/low that is an extreme over equal, shorter left and right lookbacks on the chart timeframe; confirm only after the right-side bars complete.
+Long: close > latest unbroken structural pivot high when close-break mode is enabled, otherwise high > latest unbroken structural pivot high OR a re-entry pivot low is confirmed and the most recent structural break direction is up
+Short: close < latest unbroken structural pivot low when close-break mode is enabled, otherwise low < latest unbroken structural pivot low OR a re-entry pivot high is confirmed and the most recent structural break direction is down

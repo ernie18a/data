@@ -1,0 +1,4 @@
+Calculation: Bullish engulfing = previous candle close < previous candle open AND current candle close > current candle open AND current candle close >= previous candle open AND previous candle close >= current candle open AND current candle body size > previous candle body size
+Calculation: Bearish engulfing = previous candle close > previous candle open AND current candle close < current candle open AND current candle open >= previous candle close AND previous candle open >= current candle close AND current candle body size > previous candle body size
+Long: Bullish engulfing AND chart timeframe is the indicator's designated engulfing timeframe
+Short: Bearish engulfing AND chart timeframe is the indicator's designated engulfing timeframe

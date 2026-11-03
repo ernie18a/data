@@ -1,0 +1,3 @@
+Calculation: NDOG boundaries = the higher and lower of the prior session-reference bar’s close and the new session-reference bar’s open, using completed session-reference bars aggregated from the data
+Long: new session-reference bar’s open < prior session-reference bar’s close AND NDOG size meets the configured minimum AND current NDOG is not fully filled (current bar high < upper boundary)
+Short: new session-reference bar’s open > prior session-reference bar’s close AND NDOG size meets the configured minimum AND current NDOG is not fully filled (current bar low > lower boundary)

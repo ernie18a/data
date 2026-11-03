@@ -1,0 +1,4 @@
+Long: (SuperTrend direction is bullish AND close > VWAP AND timestamp is within the configured trading session) OR (SuperTrend direction is bullish AND close > VWAP AND the prior bar did not have both conditions)
+Short: (SuperTrend direction is bearish AND close < VWAP AND timestamp is within the configured trading session) OR (SuperTrend direction is bearish AND close < VWAP AND the prior bar did not have both conditions)
+Exit: long, SuperTrend direction is bearish OR timestamp is outside the configured trading session
+Exit: short, SuperTrend direction is bullish OR timestamp is outside the configured trading session

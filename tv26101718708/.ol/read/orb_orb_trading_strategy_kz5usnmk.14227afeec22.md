@@ -1,0 +1,4 @@
+Calculation: Opening range high = highest high among the configured number of completed bars starting at the configured session start, using the opening-range timeframe (higher than the chart timeframe when the chart is lower; otherwise the chart timeframe); available only after all range bars are complete
+Calculation: Opening range low = lowest low among the configured number of completed bars starting at the configured session start, using the opening-range timeframe (higher than the chart timeframe when the chart is lower; otherwise the chart timeframe); available only after all range bars are complete
+Long: opening range is complete AND current close > current opening range high AND previous close <= previous opening range high
+Short: opening range is complete AND current close < current opening range low AND previous close >= previous opening range low

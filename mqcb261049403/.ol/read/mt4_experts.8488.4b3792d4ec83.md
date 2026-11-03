@@ -1,0 +1,6 @@
+Calculation: Daily deviation cosine score = for each of the latest K daily bars, where K is the chart timeframe’s numeric period, deviation = close − simple moving average of close over K daily bars; sum the paired instruments’ deviations multiplied together, divided by the square root of the product of their summed squared deviations. Uses the higher daily timeframe, including its bar still forming.
+Calculation: Open-order profit total = sum of profit plus swap for all open orders.
+Long: Fast EMA > slow EMA on the last completed chart-timeframe bar AND RSI ≤ its threshold on the chart-timeframe bar still forming AND daily deviation cosine score < 0 AND there are no open orders AND day of month < 5 OR (day of month = 5 AND hour ≤ 18).
+Short: Fast EMA < slow EMA on the last completed chart-timeframe bar AND RSI ≥ its threshold on the chart-timeframe bar still forming AND daily deviation cosine score < 0 AND there are no open orders AND day of month < 5 OR (day of month = 5 AND hour ≤ 18).
+Exit: long, open-order profit total > threshold.
+Exit: short, open-order profit total > threshold.

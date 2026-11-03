@@ -1,0 +1,3 @@
+Calculation: Prior N-bar high = highest high among the N bars before the current bar
+Calculation: EMA retest = low at or below one of EMA(30), EMA(50), or EMA(100), and close above that same EMA
+Long: EMA(30) > EMA(50) AND EMA(50) > EMA(100) AND last completed higher-timeframe close > higher-timeframe EMA(30) AND higher-timeframe EMA(30) > higher-timeframe EMA(50) AND ((setup did not begin on this bar AND breakout has not fired in this aligned setup AND close > prior N-bar high) OR (previous bar was an EMA retest AND previous bar was not the setup-start bar AND retest has not fired in this aligned setup AND close > previous bar high))

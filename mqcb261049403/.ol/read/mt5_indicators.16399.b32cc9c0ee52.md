@@ -1,0 +1,3 @@
+Calculation: Waddah Attar Trend histogram = (fast-smoothed input price − slow-smoothed input price) × smoothed MA input price; the fast lookback is shorter than the slow lookback. Use the last completed higher-timeframe bar.
+Long: Waddah Attar Trend histogram >= its previous value AND its previous value < the value before that
+Short: Waddah Attar Trend histogram < its previous value AND its previous value >= the value before that

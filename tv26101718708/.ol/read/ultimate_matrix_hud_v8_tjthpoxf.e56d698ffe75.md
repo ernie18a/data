@@ -1,0 +1,4 @@
+Calculation: Long score = weighted sum of (higher-timeframe fast EMA > slow EMA AND chart close > fast EMA), (chart RSI in the bullish trend zone), and (chart volume above its average multiplied by a configurable factor AND chart close > open); use the last completed higher-timeframe bar
+Calculation: Short score = weighted sum of (higher-timeframe fast EMA < slow EMA AND chart close < fast EMA), (chart RSI in the bearish trend zone), and (chart volume above its average multiplied by a configurable factor AND chart close < open); use the last completed higher-timeframe bar
+Long: Long score meets the strong-signal threshold
+Short: Short score meets the strong-signal threshold

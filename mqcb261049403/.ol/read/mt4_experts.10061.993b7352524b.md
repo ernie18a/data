@@ -1,0 +1,7 @@
+Long: Every enabled PSAR is below its timeframe’s current bar low AND at least one enabled PSAR was above the previous sampled bar’s high and is now below the current bar’s low
+Short: Every enabled PSAR is above its timeframe’s current bar high AND at least one enabled PSAR was below the previous sampled bar’s low and is now above the current bar’s high
+Long: Flat AND every enabled higher-timeframe PSAR is below its current bar’s low AND at least one was above its last completed bar’s high and is now below its current bar’s low AND the PSAR spread is within its threshold
+Short: Flat AND every enabled higher-timeframe PSAR is above its current bar’s high AND at least one was below its last completed bar’s low and is now above its current bar’s high AND the PSAR spread is within its threshold
+Exit: Long, close-modification-timeframe PSAR was below the previous chart bar’s low and is now above the current chart bar’s high OR price reaches the stop-loss or take-profit
+Exit: Short, close-modification-timeframe PSAR was above the previous chart bar’s high and is now below the current chart bar’s low OR price reaches the stop-loss or take-profit
+Calculation: PSAR spread = maximum minus minimum of the enabled higher-timeframe current PSAR values, expressed in points

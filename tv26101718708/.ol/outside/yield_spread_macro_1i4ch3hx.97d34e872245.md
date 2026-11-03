@@ -1,0 +1,1 @@
+When the yield spread rises while the currency pair falls, take a long directional bias only when the spread and pair have strong rolling correlation. When the spread falls while the pair rises, take a short directional bias only when that correlation is strong. Treat these divergences as unreliable when correlation is weak. No explicit entry timing or exit rule is provided.

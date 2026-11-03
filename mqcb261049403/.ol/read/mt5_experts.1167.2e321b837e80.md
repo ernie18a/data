@@ -1,0 +1,5 @@
+Calculation: H = Smooth(F − S), where F is the recursively ideal-smoothed close and S is the close recursively ideal-smoothed through three successive stages; each ideal smoothing stage updates as (a·(previous input − previous output) + previous output + b·previous output·((previous input − current input)² − 1)) / (1 + b·((previous input − current input)² − 1)). Smooth H with the configured smoothing method.
+Long: On the configured signal timeframe, using the last completed bar, H rises from the preceding bar AND the preceding H is below the H before it.
+Short: On the configured signal timeframe, using the last completed bar, H falls from the preceding bar AND the preceding H is above the H before it.
+Exit: long, on the configured signal timeframe, using the last completed bar, H on the preceding bar is above H two bars earlier.
+Exit: short, on the configured signal timeframe, using the last completed bar, H on the preceding bar is below H two bars earlier.

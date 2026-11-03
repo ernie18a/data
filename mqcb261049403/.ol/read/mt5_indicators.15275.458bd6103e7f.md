@@ -1,0 +1,3 @@
+Calculation: Elliott Wave Oscillator = shorter-lookback moving average of median price ((high + low) / 2) minus longer-lookback moving average of median price, on the higher timeframe; use the still-forming bar for the current value.
+Long: (Elliott Wave Oscillator two bars ago > Elliott Wave Oscillator one bar ago AND Elliott Wave Oscillator one bar ago < current Elliott Wave Oscillator) OR (Elliott Wave Oscillator one bar ago < 0 AND current Elliott Wave Oscillator > 0)
+Short: (Elliott Wave Oscillator two bars ago < Elliott Wave Oscillator one bar ago AND Elliott Wave Oscillator one bar ago > current Elliott Wave Oscillator) OR (Elliott Wave Oscillator one bar ago > 0 AND current Elliott Wave Oscillator < 0)

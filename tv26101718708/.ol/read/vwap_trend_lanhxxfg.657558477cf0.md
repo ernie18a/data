@@ -1,0 +1,4 @@
+Calculation: Daily Open = open of the first chart bar of each day
+Calculation: Daily VWAP = running sum of ((high + low + close) / 3 × volume) since the start of the day divided by running sum of volume
+Long: close > Daily VWAP AND close > Daily Open AND (previous close <= previous bar's Daily VWAP OR previous close <= previous bar's Daily Open) AND more than one chart bar has elapsed since the previous long or short signal
+Short: close < Daily VWAP AND close < Daily Open AND (previous close >= previous bar's Daily VWAP OR previous close >= previous bar's Daily Open) AND more than one chart bar has elapsed since the previous long or short signal

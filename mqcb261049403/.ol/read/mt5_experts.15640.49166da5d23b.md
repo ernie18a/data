@@ -1,0 +1,6 @@
+Calculation: Short-lookback ROC = configured transform of the completed bar’s close versus its close N bars earlier: Momentum = close − prior close; ROC = (close / prior close − 1) × 100; ROCP = (close − prior close) / prior close; ROCR = close / prior close; ROCR100 = (close / prior close) × 100
+Calculation: Long-lookback ROC = the same configured transform choices using a longer lookback than the short-lookback ROC
+Long: Short-lookback ROC on the last completed indicator-timeframe bar > Long-lookback ROC on that bar AND Short-lookback ROC on the preceding completed indicator-timeframe bar ≤ Long-lookback ROC on that bar
+Short: Short-lookback ROC on the last completed indicator-timeframe bar < Long-lookback ROC on that bar AND Short-lookback ROC on the preceding completed indicator-timeframe bar ≥ Long-lookback ROC on that bar
+Exit: Long, Short-lookback ROC on the last completed indicator-timeframe bar < Long-lookback ROC on that bar
+Exit: Short, Short-lookback ROC on the last completed indicator-timeframe bar > Long-lookback ROC on that bar

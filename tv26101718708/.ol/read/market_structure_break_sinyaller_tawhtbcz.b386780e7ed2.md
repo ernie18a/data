@@ -1,0 +1,4 @@
+Calculation: Last swing high = latest high at the center of a symmetric bar window that equals the window’s highest high; retain it until a newer such swing is confirmed
+Calculation: Last swing low = latest low at the center of a symmetric bar window that equals the window’s lowest low; retain it until a newer such swing is confirmed
+Long: Close crosses above last swing high OR (close > long-term EMA AND RSI > its midpoint AND OBV > shorter-term EMA of OBV AND close crosses above shorter-term EMA)
+Short: Close crosses below last swing low OR (close < long-term EMA AND RSI < its midpoint AND OBV < shorter-term EMA of OBV AND close crosses below shorter-term EMA)

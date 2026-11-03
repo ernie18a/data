@@ -1,0 +1,3 @@
+Calculation: Premarket OTT box = high and low of the latest premarket bar on a higher timeframe that touches or crosses OTT; use the bar while it is forming unless candle-close confirmation is enabled
+Long: after price breaks above the box high, a later lower-timeframe bar retests the box high and holds above it, with bullish confirmation
+Short: after price breaks below the box low, a later lower-timeframe bar retests the box low and is rejected below it, with bearish confirmation

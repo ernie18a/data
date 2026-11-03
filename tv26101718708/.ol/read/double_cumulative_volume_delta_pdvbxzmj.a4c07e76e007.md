@@ -1,0 +1,3 @@
+Calculation: Anchored cumulative volume delta = cumulative volume delta reset at a higher-timeframe anchor, estimated from lower-timeframe completed bars
+Long: The anchored cumulative volume delta with the longer anchor period has chart-bar close >= chart-bar open OR the anchored cumulative volume delta with the shorter anchor period has chart-bar close >= chart-bar open
+Short: The anchored cumulative volume delta with the longer anchor period has chart-bar close < chart-bar open OR the anchored cumulative volume delta with the shorter anchor period has chart-bar close < chart-bar open

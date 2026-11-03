@@ -1,0 +1,4 @@
+Calculation: Confirmed pivot high = a bar whose high exceeds the highs of the preceding left-length bars and the following right-length bars on the chart timeframe; confirm only after the right-length bars are complete.
+Calculation: Confirmed pivot low = a bar whose low is below the lows of the preceding left-length bars and the following right-length bars on the chart timeframe; confirm only after the right-length bars are complete.
+Long: A newly confirmed pivot low is within the equality threshold, measured as absolute price difference divided by the previous pivot low’s price, of any of the previous 50 confirmed pivot lows.
+Short: A newly confirmed pivot high is within the equality threshold, measured as absolute price difference divided by the previous pivot high’s price, of any of the previous 50 confirmed pivot highs.

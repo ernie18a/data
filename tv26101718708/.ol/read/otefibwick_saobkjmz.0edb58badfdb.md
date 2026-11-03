@@ -1,0 +1,3 @@
+Calculation: Higher-timeframe OTE zone = for the last completed higher-timeframe bar, if close > open, [high − 0.79 × (high − low), high − 0.62 × (high − low)]; if close < open, [high − 0.38 × (high − low), high − 0.21 × (high − low)]
+Long: last completed higher-timeframe bar close > open AND chart bar high ≥ OTE zone lower bound AND chart bar low ≤ OTE zone upper bound
+Short: last completed higher-timeframe bar close < open AND chart bar high ≥ OTE zone lower bound AND chart bar low ≤ OTE zone upper bound

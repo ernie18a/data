@@ -1,0 +1,7 @@
+Calculation: Close position = (close - low) / max(high - low, minimum price increment)
+Calculation: Volume ratio = volume / max(simple moving average of volume, 1)
+Calculation: Bull void zone = zone between the current bar's low and the high two bars earlier; cap its height at a parameterized ATR multiple, keeping the zone adjacent to the current bar's low.
+Calculation: Bear void zone = zone between the low two bars earlier and the current bar's high; cap its height at a parameterized ATR multiple, keeping the zone adjacent to the current bar's high.
+Calculation: Void-zone state = newly created zones start active; a later bar touching a zone changes it to tapped; a close below a bull zone's bottom or above a bear zone's top makes it broken; discard zones older than a parameterized maximum age. A zone is touched when high >= its bottom and low <= its top.
+Long: low > high two bars earlier AND low - high two bars earlier >= ATR × minimum-gap parameter AND close > open AND abs(close - open) >= ATR × displacement-body parameter AND close position > 0.52 AND volume ratio >= volume-expansion parameter OR a later bar touches an unbroken bull void zone AND close > its top AND close > open AND RSI > 45
+Short: high < low two bars earlier AND low two bars earlier - high >= ATR × minimum-gap parameter AND close < open AND abs(close - open) >= ATR × displacement-body parameter AND close position < 0.48 AND volume ratio >= volume-expansion parameter OR a later bar touches an unbroken bear void zone AND close < its bottom AND close < open AND RSI < 55

@@ -1,0 +1,6 @@
+Calculation: shorter-lookback CCI = CCI with a shorter lookback than the longer-lookback CCI, calculated on the indicator timeframe, which may be higher or lower than the chart timeframe
+Calculation: longer-lookback CCI = CCI with a longer lookback than the shorter-lookback CCI, calculated on the same indicator timeframe
+Long: shorter-lookback CCI on the last completed indicator-timeframe bar > longer-lookback CCI on that bar AND shorter-lookback CCI on the previous completed indicator-timeframe bar <= longer-lookback CCI on that bar
+Short: shorter-lookback CCI on the last completed indicator-timeframe bar < longer-lookback CCI on that bar AND shorter-lookback CCI on the previous completed indicator-timeframe bar >= longer-lookback CCI on that bar
+Exit: long, shorter-lookback CCI < longer-lookback CCI on the last completed indicator-timeframe bar OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, shorter-lookback CCI > longer-lookback CCI on the last completed indicator-timeframe bar OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

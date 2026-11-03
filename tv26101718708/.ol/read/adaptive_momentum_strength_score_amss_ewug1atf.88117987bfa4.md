@@ -1,0 +1,6 @@
+Calculation: Momentum score = moving average of the weighted mean of three components: min(abs(close − open) / ATR, 3) / 3 × 100; min(volume / moving average(volume), 3) / 3 × 100; and min(Bollinger Band width / its moving average, 3) / 3 × 100. Use the same Bollinger Band lookback for its width moving average; volume has its own lookback. All bars are from the chart timeframe.
+Calculation: Active threshold = clamp(moving average of the momentum score + a multiplier × its standard deviation, 20, 80) using the longer threshold lookback; use the fixed threshold instead when fixed mode is selected.
+Calculation: Bullish pressure = close > short-term EMA(close) AND average of (close − open) / ATR over the recent lookback > pressure threshold.
+Calculation: Bearish pressure = close < short-term EMA(close) AND average of (close − open) / ATR over the recent lookback < −pressure threshold.
+Long: Bullish pressure AND momentum score > active threshold AND previous momentum score ≤ previous active threshold
+Short: Bearish pressure AND momentum score > active threshold AND previous momentum score ≤ previous active threshold

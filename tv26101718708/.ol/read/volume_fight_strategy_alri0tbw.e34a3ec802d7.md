@@ -1,0 +1,11 @@
+Calculation: Bullish volume = if close > open then volume, otherwise volume × (high − open) / (high − low)
+Calculation: Bearish volume = if close < open then volume, otherwise volume × (open − low) / (high − low)
+Calculation: Bullish average volume = volume-weighted moving average of bullish volume over a lookback
+Calculation: Bearish average volume = volume-weighted moving average of bearish volume over the same lookback
+Calculation: Volume midpoint = absolute value of (bullish average volume + bearish average volume) / 2
+Calculation: Bullish zone = bullish average volume > bearish average volume AND volume midpoint / bullish average volume < 1 − flat threshold percentage / 100
+Calculation: Bearish zone = bearish average volume > bullish average volume AND volume midpoint / bearish average volume < 1 − flat threshold percentage / 100
+Long: Bullish zone AND bullish-zone run count = 1 AND direction is not SHORT
+Short: Bearish zone AND bearish-zone run count = 1 AND direction is not LONG
+Exit: Short, Bullish zone AND bullish-zone run count = 1
+Exit: Long, Bearish zone AND bearish-zone run count = 1

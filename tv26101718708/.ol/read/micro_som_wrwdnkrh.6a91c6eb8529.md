@@ -1,0 +1,4 @@
+Calculation: Winning node = node with the smallest Euclidean distance to the current feature vector: clamped values of (close − VWAP) / ATR(14), 3 × abs(close − close[14]) / sum(abs(close − prior close), 14) − 1.5, ATR(5) / ATR(14) − 1, volume / SMA(volume, 20) − 1, and (close − close[10]) / ATR(14); each value is clamped to [−2, 2]. Nodes are trained as a self-organizing map on confirmed bars.
+Calculation: Current node bias = that node’s stored value, updated on each confirmed bar by 0.95 × its prior value + 0.05 × the clipped-to-[−2, 2] value of (close − close[12]) / ATR(14)[12], assigned to the node that won 12 bars earlier.
+Long: current node bias > 0.05
+Short: current node bias < −0.05

@@ -1,0 +1,4 @@
+Calculation: Cumulative volume delta = cumulative lower-timeframe volume delta, reset at each higher-timeframe anchor period; use the latest lower-timeframe data available within each chart bar, including the still-forming bar.
+Calculation: Confirmed pivot low/high = a low/high that is a local extreme over the shared left and right lookbacks; use the same lookbacks for price and cumulative volume delta.
+Long: Current confirmed price pivot low < previous confirmed price pivot low AND current confirmed cumulative volume delta pivot low > previous confirmed cumulative volume delta pivot low
+Short: Current confirmed price pivot high > previous confirmed price pivot high AND current confirmed cumulative volume delta pivot high < previous confirmed cumulative volume delta pivot high

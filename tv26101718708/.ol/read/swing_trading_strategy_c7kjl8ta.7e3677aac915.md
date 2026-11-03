@@ -1,0 +1,5 @@
+Long: short-term SMA crosses above long-term SMA OR RSI is below its oversold threshold AND MACD line crosses above signal line OR close is below the rolling maximum close over the lookback by more than the pullback threshold AND previous close was at or above the previous bar’s corresponding threshold
+Short: short-term SMA crosses below long-term SMA
+Exit: long, time since entry is greater than the minimum holding period AND (long-term SMA crosses above short-term SMA OR RSI is above its overbought threshold AND MACD line crosses below signal line)
+Exit: long, time since entry is greater than the minimum holding period AND high is at or above entry price plus the take-profit percentage
+Exit: long, time since entry is greater than the minimum holding period AND low is at or below entry price minus the stop-loss percentage

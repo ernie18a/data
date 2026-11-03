@@ -1,0 +1,3 @@
+Calculation: Average entry = total quote capital deployed divided by total base-asset quantity held
+Long: Flat and RSI of close on a higher timeframe's last completed bar < the configured level OR long position open, a next configured averaging-order rung remains, and close <= base entry × (1 − that rung's configured deviation)
+Exit: Long, close >= average entry × (1 + configured take-profit percentage)

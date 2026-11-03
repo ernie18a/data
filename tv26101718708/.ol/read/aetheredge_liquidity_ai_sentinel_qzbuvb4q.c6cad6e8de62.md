@@ -1,0 +1,6 @@
+Calculation: Confirmed pivot high = a bar whose high exceeds highs of the swing lookback bars before and after it, confirmed after the following bars; retain the latest confirmed pivot high
+Calculation: Confirmed pivot low = a bar whose low is below lows of the swing lookback bars before and after it, confirmed after the following bars; retain the latest confirmed pivot low
+Calculation: Sweep outcome = for a high sweep, success if a later close at least 10 bars after the sweep is below the sweep-bar close minus current ATR; for a low sweep, success if that close is above the sweep-bar close plus current ATR; otherwise failure
+Calculation: Reversal probability = when total stored sweeps are at least K, average the success outcomes of the first K completed stored sweeps of the same direction in oldest-first order; use 0 if none qualify
+Long: low < latest confirmed pivot low AND close > latest confirmed pivot low AND latest confirmed pivot low - low > sweep wick ratio × ATR AND low-sweep reversal probability >= probability threshold
+Short: high > latest confirmed pivot high AND close < latest confirmed pivot high AND high - latest confirmed pivot high > sweep wick ratio × ATR AND high-sweep reversal probability >= probability threshold

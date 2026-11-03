@@ -1,0 +1,2 @@
+Long: volume > simple moving average of volume * liquidity multiplier AND RSI < entry threshold AND short-term SMA(close) > long-term SMA(close) AND ATR > longer-lookback SMA(ATR)
+Exit: long, short-term SMA(close) crosses below long-term SMA(close) OR RSI > exit threshold

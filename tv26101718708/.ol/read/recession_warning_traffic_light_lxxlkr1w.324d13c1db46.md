@@ -1,0 +1,8 @@
+Calculation: GDP trend state = +1 when the GDP series on a lower or equal timeframe bar rises versus its previous observation, −1 when it falls, otherwise retain the previous state.
+Calculation: M2 trend state = +1 when M2 on a lower or equal timeframe bar rises versus its previous observation, −1 when it falls, otherwise retain the previous state.
+Calculation: Leading economic indicator trend state = +1 when the indicator on a lower or equal timeframe bar falls versus its previous observation, −1 when it rises, otherwise retain the previous state.
+Calculation: Precious metals trend state = +1 when the weekly rhodium-to-gold closing-price ratio on a higher timeframe bar falls versus its previous observation, −1 when it rises, otherwise retain the previous state.
+Calculation: Treasury yield spread = 10-year Treasury yield minus 3-month Treasury yield, using lower or equal timeframe closes.
+Calculation: Stock market growth rate = percentage change from the previous value to the current value of a moving average of weekly S&P 500 closes, using the last completed higher timeframe bar.
+Long: GDP trend state = +1 AND M2 trend state = +1 AND leading economic indicator trend state = +1 AND precious metals trend state = +1 AND treasury yield spread > 0 AND stock market growth rate >= 0
+Short: GDP trend state = −1 AND M2 trend state = −1 AND leading economic indicator trend state = −1 AND precious metals trend state = −1 AND treasury yield spread < 0 AND stock market growth rate < 0

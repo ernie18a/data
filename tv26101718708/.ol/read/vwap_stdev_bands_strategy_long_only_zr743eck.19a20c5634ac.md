@@ -1,0 +1,3 @@
+Calculation: Session VWAP = since the start of the current daily session, the volume-weighted average of each chart bar’s (high + low) / 2; use the higher-timeframe daily bar still forming to detect the session start
+Calculation: Lower standard deviation band = Session VWAP − parameter × sqrt(max(volume-weighted average of squared chart-bar (high + low) / 2 values − Session VWAP², 0))
+Long: close < Lower standard deviation band AND previous close >= current Lower standard deviation band

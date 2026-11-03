@@ -1,0 +1,13 @@
+Calculation: Squeeze Momentum = linear regression at offset 0 over lookback L of [close − ((highest(high, L) + lowest(low, L) + 2 × SMA(close, L)) / 4)]
+Calculation: Chaikin Money Flow = sum(((2 × close − low − high) / (high − low)) × volume, L) / sum(volume, L), using zero money flow volume when high = low
+Calculation: Higher-timeframe Squeeze Momentum = the same Squeeze Momentum calculation on the higher-timeframe bar selected with lookahead on (the higher-timeframe bar still forming)
+Calculation: Recent CMF minimum = CMF[2] < CMF[4] AND CMF[2] < CMF[3] AND CMF[2] < CMF[1] AND CMF[2] < CMF[0]
+Calculation: Recent CMF maximum = CMF[2] > CMF[4] AND CMF[2] > CMF[3] AND CMF[2] > CMF[1] AND CMF[2] > CMF[0]
+Calculation: Long target = initially signal-bar close × (1 + minimum-profit fraction); after each target is exceeded by close, increase the target by minimum-profit fraction from entry price and set the stop to entry price × (1 + cumulative profit fraction), where the first profit fraction is minimum-profit fraction × take-profit factor and each later fraction adds the same amount
+Calculation: Short target = initially signal-bar close × (1 − minimum-profit fraction); after each target is undershot by close, decrease the target by minimum-profit fraction from entry price and set the stop to entry price × (1 − cumulative profit fraction), where the first profit fraction is minimum-profit fraction × take-profit factor and each later fraction adds the same amount
+Calculation: Initial long stop = signal-bar close × (1 − maximum-stop fraction); active long stop is the highest of the initial stop and all later target-triggered stops
+Calculation: Initial short stop = signal-bar close × (1 + maximum-stop fraction); active short stop is the lowest of the initial stop and all later target-triggered stops
+Long: position side is flat or short AND higher-timeframe Squeeze Momentum > its previous value AND chart-timeframe Squeeze Momentum > its previous value AND Recent CMF minimum AND lowest chart-timeframe Squeeze Momentum over 5 bars < 0
+Short: position side is flat or long AND higher-timeframe Squeeze Momentum < its previous value AND chart-timeframe Squeeze Momentum < its previous value AND Recent CMF maximum AND highest chart-timeframe Squeeze Momentum over 5 bars > 0
+Exit: Long, short-entry condition OR low <= active long stop
+Exit: Short, long-entry condition OR high >= active short stop

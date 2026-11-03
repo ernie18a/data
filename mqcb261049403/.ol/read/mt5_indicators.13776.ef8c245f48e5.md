@@ -1,0 +1,5 @@
+Calculation: Selected applied price = the configured price derived from OHLC (close, open, high, low, median, typical, weighted close, average open and close, average OHLC, trend-following price, or DeMark price), calculated on the selected timeframe (same as or higher than the chart timeframe) using its bar still forming
+Calculation: First cloud line = selected applied price − selected Bollinger Band (middle, upper, or lower), calculated on the selected timeframe (same as or higher than the chart timeframe) using its bar still forming
+Calculation: Second cloud line = 2 × selected moving average − low − high, calculated on the selected timeframe (same as or higher than the chart timeframe) using its bar still forming
+Long: First cloud line > second cloud line
+Short: First cloud line < second cloud line

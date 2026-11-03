@@ -1,0 +1,6 @@
+Calculation: short-to-medium ratio = smoothed applied price with a shorter lookback divided by smoothed applied price with a medium lookback; negate the ratio if reversal is enabled
+Calculation: long-to-medium ratio = smoothed applied price with a longer lookback divided by smoothed applied price with a medium lookback; negate the ratio if reversal is enabled
+Long: short-to-medium ratio >= long-to-medium ratio on timeframe 1 (configured timeframe is equal to or higher than the chart timeframe; use its bar still forming)
+Short: short-to-medium ratio < long-to-medium ratio on timeframe 1 (configured timeframe is equal to or higher than the chart timeframe; use its bar still forming)
+Long: short-to-medium ratio on timeframe 2 >= long-to-medium ratio on timeframe 2 AND short-to-medium ratio on the preceding timeframe-2 bar < long-to-medium ratio on the preceding timeframe-2 bar (timeframe 2 is equal to or higher than the chart timeframe; compare its bar still forming with the preceding completed bar)
+Short: short-to-medium ratio on timeframe 2 < long-to-medium ratio on timeframe 2 AND short-to-medium ratio on the preceding timeframe-2 bar >= long-to-medium ratio on the preceding timeframe-2 bar (timeframe 2 is equal to or higher than the chart timeframe; compare its bar still forming with the preceding completed bar)

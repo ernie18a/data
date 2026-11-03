@@ -1,0 +1,8 @@
+Calculation: Trend moving average = user-selected SMA or EMA of close over the long lookback, on higher-timeframe bars, using the last completed bar.
+Calculation: ATR channel = chart-timeframe ATR over the same long lookback as the trend moving average, multiplied by the channel-width parameter; channel bounds are the trend moving average plus or minus this value.
+Calculation: Trend direction = neutral if (open <= upper channel OR close <= upper channel) AND (open >= lower channel OR close >= lower channel); otherwise bullish if source >= trend moving average AND fast EMA > slower EMA, bearish if source < trend moving average AND fast EMA < slower EMA, and neutral otherwise. The fast and slower EMAs use the same source, with the fast EMA having the shorter lookback.
+Calculation: Tracker trend line = smoothed EMA of a persistent raw value computed from lower-timeframe bars using the current bar: raw value is EMA + ATR multiple when close is below EMA minus ATR multiple, EMA minus ATR multiple when close is above EMA plus ATR multiple, and its previous value otherwise (initially close). The EMA and ATR use the same lookback; the smoothing EMA uses a separate lookback.
+Long: Trend direction is bullish OR (bar is confirmed AND position is not long AND close > tracker trend line AND SAR <= close AND close > open).
+Short: Trend direction is bearish OR (bar is confirmed AND position is not short AND close <= tracker trend line AND SAR >= close AND close < open).
+Exit: Long, bar is confirmed AND (NOT (close > tracker trend line AND SAR <= close) OR SAR direction differs from its previous bar).
+Exit: Short, bar is confirmed AND (NOT (close <= tracker trend line AND SAR >= close) OR SAR direction differs from its previous bar).

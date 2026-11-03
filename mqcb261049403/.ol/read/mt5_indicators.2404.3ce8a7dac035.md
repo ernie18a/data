@@ -1,0 +1,5 @@
+Calculation: Awesome Oscillator = 5-period SMA of median price (high + low)/2 minus 34-period SMA of median price; calculated on the higher timeframe’s bar still forming.
+Calculation: Fast smoothed Awesome Oscillator = smooth the Awesome Oscillator with the selected smoothing method and shorter lookback; calculated on the higher timeframe’s bar still forming.
+Calculation: Slow smoothed Awesome Oscillator = smooth the fast smoothed Awesome Oscillator with the same selected smoothing method and longer lookback; calculated on the higher timeframe’s bar still forming.
+Long: Fast smoothed Awesome Oscillator > slow smoothed Awesome Oscillator OR (they are equal AND the previous non-equal comparison was >).
+Short: Fast smoothed Awesome Oscillator < slow smoothed Awesome Oscillator OR (they are equal AND the previous non-equal comparison was <).

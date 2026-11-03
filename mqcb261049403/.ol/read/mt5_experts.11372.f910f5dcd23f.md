@@ -1,0 +1,6 @@
+Calculation: Short-lookback price change = close of a completed bar on the indicator timeframe minus the close the shorter lookback bars earlier; the indicator timeframe may be higher or lower than the chart timeframe.
+Calculation: Long-lookback price change = close of a completed bar on the indicator timeframe minus the close the longer lookback bars earlier; the indicator timeframe may be higher or lower than the chart timeframe.
+Long: Short-lookback price change on the latest completed indicator-timeframe bar > long-lookback price change on that bar AND short-lookback price change on the preceding completed indicator-timeframe bar <= long-lookback price change on that bar.
+Short: Short-lookback price change on the latest completed indicator-timeframe bar < long-lookback price change on that bar AND short-lookback price change on the preceding completed indicator-timeframe bar >= long-lookback price change on that bar.
+Exit: Short, short-lookback price change on the latest completed indicator-timeframe bar > long-lookback price change on that bar.
+Exit: Long, short-lookback price change on the latest completed indicator-timeframe bar < long-lookback price change on that bar.

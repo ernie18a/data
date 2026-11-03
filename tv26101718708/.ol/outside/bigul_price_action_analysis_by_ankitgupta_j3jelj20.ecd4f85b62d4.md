@@ -1,0 +1,1 @@
+When pair-based bias is selected, compare NIFTY and BANK NIFTY prices with their respective prior-day CPR bands: if both are above their bands, take a long bias; if both are below, take a short bias; otherwise remain neutral. No exit rule is defined.

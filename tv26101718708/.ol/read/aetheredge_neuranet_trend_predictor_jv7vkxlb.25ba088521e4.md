@@ -1,0 +1,3 @@
+Calculation: confidence = 2 × |neural-network probability − 0.5|
+Long: more than the warmup bar count have elapsed AND more than 50 training steps have completed AND neural-network probability crosses above the long threshold AND neural-network probability > long threshold AND confidence > minimum confidence
+Short: more than the warmup bar count have elapsed AND more than 50 training steps have completed AND neural-network probability crosses below the short threshold AND neural-network probability < short threshold AND confidence > minimum confidence

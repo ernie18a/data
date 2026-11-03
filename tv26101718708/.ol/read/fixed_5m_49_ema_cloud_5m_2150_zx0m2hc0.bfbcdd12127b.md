@@ -1,0 +1,3 @@
+Calculation: Higher-timeframe EMAs = exponential moving averages of close on the higher-timeframe bar still forming; the cloud EMAs have shorter and longer lookbacks, and the 50 EMA has a longer lookback than the 21 EMA.
+Long: Close > 50 EMA AND current cloud is green (shorter-lookback EMA > longer-lookback EMA AND close is outside the range between them) AND previous cloud was not green
+Short: Close < 50 EMA AND current cloud is red (shorter-lookback EMA < longer-lookback EMA AND close is outside the range between them) AND previous cloud was not red

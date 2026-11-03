@@ -1,0 +1,5 @@
+Calculation: Volatility stochastic = 100 times the linear weighted moving average of (smoothed range minus its rolling minimum) divided by (its rolling maximum minus its rolling minimum), using zero when the denominator is zero. Smoothed range is a configurable moving average of high minus low; the rolling extrema include the current indicator bar. Calculate on a configurable indicator timeframe, which may be the chart timeframe, a higher timeframe, or a lower timeframe; use the last completed indicator bar, or the still-forming bar if configured.
+Long: volatility stochastic > its previous indicator-bar value AND its previous indicator-bar value < its value two indicator bars earlier
+Short: volatility stochastic < its previous indicator-bar value AND its previous indicator-bar value > its value two indicator bars earlier
+Exit: long, volatility stochastic < its previous indicator-bar value OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance
+Exit: short, volatility stochastic > its previous indicator-bar value OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance

@@ -1,0 +1,4 @@
+Calculation: ATR = average true range over a lookback
+Calculation: Active resistance/support levels = confirmed chart-timeframe swing highs/lows, respectively, with pivotLen bars on each side; a high/low qualifies only if it exceeds/falls below the higher/lower of the highs/lows one bar before and after the pivot by at least minStrength × ATR. Add a qualifying level only if no active level of the same type is within mergeThresh × ATR; retain at most maxLevels per type and remove levels older than maxAgeBars. A level becomes inactive when broken by the corresponding condition below.
+Long: Close > an active resistance level + breakSensitivity × ATR
+Short: Close < an active support level − breakSensitivity × ATR

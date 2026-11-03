@@ -1,0 +1,6 @@
+Calculation: Typical price = (high + low + close) / 3
+Calculation: Simple moving average of typical price, using the chart timeframe’s still-forming bar
+Long: The stored side is below (initialized when bid ≤ the moving average; after an entry, set to above when ask > entry price + noise-filter distance, or to below when bid < entry price − noise-filter distance) AND ask > the moving average AND 200-period ATR on the higher, still-forming 60-minute bars < the volatility limit AND, after a previous entry, bid < previous entry price − noise-filter distance OR ask > previous entry price + noise-filter distance AND spread < maximum spread
+Short: The stored side is above (initialized when bid > the moving average; after an entry, set to below when bid < entry price − noise-filter distance, or to above when ask > entry price + noise-filter distance) AND bid ≤ the moving average AND 200-period ATR on the higher, still-forming 60-minute bars < the volatility limit AND, after a previous entry, bid < previous entry price − noise-filter distance OR ask > previous entry price + noise-filter distance AND spread < maximum spread
+Exit: long, bid ≤ entry price − stop-loss distance OR bid ≥ entry price + take-profit distance
+Exit: short, ask ≥ entry price + stop-loss distance OR ask ≤ entry price − take-profit distance

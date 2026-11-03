@@ -1,0 +1,4 @@
+Long: higher-timeframe close from the last completed higher-timeframe bar > its EMA AND chart-timeframe ATR > prior chart-timeframe ATR AND chart-timeframe close > highest high over the range lookback, excluding the current bar
+Short: higher-timeframe close from the last completed higher-timeframe bar < its EMA AND chart-timeframe ATR > prior chart-timeframe ATR AND chart-timeframe close < lowest low over the range lookback, excluding the current bar
+Exit: long, low <= active trailing stop, activated at chart-timeframe close − ATR × multiplier and trailing the high by ATR × multiplier
+Exit: short, high >= active trailing stop, activated at chart-timeframe close + ATR × multiplier and trailing the low by ATR × multiplier

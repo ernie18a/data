@@ -1,0 +1,11 @@
+Calculation: Historical analogs = up to three highest-scoring non-overlapping past windows that meet the similarity threshold; score each window by the weighted average of normalized-path Pearson-correlation score, normalized-RMSE score, and regime-compatibility score.
+Calculation: Projected consensus = similarity-weighted average of the selected analogs’ smoothed forward price paths; use its endpoint for direction and projected move.
+Calculation: Mirror quality = 0.35 × average similarity + 0.20 × regime quality + 0.25 × path stability + 0.20 × outcome reliability.
+Calculation: Agreement = percentage of selected analog endpoints on the majority side of current close.
+Calculation: Forecast health = 0.30 × mirror quality + 0.20 × agreement + 0.20 × path stability + 0.15 × outcome reliability + 0.15 × analog density score.
+Calculation: Fusion bias = majority directional bias among four configured timeframes, each based on close above (bullish) or below (bearish) EMA with EMA rising or falling respectively; otherwise neutral. Fusion agreement = the majority directional count divided by four, expressed as a percentage. Use each timeframe’s current bar, which may still be forming; timeframes may be higher or lower than the chart timeframe.
+Calculation: Invalidation level = close minus projected direction × ATR × max(average adverse excursion in ATR, 0.35) × risk buffer.
+Long: At least one historical analog exists AND projected consensus endpoint > close AND mirror quality ≥ its minimum AND agreement ≥ its minimum AND absolute projected move / ATR ≥ its minimum AND forecast health ≥ 60 AND (fusion is disabled or not required, or fusion agreement ≥ its minimum and fusion bias is bullish).
+Short: At least one historical analog exists AND projected consensus endpoint < close AND mirror quality ≥ its minimum AND agreement ≥ its minimum AND absolute projected move / ATR ≥ its minimum AND forecast health ≥ 60 AND (fusion is disabled or not required, or fusion agreement ≥ its minimum and fusion bias is bearish).
+Exit: long, low ≤ the invalidation level captured when the mirror is locked.
+Exit: short, high ≥ the invalidation level captured when the mirror is locked.

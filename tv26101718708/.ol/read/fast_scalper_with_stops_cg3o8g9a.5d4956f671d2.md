@@ -1,0 +1,4 @@
+Long: close < VWAP AND RSI < long threshold AND ADX < ranging threshold
+Short: close > VWAP AND RSI > short threshold AND ADX < ranging threshold
+Exit: long, low <= entry-signal bar close - (ATR on entry-signal bar × stop multiplier) OR high >= entry-signal bar close + (ATR on entry-signal bar × target multiplier) OR (high reaches entry-signal bar close + (ATR on entry-signal bar × trail activation multiplier) AND low <= highest high since trail activation - (ATR on entry-signal bar × trail offset multiplier))
+Exit: short, high >= entry-signal bar close + (ATR on entry-signal bar × stop multiplier) OR low <= entry-signal bar close - (ATR on entry-signal bar × target multiplier) OR (low reaches entry-signal bar close - (ATR on entry-signal bar × trail activation multiplier) AND high >= lowest low since trail activation + (ATR on entry-signal bar × trail offset multiplier))

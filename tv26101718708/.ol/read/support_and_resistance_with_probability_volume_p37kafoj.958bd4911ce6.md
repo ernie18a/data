@@ -1,0 +1,4 @@
+Calculation: Active level = confirmed pivot high or low from a higher-timeframe bar, using only completed bars; merge nearby levels by averaging their prices and retain them within the configured age window and level limit.
+Calculation: Touch-weighted buyer share = cumulative touch-bar buy volume divided by cumulative touch-bar volume; on each touch, buy volume is volume × (1 + clamp((close − open) / max(high − low, minimum tick), −1, 1)) / 2. A touch occurs when the bar’s close is at or above the level and its low is within the ATR-scaled tolerance above it, or when the close is below the level and its high is within that tolerance below it; apply the configured touch cooldown.
+Long: chart close >= active level OR touch-weighted buyer share >= dominance threshold
+Short: chart close < active level OR touch-weighted buyer share <= 1 − dominance threshold

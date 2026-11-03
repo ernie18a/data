@@ -1,0 +1,4 @@
+Calculation: Confirmed swing high = a high greater than the highs of the configured number of bars before and after it, usable after all bars on the right have completed
+Calculation: Confirmed swing low = a low less than the lows of the configured number of bars before and after it, usable after all bars on the right have completed
+Long: low < most recently confirmed swing low AND close > most recently confirmed swing low AND lower wick length >= ATR × threshold OR close > most recently confirmed swing high AND previous close <= most recently confirmed swing high
+Short: high > most recently confirmed swing high AND close < most recently confirmed swing high AND upper wick length >= ATR × threshold OR close < most recently confirmed swing low AND previous close >= most recently confirmed swing low

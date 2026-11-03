@@ -1,0 +1,6 @@
+Calculation: Previous-period liquidity levels = the high and low of the last completed daily, weekly, and monthly bars, using higher-timeframe bars.
+Calculation: Session liquidity levels = the running high and low during each configured New York session, available after that session ends.
+Calculation: Chart pivots = pivot highs and lows confirmed after the configured number of chart bars on each side; the pivot value is the high or low of the pivot bar.
+Calculation: Equal-high and equal-low levels = a chart pivot high or low within a configurable ATR-based distance of any of the three most recent pivots of the same side; otherwise it is a standalone swing level. ATR uses chart bars.
+Long: For any active, untaken low-side liquidity level L, low < L, followed on the piercing bar or within the configured number of additional bars by close > L.
+Short: For any active, untaken high-side liquidity level L, high > L, followed on the piercing bar or within the configured number of additional bars by close < L.

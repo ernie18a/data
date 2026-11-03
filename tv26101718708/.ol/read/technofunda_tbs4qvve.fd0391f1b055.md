@@ -1,0 +1,3 @@
+Calculation: ATR trailing stop = In an uptrend, the greater of the previous stop and the running highest close minus ATR times a multiplier; in a downtrend, the lesser of the previous stop and the running lowest close plus ATR times a multiplier. Start in an uptrend; when close crosses the stop, reset the running high/low and stop from the current close.
+Long: close >= ATR trailing stop OR high >= the rolling highest high
+Short: close < ATR trailing stop OR low <= the rolling lowest low

@@ -1,0 +1,6 @@
+Calculation: Corrected average = recursively update the moving average of the selected applied price using the same lookback and averaging method for both it and its standard deviation: C[t] = C[t−1] + k × (MA[t] − C[t−1]), where k = 0 if (C[t−1] − MA[t])² < SD[t]² or (C[t−1] − MA[t])² = 0; otherwise k = 1 − SD[t]²/(C[t−1] − MA[t])². Seed with the moving average at the first valid bar. Compute on the configured indicator timeframe, which may be higher or lower than the chart timeframe, using completed bars.
+Calculation: Breakthrough offset = configured price distance in points.
+Long: Previous completed indicator-timeframe close ≤ previous corrected average + breakthrough offset AND latest completed indicator-timeframe close > latest corrected average + breakthrough offset
+Short: Previous completed indicator-timeframe close ≥ previous corrected average − breakthrough offset AND latest completed indicator-timeframe close < latest corrected average − breakthrough offset
+Exit: long, latest completed indicator-timeframe close < latest corrected average − breakthrough offset
+Exit: short, latest completed indicator-timeframe close > latest corrected average + breakthrough offset

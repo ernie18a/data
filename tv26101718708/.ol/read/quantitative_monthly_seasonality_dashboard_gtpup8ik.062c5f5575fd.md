@@ -1,0 +1,4 @@
+Calculation: Historical returns for the current calendar month = percentage returns of prior completed monthly bars matching the current calendar month, within the historical lookback
+Calculation: Historical win rate = percentage of those returns greater than zero
+Calculation: Historical profit factor = sum of positive returns divided by sum of absolute nonpositive returns; if there are no losses, use gross gains, or 1 if there are no gains
+Long: Daily Bollinger Bandwidth >= minimum bandwidth threshold AND historical win rate >= minimum win-rate threshold AND historical profit factor >= minimum profit-factor threshold

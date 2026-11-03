@@ -1,0 +1,3 @@
+Calculation: Money Flow Index (MFI) for an applied price = 100 − 100 / (1 + positive money flow sum / negative money flow sum) over the lookback; each bar’s money flow is applied price × selected volume, classified by whether applied price rose or fell from the prior bar. Compute separate MFI series using open and close prices, with the same lookback and volume choice. Use chart-timeframe bars, or in the higher-timeframe variant use the higher-timeframe bar still forming.
+Long: MFI(close) > MFI(open)
+Short: MFI(close) < MFI(open)

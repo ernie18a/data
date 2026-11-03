@@ -1,0 +1,3 @@
+Calculation: NRTR trend = in the up state, track the highest close and raise the reversal level to the greater of its prior level and highest close × (1 − mean high-low range over a lookback); switch to down when close falls below that level. In the down state, track the lowest close and lower the reversal level to the lesser of its prior level and lowest close × (1 + mean high-low range over the same lookback); switch to up when close rises above that level.
+Long: NRTR trend switches from down to up OR NRTR trend is up and the bar's high exceeds the prior marked high (or this is the first bar in the up state)
+Short: NRTR trend switches from up to down OR NRTR trend is down and the bar's low falls below the prior marked low (or this is the first bar in the down state)

@@ -1,0 +1,3 @@
+Calculation: Rounded MA candle = on a higher timeframe’s still-forming bar, independently smooth its open, high, low, and close with the same configurable moving-average method and lookback; for each smoothed series, update its rounded value to the current smoothed value if it differs from either the prior smoothed value or prior rounded value by more than a configurable threshold, or if it moves in the same direction as the prior rounded value; otherwise carry forward the prior rounded value. The candle’s rounded open and close are the corresponding rounded values.
+Long: Rounded MA candle close > rounded MA candle open
+Short: Rounded MA candle close < rounded MA candle open

@@ -1,0 +1,1 @@
+On a lower chart timeframe, monitor the traded instrument’s CCI on selected higher timeframes. Go long when CCI is in the positive extreme zone and makes a new peak at or above its previous positive peak; go short when it is in the negative extreme zone and makes a new trough at or below its previous negative trough. No exit rule is specified.

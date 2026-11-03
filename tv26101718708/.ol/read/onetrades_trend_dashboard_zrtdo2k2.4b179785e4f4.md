@@ -1,0 +1,3 @@
+Calculation: Short EMA = exponential moving average with a shorter lookback than the intermediate EMA; intermediate EMA = exponential moving average with a shorter lookback than the long EMA; long EMA = exponential moving average with the longest lookback
+Long: On any configured dashboard timeframe, using its latest completed bar, close > long EMA AND short EMA > intermediate EMA
+Short: On any configured dashboard timeframe, close <= long EMA OR short EMA <= intermediate EMA

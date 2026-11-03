@@ -1,0 +1,2 @@
+Long: session filter disabled OR bar is within the configured session AND close > VWAP AND close > long-term EMA AND Williams %R crosses above its oversold threshold
+Short: session filter disabled OR bar is within the configured session AND close < VWAP AND close < long-term EMA AND Williams %R crosses below its overbought threshold

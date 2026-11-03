@@ -1,0 +1,9 @@
+Calculation: Prior-day high/low = high/low of the last completed UTC-day bar on a higher timeframe than the chart.
+Calculation: Asia-range high/low = high/low of chart-timeframe bars in the configured UTC Asia window, available after that window closes.
+Calculation: Candidate level = nearest qualifying active prior-day or Asia high for a long break, or low for a short break; ignore an Asia level within the configured deduplication distance of the same-side prior-day level. Each level can trigger once per UTC day.
+Calculation: Long stop/target = entry level − stop-distance multiplier × ATR at break / entry level + reward multiple × stop-distance multiplier × ATR at break.
+Calculation: Short stop/target = entry level + stop-distance multiplier × ATR at break / entry level − reward multiple × stop-distance multiplier × ATR at break.
+Long: Flat with no pending setup AND close > candidate high + break threshold × chart-timeframe ATR AND, within the configured retest window after the break and before any prior invalidation, low <= entry level on a confirmed bar during the configured trading session AND estimated round-trip fees ÷ stop distance <= fee limit. A retest touch takes precedence over invalidation on the same bar.
+Short: Flat with no pending setup AND close < candidate low − break threshold × chart-timeframe ATR AND, within the configured retest window after the break and before any prior invalidation, high >= entry level on a confirmed bar during the configured trading session AND estimated round-trip fees ÷ stop distance <= fee limit. A retest touch takes precedence over invalidation on the same bar.
+Exit: Long, low <= long stop OR high >= long target (if both, exit at stop).
+Exit: Short, high >= short stop OR low <= short target (if both, exit at stop).

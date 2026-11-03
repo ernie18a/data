@@ -1,0 +1,7 @@
+Calculation: Daily VWAP = volume-weighted average of (high + low + close) / 3 from the calendar-day open through the current chart bar.
+Calculation: Rolling VWAP = volume-weighted average of (high + low + close) / 3 over the configured trailing time window, including the current chart bar.
+Calculation: NY VWAP = volume-weighted average of (high + low + close) / 3 from the configured New York session start through the current chart bar; reset is triggered by the lower-timeframe session anchor window.
+Calculation: European/London VWAP = volume-weighted average of (high + low + close) / 3 from the configured European session start through the current chart bar; reset is triggered by the lower-timeframe session anchor window.
+Calculation: Asian/Pacific VWAP = volume-weighted average of (high + low + close) / 3 from the configured Asian/Pacific session start through the current chart bar; reset is triggered by the lower-timeframe session anchor window.
+Long: close crosses above Daily VWAP OR close crosses above Rolling VWAP OR close crosses above NY VWAP OR close crosses above European/London VWAP OR close crosses above Asian/Pacific VWAP
+Short: close crosses below Daily VWAP OR close crosses below Rolling VWAP OR close crosses below NY VWAP OR close crosses below European/London VWAP OR close crosses below Asian/Pacific VWAP

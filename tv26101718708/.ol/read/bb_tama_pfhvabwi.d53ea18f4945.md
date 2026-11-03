@@ -1,0 +1,2 @@
+Long: EMA(close, 5) > EMA(close, 20) AND EMA(close, 20) > EMA(close, 50) AND EMA(close, 50) > EMA(close, 112) AND EMA(close, 112) > EMA(close, 224) AND EMA(close, 224) > EMA(close, 448)
+Short: EMA(close, 5) < EMA(close, 20) AND EMA(close, 20) < EMA(close, 50) AND EMA(close, 50) < EMA(close, 112) AND EMA(close, 112) < EMA(close, 224) AND EMA(close, 224) < EMA(close, 448)

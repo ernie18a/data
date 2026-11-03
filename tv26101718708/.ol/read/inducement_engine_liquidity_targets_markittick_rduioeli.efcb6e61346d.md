@@ -1,0 +1,5 @@
+Calculation: Confirmed swing high = a bar high greater than the highs of the preceding and following swing-length bars; confirmed swing low = a bar low less than the lows of those bars
+Calculation: Structural high and low = running highest confirmed swing high and lowest confirmed swing low; after a short signal, reset the structural high to the latest confirmed swing high; after a long signal, reset the structural low to the latest confirmed swing low
+Calculation: Pending high inducement = a confirmed swing high strictly between the structural low and high; pending low inducement = a confirmed swing low strictly between the structural low and high
+Long: The previous completed bar's high > an unbroken pending low inducement
+Short: The previous completed bar's low < an unbroken pending high inducement

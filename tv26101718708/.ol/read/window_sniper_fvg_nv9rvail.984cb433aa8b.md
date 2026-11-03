@@ -1,0 +1,2 @@
+Long: low > high two FVG-timeframe bars earlier AND the current bar and the bar two bars earlier are within the same enabled time window AND no earlier FVG has formed in that window
+Short: high < low two FVG-timeframe bars earlier AND the current bar and the bar two bars earlier are within the same enabled time window AND no earlier FVG has formed in that window

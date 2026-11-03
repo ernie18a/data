@@ -1,0 +1,3 @@
+Calculation: Decomposed candle volume = sum of lower-timeframe volume allocated among the chart candle’s upper wick, body, and lower wick in proportion to each zone’s overlap with the lower-timeframe bar’s high-low range; for a zero-range lower-timeframe bar, assign its volume to the zone containing its midpoint. Use lower-timeframe bars within each chart bar.
+Long: Decomposed candle volume on the last completed chart bar > decomposed candle volume lookback bars earlier AND its high < the high lookback bars earlier
+Short: Decomposed candle volume on the last completed chart bar < decomposed candle volume lookback bars earlier AND its high > the high lookback bars earlier

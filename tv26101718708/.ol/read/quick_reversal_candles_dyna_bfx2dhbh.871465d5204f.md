@@ -1,0 +1,15 @@
+Calculation: Bullish pin bar = lower wick is at least the minimum wick ratio times the greater of body size and minimum price increment, exceeds the upper wick, and is at least half the greater of bar range and minimum price increment.
+Calculation: Bearish pin bar = upper wick is at least the minimum wick ratio times the greater of body size and minimum price increment, exceeds the lower wick, and is at least half the greater of bar range and minimum price increment.
+Calculation: Bullish engulfing bar = prior bar is bearish, signal bar is bullish, signal close is at or above prior open, and signal open is at or below prior close.
+Calculation: Bearish engulfing bar = prior bar is bullish, signal bar is bearish, signal close is at or below prior open, and signal open is at or above prior close.
+Calculation: Bullish inside-bar breakout = the bar before the signal bar is inside the preceding bar's range, and the signal bar closes above the inside bar's high.
+Calculation: Bearish inside-bar breakout = the bar before the signal bar is inside the preceding bar's range, and the signal bar closes below the inside bar's low.
+Calculation: Activity score = 20 × clamp((signal-bar activity / its moving-average activity − 1) / (activity multiplier − 1), 0, 1); activity is volume if cumulative volume is positive, otherwise high−low. Use the activity moving average ending on the signal bar.
+Calculation: Bullish location score = 20 × clamp(1 − (signal-bar low − lowest low over the swing lookback ending on the signal bar) / (signal-bar ATR × maximum swing distance in ATRs), 0, 1).
+Calculation: Bearish location score = 20 × clamp(1 − (highest high over the swing lookback ending on the signal bar − signal-bar high) / (signal-bar ATR × maximum swing distance in ATRs), 0, 1).
+Calculation: Bullish prior-move score = 20 × clamp((close at the start of the prior-move lookback − signal-bar close) / (signal-bar ATR × minimum prior move in ATRs), 0, 1).
+Calculation: Bearish prior-move score = 20 × clamp((signal-bar close − close at the start of the prior-move lookback) / (signal-bar ATR × minimum prior move in ATRs), 0, 1).
+Calculation: Bullish conviction = 40 + activity score + bullish location score + bullish prior-move score.
+Calculation: Bearish conviction = 40 + activity score + bearish location score + bearish prior-move score.
+Long: (bullish pin bar OR bullish engulfing bar OR bullish inside-bar breakout) AND bullish conviction >= minimum conviction score.
+Short: (bearish pin bar OR bearish engulfing bar OR bearish inside-bar breakout) AND bearish conviction >= minimum conviction score.

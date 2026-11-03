@@ -1,0 +1,3 @@
+Calculation: Fisher_mbk = Let R be the highest high minus the lowest low over a lookback; set x = 2 × (close − lowest low) / R − 1, or 0 if R = 0. Smooth x with two recursive exponential averages, each using α = 3 / (2 + its smoothing length), and set u = clamp(1.5 × first average − second average, −0.999, 0.999). Set z = ln((1 + u) / (1 − u)); smooth z the same way with a separate pair of averages. The result is 1.5 × first average − second average.
+Long: Fisher_mbk > 0
+Short: Fisher_mbk < 0

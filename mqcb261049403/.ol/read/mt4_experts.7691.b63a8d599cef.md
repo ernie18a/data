@@ -1,0 +1,4 @@
+Long: 3-period EMA of close on the lower-timeframe forming bar > that bar’s close AND Laguerre indicator on the lower-timeframe forming bar > that bar’s close AND Awesome Oscillator on the chart-timeframe forming bar > that bar’s close
+Short: 3-period EMA of close on the lower-timeframe forming bar < that bar’s close AND Laguerre indicator on the lower-timeframe forming bar < that bar’s close AND Awesome Oscillator on the chart-timeframe forming bar < that bar’s close
+Exit: Long, low <= entry price − stop-loss distance OR high >= entry price + take-profit distance OR (highest high since entry − entry price > trailing distance AND low <= highest high since entry − trailing distance)
+Exit: Short, high >= entry price + stop-loss distance OR low <= entry price − take-profit distance OR (entry price − lowest low since entry > trailing distance AND high >= lowest low since entry + trailing distance)

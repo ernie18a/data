@@ -1,0 +1,3 @@
+Calculation: Confirmed alternating pivots = local swing highs and lows confirmed after the right-side lookback; keep alternating high/low pivots, replacing the latest pivot with a more extreme pivot of the same type. Let A, B, C, D be the four latest confirmed pivots in time order.
+Long: A is a swing high AND B is a swing low AND C is a swing high AND D is a swing low AND C < A AND A - B >= minimum-leg-size × ATR AND 0.50 <= (C - B) / (A - B) <= 0.886 AND 1.13 <= (C - D) / (C - B) <= 1.618
+Short: A is a swing low AND B is a swing high AND C is a swing low AND D is a swing high AND C > A AND B - A >= minimum-leg-size × ATR AND 0.50 <= (B - C) / (B - A) <= 0.886 AND 1.13 <= (D - C) / (B - C) <= 1.618

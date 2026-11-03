@@ -1,0 +1,5 @@
+Calculation: Fair Value Gap = bullish when the current low is above the high two bars earlier; bearish when the current high is below the low two bars earlier.
+Calculation: Bullish order block = the most recent bearish candle within the lookback before a bullish Fair Value Gap; bearish order block = the most recent bullish candle within the lookback before a bearish Fair Value Gap. Its zone is that candle’s high-to-low range.
+Calculation: Zone quality score = sum of ten 0–10 ratings for displacement/CISD, liquidity sweep, premium/discount, market structure, higher-timeframe bias, OTE, FVG/OB overlap, volume, session timing, and freshness.
+Long: A bullish Fair Value Gap or bullish order block forms AND its zone quality score ≥ the minimum display score.
+Short: A bearish Fair Value Gap or bearish order block forms AND its zone quality score ≥ the minimum display score.

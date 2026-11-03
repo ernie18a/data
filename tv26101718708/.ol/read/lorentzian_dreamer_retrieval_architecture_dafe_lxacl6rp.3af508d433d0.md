@@ -1,0 +1,2 @@
+Long: confluence score ≥ activation threshold AND confluence component count ≥ 2 AND (Lorentzian prediction > 0.1 OR delta ratio > 0.2 OR RCM state = bullish) AND NOT (Lorentzian prediction < −0.1 OR delta ratio < −0.2 OR RCM state = bearish)
+Short: confluence score ≥ activation threshold AND confluence component count ≥ 2 AND (Lorentzian prediction < −0.1 OR delta ratio < −0.2 OR RCM state = bearish) AND NOT (Lorentzian prediction > 0.1 OR delta ratio > 0.2 OR RCM state = bullish)

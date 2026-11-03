@@ -1,0 +1,9 @@
+Calculation: Swing high/low = a high/low confirmed by the configured number of chart bars on both sides.
+Calculation: Qualified downtrend = latest two confirmed swing highs and lows are each lower than their predecessors AND the current low is sufficiently far below the prior-window high in ATR terms AND the current low is in the lower portion of the prior-window range.
+Calculation: Volume average = simple moving average of volume over the configured lookback; elevated, climactic, and weak volume = volume above the average times their respective configured multipliers, and volume below the average times its configured multiplier.
+Calculation: SC candidate = the lowest qualified swing low with elevated or climactic volume during a qualified downtrend; the prior SC candidate becomes PS when a lower SC candidate forms. AR candidate = the highest swing high after the SC candidate that is within the configured distance above it. Candidates expire at the configured age or when close exceeds the SC candidate by the configured invalidation amount.
+Calculation: Locked range = SC and AR candidates snapshotted when close crosses above AR from at or below it, remains within the configured overshoot limit, and the candidate state is unlocked. Range height = AR minus SC. The locked range expires after its configured post-break window, on a close below SC before SOS, or after the configured post-SOS extension.
+Calculation: Long events = CHoCH is the locking cross above AR; Spring is a low below SC and close above SC after the configured post-CHoCH delay; LPS is the first confirmed swing low after Spring above ST, or above SC if ST is absent; SOS is the first close above AR with climactic volume after LPS.
+Long: CHoCH occurs OR a Spring occurs OR an LPS occurs OR an SOS occurs.
+Short: 
+Exit: 

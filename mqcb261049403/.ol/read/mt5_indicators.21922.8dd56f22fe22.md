@@ -1,0 +1,3 @@
+Calculation: Smoothed volume-weighted CCI candle open and close = calculate CCI separately from each bar’s open and close, multiply each by the selected volume field, then smooth both with the same moving-average method and parameters; when the bar’s absolute open-close price difference is at most the gap threshold, replace the smoothed open with the previous bar’s smoothed close.
+Long: Smoothed volume-weighted CCI candle close >= smoothed volume-weighted CCI candle open
+Short: Smoothed volume-weighted CCI candle close < smoothed volume-weighted CCI candle open

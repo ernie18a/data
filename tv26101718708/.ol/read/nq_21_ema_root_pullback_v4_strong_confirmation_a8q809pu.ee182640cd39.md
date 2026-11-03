@@ -1,0 +1,5 @@
+Calculation: Root = SMA of EMA(close), using the same lookback as the EMA
+Long: time within configured date range AND time within configured session AND position size == 0 AND entries today < daily limit AND Root < EMA(close) AND close > EMA(close) + configured distance AND previous bar low <= previous bar EMA(close) AND close > open AND close > previous bar high AND close > EMA(close)
+Short: time within configured date range AND time within configured session AND position size == 0 AND entries today < daily limit AND Root > EMA(close) AND close < EMA(close) - configured distance AND previous bar high >= previous bar EMA(close) AND close < open AND close < previous bar low AND close < EMA(close)
+Exit: long, low <= entry price - configured stop distance OR high >= entry price + configured target distance
+Exit: short, high >= entry price + configured stop distance OR low <= entry price - configured target distance

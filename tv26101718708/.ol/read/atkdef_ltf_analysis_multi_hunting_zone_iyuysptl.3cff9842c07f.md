@@ -1,0 +1,7 @@
+Calculation: Hunting-zone score = classify the lower-timeframe close, using the latest available lower-timeframe bar (which may still be forming), within the rolling high-low range into top, high, middle, low, or bottom fifths; assign the source’s corresponding positive, zero-range, or negative score, with higher zones scoring higher.
+Calculation: Liquidity-gap score = classify lower-timeframe volume divided by its rolling average and the lower-timeframe close’s distance from its 21-period EMA divided by ATR; higher relative volume with positive displacement scores positive, higher relative volume with negative displacement scores negative, and the source’s balance and low-liquidity cases score as defined by their comparison conditions.
+Calculation: Liquidity-trend score = classify the sum of (10-bar volume change / 10-bar average volume × 50) and (10-bar close change / ATR × 50); higher values score positive and lower values score negative, using the source’s tiered comparisons.
+Calculation: Reversal-probability score = classify the sum of points for RSI beyond its overbought or oversold threshold, price in the top or bottom hunting zone, and liquidity-gap score beyond its extreme thresholds, using the source’s tiered comparisons.
+Calculation: Final score = clamp((hunting-zone score + liquidity-gap score + liquidity-trend score) / 3 − reversal-probability score / 100 × 30, between −100 and 100).
+Long: final score exceeds the bullish-bias threshold.
+Short: final score is at or below the bearish-bias threshold.

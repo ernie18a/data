@@ -1,0 +1,3 @@
+Calculation: BullsBearsEyes = For each configured timeframe (equal to or higher than the chart timeframe), using its bar still forming: let E be the period-based EMA of close, x = (high − E) + (low − E); recursively calculate L0 = (1 − gamma) × x + gamma × previous L0, L1 = −gamma × L0 + previous L0 + gamma × previous L1, L2 = −gamma × L1 + previous L1 + gamma × previous L2, and L3 = −gamma × L2 + previous L2 + gamma × previous L3. Let CU = max(L0 − L1, 0) + max(L1 − L2, 0) + max(L2 − L3, 0), and CD = max(L1 − L0, 0) + max(L2 − L1, 0) + max(L3 − L2, 0). BullsBearsEyes = CU / (CU + CD), or 0 when CU + CD = 0.
+Long: BullsBearsEyes > upper threshold on any configured timeframe
+Short: BullsBearsEyes < lower threshold on any configured timeframe

@@ -1,0 +1,3 @@
+Calculation: Price–SAR distance (%) = absolute difference between the selected price source and Parabolic SAR, divided by close, multiplied by 100
+Long: Selected price source > VWAP AND Parabolic SAR < low AND (ATR volatility filter disabled OR ATR / close × 100 ≥ configured minimum) AND (Intraday mode OR Price–SAR distance (%) ≥ configured minimum) AND (Intraday mode OR the long setup has held for the configured minimum number of consecutive chart bars) AND not already long AND (no prior exit OR chart bars since exit > configured cooldown) AND bar is confirmed
+Exit: Long, selected price source < VWAP for the configured minimum number of consecutive chart bars in Swing mode, or on the current chart bar in Intraday mode; bar is confirmed

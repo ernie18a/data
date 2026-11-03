@@ -1,0 +1,7 @@
+Calculation: 10-bar range = mean of high minus low on the current and preceding 9 chart bars
+Calculation: Gap shock = at least one of the 9 latest chart bars has an absolute open-to-previous-close difference greater than a configured multiple of the 10-bar range
+Calculation: Close shock = at least one of the 6 latest chart bars has an absolute close difference across 3 bars greater than a configured multiple of the 10-bar range
+Calculation: Selected Williams %R lookback = short-term when Close shock is true; otherwise short-term when Gap shock is true; otherwise long-term. The medium-term lookback is used only when Close shock is true and Gap shock is false. The short-, medium-, and long-term lookbacks are progressively longer.
+Calculation: Normalized Williams %R = 100 minus the absolute value of Williams %R, using the selected lookback on the chart timeframe
+Long: Current normalized Williams %R is above the upper threshold AND the most recent preceding normalized Williams %R outside the interval between the lower and upper thresholds is below the lower threshold, with all intervening values inside that interval
+Short: Current normalized Williams %R is below the lower threshold AND the most recent preceding normalized Williams %R outside the interval between the lower and upper thresholds is above the upper threshold, with all intervening values inside that interval

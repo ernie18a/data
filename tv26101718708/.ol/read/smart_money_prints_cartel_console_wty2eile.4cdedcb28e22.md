@@ -1,0 +1,9 @@
+Calculation: Buy interest = normalize the rolling sum of NVI RSI divided by PVI RSI over the index lookback, using the highest of the buy and sell sums over the normalization lookback as the divisor.
+Calculation: Sell interest = normalize the rolling sum of (100 − NVI RSI) divided by (100 − PVI RSI) over the index lookback, using the highest of the buy and sell sums over the normalization lookback as the divisor.
+Calculation: PVI = start at 100; when volume exceeds the prior bar’s volume, add the close percentage change times the prior PVI; otherwise retain the prior PVI. NVI = start at 100; when volume is below the prior bar’s volume, add the close percentage change times the prior NVI; otherwise retain the prior NVI.
+Calculation: PVI RSI = RSI of PVI minus its 255-bar EMA; NVI RSI = RSI of NVI minus its 255-bar EMA. Both RSI calculations use the same lookback.
+Calculation: Net interest = 100 × (buy interest − sell interest).
+Calculation: Up-break level = the latest recorded swing high; record high[mssLen] when trend changes from down to up. A down-to-up trend change occurs when high[mssLen] is at least the highest high of the current mssLen bars.
+Calculation: Down-break level = the latest recorded swing low; record low[mssLen] when trend changes from up to down. An up-to-down trend change occurs when low[mssLen] is at most the lowest low of the current mssLen bars. Trend starts up and changes down on this condition, or up when the up-break condition occurs.
+Long: close > up-break level AND (no prior structure break state OR prior structure break state is down) AND ((display mode is Compare AND buy interest > sell interest) OR (display mode is Net AND net interest > 0))
+Short: close < down-break level AND (no prior structure break state OR prior structure break state is up) AND ((display mode is Compare AND sell interest > buy interest) OR (display mode is Net AND net interest < 0))

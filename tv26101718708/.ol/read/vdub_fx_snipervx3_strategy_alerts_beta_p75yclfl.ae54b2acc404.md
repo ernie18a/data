@@ -1,0 +1,2 @@
+Long: The higher-timeframe close crosses above its open, and the latest higher-timeframe cross above its open is more recent than the latest cross below its open.
+Short: The higher-timeframe close crosses below its open, and the latest higher-timeframe cross below its open is more recent than the latest cross above its open.

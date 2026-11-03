@@ -1,0 +1,4 @@
+Calculation: robust volume scale = 1.4826 × median absolute deviation of prior lower-timeframe bar volumes
+Calculation: buy fraction = (close − low) / (high − low) when high > low; otherwise 1 if close > prior lower-timeframe close, 0 if close < prior lower-timeframe close, and 0.5 if equal
+Long: At least one lower-timeframe bar within the current chart bar, including its still-forming bar if present, has volume > 0, volume ≥ prior lower-timeframe median volume + volume-outlier threshold × robust volume scale, and buy fraction ≥ one-sided volume fraction threshold
+Short: At least one lower-timeframe bar within the current chart bar, including its still-forming bar if present, has volume > 0, volume ≥ prior lower-timeframe median volume + volume-outlier threshold × robust volume scale, and buy fraction ≤ 1 − one-sided volume fraction threshold

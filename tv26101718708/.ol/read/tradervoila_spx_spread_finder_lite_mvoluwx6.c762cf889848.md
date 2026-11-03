@@ -1,0 +1,10 @@
+Calculation: Support = latest confirmed pivot low, using equal left and right lookbacks; accept only if its distance from the prior support is at least the minimum level separation
+Calculation: Resistance = latest confirmed pivot high, using equal left and right lookbacks; accept only if its distance from the prior resistance is at least the minimum level separation
+Calculation: Support zone = close is above the latest support and within the support-zone thickness
+Calculation: Resistance zone = close is below the latest resistance and within the resistance-zone thickness
+Calculation: Prior-day low/high = low/high of the last completed daily bar (higher timeframe than the chart)
+Calculation: Prior-day low/high zone = close is above/below the respective prior-day level and within its zone thickness
+Calculation: VWAP slope = current chart-timeframe VWAP minus VWAP at the configured shorter chart-timeframe lookback
+Calculation: Daily fast and mid moving averages = simple moving averages of daily closes; fast uses a shorter lookback than mid (higher timeframe than the chart; use the daily bar supplied by the security calculation)
+Long: (Support zone OR close is above prior-day low and within its zone) AND (daily fast moving average > daily mid moving average, if enabled) AND (close > VWAP, if enabled) AND (VWAP slope > 0, if enabled) AND (RSI <= long-entry threshold, if enabled) AND within regular session AND after the opening skip AND before the entry cutoff AND long-entry conditions were false on the prior bar AND more than the configured cooldown bars since the last signal
+Short: (Resistance zone OR close is below prior-day high and within its zone) AND (daily fast moving average < daily mid moving average, if enabled) AND (close < VWAP, if enabled) AND (VWAP slope < 0, if enabled) AND (RSI >= short-entry threshold, if enabled) AND within regular session AND after the opening skip AND before the entry cutoff AND short-entry conditions were false on the prior bar AND more than the configured cooldown bars since the last signal

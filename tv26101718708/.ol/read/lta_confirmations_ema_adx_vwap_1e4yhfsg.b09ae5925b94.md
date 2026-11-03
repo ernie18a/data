@@ -1,0 +1,3 @@
+Calculation: Session VWAP = cumulative sum of ((high + low + close) / 3 × volume) since the daily reset, divided by cumulative volume
+Long: EMA of close with the shorter lookback crosses above EMA of close with the longer lookback OR close crosses above session VWAP OR (EMA of close with the shorter lookback crosses above EMA of close with the longer lookback AND ADX ≥ trend-strength threshold AND +DI > −DI)
+Short: EMA of close with the shorter lookback crosses below EMA of close with the longer lookback OR close crosses below session VWAP OR (EMA of close with the shorter lookback crosses below EMA of close with the longer lookback AND ADX ≥ trend-strength threshold AND −DI > +DI)

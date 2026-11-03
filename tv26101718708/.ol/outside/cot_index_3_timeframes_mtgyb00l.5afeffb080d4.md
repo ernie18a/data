@@ -1,0 +1,1 @@
+For each enabled lookback period, calculate commercial traders’ net futures position as a percentile of its range over that period. When every enabled index is at or above the upper threshold, signal long; when every enabled index is at or below the lower threshold, signal short. Otherwise, give no signal. No exit condition is defined.

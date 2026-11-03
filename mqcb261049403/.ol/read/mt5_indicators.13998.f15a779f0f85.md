@@ -1,0 +1,3 @@
+Calculation: Laguerre directional histogram = apply the same four-stage Laguerre transform to ADX +DI and -DI, then subtract the transformed -DI from the transformed +DI. For each input x, recursively calculate L0=(1−γ)x+γ·L0prev, L1=−γ·L0+L0prev+γ·L1prev, L2=−γ·L1+L1prev+γ·L2prev, L3=−γ·L2+L2prev+γ·L3prev; CU=sum(max(Li−Li+1,0)) and CD=sum(max(Li+1−Li,0)) for i=0..2; transform=CU/(CU+CD), retaining its prior value when CU+CD=0. Initialize prior states to zero. Use identical parameters for both transforms. Calculate on the chart timeframe, or on a higher timeframe using its still-forming bar.
+Long: Laguerre directional histogram > 0
+Short: Laguerre directional histogram < 0

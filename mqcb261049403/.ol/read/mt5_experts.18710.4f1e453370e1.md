@@ -1,0 +1,6 @@
+Calculation: Open-above-close count = number of bars among the configured lookback on a lower timeframe than the chart timeframe, including the bar still forming, where open > close
+Calculation: Open-below-close count = number of bars among the same lookback on that lower timeframe, including the bar still forming, where open < close
+Long: Open-above-close count > Open-below-close count AND current hour equals either scheduled base hour plus configured hour shift AND current minute < 5 AND open position count < configured maximum AND at least 61 seconds have passed since the last entry
+Short: Open-above-close count < Open-below-close count AND current hour equals either scheduled base hour plus configured hour shift AND current minute < 5 AND open position count < configured maximum AND at least 61 seconds have passed since the last entry
+Exit: Long, current price − entry price ≥ secondary take-profit distance OR current price ≥ entry price + take-profit distance OR current price ≤ active stop-loss level
+Exit: Short, entry price − current price ≥ secondary take-profit distance OR current price ≤ entry price − take-profit distance OR current price ≥ active stop-loss level

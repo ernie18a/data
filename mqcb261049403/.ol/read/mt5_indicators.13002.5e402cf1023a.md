@@ -1,0 +1,3 @@
+Calculation: Blau TStochI = Smooth the selected bar price minus the lowest low over a lookback, and the high minus the low over that same lookback, using the same smoothing method and short lookback; smooth both results again with a shorter lookback, then again with a longer lookback; divide the smoothed price-minus-low result by the smoothed range result, multiply by 100, and subtract 50. For the higher-timeframe variant, calculate from higher-timeframe bars and use the bar still forming at the current chart-bar time.
+Long: Blau TStochI > 0
+Short: Blau TStochI < 0

@@ -1,0 +1,8 @@
+Calculation: Smoothed stochastic %K = moving average of raw stochastic %K using a shorter lookback than the raw stochastic lookback
+Calculation: Stochastic %D = moving average of smoothed stochastic %K using a shorter lookback than the raw stochastic lookback
+Calculation: Long stop = lowest low over the swing lookback plus one bar minus an ATR-based buffer
+Calculation: Short stop = highest high over the swing lookback plus one bar plus an ATR-based buffer
+Long: close > EMA AND EMA > previous bar EMA AND absolute distance between close and EMA <= ATR-based threshold AND min(%K, %D) >= lower bullish pullback threshold AND min(%K, %D) <= upper bullish pullback threshold AND %K crosses above %D AND MACD histogram > previous bar MACD histogram AND close > open AND ADX >= minimum threshold AND volume > average volume × volume multiplier AND bullish setup was false on the previous bar
+Short: close < EMA AND EMA < previous bar EMA AND absolute distance between close and EMA <= ATR-based threshold AND max(%K, %D) >= lower bearish pullback threshold AND max(%K, %D) <= upper bearish pullback threshold AND %K crosses below %D AND MACD histogram < previous bar MACD histogram AND close < open AND ADX >= minimum threshold AND volume > average volume × volume multiplier AND bearish setup was false on the previous bar
+Exit: long, low <= long stop OR %K >= overbought threshold AND %K crosses below %D
+Exit: short, high >= short stop OR %K <= oversold threshold AND %K crosses above %D

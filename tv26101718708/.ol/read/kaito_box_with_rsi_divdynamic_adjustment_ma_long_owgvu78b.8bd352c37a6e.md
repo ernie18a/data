@@ -1,0 +1,8 @@
+Calculation: Low-based RSI = RSI calculated from low over a lookback period
+Calculation: Bullish divergence = current low is below the lowest low over the left lookback and at or below the lowest low over the right lookback, while low-based RSI is above its minimum over the left lookback and below the oversold threshold
+Calculation: Bearish divergence = current low is above the highest low over the left lookback and at or above the highest low over the right lookback, while low-based RSI is below its maximum over the left lookback and above the overbought threshold
+Calculation: Selected-timeframe moving averages = moving averages of close on the user-selected timeframe, using the selected moving-average type; use that timeframe’s current bar, which may still be forming in realtime
+Calculation: Uptrend = all three shorter moving averages are above the longest moving average and selected-timeframe close is above the longest moving average, OR chart high is above all four moving averages
+Calculation: Downtrend = all three shorter moving averages are below the longest moving average and selected-timeframe close is below the longest moving average, OR chart low is below all four moving averages
+Long: Downtrend AND chart close is at or below the lowest low over the box lookback AND bullish divergence
+Exit: Long, Uptrend AND chart close is at or above the highest high over the box lookback AND bearish divergence

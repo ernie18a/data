@@ -1,0 +1,4 @@
+Calculation: Fair value gap = bullish when current low > high two bars earlier; bearish when current high < low two bars earlier
+Calculation: FVG strength percentage = round(100 × earned points / 4); award one point each when gap size >= the smaller ATR multiple, gap size >= the larger ATR multiple, the middle candle’s high-low range >= the displacement ATR multiple, and trend aligns (bullish: close > shorter-period EMA > longer-period EMA; bearish: close < shorter-period EMA < longer-period EMA)
+Long: current low > high two bars earlier AND FVG strength percentage >= configured minimum
+Short: current high < low two bars earlier AND FVG strength percentage >= configured minimum

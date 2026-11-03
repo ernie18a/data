@@ -1,0 +1,6 @@
+Calculation: Aroon Up = 100 − 100 × (bars since the highest high in the lookback + 0.5) ÷ lookback, calculated on the configured signal timeframe, which may be higher or lower than the chart timeframe; use its last completed bar
+Calculation: Aroon Down = 100 − 100 × (bars since the lowest low in the lookback + 0.5) ÷ lookback, calculated on the configured signal timeframe, which may be higher or lower than the chart timeframe; use its last completed bar
+Long: Aroon Up > upper threshold AND Aroon Down < lower threshold AND the most recent prior qualifying regime was bearish (Aroon Up < lower threshold AND Aroon Down > upper threshold)
+Short: Aroon Up < lower threshold AND Aroon Down > upper threshold AND the most recent prior qualifying regime was bullish (Aroon Up > upper threshold AND Aroon Down < lower threshold)
+Exit: long, Aroon Up < lower threshold AND Aroon Down > upper threshold AND the most recent prior qualifying regime was bullish
+Exit: short, Aroon Up > upper threshold AND Aroon Down < lower threshold AND the most recent prior qualifying regime was bearish

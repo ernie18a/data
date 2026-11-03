@@ -1,0 +1,6 @@
+Calculation: POC price = midpoint of the price bin with the greatest estimated volume; estimate each source candle’s volume per bin in proportion to the overlap between its price range and the bin, using lower-timeframe candles when enabled and otherwise the chart candle
+Calculation: Concentration = volume in the greatest-volume price bin / total estimated volume across bins × 100
+Calculation: Volume power = chart-candle volume / its simple moving average over a configurable lookback
+Calculation: Bullish bias = POC-bin estimated buy volume ≥ estimated sell volume, or chart close ≥ open, according to the selected bias method; estimate buy volume as source-candle volume × (close − low) / max(high − low, minimum tick), and sell volume as source-candle volume × (high − close) / max(high − low, minimum tick), weighted by each source candle’s overlap with the POC bin
+Long: Concentration ≥ minimum concentration AND volume power ≥ minimum volume ratio AND bullish bias OR an untested strong bullish POC from an earlier bar has price ≥ its level AND price ≤ its level
+Short: Concentration ≥ minimum concentration AND volume power ≥ minimum volume ratio AND NOT bullish bias OR an untested strong bearish POC from an earlier bar has price ≥ its level AND price ≤ its level

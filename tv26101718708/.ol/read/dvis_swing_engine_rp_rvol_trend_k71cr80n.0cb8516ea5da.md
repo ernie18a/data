@@ -1,0 +1,5 @@
+Calculation: Relative performance = 100 × (stock return over a long lookback on the selected timeframe ÷ benchmark return over the same lookback − 1); use the current selected-timeframe bar, which may still be forming
+Calculation: Prior relative performance = relative performance over the same long lookback, evaluated at an offset of a shorter momentum period on the selected timeframe
+Calculation: Relative volume = current chart-bar volume ÷ average chart-bar volume over a lookback
+Long: close > EMA(9) AND EMA(9) > EMA(21) AND (SMA(50) filter disabled OR close > SMA(50)) AND (SMA(200) filter disabled OR close > SMA(200)) AND (EMA(21) rising filter disabled OR EMA(21) > its prior value) AND relative performance > minimum AND relative performance > prior relative performance AND relative volume ≥ threshold AND selected bullish-bar condition AND NOT (all these setup conditions were true on the prior bar)
+Exit: Long, close < EMA(21) AND relative performance < 0 AND relative volume ≥ threshold AND selected bearish-bar condition AND NOT (these exit conditions were true on the prior bar)

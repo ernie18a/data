@@ -1,0 +1,6 @@
+Calculation: EMA(short lookback) = exponential moving average of close
+Calculation: EMA(longer lookback) = exponential moving average of close
+Calculation: Lowest low = lowest low over the trailing 28 chart-timeframe bars
+Calculation: PVSRA candle class = PVSRA classification of same-timeframe OHLCV data
+Long: current candle is a bullish PVSRA vector AND open > EMA(short lookback) AND (close < EMA(longer lookback) OR close > EMA(longer lookback)) AND, since the previous long entry, at least one bearish PVSRA vector candle closed below EMA(short lookback) and at least one bearish PVSRA candle closed below EMA(short lookback)
+Exit: Long, low <= lowest low captured on the entry bar OR high >= entry-signal close + (entry-signal close - lowest low captured on the entry bar) × risk-reward multiplier OR the bar immediately after a long entry is bearish or violet PVSRA OR the bar immediately after a bullish-or-blue PVSRA candle that opened above both EMAs is red PVSRA, opens and closes above EMA(longer lookback), and at least one bullish PVSRA candle has closed above EMA(longer lookback) since the preceding such exit

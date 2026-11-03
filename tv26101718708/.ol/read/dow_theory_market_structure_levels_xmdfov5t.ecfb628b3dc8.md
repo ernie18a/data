@@ -1,0 +1,4 @@
+Calculation: Confirmed swing high/low = a bar whose high/low is respectively greater/less than the highs/lows of N chart-timeframe bars on both sides; recognize it after the N bars on its right have completed. Use the same N for highs and lows.
+Calculation: Trend state = initialize bullish on the first confirmed swing high or bearish on the first confirmed swing low; thereafter set bullish when a confirmed swing high exceeds the previous confirmed swing high, and bearish when a confirmed swing low is below the previous confirmed swing low; otherwise retain the prior state.
+Long: A confirmed swing high exceeds the previous confirmed swing high AND the prior trend state is bullish OR bearish.
+Short: A confirmed swing low is below the previous confirmed swing low AND the prior trend state is bearish OR bullish.

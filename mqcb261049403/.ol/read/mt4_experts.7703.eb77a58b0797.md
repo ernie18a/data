@@ -1,0 +1,4 @@
+Long: weekday(datetime) = Friday AND hour(datetime) = opening hour AND position side = flat AND previous completed higher-timeframe daily bar open > close
+Short: weekday(datetime) = Friday AND hour(datetime) = opening hour AND position side = flat AND previous completed higher-timeframe daily bar open < close
+Exit: Long, weekday(datetime) = Friday AND hour(datetime) >= closing hour OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: Short, weekday(datetime) = Friday AND hour(datetime) >= closing hour OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

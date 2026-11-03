@@ -1,0 +1,2 @@
+Long: For each of the six displayed timeframes, the current still-forming aggregated bar (higher or lower than the chart timeframe) has close >= open
+Short: For each of the six displayed timeframes, the current still-forming aggregated bar (higher or lower than the chart timeframe) has close < open

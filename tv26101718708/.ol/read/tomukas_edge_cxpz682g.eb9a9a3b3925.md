@@ -1,0 +1,4 @@
+Long: close > trend EMA AND trend EMA > macro EMA AND (low <= pullback EMA OR low <= trend EMA) AND fast EMA crosses above slow EMA AND MACD line crosses above MACD signal line AND RSI > bullish threshold AND +DI > -DI AND ADX > minimum ADX AND volume > volume moving average
+Short: close < trend EMA AND trend EMA < macro EMA AND (high >= pullback EMA OR high >= trend EMA) AND fast EMA crosses below slow EMA AND MACD line crosses below MACD signal line AND RSI < bearish threshold AND -DI > +DI AND ADX > minimum ADX AND volume > volume moving average
+Exit: long, low <= entry price - ATR × stop distance OR high >= entry price + ATR × target distance OR low <= highest high since entry - ATR × trailing distance
+Exit: short, high >= entry price + ATR × stop distance OR low <= entry price - ATR × target distance OR high >= lowest low since entry + ATR × trailing distance

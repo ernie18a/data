@@ -1,0 +1,3 @@
+Calculation: UltraFatl Bulls/Bears = Apply a fixed linear digital filter to the selected applied price; smooth the result with a ladder of moving averages using progressively longer lookbacks; count how many ladder values are greater than their prior-bar values as Bulls and assign the remaining values, including ties, to Bears; smooth each count separately.
+Long: UltraFatl Bulls > UltraFatl Bears on the chart timeframe OR UltraFatl Bulls > UltraFatl Bears on a higher timeframe, using the higher-timeframe bar still forming
+Short: UltraFatl Bulls < UltraFatl Bears on the chart timeframe OR UltraFatl Bulls < UltraFatl Bears on a higher timeframe, using the higher-timeframe bar still forming

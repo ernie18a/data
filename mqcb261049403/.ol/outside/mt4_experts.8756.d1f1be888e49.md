@@ -1,0 +1,1 @@
+For each open market position within the configured symbol scope, close it and open an equal-size position in the opposite direction on the same instrument: reverse buys into sells and sells into buys. Apply the configured stop-loss and take-profit distances to the new position.

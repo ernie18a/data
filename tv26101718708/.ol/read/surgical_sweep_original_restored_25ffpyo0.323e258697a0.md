@@ -1,0 +1,5 @@
+Calculation: Resistance = most recent confirmed pivot high, higher than the highs of an equal lookback on both sides
+Calculation: Support = most recent confirmed pivot low, lower than the lows of an equal lookback on both sides
+Calculation: Average volume = longer-term simple moving average of chart-timeframe volume
+Long: Previous completed chart-timeframe bar low < Support AND previous completed chart-timeframe bar close < Support AND current chart-timeframe close > Support AND current chart-timeframe volume > Average volume × volume multiplier AND current date is a weekday
+Short: Previous completed chart-timeframe bar high > Resistance AND previous completed chart-timeframe bar close > Resistance AND current chart-timeframe close < Resistance AND current chart-timeframe volume > Average volume × volume multiplier AND current date is a weekday

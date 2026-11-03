@@ -1,0 +1,3 @@
+Calculation: Volume delta profile = sum positive volume delta and absolute negative volume delta separately for each price bucket, assigning each bar’s volume delta to the bucket containing its close; volume delta is reconstructed from lower-timeframe bars within each chart bar, including the still-forming bar in real time
+Long: at least one price bucket below the current close has positive volume delta greater than or equal to negative volume delta
+Short: at least one price bucket above the current close has negative volume delta greater than positive volume delta

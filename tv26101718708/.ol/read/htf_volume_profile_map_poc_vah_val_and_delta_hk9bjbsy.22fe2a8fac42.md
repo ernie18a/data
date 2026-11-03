@@ -1,0 +1,3 @@
+Calculation: Estimated delta percentage = 100 × (estimated buying volume − estimated selling volume) / total volume, summed across lower-timeframe bars within the latest completed higher-timeframe candle. Classify each lower-timeframe bar as buying when close > open and selling when close < open; for doji bars, use close versus the preceding lower-timeframe bar’s close, carrying forward the prior direction if equal (initially buying).
+Long: Estimated delta percentage ≥ 10%
+Short: Estimated delta percentage ≤ −10%

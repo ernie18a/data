@@ -1,0 +1,9 @@
+Calculation: MACD = difference between the short-term and long-term exponential moving averages of close
+Calculation: MACD Bollinger Bands = simple moving average of MACD plus or minus a standard-deviation band
+Calculation: SSL baseline = selected moving average of close; baseline channel = baseline plus or minus an exponentially smoothed true range
+Calculation: Buyer strength = 100 × buyer volume / (buyer volume + seller volume), where each prior bar since session start contributes volume × (close − low) / (high − low) to buyer volume and volume × (high − close) / (high − low) to seller volume; exclude the current bar and round the percentage to a whole number
+Calculation: Seller strength = 100 − buyer strength, rounded to a whole number
+Long: MACD ≥ upper MACD Bollinger Band AND MACD > 0 AND at least one of the current or preceding lookback bars has MACD > 0 and MACD < its upper Bollinger Band AND close > the SSL baseline’s upper channel AND at least one of the current or preceding pullback-lookback bars has the SSL baseline channel gray or red AND buyer strength > 50
+Short: MACD < upper MACD Bollinger Band AND MACD < 0 AND at least one of the current or preceding lookback bars has MACD < 0 and MACD ≥ its upper Bollinger Band AND close < the SSL baseline’s lower channel AND at least one of the current or preceding pullback-lookback bars has the SSL baseline channel gray or blue AND seller strength > 50
+Exit: long, close < entry price × (1 − stop-loss percentage) OR high ≥ entry price × (1 + take-profit percentage)
+Exit: short, close > entry price × (1 + stop-loss percentage) OR low ≤ entry price × (1 − take-profit percentage)

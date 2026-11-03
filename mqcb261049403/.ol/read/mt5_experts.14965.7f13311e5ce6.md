@@ -1,0 +1,5 @@
+Calculation: MA oscillator = shorter-lookback smoothed applied price minus longer-lookback smoothed applied price shifted by a configurable bar lag, divided by price point
+Long: MA oscillator on the latest completed bar of the indicator timeframe > MA oscillator on the prior completed bar AND MA oscillator on the prior completed bar < MA oscillator on the completed bar before that; indicator timeframe is lower than the chart timeframe
+Short: MA oscillator on the latest completed bar of the indicator timeframe < MA oscillator on the prior completed bar AND MA oscillator on the prior completed bar > MA oscillator on the completed bar before that; indicator timeframe is lower than the chart timeframe
+Exit: long, MA oscillator on the latest completed bar of the indicator timeframe < MA oscillator on the prior completed bar; indicator timeframe is lower than the chart timeframe
+Exit: short, MA oscillator on the latest completed bar of the indicator timeframe > MA oscillator on the prior completed bar; indicator timeframe is lower than the chart timeframe

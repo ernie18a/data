@@ -1,0 +1,7 @@
+Calculation: Body size = absolute difference between close and open
+Calculation: Zone range = the greater of 1 price unit and the difference between the highest high and lowest low over the recent zone lookback
+Calculation: Supply-zone trigger = current high exceeds the highs of the preceding bars in the zone lookback
+Calculation: Demand-zone trigger = current low is below the lows of the preceding bars in the zone lookback
+Calculation: Volume spike = current volume exceeds the recent average volume multiplied by a configurable threshold
+Long: (Demand-zone trigger AND close > open AND volume spike AND (body size exceeds the configurable entry fraction of zone range OR (close > short-term simple moving average AND short-term simple moving average >= long-term simple moving average))) OR (current low < previous low AND close > open AND body size exceeds a configurable higher fraction of zone range AND volume > recent average volume)
+Short: (Supply-zone trigger AND close < open AND volume spike AND (body size exceeds the configurable entry fraction of zone range OR (close < short-term simple moving average AND short-term simple moving average <= long-term simple moving average))) OR (current high > previous high AND close < open AND body size exceeds a configurable higher fraction of zone range AND volume > recent average volume)

@@ -1,0 +1,7 @@
+Calculation: CG = On higher-timeframe bars, let median price = (high + low) / 2. For each bar, CG = (L + 1) / 2 − [sum from i=0 to L−1 of (i + 1) × median price from i bars ago] / [sum from i=0 to L−1 of median price from i bars ago]; use 0 if the denominator is 0.
+Calculation: Main = On each higher-timeframe bar, normalize its CG within the highest and lowest CG over the last L bars as (CG − lowest) / (highest − lowest), or 0 if highest = lowest. Then take the weighted average of this normalized value and the prior three values, with weights 4, 3, 2, 1 divided by 10, and transform it as 2 × value − 1. Use completed bars.
+Calculation: Trigger = 0.96 × (prior higher-timeframe bar's Main + 0.02). Use completed bars.
+Long: Main on the latest completed higher-timeframe bar > Trigger on that bar AND Main on the preceding completed higher-timeframe bar ≤ Trigger on that bar
+Short: Main on the latest completed higher-timeframe bar < Trigger on that bar AND Main on the preceding completed higher-timeframe bar ≥ Trigger on that bar
+Exit: short, Main on the latest completed higher-timeframe bar > Trigger on that bar
+Exit: long, Main on the latest completed higher-timeframe bar < Trigger on that bar

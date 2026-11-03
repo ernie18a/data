@@ -1,0 +1,4 @@
+Long: Monthly MACD main line > signal line on the last completed monthly bar AND, among chart bars scanned from shift 200 down to 0, the first qualifying upper-fractal setup has an upper fractal price F, higher-timeframe Ichimoku Tenkan line > Kijun line on the last completed bar, chart low[2] < F, and chart open[1] > F
+Short: Monthly MACD main line > signal line on the last completed monthly bar AND, among chart bars scanned from shift 200 down to 0, the first qualifying lower-fractal setup has a lower fractal price F, higher-timeframe Ichimoku Tenkan line < Kijun line on the last completed bar, chart high[2] > F, and chart open[1] < F AND Monthly MACD main line < signal line on the last completed monthly bar
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

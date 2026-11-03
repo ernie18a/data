@@ -1,0 +1,4 @@
+Calculation: Bullish impulse level = midpoint of the current and prior completed closes when the current close minus the prior close exceeds the absolute difference between the prior close and the close two bars earlier, multiplied by a threshold factor; keep the level active until a later close falls below the maximum of the prior bar’s open and close.
+Calculation: Bearish impulse level = midpoint of the current and prior completed closes when the current close minus the prior close is less than the negative of that same threshold; keep the level active until a later close rises above the minimum of the prior bar’s open and close.
+Long: For an active bearish impulse level, current close > level AND current close = current high AND prior close <= level AND level differs from the last signaled level
+Short: For an active bullish impulse level, current close < level AND current close = current low AND prior close >= level AND level differs from the last signaled level

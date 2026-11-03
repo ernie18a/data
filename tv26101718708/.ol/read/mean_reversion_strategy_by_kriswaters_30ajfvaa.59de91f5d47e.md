@@ -1,0 +1,3 @@
+Calculation: Moving average of close percentage change = simple moving average of 100 × (current close − previous close) / current close over a lookback
+Long: current moving average of close percentage change > previous bar’s moving average of close percentage change AND previous bar’s moving average of close percentage change < negative drop threshold AND current volume > previous bar’s volume AND position is flat
+Exit: long, current moving average of close percentage change > 0 AND previous bar’s volume > current volume

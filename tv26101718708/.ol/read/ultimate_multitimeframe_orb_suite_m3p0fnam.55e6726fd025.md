@@ -1,0 +1,3 @@
+Calculation: Opening range high/low = highest high / lowest low of chart-timeframe bars from the start of each higher-timeframe candle until the opening-range duration has elapsed; the higher-timeframe candle is still forming.
+Long: elapsed time since the start of the current higher-timeframe candle >= opening-range duration AND close > opening range high AND previous close <= opening range high AND close > EMA AND volume > average volume × multiplier
+Short: elapsed time since the start of the current higher-timeframe candle >= opening-range duration AND close < opening range low AND previous close >= opening range low AND close < EMA AND volume > average volume × multiplier

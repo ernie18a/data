@@ -1,0 +1,3 @@
+Calculation: Prior-bar rolling high = highest high over the preceding lookback bars, excluding the current bar
+Short: high > prior-bar rolling high AND close < prior-bar rolling high AND within the configured session AND higher-timeframe EMA is lower than its value on the prior completed higher-timeframe bar AND ATR / close >= configured minimum ATR ratio
+Exit: short, high >= entry price × (1 + configured stop-loss percentage) OR low <= entry price × (1 - configured take-profit percentage) OR bars since entry >= configured time-stop bars

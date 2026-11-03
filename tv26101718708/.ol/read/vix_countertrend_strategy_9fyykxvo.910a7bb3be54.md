@@ -1,0 +1,3 @@
+Calculation: simple moving average = average of the last N completed daily volatility-index closes on a higher timeframe than the chart timeframe
+Long: previous bar volatility-index close >= panic threshold AND volatility-index close crossed below its simple moving average on the previous bar
+Exit: Long, (exit mode = holding-period mode AND bars held >= holding-period parameter) OR (exit mode = volatility-retreat mode AND volatility-index close <= retreat threshold) OR (exit mode = either-condition mode AND (bars held >= holding-period parameter OR volatility-index close <= retreat threshold))

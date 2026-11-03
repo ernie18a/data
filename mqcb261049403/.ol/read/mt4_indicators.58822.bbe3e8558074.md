@@ -1,0 +1,2 @@
+Long: RSI on any enabled timeframe (higher, lower, or equal to the chart timeframe), using its still-forming bar, is at or below the oversold threshold OR is greater than its value on the previous completed bar
+Short: RSI on any enabled timeframe (higher, lower, or equal to the chart timeframe), using its still-forming bar, is at or above the overbought threshold OR is less than its value on the previous completed bar

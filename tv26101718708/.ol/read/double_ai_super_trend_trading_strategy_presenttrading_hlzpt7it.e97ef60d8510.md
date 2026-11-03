@@ -1,0 +1,9 @@
+Calculation: Volume-weighted moving average = selected moving average of close × volume divided by the same moving average of volume
+Calculation: SuperTrend = use the volume-weighted moving average as the basis; calculate upper and lower bands using the ATR and multiplier, carry forward each band unless the current band moves inward or the prior close crosses the prior band, then use the lower band in bullish direction and upper band in bearish direction. The two systems use separate ATR lengths and multipliers; the second uses the same basis.
+Calculation: Weighted nearest-neighbor label = for each of the last n SuperTrend values, label it 1 if the corresponding smoothed close is above the corresponding smoothed SuperTrend, otherwise 0; find the k closest values to the current SuperTrend by absolute distance and classify as 1 when their inverse-distance weighted label average equals 1, otherwise 0. The second system uses its own SuperTrend, data lookback, and smoothing lengths, and the same k.
+Calculation: Bullish trend flip = SuperTrend direction changes from bearish to bullish and the corresponding weighted nearest-neighbor label is 1
+Calculation: Bearish trend flip = SuperTrend direction changes from bullish to bearish and the corresponding weighted nearest-neighbor label is 0
+Long: both SuperTrend systems are bullish AND both corresponding weighted nearest-neighbor labels are 1 OR either system’s label changes from bearish to bullish
+Short: both SuperTrend systems are bearish AND both corresponding weighted nearest-neighbor labels are 0 OR either system’s label changes from bullish to bearish
+Exit: Long, low <= bullish SuperTrend − ATR × multiplier AND neither system has a bullish trend flip
+Exit: Short, high >= bearish SuperTrend + ATR × multiplier AND neither system has a bearish trend flip

@@ -1,0 +1,3 @@
+Calculation: RVOL = current bar volume / average volume over a lookback
+Long: RSI crosses above its oversold level AND MACD line crosses above its signal line OR RSI crosses above its oversold level AND RVOL crosses above its buy threshold OR MACD line crosses above its signal line AND RVOL crosses above its buy threshold
+Exit: Long, RSI crosses below its overbought level AND MACD line crosses below its signal line OR RSI crosses below its overbought level AND RVOL crosses below its sell threshold OR MACD line crosses below its signal line AND RVOL crosses below its sell threshold

@@ -1,0 +1,2 @@
+Long: 9-period EMA of close > 21-period EMA of close AND 21-period EMA of close > 50-period EMA of close
+Short: 9-period EMA of close < 21-period EMA of close AND 21-period EMA of close < 50-period EMA of close

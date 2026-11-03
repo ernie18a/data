@@ -1,0 +1,1 @@
+Go long when the daily closing value of BTCUSD short positions crosses below its moving average. Exit the long when that value crosses back above its moving average. No short entry.

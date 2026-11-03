@@ -1,0 +1,8 @@
+Long: Chart close > longest-lookback SMA of close on the selected MA timeframe, using its current bar (which may still be forming); the selected timeframe may be higher or lower than the chart timeframe.
+Short: Chart close <= longest-lookback SMA of close on the selected MA timeframe, using its current bar (which may still be forming); the selected timeframe may be higher or lower than the chart timeframe.
+Long: Chart close > second-longest-lookback SMA of close on the selected MA timeframe, using its current bar (which may still be forming); the selected timeframe may be higher or lower than the chart timeframe.
+Short: Chart close <= second-longest-lookback SMA of close on the selected MA timeframe, using its current bar (which may still be forming); the selected timeframe may be higher or lower than the chart timeframe.
+Long: Chart close > second-shortest-lookback SMA of close on the selected MA timeframe, using its current bar (which may still be forming); the selected timeframe may be higher or lower than the chart timeframe.
+Short: Chart close <= second-shortest-lookback SMA of close on the selected MA timeframe, using its current bar (which may still be forming); the selected timeframe may be higher or lower than the chart timeframe.
+Long: Chart close > shortest-lookback SMA of close on the selected MA timeframe, using its current bar (which may still be forming); the selected timeframe may be higher or lower than the chart timeframe.
+Short: Chart close <= shortest-lookback SMA of close on the selected MA timeframe, using its current bar (which may still be forming); the selected timeframe may be higher or lower than the chart timeframe.

@@ -1,0 +1,4 @@
+Calculation: CCI = (smoothed selected price − its mean over the selected lookback) / (0.015 × its mean absolute deviation over that lookback); the lookback may be adapted using VHF.
+Calculation: Upper and lower levels = the selected upper and lower quantiles of CCI over the level lookback, or the selected percentages of its rolling minimum-to-maximum range; middle level = the midpoint of that range or the midpoint quantile.
+Long: selected coloring mode is outer levels AND CCI > upper level OR selected coloring mode is middle level AND CCI > middle level OR selected coloring mode is slope AND CCI > previous CCI
+Short: selected coloring mode is outer levels AND CCI < lower level OR selected coloring mode is middle level AND CCI < middle level OR selected coloring mode is slope AND CCI < previous CCI

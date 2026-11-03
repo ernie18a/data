@@ -1,0 +1,2 @@
+Long: (shorter-lookback linear weighted moving average of close > longer-lookback simple moving average of close AND RSI >= upper threshold AND Stochastic %K > %D AND MACD main line > signal line) OR (the same conditions evaluated on a higher-timeframe bar that is still forming)
+Short: (shorter-lookback linear weighted moving average of close < longer-lookback simple moving average of close AND RSI <= lower threshold AND Stochastic %K < %D AND MACD main line < signal line) OR (the same conditions evaluated on a higher-timeframe bar that is still forming)

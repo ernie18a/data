@@ -1,0 +1,3 @@
+Calculation: Swing Line trend = initialize down; while down, track the minimum of highs and switch up when the current low exceeds it; while up, track the maximum of lows and switch down when the current high falls below it. On a switch, begin tracking the opposite extreme from the current bar. The line is the tracked maximum of lows while up and the tracked minimum of highs while down.
+Long: Swing Line trend = up
+Short: Swing Line trend = down

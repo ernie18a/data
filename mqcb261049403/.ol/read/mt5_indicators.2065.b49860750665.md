@@ -1,0 +1,4 @@
+Calculation: Adaptive channel = on the selected signal timeframe (equal to or higher than the chart timeframe), use the bar still forming; let N = ceil(long-term lookback / ADX on the preceding bar). Over the current and preceding N−1 bars, find the highest high and lowest low, and average the absolute high−low ranges using a divisor of N+1. Lower threshold = lowest low + (highest high − lowest low) × channel percentage; upper threshold = highest high − (highest high − lowest low) × channel percentage.
+Calculation: Trend state = bearish when close is below the lower threshold, bullish when close is above the upper threshold, and otherwise retain the previous state.
+Long: Trend state changes from bearish to bullish AND close > upper threshold
+Short: Trend state changes from bullish to bearish AND close < lower threshold

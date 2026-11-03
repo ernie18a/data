@@ -1,0 +1,4 @@
+Long: short-term EMA > long-term EMA AND (absolute distance between close and VWAP <= VWAP tolerance OR absolute distance between close and short-term EMA <= half ATR) AND RSI > long-entry threshold AND position is flat AND bars since last entry >= cooldown duration
+Short: short-term EMA < long-term EMA AND (absolute distance between close and VWAP <= VWAP tolerance OR absolute distance between close and short-term EMA <= half ATR) AND RSI < short-entry threshold AND position is flat AND bars since last entry >= cooldown duration
+Exit: long, low <= entry price - ATR at entry × stop multiple OR high >= entry price + ATR at entry × stop multiple × reward multiple
+Exit: short, high >= entry price + ATR at entry × stop multiple OR low <= entry price - ATR at entry × stop multiple × reward multiple

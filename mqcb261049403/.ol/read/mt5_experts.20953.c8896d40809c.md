@@ -1,0 +1,5 @@
+Calculation: Sinewave pair = On each timeframe, apply Ehlers’ dominant-cycle Sinewave calculation to the high/low midpoint; compare its Sine line with its Lead Sine line (phase shifted forward by 45°). Use longer-term settings for the higher-timeframe trend pair and shorter-term settings for the lower-timeframe entry pair.
+Long: Higher-timeframe Lead Sine > Sine on the last completed bar AND lower-timeframe Lead Sine > Sine on the last completed bar AND lower-timeframe Lead Sine <= Sine on the preceding completed bar
+Short: Higher-timeframe Lead Sine < Sine on the last completed bar AND lower-timeframe Lead Sine < Sine on the last completed bar AND lower-timeframe Lead Sine >= Sine on the preceding completed bar
+Exit: long, higher-timeframe Lead Sine < Sine on the last completed bar OR lower-timeframe Lead Sine < Sine on the last completed bar OR low <= entry price - stop distance OR high >= entry price + target distance
+Exit: short, higher-timeframe Lead Sine > Sine on the last completed bar OR lower-timeframe Lead Sine > Sine on the last completed bar OR high >= entry price + stop distance OR low <= entry price - target distance

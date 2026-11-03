@@ -1,0 +1,4 @@
+Calculation: Confirmed zigzag leg = On the chart timeframe, mark a swing high/low when the bar’s high/low is the highest/lowest over the configured lookback; keep alternating pivots, updating the latest pivot to a more extreme one in the same direction. Use the pivot pair before the developing leg.
+Calculation: Gauge level = round(leg-end price + (leg-start price − leg-end price) × ratio), with the leg end as 0% and leg start as 100%.
+Long: On a completed bar after the confirmed leg-end pivot, a not-yet-triggered 40%, 50%, 60%, or 100% gauge level is reached by the bar’s high if the leg moves up, or by the bar’s low if the leg moves down.
+Exit: long, On a completed bar after the confirmed leg-end pivot, a not-yet-triggered 125%, 160%, or 200% gauge level is reached by the bar’s high if the leg moves up, or by the bar’s low if the leg moves down.

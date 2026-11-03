@@ -1,0 +1,3 @@
+Calculation: volume-spread product = volume × (high − low)
+Long: event minute-of-day minus current minute-of-day, wrapping once at midnight, is > 0 and <= configured pre-event window AND (volume >= configured volume-anomaly multiple × average volume over the lookback bars OR volume-spread product >= highest volume-spread product over the same lookback bars) AND close > open
+Short: event minute-of-day minus current minute-of-day, wrapping once at midnight, is > 0 and <= configured pre-event window AND (volume >= configured volume-anomaly multiple × average volume over the lookback bars OR volume-spread product >= highest volume-spread product over the same lookback bars) AND close <= open

@@ -1,0 +1,1 @@
+After opening a position, exit it once a fixed number of chart bars has elapsed.

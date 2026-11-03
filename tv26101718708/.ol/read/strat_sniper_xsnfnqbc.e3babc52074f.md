@@ -1,0 +1,9 @@
+Calculation: 2-down bar = current bar makes a lower low than the preceding bar and does not make a higher high
+Calculation: Inside bar = current bar’s high is at or below the preceding bar’s high AND its low is at or above the preceding bar’s low
+Calculation: Long target = setup bar high + (setup bar high − setup bar low) × risk/reward ratio
+Calculation: Short target = setup bar low − (setup bar high − setup bar low) × risk/reward ratio
+Long: previous execution-timeframe bar is a 2-down bar AND current execution-timeframe bar is an inside bar AND session filter is off or current chart bar is within the configured session AND current chart bar high ≥ current execution-timeframe bar high AND this condition was false on the preceding chart bar
+Short: previous execution-timeframe bar makes a higher high without making a lower low AND current execution-timeframe bar is an inside bar AND session filter is off or current chart bar is within the configured session AND current chart bar low ≤ current execution-timeframe bar low AND this condition was false on the preceding chart bar
+Exit: long, long entry has triggered AND (current chart bar low ≤ current execution-timeframe bar low OR current chart bar high ≥ long target)
+Exit: short, short entry has triggered AND (current chart bar high ≥ current execution-timeframe bar high OR current chart bar low ≤ short target)
+The setup uses the execution timeframe (the chart timeframe when unspecified; otherwise the selected timeframe may be higher or lower than the chart timeframe), with its current bar still forming and its preceding bar completed.

@@ -1,0 +1,5 @@
+Calculation: Macro line = close from the lookback bars ago × the average of the three lookback price ratios for oil and gold and the inverse lookback price ratio for the dollar index.
+Calculation: Estimated buying volume = 0 when high = low; otherwise volume × ((close − low) + (high − open)) ÷ (2 × (high − low)).
+Calculation: Estimated selling volume = volume − estimated buying volume.
+Long: (estimated buying volume > its threshold, defined as the 20-bar average volume multiplied by a sensitivity parameter, AND close > (high + low) ÷ 2) OR (close crosses above the macro line OR the buying-volume absorption condition) AND close > the long-term EMA AND Money Flow Index > its upper threshold.
+Short: (estimated selling volume > its threshold, defined as the 20-bar average volume multiplied by a sensitivity parameter, AND close < (high + low) ÷ 2) OR (close crosses below the macro line OR the selling-volume absorption condition) AND close < the long-term EMA AND Money Flow Index < its lower threshold.

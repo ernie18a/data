@@ -1,0 +1,6 @@
+Calculation: latest confirmed swing high = the most recent high that exceeds the highs of the longer lookback window before and after it; it becomes available after the window after it completes
+Calculation: latest confirmed swing low = the most recent low that is below the lows of the longer lookback window before and after it; it becomes available after the window after it completes
+Calculation: pressure = an EMA of the average of (2 × (close − low) / max(high − low, minimum price increment) − 1) and candle direction (+1 if close > open, −1 if close < open, otherwise 0)
+Calculation: volume expansion = current volume ≥ its longer-term average volume × an expansion threshold
+Long: (low < latest confirmed swing low AND close > latest confirmed swing low AND pressure > 0 AND close > open OR close > latest confirmed swing high AND pressure > 0 AND volume expansion) AND the same setup was false on the previous bar
+Short: (high > latest confirmed swing high AND close < latest confirmed swing high AND pressure < 0 AND close < open OR close < latest confirmed swing low AND pressure < 0 AND volume expansion) AND the same setup was false on the previous bar

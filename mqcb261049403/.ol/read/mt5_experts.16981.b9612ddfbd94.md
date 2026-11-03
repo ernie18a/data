@@ -1,0 +1,7 @@
+Calculation: Price momentum = 100 × applied price on the current bar ÷ applied price N bars earlier
+Calculation: Fast line = sum of five price momentums multiplied by their factors; use the second factor for both the second and third terms, and use lookback periods in increasing order
+Calculation: Slow line = current fast line ÷ smoothing period + previous slow line × (smoothing period − 1) ÷ smoothing period
+Long: Higher-timeframe fast line > higher-timeframe slow line on the last completed higher-timeframe bar AND lower-timeframe fast line ≤ lower-timeframe slow line on the bar before the latest completed lower-timeframe bar AND lower-timeframe fast line > lower-timeframe slow line on the latest completed lower-timeframe bar
+Short: Higher-timeframe fast line < higher-timeframe slow line on the last completed higher-timeframe bar AND lower-timeframe fast line ≥ lower-timeframe slow line on the bar before the latest completed lower-timeframe bar AND lower-timeframe fast line < lower-timeframe slow line on the latest completed lower-timeframe bar
+Exit: Long, higher-timeframe fast line < higher-timeframe slow line on the last completed higher-timeframe bar OR lower-timeframe fast line < lower-timeframe slow line on the latest completed lower-timeframe bar
+Exit: Short, higher-timeframe fast line > higher-timeframe slow line on the last completed higher-timeframe bar OR lower-timeframe fast line > lower-timeframe slow line on the latest completed lower-timeframe bar

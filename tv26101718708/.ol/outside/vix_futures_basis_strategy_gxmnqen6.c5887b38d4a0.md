@@ -1,0 +1,1 @@
+Using the spot volatility index and the front- and second-month volatility futures: enter long the traded instrument when both futures prices exceed the spot index by a threshold. Exit the long when both futures prices fall below the spot index by that threshold. No short position is opened.

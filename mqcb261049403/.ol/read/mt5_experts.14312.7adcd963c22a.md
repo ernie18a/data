@@ -1,0 +1,8 @@
+Calculation: Smoothed OHLC and price = apply the same configurable smoother to open, high, low, close, and selected price on the configured indicator timeframe (which may be higher, equal to, or lower than the chart timeframe); use completed bars.
+Calculation: Volatility Quality increment = if max(H−L, H−C_lag, C_lag−L) and H−L are nonzero, abs(0.5×((C−C_lag)/max(H−L,H−C_lag,C_lag−L)+(C−O)/(H−L)))×0.5×((C−C_lag)+(C−O)); otherwise selected price. C and O are smoothed close and open, H and L are smoothed high and low, and C_lag is smoothed close from a longer lookback offset.
+Calculation: Volatility Quality line = prior line plus the increment, except hold the prior line when the absolute increment is below the configurable filter threshold.
+Calculation: Volatility Quality direction = rising when the line is greater than its prior value; falling when less; retain the prior direction when equal.
+Long: Volatility Quality direction changes from falling to rising between the last two completed indicator-timeframe bars.
+Short: Volatility Quality direction changes from rising to falling between the last two completed indicator-timeframe bars.
+Exit: long, Volatility Quality direction changes from rising to falling between the last two completed indicator-timeframe bars.
+Exit: short, Volatility Quality direction changes from falling to rising between the last two completed indicator-timeframe bars.

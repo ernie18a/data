@@ -1,0 +1,9 @@
+Calculation: Normalized score(value, lower bound, upper bound) = clamp value to the bounds, then scale linearly to 0–100
+Calculation: ATR expansion score = normalized score of short-lookback ATR divided by long-lookback ATR; short lookback is shorter than long lookback
+Calculation: Candle body score = normalized score of absolute(close − open) divided by (high − low)
+Calculation: Volume expansion score = normalized score of volume divided by its EMA
+Calculation: Breakout speed score = normalized score of distance beyond the prior lookback high or low, divided by long-lookback ATR; distance is zero without a breakout
+Calculation: Pullback score = 100 minus the normalized score of pullback depth within the rolling high-low range; depth is measured from the rolling high for bullish direction and from the rolling low for bearish direction, where direction is close above or below its EMA; score is neutral when close equals the EMA
+Calculation: Momentum score = weighted combination of ATR expansion, candle body, volume expansion, breakout speed, and pullback scores
+Long: Momentum score >= strong-momentum threshold AND close > EMA
+Short: Momentum score >= strong-momentum threshold AND close < EMA

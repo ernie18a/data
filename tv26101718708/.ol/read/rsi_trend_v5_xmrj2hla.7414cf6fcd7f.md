@@ -1,0 +1,2 @@
+Long: (1-minute RSI > its moving average AND 5-minute RSI > its moving average) OR (at a confirmed price pivot low, the price low is below the prior confirmed pivot low AND RSI at the pivot is above RSI at the prior pivot, with the prior pivot within the configured bar-distance range)
+Short: (1-minute RSI < its moving average AND 5-minute RSI < its moving average) OR (at a confirmed price pivot high, the price high is above the prior confirmed pivot high AND RSI at the pivot is below RSI at the prior pivot, with the prior pivot within the configured bar-distance range)

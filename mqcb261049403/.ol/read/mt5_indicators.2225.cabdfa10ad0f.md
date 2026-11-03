@@ -1,0 +1,4 @@
+Calculation: Fisher CG Oscillator = On higher-timeframe bars, compute each bar’s midpoint as (high + low) / 2. For each bar, calculate center of gravity as (Length + 1) / 2 minus the sum of (k + 1) × midpoint[k] divided by the sum of midpoint[k], over the current and prior Length − 1 bars (k = 0 is current); use 0 if the denominator is zero. Normalize the current center of gravity between the minimum and maximum of the current and prior Length − 1 center-of-gravity values, using 0 if the range is zero. Smooth the normalized values as (4 × current + 3 × prior + 2 × two-bars-prior + three-bars-prior) / 10, then apply 0.5 × ln((1 + 1.98 × (smooth − 0.5)) / (1 − 1.98 × (smooth − 0.5)). Use the higher-timeframe bar still forming.
+Calculation: Trigger = prior higher-timeframe bar’s Fisher CG Oscillator value.
+Long: Fisher CG Oscillator > Trigger
+Short: Fisher CG Oscillator < Trigger

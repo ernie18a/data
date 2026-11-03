@@ -1,0 +1,3 @@
+Long: No open position AND RSI of the volatility index’s daily close (higher timeframe; use the last completed daily bar) crosses above the overbought threshold
+Short: No open position AND RSI of the volatility index’s daily close (higher timeframe; use the last completed daily bar) crosses below the oversold threshold
+Exit: long or short, bars since entry >= minimum holding period AND bars since entry <= maximum holding period

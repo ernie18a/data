@@ -1,0 +1,10 @@
+Calculation: McClellan oscillator = shorter EMA minus longer EMA of ratio-adjusted advances minus declines, where ratio-adjusted breadth is (advances − declines) / (advances + declines); calculate on the chart timeframe.
+Calculation: Bollinger %B = (value − (SMA − 2 × standard deviation)) / (4 × standard deviation), using the same lookback for the SMA and standard deviation.
+Calculation: Percent-above-threshold trend = SMA of the percent of stocks above a threshold; its three-bar slope is (current SMA − SMA three bars ago) / 3.
+Calculation: Skew trend = SMA of skew; its three-bar slope is (current SMA − SMA three bars ago) / 3.
+Calculation: Volatility roll yield = (first volatility futures price − volatility index) / volatility index.
+Calculation: Small-cap trend = small-cap index close compared with its longer-term SMA.
+Calculation: Election-year October = year is four years after a year divisible by four, and month is October.
+Long: McClellan oscillator ≤ −100 AND McClellan oscillator > its previous value OR NOT election-year October AND extreme-negative-skew condition OR NOT election-year October AND fast EMA of McClellan oscillator > slow EMA of McClellan oscillator OR NOT election-year October AND breadth %B ≥ 0 AND its previous value ≤ 0.01 AND skew trend is rising OR NOT election-year October AND small-cap index close > its SMA AND skew trend is rising; strategy entries require position size ≤ 0.
+Short: McClellan oscillator ≥ 100 AND McClellan oscillator < its previous value.
+Exit: long, election-year October AND day of month is 10–17 OR volatility roll yield ≤ 0.01 AND percent-above-threshold trend is falling AND fast EMA of McClellan oscillator < slow EMA of McClellan oscillator AND (VVIX %B ≥ 0.90 OR VXX %B ≥ 0.90 AND fast EMA is falling) AND NOT extreme-negative-skew condition AND NOT small-cap index close > its SMA; exit requires position size > 0.

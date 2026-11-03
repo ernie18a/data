@@ -1,0 +1,7 @@
+Calculation: ATR trailing bands = EMA(close) ± ATR × base multiplier adjusted by ATR percentile; in a long direction the lower band ratchets upward only, and in a short direction the upper band ratchets downward only.
+Calculation: Market regime score = weighted composite of normalized ADX, inverse Choppiness Index, and squared correlation of close with bar index.
+Calculation: Signal quality score = weighted sum of higher-timeframe trend alignment, volume confirmation, directional RSI gradient, market regime score, and breakout strength; weights vary by instrument type, session context, expiry context, volatility, and regime, or use configured custom weights. Breakout strength is the distance beyond the prior band divided by ATR, capped at a configured maximum.
+Long: close > prior upper trailing band AND prior direction is short AND bar is confirmed AND session gate passes (daily charts bypass it) AND quality score ≥ configured minimum AND choppy regime is not excluded by the configured filter.
+Short: close < prior lower trailing band AND prior direction is long AND bar is confirmed AND session gate passes (daily charts bypass it) AND quality score ≥ configured minimum AND choppy regime is not excluded by the configured filter.
+Exit: long, low ≤ active stop OR high ≥ third profit target.
+Exit: short, high ≥ active stop OR low ≤ third profit target.

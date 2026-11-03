@@ -1,0 +1,3 @@
+Calculation: Realized Price moving average = selected moving average of realized cap divided by circulating supply, using the daily source bar still forming (higher or lower than the chart timeframe as applicable)
+Long: price crosses above 0.7 × Realized Price moving average OR 0.5 × Realized Price moving average OR 0.3 × Realized Price moving average
+Short: price crosses below 2 × Realized Price moving average OR 3 × Realized Price moving average OR 4 × Realized Price moving average OR 5 × Realized Price moving average

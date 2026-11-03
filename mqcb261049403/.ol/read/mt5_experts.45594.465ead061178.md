@@ -1,0 +1,6 @@
+Calculation: Fractal direction = For a candidate bar, a peak has a high strictly greater than the highs of an equal number of preceding and succeeding bars; a hollow has a low strictly lower than the lows of those bars. At each signal evaluation, check the candidate that has just acquired the required succeeding bars. Set direction to short for a peak or long for a hollow; if both occur, use long. Otherwise retain the preceding direction, initially neutral.
+Long: Williams %R < lower threshold
+Short: Williams %R > upper threshold
+Long: Fractal direction = long AND previous triple exponential moving average of Williams %R <= lower threshold AND selected bar's triple exponential moving average of Williams %R >= lower threshold
+Short: Fractal direction = short AND previous triple exponential moving average of Williams %R >= upper threshold AND selected bar's triple exponential moving average of Williams %R <= upper threshold
+Calculation: Signal bar = either the current chart bar or the previous chart bar; the two thresholds for the smoothed Williams %R are symmetric around the midpoint of its range.

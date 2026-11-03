@@ -1,0 +1,1 @@
+Exit open positions that were opened before the current day. The script also supports closing open positions or deleting pending orders based on configured order attributes or profitability, and closing all positions and canceling all pending orders.

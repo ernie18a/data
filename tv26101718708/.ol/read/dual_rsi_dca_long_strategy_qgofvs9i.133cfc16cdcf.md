@@ -1,0 +1,3 @@
+Calculation: Cumulative averaging deviation = the sum of the successive percentage drops from base entry; each drop is longer than the previous by a fixed multiplier
+Long: Flat AND lower-timeframe RSI crosses up through its threshold (previous value < threshold AND current value >= threshold) OR long AND fewer than the configured maximum averaging orders have filled AND close <= base entry × (1 − next cumulative averaging deviation / 100)
+Exit: Long, close >= average entry × (1 + minimum profit percentage / 100) AND lower-timeframe RSI crosses down through its threshold (previous value > threshold AND current value <= threshold)

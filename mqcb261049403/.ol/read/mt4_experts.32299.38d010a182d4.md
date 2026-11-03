@@ -1,0 +1,4 @@
+Long: On the same timeframe as the chart, the last completed bar's close > its shorter-lookback SMA of close AND that SMA > its longer-lookback SMA of close AND the preceding completed bar's shorter-lookback SMA < its longer-lookback SMA AND the last completed bar's close > the preceding completed bar's high
+Short: On the same timeframe as the chart, the last completed bar's close < its shorter-lookback SMA of close AND that SMA < its longer-lookback SMA of close AND the preceding completed bar's shorter-lookback SMA > its longer-lookback SMA AND the last completed bar's close < the preceding completed bar's low
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

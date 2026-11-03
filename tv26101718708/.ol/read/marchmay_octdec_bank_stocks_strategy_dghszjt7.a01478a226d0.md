@@ -1,0 +1,2 @@
+Long: year ≥ start year AND (March entry date OR October entry date), where an entry date is the first bar with day-of-month ≥ buy-day threshold in that month
+Exit: long, (May sale date OR December sale date) AND close ≥ entry price × (1 + profit threshold) OR sale previously deferred for insufficient gain AND first bar of a month AND close ≥ entry price × (1 + profit threshold), where a sale date is the first bar with day-of-month ≥ buy-day threshold in May or December

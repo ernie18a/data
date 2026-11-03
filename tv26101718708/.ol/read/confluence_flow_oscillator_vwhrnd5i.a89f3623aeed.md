@@ -1,0 +1,5 @@
+Calculation: Flow Score = weighted average of smoothed Close Location Value × 100, (RSI − 50) × 2, and Chaikin Money Flow × 100
+Calculation: Close Location Value = (2 × close − high − low) / (high − low), or 0 when high = low
+Long: Flow Score crosses above the bullish threshold AND (volume conviction filter disabled OR volume ≥ selected percentile of recent volume) AND (pivot filter disabled OR a confirmed pivot low occurred within the maximum pivot age) AND (exhaustion guard disabled OR RSI < overbought block level AND Flow Score was below zero at least once within the regime window)
+Short: Flow Score crosses below the bearish threshold AND (volume conviction filter disabled OR volume ≥ selected percentile of recent volume) AND (pivot filter disabled OR a confirmed pivot high occurred within the maximum pivot age) AND (exhaustion guard disabled OR RSI > oversold block level AND Flow Score was above zero at least once within the regime window)
+Exit: Long, Flow Score crosses below the bearish threshold AND (exhaustion guard disabled OR RSI > oversold block level AND Flow Score was above zero at least once within the regime window)

@@ -1,0 +1,6 @@
+Calculation: Force = (current bid - close of the last completed higher-timeframe bar) / that close × 10,000
+Calculation: Weighted average entry price = sum of same-side entry prices weighted by position size / total same-side position size
+Long: current chart bar volume ≤ 1 AND ((previous completed chart bar close < open AND Force < -threshold) OR (existing long position count > 0 AND existing long position count < maximum trades AND latest long entry price - current ask ≥ grid step))
+Short: current chart bar volume ≤ 1 AND ((previous completed chart bar close > open AND Force > threshold) OR (existing short position count > 0 AND existing short position count < maximum trades AND current bid - latest short entry price ≥ grid step))
+Exit: long, current bid ≤ latest long entry price - stop-loss distance OR current bid ≥ weighted average long entry price + take-profit distance
+Exit: short, current ask ≥ latest short entry price + stop-loss distance OR current ask ≤ weighted average short entry price - take-profit distance

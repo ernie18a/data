@@ -1,0 +1,7 @@
+Calculation: Current-day high/low = running maximum high/minimum low for the current day.
+Calculation: Premarket high/low = maximum high/minimum low during the premarket session, fixed at regular-session open.
+Calculation: Opening-range high/low = maximum high/minimum low from regular-session open until the configured range duration completes.
+Calculation: Previous day/week/month high/low and previous close = values from the last completed higher-timeframe day, week, or month bar, respectively.
+Calculation: Day open = open of the first regular-session bar.
+Long: During the regular session, close > prior bar's current-day high OR close crosses above a premarket high, completed opening-range high, previous close, day open, previous day high, previous week high, or previous month high OR low < any tracked low level and close > that level OR, after a confirmed close above a high level, a later confirmed bar has low <= that level + ATR retest buffer and close > that level.
+Short: During the regular session, close < prior bar's current-day low OR close crosses below a premarket low, completed opening-range low, previous close, day open, previous day low, previous week low, or previous month low OR high > any tracked high level and close < that level OR, after a confirmed close below a low level, a later confirmed bar has high >= that level - ATR retest buffer and close < that level.

@@ -1,0 +1,6 @@
+Calculation: Fast line = weighted sum of five stochastic oscillators with progressively longer lookbacks, calculated on the configured signal timeframe (which may be higher or lower than the chart timeframe). Use completed bars.
+Calculation: Slow line = recursive smoothing of the fast line on the configured signal timeframe; use completed bars.
+Long: Fast line on the last completed signal-timeframe bar > slow line on that bar AND fast line on the preceding completed signal-timeframe bar <= slow line on that bar
+Short: Fast line on the last completed signal-timeframe bar < slow line on that bar AND fast line on the preceding completed signal-timeframe bar >= slow line on that bar
+Exit: short, fast line on the last completed signal-timeframe bar > slow line on that bar AND fast line on the preceding completed signal-timeframe bar <= slow line on that bar
+Exit: long, fast line on the last completed signal-timeframe bar < slow line on that bar AND fast line on the preceding completed signal-timeframe bar >= slow line on that bar

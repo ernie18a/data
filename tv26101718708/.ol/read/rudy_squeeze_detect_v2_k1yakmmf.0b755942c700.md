@@ -1,0 +1,5 @@
+Calculation: signal score = 2 if volume / longer-lookback average volume exceeds the higher volume-ratio threshold, else 1 if it exceeds the lower volume-ratio threshold, else 0; plus 2 if close-to-prior-close percentage change exceeds the higher positive-gap threshold, else 1 if it exceeds the lower positive-gap threshold, else 0; plus 1 each if shorter-lookback EMA > longer-lookback EMA, close > shorter-lookback EMA, Bollinger Band width as a percentage of its middle band < its threshold, and close’s percentage change over a momentum lookback > its threshold
+Calculation: Bollinger Band width = (upper band - lower band) / middle band × 100
+Calculation: momentum = (close - close from the momentum lookback bars ago) / that prior close × 100
+Long: close > shorter-lookback EMA AND RSI < its maximum threshold AND signal score >= its minimum threshold AND position is flat
+Exit: Long, low <= activated trailing stop OR close < shorter-lookback EMA AND momentum < its negative fade threshold

@@ -1,0 +1,1 @@
+When enabled, close all positions if account equity drawdown from its peak reaches the configured limit. Close all positions at the configured Friday cutoff. Restrict new entries to the configured trading hours and avoid opening trades during the Wednesday triple-swap window.

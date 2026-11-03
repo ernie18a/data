@@ -1,0 +1,7 @@
+Calculation: V-derived price = let v be the cumulative sum of (close − open) × volume ÷ (high − low); let shadow = (v − short-lookback SMA(v)) ÷ longer-lookback standard deviation of (v − short-lookback SMA(v)) × longer-lookback standard deviation of (high − low); use high + shadow when shadow > 0, otherwise low + shadow.
+Calculation: Modified SuperTrend line = let basis be the EMA of V-derived price and let ATR bands be basis ± ATR × multiplier; lower trail = max(lower band, prior lower trail) when prior close > prior lower trail, otherwise lower band; upper trail = min(upper band, prior upper trail) when prior close < prior upper trail, otherwise upper band; direction = up when close > prior upper trail, down when close < prior lower trail, otherwise prior direction (initially up); line = lower trail when direction is up, otherwise upper trail.
+Calculation: VWAP deviation bands = endpoint projection of the linear regression of VWAP over a lookback, plus or minus a multiple of VWAP's standard deviation over the same lookback.
+Long: close crosses above Modified SuperTrend line AND close > long-lookback EMA of open
+Short: close crosses below Modified SuperTrend line AND close < long-lookback EMA of open
+Exit: long, close crosses below the upper VWAP deviation band
+Exit: short, close crosses above the lower VWAP deviation band

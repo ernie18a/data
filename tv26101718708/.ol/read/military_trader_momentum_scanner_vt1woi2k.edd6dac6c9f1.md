@@ -1,0 +1,2 @@
+Calculation: Session high = highest high since the start of the current day
+Long: close > VWAP AND EMA(close, shorter lookback) > EMA(close, longer lookback) AND volume > SMA(volume, lookback) × multiplier AND high >= prior bar's session high AND close > open

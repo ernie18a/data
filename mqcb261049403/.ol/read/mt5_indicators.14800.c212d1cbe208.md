@@ -1,0 +1,4 @@
+Calculation: +DI = smooth(max(high − previous high, 0) when that upward move is strictly greater than max(previous low − low, 0), otherwise 0) / true range × 100; true range = max(high − low, |high − previous close|, |low − previous close|). Use the same smoothing method and lookback as for −DI.
+Calculation: −DI = smooth(max(previous low − low, 0) when that downward move is strictly greater than max(high − previous high, 0), otherwise 0) / true range × 100; true range = max(high − low, |high − previous close|, |low − previous close|). Use the same smoothing method and lookback as for +DI. Calculations use chart-timeframe bars, or the selected timeframe if it is higher; on a higher timeframe use the bar still forming.
+Long: +DI > −DI
+Short: −DI > +DI

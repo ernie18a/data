@@ -1,0 +1,1 @@
+When the two instruments usually show strong positive or negative correlation, watch for one to break away from that relationship. Identify the instrument deviating from the usual pattern and trade it in the direction of the other instrument. No exit rule is specified.

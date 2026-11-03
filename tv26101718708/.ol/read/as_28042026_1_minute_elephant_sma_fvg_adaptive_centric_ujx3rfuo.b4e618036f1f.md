@@ -1,0 +1,5 @@
+Calculation: Elephant bar = high - low > ATR × range multiplier AND (high > low ? abs(close - open) / (high - low) : 0) > minimum body fraction
+Calculation: SMA200 distance = abs(close - long-term SMA) / long-term SMA
+Calculation: Higher-timeframe EMA = EMA of close on a higher timeframe, using the bar still forming
+Long: close > short-term SMA AND close > previous close's corresponding short-term SMA; OR close > higher-timeframe EMA AND previous close <= previous higher-timeframe EMA; OR high - low > ATR × range multiplier AND (high > low ? abs(close - open) / (high - low) : 0) > minimum body fraction AND close > open; OR low > high two bars ago; OR short-term SMA > its previous value; OR medium-term SMA > long-term SMA AND SMA200 distance >= range threshold
+Short: close <= short-term SMA; OR close < higher-timeframe EMA AND previous close >= previous higher-timeframe EMA; OR high - low > ATR × range multiplier AND (high > low ? abs(close - open) / (high - low) : 0) > minimum body fraction AND close < open; OR high < low two bars ago; OR short-term SMA <= its previous value; OR medium-term SMA < long-term SMA AND SMA200 distance >= range threshold

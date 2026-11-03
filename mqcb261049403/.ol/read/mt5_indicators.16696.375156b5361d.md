@@ -1,0 +1,6 @@
+Calculation: T3 = combine six successive exponential smoothings of the selected price; each stage is EMAᵢ = EMAᵢ₋₁ + α(inputᵢ − EMAᵢ₋₁), with α = 2/(1 + period) in original mode or 2/(2 + (period − 1)/2) otherwise. Combine stages 2–5 as c1·EMA6 + c2·EMA5 + c3·EMA4 + c4·EMA3, where c1 = −hot³, c2 = 3·hot² + 3·hot³, c3 = −6·hot² − 3·hot − 3·hot³, and c4 = 1 + 3·hot + hot² + 3·hot³. Use the chart timeframe or the configured higher timeframe; when using a higher timeframe, use its still-forming bar.
+Calculation: Upper floating level = lowest T3 in the lookback including the current bar + (highest T3 − lowest T3) × upper-level percentage.
+Calculation: Lower floating level = lowest T3 in the lookback including the current bar + (highest T3 − lowest T3) × lower-level percentage.
+Calculation: Middle level = (upper floating level + lower floating level) / 2.
+Long: T3 > upper floating level (outer-level mode) OR T3 > middle level (middle-level mode) OR T3 > prior-bar T3 (slope mode).
+Short: T3 < lower floating level (outer-level mode) OR T3 < middle level (middle-level mode) OR T3 < prior-bar T3 (slope mode).

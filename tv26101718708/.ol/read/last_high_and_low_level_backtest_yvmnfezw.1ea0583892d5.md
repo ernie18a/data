@@ -1,0 +1,2 @@
+Long: close > high of the selected higher-timeframe period at the configured lookback, using the current still-forming period if the lookback is 0 and a completed period otherwise, when reverse trading is disabled; close < low of that period when reverse trading is enabled
+Short: close < low of the selected higher-timeframe period at the configured lookback, using the current still-forming period if the lookback is 0 and a completed period otherwise, when reverse trading is disabled; close > high of that period when reverse trading is enabled

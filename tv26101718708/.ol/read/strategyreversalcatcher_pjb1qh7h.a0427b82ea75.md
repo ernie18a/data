@@ -1,0 +1,8 @@
+Long: On a completed chart-timeframe bar, previous high < previous lower Bollinger Band AND current close > current lower Bollinger Band AND current close < current upper Bollinger Band AND current low > previous low AND current high > previous high AND current close > previous high AND RSI crosses above its oversold threshold AND shorter-period EMA < longer-period EMA AND (always-on mode is enabled OR exchange-local time < configured end-of-day cutoff)
+Short: On a completed chart-timeframe bar, previous low > previous upper Bollinger Band AND current close < current upper Bollinger Band AND current close > current lower Bollinger Band AND current low < previous low AND current high < previous high AND current close < previous low AND RSI crosses below its overbought threshold AND shorter-period EMA > longer-period EMA AND (always-on mode is enabled OR exchange-local time < configured end-of-day cutoff)
+Calculation: Long stop = low of the bar before the entry signal
+Calculation: Long target = upper Bollinger Band on the entry bar if that bar's high >= its Bollinger basis; otherwise its Bollinger basis
+Calculation: Short stop = high of the bar before the entry signal
+Calculation: Short target = lower Bollinger Band on the entry bar if that bar's low <= its Bollinger basis; otherwise its Bollinger basis
+Exit: Long, close >= long target OR close <= long stop OR (always-on mode is disabled AND exchange-local time >= configured end-of-day cutoff)
+Exit: Short, close <= short target OR close >= short stop OR (always-on mode is disabled AND exchange-local time >= configured end-of-day cutoff)

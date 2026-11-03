@@ -1,0 +1,3 @@
+Calculation: Short-term deviation = percentage deviation of the higher-timeframe close from its shorter-lookback simple moving average; use the last completed bar when confirmed-bar mode is enabled, otherwise the bar still forming.
+Calculation: Long-term deviation = percentage deviation of the higher-timeframe close from its longer-lookback simple moving average; use the last completed bar when confirmed-bar mode is enabled, otherwise the bar still forming.
+Long: Short-term deviation is at or below its threshold AND was above its threshold on the previous chart bar OR long-term deviation is at or below its threshold AND was above its threshold on the previous chart bar.

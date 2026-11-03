@@ -1,0 +1,7 @@
+Calculation: Selected source = close, volume, rate of change of close, Heikin Ashi close, or rate of change of Heikin Ashi close
+Calculation: Rate of change = 100 × (current value − value N bars ago) / value N bars ago; use 0 when the earlier value is 0
+Calculation: Heikin Ashi close = (open + high + low + close) / 4
+Long: selected source crosses above its EMA AND (ADX ≥ threshold if the ADX filter is enabled) AND (volume > volume multiplier × volume SMA if the volume filter is enabled)
+Short: selected source crosses below its EMA AND (ADX ≥ threshold if the ADX filter is enabled) AND (volume > volume multiplier × volume SMA if the volume filter is enabled)
+Exit: Long, short-entry condition in reverse-signal mode OR low ≤ entry price − ATR multiplier × ATR at entry in ATR mode OR low ≤ close at entry signal × (1 − stop-loss percentage) in percent mode OR high ≥ close at entry signal × (1 + take-profit percentage) in percent mode
+Exit: Short, long-entry condition in reverse-signal mode OR high ≥ entry price + ATR multiplier × ATR at entry in ATR mode OR high ≥ close at entry signal × (1 + stop-loss percentage) in percent mode OR low ≤ close at entry signal × (1 − take-profit percentage) in percent mode

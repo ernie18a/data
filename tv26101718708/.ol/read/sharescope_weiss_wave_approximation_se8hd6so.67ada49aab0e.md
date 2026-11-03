@@ -1,0 +1,3 @@
+Calculation: Reversal fraction = configured ZigZag percentage / 100
+Long: wave direction = up OR (wave direction is down AND high ≥ current down-wave low × (1 + reversal fraction)) OR (no wave direction established AND high ≥ lowest low tracked since initialization × (1 + reversal fraction))
+Short: wave direction = down OR (wave direction is up AND low ≤ current up-wave high × (1 − reversal fraction)) OR (no wave direction established AND low ≤ highest high tracked since initialization × (1 − reversal fraction))

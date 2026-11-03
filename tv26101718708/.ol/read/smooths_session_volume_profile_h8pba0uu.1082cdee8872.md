@@ -1,0 +1,7 @@
+Calculation: Buy volume per bar = volume × (close − low) / (high − low); if high = low, buy volume = sell volume = volume / 2. Sell volume per bar = volume − buy volume.
+Calculation: Buy and sell profile density = sum across included bars of each side’s bar volume modeled as a normal distribution truncated to that bar’s low–high range; buy centers at (low + close) / 2, sell centers at (close + high) / 2, and both use standard deviation (high − low) / concentration parameter. Flat bars contribute point mass at close.
+Calculation: Profile POC = sampled price with maximum combined buy and sell density. Profile overlap = 100 × the integral of the pointwise minimum of buy and sell densities after each is divided by its total profile volume. Profile tilt = 100 × (total buy volume − total sell volume) / (total buy volume + total sell volume).
+Long: At the first profile sample above or below the POC with buy density greater than sell density at the adjacent lower sample × imbalance threshold.
+Short: At the first profile sample above or below the POC with sell density greater than buy density at the adjacent higher sample × imbalance threshold.
+Long: Profile overlap < 75% AND profile tilt ≥ balance-tilt threshold.
+Short: Profile overlap < 75% AND profile tilt ≤ −balance-tilt threshold.

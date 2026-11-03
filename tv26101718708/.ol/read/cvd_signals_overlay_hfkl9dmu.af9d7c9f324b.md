@@ -1,0 +1,3 @@
+Calculation: Cumulative volume delta = running sum of per-bar volume delta, restarting at the configured reset boundary; per-bar delta is determined by the configured method: +volume if close ≥ open, otherwise −volume; volume × (2×close − high − low)/(high − low) when high > low, otherwise 0; or +volume/−volume/0 when close is above/below/equal to the prior close.
+Long: CVD > its moving average AND prior CVD ≤ its prior moving average AND no prior raw downward cross exists OR the number of bars since the most recent raw downward cross ≥ the configured minimum gap.
+Short: CVD < its moving average AND prior CVD ≥ its prior moving average AND no prior raw upward cross exists OR the number of bars since the most recent raw upward cross ≥ the configured minimum gap.

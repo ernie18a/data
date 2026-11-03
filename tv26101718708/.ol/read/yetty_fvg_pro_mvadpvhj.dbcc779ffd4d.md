@@ -1,0 +1,2 @@
+Long: (current completed chart-timeframe bar low > high two bars earlier AND low − high two bars earlier ≥ configured minimum gap size) OR (a bearish FVG exists AND current completed chart-timeframe bar close > its upper boundary)
+Short: (current completed chart-timeframe bar high < low two bars earlier AND low two bars earlier − high ≥ configured minimum gap size) OR (a bullish FVG exists AND current completed chart-timeframe bar close < its lower boundary)

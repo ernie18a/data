@@ -1,0 +1,8 @@
+Calculation: Higher-timeframe 200 EMA = exponential moving average of close on a timeframe higher than the chart; uses the bar still forming.
+Calculation: Retest zone = prices within the configured percentage above or below the higher-timeframe 200 EMA.
+Calculation: Active breakdown = a close crosses below the higher-timeframe 200 EMA and the configured maximum number of chart bars since that cross has not elapsed.
+Calculation: Retest seen = after the active breakdown bar, at least one chart bar touches the retest zone.
+Calculation: Bullish confirmation = the configured choice of: bullish candle and close above the 200 EMA; bullish engulfing candle and close above the 200 EMA; bullish candle closing above the prior chart bar's high and above the 200 EMA; or higher chart-bar high and higher chart-bar low than the prior bar, with close above the 200 EMA.
+Calculation: Enabled long filters = 200 EMA is flat or rising versus its configured longer lookback; configured current or last completed higher-timeframe close is above its corresponding 200 EMA; volume on the configured timeframe (which may be higher or lower than the chart, using its bar still forming) exceeds its longer-lookback average times a multiplier; current daily market-symbol close is above its daily EMA (daily bar still forming); chart close is above its shorter-lookback 21 EMA; and 200 EMA cross events over the configured chart-bar lookback do not exceed the configured maximum.
+Long: active breakdown AND retest seen AND bullish confirmation AND every enabled long filter
+Short: chart close crosses below the higher-timeframe 200 EMA

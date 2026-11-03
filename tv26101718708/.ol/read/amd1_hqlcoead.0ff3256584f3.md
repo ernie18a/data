@@ -1,0 +1,6 @@
+Calculation: Accumulation range = highest high minus lowest low over the accumulation lookback; its high and low bounds may expand while bars remain within the volatility tolerance.
+Calculation: Candle body percentage = abs(close − open) / (high − low).
+Calculation: Higher-timeframe bias = on each higher timeframe, close above/below its longer-term SMA is bullish/bearish; combined bias is bullish/bearish only when both higher-timeframe biases agree, otherwise neutral. Use the last completed higher-timeframe bars.
+Calculation: Setup score = base score plus an alignment bonus when the combined higher-timeframe bias matches the signal direction.
+Long: An accumulation range was detected when its range was within the volatility limit; a later bar swept below its low by more than the sweep tolerance; a subsequent close crossed above its high; displacement body percentage meets its minimum threshold if displacement is enabled; setup score ≥ minimum score.
+Short: An accumulation range was detected when its range was within the volatility limit; a later bar swept above its high by more than the sweep tolerance; a subsequent close crossed below its low; displacement body percentage meets its minimum threshold if displacement is enabled; setup score ≥ minimum score.

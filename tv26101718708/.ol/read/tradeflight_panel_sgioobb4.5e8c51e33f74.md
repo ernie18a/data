@@ -1,0 +1,2 @@
+Long: On each displayed timeframe, close > 14 EMA AND 14 EMA > its value 3 bars earlier (higher timeframe: still-forming bar; lower timeframe: last completed bar; chart timeframe: current bar) OR 14 EMA > 50 EMA > 200 EMA
+Short: On each displayed timeframe, close < 14 EMA AND 14 EMA < its value 3 bars earlier (higher timeframe: still-forming bar; lower timeframe: last completed bar; chart timeframe: current bar) OR 14 EMA < 50 EMA < 200 EMA

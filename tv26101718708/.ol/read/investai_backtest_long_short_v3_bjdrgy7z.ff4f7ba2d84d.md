@@ -1,0 +1,4 @@
+Long: On the previous bar, fast EMA crossed above slow EMA AND RSI is above its lower threshold AND RSI is below its upper threshold AND MACD line > MACD signal line AND (volume > its moving average × threshold if the volume filter is enabled) AND (close > long-term EMA if the macro filter is enabled)
+Short: On the previous bar, fast EMA crossed below slow EMA AND RSI is below its upper threshold AND RSI is above its lower threshold AND MACD line < MACD signal line AND (volume > its moving average × threshold if the volume filter is enabled) AND (close < long-term EMA if the macro filter is enabled)
+Exit: long, low <= entry price - ATR × stop multiplier OR high >= entry price + ATR × target multiplier
+Exit: short, high >= entry price + ATR × stop multiplier OR low <= entry price - ATR × target multiplier

@@ -1,0 +1,6 @@
+Calculation: Gap up = open > prior bar close AND (open - prior bar close) / prior bar close * 100 >= minimum gap percentage
+Calculation: Gap down = open < prior bar close AND (prior bar close - open) / prior bar close * 100 >= minimum gap percentage
+Calculation: Gap fill event = at least one tracked, unfilled gap up has low <= its lower boundary, or at least one tracked, unfilled gap down has high >= its upper boundary
+Calculation: Gap-and-go event = at least one tracked, unfilled gap has been open for more than 5 bars, has not filled on the current bar, and close > its upper boundary for a gap up or close < its lower boundary for a gap down, with volume / volume SMA > 1.2
+Long: current bar is confirmed AND volume > volume SMA AND bars since last signal >= signal cooldown AND ((gap fill event AND close > open) OR (gap-and-go event AND gap up))
+Short: current bar is confirmed AND volume > volume SMA AND bars since last signal >= signal cooldown AND ((gap fill event AND close < open) OR (gap-and-go event AND gap down))

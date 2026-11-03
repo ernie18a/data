@@ -1,0 +1,5 @@
+Calculation: Relative Strength Rating = percentile rating of the ratio between the weighted price-performance composite of the stock or tracked ETF and the same composite for SPX; the composite uses progressively longer lookbacks. Use higher-timeframe bars, including the bar still forming.
+Calculation: Tracked ETF return = percentage change from the close at each progressively longer lookback to the current close, using higher-timeframe bars, including the bar still forming.
+Calculation: Tracked ETF daily return = (current daily close − current daily open) / current daily open, using the higher-timeframe bar still forming.
+Long: Stock Relative Strength Rating >= 80 OR Tracked ETF Relative Strength Rating >= 80 OR Tracked ETF daily return >= 0 OR Tracked ETF return at any displayed lookback >= 0
+Short: Stock Relative Strength Rating <= 50 OR Tracked ETF Relative Strength Rating <= 50 OR Tracked ETF daily return < 0 OR Tracked ETF return at any displayed lookback < 0

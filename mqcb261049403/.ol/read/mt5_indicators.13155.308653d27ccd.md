@@ -1,0 +1,3 @@
+Calculation: Center of Gravity OSMA = Apply a simple moving average and a linear weighted moving average with the same lookback to the selected bar price; multiply them, divide by the instrument’s point size, subtract a moving average of that product, then apply a second moving average to the difference. The two smoothing lookbacks may differ. On the selected timeframe, which is the chart timeframe or higher, use the bar still forming.
+Long: Center of Gravity OSMA > 0
+Short: Center of Gravity OSMA < 0

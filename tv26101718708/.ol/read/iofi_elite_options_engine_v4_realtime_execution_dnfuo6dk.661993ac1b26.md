@@ -1,0 +1,5 @@
+Calculation: Total score = weighted sum of: shortest EMA > medium EMA > longest EMA AND close > VWAP; RSI between a lower and an upper threshold; volume > its longer-lookback average × a multiplier; ADX > a threshold; ATR > its longer-lookback moving average; close > prior bar high; higher-timeframe shortest EMA > higher-timeframe medium EMA (use the last completed higher-timeframe bar)
+Long: total score ≥ threshold AND higher-timeframe shortest EMA > higher-timeframe medium EMA AND flat AND bars since prior long entry > cooldown period
+Short: shortest EMA < medium EMA AND close < VWAP AND RSI < threshold AND higher-timeframe shortest EMA < higher-timeframe medium EMA AND flat AND bars since prior short entry > cooldown period
+Exit: long, close < shortest EMA OR close < VWAP
+Exit: short, close > shortest EMA OR close > VWAP

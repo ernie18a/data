@@ -1,0 +1,3 @@
+Calculation: Seasonal score = weighted win rate for historical returns in the current calendar month and week; monthly win rates use nested short-to-long lookbacks with greater weight on longer lookbacks, and the longer-lookback weekly win rate is combined with the monthly score at a lower weight. Historical returns use completed daily bars from matching calendar periods in prior years.
+Long: Seasonal score >= neutral threshold
+Short: Seasonal score < neutral threshold

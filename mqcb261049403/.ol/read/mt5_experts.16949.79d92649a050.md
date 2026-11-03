@@ -1,0 +1,6 @@
+Calculation: Simple moving average = arithmetic mean of closing prices over its lookback; the long-term lookback is longer than the short-term lookback.
+Calculation: ATR = average true range.
+Long: Short-term simple moving average on the last completed chart bar > long-term simple moving average on the same bar AND short-term simple moving average on the preceding completed chart bar <= long-term simple moving average on that bar.
+Short: Short-term simple moving average on the last completed chart bar < long-term simple moving average on the same bar AND short-term simple moving average on the preceding completed chart bar >= long-term simple moving average on that bar.
+Exit: Long, short-term simple moving average on the last completed chart bar < long-term simple moving average on the same bar AND short-term simple moving average on the preceding completed chart bar >= long-term simple moving average on that bar OR low <= entry price − ATR at entry.
+Exit: Short, short-term simple moving average on the last completed chart bar > long-term simple moving average on the same bar AND short-term simple moving average on the preceding completed chart bar <= long-term simple moving average on that bar OR high >= entry price + ATR at entry.

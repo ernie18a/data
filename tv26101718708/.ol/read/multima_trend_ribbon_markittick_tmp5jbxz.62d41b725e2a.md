@@ -1,0 +1,6 @@
+Long: Fast moving average > slow moving average on the previous completed chart bar AND fast moving average <= slow moving average two completed chart bars ago AND enabled filters pass
+Long: Close > fast moving average on the previous completed chart bar AND close <= fast moving average two completed chart bars ago AND enabled filters pass
+Short: Fast moving average < slow moving average on the previous completed chart bar AND fast moving average >= slow moving average two completed chart bars ago AND enabled filters pass
+Short: Close < fast moving average on the previous completed chart bar AND close >= fast moving average two completed chart bars ago AND enabled filters pass
+Exit: Long, Fast moving average < slow moving average on the previous completed chart bar AND fast moving average >= slow moving average two completed chart bars ago AND enabled filters pass
+Exit: Short, Fast moving average > slow moving average on the previous completed chart bar AND fast moving average <= slow moving average two completed chart bars ago AND enabled filters pass

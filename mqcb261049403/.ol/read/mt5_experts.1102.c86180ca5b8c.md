@@ -1,0 +1,6 @@
+Calculation: Smoothed Bulls = apply the selected smoothing method and lookback to each bar’s raw Bulls value on the selected indicator timeframe (which may be higher, equal to, or lower than the chart timeframe). For each bar, let range = high − low, body = |open − close|, and unit = range / volume (use 1 if unit is 0); swing = (range + body) / (2 × unit). Raw Bulls = (open − close) / unit + swing when open > close; otherwise swing.
+Calculation: Smoothed Bears = apply the same selected smoothing method and lookback as Smoothed Bulls to each bar’s raw Bears value on the selected indicator timeframe. Raw Bears = (close − open) / unit + swing when close > open; otherwise swing.
+Long: Smoothed Bears on the last completed bar > Smoothed Bulls on the last completed bar AND Smoothed Bears on the preceding completed bar <= Smoothed Bulls on the preceding completed bar
+Short: Smoothed Bears on the last completed bar < Smoothed Bulls on the last completed bar AND Smoothed Bears on the preceding completed bar >= Smoothed Bulls on the preceding completed bar
+Exit: Long, Smoothed Bears on the last completed bar < Smoothed Bulls on the last completed bar
+Exit: Short, Smoothed Bears on the last completed bar > Smoothed Bulls on the last completed bar

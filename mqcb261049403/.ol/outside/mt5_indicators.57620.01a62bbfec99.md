@@ -1,0 +1,1 @@
+For range-bound spread trading, short the synthetic spread when its value rises and go long when its value falls. The indicator defines the spread from the two instruments’ opening prices, subtracting the second instrument when they move in the same direction or adding it when they move in opposite directions. No exit condition is specified.

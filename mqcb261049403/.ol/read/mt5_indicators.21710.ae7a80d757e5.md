@@ -1,0 +1,4 @@
+Calculation: Trend trigger factor = 200 × (buy power − sell power) / (buy power + sell power), where buy power is the highest high in the recent lookback minus the lowest low in the immediately preceding, equal-length lookback, and sell power is the highest high in that preceding lookback minus the lowest low in the recent lookback; use 0 if the denominator is zero
+Calculation: Smoothed trend trigger factor = T3 smoothing of the trend trigger factor, using six cascaded EMAs combined with T3 coefficients; the EMA smoothing factor is 2/(1 + period) for Tillson T3 or 2/(2 + (period − 1)/2) for Fulks/Matulich T3
+Long: Smoothed trend trigger factor > positive threshold
+Short: Smoothed trend trigger factor < negative threshold

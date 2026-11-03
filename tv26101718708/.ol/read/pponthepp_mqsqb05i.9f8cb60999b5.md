@@ -1,0 +1,5 @@
+Calculation: Adjusted high/low = high/low, or (1/low)/(1/high) when a comparison series is inverted
+Calculation: High break = current period adjusted high > previous completed period adjusted high
+Calculation: Low break = current period adjusted low < previous completed period adjusted low
+Long: Within any cycle (higher-timeframe weekly bars, higher-timeframe daily bars, or lower-timeframe bars aggregated into 6-hour NY sessions, 90-minute NY quarters, or 22.5-minute NY quarters), at least one comparison series has a Low break AND at least one comparison series does not have a Low break; the current comparison period is still forming and the reference period is completed
+Short: Within any cycle (higher-timeframe weekly bars, higher-timeframe daily bars, or lower-timeframe bars aggregated into 6-hour NY sessions, 90-minute NY quarters, or 22.5-minute NY quarters), at least one comparison series has a High break AND at least one comparison series does not have a High break; the current comparison period is still forming and the reference period is completed

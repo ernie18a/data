@@ -1,0 +1,3 @@
+Calculation: Real body midpoint = (open + close) / 2
+Long: close > open AND (volume > volume SMA × first volume multiplier OR volume > volume SMA × second volume multiplier) AND on a later bar, low <= the midpoint of that vector candle AND high >= that midpoint
+Short: close < open AND (volume > volume SMA × first volume multiplier OR volume > volume SMA × second volume multiplier) AND on a later bar, low <= the midpoint of that vector candle AND high >= that midpoint

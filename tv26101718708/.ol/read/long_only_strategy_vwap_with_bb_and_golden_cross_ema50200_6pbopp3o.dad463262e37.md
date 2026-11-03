@@ -1,0 +1,3 @@
+Long: Flat AND short-term EMA of close (shorter lookback) > long-term EMA of close (longer lookback) AND close > open AND close > session VWAP AND close < upper Bollinger band AND at least one of the recent prior completed chart bars had its close below its lower Bollinger band
+Long: Already long AND close < entry price AND close > session VWAP
+Exit: Long, close crosses above the upper Bollinger band (current close > current upper band AND prior close <= prior upper band)

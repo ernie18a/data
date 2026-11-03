@@ -1,0 +1,2 @@
+Long: Flat AND RSI < entry threshold; OR long position AND fewer than five safety orders filled AND close <= base entry price × (1 − deviation of the next safety order)
+Exit: Long, close >= average position entry price × (1 + take-profit percentage)

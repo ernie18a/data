@@ -1,0 +1,1 @@
+For each eligible open position, close it if total account profit exceeds the configured close-all target. Otherwise, close a long position when price is above the upper Bollinger Band, RSI is overbought, and price is above the position’s entry price. Close a short position when price is below the lower Bollinger Band, RSI is oversold, and price is below its entry price.

@@ -1,0 +1,8 @@
+Calculation: Fractal breakout = scan chart-timeframe fractal values from oldest to newest over the lookback; return up when the current bar's open is at or above an upper fractal and at least one of the previous three highs is below it; return down when the open is at or below a lower fractal and at least one of the previous three lows is above it. If a bar has both fractal types, return neither.
+Calculation: Renko direction = scan chart-timeframe bars from oldest to newest over the lookback; return up at the first bar where open minus low is at least the threshold, or down at the first bar where high minus open is at least the threshold. The threshold is either the configured box size or the 14-bar ATR on the chart timeframe, using the bar still forming.
+Calculation: Short-term EMA cluster = EMAs of typical price on the chart timeframe, using the bar still forming, with shorter lookbacks.
+Calculation: Long-term EMA cluster = EMAs of typical price on the chart timeframe, using the bar still forming, with lookbacks longer than those in the short-term cluster.
+Long: Alligator lips > teeth > jaw on the chart timeframe's last completed bar AND fractal breakout is up AND Renko direction is up
+Short: Alligator lips < teeth < jaw on the chart timeframe's last completed bar AND fractal breakout is down AND Renko direction is down
+Exit: long, all EMAs in the short-term cluster are equal OR all EMAs in the long-term cluster are equal OR last completed close <= lower Bollinger Band
+Exit: short, all EMAs in the short-term cluster are equal OR all EMAs in the long-term cluster are equal OR last completed close <= lower Bollinger Band

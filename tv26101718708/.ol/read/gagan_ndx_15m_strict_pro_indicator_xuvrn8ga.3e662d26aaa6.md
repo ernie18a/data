@@ -1,0 +1,3 @@
+Calculation: Strong candle = high > low AND abs(close - open) / (high - low) meets a configurable strength threshold
+Long: close > VWAP AND short-term EMA > medium-term EMA AND medium-term EMA > long-term EMA AND RSI > configurable threshold AND MACD histogram > 0 AND Strong candle AND the prior bar did not meet all these trend conditions
+Short: close < VWAP AND short-term EMA < medium-term EMA AND medium-term EMA < long-term EMA AND RSI < configurable threshold AND MACD histogram < 0 AND Strong candle AND the prior bar did not meet all these trend conditions

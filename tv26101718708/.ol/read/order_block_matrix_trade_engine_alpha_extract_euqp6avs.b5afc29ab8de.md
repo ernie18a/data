@@ -1,0 +1,12 @@
+Calculation: Bullish order block = either the candle `lookback` bars ago has range > 0.8 × ATR(14), closes above its open, and its low is below the prior bar’s low; or the oldest of the last `lookback` bars closes below its open and every later bar in that sequence closes at or above its open.
+Calculation: Bearish order block = either the candle `lookback` bars ago has range > 0.8 × ATR(14), closes below its open, and its high is above the prior bar’s high; or the oldest of the last `lookback` bars closes above its open and every later bar in that sequence closes at or below its open.
+Calculation: Bullish block zone = high and low of the bar `lookback − 1` bars ago; in breadth mode, use the greater of that bar’s low and its low + current ATR(14) as the zone bottom.
+Calculation: Bearish block zone = high and low of the bar `lookback − 1` bars ago; in breadth mode, use the lesser of that bar’s high and its high − current ATR(14) as the zone top.
+Calculation: Block strength = the volume of the block’s source bar divided by the 20-bar simple moving average of volume.
+Calculation: Bullish touch = close is within an active bullish block zone. Bullish rejection = low is at or below the zone bottom AND close is at or above the zone bottom.
+Calculation: Bearish touch = close is within an active bearish block zone. Bearish rejection = high is at or above the zone top AND close is at or below the zone top.
+Calculation: Long stop = bullish block bottom in block-edge mode, otherwise entry price − ATR(14) × stop multiplier. Short stop = bearish block top in block-edge mode, otherwise entry price + ATR(14) × stop multiplier. Long target = entry price + abs(entry price − long stop) × reward-to-risk multiplier. Short target = entry price − abs(entry price − short stop) × reward-to-risk multiplier.
+Long: bullish order block detected OR active bullish touch OR active bullish rejection OR (flat AND confirmed bar AND selected bullish trigger (touch or rejection) AND strongest qualifying active bullish block strength ≥ minimum strength)
+Short: bearish order block detected OR active bearish touch OR active bearish rejection OR (flat AND confirmed bar AND no qualifying bullish entry AND selected bearish trigger (touch or rejection) AND strongest qualifying active bearish block strength ≥ minimum strength)
+Exit: long, bar after entry AND (high ≥ long target OR low ≤ long stop)
+Exit: short, bar after entry AND (low ≤ short target OR high ≥ short stop)

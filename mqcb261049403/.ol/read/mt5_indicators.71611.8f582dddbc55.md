@@ -1,0 +1,5 @@
+Calculation: RSI pivot low = RSI is lower than RSI on each of the configured number of bars before and after it
+Calculation: RSI pivot high = RSI is higher than RSI on each of the configured number of bars before and after it
+Calculation: Signed volume = current chart bar volume when its close is above its open; otherwise negative current chart bar volume
+Long: RSI pivot low AND its low is below the low at the previous RSI pivot low AND its RSI is above the RSI at the previous RSI pivot low AND its RSI is at or below the long RSI threshold AND (the pivot is not the newest confirmed pivot OR (the still-forming higher-timeframe close is at or above its open AND signed volume is at or above zero))
+Short: RSI pivot high AND its high is above the high at the previous RSI pivot high AND its RSI is below the RSI at the previous RSI pivot high AND its RSI is at or above the short RSI threshold AND (the pivot is not the newest confirmed pivot OR (the still-forming higher-timeframe close is below its open AND signed volume is at or below zero))

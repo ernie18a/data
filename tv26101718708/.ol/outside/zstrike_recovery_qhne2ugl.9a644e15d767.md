@@ -1,0 +1,1 @@
+Calculate the traded instrument’s selected volatility index close-to-close change, then standardize the latest change against its rolling mean and standard deviation. Enter long when this Z-score exceeds a positive threshold and no position is open. Close the position after a fixed number of bars from entry, regardless of market conditions. No short entry rule.

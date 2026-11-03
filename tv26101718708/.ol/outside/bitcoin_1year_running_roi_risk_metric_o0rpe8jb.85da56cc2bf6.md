@@ -1,0 +1,1 @@
+Calculate Bitcoin’s one-year return, take its natural logarithm, and normalize it between time-based regression curves fitted to historical cycle bottoms and tops. Go long when the normalized risk is at or below the buy-zone threshold; exit or sell when it is at or above the sell-zone threshold. Between the thresholds, give no directional signal.

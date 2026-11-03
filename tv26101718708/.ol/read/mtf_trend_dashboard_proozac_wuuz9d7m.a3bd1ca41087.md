@@ -1,0 +1,3 @@
+Calculation: Bullish timeframe count = number of the six configured timeframes where the fast EMA is above the slow EMA
+Long: On any configured timeframe equal to or higher than the chart timeframe, fast EMA > slow EMA AND RSI < 65, using that timeframe’s last completed bar; OR bullish timeframe count >= 4
+Short: On any configured timeframe equal to or higher than the chart timeframe, fast EMA < slow EMA AND RSI > 35, using that timeframe’s last completed bar; OR bullish timeframe count <= 2

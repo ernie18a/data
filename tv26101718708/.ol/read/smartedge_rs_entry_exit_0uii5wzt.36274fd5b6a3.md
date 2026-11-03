@@ -1,0 +1,6 @@
+Calculation: Relative strength = EMA of chart close divided by benchmark close
+Calculation: Average volume = simple moving average of volume
+Long: Fast moving average crosses above slow moving average AND relative strength is rising over its lookback AND RSI is above its oversold threshold AND RSI is below its overbought threshold AND volume is at least average volume times the volume multiplier OR fast moving average is above slow moving average AND close is above fast moving average AND previous close was below previous fast moving average AND relative strength is rising over its lookback AND RSI is below the fixed upper threshold AND volume is at least average volume times the volume multiplier
+Short: Fast moving average crosses below slow moving average AND relative strength is falling over its lookback AND RSI is below 100 minus its oversold threshold AND volume is at least average volume times the volume multiplier
+Exit: long, fast moving average crosses below slow moving average OR relative strength is falling over its lookback AND RSI is above its overbought threshold
+Exit: short, fast moving average crosses above slow moving average OR relative strength is rising over its lookback

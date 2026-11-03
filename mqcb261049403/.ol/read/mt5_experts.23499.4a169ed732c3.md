@@ -1,0 +1,4 @@
+Long: Reverse is off AND lower-timeframe completed bar #1 is bearish AND (high of completed lower-timeframe bar #14 − low of completed lower-timeframe bar #1) > Step, OR Reverse is on AND lower-timeframe completed bar #1 is bullish AND (high of completed lower-timeframe bar #1 − low of completed lower-timeframe bar #14) > Step
+Short: Reverse is off AND lower-timeframe completed bar #1 is bullish AND (high of completed lower-timeframe bar #1 − low of completed lower-timeframe bar #14) > Step, OR Reverse is on AND lower-timeframe completed bar #1 is bearish AND (high of completed lower-timeframe bar #14 − low of completed lower-timeframe bar #1) > Step
+Exit: long, price ≤ entry price − Stop Loss distance OR price ≥ entry price + Take Profit distance
+Exit: short, price ≥ entry price + Stop Loss distance OR price ≤ entry price − Take Profit distance

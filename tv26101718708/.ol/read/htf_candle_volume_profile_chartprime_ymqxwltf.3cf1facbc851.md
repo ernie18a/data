@@ -1,0 +1,2 @@
+Long: Close of the currently forming higher-timeframe candle >= its open OR close of a completed higher-timeframe candle >= its open
+Short: Close of the currently forming higher-timeframe candle < its open OR close of a completed higher-timeframe candle < its open

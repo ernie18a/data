@@ -1,0 +1,1 @@
+Long: inflation rate > threshold AND 10Y interest rate >= threshold AND GDP growth rate <= threshold

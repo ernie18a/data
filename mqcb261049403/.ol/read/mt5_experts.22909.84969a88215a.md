@@ -1,0 +1,7 @@
+Calculation: Fisher line = On each indicator-timeframe bar, find the highest high and lowest low over a lookback including that bar; if they are equal, increase the highest high by one price point. Let p be the selected OHLC-derived price, w = (p - lowest low) / (highest high - lowest low), v = w - 0.5 + 0.67 × previous v, initialized to zero. Let r = (1 + v) / (1 - v); if 1 - v = 0 or r < 0.0000001, set r to 1. Fisher = 0.5 × ln(r) + 0.5 × previous Fisher, initialized to zero. Smooth Fisher with the selected moving-average method and smoothing parameters. The signal line is the preceding indicator-timeframe bar's Fisher line. For the trading decisions, the indicator timeframe may be higher or lower than the chart timeframe; use the last completed bar by default, or the still-forming bar when configured. Compare it with its preceding indicator-timeframe bar.
+Long: Fisher line > signal line AND preceding Fisher line <= preceding signal line
+Long: Chart-timeframe Fisher line > chart-timeframe signal line
+Short: Fisher line < signal line AND preceding Fisher line >= preceding signal line
+Short: Chart-timeframe Fisher line < chart-timeframe signal line
+Exit: long, Fisher line < signal line OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, Fisher line > signal line OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

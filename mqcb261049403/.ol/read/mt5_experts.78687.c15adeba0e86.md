@@ -1,0 +1,4 @@
+Long: Close of the bar two bars ago < its lower Bollinger Band AND the last completed bar's close > its lower Bollinger Band AND < its upper Bollinger Band AND (if the RSI filter is enabled, RSI two bars ago < the lower RSI threshold) AND current price < the middle Bollinger Band on the forming bar
+Short: Close of the bar two bars ago > its upper Bollinger Band AND the last completed bar's close < its upper Bollinger Band AND > its lower Bollinger Band AND (if the RSI filter is enabled, RSI two bars ago > the upper RSI threshold) AND current price > the middle Bollinger Band on the forming bar
+Exit: long, current price >= the middle Bollinger Band on the forming bar OR low <= entry price minus the configured stop-loss distance
+Exit: short, current price <= the middle Bollinger Band on the forming bar OR high >= entry price plus the configured stop-loss distance

@@ -1,0 +1,4 @@
+Calculation: OHLC4 = (open + high + low + close) / 4
+Calculation: Wilder RMA = Wilder running moving average of OHLC4, using the stated lookback
+Long: A shorter-lookback RMA crosses above its longer-lookback RMA in any of these pairs: the first and second primary lookbacks, second and fourth primary lookbacks, third and fifth primary lookbacks, fourth and sixth primary lookbacks, or the separate slower structural pair
+Short: A shorter-lookback RMA crosses below its longer-lookback RMA in any of these pairs: the first and second primary lookbacks, second and fourth primary lookbacks, third and fifth primary lookbacks, fourth and sixth primary lookbacks, or the separate slower structural pair

@@ -1,0 +1,3 @@
+Calculation: Forward-shifted EMA = EMA displaced one bar forward
+Long: On each evaluated timeframe, using its still-forming bar (timeframe may be lower or higher than the chart timeframe), zero-shift EMA > forward-shifted EMA AND bar low > zero-shift EMA
+Short: On each evaluated timeframe, using its still-forming bar (timeframe may be lower or higher than the chart timeframe), zero-shift EMA < forward-shifted EMA AND bar high < zero-shift EMA

@@ -1,0 +1,3 @@
+Calculation: MEI = (RSI euphoria + VWAP euphoria + bullish candle percentage − RSI panic − VWAP panic − bearish candle percentage) / 3, where RSI euphoria = max(0, (RSI − 70) / 30 × 100), RSI panic = max(0, (30 − RSI) / 30 × 100), VWAP euphoria = 100 when close − VWAP(hlc3) > stretch multiplier × ATR and 0 otherwise, VWAP panic = 100 when close − VWAP(hlc3) < −stretch multiplier × ATR and 0 otherwise, bullish candle percentage = 100 × count(close > open over lookback) / lookback, and bearish candle percentage = 100 × count(close < open over lookback) / lookback
+Long: MEI < −50
+Short: MEI > 50

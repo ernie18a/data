@@ -1,0 +1,5 @@
+Calculation: Ribbon width = absolute difference between fast and slow EMAs.
+Calculation: Average ribbon width = simple moving average of ribbon width over a longer lookback.
+Calculation: Squeeze = ribbon width < average ribbon width × a ratio.
+Long: Fast EMA > mid EMA AND mid EMA > slow EMA OR fast EMA crosses above mid EMA OR fast EMA crosses above slow EMA OR mid EMA crosses above slow EMA OR squeeze ends AND fast EMA > mid EMA AND mid EMA > slow EMA OR fast EMA > mid EMA AND mid EMA > slow EMA AND close > fast EMA AND close > mid EMA AND close > slow EMA
+Short: Fast EMA < mid EMA AND mid EMA < slow EMA OR fast EMA crosses below mid EMA OR fast EMA crosses below slow EMA OR mid EMA crosses below slow EMA OR squeeze ends AND fast EMA < mid EMA AND mid EMA < slow EMA OR fast EMA < mid EMA AND mid EMA < slow EMA AND close < fast EMA AND close < mid EMA AND close < slow EMA

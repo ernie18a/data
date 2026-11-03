@@ -1,0 +1,5 @@
+Calculation: Previous-period high = high of the last completed higher-timeframe bar
+Calculation: Previous-period low = low of the last completed higher-timeframe bar
+Calculation: Previous-period direction = whether the last completed higher-timeframe bar closed at or above its open
+Long: The completed higher-timeframe bar closes above the previous-period high OR (closes between the previous-period high and low AND its high is above the previous-period high AND its low is above the previous-period low) OR (closes between the previous-period high and low AND its high is at or below the previous-period high AND its low is at or above the previous-period low AND the previous-period direction is up)
+Short: The completed higher-timeframe bar closes below the previous-period low OR (closes between the previous-period high and low AND its high is below the previous-period high AND its low is below the previous-period low) OR (closes between the previous-period high and low AND its high is at or below the previous-period high AND its low is at or above the previous-period low AND the previous-period direction is down)

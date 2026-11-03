@@ -1,0 +1,1 @@
+Using Bitcoin market capitalization and realized capitalization, calculate the MVRV Z-score. Accumulate Bitcoin when the Z-score enters its lower accumulation zone or market capitalization falls below realized capitalization. Treat the upper Z-score zone only as an overvaluation caution; it does not trigger an exit or short.

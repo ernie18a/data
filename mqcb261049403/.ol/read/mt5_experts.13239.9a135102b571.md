@@ -1,0 +1,5 @@
+Calculation: ColorZeroLagRSI OSMA = the sum of five weighted RSIs with progressively longer lookbacks, minus a recursively smoothed version of that sum; smooth the difference recursively again. Use the indicator timeframe, which may be higher, lower, or equal to the chart timeframe. Evaluate the selected signal bar and the two preceding bars; the selected bar may be forming or completed depending on the selection.
+Long: OSMA on the selected bar > OSMA one bar earlier AND OSMA two bars earlier > OSMA one bar earlier OR OSMA > 0 AND OSMA > OSMA one bar earlier
+Short: OSMA on the selected bar < OSMA one bar earlier AND OSMA two bars earlier < OSMA one bar earlier OR OSMA < 0 AND OSMA < OSMA one bar earlier
+Exit: long, OSMA one bar earlier > OSMA on the selected bar
+Exit: short, OSMA one bar earlier < OSMA on the selected bar

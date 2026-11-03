@@ -1,0 +1,12 @@
+Calculation: Candle body high = max(open, close)
+Calculation: Candle body low = min(open, close)
+Calculation: Bullish one-candle engulfing = current close > current open AND current open <= previous candle body low AND current close >= previous candle body high
+Calculation: Bearish one-candle engulfing = current close < current open AND current open >= previous candle body high AND current close <= previous candle body low
+Calculation: Bullish two-candle engulfing = current close > current open AND the highest body high and lowest body low of the current and previous candles enclose the body of the candle two bars ago
+Calculation: Bearish two-candle engulfing = current close < current open AND the highest body high and lowest body low of the current and previous candles enclose the body of the candle two bars ago
+Calculation: Long entry price = previous candle body high if bullish one-candle engulfing; otherwise, the body high of the candle two bars ago
+Calculation: Short entry price = previous candle body low if bearish one-candle engulfing; otherwise, the body low of the candle two bars ago
+Long: no open position AND within the configured trading session (or session filter disabled) AND daily trade limit not reached AND first-win restriction permits trading AND (bullish one-candle engulfing OR two-candle engulfing enabled AND bullish two-candle engulfing) AND close > moving average AND long entry price > moving average AND (slope filter disabled OR moving average > its value on the previous bar) AND (proximity filter disabled OR absolute difference between long entry price and moving average <= configured proximity) AND high >= long entry price
+Short: no open position AND within the configured trading session (or session filter disabled) AND daily trade limit not reached AND first-win restriction permits trading AND (bearish one-candle engulfing OR two-candle engulfing enabled AND bearish two-candle engulfing) AND close < moving average AND short entry price < moving average AND (slope filter disabled OR moving average < its value on the previous bar) AND (proximity filter disabled OR absolute difference between short entry price and moving average <= configured proximity) AND low <= short entry price
+Exit: long, low <= entry price - configured stop distance OR high >= entry price + configured target distance OR configured forced-close time reached
+Exit: short, high >= entry price + configured stop distance OR low <= entry price - configured target distance OR configured forced-close time reached

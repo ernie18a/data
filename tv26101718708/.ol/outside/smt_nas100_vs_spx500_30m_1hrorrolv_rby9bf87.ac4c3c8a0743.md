@@ -1,0 +1,1 @@
+On the selected 30-minute or 1-hour timeframe, compare each instrument’s current high and low with its previous completed bar. Go short when SPX500 makes a higher high but NAS100 does not; go long when SPX500 makes a lower low but NAS100 does not. No exit rule is defined.

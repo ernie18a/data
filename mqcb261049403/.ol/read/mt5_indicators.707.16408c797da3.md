@@ -1,0 +1,4 @@
+Calculation: Upper fractal = the center bar’s high is greater than the highs of the two bars before and two bars after it, or, when fine sensitivity is enabled and no standard upper fractal exists, its high is greater than the highs of the immediately older and newer bars AND (its low is at least the newer bar’s low OR its high is greater than the high two bars newer).
+Calculation: Lower fractal = the center bar’s low is lower than the lows of the two bars before and two bars after it, or, when fine sensitivity is enabled and no standard lower fractal exists, its low is lower than the lows of the immediately older and newer bars AND (its high is at most the newer bar’s high OR its low is lower than the low two bars newer).
+Long: A lower fractal is marked.
+Short: An upper fractal is marked.

@@ -1,0 +1,3 @@
+Calculation: Bar delta = sum lower-timeframe volume as positive when close > open or close = open and close > previous close, and negative when close < open or close = open and close < previous close; when close = open = previous close, apply the doji handling setting (split, up, down, or skip). If no lower-timeframe bars are available, apply the same rule to the chart bar volume. Use lower-timeframe bars within the current chart bar, including the bar still forming.
+Long: Bar delta >= 0
+Short: Bar delta < 0

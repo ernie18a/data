@@ -1,0 +1,7 @@
+Calculation: Opening range high/low = highest high and lowest low from the opening interval ending at 9:35 New York time
+Calculation: Bullish braid = short-lookback EMA(close) > medium-lookback EMA(open) AND the spread between the highest and lowest of those EMAs and a long-lookback EMA(close) exceeds an ATR-based threshold
+Calculation: Bearish braid = medium-lookback EMA(open) > short-lookback EMA(close) AND the same EMA spread exceeds the ATR-based threshold
+Long: no trade has occurred today AND bar time is between 9:35 and 11:00 New York time AND close > opening range high AND close > session VWAP AND close > open AND bullish braid
+Short: no trade has occurred today AND bar time is between 9:35 and 11:00 New York time AND close < opening range low AND close < session VWAP AND close < open AND bearish braid
+Exit: long, low <= opening range low OR high >= minimum of entry price plus the risk distance multiplied by the reward-to-risk multiple, previous completed higher-timeframe bar high, and current forming higher-timeframe bar high
+Exit: short, high >= opening range high OR low <= maximum of entry price minus the risk distance multiplied by the reward-to-risk multiple, previous completed higher-timeframe bar low, and current forming higher-timeframe bar low

@@ -1,0 +1,4 @@
+Calculation: Smoothed upper range = the selected moving average of high minus open on each higher-timeframe bar, mapped to chart bars using the higher-timeframe bar still forming.
+Calculation: Smoothed lower range = the selected moving average of low minus open on each higher-timeframe bar, mapped to chart bars using the higher-timeframe bar still forming.
+Long: Smoothed upper range > its value on the previous chart bar OR smoothed lower range > its value on the previous chart bar
+Short: Smoothed upper range < its value on the previous chart bar OR smoothed lower range < its value on the previous chart bar

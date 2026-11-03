@@ -1,0 +1,6 @@
+Calculation: Oscillator weight = selected oscillator’s distance from its centerline, divided by the greatest historical distance on the same side; average the weights of selected oscillators and optionally multiply by the bar’s relative-volume percentile rank.
+Calculation: Weighted line = the selected moving average of the selected reference-price source adjusted by oscillator weight, with its adjustment capped by the selected standard-deviation or ATR limit; reference line = the same moving average of the unadjusted source, using the same lookback.
+Calculation: Divergence = the reference and weighted lines have opposite slope signs, or the oscillator-weight and close have opposite change signs, according to the selected detection mode.
+Calculation: Divergence channel = set its top and bottom to the selected price levels on a divergence; until price breaches it, expand either level outward on later divergences; after a breach, start a new channel at the next divergence. Bull breach: selected breach price moves above the top. Bear breach: selected breach price moves below the bottom.
+Long: weighted line > reference line OR bull breach of the divergence channel
+Short: weighted line < reference line OR bear breach of the divergence channel

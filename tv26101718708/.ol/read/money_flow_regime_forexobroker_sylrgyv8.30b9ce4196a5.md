@@ -1,0 +1,5 @@
+Calculation: Accumulation/distribution line = cumulative sum of volume × ((close − low) − (high − close)) / (high − low); use 0 for the multiplier when high = low
+Calculation: Chaikin oscillator = shorter-lookback EMA of the accumulation/distribution line − longer-lookback EMA of the accumulation/distribution line
+Calculation: Flow z-score = (Chaikin oscillator − its rolling mean) / its rolling standard deviation over the normalization lookback
+Long: Flow z-score is positive and in a tradable band (mild or strong, or strong only if configured) AND close crosses above its EMA AND session restriction is satisfied if enabled AND position is not long AND cooldown since the prior signal has elapsed
+Short: Flow z-score is negative and in a tradable band (mild or strong, or strong only if configured) AND close crosses below its EMA AND session restriction is satisfied if enabled AND position is not short AND cooldown since the prior signal has elapsed

@@ -1,0 +1,5 @@
+Calculation: Anchored VWAP = cumulative source price × volume since the anchor period began, divided by cumulative volume; it updates with the current chart bar.
+Calculation: VWAP slope = percentage change per chart bar between the current anchored VWAP and its value at a longer lookback.
+Calculation: Smart Glow strength = weighted score from candle body size relative to range, volume relative to its moving average, and candle direction’s alignment with enabled VWAPs.
+Long: More enabled anchored VWAPs have close above them than do not; OR close crosses above the selected primary anchored VWAP; OR close is above any enabled anchored VWAP; OR close ≥ open AND Smart Glow strength ≥ its threshold; OR Session VWAP slope is falling while Daily VWAP slope is rising.
+Short: More enabled anchored VWAPs do not have close above them than do; OR close crosses below the selected primary anchored VWAP; OR close is below any enabled anchored VWAP; OR close < open AND Smart Glow strength ≥ its threshold; OR Session VWAP slope is rising while Daily VWAP slope is falling.

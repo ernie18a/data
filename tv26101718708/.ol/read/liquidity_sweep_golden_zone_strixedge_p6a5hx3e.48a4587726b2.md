@@ -1,0 +1,8 @@
+Calculation: Active swing low = most recent confirmed pivot low (equal left and right lookback); after a sell-side sweep, replace it with that bar’s low
+Calculation: Active swing high = most recent confirmed pivot high (equal left and right lookback); after a buy-side sweep, replace it with that bar’s high
+Calculation: Golden Zone = [lowest low + 0.618 × (highest high − lowest low), lowest low + 0.786 × (highest high − lowest low)], using the same rolling lookback for highest high and lowest low
+Calculation: EMA bias = bullish when the shorter-lookback EMA of close is above the longer-lookback EMA; bearish when below
+Long: low < active swing low AND close > active swing low
+Short: high > active swing high AND close < active swing high
+Long: At least 3 of these 4 conditions are true on a dashboard timeframe: RSI is above 50; close is at or above the Golden Zone lower boundary; close is above the midpoint of the active swing high and low; EMA bias is bullish. Evaluate on each dashboard timeframe, using its last completed bar when higher than the chart timeframe and its forming bar when lower; use the chart bar when equal.
+Short: At least 3 of these 4 conditions are true on a dashboard timeframe: RSI is below 50; close is below the Golden Zone lower boundary; close is below the midpoint of the active swing high and low; EMA bias is bearish. Evaluate on each dashboard timeframe, using its last completed bar when higher than the chart timeframe and its forming bar when lower; use the chart bar when equal.

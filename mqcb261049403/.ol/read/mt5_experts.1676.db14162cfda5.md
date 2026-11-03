@@ -1,0 +1,7 @@
+Calculation: Custom price = use x = (high + low + close + low)/2 if close < open, x = (high + low + close + high)/2 if close > open, or x = (high + low + close + close)/2 if close = open; then (x - low + x - high)/2, using close if the result is 0
+Calculation: SMA-based normalized momentum = for each bar, let D = the simple moving average of custom price minus its value Momentum bars earlier; let Dmax and Dmin be the highest and lowest D over the KPeriod lookback ending on that bar; calculate 100 - 200 × (Dmax - D)/(Dmax - Dmin), or 100 when Dmax = Dmin
+Calculation: EMA-based normalized momentum = the same calculation as SMA-based normalized momentum, using an exponential moving average instead of a simple moving average
+Long: SMA-based normalized momentum = 100 OR EMA-based normalized momentum = 100, on the selected signal bar of the MUV indicator timeframe (which may be higher or lower than the chart timeframe; the selected bar may be forming or completed, depending on its configured index)
+Short: SMA-based normalized momentum = -100 OR EMA-based normalized momentum = -100, on the selected signal bar of the MUV indicator timeframe (which may be higher or lower than the chart timeframe; the selected bar may be forming or completed, depending on its configured index)
+Exit: long, SMA-based normalized momentum = -100 OR EMA-based normalized momentum = -100
+Exit: short, SMA-based normalized momentum = 100 OR EMA-based normalized momentum = 100

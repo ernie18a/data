@@ -1,0 +1,6 @@
+Calculation: XvaMA = round to configured precision the second smoothing of M + (M − M₁) + ½(M − 2M₁ + M₂) + ⅙(M − 3M₁ + 3M₂ − M₃), where M is the first smoothing of applied bar price; M₁, M₂, and M₃ are M lagged by one-quarter, one-eighth, and one-twelfth of the first smoothing lookback, respectively
+Calculation: Trend state = +1 when XvaMA is greater than its prior value, −1 when lower, and otherwise retain the prior state
+Long: Trend state changes from −1 to +1 on the last completed bar of the configured indicator timeframe (higher, lower, or equal to chart timeframe as configured)
+Short: Trend state changes from +1 to −1 on the last completed bar of the configured indicator timeframe (higher, lower, or equal to chart timeframe as configured)
+Exit: Long, Trend state = −1 on the last completed bar of the configured indicator timeframe (higher, lower, or equal to chart timeframe as configured)
+Exit: Short, Trend state = +1 on the last completed bar of the configured indicator timeframe (higher, lower, or equal to chart timeframe as configured)

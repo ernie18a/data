@@ -1,0 +1,4 @@
+Calculation: Confluence zone = sort configured weekly, monthly, quarterly, yearly, and daily pivot and prior-period high/low levels, plus prior completed weekly market-profile value-area levels; group levels in ascending order, adding each next level when its distance from the group’s lowest level is within the configured proximity threshold, and keep groups meeting the configured minimum level count. Weekly, monthly, quarterly, yearly, and daily levels use the last completed aggregate bar (higher or lower timeframe as applicable); prior weekly value-area levels use the last completed weekly profile.
+Calculation: Classic floor pivots = P=(H+L+C)/3; R1=2P−L; S1=2P−H; R2=P+(H−L); S2=P−(H−L); optional R3=H+2(P−L); S3=L−2(H−P), using the prior completed period’s high, low, and close.
+Long: confluence zone high < close
+Short: confluence zone low > close

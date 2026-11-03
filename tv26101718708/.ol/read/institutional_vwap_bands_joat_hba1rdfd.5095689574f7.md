@@ -1,0 +1,7 @@
+Calculation: Anchored VWAP = volume-weighted mean of the selected price source accumulated from the start of each selected session, week, or month.
+Calculation: VWAP deviation = square root of the volume-weighted mean of squared price minus squared anchored VWAP, accumulated over the same anchor period.
+Calculation: Normalized deviation = (close − anchored VWAP) / VWAP deviation; use 0 when deviation is 0.
+Long: (previous normalized deviation ≤ −reversion threshold AND current normalized deviation > previous normalized deviation AND close > open) OR (close ≥ long-term EMA AND close crosses above anchored VWAP), AND the current bar is at least the minimum signal gap after the previous signal, AND no short signal occurs on this bar.
+Short: (previous normalized deviation ≥ reversion threshold AND current normalized deviation < previous normalized deviation AND close < open) OR (close < long-term EMA AND close crosses below anchored VWAP), AND the current bar is at least the minimum signal gap after the previous signal.
+Exit: long, high ≥ (reversion entry ? max(anchored VWAP, entry price) : upper 2-deviation band) OR low ≤ entry price − ATR × stop multiple.
+Exit: short, low ≤ (reversion entry ? min(anchored VWAP, entry price) : lower 2-deviation band) OR high ≥ entry price + ATR × stop multiple.

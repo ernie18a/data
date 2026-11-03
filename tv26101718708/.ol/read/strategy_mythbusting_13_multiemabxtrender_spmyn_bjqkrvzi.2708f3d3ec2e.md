@@ -1,0 +1,12 @@
+Calculation: Fast, middle, and slow EMA = exponential moving averages of close with shorter, intermediate, and longer lookbacks, respectively
+Calculation: Short-term B-Xtrender = RSI of (EMA(close, shorter lookback) − EMA(close, longer lookback)) minus 50
+Calculation: Long-term B-Xtrender = RSI of EMA(close, lookback) minus 50
+Calculation: Smoothed short-term B-Xtrender = T3 smoothing of short-term B-Xtrender, using six successive EMAs of the same lookback and their standard T3 weighted combination (b = 0.7)
+Long: Fast EMA > middle EMA > slow EMA AND fast EMA − middle EMA > minimum gap AND middle EMA − slow EMA > minimum gap AND close > fast EMA AND a low has been within the configured percentage proximity of the middle EMA during the configured lookback AND long-term B-Xtrender > 0 AND long-term B-Xtrender > its previous value AND smoothed short-term B-Xtrender > its previous value AND its previous value < its value two bars ago
+Long: Current low is within the configured percentage proximity of the middle EMA AND this pullback condition was false on the previous bar
+Long: Smoothed short-term B-Xtrender > its previous value AND its previous value < its value two bars ago
+Short: Fast EMA < middle EMA < slow EMA AND middle EMA − fast EMA > minimum gap AND slow EMA − middle EMA > minimum gap AND close < fast EMA AND a high has been within the configured percentage proximity of the middle EMA during the configured lookback AND long-term B-Xtrender < 0 AND long-term B-Xtrender < its previous value AND smoothed short-term B-Xtrender < its previous value AND its previous value > its value two bars ago
+Short: Current high is within the configured percentage proximity of the middle EMA AND this pullback condition was false on the previous bar
+Short: Smoothed short-term B-Xtrender < its previous value AND its previous value > its value two bars ago
+Exit: long, close < entry price × (1 − configured stop-loss percentage) OR a short-circle condition occurs OR high reaches any configured take-profit level above entry price
+Exit: short, close > entry price × (1 + configured stop-loss percentage) OR a long-circle condition occurs OR low reaches any configured take-profit level below entry price

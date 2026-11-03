@@ -1,0 +1,3 @@
+Calculation: Smoothed MFI = simple moving average of MFI, using the same lookback for both calculations
+Long: close > long-term SMA of close AND current Smoothed MFI > previous-bar Smoothed MFI AND previous-bar Smoothed MFI > two-bars-ago Smoothed MFI
+Exit: long, low <= long-term SMA of close OR current Smoothed MFI < previous-bar Smoothed MFI AND previous-bar Smoothed MFI > two-bars-ago Smoothed MFI

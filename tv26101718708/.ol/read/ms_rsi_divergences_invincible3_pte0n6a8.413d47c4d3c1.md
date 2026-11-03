@@ -1,0 +1,4 @@
+Calculation: Confirmed pivot high = a high greater than the highs in the specified left and right confirmation windows
+Calculation: Confirmed pivot low = a low lower than the lows in the specified left and right confirmation windows
+Long: confirmed pivot high is higher than the previous completed swing high OR confirmed pivot low is higher than the previous completed swing low OR confirmed pivot low is lower than the previous completed swing low AND RSI at the pivot is higher than RSI at the previous completed swing low
+Short: confirmed pivot high is lower than the previous completed swing high OR confirmed pivot low is lower than the previous completed swing low OR confirmed pivot high is higher than the previous completed swing high AND RSI at the pivot is lower than RSI at the previous completed swing high

@@ -1,0 +1,2 @@
+Long: Longer-lookback selected SMA, EMA, HMA, or VWMA of close crosses above the shorter-lookback selected SMA, EMA, HMA, or VWMA of close
+Short: Longer-lookback selected SMA, EMA, HMA, or VWMA of close crosses below the shorter-lookback selected SMA, EMA, HMA, or VWMA of close

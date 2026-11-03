@@ -1,0 +1,1 @@
+Long: MACD line > 0 on each of three higher timeframes AND RSI > 55 on the shortest of those higher timeframes AND the condition was false on the previous chart bar; use each higher timeframe’s bar still forming

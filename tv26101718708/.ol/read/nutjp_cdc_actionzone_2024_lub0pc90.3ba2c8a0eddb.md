@@ -1,0 +1,5 @@
+Calculation: Smoothed close = EMA(close, smoothing period)
+Calculation: Fast EMA = EMA(smoothed close, shorter lookback)
+Calculation: Slow EMA = EMA(smoothed close, longer lookback)
+Long: datetime is within the configured date range AND Fast EMA > Slow EMA AND smoothed close > Fast EMA AND NOT (on the previous chart bar, Fast EMA > Slow EMA AND smoothed close > Fast EMA)
+Exit: long, datetime is within the configured date range AND Fast EMA < Slow EMA AND smoothed close < Fast EMA AND NOT (on the previous chart bar, Fast EMA < Slow EMA AND smoothed close < Fast EMA)

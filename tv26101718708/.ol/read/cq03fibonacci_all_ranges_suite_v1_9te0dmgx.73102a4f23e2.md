@@ -1,0 +1,2 @@
+Long: close >= open of a still-forming bar aggregated to each enabled higher timeframe (or the chart timeframe when equal)
+Short: close < open of a still-forming bar aggregated to each enabled higher timeframe (or the chart timeframe when equal)

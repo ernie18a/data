@@ -1,0 +1,3 @@
+Calculation: Open and close series = apply the same selected moving-average type and lookback to the open and close, respectively; optionally use source bars delayed by the same number of bars. When alternate resolution is enabled, calculate on a higher timeframe using its still-forming bar.
+Long: Current close series > current open series AND previous close series <= previous open series
+Short: Current close series < current open series AND previous close series >= previous open series

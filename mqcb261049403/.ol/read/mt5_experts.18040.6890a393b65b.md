@@ -1,0 +1,6 @@
+Calculation: Stochastic Chaikin volatility = 100 × the second configurable moving average of (smoothed high−low range − its rolling minimum) / (its rolling maximum − its rolling minimum); smooth high−low range with the first configurable moving average, and calculate rolling extrema over the stochastic lookback. Calculate on the lower-than-chart indicator timeframe, using completed bars.
+Calculation: Trigger = Stochastic Chaikin volatility on the previous completed indicator-timeframe bar.
+Long: Stochastic Chaikin volatility on the latest completed indicator-timeframe bar > Trigger AND Stochastic Chaikin volatility on the previous completed bar ≤ Trigger on that bar
+Short: Stochastic Chaikin volatility on the latest completed indicator-timeframe bar < Trigger AND Stochastic Chaikin volatility on the previous completed bar ≥ Trigger on that bar
+Exit: long, Stochastic Chaikin volatility on the latest completed indicator-timeframe bar < Trigger
+Exit: short, Stochastic Chaikin volatility on the latest completed indicator-timeframe bar > Trigger

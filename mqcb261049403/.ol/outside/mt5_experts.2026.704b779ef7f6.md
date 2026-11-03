@@ -1,0 +1,1 @@
+Close all open positions when account equity exceeds a configured multiple of account balance.

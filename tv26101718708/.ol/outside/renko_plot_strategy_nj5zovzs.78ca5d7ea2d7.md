@@ -1,0 +1,1 @@
+After June 2019, go long when the instrument’s Renko close crosses above its Renko open, and attach a trailing stop. Go short when the Renko close crosses below its Renko open, and attach a trailing stop.

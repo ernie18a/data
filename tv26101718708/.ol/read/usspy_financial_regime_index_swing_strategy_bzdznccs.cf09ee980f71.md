@@ -1,0 +1,5 @@
+Calculation: BFCI = EMA-smoothed normalized weighted sum of eight optionally winsorized standardized components, calculated on the calculation timeframe (when higher than the chart timeframe, uses the latest completed bar): US equity and global equity log returns over a shorter window; negative z-scores of LQD/HYG, the 2-year yield, DXY, VIX, and BIL/SPY; and the z-score of the 10-year minus 2-year yield spread. Weights are equal or inversely proportional to each component’s volatility over a shorter lookback, then normalized to sum to one.
+Long: BFCI crosses above the long-entry threshold AND BFCI is higher than its value at the slope lookback AND (price filter disabled OR close > chart-timeframe SMA), OR BFCI >= always-long floor
+Short: BFCI crosses below the short-entry threshold AND BFCI is lower than its value at the slope lookback AND (price filter disabled OR close < chart-timeframe SMA)
+Exit: long, BFCI crosses below the long-exit threshold OR short-entry condition
+Exit: short, BFCI crosses above the short-exit threshold OR long-entry condition OR BFCI < force-short-exit threshold

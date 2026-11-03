@@ -1,0 +1,2 @@
+Long: Awesome Oscillator >= its value on the previous bar AND Accelerator Oscillator >= its value on the previous bar
+Short: Awesome Oscillator <= its value on the previous bar AND Accelerator Oscillator <= its value on the previous bar AND (Awesome Oscillator < its value on the previous bar OR Accelerator Oscillator < its value on the previous bar)

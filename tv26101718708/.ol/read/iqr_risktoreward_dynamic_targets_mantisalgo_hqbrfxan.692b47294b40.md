@@ -1,0 +1,7 @@
+Calculation: Q1 and Q3 = 25th and 75th percentile, respectively, of rolling close prices; IQR = Q3 − Q1
+Calculation: Median Wave = two-pole SuperSmoother of HLC3; Smoothed IQR = two-pole SuperSmoother of rolling IQR
+Calculation: Lower/Upper Band = Median Wave ∓ 0.75 × Smoothed IQR; Lower/Upper Fence = Median Wave ∓ whisker multiplier × Smoothed IQR
+Calculation: Swing Liquidity High/Low = highest high / lowest low over the structural liquidity lookback
+Calculation: True R:R = target distance ÷ invalidation distance
+Long: (low[1] ≤ Lower Band[1] OR low[2] ≤ Lower Band[2] OR low[3] ≤ Lower Band[3] OR low ≤ Lower Fence) AND close > Median Wave AND close[1] ≤ Median Wave[1] AND volume ≥ 0.75 × 20-bar SMA(volume) AND bars since prior signal ≥ cooldown parameter AND close − lowest low over the latest 4 bars > 0 AND max(Upper Fence, prior bar's Swing Liquidity High) − close > 0 AND (max(Upper Fence, prior bar's Swing Liquidity High) − close) ÷ (close − lowest low over the latest 4 bars) ≥ minimum True R:R parameter
+Short: (high[1] ≥ Upper Band[1] OR high[2] ≥ Upper Band[2] OR high[3] ≥ Upper Band[3] OR high ≥ Upper Fence) AND close < Median Wave AND close[1] ≥ Median Wave[1] AND volume ≥ 0.75 × 20-bar SMA(volume) AND bars since prior signal ≥ cooldown parameter AND highest high over the latest 4 bars − close > 0 AND close − min(Lower Fence, prior bar's Swing Liquidity Low) > 0 AND (close − min(Lower Fence, prior bar's Swing Liquidity Low)) ÷ (highest high over the latest 4 bars − close) ≥ minimum True R:R parameter

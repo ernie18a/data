@@ -1,0 +1,3 @@
+Calculation: Relative volume = bar volume divided by average volume over a longer lookback
+Long: The last completed bar's close crosses above the highest high of a shorter lookback ending before that bar AND its close is above VWAP AND the shorter-lookback EMA is above the longer-lookback EMA AND its relative volume is above the entry threshold
+Exit: long, the last completed bar's close crosses below the shorter-lookback EMA OR its upper wick is more than twice its body AND its relative volume is above an exhaustion threshold AND the close-crossbelow-EMA condition is false

@@ -1,0 +1,5 @@
+Calculation: Selected pivot level = from the last completed bar of the selected higher timeframe: P=(high+low+close)/3, range=high−low; Fibonacci R1/R2/R3=P+range×(0.382/0.618/1), S1/S2/S3=P−range×(0.382/0.618/1); or Traditional R1/R2/R3=(2P−low, P+range, high+2(P−low)), S1/S2/S3=(2P−high, P−range, low−2(high−P))
+Long: position is flat AND (time filter disabled OR bar is within the selected session) AND close>open AND open≤EMA(close) AND open≤selected long pivot level AND close>EMA(close) AND close>selected long pivot level AND close>proposed stop
+Short: position is flat AND (time filter disabled OR bar is within the selected session) AND close<open AND open≥EMA(close) AND open≥selected short pivot level AND close<EMA(close) AND close<selected short pivot level AND proposed stop>close
+Exit: long, low≤active stop OR high≥active target
+Exit: short, high≥active stop OR low≤active target

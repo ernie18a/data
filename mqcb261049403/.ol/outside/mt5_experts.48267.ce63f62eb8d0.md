@@ -1,0 +1,1 @@
+When the user activates the close-all button, close every open position on every instrument. Do not open new positions.

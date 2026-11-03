@@ -1,0 +1,6 @@
+Calculation: Rounded smoothed power-weighted moving average = smooth the selected bar price after averaging the lookback prices with weights that decrease by age as (lookback − age)^power; round the result to the configured price increment.
+Calculation: Indicator color state = rising if the current rounded average > the previous one, falling if it < the previous one, otherwise retain the prior state; evaluate on the configured indicator timeframe, which may be higher or lower than the chart timeframe, using completed bars.
+Long: latest completed indicator-timeframe color state = rising AND previous completed indicator-timeframe color state != rising
+Short: latest completed indicator-timeframe color state = falling AND previous completed indicator-timeframe color state != falling
+Exit: long, latest completed indicator-timeframe color state = falling OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, latest completed indicator-timeframe color state = rising OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

@@ -1,0 +1,1 @@
+When time-based exits are enabled and sufficient indicator history is available, check on every tick and close any long or short position in the traded instrument whose elapsed time since opening, measured using server time, strictly exceeds the configured holding duration.

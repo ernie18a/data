@@ -1,0 +1,6 @@
+Calculation: Upper band = the high-price series passed through the fixed-coefficient SATL digital filter, then JMA-smoothed, rounded to the configured price increment, and shifted by the configured bar offset.
+Calculation: Lower band = the low-price series passed through the same SATL filter and JMA smoothing, then rounded to the configured price increment and shifted by the same bar offset. These calculations use completed bars on the indicator timeframe, which may be higher or lower than the chart timeframe.
+Long: Current completed indicator bar closes above the upper band AND the preceding completed indicator bar did not close above its upper band.
+Short: Current completed indicator bar closes below the lower band AND the preceding completed indicator bar did not close below its lower band.
+Exit: Long, short condition OR price <= entry price - stop distance OR price >= entry price + take-profit distance.
+Exit: Short, long condition OR price >= entry price + stop distance OR price <= entry price - take-profit distance.

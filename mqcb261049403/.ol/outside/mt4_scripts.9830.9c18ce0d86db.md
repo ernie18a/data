@@ -1,0 +1,1 @@
+For each open buy or sell position that matches the configured symbol and trade identifier filters, close it at market when its net profit, including commission and swap, meets or exceeds the configured minimum profit.

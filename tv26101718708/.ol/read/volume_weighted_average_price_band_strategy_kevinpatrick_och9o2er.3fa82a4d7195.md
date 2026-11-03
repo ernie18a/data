@@ -1,0 +1,4 @@
+Calculation: ML line = selected smoothing of [longer-lookback SMA(source) + volatility adjustment × (VWAP(source) − longer-lookback SMA(source))], shifted by the forecast offset; smoothing may be disabled or use VWAP
+Calculation: Lower ML Band 1/2 = ML line − respective band multiplier × rolling standard deviation of close over the same longer lookback; Band 2 multiplier is greater than Band 1
+Long: source crosses above the selected Lower ML Band AND position is flat
+Exit: Long, low ≤ entry price × (1 − initial stop percentage) OR high ≥ entry price × (1 + first take-profit percentage) OR high ≥ entry price × (1 + second take-profit percentage) OR high ≥ entry price × (1 + third take-profit percentage) OR first take-profit reached AND low ≤ highest high since entry × (1 − trailing-stop percentage)

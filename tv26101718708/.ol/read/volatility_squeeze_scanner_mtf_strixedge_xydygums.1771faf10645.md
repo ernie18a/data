@@ -1,0 +1,4 @@
+Calculation: Squeeze state = Bollinger Bands are inside the Keltner Channel: lower Bollinger Band > lower Keltner Channel AND upper Bollinger Band < upper Keltner Channel.
+Calculation: Momentum = linear regression of (selected price source − average of the Donchian Channel midline and the selected price source’s simple moving average), using the Keltner lookback for the Donchian Channel, simple moving average, and linear regression. For each of the four configured timeframes, calculate squeeze state and momentum on that timeframe’s latest completed bar, whether it is higher or lower than the chart timeframe.
+Long: chart-timeframe momentum >= 0 OR at least the consensus threshold number of the four configured timeframes are in squeeze AND at least 3 of their momentum values are > 0
+Short: chart-timeframe momentum < 0 OR at least the consensus threshold number of the four configured timeframes are in squeeze AND at most 1 of their momentum values is > 0

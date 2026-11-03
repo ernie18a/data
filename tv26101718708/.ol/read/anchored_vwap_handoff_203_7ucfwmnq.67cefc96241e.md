@@ -1,0 +1,3 @@
+Calculation: Anchored VWAP hand-off legs = The first leg is the volume-weighted average of the selected price source from the selected anchor datetime through the current bar. Each subsequent leg is the volume-weighted average of that source from the current bar of its first cross of the preceding leg through the current bar; reset its accumulated price-volume and volume on each such cross.
+Long: Selected price source > any anchored VWAP hand-off leg
+Short: Selected price source < any anchored VWAP hand-off leg

@@ -1,0 +1,5 @@
+Calculation: Previous signal-bar high/low = high/low of the last completed bar on the strategy timeframe; its relationship to the chart timeframe is unspecified.
+Long: current price > previous signal-bar high AND no order has yet been attempted during this signal bar
+Short: current price < previous signal-bar low AND no order has yet been attempted during this signal bar
+Exit: Long, current price <= active stop-loss OR current price >= entry price + take-profit distance; once current price - entry price > stop-loss distance while the stop-loss is below entry, set the stop-loss to current price - stop-loss distance
+Exit: Short, current price >= active stop-loss OR current price <= entry price - take-profit distance; once entry price - current price > stop-loss distance while the stop-loss is above entry, set the stop-loss to current price + stop-loss distance

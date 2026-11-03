@@ -1,0 +1,4 @@
+Long: On the chart timeframe, the RVI main line was less than or equal to its signal line on the preceding completed bar and is greater on the latest completed bar AND on each of two higher timeframes, the RVI main line is greater than its signal line on the latest completed bar
+Short: On the chart timeframe, the RVI main line was greater than or equal to its signal line on the preceding completed bar and is less on the latest completed bar AND on each of two higher timeframes, the RVI main line is less than its signal line on the latest completed bar
+Exit: Long, on any of the chart timeframe or either higher timeframe, the RVI main line is less than its signal line on the latest completed bar
+Exit: Short, on any of the chart timeframe or either higher timeframe, the RVI main line is greater than its signal line on the latest completed bar

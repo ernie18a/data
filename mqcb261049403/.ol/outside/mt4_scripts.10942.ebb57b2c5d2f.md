@@ -1,0 +1,1 @@
+When run, close each open position that passes the selected filters: allowed position side, optional instrument match, optional magic-number inclusion or exclusion, and optional profitability filter. Close long positions at the current bid and short positions at the current ask.

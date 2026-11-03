@@ -1,0 +1,6 @@
+Calculation: SilverTrend value = highest high over a lookback minus (highest high over the same lookback minus lowest low over that lookback) times a percentage
+Calculation: Lagged SilverTrend value = SilverTrend value from lookback plus one bars earlier
+Long: On the indicator timeframe (higher or lower than the chart timeframe as configured), using the latest and previous completed bars, previous SilverTrend value <= previous lagged SilverTrend value AND latest SilverTrend value > latest lagged SilverTrend value
+Short: On the indicator timeframe (higher or lower than the chart timeframe as configured), using the latest and previous completed bars, previous SilverTrend value >= previous lagged SilverTrend value AND latest SilverTrend value < latest lagged SilverTrend value
+Exit: Long, on the indicator timeframe (higher or lower than the chart timeframe as configured), latest completed SilverTrend value < latest completed lagged SilverTrend value
+Exit: Short, on the indicator timeframe (higher or lower than the chart timeframe as configured), latest completed SilverTrend value > latest completed lagged SilverTrend value

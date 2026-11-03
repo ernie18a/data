@@ -1,0 +1,2 @@
+Long: CCI(50) < 0 on any configured timeframe (timeframes may be lower than, equal to, or higher than the chart timeframe; use each timeframe’s still-forming bar)
+Short: CCI(50) >= 0 on any configured timeframe (timeframes may be lower than, equal to, or higher than the chart timeframe; use each timeframe’s still-forming bar)

@@ -1,0 +1,3 @@
+Calculation: ForceTrend = For each bar, let H and L be the highest high and lowest low over the lookback, and M = (high + low) / 2. If H > L, set F = clamp(0.66 × ((M − L) / (H − L) − 0.5) + 0.67 × previous F, −0.999, 0.999); otherwise set F = clamp(0.67 × previous F − 0.33, −0.999, 0.999). ForceTrend = 0.5 × ln((1 + F) / (1 − F)) + 0.5 × previous ForceTrend. For the higher-timeframe version, use higher-timeframe bars, including the bar still forming.
+Long: ForceTrend > 0
+Short: ForceTrend < 0

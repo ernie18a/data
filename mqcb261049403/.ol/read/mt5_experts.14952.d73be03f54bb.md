@@ -1,0 +1,4 @@
+Long: MFI on the indicator timeframe (which may be higher or lower than the chart timeframe) on the last completed bar > its overbought threshold AND MFI on the preceding completed bar <= its overbought threshold
+Short: MFI on the indicator timeframe (which may be higher or lower than the chart timeframe) on the last completed bar < its oversold threshold AND MFI on the preceding completed bar >= its oversold threshold
+Exit: long, MFI on the indicator timeframe on the last completed bar < its oversold threshold AND MFI on the preceding completed bar >= its oversold threshold OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, MFI on the indicator timeframe on the last completed bar > its overbought threshold AND MFI on the preceding completed bar <= its overbought threshold OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

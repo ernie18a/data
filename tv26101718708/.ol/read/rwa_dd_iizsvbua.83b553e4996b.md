@@ -1,0 +1,2 @@
+Long: RSI EMA crosses above RSI WMA OR, at a confirmed RSI pivot low, price makes a lower low while RSI makes a higher low than at the preceding RSI pivot low
+Short: RSI EMA crosses below RSI WMA OR, at a confirmed RSI pivot high, price makes a higher high while RSI makes a lower high than at the preceding RSI pivot high

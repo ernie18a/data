@@ -1,0 +1,4 @@
+Calculation: Net volume = lower-timeframe volume delta aggregated within the completed chart bar when available; otherwise chart-bar volume × (2 × close − high − low) / (high − low), or 0 if high = low
+Calculation: Sweep volume average = simple moving average of chart-bar volume over a lookback that includes the sweep bar
+Long: an active pivot-low liquidity level is swept (sweep-bar low < level and sweep-bar close ≥ level) AND sweep-bar volume ≥ sweep volume average × a multiplier AND sweep-bar net volume > 0 AND the following chart bar closes above the sweep bar high
+Short: an active pivot-high liquidity level is swept (sweep-bar high > level and sweep-bar close ≤ level) AND sweep-bar volume ≥ sweep volume average × a multiplier AND sweep-bar net volume < 0 AND the following chart bar closes below the sweep bar low

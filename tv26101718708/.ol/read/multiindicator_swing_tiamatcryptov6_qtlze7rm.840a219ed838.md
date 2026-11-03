@@ -1,0 +1,6 @@
+Calculation: Custom ADX = SMA of DX, where +DI and -DI are 100 times the same-lookback SMA of upward high changes and downward low changes, respectively, divided by the same-lookback SMA of true range; DX = 100 × |+DI − -DI| / (+DI + -DI), or 0 when the denominator is 0; true range is the maximum of high − low, |high − prior close|, and |low − prior close|
+Calculation: Liquidity delta = EMA of the same-lookback SMA of bid volume − ask volume divided by the same-lookback SMA of volume; bid volume is volume when close < open, otherwise volume × (high − close) / (high − low + epsilon); ask volume is volume when close > open, otherwise volume × (close − low) / (high − low + epsilon)
+Long: (PSAR filter off OR close > Parabolic SAR) AND (Supertrend filter off OR Supertrend direction > 0) AND (ADX filter off OR Custom ADX > ADX threshold) AND (Liquidity delta filter off OR Liquidity delta > delta threshold)
+Short: (PSAR filter off OR close < Parabolic SAR) AND (Supertrend filter off OR Supertrend direction < 0) AND (ADX filter off OR Custom ADX > ADX threshold) AND (Liquidity delta filter off OR Liquidity delta < −delta threshold)
+Exit: Long, low ≤ entry price × (1 − stop loss percentage) OR high ≥ entry price × (1 + take profit percentage)
+Exit: Short, high ≥ entry price × (1 + stop loss percentage) OR low ≤ entry price × (1 − take profit percentage)

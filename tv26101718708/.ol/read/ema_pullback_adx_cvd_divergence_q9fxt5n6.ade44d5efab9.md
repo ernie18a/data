@@ -1,0 +1,5 @@
+Calculation: CVD = cumulative sum of volume when close > open, negative volume when close < open, and 0 when close = open
+Long: EMA(9) crosses above EMA(20) and no long signal has occurred since that crossover and no opposite crossover has occurred since; low <= EMA(9) OR low <= EMA(20); ADX > threshold; low < lowest low of the preceding lookback bars; CVD > lowest CVD of the preceding lookback bars; close > open
+Short: EMA(9) crosses below EMA(20) and no short signal has occurred since that crossover and no opposite crossover has occurred since; high >= EMA(9) OR high >= EMA(20); ADX > threshold; high > highest high of the preceding lookback bars; CVD < highest CVD of the preceding lookback bars; close < open
+Exit: long, low <= the signal bar's lowest low over the stop lookback OR high >= the signal bar's close + (signal bar's close - signal bar's lowest low over the stop lookback) × reward/risk
+Exit: short, high >= the signal bar's highest high over the stop lookback OR low <= the signal bar's close - (signal bar's highest high over the stop lookback - signal bar's close) × reward/risk

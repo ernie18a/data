@@ -1,0 +1,3 @@
+Calculation: Kalman velocity = the change estimate from a Kalman filter applied to price: initialize filter = price and velocity = 0; on each bar, distance = price − previous filter, velocity = previous velocity + distance × smoothing coefficient, and filter = previous filter + distance × square root of the smoothing coefficient + velocity. The smoothing coefficient is the smoothing parameter divided by 100. Use the selected applied price on the chart timeframe or, if a higher timeframe is selected, that timeframe’s still-forming bar.
+Long: Kalman velocity > 0 AND previous bar’s Kalman velocity ≤ 0
+Short: Kalman velocity < 0 AND previous bar’s Kalman velocity ≥ 0

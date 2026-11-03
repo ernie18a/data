@@ -1,0 +1,8 @@
+Calculation: Synthetic candle = smooth open, high, low, and close separately with the same moving-average method and parameters; its open is the smoothed open from the oldest bar in the candle lookback, its close is the current smoothed close, its high is the maximum of the lookback's smoothed highs, open, and close, and its low is the minimum of the lookback's smoothed lows, open, and close.
+Calculation: Channel = a moving average of synthetic-candle close plus or minus a deviation multiplier times the square root of the mean squared distance of synthetic-candle closes from the current moving average, over the channel lookback. Compare the synthetic close with the channel at a configurable earlier bar. For trading signals, calculate on the higher timeframe using the last completed bar and its preceding bar.
+Long: Synthetic-candle open <= synthetic-candle close.
+Short: Synthetic-candle open > synthetic-candle close.
+Long: Previous synthetic candle is not an upper-channel breakout AND last completed synthetic-candle open <= synthetic-candle close AND synthetic-candle close > upper channel.
+Short: Previous synthetic candle is not a lower-channel breakout AND last completed synthetic-candle open > synthetic-candle close AND synthetic-candle close < lower channel.
+Exit: long, last completed higher-timeframe synthetic-candle open > synthetic-candle close OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, last completed higher-timeframe synthetic-candle open <= synthetic-candle close OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

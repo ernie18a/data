@@ -1,0 +1,9 @@
+Calculation: Entry fast MA = configured moving average of close (JMA, ALMA, KAMA, FRAMA, MAMA, or FAMA), with a shorter lookback than entry slow MA.
+Calculation: Entry slow MA = configured moving average of close (JMA, ALMA, KAMA, FRAMA, MAMA, or FAMA), with a longer lookback than entry fast MA.
+Calculation: Exit fast MA = configured moving average of close (JMA, ALMA, KAMA, FRAMA, MAMA, or FAMA), with a shorter lookback than exit slow MA.
+Calculation: Exit slow MA = configured moving average of close (JMA, ALMA, KAMA, FRAMA, MAMA, or FAMA), with a longer lookback than exit fast MA.
+Calculation: Higher-timeframe entry fast and slow MAs = corresponding entry MAs calculated from higher-timeframe bars, using the bar still forming.
+Long: Entry fast MA > entry slow MA AND previous entry fast MA <= previous entry slow MA AND higher-timeframe entry fast MA > higher-timeframe entry slow MA OR entry fast MA > exit fast MA AND previous entry fast MA <= previous exit fast MA OR entry fast MA > exit slow MA AND previous entry fast MA <= previous exit slow MA OR entry slow MA > exit fast MA AND previous entry slow MA <= previous exit fast MA.
+Short: Entry fast MA < entry slow MA AND previous entry fast MA >= previous entry slow MA AND higher-timeframe entry fast MA <= higher-timeframe entry slow MA OR entry fast MA < exit fast MA AND previous entry fast MA >= previous exit fast MA OR entry fast MA < exit slow MA AND previous entry fast MA >= previous exit slow MA OR entry slow MA < exit fast MA AND previous entry slow MA >= previous exit fast MA.
+Exit: long, exit fast MA < exit slow MA AND previous exit fast MA >= previous exit slow MA.
+Exit: short, exit fast MA > exit slow MA AND previous exit fast MA <= previous exit slow MA.

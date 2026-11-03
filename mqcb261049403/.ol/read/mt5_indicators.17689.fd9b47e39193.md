@@ -1,0 +1,4 @@
+Calculation: Upper quantile = the percentile of high prices over a lookback, using rank (lookback − 1) × percentile / 100 and linear interpolation between adjacent sorted values; calculated on the chart timeframe or, if configured higher, its still-forming bar.
+Calculation: Lower quantile = the percentile of low prices over a lookback, using rank (lookback − 1) × percentile / 100 and linear interpolation between adjacent sorted values; calculated on the chart timeframe or, if configured higher, its still-forming bar.
+Long: Upper quantile > its previous value AND lower quantile > its previous value
+Short: Upper quantile < its previous value AND lower quantile < its previous value

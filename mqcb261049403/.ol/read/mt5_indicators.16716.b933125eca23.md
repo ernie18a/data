@@ -1,0 +1,4 @@
+Calculation: Relative Volatility Index (RVI) = smooth the ratio 100 × average upward price volatility ÷ (average upward price volatility + average downward price volatility); price volatility is the standard deviation of the selected price over the volatility lookback, assigned to upward or downward movement according to whether price rose or fell. Use the configured averaging methods and smoothing lookback. Calculations use chart bars or, when configured, higher-timeframe bars including the still-forming bar.
+Calculation: Floating upper and lower levels = rolling minimum RVI over the level lookback + configured upper or lower percentage of the rolling RVI range.
+Long: RVI > floating upper level AND previous bar RVI ≤ previous bar floating upper level
+Short: RVI < floating lower level AND previous bar RVI ≥ previous bar floating lower level

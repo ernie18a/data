@@ -1,0 +1,6 @@
+Calculation: Sliding RSI = 100 × (higher-timeframe RSI − its lowest value over the sliding lookback) / max(its highest value − its lowest value over the same lookback, a positive epsilon); RSI uses the higher-timeframe bar still forming
+Calculation: Price band high/low = highest high / lowest low over the sliding lookback on the chart timeframe
+Calculation: Projected oversold level = price band low + (oversold threshold / 100) × (price band high − price band low)
+Calculation: Projected overbought level = price band low + (overbought threshold / 100) × (price band high − price band low)
+Long: close > current projected oversold level AND previous close <= previous projected oversold level AND (Heikin Ashi confirmation disabled OR Heikin Ashi close >= Heikin Ashi open) AND (strict alternation disabled OR last signal is not long)
+Short: close < current projected overbought level AND previous close >= previous projected overbought level AND (Heikin Ashi confirmation disabled OR Heikin Ashi close < Heikin Ashi open) AND (strict alternation disabled OR last signal is not short)

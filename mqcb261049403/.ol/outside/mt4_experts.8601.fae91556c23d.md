@@ -1,0 +1,1 @@
+Close every open market position when the all-positions mode is selected. Otherwise, close each open market position whose profit is nonnegative when the profitable-positions mode is selected, or whose profit is nonpositive when the losing-positions mode is selected.

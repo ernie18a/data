@@ -1,0 +1,3 @@
+Calculation: Smoothed bull and bear strength = apply the same selected moving-average method and lookback to each bar’s bull and bear components. Let range = high − low, body = |close − open|, and divisor = range / (volume if volume is nonzero, otherwise 1). For a down bar (close < open), bull component = body / divisor + (range − body) / (2 × divisor), and bear component = (range − body) / (2 × divisor). For an up bar (close > open), bull component = (range − body) / (2 × divisor), and bear component = body / divisor + (range − body) / (2 × divisor). For a doji, both components = 0.
+Long: Smoothed bull strength > smoothed bear strength
+Short: Smoothed bear strength > smoothed bull strength

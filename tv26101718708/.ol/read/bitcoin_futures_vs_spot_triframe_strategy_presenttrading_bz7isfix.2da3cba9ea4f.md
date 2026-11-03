@@ -1,0 +1,6 @@
+Calculation: Futures–spot spread = weighted average futures close − weighted average spot close, using the configured exchange weights
+Calculation: Z-score = (spread − spread moving average) / spread standard deviation, with the mean and standard deviation calculated over the same long lookback; calculate separately on each of three configured higher timeframes using each timeframe’s last completed bar
+Long: all three Z-scores > long-entry threshold AND trading direction permits long
+Short: all three Z-scores < short-entry threshold AND trading direction permits short
+Exit: Long, all three Z-scores < short-entry threshold AND trading direction permits short OR current datetime ≥ entry datetime + holding duration OR take-profit is enabled AND high ≥ entry price × (1 + take-profit percentage) OR stop-loss is enabled AND low ≤ entry price × (1 − stop-loss percentage)
+Exit: Short, all three Z-scores > long-entry threshold AND trading direction permits long OR current datetime ≥ entry datetime + holding duration OR take-profit is enabled AND low ≤ entry price × (1 − take-profit percentage) OR stop-loss is enabled AND high ≥ entry price × (1 + stop-loss percentage)

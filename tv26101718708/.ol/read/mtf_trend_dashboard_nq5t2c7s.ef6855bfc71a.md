@@ -1,0 +1,4 @@
+Calculation: EMA trend = for each of the five dashboard timeframes, +1 if that timeframe’s close > fast EMA > slow EMA and RSI > 50, −1 if close < fast EMA < slow EMA and RSI < 50, otherwise 0; the fast EMA has a shorter length than the slow EMA. Use the current requested-timeframe bar, including a still-forming bar; each timeframe may be higher or lower than the chart timeframe.
+Calculation: Trend score = sum of the five EMA trend values.
+Long: Fast EMA crosses above slow EMA on the chart timeframe OR, on any dashboard timeframe, close > fast EMA AND fast EMA > slow EMA AND RSI > 50 OR trend score >= 3 OR trend score = 5 AND prior-bar trend score != 5
+Short: Fast EMA crosses below slow EMA on the chart timeframe OR, on any dashboard timeframe, close < fast EMA AND fast EMA < slow EMA AND RSI < 50 OR trend score <= −3 OR trend score = −5 AND prior-bar trend score != −5

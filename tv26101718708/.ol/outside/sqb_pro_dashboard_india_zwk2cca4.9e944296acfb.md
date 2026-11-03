@@ -1,0 +1,1 @@
+Buy when the instrument closes above its prior rolling-high breakout level on elevated volume, its price is above its short-term average, and its short-term average is above its medium-term average, which is above its long-term average, while its performance relative to a user-selected benchmark over the lookback period is positive. There is no short or exit decision.

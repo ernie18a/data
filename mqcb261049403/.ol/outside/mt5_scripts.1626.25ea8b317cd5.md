@@ -1,0 +1,1 @@
+On the selected instrument and timeframe, go long when the MACD line crosses from below zero to zero or above; go short when it crosses from above zero to zero or below.

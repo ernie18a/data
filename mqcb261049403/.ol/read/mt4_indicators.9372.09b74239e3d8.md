@@ -1,0 +1,4 @@
+Calculation: Upper fractal = a bar whose high is higher than the highs of the two bars before and after it; recognized on the third bar after the pivot.
+Calculation: Lower fractal = a bar whose low is lower than the lows of the two bars before and after it; recognized on the third bar after the pivot.
+Long: A newly recognized lower fractal is below the lowest lower fractal since the latest upper-fractal reset AND an upper fractal has been tracked AND (tracked upper-fractal price − current bar open) > (current bar open − new lower-fractal price)
+Short: A newly recognized upper fractal is above the highest upper fractal since the latest lower-fractal reset AND a lower fractal has been tracked AND (new upper-fractal price − current bar open) < (current bar open − tracked lower-fractal price)

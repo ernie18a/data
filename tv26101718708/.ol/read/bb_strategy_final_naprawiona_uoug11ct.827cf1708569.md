@@ -1,0 +1,4 @@
+Long: low < lower Bollinger Band × (1 − breakout percentage)
+Short: high > upper Bollinger Band × (1 + breakout percentage)
+Exit: Long, if stop loss is enabled and low ≤ entry price × (1 − stop loss percentage), OR high ≥ the Bollinger Band basis when touch exit is enabled, otherwise entry price × (1 + take profit percentage) when take profit is enabled, OR close exit is enabled and previous close ≥ previous Bollinger Band basis AND close < Bollinger Band basis
+Exit: Short, if stop loss is enabled and high ≥ entry price × (1 + stop loss percentage), OR low ≤ the Bollinger Band basis when touch exit is enabled, otherwise entry price × (1 − take profit percentage) when take profit is enabled, OR close exit is enabled and previous close ≤ previous Bollinger Band basis AND close > Bollinger Band basis

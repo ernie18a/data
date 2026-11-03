@@ -1,0 +1,3 @@
+Calculation: HMA3 = WMA(3 × WMA(close, half the period / 3) − WMA(close, half the period / 2) − WMA(close, half the period), half the period); calculate on the selected timeframe, which may be higher or lower than the chart timeframe, using the close from one selected-timeframe bar earlier, then use the result from one additional completed selected-timeframe bar earlier
+Long: linear regression of close crosses above HMA3 AND (shorter-lookback EMA of close > longer-lookback EMA of close OR the EMA filter is disabled) AND datetime is within the configured date window
+Exit: long, high ≥ entry price + close × configured profit percentage OR low ≤ entry price − close × configured loss percentage

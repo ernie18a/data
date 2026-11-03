@@ -1,0 +1,5 @@
+Calculation: ATR = average true range on the chart timeframe, using the bar still forming
+Calculation: Upper NRTR stop = in bullish trend, carry forward the prior upper stop unless the last completed bar's low is greater than the prior upper stop plus the current bar's ATR, then set it to that low minus the current bar's ATR; when trend changes from bearish to bullish, initialize it to the last completed bar's low minus the current bar's ATR
+Calculation: Lower NRTR stop = in bearish trend, carry forward the prior lower stop unless the last completed bar's high is less than the prior lower stop minus the current bar's ATR, then set it to that high plus the current bar's ATR; when trend changes from bullish to bearish, initialize it to the last completed bar's high plus the current bar's ATR
+Long: trend changes from bearish or neutral to bullish when the last completed bar's low is greater than the prior lower NRTR stop
+Short: trend changes from bullish or neutral to bearish when the last completed bar's high is less than the prior upper NRTR stop

@@ -1,0 +1,3 @@
+Calculation: Clarity Index = moving average of the difference between bullish and bearish strength. For each side, strength = (1 + sum of integer volumes over the previous lookback−1 bars, divided by lookback) × (1 + sum of candle ranges for that side over those bars, divided by lookback) × (1 + count of those candles). A candle is bullish if its close exceeds the next older bar’s close, and bearish if its close is lower. Apply the selected moving-average method and smoothing period to the strength difference.
+Long: Clarity Index > 0 AND prior Clarity Index ≤ 0
+Short: Clarity Index < 0 AND prior Clarity Index ≥ 0

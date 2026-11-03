@@ -1,0 +1,3 @@
+Calculation: Currency strength (base or quote) = its return minus the mean return of the eight currencies plus USD (USD return = 0); for spot data, invert the USD-quoted currency returns. Returns use either a rolling lookback or the weekly open as the anchor, on the selected calculation-timeframe bars, and may be EMA-smoothed. Use the current calculation-timeframe bar, which may be forming; that timeframe may be higher or lower than the chart timeframe.
+Long: Base strength crosses above quote strength OR (distance between strengths enters the squeeze threshold AND base strength <= quote strength)
+Short: Base strength crosses below quote strength OR (distance between strengths enters the squeeze threshold AND base strength > quote strength)

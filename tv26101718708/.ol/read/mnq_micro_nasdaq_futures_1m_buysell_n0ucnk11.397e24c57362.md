@@ -1,0 +1,6 @@
+Calculation: Long score = count of these conditions that are true: fast EMA > mid EMA AND mid EMA > slow EMA; fast EMA crosses above mid EMA; close > VWAP; (RSI > 50 AND RSI < overbought threshold) OR RSI < oversold threshold; MACD histogram crosses above zero; MACD histogram > 0 AND greater than its prior-bar value; stochastic %K crosses above %D AND %K < upper threshold; close <= lower Bollinger Band; volume > its moving average multiplied by a spike factor AND close > open
+Calculation: Short score = count of these conditions that are true: fast EMA < mid EMA AND mid EMA < slow EMA; fast EMA crosses below mid EMA; close < VWAP; (RSI < 50 AND RSI > oversold threshold) OR RSI > overbought threshold; MACD histogram crosses below zero; MACD histogram < 0 AND less than its prior-bar value; stochastic %K crosses below %D AND %K > lower threshold; close >= upper Bollinger Band; volume > its moving average multiplied by a spike factor AND close < open
+Calculation: Long eligible = long score >= minimum score AND long score > short score AND time is within the regular session
+Calculation: Short eligible = short score >= minimum score AND short score > long score AND time is within the regular session
+Long: long eligible AND previous bar was not long eligible
+Short: short eligible AND previous bar was not short eligible

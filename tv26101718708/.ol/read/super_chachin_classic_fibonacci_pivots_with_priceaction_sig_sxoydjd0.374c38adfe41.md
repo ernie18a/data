@@ -1,0 +1,6 @@
+Calculation: Previous-day pivot levels = From the last completed bar of a higher timeframe aggregated from the chart bars, let PP = (high + low + close) / 3 and range = high − low; classic levels R1 = 2 × PP − low, R2 = PP + range, R3 = R1 + range, R4 = R2 + range, S1 = 2 × PP − high, S2 = PP − range, S3 = S1 − range, S4 = S2 − range; Fibonacci levels FR1 = PP + 0.382 × range, FR2 = PP + 0.618 × range, FR3 = PP + range, FS1 = PP − 0.382 × range, FS2 = PP − 0.618 × range, FS3 = PP − range.
+Calculation: Bullish engulfing = close > open AND previous chart bar close < previous chart bar open AND open ≤ previous chart bar close AND close ≥ previous chart bar open.
+Calculation: Bearish rejection = high − close > 2 × (close − low) AND high > open AND close < open.
+Calculation: Near a pivot = absolute difference between close and any previous-day pivot level is no greater than ATR multiplied by an unspecified proximity parameter; calculate ATR on chart bars.
+Long: Bullish engulfing AND near a pivot.
+Short: Bearish rejection AND near a pivot.

@@ -1,0 +1,11 @@
+Calculation: True range = max(high − low, abs(high − previous close), abs(low − previous close))
+Calculation: ATR = simple moving average of true range over the configured lookback
+Calculation: Candle body = abs(close − open)
+Calculation: Body-to-range ratio = candle body / (high − low), or 0 when high = low
+Calculation: Early momentum = body-to-range ratio ≥ 0.8 × the configured minimum ratio AND candle body ≥ max(configured minimum body size − 3 ticks, 1 tick)
+Calculation: Confirmed momentum = body-to-range ratio ≥ configured minimum ratio AND candle body ≥ configured minimum body size
+Calculation: Upper trendline = line projected to the current bar through the two latest confirmed pivot highs; lower trendline = line projected through the two latest confirmed pivot lows
+Long: close > open AND (early momentum OR confirmed momentum) AND ATR between its configured floor and ceiling AND within a configured morning or noon session AND on an enabled weekday AND outside enabled exclusion windows AND daily trade limit not reached AND monthly profit and loss limits not reached AND not within the 24-hour pause after two consecutive losses AND (direction allows long) AND (trendline filter disabled OR no valid upper trendline OR close > upper trendline)
+Short: close < open AND (early momentum OR confirmed momentum) AND ATR between its configured floor and ceiling AND within a configured morning or noon session AND on an enabled weekday AND outside enabled exclusion windows AND daily trade limit not reached AND monthly profit and loss limits not reached AND not within the 24-hour pause after two consecutive losses AND (direction allows short) AND (trendline filter disabled OR no valid lower trendline OR close < lower trendline)
+Exit: long, price ≥ entry price + configured take-profit distance OR price ≤ entry price − configured stop-loss distance OR bars since entry ≥ configured time-exit limit when enabled OR configured session-end condition when EOD exit is enabled
+Exit: short, price ≤ entry price − configured take-profit distance OR price ≥ entry price + configured stop-loss distance OR bars since entry ≥ configured time-exit limit when enabled OR configured session-end condition when EOD exit is enabled

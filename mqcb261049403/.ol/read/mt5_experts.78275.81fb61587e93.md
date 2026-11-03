@@ -1,0 +1,9 @@
+Calculation: Average volume = mean volume over the preceding lookback bars on the chart timeframe
+Calculation: Chart ATR = average true range on the chart timeframe, including the bar being evaluated
+Calculation: Chart EMA-50 = 50-period exponential moving average of close on the chart timeframe, including the bar being evaluated
+Calculation: RSI = 14-period relative strength index of close on the chart timeframe, including the bar being evaluated
+Calculation: Higher-timeframe EMA-50 = 50-period exponential moving average of close on a higher timeframe, using the bar still forming
+Long: Current volume >= Average volume * configured volume threshold AND abs(close - open) / (high - low) >= configured minimum body ratio AND high - low >= Chart ATR * configured minimum volatility multiple AND close > previous bar high + Chart ATR * configured breakout buffer AND close > Chart EMA-50 AND RSI < 70 AND (chart timeframe is not lower than the higher timeframe OR higher-timeframe close > Higher-timeframe EMA-50)
+Short: Current volume >= Average volume * configured volume threshold AND abs(close - open) / (high - low) >= configured minimum body ratio AND high - low >= Chart ATR * configured minimum volatility multiple AND close < previous bar low - Chart ATR * configured breakout buffer AND close < Chart EMA-50 AND RSI > 30 AND (chart timeframe is not lower than the higher timeframe OR higher-timeframe close < Higher-timeframe EMA-50)
+Exit: Long, price <= entry price - Chart ATR at entry * configured stop multiple OR price >= entry price + Chart ATR at entry * configured target multiple
+Exit: Short, price >= entry price + Chart ATR at entry * configured stop multiple OR price <= entry price - Chart ATR at entry * configured target multiple

@@ -1,0 +1,3 @@
+Calculation: Adaptive Renko trend = bullish when the upper channel boundary rises from the prior bar; bearish when the lower channel boundary falls from the prior bar; otherwise retain the previous trend (initially neutral). The channel uses a brick size equal to the greater of a volatility measure times a multiplier or a minimum size. Volatility is ATR or close-price standard deviation over a lookback; the price driving channel movement is either close or high/low.
+Long: Adaptive Renko trend = bullish
+Short: Adaptive Renko trend = bearish

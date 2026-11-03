@@ -1,0 +1,2 @@
+Long: current time > configured start time AND current time < configured end time AND open position count for this symbol = 0 AND today’s closed deal count for this symbol < daily deal limit AND open position count for this symbol < per-symbol position limit
+Exit: Long, current time >= configured close time

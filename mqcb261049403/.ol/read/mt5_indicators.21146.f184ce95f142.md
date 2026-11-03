@@ -1,0 +1,3 @@
+Calculation: Signal line = selected applied price smoothed by two consecutive linear weighted moving averages with the same lookback, rounded to the configured price increment, then adjusted by the configured vertical offset; in the HTF variant, calculate on the same or a higher timeframe using its bar still forming
+Long: Signal line > previous bar's signal line OR selected applied price > signal line
+Short: Signal line < previous bar's signal line OR selected applied price < signal line

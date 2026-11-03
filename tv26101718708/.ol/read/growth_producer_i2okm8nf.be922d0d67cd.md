@@ -1,0 +1,10 @@
+Calculation: Relative volatility index = 100 × positive-change standard deviation EMA / (positive-change standard deviation EMA + nonpositive-change standard deviation EMA); use standard deviation of close over a long lookback and the same shorter EMA lookback for both terms, assigning standard deviation to the positive term only when close rises and to the nonpositive term otherwise
+Calculation: Directional money-flow index = 100 − 100 / (1 + positive money flow / negative money flow), where positive and negative money flow are the sums over the lookback of volume × HLC3 on bars where HLC3 rises and falls, respectively
+Calculation: Long take-profit levels = entry price × (1 + each of two positive thresholds), with the second threshold larger than the first
+Calculation: Long stop level = entry price × (1 − positive stop threshold)
+Calculation: Short take-profit levels = entry price × (1 − each of two positive thresholds), with the second threshold larger than the first
+Calculation: Short stop level = entry price × (1 + positive stop threshold)
+Long: (RSI of VWAP(close) crosses above its oversold level OR directional money-flow index crosses below its lower level) AND EMA(close) > SMA(close) AND (position is flat OR position is long AND relative volatility index > its benchmark)
+Short: (RSI of VWAP(close) crosses below its overbought level OR directional money-flow index crosses above its upper level) AND EMA(close) < SMA(close) AND (position is flat OR position is short AND relative volatility index > its benchmark)
+Exit: long, RSI of VWAP(close) crosses below its overbought level OR high >= either long take-profit level OR low <= long stop level
+Exit: short, RSI of VWAP(close) crosses above its oversold level OR low <= either short take-profit level OR high >= short stop level

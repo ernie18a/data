@@ -1,0 +1,4 @@
+Long: AO on a higher timeframe using its last completed bar is greater than its previous value AND AC on a higher timeframe using its last completed bar is greater than its previous value
+Short: AO on a higher timeframe using its last completed bar is less than its previous value AND AC on a higher timeframe using its last completed bar is less than its previous value
+Exit: long, AO on a higher timeframe using its last completed bar is less than its previous value OR AC on a higher timeframe using its last completed bar is less than its previous value
+Exit: short, AO on a higher timeframe using its last completed bar is greater than its previous value OR AC on a higher timeframe using its last completed bar is greater than its previous value

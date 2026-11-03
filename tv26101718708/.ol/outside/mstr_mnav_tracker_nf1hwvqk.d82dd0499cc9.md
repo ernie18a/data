@@ -1,0 +1,1 @@
+Calculate the traded company's market value per share relative to the value of its Bitcoin holdings per share, using the Bitcoin price. If the ratio is below parity, buy the company's shares; if above parity, buy Bitcoin.

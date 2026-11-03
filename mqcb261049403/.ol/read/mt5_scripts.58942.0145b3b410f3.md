@@ -1,0 +1,4 @@
+Long: Stochastic %K crosses above %D on the still-forming chart-timeframe bar AND no long position is open AND the cooldown since the previous trade has elapsed
+Short: Stochastic %K crosses below %D on the still-forming chart-timeframe bar AND no short position is open AND the cooldown since the previous trade has elapsed
+Exit: long, Stochastic %K crosses below %D on the still-forming chart-timeframe bar OR close <= entry price − stop-loss distance OR close >= entry price + take-profit distance
+Exit: short, Stochastic %K crosses above %D on the still-forming chart-timeframe bar OR close >= entry price + stop-loss distance OR close <= entry price − take-profit distance

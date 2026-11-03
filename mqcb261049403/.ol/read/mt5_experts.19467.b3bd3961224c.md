@@ -1,0 +1,2 @@
+Long: high[1] < high[2] AND high[2] < high[3] AND high[3] < high[4] AND open[1] < open[2] AND open[2] < open[3] AND open[3] < open[4] AND Stochastic main > signal on both the last completed and still-forming bars of each of two lower-than-chart timeframes, where the first timeframe is shorter than the second
+Exit: long, high >= entry price + configured take-profit distance OR (configured stop-loss distance > 0 AND low <= entry price - configured stop-loss distance)

@@ -1,0 +1,3 @@
+Calculation: ATR trailing stop = highest value over the lookback of (high − multiplier × ATR over the ATR lookback); use close instead during the first 15 bars. Calculate on the chart timeframe by default; optionally use a higher timeframe, using its last completed bar unless live-bar updates are enabled.
+Long: close > ATR trailing stop AND previous close ≤ previous ATR trailing stop
+Short: close < ATR trailing stop AND previous close ≥ previous ATR trailing stop

@@ -1,0 +1,4 @@
+Calculation: Normalized order flow = (cumulative estimated buy volume minus estimated sell volume − its simple moving average) divided by the standard deviation of that difference; estimated buy volume = volume × (close − low) / (high − low), estimated sell volume = volume × (high − close) / (high − low)
+Calculation: Microstructure trend score = sum across adjacent stored fractal highs and lows: add 1 when the older pivot is higher than the newer pivot; otherwise subtract 1, counting only pairs with both pivots available
+Long: Normalized order flow > 0 OR 20-bar price rate of change > 0 AND 20-bar volume rate of change > accumulation threshold OR microstructure trend score > 2
+Short: Normalized order flow <= 0 OR 20-bar price rate of change < 0 AND 20-bar volume rate of change > accumulation threshold OR microstructure trend score < -2

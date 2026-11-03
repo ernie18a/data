@@ -1,0 +1,3 @@
+Calculation: normalized close-location ratio = (2 × close − high − low) / (high − low), or 0 when high = low
+Long: close < open AND normalized close-location ratio > long threshold AND volume >= volume moving average × minimum-volume factor AND RSI <= long RSI threshold AND MACD histogram <= long MACD threshold
+Short: close > open AND normalized close-location ratio < −short threshold AND volume >= volume moving average × minimum-volume factor AND RSI >= short RSI threshold AND MACD histogram >= short MACD threshold

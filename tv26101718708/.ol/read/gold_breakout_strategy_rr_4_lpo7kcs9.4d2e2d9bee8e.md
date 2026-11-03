@@ -1,0 +1,6 @@
+Calculation: LWTI = weighted moving average of close minus the previous close, using a longer lookback than its smoothing
+Calculation: Smoothed LWTI = simple moving average of LWTI, using a shorter lookback than the LWTI lookback
+Long: No trade has been taken today AND time is between 20:00 and 08:00 GMT-5 AND close > previous Donchian Channel upper bound AND current Donchian Channel upper bound > previous upper bound AND volume > its simple moving average AND LWTI > Smoothed LWTI
+Short: No trade has been taken today AND time is between 20:00 and 08:00 GMT-5 AND close < previous Donchian Channel lower bound AND current Donchian Channel lower bound < previous lower bound AND volume > its simple moving average AND LWTI < Smoothed LWTI
+Exit: Long, low <= entry-signal bar low OR high >= entry-signal bar close + 4 × (entry-signal bar close − entry-signal bar low)
+Exit: Short, high >= entry-signal bar high OR low <= entry-signal bar close − 4 × (entry-signal bar high − entry-signal bar close)

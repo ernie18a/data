@@ -1,0 +1,2 @@
+Long: bar timestamp is within an enabled session or the all-hours override is enabled AND current bar range > its moving average × range multiplier AND current volume > its moving average × volume multiplier AND close is in the upper threshold fraction of the bar range AND close > open
+Short: bar timestamp is within an enabled session or the all-hours override is enabled AND current bar range > its moving average × range multiplier AND current volume > its moving average × volume multiplier AND close is in the lower threshold fraction of the bar range AND close < open

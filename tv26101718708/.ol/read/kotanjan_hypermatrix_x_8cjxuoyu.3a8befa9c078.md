@@ -1,0 +1,9 @@
+Calculation: Normalized value of x = x divided by the moving average of its absolute value over the base lookback; use zero if the average is zero.
+Calculation: Matrix score = normalized ATR + normalized close change + normalized (OBV minus its EMA) + normalized rate of change + normalized (ATR divided by its moving average) + normalized (shorter-period EMA minus longer-period EMA).
+Calculation: Flow score = (both of the last two close changes are positive ? 1 : both are negative ? -1 : 0) + (volume exceeds its moving average times a volume multiplier ? 1 : 0) + (both absolute close changes are below the moving average of absolute close changes times a compression sensitivity ? -1 : 1).
+Calculation: ADX boost = 2 if ADX exceeds its moving average over the ADX support lookback; otherwise -1.5.
+Calculation: MACD boost = MACD histogram times 5, limited to the range -3 to 3.
+Calculation: RSI penalty = -3 above 75, -2 above 70, +3 below 25, +2 below 30, otherwise 0; apply conditions in that order.
+Calculation: Final score = matrix score + flow score + ADX boost + MACD boost + RSI penalty.
+Long: both of the last two close changes are positive AND volume exceeds its moving average times the volume multiplier AND at least one of the last two absolute close changes is not below the moving average of absolute close changes times the compression sensitivity AND final score exceeds the long threshold AND prior signal state is not long.
+Short: both of the last two close changes are negative AND volume exceeds its moving average times the volume multiplier AND at least one of the last two absolute close changes is not below the moving average of absolute close changes times the compression sensitivity AND final score is below the short threshold AND prior signal state is not short.

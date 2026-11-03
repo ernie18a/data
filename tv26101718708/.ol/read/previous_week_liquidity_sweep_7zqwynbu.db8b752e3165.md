@@ -1,0 +1,2 @@
+Long: low < previous completed higher-timeframe low AND close > previous completed higher-timeframe low AND chart timeframe is lower than or equal to the reference timeframe
+Short: high > previous completed higher-timeframe high AND close < previous completed higher-timeframe high AND chart timeframe is lower than or equal to the reference timeframe

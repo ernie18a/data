@@ -1,0 +1,4 @@
+Calculation: Forming higher-timeframe candle = aggregate chart bars within the current higher-timeframe interval; use the still-forming bar.
+Calculation: Pivot structure on each of 1H, 4H, and 1D bars (higher or lower than the chart timeframe as applicable; latest available bar, which may still be forming) = confirmed pivot highs and lows using the same lookback on both sides; bullish when the latest two highs and latest two lows are each rising; bearish when both pairs are each falling.
+Long: Forming higher-timeframe close >= open OR pivot structure is bullish on 1H OR 4H OR 1D.
+Short: Forming higher-timeframe close < open OR pivot structure is bearish on 1H OR 4H OR 1D.

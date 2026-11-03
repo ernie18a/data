@@ -1,0 +1,3 @@
+Calculation: yEffekt = Over the current bar and previous four bars, divide the directional displacement by the sum of their high-low ranges. If the current low is below the high four bars ago, displacement is current low minus that earlier high; otherwise, if the current high is above the low four bars ago, displacement is current high minus that earlier low; otherwise, or if the range sum is zero, the value is 0.
+Long: yEffekt > 0
+Short: yEffekt < 0

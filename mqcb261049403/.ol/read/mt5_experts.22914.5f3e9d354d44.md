@@ -1,0 +1,6 @@
+Calculation: Highest high = maximum high across the lookback on the higher OHLC timeframe, including its current forming bar and earlier bars
+Calculation: Lowest low = minimum low across the lookback on the higher OHLC timeframe, including its current forming bar and earlier bars
+Long: no open position AND Monday AND (Highest high < previous completed OHLC-timeframe bar close OR moving average on the previous completed higher-timeframe bar > current forming OHLC-timeframe bar open)
+Short: no open position AND Monday AND NOT (Highest high < previous completed OHLC-timeframe bar close OR moving average on the previous completed higher-timeframe bar > current forming OHLC-timeframe bar open) AND (Lowest low > previous completed OHLC-timeframe bar close OR moving average on the previous completed higher-timeframe bar < current forming OHLC-timeframe bar open)
+Exit: long, price <= entry price minus configured stop-loss distance OR elapsed time since entry exceeds the fixed holding-period threshold
+Exit: short, price >= entry price plus configured stop-loss distance OR elapsed time since entry exceeds the fixed holding-period threshold

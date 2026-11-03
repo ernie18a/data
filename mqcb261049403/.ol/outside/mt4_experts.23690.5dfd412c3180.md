@@ -1,0 +1,1 @@
+On each new bar, close this strategy’s open positions in the traded instrument if their combined floating loss exceeds a configured fraction of the account’s tracked equity high. If enabled, close all open positions in the instrument when their combined floating profit reaches a configured percentage of account balance.

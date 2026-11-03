@@ -1,0 +1,3 @@
+Calculation: M1–M6 = six moving averages of close using the same selected type, ordered from shortest to longest lookback
+Long: for some k from 1 through 6, each of M1–Mk is greater than its prior chart-bar value and each of the remaining averages is less than its prior chart-bar value OR M1 > M2 > M3 > M4 > M5 > M6 and each average is greater than its prior chart-bar value
+Short: for some k from 1 through 6, each of M1–Mk is less than its prior chart-bar value and each of the remaining averages is greater than its prior chart-bar value OR M1 < M2 < M3 < M4 < M5 < M6 and each average is less than its prior chart-bar value

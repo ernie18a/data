@@ -1,0 +1,6 @@
+Calculation: Inside Day = previous completed daily bar high < the daily bar high two bars ago AND previous completed daily bar low > the daily bar low two bars ago; daily bars are higher timeframe bars aggregated from the chart data
+Calculation: Daily ATR = average true range on daily bars, using the last completed daily bar
+Long: Inside Day AND current bar high >= previous completed daily bar high AND position is flat AND session is open AND direction setting permits long
+Short: Inside Day AND current bar low <= previous completed daily bar low AND position is flat AND session is open AND direction setting permits short
+Exit: Long, current bar low <= previous completed daily bar low OR take profit is enabled AND current bar high >= entry price + Daily ATR × take profit multiplier OR New York time is outside the 18:00–16:55 session
+Exit: Short, current bar high >= previous completed daily bar high OR take profit is enabled AND current bar low <= entry price − Daily ATR × take profit multiplier OR New York time is outside the 18:00–16:55 session

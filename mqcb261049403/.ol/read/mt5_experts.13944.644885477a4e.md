@@ -1,0 +1,5 @@
+Calculation: Smoothed derivative = a selectable moving average of 100 × (selected bar price − selected price a lookback number of bars earlier) / lookback, calculated on a selectable higher or lower timeframe; use the last completed bar or, if configured, the still-forming bar. The default selected price is (high + low + 2 × close) / 4.
+Long: Smoothed derivative on the selected bar > its previous value AND its previous value < its value two bars earlier
+Short: Smoothed derivative on the selected bar < its previous value AND its previous value > its value two bars earlier
+Exit: long, smoothed derivative on the selected bar < its previous value OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, smoothed derivative on the selected bar > its previous value OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

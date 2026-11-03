@@ -1,0 +1,3 @@
+Calculation: Bear/Bulls Power = a smoothed series of (bar midpoint − a moving average of close), where bar midpoint = (high + low) / 2; the moving average and final smoothing use configurable methods and lookbacks
+Long: On the higher-timeframe series, the value two chart bars before the signal bar > the value one chart bar before it AND the value at the signal bar > the value one chart bar before it; use the higher-timeframe bar still forming
+Short: On the higher-timeframe series, the value two chart bars before the signal bar < the value one chart bar before it AND the value at the signal bar < the value one chart bar before it; use the higher-timeframe bar still forming

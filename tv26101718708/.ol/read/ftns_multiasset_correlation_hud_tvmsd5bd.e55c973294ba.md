@@ -1,0 +1,5 @@
+Calculation: Rate of change = percent change in the monitored asset’s close over a lookback on its configured timeframe, which may be higher or lower than the chart timeframe; use the current bar, including while it is still forming
+Long: For an enabled asset, rate of change > 0 with positive correlation OR rate of change < 0 with negative correlation
+Short: For an enabled asset, rate of change < 0 with positive correlation OR rate of change > 0 with negative correlation
+Long: At least one enabled asset, and the greater of the bullish and bearish asset counts divided by the enabled asset count is >= 0.666 AND bullish asset count >= bearish asset count
+Short: At least one enabled asset, and the greater of the bullish and bearish asset counts divided by the enabled asset count is >= 0.666 AND bearish asset count > bullish asset count

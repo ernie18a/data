@@ -1,0 +1,4 @@
+Short: Previous chart-timeframe close > last completed chart-timeframe close AND last completed chart-timeframe RSI > RSI lower threshold
+Long: Previous chart-timeframe close > last completed chart-timeframe close AND last completed chart-timeframe RSI ≤ RSI lower threshold AND last completed chart-timeframe RSI < RSI upper threshold
+Exit: Short, current forming lower-timeframe CCI > upper CCI threshold OR ask < volume-weighted average entry price − take-profit distance OR ask > volume-weighted average entry price + stop-loss distance
+Exit: Long, current forming lower-timeframe CCI < −lower CCI threshold OR bid > volume-weighted average entry price + take-profit distance OR bid < volume-weighted average entry price − stop-loss distance

@@ -1,0 +1,6 @@
+Calculation: Fast step RSI line = recursively calculated from RSI(close) on the indicator timeframe: initialize prior lower and upper bounds to +∞ and −∞; each bar set candidate bounds to RSI ± 2 × fast step, set trend up if RSI exceeds the prior upper bound or down if below the prior lower bound, then in an uptrend clamp the lower candidate not to fall below the prior lower bound and output lower candidate + fast step; in a downtrend clamp the upper candidate not to rise above the prior upper bound and output upper candidate − fast step. Fast step is smaller than slow step.
+Calculation: Slow step RSI line = the same recursive calculation as the fast step RSI line, using a larger step parameter.
+Long: On the higher indicator timeframe, fast step RSI line > slow step RSI line on the last completed bar AND fast step RSI line <= slow step RSI line on the immediately preceding completed bar.
+Short: On the higher indicator timeframe, fast step RSI line < slow step RSI line on the last completed bar AND fast step RSI line >= slow step RSI line on the immediately preceding completed bar.
+Exit: Long, fast step RSI line < slow step RSI line on the last completed bar.
+Exit: Short, fast step RSI line > slow step RSI line on the last completed bar.

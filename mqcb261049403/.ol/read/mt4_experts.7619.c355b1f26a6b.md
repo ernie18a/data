@@ -1,0 +1,6 @@
+Calculation: Long stop = entry price minus initial stop distance; when the current chart bar’s still-forming close is at least the trail trigger above entry, set the stop to entry plus trail distance; thereafter, when that close is at least the trail trigger above the stop, raise the stop by the trail distance.
+Calculation: Short stop = entry price plus initial stop distance; when the current chart bar’s still-forming close is at least the trail trigger below entry, set the stop to entry minus trail distance; thereafter, when that close is at least the trail trigger below the stop, lower the stop by the trail distance.
+Long: previous completed chart-bar close > close of the bar beginning at the configured start time + long target distance AND current datetime > start time plus one chart-bar duration AND current datetime < configured end time AND no long position is open.
+Short: previous completed chart-bar close < close of the bar beginning at the configured start time − short target distance AND current datetime > start time plus one chart-bar duration AND current datetime < configured end time AND no short position is open.
+Exit: long, low ≤ long stop.
+Exit: short, high ≥ short stop.

@@ -1,0 +1,2 @@
+Long: The current bar is Monday, open < close, and the weekdays of the current bar and preceding 20 bars, in chronological order, are Monday, Tuesday, Wednesday, Thursday, Friday repeated four times, followed by Monday.
+Exit: Long, open < close

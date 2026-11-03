@@ -1,0 +1,2 @@
+Long: The low of the bar `rightPiv` bars ago is lower than the lows of the configured number of bars on both sides.
+Short: The high of the bar `rightPiv` bars ago is higher than the highs of the configured number of bars on both sides.

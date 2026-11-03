@@ -1,0 +1,4 @@
+Long: RSI was at or below its oversold threshold within the current or previous 9 bars AND the short-term SMA crosses above VWAP
+Short: RSI was at or above its overbought threshold within the current or previous 9 bars AND the short-term SMA crosses below VWAP
+Exit: long, RSI was at or above its overbought threshold within the current or previous 9 bars AND the short-term SMA crosses below VWAP OR low <= entry price × (1 − stop-loss fraction) OR high >= entry price × (1 + take-profit fraction)
+Exit: short, RSI was at or below its oversold threshold within the current or previous 9 bars AND the short-term SMA crosses above VWAP OR high >= entry price × (1 + stop-loss fraction) OR low <= entry price × (1 − take-profit fraction)

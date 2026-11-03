@@ -1,0 +1,2 @@
+Long: For each selected timeframe, its close > its EMA; use the latest available bar (for a lower timeframe, the latest bar within the chart bar; for a higher timeframe, the last completed bar historically and the still-forming bar in realtime).
+Short: For each selected timeframe, its close <= its EMA; use the latest available bar (for a lower timeframe, the latest bar within the chart bar; for a higher timeframe, the last completed bar historically and the still-forming bar in realtime).

@@ -1,0 +1,2 @@
+Long: shortest-, second-shortest-, second-longest-, or longest-lookback Money Flow Index > upper trigger
+Short: shortest-, second-shortest-, second-longest-, or longest-lookback Money Flow Index < lower trigger

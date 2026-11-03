@@ -1,0 +1,5 @@
+Calculation: Latest confirmed swing high = the high of the most recent bar that is higher than the highs of the configured number of bars on both sides, once the bars on its right have formed.
+Calculation: Latest confirmed swing low = the low of the most recent bar that is lower than the lows of the configured number of bars on both sides, once the bars on its right have formed.
+Calculation: Daily average range percentage = the simple moving average of (daily high − daily low) / |daily low| × 100; uses the higher-timeframe daily bar still forming.
+Long: high ≥ latest confirmed swing high AND latest confirmed swing high > chart-timeframe moving average AND latest confirmed swing high > moving average on the selected higher timeframe, using its bar still forming AND latest confirmed swing high − latest confirmed swing low < daily average range percentage AND prior-bar RSI on its selected timeframe < overbought threshold AND datetime > start date AND datetime < finish date
+Exit: long, low ≤ latest confirmed swing low

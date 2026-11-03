@@ -1,0 +1,7 @@
+Calculation: CCI-volume candle = calculate CCI separately on each bar’s open, high, low, and close; set its high to the maximum and low to the minimum of those four CCI values; multiply each resulting OHLC value by bar volume; smooth each series with the same smoothing method and lookback.
+Calculation: Smoothed volume = bar volume smoothed with the same method and lookback as the CCI-volume candle.
+Calculation: Upper and lower channel = configurable upper and lower levels multiplied by smoothed volume.
+Calculation: Gap-adjusted candle open = previous bar’s smoothed CCI-volume close when the absolute difference between the current raw price open and close is no greater than the configurable gap; otherwise use the current smoothed CCI-volume open.
+Calculation: Higher-timeframe CCI-volume candle and smoothed volume = the same calculations on bars of a higher timeframe, using the bar still forming.
+Long: smoothed CCI-volume close >= gap-adjusted candle open OR (previous smoothed CCI-volume close < 0 AND current smoothed CCI-volume close >= 0)
+Short: smoothed CCI-volume close < gap-adjusted candle open OR (previous smoothed CCI-volume close > 0 AND current smoothed CCI-volume close <= 0)

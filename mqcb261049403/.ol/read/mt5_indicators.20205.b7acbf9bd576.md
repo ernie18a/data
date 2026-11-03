@@ -1,0 +1,2 @@
+Long: Current bar is on the configured weekday and hour, the previous chart bar's hour differs from the configured hour, and the previous chart bar's close is below the open of the previous completed daily bar.
+Short: Current bar is on the configured weekday and hour, the previous chart bar's hour differs from the configured hour, and the previous chart bar's close is above the open of the previous completed daily bar.

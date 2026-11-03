@@ -1,0 +1,3 @@
+Calculation: Weekly POC = For each calendar week, use lower-timeframe bars, including available bars within the chart bar still forming; if none are available, use chart bars. Divide the week's high-to-low range into 50 equal bins. Split each bar's volume equally among the bins its high-low range touches. The POC is the midpoint of the bin with the greatest total volume; ties select the lowest bin. A POC is undefined if the week's high equals its low.
+Long: close > any current or prior weekly POC
+Short: close <= any current or prior weekly POC

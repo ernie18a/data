@@ -1,0 +1,6 @@
+Calculation: Daily Heikin-Ashi close = (daily open + daily high + daily low + daily close) / 4; daily Heikin-Ashi open = (previous daily Heikin-Ashi open + previous daily Heikin-Ashi close) / 2; use the last completed daily bar
+Calculation: EMA of chart-timeframe high and EMA of chart-timeframe low, with equal lookback lengths
+Long: position side is not long AND previous completed daily Heikin-Ashi close > previous completed daily Heikin-Ashi open AND chart close two bars ago <= EMA of chart-timeframe high two bars ago AND chart close one bar ago > EMA of chart-timeframe high one bar ago AND current chart close > EMA of chart-timeframe high
+Short: position side is not short AND previous completed daily Heikin-Ashi close < previous completed daily Heikin-Ashi open AND chart close two bars ago >= EMA of chart-timeframe low two bars ago AND chart close one bar ago < EMA of chart-timeframe low one bar ago AND current chart close < EMA of chart-timeframe low
+Exit: long, chart close two bars ago >= EMA of chart-timeframe low two bars ago AND chart close one bar ago < EMA of chart-timeframe low one bar ago AND current chart close < EMA of chart-timeframe low
+Exit: short, chart close two bars ago <= EMA of chart-timeframe high two bars ago AND chart close one bar ago > EMA of chart-timeframe high one bar ago AND current chart close > EMA of chart-timeframe high

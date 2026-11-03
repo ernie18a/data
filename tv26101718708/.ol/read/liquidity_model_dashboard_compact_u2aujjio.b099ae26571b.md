@@ -1,0 +1,2 @@
+Long: On each of two higher timeframes, the last completed bar’s close > its EMA, using the same lookback on both timeframes
+Short: On each of two higher timeframes, the last completed bar’s close < its EMA, using the same lookback on both timeframes

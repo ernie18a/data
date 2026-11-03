@@ -1,0 +1,3 @@
+Calculation: Smoothed RSI-volume candle = On each chart bar, calculate RSI separately from open, high, low, and close; set RSI high and low to the maximum and minimum of those four values. Subtract 50 from each RSI OHLC value, multiply each by the selected bar volume, and smooth each result and volume with the same moving-average method and parameters. If the absolute difference between the bar's raw open and close is no greater than the gap parameter, replace the smoothed open with the previous chart bar's smoothed close.
+Long: Smoothed RSI-volume candle close >= smoothed RSI-volume candle open
+Short: Smoothed RSI-volume candle close < smoothed RSI-volume candle open

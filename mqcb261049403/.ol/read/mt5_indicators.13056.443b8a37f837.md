@@ -1,0 +1,3 @@
+Calculation: CMx = if its period parameter is negative, EMA(close, shorter lookback) − EMA(close, longer lookback); if positive, CCI(longer lookback, applied to the negative-period CMx) × ADX(shorter lookback) ÷ (scaling threshold × multiplier). The longer lookback is the shorter lookback multiplied by the multiplier.
+Long: CMx on the selected timeframe (same as or higher than the chart timeframe), using its last completed bar, > 0
+Short: CMx on the selected timeframe (same as or higher than the chart timeframe), using its last completed bar, < 0

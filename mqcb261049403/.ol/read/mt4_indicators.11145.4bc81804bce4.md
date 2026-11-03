@@ -1,0 +1,2 @@
+Long: The low of a higher-timeframe bar is lower than the lows of each of the two higher-timeframe bars before it and the two after it; act when both following bars have completed
+Short: The high of a higher-timeframe bar is higher than the highs of each of the two higher-timeframe bars before it and the two after it; act when both following bars have completed

@@ -1,0 +1,3 @@
+Calculation: Directional pressure = EMA of 100 × (0.35 × (close − open)/(high − low) + 0.25 × (2 × (close − low)/(high − low) − 1) + 0.30 × clamp((close − close at the shorter momentum lookback) / (2.5 × ATR), −1, 1) + 0.10 × efficiency × sign of that momentum), where efficiency = abs(close − close at the efficiency lookback) / sum of absolute close-to-close changes over that lookback; use 0 for candle terms when high = low, and 0 for efficiency when its denominator is 0. The momentum and efficiency lookbacks are separate parameters.
+Long: Directional pressure > the minimum pressure threshold
+Short: Directional pressure < −the minimum pressure threshold

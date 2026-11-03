@@ -1,0 +1,5 @@
+Calculation: Body ratio = absolute(close − open) / (high − low), or 0 when high = low
+Calculation: Short-, medium-, and long-lookback SMAs = simple moving averages of close, with the medium lookback longer than the short and the long lookback longer than the medium
+Long: (high − low > ATR × threshold AND Body ratio > threshold AND close > open) OR close > short-lookback SMA OR medium-lookback SMA > its prior value OR (medium-lookback SMA > long-lookback SMA AND abs(close − long-lookback SMA) / long-lookback SMA >= threshold) OR low > high[2] OR (close > EMA of close on a higher-timeframe bar still forming AND prior close <= prior EMA)
+Short: (high − low > ATR × threshold AND Body ratio > threshold AND close < open) OR close <= short-lookback SMA OR medium-lookback SMA <= its prior value OR (medium-lookback SMA < long-lookback SMA AND abs(close − long-lookback SMA) / long-lookback SMA >= threshold) OR high < low[2] OR (close < EMA of close on a higher-timeframe bar still forming AND prior close >= prior EMA)
+Exit: 

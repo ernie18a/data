@@ -1,0 +1,5 @@
+Calculation: Smoothed trend intensity = on the chart timeframe or a configurable higher or lower timeframe, compute a moving average of the selected OHLC-derived price; separately smooth max(price - moving average, 0) and max(moving average - price, 0) with the same shorter smoothing period and method. The index is 100 × smoothed positive deviation / (smoothed positive deviation + smoothed negative deviation), or 100 if the denominator is zero, clamped to [0, 100]. Use the last completed indicator-timeframe bar by default; optionally use its still-forming bar. Previous means the preceding indicator-timeframe bar.
+Long: Smoothed trend intensity > upper threshold AND previous smoothed trend intensity <= upper threshold
+Short: Smoothed trend intensity < lower threshold AND previous smoothed trend intensity >= lower threshold
+Exit: long, smoothed trend intensity < lower threshold OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, smoothed trend intensity > upper threshold OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

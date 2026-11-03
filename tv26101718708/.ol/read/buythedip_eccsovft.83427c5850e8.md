@@ -1,0 +1,3 @@
+Long: At least one bar in the lookback has close > shortest moving average > successively longer moving averages > longest moving average AND close crosses above the lower or middle Bollinger band
+Calculation: ATR trailing stop = maximum of close minus ATR times a multiplier and the previous bar’s ATR trailing stop
+Exit: Long, close crosses below the upper Bollinger band OR low <= ATR trailing stop

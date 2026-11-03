@@ -1,0 +1,8 @@
+Calculation: Adapted close = close, or an optional Kalman estimate, or SMA(close, lookback) + (close - close[lookback]) / 2; use adapted close for extremes when close extremes are enabled, otherwise use high and low.
+Calculation: Chandelier direction = initially bullish when close >= open; thereafter bullish when close > prior-bar short boundary, bearish when close < prior-bar long boundary, otherwise retain prior direction. Long boundary = rolling highest selected source over the ATR lookback minus ATR × multiplier; short boundary = rolling lowest selected source over the same lookback plus ATR × the same multiplier.
+Long: Chandelier direction is bullish
+Short: Chandelier direction is bearish
+Long: Chandelier direction changes from bearish to bullish AND (HTF filter disabled OR close > EMA of close on a higher timeframe, using its last completed bar) AND (ADX filter disabled OR ADX >= threshold)
+Short: Chandelier direction changes from bullish to bearish AND (HTF filter disabled OR close < EMA of close on a higher timeframe, using its last completed bar) AND (ADX filter disabled OR ADX >= threshold)
+Exit: long, Chandelier direction changes from bullish to bearish AND (HTF filter disabled OR close < EMA of close on a higher timeframe, using its last completed bar) AND (ADX filter disabled OR ADX >= threshold)
+Exit: short, Chandelier direction changes from bearish to bullish AND (HTF filter disabled OR close > EMA of close on a higher timeframe, using its last completed bar) AND (ADX filter disabled OR ADX >= threshold)

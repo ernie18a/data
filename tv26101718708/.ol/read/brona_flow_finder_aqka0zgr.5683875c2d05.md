@@ -1,0 +1,3 @@
+Calculation: Short-, medium-, and long-term volume averages = simple moving averages of volume with progressively longer lookbacks
+Calculation: Volume ratio = current volume / previous bar's volume
+Long: At least one of the current, previous, or two-bars-ago bars had volume below each of the short-, medium-, and long-term volume averages AND neither the current nor previous bar closed below its open while volume exceeded any of those averages AND volume ratio is at least the signal threshold AND (close > open OR (low > previous bar's high AND open > close))

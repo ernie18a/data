@@ -1,0 +1,2 @@
+Long: The low at the candidate bar is the lowest low among the configured bars to its left and right, and all configured right-side bars have completed
+Short: The high at the candidate bar is the highest high among the configured bars to its left and right, and all configured right-side bars have completed

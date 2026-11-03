@@ -1,0 +1,4 @@
+Calculation: exhaustion = (close + high + low − SMA(close + high + low)) / SMA(close + high + low), using the same lookback for both averages
+Calculation: exhaustion moving average = SMA(exhaustion), using the same lookback as the exhaustion calculation
+Long: (exhaustion crosses above its moving average AND medium-term SMA of close ≥ long-term SMA of close AND SMA(volume) > 0) OR (RSI < 30 AND SMA(volume) > 0)
+Exit: long, (exhaustion crosses below its moving average AND volume > a sensitivity multiple of its SMA) OR short-term SMA of close crosses below medium-term SMA of close OR medium-term SMA of close < long-term SMA of close OR (MACD crosses below its signal line AND volume > a sensitivity multiple of its SMA)

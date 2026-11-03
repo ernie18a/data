@@ -1,0 +1,3 @@
+Calculation: ColorZerolagMomentumOSMA = Apply two successive recursive smoothings to the weighted sum of five momentum values. The momentum lookbacks are successively longer; the second and third values use the same weight. For each smoothing, the current value is input divided by its smoothing period plus the previous smoothed value multiplied by (period − 1) / period. The second smoothing is applied to the difference between the weighted sum and the first smoothing.
+Long: ColorZerolagMomentumOSMA > 0 AND ColorZerolagMomentumOSMA > its value on the previous bar
+Short: ColorZerolagMomentumOSMA < 0 AND ColorZerolagMomentumOSMA < its value on the previous bar

@@ -1,0 +1,1 @@
+For each scanned instrument, signal long when the previous configured minimum number of consecutive bars closed below all three moving averages, and the current bar closes above all three while its volume exceeds the configured multiple of its average volume. No short or exit condition is defined.

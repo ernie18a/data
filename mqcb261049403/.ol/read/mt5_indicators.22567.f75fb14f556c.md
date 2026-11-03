@@ -1,0 +1,3 @@
+Calculation: JMA-smoothed candle = apply the JMA moving average separately to each bar’s open, high, low, and close, using the same smoothing parameters.
+Long: On any configured timeframe, the last completed bar’s JMA-smoothed close > its JMA-smoothed open AND the immediately preceding completed bar’s JMA-smoothed close <= its JMA-smoothed open (the configured timeframe may be higher or lower than the chart timeframe).
+Short: On any configured timeframe, the last completed bar’s JMA-smoothed close < its JMA-smoothed open AND the immediately preceding completed bar’s JMA-smoothed close >= its JMA-smoothed open (the configured timeframe may be higher or lower than the chart timeframe).

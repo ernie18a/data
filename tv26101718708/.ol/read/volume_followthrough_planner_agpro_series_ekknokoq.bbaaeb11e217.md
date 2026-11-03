@@ -1,0 +1,16 @@
+Calculation: Relative volume = current volume / simple moving average of volume over a lookback
+Calculation: Spread in ATR = (high - low) / ATR
+Calculation: Body share = abs(close - open) / max(high - low, minimum tick)
+Calculation: Close location = (close - low) / max(high - low, minimum tick)
+Calculation: Bull event score = clamp(0.32 × volume score + 0.20 × spread score + 0.18 × bull close score + 0.14 × body score + 0.16 × bull trend score, 0, 100); bear event score uses bear close and bear trend scores
+Calculation: Volume score = peak score of relative volume, rising linearly from 0 at 0.72 × minimum event volume to 100 at the larger of ideal volume or minimum event volume + 0.10, then declining linearly to 0 at the larger of the maximum accepted volume or ideal volume + 0.10
+Calculation: Spread score = clamp((spread in ATR − 0.70 × minimum event spread) / 0.95, 0, 1) × 100
+Calculation: Body score = clamp((body share − 0.80 × minimum event body share) / (0.82 − 0.80 × minimum event body share), 0, 1) × 100
+Calculation: Bull close score = clamp((close location − 0.88 × minimum close edge) / (0.95 − 0.88 × minimum close edge), 0, 1) × 100; bear close score uses 1 − close location
+Calculation: Bull trend score = 34 if close ≥ slow EMA, otherwise 12; plus 36 if fast EMA ≥ slow EMA; plus up to 30 for nonnegative slow EMA slope, scaled linearly by abs(slope)/ATR from 0.01 to 0.28. Bear trend score mirrors these comparisons and requires nonpositive slope
+Calculation: Follow-through score = clamp(0.28 × event score + 0.28 × progress score + 0.18 × next-bar score + 0.12 × follow-close score + 0.10 × rail-defense score + 0.04 × time score, 0, 100)
+Calculation: Event close = close of the qualified event bar; event ATR = ATR on that bar; for a long event the risk rail is event low − event ATR × risk buffer and target is event close + event ATR × target distance; for a short event the risk rail is event high + event ATR × risk buffer and target is event close − event ATR × target distance
+Long: confirmed bar AND at least cooldown bars since the prior event AND relative volume ≥ minimum event volume AND relative volume ≤ maximum accepted volume AND spread in ATR ≥ minimum event spread AND body share ≥ minimum event body share AND close ≥ open AND close location ≥ minimum close edge AND bull event score ≥ minimum event score; OR active long event AND confirmed bar AND close > event close AND follow-through score ≥ minimum planner score AND progress score ≥ 45 AND follow-through closes ≥ minimum required
+Short: confirmed bar AND at least cooldown bars since the prior event AND relative volume ≥ minimum event volume AND relative volume ≤ maximum accepted volume AND spread in ATR ≥ minimum event spread AND body share ≥ minimum event body share AND close ≤ open AND 1 − close location ≥ minimum close edge AND bear event score ≥ minimum event score; OR active short event AND confirmed bar AND close < event close AND follow-through score ≥ minimum planner score AND progress score ≥ 45 AND follow-through closes ≥ minimum required
+Exit: long, active long event AND confirmed bar AND close ≤ risk rail
+Exit: short, active short event AND confirmed bar AND close ≥ risk rail

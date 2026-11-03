@@ -1,0 +1,7 @@
+Calculation: Opening gap upper and lower bounds = at the start of each selected gap period, the maximum and minimum of the previous bar’s close and the opening bar’s open.
+Calculation: Confirmed gap-side cross count = reset the count and previous side at the start of each day; increment once when a bar closes above the upper bound or below the lower bound on a side different from the previous counted side, then record that side.
+Calculation: Breakeven trigger and stop = for a long, entry price plus the configured trigger and offset distances; for a short, entry price minus those distances.
+Long: Confirmed gap-side cross count equals the configured required count AND close > opening gap upper bound AND no trade has been taken today AND position is flat.
+Short: Confirmed gap-side cross count equals the configured required count AND close < opening gap lower bound AND no trade has been taken today AND position is flat.
+Exit: long, configured New York exit time reached OR close < opening gap lower bound OR high >= entry price + configured take-profit distance OR (breakeven enabled AND high >= breakeven trigger AND low <= breakeven stop) OR low <= active trailing stop.
+Exit: short, configured New York exit time reached OR close > opening gap upper bound OR low <= entry price - configured take-profit distance OR (breakeven enabled AND low <= breakeven trigger AND high >= breakeven stop) OR high >= active trailing stop.

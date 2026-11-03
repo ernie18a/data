@@ -1,0 +1,2 @@
+Long: close > any enabled SMMA calculated on its configured timeframe, whether higher or lower than the chart timeframe, using the still-forming timeframe bar
+Short: close < any enabled SMMA calculated on its configured timeframe, whether higher or lower than the chart timeframe, using the still-forming timeframe bar

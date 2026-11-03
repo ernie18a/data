@@ -1,0 +1,5 @@
+Calculation: Risk metric = Average of three time-adjusted components: (daily close minus long-term daily SMA) divided by long-term daily standard deviation; logarithm of daily close divided by long-term weekly SMA plus a time-based adjustment; and short-term daily SMA divided by short-term weekly SMA. Use daily and weekly bars still forming. Replace an undefined average with 1.
+Long: Risk metric <= long-entry threshold AND configured signal-period boundary occurs AND no signal has already occurred on this bar
+Exit: Long, Long position open AND configured signal-period boundary occurs AND no signal has already occurred on this bar AND first partial exit not completed AND risk metric >= first exit threshold
+Exit: Long, Long position open AND configured signal-period boundary occurs AND no signal has already occurred on this bar AND first partial exit completed AND second partial exit not completed AND risk metric >= second exit threshold
+Exit: Long, Long position open AND configured signal-period boundary occurs AND no signal has already occurred on this bar AND second partial exit completed AND risk metric >= final exit threshold

@@ -1,0 +1,1 @@
+Calculate upper and lower session boundaries by adding and subtracting the ATM straddle’s expected move from the reference close. Exit or invalidate the session if the instrument closes beyond either boundary.

@@ -1,0 +1,10 @@
+Calculation: ATR tolerance = Average True Range multiplied by a tolerance parameter; evaluate on each requested timeframe using its current value (higher-timeframe values use the last completed bar historically and the forming bar in realtime; lower-timeframe values use the requested-timeframe sample for the chart bar).
+Calculation: Bullish structure = highest high over the structure lookback > highest high over the preceding equal-length lookback minus ATR tolerance AND lowest low over the structure lookback > lowest low over the preceding equal-length lookback minus ATR tolerance.
+Calculation: Bearish structure = highest high over the structure lookback < highest high over the preceding equal-length lookback plus ATR tolerance AND lowest low over the structure lookback < lowest low over the preceding equal-length lookback plus ATR tolerance.
+Calculation: Strong displacement = strength parameter is zero OR absolute distance between close and EMA exceeds ATR multiplied by the strength parameter.
+Calculation: Bullish timeframe state = close > EMA AND EMA > its value slope-lookback bars ago AND Strong displacement AND Bullish structure.
+Calculation: Bearish timeframe state = close < EMA AND EMA < its value slope-lookback bars ago AND Strong displacement AND Bearish structure.
+Calculation: Overall bullish state = at least two evaluated timeframes have a Bullish timeframe state AND the highest evaluated timeframe does not have a Bearish timeframe state.
+Calculation: Overall bearish state = at least two evaluated timeframes have a Bearish timeframe state AND the highest evaluated timeframe does not have a Bullish timeframe state.
+Long: Bullish timeframe state on any evaluated timeframe OR Overall bullish state.
+Short: Bearish timeframe state on any evaluated timeframe OR Overall bearish state.

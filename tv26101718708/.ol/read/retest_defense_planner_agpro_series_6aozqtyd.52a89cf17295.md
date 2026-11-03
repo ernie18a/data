@@ -1,0 +1,5 @@
+Calculation: Active defense side and shelf = the configured bullish or bearish side and its latest confirmed pivot low or high, while within the maximum shelf age; in automatic mode, choose the side using fast and slow EMAs and the relative distances to the fresh support and resistance shelves.
+Calculation: Defense zone = active shelf plus or minus an ATR-scaled zone width; zone touch = bar range overlaps this zone.
+Calculation: Approach = close is within an ATR-scaled activation distance of the active shelf; recent touch = a zone touch occurred within the configured response window.
+Long: active defense side is bullish AND (zone touch OR (NOT defense lost AND (Approach OR recent touch))).
+Short: active defense side is bearish AND (zone touch OR (NOT defense lost AND (Approach OR recent touch))).

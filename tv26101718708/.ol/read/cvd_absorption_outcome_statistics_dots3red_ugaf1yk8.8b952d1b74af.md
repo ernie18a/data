@@ -1,0 +1,3 @@
+Calculation: Bar delta = volume × (2 × (close − low) / (high − low) − 1); use 0 when high = low
+Long: volume > 0 AND its moving average > 0 AND volume ≥ its moving average × volume threshold AND high − low ≤ ATR × range threshold AND bar delta ≤ −volume × delta threshold
+Short: volume > 0 AND its moving average > 0 AND volume ≥ its moving average × volume threshold AND high − low ≤ ATR × range threshold AND bar delta ≥ volume × delta threshold

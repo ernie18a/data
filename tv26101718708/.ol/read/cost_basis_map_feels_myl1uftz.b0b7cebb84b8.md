@@ -1,0 +1,5 @@
+Calculation: Cost basis = volume-weighted mean entry price of the open-position ledger; each confirmed bar adds its volume at its typical price (high + low + close) / 3 and proportionally closes existing positions according to current volume divided by average volume over 100 bars times the configured position memory; positions are weighted by volume, or volume × typical price when money-weighting is selected.
+Calculation: Underwater share = share of open ledger positions with entry price above close.
+Calculation: Loss-realizing volume = prior open ledger size × proportional turnover this bar × prior underwater share.
+Long: loss-realizing volume > its 100-bar mean + configured sensitivity × its 100-bar standard deviation AND close < cost basis AND configured marker cooldown elapsed
+Short: underwater share ≤ 5% AND volume > 1.5 × its 50-bar average AND configured marker cooldown elapsed

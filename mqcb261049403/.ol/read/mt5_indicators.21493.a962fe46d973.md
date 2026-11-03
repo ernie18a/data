@@ -1,0 +1,3 @@
+Calculation: Center of Gravity Open/Close = apply the same calculation to the corresponding Open or Close series: multiply its simple moving average by its linearly weighted moving average using the same lookback, then smooth the product with a moving average using a shorter lookback. Use the chart timeframe, or the selected same-or-higher timeframe; on a higher timeframe, use the bar still forming.
+Long: Center of Gravity Open < Center of Gravity Close
+Short: Center of Gravity Open > Center of Gravity Close

@@ -1,0 +1,3 @@
+Calculation: Blau TS Stochastic = 200 × S3(S2(S1(P − LL))) / S3(S2(S1(HH − LL))) − 100; use 0 if the denominator is 0. HH and LL are the highest high and lowest low over the same lookback; P is the selected bar price. S1, S2, and S3 apply the configured smoothing method with long, intermediate, and short lookbacks, respectively.
+Long: On the first chart bar within each configured timeframe bar (chart timeframe or higher, using that still-forming bar), Blau TS Stochastic > Blau TS Stochastic on the preceding timeframe bar
+Short: On the first chart bar within each configured timeframe bar (chart timeframe or higher, using that still-forming bar), Blau TS Stochastic < Blau TS Stochastic on the preceding timeframe bar

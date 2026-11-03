@@ -1,0 +1,2 @@
+Long: Demand Index crosses above zero OR price makes a lower swing low while Demand Index makes a higher trough
+Short: Demand Index crosses below zero OR price makes a higher swing high while Demand Index makes a lower peak

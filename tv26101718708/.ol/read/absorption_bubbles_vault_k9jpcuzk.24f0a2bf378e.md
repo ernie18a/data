@@ -1,0 +1,3 @@
+Calculation: scaled volume = current bar volume / standard deviation of volume over a lookback
+Long: (high + low) / 2 <= min(open, close) AND low <= the lowest low over a lookback including the current bar AND volume > EMA of volume AND scaled volume >= the smallest bubble threshold
+Short: (high + low) / 2 >= max(open, close) AND high >= the highest high over a lookback including the current bar AND volume > EMA of volume AND scaled volume >= the smallest bubble threshold

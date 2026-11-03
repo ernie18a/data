@@ -1,0 +1,33 @@
+Calculation: Session value area = distribute each session bar’s volume across equal price bins from the session low to high, proportional to each bin’s overlap with that bar’s range; start with the highest-volume bin and expand to adjacent bins, choosing the higher-volume neighbor first, until the configured volume coverage is included
+Calculation: Session control = midpoint of the highest-volume bin in the session value area distribution
+Calculation: Value center = midpoint of the session value area’s lower and upper bounds
+Calculation: Close location = (close − low) / max(high − low, minimum price increment)
+Calculation: Pressure balance = EMA of signed volume divided by EMA of volume, where signed volume is positive for an up bar, negative for a down bar, and zero for an unchanged bar
+Calculation: Pressure change = current pressure balance − previous bar’s pressure balance
+Calculation: Normalized momentum = EMA of close change divided by ATR
+Calculation: Bull trend = short-term EMA > long-term EMA AND close ≥ adaptive center AND adaptive center − its value two bars ago ≥ 0
+Calculation: Bear trend = short-term EMA < long-term EMA AND close ≤ adaptive center AND adaptive center − its value two bars ago ≤ 0
+Calculation: Bull core rejection = low ≤ value-area lower bound + max(ATR-based tolerance, value-area-width-based tolerance) AND close > value-area lower bound AND lower wick ≥ candle body × configured ratio AND close location ≥ configured threshold
+Calculation: Bear core rejection = high ≥ value-area upper bound − max(ATR-based tolerance, value-area-width-based tolerance) AND close < value-area upper bound AND upper wick ≥ candle body × configured ratio AND close location ≤ configured threshold
+Calculation: Bull control reclaim = low ≤ session control AND close > session control AND close > open AND pressure change > 0
+Calculation: Bear control reclaim = high ≥ session control AND close < session control AND close < open AND pressure change < 0
+Calculation: Bull liquidity sweep = low < highest high over the configured lookback before the current bar AND close > that high AND close location ≥ configured threshold
+Calculation: Bear liquidity sweep = high > lowest low over the configured lookback before the current bar AND close < that low AND close location ≤ configured threshold
+Calculation: Bull value acceptance = close > current value-area upper bound AND previous close ≤ previous value-area upper bound AND close location ≥ configured threshold
+Calculation: Bear value acceptance = close < current value-area lower bound AND previous close ≥ previous value-area lower bound AND close location ≤ configured threshold
+Calculation: Bull initiative = volume / EMA(volume) ≥ configured threshold AND close > open AND candle body ≥ ATR × configured ratio AND close location ≥ configured threshold
+Calculation: Bear initiative = volume / EMA(volume) ≥ configured threshold AND close < open AND candle body ≥ ATR × configured ratio AND close location ≤ configured threshold
+Calculation: Bull location = close ≥ value center OR bull core rejection OR bull control reclaim OR bull liquidity sweep
+Calculation: Bear location = close ≤ value center OR bear core rejection OR bear control reclaim OR bear liquidity sweep
+Calculation: Bull evidence = count of true conditions among bull trend, pressure balance > 0, pressure change > 0, normalized momentum > 0, bull location, and close location ≥ configured threshold
+Calculation: Bear evidence = count of true conditions among bear trend, pressure balance < 0, pressure change < 0, normalized momentum < 0, bear location, and close location ≤ configured threshold
+Calculation: Bull score = weighted sum of bull trend, pressure balance > 0, pressure change > 0, normalized momentum > 0, bull core rejection, bull control reclaim, bull liquidity sweep, bull value acceptance, and bull initiative
+Calculation: Bear score = weighted sum of bear trend, pressure balance < 0, pressure change < 0, normalized momentum < 0, bear core rejection, bear control reclaim, bear liquidity sweep, bear value acceptance, and bear initiative
+Calculation: Bull trigger = bull core rejection OR bull control reclaim OR bull liquidity sweep OR bull value acceptance OR bull initiative
+Calculation: Bear trigger = bear core rejection OR bear control reclaim OR bear liquidity sweep OR bear value acceptance OR bear initiative
+Calculation: Strong bull opposition = bear trend AND pressure balance < configured negative threshold AND normalized momentum < 0
+Calculation: Strong bear opposition = bull trend AND pressure balance > configured positive threshold AND normalized momentum > 0
+Calculation: Resolved bull signal = bull trigger AND bull evidence ≥ configured minimum AND bull score ≥ configured minimum AND bull score ≥ bear score + configured advantage AND NOT strong bull opposition; if both raw directional signals qualify, resolve to bull only when bull score > bear score
+Calculation: Resolved bear signal = bear trigger AND bear evidence ≥ configured minimum AND bear score ≥ configured minimum AND bear score ≥ bull score + configured advantage AND NOT strong bear opposition; if both raw directional signals qualify, resolve to bear only when bear score > bull score
+Long: bar is confirmed AND resolved bull signal AND (signal state is neutral OR signal state is short)
+Short: bar is confirmed AND resolved bear signal AND (signal state is neutral OR signal state is long)

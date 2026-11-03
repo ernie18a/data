@@ -1,0 +1,4 @@
+Calculation: Morning Star = close[2] < open[2] AND low[1] < low[2] AND high[1] < (high[2] + low[2]) / 2 AND close > open AND close > open[2] AND close > high[1] AND open[1] >= (high[1] + low[1]) / 2 AND close[1] >= (high[1] + low[1]) / 2
+Calculation: Evening Star = close[2] > open[2] AND high[1] > high[2] AND low[1] > (high[2] + low[2]) / 2 AND close < open AND close < open[2] AND close < low[1] AND open[1] <= (high[1] + low[1]) / 2 AND close[1] <= (high[1] + low[1]) / 2
+Long: Morning Star = true
+Short: Evening Star = true

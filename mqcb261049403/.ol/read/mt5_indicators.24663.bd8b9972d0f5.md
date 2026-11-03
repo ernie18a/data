@@ -1,0 +1,3 @@
+Calculation: Rocket RSI = Normalize the difference between the rolling sums of positive and negative changes in a smoothed price-momentum filter; optionally apply the Fisher transform. The momentum lookback and rolling-sum lookback use the same period; the filter smoothing uses a separate smoothing parameter.
+Long: Rocket RSI > Rocket RSI on the previous chart-timeframe bar
+Short: Rocket RSI < Rocket RSI on the previous chart-timeframe bar

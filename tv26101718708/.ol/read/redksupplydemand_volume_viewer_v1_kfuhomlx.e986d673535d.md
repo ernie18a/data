@@ -1,0 +1,3 @@
+Calculation: Net volume = WMA of WMA of demand volume minus WMA of WMA of supply volume; for each side, the inner WMA uses a longer lookback than the outer WMA. Per bar, demand volume is volume × (high − low)/(high − low + wick) when close ≥ open, or volume × wick/(high − low + wick) when close < open; wick = (high − low) − abs(close − open). If high = low, demand volume is half of volume. Supply volume is volume minus demand volume.
+Long: Net volume ≥ 0
+Short: Net volume < 0

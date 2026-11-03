@@ -1,0 +1,2 @@
+Long: MA1 crosses above MA2 (MA1 has a shorter lookback than MA2; each uses its independently configured chart, higher, or lower timeframe; non-chart timeframes use lookahead_off, with higher-timeframe history using completed bars)
+Short: MA1 crosses below MA2 (MA1 has a shorter lookback than MA2; each uses its independently configured chart, higher, or lower timeframe; non-chart timeframes use lookahead_off, with higher-timeframe history using completed bars)

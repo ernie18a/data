@@ -1,0 +1,2 @@
+Long: On the selected analysis timeframe, previous completed Heikin Ashi candle close >= open AND open = low AND current candle close >= open AND close > previous candle close
+Short: On the selected analysis timeframe, previous completed Heikin Ashi candle close < open AND open = high AND current candle close < open AND close < previous candle close

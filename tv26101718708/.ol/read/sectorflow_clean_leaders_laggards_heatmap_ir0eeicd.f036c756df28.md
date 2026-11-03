@@ -1,0 +1,3 @@
+Calculation: Relative performance = 100 × ((instrument close ÷ instrument’s first close on or after the rebase start) ÷ (benchmark close ÷ benchmark’s first close on or after the rebase start) − 1), using the configured calculation-timeframe bars (higher or lower than the chart timeframe as configured; last completed bar historically, forming bar in real time)
+Long: Relative performance crosses above 0
+Short: Relative performance crosses below 0

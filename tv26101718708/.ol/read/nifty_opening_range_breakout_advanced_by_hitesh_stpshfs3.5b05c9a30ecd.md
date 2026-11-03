@@ -1,0 +1,4 @@
+Calculation: Previous-day high/low = high/low of the last completed higher-timeframe bar.
+Calculation: Opening-range high/low = highest high/lowest low during the opening session range, locked when that range ends. If the locked high is within an adjustment threshold of the previous-day high, raise it to the greater of the two; if the locked low is within the threshold of the previous-day low, lower it to the lesser. Once per day, if a bar's high exceeds the range high while its close is below it, replace the range high with that bar's high; likewise, if a bar's low falls below the range low while its close is above it, replace the range low with that bar's low.
+Long: opening range set = true AND long taken today = false AND close > opening-range high + breakout buffer
+Short: opening range set = true AND short taken today = false AND close < opening-range low - breakout buffer

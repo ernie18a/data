@@ -1,0 +1,2 @@
+Long: average close over J consecutive chart-timeframe bars > average open over the same bars OR average close over J consecutive higher-timeframe bars, including the still-forming bar, > average open over the same bars
+Short: average close over J consecutive chart-timeframe bars < average open over the same bars OR average close over J consecutive higher-timeframe bars, including the still-forming bar, < average open over the same bars

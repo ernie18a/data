@@ -1,0 +1,5 @@
+Calculation: kNN prediction = Sum the direction labels of the most recent k records that set a new greatest Euclidean distance from the current long-term and short-term feature pair, scanning the training records in order; each label is +1 when the next close is higher, −1 when lower, and 0 when equal. Keep at most k labels. The training records are feature pairs and next-bar direction labels from bars in the selected date window.
+Calculation: Feature pair = Long-term and short-term values of the selected indicator: RSI, CCI, or ROC of close; normalized volume over the corresponding lookback; or the average of all four indicators.
+Long: kNN prediction > 0 AND (volatility filter disabled OR shorter-lookback ATR > longer-lookback ATR)
+Short: kNN prediction < 0 AND (volatility filter disabled OR shorter-lookback ATR > longer-lookback ATR)
+Exit: long or short, kNN prediction = 0 OR (volatility filter enabled AND shorter-lookback ATR ≤ longer-lookback ATR)

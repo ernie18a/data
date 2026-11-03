@@ -1,0 +1,10 @@
+Calculation: Oracle = sum of the largest and smallest of four residuals, where d0 = CCI − RSI; d1 = CCI from one bar earlier − RSI from one bar later − d0; d2 = CCI from two bars earlier − RSI from two bars later − d0 − d1; d3 = CCI from three bars earlier − RSI from three bars later − d0 − d1 − d2. RSI and CCI use the same lookback and applied price. Use bars on the Oracle timeframe, which may be higher or lower than the chart timeframe; use completed bars.
+Calculation: Oracle signal line = average of Oracle over the smoothing lookback.
+Long: Oracle signal line > 0 AND its value two completed bars ago < its value one completed bar ago AND its value three completed bars ago ≥ its value two completed bars ago
+Long: Oracle signal line > 0 AND its value two completed bars ago ≤ 0
+Long: Oracle signal line two completed bars ago < Oracle two completed bars ago AND Oracle signal line one completed bar ago ≥ Oracle one completed bar ago
+Short: Oracle signal line < 0 AND its value two completed bars ago > its value one completed bar ago AND its value three completed bars ago ≤ its value two completed bars ago
+Short: Oracle signal line < 0 AND its value two completed bars ago ≥ 0
+Short: Oracle signal line two completed bars ago > Oracle two completed bars ago AND Oracle signal line one completed bar ago ≤ Oracle one completed bar ago
+Exit: Long, Oracle signal line two completed bars ago > its value one completed bar ago AND its value three completed bars ago ≤ its value two completed bars ago OR Oracle signal line < 0 OR Oracle signal line two completed bars ago > Oracle two completed bars ago
+Exit: Short, Oracle signal line two completed bars ago < its value one completed bar ago AND its value three completed bars ago ≥ its value two completed bars ago OR Oracle signal line > 0 OR Oracle signal line two completed bars ago < Oracle two completed bars ago

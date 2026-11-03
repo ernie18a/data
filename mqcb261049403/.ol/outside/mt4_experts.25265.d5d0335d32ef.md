@@ -1,0 +1,1 @@
+When there are no open trades on the current instrument, compare the bar positions of the latest ZigZag swing high and latest ZigZag swing low: sell if the high is more recent than the low; otherwise buy. Manage an open trade with its configured stop-loss and take-profit, and trail the stop after the trade reaches its configured profit threshold.

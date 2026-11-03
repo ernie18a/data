@@ -1,0 +1,2 @@
+Long: Close > any of the five longer-lookback moving averages on any configured timeframe, using that timeframe’s still-forming bar; the timeframes may be lower than, equal to, or higher than the chart timeframe.
+Short: Close < any of the five longer-lookback moving averages on any configured timeframe, using that timeframe’s still-forming bar; the timeframes may be lower than, equal to, or higher than the chart timeframe.

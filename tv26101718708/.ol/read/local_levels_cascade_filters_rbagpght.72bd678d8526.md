@@ -1,0 +1,4 @@
+Calculation: Support level = confirmed pivot low, shifted upward by the configured percentage
+Calculation: Resistance level = confirmed pivot high, shifted upward by the configured percentage
+Long: completed bar AND an unbroken resistance level exists AND (close > resistance level if close-break mode is enabled, otherwise high > resistance level) AND (age filter is disabled OR bars since level confirmation >= age threshold) AND (volume filter is disabled OR volume at pivot > average volume over the configured lookback × volume threshold)
+Short: completed bar AND an unbroken support level exists AND (close < support level if close-break mode is enabled, otherwise low < support level) AND (age filter is disabled OR bars since level confirmation >= age threshold) AND (volume filter is disabled OR volume at pivot > average volume over the configured lookback × volume threshold)

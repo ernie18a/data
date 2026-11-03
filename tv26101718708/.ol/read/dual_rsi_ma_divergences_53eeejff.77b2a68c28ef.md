@@ -1,0 +1,4 @@
+Calculation: Bullish RSI divergence = At a confirmed pivot low in an RSI, its value is higher than at the previous confirmed pivot low, and the price low at its pivot bar is lower than the price low at the previous RSI pivot bar; compare pivots using equal left and right lookbacks, and signal when the right-side bars confirm the pivot.
+Calculation: Bearish RSI divergence = At a confirmed pivot high in an RSI, its value is lower than at the previous confirmed pivot high, and the price high at its pivot bar is higher than the price high at the previous RSI pivot bar; compare pivots using equal left and right lookbacks, and signal when the right-side bars confirm the pivot.
+Long: RSI with the shorter lookback > RSI with the longer lookback OR bullish RSI divergence in either RSI
+Short: RSI with the shorter lookback < RSI with the longer lookback OR bearish RSI divergence in either RSI

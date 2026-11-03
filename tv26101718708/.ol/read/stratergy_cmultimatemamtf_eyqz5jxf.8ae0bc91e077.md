@@ -1,0 +1,5 @@
+Calculation: selected moving average = selected SMA, EMA, WMA, Hull MA, VWMA, RMA, or TEMA of close on the configured resolution; compare its current value with its value the smoothing lookback number of chart bars ago. The configured resolution may be the chart resolution, higher, or lower; use the bar mapped to the current chart bar, including a still-forming bar.
+Long: previous bar’s moving average < its value the smoothing lookback number of chart bars earlier AND current moving average >= its value the smoothing lookback number of chart bars earlier
+Short: previous bar’s moving average >= its value the smoothing lookback number of chart bars earlier AND current moving average < its value the smoothing lookback number of chart bars earlier
+Exit: long, previous bar’s moving average >= its value the smoothing lookback number of chart bars earlier OR current moving average < its value the smoothing lookback number of chart bars earlier
+Exit: short, previous bar’s moving average < its value the smoothing lookback number of chart bars earlier OR current moving average >= its value the smoothing lookback number of chart bars earlier

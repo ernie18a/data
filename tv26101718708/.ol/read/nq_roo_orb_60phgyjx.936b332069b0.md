@@ -1,0 +1,8 @@
+Calculation: Opening-range high/low = maximum high/minimum low of chart-timeframe bars during the configured opening interval from the session open; fixed after the interval ends
+Calculation: Candle body percentage = absolute(close − open) / (high − low), or 0 when high = low
+Calculation: Volume average = simple moving average of volume over a configured lookback
+Calculation: Previous-day high/low/close = high, low, and close of the last completed daily bar, where daily is higher than the chart timeframe
+Calculation: Confirmed swing highs/lows = pivot highs/lows confirmed using the same configured number of bars on each side
+Calculation: Nearest resistance/support = nearest level above/below close among confirmed swing highs/lows and previous-day high/low/close
+Long: opening interval complete AND within the configured signal session AND close > opening-range high AND min(open, close) > opening-range high AND candle body percentage >= configured minimum AND volume > volume average AND (no resistance above close OR nearest resistance − close >= configured target distance) AND no long signal earlier this session unless a later close < opening-range high
+Short: opening interval complete AND within the configured signal session AND close < opening-range low AND max(open, close) < opening-range low AND candle body percentage >= configured minimum AND volume > volume average AND (no support below close OR close − nearest support >= configured target distance) AND no short signal earlier this session unless a later close > opening-range low

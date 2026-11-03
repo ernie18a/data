@@ -1,0 +1,5 @@
+Calculation: StepMA NRTR state = On the lower configured indicator timeframe, process completed bars in order. Set the step to sensitivity multiplied by the configured fixed step, or, when no fixed step is configured, to the rounded half-sum of the highest and lowest high-minus-low ranges over the lookback. Switch bullish when close exceeds the prior upper stop boundary; switch bearish when close falls below the prior lower stop boundary. Trail the active stop boundary using each bar’s high and low, or close in close/close mode. A bullish reversal marker appears when state changes from bearish to bullish; a bearish reversal marker appears when it changes from bullish to bearish. Use the last completed signal bar.
+Long: bullish reversal marker is present
+Short: bearish reversal marker is present
+Exit: Long, bearish trend line is present
+Exit: Short, bullish trend line is present

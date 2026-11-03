@@ -1,0 +1,2 @@
+Long: On the last completed higher-timeframe bar, a new confirmed swing high forms AND a confirmed swing low already exists on that timeframe
+Short: On the last completed higher-timeframe bar, a new confirmed swing low forms AND a confirmed swing high already exists on that timeframe

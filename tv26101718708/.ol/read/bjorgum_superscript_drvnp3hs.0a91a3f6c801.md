@@ -1,0 +1,9 @@
+Calculation: TSI = True Strength Index of close, using shorter and longer smoothing lookbacks
+Calculation: TSI signal = EMA of TSI using a signal lookback
+Calculation: RSI = Relative Strength Index of close
+Calculation: Shorter T3 and longer T3 = Tilson T3 moving averages of the selected source, with the shorter and longer lookbacks respectively
+Calculation: Heikin-Ashi close = (open + high + low + close) / 4
+Calculation: MA1, MA2, and MA3 = selected moving average of source and configured lookback; if the selected type is HEMA, use EMA of Heikin-Ashi open. MA1 has a shorter lookback than MA2; MA3 has a longer lookback than MA2
+Calculation: PSAR = Parabolic Stop and Reverse value
+Long: (TSI > TSI signal AND RSI > 50) OR (TSI crosses above TSI signal AND RSI > 50) OR (RSI crosses above 50 AND TSI > TSI signal) OR (TSI crosses above TSI signal AND RSI crosses above 50) OR (TSI < TSI signal AND TSI rises from the prior bar) OR (close > longer T3) OR (Heikin-Ashi close > longer T3) OR (close > MA1 AND close > MA2) OR (close crosses above MA1 AND close > MA2) OR (close crosses above MA2 AND close > MA1) OR (close crosses above both MA1 and MA2) OR (RSI crosses above 50) OR (RSI crosses above 30) OR (close crosses above PSAR)
+Short: (TSI < TSI signal AND RSI < 50) OR (TSI crosses below TSI signal AND RSI < 50) OR (RSI crosses below 50 AND TSI < TSI signal) OR (TSI crosses below TSI signal AND RSI crosses below 50) OR (TSI > TSI signal AND TSI falls from the prior bar) OR (close < longer T3) OR (Heikin-Ashi close < longer T3) OR (close < MA1 AND close < MA2) OR (close crosses below MA1 AND close < MA2) OR (close crosses below MA2 AND close < MA1) OR (close crosses below both MA1 and MA2) OR (RSI crosses below 50) OR (RSI crosses below 70) OR (close crosses below PSAR)

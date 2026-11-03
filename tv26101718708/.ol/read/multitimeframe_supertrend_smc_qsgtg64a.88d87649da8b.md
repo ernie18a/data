@@ -1,0 +1,5 @@
+Calculation: Protected swing high/low = latest confirmed pivot high/low on the SMC timeframe; a pivot is a high/low exceeding the highs/lows of the selected number of bars on both sides. Update only on a completed SMC bar.
+Calculation: Structural state = neutral initially; becomes bullish on an upward break or bearish on a downward break, and changes direction on an opposite-level break. A protected level can be broken only once until a new pivot replaces it.
+Calculation: Upward/downward break price = close for candle-close mode, or high/low for wick mode.
+Long: On a completed SMC bar, upward break price > protected swing high AND that high has not been broken since it was set AND structural state is bullish or bearish; use the latest completed bar of the SMC timeframe, which may be higher or lower than the chart timeframe.
+Short: On a completed SMC bar, downward break price < protected swing low AND that low has not been broken since it was set AND structural state is bullish or bearish; use the latest completed bar of the SMC timeframe, which may be higher or lower than the chart timeframe.

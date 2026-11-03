@@ -1,0 +1,2 @@
+Long: any of the four moving averages is greater than its value on the previous bar, OR the selected OHLC-derived price is greater than any of the first three moving averages, OR the first moving average is greater than the fourth moving average
+Short: any of the four moving averages is less than its value on the previous bar, OR the selected OHLC-derived price is less than any of the first three moving averages, OR the first moving average is less than the fourth moving average

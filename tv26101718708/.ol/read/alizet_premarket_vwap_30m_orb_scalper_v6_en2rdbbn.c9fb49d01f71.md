@@ -1,0 +1,4 @@
+Calculation: ORB High = highest high during the opening range, measured from the regular-session open until the opening-range window ends
+Calculation: ORB Low = lowest low during the opening range, measured from the regular-session open until the opening-range window ends
+Long: during the regular session AND opening range complete AND close crosses above ORB High AND (VWAP filter disabled OR close > VWAP) AND (volume filter disabled OR volume > volume SMA × multiplier)
+Short: (during the regular session AND opening range complete AND close crosses below ORB Low AND (VWAP filter disabled OR close < VWAP) AND (volume filter disabled OR volume > volume SMA × multiplier)) OR (RSI crosses above the overbought threshold)

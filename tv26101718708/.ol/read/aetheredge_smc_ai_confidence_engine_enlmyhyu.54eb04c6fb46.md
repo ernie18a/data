@@ -1,0 +1,7 @@
+Calculation: True range average (ATR) = average true range of chart-timeframe bars over a lookback period.
+Calculation: Volume Z-score = (volume − its chart-timeframe moving average) ÷ its chart-timeframe standard deviation.
+Calculation: Displacement = absolute candle body size ÷ ATR.
+Calculation: Confirmed swing high/low = a high/low with the specified number of chart-timeframe bars on each side; use the latest confirmed swing high and low.
+Calculation: Bullish break of structure = close crosses above the latest confirmed swing high; bearish break of structure = close crosses below the latest confirmed swing low.
+Long: Bullish order block: bullish candle with displacement > 1.5 and volume Z-score > 0.5 and bullish break of structure, with a bearish candle found in the backward search window; OR low > high two bars earlier and the gap > minimum gap size × ATR; OR low < latest confirmed swing low − sweep tolerance × ATR and close > latest confirmed swing low.
+Short: Bearish order block: bearish candle with displacement > 1.5 and volume Z-score > 0.5 and bearish break of structure, with a bullish candle found in the backward search window; OR high < low two bars earlier and the gap > minimum gap size × ATR; OR high > latest confirmed swing high + sweep tolerance × ATR and close < latest confirmed swing high.

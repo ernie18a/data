@@ -1,0 +1,5 @@
+Calculation: Fibo Candle color on the configured indicator timeframe (completed bars; timeframe may be higher or lower than the chart timeframe) = calculate the highest high and lowest low over the lookback ending at each bar, and multiply their difference by the Fibonacci ratio. If open > close, color is magenta unless the previous color was teal and the threshold is less than close minus the lowest low, in which case it is teal. Otherwise, color is teal unless the previous color was magenta and the threshold is less than the highest high minus close, in which case it is magenta.
+Long: previous completed bar color = magenta AND latest completed bar color = teal
+Short: previous completed bar color = teal AND latest completed bar color = magenta
+Exit: long, latest completed bar color = magenta
+Exit: short, latest completed bar color = teal

@@ -1,0 +1,1 @@
+For each monitored currency pair, compare a shorter and a longer smoothed moving average on hourly data, and check the stochastic oscillator against its midpoint on four-hour data. Indicate long when the shorter average is above the longer average and the oscillator is above its midpoint; indicate short when both are below; otherwise indicate flat.

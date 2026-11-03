@@ -1,0 +1,9 @@
+Calculation: Volume delta = volume × (2 × (close − low) / (high − low) − 1); use 0 when high = low
+Calculation: Positive delta outlier = volume delta > its rolling average + its rolling standard deviation × threshold; average and standard deviation use the same lookback
+Calculation: Negative delta outlier = volume delta < its rolling average − its rolling standard deviation × threshold; average and standard deviation use the same lookback
+Calculation: Demand hit = low reaches or falls below the top of any live demand zone; each zone is created at a confirmed pivot low, with its top equal to that pivot low plus ATR at the pivot × zone-width multiplier, and becomes inactive at its first hit
+Calculation: Supply hit = high reaches or rises above the bottom of any live supply zone; each zone is created at a confirmed pivot high, with its bottom equal to that pivot high minus ATR at the pivot × zone-width multiplier, and becomes inactive at its first hit
+Calculation: Bullish CHoCH armed = reset to false on a demand hit; set to true when a demand hit coincides with close crossing above the latest confirmed pivot high; otherwise retain its prior state; reset to false when a long is confirmed
+Calculation: Bearish CHoCH armed = reset to false on a supply hit; set to true when a supply hit coincides with close crossing below the latest confirmed pivot low; otherwise retain its prior state; reset to false when a short is confirmed
+Long: Bullish CHoCH armed AND a new confirmed pivot low is higher than the prior bar's latest confirmed pivot low AND positive delta outlier
+Short: Bearish CHoCH armed AND a new confirmed pivot high is lower than the prior bar's latest confirmed pivot high AND negative delta outlier

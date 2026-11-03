@@ -1,0 +1,8 @@
+Calculation: Volume-confirmed pivot low = low three bars ago, if its low is below the lows four and five bars ago, the lows two and one bars ago are each higher than the preceding low, and its volume exceeds the simple moving average of volume
+Calculation: Volume-confirmed pivot high = high three bars ago, if its high is above the highs four and five bars ago, the highs two and one bars ago are each lower than the preceding high, and its volume exceeds the simple moving average of volume
+Calculation: Support level = latest volume-confirmed pivot low; resistance level = latest volume-confirmed pivot high, calculated on the selected timeframe (chart timeframe or higher) using its last completed bar
+Calculation: Pivot age = number of chart bars since the resistance level last changed
+Long: close < support level × (1 − configured entry deviation) AND (maximum pivot age is disabled OR pivot age < maximum pivot age) AND (consecutive signals are enabled OR the preceding bar did not have the same long signal, or the support level changed)
+Short: close > resistance level × (1 + configured entry deviation) AND (maximum pivot age is disabled OR pivot age < maximum pivot age) AND (consecutive signals are enabled OR the preceding bar did not have the same short signal, or the resistance level changed)
+Exit: long, high ≥ configured take-profit price OR (stop loss is enabled AND stop-loss deviation > maximum cumulative safety-order deviation AND low ≤ base entry price × (1 − configured stop-loss deviation))
+Exit: short, low ≤ configured take-profit price OR (stop loss is enabled AND stop-loss deviation > maximum cumulative safety-order deviation AND high ≥ base entry price × (1 + configured stop-loss deviation))

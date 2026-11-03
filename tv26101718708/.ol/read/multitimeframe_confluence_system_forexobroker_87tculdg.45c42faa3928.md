@@ -1,0 +1,7 @@
+Calculation: Trend state = bullish when fast EMA (shorter lookback) > slow EMA and close > long-term EMA; bearish when fast EMA < slow EMA and close < long-term EMA.
+Calculation: Momentum state = bullish when RSI > bull threshold, bearish when RSI < bear threshold; if MACD confirmation is enabled, require MACD histogram ≥ 0 for bullish and ≤ 0 for bearish.
+Calculation: Market structure = bullish when the latest confirmed pivot high > the previous confirmed pivot high and the latest confirmed pivot low > the previous confirmed pivot low; bearish when both are lower. Pivot highs/lows use equal left and right swing lookbacks.
+Calculation: Per-timeframe bull/bear score = 1 when all configured required dimensions (trend, momentum, and optionally structure) match that direction; otherwise 0. Higher-timeframe calculations use the last completed higher-timeframe bar.
+Calculation: Bull/bear confluence = sum of the per-timeframe scores across the chart timeframe and enabled higher timeframes.
+Long: bull confluence ≥ minimum confluence AND current chart bar is confirmed AND bars since previous long signal ≥ cooldown
+Short: bear confluence ≥ minimum confluence AND current chart bar is confirmed AND bars since previous short signal ≥ cooldown

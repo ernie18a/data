@@ -1,0 +1,2 @@
+Long: close > longer-lookback EMA on a higher timeframe, using the last completed higher-timeframe bar AND close crosses above a shorter-lookback EMA on the chart timeframe AND ATR > longer-lookback simple moving average of ATR
+Short: close < longer-lookback EMA on a higher timeframe, using the last completed higher-timeframe bar AND close crosses below a shorter-lookback EMA on the chart timeframe AND ATR > longer-lookback simple moving average of ATR

@@ -1,0 +1,3 @@
+Calculation: trailing stop = on each chart bar, using the lower-timeframe high, low, and close from the bar still forming: if low <= prior trailing stop AND prior low >= trailing stop from two bars ago, close + short trailing-stop distance; else if high >= prior trailing stop AND prior high <= trailing stop from two bars ago, close - long trailing-stop distance; else if high > prior trailing stop, max(high - long trailing-stop distance, prior trailing stop); else if low < prior trailing stop, min(low + short trailing-stop distance, prior trailing stop); otherwise close
+Long: trailing stop <= lower-timeframe close
+Short: trailing stop > lower-timeframe close

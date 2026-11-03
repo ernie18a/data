@@ -1,0 +1,8 @@
+Calculation: Confirmed swing high = a bar whose high is a pivot high with the selected number of chart bars on both sides; it becomes available after the right-side bars complete.
+Calculation: Confirmed swing low = a bar whose low is a pivot low with the selected number of chart bars on both sides; it becomes available after the right-side bars complete.
+Calculation: Raw HH = latest confirmed swing high > preceding confirmed swing high; raw LH = latest confirmed swing high < preceding confirmed swing high.
+Calculation: Raw HL = latest confirmed swing low > preceding confirmed swing low; raw LL = latest confirmed swing low < preceding confirmed swing low.
+Calculation: Major HH/LH = corresponding raw condition AND the absolute difference between the latest and preceding confirmed swing highs >= the minimum swing move. Major HL/LL = corresponding raw condition AND the absolute difference between the latest and preceding confirmed swing lows >= the minimum swing move.
+Calculation: Structure bias starts neutral. Each bar, set bullish if (major HH AND raw HL) OR (major HL AND raw HH); then set bearish if (major LL AND raw LH) OR (major LH AND raw LL). If still neutral, set bullish on major HH, then set bearish on major LL only if still neutral.
+Long: A confirmed swing high AND major HH AND (structure bias is bullish OR neutral) OR a confirmed swing low AND major HL AND structure bias is bullish.
+Short: A confirmed swing high AND major LH AND structure bias is bearish OR a confirmed swing low AND major LL AND (structure bias is bearish OR neutral).

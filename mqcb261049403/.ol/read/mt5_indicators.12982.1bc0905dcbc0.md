@@ -1,0 +1,2 @@
+Long: close >= open on the last completed bar of any configured timeframe, which may be higher or lower than the chart timeframe
+Short: close < open on the last completed bar of any configured timeframe, which may be higher or lower than the chart timeframe

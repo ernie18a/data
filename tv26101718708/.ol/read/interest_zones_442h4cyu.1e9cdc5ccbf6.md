@@ -1,0 +1,6 @@
+Calculation: ATR = 14-bar average true range on the level's configured timeframe.
+Calculation: Significant swing resistance = a confirmed pivot high with `pivotLen` bars on each side, where pivot high minus the higher of the two immediately adjacent highs is at least `minStrength × ATR`.
+Calculation: Significant swing support = a confirmed pivot low with `pivotLen` bars on each side, where the lower of the two immediately adjacent lows minus pivot low is at least `minStrength × ATR`.
+Calculation: Active levels = enabled significant swing levels on configured timeframes, added on pivot confirmation; exclude same-type levels within `mergeThresh × ATR` of an existing active level and levels older than `maxAgeBars`, retaining at most `maxLevels` per type and timeframe by removing the oldest. Use configured timeframe bars (which may be higher or lower than the chart timeframe); with lookahead off, use completed bars historically and the still-forming bar in realtime.
+Long: Close > any active resistance level + (`breakSens × ATR` on that level's timeframe)
+Short: Close < any active support level - (`breakSens × ATR` on that level's timeframe)

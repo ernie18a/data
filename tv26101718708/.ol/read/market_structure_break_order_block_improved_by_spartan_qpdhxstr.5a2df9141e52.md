@@ -1,0 +1,9 @@
+Calculation: Zigzag swings = Track trend flips when the low reaches the zigzag-length lowest low or the high reaches the zigzag-length highest high; on a flip, record the lowest low since the previous high extreme or highest high since the previous low extreme. Use the latest two recorded highs (H0, H1) and lows (L0, L1).
+Calculation: Bullish MSB = On a confirmed bar, market state is bearish, H0 > H1, H0 > H1 + abs(H1 − L0) × fib factor, and neither latest swing equals the corresponding swing recorded at the previous market-state change.
+Calculation: Bearish MSB = On a confirmed bar, market state is bullish, L0 < L1, L0 < L1 − abs(H0 − L1) × fib factor, and neither latest swing equals the corresponding swing recorded at the previous market-state change.
+Calculation: Bullish zone = The high-to-low range of the last bearish candle between the prior swing high H1 and latest swing low L0 for an up break, or between latest swing low L1 minus the zigzag length and prior swing high H1 for a bullish breaker zone.
+Calculation: Bearish zone = The high-to-low range of the last bullish candle between the prior swing low L1 and latest swing high H0 for a down break, or between prior swing high H1 minus the zigzag length and prior swing low L1 for a bearish breaker zone.
+Calculation: Failed bullish MSB = Within the configured number of bars after a bullish MSB, close is below the broken swing high by at least the configured fraction of the preceding swing range.
+Calculation: Failed bearish MSB = Within the configured number of bars after a bearish MSB, close is above the broken swing low by at least the configured fraction of the preceding swing range.
+Long: Bullish MSB OR Failed bearish MSB OR a bar closes inside an active bullish zone after the prior bar's close was outside it
+Short: Bearish MSB OR Failed bullish MSB OR a bar closes inside an active bearish zone after the prior bar's close was outside it

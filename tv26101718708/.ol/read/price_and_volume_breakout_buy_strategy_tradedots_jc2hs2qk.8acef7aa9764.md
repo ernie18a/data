@@ -1,0 +1,7 @@
+Calculation: Prior-window price high = highest high over the price lookback, ending on the previous bar
+Calculation: Prior-window price low = lowest low over the price lookback, ending on the previous bar
+Calculation: Prior-window volume high = highest volume over the volume lookback, ending on the previous bar
+Long: close > prior-window price high AND volume > prior-window volume high AND close > long-term simple moving average of close AND flat
+Short: close < prior-window price low AND volume > prior-window volume high AND close < long-term simple moving average of close AND flat
+Exit: Long, close < long-term simple moving average of close AND previous bar close < current long-term simple moving average of close AND close from two bars ago < current long-term simple moving average of close AND close from three bars ago < current long-term simple moving average of close AND close from four bars ago < current long-term simple moving average of close
+Exit: Short, close > long-term simple moving average of close AND previous bar close > current long-term simple moving average of close AND close from two bars ago > current long-term simple moving average of close AND close from three bars ago > current long-term simple moving average of close AND close from four bars ago > current long-term simple moving average of close

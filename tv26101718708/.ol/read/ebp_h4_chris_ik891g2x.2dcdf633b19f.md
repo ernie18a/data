@@ -1,0 +1,2 @@
+Long: current bar is within any configured session AND low < previous bar low AND close > previous bar body high
+Short: current bar is within any configured session AND high > previous bar high AND close < previous bar body low

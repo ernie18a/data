@@ -1,0 +1,2 @@
+Long: On a confirmed bar of the chart timeframe or a requested higher or lower timeframe, low >= high two bars earlier
+Short: On a confirmed bar of the chart timeframe or a requested higher or lower timeframe, high <= low two bars earlier

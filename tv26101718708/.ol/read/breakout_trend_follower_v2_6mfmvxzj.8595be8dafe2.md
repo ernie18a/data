@@ -1,0 +1,2 @@
+Long: high > most recent confirmed pivot high on the chart timeframe AND (first higher-timeframe filter selected AND chart-timeframe pivot high >= first higher-timeframe pivot high from the still-forming bar OR both higher-timeframe filters selected AND chart-timeframe pivot high > each higher-timeframe pivot high from its still-forming bar OR no higher-timeframe filter selected)
+Exit: long, low < most recent confirmed pivot low on the chart timeframe

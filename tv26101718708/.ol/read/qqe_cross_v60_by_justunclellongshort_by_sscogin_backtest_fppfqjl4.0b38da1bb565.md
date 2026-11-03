@@ -1,0 +1,6 @@
+Long: the alternate fast MA ribbon changes from red to green (its medium MA was falling over the previous three bars and is no longer falling)
+Short: the alternate fast MA ribbon changes from green to red (its medium MA was not falling over the previous three bars and is now falling)
+Exit: long, the long take-profit condition occurs on either of its first two occurrences since entry OR low is at or below the entry price minus the configured stop-loss percentage
+Exit: short, the short take-profit condition occurs on either of its first two occurrences since entry OR high is at or above the entry price plus the configured stop-loss percentage
+Calculation: long take-profit condition = the chart-timeframe slow MA is above both the alternate fast MA and alternate slow MA, and the chart-timeframe medium MA changes from not falling over the previous three bars to falling over the previous three bars
+Calculation: short take-profit condition = the chart-timeframe slow MA is below both the alternate fast MA and alternate slow MA, and the chart-timeframe medium MA changes from falling over the previous three bars to not falling over the previous three bars

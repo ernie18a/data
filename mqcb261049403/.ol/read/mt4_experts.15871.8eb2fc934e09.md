@@ -1,0 +1,11 @@
+Calculation: Weighted Accelerator Oscillator = weighted sum of Accelerator Oscillator on the higher timeframe, lower timeframe, and chart timeframe; use each timeframe’s bar still forming.
+Calculation: Pattern filter = initialize to 5; set to 1 when there is no Evening Star, Doji, or Bearish Engulfing; then set to 0 when there is no Morning Star, Doji, or Bullish Engulfing (this update takes precedence); otherwise retain its previous value.
+Calculation: Evening Star = body(3) > body(2) AND body(1) > body(2) AND close(3) > open(3) AND close(1) < open(1) AND close(1) < body-high(3) - body(3)/2; use completed chart-timeframe bars.
+Calculation: Morning Star = body(3) > body(2) AND body(1) > body(2) AND close(3) < open(3) AND close(1) > open(1) AND close(1) > body-low(3) + body(3)/2; use completed chart-timeframe bars.
+Calculation: Bearish Engulfing = close(2) > open(2) AND close(1) < open(1) AND body(2) < body(1); use completed chart-timeframe bars.
+Calculation: Bullish Engulfing = close(2) < open(2) AND close(1) > open(1) AND body(2) < body(1); use completed chart-timeframe bars.
+Calculation: Doji = body(1) < (high(1) - low(1)) / doji threshold; use the last completed chart-timeframe bar.
+Long: no position is open AND Pattern filter = 1 AND close(1) < open(1) AND ((ADX > its threshold AND Weighted Accelerator Oscillator > 0) OR (ADX < its threshold AND Stochastic main line > signal line)); ADX uses the chart-timeframe bar still forming, and Stochastic uses the last completed chart-timeframe bar.
+Short: no position is open AND Pattern filter = 0 AND close(1) > open(1) AND ((ADX > its threshold AND Weighted Accelerator Oscillator < 0) OR (ADX < its threshold AND Stochastic main line < signal line)); ADX uses the chart-timeframe bar still forming, and Stochastic uses the last completed chart-timeframe bar.
+Exit: long, (ADX > its threshold AND Weighted Accelerator Oscillator < 0) OR (ADX < its threshold AND Stochastic main line < signal line) OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, (ADX > its threshold AND Weighted Accelerator Oscillator > 0) OR (ADX < its threshold AND Stochastic main line > signal line) OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

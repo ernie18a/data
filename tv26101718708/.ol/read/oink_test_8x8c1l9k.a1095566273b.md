@@ -1,0 +1,7 @@
+Calculation: Bullish FVG = the high of the third-most-recent completed higher-timeframe bar is below the low of the most-recent completed higher-timeframe bar; its gap edges are those two prices.
+Calculation: Bearish FVG = the low of the third-most-recent completed higher-timeframe bar is above the high of the most-recent completed higher-timeframe bar; its gap edges are those two prices.
+Calculation: Consequent Encroachment (CE) = midpoint of the two FVG gap edges.
+Long: Flat position AND eligible to trade AND an unblocked, unmitigated CE level is touched (low ≤ CE ≤ high) with open > CE; OR, for that setup, the next bar closes ≥ CE and > the K1 high, or the following bar closes ≥ CE and > the K2 high, or the third bar after K1 closes ≥ CE and > the K3 low.
+Short: Flat position AND eligible to trade AND an unblocked, unmitigated CE level is touched (low ≤ CE ≤ high) with open < CE; OR, for that setup, the next bar closes ≤ CE and < the K1 low, or the following bar closes ≤ CE and < the K2 low, or the third bar after K1 closes ≤ CE and < the K3 high.
+Exit: Long, low ≤ stop price OR high ≥ target price; if target distance is more than the stop distance, also move the stop to entry when high reaches halfway from entry to target.
+Exit: Short, high ≥ stop price OR low ≤ target price; if target distance is more than the stop distance, also move the stop to entry when low reaches halfway from entry to target.

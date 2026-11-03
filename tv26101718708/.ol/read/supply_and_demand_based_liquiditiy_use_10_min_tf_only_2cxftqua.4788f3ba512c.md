@@ -1,0 +1,12 @@
+Calculation: Bullish impulse = 2 or 3 consecutive bars with close > open, ending on the current bar; bearish impulse = 2 or 3 consecutive bars with close < open, ending on the current bar.
+Calculation: Volume-qualified impulse = the bar immediately before the impulse has volume > its simple moving average over a lookback.
+Calculation: Demand zone = the high-to-low range of the nearest bearish candle among the impulse-ending bar and the prior 5 bars, created on a volume-qualified bullish impulse when no demand zone overlaps it and no demand zone was created in the preceding 14 bars; retain until close < zone bottom, a fresh retest deletes it, or it ages out of the tracked zones.
+Calculation: Supply zone = the high-to-low range of the nearest bullish candle among the impulse-ending bar and the prior 5 bars, created on a volume-qualified bearish impulse when no supply zone overlaps it and no supply zone was created in the preceding 14 bars; retain until close > zone top, a fresh retest deletes it, or it ages out of the tracked zones.
+Calculation: Front-line sell-side liquidity = the highest unbroken confirmed pivot low below close; a pivot uses equal left and right lookbacks, becomes available only after its right-side bars complete, and is removed when low falls below it.
+Calculation: Front-line buy-side liquidity = the lowest unbroken confirmed pivot high above close; a pivot uses equal left and right lookbacks, becomes available only after its right-side bars complete, and is removed when high rises above it.
+Calculation: Valid demand zone = a retained demand zone for which front-line sell-side liquidity has been above its top at least once.
+Calculation: Valid supply zone = a retained supply zone for which front-line buy-side liquidity has been below its bottom at least once.
+Calculation: Displayed demand zone = one of the nearest valid demand zones below close, ranked by descending zone top.
+Calculation: Displayed supply zone = one of the nearest valid supply zones above close, ranked by ascending zone bottom.
+Long: a displayed demand zone exists OR a retained demand zone has previously been left (low > its top on a prior or current bar) and current low <= its top
+Short: a displayed supply zone exists OR a retained supply zone has previously been left (high < its bottom on a prior or current bar) and current high >= its bottom

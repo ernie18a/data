@@ -1,0 +1,7 @@
+Calculation: Range z-score = (current bar range − rolling mean bar range) / rolling standard deviation of bar range, using the same lookback; bar range = high − low
+Calculation: CV change = current rolling coefficient of variation of bar range − its value one lookback ago; coefficient of variation = rolling standard deviation / rolling mean
+Calculation: Rhythm score = round(min(100, min(max(range z-score − 1, 0) × 30, 40) + min(max(CV change, 0) × 50, 25) + min(max((volume / rolling average volume − 1) × 40, 0), 20) + min(abs(EMA change over 3 bars) / (ATR + 0.00001) × 20, 15)))
+Long: range z-score ≥ threshold AND close > open AND close > previous close
+Long: range z-score ≥ threshold AND close > open AND close > previous close AND volume ≥ rolling average volume × volume multiplier AND close > EMA AND EMA change over 3 bars > 0 AND rhythm score ≥ score threshold AND bars since last signal ≥ cooldown AND current bar is complete
+Short: range z-score ≥ threshold AND close < open AND close < previous close
+Short: range z-score ≥ threshold AND close < open AND close < previous close AND volume ≥ rolling average volume × volume multiplier AND close < EMA AND EMA change over 3 bars < 0 AND rhythm score ≥ score threshold AND bars since last signal ≥ cooldown AND current bar is complete

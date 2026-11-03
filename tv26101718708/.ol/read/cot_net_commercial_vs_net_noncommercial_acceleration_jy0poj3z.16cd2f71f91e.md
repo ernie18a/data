@@ -1,0 +1,5 @@
+Calculation: Net commercial positions = commercial long positions minus commercial short positions, using the last completed bar from a higher timeframe
+Calculation: Change in net commercial positions = current net commercial positions minus the previous observation
+Calculation: Extreme-change threshold = the percentile of absolute changes from the latest lookback updates, including the current update; sort ascending and select the element at the rounded percentile fraction of (number of changes − 1)
+Long: Current net commercial positions differ from the previous observation AND change in net commercial positions > 0 AND absolute change in net commercial positions >= extreme-change threshold
+Short: Current net commercial positions differ from the previous observation AND change in net commercial positions < 0 AND absolute change in net commercial positions >= extreme-change threshold

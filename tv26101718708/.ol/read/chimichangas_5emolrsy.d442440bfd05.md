@@ -1,0 +1,6 @@
+Calculation: First composite = apply a short-wave moving average to OHLC4, then apply weighted, volume-weighted, exponential, Wilder, and successive simple moving averages, each with its own lookback.
+Calculation: Second composite = average the highest and lowest OHLC4 values over separate lookbacks, then apply volume-weighted, weighted, exponential, Wilder, and simple moving averages, each with its own lookback.
+Calculation: Long-signal reference = the close of the most recent bar where the first composite crossed above the second composite on or after the configured start date.
+Long: First composite crosses above second composite AND datetime is on or after the configured start date
+Short: First composite crosses below second composite AND datetime is on or after the configured start date
+Exit: long, Long-entry condition AND close is below the long-signal reference reduced by the configured stop percentage OR Long-entry condition AND first composite crosses below second composite OR Short-entry condition AND close is above the long-signal reference increased by the configured exit percentage OR Short-entry condition AND first composite crosses above second composite

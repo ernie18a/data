@@ -1,0 +1,3 @@
+Calculation: Minimum range threshold = minimum tick size × configurable minimum-range count
+Long: close ≠ open AND high − low > minimum range threshold AND min(open, close) − low > high − max(open, close) AND min(open, close) − low ≥ abs(close − open) × configured wick/body ratio (2 or 3)
+Short: close ≠ open AND high − low > minimum range threshold AND high − max(open, close) > min(open, close) − low AND high − max(open, close) ≥ abs(close − open) × configured wick/body ratio (2 or 3)

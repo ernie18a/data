@@ -1,0 +1,4 @@
+Calculation: Opening-range high = highest high during the configured opening-range session for the current day
+Calculation: Opening-range low = lowest low during the configured opening-range session for the current day
+Long: current bar is outside the opening-range session AND opening-range high and low are defined AND current close > current opening-range high AND previous close <= previous opening-range high
+Short: current bar is outside the opening-range session AND opening-range high and low are defined AND current close < current opening-range low AND previous close >= previous opening-range low

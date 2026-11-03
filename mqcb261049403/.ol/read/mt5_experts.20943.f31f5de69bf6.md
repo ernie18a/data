@@ -1,0 +1,5 @@
+Calculation: SilverTrend color index = On the configured indicator timeframe, for each bar calculate upper = highest high and lower = lowest low over the current bar and the next older SSP−1 bars; set upper threshold = lower + (upper − lower) × (33 − risk)/100 and lower threshold = upper − (upper − lower) × (33 − risk)/100. Set trend bearish if close is below the upper threshold, bullish if close is above the lower threshold, otherwise retain the prior trend. For bullish trend, color index is 0 if close ≥ open, else 1; for bearish trend, 4 if close ≤ open, else 3; for no trend, 2. Use the selected signal bar and its next older bar on this timeframe, which may be higher, lower, or equal to the chart timeframe; the selected bar is forming at offset 0 and completed at offsets greater than 0.
+Long: selected color index < 2 AND next older color index > 1
+Short: selected color index > 2
+Exit: long, selected color index > 2
+Exit: short, selected color index < 2

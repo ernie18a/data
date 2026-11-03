@@ -1,0 +1,5 @@
+Calculation: Custom TEMA = 3 × first smoothing of median price − 3 × second smoothing of the first result + third smoothing of the second result; each stage uses its configured smoothing method and lookback, on the indicator timeframe.
+Long: Custom TEMA on the last completed indicator-timeframe bar > its value on the preceding completed bar AND its value on the preceding completed bar < its value two completed bars earlier
+Short: Custom TEMA on the last completed indicator-timeframe bar < its value on the preceding completed bar AND its value on the preceding completed bar > its value two completed bars earlier
+Exit: Long, Custom TEMA on the last completed indicator-timeframe bar < its value on the preceding completed bar
+Exit: Short, Custom TEMA on the last completed indicator-timeframe bar > its value on the preceding completed bar

@@ -1,0 +1,9 @@
+Calculation: Relative strength = SMA(sector close / benchmark close, lookback L) / SMA(sector close / benchmark close, lookback 3L) - 1, with the second lookback longer than the first
+Calculation: Chaikin Money Flow = sum((((close - low) - (high - close)) / (high - low)) * volume, lookback L) / sum(volume, lookback L); use 0 for a zero high-low range or zero volume sum
+Calculation: Volume ratio = volume / SMA(volume, lookback L); use 1 if the average is zero
+Calculation: Trend state = bullish when close > shorter-period EMA and shorter-period EMA > longer-period EMA; bearish when close < shorter-period EMA and shorter-period EMA < longer-period EMA; otherwise neutral
+Calculation: Price-volume score = +1 when volume / SMA(volume, lookback L) > 1.2, (close - low) / (high - low) > 0.60, and close > open; -1 when volume / SMA(volume, lookback L) > 1.2, (close - low) / (high - low) < 0.40, and close < open; otherwise 0. Use 0.5 for the close-range fraction when high = low
+Calculation: Composite score = clamp to [-3, 3] the sum of: +1 if relative strength > 0.02, +0.5 if > 0.005, -1 if < -0.02, -0.5 if < -0.005, otherwise 0; +1 if Chaikin Money Flow > 0.07, +0.5 if > 0.02, -1 if < -0.07, -0.5 if < -0.02, otherwise 0; +0.5 if volume ratio > 1.5, -0.3 if < 0.6, otherwise 0; 0.5 times trend state (+1, 0, or -1); and 0.5 times price-volume score
+Calculation: Futures divergence composite = ((futures short-term percent return - benchmark short-term percent return) + (technology-proxy futures short-term percent return - technology-proxy sector short-term percent return)) / 2
+Long: Composite score >= 0.5 OR close > shorter-period EMA AND shorter-period EMA > longer-period EMA OR futures divergence composite > 0.25
+Short: Composite score < -0.5 OR close < shorter-period EMA AND shorter-period EMA < longer-period EMA OR futures divergence composite < -0.25

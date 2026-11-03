@@ -1,0 +1,4 @@
+Long: current chart bar's opening hour is within the configured trading hours AND volume of the last completed chart bar > volume of the preceding completed chart bar
+Short: current chart bar's opening hour is within the configured trading hours AND volume of the last completed chart bar < volume of the preceding completed chart bar
+Exit: short, current chart bar's opening hour is within the configured trading hours AND volume of the last completed chart bar > volume of the preceding completed chart bar
+Exit: long, current chart bar's opening hour is within the configured trading hours AND volume of the last completed chart bar < volume of the preceding completed chart bar

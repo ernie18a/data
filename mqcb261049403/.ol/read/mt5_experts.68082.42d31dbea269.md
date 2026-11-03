@@ -1,0 +1,7 @@
+Calculation: First 4-hour range high = highest high of completed bars during 00:00–04:00 New York local time; first 4-hour range low = lowest low during that period
+Calculation: Long stop = lowest low among consecutive completed bars whose closes are below the first 4-hour range low, starting with the bar before the signal bar and ending at the first earlier bar whose close is at or above the range low
+Calculation: Short stop = highest high among consecutive completed bars whose closes are above the first 4-hour range high, starting with the bar before the signal bar and ending at the first earlier bar whose close is at or below the range high
+Long: First 4-hour range is formed AND no position is open AND previous completed close is below the first 4-hour range low AND latest completed close is above the first 4-hour range low
+Short: First 4-hour range is formed AND no position is open AND previous completed close is above the first 4-hour range high AND latest completed close is below the first 4-hour range high
+Exit: Long, low <= long stop OR high >= entry price + 2 * abs(entry price - long stop)
+Exit: Short, high >= short stop OR low <= entry price - 2 * abs(entry price - short stop)

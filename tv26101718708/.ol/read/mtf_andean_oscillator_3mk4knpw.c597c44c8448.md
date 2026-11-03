@@ -1,0 +1,4 @@
+Calculation: Andean bull = sqrt(max(dn2 − dn1², 0)), where alpha = 2 / (length + 1); initialize dn1 = close and dn2 = close², then update dn1 = min(close, open, previous dn1 + (close − previous dn1) × alpha) and dn2 = min(close², open², previous dn2 + (close² − previous dn2) × alpha. Calculate on the selected external timeframe, which may be higher or lower than the chart timeframe, using its last completed bar.
+Calculation: Andean bear = sqrt(max(up2 − up1², 0)), where alpha = 2 / (length + 1); initialize up1 = close and up2 = close², then update up1 = max(close, open, previous up1 − (previous up1 − close) × alpha) and up2 = max(close², open², previous up2 − (previous up2 − close²) × alpha). Calculate on the selected external timeframe, which may be higher or lower than the chart timeframe, using its last completed bar.
+Long: Andean bull > Andean bear
+Short: Andean bear > Andean bull

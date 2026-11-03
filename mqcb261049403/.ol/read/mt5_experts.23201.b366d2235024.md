@@ -1,0 +1,6 @@
+Long: Higher-timeframe Awesome Oscillator crosses from below zero on the previous completed bar to above zero on the latest completed bar AND lower-timeframe Stochastic %K OR %D is below its lower threshold on the latest completed bar AND no long position is open
+Short: Higher-timeframe Awesome Oscillator crosses from above zero on the previous completed bar to below zero on the latest completed bar AND lower-timeframe Stochastic %K OR %D is above its upper threshold on the latest completed bar AND no short position is open
+Exit: Short, higher-timeframe Awesome Oscillator crosses from below zero on the previous completed bar to above zero on the latest completed bar
+Exit: Long, higher-timeframe Awesome Oscillator crosses from above zero on the previous completed bar to below zero on the latest completed bar
+Exit: Long, price reaches the stop-loss or take-profit level measured from the entry price, or reaches the active trailing stop
+Exit: Short, price reaches the stop-loss or take-profit level measured from the entry price, or reaches the active trailing stop

@@ -1,0 +1,9 @@
+Calculation: Session-normalized momentum = During the regular session, cumulative session volume × (close − prior session close), minus that score from the lookback bars ago, divided by ATR; unavailable outside the session or before a prior session close exists.
+Calculation: Volume-weighted momentum = SMA of [(close − close from the momentum lookback bars ago) × current volume / max(SMA(volume, volume lookback), 1)], over the smoothing lookback.
+Calculation: Velocity-efficiency index = SMA over 3 bars of [change in EMA(bar range / max(volume, 1)) over the momentum lookback − EMA over the smoothing lookback of the change in EMA(volume / max(bar range, a small positive floor)) over the same momentum lookback].
+Calculation: Long vote count = number of the three indicators above their respective positive thresholds.
+Calculation: Short vote count = number of the three indicators below their respective negative thresholds.
+Long: session-normalized momentum > its positive threshold AND volume-weighted momentum > its positive threshold AND velocity-efficiency index > its positive threshold AND ADX > its minimum AND ATR > its longer-lookback SMA × its minimum multiplier AND Choppiness Index < its maximum AND ATR > its value from a shorter lookback ago × its expansion multiplier
+Short: session-normalized momentum < its negative threshold AND volume-weighted momentum < its negative threshold AND velocity-efficiency index < its negative threshold AND ADX > its minimum AND ATR > its longer-lookback SMA × its minimum multiplier AND Choppiness Index < its maximum AND ATR > its value from a shorter lookback ago × its expansion multiplier
+Exit: Long, low <= close − ATR × stop multiplier OR high >= close + ATR × take-profit multiplier OR long vote count < 2
+Exit: Short, high >= close + ATR × stop multiplier OR low <= close − ATR × take-profit multiplier OR short vote count < 2

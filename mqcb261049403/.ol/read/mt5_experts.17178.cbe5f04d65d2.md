@@ -1,0 +1,4 @@
+Long: current price >= entry price AND previous completed bar high - current bar close >= minimum stop distance AND current bar close - previous completed bar low >= minimum stop distance AND current bar open < previous completed bar high AND current bar open > previous completed bar low
+Short: current price <= entry price AND previous completed bar high - current bar close >= minimum stop distance AND current bar close - previous completed bar low >= minimum stop distance AND current bar open < previous completed bar high AND current bar open > previous completed bar low
+Exit: long, current price <= entry price - stop-loss distance OR current price >= entry price + take-profit distance
+Exit: short, current price >= entry price + stop-loss distance OR current price <= entry price - take-profit distance

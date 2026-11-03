@@ -1,0 +1,5 @@
+Calculation: Schaff RVI Trend Cycle = subtract the longer-period RVI from the shorter-period RVI; normalize the difference to 0–100 over the cycle lookback and smooth with a factor of 0.5; normalize that result to −100–100 over the same lookback and smooth again with a factor of 0.5.
+Long: On the chart timeframe, the latest completed Schaff RVI Trend Cycle value > upper level AND the preceding completed value <= upper level
+Short: On the chart timeframe, the latest completed Schaff RVI Trend Cycle value < lower level AND the preceding completed value >= lower level
+Exit: long, On the chart timeframe, the latest completed Schaff RVI Trend Cycle value < lower level AND the preceding completed value >= lower level
+Exit: short, On the chart timeframe, the latest completed Schaff RVI Trend Cycle value > upper level AND the preceding completed value <= upper level

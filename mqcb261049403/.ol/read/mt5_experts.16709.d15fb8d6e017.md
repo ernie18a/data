@@ -1,0 +1,6 @@
+Calculation: Regression channel middle = polynomial least-squares fit to chart-timeframe closes over the lookback, evaluated on the current forming bar.
+Calculation: Regression channel upper and lower = regression channel middle plus or minus the configured multiplier times the root-mean-square residual from that fit.
+Long: Current forming chart bar low <= regression channel lower AND current time is within the configured trading window AND previous completed daily bar high - low <= the configured protection threshold.
+Short: Current forming chart bar high >= regression channel upper AND current time is within the configured trading window AND previous completed daily bar high - low <= the configured protection threshold.
+Exit: long, current price >= regression channel middle OR previous completed daily bar high - low > the configured protection threshold.
+Exit: short, current price <= regression channel middle OR previous completed daily bar high - low > the configured protection threshold.

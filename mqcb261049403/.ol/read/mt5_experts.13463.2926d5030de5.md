@@ -1,0 +1,5 @@
+Calculation: Schaff cycle oscillator = On the configured indicator timeframe, calculate fast-period momentum minus longer-period momentum. Stochastically normalize this difference over a shorter cycle lookback to 0–100 and smooth recursively with equal weight on the current value and prior smoothed value. Stochastically normalize that smoothed series over the same cycle lookback to −100–100 and smooth the same way. Evaluate completed bars; the indicator timeframe may be higher, lower, or equal to the chart timeframe.
+Long: previous completed bar’s Schaff cycle oscillator ≤ upper threshold AND current completed bar’s Schaff cycle oscillator > upper threshold
+Short: previous completed bar’s Schaff cycle oscillator ≥ lower threshold AND current completed bar’s Schaff cycle oscillator < lower threshold
+Exit: long, current completed bar’s Schaff cycle oscillator < lower threshold
+Exit: short, current completed bar’s Schaff cycle oscillator > upper threshold

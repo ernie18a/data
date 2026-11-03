@@ -1,0 +1,5 @@
+Calculation: Opening-range high/low = highest high and lowest low during the configured opening session, finalized when the session ends
+Long: opening range is locked AND current bar is outside the opening session AND opening-range height meets the configured minimum ATR filter AND (close > opening-range high for close-trigger mode OR high > opening-range high for wick-trigger mode) AND (no earlier upside breakout that day if first-break-per-side is enabled)
+Long: an upside breakout has occurred AND this is the first retest AND low <= opening-range high AND close > opening-range low AND no new upside breakout on this bar
+Short: opening range is locked AND current bar is outside the opening session AND opening-range height meets the configured minimum ATR filter AND (close < opening-range low for close-trigger mode OR low < opening-range low for wick-trigger mode) AND (no earlier downside breakout that day if first-break-per-side is enabled)
+Short: a downside breakout has occurred AND this is the first retest AND high >= opening-range low AND close < opening-range high AND no new downside breakout on this bar

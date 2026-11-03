@@ -1,0 +1,2 @@
+Long: Volume[1] > Volume[2] AND Low[1] < Low[2] AND Volume[2] > Volume[3] AND Low[2] < Low[3] AND Volume[3] > Volume[4] AND Low[3] < Low[4] AND (Volume <= Volume[1] OR Low >= Low[1])
+Short: Volume[1] > Volume[2] AND High[1] > High[2] AND Volume[2] > Volume[3] AND High[2] > High[3] AND Volume[3] > Volume[4] AND High[3] > High[4] AND (Volume <= Volume[1] OR High <= High[1])

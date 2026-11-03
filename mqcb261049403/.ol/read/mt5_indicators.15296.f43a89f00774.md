@@ -1,0 +1,3 @@
+Calculation: Smoothed detrended price = apply a configured moving average to (selected OHLC price − a configured moving average of the same price); the two smoothing methods and lookbacks are independently configurable. In the higher-timeframe version, use the selected higher timeframe’s latest bar still forming and carry its value across chart bars.
+Long: Smoothed detrended price > 0
+Short: Smoothed detrended price < 0

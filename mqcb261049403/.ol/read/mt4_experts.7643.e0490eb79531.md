@@ -1,0 +1,5 @@
+Long: CCI on the still-forming H4 bar < −CCI threshold AND MACD main on the last completed M15 bar > its signal line AND MACD main on the preceding completed M15 bar ≤ its signal line AND MACD main on the last completed M15 bar < 0
+Short: CCI on the still-forming H4 bar > CCI threshold AND MACD main on the last completed M15 bar < its signal line AND MACD main on the preceding completed M15 bar ≥ its signal line AND MACD main on the last completed M15 bar > 0
+Calculation: take-profit distance = 30-bar H4 close-price standard deviation, using the SMA method with a one-bar MA shift, multiplied by a parameter
+Exit: Long, low ≤ entry price − stop-loss distance OR high ≥ entry price + take-profit distance OR (MACD main on the last completed M15 bar < MACD main on the preceding completed M15 bar AND close − entry price > profit threshold)
+Exit: Short, high ≥ entry price + stop-loss distance OR low ≤ entry price − take-profit distance OR (MACD main on the last completed M15 bar > MACD main on the preceding completed M15 bar AND entry price − close > profit threshold)

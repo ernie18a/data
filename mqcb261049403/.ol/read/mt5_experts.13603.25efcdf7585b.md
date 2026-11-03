@@ -1,0 +1,6 @@
+Calculation: Ergodic main = On each indicator-timeframe bar, let V be tick volume, U = (V + (close - open) / minimum price increment) / 2, and D = V - U. Smooth U and D with the same configurable moving-average method and lookback, then smooth each result again with the same method and a second lookback. Let T = 100 × (smoothed U − smoothed D) / (smoothed U + smoothed D), or 0 if the denominator is 0. Smooth T with a third lookback, then sequentially smooth the result with fourth and fifth lookbacks; this is the Ergodic main.
+Calculation: Ergodic signal = Smooth the Ergodic main with a sixth lookback. Use only completed bars on the indicator timeframe, which is the same as the chart timeframe in the documented setup.
+Long: Ergodic main on the previous completed bar ≤ Ergodic signal on the previous completed bar AND Ergodic main on the latest completed bar > Ergodic signal on the latest completed bar
+Short: Ergodic main on the previous completed bar ≥ Ergodic signal on the previous completed bar AND Ergodic main on the latest completed bar < Ergodic signal on the latest completed bar
+Exit: long, Ergodic main < Ergodic signal on the latest completed bar
+Exit: short, Ergodic main > Ergodic signal on the latest completed bar

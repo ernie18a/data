@@ -1,0 +1,4 @@
+Calculation: Smoothed volume-weighted histogram = apply the selected moving-average method to [100 × (CU / (CU + CD) − 0.5) × volume], where volume is tick volume or real volume; L0 = (1 − gamma) × (BullsPower + BearsPower) + gamma × prior L0; L1 = −gamma × L0 + prior L0 + gamma × prior L1; L2 = −gamma × L1 + prior L1 + gamma × prior L2; L3 = −gamma × L2 + prior L2 + gamma × prior L3; CU = max(L0 − L1, 0) + max(L1 − L2, 0) + max(L2 − L3, 0); CD = max(L1 − L0, 0) + max(L2 − L1, 0) + max(L3 − L2, 0). If CU + CD = 0, use 0 for CU / (CU + CD).
+Calculation: Smoothed volume = apply the same moving-average method and parameters to volume.
+Long: Smoothed volume-weighted histogram > HighLevel1 × Smoothed volume
+Short: Smoothed volume-weighted histogram < LowLevel1 × Smoothed volume

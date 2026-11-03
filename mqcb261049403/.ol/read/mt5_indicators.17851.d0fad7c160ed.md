@@ -1,0 +1,2 @@
+Long: ADXm color state changes to up (ADXm > upper level when level coloring is selected; ADXm > middle level when middle-level coloring is selected; ADXm > prior-bar ADXm when slope coloring is selected)
+Short: ADXm color state changes to down (ADXm < lower level when level coloring is selected; ADXm < middle level when middle-level coloring is selected; ADXm < prior-bar ADXm when slope coloring is selected)

@@ -1,0 +1,4 @@
+Calculation: Centered RSI-volume = selected smoother applied to (RSI of the selected price − 50) × selected volume; use the same smoothing method, phase, and length as for smoothed volume. Calculate on the chart timeframe using its current bar, and on the higher timeframe using its still-forming bar.
+Calculation: Smoothed volume = selected smoother applied to selected volume, with the same smoothing settings and timeframe/bar selection as centered RSI-volume.
+Long: Centered RSI-volume > HighLevel1 × smoothed volume OR centered RSI-volume > its value on the immediately preceding bar of the same timeframe
+Short: Centered RSI-volume < LowLevel1 × smoothed volume OR centered RSI-volume < its value on the immediately preceding bar of the same timeframe

@@ -1,0 +1,3 @@
+Calculation: MARSI = moving average of RSI, using the same RSI and smoothing lookbacks on the chart timeframe and each available higher and lower timeframe; use the still-forming bar on other timeframes.
+Long: MARSI > its upper threshold OR (MARSI is between its lower and upper thresholds AND the most recent prior MARSI outside that range was below the lower threshold)
+Short: MARSI < its lower threshold OR (MARSI is between its lower and upper thresholds AND the most recent prior MARSI outside that range was above the upper threshold)

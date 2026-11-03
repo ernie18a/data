@@ -1,0 +1,4 @@
+Calculation: EMA gap = absolute difference between the fast EMA and slow EMA
+Calculation: ATR ratio = ATR divided by its moving average over the ATR lookback
+Long: close > open AND previous bar close > previous bar open AND the most recent fast/slow EMA cross was bullish AND EMA gap > minimum gap AND close > fast EMA AND fast EMA > slow EMA AND close > VWAP AND ((pre-market session AND ATR ratio > volatility threshold) OR regular session OR (afternoon session AND ATR ratio > volatility threshold)) AND previous bar did not meet the long conditions
+Short: close < open AND previous bar close < previous bar open AND the most recent fast/slow EMA cross was bearish AND EMA gap > minimum gap AND close < fast EMA AND fast EMA < slow EMA AND close < VWAP AND ((pre-market session AND ATR ratio > volatility threshold) OR regular session OR (afternoon session AND ATR ratio > volatility threshold)) AND previous bar did not meet the short conditions

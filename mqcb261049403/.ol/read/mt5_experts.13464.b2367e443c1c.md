@@ -1,0 +1,5 @@
+Calculation: Schaff RSI Trend Cycle = smooth a stochastic normalization of short-lookback RSI minus long-lookback RSI, then smooth a second stochastic normalization of the result; use the same applied price for both RSI calculations and the same cycle lookback for both stochastic calculations.
+Long: On the configured indicator timeframe, the last completed bar is above the high level and the preceding completed bar is at or below it (timeframe may be higher or lower than the chart timeframe).
+Short: On the configured indicator timeframe, the last completed bar is below the low level and the preceding completed bar is at or above it (timeframe may be higher or lower than the chart timeframe).
+Exit: Long, the last completed bar is below the low level and the preceding completed bar is at or above it (on the configured indicator timeframe, which may be higher or lower than the chart timeframe).
+Exit: Short, the last completed bar is above the high level and the preceding completed bar is at or below it (on the configured indicator timeframe, which may be higher or lower than the chart timeframe).

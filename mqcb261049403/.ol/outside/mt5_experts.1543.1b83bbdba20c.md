@@ -1,0 +1,1 @@
+When total account floating profit reaches or falls below a fixed loss limit, close every open long and short position. Keep closing positions while the loss trigger remains active; clear it once no positions remain.

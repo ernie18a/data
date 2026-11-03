@@ -1,0 +1,4 @@
+Calculation: paired pivot low = a bar where both low and RSI are local minima over the pivot lookback on each side; confirm after the right-side lookback bars
+Calculation: paired pivot high = a bar where both high and RSI are local maxima over the pivot lookback on each side; confirm after the right-side lookback bars
+Long: current paired pivot low is within the maximum divergence distance of the preceding paired pivot low AND (current low < preceding low AND current RSI > preceding RSI OR current low > preceding low AND current RSI < preceding RSI)
+Short: current paired pivot high is within the maximum divergence distance of the preceding paired pivot high AND (current high > preceding high AND current RSI < preceding RSI OR current high < preceding high AND current RSI > preceding RSI)

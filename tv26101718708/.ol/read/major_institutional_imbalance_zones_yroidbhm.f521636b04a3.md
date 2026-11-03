@@ -1,0 +1,2 @@
+Long: low > high two bars ago AND low - high two bars ago > ATR × threshold AND close > open AND close - open > ATR × threshold AND volume > its moving average
+Short: high < low two bars ago AND low two bars ago - high > ATR × threshold AND close < open AND open - close > ATR × threshold AND volume > its moving average

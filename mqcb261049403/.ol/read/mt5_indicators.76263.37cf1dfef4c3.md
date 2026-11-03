@@ -1,0 +1,3 @@
+Calculation: Volume-weighted delta oscillator = the moving average of the normalized rolling sum of per-bar volume-weighted close location; per-bar close location is (2 × close − high − low) / (high − low), or zero when high equals low; normalize each rolling sum by the standard deviation of recent rolling sums.
+Long: Volume-weighted delta oscillator ≥ 0 OR a confirmed price swing low is below the nearest prior confirmed swing low within the search range and the oscillator at the newer swing low is above its value at the prior swing low
+Short: Volume-weighted delta oscillator < 0 OR a confirmed price swing high is above the nearest prior confirmed swing high within the search range and the oscillator at the newer swing high is below its value at the prior swing high

@@ -1,0 +1,1 @@
+Go long when the faster exponential moving average crosses above the slower one while the slower average is above the shorter simple moving average. Go short when the faster exponential moving average crosses below the slower one while it is below the shorter simple moving average. No exit rule is specified.

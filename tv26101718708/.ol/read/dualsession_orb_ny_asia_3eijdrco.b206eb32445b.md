@@ -1,0 +1,11 @@
+Calculation: Opening-range high = highest high during each session’s opening-range window, locked when that window ends
+Calculation: Opening-range low = lowest low during each session’s opening-range window, locked when that window ends
+Calculation: Opening-range range = opening-range high − opening-range low
+Calculation: Minimum breakout distance = 0, configured point distance, or opening-range range × configured percentage
+Calculation: Initial stop = entry price ± configured fixed distance; or entry price ± max(ATR × configured multiplier, configured minimum distance); or opposite opening-range boundary adjusted by configured buffer. For ATR, use the configured timeframe, which may be higher or lower than the chart timeframe; use the value returned without lookahead.
+Calculation: Risk = absolute difference between entry price and initial stop
+Calculation: Target = entry price ± configured fixed distance, or entry price ± risk × configured risk:reward multiple
+Long: opening range is locked AND current bar time is within the configured validity window after the session ends AND close > opening-range high AND close − opening-range high ≥ minimum breakout distance AND first-break restriction is satisfied AND (immediate mode: no trade is active OR retest mode: price previously touched or crossed down to the breakout level and close > that level) AND (bar is confirmed if confirmation is required)
+Short: opening range is locked AND current bar time is within the configured validity window after the session ends AND close < opening-range low AND opening-range low − close ≥ minimum breakout distance AND first-break restriction is satisfied AND (immediate mode: no trade is active OR retest mode: price previously touched or crossed up to the breakout level and close < that level) AND (bar is confirmed if confirmation is required)
+Exit: Long, high ≥ target OR low ≤ stop OR elapsed bars since entry ≥ configured maximum; if target and stop are both touched, exit at whichever is closer to the bar open, choosing the stop on a tie
+Exit: Short, low ≤ target OR high ≥ stop OR elapsed bars since entry ≥ configured maximum; if target and stop are both touched, exit at whichever is closer to the bar open, choosing the stop on a tie

@@ -1,0 +1,7 @@
+Calculation: Zero-lag momentum OSMA = on the configured indicator timeframe, calculate five Momentum values (applied price divided by its value at progressively longer lookbacks, multiplied by 100); multiply them by their respective weights and sum them, using the second weight for both the second and third values. Let this sum be Fast. Recursively calculate Slow = Fast / smoothing length 1 + previous Slow × (smoothing length 1 − 1) / smoothing length 1, then OSMA = (Fast − Slow) / smoothing length 2 + previous OSMA × (smoothing length 2 − 1) / smoothing length 2. Use completed indicator-timeframe bars, including when that timeframe is higher or lower than the chart timeframe.
+Long: OSMA on the current completed indicator-timeframe bar > OSMA on the preceding completed indicator-timeframe bar
+Long: OSMA on the oldest of the last three completed indicator-timeframe bars > OSMA on the middle bar AND OSMA on the newest bar > OSMA on the middle bar
+Short: OSMA on the current completed indicator-timeframe bar < OSMA on the preceding completed indicator-timeframe bar
+Short: OSMA on the oldest of the last three completed indicator-timeframe bars < OSMA on the middle bar AND OSMA on the newest bar < OSMA on the middle bar
+Exit: long, OSMA on the oldest of the last three completed indicator-timeframe bars < OSMA on the middle bar AND OSMA on the newest bar < OSMA on the middle bar
+Exit: short, OSMA on the oldest of the last three completed indicator-timeframe bars > OSMA on the middle bar AND OSMA on the newest bar > OSMA on the middle bar

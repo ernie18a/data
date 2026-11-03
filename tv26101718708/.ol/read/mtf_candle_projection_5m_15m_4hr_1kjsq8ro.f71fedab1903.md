@@ -1,0 +1,2 @@
+Long: higher-timeframe candle on a timeframe above the chart timeframe, still forming or completed, closes >= its open
+Short: higher-timeframe candle on a timeframe above the chart timeframe, still forming or completed, closes < its open

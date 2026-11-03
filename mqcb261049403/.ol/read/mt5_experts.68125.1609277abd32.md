@@ -1,0 +1,9 @@
+Calculation: Fair Value Gap (FVG) = Bullish when the high of the oldest of three consecutive completed detection bars is below the low of the newest; bearish when the oldest bar’s low is above the newest bar’s high. The gap boundaries are those two prices, and the encroachment point is their midpoint.
+Calculation: Swing high = a completed bar’s high is greater than the highs of the configured number of bars on each side; swing low = its low is less than the lows of that many bars on each side.
+Long: An active bullish or bearish FVG’s encroachment point is touched by the current high-low range AND the current close is above the encroachment point.
+Short: An active bullish or bearish FVG’s encroachment point is touched by the current high-low range AND the current close is below the encroachment point.
+Long: A sell-side liquidity level is swept (current low below a swing low, equal low, previous-day low, or previous-week low) AND the configured minimum distance from the level is met AND, when enabled, the current time is in the London or New York session AND trading immediately on the sweep is enabled AND waiting for a retrace is disabled.
+Short: A buy-side liquidity level is swept (current high above a swing high, equal high, previous-day high, or previous-week high) AND the configured minimum distance from the level is met AND, when enabled, the current time is in the London or New York session AND trading immediately on the sweep is enabled AND waiting for a retrace is disabled.
+Exit: long, current price is at or below the configured stop price; short, current price is at or above the configured stop price.
+Exit: long or short, position profit reaches the configured profit target or loss threshold.
+Exit: long, current close reaches or exceeds the configured target price; short, current close reaches or falls below the configured target price.

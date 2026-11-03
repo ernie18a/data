@@ -1,0 +1,5 @@
+Calculation: i-AMMA = recursive moving average: (previous i-AMMA × (smoothing period − 1) + close) / smoothing period, calculated on the selected indicator timeframe using completed bars
+Long: i-AMMA from the third-most-recent bar > i-AMMA from the second-most-recent bar AND i-AMMA from the second-most-recent bar < i-AMMA from the most-recent completed bar
+Short: i-AMMA from the third-most-recent bar < i-AMMA from the second-most-recent bar AND i-AMMA from the second-most-recent bar > i-AMMA from the most-recent completed bar
+Exit: long, i-AMMA from the second-most-recent bar > i-AMMA from the most-recent completed bar OR low ≤ entry price − stop-loss distance OR high ≥ entry price + take-profit distance
+Exit: short, i-AMMA from the second-most-recent bar < i-AMMA from the most-recent completed bar OR high ≥ entry price + stop-loss distance OR low ≤ entry price − take-profit distance

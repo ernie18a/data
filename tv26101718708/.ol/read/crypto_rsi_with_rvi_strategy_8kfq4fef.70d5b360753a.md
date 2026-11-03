@@ -1,0 +1,6 @@
+Calculation: Volume-weighted RSI = 100 × Wilder-smoothed volume-weighted positive close changes ÷ (Wilder-smoothed volume-weighted positive close changes + Wilder-smoothed volume-weighted absolute negative close changes).
+Calculation: Relative volatility index = 100 × Wilder-smoothed standard deviation on up-close bars ÷ (Wilder-smoothed standard deviation on up-close bars + Wilder-smoothed standard deviation on down-close bars); its standard-deviation lookback matches the volume-weighted RSI lookback.
+Calculation: Volatility state = bullish when the relative volatility index is above the upper threshold, bearish when below the lower threshold, and otherwise retains its previous state; an optional reverse setting swaps bullish and bearish.
+Long: Volume-weighted RSI crosses above the upper threshold AND volatility state is bullish.
+Short: Volume-weighted RSI crosses below the lower threshold AND volatility state is bearish.
+Exit: long, Volume-weighted RSI crosses below the lower threshold AND volatility state is bearish OR bar low reaches entry price minus close × stop-distance fraction OR bar high reaches entry price plus close × profit-distance fraction.

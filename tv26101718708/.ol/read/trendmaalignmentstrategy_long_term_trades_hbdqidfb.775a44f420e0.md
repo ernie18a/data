@@ -1,0 +1,12 @@
+Calculation: Moving-average alignment index = 1 for fully descending-from-price bullish alignment, -1 for fully bearish alignment; otherwise score the ordered comparisons of close and successively longer moving averages, assigning a positive partial score when most comparisons are bullish and a negative partial score otherwise
+Calculation: Alignment range = highest and lowest moving-average alignment index over the lookback
+Calculation: New long-term high = highest high over the shorter lookback equals highest high over the longer lookback
+Calculation: New long-term low = lowest low over the shorter lookback equals lowest low over the longer lookback
+Calculation: Yearly high filter = the latest completed yearly high is higher than the highs sampled 365 and 730 chart bars earlier, or close exceeds the applicable intervening yearly highs; pass when yearly data is unavailable
+Calculation: Yearly low filter = the latest completed yearly low is lower than the lows sampled 365 and 730 chart bars earlier, or close is below the applicable intervening yearly lows; pass when yearly data is unavailable
+Calculation: Long stop = close minus stop distance times ATR; while long, carry forward the prior stop if this value falls below it or close is below the prior short stop
+Calculation: Short stop = close plus stop distance times ATR; while short, carry forward the prior stop if this value rises above it or close is above the prior long stop
+Long: (alignment range low > 0 OR alignment range high = 1) AND new long-term high AND close - reentry distance times ATR > long stop AND yearly high filter AND datetime is within the configured backtest date range
+Short: (alignment range high < 0 OR alignment range low = -1) AND new long-term low AND close + reentry distance times ATR < short stop AND yearly low filter AND datetime is within the configured backtest date range
+Exit: long, low <= long stop OR (short signal AND exit-on-signal is enabled)
+Exit: short, high >= short stop OR (long signal AND exit-on-signal is enabled)

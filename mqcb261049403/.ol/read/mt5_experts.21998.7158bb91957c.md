@@ -1,0 +1,4 @@
+Long: Shorter-period moving average of the selected bar price minus longer-period moving average >= positive separation threshold
+Short: Shorter-period moving average of the selected bar price minus longer-period moving average <= negative separation threshold
+Exit: long, shorter-period moving average of the selected bar price minus longer-period moving average <= negative separation threshold OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, shorter-period moving average of the selected bar price minus longer-period moving average >= positive separation threshold OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

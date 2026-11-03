@@ -1,0 +1,3 @@
+Calculation: Oscillator = selected indicator value minus its moving-average signal line, calculated on the configured timeframe using the bar corresponding to the current chart bar (which may still be forming); the configured timeframe may be the same as, higher than, or lower than the chart timeframe.
+Long: Oscillator >= previous chart bar's Oscillator
+Short: Oscillator < previous chart bar's Oscillator

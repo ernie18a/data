@@ -1,0 +1,6 @@
+Calculation: Fast and slow moving averages = linearly weighted moving averages of typical price (high + low + close) / 3 on a higher timeframe bar that is still forming; the fast lookback is shorter than the slow lookback.
+Calculation: Monthly RSI = 14-period RSI of close; compare the still-forming bar with the preceding completed bar.
+Long: Number of open trades < maximum trades AND absolute distance between current bar open and close two bars ago > the configured retracement distance AND fast moving average > slow moving average AND low two bars ago < high one bar ago AND current monthly RSI > preceding monthly RSI
+Short: Number of open trades < maximum trades AND absolute distance between current bar open and close two bars ago > the configured retracement distance AND fast moving average < slow moving average AND low one bar ago < high two bars ago AND current monthly RSI < preceding monthly RSI
+Exit: long, low <= current stop-loss level OR high >= take-profit level
+Exit: short, high >= current stop-loss level OR low <= take-profit level

@@ -1,0 +1,2 @@
+Long: shorter requested-timeframe close > longer requested-timeframe close (latest available value on each: last completed bar historically, still-forming bar in realtime; relation to chart timeframe unspecified)
+Short: longer requested-timeframe close > shorter requested-timeframe close (latest available value on each: last completed bar historically, still-forming bar in realtime; relation to chart timeframe unspecified)

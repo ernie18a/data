@@ -1,0 +1,3 @@
+Long: close < open AND volume > previous bar volume AND VWAP > previous bar VWAP AND Choppiness Index < trend factor AND current bar is within the configured market session
+Short: close > open AND volume > previous bar volume AND VWAP < previous bar VWAP AND Choppiness Index < trend factor AND current bar is within the configured market session
+Exit: any position, current bar is outside the configured market session

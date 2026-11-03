@@ -1,0 +1,1 @@
+At the start of Monday’s 15:15 IST candle, compare the traded instrument’s current opening price with the current month’s and week’s opening prices. Buy a put if the monthly open is above the weekly open and the weekly open is above the current price. Buy a call if the monthly open is below the weekly open and the weekly open is below the current price. Otherwise, take no action.

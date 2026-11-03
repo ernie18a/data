@@ -1,0 +1,1 @@
+Short: high < previous bar high AND previous bar high < high two bars ago

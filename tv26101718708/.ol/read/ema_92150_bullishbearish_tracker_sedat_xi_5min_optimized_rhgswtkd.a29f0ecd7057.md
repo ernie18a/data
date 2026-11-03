@@ -1,0 +1,3 @@
+Calculation: Fast, medium, and trend EMAs = exponential moving averages of close with progressively longer lookbacks.
+Long: Fast EMA > medium EMA AND medium EMA > trend EMA OR close > fast EMA AND close > medium EMA AND close > trend EMA OR close crosses above trend EMA
+Short: Fast EMA < medium EMA AND medium EMA < trend EMA OR close < fast EMA AND close < medium EMA AND close < trend EMA OR close crosses below trend EMA

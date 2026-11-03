@@ -1,0 +1,4 @@
+Calculation: Bull = sqrt(max(0, dn2 − dn1²)), where α = 2/(length + 1), dn1 = min(close, open, previous dn1 + (close − previous dn1) × α), and dn2 = min(close², open², previous dn2 + (close² − previous dn2) × α); initialize dn1 to 0 and dn2 to 0
+Calculation: Bear = sqrt(max(0, up2 − up1²)), where α = 2/(length + 1), up1 = max(close, open, previous up1 − (previous up1 − close) × α), and up2 = max(close², open², previous up2 − (previous up2 − close²) × α); initialize up1 to 0 and up2 to 0
+Long: Bull crosses above Bear AND volume > SMA(volume) × volume multiplier AND close >= open
+Short: Bear crosses above Bull AND volume > SMA(volume) × volume multiplier AND close < open

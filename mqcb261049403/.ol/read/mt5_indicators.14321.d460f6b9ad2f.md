@@ -1,0 +1,3 @@
+Calculation: Bulls = a smoothed value of (bar high − a smoothed bar close), with the two smoothing lookbacks independently parameterized
+Long: Bulls on the chart timeframe > Bulls on the previous chart bar OR Bulls on the higher timeframe is rising on the current chart bar and was flat on the previous chart bar
+Short: Bulls on the chart timeframe < Bulls on the previous chart bar OR Bulls on the higher timeframe is flat on the current chart bar and was rising on the previous chart bar

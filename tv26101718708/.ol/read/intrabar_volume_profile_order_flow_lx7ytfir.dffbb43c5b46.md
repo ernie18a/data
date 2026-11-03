@@ -1,0 +1,4 @@
+Calculation: Buy volume at a price row = sum of each completed lower-timeframe bar’s volume, allocated in proportion to overlap between that bar’s high-low range and the row, for bars whose close is above their open
+Calculation: Sell volume at a price row = sum of each completed lower-timeframe bar’s volume, allocated in proportion to overlap between that bar’s high-low range and the row, for bars whose close is below their open
+Long: Buy volume at a price row > sell volume at that row AND average lower-timeframe bars per chart bar >= 4
+Short: Sell volume at a price row > buy volume at that row AND average lower-timeframe bars per chart bar >= 4

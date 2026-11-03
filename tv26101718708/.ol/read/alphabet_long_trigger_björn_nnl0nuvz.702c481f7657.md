@@ -1,0 +1,2 @@
+Calculation: Market-context close = close of the market-index series on the chart timeframe, using the bar still forming
+Long: close >= lower price bound AND close <= upper price bound AND close > open AND low > previous low AND volume > average volume × volume factor AND market-context close >= previous market-context close AND (market-context close − previous market-context close) / previous market-context close > −decline threshold

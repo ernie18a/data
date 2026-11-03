@@ -1,0 +1,3 @@
+Calculation: Smoothed DI spread = apply these recursive smoothers separately to ADX +DI and −DI: first-stage value = 2 × current DI + (α₁ − 2) × prior-bar DI + (1 − α₁) × prior first-stage value; second-stage value = α₂ × current first-stage value + (1 − α₂) × prior second-stage value; spread = second-stage +DI − second-stage −DI. Initialize prior smoother values to zero at the oldest bar. Calculate on chart bars or on a higher timeframe using its still-forming bar.
+Long: Smoothed DI spread > 0
+Short: Smoothed DI spread < 0

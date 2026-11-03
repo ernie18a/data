@@ -1,0 +1,13 @@
+Calculation: Adaptive momentum threshold = base percentage threshold × (1 + 2 × ATR(14) / close)
+Calculation: Price change (%) = 100 × (close − previous close) / previous close
+Calculation: Pre-momentum threshold = adaptive momentum threshold × pre-momentum factor × (1 − 0.5 × ATR(14) / close)
+Calculation: Trend = bullish when chart close is above both the selected timeframe’s 20-bar EMA and VWAP; bearish when below both; otherwise neutral. EMA and VWAP use the selected timeframe’s bar still forming.
+Calculation: Recent pivot high/low = confirmed pivot high/low using equal left and right lookbacks; last high/low = most recent confirmed pivot high/low.
+Calculation: Volume confirmation = current volume > long-lookback SMA(volume) AND short-lookback SMA(volume) > its previous value; long lookback is longer than short lookback.
+Calculation: Breakout high/low = highest high / lowest low over the breakout lookback.
+Long: (price change > adaptive momentum threshold, if momentum filter enabled) AND (selected higher-timeframe trend is bullish, if trend filter enabled) AND (selected lower-timeframe trend is bullish, if lower-timeframe filter enabled) AND (volume confirmation, if volume filter enabled) AND (close > previous bar’s breakout high, if breakout filter enabled) AND minimum bars since last signal have elapsed AND repeated-signal restriction allows a buy
+Long: high crosses above last low AND close > open (CHoCH buy) OR high crosses above the previous bar’s last high AND high > previous bar’s last high AND close > open (BOS buy) OR price change is between the pre-momentum threshold and adaptive momentum threshold (Get Ready BUY)
+Short: (price change < −adaptive momentum threshold, if momentum filter enabled) AND (selected higher-timeframe trend is bearish, if trend filter enabled) AND (selected lower-timeframe trend is bearish, if lower-timeframe filter enabled) AND (volume confirmation, if volume filter enabled) AND (close < previous bar’s breakout low, if breakout filter enabled) AND minimum bars since last signal have elapsed AND repeated-signal restriction allows a sell
+Short: low crosses below last high AND close < open (CHoCH sell) OR low crosses below the previous bar’s last low AND low < previous bar’s last low AND close < open (BOS sell) OR price change is between −adaptive momentum threshold and −pre-momentum threshold (Get Ready SELL)
+Exit: Long, price >= signal-bar close + take-profit distance OR price <= signal-bar close − stop-loss distance
+Exit: Short, price <= signal-bar close − take-profit distance OR price >= signal-bar close + stop-loss distance

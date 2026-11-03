@@ -1,0 +1,7 @@
+Calculation: Higher-timeframe EMA = EMA with the same lookback on both higher-timeframe trend bars, using their still-forming values
+Calculation: 10-bar highest high / lowest low = highest high / lowest low over 10 higher-timeframe bars, using the still-forming bar
+Calculation: Fibonacci 0.618 = for a bullish impulse, impulse high − (impulse high − impulse low) × 0.618; for a bearish impulse, impulse low + (impulse high − impulse low) × 0.618
+Long: daily close > its EMA AND 4-hour close > its EMA AND a bullish BOS has occurred since the latest day change and has not been consumed AND current low crosses below Fibonacci 0.618 AND current time is within the configured session AND daily PnL > daily loss limit AND weekly PnL > weekly loss limit AND weekly PnL < weekly profit target AND trades today < daily trade limit
+Short: daily close < its EMA AND 4-hour close < its EMA AND a bearish BOS has occurred since the latest day change and has not been consumed AND current high crosses above Fibonacci 0.618 AND current time is within the configured session AND daily PnL > daily loss limit AND weekly PnL > weekly loss limit AND weekly PnL < weekly profit target AND trades today < daily trade limit
+Exit: long, low <= impulse low OR high >= impulse high + (impulse high − impulse low) × 0.5
+Exit: short, high >= impulse high OR low <= impulse low − (impulse high − impulse low) × 0.5

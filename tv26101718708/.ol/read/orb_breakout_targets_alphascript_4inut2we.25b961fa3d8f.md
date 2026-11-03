@@ -1,0 +1,6 @@
+Calculation: Opening-range high/low = highest high / lowest low of chart bars in the configured first-duration window of the selected session; available after that window ends.
+Calculation: Breakout target = nearest enabled completed key level above the opening-range high or below its low. Candidates are period opens and prior-period highs/lows/midpoints from higher-timeframe bars (use the last completed bar for prior-period values), completed session opens/highs/lows/midpoints, and the Monday high/low/midpoint from the last completed higher-timeframe daily bar. Exclude still-forming period highs/lows/midpoints and session highs/lows/midpoints. Merge enabled levels within the configured threshold to their mean price; a merged level qualifies only if all its component levels are completed.
+Long: bar is confirmed AND selected parent session is active AND opening range is formed AND no prior upward breakout this session AND close > opening-range high
+Short: bar is confirmed AND selected parent session is active AND opening range is formed AND no prior downward breakout this session AND close < opening-range low
+Exit: long, breakout target exists above opening-range high AND high >= breakout target
+Exit: short, breakout target exists below opening-range low AND low <= breakout target

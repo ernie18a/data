@@ -1,0 +1,3 @@
+Calculation: Tenkan = midpoint of the highest high and lowest low over its lookback
+Long: weekly open from the higher-timeframe weekly bar, sampled three chart bars ago (weekly bar may still be forming), > Tenkan from two chart bars ago AND MACD line crossed below its signal line three chart bars ago AND position is not long AND datetime is not Saturday or Sunday
+Short: weekly open from the higher-timeframe weekly bar, sampled three chart bars ago (weekly bar may still be forming), < Tenkan from two chart bars ago AND MACD line crossed above its signal line three chart bars ago AND position is not short AND datetime is not Saturday or Sunday

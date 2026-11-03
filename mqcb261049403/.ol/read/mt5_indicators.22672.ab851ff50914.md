@@ -1,0 +1,3 @@
+Calculation: Smoothed Heiken-Ashi candle = apply the same configurable moving average to each bar’s open, high, low, and close; candle close is the average of those four smoothed prices, and candle open is the average of the previous candle’s open and close (seed the first candle from the smoothed open and close)
+Long: Smoothed Heiken-Ashi close > smoothed Heiken-Ashi open
+Short: Smoothed Heiken-Ashi close <= smoothed Heiken-Ashi open

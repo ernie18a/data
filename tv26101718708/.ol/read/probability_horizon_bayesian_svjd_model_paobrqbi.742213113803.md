@@ -1,0 +1,3 @@
+Calculation: Bayesian ensemble up probability = the weighted average of the KAMA-trend, z-score mean-reversion, Haar-wavelet trend, Kalman-trend, and Hamilton-regime up probabilities; update model weights from forward log loss, then shrink toward 0.5 for Hawkes crisis intensity and historical overconfidence in the probability bin.
+Long: Bayesian ensemble up probability > 0.5 + directional deadband AND Bayesian ensemble up probability >= bullish probability threshold
+Short: Bayesian ensemble up probability < 0.5 - directional deadband AND Bayesian ensemble up probability <= 1 - bullish probability threshold

@@ -1,0 +1,2 @@
+Long: Close > open on the last completed bar of each of three higher timeframes and on the last completed chart-timeframe bar
+Short: Close < open on the last completed bar of each of three higher timeframes and on the last completed chart-timeframe bar

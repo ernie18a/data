@@ -1,0 +1,5 @@
+Calculation: T-channel direction = +1 when the projected linear-regression value of the MACD exceeds the prior channel value plus the cumulative mean absolute deviation from that prior value; -1 when it falls below the prior channel value minus that deviation; otherwise retain the prior direction. The channel value updates to the projected value on either threshold crossing and otherwise retains its prior value.
+Calculation: Pivot-high reference = upper value at the most recent bar that is highest in the pivot lookback.
+Calculation: Pivot-low reference = lower value at the most recent bar that is lowest in the pivot lookback; on each bar, reset it to the current lower if close is below the prior reference, then reset it to the current lower if current lower is below the resulting reference.
+Long: T-channel direction changes from -1 to +1 OR pivot-low reference equals its value two bars ago AND that value differs from its value three bars ago
+Short: T-channel direction changes from +1 to -1 OR pivot-high reference equals its value two bars ago AND that value differs from its value three bars ago

@@ -1,0 +1,6 @@
+Calculation: Tick imbalance = On lower-timeframe bars within each chart bar, classify each close as up/down by comparing it with the preceding lower-timeframe close; unchanged closes carry the prior direction. Blend signed tick-count imbalance (65%) and signed volume imbalance (35%). If no lower-timeframe bars are available, use (close − open) / (high − low). Z-score the blend over a rolling window and apply tanh.
+Calculation: Spread tightness = Z-score of EMA((high − low) / close).
+Calculation: Micro momentum = tanh(Z-score of the fast EMA(close) minus the slower EMA(close)); the fast EMA has a shorter lookback than the slow EMA.
+Calculation: Edge score = Previous edge score × decay + weighted sum of tick imbalance, spread contribution, and micro momentum. Clamp each component to [−1, 1]; spread contribution is sign(micro momentum) × clamp(−spread tightness / 2, −1, 1). Normalize component weights to sum to 1. Clamp the edge score to [−3.5, 3.5].
+Long: Edge score crosses above the positive threshold AND the number of bars since the previous long signal is at least the cooldown.
+Short: Edge score crosses below the negative threshold AND the number of bars since the previous short signal is at least the cooldown.

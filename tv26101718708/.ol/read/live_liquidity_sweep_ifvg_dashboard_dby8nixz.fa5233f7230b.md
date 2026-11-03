@@ -1,0 +1,7 @@
+Calculation: Bullish sweep window = active when the latest sweep is bullish and no more than the confirmation-window number of bars ago; a bullish sweep occurs when the current low is below the latest confirmed swing low and the current close is above it. A bearish sweep cancels it; it expires after the window or a long signal.
+Calculation: Bearish sweep window = active when the latest sweep is bearish and no more than the confirmation-window number of bars ago; a bearish sweep occurs when the current high is above the latest confirmed swing high and the current close is below it. A bullish sweep cancels it; it expires after the window or a short signal.
+Calculation: Confirmed swing high/low = the latest high/low that is higher/lower than the highs/lows in the same number of bars on either side.
+Calculation: Bullish score = 35 if the bullish sweep window is active + 20 if current low > high two bars earlier + 15 if close > open and close > prior close + 15 if close > EMA + 10 if RSI > 40 and RSI < 72 + 5 if volume > its moving average.
+Calculation: Bearish score = 35 if the bearish sweep window is active + 20 if current high < low two bars earlier + 15 if close < open and close < prior close + 15 if close < EMA + 10 if RSI < 60 and RSI > 25 + 5 if volume > its moving average.
+Long: no prior signal OR bars since prior signal > cooldown bars, AND bullish score >= minimum signal score.
+Short: no prior signal OR bars since prior signal > cooldown bars, AND bearish score >= minimum signal score.

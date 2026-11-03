@@ -1,0 +1,11 @@
+Calculation: Squeeze momentum = linear regression, over the configured lookback, of close minus the average of (highest high + lowest low)/2 and the simple moving average of close; light green = value > 0 and greater than its prior-bar value, dark green = value > 0 and not greater than its prior-bar value, light red = value <= 0 and less than its prior-bar value, dark red = value <= 0 and not less than its prior-bar value
+Calculation: Squeeze release = Bollinger lower band < Keltner lower band AND Bollinger upper band > Keltner upper band; Bollinger bands use the simple moving average and standard deviation of close, and Keltner bands use the simple moving average of close and the simple moving average of true range (or high minus low)
+Calculation: Dark-blue squeeze-bar count = consecutive bars where the Bollinger bands are not fully outside the Keltner bands; reset to zero when they are fully outside
+Calculation: Stop level = selected stop mode's level from entry price: entry price adjusted against the position by the configured percentage or ATR multiple; no level if stop is disabled
+Calculation: Target level = selected target mode's level from entry price: entry price adjusted with the position by the configured percentage, ATR multiple, or configured risk/reward multiple of the distance to the stop level; no level if target is disabled
+Long: Squeeze release AND (selected long momentum bar is light green OR selected long momentum bar is dark green) AND (squeeze filter disabled OR prior-bar dark-blue squeeze-bar count >= configured count) AND (moving-average filter disabled OR close > configured moving average)
+Short: Squeeze release AND (selected short momentum bar is light red OR selected short momentum bar is dark red) AND (squeeze filter disabled OR prior-bar dark-blue squeeze-bar count >= configured count) AND (moving-average filter disabled OR close < configured moving average)
+Exit: long, selected long-close momentum bar color matches the configured close color AND (profit-only close disabled OR close > entry price)
+Exit: short, selected short-close momentum bar color matches the configured close color AND (profit-only close disabled OR close < entry price)
+Exit: long, low <= stop level OR high >= target level
+Exit: short, high >= stop level OR low <= target level

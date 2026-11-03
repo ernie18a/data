@@ -1,0 +1,6 @@
+Calculation: Upper and lower Bollinger Bands = Bollinger Bands on the chart timeframe or configured timeframe, using its current bar (which may still be forming).
+Calculation: Simple moving average = simple moving average of close on the same timeframe and bar as the Bollinger Bands.
+Long: hour(datetime) > configured opening hour AND hour(datetime) < configured closing hour AND upper Bollinger Band > close AND lower Bollinger Band < close
+Short: hour(datetime) > configured opening hour AND hour(datetime) < configured closing hour AND upper Bollinger Band > close AND lower Bollinger Band < close
+Exit: long, close > entry price AND close > lower Bollinger Band AND (lower Bollinger Band > current stop-loss when trailing by the opposite band OR simple moving average > current stop-loss when trailing by the moving average)
+Exit: short, close < entry price AND close < upper Bollinger Band AND (upper Bollinger Band < current stop-loss when trailing by the opposite band OR simple moving average < current stop-loss when trailing by the moving average)

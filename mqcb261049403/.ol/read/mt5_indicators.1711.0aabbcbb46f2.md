@@ -1,0 +1,2 @@
+Long: On any listed timeframe (lower than, equal to, or higher than the chart timeframe), using its current forming bar: chart close > SAR OR WPR < its lower threshold OR shorter-lookback SMA(close) > longer-lookback SMA(close)
+Short: On any listed timeframe (lower than, equal to, or higher than the chart timeframe), using its current forming bar: chart close < SAR OR WPR > its upper threshold OR shorter-lookback SMA(close) < longer-lookback SMA(close)

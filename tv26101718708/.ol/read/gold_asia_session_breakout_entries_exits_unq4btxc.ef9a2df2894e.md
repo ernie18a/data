@@ -1,0 +1,8 @@
+Calculation: Asia session high = highest high during the current day’s Asia range session, reset at the start of each day
+Calculation: Asia session low = lowest low during the current day’s Asia range session, reset at the start of each day
+Calculation: Stop distance = fixed stop distance when fixed-stop mode is enabled; otherwise ATR × stop multiplier
+Calculation: Target distance = fixed target distance when fixed-stop mode is enabled; otherwise ATR × target multiplier
+Long: Asia session high and low are available AND Asia session high > Asia session low AND current bar is in the trade window AND (one-trade-per-day limit is disabled OR no trade has been taken today) AND (EMA filter is disabled OR close > EMA) AND previous close <= previous Asia session high AND close > Asia session high
+Short: Asia session high and low are available AND Asia session high > Asia session low AND current bar is in the trade window AND (one-trade-per-day limit is disabled OR no trade has been taken today) AND (EMA filter is disabled OR close < EMA) AND previous close >= previous Asia session low AND close < Asia session low
+Exit: long, stop or target orders are enabled AND (low <= entry price − stop distance OR high >= entry price + target distance) OR time exit is enabled AND previous bar was in the trade window AND current bar is outside it
+Exit: short, stop or target orders are enabled AND (high >= entry price + stop distance OR low <= entry price − target distance) OR time exit is enabled AND previous bar was in the trade window AND current bar is outside it

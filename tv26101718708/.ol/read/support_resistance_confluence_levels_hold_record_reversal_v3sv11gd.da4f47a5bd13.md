@@ -1,0 +1,11 @@
+Calculation: ATR = average true range
+Calculation: Relative volume = current volume divided by its moving average
+Calculation: Support/resistance levels = merge swing highs and lows, extrema of a Gaussian-kernel-smoothed close, higher-timeframe swing highs and lows from the last completed higher-timeframe bar, and highs and lows of the last completed daily and weekly bars when their prices are within an ATR-scaled tolerance; use the count-weighted mean as the level price, assign an ATR-scaled zone around it, and add confirming voices for nearby high-volume price bins and round numbers; retain levels with at least the configured minimum number of distinct voices
+Calculation: Watched levels = the configured number of nearest qualifying levels above and below the current close
+Calculation: A test opens on an armed watched level when the current bar intersects its zone and the previous close was above the zone (support) or below the zone (resistance); it resolves as held when a later close exits the zone on the approach side, expires unresolved after the configured bar limit, and cannot reopen until price moves the configured ATR distance clear of the zone
+Long: A watched support test resolves held (close > zone upper boundary) AND relative volume >= its threshold
+Short: A watched resistance test resolves held (close < zone lower boundary) AND relative volume >= its threshold
+Calculation: Stop = beyond the tested level and signal bar extreme by an ATR-scaled buffer (long: min(signal-bar low, support price) minus buffer; short: max(signal-bar high, resistance price) plus buffer)
+Calculation: Risk = absolute difference between entry price and stop; target = entry price plus (long) or minus (short) the configured fixed multiple of risk
+Exit: Long, low <= stop OR high >= target OR bars since entry >= grading horizon (if stop and target are both touched on the same bar, exit at stop)
+Exit: Short, high >= stop OR low <= target OR bars since entry >= grading horizon (if stop and target are both touched on the same bar, exit at stop)

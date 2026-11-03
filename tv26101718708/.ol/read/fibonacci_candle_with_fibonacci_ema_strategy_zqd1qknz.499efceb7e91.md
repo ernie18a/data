@@ -1,0 +1,6 @@
+Calculation: avg_open, avg_high, avg_low, avg_close = arithmetic mean of the corresponding OHLC field sampled at the current bar and each Fibonacci-number bar offset through the tenth sequence
+Calculation: volume_avg = arithmetic mean of volume sampled at the current bar and each Fibonacci-number bar offset through the tenth sequence
+Calculation: avg_ema = arithmetic mean of EMAs of avg_close with Fibonacci-number periods through the tenth sequence
+Calculation: avg_stoch = mean of smoothed %K and %D from the stochastic oscillator
+Long: avg_open < avg_close AND avg_close > avg_close[1] AND avg_high > avg_high[1] AND avg_close[1] > avg_close[2] AND avg_high[1] > avg_high[2] AND volume_avg > EMA(volume_avg) AND volume_avg[1] <= EMA(volume_avg)[1] AND avg_stoch > threshold AND avg_close > avg_ema
+Exit: long, avg_open > avg_close AND avg_close < avg_close[1] AND avg_low < avg_low[1] AND avg_close[1] < avg_close[2] AND avg_low[1] < avg_low[2] AND volume_avg < EMA(volume_avg) AND volume_avg[1] >= EMA(volume_avg)[1] AND avg_stoch < threshold AND avg_close < avg_ema

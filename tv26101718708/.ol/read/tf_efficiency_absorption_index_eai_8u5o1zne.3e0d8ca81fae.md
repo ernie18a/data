@@ -1,0 +1,10 @@
+Calculation: Relative volume = current volume / median volume over the configured lookback of completed bars before the current bar
+Calculation: ATR-normalized net progress = abs(current close - prior close) / ATR from the prior bar
+Calculation: ATR-normalized bar range = (current high - current low) / ATR from the prior bar
+Calculation: Rejection bias = clamp(0.65 × (lower wick − upper wick) / bar range + 0.35 × (2 × close − high − low) / bar range, −1, 1); use 0 when bar range is zero
+Calculation: Prior approach = (prior close − close at the configured approach lookback before the prior bar) / ATR from the prior bar
+Calculation: Prior range edges = highest high and lowest low over the configured context lookback of completed bars before the current bar
+Calculation: Low test position = clamp((current low − prior range low) / (prior range high − prior range low), 0, 1); use 0.5 if the prior range has zero width
+Calculation: High test position = clamp((current high − prior range low) / (prior range high − prior range low), 0, 1); use 0.5 if the prior range has zero width
+Long: Current bar is complete AND current volume and its prior-bar volume median are positive AND relative volume ≥ configured minimum AND ATR-normalized net progress ≤ configured maximum AND ATR-normalized bar range ≥ configured minimum AND prior approach < −configured minimum approach AND low test position ≤ 1 − configured range-edge threshold AND rejection bias > configured minimum rejection bias AND no long marker occurred within the configured long-signal cooldown
+Short: Current bar is complete AND current volume and its prior-bar volume median are positive AND relative volume ≥ configured minimum AND ATR-normalized net progress ≤ configured maximum AND ATR-normalized bar range ≥ configured minimum AND prior approach > configured minimum approach AND high test position ≥ configured range-edge threshold AND rejection bias < −configured minimum rejection bias AND no short marker occurred within the configured short-signal cooldown

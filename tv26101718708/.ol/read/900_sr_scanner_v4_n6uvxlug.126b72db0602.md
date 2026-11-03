@@ -1,0 +1,2 @@
+Long: low <= moving average × (1 + wick tolerance) AND close > moving average, on the chart timeframe or a configured scanner timeframe
+Short: high >= moving average × (1 − wick tolerance) AND close < moving average, on the chart timeframe or a configured scanner timeframe

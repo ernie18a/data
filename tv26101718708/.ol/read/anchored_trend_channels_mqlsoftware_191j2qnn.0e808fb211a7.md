@@ -1,0 +1,9 @@
+Calculation: Confirmed swing pivot = a high or low extreme over equal left and right lookbacks; connect consecutive opposite pivot types only when their bar distance and price distance meet their minimum thresholds, with price distance measured against ATR at confirmation.
+Calculation: Active macro direction = upward after the last accepted low pivot and downward after the last accepted high pivot. Active channel = a straight line from that pivot to the last completed bar’s close, with parallel upper and lower bounds offset by the greater of the maximum high/low deviation from the line (times a width multiplier) and an ATR-based minimum width.
+Calculation: Micro regression channel = least-squares linear regression of closes over a shorter lookback than the macro segment; upper and lower bounds are the fitted value at the latest bar plus or minus a standard-deviation multiple of the regression residuals. Micro fit = squared correlation between bar index and close over that lookback.
+Long: Active macro direction is downward AND close crosses above the active upper channel bound
+Long: Active macro direction is upward AND close is between the active lower bound and that bound plus an ATR-based proximity allowance, and the previous bar did not meet this condition
+Long: Active macro direction is upward AND close crosses above the micro upper bound AND micro fit meets its minimum AND the active segment age is within its early-stage range
+Short: Active macro direction is upward AND close crosses below the active lower channel bound
+Short: Active macro direction is downward AND close is between the active upper bound minus an ATR-based proximity allowance and that bound, and the previous bar did not meet this condition
+Short: Active macro direction is downward AND close crosses below the micro lower bound AND micro fit meets its minimum AND the active segment age is within its early-stage range

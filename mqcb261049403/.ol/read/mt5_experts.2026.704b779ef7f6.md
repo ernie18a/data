@@ -1,0 +1,4 @@
+Long: chart-timeframe completed bar opened below the lower Bollinger Band and closed above it AND its low is above the preceding bar’s low AND the preceding bar’s low is below the bar before it AND higher-timeframe DEMA on the forming bar > DEMA on the last completed bar > DEMA two completed bars ago
+Short: chart-timeframe completed bar opened above the upper Bollinger Band and closed below it AND its high is below the preceding bar’s high AND the preceding bar’s high is above the bar before it AND higher-timeframe DEMA on the forming bar < DEMA on the last completed bar < DEMA two completed bars ago
+Exit: Long, price <= entry price - stop-loss distance OR price >= entry price + take-profit distance OR short-entry condition
+Exit: Short, price >= entry price + stop-loss distance OR price <= entry price - take-profit distance OR long-entry condition

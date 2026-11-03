@@ -1,0 +1,3 @@
+Calculation: ColorDM = the longer-lookback finite-impulse-response filter of the selected applied price minus the shorter-lookback filter of that price
+Long: ColorDM on the chart timeframe is greater than its value on the previous bar OR ColorDM on a higher timeframe is greater than its value on the previous higher-timeframe bar (use the still-forming higher-timeframe bar)
+Short: ColorDM on the chart timeframe is less than its value on the previous bar OR ColorDM on a higher timeframe is less than its value on the previous higher-timeframe bar (use the still-forming higher-timeframe bar)

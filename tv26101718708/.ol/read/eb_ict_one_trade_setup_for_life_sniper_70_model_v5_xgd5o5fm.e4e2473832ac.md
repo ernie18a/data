@@ -1,0 +1,17 @@
+Calculation: Confirmed swing high/low = pivot high/low confirmed after the configured number of chart bars on its right; retain the latest confirmed value.
+Calculation: Long sweep = during an allowed session, low < latest confirmed swing low AND close > latest confirmed swing low; short sweep = during an allowed session, high > latest confirmed swing high AND close < latest confirmed swing high. A new sweep starts or resets its directional setup and records its low (long) or high (short) and bar.
+Calculation: Setup active = a sweep has occurred and no more than the configured maximum number of chart bars have elapsed since it.
+Calculation: Displacement = setup active, direction matches the sweep, candle body > its 20-bar average body × a threshold, candle direction matches the setup, and close exceeds the prior bar's high (long) or is below the prior bar's low (short).
+Calculation: Fair value gap (FVG) = after displacement, low > high two chart bars earlier (long), or high < low two chart bars earlier (short); retain the gap boundaries. The gap remains active for a configured number of chart bars. Its midpoint is the average of its boundaries.
+Calculation: Market structure shift (MSS) = setup active and close exceeds the prior 8-bar highest high (long) or is below the prior 8-bar lowest low (short).
+Calculation: Break of structure (BOS) = setup active, MSS has occurred, and close exceeds the prior 14-bar highest high (long) or is below the prior 14-bar lowest low (short).
+Calculation: FVG retest = active gap and direction matches setup, with low <= gap top and close > gap bottom (long), or high >= gap bottom and close < gap top (short). Deep retest uses gap midpoint instead of gap top (long) or gap bottom (short) for the low/high comparison.
+Calculation: Entry score = weighted sum of whether a sweep, displacement, FVG, MSS, and BOS have occurred, plus a higher weight for a deep FVG retest than for an ordinary FVG retest; add only one retest weight, preferring deep.
+Calculation: Trend filters = chart close > short-term EMA and short-term EMA > long-term EMA (long); chart close < short-term EMA and short-term EMA < long-term EMA (short). HTF filter = chart close > EMA of a higher-timeframe bar still forming (long), or chart close < that EMA (short).
+Calculation: Long stop = min(sweep low, signal-bar low) minus ATR × buffer; long target = signal-bar close + (signal-bar close − long stop) × reward/risk parameter. Short stop = max(sweep high, signal-bar high) plus ATR × buffer; short target = signal-bar close − (short stop − signal-bar close) × reward/risk parameter.
+Long: Long sweep
+Long: Entry score >= minimum score AND long setup AND displacement, FVG, MSS, BOS, and long FVG retest have occurred AND long trend filters AND close > open AND close > prior close AND no trade has occurred since the sweep AND signal-bar close − long stop > minimum tick
+Short: Short sweep
+Short: Entry score >= minimum score AND short setup AND displacement, FVG, MSS, BOS, and short FVG retest have occurred AND short trend filters AND close < open AND close < prior close AND no trade has occurred since the sweep AND short stop − signal-bar close > minimum tick
+Exit: long, price <= long stop OR price >= long target
+Exit: short, price >= short stop OR price <= short target

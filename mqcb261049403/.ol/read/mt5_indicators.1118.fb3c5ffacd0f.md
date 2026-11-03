@@ -1,0 +1,2 @@
+Long: higher-timeframe open >= higher-timeframe Parabolic SAR OR higher-timeframe close >= higher-timeframe Parabolic SAR
+Short: higher-timeframe open < higher-timeframe Parabolic SAR OR higher-timeframe close < higher-timeframe Parabolic SAR

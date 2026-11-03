@@ -1,0 +1,2 @@
+Long: close > open AND abs(close - open) >= minimum body size AND (abs(high - close) <= wick tolerance OR abs(open - low) <= wick tolerance) AND (volume filter disabled OR volume > previous bar volume)
+Short: close < open AND abs(close - open) >= minimum body size AND (abs(high - open) <= wick tolerance OR abs(close - low) <= wick tolerance) AND (volume filter disabled OR volume > previous bar volume)

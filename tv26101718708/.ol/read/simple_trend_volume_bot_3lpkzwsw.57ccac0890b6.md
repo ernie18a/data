@@ -1,0 +1,3 @@
+Calculation: ATR trailing stop = recursively set to max(previous stop, close − sensitivity × ATR) when both current and previous closes are above the previous stop; set to min(previous stop, close + sensitivity × ATR) when both are below; otherwise set to close − sensitivity × ATR if close is above the previous stop, else close + sensitivity × ATR. Initialize the previous stop to 0.
+Long: close crosses above ATR trailing stop AND volume > moving average of volume
+Short: close crosses below ATR trailing stop AND volume > moving average of volume

@@ -1,0 +1,5 @@
+Calculation: ATR-based Supertrend = For each indicator-timeframe bar, calculate midpoint = (high + low) / 2 and basic upper/lower bands = midpoint ± ATR × multiplier. In a bullish state, the trailing band is the basic lower band on a switch to bullish; otherwise it is the greater of the basic lower band and the prior bullish trailing band. In a bearish state, the trailing band is the basic upper band on a switch to bearish; otherwise it is the lesser of the basic upper band and the prior bearish trailing band. Switch to bullish when close > prior bearish trailing band; switch to bearish when close < prior bullish trailing band. The indicator timeframe is the same as the chart timeframe in the documented setup; evaluate the last completed bar.
+Long: Prior state is bearish AND close > prior bearish trailing band
+Short: Prior state is bullish AND close < prior bullish trailing band
+Exit: Long, bearish state is active
+Exit: Short, bullish state is active

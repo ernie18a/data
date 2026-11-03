@@ -1,0 +1,7 @@
+Calculation: Volatility ratio = ATR / longer-lookback simple moving average of ATR
+Calculation: Bullish agent count = count of these conditions that are true: short-term EMA > medium-term EMA > long-term EMA; RSI > its upper threshold; close > previous close AND volume > its moving average × its activity multiplier; close > the highest high of the preceding lookback; close <= the lowest low of its lookback + ATR × its zone multiplier
+Calculation: Bearish agent count = count of these conditions that are true: short-term EMA < medium-term EMA < long-term EMA; RSI < its lower threshold; close < previous close AND volume > its moving average × its activity multiplier; close < the lowest low of the preceding lookback; close >= the highest high of its lookback - ATR × its zone multiplier
+Long: short-term EMA > medium-term EMA AND medium-term EMA > long-term EMA AND volatility ratio < its maximum AND bullish agent count >= its minimum AND bearish agent count = 0
+Short: short-term EMA < medium-term EMA AND medium-term EMA < long-term EMA AND volatility ratio < its maximum AND bearish agent count >= its minimum AND bullish agent count = 0
+Exit: long, low <= the close used to place or update the long exit order - ATR × stop multiple OR high >= that close + ATR × target multiple
+Exit: short, high >= the close used to place or update the short exit order + ATR × stop multiple OR low <= that close - ATR × target multiple

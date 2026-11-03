@@ -1,0 +1,4 @@
+Calculation: Upper XD-RangeSwitch line = On each chart-timeframe bar, set to the highest high of the current bar and prior N−1 bars when the close is below the lowest low of the immediately preceding N bars; clear when the close is above the highest high of those preceding N bars; otherwise carry forward its prior-bar value.
+Calculation: Lower XD-RangeSwitch line = On each chart-timeframe bar, set to the lowest low of the current bar and prior N−1 bars when the close is above the highest high of the immediately preceding N bars; clear when the close is below the lowest low of those preceding N bars; otherwise carry forward its prior-bar value.
+Long: Prior-bar Lower XD-RangeSwitch line is empty AND current Lower XD-RangeSwitch line is not empty
+Short: Prior-bar Upper XD-RangeSwitch line is empty AND current Upper XD-RangeSwitch line is not empty

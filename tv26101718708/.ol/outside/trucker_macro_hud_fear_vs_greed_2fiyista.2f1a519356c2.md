@@ -1,0 +1,1 @@
+For SPY, take a bullish stance when the dollar index and volatility index are each below their own trend averages while SPY is above its trend average. Take a bearish stance when both external indexes are above their averages while SPY is below its average. Otherwise, make no directional decision.

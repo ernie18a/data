@@ -1,0 +1,3 @@
+Calculation: Anchored VWAP = volume-weighted mean of the selected price source since the configured calendar or event reset, or since the bar selected by the highest high, lowest low, or highest volume within the longer lookback
+Long: selected price source > anchored VWAP OR selected price source crosses above anchored VWAP
+Short: selected price source < anchored VWAP OR selected price source crosses below anchored VWAP

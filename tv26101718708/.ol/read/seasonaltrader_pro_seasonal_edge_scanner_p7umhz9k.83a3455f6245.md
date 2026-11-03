@@ -1,0 +1,12 @@
+Calculation: Seasonal daily return = (next Daily close / current Daily close − 1) × 100; calculate each forecast-year offset across historical years, using only completed Daily bars.
+Calculation: Smoothed seasonal return = mean of the seasonal daily returns at the offset and its immediately adjacent offsets, where available.
+Calculation: Direction threshold = greater of a positive minimum threshold and a fraction of the mean absolute smoothed seasonal return across the forecast year.
+Calculation: Seasonal state = Long when smoothed seasonal return exceeds the direction threshold and the more common positive/negative historical return sign occurs in at least half the samples; Short when it is below the negative threshold under the same confidence condition; otherwise neutral.
+Calculation: Seasonal windows = contiguous same-direction states; bridge a neutral gap of at most one day between same-direction states, discard windows shorter than the configured minimum duration, and merge same-direction overlapping or adjacent windows.
+Calculation: Window eligibility = require valid historical samples and a valid window; require the reference historical win rate and average return to meet their configured minimums and the sample count to meet its minimum. At reference quality strength, apply these baseline gates. At higher quality strength, also require the configured training sample, confidence, median outcome, grade, score, average return, drawdown, plateau, and holdout gates for that strength.
+Calculation: Primary window = among eligible windows in the current view and direction mode, prefer active over pending windows, then the earliest active expiry or pending start, then higher quality grade, then higher raw score; preserve earlier map order on a tie.
+Calculation: Operational exit date = earlier of the seasonal window end and the date at the configured maximum holding duration after its start.
+Long: Current Daily date is within an eligible Long window, including its start and end dates.
+Short: Current Daily date is within an eligible Short window, including its start and end dates.
+Exit: Long, current Daily date is after the operational exit date OR Daily close is at or below entry price reduced by the selected window's historical 75th-percentile adverse excursion.
+Exit: Short, current Daily date is after the operational exit date OR Daily close is at or above entry price increased by the selected window's historical 75th-percentile adverse excursion.

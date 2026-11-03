@@ -1,0 +1,3 @@
+Calculation: Cumulative force = cumulative sum of volume × (close − previous close)
+Long: short-term EMA of cumulative force > long-term EMA of cumulative force AND shorter-lookback ATR > longer-lookback ATR AND (previous bar’s short-term EMA of cumulative force < previous bar’s long-term EMA of cumulative force OR previous bar’s shorter-lookback ATR < previous bar’s longer-lookback ATR) AND close > open
+Short: short-term EMA of cumulative force < long-term EMA of cumulative force AND shorter-lookback ATR > longer-lookback ATR AND (previous bar’s short-term EMA of cumulative force > previous bar’s long-term EMA of cumulative force OR previous bar’s shorter-lookback ATR < previous bar’s longer-lookback ATR) AND close < open

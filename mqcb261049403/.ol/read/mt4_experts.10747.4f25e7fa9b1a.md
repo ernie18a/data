@@ -1,0 +1,8 @@
+Calculation: Fast and slow LWMAs = linear weighted moving averages of close, with the fast lookback shorter than the slow lookback.
+Calculation: LWMA up mark = fast LWMA > slow LWMA on a bar AND fast LWMA < slow LWMA on the immediately older bar AND fast LWMA > slow LWMA on the immediately newer bar; down mark uses the opposite inequalities.
+Calculation: AMA = recursively smoothed close, where the smoothing factor is (slowSC + ER × (fastSC − slowSC))^G, ER = absolute close change over the AMA lookback divided by the sum of absolute one-bar close changes over that lookback, and fastSC and slowSC are 2/(fast lookback + 1) and 2/(slow lookback + 1), respectively.
+Calculation: MACD histogram = (fast-period EMA of close − slow-period EMA of close) − signal-period EMA of that difference; fast EMA lookback is shorter than slow EMA lookback.
+Long: an AMA increase exceeds the configured threshold AND a LWMA up mark occurs on the same bar or the immediately older bar AND MACD histogram > 0 on the AMA-mark bar AND no position is open AND the configured weekday and time entry filter allows trading.
+Short: an AMA decrease exceeds the configured threshold AND a LWMA down mark occurs on the same bar or the immediately older bar AND MACD histogram < 0 on the AMA-mark bar AND no position is open AND the configured weekday and time entry filter allows trading.
+Exit: long, MACD histogram <= 0 OR price reaches the stop-loss or take-profit level OR price reaches the active trailing stop.
+Exit: short, MACD histogram >= 0 OR price reaches the stop-loss or take-profit level OR price reaches the active trailing stop.

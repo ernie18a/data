@@ -1,0 +1,5 @@
+Calculation: Minimum price movement = configured pip threshold × minimum tick × 10
+Long: previous bar close < previous bar high AND close ≥ previous bar high AND volume > configured volume multiplier × previous bar volume AND close > open AND high − low > minimum price movement AND close > EMA of close (long lookback)
+Short: previous bar close > previous bar low AND close ≤ previous bar low AND volume > configured volume multiplier × previous bar volume AND close < open AND high − low > minimum price movement AND close < EMA of close (long lookback)
+Exit: Long, previous bar close > previous bar low AND close ≤ previous bar low AND volume > configured volume multiplier × previous bar volume AND close < open AND high − low > minimum price movement AND close < EMA of close (long lookback)
+Exit: Short, previous bar close < previous bar high AND close ≥ previous bar high AND volume > configured volume multiplier × previous bar volume AND close > open AND high − low > minimum price movement AND close > EMA of close (long lookback)

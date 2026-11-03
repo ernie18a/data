@@ -1,0 +1,2 @@
+Calculation: relative volume = current volume divided by the average volume of prior bars in the same time slot over a rolling lookback of prior sessions on intraday charts, or the average volume of prior bars over a rolling lookback on daily and higher charts; exclude the current bar from the average
+Long: relative volume >= the extreme-volume threshold

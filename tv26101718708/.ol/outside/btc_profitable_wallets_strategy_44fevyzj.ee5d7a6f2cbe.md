@@ -1,0 +1,1 @@
+Go long in the traded cryptocurrency when the externally sourced share of profitable wallets crosses above the configured threshold. Do not open short positions or generate exit signals.

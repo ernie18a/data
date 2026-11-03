@@ -1,0 +1,3 @@
+Calculation: Ergodic volume OSMA = Let V be the selected bar-volume series and δ=(close−open)/minimum price increment. Set U=(V+δ)/2 and D=V−U. Apply the selected smoothing method to U and D using the same long-term lookback, then smooth each result using the same second lookback. Let T=100×(smoothed U−smoothed D)/(smoothed U+smoothed D), or 0 when the denominator is 0. Smooth T using a third lookback, smooth that result using a fourth and then a fifth lookback to obtain E. Smooth E using a sixth lookback to obtain S. The Ergodic volume OSMA is the smoothing of E−S using a seventh lookback.
+Long: Ergodic volume OSMA > 0
+Short: Ergodic volume OSMA < 0

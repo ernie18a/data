@@ -1,0 +1,4 @@
+Long: close > Supertrend AND close < open AND volume > previous bar volume AND VWAP > previous bar VWAP AND bar time is within the configured market session
+Short: close < Supertrend AND close > open AND volume > previous bar volume AND VWAP < previous bar VWAP AND bar time is within the configured market session
+Exit: long, low <= entry price * (1 - stop-loss %) OR high >= entry price * (1 + take-profit %) OR bar time is outside the configured market session
+Exit: short, high >= entry price * (1 + stop-loss %) OR low <= entry price * (1 - take-profit %) OR bar time is outside the configured market session

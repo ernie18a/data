@@ -1,0 +1,4 @@
+Calculation: Bullish CISD = A candidate is seeded at the open of a bearish bar immediately following a bullish bar. On a later bar, if close > candidate open, calculate (candidate open − lowest close from the candidate bar through the current bar) / (candidate open − open of the last bullish bar in the consecutive bullish run immediately before the candidate). The candidate qualifies when this ratio > the displacement threshold.
+Calculation: Bearish CISD = A candidate is seeded at the open of a bullish bar immediately following a bearish bar. On a later bar, if close < candidate open, calculate (highest close from the candidate bar through the current bar − candidate open) / (open of the last bearish bar in the consecutive bearish run immediately before the candidate − candidate open). The candidate qualifies when this ratio > the displacement threshold.
+Long: Bullish CISD
+Short: Bearish CISD

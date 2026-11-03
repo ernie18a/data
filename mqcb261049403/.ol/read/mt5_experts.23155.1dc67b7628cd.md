@@ -1,0 +1,4 @@
+Long: Current-day close on a higher timeframe bar still forming > previous completed bar's high
+Short: Current-day close on a higher timeframe bar still forming < previous completed bar's low
+Exit: Long, current-day close on a higher timeframe bar still forming < previous completed bar's low OR price <= entry price - configured stop-loss distance OR price >= entry price + configured take-profit distance
+Exit: Short, current-day close on a higher timeframe bar still forming > previous completed bar's high OR price >= entry price + configured stop-loss distance OR price <= entry price - configured take-profit distance

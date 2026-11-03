@@ -1,0 +1,7 @@
+Calculation: Same-position volume Z-score = Compare current volume with prior completed observations from the same elapsed-minute slot in the configured exchange-local session: subtract their exponentially weighted mean and divide by the larger of their weighted standard deviation and a configured percentage of the mean; cap at −5 to +5. Update the mean and variance only after evaluating the current bar.
+Calculation: Prior-range upper rail = Highest high of the configured number of preceding chart bars, excluding the current bar.
+Calculation: Prior-range lower rail = Lowest low of the configured number of preceding chart bars, excluding the current bar.
+Long: Within the configured exchange-local session AND the same-position volume baseline has enough prior samples AND no breakout is being tracked AND close > prior-range upper rail AND previous close <= prior-range upper rail AND (close − prior-range upper rail) / ATR >= minimum breakout distance AND same-position volume Z-score >= volume threshold
+Short: Within the configured exchange-local session AND the same-position volume baseline has enough prior samples AND no breakout is being tracked AND close < prior-range lower rail AND previous close >= prior-range lower rail AND (prior-range lower rail − close) / ATR >= minimum breakout distance AND same-position volume Z-score >= volume threshold
+Exit: Long, close <= frozen breakout rail OR tracked-bar count > maximum tracking bars
+Exit: Short, close >= frozen breakout rail OR tracked-bar count > maximum tracking bars

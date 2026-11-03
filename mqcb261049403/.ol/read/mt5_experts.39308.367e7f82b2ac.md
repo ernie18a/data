@@ -1,0 +1,2 @@
+Exit: long, target-profit parameter > 0 AND total profit across current-symbol positions, including commission and swap, >= take-profit parameter
+Exit: short, target-profit parameter > 0 AND total profit across current-symbol positions, including commission and swap, >= take-profit parameter

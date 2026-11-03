@@ -1,0 +1,4 @@
+Calculation: Asian session high = highest high of bars in the configured Asian session
+Calculation: Asian session low = lowest low of bars in the configured Asian session
+Long: Asian session is complete AND Asian session range height is within its configured minimum and maximum AND breakout bar is completed AND open <= Asian session high AND close > Asian session high AND absolute(close - open) >= ATR × minimum body-to-ATR ratio
+Short: Asian session is complete AND Asian session range height is within its configured minimum and maximum AND breakout bar is completed AND open >= Asian session low AND close < Asian session low AND absolute(close - open) >= ATR × minimum body-to-ATR ratio

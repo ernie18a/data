@@ -1,0 +1,4 @@
+Calculation: Relative volume = current session volume so far divided by the average volume of prior completed sessions over a longer lookback.
+Calculation: Percent change = (current session close − prior completed session close) / prior completed session close × 100.
+Long: current session open > prior completed session close AND current session low ≥ prior completed session close × 0.995 AND relative volume ranks in the dashboard’s top watchlist fraction AND percent change ≥ the move threshold
+Short: relative volume ranks in the dashboard’s top watchlist fraction AND percent change ≤ −the move threshold

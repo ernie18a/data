@@ -1,0 +1,7 @@
+Calculation: Directional counts = apply a linearly weighted moving average twice to the selected bar price; apply the selected moving-average method to that result over a sequence of increasing lookbacks with equal spacing; count how many averages are greater than their previous-bar values as the rising count, and count the rest, including equal values, as the non-rising count; smooth each count separately with the selected smoothing method and the same smoothing parameters. Use the chart timeframe or a selectable higher or lower timeframe, using the last completed bar or, if selected, the bar still forming.
+Long: Smoothed rising count > smoothed non-rising count
+Short: Smoothed rising count < smoothed non-rising count
+Long: Smoothed rising count > smoothed non-rising count AND previous-bar smoothed rising count < previous-bar smoothed non-rising count AND position side = flat
+Short: Smoothed rising count < smoothed non-rising count AND previous-bar smoothed rising count > previous-bar smoothed non-rising count AND position side = flat
+Exit: long, smoothed rising count < smoothed non-rising count OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, smoothed rising count > smoothed non-rising count OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

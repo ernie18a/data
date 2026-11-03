@@ -1,0 +1,6 @@
+Calculation: Fisher CG oscillator on a higher timeframe, using completed bars = for each bar, let M be (high + low) / 2; compute CG = (Length + 1) / 2 − [sum over the Length bars of (lag + 1) × M at that lag] / [sum over the Length bars of M]. Normalize the current CG to (CG − lowest CG over Length bars) / (highest CG over Length bars − lowest CG over Length bars), or 0 if the denominator is 0. Smooth this normalized value as (4 × current + 3 × previous + 2 × two bars ago + three bars ago) / 10, then apply 0.5 × ln((1 + 1.98 × (smoothed value − 0.5)) / (1 − 1.98 × (smoothed value − 0.5))).
+Calculation: Trigger = Fisher CG oscillator on the preceding completed bar of the same higher timeframe.
+Long: Fisher CG oscillator on the latest completed bar > Trigger on that bar AND Fisher CG oscillator on the preceding completed bar <= Trigger on that bar
+Short: Fisher CG oscillator on the latest completed bar < Trigger on that bar AND Fisher CG oscillator on the preceding completed bar >= Trigger on that bar
+Exit: Long, Fisher CG oscillator on the latest completed bar < Trigger on that bar AND Fisher CG oscillator on the preceding completed bar >= Trigger on that bar
+Exit: Short, Fisher CG oscillator on the latest completed bar > Trigger on that bar AND Fisher CG oscillator on the preceding completed bar <= Trigger on that bar

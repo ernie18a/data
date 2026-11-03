@@ -1,0 +1,5 @@
+Calculation: Renko bar open and close = open and close of ATR-based or fixed-box Renko bars, sampled from a higher timeframe in ATR mode or the chart timeframe in traditional mode; use the last completed source bar.
+Long: datetime >= configured backtest start AND datetime <= configured backtest end AND Renko bar close > Renko bar open
+Short: datetime >= configured backtest start AND datetime <= configured backtest end AND Renko bar close < Renko bar open
+Exit: Long, datetime >= configured backtest start AND datetime <= configured backtest end AND ((target distance > 0 AND high >= entry price + target distance) OR (stop distance > 0 AND low <= entry price - stop distance))
+Exit: Short, datetime >= configured backtest start AND datetime <= configured backtest end AND ((target distance > 0 AND low <= entry price - target distance) OR (stop distance > 0 AND high >= entry price + stop distance))

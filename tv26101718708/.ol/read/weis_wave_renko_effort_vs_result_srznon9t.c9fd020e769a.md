@@ -1,0 +1,5 @@
+Calculation: Wave effort = sum of volume over a same-direction wave
+Calculation: Wave result = absolute price distance from the wave start to its furthest price
+Calculation: Material change = a percentage increase or decrease of at least a selected threshold versus the preceding completed wave in the same direction
+Long: Renko-assigned price rises AND (current wave is an up-wave OR a completed down-wave has lower effort and shorter result than the previous down-wave and makes a higher low OR a completed down-wave has higher effort and shorter result than the previous down-wave OR the next down-wave retest after a buying-climax candidate has at least threshold-lower effort and result and makes a lower high)
+Short: Renko-assigned price falls AND (current wave is a down-wave OR a completed up-wave has lower effort and shorter result than the previous up-wave and makes a lower high OR a completed up-wave has higher effort and shorter result than the previous up-wave OR the next up-wave retest after a selling-climax candidate has at least threshold-lower effort and result and makes a higher low)

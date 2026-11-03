@@ -1,0 +1,5 @@
+Calculation: Anchored VWAP = cumulative(typical price × volume) / cumulative volume, resetting at the selected session, week, month, or custom-date anchor
+Calculation: Anchored standard deviation = square root of cumulative(volume × typical price²) / cumulative volume − anchored VWAP²
+Calculation: Outer deviation bands = anchored VWAP ± outer-band multiplier × anchored standard deviation
+Long: confirmed close below the lower outer deviation band OR confirmed close crosses above the lower outer deviation band (current close ≥ current lower band AND previous close < previous lower band) OR confirmed close crosses above anchored VWAP (current close > current anchored VWAP AND previous close ≤ previous anchored VWAP)
+Short: confirmed close above the upper outer deviation band OR confirmed close crosses below the upper outer deviation band (current close ≤ current upper band AND previous close > previous upper band) OR confirmed close crosses below anchored VWAP (current close < current anchored VWAP AND previous close ≥ previous anchored VWAP)

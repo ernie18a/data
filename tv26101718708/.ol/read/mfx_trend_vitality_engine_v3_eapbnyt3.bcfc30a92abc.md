@@ -1,0 +1,3 @@
+Calculation: Hybrid money flow = the average of (a) the 100-bar rolling min-max normalization of money-flow volume ratio, where each bar’s money-flow volume ratio is ((close − low) − (high − close)) / (high − low) × volume (0 when high = low), summed over a lookback, divided by summed volume over that same lookback, and (b) the 100-bar rolling min-max normalization of the money flow index calculated from typical price; each normalization maps its rolling minimum to −50 and maximum to +50, or returns 0 when the range is zero.
+Long: Hybrid money flow on the higher timeframe’s last completed bar >= 0
+Short: Hybrid money flow on the higher timeframe’s last completed bar < 0

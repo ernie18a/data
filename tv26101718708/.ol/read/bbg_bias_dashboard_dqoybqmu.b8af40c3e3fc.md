@@ -1,0 +1,2 @@
+Long: Last completed bar on the longer-term higher timeframe closes above its EMA(50) and VWAP AND last completed bar on the shorter-term higher timeframe closes above its EMA(50) and VWAP AND chart close is above chart VWAP
+Short: Last completed bar on the longer-term higher timeframe closes below its EMA(50) and VWAP AND last completed bar on the shorter-term higher timeframe closes below its EMA(50) and VWAP AND chart close is below chart VWAP

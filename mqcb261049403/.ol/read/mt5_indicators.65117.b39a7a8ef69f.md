@@ -1,0 +1,4 @@
+Calculation: Keltner upper band = BB middle band + ATR × Keltner multiplier
+Calculation: Advanced trigger value = selected oscillator centered as follows: Stochastic − 50; CCI; RSI − 50; MACD main line; Momentum − 100; Williams %R + 50; ADX; DeMarker − 0.5
+Long: Keltner upper band <= BB upper band AND close > BB middle band OR (BB deviation × close standard deviation / (ATR × Keltner factor) >= 1 AND advanced trigger value > 0)
+Short: Keltner upper band <= BB upper band AND close < BB middle band OR (BB deviation × close standard deviation / (ATR × Keltner factor) >= 1 AND advanced trigger value < 0)

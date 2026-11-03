@@ -1,0 +1,4 @@
+Long: close crosses above the 34-period EMA AND the EMA is below its value 34 bars ago AND its value one bar ago is below its value two bars ago AND datetime is after the configured start date
+Short: close crosses below the 34-period EMA AND the EMA is above its value 34 bars ago AND its value one bar ago is above its value two bars ago AND datetime is after the configured start date
+Exit: long, high reaches entry price plus the take-profit distance OR low reaches entry price minus the stop-loss distance OR, after high reaches entry price plus the trailing activation distance, low reaches the highest high since activation minus the trailing offset
+Exit: short, low reaches entry price minus the take-profit distance OR high reaches entry price plus the stop-loss distance OR, after low reaches entry price minus the trailing activation distance, high reaches the lowest low since activation plus the trailing offset

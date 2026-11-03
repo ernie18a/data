@@ -1,0 +1,5 @@
+Calculation: Ozymandias centerline = recursively updated trend line: start from the prior centerline; in bullish state, set it to the greater of itself and the running maximum of the lowest low over the lookback; in bearish state, set it to the lesser of itself and the running minimum of the highest high over the lookback. Switch to bearish state when the moving average of highs is below the running maximum of lows AND close is below the prior bar's low; switch to bullish state when the moving average of lows is above the running minimum of highs AND close is above the prior bar's high. The two moving averages use the same lookback.
+Calculation: Ozymandias upper band = centerline + half the 100-bar ATR
+Calculation: Ozymandias lower band = centerline - half the 100-bar ATR
+Long: close > Ozymandias upper band OR Ozymandias trend state is bullish
+Short: close < Ozymandias lower band OR Ozymandias trend state is bearish

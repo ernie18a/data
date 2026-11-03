@@ -1,0 +1,9 @@
+Calculation: Confirmed pivot high = high at a bar that is the highest high across the configured number of chart bars before and after it; it becomes available after the bars after it close
+Calculation: Confirmed pivot low = low at a bar that is the lowest low across the configured number of chart bars before and after it; it becomes available after the bars after it close
+Calculation: Candidate pivot = the confirmed high or low; if both confirm together, choose the high when there is no prior accepted pivot and close < open, or when the high is at least as far from the prior accepted pivot as the low; otherwise choose the low
+Calculation: EMA = exponential moving average of chart close, with a configurable lookback
+Calculation: Across Large, Medium, and Small modes, pivot lookbacks and minimum pivot deviations are ordered longest/largest to shortest/smallest, respectively
+Long: For any enabled mode, candidate is a pivot low AND its direction differs from that mode's current direction AND (no prior accepted pivot OR absolute difference between candidate price and prior accepted pivot price >= that mode's minimum deviation) AND (EMA filter disabled OR close > EMA) AND (closed chart bar when close-only confirmation is enabled)
+Short: For any enabled mode, candidate is a pivot high AND its direction differs from that mode's current direction AND (no prior accepted pivot OR absolute difference between candidate price and prior accepted pivot price >= that mode's minimum deviation) AND (EMA filter disabled OR close < EMA) AND (closed chart bar when close-only confirmation is enabled)
+Exit: long, a Short signal occurs in that mode
+Exit: short, a Long signal occurs in that mode

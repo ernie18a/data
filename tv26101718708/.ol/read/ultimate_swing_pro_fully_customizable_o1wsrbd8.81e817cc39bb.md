@@ -1,0 +1,5 @@
+Calculation: Relative strength = chart close / benchmark close
+Calculation: Positive vortex indicator = sum of absolute differences between each bar’s high and the prior bar’s low over the lookback, divided by the sum of true range over the same lookback
+Calculation: Negative vortex indicator = sum of absolute differences between each bar’s low and the prior bar’s high over the lookback, divided by the sum of true range over the same lookback
+Long: close > Hull moving average AND Hull moving average > its prior-bar value AND volume > volume simple moving average × volume multiplier AND relative strength > its simple moving average AND positive vortex indicator > negative vortex indicator AND ADX > trend threshold AND RSI > 50 AND CCI > 0
+Short: close < Hull moving average AND Hull moving average < its prior-bar value AND volume > volume simple moving average × volume multiplier AND relative strength < its simple moving average AND negative vortex indicator > positive vortex indicator AND ADX > trend threshold AND RSI < 50 AND CCI < 0

@@ -1,0 +1,4 @@
+Calculation: Smoothed velocity = EMA of (squared-weighted moving average of selected OHLC price minus linearly weighted moving average of that price); both averages use the same lookback, with greater weights on newer bars.
+Calculation: Fast and slow QQE levels = trailing levels around smoothed velocity. For each level, calculate EMA(EMA(abs(change in smoothed velocity))) times its volatility multiplier; update the level to velocity plus this offset when velocity is below the prior level, or velocity minus the offset when above. Do not let the level cross its prior value when velocity was on the same side of that value on the preceding bar. The fast level uses a smaller multiplier than the slow level. When calculated on a higher timeframe, use its still-forming bar.
+Long: Smoothed velocity > fast QQE level AND smoothed velocity > slow QQE level
+Short: Smoothed velocity < fast QQE level AND smoothed velocity < slow QQE level

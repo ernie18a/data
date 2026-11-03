@@ -1,0 +1,3 @@
+Calculation: Non-lag smoothed price = for each bar, compute N = 5L − 1 weights from t = 0, updating t by 1/(L − 2) while t < 1, then by 7/(4L − 1) while t < N − 1; each weight is cos(πt) × g, where g = 1 when t ≤ 0.5 and otherwise 1/(3πt + 1). Sum each weight times the selected applied price from the current and preceding bars, then divide by the absolute sum of the weights.
+Long: Non-lag smoothed price − its value on the preceding bar > filter threshold on the chart timeframe OR on a higher timeframe’s still-forming bar
+Short: Its value on the preceding bar − non-lag smoothed price > filter threshold on the chart timeframe OR on a higher timeframe’s still-forming bar

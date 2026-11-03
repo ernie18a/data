@@ -1,0 +1,9 @@
+Calculation: Confirmed swing highs/lows = pivots confirmed after the swing-strength number of bars on each side; retain alternating highs and lows, replacing the latest same-side swing only with a more extreme pivot
+Calculation: Contraction count = 1 plus each successive older swing-leg amplitude that is strictly larger than the immediately newer leg's amplitude, up to four legs; newest leg amplitude = absolute difference between the latest two swing prices
+Calculation: Latest-leg tightness = newest leg amplitude / ATR
+Calculation: Pivot = latest retained swing high
+Calculation: Invalidation price = latest retained swing low if below close; otherwise the lowest low of the last 50 bars if below close; otherwise the latest base low if below close
+Calculation: Base = the most recent min(retained swing count, min(max(contraction count + 1, 3), base swing window)) swings; has a base when at least three swings are retained and pivot, latest swing low, and base high and low exist
+Calculation: Quality score = rounded sum of 30% × min(contraction count / 3, 1) × 100, 28% × clamp(100 − latest-leg tightness / tightness scale × 100, 0, 100), 24% × trend score, and 18% × volume score. Trend score is 100 when close > EMA and EMA > its value the slope lookback bars ago; 64 when close > EMA otherwise; 28 when close < EMA and EMA is below its value the slope lookback bars ago; otherwise 50. Volume score is clamp(100 − (recent average volume / longer-base average volume − 0.5) × 100, 0, 100), or 50 when volume dry-up is disabled; use 1 for the volume ratio if the base average is unavailable or zero.
+Long: has a base AND (close > pivot OR (close ≤ pivot AND pivot − close ≤ pivot-proximity ATR threshold × ATR AND quality score ≥ readiness threshold AND latest-leg tightness ≤ ready-tightness threshold))
+Short: has a base AND close < invalidation price

@@ -1,0 +1,5 @@
+Calculation: Average volume = simple moving average of volume over the lookback period
+Calculation: Latest confirmed pivot low = the low of the most recent bar whose low is lower than the lows of the preceding and following pivot lookback bars
+Calculation: Latest confirmed pivot high = the high of the most recent bar whose high is higher than the highs of the preceding and following pivot lookback bars
+Long: volume > 1.3 × average volume AND close > open OR volume > 1.2 × average volume AND high > low AND |close − open| / (high − low) × 100 ≤ maximum body percentage AND low ≤ latest confirmed pivot low ≤ high
+Short: volume > 1.3 × average volume AND close < open OR volume > 1.2 × average volume AND high > low AND |close − open| / (high − low) × 100 ≤ maximum body percentage AND low ≤ latest confirmed pivot high ≤ high AND NOT (low ≤ latest confirmed pivot low ≤ high)

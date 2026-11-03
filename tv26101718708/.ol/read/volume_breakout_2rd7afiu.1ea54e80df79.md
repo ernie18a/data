@@ -1,0 +1,3 @@
+Calculation: Adaptive volume average = simple moving average of chart-timeframe volume over a lookback equal to the greater of 1 and the integer part of 100 × higher-timeframe ATR / higher-timeframe close; use the last completed higher-timeframe bar for ATR and close.
+Long: close >= open AND volume >= mid-volume multiple × adaptive volume average
+Short: close < open AND volume >= mid-volume multiple × adaptive volume average

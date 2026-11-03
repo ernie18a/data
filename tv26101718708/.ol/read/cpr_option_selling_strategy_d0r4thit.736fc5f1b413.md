@@ -1,0 +1,3 @@
+Calculation: Central Pivot Range = using high, low, and close of the last completed bar of a higher timeframe than the chart timeframe, central pivot = (high + low + close) / 3; midpoint = (high + low) / 2; bottom and top are the lower and higher, respectively, of midpoint and 2 × central pivot − midpoint
+Long: selected price source on the chart bar immediately before a higher-timeframe period opens > Central Pivot Range top
+Short: selected price source on the chart bar immediately before a higher-timeframe period opens < Central Pivot Range bottom

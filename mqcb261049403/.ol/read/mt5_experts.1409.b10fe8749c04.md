@@ -1,0 +1,5 @@
+Calculation: RD Trend Trigger = T3-smoothed 100 × (Buy Power − Sell Power) / (0.5 × (Buy Power + Sell Power)), where Buy Power = highest high over the recent lookback − lowest low over the immediately preceding, equally long lookback; Sell Power = highest high over that preceding lookback − lowest low over the recent lookback. Use bars on the configured indicator timeframe and only completed bars.
+Long: RD Trend Trigger on latest completed bar > its value one bar earlier AND that earlier value <= its value two bars earlier OR RD Trend Trigger on latest completed bar > upper level AND its value one bar earlier <= upper level
+Short: RD Trend Trigger on latest completed bar < its value one bar earlier AND that earlier value >= its value two bars earlier OR RD Trend Trigger on latest completed bar < lower level AND its value one bar earlier >= lower level
+Exit: long, RD Trend Trigger on latest completed bar < its value one bar earlier
+Exit: short, RD Trend Trigger on latest completed bar > its value one bar earlier OR RD Trend Trigger on latest completed bar > lower level

@@ -1,0 +1,7 @@
+Calculation: Adaptive factor = interpolate from a lower factor in strong trends to a higher factor in choppy conditions using the Efficiency Ratio; Efficiency Ratio = absolute net close change over its lookback divided by the sum of absolute close changes over that lookback. Use chart-timeframe bars; evaluate on completed bars.
+Calculation: Adaptive SuperTrend bands = midpoint (high + low) / 2 minus or plus the adaptive factor times Average True Range, forming the lower and upper bands. Ratchet the lower band upward to the greater of its current value and prior lower band when the prior close is above the prior lower band; otherwise reset it to its current value. Ratchet the upper band downward to the lesser of its current value and prior upper band when the prior close is below the prior upper band; otherwise reset it to its current value. Use chart-timeframe bars; evaluate on completed bars.
+Calculation: Flip margin = Average True Range multiplied by the shield-margin parameter.
+Long: Current close > prior upper band + current flip margin AND prior trend state is bearish
+Short: Current close < prior lower band - current flip margin AND prior trend state is bullish
+Exit: long, current close < current lower trailing band
+Exit: short, current close > current upper trailing band

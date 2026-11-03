@@ -1,0 +1,4 @@
+Long: On the higher timeframe, the short-, medium-, and long-lookback open-price WMA values on the last completed bar satisfy (short < medium) < long, and on the still-forming bar satisfy (short > medium) > long
+Short: On the higher timeframe, the short-, medium-, and long-lookback open-price WMA values on the last completed bar satisfy (short > medium) > long, and on the still-forming bar satisfy (short < medium) < long
+Exit: Long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: Short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

@@ -1,0 +1,3 @@
+Calculation: MACD line = short-term exponential moving average of close minus long-term exponential moving average of close; MACD signal line = exponential moving average of the MACD line
+Long: MACD line crosses above MACD signal line AND both are below zero AND the cooldown has passed AND either same-side signals are allowed or the last printed signal was not long
+Short: MACD line crosses below MACD signal line AND both are above zero AND the cooldown has passed AND either same-side signals are allowed or the last printed signal was not short

@@ -1,0 +1,1 @@
+For a traded currency pair, compare the relative-strength indicator values of its base and quote currencies, each derived from the closing prices of pairs containing that currency. If the values are close, go long; if they are far apart, go short. Consider broader market context, such as support and resistance. No exit rule is specified.

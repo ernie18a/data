@@ -1,0 +1,7 @@
+Calculation: Pressure zone = confirmed chart-timeframe swing low (long-pressure/support) or swing high (short-pressure/resistance), with a band centered on the pivot and height set by either ATR or a percentage of price
+Calculation: ATR = average true range
+Calculation: RSI extreme = lowest RSI over a lookback for oversold, or highest RSI over a lookback for overbought
+Long: An active long-pressure zone was swept when low < zone bottom − minimum sweep depth × ATR, and within the reclaim window close > the selected reclaim level (zone bottom, midpoint, or top); AND, if the RSI filter is enabled, RSI extreme ≤ oversold threshold
+Short: An active short-pressure zone was swept when high > zone top + minimum sweep depth × ATR, and within the reclaim window close < the selected reclaim level (zone top, midpoint, or bottom); AND, if the RSI filter is enabled, RSI extreme ≥ overbought threshold
+Exit: Long, close ≥ the long-pressure zone top OR close < zone bottom − decisive-break distance × ATR OR the reclaim window has elapsed and close < zone bottom
+Exit: Short, close ≤ the short-pressure zone bottom OR close > zone top + decisive-break distance × ATR OR the reclaim window has elapsed and close > zone top

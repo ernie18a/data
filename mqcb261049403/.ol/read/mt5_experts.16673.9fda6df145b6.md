@@ -1,0 +1,6 @@
+Calculation: JJRSX = smooth with a short-term JurX, then a JMA, the ratio of JurX-smoothed selected-price change to JurX-smoothed absolute selected-price change, multiplied by 100
+Calculation: X2MA = apply a first configurable moving-average smoothing to selected bar price, then a second configurable moving-average smoothing to that result
+Long: JJRSX > previous JJRSX AND X2MA > previous X2MA on a higher-timeframe last completed bar AND the previous lower-timeframe completed bar's JJRSX was <= the middle level
+Short: JJRSX < previous JJRSX AND X2MA < previous X2MA on a higher-timeframe last completed bar AND the previous lower-timeframe completed bar's JJRSX was >= the middle level
+Exit: long, X2MA < previous X2MA on a higher-timeframe last completed bar OR lower-timeframe completed JJRSX is below the middle level OR close <= entry price - stop-loss distance OR close >= entry price + take-profit distance
+Exit: short, X2MA > previous X2MA on a higher-timeframe last completed bar OR lower-timeframe completed JJRSX is above the middle level OR close >= entry price + stop-loss distance OR close <= entry price - take-profit distance

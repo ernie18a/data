@@ -1,0 +1,5 @@
+Calculation: Smoothed Heikin-Ashi bullish = EMA-smooth chart-timeframe open, high, low, and close using the same lookback; set Heikin-Ashi close to their average, initialize Heikin-Ashi open to the average of smoothed open and close, then set each subsequent Heikin-Ashi open to the average of the prior Heikin-Ashi open and close; bullish when Heikin-Ashi close > Heikin-Ashi open
+Calculation: Last confirmed pivot high = most recent local high in chart-timeframe highs, confirmed after the right-side lookback bars complete; use equal left- and right-side lookbacks
+Calculation: Last confirmed pivot low = most recent local low in chart-timeframe lows, confirmed after the right-side lookback bars complete; use equal left- and right-side lookbacks
+Long: Close crosses above the last confirmed pivot high OR the shorter-lookback SMA of close crosses above the longer-lookback SMA of close AND Smoothed Heikin-Ashi bullish
+Short: Close crosses below the last confirmed pivot low OR the shorter-lookback SMA of close crosses below the longer-lookback SMA of close AND Smoothed Heikin-Ashi close <= Smoothed Heikin-Ashi open

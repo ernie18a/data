@@ -1,0 +1,4 @@
+Calculation: Bull strength = Apply the configured moving average with lookback Smooth to the configured moving average with lookback Length of either (RSI mode) max(P − previous P, 0), or (stochastic mode) P − the lowest low over Length bars; P is the configured OHLC-derived price.
+Calculation: Bear strength = Apply the configured moving average with lookback Smooth to the configured moving average with lookback Length of either (RSI mode) max(previous P − P, 0), or (stochastic mode) the highest high over Length bars − P; P is the configured OHLC-derived price.
+Long: Bull strength crosses above bear strength
+Short: Bull strength crosses below bear strength

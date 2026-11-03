@@ -1,0 +1,5 @@
+Calculation: Session MA = configured moving average of chart-timeframe closes, evaluated separately for each session and available only during that session.
+Long: During a session, no breakout has yet occurred in that session, and the configured breakout price crosses above that session’s MA (close crosses above by default; alternatively, high crosses above).
+Long: During a session, the first configured fakeout check at or after the configured observation delay following a downward breakout finds close above that session’s MA.
+Short: During a session, no breakout has yet occurred in that session, and the configured breakout price crosses below that session’s MA (close crosses below by default; alternatively, low crosses below).
+Short: During a session, the first configured fakeout check at or after the configured observation delay following an upward breakout finds close below that session’s MA.

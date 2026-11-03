@@ -1,0 +1,29 @@
+Calculation: Estimated bar delta = volume * (2 * close - high - low) / (high - low); if high = low, use zero
+Calculation: Cumulative delta = running sum of estimated bar delta, starting at zero
+Calculation: Short price and cumulative-delta slopes = change over the shorter divergence lookback divided by that lookback; long slopes use the longer divergence lookback
+Calculation: Volume average = simple moving average of volume over the configurable VSA lookback
+Calculation: Price spread average = simple moving average of high - low over the configurable VSA lookback
+Calculation: Effort = volume / volume average; result = (high - low) / price spread average
+Calculation: Absorption = effort >= configurable effort threshold AND result <= configurable absorption threshold
+Calculation: Climax = effort >= configurable effort threshold AND result >= configurable climax-spread threshold
+Calculation: Bullish divergence = short price slope < 0 AND short cumulative-delta slope > 0; bearish divergence = short price slope > 0 AND short cumulative-delta slope < 0
+Calculation: Confirmed bullish or bearish divergence = corresponding divergence has persisted for at least the configurable confirmation count AND volume > volume average
+Calculation: Bullish or bearish divergence trigger = corresponding confirmed divergence AND its consecutive-bar count equals the configurable confirmation count
+Calculation: Bullish absorption = absorption AND close < exponential moving average of close; bearish absorption = absorption AND close > that average
+Calculation: Bullish climax = climax AND close < open AND close < exponential moving average of close; bearish climax = climax AND close > open AND close > that average
+Calculation: Confirmed pivot high or low = high or low pivot using a configurable left lookback and one bar to the right; retain the latest confirmed pivot of each kind until broken
+Calculation: Bullish structure break = close crosses above the latest confirmed pivot high; bearish structure break = close crosses below the latest confirmed pivot low
+Calculation: Structure trend = set to bullish on a bullish structure break and bearish on a bearish structure break; bullish or bearish change of character = corresponding structure break when the prior trend was opposite
+Calculation: Confirmed bullish structure break = bullish structure break AND cumulative delta change over the recent three bars > 0 AND volume > 1.3 * volume average; confirmed bearish structure break uses delta change < 0 and the same volume condition
+Calculation: Bullish sweep = low < latest confirmed pivot low AND close > that pivot low; bearish sweep = high > latest confirmed pivot high AND close < that pivot high
+Calculation: Volume-confirmed bullish or bearish sweep = corresponding sweep AND volume > 1.2 * volume average
+Calculation: Fair value gap = bullish when current low > high two bars earlier, with bounds [high two bars earlier, current low]; bearish when current high < low two bars earlier, with bounds [current high, low two bars earlier]
+Calculation: Fair value gap score = 10 base points, plus 15 if gap size > 0.3 * average true range (otherwise plus 8 if > 0.15 * average true range), plus 20 if the middle bar's volume > 1.5 * volume average, plus 15 if the bullish gap's lower bound is below equilibrium or the bearish gap's upper bound is above equilibrium, plus 25 if a corresponding confirmed structure break occurs now or the corresponding structure trend is active and its latest pivot is less than five bars old
+Calculation: Active fair value gaps = gaps whose score meets a configurable minimum, excluding gaps filled by price (bullish: low <= lower bound; bearish: high >= upper bound) or older than 100 bars; retain at most a configurable maximum, removing oldest first
+Calculation: Near bullish or bearish fair value gap = close is within 0.5 * average true range of the midpoint of any active gap of that direction
+Calculation: Equilibrium = midpoint of the highest high and lowest low over 20 bars, captured when a confirmed bullish or bearish structure break occurs; discount = close < equilibrium; premium = close > equilibrium
+Calculation: Directional pressure = exponential moving average of estimated bar delta
+Calculation: Bullish confluence score = sum of: 20 for confirmed bullish divergence, 20 for confirmed bullish structure break, 25 for bullish change of character, 15 for bullish absorption, 20 for volume-confirmed bullish sweep, 15 for near bullish fair value gap, 10 for discount, 10 for bullish climax, and 5 when directional pressure > 0; cap at 100
+Calculation: Bearish confluence score = sum of: 20 for confirmed bearish divergence, 20 for confirmed bearish structure break, 25 for bearish change of character, 15 for bearish absorption, 20 for volume-confirmed bearish sweep, 15 for near bearish fair value gap, 10 for premium, 10 for bearish climax, and 5 when directional pressure < 0; cap at 100
+Long: Bullish divergence trigger OR confirmed bullish structure break OR bullish change of character OR bullish absorption OR bullish climax OR bullish sweep OR volume-confirmed bullish sweep OR (bullish confluence score >= configurable confluence threshold AND more than five bars since the previous long confluence signal AND within the latest 200 bars) OR (bullish confluence score >= configurable alert threshold AND more than five bars since the previous long alert)
+Short: Bearish divergence trigger OR confirmed bearish structure break OR bearish change of character OR bearish absorption OR bearish climax OR bearish sweep OR volume-confirmed bearish sweep OR (bearish confluence score >= configurable confluence threshold AND more than five bars since the previous short confluence signal AND within the latest 200 bars) OR (bearish confluence score >= configurable alert threshold AND more than five bars since the previous short alert)

@@ -1,0 +1,3 @@
+Calculation: Confirmed swing high/low = a bar whose high/low is a pivot relative to the configured number of bars on both sides; add it as an active liquidity level when the right-side bars complete, and keep it active until swept or expired.
+Long: On a completed bar, low < an active swing-low liquidity level AND close > that level
+Short: On a completed bar, high > an active swing-high liquidity level AND close < that level

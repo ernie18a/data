@@ -1,0 +1,2 @@
+Long: OBV forms a confirmed lower fractal: at the candidate bar, OBV is lower than at each of the two preceding bars and less than or equal to OBV at each of the two following bars (evaluate after both following bars are complete)
+Short: OBV forms a confirmed upper fractal: at the candidate bar, OBV is higher than at each of the two preceding bars and greater than or equal to OBV at each of the two following bars (evaluate after both following bars are complete)

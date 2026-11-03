@@ -1,0 +1,2 @@
+Long: high - low > range-multiplier × ATR AND abs(close - open) / (high - low) >= minimum-body-fraction AND close > open AND (volume-multiplier <= 0 OR selected volume >= volume-multiplier × SMA(selected volume)) AND at least one of the preceding bars within the lookback has close < open
+Short: high - low > range-multiplier × ATR AND abs(close - open) / (high - low) >= minimum-body-fraction AND close < open AND (volume-multiplier <= 0 OR selected volume >= volume-multiplier × SMA(selected volume)) AND at least one of the preceding bars within the lookback has close > open

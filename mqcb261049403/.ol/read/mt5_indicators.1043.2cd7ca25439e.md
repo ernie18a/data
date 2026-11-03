@@ -1,0 +1,4 @@
+Calculation: XRSX = 100 × smoothed price change / smoothed absolute price change, using the same applied price and longer lookback for both; clamp the result to [-100, 100].
+Calculation: Signal line = smooth XRSX with a shorter lookback than the price-change smoothing.
+Long: On the first chart bar of a configured timeframe bar (timeframe higher than or equal to the chart timeframe), XRSX > signal line on that still-forming timeframe bar.
+Short: On the first chart bar of a configured timeframe bar (timeframe higher than or equal to the chart timeframe), XRSX < signal line on that still-forming timeframe bar.

@@ -1,0 +1,4 @@
+Calculation: Regression close = endpoint of a linear regression fitted to close over a lookback, evaluated on the current bar
+Calculation: Signal line = simple moving average of regression close over a shorter lookback
+Long: current regression close > current signal line AND previous regression close <= previous signal line AND volume > volume SMA AND RSI < 70 AND bar count >= max(3 × regression lookback, EMA lookback + 5) AND current bar is confirmed
+Short: current regression close < current signal line AND previous regression close >= previous signal line AND volume > volume SMA AND RSI > 30 AND bar count >= max(3 × regression lookback, EMA lookback + 5) AND current bar is confirmed

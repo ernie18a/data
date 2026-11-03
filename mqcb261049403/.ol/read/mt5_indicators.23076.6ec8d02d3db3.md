@@ -1,0 +1,4 @@
+Calculation: Corrected VWMA = initialize to VWMA; on each later bar, previous corrected VWMA + c × (current VWMA − previous corrected VWMA), where c = 0 if the previous corrected VWMA’s squared error from current VWMA is 0 or less than the rolling variance of applied price, otherwise c = 1 − rolling variance / squared error; rolling variance = (sum of squared applied prices − sum of applied prices² / period) / period
+Calculation: Floating upper and lower levels = rolling minimum corrected VWMA + upper or lower configured percentage × (rolling maximum corrected VWMA − rolling minimum corrected VWMA) / 100
+Long: Corrected VWMA > floating upper level OR corrected VWMA > midpoint of floating levels OR corrected VWMA > previous bar’s corrected VWMA OR VWMA > corrected VWMA
+Short: Corrected VWMA < floating lower level OR corrected VWMA < midpoint of floating levels OR corrected VWMA < previous bar’s corrected VWMA OR VWMA < corrected VWMA

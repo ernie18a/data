@@ -1,0 +1,9 @@
+Calculation: Pullback reference = VWAP or EMA of chart-timeframe close, according to the selected reference
+Calculation: Long stop = lowest low over the selected swing lookback minus the selected tick buffer, or close minus selected ATR multiple
+Calculation: Short stop = highest high over the selected swing lookback plus the selected tick buffer, or close plus selected ATR multiple
+Calculation: Risk = entry close minus long stop for longs; short stop minus entry close for shorts
+Calculation: Target 2 = entry close plus selected R multiple × risk for longs; entry close minus selected R multiple × risk for shorts
+Long: last completed higher-timeframe close > its EMA AND that EMA > its value on the preceding completed higher-timeframe bar AND current bar time is within the selected trade window AND (current low <= current pullback reference OR previous low <= previous pullback reference) AND current close > current pullback reference AND (if enabled, current close > current open) AND no active signal (or a new day has begun) AND current close - long stop > minimum tick
+Short: last completed higher-timeframe close < its EMA AND that EMA < its value on the preceding completed higher-timeframe bar AND current bar time is within the selected trade window AND (current high >= current pullback reference OR previous high >= previous pullback reference) AND current close < current pullback reference AND (if enabled, current close < current open) AND no active signal (or a new day has begun) AND short stop - current close > minimum tick
+Exit: long, current low <= stop OR current high >= target 2
+Exit: short, current high >= stop OR current low <= target 2

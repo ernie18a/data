@@ -1,0 +1,5 @@
+Calculation: Yesterday’s high = the highest high of the previous completed daily bar, on a higher timeframe than the chart timeframe
+Calculation: Daily rate of change = (chart close − previous completed daily close) / previous completed daily close × 100; use the previous completed daily bar from a higher timeframe than the chart timeframe
+Long: A stop entry is active when chart close < yesterday’s high AND (rate-of-change filter is disabled OR daily rate of change > its threshold); enter when chart high ≥ yesterday’s high + (yesterday’s high × gap percentage)
+Exit: Long, chart low ≤ entry price × (1 − stop-loss percentage) OR chart high ≥ entry price × (1 + take-profit percentage) OR the trailing stop is reached after activation when price rises by the trailing activation distance from entry; trailing stop = highest high since activation − trailing offset distance
+Exit: Long, chart close crosses below the chart-timeframe EMA

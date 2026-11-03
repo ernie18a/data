@@ -1,0 +1,3 @@
+Calculation: Close position in bar = (close − low) / (high − low); use 0.5 when high = low
+Long: (close > previous close AND volume >= volume SMA × accumulation/distribution volume multiplier) OR (volume >= volume SMA × HVC volume multiplier AND close position in bar >= HVC close-position threshold)
+Short: close < previous close AND volume >= volume SMA × accumulation/distribution volume multiplier

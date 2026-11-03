@@ -1,0 +1,2 @@
+Long: Stochastic oscillator on each configured chart or higher timeframe, using that timeframe’s bar still forming, is above the overbought level
+Short: Stochastic oscillator on each configured chart or higher timeframe, using that timeframe’s bar still forming, is below the oversold level

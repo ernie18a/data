@@ -1,0 +1,14 @@
+Calculation: Close location = (completed higher-timeframe candle close − low) / (high − low)
+Calculation: Bucket bias = signed historical first-hit bias for the completed higher-timeframe candle’s time bucket; positive means high first, negative means low first
+Calculation: Live score = close-location score (+1 above its upper threshold, −1 below its lower threshold, otherwise 0) + VWAP-side score (+1 when completed higher-timeframe close is above the last completed chart-timeframe VWAP, otherwise −1) + higher-timeframe EMA trend score (+1 when the shorter-lookback EMA is above the longer-lookback EMA, −1 when below, otherwise 0) + bucket-bias sign
+Calculation: Magnet midpoint = (completed higher-timeframe high + completed higher-timeframe low) / 2
+Long: At the first confirmed chart-timeframe bar after a completed higher-timeframe candle, bucket bias is nonzero AND live score has the same sign as bucket bias AND close location is within the configured mid-band AND absolute live score meets the configured minimum AND the bar has not already touched the bias-side magnet extreme
+Short: At the first confirmed chart-timeframe bar after a completed higher-timeframe candle, bucket bias is nonzero AND live score has the same sign as bucket bias AND close location is within the configured mid-band AND absolute live score meets the configured minimum AND the bar has not already touched the bias-side magnet extreme
+Long: In fade mode, the same arming conditions hold AND magnet range meets its configured minimum AND a chart-timeframe bar touches the resting buy limit below the magnet low
+Short: In fade mode, the same arming conditions hold AND magnet range meets its configured minimum AND a chart-timeframe bar touches the resting sell limit above the magnet high
+Exit: long, low <= configured stop price OR high >= configured target price; if both occur on one bar, stop takes precedence
+Exit: short, high >= configured stop price OR low <= configured target price; if both occur on one bar, stop takes precedence
+Exit: long, at the next higher-timeframe close the last completed chart-timeframe close <= entry price
+Exit: short, at the next higher-timeframe close the last completed chart-timeframe close >= entry price
+Exit: long, in fade mode with scaling enabled, high >= the configured 1R level (take partial and move stop to entry); then exit remainder at configured runner target or when low <= entry
+Exit: short, in fade mode with scaling enabled, low <= the configured 1R level (take partial and move stop to entry); then exit remainder at configured runner target or when high >= entry

@@ -1,0 +1,5 @@
+Calculation: EMA = exponential moving average of close, using the same lookback on all timeframes; higher-timeframe EMAs use the bar still forming.
+Long: Flat AND long setup is true now and was false on the previous bar AND close is between the minimum and maximum parameter distances below the chart-timeframe EMA AND the first higher-timeframe EMA > chart-timeframe EMA AND each successively higher-timeframe EMA > the preceding EMA.
+Short: Flat AND short setup is true now and was false on the previous bar AND close is between the minimum and maximum parameter distances above the chart-timeframe EMA AND the first higher-timeframe EMA < chart-timeframe EMA AND each successively higher-timeframe EMA < the preceding EMA.
+Exit: Long, close crosses above the highest-timeframe EMA.
+Exit: Short, close crosses below the highest-timeframe EMA.

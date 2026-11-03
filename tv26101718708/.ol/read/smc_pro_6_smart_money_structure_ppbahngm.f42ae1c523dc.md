@@ -1,0 +1,15 @@
+Calculation: Confirmed swing high/low = a high/low that remains the highest/lowest across the configured lookback bars on both sides; recognize it after the right-side bars complete
+Calculation: Latest swing high/low = the most recently confirmed swing high/low
+Calculation: Bullish/bearish structure confirmation = according to the selected mode: close beyond the latest swing high/low; or close beyond it by the configured ATR multiple; or that ATR break plus RSI above/below 50; or that ATR break plus RSI above/below 50 and volume above its longer-lookback moving average
+Calculation: Structure direction = set bullish when bullish structure confirmation occurs and the last BOS direction was not bullish; set bearish when bearish structure confirmation occurs and the last BOS direction was not bearish; reset the last BOS direction when a new swing high confirms while direction is bearish, or a new swing low confirms while direction is bullish
+Calculation: Bullish/bearish context = close above/below the long-term EMA, short-term EMA above/below long-term EMA, and short-term EMA rising/falling
+Calculation: Demand zone = after a confirmed swing low, the high exceeds that swing low by more than the configured ATR impulse multiple and bullish context or a bullish change of character holds; zone bounds are the swing low and that low plus the configured ATR height
+Calculation: Supply zone = after a confirmed swing high, that swing high exceeds the low by more than the configured ATR impulse multiple and bearish context or a bearish change of character holds; zone bounds are the swing high and that high minus the configured ATR height
+Calculation: Active zone = the latest qualifying demand or supply zone replaces the prior zone; invalidate demand if close falls below its lower bound and supply if close rises above its upper bound; each zone can generate at most one entry
+Calculation: Zone touch = bar low is at or below the active zone upper bound and bar high is at or above its lower bound
+Calculation: Bullish rejection = close above open and close above low plus 0.6 times the bar range; bearish rejection = close below open and close below high minus 0.6 times the bar range
+Calculation: Valid EMA distance = absolute value of close minus short-term EMA divided by short-term EMA is below the configured limit
+Long: bullish structure confirmation AND last BOS direction is not bullish
+Long: active zone is demand AND bullish context AND structure direction is bullish AND zone touch AND bullish rejection AND valid EMA distance AND zone unused
+Short: bearish structure confirmation AND last BOS direction is not bearish
+Short: active zone is supply AND bearish context AND structure direction is bearish AND zone touch AND bearish rejection AND valid EMA distance AND zone unused

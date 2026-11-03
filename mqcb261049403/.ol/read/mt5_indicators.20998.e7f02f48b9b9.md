@@ -1,0 +1,3 @@
+Calculation: Double-smoothed LWMA = apply a linearly weighted moving average to the selected applied price, then apply a second linearly weighted moving average with the same lookback; for each cloud line, calculate on its selected chart-timeframe-or-higher bars, using the bar still forming
+Long: Double-smoothed LWMA > its value on the previous chart bar OR the shorter-timeframe cloud line > the longer-timeframe cloud line
+Short: Double-smoothed LWMA < its value on the previous chart bar OR the shorter-timeframe cloud line < the longer-timeframe cloud line

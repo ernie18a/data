@@ -1,0 +1,4 @@
+Long: high > prior close + prior true range AND close > open AND time is within the configured date window
+Short: low < prior close - prior true range AND close < open AND time is within the configured date window
+Exit: long, low < prior close - prior true range AND close < open OR the higher-timeframe close crosses below its open using the last completed higher-timeframe bar OR close is at least the configured stop-loss distance below the entry price
+Exit: short, high > prior close + prior true range AND close > open OR the higher-timeframe close crosses above its open using the last completed higher-timeframe bar OR close is at least the configured stop-loss distance above the entry price

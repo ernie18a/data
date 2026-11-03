@@ -1,0 +1,8 @@
+Calculation: Confirmed swing low/high = lowest low/high among the left and right bars on the selected structure timeframe; use only confirmed pivots. If that timeframe differs from the chart timeframe, use its last completed bar.
+Calculation: Active bullish leg = latest swing low followed by latest swing high; active bearish leg = latest swing high followed by latest swing low.
+Calculation: Deep and shallow retracement bounds = for a bullish leg, swing high minus the deeper and shallower retracement fractions of the leg range; for a bearish leg, swing low plus those fractions of the leg range.
+Calculation: Extension targets = for a bullish leg, swing high plus each extension fraction of the leg range; for a bearish leg, swing low minus each extension fraction of the leg range.
+Long: Active bullish leg AND close is at least the stop buffer below the latest swing low AND the lowest low over the recent lookback is at or below the deep retracement bound AND close crosses above the shallow retracement bound AND the chart bar is confirmed AND the signal cooldown has elapsed
+Short: Active bearish leg AND close is at least the stop buffer above the latest swing high AND the highest high over the recent lookback is at or above the deep retracement bound AND close crosses below the shallow retracement bound AND the chart bar is confirmed AND the signal cooldown has elapsed AND no bullish leg is active
+Exit: long, price touches any bullish extension target
+Exit: short, price touches any bearish extension target

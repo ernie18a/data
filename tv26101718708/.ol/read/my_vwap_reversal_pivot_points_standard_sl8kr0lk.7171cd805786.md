@@ -1,0 +1,2 @@
+Long: current higher-timeframe bar open < previous completed higher-timeframe bar close AND close > high of the first chart-timeframe bar of the session AND previous close <= previous VWAP AND close > current VWAP
+Short: current higher-timeframe bar open > previous completed higher-timeframe bar close AND close < low of the first chart-timeframe bar of the session AND previous close >= previous VWAP AND close < current VWAP

@@ -1,0 +1,3 @@
+Calculation: Smoothed EMV for a price series = apply the same parameterized smoothing to each bar’s raw EMV, where raw EMV = (current price − previous bar’s price) × current price ÷ (2 × current bar’s volume); use 0 when volume is 0. For the EMV candle, calculate this separately using Open and Close as the price series.
+Long: EMV candle Close > EMV candle Open
+Short: EMV candle Close < EMV candle Open

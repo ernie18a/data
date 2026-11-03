@@ -1,0 +1,1 @@
+For the traded currency pair, calculate the base currency’s government bond yield minus the quote currency’s yield, then compare fast and slow EMAs of that spread. Go long when the fast EMA crosses above the slow EMA; go short when it crosses below. No exit rule is specified.

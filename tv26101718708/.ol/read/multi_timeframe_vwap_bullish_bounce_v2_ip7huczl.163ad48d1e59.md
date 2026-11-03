@@ -1,0 +1,1 @@
+Long: For each of two configured VWAP timeframes (higher or lower than the chart timeframe as configured), the lowest close over the preceding N completed chart bars is greater than the VWAP value from the preceding chart bar, AND the current chart bar’s low is less than or equal to the latest completed VWAP and its close is greater than that VWAP.

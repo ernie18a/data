@@ -1,0 +1,12 @@
+Calculation: ATR = average true range
+Calculation: Confirmed swing high/low = a bar whose high/low is the highest/lowest across the configured pivot lookback on both sides; use only after the bars on both sides are complete
+Calculation: Bullish FVG = current low > high two bars earlier, with gap size at least the configured ATR multiple; when displacement is required, the middle bar is bullish and its body is at least the configured ATR multiple
+Calculation: Bearish FVG = current high < low two bars earlier, with gap size at least the configured ATR multiple; when displacement is required, the middle bar is bearish and its body is at least the configured ATR multiple
+Calculation: Live FVG = a qualifying FVG whose age has not exceeded its configured maximum and whose close has not passed beyond the far edge of the gap
+Calculation: FVG score = rounded value clamped to 0–10 of: clamped (gap size / ATR × 3.2) to 0–3, plus 2, plus clamped (3 − age / 40) to 0–2, plus clamped (current volume / 20-bar simple average volume × 1.2) to 0–2
+Long: low < a retained confirmed swing low AND close > that level AND close > open AND (open − low) / (high − low) ≥ configured sweep wick ratio
+Long: a fresh bullish sweep is between the configured confirmation delay and window after it AND current bar overlaps a live bullish FVG with score ≥ configured minimum AND close > open AND no bullish magnet signal occurred within the configured signal cooldown
+Long: a bearish sweep is between the configured confirmation delay and window after it AND current bar overlaps a live bearish FVG with score ≥ configured minimum AND close < open AND no bearish magnet signal occurred within the configured signal cooldown
+Short: high > a retained confirmed swing high AND close < that level AND close < open AND (high − close) / (high − low) ≥ configured sweep wick ratio
+Short: a fresh bullish sweep is between the configured confirmation delay and window after it AND current bar overlaps a live bullish FVG with score ≥ configured minimum AND close > open AND no bullish magnet signal occurred within the configured signal cooldown
+Short: a bearish sweep is between the configured confirmation delay and window after it AND current bar overlaps a live bearish FVG with score ≥ configured minimum AND close < open AND no bearish magnet signal occurred within the configured signal cooldown

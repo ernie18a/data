@@ -1,0 +1,4 @@
+Long: Position side = flat AND chart-timeframe last completed bar open < lower Bollinger Band AND chart-timeframe last completed bar close > lower Bollinger Band AND higher-timeframe DEMA on the bar still forming > DEMA on the last completed higher-timeframe bar > DEMA on the preceding completed higher-timeframe bar
+Short: Position side = flat AND chart-timeframe last completed bar open > upper Bollinger Band AND chart-timeframe last completed bar close < upper Bollinger Band AND higher-timeframe DEMA on the bar still forming < DEMA on the last completed higher-timeframe bar < DEMA on the preceding completed higher-timeframe bar
+Exit: long, chart-timeframe last completed bar open > upper Bollinger Band AND chart-timeframe last completed bar close < upper Bollinger Band
+Exit: short, chart-timeframe last completed bar open < lower Bollinger Band AND chart-timeframe last completed bar close > lower Bollinger Band

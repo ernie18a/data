@@ -1,0 +1,5 @@
+Calculation: Coefficient = on the configured indicator timeframe, compute median price x=(high+low)/2 and its smoothed moving average s; over n bars ordered oldest to newest, let cnt run from n to 1, T=Σx, Zx=Σ[x·(6−cnt)], Ts=Σs, Zs=Σ[s·(n+1−cnt)], M=Σcnt, and N=Σcnt²; calculate A=(T+(N−2Zx)·n/M)/M and B=(Ts+(N−2Zs)·n/M)/M, then take the instrument-oriented signed value of 1000·ln(A/B). Use the last completed bars; the configured timeframe may be higher or lower than the chart timeframe.
+Long: Coefficient on the previous completed bar > 0 AND Coefficient on the latest completed bar < 0
+Short: Coefficient on the previous completed bar < 0 AND Coefficient on the latest completed bar > 0
+Exit: long, Coefficient on the previous completed bar < 0 AND Coefficient on the latest completed bar > 0
+Exit: short, Coefficient on the previous completed bar > 0 AND Coefficient on the latest completed bar < 0

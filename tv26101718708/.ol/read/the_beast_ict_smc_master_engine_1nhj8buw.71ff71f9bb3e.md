@@ -1,0 +1,9 @@
+Calculation: Previous-day high/low = high/low of the last completed daily bar (higher timeframe).
+Calculation: Asia, London, New York, and opening-range highs/lows = highest high and lowest low of chart bars in each configured session; use the completed range after that session ends. The New York range remains the most recently completed one until replaced.
+Calculation: Recent swing highs/lows = chart-bar pivot highs/lows confirmed after the configured number of bars on each side; retain the configured number of most recent highs and lows.
+Calculation: ATR = Wilder moving average of true range over the configured lookback.
+Calculation: Bullish sweep state for a level = a bar has low <= level − minimum sweep depth and previous close >= level; track the lowest low from that bar through the reclaim bar.
+Calculation: Bearish sweep state for a level = a bar has high >= level + minimum sweep depth and previous close <= level; track the highest high from that bar through the reclaim bar.
+Calculation: Sweep grade score = 1 if another active watched level is within the configured stacking distance, plus 1 if the reclaim candle body is at least the configured ATR multiple in the reversal direction, plus 1 if the sweep is in an enabled killzone; grade A/B/C/D corresponds to score 3/2/1/0.
+Long: An active, unused watched level has a bullish sweep state, close > level, level − tracked lowest low <= maximum sweep depth, reclaim occurs within the configured number of bars from sweep start, and sweep grade >= configured minimum grade.
+Short: An active, unused watched level has a bearish sweep state, close < level, tracked highest high − level <= maximum sweep depth, reclaim occurs within the configured number of bars from sweep start, and sweep grade >= configured minimum grade.

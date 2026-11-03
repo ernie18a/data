@@ -1,0 +1,4 @@
+Calculation: Latest confirmed swing low = most recent low lower than the configured number of lows on each side; confirmed after the right-side bars complete
+Calculation: Latest confirmed swing high = most recent high higher than the configured number of highs on each side; confirmed after the right-side bars complete
+Long: bar closes AND low < latest confirmed swing low AND close > latest confirmed swing low AND (min(open, close) - low) / abs(close - open) >= minimum wick-to-body ratio
+Short: bar closes AND high > latest confirmed swing high AND close < latest confirmed swing high AND (high - max(open, close)) / abs(close - open) >= minimum wick-to-body ratio

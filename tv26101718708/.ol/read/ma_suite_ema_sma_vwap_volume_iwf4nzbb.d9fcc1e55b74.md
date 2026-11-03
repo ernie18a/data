@@ -1,0 +1,2 @@
+Long: close > short-term EMA > medium-term EMA > long-term EMA AND each EMA is higher than its prior-bar value OR short-term SMA > long-term SMA AND prior-bar short-term SMA <= prior-bar long-term SMA
+Short: close < short-term EMA < medium-term EMA < long-term EMA AND each EMA is lower than its prior-bar value OR short-term SMA < long-term SMA AND prior-bar short-term SMA >= prior-bar long-term SMA

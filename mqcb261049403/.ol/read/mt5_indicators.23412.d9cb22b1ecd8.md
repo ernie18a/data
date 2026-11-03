@@ -1,0 +1,3 @@
+Calculation: Dynamic Trend line = on the chart-timeframe or higher source bars, if the current close is below the prior bar’s line, the highest close over the longer lookback of preceding bars minus a strengthening offset; otherwise, the lowest close over that lookback plus the offset. The current source bar may still be forming.
+Long: current close >= prior Dynamic Trend line OR (prior completed close > its prior Dynamic Trend line AND the close two bars ago <= its Dynamic Trend line)
+Short: current close < prior Dynamic Trend line OR (prior completed close < its prior Dynamic Trend line AND the close two bars ago >= its Dynamic Trend line)

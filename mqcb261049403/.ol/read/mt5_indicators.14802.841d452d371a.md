@@ -1,0 +1,4 @@
+Calculation: Noise-reduced stochastic = 100 × (sum of closes over the slowing lookback − sum of rolling lows) / (sum of rolling highs − sum of rolling lows); rolling extremes use the K lookback and the configured price mode. If the range is below the sensitivity threshold, expand the summed high and low by half the threshold each; if the resulting range is zero, use 100.
+Calculation: Smoothed stochastic signal line = the noise-reduced stochastic smoothed over the D lookback using the configured simple or exponential method.
+Long: Noise-reduced stochastic > its previous bar value OR noise-reduced stochastic > smoothed stochastic signal line
+Short: Noise-reduced stochastic < its previous bar value OR noise-reduced stochastic < smoothed stochastic signal line

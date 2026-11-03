@@ -1,0 +1,4 @@
+Calculation: Relative volume = current volume / simple moving average of volume
+Calculation: Body efficiency = absolute(close - open) / max(high - low, minimum price tick)
+Long: confirmed pivot low creates a demand zone with volume / its moving average >= volume threshold (when the pivot volume gate is enabled), OR relative volume >= impulse threshold AND body efficiency >= minimum threshold AND close >= open creates a demand zone, OR close crosses above the last confirmed pivot high (previous close <= pivot high)
+Short: confirmed pivot high creates a supply zone with volume / its moving average >= volume threshold (when the pivot volume gate is enabled), OR relative volume >= impulse threshold AND body efficiency >= minimum threshold AND close < open creates a supply zone, OR close crosses below the last confirmed pivot low (previous close >= pivot low)

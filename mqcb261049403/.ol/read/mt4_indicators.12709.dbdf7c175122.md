@@ -1,0 +1,2 @@
+Long: close > open on the current chart bar or any of the last three completed chart bars, or on the current forming bar or any of the last three completed bars of a higher or lower timeframe
+Short: close <= open on the current chart bar or any of the last three completed chart bars, or on the current forming bar or any of the last three completed bars of a higher or lower timeframe

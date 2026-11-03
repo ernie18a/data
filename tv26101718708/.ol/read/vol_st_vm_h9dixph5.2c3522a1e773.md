@@ -1,0 +1,6 @@
+Calculation: Volume-adjusted spread = volume × (close − open) / (high − low)
+Calculation: Volume spread output = if volume shadow > 0, high + volume shadow; otherwise low + volume shadow, where volume shadow = (cumulative volume-adjusted spread − its short-term moving average) / the standard deviation of that difference over a longer lookback × the standard deviation of high − low over that longer lookback
+Calculation: SuperTrend line = SuperTrend calculated from the long-lookback EMA of volume spread output, using ATR bands and recursive trend levels
+Calculation: Regression envelope = linear regression endpoint of close over a lookback ± a multiplier × the standard deviation of close over the same lookback
+Long: close crosses above the SuperTrend line AND close > EMA(open, same long lookback as the EMA used for the SuperTrend line) OR close crosses below the upper regression envelope
+Short: close crosses below the SuperTrend line AND close < EMA(open, same long lookback as the EMA used for the SuperTrend line) OR close crosses above the lower regression envelope

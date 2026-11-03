@@ -1,0 +1,11 @@
+Calculation: Bullish fair value gap = current low > high two bars ago AND previous bar close > previous bar open
+Calculation: Bearish fair value gap = current high < low two bars ago AND previous bar close < previous bar open
+Calculation: Last confirmed pivot high/low = most recent swing high/low confirmed using equal left and right lookbacks
+Calculation: Bullish break of structure = close crosses above the last confirmed pivot high while structure trend is neutral or bearish
+Calculation: Bearish break of structure = close crosses below the last confirmed pivot low while structure trend is neutral or bullish
+Calculation: Bullish OTE zone = retracement zone between 0.618 and 0.786 of the range from the low at bullish break of structure to the highest high since that break; update the high and zone when a new high occurs
+Calculation: Bearish OTE zone = retracement zone between 0.618 and 0.786 of the range from the high at bearish break of structure to the lowest low since that break; update the low and zone when a new low occurs
+Calculation: EMA crossover = the shorter-lookback EMA crosses the longer-lookback EMA
+Calculation: Previous daily/weekly candle = last completed bar of the daily/weekly timeframe, which is higher than the chart timeframe
+Long: bullish fair value gap OR (bullish fair value gap AND last confirmed pivot high is between the gap's lower and upper boundaries) OR (previous completed daily close > open) OR (previous completed weekly close > open) OR (after a bullish break of structure, price has first overlapped the bullish OTE zone and has not fired a signal, close > zone top AND shorter-lookback EMA crosses above longer-lookback EMA)
+Short: bearish fair value gap OR (bearish fair value gap AND last confirmed pivot low is between the gap's lower and upper boundaries) OR (previous completed daily close < open) OR (previous completed weekly close < open) OR (after a bearish break of structure, price has first overlapped the bearish OTE zone and has not fired a signal, close < zone bottom AND shorter-lookback EMA crosses below longer-lookback EMA)

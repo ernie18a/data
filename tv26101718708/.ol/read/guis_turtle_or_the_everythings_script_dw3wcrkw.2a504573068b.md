@@ -1,0 +1,4 @@
+Calculation: Consecutive bullish setup count = count of consecutive bars where close > close four bars earlier; reset to zero otherwise
+Calculation: Consecutive bearish setup count = count of consecutive bars where close < close four bars earlier; reset to zero otherwise
+Long: Consecutive bullish setup count is between 1 and 9 inclusive OR consecutive bearish setup count is 9, 13, 14, 15, or 16 OR high > the highest high of the preceding TurtleSpeed bars
+Short: Consecutive bearish setup count is between 1 and 9 inclusive OR consecutive bullish setup count is 9, 13, 14, 15, or 16 OR low < the lowest low of the preceding TurtleSpeed bars

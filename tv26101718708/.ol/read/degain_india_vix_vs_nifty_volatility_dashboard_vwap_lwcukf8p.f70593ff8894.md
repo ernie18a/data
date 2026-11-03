@@ -1,0 +1,3 @@
+Calculation: Daily volatility bounds = previous completed higher-timeframe annual volatility index close divided by the square root of trading days per year to get daily volatility percent; apply that percentage above and below the previous completed higher-timeframe benchmark close
+Long: close crosses above the upper daily volatility bound
+Short: close crosses below the lower daily volatility bound

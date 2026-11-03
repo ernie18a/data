@@ -1,0 +1,3 @@
+Calculation: Profile-bin sentiment = for each equal-width bin dividing the highest-to-lowest range of the lookback bars, sum close − open for each lookback bar whose high is above the bin’s lower boundary and whose low is below its upper boundary; when intrabar mode is used, instead sum close − open from lower-timeframe bars wholly contained in the bin, using completed bars.
+Long: Profile-bin sentiment > 0
+Short: Profile-bin sentiment <= 0

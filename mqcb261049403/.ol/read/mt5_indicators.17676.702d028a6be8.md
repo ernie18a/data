@@ -1,0 +1,2 @@
+Long: A.open > A.close AND B.open > B.close AND B.close > A.low AND C.open < C.close AND C.close > B.open AND (A.high - A.low > cutoff OR volume filter disabled OR volume_A < volume_B OR volume_C > volume_B OR volume_C > volume_A)
+Short: A.open < A.close AND B.open < B.close AND B.close < A.high AND C.open > C.close AND C.close < B.open AND (A.high - A.low > cutoff OR volume filter disabled OR volume_A < volume_B OR volume_C > volume_B OR volume_C > volume_A)

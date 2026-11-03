@@ -1,0 +1,3 @@
+Calculation: Gap percentage = (current open − previous close) / previous close × 100
+Calculation: Close strength = (current close − current low) / (current high − current low) × 100; use 0 when high = low
+Long: earnings actual is available on this bar or the previous bar AND gap percentage ≥ minimum gap percentage AND current volume ≥ 20-bar average volume × volume multiplier AND current close > 200-bar simple moving average of close AND close strength ≥ minimum close strength AND (no PEG was triggered previously OR more than 1 bar has elapsed since the previous PEG trigger)

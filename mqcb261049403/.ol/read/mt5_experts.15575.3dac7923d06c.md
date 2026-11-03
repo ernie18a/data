@@ -1,0 +1,6 @@
+Calculation: Smoothed RSI = RSI of the configured applied price, smoothed by a configurable moving-average method and lookback.
+Calculation: Signal line = Smoothed RSI smoothed again by a configurable moving-average method and lookback.
+Long: On the configured indicator timeframe (higher or lower than the chart timeframe), using completed bars, Smoothed RSI > Signal line on the latest completed bar AND Smoothed RSI <= Signal line on the immediately preceding completed bar.
+Short: On the configured indicator timeframe (higher or lower than the chart timeframe), using completed bars, Smoothed RSI < Signal line on the latest completed bar AND Smoothed RSI >= Signal line on the immediately preceding completed bar.
+Exit: Long, Smoothed RSI < Signal line on the latest completed bar OR low <= entry price minus the configured stop-loss distance OR high >= entry price plus the configured take-profit distance.
+Exit: Short, Smoothed RSI > Signal line on the latest completed bar OR high >= entry price plus the configured stop-loss distance OR low <= entry price minus the configured take-profit distance.

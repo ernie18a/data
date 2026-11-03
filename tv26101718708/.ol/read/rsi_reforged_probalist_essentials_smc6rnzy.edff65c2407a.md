@@ -1,0 +1,5 @@
+Calculation: RSI = Wilder-smoothed relative strength of close gains to close losses, optionally EMA-smoothed.
+Calculation: Adaptive upper/lower bands = rolling RSI mean plus/minus a multiple of rolling RSI standard deviation, with the upper band capped at 95 and lower band floored at 5.
+Calculation: Confirmed RSI and price pivot highs/lows = local highs/lows requiring bars on both sides; compare pivots only when their indices are within the pivot-right width plus 2 bars. Pair each pivot with the latest earlier pivot of the same type within a maximum lookback and at least left-width + right-width + 1 bars earlier.
+Long: RSI crosses above the lower adaptive band OR RSI crosses above 50 OR at paired confirmed pivot lows, price makes a lower low and RSI a higher low OR price makes a higher low and RSI a lower low.
+Short: RSI crosses below the upper adaptive band OR RSI crosses below 50 OR at paired confirmed pivot highs, price makes a higher high and RSI a lower high OR price makes a lower high and RSI a higher high.

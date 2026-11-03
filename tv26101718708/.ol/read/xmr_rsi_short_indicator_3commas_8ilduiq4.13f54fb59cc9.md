@@ -1,0 +1,4 @@
+Calculation: Average entry = total cost of the base order and filled averaging orders divided by their total quantity.
+Calculation: Averaging-order price at rung k = base entry × (1 + the sum of the first k rung deviations); the first deviation is the initial step, and each later deviation is the preceding deviation multiplied by the step multiplier.
+Short: Flat AND the prior completed RSI on the chart timeframe is at or above the overbought threshold AND the current completed RSI on the chart timeframe is below it; OR short position open AND averaging orders remain AND close is at or above the next averaging-order price.
+Exit: short, close is at or above average entry × (1 + stop-loss percentage); OR trailing exit is armed AND close is at or above the lowest close since it armed × (1 + trailing percentage). Arm the trailing exit when close is at or below average entry × (1 − take-profit percentage).

@@ -1,0 +1,5 @@
+Calculation: Pivot resistance = the most recent confirmed pivot high, where a bar’s high is greater than the highs of the specified number of bars before and after it; confirmation uses the specified number of later bars.
+Calculation: Pivot support = the most recent confirmed pivot low, where a bar’s low is lower than the lows of the specified number of bars before and after it; confirmation uses the specified number of later bars.
+Calculation: Volume oscillator = 100 × (shorter-lookback EMA of volume − longer-lookback EMA of volume) ÷ longer-lookback EMA of volume.
+Long: close crosses above pivot resistance AND NOT (open − low > close − open) AND volume oscillator > volume threshold
+Short: close crosses below pivot support AND NOT (open − close < high − open) AND volume oscillator > volume threshold

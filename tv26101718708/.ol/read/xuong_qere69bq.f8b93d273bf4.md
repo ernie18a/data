@@ -1,0 +1,2 @@
+Long: Close crosses above the longer-lookback SMA OR the shorter-lookback EMA crosses above the longer-lookback SMA
+Short: Close crosses below the longer-lookback SMA OR the shorter-lookback EMA crosses below the longer-lookback SMA

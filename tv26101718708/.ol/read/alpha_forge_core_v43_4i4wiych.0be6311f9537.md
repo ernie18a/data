@@ -1,0 +1,25 @@
+Calculation: trend basis = EMA(close + (close − close[lag]), trend lookback), where lag = floor((trend lookback − 1) / 2)
+Calculation: trend volatility band width = highest ATR over three trend lookbacks × band multiplier
+Calculation: bullish/bearish trend state = set bullish when close crosses above basis + band width; set bearish when close crosses below basis − band width; otherwise retain the prior state
+Calculation: momentum oscillator = EMA((close − trend basis) / trend volatility band width, oscillator smoothing)
+Calculation: momentum signal = EMA(momentum oscillator, signal smoothing)
+Calculation: bullish momentum = oscillator > minimum momentum AND oscillator > signal AND (oscillator − signal) > its prior-bar value
+Calculation: bearish momentum = oscillator < −minimum momentum AND oscillator < signal AND (oscillator − signal) < its prior-bar value
+Calculation: higher-timeframe bias = bullish when higher-timeframe close > its trend basis and that basis is rising; bearish when close < basis and basis is falling; otherwise neutral. Use the last completed higher-timeframe bar.
+Calculation: structure pivots = confirmed pivot highs and lows using equal left- and right-side lookbacks
+Calculation: structure break = close crosses above the latest confirmed pivot high by more than ATR × structure-break fraction, or crosses below the latest confirmed pivot low by more than that amount; accept a break only if the minimum bars since the prior accepted break have elapsed
+Calculation: structure state = bullish after an accepted upward break; bearish after an accepted downward break; otherwise retain the prior state
+Calculation: bullish CHOCH = accepted upward structure break while prior structure state is bearish; bearish CHOCH = accepted downward structure break while prior structure state is bullish
+Calculation: bullish BOS = accepted upward structure break while prior structure state is neutral or bullish; bearish BOS = accepted downward structure break while prior structure state is neutral or bearish
+Calculation: buy lock = set after a final long signal; clear when trend or structure is no longer bullish. Sell lock = set after a final short signal; clear when trend or structure is no longer bearish.
+Long: bullish BOS OR bullish CHOCH
+Short: bearish BOS OR bearish CHOCH
+Long: bullish trend state AND rising trend basis AND bullish momentum AND (higher-timeframe filter disabled OR higher-timeframe bias bullish OR neutral) AND structure state not bearish AND close crosses above trend basis while trend state is bullish AND oscillator > 0 AND oscillator < maximum entry stretch
+Short: bearish trend state AND falling trend basis AND bearish momentum AND (higher-timeframe filter disabled OR higher-timeframe bias bearish OR neutral) AND structure state not bullish AND close crosses below trend basis while trend state is bearish AND oscillator < 0 AND oscillator > −maximum entry stretch
+Long: prior oscillator < −reversal extreme AND oscillator > momentum signal AND (oscillator − signal) rising AND close crosses above trend basis AND oscillator > signal AND (oscillator − signal) rising AND oscillator > prior oscillator AND bullish candle body > 40% of bar range AND higher-timeframe filter disabled OR higher-timeframe bias is not bearish AND trend is not strongly bearish AND (stock mode disabled OR bullish CHOCH)
+Short: prior oscillator > reversal extreme AND oscillator < momentum signal AND (oscillator − signal) falling AND close crosses below trend basis AND oscillator < signal AND (oscillator − signal) falling AND oscillator < prior oscillator AND bearish candle body > 30% of bar range AND higher-timeframe filter disabled OR higher-timeframe bias is not bullish AND trend is not strongly bullish AND (stock mode disabled OR bearish CHOCH)
+Long: stock mode enabled AND bullish trend state AND bullish structure state AND close > trend basis AND prior close < prior trend basis AND oscillator > momentum signal AND (oscillator − signal) rising
+Long: bullish trend state AND bullish structure state AND oscillator > momentum signal AND (oscillator − signal) rising AND oscillator < maximum entry stretch AND higher-timeframe bias is not bearish AND no final long signal on this bar
+Short: bearish trend state AND bearish structure state AND oscillator < momentum signal AND (oscillator − signal) falling AND oscillator > −maximum entry stretch AND higher-timeframe bias is not bullish AND no final short signal on this bar
+Long: prior oscillator < −reversal extreme AND oscillator > momentum signal AND (oscillator − signal) rising AND (close crosses above trend basis OR close crosses above lower volatility band) AND higher-timeframe bias is not bearish AND no final long or short signal on this bar
+Short: prior oscillator > reversal extreme AND oscillator < momentum signal AND (oscillator − signal) falling AND (close crosses below upper volatility band OR close crosses below trend basis) AND higher-timeframe bias is not bullish AND no final long or short signal on this bar

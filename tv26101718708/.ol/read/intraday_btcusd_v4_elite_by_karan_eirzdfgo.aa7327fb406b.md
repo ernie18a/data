@@ -1,0 +1,8 @@
+Calculation: Higher-timeframe bullish consensus = at least three higher-timeframe trends have short-term EMA > medium-term EMA > long-term EMA, using each higher timeframe’s last completed bar
+Calculation: Higher-timeframe bearish consensus = at least three higher-timeframe trends have short-term EMA < medium-term EMA < long-term EMA, using each higher timeframe’s last completed bar
+Calculation: Long stop = signal-bar low reduced by a percentage buffer; long target = signal-bar close + risk-reward multiple × (signal-bar close − long stop)
+Calculation: Short stop = signal-bar high increased by a percentage buffer; short target = signal-bar close − risk-reward multiple × (short stop − signal-bar close)
+Long: short-term EMA > medium-term EMA AND medium-term EMA > long-term EMA AND higher-timeframe bullish consensus AND close ≤ short-term EMA × anti-late threshold AND ((ATR > its longer-lookback SMA AND prior bar close < prior bar open AND prior bar close > current short-term EMA) OR (close > prior bar high AND high − low > ATR))
+Short: short-term EMA < medium-term EMA AND medium-term EMA < long-term EMA AND higher-timeframe bearish consensus AND close ≥ short-term EMA × anti-late threshold AND ((ATR > its longer-lookback SMA AND prior bar close > prior bar open AND prior bar close < current short-term EMA) OR (close < prior bar low AND high − low > ATR))
+Exit: long, low ≤ long stop OR high ≥ long target
+Exit: short, high ≥ short stop OR low ≤ short target

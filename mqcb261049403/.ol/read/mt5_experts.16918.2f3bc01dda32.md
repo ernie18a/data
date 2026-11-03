@@ -1,0 +1,4 @@
+Long: MACD main line on the higher timeframe: current forming bar < 0 AND previous completed bar < 0 AND second previous completed bar < 0 AND current forming bar > previous completed bar AND previous completed bar < second previous completed bar; AND Stochastic on the chart timeframe, current forming bar < 20
+Short: MACD main line on the higher timeframe: current forming bar > 0 AND previous completed bar > 0 AND second previous completed bar > 0 AND current forming bar < previous completed bar AND previous completed bar > second previous completed bar; AND Stochastic on the chart timeframe, current forming bar > 80
+Exit: long, low <= entry price - configured long stop-loss distance OR high >= entry price + configured long take-profit distance
+Exit: short, high >= entry price + configured short stop-loss distance OR low <= entry price - configured short take-profit distance

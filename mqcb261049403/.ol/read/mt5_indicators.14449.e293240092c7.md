@@ -1,0 +1,4 @@
+Calculation: Fast Step RSI = On the chart timeframe or a selected higher timeframe, calculate RSI from the selected applied price on each bar, including the bar still forming. Use the shorter step size s. For each RSI value r, start with prior upper band = −∞, prior lower band = +∞, and trend = 0. Set trend to +1 if r > prior upper band, then to −1 if r < prior lower band. Form upper = r + 2s and lower = r − 2s; when trend is +1, set lower = max(lower, prior lower); when trend is −1, set upper = min(upper, prior upper). The line is lower + s for trend +1 and upper − s for trend −1. Carry the resulting bands and trend forward bar by bar.
+Calculation: Slow Step RSI = Same calculation as Fast Step RSI, using a longer step size.
+Long: Fast Step RSI > Slow Step RSI
+Short: Fast Step RSI < Slow Step RSI

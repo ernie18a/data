@@ -1,0 +1,6 @@
+Calculation: Adjusted deviation = base close minus the secondary close linearly rescaled to match the base instrument’s high-low range over the training lookback, with the range lows aligned; for negative correlation, reflect the rescaled secondary price around the base range’s high. Use the prior completed chart-timeframe bars for closes.
+Calculation: Entry threshold = correction fraction × greatest absolute adjusted deviation over the extended trailing lookback.
+Long: Absolute adjusted deviation ≥ entry threshold AND its absolute value is no greater than on the preceding completed bar AND adjusted deviation < 0 (for the base instrument or direct-rate cross; reverse the direction for an inverse-rate cross).
+Short: Absolute adjusted deviation ≥ entry threshold AND its absolute value is no greater than on the preceding completed bar AND adjusted deviation > 0 (for the base instrument or direct-rate cross; reverse the direction for an inverse-rate cross).
+Exit: Long, adjusted deviation > 0 (reverse for an inverse-rate cross) OR absolute adjusted deviation < convergence fraction × entry threshold AND open-position profit > 0.
+Exit: Short, adjusted deviation < 0 (reverse for an inverse-rate cross) OR absolute adjusted deviation < convergence fraction × entry threshold AND open-position profit > 0.

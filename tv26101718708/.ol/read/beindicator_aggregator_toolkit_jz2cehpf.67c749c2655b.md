@@ -1,0 +1,4 @@
+Long: (RSI >= RSI-based moving average AND RSI > RSI from 3 bars ago AND Strong Buy signal = 1 AND (Strong Sell signal = 1 on any of the prior 1–6 bars)) OR (low from 3 bars ago <= liquidity support AND low > liquidity support AND low[1] > liquidity support AND low[2] > liquidity support AND (close >= high[4] OR low > high[4]))
+Short: (RSI <= RSI-based moving average AND RSI < RSI from 3 bars ago AND Strong Sell signal = 1 AND (Strong Buy signal = 1 on any of the prior 1–6 bars)) OR (high from 3 bars ago >= liquidity resistance AND high < liquidity resistance AND high[1] < liquidity resistance AND high[2] < liquidity resistance AND (close <= low[4] OR high < low[4]))
+Exit: Long, low <= stop-loss or high >= take-profit, on a bar after entry
+Exit: Short, high >= stop-loss or low <= take-profit, on a bar after entry

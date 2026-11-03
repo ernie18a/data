@@ -1,0 +1,2 @@
+Long: Fast moving average > slow moving average AND previous fast moving average <= previous slow moving average; the fast average uses a shorter lookback than the slow average
+Short: Fast moving average < slow moving average AND previous fast moving average >= previous slow moving average; the fast average uses a shorter lookback than the slow average

@@ -1,0 +1,4 @@
+Long: position side = flat AND current chart bar volume ≤ 1 AND previous completed chart bar open < moving average of close on the configured MA timeframe (using its current forming bar; timeframe may be higher or lower than chart timeframe) AND previous completed chart bar close > that moving average
+Short: position side = flat AND current chart bar volume ≤ 1 AND previous completed chart bar open > moving average of close on the configured MA timeframe (using its current forming bar; timeframe may be higher or lower than chart timeframe) AND previous completed chart bar close < that moving average
+Exit: long, price ≤ entry price − stop-loss distance OR price ≥ entry price + take-profit distance
+Exit: short, price ≥ entry price + stop-loss distance OR price ≤ entry price − take-profit distance

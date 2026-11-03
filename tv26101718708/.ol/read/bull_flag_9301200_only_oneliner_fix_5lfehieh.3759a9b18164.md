@@ -1,0 +1,5 @@
+Calculation: Bull-flag setup = a bullish bar whose high minus low is at least an ATR multiple and whose volume is at least a multiple of the longer-lookback average volume; initialize the impulse high and low and pullback low from that bar, then on each in-session bar increment the pullback-bar count and update the pullback low; invalidate when the pullback from the impulse high exceeds the maximum percentage of the impulse range or the bar count exceeds its limit
+Long: in session AND bull-flag setup was active at the start of the bar AND high > prior bar high AND volume >= a multiple of the same average volume used to qualify the impulse
+Calculation: Long stop = the lowest low tracked by the bull-flag setup
+Calculation: Long target = entry price + reward multiple × (entry price − long stop), using the close as the entry price
+Exit: long, low <= long stop OR high >= long target

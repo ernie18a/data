@@ -1,0 +1,2 @@
+Long: close > faster EMA AND close > slower EMA AND close > VWAP OR faster EMA crosses above slower EMA OR close crosses above VWAP
+Short: close <= faster EMA AND close <= slower EMA AND close <= VWAP OR faster EMA crosses below slower EMA OR close crosses below VWAP

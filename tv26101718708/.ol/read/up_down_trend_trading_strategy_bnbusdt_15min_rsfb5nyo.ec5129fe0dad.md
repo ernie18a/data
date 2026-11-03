@@ -1,0 +1,25 @@
+Calculation: RSI bucket = floor(RSI / 10) × 10, using separate short-, medium-, and long-lookback RSI values; the medium lookback is longer than the short and shorter than the long
+Calculation: RVI bucket = floor(RVI / 10) × 10, using separate short-, medium-, and long-lookback RVI values; the medium lookback is longer than the short and shorter than the long
+Calculation: MFI bucket = floor(MFI / 10) × 10, using separate short-, medium-, and long-lookback MFI values; the medium lookback is longer than the short and shorter than the long
+Calculation: RVI = 100 × EMA(positive changes in source standard deviation) / (EMA(positive changes in source standard deviation) + EMA(negative changes in source standard deviation))
+Calculation: Balance of Power = 100 × (close − open) / (high − low) + 50
+Calculation: Smoothed Balance of Power = SMA(Balance of Power, lookback)
+Calculation: ALMA slope = ALMA(open, lookback) rises or falls versus the previous bar
+Calculation: Bullish trend state = switch to bullish when close > prior bearish band; switch to bearish when close < prior bullish band; bands are source ± multiplier × ATR, carried forward using the prior close
+Calculation: Bottom pattern state = 1 when the rolling lowest low crosses the current low and the prior rolling lowest low is higher; then state 2 when state 1 and (open > close or open two bars ago > current close); then state 3 when state 2 and open < close; otherwise state 0
+Calculation: Market bottom = long-lookback RSI bucket ≤ lower RSI threshold AND medium RSI bucket < long RSI bucket AND short RSI bucket ≤ medium RSI bucket AND long-lookback RVI bucket ≤ lower RVI threshold AND medium RVI bucket ≤ long RVI bucket AND short RVI bucket ≤ medium RVI bucket AND long-lookback MFI bucket ≤ lower MFI threshold AND medium MFI bucket ≤ long MFI bucket AND short MFI bucket ≤ medium MFI bucket AND Smoothed Balance of Power ≤ lower Balance of Power threshold
+Long: bullish trend state switches from bearish to bullish AND flat position AND cooldown is false
+Long: Bottom pattern state = 2 AND (flat position AND Market bottom ended on the prior bar OR long position AND prior high < average entry price)
+Long: Market bottom ended on the prior bar AND flat position
+Long: long position AND prior low < average entry price × 0.95 OR prior low < average entry price × 0.90 OR prior low < average entry price × 0.85 OR prior low < average entry price × 0.80
+Long: long position AND SMA(low, 1) < average entry price × 0.99 AND SMA(close, 9) has fallen for its lookback AND (Market bottom ended on the prior bar OR low crosses under average entry price × 0.95 OR low crosses under average entry price × 0.90 OR low crosses under average entry price × 0.85 OR low crosses under average entry price × 0.80 OR (all bullish price-level conditions AND rising ALMA slope) OR the specified bullish price-level combinations)
+Long: (open or high ≥ smoothed bearish Supertrend OR open or high ≥ smoothed bullish Supertrend) AND open or high ≥ long-lookback SMA of HLCC4 AND open or high ≥ SAR AND rising ALMA slope
+Long: (close < smoothed bearish Supertrend OR low < smoothed bearish Supertrend) AND (close < smoothed bullish Supertrend OR low < smoothed bullish Supertrend) AND close < long-lookback SMA of HLCC4 AND close < SAR AND falling ALMA slope
+Long: close < long-lookback SMA of HLCC4 AND (open or high ≥ smoothed bearish Supertrend) AND (open or high ≥ smoothed bullish Supertrend) AND open or high ≥ SAR
+Long: (close < smoothed bearish Supertrend OR low < smoothed bearish Supertrend) AND (close < smoothed bullish Supertrend OR low < smoothed bullish Supertrend) AND close < long-lookback SMA of HLCC4 AND close < SAR AND falling ALMA slope
+Short: 
+Exit: long, (all bearish price-level conditions AND falling ALMA slope) OR (close < long-lookback SMA of HLCC4 AND close < SAR AND open or high ≥ smoothed bearish Supertrend AND open or high ≥ smoothed bullish Supertrend) OR (open or high ≥ smoothed bullish Supertrend AND close < smoothed bearish Supertrend AND close < SAR AND close < long-lookback SMA of HLCC4) OR (open or high ≥ smoothed bullish Supertrend AND close < smoothed bearish Supertrend AND close < SAR) OR low crosses under average entry price × (1 + profit target)
+Exit: long, general-market-up condition AND expected profit level < SMA(low, 1)
+Exit: long, low crosses under average entry price × (1 − stop-loss fraction) AND open trades ≥ 90% of the pyramiding limit AND stop loss enabled
+Exit: long, bullish trend state switches from bullish to bearish OR (all bearish price-level conditions AND falling ALMA slope) OR low crosses under average entry price × (1 + profit target), AND expected profit level ≤ SMA(low, 1)
+Exit: long, (close > average entry price OR general-market-up condition) AND cooldown is false AND intermediate profit taking enabled

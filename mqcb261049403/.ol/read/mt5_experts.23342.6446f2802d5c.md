@@ -1,0 +1,5 @@
+Calculation: Spearman rank correlation = Spearman coefficient between chronological ranks and close-price ranks over a lookback window, after rounding prices to instrument precision; tied prices receive average ranks. Use bars from the configured indicator timeframe (which may be higher or lower than the chart timeframe), and only completed bars.
+Long: current Spearman rank correlation > 0 AND previous Spearman rank correlation <= 0 AND current datetime is within the configured weekly trading interval
+Short: current Spearman rank correlation < 0 AND previous Spearman rank correlation >= 0 AND current datetime is within the configured weekly trading interval
+Exit: long, Spearman rank correlation < 0 OR current datetime is outside the configured weekly trading interval
+Exit: short, Spearman rank correlation > 0 OR current datetime is outside the configured weekly trading interval

@@ -1,0 +1,5 @@
+Calculation: Adaptive line = For each bar, calculate a selectable moving average M of a selectable OHLC-derived price over a lookback, and variance V as the mean squared deviation of those same lookback prices from the current M. Initialize the line to M through the moving average's warm-up. Thereafter, let D = (previous line − M)² and set the line to previous line + K × (M − previous line), where K = 0 if D < V or D = 0, otherwise K = 1 − V / D. Calculate on the chart timeframe or a selectable higher or lower timeframe; use the last completed bar or, if selected, the still-forming bar. References to previous values are consecutive bars of that timeframe.
+Long: adaptive line > previous adaptive line AND adaptive line two bars ago >= previous adaptive line
+Short: adaptive line < previous adaptive line AND adaptive line two bars ago <= previous adaptive line
+Exit: long, adaptive line < previous adaptive line OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, adaptive line > previous adaptive line OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

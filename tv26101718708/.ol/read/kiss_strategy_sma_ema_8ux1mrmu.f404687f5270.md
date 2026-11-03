@@ -1,0 +1,11 @@
+Calculation: Short-period SMA = simple moving average of close with a shorter lookback than the long-period SMA
+Calculation: Long-period SMA = simple moving average of close with a longer lookback than the short-period SMA
+Calculation: Strong slope = absolute difference between the short-period and long-period SMAs' respective absolute changes over two chart bars > a threshold
+Calculation: Uptrend history = at the current chart bar, close is greater than each of the last configured number of completed weekly closes; evaluate this condition again at a chart bar offset by that number × 7
+Calculation: Downtrend history = at the current chart bar, close is less than each of the last configured number of completed weekly closes; evaluate this condition again at a chart bar offset by that number × 7
+Calculation: MACD line = shorter-lookback EMA of close − longer-lookback EMA of close
+Calculation: MACD signal line = 9-period SMA of the MACD line
+Long: short-period SMA crosses above long-period SMA OR (SMA entry filter disabled OR (short-period SMA crosses above long-period SMA AND strong slope AND downtrend history)) AND (MACD entry filter disabled OR (MACD line crosses above MACD signal line at the configured chart-bar offset AND MACD line < 0 AND strong slope AND current downtrend history)) AND long-trend mode enabled AND datetime is within the configured backtest window
+Short: short-period SMA crosses below long-period SMA OR (SMA entry filter disabled OR (short-period SMA crosses below long-period SMA AND strong slope AND uptrend history)) AND (MACD entry filter disabled OR (MACD line crosses below MACD signal line at the configured chart-bar offset AND MACD signal line > 0 AND strong slope AND current uptrend history)) AND short-trend mode enabled AND datetime is within the configured backtest window
+Exit: long, low ≤ entry price × (1 − stop-loss fraction) OR high ≥ entry price × (1 + take-profit fraction) OR (trailing stop enabled AND low ≤ the greater of the prior long trailing stop and close × (1 − trailing-loss fraction))
+Exit: short, high ≥ entry price × (1 + stop-loss fraction) OR low ≤ entry price × (1 − take-profit fraction) OR (trailing stop enabled AND high ≥ the lesser of the prior short trailing stop and close × (1 + trailing-loss fraction))

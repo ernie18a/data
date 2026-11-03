@@ -1,0 +1,4 @@
+Calculation: previous higher-timeframe high = high of the last completed bar on a higher timeframe
+Calculation: average volume = simple moving average of volume over a lookback
+Long: (close > VWAP AND short-term EMA > longer-term EMA AND RSI is between a lower and upper threshold AND close > previous higher-timeframe high AND volume > a multiple of average volume) OR (close > longer-term EMA AND longer-term EMA > still-longer-term EMA AND RSI is between a lower and upper threshold AND volume > average volume AND close > previous higher-timeframe high)
+Short: close < VWAP AND close < short-term EMA AND RSI > a threshold AND volume < average volume

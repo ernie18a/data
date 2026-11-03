@@ -1,0 +1,5 @@
+Calculation: i-BandsPrice = JJMA-smoothed value of 100 × (P − (M − D)) / (2D) − 50, where P is the applied price, M is its XMA, and D is its standard deviation around M multiplied by the band-deviation parameter; use the configured indicator timeframe (same as, higher, or lower than the chart timeframe) and completed bars.
+Long: i-BandsPrice on the latest completed indicator-timeframe bar > upper level AND i-BandsPrice on the preceding completed bar ≤ upper level
+Short: i-BandsPrice on the latest completed indicator-timeframe bar < lower level AND i-BandsPrice on the preceding completed bar ≥ lower level
+Exit: Long, i-BandsPrice on the latest completed indicator-timeframe bar < 0 OR price ≤ entry price − stop-loss distance OR price ≥ entry price + take-profit distance
+Exit: Short, i-BandsPrice on the latest completed indicator-timeframe bar ≥ 0 OR price ≥ entry price + stop-loss distance OR price ≤ entry price − take-profit distance

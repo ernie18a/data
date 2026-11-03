@@ -1,0 +1,1 @@
+For an FX pair, calculate each currency’s strength as the equally weighted average of its signed log returns against the other major currencies, then rank the currencies by cumulative strength. Go long when the pair’s base currency ranks strongest and its quote currency ranks weakest; go short when the quote ranks strongest and the base ranks weakest. No exit rule is specified.

@@ -1,0 +1,2 @@
+Long: On each enabled timeframe, use its last completed bar, whether that timeframe is higher or lower than the chart timeframe: close crosses above the previous bar’s high AND close > open AND previous close < previous open
+Short: On each enabled timeframe, use its last completed bar, whether that timeframe is higher or lower than the chart timeframe: close crosses below the previous bar’s low AND close < open AND previous close > previous open

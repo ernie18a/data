@@ -1,0 +1,2 @@
+Long: On a gap timeframe higher than, lower than, or equal to the chart timeframe, the latest completed bar's low > that timeframe's high three bars back OR the latest available close on that timeframe > the top of an active, unexpired bearish fair value gap
+Short: On a gap timeframe higher than, lower than, or equal to the chart timeframe, the latest completed bar's high < that timeframe's low three bars back OR the latest available close on that timeframe < the bottom of an active, unexpired bullish fair value gap

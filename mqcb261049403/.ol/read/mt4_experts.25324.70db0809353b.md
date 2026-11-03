@@ -1,0 +1,5 @@
+Calculation: Fast and slow linear weighted moving averages = linear weighted averages of typical price on a higher timeframe’s still-forming bar; the fast lookback is shorter than the slow lookback.
+Long: fast moving average > slow moving average AND low two chart bars ago < high one chart bar ago AND the absolute difference between the current chart bar’s open and close two bars ago exceeds a price-point-scaled retracement threshold
+Short: fast moving average < slow moving average AND low one chart bar ago < high two chart bars ago AND the absolute difference between the current chart bar’s open and close one bar ago exceeds a price-point-scaled retracement threshold
+Exit: long, price <= active stop-loss level OR price >= active take-profit level
+Exit: short, price >= active stop-loss level OR price <= active take-profit level

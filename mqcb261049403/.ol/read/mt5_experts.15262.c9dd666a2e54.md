@@ -1,0 +1,5 @@
+Calculation: Elliott Wave Oscillator = shorter-lookback smoothing of median price minus longer-lookback smoothing of median price, calculated on the configured indicator timeframe using completed bars
+Long: Elliott Wave Oscillator on the latest completed bar > its value on the preceding completed bar AND its value on the preceding completed bar < its value two completed bars earlier
+Short: Elliott Wave Oscillator on the latest completed bar < its value on the preceding completed bar AND its value on the preceding completed bar > its value two completed bars earlier
+Exit: short, Elliott Wave Oscillator on the latest completed bar > its value on the preceding completed bar AND its value on the preceding completed bar < its value two completed bars earlier
+Exit: long, Elliott Wave Oscillator on the latest completed bar < its value on the preceding completed bar AND its value on the preceding completed bar > its value two completed bars earlier

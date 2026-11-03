@@ -1,0 +1,1 @@
+For each open position whose instrument matches a configured basket instrument and whose direction matches that instrument’s configured side, exit the position when its floating profit reaches the configured positive profit threshold or its floating loss reaches the configured loss threshold.

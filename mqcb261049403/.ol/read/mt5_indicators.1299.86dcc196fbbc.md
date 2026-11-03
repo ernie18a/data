@@ -1,0 +1,3 @@
+Calculation: Renko box direction = bullish or bearish boxes generated from lower-timeframe closes, including the still-forming bar; continuation requires a close more than one box beyond the latest box, and reversal requires a close more than two boxes beyond it in the opposite direction, with additional boxes added for each further one-box move
+Long: Previous Renko box is bearish AND current Renko box is bullish
+Short: Previous Renko box is bullish AND current Renko box is bearish

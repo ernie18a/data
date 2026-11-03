@@ -1,0 +1,2 @@
+Long: close of the short-term timeframe’s last completed bar crosses above open of the long-term timeframe’s last completed bar AND chart time > configured start timestamp
+Exit: long, close of the short-term timeframe’s last completed bar crosses below open of the long-term timeframe’s last completed bar AND chart time > configured start timestamp

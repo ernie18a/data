@@ -1,0 +1,3 @@
+Calculation: Volume delta around pivot = sum over the pivot window of volume × (2 × (close − low) / (high − low) − 1); when high = low, use +volume if close ≥ open, otherwise −volume. The window extends the same swing length before and after the pivot.
+Long: Confirmed pivot low AND absolute volume delta is at least the minimum percentage of the greatest absolute volume delta among active levels retained under the configured level cap AND close is above the pivot level.
+Short: Confirmed pivot high AND absolute volume delta is at least the minimum percentage of the greatest absolute volume delta among active levels retained under the configured level cap AND close is below the pivot level.

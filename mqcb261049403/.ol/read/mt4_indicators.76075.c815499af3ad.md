@@ -1,0 +1,3 @@
+Calculation: Swing-pivot zone = cluster swing highs and lows from chart-timeframe bars, merging pivots within an ATR-based distance; zone price is the touch-weighted average of its pivots. Keep zones meeting the minimum-touch and maximum-distance filters, ranked by touch count and capped at the display limit. A swing high/low is a bar whose high/low is no lower/higher than the specified number of bars on both sides; use only completed bars.
+Long: displayed chart-timeframe zone price < current close
+Short: displayed chart-timeframe zone price >= current close

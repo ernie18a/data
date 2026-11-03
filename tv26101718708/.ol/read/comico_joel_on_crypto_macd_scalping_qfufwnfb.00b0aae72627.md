@@ -1,0 +1,12 @@
+Calculation: Trend moving averages = selected moving average of close with the long-term average using a longer lookback than the short-term average
+Calculation: MACD histogram = EMA of the difference between short- and long-lookback close EMAs, minus an EMA of that difference; calculate on a lower timeframe and use the last completed lower-timeframe bar
+Calculation: MACD tick = selected value from the latest five lower-timeframe MACD histogram bars: the maximum if the current histogram is positive or the minimum if negative, their average, or the latest value, according to the selected mode
+Calculation: Tick cloud bounds = separate EMAs of MACD tick multiplied by a configurable factor, carrying the scaled tick value forward separately while the tick is positive and negative; the positive-tick EMA is the upper bound and the negative-tick EMA is the lower bound
+Calculation: EMA distance ratio = absolute value of the ratio of the short-term trend moving average to the long-term trend moving average, minus 1
+Calculation: Trade count = number of eligible signals since the short-term and long-term trend moving averages last changed order
+Calculation: Signal count = number of consecutive bars where the MACD tick is outside the tick cloud; reset when it is inside the cloud
+Long: short-term trend moving average > long-term trend moving average AND MACD tick < lower tick cloud bound AND minimum EMA distance ratio < EMA distance ratio < maximum EMA distance ratio AND configured trade-count range includes the trade count AND configured signal-count range includes the signal count AND trade-group limit not reached AND date, weekday, session, and news filters allow trading AND close is no lower than the permitted next-buy price
+Short: short-term trend moving average < long-term trend moving average AND MACD tick > upper tick cloud bound AND minimum EMA distance ratio < EMA distance ratio < maximum EMA distance ratio AND configured trade-count range includes the trade count AND configured signal-count range includes the signal count AND trade-group limit not reached AND date, weekday, session, and news filters allow trading AND close is no higher than the permitted next-sell price
+Exit: long, high >= signal-bar close × (1 + take-profit fraction) OR low <= signal-bar close × (1 − stop-loss fraction)
+Exit: short, low <= signal-bar close × (1 − take-profit fraction) OR high >= signal-bar close × (1 + stop-loss fraction)
+Exit: any, trade session reversal becomes active OR configured Friday/Saturday close session ends

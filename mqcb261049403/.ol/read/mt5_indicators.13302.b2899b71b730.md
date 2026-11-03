@@ -1,0 +1,3 @@
+Calculation: Color Zero Lag RSI OSMA = On the chart timeframe, or on the selected higher timeframe’s still-forming bar, calculate five RSIs on the selected applied price with progressively longer lookbacks p1 < p2 < p3 < p4 < p5. Let F = w1·RSI(p1) + w2·RSI(p2) + w2·RSI(p3) + w4·RSI(p4) + w5·RSI(p5); S = (F + (n1−1)·previous S)/n1; OSMA = (F−S + (n2−1)·previous OSMA)/n2. The third RSI uses the second RSI’s weight.
+Long: Color Zero Lag RSI OSMA > 0
+Short: Color Zero Lag RSI OSMA < 0

@@ -1,0 +1,2 @@
+Long: close > close at the lookback bar AND (volume > volume at the lookback bar OR volume < volume at the lookback bar)
+Short: close < close at the lookback bar AND (volume > volume at the lookback bar OR volume < volume at the lookback bar)

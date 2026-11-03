@@ -1,0 +1,3 @@
+Calculation: NQ beta-adjusted anchored residual z-score = [(NQ percent change from the selected shared anchor) − (NQ’s OLS beta to ES × ES percent change from that anchor)] ÷ [standard deviation over the beta lookback of one-bar residual returns (NQ return − beta × ES return, in percent) × square root of bars since anchor]. Fit beta on chart-timeframe returns from the preceding lookback, excluding the bar being scored. Use chart-timeframe closes; for period-open anchors requested from a higher timeframe, use that period’s forming bar open; for prior-close anchors, use the last completed daily bar’s close.
+Long: NQ beta-adjusted anchored residual z-score > divergence threshold
+Short: NQ beta-adjusted anchored residual z-score < − divergence threshold

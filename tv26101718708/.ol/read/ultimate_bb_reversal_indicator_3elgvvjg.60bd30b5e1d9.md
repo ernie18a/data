@@ -1,0 +1,3 @@
+Calculation: Bollinger Bands = simple moving average of close ± standard deviation of close × multiplier
+Long: close > lower band on each of the last confirmation-bars bars AND close[confirmation-bars] ≤ lower band[confirmation-bars] AND RSI < oversold level on at least one of the current bar through confirmation-bars + 2 bars ago AND volume > volume moving average × multiplier AND (RSI > prior RSI when the RSI-turn filter is enabled)
+Short: close < upper band on each of the last confirmation-bars bars AND close[confirmation-bars] ≥ upper band[confirmation-bars] AND RSI > overbought level on at least one of the current bar through confirmation-bars + 2 bars ago AND volume > volume moving average × multiplier AND (RSI < prior RSI when the RSI-turn filter is enabled)

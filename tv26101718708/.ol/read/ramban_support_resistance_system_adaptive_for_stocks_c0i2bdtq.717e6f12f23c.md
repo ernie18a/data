@@ -1,0 +1,7 @@
+Calculation: Confirmed HTF pivot highs/lows = pivot highs/lows requiring the configured left and right bars; calculated from higher-timeframe bars and used only once confirmed.
+Calculation: Support/resistance levels = retained pivot lows/highs, respectively, adding a new level only when its distance from every stored level is at least the configured minimum percentage of the new level; retain only the configured number of most recent levels per side.
+Calculation: Buy level = stored support closest to the current low within the configured percentage tolerance of the low; if none qualifies, use the closest qualifying resistance.
+Calculation: Sell level = stored resistance closest to the current high within the configured percentage tolerance of the high; if none qualifies, use the closest qualifying support.
+Calculation: Stop price = entry price minus the configured percentage of the entry price.
+Long: Position is flat AND bar is confirmed AND current time is in the configured signal session AND a buy level exists.
+Exit: Long, bar is confirmed AND (low <= stop price OR (current time is in the configured signal session AND a sell level exists)) OR current time is outside the configured signal session AND the previous bar was in session.

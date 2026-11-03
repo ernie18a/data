@@ -1,0 +1,4 @@
+Calculation: Fibonacci 50% and 61.8% retracement levels = highest high and lowest low over the active lookback, retraced from the high by 50% and 61.8% of their range; the lookback resets each day and grows from the first bar to its configured maximum.
+Long: short-lookback ALMA crosses above medium-lookback ALMA AND short-lookback ALMA > medium-lookback ALMA > long-lookback ALMA
+Long: short-lookback ALMA crosses above medium-lookback ALMA AND short-lookback ALMA > medium-lookback ALMA > long-lookback ALMA AND close is between the Fibonacci 61.8% and 50% retracement levels, inclusive
+Short: medium-lookback ALMA crosses below long-lookback ALMA AND short-lookback ALMA < medium-lookback ALMA < long-lookback ALMA

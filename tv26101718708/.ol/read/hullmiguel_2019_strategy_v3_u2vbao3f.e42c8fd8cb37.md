@@ -1,0 +1,2 @@
+Long: Shorter-lookback EMA of close is greater than every value in its rising lookback AND longer-lookback EMA of close is greater than every value in the same rising lookback
+Short: Shorter-lookback EMA of close is less than every value in its falling lookback AND longer-lookback EMA of close is less than every value in the same falling lookback

@@ -1,0 +1,3 @@
+Calculation: Buy and sell volume at each price level = sum over completed bars in the configured volume timeframe within the lookback period, adding an inferred amount to every price tick from low through high. For bullish bars (close > open), add volume × (range + body) / [range × (2 × range + body)] to buy volume and volume / (2 × range + body) to sell volume. For bearish or doji bars, add volume / (2 × range + body) to buy volume and volume × (range + body) / [range × (2 × range + body)] to sell volume; range and body are measured in price ticks. The volume timeframe may be higher or lower than the chart timeframe; use completed bars only.
+Long: Buy volume at a price level > sell volume at that level
+Short: Buy volume at a price level < sell volume at that level

@@ -1,0 +1,5 @@
+Calculation: Delta = On each confirmed chart bar, use all completed lower-timeframe bars within it. For each, signed volume is volume when close > open, −volume when close < open, and 0 when equal. Find the minimum and maximum open or close across those bars and divide that range into equal bins. Map each bar’s minimum and maximum open/close to bins, clamping each index to the bin range. Add its signed volume divided by max(abs(bin-index difference), 1) to every bin from the lower index through the higher index, inclusive; Delta is the sum of the bins. If there are no lower-timeframe bars, Delta is chart-bar volume when close > open, otherwise −volume.
+Long: Delta > delta threshold AND datetime >= configured start date AND flat
+Short: Delta < −delta threshold AND datetime >= configured start date AND flat
+Exit: long, high >= entry price + take-profit distance OR low <= entry price − stop-loss distance
+Exit: short, low <= entry price − take-profit distance OR high >= entry price + stop-loss distance

@@ -1,0 +1,2 @@
+Long: Shorter-lookback EMA crosses above longer-lookback EMA, both calculated on the higher timeframe using its last completed bar
+Short: Shorter-lookback EMA crosses below longer-lookback EMA, both calculated on the higher timeframe using its last completed bar

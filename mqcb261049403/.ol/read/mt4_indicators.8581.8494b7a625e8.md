@@ -1,0 +1,2 @@
+Long: For every included timeframe, its moving average on the last completed bar is greater than on the preceding completed bar; for timeframes other than the chart timeframe, use aggregated bars from a higher or lower timeframe as applicable.
+Short: For every included timeframe, its moving average on the last completed bar is less than on the preceding completed bar; for timeframes other than the chart timeframe, use aggregated bars from a higher or lower timeframe as applicable.

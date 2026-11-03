@@ -1,0 +1,3 @@
+Calculation: ATR filter = ATR >= simple moving average of ATR multiplied by a volatility factor
+Long: (RSI crosses above its oversold threshold AND close > fast EMA) OR (RSI < an upper threshold AND close crosses above fast EMA) OR (fast EMA crosses above slow EMA AND RSI < an upper threshold); AND ATR filter AND fast EMA >= slow EMA
+Short: (RSI crosses below its overbought threshold AND close < fast EMA) OR (RSI > a lower threshold AND close crosses below fast EMA) OR (fast EMA crosses below slow EMA AND RSI > a lower threshold); AND ATR filter AND fast EMA < slow EMA

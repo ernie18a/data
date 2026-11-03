@@ -1,0 +1,2 @@
+Long: For every enabled timeframe (same as, higher, or lower than the chart timeframe), the candle selected by the shift setting is bullish (close > open); the selected candle may still be forming or may be completed, as determined by the shift setting.
+Short: For every enabled timeframe (same as, higher, or lower than the chart timeframe), the candle selected by the shift setting is bearish (open > close); the selected candle may still be forming or may be completed, as determined by the shift setting.

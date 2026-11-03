@@ -1,0 +1,3 @@
+Calculation: OsMA = (fast EMA of weighted close − slow EMA of weighted close − EMA of their difference) × (slow EMA lookback / fast EMA lookback)
+Long: Current OsMA > previous OsMA (calculated on the chart timeframe or a selected higher timeframe, using its still-forming bar)
+Short: Current OsMA < previous OsMA (calculated on the chart timeframe or a selected higher timeframe, using its still-forming bar)

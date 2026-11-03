@@ -1,0 +1,2 @@
+Long: EMA(shorter) crosses above EMA(medium) AND high > EMA(medium) OR EMA(medium) crosses above EMA(longer) OR EMA(shorter) crosses above EMA(longest); higher-timeframe EMA(medium) > EMA(longer) on the last completed bar AND higher-timeframe EMA(medium) > EMA(longer) on the last completed bar
+Exit: long, EMA(shorter) crosses below EMA(longer) OR EMA(shorter) crosses below EMA(longest) OR low <= entry price × (1 − stop-loss percentage)

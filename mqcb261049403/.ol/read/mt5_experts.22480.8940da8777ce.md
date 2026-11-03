@@ -1,0 +1,6 @@
+Calculation: Volume-weighted oscillator = moving average of ((Williams %R + 50) × volume), using the same smoothing method and length as the moving average of volume.
+Calculation: Upper and lower thresholds = their respective level parameters multiplied by the moving average of volume; the outer upper level is above the inner upper level, and the outer lower level is below the inner lower level. Evaluate the oscillator and thresholds on the chart timeframe or a configurable higher or lower timeframe, using the last completed bar by default or the still-forming bar if configured; previous values are from the preceding bar of that timeframe.
+Long: Oscillator > inner upper threshold.
+Short: Oscillator < inner lower threshold.
+Exit: long, oscillator < inner lower threshold OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, oscillator > inner upper threshold OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

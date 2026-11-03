@@ -1,0 +1,3 @@
+Calculation: Positive directional proportion = Wilder-smoothed positive changes in the selected price series, divided by the sum of Wilder-smoothed positive and negative changes; then Wilder-smoothed again using the same lookback. Negative directional proportion = the equivalent calculation for negative changes, using the same lookback. When calculated on a higher timeframe, use its bar still forming.
+Long: Positive directional proportion > 0.5
+Short: Negative directional proportion > 0.5

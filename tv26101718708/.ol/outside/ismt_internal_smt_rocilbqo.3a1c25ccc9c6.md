@@ -1,0 +1,1 @@
+Go long when the traded instrument makes a lower low than the prior bar while either comparison instrument makes a higher low. Go short when it makes a higher high while either comparison instrument makes a lower high. These conditions also trigger the corresponding bullish or bearish divergence signal.

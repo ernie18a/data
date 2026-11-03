@@ -1,0 +1,12 @@
+Calculation: Trend base long signal = after a completed bar closes above the trend VWMA, store that close and set a pending long setup, clearing any pending short setup; signal when the VWMA crosses above the stored close while the alternating base-signal phase is long, then clear the setup and switch the phase to short. The phase starts long.
+Calculation: Trend base short signal = after a completed bar closes below the trend VWMA, store that close and set a pending short setup, clearing any pending long setup; signal when the VWMA crosses below the stored close while the alternating base-signal phase is short, then clear the setup and switch the phase to long.
+Calculation: Reversion base long signal = the same long setup and alternating-phase sequence using the reversion HMA in place of the trend VWMA, with its own independent state that starts in the long phase.
+Calculation: Reversion base short signal = the same short setup and alternating-phase sequence using the reversion HMA in place of the trend VWMA, with its own independent state that starts in the long phase.
+Calculation: Trend-line touch flag = true after a bar's high-low range intersects the trend EMA or either boundary of its percentage band, or its close is inside that band; retain true until a new position or an opposite base signal resets it.
+Long: Trend base long signal AND close > trend EMA AND trend-line touch flag was true on the previous bar AND long trading enabled AND datetime >= configured start datetime
+Long: Reversion base long signal AND close < 0.99 × reversion EMA AND long trading enabled AND datetime >= configured start datetime
+Short: Trend base short signal AND close < trend EMA AND trend-line touch flag was true on the previous bar AND short trading enabled AND datetime >= configured start datetime
+Short: Reversion base short signal AND close > 1.01 × reversion EMA AND short trading enabled AND datetime >= configured start datetime
+Exit: Long, trend base short signal OR (reversion base short signal AND close > 1.01 × reversion EMA) OR reversion base short signal OR (trend base short signal AND close < trend EMA AND trend-line touch flag was true on the previous bar)
+Exit: Short, trend base long signal OR (reversion base long signal AND close < 0.99 × reversion EMA) OR reversion base long signal OR (trend base long signal AND close > trend EMA AND trend-line touch flag was true on the previous bar)
+Calculation: Reversion EMA = EMA of close with a longer lookback than the trend EMA.

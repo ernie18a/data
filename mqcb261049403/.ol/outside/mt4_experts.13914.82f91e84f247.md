@@ -1,0 +1,1 @@
+If scheduled profit-taking is enabled, close each strategy-owned long position when the broker-server hour equals the configured closing hour, the minute is at or after the configured starting minute, and the position's floating profit exceeds the configured profit threshold multiplied by the instrument's pip size.

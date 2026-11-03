@@ -1,0 +1,2 @@
+Long: Fast Supertrend direction = bullish AND slow Supertrend direction = bullish AND close > SMA of high AND close > VWAP AND close > EMA of close
+Short: Fast Supertrend direction = bearish AND slow Supertrend direction = bearish AND close < SMA of low AND close < VWAP AND close < EMA of close

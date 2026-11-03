@@ -1,0 +1,3 @@
+Calculation: Final RSI = subtract 50 from the result of recursively smoothing twice, with the same smoothing factor, two successive 0–100 rolling min–max normalizations using the same lookback, and a moving average of RSI(close) − 50 clipped to the configured symmetric range; each normalization falls back to the prior source value when its rolling range is zero, and each smoothing starts with the source value.
+Long: Final RSI crosses above the oversold level
+Short: Final RSI crosses below the overbought level

@@ -1,0 +1,3 @@
+Calculation: Untouched prior-period levels = highs and lows of completed UTC days and Monday-start UTC weeks; retain each level until price trades strictly beyond it or its configured age limit expires.
+Long: On the last completed confirmation-timeframe bar (timeframe equal to or higher than the chart timeframe), low < an untouched prior-period low AND close >= that low OR close > an untouched prior-period high
+Short: On the last completed confirmation-timeframe bar (timeframe equal to or higher than the chart timeframe), high > an untouched prior-period high AND close <= that high OR close < an untouched prior-period low

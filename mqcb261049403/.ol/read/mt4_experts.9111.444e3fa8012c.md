@@ -1,0 +1,4 @@
+Long: RSI < lower threshold AND (Stochastic main > signal [and, when high/low filtering is enabled, main > upper threshold]) AND +DI > -DI AND (when ADX strength filtering is enabled, ADX > threshold) AND (when enabled, Parabolic SAR > close) AND close > moving average; require agreement only among enabled indicators, and only combinations supported by the EA's configuration logic produce signals
+Short: RSI > upper threshold AND (Stochastic main < signal [and, when high/low filtering is enabled, main < lower threshold]) AND +DI < -DI AND (when ADX strength filtering is enabled, ADX > threshold) AND (when enabled, Parabolic SAR < close) AND close < moving average; require agreement only among enabled indicators, and only combinations supported by the EA's configuration logic produce signals
+Exit: long, low <= active stop-loss OR high >= take-profit
+Exit: short, high >= active stop-loss OR low <= take-profit

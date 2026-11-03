@@ -1,0 +1,5 @@
+Calculation: Fine-tuned moving average = weighted average of the selected OHLC-derived price on the current and preceding bars; for lookback N, normalize the weights proportional to [s1 + (h/(N−1))^r1(1−s1)] × [s2 + (1−h/(N−1))^r2(1−s2)] × [s3 + |1−2h/(N−1)|^r3(1−s3)], for h = 0…N−1. Use chart-timeframe bars, or the configured higher-timeframe bars; for the higher timeframe, use its still-forming bar.
+Calculation: Moving-average change standard deviation = population standard deviation of the last L one-bar changes in the fine-tuned moving average, including the current change.
+Calculation: Lower threshold = lower positive multiplier × moving-average change standard deviation; upper threshold = higher positive multiplier × moving-average change standard deviation.
+Long: Current fine-tuned moving average − previous fine-tuned moving average > lower threshold
+Short: Current fine-tuned moving average − previous fine-tuned moving average < −lower threshold

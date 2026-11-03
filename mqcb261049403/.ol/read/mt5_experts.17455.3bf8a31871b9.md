@@ -1,0 +1,7 @@
+Calculation: Price momentum = selected applied price on a higher-timeframe bar minus that price one momentum lookback earlier
+Calculation: Directional line = momentum lookback × the selected smoothing of price momentum over the momentum lookback, on the higher timeframe
+Calculation: TDI line = absolute value of the directional line − (2 × momentum lookback × the same smoothing of absolute price momentum over twice the momentum lookback − absolute price momentum), on the higher timeframe
+Long: Directional line on the latest completed higher-timeframe bar > TDI line on that bar AND directional line on the preceding completed higher-timeframe bar ≤ TDI line on that bar OR position side is long AND current price − last entry price, in points, > the scale-step threshold AND number of prior scale-ins < the scale-in limit
+Short: Directional line on the latest completed higher-timeframe bar < TDI line on that bar AND directional line on the preceding completed higher-timeframe bar ≥ TDI line on that bar OR position side is short AND last entry price − current price, in points, > the scale-step threshold AND number of prior scale-ins < the scale-in limit
+Exit: long, directional line on the latest completed higher-timeframe bar < TDI line on that bar
+Exit: short, directional line on the latest completed higher-timeframe bar > TDI line on that bar

@@ -1,0 +1,6 @@
+Calculation: Zero-lag EMA = EMA(close + (close − close[lag]), length), where lag = floor((length − 1) / 2)
+Calculation: Volatility buffer = highest ATR(length) over floor(1.5 × length) bars × volatility multiplier
+Calculation: Trend state = 1 when close crosses above zero-lag EMA + volatility buffer; −1 when close crosses below zero-lag EMA − volatility buffer; otherwise retain the prior state
+Calculation: Weighted regime score = chart trend state + trend state from the first higher timeframe + 2 × trend state from the second higher timeframe + 3 × trend state from the third higher timeframe + 4 × trend state from the fourth higher timeframe + 5 × trend state from the fifth higher timeframe; use each higher timeframe’s still-forming bar
+Long: close crosses above zero-lag EMA AND weighted regime score > 0 OR weighted regime score crosses above 0 OR close > zero-lag EMA AND weighted regime score > 0 OR fast EMA(close) > slow EMA(close) OR chart trend state = 1 OR any higher-timeframe trend state = 1
+Short: close crosses below zero-lag EMA AND weighted regime score < 0 OR weighted regime score crosses below 0 OR close < zero-lag EMA AND weighted regime score < 0 OR fast EMA(close) < slow EMA(close) OR chart trend state = −1 OR any higher-timeframe trend state = −1

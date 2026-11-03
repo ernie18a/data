@@ -1,0 +1,5 @@
+Calculation: Opening-range high/low = highest high and lowest low during the opening-range session
+Calculation: Candle body percentage = absolute(close − open) / (high − low) × 100; use 0 when high equals low
+Long: Opening range is complete AND current bar is in the entry session AND close > opening-range high + breakout buffer AND previous close ≤ opening-range high + breakout buffer AND close > open AND candle body percentage ≥ minimum threshold AND higher-timeframe fast EMA > slow EMA AND higher-timeframe close > higher-timeframe VWAP
+Short: Opening range is complete AND current bar is in the entry session AND close < opening-range low − breakout buffer AND previous close ≥ opening-range low − breakout buffer AND close < open AND candle body percentage ≥ minimum threshold AND higher-timeframe fast EMA < slow EMA AND higher-timeframe close < higher-timeframe VWAP
+Exit: 

@@ -1,0 +1,6 @@
+Calculation: Chart-timeframe moving average = selected moving average of close, using the same method and lookback as the daily moving average
+Calculation: Daily moving average = selected moving average of close on higher-timeframe daily bars, using the same method and lookback as the chart-timeframe moving average; use the daily bar still forming
+Long: (inversion disabled AND chart-timeframe moving average crosses above daily moving average OR inversion enabled AND chart-timeframe moving average crosses below daily moving average) AND datetime is within the configured date range AND time is within the configured session
+Short: (inversion disabled AND chart-timeframe moving average crosses below daily moving average OR inversion enabled AND chart-timeframe moving average crosses above daily moving average) AND datetime is within the configured date range AND time is within the configured session
+Exit: long, daily moving average / chart-timeframe moving average > configured distance threshold
+Exit: short, chart-timeframe moving average / daily moving average > configured distance threshold

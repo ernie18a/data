@@ -1,0 +1,5 @@
+Calculation: Body size = absolute difference between close and open
+Calculation: Average body size = simple moving average of body size
+Calculation: Body ratio = body size / (high - low)
+Long: On the last completed lower-timeframe bar, low <= the lowest low of the preceding lookback bars on at least one of the current or previous four bars AND low > high two bars earlier AND body size > average body size × displacement multiplier AND body ratio >= minimum body ratio AND close > open AND chart bar is confirmed AND chart bars since the last long marking > cooldown
+Short: On the last completed lower-timeframe bar, high >= the highest high of the preceding lookback bars on at least one of the current or previous four bars AND high < low two bars earlier AND body size > average body size × displacement multiplier AND body ratio >= minimum body ratio AND close < open AND chart bar is confirmed AND chart bars since the last short marking > cooldown

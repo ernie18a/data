@@ -1,0 +1,5 @@
+Calculation: ATR trailing stop = initialize direction as bullish and stop at close − multiplier × ATR; on each later bar, set direction bullish if close > prior stop, bearish if close < prior stop, otherwise retain prior direction; if bullish, set stop to close − multiplier × ATR when prior direction was bearish, otherwise the greater of prior stop and close − multiplier × ATR; if bearish, set stop to close + multiplier × ATR when prior direction was bullish, otherwise the lesser of prior stop and close + multiplier × ATR
+Calculation: Normalized oscillator = (close − ATR trailing stop) / ATR
+Calculation: Signal average = selected moving average of the normalized oscillator
+Long: direction changes from bearish to bullish OR normalized oscillator crosses above signal average, with the alert confirmation setting satisfied
+Short: direction changes from bullish to bearish OR normalized oscillator crosses below signal average, with the alert confirmation setting satisfied

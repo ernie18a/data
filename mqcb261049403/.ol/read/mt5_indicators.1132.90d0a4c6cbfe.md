@@ -1,0 +1,2 @@
+Long: Awesome Oscillator on the higher timeframe, using its still-forming bar, is greater than its previous bar
+Short: Awesome Oscillator on the higher timeframe, using its still-forming bar, is less than its previous bar

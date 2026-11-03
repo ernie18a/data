@@ -1,0 +1,2 @@
+Long: Higher-timeframe high (bar still forming) > previous higher-timeframe high OR higher-timeframe low (bar still forming) > previous higher-timeframe low
+Short: Higher-timeframe high (bar still forming) < previous higher-timeframe high OR higher-timeframe low (bar still forming) < previous higher-timeframe low

@@ -1,0 +1,4 @@
+Long: On the chart timeframe, the intermediate-term EMA of close is greater than the long-term EMA of close by a configurable percentage AND the short-term EMA of close is greater than the long-term EMA of close; on each of two higher timeframes, the intermediate-term EMA of close is greater than the long-term EMA of close by a configurable percentage AND the short-term EMA of close is greater than the long-term EMA of close; the previous bar's close is greater than the current short-term EMA AND the current bar's open is greater than the current short-term EMA reduced by a configurable percentage; and this full condition was false on the previous bar.
+Short: On the chart timeframe, the short-term EMA crosses below the long-term EMA.
+Calculation: Stop level = the lowest low over a configurable lookback, evaluated at a configurable offset before the current bar.
+Exit: Long, close < stop level OR the short-term EMA crosses below the long-term EMA.

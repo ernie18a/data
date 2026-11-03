@@ -1,0 +1,7 @@
+Calculation: Cycle low = a bar whose low is lower than the lows of the same configurable lookback of bars before and after it, confirmed after the following bars complete; accept only if the pivot is at least its cycle’s minimum spacing after the prior accepted pivot. Use successively longer lookbacks and minimum spacings for daily, intermediate, yearly, and four-year cycles.
+Calculation: Cycle high = a bar whose high is higher than the highs of five bars before and after it, confirmed after the following bars complete.
+Calculation: Cycle confidence = one point each for bullish RSI divergence, bullish MACD histogram divergence, pivot-bar volume above its moving average, cycle length regularity, and right translation; a failed cycle scores zero.
+Long: An accepted daily, intermediate, yearly, or four-year cycle low is confirmed, and price crosses above the 10-bar simple moving average after having been below it since that low; for intermediate and yearly entries, cycle confidence is at least four points.
+Short: An accepted daily, intermediate, or yearly cycle low is below the prior accepted low for that cycle, and either price is below the 200-bar simple moving average while the 40-bar simple moving average is falling, or that bear-market condition is false.
+Exit: Long, daily close below the latest accepted daily cycle low or intermediate cycle low.
+Exit: Long, cycle progress approaches the expected cycle end; or before an intermediate cycle is due when translation is left, or a smaller cycle fails within the current run.

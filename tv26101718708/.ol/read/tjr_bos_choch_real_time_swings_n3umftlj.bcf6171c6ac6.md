@@ -1,0 +1,5 @@
+Calculation: Swing high/low = a bar whose high/low, respectively, is greater/less than the highs/lows of the next shorter-lookback window; retain the latest swing high and low, resetting that level’s crossed status when replaced.
+Calculation: Break source = close when close-only breaks are enabled; otherwise use high for upward breaks and low for downward breaks.
+Calculation: Structure direction = initially unknown; an upward break of the active swing high sets bullish, and a downward break of the active swing low sets bearish. An upward break marks that swing high crossed; a downward break marks that swing low crossed. Signals require an un-crossed level.
+Long: Structure direction is bearish AND the break source is greater than the active swing high
+Short: Structure direction is bullish AND the break source is less than the active swing low

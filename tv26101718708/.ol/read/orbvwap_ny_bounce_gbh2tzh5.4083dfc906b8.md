@@ -1,0 +1,13 @@
+Calculation: Opening range high/low = highest high / lowest low during the configured opening-range window; freeze when that window ends
+Calculation: Session VWAP = cumulative (typical price × volume) / cumulative volume since the configured VWAP anchor; typical price = (high + low + close) / 3
+Calculation: Positioning score = sum of +1 when close is above, −1 when below, and 0 when equal to or unavailable for each of the session, overnight, previous-session, high-of-day, and low-of-day VWAPs, plus the opening-range position (+1 above, −1 below, 0 inside)
+Calculation: Previous-day ATR = ATR on the daily timeframe, which is higher than the chart timeframe, using the last completed daily bar
+Calculation: Opening-range size = opening-range high − opening-range low
+Calculation: Entry limit = selected session VWAP adjusted by the configured offset toward the approaching price
+Calculation: Initial stop = configured stop mode: fixed distance from entry; previous-day ATR × configured multiplier from entry; VWAP; opposite opening-range boundary; or recent retest swing extreme
+Calculation: Target = configured target mode: entry ± configured multiple of initial risk; entry ± configured multiple of opening-range size; fixed distance from entry; or none
+Calculation: Active stop = initial stop, moved to entry after price reaches 1 initial-risk unit in profit when breakeven is enabled; when trailing is enabled, ratchet behind the best post-entry high/low by the configured distance after the configured profit threshold
+Long: opening range is complete AND a close since its completion is above the opening-range high AND current close is above the selected session VWAP AND current low reaches or crosses the configured buy limit AND within the configured entry window and session/day/month gates AND below the configured daily trade maximum AND any enabled opening-range-size and positioning-score gates pass
+Short: opening range is complete AND a close since its completion is below the opening-range low AND current close is below the selected session VWAP AND current high reaches or crosses the configured sell limit AND within the configured entry window and session/day/month gates AND below the configured daily trade maximum AND any enabled opening-range-size and positioning-score gates pass AND any enabled short-side time, month, and weekday restrictions pass
+Exit: long, low <= active stop OR (target exists AND high >= target) OR (end-of-session flattening is enabled AND datetime reaches the configured flat time)
+Exit: short, high >= active stop OR (target exists AND low <= target) OR (end-of-session flattening is enabled AND datetime reaches the configured flat time)

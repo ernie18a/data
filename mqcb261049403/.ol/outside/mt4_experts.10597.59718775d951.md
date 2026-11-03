@@ -1,0 +1,1 @@
+On each update, sum the profit of all open orders across all symbols, or only orders on the chart’s symbol, according to the selected scope. If profit exceeds the configured profit threshold, or falls below the negative of the configured loss threshold, close every market position in scope; also delete pending orders if enabled. Profit and loss triggers are independently enabled.

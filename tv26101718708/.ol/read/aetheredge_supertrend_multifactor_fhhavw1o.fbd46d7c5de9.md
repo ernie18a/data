@@ -1,0 +1,5 @@
+Calculation: SuperTrend direction = Let ATR use the selected lookback and midpoint = (high + low) / 2. Set multiplier to the base multiplier, or to base multiplier × clamp(ATR / its longer-lookback simple moving average, 0.6, 1.6) when adaptive mode is enabled. Basic upper/lower bands = midpoint ± multiplier × ATR. Upper band = basic upper band if it is lower than the prior upper band or prior close exceeded the prior upper band; otherwise keep the prior upper band. Lower band = basic lower band if it is higher than the prior lower band or prior close fell below the prior lower band; otherwise keep the prior lower band. Direction changes from bearish to bullish when close > prior upper band, and from bullish to bearish when close < prior lower band; otherwise retain prior direction.
+Long: SuperTrend direction = bullish AND prior SuperTrend direction = bearish
+Short: SuperTrend direction = bearish AND prior SuperTrend direction = bullish
+Exit: Long, SuperTrend direction = bearish OR low <= SuperTrend line - ATR × stop buffer
+Exit: Short, SuperTrend direction = bullish OR high >= SuperTrend line + ATR × stop buffer

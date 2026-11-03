@@ -1,0 +1,2 @@
+Long: close > high of the last completed bar of a higher timeframe AND close < short-term EMA
+Long: low < low of the last completed bar of a higher timeframe AND close > that bar’s low AND close > long-term EMA AND close < short-term EMA

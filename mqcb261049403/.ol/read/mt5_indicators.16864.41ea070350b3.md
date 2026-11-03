@@ -1,0 +1,2 @@
+Long: fast moving average of the selected price > slow moving average of the selected price; same moving-average type, shorter lookback for the fast average; if using a higher timeframe, use its still-forming bar
+Short: fast moving average of the selected price < slow moving average of the selected price; same moving-average type, shorter lookback for the fast average; if using a higher timeframe, use its still-forming bar

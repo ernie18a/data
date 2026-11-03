@@ -1,0 +1,5 @@
+Calculation: FigurelliSeries = On the configured indicator timeframe, using its last completed bar, count the moving averages below the bar’s close and subtract the count above it; the moving averages use progressively longer periods.
+Long: FigurelliSeries > 0 AND current hour = configured opening hour AND current minute = configured opening minute
+Short: FigurelliSeries < 0 AND current hour = configured opening hour AND current minute = configured opening minute
+Exit: long, FigurelliSeries < 0 OR current hour = configured closing hour AND current minute >= configured closing minute OR current hour > configured closing hour OR current hour < configured opening hour OR close <= entry price - configured stop-loss distance OR close >= entry price + configured take-profit distance
+Exit: short, FigurelliSeries > 0 OR current hour = configured closing hour AND current minute >= configured closing minute OR current hour > configured closing hour OR current hour < configured opening hour OR close >= entry price + configured stop-loss distance OR close <= entry price - configured take-profit distance

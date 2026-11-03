@@ -1,0 +1,3 @@
+Calculation: VFI = EMA of (sum over the VFI lookback of signed capped volume / prior-bar simple average volume); signed capped volume is min(volume, average volume × volume cap) when typical-price change exceeds the cutoff, its negative when typical-price change is below the negative cutoff, and 0 otherwise; cutoff = price-cutoff coefficient × 30-bar population standard deviation of log typical-price returns × close; typical price = (high + low + close) / 3
+Long: VFI crosses above 0 (current VFI > 0 AND previous VFI <= 0)
+Short: VFI crosses below 0 (current VFI < 0 AND previous VFI >= 0)

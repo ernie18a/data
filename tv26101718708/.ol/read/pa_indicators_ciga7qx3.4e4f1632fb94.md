@@ -1,0 +1,2 @@
+Long: During the RTH session, after a pullback has begun with low < the previous bar's low, high > the previous bar's high
+Short: During the RTH session, after a rebound has begun with high > the previous bar's high, low < the previous bar's low

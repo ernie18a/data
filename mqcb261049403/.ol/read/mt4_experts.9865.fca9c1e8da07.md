@@ -1,0 +1,11 @@
+Calculation: Current daily candle range imbalance = (daily high − daily open) compared with (daily open − daily low); use the higher-than-chart-timeframe daily bar still forming.
+Long: chart price > current daily open AND current daily candle range imbalance is positive AND no position is open AND chart hour >= start hour AND chart hour < end hour
+Short: chart price < current daily open AND current daily candle range imbalance is negative AND no position is open AND chart hour >= start hour AND chart hour < end hour
+Exit: Long, chart price − entry price >= first profit target
+Exit: Long, chart price − entry price >= second profit target
+Exit: Long, chart price − entry price >= third profit target
+Exit: Short, entry price − chart price >= first profit target
+Exit: Short, entry price − chart price >= second profit target
+Exit: Short, entry price − chart price >= third profit target
+Exit: Long, chart hour >= closing hour
+Exit: Short, chart hour >= closing hour

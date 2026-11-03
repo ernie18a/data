@@ -1,0 +1,3 @@
+Calculation: Rj_RMA = for each bar, the arithmetic mean of the highest high and lowest low from each of the N-bar windows beginning at that bar and each of the next N−1 older bars; use the higher-timeframe value from the bar still forming.
+Long: Rj_RMA at the selected chart bar = Rj_RMA at the preceding chart bar AND Rj_RMA at the preceding chart bar ≠ Rj_RMA two chart bars earlier
+Short: Rj_RMA at the selected chart bar > Rj_RMA at the preceding chart bar AND Rj_RMA at the preceding chart bar ≤ Rj_RMA two chart bars earlier

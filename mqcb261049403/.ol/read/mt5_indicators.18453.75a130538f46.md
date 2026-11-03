@@ -1,0 +1,4 @@
+Calculation: Positive close-change accumulator = add each positive close-to-close change; reset to zero on a negative change and retain the value on a flat change, calculated on chart-timeframe bars or, in the HTF version, on the still-forming bar of a higher timeframe.
+Calculation: Negative close-change accumulator = add each negative close-to-close change; reset to zero on a positive change and retain the value on a flat change, calculated on chart-timeframe bars or, in the HTF version, on the still-forming bar of a higher timeframe.
+Long: Positive close-change accumulator > its previous bar value OR Negative close-change accumulator > its previous bar value
+Short: Positive close-change accumulator < its previous bar value OR Negative close-change accumulator < its previous bar value

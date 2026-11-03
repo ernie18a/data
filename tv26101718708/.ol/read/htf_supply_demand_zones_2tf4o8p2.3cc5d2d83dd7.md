@@ -1,0 +1,6 @@
+Calculation: Demand zone = On each newly completed higher-timeframe bar, if its bullish body is at least the configured multiple of its ATR, use the body (or, if configured, the full range) of the nearest bearish candle among the preceding configured number of higher-timeframe bars as a demand zone; retain up to the configured maximum of the newest zones until broken.
+Calculation: Supply zone = On each newly completed higher-timeframe bar, if its bearish body is at least the configured multiple of its ATR, use the body (or, if configured, the full range) of the nearest bullish candle among the preceding configured number of higher-timeframe bars as a supply zone; retain up to the configured maximum of the newest zones until broken.
+Long: At least one unbroken demand zone exists AND low <= its top AND high >= its bottom
+Short: At least one unbroken supply zone exists AND high >= its bottom AND low <= its top
+Exit: long, close < bottom of any demand zone
+Exit: short, close > top of any supply zone

@@ -1,0 +1,7 @@
+Calculation: Volume score = min(25 × (volume / volume SMA) / volume-spike multiplier, 25); use 0 when volume SMA is 0
+Calculation: Range score = min(25 × ((high − low) / ATR) / range-expansion multiplier, 25); use 0 when ATR is 0
+Calculation: Close-extreme score = max(0, min(25, 25 × (close position − (1 − close-extreme threshold)) / close-extreme threshold)) for bullish bars; for bearish bars use max(0, min(25, 25 × (close-extreme threshold − close position) / close-extreme threshold)), where close position = (close − low) / (high − low), or 0.5 if high = low
+Calculation: Compression score = max(0, min(25, 25 × (compression ratio − prior average range / ATR) / compression ratio)); prior average range is the average of high − low over the prior compression lookback bars, excluding the current bar; use prior average range / ATR = 1 when ATR is 0 or prior average range is unavailable
+Calculation: Ignition score = round(volume score + range score + close-extreme score + compression score)
+Long: Ignition score ≥ ignition-score threshold AND close > open AND at least the cooldown-bar count has elapsed since the previous long or short signal AND bar is confirmed
+Short: Ignition score ≥ ignition-score threshold AND close ≤ open AND at least the cooldown-bar count has elapsed since the previous long or short signal AND bar is confirmed

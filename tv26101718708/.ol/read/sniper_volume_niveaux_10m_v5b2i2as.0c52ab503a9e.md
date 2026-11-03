@@ -1,0 +1,4 @@
+Calculation: Range amplitude = (highest high over the lookback − lowest low over the lookback) / lowest low over the lookback
+Calculation: Average volume = simple moving average of volume
+Long: low = lowest low over the lookback AND Range amplitude ≥ configured minimum AND close > previous bar high AND volume > Average volume × configured volume multiplier AND close ≤ support × (1 + configured support tolerance)
+Short: high = highest high over the lookback AND Range amplitude ≥ configured minimum AND close < previous bar low AND volume > Average volume × configured volume multiplier AND close ≥ resistance × (1 − configured resistance tolerance)

@@ -1,0 +1,3 @@
+Calculation: Pivot deviation for each of two configured timeframes = (chart-bar close − (highest high over the lookback + lowest low over the same lookback + mean close of the three bars immediately before the mapped timeframe bar) / 3) / point size; both timeframes use the same lookback. The mapped bar is at the chart bar’s time and may still be forming; the three preceding bars are completed.
+Long: The pivot deviations for both timeframes are > 0 on the current chart bar AND on the immediately preceding chart bar; the current chart bar may still be forming.
+Short: The pivot deviations for both timeframes are < 0 on the current chart bar AND on the immediately preceding chart bar; the current chart bar may still be forming.

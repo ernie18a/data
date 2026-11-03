@@ -1,0 +1,4 @@
+Calculation: Adaptive channel center = calculate a smoothed average of the selected price and its rolling standard deviation over the same lookback, measuring each price from the current smoothed average; update the prior center by k × (smoothed average − prior center), where k = 0 if (prior center − smoothed average)² < standard deviation² or prior center = smoothed average, otherwise k = 1 − standard deviation²/(prior center − smoothed average)².
+Calculation: Upper and lower channel boundaries = round the adaptive center plus or minus the channel half-width up or down, respectively, to the configured price-digit unit; compare against the boundary shifted by the configured number of bars. Calculate on the chart timeframe, or on the selected higher timeframe using its still-forming bar.
+Long: Close > shifted upper channel boundary
+Short: Close < shifted lower channel boundary

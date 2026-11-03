@@ -1,0 +1,3 @@
+Calculation: Money flow oscillator = EMA of the longer-lookback rolling sum of ((close − open) / (high − low) × volume), minus EMA of the shorter-lookback rolling sum of the same value; include a bar’s value in each sum only when (high − low) × volume > 0. Use each sum’s lookback as its EMA length.
+Long: Money flow oscillator > 0 when direction reversal is off, OR money flow oscillator < 0 when direction reversal is on, OR money flow oscillator = 0 AND current position is long.
+Short: Money flow oscillator < 0 when direction reversal is off, OR money flow oscillator > 0 when direction reversal is on, OR money flow oscillator = 0 AND current position is short.

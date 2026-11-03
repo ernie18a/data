@@ -1,0 +1,5 @@
+Calculation: Pressure = the lookback-period SMA of volume × (2 × (close − low) / (high − low) − 1); use 0 when high = low
+Calculation: Final pressure = pressure on the chart timeframe, or pressure from the last completed higher-timeframe bar when a higher timeframe is selected
+Calculation: Confirmed pressure pivot high/low = a pressure high/low greater/less than the divLookback bars on both sides; confirmed after the divLookback bars on the right have completed
+Long: Final pressure crosses above 0 OR a confirmed pressure pivot low occurs and the low at its pivot bar is lower than the lowest low of the divLookback bars preceding that pivot bar and volume at the pivot bar is greater than its volume SMA
+Short: A confirmed pressure pivot high occurs and the high at its pivot bar is higher than the highest high of the divLookback bars preceding that pivot bar and volume at the pivot bar is greater than its volume SMA

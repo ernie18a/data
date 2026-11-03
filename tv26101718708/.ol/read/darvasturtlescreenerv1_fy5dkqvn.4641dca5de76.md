@@ -1,0 +1,2 @@
+Calculation: Box top = high of the bar three chart bars ago when its high exceeds the highs of each of the three following chart bars; retain that value until another such bar occurs.
+Long: Close crosses above the box top AND volume > a volume-spike multiple × average volume over a lookback AND close = highest close over a lookback.

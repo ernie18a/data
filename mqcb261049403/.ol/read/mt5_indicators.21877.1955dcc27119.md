@@ -1,0 +1,4 @@
+Calculation: Smoothed volume = apply the configured moving-average smoother to volume.
+Calculation: Smoothed centered RSI-volume histogram = apply the same smoother, with the same parameters as for volume, to (RSI of the configured applied price − 50) × volume.
+Short: Smoothed centered RSI-volume histogram > the first overbought level × smoothed volume OR Smoothed centered RSI-volume histogram > the more extreme overbought level × smoothed volume
+Long: Smoothed centered RSI-volume histogram < the first oversold level × smoothed volume OR Smoothed centered RSI-volume histogram < the more extreme oversold level × smoothed volume

@@ -1,0 +1,5 @@
+Calculation: CBC state = starts false; remains unchanged unless the close is below the previous bar’s low while true, which sets it false, or the close is above the previous bar’s high while false, which sets it true
+Long: hour >= entry-start-hour AND hour < entry-end-hour AND CBC state = true AND previous CBC state = false AND slow EMA >= VWAP AND (strong-flips-only is disabled OR low < previous bar’s low)
+Short: hour >= entry-start-hour AND hour < entry-end-hour AND CBC state = false AND previous CBC state = true AND slow EMA < VWAP AND (strong-flips-only is disabled OR high > previous bar’s high)
+Exit: long, close <= previous bar’s low OR high >= entry price + ATR × profit-target multiplier (ATR measured at entry)
+Exit: short, close >= previous bar’s high OR low <= entry price − ATR × profit-target multiplier (ATR measured at entry)

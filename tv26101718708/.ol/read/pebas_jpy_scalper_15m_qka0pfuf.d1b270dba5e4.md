@@ -1,0 +1,4 @@
+Long: EMA(8) > EMA(20) on the lower-timeframe bars (latest completed bar within the chart bar) AND EMA(8) > EMA(20) on the chart timeframe AND EMA(8) > EMA(20) on the higher-timeframe bar (still forming) AND year > 2017 AND the same combined condition was false on the prior chart bar
+Short: EMA(8) < EMA(20) on the lower-timeframe bars (latest completed bar within the chart bar) AND EMA(8) < EMA(20) on the chart timeframe AND EMA(8) < EMA(20) on the higher-timeframe bar (still forming) AND year > 2017 AND the same combined condition was false on the prior chart bar
+Exit: long, high >= entry price + configured profit target
+Exit: short, low <= entry price - configured profit target

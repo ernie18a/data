@@ -1,0 +1,2 @@
+Long: On a higher timeframe, using the last completed bars, the high of bar A is below the low of bar C AND the time from A to C is within the allowed span of two higher-timeframe periods OR a bearish FVG exists and the current bar's high is above its top
+Short: On a higher timeframe, using the last completed bars, the low of bar A is above the high of bar C AND the time from A to C is within the allowed span of two higher-timeframe periods OR a bullish FVG exists and the current bar's low is below its bottom

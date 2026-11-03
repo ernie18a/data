@@ -1,0 +1,3 @@
+Calculation: EMA proximity (%) = abs(close - EMA) / close * 100, using each enabled scanned timeframe’s latest value with lookahead_off; use the still-forming bar on higher timeframes and the latest available intrabar on lower timeframes. Apply to all EMA lookbacks, from shortest to longest.
+Long: On any enabled scanned timeframe, EMA > 0 AND close >= EMA AND EMA proximity <= tap threshold
+Short: On any enabled scanned timeframe, EMA > 0 AND close < EMA AND EMA proximity <= tap threshold

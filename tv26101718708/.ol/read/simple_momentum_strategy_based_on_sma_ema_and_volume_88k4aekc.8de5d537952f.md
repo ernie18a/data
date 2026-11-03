@@ -1,0 +1,2 @@
+Long: datetime year >= 2019 AND SMA(close) > EMA(close) AND ((close[1] >= close[2] AND close[2] >= close[3] AND close[3] >= close[4] AND (volume[1] >= volume threshold OR volume[2] >= volume threshold OR volume[3] >= volume threshold)) OR (close[1] > close[3] AND low[2] >= open[3]) OR (close[1] > close[4] AND low[2] >= open[4]))
+Exit: long, datetime year >= 2019 AND SMA(close) < EMA(close) AND previous SMA(close) >= previous EMA(close)

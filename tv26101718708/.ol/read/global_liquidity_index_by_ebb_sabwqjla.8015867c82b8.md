@@ -1,0 +1,3 @@
+Calculation: Effective global liquidity = enabled central-bank balance sheets minus Fed reverse repo and Treasury General Account, plus enabled M2 aggregates, converted to USD; when MOVE adjustment is enabled, multiply by max(0.70, 1 − max(0, MOVE − 100) / 500). The signal series is the effective global liquidity level or its rate of change, optionally smoothed.
+Long: EMA of the signal series with the shorter lookback > EMA of the signal series with the longer lookback
+Short: EMA of the signal series with the shorter lookback < EMA of the signal series with the longer lookback

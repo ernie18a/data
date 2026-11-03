@@ -1,0 +1,4 @@
+Long: Stochastic on a higher timeframe, using the last completed bar, <= 20
+Short: Stochastic on a higher timeframe, using the last completed bar, >= 80
+Exit: long, current-chart-timeframe SMA on the bar still forming >= lower Bollinger Band on a lower timeframe, using the bar two bars back AND long-term SMA on a higher timeframe, using the bar still forming, >= short-term SMA on that timeframe, using the bar still forming
+Exit: short, current-chart-timeframe SMA on the bar still forming <= upper Bollinger Band on a lower timeframe, using the bar two bars back AND long-term SMA on a higher timeframe, using the bar still forming, <= short-term SMA on that timeframe, using the bar still forming

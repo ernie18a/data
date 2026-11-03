@@ -1,0 +1,4 @@
+Calculation: A/D line = cumulative sum of ((close − low) − (high − close)) / (high − low) × volume for each bar; use 0 for the multiplier when high = low.
+Calculation: A/D wave = A/D line − EMA of the A/D line.
+Long: A/D wave > minimum wave threshold AND close crosses above its EMA AND (divergence-only mode is off OR close ≤ its lowest value over the divergence lookback AND A/D line > its lowest value over the same lookback) AND session filter passes AND position is not long AND cooldown has elapsed AND bar is confirmed.
+Short: A/D wave < −minimum wave threshold AND close crosses below its EMA AND (divergence-only mode is off OR close ≥ its highest value over the divergence lookback AND A/D line < its highest value over the same lookback) AND session filter passes AND position is not short AND cooldown has elapsed AND bar is confirmed.

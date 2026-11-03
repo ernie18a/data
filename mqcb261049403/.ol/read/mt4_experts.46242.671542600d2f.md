@@ -1,0 +1,6 @@
+Calculation: Trading range = highest high of the still-forming higher-timeframe bar and preceding completed higher-timeframe bar minus the lowest low of those bars
+Calculation: Grid level(i) = lowest low of those bars + i × trading range / number of grid orders, for i from 0 through number of grid orders minus 1
+Long: trading range > 0 AND within trading hours AND (grid level(i) <= current bar close OR (executed order count > 1 AND pending order count = number of grid orders − 2 AND penultimate executed price <= current bar close))
+Short: trading range > 0 AND within trading hours AND (grid level(i) > current bar close OR (executed order count > 1 AND pending order count = number of grid orders − 2 AND penultimate executed price > current bar close))
+Exit: Long, current bar close <= stop loss OR current bar close >= take profit OR current time is outside trading hours
+Exit: Short, current bar close >= stop loss OR current bar close <= take profit OR current time is outside trading hours

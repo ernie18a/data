@@ -1,0 +1,4 @@
+Calculation: Money Flow Index = 100 − 100 / (1 + positive money flow sum / negative money flow sum) over the lookback; each bar’s money flow is close × volume, classified positive or negative by whether close rose or fell from the prior bar
+Calculation: Long limit price = signal bar close × (1 − entry discount percentage)
+Long: Money Flow Index has been below the oversold level since the previous signal AND current Money Flow Index > oversold level; place a limit order at the long limit price and enter when low ≤ long limit price while the order is active
+Exit: long, low ≤ entry price × (1 − stop-loss percentage) OR high ≥ entry price × (1 + take-profit percentage)

@@ -1,0 +1,8 @@
+Calculation: Chart-bar EMAs = EMAs of typical price on the chart timeframe, with progressively longer lookbacks
+Calculation: Higher-timeframe fast and slow LWMAs = LWMAs of typical price on a higher timeframe, with the fast lookback shorter than the slow lookback; use the still-forming bar
+Calculation: Monthly MACD = MACD main and signal lines on the monthly timeframe; use the last completed bar
+Calculation: Monthly RSI = RSI on the monthly timeframe; compare the still-forming bar with the last completed bar
+Long: higher-timeframe fast LWMA > higher-timeframe slow LWMA AND chart bar 2 low < chart bar 1 high AND chart-bar EMAs are ordered shortest-lookback to longest-lookback in descending value AND |current chart-bar price − chart bar 2 close| > retracement distance AND (monthly MACD main > monthly MACD signal OR monthly RSI > prior monthly RSI) AND fewer than the maximum number of trades are open
+Short: higher-timeframe fast LWMA < higher-timeframe slow LWMA AND chart bar 1 low < chart bar 2 high AND chart-bar EMAs are ordered shortest-lookback to longest-lookback in ascending value AND |current chart-bar price − chart bar 1 close| > retracement distance AND (monthly MACD main < monthly MACD signal OR monthly RSI < prior monthly RSI) AND fewer than the maximum number of trades are open
+Exit: long, price <= active stop-loss OR price >= take-profit
+Exit: short, price >= active stop-loss OR price <= take-profit

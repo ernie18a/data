@@ -1,0 +1,14 @@
+Calculation: Swing high = a bar whose high is higher than the highs of the configured number of bars on both sides
+Calculation: Swing low = a bar whose low is lower than the lows of the configured number of bars on both sides
+Calculation: Bullish FVG = current low > high two bars ago AND previous close > high two bars ago
+Calculation: Bearish FVG = current high < low two bars ago AND previous close < low two bars ago
+Calculation: Bullish iFVG = an active bearish FVG whose close is above its upper boundary
+Calculation: Bearish iFVG = an active bullish FVG whose close is below its lower boundary
+Calculation: Demand breakout = previous bar is bullish AND its body is at least the configured multiple of its ATR AND bar two or three bars ago is bearish AND the resulting zone does not overlap an active demand zone
+Calculation: Supply breakout = previous bar is bearish AND its body is at least the configured multiple of its ATR AND bar two or three bars ago is bullish AND the resulting zone does not overlap an active supply zone
+Calculation: Equilibrium = midpoint of the highest high and lowest low over the configured dealing-range lookback
+Calculation: Range delta = 100 × (sum of volume on up bars − sum of volume on down bars) / sum of volume on up and down bars over the configured dealing-range lookback
+Long: low <= an active swing-low level AND close > that level OR Bullish FVG OR Bullish iFVG OR Demand breakout OR price enters the lower discount band AND Range delta > 0
+Short: high >= an active swing-high level AND close < that level OR Bearish FVG OR Bearish iFVG OR Supply breakout
+Exit: Long, close >= Equilibrium
+Exit: Short, close <= Equilibrium

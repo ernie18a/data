@@ -1,0 +1,9 @@
+Calculation: Confirmed pivot high/low = a local high/low with the selected lookback number of bars on each side; confirmation occurs on the later bar.
+Calculation: Bearish zone = formed from consecutive confirmed pivot highs when the newer pivot high’s wick lies within the previous pivot candle’s body and the pivot gap is within the maximum zone age; zone top is the higher wick high and zone bottom is the lower body top. The zone remains active until a bar closes above its top or it reaches maximum age from the earlier pivot.
+Calculation: Bullish zone = formed from consecutive confirmed pivot lows when the newer pivot low’s wick lies within the previous pivot candle’s body and the pivot gap is within the maximum zone age; zone top is the higher body bottom and zone bottom is the lower wick low. The zone remains active until a bar closes below its bottom or it reaches maximum age from the earlier pivot.
+Calculation: Outside-range fraction = portion of the candle’s high-to-low range beyond the broken zone boundary, divided by the candle’s full high-to-low range (using the minimum price increment if the range is zero).
+Calculation: Third target = breakout close plus the broken zone’s full height for a long breakout, or minus its full height for a short breakout; target monitoring starts on the following bar, expires after the selected duration, and its expiry resets when the first or second target is reached.
+Long: An active bullish zone exists AND close < zone bottom AND outside-range fraction below the zone bottom >= the selected minimum breakout percentage.
+Short: An active bearish zone exists AND close > zone top AND outside-range fraction above the zone top >= the selected minimum breakout percentage.
+Exit: Long, an active long target setup exists AND high >= third target.
+Exit: Short, an active short target setup exists AND low <= third target.

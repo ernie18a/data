@@ -1,0 +1,4 @@
+Calculation: NH-NL oscillator = EMA of the higher-timeframe close of the new-high index minus the higher-timeframe close of the new-low index, using the last completed higher-timeframe bar
+Calculation: Confirmed price pivot high/low = a chart-timeframe close pivot using equal left and right lookbacks; it becomes available after the right lookback bars
+Short: confirmed price pivot high > previous confirmed price pivot high AND NH-NL oscillator at the pivot < its value at the previous pivot AND NH-NL oscillator at the pivot > 0
+Long: confirmed price pivot low < previous confirmed price pivot low AND NH-NL oscillator at the pivot > its value at the previous pivot AND NH-NL oscillator at the pivot < 0

@@ -1,0 +1,1 @@
+Close all open positions when aggregate account profit reaches or exceeds a configured profit threshold, or falls below the negative of a configured loss threshold. If enabled, stop opening new positions for the rest of the day after a threshold-triggered close; resume when a later trading day is detected.

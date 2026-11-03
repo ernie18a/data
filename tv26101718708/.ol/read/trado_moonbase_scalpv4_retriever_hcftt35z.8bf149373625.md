@@ -1,0 +1,2 @@
+Long: HyperWave on the last completed chart bar > HyperWave Signal on the last completed chart bar AND HyperWave on the preceding completed chart bar <= HyperWave Signal on the preceding completed chart bar
+Short: HyperWave on the last completed chart bar < HyperWave Signal on the last completed chart bar AND HyperWave on the preceding completed chart bar >= HyperWave Signal on the preceding completed chart bar

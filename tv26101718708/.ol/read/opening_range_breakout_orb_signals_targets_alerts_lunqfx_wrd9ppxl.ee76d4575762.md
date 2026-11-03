@@ -1,0 +1,6 @@
+Calculation: Opening range high/low = highest high and lowest low during the configured opening window from the exchange trading-day open, or during the configured custom session; fixed when the window ends
+Calculation: First and second targets = opening-range high plus the configured range-height multiple for an upside breakout, or opening-range low minus that multiple for a downside breakout; the second target is farther from the range than the first
+Long: Opening range is locked AND no breakout has occurred today AND within the configured trading day AND (close > opening-range high in close mode OR high > opening-range high in wick mode)
+Short: Opening range is locked AND no breakout has occurred today AND within the configured trading day AND (close < opening-range low in close mode OR (low < opening-range low in wick mode AND NOT (high > opening-range high)))
+Exit: long, close < opening-range high after an upside breakout and before the first target is hit OR high >= first target OR high >= second target
+Exit: short, close > opening-range low after a downside breakout and before the first target is hit OR low <= first target OR low <= second target

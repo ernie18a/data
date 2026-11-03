@@ -1,0 +1,4 @@
+Calculation: Price-bin step = maximum of the minimum tick size and the nearest tick-size multiple of ATR divided by the target number of rows per average chart-timeframe candle.
+Calculation: Buy and sell volume per price bin = for each lower-timeframe bar within the chart-timeframe candle, assign its volume to the bin containing its close; count volume as buy when close > open, sell when close < open, and split it equally when close = open. Include the latest lower-timeframe bar even while it is forming.
+Long: Buy volume per price bin > sell volume per price bin AND buy volume + sell volume per price bin >= the minimum-volume threshold
+Short: Sell volume per price bin > buy volume per price bin AND buy volume + sell volume per price bin >= the minimum-volume threshold

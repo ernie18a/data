@@ -1,0 +1,1 @@
+When Bitcoin is in an uptrend, buy GBTC when its premium to the value of its underlying Bitcoin holdings is low; sell GBTC when that premium reaches an extreme.

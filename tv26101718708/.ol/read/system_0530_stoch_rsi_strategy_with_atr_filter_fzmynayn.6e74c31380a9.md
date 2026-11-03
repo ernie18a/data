@@ -1,0 +1,7 @@
+Calculation: Stochastic RSI %K = SMA of the stochastic value of RSI(close), where the stochastic value is (RSI − lowest RSI over the lookback) / (highest RSI over the lookback − lowest RSI over the lookback); %D = SMA of %K. Use the same lookbacks and smoothing on the chart timeframe and the higher timeframe.
+Long: Position is flat AND the previous completed chart-timeframe bar had %K cross above %D with %K at or below the long trigger level AND, within the configured wait window after that trigger, the current higher-timeframe bar still forming has %K > %D and %K < the long confirmation level AND the same-direction cooldown has elapsed.
+Short: Position is flat AND the previous completed chart-timeframe bar had %K cross below %D with %K at or above the short trigger level AND, within the configured wait window after that trigger, the current higher-timeframe bar still forming has %K < %D and %K > the short confirmation level AND the same-direction cooldown has elapsed.
+Exit: Long, close < low of the entry bar.
+Exit: Long, higher-timeframe %K > the extreme long level OR (chart-timeframe %K crosses below %D and a pending long take-profit trigger exists AND current higher-timeframe %K < its previous completed bar's %K).
+Exit: Short, close > high of the entry bar.
+Exit: Short, higher-timeframe %K < the extreme short level OR (chart-timeframe %K crosses above %D and a pending short take-profit trigger exists AND current higher-timeframe %K > its previous completed bar's %K).

@@ -1,0 +1,8 @@
+Calculation: Confirmed structure pivot high/low = high/low pivot with equal left and right lookbacks; the latest confirmed pivot is used until broken. Structure uses the selected structure timeframe, which may be higher, lower, or the same as the chart timeframe; its close is read with lookahead off, using the current bar while forming and the latest available bar historically.
+Calculation: Latest sweep pivot high/low = the most recent confirmed high/low pivot using the sweep lookback.
+Calculation: Bullish sweep pattern = current low is below the latest sweep pivot low, while current open and close are above it; current low equals the lowest low over the sweep lookback, and the lowest close over that lookback is at least the pivot low.
+Calculation: Bearish sweep pattern = current high is above the latest sweep pivot high, while current open and close are below it; current high equals the highest high over the sweep lookback, and the highest close over that lookback is at most the pivot high.
+Long: Confirmed structure-timeframe close > latest unbroken structure pivot high AND chart bar is confirmed AND prior structural trend is not bullish
+Long: Bullish sweep pattern from three bars ago AND current close > latest sweep pivot low AND prior two closes > their respective latest sweep pivot lows AND bullish sweep cooldown has elapsed
+Short: Confirmed structure-timeframe close < latest unbroken structure pivot low AND chart bar is confirmed AND prior structural trend is not bearish
+Short: Bearish sweep pattern from three bars ago AND current close < latest sweep pivot high AND prior two closes < their respective latest sweep pivot highs AND bearish sweep cooldown has elapsed

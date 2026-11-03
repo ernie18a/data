@@ -1,0 +1,4 @@
+Calculation: Stochastic RSI %K and %D = calculate RSI from close, normalize it within its rolling range, then smooth the normalized value to obtain %K and smooth %K to obtain %D; use longer lookbacks for RSI and the rolling range than for the smoothing.
+Calculation: Confirmed swing high/low = high/low that is a pivot against equal lookbacks on both sides; use the latest confirmed pivot level.
+Long: fast EMA > slow EMA AND (low <= fast EMA AND high >= slow EMA OR abs(low - latest confirmed swing low) <= close-based proximity tolerance) AND %K < oversold threshold AND %D < oversold threshold AND %K > %D AND prior %K <= prior %D AND volume > moving average of volume
+Short: fast EMA < slow EMA AND (low <= fast EMA AND high >= slow EMA OR abs(high - latest confirmed swing high) <= close-based proximity tolerance) AND %K > overbought threshold AND %D > overbought threshold AND %K < %D AND prior %K >= prior %D AND volume > moving average of volume

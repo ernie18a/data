@@ -1,0 +1,5 @@
+Calculation: Selected lower-timeframe intrabars = use the chart bar’s available intrabars from a timeframe lower than the chart, including any still-forming intrabar; select those whose volume is at least a configured multiple of the EMA of per-chart-bar mean intrabar volume, those meeting a configured fixed volume threshold, or the configured number of highest-volume intrabars in the chart bar, according to the selected threshold mode.
+Calculation: Price level = each selected intrabar’s high-low midpoint rounded to the configured merge step, which is either a fixed tick distance or an ATR-based distance.
+Calculation: Up volume and down volume at a price level = sum the selected intrabar volumes at that level where close >= open, and where close < open, respectively.
+Long: A price level has selected intrabars AND its up volume >= its down volume.
+Short: A price level has selected intrabars AND its down volume > its up volume.

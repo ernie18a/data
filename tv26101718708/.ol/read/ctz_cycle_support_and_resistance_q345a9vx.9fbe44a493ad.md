@@ -1,0 +1,3 @@
+Calculation: Accumulation/Distribution line = cumulative sum of volume × close-location value, where close-location value = ((close − low) − (high − close)) / (high − low), or zero when high = low
+Long: At a confirmed pivot low, pivot low < preceding confirmed pivot low AND Accumulation/Distribution line at the pivot > its value at the preceding confirmed pivot low (use the same pivot lookback)
+Short: At a confirmed pivot high, pivot high > preceding confirmed pivot high AND Accumulation/Distribution line at the pivot < its value at the preceding confirmed pivot high (use the same pivot lookback)

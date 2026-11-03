@@ -1,0 +1,5 @@
+Calculation: Confirmed pivot high/low = a bar whose high/low is the highest/lowest across the configured left and right lookbacks; confirm only after the right lookback bars close. Use chart-timeframe bars or, when the pivot timeframe is higher, the last completed higher-timeframe bar.
+Calculation: Latest confirmed pivot high/low = the most recently confirmed pivot high and pivot low, tracked separately.
+Calculation: Impulse range = latest confirmed pivot high price − latest confirmed pivot low price.
+Long: Latest confirmed pivot high occurs after latest confirmed pivot low AND pivot high price > pivot low price AND impulse range ≥ minimum-range multiplier × chart-timeframe ATR.
+Short: Latest confirmed pivot low occurs after latest confirmed pivot high AND pivot high price > pivot low price AND impulse range ≥ minimum-range multiplier × chart-timeframe ATR.

@@ -1,0 +1,4 @@
+Calculation: FVE = previous FVE + (signed volume / simple moving average of volume over a lookback period / that lookback period) × 100, starting at 0; signed volume is volume when close − (high + low)/2 + (high + low + close)/3 − previous (high + low + close)/3 exceeds a positive threshold of close × a factor / 100, negative volume when it is below the corresponding negative threshold, and 0 otherwise
+Calculation: FVE direction = 1 when FVE > previous FVE AND FVE > FVE two bars ago; −1 when FVE < previous FVE AND FVE < FVE two bars ago; otherwise retain the previous direction, initially 0
+Long: (reverse = false AND FVE direction = 1) OR (reverse = true AND FVE direction = −1)
+Short: (reverse = false AND FVE direction = −1) OR (reverse = true AND FVE direction = 1)

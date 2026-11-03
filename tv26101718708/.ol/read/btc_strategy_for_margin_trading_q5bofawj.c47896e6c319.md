@@ -1,0 +1,7 @@
+Calculation: MACD histogram = (EMA of close with shorter lookback − EMA of close with longer lookback) − EMA of that difference with a signal lookback
+Calculation: Smoothed stochastic RSI = SMA of the stochastic oscillator of RSI values, using RSI as its high, low, and close series
+Calculation: Close deviation = close − SMA(OHLC4, lookback)
+Long: datetime >= configured start datetime AND datetime <= configured end datetime AND ((MACD histogram crosses above its configured threshold) OR (RSI crosses above its configured threshold)) AND smoothed stochastic RSI < its configured upper threshold
+Short: datetime >= configured start datetime AND datetime <= configured end datetime AND ((MACD histogram crosses below zero) OR (close deviation crosses below its configured threshold AND smoothed stochastic RSI > its configured upper threshold))
+Exit: long, (datetime >= configured start datetime AND datetime <= configured end datetime AND (MACD histogram crosses below zero OR (close deviation crosses below its configured threshold AND smoothed stochastic RSI > its configured upper threshold))) OR low <= entry price × (1 − configured long stop percentage)
+Exit: short, (datetime >= configured start datetime AND datetime <= configured end datetime AND ((MACD histogram crosses above its configured threshold OR RSI crosses above its configured threshold) AND smoothed stochastic RSI < its configured upper threshold) OR high >= entry price × (1 + configured short stop percentage)

@@ -1,0 +1,14 @@
+Calculation: Signed volume = volume when close >= open, otherwise -volume
+Calculation: Session CVD = cumulative signed volume, reset at each session
+Calculation: Fast delta = short-lookback simple moving average of signed volume
+Calculation: Swing low = lowest low over the swing lookback; near swing low = current low is no more than an ATR-based tolerance above it
+Calculation: Liquidity sweep and reclaim = price trades below an unbroken pivot-low pool and closes above it, or closes above the swept level within the reclaim window after the prior close was at or below it; pools are limited in number and age
+Calculation: Confirmed pivot-low divergences = compare consecutive confirmed pivot lows: bullish RSI divergence is a lower price low with a higher RSI low; bullish CVD divergence is a lower price low with a higher session-CVD low
+Calculation: Exhaustion score = weighted sum of active conditions: sweep and reclaim (3), bullish CVD divergence (3), bullish RSI divergence (2), sell-volume dry-up (2), absorption (2), higher pivot low (2), selling climax within the watch window (1), and confirmed wick rejection within the watch window (1). Sell-volume dry-up means near the swing low, fast down-volume average is below a threshold times the longer-lookback down-volume average, which is positive. Absorption means near the swing low, volume exceeds a threshold times its moving average, range is below an ATR-based limit, and close is in the upper half of the bar. A higher pivot low is a confirmed pivot low above the preceding confirmed pivot low. Selling climax means a down bar with volume above a threshold times its moving average and a low at or below the swing low. Wick rejection means near the swing low, lower wick exceeds a threshold times the body (with minimum tick as floor), and close is in the upper half; it is confirmed when the next bar closes above its high.
+Calculation: Low stabilized = the required number of bars have passed since a low at or below the current rolling swing low
+Calculation: EMA slope gate = the short-period EMA's change over a lagged interval is no less than a negative ATR-based limit
+Long: down bar AND volume > climax-volume threshold × volume moving average AND low <= swing low
+Long: liquidity sweep and reclaim
+Long: exhaustion score >= score threshold AND (low stabilized OR a recent sweep and reclaim) AND close > short-period EMA AND EMA slope gate passes AND fast delta > 0 AND near swing low AND no exhaustion signal occurred within the cooldown window
+Long: since a new exhaustion signal, at least one bar and no more than twice the watch window have passed AND close > the highest high over a short lookback excluding the current bar AND close > short-period EMA AND fast delta > 0 AND this condition was false on the prior bar
+Exit: long, low < the swing low stored at the most recent exhaustion signal

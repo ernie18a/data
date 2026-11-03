@@ -1,0 +1,3 @@
+Calculation: Structure bias = bullish when the current close is above the highest high of the lookback period’s preceding completed bars; bearish when it is below the lowest low of those bars; otherwise retain the previous bias, initially neutral. Calculate separately on each dashboard timeframe. Use the current requested-timeframe close; a higher-timeframe bar may still be forming, and for a lower timeframe use the latest intrabar returned by the request, which may still be forming in realtime.
+Long: Structure bias is bullish
+Short: Structure bias is bearish

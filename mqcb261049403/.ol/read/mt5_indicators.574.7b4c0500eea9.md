@@ -1,0 +1,6 @@
+Calculation: JJRSX = JMA-smoothed ratio of the JurX-smoothed one-bar change in applied price to the JurX-smoothed absolute one-bar change, clipped to [-1, 1]; both JurX smoothers use the same lookback.
+Calculation: XMA = selected moving average of selected price, calculated on a higher timeframe using completed bars.
+Long: JJRSX two bars before the signal > JJRSX one bar before the signal AND JJRSX one bar before the signal < JJRSX at the signal bar AND XMA three bars before the signal > XMA two bars before the signal.
+Short: JJRSX two bars before the signal < JJRSX one bar before the signal AND JJRSX one bar before the signal > JJRSX at the signal bar AND XMA three bars before the signal < XMA two bars before the signal.
+Exit: long, XMA three bars before the signal > XMA two bars before the signal AND XMA two bars before the signal < XMA one bar before the signal AND no long-exit marker has occurred since the most recent short-exit marker (or initialization).
+Exit: short, XMA three bars before the signal < XMA two bars before the signal AND XMA two bars before the signal > XMA one bar before the signal AND no short-exit marker has occurred since the most recent long-exit marker (or initialization).

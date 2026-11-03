@@ -1,0 +1,9 @@
+Calculation: Conversion line = midpoint of the highest high and lowest low over the shorter Ichimoku lookback
+Calculation: Base line = midpoint of the highest high and lowest low over a longer lookback than the Conversion line
+Calculation: Leading Span A = average of the Conversion line and Base line
+Calculation: Leading Span B = midpoint of the highest high and lowest low over a lookback longer than both line lookbacks
+Calculation: Cloud top/bottom = higher/lower of Leading Span A and B, each taken from displacement minus one chart bars ago
+Calculation: ATR trailing stop = highest of the prior stop and the lowest low over a lookback minus ATR times a multiplier
+Long: (close > close[displacement] AND close > Cloud top AND close > Cloud bottom AND close > open AND Conversion line crosses above Base line AND Conversion line > Cloud top AND Conversion line > Cloud bottom AND Base line > Cloud top AND Base line > Cloud bottom) OR (close > Cloud top[displacement] AND close > Cloud bottom[displacement] AND close > high[displacement] AND close > Cloud top AND close > Cloud bottom AND close > open AND Leading Span A > Leading Span B AND Conversion line > Base line AND (close[1] <= Cloud bottom[displacement+1] OR close[1] <= Cloud top[displacement+1] OR close <= high[displacement+1] OR close[1] <= Cloud bottom[1] OR close[1] <= Cloud top[1] OR Leading Span A[1] <= Leading Span B[1])) OR Conversion line crosses above Base line
+Short: Conversion line crosses below Base line
+Exit: Long, low <= ATR trailing stop OR close crosses below hlc3[delta] OR (Base line crosses above Conversion line AND (close < Leading Span A[delta] OR (close < Leading Span A[delta] AND close < Leading Span B[delta])))

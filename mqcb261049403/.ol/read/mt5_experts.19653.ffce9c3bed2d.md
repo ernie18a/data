@@ -1,0 +1,5 @@
+Calculation: JFATL direction state = bullish when the rounded JMA-smoothed 39-bar FATL rises, bearish when it falls, and otherwise retain the prior state; FATL is the weighted sum of the selected bar price over the current and 38 prior bars using the FATL coefficients. Evaluate on the configured signal timeframe, whether higher or lower than the chart timeframe, using completed bars.
+Long: JFATL direction state changes to bullish.
+Short: JFATL direction state changes to bearish.
+Exit: long, JFATL direction state changes to bearish OR low <= entry price - configured stop distance OR high >= entry price + configured target distance OR current datetime - position entry datetime > configured holding duration.
+Exit: short, JFATL direction state changes to bullish OR high >= entry price + configured stop distance OR low <= entry price - configured target distance OR current datetime - position entry datetime > configured holding duration.

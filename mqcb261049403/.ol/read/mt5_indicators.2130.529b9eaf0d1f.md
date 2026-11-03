@@ -1,0 +1,2 @@
+Long: For any configured timeframe (higher than or equal to the chart timeframe), at the first chart bar of a timeframe bar, its still-forming bar close > open
+Short: For any configured timeframe (higher than or equal to the chart timeframe), at the first chart bar of a timeframe bar, its still-forming bar close < open

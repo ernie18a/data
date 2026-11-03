@@ -1,0 +1,1 @@
+Calculate Bitcoin’s price relative to its recent geometric mean and its age-based power-law fair value, then multiply those ratios. Signal long when this composite valuation falls below a configurable oversold threshold. No short or exit condition is defined.

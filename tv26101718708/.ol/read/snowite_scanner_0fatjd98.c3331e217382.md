@@ -1,0 +1,4 @@
+Calculation: Compression percentage = (highest high over the short lookback − lowest low over the short lookback) ÷ lowest low over the short lookback × 100
+Calculation: Support level = lowest low across a consecutive run of bars meeting the Long conditions; lock the level when the run ends
+Long: Compression percentage < compression threshold AND short-lookback simple moving average of volume < long-lookback simple moving average of volume × contraction threshold AND enough bars exist to calculate the long-lookback average AND close > trend-length exponential moving average of close AND that exponential moving average > its value at the configured earlier lookback AND relative strength index is above its lower threshold AND relative strength index is below its upper threshold
+Exit: Long, close < locked support level

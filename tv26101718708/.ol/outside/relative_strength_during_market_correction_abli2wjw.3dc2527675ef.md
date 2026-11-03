@@ -1,0 +1,1 @@
+When the benchmark closes below its own EMA while the traded instrument closes above its own EMA, signal long on the first bar this condition becomes true. Exit when the condition becomes false after being true. Do not signal short.

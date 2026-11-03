@@ -1,0 +1,2 @@
+Long: At least 3 of these 4 conditions are true: 4-hour close > 4-hour 50-period DEMA; current-timeframe MACD line > signal line; daily ATR(14) > 50-period SMA of daily ATR(14); daily ADX(14) > 20
+Short: 4-hour close < 4-hour 50-period DEMA AND current-timeframe MACD line < signal line AND daily ADX(14) > 20 AND daily ATR(14) > 50-period SMA of daily ATR(14)

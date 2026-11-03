@@ -1,0 +1,3 @@
+Calculation: Weekly higher high = the weekly high reaches or exceeds the highest high of the preceding, shorter lookback; it is recent when it occurred within the hold period.
+Long: weekly close > the shorter-lookback weekly SMA AND weekly close > the longer-lookback monthly SMA AND weekly higher high is recent AND monthly RSI > its threshold
+Exit: long, chart-bar high < the longer-lookback monthly SMA

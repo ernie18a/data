@@ -1,0 +1,3 @@
+Calculation: Pressure = Clamp(100 × sensitivity × smoothed candle-shape ratio, −100, 100); candle-shape ratio is selected from (2 × close − high − low) / (high − low), (close − open) / (high − low), or ((min(open, close) − low) − (high − max(open, close))) / (high − low), using 0 when high = low; use the previous bar when confirmed-bar mode is enabled, otherwise the current bar; smooth with EMA, or with the volume-weighted SMA of the ratio when volume weighting is enabled
+Long: Pressure > neutral threshold OR Pressure > 0 AND previous-bar Pressure ≤ 0
+Short: Pressure < −neutral threshold OR Pressure < 0 AND previous-bar Pressure ≥ 0

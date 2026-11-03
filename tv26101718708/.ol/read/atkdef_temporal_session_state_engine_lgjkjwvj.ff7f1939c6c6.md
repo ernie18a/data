@@ -1,0 +1,5 @@
+Calculation: Multi-timeframe candle direction = for each analyzed timeframe, whether higher or lower than the chart timeframe, compare the last completed bar's close with its open: bullish if close > open × 1.01; bearish if close < open × 0.99.
+Calculation: Multi-timeframe close momentum = for each analyzed timeframe, compare the close of the bar still forming with the previous completed bar's close: bullish if current close > previous close × 1.01; bearish if current close < previous close × 0.99.
+Calculation: Session direction = compare each session's latest close with its first bar's open: bullish if close > open; bearish if close < open.
+Long: Any analyzed timeframe's last completed close > its open × 1.01 OR that timeframe's last completed close > its open × 1.01 AND its forming-bar close > its previous completed close × 1.01 OR any session's latest close > its first bar's open.
+Short: Any analyzed timeframe's last completed close < its open × 0.99 OR that timeframe's last completed close < its open × 0.99 AND its forming-bar close < its previous completed close × 0.99 OR any session's latest close < its first bar's open.

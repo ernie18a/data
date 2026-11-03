@@ -1,0 +1,4 @@
+Calculation: Per-timeframe MACD cross-decay score = +exp(−decay rate × number of that timeframe’s bars since the latest MACD line cross above its signal line), or −exp(−decay rate × number of bars since the latest cross below; use 0 if there has been no cross or freshness is below the freshness floor. MACD line = fast EMA of close − slow EMA of close; signal line = EMA of the MACD line. Use configured timeframes lower than the chart timeframe from their last completed bars, and configured timeframes higher than the chart timeframe from their last completed bars.
+Calculation: Combined score = EMA-smoothed, normalized weighted average of the per-timeframe scores across enabled lower and higher timeframes; each weight is its manual weight, optionally multiplied by (timeframe duration ÷ chart timeframe duration)^weight exponent.
+Long: Combined score > 0
+Short: Combined score < 0

@@ -1,0 +1,4 @@
+Calculation: Anchored RWAP = recency-weighted average of HLC3 since the selected anchor, with geometric weights: current bar weight 1, each prior bar weight multiplied by a decay factor; no bars before the anchor contribute.
+Calculation: Normalized slope = (current anchored RWAP − anchored RWAP from a shorter lookback ago) / ATR; available only while the anchor is active, the lookback is available, and ATR > 0.
+Long: On a confirmed chart bar with an active anchor and available normalized slope, normalized slope ≥ upper threshold OR (previous state bullish AND normalized slope ≥ lower positive threshold); OR the same condition on the last completed higher-timeframe bar(s).
+Short: On a confirmed chart bar with an active anchor and available normalized slope, normalized slope ≤ −upper threshold OR (previous state bearish AND normalized slope ≤ −lower positive threshold); OR the same condition on the last completed higher-timeframe bar(s).

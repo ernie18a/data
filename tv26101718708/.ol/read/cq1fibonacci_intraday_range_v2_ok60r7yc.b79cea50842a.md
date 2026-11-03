@@ -1,0 +1,7 @@
+Calculation: Daily open = open of the current daily bar (higher timeframe and still forming on intraday charts).
+Calculation: Green-bar higher-high rate = cumulative count of bars whose high is at least the previous bar’s high, among bars whose previous bar closed above its open, divided by the cumulative count of those bars.
+Calculation: Green-bar lower-low rate = cumulative count of bars whose low is at most the previous bar’s low, among bars whose previous bar closed above its open, divided by the cumulative count of those bars.
+Calculation: Red-bar higher-high rate = cumulative count of bars whose high is at least the previous bar’s high, among bars whose previous bar did not close above its open, divided by the cumulative count of those bars.
+Calculation: Red-bar lower-low rate = cumulative count of bars whose low is at most the previous bar’s low, among bars whose previous bar did not close above its open, divided by the cumulative count of those bars.
+Long: close >= daily open OR (previous bar close > previous bar open AND green-bar higher-high rate >= green-bar lower-low rate) OR (previous bar close <= previous bar open AND red-bar higher-high rate >= red-bar lower-low rate)
+Short: close < daily open OR (previous bar close > previous bar open AND green-bar higher-high rate < green-bar lower-low rate) OR (previous bar close <= previous bar open AND red-bar higher-high rate < red-bar lower-low rate)

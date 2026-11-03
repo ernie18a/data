@@ -1,0 +1,4 @@
+Calculation: Time-of-day average volume = arithmetic mean of positive volumes from the prior lookback days, sampled at offsets n × round(510 / chart-timeframe-minutes) bars back for n = 1 through lookback-days
+Calculation: Spike ratio = current bar volume / time-of-day average volume
+Long: close > open AND inside the configured pre-fixing window AND spike ratio >= mild spike threshold AND (date-range filter disabled OR datetime within configured date range)
+Short: close < open AND inside the configured pre-fixing window AND spike ratio >= mild spike threshold AND (date-range filter disabled OR datetime within configured date range)

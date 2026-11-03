@@ -1,0 +1,2 @@
+Long: EMA(close, shorter lookback) crosses above EMA(close, longer lookback) AND RSI > long-entry threshold
+Short: EMA(close, shorter lookback) crosses below EMA(close, longer lookback) AND RSI < short-entry threshold

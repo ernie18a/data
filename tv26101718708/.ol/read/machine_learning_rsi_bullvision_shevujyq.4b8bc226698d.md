@@ -1,0 +1,3 @@
+Calculation: Machine-learning-adjusted RSI = RSI of close, optionally smoothed with a selected moving average; optionally blend it with the inverse-distance-weighted mean RSI of the nearest historical bars, using Euclidean distance across a selected subset of normalized RSI, RSI momentum, RSI volatility, RSI linear-regression slope, and close momentum; optionally apply a selected smoothing filter. Use shorter lookbacks for momentum, volatility, and slope features than for feature normalization and historical neighbor search.
+Long: Machine-learning-adjusted RSI > 50
+Short: Machine-learning-adjusted RSI <= 50

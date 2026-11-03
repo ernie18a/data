@@ -1,0 +1,2 @@
+Long: A bullish order block or bullish fair value gap exists on a higher-timeframe panel and its strength is at least the minimum-strength filter
+Short: A bearish order block or bearish fair value gap exists on a higher-timeframe panel and its strength is at least the minimum-strength filter

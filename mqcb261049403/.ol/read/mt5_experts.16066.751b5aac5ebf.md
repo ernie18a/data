@@ -1,0 +1,5 @@
+Calculation: PPO = (short-lookback EMA of the configured applied price − long-lookback EMA of the configured applied price) / long-lookback EMA of the configured applied price; the short lookback is shorter than the long lookback
+Long: PPO > its EMA signal line on the current completed indicator-timeframe bar AND PPO <= its EMA signal line on the preceding completed indicator-timeframe bar
+Short: PPO < its EMA signal line on the current completed indicator-timeframe bar AND PPO >= its EMA signal line on the preceding completed indicator-timeframe bar
+Exit: long, PPO < its EMA signal line on the current completed indicator-timeframe bar AND PPO >= its EMA signal line on the preceding completed indicator-timeframe bar
+Exit: short, PPO > its EMA signal line on the current completed indicator-timeframe bar AND PPO <= its EMA signal line on the preceding completed indicator-timeframe bar

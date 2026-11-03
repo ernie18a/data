@@ -1,0 +1,5 @@
+Calculation: Mean range = average of high − low over the current bar and its 9 preceding bars
+Calculation: Williams %R strength = 100 − |Williams %R|, using a 4-bar lookback if any of the current bar through its 5 preceding bars has an absolute close change over 3 bars ≥ 4.6 × Mean range; otherwise use the longer lookback of 3 + 2 × Risk bars
+Calculation: Lower threshold = 33 − Risk; Upper threshold = 67 + Risk
+Long: Williams %R strength on the current bar > Upper threshold AND its preceding bars remain within [Lower threshold, Upper threshold] until the first value outside that band is < Lower threshold
+Short: Williams %R strength on the current bar < Lower threshold AND its preceding bars remain within [Lower threshold, Upper threshold] until the first value outside that band is > Upper threshold

@@ -1,0 +1,4 @@
+Calculation: Bullish score = count of true conditions: close > (high + low) / 2; close > Bollinger Band basis; CCI > positive threshold; OBV > its moving average; +DI > -DI
+Calculation: Bearish score = count of true conditions: close < (high + low) / 2; close < Bollinger Band basis; CCI < negative threshold; OBV < its moving average; -DI > +DI
+Long: Bullish score >= minimum score AND ADX >= threshold AND close > long-term EMA AND short-term EMA > long-term EMA AND (most recent emitted signal is not long OR bars since the most recent emitted signal >= reset interval)
+Short: Bearish score >= minimum score AND ADX >= threshold AND close < long-term EMA AND short-term EMA < long-term EMA AND (most recent emitted signal is not short OR bars since the most recent emitted signal >= reset interval)

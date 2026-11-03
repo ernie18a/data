@@ -1,0 +1,2 @@
+Long: close > previous close OR shorter-lookback moving average > its previous value OR longer-lookback moving average > its previous value
+Short: close < previous close OR shorter-lookback moving average < its previous value OR longer-lookback moving average < its previous value

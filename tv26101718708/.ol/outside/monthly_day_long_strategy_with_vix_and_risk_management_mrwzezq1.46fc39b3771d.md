@@ -1,0 +1,1 @@
+On the adjusted target day each month (move a weekend date to the following Monday), enter long when no position is open and the external volatility index is below its threshold. Exit the long after the specified holding period, if the traded instrument reaches the stop-loss level below entry, or if it reaches the take-profit level above entry.

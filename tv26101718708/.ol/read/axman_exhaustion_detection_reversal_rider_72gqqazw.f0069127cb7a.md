@@ -1,0 +1,6 @@
+Calculation: Prior rolling high = highest high over the configured lookback of completed chart bars before the current bar
+Calculation: Prior rolling low = lowest low over the configured lookback of completed chart bars before the current bar
+Long: RSI < oversold threshold AND volume > volume moving average × volume multiplier AND (low < previous bar low OR (low < Prior rolling low AND close > Prior rolling low)) OR flat position AND bars since most recent bullish exhaustion <= entry-window length AND close > previous bar high AND previous close <= high from two bars ago AND RSI > previous bar RSI
+Short: RSI > overbought threshold AND volume > volume moving average × volume multiplier AND (high > previous bar high OR (high > Prior rolling high AND close < Prior rolling high)) OR flat position AND bars since most recent bearish exhaustion <= entry-window length AND close < previous bar low AND previous close >= low from two bars ago AND RSI < previous bar RSI
+Exit: long, RSI > overbought threshold AND volume > volume moving average × volume multiplier AND (high > previous bar high OR (high > Prior rolling high AND close < Prior rolling high))
+Exit: short, RSI < oversold threshold AND volume > volume moving average × volume multiplier AND (low < previous bar low OR (low < Prior rolling low AND close > Prior rolling low))

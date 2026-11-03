@@ -1,0 +1,2 @@
+Long: Shorter-lookback EMA of close on the higher timeframe, using completed bars, crosses above the longer-lookback EMA of close on the higher timeframe (current short EMA > current long EMA AND previous short EMA <= previous long EMA)
+Short: Shorter-lookback EMA of close on the higher timeframe, using completed bars, crosses below the longer-lookback EMA of close on the higher timeframe (current short EMA < current long EMA AND previous short EMA >= previous long EMA)

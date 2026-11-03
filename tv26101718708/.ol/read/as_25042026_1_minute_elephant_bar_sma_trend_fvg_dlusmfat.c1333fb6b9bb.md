@@ -1,0 +1,4 @@
+Calculation: Candle body ratio = abs(close − open) / (high − low), or 0 when high = low
+Calculation: Distance from SMA(200) = abs(close − SMA(200)) / SMA(200)
+Long: (close > open AND high − low > ATR × multiplier AND candle body ratio > minimum body percentage) OR low > high[2] OR close > SMA(9) OR SMA(20) > previous SMA(20) OR (SMA(20) > SMA(200) AND distance from SMA(200) >= range-filter threshold) OR close crosses above EMA of close on a higher timeframe, using the last completed higher-timeframe bar
+Short: (close < open AND high − low > ATR × multiplier AND candle body ratio > minimum body percentage) OR high < low[2] OR close <= SMA(9) OR SMA(20) <= previous SMA(20) OR (SMA(20) < SMA(200) AND distance from SMA(200) >= range-filter threshold) OR close crosses below EMA of close on a higher timeframe, using the last completed higher-timeframe bar

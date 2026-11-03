@@ -1,0 +1,4 @@
+Long: close of the last completed bar on the configured Parabolic SAR timeframe is above its SAR AND close of the immediately preceding bar on that timeframe is below its SAR; the SAR timeframe may be higher or lower than the chart timeframe
+Short: close of the last completed bar on the configured Parabolic SAR timeframe is below its SAR AND close of the immediately preceding bar on that timeframe is above its SAR; the SAR timeframe may be higher or lower than the chart timeframe
+Exit: long, close of the last completed bar on the configured Parabolic SAR timeframe is below its SAR OR elapsed time since entry is greater than the configured holding limit
+Exit: short, close of the last completed bar on the configured Parabolic SAR timeframe is above its SAR OR elapsed time since entry is greater than the configured holding limit

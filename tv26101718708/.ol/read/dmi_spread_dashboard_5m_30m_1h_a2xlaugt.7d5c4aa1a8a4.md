@@ -1,0 +1,5 @@
+Calculation: +DI and -DI = Wilder-smoothed positive and negative directional movement, respectively, divided by Wilder-smoothed true range and multiplied by 100; positive movement is the increase in high when it exceeds the decrease in low and is positive, negative movement is the decrease in low when it exceeds the increase in high and is positive, and otherwise each is zero. Calculate independently on each requested timeframe, using its current bar (which may still be forming), whether that timeframe is higher or lower than the chart timeframe.
+Long: +DI > -DI on any requested timeframe
+Short: +DI < -DI on any requested timeframe
+Long: +DI > -DI AND previous-bar +DI <= previous-bar -DI on any requested timeframe
+Short: +DI < -DI AND previous-bar +DI >= previous-bar -DI on any requested timeframe

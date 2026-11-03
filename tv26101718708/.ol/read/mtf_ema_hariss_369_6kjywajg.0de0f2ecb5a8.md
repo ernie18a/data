@@ -1,0 +1,5 @@
+Calculation: Relative volume = current bar volume / moving average of volume over a longer lookback
+Long: close > current-timeframe EMA AND current-timeframe EMA > higher-timeframe EMA (using the last completed higher-timeframe bar) AND close > KAMA AND Relative volume > threshold AND KAMA > its prior value
+Short: close < current-timeframe EMA AND current-timeframe EMA < higher-timeframe EMA (using the last completed higher-timeframe bar) AND close < KAMA AND Relative volume > threshold AND KAMA < its prior value
+Exit: long, low reaches the stop below the prior bar's low OR high reaches the entry price plus the initial risk multiplied by a target multiple
+Exit: short, high reaches the stop above the prior bar's high OR low reaches the entry price minus the initial risk multiplied by a target multiple

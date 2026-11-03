@@ -1,0 +1,5 @@
+Calculation: XTRIX = Smooth with the selected method and smoothing lookback of 10000 × (the twice-smoothed natural logarithm of the selected bar price now minus that value Mom_Period bars earlier); the first two smoothings use the same method and lookback, and the final smoothing uses its own lookback. Use bars from the indicator timeframe, which may be higher or lower than the chart timeframe; use completed bars.
+Long: XTRIX on the last completed bar > XTRIX on the preceding bar AND XTRIX on the preceding bar < XTRIX two bars earlier
+Short: XTRIX on the last completed bar < XTRIX on the preceding bar AND XTRIX on the preceding bar > XTRIX two bars earlier
+Exit: long, XTRIX on the last completed bar < XTRIX on the preceding bar AND XTRIX on the preceding bar > XTRIX two bars earlier
+Exit: short, XTRIX on the last completed bar > XTRIX on the preceding bar AND XTRIX on the preceding bar < XTRIX two bars earlier

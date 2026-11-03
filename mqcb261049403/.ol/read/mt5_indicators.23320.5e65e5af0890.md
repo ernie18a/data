@@ -1,0 +1,2 @@
+Long: Any of the 20 RSI values, calculated with progressively longer lookbacks on the higher timeframe’s still-forming bar, is above the upper threshold.
+Short: Any of the 20 RSI values, calculated with progressively longer lookbacks on the higher timeframe’s still-forming bar, is below the lower threshold.

@@ -1,0 +1,1 @@
+For each watched instrument, compare its current price with its previous-day and premarket extremes. Signal long when price is at or above both highs; signal short when price is at or below both lows. Otherwise, give no directional signal. No exit rule is defined.

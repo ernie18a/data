@@ -1,0 +1,9 @@
+Calculation: Prior-day close = close of the last completed daily bar
+Calculation: Daily ATR = ATR calculated on daily bars, using the last completed daily bar
+Calculation: HOD target levels = prior-day close plus daily ATR multiplied by two target multipliers, with T1's multiplier smaller than T2's
+Calculation: LOD target levels = prior-day close minus daily ATR multiplied by the same target multipliers
+Calculation: RTH VWAP = volume-weighted average of (high + low + close) / 3 accumulated from the regular-session open
+Calculation: RTH VWAP deviation bands = RTH VWAP plus or minus a standard-deviation multiple, where standard deviation is the square root of volume-weighted mean squared typical price minus squared RTH VWAP
+Calculation: Chart-timeframe ATR = ATR calculated on chart-timeframe bars
+Long: ET time is within 09:30–16:00 AND (abs(low - LOD T1) <= chart-timeframe ATR × proximity threshold OR abs(low - LOD T2) <= chart-timeframe ATR × proximity threshold OR abs(low - lower RTH VWAP deviation band) <= chart-timeframe ATR × proximity threshold) AND min(open, close) - low >= chart-timeframe ATR × rejection-wick threshold AND close > open AND low equals the RTH low so far AND low equals the lowest low of the last five chart-timeframe bars
+Short: ET time is within 09:30–16:00 AND (abs(high - HOD T1) <= chart-timeframe ATR × proximity threshold OR abs(high - HOD T2) <= chart-timeframe ATR × proximity threshold OR abs(high - upper RTH VWAP deviation band) <= chart-timeframe ATR × proximity threshold) AND high - max(open, close) >= chart-timeframe ATR × rejection-wick threshold AND close < open AND high equals the RTH high so far AND high equals the highest high of the last five chart-timeframe bars

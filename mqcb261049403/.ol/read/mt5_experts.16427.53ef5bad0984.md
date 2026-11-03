@@ -1,0 +1,5 @@
+Calculation: J-SATL candle = apply the fixed 65-bar SATL digital filter to each OHLC series, then JMA-smooth each result; use the same JMA settings for all four series. Use the configured indicator timeframe, which may be higher than, equal to, or lower than the chart timeframe, and compare its last completed bar with the preceding completed bar.
+Long: current J-SATL open < current J-SATL close AND (previous J-SATL open >= previous J-SATL close OR previous J-SATL open = previous J-SATL close)
+Short: current J-SATL open > current J-SATL close AND (previous J-SATL open <= previous J-SATL close OR previous J-SATL open = previous J-SATL close)
+Exit: short, current J-SATL open < current J-SATL close AND previous J-SATL open >= previous J-SATL close
+Exit: long, current J-SATL open > current J-SATL close AND previous J-SATL open <= previous J-SATL close

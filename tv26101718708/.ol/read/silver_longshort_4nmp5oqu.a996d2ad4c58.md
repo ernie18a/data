@@ -1,0 +1,6 @@
+Calculation: Silver close = close of the higher-timeframe bar, using the last completed bar
+Calculation: Gold/silver ratio close = close of the higher-timeframe bar, using the last completed bar
+Long: datetime >= configured start AND datetime <= configured end AND shorter-lookback SMA of silver close crosses above longer-lookback SMA of silver close AND gold/silver ratio close > configured overbought level AND shorter-lookback SMA of gold/silver ratio close < longer-lookback SMA of gold/silver ratio close
+Short: datetime >= configured start AND datetime <= configured end AND gold/silver ratio close < configured oversold level AND shorter-lookback SMA of gold/silver ratio close crosses above longer-lookback SMA of gold/silver ratio close
+Exit: long, datetime >= configured start AND datetime <= configured end AND gold/silver ratio close < configured oversold level AND shorter-lookback SMA of gold/silver ratio close crosses above longer-lookback SMA of gold/silver ratio close
+Exit: short, datetime >= configured start AND datetime <= configured end AND shorter-lookback SMA of silver close crosses above longer-lookback SMA of silver close AND gold/silver ratio close > configured overbought level AND shorter-lookback SMA of gold/silver ratio close < longer-lookback SMA of gold/silver ratio close

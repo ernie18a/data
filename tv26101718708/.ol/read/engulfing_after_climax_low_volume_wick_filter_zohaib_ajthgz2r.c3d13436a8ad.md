@@ -1,0 +1,5 @@
+Calculation: Average volume = simple moving average of volume over a lookback
+Calculation: Average candle range = simple moving average of high − low over the same lookback as average volume
+Long: A bearish selling-climax bar occurred within the current or previous lookback bars AND close > open AND previous close < previous open AND close > previous open AND open ≤ previous close AND current body size ≥ previous body size × body-strength multiplier AND volume < average volume × low-volume multiplier AND current body size ÷ (high − low) ≥ minimum body fraction (or high = low) AND upper wick ≤ lower wick
+Short: A bullish buying-climax bar occurred within the current or previous lookback bars AND close < open AND previous close > previous open AND open ≥ previous close AND close < previous open AND current body size ≥ previous body size × body-strength multiplier AND volume < average volume × low-volume multiplier AND current body size ÷ (high − low) ≥ minimum body fraction (or high = low) AND lower wick ≤ upper wick
+Exit:

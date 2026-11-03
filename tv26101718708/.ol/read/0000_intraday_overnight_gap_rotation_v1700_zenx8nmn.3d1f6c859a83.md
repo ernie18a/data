@@ -1,0 +1,4 @@
+Calculation: Overnight gap = (current higher-timeframe bar open − previous completed higher-timeframe bar close) / previous completed higher-timeframe bar close; use the current bar’s open.
+Calculation: Intraday return = (previous completed higher-timeframe bar close − its open) / its open.
+Long: Intraday best-gap mode: overnight gap ≥ minimum move and ranks among the highest overnight gaps of enabled instruments within the configured top N OR intraday fade mode: overnight gap ≤ −minimum move and ranks among the lowest overnight gaps of enabled instruments within the configured top N OR overnight mode: intraday return ≥ minimum move and ranks among the highest intraday returns of enabled instruments within the configured top N.
+Exit: Long, intraday mode, current higher-timeframe bar reaches its close OR overnight mode, next higher-timeframe bar reaches its open.

@@ -1,0 +1,4 @@
+Short: Flat AND chart-timeframe RSI on the last completed bar is below its threshold AND the prior bar’s RSI was at or above its threshold
+Calculation: Cumulative averaging deviation at rung n = sum of rung spacings 1 through n; each rung spacing equals the first spacing multiplied by the spacing multiplier to the power of (rung number − 1)
+Short: Short position open AND averaging orders filled < maximum averaging orders AND close >= original short entry price × (1 + cumulative averaging deviation at next rung)
+Exit: Short, close >= average entry price × (1 + stop distance) OR (take-profit zone has been reached AND close >= lowest close observed while close <= average entry price × (1 − take-profit distance) × (1 + trailing distance))

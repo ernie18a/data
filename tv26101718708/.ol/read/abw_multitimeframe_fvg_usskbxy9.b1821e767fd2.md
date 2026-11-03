@@ -1,0 +1,2 @@
+Long: chart-timeframe third candle’s low > first candle’s high (use the completed third candle) OR higher-timeframe third candle’s low > first candle’s high (use the last completed higher-timeframe candle)
+Short: chart-timeframe third candle’s high < first candle’s low (use the completed third candle) OR higher-timeframe third candle’s high < first candle’s low (use the last completed higher-timeframe candle)

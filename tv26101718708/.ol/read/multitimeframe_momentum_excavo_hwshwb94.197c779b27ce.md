@@ -1,0 +1,2 @@
+Long: At least the configured minimum number of the five configured timeframes have a last completed bar (timeframe may be higher or lower than the chart timeframe) with close above EMA and RSI above 50
+Short: At least the configured minimum number of the five configured timeframes have a last completed bar (timeframe may be higher or lower than the chart timeframe) with close below EMA and RSI below 50

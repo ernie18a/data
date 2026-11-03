@@ -1,0 +1,4 @@
+Long: On each dashboard timeframe, MACD line > signal line; for a higher timeframe use its last completed bar, and for a lower timeframe use its last available bar within the chart bar.
+Short: On each dashboard timeframe, MACD line <= signal line; for a higher timeframe use its last completed bar, and for a lower timeframe use its last available bar within the chart bar.
+Long: On each dashboard timeframe, MACD histogram > 0; for a higher timeframe use its last completed bar, and for a lower timeframe use its last available bar within the chart bar.
+Short: On each dashboard timeframe, MACD histogram <= 0; for a higher timeframe use its last completed bar, and for a lower timeframe use its last available bar within the chart bar.

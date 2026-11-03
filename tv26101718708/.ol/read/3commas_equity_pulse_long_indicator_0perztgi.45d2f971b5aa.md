@@ -1,0 +1,4 @@
+Calculation: Safety-order price at level n = base entry price × (1 − cumulative deviation through level n); the first level uses the initial step percentage, and each later step is the previous step multiplied by the step coefficient.
+Calculation: Average entry price = total quote value of the base order and filled safety orders ÷ total quantity, with each order’s quantity equal to its quote value ÷ its fill price.
+Long: position side = flat AND datetime >= configured start time AND datetime <= configured end time OR position side = long AND low <= next unfilled safety-order price AND unfilled safety-order levels remain
+Exit: long, RSI (same timeframe as the chart, using the last completed bar) > threshold AND preceding RSI <= threshold AND close >= average entry price × (1 + minimum profit percentage)

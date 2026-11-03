@@ -1,0 +1,4 @@
+Calculation: Bullish RSI divergence = the lowest low over the lookback is below the previously stored lowest low, while the lowest RSI over the same lookback is above the previously stored lowest RSI; initialize both stored values from the first lookback window and update them together whenever the current lowest low falls below the stored lowest low
+Calculation: Bearish RSI divergence = the highest high over the lookback is above the previously stored highest high, while the highest RSI over the same lookback is below the previously stored highest RSI; initialize both stored values from the first lookback window and update them together whenever the current highest high rises above the stored highest high
+Long: Bullish RSI divergence OR close > running highest high AND previous close <= previous running highest high
+Short: Bearish RSI divergence OR close < running lowest low AND previous close >= previous running lowest low

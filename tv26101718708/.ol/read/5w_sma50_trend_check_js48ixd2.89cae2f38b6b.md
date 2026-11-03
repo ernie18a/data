@@ -1,0 +1,2 @@
+Long: Higher-timeframe close > higher-timeframe simple moving average for every bar in the recent lookback window; use the higher-timeframe bar still forming and the preceding completed bars.
+Short: Higher-timeframe close <= higher-timeframe simple moving average for every bar in the recent lookback window; use the higher-timeframe bar still forming and the preceding completed bars.

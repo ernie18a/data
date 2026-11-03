@@ -1,0 +1,3 @@
+Calculation: Smoothed centered, volume-weighted close RSI = apply the selected smoother to (RSI of close over a lookback − 50) × volume; use tick volume or real volume as selected. In the higher-timeframe version, use the higher-timeframe bar still forming; otherwise use the chart timeframe.
+Long: previous bar’s smoothed centered, volume-weighted close RSI < 0 AND current bar’s value ≥ 0
+Short: previous bar’s smoothed centered, volume-weighted close RSI > 0 AND current bar’s value ≤ 0

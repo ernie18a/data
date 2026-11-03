@@ -1,0 +1,4 @@
+Calculation: Bullish FVG = on lower-timeframe bars, current low > high two bars earlier AND previous bar close > previous bar open; uses the bar still forming
+Calculation: Bearish FVG = on lower-timeframe bars, current high < low two bars earlier AND previous bar close < previous bar open; uses the bar still forming
+Long: Bullish FVG AND both the current and previous bar timestamps are within the configured AM or PM session window in New York time AND this is the first detected FVG in that window for the New York day
+Short: Bearish FVG AND both the current and previous bar timestamps are within the configured AM or PM session window in New York time AND this is the first detected FVG in that window for the New York day

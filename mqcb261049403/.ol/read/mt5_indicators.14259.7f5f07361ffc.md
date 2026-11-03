@@ -1,0 +1,2 @@
+Long: CCI + 70 on the current, still-forming chart bar > the configured level AND CCI + 70 on the previous completed chart bar < the configured level
+Short: CCI + 70 on the current, still-forming chart bar < the configured level AND CCI + 70 on the previous completed chart bar > the configured level

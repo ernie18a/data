@@ -1,0 +1,6 @@
+Calculation: Bearish SMT = On the configured mini-chart timeframe, two successive confirmed pivot highs in the selected asset and its correlated comparison asset move in opposite directions; pivots use the same lookback on both sides and may be confirmed using the still-forming bar.
+Calculation: Bullish SMT = On the configured mini-chart timeframe, two successive confirmed pivot lows in the selected asset and its correlated comparison asset move in opposite directions; pivots use the same lookback on both sides and may be confirmed using the still-forming bar.
+Calculation: Bullish FVG = On the configured mini-chart timeframe, the low of the more recent of two bars separated by one intervening bar is above the high of the older bar; the displayed gap is inverted if a close from the still-forming bar or any newer bar closes below the gap's lower boundary.
+Calculation: Bearish FVG = On the configured mini-chart timeframe, the low of the older of two bars separated by one intervening bar is above the high of the more recent bar; the displayed gap is inverted if a close from the still-forming bar or any newer bar closes above the gap's upper boundary.
+Long: Bullish SMT OR Bullish FVG that is not inverted OR Bearish FVG that is inverted
+Short: Bearish SMT OR Bearish FVG that is not inverted OR Bullish FVG that is inverted

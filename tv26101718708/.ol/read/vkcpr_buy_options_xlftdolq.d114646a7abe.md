@@ -1,0 +1,5 @@
+Calculation: CPR Top and Bottom = From the last completed bar of a higher timeframe, Pivot = (high + low + close) / 3, Base = (high + low) / 2, Central = 2 × Pivot − Base; CPR Top = max(Base, Central), CPR Bottom = min(Base, Central)
+Long: close crosses above CPR Top AND no long position is open AND calls are enabled AND the bar is on an enabled weekday within the configured date range
+Short: close crosses below CPR Bottom AND no short position is open AND puts are enabled AND the bar is on an enabled weekday within the configured date range
+Exit: long, close crosses below CPR Bottom AND puts are enabled AND the bar is on an enabled weekday within the configured date range
+Exit: short, close crosses above CPR Top AND calls are enabled AND the bar is on an enabled weekday within the configured date range

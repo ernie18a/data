@@ -1,0 +1,4 @@
+Long: close > pivot resistance and EMA(3) > EMA(5) > EMA(8) > EMA(13) > EMA(21) > EMA(34) > EMA(200) and higher-timeframe Supertrend direction < 0 and higher-timeframe RSI[1] > higher-timeframe RSI[2] and chart-timeframe Supertrend value != its prior-bar value
+Short: close < pivot support and EMA(3) < EMA(5) < EMA(8) < EMA(13) < EMA(21) < EMA(34) < EMA(200) and higher-timeframe Supertrend direction > 0 and higher-timeframe RSI[1] < higher-timeframe RSI[2] and chart-timeframe Supertrend value != its prior-bar value
+Exit: Long, EMA(3) crosses EMA(8) or (EMA(3) < EMA(5) and unrealized profit < minimum-profit threshold)
+Exit: Short, EMA(3) crosses EMA(8) or (EMA(3) > EMA(5) and unrealized profit < minimum-profit threshold)

@@ -1,0 +1,12 @@
+Calculation: Trend state = bullish when shorter-, medium-, and longer-lookback EMAs are strictly ordered upward; bearish when strictly ordered downward; otherwise neutral.
+Calculation: Higher-timeframe bias = higher-timeframe close compared with its EMA; use the higher timeframe’s developing bar in realtime and its last available value on historical bars.
+Calculation: Equilibrium = EMA of close.
+Calculation: Efficiency ratio = absolute close change over a longer lookback divided by the sum of absolute one-bar close changes over that lookback.
+Calculation: Strong impulse = absolute candle body exceeds its shorter-lookback average by a configured factor.
+Calculation: Bullish break = close exceeds the previous bar’s high and strong impulse; bearish break = close is below the previous bar’s low and strong impulse.
+Calculation: Long score = weighted sum of bullish trend state, close below equilibrium, bullish break, and bullish higher-timeframe bias; short score = weighted sum of bearish trend state, close above equilibrium, bearish break, and bearish higher-timeframe bias.
+Calculation: Displacement = absolute distance from close to equilibrium divided by ATR.
+Long: long score >= selected mode’s minimum score AND configured reward-to-risk >= minimum reward-to-risk AND displacement > minimum displacement AND (mode is not LONG OR higher-timeframe bias is bullish) AND (mode is LONG or efficiency ratio is not below the choppy threshold) OR the last closed trade was a losing long AND higher-timeframe bias is bullish.
+Short: short score >= selected mode’s minimum score AND configured reward-to-risk >= minimum reward-to-risk AND displacement > minimum displacement AND (mode is not LONG OR higher-timeframe bias is bearish) AND (mode is LONG or efficiency ratio is not below the choppy threshold) OR the last closed trade was a losing short AND higher-timeframe bias is bearish.
+Exit: long, exit orders are active (mode is not LONG or trend state is bearish; and mode is not FAST or minimum hold duration has elapsed) AND (low <= close minus ATR-based stop distance OR high >= close plus ATR-based target distance).
+Exit: short, exit orders are active (mode is not LONG or trend state is bullish; and mode is not FAST or minimum hold duration has elapsed) AND (high >= close plus ATR-based stop distance OR low <= close minus ATR-based target distance).

@@ -1,0 +1,7 @@
+Calculation: Trading-day anchor = current GMT-shifted trading-day open when open-based levels are enabled; otherwise (prior trading-day high + low + close) / 3
+Calculation: Buy area, first buy target, second buy target = trading-day anchor plus their respective configured offsets; sell area and sell targets = trading-day anchor minus their respective configured offsets
+Calculation: Average daily range = mean of (prior trading-day range, the 5-day mean range, the 10-day mean range, and the 20-day mean range); each longer mean includes the prior trading-day range and uses progressively more daily ranges
+Long: Current price is within the configured proximity tolerance of the buy area, first buy target, or second buy target OR current price is at or above the buy area and below the trading-day anchor + average daily range
+Short: Current price is within the configured proximity tolerance of the sell area, first sell target, or second sell target OR current price is at or below the sell area and above the trading-day anchor - average daily range
+Exit: Long, price >= entry price + the displayed take-profit offset for the entry level OR price <= entry price - the displayed stop-loss offset for the entry level
+Exit: Short, price <= entry price - the displayed take-profit offset for the entry level OR price >= entry price + the displayed stop-loss offset for the entry level

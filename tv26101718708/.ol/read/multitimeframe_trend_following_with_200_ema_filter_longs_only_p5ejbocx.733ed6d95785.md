@@ -1,0 +1,2 @@
+Long: Fast EMA > slow EMA on the chart timeframe AND fast EMA > slow EMA on each of two successively higher timeframes, using the bar still forming on each higher timeframe AND close > 200-period EMA on the chart timeframe
+Exit: Long, fast EMA <= slow EMA on any of those timeframes OR close < 200-period EMA on the chart timeframe

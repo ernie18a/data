@@ -1,0 +1,5 @@
+Calculation: Direction score = 100 times the sum over a lookback of consecutive close-to-close changes, counting +1 for each increase and -1 for each decrease or unchanged close, divided by the lookback. Calculate on the chart timeframe or a configurable higher or lower timeframe, using a configurable signal bar: the last completed bar or the bar still forming. The previous score is from the immediately preceding bar of that timeframe.
+Long: (trend-following mode AND direction score > 0 AND previous score <= 0) OR (countertrend mode AND direction score <= 0 AND previous score > 0)
+Short: (trend-following mode AND direction score <= 0 AND previous score > 0) OR (countertrend mode AND direction score > 0 AND previous score <= 0)
+Exit: long, (trend-following mode AND direction score <= 0) OR (countertrend mode AND direction score > 0) OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, (trend-following mode AND direction score > 0) OR (countertrend mode AND direction score <= 0) OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

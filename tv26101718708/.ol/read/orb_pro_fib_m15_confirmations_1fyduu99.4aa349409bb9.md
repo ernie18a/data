@@ -1,0 +1,5 @@
+Calculation: Opening-range high and low = highest high and lowest low during the opening-range interval.
+Calculation: Smoothed moving average = Wilder’s moving average of close; compare its current value with an earlier value using a shorter lookback.
+Calculation: Conversion line = midpoint of the highest high and lowest low over a shorter lookback; base line = midpoint over a longer lookback.
+Long: An opening range has been confirmed broken by consecutive closes above its high, no signal has been given for that range, close > smoothed moving average, smoothed moving average > its earlier value, conversion line > base line, and opening-range width > a configurable fraction of ATR.
+Short: An opening range has been confirmed broken by consecutive closes below its low, no signal has been given for that range, close < smoothed moving average, smoothed moving average < its earlier value, conversion line < base line, and opening-range width > a configurable fraction of ATR.

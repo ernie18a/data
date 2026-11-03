@@ -1,0 +1,4 @@
+Calculation: opening-range high = highest high during the current day's opening-range window
+Calculation: opening-range low = lowest low during the current day's opening-range window
+Long: first opening-range breakout of the day, during the breakout window, close > opening-range high AND month is September through May AND prior completed daily close > prior completed daily EMA (daily timeframe is higher than the chart timeframe)
+Short: first opening-range breakout of the day, during the breakout window, close < opening-range low AND month is September through May AND prior completed daily close < prior completed daily EMA (daily timeframe is higher than the chart timeframe)

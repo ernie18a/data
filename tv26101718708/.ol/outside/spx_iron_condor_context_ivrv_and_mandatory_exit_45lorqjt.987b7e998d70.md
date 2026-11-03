@@ -1,0 +1,1 @@
+For a manually configured iron condor, signal exit when the mandatory exit time is reached. While the position is active, alert if the underlying crosses below the short put strike or above the short call strike so the trader can check the position. The indicator gives no entry signal and does not determine take-profit or stop-loss exits.

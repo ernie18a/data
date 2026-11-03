@@ -1,0 +1,4 @@
+Calculation: Buy pressure = sum over the lookback of volume × close position in the bar’s range, divided by half the sum of volume over that lookback; close position is (close − low) / (high − low), or 0.5 when high = low. Use chart-timeframe bars and treat missing volume as 1.
+Calculation: Sell pressure = sum over the lookback of volume × (1 − close position in the bar’s range), divided by half the sum of volume over that lookback. Use chart-timeframe bars and treat missing volume as 1.
+Long: On a completed chart-timeframe bar, buy pressure ≥ threshold AND buy pressure > sell pressure AND the previous bar did not meet both pressure conditions AND no buy-zone mark has occurred within the zone-extension length of chart bars.
+Short: On a completed chart-timeframe bar, sell pressure ≥ threshold AND sell pressure > buy pressure AND the previous bar did not meet both pressure conditions AND no sell-zone mark has occurred within the zone-extension length of chart bars.

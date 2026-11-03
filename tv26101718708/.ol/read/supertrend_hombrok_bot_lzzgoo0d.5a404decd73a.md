@@ -1,0 +1,5 @@
+Calculation: Supertrend trend state = initialize to 1; on each bar, set upper band = hl2 − ATR × multiplier and lower band = hl2 + ATR × multiplier; set prior bands to the prior bar’s bands, or the current bands on the first bar; set up band = max(current upper band, prior upper band) if prior close > prior upper band, otherwise current upper band; set down band = min(current lower band, prior lower band) if prior close < prior lower band, otherwise current lower band; change state from −1 to 1 when current close > down band, or from 1 to −1 when current close < up band; otherwise retain prior state
+Long: Supertrend trend state = 1 AND volume > 20-bar simple moving average of volume × volume multiplier AND abs(close − open) > ATR × body-size factor AND RSI(close, lookback) < overbought threshold
+Short: Supertrend trend state = −1 AND volume > 20-bar simple moving average of volume × volume multiplier AND abs(close − open) > ATR × body-size factor AND RSI(close, lookback) > oversold threshold
+Exit: Long, low <= close − ATR OR high >= close + ATR × risk/reward ratio
+Exit: Short, high >= close + ATR OR low <= close − ATR × risk/reward ratio

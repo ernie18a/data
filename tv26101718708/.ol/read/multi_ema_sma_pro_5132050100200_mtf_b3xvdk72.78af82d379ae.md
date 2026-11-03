@@ -1,0 +1,4 @@
+Calculation: Moving average = selected moving-average type applied to the configured source over its lookback; use chart-timeframe bars or selected higher-timeframe bars. Higher-timeframe values use the still-forming bar unless wait-for-close selects the last completed bar; a lower-timeframe selection falls back to chart timeframe.
+Calculation: Fast and slow moving averages = same type and timeframe, with the fast lookback shorter than the slow lookback.
+Long: Close crosses above any enabled moving average OR fast moving average crosses above slow moving average
+Short: Close crosses below any enabled moving average OR fast moving average crosses below slow moving average

@@ -1,0 +1,8 @@
+Calculation: Long stop = entry-signal bar low − stop buffer
+Calculation: Long target = entry-signal bar close + (entry-signal bar close − long stop) × risk-reward ratio
+Calculation: Short stop = entry-signal bar high + stop buffer
+Calculation: Short target = entry-signal bar close − (short stop − entry-signal bar close) × risk-reward ratio
+Long: Within the configured session AND flat AND current forming higher-timeframe bar low < previous completed higher-timeframe bar low AND current forming higher-timeframe bar close > previous completed higher-timeframe bar low AND chart bar low < previous chart bar low AND ((simple confirmation selected AND chart close > chart open AND chart close > previous chart bar high) OR (institutional confirmation selected AND chart close > chart open AND absolute chart candle body > 0.6 × chart candle range AND chart candle range > 0.8 × chart-timeframe ATR(14) AND chart close ≥ chart high − 0.2 × chart candle range))
+Short: Within the configured session AND flat AND current forming higher-timeframe bar high > previous completed higher-timeframe bar high AND current forming higher-timeframe bar close < previous completed higher-timeframe bar high AND chart bar high > previous chart bar high AND ((simple confirmation selected AND chart close < chart open AND chart close < previous chart bar low) OR (institutional confirmation selected AND chart close < chart open AND absolute chart candle body > 0.6 × chart candle range AND chart candle range > 0.8 × chart-timeframe ATR(14) AND chart close ≤ chart low + 0.2 × chart candle range))
+Exit: Long, chart bar low ≤ long stop OR chart bar high ≥ long target
+Exit: Short, chart bar high ≥ short stop OR chart bar low ≤ short target

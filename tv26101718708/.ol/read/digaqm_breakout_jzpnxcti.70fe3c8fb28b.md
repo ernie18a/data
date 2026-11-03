@@ -1,0 +1,7 @@
+Calculation: Breakout level = latest confirmed swing high, where a swing high is a bar high greater than the highs over the selected lookback on both sides.
+Calculation: Initial stop = latest confirmed swing low, where a swing low is a bar low lower than the lows over the selected lookback on both sides.
+Calculation: Long-term moving average = selected average of higher-timeframe closes; the third average has a longer lookback than the first and second, and the second has a longer lookback than the first. Use the last completed higher-timeframe bar.
+Calculation: ADR = average of (daily high − daily low) / abs(daily low) × 100 over the selected lookback, using the last completed daily bar.
+Calculation: Active stop = initial stop, updated to the latest confirmed swing low while that low is below the entry price and otherwise held at its previous value; use the latest low of a bar that crossed below the selected first or second moving average after entry as the trailing stop. Select the higher of the initial stop and trailing stop, except use the initial stop when the prior close is not above both the trailing stop and selected moving average.
+Long: high >= breakout level AND breakout level > longest moving average AND (when enabled) breakout level − prior active stop < ADR allowance AND datetime > start date AND datetime < end date
+Exit: long, low <= active stop

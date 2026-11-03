@@ -1,0 +1,8 @@
+Calculation: Adaptive market level = Smooth each bar’s (high + low + 2×open + 2×close)/6 using alpha = clamp(exp(−lag×(dimension − 1)), 0.01, 1), where dimension = log(R1 + R2) − log(R3), divided by log(2); R1 and R2 are the high-low ranges of consecutive fractal-length windows divided by fractal length, and R3 is the range of the combined 2×fractal-length window divided by 2×fractal length. Use the current and previous smoothed values recursively. Update the level to the current smoothed value when its absolute difference from the smoothed value lag bars earlier is at least lag²×point; otherwise carry forward the previous level.
+Calculation: Skyscraper trend state = On each bar, calculate ATR(15), then step = 0.5×sensitivity×(maximum ATR + minimum ATR over the length lookback). Set the candidate lower and upper levels to low + 2×step and high − 2×step, respectively (or close − 2×step and close + 2×step when using close mode). If close exceeds the previous lower level, set the state bullish; if it is below the previous upper level, set it bearish; otherwise retain the previous state. In a bullish state, floor the candidate lower level at the previous lower level and reset the upper level; in a bearish state, cap the candidate upper level at the previous upper level and reset the lower level.
+Long: Adaptive market level > its value on the previous bar
+Short: Adaptive market level < its value on the previous bar
+Long: Skyscraper trend state changes from bearish to bullish
+Short: Skyscraper trend state changes from bullish to bearish
+Exit: Long, Skyscraper trend state changes from bullish to bearish
+Exit: Short, Skyscraper trend state changes from bearish to bullish

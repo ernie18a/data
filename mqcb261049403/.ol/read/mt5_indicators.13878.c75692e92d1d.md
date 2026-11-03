@@ -1,0 +1,3 @@
+Calculation: Schaff JCCX Trend Cycle = subtract a long-lookback JCCX from a short-lookback JCCX; normalize the difference between its rolling low and high over a cycle lookback to 0–100, then smooth each value as 0.5 × current value + 0.5 × prior value. Normalize this smoothed series between its rolling low and high over the same cycle lookback to −100–100, then smooth it the same way. JCCX = JurX-smoothed (applied price − its JJMA) divided by JurX-smoothed absolute (applied price − its JJMA), clipped to [−1, 1]. For the higher-timeframe version, calculate on higher-timeframe bars using the still-forming bar and carry its value across chart bars.
+Long: Schaff JCCX Trend Cycle > 0
+Short: Schaff JCCX Trend Cycle < 0

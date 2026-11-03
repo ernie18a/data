@@ -1,0 +1,4 @@
+Calculation: ORB High = highest high during the current session’s opening-range duration, using completed bars at the chart timeframe when it fits the duration, otherwise completed 1-minute bars (lower timeframe than the chart)
+Calculation: ORB Low = lowest low during the current session’s opening-range duration, using completed bars at the chart timeframe when it fits the duration, otherwise completed 1-minute bars (lower timeframe than the chart)
+Long: current close > current ORB High AND previous close <= previous ORB High AND the current session’s opening range is complete
+Short: current close < current ORB Low AND previous close >= previous ORB Low AND the current session’s opening range is complete

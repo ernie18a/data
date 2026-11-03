@@ -1,0 +1,4 @@
+Long: Williams %R on the last two completed working-timeframe bars was below the lower level on the earlier bar AND above it on the most recent bar
+Short: Williams %R on the last two completed working-timeframe bars was above the upper level on the earlier bar AND below it on the most recent bar
+Exit: Long, Williams %R on the last two completed working-timeframe bars was above the upper level on the earlier bar AND below it on the most recent bar
+Exit: Short, Williams %R on the last two completed working-timeframe bars was below the lower level on the earlier bar AND above it on the most recent bar

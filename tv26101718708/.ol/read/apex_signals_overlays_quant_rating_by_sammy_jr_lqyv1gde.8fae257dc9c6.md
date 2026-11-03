@@ -1,0 +1,2 @@
+Long: Supertrend direction changes from bearish to bullish OR RSI < 30 AND low <= the lowest low of the last 5 chart-timeframe bars AND close > open
+Short: Supertrend direction changes from bullish to bearish OR RSI > 70 AND high >= the highest high of the last 5 chart-timeframe bars AND close < open

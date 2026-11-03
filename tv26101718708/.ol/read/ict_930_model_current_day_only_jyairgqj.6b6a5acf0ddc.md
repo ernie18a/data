@@ -1,0 +1,9 @@
+Calculation: Bullish rejection sweep = during the trade window, with no sweep active, the previous close and current open are above either the previous day's low or the current day's prior-session low, the current low is below that same level, and the current close is above it
+Calculation: Bearish rejection sweep = during the trade window, with no sweep active, the previous close and current open are below either the previous day's high or the current day's prior-session high, the current high is above that same level, and the current close is below it
+Calculation: Bullish Fair Value Gap = current low > high two bars earlier
+Calculation: Bearish Fair Value Gap = current high < low two bars earlier
+Calculation: Bullish displacement = previous bar closes above its open AND its high-low range exceeds the configured multiple of the previous bar's ATR
+Calculation: Bearish displacement = previous bar closes below its open AND its high-low range exceeds the configured multiple of the previous bar's ATR
+Calculation: Prior-session midpoint = (current day's prior-session high + current day's prior-session low) / 2
+Long: Bullish rejection sweep OR (during the trade window AND a bullish rejection sweep occurred on an earlier bar and remains active AND Bullish Fair Value Gap AND (displacement filter disabled OR Bullish displacement) AND (premium/discount filter disabled OR current low < Prior-session midpoint) AND (one-FVG-per-sweep disabled OR no bullish FVG has yet formed for this sweep))
+Short: Bearish rejection sweep OR (during the trade window AND a bearish rejection sweep occurred on an earlier bar and remains active AND Bearish Fair Value Gap AND (displacement filter disabled OR Bearish displacement) AND (premium/discount filter disabled OR current high > Prior-session midpoint) AND (one-FVG-per-sweep disabled OR no bearish FVG has yet formed for this sweep))

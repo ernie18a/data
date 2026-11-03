@@ -1,0 +1,7 @@
+Calculation: Aroon Up = 100 × (lookback − bars since the highest high in the lookback window) ÷ lookback
+Calculation: Aroon Down = 100 × (lookback − bars since the lowest low in the lookback window) ÷ lookback
+Calculation: Volume oscillator = Hull moving average of the RSI of volume
+Long: Aroon Up > overbought threshold AND Aroon Down < oversold threshold AND the stored Aroon trend changes to bullish AND the resulting signal differs from the previous signal AND (filter is disabled OR volatility filter is selected and short-term ATR > long-term ATR OR volume filter is selected and volume oscillator > its threshold OR both filters are selected and both conditions pass)
+Short: Aroon Up < oversold threshold AND Aroon Down > overbought threshold AND the stored Aroon trend changes to bearish AND the resulting signal differs from the previous signal AND (filter is disabled OR volatility filter is selected and short-term ATR > long-term ATR OR volume filter is selected and volume oscillator > its threshold OR both filters are selected and both conditions pass)
+Exit: long, a short signal is emitted OR the long signal has persisted for the holding period and no signal changes on this bar
+Exit: short, a long signal is emitted OR the short signal has persisted for the holding period and no signal changes on this bar

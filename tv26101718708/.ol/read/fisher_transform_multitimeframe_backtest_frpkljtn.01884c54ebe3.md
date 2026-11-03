@@ -1,0 +1,6 @@
+Calculation: Fisher trend = On the selected interval (higher than or equal to the chart interval), calculate the Fisher Transform from the selected price source and lookback length; update only on the interval’s last chart bar, using that now-completed interval bar and prior completed interval values. Set trend to +1 when raw Fisher > smoothed Fisher and the rounded smoothed Fisher is nondecreasing; set it to -1 when raw Fisher < smoothed Fisher and the rounded smoothed Fisher is nonincreasing; otherwise keep the prior trend.
+Calculation: Fisher trend change = current Fisher trend − prior Fisher trend.
+Long: Fisher trend change > 0 AND bar datetime is within the configured backtest date window
+Short: Fisher trend change < 0 AND bar datetime is within the configured backtest date window
+Exit: long, low <= entry price − fixed stop distance OR (high has reached entry price + trailing activation distance AND low <= highest high since activation − trailing distance)
+Exit: short, high >= entry price + fixed stop distance OR (low has reached entry price − trailing activation distance AND high >= lowest low since activation + trailing distance)

@@ -1,0 +1,6 @@
+Calculation: SMA = simple moving average of close over a lookback.
+Calculation: PUT VAH and PUT VAL = upper and lower edges of a PUT volume profile over a longer chart-bar lookback; CALL VAH and CALL VAL = corresponding edges of a CALL profile over a shorter chart-bar lookback. For each profile, divide the low-to-high range of its lookback, including the current bar, into equal rows. Allocate each bar’s volume to each row in proportion to the overlap of its high-low range with that row. Start at the row with the greatest allocated volume (ties choose the highest row). If its volume is below the target percentage of total allocated volume, add exactly one adjacent row: choose the one with greater volume, choosing the upper row on a tie. VAH is the upper edge of the selected uppermost row; VAL is the lower edge of the selected lowermost row.
+Long: close crosses above SMA OR close >= open AND (low + high) / 2 > previous bar high
+Short: close crosses below SMA OR close < open AND (low + high) / 2 < previous bar low
+Exit: Long, low <= PUT VAL OR high >= CALL VAH
+Exit: Short, high >= PUT VAH OR low <= CALL VAL

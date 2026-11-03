@@ -1,0 +1,5 @@
+Calculation: Relative volume = current volume / simple moving average of volume over a lookback
+Calculation: Squeeze = Bollinger Bands (simple moving average of close ± a standard-deviation multiple) lie inside Keltner Channels (exponential moving average of close ± an ATR multiple)
+Calculation: Liquidity score = 30% × min(100, relative volume / 5 × 100) + 20% × min(100, absolute VWAP deviation percentage / deviation threshold × 50) + 25% × min(100, volume acceleration / 3 × 100) + 25% × squeeze score; volume acceleration = short-window simple moving average of volume / longer-window simple moving average of volume; the longer window is a multiple of the short window; squeeze score = 100 on a squeeze release with relative volume at or above its threshold, else 40 while the squeeze is on, else 0
+Long: the squeeze was on on the previous chart bar AND is off on the current chart bar AND relative volume is at or above its threshold
+Long: the squeeze was on on the previous chart bar AND is off on the current chart bar AND relative volume is at or above its threshold AND liquidity score is at least 75

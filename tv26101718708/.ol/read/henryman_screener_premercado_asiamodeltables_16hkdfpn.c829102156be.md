@@ -1,0 +1,4 @@
+Calculation: Reference candle = the second most recent completed bar on the configured model timeframe, which may be higher or lower than the chart timeframe.
+Calculation: Action candle = the most recent completed bar on the configured model timeframe, which may be higher or lower than the chart timeframe.
+Long: Action candle close > Reference candle high OR (Action candle low < Reference candle low AND Action candle close >= Reference candle low AND Action candle close <= Reference candle high) AND NOT (Action candle close < Reference candle low OR (Action candle high > Reference candle high AND Action candle close >= Reference candle low AND Action candle close <= Reference candle high))
+Short: Action candle close < Reference candle low OR (Action candle high > Reference candle high AND Action candle close >= Reference candle low AND Action candle close <= Reference candle high)

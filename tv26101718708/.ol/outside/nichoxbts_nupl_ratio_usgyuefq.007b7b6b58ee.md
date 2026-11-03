@@ -1,0 +1,1 @@
+Calculate Bitcoin’s unrealized-profit ratio from market capitalization and realized capitalization. Go long when the ratio is in the capitulation or recovery zones; exit long positions when it enters the growth or euphoria zones. No short entry is specified.

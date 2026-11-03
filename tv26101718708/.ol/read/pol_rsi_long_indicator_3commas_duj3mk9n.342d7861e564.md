@@ -1,0 +1,3 @@
+Calculation: Average entry price = total quote amount used for the base fill and safety-order fills divided by total asset quantity bought in those fills
+Long: Flat AND higher-timeframe RSI is below its threshold on the value available at chart-bar close OR long position AND the next unfilled safety-order threshold is reached, where each threshold is a configured deviation below the base entry price
+Exit: Long, chart-bar close is at or above average entry price plus the configured take-profit percentage

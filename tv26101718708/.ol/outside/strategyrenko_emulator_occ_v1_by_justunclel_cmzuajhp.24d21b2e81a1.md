@@ -1,0 +1,1 @@
+Within the configured trading period, build Renko bars for the traded instrument using the selected ATR-based or fixed-size method. Enter or hold long when the current Renko close is above its open; enter or hold short when it is below. A move to the opposite direction reverses the position. Optionally exit a position at its configured profit target or stop loss.

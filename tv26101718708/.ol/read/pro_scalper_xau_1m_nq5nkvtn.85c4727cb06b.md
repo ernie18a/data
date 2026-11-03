@@ -1,0 +1,2 @@
+Long: Close > EMA AND (VWAP filter disabled OR close > VWAP) AND close > Supertrend AND low < lowest low of prior bars over the shorter lookback AND high > highest high of prior bars over the longer lookback AND no long or short signal occurred within the cooldown period
+Short: Close < EMA AND (VWAP filter disabled OR close < VWAP) AND close < Supertrend AND high > highest high of prior bars over the shorter lookback AND low < lowest low of prior bars over the longer lookback AND no long or short signal occurred within the cooldown period

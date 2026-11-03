@@ -1,0 +1,8 @@
+Calculation: Volume average = simple moving average of volume over a lookback.
+Calculation: Selling Climax (SC) = in scan phase, current low is at or below the lowest low over a longer lookback on preceding bars, volume is at least the volume average times a spike multiplier, and the close a bounded number of bars ago is sufficiently above current low; store the SC low and volume. In SC-search phase, replace SC when a later low is sufficiently below it and volume meets a reduced spike threshold.
+Calculation: Automatic Rally (AR) = after SC, track the highest high; confirm AR after the high has bounced sufficiently above SC low, price has retraced sufficiently from that high, and the minimum number of bars since SC has elapsed; store that high as the trading-range top.
+Calculation: Accumulation trading range = active after confirmed SC and AR, until the range exceeds its maximum age, price breaks sufficiently below SC low, or a later phase reset condition occurs.
+Calculation: Spring = in the accumulation trading range, low < SC low AND close is at or above SC low adjusted by a small tolerance AND close is no higher than AR high adjusted by a small tolerance AND close is in the upper portion of the candle.
+Calculation: Sign of Strength (SOS) = close > AR high AND volume > volume average times a spike multiplier AND close > open; eligible in the accumulation trading range or after a Spring, before SOS has been recorded.
+Calculation: Last Point of Support (LPS) = after SOS and a minimum bar delay, low is near AR high, volume is below its average, low > SC low, and close >= open.
+Long: Spring OR SOS OR LPS

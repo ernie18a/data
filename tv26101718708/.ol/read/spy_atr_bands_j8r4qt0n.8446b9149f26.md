@@ -1,0 +1,2 @@
+Calculation: Lower ATR bands = RMA of high minus ATR multiplied by a lower-band multiplier; define inner, main, and outer levels with progressively wider bands. Calculate on each requested band timeframe, which may be higher or lower than the chart timeframe, using its current bar, including while it is forming.
+Long: For any lower-band set, high >= outer AND low <= inner AND current penetration depth > prior penetration depth, where depth = 3 if high >= inner, 2 if high < inner AND high >= main, otherwise 1.

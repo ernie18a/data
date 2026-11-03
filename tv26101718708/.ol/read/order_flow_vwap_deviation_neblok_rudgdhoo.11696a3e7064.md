@@ -1,0 +1,6 @@
+Calculation: Anchored VWAP = volume-weighted average of the source price since the current session, week, or month anchor, resetting at each new anchor.
+Calculation: Buy/sell volume = for each lower-timeframe bar within the chart bar, allocate its volume between buy and sell in proportion to where its close lies within its high-low range; if the range is zero, split volume equally. Use chart-bar data when no lower-timeframe bars are available.
+Calculation: Bar delta = buy volume − sell volume.
+Calculation: Upper/lower deviation = standard deviation of the source price around anchored VWAP, weighted by buy volume for the upper deviation and sell volume for the lower deviation. Inner bands use a smaller multiplier than outer bands; upper bands are above VWAP and lower bands below it.
+Long: Low <= selected lower band AND close > selected lower band AND bar delta > 0 AND chart bar is confirmed AND bar is not an anchor reset AND bars since anchor >= warm-up length AND bars since prior long signal > long cooldown
+Short: High >= selected upper band AND close < selected upper band AND bar delta < 0 AND chart bar is confirmed AND bar is not an anchor reset AND bars since anchor >= warm-up length AND bars since prior short signal > short cooldown

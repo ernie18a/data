@@ -1,0 +1,7 @@
+Calculation: Adapted close = close, or the selected SMA, EMA, RMA, double WMA, triple VWMA, HMA, LLAMA (SMA(close, length) + (close − close[length]) / 2), or recursive Kalman estimate (initialize estimate to close and error to 1; each bar use q = 1 / length, gain = (error + q) / (error + q + 1), update estimate by gain × (close − estimate), and error by (1 − gain) × (error + q)).
+Calculation: NRTR offset = prior-bar adapted close × percentage, or ATR × multiplier; use the prior completed bar's ATR.
+Calculation: NRTR level = in an uptrend, the greater of the prior level and the highest prior-bar adapted close since the last flip minus the offset; in a downtrend, the lesser of the prior level and the lowest prior-bar adapted close since the last flip plus the offset. Flip up when the prior-bar adapted close exceeds the current level; flip down when it falls below the current level. On a flip, reset the extreme to the prior-bar adapted close and the level to the extreme minus the offset (up) or plus the offset (down).
+Long: Previous trend is down AND prior-bar adapted close > current NRTR level AND (ADX filter disabled OR prior-bar ADX ≥ threshold) AND long cooldown inactive.
+Short: Previous trend is up AND prior-bar adapted close < current NRTR level AND (ADX filter disabled OR prior-bar ADX ≥ threshold) AND short cooldown inactive.
+Exit: Long, short decision occurs OR low ≤ long stop-loss OR high ≥ long TP3.
+Exit: Short, long decision occurs OR high ≥ short stop-loss OR low ≤ short TP3.

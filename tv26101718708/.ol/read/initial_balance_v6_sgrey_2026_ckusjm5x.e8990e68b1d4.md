@@ -1,0 +1,5 @@
+Calculation: Initial Balance High/Low = highest high / lowest low during the session’s first hour, fixed when that hour ends
+Calculation: Initial Balance ATR = average true range of bars during the first hour
+Calculation: Range % ATR = (Initial Balance High − Initial Balance Low) ÷ ATR × 100; ATR is calculated on the selected ATR timeframe, using its previous completed bar when enabled or its bar still forming otherwise
+Long: Initial Balance is complete AND close > Initial Balance High AND Range % ATR < exhaustion threshold AND Initial Balance ATR > low-volatility threshold AND Range % ATR ≤ breakout threshold
+Short: Initial Balance is complete AND close < Initial Balance Low AND Range % ATR < exhaustion threshold AND Initial Balance ATR > low-volatility threshold AND Range % ATR ≤ breakout threshold

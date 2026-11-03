@@ -1,0 +1,7 @@
+Calculation: Entry moving average = simple or exponential moving average of close over an independently configured long-term lookback
+Calculation: EMA entry average = exponential moving average of close over a shorter-term lookback
+Calculation: Exit moving average = simple or exponential moving average of close over an independently configured long-term lookback
+Calculation: Volume average = simple moving average of volume
+Calculation: Long stop price = entry price × (1 − configured stop-loss percentage)
+Long: Flat AND ( (bars since close < entry moving average >= configured time-buffer length AND the same entry condition was false on the previous bar) OR (close > EMA entry average AND volume > volume average × configured multiplier AND EMA entry average increased on each of the configured consecutive prior steps AND the same combined EMA entry condition was false on the previous bar) )
+Exit: Long, low <= long stop price OR (entry mode is original moving-average entry OR entry mode is EMA entry and a close above the entry moving average has occurred since entry) AND close < exit moving average for the configured consecutive-bar buffer AND this exit condition was false on the previous bar OR (entry mode is EMA entry AND no close above the entry moving average has occurred since entry AND close < EMA entry average AND previous close >= previous EMA entry average)

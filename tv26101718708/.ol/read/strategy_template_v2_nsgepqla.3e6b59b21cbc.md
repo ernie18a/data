@@ -1,0 +1,5 @@
+Calculation: Donchian channel = rolling highest high and lowest low; midpoint = average of the upper and lower boundaries. The chart-timeframe channel uses the current bar; the higher-timeframe channel uses the last completed bar.
+Long: datetime is within the configured trading window AND the chart-timeframe Donchian lower boundary > the higher-timeframe Donchian midpoint AND high crosses above the previous bar’s chart-timeframe Donchian upper boundary
+Short: datetime is within the configured trading window AND the chart-timeframe Donchian upper boundary < the higher-timeframe Donchian midpoint AND low crosses below the previous bar’s chart-timeframe Donchian lower boundary
+Exit: long, low crosses below the previous bar’s chart-timeframe Donchian lower boundary OR short bias becomes true
+Exit: short, high crosses above the previous bar’s chart-timeframe Donchian upper boundary OR long bias becomes true

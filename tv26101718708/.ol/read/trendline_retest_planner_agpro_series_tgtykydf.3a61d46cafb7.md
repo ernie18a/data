@@ -1,0 +1,10 @@
+Calculation: Confirmed swing pivots = pivot highs and lows confirmed after the pivot look-ahead bars; connect the two most recent pivots of each kind to form resistance and support trendlines.
+Calculation: Active trendline = use the selected side, or in automatic mode choose the eligible support/resistance line nearest to close; a support line is eligible when close is no more than the risk-edge distance below it, and resistance when close is no more than that distance above it. If both are eligible choose the nearer line; if neither is eligible but support exists, choose support. Ignore lines whose second anchor is older than the maximum line age.
+Calculation: Retest pocket = active trendline ± ATR-based pocket width; touched when the bar’s high-low range overlaps the pocket, near when close is within the ATR-based activation distance.
+Calculation: Retest score = 0–100 weighted score of line age (peaks at an intermediate age), qualifying post-anchor pocket touches, probe depth (peaks at the ideal depth and declines toward the maximum depth; when not recently touched, use distance to the line instead), close response on the defended side, and relative volume. Cap at the non-retest maximum when neither near nor recently touched, and at the invalidated maximum when invalidated.
+Calculation: Recently touched = a pocket touch occurred within the response window.
+Calculation: Invalidated = support-side close below the trendline minus the ATR-based risk-edge distance, or resistance-side close above the trendline plus that distance.
+Long: active support trendline AND (pocket touched OR near pocket OR recently touched with score at least the monitor threshold and not invalidated).
+Short: active resistance trendline AND (pocket touched OR near pocket OR recently touched with score at least the monitor threshold and not invalidated).
+Exit: long, active support trendline AND close below its ATR-based risk edge.
+Exit: short, active resistance trendline AND close above its ATR-based risk edge.

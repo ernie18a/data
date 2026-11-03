@@ -1,0 +1,5 @@
+Calculation: Stochastic %D = stochastic signal line on the chart timeframe, or on the higher timeframe bar still forming in the HTF version.
+Calculation: Fast StepStochastic line = on each bar, set its trend up if Stochastic %D exceeds the previous upper band, or down if it falls below the previous lower band; otherwise keep the trend. Set the current bands to Stochastic %D ± twice the fast step size, clamping the lower band to at least its previous value in an uptrend and the upper band to at most its previous value in a downtrend. The line is the lower band plus one fast step size in an uptrend, or the upper band minus one fast step size in a downtrend. The fast step size is shorter than the slow step size. Uses the chart timeframe, or the higher timeframe bar still forming in the HTF version.
+Calculation: Slow StepStochastic line = calculated as the Fast StepStochastic line, using the slow step size, which is longer than the fast step size. Uses the chart timeframe, or the higher timeframe bar still forming in the HTF version.
+Long: Fast StepStochastic line > Slow StepStochastic line
+Short: Fast StepStochastic line < Slow StepStochastic line

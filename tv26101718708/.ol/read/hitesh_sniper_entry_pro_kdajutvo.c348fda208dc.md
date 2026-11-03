@@ -1,0 +1,4 @@
+Calculation: Internal pivot high/low = a bar whose high/low is higher/lower than the highs/lows of the configured number of bars on both sides; internal lookback is shorter than swing lookback.
+Calculation: Swing pivot high/low = a bar whose high/low is higher/lower than the highs/lows of the configured number of bars on both sides.
+Long: Close crosses above the latest confirmed internal or swing pivot high, with at least two confirmed pivot lows available for that structure.
+Short: Close crosses below the latest confirmed internal or swing pivot low, with at least two confirmed pivot highs available for that structure.

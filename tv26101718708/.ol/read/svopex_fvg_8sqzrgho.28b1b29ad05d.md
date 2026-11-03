@@ -1,0 +1,2 @@
+Long: A new bullish FVG forms on the selected zone timeframe within the lookback period, using its last completed bars: the high three bars back is below the low one bar back
+Short: A new bearish FVG forms on the selected zone timeframe within the lookback period, using its last completed bars: the low three bars back is above the high one bar back

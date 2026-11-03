@@ -1,0 +1,5 @@
+Calculation: Prior trend = compare the selected price with its moving average on the bar immediately preceding the pattern; an uptrend is price > moving average and a downtrend is price <= moving average. If two moving averages with different lengths are selected, compare the shorter moving average with the longer instead.
+Long: Prior trend is up AND the previous bar's low > the high of the bar before it.
+Long: Prior trend is down AND the second bar before the current bar closes below its open AND the previous bar closes above its open AND the previous bar opens below the second bar's low AND the previous bar closes above the midpoint of the second bar's body AND below its open.
+Short: Prior trend is down AND the previous bar's high < the low of the bar before it.
+Short: Prior trend is up AND the second bar before the current bar closes above or at its open AND its range or absolute body is at least a threshold multiple of the average corresponding size over preceding bars AND the previous bar closes below its open AND opens above the second bar's high AND closes below the midpoint of the second bar's body AND above its open.

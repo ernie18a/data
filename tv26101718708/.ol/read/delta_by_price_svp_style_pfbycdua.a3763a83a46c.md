@@ -1,0 +1,3 @@
+Calculation: Price-row net delta = Sum, within the selected session or rolling profile range, of each lower-timeframe bar’s volume when its close is above its open, minus its volume when its close is below its open; ignore unchanged bars and assign each amount to the fixed tick-size price row containing that bar’s close. Use completed lower-timeframe bars and available intrabars of the still-forming chart bar.
+Long: Price-row net delta > 0
+Short: Price-row net delta < 0

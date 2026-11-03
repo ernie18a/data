@@ -1,0 +1,1 @@
+Long: higher-timeframe short-term EMA of close on the bar still forming > higher-timeframe long-term EMA of close on the bar still forming

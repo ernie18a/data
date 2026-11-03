@@ -1,0 +1,1 @@
+Long: high > previous day's high

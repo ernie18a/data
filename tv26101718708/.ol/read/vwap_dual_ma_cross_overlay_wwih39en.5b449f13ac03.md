@@ -1,0 +1,2 @@
+Long: shorter-lookback moving average crosses above VWAP OR longer-lookback moving average crosses above VWAP
+Short: shorter-lookback moving average crosses below VWAP OR longer-lookback moving average crosses below VWAP

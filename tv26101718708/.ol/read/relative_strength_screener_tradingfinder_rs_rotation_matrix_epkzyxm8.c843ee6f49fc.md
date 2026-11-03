@@ -1,0 +1,6 @@
+Calculation: Relative return = 100 × (((symbol close / symbol close Performance Length scan bars ago) / (benchmark close / benchmark close the same number of scan bars ago)) − 1). Use the configured scan timeframe: for a timeframe higher than or equal to the chart timeframe, use the last completed scan bar; for a lower timeframe, use the latest available intrabar. Check decisions on a new scan; for a lower timeframe, only at a completed chart bar.
+Calculation: Relative momentum = current relative return − relative return calculated Momentum Length scan bars earlier, using the same Performance Length lookback for both relative returns.
+Calculation: Strength percentile and momentum percentile = each symbol’s percentile rank among the active universe by relative return and relative momentum, respectively; average tied ranks.
+Calculation: Composite score = strength percentile weighted by the configured strength weight plus momentum percentile weighted by the configured momentum weight. Rank symbols by descending score; ties share rank.
+Long: On a new scan, previous rank > configured leader group size AND current rank ≤ configured leader group size.
+Exit: long, on a new scan, previous rank ≤ configured leader group size AND current rank > configured leader group size.

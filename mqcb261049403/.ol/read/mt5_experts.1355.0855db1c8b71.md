@@ -1,0 +1,5 @@
+Calculation: ColorTrend CF upper/lower = On the selected indicator timeframe, for each close change Δclose, gain=max(Δclose,0), loss=max(-Δclose,0); cumulative gain = gain + prior cumulative gain if Δclose>0, otherwise 0; cumulative loss = loss + prior cumulative loss if Δclose<0, otherwise 0. Upper=(sum of gains over the lookback − sum of cumulative losses)/point size; lower=(sum of losses over the lookback − sum of cumulative gains)/point size.
+Long: On the two latest completed indicator-timeframe bars, upper ≤ lower on the preceding bar AND upper > lower on the latest bar
+Short: On the two latest completed indicator-timeframe bars, upper ≥ lower on the preceding bar AND upper < lower on the latest bar
+Exit: long, upper < lower on the latest completed indicator-timeframe bar
+Exit: short, upper > lower on the latest completed indicator-timeframe bar

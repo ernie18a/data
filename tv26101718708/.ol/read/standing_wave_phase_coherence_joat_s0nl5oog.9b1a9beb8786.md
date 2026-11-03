@@ -1,0 +1,3 @@
+Calculation: Phase coherence = EMA(cos(wrap(EMA(atan2(chart-timeframe RSI change, chart-timeframe RSI − 50), phase smoothing) − EMA(atan2(change in RSI from the last completed higher-timeframe bar, that RSI − 50), phase smoothing))), coherence smoothing); both RSI series use the same lookback.
+Long: phase coherence >= positive in-phase threshold AND previous bar phase coherence < positive in-phase threshold
+Short: phase coherence <= negative anti-phase threshold AND previous bar phase coherence > negative anti-phase threshold

@@ -1,0 +1,5 @@
+Calculation: Confirmed HTF pivot high = a bar whose high is higher than the highs of the preceding left-lookback and following right-lookback HTF bars; it is confirmed after the right-lookback bars complete
+Calculation: Confirmed HTF pivot low = a bar whose low is lower than the lows of the preceding left-lookback and following right-lookback HTF bars; it is confirmed after the right-lookback bars complete
+Calculation: Pending pivot = a confirmed pivot retained until matched by a direction-matching gap containing its price, touched by the preceding HTF bar, or older than the configured maximum pending age; a gap match takes precedence over a touch on the same check
+Long: A pending HTF pivot high is strictly between the high two bars before and low of the last completed HTF bar, and that low is greater than that earlier high
+Short: A pending HTF pivot low is strictly between the high and low two bars before the last completed HTF bar, and that high is lower than that earlier low

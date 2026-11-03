@@ -1,0 +1,12 @@
+Calculation: Entry fast, medium, and slow EMAs = exponential moving averages of chart-timeframe close, with the fast lookback shorter than the medium and the medium shorter than the slow.
+Calculation: Trend fast and slow EMAs = exponential moving averages of close on a higher timeframe, using the last completed higher-timeframe bar; the fast lookback is shorter than the slow.
+Calculation: ATR = 14-bar average true range on the chart timeframe.
+Calculation: Fanout gap = ATR × configurable multiplier; on each of the configured number of recent chart bars, the fast EMA must be above the slow EMA by more than this gap for an upward fanout, or below it by more than this gap for a downward fanout.
+Calculation: Long stop-entry price = highest high over the configured recent chart bars at setup, plus ATR × configurable multiplier. Short stop-entry price = lowest low over those bars at setup, minus ATR × configurable multiplier.
+Calculation: Long stop-loss price = setup-bar low minus ATR × configurable multiplier; short stop-loss price = setup-bar high plus ATR × configurable multiplier. Take-profit distance from entry = stop-loss distance from entry × configured risk/reward ratio.
+Long: Within the configured date range AND trend fast EMA > trend slow EMA AND close > trend fast EMA AND entry fast EMA > entry medium EMA > entry slow EMA AND upward fanout holds for the configured recent bars AND previous bar low > previous bar fast EMA AND current bar low < current bar fast EMA; place a stop entry at the long stop-entry price and enter when price reaches it.
+Short: Within the configured date range AND trend fast EMA < trend slow EMA AND close < trend fast EMA AND entry fast EMA < entry medium EMA < entry slow EMA AND downward fanout holds for the configured recent bars AND previous bar high < previous bar fast EMA AND current bar high > current bar fast EMA; place a stop entry at the short stop-entry price and enter when price reaches it.
+Exit: Long, low <= stop-loss price OR high >= take-profit price.
+Exit: Short, high >= stop-loss price OR low <= take-profit price.
+Exit: Long, while an entry order is pending, close < entry slow EMA.
+Exit: Short, while an entry order is pending, close > entry slow EMA.

@@ -1,0 +1,3 @@
+Calculation: Short-, middle-, and long-term moving averages = selected type (SMA, EMA, WMA, VWMA, HMA, SMMA, or DEMA) of close, or of the selected source on same-timeframe Heikin-Ashi bars when enabled; lookbacks increase short < middle < long
+Long: close > long-term moving average AND short-term moving average > middle-term moving average AND datetime >= configured start time AND datetime <= configured end time
+Short: close < long-term moving average AND short-term moving average < middle-term moving average AND datetime >= configured start time AND datetime <= configured end time

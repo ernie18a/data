@@ -1,0 +1,2 @@
+Long: RVI main line > RVI signal line on the chart timeframe OR on a higher timeframe using its still-forming bar
+Short: RVI main line < RVI signal line on the chart timeframe OR on a higher timeframe using its still-forming bar

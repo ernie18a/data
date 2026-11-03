@@ -1,0 +1,7 @@
+Calculation: Efficiency Ratio = absolute change in close over a lookback divided by the sum of absolute bar-to-bar close changes over that lookback
+Calculation: Efficiency baseline = EMA of Efficiency Ratio over a longer lookback than the Efficiency Ratio lookback
+Calculation: Ulcer Index = square root of the average squared percentage drawdown from the highest close over its lookback
+Calculation: Ulcer baseline = EMA of Ulcer Index over a longer lookback than the Ulcer Index lookback
+Calculation: Efficiency band width = ATR × band multiplier × (1.55 − 0.72 × Efficiency Ratio clamped to [0, 1]); upper band = VWAP + band width; lower band = VWAP − band width
+Long: (close crosses above VWAP AND Efficiency Ratio >= signal-mode threshold AND Ulcer Index <= Ulcer baseline × signal-mode multiplier) OR (low <= lower band AND close > lower band AND close > open AND Efficiency Ratio > Efficiency baseline AND Efficiency Ratio > prior bar's Efficiency Ratio AND Ulcer Index < Ulcer baseline AND Ulcer Index < prior bar's Ulcer Index), AND bars since the last long or short signal > cooldown period
+Short: (close crosses below VWAP AND Efficiency Ratio >= signal-mode threshold AND Ulcer Index > Ulcer baseline AND Ulcer Index > prior bar's Ulcer Index) OR (high >= upper band AND close < upper band AND close < open AND Efficiency Ratio > Efficiency baseline AND Efficiency Ratio > prior bar's Efficiency Ratio AND Ulcer Index > Ulcer baseline AND Ulcer Index > prior bar's Ulcer Index), AND bars since the last long or short signal > cooldown period

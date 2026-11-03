@@ -1,0 +1,5 @@
+Calculation: Two-bar-lagged Hull moving average = Hull moving average of close shifted back by two chart bars, using the same lookback as the current Hull moving average.
+Long: Higher-timeframe current (still-forming) close > previous completed higher-timeframe close AND current chart-timeframe Hull moving average > its two-bar-lagged value
+Short: Higher-timeframe current (still-forming) close < previous completed higher-timeframe close AND current chart-timeframe Hull moving average < its two-bar-lagged value
+Exit: long, Higher-timeframe current (still-forming) close < previous completed higher-timeframe close AND current chart-timeframe Hull moving average < its two-bar-lagged value AND unrealized position profit > take-profit threshold
+Exit: short, Higher-timeframe current (still-forming) close > previous completed higher-timeframe close AND current chart-timeframe Hull moving average > its two-bar-lagged value AND unrealized position profit > take-profit threshold

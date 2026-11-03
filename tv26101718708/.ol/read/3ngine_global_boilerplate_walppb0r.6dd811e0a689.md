@@ -1,0 +1,6 @@
+Long: entry price > stop price AND current time > configured strategy start time AND (session filter disabled OR current time is within configured session) AND (macro EMA filter disabled OR close > EMA on a higher timeframe, using its last completed bar) AND (ADX filter disabled OR ADX is within its configured minimum and maximum) AND no short position AND no prior closed trade
+Short: entry price <= stop price AND current time > configured strategy start time AND (session filter disabled OR current time is within configured session) AND (macro EMA filter disabled OR close > EMA on a higher timeframe, using its last completed bar) AND (ADX filter disabled OR ADX is within its configured minimum and maximum) AND no long position AND no prior closed trade
+Calculation: Long stop = if the highest high since entry > average entry price × (1 + trailing activation %) then highest high since entry × (1 − trail distance %) else configured stop price
+Calculation: Short stop = if the lowest low since entry < average entry price × (1 − trailing activation %) then lowest low since entry × (1 + trail distance %) else configured stop price
+Exit: long, high >= average entry price × (1 + take profit %) OR low <= long stop
+Exit: short, low <= average entry price × (1 − take profit %) OR high >= short stop

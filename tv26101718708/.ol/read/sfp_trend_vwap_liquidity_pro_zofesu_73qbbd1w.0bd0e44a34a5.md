@@ -1,0 +1,4 @@
+Calculation: Most recent swing low = latest confirmed pivot low, where the pivot bar’s low is the minimum across the configured lookback bars before and after it
+Calculation: Most recent swing high = latest confirmed pivot high, where the pivot bar’s high is the maximum across the configured lookback bars before and after it
+Long: low < most recent swing low AND close > most recent swing low AND previous bar low > most recent swing low AND (Filter A is Off OR close > Filter A) AND (Filter B is Off OR close > Filter B)
+Short: high > most recent swing high AND close < most recent swing high AND previous bar high < most recent swing high AND (Filter A is Off OR close < Filter A) AND (Filter B is Off OR close < Filter B)

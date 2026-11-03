@@ -1,0 +1,4 @@
+Calculation: Aroon oscillator = 100 × (bars since the lowest selected low − bars since the highest selected high) / lookback; use configured high/low price series and optionally apply the configured noise filter to the price series, the oscillator, or both. The filter holds the previous filtered value when the absolute one-bar change is below the filter multiplier × the root mean square deviation of recent absolute changes from their lookback mean; otherwise it uses the current value. Calculate on the chart timeframe or configured higher timeframe; for a higher timeframe, use its current bar, which may still be forming.
+Calculation: Upper and lower quantile bands = configured rolling percentiles of the oscillator over the level lookback (same as the oscillator lookback when unspecified), with linear interpolation between percentile ranks.
+Long: Aroon oscillator > upper quantile band
+Short: Aroon oscillator < lower quantile band

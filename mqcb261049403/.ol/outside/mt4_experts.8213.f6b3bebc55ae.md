@@ -1,0 +1,1 @@
+Once per day, during a brief window after the configured start time, compare the previous daily candle’s open and close for the traded instrument. If it closed higher than it opened, enter short; otherwise enter long. After a successful entry, take no further entries that day. Attach the configured stop-loss and take-profit if enabled; there are no other exit signals.

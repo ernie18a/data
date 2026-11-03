@@ -1,0 +1,1 @@
+Go long when the traded instrument closes within its designated buy zone, forms a bullish candle with a low above the prior candle’s low, and volume exceeds its recent average by a chosen margin, while the Nasdaq reference index closes at or above its previous close. Otherwise, make no decision; there are no short or exit rules.

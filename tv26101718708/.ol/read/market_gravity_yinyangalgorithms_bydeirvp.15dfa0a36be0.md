@@ -1,0 +1,5 @@
+Calculation: Net Gravity = 100 × (upper ranked pull − lower ranked pull) / (upper ranked pull + lower ranked pull), or 0 when both pulls are zero; each side’s pull is the sum of its three highest eligible liquidity pool Gravity Scores weighted in descending order by rank.
+Calculation: Liquidity pool Gravity Score = structural Liquidity Strength adjusted for ATR-normalized distance, age-based freshness, trend alignment, and market regime; rank only active or approaching pools on the corresponding side of price.
+Calculation: Structural Liquidity Strength = weighted combination of pool density, maximum swing prominence, independent touch quality, timeframe importance, and formation relative volume; pools qualify for ranking only when strength meets a threshold.
+Long: Net Gravity >= 0
+Short: Net Gravity < 0

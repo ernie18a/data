@@ -1,0 +1,4 @@
+Calculation: Hedger net as a share of open interest = (physical hedger long positions − physical hedger short positions, optionally including swap dealer net positions) / open interest
+Calculation: Hedger percentile = rolling percentile rank of hedger net as a share of open interest against its lookback history, using COT report bars on the chart timeframe
+Long: Hedger percentile enters the upper extreme zone AND the percentile is available on the current and prior bar AND at least the separation period has elapsed since the most recent bar in the upper extreme zone
+Short: Hedger percentile enters the lower extreme zone AND the percentile is available on the current and prior bar AND at least the separation period has elapsed since the most recent bar in the lower extreme zone

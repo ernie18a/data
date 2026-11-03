@@ -1,0 +1,8 @@
+Calculation: Candle body = absolute difference between open and close of the higher-timeframe bar still forming
+Calculation: Candle range = high minus low of the higher-timeframe bar still forming
+Calculation: Safe body = greater of candle body and minimum price increment
+Calculation: Lower wick = the lesser of open and close minus low of the higher-timeframe bar still forming
+Calculation: Upper wick = high minus the greater of open and close of the higher-timeframe bar still forming
+Calculation: Close position = (close minus low) / candle range of the higher-timeframe bar still forming
+Calculation: Moving-average distance = absolute difference between the higher-timeframe low and a higher-timeframe simple moving average, divided by that average
+Long: lower wick >= safe body * minimum lower-wick/body ratio AND upper wick <= safe body * maximum upper-wick/body ratio AND candle range > 0 AND candle body / candle range <= maximum body/range ratio AND close position >= minimum close-position threshold AND last completed higher-timeframe close < higher-timeframe close from a longer lookback ago AND (moving-average distance to the shorter-lookback simple moving average <= distance threshold OR moving-average distance to the longer-lookback simple moving average <= distance threshold) AND higher-timeframe volume >= its simple moving average over a configurable lookback * volume multiplier AND higher-timeframe RSI <= maximum RSI threshold

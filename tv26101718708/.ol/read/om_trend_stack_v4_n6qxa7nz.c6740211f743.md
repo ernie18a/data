@@ -1,0 +1,6 @@
+Calculation: Daily structure = daily high and low are both higher than the prior daily bar, or both lower than the prior daily bar
+Calculation: Daily candle bias = at least 2 of the last 3 daily candles closed above their opens
+Calculation: Daily Bollinger %B = (daily close − lower band) / (upper band − lower band) × 100, with bands at the daily close moving average plus or minus a standard deviation multiple
+Calculation: Chart-timeframe structure = the highest high and lowest low of the most recent lookback are both higher than, or both lower than, those of the preceding lookback
+Long: daily close > daily long-term EMA OR 4-hour close > 4-hour long-term EMA OR (daily structure is higher highs and higher lows AND daily candle bias) OR daily Bollinger %B > 50 OR (chart-timeframe close > chart-timeframe long-term EMA AND that EMA is rising AND chart-timeframe structure is higher highs and higher lows)
+Short: daily close ≤ daily long-term EMA OR 4-hour close ≤ 4-hour long-term EMA OR (daily structure is lower highs and lower lows AND NOT daily candle bias) OR daily Bollinger %B ≤ 50 OR (chart-timeframe close ≤ chart-timeframe long-term EMA AND that EMA is falling AND chart-timeframe structure is lower highs and lower lows)

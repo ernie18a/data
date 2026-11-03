@@ -1,0 +1,3 @@
+Calculation: Volatility-adaptive moving average = Apply the selected moving-average type to close using a dynamic period. Calculate the current ATR and a longer-period moving average of ATR; divide current ATR by that average to get the volatility ratio. Set the raw period to the dynamic base period minus the volatility ratio multiplied by a ratio-period parameter. Clamp it between the volatility ratio and the dynamic base period, optionally smooth it with a shorter-period SMA, then clamp it again to the same bounds. Apply the selected dynamic-period moving-average type to close.
+Long: Close crosses above the volatility-adaptive moving average
+Short: Close crosses below the volatility-adaptive moving average

@@ -1,0 +1,1 @@
+For each master position in the supported symbol mappings, open a matching long or short position on the corresponding slave instrument if it has not already been copied. Keep the slave position’s stop-loss and take-profit aligned with the master. Close copied slave positions when their master positions are no longer present.

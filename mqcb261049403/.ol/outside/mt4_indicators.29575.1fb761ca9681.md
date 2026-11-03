@@ -1,0 +1,1 @@
+For a profitable short-term position, consider exiting when the selected asset’s standardized price score rises from around +2 toward +4, as this may signal an approaching local rebound.

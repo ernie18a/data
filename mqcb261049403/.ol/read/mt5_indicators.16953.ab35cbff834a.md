@@ -1,0 +1,5 @@
+Calculation: RSI = selected RSI variant applied to the selected price, optionally moving-average-smoothed; use chart-timeframe bars, or the still-forming bar when the configured timeframe is higher than the chart timeframe.
+Calculation: RSI levels = configured fixed upper/lower thresholds, or (when floating levels are enabled) the minimum RSI over the lookback plus the configured percentages of the RSI range for the upper/lower levels; middle level is the range midpoint.
+Calculation: RSI direction state = upward when the selected rule is RSI above the upper level, RSI above the middle level, or RSI above its previous value; downward when the selected rule is RSI below the lower level, RSI below the middle level, or RSI below its previous value; otherwise neutral.
+Long: RSI direction state = upward
+Short: RSI direction state = downward

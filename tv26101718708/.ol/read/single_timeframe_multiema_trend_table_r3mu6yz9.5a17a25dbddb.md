@@ -1,0 +1,2 @@
+Long: For each configured EMA, higher-timeframe close > EMA AND (consolidation detection is disabled OR abs(higher-timeframe close − EMA) / EMA × 100 >= consolidation threshold); use the higher-timeframe bar while it is still forming when available
+Short: For each configured EMA, higher-timeframe close <= EMA AND (consolidation detection is disabled OR abs(higher-timeframe close − EMA) / EMA × 100 >= consolidation threshold); use the higher-timeframe bar while it is still forming when available

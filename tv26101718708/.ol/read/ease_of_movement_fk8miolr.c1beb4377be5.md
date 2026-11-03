@@ -1,0 +1,4 @@
+Calculation: Cumulative PVT = running sum of volume × close percentage change.
+Calculation: Sign-log EOM = sign of midpoint change × selected range ÷ selected effort, then sign(x) × log(1 + |x|); range is True Range or high − low, and effort is close × volume or volume.
+Long: At a confirmed pivot low, cumulative PVT is lower than at the previous confirmed pivot low AND sign-log EOM on the pivot bar is higher than at the previous pivot low AND the two pivot bars are no more than the maximum pivot gap apart.
+Short: At a confirmed pivot high, cumulative PVT is higher than at the previous confirmed pivot high AND sign-log EOM on the pivot bar is lower than at the previous pivot high AND the two pivot bars are no more than the maximum pivot gap apart.

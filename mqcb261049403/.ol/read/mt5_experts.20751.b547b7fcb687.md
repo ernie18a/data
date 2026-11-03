@@ -1,0 +1,5 @@
+Calculation: Average Change Candle transformed open and close = divide each bar’s open and close by a longer-lookback smoothed median price, raise each ratio to a power, then smooth each result with a shorter-lookback smoother. Calculate on the indicator timeframe (higher or lower than the chart timeframe as configured), using completed bars.
+Long: transformed close > transformed open on the latest completed indicator-timeframe bar AND transformed close <= transformed open on the preceding bar
+Short: transformed open > transformed close on the latest completed indicator-timeframe bar AND transformed open <= transformed close on the preceding bar
+Exit: long, transformed open > transformed close on the latest completed indicator-timeframe bar
+Exit: short, transformed close > transformed open on the latest completed indicator-timeframe bar

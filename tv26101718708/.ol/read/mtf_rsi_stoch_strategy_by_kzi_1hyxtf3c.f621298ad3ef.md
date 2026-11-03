@@ -1,0 +1,6 @@
+Calculation: Multi-timeframe RSI average = arithmetic mean of RSI values calculated from each of four configured timeframes, rounded to two decimal places; use each timeframe’s close source, and use the last completed bar when the timeframe differs from the chart timeframe, whether higher or lower.
+Calculation: Multi-timeframe stochastic average = arithmetic mean of stochastic values calculated from each of four configured timeframes, rounded to two decimal places; each value is the moving average of the stochastic %K, calculated from close, high, and low; use the last completed bar when the timeframe differs from the chart timeframe, whether higher or lower.
+Long: Multi-timeframe RSI average <= RSI oversold threshold AND multi-timeframe stochastic average <= stochastic oversold threshold
+Short: Multi-timeframe RSI average >= RSI overbought threshold AND multi-timeframe stochastic average >= stochastic overbought threshold
+Exit: long, multi-timeframe stochastic average >= stochastic overbought threshold AND multi-timeframe RSI average >= 50 AND close >= entry price
+Exit: short, multi-timeframe stochastic average <= stochastic oversold threshold AND multi-timeframe RSI average <= 50 AND close <= entry price

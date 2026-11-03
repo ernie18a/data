@@ -1,0 +1,3 @@
+Calculation: Three-bar FVG = current low > high two bars earlier (bullish) or current high < low two bars earlier (bearish), with gap size at least the configured minimum.
+Long: Bullish three-bar FVG AND (first qualifying FVG in its higher-timeframe parent period AND its final zone does not overlap a reopen gap, OR first qualifying FVG in the configured AM or PM session) OR close >= open AND current bar is inside an enabled macro window.
+Short: Bearish three-bar FVG AND (first qualifying FVG in its higher-timeframe parent period AND its final zone does not overlap a reopen gap, OR first qualifying FVG in the configured AM or PM session) OR close < open AND current bar is inside an enabled macro window.

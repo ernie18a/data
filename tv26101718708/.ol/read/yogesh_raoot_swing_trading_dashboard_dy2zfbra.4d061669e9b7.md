@@ -1,0 +1,3 @@
+Calculation: Score = sum 15 if close > shorter-term EMA AND shorter-term EMA > longer-term EMA; 15 if RSI > 50 AND RSI < 70; 15 if MACD line > signal line; 20 if Supertrend direction < 0; 15 if percentage momentum over its lookback > 0; and 20 if close > upper Bollinger Band; otherwise 0 for each term
+Long: Score > 75 OR (close > shorter-term EMA AND shorter-term EMA > longer-term EMA) OR MACD line > signal line OR Supertrend direction < 0 OR close > upper Bollinger Band
+Short: NOT (close > shorter-term EMA AND shorter-term EMA > longer-term EMA) OR MACD line <= signal line OR Supertrend direction >= 0 OR close < lower Bollinger Band

@@ -1,0 +1,13 @@
+Calculation: Confirmed swing high/low = pivot high/low with the configured lookback on both sides; use the latest confirmed pivot. A pivot is available only after its right-side bars complete.
+Calculation: Bullish/bearish FVG = current low > high two bars earlier / current high < low two bars earlier, with gap width at least the configured ATR multiple; zone edges are the two non-overlapping prices.
+Calculation: Bullish/bearish iFVG = a bearish/bullish FVG whose zone is crossed against its original direction; crossing uses close or wick according to the configured inversion method.
+Calculation: Bullish/bearish CISD level = open of the first candle in the consecutive bearish/bullish candle run reaching the swept low/high; if there is no such run, use the open of the sweep candle, or the preceding candle when the sweep candle is bullish/bearish, respectively.
+Calculation: V-Shape confluence score = 1 for sweep plus CISD, plus 1 each for same-direction SMT, iFVG retest and MSS within the configured lookback from the sweep; long in discount or short in premium; aligned higher-timeframe FVG bias; equal swing sweep; and killzone timing.
+Long: low < latest confirmed swing low AND close > latest confirmed swing low.
+Short: high > latest confirmed swing high AND close < latest confirmed swing high.
+Long: a bullish sweep occurred within the configured CISD window AND close > its CISD level AND (displacement filter is disabled OR abs(close - open) >= configured ATR multiple) AND (hard killzone filter is disabled OR current bar is in the configured killzone).
+Short: a bearish sweep occurred within the configured CISD window AND close < its CISD level AND (displacement filter is disabled OR abs(close - open) >= configured ATR multiple) AND (hard killzone filter is disabled OR current bar is in the configured killzone).
+Long: a bullish iFVG retest where low <= zone top AND close > zone top AND the retest has not already signaled AND the zone remains valid.
+Short: a bearish iFVG retest where high >= zone bottom AND close < zone bottom AND the retest has not already signaled AND the zone remains valid.
+Long: bullish iFVG retest AND a bullish V-Shape occurred within the configured lookback AND (hard killzone filter is disabled OR current bar is in the configured killzone).
+Short: bearish iFVG retest AND a bearish V-Shape occurred within the configured lookback AND (hard killzone filter is disabled OR current bar is in the configured killzone).

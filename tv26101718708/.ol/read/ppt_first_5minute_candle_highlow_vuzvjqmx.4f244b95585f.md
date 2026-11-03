@@ -1,0 +1,4 @@
+Calculation: Opening range high/low = high/low of the session’s first candle, fixed to the opening-range aggregation; use its completed bar.
+Calculation: Recent bullish/bearish EMA cross = the shorter-lookback EMA crossed above/below the longer-lookback EMA within the lookback, and that cross is more recent than the opposite cross.
+Long: First qualifying bar after the opening-range candle completes, with low > opening range high AND close > open AND recent bullish EMA cross
+Short: First qualifying bar after the opening-range candle completes, with high < opening range low AND close < open AND recent bearish EMA cross

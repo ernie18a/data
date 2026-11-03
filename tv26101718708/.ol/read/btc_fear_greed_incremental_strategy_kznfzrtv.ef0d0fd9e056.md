@@ -1,0 +1,4 @@
+Calculation: Bull-confirmation SMA = simple moving average of close on the chart timeframe over a longer lookback.
+Calculation: Deep-bear SMA = simple moving average of close on a higher timeframe than the chart timeframe over a shorter lookback; uses the higher-timeframe bar still forming.
+Long: datetime >= configured start date OR (cash available > 0 AND ((bear filters are disabled AND Fear & Greed Index < normal fear threshold) OR (bear filters are enabled AND ((close > Bull-confirmation SMA AND Fear & Greed Index < normal fear threshold) OR (close <= Deep-bear SMA AND Fear & Greed Index < deep-bear fear threshold))))
+Exit: long, Fear & Greed Index > greed threshold AND datetime year is a configured bull year with a positive sell percentage for the current quarter AND BTC allocation > minimum allocation

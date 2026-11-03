@@ -1,0 +1,6 @@
+Calculation: XFisher candle = For each OHLC price, normalize it within the rolling high-low range, smooth the normalized value recursively as `(normalized value - 0.5) + 0.67 × prior value`, apply the Fisher transform `0.5 × ln((1 + value)/(1 - value))`, then recursively smooth the result with the selected moving-average method. The rolling range uses the highest high and lowest low over a lookback. The same lookback and smoothing settings are used for all four prices.
+Calculation: Adjusted XFisher candle open = XFisher candle open, except replace it with the prior bar's XFisher candle close when the raw bar's absolute open-close difference is at most the gap threshold.
+Long: Adjusted XFisher candle open < XFisher candle close
+Short: Adjusted XFisher candle open > XFisher candle close
+Long: Higher-timeframe adjusted XFisher candle open < higher-timeframe XFisher candle close (use the higher-timeframe bar still forming)
+Short: Higher-timeframe adjusted XFisher candle open > higher-timeframe XFisher candle close (use the higher-timeframe bar still forming)

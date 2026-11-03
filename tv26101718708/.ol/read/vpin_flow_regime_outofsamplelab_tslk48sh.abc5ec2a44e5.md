@@ -1,0 +1,4 @@
+Calculation: Buy pressure = 50 × (1 + sum of signed buy-minus-sell volume over a rolling lookback / sum of volume over the same lookback); for each bar, buy fraction = the Normal or Student-t (0.25 degrees of freedom) CDF of (close − prior close) / rolling standard deviation of close-to-close changes, and signed buy-minus-sell volume = volume × (2 × buy fraction − 1)
+Calculation: Confirmed pivot high/low = a high/low greater/less than the highs/lows over configurable bars on both sides, available after the right-side bars complete; compare each confirmed pivot with the previous confirmed pivot of the same type and use pressure at each pivot bar
+Long: confirmed pivot low < previous pivot low AND buy pressure at confirmed pivot low > buy pressure at previous pivot low
+Short: confirmed pivot high > previous pivot high AND buy pressure at confirmed pivot high < buy pressure at previous pivot high

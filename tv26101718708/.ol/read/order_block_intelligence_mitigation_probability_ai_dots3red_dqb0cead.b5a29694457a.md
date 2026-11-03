@@ -1,0 +1,2 @@
+Long: close > open AND close - open >= displacement-strength parameter × ATR AND close > previous bar high AND previous bar close < previous bar open
+Short: close < open AND open - close >= displacement-strength parameter × ATR AND close < previous bar low AND previous bar close > previous bar open

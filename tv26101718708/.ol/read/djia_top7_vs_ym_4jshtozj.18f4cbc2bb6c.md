@@ -1,0 +1,8 @@
+Calculation: Top-7 points = sum, over the selected Dow components, of (current price − reference price) / Dow divisor; reference price is the configured session open or previous close.
+Calculation: YM points = current YM close − the configured session open or previous close.
+Calculation: Smoothed value = the configured moving average (HMA, EMA, or SMA) of the raw value, using the configured lookback.
+Calculation: VWAP balance = 100 × (sum of reference-price weights for components above their current-session VWAP − sum of weights for components below it); each weight is that component’s reference price divided by the sum of reference prices.
+Calculation: Component open move (%) = 100 × (current price − current-session open) / current-session open.
+Calculation: Component gap (%) = 100 × (current-session open − previous close) / previous close.
+Long: During the configured plot session, with at least 2 active components, smoothed Top-7 points > 0 AND VWAP balance > 0 OR any component’s open move is at least the configured behavior threshold and either its gap is below the negative threshold (BOUNCE) or its gap is at least the negative threshold (TREND↑).
+Short: During the configured plot session, with at least 2 active components, smoothed Top-7 points < 0 AND VWAP balance < 0 OR any component’s open move is at most the negative configured behavior threshold and either its gap is above the threshold (FADE) or its gap is at most the threshold (TREND↓).

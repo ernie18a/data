@@ -1,0 +1,1 @@
+On each tick, if server time is past the configured cutoff and any account positions are open, close every open position: sell to close each long position and buy to close each short position.

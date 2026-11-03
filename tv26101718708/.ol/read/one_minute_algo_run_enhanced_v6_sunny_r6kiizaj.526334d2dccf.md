@@ -1,0 +1,14 @@
+Calculation: Opening-range high/low = high/low of the first completed lower-timeframe bar in the configured opening-range window; use all completed bars in that window when full-window mode is selected
+Calculation: Opening-range midpoint = (opening-range high + opening-range low) / 2
+Calculation: Opening-range width = opening-range high − opening-range low
+Calculation: Opening VWAP = session VWAP at the opening-range lock, using the last completed lower-timeframe bar
+Calculation: Fast and slow trend EMAs = EMAs of close on configured higher timeframes, using the last completed bar; the fast EMA uses a shorter lookback than the slow EMA
+Calculation: Daily POC = price row with the greatest volume allocated across the developing regular-hours range; distribute each bar’s volume proportionally across the price rows its high-low range overlaps
+Calculation: Breakout body ratio = abs(close − open) / max(high − low, minimum price increment)
+Calculation: Live outlook score = sum of six votes: fast-timeframe EMA alignment, slow-timeframe EMA alignment, close vs. current session VWAP, close vs. opening-range midpoint, +DI vs. −DI, and close outside the opening range; each vote is +1, −1, or 0
+Calculation: Long target 1/2 = opening-range high + opening-range width × configured long target multiplier
+Calculation: Short target 1/2 = opening-range low − opening-range width × configured short target multiplier
+Long: (fast trend EMA > slow trend EMA on both higher timeframes AND opening-range lock price >= opening VWAP) OR live outlook score >= configured long threshold OR (opening range locked AND within configured trading window AND opening range width >= configured minimum AND ADX >= effective minimum AND abs(close − daily POC) > ATR × configured POC radius (when POC blocking is enabled) AND breakout body ratio >= effective minimum AND (opening bias is not required OR opening bias is long) AND close crosses above opening-range high AND permitted by configured per-day signal-frequency rule)
+Short: (fast trend EMA < slow trend EMA on both higher timeframes AND opening-range lock price <= opening VWAP) OR live outlook score <= negative configured long threshold OR (opening range locked AND within configured trading window AND opening range width >= configured minimum AND ADX >= effective minimum AND abs(close − daily POC) > ATR × configured POC radius (when POC blocking is enabled) AND breakout body ratio >= effective minimum AND (opening bias is not required OR opening bias is short) AND close crosses below opening-range low AND permitted by configured per-day signal-frequency rule)
+Exit: long, on a bar after entry, high >= long target 2 OR (target 1 was hit and low <= entry price) OR (target 1 has not been hit and low <= opening-range midpoint)
+Exit: short, on a bar after entry, low <= short target 2 OR (target 1 was hit and high >= entry price) OR (target 1 has not been hit and high >= opening-range midpoint)

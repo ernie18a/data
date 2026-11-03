@@ -1,0 +1,6 @@
+Calculation: Ratio = close from the shorter configured interval / close from the longer configured interval − 1; use each interval’s current requested close (either interval may be above or below the chart timeframe; realtime values may use a forming bar).
+Calculation: Karobein oscillator = scale to [−1, 1] over all available values of K, where D = EMA(close, period), A = EMA(D / previous D when D < previous D, otherwise 0, period), B = EMA(D / previous D when D > previous D, otherwise 0, period), R = D / previous D, C = R / (R + B), and K = 2 × R / (R + C × A) − 1.
+Long: Ratio crosses above the positive sensitivity threshold AND Karobein oscillator > 0 AND current bar close time differs from the close time of the previous long signal.
+Short: Ratio crosses below the negative sensitivity threshold AND Karobein oscillator < 0 AND current bar close time differs from the close time of the previous short signal.
+Exit: long, a short signal occurs OR the active long signal has lasted the holding period.
+Exit: short, a long signal occurs OR the active short signal has lasted the holding period.

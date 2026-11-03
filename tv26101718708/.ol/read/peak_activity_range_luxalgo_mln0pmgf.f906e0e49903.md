@@ -1,0 +1,5 @@
+Calculation: Confirmed volume pivot = a volume pivot high confirmed after an equal lookback on both sides; use the pivot candle’s high and low as the active range boundaries.
+Calculation: Range midpoint = average of the active range high and low.
+Calculation: Signal state = reset to neutral on a new confirmed range or when close crosses the range midpoint; otherwise retain the last signal side.
+Long: Signal state is not long AND (signal mode is Breakout AND close > active range high AND previous close <= active range high OR signal mode is Retest AND open > active range high AND close < active range high)
+Short: Signal state is not short AND (signal mode is Breakout AND close < active range low AND previous close >= active range low OR signal mode is Retest AND open < active range low AND close > active range low)

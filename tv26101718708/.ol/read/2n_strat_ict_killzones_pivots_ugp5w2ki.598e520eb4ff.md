@@ -1,0 +1,6 @@
+Calculation: EMA = exponential moving average of close, with a longer lookback, on the chart timeframe.
+Calculation: Average daily range = average of the prior completed daily bars' high minus low; calculate its fraction using the current still-forming daily bar's high, low, open, and close. The daily timeframe is higher than the 15-minute chart timeframe.
+Long: During the structure window, close > the current day's London-session high AND close > EMA, and later during the entry window low <= EMA AND high < the upper ADR threshold AND the trade-session filter allows trading AND no position is open.
+Short: During the structure window, close < the current day's London-session low AND close < EMA, and later during the entry window high >= EMA AND low > the lower ADR threshold AND the trade-session filter allows trading AND no position is open.
+Exit: long, high >= entry price + first profit target OR low <= entry price - stop distance; after the first target is reached, remaining position exits if high >= entry price + second profit target OR low <= entry price.
+Exit: short, low <= entry price - first profit target OR high >= entry price + stop distance; after the first target is reached, remaining position exits if low <= entry price - second profit target OR high >= entry price.

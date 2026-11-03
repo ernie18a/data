@@ -1,0 +1,7 @@
+Calculation: Short-term moving average = selected moving-average type applied to its selected price series, using a shorter lookback than the long-term moving average
+Calculation: Long-term moving average = selected moving-average type applied to its selected price series, using a longer lookback than the short-term moving average
+Calculation: Confirmed pivot high = a bar high greater than the highs of the same lookback number of bars on both sides; it becomes available after the bars on the right have completed
+Calculation: Confirmed pivot low = a bar low less than the lows of the same lookback number of bars on both sides; it becomes available after the bars on the right have completed
+Calculation: Short-lookback pivot high/low = confirmed pivot high/low using a shorter lookback than the confirmed pivots above
+Long: a confirmed pivot low forms OR a short-lookback pivot low forms below the previous short-lookback pivot low OR the short-term moving average crosses above the long-term moving average OR close crosses above the long-term moving average OR close exceeds the latest confirmed pivot high that has not already been broken
+Short: a confirmed pivot high forms OR a short-lookback pivot high forms above the previous short-lookback pivot high OR the short-term moving average crosses below the long-term moving average OR close crosses below the long-term moving average OR close falls below the latest confirmed pivot low that has not already been broken

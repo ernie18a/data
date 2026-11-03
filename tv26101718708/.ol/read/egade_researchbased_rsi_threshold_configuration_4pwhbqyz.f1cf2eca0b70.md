@@ -1,0 +1,3 @@
+Calculation: Weekly RSI = RSI of weekly close, using the higher timeframe bar still forming
+Long: Weekly RSI <= research-based lower threshold AND previous Weekly RSI > research-based lower threshold OR Weekly RSI <= conventional lower threshold AND previous Weekly RSI > conventional lower threshold
+Exit: long, Weekly RSI >= research-based upper threshold AND previous Weekly RSI < research-based upper threshold OR Weekly RSI >= conventional upper threshold AND previous Weekly RSI < conventional upper threshold

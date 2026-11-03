@@ -1,0 +1,4 @@
+Calculation: Daily open = open of the still-forming daily bar (higher timeframe), mapped to the chart timeframe with lookahead off; prior values are from preceding chart bars.
+Long: HMA > prior chart-bar HMA AND chart-bar open > daily open AND prior chart-bar daily open > daily open from two chart bars ago AND chart-bar open > prior chart-bar daily open
+Short: HMA < prior chart-bar HMA AND chart-bar open < daily open AND prior chart-bar daily open < daily open from two chart bars ago AND chart-bar open < prior chart-bar daily open
+Exit: long or short, open profit < stop-loss threshold OR open profit > take-profit threshold

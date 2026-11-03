@@ -1,0 +1,5 @@
+Calculation: RVI histogram state = lime when the Relative Vigor Index (RVI) main line is above its upper level, magenta when it is below its lower level, and gray otherwise
+Long: on the configured indicator timeframe, using the last two completed bars, the RVI main line crosses above its signal line OR the histogram changes to lime from a non-lime state
+Short: on the configured indicator timeframe, using the last two completed bars, the RVI main line crosses below its signal line OR the histogram changes to magenta from a non-magenta state
+Exit: long, on the configured indicator timeframe using the last two completed bars, the RVI main line crosses below its signal line OR the histogram changes to magenta from a non-magenta state OR low <= the configured long stop-loss price OR high >= the configured long take-profit price
+Exit: short, on the configured indicator timeframe using the last two completed bars, the RVI main line crosses above its signal line OR the histogram changes to lime from a non-lime state OR high >= the configured short stop-loss price OR low <= the configured short take-profit price

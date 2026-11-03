@@ -1,0 +1,8 @@
+Calculation: Anchored VWAP = cumulative volume-weighted average of (high + low + close) / 3, reset at the selected session, week, or month anchor.
+Calculation: VWAP standard-deviation bands = anchored VWAP ± volume-weighted standard deviation of (high + low + close) / 3; the second band uses a larger multiplier than the first.
+Calculation: ATR zones = bands centered on the VWAP and each upper/lower standard-deviation band, extending by their respective ATR-based widths.
+Calculation: Zone bullish percentage = accumulated volume from selected-timeframe bars with positive delta divided by accumulated volume from positive- and negative-delta bars, times 100. Delta = volume × ((close − low) − (high − close)) / max(high − low, 0.0001). Accumulate only when chart close is inside the zone and chart volume meets the minimum threshold; reset daily when enabled. The selected CVD timeframe may be higher or lower than the chart timeframe; use its requested data with lookahead off (the developing value in realtime and confirmed values historically).
+Long: Chart close is inside the VWAP ATR zone AND chart volume meets the minimum threshold AND VWAP-zone bullish percentage ≥ the bullish threshold
+Long: Chart close is inside the lower first or second standard-deviation ATR zone AND chart volume meets the minimum threshold AND that zone's bullish percentage ≥ the bullish threshold
+Short: Chart close is inside the VWAP ATR zone AND chart volume meets the minimum threshold AND VWAP-zone bullish percentage ≤ 100 − the bullish threshold
+Short: Chart close is inside the upper first or second standard-deviation ATR zone AND chart volume meets the minimum threshold AND that zone's bullish percentage ≤ 100 − the bullish threshold

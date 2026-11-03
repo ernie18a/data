@@ -1,0 +1,3 @@
+Calculation: JJRSX = JMA-smoothed value of 100 × JurX-smoothed change in selected applied price ÷ JurX-smoothed absolute change in selected applied price; use the same JurX lookback for numerator and denominator.
+Long: On the chart timeframe, JJRSX on the current bar > JJRSX on the previous bar AND current JJRSX > upper threshold OR on a higher timeframe, JJRSX on the still-forming bar > JJRSX on its previous bar AND current JJRSX > upper threshold.
+Short: On the chart timeframe, JJRSX on the current bar < JJRSX on the previous bar AND current JJRSX < lower threshold OR on a higher timeframe, JJRSX on the still-forming bar < JJRSX on its previous bar AND current JJRSX < lower threshold.

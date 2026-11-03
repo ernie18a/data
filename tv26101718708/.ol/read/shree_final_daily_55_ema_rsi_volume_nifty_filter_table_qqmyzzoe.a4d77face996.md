@@ -1,0 +1,2 @@
+Long: benchmark close > 50-period EMA AND close crosses above 55-period EMA AND 14-period RSI > threshold AND volume > 20-bar average volume AND position size = 0
+Exit: long, close crosses below 55-period EMA

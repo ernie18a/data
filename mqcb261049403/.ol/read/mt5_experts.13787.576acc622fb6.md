@@ -1,0 +1,5 @@
+Calculation: Anchored momentum = 100 × (EMA of applied price / SMA of applied price − 1), computed on the configured indicator timeframe relative to the chart timeframe (higher, lower, or equal), using completed bars only.
+Long: The latest completed anchored-momentum value > the preceding value AND the preceding value ≤ the value before it
+Short: The latest completed anchored-momentum value < the preceding value AND the preceding value ≥ the value before it
+Exit: Long, the latest completed anchored-momentum value < the preceding value OR price ≤ entry price − configured stop-loss distance OR price ≥ entry price + configured take-profit distance
+Exit: Short, the latest completed anchored-momentum value > the preceding value OR price ≥ entry price + configured stop-loss distance OR price ≤ entry price − configured take-profit distance

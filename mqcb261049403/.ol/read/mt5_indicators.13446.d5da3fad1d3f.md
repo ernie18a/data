@@ -1,0 +1,3 @@
+Calculation: Schaff MFI Trend Cycle = On the selected higher (or same) timeframe, using its still-forming bar, subtract the longer-lookback MFI from the shorter-lookback MFI; normalize the difference between its rolling cycle low and high to 0–100 and smooth recursively with factor 0.5; normalize that result between its rolling cycle low and high to −100–100 and smooth recursively with factor 0.5.
+Long: Schaff MFI Trend Cycle > 0
+Short: Schaff MFI Trend Cycle < 0

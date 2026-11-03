@@ -1,0 +1,4 @@
+Long: (close > mapped long-entry or confirmation threshold AND previous close <= that threshold) AND close > VWAP AND close > short-term EMA AND short-term EMA >= long-term EMA
+Short: (close < mapped short-entry or confirmation threshold AND previous close >= that threshold) AND close < VWAP AND close < short-term EMA AND short-term EMA <= long-term EMA
+Exit: Long, (close < mapped invalidation level AND previous close >= that level) OR (high > any mapped profit target AND previous high <= that target)
+Exit: Short, (close > mapped invalidation level AND previous close <= that level) OR (low < any mapped profit target AND previous low >= that target)

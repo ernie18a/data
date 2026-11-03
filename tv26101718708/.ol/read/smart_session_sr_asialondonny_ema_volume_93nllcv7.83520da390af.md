@@ -1,0 +1,9 @@
+Calculation: Session resistance = greater of open and close of the first chart-timeframe bar starting at each session’s configured UTC hour; retain the latest value for each session
+Calculation: Session support = lesser of open and close of the first chart-timeframe bar starting at each session’s configured UTC hour; retain the latest value for each session
+Calculation: Highest session resistance = maximum of the latest Asia, London, and New York session resistances
+Calculation: Lowest session support = minimum of the latest Asia, London, and New York session supports
+Calculation: Short-term EMA = exponential moving average of close with a shorter lookback than the long-term EMA
+Calculation: Long-term EMA = exponential moving average of close with a longer lookback than the short-term EMA
+Calculation: Average volume = simple moving average of volume
+Long: close > short-term EMA AND short-term EMA > long-term EMA AND close > highest session resistance AND close > previous bar high AND close > open AND volume > average volume multiplied by a threshold OR close > short-term EMA AND short-term EMA > long-term EMA AND low <= highest session resistance AND close > highest session resistance
+Short: close < short-term EMA AND short-term EMA < long-term EMA AND close < lowest session support AND close < previous bar low AND close < open AND volume > average volume multiplied by a threshold OR close < short-term EMA AND short-term EMA < long-term EMA AND high >= lowest session support AND close < lowest session support

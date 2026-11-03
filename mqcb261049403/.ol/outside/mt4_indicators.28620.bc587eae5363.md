@@ -1,0 +1,1 @@
+For a currency pair, compare the relative-strength readings of its base and quote currencies. When the readings are close, favor a long position; when they are far apart, favor a short position. Consider these signals only alongside broader market context, such as support and resistance. No exit rule is specified.

@@ -1,0 +1,4 @@
+Calculation: Fisher CG oscillator = Fisher transform of the 4:3:2:1 weighted average of the current and previous three values of the center of gravity normalized to its range over a rolling lookback; center of gravity = (lookback + 1)/2 − sum((i + 1) × midpoint price at lag i) / sum(midpoint price at lag i), where midpoint price = (high + low)/2 and i runs from 0 to lookback − 1.
+Calculation: Signal line = Fisher CG oscillator from the previous bar.
+Long: On a bar change of the same or higher timeframe, Fisher CG oscillator on that timeframe's still-forming bar > its signal line.
+Short: On a bar change of the same or higher timeframe, Fisher CG oscillator on that timeframe's still-forming bar < its signal line.

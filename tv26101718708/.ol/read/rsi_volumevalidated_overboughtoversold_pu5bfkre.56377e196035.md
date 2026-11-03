@@ -1,0 +1,2 @@
+Long: RSI <= oversold level AND volume accumulated from the first bar of the current oversold episode through the current bar >= volume SMA × threshold factor AND no long signal has already occurred in this oversold episode
+Short: RSI >= overbought level AND volume accumulated from the first bar of the current overbought episode through the current bar >= volume SMA × threshold factor AND no short signal has already occurred in this overbought episode

@@ -1,0 +1,3 @@
+Calculation: LRI = linear regression of close over a lookback, evaluated at the current bar
+Long: SuperTrend direction changes from bearish to bullish OR LRI is greater than or equal to its previous value OR, in single-HMA mode, HMA is greater than or equal to its previous value OR, in 3-HMA mode, fast HMA > mid HMA AND mid HMA > slow HMA OR close crosses above LRI OR EMA crosses above LRI
+Short: SuperTrend direction changes from bullish to bearish OR LRI is less than its previous value OR, in single-HMA mode, HMA is less than its previous value OR, in 3-HMA mode, slow HMA > mid HMA AND mid HMA > fast HMA OR close crosses below LRI OR EMA crosses below LRI

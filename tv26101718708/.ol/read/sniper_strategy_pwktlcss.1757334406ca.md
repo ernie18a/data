@@ -1,0 +1,8 @@
+Calculation: Higher-timeframe candle = the still-forming bar from the higher timeframe; compare its close with its open.
+Calculation: Upper level = EMA of the shorter-lookback highest value of (low + close) / 2.
+Calculation: Lower level = EMA of the longer-lookback lowest value of (high + close) / 2.
+Calculation: Smoothed trend value = 2 × EMA(close, longer lookback) − EMA(EMA(close, longer lookback), shorter lookback).
+Calculation: Signal level = if close > smoothed trend value, max(upper level, lower level); otherwise min(upper level, lower level).
+Calculation: Trend bands = upper band starts at hl2 − factor × ATR and, each bar, becomes max(current upper band, prior upper band) if prior close > prior upper band; otherwise starts at hl2 − factor × ATR. Lower band starts at hl2 + factor × ATR and, each bar, becomes min(current lower band, prior lower band) if prior close < prior lower band; otherwise starts at hl2 + factor × ATR. Trend state = 1 if close > prior lower band, −1 if close < prior upper band, otherwise prior trend state (initially 0).
+Long: Higher-timeframe close crosses above higher-timeframe open (current close > current open AND prior close ≤ prior open) OR trend state changes from −1 to 1 OR close > smoothed trend value AND signal level > low AND signal level − prior signal level > prior signal level − two-bars-prior signal level.
+Short: Higher-timeframe close crosses below higher-timeframe open (current close < current open AND prior close ≥ prior open) OR trend state changes from 1 to −1 OR close < smoothed trend value AND signal level < high AND prior signal level − signal level > two-bars-prior signal level − prior signal level.

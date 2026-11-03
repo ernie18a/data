@@ -1,0 +1,6 @@
+Calculation: Gap percentage = (opening price of the first bar in the 09:30–09:35 New York session − previous completed daily close) / previous completed daily close × 100
+Calculation: Opening range high/low = high/low of the first bar in the 09:30–09:35 New York session
+Long: gap percentage is between minimum gap and maximum gap AND previous completed daily RSI is below the oversold threshold AND New York time is between 09:35 and 16:00 AND high ≥ opening range high + entry buffer AND position is flat
+Short: gap percentage is between negative maximum gap and negative minimum gap AND previous completed daily RSI is above the overbought threshold AND New York time is between 09:35 and 16:00 AND low ≤ opening range low − entry buffer AND position is flat
+Exit: long, low ≤ opening range low − stop buffer OR trailing stop is triggered OR New York time is between 15:55 and 16:00
+Exit: short, high ≥ opening range high + stop buffer OR trailing stop is triggered OR New York time is between 15:55 and 16:00

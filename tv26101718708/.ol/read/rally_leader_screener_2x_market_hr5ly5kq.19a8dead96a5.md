@@ -1,0 +1,3 @@
+Calculation: Stock return = percentage change from the close at the configured lookback to the current close
+Calculation: Benchmark return = percentage change from the benchmark close at the configured lookback to the current benchmark close, using the chart timeframe’s bar still forming
+Long: (Benchmark return > 0 AND Stock return ≥ configured multiple × Benchmark return) OR (Benchmark return ≤ 0 AND Stock return ≥ configured minimum return), AND close ≥ configured minimum price, AND 20-bar average volume ≥ configured minimum volume, AND (close > 50-bar SMA if enabled), AND (close > previous close if enabled)

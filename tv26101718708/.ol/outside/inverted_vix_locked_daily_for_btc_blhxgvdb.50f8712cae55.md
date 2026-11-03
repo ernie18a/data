@@ -1,0 +1,1 @@
+Using daily VIX closes, normalize the current close’s distance below its rolling lookback high by the range between the rolling high and low, on a 0–100 scale. Signal a buy for the traded instrument when this inverted reading crosses upward out of the oversold zone. No short or exit rule is defined.

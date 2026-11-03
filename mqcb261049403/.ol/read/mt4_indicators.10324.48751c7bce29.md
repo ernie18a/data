@@ -1,0 +1,2 @@
+Long: CCI on a higher-timeframe bar still forming >= 100 AND CCI >= the maximum CCI in the current uninterrupted run of bars with CCI >= 100, including this bar AND CCI >= the maximum CCI in the preceding uninterrupted run of bars with CCI >= 100
+Short: CCI on a higher-timeframe bar still forming <= -100 AND CCI <= the minimum CCI in the current uninterrupted run of bars with CCI <= -100, including this bar AND CCI <= the minimum CCI in the preceding uninterrupted run of bars with CCI <= -100

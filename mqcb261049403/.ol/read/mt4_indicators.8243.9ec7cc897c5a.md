@@ -1,0 +1,2 @@
+Long: (previous completed bar on a higher timeframe has a higher high than the current still-forming bar on that timeframe AND a lower low) OR (previous completed bar on a higher timeframe has a lower high than the current still-forming bar on that timeframe AND a higher low)
+Short: (previous completed bar on a higher timeframe has a higher high than the current still-forming bar on that timeframe AND a lower low) OR (previous completed bar on a higher timeframe has a lower high than the current still-forming bar on that timeframe AND a higher low)

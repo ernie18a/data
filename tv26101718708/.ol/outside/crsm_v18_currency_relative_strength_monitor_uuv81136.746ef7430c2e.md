@@ -1,0 +1,1 @@
+When both safe-haven currencies (JPY and CHF) are simultaneously extremely weak, take a long bias on non-JPY currency pairs. When both are simultaneously extremely strong, take a short bias on JPY-quoted pairs. Otherwise, this indicator gives no directional bias. It specifies no entry timing or exit rule.

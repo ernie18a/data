@@ -1,0 +1,8 @@
+Calculation: Confirmed swing high/low = the latest local maximum/minimum, respectively, with the configured number of completed chart-timeframe bars on each side; retain each level until swept
+Calculation: Sweep-candle body high/low = max/min of that completed bar’s open and close
+Calculation: Stop loss = sweep low minus ATR buffer for long positions; sweep high plus ATR buffer for short positions
+Calculation: Take profit = entry price plus/minus the stop distance multiplied by the configured reward ratio, for long/short positions respectively
+Long: A completed chart-timeframe bar’s low is below the latest unswept swing low minus the configured minimum ATR multiple, and its close is above that swing low; within the configured confirmation-bar limit after that sweep, a completed bar closes above the sweep-candle body high, its high minus low is at least the configured ATR multiple, the higher-timeframe forming bar’s close is above its EMA, and the stop distance is at least the configured ATR multiple
+Short: A completed chart-timeframe bar’s high is above the latest unswept swing high plus the configured minimum ATR multiple, and its close is below that swing high; within the configured confirmation-bar limit after that sweep, a completed bar closes below the sweep-candle body low, its high minus low is at least the configured ATR multiple, the higher-timeframe forming bar’s close is below its EMA, and the stop distance is at least the configured ATR multiple
+Exit: long, price <= stop loss OR price >= take profit
+Exit: short, price >= stop loss OR price <= take profit

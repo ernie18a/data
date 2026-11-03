@@ -1,0 +1,3 @@
+Calculation: Schaff Trend RSX = RSX of the short-lookback EMA of the selected bar price minus its long-lookback EMA; the short lookback is shorter than the long lookback. RSX triple-smooths momentum and absolute momentum with two successive smooths per stage, using smoothing factor 3/(2 + period) and passing 1.5 × first smooth − 0.5 × second smooth to the next stage; map 50 × (smoothed momentum / smoothed absolute momentum + 1) to 0–100. Use the chart timeframe or a higher timeframe; on a higher timeframe, use its currently forming bar.
+Long: Schaff Trend RSX > Schaff Trend RSX on the previous bar
+Short: Schaff Trend RSX < Schaff Trend RSX on the previous bar

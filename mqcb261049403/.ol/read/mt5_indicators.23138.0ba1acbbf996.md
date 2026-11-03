@@ -1,0 +1,2 @@
+Long: Spearman rank correlation on the lower timeframe > Spearman rank correlation on the higher timeframe
+Short: Spearman rank correlation on the lower timeframe < Spearman rank correlation on the higher timeframe

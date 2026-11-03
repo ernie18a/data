@@ -1,0 +1,5 @@
+Calculation: VWAP deviation bands = anchored VWAP ± anchored VWAP standard deviation × band multiplier; Band 1 uses the entry-band multiplier and Band 2 uses the wider target-reference multiplier
+Long: no open position AND close ≤ lower VWAP Band 1 AND (volume filter disabled OR volume > volume SMA × volume multiplier) AND (trend filter disabled OR close > trend EMA) AND (time filter disabled OR current New York hour is within configured trading hours and outside the lunch period)
+Short: no open position AND close ≥ upper VWAP Band 1 AND (volume filter disabled OR volume > volume SMA × volume multiplier) AND (trend filter disabled OR close < trend EMA) AND (time filter disabled OR current New York hour is within configured trading hours and outside the lunch period)
+Exit: long, high ≥ entry price + (upper VWAP Band 2 − entry price) × target ratio OR low ≤ entry price − entry-bar ATR × stop multiplier OR close ≥ VWAP
+Exit: short, low ≤ entry price − (entry price − lower VWAP Band 2) × target ratio OR high ≥ entry price + entry-bar ATR × stop multiplier OR close ≤ VWAP

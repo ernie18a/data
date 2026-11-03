@@ -1,0 +1,6 @@
+Calculation: RSI = relative strength index of close, using the same lookback on each selected timeframe; for a higher timeframe use its last completed bar, and for a lower timeframe use its bar within the chart bar.
+Calculation: Combined RSI = weighted mean of the four selected-timeframe RSI values, smoothed by two successive RMAs with the first using a longer lookback.
+Calculation: Combined RSI percentile = the percentile rank of Combined RSI over a lookback measured in bars of the shortest selected timeframe, then smoothed by an RMA.
+Calculation: Adaptive percentile thresholds = adjust the lower and upper percentile thresholds in opposite directions according to whether the current regime feature belongs to the low, middle, or high cluster; the regime feature combines percentile level, absolute percentile change, Combined RSI volatility, distance from 50, and percentile volatility, clustered against its recent history.
+Calculation: ADX = average directional index on the shortest selected timeframe; for a higher timeframe use its last completed bar, and for a lower timeframe use its bar within the chart bar.
+Long: Combined RSI percentile <= adaptive lower percentile threshold AND Combined RSI > its value at the earlier slope lookback AND ADX > its threshold AND the same conditions were false on the previous chart bar

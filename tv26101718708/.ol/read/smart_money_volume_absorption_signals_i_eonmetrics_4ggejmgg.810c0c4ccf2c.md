@@ -1,0 +1,11 @@
+Calculation: Volume percentile rank = percentile rank of current bar volume over the configured lookback.
+Calculation: Candle body = absolute value of close − open.
+Calculation: Body percentile rank = percentile rank of candle body over the same configured lookback as volume percentile rank.
+Calculation: Close position = (close − low) / (high − low), or 0.5 when high = low.
+Calculation: Trend EMA = exponential moving average of close on the chart timeframe; the optional trend filter is disabled when its length is zero.
+Calculation: Long stop = absorption bar low minus optional stop buffer; short stop = absorption bar high plus optional stop buffer.
+Calculation: Target 1 = entry price plus (long) or minus (short) the configured multiple of the absolute distance between entry and stop.
+Long: With no setup pending, volume > 0 AND volume percentile rank ≥ configured absorption threshold AND close position ≥ 1 − configured close-position threshold AND (trend filter disabled OR close > Trend EMA); latch this bar's low as the anchor. On a later distinct bar, close > open; on a still later distinct bar, Body percentile rank ≥ configured expansion threshold AND close > open, and set entry to this bar's open; on a still later distinct bar, low ≤ entry AND close > entry AND no position is open. The setup remains pending between gates, with its configured TTL reset at each gate advance, and is canceled if close < anchor or its TTL expires.
+Short: With no setup pending, volume > 0 AND volume percentile rank ≥ configured absorption threshold AND close position ≤ configured close-position threshold AND (trend filter disabled OR close < Trend EMA); latch this bar's high as the anchor. On a later distinct bar, close < open; on a still later distinct bar, Body percentile rank ≥ configured expansion threshold AND close < open, and set entry to this bar's open; on a still later distinct bar, high ≥ entry AND close < entry AND no position is open. The setup remains pending between gates, with its configured TTL reset at each gate advance, and is canceled if close > anchor or its TTL expires.
+Exit: Long, low ≤ Long stop OR high ≥ Target 1 (if both are reached on the same bar, exit at the stop).
+Exit: Short, high ≥ Short stop OR low ≤ Target 1 (if both are reached on the same bar, exit at the stop).

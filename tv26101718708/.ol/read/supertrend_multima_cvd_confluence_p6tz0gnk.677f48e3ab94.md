@@ -1,0 +1,3 @@
+Calculation: CVD = cumulative sum of volume × (2 × close − high − low) / (high − low), using zero when high = low
+Long: fast moving average crosses above slow moving average AND CVD > prior CVD AND ATR > its simple moving average over the same lookback AND at least the cooldown number of bars have elapsed since the previous signal
+Short: fast moving average crosses below slow moving average AND CVD ≤ prior CVD AND ATR > its simple moving average over the same lookback AND at least the cooldown number of bars have elapsed since the previous signal

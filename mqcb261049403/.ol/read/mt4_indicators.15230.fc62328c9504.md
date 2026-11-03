@@ -1,0 +1,2 @@
+Long: Force Index > its threshold AND Alligator Lips > Alligator Teeth AND Alligator Teeth > Alligator Jaw
+Short: Force Index < its threshold AND Alligator Lips < Alligator Teeth AND Alligator Teeth < Alligator Jaw

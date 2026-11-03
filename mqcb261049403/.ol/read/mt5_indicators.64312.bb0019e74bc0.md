@@ -1,0 +1,2 @@
+Long: RSI <= lower threshold on the selected RSI timeframe (higher, equal to, or lower than the chart timeframe), using its still-forming bar, AND RSI > 0
+Short: RSI >= upper threshold on the selected RSI timeframe (higher, equal to, or lower than the chart timeframe), using its still-forming bar, AND RSI > 0

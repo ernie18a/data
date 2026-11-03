@@ -1,0 +1,6 @@
+Calculation: Long trailing stop = starting with the entry price minus the stop-loss distance, when price is at least the trailing-start distance above entry, raise the stop to price minus the trailing distance only if the new stop exceeds the existing stop by more than the trailing step.
+Calculation: Short trailing stop = starting with the entry price plus the stop-loss distance, when price is at least the trailing-start distance below entry, lower the stop to price plus the trailing distance only if the new stop is below the existing stop by more than the trailing step.
+Long: Position is flat AND Parabolic SAR on the last completed bar < its close AND Parabolic SAR on the preceding bar >= its close
+Short: Position is flat AND Parabolic SAR on the last completed bar >= its close AND Parabolic SAR on the preceding bar < its close
+Exit: long, (Parabolic SAR on the last completed bar >= its close AND Parabolic SAR on the preceding bar < its close) OR price <= long trailing stop OR price >= entry price + take-profit distance
+Exit: short, (Parabolic SAR on the last completed bar < its close AND Parabolic SAR on the preceding bar >= its close) OR price >= short trailing stop OR price <= entry price - take-profit distance

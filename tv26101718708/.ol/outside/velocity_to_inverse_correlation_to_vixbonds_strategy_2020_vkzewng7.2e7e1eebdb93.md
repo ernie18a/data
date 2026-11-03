@@ -1,0 +1,1 @@
+Go long when the traded asset’s rolling correlation with the volatility index or high-yield bond benchmark crosses downward into inverse correlation, or its correlation with the corporate bond benchmark crosses downward into weaker correlation. Exit the long using a stop-loss below entry and a take-profit trigger above entry.

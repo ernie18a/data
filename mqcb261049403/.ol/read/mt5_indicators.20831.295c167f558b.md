@@ -1,0 +1,3 @@
+Calculation: Momentum = 100 × (EMA of applied price / SMA of applied price − 1), using the same lookback for both averages.
+Long: Momentum on the current chart bar, which may still be forming, > upper level OR Momentum on the last completed bar of any configured timeframe > upper level.
+Short: Momentum on the current chart bar, which may still be forming, < lower level OR Momentum on the last completed bar of any configured timeframe < lower level.

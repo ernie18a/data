@@ -1,0 +1,3 @@
+Calculation: Liquidity pools = confirmed pivot highs and lows from the chart timeframe and two higher timeframes; higher-timeframe pivots use completed bars and confirm after the configured number of right-side bars closes. Cluster same-side pivots within ATR(14) × tolerance; update each pool to the touch-weighted average, increment its touch count, and retain its highest source timeframe. A high pool is swept when high > its price; a low pool is swept when low < its price. Track only intact pools, applying the configured age and pool-count limits.
+Long: low < any intact low pool price
+Short: high > any intact high pool price

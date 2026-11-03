@@ -1,0 +1,5 @@
+Calculation: Volume-weighted moving average = the rolling average of the selected price, weighted by the selected volume, on the selected indicator timeframe (higher or lower than the chart timeframe), using completed bars.
+Long: Volume-weighted moving average 3 bars ago > volume-weighted moving average 2 bars ago AND volume-weighted moving average 2 bars ago < volume-weighted moving average on the most recent completed bar
+Short: Volume-weighted moving average 3 bars ago < volume-weighted moving average 2 bars ago AND volume-weighted moving average 2 bars ago > volume-weighted moving average on the most recent completed bar
+Exit: Long, volume-weighted moving average 3 bars ago < volume-weighted moving average 2 bars ago AND volume-weighted moving average 2 bars ago > volume-weighted moving average on the most recent completed bar
+Exit: Short, volume-weighted moving average 3 bars ago > volume-weighted moving average 2 bars ago AND volume-weighted moving average 2 bars ago < volume-weighted moving average on the most recent completed bar

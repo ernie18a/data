@@ -1,0 +1,7 @@
+Calculation: Demand zone = from the most recently confirmed pivot low to that pivot low plus ATR × zone width; the pivot uses equal left and right lookbacks.
+Calculation: Supply zone = from the most recently confirmed pivot high minus ATR × zone width to that pivot high; the pivot uses equal left and right lookbacks.
+Calculation: CPR pivot = (high + low + close) / 3 from the last completed bar of a higher timeframe.
+Long: EMA fast crosses above EMA slow OR (low <= demand zone top AND low >= pivot low - ATR × bounce distance AND close > open AND close > previous bar low AND EMA fast crossed above EMA slow on the current bar or one of the previous 3 bars AND RSI > 35 AND RSI < 65 AND volume > 20-bar average volume × volume multiplier AND close > CPR pivot)
+Short: EMA fast crosses below EMA slow OR (high >= supply zone bottom AND high <= pivot high + ATR × bounce distance AND close < open AND close < previous bar high AND EMA fast crossed below EMA slow on the current bar or one of the previous 3 bars AND RSI > 35 AND RSI < 65 AND volume > 20-bar average volume × volume multiplier AND close < CPR pivot)
+Exit: long, high >= entry price + ATR × take-profit multiplier OR low <= entry price - ATR × stop-loss multiplier
+Exit: short, low <= entry price - ATR × take-profit multiplier OR high >= entry price + ATR × stop-loss multiplier

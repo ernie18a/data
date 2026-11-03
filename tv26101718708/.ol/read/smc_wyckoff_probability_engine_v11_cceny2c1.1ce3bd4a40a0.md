@@ -1,0 +1,23 @@
+Calculation: Confirmed swing high/low = pivot high/low with the configured number of bars on each side; use the latest confirmed pivot.
+Calculation: Bullish/bearish structure break = close crosses above the latest confirmed swing high / below the latest confirmed swing low, respectively, and the configured minimum displacement filter passes; displacement passes if its threshold is zero or the close has moved at least that threshold times ATR beyond the pivot.
+Calculation: HTF bias = using the last completed bar of a higher timeframe: bullish if its close is above its EMA and that EMA is above its prior value; bearish if its close is below its EMA and that EMA is below its prior value; otherwise neutral.
+Calculation: Bullish/bearish FVG = current low is above the high two chart bars earlier / current high is below the low two chart bars earlier, respectively, and the gap exceeds the configured minimum size times ATR.
+Calculation: High/low liquidity sweep = current high exceeds the highest high / current low is below the lowest low of the configured lookback on prior chart bars, and current close is back below that prior high / above that prior low, respectively.
+Calculation: Recent high/low sweep = a high/low liquidity sweep occurred fewer than the configured number of chart bars ago.
+Calculation: High/low sweep reversal rate = percentage of recorded high/low sweeps followed within the configured evaluation window by a low at least the configured ATR multiple below the sweep high / a high at least that multiple above the sweep low; use 50% if none have occurred.
+Calculation: Bullish/bearish FVG fill rate = percentage of tracked bullish/bearish FVGs subsequently touched at their far edge; bullish FVG far edge is the high from two bars before formation, bearish FVG far edge is the low from two bars before formation.
+Calculation: Wyckoff phase = range when ADX < 20 and Bollinger Band width is below its 50-bar average; trend when ADX >= 25; accumulation when range and close is below 40% of its position in the configured range, distribution when range and above 60%; markup when trend and +DI > -DI; markdown when trend and -DI > +DI; otherwise transition.
+Calculation: Premium/discount midpoint = midpoint of the latest confirmed swing high and low (or, if configured to use range, midpoint of the configured lookback high and low); premium if close is above it, discount otherwise.
+Calculation: Up/down probabilities = initialize up/down/chop at 33/33/34; add/subtract points as follows: bullish/bearish structure adds 12 to its direction and subtracts 8 from the other and 4 from chop; bullish/bearish HTF bias adds 10 to its direction and subtracts 5 from each other value; markup/markdown adds 12 to its direction and subtracts 8 from the other and 4 from chop; accumulation/distribution adds 6 to its direction and subtracts 6 from chop; transition adds 8 to chop and subtracts 4 from each direction; discount/premium adds 6 to up/down respectively and subtracts 3 from the other direction and chop; recent high/low sweep adds 10 times its reversal rate as a fraction to down/up respectively and subtracts 5 times that fraction from the other direction and chop; an unfilled bullish FVG below close with fill rate > 60% adds up to 5 to down and subtracts up to 2 from up and 3 from chop, scaled by (fill rate - 60%)/40%; an unfilled bearish FVG above close with fill rate > 60% applies the same adjustments with up and down exchanged. Clamp each value to 0–100, then normalize them to sum to 100%.
+Calculation: Setup direction = Long if up probability > down probability + 5 percentage points; Short if down probability > up probability + 5 points; otherwise none.
+Calculation: Setup score = for a Long direction, add 2 for bullish HTF bias, 1 for bullish structure, 2 for markup or accumulation, 2 for discount, 1 for a recent low sweep, 1 if up probability >= 55%, and 1 if low-sweep reversal rate > 50% or bearish FVG fill rate > 70%; for a Short direction, use the mirrored bearish conditions (markdown/distribution, premium, recent high sweep, down probability, high-sweep reversal rate, bullish FVG fill rate). No direction scores zero.
+Long: bullish structure break
+Long: bullish structure break AND prior structure bias was bearish (bullish change of character)
+Long: low liquidity sweep
+Long: bullish FVG
+Long: setup direction = Long AND setup score >= 8
+Short: bearish structure break
+Short: bearish structure break AND prior structure bias was bullish (bearish change of character)
+Short: high liquidity sweep
+Short: bearish FVG
+Short: setup direction = Short AND setup score >= 8

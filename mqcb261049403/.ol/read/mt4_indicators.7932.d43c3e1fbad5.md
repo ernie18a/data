@@ -1,0 +1,2 @@
+Long: current target-timeframe bar open >= previous completed target-timeframe bar close (target timeframe may be higher or lower than chart timeframe)
+Short: current target-timeframe bar open < previous completed target-timeframe bar close (target timeframe may be higher or lower than chart timeframe)

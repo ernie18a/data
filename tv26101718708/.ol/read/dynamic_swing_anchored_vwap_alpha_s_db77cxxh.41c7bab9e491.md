@@ -1,0 +1,4 @@
+Calculation: Swing direction = bullish when the most recent bar making a rolling lookback high is later than the most recent bar making a rolling lookback low; otherwise bearish.
+Calculation: Swing-anchored VWAP = exponentially smoothed ratio of price-volume to volume, using HLC3 × volume and volume; reset both accumulators at a swing-direction change to the swing anchor price × anchor-bar volume and anchor-bar volume. Anchor at the latest swing low on a bullish change and latest swing high on a bearish change. Smoothing speed may adapt to the ratio of ATR to its longer-term average.
+Long: close > swing-anchored VWAP AND swing direction is bullish OR close crosses above swing-anchored VWAP OR swing direction changes to bullish
+Short: close < swing-anchored VWAP AND swing direction is bearish OR close crosses below swing-anchored VWAP OR swing direction changes to bearish

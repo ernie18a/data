@@ -1,0 +1,8 @@
+Calculation: Bullish bar count = number of chart-timeframe bars in the previous trading day with close > open
+Calculation: Bearish bar count = number of chart-timeframe bars in the previous trading day with close < open
+Calculation: Long stop = previous trading day’s last completed chart-timeframe bar low − ATR × stop multiplier
+Calculation: Short stop = previous trading day’s last completed chart-timeframe bar high + ATR × stop multiplier
+Long: first bar of a non-Monday trading day AND no open position AND ((normal mode AND bullish bar count > bearish bar count AND previous trading day’s last completed chart-timeframe bar close > its chart-timeframe moving average) OR (inverted mode AND bearish bar count > bullish bar count AND previous trading day’s last completed chart-timeframe bar close < its chart-timeframe moving average))
+Short: first bar of a non-Monday trading day AND no open position AND ((normal mode AND bearish bar count > bullish bar count AND previous trading day’s last completed chart-timeframe bar close < its chart-timeframe moving average) OR (inverted mode AND bullish bar count > bearish bar count AND previous trading day’s last completed chart-timeframe bar close > its chart-timeframe moving average))
+Exit: long, low <= long stop OR high >= entry price + 2 × (entry price − long stop)
+Exit: short, high >= short stop OR low <= entry price − 2 × (short stop − entry price)

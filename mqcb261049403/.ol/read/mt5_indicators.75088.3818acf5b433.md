@@ -1,0 +1,8 @@
+Calculation: Moving average envelopes = chart-timeframe moving average plus or minus successive percentage deviations
+Calculation: Multi-timeframe score = sum of +1 when close is above the moving average and −1 otherwise, across higher and lower timeframes and the chart timeframe, using bars still forming
+Calculation: Recent swing high/low = highest high/lowest low of the latest five completed chart-timeframe bars; prior swing high/low = highest high/lowest low of the preceding five completed chart-timeframe bars
+Long: multi-timeframe score >= strong-consensus threshold AND chart close > moving average AND recent swing high > prior swing high AND recent swing low > prior swing low AND chart low touches or falls below a lower envelope
+Short: multi-timeframe score <= negative strong-consensus threshold AND chart close < moving average AND recent swing high < prior swing high AND recent swing low < prior swing low AND chart high touches or rises above an upper envelope
+Long: multi-timeframe score = 0 AND ADX <= weak-momentum threshold AND chart close < moving average AND deviation from moving average >= extreme-deviation threshold
+Short: multi-timeframe score = 0 AND ADX <= weak-momentum threshold AND chart close > moving average AND deviation from moving average >= extreme-deviation threshold
+Exit: long, multi-timeframe score >= strong-consensus threshold AND chart close > moving average AND deviation from moving average >= extreme-deviation threshold

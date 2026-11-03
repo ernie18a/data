@@ -1,0 +1,4 @@
+Long: position side = flat AND DeMarker on the chart timeframe, previous completed bar < 0.30 AND current forming bar >= 0.30 AND Stochastic %K on the chart timeframe, previous completed bar < 20 AND current forming bar >= 20
+Short: position side = flat AND DeMarker on the chart timeframe, previous completed bar > 0.70 AND current forming bar <= 0.70 AND Stochastic %K on the chart timeframe, previous completed bar > 80 AND current forming bar <= 80
+Exit: long, current bid <= entry price - stop-loss distance OR current bid >= entry price + take-profit distance
+Exit: short, current ask >= entry price + stop-loss distance OR current ask <= entry price - take-profit distance

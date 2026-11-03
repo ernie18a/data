@@ -1,0 +1,3 @@
+Calculation: Adaptive range filter = if close > prior filter, max(prior filter, close − EMA(ATR(1), longer lookback) × multiplier); otherwise min(prior filter, close + EMA(ATR(1), longer lookback) × multiplier)
+Long: close > adaptive range filter AND prior close ≤ prior adaptive range filter AND close > longer-lookback EMA(close) AND volume ≥ shorter-lookback SMA(volume) AND latest prior signal is not long
+Short: close < adaptive range filter AND prior close ≥ prior adaptive range filter AND close < longer-lookback EMA(close) AND volume ≥ shorter-lookback SMA(volume) AND latest prior signal is not short

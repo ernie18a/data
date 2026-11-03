@@ -1,0 +1,3 @@
+Calculation: Money Flow Z-Score = rolling z-score, over a longer normalization window, of the ratio of summed money flow volume to summed volume over a shorter money flow lookback; money flow volume per bar = volume × (2 × close − high − low) / (high − low), using zero when high = low; use zero for the ratio when summed volume is zero and for the z-score when its standard deviation is zero.
+Long: Money Flow Z-Score > 0
+Short: Money Flow Z-Score < 0

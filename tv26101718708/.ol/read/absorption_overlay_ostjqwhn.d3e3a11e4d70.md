@@ -1,0 +1,3 @@
+Calculation: Smoothed absorption z-score = SMA over a shorter smoothing lookback of ((volume / max(high − low, minimum tick) − SMA over a longer normalization lookback of volume / max(high − low, minimum tick)) / max(standard deviation over the normalization lookback of volume / max(high − low, minimum tick), 0.0001))
+Long: Smoothed absorption z-score > absorption threshold AND close < SMA(close, trend context lookback) AND close < close[trend context lookback]
+Short: Smoothed absorption z-score > absorption threshold AND close > SMA(close, trend context lookback) AND close > close[trend context lookback]

@@ -1,0 +1,6 @@
+Calculation: MACD line = difference between the fast and slow exponential moving averages of close; signal line = exponential moving average of the MACD line
+Calculation: Short-term SMA slope = (current short-term SMA − its value at the configured lookback bars ago) / lookback length
+Calculation: Initial long stop = lowest low over the configured lookback, excluding the current bar, minus a configured buffer; if this stop is at or above entry price, use entry price minus a configured fallback distance
+Calculation: Trailing long stop = maximum of current close minus a configured distance and the prior trailing stop; use it after close minus entry price reaches a configured profit threshold, replacing the initial stop
+Long: MACD line crosses above signal line AND MACD line < configured upper bound AND signal line < configured upper bound AND absolute distance from close to long-term SMA <= configured maximum AND short-term SMA slope >= configured minimum AND current time is within the configured session in the configured timezone AND current bar is after the last position-close bar
+Exit: long, low <= active stop

@@ -1,0 +1,3 @@
+Calculation: Prior range high/low = highest high / lowest low over the lookback bars before the current bar on the detection timeframe; the range uses completed bars, and the comparison uses the current detection-timeframe bar, which may still be forming. The detection timeframe may be higher or lower than the chart timeframe.
+Long: Current detection-timeframe close > prior range high
+Short: Current detection-timeframe close < prior range low

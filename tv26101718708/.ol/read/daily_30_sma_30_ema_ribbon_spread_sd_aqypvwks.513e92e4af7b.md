@@ -1,0 +1,2 @@
+Long: Previous completed higher-timeframe SMA (same lookback as the EMA) <= EMA AND current completed higher-timeframe SMA > EMA
+Short: Previous completed higher-timeframe SMA (same lookback as the EMA) >= EMA AND current completed higher-timeframe SMA < EMA

@@ -1,0 +1,5 @@
+Calculation: Confirmed swing high/low = a pivot high/low using the same lookback on both sides, confirmed after the right-side bars complete; use the two most recent of each.
+Calculation: Doji = absolute close minus open < 0.3 × ATR.
+Long: On the higher timeframe’s last completed bar, the two most recent swing highs and swing lows are each rising AND close > EMA, OR a bullish zone-timeframe bar has body > impulse threshold × ATR and the most recent bearish or doji bar within the prior lookback bars exists, whose body defines a demand zone that does not overlap an existing demand zone.
+Short: On the higher timeframe’s last completed bar, the two most recent swing highs and swing lows are each falling AND close < EMA, OR a bearish zone-timeframe bar has body > impulse threshold × ATR and the most recent bullish or doji bar within the prior lookback bars exists, whose body defines a supply zone that does not overlap an existing supply zone.
+Exit: 

@@ -1,0 +1,3 @@
+Calculation: Smoothed ADXm = Jurik-smoothed ADXm, where ADXm is an EMA-smoothed normalized directional-movement difference: 100 × (smoothed positive directional movement − smoothed negative directional movement) / (smoothed positive directional movement + smoothed negative directional movement). Normalize each directional movement by true range before smoothing.
+Long: Smoothed ADXm > its value on the previous bar
+Short: Smoothed ADXm < its value on the previous bar

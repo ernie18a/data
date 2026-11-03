@@ -1,0 +1,10 @@
+Calculation: Higher-timeframe moving averages = 9-, 20-, and 52-bar linearly weighted moving averages of typical price, using the last completed bar of a timeframe higher than the chart timeframe; the 9-bar average is shortest and the 52-bar average longest.
+Calculation: Chart moving averages = 9-, 20-, and 52-bar linearly weighted moving averages of typical price, using the last completed chart bar; the 9-bar average is shortest and the 52-bar average longest.
+Long: Higher-timeframe 9-bar average > 20-bar average AND 20-bar average > 52-bar average AND chart 9-bar average > 20-bar average AND 20-bar average > 52-bar average AND previous chart-bar low <= chart 9-bar average AND current price > chart 9-bar average AND previous-previous chart-bar low < previous chart-bar high AND absolute difference between current price and the close two chart bars ago > retrace threshold
+Short: Higher-timeframe 9-bar average < 20-bar average AND 20-bar average < 52-bar average AND chart 9-bar average < 20-bar average AND 20-bar average < 52-bar average AND previous chart-bar high >= chart 9-bar average AND current price < chart 9-bar average AND previous chart-bar low < the high two chart bars ago AND absolute difference between current price and previous chart-bar close > retrace threshold
+Exit: long, price <= entry price - stop-loss distance OR price >= entry price + take-profit distance
+Exit: short, price >= entry price + stop-loss distance OR price <= entry price - take-profit distance
+Exit: long, price <= entry price + break-even trigger distance after price has risen above entry price by the trigger distance
+Exit: short, price >= entry price - break-even trigger distance after price has fallen below entry price by the trigger distance
+Exit: long, price <= the lowest low of the last X chart bars minus the candle-trail pad, with the stop updated on a new chart bar
+Exit: short, price >= the highest high of the last X chart bars plus the candle-trail pad, with the stop updated on a new chart bar

@@ -1,0 +1,1 @@
+Go long when corresponding swing lows in two related instruments diverge: one makes a lower low while the other makes a higher low. Go short when corresponding swing highs diverge: one makes a higher high while the other makes a lower high. No exit rule is defined.

@@ -1,0 +1,4 @@
+Calculation: Recent higher high = a higher-timeframe bar's high >= the highest high of the preceding longer lookback, with such an event occurring within the shorter hold window; use last completed higher-timeframe bars.
+Long: (chart volume > SMA(chart volume, lookback) × multiplier AND close >= open) OR (higher-timeframe close > SMA(close, longer lookback) AND higher-timeframe close > slower higher-timeframe SMA(close, lookback) AND Recent higher high AND slower higher-timeframe RSI > threshold); use last completed higher-timeframe bars.
+Short: chart volume > SMA(chart volume, lookback) × multiplier AND close < open
+Exit: Long, high < slower higher-timeframe SMA(close, lookback); use the last completed higher-timeframe bar

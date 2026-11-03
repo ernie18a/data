@@ -1,0 +1,4 @@
+Long: no open long position AND on the last completed chart bar, OsMA > 0 AND RVI main line > RVI signal line AND RVI signal line >= upper RVI threshold AND short-term EMA > medium-term EMA > long-term EMA AND short-term EMA - long-term EMA < minimum EMA difference
+Short: no open short position AND on the last completed chart bar, OsMA < 0 AND RVI main line < RVI signal line AND RVI signal line <= lower RVI threshold AND short-term EMA < medium-term EMA < long-term EMA AND long-term EMA - short-term EMA < minimum EMA difference
+Exit: long, the short-entry condition is true OR (if enabled) bar low <= entry price - stop-loss distance OR bar high >= entry price + take-profit distance
+Exit: short, the long-entry condition is true OR (if enabled) bar high >= entry price + stop-loss distance OR bar low <= entry price - take-profit distance

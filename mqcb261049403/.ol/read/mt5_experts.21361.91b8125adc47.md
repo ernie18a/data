@@ -1,0 +1,8 @@
+Calculation: Range trend = for each bar, set upper = highest high over a lookback including the bar and lower = minimum of the bar's close and the lowest low over the same lookback; set trend to -1 if close < lower + fraction × (upper - lower), then set trend to +1 if close > upper - fraction × (upper - lower); otherwise retain the previous trend, initially 0.
+Calculation: Filter trend = round the Jurik moving average of the FATL digital filter of a selected OHLC-derived price to a configurable price increment; set trend to +1 when the rounded value rises, -1 when it falls, and otherwise retain the previous trend, initially 0.
+Long: Range trend on the chart timeframe > 0 OR filter trend on the chart timeframe > 0.
+Short: Range trend on the chart timeframe < 0 OR filter trend on the chart timeframe < 0.
+Long: Range trend on the last completed bar of a higher timeframe > 0 AND its previous bar's trend <= 0 OR filter trend on the last completed bar of a higher timeframe > 0 AND its previous bar's trend <= 0.
+Short: Range trend on the last completed bar of a higher timeframe < 0 AND its previous bar's trend >= 0 OR filter trend on the last completed bar of a higher timeframe < 0 AND its previous bar's trend >= 0.
+Exit: long, range trend on the last completed bar of its higher timeframe < 0 OR filter trend on the last completed bar of its higher timeframe < 0 OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
+Exit: short, range trend on the last completed bar of its higher timeframe > 0 OR filter trend on the last completed bar of its higher timeframe > 0 OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

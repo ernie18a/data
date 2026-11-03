@@ -1,0 +1,1 @@
+On the selected basis (the synthetic option strategy or the broader market index), calculate ATR-based trailing Supertrend bands. Signal a buy when the trend flips from bearish to bullish as price closes above the upper band; signal a sell when it flips from bullish to bearish as price closes below the lower band. No exit rule is specified.

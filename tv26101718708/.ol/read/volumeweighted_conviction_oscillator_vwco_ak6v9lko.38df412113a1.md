@@ -1,0 +1,4 @@
+Calculation: VWCO = 100 when the EMA of selling conviction is zero; otherwise 100 × EMA of buying conviction / (EMA of buying conviction + EMA of selling conviction). Buying conviction = max(0, conviction score); selling conviction = max(0, −conviction score); conviction score = volume / SMA(volume, lookback) × (high − low) × CLV; CLV = 0 when high = low, otherwise (2 × close − high − low) / (high − low). The buying and selling EMAs use the same lookback.
+Calculation: Signal line = EMA(VWCO, shorter lookback than the buying and selling EMAs).
+Long: VWCO > 50 OR (VWCO > signal line AND previous VWCO ≤ previous signal line)
+Short: VWCO < 50 OR (VWCO < signal line AND previous VWCO ≥ previous signal line)

@@ -1,0 +1,3 @@
+Calculation: Ergodic CCI = 450 × EMA(EMA(EMA(close − prior close, shortest lookback), longest lookback), intermediate lookback) ÷ EMA(EMA(EMA(abs(close − prior close), shortest lookback), longest lookback), intermediate lookback); use 50 when the denominator is zero. Calculate on the chart timeframe for the base indicator or on the selected same or higher timeframe for the HTF indicator, using the bar still forming.
+Long: CCI > Ergodic CCI
+Short: CCI < Ergodic CCI

@@ -1,0 +1,3 @@
+Calculation: Vegas spread = shorter-lookback simple moving average of median price minus longer-lookback exponential moving average of median price, calculated on higher-timeframe bars; the current value uses the bar still forming.
+Long: Current Vegas spread > Vegas spread on the previous completed higher-timeframe bar
+Short: Current Vegas spread < Vegas spread on the previous completed higher-timeframe bar

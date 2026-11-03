@@ -1,0 +1,8 @@
+Calculation: Long stop = lowest low over the recent stop-lookback bars minus ATR times a stop multiplier; after the first target is reached, the stop becomes the entry price
+Calculation: Short stop = highest high over the recent stop-lookback bars plus ATR times a stop multiplier; after the first target is reached, the stop becomes the entry price
+Calculation: Long target 1 = entry price plus initial stop distance times the nearer reward multiple; long target 2 = entry price plus initial stop distance times the farther reward multiple
+Calculation: Short target 1 = entry price minus initial stop distance times the nearer reward multiple; short target 2 = entry price minus initial stop distance times the farther reward multiple
+Long: EMA and ATR are available AND close > long-term EMA AND the number of closes below the EMA in the recent EMA-filter lookback is at most the allowed count AND the previous MACD line and signal line are both below zero AND signal line < MACD line AND previous signal line >= previous MACD line AND no open position
+Short: EMA and ATR are available AND close < long-term EMA AND the number of closes above the EMA in the recent EMA-filter lookback is at most the allowed count AND the previous MACD line and signal line are both above zero AND signal line > MACD line AND previous signal line <= previous MACD line AND no open position
+Exit: long, low <= active stop OR high >= long target 1 OR high >= long target 2
+Exit: short, high >= active stop OR low <= short target 1 OR low <= short target 2

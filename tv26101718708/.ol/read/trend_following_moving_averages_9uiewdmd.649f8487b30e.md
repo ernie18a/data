@@ -1,0 +1,3 @@
+Calculation: Trend score for each plotted moving average = let M be the selected moving average of close (EMA, SMA, RMA, WMA, or VWMA), optionally replaced by its linear-regression value; U = highest M and L = lowest M over that moving average’s lookback; W = U - L; C = a percentage of the chart-bar high-minus-low range over a rolling lookback; score = 0 if W <= C, otherwise W/C if M > L + C, otherwise -W/C if M < U - C, otherwise 0. The plotted moving averages use multiple lookbacks, from shorter to longer.
+Long: any plotted moving average’s trend score >= 1
+Short: any plotted moving average’s trend score <= -1

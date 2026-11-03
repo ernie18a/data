@@ -1,0 +1,5 @@
+Calculation: Mutual information = Over a rolling window, bin close-to-close price changes as low (below −0.5 standard deviation), middle, or high (above +0.5 standard deviation); bin volume as low (below 0.7× its rolling average), middle, or high (above 1.3× its rolling average); compute the mutual information of the two 3-class distributions as the sum of p(joint) × log[p(joint)/(p(return) × p(volume))] over all class pairs.
+Long: Mutual information ≥ threshold AND close > SMA AND close crosses above EMA AND position is flat or short AND cooldown since last signal has elapsed AND current bar is confirmed
+Long: Close crosses above EMA
+Short: Mutual information ≥ threshold AND close < SMA AND close crosses below EMA AND position is flat or long AND cooldown since last signal has elapsed AND current bar is confirmed
+Short: Close crosses below EMA

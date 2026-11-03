@@ -1,0 +1,3 @@
+Calculation: Trading Channel Index = smooth the normalized deviation (selected OHLC price − its moving average) / moving average of the absolute deviation, using the same lookback for both first-stage moving averages and a separate smoothing method and lookback for the final stage; calculate from higher-timeframe bars, including the bar still forming.
+Long: Trading Channel Index on the current chart-bar sample > upper threshold AND Trading Channel Index on the preceding chart-bar sample ≤ upper threshold
+Short: Trading Channel Index on the current chart-bar sample < lower threshold AND Trading Channel Index on the preceding chart-bar sample ≥ lower threshold

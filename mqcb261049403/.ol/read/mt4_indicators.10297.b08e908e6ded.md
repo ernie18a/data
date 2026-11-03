@@ -1,0 +1,3 @@
+Calculation: MACD histogram = the short-lookback EMA of close minus the long-lookback EMA of close, minus an EMA of that difference (the signal line); the long lookback exceeds the short lookback.
+Long: MACD histogram on the chart timeframe > 0 AND on each of the first two higher timeframes > 0 AND on the third higher timeframe < 0; use the higher-timeframe bar containing the chart bar’s time, including while that bar is still forming.
+Short: MACD histogram on the chart timeframe < 0 AND on each of the first three higher timeframes < 0; use the higher-timeframe bar containing the chart bar’s time, including while that bar is still forming.

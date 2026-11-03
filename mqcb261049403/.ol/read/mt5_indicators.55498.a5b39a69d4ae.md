@@ -1,0 +1,4 @@
+Calculation: QQE RSI line = exponential moving average of close-based RSI.
+Calculation: QQE trailing line = a trailing level offset from the QQE RSI line by 4.236 times a twice-smoothed exponential average of the absolute change in the QQE RSI line; use the prior trailing level to trail the line. Calculate on the chart timeframe, or on the configured higher timeframe if used; for higher-timeframe signals, use completed bars.
+Long: The QQE RSI line crosses above the QQE trailing line OR the QQE RSI line crosses above the configured signal level.
+Short: The QQE RSI line crosses below the QQE trailing line OR the QQE RSI line crosses below the configured signal level.

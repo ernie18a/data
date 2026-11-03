@@ -1,0 +1,3 @@
+Calculation: Pin-bar depth zone = configured percentage of the candle’s high-low range
+Short: (high - low) is greater than the configured minimum range AND (high - low) is less than the configured maximum range AND open <= low + pin-bar depth zone AND close <= low + pin-bar depth zone AND (extremum-only is disabled OR high equals the high of the corresponding same-day higher-timeframe bar, which may still be forming)
+Long: (high - low) is greater than the configured minimum range AND (high - low) is less than the configured maximum range AND open >= high - pin-bar depth zone AND close >= high - pin-bar depth zone AND (extremum-only is disabled OR low equals the low of the corresponding same-day higher-timeframe bar, which may still be forming)

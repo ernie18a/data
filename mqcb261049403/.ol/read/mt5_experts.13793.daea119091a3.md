@@ -1,0 +1,5 @@
+Calculation: HullTrendOSMA histogram = smooth((HMA - smooth(HMA, square-root-of-long-period lookback)), short-period lookback) / minimum price increment, where HMA = smooth(2 × smooth(applied price, half of long-period lookback) − smooth(applied price, long-period lookback), square-root-of-long-period lookback); the first three smoothings use the same method and the final smoothing may use a different method. Evaluate on the indicator timeframe, lower than the chart timeframe, using the last three completed bars.
+Long: histogram on the oldest bar ≥ histogram on the middle bar AND histogram on the middle bar < histogram on the newest bar
+Short: histogram on the oldest bar ≤ histogram on the middle bar AND histogram on the middle bar > histogram on the newest bar
+Exit: long, histogram on the oldest bar ≤ histogram on the middle bar AND histogram on the middle bar > histogram on the newest bar
+Exit: short, histogram on the oldest bar ≥ histogram on the middle bar AND histogram on the middle bar < histogram on the newest bar

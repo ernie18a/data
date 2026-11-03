@@ -1,0 +1,1 @@
+At or after a configured cutoff time, close all open long and short positions at market and delete all pending orders, according to the enabled actions. Remove the advisor once the enabled cleanup is complete; close the trading terminal at that cutoff if configured.

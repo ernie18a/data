@@ -1,0 +1,1 @@
+Calculate an RSI on the ratio of the traded instrument’s closing price to a reference instrument’s closing price. Enter long when the RSI is at or below its lower threshold; exit the long when it is at or above its upper threshold. No short entry is specified.

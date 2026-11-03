@@ -1,0 +1,6 @@
+Calculation: Fast RSI-MA = moving average of RSI using a shorter RSI lookback than the slow RSI-MA; apply the same moving-average method and lookback to both.
+Calculation: Slow RSI-MA = moving average of RSI using a longer RSI lookback than the fast RSI-MA.
+Long: Fast RSI-MA on the prior signal bar < Slow RSI-MA on the prior signal bar AND Fast RSI-MA on the current signal bar > Slow RSI-MA on the current signal bar AND both RSI-MAs on the current signal bar < 50 AND, when time control is enabled, the datetime is within the configured signal time interval. Evaluate on the selected working timeframe; the current signal bar is forming in every-tick mode and the last completed bar in new-bar mode.
+Short: Fast RSI-MA on the prior signal bar > Slow RSI-MA on the prior signal bar AND Fast RSI-MA on the current signal bar < Slow RSI-MA on the current signal bar AND both RSI-MAs on the current signal bar > 50 AND, when time control is enabled, the datetime is within the configured signal time interval. Evaluate on the selected working timeframe; the current signal bar is forming in every-tick mode and the last completed bar in new-bar mode.
+Exit: Long, low <= active stop-loss OR high >= entry price + configured take-profit distance.
+Exit: Short, high >= active stop-loss OR low <= entry price - configured take-profit distance.

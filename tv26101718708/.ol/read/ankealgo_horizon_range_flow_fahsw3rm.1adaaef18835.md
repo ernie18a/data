@@ -1,0 +1,14 @@
+Calculation: Previous completed higher-timeframe period high/low = the maximum high and minimum low of the last completed higher-timeframe bar
+Calculation: Previous-period average volume = the mean volume of the bars in the last completed higher-timeframe period
+Calculation: Trend direction = bullish if the previous completed higher-timeframe period has both a higher high and higher low than the preceding completed period; bearish if it has both a lower high and lower low; otherwise neutral
+Calculation: SuperTrend flip = SuperTrend direction changes from bearish to bullish, or from bullish to bearish
+Long: low < previous completed higher-timeframe period low AND selected volume filter passes (current volume >= previous-period average volume × multiplier, OR current volume >= recent N-bar chart-timeframe average volume × multiplier, OR current volume >= previous chart-timeframe bar volume × multiplier, according to selected mode; volume filter may be disabled) AND (trend filter disabled OR trend filter set to no filter OR trend direction is bearish) AND (SuperTrend linkage disabled OR a prior or current qualifying long break has armed a setup and SuperTrend flips bullish) AND no long signal has triggered in the current higher-timeframe period
+Short: high > previous completed higher-timeframe period high AND selected volume filter passes (current volume >= previous-period average volume × multiplier, OR current volume >= recent N-bar chart-timeframe average volume × multiplier, OR current volume >= previous chart-timeframe bar volume × multiplier, according to selected mode; volume filter may be disabled) AND (trend filter disabled OR trend filter set to no filter OR trend direction is bullish) AND (SuperTrend linkage disabled OR a prior or current qualifying short break has armed a setup and SuperTrend flips bearish) AND no short signal has triggered in the current higher-timeframe period
+Exit: long, low <= trailing bullish SuperTrend stop
+Exit: long, SuperTrend flips bearish (SuperTrend Exit mode or scale-out remainder trailing mode)
+Exit: long, high >= entry price + ATR × target multiple (ATR Dynamic Exit mode)
+Exit: long, high >= entry price + ATR × 1R target OR high >= entry price + ATR × 2R target OR (scale-out remainder uses 3R mode AND high >= entry price + ATR × 3R target)
+Exit: short, high >= trailing bearish SuperTrend stop
+Exit: short, SuperTrend flips bullish (SuperTrend Exit mode or scale-out remainder trailing mode)
+Exit: short, low <= entry price - ATR × target multiple (ATR Dynamic Exit mode)
+Exit: short, low <= entry price - ATR × 1R target OR low <= entry price - ATR × 2R target OR (scale-out remainder uses 3R mode AND low <= entry price - ATR × 3R target)

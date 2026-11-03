@@ -1,0 +1,3 @@
+Calculation: ATR reversal threshold = reversal multiplier × ATR
+Long: On a completed chart bar, while tracking a down leg, close − the running lowest low ≥ ATR reversal threshold AND bars since that low ≥ confirmation depth OR close > the last confirmed swing high AND that high has not already been broken
+Short: On a completed chart bar, while tracking an up leg, the running highest high − close ≥ ATR reversal threshold AND bars since that high ≥ confirmation depth OR close < the last confirmed swing low AND that low has not already been broken

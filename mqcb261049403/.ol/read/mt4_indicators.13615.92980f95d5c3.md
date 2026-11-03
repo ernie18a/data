@@ -1,0 +1,2 @@
+Long: the previous bar’s rolling lowest low is below the rolling lowest low two bars ago by more than the reversal-noise threshold AND equals the current bar’s rolling lowest low
+Short: the previous bar’s rolling highest high is above the rolling highest high two bars ago by more than the reversal-noise threshold AND equals the current bar’s rolling highest high

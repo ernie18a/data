@@ -1,0 +1,2 @@
+Long: More than half of the active anchored VWAPs are below close AND the rounded percentage difference between the counts of active anchored VWAPs below and above close is at least the readiness threshold
+Short: More than half of the active anchored VWAPs are above close AND the rounded percentage difference between the counts of active anchored VWAPs above and below close is at least the readiness threshold

@@ -1,0 +1,2 @@
+Long: EMA-smoothed RSI crosses above 50 AND Hull moving average of close is greater than its value on the previous chart bar
+Short: EMA-smoothed RSI crosses below 50 AND Hull moving average of close is less than or equal to its value on the previous chart bar

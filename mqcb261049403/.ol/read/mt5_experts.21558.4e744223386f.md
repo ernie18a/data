@@ -1,0 +1,4 @@
+Long: signal-timeframe close > DEMA of highs AND previous completed signal-timeframe close <= its DEMA of highs
+Short: signal-timeframe close < DEMA of lows AND previous completed signal-timeframe close >= its DEMA of lows
+Exit: long, signal-timeframe close < DEMA of lows OR elapsed time since entry > configured holding-time limit OR bar low <= entry price - configured stop-loss distance OR bar high >= entry price + configured take-profit distance
+Exit: short, signal-timeframe close > DEMA of highs OR elapsed time since entry > configured holding-time limit OR bar high >= entry price + configured stop-loss distance OR bar low <= entry price - configured take-profit distance

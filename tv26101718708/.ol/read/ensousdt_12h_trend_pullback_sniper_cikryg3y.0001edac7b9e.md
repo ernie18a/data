@@ -1,0 +1,6 @@
+Calculation: Stochastic RSI %K = smoothed stochastic of RSI(close), using the same lookback for RSI and stochastic; %D = smoothed %K
+Calculation: VWAP = volume-weighted average of HLC3
+Long: position is flat AND fast EMA > medium EMA AND close > slow EMA AND close > VWAP AND absolute distance from close to medium EMA <= ATR-based pullback distance AND %K crosses above %D with prior %K below the oversold threshold
+Short: position is flat AND fast EMA < medium EMA AND close < slow EMA AND close < VWAP AND absolute distance from close to medium EMA <= ATR-based pullback distance AND %K crosses below %D with prior %K above the overbought threshold
+Exit: long, close < slow EMA OR low <= entry price minus the stop distance based on ATR at entry OR high >= entry price plus either of two take-profit distances based on ATR at entry, with the second farther than the first
+Exit: short, close > slow EMA OR high >= entry price plus the stop distance based on ATR at entry OR low <= entry price minus either of two take-profit distances based on ATR at entry, with the second farther than the first

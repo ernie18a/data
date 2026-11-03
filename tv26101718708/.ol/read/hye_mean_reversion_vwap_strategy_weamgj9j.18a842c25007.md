@@ -1,0 +1,5 @@
+Calculation: Short-lookback VWAP = sum(((high + low + close) / 3) × volume over the lookback) / sum(volume over the same bars); the long-lookback VWAP uses a longer lookback.
+Long: Short-lookback VWAP crosses below (1 − configured buy percentage / 100) × long-lookback VWAP AND the longer-lookback EMA of the shorter-lookback RSI is below the configured buy threshold AND within the configured date range AND long entries are enabled AND position size ≤ 0.
+Short: Short-lookback VWAP crosses above (1 + configured sell percentage / 100) × long-lookback VWAP AND the longer-lookback EMA of the shorter-lookback RSI is above the configured sell threshold AND within the configured date range AND short entries are enabled AND position size ≤ 0.
+Exit: long, short-lookback VWAP crosses above long-lookback VWAP OR outside the configured date range.
+Exit: short, short-lookback VWAP crosses above long-lookback VWAP OR outside the configured date range.

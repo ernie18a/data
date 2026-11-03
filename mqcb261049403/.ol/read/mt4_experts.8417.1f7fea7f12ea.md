@@ -1,0 +1,5 @@
+Calculation: Polynomial regression channel = least-squares polynomial fit to closes over a lookback; upper and lower bands are the fit plus or minus the root-mean-square close residual multiplied by a width factor
+Long: Current chart bar low <= lower regression band AND previous completed daily bar high − low <= configured maximum range AND current time is within the configured trading window
+Short: Current chart bar high >= upper regression band AND previous completed daily bar high − low <= configured maximum range AND current time is within the configured trading window
+Exit: Long, current price >= regression midline OR previous completed daily bar high − low > configured maximum range OR current price <= entry price − configured stop-loss distance OR current price >= entry price + configured take-profit distance
+Exit: Short, current price <= regression midline OR previous completed daily bar high − low > configured maximum range OR current price >= entry price + configured stop-loss distance OR current price <= entry price − configured take-profit distance

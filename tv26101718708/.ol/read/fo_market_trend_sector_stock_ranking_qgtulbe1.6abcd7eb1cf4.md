@@ -1,0 +1,3 @@
+Calculation: Trend score = +1 if close > short-term EMA, otherwise -1; +1 if short-term EMA > long-term EMA, otherwise -1; +1 if RSI is above its upper threshold, -1 if below its lower threshold, otherwise 0; +1 if Supertrend is up, otherwise -1; +1 if +DI > -DI, otherwise -1; sum these votes.
+Long: Trend score >= bullish threshold AND ADX >= minimum trend-strength threshold
+Short: Trend score <= bearish threshold AND ADX >= minimum trend-strength threshold

@@ -1,0 +1,5 @@
+Calculation: Upper wick zone = (high + low) / 2 >= max(open, close)
+Calculation: Lower wick zone = (high + low) / 2 <= min(open, close)
+Calculation: Volume thresholds = Linear-interpolated configured small-tier percentile of volume over short, medium, and long lookbacks, where short < medium < long; volume qualifies when it meets the configured consensus across those three thresholds (any one, at least two, or all three)
+Long: Lower wick zone AND volume qualifies AND (direction filter is disabled OR close < open)
+Short: Upper wick zone AND volume qualifies AND (direction filter is disabled OR close > open)

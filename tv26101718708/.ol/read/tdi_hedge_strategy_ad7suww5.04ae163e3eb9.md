@@ -1,0 +1,9 @@
+Calculation: Oscillator = RSI or MFI of close, using the selected oscillator type
+Calculation: Fast MA = selected moving average of the oscillator, with a shorter lookback than the Slow MA
+Calculation: Slow MA = selected moving average of the oscillator, with a longer lookback than the Fast MA
+Calculation: Bollinger Bands = middle, upper, and lower bands calculated on the oscillator
+Calculation: Bollinger Band width = upper band minus lower band
+Long: Fast MA crosses above the Bollinger middle band OR Slow MA crosses above the Fast MA OR Slow MA crosses above the Bollinger middle band AND oscillator is not overbought OR Slow MA re-enters the Bollinger Bands through the lower band AND Fast MA is not above the upper band OR Bollinger Band width is falling AND Slow MA exits above the upper band
+Short: Fast MA crosses below the Bollinger middle band OR Slow MA crosses below the Fast MA OR Slow MA crosses below the Bollinger middle band AND oscillator is not oversold OR Slow MA re-enters the Bollinger Bands through the upper band AND Fast MA is not below the lower band OR Bollinger Band width is falling AND Slow MA exits below the lower band
+Exit: Long, Fast MA crosses below the Bollinger middle band OR Slow MA crosses below the Fast MA OR Slow MA crosses below the Bollinger middle band OR Slow MA crosses above the upper Bollinger Band OR Bollinger Band width is falling AND Slow MA exits below the lower Bollinger Band
+Exit: Short, Fast MA crosses above the Bollinger middle band OR Slow MA crosses above the Fast MA OR Slow MA crosses above the Bollinger middle band OR Slow MA crosses below the lower Bollinger Band OR Bollinger Band width is falling AND Slow MA exits above the upper Bollinger Band

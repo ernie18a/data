@@ -1,0 +1,19 @@
+Calculation: Relative volume = volume / moving average of volume over a lookback
+Calculation: Normalized energy = EMA(((abs(close - open) × body weight + (high - low) × range weight) × relative volume) / ATR, energy smoothing lookback)
+Calculation: Wave direction input = selected method: impulse is +1 when the sum of signs of close changes over a lookback exceeds a positive threshold, -1 when below its negative; pressure is +1/-1 when the EMA of (signal source - open) / max(high - low, ATR) exceeds the positive / negative pressure threshold; hybrid is +1/-1 when 0.55 × impulse sum + 45 × pressure EMA exceeds the positive / negative impulse threshold; otherwise 0
+Calculation: Wave direction = wave direction input when nonzero, otherwise previous wave direction; initialize to +1 if the first input is 0
+Calculation: Wave flip = current wave direction differs from previous wave direction
+Calculation: Compression index = clamp(50 × (2 - (0.45 × fast/slow EMA range ratio + 0.35 × fast/slow EMA body ratio + 0.20 × fast/slow EMA normalized-energy ratio)), 0, 100), where each fast lookback is shorter than its corresponding slow lookback
+Calculation: Release impulse = fast EMA normalized energy - EMA of fast EMA normalized energy
+Calculation: Release bias = +1 when torsion core > torsion signal, -1 when torsion core < torsion signal, otherwise wave direction
+Calculation: Torsion core = EMA of 100 × signed wave-energy accumulator / highest absolute accumulator over a lookback, clamped to [-100, 100]; the accumulator adds normalized energy × wave direction each bar and resets to that value on a wave flip
+Calculation: Torsion signal = EMA of torsion core
+Calculation: Upper adaptive band = base band + expansion boost × EMA(abs(torsion core)) / 10; lower adaptive band = negative upper adaptive band
+Calculation: Torsion slope = torsion core - previous torsion core
+Calculation: Exhaustion stretch = abs(torsion core) - EMA(abs(torsion core))
+Long: wave flip and wave direction = +1
+Long: compression index < compression threshold and previous compression index ≥ compression threshold and previous consecutive compression-bar count ≥ minimum compression bars and abs(release impulse) ≥ release impulse threshold and release bias = +1
+Short: wave flip and wave direction = -1
+Short: compression index < compression threshold and previous compression index ≥ compression threshold and previous consecutive compression-bar count ≥ minimum compression bars and abs(release impulse) ≥ release impulse threshold and release bias = -1
+Exit: Long, wave direction = +1 and wave age ≥ minimum exhaustion age and torsion core ≥ upper adaptive band + exhaustion offset and torsion slope < 0 and exhaustion stretch ≥ exhaustion threshold
+Exit: Short, wave direction = -1 and wave age ≥ minimum exhaustion age and torsion core ≤ lower adaptive band - exhaustion offset and torsion slope > 0 and exhaustion stretch ≥ exhaustion threshold

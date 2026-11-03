@@ -1,0 +1,4 @@
+Long: EMA(3, median price) > EMA(34, median price) AND Parabolic SAR < current bar low AND Bulls Power(13, close price) > 0 AND Bulls Power(13, close price) < its value on the previous bar AND datetime hour > 8 AND datetime hour < 17
+Short: EMA(3, median price) < EMA(34, median price) AND Parabolic SAR > current bar high AND Bears Power(13, close price) < 0 AND Bears Power(13, close price) > its value on the previous bar AND datetime hour > 8 AND datetime hour < 17
+Exit: long, bar high >= entry price + 400 points OR bar low <= entry price - 2000 points
+Exit: short, bar high >= entry price + 400 points OR bar low <= entry price - 2000 points

@@ -1,0 +1,3 @@
+Calculation: Positive-month rate = percentage of completed higher-timeframe bars for the current calendar month whose close-to-previous-close return is nonnegative; calculate separately over shorter and longer lookback windows.
+Long: shorter-window positive-month rate ≥ bullish threshold AND longer-window positive-month rate ≥ bullish threshold
+Short: shorter-window positive-month rate ≤ bearish threshold OR longer-window positive-month rate ≤ bearish threshold

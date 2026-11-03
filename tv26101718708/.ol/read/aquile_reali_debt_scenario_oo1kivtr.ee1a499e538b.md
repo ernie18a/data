@@ -1,0 +1,9 @@
+Calculation: Real-yield change = current 10Y real yield minus its value at the selected lookback; use daily bars on a timeframe higher or lower than the chart as applicable, taking the latest available bar (which may still be forming)
+Calculation: Breakeven-inflation change = current breakeven inflation minus its value at the same selected lookback; use daily bars on a timeframe higher or lower than the chart as applicable, taking the latest available bar (which may still be forming)
+Calculation: Fed-balance-sheet change = current Fed balance sheet minus its value at the selected lookback in weekly bars; use a timeframe higher or lower than the chart as applicable, taking the latest available bar (which may still be forming)
+Calculation: Scenario 2 score = count of: real-yield change < 0; breakeven-inflation change > 0; Fed-balance-sheet change > 0; real yield < threshold; when manual data is enabled, mean of the 10Y and 30Y auction-yield changes <= 0; when manual data is enabled, expected rate cuts > expected rate hikes
+Calculation: Scenario 1 score = count of: real-yield change > 0; breakeven-inflation change <= 0; Fed-balance-sheet change <= 0; real yield >= threshold; when manual data is enabled, mean of the 10Y and 30Y auction-yield changes > 0; when manual data is enabled, expected rate hikes > expected rate cuts
+Calculation: Required score = 4 when manual data is enabled; otherwise 3
+Calculation: Scenario = 3 if VIX >= threshold; otherwise 2 if Scenario 2 score >= Required score; otherwise 1 if Scenario 1 score >= Required score; otherwise 0
+Long: Scenario = 2 AND previous bar's Scenario != 2
+Short: Scenario = 1 AND previous bar's Scenario != 1

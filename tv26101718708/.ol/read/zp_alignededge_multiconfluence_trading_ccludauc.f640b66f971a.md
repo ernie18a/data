@@ -1,0 +1,6 @@
+Calculation: Confirmed swing high/low = a bar whose high/low is the highest/lowest across equal lookback windows before and after it; use the most recent confirmed pivot.
+Calculation: Bullish MSB state = set when close crosses above the latest confirmed swing high; cleared when close crosses below the latest confirmed swing low. Bearish MSB state = set when close crosses below the latest confirmed swing low; cleared when close crosses above the latest confirmed swing high.
+Calculation: Higher-timeframe bullish trend = fast EMA > mid EMA > slow EMA, calculated on the last completed bar of a higher timeframe than the chart timeframe. Higher-timeframe bearish trend = fast EMA < mid EMA < slow EMA, using the same bars.
+Calculation: LWMA = linearly weighted moving average of close.
+Long: Close crosses above the latest confirmed swing high OR (bullish MSB state AND higher-timeframe bullish trend AND (fast EMA crosses above mid EMA OR mid EMA crosses above LWMA))
+Short: Close crosses below the latest confirmed swing low OR (bearish MSB state AND higher-timeframe bearish trend AND (fast EMA crosses below mid EMA OR mid EMA crosses below LWMA))

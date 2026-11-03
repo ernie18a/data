@@ -1,0 +1,4 @@
+Calculation: Price regression slope = linear regression of the selected price source over a lookback ending at each bar minus that regression value from one bar earlier; optionally apply the selected moving average to this slope.
+Calculation: Divergence series = price regression slope × its lookback.
+Long: Price regression slope > 0 OR a confirmed pivot low of the divergence series has a higher divergence-series value and a lower price low than the preceding pivot low, with the preceding pivot within the configured minimum and maximum pivot-confirmation-bar range.
+Short: Price regression slope < 0 OR a confirmed pivot high of the divergence series has a lower divergence-series value and a higher price high than the preceding pivot high, with the preceding pivot within the configured minimum and maximum pivot-confirmation-bar range.

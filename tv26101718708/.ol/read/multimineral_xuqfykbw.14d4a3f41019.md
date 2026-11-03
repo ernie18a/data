@@ -1,0 +1,14 @@
+Calculation: Bullish engulfing = current bar closes above its open, prior bar closes below its open, current close is above prior open, and current open is below prior close
+Calculation: Bearish engulfing = current bar closes below its open, prior bar closes above its open, current close is below prior open, and current open is above prior close
+Calculation: Bullish fair value gap = current low > high two bars earlier
+Calculation: Bearish fair value gap = current high < low two bars earlier
+Calculation: Bullish order block = current close > highest high of the prior two bars AND current volume > 20-bar average volume
+Calculation: Bearish order block = current close < lowest low of the prior two bars AND current volume > 20-bar average volume
+Calculation: Volume-supported bullish breakout = current high > highest high of the prior configured lookback AND current volume > configured multiple of 20-bar average volume
+Calculation: Volume-supported bearish breakout = current low < lowest low of the prior configured lookback AND current volume > configured multiple of 20-bar average volume
+Calculation: EMA slope = (current EMA − EMA from the configured number of bars earlier) / that number of bars
+Calculation: ATR range filter = current high − current low > configured multiple of ATR
+Long: (bullish engulfing OR bullish order block OR bullish fair value gap OR volume-supported bullish breakout) AND (higher-timeframe close > higher-timeframe HMA, using the current higher-timeframe bar, which may still be forming) AND (ADX > configured threshold AND +DI > −DI) AND close > EMA AND RSI < 70 AND abs(EMA slope) > EMA × configured slope threshold AND ATR range filter AND bar is within the configured session AND bar is confirmed AND (main position is flat and no exit is occurring OR main position is long AND configured cooldown since the last marked entry has elapsed AND (virtual cycle is inactive OR its early profit/stop threshold has been reached))
+Short: (bearish engulfing OR bearish order block OR bearish fair value gap OR volume-supported bearish breakout) AND (higher-timeframe close < higher-timeframe HMA, using the current higher-timeframe bar, which may still be forming) AND (ADX > configured threshold AND −DI > +DI) AND close < EMA AND RSI > 30 AND abs(EMA slope) > EMA × configured slope threshold AND ATR range filter AND bar is within the configured session AND bar is confirmed AND (main position is flat and no exit is occurring OR main position is short AND configured cooldown since the last marked entry has elapsed AND (virtual cycle is inactive OR its early profit/stop threshold has been reached))
+Exit: Long, opposite short setup is true OR current low < entry-bar low adjusted downward by the configured stop buffer OR bars since entry >= configured maximum
+Exit: Short, opposite long setup is true OR current high > entry-bar high adjusted upward by the configured stop buffer OR bars since entry >= configured maximum

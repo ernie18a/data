@@ -1,0 +1,4 @@
+Calculation: RSI = relative strength index of close prices, using bars from the chart timeframe and the last completed bar
+Calculation: AO deviation = sum of rung deviations through rung k, with each rung deviation equal to the previous rung deviation multiplied by the deviation-step multiplier
+Short: flat AND previous RSI >= crossing level AND current RSI < crossing level OR in short position AND close >= base entry price × (1 + next AO deviation)
+Exit: short, close >= average entry price × (1 + stop-loss percentage) OR take-profit has armed when close <= average entry price × (1 − take-profit percentage), and close >= lowest close since arming × (1 + trailing percentage)

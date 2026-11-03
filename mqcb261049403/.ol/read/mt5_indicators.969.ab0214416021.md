@@ -1,0 +1,4 @@
+Calculation: Bull value = linear weighted moving average of the per-bar bull component, using the same lookback as the bear value. For each bar, let range = high − low, body = open − close, and unit = range ÷ volume; if unit = 0, set unit = 1. The bull component is body ÷ unit + swing when open > close, otherwise swing, where swing = (range + |body|) ÷ (2 × unit).
+Calculation: Bear value = linear weighted moving average of the per-bar bear component, using the same lookback as the bull value. The bear component is −body ÷ unit + swing when open < close, otherwise swing; range, body, unit, and swing are as defined for the bull component.
+Long: Bull value > bear value
+Short: Bear value > bull value

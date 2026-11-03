@@ -1,0 +1,3 @@
+Calculation: ColorBullsGap = the selected second-stage smoothing of (bar high − the selected first-stage smoothing of bar open) minus the preceding bar’s selected second-stage smoothing of (bar high − the selected first-stage smoothing of bar close)
+Long: ColorBullsGap > 0 OR (on the higher timeframe, the last completed bar’s ColorBullsGap > 0 AND the preceding completed bar’s ColorBullsGap = 0)
+Short: ColorBullsGap < 0 OR (on the higher timeframe, the last completed bar’s ColorBullsGap = 0 AND the preceding completed bar’s ColorBullsGap > 0)

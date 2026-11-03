@@ -1,0 +1,3 @@
+Calculation: Trend score = the sign of momentum evidence × tanh(|momentum evidence| / sensitivity scale raised to 1.5), multiplied by volume support and smoothed with an EMA. Momentum evidence = the average of fast and slow EMAs of log returns, divided by the standard deviation of returns estimated from a longer lookback and adjusted for the random-walk variance of those two EMA horizons. Volume support = the volume-weighted share of recent bars moving in the momentum direction, adjusted for effective bar count; count bars equally when volume is unavailable. Clamp the final score to [-1, 1].
+Long: Trend score > indecision band
+Short: Trend score < -indecision band

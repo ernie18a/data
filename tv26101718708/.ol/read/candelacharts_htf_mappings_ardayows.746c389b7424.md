@@ -1,0 +1,2 @@
+Long: Current forming higher-timeframe bar high > previous completed higher-timeframe bar high AND ((current bar close >= current bar open AND current bar close < previous bar high) OR (current bar close < current bar open AND current bar open < previous bar high))
+Short: Current forming higher-timeframe bar low < previous completed higher-timeframe bar low AND ((current bar close >= current bar open AND current bar open > previous bar low) OR (current bar close < current bar open AND current bar close > previous bar low))

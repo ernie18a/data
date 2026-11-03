@@ -1,0 +1,7 @@
+Calculation: Fast moving average = linear weighted moving average of typical price (high + low + close) / 3, with a shorter lookback than the slow moving average
+Calculation: Slow moving average = linear weighted moving average of typical price (high + low + close) / 3, with a longer lookback than the fast moving average
+Calculation: Fractal level = a confirmed five-bar high or low fractal on the chart timeframe
+Long: fractal level equals the current bar's market price AND abs(open[2] - close[2]) < abs(open[3] - close[3]) AND abs(open[3] - close[3]) > abs(open[4] - close[4]) AND fast moving average > slow moving average AND low[2] < high[1] AND abs(current market price - close[2]) > the retracement threshold
+Short: fractal level equals the current bar's market price AND abs(open[2] - close[2]) < abs(open[3] - close[3]) AND abs(open[3] - close[3]) > abs(open[4] - close[4]) AND fast moving average < slow moving average AND low[1] < high[2] AND abs(current market price - close[1]) > the retracement threshold
+Exit: long, price <= entry price - stop-loss distance OR price >= entry price + take-profit distance OR price <= the active trailing stop
+Exit: short, price >= entry price + stop-loss distance OR price <= entry price - take-profit distance OR price >= the active trailing stop

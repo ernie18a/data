@@ -1,0 +1,4 @@
+Calculation: Upper fractal = At a candidate bar, with H0 its high, H−k the high k bars earlier and H+k the high k bars later, the third bar after the candidate has volume > 0 AND one of: H0 > H−1,H−2,H+1,H+2; H0 = H−1 AND H0 > H−2,H−3,H+1,H+2; H0 ≥ H−1 AND H0 = H−2 AND H0 > H−3,H−4,H+1,H+2; H0 ≥ H−1 AND H0 = H−2,H−3 AND H0 > H−4,H−5,H+1,H+2; H0 ≥ H−1 AND H0 = H−2 AND H0 ≥ H−3 AND H0 = H−4 AND H0 > H−5,H−6,H+1,H+2.
+Calculation: Lower fractal = At a candidate bar, with L0 its low, L−k the low k bars earlier and L+k the low k bars later, the third bar after the candidate has volume > 0 AND one of: L0 < L−1,L−2,L+1,L+2; L0 = L−1 AND L0 < L−2,L−3,L+1,L+2; L0 ≤ L−1 AND L0 = L−2 AND L0 < L−3,L−4,L+1,L+2; L0 ≤ L−1 AND L0 = L−2,L−3 AND L0 < L−4,L−5,L+1,L+2; L0 ≤ L−1 AND L0 = L−2 AND L0 ≤ L−3 AND L0 = L−4 AND L0 < L−5,L−6,L+1,L+2.
+Long: Lower fractal
+Short: Upper fractal

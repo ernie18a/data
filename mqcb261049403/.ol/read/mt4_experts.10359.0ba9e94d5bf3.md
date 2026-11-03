@@ -1,0 +1,6 @@
+Calculation: Short-term SMMA = smoothed moving average of close with a shorter lookback than the long-term SMMA; both use the still-forming bar of a higher timeframe
+Calculation: Long-term SMMA = smoothed moving average of close with a longer lookback than the short-term SMMA; both use the still-forming bar of a higher timeframe
+Long: higher-timeframe stochastic oscillator < 50 AND short-term SMMA > long-term SMMA AND last completed chart-timeframe bar close < open AND last completed chart-timeframe RSI < 30
+Short: higher-timeframe stochastic oscillator < 50 AND short-term SMMA < long-term SMMA AND last completed chart-timeframe bar close > open AND last completed chart-timeframe RSI > 70
+Exit: long, chart-timeframe RSI on the still-forming bar > 70 OR short-term SMMA < long-term SMMA OR (higher-timeframe stochastic oscillator < 50 AND chart-timeframe RSI on the still-forming bar > 50)
+Exit: short, chart-timeframe RSI on the still-forming bar < 30 OR short-term SMMA > long-term SMMA OR (higher-timeframe stochastic oscillator > 50 AND chart-timeframe RSI on the still-forming bar < 50)

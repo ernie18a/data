@@ -1,0 +1,1 @@
+Long: close > high of the last completed bar on the higher daily timeframe AND previous chart bar close <= that high

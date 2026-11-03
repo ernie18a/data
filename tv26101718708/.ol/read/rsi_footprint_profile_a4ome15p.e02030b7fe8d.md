@@ -1,0 +1,3 @@
+Calculation: Volume-weighted RSI per price row = For each box of consecutive chart-timeframe bars, use completed bars only; divide the box’s high-low range into equal price rows, distribute each bar’s volume equally among the rows touched by its low-high range, then average chart-timeframe RSI(close) in each row weighted by its distributed volume.
+Long: Volume-weighted RSI per price row ≤ oversold threshold AND row volume > 0
+Short: Volume-weighted RSI per price row ≥ overbought threshold AND row volume > 0

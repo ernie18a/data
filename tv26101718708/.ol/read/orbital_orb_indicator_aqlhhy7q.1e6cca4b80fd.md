@@ -1,0 +1,5 @@
+Calculation: Opening-range high = highest high during the configured session window
+Calculation: Opening-range low = lowest low during the configured session window
+Calculation: Opening-range size in ticks = (opening-range high − opening-range low) / minimum price tick
+Long: Configured session window has ended AND (range filter is disabled OR opening-range size in ticks >= configured minimum AND opening-range size in ticks <= configured maximum) AND current close > opening-range high AND previous close <= opening-range high AND no earlier bullish breakout in the same day
+Short: Configured session window has ended AND (range filter is disabled OR opening-range size in ticks >= configured minimum AND opening-range size in ticks <= configured maximum) AND current close < opening-range low AND previous close >= opening-range low AND no earlier bearish breakout in the same day

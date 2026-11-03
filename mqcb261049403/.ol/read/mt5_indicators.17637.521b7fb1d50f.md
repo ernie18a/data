@@ -1,0 +1,3 @@
+Calculation: Smoothed MFI oscillator = over a lookback, sum selected price × selected volume for rising and falling selected-price changes; calculate 100 × rising-flow / (rising-flow + falling-flow), smooth with the selected averaging method, then subtract 50
+Long: In level mode, smoothed MFI oscillator > upper level; OR in direction mode, smoothed MFI oscillator > previous bar's value AND smoothed MFI oscillator ≠ middle level
+Short: In level mode, smoothed MFI oscillator < lower level; OR in direction mode, smoothed MFI oscillator < previous bar's value AND smoothed MFI oscillator ≠ middle level

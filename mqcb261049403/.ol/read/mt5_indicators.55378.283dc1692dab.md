@@ -1,0 +1,4 @@
+Calculation: Donchian upper and lower bands = over the lookback, respectively, the maximum high and minimum low; the average of maximum high with maximum open and minimum low with minimum open; the average of maximum high with maximum close and minimum low with minimum close; maximum open and minimum open; or maximum close and minimum close, according to the selected price mode. Use chart-timeframe bars or higher-timeframe bars (never lower); include the bar mapped to the evaluated candle, which may still be forming on a higher timeframe.
+Calculation: Midline = (Donchian upper band + Donchian lower band) / 2
+Long: evaluated candle open < midline AND evaluated candle close > midline
+Short: evaluated candle open > midline AND evaluated candle close < midline

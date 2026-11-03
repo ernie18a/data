@@ -1,0 +1,1 @@
+Use the gap between implied volatility and realized volatility of a broad equity benchmark, smoothed over time, and measure it against its recent distribution. Buy when the gap is unusually low and rising; sell when it is unusually high and falling. No exit rule is defined.

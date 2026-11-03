@@ -1,0 +1,4 @@
+Calculation: Previous Day High = high of the last completed higher-timeframe daily bar
+Calculation: Previous Day Low = low of the last completed higher-timeframe daily bar
+Long: lowest close across the current and prior N−1 chart bars > Previous Day High AND close N chart bars ago ≤ Previous Day High OR lowest close across the current and prior N−1 chart bars > Previous Day Low AND close N chart bars ago ≤ Previous Day Low
+Short: highest close across the current and prior N−1 chart bars < Previous Day High AND close N chart bars ago ≥ Previous Day High OR highest close across the current and prior N−1 chart bars < Previous Day Low AND close N chart bars ago ≥ Previous Day Low

@@ -1,0 +1,4 @@
+Long: On the configured indicator timeframe, the shorter-period moving average is above the longer-period moving average on the signal bar and the immediately preceding bar, and was below it two bars before the signal bar; use the last completed indicator bar.
+Short: On the configured indicator timeframe, the shorter-period moving average is below the longer-period moving average on the signal bar and the immediately preceding bar, and was above it two bars before the signal bar; use the last completed indicator bar.
+Exit: long, the Short condition occurs OR the bar low is at or below the entry price minus the configured stop-loss distance OR the bar high is at or above the entry price plus the configured take-profit distance.
+Exit: short, the Long condition occurs OR the bar high is at or above the entry price plus the configured stop-loss distance OR the bar low is at or below the entry price minus the configured take-profit distance.

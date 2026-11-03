@@ -1,0 +1,1 @@
+Go long when the traded instrument closes below its open while the comparison instrument closes above its open, provided there is no open position. Exit the long when the traded instrument closes above the previous bar’s high.

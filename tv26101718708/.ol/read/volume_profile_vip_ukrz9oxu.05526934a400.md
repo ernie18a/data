@@ -1,0 +1,3 @@
+Calculation: VAH and VAL = upper and lower boundaries of the value area in a volume profile built from a configurable lookback of chart-timeframe bars. Divide the period’s high-to-low range into configurable equal-price rows; allocate each bar’s volume to each row in proportion to the overlap of its high-low range with that row, divided by the bar’s range (or row height if larger). Starting at the highest-volume row, add adjacent rows in descending volume order until the configurable value-area percentage of total allocated volume is included; VAH is the top of the highest included row and VAL is the bottom of the lowest included row.
+Long: close > VAH
+Short: close < VAL

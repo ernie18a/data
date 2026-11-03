@@ -1,0 +1,4 @@
+Calculation: Average range = mean(high − low) over the preceding lookback chart bars, excluding the current bar; average volume = mean(volume) over the same bars.
+Calculation: Active void = on a bar whose range > average range × range multiplier and whose volume < average volume × volume threshold, add its [low, high] zone with charge 100 and direction bullish if close > open, otherwise bearish. Track up to the maximum number of zones; when full, replace a lowest-charge zone only if its charge is below 100. On every bar, including the formation bar, subtract from each zone’s charge min(100, overlap of the bar’s [low, high] with the zone ÷ zone width × decay rate × 10), flooring at zero. The active void is the positive-charge zone with the highest remaining charge and its direction; if tied, use the newest zone.
+Long: active void charge > 0 AND active void direction is bullish
+Short: active void charge > 0 AND active void direction is bearish

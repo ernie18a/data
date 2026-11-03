@@ -1,0 +1,7 @@
+Calculation: Delta = volume × (close − open) ÷ (high − low), using zero when the range is zero
+Calculation: Delta threshold = a multiplier × a longer-lookback EMA of absolute Delta
+Calculation: Long score = +1 when Delta > Delta threshold; +1 when the shorter-lookback EMA of Delta > 0; when enabled, +1 when volume exceeds its longer-lookback average by a multiplier and Delta > 0; when enabled, +1 when close > its EMA; when enabled, +1 when the prior bar's Supertrend direction is bullish; +2 when Impulse is true and close > open; when enabled, −1 when CHOP exceeds its threshold
+Calculation: Short score = +1 when Delta < −Delta threshold; +1 when the shorter-lookback EMA of Delta < 0; when enabled, +1 when volume exceeds its longer-lookback average by a multiplier and Delta < 0; when enabled, +1 when close < its EMA; when enabled, +1 when the prior bar's Supertrend direction is bearish; +2 when Impulse is true and close < open; when enabled, −1 when CHOP exceeds its threshold
+Calculation: Impulse = absolute candle body exceeds its EMA by a multiplier AND shorter-lookback ATR exceeds longer-lookback ATR by a multiplier
+Long: Long score ≥ 3 OR current Supertrend direction is bullish OR prior bar's Supertrend direction is bearish AND current Supertrend direction is bullish
+Short: Short score ≥ 3 OR current Supertrend direction is bearish OR prior bar's Supertrend direction is bullish AND current Supertrend direction is bearish

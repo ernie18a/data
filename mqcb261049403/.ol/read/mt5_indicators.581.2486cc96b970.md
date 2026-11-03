@@ -1,0 +1,3 @@
+Calculation: JFATL speed = JMA-smoothed momentum of the JMA-smoothed 39-bar FATL filter applied to close, divided by price-point size; the two JMA stages have independent smoothing parameters
+Long: At the first chart bar of each higher-timeframe bar, the current (still-forming) higher-timeframe JFATL speed >= 0
+Short: At the first chart bar of each higher-timeframe bar, the current (still-forming) higher-timeframe JFATL speed < 0

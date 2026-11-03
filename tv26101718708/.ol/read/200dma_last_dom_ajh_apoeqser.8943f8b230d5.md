@@ -1,0 +1,3 @@
+Calculation: period-start marker = the current higher-timeframe period’s start differs from the prior chart bar’s period start, using the higher-timeframe bar still forming; shifted forward by a configurable number of chart bars
+Long: period-start marker AND datetime within the configured backtest date range AND close > chart-timeframe SMA of close over a configurable long lookback
+Exit: long, (period-start marker AND datetime within the configured backtest date range AND close < chart-timeframe SMA of close over a configurable long lookback) OR datetime outside the configured backtest date range

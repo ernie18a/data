@@ -1,0 +1,11 @@
+Calculation: Asian session high/low = highest high and lowest low during the Asian session, locked after that session ends, using chart-timeframe bars
+Calculation: London session high/low = highest high and lowest low during the London session, locked after that session ends, using chart-timeframe bars
+Calculation: Previous day high/low = high and low of the last completed daily bar; daily is higher than the chart timeframe
+Calculation: Prior swing high/low = highest high and lowest low over the configured lookback of chart-timeframe bars, excluding the current bar
+Calculation: Long stop = sweep bar low minus a configurable buffer; long targets = signal-bar close plus initial risk multiplied by each configured risk-reward multiple
+Calculation: Short stop = sweep bar high plus a configurable buffer; short targets = signal-bar close minus initial risk multiplied by each configured risk-reward multiple
+Long: position is flat AND time is within the configured entry window AND ((Asian range is locked AND low < Asian session low AND close > Asian session low) OR low < previous day low AND close > previous day low OR (London sweeps are enabled AND London range is locked AND low < London session low AND close > London session low) OR (swing sweeps are enabled AND low < prior swing low AND close > prior swing low))
+Short: position is flat AND time is within the configured entry window AND ((Asian range is locked AND high > Asian session high AND close < Asian session high) OR high > previous day high AND close < previous day high OR (London sweeps are enabled AND London range is locked AND high > London session high AND close < London session high) OR (swing sweeps are enabled AND high > prior swing high AND close < prior swing high))
+Exit: long, low <= long stop OR high >= first long target OR high >= second long target
+Exit: short, high >= short stop OR low <= first short target OR low <= second short target
+Exit: long or short, UTC hour = configured entry-window end hour AND minute = 0

@@ -1,0 +1,8 @@
+Calculation: OBV strength percentile = percentile rank of |OBV − moving average of OBV| over its lookback; strength qualifies when percentile ≥ threshold.
+Calculation: OBV state = bullish when strength qualifies and OBV > its moving average; bearish when strength qualifies and OBV < its moving average; otherwise retain the prior state. Change state only if it differs from the prior state and at least the minimum bar spacing has elapsed since the prior state change.
+Calculation: Regression slope t-statistic = correlation(close, bar index, regression lookback) × sqrt((lookback − 2) / (1 − correlation²)); trend confirms long when t-statistic ≥ threshold and short when t-statistic ≤ −threshold.
+Calculation: Chandelier trail = for long, highest high since entry − ATR × multiple; for short, lowest low since entry + ATR × multiple. On the entry bar, clamp the long stop to at most entry-bar low − minimum tick, or the short stop to at least entry-bar high + minimum tick. Thereafter, ratchet the long trail upward only and the short trail downward only.
+Long: position is flat AND a bullish OBV state change occurred within the confirmation window (including the state-change bar) and has not expired AND the regression trend confirms long.
+Short: position is flat AND a bearish OBV state change occurred within the confirmation window (including the state-change bar) and has not expired AND the regression trend confirms short.
+Exit: long, after the entry bar, low ≤ the trail from the prior bar OR flip reversal is enabled and the OBV state changes bearish
+Exit: short, after the entry bar, high ≥ the trail from the prior bar OR flip reversal is enabled and the OBV state changes bullish

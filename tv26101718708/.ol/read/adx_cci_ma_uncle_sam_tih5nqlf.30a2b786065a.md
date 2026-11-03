@@ -1,0 +1,6 @@
+Calculation: +DI and -DI = Smooth +DM and -DM, respectively, with an EMA of the same length; divide each by the EMA of true range and multiply by 100. +DM is the positive high change when it exceeds the downward low change, otherwise zero; -DM is the positive downward low change when it exceeds the high change, otherwise zero.
+Calculation: ADX = EMA of DX, where DX = 100 × abs(+DI − -DI) / (+DI + -DI); use the same length as for +DI and -DI.
+Long: +DI crosses above -DI AND CCI is above 100 AND ADX is above its threshold AND close is above the moving average
+Short: -DI crosses above +DI AND CCI is below -100 AND ADX is above its threshold AND close is below the moving average
+Exit: long, low is at or below entry price minus the configured stop-loss percentage OR high is at or above entry price plus the configured take-profit percentage OR the last configured number of chart bars' closes are all below the current moving average
+Exit: short, high is at or above entry price plus the configured stop-loss percentage OR low is at or below entry price minus the configured take-profit percentage OR the last configured number of chart bars' closes are all above the current moving average

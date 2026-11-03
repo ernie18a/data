@@ -1,0 +1,6 @@
+Calculation: Typical price = (high + low + close) / 3
+Calculation: Fast/slow typical-price LWMA = linearly weighted moving average of typical price, with the fast lookback shorter than the slow lookback
+Long: Accelerator Oscillator on the last completed chart-timeframe bar > 0 AND fast typical-price LWMA on the chart-timeframe bar still forming > slow typical-price LWMA on the chart-timeframe bar still forming AND low[2] < high[1] AND |current bar price - close[2]| > retracement distance
+Short: Accelerator Oscillator on the last completed chart-timeframe bar < 0 AND fast typical-price LWMA on the chart-timeframe bar still forming < slow typical-price LWMA on the chart-timeframe bar still forming AND low[1] < high[2] AND |current bar price - close[1]| > retracement distance
+Exit: long, price <= entry price - stop distance OR price >= entry price + target distance OR price reaches the moved stop level
+Exit: short, price >= entry price + stop distance OR price <= entry price - target distance OR price reaches the moved stop level

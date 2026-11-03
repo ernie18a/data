@@ -1,0 +1,10 @@
+Calculation: Confirmed swing high/low = high/low pivot confirmed using left and right chart bars; usable on its confirmation bar.
+Calculation: Bullish/bearish structure break = close crosses above the latest confirmed swing high / below the latest confirmed swing low. Track the latest break direction as trend state; bullish/bearish CHoCH = bullish/bearish structure break while the prior trend state is bearish/bullish.
+Calculation: Bullish/bearish order block = high-low range of the nearest prior bearish/bullish candle within the structure-break lookback, updated on each respective structure break.
+Calculation: Bullish/bearish liquidity sweep = low below the latest confirmed swing low and close back above it / high above the latest confirmed swing high and close back below it.
+Calculation: Bullish/bearish order block retest = current low reaches the bullish block high and close is no farther than an ATR-based tolerance below its low / current high reaches the bearish block low and close is no farther than an ATR-based tolerance above its high.
+Calculation: KNN features = RSI scaled to 0–1; volume divided by its moving average, capped and scaled to 0–1; ADX capped and scaled to 0–1.
+Calculation: KNN distance = sum across the three features of log(1 + absolute difference from a historical example). KNN confidence = fraction of the K nearest resolved historical examples labeled successful; confidence is zero until at least K examples have resolved.
+Calculation: Historical example success = for a long signal, the evaluation bar's high reaches its target; for a short signal, the evaluation bar's low reaches its target. Evaluate on the bar at or after the configured outcome horizon. Targets and stops are based on the signal bar's low (long) or high (short), ATR-scaled stop distance, and configured reward-to-risk ratio; reaching the stop without the target is unsuccessful.
+Long: (bullish CHoCH OR bullish liquidity sweep) AND bullish order block retest AND KNN confidence >= confidence threshold.
+Short: (bearish CHoCH OR bearish liquidity sweep) AND bearish order block retest AND KNN confidence >= confidence threshold.

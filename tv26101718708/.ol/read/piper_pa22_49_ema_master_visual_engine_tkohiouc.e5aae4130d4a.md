@@ -1,0 +1,4 @@
+Calculation: Fast EMA = EMA of Heikin-Ashi close using a shorter lookback than the slow EMA; calculated on the higher-timeframe bar still forming.
+Calculation: Slow EMA = EMA of Heikin-Ashi close using a longer lookback than the fast EMA; calculated on the higher-timeframe bar still forming.
+Long: Fast EMA crosses above slow EMA AND 100 × absolute difference between fast and slow EMA / ATR(14) is at least the squeeze sensitivity AND absolute difference between fast and slow EMA is greater than ATR using the volatility lookback × the expansion multiplier AND the time is a weekday from 09:30 through 16:00 America/New_York.
+Short: Fast EMA crosses below slow EMA AND 100 × absolute difference between fast and slow EMA / ATR(14) is at least the squeeze sensitivity AND absolute difference between fast and slow EMA is greater than ATR using the volatility lookback × the expansion multiplier AND the time is a weekday from 09:30 through 16:00 America/New_York.

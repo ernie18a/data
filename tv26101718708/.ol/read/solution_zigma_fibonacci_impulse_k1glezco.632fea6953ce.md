@@ -1,0 +1,6 @@
+Calculation: Fibo impulse threshold = EMA of the selected Fibonacci retracement level, calculated from lookback highs and lows on a higher timeframe; use the higher-timeframe value with lookahead off.
+Calculation: Chandelier direction = bullish when close is above the previous long stop, bearish when close is below the previous short stop, otherwise retain the prior direction; stops use the Chandelier Exit ATR multiplier and lookback parameters.
+Long: close crosses above the Fibo impulse threshold AND Chandelier direction is bullish AND position is flat
+Short: close crosses below the Fibo impulse threshold AND Chandelier direction is bearish AND position is flat
+Exit: long, close is below the Fibo impulse threshold AND Chandelier direction is bearish OR close is at or below the long stop-loss price OR close is at or above the long take-profit price
+Exit: short, close is above the Fibo impulse threshold AND Chandelier direction is bullish OR close is at or above the short stop-loss price OR close is at or below the short take-profit price

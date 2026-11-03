@@ -1,0 +1,4 @@
+Long: RSI(14, typical price, current forming bar) > RSI(14, typical price, last completed bar) AND MACD main line (current forming bar) > MACD main line (last completed bar) AND low two bars ago < high one bar ago AND fast LWMA of typical price > slow LWMA of typical price (current forming bar) AND |current bar open - close two bars ago| > retrace threshold
+Short: RSI(14, typical price, current forming bar) < RSI(14, typical price, last completed bar) AND MACD main line (current forming bar) < MACD main line (last completed bar) AND low one bar ago < high two bars ago AND fast LWMA of typical price < slow LWMA of typical price (current forming bar) AND |current bar open - close one bar ago| > retrace threshold
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

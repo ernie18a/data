@@ -1,0 +1,3 @@
+Calculation: Heikin-Ashi OBV = cumulative volume, adding volume when the smoothed Heikin-Ashi close is above the smoothed previous Heikin-Ashi close, subtracting it when below, and otherwise unchanged; calculated on the chart timeframe.
+Long: Heikin-Ashi OBV > its longer-lookback EMA AND its shorter-lookback EMA > its longer-lookback EMA
+Short: Heikin-Ashi OBV < its longer-lookback EMA AND its shorter-lookback EMA < its longer-lookback EMA

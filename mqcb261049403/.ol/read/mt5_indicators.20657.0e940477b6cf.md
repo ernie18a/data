@@ -1,0 +1,3 @@
+Calculation: Volatility speed = the selected smoother applied to (close standard deviation now − close standard deviation SpeedBars bars earlier); in the higher-timeframe version, calculate on a higher timeframe using its still-forming bar, sample at the first chart bar of each higher-timeframe interval, and carry that value forward until the next interval.
+Long: Volatility speed >= 0
+Short: Volatility speed < 0

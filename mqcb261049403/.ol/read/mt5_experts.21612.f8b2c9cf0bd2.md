@@ -1,0 +1,5 @@
+Calculation: Kijun midpoint = (highest high + lowest low) over the same lookback of indicator-timeframe bars, including the evaluated bar; the indicator timeframe may be higher or lower than the chart timeframe.
+Long: Previous completed indicator-timeframe bar close < its Kijun midpoint AND latest completed indicator-timeframe bar close > its Kijun midpoint
+Short: Previous completed indicator-timeframe bar close > its Kijun midpoint AND latest completed indicator-timeframe bar close < its Kijun midpoint
+Exit: long, latest completed indicator-timeframe bar close < its Kijun midpoint AND previous completed indicator-timeframe bar close > its Kijun midpoint OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, latest completed indicator-timeframe bar close > its Kijun midpoint AND previous completed indicator-timeframe bar close < its Kijun midpoint OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

@@ -1,0 +1,2 @@
+Long: On any configured timeframe, Stochastic %K or %D < oversold level; use the higher timeframe's still-forming bar or the lower timeframe's first bar within the chart bar
+Short: On any configured timeframe, Stochastic %K or %D > overbought level; use the higher timeframe's still-forming bar or the lower timeframe's first bar within the chart bar

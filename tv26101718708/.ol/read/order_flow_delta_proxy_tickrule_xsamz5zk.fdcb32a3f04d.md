@@ -1,0 +1,3 @@
+Calculation: tick-rule delta = buy-classified volume minus sell-classified volume, summed over lower-timeframe bars within the chart bar. Classify each bar’s volume as buy when its close is above the prior lower-timeframe close, sell when below, and split evenly when equal or no prior close is available. Use lower-timeframe bars, including the forming bar; values update while the chart bar forms. If no lower-timeframe data is available, split chart-bar volume between buy and sell in proportion to the close’s position within the high-low range, or evenly if the range is zero.
+Long: tick-rule delta >= 0
+Short: tick-rule delta < 0

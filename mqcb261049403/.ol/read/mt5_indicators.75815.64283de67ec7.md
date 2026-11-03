@@ -1,0 +1,6 @@
+Calculation: MACD line = shorter-lookback EMA of close minus longer-lookback EMA of close, calculated on each analyzed timeframe using its still-forming bar; the timeframes may be higher or lower than the chart timeframe
+Calculation: MACD signal line = EMA of the MACD line, using a longer lookback than the short-term EMA and a shorter lookback than the long-term EMA; calculated on each analyzed timeframe using its still-forming bar
+Calculation: MACD histogram = MACD line - MACD signal line
+Calculation: Total MACD score = sum across analyzed timeframes, assigning +2 when MACD line > MACD signal line AND MACD histogram > 0 AND MACD line > 0; +1 when MACD line > MACD signal line AND MACD histogram > 0 AND MACD line <= 0; -2 when MACD line < MACD signal line AND MACD histogram < 0 AND MACD line < 0; -1 when MACD line < MACD signal line AND MACD histogram < 0 AND MACD line >= 0; otherwise 0
+Long: MACD line > MACD signal line AND MACD histogram > 0 on any analyzed timeframe OR Total MACD score >= 3
+Short: MACD line < MACD signal line AND MACD histogram < 0 on any analyzed timeframe OR Total MACD score <= -3

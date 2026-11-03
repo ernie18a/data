@@ -1,0 +1,2 @@
+Long: Fast DEMA (shorter lookback) on the higher timeframe > slow DEMA (longer lookback) on the higher timeframe AND on the previous completed higher-timeframe bar fast DEMA <= slow DEMA
+Exit: Long, slow DEMA (longer lookback) on the higher timeframe > fast DEMA (shorter lookback) on the higher timeframe AND on the previous completed higher-timeframe bar slow DEMA <= fast DEMA

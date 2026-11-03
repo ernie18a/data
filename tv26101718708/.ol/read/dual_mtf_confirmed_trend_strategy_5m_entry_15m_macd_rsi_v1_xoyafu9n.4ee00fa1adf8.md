@@ -1,0 +1,5 @@
+Calculation: Gann Hi-Lo line = Let state persist between bars; set it to bullish when close > prior bar’s SMA of high, or bearish when close < prior bar’s SMA of low. The line is the SMA of high when bearish and the SMA of low otherwise.
+Long: close > Supertrend AND close > Gann Hi-Lo line AND close > shorter-lookback EMA AND close > longer-lookback EMA AND higher-timeframe last completed bar MACD histogram > 0 AND higher-timeframe last completed bar RSI > 50
+Short: close < Supertrend AND close < Gann Hi-Lo line AND close < shorter-lookback EMA AND close < longer-lookback EMA AND higher-timeframe last completed bar MACD histogram < 0 AND higher-timeframe last completed bar RSI < 50
+Exit: long, close < Supertrend AND close < Gann Hi-Lo line AND close < shorter-lookback EMA AND close < longer-lookback EMA AND higher-timeframe last completed bar MACD histogram < 0 AND higher-timeframe last completed bar RSI < 50
+Exit: short, close > Supertrend AND close > Gann Hi-Lo line AND close > shorter-lookback EMA AND close > longer-lookback EMA AND higher-timeframe last completed bar MACD histogram > 0 AND higher-timeframe last completed bar RSI > 50

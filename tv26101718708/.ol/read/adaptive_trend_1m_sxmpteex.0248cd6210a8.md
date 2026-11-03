@@ -1,0 +1,21 @@
+Calculation: Market speed = absolute rate of change of close over a lookback, divided by its highest value over a longer adaptation window
+Calculation: Efficiency ratio = absolute net close change over the slow MACD lookback divided by the sum of absolute close changes over that lookback
+Calculation: Adaptive ATR period = base ATR period shortened as market speed increases; clamp to a permitted range
+Calculation: Adaptive ATR = recursively smoothed true range using alpha equal to the reciprocal of the adaptive ATR period
+Calculation: Adaptive trend bands = source minus/plus adaptive ATR multiplied by a multiplier that increases with market speed; carry the lower band forward as the maximum of its current and previous values when the previous close is above the previous lower band, and carry the upper band forward as the minimum of its current and previous values when the previous close is below the previous upper band
+Calculation: Trend direction = switch from down to up when close rises above the previous upper band, or from up to down when close falls below the previous lower band; otherwise retain the previous direction
+Calculation: Adaptive MACD = EMA of close using a fast period shortened as efficiency ratio falls, minus EMA of close using a slower period lengthened as efficiency ratio falls; MACD signal = EMA of adaptive MACD using a separate signal period
+Calculation: Adaptive RSI = RSI using a period lengthened as efficiency ratio falls
+Calculation: Bollinger midline = simple moving average of close; bands = midline plus/minus an efficiency-adjusted standard deviation multiple
+Calculation: Adaptive volume threshold = simple moving average of volume multiplied by a threshold reduced as market speed increases
+Calculation: Volatility threshold = a fraction of the historical smoothed ATR percentage, where ATR percentage is ATR divided by close
+Calculation: Adaptive stop distance = ATR at entry multiplied by a stop multiple reduced as efficiency ratio increases
+Calculation: Adaptive take-profit distances = ATR at entry multiplied by take-profit multiples increased as efficiency ratio increases
+Long: trend direction switches from down to up AND (MACD is above its signal line OR MACD crosses above its signal line, according to the selected MACD mode) AND adaptive RSI is above its midpoint AND (close is above the Bollinger midline OR close crosses above the upper Bollinger band, according to the selected band mode; no band restriction in none mode) AND (volume exceeds its adaptive threshold when the volume filter is enabled) AND ATR percentage exceeds the volatility threshold
+Short: trend direction switches from up to down AND (MACD is below its signal line OR MACD crosses below its signal line, according to the selected MACD mode) AND adaptive RSI is below its midpoint AND (close is below the Bollinger midline OR close crosses below the lower Bollinger band, according to the selected band mode; no band restriction in none mode) AND (volume exceeds its adaptive threshold when the volume filter is enabled) AND ATR percentage exceeds the volatility threshold
+Exit: long, low <= entry price - adaptive stop distance OR high >= entry price + first take-profit distance OR high >= entry price + second take-profit distance OR high >= entry price + third take-profit distance
+Exit: short, high >= entry price + adaptive stop distance OR low <= entry price - first take-profit distance OR low <= entry price - second take-profit distance OR low <= entry price - third take-profit distance
+Exit: long, after the first take-profit has been reached and breakeven is enabled, low <= entry price
+Exit: short, after the first take-profit has been reached and breakeven is enabled, high >= entry price
+Exit: long, after the first take-profit has been reached and trailing is enabled, low <= trailing stop based on the Bollinger midline and adaptive stop distance
+Exit: short, after the first take-profit has been reached and trailing is enabled, high >= trailing stop based on the Bollinger midline and adaptive stop distance

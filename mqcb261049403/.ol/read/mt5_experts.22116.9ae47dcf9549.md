@@ -1,0 +1,8 @@
+Calculation: Rounded average R of a price series = apply the same selected moving-average method and parameters independently to open and close. For each series, let M be its moving average, D a rounding distance, and R the previous rounded value. Set the current R to M if abs(M - previous M) > D OR abs(M - previous R) > D OR (M > previous R AND the last nonzero change in R was upward) OR (M < previous R AND the last nonzero change in R was downward); otherwise retain the previous R. Carry the last nonzero direction forward when R is unchanged.
+Calculation: Smoothed candle body = rounded close and rounded open, except that its open equals the previous bar's rounded close when abs(open - close) <= a gap threshold in price units. Calculate on the chart timeframe or a selectable higher or lower timeframe, using the last completed bar by default or the still-forming bar when selected.
+Long: smoothed candle close > smoothed candle open
+Short: smoothed candle close < smoothed candle open
+Long: smoothed candle close > smoothed candle open AND previous smoothed candle close <= previous smoothed candle open
+Short: smoothed candle close < smoothed candle open AND previous smoothed candle close >= previous smoothed candle open
+Exit: long, smoothed candle close < smoothed candle open OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, smoothed candle close > smoothed candle open OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

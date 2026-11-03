@@ -1,0 +1,7 @@
+Calculation: Prior-slot lower wick fraction = (prior completed higher-timeframe slot body bottom − slot low) / slot range
+Calculation: Prior-slot upper wick fraction = (slot high − prior completed higher-timeframe slot body top) / slot range
+Calculation: Gap strength = score of the gap size divided by the average range of completed higher-timeframe slots over the configured lookback
+Long: Prior-slot lower wick fraction ≥ configured minimum wick fraction AND current bar overlaps the prior slot’s lower-wick zone OR a bullish three-slot gap forms (current completed slot low > high two slots earlier) AND its gap strength ≥ configured minimum
+Short: Prior-slot upper wick fraction ≥ configured minimum wick fraction AND current bar overlaps the prior slot’s upper-wick zone OR a bearish three-slot gap forms (current completed slot high < low two slots earlier) AND its gap strength ≥ configured minimum
+Exit: long, close below the prior slot’s lower-wick zone OR high reaches the current slot midpoint OR high reaches the current slot high OR high reaches the prior slot high
+Exit: short, close above the prior slot’s upper-wick zone OR low reaches the current slot midpoint OR low reaches the current slot low OR low reaches the prior slot low

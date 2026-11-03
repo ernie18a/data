@@ -1,0 +1,5 @@
+Calculation: +DI and -DI = the ADX positive and negative directional indicators, respectively.
+Long: On the configured indicator timeframe, +DI > -DI on the last completed bar AND +DI <= -DI on the preceding completed bar (the indicator timeframe may be higher, lower, or equal to the chart timeframe).
+Short: On the configured indicator timeframe, +DI < -DI on the last completed bar AND +DI >= -DI on the preceding completed bar (the indicator timeframe may be higher, lower, or equal to the chart timeframe).
+Exit: long, the short condition occurs OR price <= entry price minus the stop-loss distance OR price >= entry price plus the take-profit distance.
+Exit: short, the long condition occurs OR price >= entry price plus the stop-loss distance OR price <= entry price minus the take-profit distance.

@@ -1,0 +1,10 @@
+Calculation: Trend basis = EMA of hlc3, smoothed again with an EMA.
+Calculation: Smoothed ATR = ATR, smoothed with an EMA using the same smoothing length as the trend basis.
+Calculation: Bullish trail = trend basis − smoothed ATR × trail-distance parameter; each bar use the greater of this candidate and the prior bullish trail, except reset to the candidate when close < prior bullish trail. Bearish trail = trend basis + smoothed ATR × trail-distance parameter; each bar use the lesser of this candidate and the prior bearish trail, except reset to the candidate when close > prior bearish trail.
+Calculation: Confirmation scores = count of satisfied conditions. Bullish: shorter-period EMA(close) > longer-period EMA(close); RSI > its upper threshold; MACD line > signal line and histogram > 0; stochastic %K > %D and > its bullish threshold; CCI(hlc3) > 0; +DI > −DI and ADX ≥ its minimum; ROC > 0; MFI > its upper threshold; OBV > its EMA; close > session VWAP. Bearish: the mirrored EMA, MACD, CCI, DMI, ROC, OBV and VWAP comparisons; RSI and MFI below their lower thresholds; stochastic %K < %D and below its bearish threshold.
+Calculation: Trend state starts bullish when close ≥ trend basis and bearish otherwise; it changes only on a qualifying opposite signal. Signals must alternate direction.
+Calculation: Profit targets = signal-bar close plus (long) or minus (short) signal-bar smoothed ATR multiplied by three increasing target-distance parameters; lock levels at the signal and track each target as reached once.
+Long: Confirmed bar AND trend state is bearish AND last signal was not long AND close > bearish trail AND close > trend basis AND bullish confirmation score ≥ required count.
+Short: Confirmed bar AND trend state is bullish AND last signal was not short AND close < bullish trail AND close < trend basis AND bearish confirmation score ≥ required count.
+Exit: Long, confirmed bar after the signal bar AND high ≥ any unreached long profit target OR a qualifying Short condition.
+Exit: Short, confirmed bar after the signal bar AND low ≤ any unreached short profit target OR a qualifying Long condition.

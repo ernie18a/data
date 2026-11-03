@@ -1,0 +1,5 @@
+Calculation: XCCX(price) = 100 × smoothed(price − smoothed(price, long-term smoothing)) ÷ smoothed(abs(price − smoothed(price, long-term smoothing)), deviation smoothing); calculate separately for each bar’s open, high, low, and close. The two smoothing stages use independently configurable methods and parameters.
+Calculation: XCCX candle high = max(smoothed XCCX high, XCCX open, XCCX close); XCCX candle low = min(smoothed XCCX low, XCCX open, XCCX close).
+Calculation: Keltner bands = simple moving average of XCCX close ± channel multiplier × simple moving average of (XCCX candle high − XCCX candle low), using the same lookback for both averages. In the optional higher-timeframe version, use the higher-timeframe bar still forming and map its values across its chart-timeframe bars.
+Long: XCCX open < XCCX close OR (level mode AND XCCX close > upper level) OR (channel mode AND XCCX close > upper Keltner band)
+Short: XCCX open > XCCX close OR (level mode AND XCCX close < lower level) OR (channel mode AND XCCX close < lower Keltner band)

@@ -1,0 +1,3 @@
+Calculation: Price-time correlation = Pearson correlation between close and time over multiple lookbacks, from shorter to longer, on each configured timeframe; each timeframe may be higher or lower than the chart timeframe, and uses its current bar, including a bar still forming.
+Long: Any configured timeframe/lookback price-time correlation >= 0.5
+Short: Any configured timeframe/lookback price-time correlation <= -0.5

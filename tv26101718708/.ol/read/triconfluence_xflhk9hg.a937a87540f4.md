@@ -1,0 +1,4 @@
+Calculation: Opening-range high/low = highest high / lowest low of the first configured number of in-session bars each day.
+Calculation: Initial-balance high/low = highest high / lowest low of the first configured number of in-session bars each day.
+Long: both ranges are complete AND the first in-session bar closes above its open AND high crosses above the opening-range high AND high crosses above the initial-balance high
+Short: both ranges are complete AND the first in-session bar closes at or below its open AND low crosses below the opening-range low AND low crosses below the initial-balance low

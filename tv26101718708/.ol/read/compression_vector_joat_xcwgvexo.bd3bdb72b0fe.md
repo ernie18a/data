@@ -1,0 +1,5 @@
+Calculation: Squeeze = ATR(14) / long-term ATR < compression threshold AND (Bollinger Band width < its same-lookback SMA × squeeze ratio OR ATR(14) < its shorter-term SMA × squeeze ratio)
+Calculation: Squeeze zone high = highest high during a consecutive squeeze run meeting the minimum duration
+Calculation: Squeeze zone low = lowest low during a consecutive squeeze run meeting the minimum duration
+Long: A completed bar closes above an eligible, untriggered squeeze zone high AND its absolute open-close body exceeds ATR(14) × the minimum impulse multiple AND (volume exceeds its SMA when the volume filter is enabled) AND (RSI is below the long-entry limit when the RSI filter is enabled)
+Short: A completed bar closes below an eligible, untriggered squeeze zone low AND its absolute open-close body exceeds ATR(14) × the minimum impulse multiple AND (volume exceeds its SMA when the volume filter is enabled) AND (RSI is above the short-entry limit when the RSI filter is enabled)

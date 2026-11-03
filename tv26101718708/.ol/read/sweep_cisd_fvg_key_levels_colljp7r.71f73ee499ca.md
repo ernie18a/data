@@ -1,0 +1,4 @@
+Calculation: Body pivot high = the open or close is a local maximum over the two preceding and two following bars; its level is the greater of that bar's open and close.
+Calculation: Body pivot low = the open or close is a local minimum over the two preceding and two following bars; its level is the lesser of that bar's open and close.
+Long: A bullish wick-lick region has been touched; the latest body pivot high formed before that touch; current open < that pivot level < current close; and the pivot level is above the region's touch level.
+Short: A bearish wick-lick region has been touched; the latest body pivot low formed before that touch; current close < that pivot level < current open; and the pivot level is below the region's touch level.

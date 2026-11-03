@@ -1,0 +1,8 @@
+Calculation: Opening range = highest high minus lowest low among the first configured number of bars in the active session.
+Calculation: Session range = highest high minus lowest low so far in the active session.
+Calculation: Ladder base = opening range once the configured opening-range bar count has been reached; otherwise, session range.
+Calculation: Upside ladder level n = session open + ladder base × configured step n; downside ladder level n = session open − ladder base × configured step n.
+Calculation: Historical hit probability at a ladder level = (completed prior sessions that touched the level + 1) / (completed prior sessions sampled for that level + 2); use 0.5 when there are no samples. Count each completed session as a sample, retaining up to the configured sample cap.
+Calculation: Session anomaly score = clamp((session range / ATR) / 1.75, 0, 2).
+Long: Confirmed bar in active session AND ((close > upside ladder level 4 AND previous close <= upside ladder level 4 AND historical hit probability at upside ladder level 4 >= configured continuation probability gate) OR (low <= downside ladder level 6 AND close > downside ladder level 5 AND session anomaly score > 1)).
+Short: Confirmed bar in active session AND ((close < downside ladder level 4 AND previous close >= downside ladder level 4 AND historical hit probability at downside ladder level 4 >= configured continuation probability gate) OR (high >= upside ladder level 6 AND close < upside ladder level 5 AND session anomaly score > 1)).

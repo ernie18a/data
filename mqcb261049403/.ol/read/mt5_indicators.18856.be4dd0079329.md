@@ -1,0 +1,2 @@
+Long: Shorter-period moving average > longer-period moving average, calculated on the chart timeframe or on a higher timeframe using its still-forming bar
+Short: Shorter-period moving average < longer-period moving average, calculated on the chart timeframe or on a higher timeframe using its still-forming bar

@@ -1,0 +1,3 @@
+Calculation: Risk regime = -2 if higher-timeframe VIX close (bar still forming) > panic threshold; otherwise -1 if VIX close > risk-off threshold AND VIX close > its long-term EMA; otherwise 1 if VIX close < risk-on threshold AND VIX close < its long-term EMA; otherwise 0
+Long: Risk regime = 1 AND Risk regime != previous chart bar's Risk regime
+Exit: long, Risk regime = -1 OR Risk regime = -2 AND Risk regime != previous chart bar's Risk regime

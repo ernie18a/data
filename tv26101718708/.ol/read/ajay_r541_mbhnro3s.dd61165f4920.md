@@ -1,0 +1,2 @@
+Long: The selected moving average of close crosses above the selected moving average of open on a higher-timeframe bar that is still forming
+Short: The selected moving average of close crosses below the selected moving average of open on a higher-timeframe bar that is still forming

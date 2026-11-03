@@ -1,0 +1,1 @@
+For a buy or sell, wait until the current spread is no greater than the minimum spread recorded during the previous candle plus an allowed spread tolerance, then enter in the selected direction.

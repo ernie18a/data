@@ -1,0 +1,6 @@
+Calculation: Zero-lag EMA = EMA of the source plus its difference from the source lagged by half the EMA lookback, over the same lookback
+Calculation: VWAP deviation bands = VWAP ± standard deviation of typical price over a lookback, multiplied by the band width
+Long: chart bar is confirmed AND close > zero-lag EMA AND close > VWAP AND (low <= VWAP OR low <= lower first-deviation band OR low <= zero-lag EMA) AND close > open AND close >= previous bar open AND most recent signal is not long
+Short: chart bar is confirmed AND close < zero-lag EMA AND close < VWAP AND (high >= VWAP OR high >= upper first-deviation band OR high >= zero-lag EMA) AND close < open AND close <= previous bar open AND most recent signal is not short
+Exit: long, short decision OR low <= entry price − ATR at entry × stop multiple OR high >= entry price + ATR at entry × stop multiple × reward/risk multiple
+Exit: short, long decision OR high >= entry price + ATR at entry × stop multiple OR low <= entry price − ATR at entry × stop multiple × reward/risk multiple

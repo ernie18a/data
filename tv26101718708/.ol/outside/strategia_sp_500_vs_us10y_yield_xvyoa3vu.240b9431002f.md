@@ -1,0 +1,1 @@
+Using daily 10-year Treasury yield data, measure the latest yield’s position within its rolling range. If it is above the upper threshold, exit the traded instrument’s long position; otherwise, enter or maintain a long position.

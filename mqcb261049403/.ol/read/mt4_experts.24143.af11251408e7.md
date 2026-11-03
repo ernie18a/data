@@ -1,0 +1,3 @@
+Short: No open market position AND ATR (longer lookback, current chart bar still forming) < threshold AND long-lookback Stochastic Oscillator (current chart bar still forming) < threshold AND medium-lookback Stochastic Oscillator (current chart bar still forming) < threshold AND its previous completed chart bar value >= threshold AND short-lookback Stochastic Oscillator (current chart bar still forming) < threshold AND its previous completed chart bar value >= threshold
+Calculation: Average open-trade unrealized profit in pips = mean of each open position's price change from entry, signed positive for a favorable move by its position side
+Exit: Long or short, at least one open position AND Average open-trade unrealized profit in pips > threshold

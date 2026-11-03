@@ -1,0 +1,3 @@
+Calculation: Price-row delta = Sum intrabar volume in the active profile, signed positive when the intrabar close is above its open, negative when below, and zero when equal; assign each intrabar to the fixed price row containing its close. Use lower-timeframe bars; aggregate completed chart bars and include the still-forming chart bar in the developing profile.
+Long: Price-row delta > 0
+Short: Price-row delta < 0

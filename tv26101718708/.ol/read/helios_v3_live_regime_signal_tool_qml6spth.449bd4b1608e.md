@@ -1,0 +1,12 @@
+Calculation: MACD vote = +1 when the MACD line and signal line are both above zero, −1 when both are below zero, otherwise 0; calculate MACD from close using a shorter fast lookback, a longer slow lookback, and a signal lookback
+Calculation: Close/open spread vote = +1 when the simple moving average of close is above the simple moving average of open, −1 when below, otherwise 0; use the same lookback for both averages
+Calculation: Momentum vote = +1 when close is above close from the lookback bars earlier, −1 when below, otherwise 0
+Calculation: Long-term average vote = +1 when close is above its long-term simple moving average, otherwise −1
+Calculation: OBV vote = +1 when on-balance volume is above its simple moving average, −1 when below, otherwise 0
+Calculation: Relative-strength vote = +1 when close divided by benchmark close is above its simple moving average, otherwise −1; benchmark close is from the same timeframe
+Calculation: Extended score = MACD vote + close/open spread vote + momentum vote + long-term average vote + OBV vote + relative-strength vote; omit the relative-strength vote when disabled
+Calculation: Realized volatility = standard deviation of log(close / prior close) over a lookback, annualized by multiplying by the square root of 365 and by 100; optionally smooth with an exponential moving average
+Calculation: Extension z-score = (close − long-term average) / standard deviation of close over the long-term average lookback
+Long: flat AND extended score ≥ 4 for the confirmation period AND ((realized volatility ≤ cap AND extension z-score ≤ buy limit) OR first bar meeting the confirmation period AND (realized volatility > cap OR extension z-score > buy limit))
+Short: in a long position AND extended score ≤ −4 for the confirmation period AND ((realized volatility ≤ cap AND extension z-score ≥ sell limit) OR first bar meeting the confirmation period AND (realized volatility > cap OR extension z-score < sell limit))
+Exit: long, extended score ≤ −4 for the confirmation period AND ((realized volatility ≤ cap AND extension z-score ≥ sell limit) OR first bar meeting the confirmation period AND (realized volatility > cap OR extension z-score < sell limit))

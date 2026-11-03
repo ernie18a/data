@@ -1,0 +1,7 @@
+Calculation: Normalized price increment = change in selected bar price divided by ATR(14), falling back to the longer-lookback average absolute price change if ATR is unavailable
+Calculation: Drift percentile = rolling percentile rank of the absolute sum of normalized price increments over the path lookback; drift direction is the sign of that sum
+Calculation: Lévy-area percentile = rolling percentile rank of the absolute signed area of the normalized price-versus-time path over the path lookback, using equal time increments; area sign is the sign of that area
+Calculation: Range position = (selected price − lowest low over path lookback) / (highest high over path lookback − lowest low over path lookback)
+Calculation: Drift weakening = current drift percentile is below its recent short-window maximum by a configurable margin, and that maximum is at least the trend threshold
+Long: current and previous area signs differ AND previous Lévy-area percentile is at least the area threshold AND drift weakening AND range position is at a lower range extreme AND NOT (drift percentile is at least the trend threshold AND Lévy-area percentile is at least the area threshold)
+Short: current and previous area signs differ AND previous Lévy-area percentile is at least the area threshold AND drift weakening AND range position is at an upper range extreme AND NOT (drift percentile is at least the trend threshold AND Lévy-area percentile is at least the area threshold)

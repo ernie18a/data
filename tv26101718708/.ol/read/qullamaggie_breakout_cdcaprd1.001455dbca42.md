@@ -1,0 +1,4 @@
+Calculation: Breakout level = most recent confirmed pivot high, where the high exceeds the highs of the configured number of bars on both sides
+Calculation: Stop level = lowest low over the configured lookback of chart-timeframe bars; hold the level while in a position
+Long: high crosses above the breakout level AND (third, longest moving average filter is disabled OR breakout level > third moving average of higher-timeframe closes from the last completed bar) AND (ATR filter is disabled OR breakout level - prior stop level < configured percentage of daily ATR from the last completed daily bar) AND datetime is within the configured backtest dates
+Exit: Long, low <= prior stop level OR (close crosses below the selected first or second moving average of higher-timeframe closes from the last completed bar AND prior bar low > that moving average)

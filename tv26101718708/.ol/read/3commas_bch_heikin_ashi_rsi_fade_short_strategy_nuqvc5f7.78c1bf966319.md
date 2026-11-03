@@ -1,0 +1,3 @@
+Calculation: Heikin Ashi streak = consecutive Heikin Ashi candles in the configured direction since the last candle in the opposite direction
+Short: RSI on the configured timeframe (last completed bar) > threshold when the comparison is configured as Greater Than, or < threshold when configured as Less Than AND Heikin Ashi streak on the configured timeframe (last completed bar) >= configured streak length AND flat
+Exit: Short, low <= entry price × (1 − take-profit percentage) OR high >= entry price × (1 + stop-loss percentage)

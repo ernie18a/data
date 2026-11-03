@@ -1,0 +1,3 @@
+Calculation: Sliding-range midline = on the chart timeframe, or on the selected timeframe if it is higher than the chart timeframe, calculate upper and lower bands from the current bar (still forming on the selected higher timeframe): each band is the average of the rolling highest highs or lowest lows over N consecutive windows of N bars, with each window shifted by one bar; the midline is the midpoint of the bands. Round the bands and midline to the configured price increment.
+Long: Current midline > previous midline
+Short: Current midline < previous midline

@@ -1,0 +1,37 @@
+Calculation: ATR = average true range
+Calculation: Bullish pivot high = a bar high greater than the highs of the specified number of bars on both sides; bearish pivot low = a bar low less than the lows of that many bars on both sides
+Calculation: Recent high/low = highest high/lowest low over the lookback, excluding the current bar
+Calculation: Bullish FVG = current low > high two bars ago; bearish FVG = current high < low two bars ago
+Calculation: FVG quality = high if candle body > 2 ATR and volume > its moving average × volume-spike multiplier; medium if body > 1.5 ATR; otherwise low
+Calculation: ICT window = current time is within any configured ICT killzone or macro window
+Calculation: HTF equilibrium = midpoint of the highest high and lowest low over the lookback on a higher timeframe, using the bar still forming
+Calculation: Bullish displacement = close > open and candle body > ATR × displacement multiplier; bearish displacement = close < open and candle body > ATR × displacement multiplier
+Calculation: Volume spike = volume > its moving average × volume-spike multiplier
+Calculation: Bullish structure break = close crosses above the latest confirmed internal pivot high; bearish structure break = close crosses below the latest confirmed internal pivot low
+Calculation: Bullish external structure break = close crosses above the latest confirmed external pivot high; bearish external structure break = close crosses below the latest confirmed external pivot low
+Calculation: Bullish liquidity sweep = low < prior-day low and close > prior-day low, OR low < recent low and close > recent low; bearish liquidity sweep = high > prior-day high and close < prior-day high, OR high > recent high and close < recent high
+Calculation: Bullish SMT = current low makes a lower low than its lookback and the correlated instrument's low does not; bearish SMT = current high makes a higher high than its lookback and the correlated instrument's high does not
+Long: Bullish liquidity sweep
+Short: Bearish liquidity sweep
+Long: Bullish liquidity sweep occurred within the maximum sweep-to-MSS interval AND close > latest confirmed internal pivot high AND open < that pivot high AND candle body > ATR × MSS body multiplier AND bullish displacement is confirmed by the required displacement candles or the current candle body exceeds the stronger MSS threshold AND absolute distance between close and fast EMA > ATR × minimum EMA-distance multiplier AND (EMA slope confirmation is disabled OR fast EMA > its prior value at the continuation lookback) AND (MSS trend filter is disabled OR fast EMA > middle EMA > slow EMA)
+Short: Bearish liquidity sweep occurred within the maximum sweep-to-MSS interval AND close < latest confirmed internal pivot low AND open > that pivot low AND candle body > ATR × MSS body multiplier AND bearish displacement is confirmed by the required displacement candles or the current candle body exceeds the stronger MSS threshold AND absolute distance between close and fast EMA > ATR × minimum EMA-distance multiplier AND (MSS trend filter is disabled OR fast EMA < middle EMA < slow EMA)
+Long: Close crosses above latest confirmed internal pivot high AND (confirmed-CHOCH-only is disabled OR (market state is neutral/bearish AND bullish displacement exceeds ATR × structure displacement multiplier))
+Short: Close crosses below latest confirmed internal pivot low AND (confirmed-CHOCH-only is disabled OR (market state is neutral/bullish AND bearish displacement exceeds ATR × structure displacement multiplier))
+Long: Close crosses above latest confirmed internal pivot high AND bullish displacement exceeds ATR × structure displacement multiplier AND market state is bullish
+Short: Close crosses below latest confirmed internal pivot low AND bearish displacement exceeds ATR × structure displacement multiplier AND market state is bearish
+Long: Close crosses above latest confirmed external pivot high AND bullish displacement exceeds ATR × structure displacement multiplier AND market state is neutral/bearish
+Short: Close crosses below latest confirmed external pivot low AND bearish displacement exceeds ATR × structure displacement multiplier AND market state is neutral/bullish
+Long: Close crosses above latest confirmed external pivot high AND bullish displacement exceeds ATR × structure displacement multiplier AND market state is bullish
+Short: Close crosses below latest confirmed external pivot low AND bearish displacement exceeds ATR × structure displacement multiplier AND market state is bearish
+Long: Low < latest confirmed inducement pivot low − ATR × minimum sweep multiplier AND close > that pivot low AND lower wick ≥ ATR × minimum wick multiplier AND cooldown elapsed AND pivot level differs sufficiently from prior bullish inducement level AND (trend filter disabled OR market state is neutral/bullish)
+Short: High > latest confirmed inducement pivot high + ATR × minimum sweep multiplier AND close < that pivot high AND upper wick ≥ ATR × minimum wick multiplier AND cooldown elapsed AND pivot level differs sufficiently from prior bearish inducement level AND (trend filter disabled OR market state is neutral/bearish)
+Long: Low < prior low AND close > prior low AND (strict exhaustion disabled OR (lower wick > ATR × minimum wick multiplier AND (sweep-only filter disabled OR bullish liquidity sweep) AND (premium/discount filter disabled OR close < HTF equilibrium)))
+Short: High > prior high AND close < prior high AND (strict exhaustion disabled OR (upper wick > ATR × minimum wick multiplier AND (sweep-only filter disabled OR bearish liquidity sweep) AND (premium/discount filter disabled OR close > HTF equilibrium)))
+Long: Close crosses above the latest uncrossed internal structure pivot high AND internal structure bias is bearish
+Short: Close crosses below the latest uncrossed internal structure pivot low AND internal structure bias is bullish
+Long: Close crosses above the latest uncrossed swing structure pivot high AND swing structure bias is bearish
+Short: Close crosses below the latest uncrossed swing structure pivot low AND swing structure bias is bullish
+Long: Current low makes a lower low than its lookback AND correlated instrument low does not
+Short: Current high makes a higher high than its lookback AND correlated instrument high does not
+Long: Bullish MSS AND bullish FVG AND close < HTF equilibrium AND within an ICT window AND FVG quality is medium/high AND bullish trend score meets its threshold AND bullish impulse range meets its ATR minimum AND bullish probability score meets its threshold AND (FVG mode is aggressive OR (bull score meets its threshold AND displacement filter is disabled or bullish displacement) OR (FVG mode is conservative AND bull score meets its higher threshold AND displacement filter is disabled or bullish displacement AND volume filter is disabled or volume spike))
+Short: Bearish MSS AND bearish FVG AND close > HTF equilibrium AND within an ICT window AND FVG quality is medium/high AND bearish trend score meets its threshold AND bearish impulse range meets its ATR minimum AND bearish probability score meets its threshold AND (FVG mode is aggressive OR (bear score meets its threshold AND displacement filter is disabled or bearish displacement) OR (FVG mode is conservative AND bear score meets its higher threshold AND displacement filter is disabled or bearish displacement AND volume filter is disabled or volume spike))

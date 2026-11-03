@@ -1,0 +1,6 @@
+Calculation: Confirmed pivot high/low = a high/low with `swing length` bars on each side; becomes available after the `swing length` bars to its right have completed.
+Calculation: Bullish fair value gap = current low > high two bars ago, and the intervening bar closes above its open.
+Calculation: Bearish fair value gap = current high < low two bars ago, and the intervening bar closes below its open.
+Calculation: Order block candle = the nearest qualifying opposite-direction candle among the preceding search bars, whose absolute body size is at least the minimum ATR multiple; its zone is its body or full high-low range.
+Long: Close > the latest confirmed pivot high and that pivot high has not previously been broken OR bullish fair value gap OR bullish break of a pivot high with a qualifying bearish order block candle.
+Short: Close < the latest confirmed pivot low and that pivot low has not previously been broken OR bearish fair value gap OR bearish break of a pivot low with a qualifying bullish order block candle.

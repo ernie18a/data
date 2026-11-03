@@ -1,0 +1,7 @@
+Calculation: Quiet bar = the chart-timeframe high-to-low range over a shorter lookback, divided by close, is at or below its percentile threshold over a longer chart-timeframe lookback.
+Calculation: Range = the high and low across a consecutive quiet stretch, starting up to one shorter-lookback window before its first quiet bar and no earlier than the bar after the prior range; keep it only if it meets the minimum duration. Extend it while closes remain inside; merge an overlapping qualified quiet stretch into the same unbroken range and restart its breakout wait. Discard it if it does not break within the wait limit.
+Calculation: Target = broken range edge plus (for an upward break) or minus (for a downward break) range height multiplied by the target multiple.
+Long: close > the high of an active qualified range OR an upward breakout target is still being tracked, the retest has not occurred, and low <= the broken upper edge.
+Short: close < the low of an active qualified range OR a downward breakout target is still being tracked, the retest has not occurred, and high >= the broken lower edge.
+Exit: long, after the breakout bar, high >= its target OR close < the range's opposite (lower) edge.
+Exit: short, after the breakout bar, low <= its target OR close > the range's opposite (upper) edge.

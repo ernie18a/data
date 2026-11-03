@@ -1,0 +1,2 @@
+Long: On any selected timeframe (lower than, equal to, or higher than the chart timeframe), the most recently completed bar's close > short-lookback EMA > long-lookback EMA, OR at least 4 of the 5 selected timeframes satisfy that condition
+Short: On any selected timeframe (lower than, equal to, or higher than the chart timeframe), the most recently completed bar's close < short-lookback EMA < long-lookback EMA, OR at least 4 of the 5 selected timeframes satisfy that condition

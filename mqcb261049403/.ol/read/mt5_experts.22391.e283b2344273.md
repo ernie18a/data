@@ -1,0 +1,19 @@
+Calculation: Adaptive level = For each bar, let n be the fractal lookback and k the lag. Let R1 be the high-low range of the latest n bars divided by n, R2 the high-low range of the preceding n bars divided by n, and R3 the high-low range of all 2n bars divided by 2n. If R1+R2>0 and R3>0, dimension=log2((R1+R2)/R3); otherwise dimension=0. Set alpha=clamp(exp(-k*(dimension-1)), 0.01, 1). Smooth (high+low+2*open+2*close)/6 recursively with alpha, initialized from zero. Set the level to the current smoothed value when its absolute difference from the smoothed value k bars earlier is at least k squared times the price-point size; otherwise retain the previous level. Its direction is up when the level rises, down when it falls, and otherwise its previous direction, initially neutral.
+Calculation: Trailing trend = On each bar, calculate ATR and take its highest and lowest values over a separate lookback. Set step to the sensitivity factor times their average, truncated down to a whole price-point size. Set candidate lower=high-2*step and candidate upper=low+2*step; alternatively use close for both high and low. Initialize the previous lower and upper to the initial close and the trend to down. If close is above the previous upper, set trend up; if close is below the previous lower, set trend down; otherwise retain the trend. In an uptrend set lower=max(candidate lower, previous lower) and upper=candidate upper. In a downtrend set upper=min(candidate upper, previous upper) and lower=candidate lower. Use these lower and upper values as the previous thresholds on the next bar.
+Calculation: Smoothed candle direction = Apply a first moving average and then a second moving average independently to open and close, using separately configurable methods and lookbacks. Replace the twice-smoothed open with the previous twice-smoothed close when abs(open-close) is at most the gap threshold. Direction is up if the resulting open is below the twice-smoothed close, down if above, and neutral if equal.
+Long: Adaptive level direction on the chart timeframe is up.
+Short: Adaptive level direction on the chart timeframe is down.
+Long: Trailing trend on the chart timeframe is up.
+Short: Trailing trend on the chart timeframe is down.
+Long: Smoothed candle direction on the chart timeframe is up.
+Short: Smoothed candle direction on the chart timeframe is down.
+Long: Adaptive level direction on the last completed higher-timeframe bar is up AND its direction on the preceding higher-timeframe bar is not up.
+Short: Adaptive level direction on the last completed higher-timeframe bar is down AND its direction on the preceding higher-timeframe bar is not down.
+Long: Trailing trend on the last completed higher-timeframe bar is up AND its trend on the preceding higher-timeframe bar is down.
+Short: Trailing trend on the last completed higher-timeframe bar is down AND its trend on the preceding higher-timeframe bar is up.
+Long: Smoothed candle direction on the last completed higher-timeframe bar is up AND its direction on the preceding higher-timeframe bar is not up.
+Short: Smoothed candle direction on the last completed higher-timeframe bar is down AND its direction on the preceding higher-timeframe bar is not down.
+Exit: long, the corresponding system's direction on the last completed higher-timeframe bar is down.
+Exit: short, the corresponding system's direction on the last completed higher-timeframe bar is up.
+Exit: long, low is at or below entry price minus the stop distance OR high is at or above entry price plus the profit-target distance.
+Exit: short, high is at or above entry price plus the stop distance OR low is at or below entry price minus the profit-target distance.

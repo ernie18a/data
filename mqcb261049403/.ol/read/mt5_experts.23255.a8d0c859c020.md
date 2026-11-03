@@ -1,0 +1,4 @@
+Long: OsMA on its fixed indicator timeframe is lower on the last completed bar than on the preceding completed bar AND Force Index on that timeframe is above zero on the last completed bar; the indicator timeframe may be higher or lower than the chart timeframe.
+Short: OsMA on its fixed indicator timeframe is higher on the last completed bar than on the preceding completed bar AND Force Index on that timeframe is below zero on the last completed bar; the indicator timeframe may be higher or lower than the chart timeframe.
+Exit: long, low <= active stop-loss OR high >= take-profit
+Exit: short, high >= active stop-loss OR low <= take-profit

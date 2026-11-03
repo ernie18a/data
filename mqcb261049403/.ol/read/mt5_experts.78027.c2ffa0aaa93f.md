@@ -1,0 +1,5 @@
+Calculation: Price z-score = (close − moving average of close) / standard deviation of close, using the same lookback on the chart timeframe’s last completed bar
+Calculation: MACD histogram in ATR units = (shorter-lookback EMA − longer-lookback EMA − EMA signal line of the MACD line) / ATR, using the chart timeframe’s last completed bar
+Calculation: Relative tick volume = last completed chart bar’s tick volume / average tick volume of bars at the same time of day over prior trading days
+Long: No open position AND signal bar opens on an allowed weekday within the signal time window AND price z-score > threshold AND MACD histogram in ATR units < threshold AND relative tick volume < threshold
+Exit: Long, price ≤ entry price − stop-distance-in-ATR × ATR OR price ≥ entry price + target-distance-in-ATR × ATR OR held bars ≥ maximum holding period OR server time ≥ daily flat time

@@ -1,0 +1,2 @@
+Long: Higher-timeframe close crosses above higher-timeframe open using the still-forming bar AND Parabolic SAR is above close AND smoothed Stochastic %K < 20
+Short: Higher-timeframe close crosses below higher-timeframe open using the still-forming bar AND Parabolic SAR is below close AND smoothed Stochastic %K > 80

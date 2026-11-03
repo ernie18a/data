@@ -1,0 +1,3 @@
+Calculation: Opening-range high/low = highest high/lowest low, respectively, of weekday bars timestamped during 13:00–13:59 UTC; opening-range range = opening-range high − opening-range low
+Long: UTC date ≥ 2024-01-01 AND weekday AND bar timestamp from 14:00 through 16:30 UTC AND opening range is ready AND opening-range range ≤ ATR(14) × 2.5 AND ATR(14) ≤ 20-bar simple average of ATR(14) × 2 AND no long entry has occurred that day AND close > opening-range high AND previous close ≤ opening-range high AND close > open AND volume > 20-bar simple average of volume × 1.5
+Exit: long, low ≤ entry price − opening-range range OR high ≥ entry price + opening-range range × 2.5 OR weekday bar timestamp is 20:00 UTC

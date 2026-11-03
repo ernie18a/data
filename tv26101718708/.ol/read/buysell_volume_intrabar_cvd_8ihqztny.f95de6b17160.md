@@ -1,0 +1,3 @@
+Calculation: Cumulative buy volume = running sum of lower-timeframe intrabar volume where close > open, plus half the volume where close = open; reset according to the configured reset rule
+Calculation: Cumulative sell volume = running sum of lower-timeframe intrabar volume where close < open, plus half the volume where close = open; reset according to the configured reset rule
+Short: Cumulative sell volume crosses above cumulative buy volume

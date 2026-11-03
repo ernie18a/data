@@ -1,0 +1,1 @@
+When total floating account profit (equity minus balance) reaches or exceeds a configured cash threshold, close all open buy and sell orders.

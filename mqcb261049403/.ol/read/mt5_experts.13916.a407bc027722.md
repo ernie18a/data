@@ -1,0 +1,5 @@
+Calculation: Derivative = 100 × (selected OHLC-based applied price − selected applied price N bars earlier) / N, calculated on the configured lower-timeframe bars.
+Long: Derivative on the latest completed lower-timeframe bar > 0 AND Derivative on the preceding completed lower-timeframe bar <= 0
+Short: Derivative on the latest completed lower-timeframe bar < 0 AND Derivative on the preceding completed lower-timeframe bar >= 0
+Exit: Long, Derivative on the latest completed lower-timeframe bar < 0 AND Derivative on the preceding completed lower-timeframe bar >= 0 OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
+Exit: Short, Derivative on the latest completed lower-timeframe bar > 0 AND Derivative on the preceding completed lower-timeframe bar <= 0 OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

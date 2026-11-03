@@ -1,0 +1,5 @@
+Calculation: Monthly 18-period simple moving average = the simple moving average of monthly closes over 18 monthly bars.
+Calculation: Relative strength = chart-timeframe close divided by the benchmark index close on the same timeframe.
+Calculation: Relative-strength rate of change = percentage change in relative strength over the relative-strength lookback.
+Calculation: Accumulation volume = sum of volume on up-close bars over the volume lookback; distribution volume = sum of volume on down-close bars over the same lookback.
+Long: monthly close > monthly 18-period simple moving average AND monthly 18-period simple moving average > its value on the prior chart bar AND monthly RSI > 55 AND relative strength > its simple moving average over the relative-strength lookback AND relative-strength rate of change > 0 AND chart-timeframe high > highest high of the preceding swing lookback bars AND chart-timeframe low > lowest low of the preceding swing lookback bars

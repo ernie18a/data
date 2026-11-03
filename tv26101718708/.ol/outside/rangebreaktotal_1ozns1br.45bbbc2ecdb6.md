@@ -1,0 +1,1 @@
+Go long the traded instrument when the total cryptocurrency market capitalization closes above its highest level over a prior lookback period. Go short when it closes below its lowest level over that period. Apply these signals only during the strategy’s specified date window.

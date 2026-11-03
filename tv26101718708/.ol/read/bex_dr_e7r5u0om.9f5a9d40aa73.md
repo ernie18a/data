@@ -1,0 +1,4 @@
+Calculation: Defining-session high = highest high during that session; on a chart below the indicator’s range-source timeframe, use highs from the higher, still-forming bars
+Calculation: Defining-session low = lowest low during that session; on a chart below the indicator’s range-source timeframe, use lows from the higher, still-forming bars
+Long: During the extension after an after-hours, overnight, or regular defining session, no bullish break has already occurred for that range, and close > that session’s defining-session high AND previous close <= that session’s defining-session high
+Short: During the extension after an after-hours, overnight, or regular defining session, no bearish break has already occurred for that range, and close < that session’s defining-session low AND previous close >= that session’s defining-session low

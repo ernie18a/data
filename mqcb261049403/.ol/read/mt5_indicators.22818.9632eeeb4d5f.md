@@ -1,0 +1,4 @@
+Calculation: Fine-tuned candle open = weighted average of open over the current and preceding bars, using weights proportional to [Shift1 + (i/(N−1))^rank1 × (1−Shift1)] × [Shift2 + (1−i/(N−1))^rank2 × (1−Shift2)] × [Shift3 + (|1−2i/(N−1)|)^rank3 × (1−Shift3)], normalized to sum to 1; i = 0 is the current bar and i = N−1 the oldest. If |current bar open − current bar close| ≤ gap threshold, replace this value with the previous bar’s fine-tuned candle close. Apply the same vertical shift to open and close.
+Calculation: Fine-tuned candle close = weighted average of close over the current and preceding bars, using the same weights as the fine-tuned candle open.
+Long: Fine-tuned candle close > fine-tuned candle open
+Short: Fine-tuned candle close < fine-tuned candle open

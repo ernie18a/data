@@ -1,0 +1,5 @@
+Calculation: Modified Optimum Elliptic Filter = On the configured indicator timeframe (higher than, lower than, or equal to the chart timeframe), calculate from midpoint prices (high + low) / 2; use the latest sampled bar at the configured signal offset (completed when the offset is positive, forming when it is zero). For each bar after the first four, filter = 0.13785 × (2 × midpoint − previous midpoint) + 0.0007 × (2 × previous midpoint − midpoint two bars ago) + 0.13785 × (2 × midpoint two bars ago − midpoint three bars ago) + 1.2103 × previous filter − 0.4867 × filter two bars ago; initialize earlier values to midpoint.
+Long: Filter two bars ago > Filter one bar ago AND Filter one bar ago < Filter latest sampled bar
+Short: Filter two bars ago < Filter one bar ago AND Filter one bar ago > Filter latest sampled bar
+Exit: long, Filter one bar ago > Filter latest sampled bar
+Exit: short, Filter one bar ago < Filter latest sampled bar

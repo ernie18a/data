@@ -1,0 +1,3 @@
+Calculation: SSL state = -1 when the bar close is below the L-period simple moving average of lows ending on the preceding bar; +1 when it is above the L-period simple moving average of highs ending on the preceding bar; otherwise retain the previous state. Use the chart timeframe, or the configured higher timeframe’s still-forming bar. Treat an initial state other than -1 as +1.
+Long: SSL state is not -1
+Short: SSL state = -1

@@ -1,0 +1,3 @@
+Calculation: Elephant bar = (high - low) > ATR × range multiplier AND |close - open| / (high - low) > body-strength threshold
+Long: close > short-lookback SMA OR close crosses above the EMA calculated from the still-forming bar of a higher timeframe OR Elephant bar AND close > open OR low > high two bars ago
+Short: close < short-lookback SMA OR close crosses below the EMA calculated from the still-forming bar of a higher timeframe OR Elephant bar AND close < open OR high < low two bars ago

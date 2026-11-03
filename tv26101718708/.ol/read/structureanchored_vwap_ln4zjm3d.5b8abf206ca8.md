@@ -1,0 +1,6 @@
+Calculation: Confirmed swing high/low = pivot high/low using the same lookback; each pivot is confirmed after that many later bars.
+Calculation: Bullish/bearish structure break = on a confirmed chart bar, close is above the latest unbroken swing high / below the latest unbroken swing low by a buffer measured in ATR; each swing level can break once.
+Calculation: Bullish/bearish CHoCH = bullish/bearish structure break when the prior prevailing trend is bearish/bullish; otherwise the break is BOS. A structure break sets the prevailing trend to its direction.
+Calculation: Bullish/bearish liquidity sweep = on a confirmed chart bar, price wicks below the latest unswept swing low and closes above it / wicks above the latest unswept swing high and closes below it; each swing can be swept once.
+Long: bullish BOS or bullish CHoCH or bullish liquidity sweep, and the selected anchor event is Last BOS, Last CHoCH, Last liquidity sweep, or Any structure shift, respectively.
+Short: bearish BOS or bearish CHoCH or bearish liquidity sweep, and the selected anchor event is Last BOS, Last CHoCH, Last liquidity sweep, or Any structure shift, respectively.

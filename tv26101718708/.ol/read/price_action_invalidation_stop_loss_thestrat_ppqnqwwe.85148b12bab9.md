@@ -1,0 +1,8 @@
+Calculation: Higher-timeframe long support = the last completed lower-timeframe close is above the prior completed bar’s high on at least one of the structural higher timeframes.
+Calculation: Higher-timeframe short support = the last completed lower-timeframe close is below the prior completed bar’s low on at least one of the structural higher timeframes.
+Calculation: Long stop = the higher of the prior completed lows on the structural higher timeframes, ratcheted upward to the latest such low when a structural higher-timeframe bar closes above the high two bars back; while a structural higher-timeframe bar has broken its prior high but the last completed lower-timeframe close is back below that prior high, ratchet to the most recent completed lower-timeframe low.
+Calculation: Short stop = the lower of the prior completed highs on the structural higher timeframes, ratcheted downward to the latest such high when a structural higher-timeframe bar closes below the low two bars back; while a structural higher-timeframe bar has broken its prior low but the last completed lower-timeframe close is back above that prior low, ratchet to the most recent completed lower-timeframe high.
+Long: flat AND higher-timeframe long support OR short position AND current running lower-timeframe high > short stop AND higher-timeframe long support
+Short: flat AND higher-timeframe short support OR long position AND current running lower-timeframe low < long stop AND higher-timeframe short support
+Exit: Long, current running lower-timeframe low < long stop AND NOT higher-timeframe short support
+Exit: Short, current running lower-timeframe high > short stop AND NOT higher-timeframe long support

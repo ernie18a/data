@@ -1,0 +1,3 @@
+Calculation: Mansfield relative strength = stock close divided by benchmark close, multiplied by 100, using chart-timeframe bars including the still-forming bar; compare it with its moving average over a longer lookback.
+Long: Latest confirmed pivot high on a higher timeframe > previous confirmed pivot high on that timeframe AND latest confirmed pivot low on that timeframe > previous confirmed pivot low on that timeframe OR Mansfield relative strength > its moving average
+Short: Latest confirmed pivot high on a higher timeframe < previous confirmed pivot high on that timeframe AND latest confirmed pivot low on that timeframe < previous confirmed pivot low on that timeframe OR Mansfield relative strength <= its moving average

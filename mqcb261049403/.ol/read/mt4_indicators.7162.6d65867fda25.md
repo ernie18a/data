@@ -1,0 +1,2 @@
+Long: On any configured RSI timeframe (higher or lower than the chart timeframe), RSI of the configured applied price at the configured shift > upper trigger; use the selected bar, which may still be forming if it is bar 0
+Short: On any configured RSI timeframe (higher or lower than the chart timeframe), RSI of the configured applied price at the configured shift < lower trigger; use the selected bar, which may still be forming if it is bar 0

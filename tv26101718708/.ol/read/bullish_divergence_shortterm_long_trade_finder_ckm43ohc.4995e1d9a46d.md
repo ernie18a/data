@@ -1,0 +1,6 @@
+Calculation: Bullish divergence = current RSI pivot low; current RSI is below the configured bullish RSI threshold and above RSI at the previous pivot-low event whose RSI was below that threshold; 5–50 bars have elapsed since the preceding pivot-low event; current low is below the low on the previous pivot-low event
+Calculation: Bearish divergence = current RSI pivot high; current RSI is below RSI at the previous pivot-high event whose RSI was above the configured bearish RSI threshold; 5–50 bars have elapsed since the preceding pivot-high event; current high is above the high on the previous pivot-high event; RSI three bars ago is above the configured bearish sell threshold
+Long: Bullish divergence
+Long: Bullish divergence AND close < low on the previous pivot-low event AND RSI on the last completed higher-timeframe bar < configured bullish RSI threshold
+Short: Bearish divergence
+Exit: long, close < entry price × (1 − configured stop-loss percentage) OR current RSI > configured RSI sell threshold OR Bearish divergence

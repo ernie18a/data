@@ -1,0 +1,4 @@
+Calculation: Regular bullish RSI divergence = price forms a lower pivot low and RSI forms a higher pivot low, with the two pivots separated by a configurable number of bars within a configurable range
+Calculation: Regular bearish RSI divergence = price forms a higher pivot high and RSI forms a lower pivot high, with the two pivots separated by a configurable number of bars within a configurable range
+Long: RSI crosses below its oversold threshold on any enabled timeframe OR oversold RSI confluence count first reaches 2 of 3 OR oversold RSI confluence count first reaches 3 of 3 OR regular bullish RSI divergence occurs on any enabled timeframe
+Short: RSI crosses above its overbought threshold on any enabled timeframe OR overbought RSI confluence count first reaches 2 of 3 OR overbought RSI confluence count first reaches 3 of 3 OR regular bearish RSI divergence occurs on any enabled timeframe

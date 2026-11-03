@@ -1,0 +1,2 @@
+Long: current close > close N bars earlier AND +DI > -DI, using the same N-bar lookback for the close comparison and the directional indicators, AND the most recent prior signal was not long
+Short: current close < close N bars earlier AND +DI < -DI, using the same N-bar lookback for the close comparison and the directional indicators, AND the most recent prior signal was not short

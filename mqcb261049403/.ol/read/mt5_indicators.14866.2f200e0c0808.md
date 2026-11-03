@@ -1,0 +1,4 @@
+Calculation: Short-term double-smoothed moving average = apply a configurable moving-average smoother to a selected OHLC-derived price, then apply a second configurable smoother to the result; use shorter lookbacks than for the long-term average.
+Calculation: Long-term double-smoothed moving average = apply a configurable moving-average smoother to a selected OHLC-derived price, then apply a second configurable smoother to the result; use longer lookbacks than for the short-term average.
+Long: Short-term double-smoothed moving average > long-term double-smoothed moving average, on the chart timeframe OR on a higher-timeframe bar still forming
+Short: Short-term double-smoothed moving average < long-term double-smoothed moving average, on the chart timeframe OR on a higher-timeframe bar still forming

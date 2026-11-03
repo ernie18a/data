@@ -1,0 +1,6 @@
+Calculation: Confirmed swing high = a high greater than the highs of an equal configurable number of bars on each side; confirmed after the right-side bars complete
+Calculation: Confirmed swing low = a low lower than the lows of an equal configurable number of bars on each side; confirmed after the right-side bars complete
+Calculation: Second-most-recent confirmed swing high/low = the confirmed swing immediately before the latest confirmed swing of the same type
+Calculation: Equal swing highs/lows = the latest two confirmed swings of the same type differ by less than a configurable percentage of close
+Long: (low < second-most-recent confirmed swing low AND close > second-most-recent confirmed swing low OR RSI > lower threshold) AND MACD histogram > its previous value AND volume >= configurable fraction of its moving average AND NOT equal swing highs
+Short: (high > second-most-recent confirmed swing high AND close < second-most-recent confirmed swing high OR RSI < upper threshold) AND MACD histogram < its previous value AND volume >= configurable fraction of its moving average AND NOT equal swing lows

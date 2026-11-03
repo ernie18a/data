@@ -1,0 +1,55 @@
+Calculation: Bar range = max(high − low, minimum price increment)
+Calculation: Body percentage = abs(close − open) / bar range
+Calculation: Strong bull bar = close > open AND body percentage ≥ strong-bar threshold AND upper tail ≤ bar range × maximum entry-side tail percentage
+Calculation: Strong bear bar = close < open AND body percentage ≥ strong-bar threshold AND lower tail ≤ bar range × maximum entry-side tail percentage
+Calculation: Overlap fraction = moving average of 1 when current bar overlaps the prior bar’s range, otherwise 0, over the range lookback
+Calculation: Range high = highest high over the range lookback, excluding the current bar
+Calculation: Range low = lowest low over the range lookback, excluding the current bar
+Calculation: Range efficiency = abs(close − close from the range lookback bars ago) / (highest high − lowest low over the range lookback)
+Calculation: Trend efficiency = abs(close − close from the trend lookback bars ago) / (highest high − lowest low over the trend lookback)
+Calculation: Uptrend = EMA slope over the trend lookback > 0 AND close change over the trend lookback ≥ minimum trend move in ATRs AND fraction of closes above EMA over the trend lookback ≥ minimum trend-side fraction AND trend efficiency ≥ minimum trend efficiency
+Calculation: Downtrend = EMA slope over the trend lookback < 0 AND close change over the trend lookback ≤ negative minimum trend move in ATRs AND fraction of closes below EMA over the trend lookback ≥ minimum trend-side fraction AND trend efficiency ≥ minimum trend efficiency
+Calculation: Range context = range width ≤ ATR × maximum range width AND overlap fraction ≥ minimum range overlap AND range efficiency ≤ 0.45
+Calculation: Wide up channel = Uptrend AND range width ≥ ATR × minimum wide-channel width AND overlap fraction ≥ minimum wide-channel overlap
+Calculation: Wide down channel = Downtrend AND range width ≥ ATR × minimum wide-channel width AND overlap fraction ≥ minimum wide-channel overlap
+Calculation: Always-in long = Uptrend AND close > EMA AND NOT range context AND (absolute close change in ATRs ≥ minimum trend move OR fraction of strong bull bars over trend lookback ≥ 0.20)
+Calculation: Always-in short = Downtrend AND close < EMA AND NOT range context AND (absolute close change in ATRs ≥ minimum trend move OR fraction of strong bear bars over trend lookback ≥ 0.20)
+Calculation: Strong trend long = Uptrend AND close > EMA AND strong bull bar
+Calculation: Strong trend short = Downtrend AND close < EMA AND strong bear bar
+Calculation: Two-leg pullback down = current low < low two bars ago AND prior high > high two bars ago
+Calculation: Two-leg pullback up = current high > high two bars ago AND prior low < low two bars ago
+Calculation: Clean long pullback = no strong bear bar in the last four bars
+Calculation: Clean short pullback = no strong bull bar in the last four bars
+Calculation: Key-level touch = current bar range touches within an ATR-scaled buffer of a prior-session high, low, or close; current-session open; range high or low; EMA; or a configured manual level
+Calculation: Bull reversal bar = close > open AND close is in the upper 40% of the bar range AND (strong bull bar OR lower tail is at least 30% of range OR close > prior high)
+Calculation: Bear reversal bar = close < open AND close is in the lower 40% of the bar range AND (strong bear bar OR upper tail is at least 30% of range OR close < prior low)
+Calculation: Confirmed pivot low/high = a local low/high confirmed by bars on both sides, using the configured pivot strength
+Calculation: Downward wedge = three successive confirmed pivot lows, each lower than the previous
+Calculation: Upward wedge = three successive confirmed pivot highs, each higher than the previous
+Calculation: Double bottom/top = latest confirmed pivot low/high is within 0.35 ATR of the previous confirmed pivot low/high
+Calculation: Head-and-shoulders bottom/top = three confirmed pivot lows/highs with the middle pivot lower/higher than both outer pivots, and outer pivots within 0.50 ATR
+Calculation: Bull structure ready = a double bottom, downward wedge, or head-and-shoulders bottom confirmed within the structure-confirmation window
+Calculation: Bear structure ready = a double top, upward wedge, or head-and-shoulders top confirmed within the structure-confirmation window
+Calculation: Inside bar = current high < prior high AND current low > prior low
+Calculation: Outside bar = current high > prior high AND current low < prior low
+Calculation: Breakout above range = close > prior range high AND open ≤ prior range high AND body percentage ≥ strong-bar threshold AND range width ≥ 0.75 ATR
+Calculation: Breakout below range = close < prior range low AND open ≥ prior range low AND body percentage ≥ strong-bar threshold AND range width ≥ 0.75 ATR
+Calculation: Break-fail-break up = breakout above range, then a close back below its breakout level, then within the configured window a strong bull bar closes above that level
+Calculation: Break-fail-break down = breakout below range, then a close back above its breakout level, then within the configured window a strong bear bar closes below that level
+Calculation: Bull key reversal = key-level touch AND ((bull structure ready AND (strong bull bar OR bull reversal bar) AND close > prior high) OR (prior bar inside or outside AND bull reversal bar AND close > prior high) OR (long trend-pullback condition AND key-level touch))
+Calculation: Bear key reversal = key-level touch AND ((bear structure ready AND (strong bear bar OR bear reversal bar) AND close < prior low) OR (prior bar inside or outside AND bear reversal bar AND close < prior low) OR (short trend-pullback condition AND key-level touch))
+Calculation: Three consecutive bear/bull bars = current and prior two bars close below/above their opens
+Calculation: Impulse midpoint = midpoint of the highest high and lowest low over the impulse lookback, including the current bar
+Calculation: Weak long pullback = bear-bar streak ≤ 3 AND strong-bear-bar streak < 3
+Calculation: Weak short pullback = bull-bar streak ≤ 3 AND strong-bull-bar streak < 3
+Calculation: True breakout up/down = breakout above/below range AND strong bull/bear bar AND not a doji
+Calculation: Trapped pullback up/down = true breakout up/down followed by a strong same-direction bar closing beyond the breakout bar’s close; before the configured expiry, a later bar touches the breakout level within the ATR-scaled buffer, closes beyond that level in the breakout direction, and is not a doji
+Calculation: Prior with-trend follow-through extreme = low of the latest strong bull bar during always-in long / high of the latest strong bear bar during always-in short
+Calculation: First countertrend failure long/short = always-in long/short; current bar retests or exceeds the prior with-trend follow-through extreme, closes back beyond it in the trend direction, and the current bar is not the third consecutive countertrend bar
+Calculation: Third-bar failure long/short = prior bar was always-in long/short; current and prior bars are countertrend bars, and the bar two bars ago was not a countertrend bar
+Calculation: EMA pullback long/short = first EMA pullback since always-in direction was established or changed; bar touches EMA within the ATR-scaled buffer and closes within that buffer, and is not a strong countertrend bar
+Calculation: Trend scalp long/short = always-in long/short AND bar closes in the trend direction at or beyond the bar midpoint AND body percentage ≥ strong-bar threshold
+Long: active session AND prior-bar Uptrend AND NOT wide up channel AND two-leg pullback down AND close > open AND clean long pullback OR active session AND break-fail-break up OR active session AND bull key reversal OR active session AND range context AND low ≤ range low + key-level buffer AND (bull reversal bar OR close > range low) OR active session AND wide down channel pivotLen bars ago AND downward wedge AND key-level touch OR active session AND Uptrend AND NOT range context AND current bar touches impulse midpoint within key-level buffer AND (two-leg pullback down OR weak long pullback) AND strong-bear-bar streak < 3 OR active session AND trapped pullback up OR active session AND first countertrend failure long OR active session AND third-bar failure long OR active session AND EMA pullback long OR active session AND trend scalp long
+Short: active session AND prior-bar Downtrend AND NOT wide down channel AND two-leg pullback up AND close < open AND clean short pullback OR active session AND break-fail-break down OR active session AND bear key reversal OR active session AND range context AND high ≥ range high − key-level buffer AND (bear reversal bar OR close < range high) OR active session AND wide up channel pivotLen bars ago AND upward wedge AND key-level touch OR active session AND Downtrend AND NOT range context AND current bar touches impulse midpoint within key-level buffer AND (two-leg pullback up OR weak short pullback) AND strong-bull-bar streak < 3 OR active session AND trapped pullback down OR active session AND first countertrend failure short OR active session AND third-bar failure short OR active session AND EMA pullback short OR active session AND trend scalp short
+Exit: long, strong bear bar AND prior-bar Uptrend AND close < impulse midpoint OR long, trapped breakout up remains active AND close < breakout level AND strong bear bar OR long, prior bar was strong bear and closed below EMA AND current bar is bear, closes below EMA, and closes below prior close OR long, (always-in long OR Uptrend) AND three consecutive bear bars
+Exit: short, strong bull bar AND prior-bar Downtrend AND close > impulse midpoint OR short, trapped breakout down remains active AND close > breakout level AND strong bull bar OR short, prior bar was strong bull and closed above EMA AND current bar is bull, closes above EMA, and closes above prior close OR short, (always-in short OR Downtrend) AND three consecutive bull bars

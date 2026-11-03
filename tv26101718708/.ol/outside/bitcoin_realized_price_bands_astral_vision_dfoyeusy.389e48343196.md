@@ -1,0 +1,1 @@
+Calculate Bitcoin’s realized price as realized market capitalization divided by circulating supply. Go long when Bitcoin’s closing price crosses upward through realized price. Go short when it crosses downward through the overvaluation threshold, defined as a configurable multiple of realized price. No exit rule is specified.

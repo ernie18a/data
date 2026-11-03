@@ -1,0 +1,3 @@
+Calculation: BW candle state = if Awesome Oscillator and Accelerator Oscillator are both nondecreasing from the previous bar, classify a nonbearish candle (open <= close) as long and a bearish candle as short; else if both are nonincreasing, classify a bullish candle (open < close) as long and a nonbullish candle (open >= close) as short; otherwise classify a nonbearish candle as long and a bearish candle as short. Oscillator comparisons use the current and previous bar of the same timeframe.
+Long: BW candle state is long on any of the ten configured higher timeframes, sampled from its still-forming bar.
+Short: BW candle state is short on any of the ten configured higher timeframes, sampled from its still-forming bar.

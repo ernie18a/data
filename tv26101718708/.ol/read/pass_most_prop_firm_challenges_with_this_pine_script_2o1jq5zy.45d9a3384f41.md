@@ -1,0 +1,14 @@
+Calculation: Series A short-term SMA = simple moving average of Series A close with a shorter lookback than Series A long-term SMA
+Calculation: Series A long-term SMA = simple moving average of Series A close with a longer lookback than Series A short-term SMA
+Calculation: Series A support EMA = exponential moving average of Series A close
+Calculation: Series A long-term EMA = exponential moving average of Series A close with a longer lookback than Series A support EMA
+Calculation: Series B short-term EMA = exponential moving average of Series B close with a shorter lookback than Series B long-term EMA
+Calculation: Series B long-term EMA = exponential moving average of Series B close with a longer lookback than Series B short-term EMA
+Calculation: Series C short-term EMA = exponential moving average of Series C close with a shorter lookback than Series C long-term EMA
+Calculation: Series C long-term EMA = exponential moving average of Series C close with a longer lookback than Series C short-term EMA
+Calculation: Series A running high = highest Series A close reached so far
+Calculation: Bars since Series A running high = number of bars since Series A close last equaled or exceeded the prior running high
+Calculation: Crash recovery hold = becomes active when Series A close falls by at least a threshold from its prior running high while long, or when entering long while a prior such crash remains armed; remains active until Series A close reaches the high recorded when the hold activated
+Long: (Series A low is above Series A support EMA on the current and previous three bars AND Series B low is above both Series B short-term EMA and Series B long-term EMA AND NOT (Series B close is below its close one bar ago AND below its close two bars ago AND below its close three bars ago) AND Series A ADX is above a threshold) OR (Series C short-term EMA is above Series C long-term EMA AND Series C low is above Series C long-term EMA AND Series C close is above its prior close AND Series A close is above Series A short-term SMA), AND (bars since Series A running high is below a threshold OR Series A close is above Series A long-term EMA by a threshold), AND datetime is on or after the start date, AND no position is open, AND close is positive
+Exit: Long, low is at or below entry price multiplied by one minus a threshold
+Exit: Long, (Series B close is below its entry-time close AND below Series B long-term EMA AND Series A close is below Series A short-term SMA) OR (Series B close is at or above its entry-time close AND ((Series A short-term SMA is below the prior bar's Series A long-term SMA AND Series A close is below Series A short-term SMA AND Series B close is below Series B long-term EMA) OR (Series B low is below its entry-time close reduced by a threshold AND below Series B 50-period SMA))), AND NOT Crash recovery hold

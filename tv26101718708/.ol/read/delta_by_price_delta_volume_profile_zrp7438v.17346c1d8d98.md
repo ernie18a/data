@@ -1,0 +1,4 @@
+Calculation: Per-chart-bar delta = sum of volume from lower-timeframe bars closing above their open minus volume from lower-timeframe bars closing below their open; use lower-timeframe bars within each chart bar, including any still-forming bar.
+Calculation: Delta-by-price bin = sum of each selected chart bar’s delta divided equally among the price bins touched by its high-low range; bins span the selected bars’ lowest low to highest high. Select bars from the current session or from a rolling lookback of completed chart bars.
+Long: Delta-by-price bin containing the chart bar’s close > 0
+Short: Delta-by-price bin containing the chart bar’s close < 0

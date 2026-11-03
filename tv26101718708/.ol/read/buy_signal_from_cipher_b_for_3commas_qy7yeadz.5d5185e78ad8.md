@@ -1,0 +1,6 @@
+Calculation: WaveTrend = calculate an EMA of the source minus its EMA, normalized by an EMA of the absolute deviation; smooth the normalized value with an EMA to get WT1, then smooth WT1 with an SMA to get WT2
+Calculation: Higher-timeframe trend average = simple moving average of higher-timeframe closes, using the bar still forming
+Calculation: Regime average = simple moving average of regime-market closes on a timeframe that may be higher or lower than the chart timeframe; use the last completed bar when the chart bar is unconfirmed, otherwise the current bar
+Long: WT1 crosses above WT2 AND WT2 is at or below the oversold threshold AND no position is open AND regime-market close is above its regime average now or on the previous bar AND chart close is above the higher-timeframe trend average now or on the previous bar
+Short: WT1 crosses below WT2 AND WT2 is at or above the overbought threshold
+Exit: long, bar high reaches the target price OR bar low reaches the stop price OR (if the regime-reversal exit is enabled) chart close is below the higher-timeframe trend average now or on the previous bar

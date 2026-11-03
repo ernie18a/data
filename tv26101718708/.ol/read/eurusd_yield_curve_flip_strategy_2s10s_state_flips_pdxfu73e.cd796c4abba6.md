@@ -1,0 +1,9 @@
+Calculation: Yield curve = 10-year yield − 2-year yield, sampled from the last completed rates bar on a timeframe higher than the chart timeframe.
+Calculation: N-bar change = value on the last completed rates bar − value N rates bars earlier, where N is the same lookback for the yield curve and both yields.
+Calculation: Bullish regime = (yield-curve change > curve threshold AND 2-year yield change < −leg threshold) OR (yield-curve change < −curve threshold AND 10-year yield change < −leg threshold).
+Calculation: Bearish regime = (yield-curve change < −curve threshold AND 2-year yield change > leg threshold) OR (yield-curve change > curve threshold AND 10-year yield change > leg threshold when bear steepeners are enabled).
+Calculation: Regime state = bullish in a bullish regime, bearish in a bearish regime, otherwise retain the previous state; update only on a new rates bar.
+Long: bullish regime AND (previous regime state was bearish OR previous regime state was neutral and neutral entries are enabled) AND rates data is valid AND (a new rates bar if signals are restricted to new rates bars).
+Short: bearish regime AND (previous regime state was bullish OR previous regime state was neutral and neutral entries are enabled) AND rates data is valid AND (a new rates bar if signals are restricted to new rates bars).
+Exit: short, bullish regime AND (previous regime state was bearish OR previous regime state was neutral and neutral entries are enabled) AND rates data is valid AND (a new rates bar if signals are restricted to new rates bars).
+Exit: long, bearish regime AND (previous regime state was bullish OR previous regime state was neutral and neutral entries are enabled) AND rates data is valid AND (a new rates bar if signals are restricted to new rates bars).

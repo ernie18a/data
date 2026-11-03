@@ -1,0 +1,3 @@
+Calculation: Bullish volume imbalance by profile price row = Divide the high-to-low range of each higher-timeframe anchor period into equal rows. Using chart-timeframe bars within the period, allocate each bar’s volume to every intersected row in proportion to row width divided by bar range (allocate all volume if bar range is zero). Count allocated volume as bullish when close > open; the imbalance is twice bullish volume minus total volume. Completed profiles use the last completed higher-timeframe anchor period; the current profile uses the higher-timeframe period still forming.
+Long: Bullish volume imbalance by profile price row > 0
+Short: Bullish volume imbalance by profile price row <= 0

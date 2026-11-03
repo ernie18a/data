@@ -1,0 +1,1 @@
+Go long when the instrument closes above its open, its smoothed Sharpe ratio exceeds 1, and its smoothed alpha versus the S&P 500 is positive. Exit the long when the smoothed Sharpe ratio falls below 1 or the smoothed alpha falls below zero. No short entries.

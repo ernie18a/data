@@ -1,0 +1,6 @@
+Calculation: EMA = exponential moving average of close, using the last completed bar of the higher timeframe (or chart timeframe when equal); use five progressively longer lookbacks.
+Calculation: SMA = simple moving average of close, using the last completed bar of the higher timeframe (or chart timeframe when equal); use three progressively longer lookbacks.
+Calculation: Chart ATR = average true range on the chart timeframe, using the last completed bar.
+Calculation: MA tolerance = chart ATR multiplied by a configurable factor.
+Long: Close is above every EMA and SMA AND at least one of: (for any EMA or SMA, low <= MA AND close > MA AND close > open); (for any EMA or SMA, low is between MA minus twice the MA tolerance and MA plus the MA tolerance AND close > MA AND close > open); (close > short-lookback EMA > longer-lookback EMA AND at least the configured minimum number of down closes occur within the configured pullback lookback AND close > open AND close > prior bar high).
+Short: For at least one EMA or SMA, either (low timeframe-independent strict rejection: high >= MA AND close < MA AND close < open) OR (high is between MA minus the MA tolerance and MA plus twice the MA tolerance AND close < MA AND close < open).

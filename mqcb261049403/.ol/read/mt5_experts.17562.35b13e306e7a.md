@@ -1,0 +1,9 @@
+Calculation: Smoothed moving average = smoothed moving average of median price on the chart timeframe, using the last completed bar.
+Calculation: Higher-timeframe smoothed moving average = the same calculation on a higher timeframe, using its last completed bar.
+Calculation: Stochastic main and signal lines = stochastic oscillator lines calculated from high and low; use the last completed chart-timeframe bar, and the main line from the preceding completed bar for the prior value.
+Calculation: Long trailing stop = once price has moved more than the trailing distance above entry, raise the stop to the greater of its prior level and current price minus the trailing distance.
+Calculation: Short trailing stop = once price has moved more than the trailing distance below entry, lower the stop to the lesser of its prior level and current price plus the trailing distance.
+Long: chart-timeframe close < chart-timeframe smoothed moving average AND higher-timeframe close < higher-timeframe smoothed moving average AND chart-timeframe smoothed moving average - chart-timeframe close <= entry-distance limit AND current stochastic signal < 20 AND current stochastic main < 20 AND preceding stochastic main < current stochastic signal AND current stochastic main > current stochastic signal
+Short: chart-timeframe close > chart-timeframe smoothed moving average AND higher-timeframe close > higher-timeframe smoothed moving average AND chart-timeframe close - chart-timeframe smoothed moving average <= entry-distance limit AND current stochastic signal > 80 AND current stochastic main > 80 AND preceding stochastic main > current stochastic signal AND current stochastic main < current stochastic signal
+Exit: Long, low <= entry price - stop distance OR high >= entry price + target distance OR low <= long trailing stop
+Exit: Short, high >= entry price + stop distance OR low <= entry price - target distance OR high >= short trailing stop

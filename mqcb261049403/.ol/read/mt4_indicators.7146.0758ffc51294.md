@@ -1,0 +1,3 @@
+Calculation: Signal = simple moving average of (2 × simple moving average of daily median price over a shorter lookback − simple moving average of daily median price over a longer lookback), then smoothed by another simple moving average; calculate on daily bars and expand onto the chart timeframe, using the daily bar still forming
+Long: Signal on the current chart bar > Signal on the previous chart bar
+Short: Signal on the current chart bar < Signal on the previous chart bar

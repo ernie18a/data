@@ -1,0 +1,5 @@
+Calculation: Relative strength momentum = percentage change in the asset-to-benchmark close ratio over a lookback on the chart timeframe, using the current bar.
+Calculation: Score = count of true conditions: close > short-term SMA; close > medium-term SMA; close > long-term SMA; short-term SMA > medium-term SMA; medium-term SMA > long-term SMA; RSI > 50; RSI > 60; relative strength momentum > 0; relative strength momentum > 2; Stochastic RSI %K > %D; volume > 1.2 × its moving average.
+Long: Stochastic RSI %K crosses above %D
+Long: Score >= 7 AND close > short-term SMA AND close > medium-term SMA AND relative strength momentum > 0 AND these conditions were not all true on the prior bar
+Long: Score >= 9 AND close > short-term SMA AND short-term SMA > medium-term SMA AND medium-term SMA > long-term SMA AND relative strength momentum > 0 AND RSI > 50 AND these conditions were not all true on the prior bar

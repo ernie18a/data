@@ -1,0 +1,2 @@
+Long: On any indicator timeframe, Stochastic main line >= signal line AND signal line > 0; use that timeframe’s still-forming bar (it may be lower than, equal to, or higher than the chart timeframe)
+Short: On any indicator timeframe, Stochastic main line <= signal line AND signal line < 100; use that timeframe’s still-forming bar (it may be lower than, equal to, or higher than the chart timeframe)

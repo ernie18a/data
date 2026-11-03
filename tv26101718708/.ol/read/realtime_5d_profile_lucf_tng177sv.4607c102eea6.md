@@ -1,0 +1,3 @@
+Calculation: LazyBear-style Weis Wave trend = track the latest direction of a close-price reversal; update the trend to that direction when close has been rising or falling for the smoothing lookback
+Long: Supertrend direction changes from downtrend to uptrend OR LazyBear-style Weis Wave trend changes to up OR the active trend state is up
+Short: Supertrend direction changes from uptrend to downtrend OR LazyBear-style Weis Wave trend changes to down OR the active trend state is down

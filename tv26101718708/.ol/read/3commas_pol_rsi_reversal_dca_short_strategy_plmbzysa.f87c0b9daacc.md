@@ -1,0 +1,3 @@
+Short: Flat AND within configured date window AND current completed bar RSI is below the crossing level AND previous completed bar RSI was at or above the crossing level
+Short: In a short position AND within configured date window AND close >= base entry price × (1 + cumulative deviation for the next unfilled averaging rung)
+Exit: short, close >= average entry price × (1 + stop-loss percentage) OR (take-profit trailing is armed AND close >= lowest close since it armed × (1 + trailing percentage))

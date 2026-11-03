@@ -1,0 +1,7 @@
+Calculation: JCCX = the JurX-smoothed difference between the selected bar price and its JJMA-smoothed value, divided by the JurX-smoothed absolute difference; clamp to [-1, 1].
+Calculation: Fast trend line = weighted sum of five JCCX oscillators with progressively longer lookbacks; the second and third use the same weight. Use the configured signal timeframe, which may be higher or lower than the chart timeframe.
+Calculation: Slow trend line = Fast trend line / N + previous Slow trend line × (N − 1) / N, where N is the smoothing lookback.
+Long: Previous completed signal-timeframe Fast trend line > previous completed signal-timeframe Slow trend line AND last completed signal-timeframe Fast trend line < last completed signal-timeframe Slow trend line
+Short: Previous completed signal-timeframe Fast trend line < previous completed signal-timeframe Slow trend line AND last completed signal-timeframe Fast trend line > last completed signal-timeframe Slow trend line
+Exit: long, Previous completed signal-timeframe Fast trend line < previous completed signal-timeframe Slow trend line AND last completed signal-timeframe Fast trend line > last completed signal-timeframe Slow trend line
+Exit: short, Previous completed signal-timeframe Fast trend line > previous completed signal-timeframe Slow trend line AND last completed signal-timeframe Fast trend line < last completed signal-timeframe Slow trend line

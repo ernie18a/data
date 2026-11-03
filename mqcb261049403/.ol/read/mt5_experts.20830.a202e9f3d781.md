@@ -1,0 +1,6 @@
+Calculation: Normalized close-location = 100 × smooth(close − low) ÷ max(smooth(max(high, previous close) − min(low, previous close)), minimum price increment); smooth each series with its own configurable method and lookback
+Long: On the configured indicator timeframe, normalized close-location on the signal bar > upper extreme level AND on the preceding bar ≤ upper extreme level
+Short: On the configured indicator timeframe, normalized close-location on the signal bar < lower extreme level AND on the preceding bar ≥ lower extreme level
+Exit: Long, on the configured indicator timeframe normalized close-location on the signal bar < lower extreme level AND on the preceding bar ≥ lower extreme level
+Exit: Short, on the configured indicator timeframe normalized close-location on the signal bar > upper extreme level AND on the preceding bar ≤ upper extreme level
+The indicator timeframe may be higher or lower than the chart timeframe. The configured signal bar is completed when its offset is at least one bar; at offset zero it is still forming.

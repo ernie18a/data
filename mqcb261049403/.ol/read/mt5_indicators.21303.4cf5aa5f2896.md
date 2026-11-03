@@ -1,0 +1,3 @@
+Calculation: Ang-Zad histogram = (z − z2) / minimum price increment, where price is the selected OHLC-based applied price; initialize z and z2 to price, then on each bar update z to z + (price − z)/k when price is above both z and prior-bar price or below both; update z2 to z2 + (price − z2)/k when price is above z2 and below prior-bar price or below z2 and above prior-bar price; otherwise retain each value. k is a smoothing parameter.
+Long: Ang-Zad histogram on the higher timeframe's still-forming bar changes from below zero on the prior chart bar to zero or above on the current completed chart bar
+Short: Ang-Zad histogram on the higher timeframe's still-forming bar changes from zero or above on the prior chart bar to below zero on the current completed chart bar

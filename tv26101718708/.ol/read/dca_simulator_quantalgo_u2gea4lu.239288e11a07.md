@@ -1,0 +1,3 @@
+Calculation: Valuation z-score = (ln(close) − ln(simple moving average of close over the valuation lookback)) ÷ square root of the simple moving average of the squared log distance over the same lookback
+Calculation: Buy weight = 1 in fixed-amount mode or when the z-score is unavailable; otherwise clamp 1 − sensitivity × z-score between the configured minimum and maximum weights
+Long: Current time is on or after the configured start date AND a scheduled buy is due at the configured period start, or the preceding bar ended a scheduled period when end-of-period timing is selected, AND buy weight > 0

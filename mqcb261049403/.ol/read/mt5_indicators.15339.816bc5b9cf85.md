@@ -1,0 +1,3 @@
+Calculation: smoothed deviation = moving average of (selected OHLC-derived applied price − moving average of that price), using separate configurable smoothing methods and lookbacks; calculated on a higher-timeframe bar that is still forming
+Long: smoothed deviation two higher-timeframe bars ago > smoothed deviation on the previous higher-timeframe bar AND smoothed deviation on the current, still-forming higher-timeframe bar > smoothed deviation on the previous higher-timeframe bar
+Short: smoothed deviation two higher-timeframe bars ago < smoothed deviation on the previous higher-timeframe bar AND smoothed deviation on the current, still-forming higher-timeframe bar < smoothed deviation on the previous higher-timeframe bar

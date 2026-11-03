@@ -1,0 +1,6 @@
+Calculation: Non-lag moving average = weighted average of the selected applied price over the lookback, with weights g·cos(πt), where g=1/(3πt+1) except g=1 for t≤0.5; t starts at 0, advances by 1/(phase−1) while t<1, then by (2·cycle−1)/(cycle·length−1) while t<lookback−1; phase=length−1, cycle=4, lookback=4·length+phase; divide the weighted sum by the absolute sum of weights.
+Calculation: Dots state = up when the non-lag moving average rises by more than the filter threshold; down when it falls by more than the threshold; otherwise retain the previous state. Use the indicator timeframe’s completed bars (that timeframe may be higher or lower than the chart timeframe).
+Long: Dots state changes from down to up between consecutive completed indicator-timeframe bars.
+Short: Dots state changes from up to down between consecutive completed indicator-timeframe bars.
+Exit: long, Dots state changes from up to down OR low ≤ entry price − configured stop-loss distance OR high ≥ entry price + configured take-profit distance.
+Exit: short, Dots state changes from down to up OR high ≥ entry price + configured stop-loss distance OR low ≤ entry price − configured take-profit distance.

@@ -1,0 +1,3 @@
+Calculation: HLR = 100 × (bar midpoint − lowest low over the lookback) ÷ (highest high over the lookback − lowest low over the lookback), where bar midpoint = (high + low) ÷ 2; use 0 if the range is 0. Calculate on a higher timeframe, using the selected signal bar, which may still be forming, and the immediately preceding bar with the same lookback.
+Long: In entry-zone mode, current HLR > upper level AND previous HLR ≤ upper level; OR in exit-zone mode, current HLR > lower level AND previous HLR ≤ lower level.
+Short: In entry-zone mode, current HLR < lower level AND previous HLR ≥ lower level; OR in exit-zone mode, current HLR < upper level AND previous HLR ≥ upper level.

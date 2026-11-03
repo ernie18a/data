@@ -1,0 +1,12 @@
+Calculation: Central Pivot Range = central pivot (period high + period low + period close) / 3, and boundaries at (period high + period low) / 2 and twice the central pivot minus that midpoint, using the last completed bar of a higher timeframe.
+Calculation: Anchored VWAP = volume-weighted average of typical price (high + low + close) / 3 from the start of its anchor period, using the lower-timeframe bar still forming.
+Calculation: Average True Range = average true range from the last completed bar of a higher timeframe.
+Calculation: Yearly VWAP deviation bands = yearly anchored VWAP plus or minus one standard deviation of typical price, volume-weighted from the start of the year, using the lower-timeframe bar still forming.
+Long: Close > daily anchored VWAP AND abs(Close - daily anchored VWAP) >= 0.15 × daily Average True Range
+Long: Close > weekly anchored VWAP AND abs(Close - weekly anchored VWAP) >= 0.15 × daily Average True Range
+Long: Close > monthly anchored VWAP AND abs(Close - monthly anchored VWAP) >= 0.15 × daily Average True Range
+Long: Close > yearly anchored VWAP AND yearly deviation bands are available AND abs(Close - yearly anchored VWAP) >= 0.15 × daily Average True Range
+Short: Close < daily anchored VWAP AND abs(Close - daily anchored VWAP) >= 0.15 × daily Average True Range
+Short: Close < weekly anchored VWAP AND abs(Close - weekly anchored VWAP) >= 0.15 × daily Average True Range
+Short: Close < monthly anchored VWAP AND abs(Close - monthly anchored VWAP) >= 0.15 × daily Average True Range
+Short: Close < yearly anchored VWAP AND yearly deviation bands are available AND abs(Close - yearly anchored VWAP) >= 0.15 × daily Average True Range

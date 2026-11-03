@@ -1,0 +1,6 @@
+Calculation: Chaikin Oscillator (CHO) = fast moving average of the Accumulation/Distribution Line minus its longer-lookback moving average; the Accumulation/Distribution Line cumulatively sums volume × (2 × close − high − low) / (high − low). Calculated on the configured working timeframe, which may be higher or lower than the chart timeframe; use the selected signal bar, either the bar still forming or the last completed bar.
+Calculation: Smoothed CHO = moving average of CHO, calculated on the same working timeframe and signal bar.
+Long: Previous CHO < previous Smoothed CHO AND current CHO > current Smoothed CHO AND (zero-level filter disabled OR current CHO < 0 AND current Smoothed CHO < 0)
+Short: Previous CHO > previous Smoothed CHO AND current CHO < current Smoothed CHO AND (zero-level filter disabled OR current CHO > 0 AND current Smoothed CHO > 0)
+Exit: long, price ≤ entry price − stop-loss distance OR price ≥ entry price + take-profit distance
+Exit: short, price ≥ entry price + stop-loss distance OR price ≤ entry price − take-profit distance

@@ -1,0 +1,10 @@
+Calculation: Smoothed source = close optionally smoothed by a configurable moving-average method
+Calculation: Stage average = simple moving average of the smoothed source over a configurable lookback
+Calculation: Slope % = 100 × (stage average / its value a configurable number of chart bars earlier − 1); rising means above a configurable positive threshold, falling means below its negative, otherwise flat
+Calculation: Prior range high/low = highest high / lowest low over a configurable number of preceding chart bars, excluding the current bar
+Calculation: Upside breakout = smoothed source > prior range high AND smoothed source > stage average AND slope is not falling
+Calculation: Downside breakdown = smoothed source < prior range low AND smoothed source < stage average AND slope is not rising
+Calculation: Higher-timeframe bias = bullish when the higher-timeframe slope is rising and its smoothed source is above its stage average; bearish when its slope is falling and its smoothed source is at or below its stage average; otherwise neutral. Use the last completed higher-timeframe bar, with the same calculation parameters as the chart timeframe.
+Calculation: Breakout volume ratio = current volume / average positive volume over the configurable number of preceding chart bars
+Long: Stage changes to 2: (no prior stage AND slope is rising AND smoothed source > stage average) OR (prior stage is 1, 3, or 4 AND upside breakout); if enabled, require bullish higher-timeframe bias, previous chart bar ADX at or above its threshold, and breakout volume ratio at or above its threshold (skip the volume condition if the symbol has no volume)
+Short: Stage changes to 4: (no prior stage AND slope is falling AND smoothed source <= stage average) OR (prior stage is 1, 2, or 3 AND downside breakdown); if enabled, require bearish higher-timeframe bias and previous chart bar ADX at or above its threshold

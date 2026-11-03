@@ -1,0 +1,7 @@
+Calculation: Fast and slow EMA = exponential moving averages of close on the chart timeframe, with the fast EMA using a shorter lookback than the slow EMA
+Calculation: Confirmed swing high/low = a local high/low with an equal number of chart bars on each side; confirmed after the bars on the right are complete
+Calculation: Bull structure = latest confirmed swing high > previous confirmed swing high AND latest confirmed swing low > previous confirmed swing low
+Calculation: Bear structure = latest confirmed swing high < previous confirmed swing high AND latest confirmed swing low < previous confirmed swing low
+Calculation: Higher-timeframe EMA direction = fast EMA > slow EMA (bullish) or fast EMA < slow EMA (bearish), using the still-forming higher-timeframe bar; fast EMA has a shorter lookback than slow EMA
+Long: ((fast EMA > slow EMA AND fast EMA > prior bar fast EMA AND slow EMA > prior bar slow EMA AND bull structure) OR close > latest confirmed swing high + ATR × structure-break buffer) AND (higher-timeframe filter disabled OR higher-timeframe EMA direction is bullish)
+Short: ((fast EMA < slow EMA AND fast EMA < prior bar fast EMA AND slow EMA < prior bar slow EMA AND bear structure) OR close < latest confirmed swing low − ATR × structure-break buffer) AND (higher-timeframe filter disabled OR higher-timeframe EMA direction is bearish)

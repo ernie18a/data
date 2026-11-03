@@ -1,0 +1,1 @@
+For the traded instrument, calculate the change in net advancing volume (advancing volume minus declining volume) from the prior bar, divided by current total advancing and declining volume, and express it as a percentage. Go long when this measure exceeds an upper threshold; go short when it falls below a lower threshold. Otherwise, keep the existing position.

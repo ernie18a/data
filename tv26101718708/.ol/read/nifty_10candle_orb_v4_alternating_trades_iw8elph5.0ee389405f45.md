@@ -1,0 +1,6 @@
+Calculation: Opening range high = highest high among the first number-of-opening-candles bars of each day
+Calculation: Opening range low = lowest low among the first number-of-opening-candles bars of each day
+Long: opening range is complete AND current close > opening range high AND previous close <= previous opening range high AND position is flat AND current time < last-entry time AND current time < exit time AND (no earlier trade today OR last trade today was short
+Short: opening range is complete AND current close < opening range low AND previous close >= previous opening range low AND position is flat AND current time < last-entry time AND current time < exit time AND (no earlier trade today OR last trade today was long
+Exit: long, high >= entry price × (1 + profit target percent) OR low <= entry price × (1 - stop loss percent) OR current time >= exit time
+Exit: short, low <= entry price × (1 - profit target percent) OR high >= entry price × (1 + stop loss percent) OR current time >= exit time

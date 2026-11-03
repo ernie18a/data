@@ -1,0 +1,4 @@
+Calculation: Confirmed swing high/low = a bar whose high/low is the highest/lowest across the pivot-strength bars before and after it; available after those following chart-timeframe bars complete
+Calculation: Average volume = simple moving average of volume over a lookback
+Long: An unswept confirmed swing-low level exists AND low < level AND close > level AND (volume > average volume × multiplier OR volume confirmation is disabled)
+Short: An unswept confirmed swing-high level exists AND high > level AND close < level AND (volume > average volume × multiplier OR volume confirmation is disabled)

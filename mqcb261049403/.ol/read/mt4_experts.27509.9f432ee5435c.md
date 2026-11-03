@@ -1,0 +1,4 @@
+Long: datetime equals the configured opening date and minute AND long orders are enabled AND no matching long order is already open or pending
+Short: datetime equals the configured opening date and minute AND short orders are enabled AND no matching short order is already open or pending
+Exit: long, datetime equals the configured closing date and minute AND closing is enabled for this order OR price reaches its configured stop-loss or take-profit level
+Exit: short, datetime equals the configured closing date and minute AND closing is enabled for this order OR price reaches its configured stop-loss or take-profit level

@@ -1,0 +1,6 @@
+Calculation: Adaptive SuperTrend direction = SuperTrend direction using a multiplier based on short-term ATR divided by longer-term ATR; increase the multiplier in low ADX, decrease it in high ADX, and otherwise leave it unchanged
+Calculation: Active bullish order blocks = the latest bearish candle found after a confirmed swing low before price closes above a confirmed swing high; active bearish order blocks = the latest bullish candle found after a confirmed swing high before price closes below a confirmed swing low. Apply configured gap, displacement, liquidity-sweep, and premium/discount filters when enabled; if no candle meets the gap and displacement filters, use the extreme candle in the scan
+Calculation: Order-block mitigation level = midpoint of the block, or its relevant outer edge when edge mitigation is selected
+Long: Adaptive SuperTrend direction changes from bearish to bullish OR price crosses down through the mitigation level of an active bullish order block
+Short: Adaptive SuperTrend direction changes from bullish to bearish OR price crosses up through the mitigation level of an active bearish order block
+Exit: None

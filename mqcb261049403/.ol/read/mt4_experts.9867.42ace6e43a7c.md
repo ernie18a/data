@@ -1,0 +1,6 @@
+Calculation: Candle midpoint deviation = close minus (high + low) / 2 on a specified completed bar of the chart timeframe
+Calculation: Rounded prior close = prior completed chart-timeframe bar close rounded to two decimal places
+Long: Close of the bar two bars ago < Rounded prior close AND prior bar close > Rounded prior close AND (deviation at the long short-lookback bar > deviation at the long comparison bar AND deviation at the long medium-lookback bar > qbc × deviation at the long comparison bar AND deviation at the long long-lookback bar > qbg × deviation at the long comparison bar)
+Short: Close of the bar two bars ago > Rounded prior close AND prior bar close < Rounded prior close AND (deviation at the short short-lookback bar > deviation at the short comparison bar AND deviation at the short medium-lookback bar > qc × deviation at the short comparison bar AND deviation at the short long-lookback bar > qg × deviation at the short comparison bar)
+Exit: long, low <= stop-loss price OR high >= take-profit price OR short decision is true
+Exit: short, high >= stop-loss price OR low <= take-profit price OR long decision is true

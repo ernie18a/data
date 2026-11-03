@@ -1,0 +1,3 @@
+Calculation: normalized risk = clamp((ln(daily close) − ln(daily simple moving average) − rolling minimum of that difference) / (rolling maximum − rolling minimum), 0, 1); daily bars are the same timeframe as or higher than the chart timeframe, using the bar still forming; rolling extrema use a chart-timeframe lookback scaled from days
+Long: normalized risk crosses below 0.4 AND normalized risk > 0.2 OR normalized risk crosses below 0.2
+Short: normalized risk crosses above 0.9 OR normalized risk crosses above 0.5 AND normalized risk < 0.9

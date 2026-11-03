@@ -1,0 +1,3 @@
+Calculation: Opening-range high/low = highest high / lowest low during the opening range, using lower-timeframe bars (the first intrabar returned for each chart bar; not the last completed intrabar)
+Long: close crosses above opening-range high AND the opening range is locked AND the bar is confirmed AND time is after the opening range and before the end of the US regular trading session
+Short: close crosses below opening-range low AND the opening range is locked AND the bar is confirmed AND time is after the opening range and before the end of the US regular trading session

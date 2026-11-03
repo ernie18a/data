@@ -1,0 +1,2 @@
+Long: Relative Vigor Index (RVI) > its signal line OR higher-timeframe RVI on the still-forming bar > its upper threshold
+Short: RVI < its signal line OR higher-timeframe RVI on the still-forming bar < its lower threshold

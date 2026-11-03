@@ -1,0 +1,2 @@
+Long: previous close <= previous open AND current close > current open AND current open <= previous close AND current close > previous open AND current volume > previous volume
+Short: previous close > previous open AND current close <= current open AND current open >= previous close AND current close < previous open AND current volume > previous volume

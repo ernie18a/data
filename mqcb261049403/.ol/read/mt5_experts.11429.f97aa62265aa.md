@@ -1,0 +1,5 @@
+Calculation: SimpleBars direction = On the indicator timeframe, using the last completed bar, initialize bullish when close > open and bearish otherwise. Thereafter, if the previous direction is bullish, set bullish when the selected price (close if close-based mode, otherwise low) is greater than any low among the preceding lookback bars; otherwise set bearish. If the previous direction is bearish, set bearish when the selected price (close if close-based mode, otherwise high) is less than any high among the preceding lookback bars; otherwise set bullish.
+Long: SimpleBars direction changes from bearish to bullish
+Short: SimpleBars direction changes from bullish to bearish
+Exit: long, SimpleBars direction changes from bullish to bearish
+Exit: short, SimpleBars direction changes from bearish to bullish

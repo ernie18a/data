@@ -1,0 +1,5 @@
+Calculation: Current daily open/high/low = open/high/low of the current, still-forming higher-timeframe daily bar
+Long: current price > current daily open AND current daily open − current daily low > a configurable range threshold AND weekday is Monday–Friday AND time is within the configured daily entry window AND no position is open AND no long trade has closed today
+Short: current price < current daily open AND current daily high − current daily open > a configurable range threshold AND weekday is Monday–Friday AND time is within the configured daily entry window AND no position is open AND no short trade has closed today
+Exit: long, current price ≥ entry price + configured profit distance OR current price ≤ entry price − configured stop distance OR (configured closing time or holding duration is reached AND current price > entry price)
+Exit: short, current price ≤ entry price − configured profit distance OR current price ≥ entry price + configured stop distance OR (configured closing time or holding duration is reached AND current price < entry price)

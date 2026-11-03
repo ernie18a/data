@@ -1,0 +1,4 @@
+Calculation: Cumulative safety-order deviation = first deviation × (1 + step multiplier + … + step multiplier^(k−1)) for safety order k
+Short: Within the configured backtest window, when flat with no open trades, the last completed bar of a lower timeframe has Bollinger Bands %B ≥ its threshold and the previous lower-timeframe bar had %B < its threshold, AND RSI ≥ its threshold and the previous lower-timeframe bar had RSI < its threshold
+Short: While short and within the configured backtest window, if fewer than the maximum safety orders have filled, close ≥ base entry price × (1 + cumulative safety-order deviation for the next order)
+Exit: short, close ≤ average entry price × (1 − take-profit percentage)

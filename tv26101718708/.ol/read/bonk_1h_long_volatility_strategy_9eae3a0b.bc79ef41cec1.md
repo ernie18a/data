@@ -1,0 +1,2 @@
+Long: recent-window filter is true AND fast SMA (shorter lookback) > slow SMA (longer lookback) AND high − low > ATR threshold AND RSI is between oversold and overbought thresholds AND MACD line > MACD signal line AND MACD line > 0 AND volume > volume SMA × volume-spike threshold AND close > fast SMA
+Exit: long, high >= current-close-based profit target OR low <= greater of current-close-based percentage stop and current-close-based ATR stop OR low <= active trailing stop

@@ -1,0 +1,1 @@
+Within the configured date range, buy an at-the-money call when a confirmed Williams-fractal swing low forms, unless calls are already active. On a confirmed swing high, unless puts are already active, exit the call position if present and buy an at-the-money put. Reverse the process on the next swing low: exit puts if present and buy calls.

@@ -1,0 +1,4 @@
+Calculation: Demand range = lows of the two most recent completed higher-timeframe bars; the earlier bar’s low is the lower boundary and the later bar’s low is the upper boundary
+Calculation: Supply range = highs of the two most recent completed higher-timeframe bars; the earlier bar’s high is the upper boundary and the later bar’s high is the lower boundary
+Long: close >= demand lower boundary AND close <= demand upper boundary AND close > open AND previous close < previous open AND close > previous high AND high > highest high of the prior lookback bars AND volume > its simple moving average over a lookback
+Short: close <= supply upper boundary AND close >= supply lower boundary AND close < open AND previous close > previous open AND close < previous low AND low < lowest low of the prior lookback bars AND volume > its simple moving average over a lookback

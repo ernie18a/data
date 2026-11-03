@@ -1,0 +1,4 @@
+Long: previous completed chart bar close < lower Bollinger Band on the chart timeframe AND RSI of the chart timeframe bar still forming < oversold threshold AND previous completed chart bar close > exponential moving average on the higher timeframe bar still forming AND position side = flat
+Short: previous completed chart bar close > upper Bollinger Band on the chart timeframe AND RSI of the chart timeframe bar still forming > overbought threshold AND previous completed chart bar close < exponential moving average on the higher timeframe bar still forming AND position side = flat
+Exit: long, low <= lower Bollinger Band on entry bar - stop-loss offset OR high >= middle Bollinger Band on entry bar
+Exit: short, high >= upper Bollinger Band on entry bar + stop-loss offset OR low <= middle Bollinger Band on entry bar

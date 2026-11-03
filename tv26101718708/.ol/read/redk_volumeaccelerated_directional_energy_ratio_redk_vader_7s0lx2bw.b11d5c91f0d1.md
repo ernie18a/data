@@ -1,0 +1,7 @@
+Calculation: VADER signal = WMA of net directional energy, where net directional energy is demand energy minus supply energy; demand and supply energy are 100 times the WMA of their respective directional energy ratios, and each ratio is the selected moving average (SMA, EMA, or WMA) of positive or negative normalized close change times volume acceleration, divided by the selected moving average of volume acceleration. Normalize close change by half the high-low range across the current and prior bars, clamp it to [-1, 1], and use its positive and negative parts for demand and supply. Volume acceleration is relative volume rank normalized to [0, 1], raw volume, or 1 when volume is disabled or unavailable, according to the selected mode.
+Calculation: VADER sentiment = WMA of 100 times the longer-lookback WMA of demand energy ratio minus 100 times the longer-lookback WMA of supply energy ratio; its lookback is longer than the lookback used for VADER demand and supply energy. Use the same final WMA smoothing as for the VADER signal.
+Long: VADER signal crosses above 0
+Long: VADER signal crosses above VADER sentiment
+Short: VADER signal crosses below 0
+Short: VADER signal crosses below VADER sentiment
+Exit: long, VADER signal crosses below 0

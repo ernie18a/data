@@ -1,0 +1,8 @@
+Calculation: Bullish gap = current low > high two chart bars ago; gap size = current low − high two chart bars ago
+Calculation: Bearish gap = current high < low two chart bars ago; gap size = low two chart bars ago − current high
+Calculation: Buy and sell participation shares = percentages of volume in up and down candles, respectively, among lower-timeframe bars within the previous completed chart bar; split flat-candle volume equally. If lower-timeframe data is unavailable, assign chart-bar volume by chart-bar candle direction, splitting it equally when close = open.
+Calculation: Participation tilt = buy share − sell share for bullish gaps; sell share − buy share for bearish gaps
+Calculation: Volume rank = percentile rank of chart-bar volume over a longer lookback
+Calculation: Gap score = min(100, 30 × gap size / minimum gap size + 0.7 × max(participation tilt, 0) + 12 × previous chart bar’s absolute candle body / ATR + 0.12 × volume rank)
+Long: On a confirmed chart bar, bullish gap AND gap size ≥ ATR × minimum gap ATR AND absolute participation tilt ≥ minimum tilt AND volume rank ≥ minimum volume rank AND (overlap guard disabled OR every overlapping active zone is absent or has a lower gap score)
+Short: On a confirmed chart bar, bearish gap AND gap size ≥ ATR × minimum gap ATR AND absolute participation tilt ≥ minimum tilt AND volume rank ≥ minimum volume rank AND (overlap guard disabled OR every overlapping active zone is absent or has a lower gap score)

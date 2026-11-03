@@ -1,0 +1,5 @@
+Calculation: Trendline slope = selected slope method multiplied by a slope multiplier: ATR(lookback) / lookback, standard deviation of close over lookback / lookback, or abs(SMA(close × bar_index, lookback) − SMA(close, lookback) × SMA(bar_index, lookback)) / (2 × variance(bar_index, lookback)); the lookback is the swing detection lookback.
+Calculation: Descending resistance boundary = latest confirmed pivot high minus the accumulated trendline slope since that pivot high.
+Calculation: Ascending support boundary = latest confirmed pivot low plus the accumulated trendline slope since that pivot low.
+Long: Close > descending resistance boundary AND no upward breakout has already occurred since the latest confirmed pivot high.
+Short: Close < ascending support boundary AND no downward breakout has already occurred since the latest confirmed pivot low.

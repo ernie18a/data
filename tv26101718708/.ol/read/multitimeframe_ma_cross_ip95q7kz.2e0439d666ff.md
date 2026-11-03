@@ -1,0 +1,3 @@
+Calculation: Moving average = selected moving-average type applied to close; compare the shorter-to-longer lookbacks
+Long: For each dashboard timeframe, that timeframe's close > its moving average at each lookback; use the chart timeframe when equal, otherwise the lower or higher timeframe's current bar (last completed historical bar or forming real-time bar)
+Short: For each dashboard timeframe, that timeframe's close < its moving average at each lookback; use the chart timeframe when equal, otherwise the lower or higher timeframe's current bar (last completed historical bar or forming real-time bar)

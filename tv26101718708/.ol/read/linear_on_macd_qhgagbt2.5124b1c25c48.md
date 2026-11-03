@@ -1,0 +1,4 @@
+Calculation: Signed-volume MACD = MACD of cumulative signed volume, where each bar contributes +volume if close > prior close or (close < prior close and open < close), and −volume otherwise; its oscillator uses a shorter moving-average lookback minus a longer one, and its signal is a moving average of the oscillator
+Calculation: Volume-regression price = fit close as a linear function of volume over a lookback, then evaluate the fitted line at current volume
+Long: Signed-volume MACD > its signal AND MACD(close) > its signal AND open < volume-regression price < close AND volume-regression price > its prior-bar value
+Short: Signed-volume MACD < its prior-bar value AND Signed-volume MACD < its signal AND MACD(close) < its signal AND close < volume-regression price (lower-risk setting) OR Signed-volume MACD < its prior-bar value AND Signed-volume MACD < its signal AND MACD(close) < its signal AND close < VWMA(volume-regression price) (higher-risk setting)

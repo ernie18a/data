@@ -1,0 +1,5 @@
+Calculation: Algorithmic-range high/low = maximum high/minimum low of bars in the configured algorithmic-range window for the current New York day; freeze when the window closes.
+Long: Algorithmic range is complete AND a confirmed bar in the configured sweep window has low < algorithmic-range low AND low < current New York midnight open AND a confirmed close on that bar or a later bar is > algorithmic-range low AND current bias is not bullish
+Short: Algorithmic range is complete AND a confirmed bar in the configured sweep window has high > algorithmic-range high AND high > current New York midnight open AND a confirmed close on that bar or a later bar is < algorithmic-range high AND current bias is not bearish
+Exit: long, current bias is bullish AND confirmed close < algorithmic-range low
+Exit: short, current bias is bearish AND confirmed close > algorithmic-range high

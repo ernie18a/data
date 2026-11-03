@@ -1,0 +1,12 @@
+Calculation: Indicator = RSI or MFI, on the configured indicator timeframe (same as, higher than, or lower than the chart timeframe), using completed bars; the current and prior values are the last two completed bars.
+Calculation: Best long threshold and score = For each candidate level in the configured range, simulate long entries when the indicator crosses upward through the level; enter at that bar’s close and exit at the first later chart-bar close beyond the configured stop-loss or take-profit distance. Sum the completed trades’ price gains and losses; choose the level with the highest score.
+Calculation: Best short threshold and score = For each candidate level in the configured range, simulate short entries when the indicator crosses downward through the level; enter at that bar’s close and exit at the first later chart-bar close beyond the configured stop-loss or take-profit distance. Sum the completed trades’ price gains and losses; choose the level with the highest score.
+Calculation: Stop-loss and take-profit distances = Configured fixed distances, or configured multiples of ATR with the indicator’s averaging period, calculated on the configured indicator timeframe from its last completed bar.
+Long: Best long score > best short score AND (current indicator > best long threshold AND prior indicator < best long threshold OR aggressive mode is enabled)
+Long: Reverse mode is enabled AND best short score > best long score AND (current indicator > best long threshold AND prior indicator < best long threshold OR aggressive mode is enabled)
+Short: Best short score > best long score AND (current indicator < best short threshold AND prior indicator > best short threshold OR aggressive mode is enabled)
+Short: Reverse mode is enabled AND best long score > best short score AND (current indicator < best short threshold AND prior indicator > best short threshold OR aggressive mode is enabled)
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance
+Exit: long, high >= entry price + break-even trigger distance; move stop to entry price + break-even padding distance
+Exit: short, low <= entry price - break-even trigger distance; move stop to entry price - break-even padding distance

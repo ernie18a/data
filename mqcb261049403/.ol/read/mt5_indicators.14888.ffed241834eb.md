@@ -1,0 +1,2 @@
+Long: chart-timeframe high > chart-timeframe high N bars ago OR higher-timeframe high > higher-timeframe high N bars ago, using the still-forming higher-timeframe bar
+Short: chart-timeframe low < chart-timeframe low N bars ago OR higher-timeframe low < higher-timeframe low N bars ago, using the still-forming higher-timeframe bar

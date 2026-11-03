@@ -1,0 +1,1 @@
+Exit all open positions in the traded instrument when their combined loss exceeds a configured fraction of the account’s running equity peak. Also exit all positions when combined profit reaches a configured percentage of account balance. In the money-based trailing loss rule, exit the basket when its loss exceeds the configured equity-scaled drawdown threshold.

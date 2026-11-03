@@ -1,0 +1,3 @@
+Calculation: Daily close change = (current daily close − previous completed daily close) / previous completed daily close; use the daily bar still forming for the current close.
+Long: Daily close change > threshold OR (Daily close change ≥ −threshold AND Daily close change ≤ threshold AND previous bar's decision was long)
+Short: Daily close change < −threshold OR (Daily close change ≥ −threshold AND Daily close change ≤ threshold AND previous bar's decision was short)

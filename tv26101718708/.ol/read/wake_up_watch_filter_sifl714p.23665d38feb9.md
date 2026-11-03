@@ -1,0 +1,4 @@
+Calculation: Bollinger-inside-Keltner squeeze = Bollinger Bands, centered on the simple moving average of close, lie strictly inside Keltner Channels centered on that same average; the channel offset is average true range times a multiplier.
+Calculation: Volume percentile rank = percentile rank of current volume over its lookback.
+Calculation: Wake-up setup = Bollinger-inside-Keltner squeeze AND volume percentile rank <= threshold AND (close >= baseline exponential moving average OR baseline exponential moving average >= its prior-bar value).
+Long: Wake-up setup AND wake-up setup was false on the preceding bar

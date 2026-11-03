@@ -1,0 +1,9 @@
+Calculation: Support level = nearest by absolute distance from the current close among enabled opening range low (once the opening range is complete), premarket low, and previous day low.
+Calculation: Resistance level = nearest by absolute distance from the current close among enabled opening range high (once the opening range is complete), premarket high, and previous day high.
+Calculation: Previous day high/low = high/low of the last completed daily bar (higher timeframe).
+Calculation: Sweep threshold = ATR × sweep multiplier, clamped between the configured minimum and maximum; ATR uses chart-timeframe bars.
+Calculation: Bullish sweep state = during the active session, low ≤ support level − sweep threshold and close < support level; record that support and the lowest low while active. Keep the state until a reclaim trigger or timeout; timeout is measured in chart-timeframe bars from the sweep.
+Calculation: Bearish sweep state = during the active session, high ≥ resistance level + sweep threshold and close > resistance level; record that resistance and the highest high while active. Keep the state until a reclaim trigger or timeout; timeout is measured in chart-timeframe bars from the sweep.
+Calculation: Relative volume = current volume ÷ simple moving average of volume over the configured lookback; when the optional elevated-volume trigger filter is enabled, require relative volume to meet its configured threshold.
+Long: During the active session, a bullish sweep is active AND close > swept support AND close > open; OR the prior bar had a bullish reclaim AND current high > that reclaim candle's high AND the optional volume filter passes.
+Short: During the active session, a bearish sweep is active AND close < swept resistance AND close < open; OR the prior bar had a bearish reclaim AND current low < that reclaim candle's low AND the optional volume filter passes.

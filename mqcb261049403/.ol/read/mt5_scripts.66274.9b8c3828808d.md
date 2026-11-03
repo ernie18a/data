@@ -1,0 +1,2 @@
+Calculation: Drawdown = (highest close over the lookback on higher-timeframe bars, including the bar still forming - current price) / highest close over the lookback on higher-timeframe bars, including the bar still forming * 100
+Long: Drawdown >= threshold

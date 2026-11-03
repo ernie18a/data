@@ -1,0 +1,3 @@
+Calculation: Profit percentage = (close - entry price) / entry price × 100
+Long: MACD line crosses above its signal line AND RSI is within its configured entry band
+Exit: long, (trailing mode selected AND (close reaches the configured loss threshold below entry price OR profit has reached the trailing activation threshold and later falls below it OR profit reaches the higher trailing threshold AND close falls by the configured retracement from the highest close since entry)) OR (daily-close mode selected AND a daily boundary occurs AND (profit reaches the configured gain threshold OR loss reaches the configured loss threshold))
