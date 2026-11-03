@@ -1,3 +1,10 @@
-Calculation: Rolling volume-profile value area high and low = over a rolling lookback, divide the full low-to-high price range into bins and apportion each bar’s volume across overlapped bins in proportion to range overlap; start at the highest-volume bin and expand to the adjacent bin with greater volume (ties go lower) until the target share of total volume is included; the resulting outer edges are value-area low and high
-Long: close > value-area high AND previous close > previous value-area high AND close two bars ago <= value-area high two bars ago
-Short: close < value-area low AND previous close < previous value-area low AND close two bars ago >= value-area low two bars ago
+Calculation: Rolling value area and point of control = After at least the profile lookback number of preceding bars, take the current bar and the preceding bars in that lookback. Divide their low-to-high range into a parameterized number of equal price bins, with range and bin width each floored at a minimum price increment parameter. Allocate each bar's volume to each overlapping bin in proportion to the overlap of their price ranges divided by the bar's high-low range floored at that increment; a zero-range bar contributes no bin volume. The point of control is the midpoint of the highest-volume bin, choosing the lowest bin on ties. Starting with that bin, add the larger-volume adjacent bin until the accumulated volume reaches a parameterized fraction of total bar volume or no bins remain; choose the lower bin on ties. The value-area boundaries are the outer edges of the included bins.
+Calculation: Auction score = Clamp to symmetric parameterized limits the sum of a parameterized coefficient times (shorter-volume SMA / max(longer-volume SMA, a positive floor parameter) - 1), a parameterized coefficient times (shorter-close EMA - longer-close EMA) / max(ATR, the minimum price increment parameter), and a parameterized coefficient times (close - point of control) / max(ATR times a distance multiplier parameter, the minimum price increment parameter). Before the profile is available, the score is zero.
+Long: Auction score >= positive score threshold parameter
+Short: Auction score <= negative score threshold parameter
+Long: shorter-close EMA >= longer-close EMA
+Short: shorter-close EMA < longer-close EMA
+Long: close > current rolling value-area high
+Short: close < current rolling value-area low
+Long: close > current rolling value-area high AND previous close > previous rolling value-area high AND close two bars ago <= its rolling value-area high
+Short: close < current rolling value-area low AND previous close < previous rolling value-area low AND close two bars ago >= its rolling value-area low

@@ -1,4 +1,4 @@
-Long: Stochastic main line > signal line AND (main line < lower stochastic threshold OR signal line < lower stochastic threshold) on the current forming bar of the configured work timeframe, which may be higher or lower than the chart timeframe
-Short: Stochastic main line < signal line AND (main line > upper stochastic threshold OR signal line > upper stochastic threshold) on the current forming bar of the configured work timeframe, which may be higher or lower than the chart timeframe
-Exit: long, Stochastic main line < signal line AND (main line > upper stochastic threshold OR signal line > upper stochastic threshold) on the current forming bar of the configured work timeframe, which may be higher or lower than the chart timeframe
-Exit: short, Stochastic main line > signal line AND (main line < lower stochastic threshold OR signal line < lower stochastic threshold) on the current forming bar of the configured work timeframe, which may be higher or lower than the chart timeframe
+Long: Stochastic main line > signal line AND (main line < lower threshold OR signal line < lower threshold), using the last completed bar of a configurable timeframe that may be higher than, lower than, or equal to the chart timeframe.
+Short: Stochastic main line < signal line AND (main line > upper threshold OR signal line > upper threshold), using the last completed bar of the same timeframe as the long decision.
+Exit: long, Stochastic main line < signal line AND (main line > upper threshold OR signal line > upper threshold), using the same values as the short decision.
+Exit: short, Stochastic main line > signal line AND (main line < lower threshold OR signal line < lower threshold), using the same values as the long decision.

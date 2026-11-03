@@ -1,4 +1,3 @@
-Calculation: Period base = selected candle value (open, high, low, close, HL2, HLC3, OHLC4, or (high + low) / 2) from the still-forming bar of a higher timeframe
-Calculation: Upper/lower percentage levels = period base × (1 ± configured percentage / 100)
-Long: close > period base or an enabled upper percentage level AND previous close ≤ that same level
-Short: close < period base or an enabled lower percentage level AND previous close ≥ that same level
+Calculation: Base = selected price source of the still-forming higher-timeframe bar.
+Calculation: Upper and lower levels = base multiplied by one plus or minus a configurable percentage, respectively; each percentage has its own alert setting.
+Long: Alert direction permits upward crossings AND close > an alert-enabled upper level or alert-enabled base AND previous close <= that same current level, OR alert direction permits downward crossings AND close < an alert-enabled lower level or alert-enabled base AND previous close >= that same current level.

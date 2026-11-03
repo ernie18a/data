@@ -1,10 +1,3 @@
-Calculation: Rolling high = highest high over the lookback window ending on the current chart bar
-Calculation: Rolling low = lowest low over the lookback window ending on the current chart bar
-Calculation: High moving average = moving average of high over the same lookback window
-Calculation: Low moving average = moving average of low over the same lookback window
-Calculation: Running maximum of rolling lows = maximum rolling low since the most recent bullish transition; reset to the current rolling low on that transition
-Calculation: Running minimum of rolling highs = minimum rolling high since the most recent bearish transition; reset to the current rolling high on that transition
-Long: Low moving average > running minimum of rolling highs AND current close > previous chart bar's high
-Short: High moving average < running maximum of rolling lows AND current close < previous chart bar's low
-Exit: long, High moving average < running maximum of rolling lows AND current close < previous chart bar's low
-Exit: short, Low moving average > running minimum of rolling highs AND current close > previous chart bar's high
+Calculation: Trend state = On the chart timeframe or a higher timeframe, using the bar still forming, initialize state to bullish, next direction to bearish, tracked low to 0, and tracked high to 9999999. For each bar, calculate the lowest low and highest high over the same lookback, including the current bar, and moving averages of highs and lows over that lookback using the same averaging method. If next direction is bearish, update tracked low to the maximum of its previous value and the lowest low; if the high moving average is below tracked low AND close is below the previous bar's low, set state to bearish, next direction to bullish, and tracked high to the highest high. Then, if next direction is bullish, update tracked high to the minimum of its previous value and the highest high; if the low moving average is above tracked high AND close is above the previous bar's high, set state to bullish, next direction to bearish, and tracked low to the lowest low. Carry state and tracked values forward between completed bars.
+Long: Trend state = bullish
+Short: Trend state = bearish

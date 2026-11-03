@@ -1,2 +1,4 @@
-Long: Any of the 20 MFI values, with progressively longer lookbacks, is below the low threshold on the chart timeframe, or on a higher timeframe’s still-forming bar.
-Short: Any of the 20 MFI values, with progressively longer lookbacks, is above the high threshold on the chart timeframe, or on a higher timeframe’s still-forming bar.
+Long: Any chart-timeframe Money Flow Index, calculated over a set of lookbacks spaced by a fixed increment, > upper threshold.
+Short: Any chart-timeframe Money Flow Index, calculated over the same lookbacks, < lower threshold.
+Long: Any Money Flow Index on the still-forming higher-timeframe bar, calculated over a set of lookbacks spaced by a fixed increment, > upper threshold.
+Short: Any Money Flow Index on the still-forming higher-timeframe bar, calculated over the same lookbacks, < lower threshold.

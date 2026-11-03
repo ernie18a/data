@@ -1,2 +1,2 @@
-Long: The low of the bar `rightPiv` bars ago is lower than the lows of the configured number of bars on both sides.
-Short: The high of the bar `rightPiv` bars ago is higher than the highs of the configured number of bars on both sides.
+Long: A pivot low is confirmed using the specified numbers of left and right bars.
+Short: A pivot high is confirmed using the specified numbers of left and right bars.

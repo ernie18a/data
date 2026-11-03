@@ -1,22 +1,9 @@
-Calculation: All-time high = highest high from the first bar through the current bar
-Calculation: 200-week SMA = simple moving average of close over 200 higher-timeframe weekly bars, using the last completed weekly bar
-Calculation: 2-year SMA = simple moving average of close over 730 higher-timeframe daily bars, using the last completed daily bar
-Calculation: 200-day SMA = simple moving average of close over 200 higher-timeframe daily bars, using the last completed daily bar
-Calculation: Weekly RSI = 14-bar RSI of close on the higher timeframe, using the last completed weekly bar
-Calculation: Drawdown from all-time high = (all-time high − close) / all-time high
-Calculation: Moving-average score = average of the available scores for close / 200-week SMA, close / 2-year SMA, and close / 200-day SMA; each ratio is linearly mapped from its expensive anchor to its deep-value anchor onto 0–100 and capped to that range
-Calculation: Drawdown score = drawdown from all-time high linearly mapped from its expensive anchor to its deep-value anchor onto 0–100 and capped to that range
-Calculation: Weekly RSI score = weekly RSI linearly mapped from its expensive anchor to its deep-value anchor onto 0–100 and capped to that range
-Calculation: Composite = weighted average of the available moving-average, drawdown, and weekly RSI scores, renormalizing weights over available scores
-Calculation: Capitulation eligibility = drawdown from all-time high meets or exceeds its threshold
-Calculation: Deep-value eligibility = capitulation eligibility OR close / 200-week SMA is at or below its threshold
-Calculation: Overheating signs = count of conditions met: close / 200-week SMA ≥ its threshold; weekly RSI ≥ its threshold; close / 200-day SMA ≥ its threshold
-Calculation: Euphoria eligibility = overheating signs ≥ 1
-Calculation: Cycle-top eligibility = overheating signs ≥ 2
-Long: Composite crosses above the accumulation threshold
-Long: Composite crosses above the deep-accumulation threshold AND deep-value eligibility
-Long: Composite crosses above the generational-value threshold AND capitulation eligibility
-Short: Composite crosses below the trim threshold
-Short: Composite crosses below the euphoria threshold AND euphoria eligibility
-Short: Composite crosses below the euphoria threshold AND cycle-top eligibility
-Exit: Long, composite crosses below the euphoria threshold AND cycle-top eligibility
+Calculation: Valuation metrics = chart close divided by each of three close SMAs: one on a longer aggregation timeframe, and two on a shorter aggregation timeframe with longer and shorter lookbacks; drawdown = (highest chart high since the start of the data − chart close) / highest chart high since the start of the data; momentum = RSI of close on the longer aggregation timeframe. For each aggregation timeframe, use the last completed bar when it is higher than the chart timeframe, the last completed intrabar within the chart bar when it is lower, and the current bar when it equals the chart timeframe.
+Calculation: Composite = map each available valuation metric, drawdown, and momentum to clamp((value − expensive anchor) / (deep-value anchor − expensive anchor) × 100, 0, 100), using separate anchors for each metric; average the available three mapped SMA ratios into one moving-average factor; then take the weighted average of the available moving-average factor, mapped drawdown, and mapped momentum, renormalizing weights over available components. An optional additional mapped component can use a chart data field as its source and participate in the same weighted average. The composite is unavailable when the available weights sum to zero.
+Calculation: Capitulation eligibility = capitulation gate disabled OR drawdown ≥ its threshold OR optional component enabled AND its source ≤ its threshold. Deep eligibility = capitulation gate disabled OR capitulation eligibility OR longer-timeframe SMA ratio ≤ its threshold.
+Calculation: Euphoria sign count = the number of available conditions satisfied among longer-timeframe SMA ratio ≥ its threshold, momentum ≥ its threshold, shorter-lookback shorter-timeframe SMA ratio ≥ its threshold, and optional component enabled AND its source ≥ its threshold. Top eligibility = euphoria gate disabled OR euphoria sign count ≥ 2. Euphoria eligibility = euphoria gate disabled OR euphoria sign count ≥ 1.
+Long: Composite ≥ accumulation threshold.
+Long: Composite crosses above the deep-accumulation threshold AND deep eligibility is true.
+Long: Composite crosses above the generational threshold AND capitulation eligibility is true.
+Exit: long, composite < hold threshold.
+Exit: long, composite crosses below the euphoria threshold AND euphoria eligibility is true.

@@ -1,6 +1,20 @@
-Calculation: Relative volume = 100 × Normalize(volume / average(volume, lookback)); Normalize(x) = 1.00 if x > 1.50, 0.90 if x > 1.20, 0.80 if x > 1.00, 0.70 if x > 0.80, 0.60 if x > 0.60, 0.50 if x > 0.40, 0.25 if x > 0.20, otherwise 0.10. Use the same lookback and averaging type for relative volume and relative price components.
-Calculation: Relative price strength = the average of: 2×(close−low)/(high−low)×100−100; (close−open)/(high−low)×100; 100×Normalize(abs(close−open)/average(abs(close−open), lookback))×sign(close−open); 2×(close−lowest low over 2 bars)/(highest high over 2 bars−lowest low over 2 bars)×100−100; (close−previous close)/(highest high over 2 bars−lowest low over 2 bars)×100; and 100×Normalize(abs(close−previous close)/average(abs(close−previous close), lookback))×sign(close−previous close). Use the same lookback and averaging type for both relative price components.
-Calculation: Smoothed Relative Rate of Flow = WMA of Relative Rate of Flow over the smoothing period, where Relative Rate of Flow = 2×(100−100/(1+average(positive bar flow, flow length)/average(absolute negative bar flow, flow length)))−100, bar flow = relative price strength × relative volume / 100. Apply the selected averaging type to both averages, using the same flow length and averaging type.
-Calculation: Normalized price = clamp(relative price strength, −100, 100). Normalized volume = clamp(relative volume, −100, 100). Effort-versus-result ratio = 100 × abs(normalized price) / normalized volume.
-Long: Smoothed Relative Rate of Flow crosses above 0 OR normalized price > 0 AND (effort-versus-result ratio >= 120 AND NOT (abs(normalized price) >= 80 AND normalized volume >= 80) OR effort-versus-result ratio <= 50 OR abs(normalized price) >= 80 AND normalized volume >= 80)
-Short: Smoothed Relative Rate of Flow crosses below 0 OR normalized price <= 0 AND (effort-versus-result ratio >= 120 AND NOT (abs(normalized price) >= 80 AND normalized volume >= 80) OR effort-versus-result ratio <= 50 OR abs(normalized price) >= 80 AND normalized volume >= 80)
+Calculation: Analysis bars = chart bars, or bars aggregated to a higher or lower timeframe; use the last completed analysis bar at each chart bar.
+Calculation: Normalization(x) = a positive, increasing step function of x divided by its lookback moving average; use the same step boundaries and outputs for volume, absolute candle body, and absolute close change. The lookback average is either an SMA or the selected flow moving-average type.
+Calculation: Normalized volume = normalization(volume), or the maximum normalization value when volume is missing.
+Calculation: Price strength = the mean of: close location within the current bar scaled from -1 to 1; (close - open) / (high - low); signed normalized absolute candle body; close location within the combined current and previous bar range scaled from -1 to 1; close change divided by the combined current and previous bar range; and signed normalized absolute close change. The combined range is the highest high minus the lowest low of the two bars.
+Calculation: Bar flow = price strength multiplied by normalized volume.
+Calculation: Smoothed relative flow = WMA smoothing of (average positive bar flow - average absolute negative bar flow) / (average positive bar flow + average absolute negative bar flow), using the same selected moving-average type and length for both averages. The bias uses a longer averaging length and may use a different moving-average type; both use the same WMA smoothing length.
+Calculation: Effort-result ratio = absolute price strength divided by normalized volume.
+Calculation: Large supported move = absolute price strength >= a price-strength threshold AND normalized volume >= a volume threshold.
+Long: Smoothed relative flow >= 0.
+Short: Smoothed relative flow < 0.
+Long: Smoothed relative flow using the longer bias length >= 0.
+Short: Smoothed relative flow using the longer bias length < 0.
+Long: Bar flow > 0.
+Short: Bar flow <= 0.
+Long: Price strength > 0 AND effort-result ratio >= the ease-of-move threshold AND large supported move is false.
+Short: Price strength <= 0 AND effort-result ratio >= the ease-of-move threshold AND large supported move is false.
+Long: Price strength > 0 AND effort-result ratio <= the compression threshold.
+Short: Price strength <= 0 AND effort-result ratio <= the compression threshold.
+Long: Price strength > 0 AND large supported move is true.
+Short: Price strength <= 0 AND large supported move is true.

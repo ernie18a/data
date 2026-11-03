@@ -1,3 +1,6 @@
-Short: Position is flat AND 5-minute RSI crosses down its overbought threshold on the last completed bar of a timeframe lower than the chart timeframe (previous RSI ≥ threshold AND current RSI < threshold)
-Short: Position is short AND averaging orders remain AND close ≥ the next uniformly spaced averaging level above the base entry
-Exit: Short, close ≥ average entry × (1 + stop-loss percentage) OR take-profit is armed AND close ≥ the lowest close since it armed × (1 + trailing percentage); arm the take-profit when close ≤ average entry × (1 − take-profit percentage)
+Calculation: Averaging deviation for rung k = initial deviation multiplied by the sum of the step multiplier raised to powers 0 through k−1.
+Calculation: Trailing minimum = lowest chart-bar close since the short position opened among bars whose close was at or below the average entry price multiplied by one minus the take-profit fraction; reset when the position is flat.
+Short: Chart-bar time is within the enabled backtest window AND position is flat AND RSI on the last completed lower-timeframe bar is below the threshold AND RSI on the preceding lower-timeframe bar was greater than or equal to the threshold.
+Short: Chart-bar time is within the enabled backtest window AND position is short AND the number of filled averaging orders is below the limit AND close is greater than or equal to the initial entry price multiplied by one plus the averaging deviation for the next unfilled rung. Evaluate only the next rung per chart bar.
+Exit: short, close is greater than or equal to the average entry price multiplied by one plus the stop-loss fraction.
+Exit: short, close is below the stop-loss level AND trailing minimum exists AND close is greater than or equal to the trailing minimum multiplied by one plus the trailing fraction.

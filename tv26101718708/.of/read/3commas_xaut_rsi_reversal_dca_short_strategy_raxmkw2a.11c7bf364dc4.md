@@ -1,5 +1,7 @@
-Calculation: Cumulative averaging-order deviation = first-order deviation plus each subsequent order's deviation, with each step multiplied by the configured step multiplier
-Short: Flat AND within the enabled backtest window AND RSI crosses below its configured level (previous RSI ≥ level AND current RSI < level)
-Short: Short position open AND within the enabled backtest window AND averaging orders remain AND close ≥ base entry × (1 + cumulative deviation for the next order)
-Exit: Short, close ≥ average entry × (1 + configured stop-loss percentage)
-Exit: Short, price has reached or fallen below average entry × (1 − configured take-profit percentage) and close ≥ (lowest close since reaching that level) × (1 + configured trailing percentage)
+Calculation: RSI cross-down = RSI of closes on a configurable timeframe is below a threshold and its preceding bar's RSI was at or above that threshold. On a higher timeframe, use the last completed bar; on a lower timeframe, use the last completed intrabar within the chart bar; on the chart timeframe, use the current bar.
+Calculation: Averaging-order deviation for rung k = the sum of k successive percentage steps, starting with a configured first step and multiplying each subsequent step by a configured step multiplier.
+Calculation: Trailing low = the lowest close since the position opened among bars whose close was at or below the take-profit price calculated from the average entry price on that bar; retain it until the position closes.
+Short: Within the enabled backtest date window AND position is flat AND RSI cross-down is true.
+Short: Within the enabled backtest date window AND position is short AND the number of averaging orders already triggered is below the configured maximum AND close is at or above the base entry price multiplied by one plus the averaging-order deviation for the next untriggered rung.
+Exit: short, close is at or above the average entry price multiplied by one plus the stop-loss percentage.
+Exit: short, a trailing low exists AND close is at or above the trailing low multiplied by one plus the trailing percentage.

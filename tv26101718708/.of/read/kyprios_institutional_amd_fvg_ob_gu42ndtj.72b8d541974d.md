@@ -1,20 +1,24 @@
-Calculation: Displacement candle = absolute difference between close and open exceeds the simple moving average of that absolute difference times a threshold
-Calculation: High volume = volume exceeds its simple moving average times a sensitivity multiplier
-Calculation: Bullish FVG = low > high two bars ago AND low - high two bars ago exceeds ATR times a gap threshold
-Calculation: Bearish FVG = high < low two bars ago AND low two bars ago - high exceeds ATR times a gap threshold
-Calculation: Confirmed swing high/low = a pivot high/low confirmed after the required bars to its right have completed
-Calculation: Current bullish trend = close crosses above the latest confirmed pivot high; current bearish trend = close crosses below the latest confirmed pivot low
-Long: low < lowest low over the range lookback bars AND close > that range low AND close > open AND absolute close-open exceeds ATR times a body threshold AND high volume AND within the permitted session
-Long: close > open AND close > previous bar's high AND displacement candle AND high volume AND close > the higher-timeframe EMA of close on its last completed bar AND within the permitted session AND bullish FVG
-Long: previous bar is bearish AND close > previous bar's high AND close > open AND close-open exceeds ATR times an impulse threshold AND close > the higher-timeframe EMA of close on its last completed bar AND high volume AND bullish order block
-Long: low < the latest confirmed swing low AND close > that swing low
-Long: close crosses above the latest confirmed pivot low AND close on the previous bar was at or below that pivot low
-Long: bullish trend AND close crosses above the latest confirmed pivot high AND close on the previous bar was at or below that pivot high AND displacement candle AND close > previous bar's high AND high volume
-Long: current confirmed pivot low is higher than the previous confirmed pivot low
-Short: high > the range high from the manipulation lookback bars ago AND close < that range high AND close < open AND absolute close-open exceeds ATR times a body threshold AND high volume AND within the permitted session
-Short: high > the latest confirmed swing high AND close < that swing high
-Short: close < open AND close < previous bar's low AND displacement candle AND high volume AND close < the higher-timeframe EMA of close on its last completed bar AND within the permitted session AND bearish FVG
-Short: previous bar is bullish AND close < previous bar's low AND close < open AND open-close exceeds ATR times an impulse threshold AND close < the higher-timeframe EMA of close on its last completed bar AND high volume AND bearish order block
-Short: close crosses below the latest confirmed pivot low AND close on the previous bar was at or above that pivot low
-Short: bearish trend AND close crosses below the latest confirmed pivot low AND close on the previous bar was at or above that pivot low AND displacement candle AND close < previous bar's low AND high volume
-Short: current confirmed pivot high is higher than the previous confirmed pivot high
+Calculation: Prior range high and low = highest high and lowest low over a configurable lookback, including the current bar; an offset refers to the value calculated that many bars earlier.
+Calculation: Confirmed pivot high or low = a high or low that is respectively the maximum or minimum over equal configurable numbers of bars before and after it; confirm it only after the later bars have completed. Keep the latest confirmed pivot and its bar index separately for each pivot lookback and side.
+Calculation: Displacement = absolute close-to-open body size > a configurable multiple of its simple moving average, including the current bar.
+Calculation: Volume confirmation = volume > a configurable multiple of its simple moving average, including the current bar; alternatively, this filter can be disabled.
+Calculation: Trend confirmation = close > EMA of close for long decisions or close < that EMA for short decisions, calculated on a higher timeframe using its last completed bar in historical data and its forming bar in real time; alternatively, this filter can be disabled.
+Calculation: Session confirmation = the bar's exchange-time hour is within either of two configurable sessions; alternatively, this filter can be disabled.
+Calculation: Long manipulation = low < prior range low at a configurable offset AND close > current prior range low AND close > open AND absolute close-to-open body size > a configurable multiple of ATR AND volume confirmation AND session confirmation.
+Calculation: Short manipulation = high > prior range high at a configurable offset AND close < current prior range high AND close < open AND absolute close-to-open body size > a configurable multiple of ATR AND volume confirmation AND session confirmation.
+Long: Long manipulation AND long trend confirmation AND close > previous high AND absolute close-to-open body size > a configurable multiple of ATR.
+Short: Short manipulation AND short trend confirmation AND close < previous low AND absolute close-to-open body size > a configurable multiple of ATR.
+Long: Low > high two bars ago AND low - high two bars ago > a configurable multiple of ATR AND close > open AND close > previous high AND displacement AND volume confirmation AND long trend confirmation AND session confirmation.
+Short: High < low two bars ago AND low two bars ago - high > a configurable multiple of ATR AND close < open AND close < previous low AND displacement AND volume confirmation AND short trend confirmation AND session confirmation.
+Long: Previous close < previous open AND close > previous high AND close > open AND close - open > a configurable multiple of ATR AND long trend confirmation AND volume confirmation.
+Short: Previous close > previous open AND close < previous low AND close < open AND open - close > a configurable multiple of ATR AND short trend confirmation AND volume confirmation.
+Long: Low < latest confirmed sweep pivot low AND close > that pivot low.
+Short: High > latest confirmed sweep pivot high AND close < that pivot high.
+Long: Close > latest confirmed change-of-character pivot high AND previous close <= that same pivot high AND that pivot's bar index differs from the last marked long change-of-character pivot index, with an undefined last index making the comparison false.
+Short: Close < latest confirmed change-of-character pivot low AND previous close >= that same pivot low AND that pivot's bar index differs from the last marked short change-of-character pivot index, with an undefined last index making the comparison false.
+Long: Close > latest confirmed break-of-structure pivot high AND previous close <= that same pivot high AND close > open AND close > previous high AND displacement AND volume confirmation AND that pivot's bar index differs from the last marked long break-of-structure pivot index, with an undefined last index making the comparison false.
+Short: Close < latest confirmed break-of-structure pivot low AND previous close >= that same pivot low AND close < open AND close < previous low AND displacement AND volume confirmation AND that pivot's bar index differs from the last marked short break-of-structure pivot index, with an undefined last index making the comparison false.
+Long: A newly confirmed structure pivot low > the preceding confirmed structure pivot low.
+Short: A newly confirmed structure pivot high > the preceding confirmed structure pivot high.
+Short: A newly confirmed structure pivot high < the preceding confirmed structure pivot high.
+Short: A newly confirmed structure pivot low < the preceding confirmed structure pivot low.

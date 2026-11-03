@@ -1,5 +1,9 @@
-Calculation: Fast moving average = SMA or EMA of close with a shorter lookback
-Calculation: Slow moving average = SMA or EMA of close with a longer lookback
-Calculation: CCI = Commodity Channel Index of close over a lookback
-Long: No open position AND on a confirmed chart bar, either (AND mode: the fast moving average crosses below the slow moving average on its configured signal timeframe AND CCI crosses below its configured oversold threshold on its configured signal timeframe, both within the configured keep-alive window measured in chart bars, with at least one signal firing on this chart bar) or (OR mode: either cross occurs); each signal uses its configured timeframe, higher or lower than the chart timeframe, with lookahead_off behavior (the bar still forming in realtime and the latest completed bar historically)
-Exit: Long, trailing enabled AND the highest high since entry (including the current bar) >= entry price × (1 + take-profit activation %) AND low <= highest high since entry × (1 − trailing deviation %) OR trailing disabled AND high >= entry price × (1 + take-profit activation %) OR stop loss enabled AND low <= entry price × (1 − stop-loss %)
+Calculation: MA cross = shorter-period SMA or EMA of close crosses below the longer-period average of the same type on the selected timeframe; for a higher timeframe use the last completed bar, and for a lower timeframe use the last completed lower-timeframe bar within the chart bar. Carry the last mapped result forward between updates.
+Calculation: CCI cross = CCI of close crosses below an oversold threshold on its selected timeframe; for a higher timeframe use the last completed bar, and for a lower timeframe use the last completed lower-timeframe bar within the chart bar. Carry the last mapped result forward between updates.
+Calculation: Entry peak = maximum of entry price and chart-bar highs from the entry bar through the current bar, inclusive.
+Long: CCI signal enabled AND CCI cross.
+Short: MA signal enabled AND MA cross.
+Long: No open deal AND ((combination mode is AND AND each enabled signal has occurred within the keep-alive window measured in chart bars AND at least one enabled signal occurs on the current bar) OR (combination mode is OR AND (MA cross OR CCI cross))).
+Exit: long, trailing enabled AND entry peak >= entry price × (1 + take-profit fraction) AND low <= entry peak × (1 - trailing-deviation fraction).
+Exit: long, trailing disabled AND high >= entry price × (1 + take-profit fraction).
+Exit: long, stop loss enabled AND low <= entry price × (1 - stop-loss fraction).

@@ -1,3 +1,5 @@
-Calculation: Upper/lower 25% daily ATR levels = previous completed daily close plus/minus 25% of ATR over the configured lookback of completed daily bars; round each level to the nearest tick. Daily bars are higher timeframe than the chart timeframe.
-Long: close > upper 25% daily ATR level
-Short: close < lower 25% daily ATR level
+Calculation: Reference close = last completed higher-timeframe close rounded to the price increment.
+Calculation: ATR distance = last completed higher-timeframe ATR rounded to the price increment multiplied by an expansion fraction.
+Calculation: Upper and lower levels = reference close plus or minus ATR distance, respectively, rounded to the price increment.
+Long: close > upper level OR close crosses above reference close.
+Short: close < lower level OR close crosses below reference close.

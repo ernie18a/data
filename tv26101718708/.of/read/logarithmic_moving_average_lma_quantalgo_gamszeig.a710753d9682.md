@@ -1,9 +1,8 @@
-Calculation: Logarithmic moving average = sum of each close in the lookback multiplied by its weight, divided by the sum of the weights; the weight for lag i is 1 / ln(max(i + steepness, 2))².
-Calculation: LMA slope = (current logarithmic moving average − its value 10 bars ago) / its value 10 bars ago × 100.
-Calculation: Trend quality = the square of the Pearson correlation between lag index and the natural logarithm of close over the lookback, clamped to [0, 1].
-Calculation: Log-return momentum = the sum of log(close / previous close) over the lookback × 252 / lookback.
-Calculation: Smoothed signal = the selected moving average of signal over the smoothing lookback, where signal = LMA slope × (0.5 + 0.5 × trend quality), multiplied by the momentum weight when the signal and log-return momentum have the same sign and absolute momentum exceeds its threshold.
-Long: Smoothed signal > 0 OR (smoothed signal > 0 and previous smoothed signal <= 0) OR (smoothed signal > long threshold and previous smoothed signal <= long threshold)
-Short: Smoothed signal < 0 OR (smoothed signal < 0 and previous smoothed signal >= 0) OR (smoothed signal < short threshold and previous smoothed signal >= short threshold)
-Exit: long, smoothed signal < long threshold and previous smoothed signal >= long threshold
-Exit: short, smoothed signal > short threshold and previous smoothed signal <= short threshold
+Calculation: Logarithmic moving average = sum of close[i] × weight[i] over the lookback, divided by the sum of all lookback weights, where i = 0 is the current bar and weight[i] = 1 / ln(max(i + steepness, 2))². For unavailable closes, omit the numerator term but retain its weight in the denominator.
+Calculation: Logarithmic momentum = sum of log returns over the moving-average lookback × annualization factor / moving-average lookback. Each log return is ln(close / previous close), or zero if either close is unavailable or nonpositive.
+Calculation: Trend quality = squared Pearson correlation between bar offset and ln(close) over the moving-average lookback, using only positive available closes, clamped to [0, 1]. Use zero correlation when the valid-point count does not exceed the minimum or the correlation denominator is zero.
+Calculation: Smoothed signal = a selected EMA, SMA, WMA, RMA, or VWMA of the raw signal. The raw signal is the percentage change in the logarithmic moving average over a slope lookback, multiplied by (1 + trend quality) / 2; use zero percentage change when the past average is unavailable or zero. Multiply the raw signal by the momentum weight when its sign equals the logarithmic momentum sign AND the absolute logarithmic momentum exceeds its cutoff.
+Long: Smoothed signal > 0.
+Short: Smoothed signal < 0.
+Exit: long, smoothed signal crosses below the positive long threshold.
+Exit: short, smoothed signal crosses above the negative short threshold.

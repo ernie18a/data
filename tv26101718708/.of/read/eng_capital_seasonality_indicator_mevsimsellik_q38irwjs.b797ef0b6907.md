@@ -1,3 +1,6 @@
-Calculation: Seasonal score = weighted win rate for historical returns in the current calendar month and week; monthly win rates use nested short-to-long lookbacks with greater weight on longer lookbacks, and the longer-lookback weekly win rate is combined with the monthly score at a lower weight. Historical returns use completed daily bars from matching calendar periods in prior years.
-Long: Seasonal score >= neutral threshold
-Short: Seasonal score < neutral threshold
+Calculation: Period win rate = For the current calendar month or week and each of four increasing year lookbacks, find matching calendar periods in prior years within a fixed historical bar window. For each year with data and a nonzero first close, calculate the return from its earliest close to its latest close. Divide the number of strictly positive returns by the number of valid returns; the win rate is unavailable if there are none. Recalculate at the start of the corresponding calendar period and retain the result between updates. Use bars from a fixed analysis timeframe: when higher than the chart timeframe, use the last completed bar; when lower, use the last available completed intrabar; when equal, use the current chart bar.
+Calculation: Seasonality score = Combine the four available monthly win rates using increasing weights for longer year lookbacks, normalized by their available weights; use a neutral fallback if none are available. Combine this monthly score with the longest-lookback weekly win rate, using a greater weight for the monthly score; use the neutral fallback if the weekly rate is unavailable.
+Long: Seasonality score >= neutral threshold
+Short: Seasonality score < neutral threshold
+Long: Any available monthly or weekly period win rate >= win-rate threshold
+Short: Any available monthly or weekly period win rate < win-rate threshold

@@ -1,10 +1,15 @@
-Calculation: Fibonacci Bollinger basis = selected moving average of selected price source over a lookback, optionally smoothed by a second selected moving average
-Calculation: Fibonacci Bollinger bands = basis ± level × ATR × multiplier × max(current ATR / max(ATR from one lookback ago, 0.001), 0.5); levels are 0.236, 0.382, 0.5, 0.618, 0.764, and 1.0
-Long: Buy signal crosses above 0 OR (long line-cross is enabled AND close crosses the selected line in the configured direction); datetime is within the configured date range
-Short: Sell signal crosses above 0 OR (short line-cross is enabled AND close crosses the selected line in the configured direction); datetime is within the configured date range
-Exit: Long, close-based profit percentage ≥ configured take-profit percentage OR close-based profit percentage ≤ negative configured stop-loss percentage
-Exit: Short, close-based profit percentage ≥ configured take-profit percentage OR close-based profit percentage ≤ negative configured stop-loss percentage
-Exit: Long, after close-based profit percentage reaches the configured break-even threshold, low reaches or falls below entry price
-Exit: Short, after close-based profit percentage reaches the configured break-even threshold, high reaches or exceeds entry price
-Exit: Long, if enabled, low reaches or falls below the selected Fibonacci Bollinger stop band; if enabled, high reaches or exceeds a selected take-profit band (the target is fixed at entry unless trailing is enabled, in which case it updates each bar)
-Exit: Short, if enabled, high reaches or exceeds the selected Fibonacci Bollinger stop band; if enabled, low reaches or falls below a selected take-profit band (the target is fixed at entry unless trailing is enabled, in which case it updates each bar)
+Calculation: Signal source = a selectable series derived from the available bar data; the long and short signal sources may differ.
+Calculation: Line source = a selectable series derived from the available bar data; the long and short line sources may differ.
+Calculation: Dynamic band = an optionally smoothed VWMA, HMA, SMA, EMA, DEMA, or TEMA of a selected price source, plus or minus a selected level times deviation times max(deviation / max(deviation from one band lookback ago, a small positive floor), a minimum multiplier). Deviation is ATR over the same lookback multiplied by a configurable factor; use current deviation when its historical value is unavailable. The basis itself is also selectable as a band.
+Calculation: Band exit price = the selected dynamic band on the first bar on which the position is observed; for a trailing stop or first target, replace it each bar with a separately selected dynamic band. Each target and stop has its own selectable band; the second and third targets remain fixed. A target can close a configured portion of the position and cannot fire again for that position.
+Calculation: Position return = (close - entry price) / entry price for a long, or (entry price - close) / entry price for a short.
+Long: datetime within the configured date range AND (long signal source crosses above zero OR enabled long line-cross condition: close crosses the long line source in the selected direction).
+Short: datetime within the configured date range AND (short signal source crosses above zero OR enabled short line-cross condition: close crosses the short line source in the selected direction).
+Exit: long, datetime within the configured date range AND short condition AND (opposite-signal closing enabled OR reversal enabled with short entries enabled).
+Exit: short, datetime within the configured date range AND long condition AND (opposite-signal closing enabled OR reversal enabled with long entries enabled).
+Exit: long, enabled percentage take-profit AND position return >= configured positive profit threshold OR enabled percentage stop-loss AND position return <= negative configured loss threshold.
+Exit: short, enabled percentage take-profit AND position return >= configured positive profit threshold OR enabled percentage stop-loss AND position return <= negative configured loss threshold.
+Exit: long, enabled break-even AND position return has reached the configured positive activation threshold since entry AND a subsequent bar's low <= entry price.
+Exit: short, enabled break-even AND position return has reached the configured positive activation threshold since entry AND a subsequent bar's high >= entry price.
+Exit: long, enabled active band stop AND low <= band stop price OR enabled active band target AND high >= band target price.
+Exit: short, enabled active band stop AND high >= band stop price OR enabled active band target AND low <= band target price.

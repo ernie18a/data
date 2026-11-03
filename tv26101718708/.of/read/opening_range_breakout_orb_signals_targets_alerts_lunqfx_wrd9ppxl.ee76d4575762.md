@@ -1,6 +1,11 @@
-Calculation: Opening range high/low = highest high and lowest low during the configured opening window from the exchange trading-day open, or during the configured custom session; fixed when the window ends
-Calculation: First and second targets = opening-range high plus the configured range-height multiple for an upside breakout, or opening-range low minus that multiple for a downside breakout; the second target is farther from the range than the first
-Long: Opening range is locked AND no breakout has occurred today AND within the configured trading day AND (close > opening-range high in close mode OR high > opening-range high in wick mode)
-Short: Opening range is locked AND no breakout has occurred today AND within the configured trading day AND (close < opening-range low in close mode OR (low < opening-range low in wick mode AND NOT (high > opening-range high)))
-Exit: long, close < opening-range high after an upside breakout and before the first target is hit OR high >= first target OR high >= second target
-Exit: short, close > opening-range low after a downside breakout and before the first target is hit OR low <= first target OR low <= second target
+Calculation: Opening range = highest high and lowest low of chart bars whose opening times fall within the configured opening-range window; start a new range when the window begins and lock it on the first bar outside the window. The window is anchored either to the open of the higher-timeframe trading-day bar still forming or to a configured session and timezone.
+Calculation: First breakout = the first confirmed chart bar after the range locks and within the configured trading-day window whose close exceeds the range high or falls below the range low; optionally use high and low instead of close. If both wick comparisons are true, select the upward breakout. In automatic mode, all bars are within the trading-day window. Reset breakout state when a new opening range begins.
+Calculation: Breakout targets = range high plus range height multiplied by each configured target multiplier for an upward breakout, or range low minus range height multiplied by each multiplier for a downward breakout. Track each target as hit when a subsequent confirmed bar's high reaches or exceeds an upward target or its low reaches or falls below a downward target. The first and second target multipliers are independently configurable.
+Long: First breakout direction = upward
+Short: First breakout direction = downward
+Long: First breakout direction = downward AND current bar is after the breakout and within the trading-day window AND no previous fakeout has occurred AND the first target was not hit on any previous bar after the breakout AND close > opening-range low
+Short: First breakout direction = upward AND current bar is after the breakout and within the trading-day window AND no previous fakeout has occurred AND the first target was not hit on any previous bar after the breakout AND close < opening-range high
+Long: close >= open
+Short: close < open
+Exit: long, first breakout direction = upward AND current bar is after the breakout and within the trading-day window AND high >= a breakout target AND that target was not hit on any previous bar after the breakout
+Exit: short, first breakout direction = downward AND current bar is after the breakout and within the trading-day window AND low <= a breakout target AND that target was not hit on any previous bar after the breakout

@@ -1,4 +1,3 @@
-Long: position is flat AND 14-period RSI of close on the chart timeframe, using the completed bar, is below the entry threshold AND datetime is within the configured backtest window
-Calculation: Safety-order trigger price = original base entry price × (1 − rung deviation); rung deviations increase from one order to the next
-Long: position is long AND datetime is within the configured backtest window AND close <= trigger price of the next unfilled safety order
-Exit: long, close >= average entry price × (1 + take-profit percentage)
+Long: position side is flat AND datetime is within the optional backtest window AND RSI of the last completed higher-timeframe bar, or the last completed lower-timeframe bar within the chart bar, is below the entry threshold
+Long: position side is long AND datetime is within the optional backtest window AND the number of averaging orders already placed is below the ladder length AND close <= initial entry price × (1 − the next ladder deviation); use sequential ladder deviations that increase with order number and place at most one averaging order per bar
+Exit: long, close >= average position entry price × (1 + take-profit percentage)

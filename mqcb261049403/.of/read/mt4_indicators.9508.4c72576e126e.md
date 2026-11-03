@@ -1,2 +1,5 @@
-Long: any of the four moving averages is greater than its value on the previous bar, OR the selected OHLC-derived price is greater than any of the first three moving averages, OR the first moving average is greater than the fourth moving average
-Short: any of the four moving averages is less than its value on the previous bar, OR the selected OHLC-derived price is less than any of the first three moving averages, OR the first moving average is less than the fourth moving average
+Calculation: Moving averages = four independently configurable moving averages of selected OHLC-derived prices, ordered from longer to shorter lookback and from lower to higher timeframe; each timeframe is at least the chart timeframe. Use the bar still forming for a higher timeframe and the current bar for the chart timeframe.
+Long: Any moving average is greater than or equal to its value on the preceding bar of its own timeframe.
+Short: Any moving average is less than its value on the preceding bar of its own timeframe.
+Long: The selected price of any of the first three moving averages is greater than that moving average OR the selected price of the first moving average is greater than the fourth moving average.
+Short: The selected price of any of the first three moving averages is less than or equal to that moving average OR the selected price of the first moving average is less than or equal to the fourth moving average.

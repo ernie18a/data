@@ -1,5 +1,16 @@
-Calculation: Adaptive VWAP bands = volume-weighted average of (high+low)/2, using either a rolling window or accumulation since the session began, plus/minus a smoothed weighted standard deviation multiplied by a base factor, a volume expansion factor based on current volume divided by its 20-bar average, and an ADX expansion factor. The weighted standard deviation uses the same rolling window or session accumulation as the VWAP.
-Calculation: Wick ratio = moving average of the chart bar’s wick-volume fraction. Calculate wick volume from lower-timeframe bars within the chart bar, allocating each bar’s volume in proportion to its range outside the chart bar’s open-close body; use lower-timeframe bars available within the current chart bar, including a bar still forming.
-Calculation: Extreme-zone intensity = clamp((wick ratio - 0.55) / 0.45, 0, 1), multiplied by 1 when ADX is at least 70% of its strong-trend threshold, or 0.45 otherwise; when ADX filtering is disabled, multiply by 1. Upper intensity is this value only when the chart bar’s high exceeds the upper adaptive VWAP band by an offset times weighted standard deviation, otherwise 0. Lower intensity is this value only when the chart bar’s low falls below the lower adaptive VWAP band by the same offset, otherwise 0.
-Long: lower intensity > 0.6 AND wick ratio >= wick-volume threshold
-Short: upper intensity > 0.6 AND wick ratio >= wick-volume threshold
+Calculation: VWAP center and deviation = For the selected rolling window or current daily session, compute the volume-weighted mean and standard deviation of (high + low) / 2. In session mode, use the current bar's midpoint and zero deviation when cumulative volume is zero.
+Calculation: Adaptive bands = EMA of VWAP center ± deviation × base multiplier × (1 + max(0, volume / SMA(volume) − 1) × volume sensitivity) × (1 + ADX / 100 × ADX influence). Use a volume ratio of 1 when average volume is not positive and an ADX of 0 when unavailable.
+Calculation: Smoothed wick ratio = For each lower-timeframe bar within the current chart bar, including the still-forming lower-timeframe bar, allocate its volume between body and wick according to the fraction of its high–low range overlapping the chart bar's open–close body; use a minimum price increment as the denominator floor. Divide summed wick volume by summed volume, or use zero when summed volume is zero, then take its SMA. If no lower-timeframe bars are available, use the chart bar's body-to-range fraction instead.
+Calculation: Wick intensity = clamp((smoothed wick ratio − wick intensity baseline) / (1 − wick intensity baseline), 0, 1) × ADX gate. The gate is 1 when ADX filtering is disabled or ADX meets its gate threshold; otherwise it is a reduced positive multiplier.
+Calculation: Upper intensity = wick intensity when high > upper adaptive band + zone offset × deviation; otherwise 0. Lower intensity = wick intensity when low < lower adaptive band − zone offset × deviation; otherwise 0.
+Calculation: Session-average upper and lower intensity = arithmetic mean of the respective intensity from the start of the current daily session through the current bar, including zero values.
+Long: Lower intensity > 0
+Short: Upper intensity > 0
+Long: Lower intensity > lower intensity display threshold
+Short: Upper intensity > upper intensity display threshold
+Long: Session-average lower intensity > session-average threshold
+Short: Session-average upper intensity > session-average threshold
+Long: Lower intensity > buy alert threshold AND smoothed wick ratio >= wick ratio threshold
+Short: Upper intensity > sell alert threshold AND smoothed wick ratio >= wick ratio threshold
+Long: Positive directional indicator > negative directional indicator
+Short: Positive directional indicator <= negative directional indicator

@@ -1,17 +1,11 @@
-Calculation: PDH = high of the last completed daily bar (higher timeframe)
-Calculation: PDL = low of the last completed daily bar (higher timeframe)
-Calculation: PWH = high of the last completed weekly bar (higher timeframe)
-Calculation: PWL = low of the last completed weekly bar (higher timeframe)
-Calculation: VWAP slope (%) = (current chart-timeframe VWAP − VWAP from the longer lookback ago) / that earlier VWAP × 100
-Long: close > PDH AND previous close <= PDH
-Long: close > PDL AND previous close <= PDL
-Long: close > VWAP AND close > open AND close < PDH AND each of the shorter setup-lookback prior bars closed below its corresponding VWAP
-Long: close > PWH AND previous close <= PWH
-Long: close > PWL AND previous close <= PWL
-Short: high >= PDH AND close < PDH AND previous high < PDH
-Short: close < PDH AND previous close > PDH AND a PDH breakout occurred within the recent sweep window
-Short: close < PDL AND previous close >= PDL
-Short: close < VWAP AND close < open AND close > PDL AND each of the shorter setup-lookback prior bars closed above its corresponding VWAP
-Short: high >= PWH AND close < PWH AND previous high < PWH
-Short: close < PWL AND previous close >= PWL
-Exit: long, close > PDH AND VWAP slope (%) <= the slope threshold
+Calculation: Prior-period high and low = high and low of the last completed higher-timeframe bar; use a shorter higher timeframe and a longer higher timeframe.
+Calculation: VWAP = cumulative sum of ((high + low + close) / 3) * volume divided by cumulative volume, reset at each session.
+Calculation: VWAP slope = (VWAP - VWAP a lookback number of chart bars ago) / VWAP a lookback number of chart bars ago; require the past VWAP to be nonzero.
+Long: Close > prior-period high AND previous close <= current prior-period high, for either higher timeframe.
+Long: Close > prior-period low AND previous close <= current prior-period low, for either higher timeframe.
+Long: Each of the preceding setup-lookback bars closed below its own VWAP AND close > VWAP AND close > open AND close < shorter-higher-timeframe prior-period high.
+Short: High >= prior-period high AND close < prior-period high AND previous high < current prior-period high, for either higher timeframe.
+Short: Close < prior-period low AND previous close >= current prior-period low, for either higher timeframe.
+Short: Close < shorter-higher-timeframe prior-period high AND previous close > current shorter-higher-timeframe prior-period high AND the most recent bar where close > that bar's prior-period high AND previous close <= that bar's prior-period high occurred within the sweep lookback.
+Short: Each of the preceding setup-lookback bars closed above its own VWAP AND close < VWAP AND close < open AND close > shorter-higher-timeframe prior-period low.
+Exit: long, close > shorter-higher-timeframe prior-period high AND VWAP slope <= positive slope threshold.

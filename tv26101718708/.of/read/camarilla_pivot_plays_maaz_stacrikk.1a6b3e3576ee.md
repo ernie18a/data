@@ -1,4 +1,15 @@
-Calculation: Camarilla levels = from the last completed daily bar: CP = close; range = high − low; R3/S3 = CP ± 1.1 × range / 4; R4/S4 = CP ± 1.1 × range / 2. The daily timeframe is higher than an intraday chart timeframe.
-Calculation: Relative volume = current chart-bar volume / 20-bar simple moving average of chart-bar volume.
-Long: low crosses below S3 (current low < S3 and previous low ≥ S3) AND close > S3 OR close crosses above R4 (current close > R4 and previous close ≤ R4) AND (high-volume filter disabled OR relative volume ≥ configured threshold) AND close > open
-Short: high crosses above R3 (current high > R3 and previous high ≤ R3) AND close < R3 OR close crosses below S4 (current close < S4 and previous close ≥ S4) AND (high-volume filter disabled OR relative volume ≥ configured threshold) AND close < open
+Calculation: Session bars = extended-session bars at the chart timeframe, capped at a shorter timeframe when the chart timeframe exceeds the cap; use the last completed bar on historical data and the forming bar in real time. Define regular, premarket, and postmarket sessions from datetime and the configured session schedule.
+Calculation: Regular snapshot = at the start of postmarket, save the preceding session bar's close and the high and low from the latest regular-session start through that preceding bar; retain the prior snapshot. During postmarket, use the prior snapshot; otherwise use the latest snapshot. Extended snapshot = at the start of premarket, save the preceding session bar's close and the high and low from the latest premarket start through that preceding bar; retain the prior snapshot.
+Calculation: Session selection = choose regular or extended by configuration; in automatic mode choose extended when the maximum of the regular snapshot high, preceding postmarket high, and developing premarket high exceeds the regular snapshot high by more than a fraction of ATR, or the regular snapshot low exceeds the minimum of the regular snapshot low, preceding postmarket low, and developing premarket low by more than that fraction of ATR. ATR uses the last completed higher-timeframe bar.
+Calculation: Pivot close = the close in the selected snapshot; prior pivot close = the close in the preceding snapshot of the same session type. Pivot high = the high in the selected snapshot. Pivot low = the extended snapshot low only when extended is selected both now and on the preceding chart bar; otherwise the regular snapshot low.
+Calculation: R3 and S3 = pivot close plus and minus, respectively, a fixed fraction of pivot high minus pivot low. R4 and S4 = pivot close plus and minus, respectively, a larger fixed fraction of pivot high minus pivot low.
+Calculation: Previous pivot width = R3 minus S3 as of the chart bar immediately before the current premarket start. Current pivot width = current R3 minus current S3.
+Calculation: Relative volume = current volume divided by its simple moving average, or a neutral fallback value when that average is not positive.
+Long: Pivot close > prior pivot close AND current pivot width > previous pivot width multiplied by one plus a width threshold.
+Long: Pivot close > prior pivot close AND current pivot width <= previous pivot width multiplied by one plus a width threshold.
+Short: Pivot close < prior pivot close AND current pivot width > previous pivot width multiplied by one plus a width threshold.
+Short: Pivot close < prior pivot close AND current pivot width <= previous pivot width multiplied by one plus a width threshold.
+Long: Low crosses below S3 AND close > S3.
+Short: High crosses above R3 AND close < R3.
+Long: Close crosses above R4 AND close > open AND (volume filter disabled OR relative volume >= volume threshold).
+Short: Close crosses below S4 AND close < open AND (volume filter disabled OR relative volume >= volume threshold).

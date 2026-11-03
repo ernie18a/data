@@ -1,5 +1,7 @@
-Calculation: Same-time relative volume = current bar volume divided by the mean volume of bars opening at the same exchange-local clock time on prior observed calendar dates, excluding the current date
-Calculation: Net close progress = (current close - previous close) / ATR of the previous completed bar
-Calculation: Close location = (close - low) / (high - low); use 0.5 when high equals low
-Long: Matching historical sample count >= minimum required AND historical mean volume > 0 AND current volume >= 0 AND previous-bar ATR > 0 AND same-time relative volume >= high-activity threshold AND net close progress >= directional-progress threshold AND close location >= upper-edge threshold
-Short: Matching historical sample count >= minimum required AND historical mean volume > 0 AND current volume >= 0 AND previous-bar ATR > 0 AND same-time relative volume >= high-activity threshold AND net close progress <= -directional-progress threshold AND close location <= lower-edge threshold
+Calculation: Same-time volume baseline = mean of nonmissing, nonnegative volumes at the current bar's opening clock minute on a configured number of prior observed exchange-calendar dates, excluding the current date; use the last recorded volume for repeated clock minutes on a date.
+Calculation: Matching sample count = number of volumes included in the same-time volume baseline.
+Calculation: Same-time relative volume = current volume / same-time volume baseline.
+Calculation: Net progress = (close - previous close) / previous bar's ATR.
+Calculation: Close location = (close - low) / (high - low) when high > low, otherwise 0.5.
+Long: Matching sample count >= minimum sample count AND same-time volume baseline > 0 AND current volume >= 0 AND previous close is available AND previous bar's ATR > 0 AND same-time relative volume >= high-volume threshold AND absolute net progress > low-progress threshold AND net progress >= directional-progress threshold AND close location >= 1 - edge-zone fraction.
+Short: Matching sample count >= minimum sample count AND same-time volume baseline > 0 AND current volume >= 0 AND previous close is available AND previous bar's ATR > 0 AND same-time relative volume >= high-volume threshold AND absolute net progress > low-progress threshold AND net progress <= -directional-progress threshold AND close location <= edge-zone fraction.

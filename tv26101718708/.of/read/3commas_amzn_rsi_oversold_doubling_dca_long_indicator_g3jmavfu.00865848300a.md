@@ -1,4 +1,4 @@
-Long: flat AND chart-timeframe RSI < oversold threshold
-Long: long position AND close ≤ base entry × (1 − next unfilled safety-order deviation)
-Calculation: Average entry = total cost of base and filled safety orders ÷ total quantity
-Exit: long, close ≥ average entry × (1 + take-profit percentage)
+Calculation: Average entry price = sum of the quote amounts of the base entry and all filled averaging orders divided by the sum of each fill's quote amount divided by its fill close; include any averaging order filled on the current bar.
+Long: Date filter is disabled OR bar datetime is within the inclusive configured date window; AND position is flat AND RSI of close is below its threshold. For a higher RSI timeframe, use the last completed bar on historical data and the still-forming bar in real time; for the chart timeframe, use the current bar; for a lower RSI timeframe, use the last completed intrabar.
+Long: Date filter is disabled OR bar datetime is within the inclusive configured date window; AND position is long AND fewer than five averaging orders have filled AND close <= base entry price × (1 − next averaging order's deviation percentage). Fill only the next order in sequence, at most one per chart bar, at close; each order has its own deviation and quote amount.
+Exit: long, (date filter is disabled OR bar datetime is within the inclusive configured date window) AND close >= average entry price × (1 + take-profit percentage). Evaluate the averaging order before the exit on each bar.

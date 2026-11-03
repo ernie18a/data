@@ -1,15 +1,16 @@
-Calculation: Smoothed %K = stochastic %K, smoothed by two successive exponential moving averages
-Calculation: %D = simple moving average of smoothed %K, using a shorter lookback than the stochastic lookback
-Calculation: Net pressure = 100 × EMA of [(close − low)/max(high − low, minimum tick) − (high − close)/max(high − low, minimum tick)] × (volume / its moving average)
-Calculation: Bullish armed state = smoothed %K reached the extreme oversold threshold within the arming window
-Calculation: Bearish armed state = smoothed %K reached the extreme overbought threshold within the arming window
-Calculation: Bullish strength = count of: %K crosses above %D; bullish armed state or %K at/below the oversold threshold; %K rises on each of the last two bars; net pressure > 0
-Calculation: Bearish strength = count of: %K crosses below %D; bearish armed state or %K at/above the overbought threshold; %K falls on each of the last two bars; net pressure < 0
-Long: %K crosses above %D AND (bullish armed state, if explosion-first is required) AND bullish strength ≥ minimum strength AND (mid-range noise filter is disabled OR %K is outside the mid-range noise band) AND (MTF bias filter is disabled OR higher-timeframe %K > its midline AND higher-timeframe %K > higher-timeframe %D AND higher-timeframe net pressure > 0) AND (MTF slope filter is disabled OR higher-timeframe %K slope > 0 AND higher-timeframe %D slope ≥ 0)
-Short: %K crosses below %D AND (bearish armed state, if explosion-first is required) AND bearish strength ≥ minimum strength AND (mid-range noise filter is disabled OR %K is outside the mid-range noise band) AND (MTF bias filter is disabled OR higher-timeframe %K < its midline AND higher-timeframe %K < higher-timeframe %D AND higher-timeframe net pressure < 0) AND (MTF slope filter is disabled OR higher-timeframe %K slope < 0 AND higher-timeframe %D slope ≤ 0)
-Long: %K > its midline AND %K > %D AND net pressure > 0
-Short: %K < its midline AND %K < %D AND net pressure < 0
-Long: bullish armed state AND %K < its oversold threshold
-Short: bearish armed state AND %K > its overbought threshold
-Long: net pressure > 10 OR net pressure crosses above 0
-Short: net pressure < −10 OR net pressure crosses below 0
+Calculation: Stochastic K = EMA of an EMA of the stochastic oscillator of close over its high-low lookback; stochastic D = SMA of K over its signal lookback.
+Calculation: Net pressure = 100 × EMA(((close − low) − (high − close)) / (high − low) × volume / SMA(volume), pressure lookback); use zero for the candle-position fraction when high = low, and use 1 for normalized volume when its SMA is not positive.
+Calculation: Bull and bear armed states = remember the most recent bar where K is at or beyond the extreme oversold or extreme overbought level, respectively; the state is true through the configured number of bars after that bar. Refresh the remembered bar on every qualifying extreme and clear it after the corresponding raw reversal, before applying external filters.
+Calculation: Bull reversal strength = sum of the indicators K crosses above D, bull armed OR K ≤ oversold level, K > previous K AND previous K > K two bars ago, and net pressure > 0. Bear reversal strength = sum of the indicators K crosses below D, bear armed OR K ≥ overbought level, K < previous K AND previous K < K two bars ago, and net pressure < 0.
+Calculation: Raw bull reversal = K crosses above D AND (arming is disabled OR bull armed) AND bull reversal strength ≥ minimum strength AND (midrange filter is disabled OR K ≤ lower midrange boundary OR K ≥ upper midrange boundary). Raw bear reversal = K crosses below D AND (arming is disabled OR bear armed) AND bear reversal strength ≥ minimum strength AND (midrange filter is disabled OR K ≤ lower midrange boundary OR K ≥ upper midrange boundary).
+Calculation: Bull bias = K > midpoint AND K > D AND net pressure > 0. Bear bias = K < midpoint AND K < D AND net pressure < 0. Bull slope = K > previous K AND D ≥ previous D. Bear slope = K < previous K AND D ≤ previous D.
+Calculation: Active oscillator, pressure, armed states and raw reversals use the chart timeframe in chart and bias modes, or the last completed higher-timeframe bar in strict mode. Active bias and slope use the chart timeframe in chart mode, or the last completed higher-timeframe bar in bias and strict modes. Higher-timeframe calculations are performed on higher-timeframe bars before their results are mapped to chart bars.
+Long: Raw bull reversal is true AND its previous chart-bar value is false AND (bias filter is disabled OR active bull bias is true) AND (slope filter is disabled OR active bull slope is true).
+Short: Raw bear reversal is true AND its previous chart-bar value is false AND (bias filter is disabled OR active bear bias is true) AND (slope filter is disabled OR active bear slope is true).
+Long: Active K ≤ oversold level OR active K > midpoint OR active net pressure > positive pressure-background threshold OR active net pressure crosses above zero.
+Short: Active K ≥ overbought level OR active K < midpoint OR active net pressure < negative pressure-background threshold OR active net pressure crosses below zero.
+Long: Active bull bias is true OR active bull slope is true OR active bull armed is true.
+Short: Active bear bias is true OR active bear slope is true OR active bear armed is true.
+Long: Selected candle-source bull bias is true OR selected candle-source bull armed is true OR selected candle-source net pressure > positive candle-pressure threshold.
+Short: Selected candle-source bear bias is true OR (selected candle-source bear armed is true AND selected candle-source bull armed is false) OR selected candle-source net pressure < negative candle-pressure threshold.
+Calculation: Selected candle source is the chart timeframe, the last completed higher-timeframe bar, or the active source; for active bias use the active bias timeframe, and for active armed state and pressure use the active oscillator timeframe.

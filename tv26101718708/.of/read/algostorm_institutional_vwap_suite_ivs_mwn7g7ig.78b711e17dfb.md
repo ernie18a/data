@@ -1,7 +1,4 @@
-Calculation: Daily VWAP = volume-weighted average of (high + low + close) / 3 from the calendar-day open through the current chart bar.
-Calculation: Rolling VWAP = volume-weighted average of (high + low + close) / 3 over the configured trailing time window, including the current chart bar.
-Calculation: NY VWAP = volume-weighted average of (high + low + close) / 3 from the configured New York session start through the current chart bar; reset is triggered by the lower-timeframe session anchor window.
-Calculation: European/London VWAP = volume-weighted average of (high + low + close) / 3 from the configured European session start through the current chart bar; reset is triggered by the lower-timeframe session anchor window.
-Calculation: Asian/Pacific VWAP = volume-weighted average of (high + low + close) / 3 from the configured Asian/Pacific session start through the current chart bar; reset is triggered by the lower-timeframe session anchor window.
-Long: close crosses above Daily VWAP OR close crosses above Rolling VWAP OR close crosses above NY VWAP OR close crosses above European/London VWAP OR close crosses above Asian/Pacific VWAP
-Short: close crosses below Daily VWAP OR close crosses below Rolling VWAP OR close crosses below NY VWAP OR close crosses below European/London VWAP OR close crosses below Asian/Pacific VWAP
+Calculation: Anchored VWAP = sum(((high + low + close) / 3) * volume) / sum(volume), accumulated from the first available bar and reset at each anchor; use separate calendar-day, New York, European, and Asian session anchors, with session anchors specified in New York local time.
+Calculation: Rolling VWAP = sum(((high + low + close) / 3) * volume) / sum(volume) over chart bars in a trailing time window, retaining at least a minimum number of the most recent bars; evict the oldest bars while they are older than the window and more than the minimum remain.
+Long: Close crosses above any anchored VWAP or rolling VWAP: current close > current VWAP AND previous close <= previous VWAP.
+Short: Close crosses below any anchored VWAP or rolling VWAP: current close < current VWAP AND previous close >= previous VWAP.

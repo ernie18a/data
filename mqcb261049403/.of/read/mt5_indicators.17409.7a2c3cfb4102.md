@@ -1,2 +1,2 @@
-Long: close > high - (high - low) / 3
-Short: close < low + (high - low) / 3
+Long: The close of the forming higher-timeframe bar is greater than its high minus one third of its high-low range AND its open differs from its close.
+Short: The close of the forming higher-timeframe bar is less than its low plus one third of its high-low range OR (its close is greater than its high minus one third of its high-low range AND its open equals its close).

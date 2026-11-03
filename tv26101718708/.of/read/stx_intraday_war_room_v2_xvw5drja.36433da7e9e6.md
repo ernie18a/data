@@ -1,25 +1,34 @@
-Calculation: Fast/slow EMA direction = +1 when the shorter-lookback EMA of close is above the longer-lookback EMA, -1 when below, otherwise 0; use the last completed higher-timeframe bar, with the same lookbacks on all three higher timeframes.
-Calculation: Full bias = the common nonzero EMA direction when all three higher-timeframe directions agree; otherwise 0.
-Calculation: Swing structure = up when the latest confirmed pivot high and low are both higher than their respective preceding pivots; down when both are lower; otherwise retain the prior direction. Use the same pivot lookback on highs and lows.
-Calculation: OTE zone = the interval between the latest confirmed swing high minus 0.618 and 0.786 of the swing range; a bar is in the zone when its high-low range overlaps the interval.
-Calculation: Range filter = ADX is below its threshold on the chart timeframe.
-Calculation: M15 bullish order block = the preceding down bar's high-low range when a subsequent up bar has body/range at least the displacement threshold and closes above the preceding bar's high; bearish order block is the reverse. Use completed lower-timeframe bars.
-Calculation: Bullish order-block rejection = after a chart bar closes above the bullish block's top, a bar overlaps the block, closes up, touches or passes the top with its low, and its lower wick is at least the rejection fraction of its range. Bearish rejection is the reverse.
-Calculation: Sniper score = count of present setup-direction confirmations among displacement, fair-value gap, order-block retest, and shift, minus one if an opposite-direction displacement occurs, floored at zero. Evaluate the lower-timeframe bars within the chart bar; a displacement has body/range above its threshold, a fair-value gap is a three-bar gap, a shift breaks the running prior high/low, and a retest is an order-block touch.
-Long: full bias is up AND the chart bar overlaps the OTE zone AND swing structure is not down AND ADX is not below its threshold AND macro block is off AND bullish order-block rejection AND lower-timeframe direction agrees with full bias AND sniper score is at least its threshold.
-Short: full bias is down AND the chart bar overlaps the OTE zone AND swing structure is not up AND ADX is not below its threshold AND macro block is off AND bearish order-block rejection AND lower-timeframe direction agrees with full bias AND sniper score is at least its threshold.
-Calculation: Market-structure event = bullish BOS when structure trend is up and close crosses above the latest pivot high; bearish BOS when trend is down and close crosses below the latest pivot low. CHoCH is the opposite-direction close crossing the protected pivot low/high, respectively; it changes the trend to the crossing direction. Use confirmed pivots and chart-timeframe closes.
-Long: bullish BOS OR bullish CHoCH.
-Short: bearish BOS OR bearish CHoCH.
-Calculation: Equal-high/low sweep = at least two of the preceding lookback bars have highs (or lows) within the sweep tolerance of the preceding lookback's highest high (or lowest low); a high sweep has current high above that level and close below it, and a low sweep has current low below that level and close above it.
-Long: equal-low sweep.
-Short: equal-high sweep.
-Long: bullish CHoCH AND a low sweep occurred within the sweep lookback.
-Short: bearish CHoCH AND a high sweep occurred within the sweep lookback.
-Long: latest two confirmed pivot lows are within the double-bottom tolerance.
-Short: latest two confirmed pivot highs are within the double-top tolerance.
-Long: full bias is up.
-Short: full bias is down.
-Calculation: Effective stop = initial stop until price reaches entry plus (or minus for short) 70% of the absolute distance from entry to target 1; after that, effective stop is entry. Initial long stop is OTE bottom minus the stop buffer; initial short stop is OTE top plus the stop buffer.
-Exit: long, low <= effective stop OR high >= target 3.
-Exit: short, high >= effective stop OR low <= target 3.
+Calculation: Confirmed pivot high/low = a high/low that is the highest/lowest over equal configurable numbers of bars before and after it, available only after the right-hand bars complete. Retain the latest two confirmed highs and lows.
+Calculation: Structure direction = initially neutral; change to up when both latest confirmed pivot high and low exceed their respective preceding pivots, or down when both are lower; otherwise retain the previous direction.
+Calculation: Break structure state = initially neutral; initialize to up or down when both latest pivot highs and lows respectively rise or fall. On initialization set protected high and low to the latest pivot high and low. While state is nonnegative, replace protected low with each newly confirmed pivot low; while nonpositive, replace protected high with each newly confirmed pivot high. Evaluate breaks against these updated levels. On a downward change of character set state down and both protected levels to the latest pivots; on an upward change set state up and both protected levels to the latest pivots. Otherwise, on an upward continuation break set protected low to the latest pivot low; on a downward continuation break set protected high to the latest pivot high. Process changes of character before continuation breaks.
+Calculation: Equal-high liquidity level = highest high of a configurable number of preceding chart bars; it qualifies when at least two of those highs are within a configurable price tolerance of it. Equal-low liquidity level = lowest low of those bars, qualified analogously.
+Calculation: Directional bias = the sign of short-period EMA minus long-period EMA on each of three successively shorter configurable timeframes. Use the last completed bar when a timeframe is higher than the chart timeframe and the last available intrabar when it is lower. Full bias is up or down only when all three signs agree and are nonzero. Aggregate bias is the sign of their sum.
+Calculation: Order block = on a configurable timeframe, retain the high and low of the preceding bearish bar when the current bullish bar closes above its high and its absolute body divided by its range is at least a configurable threshold; retain bearish blocks analogously with bullish preceding bars and a close below their low. A zero-range bar has body ratio zero. Use the last completed bar if this timeframe is higher than the chart timeframe, or the last available intrabar if lower. A new block resets its armed state; arm the bullish block when chart close exceeds its high and the bearish block when chart close falls below its low, including on the reset bar. Each remains armed until replaced.
+Calculation: Retracement zone = the interval between two configurable retracement fractions of the distance from the latest confirmed pivot high to the latest confirmed pivot low, subtracted from that high; require the high to exceed the low. Its midpoint is the planned entry.
+Calculation: Sniper score = for the direction of full bias, inspect the lower-timeframe bars within the current chart bar, requiring at least three. Add one each if any bar has a same-direction body-to-range ratio above a configurable threshold; any bar has a same-direction three-bar gap, with its low above the high two bars earlier for up or its high below the low two bars earlier for down; the chart bar touches the armed same-direction order block; or any intrabar close exceeds the running maximum high of preceding intrabars for up or falls below the running minimum low for down. Initialize the running extrema with the first intrabar and update them after evaluating each intrabar. Subtract one if any intrabar has an opposite-direction body-to-range ratio above the threshold, and floor the score at zero. A zero-range intrabar has body ratio zero.
+Calculation: Sniper confirmation = full bias is nonzero, the sign of short-period EMA minus long-period EMA on a fourth configurable timeframe equals full bias, and sniper score is at least a configurable minimum. Use the last completed fourth-timeframe bar if higher than the chart timeframe, or the last available intrabar if lower.
+Calculation: Entry targets and stops = at entry, save the retracement-zone midpoint, zone bounds, and latest pivot amplitude clamped between configurable minimum and maximum distances. The first and final targets equal the midpoint plus the signed clamped amplitude multiplied by respectively a smaller and larger configurable extension, less a signed configurable buffer. Initial stop is the lower zone bound minus a configurable offset for a long, or the upper bound plus that offset for a short. Once high reaches entry price plus a configurable fraction of the absolute distance from entry price to the first target for a long, or low reaches entry price minus that distance for a short, the stop becomes entry price. Apply this activation before testing exits on the same bar.
+Long: Short-period EMA > long-period EMA on any one of the three bias timeframes.
+Short: Short-period EMA < long-period EMA on any one of the three bias timeframes.
+Long: Aggregate bias > 0.
+Short: Aggregate bias < 0.
+Long: Full bias > 0.
+Short: Full bias < 0.
+Long: Structure direction = up.
+Short: Structure direction = down.
+Long: Absolute difference between the latest two confirmed pivot lows <= configurable tolerance AND absolute difference between the latest two confirmed pivot highs > configurable tolerance or the preceding pivot high is unavailable.
+Short: Absolute difference between the latest two confirmed pivot highs <= configurable tolerance.
+Long: Break structure state = up AND close > latest confirmed pivot high AND previous close <= that same pivot high.
+Short: Break structure state = down AND close < latest confirmed pivot low AND previous close >= that same pivot low.
+Long: Break structure state = down AND close > protected high AND previous close <= that same protected high.
+Short: Break structure state = up AND close < protected low AND previous close >= that same protected low.
+Long: Equal-low liquidity level qualifies AND low < that level AND close > that level AND no equal-high sweep occurs on the same bar.
+Short: Equal-high liquidity level qualifies AND high > that level AND close < that level.
+Long: A bullish order block is created.
+Short: A bearish order block is created.
+Long: Sniper confirmation = true AND full bias > 0.
+Short: Sniper confirmation = true AND full bias < 0.
+Long: Full bias > 0 AND chart bar overlaps the retracement zone AND structure direction >= neutral AND ADX >= configurable threshold AND macro blocking is disabled AND bullish order block is armed AND chart bar overlaps that block AND close > open AND lower wick >= configurable fraction of chart bar range AND sniper confirmation = true.
+Short: Full bias < 0 AND chart bar overlaps the retracement zone AND structure direction <= neutral AND ADX >= configurable threshold AND macro blocking is disabled AND bearish order block is armed AND chart bar overlaps that block AND close < open AND upper wick >= configurable fraction of chart bar range AND sniper confirmation = true.
+Exit: Long, low <= active stop OR high >= saved final target.
+Exit: Short, high >= active stop OR low <= saved final target.

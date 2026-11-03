@@ -1,24 +1,21 @@
-Calculation: Rule 1 = current day is Friday AND high equals the highest high of the last 5 chart-timeframe bars
-Calculation: Rule 2 = current day is Friday AND low equals the lowest low of the last 5 chart-timeframe bars
-Calculation: Rule 3 = current day is Tuesday AND low equals the lowest low of the last 5 chart-timeframe bars AND close > open
-Calculation: Rule 4 = current day is Wednesday AND high equals the highest high of the last 5 chart-timeframe bars AND close < open
-Calculation: Rule 5 = high equals the highest high of the last 20 chart-timeframe bars AND high > prior bar's high
-Calculation: Rule 6 = low equals the lowest low of the last 20 chart-timeframe bars AND low < prior bar's low
-Calculation: Moving average = configured moving average of close
-Calculation: Rule 7 = close crosses above the moving average
-Calculation: Rule 8 = close > close 4 bars ago AND high > high 4 bars ago AND at least 2 of the last 3 close-to-close changes are declines
-Calculation: Rule 9 = close > close 8 bars ago AND high > high 8 bars ago AND at least 3 of the last 5 close-to-close changes are declines
-Calculation: ATR = 14-bar average true range
-Calculation: Rule 10 = close - open >= 2 * ATR
-Calculation: Rule 11 = high equals the highest high of the last 3 chart-timeframe bars AND close > moving average AND high > prior bar's high
-Calculation: Rule 12 = |high 5 bars ago - low| > |high 10 bars ago - low 5 bars ago| AND |high 5 bars ago - low| > 1.5 * ATR
-Calculation: Rule 13 = |close - (highest high of the last 10 bars + lowest low of the last 10 bars) / 2| <= ATR
-Calculation: Rule 14 = low < low 2 bars ago AND low < low 4 bars ago AND close > open
-Calculation: Rule 15 = high > high 2 bars ago AND high > high 4 bars ago AND close < open
-Calculation: Average ATR = 20-bar simple moving average of ATR
-Calculation: Rule 16 = ATR > 1.5 * average ATR AND |close - open| >= ATR
-Calculation: Rule 17 = (high equals the highest high of the last 60 chart-timeframe bars AND high > prior bar's high) OR (low equals the lowest low of the last 60 chart-timeframe bars AND low < prior bar's low)
-Calculation: Bull score = count of true conditions among Rule 1, Rule 3, Rule 5, Rule 7, Rule 10, Rule 11, Rule 14; Rule 8 AND close > moving average; Rule 13 AND close > moving average; Rule 16 AND close > moving average; Rule 17 AND high equals the highest high of the last 60 bars
-Calculation: Bear score = count of true conditions among Rule 2, Rule 4, Rule 6, Rule 12, Rule 15; Rule 9 AND close < moving average; Rule 13 AND close < moving average; Rule 16 AND close < moving average; Rule 17 AND low equals the lowest low of the last 60 bars
-Long: bull score >= minimum rule count AND bull score > bear score
-Short: bear score >= minimum rule count AND bear score > bull score
+Calculation: Moving average = SMA, EMA, WMA, or VWMA of close, using the same type and period throughout.
+Calculation: Bullish score = sum of one point for each enabled condition: Friday high equals the highest high over the short lookback; Tuesday low equals the lowest low over the same short lookback AND close > open; high equals the highest high over the longer breakout lookback AND high > previous high; close crosses above the moving average; close - open >= ATR multiplied by a threshold; high equals the highest high over a lookback shorter than the Friday lookback AND close > moving average AND high > previous high; low < low at a shorter offset AND low < low at a longer offset AND close > open; close > close at a past offset AND high > high at the same offset AND the count of falling closes over a shorter lookback >= a threshold AND close > moving average; absolute distance from close to the midpoint of the highest high and lowest low over an intermediate lookback <= ATR AND close > moving average; ATR > a multiple of its SMA AND absolute candle body >= ATR AND close > moving average; the long-lookback extreme condition is true AND high equals the highest high over that lookback.
+Calculation: Bearish score = sum of one point for each enabled condition: Friday low equals the lowest low over the short lookback; Wednesday high equals the highest high over the same short lookback AND close < open; low equals the lowest low over the longer breakout lookback AND low < previous low; absolute difference between high at a shorter offset and current low > absolute difference between high at a longer offset and low at the shorter offset AND the first difference > a multiple of ATR; high > high at a shorter offset AND high > high at a longer offset AND close < open; close > close at a past offset AND high > high at the same offset AND the count of falling closes over a shorter lookback >= a threshold AND close < moving average; absolute distance from close to the midpoint of the highest high and lowest low over the intermediate lookback <= ATR AND close < moving average; ATR > a multiple of its SMA AND absolute candle body >= ATR AND close < moving average; the long-lookback extreme condition is true AND low equals the lowest low over that lookback.
+Calculation: Long-lookback extreme condition = high equals the highest high over the long lookback AND high > previous high, OR low equals the lowest low over the same lookback AND low < previous low. The long lookback exceeds the breakout lookback, which exceeds the intermediate lookback, which exceeds the short lookback. Highest and lowest values include the current bar.
+Calculation: Falling-close count = number of bars in the lookback whose close is below the preceding bar's close. The bearish score's rise offset, falling-close lookback, and falling-close threshold are longer or greater than their bullish-score counterparts. The longer offsets in the two-offset comparisons exceed the shorter offsets.
+Long: Bullish score >= minimum score AND bullish score > bearish score.
+Short: Bearish score >= minimum score AND bearish score > bullish score.
+Long: Friday high equals the highest high over the short lookback.
+Short: Friday low equals the lowest low over the short lookback.
+Long: Tuesday low equals the lowest low over the short lookback AND close > open.
+Short: Wednesday high equals the highest high over the short lookback AND close < open.
+Long: High equals the highest high over the breakout lookback AND high > previous high.
+Short: Low equals the lowest low over the breakout lookback AND low < previous low.
+Long: Close crosses above the moving average.
+Long: Close - open >= ATR multiplied by a threshold.
+Long: High equals the highest high over a lookback shorter than the Friday lookback AND close > moving average AND high > previous high.
+Short: Absolute difference between high at a shorter offset and current low > absolute difference between high at a longer offset and low at the shorter offset AND the first difference > a multiple of ATR.
+Long: Low < low at a shorter offset AND low < low at a longer offset AND close > open.
+Short: High > high at a shorter offset AND high > high at a longer offset AND close < open.
+Long: Long-lookback extreme condition is true AND high equals the highest high over that lookback.
+Short: Long-lookback extreme condition is true AND low equals the lowest low over that lookback.

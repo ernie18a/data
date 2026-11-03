@@ -1,4 +1,5 @@
-Calculation: Cumulative safety-order deviation = first deviation plus each subsequent deviation, with each subsequent step equal to the prior step multiplied by the deviation-step multiplier
-Long: Flat AND lower-timeframe RSI on the last completed bar crossed down through its level since the prior chart bar (prior sampled RSI > level AND current sampled RSI <= level)
-Long: Long position AND fewer than the maximum safety orders filled AND lower-timeframe RSI on the last completed bar < its level AND close <= base entry price × (1 − cumulative safety-order deviation)
-Exit: long, close >= average entry price × (1 + take-profit rate)
+Calculation: Cumulative deviation for averaging order k = first-order deviation × sum of deviation-step multiplier raised to powers from 0 through k−1.
+Calculation: Average entry price = quantity-weighted average fill price of the base order and filled averaging orders; each averaging order's quote-currency size equals the first averaging order's size × size multiplier^(k−1), and its quantity equals its quote-currency size divided by the signal bar's close.
+Long: Position is flat AND date filter is disabled OR enabled and bar datetime is within the inclusive configured window AND entry RSI of the last completed lower-timeframe bar on the previous chart bar > entry threshold AND entry RSI of the last completed lower-timeframe bar on the current chart bar <= entry threshold.
+Long: Position is long AND date filter is disabled OR enabled and bar datetime is within the inclusive configured window AND number of averaging orders already triggered < configured maximum AND close <= base entry price × (1 − cumulative deviation for the next averaging order) AND averaging-order RSI of the last completed lower-timeframe bar < averaging-order threshold.
+Exit: Long, close >= average entry price × (1 + take-profit percentage).

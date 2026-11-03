@@ -1,4 +1,5 @@
-Calculation: Robust volatility = square root of the selected rolling variance estimate, using only bars before the current bar: either MedRV (π/(6−4√3+π) × jumpWin/(jumpWin−2) × mean of squared medians of three consecutive absolute log returns) or bipower variation (π/2 × mean of products of adjacent absolute log returns)
-Calculation: Lee–Mykland threshold = √(2 ln n) − (ln π + ln ln n)/(2√(2 ln n)) + [−ln(−ln(1−α))]/√(2 ln n); alternatively, use the selected fixed multiple of robust volatility
-Long: close > previous close AND |ln(close/previous close)| / robust volatility > selected threshold
-Short: close < previous close AND |ln(close/previous close)| / robust volatility > selected threshold
+Calculation: Log return r[t] = ln(close[t] / close[t-1]); absolute return a[t] = abs(r[t]).
+Calculation: Robust volatility = square root of the selected variance estimate, provided that estimate is positive. For lookback N, bipower variance = (π/2) × mean of a[i] × a[i-1] for i = t-N through t-1; median realized variance = π/(6-4√3+π) × N/(N-2) × mean of median(a[i], a[i-1], a[i-2])² for i = t-N through t-1.
+Calculation: Jump threshold = either a fixed positive multiple or √(2 ln n) - (ln π + ln ln n)/(2√(2 ln n)) - ln(-ln(1-α))/√(2 ln n), where n is the scan-window length and α is the false-positive probability.
+Long: Robust volatility > 0 AND abs(r[t])/robust volatility > jump threshold AND close[t] > close[t-1] AND (session-open suppression is disabled OR the chart is not intraday OR the bar is not the first regular-session bar, determined from datetime and the instrument's session calendar).
+Short: Robust volatility > 0 AND abs(r[t])/robust volatility > jump threshold AND close[t] < close[t-1] AND (session-open suppression is disabled OR the chart is not intraday OR the bar is not the first regular-session bar, determined from datetime and the instrument's session calendar).

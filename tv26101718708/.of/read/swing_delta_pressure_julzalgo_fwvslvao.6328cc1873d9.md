@@ -1,3 +1,6 @@
-Calculation: Swing direction = 1 when the most recent tracked rolling highest-high bar is later than the most recent tracked rolling lowest-low bar; otherwise -1. Update each tracked bar when the current bar sets the rolling high or low, respectively.
-Long: Swing direction > 0 AND swing direction != prior bar's swing direction
-Short: Swing direction < 0 AND swing direction != prior bar's swing direction
+Calculation: Swing high bar = the most recent bar at which the high equaled the highest high over the swing lookback, including that bar; initialize to the first bar.
+Calculation: Swing low bar = the most recent bar at which the low equaled the lowest low over the swing lookback, including that bar; initialize to the first bar.
+Long: Swing high bar > swing low bar.
+Long: Swing high bar > swing low bar AND previous bar's swing high bar <= previous bar's swing low bar.
+Short: Swing high bar <= swing low bar.
+Short: Swing high bar <= swing low bar AND previous bar's swing high bar > previous bar's swing low bar.

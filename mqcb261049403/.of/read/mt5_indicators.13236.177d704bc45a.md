@@ -1,4 +1,5 @@
-Calculation: Composite RSI = weighted sum of five RSI values, using progressively longer lookbacks from short-term to long-term.
-Calculation: Smoothed composite RSI = recursive smoothing of the composite RSI using a smoothing parameter.
-Long: Composite RSI > smoothed composite RSI OR higher-timeframe composite RSI > higher-timeframe smoothed composite RSI, evaluated on the higher-timeframe bar still forming.
-Short: Composite RSI < smoothed composite RSI OR higher-timeframe composite RSI < higher-timeframe smoothed composite RSI, evaluated on the higher-timeframe bar still forming.
+Calculation: Weighted RSI = the sum of five applied-price RSIs with progressively longer lookbacks, each multiplied by its corresponding weight, except that the third RSI uses the second RSI's weight.
+Calculation: Smoothed weighted RSI = weighted RSI divided by the smoothing period plus the previous smoothed weighted RSI multiplied by (smoothing period minus 1) divided by the smoothing period; initialize it to weighted RSI divided by the smoothing period.
+Calculation: Higher-timeframe weighted RSI and smoothed weighted RSI = the same calculations on the higher timeframe's bar still forming, sampled at the first chart bar of that higher-timeframe bar and carried forward until the next higher-timeframe bar.
+Long: Weighted RSI > smoothed weighted RSI OR higher-timeframe weighted RSI > higher-timeframe smoothed weighted RSI.
+Short: Weighted RSI < smoothed weighted RSI OR higher-timeframe weighted RSI < higher-timeframe smoothed weighted RSI.

@@ -1,7 +1,11 @@
-Calculation: One-sided Gaussian filter = Fibonacci-weighted moving average of the selected price source, followed by a 2-pole Ehlers super smoother; its signal line is the filter value from the previous bar.
-Long: One-sided Gaussian filter crosses above its signal line.
-Long: One-sided Gaussian filter crosses above its signal line AND SuperTrend is bullish AND the most recent opposite Gaussian and SuperTrend signals are farther back than their respective configured lookbacks AND (ADX exceeds its threshold if the ADX filter is enabled).
-Short: One-sided Gaussian filter crosses below its signal line.
-Short: One-sided Gaussian filter crosses below its signal line AND SuperTrend is bearish AND the most recent opposite Gaussian and SuperTrend signals are farther back than their respective configured lookbacks AND (ADX exceeds its threshold if the ADX filter is enabled).
-Exit: Long, One-sided Gaussian filter crosses below its signal line OR close < entry price × (1 − configured stop-loss fraction) OR high >= entry price × (1 + configured profit-target fraction).
-Exit: Short, One-sided Gaussian filter crosses above its signal line OR close > entry price × (1 + configured stop-loss fraction) OR low <= entry price × (1 − configured profit-target fraction).
+Calculation: Gaussian trend = For a configurable price source, let N be the Gaussian depth, L the Fibonacci number at zero-based index N in the sequence 1, 2, 3, 5, ..., and M = min(N + 1, L). Average the current and preceding M - 1 source values with normalized weights exp(-9*i*i/(L+1)^2), replacing unavailable source values with zero. Smooth that average with a two-pole filter: a = exp(-1.414*pi/P), b = 2*a*cos(1.414*pi/P), and output = (1-b+a*a)*average + b*previous output - a*a*output two bars ago; use the unsmoothed average for the first three bars and zero for unavailable prior outputs. P is the smoothing period.
+Long: Gaussian trend > previous Gaussian trend
+Short: Gaussian trend <= previous Gaussian trend
+Long: SuperTrend direction is up
+Short: SuperTrend direction is down
+Long: Gaussian trend crosses above its previous value
+Short: Gaussian trend crosses below its previous value
+Long: Gaussian trend crosses above its previous value AND bars since the last Gaussian trend cross below its previous value > Gaussian lookback AND SuperTrend direction is up AND bars since SuperTrend direction was down > SuperTrend lookback AND (ADX filter is disabled OR ADX > threshold) AND (start-date filter is disabled OR datetime > start datetime) AND (end-date filter is disabled OR datetime < end datetime)
+Short: Gaussian trend crosses below its previous value AND bars since the last Gaussian trend cross above its previous value > Gaussian lookback AND SuperTrend direction is down AND bars since SuperTrend direction was up > SuperTrend lookback AND (ADX filter is disabled OR ADX > threshold) AND (start-date filter is disabled OR datetime > start datetime) AND (end-date filter is disabled OR datetime < end datetime)
+Exit: long, (Gaussian trend crosses above its previous value OR Gaussian trend crosses below its previous value OR close < entry price * (1 - stop-loss percentage) OR high >= entry price * (1 + any take-profit percentage)) AND (start-date filter is disabled OR datetime > start datetime) AND (end-date filter is disabled OR datetime < end datetime)
+Exit: short, (Gaussian trend crosses above its previous value OR Gaussian trend crosses below its previous value OR close > entry price * (1 + stop-loss percentage) OR low <= entry price * (1 - any take-profit percentage)) AND (start-date filter is disabled OR datetime > start datetime) AND (end-date filter is disabled OR datetime < end datetime)

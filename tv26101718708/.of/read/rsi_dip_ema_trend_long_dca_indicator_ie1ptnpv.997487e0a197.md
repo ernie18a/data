@@ -1,8 +1,10 @@
-Calculation: Average entry price = total notional across the base fill and safety-order fills divided by total asset quantity; each fill’s quantity is its notional divided by its fill close.
-Calculation: Cumulative safety-order deviation at rung k = the sum of rung deviations through k, where the first rung deviation is the initial step and each later rung deviation is the previous rung deviation multiplied by the step multiplier.
-Calculation: Trailing peak = highest chart-timeframe close since the close first reached the take-profit target.
-Long: Flat AND lower-timeframe RSI crosses down through its threshold, using the last completed lower-timeframe bar’s RSI and the prior chart bar’s sampled RSI (prior > threshold AND current <= threshold) AND chart-timeframe fast EMA > chart-timeframe slow EMA.
-Long: In a long position AND filled safety orders < maximum safety orders AND chart close <= base entry price × (1 − cumulative safety-order deviation at the next rung / 100).
-Exit: Long, chart close <= average entry price × (1 − stop-loss percentage / 100).
-Exit: Long, chart close > average entry price × (1 − stop-loss percentage / 100) AND elapsed time since base entry >= maximum holding duration.
-Exit: Long, chart close > average entry price × (1 − stop-loss percentage / 100) AND elapsed time since base entry < maximum holding duration AND take-profit zone has been reached (chart close >= average entry price × (1 + take-profit percentage / 100)) AND chart close <= trailing peak × (1 − trailing deviation / 100).
+Calculation: Sampled RSI = RSI of lower-timeframe closes, sampled from the last completed lower-timeframe bar within each chart bar; compare consecutive chart-bar samples.
+Calculation: Trend EMAs = shorter- and longer-period EMAs of closes on a timeframe higher than the RSI timeframe; this timeframe may be lower than, equal to, or higher than the chart timeframe. For a lower timeframe, sample the last completed bar within each chart bar; for an equal timeframe, use the chart bar; for a higher timeframe, use the last completed bar historically and the still-forming bar in real time.
+Calculation: Safety-order deviation for order k = the sum of the first deviation step multiplied by the step multiplier to powers 0 through k−1. Fill at most one safety order per chart bar, in sequence, at that bar's close.
+Calculation: Average entry = sum of fill notionals divided by sum of fill quantities; each quantity is its notional divided by its fill close. The base fill uses the base margin times leverage; safety order k uses the first safety-order margin times the size multiplier to power k−1 times leverage. Process a safety-order fill before evaluating exits on the same bar.
+Calculation: Trailing peak = the highest close since entry among bars whose close is at or above the current average entry multiplied by one plus the take-profit fraction; reset on entry and exit.
+Long: Position is flat AND previous sampled RSI > RSI threshold AND current sampled RSI <= RSI threshold AND shorter-period trend EMA > longer-period trend EMA.
+Long: Position is long AND filled safety-order count < maximum safety-order count AND close <= base entry price multiplied by one minus the next safety-order deviation.
+Exit: long, close <= average entry multiplied by one minus the stop-loss fraction.
+Exit: long, maximum-hold exit is enabled AND current bar datetime minus base-entry bar datetime >= maximum holding duration.
+Exit: long, trailing peak exists AND close <= trailing peak multiplied by one minus the trailing-deviation fraction.

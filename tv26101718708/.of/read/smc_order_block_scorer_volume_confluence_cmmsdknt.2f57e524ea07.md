@@ -1,4 +1,3 @@
-Calculation: Major pivot high/low = a high/low confirmed as a pivot using equal configurable lookbacks on both sides; this uses longer lookbacks than the internal pivots.
-Calculation: Internal pivot high/low = a high/low confirmed as a pivot using equal configurable lookbacks on both sides; this uses shorter lookbacks than the major pivots.
-Long: close > latest unbroken confirmed major pivot high OR close > latest unbroken confirmed internal pivot high
-Short: close < latest unbroken confirmed major pivot low OR close < latest unbroken confirmed internal pivot low
+Calculation: Confirmed pivot high or low = a high or low identified as a pivot using equal numbers of bars on each side; it becomes available only after the bars on its right have completed. Track the latest confirmed pivot high and low separately for each of two pivot strengths, with the internal strength shorter than the swing strength. A newly confirmed pivot replaces the previous pivot of the same kind and is initially unbroken. Mark a pivot broken after the first close beyond it; it remains broken until replaced.
+Long: close > latest unbroken confirmed pivot high for either pivot strength
+Short: close < latest unbroken confirmed pivot low for either pivot strength

@@ -1,4 +1,8 @@
-Calculation: Premarket high/low = highest high/lowest low of bars during the configured premarket session for the current day; breakout checks use the current still-forming bar of the fixed intraday timeframe, which may be higher or lower than the chart timeframe.
-Calculation: Current daily high/low = high/low so far of the still-forming daily bar; compare with the prior completed daily bar’s high/low. The daily timeframe may be higher or lower than the chart timeframe.
-Long: Premarket session has occurred today AND current internal-timeframe close is above premarket high AND the bar is outside the premarket session OR current internal-timeframe close > short-term EMA AND short-term EMA > medium-term EMA AND medium-term EMA > long-term EMA OR current daily high > prior daily high
-Short: Premarket session has occurred today AND current internal-timeframe close is below premarket low AND the bar is outside the premarket session OR current internal-timeframe close < short-term EMA AND short-term EMA < medium-term EMA AND medium-term EMA < long-term EMA OR current daily low < prior daily low
+Calculation: Premarket high and low = highest high and lowest low observed during the configured premarket session, reset each trading day.
+Long: Outside the premarket session AND a premarket bar has occurred today AND close on the fixed calculation timeframe > premarket high.
+Short: Outside the premarket session AND a premarket bar has occurred today AND close on the fixed calculation timeframe < premarket low.
+Long: Close on the fixed calculation timeframe > short-period EMA > medium-period EMA > long-period EMA, all calculated from closes on that timeframe.
+Short: Close on the fixed calculation timeframe < short-period EMA < medium-period EMA < long-period EMA, all calculated from closes on that timeframe.
+Long: Current daily high > previous completed daily high.
+Short: Current daily low < previous completed daily low.
+Calculation: Fixed calculation timeframe and daily timeframe = independently configured timeframes that may be higher, lower, or equal to the chart timeframe. For a higher timeframe, use the last completed bar historically and the bar still forming in real time; for a lower timeframe, use the last available intrabar. Current daily high and low use the current daily bar under these same rules.

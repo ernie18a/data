@@ -1,2 +1,4 @@
-Long: On a higher-timeframe still-forming bar, Money Flow Index > oversold level AND Money Flow Index on the previous bar <= oversold level
-Short: On a higher-timeframe still-forming bar, Money Flow Index < overbought level AND Money Flow Index on the previous bar >= overbought level
+Long: Chart-timeframe money flow index crosses above a lower threshold: current value > lower threshold AND previous value <= lower threshold.
+Short: Chart-timeframe money flow index crosses below an upper threshold: current value < upper threshold AND previous value >= upper threshold.
+Long: On a higher timeframe, including its still-forming bar, the most recent money flow index cross above the lower threshold is more recent than the most recent cross below the upper threshold, or no such downward cross has occurred.
+Short: On a higher timeframe, including its still-forming bar, the most recent money flow index cross below the upper threshold is at least as recent as the most recent cross above the lower threshold, or no such upward cross has occurred.

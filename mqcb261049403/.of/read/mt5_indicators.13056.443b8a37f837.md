@@ -1,3 +1,3 @@
-Calculation: CMx = if its period parameter is negative, EMA(close, shorter lookback) − EMA(close, longer lookback); if positive, CCI(longer lookback, applied to the negative-period CMx) × ADX(shorter lookback) ÷ (scaling threshold × multiplier). The longer lookback is the shorter lookback multiplied by the multiplier.
-Long: CMx on the selected timeframe (same as or higher than the chart timeframe), using its last completed bar, > 0
-Short: CMx on the selected timeframe (same as or higher than the chart timeframe), using its last completed bar, < 0
+Calculation: Oscillator = either EMA of close minus a second EMA of close, or CCI of that EMA difference multiplied by ADX and divided by a configurable scale; the CCI lookback equals the second EMA lookback, and the ADX lookback equals the first EMA lookback. The second EMA lookback is the first EMA lookback multiplied by a configurable factor and rounded to an integer; the scale is a configurable level multiplied by the same factor. Calculate on the chart timeframe or on the still-forming higher-timeframe bar.
+Long: Oscillator > 0 AND oscillator != previous oscillator on its calculation timeframe
+Short: Oscillator < 0 AND oscillator != previous oscillator on its calculation timeframe

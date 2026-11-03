@@ -1,13 +1,17 @@
-Calculation: Trend factor = +1 when the fast EMA is above the slow EMA, −1 when below, otherwise 0; the fast EMA uses a shorter length than the slow EMA.
-Calculation: Momentum factor = +1 when RSI > 50, otherwise −1 when RSI < 50, otherwise 0.
-Calculation: MACD factor = +1 when the MACD histogram is positive, −1 when negative, otherwise 0.
-Calculation: Strength factor = 0 when ADX is below its threshold; otherwise +1 when +DI > −DI, −1 when −DI > +DI, otherwise 0.
-Calculation: Volume factor = +1 when volume is at least 1.2 times its moving average and close > open; −1 when volume is at least 1.2 times its moving average and close < open; otherwise 0.
-Calculation: Location factor = +1 when close is in the bottom 35% of the recent high-low range; −1 when in the top 35%; otherwise 0.
-Calculation: Confluence score = 100 × weighted sum of the six factors divided by the sum of their weights; smooth the score with a short EMA.
-Calculation: Bull votes = count of factors > 0; bear votes = count of factors < 0.
-Calculation: Risk distance = ATR at entry × stop multiple, or ATR at entry if that product is not positive; TP1 distance = risk distance × first-target R multiple.
-Long: smoothed confluence score ≥ threshold AND bull votes ≥ minimum agreeing factors AND signal state ≤ 0.
-Short: smoothed confluence score ≤ −threshold AND bear votes ≥ minimum agreeing factors AND signal state ≥ 0.
-Exit: long, low ≤ entry price − risk distance OR high ≥ entry price + TP1 distance OR short signal.
-Exit: short, high ≥ entry price + risk distance OR low ≤ entry price − TP1 distance OR long signal.
+Calculation: Trend vote = sign of short-term EMA(close) minus long-term EMA(close).
+Calculation: Momentum vote = sign of RSI(close) minus the RSI midpoint.
+Calculation: MACD vote = sign of the MACD histogram of close; its fast EMA is shorter than its slow EMA.
+Calculation: Strength vote = 0 when ADX is below its threshold; otherwise the sign of positive DI minus negative DI. Use the same length for DI and ADX smoothing.
+Calculation: Volume vote = sign of close minus open when volume divided by its SMA is at least the relative-volume threshold; otherwise 0. If the volume SMA is not positive, use a relative volume of 1.
+Calculation: Location vote = +1 when the close's fractional position in the rolling high-low range is at or below a lower threshold, -1 when it is at or above an upper threshold, otherwise 0. Use the range's midpoint when its high equals its low.
+Calculation: Smoothed score = EMA of 100 times the weighted sum of the six votes divided by the sum of their nonnegative weights; use 0 for the unsmoothed score when the weight sum is 0.
+Calculation: Signal state = 0 initially; set to +1 on a qualifying long signal and -1 on a qualifying short signal, retaining its value otherwise. Evaluate each signal against the state before the current bar's update.
+Calculation: Entry risk = ATR at the signal bar multiplied by the stop multiplier; if the result is not positive, use that ATR. Hold entry risk fixed from the signal bar.
+Long: Trend vote > 0 OR momentum vote > 0 OR MACD vote > 0 OR strength vote > 0 OR volume vote > 0 OR location vote > 0.
+Short: Trend vote < 0 OR momentum vote < 0 OR MACD vote < 0 OR strength vote < 0 OR volume vote < 0 OR location vote < 0.
+Long: Smoothed score >= 0 OR signal state = +1.
+Short: Smoothed score < 0 OR signal state = -1.
+Long: Smoothed score >= positive score threshold AND number of positive votes >= minimum agreement AND prior signal state <= 0.
+Short: Smoothed score <= negative score threshold AND number of negative votes >= minimum agreement AND prior signal state >= 0.
+Exit: long, high >= entry price + entry risk × first target multiple OR low <= entry price - entry risk OR qualifying short signal = true.
+Exit: short, low <= entry price - entry risk × first target multiple OR high >= entry price + entry risk OR qualifying long signal = true.

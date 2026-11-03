@@ -1,4 +1,5 @@
-Calculation: RSI(14) = Relative Strength Index of close over 14 chart-timeframe bars, evaluated at bar close
-Long: flat AND RSI(14) < entry threshold
-Long: long AND fewer than all configured safety orders are filled AND close <= base entry × (1 − deviation of the next unfilled safety order)
-Exit: long, close >= average position entry × (1 + take-profit percentage)
+Calculation: RSI source = RSI of closes on a configurable timeframe; use the last completed higher-timeframe bar, the last completed lower-timeframe bar within the chart bar, or the chart bar itself when timeframes are equal.
+Calculation: Averaging ladder = five sequential, independently configurable percentage deviations below the original base entry price, each with an independently configurable order size. Reset the ladder when flat; advance at most one rung per chart bar.
+Long: Position is flat AND open trades = 0 AND (date filter disabled OR bar datetime is within the configured date window) AND RSI source < entry threshold.
+Long: Position is long AND (date filter disabled OR bar datetime is within the configured date window) AND an averaging ladder rung remains AND close <= original base entry price × (1 − next rung deviation).
+Exit: Long, close >= current position average entry price × (1 + take-profit percentage).

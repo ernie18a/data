@@ -1,2 +1,3 @@
-Long: Flat AND RSI < entry threshold; OR long position AND fewer than five safety orders filled AND close <= base entry price × (1 − deviation of the next safety order)
-Exit: Long, close >= average position entry price × (1 + take-profit percentage)
+Long: Position is flat AND no trade is open AND (date filter is disabled OR bar datetime is within the configured inclusive date window) AND RSI of close is below its threshold; use the current chart bar when RSI timeframe equals chart timeframe, the last completed bar when higher, or the last completed lower-timeframe bar within the chart bar when lower.
+Long: Position is long AND (date filter is disabled OR bar datetime is within the configured inclusive date window) AND fewer than five averaging orders have been submitted since the base entry AND close <= base entry price × (1 − next averaging-order deviation). Submit at most one averaging order per bar, using the next deviation in sequence; deviations are independent parameters from the base entry, with successively deeper default levels.
+Exit: long, close >= average position entry price × (1 + take-profit percentage).

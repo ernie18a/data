@@ -1,3 +1,3 @@
-Long: RSI(close, lookback) < entry threshold AND no open position
-Long: While in a long position, close <= base entry × (1 − next rung deviation) AND fewer than five averaging orders have filled; rung deviations are fixed from the base entry and increase with each successive rung
-Exit: Long, close >= average entry × (1 + take-profit percentage)
+Long: Position is flat AND (date filter is disabled OR bar time is within the configured inclusive date window) AND RSI of close on the selected timeframe is below the entry threshold. If the selected timeframe is higher than the chart timeframe, use its last completed bar; if lower, use the last completed lower-timeframe bar within the chart bar.
+Long: Position is long AND (date filter is disabled OR bar time is within the configured inclusive date window) AND fewer than five averaging orders have been triggered since the base entry AND close <= base entry price × (1 - next averaging-order deviation). Use the deviations in their configured order, trigger at most one averaging order per chart bar, and size each averaging order using its configured quote-currency amount divided by close.
+Exit: long, close >= quantity-weighted average entry price × (1 + take-profit percentage).

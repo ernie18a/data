@@ -1,4 +1,6 @@
-Calculation: Leading line = α₂ × filtered value + (1 − α₂) × previous leading line; filtered value = 2 × midpoint(high, low) + (α₁ − 2) × previous midpoint(high, low) + (1 − α₁) × previous filtered value
-Calculation: Signal line = 0.5 × midpoint(high, low) + 0.5 × previous signal line
-Long: Signal line on the current bar of the signal timeframe (equal to or higher than the chart timeframe; still forming) ≥ leading line on that bar AND signal line on the previous completed signal-timeframe bar < leading line on that bar
-Short: Signal line on the current bar of the signal timeframe (equal to or higher than the chart timeframe; still forming) ≤ leading line on that bar AND signal line on the previous completed signal-timeframe bar > leading line on that bar
+Calculation: Midpoint = (high + low) / 2.
+Calculation: Leading line = exponentially smooth the lead with a smoothing coefficient. For the first three bars, set both the lead and leading line to the midpoint. Thereafter, lead = 2 × current midpoint + (first coefficient − 2) × previous midpoint + (1 − first coefficient) × previous lead; leading line = second coefficient × current lead + (1 − second coefficient) × previous leading line.
+Calculation: Reference line = exponential moving average of the midpoint, initialized to the midpoint on each of the first three bars.
+Calculation: Trend state = initially undefined; on the first chart bar of each same or higher timeframe bar, compare the leading and reference lines on that still-forming bar and the preceding completed bar. Set the state to long when the previous leading line ≤ previous reference line AND the current leading line > current reference line; set it to short when the previous leading line ≥ previous reference line AND the current leading line < current reference line. Otherwise retain the previous state.
+Long: Trend state = long.
+Short: Trend state = short.

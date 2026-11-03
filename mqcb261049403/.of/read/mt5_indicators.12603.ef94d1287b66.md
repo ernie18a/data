@@ -1,2 +1,4 @@
-Long: Short-lookback EMA > longer-lookback SMA on the chart timeframe, or on a higher timeframe using its still-forming bar
-Short: Short-lookback EMA <= longer-lookback SMA on the chart timeframe, or on a higher timeframe using its still-forming bar
+Long: Shorter-period moving average > longer-period moving average on the chart timeframe.
+Short: Shorter-period moving average <= longer-period moving average on the chart timeframe.
+Long: Shorter-period moving average > longer-period moving average on the higher timeframe, using the bar still forming.
+Short: Shorter-period moving average <= longer-period moving average on the higher timeframe, using the bar still forming.

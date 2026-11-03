@@ -1,4 +1,4 @@
-Calculation: Upper XD-RangeSwitch line = On each chart-timeframe bar, set to the highest high of the current bar and prior N−1 bars when the close is below the lowest low of the immediately preceding N bars; clear when the close is above the highest high of those preceding N bars; otherwise carry forward its prior-bar value.
-Calculation: Lower XD-RangeSwitch line = On each chart-timeframe bar, set to the lowest low of the current bar and prior N−1 bars when the close is above the highest high of the immediately preceding N bars; clear when the close is below the lowest low of those preceding N bars; otherwise carry forward its prior-bar value.
-Long: Prior-bar Lower XD-RangeSwitch line is empty AND current Lower XD-RangeSwitch line is not empty
-Short: Prior-bar Upper XD-RangeSwitch line is empty AND current Upper XD-RangeSwitch line is not empty
+Calculation: Range direction = on each bar, set direction to long if close exceeds the highest high of the preceding lookback bars; otherwise set it to short if close is below the lowest low of the preceding lookback bars; otherwise retain the previous direction. Direction is undefined until the first breakout.
+Calculation: Higher-timeframe range direction = calculate range direction using the bar still forming on a higher timeframe, sampled on the first chart bar of each higher-timeframe bar and retained until the next higher-timeframe bar.
+Long: Chart-timeframe range direction = long OR higher-timeframe range direction = long
+Short: Chart-timeframe range direction = short OR higher-timeframe range direction = short

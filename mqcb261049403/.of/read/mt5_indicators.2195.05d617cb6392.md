@@ -1,3 +1,8 @@
-Calculation: BBands Stop trend = Initialize as neutral. On each bar, set bullish if close > the prior bar’s adjusted upper Bollinger band; set bearish if close < the prior bar’s adjusted lower Bollinger band; otherwise retain the prior trend. In bullish state, the current adjusted lower band is the greater of the current lower Bollinger band and prior adjusted lower band; otherwise it is the current lower Bollinger band. In bearish state, the current adjusted upper band is the lesser of the current upper Bollinger band and prior adjusted upper band; otherwise it is the current upper Bollinger band.
-Long: BBands Stop trend = bullish AND prior bar’s BBands Stop trend ≠ bullish
-Short: BBands Stop trend = bearish AND prior bar’s BBands Stop trend ≠ bearish
+Calculation: Trailing Bollinger state = On each bar, calculate the upper and lower Bollinger Bands of close. Initialize the prior upper band and prior upper stop to -999999999, the prior lower band and prior lower stop to 999999999, and trend to 0. Set trend to 1 if close > prior upper band, then set trend to -1 if close < prior lower band; otherwise retain trend. If trend > 0, set the lower band to the greater of its current and prior values. If trend < 0, set the upper band to the lesser of its current and prior values. Let offset = 0.5 × (risk factor - 1) × (upper band - lower band). Set upper stop = upper band + offset and lower stop = lower band - offset. If trend > 0, set lower stop to the greater of its current and prior values. If trend < 0, set upper stop to the lesser of its current and prior values. Save the resulting bands and stops as prior values for the next bar.
+Calculation: Higher-timeframe trailing Bollinger state = Calculate the trailing Bollinger state on a higher timeframe using the bar still forming. Sample its state on the first chart bar of each higher-timeframe bar and carry that sampled state forward until the next higher-timeframe bar.
+Long: Chart-timeframe trend > 0
+Short: Chart-timeframe trend < 0
+Long: Higher-timeframe sampled trend > 0
+Short: Higher-timeframe sampled trend < 0
+Long: Current chart bar is the first bar of a higher-timeframe bar AND higher-timeframe trend < 0 AND prior higher-timeframe trend >= 0
+Short: Current chart bar is the first bar of a higher-timeframe bar AND higher-timeframe trend > 0 AND prior higher-timeframe trend <= 0

@@ -1,3 +1,3 @@
-Long: While flat, chart-timeframe RSI is below its threshold at bar close.
-Long: While long and safety-order rungs remain, close is at or below base entry × (1 − the next rung’s fixed deviation); check rungs once each in ascending deviation order.
-Exit: Long, close is at or above average entry price × (1 + the take-profit percentage).
+Long: position side = flat AND open trades = 0 AND (date filter disabled OR bar datetime within configured date window) AND RSI of the last completed higher-timeframe bar < entry threshold
+Long: position side = long AND (date filter disabled OR bar datetime within configured date window) AND filled averaging orders < configured ladder length AND close <= base entry price × (1 − next averaging order's deviation); evaluate only the next unfilled ladder rung, with at most one averaging order per bar
+Exit: long, close >= volume-weighted average entry price × (1 + take-profit percentage)

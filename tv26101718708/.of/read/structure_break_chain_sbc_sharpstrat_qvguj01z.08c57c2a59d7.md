@@ -1,8 +1,7 @@
-Calculation: Confirmed swing high = a high confirmed as a pivot using equal lookback lengths on the left and right; retain the most recently confirmed value.
-Calculation: Confirmed swing low = a low confirmed as a pivot using equal lookback lengths on the left and right; retain the most recently confirmed value.
-Calculation: Trend state = neutral initially; set bullish after an upward break and bearish after a downward break. A break against the prior trend is a change of character (CHoCH); otherwise it is a break of structure (BOS).
-Calculation: Break price = close in close-confirmation mode, or high for upward breaks and low for downward breaks in wick-confirmation mode.
-Long: Break price > most recent confirmed swing high
-Short: Break price < most recent confirmed swing low
-Exit: Long, a downward break occurs while trend state is bullish OR close < the level of an upward break within the configured failure window after that break
-Exit: Short, an upward break occurs while trend state is bearish OR close > the level of a downward break within the configured failure window after that break
+Calculation: Structure breaks = On each bar, confirm pivot highs and lows using equal-length left and right lookbacks; for equal highs or lows, the most recent pivot takes precedence. Keep the latest confirmed, unbroken pivot of each kind, replacing it when a new pivot of that kind is confirmed. A bullish break occurs when close or, under the alternative confirmation setting, high is greater than the stored pivot high. Otherwise, a bearish break occurs when close or, under that setting, low is less than the stored pivot low. Consume the broken pivot. Track the most recent break direction, initially neutral; a break opposite to the preceding direction is a change of character. Each break replaces the level, direction, and bar index being monitored for failure.
+Calculation: Failed break = After the latest break, within a configurable number of subsequent bars, close is below the broken level for a bullish break or above it for a bearish break, provided no new break occurs on the current bar. Stop monitoring after the first failure or after the window expires.
+Calculation: Higher-timeframe structure breaks = Apply the same structure-break calculation to higher-timeframe aggregated bars, using the last completed higher-timeframe bar and emitting its result once when that bar completes.
+Long: A bullish structure break occurs on the chart timeframe OR a bullish structure break occurs on the higher timeframe and its preceding higher-timeframe break direction is not bearish.
+Short: A bearish structure break occurs on the chart timeframe OR a bearish structure break occurs on the higher timeframe and its preceding higher-timeframe break direction is not bullish.
+Exit: long, a bearish change of character occurs on the chart timeframe OR a bullish break fails.
+Exit: short, a bullish change of character occurs on the chart timeframe OR a bearish break fails.

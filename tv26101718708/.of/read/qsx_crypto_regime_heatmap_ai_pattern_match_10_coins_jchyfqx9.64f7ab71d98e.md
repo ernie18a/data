@@ -1,8 +1,11 @@
-Calculation: Trend health = weighted blend of (1) long-term SMA distance, scored by clamping a linear transform of percentage distance to 0–100; (2) long-term SMA slope, scored by clamping a linear transform of percentage slope to 0–100; and (3) price-side bias, with a higher score above the SMA than at or below it.
-Calculation: Normalized ATR = short-term SMA of true range divided by close.
-Calculation: ATR rank = current normalized ATR scaled between its rolling low and high over a longer lookback; use the midpoint when the high equals the low.
-Calculation: Volatility health = inverse linear transform of ATR rank, clamped to a bounded score.
-Calculation: Trend persistence = fraction of consecutive bar pairs over a rolling lookback whose trend states have the same sign; each trend state adds a positive component when close is above the long-term SMA and another when the SMA is rising, and a negative component otherwise.
-Calculation: Regime score = clamp the short-term SMA of an adaptive weighted blend of trend health and volatility health to 0–100; increase the trend weight as trend persistence rises and decrease it as persistence falls, with the volatility weight equal to the remainder.
-Long: Current Regime score > upper threshold AND previous Regime score <= upper threshold.
-Short: Current Regime score < lower threshold AND previous Regime score >= lower threshold.
+Calculation: Trend health = weighted sum of clamped distance score, clamped slope score, and directional bias score. Distance score is a midpoint plus a coefficient times 100 × (close / trend SMA − 1); slope score is a midpoint plus a coefficient times 100 × (trend SMA / previous trend SMA − 1), using zero slope when the previous SMA is unavailable or zero; directional bias score is the higher bias value when close > trend SMA and the lower value otherwise.
+Calculation: Volatility rank = (normalized volatility − its rolling minimum) / (its rolling maximum − its rolling minimum), or the midpoint when the range is zero. Normalized volatility is the SMA of true range divided by close. Volatility health = a maximum minus a coefficient times volatility rank, clamped between its minimum and maximum.
+Calculation: Trend persistence = the fraction of valid adjacent pairs within a lookback whose trend states have a positive product; use the midpoint if no pairs are valid. Trend state is the sum of a positive or negative half-unit according to whether close > trend SMA and a positive or negative half-unit according to whether trend SMA > previous trend SMA.
+Calculation: Regime score = clamped SMA of the weighted sum of trend health and volatility health. With adaptive weighting enabled, trend weight is the clamped sum of a base weight and a coefficient times (trend persistence − midpoint), and volatility weight is its complement; otherwise use fixed complementary weights.
+Calculation: Pattern confidence = the clamped sum of a midpoint and a coefficient times the mean forward return of the nearest historical neighbors. Each feature vector contains trend health divided by its maximum, volatility rank, and clamped normalized trend SMA slope; slope is zero when either SMA is unavailable. Compare current and historical vectors by Euclidean distance over a history window beginning one forward horizon ago; each historical return is close at the end of that horizon divided by close at its start minus one. Require at least the specified number of valid neighbors.
+Long: Regime score >= bullish regime threshold
+Short: Regime score < bearish regime threshold
+Long: Regime score crosses above the higher breakout threshold
+Short: Regime score crosses below the lower breakdown threshold
+Long: Pattern confidence >= upper confidence threshold
+Short: Pattern confidence < lower confidence threshold

@@ -1,4 +1,4 @@
-Long: Any of 20 RSI values with successively longer lookbacks on the chart timeframe > the upper RSI threshold
-Long: Any of 20 RSI values with successively longer lookbacks on the higher timeframe's still-forming bar > the upper RSI threshold
-Short: Any of 20 RSI values with successively longer lookbacks on the chart timeframe < the lower RSI threshold
-Short: Any of 20 RSI values with successively longer lookbacks on the higher timeframe's still-forming bar < the lower RSI threshold
+Long: RSI of the selected price on the chart timeframe, for any lookback in an equally spaced series of increasing lookbacks, > upper threshold
+Short: RSI of the selected price on the chart timeframe, for any lookback in the same series, < lower threshold
+Long: RSI of the selected price on the still-forming higher-timeframe bar, for any lookback in an equally spaced series of increasing lookbacks, > upper threshold
+Short: RSI of the selected price on the still-forming higher-timeframe bar, for any lookback in the same series, < lower threshold

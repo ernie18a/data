@@ -1,4 +1,7 @@
-Calculation: Cumulative safety-order deviation = first deviation × (1 + step multiplier + … + step multiplier^(k−1)) for safety order k
-Short: Within the configured backtest window, when flat with no open trades, the last completed bar of a lower timeframe has Bollinger Bands %B ≥ its threshold and the previous lower-timeframe bar had %B < its threshold, AND RSI ≥ its threshold and the previous lower-timeframe bar had RSI < its threshold
-Short: While short and within the configured backtest window, if fewer than the maximum safety orders have filled, close ≥ base entry price × (1 + cumulative safety-order deviation for the next order)
-Exit: short, close ≤ average entry price × (1 − take-profit percentage)
+Calculation: Bollinger Bands %B = (close - lower Bollinger Band) / (upper Bollinger Band - lower Bollinger Band), using the last completed lower-timeframe bar sampled at each chart-bar close.
+Calculation: RSI = RSI of close on the last completed lower-timeframe bar sampled at each chart-bar close.
+Calculation: Cumulative deviation for averaging order k = first-order deviation multiplied by the sum of deviation-step multiplier powers from 0 through k-1.
+Calculation: Average entry price = quantity-weighted average fill price of the base order and filled averaging orders; each order's quantity is its configured quote-currency size divided by the signal-bar close, and successive averaging-order sizes increase by the order-size multiplier.
+Short: Position is flat AND (date filter is disabled OR chart-bar time is within the configured date window) AND previous chart-bar sampled Bollinger Bands %B < its threshold AND current sampled Bollinger Bands %B >= its threshold AND previous chart-bar sampled RSI < its threshold AND current sampled RSI >= its threshold.
+Short: Position is short AND (date filter is disabled OR chart-bar time is within the configured date window) AND filled averaging-order count < configured maximum AND close >= base entry price * (1 + cumulative deviation for the next averaging order); fill at most one averaging order per chart bar.
+Exit: Short, close <= average entry price * (1 - take-profit fraction).

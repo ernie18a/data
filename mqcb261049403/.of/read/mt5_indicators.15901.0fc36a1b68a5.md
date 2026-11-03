@@ -1,3 +1,3 @@
-Calculation: Fisher = 0.5 × ln((1 + X) / (1 − X)) + 0.5 × prior Fisher, where X = (P − rolling lowest low) / (rolling highest high − rolling lowest low) − 0.5 + 0.67 × prior X, clamped to [−999, 999]; P is the configured applied price.
-Long: Fisher > its prior-bar value
-Short: Fisher < its prior-bar value
+Calculation: Fisher value = On the chart timeframe or a higher timeframe, let highest be the maximum of zero and the highs over the lookback, and lowest be the minimum of 9999999999 and the lows over the lookback. Let price be a selected OHLC-derived price. If highest equals lowest, increase highest by the instrument's minimum price increment. Set normalized value to clamp((price - lowest) / (highest - lowest) - 0.5 + 0.67 × previous normalized value, -999, 999). Set ratio to (1 + normalized value) / (1 - normalized value); if ratio < 0.0000001, replace it with 1. Fisher value = 0.5 × ln(ratio) + 0.5 × previous Fisher value. Initialize both previous values to zero and start at the bar whose zero-based index equals the lookback. For the higher-timeframe version, sample the still-forming higher-timeframe bar at the first chart bar of that higher-timeframe bar and hold the sampled Fisher value and its previous higher-timeframe value until the next higher-timeframe bar.
+Long: Fisher value > previous Fisher value
+Short: Fisher value < previous Fisher value

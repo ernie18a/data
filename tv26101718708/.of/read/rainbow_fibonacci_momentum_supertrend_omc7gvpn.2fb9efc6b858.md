@@ -1,3 +1,7 @@
-Calculation: M1–M6 = six moving averages of close using the same selected type, ordered from shortest to longest lookback
-Long: for some k from 1 through 6, each of M1–Mk is greater than its prior chart-bar value and each of the remaining averages is less than its prior chart-bar value OR M1 > M2 > M3 > M4 > M5 > M6 and each average is greater than its prior chart-bar value
-Short: for some k from 1 through 6, each of M1–Mk is less than its prior chart-bar value and each of the remaining averages is greater than its prior chart-bar value OR M1 < M2 < M3 < M4 < M5 < M6 and each average is less than its prior chart-bar value
+Calculation: Moving-average set = six moving averages of close, all using the same selected type (EMA, SMA, WMA, HMA, or VWMA), with strictly increasing consecutive Fibonacci lookbacks; order them from shortest to longest.
+Long: For any prefix of the moving-average set from the shortest through any member, every average in the prefix is greater than its previous-bar value AND every remaining average is less than its previous-bar value.
+Long: Every moving average is greater than its previous-bar value AND each shorter-lookback average is greater than the next longer-lookback average.
+Long: Every moving average is greater than its previous-bar value AND at least one moving average on the previous bar was less than or equal to its value two bars ago.
+Short: For any prefix of the moving-average set from the shortest through any member, every average in the prefix is less than its previous-bar value AND every remaining average is greater than its previous-bar value.
+Short: Every moving average is less than its previous-bar value AND each shorter-lookback average is less than the next longer-lookback average.
+Short: Every moving average is less than its previous-bar value AND at least one moving average on the previous bar was greater than or equal to its value two bars ago.

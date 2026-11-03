@@ -1,11 +1,17 @@
-Calculation: ATR = average true range over the configured ATR lookback.
-Calculation: Relative volume = volume divided by its simple moving average over the core lookback; use 1 when that average is zero.
-Calculation: Wick absorption pressure = clamp(((lower wick − upper wick) / (high − low)) × min(relative volume, 2.5) / 1.4, −1, 1), where upper wick = high − max(open, close) and lower wick = min(open, close) − low.
-Calculation: Liquidity sweep rejection = 1 if low is below the lowest low of the prior core-lookback bars and close is above that low; −1 if high is above the highest high of the prior core-lookback bars and close is below that high; otherwise 0.
-Calculation: Normalized flow = clamp(EMA(((close − prior close) / ATR) × min(relative volume, 3), flow smoothing length), −1, 1).
-Calculation: Score = EMA(50 + 50 × clamp(0.72 × (0.45 × wick absorption pressure + 0.30 × liquidity sweep rejection + 0.25 × normalized flow) + 0.28 × ((22 × wick absorption pressure + 20 × liquidity sweep rejection + 18 × normalized flow) / 60), −1, 1), flow smoothing length).
-Calculation: Long stop = entry price − ATR at entry × stop multiplier; long TP3 = entry price + ATR at entry × TP3 multiplier. Short stop = entry price + ATR at entry × stop multiplier; short TP3 = entry price − ATR at entry × TP3 multiplier.
-Long: score ≥ signal threshold AND prior score < signal threshold AND chart bar is confirmed AND no active setup or prior setup closed.
-Short: score ≤ 100 − signal threshold AND prior score > 100 − signal threshold AND chart bar is confirmed AND no active setup or prior setup closed.
-Exit: long, after the entry bar AND (low ≤ long stop OR (high ≥ long TP3 AND low > long stop))
-Exit: short, after the entry bar AND (high ≥ short stop OR (low ≤ short TP3 AND high < short stop))
+Calculation: Relative volume = volume divided by its core-lookback SMA; use 1 when the SMA is not positive. Use zero for missing volume.
+Calculation: Absorption = clamp(((min(open, close) - low) - (high - max(open, close))) / max(high - low, epsilon) * min(relative volume, 2.5) / 1.4, -1, 1).
+Calculation: Sweep = 1 if low is below the lowest low of the preceding core-lookback bars AND close is above that low; otherwise -1 if high is above the highest high of those bars AND close is below that high; otherwise 0.
+Calculation: Flow = clamp(EMA((close - previous close) / max(ATR, epsilon) * min(relative volume, 3), flow-smoothing length), -1, 1).
+Calculation: Score = EMA(50 + 50 * clamp(0.72 * clamp(0.45 * absorption + 0.30 * sweep + 0.25 * flow, -1, 1) + 0.28 * (22 * absorption + 20 * sweep + 18 * flow) / 60, -1, 1), flow-smoothing length). Epsilon is a positive price-resolution floor.
+Calculation: Setup levels = entry close plus or minus the entry-bar ATR multiplied by separate DCA, stop-loss, and three take-profit multipliers; subtract DCA and stop distances and add take-profit distances for a long setup, and reverse the signs for a short setup. Levels remain fixed until the setup ends. Take-profit multipliers increase from first to third.
+Calculation: An active setup begins on a transition entry and ends on a subsequent bar when its stop or third take-profit level is reached. Stop takes priority if both are reached on the same bar. First and second take-profit hits do not end the setup.
+Long: Score >= upper trigger threshold OR (score < upper trigger threshold AND score > lower trigger threshold AND score > bullish-lean threshold).
+Short: Score < upper trigger threshold AND (score <= lower trigger threshold OR (score > lower trigger threshold AND score <= bullish-lean threshold AND score < bearish-lean threshold)).
+Long: Score >= upper trigger threshold AND previous score < upper trigger threshold AND no setup is active at the start of the bar.
+Short: Score <= lower trigger threshold AND previous score > lower trigger threshold AND no setup is active at the start of the bar.
+Long: A long setup is active after its entry bar AND low <= its DCA level AND DCA has not previously been reached AND low > its stop level AND high < its third take-profit level.
+Short: A short setup is active after its entry bar AND high >= its DCA level AND DCA has not previously been reached AND high < its stop level AND low > its third take-profit level.
+Exit: Long, a long setup is active after its entry bar AND (low <= its stop level OR high >= its third take-profit level).
+Exit: Short, a short setup is active after its entry bar AND (high >= its stop level OR low <= its third take-profit level).
+Exit: Long, a long setup is active after its entry bar AND low > its stop level AND high < its third take-profit level AND ((high >= its second take-profit level AND the second target has not previously been reached) OR (high < its second take-profit level AND high >= its first take-profit level AND the first target has not previously been reached)).
+Exit: Short, a short setup is active after its entry bar AND high < its stop level AND low > its third take-profit level AND ((low <= its second take-profit level AND the second target has not previously been reached) OR (low > its second take-profit level AND low <= its first take-profit level AND the first target has not previously been reached)).

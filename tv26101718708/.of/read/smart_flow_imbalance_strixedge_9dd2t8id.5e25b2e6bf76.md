@@ -1,9 +1,9 @@
-Calculation: Relative volume = volume / SMA(volume, core lookback)
-Calculation: Flow = clamp(EMA(((close - prior close) / ATR) × min(relative volume, 3), flow smoothing), -1, 1)
-Calculation: Displacement = clamp(((close - open) / ATR) × min(relative volume, 3) / 2.2, -1, 1)
-Calculation: Structure = clamp(2 × (close - rolling low) / (rolling high - rolling low) - 1, -1, 1), where rolling high and low use the core lookback including the current bar
-Calculation: Strix Score = EMA(50 + 50 × (0.444 × Flow + 0.328 × Displacement + 0.228 × Structure), flow smoothing)
-Long: chart bar is confirmed AND Strix Score ≥ signal threshold AND prior bar's Strix Score < signal threshold AND no setup is active or the prior setup closed at TP3 or stop loss
-Short: chart bar is confirmed AND Strix Score ≤ 100 - signal threshold AND prior bar's Strix Score > 100 - signal threshold AND no setup is active or the prior setup closed at TP3 or stop loss
-Exit: Long, after the entry bar, low ≤ entry price - ATR at entry × stop-loss multiplier OR high ≥ entry price + ATR at entry × third-target multiplier
-Exit: Short, after the entry bar, high ≥ entry price + ATR at entry × stop-loss multiplier OR low ≤ entry price - ATR at entry × third-target multiplier
+Calculation: Flow score = EMA of 50 + 50 × clamp(0.72 × core + 0.28 × modifier, -1, 1), using the same smoothing length as flow. Core = clamp(0.50 × flow + 0.30 × displacement + 0.20 × structure, -1, 1). Modifier = (24 × displacement + 18 × structure + 18 × flow) / 60. Flow = clamp(EMA((close - previous close) / max(ATR, epsilon) × min(relative volume, 3)), -1, 1). Displacement = clamp((close - open) / max(ATR, epsilon) × min(relative volume, 3) / 2.2, -1, 1). Structure = clamp(2 × (close - rolling lowest low) / max(rolling highest high - rolling lowest low, epsilon) - 1, -1, 1). Relative volume = volume / SMA(volume) when that SMA exceeds epsilon, otherwise 1; replace missing volume with zero. The volume SMA and rolling high and low use the same lookback. Epsilon is a small positive price increment.
+Long: Flow score >= upper threshold.
+Short: Flow score <= 100 - upper threshold.
+Long: Flow score >= upper threshold AND previous flow score < upper threshold AND no setup is open; enter at close.
+Short: Flow score <= 100 - upper threshold AND previous flow score > 100 - upper threshold AND no setup is open; enter at close.
+Long: Long setup is open AND bar is after entry bar AND low <= entry price - DCA multiplier × ATR at entry AND DCA has not previously been reached AND low > entry price - stop multiplier × ATR at entry AND high < entry price + final target multiplier × ATR at entry.
+Short: Short setup is open AND bar is after entry bar AND high >= entry price + DCA multiplier × ATR at entry AND DCA has not previously been reached AND high < entry price + stop multiplier × ATR at entry AND low > entry price - final target multiplier × ATR at entry.
+Exit: long, bar is after entry bar AND low <= entry price - stop multiplier × ATR at entry OR bar is after entry bar AND high >= entry price + final target multiplier × ATR at entry.
+Exit: short, bar is after entry bar AND high >= entry price + stop multiplier × ATR at entry OR bar is after entry bar AND low <= entry price - final target multiplier × ATR at entry.

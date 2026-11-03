@@ -1,10 +1,7 @@
-Calculation: Morning star = the current bar closes above its open and above the midpoint of the bar two bars ago; that earlier bar closed below its open; the intervening bar’s body is less than half the earlier bar’s body
-Calculation: Bullish engulfing = the current bar closes above its open, closes above the previous bar’s open, and opens at or below the previous bar’s close; the previous bar closed below its open
-Calculation: Bullish harami = the current bar closes above its open and the previous bar closes below its open; the current bar’s high is below the previous bar’s high and its low is above the previous bar’s low
-Calculation: Pin bar = the current bar has a nonzero range, a lower wick longer than twice its body, and an upper wick no longer than one quarter of its range
-Calculation: Doji = the current bar has a nonzero range and a body no larger than one tenth of its range
-Calculation: Stop = the lower of the current bar’s low and the 13-bar SMA, minus half the ATR
-Calculation: First target = the pivot from the previous completed higher-timeframe bar plus 0.618 times that bar’s high-minus-low range; pivot = (high + low + close) / 3
-Calculation: Risk/reward = (first target − close) / (close − stop)
-Long: SMA(5) > SMA(8) AND SMA(8) > SMA(13) AND close > SMA(13) AND low <= SMA(8) + ATR × tolerance AND close >= SMA(13) − ATR × tolerance AND (Morning star OR Bullish engulfing OR Bullish harami OR Pin bar OR Doji) AND (close − stop) / close × 100 >= minimum risk percentage AND Risk/reward >= minimum risk/reward
-Exit: long, NOT (SMA(5) > SMA(8) AND SMA(8) > SMA(13) AND close > SMA(13))
+Calculation: Body = abs(close - open)
+Calculation: Range = high - low
+Calculation: Signal stop = min(low, long-lookback close SMA) - ATR × stop multiplier, calculated on the signal bar
+Calculation: Profit target = (high + low + close) / 3 + (high - low) × target multiplier, using the last completed higher-timeframe bar; use successively larger multipliers for the three profit targets
+Long: Short-lookback close SMA > medium-lookback close SMA AND medium-lookback close SMA > long-lookback close SMA AND close > long-lookback close SMA AND low <= medium-lookback close SMA + ATR × zone multiplier AND close >= long-lookback close SMA - ATR × zone multiplier AND (volume filter disabled OR volume > volume SMA) AND (risk/reward filter disabled OR (close > signal stop AND (close - signal stop) / close >= minimum risk fraction AND (first profit target - close) / (close - signal stop) >= minimum risk/reward)) AND ((morning star enabled AND close[2] < open[2] AND body[1] < body[2] × star body fraction AND close > open AND close > (open[2] + close[2]) / 2) OR (engulfing enabled AND close > open AND close[1] < open[1] AND close > open[1] AND open <= close[1]) OR (inside bar enabled AND high < high[1] AND low > low[1] AND close > open AND close[1] < open[1]) OR (pin bar enabled AND range > 0 AND min(open, close) - low > body × lower-wick multiplier AND high - max(open, close) <= range × upper-wick fraction) OR (doji enabled AND range > 0 AND body <= range × doji body fraction))
+Exit: long, close >= first profit target OR close >= second profit target OR close >= third profit target
+Exit: long, short-lookback close SMA <= medium-lookback close SMA OR medium-lookback close SMA <= long-lookback close SMA OR close <= long-lookback close SMA

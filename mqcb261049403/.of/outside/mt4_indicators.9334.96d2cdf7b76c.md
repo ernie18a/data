@@ -1,1 +1,1 @@
-At each displayed strike, compare call open interest with put open interest for that date. Treat greater call open interest as long and greater put open interest as short; equal values give no directional signal. No exit rule is specified.
+For each open-interest strike level, compare call and put open interest. If call open interest is greater, indicate long; if put open interest is greater, indicate short. Equal values give no directional indication.

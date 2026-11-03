@@ -1,4 +1,4 @@
-Calculation: Session opening price = open of the first chart bar in the session
-Calculation: First 30-minute session close = close of the last chart bar whose opening time is within the first 30 minutes of the session
-Long: During an Asia, London, or USA session, after its first 30 minutes, low < that session’s first 30-minute close AND close > that close, with no earlier close sweep of that level in the session
-Short: During an Asia, London, or USA session, after its first 30 minutes, high > that session’s opening price AND close < that price, with no earlier open sweep of that level in the session
+Calculation: Session opening level = open of the first chart bar in the session.
+Calculation: Session initial close level = close of the last chart bar whose opening time is before the session's first chart-bar opening time plus the initial interval. Evaluate sweeps only from the first chart bar opening at or after the end of that interval.
+Long: For any of the three independently tracked sessions, the bar is in that session AND low < session initial close level AND close > session initial close level AND no earlier bar in that session has met these conditions.
+Short: For any of the three independently tracked sessions, the bar is in that session AND high > session opening level AND close < session opening level AND no earlier bar in that session has met these conditions.

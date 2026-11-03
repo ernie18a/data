@@ -1,4 +1,3 @@
-Calculation: Prior N-bar highest close = highest close among the N completed chart-timeframe bars before the current bar.
-Calculation: Prior N-bar lowest close = lowest close among the N completed chart-timeframe bars before the current bar.
-Long: close > prior N-bar highest close AND previous bar close <= that previous bar's prior N-bar highest close
-Short: close < prior N-bar lowest close AND previous bar close >= that previous bar's prior N-bar lowest close
+Calculation: Bollinger bandwidth percentile = percentile rank of 100 × (upper Bollinger Band − lower Bollinger Band) / middle Bollinger Band over a lookback; use zero bandwidth when the middle band is zero.
+Long: close > highest close over the preceding breakout lookback AND previous close <= highest close over the breakout lookback preceding the previous bar AND (compression filter disabled OR (previous bar's Bollinger bandwidth percentile < lower compression threshold AND its value a specified number of bars before the previous bar < higher compression threshold)).
+Short: close < lowest close over the preceding breakout lookback AND previous close >= lowest close over the breakout lookback preceding the previous bar AND (compression filter disabled OR (previous bar's Bollinger bandwidth percentile < lower compression threshold AND its value a specified number of bars before the previous bar < higher compression threshold)).

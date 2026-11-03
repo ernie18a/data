@@ -1,10 +1,9 @@
-Calculation: Fear gauge = (highest close over the fear lookback − current low) / highest close × 100
-Calculation: Adaptive fear threshold = selected percentile of recent fear-gauge values
-Calculation: Downward momentum = (current close − close at the momentum lookback) / ATR
-Calculation: Upward stretch pressure = 1 − exp(− accumulated excess stretch below the long-term moving average / scale); accumulate while price is sufficiently below the average and decay otherwise
-Calculation: Upward momentum = (current close − close at the momentum lookback) / ATR
-Calculation: Greed gauge = (current high − lowest close over the fear lookback) / lowest close × 100
-Calculation: Adaptive greed threshold = selected percentile of recent greed-gauge values
-Calculation: Downward stretch pressure = 1 − exp(− accumulated excess stretch above the long-term moving average / scale); accumulate while price is sufficiently above the average and decay otherwise
-Long: current fear gauge ≥ current adaptive fear threshold OR prior bar's fear gauge ≥ its adaptive fear threshold OR fear gauge two bars ago ≥ its adaptive fear threshold; AND the lowest downward momentum over the recent momentum window ≤ negative minimum momentum; AND current downward momentum > prior bar's downward momentum; AND upward stretch pressure ≥ minimum pressure; AND current bar is complete; AND bars since the last long or short signal ≥ cooldown
-Short: when top detection is enabled, current greed gauge ≥ current adaptive greed threshold; AND the highest upward momentum over the recent momentum window ≥ minimum momentum; AND current upward momentum < prior bar's upward momentum; AND downward stretch pressure ≥ minimum pressure; AND current bar is complete; AND bars since the last long or short signal ≥ cooldown
+Calculation: Downside fear = 100 × (highest close over the fear lookback − low) / highest close over the fear lookback; use 0 if that highest close is not positive. Its threshold is the linearly interpolated percentile of downside fear over the threshold window, including the current bar, available only after the minimum sample count.
+Calculation: Upside fear = 100 × (high − lowest close over the fear lookback) / lowest close over the fear lookback; use 0 if that lowest close is not positive. Its threshold is the same percentile of upside fear over the same threshold window, including the current bar, available only after the same minimum sample count.
+Calculation: Normalized stretch = (close − long-term simple moving average of close) / ATR.
+Calculation: Downside pressure = 1 − exp(−downside accumulation / pressure scale). Initialize accumulation to 0; on each bar add (−normalized stretch − stretch threshold) if normalized stretch < −stretch threshold, otherwise multiply accumulation by the decay factor.
+Calculation: Upside pressure = 1 − exp(−upside accumulation / pressure scale). Initialize accumulation to 0; on each bar add (normalized stretch − stretch threshold) if normalized stretch > stretch threshold, otherwise multiply accumulation by the same decay factor.
+Calculation: Momentum = (close − close at the momentum lookback) / ATR.
+Calculation: Shared cooldown = current bar index − bar index of the most recent long or short decision; before any decision, treat it as satisfied.
+Long: Shared cooldown >= cooldown threshold AND downside fear >= its threshold on at least one bar in the recent fear window AND lowest momentum over the arrival window <= −minimum momentum AND momentum > previous bar's momentum AND downside pressure >= minimum pressure.
+Short: Shared cooldown >= cooldown threshold AND upside fear >= its threshold on the current bar AND highest momentum over the arrival window >= minimum momentum AND momentum < previous bar's momentum AND upside pressure >= minimum pressure.

@@ -1,4 +1,4 @@
-Long: Fast EMA of close (shorter lookback) on the signal timeframe was <= slow EMA of close (longer lookback) on the previous completed bar AND is > it on the latest completed bar
-Short: Fast EMA of close (shorter lookback) on the signal timeframe was >= slow EMA of close (longer lookback) on the previous completed bar AND is < it on the latest completed bar
-Exit: long, fast EMA was >= slow EMA on the previous completed bar AND is < it on the latest completed bar OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, fast EMA was <= slow EMA on the previous completed bar AND is > it on the latest completed bar OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance
+Long: At the opening of a new signal-timeframe bar, the shorter-period moving average on the last completed signal-timeframe bar > the longer-period moving average on that bar AND the shorter-period moving average on the preceding signal-timeframe bar <= the longer-period moving average on that bar.
+Short: At the opening of a new signal-timeframe bar, the shorter-period moving average on the last completed signal-timeframe bar < the longer-period moving average on that bar AND the shorter-period moving average on the preceding signal-timeframe bar >= the longer-period moving average on that bar.
+Exit: long, the short-entry crossover condition is true OR stop loss is enabled AND low <= entry price - stop-loss distance OR take profit is enabled AND high >= entry price + take-profit distance.
+Exit: short, the long-entry crossover condition is true OR stop loss is enabled AND high >= entry price + stop-loss distance OR take profit is enabled AND low <= entry price - take-profit distance.

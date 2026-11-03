@@ -1,2 +1,2 @@
-Long: Any of the 10 Stochastic values on its configured timeframe, using the last completed bar, is above its upper threshold; the 10 lookbacks increase from shortest to longest.
-Short: Any of the 10 Stochastic values on its configured timeframe, using the last completed bar, is below its lower threshold; the 10 lookbacks increase from shortest to longest.
+Long: Any independently configured stochastic main line on the chart timeframe, a higher timeframe, or a lower timeframe, evaluated on its last completed bar, is greater than its upper threshold.
+Short: Any independently configured stochastic main line on the chart timeframe, a higher timeframe, or a lower timeframe, evaluated on its last completed bar, is less than its lower threshold.

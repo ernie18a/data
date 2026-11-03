@@ -1,6 +1,8 @@
-Calculation: Rolling period high = highest high over the configurable lookback; rolling period low = lowest low over the same lookback.
-Calculation: Distance from period low (%) = round(100 × (selected high source / rolling period low − 1), 2); selected high source is the bar high or close, according to the source setting.
-Calculation: Distance from period high (%) = −round(100 × (1 − selected low source / rolling period high), 2); selected low source is the bar low or close, according to the source setting.
-Calculation: Retracement ratio = 1 − round((close − rolling period low) / (rolling period high − rolling period low), 2), or round((close − rolling period low) / (rolling period high − rolling period low), 2) when retracement is reversed; use 0 when the period high equals the period low.
-Long: For any configured timeframe, distance from period low (%) > configurable buy threshold OR retracement ratio < 0.25
-Short: For any configured timeframe, distance from period high (%) > configurable sell threshold OR retracement ratio > 0.75
+Calculation: Period high and period low = highest high and lowest low over a lookback including the current bar, calculated separately on each selected timeframe. For a higher timeframe, use the last completed bar; for a lower timeframe, use the last completed lower-timeframe bar within the chart bar. Use the chart bar when the selected timeframe equals the chart timeframe.
+Calculation: Low distance = round(100 × (selected high source / period low − 1), 2 decimal places), where the selected high source is either high or close on the selected timeframe.
+Calculation: High distance = −round(100 × (1 − selected low source / period high), 2 decimal places), where the selected low source is low when the high source is high, otherwise close.
+Calculation: Retracement = 0 when period high equals period low; otherwise 1 − round((close − period low) / (period high − period low), 2 decimal places), or round((close − period low) / (period high − period low), 2 decimal places) when reverse retracement is selected.
+Long: Low distance > buy threshold OR retracement < buy-zone threshold
+Short: Low distance <= buy threshold AND retracement >= buy-zone threshold AND (high distance > sell threshold OR retracement > sell-zone threshold)
+Long: Low distance > 0 OR high distance > 0 OR retracement > upper retracement-color threshold
+Short: Low distance < 0 OR high distance < 0 OR retracement < lower retracement-color threshold

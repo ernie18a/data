@@ -1,4 +1,10 @@
-Calculation: Bullish FVG = current low > high two bars earlier
-Calculation: Bearish FVG = current high < low two bars earlier
-Long: Bullish FVG OR an existing bearish FVG closes above its upper boundary
-Short: Bearish FVG OR an existing bullish FVG closes below its lower boundary
+Calculation: Bullish gap = current low > high two bars ago; its lower bound is that earlier high, its upper bound is current low, its midpoint is the average of its bounds, and its middle-bar low and high are the low and high one bar ago.
+Calculation: Bearish gap = current high < low two bars ago; its lower bound is current high, its upper bound is that earlier low, its midpoint is the average of its bounds, and its middle-bar low and high are the low and high one bar ago.
+Calculation: Active gap = a bullish or bearish gap retained from its creation until deletion. Mark it touched when a bar's low <= its midpoint AND its high >= its midpoint. Delete an unflipped touched bullish gap when close > its upper bound, or an unflipped touched bearish gap when close < its lower bound. Otherwise, flip an unflipped bullish gap when close < its lower bound, or an unflipped bearish gap when close > its upper bound, and reset its touched status. Delete a flipped touched gap when close > its upper bound OR close < its lower bound. Apply these rules in order on every bar, including the creation bar.
+Calculation: Gap visibility = the age from the gap's first bar <= a lookback. If higher-timeframe filtering is enabled, the gap must have formed in the immediately preceding higher-timeframe window; use that last completed window's high and low, the higher-timeframe window open saved when the gap formed, and the applicable session open. If the completed window midpoint < the session open, the gap midpoint <= its saved window open; if the completed window midpoint > the session open, the gap midpoint >= its saved window open. Equality imposes no midpoint restriction. The session open is the most recent chart-bar open in the configured daily session, except in the alternate higher-timeframe mode where it is the most recent configured weekly session open saved when the gap formed and must exist. Windows are aligned to the configured session schedule.
+Long: An active visible unflipped bullish gap has low <= its midpoint AND high >= its midpoint.
+Long: An active visible flipped bearish gap has low <= its midpoint AND high >= its midpoint.
+Short: An active visible unflipped bearish gap has low <= its midpoint AND high >= its midpoint.
+Short: An active visible flipped bullish gap has low <= its midpoint AND high >= its midpoint.
+Exit: long, low <= the entry gap's middle-bar low OR high >= entry price + a risk multiple * (entry price - the entry gap's middle-bar low).
+Exit: short, high >= the entry gap's middle-bar high OR low <= entry price - a risk multiple * (the entry gap's middle-bar high - entry price).

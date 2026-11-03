@@ -1,7 +1,6 @@
-Calculation: Prior-slot lower wick fraction = (prior completed higher-timeframe slot body bottom − slot low) / slot range
-Calculation: Prior-slot upper wick fraction = (slot high − prior completed higher-timeframe slot body top) / slot range
-Calculation: Gap strength = score of the gap size divided by the average range of completed higher-timeframe slots over the configured lookback
-Long: Prior-slot lower wick fraction ≥ configured minimum wick fraction AND current bar overlaps the prior slot’s lower-wick zone OR a bullish three-slot gap forms (current completed slot low > high two slots earlier) AND its gap strength ≥ configured minimum
-Short: Prior-slot upper wick fraction ≥ configured minimum wick fraction AND current bar overlaps the prior slot’s upper-wick zone OR a bearish three-slot gap forms (current completed slot high < low two slots earlier) AND its gap strength ≥ configured minimum
-Exit: long, close below the prior slot’s lower-wick zone OR high reaches the current slot midpoint OR high reaches the current slot high OR high reaches the prior slot high
-Exit: short, close above the prior slot’s upper-wick zone OR low reaches the current slot midpoint OR low reaches the current slot low OR low reaches the prior slot low
+Calculation: Higher-timeframe slots = aggregate chart bars from each daily bar's open into an opening slot, followed by a break and consecutive equal-length slots; the final slot extends to the next daily bar. A new slot begins on the first chart bar assigned to it. Use completed slots for all calculations below.
+Calculation: Gap strength = a piecewise constant score determined by comparing gap size divided by the mean range of up to a lookback number of most recently completed slots against ascending ratio thresholds; assign increasing scores to ascending ratio intervals.
+Long: A new slot begins AND the previous completed slot's range > 0 AND (min(open, close) - low) / (high - low) >= the minimum wick fraction AND min(open, close) > low.
+Short: A new slot begins AND the previous completed slot's range > 0 AND (high - max(open, close)) / (high - low) >= the minimum wick fraction AND high > max(open, close).
+Long: A new slot begins AND the mean range of up to a lookback number of most recently completed slots > 0 AND the previous completed slot's low > the third most recently completed slot's high AND gap strength for their difference >= the minimum gap strength.
+Short: A new slot begins AND the mean range of up to a lookback number of most recently completed slots > 0 AND the previous completed slot's high < the third most recently completed slot's low AND gap strength for their difference >= the minimum gap strength.

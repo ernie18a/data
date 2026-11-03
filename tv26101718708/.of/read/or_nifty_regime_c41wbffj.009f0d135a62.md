@@ -1,3 +1,3 @@
-Calculation: Normalized EMA displacement = (close - EMA(close, lookback)) / ATR(lookback)
-Long: Normalized EMA displacement > bullish threshold AND last completed bar close of higher-timeframe VIX < no-trade threshold
-Short: Normalized EMA displacement < bearish threshold AND last completed bar close of higher-timeframe VIX < no-trade threshold
+Calculation: Directional bias = (close - EMA of close) / ATR when ATR > 0; otherwise 0.
+Long: Directional bias > bullish threshold.
+Short: Directional bias < bearish threshold.

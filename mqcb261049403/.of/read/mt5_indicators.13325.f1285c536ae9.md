@@ -1,4 +1,6 @@
-Calculation: Fast trend = sum of five price-momentum values with progressively longer lookbacks and increasing weights; the third value uses the second value’s weight.
-Calculation: Slow trend = recursively smoothed fast trend, weighting the current fast trend by 1 divided by the smoothing length and the previous slow trend by the remaining fraction.
-Long: Chart-timeframe fast trend > chart-timeframe slow trend OR higher-timeframe fast trend > higher-timeframe slow trend (using the still-forming higher-timeframe bar)
-Short: Chart-timeframe fast trend < chart-timeframe slow trend OR higher-timeframe fast trend < higher-timeframe slow trend (using the still-forming higher-timeframe bar)
+Calculation: Weighted momentum = weighted sum of five momentum values of the selected price, using five increasingly long lookbacks; the second and third momentum values share one weight.
+Calculation: Smoothed momentum = weighted momentum divided by the smoothing period plus the previous smoothed momentum multiplied by (smoothing period minus one) divided by the smoothing period. Initialize it to weighted momentum divided by the smoothing period at the zero-based bar index equal to three times the longest momentum lookback plus two.
+Long: Chart-timeframe weighted momentum > chart-timeframe smoothed momentum.
+Short: Chart-timeframe weighted momentum < chart-timeframe smoothed momentum.
+Long: Higher-timeframe weighted momentum > higher-timeframe smoothed momentum, sampled from the higher-timeframe bar still forming at the start of that bar and held until the next higher-timeframe bar.
+Short: Higher-timeframe weighted momentum < higher-timeframe smoothed momentum, sampled from the higher-timeframe bar still forming at the start of that bar and held until the next higher-timeframe bar.

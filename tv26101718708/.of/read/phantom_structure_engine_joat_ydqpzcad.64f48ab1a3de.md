@@ -1,7 +1,17 @@
-Calculation: Confirmed swing high/low = a chart-bar high/low greater/less than the highs/lows in configurable left- and right-side lookbacks; available after the right-side bars complete. Use the same lookbacks for highs and lows.
-Calculation: Bullish BOS = the configurable number of consecutive completed chart-bar closes above the latest confirmed swing high, once per swing high and after the warmup period; bearish BOS = consecutive closes below the latest confirmed swing low, once per swing low and after warmup. Warmup is the greater of a configurable multiple of the combined swing lookbacks or a configurable minimum number of chart bars.
-Calculation: Structural direction = bullish after a bullish BOS, bearish after a bearish BOS, otherwise the most recent BOS direction (initially neutral).
-Calculation: High-side sweep = completed chart-bar high above the latest confirmed swing high and close below it; low-side sweep = low below the latest confirmed swing low and close above it.
-Calculation: Funding candle = current chart-bar true range exceeds a configurable multiple of ATR and volume exceeds a configurable multiple of its moving average.
-Long: bullish BOS OR confirmed swing high above the preceding confirmed swing high OR confirmed swing low above the preceding confirmed swing low OR low-side sweep OR funding candle while structural direction is bullish.
-Short: bearish BOS OR confirmed swing high below the preceding confirmed swing high OR confirmed swing low below the preceding confirmed swing low OR high-side sweep OR funding candle while structural direction is bearish.
+Calculation: Swing high and swing low = most recent confirmed pivot high and pivot low, using the same configurable left and right lookbacks; update each on its confirmation bar.
+Calculation: Upward break = consecutive closes above the current swing high reach a confirmation threshold, after the latest swing high was confirmed and before any prior upward break of that swing high. Reset the count when a new swing high is confirmed or close is at or below the swing high.
+Calculation: Downward break = consecutive closes below the current swing low reach the same confirmation threshold, after the latest swing low was confirmed and before any prior downward break of that swing low. Reset the count when a new swing low is confirmed or close is at or above the swing low.
+Calculation: Warmup = the greater of a minimum bar count and a multiple of the sum of the pivot left and right lookbacks.
+Calculation: Structure direction = direction of the most recent upward or downward break after warmup; initially neutral. If both breaks occur on the same bar, direction is downward.
+Long: Bar index >= warmup AND upward break.
+Short: Bar index >= warmup AND downward break.
+Long: A swing high is confirmed AND its value > the previous confirmed swing high.
+Short: A swing high is confirmed AND its value <= the previous confirmed swing high.
+Long: A swing low is confirmed AND its value > the previous confirmed swing low.
+Short: A swing low is confirmed AND its value <= the previous confirmed swing low.
+Long: Bar index >= warmup AND low < swing low AND close > swing low.
+Short: Bar index >= warmup AND high > swing high AND close < swing high.
+Long: Bar index >= warmup AND low > high two bars ago.
+Short: Bar index >= warmup AND high < low two bars ago.
+Long: True range > ATR multiplied by a threshold AND volume > volume SMA multiplied by a threshold AND structure direction = upward.
+Short: True range > ATR multiplied by the same threshold AND volume > volume SMA multiplied by the same threshold AND structure direction = downward.

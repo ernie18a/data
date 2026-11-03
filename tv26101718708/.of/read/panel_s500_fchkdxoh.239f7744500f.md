@@ -1,12 +1,14 @@
-Calculation: VSA activity = volume > its moving average AND (high - low) > the moving average of (high - low)
-Calculation: Smoothed volume delta = moving average of volume when close > open, negative volume when close < open, and zero when close = open
-Calculation: Range-to-ATR ratio = (high - low) / ATR
-Calculation: Compression ratio = ATR / moving average of ATR
-Long: On each requested timeframe, EMA with the shorter lookback > EMA with the longer lookback OR RSI > 50 OR RSI > its previous value OR MACD > 0 OR MACD > its previous value OR ADX > 25
-Long: OBV > its previous value OR volume > its moving average OR volume moving average > its previous value OR VSA activity OR Stochastic > 50 OR close > VWAP OR EMA(50) > EMA(200) OR EMA(26) > EMA(50) OR close > EMA(20) OR RSI > its previous value OR EMA(20) > its previous value OR range-to-ATR ratio > 1.1 OR body size / (high - low) > 0.6 OR ATR > its previous value OR smoothed volume delta > 0 OR compression ratio > 1
-Long: close > EMA(50) AND EMA(50) > EMA(200) AND close > VWAP
-Long: EMA(50) > EMA(200) AND NOT (ABS(EMA(50) - EMA(200)) < ATR * 0.2)
-Short: On each requested timeframe, EMA with the shorter lookback <= EMA with the longer lookback OR RSI <= 50 OR RSI < its previous value OR MACD <= 0 OR MACD < its previous value OR ADX < 20
-Short: OBV <= its previous value OR volume <= its moving average OR volume moving average <= its previous value OR NOT VSA activity OR Stochastic <= 50 OR close <= VWAP OR EMA(50) <= EMA(200) OR EMA(26) <= EMA(50) OR close <= EMA(20) OR RSI < its previous value OR EMA(20) <= its previous value OR range-to-ATR ratio <= 1.1 OR body size / (high - low) <= 0.6 OR ATR <= its previous value OR smoothed volume delta <= 0 OR compression ratio <= 1
-Short: close < EMA(50) AND EMA(50) < EMA(200) AND close < VWAP
-Short: EMA(50) < EMA(200) AND NOT (ABS(EMA(50) - EMA(200)) < ATR * 0.2)
+Calculation: Volume delta = volume when close > open, -volume when close < open, and 0 otherwise.
+Long: On each selected higher or lower timeframe, short-period EMA of close > long-period EMA of close.
+Short: On each selected higher or lower timeframe, short-period EMA of close <= long-period EMA of close.
+Long: On each selected higher or lower timeframe, RSI > its midpoint OR RSI > previous-bar RSI OR MACD line > 0 OR MACD line > previous-bar MACD line.
+Short: On each selected higher or lower timeframe, RSI <= its midpoint OR RSI < previous-bar RSI OR MACD line <= 0 OR MACD line < previous-bar MACD line.
+Calculation: Higher-timeframe calculations use the bar still forming; lower-timeframe calculations use the last available lower-timeframe bar within the chart bar.
+Long: OBV > previous-bar OBV OR SMA of volume > its previous-bar value.
+Short: OBV <= previous-bar OBV OR SMA of volume <= its previous-bar value.
+Long: Stochastic %K > its midpoint OR close > session VWAP OR shorter-period EMA of close > longer-period EMA of close OR close > EMA of close OR RSI > previous-bar RSI OR EMA of close > its previous-bar value OR SMA of volume delta > 0.
+Short: Stochastic %K <= its midpoint OR close <= session VWAP OR shorter-period EMA of close <= longer-period EMA of close OR close <= EMA of close OR RSI <= previous-bar RSI OR EMA of close <= its previous-bar value OR SMA of volume delta <= 0.
+Long: Close > shorter-period EMA of close AND shorter-period EMA of close > longer-period EMA of close AND close > session VWAP.
+Short: Close < shorter-period EMA of close AND shorter-period EMA of close < longer-period EMA of close AND close < session VWAP.
+Long: Shorter-period EMA of close > longer-period EMA of close AND absolute difference between those EMAs >= ATR multiplied by a range threshold.
+Short: Shorter-period EMA of close < longer-period EMA of close AND absolute difference between those EMAs >= ATR multiplied by a range threshold.

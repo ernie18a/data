@@ -1,6 +1,9 @@
-Short: Flat AND chart-timeframe RSI crosses below its overbought threshold (previous completed bar RSI ≥ threshold and current completed bar RSI < threshold)
-Short: Short position open AND close ≥ the next averaging level above the base entry
-Calculation: Next averaging level = base entry increased by the cumulative configured deviation for that rung; successive rungs are above the prior rung
-Calculation: Average entry price = total quote amount deployed across filled orders ÷ total asset quantity
-Exit: Short, close ≥ average entry price increased by the configured stop-loss percentage OR take-profit trailing is armed AND close ≥ the lowest close since arming increased by the configured trailing percentage
-Calculation: Take-profit trailing arms when close ≤ average entry price reduced by the configured take-profit percentage; while armed, track the lowest close
+Calculation: Active window = the datetime is within the configured inclusive date range when the date filter is enabled; otherwise all bars are active.
+Calculation: Sampled RSI cross-down = RSI of closes crosses below its threshold within the configured RSI timeframe: current RSI < threshold AND previous RSI >= threshold. For a higher timeframe, use the last completed bar and map the result to the chart bar where it completes; for a lower timeframe, use the last completed intrabar within each chart bar. For the chart timeframe, use the current bar.
+Calculation: Averaging ladder = for averaging order k, its deviation from base entry is the sum of the first k steps, starting with the first deviation and multiplying each successive step by the deviation-step multiplier. Its quote size is the first averaging-order size multiplied by the order-size multiplier to the power k minus one.
+Calculation: Average entry = total quote size of the base entry and filled averaging orders divided by the sum of each order's quote size divided by its fill close. Process the base entry, at most one averaging order, then exits in that order on each bar; fills use that bar's close. Reset all position and trailing state on exit.
+Calculation: Trailing low = after a short entry, on each active bar where close <= average entry × (1 − take-profit percentage), arm the trailing exit and set the trailing low to the minimum of that close and the previously stored trailing low; retain it on other bars until exit.
+Short: Active window AND position is flat AND sampled RSI cross-down.
+Short: Active window AND position is short AND filled averaging-order count < configured maximum AND close >= base entry × (1 + deviation of the next averaging order).
+Exit: short, active window AND close >= average entry × (1 + stop-loss percentage).
+Exit: short, active window AND close < average entry × (1 + stop-loss percentage) AND trailing exit is armed AND close >= trailing low × (1 + trailing percentage).

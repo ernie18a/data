@@ -1,10 +1,9 @@
-Calculation: Opening range high = highest high during the configured opening-range window, fixed when the window ends
-Calculation: Opening range low = lowest low during the configured opening-range window, fixed when the window ends
-Calculation: Breakout buffer = ATR × configured buffer multiplier
-Calculation: Risk distance = ATR × configured stop multiplier when ATR stops are enabled; otherwise, for a long, entry price − opening range low, or for a short, opening range high − entry price; if that distance is nonpositive, use ATR × configured stop multiplier
-Calculation: Stop price = long entry price − risk distance; short entry price + risk distance
-Calculation: First target = long entry price + risk distance × configured first-target R multiple; short entry price − risk distance × configured first-target R multiple
-Long: opening range locked AND inside configured trade session AND trades today < configured daily maximum AND enough chart bars since the previous signal (or no previous signal) AND close > opening range high + breakout buffer AND previous close ≤ previous opening range high + current breakout buffer
-Short: opening range locked AND inside configured trade session AND trades today < configured daily maximum AND enough chart bars since the previous signal (or no previous signal) AND close < opening range low − breakout buffer AND previous close ≥ previous opening range low − current breakout buffer
-Exit: Long, high ≥ first target OR low ≤ stop price
-Exit: Short, low ≤ first target OR high ≥ stop price
+Calculation: Opening-range high and low = maximum high and minimum low of chart bars in the configured opening window; lock them on the first bar outside that window and invalidate them on a new exchange day outside the window.
+Calculation: Signal count = number of long and short signals since the start of the current exchange day; reset to zero on each new exchange day.
+Calculation: Risk = ATR at entry multiplied by the stop multiplier if ATR stop mode is selected; otherwise entry price minus opening-range low for a long, or opening-range high minus entry price for a short. If this risk is nonpositive, use ATR at entry multiplied by the stop multiplier. Fix risk at entry.
+Calculation: First target = entry price plus risk multiplied by the first target multiplier for a long, or entry price minus risk multiplied by the first target multiplier for a short.
+Calculation: Stop = entry price minus risk for a long, or entry price plus risk for a short.
+Long: Opening range is locked AND bar is in the configured trade session AND close > opening-range high + current ATR multiplied by the breakout-buffer multiplier AND previous close <= previous bar's opening-range high + current ATR multiplied by the breakout-buffer multiplier AND signal count < daily signal limit AND either no previous signal exists OR bars since the last long or short signal >= minimum signal spacing.
+Short: Opening range is locked AND bar is in the configured trade session AND close < opening-range low - current ATR multiplied by the breakout-buffer multiplier AND previous close >= previous bar's opening-range low - current ATR multiplied by the breakout-buffer multiplier AND signal count < daily signal limit AND either no previous signal exists OR bars since the last long or short signal >= minimum signal spacing.
+Exit: long, bar is after the entry bar AND (high >= first target OR low <= stop OR a new long or short signal occurs).
+Exit: short, bar is after the entry bar AND (low <= first target OR high >= stop OR a new long or short signal occurs).

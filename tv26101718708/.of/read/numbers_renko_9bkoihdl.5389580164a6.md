@@ -1,2 +1,6 @@
-Long: close > open
-Short: close <= open
+Calculation: Wave direction = sign of close minus previous close; when equal, retain the previous direction. A wave ends when direction changes, and the new wave starts on that bar.
+Calculation: Wave volume = sum of volume since the wave started. Completed waves exclude the reversal bar; the forming wave includes the current bar.
+Calculation: Wave effort = wave volume divided by its bar count. On the first bar of a forming wave, use wave volume instead.
+Calculation: Comparison wave = either the forming wave or, on a reversal bar, the wave just completed. For each comparison wave, compare wave volume with each of the two preceding completed waves' volumes, and compare wave effort with each of those waves' efforts.
+Long: close > open OR comparison wave direction is up AND its volume or effort > the corresponding value of either preceding completed wave OR comparison wave direction is down AND its volume or effort <= the corresponding value of either preceding completed wave
+Short: close <= open OR comparison wave direction is down AND its volume or effort > the corresponding value of either preceding completed wave OR comparison wave direction is up AND its volume or effort <= the corresponding value of either preceding completed wave

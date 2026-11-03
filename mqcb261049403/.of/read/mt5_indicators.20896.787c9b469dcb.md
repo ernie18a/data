@@ -1,10 +1,8 @@
-Calculation: Stochastic main line = Stochastic oscillator main line, calculated on the selected indicator timeframe (the chart timeframe or a higher timeframe), using the bar containing the chart bar's timestamp, which may still be forming
-Calculation: Stochastic signal line = Stochastic oscillator signal line, calculated on the selected indicator timeframe (the chart timeframe or a higher timeframe), using the bar containing the chart bar's timestamp, which may still be forming
-Calculation: Accelerator Oscillator = Accelerator Oscillator, calculated on the selected indicator timeframe (the chart timeframe or a higher timeframe), using the bar containing the chart bar's timestamp, which may still be forming
-Calculation: Simple moving average = Simple moving average of close, calculated on the selected indicator timeframe (the chart timeframe or a higher timeframe), using the bar containing the chart bar's timestamp, which may still be forming
-Long: Accelerator Oscillator > 0 AND Accelerator Oscillator > its value on the preceding bar AND Stochastic main line > 50 AND the last qualifying OzFX direction is not long
-Short: Accelerator Oscillator < 0 AND Accelerator Oscillator < its value on the preceding bar AND Stochastic main line < 50 AND the last qualifying OzFX direction is not short
-Long: Accelerator Oscillator > its value on the preceding bar AND Stochastic main line > Stochastic signal line AND the last qualifying AES direction is not long
-Short: Accelerator Oscillator < its value on the preceding bar AND Stochastic main line < Stochastic signal line AND the last qualifying AES direction is not short
-Long: Close > simple moving average
-Short: Close <= simple moving average
+Calculation: OzFX state = direction of the most recent prior completed calculation-timeframe bar satisfying either OzFX condition below; initially neutral. Use the chart timeframe or a higher timeframe's still-forming bar.
+Calculation: AES state = direction of the most recent prior completed calculation-timeframe bar satisfying either AES condition below; initially neutral. Use the chart timeframe or a higher timeframe's still-forming bar.
+Long: Accelerator Oscillator > 0 AND Accelerator Oscillator > its previous-bar value AND stochastic main line > its midpoint AND OzFX state is not long
+Short: Accelerator Oscillator < 0 AND Accelerator Oscillator < its previous-bar value AND stochastic main line < its midpoint AND OzFX state is not short
+Long: Accelerator Oscillator > its previous-bar value AND stochastic main line > stochastic signal line AND AES state is not long
+Short: Accelerator Oscillator < its previous-bar value AND stochastic main line < stochastic signal line AND AES state is not short
+Long: calculation-timeframe close > SMA of calculation-timeframe close
+Short: calculation-timeframe close <= SMA of calculation-timeframe close

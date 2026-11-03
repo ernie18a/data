@@ -1,11 +1,18 @@
-Calculation: Tenkan-sen = midpoint of the highest high and lowest low over the short Ichimoku lookback
-Calculation: Kijun-sen = midpoint of the highest high and lowest low over a longer Ichimoku lookback than Tenkan-sen
-Calculation: Senkou A = midpoint of Tenkan-sen and Kijun-sen
-Calculation: Senkou B = midpoint of the highest high and lowest low over a longer Ichimoku lookback than Kijun-sen
-Calculation: Current cloud = Senkou A and Senkou B from the chart bars `displacement - 1` bars earlier
-Calculation: Price-to-cloud distance = signed distance from close to the nearest cloud edge, divided by ATR; positive above the cloud, negative below it, and zero inside it
-Calculation: Chikou momentum = (close - close from `displacement - 1` chart bars earlier) / ATR
-Long: Tenkan-sen crosses above Kijun-sen OR close crosses above the current cloud's upper edge OR Senkou A crosses above Senkou B
-Long: (Tenkan-sen crosses above Kijun-sen OR close crosses above the current cloud's upper edge) AND close > open AND (abs(price-to-cloud distance) >= minimum distance for a cloud breakout OR price-to-cloud distance != 0 for a Tenkan/Kijun cross) AND Chikou momentum > 0 AND abs(Chikou momentum) >= minimum Chikou momentum AND (higher-timeframe cloud filter disabled OR close on the last completed higher-timeframe bar is above that bar's cloud)
-Short: Tenkan-sen crosses below Kijun-sen OR close crosses below the current cloud's lower edge OR Senkou A crosses below Senkou B
-Short: (Tenkan-sen crosses below Kijun-sen OR close crosses below the current cloud's lower edge) AND close < open AND (abs(price-to-cloud distance) >= minimum distance for a cloud breakout OR price-to-cloud distance != 0 for a Tenkan/Kijun cross) AND Chikou momentum < 0 AND abs(Chikou momentum) >= minimum Chikou momentum AND (higher-timeframe cloud filter disabled OR close on the last completed higher-timeframe bar is below that bar's cloud)
+Calculation: Ichimoku lines = short-, medium-, and long-lookback midpoints of the highest high and lowest low; projected span A is the average of the short and medium midpoints, and projected span B is the long midpoint.
+Calculation: Current cloud = projected spans A and B from displacement minus one chart bars ago; its upper and lower boundaries are the maximum and minimum of those spans.
+Calculation: Price-to-cloud distance = (close minus the nearest cloud boundary) / ATR when close is outside the cloud; otherwise 0.
+Calculation: Close momentum = (close minus close from displacement minus one chart bars ago) / ATR.
+Long: Short-lookback midpoint crosses above medium-lookback midpoint.
+Short: Short-lookback midpoint crosses below medium-lookback midpoint.
+Long: Close crosses above the current cloud's upper boundary.
+Short: Close crosses below the current cloud's lower boundary.
+Long: Short-lookback midpoint crosses above medium-lookback midpoint AND close > open AND absolute price-to-cloud distance > 0 AND close momentum > 0 AND close momentum >= momentum threshold AND (higher-timeframe filter disabled OR last completed higher-timeframe close > last completed higher-timeframe current cloud's upper boundary).
+Short: Short-lookback midpoint crosses below medium-lookback midpoint AND close < open AND absolute price-to-cloud distance > 0 AND close momentum < 0 AND absolute close momentum >= momentum threshold AND (higher-timeframe filter disabled OR last completed higher-timeframe close < last completed higher-timeframe current cloud's lower boundary).
+Long: Close crosses above the current cloud's upper boundary AND close > open AND absolute price-to-cloud distance >= distance threshold AND close momentum > 0 AND close momentum >= momentum threshold AND (higher-timeframe filter disabled OR last completed higher-timeframe close > last completed higher-timeframe current cloud's upper boundary).
+Short: Close crosses below the current cloud's lower boundary AND close < open AND absolute price-to-cloud distance >= distance threshold AND close momentum < 0 AND absolute close momentum >= momentum threshold AND (higher-timeframe filter disabled OR last completed higher-timeframe close < last completed higher-timeframe current cloud's lower boundary).
+Long: Projected span A crosses above projected span B.
+Short: Projected span A crosses below projected span B.
+Long: Projected span A > projected span B.
+Short: Projected span A <= projected span B.
+Long: Last completed higher-timeframe close > last completed higher-timeframe current cloud's upper boundary.
+Short: Last completed higher-timeframe close < last completed higher-timeframe current cloud's lower boundary.

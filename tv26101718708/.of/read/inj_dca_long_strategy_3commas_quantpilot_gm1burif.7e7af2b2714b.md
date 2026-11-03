@@ -1,3 +1,5 @@
-Long: flat AND RSI(14) < oversold threshold
-Long: long position AND an unfired safety-order rung remains AND close <= base entry × (1 − next rung's fixed deviation); rung deviations increase in order
-Exit: long, close >= average entry price × (1 + take-profit percentage)
+Calculation: RSI = RSI of close on the configured timeframe; on a higher timeframe use the last completed bar, on a lower timeframe use the last completed intrabar, and on the chart timeframe use the current bar.
+Calculation: Average entry price = quantity-weighted average fill price of the base order and filled averaging orders; each order's quantity is its configured quote-currency size divided by the signal bar's close.
+Long: Position is flat AND bar datetime is within the configured backtest window, if enabled, AND RSI < oversold threshold.
+Long: Position is long AND bar datetime is within the configured backtest window, if enabled, AND at least one averaging order remains AND close <= base entry price * (1 - the next averaging order's configured deviation). Submit only the next order per bar, in configured order.
+Exit: long, close >= average entry price * (1 + take-profit percentage).

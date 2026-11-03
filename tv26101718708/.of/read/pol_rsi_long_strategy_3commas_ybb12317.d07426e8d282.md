@@ -1,2 +1,3 @@
-Long: flat AND RSI(lookback) < threshold OR long position AND an unfilled safety-order rung remains AND close ≤ base entry price × (1 − that rung’s fixed deviation); safety-order rungs trigger sequentially, with deviations increasing from rung to rung
-Exit: long, close ≥ average entry price × (1 + take-profit percentage)
+Long: Position is flat AND (date filter is disabled OR bar datetime is within the configured date window) AND RSI of close is below its threshold. For a higher RSI timeframe, use the last completed bar; for a lower RSI timeframe, use the last completed intrabar within the chart bar; for the chart timeframe, use the current bar.
+Long: Position is long AND (date filter is disabled OR bar datetime is within the configured date window) AND fewer than five averaging orders have been submitted since the base entry AND close <= base entry price × (1 − the next averaging order's configured deviation). Submit at most one averaging order per bar, in ladder order; each deviation is measured independently from the base entry price.
+Exit: Long, close >= quantity-weighted average entry price × (1 + take-profit percentage).

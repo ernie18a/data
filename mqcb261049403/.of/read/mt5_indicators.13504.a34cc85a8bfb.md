@@ -1,6 +1,7 @@
-Calculation: Impulse MACD = (weighted-price SMA − high-price SMMA) when the weighted-price SMA is above the high-price SMMA; (weighted-price SMA − low-price SMMA) when it is below the low-price SMMA; otherwise 0
-Calculation: Signal line = trailing average of the Impulse MACD over a shorter lookback than the Impulse MACD’s high/low SMMA lookback; when Impulse MACD is 0, carry forward the previous Signal line value
-Long: Impulse MACD > 0 OR Impulse MACD > Signal line
-Short: Impulse MACD < 0 OR Impulse MACD < Signal line
-Long: Higher-timeframe Impulse MACD > 0 OR Higher-timeframe Impulse MACD > Higher-timeframe Signal line (higher-timeframe bar still forming)
-Short: Higher-timeframe Impulse MACD < 0 OR Higher-timeframe Impulse MACD < Higher-timeframe Signal line (higher-timeframe bar still forming)
+Calculation: Impulse = SMA of weighted price (high + low + 2 × close) / 4 minus the smoothed moving average of high when the SMA is above that average; SMA minus the smoothed moving average of low when the SMA is below that average; otherwise 0. All three averages use the same lookback.
+Calculation: Cloud line = impulse when impulse is nonzero; otherwise the previous cloud line.
+Calculation: Cloud signal = SMA of impulse over a shorter lookback when impulse is nonzero; otherwise the current cloud line.
+Long: Impulse > 0 AND impulse != previous bar's impulse, OR cloud line > cloud signal.
+Short: Impulse < 0 AND impulse != previous bar's impulse, OR cloud line < cloud signal.
+Long: Higher-timeframe impulse > 0 AND higher-timeframe impulse != previous higher-timeframe bar's impulse, OR higher-timeframe cloud line > higher-timeframe cloud signal; use the higher-timeframe bar still forming.
+Short: Higher-timeframe impulse < 0 AND higher-timeframe impulse != previous higher-timeframe bar's impulse, OR higher-timeframe cloud line < higher-timeframe cloud signal; use the higher-timeframe bar still forming.

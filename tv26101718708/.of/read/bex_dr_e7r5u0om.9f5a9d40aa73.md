@@ -1,4 +1,7 @@
-Calculation: Defining-session high = highest high during that session; on a chart below the indicator’s range-source timeframe, use highs from the higher, still-forming bars
-Calculation: Defining-session low = lowest low during that session; on a chart below the indicator’s range-source timeframe, use lows from the higher, still-forming bars
-Long: During the extension after an after-hours, overnight, or regular defining session, no bullish break has already occurred for that range, and close > that session’s defining-session high AND previous close <= that session’s defining-session high
-Short: During the extension after an after-hours, overnight, or regular defining session, no bearish break has already occurred for that range, and close < that session’s defining-session low AND previous close >= that session’s defining-session low
+Calculation: Session price bar = the chart bar when its timeframe is at least the configured threshold; otherwise the higher-timeframe bar containing the chart bar, using its final OHLC values on historical bars and its still-forming OHLC values in real time.
+Calculation: Session range = the maximum high and minimum low of the session price bars sampled during a configured session; store each session's range when that session ends. Session and extension windows are defined in the New York timezone.
+Calculation: Session open = the open of the session price bar sampled on the first chart bar of the session.
+Long: During a configured session, session price bar close > session open.
+Short: During a configured session, session price bar close <= session open.
+Long: During a configured session's extension, chart close > that session's stored range high AND previous chart close <= that same stored range high AND no prior upward break has occurred for that session since it ended.
+Short: During a configured session's extension, chart close < that session's stored range low AND previous chart close >= that same stored range low AND no prior downward break has occurred for that session since it ended.

@@ -1,20 +1,10 @@
-Calculation: EMA = exponential moving average of close
-Calculation: RSI = relative strength index of close
-Calculation: ATR = average true range
-Calculation: Swing trend = retain the latest confirmed swing high and low, where a swing high/low is the high/low at the center of a lookback window that is the highest/lowest across that window; set trend up when close > latest swing high and down when close < latest swing low, otherwise retain trend
-Calculation: Long PnL (%) = (close - entry price) / entry price × 100
-Calculation: Short PnL (%) = (entry price - close) / entry price × 100
-Long: (symbol fast EMA > symbol slow EMA OR (symbol fast EMA = symbol slow EMA AND index fast EMA < index slow EMA)) AND swing trend is up AND RSI < overbought level AND long lockout is inactive
-Short: symbol fast EMA < symbol slow EMA AND swing trend is down AND RSI > oversold level AND short lockout is inactive
-Exit: Long, swing trend is down
-Exit: Short, swing trend is up
-Exit: Long, Long PnL (%) < stop-loss threshold AND NOT (symbol fast EMA < symbol slow EMA)
-Exit: Short, Short PnL (%) < stop-loss threshold AND NOT (symbol fast EMA > symbol slow EMA OR (symbol fast EMA = symbol slow EMA AND index fast EMA < index slow EMA))
-Exit: Long, previous bar had symbol fast EMA >= symbol slow EMA and index fast EMA >= index slow EMA AND current bar does not AND Long PnL (%) > 0.1 AND NOT (symbol fast EMA < symbol slow EMA) AND no prior weakening-trend scale-out in this position
-Exit: Short, previous bar had symbol fast EMA < symbol slow EMA and index fast EMA < index slow EMA AND current bar does not AND Short PnL (%) > 0.1 AND NOT (symbol fast EMA > symbol slow EMA OR (symbol fast EMA = symbol slow EMA AND index fast EMA < index slow EMA)) AND no prior weakening-trend scale-out in this position
-Exit: Long, take-profit is enabled AND high > entry price + ATR(50) × take-profit factor
-Exit: Long, take-profit is enabled AND high > entry price + 2 × ATR(50) × take-profit factor
-Exit: Long, take-profit is enabled AND high > entry price + 3 × ATR(50) × take-profit factor
-Exit: Short, take-profit is enabled AND low < entry price - ATR(50) × take-profit factor
-Exit: Short, take-profit is enabled AND low < entry price - 2 × ATR(50) × take-profit factor
-Exit: Short, take-profit is enabled AND low < entry price - 3 × ATR(50) × take-profit factor
+Calculation: Swing levels = On each bar, confirm a swing high or low when the high or low at the center of a symmetric lookback window equals the highest high or lowest low of that window; retain the most recently confirmed level of each kind.
+Calculation: Swing trend = Initially neutral; set to up when close exceeds the latest swing high, then set to down when close is below the latest swing low; otherwise retain the previous trend.
+Calculation: Profit target = Signal-bar close plus, for a long, or minus, for a short, an ATR-based distance calculated on the signal bar; use three successively higher multiples of that distance and disable each target after it is reached.
+Long: Swing trend is up AND latest swing low exists.
+Short: Swing trend is down AND latest swing high exists.
+Exit: long, swing trend is down.
+Exit: short, swing trend is up.
+Exit: long, percentage return from entry price to close is below the stop-loss threshold AND shorter EMA of close is greater than or equal to longer EMA of close.
+Exit: long, high exceeds an enabled profit target.
+Exit: short, low is below an enabled profit target.

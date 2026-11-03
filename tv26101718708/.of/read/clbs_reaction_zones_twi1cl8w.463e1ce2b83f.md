@@ -1,2 +1,2 @@
-Long: high two bars ago < current low AND current low - high two bars ago >= minimum gap size
-Short: low two bars ago > current high AND low two bars ago - current high >= minimum gap size
+Long: Current low > high two bars ago AND current low - high two bars ago >= minimum gap size.
+Short: Current high < low two bars ago AND low two bars ago - current high >= minimum gap size.

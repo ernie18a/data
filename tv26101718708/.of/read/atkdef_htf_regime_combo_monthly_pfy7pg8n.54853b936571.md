@@ -1,2 +1,8 @@
-Long: a swing low is confirmed
-Short: a swing high is confirmed
+Calculation: Score levels = ten configurable values A < B < C < D < E < F < G < H < I < J, shared by all component scores.
+Calculation: Direction score = evaluate in order: J if close > short-term close SMA AND short-term SMA > long-term close SMA AND short-term SMA > its previous value; I if close > short-term SMA AND short-term SMA > long-term SMA; H if close > short-term SMA AND short-term SMA < long-term SMA; F if close < short-term SMA AND short-term SMA > long-term SMA; B if close < short-term SMA AND short-term SMA < long-term SMA AND short-term SMA < its previous value; D if close < short-term SMA AND short-term SMA < long-term SMA; otherwise G.
+Calculation: Trend score = evaluate ADX against five ascending thresholds in order: J if ADX > the highest threshold; I if ADX >= the second-highest; H if ADX >= the middle; E if ADX >= the second-lowest; C if ADX >= the lowest; otherwise A. Use the same period for DMI and ADX smoothing.
+Calculation: Momentum score = evaluate RSI against six ascending thresholds R1 through R6 in order: J if RSI >= R5 AND RSI <= R6 AND RSI > previous RSI; I if RSI >= R4 AND RSI < R5 AND RSI > previous RSI; H if RSI >= R3 AND RSI < R4; E if RSI >= R2 AND RSI < R3 AND RSI < previous RSI; C if RSI >= R1 AND RSI < R2; A if RSI < R1 OR RSI > R6; otherwise G.
+Calculation: Volatility score = evaluate ATR divided by its SMA against five ascending thresholds in order: J if the ratio > the highest threshold; I if the ratio > the second-highest; H if the ratio >= the middle; E if the ratio >= the second-lowest; C if the ratio >= the lowest; otherwise A.
+Calculation: Direction and trend component score = (direction score + trend score + momentum score + volatility score) / 4.
+Long: direction and trend component score >= bullish threshold.
+Short: direction and trend component score < bearish threshold; bearish threshold < bullish threshold.

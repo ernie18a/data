@@ -1,3 +1,8 @@
-Short: Flat AND within configured date window AND current completed bar RSI is below the crossing level AND previous completed bar RSI was at or above the crossing level
-Short: In a short position AND within configured date window AND close >= base entry price × (1 + cumulative deviation for the next unfilled averaging rung)
-Exit: short, close >= average entry price × (1 + stop-loss percentage) OR (take-profit trailing is armed AND close >= lowest close since it armed × (1 + trailing percentage))
+Calculation: RSI cross-down = RSI on the configured timeframe is below the threshold and its previous value on that timeframe was at or above the threshold; use the last completed bar for a higher timeframe, the last available completed intrabar for a lower timeframe, or the current bar for the chart timeframe.
+Calculation: Averaging deviation for rung k = the sum of the first k terms of a geometric sequence starting at the first deviation, with the deviation-step multiplier as its ratio.
+Calculation: Average entry price = quantity-weighted average of the base and filled averaging entries; base quantity is base order cash size divided by signal close, and averaging rung k quantity is first averaging cash size multiplied by the size multiplier to the power k minus 1, divided by its signal close.
+Calculation: Trailing minimum = the lowest close since entry among bars whose close was at or below the current average entry price multiplied by one minus the take-profit fraction; retain it until the position is flat.
+Short: Position is flat AND datetime is within the configured backtest window when the window filter is enabled AND RSI cross-down is true.
+Short: Position is short AND datetime is within the configured backtest window when the window filter is enabled AND the number of averaging orders triggered is below the configured maximum AND close is at or above the base entry price multiplied by one plus the averaging deviation for the next untriggered rung.
+Exit: short, close is at or above average entry price multiplied by one plus the stop-loss fraction.
+Exit: short, trailing minimum exists AND close is at or above trailing minimum multiplied by one plus the trailing fraction.

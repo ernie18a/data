@@ -1,4 +1,6 @@
-Calculation: Long test price = close when close-price mode is enabled; otherwise low
-Calculation: Short test price = close when close-price mode is enabled; otherwise high
-Long: On the configured higher timeframe’s still-forming bar, if the previous bar’s state is bullish, long test price > any of the lows in the preceding lookback; if the previous bar’s state is bearish, short test price >= all of the highs in the preceding lookback; if no previous state exists, close > open
-Short: On the configured higher timeframe’s still-forming bar, if the previous bar’s state is bearish, short test price < any of the highs in the preceding lookback; if the previous bar’s state is bullish, long test price <= all of the lows in the preceding lookback; if no previous state exists, close <= open
+Calculation: Evaluation bars = chart bars for SimpleBars, or higher-timeframe bars aggregated through the chart bar being evaluated for the higher-timeframe display; use the higher-timeframe bar still forming.
+Calculation: Buy comparison price = evaluation bar close if the close-price option is enabled; otherwise, evaluation bar low.
+Calculation: Sell comparison price = evaluation bar close if the close-price option is enabled; otherwise, evaluation bar high.
+Calculation: Previous trend = the preceding evaluation bar's long or short classification; initially unset.
+Long: Previous trend is unset AND evaluation bar close > evaluation bar open OR previous trend is long AND buy comparison price > lowest low of the preceding lookback evaluation bars OR previous trend is short AND sell comparison price >= highest high of the preceding lookback evaluation bars.
+Short: Previous trend is unset AND evaluation bar close <= evaluation bar open OR previous trend is long AND buy comparison price <= lowest low of the preceding lookback evaluation bars OR previous trend is short AND sell comparison price < highest high of the preceding lookback evaluation bars.

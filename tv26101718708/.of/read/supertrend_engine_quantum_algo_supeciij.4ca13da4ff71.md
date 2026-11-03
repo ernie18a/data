@@ -1,7 +1,6 @@
-Calculation: Adaptive factor = interpolate from a lower factor in strong trends to a higher factor in choppy conditions using the Efficiency Ratio; Efficiency Ratio = absolute net close change over its lookback divided by the sum of absolute close changes over that lookback. Use chart-timeframe bars; evaluate on completed bars.
-Calculation: Adaptive SuperTrend bands = midpoint (high + low) / 2 minus or plus the adaptive factor times Average True Range, forming the lower and upper bands. Ratchet the lower band upward to the greater of its current value and prior lower band when the prior close is above the prior lower band; otherwise reset it to its current value. Ratchet the upper band downward to the lesser of its current value and prior upper band when the prior close is below the prior upper band; otherwise reset it to its current value. Use chart-timeframe bars; evaluate on completed bars.
-Calculation: Flip margin = Average True Range multiplied by the shield-margin parameter.
-Long: Current close > prior upper band + current flip margin AND prior trend state is bearish
-Short: Current close < prior lower band - current flip margin AND prior trend state is bullish
-Exit: long, current close < current lower trailing band
-Exit: short, current close > current upper trailing band
+Calculation: Efficiency ratio = absolute change in close over the lookback divided by the sum of absolute one-bar close changes over that lookback; use zero when the denominator is not positive.
+Calculation: Adaptive factor = trend factor + (1 - efficiency ratio) × (chop factor - trend factor), where the chop factor is greater than the trend factor.
+Calculation: Lower and upper bands = (high + low) / 2 minus and plus adaptive factor × ATR, respectively. Initialize each ratcheted band to its corresponding band. Thereafter, if the previous close is above the previous ratcheted lower band, the ratcheted lower band is the maximum of the current lower band and its previous value; otherwise it is the current lower band. If the previous close is below the previous ratcheted upper band, the ratcheted upper band is the minimum of the current upper band and its previous value; otherwise it is the current upper band.
+Calculation: Confirmed direction = bullish initially; change to bullish on a Long decision and bearish on a Short decision; otherwise retain its previous value.
+Long: Confirmed direction is bearish AND close > previous ratcheted upper band + margin factor × ATR; if the previous ratcheted upper band is unavailable, use the current upper band.
+Short: Confirmed direction is bullish AND close < previous ratcheted lower band - margin factor × ATR; if the previous ratcheted lower band is unavailable, use the current lower band.

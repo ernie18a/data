@@ -1,10 +1,10 @@
-Calculation: Confirmed swing high/low = a pivot high/low confirmed using equal left and right lookbacks; each latest level updates when a new pivot of that side confirms.
-Calculation: Structural swing targets = the latest confirmed swing high and low, each cleared after the close crosses beyond it.
-Calculation: Minor sweep levels = the latest confirmed swing high and low, each cleared when swept; allow at most one sweep signal between structural breaks.
-Calculation: Bullish imbalance = current low > high two bars earlier AND previous close > that high, while awaiting an imbalance after a bullish structural break; bearish imbalance = current high < low two bars earlier AND previous close < that low, while awaiting an imbalance after a bearish structural break. After an imbalance signal, or an opposite structural break, stop awaiting that side's imbalance.
-Long: Current close crosses above the structural swing high target
-Long: Current low crosses below the minor swing low AND current close > that minor swing low AND structure signals are enabled for the chart timeframe
-Long: Bullish imbalance
-Short: Current close crosses below the structural swing low target
-Short: Current high crosses above the minor swing high AND current close < that minor swing high AND structure signals are enabled for the chart timeframe
-Short: Bearish imbalance
+Calculation: Confirmed swing high and low = pivot high and pivot low using the same number of bars on each side; confirm only after the right-side bars have completed.
+Calculation: Upper and lower break targets = latest confirmed swing high and low, respectively; replace each on a new confirmation and clear it after its corresponding break. Update targets before evaluating breaks. A crossover means current value > current target AND previous value <= previous target; a crossunder means current value < current target AND previous value >= previous target.
+Calculation: Sweep levels = latest confirmed swing high and low; replace each on a new confirmation and clear the corresponding level after its sweep. A shared sweep-used flag starts false, becomes true after either sweep, and resets false after either structure break. Evaluate low sweep before high sweep, and both before structure breaks. Crosses use the current and previous bar's respective values of the level.
+Calculation: Gap eligibility = each bullish structure break enables bullish standard-gap and bullish breakaway-gap eligibility and disables both bearish eligibilities; each bearish break does the reverse. Evaluate breaks before gaps, including on the same bar. For each direction, a matching gap consumes breakaway eligibility first if breakaway gaps are enabled; otherwise it consumes standard-gap eligibility. Each eligibility remains consumed until another corresponding structure break.
+Long: Close crosses above the upper break target.
+Short: Close crosses below the lower break target.
+Long: Sweep-used flag is false AND low crosses below the low sweep level AND close > low sweep level.
+Short: Sweep-used flag is false AND high crosses above the high sweep level AND close < high sweep level.
+Long: Bullish gap eligibility is available AND low > high two bars ago AND previous close > high two bars ago.
+Short: Bearish gap eligibility is available AND high < low two bars ago AND previous close < low two bars ago.

@@ -1,3 +1,3 @@
-Calculation: Central pivot = (high + low + close) / 3 of the last completed bar on a higher timeframe.
-Long: Previous chart-bar close <= central pivot AND current chart-bar close > central pivot.
-Short: Previous chart-bar close >= central pivot AND current chart-bar close < central pivot.
+Calculation: Central pivot = For the selected Classic, Fibonacci, or Camarilla method, (high + low + close) / 3; for Woodie, (high + low + 2 × close) / 4. Use the last completed higher-timeframe bar and hold the result fixed throughout the current higher-timeframe bar.
+Long: The current chart bar is not the first bar of the current higher-timeframe bar AND the previous chart-bar close <= central pivot AND the current close > central pivot AND no previous eligible pivot cross in either direction has occurred in the current higher-timeframe bar.
+Short: The current chart bar is not the first bar of the current higher-timeframe bar AND the previous chart-bar close >= central pivot AND the current close < central pivot AND no previous eligible pivot cross in either direction has occurred in the current higher-timeframe bar.

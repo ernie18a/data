@@ -1,4 +1,10 @@
-Calculation: Short-term SMA = simple moving average of close with a shorter lookback than the long-term SMA, calculated on the chart timeframe or selected higher timeframe; use the current chart bar or the last completed higher-timeframe bar
-Calculation: Long-term SMA = simple moving average of close with a longer lookback than the short-term SMA, calculated on the chart timeframe or selected higher timeframe; use the current chart bar or the last completed higher-timeframe bar
-Long: short-term SMA > long-term SMA AND previous short-term SMA <= previous long-term SMA
-Short: short-term SMA < long-term SMA AND previous short-term SMA >= previous long-term SMA
+Calculation: Moving-average input = a selected OHLC price; calculate each SMA or EMA on chart bars or on the last completed bar of a higher timeframe.
+Calculation: Higher-timeframe anchor = SMA of higher-timeframe closes using the last completed bar, optionally smoothed with an SMA over chart bars.
+Long: Shorter-lookback SMA crosses above longer-lookback SMA.
+Short: Shorter-lookback SMA crosses below longer-lookback SMA.
+Long: Close > long-lookback SMA.
+Short: Close <= long-lookback SMA.
+Long: Shorter-lookback SMA > longer-lookback SMA.
+Short: Shorter-lookback SMA <= longer-lookback SMA.
+Long: Close >= any displayed SMA, EMA, or higher-timeframe anchor.
+Short: Close < any displayed SMA, EMA, or higher-timeframe anchor.

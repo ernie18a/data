@@ -1,9 +1,8 @@
-Calculation: Opening range high/low = maximum/minimum of high/low (or candle body high/low, according to the selected source) during the configured opening session; lock when that session ends
-Calculation: Opening range size = opening range high − opening range low
-Calculation: Relative volume = current bar volume / short-lookback moving average of volume
-Calculation: Long continuation trail = initialize to close − ATR × multiplier; thereafter the greater of the previous trail and close − ATR × multiplier
-Calculation: Short continuation trail = initialize to close + ATR × multiplier; thereafter the lesser of the previous trail and close + ATR × multiplier
-Long: opening range is locked AND bar is confirmed AND close > opening range high + opening range size × minimum break fraction AND no breakout is currently active AND (relative volume filter is disabled OR relative volume ≥ threshold)
-Short: opening range is locked AND bar is confirmed AND close < opening range low − opening range size × minimum break fraction AND no breakout is currently active AND (relative volume filter is disabled OR relative volume ≥ threshold)
-Exit: long, bar is confirmed AND close < long continuation trail
-Exit: short, bar is confirmed AND close > short continuation trail
+Calculation: Opening range = the maximum high and minimum low, or alternatively the maximum of open and close and minimum of open and close, across bars in a configurable session on configured days and timezone. Lock the range when the session ends; clear it at the next local calendar day or session start. Range size = max(range high − range low, configurable minimum price increment).
+Calculation: Breakout state = neutral initially and at each local calendar day or session start; set it to long or short on the corresponding breakout and return it to neutral on the corresponding trail failure. A new breakout can occur after a trail failure while the range remains locked.
+Calculation: Relative volume = volume / max(SMA of volume including the current bar, 1).
+Calculation: Continuation trail = on the breakout bar, close minus ATR times a multiplier for a long breakout, or close plus ATR times the multiplier for a short breakout; on each subsequent bar, update it to the maximum of its previous value and close minus ATR times the multiplier for a long breakout, or the minimum of its previous value and close plus ATR times the multiplier for a short breakout. Clear it when the breakout state resets.
+Long: Opening range is locked AND breakout state is neutral AND close > range high + range size times a displacement parameter AND (volume filter is disabled OR relative volume >= its threshold).
+Short: Opening range is locked AND breakout state is neutral AND close < range low − range size times a displacement parameter AND (volume filter is disabled OR relative volume >= its threshold).
+Exit: long, breakout state is long AND close < current continuation trail.
+Exit: short, breakout state is short AND close > current continuation trail.

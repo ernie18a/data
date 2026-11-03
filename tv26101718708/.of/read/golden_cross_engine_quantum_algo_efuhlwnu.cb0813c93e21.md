@@ -1,5 +1,9 @@
-Calculation: Fast and slow moving averages = selectable SMA or EMA of close; the fast lookback is shorter than the slow lookback.
-Calculation: Fast/slow slope = (moving average now − moving average 3 bars ago) / 3.
-Calculation: Projected bars to cross = −(fast moving average − slow moving average) / (fast slope − slow slope) when the gap is negative and the slope difference is positive; (fast moving average − slow moving average) / (slow slope − fast slope) when the gap is positive and the slope difference is negative.
-Long: Fast moving average crosses above slow moving average OR (fast moving average < slow moving average AND fast slope > slow slope AND projected bars to cross ≥ 1 AND projected bars to cross ≤ projection horizon).
-Short: Fast moving average crosses below slow moving average OR (fast moving average > slow moving average AND fast slope < slow slope AND projected bars to cross ≥ 1 AND projected bars to cross ≤ projection horizon).
+Calculation: Projected bars to crossover = -(short-period close moving average - long-period close moving average) / (short-period moving average slope - long-period moving average slope), where each slope is the change in its moving average over the same lookback divided by that lookback.
+Long: Short-period close moving average crosses above long-period close moving average; both use the same selected moving-average type.
+Short: Short-period close moving average crosses below long-period close moving average; both use the same selected moving-average type.
+Long: Short-period close moving average < long-period close moving average AND short-period moving average slope > long-period moving average slope AND projected bars to crossover >= 1 AND projected bars to crossover <= projection horizon.
+Short: Short-period close moving average > long-period close moving average AND short-period moving average slope < long-period moving average slope AND projected bars to crossover >= 1 AND projected bars to crossover <= projection horizon.
+Long: Short-period close moving average > long-period close moving average.
+Short: Short-period close moving average <= long-period close moving average.
+Long: Short-period close moving average > long-period close moving average, calculated on another timeframe using the last completed bar for a higher timeframe on historical data, the forming bar for a higher timeframe in real time, or the last available lower-timeframe bar for a lower timeframe.
+Short: Short-period close moving average <= long-period close moving average, calculated on another timeframe using the last completed bar for a higher timeframe on historical data, the forming bar for a higher timeframe in real time, or the last available lower-timeframe bar for a lower timeframe.

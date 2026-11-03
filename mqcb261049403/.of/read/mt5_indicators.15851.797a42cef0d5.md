@@ -1,2 +1,3 @@
-Long: chart-timeframe volume-weighted moving average > its value on the previous chart bar OR higher-timeframe volume-weighted moving average on the still-forming bar > its value on the previous higher-timeframe bar
-Short: chart-timeframe volume-weighted moving average < its value on the previous chart bar OR higher-timeframe volume-weighted moving average on the still-forming bar < its value on the previous higher-timeframe bar
+Calculation: Selected price = one of open, high, low, close, (high + low)/2, (high + low + close)/3, (high + low + 2 × close)/4, (open + close)/2, (open + high + low + close)/4, or one of: high if close > open, low if close < open, otherwise close; (high + close)/2 if close > open, (low + close)/2 if close < open, otherwise close; or DeMark price.
+Long: Volume-weighted moving average of selected price > its previous-bar value, using either chart bars or the still-forming higher-timeframe bar and its preceding higher-timeframe bars.
+Short: Volume-weighted moving average of selected price < its previous-bar value, using either chart bars or the still-forming higher-timeframe bar and its preceding higher-timeframe bars.

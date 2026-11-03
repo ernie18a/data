@@ -1,11 +1,9 @@
-Calculation: Bullish momentum = current close > current open OR current close > previous close OR current close > close two bars ago OR current close > close three bars ago
-Calculation: Bearish momentum = current close < current open OR current close < previous close OR current close < close two bars ago OR current close < close three bars ago
-Calculation: Long stop-entry level = signal bar high increased by a percentage margin
-Calculation: Short stop-entry level = signal bar low decreased by a percentage margin
-Calculation: Long trailing stop = the highest, since entry, of each bar's high reduced by a percentage
-Calculation: Short trailing stop = the lowest, since entry, of each bar's low increased by a percentage
-Long: Bullish momentum AND (EMA filter disabled OR close > the EMA calculated on a higher timeframe using its last completed bar) AND datetime is within the configured backtest date range AND high >= the pending long stop-entry level
-Short: Bearish momentum AND (EMA filter disabled OR close < the EMA calculated on a higher timeframe using its last completed bar) AND datetime is within the configured backtest date range AND low <= the pending short stop-entry level
-Exit: Long, low <= long trailing stop
-Exit: Short, high >= short trailing stop
-Exit: Long or Short, current datetime is outside the configured backtest date range AND previous bar's datetime was within it
+Calculation: Anchored EMA = EMA of closes on the selected timeframe; for a higher timeframe use the last completed bar, for a lower timeframe use the last completed lower-timeframe bar within the chart bar, and for the chart timeframe use the current bar.
+Calculation: Long entry stop = signal bar high multiplied by one plus the long breakout margin. Submit after the signal bar closes; keep the order active until filled or replaced by a new long entry stop.
+Calculation: Short entry stop = signal bar low multiplied by one minus the short breakout margin. Submit after the signal bar closes; keep the order active until filled or replaced by a new short entry stop.
+Calculation: Long trailing stop = highest chart-bar high since the long position was first observed at a bar close, multiplied by one minus the trailing percentage; update after each bar closes and reset when no long position is held.
+Calculation: Short trailing stop = lowest chart-bar low since the short position was first observed at a bar close, multiplied by one plus the trailing percentage; update after each bar closes and reset when no short position is held.
+Long: Signal bar datetime is within the configured trading window AND (signal bar close > signal bar open OR signal bar close > close of any of the preceding three bars) AND (EMA filter is disabled OR signal bar close > anchored EMA) AND a subsequent bar's high >= active long entry stop.
+Short: Signal bar datetime is within the configured trading window AND (signal bar close < signal bar open OR signal bar close < close of any of the preceding three bars) AND (EMA filter is disabled OR signal bar close < anchored EMA) AND a subsequent bar's low <= active short entry stop.
+Exit: long, low <= active long trailing stop OR current bar datetime is outside the trading window AND previous bar datetime was inside it.
+Exit: short, high >= active short trailing stop OR current bar datetime is outside the trading window AND previous bar datetime was inside it.

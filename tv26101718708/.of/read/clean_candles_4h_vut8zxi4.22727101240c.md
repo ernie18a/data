@@ -1,5 +1,7 @@
-Calculation: Inspected candle = OHLC from the selected inspection timeframe; if it differs from the chart timeframe, it may be higher or lower. Use the still-forming bar; historical values use that bar’s eventual OHLC.
-Calculation: Upper wick = high − max(open, close)
-Calculation: Lower wick = min(open, close) − low
-Long: close ≥ open AND ((mode is no-upper-wick and upper wick ≤ tolerance × minimum tick) OR (mode is no-lower-wick and lower wick ≤ tolerance × minimum tick) OR (mode is both and upper wick ≤ tolerance × minimum tick AND lower wick ≤ tolerance × minimum tick))
-Short: close < open AND ((mode is no-upper-wick and upper wick ≤ tolerance × minimum tick) OR (mode is no-lower-wick and lower wick ≤ tolerance × minimum tick) OR (mode is both and upper wick ≤ tolerance × minimum tick AND lower wick ≤ tolerance × minimum tick))
+Calculation: Selected-timeframe OHLC = OHLC from a configurable timeframe. For a higher timeframe, use the final OHLC of the bar aligned to every chart bar within it, as historical lookahead does; this requires future data while the higher-timeframe bar is still forming. For a lower timeframe, use the first completed lower-timeframe bar within each chart bar. For the chart timeframe, use the chart bar's OHLC.
+Calculation: Upper wick = selected-timeframe high − max(selected-timeframe open, selected-timeframe close).
+Calculation: Lower wick = min(selected-timeframe open, selected-timeframe close) − selected-timeframe low.
+Long: Selected-timeframe close >= selected-timeframe open AND upper wick <= wick-tolerance parameter.
+Long: Selected-timeframe close >= selected-timeframe open AND lower wick <= wick-tolerance parameter.
+Short: Selected-timeframe close < selected-timeframe open AND upper wick <= wick-tolerance parameter.
+Short: Selected-timeframe close < selected-timeframe open AND lower wick <= wick-tolerance parameter.

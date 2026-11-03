@@ -1,4 +1,4 @@
-Calculation: TriX-smoothed open = one-bar percentage change in the triple exponential moving average of open, using the same lookback parameter as TriX-smoothed close
-Calculation: TriX-smoothed close = one-bar percentage change in the triple exponential moving average of close
-Long: TriX-smoothed close > TriX-smoothed open (calculated on the higher timeframe’s still-forming bar)
-Short: TriX-smoothed close < TriX-smoothed open (calculated on the higher timeframe’s still-forming bar)
+Long: Chart-timeframe TRIX of close > chart-timeframe TRIX of open, using the same lookback
+Short: Chart-timeframe TRIX of close < chart-timeframe TRIX of open, using the same lookback
+Long: Higher-timeframe TRIX of close >= higher-timeframe TRIX of open, using the same lookback and the still-forming higher-timeframe bar sampled at its first chart bar and held until the next higher-timeframe bar
+Short: Higher-timeframe TRIX of close < higher-timeframe TRIX of open, using the same lookback and the still-forming higher-timeframe bar sampled at its first chart bar and held until the next higher-timeframe bar

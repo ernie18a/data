@@ -1,4 +1,4 @@
-Long: Flat AND chart-timeframe RSI < oversold threshold
-Long: Long position open AND close ≤ base entry × (1 − next safety-order deviation)
-Calculation: Average entry = total quote currency spent on the base order and filled safety orders ÷ total units acquired
-Exit: Long, close ≥ average entry × (1 + take-profit percentage)
+Calculation: Average entry = total quote amount spent on the base entry and filled averaging orders divided by the sum of each fill's quote amount divided by its close price; each order has an independently configurable quote amount.
+Long: The position is flat AND the optional active date window is disabled OR the position is flat AND the bar's opening datetime is within the enabled active date window; in either case, RSI of close is below its threshold. The RSI timeframe is configurable: on a higher timeframe use the last completed bar on historical bars and the forming bar in real time; on a lower timeframe use the last available intrabar; on the chart timeframe use the current bar.
+Long: The position is long AND the optional active date window is disabled or the bar's opening datetime is within the enabled active date window AND fewer than the configured ladder's five averaging orders have filled AND close is at or below the base entry price multiplied by one minus the next unfilled order's independently configured deviation. Evaluate only the next order, with at most one averaging fill per chart bar, at that bar's close.
+Exit: long, the optional active date window is disabled or the bar's opening datetime is within the enabled active date window AND close is at or above average entry multiplied by one plus the take-profit percentage. Evaluate after any entry or averaging fill on the same bar.

@@ -1,9 +1,15 @@
-Calculation: SMEMA = SMA(EMA(source, lookback), lookback)
-Calculation: volatility step = SMEMA(high − low, long lookback)
-Calculation: first upper band = SMEMA(close, long lookback) + volatility step
-Calculation: first lower band = SMEMA(close, long lookback) − volatility step
-Calculation: warmup bar index = max(3 × core lookback, range smoothing lookback + 50)
-Long: bar index ≥ warmup bar index AND SMEMA(close, core lookback) > prior SMEMA(close, core lookback) AND close > first upper band AND RSI(close, momentum lookback) ≥ minimum RSI threshold AND (volume filter disabled OR volume ≤ 0 OR volume > SMA(volume, 20) × volume multiplier)
-Long: bar index ≥ warmup bar index AND SMEMA(close, core lookback) > prior SMEMA(close, core lookback) AND prior SMEMA(close, core lookback) ≤ SMEMA(close, core lookback)[2]
-Short: bar index ≥ warmup bar index AND SMEMA(close, core lookback) ≤ prior SMEMA(close, core lookback) AND close < first lower band AND RSI(close, momentum lookback) ≤ 100 − minimum RSI threshold AND (volume filter disabled OR volume ≤ 0 OR volume > SMA(volume, 20) × volume multiplier)
-Short: bar index ≥ warmup bar index AND SMEMA(close, core lookback) ≤ prior SMEMA(close, core lookback) AND prior SMEMA(close, core lookback) > SMEMA(close, core lookback)[2]
+Calculation: Smoothed average of a series = SMA of its EMA, using the same lookback for both.
+Calculation: Baseline = smoothed average of close using the baseline lookback.
+Calculation: Step = smoothed average of high minus low using the step lookback.
+Calculation: Bands = baseline plus or minus one, two, or three times step.
+Calculation: Warmup = maximum of three times the baseline lookback and the step lookback plus the warmup offset.
+Long: Baseline > previous baseline.
+Short: Baseline < previous baseline.
+Long: Baseline > previous baseline AND close > any band.
+Short: Baseline <= previous baseline AND close < any band.
+Long: Close > baseline + two steps.
+Short: Close < baseline - two steps.
+Long: RSI >= upper display threshold.
+Short: RSI <= lower display threshold, where the lower threshold is the RSI maximum minus the upper display threshold.
+Long: Bar index >= warmup AND baseline > previous baseline AND close > baseline + step AND RSI >= signal threshold AND (volume filter disabled OR volume <= 0 OR volume > volume SMA multiplied by volume multiplier).
+Short: Bar index >= warmup AND baseline <= previous baseline AND close < baseline - step AND RSI <= RSI maximum minus signal threshold AND (volume filter disabled OR volume <= 0 OR volume > volume SMA multiplied by volume multiplier).
