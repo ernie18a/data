@@ -1,4 +1,0 @@
-Long: On the chart timeframe’s last completed bar, Stochastic main line > signal line AND on the preceding bar, main line <= signal line AND no position is open
-Short: On the chart timeframe’s last completed bar, Stochastic main line < signal line AND on the preceding bar, main line >= signal line AND no position is open
-Exit: Long, low <= entry price - configured stop-loss distance OR high >= entry price + configured take-profit distance OR a short signal occurs
-Exit: Short, high >= entry price + configured stop-loss distance OR low <= entry price - configured take-profit distance OR a long signal occurs

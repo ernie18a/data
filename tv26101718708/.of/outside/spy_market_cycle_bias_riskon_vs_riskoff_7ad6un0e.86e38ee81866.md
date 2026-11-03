@@ -1,1 +1,0 @@
-Use SPY’s daily trend as a market filter: when its shorter-period EMA is above its longer-period EMA, favor long setups in the traded instrument; otherwise treat the market as bearish and reduce risk or avoid aggressive longs.

@@ -1,1 +1,0 @@
-Use an external data series measuring whale holdings for the selected blockchain. Calculate its daily change and rolling Bollinger bands. Go long when the change is positive and above the upper band; go short when it is negative and below the lower band. No explicit exit condition is defined.

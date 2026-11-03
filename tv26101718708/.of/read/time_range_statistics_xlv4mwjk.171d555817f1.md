@@ -1,2 +1,0 @@
-Long: number of new closing highs within the selected range > number of new closing lows within the selected range
-Short: number of new closing highs within the selected range <= number of new closing lows within the selected range

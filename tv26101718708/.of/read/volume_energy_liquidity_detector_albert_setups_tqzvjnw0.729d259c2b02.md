@@ -1,2 +1,0 @@
-Long: low < latest confirmed swing low AND close > latest confirmed swing low AND close > open AND that swing low has not been swept since confirmation
-Short: high > latest confirmed swing high AND close < latest confirmed swing high AND close < open AND that swing high has not been swept since confirmation

@@ -1,2 +1,0 @@
-Long: current selected price source > current anchored VWAP AND previous selected price source <= previous anchored VWAP
-Short: current selected price source < current anchored VWAP AND previous selected price source >= previous anchored VWAP

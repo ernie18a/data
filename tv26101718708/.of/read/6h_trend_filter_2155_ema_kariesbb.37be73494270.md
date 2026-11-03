@@ -1,2 +1,0 @@
-Long: 6-hour EMA with the shorter lookback > 6-hour EMA with the longer lookback, using the last completed 6-hour bar
-Short: 6-hour EMA with the shorter lookback < 6-hour EMA with the longer lookback, using the last completed 6-hour bar

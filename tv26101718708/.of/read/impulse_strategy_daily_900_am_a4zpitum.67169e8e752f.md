@@ -1,2 +1,0 @@
-Long: Previous higher-timeframe bar close < open AND current, still-forming higher-timeframe bar close > open AND current bar close > previous higher-timeframe bar close AND chart bar hour = 9 AND minute = 0
-Short: Previous higher-timeframe bar close > open AND current, still-forming higher-timeframe bar close < open AND current bar close < previous higher-timeframe bar close AND chart bar hour = 9 AND minute = 0

@@ -1,2 +1,0 @@
-Long: Higher-timeframe (still-forming) Stochastic main line > upper threshold AND absolute difference between its close and close two bars earlier > its ATR / volatility divisor
-Short: Higher-timeframe (still-forming) Stochastic main line < lower threshold AND absolute difference between its close and close two bars earlier > its ATR / volatility divisor

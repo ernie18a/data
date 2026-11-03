@@ -1,2 +1,0 @@
-Long: close > short-term moving average AND close > long-term moving average OR short-term moving average crosses above long-term moving average
-Short: close < short-term moving average AND close < long-term moving average OR short-term moving average crosses below long-term moving average

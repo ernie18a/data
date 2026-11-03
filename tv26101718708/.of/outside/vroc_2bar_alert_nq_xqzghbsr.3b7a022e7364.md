@@ -1,1 +1,0 @@
-If daily volume rate of change is at least the configured threshold on each of the two most recently completed daily bars, signal selling index options.

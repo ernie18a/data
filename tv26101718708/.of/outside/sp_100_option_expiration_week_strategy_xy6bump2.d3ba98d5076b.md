@@ -1,1 +1,0 @@
-Go long the traded instrument on Monday of the week containing the monthly third-Friday options expiration; exit on that Friday.

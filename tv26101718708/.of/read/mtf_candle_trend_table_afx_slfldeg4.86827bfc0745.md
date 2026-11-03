@@ -1,2 +1,0 @@
-Long: For each displayed timeframe higher or lower than the chart timeframe, the still-forming candle close ≥ open
-Short: For each displayed timeframe higher or lower than the chart timeframe, the still-forming candle close < open

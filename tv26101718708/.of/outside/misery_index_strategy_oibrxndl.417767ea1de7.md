@@ -1,1 +1,0 @@
-Using monthly unemployment and inflation data, add the two rates into a combined measure. Go long the traded instrument when the measure falls from the prior month; go short when it rises. No separate exit condition is defined.

@@ -1,2 +1,0 @@
-Long: low > high[2] AND close[1] > open[1] OR active, un-inverted bearish FVG zone AND close > its top
-Short: high < low[2] AND close[1] < open[1] OR active, un-inverted bullish FVG zone AND close < its bottom

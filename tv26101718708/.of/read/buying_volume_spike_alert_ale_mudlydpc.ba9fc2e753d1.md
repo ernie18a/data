@@ -1,1 +1,0 @@
-Long: close >= open AND volume >= a configurable multiple of the current-timeframe simple moving average of volume, including the current bar

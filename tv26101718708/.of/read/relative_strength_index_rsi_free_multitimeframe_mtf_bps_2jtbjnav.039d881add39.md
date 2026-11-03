@@ -1,2 +1,0 @@
-Long: Any enabled timeframe RSI > the middle level; OR bullish confluence becomes true on the current bar, with at least two enabled timeframes and the configured agreement threshold met
-Short: Any enabled timeframe RSI < the middle level; OR bearish confluence becomes true on the current bar, with at least two enabled timeframes and the configured agreement threshold met

@@ -1,1 +1,0 @@
-During the configured trading period, compare the current higher-timeframe bar’s high and low with the preceding higher-timeframe bar’s high and low. Go long when both are higher; go short when both are lower. Otherwise, make no entry decision.

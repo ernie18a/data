@@ -1,1 +1,0 @@
-When total account profit exceeds the user-specified percentage of account balance, close all open positions.

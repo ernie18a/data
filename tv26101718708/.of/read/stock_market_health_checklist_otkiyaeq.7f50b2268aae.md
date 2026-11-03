@@ -1,2 +1,0 @@
-Long: Close > EMA or SMA with a configurable lookback OR EMA or SMA > its value at a configurable number of bars earlier OR RSI <= oversold threshold
-Short: Close <= EMA or SMA with a configurable lookback OR EMA or SMA <= its value at a configurable number of bars earlier OR RSI >= overbought threshold

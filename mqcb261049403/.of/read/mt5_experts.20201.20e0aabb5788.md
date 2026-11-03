@@ -1,2 +1,0 @@
-Exit: Long, Parabolic SAR on the last completed bar of the configured timeframe > entry price AND Parabolic SAR < that bar's low AND that bar's time > position open time
-Exit: Short, Parabolic SAR on the last completed bar of the configured timeframe < entry price AND Parabolic SAR > that bar's high AND that bar's time > position open time

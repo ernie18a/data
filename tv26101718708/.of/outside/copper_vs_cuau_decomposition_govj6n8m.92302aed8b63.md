@@ -1,1 +1,0 @@
-Use the copper-versus-gold decomposition as a copper signal: when copper’s standardized strength exceeds the copper-to-gold ratio’s and that gap is widening, lean long copper. When the gap is negative and widening in magnitude, fade copper longs based on the ratio.

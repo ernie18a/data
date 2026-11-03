@@ -1,2 +1,0 @@
-Long: Stochastic with the longer K lookback, calculated on the selected timeframe (higher or lower than the chart timeframe) using its still-forming bar, ≥ 76.4
-Short: Stochastic with the longer K lookback, calculated on the selected timeframe (higher or lower than the chart timeframe) using its still-forming bar, ≤ 23.6

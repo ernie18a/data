@@ -1,2 +1,0 @@
-Long: Close of the lower-timeframe bar still forming > close of the immediately preceding completed lower-timeframe bar
-Short: Close of the lower-timeframe bar still forming < close of the immediately preceding completed lower-timeframe bar

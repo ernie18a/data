@@ -1,1 +1,0 @@
-Short: current smoothed Stochastic %K < overbought threshold AND previous smoothed Stochastic %K >= overbought threshold AND bar time is within the PM session (MYT) AND latest completed higher-timeframe EMA > its value at the configured earlier chart-bar lookback

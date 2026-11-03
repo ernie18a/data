@@ -1,1 +1,0 @@
-Go long when the instrument’s close crosses above the central pivot range’s upper boundary, calculated from the prior day’s high, low, and close.

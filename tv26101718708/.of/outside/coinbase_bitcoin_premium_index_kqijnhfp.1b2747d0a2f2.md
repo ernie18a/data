@@ -1,1 +1,0 @@
-Go long when the Coinbase Bitcoin price premium over the global reference crosses above zero. Go short when it crosses below zero.

@@ -1,2 +1,0 @@
-Long: first configured moving average crosses above the second configured moving average AND (year > start year OR (year = start year AND month >= start month))
-Short: first configured moving average crosses below the second configured moving average AND (year > start year OR (year = start year AND month >= start month))

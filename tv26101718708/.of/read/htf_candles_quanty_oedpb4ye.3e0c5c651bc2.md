@@ -1,2 +1,0 @@
-Long: On the first chart bar after a higher-timeframe bar closes, its close > the high of the preceding completed higher-timeframe bar
-Short: On the first chart bar after a higher-timeframe bar closes, its close < the low of the preceding completed higher-timeframe bar

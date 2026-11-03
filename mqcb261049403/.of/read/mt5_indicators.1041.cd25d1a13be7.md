@@ -1,2 +1,0 @@
-Long: MACD main line > MACD signal line on any of the six configured timeframes (each equal to or higher than the chart timeframe), sampled from that timeframe’s still-forming bar when it begins
-Short: MACD main line < MACD signal line on any of the six configured timeframes (each equal to or higher than the chart timeframe), sampled from that timeframe’s still-forming bar when it begins

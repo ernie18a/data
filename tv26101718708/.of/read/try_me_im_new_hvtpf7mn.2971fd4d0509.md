@@ -1,2 +1,0 @@
-Long: open < close AND open >= previous bar's open AND volume >= minimum volume threshold
-Exit: long, close < previous bar's close AND (open >= close OR open < previous bar's open OR volume < minimum volume threshold)

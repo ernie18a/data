@@ -1,2 +1,0 @@
-Long: Daily close > daily open on the still-forming bar of a higher timeframe than the chart timeframe
-Short: Daily close < daily open on the still-forming bar of a higher timeframe than the chart timeframe

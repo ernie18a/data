@@ -1,2 +1,0 @@
-Long: adaptive Laguerre filter > its value on the previous bar OR main adaptive Laguerre value > signal adaptive Laguerre value
-Short: adaptive Laguerre filter < its value on the previous bar OR main adaptive Laguerre value < signal adaptive Laguerre value

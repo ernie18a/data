@@ -1,3 +1,0 @@
-Calculation: Market Facilitation Index = (bar high − bar low) / bar volume × 10,000
-Long: Market Facilitation Index > buy threshold OR (Market Facilitation Index ≤ buy threshold AND Market Facilitation Index ≥ sell threshold AND position side is long)
-Short: Market Facilitation Index < sell threshold OR (Market Facilitation Index ≤ buy threshold AND Market Facilitation Index ≥ sell threshold AND position side is short)

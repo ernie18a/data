@@ -1,3 +1,0 @@
-Calculation: Positive Volume Index = previous index value plus the close percentage change when volume is greater than the previous bar’s volume; otherwise it remains unchanged. Initialize at zero.
-Long: Positive Volume Index > its EMA OR (Positive Volume Index = its EMA AND position side is long)
-Short: Positive Volume Index < its EMA OR (Positive Volume Index = its EMA AND position side is short)

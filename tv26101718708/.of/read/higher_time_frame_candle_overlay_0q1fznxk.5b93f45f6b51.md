@@ -1,2 +1,0 @@
-Long: Chart timeframe < higher timeframe AND still-forming higher-timeframe close >= still-forming higher-timeframe open
-Short: Chart timeframe < higher timeframe AND still-forming higher-timeframe close < still-forming higher-timeframe open

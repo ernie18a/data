@@ -1,2 +1,0 @@
-Long: DeMarker on any configured timeframe (higher or lower than the chart timeframe), using its last completed bar, > the overbought level
-Short: DeMarker on any configured timeframe (higher or lower than the chart timeframe), using its last completed bar, < the oversold level

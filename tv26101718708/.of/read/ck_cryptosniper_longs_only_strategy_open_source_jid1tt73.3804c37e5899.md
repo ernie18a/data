@@ -1,2 +1,0 @@
-Long: The higher-timeframe bar still forming closes above its open, crossing from at or below to above.
-Exit: Long, the higher-timeframe bar still forming closes below its open, crossing from at or above to below.

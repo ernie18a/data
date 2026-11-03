@@ -1,1 +1,0 @@
-Long: bar time >= configured start date AND the configured buy-frequency period changes on this bar OR chart timeframe equals the configured buy frequency

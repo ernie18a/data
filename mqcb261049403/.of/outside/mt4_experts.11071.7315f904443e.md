@@ -1,1 +1,0 @@
-When at least one trade is open and the account’s floating profit exceeds a configured threshold—measured either as a fixed amount or as a percentage of account balance—close all open trades.

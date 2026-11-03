@@ -1,2 +1,0 @@
-Long: Close crosses above any configured EMA or SMA, OR close > EMA of highs and the prior three closes are each below the corresponding EMA of highs
-Short: Close crosses below any configured EMA or SMA

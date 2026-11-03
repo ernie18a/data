@@ -1,1 +1,0 @@
-Long: volume > 4 × 50-bar simple moving average of volume AND close > 20-period exponential moving average of close

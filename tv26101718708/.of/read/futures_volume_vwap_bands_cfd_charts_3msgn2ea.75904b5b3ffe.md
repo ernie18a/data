@@ -1,1 +1,0 @@
-Long: close > VWAP AND VWAP > previous bar VWAP

@@ -1,2 +1,0 @@
-Long: A shorter-period EMA crosses above the next longer-period EMA in any adjacent pair of the four EMAs
-Short: A shorter-period EMA crosses below the next longer-period EMA in any adjacent pair of the four EMAs

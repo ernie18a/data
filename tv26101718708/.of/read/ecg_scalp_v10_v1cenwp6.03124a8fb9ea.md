@@ -1,2 +1,0 @@
-Long: shorter-lookback EMA crosses above longer-lookback EMA AND RSI > long threshold AND UTC hour < session end
-Short: shorter-lookback EMA crosses below longer-lookback EMA AND RSI < short threshold AND UTC hour < session end

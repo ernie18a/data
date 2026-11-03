@@ -1,1 +1,0 @@
-Using the traded instrument’s line-break chart, go long when the current bar closes above its open and close any short; go short when it closes below its open and close any long; if they are equal, close both positions.

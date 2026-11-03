@@ -1,1 +1,0 @@
-Long: (Monday AND Friday high > Thursday high) OR (Thursday AND Wednesday high > Monday high)

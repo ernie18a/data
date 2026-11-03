@@ -1,2 +1,0 @@
-Long: WPR on the first timeframe (equal to or higher than the chart timeframe, using its still-forming bar) > WPR on the second timeframe (higher than the first, using its still-forming bar)
-Short: WPR on the first timeframe (equal to or higher than the chart timeframe, using its still-forming bar) < WPR on the second timeframe (higher than the first, using its still-forming bar)

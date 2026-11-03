@@ -1,1 +1,0 @@
-When the server time is later than the configured closing time, close every open long or short position in the traded instrument. Otherwise, take no action.

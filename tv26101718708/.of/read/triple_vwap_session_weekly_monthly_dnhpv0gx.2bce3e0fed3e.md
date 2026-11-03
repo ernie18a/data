@@ -1,1 +1,0 @@
-Long: |Session VWAP - Weekly VWAP| <= proximity threshold AND low <= max(Session VWAP, Weekly VWAP) AND high >= min(Session VWAP, Weekly VWAP) AND close > Session VWAP AND close > Weekly VWAP AND close > open

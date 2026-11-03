@@ -1,1 +1,0 @@
-When invoked, close every open market position across all instruments and delete every pending order, regardless of market data.

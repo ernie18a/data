@@ -1,2 +1,0 @@
-Long: A chunk of N Renko bricks completes AND the earliest candle with the greatest volume in that chunk has an up Renko trend (Renko close > prior Renko close).
-Short: A chunk of N Renko bricks completes AND the earliest candle with the greatest volume in that chunk has a down Renko trend (Renko close < prior Renko close).

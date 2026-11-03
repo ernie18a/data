@@ -1,1 +1,0 @@
-When invoked, exit every open market position on every instrument: close long positions at the current bid and short positions at the current ask.

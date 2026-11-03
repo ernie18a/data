@@ -1,2 +1,0 @@
-Calculation: mNAV = chart close / (BTC price × BTC held per share), where BTC held per share = total BTC holdings / total shares; BTC price uses the higher-timeframe bar’s last completed close
-Long: mNAV < 1

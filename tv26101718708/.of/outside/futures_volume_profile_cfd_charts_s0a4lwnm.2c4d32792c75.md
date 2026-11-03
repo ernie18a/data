@@ -1,1 +1,0 @@
-If price is accepted above the value area, favor a long for continuation. If price rejects back inside the value area, favor a trade toward the point of control.

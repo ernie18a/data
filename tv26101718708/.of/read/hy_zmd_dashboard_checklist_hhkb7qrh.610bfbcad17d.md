@@ -1,2 +1,0 @@
-Long: Daily, 4-hour, and 1-hour 34-period EMA > 89-period EMA, using the last completed bar of each higher timeframe
-Short: Daily, 4-hour, and 1-hour 34-period EMA <= 89-period EMA, using the last completed bar of each higher timeframe

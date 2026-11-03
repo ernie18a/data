@@ -1,2 +1,0 @@
-Long: Accelerator Oscillator on a higher timeframe, using the bar still forming, is greater than its value on the preceding higher-timeframe bar
-Short: Accelerator Oscillator on a higher timeframe, using the bar still forming, is less than its value on the preceding higher-timeframe bar

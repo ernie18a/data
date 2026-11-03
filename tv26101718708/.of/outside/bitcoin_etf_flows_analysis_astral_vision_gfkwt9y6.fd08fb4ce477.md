@@ -1,1 +1,0 @@
-Go long when the combined daily Bitcoin balance change across the selected spot ETFs turns positive after a period of negative flows. No short or exit rule is specified.

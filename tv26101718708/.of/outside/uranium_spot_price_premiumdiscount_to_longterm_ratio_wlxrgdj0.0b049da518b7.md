@@ -1,1 +1,0 @@
-Exit the traded instrument when its externally sourced spot price rises above the current long-term contract price, indicating a spot premium; otherwise, this indicator gives no trade decision.

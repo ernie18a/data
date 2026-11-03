@@ -1,2 +1,0 @@
-Long: On at least one enabled configured timeframe, +DI > -DI AND RSI(close) > 50; use that timeframe’s current bar (higher or lower than the chart timeframe).
-Short: On at least one enabled configured timeframe, -DI > +DI AND RSI(close) < 50; use that timeframe’s current bar (higher or lower than the chart timeframe).

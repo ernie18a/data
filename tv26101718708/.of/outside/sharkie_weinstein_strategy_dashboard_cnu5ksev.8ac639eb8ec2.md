@@ -1,1 +1,0 @@
-Go long only when the instrument’s price is above a rising long-term moving average and its relative strength versus SPY is positive (above its own moving average). Otherwise, do not qualify it for a long; no short or exit rule is specified.

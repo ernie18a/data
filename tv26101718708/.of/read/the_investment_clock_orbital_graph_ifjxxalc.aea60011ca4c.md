@@ -1,4 +1,0 @@
-Calculation: GDP growth = (current GDP value − GDP value 12 lower-timeframe bars ago) / GDP value 12 lower-timeframe bars ago × 100; use the still-forming lower-timeframe bar
-Calculation: CPI inflation = (current CPI value − CPI value 12 lower-timeframe bars ago) / CPI value 12 lower-timeframe bars ago × 100; use the still-forming lower-timeframe bar
-Long: GDP growth > sustainable growth AND CPI inflation > sustainable inflation OR GDP growth < sustainable growth AND CPI inflation > sustainable inflation OR GDP growth > sustainable growth AND CPI inflation < sustainable inflation OR GDP growth < sustainable growth AND CPI inflation < sustainable inflation
-Short: GDP growth > sustainable growth AND CPI inflation > sustainable inflation OR GDP growth < sustainable growth AND CPI inflation > sustainable inflation OR GDP growth > sustainable growth AND CPI inflation < sustainable inflation OR GDP growth < sustainable growth AND CPI inflation < sustainable inflation

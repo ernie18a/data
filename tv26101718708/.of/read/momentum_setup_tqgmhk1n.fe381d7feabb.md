@@ -1,2 +1,0 @@
-Long: close > shorter-lookback EMA AND close > longer-lookback EMA AND close > session VWAP AND close > daily VWAP AND volume > its simple moving average
-Short: close < shorter-lookback EMA AND close < longer-lookback EMA AND close < session VWAP AND close < daily VWAP AND volume > its simple moving average

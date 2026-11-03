@@ -1,4 +1,0 @@
-Long: Source-timeframe close > its simple moving average for N consecutive completed source-timeframe bars (source timeframe same as or lower than chart timeframe)
-Short: Source-timeframe close < its simple moving average for N consecutive completed source-timeframe bars (source timeframe same as or lower than chart timeframe)
-Exit: long, source-timeframe close < its simple moving average on a completed source-timeframe bar (source timeframe same as or lower than chart timeframe)
-Exit: short, source-timeframe close > its simple moving average on a completed source-timeframe bar (source timeframe same as or lower than chart timeframe)

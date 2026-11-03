@@ -1,2 +1,0 @@
-Long: higher-timeframe bar close >= higher-timeframe bar open (current bar still forming; prior bars completed)
-Short: higher-timeframe bar close < higher-timeframe bar open (current bar still forming; prior bars completed)

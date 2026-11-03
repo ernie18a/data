@@ -1,2 +1,0 @@
-Long: The second-most-recent completed bar on a higher or equal timeframe is bullish AND the most-recent completed bar on that timeframe is bearish
-Short: The second-most-recent completed bar on a higher or equal timeframe is bearish AND the most-recent completed bar on that timeframe is bullish

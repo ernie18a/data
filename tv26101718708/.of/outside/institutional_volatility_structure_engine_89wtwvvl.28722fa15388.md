@@ -1,1 +1,0 @@
-Buy options or other long-volatility exposure when the volatility term structure is compressed, unless it shows acute front-end inversion. Sell options or premium when the shortest- and intermediate-term volatility measures are falling together, especially after a stress event has passed.

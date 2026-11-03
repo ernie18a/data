@@ -1,2 +1,0 @@
-Exit: long, fast moving average <= slow moving average on the most recent completed bar AND fast moving average > slow moving average on the preceding completed bar
-Exit: short, fast moving average >= slow moving average on the most recent completed bar AND fast moving average < slow moving average on the preceding completed bar

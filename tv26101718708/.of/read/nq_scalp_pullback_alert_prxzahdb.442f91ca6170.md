@@ -1,2 +1,0 @@
-Long: close > session VWAP AND fast EMA > slow EMA AND low ≤ fast EMA ≤ high AND close > fast EMA AND volume ≥ configurable multiplier × short-term average volume AND (session filter disabled OR datetime is within either configured session window)
-Short: close < session VWAP AND fast EMA < slow EMA AND low ≤ fast EMA ≤ high AND close < fast EMA AND volume ≥ configurable multiplier × short-term average volume AND (session filter disabled OR datetime is within either configured session window)

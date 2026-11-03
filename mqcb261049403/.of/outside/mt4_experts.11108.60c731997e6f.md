@@ -1,1 +1,0 @@
-For each signal in the external CSV, open a long or short position in its specified instrument at the signal’s open time if no matching active position exists. Close the matching position at or after the signal’s close time.

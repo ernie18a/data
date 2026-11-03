@@ -1,2 +1,0 @@
-Long: MACD crosses above its signal line on the selected timeframe, using the still-forming bar if that timeframe differs from the chart timeframe
-Exit: Long, MACD crosses below its signal line on the selected timeframe, using the still-forming bar if that timeframe differs from the chart timeframe OR current chart bar low < previous chart bar low

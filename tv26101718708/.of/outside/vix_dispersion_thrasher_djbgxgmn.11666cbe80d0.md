@@ -1,1 +1,0 @@
-Measure the 20-day standard deviation of external VIX and VVIX data. If both are at or below their respective compression thresholds, exit or raise cash; if only VIX is compressed, tighten stops; if only VVIX is compressed, reduce exposure. Treat a combined signal with VIX below 15 as the highest-risk case.

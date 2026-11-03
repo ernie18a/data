@@ -1,2 +1,0 @@
-Long: On each evaluated timeframe (the chart timeframe and higher and lower timeframes), PSAR on the still-forming bar < that bar’s close AND +DI > -DI
-Short: On each evaluated timeframe (the chart timeframe and higher and lower timeframes), PSAR on the still-forming bar > that bar’s close AND -DI > +DI

@@ -1,4 +1,0 @@
-Long: Chart-timeframe simple moving average on the last completed bar > its value on the preceding completed bar AND higher-timeframe simple moving average on the last completed bar > its value on the preceding completed bar
-Short: Chart-timeframe simple moving average on the last completed bar < its value on the preceding completed bar AND higher-timeframe simple moving average on the last completed bar < its value on the preceding completed bar
-Exit: long, chart-timeframe simple moving average on the last completed bar < its value on the preceding completed bar OR higher-timeframe simple moving average on the last completed bar < its value on the preceding completed bar
-Exit: short, chart-timeframe simple moving average on the last completed bar > its value on the preceding completed bar OR higher-timeframe simple moving average on the last completed bar > its value on the preceding completed bar

@@ -1,1 +1,0 @@
-For each scanned instrument, go long when its close is above both its session VWAP and its rolling average typical price. Go short when its close is below both. Otherwise, give no signal. There is no exit rule.

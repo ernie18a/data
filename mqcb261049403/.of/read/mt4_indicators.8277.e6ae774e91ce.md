@@ -1,2 +1,0 @@
-Long: On the still-forming bar of the selected higher or lower timeframe, shorter-period SMA(close) > longer-period SMA(close)
-Short: On the still-forming bar of the selected higher or lower timeframe, shorter-period SMA(close) < longer-period SMA(close)
