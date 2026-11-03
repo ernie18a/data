@@ -1,2 +1,4 @@
-Long: On the chart timeframe, the Stochastic main line crosses above the oversold level (current value > level AND previous value <= level) OR on the higher timeframe's still-forming bar, the Stochastic main line crosses above the oversold level (current value > level AND previous value <= level)
-Short: On the chart timeframe, the Stochastic main line crosses below the overbought level (current value < level AND previous value >= level) OR on the higher timeframe's still-forming bar, the Stochastic main line crosses below the overbought level (current value < level AND previous value >= level)
+Long: Chart-timeframe stochastic main line > lower threshold AND previous bar's stochastic main line <= lower threshold.
+Short: Chart-timeframe stochastic main line < upper threshold AND previous bar's stochastic main line >= upper threshold.
+Long: On the higher timeframe, the most recent stochastic main-line crossing is above the lower threshold; use the bar still forming and resolve simultaneous crossings in favor of the short condition.
+Short: On the higher timeframe, the most recent stochastic main-line crossing is below the upper threshold; use the bar still forming and resolve simultaneous crossings in favor of the short condition.

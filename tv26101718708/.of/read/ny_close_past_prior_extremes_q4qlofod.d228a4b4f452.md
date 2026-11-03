@@ -1,5 +1,10 @@
-Calculation: NY trading-day range = highest high and lowest low from 17:00 New York time through the next 16:59, using completed bars from a lower-timeframe session engine; finalize on the 16:59 bar, Monday–Friday only.
-Long: At NY trading-day finalization, close > prior completed NY trading-day high
-Short: At NY trading-day finalization, close < prior completed NY trading-day low
-Long: The next finalized NY trading day closes above its 17:00 open after the prior finalized NY trading day closed above the preceding NY trading-day high
-Short: The next finalized NY trading day closes below its 17:00 open after the prior finalized NY trading day closed below the preceding NY trading-day low
+Calculation: NY session = the range from a configurable daily boundary to the next boundary in America/New_York; aggregate its high and low from the session engine bars. Finalize at the last engine bar before the boundary using its close, or at the first engine bar at the boundary using its open. In the latter mode, exclude that first bar from the finalized range. Optionally finalize only on weekdays; skipped sessions do not enter the stored history.
+Calculation: Session engine = a configurable timeframe that may be lower or higher than the chart timeframe. Use the last completed engine bar; on a higher chart timeframe use the last available lower-timeframe engine bar, and carry the last engine result forward between engine updates.
+Long: At session finalization, the session end price > the high of the previous finalized session.
+Short: At session finalization, the session end price < the low of the previous finalized session.
+Long: At session finalization, the session end price > the high of the previous finalized session AND the session end price > the highest high of a shorter lookback of previous finalized sessions.
+Short: At session finalization, the session end price < the low of the previous finalized session AND the session end price < the lowest low of a shorter lookback of previous finalized sessions.
+Long: At session finalization, the session end price > the high of the previous finalized session AND the session end price > the highest high of a longer lookback of previous finalized sessions.
+Short: At session finalization, the session end price < the low of the previous finalized session AND the session end price < the lowest low of a longer lookback of previous finalized sessions.
+Long: In session-close mode, at session finalization, the previous finalized session's end price < the high-low range low of the session before it AND the current session close > its boundary open.
+Short: In session-close mode, at session finalization, the previous finalized session's end price > the high-low range high of the session before it AND the current session close < its boundary open.

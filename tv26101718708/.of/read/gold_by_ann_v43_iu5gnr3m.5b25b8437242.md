@@ -1,27 +1,26 @@
-Calculation: 1-minute price range = highest high minus lowest low over the selected recent 1-minute bars; 1-minute recent volume = average volume over those bars; 1-minute baseline volume = 20-bar average volume on the 1-minute timeframe
-Calculation: Bullish 1-minute spike = 1-minute price range >= threshold AND 1-minute recent volume > 1-minute baseline volume × volume multiplier AND current 1-minute close > open of the first bar in the selected window
-Calculation: Bearish 1-minute spike = 1-minute price range >= threshold AND 1-minute recent volume > 1-minute baseline volume × volume multiplier AND current 1-minute close <= open of the first bar in the selected window
-Calculation: Daily range position = current close compared with the running day's low plus 95% of the running day's high-low range
-Calculation: Two-hour price change = percentage change from the close 120 chart bars ago to the current close
-Long: Bullish 1-minute spike
-Short: Bearish 1-minute spike
-Long: Flat position AND no cooldown, no tall-bar filter, trading day is Tuesday or Wednesday except Tuesday from 15:00 onward and Wednesday at 08:00 or 22:00 GMT+7, the last completed hourly bar's close > its open, 50-bar SMA slope (current SMA minus its value 5 bars ago) > -flat threshold, close is not above the running day's low plus 95% of its range, two-hour price change is not above the maximum, wait counter is zero AND squeeze-release wait is off AND a pivot low is confirmed
-Short: Flat position AND no cooldown, no tall-bar filter, same trading-time restriction, the last completed hourly bar's close > its open, 50-bar SMA slope > -flat threshold, close is not above the running day's low plus 95% of its range, two-hour price change is not above the maximum, wait counter is zero AND squeeze-release wait is off AND a pivot high is confirmed AND close < 50-bar SMA AND RSI(14) < 50
-Long: Wait counter reaches 1 after a long exit AND squeeze-release wait is off AND (close > 50-bar SMA AND RSI(14) > 55 AND volume > 20-bar average volume × volume multiplier AND close > last confirmed pivot high OR bullish breakout)
-Short: Wait counter reaches 1 after a long exit AND squeeze-release wait is off AND (close < 50-bar SMA AND RSI(14) < 45 AND volume > 20-bar average volume × volume multiplier AND close < last confirmed pivot low OR bearish breakdown)
-Short: Wait counter reaches 1 after a short exit AND squeeze-release wait is off AND (close < 50-bar SMA AND RSI(14) < 45 AND volume > 20-bar average volume × volume multiplier AND close < last confirmed pivot low OR bearish breakdown)
-Long: Wait counter reaches 1 after a short exit AND squeeze-release wait is off AND (close > 50-bar SMA AND RSI(14) > 55 AND volume > 20-bar average volume × volume multiplier AND close > last confirmed pivot high OR bullish breakout)
-Calculation: Bullish breakout = ADX > trend threshold AND close > 50-bar SMA AND RSI crosses above 55 AND volume > 20-bar average volume × volume multiplier AND close > last confirmed pivot high
-Calculation: Bearish breakdown = ADX > trend threshold AND close < 50-bar SMA AND RSI crosses below 45 AND volume > 20-bar average volume × volume multiplier AND close < last confirmed pivot low
-Exit: Long, close >= entry price + (30-bar SMA × regular take-profit percentage, or re-entry take-profit percentage for a re-entry)
-Exit: Long, close >= entry price + (30-bar SMA × regular sub-take-profit percentage, or re-entry sub-take-profit percentage for a re-entry) AND sub-take-profit not already taken (close 50%)
-Exit: Long, close <= entry price - (30-bar SMA × stop-loss percentage)
-Exit: Long, close <= entry price - (30-bar SMA × re-entry stop percentage) when in a re-entry
-Exit: Long, bearish 1-minute spike OR bearish breakdown
-Exit: Long, bullish 1-minute spike
-Exit: Short, close <= entry price - (30-bar SMA × regular take-profit percentage, or re-entry take-profit percentage for a re-entry)
-Exit: Short, close <= entry price - (30-bar SMA × regular sub-take-profit percentage, or re-entry sub-take-profit percentage for a re-entry) AND sub-take-profit not already taken (close 50%)
-Exit: Short, close >= entry price + (30-bar SMA × stop-loss percentage)
-Exit: Short, close >= entry price + (30-bar SMA × re-entry stop percentage) when in a re-entry
-Exit: Short, bearish 1-minute spike
-Exit: Short, bullish 1-minute spike
+Calculation: Confirmed pivot high/low = a high/low that is the highest/lowest over its left and right lookbacks, reported on the bar completing the right lookback; retain the latest confirmed value for breakout comparisons.
+Calculation: Spike = the highest high minus the lowest low over a spike lookback is at least a price threshold AND the SMA of volume over that lookback exceeds a multiplier times a longer volume SMA. A bullish spike has close > open at the start of the spike lookback; a bearish spike has close <= that open. Evaluate on the spike timeframe and map with lookahead off: use the last completed bar if it is higher than the chart timeframe, or the last available intrabar if it is lower. A second set of spike markings maps these results through an intermediate timeframe with lookahead off, again using the last completed higher-timeframe bar or last available lower-timeframe intrabar.
+Calculation: Momentum = linear regression, evaluated at the current bar, of close minus the average of (the average of the highest high and lowest low over the momentum lookback) and the close SMA over that lookback.
+Calculation: Squeeze = the lower Bollinger band is above the lower Keltner channel AND the upper Bollinger band is below the upper Keltner channel. Both Bollinger deviations and Keltner range use the same multiplier; the Keltner range is an SMA of true range or high minus low.
+Calculation: Post-spike wait = set on either spike or on a long exit from a bearish breakdown; clear after a bearish spike or bearish breakdown when momentum > 0, and after a bullish spike when momentum <= 0. Evaluate entries before clearing the wait on the current bar.
+Calculation: Bullish breakout = close > close SMA AND RSI > an upper threshold AND volume > volume SMA times a multiplier AND close > open AND close > latest confirmed pivot high. Bearish breakdown = close < close SMA AND RSI < a lower threshold AND volume > volume SMA times a multiplier AND close < open AND close < latest confirmed pivot low.
+Long: Bullish spike OR the bullish spike mapped through the intermediate timeframe.
+Short: Bearish spike OR the bearish spike mapped through the intermediate timeframe.
+Long: Close SMA slope over a lookback > a positive threshold.
+Short: Close SMA slope over a lookback < the negative of that threshold.
+Long: Squeeze is false AND momentum > 0.
+Short: Squeeze is false AND momentum <= 0.
+Long: Flat position AND post-spike wait is clear AND post-profit wait is zero AND no ATR-triggered cooldown AND high minus low <= short-lookback ATR times a multiplier AND permitted weekday and hour AND close of a prior completed higher-timeframe bar > its open AND close SMA slope > the negative slope threshold AND close <= today's running low plus a fraction of today's running range OR today's running range = 0 AND close's percentage rise over a lookback <= a threshold AND a pivot low is confirmed.
+Short: Flat position AND post-spike wait is clear AND post-profit wait is zero AND no ATR-triggered cooldown AND high minus low <= short-lookback ATR times a multiplier AND permitted weekday and hour AND close of a prior completed higher-timeframe bar > its open AND close SMA slope > the negative slope threshold AND close <= today's running low plus a fraction of today's running range OR today's running range = 0 AND close's percentage rise over a lookback <= a threshold AND a pivot high is confirmed AND close < close SMA AND RSI < a threshold.
+Short: Long position from the normal pivot entry AND high minus low <= short-lookback ATR times a multiplier AND no earlier long-exit branch applies AND close <= entry price minus close SMA times the normal stop fraction AND bearish breakdown.
+Long: Post-profit wait reaches its penultimate count AND post-spike wait is clear AND bullish breakout.
+Short: Post-profit wait reaches its penultimate count AND post-spike wait is clear AND bearish breakdown.
+Exit: long, normal pivot entry AND bullish spike OR bearish spike.
+Exit: short, normal pivot entry AND bullish spike OR bearish spike.
+Exit: long, normal pivot entry AND high minus low <= short-lookback ATR times a multiplier AND close <= entry price minus close SMA times the stop fraction.
+Exit: short, normal pivot entry AND high minus low <= short-lookback ATR times a multiplier AND close >= entry price plus close SMA times the stop fraction.
+Exit: long, normal pivot entry AND high minus low <= short-lookback ATR times a multiplier AND close >= entry price plus close SMA times the partial-profit fraction AND partial profit has not already been requested; request a partial limit exit at that level.
+Exit: short, normal pivot entry AND high minus low <= short-lookback ATR times a multiplier AND close <= entry price minus close SMA times the partial-profit fraction AND partial profit has not already been requested; request a partial limit exit at that level.
+Exit: long, normal pivot entry AND high minus low <= short-lookback ATR times a multiplier AND close >= entry price plus close SMA times the larger full-profit fraction AND the partial-profit branch does not apply.
+Exit: short, normal pivot entry AND high minus low <= short-lookback ATR times a multiplier AND close <= entry price minus close SMA times the larger full-profit fraction AND the partial-profit branch does not apply.
+Exit: long, normal pivot entry AND high minus low <= short-lookback ATR times a multiplier AND no earlier long-exit branch applies AND ADX > a threshold AND bearish breakdown AND RSI crosses below its lower threshold.

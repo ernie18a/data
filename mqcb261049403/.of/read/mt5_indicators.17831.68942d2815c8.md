@@ -1,4 +1,4 @@
-Calculation: ATR = average true range; VTS bands are computed on the chart timeframe or an optional higher timeframe, using that timeframe’s still-forming bar. Starting with close − k × ATR, apply 14 successive series transformations where each value is the maximum of the current source value and the prior bar’s value of that series; the result is the lower VTS band.
-Calculation: Starting with close + k × ATR, apply 14 successive series transformations where each value is the minimum of the current source value and the prior bar’s value of that series; the result is the upper VTS band.
-Long: close > lower VTS band AND close >= upper VTS band
-Short: close < upper VTS band
+Calculation: Lower threshold = the highest value over 14 consecutive bars of close minus an ATR multiple; upper threshold = the lowest value over 14 consecutive bars of close plus the same ATR multiple.
+Calculation: Direction = short if close < lower threshold; otherwise long if close > upper threshold; otherwise retain the previous direction. Initially direction is undefined. Calculate thresholds and direction on the chart timeframe, or on a higher timeframe using its still-forming bar.
+Long: Direction = long
+Short: Direction = short

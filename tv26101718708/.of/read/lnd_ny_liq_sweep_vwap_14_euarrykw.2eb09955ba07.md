@@ -1,15 +1,18 @@
-Calculation: 20/80 levels = nearest step-based price levels offset by 20% and 80% of the price step, respectively, rounding the level index to the nearest integer
-Calculation: Displacement = current bar high−low > the highest high−low of the preceding five chart-timeframe bars
-Calculation: Bullish FVG = current low > high two chart-timeframe bars ago; bearish FVG = current high < low two chart-timeframe bars ago
-Calculation: Session range high/low = maximum high/minimum low during that session's range window
-Calculation: Consecutive up/down candles = consecutive one-minute closes higher/lower than the preceding one-minute close; use one-minute bars, which may be higher or lower than the chart timeframe, including the current bar as it forms
-Calculation: NY midnight open = open of the first bar of the NY trading day
-Calculation: First-hour consolidation = first NY hour's high−low < configured multiplier × ATR(14) on the chart timeframe; freeze this result for the rest of the day
-Long: During the London or NY trade window, that session's low has been swept (current low < its range low after at least the configured number of consecutive down candles) AND current low ≤ nearest 20% level AND current close > that level AND (displacement filter disabled OR Displacement) AND (FVG filter disabled OR Bullish FVG)
-Long: During the London or NY trade window, that session's low is swept after at least the configured number of consecutive down candles AND current close < current open
-Long: Daily close > daily EMA(50) AND (weekly filter disabled OR daily close > weekly EMA(20)) AND current chart-timeframe close < NY midnight open AND NOT First-hour consolidation; use the latest available daily and weekly bars, which may still be forming
-Long: Daily close > daily EMA(50); use the latest available daily bar, which may still be forming
-Short: During the London or NY trade window, that session's high has been swept (current high > its range high after at least the configured number of consecutive up candles) AND current high ≥ nearest 80% level AND current close < that level AND (displacement filter disabled OR Displacement) AND (FVG filter disabled OR Bearish FVG)
-Short: During the London or NY trade window, that session's high is swept after at least the configured number of consecutive up candles AND current close > current open
-Short: Daily close < daily EMA(50) AND (weekly filter disabled OR daily close < weekly EMA(20)) AND current chart-timeframe close > NY midnight open AND NOT First-hour consolidation; use the latest available daily and weekly bars, which may still be forming
-Short: Daily close ≤ daily EMA(50); use the latest available daily bar, which may still be forming
+Calculation: Session range = highest high and lowest low accumulated during each configured range session in the New York time zone; retain each range until its next range session.
+Calculation: Consecutive close changes = on each chart bar compare the selected lower-timeframe close with its value on the previous chart bar; count consecutive increases and decreases separately, resetting both on equality and at the start of each New York day. Use the last completed lower-timeframe bar historically and the latest available bar while the chart bar is forming.
+Calculation: Swept low/high = during a session's trade window, the chart-bar low/high crosses strictly below/above that session's range low/high while the corresponding consecutive decrease/increase count is at least its threshold; retain each sweep state through the New York day, including the sweep bar.
+Calculation: Offset level = round((close − offset) / price step) × price step + offset; use separate lower and higher offsets for the long and short conditions.
+Calculation: Consolidation = during the configured first-hour session, the running session high minus low is less than a multiplier times chart-timeframe ATR; retain the final state during the configured later session and set it false outside those sessions.
+Long: During either session's trade window, its low has been swept AND low <= lower-offset level AND close > lower-offset level AND (displacement filter disabled OR high − low > the highest high − low of the preceding lookback bars) AND (fair-value-gap filter disabled OR low > high two chart bars earlier AND close > high two chart bars earlier).
+Short: During either session's trade window, its high has been swept AND high >= higher-offset level AND close < higher-offset level AND (displacement filter disabled OR high − low > the highest high − low of the preceding lookback bars) AND (fair-value-gap filter disabled OR high < low two chart bars earlier AND close < low two chart bars earlier).
+Long: During either session's trade window, low < that session's range low AND consecutive decreases >= threshold AND close < open.
+Short: During either session's trade window, high > that session's range high AND consecutive increases >= threshold AND close > open.
+Long: Higher-timeframe close > its shorter-period EMA.
+Short: Higher-timeframe close <= its shorter-period EMA.
+Long: Higher-timeframe close > its longer-period EMA.
+Short: Higher-timeframe close <= its longer-period EMA.
+Long: Higher-timeframe close > the EMA of a still higher timeframe.
+Short: Higher-timeframe close <= the EMA of a still higher timeframe.
+Long: Higher-timeframe close > its shorter-period EMA AND (higher-timeframe alignment filter disabled OR higher-timeframe close > the EMA of a still higher timeframe) AND chart close < the open of the first chart bar of the New York day AND consolidation is false.
+Short: Higher-timeframe close <= its shorter-period EMA AND (higher-timeframe alignment filter disabled OR higher-timeframe close <= the EMA of a still higher timeframe) AND chart close > the open of the first chart bar of the New York day AND consolidation is false.
+Calculation: Higher-timeframe close and EMAs use the last completed higher-timeframe bar on historical chart bars and the still-forming higher-timeframe bar in real time.

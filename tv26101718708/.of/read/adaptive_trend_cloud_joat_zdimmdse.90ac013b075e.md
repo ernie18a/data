@@ -1,12 +1,7 @@
-Calculation: ATR = average true range over a configurable lookback
-Calculation: Band source = selected value from hl2, close, or ohlc4
-Calculation: Volatility rank = percentile rank of current ATR within its lookback, divided by 100
-Calculation: Adaptive multiplier = max(0.25, base multiplier + (volatility rank - 0.5) × 2 × adaptive range)
-Calculation: Trailing upper band = band source + adaptive multiplier × ATR; use the current raw upper band if it is below the prior trailing upper band or the prior close is above the prior trailing upper band, otherwise keep the prior trailing upper band
-Calculation: Trailing lower band = band source - adaptive multiplier × ATR; use the current raw lower band if it is above the prior trailing lower band or the prior close is below the prior trailing lower band, otherwise keep the prior trailing lower band
-Calculation: Trend direction = switch from bearish to bullish when the current close is above the prior trailing upper band; switch from bullish to bearish when the current close is below the prior trailing lower band; otherwise retain the prior direction
-Calculation: Signal EMA = EMA of close
-Calculation: Bullish momentum = momentum filter is disabled, or the selected condition is true: RSI is above its midline, or MACD histogram is above zero
-Calculation: Bearish momentum = momentum filter is disabled, or the selected condition is true: RSI is below its midline, or MACD histogram is below zero
-Long: prior trend direction is bearish AND current trend direction is bullish AND close > signal EMA AND bullish momentum
-Short: prior trend direction is bullish AND current trend direction is bearish AND close < signal EMA AND bearish momentum
+Calculation: Adaptive bands = Choose close, (high + low) / 2, or (open + high + low + close) / 4 as the price basis. Rank current ATR within its lookback as the fraction of ATR values less than or equal to it; use 0.5 when the rank is unavailable. The multiplier is max(minimum multiplier, base multiplier + (rank - 0.5) * 2 * adaptive range). Raw upper and lower bands are price basis plus and minus multiplier * ATR. Set the upper band to the raw upper band if the previous upper band is unavailable, the raw upper band is lower than the previous upper band, or the previous close is above the previous upper band; otherwise retain the previous upper band. Set the lower band to the raw lower band if the previous lower band is unavailable, the raw lower band is higher than the previous lower band, or the previous close is below the previous lower band; otherwise retain the previous lower band.
+Calculation: Adaptive trend direction = Initialize up. Switch from down to up when close > previous upper adaptive band; switch from up to down when close < previous lower adaptive band; otherwise retain the previous direction.
+Calculation: MACD histogram = Shorter-period EMA of close minus longer-period EMA of close, minus an EMA of that difference with a smoothing period shorter than the shorter close EMA period.
+Long: Adaptive trend direction = up
+Short: Adaptive trend direction = down
+Long: Adaptive trend direction = up AND previous adaptive trend direction = down AND close > EMA of close AND (momentum filter disabled OR selected RSI > RSI threshold OR selected MACD histogram > 0)
+Short: Adaptive trend direction = down AND previous adaptive trend direction = up AND close < EMA of close AND (momentum filter disabled OR selected RSI < RSI threshold OR selected MACD histogram < 0)

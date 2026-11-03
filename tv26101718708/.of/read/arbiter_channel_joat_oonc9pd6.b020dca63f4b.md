@@ -1,10 +1,10 @@
-Calculation: Donchian midpoint = (highest high + lowest low) / 2 over a lookback.
-Calculation: Composite baseline = EMA of the weighted average of the enabled conversion, base, span A, span B, and optional close components; conversion and base are Donchian midpoints with shorter and longer lookbacks, span A is their average, and span B is a Donchian midpoint with a longer lookback than base.
-Calculation: Outer channel width = max(EMA(ATR × multiplier + EMA(abs(close − open), body lookback) × multiplier, width smoothing lookback), minimum width in ticks).
-Calculation: Inner channel = composite baseline ± outer channel width × inner-channel ratio.
-Calculation: Regime state = on each completed chart bar, compression if body size ≤ its EMA × compression factor AND bar range ≤ its EMA × compression factor AND ATR ≤ its EMA × compression factor; else expansion if body size ≥ its EMA × expansion factor AND bar range ≥ its EMA × expansion factor AND abs(close − baseline) / outer channel width ≥ expansion threshold AND volume ≥ its SMA × expansion factor; else balanced. Retain the resulting state until the next completed bar.
-Calculation: Trend state = on each completed chart bar, set bullish if close > upper outer channel AND baseline is rising over its slope lookback; else set bearish if close < lower outer channel AND baseline is falling over that lookback; else set neutral if regime is compression AND close is between the inner channel boundaries; otherwise retain the prior state.
-Long: Completed chart bar AND trend state changes to bullish.
-Short: Completed chart bar AND trend state changes to bearish.
-Exit: Long, completed chart bar AND trend state changes to neutral.
-Exit: Short, completed chart bar AND trend state changes to neutral.
+Calculation: Composite baseline = EMA of the weighted average of enabled components: short-lookback Donchian midpoint, longer-lookback Donchian midpoint, their average, longest-lookback Donchian midpoint, and close; use close if the total enabled weight is zero.
+Calculation: Channel width = maximum of a configurable minimum price width and the EMA of (ATR multiplied by a coefficient + EMA of absolute candle body multiplied by another coefficient). Outer bands are the composite baseline plus or minus channel width; inner bands are the baseline plus or minus channel width multiplied by a configurable ratio.
+Calculation: Compression = absolute candle body <= its EMA multiplied by a coefficient AND high minus low <= its EMA multiplied by a coefficient AND ATR <= its EMA multiplied by a coefficient.
+Calculation: Trend state = initially neutral; on each completed bar, set bullish if close > upper outer band AND either slope agreement is disabled or the baseline > its value a configurable number of bars ago; otherwise set bearish if close < lower outer band AND either slope agreement is disabled or the baseline < its value that many bars ago; otherwise set neutral if compression neutralization is enabled AND compression is true AND close is strictly between the inner bands; otherwise retain the previous state.
+Long: Trend state = bullish
+Long: Close > upper outer band
+Long: Composite baseline > its value a configurable number of bars ago
+Short: Trend state = bearish
+Short: Close < lower outer band
+Short: Composite baseline < its value a configurable number of bars ago

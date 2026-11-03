@@ -1,3 +1,5 @@
-Calculation: Trigger deviation = selected trigger value minus its neutral midpoint for stochastic, RSI, or momentum; CCI or MACD main-line value unchanged. Calculate on the chart timeframe or, when selected, the higher timeframe using its still-forming bar.
-Long: Trigger deviation > 0
-Short: Trigger deviation < 0
+Calculation: Trigger = one selected oscillator: close-based stochastic main line minus its midpoint, close-based CCI, close-based RSI minus its midpoint, close-based MACD main line using a shorter and a longer EMA, or close-based momentum minus its neutral level. Stochastic uses close prices for its range and SMA smoothing.
+Long: Trigger > 0
+Short: Trigger <= 0
+Long: Trigger calculated on the higher-timeframe bar still forming > 0
+Short: Trigger calculated on the higher-timeframe bar still forming <= 0

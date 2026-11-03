@@ -1,10 +1,10 @@
-Calculation: Bullish MasterTrend score = count of: short EMA > shorter EMA; RSI > 50; close > EMA; EMA > SMA; SMA > EMA; EMA > EMA; close > long-term EMA, using the strategy’s progressively longer trend lookbacks
-Calculation: Bearish MasterTrend score = count of the corresponding seven conditions with each comparison reversed
-Calculation: Relative volume ratio = EMA of short-lookback volume SMA divided by the greater of long-lookback volume SMA and 1; short lookback is shorter than long lookback
-Calculation: Stop distance = ATR on the signal bar × configurable multiplier
-Calculation: Long stop = signal-bar close − stop distance; long target = signal-bar close + stop distance × configurable reward-to-risk ratio
-Calculation: Short stop = signal-bar close + stop distance; short target = signal-bar close − stop distance × configurable reward-to-risk ratio
-Long: Current bar is complete AND EMA4 > EMA5 AND previous EMA4 ≤ previous EMA5 AND bullish MasterTrend score ≥ configurable minimum AND relative volume ratio ≥ configurable minimum AND session filter is disabled or an enabled London/New York session is active AND position is flat
-Short: Current bar is complete AND EMA4 < EMA5 AND previous EMA4 ≥ previous EMA5 AND bearish MasterTrend score ≥ configurable minimum AND relative volume ratio ≥ configurable minimum AND session filter is disabled or an enabled London/New York session is active AND position is flat
-Exit: Long, low ≤ long stop OR high ≥ long target
-Exit: Short, high ≥ short stop OR low ≤ short target
+Calculation: Bull score = count of true conditions among: fastest close EMA > second-fastest close EMA; RSI > midpoint; close > short-term close EMA; short-term close EMA > medium-term close SMA; medium-term close SMA > intermediate close EMA; intermediate close EMA > longer intermediate close EMA; close > long-term close EMA.
+Calculation: Bear score = count of true conditions among: fastest close EMA < second-fastest close EMA; RSI < midpoint; close < short-term close EMA; short-term close EMA < medium-term close SMA; medium-term close SMA < intermediate close EMA; intermediate close EMA < longer intermediate close EMA; close < long-term close EMA.
+Calculation: Volume ratio = EMA of (short-lookback volume SMA / max(long-lookback volume SMA, 1)).
+Calculation: Stop distance = ATR on the entry signal bar multiplied by the stop multiplier, fixed at entry.
+Long: Bull score >= score threshold.
+Short: Bull score < score threshold AND bear score >= score threshold.
+Long: Position is flat AND fastest close EMA > second-fastest close EMA AND previous fastest close EMA <= previous second-fastest close EMA AND bull score >= score threshold AND volume ratio >= volume threshold AND (session filter disabled OR bar opening time in an enabled session in the selected timezone).
+Short: Position is flat AND fastest close EMA < second-fastest close EMA AND previous fastest close EMA >= previous second-fastest close EMA AND bear score >= score threshold AND volume ratio >= volume threshold AND (session filter disabled OR bar opening time in an enabled session in the selected timezone).
+Exit: Long, low <= entry signal bar close - stop distance OR high >= entry signal bar close + stop distance * reward-to-risk ratio.
+Exit: Short, high >= entry signal bar close + stop distance OR low <= entry signal bar close - stop distance * reward-to-risk ratio.

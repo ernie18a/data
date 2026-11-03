@@ -1,7 +1,11 @@
-Calculation: Bullish score = count of these conditions on the signal bar: close > same-day cumulative VWAP; RSI > 50; MACD main line > signal line; fast EMA > slow EMA; ADX > 25 and close > fast EMA; volume > its 20-bar moving average and close > open. All calculations use the chart timeframe and the last completed bar; the moving average uses the signal bar and preceding bars.
-Calculation: Bearish score = count of these conditions on the signal bar: close <= same-day cumulative VWAP; RSI <= 50; MACD main line <= signal line; fast EMA <= slow EMA; ADX > 25 and close < fast EMA; volume > its 20-bar moving average and close < open. All calculations use the chart timeframe and the last completed bar; the moving average uses the signal bar and preceding bars.
-Calculation: Risk distance = ATR × configured ATR multiplier, using the chart timeframe and the last completed bar.
-Long: fast EMA crosses above slow EMA between the preceding and last completed chart bars AND bullish score >= configured minimum score.
-Short: fast EMA crosses below slow EMA between the preceding and last completed chart bars AND bearish score >= configured minimum score.
-Exit: long, high >= entry price + n × risk distance for any n in {1, 2, 3, 4, 5}
-Exit: short, low <= entry price - n × risk distance for any n in {1, 2, 3, 4, 5}
+Calculation: Daily VWAP = cumulative sum of ((high + low + close) / 3) * volume divided by cumulative volume since the start of the calendar day; use close when cumulative volume is zero.
+Calculation: Bull score = count of these true conditions: close > daily VWAP; RSI > its midpoint; MACD main line > MACD signal line; shorter-period EMA > longer-period EMA; ADX > its strength threshold AND close > shorter-period EMA; volume > its moving average AND close > open. The volume average includes the current bar.
+Calculation: Bear score = count of these true conditions: close <= daily VWAP; RSI <= its midpoint; MACD main line <= MACD signal line; shorter-period EMA <= longer-period EMA; ADX > its strength threshold AND close < shorter-period EMA; volume > its moving average AND close < open. The volume average includes the current bar.
+Calculation: Dashboard bull and bear scores = the respective bull and bear scores plus one when RSI on the other timeframe is above or at/below its midpoint, respectively. Use the still-forming bar of that timeframe, which can be higher or lower than the chart timeframe.
+Calculation: Entry risk distance = ATR on the entry bar multiplied by a risk multiplier.
+Long: On a completed chart bar, shorter-period EMA > longer-period EMA AND previous shorter-period EMA <= previous longer-period EMA AND (score filter disabled OR bull score >= minimum score).
+Short: On a completed chart bar, shorter-period EMA < longer-period EMA AND previous shorter-period EMA >= previous longer-period EMA AND (score filter disabled OR bear score >= minimum score).
+Long: close > daily VWAP OR MACD main line > MACD signal line OR shorter-period EMA > longer-period EMA OR RSI < its lower threshold OR (RSI > its midpoint AND RSI <= its upper threshold) OR RSI on the other timeframe > its midpoint OR dashboard bull score > dashboard bear score.
+Short: close <= daily VWAP OR MACD main line <= MACD signal line OR shorter-period EMA <= longer-period EMA OR RSI > its upper threshold OR (RSI >= its lower threshold AND RSI <= its midpoint) OR RSI on the other timeframe <= its midpoint OR dashboard bull score <= dashboard bear score.
+Exit: long, high >= entry price + entry risk distance multiplied by a take-profit multiplier.
+Exit: short, low <= entry price - entry risk distance multiplied by a take-profit multiplier.

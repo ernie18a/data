@@ -1,9 +1,11 @@
-Calculation: Latest confirmed pivot low = most recent low pivot confirmed using equal left and right lookback lengths
-Calculation: Latest confirmed pivot high = most recent high pivot confirmed using equal left and right lookback lengths
-Calculation: Average volume = moving average of volume over its configured lookback
-Long: On a completed bar, low < latest confirmed pivot low AND close > latest confirmed pivot low AND volume >= average volume AND latest confirmed pivot low has not already been swept
-Long: On a completed bar, candle range > ATR times its configured buffer multiplier AND lower wick / candle range > configured wick ratio threshold AND close > open AND abs(close - open) < candle range times its configured body fraction AND volume > average volume
-Long: On a completed bar, volume > average volume times its configured spike multiplier AND previous close < previous open AND close > open AND close > previous close AND close - low > 2 * (high - close)
-Short: On a completed bar, high > latest confirmed pivot high AND close < latest confirmed pivot high AND volume >= average volume AND latest confirmed pivot high has not already been swept
-Short: On a completed bar, candle range > ATR times its configured buffer multiplier AND upper wick / candle range > configured wick ratio threshold AND close < open AND abs(close - open) < candle range times its configured body fraction AND volume > average volume
-Short: On a completed bar, volume > average volume times its configured spike multiplier AND previous close > previous open AND close < open AND close < previous close AND high - close > 2 * (close - low)
+Calculation: Confirmed swing high or low = a pivot high or low using equal left and right lookbacks, available on the bar that completes the right lookback.
+Calculation: Retained swing levels = separate lists for swing highs and swing lows; on each confirmed pivot, add its price only if its distance from every retained level in the corresponding list is at least the current ATR multiplied by the minimum-distance parameter, then remove the oldest level if the list exceeds its capacity.
+Calculation: Latest unswept swing high or low = the latest confirmed pivot of that type, reset on every new pivot; mark it swept after the first qualifying sweep of that pivot, including when a new pivot is confirmed on the sweep bar.
+Long: A swing low is confirmed AND its price is added to the retained swing-low levels.
+Short: A swing high is confirmed AND its price is added to the retained swing-high levels.
+Long: Low < latest unswept swing low AND close > latest unswept swing low AND volume >= simple moving average of volume; mark that swing low swept.
+Short: High > latest unswept swing high AND close < latest unswept swing high AND volume >= simple moving average of volume; mark that swing high swept.
+Long: High - low > ATR * 0.5 AND high - low > 0 AND (min(open, close) - low) / (high - low) > wick-ratio threshold AND close > open AND abs(close - open) < (high - low) * 0.3 AND volume > simple moving average of volume.
+Short: High - low > ATR * 0.5 AND high - low > 0 AND (high - max(open, close)) / (high - low) > wick-ratio threshold AND close < open AND abs(close - open) < (high - low) * 0.3 AND volume > simple moving average of volume.
+Long: Volume > simple moving average of volume * volume multiplier AND previous close < previous open AND close > open AND close > previous close AND close - low > (high - close) * 2.
+Short: Volume > simple moving average of volume * volume multiplier AND previous close > previous open AND close < open AND close < previous close AND high - close > (close - low) * 2.

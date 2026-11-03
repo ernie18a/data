@@ -1,12 +1,19 @@
-Calculation: OBV = cumulative volume signed by the direction of close change (positive for an increase, negative for a decrease, zero for no change)
-Calculation: OBV moving average = a configurable moving average of OBV; use the same lookback for both
-Calculation: OBV histogram = OBV − OBV moving average
-Calculation: Confirmed price pivot high/low = a high/low strictly above/below the surrounding bars, using equal configurable lookbacks on both sides; compare the two most recent confirmed pivots
-Calculation: Pivot OBV histogram = OBV histogram at the bar of the corresponding confirmed price pivot
-Calculation: Average volume = moving average of volume over a configurable lookback
-Long: On a closed bar, OBV crosses above its moving average AND (if enabled) the last completed higher-timeframe bar has OBV above its moving average AND (if enabled) ADX is at least its threshold AND (if enabled) volume is at least average volume multiplied by its threshold
-Short: On a closed bar, OBV crosses below its moving average AND (if enabled) the last completed higher-timeframe bar has OBV below or equal to its moving average AND (if enabled) ADX is at least its threshold AND (if enabled) volume is at least average volume multiplied by its threshold
-Long: A confirmed price pivot low is lower than the previous confirmed price pivot low AND its pivot OBV histogram is higher; OR a confirmed price pivot low is higher than the previous confirmed price pivot low AND its pivot OBV histogram is lower
-Short: A confirmed price pivot high is higher than the previous confirmed price pivot high AND its pivot OBV histogram is lower; OR a confirmed price pivot high is lower than the previous confirmed price pivot high AND its pivot OBV histogram is higher
-Exit: long, the short-entry condition occurs on a closed bar
-Exit: short, the long-entry condition occurs on a closed bar
+Calculation: OBV = cumulative sum of volume multiplied by the sign of the change in a chosen price source.
+Calculation: OBV baseline = a chosen SMA, RMA, WMA, or VWMA of OBV.
+Calculation: OBV histogram = OBV minus its baseline.
+Calculation: Confirmed pivot high or low = the high or low of the bar one more than the pivot lookback bars ago, strictly greater or lower respectively than every other high or low in the symmetric window of that lookback on each side; confirmation occurs on the current bar.
+Calculation: Entry risk = ATR on the signal bar multiplied by a stop-distance parameter; the projected entry price is the close of the bar preceding the signal bar.
+Long: OBV histogram >= 0.
+Short: OBV histogram < 0.
+Long: OBV > OBV baseline.
+Short: OBV < OBV baseline.
+Long: OBV crosses above its baseline AND, if enabled, higher-timeframe close-based OBV > its baseline on the last completed higher-timeframe bar AND, if enabled, ADX >= its threshold AND, if enabled, volume >= SMA of volume multiplied by a volume threshold.
+Short: OBV crosses below its baseline AND, if enabled, higher-timeframe close-based OBV <= its baseline on the last completed higher-timeframe bar AND, if enabled, ADX >= its threshold AND, if enabled, volume >= SMA of volume multiplied by a volume threshold.
+Long: A pivot low is confirmed AND its price is lower than the preceding pivot low AND its OBV histogram is higher than at the preceding pivot low.
+Long: A pivot low is confirmed AND its price is higher than the preceding pivot low AND its OBV histogram is lower than at the preceding pivot low.
+Short: A pivot high is confirmed AND its price is higher than the preceding pivot high AND its OBV histogram is lower than at the preceding pivot high.
+Short: A pivot high is confirmed AND its price is lower than the preceding pivot high AND its OBV histogram is higher than at the preceding pivot high.
+Exit: long, OBV crosses below its baseline AND, if enabled, higher-timeframe close-based OBV <= its baseline on the last completed higher-timeframe bar AND, if enabled, ADX >= its threshold AND, if enabled, volume >= SMA of volume multiplied by a volume threshold.
+Exit: short, OBV crosses above its baseline AND, if enabled, higher-timeframe close-based OBV > its baseline on the last completed higher-timeframe bar AND, if enabled, ADX >= its threshold AND, if enabled, volume >= SMA of volume multiplied by a volume threshold.
+Exit: long, high >= projected entry price plus entry risk multiplied by a chosen one of three independently configured reward-to-risk parameters, AND that target has not previously been hit since the latest entry signal.
+Exit: short, low <= projected entry price minus entry risk multiplied by a chosen one of three independently configured reward-to-risk parameters, AND that target has not previously been hit since the latest entry signal.

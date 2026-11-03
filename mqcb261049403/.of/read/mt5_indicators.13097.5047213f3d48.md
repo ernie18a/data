@@ -1,3 +1,3 @@
-Calculation: Aroon oscillator = 100 × (bars since the lowest low − bars since the highest high) / lookback period, using the same lookback period for both extremes. On each configured timeframe (which may be higher or lower than the chart timeframe), use its last completed bar.
-Long: Aroon oscillator > upper level
-Short: Aroon oscillator < lower level
+Calculation: Aroon oscillator = 100 × (bars since lowest low − bars since highest high) / lookback length, using the most recent occurrence of each extreme within the lookback, including the evaluated bar.
+Long: Aroon oscillator on the last completed bar of a selected timeframe is greater than the upper threshold; the selected timeframe may be higher than, lower than, or equal to the chart timeframe.
+Short: Aroon oscillator on the last completed bar of a selected timeframe is less than the lower threshold; the selected timeframe may be higher than, lower than, or equal to the chart timeframe.

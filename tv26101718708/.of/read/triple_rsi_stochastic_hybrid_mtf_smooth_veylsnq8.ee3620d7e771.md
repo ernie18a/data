@@ -1,6 +1,8 @@
-Calculation: Hybrid = RSI of close × RSI weight + smoothed stochastic × (1 − RSI weight), where smoothed stochastic is the simple moving average of 100 × (close − lowest low over the stochastic lookback) ÷ (highest high over the same lookback − lowest low); use 50 when highest high equals lowest low
-Calculation: Signal line = selected moving average of Hybrid, optionally smoothed with an EMA
-Calculation: Hybrid 2 = Hybrid calculated on a higher timeframe using that timeframe’s last completed bar, then smoothed on the chart timeframe
-Calculation: Hybrid 3 = Hybrid calculated on a higher timeframe using that timeframe’s last completed bar, then smoothed on the chart timeframe
-Long: Hybrid 1 > Signal line 1 AND previous Hybrid 1 ≤ previous Signal line 1 OR Hybrid 2 > Signal line 2 AND previous Hybrid 2 ≤ previous Signal line 2 OR Hybrid 3 > Signal line 3 AND previous Hybrid 3 ≤ previous Signal line 3
-Short: Hybrid 1 < Signal line 1 AND previous Hybrid 1 ≥ previous Signal line 1 OR Hybrid 2 < Signal line 2 AND previous Hybrid 2 ≥ previous Signal line 2 OR Hybrid 3 < Signal line 3 AND previous Hybrid 3 ≥ previous Signal line 3
+Calculation: Hybrid = RSI of the selected price source weighted by a configurable fraction plus the SMA-smoothed stochastic component weighted by the remaining fraction. The stochastic component is 100 × (source − lowest low) / (highest high − lowest low) over its lookback, or the oscillator midpoint when highest high equals lowest low. Calculate one Hybrid on chart bars and two independently parameterized Hybrids on higher-timeframe bars, one at a longer timeframe than the other. For each higher timeframe, use the last completed bar, carry its value forward between completions, then smooth the resulting chart-bar series with a configurable EMA, SMA, WMA, RMA, or HMA.
+Calculation: Signal = EMA, SMA, WMA, or RMA of the corresponding Hybrid, optionally followed by an EMA with an independently configurable smoothing length. Each Hybrid has independent signal parameters.
+Long: Any Hybrid > its Signal AND the same Hybrid on the previous chart bar <= its Signal on the previous chart bar.
+Short: Any Hybrid < its Signal AND the same Hybrid on the previous chart bar >= its Signal on the previous chart bar.
+Long: All three Hybrids > their respective Signals.
+Short: All three Hybrids < their respective Signals.
+Long: Any Hybrid > its Signal AND that Hybrid > a configurable midpoint level.
+Short: Any Hybrid < its Signal AND that Hybrid < a configurable midpoint level.

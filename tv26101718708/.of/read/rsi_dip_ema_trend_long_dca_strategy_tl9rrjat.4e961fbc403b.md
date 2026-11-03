@@ -1,4 +1,7 @@
-Long: Flat AND lower-timeframe RSI crosses down through its threshold between the previous and latest completed lower-timeframe bars AND shorter-lookback EMA > longer-lookback EMA on the chart timeframe
-Calculation: Cumulative safety-order deviation for order k = sum of the first k step distances, where the first distance is the initial step and each subsequent distance is the previous distance multiplied by the step multiplier
-Long: Long position AND safety orders remain AND close ≤ base entry price × (1 − cumulative safety-order deviation for the next order)
-Exit: Long, close ≤ average entry price × (1 − stop-loss fraction) OR elapsed time since base entry ≥ maximum holding period OR take-profit has been reached and close ≤ highest close since first reaching take-profit × (1 − trailing-deviation fraction)
+Calculation: Cumulative safety-order deviation for order k = first-order deviation multiplied by the sum of the step multiplier raised to powers 0 through k−1.
+Calculation: Trailing peak = highest close since the long position opened among bars whose close was at or above that bar's average entry price multiplied by one plus the take-profit fraction; retain the peak when the close is below that target.
+Long: Position is flat AND the optional backtest date filter is disabled OR position is flat AND the bar's datetime is within the enabled backtest date range; AND the previous chart bar's sampled lower-timeframe RSI > the RSI threshold AND the current chart bar's sampled lower-timeframe RSI <= the threshold AND the shorter-period EMA > the longer-period EMA. Sample RSI from the last completed lower-timeframe bar within each chart bar; calculate the EMAs on chart-timeframe bars or last completed higher-timeframe bars.
+Long: Position is long AND the optional backtest date filter is disabled or the bar's datetime is within the enabled backtest date range AND the number of safety orders already placed < the maximum AND close <= base entry price × (1 − cumulative deviation for the next safety order). Place at most one safety order per chart bar.
+Exit: long, close <= average entry price × (1 − stop-loss fraction).
+Exit: long, the maximum-hold option is enabled AND current bar datetime − entry bar datetime >= maximum holding duration.
+Exit: long, trailing peak exists AND close <= trailing peak × (1 − trailing deviation fraction).

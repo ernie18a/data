@@ -1,5 +1,7 @@
-Calculation: Fine-tuned moving average = weighted average of the selected OHLC-derived price on the current and preceding bars; for lookback N, normalize the weights proportional to [s1 + (h/(N−1))^r1(1−s1)] × [s2 + (1−h/(N−1))^r2(1−s2)] × [s3 + |1−2h/(N−1)|^r3(1−s3)], for h = 0…N−1. Use chart-timeframe bars, or the configured higher-timeframe bars; for the higher timeframe, use its still-forming bar.
-Calculation: Moving-average change standard deviation = population standard deviation of the last L one-bar changes in the fine-tuned moving average, including the current change.
-Calculation: Lower threshold = lower positive multiplier × moving-average change standard deviation; upper threshold = higher positive multiplier × moving-average change standard deviation.
-Long: Current fine-tuned moving average − previous fine-tuned moving average > lower threshold
-Short: Current fine-tuned moving average − previous fine-tuned moving average < −lower threshold
+Calculation: Applied price = a selectable price series: open, high, low, (high + low)/2, (high + low + close)/3, (high + low + 2 × close)/4, (open + close)/2, (open + high + low + close)/4, close, high if close > open and low if close < open and close otherwise, or (high + close)/2 if close > open and (low + close)/2 if close < open and close otherwise.
+Calculation: Weighted moving average = sum over offsets h from 0 through N − 1 of applied price at offset h multiplied by w(h), divided by the sum of w(h), where x = h/(N − 1) and w(h) = [s1 + x^r1 × (1 − s1)] × [s2 + (1 − x)^r2 × (1 − s2)] × [s3 + |2x − 1|^r3 × (1 − s3)]; N, s1, s2, s3, r1, r2, and r3 are parameters.
+Calculation: Change = current weighted moving average minus its previous-bar value, rounded to the configured price precision plus two decimal places.
+Calculation: Lower and upper filters = population standard deviation of the unrounded weighted moving average changes over a lookback, multiplied by the respective lower and upper filter coefficients and rounded to the configured price precision plus two decimal places.
+Long: Change > lower filter AND change <= upper filter OR change > upper filter.
+Short: Change < −lower filter AND change >= −upper filter OR change < −upper filter.
+Calculation: The same weighted moving average, change, filters, and decisions can also be calculated on a higher timeframe using its bar still forming at each chart bar.

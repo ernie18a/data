@@ -1,4 +1,14 @@
-Calculation: Swing pivot high/low = a confirmed local high/low with a longer pivot lookback than the internal pivot; confirmation requires that lookback number of bars on both sides.
-Calculation: Internal pivot high/low = a confirmed local high/low with a shorter pivot lookback than the swing pivot; confirmation requires that lookback number of bars on both sides.
-Long: close > latest unbroken swing pivot high AND previous close <= that pivot high OR close > latest unbroken internal pivot high AND previous close <= that pivot high OR low > high two bars ago AND low - high two bars ago >= ATR times the minimum gap-size multiplier
-Short: close < latest unbroken swing pivot low AND previous close >= that pivot low OR close < latest unbroken internal pivot low AND previous close >= that pivot low OR high < low two bars ago AND low two bars ago - high >= ATR times the minimum gap-size multiplier
+Calculation: Confirmed pivot high or low = the high or low of a bar confirmed after an equal number of bars on each side; use separate longer swing and shorter internal lookbacks. A new pivot replaces the previous pivot of the same type and resets its crossed flag.
+Calculation: Bullish structure break = close > latest confirmed pivot high AND previous close <= that same pivot high AND that pivot high has not previously been crossed; mark it crossed. Bearish structure break = close < latest confirmed pivot low AND previous close >= that same pivot low AND that pivot low has not previously been crossed; mark it crossed. Calculate each independently for swing and internal pivots.
+Calculation: Structure bias = initially neutral; set bullish on a bullish structure break and bearish on a bearish structure break, independently for swing and internal pivots.
+Calculation: Bullish order block = on a bullish swing structure break, use the high and low of the most recent preceding bearish candle within a lookback, if one exists; replace the previous bullish order block and keep it active until close < its low. Bearish order block = on a bearish swing structure break, use the high and low of the most recent preceding bullish candle within a lookback, if one exists; replace the previous bearish order block and keep it active until close > its high.
+Calculation: Bullish fair value gap = low > high two bars ago AND low - high two bars ago >= ATR multiplied by a threshold; replace the previous bullish gap and keep it active until low <= the high from two bars before its creation. Bearish fair value gap = high < low two bars ago AND low two bars ago - high >= ATR multiplied by a threshold; replace the previous bearish gap and keep it active until high >= the low from two bars before its creation.
+Calculation: Trailing top and bottom = initialize to the first bar's high and low; update the top when a confirmed swing pivot high >= the top and the bottom when a confirmed swing pivot low <= the bottom.
+Long: A swing pivot low is confirmed.
+Short: A swing pivot high is confirmed.
+Long: Swing structure bias = bullish OR internal structure bias = bullish.
+Short: Swing structure bias = bearish OR internal structure bias = bearish.
+Long: A bullish order block is active OR a bullish fair value gap is active.
+Short: A bearish order block is active OR a bearish fair value gap is active.
+Long: Trailing top > trailing bottom AND close < trailing top - (trailing top - trailing bottom) * 0.25 AND close <= trailing bottom + (trailing top - trailing bottom) * 0.25.
+Short: Trailing top > trailing bottom AND close >= trailing top - (trailing top - trailing bottom) * 0.25.

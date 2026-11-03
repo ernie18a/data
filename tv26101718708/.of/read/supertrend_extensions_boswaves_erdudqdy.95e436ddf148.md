@@ -1,5 +1,6 @@
-Calculation: ATR trailing-band trend state = Calculate raw upper and lower bands as (high + low) / 2 plus or minus ATR × multiplier. The trailing lower band is the greater of the raw lower band and prior trailing lower band when prior close is above the prior trailing lower band; otherwise it is the raw lower band. The trailing upper band is the lesser of the raw upper band and prior trailing upper band when prior close is below the prior trailing upper band; otherwise it is the raw upper band. Set state bullish when close is above the trailing upper band, bearish when close is below the trailing lower band, and otherwise retain the prior state.
-Long: prior trend state is bearish AND current trend state is bullish
-Short: prior trend state is bullish AND current trend state is bearish
-Exit: long, prior trend state is bullish AND current trend state is bearish
-Exit: short, prior trend state is bearish AND current trend state is bullish
+Calculation: Trailing bands = Raw upper band is (high + low) / 2 + ATR × multiplier; raw lower band is (high + low) / 2 - ATR × multiplier. The trailing lower band is the greater of the raw lower band and previous trailing lower band if the previous close was above the previous trailing lower band; otherwise it is the raw lower band. The trailing upper band is the lesser of the raw upper band and previous trailing upper band if the previous close was below the previous trailing upper band; otherwise it is the raw upper band. Initialize each trailing band to its raw band.
+Calculation: Trend state = Initialize to 0. On each bar, set to -1 if close < trailing lower band; otherwise set to 1 if close > trailing upper band; otherwise retain the previous state.
+Long: Trend state = 1
+Long: Trend state = 1 AND previous trend state = -1
+Short: Trend state != 1
+Short: Trend state = -1 AND previous trend state = 1

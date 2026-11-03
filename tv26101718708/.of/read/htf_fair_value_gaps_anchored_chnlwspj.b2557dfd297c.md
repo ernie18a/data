@@ -1,6 +1,9 @@
-Calculation: Bullish fair value gap = on a bar, its low is above the high two bars earlier; evaluate on the chart timeframe and each gap timeframe above or below it, using completed bars
-Calculation: Bearish fair value gap = on a bar, its high is below the low two bars earlier; evaluate on the chart timeframe and each gap timeframe above or below it, using completed bars
-Calculation: Bullish opening gap = daily or weekly open is above the previous bar’s close on that same timeframe
-Calculation: Bearish opening gap = daily or weekly open is below the previous bar’s close on that same timeframe
-Long: a bullish fair value gap forms on the chart timeframe or a timeframe above or below it OR a bullish daily or weekly opening gap forms
-Short: a bearish fair value gap forms on the chart timeframe or a timeframe above or below it OR a bearish daily or weekly opening gap forms
+Calculation: Gap mitigation = for a bullish gap, chart-bar low <= gap midpoint, low <= gap bottom, or close <= gap bottom; for a bearish gap, chart-bar high >= gap midpoint, high >= gap top, or close >= gap top, according to the selected mitigation method.
+Long: On the confirmed chart bar, low > high two bars earlier.
+Short: On the confirmed chart bar, high < low two bars earlier.
+Long: On a higher timeframe, the last completed bar or, if live gaps are enabled, the still-forming bar has low > high two bars earlier AND its gap bounds differ from those reported on the previous chart bar or no bullish gap was reported then AND the gap is not mitigated on the chart bar.
+Short: On a higher timeframe, the last completed bar or, if live gaps are enabled, the still-forming bar has high < low two bars earlier AND its gap bounds differ from those reported on the previous chart bar or no bearish gap was reported then AND the gap is not mitigated on the chart bar.
+Long: On a confirmed chart bar, a completed lower-timeframe bar has low > high two lower-timeframe bars earlier AND no subsequent lower-timeframe bar within the chart bar mitigates that gap using the selected mitigation method.
+Short: On a confirmed chart bar, a completed lower-timeframe bar has high < low two lower-timeframe bars earlier AND no subsequent lower-timeframe bar within the chart bar mitigates that gap using the selected mitigation method.
+Long: On a confirmed chart bar when an opening-period timestamp changes, the opening price of that period is greater than the previous completed period's close AND the resulting gap is not mitigated on the chart bar. Apply independently to a shorter and a longer opening period; each period can be higher or lower than the chart timeframe, and its opening price is from the period still forming.
+Short: On a confirmed chart bar when an opening-period timestamp changes, the opening price of that period is less than the previous completed period's close AND the resulting gap is not mitigated on the chart bar. Apply independently to a shorter and a longer opening period; each period can be higher or lower than the chart timeframe, and its opening price is from the period still forming.

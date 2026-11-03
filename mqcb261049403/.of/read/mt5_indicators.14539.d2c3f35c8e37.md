@@ -1,3 +1,4 @@
-Calculation: Smoothed momentum = linear-weighted moving average of close minus simple moving average of close, using the same lookback for both, on the chart timeframe or selected timeframe equal to or higher than the chart timeframe, using the still-forming bar.
-Long: Smoothed momentum > 0
-Short: Smoothed momentum < 0
+Long: Close LWMA > close SMA over the same lookback.
+Short: Close LWMA < close SMA over the same lookback.
+Long: On a higher timeframe, the close LWMA > close SMA over the same lookback, evaluated using the still-forming higher-timeframe bar at its first chart bar and held until the next higher-timeframe bar.
+Short: On a higher timeframe, the close LWMA < close SMA over the same lookback, evaluated using the still-forming higher-timeframe bar at its first chart bar and held until the next higher-timeframe bar.

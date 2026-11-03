@@ -1,11 +1,14 @@
-Calculation: Normalized CCI = rescale CCI to 0–100 using its minimum and maximum over a lookback twice the CCI lookback; use 50 if the range is zero.
-Calculation: Normalized ROC = rescale rate of change to 0–100 using its minimum and maximum over a lookback twice the ROC lookback; use 50 if the range is zero.
-Calculation: Normalized MACD histogram = rescale the MACD histogram to 0–100 using its minimum and maximum over a lookback twice the MACD slow-EMA length; use 50 if the range is zero.
-Calculation: Bull and bear vote counts = count the bullish and bearish votes, respectively, from RSI, Stochastic, normalized CCI, MFI, Williams %R plus 100, normalized ROC, Ultimate Oscillator, normalized MACD histogram, DI+ as a percentage of DI+ plus DI−, and Aroon balance (Aroon Up minus Aroon Down plus 100, divided by 2). Each oscillator votes bullish at or above the bullish threshold, bearish at or below the bearish threshold, and otherwise neutral. Use 50 when the DI sum is zero.
-Calculation: Agreement percentage = 10 times the larger of the bull and bear vote counts.
-Long: Bull vote count reaches the consensus threshold AND the previous bar was not in the consensus bull regime
-Long: Agreement percentage crosses up through the extreme-agreement threshold AND bull vote count is greater than or equal to bear vote count
-Short: Bear vote count reaches the consensus threshold AND the previous bar was not in the consensus bear regime
-Short: Agreement percentage crosses up through the extreme-agreement threshold AND bear vote count is greater than bull vote count
-Exit: Long, bear vote count reaches the consensus threshold AND the previous bar was not in the consensus bear regime
-Exit: Short, bull vote count reaches the consensus threshold AND the previous bar was not in the consensus bull regime
+Calculation: Range normalization = 100 × (value − lowest value over lookback) / (highest value over lookback − lowest value over lookback); use 50 when the range is zero.
+Calculation: Oscillator values = RSI of close; stochastic %K; range-normalized CCI of close using twice its CCI lookback; MFI of typical price; Williams %R + 100; range-normalized ROC of close using twice its ROC lookback; Ultimate Oscillator with shorter, middle, and longer lookbacks; range-normalized MACD histogram of close using twice the slower MACD EMA lookback; 100 × DI+ / (DI+ + DI−), or 50 when the sum is zero; and Aroon balance.
+Calculation: Aroon balance = (Aroon up − Aroon down + 100) / 2, where each Aroon component is 100 × (lookback − signed offset of the corresponding highest high or lowest low over lookback + 1 bars) / lookback; the current bar has offset 0 and earlier bars have negative offsets.
+Calculation: Bull votes = count of oscillator values greater than or equal to the bullish threshold; bear votes = count of oscillator values less than or equal to the bearish threshold. The bullish threshold is higher than the bearish threshold.
+Calculation: Bull regime = bull votes greater than or equal to the consensus threshold; bear regime = bull regime is false AND bear votes greater than or equal to the same consensus threshold.
+Calculation: Agreement = 100 × max(bull votes, bear votes) / number of oscillators.
+Long: Bull regime is true.
+Short: Bear regime is true.
+Long: Bull regime is true AND previous bar's bull regime is false.
+Short: Bear regime is true AND previous bar's bear regime is false.
+Long: Agreement is greater than or equal to the extreme threshold AND previous bar's agreement is below the extreme threshold AND bull votes are greater than or equal to bear votes.
+Short: Agreement is greater than or equal to the extreme threshold AND previous bar's agreement is below the extreme threshold AND bear votes are greater than bull votes.
+Exit: long, bear regime is true AND previous bar's bull regime is true.
+Exit: short, bull regime is true AND previous bar's bear regime is true.

@@ -1,11 +1,15 @@
-Calculation: Rolling volume-weighted VWAP = sum(hlc3 × volume) / sum(volume) over a lookback
-Calculation: Rolling volume-weighted standard deviation = square root of sum(volume × (hlc3 − rolling volume-weighted VWAP)²) / sum(volume) over the VWAP lookback
-Calculation: Inner lower band = rolling volume-weighted VWAP − rolling volume-weighted standard deviation × inner-band multiplier
-Calculation: Inner upper band = rolling volume-weighted VWAP + rolling volume-weighted standard deviation × inner-band multiplier
-Calculation: Normalized VWAP velocity = smoothed rate of change of VWAP divided by rolling volume-weighted standard deviation
-Calculation: Turbulence ratio = short-term standard deviation of normalized VWAP velocity / its longer-term average
-Calculation: Normalized pressure = smoothed distance of hlc3 from VWAP divided by rolling volume-weighted standard deviation
-Calculation: Bullish reversal candle = a bullish pin bar (lower wick > 2 × body and > half the candle range) OR a bullish engulfing candle (current close > open, previous close < open, current close > previous open, and current open ≤ previous close)
-Calculation: Bearish reversal candle = a bearish pin bar (upper wick > 2 × body and > half the candle range) OR a bearish engulfing candle (current close < open, previous close > open, current close < previous open, and current open ≥ previous close)
-Long: current hlc3 > inner lower band AND previous hlc3 ≤ previous inner lower band AND normalized pressure < negative oversold threshold AND turbulence ratio < calm threshold AND (bullish reversal candle on current or previous bar) AND bars since previous signal ≥ cooldown interval
-Short: current hlc3 < inner upper band AND previous hlc3 ≥ previous inner upper band AND normalized pressure > overbought threshold AND turbulence ratio < calm threshold AND (bearish reversal candle on current or previous bar) AND bars since previous signal ≥ cooldown interval
+Calculation: Typical price = (high + low + close) / 3.
+Calculation: Rolling VWAP = sum(typical price × volume) / sum(volume) over the VWAP lookback; use current typical price if the volume sum is zero.
+Calculation: Volume-weighted deviation = square root of sum(volume × (typical price − that bar's rolling VWAP)²) over the VWAP lookback divided by max(sum(volume), a positive denominator floor).
+Calculation: Smoothed pressure = EMA of (typical price − rolling VWAP) / volume-weighted deviation; use zero pressure when deviation is zero.
+Calculation: Velocity = EMA of the percentage rate of change of rolling VWAP over a lookback divided by max(volume-weighted deviation, a positive price floor).
+Calculation: Turbulence = rolling standard deviation of velocity divided by its longer-lookback SMA; use a neutral fallback when that SMA is not positive.
+Calculation: Bullish reversal candle = lower wick > body × a wick-to-body multiplier AND lower wick > candle range × a wick-to-range fraction, OR close > open AND previous close < previous open AND close > previous open AND open ≤ previous close. Bearish reversal candle = upper wick > body × the wick-to-body multiplier AND upper wick > candle range × the wick-to-range fraction, OR close < open AND previous close > previous open AND close < previous open AND open ≥ previous close. Body = abs(close − open), range = high − low, lower wick = min(open, close) − low, and upper wick = high − max(open, close).
+Long: Typical price crosses above rolling VWAP − inner-band multiplier × volume-weighted deviation AND smoothed pressure < a negative threshold AND turbulence < a calm threshold AND bars since the last long or short signal ≥ the shared cooldown, or no prior signal exists AND the reversal filter is disabled or a bullish reversal candle occurs on the current or previous bar.
+Short: Typical price crosses below rolling VWAP + inner-band multiplier × volume-weighted deviation AND smoothed pressure > the corresponding positive threshold AND turbulence < the calm threshold AND bars since the last long or short signal ≥ the shared cooldown, or no prior signal exists AND the reversal filter is disabled or a bearish reversal candle occurs on the current or previous bar.
+Long: Chart-timeframe velocity > its positive threshold.
+Short: Chart-timeframe velocity ≤ its positive threshold.
+Long: Velocity on either of two higher timeframes > that timeframe's positive threshold; use the last completed higher-timeframe bar for historical bars and the still-forming higher-timeframe bar in real time. The chart-timeframe threshold is higher than the first higher-timeframe threshold, which is higher than the second.
+Short: Velocity on either of the two higher timeframes ≤ that timeframe's positive threshold; use the last completed higher-timeframe bar for historical bars and the still-forming higher-timeframe bar in real time.
+Exit: long, turbulence crosses above the turbulent threshold.
+Exit: short, turbulence crosses above the turbulent threshold.

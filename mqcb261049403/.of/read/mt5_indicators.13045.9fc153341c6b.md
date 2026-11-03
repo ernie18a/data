@@ -1,5 +1,5 @@
-Calculation: Upper stop = rolling lowest low over the ATR lookback + ATR multiple × ATR; while bearish, ratchet it downward by taking the lower of this value and the prior upper stop.
-Calculation: Lower stop = rolling highest high over the ATR lookback − ATR multiple × ATR; while bullish, ratchet it upward by taking the higher of this value and the prior lower stop.
-Calculation: Chandelier trend = bullish when close is above the prior upper stop; bearish when close is below the prior lower stop; otherwise retain the prior trend.
-Long: Prior trend was bearish AND current trend is bullish
-Short: Prior trend was bullish AND current trend is bearish
+Calculation: Chandelier trend and stops = For each bar, calculate a raw lower stop as the highest high over the ATR lookback through the current bar minus a multiplier times ATR, and a raw upper stop as the lowest low over the same lookback plus the multiplier times ATR. Initialize trend to neutral. If close is below the previous bar's lower stop, set trend to down; otherwise, if close is above the previous bar's upper stop, set trend to up; otherwise retain the previous trend. When trend is up, set the lower stop to the maximum of its raw value and the previous lower stop; otherwise retain its raw value. When trend is down, set the upper stop to the minimum of its raw value and the previous upper stop; otherwise retain its raw value.
+Long: Chart-timeframe Chandelier trend is up AND previous chart bar's Chandelier trend is down
+Short: Chart-timeframe Chandelier trend is down AND previous chart bar's Chandelier trend is up
+Long: Chandelier trend on the still-forming higher-timeframe bar is up
+Short: Chandelier trend on the still-forming higher-timeframe bar is down

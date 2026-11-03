@@ -1,6 +1,4 @@
-Calculation: Average range = average of high minus low over the current bar and the previous lookback-period bars
-Calculation: Upper threshold = maximum of the current low and highs over the current bar and the previous lookback-period-minus-one bars, minus the difference between that maximum and the minimum of the current close and lows over the same bars, multiplied by (33 minus the risk setting) / 100
-Calculation: Lower threshold = minimum of the current close and lows over the current bar and the previous lookback-period-minus-one bars, plus the difference between the maximum and minimum above, multiplied by (33 minus the risk setting) / 100
-Calculation: Trend state = -1 when close < lower threshold; then +1 when close > upper threshold (this second condition overrides the first); otherwise retain the prior bar's trend state. Calculate on chart-timeframe bars, or on higher-timeframe bars in the higher-timeframe version; the latter uses the bar still forming.
-Long: prior bar's trend state <= 0 AND current trend state > 0
-Short: prior bar's trend state >= 0 AND current trend state < 0
+Calculation: Trend = For a parameterized lookback including the current bar, let upper be the highest high and lower be the minimum of the current close and the lowest low. Let the lower threshold be lower plus a parameterized fraction of upper minus lower, and the upper threshold be upper minus the same fraction of upper minus lower. Initialize trend to zero. On each eligible bar, set trend to positive if close is above the upper threshold; otherwise set it to negative if close is below the lower threshold; otherwise retain the previous trend. The first eligible bar has one additional preceding bar beyond the lookback.
+Calculation: Higher-timeframe trend = Trend calculated on higher-timeframe bars, using the bar still forming. Higher-timeframe markings are assigned to the first chart bar of each higher-timeframe bar; the positive or negative trend marking is carried forward until the next higher-timeframe bar.
+Long: Chart-timeframe trend > 0 OR higher-timeframe trend marking > 0
+Short: Chart-timeframe trend < 0 OR higher-timeframe trend marking < 0

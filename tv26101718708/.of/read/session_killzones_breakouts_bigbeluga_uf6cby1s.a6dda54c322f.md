@@ -1,4 +1,6 @@
-Calculation: Completed session high = highest high during the most recently completed session
-Calculation: Completed session low = lowest low during the most recently completed session
-Long: Outside the session, no breakout has yet occurred since its completion, and close > completed session high AND previous close <= completed session high
-Short: Outside the session, no breakout has yet occurred since its completion, and close < completed session low AND previous close >= completed session low
+Calculation: Session range = for each independently configured UTC session, the highest high minus the lowest low of its chart bars; retain those boundaries after the session ends until that session's next occurrence.
+Calculation: Breakout targets = for an upward breakout, the completed session high plus its range multiplied by each of three independently configurable multipliers; for a downward breakout, the completed session low minus its range multiplied by each multiplier. Track each target independently until the next occurrence of that session.
+Long: For any configured session, the current bar is outside that session AND no breakout in either direction has occurred since that session began AND close > the most recently completed session high AND previous close <= that same high.
+Short: For any configured session, the current bar is outside that session AND no breakout in either direction has occurred since that session began AND close < the most recently completed session low AND previous close >= that same low.
+Exit: long, an upward breakout has occurred for a session AND before that session's next occurrence, high >= any of its upward breakout targets for the first time, including on the breakout bar.
+Exit: short, a downward breakout has occurred for a session AND before that session's next occurrence, low <= any of its downward breakout targets for the first time, including on the breakout bar.

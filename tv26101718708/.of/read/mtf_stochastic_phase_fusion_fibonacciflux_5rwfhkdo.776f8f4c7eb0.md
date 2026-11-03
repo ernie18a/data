@@ -1,10 +1,11 @@
-Calculation: Smoothed stochastic %K = simple moving average of 100 × (close − lowest low over the lookback) / (highest high over the lookback − lowest low over the lookback), calculated within each source timeframe using its last completed bar.
-Calculation: Tactical wave = weighted average of the shorter-term smoothed stochastic %K readings.
-Calculation: Structural wave = weighted average of the longer-term smoothed stochastic %K readings.
-Calculation: Tactical coherence = 100 × the magnitude of the weighted sum of unit vectors whose real component is (smoothed %K − 50) / 50 and whose imaginary component is scaled change in smoothed %K; cap at 100. Use shorter-term readings and their weights.
-Long: Tactical wave > structural wave AND previous tactical wave ≤ previous structural wave AND no long pulse is active
-Short: Tactical wave < structural wave AND previous tactical wave ≥ previous structural wave AND no short pulse is active
-Long: Tactical wave > 20 AND previous tactical wave ≤ 20 AND structural wave ≥ 50 AND tactical coherence ≥ threshold
-Short: Tactical wave < 80 AND previous tactical wave ≥ 80 AND structural wave ≤ 50 AND tactical coherence ≥ threshold
-Long: Tactical wave > 50 AND structural wave > 50 AND tactical wave change > 0 AND structural wave change ≥ 0 AND tactical coherence ≥ threshold
-Short: Tactical wave < 50 AND structural wave < 50 AND tactical wave change < 0 AND structural wave change ≤ 0 AND tactical coherence ≥ threshold
+Calculation: Stochastic sensor = SMA of stochastic %K, calculated independently on six ordered timeframes using the same lookback and smoothing parameters. The shortest may be the chart timeframe; the others are progressively higher timeframes. Use either the last completed requested-timeframe bar or the still-forming requested-timeframe bar consistently for all sensors.
+Calculation: Phase vector = for each sensor, let x = (sensor - stochastic midpoint) / stochastic half-range, q = velocity gain * (sensor - sensor on the preceding bar of its own timeframe) / stochastic half-range, and magnitude = sqrt(x² + q²); the vector is (x / magnitude, q / magnitude), or (0, 0) when magnitude is effectively zero.
+Calculation: Tactical and structural waves = independently normalized weighted sums of the four shortest sensors and the three longest sensors, respectively; the longest tactical timeframe is the shortest structural timeframe. Alternatively, for each group, use the stochastic midpoint plus the stochastic half-range times the normalized weighted sum of its phase vectors' real components. Use the same method for both waves.
+Calculation: Tactical coherence = stochastic maximum multiplied by the lesser of one and the magnitude of the normalized weighted sum of the tactical sensors' phase vectors.
+Calculation: Same-side pulse available = no same-side pulse is active; a pulse starts when its wave crossover occurs while available and remains active for a parameterized number of chart bars, including its start bar. Long and short pulses are independent.
+Long: Tactical wave crosses above structural wave AND same-side pulse is available.
+Short: Tactical wave crosses below structural wave AND same-side pulse is available.
+Long: Tactical wave crosses above the oversold threshold AND structural wave >= stochastic midpoint AND tactical coherence >= minimum coherence.
+Short: Tactical wave crosses below the overbought threshold AND structural wave <= stochastic midpoint AND tactical coherence >= minimum coherence.
+Long: Tactical wave > stochastic midpoint AND structural wave > stochastic midpoint AND tactical wave > its previous chart-bar value AND structural wave >= its previous chart-bar value AND tactical coherence >= minimum coherence.
+Short: Tactical wave < stochastic midpoint AND structural wave < stochastic midpoint AND tactical wave < its previous chart-bar value AND structural wave <= its previous chart-bar value AND tactical coherence >= minimum coherence.

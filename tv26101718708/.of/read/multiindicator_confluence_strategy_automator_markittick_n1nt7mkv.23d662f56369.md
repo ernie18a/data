@@ -1,8 +1,23 @@
-Calculation: Hurst exponent = log(rescaled range) / log(window length), where rescaled range is the range of cumulative deviations of completed-bar closes from their window SMA, divided by close standard deviation.
-Calculation: Momentum inflation ratio = (absolute close change over the latest two completed bars / latest completed-bar ATR) / (long-lookback RMA of absolute close change / long-lookback RMA of ATR), using the same long lookback for both RMAs.
-Calculation: Lagged cross-asset correlation = rolling Pearson correlation between chart close and another asset’s close shifted by a lag parameter, using the same chart timeframe.
-Calculation: Decayed confluence score = count of aligned baseline, DMI, and CCI confirmations × max(0, 1 − consecutive full-confluence bar count / decay limit); full confluence requires all three confirmations and volume confirmation.
-Long: On the last completed chart bar, close > Hull moving average + ATR volatility buffer AND ADX > trend threshold AND positive directional indicator > negative directional indicator AND CCI > bullish threshold AND volume > its RMA × volume multiplier AND (Hurst filter disabled OR Hurst exponent > trending threshold) AND (decay filter disabled OR decayed bullish confluence score ≥ minimum score) AND (correlation filter disabled OR lagged cross-asset correlation > 0 OR absolute correlation < minimum correlation) AND (momentum filter disabled OR momentum inflation ratio ≤ alert threshold) AND this full entry condition was false on the preceding bar AND bars since the previous signal ≥ minimum gap.
-Short: On the last completed chart bar, close < Hull moving average − ATR volatility buffer AND ADX > trend threshold AND negative directional indicator > positive directional indicator AND CCI < negative bearish threshold AND volume > its RMA × volume multiplier AND (Hurst filter disabled OR Hurst exponent > trending threshold) AND (decay filter disabled OR decayed bearish confluence score ≥ minimum score) AND (correlation filter disabled OR lagged cross-asset correlation < 0 OR absolute correlation < minimum correlation) AND (momentum filter disabled OR momentum inflation ratio ≤ alert threshold) AND this full entry condition was false on the preceding bar AND bars since the previous signal ≥ minimum gap.
-Exit: Long, shorter-lookback CCI crosses below zero on completed chart bars (latest completed CCI < 0 AND preceding completed CCI ≥ 0).
-Exit: Short, shorter-lookback CCI crosses above zero on completed chart bars (latest completed CCI > 0 AND preceding completed CCI ≤ 0).
+Calculation: Bullish baseline state = previous close > previous Hull moving average of close + previous ATR × buffer multiplier.
+Calculation: Bearish baseline state = previous close < previous Hull moving average of close − previous ATR × buffer multiplier.
+Calculation: Bullish directional state = previous ADX > trend threshold AND previous positive directional indicator > previous negative directional indicator.
+Calculation: Bearish directional state = previous ADX > trend threshold AND previous negative directional indicator > previous positive directional indicator.
+Calculation: Bullish momentum state = previous CCI of close > positive threshold.
+Calculation: Bearish momentum state = previous CCI of close < negative threshold of equal magnitude.
+Calculation: Volume state = previous volume > previous Wilder moving average of volume × volume multiplier.
+Calculation: Hurst estimate = for the previous completed window of closes, calculate its mean and population standard deviation; accumulate each close minus that mean from newest to oldest, including zero when finding the minimum and maximum cumulative sums. Divide their range by the standard deviation if the standard deviation > a small positive tolerance, otherwise use zero. The estimate is log of that ratio divided by log of the window length; use zero for the numerator if the ratio is at most the tolerance.
+Calculation: Momentum inflation ratio = (absolute change in previous close / previous ATR) / (previous Wilder moving average of absolute close changes / previous Wilder moving average of ATR). Use zero for either normalized speed if its ATR denominator is at most a small positive tolerance; use one for the ratio if the historical normalized speed is at most that tolerance.
+Calculation: Directional confluence = the corresponding baseline state AND directional state AND momentum state AND volume state AND, if enabled, Hurst estimate > trending threshold AND, if enabled, momentum inflation ratio <= inflation threshold AND, if decay is enabled, three × max(0, 1 − consecutive bars including the current bar with all four corresponding states true / decay window) >= minimum score. The cross-asset correlation filter must be disabled because its data is unavailable.
+Calculation: Baseline distance integral = rolling sum of previous close minus previous Hull moving average of close.
+Long: Bullish baseline state = true.
+Short: Bearish baseline state = true.
+Long: Bullish directional state = true.
+Short: Bearish directional state = true.
+Long: Bullish momentum state = true.
+Short: Bearish momentum state = true.
+Long: Baseline distance integral > 0.
+Short: Baseline distance integral <= 0.
+Long: Bullish directional confluence = true AND previous bar's bullish directional confluence = false AND bars since the most recent long or short confluence signal, counted before updating on the current bar, >= minimum signal gap.
+Short: Bearish directional confluence = true AND previous bar's bearish directional confluence = false AND bars since the most recent long or short confluence signal, counted before updating on the current bar, >= minimum signal gap.
+Exit: long, previous CCI of close using the shorter exit lookback < 0 AND CCI of close two bars ago using the same lookback >= 0.
+Exit: short, previous CCI of close using the shorter exit lookback > 0 AND CCI of close two bars ago using the same lookback <= 0.

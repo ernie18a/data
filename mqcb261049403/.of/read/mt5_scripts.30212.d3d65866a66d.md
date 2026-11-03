@@ -1,2 +1,2 @@
-Long: The bar's low is lower than the lows of each of the four immediately preceding and four immediately following chart bars
-Short: The bar's high is higher than the highs of each of the four immediately preceding and four immediately following chart bars
+Short: A pivot bar's high is strictly greater than every high in an equal-length window of preceding and subsequent chart bars, evaluated when the last subsequent bar closes.
+Long: A pivot bar's low is strictly lower than every low in an equal-length window of preceding and subsequent chart bars AND its high is not strictly greater than every high in those same windows, evaluated when the last subsequent bar closes.

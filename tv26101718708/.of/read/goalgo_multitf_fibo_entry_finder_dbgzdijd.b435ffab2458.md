@@ -1,10 +1,16 @@
-Calculation: Reference high = highest high during the latest run of positive MACD histogram values, finalized when the histogram turns negative
-Calculation: Reference low = lowest low during the latest run of negative MACD histogram values, finalized when the histogram turns positive
-Calculation: Reference range = Reference high − Reference low
-Calculation: Buy retracement level at fraction r = Reference high − Reference range × r
-Calculation: Sell retracement level at fraction r = Reference low + Reference range × r
-Calculation: Higher-timeframe reference high/low = reference high/low calculated on the next mapped higher timeframe, using only completed higher-timeframe bars and retaining the latest finalized value
-Long: Reference high and Reference low exist AND (low ≤ Buy retracement level at 0.5 OR low ≤ Buy retracement level at 0.69 OR low ≤ Buy retracement level at 0.764 OR low ≤ Buy retracement level at 0.971)
-Long: Reference high and Reference low and higher-timeframe reference high and higher-timeframe reference low exist AND Reference low ≤ Higher-timeframe reference high AND Reference high ≥ Higher-timeframe reference low AND Reference low > Higher-timeframe reference low
-Short: Reference high and Reference low exist AND (high ≥ Sell retracement level at 0.5 OR high ≥ Sell retracement level at 0.69 OR high ≥ Sell retracement level at 0.764 OR high ≥ Sell retracement level at 0.971)
-Short: Reference high and Reference low and higher-timeframe reference high and higher-timeframe reference low exist AND Reference low ≤ Higher-timeframe reference high AND Reference high ≥ Higher-timeframe reference low AND Reference high < Higher-timeframe reference high
+Calculation: MACD zone = the sign of the MACD histogram; retain the previous zone when the histogram is zero.
+Calculation: Chart swing high = the highest high in the most recently completed positive MACD zone. Chart swing low = the lowest low in the most recently completed negative MACD zone. Update each on the bar when its zone ends.
+Calculation: Higher-timeframe swing high and low = the same MACD-zone extremes calculated on the last completed higher-timeframe bar, retaining the latest non-missing value of each.
+Calculation: Structure = bullish when both chart swings and both higher-timeframe swings exist and chart swing low > higher-timeframe swing low; otherwise bearish when all four exist and chart swing high < higher-timeframe swing high; otherwise neutral.
+Calculation: Chart phase = buy after a positive MACD zone ends; sell after a negative MACD zone ends; retain the phase until the next zone change.
+Calculation: Buy retracement level at fraction f = chart swing high - f × (chart swing high - chart swing low). Sell retracement level at fraction f = chart swing low + f × (chart swing high - chart swing low).
+Calculation: Zone display state = 0 on a chart phase change. In the buy phase, advance successively from 0 to 1 unconditionally, from 1 to 2 when low < the second buy retracement level, from 2 to 3 when low < the fourth, and from 3 to 4 when low < the sixth; reset to 0 when state = 4 and low < the eighth. In the sell phase, use high > the corresponding sell levels and reset when high > the eighth. Process these transitions in order on each bar, allowing multiple transitions on one bar; each advance also requires the preceding bar's state to differ from the destination state. The eight retracement fractions increase in order.
+Calculation: Alert tier = the deepest of four ordered retracement levels reached by low <= the buy level or high >= the sell level. The four alert fractions are, respectively, the first, fourth, fifth, and seventh zone-display fractions. Keep separate buy and sell alert states initialized to 0; when the reached tier exceeds its side's state, set that state to the tier. After evaluating alerts, reset the buy state to 0 when low > the first buy level and the sell state to 0 when high < the first sell level.
+Long: Structure = bullish AND previous structure != bullish.
+Short: Structure = bearish AND previous structure != bearish.
+Long: Chart phase = buy AND both chart swings exist AND zone display state advances to 1, 2, 3, or 4.
+Short: Chart phase = sell AND both chart swings exist AND zone display state advances to 1, 2, 3, or 4.
+Long: Both chart swings exist AND buy alert tier > previous buy alert state.
+Short: Both chart swings exist AND sell alert tier > previous sell alert state.
+Long: Structure = bullish AND chart swing low <= higher-timeframe swing high AND chart swing high >= higher-timeframe swing low.
+Short: Structure = bearish AND chart swing low <= higher-timeframe swing high AND chart swing high >= higher-timeframe swing low.

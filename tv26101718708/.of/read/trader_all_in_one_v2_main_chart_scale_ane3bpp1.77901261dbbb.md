@@ -1,6 +1,25 @@
-Calculation: Confirmed swing high = a bar’s high is higher than the highs of the specified number of bars on both sides; confirmed swing low = a bar’s low is lower than the lows of that many bars on both sides. Each pivot is usable only after its right-side bars complete.
-Calculation: Bullish order block = the nearest bearish candle after the broken swing and before an upward structure break, provided no intervening close is below that candle’s low. Bearish order block = the nearest bullish candle after the broken swing and before a downward structure break, provided no intervening close is above that candle’s high.
-Calculation: Bullish fair value gap = current low is above the high two bars earlier, with a gap at least the configured minimum fraction of ATR. Bearish fair value gap = current high is below the low two bars earlier, with a gap at least the configured minimum fraction of ATR.
-Calculation: Completed session range = highest high and lowest low among bars opening during that session, available after the session closes.
-Long: short-term moving average > long-term moving average OR Supertrend is bullish OR latest market-structure break was upward OR close > latest unbroken confirmed swing high OR a confirmed swing high is higher than the previous confirmed swing high OR a confirmed swing low is higher than the previous confirmed swing low OR a confirmed low-liquidity sweep occurs (low < latest unbroken confirmed swing low AND close > that swing low) OR a bullish order block forms OR a bullish fair value gap forms OR close >= daily anchored VWAP OR MACD line > MACD signal line OR (outside a session, high > its completed session high AND close < that session high AND close > that session low, and that session’s high has not already been swept in the current cycle)
-Short: short-term moving average < long-term moving average OR Supertrend is bearish OR latest market-structure break was downward OR close < latest unbroken confirmed swing low OR a confirmed swing high is lower than the previous confirmed swing high OR a confirmed swing low is lower than the previous confirmed swing low OR a confirmed high-liquidity sweep occurs (high > latest unbroken confirmed swing high AND close < that swing high) OR a bearish order block forms OR a bearish fair value gap forms OR close < daily anchored VWAP OR MACD line < MACD signal line OR (outside a session, low < its completed session low AND close > that session low AND close < that session high, and that session’s low has not already been swept in the current cycle)
+Calculation: Confirmed swing high/low = a pivot high/low using equal numbers of bars on both sides, known only after the right-side bars close; for equal extremes, use the most recent extreme. Breaks and sweeps on a bar use the latest swings known before that bar. On confirmation, replace the corresponding latest swing, mark it broken if the confirmation close is already beyond it, and reset its swept flag. A subsequent close beyond an unbroken swing marks it broken; the first qualifying sweep marks it swept.
+Calculation: Completed session range = the highest high and lowest low of chart bars whose opening times fall within a configured session and timezone. Make the range available on the first bar outside the session, retire it when the next session begins, and reset separate high- and low-swept flags. Track each configured session independently; sessions apply only to intraday chart bars.
+Calculation: Valid bullish order block = the nearest bearish candle within the configured lookback and on or after the broken swing high, provided no close from the following bar through the break bar is below that candle's low. Valid bearish order block = the nearest bullish candle within the configured lookback and on or after the broken swing low, provided no close from the following bar through the break bar is above that candle's high. If the nearest opposite candle fails validation, do not search farther.
+Long: The shorter-term moving average of the selected price source is above the longer-term moving average.
+Short: The shorter-term moving average of the selected price source is below the longer-term moving average.
+Long: Supertrend indicates an uptrend.
+Short: Supertrend indicates a downtrend.
+Long: RSI is at or below its oversold threshold.
+Short: RSI is at or above its overbought threshold.
+Long: MACD is above its signal line.
+Short: MACD is at or below its signal line.
+Long: MACD histogram is at or above zero.
+Short: MACD histogram is below zero.
+Long: A newly confirmed swing high is above the preceding confirmed swing high OR a newly confirmed swing low is above the preceding confirmed swing low.
+Short: A newly confirmed swing high is below the preceding confirmed swing high OR a newly confirmed swing low is below the preceding confirmed swing low.
+Long: Close is above the latest unbroken confirmed swing high.
+Short: Close is below the latest unbroken confirmed swing low.
+Long: The latest confirmed swing low is unbroken and unswept AND low is below it AND close is above it.
+Short: The latest confirmed swing high is unbroken and unswept AND high is above it AND close is below it.
+Long: Low is above the high two bars earlier AND their difference is at least the configured multiple of ATR.
+Short: High is below the low two bars earlier AND their difference is at least the configured multiple of ATR.
+Long: Close is above the latest unbroken confirmed swing high AND a valid bullish order block exists.
+Short: Close is below the latest unbroken confirmed swing low AND a valid bearish order block exists.
+Long: Outside a configured session, the completed session low has not yet been swept AND low is below that low AND close is above that low AND close is below the completed session high; then mark the session low swept.
+Short: Outside a configured session, the completed session high has not yet been swept AND high is above that high AND close is below that high AND close is above the completed session low; then mark the session high swept.

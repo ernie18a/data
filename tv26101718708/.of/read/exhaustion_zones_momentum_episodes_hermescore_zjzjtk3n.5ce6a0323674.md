@@ -1,11 +1,11 @@
-Calculation: RSI = Relative Strength Index of close; an upper saturation episode starts when RSI is at or above the upper threshold, tracks the highest high and highest RSI, and ends when RSI closes below the upper threshold; a lower episode starts when RSI is at or below the lower threshold, tracks the lowest low and lowest RSI, and ends when RSI closes above the lower threshold. Use confirmed chart-timeframe bars.
-Calculation: Exhaustion high zone = the wick range from the highest high of an upper episode to that bar’s body top; exhaustion low zone = the wick range from that episode’s lowest low to that bar’s body bottom. Pad a thinner range to the minimum ATR-based thickness; reject a zone taller than the maximum ATR-based height. Use chart-timeframe ATR.
-Calculation: Zone score = saturation-depth points + climax-volume point + fast-fade point + episode-divergence point + wick-quality point. Depth earns more points at the deeper RSI threshold; climax volume means extreme-bar volume exceeds its moving average; fast fade means RSI returns inside the threshold within the fade window after its peak; divergence means a more extreme price extreme than the previous same-side episode with a less extreme peak RSI; wick quality means the extreme bar’s rejection wick exceeds the specified fraction of its body.
-Long: A lower saturation episode ends and its exhaustion low zone passes the zone-height guard.
-Long: Close is within an active exhaustion low zone and that zone has not previously been touched.
-Long: A new exhaustion low zone has a premium score (A or S grade).
-Short: An upper saturation episode ends and its exhaustion high zone passes the zone-height guard.
-Short: Close is within an active exhaustion high zone and that zone has not previously been touched.
-Short: A new exhaustion high zone has a premium score (A or S grade).
-Exit: long, close is below the bottom of an active exhaustion low zone.
-Exit: short, close is above the top of an active exhaustion high zone.
+Calculation: RSI = RSI of close.
+Calculation: Episode = consecutive bars with RSI at or below a low threshold for a low episode, or at or above a high threshold for a high episode. Its extreme is the lowest low or highest high, respectively; its RSI peak is the lowest or highest RSI, respectively. Retain the first bar achieving each extreme. An episode ends on the first subsequent bar outside its threshold.
+Calculation: Zone = on the episode-ending bar, use the extreme bar's lower wick for a low episode or upper wick for a high episode. Pad the wick inward from the price extreme to at least a minimum multiple of current ATR. Reject the zone if its height exceeds a maximum multiple of current ATR or the extreme bar is more than the maximum permitted number of bars ago.
+Calculation: Zone score = sum of enabled components: depth contributes two points if the episode's RSI peak reaches a deep threshold, otherwise one; extreme-bar volume above its volume SMA contributes one; the number of bars from the RSI peak to episode end within a fade window contributes one; a more extreme episode price and less extreme RSI peak than the preceding same-side episode contributes one; and the extreme-bar rejection wick greater than a fraction of its body contributes one. Use mirrored deep thresholds for high and low episodes. The preceding episode is updated even if its zone is rejected.
+Calculation: Active zone = a created zone retained until its close breaks the far edge, its age exceeds the maximum age, or it is removed as the oldest zone when the maximum number of same-side zones is exceeded. Process newly created zones on their creation bar; check break and age before first touch.
+Long: RSI <= low threshold.
+Short: RSI >= high threshold.
+Long: A low episode ends AND its zone is accepted AND the optional minimum-score filter is disabled OR a low episode ends AND its zone is accepted AND its score >= the enabled minimum score.
+Short: A high episode ends AND its zone is accepted AND the optional minimum-score filter is disabled OR a high episode ends AND its zone is accepted AND its score >= the enabled minimum score.
+Long: An active low zone has not previously been touched AND close >= its bottom AND close <= its top.
+Short: An active high zone has not previously been touched AND close >= its bottom AND close <= its top.

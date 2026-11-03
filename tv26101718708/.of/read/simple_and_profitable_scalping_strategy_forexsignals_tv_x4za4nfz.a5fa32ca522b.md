@@ -1,12 +1,14 @@
-Calculation: Entry fast, medium, and slow EMAs = exponential moving averages of chart-timeframe close, with the fast lookback shorter than the medium and the medium shorter than the slow.
-Calculation: Trend fast and slow EMAs = exponential moving averages of close on a higher timeframe, using the last completed higher-timeframe bar; the fast lookback is shorter than the slow.
-Calculation: ATR = 14-bar average true range on the chart timeframe.
-Calculation: Fanout gap = ATR × configurable multiplier; on each of the configured number of recent chart bars, the fast EMA must be above the slow EMA by more than this gap for an upward fanout, or below it by more than this gap for a downward fanout.
-Calculation: Long stop-entry price = highest high over the configured recent chart bars at setup, plus ATR × configurable multiplier. Short stop-entry price = lowest low over those bars at setup, minus ATR × configurable multiplier.
-Calculation: Long stop-loss price = setup-bar low minus ATR × configurable multiplier; short stop-loss price = setup-bar high plus ATR × configurable multiplier. Take-profit distance from entry = stop-loss distance from entry × configured risk/reward ratio.
-Long: Within the configured date range AND trend fast EMA > trend slow EMA AND close > trend fast EMA AND entry fast EMA > entry medium EMA > entry slow EMA AND upward fanout holds for the configured recent bars AND previous bar low > previous bar fast EMA AND current bar low < current bar fast EMA; place a stop entry at the long stop-entry price and enter when price reaches it.
-Short: Within the configured date range AND trend fast EMA < trend slow EMA AND close < trend fast EMA AND entry fast EMA < entry medium EMA < entry slow EMA AND downward fanout holds for the configured recent bars AND previous bar high < previous bar fast EMA AND current bar high > current bar fast EMA; place a stop entry at the short stop-entry price and enter when price reaches it.
-Exit: Long, low <= stop-loss price OR high >= take-profit price.
-Exit: Short, high >= stop-loss price OR low <= take-profit price.
-Exit: Long, while an entry order is pending, close < entry slow EMA.
-Exit: Short, while an entry order is pending, close > entry slow EMA.
+Calculation: Higher-timeframe fast and slow EMAs = EMAs of higher-timeframe closes, using the last completed higher-timeframe bar; the fast EMA has the shorter length.
+Calculation: Chart fast, medium, and slow EMAs = EMAs of chart closes with increasing lengths, respectively.
+Calculation: Fan-out gap = current chart ATR multiplied by a configurable multiplier; use this same current gap for every bar in the fan-out lookback.
+Calculation: Price buffer = chart ATR multiplied by a configurable multiplier.
+Calculation: Long setup = datetime within the configured start-inclusive, end-exclusive range AND higher-timeframe fast EMA > higher-timeframe slow EMA AND close > higher-timeframe fast EMA AND chart fast EMA > chart medium EMA AND chart medium EMA > chart slow EMA AND chart fast EMA minus fan-out gap > chart slow EMA on every bar in the fan-out lookback including the current bar AND previous low > previous chart fast EMA AND current low < chart fast EMA.
+Calculation: Short setup = datetime within the configured start-inclusive, end-exclusive range AND higher-timeframe fast EMA < higher-timeframe slow EMA AND close < higher-timeframe fast EMA AND chart fast EMA < chart medium EMA AND chart medium EMA < chart slow EMA AND chart fast EMA plus fan-out gap < chart slow EMA on every bar in the fan-out lookback including the current bar AND previous high < previous chart fast EMA AND current high > chart fast EMA.
+Calculation: Pending entry = on a setup, place a stop order at the highest high over the entry lookback including the setup bar plus the setup bar's price buffer for a long, or the lowest low over that lookback minus the buffer for a short. An order can fill from the next bar onward. Cancel pending orders when the previous bar's position is flat AND close < chart slow EMA for a pending long, or close > chart slow EMA for a pending short. An opposite setup places an opposite stop order; its fill reverses the position. Suppress a same-side setup while that side is marked pending or active; clear the side on cancellation or a recorded exit.
+Calculation: Exit distance = at setup, round to the nearest price tick the setup close multiplied by the absolute difference between the pending entry and the setup bar's low minus price buffer for a long, or high plus price buffer for a short, divided by the pending entry. Profit distance is calculated the same way after multiplying the unrounded distance by the configured reward-to-risk ratio. Apply both distances to the actual entry price.
+Long: Long setup AND the long side is not already marked pending or active.
+Long: A long stop order is pending AND high >= its stop price.
+Short: Short setup AND the short side is not already marked pending or active.
+Short: A short stop order is pending AND low <= its stop price.
+Exit: long, low <= entry price minus exit distance OR high >= entry price plus profit distance OR a pending short stop order fills.
+Exit: short, high >= entry price plus exit distance OR low <= entry price minus profit distance OR a pending long stop order fills.

@@ -1,8 +1,9 @@
-Calculation: Opening range high/low = highest high/lowest low of the first N bars in each session; freeze after N bars.
-Calculation: Bullish/bearish basket votes = count of enabled live non-chart symbols whose session range is locked and whose close has crossed above its high/below its low, respectively; invert the vote direction for inverted symbols. A vote persists through the session once triggered.
-Long: During the session, after the opening range locks, close > opening range high.
-Long: A confirmed bar during the session, before any signal has fired that session, with a chart close above the locked opening range high on this or an earlier bar, ATR > 0, and (no live basket symbols OR bullish basket votes ≥ the minimum); if the relative-volume filter is enabled and volume data is available, volume ≥ its minimum multiple × volume SMA.
-Short: During the session, after the opening range locks, close < opening range low.
-Short: A confirmed bar during the session, before any signal has fired that session, with a chart close below the locked opening range low on this or an earlier bar, ATR > 0, and (no live basket symbols OR bearish basket votes ≥ the minimum); if the relative-volume filter is enabled and volume data is available, volume ≥ its minimum multiple × volume SMA.
-Exit: Long, after a long signal has fired and before session end, confirmed close < opening range low.
-Exit: Short, after a short signal has fired and before session end, confirmed close > opening range high.
+Calculation: Opening range = maximum high and minimum low of the first configured number of chart bars in each configured session, frozen after those bars.
+Calculation: Chart break state = separately record whether a session bar has closed above the opening-range high or below the opening-range low after the range is complete; retain each state until the next session.
+Calculation: Armed direction = reset at each session start; on the first chart break in either direction, set to that direction only if ATR is available and greater than zero and the optional volume gate passes on that break bar; a later first break in the opposite direction replaces it. The volume gate passes when disabled, when volume or its SMA is unavailable or the SMA is nonpositive, or when volume / volume SMA is at least the configured threshold.
+Long: Within the session AND the chart break state above the opening-range high is true.
+Short: Within the session AND the chart break state below the opening-range low is true.
+Long: Within the session AND no confirmed signal has fired this session AND armed direction is long AND ATR is available and greater than zero AND the volume gate passes AND no basket symbol is live.
+Short: Within the session AND no confirmed signal has fired this session AND armed direction is short AND ATR is available and greater than zero AND the volume gate passes AND no basket symbol is live.
+Exit: long, within the entry signal's session AND a confirmed long signal has fired AND close is below that session's opening-range low.
+Exit: short, within the entry signal's session AND a confirmed short signal has fired AND close is above that session's opening-range high.

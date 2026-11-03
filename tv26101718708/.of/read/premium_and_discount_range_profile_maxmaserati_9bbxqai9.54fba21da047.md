@@ -1,11 +1,20 @@
-Calculation: Range high = highest high over a rolling lookback of chart-timeframe bars, including the current bar
-Calculation: Range low = lowest low over the same lookback
-Calculation: Range midpoint = (range high + range low) / 2
-Calculation: Bin volume and buy/sell volume = Divide the range into equal price bins. For each bar, allocate its volume to each bin in proportion to the overlap of the bar's high-low range with the bin. Estimate buy/sell volume using body and wick proportions: for an up bar, buy fraction = clamp(0.5 + 0.3 × abs(close − open) / bar range − 0.1 × upper wick / bar range, 0.1, 0.9); for a down bar, sell fraction = clamp(0.5 + 0.3 × abs(close − open) / bar range − 0.1 × lower wick / bar range, 0.1, 0.9); for a doji, split equally. Allocate estimated buy and sell volume using the same overlap proportions.
-Calculation: Edge status = Compare the edge bin's volume with the maximum bin volume (POC). At the high edge, volume at least the HVN fraction of POC with sell volume greater than buy volume is rejection; the same volume with buy volume at least sell volume is acceptance. At the low edge, reverse buy and sell dominance for rejection and acceptance. If the edge bin is at most the LVN fraction of POC, classify it as rejection when a bin within the configured scan depth from that edge has volume at least the HVN fraction of POC and is dominated by sellers (high edge) or buyers (low edge), or has directional volume more than 1.5 times opposing volume and total volume greater than 0.2 times POC volume. Otherwise it is exhaustion without rejection.
-Calculation: First step up = On a confirmed chart-timeframe bar, the midpoint rises and did not rise on the previous bar
-Calculation: First step down = On a confirmed chart-timeframe bar, the midpoint falls and did not fall on the previous bar
-Long: close < range midpoint AND first step up AND low edge status is rejection
-Short: close > range midpoint AND first step down AND high edge status is rejection
-Exit: Long, low edge status is acceptance OR current low < the lowest low over the preceding lookback bars
-Exit: Short, high edge status is acceptance OR current high > the highest high over the preceding lookback bars
+Calculation: Range high and range low = highest high and lowest low over the same lookback, including the current bar.
+Calculation: Range midpoint = (range high + range low) / 2.
+Calculation: Estimated volume profile = divide the current range into equal-width bins; choose the number of bins by rounding the range divided by a configured price width and clamping it to configured minimum and maximum bin counts. For a zero-width range, use a configured default bin count and zero bin width. For each bar in the range lookback with positive volume, let R be the greater of its high minus low and a configured minimum price increment, B = abs(close - open) / R, U = (high - max(open, close)) / R, and D = (min(open, close) - low) / R. For an up bar, buy volume = volume times clamp(0.5 + 0.3 * B - 0.1 * U, 0.1, 0.9), and sell volume = volume minus buy volume. For a down bar, sell volume = volume times clamp(0.5 + 0.3 * B - 0.1 * D, 0.1, 0.9), and buy volume = volume minus sell volume. For an unchanged bar, split volume equally. Allocate each bar's total, buy, and sell volume to each bin in proportion to the overlap of the bar's high-low interval with that bin divided by R; skip allocation when bin width is zero. Sum each type of volume per bin. Profile maximum is the greatest bin total volume; profile buy and sell volumes are the sums of bin buy and sell volumes.
+Calculation: Upper rejection node = a bin within a configured scan depth from the upper edge, excluding the top bin, whose total volume is at least a configured high-volume fraction of the profile maximum AND whose sell volume exceeds its buy volume, OR whose sell volume exceeds its buy volume by a configured ratio AND whose total volume exceeds a configured fraction of the profile maximum. Lower rejection node is the mirror image using buy volume greater than sell volume and scanning from the lower edge excluding the bottom bin.
+Long: Close < range midpoint.
+Short: Close > range midpoint.
+Long: Range midpoint > previous range midpoint AND previous range midpoint <= range midpoint two bars ago AND the most recent first-step decision, if any, was short.
+Short: Range midpoint < previous range midpoint AND previous range midpoint >= range midpoint two bars ago AND the most recent first-step decision, if any, was long.
+Long: Profile buy volume > profile sell volume AND profile buy volume > 0.
+Short: Profile sell volume > profile buy volume AND profile sell volume > 0.
+Long: Any bin total volume > 0 AND its buy volume >= its sell volume.
+Short: Any bin total volume > 0 AND its sell volume > its buy volume.
+Long: Top bin total volume >= configured high-volume fraction of profile maximum AND top bin sell volume <= top bin buy volume.
+Short: Top bin total volume >= configured high-volume fraction of profile maximum AND top bin sell volume > top bin buy volume.
+Long: Bottom bin total volume >= configured high-volume fraction of profile maximum AND bottom bin buy volume > bottom bin sell volume.
+Short: Bottom bin total volume >= configured high-volume fraction of profile maximum AND bottom bin buy volume <= bottom bin sell volume.
+Short: Top bin total volume < configured high-volume fraction of profile maximum AND top bin total volume <= configured low-volume fraction of profile maximum AND an upper rejection node exists.
+Long: Bottom bin total volume < configured high-volume fraction of profile maximum AND bottom bin total volume <= configured low-volume fraction of profile maximum AND a lower rejection node exists.
+Exit: long, bottom bin total volume >= configured high-volume fraction of profile maximum AND bottom bin buy volume <= bottom bin sell volume OR low < previous range low.
+Exit: short, top bin total volume >= configured high-volume fraction of profile maximum AND top bin sell volume <= top bin buy volume OR high > previous range high.

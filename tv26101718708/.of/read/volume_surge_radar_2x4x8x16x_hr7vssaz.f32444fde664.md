@@ -1,7 +1,8 @@
-Calculation: Relative volume = current bar volume divided by the mean volume over the selected one-week baseline.
-Calculation: Surge count = rolling-window count of bars whose relative volume reaches the selected tier.
-Calculation: Up surge count = rolling-window count of bars reaching the selected tier with close > open; down surge count = rolling-window count reaching it with close < open.
-Calculation: Window price change = percentage change from the close at the rolling-window lookback to the current close.
-Calculation: Bias score = sign of window price change + sign of up surge count minus down surge count.
-Long: surge count >= the minimum required hits AND Bias score > 0
-Short: surge count >= the minimum required hits AND Bias score < 0
+Calculation: Baseline volume = simple moving average of volume over a configurable number of chart bars, optionally excluding the current bar; alternatively, determine the length automatically as rounded session minutes per day times trading days per week divided by chart-bar minutes for intraday charts, trading days per week for daily charts, or one bar otherwise, bounded between one and the maximum baseline length.
+Calculation: Volume ratio = current volume divided by baseline volume when baseline volume > 0, otherwise zero.
+Calculation: Volume tier = highest-priority tier whose configurable volume-ratio threshold is met, checking tiers from highest to lowest; zero if none is met.
+Calculation: Surge count = number of bars in the rolling window, including the current bar, whose volume tier is at least the selected tier. Up-surge and down-surge counts apply the same test and additionally require close > open and close < open, respectively.
+Calculation: Window price change = (close minus the close one rolling-window length ago) divided by that earlier close, or zero if the earlier close is nonpositive; use the current close if the earlier close is unavailable.
+Calculation: Bias score = sign of window price change plus sign of (up-surge count minus down-surge count), where each sign is positive one, zero, or negative one.
+Long: Surge count >= minimum surge count AND bias score > 0.
+Short: Surge count >= minimum surge count AND bias score < 0.

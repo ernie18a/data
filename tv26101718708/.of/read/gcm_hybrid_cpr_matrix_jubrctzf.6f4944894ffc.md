@@ -1,4 +1,7 @@
-Calculation: paired pivot low = a bar where both low and RSI are local minima over the pivot lookback on each side; confirm after the right-side lookback bars
-Calculation: paired pivot high = a bar where both high and RSI are local maxima over the pivot lookback on each side; confirm after the right-side lookback bars
-Long: current paired pivot low is within the maximum divergence distance of the preceding paired pivot low AND (current low < preceding low AND current RSI > preceding RSI OR current low > preceding low AND current RSI < preceding RSI)
-Short: current paired pivot high is within the maximum divergence distance of the preceding paired pivot high AND (current high > preceding high AND current RSI < preceding RSI OR current high < preceding high AND current RSI > preceding RSI)
+Calculation: CPR bounds = for the last completed higher-timeframe bar, let pivot = (high + low + close) / 3, midpoint = (high + low) / 2, and reflected midpoint = 2 * pivot - midpoint; the upper bound is the maximum of midpoint and reflected midpoint, and the lower bound is their minimum.
+Calculation: Paired pivot lows = chart bars where both low and RSI of close are pivot lows using the same number of bars on each side; compare each confirmed pair with the immediately preceding confirmed pair, and evaluate the decision when the right-side bars have completed.
+Calculation: Paired pivot highs = chart bars where both high and RSI of close are pivot highs using the same number of bars on each side; compare each confirmed pair with the immediately preceding confirmed pair, and evaluate the decision when the right-side bars have completed.
+Long: The forming higher-timeframe bar's open > the upper CPR bound.
+Short: The forming higher-timeframe bar's open < the lower CPR bound.
+Long: The current paired pivot low is within the maximum bar distance of the preceding paired pivot low AND ((current low < preceding low AND current RSI > preceding RSI) OR (current low > preceding low AND current RSI < preceding RSI)).
+Short: The current paired pivot high is within the maximum bar distance of the preceding paired pivot high AND ((current high > preceding high AND current RSI < preceding RSI) OR (current high < preceding high AND current RSI > preceding RSI)).

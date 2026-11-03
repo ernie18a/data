@@ -1,6 +1,7 @@
-Calculation: EMA = exponential moving average of close, using the last completed bar of the higher timeframe (or chart timeframe when equal); use five progressively longer lookbacks.
-Calculation: SMA = simple moving average of close, using the last completed bar of the higher timeframe (or chart timeframe when equal); use three progressively longer lookbacks.
-Calculation: Chart ATR = average true range on the chart timeframe, using the last completed bar.
-Calculation: MA tolerance = chart ATR multiplied by a configurable factor.
-Long: Close is above every EMA and SMA AND at least one of: (for any EMA or SMA, low <= MA AND close > MA AND close > open); (for any EMA or SMA, low is between MA minus twice the MA tolerance and MA plus the MA tolerance AND close > MA AND close > open); (close > short-lookback EMA > longer-lookback EMA AND at least the configured minimum number of down closes occur within the configured pullback lookback AND close > open AND close > prior bar high).
-Short: For at least one EMA or SMA, either (low timeframe-independent strict rejection: high >= MA AND close < MA AND close < open) OR (high is between MA minus the MA tolerance and MA plus twice the MA tolerance AND close < MA AND close < open).
+Calculation: MA set = five EMAs of close with increasing lookbacks and three SMAs of close whose lookbacks match the three longest EMA lookbacks; calculate each on the last completed higher-timeframe bar, or the previous chart bar when the MA timeframe equals the chart timeframe.
+Calculation: Tolerance = a multiplier times the previous chart bar's ATR; if ATR is unavailable, use a fraction of the current close.
+Long: For any MA in the set, close > MA AND close > open AND either low <= MA in strict mode OR MA - a multiple of tolerance <= low <= MA + tolerance in band mode.
+Short: For any MA in the set, close < MA AND close < open AND either high >= MA in strict mode OR MA - tolerance <= high <= MA + a multiple of tolerance in band mode.
+Long: For any positive MA in the set, low > MA AND (low - MA) / MA <= proximity threshold AND close > open AND either strict mode is selected OR low > MA + tolerance.
+Short: For any positive MA in the set, high < MA AND (MA - high) / MA <= proximity threshold AND close < open AND either strict mode is selected OR high < MA - tolerance.
+Long: Close > shortest-lookback EMA AND shortest-lookback EMA > second-shortest-lookback EMA AND, if the optional filter is enabled, close > third-shortest-lookback EMA AND the count of bars in the preceding pullback lookback whose close is below the preceding bar's close >= minimum count AND close > open AND close > previous bar's high.

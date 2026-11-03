@@ -1,14 +1,19 @@
-Calculation: Trend layer = +1 when close > shorter-lookback EMA > longer-lookback EMA and the linear-regression slope of close is positive; -1 when all inequalities are reversed; otherwise 0
-Calculation: Momentum layer = +1 when close ROC > 0, RSI > 52, and efficiency ratio > 0.35; -1 when close ROC < 0, RSI < 48, and efficiency ratio > 0.35; otherwise 0
-Calculation: Efficiency ratio = absolute net close change over its lookback divided by the sum of absolute close-to-close changes over that lookback
-Calculation: Structure layer = +1 when (close - lowest low) / (highest high - lowest low) over its lookback > 0.62; -1 when this range position < 0.38; otherwise 0
-Calculation: Volume layer = +1 when clamped volume z-score / 3 > 0.25 and the linear-regression slope of OBV is positive; -1 when clamped volume z-score / 3 < -0.25 and the OBV slope is negative; otherwise 0
-Calculation: OBV = cumulative volume added when close rises, subtracted when close falls, and unchanged when close is unchanged
-Calculation: Higher-timeframe score = average of ten biases from two higher timeframes, using the last completed bar of each: for each timeframe, trend bias is +1 when close > shorter-lookback EMA > longer-lookback EMA and close slope is positive, -1 for the reverse, otherwise 0; momentum bias is the sign of close ROC; volatility bias is +1 when ATR / its SMA > 1.08, -1 when < 0.92, otherwise 0; directional movement bias is the sign of +DI minus -DI; ADX bias is +1 when ADX exceeds the strong threshold, -1 when below the weak threshold, otherwise 0
-Calculation: Volatility composite = average of ATR / its SMA and Garman-Klass realized volatility / its SMA, using the same volatility lookback for each measure
-Calculation: Garman-Klass realized volatility = square root of the SMA of max(0, 0.5 × ln(high/low)^2 - (2 × ln(2) - 1) × ln(close/open)^2)
-Calculation: Base direction = +1 when trend layer + momentum layer + structure layer + volume layer + higher-timeframe score >= 0; otherwise -1
-Calculation: Volatility layer = 0.40 × base direction when volatility composite > 1.08; -0.25 × base direction when volatility composite < 0.92; otherwise 0
-Calculation: Regime score = clamp(100 × (0.24 × trend layer + 0.18 × momentum layer + 0.14 × structure layer + 0.12 × volume layer + 0.12 × volatility layer + 0.20 × higher-timeframe score), -100, 100)
-Long: Regime score >= soft bullish threshold
-Short: Regime score <= soft bearish threshold
+Calculation: Safe division = numerator / denominator when the absolute denominator exceeds a small tolerance; otherwise use the specified fallback.
+Calculation: Linear regression slope = current endpoint of the rolling linear regression minus its endpoint one bar earlier, both fitted to the same window.
+Calculation: Efficiency ratio = absolute change in close over its lookback divided by the sum of absolute one-bar close changes over that lookback, using safe division with fallback zero.
+Calculation: Range position = (close minus the lowest low) / (highest high minus lowest low) over the structure lookback, using safe division with fallback one-half.
+Calculation: Volume impulse = clamp the volume z-score divided by a scaling parameter to the interval from negative one to positive one; use zero when the rolling volume standard deviation is zero. OBV adds volume when close rises, subtracts it when close falls, and otherwise remains unchanged.
+Calculation: Higher-timeframe score = average of five biases on each of two higher timeframes. On each timeframe, trend bias is positive one when close > short EMA > long EMA AND close linear regression slope > zero, negative one when close < short EMA < long EMA AND slope < zero, otherwise zero; momentum bias is the sign of close rate of change; volatility bias is positive one when ATR / SMA of ATR exceeds an upper ratio, negative one when it is below a lower ratio, otherwise zero; directional movement bias is the sign of positive DI minus negative DI; ADX bias is positive one above a strong threshold, negative one below a weaker threshold, otherwise zero. Use safe division with fallback one for the ATR ratio. Evaluate these calculations on each higher timeframe using its last completed bar on historical chart bars and its still-forming bar in live evaluation, with no historical lookahead.
+Calculation: Directional layers = trend bias computed on chart bars as for the higher timeframe; momentum bias is positive one when close rate of change > zero AND RSI > an upper threshold AND efficiency ratio > its threshold, negative one when rate of change < zero AND RSI < a lower threshold AND efficiency ratio > its threshold, otherwise zero; structure bias is positive one when range position > an upper threshold, negative one when it is < a lower threshold, otherwise zero; volume bias is positive one when volume impulse > a positive threshold AND OBV linear regression slope > zero, negative one when volume impulse < a negative threshold AND OBV slope < zero, otherwise zero.
+Calculation: Volatility composite = average of ATR / SMA of ATR and Garman-Klass volatility / SMA of that volatility, with safe division fallback one. Garman-Klass volatility is the square root of the SMA of max(half the squared log high/low ratio minus a coefficient times the squared log close/open ratio, zero); floor each OHLC price at a configurable positive minimum before taking logarithms.
+Calculation: Regime score = clamp to its symmetric score limits the weighted sum of chart trend, momentum, structure and volume biases, the volatility bias, and the higher-timeframe score. The volatility bias equals a positive magnitude times the base direction when the volatility composite exceeds an upper ratio, a negative magnitude times the base direction when it is below a lower ratio, and zero otherwise. Base direction is positive one when the sum of the four chart biases and higher-timeframe score is nonnegative, otherwise negative one. Each component has its own weight.
+Long: Regime score >= the positive soft threshold.
+Short: Regime score <= the negative soft threshold.
+Long: Regime score crosses above the positive strong threshold OR crosses above the positive soft threshold, on a completed chart bar; a cross requires the previous score to be <= the threshold and the current score to be > it.
+Short: Regime score crosses below the negative strong threshold OR crosses below the negative soft threshold, on a completed chart bar; a cross requires the previous score to be >= the threshold and the current score to be < it.
+Long: Regime score >= zero.
+Short: Regime score < zero.
+Long: Range position > one-half.
+Short: Range position < one-half.
+Long: Chart momentum bias > zero.
+Short: Chart momentum bias < zero.

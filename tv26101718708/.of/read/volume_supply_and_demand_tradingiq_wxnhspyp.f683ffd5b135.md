@@ -1,3 +1,3 @@
-Calculation: Expansion angle = absolute value of arctangent in degrees of (current close − close N bars ago) divided by the cumulative EMA of high − low, where N is the length of the current consecutive candle streak.
-Long: On a completed bar, at least the minimum streak length of consecutive bullish candles (open < close) AND expansion angle ≥ the minimum angle threshold.
-Short: On a completed bar, at least the minimum streak length of consecutive non-bullish candles (open ≥ close) AND expansion angle ≥ the minimum angle threshold.
+Calculation: Expansion angle = absolute value of arctangent, in degrees, of (current close minus close before the current consecutive-bar run) divided by the cumulative EMA of high minus low; initialize the EMA to zero and update it on bar number n with smoothing factor 2 / (n + 1).
+Long: On a completed bar, the consecutive run of bars with close > open reaches the minimum run length AND expansion angle >= threshold AND no previous bar in this run has satisfied both conditions.
+Short: On a completed bar, the consecutive run of bars with close <= open reaches the minimum run length AND expansion angle >= threshold AND no previous bar in this run has satisfied both conditions.

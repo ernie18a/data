@@ -1,7 +1,12 @@
-Calculation: Box high/low = highest high and lowest low over the configured number of consecutive chart-timeframe bars ending before the session start
-Long: trading day is enabled AND high >= Box high + configured entry offset AND current time < configured signal-expiration time
-Short: trading day is enabled AND low <= Box low - configured entry offset AND current time < configured signal-expiration time
-Exit: long, low <= stop-loss price OR high >= take-profit price
-Exit: short, high >= stop-loss price OR low <= take-profit price
-Exit: long, elapsed time since entry >= configured duration AND (close - entry price) >= configured minimum profit
-Exit: short, elapsed time since entry >= configured duration AND (entry price - close) >= configured minimum profit
+Calculation: Box high and box low = highest high and lowest low of a configurable number of completed chart bars immediately preceding the latest scheduled weekday session time, optionally skipping weekend bars; retain these levels until the next scheduled weekday session time.
+Calculation: Initial stop distance and target distance = independently selectable fixed price distances or configurable multiples of the box height at entry; either may be disabled.
+Calculation: Long stop = entry price minus the initial stop distance if enabled. If breakeven is enabled and price reaches entry price plus the breakeven activation distance, raise the stop to at least entry price plus the breakeven offset. If trailing is enabled and price reaches entry price plus the trailing distance plus the trailing activation offset, raise the stop to price minus the trailing distance whenever that increases the stop by at least the trailing step; if no stop exists, establish it. Retain the highest established stop.
+Calculation: Short stop = entry price plus the initial stop distance if enabled. If breakeven is enabled and price reaches entry price minus the breakeven activation distance, lower the stop to at most entry price minus the breakeven offset. If trailing is enabled and price reaches entry price minus the trailing distance minus the trailing activation offset, lower the stop to price plus the trailing distance whenever that decreases the stop by at least the trailing step; if no stop exists, establish it. Retain the lowest established stop.
+Long: Session weekday is enabled AND time is at or after the session time and before the next session time AND the order has not expired if expiration is enabled AND the long order for this box has not already filled or been canceled AND price reaches or exceeds box high plus the entry offset; cancel the opposite pending order after entry if opposite-order cancellation is enabled.
+Short: Session weekday is enabled AND time is at or after the session time and before the next session time AND the order has not expired if expiration is enabled AND the short order for this box has not already filled or been canceled AND price reaches or falls below box low minus the entry offset; cancel the opposite pending order after entry if opposite-order cancellation is enabled.
+Exit: long, an established long stop exists AND price is at or below the long stop.
+Exit: long, target is enabled AND price is at or above entry price plus the target distance.
+Exit: long, time exit is enabled AND elapsed time since entry is at least the holding duration AND price minus entry price is at least the minimum profit.
+Exit: short, an established short stop exists AND price is at or above the short stop.
+Exit: short, target is enabled AND price is at or below entry price minus the target distance.
+Exit: short, time exit is enabled AND elapsed time since entry is at least the holding duration AND entry price minus price is at least the minimum profit.

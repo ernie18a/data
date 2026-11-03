@@ -1,13 +1,19 @@
-Calculation: External swing high/low = latest confirmed pivot high/low on a higher timeframe than the chart, using a longer lookback than the internal pivots; use completed bars.
-Calculation: Internal swing high/low = latest confirmed pivot high/low on a higher timeframe than the chart, using a shorter lookback than the external pivots; use completed bars.
-Calculation: Upper wick = high − max(open, close); lower wick = min(open, close) − low.
-Calculation: Minimum sweep overshoot = max(close × 0.0005, ATR(14) × 0.3), calculated on the higher timeframe than the chart.
-Calculation: Higher-timeframe bias = bullish after close exceeds the latest confirmed swing high, bearish after close falls below the latest confirmed swing low, otherwise retain the prior bias (initially neutral); swing pivots and close are from a higher timeframe than the chart, using completed bars.
-Long: Higher-timeframe close > internal swing high AND that level has not been crossed before.
-Short: Higher-timeframe close < internal swing low AND that level has not been crossed before.
-Long: Higher-timeframe low < external swing low − minimum sweep overshoot AND higher-timeframe close > external swing low AND lower wick > (higher-timeframe high − higher-timeframe low) × 0.3.
-Short: Higher-timeframe high > external swing high + minimum sweep overshoot AND higher-timeframe close < external swing high AND upper wick > (higher-timeframe high − higher-timeframe low) × 0.3.
-Long: A pending low sweep exists AND a newly confirmed external swing low is above the lowest low of the pending sweep(s); the pivot uses higher-timeframe completed bars.
-Short: A pending high sweep exists AND a newly confirmed external swing high is below the highest high of the pending sweep(s); the pivot uses higher-timeframe completed bars.
-Long: A confirmed low sweep is within the sweep window counted in chart bars AND the higher-timeframe close > internal swing high with that level not previously crossed AND higher-timeframe bias is bullish or neutral.
-Short: A confirmed high sweep is within the sweep window counted in chart bars AND the higher-timeframe close < internal swing low with that level not previously crossed AND higher-timeframe bias is bearish or neutral.
+Calculation: Structure bars = last completed bars of a higher timeframe; bias bars = last completed bars of a still higher timeframe. Map each higher-timeframe result to chart bars with lookahead disabled.
+Calculation: Swing high and swing low = latest confirmed symmetric pivot high and low on structure bars, using a longer lookback than the internal pivots. Internal high and internal low = latest confirmed symmetric pivot high and low on structure bars, using a shorter lookback. Each pivot uses equal numbers of left and right bars.
+Calculation: Structure trend = initially neutral; on each structure bar, set bullish when close exceeds the internal high for the first time since that pivot was confirmed, and set bearish when close falls below the internal low for the first time since that pivot was confirmed. Process the high break before the low break. Reset the corresponding first-break flag whenever a new pivot is confirmed.
+Calculation: Bias trend = initially neutral; on each bias bar, set bullish if close exceeds its latest confirmed symmetric pivot high, and set bearish if close falls below its latest confirmed symmetric pivot low. Process the high comparison before the low comparison; otherwise retain the previous trend.
+Calculation: Low sweep = structure-bar low < swing low minus the maximum of a price-proportional threshold and an ATR-proportional threshold AND close > swing low AND lower wick > a fraction of the bar range. High sweep = structure-bar high > swing high plus the same maximum threshold AND close < swing high AND upper wick > the same fraction of the bar range. ATR is calculated on structure bars.
+Calculation: Confirmed low sweep = a newly confirmed swing low > the lowest low of all low sweeps since the preceding confirmed low sweep; clear that stored low after confirmation. Confirmed high sweep = a newly confirmed swing high < the highest high of all high sweeps since the preceding confirmed high sweep; clear that stored high after confirmation. Include a sweep on the current structure bar before checking confirmation.
+Calculation: Active bullish shift = initially false; set true when a confirmed low sweep and a first break above the internal high occur on the same mapped chart bar AND bias trend is bullish or neutral AND active bullish shift is false. Save the internal high as its level and set active bearish shift false. Set active bullish shift false when chart close < its saved level. Active bearish shift is symmetric, using a confirmed high sweep, first break below the internal low, bearish or neutral bias, and chart close > its saved level; process bullish activation before bearish activation and process deactivations after activations.
+Long: Bias trend = bullish
+Short: Bias trend = bearish
+Long: Structure trend = bullish
+Short: Structure trend = bearish
+Long: First break above the internal high = true AND the mapped bullish break event on the previous chart bar = false
+Short: First break below the internal low = true AND the mapped bearish break event on the previous chart bar = false
+Long: Low sweep = true AND (low sweep on the previous chart bar = false OR (confirmed low sweep = false AND confirmed high sweep = false))
+Short: High sweep = true AND (high sweep on the previous chart bar = false OR (confirmed low sweep = false AND confirmed high sweep = false AND low sweep = false))
+Long: Confirmed low sweep = true
+Short: Confirmed high sweep = true
+Long: Active bullish shift = true
+Short: Active bearish shift = true

@@ -1,14 +1,25 @@
-Calculation: ITH = latest pivot high from higher-timeframe bars, using configurable left/right pivot lookbacks; the anchor timeframe’s still-forming bar is used
-Calculation: ITL = latest pivot low from higher-timeframe bars, using configurable left/right pivot lookbacks; the anchor timeframe’s still-forming bar is used
-Calculation: EQ = (ITH + ITL) / 2
-Calculation: At a key level = close is within a configurable ATR-based tolerance of ITH, ITL, or EQ
-Calculation: In POI = close is within a configurable percentage-based distance of ITH, ITL, or EQ
-Calculation: Bullish engulfing = current candle is bullish, previous candle is bearish, and current body strictly contains the previous body
-Calculation: Bearish engulfing = current candle is bearish, previous candle is bullish, and current body strictly contains the previous body
-Calculation: Bullish absorption = volume exceeds a configurable multiple of the volume moving average, lower wick is at least a configurable fraction of the candle range, and price is at ITL or at EQ after the prior close was below EQ
-Calculation: Bearish absorption = volume exceeds a configurable multiple of the volume moving average, upper wick is at least a configurable fraction of the candle range, and price is at ITH or at EQ after the prior close was above EQ
-Calculation: Cumulative delta = sum of volume signed positive for bullish candles, negative for bearish candles, and zero for doji candles while price is in POI; reset when price leaves POI
-Calculation: Bull score = configurable weighted sum of being at a key level, bullish sweep, bullish engulfing at a key level, bullish absorption, volume spike with any bullish trigger, positive cumulative delta at ITL or EQ, and close below EQ
-Calculation: Bear score = configurable weighted sum of being at a key level, bearish sweep, bearish engulfing at a key level, bearish absorption, volume spike with any bearish trigger, negative cumulative delta at ITH or EQ, and close above EQ
-Long: (high > ITL AND open > ITL AND close > ITL) OR (low < EQ AND open > EQ AND close > EQ AND prior close > EQ) OR (bullish engulfing AND at a key level) OR bullish absorption OR (close crosses above EMA of close AND volume exceeds a configurable multiple of its moving average) OR (a bullish trigger exists AND Bull score > Bear score AND Bull score >= configured B-grade threshold)
-Short: (high > ITH AND open < ITH AND close < ITH) OR (high > EQ AND open < EQ AND close < EQ AND prior close < EQ) OR (bearish engulfing AND at a key level) OR bearish absorption OR (close crosses below EMA of close AND volume exceeds a configurable multiple of its moving average) OR (a bearish trigger exists AND Bear score > Bull score AND Bear score >= configured B-grade threshold)
+Calculation: Anchor high and anchor low = the most recently reported pivot high and pivot low of the higher-timeframe bars, each confirmed using its configured number of bars on both sides. Historical higher-timeframe pivot results are mapped to the start of their confirmation bar; in realtime use the still-forming higher-timeframe bar. Retain each last reported pivot until replaced.
+Calculation: Midpoint = (anchor high + anchor low) / 2.
+Calculation: At a level = absolute distance from close to that level is at most a configured multiple of chart-timeframe ATR; use zero for unavailable ATR.
+Calculation: Zone delta = sum of volume signed positive when close > open, negative when close < open, and zero otherwise, over consecutive chart bars whose close is within a configured percentage of close from any of anchor high, anchor low, or midpoint; reset to zero outside all three zones.
+Calculation: Volume average = chart-timeframe SMA of volume, or current volume while the SMA is unavailable.
+Calculation: Bullish engulfing = close > open AND previous close < previous open AND current body is larger than previous body AND either open < previous close AND close > previous open, or, in the configured loose mode, open <= previous close AND close >= previous open AND at least one of those inequalities is strict.
+Calculation: Bearish engulfing = close < open AND previous close > previous open AND current body is larger than previous body AND either open > previous close AND close < previous open, or, in the configured loose mode, open >= previous close AND close <= previous open AND at least one of those inequalities is strict.
+Calculation: High sweep = high > anchor high AND open < anchor high AND close < anchor high.
+Calculation: Low sweep = high sweep is false AND low < anchor low AND open > anchor low AND close > anchor low.
+Calculation: Midpoint high sweep = high sweep is false AND low sweep is false AND high > midpoint AND open < midpoint AND close < midpoint AND previous close < previous midpoint.
+Calculation: Midpoint low sweep = high sweep is false AND low sweep is false AND midpoint high sweep is false AND low < midpoint AND open > midpoint AND close > midpoint AND previous close > previous midpoint.
+Calculation: Bullish absorption = volume > volume average multiplied by an absorption threshold AND (min(open, close) - low) / (high - low) >= a configured wick fraction AND (at anchor low OR at midpoint AND previous close < previous midpoint); a zero-range bar cannot qualify.
+Calculation: Bearish absorption = volume > volume average multiplied by an absorption threshold AND (high - max(open, close)) / (high - low) >= a configured wick fraction AND (at anchor high OR at midpoint AND previous close > previous midpoint); a zero-range bar cannot qualify.
+Long: close < midpoint.
+Short: close > midpoint.
+Long: low sweep OR midpoint low sweep.
+Short: high sweep OR midpoint high sweep.
+Long: bullish engulfing AND at anchor high, anchor low, or midpoint.
+Short: bearish engulfing AND at anchor high, anchor low, or midpoint.
+Long: bullish absorption.
+Short: bearish absorption.
+Long: close is within a configured percentage of close from any of anchor high, anchor low, or midpoint AND zone delta > volume average multiplied by a configured significance threshold AND bullish absorption is false AND bearish absorption is false.
+Short: close is within a configured percentage of close from any of anchor high, anchor low, or midpoint AND zone delta < negative volume average multiplied by a configured significance threshold AND bullish absorption is false AND bearish absorption is false.
+Long: close crosses above its EMA AND volume > volume SMA multiplied by a configured threshold.
+Short: close crosses below its EMA AND volume > volume SMA multiplied by a configured threshold.

@@ -1,1 +1,1 @@
-Close all open market positions when total account profit exceeds either a fixed currency threshold or a threshold defined as a percentage of account balance.
+On each tick, if total account floating profit exceeds either a configured cash threshold or a configured percentage of account balance, rounded to two decimal places, close all open long and short positions across all instruments.

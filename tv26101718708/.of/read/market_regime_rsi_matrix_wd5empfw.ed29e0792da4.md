@@ -1,14 +1,16 @@
-Calculation: Master RSI = weighted average of RSI values from the monitored timeframes, using each timeframe's configured weight; for timeframes higher than the chart, use the last completed bar, and for lower timeframes use the latest available bar within the chart bar.
-Calculation: Consensus score = absolute difference between the counts of monitored timeframes with RSI ≥ 50 and RSI < 50, divided by the total number of monitored timeframes, multiplied by 100.
-Calculation: Fast and slow trend EMAs = EMAs of Master RSI, with the fast EMA using a shorter smoothing period than the slow EMA.
-Calculation: Trend strength value = the smaller of 10 times the absolute difference between the fast and slow trend EMAs, and 100.
-Calculation: RSI Fibonacci levels = levels between the lowest and highest Master RSI over a lookback, using the standard 0.236, 0.382, 0.500, and 0.618 ratios.
-Calculation: Probability score = 0.40 × consensus score + 0.30 × trend strength value + 0.20 × RSI Fibonacci position score + 0.10 × (2 × absolute difference between Master RSI and 50); the Fibonacci position score is 100 at or above the 0.618 level, 75 at or above 0.500, 50 at or above 0.382, 25 at or above 0.236, and 0 otherwise.
-Long: Master RSI ≥ 50
-Long: The number of monitored timeframes with RSI ≥ 50 is greater than the number with RSI < 50
-Long: Fast trend EMA > slow trend EMA
-Long: Consensus score ≥ 70 AND fast trend EMA > slow trend EMA AND probability score ≥ 70 AND Master RSI ≥ 60
-Short: Master RSI < 50
-Short: The number of monitored timeframes with RSI < 50 is greater than the number with RSI ≥ 50
-Short: Fast trend EMA < slow trend EMA
-Short: Consensus score ≥ 70 AND fast trend EMA < slow trend EMA AND probability score ≥ 70 AND Master RSI ≤ 40
+Calculation: Timeframe RSI = RSI of the selected price source on each independently selected timeframe; use the last completed bar for a higher timeframe and the last completed intrabar for a lower timeframe.
+Calculation: Composite RSI = sum of each timeframe RSI multiplied by its weight, divided by the sum of weights; use the equilibrium level if the sum of weights is zero.
+Calculation: Bullish count = number of timeframe RSI values at or above the RSI equilibrium level; bearish count = total number of timeframe RSI values minus bullish count.
+Calculation: Consensus = absolute difference between bullish count and bearish count divided by the total number of timeframe RSI values.
+Calculation: Momentum range level = lowest composite RSI over a lookback plus a chosen fraction of the difference between the highest and lowest composite RSI over that lookback.
+Calculation: Probability score = weighted sum of consensus, capped absolute distance between the shorter and longer EMA of composite RSI, absolute distance of composite RSI from its equilibrium level, and a step score determined by which of several ordered momentum range levels composite RSI is at or above.
+Long: Timeframe RSI >= RSI equilibrium level.
+Short: Timeframe RSI < RSI equilibrium level.
+Long: Bullish count > bearish count.
+Short: Bearish count > bullish count.
+Long: Composite RSI >= RSI equilibrium level.
+Short: Composite RSI < RSI equilibrium level.
+Long: Shorter EMA of composite RSI > longer EMA of composite RSI.
+Short: Shorter EMA of composite RSI < longer EMA of composite RSI.
+Long: Consensus >= trend consensus threshold AND shorter EMA of composite RSI > longer EMA of composite RSI AND probability score >= trend probability threshold AND composite RSI >= bullish trend threshold.
+Short: Consensus >= trend consensus threshold AND shorter EMA of composite RSI < longer EMA of composite RSI AND probability score >= trend probability threshold AND composite RSI <= bearish trend threshold.

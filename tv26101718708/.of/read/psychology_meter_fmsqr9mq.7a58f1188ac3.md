@@ -1,4 +1,19 @@
-Long: close > highest high of the prior 252 bars AND close > previous close AND volume >= 2 × the prior 20-bar average volume
-Long: close > previous close AND previous close < close two bars ago AND previous bar's volume >= 2.5 × the volume average from before that bar AND RSI(14) on the previous bar < 35 AND (previous bar's close - low) / (high - low) >= 0.3
-Short: close < previous close AND volume >= 2.5 × the prior 20-bar average volume AND RSI(14) < 35
-Exit: long, low < the low of the most recent bar with close > previous close AND volume >= 2.5 × the prior 20-bar average volume AND RSI(14) > 75 AND (close - SMA(close, 20)) / ATR(14) > 2.5
+Calculation: Intrabar buy and sell volume = For each completed lower-timeframe bar within the completed chart bar, classify its volume as buying if its close is above its open, or selling if below. If equal, compare its close with the preceding lower-timeframe close; if still equal, retain the preceding direction. Unclassified volume belongs to neither side. If there is no classified intrabar volume, estimate buying volume as chart-bar volume multiplied by (close - low) / (high - low), using the midpoint when high equals low; selling volume is the remainder.
+Calculation: Buyer share = buying volume divided by buying plus selling volume, summed over the relevant chart bars before dividing.
+Calculation: Large-intrabar buy and sell volume = Sum the classified buy and sell volumes separately for completed lower-timeframe bars within the completed chart bar whose positive volume is at least a multiplier times that chart bar's average lower-timeframe volume. Large-intrabar buyer share is the buy sum divided by the combined buy and sell sums.
+Calculation: Up-bar volume share = volume summed over chart bars whose close exceeds the preceding close, divided by total volume over the same lookback.
+Calculation: Panic = close below the preceding close AND volume divided by the preceding chart bar's volume SMA at least a threshold AND RSI below a threshold.
+Calculation: Euphoria = close above the preceding close AND volume divided by the preceding chart bar's volume SMA at least the panic volume threshold AND RSI above a threshold AND (close - close SMA) / ATR above a threshold.
+Calculation: Breakout = close above the preceding close AND close above the highest high over a preceding lookback AND volume divided by the preceding chart bar's volume SMA at least a threshold lower than the panic volume threshold.
+Calculation: Confirmed capitulation = preceding chart bar is Panic AND its (close - low) / (high - low) is at least a threshold, using the midpoint when its range is zero AND current close is above the preceding close.
+Long: Breakout OR Confirmed capitulation.
+Short: Panic.
+Short: Up-bar volume share below a threshold AND close below its SMA AND the same combined condition was false on the preceding chart bar.
+Long: Current chart-bar buyer share at least its upper threshold OR buyer share over a lookback at least its upper threshold.
+Short: Current chart-bar buyer share at most its lower threshold OR buyer share over the same lookback at most its lower threshold.
+Long: Large-intrabar buyer share at least its upper threshold OR the number of qualifying large lower-timeframe bars is at least a threshold AND large-intrabar buy volume is positive AND at least a multiplier times large-intrabar sell volume.
+Short: Large-intrabar buyer share at most its lower threshold OR the number of qualifying large lower-timeframe bars is at least the same threshold AND large-intrabar sell volume is positive AND at least the same multiplier times large-intrabar buy volume.
+Long: Sufficient history and cumulative volume are available AND no Euphoria has occurred within a recent lookback AND Breakout has occurred within that lookback.
+Long: Sufficient history and cumulative volume are available AND none of Euphoria, Breakout, Confirmed capitulation or Panic has occurred within the same recent lookback AND the sellers-in-control condition is false AND close is above its shorter-term SMA AND that SMA is above its longer-term SMA.
+Short: Sufficient history and cumulative volume are available AND none of Euphoria, Breakout, Confirmed capitulation or Panic has occurred within the recent lookback AND up-bar volume share is below its threshold AND close is below its shorter-term SMA.
+Short: Sufficient history and cumulative volume are available AND none of Euphoria, Breakout, Confirmed capitulation or Panic has occurred within the recent lookback AND the sellers-in-control condition is false AND close is below both its shorter-term and longer-term SMAs.

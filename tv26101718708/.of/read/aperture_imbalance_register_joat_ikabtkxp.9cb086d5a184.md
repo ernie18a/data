@@ -1,7 +1,7 @@
-Calculation: Bullish gap size in standard deviations = (current low − high two bars ago) / max(200-bar standard deviation of (low − high two bars ago), minimum tick)
-Calculation: Bearish gap size in standard deviations = (low two bars ago − current high) / max(200-bar standard deviation of (low two bars ago − high), minimum tick)
-Calculation: Active bullish and bearish register counts = counts of confirmed bullish and bearish gaps that have not been invalidated or fully mitigated; a bullish register is invalidated when low falls below its bottom and fully mitigated when low reaches or falls below its bottom; a bearish register is invalidated when high rises above its top and fully mitigated when high reaches or rises above its top
-Long: Current bar is confirmed AND current low > high two bars ago AND previous bar high > high two bars ago AND bullish gap size in standard deviations > gap-size threshold
-Long: Active bullish register count > active bearish register count OR (active bullish register count >= 2 AND active bullish register count > active bearish register count)
-Short: Current bar is confirmed AND current high < low two bars ago AND previous bar low < low two bars ago AND bearish gap size in standard deviations > gap-size threshold
-Short: Active bearish register count > active bullish register count OR (active bearish register count >= 2 AND active bearish register count > active bullish register count)
+Calculation: Bullish gap = low − high two bars ago; bearish gap = low two bars ago − high.
+Calculation: Gap sigma = directional gap divided by the greater of its rolling standard deviation and a positive minimum denominator.
+Calculation: Active register counts = counts by direction after adding registers for the current confirmed gaps and removing the oldest if the total exceeds a limit, but before retiring registers on the current bar. A bullish register spans from the high two bars before its creation to the creation-bar low; a bearish register spans from the creation-bar high to the low two bars before its creation. When retirement is enabled, after counting, remove bullish registers if the current low is at or below their bottom and bearish registers if the current high is at or above their top.
+Long: Current bar is confirmed AND low > high two bars ago AND high one bar ago > high two bars ago AND bullish gap sigma > threshold.
+Short: Current bar is confirmed AND high < low two bars ago AND low one bar ago < low two bars ago AND bearish gap sigma > threshold.
+Long: Bullish active register count > bearish active register count.
+Short: Bearish active register count > bullish active register count.

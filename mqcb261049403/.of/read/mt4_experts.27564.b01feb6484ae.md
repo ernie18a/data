@@ -1,6 +1,3 @@
-Calculation: Resistance trendline = line through the fourth-most-recent and most-recent ZigZag high pivots, extended to the current bar; ZigZag uses chart-timeframe bars, including the bar still forming
-Calculation: Support trendline = line through the fourth-most-recent and most-recent ZigZag low pivots, extended to the current bar; ZigZag uses chart-timeframe bars, including the bar still forming
-Long: ask price < support trendline + 10 points AND 2-period SMA of close > 50-period SMA of close
-Short: ask price > resistance trendline - 10 points AND 2-period SMA of close < 50-period SMA of close
-Exit: long, price <= entry price - stop-loss distance OR price >= entry price + take-profit distance
-Exit: short, price >= entry price + stop-loss distance OR price <= entry price - take-profit distance
+Calculation: Marked ZigZag pivot = a nonzero MetaTrader ZigZag high or low buffer value that equals the ZigZag's final pivot buffer at the same bar, among the most recent configured number of same-side pivots within a configured search window; recalculate using the current chart bar as it forms.
+Long: A marked ZigZag low pivot exists.
+Short: A marked ZigZag high pivot exists.

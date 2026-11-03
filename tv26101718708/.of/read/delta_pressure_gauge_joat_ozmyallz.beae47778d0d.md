@@ -1,7 +1,29 @@
-Calculation: normalized delta wave = EMA of signed volume weighted by abs(close − open) / max(high − low, minimum price increment), divided by the rolling maximum of its absolute value
-Calculation: signal line = SMA of the normalized delta wave
-Calculation: histogram = normalized delta wave − signal line
-Calculation: rolling delta = rolling sum of signed, body-weighted volume, normalized by its rolling maximum absolute value
-Calculation: money flow = EMA of (close − open) / max(high − low, minimum price increment) × volume, normalized by its rolling maximum absolute value
-Long: normalized delta wave crosses above signal line OR normalized delta wave crosses above zero OR a confirmed wave pivot low is higher than the preceding confirmed wave pivot low while the corresponding price low is lower OR normalized delta wave is at or below the oversold extreme threshold OR normalized delta wave > positive pressure threshold AND normalized delta wave > signal line OR normalized delta wave > 0 OR signal line > 0 OR histogram >= 0 OR rolling delta > 0 OR money flow > 0
-Short: normalized delta wave crosses below signal line OR normalized delta wave crosses below zero OR a confirmed wave pivot high is lower than the preceding confirmed wave pivot high while the corresponding price high is higher OR normalized delta wave is at or above the overbought extreme threshold OR normalized delta wave < negative pressure threshold AND normalized delta wave < signal line OR normalized delta wave < 0 OR signal line <= 0 OR histogram < 0 OR rolling delta <= 0 OR money flow <= 0
+Calculation: Bar delta = volume × (close − open) / (high − low), or zero when high equals low.
+Calculation: Delta wave = EMA of bar delta divided by the greater of 1 and the rolling maximum of the absolute EMA.
+Calculation: Signal = SMA of the delta wave.
+Calculation: Histogram = delta wave − signal.
+Calculation: Cumulative delta = rolling sum of bar delta.
+Calculation: Money flow = EMA of bar delta, using a length independent of the delta-wave EMA.
+Calculation: Confirmed wave pivot = a wave high or low identified using configurable numbers of bars on its left and right; it is available only after the right-side bars have completed. Store each confirmed pivot and the price high or low on its pivot bar as the previous pivot of that type.
+Long: Delta wave crosses above signal.
+Short: Delta wave crosses below signal.
+Long: Delta wave crosses above zero.
+Short: Delta wave crosses below zero.
+Long: A confirmed wave pivot low is greater than the preceding confirmed wave pivot low AND its price low is less than the preceding pivot's price low.
+Short: A confirmed wave pivot high is less than the preceding confirmed wave pivot high AND its price high is greater than the preceding pivot's price high.
+Long: Delta wave is at or below either oversold threshold.
+Short: Delta wave is at or above either overbought threshold.
+Long: Delta wave is greater than a positive pressure threshold AND delta wave is greater than signal.
+Short: Delta wave is less than the negative pressure threshold AND delta wave is less than signal.
+Long: Delta wave is at or above zero.
+Short: Delta wave is below zero.
+Long: Signal is above zero.
+Short: Signal is at or below zero.
+Long: Histogram is at or above zero.
+Short: Histogram is below zero.
+Long: Histogram is greater than its previous-bar value.
+Short: Histogram is at or below its previous-bar value.
+Long: Cumulative delta is above zero.
+Short: Cumulative delta is at or below zero.
+Long: Money flow is above zero.
+Short: Money flow is at or below zero.

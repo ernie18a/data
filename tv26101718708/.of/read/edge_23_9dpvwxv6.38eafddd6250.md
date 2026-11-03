@@ -1,10 +1,13 @@
-Calculation: Bullish RSI divergence = RSI is below its oversold threshold, current low is below the stored oversold reference low, and current RSI is above the stored RSI; store a new reference when RSI makes a lower oversold extreme and expire it after the configured lookback.
-Calculation: Bearish RSI divergence = RSI is above its overbought threshold, current high is above the stored overbought reference high, and current RSI is below the stored RSI; store a new reference when RSI makes a higher overbought extreme and expire it after the configured lookback.
-Calculation: Bullish MFI divergence = MFI is below its oversold threshold, current low is below the stored oversold reference low, and current MFI is above the stored MFI; store a new reference when MFI makes a lower oversold extreme and expire it after the configured lookback.
-Calculation: Bearish MFI divergence = MFI is above its overbought threshold, current high is above the stored overbought reference high, and current MFI is below the stored MFI; store a new reference when MFI makes a higher overbought extreme and expire it after the configured lookback.
-Calculation: Bullish volume exhaustion = volume / its moving average is at least the configured multiplier AND lower wick / (high - low) is at least the configured minimum ratio AND RSI is below its oversold threshold.
-Calculation: Bearish volume exhaustion = volume / its moving average is at least the configured multiplier AND upper wick / (high - low) is at least the configured minimum ratio AND RSI is above its overbought threshold.
-Calculation: Extreme ATR volatility = ATR / its moving average exceeds the configured extreme threshold.
-Calculation: Bullish score = count of active bullish RSI divergence, bullish MFI divergence, and bullish volume exhaustion, plus 1 if extreme ATR volatility; bearish score is calculated the same way from the bearish conditions.
-Long: Bullish RSI divergence OR (bullish score >= 3 AND bearish score = 0)
-Short: Bearish RSI divergence OR (bearish score >= 3 AND bullish score = 0)
+Calculation: Divergence reference for each oscillator (RSI or MFI) and zone (overbought or oversold) = Store the oscillator value, corresponding high or low, and bar index on the first bar in the zone. On subsequent bars in that zone, replace them only when the oscillator makes a strictly higher value for overbought or a strictly lower value for oversold. After evaluating the current bar and updating the reference, clear it if its age exceeds the divergence lookback. Each oscillator and zone has its own reference; they share the divergence lookback.
+Calculation: Bullish divergence for an oscillator = oscillator below its oversold threshold AND a stored oversold reference exists AND low < reference low AND oscillator > reference oscillator value, evaluated before updating or clearing the reference.
+Calculation: Bearish divergence for an oscillator = oscillator above its overbought threshold AND a stored overbought reference exists AND high > reference high AND oscillator < reference oscillator value, evaluated before updating or clearing the reference.
+Calculation: Bullish volume exhaustion = volume SMA > 0 AND volume / volume SMA >= volume multiplier AND high > low AND (min(open, close) - low) / (high - low) >= wick threshold AND RSI < RSI oversold threshold.
+Calculation: Bearish volume exhaustion = volume SMA > 0 AND volume / volume SMA >= volume multiplier AND high > low AND (high - max(open, close)) / (high - low) >= wick threshold AND RSI > RSI overbought threshold.
+Calculation: Bullish factor count = sum of the Boolean values of bullish RSI divergence, bullish MFI divergence, and bullish volume exhaustion.
+Calculation: Bearish factor count = sum of the Boolean values of bearish RSI divergence, bearish MFI divergence, and bearish volume exhaustion.
+Calculation: Volatility boost = 1 if ATR / SMA of ATR > extreme volatility threshold, otherwise 0; use a ratio of 1 when the ATR SMA is not positive.
+Calculation: Scanner calculations = evaluate the factor counts and volatility boost independently on the chart timeframe and on other timeframes. For a higher timeframe, use the last completed bar historically and the still-forming bar in real time; for a lower timeframe, use the last available intrabar.
+Long: Bullish RSI divergence on the chart timeframe = true.
+Short: Bearish RSI divergence on the chart timeframe = true.
+Long: Bullish factor count > 0 AND bearish factor count = 0 AND bullish factor count + volatility boost >= 3 on any scanner timeframe.
+Short: Bearish factor count > 0 AND bullish factor count = 0 AND bearish factor count + volatility boost >= 3 on any scanner timeframe.

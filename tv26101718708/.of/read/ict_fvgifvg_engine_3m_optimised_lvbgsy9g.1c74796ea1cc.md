@@ -1,12 +1,12 @@
-Calculation: Fair Value Gap = bullish when the current bar’s low is above the high two bars earlier; bearish when the current bar’s high is below the low two bars earlier
-Calculation: Consequent Encroachment = midpoint of a Fair Value Gap’s top and bottom
-Calculation: Gap overlap = current bar’s high is at or above the gap bottom AND current bar’s low is at or below the gap top
-Long: bullish Fair Value Gap forms AND it passes enabled scope, displacement, and liquidity-sweep filters
-Short: bearish Fair Value Gap forms AND it passes enabled scope, displacement, and liquidity-sweep filters
-Long: an eligible, non-inverted bullish Fair Value Gap’s Consequent Encroachment is touched AND its quality is not suppressed AND the daily signal cap is not reached
-Short: an eligible, non-inverted bearish Fair Value Gap’s Consequent Encroachment is touched AND its quality is not suppressed AND the daily signal cap is not reached
-Long: an eligible, non-inverted bullish Fair Value Gap is overlapped on a later bar
-Short: an eligible, non-inverted bearish Fair Value Gap is overlapped on a later bar
-Long: a bearish Fair Value Gap closes above its top, or an inverted bullish Fair Value Gap is overlapped on a later bar
-Short: a bullish Fair Value Gap closes below its bottom, or an inverted bearish Fair Value Gap is overlapped on a later bar
-Exit:
+Calculation: Qualified gap = A bullish gap forms when low > high two bars earlier, with bottom = that earlier high and top = current low. A bearish gap forms when high < low two bars earlier, with bottom = current high and top = that earlier low. Optionally require gap size >= ATR times a multiplier and a corresponding recent sweep within a configured number of bars, including the formation bar. A bullish sweep has low below the latest confirmed pivot low and close above it; a bearish sweep has high above the latest confirmed pivot high and close below it. Pivots use equal numbers of bars on each side and become available on confirmation. Optionally restrict formation to configured sessions, or to the first qualifying gap in any configured session or any gap in a configured special session. The first-gap flag resets at each session start and is consumed before the scope restriction is applied. Track at most a configured number of gaps, removing the oldest when exceeded; gaps are not removed on mitigation.
+Calculation: Gap state = Midpoint is (top + bottom) / 2. Starting after formation, a bullish gap inverts when close < bottom and a bearish gap inverts when close > top; inversion is permanent and is processed before retests and midpoint taps. Overlap means high >= bottom AND low <= top. Record the first overlap before inversion, the first midpoint tap before inversion, and the first overlap after the inversion bar separately, even if their alerts are suppressed. Formation-time quality is low when the bar's local time is at or after a configured threshold, unless quality filtering is disabled. A gap is priority if it is the first qualifying gap in a session or formed in a configured special session.
+Long: A qualified bullish gap forms.
+Short: A qualified bearish gap forms.
+Long: A tracked bearish gap inverts.
+Short: A tracked bullish gap inverts.
+Long: A tracked bullish gap has its first overlap before inversion AND the retest alert is enabled AND low-quality alerts are not suppressed for the gap.
+Short: A tracked bearish gap has its first overlap before inversion AND the retest alert is enabled AND low-quality alerts are not suppressed for the gap.
+Long: A tracked bullish gap has its first midpoint tap before inversion AND low <= midpoint AND high >= midpoint.
+Short: A tracked bearish gap has its first midpoint tap before inversion AND low <= midpoint AND high >= midpoint.
+Long: A tracked inverted bearish gap has its first overlap after the inversion bar AND the inversion-retest alert is enabled AND low-quality alerts are not suppressed for the gap.
+Short: A tracked inverted bullish gap has its first overlap after the inversion bar AND the inversion-retest alert is enabled AND low-quality alerts are not suppressed for the gap.

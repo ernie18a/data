@@ -1,2 +1,2 @@
-Long: Stochastic oscillator on each configured chart or higher timeframe, using that timeframe’s bar still forming, is above the overbought level
-Short: Stochastic oscillator on each configured chart or higher timeframe, using that timeframe’s bar still forming, is below the oversold level
+Long: For any configured chart or higher timeframe, the stochastic main line sampled on the first chart bar of that timeframe’s still-forming bar is above the overbought threshold; retain this result until the next bar of that timeframe begins.
+Short: For any configured chart or higher timeframe, the stochastic main line sampled on the first chart bar of that timeframe’s still-forming bar is below the oversold threshold; retain this result until the next bar of that timeframe begins.

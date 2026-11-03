@@ -1,2 +1,2 @@
-Long: origin bar close > open AND close - open > ATR × displacement threshold multiplier AND each of the next confirmation-bar count bars has low >= origin bar high - origin bar ATR × zone-width multiplier
-Short: origin bar close < open AND open - close > ATR × displacement threshold multiplier AND each of the next confirmation-bar count bars has high <= origin bar low + origin bar ATR × zone-width multiplier
+Long: Close of the candle a confirmation lookback ago > its open AND its ATR > 0 AND its absolute body size / its ATR > the displacement multiplier AND every bar since that candle through the current bar has low >= that candle's high - its ATR × the zone-width multiplier.
+Short: Close of the candle a confirmation lookback ago < its open AND its ATR > 0 AND its absolute body size / its ATR > the displacement multiplier AND every bar since that candle through the current bar has high <= that candle's low + its ATR × the zone-width multiplier.

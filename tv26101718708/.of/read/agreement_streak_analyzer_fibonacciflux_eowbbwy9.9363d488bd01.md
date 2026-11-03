@@ -1,7 +1,5 @@
-Calculation: Smoothed Stochastic %K = the simple moving average of (close − lowest low) / (highest high − lowest low) × 100 over a lookback.
-Calculation: Stochastic %D = the simple moving average of smoothed %K over a shorter lookback; use the same lookbacks on each watched timeframe.
-Calculation: Direction on each timeframe = sign of smoothed %K − %D, using that timeframe’s bars; use the last completed bar for higher timeframes.
-Calculation: Agreement streak = consecutive chart bars on which all watched timeframes have the same nonzero direction; otherwise it is zero.
-Calculation: Continuation threshold = the configured percentile, using linear interpolation, of the rolling history of completed agreement streaks; score only after the required minimum number of completed streaks is available.
-Long: all watched timeframe directions > 0 AND agreement streak > continuation threshold AND prior bar’s bullish continuation state = false AND chart bar is confirmed.
-Short: all watched timeframe directions < 0 AND agreement streak > continuation threshold AND prior bar’s bearish continuation state = false AND chart bar is confirmed.
+Calculation: Stochastic direction = sign of smoothed Stochastic %K minus its simple moving average %D, computed independently with the same parameters on the chart timeframe and three successively higher timeframes. Use the previous completed bar of each timeframe, including the previous chart bar; alternatively, use the current chart bar and the still-forming higher-timeframe bars.
+Calculation: Agreement streak = number of consecutive chart bars on which all four Stochastic directions are equal and nonzero; a direct change from unanimous positive to unanimous negative or vice versa does not reset the streak. Optionally, treat the first bar of a new calendar day as a disagreement. Store each streak's length when agreement ends, retaining only the most recent configurable number of completed streaks.
+Calculation: Continuation threshold = linearly interpolated percentile of the retained completed streak lengths, available only when their count reaches a configurable minimum capped at the storage capacity.
+Long: All four Stochastic directions are positive AND agreement streak > continuation threshold AND this complete condition was false on the previous chart bar.
+Short: All four Stochastic directions are negative AND agreement streak > continuation threshold AND this complete condition was false on the previous chart bar.

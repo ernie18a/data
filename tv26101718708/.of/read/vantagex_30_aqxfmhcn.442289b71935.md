@@ -1,8 +1,23 @@
-Calculation: Session VWAP = volume-weighted average of typical price (high + low + close) / 3 since the start of the selected session (New York by default; London if selected)
-Calculation: FLOW base = rolling high-to-low range is below the rolling sum of bar ranges multiplied by a compression factor AND rolling volume sum exceeds its volume baseline multiplied by a volume factor
-Calculation: FLOW breakout = after a qualifying FLOW base, current bar range exceeds its rolling average range multiplied by a breakout factor, and both high and close exceed the stored base high for a bull breakout or both low and close fall below the stored base low for a bear breakout
-Calculation: Previous NY session bias = (previous session close - previous session low) / (previous session high - previous session low)
-Calculation: Previous NY session FLOW base = previous NY session body / range is below a compression factor AND its volume exceeds the 20-day average daily volume from the last completed daily bar multiplied by a volume factor
-Calculation: Previous NY session FLOW direction = previous NY session close is above its open for bullish direction or below its open for bearish direction, and body / range exceeds half the breakout factor
-Long: close > EMA(9) OR close > EMA(20) OR close > EMA(50) OR close > EMA(200) OR close > EMA(9) on a requested non-chart timeframe OR close > EMA(20) on a requested non-chart timeframe OR close > EMA(50) on a requested non-chart timeframe OR close > EMA(200) on a requested non-chart timeframe OR EMA(50) > EMA(200) OR EMA(20) > EMA(50) OR EMA(9) > EMA(21) OR EMA(5) > EMA(13) OR close > Session VWAP OR RSI > its bull threshold OR Stochastic RSI %K > %D OR FLOW breakout is bullish AND close > open AND close > previous close OR previous NY session FLOW direction is bullish AND previous NY session FLOW base is false OR Previous NY session bias > its bull threshold
-Short: close < EMA(9) OR close < EMA(20) OR close < EMA(50) OR close < EMA(200) OR close < EMA(9) on a requested non-chart timeframe OR close < EMA(20) on a requested non-chart timeframe OR close < EMA(50) on a requested non-chart timeframe OR close < EMA(200) on a requested non-chart timeframe OR EMA(50) < EMA(200) OR EMA(20) < EMA(50) OR EMA(9) < EMA(21) OR EMA(5) < EMA(13) OR close < Session VWAP OR RSI < its bear threshold OR Stochastic RSI %K < %D OR FLOW breakout is bearish AND close < open AND close < previous close OR previous NY session FLOW direction is bearish AND previous NY session FLOW base is false OR Previous NY session bias < its bear threshold
+Calculation: Session VWAP = cumulative sum of ((high + low + close) / 3 × volume) divided by cumulative volume, reset at the selected session start, updated during that session, and held constant outside it; the selectable sessions are London 03:00–11:00 or New York 09:30–16:00 in the exchange timezone.
+Calculation: Rolling base = the most recently recorded highest high and lowest low over a rolling lookback, updated before testing breakouts whenever (highest high − lowest low) < compression factor × sum of bar ranges over that lookback AND sum of volume over that lookback > volume factor × SMA of volume over a separate, longer lookback × rolling lookback length.
+Calculation: Previous New York session = the most recently completed regular session in America/New_York, from 09:30 to 16:00; its open is the first session bar's open, close is the last session bar's close, high and low are the session extremes, and volume is the sum of session-bar volumes. Update these values on the first bar outside the session.
+Calculation: Previous session base = previous New York session range > 0 AND absolute session body / session range < compression factor AND session volume > volume factor × SMA of volume from completed higher-timeframe daily bars.
+Calculation: Previous session close position = (previous New York session close − session low) / session range, or 0.5 when the range is zero.
+Long: Close > open.
+Short: Close < open.
+Long: Close > EMA of close, independently for each of four lengths ordered shortest to longest, on the chart timeframe or on each of three successively longer requested timeframes; for a higher requested timeframe use its still-forming bar in real time and its last completed bar on historical bars, and for a lower requested timeframe use its last available intrabar.
+Short: Close < EMA of close, independently for each of the same lengths and timeframes.
+Long: Shorter EMA of close > longer EMA of close, independently for each of four chart-timeframe pairs; their lengths are ordered first-pair shorter < second-pair shorter < first-pair longer < third-pair shorter < second-pair longer < third-pair longer = fourth-pair shorter < fourth-pair longer.
+Short: Shorter EMA of close < longer EMA of close, independently for each of the same pairs.
+Long: Close > session VWAP.
+Short: Close < session VWAP.
+Long: High > rolling base high AND close > rolling base high AND high − low > breakout factor × SMA of bar range over the rolling base lookback AND close > open AND close > previous close.
+Short: Low < rolling base low AND close < rolling base low AND high − low > breakout factor × SMA of bar range over the rolling base lookback AND close < open AND close < previous close.
+Long: Previous New York session range > 0 AND session close > session open AND absolute session body / session range > breakout factor / 2 AND previous session base = false.
+Short: Previous New York session range > 0 AND session close < session open AND absolute session body / session range > breakout factor / 2 AND previous session base = false.
+Long: Previous session close position > upper bias threshold.
+Short: Previous session close position < lower bias threshold AND previous session close position <= upper bias threshold.
+Long: RSI rounded to one decimal place > RSI midpoint.
+Short: RSI rounded to one decimal place < RSI midpoint.
+Long: Stochastic RSI %K > %D.
+Short: Stochastic RSI %K < %D.

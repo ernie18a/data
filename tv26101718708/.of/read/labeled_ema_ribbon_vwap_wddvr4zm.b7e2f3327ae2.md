@@ -1,2 +1,2 @@
-Long: shorter-lookback EMA >= the next longer-lookback EMA for any adjacent pair among the first four EMAs
-Short: shorter-lookback EMA < the next longer-lookback EMA for any adjacent pair among the first four EMAs
+Long: For any adjacent pair among the first four EMA slots, the earlier slot's EMA is greater than or equal to the later slot's EMA; both use the same price source and independently configurable lengths.
+Short: For any adjacent pair among the first four EMA slots, the earlier slot's EMA is less than the later slot's EMA; both use the same price source and independently configurable lengths.

@@ -1,8 +1,10 @@
-Calculation: Bullish FVG = For the three latest completed bars of the chart or a higher timeframe, newest.low > oldest.high AND middle.close > oldest.high AND newest.low <= middle.high AND middle.low <= oldest.high
-Calculation: Bearish FVG = For the three latest completed bars of the chart or a higher timeframe, newest.high < oldest.low AND middle.close < oldest.low AND newest.high >= middle.low AND middle.high >= oldest.low
-Calculation: Lower-timeframe bullish FVG = For three consecutive lower-timeframe bars as they complete within the chart bar, newest.low > oldest.high AND middle.close > oldest.high AND newest.low - oldest.high > the configured threshold times a fixed-lookback lower-timeframe ATR
-Calculation: Lower-timeframe bearish FVG = For three consecutive lower-timeframe bars as they complete within the chart bar, newest.high < oldest.low AND middle.close < oldest.low AND oldest.low - newest.high > the configured threshold times a fixed-lookback lower-timeframe ATR
-Calculation: Bullish IFVG = A previously filled bearish FVG's close rises above its top before the close falls below its bottom; use the selected FVG fill rule to determine when it is filled
-Calculation: Bearish IFVG = A previously filled bullish FVG's close falls below its bottom before the close rises above its top; use the selected FVG fill rule to determine when it is filled
-Long: Bullish FVG on chart or higher-timeframe bars OR lower-timeframe bullish FVG OR bullish IFVG
-Short: Bearish FVG on chart or higher-timeframe bars OR lower-timeframe bearish FVG OR bearish IFVG
+Calculation: Source bars = chart bars or bars of a higher timeframe; use the last completed source bar and the two preceding completed source bars. Evaluate once at the start of each new source bar.
+Calculation: Bullish gap = the last completed source bar's low > the high two source bars earlier AND the intervening source bar's close > that high AND the last completed source bar's low <= the intervening source bar's high AND the intervening source bar's low <= the high two source bars earlier. Its top is the last completed source bar's low and its bottom is the high two source bars earlier.
+Calculation: Bearish gap = the last completed source bar's high < the low two source bars earlier AND the intervening source bar's close < that low AND the last completed source bar's high >= the intervening source bar's low AND the intervening source bar's high >= the low two source bars earlier. Its top is the low two source bars earlier and its bottom is the last completed source bar's high.
+Calculation: Gap inversion candidate = a gap whose selected fill condition has been met on a chart bar. For a bullish gap, the fill condition is chart low <= gap top, chart low <= gap midpoint, chart low <= gap bottom, or chart close <= gap bottom, according to the selected fill method. For a bearish gap, it is chart high >= gap bottom, chart high >= gap midpoint, chart high >= gap top, or chart close >= gap top, respectively. From the fill bar onward, retain the candidate until chart close > top or chart close < bottom; evaluate inversion on the fill bar as well.
+Long: Bullish gap.
+Short: Bearish gap.
+Long: Bearish gap inversion candidate AND chart close > gap top.
+Short: Bullish gap inversion candidate AND chart close < gap bottom.
+Long: On a completed lower-timeframe bar, low > high two lower-timeframe bars earlier AND preceding lower-timeframe bar close > that high AND low minus that high > lower-timeframe ATR multiplied by a threshold.
+Short: On a completed lower-timeframe bar, high < low two lower-timeframe bars earlier AND preceding lower-timeframe bar close < that low AND that low minus high > lower-timeframe ATR multiplied by a threshold.

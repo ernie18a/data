@@ -1,7 +1,4 @@
-Calculation: 10-period and 20-period smoothed moving averages of median price = smoothed moving averages of (high + low) / 2; the 10-period average is the shorter-lookback average.
-Calculation: Volatility count = number of bars among the 30 most recent bars on the fixed M5 timeframe, including the bar still forming, whose high is above the midpoint and whose low is below it; midpoint = average of open and close of the last completed chart-timeframe bar at initialization.
-Calculation: Trailing stop = initialize one trailing distance from entry; ratchet toward price as it moves favorably, and once favorable movement reaches one trailing distance, use a tighter fixed distance behind price.
-Long: 10-period average at the last completed bar is above its value two bars earlier AND its value two bars earlier is below its value four bars earlier AND RSI(9) on the last completed bar is at most 70 AND the last completed bar closes above its open AND volatility count is below its threshold.
-Short: 10-period average at the last completed bar is below its value two bars earlier AND its value two bars earlier is above its value four bars earlier AND RSI(9) on the last completed bar is at least 30 AND the last completed bar closes below its open AND volatility count is below its threshold.
-Exit: long, close <= trailing stop
-Exit: short, close >= trailing stop
+Calculation: Volatility count = at initialization, count bars in a separate timeframe whose high is above and low is below the midpoint of the previous chart bar's open and close; include the bar still forming and retain this count thereafter. The separate timeframe may be higher, lower, or equal to the chart timeframe.
+Calculation: Moving-average slope = smoothed moving average of median price minus its value on the preceding bar.
+Long: Volatility count < threshold AND moving-average slope on the last completed bar > 0 AND moving-average slope on an earlier completed bar < 0 AND RSI of median price on the last completed bar <= upper threshold AND last completed bar's close > open.
+Short: Volatility count < threshold AND moving-average slope on the last completed bar < 0 AND moving-average slope on the same earlier completed bar > 0 AND RSI of median price on the last completed bar >= lower threshold AND last completed bar's close < open.

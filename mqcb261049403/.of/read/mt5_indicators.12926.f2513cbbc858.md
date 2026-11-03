@@ -1,3 +1,2 @@
-Calculation: Upper channel = longer-lookback linear weighted moving average of high; lower channel = same-lookback linear weighted moving average of low; center = shorter-lookback simple moving average of close. Use the chart timeframe or a higher timeframe; when higher, use its still-forming bar.
-Long: lower channel > center
-Short: upper channel < center
+Long: Simple moving average of close > linearly weighted moving average of low, using the same chart timeframe OR the still-forming bar of a higher timeframe; the moving average of low and the corresponding moving average of high use the same lookback, while the moving average of close uses an independent lookback.
+Short: Simple moving average of close > linearly weighted moving average of high, using the same chart timeframe OR the still-forming bar of a higher timeframe; the moving average of high and the corresponding moving average of low use the same lookback, while the moving average of close uses an independent lookback.

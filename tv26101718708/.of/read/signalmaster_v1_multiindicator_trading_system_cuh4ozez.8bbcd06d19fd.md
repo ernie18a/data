@@ -1,5 +1,7 @@
-Calculation: Stochastic RSI %K = stochastic of RSI over its lookback; %D = moving average of %K over its smoothing lookback
-Calculation: Long pending = becomes true when %K and %D are below the oversold level, the MACD line is negative and lower than its values on each of the prior two bars, and close < open; remains true until a long signal, then becomes false
-Calculation: Short pending = becomes true when %K and %D are above the overbought level, the MACD line is positive and higher than its values on each of the prior two bars, and close > open; remains true until a short signal, then becomes false
-Long: Long pending AND close > open
-Short: Short pending AND close < open
+Calculation: Stochastic RSI K = 100 × (RSI of close minus its lowest value over the stochastic lookback) / (its highest value minus its lowest value over the same lookback); the RSI and stochastic lookbacks are independently configurable. Stochastic RSI D = simple moving average of K over a smoothing lookback.
+Calculation: Pending long = false initially; set to true when K and D are both below the stochastic oversold threshold AND (the MACD filter is disabled OR the MACD line is below zero AND below its previous value AND its previous value is below its value two bars ago) AND (the ADX filter is disabled OR ADX is above its threshold) AND (candle confirmation is disabled OR close < open). Reset to false after a long signal.
+Calculation: Pending short = false initially; set to true when K and D are both above the stochastic overbought threshold AND (the MACD filter is disabled OR the MACD line is above zero AND above its previous value AND its previous value is above its value two bars ago) AND (the ADX filter is disabled OR ADX is above its threshold) AND (candle confirmation is disabled OR close > open). Reset to false after a short signal.
+Long: Pending long = true AND (candle confirmation is disabled OR close > open).
+Short: Pending short = true AND (candle confirmation is disabled OR close < open).
+Long: The long condition is true on a selected higher timeframe's still-forming bar OR on the latest available lower-timeframe bar.
+Short: The short condition is true AND the long condition is false on a selected higher timeframe's still-forming bar OR the short condition is true AND the long condition is false on the latest available lower-timeframe bar.

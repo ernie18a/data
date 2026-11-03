@@ -1,2 +1,2 @@
-Long: MFI on a higher timeframe’s still-forming bar > the overbought level
-Short: MFI on a higher timeframe’s still-forming bar < the oversold level
+Long: At the first chart bar of a selected higher timeframe, the money flow index of its still-forming bar is above the overbought threshold; retain this decision until the next bar of that timeframe.
+Short: At the first chart bar of a selected higher timeframe, the money flow index of its still-forming bar is below the oversold threshold; retain this decision until the next bar of that timeframe.

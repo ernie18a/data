@@ -1,9 +1,14 @@
-Calculation: Efficient Work = (close − previous close) / ((high − min(open, previous close)) + (max(open, previous close) − low)); when the denominator is zero, Efficient Work = 0
-Calculation: Signal = configured moving average of Efficient Work
-Calculation: Aggregate signal = weighted average of chart, medium-timeframe, and highest-timeframe signals, using only available timeframe values
-Calculation: Hi/Lo channel = highest and lowest Main Line values over the configured lookback; comparisons use the prior bar’s channel values
-Calculation: Divergence level = Main Line value on the latest bar where rounded bar direction differs from whether Signal is rising
-Calculation: High volatility = short-term ATR > long-term ATR
-Long: every enabled condition is bullish: Main Line > 0; Main Line > prior channel high; Main Line > divergence level; Main Line > medium-timeframe signal; Main Line > highest-timeframe signal; chart-timeframe signal > medium-timeframe signal; chart-timeframe signal > highest-timeframe signal; medium-timeframe signal > 0; highest-timeframe signal > 0; and the configured volatility filter passes
-Short: every enabled condition is bearish: Main Line < 0; Main Line < prior channel low; Main Line < divergence level; Main Line < medium-timeframe signal; Main Line < highest-timeframe signal; chart-timeframe signal < medium-timeframe signal; chart-timeframe signal < highest-timeframe signal; medium-timeframe signal < 0; highest-timeframe signal < 0; and the configured volatility filter passes
-Exit:
+Calculation: Efficient work = (close − previous close) / ((high − min(open, previous close)) + (max(open, previous close) − low)); use zero when the denominator is zero. On the first bar, use close as the previous close in the first denominator term, zero in the second denominator term, and open in the numerator.
+Calculation: Chart signal = efficient work averaged using a selectable SMA, EMA, WMA, VWMA, ALMA, linear regression, or Hull moving average.
+Calculation: Higher-timeframe signals = unaveraged efficient work on two higher timeframes, one higher than the other; independently select the last completed or still-forming bar for both.
+Calculation: Aggregate signal = weighted mean of the chart signal and available higher-timeframe signals, excluding unavailable higher-timeframe signals and their weights.
+Calculation: Main signal = selectable chart signal, either higher-timeframe signal, or aggregate signal.
+Calculation: Divergence level = main signal saved on the most recent bar where (close > open OR close = open AND close > previous close) differs from (main signal > previous main signal); use zero for an unavailable previous close.
+Calculation: Bull state = at least one selected condition is enabled AND every selected condition holds from: main signal > zero; main signal > the highest main signal over the preceding lookback; main signal > divergence level; main signal > either higher-timeframe signal; chart signal > either higher-timeframe signal; either higher-timeframe signal > zero. Apply a selectable filter of all volatility, short-term ATR > long-term ATR, or short-term ATR <= long-term ATR.
+Calculation: Bear state = at least one selected condition is enabled AND every selected condition holds from: main signal < zero; main signal < the lowest main signal over the preceding lookback; main signal < divergence level; main signal < either higher-timeframe signal; chart signal < either higher-timeframe signal; either higher-timeframe signal < zero. Apply a selectable filter of all volatility, short-term ATR > long-term ATR, or short-term ATR <= long-term ATR.
+Long: Bull state OR bull state is true AND previous bull state is false.
+Short: Bear state OR bear state is true AND previous bear state is false.
+Long: Main signal > zero OR main signal > the highest main signal over the preceding lookback OR main signal > divergence level OR main signal > either higher-timeframe signal OR chart signal > either higher-timeframe signal OR either higher-timeframe signal > zero.
+Short: Main signal < zero OR main signal < the lowest main signal over the preceding lookback OR main signal < divergence level OR main signal < either higher-timeframe signal OR chart signal < either higher-timeframe signal OR either higher-timeframe signal < zero.
+Long: Chart signal > zero OR either higher-timeframe signal > zero OR efficient work > zero.
+Short: Chart signal <= zero OR either higher-timeframe signal <= zero OR efficient work <= zero.

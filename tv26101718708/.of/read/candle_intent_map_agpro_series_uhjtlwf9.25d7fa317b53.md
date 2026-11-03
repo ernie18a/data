@@ -1,7 +1,12 @@
-Calculation: Body-to-range ratio = absolute(close - open) / (high - low)
-Calculation: Upper-wick-to-range ratio = (high - max(open, close)) / (high - low)
-Calculation: Lower-wick-to-range ratio = (min(open, close) - low) / (high - low)
-Calculation: Close position = (close - low) / (high - low)
-Calculation: Relative volume = current volume / its moving average over the volume context lookback
-Long: current bar is confirmed AND (close > open AND body-to-range ratio >= initiative body threshold AND close position > bullish initiative close threshold AND relative volume > initiative participation threshold OR lower-wick-to-range ratio >= reaction wick threshold AND close position > bullish rejection close threshold OR (current bullish raw intent AND prior intent direction was short AND relative volume > intent shift threshold AND body-to-range ratio > indecision body threshold))
-Short: current bar is confirmed AND (close < open AND body-to-range ratio >= initiative body threshold AND close position < bearish initiative close threshold AND relative volume > initiative participation threshold OR upper-wick-to-range ratio >= reaction wick threshold AND close position < bearish rejection close threshold OR (current bearish raw intent AND prior intent direction was long AND relative volume > intent shift threshold AND body-to-range ratio > indecision body threshold))
+Calculation: Candle range = max(high - low, positive range-floor parameter); body ratio = abs(close - open) / candle range; upper wick ratio = (high - max(open, close)) / candle range; lower wick ratio = (min(open, close) - low) / candle range; close position = (close - low) / candle range
+Calculation: Volume rank = clamp(volume / SMA(volume, volume lookback) × scale parameter, minimum parameter, maximum parameter), or neutral rank parameter if the SMA is not positive
+Calculation: Bullish initiative = close > open AND body ratio >= initiative threshold AND close position > upper initiative threshold AND volume rank > initiative volume threshold
+Calculation: Bearish initiative = close < open AND body ratio >= initiative threshold AND close position < lower initiative threshold AND volume rank > initiative volume threshold
+Calculation: Bullish rejection = lower wick ratio >= reaction threshold AND close position > lower-rejection close threshold
+Calculation: Bearish rejection = upper wick ratio >= reaction threshold AND close position < upper-rejection close threshold
+Calculation: Absorption = volume rank > absorption volume threshold AND body ratio <= absorption body threshold AND (upper wick ratio >= reaction threshold OR lower wick ratio >= reaction threshold)
+Calculation: Indecision = body ratio <= quiet-body threshold AND upper wick ratio > indecision wick threshold AND lower wick ratio > indecision wick threshold
+Calculation: Raw direction = 1 if bullish initiative OR bullish rejection; otherwise -1 if bearish initiative OR bearish rejection; otherwise sign(close - open)
+Calculation: Intent direction and previous intent direction start at 0. On each completed bar, evaluate intent shift as raw direction != 0 AND previous intent direction != 0 AND raw direction != previous intent direction AND volume rank > shift volume threshold AND body ratio > quiet-body threshold. If bullish initiative OR bearish initiative OR bullish rejection OR bearish rejection OR absorption OR indecision OR intent shift, first set previous intent direction to the existing intent direction if that direction != 0, then set intent direction to raw direction. Otherwise retain both directions.
+Long: intent direction > 0
+Short: intent direction < 0

@@ -1,4 +1,8 @@
-Calculation: Stochastic RSI (OMA) = Apply the selected RSI method to the selected price, optionally smoothed by the selected moving average; then calculate 100 × the sum over the slowing window of (RSI − rolling RSI minimum) divided by the sum of (rolling RSI maximum − rolling RSI minimum), using the selected stochastic lookback.
-Calculation: Upper/lower/middle levels = In fixed mode, the selected upper/lower values and their midpoint; in floating mode, rolling minimum + selected percentage × (rolling maximum − rolling minimum) for upper and lower, with their midpoint; in quantile mode, the rolling quantiles at the selected upper and lower percentages and their midpoint percentage.
-Long: Stochastic RSI (OMA) > upper level (outer-level color mode) OR Stochastic RSI (OMA) > middle level (middle-cross color mode) OR Stochastic RSI (OMA) > its previous value (slope color mode).
-Short: Stochastic RSI (OMA) < lower level (outer-level color mode) OR Stochastic RSI (OMA) < middle level (middle-cross color mode) OR Stochastic RSI (OMA) < its previous value (slope color mode).
+Calculation: Oscillator = stochastic of a selected RSI variant applied to a selected OHLC-derived price, optionally smoothed first by a simple, exponential, smoothed, or linear weighted moving average. For each bar, find the RSI minimum and maximum over the stochastic lookback; oscillator = 100 × sum(RSI − minimum) / sum(maximum − minimum) over the slowing lookback, or zero when the denominator is zero. Calculate on the chart timeframe or on the still-forming higher-timeframe bar.
+Calculation: Levels = fixed upper and lower thresholds, or rolling oscillator minimum plus the corresponding upper and lower percentages of its rolling range, or corresponding rolling oscillator quantiles. The middle level is the mean of the upper and lower levels for fixed or rolling-range levels, and the quantile at the mean of their percentages for quantile levels.
+Long: Oscillator > upper level, when using outer-level mode.
+Short: Oscillator < lower level, when using outer-level mode.
+Long: Oscillator > middle level, when using middle-level mode.
+Short: Oscillator < middle level, when using middle-level mode.
+Long: Oscillator > previous oscillator, when using slope mode.
+Short: Oscillator < previous oscillator, when using slope mode.

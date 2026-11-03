@@ -1,5 +1,5 @@
-Calculation: Price channel stop = Highest high and lowest low over a lookback; upper threshold = highest high − risk fraction × (highest high − lowest low), lower threshold = lowest low + risk fraction × (highest high − lowest low). In an uptrend, the lower threshold cannot decrease; in a downtrend, the upper threshold cannot increase. The trend turns up when close > the prior bar’s upper threshold and down when close < the prior bar’s lower threshold. The higher-timeframe variant uses the higher timeframe’s bar still forming.
-Long: Close > prior bar’s upper threshold and the trend turns up.
-Short: Close < prior bar’s lower threshold and the trend turns down.
-Exit: long, close < prior bar’s lower threshold
-Exit: short, close > prior bar’s upper threshold
+Calculation: Channel bounds = highest high and lowest low over the lookback including the current bar. Raw upper stop = highest high − risk fraction × (highest high − lowest low); raw lower stop = lowest low + risk fraction × (highest high − lowest low).
+Calculation: Channel state and stops = initialize state and previous stops to zero. On each bar, set state to long if close > previous upper stop, then set state to short if close < previous lower stop; otherwise retain the preceding state. In the long state, lower stop = max(raw lower stop, previous lower stop); otherwise lower stop = raw lower stop. In the short state, upper stop = min(raw upper stop, previous upper stop); otherwise upper stop = raw upper stop.
+Calculation: Previous stop marker = the preceding bar's active stop rounded to the configured price increment, except that it is zero on a bar with an entry signal. Apply these calculations either on the chart timeframe or on a higher timeframe using its still-forming bar; the higher-timeframe result is copied to its constituent chart bars and can change while that bar forms.
+Long: Channel state is long AND previous state is short AND previous stop marker > 0.
+Short: Channel state is short AND previous state is long AND previous stop marker > 0.

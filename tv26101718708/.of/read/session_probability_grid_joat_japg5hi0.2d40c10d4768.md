@@ -1,8 +1,15 @@
-Calculation: Opening range = highest high minus lowest low among the first configured number of bars in the active session.
-Calculation: Session range = highest high minus lowest low so far in the active session.
-Calculation: Ladder base = opening range once the configured opening-range bar count has been reached; otherwise, session range.
-Calculation: Upside ladder level n = session open + ladder base × configured step n; downside ladder level n = session open − ladder base × configured step n.
-Calculation: Historical hit probability at a ladder level = (completed prior sessions that touched the level + 1) / (completed prior sessions sampled for that level + 2); use 0.5 when there are no samples. Count each completed session as a sample, retaining up to the configured sample cap.
-Calculation: Session anomaly score = clamp((session range / ATR) / 1.75, 0, 2).
-Long: Confirmed bar in active session AND ((close > upside ladder level 4 AND previous close <= upside ladder level 4 AND historical hit probability at upside ladder level 4 >= configured continuation probability gate) OR (low <= downside ladder level 6 AND close > downside ladder level 5 AND session anomaly score > 1)).
-Short: Confirmed bar in active session AND ((close < downside ladder level 4 AND previous close >= downside ladder level 4 AND historical hit probability at downside ladder level 4 >= configured continuation probability gate) OR (high >= upside ladder level 6 AND close < upside ladder level 5 AND session anomaly score > 1)).
+Calculation: Session = bars whose timestamps fall within the configured daily session; session open is the open of its first bar, and session high and low are the highest high and lowest low so far in that session.
+Calculation: Ladder base = the session high minus session low until the configured opening-range bar count is reached; thereafter, the highest high minus the lowest low of those opening bars. Floor each range at the minimum price increment.
+Calculation: Upper and lower ladder levels = session open plus or minus ladder base multiplied by the corresponding step. Use an inner, a middle, and an outer step, respectively increasing in distance from the open.
+Calculation: Hit probability = (hits + 1) / (samples + 2), calculated separately for the upper and lower inner levels. Starting with the first completed session, count each completed session as a sample until the sample cap is reached; a hit occurs if any confirmed bar in that session reaches its then-current corresponding inner level. Do not update the counts after the cap is reached.
+Calculation: Session VWAP = cumulative sum of typical price times volume divided by cumulative volume since the start of the latest session; retain the last value outside the session.
+Long: In session AND close > upper inner level AND previous close <= current upper inner level AND upper inner-level hit probability >= probability gate.
+Short: In session AND close < lower inner level AND previous close >= current lower inner level AND lower inner-level hit probability >= probability gate.
+Short: In session AND high >= upper outer level AND close < upper middle level AND session range / ATR > anomaly threshold.
+Long: In session AND low <= lower outer level AND close > lower middle level AND session range / ATR > anomaly threshold.
+Short: In session AND close > upper inner level.
+Long: In session AND close < lower inner level AND close <= upper inner level.
+Long: No expansion or exhaustion condition is true AND close >= session VWAP.
+Short: No expansion or exhaustion condition is true AND close < session VWAP.
+Long: No expansion or exhaustion condition is true AND close > session open.
+Short: No expansion or exhaustion condition is true AND close < session open.

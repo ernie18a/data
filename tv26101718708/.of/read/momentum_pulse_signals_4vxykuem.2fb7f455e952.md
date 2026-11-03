@@ -1,8 +1,8 @@
-Calculation: Pulse = RSI recentered as (RSI − 50) / 50, blended with clipped MACD histogram normalized by twice its rolling standard deviation; use the configured RSI, MACD, normalization lookbacks, and RSI weight.
-Calculation: Pulse slope = current pulse − pulse from the configured slope lookback.
-Calculation: Long stop = signal-bar low − ATR × stop multiplier; long target = entry price + abs(entry price − long stop) × risk:reward.
-Calculation: Short stop = signal-bar high + ATR × stop multiplier; short target = entry price − abs(short stop − entry price) × risk:reward.
-Long: pulse > positive trigger AND pulse state was not bullish AND (slope filter disabled OR pulse slope > 0) AND (candle confirmation disabled OR close > open) AND signal bar is confirmed AND minimum bars since prior signal have elapsed.
-Short: pulse < negative trigger AND pulse state was not bearish AND (slope filter disabled OR pulse slope < 0) AND (candle confirmation disabled OR close < open) AND signal bar is confirmed AND minimum bars since prior signal have elapsed.
-Exit: long, high ≥ long target OR low ≤ long stop OR an eligible short signal occurs.
-Exit: short, low ≤ short target OR high ≥ short stop OR an eligible long signal occurs.
+Calculation: Pulse = w × (RSI(close) − 50) / 50 + (1 − w) × clip(MACD histogram / (2 × rolling standard deviation of the histogram), −1, 1); use 0 for the normalized histogram when its standard deviation is zero. MACD uses a shorter and a longer EMA of close and an EMA signal line.
+Calculation: Pulse state = 1 when pulse > positive trigger, −1 when pulse < negative trigger, and otherwise the previous state; initialize to 0. The negative trigger is the negative of the positive trigger. Update the state on every bar, including bars where entry filters fail.
+Calculation: Entry setup = at entry, save entry price as close and save stop as entry-bar low − ATR × stop multiplier for a long, or entry-bar high + ATR × stop multiplier for a short. Risk = absolute difference between entry price and stop. Target = entry price + risk × reward multiplier for a long, or entry price − risk × reward multiplier for a short.
+Calculation: Entry timing = evaluate exits before entries on each completed bar; do not evaluate a new position's stop or target on its entry bar. Count the minimum bars between accepted entries from the last accepted entry, initially from bar index 0.
+Long: Pulse state = 1 AND previous pulse state != 1 AND (slope filter disabled OR pulse > pulse at the slope lookback) AND (candle confirmation disabled OR close > open) AND bars since last accepted entry >= minimum AND position after exits is not long.
+Short: Pulse state = −1 AND previous pulse state != −1 AND (slope filter disabled OR pulse < pulse at the slope lookback) AND (candle confirmation disabled OR close < open) AND bars since last accepted entry >= minimum AND position after exits is not short.
+Exit: long, high >= saved target OR low <= saved stop OR accepted short entry.
+Exit: short, low <= saved target OR high >= saved stop OR accepted long entry.

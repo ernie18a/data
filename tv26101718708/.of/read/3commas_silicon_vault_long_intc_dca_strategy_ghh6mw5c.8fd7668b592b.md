@@ -1,4 +1,5 @@
-Calculation: Safety-order trigger price = base entry price × (1 − cumulative deviation), where cumulative deviation through level n is the sum of the first step multiplied by the step multiplier raised to powers 0 through n−1.
-Long: bar is confirmed AND within the configured date window AND no active deal
-Long: active deal AND another safety-order level is available AND low ≤ next safety-order trigger price
-Exit: long, RSI on the chart timeframe using the last completed bar crosses above its threshold AND close ≥ average entry price × (1 + minimum profit fraction)
+Calculation: Safety-order trigger for level n = base-entry close × (1 − initial step × sum of step coefficient^i for i from 0 through n−1), with the step expressed as a fraction.
+Calculation: Average entry = total assigned order notional divided by total assigned quantity. Assign the base order its configured notional at the base-entry close; assign safety order n its configured initial safety-order notional × volume coefficient^(n−1) at its trigger price. Update the average immediately when a safety-order condition is met.
+Long: Position side = flat AND (date restriction disabled OR bar datetime is within the configured date range).
+Long: Position side = long AND number of safety orders already triggered < maximum AND low <= trigger for the next safety-order level. Evaluate successive levels on the same bar until the next trigger is not reached or the maximum is reached, including on the base-entry bar.
+Exit: Long, close >= average entry × (1 + minimum profit fraction) AND (RSI gate disabled OR RSI crosses above its threshold). Calculate RSI on the configured timeframe, which may be higher or lower than the chart timeframe, using the previous completed bar of that timeframe; for a lower timeframe, use the value associated with the last intrabar of the chart bar. Evaluate the exit after safety orders on each bar.

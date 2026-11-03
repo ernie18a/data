@@ -1,4 +1,2 @@
-Calculation: Fast EMA = EMA(close, shorter lookback) on the signal timeframe, using its latest completed bar; the signal timeframe may be higher or lower than the chart timeframe
-Calculation: Slow EMA = EMA(close, longer lookback) on the signal timeframe, using its latest completed bar; the signal timeframe may be higher or lower than the chart timeframe
-Long: Fast EMA crosses above Slow EMA
-Short: Fast EMA crosses below Slow EMA
+Long: Shorter-period EMA of close >= longer-period EMA of close, both calculated on the same selected timeframe; use the last completed bar if that timeframe is higher than the chart timeframe, the last completed intrabar if lower, or the current bar if equal.
+Short: Shorter-period EMA of close < longer-period EMA of close, both calculated on the same selected timeframe; use the last completed bar if that timeframe is higher than the chart timeframe, the last completed intrabar if lower, or the current bar if equal.

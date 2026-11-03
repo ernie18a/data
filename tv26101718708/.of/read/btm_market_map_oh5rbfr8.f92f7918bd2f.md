@@ -1,19 +1,21 @@
-Calculation: Confirmed swing high/low = a bar whose high/low is respectively higher/lower than the configured number of bars on both sides; confirm after the right-side bars complete.
-Calculation: Higher high / lower high = confirmed swing high above / below the preceding confirmed swing high; higher low / lower low = confirmed swing low above / below the preceding confirmed swing low.
-Calculation: Bull zone = the latest higher low ± configured ATR multiple, set on a bullish BOS or on a new higher low during bullish flow with a fresh higher high; expires after the configured number of bars.
-Calculation: Bear zone = the latest lower high ± configured ATR multiple, set on a bearish BOS or on a new lower high during bearish flow with a fresh lower low; expires after the configured number of bars.
-Calculation: Equal high/low level = the higher/lower of two consecutive confirmed swing highs/lows whose difference is no greater than the configured tolerance times ATR; discard the level after a sweep or close through it.
-Long: bearish structure state AND close > latest lower high (bullish CHOCH)
-Long: bullish CHOCH state AND close > latest higher high (bullish BOS)
-Long: current bar overlaps the active bull zone AND the zone has not previously been touched
-Long: low < previous day low AND close > previous day low AND this level has not been swept today
-Long: during the configured London session, low < Asian session low AND close > Asian session low AND this level has not been swept today
-Long: during the configured New York window, low < London session low AND close > London session low AND this level has not been swept today
-Long: low < equal low level AND close > equal low level
-Short: bullish structure state AND close < latest higher low (bearish CHOCH)
-Short: bearish CHOCH state AND close < latest lower low (bearish BOS)
-Short: current bar overlaps the active bear zone AND the zone has not previously been touched
-Short: high > previous day high AND close < previous day high AND this level has not been swept today
-Short: during the configured London session, high > Asian session high AND close < Asian session high AND this level has not been swept today
-Short: during the configured New York window, high > London session high AND close < London session high AND this level has not been swept today
-Short: high > equal high level AND close < equal high level
+Calculation: Confirmed swing high/low = a pivot high/low of chart bars, confirmed after its right-side bars have elapsed; compare each newly confirmed pivot with the preceding pivot of the same kind. A higher high or higher low is strictly greater; a lower high or lower low is less than or equal. Keep the latest value of each kind, even after newer pivots of other kinds occur.
+Calculation: Structure state = initially neutral; while neutral, set bullish if a higher high and higher low exist, then set bearish if a lower low and lower high exist. In bearish state, a close above the latest lower high changes state to pending bullish; in bullish state, a close below the latest higher low changes state to pending bearish. In pending bullish, a close above the latest higher high changes state to bullish and starts bullish flow; in pending bearish, a close below the latest lower low changes state to bearish and starts bearish flow. A bullish change of character stops bearish flow; a bearish change of character stops bullish flow. A new flow stops the opposite flow. Evaluate these transitions in the stated order on each bar, allowing a change of character and break of structure on the same bar.
+Calculation: Bullish zone = latest higher low plus and minus a multiple of chart-timeframe ATR at creation; create or replace it on a bullish break of structure when a higher low exists, or when bullish flow is active and a new higher low is confirmed while the latest higher high's pivot bar is within a freshness lookback. Bearish zone = latest lower high plus and minus the same ATR multiple; create or replace it on a bearish break of structure when a lower high exists, or when bearish flow is active and a new lower high is confirmed while the latest lower low's pivot bar is within that lookback. If both creation conditions occur, the continuation zone replaces the break-of-structure zone. Expire a zone when its age exceeds the expiry lookback. A zone is untouched until its first overlapping bar, including its creation bar.
+Calculation: Equal-high level = the greater of two consecutive confirmed pivot highs when their absolute difference is at most a multiple of chart-timeframe ATR at confirmation; equal-low level = the lesser of two consecutive confirmed pivot lows under the same condition. These pivots use equal left and right lookbacks, independent of the structure pivots. Replace the corresponding level when a new qualifying pair is confirmed; clear an equal-high level after a high exceeds it and close is below it, or after close exceeds it; clear an equal-low level after a low falls below it and close is above it, or after close falls below it. Test the newly updated level on the confirmation bar.
+Calculation: Session high/low = running maximum high/minimum low from the start of the named session, retained until that session next starts. Previous-day high/low = high/low of the last completed higher-timeframe daily bar.
+Long: Shorter-period EMA of close > longer-period EMA of close, using the last completed higher-timeframe bar.
+Short: Shorter-period EMA of close < longer-period EMA of close, using the last completed higher-timeframe bar.
+Long: A newly confirmed swing high > preceding swing high OR a newly confirmed swing low > preceding swing low.
+Short: A newly confirmed swing high <= preceding swing high OR a newly confirmed swing low <= preceding swing low.
+Long: Structure state is bearish AND close > latest lower high OR structure state is pending bullish AND close > latest higher high.
+Short: Structure state is bullish AND close < latest higher low OR structure state is pending bearish AND close < latest lower low.
+Long: A bullish zone is created OR an untouched bullish zone exists AND low <= zone top AND high >= zone bottom.
+Short: A bearish zone is created OR an untouched bearish zone exists AND low <= zone top AND high >= zone bottom.
+Long: Low < previous-day low AND close > previous-day low AND no previous-day-low sweep has occurred in the current day.
+Short: High > previous-day high AND close < previous-day high AND no previous-day-high sweep has occurred in the current day.
+Long: Current bar is in the London session AND low < Asian-session low AND close > Asian-session low AND no Asian-low sweep has occurred in the current day.
+Short: Current bar is in the London session AND high > Asian-session high AND close < Asian-session high AND no Asian-high sweep has occurred in the current day.
+Long: Current bar is in the New York window AND low < London-session low AND close > London-session low AND no London-low sweep has occurred in the current day.
+Short: Current bar is in the New York window AND high > London-session high AND close < London-session high AND no London-high sweep has occurred in the current day.
+Long: Equal-low level exists AND low < equal-low level AND close > equal-low level.
+Short: Equal-high level exists AND high > equal-high level AND close < equal-high level.

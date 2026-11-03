@@ -1,9 +1,10 @@
-Calculation: Price Z-score = (close - rolling mean of close over a lookback) / rolling sample standard deviation of close over the same lookback; use 0 when the standard deviation is zero
-Calculation: Projected Z-score = current Price Z-score + momentum factor × projection bars × (current Price Z-score - previous bar's Price Z-score), clamped to [-4, 4]
-Calculation: Volume contraction = current volume < contraction threshold × simple moving average of volume over a lookback
-Calculation: Regular bullish divergence = at a confirmed pivot low of Price Z-score, close is lower and Price Z-score is higher than at a preceding Price Z-score pivot low within the allowed bar-distance range
-Calculation: Hidden bullish divergence = at a confirmed pivot low of Price Z-score, close is higher and Price Z-score is lower than at a preceding Price Z-score pivot low within the allowed bar-distance range
-Calculation: Regular bearish divergence = at a confirmed pivot high of Price Z-score, close is higher and Price Z-score is lower than at a preceding Price Z-score pivot high within the allowed bar-distance range
-Calculation: Hidden bearish divergence = at a confirmed pivot high of Price Z-score, close is lower and Price Z-score is higher than at a preceding Price Z-score pivot high within the allowed bar-distance range
-Long: Price Z-score ≤ -3 AND Volume contraction OR Price Z-score < 0 AND Projected Z-score > Price Z-score OR Regular bullish divergence OR Hidden bullish divergence
-Short: Price Z-score ≥ 3 AND Volume contraction OR Price Z-score > 0 AND Projected Z-score < Price Z-score OR Regular bearish divergence OR Hidden bearish divergence
+Calculation: Source = a configurable price series derived from the bar data, defaulting to close.
+Calculation: Z-score = (source minus its rolling mean) divided by its rolling sample standard deviation, using the current bar and up to the configured lookback of bars; ignore missing observations, require at least two observations, and return zero when the standard deviation and deviation from the mean are effectively zero; otherwise return missing when the standard deviation is effectively zero.
+Calculation: Projected Z-score = Z-score plus its change from the previous bar multiplied by a momentum factor and a projection length, clamped to symmetric upper and lower bounds; use zero for a missing previous Z-score.
+Calculation: Confirmed Z-score pivot = a Z-score high or low with equal configured numbers of bars on both sides; evaluate it on the confirmation bar, and associate it with the source value and bar index at the pivot. For equal values, the most recent extreme is the pivot.
+Long: Z-score < 0 AND projected Z-score > Z-score.
+Short: Z-score > 0 AND projected Z-score < Z-score.
+Long: Z-score <= negative extreme threshold AND (volume / volume simple moving average if that average > 0, otherwise 0) < volume contraction threshold.
+Short: Z-score >= positive extreme threshold AND (volume / volume simple moving average if that average > 0, otherwise 0) < volume contraction threshold.
+Long: A Z-score low pivot is confirmed AND, among a configured maximum number of immediately preceding low pivots, at least one is separated from it by a number of bars within the inclusive configured minimum and maximum range AND ((current pivot source < preceding pivot source AND current pivot Z-score > preceding pivot Z-score) OR (current pivot source > preceding pivot source AND current pivot Z-score < preceding pivot Z-score)).
+Short: A Z-score high pivot is confirmed AND, among a configured maximum number of immediately preceding high pivots, at least one is separated from it by a number of bars within the inclusive configured minimum and maximum range AND ((current pivot source > preceding pivot source AND current pivot Z-score < preceding pivot Z-score) OR (current pivot source < preceding pivot source AND current pivot Z-score > preceding pivot Z-score)).

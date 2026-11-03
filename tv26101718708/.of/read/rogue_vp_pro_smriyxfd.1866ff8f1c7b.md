@@ -1,2 +1,2 @@
-Long: In RTH AND volume > the simple moving average of volume over a lookback period × a threshold AND close >= previous close
-Short: In RTH AND volume > the simple moving average of volume over a lookback period × a threshold AND close < previous close
+Long: bar is within the regular trading session AND volume / SMA of volume > surge threshold AND close >= previous close
+Short: bar is within the regular trading session AND volume / SMA of volume > surge threshold AND close < previous close

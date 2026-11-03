@@ -1,8 +1,10 @@
-Calculation: Momentum score = clamp(EMA of [0.32 × clamp((RSI − 50) / 50, −1, 1) + 0.24 × clamp(CMO / 100, −1, 1) + 0.24 × clamp(ROC z-score / 2.5, −1, 1) + 0.20 × clamp(linear-regression slope of close divided by max(ATR × 0.35, 10 minimum ticks), −1, 1)], −1, 1); ROC z-score uses its deviation from its moving average divided by its standard deviation.
-Calculation: Regime score = clamp(EMA of [0.65 × momentum score + 0.35 × EMA of normalized linear-regression slope], −1, 1); the outer EMA uses a longer lookback than the inner EMA.
-Calculation: Regime state = bullish when regime score is above the bull threshold, bearish when below the bear threshold, and neutral otherwise.
-Calculation: Adaptive step = max(ATR, 0.75 × standard deviation of close) × mapping base × (1 + |momentum score| × momentum expansion weight) × (1 + |regime score| × regime expansion weight), floored at 10 minimum ticks.
-Calculation: Mapped center = EMA of close + regime score × adaptive step × center shift multiplier.
-Calculation: Inner and outer bands = mapped center ± adaptive step × their respective band multipliers; the outer multiplier is greater than the inner multiplier.
-Long: regime state becomes bullish OR (previous close < previous lower outer band AND close >= lower outer band AND close <= lower inner band)
-Short: regime state becomes bearish OR (previous close > previous upper outer band AND close <= upper outer band AND close >= upper inner band)
+Calculation: Momentum score = clamp(EMA(0.32 × clamp((RSI(close) − 50) / 50, −1, 1) + 0.24 × clamp(CMO(close) / 100, −1, 1) + 0.24 × clamp(ROC z-score / 2.5, −1, 1) + 0.20 × slope component, momentum smoothing length), −1, 1). ROC z-score = (ROC(close) − SMA(ROC(close))) / standard deviation of ROC(close), using the same lookback for the SMA and standard deviation; division by zero returns zero. Slope component = clamp(linear regression slope of close / max(0.35 × ATR, minimum price increment × 10), −1, 1), with division by zero returning zero.
+Calculation: Regime score = clamp(EMA(0.65 × momentum score + 0.35 × EMA(slope component, momentum smoothing length), longer regime smoothing length), −1, 1).
+Long: Momentum score > 0.
+Short: Momentum score < 0.
+Long: Regime score > 0.
+Short: Regime score < 0.
+Long: Regime score > bullish threshold.
+Short: Regime score < bearish threshold.
+Long: Regime score on the last completed bar of any of three higher timeframes > bullish threshold.
+Short: Regime score on the last completed bar of any of three higher timeframes < bearish threshold.

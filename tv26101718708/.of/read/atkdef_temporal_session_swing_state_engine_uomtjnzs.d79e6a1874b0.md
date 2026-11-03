@@ -1,4 +1,13 @@
-Long: The current bar is a confirmed pivot low: its low is lower than the lows of the configured number of bars on both sides; recognize it after the configured right-side bars complete.
-Long: During the Asia (00:00–09:00), London (07:00–16:00), or New York (12:00–21:00) session in exchange time, close > that session’s running high through the preceding bar; no earlier bull break has been marked for that session on the exchange day.
-Short: The current bar is a confirmed pivot high: its high is higher than the highs of the configured number of bars on both sides; recognize it after the configured right-side bars complete.
-Short: During the Asia (00:00–09:00), London (07:00–16:00), or New York (12:00–21:00) session in exchange time, close < that session’s running low through the preceding bar; no earlier bear break has been marked for that session on the exchange day.
+Calculation: Range position = (price - low) / (high - low), undefined when high equals low. For each structural timeframe, use the high and low of its last completed bar; each structural timeframe may be higher or lower than the chart timeframe.
+Calculation: Average range position = average of the defined range positions of the current chart close across the structural timeframes.
+Calculation: Up count = number of structural timeframes whose range position is above the upper bias threshold; down count = number whose range position is below the lower bias threshold. The upper threshold is greater than the lower threshold.
+Calculation: Session open and session close = the open of the first chart bar and the close of the latest chart bar in a session, reset at each trading-day boundary. Evaluate each session independently, including overlapping sessions.
+Calculation: Prior session high and low = the highest high and lowest low of earlier chart bars in the same session and trading day, excluding the current bar.
+Long: Current bar is in a session AND a prior session bar exists AND close > prior session high AND no earlier bullish break has occurred in that session during the current trading day.
+Short: Current bar is in a session AND a prior session bar exists AND close < prior session low AND no earlier bearish break has occurred in that session during the current trading day.
+Long: A session has at least one bar AND session close > session open AND, for any structural timeframe used for session swings, its last completed high differs from its low AND (the session close's range position is at or above the upper swing threshold OR absolute value of (session close - session open) / session open is at or above the session-change threshold).
+Short: A session has at least one bar AND session close < session open AND, for any structural timeframe used for session swings, its last completed high differs from its low AND (the session close's range position is at or below the lower swing threshold OR absolute value of (session close - session open) / session open is at or above the session-change threshold).
+Long: Up count > down count.
+Short: Down count > up count.
+Long: Average range position > upper behavior threshold AND volume / SMA of chart-bar volume < volume-ratio threshold AND SMA of chart-bar ATR is nonzero.
+Short: Average range position < lower behavior threshold AND volume / SMA of chart-bar volume < volume-ratio threshold AND SMA of chart-bar ATR is nonzero.

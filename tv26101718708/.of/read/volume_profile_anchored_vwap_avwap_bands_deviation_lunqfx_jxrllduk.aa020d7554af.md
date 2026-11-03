@@ -1,3 +1,10 @@
-Calculation: Anchored VWAP = cumulative volume-weighted average of (high + low + close) / 3 since the current anchor; reset at each confirmed swing pivot after the minimum leg length, at the maximum leg length, or at the selected calendar-period start
-Long: close > Anchored VWAP
-Short: close <= Anchored VWAP
+Calculation: Anchor = initially the first chart bar; in swing mode, move to a newly confirmed pivot high or low if its pivot bar is at least the minimum leg length after the current anchor; otherwise, if the current leg exceeds the maximum length, move to the current bar. In calendar mode, move to the first bar of each selected session, week, or month.
+Calculation: Anchored VWAP = cumulative sum of HLC3 × volume divided by cumulative volume from the anchor through the current bar; when the anchor changes, rebuild from the anchor through the current bar, limited to the maximum leg length. Treat missing volume as zero.
+Calculation: Deviation = the greater of the volume-weighted standard deviation of HLC3 over the anchored VWAP calculation and ATR multiplied by a minimum-width factor.
+Calculation: Historical band touch = within the current leg, the bar's high is at or above its reconstructed anchored VWAP plus the selected deviation multiplier times its reconstructed deviation, or its low is at or below the corresponding lower band. Reconstruct the leg using at most the maximum leg length, and floor every reconstructed deviation by the current bar's ATR multiplied by the minimum-width factor. A touch is eligible after the reaction window has elapsed, when the reconstructed leg length exceeds the warm-up length plus the reaction window plus a fixed buffer; exclude the warm-up bars and the first reconstructed bar.
+Long: Close > anchored VWAP.
+Long: Close < anchored VWAP AND absolute difference between close and anchored VWAP >= the middle band multiplier × deviation.
+Long: An eligible historical lower-band touch occurred AND the preceding bar did not touch the lower band.
+Short: Close <= anchored VWAP, using close as the anchored VWAP when anchored VWAP is unavailable.
+Short: Close > anchored VWAP AND close minus anchored VWAP >= the middle band multiplier × deviation.
+Short: An eligible historical upper-band touch occurred AND the preceding bar did not touch the upper band.

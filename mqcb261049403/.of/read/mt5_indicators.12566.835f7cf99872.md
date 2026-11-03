@@ -1,5 +1,6 @@
-Calculation: Bar midpoint = (high + low) / 2
-Calculation: Lead = 2 × current bar midpoint + (Alpha1 − 2) × previous bar midpoint + (1 − Alpha1) × previous Lead
-Calculation: EMA = equal-weight average of current bar midpoint and previous EMA
-Long: On the selected higher timeframe’s still-forming bar, previous EMA > previous Lead AND current EMA < current Lead
-Short: On the selected higher timeframe’s still-forming bar, previous EMA < previous Lead AND current EMA > current Lead
+Calculation: Midpoint = (high + low) / 2.
+Calculation: Leading line = 2 × current midpoint + (coefficient − 2) × previous midpoint + (1 − coefficient) × previous leading line; initialize it to the midpoint.
+Calculation: Midpoint average = (current midpoint + previous midpoint average) / 2; initialize it to the midpoint.
+Calculation: Higher-timeframe trend = direction of the most recent strict crossover of the leading line and midpoint average, calculated on higher-timeframe bars including the bar still forming; retain that direction until the next strict crossover.
+Long: Chart-timeframe midpoint average was greater than the leading line on the previous bar AND is less than the leading line on the current bar, OR higher-timeframe trend is up.
+Short: Chart-timeframe midpoint average was less than the leading line on the previous bar AND is greater than the leading line on the current bar, OR higher-timeframe trend is down.

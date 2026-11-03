@@ -1,7 +1,5 @@
-Calculation: Raw lower stop = highest high over the ATR lookback minus the ATR multiplier times ATR; ratchet it upward while trend is up by taking the greater of the raw lower stop and the prior lower stop.
-Calculation: Raw upper stop = lowest low over the ATR lookback plus the ATR multiplier times ATR; ratchet it downward while trend is down by taking the lesser of the raw upper stop and the prior upper stop.
-Calculation: Chandelier trend = up when close is above the prior upper stop, down when close is below the prior lower stop, otherwise retain the prior trend.
-Long: Chandelier trend changes from down to up
-Short: Chandelier trend changes from up to down
-Long: On a configured timeframe higher or lower than the chart timeframe, the last completed bar has an active lower stop
-Short: On a configured timeframe higher or lower than the chart timeframe, the last completed bar has an active upper stop
+Calculation: Chandelier state and stops = On each bar, calculate the highest high and lowest low over the ATR lookback including the current bar, and ATR over the same lookback. Set the candidate lower stop to highest high minus a multiplier times ATR, and the candidate upper stop to lowest low plus the same multiplier times ATR. Starting with a neutral state on the first bar with ATR available, compare the close with the previous bar's stored stops; on the first bar use the current candidates as the previous stops. Set the state to long if close is above the previous upper stop; then set it to short if close is below the previous lower stop, overriding the first comparison. Otherwise retain the previous state. In the long state, store the lower stop as the maximum of its candidate and its previous value; in the short state, store the upper stop as the minimum of its candidate and its previous value. Store the other stop as its candidate.
+Long: Previous Chandelier state is short AND current Chandelier state is long AND current lower stop is not zero.
+Short: Previous Chandelier state is long AND current Chandelier state is short AND current upper stop is not zero.
+Long: Chandelier state is long AND lower stop is not zero on the last completed bar of a selected higher, lower, or equal timeframe.
+Short: Chandelier state is short AND upper stop is not zero on the last completed bar of a selected higher, lower, or equal timeframe.

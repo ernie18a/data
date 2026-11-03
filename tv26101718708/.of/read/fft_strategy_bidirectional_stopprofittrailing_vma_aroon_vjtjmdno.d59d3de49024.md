@@ -1,23 +1,21 @@
-Calculation: Filtered FFT signal = inverse discrete Fourier transform of the chart-timeframe source series, retaining only the selected frequency band in a moving window
-Long: Filtered FFT signal > 0 AND prior bar's filtered FFT signal ≤ 0 AND (VMA filter disabled OR selected VMA trend color is allowed for long) AND long entries enabled
-Short: Filtered FFT signal < 0 AND prior bar's filtered FFT signal ≥ 0 AND (VMA filter disabled OR selected VMA trend color is allowed for short) AND short entries enabled
-Exit: Short, filtered FFT signal > 0 AND prior bar's filtered FFT signal ≤ 0 AND long entries disabled
-Exit: Long, filtered FFT signal < 0 AND prior bar's filtered FFT signal ≥ 0 AND short entries disabled
-Exit: Long, VMA stop enabled AND long position enabled AND VMA trend color matches the selected long cancel color
-Exit: Short, VMA stop enabled AND short position enabled AND VMA trend color matches the selected short cancel color
-Calculation: Aroon Up = 100 × (lookback length − bars since the highest high in the lookback) ÷ lookback length
-Calculation: Aroon Down = 100 × (lookback length − bars since the lowest low in the lookback) ÷ lookback length
-Exit: Long, long position enabled AND long Aroon filter enabled AND Aroon Up < long upper threshold AND Aroon Down > long lower threshold
-Exit: Short, short position enabled AND short Aroon filter enabled AND Aroon Up > short upper threshold AND Aroon Down < short lower threshold
-Exit: Long, stop loss enabled AND low ≤ entry price × (1 − long stop-loss fraction)
-Exit: Short, stop loss enabled AND high ≥ entry price × (1 + short stop-loss fraction)
-Exit: Long, take profit enabled AND high ≥ entry price × (1 + long take-profit fraction)
-Exit: Short, take profit enabled AND low ≤ entry price × (1 − short take-profit fraction)
-Calculation: Long trailing stop = greatest value of the current close × (1 − long trailing-stop fraction) and the prior long trailing stop while long; reset to zero when flat
-Calculation: Short trailing stop = least value of the current close × (1 + short trailing-stop fraction) and the prior short trailing stop while short; reset to a value above market when flat
-Exit: Long, trailing stop enabled AND close ≤ long trailing stop AND close > entry price
-Exit: Short, trailing stop enabled AND close ≥ short trailing stop AND close < entry price
-Calculation: Long trailing take-profit stop = greatest value of the current close × (1 − long trailing fraction) and the prior long trailing take-profit stop while long; reset to zero when flat
-Calculation: Short trailing take-profit stop = least value of the current close × (1 + short trailing fraction) and the prior short trailing take-profit stop while short; reset to a value above market when flat
-Exit: Long, trailing take-profit enabled AND trailing take-profit activated when close > entry price × (1 + minimum long profit fraction) AND close ≤ long trailing take-profit stop
-Exit: Short, trailing take-profit enabled AND trailing take-profit activated when close < entry price × (1 − minimum short profit fraction) AND close ≥ short trailing take-profit stop
+Calculation: Filtered Fourier signal = For each chart bar, take the source values in reverse chronological order over the largest available power-of-two window up to the configured length; optionally standardize them by subtracting their mean and dividing by their standard deviation. Compute the discrete Fourier transform, retain only the configured inclusive range of frequency indices and their negative-frequency counterparts, set the other coefficients to zero, and take the first real value of the inverse transform. The signal is available only when moving-window filtering is enabled and the bar is within the optional configured datetime bounds.
+Calculation: Variable moving average = For source x and length L, let k = 1/L. Recursively smooth max(x − previous x, 0) and max(previous x − x, 0) with smoothing factor k, initializing previous smoothed values to zero. Divide each smoothed value by their sum and smooth each ratio again with factor k. Smooth the absolute difference of these two ratios divided by their sum with factor k. Normalize that result within its rolling L-bar minimum and maximum to obtain v. Recursively calculate the average as (1 − k × v) × previous average + k × v × x, initializing the previous average to zero. Its state is rising, falling, or unchanged according to its comparison with its previous value. Calculate this on the configured timeframe: for a higher timeframe use the last completed bar; for a lower timeframe use the bar preceding the last available lower-timeframe bar mapped to the chart bar; for the chart timeframe use the preceding bar.
+Calculation: Aroon up and down = 100 × (L − bars since the highest high or lowest low, respectively, over the latest L + 1 bars) / L. Use independently configurable lengths for long and short positions.
+Calculation: Long trailing level = The maximum of close × (1 − configured trailing fraction) over the current long position, initialized to zero before entry. Calculate separate levels for trailing stop loss and trailing take profit.
+Calculation: Short trailing level = The minimum of close × (1 + configured trailing fraction) over the current short position, initialized to 999999 before entry. Calculate separate levels for trailing stop loss and trailing take profit.
+Long: Filtered Fourier signal crosses above zero AND the optional long-entry variable moving average filter is disabled OR filtered Fourier signal crosses above zero AND the variable moving average state belongs to the configured allowed long-entry states.
+Short: Filtered Fourier signal crosses below zero AND the optional short-entry variable moving average filter is disabled OR filtered Fourier signal crosses below zero AND the variable moving average state belongs to the configured allowed short-entry states.
+Exit: short, filtered Fourier signal crosses above zero AND the long-entry variable moving average filter is disabled or passes AND long entries are disabled.
+Exit: long, filtered Fourier signal crosses below zero AND the short-entry variable moving average filter is disabled or passes AND short entries are disabled.
+Exit: long, variable moving average stop is enabled AND long entries are enabled AND the variable moving average state belongs to the configured long-exit states.
+Exit: short, variable moving average stop is enabled AND short entries are enabled AND the variable moving average state belongs to the configured short-exit states.
+Exit: long, long Aroon exit is enabled AND long entries are enabled AND long Aroon up is below its configured upper threshold AND long Aroon down is above its configured lower threshold.
+Exit: short, short Aroon exit is enabled AND short entries are enabled AND short Aroon up is above its configured upper threshold AND short Aroon down is below its configured lower threshold.
+Exit: long, long stop loss is enabled AND price reaches entry price × (1 − long stop-loss fraction).
+Exit: long, long take profit is enabled AND price reaches entry price × (1 + long take-profit fraction).
+Exit: short, short stop loss is enabled AND price reaches entry price × (1 + short stop-loss fraction).
+Exit: short, short take profit is enabled AND price reaches entry price × (1 − short take-profit fraction).
+Exit: long, long trailing stop loss is enabled AND close is at or below the long trailing stop-loss level AND close is above entry price.
+Exit: short, short trailing stop loss is enabled AND close is at or above the short trailing stop-loss level AND close is below entry price.
+Exit: long, long trailing take profit is enabled AND close has exceeded entry price × (1 + long activation fraction) since the position opened AND close is at or below the long trailing take-profit level.
+Exit: short, short trailing take profit is enabled AND close has fallen below entry price × (1 − short activation fraction) since the position opened AND close is at or above the short trailing take-profit level.

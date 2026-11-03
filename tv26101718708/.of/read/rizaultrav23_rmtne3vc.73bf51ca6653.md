@@ -1,8 +1,12 @@
-Calculation: MTF1 and MTF2 short/long SMAs = simple moving averages of close on their respective higher timeframes, using the bar still forming; each short lookback is shorter than its long lookback.
-Calculation: WaveTrend 1 = EMA(((HLC3 − EMA(HLC3, channel length)) / (0.015 × EMA(abs(HLC3 − EMA(HLC3, channel length)), channel length))), average length), calculated on a higher timeframe using the bar still forming.
-Calculation: Long stop = entry price × (1 − initial risk percentage) until high > entry price × (1 + activation percentage); after activation, carry forward the greater of the previous long stop and high × (1 − trailing percentage).
-Calculation: Short stop = entry price × (1 + initial risk percentage) until low < entry price × (1 − activation percentage); after activation, carry forward the lesser of the previous short stop and low × (1 + trailing percentage).
-Long: ((MTF1 short SMA > MTF1 long SMA AND previous chart bar MTF1 short SMA ≤ MTF1 long SMA AND MTF2 short SMA > MTF2 long SMA) OR (MTF1 short SMA > MTF1 long SMA AND MTF2 short SMA > MTF2 long SMA AND previous chart bar MTF2 short SMA ≤ MTF2 long SMA)) AND WaveTrend 1 > 0
-Short: ((MTF1 short SMA < MTF1 long SMA AND previous chart bar MTF1 short SMA ≥ MTF1 long SMA AND MTF2 short SMA < MTF2 long SMA) OR (MTF1 short SMA < MTF1 long SMA AND MTF2 short SMA < MTF2 long SMA AND previous chart bar MTF2 short SMA ≥ MTF2 long SMA)) AND WaveTrend 1 < 0
-Exit: Long, short condition OR low < previous chart bar long stop
-Exit: Short, long condition OR high > previous chart bar short stop
+Calculation: Higher-timeframe values = on historical bars, the final value of the higher-timeframe bar is available from its first chart bar; on the current real-time bar, use the still-forming higher-timeframe bar.
+Calculation: WaveTrend = EMA of ((typical price - EMA of typical price) / (0.015 × EMA of the absolute difference between typical price and its EMA)); the two inner EMAs use the same channel length, and the outer EMA uses a separate average length. Use higher-timeframe values.
+Calculation: Long stop = entry price × (1 - initial stop percentage) until a bar's high exceeds entry price × (1 + activation percentage); from that bar onward, the stop is the maximum of its preceding value and the current high × (1 - trailing percentage). Initialize at the fixed stop on entry.
+Calculation: Short stop = entry price × (1 + initial stop percentage) until a bar's low falls below entry price × (1 - activation percentage); from that bar onward, the stop is the minimum of its preceding value and the current low × (1 + trailing percentage). Initialize at the fixed stop on entry.
+Long: For either higher timeframe, its shorter-period close SMA > its longer-period close SMA.
+Short: For either higher timeframe, its shorter-period close SMA <= its longer-period close SMA.
+Long: Higher-timeframe WaveTrend > 0.
+Short: Higher-timeframe WaveTrend <= 0.
+Long: Both higher-timeframe shorter-period close SMAs > their respective longer-period close SMAs AND at least one of those comparisons was false on the previous chart bar AND (WaveTrend confirmation is disabled OR higher-timeframe WaveTrend > 0).
+Short: Both higher-timeframe shorter-period close SMAs < their respective longer-period close SMAs AND at least one of those comparisons was false on the previous chart bar AND (WaveTrend confirmation is disabled OR higher-timeframe WaveTrend < 0).
+Exit: long, current low < previous chart bar's long stop OR the filtered short signal occurs.
+Exit: short, current high > previous chart bar's short stop OR the filtered long signal occurs.

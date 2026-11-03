@@ -1,5 +1,8 @@
-Calculation: Daily moving averages = simple moving averages with short-, medium-, and long-term lookbacks, using the current daily bar, including while it is still forming; daily bars are higher or lower than the chart timeframe depending on the chart timeframe
-Calculation: 52-week range position = (daily close - lowest daily low in the lookback) / (highest daily high in the lookback - lowest daily low in the lookback)
-Calculation: 1-, 3-, 6-, and 12-month returns = daily close / daily close at the corresponding lookback - 1
-Long: 52-week range position > midpoint OR any of the 1-, 3-, 6-, or 12-month returns > 0 OR daily close > the medium- and long-term moving averages
-Short: 52-week range position < midpoint OR daily close < the highest daily high in the 52-week lookback OR any of the 1-, 3-, 6-, or 12-month returns < 0 OR daily close > the medium-term moving average AND daily close <= the long-term moving average OR daily close <= the medium- and long-term moving averages
+Long: The close of the daily bar is above the midpoint of its rolling highest high and lowest low.
+Short: The close of the daily bar is below the midpoint of its rolling highest high and lowest low.
+Short: The close of the daily bar is below its rolling highest high.
+Long: The close of the daily bar is above the close at any one of four distinct lookbacks, ordered from shortest to longest.
+Short: The close of the daily bar is below the close at any one of four distinct lookbacks, ordered from shortest to longest.
+Long: The close of the daily bar is above each of its short-term, medium-term, and long-term simple moving averages.
+Short: The close of the daily bar is at or below both its medium-term and long-term simple moving averages.
+Calculation: Daily bar = a bar at a timeframe that may be higher than, lower than, or equal to the chart timeframe; for a higher timeframe use the last completed bar historically and the bar still forming in real time, and for a lower timeframe use the last available intrabar.

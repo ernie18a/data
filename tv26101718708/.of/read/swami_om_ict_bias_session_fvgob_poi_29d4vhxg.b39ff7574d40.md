@@ -1,15 +1,15 @@
-Calculation: Weekly bias = bullish if the current, still-forming weekly bar's high is above the previous completed weekly high and its low is at least the previous weekly low; bearish if its high is at most the previous weekly high and its low is below the previous weekly low; otherwise bullish if its current close is above the midpoint of the previous weekly high and low, bearish otherwise
-Calculation: Daily bias = bullish if the current, still-forming daily bar's high is above the previous completed daily high and its low is at least the previous daily low; bearish if its high is at most the previous daily high and its low is below the previous daily low; otherwise bullish if its current close is above the midpoint of the previous daily high and low, bearish otherwise
-Calculation: ICT bias = Weekly bias if non-neutral; otherwise Daily bias
-Calculation: Two-days-prior high/low = high/low of the daily bar two completed bars before the current daily bar
-Calculation: TTrades bias = bullish if yesterday's close is above the two-days-prior high; bearish if below the two-days-prior low; otherwise, if yesterday swept both levels, bearish if yesterday's high-to-close distance is less than its close-to-low distance, bullish if greater; otherwise bearish if only yesterday's high swept its corresponding level, bullish if only its low swept; neutral otherwise
-Calculation: Final bias = ICT bias if non-neutral; otherwise TTrades bias
-Calculation: Average candle body = moving average of absolute close-minus-open over a lookback
-Long: Final bias is bullish
-Long: TTrades bias is bullish
-Long: Current daily close <= midpoint of current daily high and low
-Long: Current close > current open AND current candle body > average candle body multiplied by a factor AND current low > high two chart bars ago AND Final bias is bullish AND current bar is in a configured session
-Short: Final bias is bearish
-Short: TTrades bias is bearish
-Short: Current daily close > midpoint of current daily high and low
-Short: Current close < current open AND current candle body > average candle body multiplied by a factor AND current high < low two chart bars ago AND Final bias is bearish AND current bar is in a configured session
+Calculation: Higher-timeframe bias = for a specified higher timeframe, +1 if the current bar's high > the previous bar's high AND its low >= the previous bar's low; otherwise -1 if the current high <= the previous high AND the current low < the previous low; otherwise +1 if the current close > the midpoint of the previous high and low, else -1. Use the bar still forming and the last completed bar; the source uses lookahead, so historical current-bar values are the completed higher-timeframe bar's final values.
+Calculation: Sweep bias = using the last completed bar and the bar before it on the shorter higher timeframe, +1 if the last completed close > the earlier high; else -1 if the last completed close < the earlier low; else, if the last completed high >= the earlier high AND its low <= the earlier low, -1 if high - close < close - low, +1 if close - low < high - close, otherwise 0; else -1 if high >= the earlier high AND low > the earlier low; else +1 if low <= the earlier low AND high < the earlier high; else 0.
+Calculation: Final bias = the longer higher-timeframe bias if nonzero; otherwise the shorter higher-timeframe bias if nonzero; otherwise sweep bias.
+Long: Longer higher-timeframe bias = +1.
+Short: Longer higher-timeframe bias = -1.
+Long: Shorter higher-timeframe bias = +1.
+Short: Shorter higher-timeframe bias = -1.
+Long: Sweep bias = +1.
+Short: Sweep bias = -1.
+Long: Final bias = +1.
+Short: Final bias = -1.
+Long: The still-forming shorter higher-timeframe close <= the midpoint of its high and low. Historical values use the completed higher-timeframe bar's final values via lookahead.
+Short: The still-forming shorter higher-timeframe close > the midpoint of its high and low. Historical values use the completed higher-timeframe bar's final values via lookahead.
+Long: Current bar time is within a configured session AND final bias = +1 AND close > open AND absolute body size > a multiple of the simple moving average of absolute body size, including the current bar AND low > the high two chart bars ago.
+Short: Current bar time is within a configured session AND final bias = -1 AND close < open AND absolute body size > a multiple of the simple moving average of absolute body size, including the current bar AND high < the low two chart bars ago.

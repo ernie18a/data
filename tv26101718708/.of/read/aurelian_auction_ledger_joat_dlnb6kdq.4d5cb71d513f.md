@@ -1,10 +1,14 @@
-Calculation: Scan high/low = highest high and lowest low over the ledger-build lookback, including the current bar.
-Calculation: Scan span in ATR = (scan high − scan low) / ATR.
-Calculation: Scan body efficiency = average of |close − open| / max(high − low, minimum price increment) over the ledger-build lookback.
-Calculation: Directional imbalance = absolute value of the sum of +1 for up bars, −1 for down bars, and 0 for unchanged bars, divided by the ledger-build lookback.
-Calculation: Tight scan = scan span in ATR ≤ compression ceiling AND scan body efficiency ≤ body-efficiency ceiling AND directional imbalance ≤ directional-balance ceiling.
-Calculation: Active ledger = becomes active on a confirmed bar after tight scan has held for at least max(4 bars, 35% of the ledger-build lookback rounded up); its high and low are the scan high and low on activation. It remains active until a confirmed close is above its high plus the ATR breakout buffer or below its low minus the ATR breakout buffer.
-Calculation: Build upper/lower levels = scan low + 75%/25% of (scan high − scan low).
-Calculation: Build readiness = clamp(55% × scan compression + 30% × (100 − 100 × directional imbalance) + 15% × (100 − 100 × prior-bar body efficiency), 0, 100), where scan compression = 100 − clamp(100 × scan span in ATR / compression ceiling, 0, 100).
-Long: Confirmed bar AND ((active ledger AND close > ledger high + ATR × breakout buffer) OR (active ledger AND low < ledger low AND close > ledger low) OR (ledger inactive AND scan data available AND build readiness ≥ 18 AND prior close ≤ prior build upper level AND close > build upper level)).
-Short: Confirmed bar AND ((active ledger AND close < ledger low − ATR × breakout buffer) OR (active ledger AND high > ledger high AND close < ledger high) OR (ledger inactive AND scan data available AND build readiness ≥ 18 AND prior close ≥ prior build lower level AND close < build lower level)).
+Calculation: Scan high and scan low = highest high and lowest low over the same build lookback, including the current bar.
+Calculation: Body efficiency = average over the build lookback of abs(close − open) / max(high − low, minimum price increment).
+Calculation: Directional bias = average over the build lookback of +1 for close > open, −1 for close < open, and 0 otherwise.
+Calculation: Compression = 100 − clamp(100 × (scan high − scan low) / max(ATR, minimum price increment) / compression ceiling, 0, 100).
+Calculation: Build readiness = clamp(compression weight × current compression + balance weight × (100 − 100 × abs(current directional bias)) + body weight × (100 − 100 × previous-bar body efficiency), 0, 100); use 0 for unavailable previous-bar body efficiency.
+Calculation: Tight scan = scan high and scan low and ATR are available AND (scan high − scan low) / max(ATR, minimum price increment) ≤ compression ceiling AND body efficiency ≤ body-efficiency ceiling AND abs(directional bias) ≤ directional-balance ceiling.
+Calculation: Active ledger = initially inactive; while inactive, count consecutive confirmed bars with tight scans, resetting the count to zero on any other bar. Activate when the count reaches the required consecutive-bar threshold, derived from the build lookback and a minimum threshold. At activation, fix ledger high and ledger low to the current scan high and scan low. Starting on the next bar, deactivate and reset the count when close > ledger high + ATR × breakout buffer OR close < ledger low − ATR × breakout buffer; otherwise remain active.
+Calculation: Developing map = ledger inactive AND scan high and scan low and ATR available AND build readiness ≥ readiness threshold. Its upper and lower levels are scan low plus an upper and a lower fraction, respectively, of the scan high − scan low range; the upper fraction is greater than the lower fraction. Levels are unavailable when the developing map is inactive.
+Long: Ledger active before the current confirmed bar AND close > ledger high + ATR × breakout buffer.
+Short: Ledger active before the current confirmed bar AND close < ledger low − ATR × breakout buffer.
+Long: Ledger active before the current confirmed bar AND close ≤ ledger high + ATR × breakout buffer AND close ≥ ledger low − ATR × breakout buffer AND low < ledger low AND close > ledger low.
+Short: Ledger active before the current confirmed bar AND close ≤ ledger high + ATR × breakout buffer AND close ≥ ledger low − ATR × breakout buffer AND high > ledger high AND close < ledger high.
+Long: Current and previous developing-map upper levels are available AND current close > current upper level AND previous close ≤ previous upper level.
+Short: Current and previous developing-map lower levels are available AND current close < current lower level AND previous close ≥ previous lower level.

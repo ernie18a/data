@@ -1,7 +1,8 @@
-Calculation: Smoothed moving average = SMMA of median price on each of three higher timeframes, using completed bars; each timeframe uses its own averaging period and horizontal shift.
-Calculation: First timeframe score = round(10000 × [w1 × (MA[1]−MA[2])/MA[1] + w2 × (MA[2]−MA[3])/MA[3] + w3 × (MA[3]−MA[4])/MA[4]]), using the last four completed bars.
-Calculation: Second and third timeframe scores = round(10000 × [w1 × (MA[1]−MA[2])/MA[2] + w2 × (MA[2]−MA[3])/MA[3] + w3 × (MA[3]−MA[4])/MA[4]]), using the last four completed bars; each score uses its own weights.
-Long: First timeframe score > 0 AND second timeframe score > 0 AND third timeframe score > 0
-Short: First timeframe score > 0 AND second timeframe score < 0 AND third timeframe score < 0
-Exit: long, current price <= stop loss OR current price >= take profit
-Exit: short, current price >= stop loss OR current price <= take profit
+Calculation: Moving averages = three independently parameterized smoothed moving averages of median price, each with a horizontal shift, on successively longer timeframes; each timeframe may be lower than, equal to, or higher than the chart timeframe. At each new chart bar, use the indicator buffer values at the last completed bar and the three preceding bars of each respective timeframe.
+Calculation: Scores = for each moving average, let M1, M2, M3, and M4 be its buffer values from newest to oldest. The shortest-timeframe score is round(scale × (w1 × (M1 − M2) / M1 + w2 × (M2 − M3) / M3 + w3 × (M3 − M4) / M4)). Each of the other two scores is round(scale × (w1 × (M1 − M2) / M2 + w2 × (M2 − M3) / M3 + w3 × (M3 − M4) / M4)); weights are independently parameterized for each score.
+Calculation: Long stop = entry price minus the stop-loss distance when enabled; at each new chart bar, if trailing is enabled AND open − entry price > trailing distance + trailing step AND current stop < open − trailing distance − trailing step, replace the stop with open − trailing distance. If the initial stop is disabled, treat its value as zero for this update condition.
+Calculation: Short stop = entry price plus the stop-loss distance when enabled; at each new chart bar, if trailing is enabled AND entry price − open > trailing distance + trailing step AND (current stop > open + trailing distance + trailing step OR no stop exists), replace the stop with open + trailing distance.
+Long: At a new chart bar, shortest-timeframe score > 0 AND middle-timeframe score > 0 AND longest-timeframe score > 0.
+Short: At a new chart bar, shortest-timeframe score > 0 AND middle-timeframe score < 0 AND longest-timeframe score < 0.
+Exit: long, low <= long stop when a stop exists OR take profit is enabled AND high >= entry price + take-profit distance.
+Exit: short, high >= short stop when a stop exists OR take profit is enabled AND low <= entry price − take-profit distance.

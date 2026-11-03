@@ -1,11 +1,11 @@
-Calculation: Estimated ask and bid volume per price slot = divide each lower-timeframe bar’s volume equally among the slots touched by its low-to-high range; add it to ask if that bar’s close is at least its open, otherwise to bid. If no lower-timeframe bars are available, divide chart-bar volume equally across all slots and assign it to ask if chart close is at least open, otherwise to bid. Use bars from a timeframe lower than the chart timeframe; for a completed chart bar use its available lower-timeframe bars, and for a forming chart bar use the available bars, including any still forming.
-Calculation: Slot delta = estimated ask volume minus estimated bid volume in that slot.
-Calculation: Bar delta = sum of slot deltas across the chart bar’s slots.
-Long: Slot delta > 0
-Long: Estimated ask volume in a slot >= imbalance ratio × estimated bid volume in the immediately lower slot, and that lower slot’s estimated bid volume > 0
+Calculation: Slot volumes = Divide each chart bar into a configurable number of price slots from its low, using slot width max((high - low) / number of slots, minimum price increment). For each available lower-timeframe bar within the chart bar, including the bar still forming, divide its volume equally among all slots touched by its low-to-high range; clamp the endpoint slot indices to the chart bar's slot range. Allocate the shares to estimated ask volume if its close >= open, otherwise to estimated bid volume. If no lower-timeframe bars are available, divide the chart bar's volume equally among all slots and allocate it to ask if the chart close >= open, otherwise to bid.
+Calculation: Bar delta = Sum of estimated ask volume minus estimated bid volume across all slots of the chart bar.
+Calculation: Cumulative delta = Sum of bar delta over completed chart bars from the start of the available data; exclude the current chart bar while it is still forming.
 Long: Bar delta >= 0
-Long: Bar delta > 0 AND estimated ask volume across the bar > estimated bid volume across the bar
-Short: Slot delta < 0
-Short: Estimated bid volume in a slot >= imbalance ratio × estimated ask volume in the immediately higher slot, and that higher slot’s estimated ask volume > 0
 Short: Bar delta < 0
-Short: Bar delta < 0 AND estimated bid volume across the bar > estimated ask volume across the bar
+Long: Estimated ask volume in any slot > estimated bid volume in that slot
+Short: Estimated ask volume in any slot < estimated bid volume in that slot
+Long: Estimated bid volume in the slot immediately below any slot > 0 AND estimated ask volume in that slot >= estimated bid volume in the slot immediately below multiplied by the imbalance ratio
+Short: Estimated ask volume in the slot immediately above any slot > 0 AND estimated bid volume in that slot >= estimated ask volume in the slot immediately above multiplied by the imbalance ratio
+Long: Cumulative delta >= 0
+Short: Cumulative delta < 0

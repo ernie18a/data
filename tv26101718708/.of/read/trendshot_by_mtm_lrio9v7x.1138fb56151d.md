@@ -1,12 +1,17 @@
-Calculation: POC = price bin with the greatest summed volume over a lookback window; assign each bar’s volume to the bin containing its high-low midpoint, with bins spanning the window’s lowest low to highest high.
-Calculation: Confirmed pivot high/low = a high/low greater/less than the highs/lows of the configured number of bars before and after it; mark it on the confirmation bar.
-Long: Fast EMA crosses above slow EMA AND (trade-session filter is disabled OR the chart/exchange time is within the configured trade session)
-Short: Fast EMA crosses below slow EMA AND (trade-session filter is disabled OR the chart/exchange time is within the configured trade session)
-Long: Fast EMA > slow EMA on a configured dashboard timeframe higher or lower than the chart timeframe, using that timeframe’s current bar, which may still be forming
-Short: Fast EMA < slow EMA on a configured dashboard timeframe higher or lower than the chart timeframe, using that timeframe’s current bar, which may still be forming
-Long: Chart close >= POC on a higher or lower POC timeframe, using that timeframe’s current bar, which may still be forming
-Short: Chart close < POC on a higher or lower POC timeframe, using that timeframe’s current bar, which may still be forming
-Long: Confirmed pivot low with the large-swing range threshold met OR confirmed pivot low that is not classified as a large or medium swing
-Short: Confirmed pivot high with the large-swing range threshold met OR confirmed pivot high that is not classified as a large or medium swing
-Long: Close >= a resistance level OR close > a support level
-Short: Close < a resistance level OR close <= a support level
+Calculation: Confirmed pivot high or low = a high or low that is respectively the maximum or minimum over a window of preceding and following bars, confirmed only after all following bars have closed; use equal numbers of preceding and following bars, with short, medium, and long lookbacks.
+Calculation: Resistance and support = the latest confirmed pivot high or low using a configurable preceding lookback and a shorter confirmation lookback. Accept a pivot high when its high minus the lowest low over the pivot window is at least an ATR multiple and its upper wick is at most an ATR multiple; accept a pivot low when the highest high over the pivot window minus its low is at least an ATR multiple and its lower wick is at most an ATR multiple. Evaluate ATR on the confirmation bar. Clear a level after a configurable number of bars without a new qualifying pivot. Calculate two sets using a shorter and a longer preceding lookback and the same confirmation lookback.
+Calculation: Volume point of control = divide the highest high to lowest low over a lookback into equal price bins; assign each bar's entire volume to the bin containing its high-low midpoint; return the midpoint of the bin with the greatest volume, choosing the lowest bin on ties. Require a positive price range and positive maximum bin volume.
+Long: Shorter-period EMA of close > longer-period EMA of close on the chart timeframe.
+Short: Shorter-period EMA of close <= longer-period EMA of close on the chart timeframe.
+Long: Shorter-period EMA of close > longer-period EMA of close on any configured higher or lower timeframe, using the last completed higher-timeframe bar or the last completed lower-timeframe bar within the chart bar.
+Short: Shorter-period EMA of close <= longer-period EMA of close on any configured higher or lower timeframe, using the last completed higher-timeframe bar or the last completed lower-timeframe bar within the chart bar.
+Long: Close >= volume point of control on any configured higher or lower timeframe, using the last completed higher-timeframe bar or the last completed lower-timeframe bar within the chart bar.
+Short: Close < volume point of control on any configured higher or lower timeframe, using the last completed higher-timeframe bar or the last completed lower-timeframe bar within the chart bar.
+Long: Close >= an available resistance level AND that level is unchanged from the preceding bar.
+Short: Close < an available resistance level AND that level is unchanged from the preceding bar.
+Long: Close > an available support level AND that level is unchanged from the preceding bar.
+Short: Close <= an available support level AND that level is unchanged from the preceding bar.
+Long: A short-lookback or medium-lookback pivot low is confirmed OR a long-lookback pivot low is confirmed AND the highest high minus lowest low over its pivot window is at least an ATR multiple on the confirmation bar.
+Short: A short-lookback or medium-lookback pivot high is confirmed OR a long-lookback pivot high is confirmed AND the highest high minus lowest low over its pivot window is at least an ATR multiple on the confirmation bar.
+Long: The shorter-period EMA of close crosses above the longer-period EMA of close on a completed chart bar.
+Short: The shorter-period EMA of close crosses below the longer-period EMA of close on a completed chart bar.

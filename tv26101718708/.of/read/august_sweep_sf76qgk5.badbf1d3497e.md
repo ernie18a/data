@@ -1,10 +1,12 @@
-Calculation: Confirmed pivot high/low = a high/low that is higher/lower than the configured number of bars before and after it; becomes confirmed after those later bars complete
-Calculation: Latest pivot high/low = the most recently confirmed pivot high/low
-Calculation: Sweep depth = ATR × configurable multiplier
-Calculation: Protective low/high = the latest confirmed pivot low/high within the configured maximum bar distance when the corresponding sweep occurs
-Long: low <= latest pivot low - sweep depth AND close > latest pivot low AND previous bar low >= latest pivot low AND no low sweep is active
-Long: a low sweep is active AND close > protective high
-Long: low > high two bars ago AND low - high two bars ago >= configurable minimum FVG size (ATR × configurable multiplier)
-Short: high >= latest pivot high + sweep depth AND close < latest pivot high AND previous bar high <= latest pivot high AND no high sweep is active
-Short: a high sweep is active AND close < protective low
-Short: high < low two bars ago AND low two bars ago - high >= configurable minimum FVG size (ATR × configurable multiplier)
+Calculation: Confirmed pivot high/low = a pivot high/low with equal configurable numbers of bars on either side; it becomes available only when the right-hand bars have completed. Use the latest confirmed pivot of each type, including one confirmed on the current bar.
+Calculation: High sweep = high >= latest confirmed pivot high + ATR × sweep-depth factor AND close < that pivot high AND previous high <= that same pivot high. Low sweep = low <= latest confirmed pivot low - ATR × sweep-depth factor AND close > that pivot low AND previous low >= that same pivot low.
+Calculation: Active high sweep = a chart-timeframe high sweep that occurred while no high sweep was active; store its pivot-high level, bar, and the latest confirmed pivot low whose pivot bar is within the maximum protective-pivot distance. It remains active through the configured post-sweep window unless a later close exceeds the stored sweep level or a bearish change of character is marked. Active low sweep is symmetric: store the pivot-low level, bar, and latest confirmed pivot high within the maximum protective-pivot distance; deactivate after the window, when a later close falls below the stored sweep level, or when a bullish change of character is marked. Evaluate new sweeps before expiration, invalidation, and change of character on each bar.
+Calculation: Scanner sweep ages = bars since the latest high sweep and low sweep, calculated independently without the active-sweep restriction. Calculate on the chart timeframe or on a higher or lower timeframe; for historical chart bars, use the last completed higher-timeframe bar or the last lower-timeframe bar contained in the chart bar. For a still-forming chart bar, use the still-forming higher-timeframe bar or the latest available lower-timeframe bar.
+Long: Low sweep AND no active low sweep before processing the current bar.
+Short: High sweep AND no active high sweep before processing the current bar.
+Long: Active low sweep AND stored protective pivot high exists AND close > stored protective pivot high.
+Short: Active high sweep AND stored protective pivot low exists AND close < stored protective pivot low.
+Long: Low > high two bars ago AND low - high two bars ago >= ATR × minimum gap-size factor.
+Short: High < low two bars ago AND low two bars ago - high >= ATR × minimum gap-size factor.
+Long: Scanner low-sweep age < scanner high-sweep age AND scanner low-sweep age <= freshness limit.
+Short: Scanner high-sweep age < scanner low-sweep age AND scanner high-sweep age <= freshness limit.

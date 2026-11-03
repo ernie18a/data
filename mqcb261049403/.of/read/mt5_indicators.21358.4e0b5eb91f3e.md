@@ -1,5 +1,11 @@
-Calculation: Ozymandias centerline = recursively updated trend line: start from the prior centerline; in bullish state, set it to the greater of itself and the running maximum of the lowest low over the lookback; in bearish state, set it to the lesser of itself and the running minimum of the highest high over the lookback. Switch to bearish state when the moving average of highs is below the running maximum of lows AND close is below the prior bar's low; switch to bullish state when the moving average of lows is above the running minimum of highs AND close is above the prior bar's high. The two moving averages use the same lookback.
-Calculation: Ozymandias upper band = centerline + half the 100-bar ATR
-Calculation: Ozymandias lower band = centerline - half the 100-bar ATR
-Long: close > Ozymandias upper band OR Ozymandias trend state is bullish
-Short: close < Ozymandias lower band OR Ozymandias trend state is bearish
+Calculation: Trend and center line = On each bar, calculate the moving averages of high and low and the highest high and lowest low over the same lookback. Initialize trend as up, next state as seeking up, running low as zero, running high as a large value, and the preceding center line as the preceding close. When seeking down, update the running low to the greater of itself and the lowest low; if the high moving average is below the running low AND close is below the previous low, set trend to down, switch to seeking up, and set the running high to the highest high. Then, if seeking up, update the running high to the lesser of itself and the highest high; if the low moving average is above the running high AND close is above the previous high, set trend to up, switch to seeking down, and set the running low to the lowest low. If trend changed, the center line equals its previous value; otherwise, when trend is up it is the greater of the running low and its previous value, and when trend is down it is the lesser of the running high and its previous value.
+Calculation: Channel = The center line plus or minus half the ATR; the upper level uses addition and the lower level uses subtraction. For chart-timeframe candle decisions, use the channel shifted forward by the configured number of bars.
+Calculation: Higher-timeframe trend = Apply the trend calculation to the higher-timeframe bar still forming.
+Long: The chart-timeframe trend, shifted forward by the configured number of bars, is up.
+Short: The chart-timeframe trend, shifted forward by the configured number of bars, is down.
+Long: Close is above the upper channel level.
+Short: Close is below the lower channel level.
+Long: Higher-timeframe trend is up.
+Short: Higher-timeframe trend is down.
+Long: The higher-timeframe close is above the higher-timeframe upper channel level, using the higher-timeframe bar still forming.
+Short: The higher-timeframe close is below the higher-timeframe lower channel level, using the higher-timeframe bar still forming.

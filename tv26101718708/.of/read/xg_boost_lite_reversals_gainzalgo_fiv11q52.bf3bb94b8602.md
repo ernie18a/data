@@ -1,14 +1,8 @@
-Calculation: Relative volume = volume / moving average of volume
-Calculation: Price z-score = (close − moving average of close) / standard deviation of close
-Calculation: Long classifier probability = gradient-boosted classifier output trained on RSI, relative volume, price z-score, and ADX; label is whether the next fixed forward window’s highest high exceeds entry close by more than one ATR
-Calculation: Short classifier probability = gradient-boosted classifier output trained on RSI, relative volume, price z-score, and ADX; label is whether entry close exceeds the next fixed forward window’s lowest low by more than one ATR
-Calculation: Long initial stop = signal-bar low − ATR-scaled wick buffer, adjusted so entry-to-stop distance is at least a minimum ATR-scaled risk distance
-Calculation: Short initial stop = signal-bar high + ATR-scaled wick buffer, adjusted so stop-to-entry distance is at least a minimum ATR-scaled risk distance
-Calculation: Long TP1 = entry price + initial risk distance × TP1 risk multiple
-Calculation: Short TP1 = entry price − initial risk distance × TP1 risk multiple
-Calculation: Long active stop = initial stop until TP1 is reached; then entry price
-Calculation: Short active stop = initial stop until TP1 is reached; then entry price
-Long: long classifier probability ≥ minimum signal probability AND ADX ≥ minimum ADX filter AND low < lowest prior lows over the pivot lookback AND close > low + (high − low) / 2
-Short: short classifier probability ≥ minimum signal probability AND ADX ≥ minimum ADX filter AND high > highest prior highs over the pivot lookback AND close < low + (high − low) / 2
-Exit: long, after the entry bar, low ≤ long active stop
-Exit: short, after the entry bar, high ≥ short active stop
+Calculation: Features = RSI of close, volume divided by its SMA (use 1 if unavailable), close z-score using SMA and standard deviation with a positive denominator floor, and ADX; their lookbacks are independent parameters.
+Calculation: Directional classifier = gradient-boosted classifier fitted by the imported Arbor library, whose implementation is not provided. On each retraining bar, use valid feature vectors from the training lookback ending one bar before the forward window. For each vector, the long label is whether the highest high from that feature bar through the forward window, excluding its last bar, exceeds the feature-bar close by more than a multiple of its ATR; the short label is whether the feature-bar close exceeds the corresponding lowest low by more than that multiple of ATR. Refit only when enough samples exist; otherwise retain the previous model. Exact predictions cannot be reproduced without the library implementation.
+Calculation: Initial stop = for a long, entry-bar low minus an ATR buffer, capped at entry price minus a minimum ATR-based risk; for a short, entry-bar high plus an ATR buffer, floored at entry price plus the same minimum ATR-based risk. ATR is measured on the entry bar with a positive floor.
+Calculation: First target = entry price plus the initial risk multiplied by the target parameter for a long, or entry price minus that distance for a short. On each bar after entry, check the first target before the stop; if the target is reached and break-even is enabled, set the stop to entry price immediately. A new entry signal replaces the active entry and its levels before hit checks.
+Long: low < lowest low over the preceding pivot lookback AND close > midpoint of high and low AND long classifier prediction >= probability threshold AND ADX >= threshold AND both long models exist.
+Short: high > highest high over the preceding pivot lookback AND close < midpoint of high and low AND short classifier prediction >= probability threshold AND ADX >= threshold AND both short models exist AND the long condition is false.
+Exit: long, bar is later than the active entry bar AND low <= active stop.
+Exit: short, bar is later than the active entry bar AND high >= active stop.

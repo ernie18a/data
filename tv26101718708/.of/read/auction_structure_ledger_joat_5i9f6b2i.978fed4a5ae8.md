@@ -1,13 +1,4 @@
-Calculation: Confirmed pivot high/low = a high/low with the configured number of bars on both sides; available only after the right-side bars complete
-Calculation: Pivot cluster count = number of confirmed pivots of the same type within the cluster lookback whose prices are within ATR × cluster tolerance of the current confirmed pivot
-Calculation: Active support/resistance count = number of unexpired support/resistance shelves; remove the oldest when the shelf limit is exceeded and remove a shelf after its close crosses its invalidation edge for more than the configured lifecycle buffer
-Calculation: Price confluence = volume at the close-price bin divided by the greatest volume in the rolling close-price-bin distribution, multiplied by 100; bin the rolling window's volume by close price across the window's low-to-high range
-Calculation: Shelf overlap = an active shelf of the same type has a midpoint within ATR × cluster tolerance of the candidate shelf midpoint
-Long: Active support count > active resistance count AND price confluence >= confluence threshold
-Long: Confirmed pivot low exists AND pivot cluster count >= 2
-Long: Active support count > active resistance count
-Long: Price confluence >= confluence threshold
-Short: Active resistance count > active support count AND price confluence < confluence threshold
-Short: Confirmed pivot high exists AND pivot cluster count >= 2
-Short: Active resistance count > active support count
-Short: Price confluence < confluence threshold
+Calculation: Confirmed pivot = a high or low with the same number of bars on each side, recognized only when the right-side bars have completed. For a newly confirmed pivot, its cluster count is the number of confirmed pivots of the same type within the cluster lookback whose prices differ from it by at most current ATR multiplied by the cluster tolerance; include the new pivot itself.
+Calculation: Active shelves = maintain an ordered list of support and resistance shelves. On each confirmed bar, first consider a resistance shelf for a confirmed pivot high, then a support shelf for a confirmed pivot low. Create a shelf when its cluster count is at least 2 and no existing shelf of the same type has a midpoint within current ATR multiplied by the cluster tolerance of the candidate midpoint. Let width be current ATR multiplied by the shelf-width parameter. The resistance candidate midpoint is pivot high minus half the width; its actual shelf spans pivot high minus 0.4 times the width to pivot high plus the width. The support candidate midpoint is pivot low plus half the width; its actual shelf spans pivot low minus the width to pivot low plus 0.4 times the width. After both creation checks, if the list contains more than 14 shelves, remove the oldest one. Count support and resistance shelves before removing failed shelves. Then remove each resistance shelf when close is above its top and its age exceeds 4 bars, and each support shelf when close is below its bottom and its age exceeds 4 bars. Shelf age is measured from its creation bar.
+Long: Support shelf count > resistance shelf count.
+Short: Resistance shelf count > support shelf count.

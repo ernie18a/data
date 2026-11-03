@@ -1,19 +1,22 @@
-Calculation: Volume Z-score = (current volume − mean volume over a lookback) / standard deviation of volume over the same lookback
-Calculation: Volatility gate = true range ≥ ATR × a multiplier
-Calculation: Adaptive moving average = Kaufman adaptive moving average using an efficiency ratio from price movement over a lookback and recursive smoothing between fast and slow smoothing rates
-Calculation: Bullish structural trend = close > shorter-lookback SMA AND shorter-lookback SMA > longer-lookback SMA
-Calculation: Bearish structural trend = close < shorter-lookback SMA AND shorter-lookback SMA < longer-lookback SMA
-Calculation: Bullish wick-adjusted pressure = (close > open ? close − open : 0) + min(open, close) − low
-Calculation: Bearish wick-adjusted pressure = (close < open ? open − close : 0) + high − max(open, close)
-Calculation: Bullish pivot divergence = a confirmed pivot low is lower than the preceding confirmed pivot low AND RSI at the new pivot is higher than RSI at the preceding pivot
-Calculation: Bearish pivot divergence = a confirmed pivot high is higher than the preceding confirmed pivot high AND RSI at the new pivot is lower than RSI at the preceding pivot
-Calculation: Upside exhaustion = RSI > its upper threshold AND current MACD histogram < prior MACD histogram AND prior MACD histogram > 0
-Calculation: Downside exhaustion = RSI < its lower threshold AND current MACD histogram > prior MACD histogram AND prior MACD histogram < 0
-Calculation: Higher-timeframe bullish alignment = close of the last completed higher-timeframe bar > its shorter-lookback SMA
-Calculation: Higher-timeframe bearish alignment = close of the last completed higher-timeframe bar < its shorter-lookback SMA
-Calculation: Long score = weighted sum of bullish structural trend, higher-timeframe bullish alignment, volume Z-score threshold, major volume Z-score threshold, volatility gate, close above adaptive moving average, bullish wick-adjusted pressure, and close > open
-Calculation: Short score = weighted sum of bearish structural trend, higher-timeframe bearish alignment, volume Z-score threshold, major volume Z-score threshold, volatility gate, close below adaptive moving average, bearish wick-adjusted pressure, and close < open
-Long: bullish pivot divergence OR (long score > short score AND long score ≥ activation threshold AND higher-timeframe bullish alignment AND volatility gate AND volume Z-score ≥ signal threshold AND close > adaptive moving average AND bullish structural trend AND no signal within the cooldown lookback)
-Short: bearish pivot divergence OR (short score > long score AND short score ≥ activation threshold AND higher-timeframe bearish alignment AND volatility gate AND volume Z-score ≥ signal threshold AND close < adaptive moving average AND bearish structural trend AND no signal within the cooldown lookback)
-Exit: long, bearish pivot divergence OR upside exhaustion
-Exit: short, bullish pivot divergence OR downside exhaustion
+Calculation: Adaptive average = initialize at close; on each subsequent bar, add to the previous average the product of (close minus the previous average) and the square of (efficiency ratio × (fast smoothing constant − slow smoothing constant) + slow smoothing constant). Efficiency ratio = absolute close change over its lookback divided by the sum of true range over that lookback, or zero when the denominator is zero; each smoothing constant is 2 / (period + 1), with the fast period shorter than the slow period.
+Calculation: Volume Z-score = (volume − volume SMA) / volume standard deviation over the same lookback; use zero when the standard deviation is unavailable or zero. The major-volume threshold is higher than the signal-volume threshold.
+Calculation: Bullish structure = close > shorter-period close SMA AND shorter-period close SMA > longer-period close SMA. Bearish structure = close < shorter-period close SMA AND shorter-period close SMA < longer-period close SMA.
+Calculation: Bullish higher-timeframe alignment = higher-timeframe filtering disabled OR the last completed higher-timeframe close > its close SMA, using the same SMA period as the shorter-period chart-timeframe SMA. Bearish higher-timeframe alignment = higher-timeframe filtering disabled OR the last completed higher-timeframe close < its close SMA using that same period.
+Calculation: Buy force = lower wick length + candle body length if close > open, otherwise lower wick length. Sell force = upper wick length + candle body length if close < open, otherwise upper wick length.
+Calculation: Long score = 20 if bullish structure + 20 if bullish higher-timeframe alignment + 12 if volume Z-score >= signal-volume threshold + 8 if volume Z-score >= major-volume threshold + 15 if true range >= ATR × volatility threshold + 15 if close > adaptive average + 10 if buy force > sell force + 10 if close > open; each unmet condition contributes zero. Short score uses the same weights and volume and volatility conditions, replacing bullish structure and alignment with bearish structure and alignment, close > adaptive average with close < adaptive average, buy force > sell force with sell force > buy force, and close > open with close < open.
+Calculation: Bullish divergence = on the confirmation bar of a price pivot low, that pivot low < the preceding confirmed pivot low AND RSI at that pivot > RSI at the preceding pivot. Bearish divergence = on the confirmation bar of a price pivot high, that pivot high > the preceding confirmed pivot high AND RSI at that pivot < RSI at the preceding pivot. Pivots use specified left and right bar counts; compare consecutive pivots of the same type.
+Long: Long score > short score AND long score >= score threshold AND bullish higher-timeframe alignment AND true range >= ATR × volatility threshold AND volume Z-score >= signal-volume threshold AND close > adaptive average AND bullish structure AND bars since the most recent long or short trigger >= cooldown, or no prior trigger exists.
+Short: Short score > long score AND short score >= score threshold AND bearish higher-timeframe alignment AND true range >= ATR × volatility threshold AND volume Z-score >= signal-volume threshold AND close < adaptive average AND bearish structure AND bars since the most recent long or short trigger >= cooldown, or no prior trigger exists.
+Long: Bullish divergence.
+Short: Bearish divergence.
+Long: Long score > short score.
+Short: Short score > long score.
+Long: Buy force > sell force.
+Short: Sell force > buy force.
+Long: Higher-timeframe filtering enabled AND last completed higher-timeframe close > its close SMA using the shorter-period chart-timeframe SMA period.
+Short: Higher-timeframe filtering enabled AND last completed higher-timeframe close < its close SMA using the shorter-period chart-timeframe SMA period.
+Long: Bullish structure AND no long or short trigger AND volume Z-score < major-volume threshold AND neither upside nor downside exhaustion holds.
+Short: Bearish structure AND no long or short trigger AND volume Z-score < major-volume threshold AND neither upside nor downside exhaustion holds.
+Calculation: Upside exhaustion = RSI > upper threshold AND MACD histogram < previous MACD histogram AND previous MACD histogram > 0. Downside exhaustion = RSI < lower threshold AND MACD histogram > previous MACD histogram AND previous MACD histogram < 0.
+Exit: long, upside exhaustion OR bearish divergence.
+Exit: short, downside exhaustion OR bullish divergence.

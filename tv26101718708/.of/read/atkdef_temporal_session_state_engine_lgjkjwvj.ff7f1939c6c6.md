@@ -1,5 +1,13 @@
-Calculation: Multi-timeframe candle direction = for each analyzed timeframe, whether higher or lower than the chart timeframe, compare the last completed bar's close with its open: bullish if close > open × 1.01; bearish if close < open × 0.99.
-Calculation: Multi-timeframe close momentum = for each analyzed timeframe, compare the close of the bar still forming with the previous completed bar's close: bullish if current close > previous close × 1.01; bearish if current close < previous close × 0.99.
-Calculation: Session direction = compare each session's latest close with its first bar's open: bullish if close > open; bearish if close < open.
-Long: Any analyzed timeframe's last completed close > its open × 1.01 OR that timeframe's last completed close > its open × 1.01 AND its forming-bar close > its previous completed close × 1.01 OR any session's latest close > its first bar's open.
-Short: Any analyzed timeframe's last completed close < its open × 0.99 OR that timeframe's last completed close < its open × 0.99 AND its forming-bar close < its previous completed close × 0.99 OR any session's latest close < its first bar's open.
+Calculation: Session range and prices = For each of three independently parameterized UTC session windows, reset at each exchange-timezone calendar-day boundary; accumulate the high, low, first open, and latest close of chart bars whose opening times fall within that session, including the current bar when applicable.
+Calculation: Confirmed pivot high = A chart bar high that is a pivot high using specified left and right bar counts; recognize it only when the required right-hand bars have completed.
+Calculation: Confirmed pivot low = A chart bar low that is a pivot low using specified left and right bar counts; recognize it only when the required right-hand bars have completed.
+Long: Confirmed pivot low exists on the current chart bar.
+Short: Confirmed pivot high exists on the current chart bar.
+Long: For any of five ordered higher-timeframe layers, the close of the bar still forming > the high of the last completed bar.
+Short: For any of five ordered higher-timeframe layers, the close of the bar still forming < the low of the last completed bar.
+Long: For any of five ordered higher-timeframe layers, the last completed bar's close > its open multiplied by an upper threshold.
+Short: For any of five ordered higher-timeframe layers, the last completed bar's close < its open multiplied by a lower threshold.
+Long: For any session with at least one collected bar, the latest session close > the first session open.
+Short: For any session with at least one collected bar, the latest session close < the first session open.
+Long: For any session with at least one collected bar, the chart close > the accumulated session high.
+Short: For any session with at least one collected bar, the chart close < the accumulated session low.

@@ -1,23 +1,15 @@
-Calculation: Swing high/low = a pivot high/low confirmed after the configured bars on both sides
-Calculation: Bullish/bearish FVG = current low above the high two bars earlier / current high below the low two bars earlier, with gap at least the configured minimum size
-Calculation: Bullish/bearish iFVG = a bullish/bearish FVG whose close crosses below its lower boundary / above its upper boundary
-Calculation: ATR = average true range over its configured lookback
-Calculation: Displacement = absolute candle body greater than ATR times the configured multiplier
-Calculation: Not in chop = ATR greater than ATR’s longer-lookback average times the configured minimum ratio
-Calculation: Confirmed bullish sweep = low below the latest confirmed swing low, close back above it, and lower wick greater than the configured fraction of candle range
-Calculation: Confirmed bearish sweep = high above the latest confirmed swing high, close back below it, and upper wick greater than the configured fraction of candle range
-Calculation: Bullish order block = prior bar’s open-to-close range when current close exceeds prior high and bullish body exceeds ATR
-Calculation: Bearish order block = prior bar’s open-to-close range when current close falls below prior low and bearish body exceeds ATR
-Calculation: Bullish/bearish confluence = one point each for a confirmed bullish/bearish sweep or iFVG reversal; recent same-direction SMT; same-direction CHoCH or trend; price overlapping a same-direction FVG or iFVG; and a same-direction CISD label
-Long: current low below latest confirmed swing low and current low <= bullish iFVG upper boundary and current high >= its lower boundary, OR confirmed bullish sweep or bullish iFVG overlap AND close > open AND displacement; for confirmed setup markers, bullish confluence >= B minimum, session gate open, not in chop, and more than cooldown bars since the prior bullish setup; A++ requires confluence >= A++ minimum, while B requires confluence < A++ minimum
-Long: close > close[1] AND close[1] > close[2] AND (close[2] > close[3] OR the configured C2/C3 rule is satisfied), last CISD direction is not bullish, and the configured minimum bars have elapsed since its prior label
-Long: close > latest confirmed swing high AND trend direction is not bullish
-Long: low < latest confirmed swing low AND close > latest confirmed swing low AND lower wick / candle range > configured wick fraction
-Long: low > high two bars earlier AND gap >= configured minimum size
-Long: close > prior bar high AND close - open > ATR
-Short: current high above latest confirmed swing high and current low <= bearish iFVG upper boundary and current high >= its lower boundary, OR confirmed bearish sweep or bearish iFVG overlap AND close < open AND displacement; for confirmed setup markers, bearish confluence >= B minimum, session gate open, not in chop, and more than cooldown bars since the prior bearish setup; A++ requires confluence >= A++ minimum, while B requires confluence < A++ minimum
-Short: close < close[1] AND close[1] < close[2] AND (close[2] < close[3] OR the configured C2/C3 rule is satisfied), last CISD direction is not bearish, and the configured minimum bars have elapsed since its prior label
-Short: close < latest confirmed swing low AND trend direction is not bearish
-Short: high > latest confirmed swing high AND close < latest confirmed swing high AND upper wick / candle range > configured wick fraction
-Short: high < low two bars earlier AND gap >= configured minimum size
-Short: close < prior bar low AND open - close > ATR
+Calculation: Confirmed pivot high or low = a high or low that is extreme over an equal number of preceding and subsequent bars, available only after the subsequent bars have completed. Use separate lookbacks for sweeps and changes of character.
+Calculation: Bullish gap = current low > high two bars ago AND their difference >= a minimum price distance; its top is current low and its bottom is that earlier high. Bearish gap = current high < low two bars ago AND their difference >= a minimum price distance; its top is that earlier low and its bottom is current high. Retain at most a configured number of the most recent gaps per original direction. A bullish gap becomes inverted when close < its bottom and is removed on a later bar when high > its top. A bearish gap becomes inverted when close > its top and is removed on a later bar when low < its bottom.
+Calculation: Change-of-character direction = initially neutral; set to bullish when close > the latest confirmed change-of-character pivot high and direction is not bullish; set to bearish when close < the latest confirmed change-of-character pivot low and direction is not bearish. Update pivots before testing breaks, and test the bullish break before the bearish break.
+Long: Low < latest confirmed sweep pivot low AND close > that pivot low AND (min(open, close) - low) / max(high - low, minimum range) > a wick fraction.
+Short: High > latest confirmed sweep pivot high AND close < that pivot high AND (high - max(open, close)) / max(high - low, minimum range) > a wick fraction.
+Long: Close > previous close AND previous close > close two bars ago AND the last consecutive-close signal was not long AND the number of bars since the last consecutive-close signal >= a minimum, or there was no previous signal.
+Short: Close < previous close AND previous close < close two bars ago AND the last consecutive-close signal was not short AND the number of bars since the last consecutive-close signal >= a minimum, or there was no previous signal.
+Long: A bullish gap forms.
+Short: A bearish gap forms.
+Long: Close > the top of a retained, non-inverted bearish gap.
+Short: Close < the bottom of a retained, non-inverted bullish gap.
+Long: Close > latest confirmed change-of-character pivot high AND the previous change-of-character direction is not bullish.
+Short: Close < latest confirmed change-of-character pivot low AND the direction after testing the bullish break is not bearish.
+Long: Close > previous high AND close - open > ATR multiplied by a threshold.
+Short: Close < previous low AND open - close > ATR multiplied by a threshold.

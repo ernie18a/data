@@ -1,9 +1,13 @@
-Calculation: RSI = relative strength index of close; use the selected overbought and oversold thresholds. In adaptive mode, derive thresholds from the RSI moving average plus/minus its standard deviation over a longer lookback, bound them, then smooth them.
-Calculation: Adjusted Bollinger Bands = moving average of close ± Bollinger standard deviation × band multiplier × (1 + ADX / 100 × ADX influence).
-Calculation: Top zone = smoothed adjusted upper band plus zone offset; bottom zone = smoothed adjusted lower band minus zone offset. Zone offset is the smoothed band range multiplied by the offset parameter.
-Long: RSI crosses above the oversold threshold AND the previous bar was in the bottom zone or oversold AND (if enabled) ADX exceeds the strong-trend threshold AND (if enabled) RSI on both higher timeframes is oversold
-Short: RSI crosses below the overbought threshold AND the previous bar was in the top zone or overbought AND (if enabled) ADX exceeds the strong-trend threshold AND (if enabled) RSI on both higher timeframes is overbought
-Long: Close enters the bottom zone AND the previous bar was not in the bottom zone AND at least the cooldown lookback bars have elapsed since the previous long zone-entry signal
-Short: Close enters the top zone AND the previous bar was not in the top zone AND at least the cooldown lookback bars have elapsed since the previous short zone-entry signal
-Long: RSI on the chart timeframe and both higher timeframes is oversold
-Short: RSI on the chart timeframe and both higher timeframes is overbought
+Calculation: RSI thresholds = Either fixed overbought and oversold levels or adaptive levels. For adaptive levels, take a rolling mean and standard deviation of chart-timeframe close RSI; add and subtract a configurable multiple of the standard deviation, respectively, clamp each result to its own configurable bounds, and EMA-smooth each result.
+Calculation: ADX-adjusted zone boundaries = Calculate a close SMA and close standard deviation over the same lookback. Multiply the standard deviation by a band multiplier and by (1 + ADX / 100 × ADX influence). Add and subtract the result from the close SMA, then SMA-smooth each band over a separate lookback. Let the smoothed band range be the smoothed upper band minus the smoothed lower band. The top-zone boundary is the smoothed upper band plus the range multiplied by an offset; the bottom-zone boundary is the smoothed lower band minus the range multiplied by the same offset.
+Calculation: Higher-timeframe RSI = Close RSI with the same length as chart-timeframe RSI, calculated separately on each of two higher timeframes, one longer than the other. Use the last completed higher-timeframe bar, including the current higher-timeframe bar when it completes.
+Long: Chart-timeframe RSI < oversold threshold.
+Short: Chart-timeframe RSI > overbought threshold.
+Long: Either higher-timeframe RSI < the current chart-timeframe oversold threshold.
+Short: Either higher-timeframe RSI > the current chart-timeframe overbought threshold.
+Long: Chart-timeframe RSI < oversold threshold AND both higher-timeframe RSIs < the current chart-timeframe oversold threshold.
+Short: Chart-timeframe RSI > overbought threshold AND both higher-timeframe RSIs > the current chart-timeframe overbought threshold.
+Long: Close < bottom-zone boundary AND previous close >= previous bottom-zone boundary AND bars since the previous bottom-zone entry signal >= cooldown.
+Short: Close > top-zone boundary AND previous close <= previous top-zone boundary AND bars since the previous top-zone entry signal >= cooldown.
+Long: RSI > oversold threshold AND previous RSI <= previous oversold threshold AND (previous close < previous bottom-zone boundary OR previous RSI < previous oversold threshold) AND (ADX filter disabled OR ADX > strength threshold) AND (higher-timeframe filter disabled OR both higher-timeframe RSIs < the current chart-timeframe oversold threshold).
+Short: RSI < overbought threshold AND previous RSI >= previous overbought threshold AND (previous close > previous top-zone boundary OR previous RSI > previous overbought threshold) AND (ADX filter disabled OR ADX > strength threshold) AND (higher-timeframe filter disabled OR both higher-timeframe RSIs > the current chart-timeframe overbought threshold).

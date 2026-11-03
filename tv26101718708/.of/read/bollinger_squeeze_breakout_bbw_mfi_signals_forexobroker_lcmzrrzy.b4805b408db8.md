@@ -1,8 +1,10 @@
-Calculation: Bollinger BandWidth = (upper Bollinger Band − lower Bollinger Band) / middle line × 100
-Calculation: Squeeze candle = absolute change in the middle line over the flatness lookback ≤ ATR × flatness multiplier AND BandWidth ≤ its lowest value over the squeeze lookback × (1 + squeeze threshold)
-Long: current BandWidth > previous bar’s BandWidth AND close > upper Bollinger Band AND the most recent squeeze candle on an earlier bar is within the breakout lookback and has not already produced a signal AND (if MFI confirmation is enabled, Money Flow Index > its threshold) AND (if overlapping trades are disabled, no position is open)
-Short: current BandWidth > previous bar’s BandWidth AND close < lower Bollinger Band AND the most recent squeeze candle on an earlier bar is within the breakout lookback and has not already produced a signal AND (if MFI confirmation is enabled, Money Flow Index < its threshold) AND (if overlapping trades are disabled, no position is open)
-Exit: long, in middle-line exit mode, close < current middle line
-Exit: short, in middle-line exit mode, close > current middle line
-Exit: long, in fixed-target mode, low ≤ middle line at entry OR high ≥ entry price + reward multiple × absolute(entry price − middle line at entry); if both thresholds are touched on the same bar, exit at the middle line
-Exit: short, in fixed-target mode, high ≥ middle line at entry OR low ≤ entry price − reward multiple × absolute(entry price − middle line at entry); if both thresholds are touched on the same bar, exit at the middle line
+Calculation: Bollinger BandWidth = (upper Bollinger Band - lower Bollinger Band) / Bollinger middle line × 100; undefined when the middle line is zero.
+Calculation: Squeeze bar = absolute change in the Bollinger middle line over a flatness lookback <= an ATR multiple AND Bollinger BandWidth <= its lowest value over a squeeze lookback including the current bar × (1 + a percentage allowance).
+Calculation: Armed squeeze = the most recent squeeze bar strictly before the current bar is within the breakout lookback AND is later than the squeeze bar consumed by the last long or short signal; a signal consumes that squeeze even if a trade is already open.
+Calculation: Entry risk = maximum of the absolute difference between entry close and Bollinger middle line at entry and a minimum risk parameter representing the source's minimum-tick floor.
+Long: Armed squeeze = true AND Bollinger BandWidth > previous bar's Bollinger BandWidth AND close > upper Bollinger Band AND (MFI confirmation = disabled OR MFI of typical price > MFI threshold).
+Short: Armed squeeze = true AND Bollinger BandWidth > previous bar's Bollinger BandWidth AND close < lower Bollinger Band AND (MFI confirmation = disabled OR MFI of typical price < MFI threshold).
+Exit: long, bar is after entry bar AND exit mode = middle line AND close < Bollinger middle line.
+Exit: short, bar is after entry bar AND exit mode = middle line AND close > Bollinger middle line.
+Exit: long, bar is after entry bar AND exit mode = fixed target AND (low <= entry price - entry risk OR high >= entry price + reward multiple × entry risk); when both thresholds are touched, exit at the stop.
+Exit: short, bar is after entry bar AND exit mode = fixed target AND (high >= entry price + entry risk OR low <= entry price - reward multiple × entry risk); when both thresholds are touched, exit at the stop.

@@ -1,27 +1,33 @@
-Calculation: Bullish HTF score = weighted points for higher-timeframe close above its EMA, EMA slope above an ATR-scaled threshold, bullish displacement, bullish volume flow, bullish FVG, bullish CISD, and prime session; subtract penalties for midday, HTF overextension, and hard-bad conditions; floor at zero. Use the current higher-timeframe bar while forming, otherwise its latest available bar.
-Calculation: Bearish HTF score = weighted points for higher-timeframe close below its EMA, EMA slope below a negative ATR-scaled threshold, bearish displacement, bearish volume flow, bearish FVG, bearish CISD, and prime session; subtract the same penalties as for the bullish score; floor at zero. Use the current higher-timeframe bar while forming, otherwise its latest available bar.
-Calculation: HTF overextension = absolute distance between higher-timeframe close and its EMA exceeds higher-timeframe ATR times the configured extension limit.
-Calculation: Hard-bad conditions = flat chart-timeframe EMA slope OR low volatility (ATR below its longer-lookback ATR average times a threshold) OR compression (longer-lookback high-low range below ATR times a threshold) OR weak body OR excessive wick on both the current and prior bar.
-Calculation: Bullish and bearish HTF setup = matching HTF trend AND matching score meets the configured minimum AND (score is within the configured sweet-spot range and exceeds the opposite score OR score exceeds the sweet-spot ceiling, is not overextended, and exceeds the opposite score) AND (countertrend blocking is disabled OR matching score exceeds opposite score by the configured dominance buffer).
-Calculation: Bullish and bearish micro confirmation score = count of matching lower-timeframe FVG, CISD, and order-block conditions. Use the latest available lower-timeframe bar within the chart bar; it is completed when the chart bar is confirmed.
-Calculation: Bullish/bearish micro confirmation = matching micro score meets the lower threshold during the configured NY kill zone, otherwise it meets the higher threshold.
-Calculation: Bullish/bearish chart-timeframe trigger = (matching trend (close above/below EMA), matching EMA slope (above/below an ATR-scaled threshold), and matching flow OR strong matching pressure) OR (matching sweep OR matching FVG OR matching CISD OR matching order block) AND matching flow OR matching micro confirmation.
-Calculation: Good follow-through = healthy volatility (ATR above its longer-lookback ATR average times a threshold) OR range expansion (shorter-lookback high-low range above ATR times a threshold) OR within the configured NY kill zone.
-Calculation: Entry quality = body/range ratio meets its configured minimum AND good follow-through AND NOT hard-bad conditions AND NOT HTF overextension.
-Calculation: HTF bullish/bearish score components use higher-timeframe bars, which are higher than the chart timeframe; use the current higher-timeframe bar while forming, otherwise its latest available bar. HTF EMA and ATR use the same lookbacks as their chart-timeframe counterparts.
-Calculation: Long target = entry price + (entry price - signal-bar low + ATR-based stop offset) times configured reward/risk ratio; long stop = signal-bar low minus ATR-based stop offset.
-Calculation: Short target = entry price - (signal-bar high - entry price + ATR-based stop offset) times configured reward/risk ratio; short stop = signal-bar high plus ATR-based stop offset.
-Long: chart bar is confirmed when confirmation is enabled AND within the configured session AND bullish HTF setup AND bullish chart-timeframe trigger AND entry quality.
-Short: chart bar is confirmed when confirmation is enabled AND within the configured session AND bearish HTF setup AND bearish chart-timeframe trigger AND entry quality.
-Long: current low is below the most recent confirmed swing low AND current close is above that swing low.
-Short: current high is above the most recent confirmed swing high AND current close is below that swing high.
-Long: current low is above the high two chart bars ago.
-Short: current high is below the low two chart bars ago.
-Long: prior bar is bearish AND current close is above prior high.
-Short: prior bar is bullish AND current close is below prior low.
-Long: current bar is bullish AND relative volume exceeds its configured pressure threshold AND close is above EMA.
-Short: current bar is bearish AND relative volume exceeds its configured pressure threshold AND close is below EMA.
-Long: bullish HTF score meets the forecast threshold AND exceeds bearish HTF score.
-Short: bearish HTF score meets the forecast threshold AND exceeds bullish HTF score.
-Exit: Long, current high >= long target OR current low <= long stop OR bars since entry >= configured timeout.
-Exit: Short, current low <= short target OR current high >= short stop OR bars since entry >= configured timeout.
+Calculation: Bar references = all unqualified OHLCV, ATR, EMA and SMA calculations use chart bars; [n] denotes n bars ago. Higher-timeframe calculations use the last completed higher-timeframe bar on historical bars and the still-forming higher-timeframe bar in real time. Lower-timeframe calculations use the last lower-timeframe bar in each historical chart bar and the latest available, potentially still-forming, lower-timeframe bar in real time.
+Calculation: Time windows = compare chart-bar opening time against configurable session, prime-session, midday and kill-zone windows; prime-session, midday and kill-zone windows use New York local time.
+Calculation: Confirmed swing low/high = the latest low/high confirmed as a pivot using equal numbers of bars on each side. A bullish sweep is low < confirmed swing low AND close > confirmed swing low; a bearish sweep is high > confirmed swing high AND close < confirmed swing high.
+Calculation: Bullish gap = low > high[2]; bearish gap = high < low[2]. Bullish break = close > high[1]; bearish break = close < low[1]. Bullish order block = close[1] < open[1] AND close > high[1]; bearish order block = close[1] > open[1] AND close < low[1]. Evaluate each on the specified timeframe.
+Calculation: Relative volume = volume / SMA(volume), or a neutral fallback value if volume or its SMA is unavailable or the SMA is zero. Bullish flow = close > open AND relative volume > flow threshold AND close > EMA(close); bearish flow = close < open AND relative volume > flow threshold AND close < EMA(close). Strong bullish/bearish pressure uses the same candle-direction comparison and a higher relative-volume threshold, without the EMA comparison.
+Calculation: Body ratio = abs(close - open) / (high - low), or zero if the range is zero. Upper/lower wick ratios = (high - max(open, close)) / range and (min(open, close) - low) / range, respectively, or zero if the range is zero. Excessive wick = either wick ratio > wick threshold. Bad candle quality = body ratio < weak-body threshold OR excessive wick on both the current and previous bars.
+Calculation: EMA slope = EMA(close) minus its value a configurable number of bars ago, calculated separately on chart and higher timeframes with the same EMA length and slope lookback. Bad conditions = abs(chart EMA slope) < chart ATR * flat-slope multiplier OR chart ATR < SMA(chart ATR) * low-volatility multiplier OR highest high minus lowest low over a compression lookback < chart ATR * compression multiplier OR bad candle quality. Good follow-through = chart ATR > SMA(chart ATR) * healthy-volatility multiplier OR highest high minus lowest low over a shorter expansion lookback > chart ATR * expansion multiplier OR chart-bar time is in the kill zone. The healthy-volatility multiplier is greater than the low-volatility multiplier.
+Calculation: Higher-timeframe overextension = abs(higher-timeframe close - higher-timeframe EMA) > higher-timeframe ATR * extension multiplier.
+Calculation: Higher-timeframe bullish/bearish score = max(0, sum of weighted conditions). Add a medium weight for higher-timeframe close above/below its EMA; a larger shared weight for each of higher-timeframe EMA slope > positive slope multiplier * higher-timeframe ATR / < negative slope multiplier * higher-timeframe ATR, bullish/bearish candle body > displacement multiplier * higher-timeframe ATR, and higher-timeframe bullish/bearish candle with volume > its volume SMA or unavailable volume/SMA or zero SMA; a smaller shared weight for each of the corresponding higher-timeframe gap and break and chart-bar time in the prime session. Subtract the smaller weight for chart-bar time in the midday window and for bad conditions, and subtract the medium weight for higher-timeframe overextension. The higher-timeframe volume SMA uses a shorter lookback than the chart relative-volume SMA.
+Calculation: Higher-timeframe bullish/bearish setup = higher-timeframe close above/below its EMA AND its directional score >= selected risk-mode threshold AND its score > opposite score AND (its score is between the lower and upper score-zone thresholds inclusive OR its score > upper threshold AND higher-timeframe overextension is false) AND (counter-trend blocking is disabled OR its score > opposite score + dominance buffer). The lower score-zone threshold is one of the selectable risk-mode thresholds.
+Calculation: Bullish/bearish micro score = count of the corresponding gap, break and order block on the lower timeframe. Micro confirmation = directional micro score >= a lower confirmation threshold in the kill zone OR directional micro score >= a higher confirmation threshold outside the kill zone.
+Calculation: Bullish chart trigger = (close > EMA AND EMA slope > chart ATR * positive slope multiplier AND (bullish flow OR strong bullish pressure)) OR ((bullish sweep OR bullish gap OR bullish break OR bullish order block) AND bullish flow) OR bullish micro confirmation. Bearish chart trigger reverses price comparisons and uses bearish flow, pressure, sweep, gap, break, order block and micro confirmation. The chart slope multiplier is smaller than the higher-timeframe slope multiplier.
+Calculation: Entry quality = body ratio >= minimum body threshold AND good follow-through AND bad conditions are false AND higher-timeframe overextension is false. The minimum body threshold is greater than the weak-body threshold.
+Calculation: Entry signal = no active trade AND chart-bar time is in the configured session AND corresponding higher-timeframe setup AND corresponding chart trigger AND entry quality AND (bar is confirmed OR close-only confirmation is disabled). Record entry at chart close, entry-bar low/high and ATR; process the entry bar immediately for exits. Re-entry is evaluated before exits on each bar.
+Calculation: Long stop = entry-bar low - entry-bar ATR * stop multiplier; long target = entry price + (entry price - long stop) * reward-to-risk multiplier. Short stop = entry-bar high + entry-bar ATR * stop multiplier; short target = entry price - (short stop - entry price) * reward-to-risk multiplier. Keep these levels fixed during the trade. If target and stop are both reached on a bar, process the target first; process timeout only if neither is reached.
+Long: low < confirmed swing low AND close > confirmed swing low
+Short: high > confirmed swing high AND close < confirmed swing high
+Long: bullish gap
+Short: bearish gap
+Long: bullish order block
+Short: bearish order block
+Long: bullish flow
+Short: bearish flow
+Long: higher-timeframe bullish score > higher-timeframe bearish score
+Short: higher-timeframe bearish score > higher-timeframe bullish score
+Long: bullish micro confirmation
+Short: bullish micro confirmation is false AND bearish micro confirmation
+Long: bullish chart trigger
+Short: bullish chart trigger is false AND bearish chart trigger
+Long: bullish entry signal
+Short: bearish entry signal
+Exit: long, high >= long target OR low <= long stop OR bars since entry >= timeout
+Exit: short, low <= short target OR high >= short stop OR bars since entry >= timeout

@@ -1,4 +1,4 @@
-Calculation: Upper threshold = average of the highest highs in the lookback periods, using completed bars of a higher timeframe than the chart timeframe
-Calculation: Lower threshold = average of the lowest lows in the lookback periods, using completed bars of a higher timeframe than the chart timeframe
-Long: Close > Upper threshold AND prior bar's up-trend state = 0
-Short: Close < Lower threshold AND prior bar's down-trend state = 0
+Calculation: Delimited high and low averages = Choose calendar-aligned boundaries on a higher timeframe according to the calculation timeframe. At each calculation bar, find the nearest boundary bar at or before it and successive older boundary bars. Each completed interval consists of bars after an older boundary bar through the bar immediately before the next newer boundary bar. Average the interval highs and lows over the same lookback: either use only completed intervals, or replace the oldest interval with the current interval from the nearest boundary bar exclusive through the calculation bar inclusive. The current interval is empty on a boundary bar.
+Calculation: Trend state = Initially neutral. On each bar, set the state to long if close > delimited high average; otherwise set it to short if close < delimited low average; otherwise retain the previous state. Calculate either on the chart timeframe or on a higher timeframe. For the higher-timeframe version, use the higher-timeframe bar still forming, sample its state on the first chart bar belonging to it, and carry that sampled state through the remaining chart bars in that higher-timeframe bar.
+Long: Trend state = long
+Short: Trend state = short

@@ -1,7 +1,14 @@
-Calculation: Bullish engulfing candle = current candle closes above its open, the previous candle closes below its open, current close is above previous open, and current open is at or below previous close
-Calculation: Bearish engulfing candle = current candle closes below its open, the previous candle closes above its open, current close is below previous open, and current open is at or above previous close
-Calculation: Volume spike = volume exceeds its moving average multiplied by the volume-spike multiplier
-Calculation: Bullish momentum candle = current candle closes above its open and its body size exceeds ATR multiplied by the momentum multiplier
-Calculation: Bearish momentum candle = current candle closes below its open and its body size exceeds ATR multiplied by the momentum multiplier
-Long: (bullish engulfing candle AND volume spike AND RSI below its overbought threshold) OR (bullish momentum candle AND close above the short-term EMA AND close above the medium-term EMA AND volume spike)
-Short: (bearish engulfing candle AND volume spike AND RSI above its oversold threshold) OR (bearish momentum candle AND close below the short-term EMA AND close below the medium-term EMA AND volume spike)
+Long: Fast close EMA > middle close EMA AND middle close EMA > slow close EMA
+Short: Fast close EMA < middle close EMA AND middle close EMA < slow close EMA
+Long: RSI >= upper RSI threshold
+Short: RSI <= lower RSI threshold
+Long: MACD histogram > 0
+Short: MACD histogram <= 0
+Long: Chaikin money flow > 0
+Short: Chaikin money flow <= 0
+Long: Raw stochastic %K > its simple moving average %D
+Short: Raw stochastic %K <= its simple moving average %D
+Long: Previous close < previous open AND close > open AND close > previous open AND open <= previous close AND volume > volume SMA × volume multiplier AND RSI < upper signal threshold
+Short: Previous close > previous open AND close < open AND close < previous open AND open >= previous close AND volume > volume SMA × volume multiplier AND RSI > lower signal threshold
+Long: Close > open AND abs(close - open) > ATR × momentum multiplier AND volume > volume SMA × volume multiplier AND close > fast close EMA AND close > middle close EMA
+Short: Close < open AND abs(close - open) > ATR × momentum multiplier AND volume > volume SMA × volume multiplier AND close < fast close EMA AND close < middle close EMA

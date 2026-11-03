@@ -1,16 +1,14 @@
-Calculation: First bearish session range = high and low of the first bearish bar in the session, excluding the opening bar; use completed bars on the chart timeframe and reset daily
-Calculation: 12:45 range = highest high and lowest low from 12:45 through the bar ending at 13:15; use completed bars on the chart timeframe and reset daily
-Calculation: First bearish breakout levels = first bearish session range high plus buffer, and low minus buffer
-Calculation: 12:45 breakout levels = 12:45 range high plus buffer, and low minus buffer
-Calculation: 0.50 range level = range low + 0.50 × (range high − range low)
-Calculation: 0.618 range level = range low + 0.618 × (range high − range low)
-Calculation: Bullish EMA alignment = the shorter-period EMAs are both above the longer-period EMA
-Calculation: Bearish EMA alignment = the longer-period EMA is above both shorter-period EMAs
-Long: (close crosses above first bearish breakout high OR close crosses above 12:45 breakout high) AND bullish EMA alignment AND at least the configured cooldown bars since the previous main long signal
-Long: close crosses above the 0.50 or 0.618 level of either range AND that range-level long signal has not already occurred for that range today
-Long: previous bar closes below its open AND current close is above the previous bar high AND current close is above the highest high over the configured lookback ending on the previous bar AND bullish EMA alignment AND within the configured session
-Short: (close crosses below first bearish breakout low OR close crosses below 12:45 breakout low) AND bearish EMA alignment AND at least the configured cooldown bars since the previous main short signal
-Short: close crosses below the 0.50 or 0.618 level of either range
-Short: previous bar closes above its open AND current close is below the previous bar low AND current close is below the lowest low over the configured lookback ending on the previous bar AND bearish EMA alignment AND within the configured session
-Exit: long, close is below the low of the bar that generated the active first bearish-range or 12:45-range long signal
-Exit: short, close is above the high of the bar that generated the active first bearish-range or 12:45-range main short signal
+Calculation: Reference ranges = Two independent daily ranges use bars aggregated to a reference timeframe that can be higher or lower than the chart timeframe. On historical bars, use the last completed reference bar when it is higher and the last available intrabar when it is lower; use the chart bar when the timeframes match. In real time, a higher-timeframe bar may still be forming. Reset both ranges on each new day. The first range is the high and low of the first bearish reference bar within the session, excluding the specified opening bar. The second range is the running high and low of reference bars in a specified intraday window, retained after that window. Both ranges remain eligible independently.
+Calculation: Range retracement = range low + (range high − range low) × retracement fraction; use two fractions, one smaller than the other, for each range.
+Calculation: Main-signal cooldown = For each direction independently, count chart bars since the most recent main signal in that direction, across both ranges; retain the count across days. Fib signals and order-block conditions do not reset it.
+Calculation: Exit state = Track each range independently. A main or retracement long signal for that range stores the signal bar low, activates its long state, and deactivates its short state. A main short signal stores the signal bar high, activates its short state, and deactivates its long state. Retracement short signals do not change exit state. A new signal replaces the stored level for its side; an exit deactivates that state. Reset all states on each new day.
+Long: For either reference range, close crosses above its high plus a price buffer AND each of two shorter-period close EMAs is above a longer-period close EMA AND the long main-signal cooldown has elapsed.
+Short: For either reference range, close crosses below its low minus a price buffer AND each of two shorter-period close EMAs is below a longer-period close EMA AND the short main-signal cooldown has elapsed.
+Long: For either reference range and either retracement fraction, close crosses above its range retracement AND no long signal for that same range and fraction has occurred earlier in the current day.
+Short: For either reference range and either retracement fraction, close crosses below its range retracement.
+Long: Each of two shorter-period close EMAs is above a longer-period close EMA.
+Short: Each of two shorter-period close EMAs is below a longer-period close EMA.
+Long: The previous bar closes below its open AND current close is above the previous high AND above the highest high over a lookback ending at the previous bar AND each of two shorter-period close EMAs is above a longer-period close EMA AND the current bar is in the session AND current low is at least the previous low.
+Short: The previous bar closes above its open AND current close is below the previous low AND below the lowest low over a lookback ending at the previous bar AND each of two shorter-period close EMAs is below a longer-period close EMA AND the current bar is in the session AND current high is at most the previous high.
+Exit: long, either range's long exit state is active AND close is below its stored signal-bar low.
+Exit: short, either range's short exit state is active AND close is above its stored signal-bar high.

@@ -1,9 +1,19 @@
-Calculation: Relative volume = current volume divided by its moving average over a longer baseline lookback.
-Calculation: Delta Z = z-score of volume × (close − open) / max(high − low, minimum tick), using a normalization lookback.
-Calculation: Churn Z = z-score of (relative volume / result efficiency), using the same normalization lookback; result efficiency = bar range / its moving average over the relative-volume baseline lookback, where bar range = max(high − low, minimum tick).
-Calculation: Participation = an EMA over a smoothing lookback of 0.50 × Delta Z + 0.35 × (relative volume − 1) − 0.15 × Churn Z.
-Calculation: Sigma Z = z-score, using the normalization lookback, of the square root of the EMA of squared log(volume / previous-bar volume), with the EMA using a sigma lookback.
-Calculation: A qualifying zone is created at the HLC3 of a confirmed pivot high in volume when relative volume on the pivot bar exceeds 0.85 × the relative-volume threshold, or absolute Delta Z exceeds 0.9, or Sigma Z exceeds 0.75. A pivot high uses the same lookback length on both sides and becomes confirmed after the right-side bars complete. Zone half-width = max(ATR(14) on the pivot bar × a width factor, 8 minimum ticks). Zone score = max(pivot-bar relative volume, 1) + 0.70 × absolute pivot-bar Delta Z + 0.45 × max(pivot-bar Sigma Z, 0).
-Calculation: Active support = the midpoint and top of the qualifying zone with the highest score among zones no older than the active-profile lookback whose top is below the current close. Active resistance = the midpoint and bottom of the qualifying zone with the highest score among zones no older than the active-profile lookback whose bottom is above the current close.
-Long: bar is confirmed AND ((relative volume > relative-volume threshold AND Delta Z > positive Delta threshold AND Participation > 0) OR (relative volume > relative-volume threshold AND result efficiency < churn threshold AND Delta Z > 0) OR (active support exists AND low <= active support top AND close >= active support midpoint))
-Short: bar is confirmed AND ((relative volume > relative-volume threshold AND Delta Z < negative Delta threshold AND Participation < 0) OR (relative volume > relative-volume threshold AND result efficiency < churn threshold AND Delta Z < 0) OR (active resistance exists AND high >= active resistance bottom AND close <= active resistance midpoint))
+Calculation: Bar range = max(high - low, minimum price increment).
+Calculation: Relative volume = volume / SMA(volume, baseline lookback), or 1 when the SMA is not positive.
+Calculation: Delta proxy = volume * (close - open) / bar range.
+Calculation: Z-score of a series = (current value - SMA of the series) / population standard deviation of the series over the same normalization lookback, or 0 when the standard deviation is not positive. Use the same normalization lookback for delta proxy, churn ratio, and volume volatility.
+Calculation: Range efficiency = bar range / SMA(bar range, baseline lookback), or 1 when the SMA is not positive. Churn ratio = relative volume / range efficiency when range efficiency is positive, otherwise relative volume. Effort-result ratio = range efficiency / relative volume when relative volume is positive, otherwise 0.
+Calculation: Participation = EMA(0.50 * Z-score of delta proxy + 0.35 * (relative volume - 1) - 0.15 * Z-score of churn ratio, participation smoothing lookback).
+Calculation: Volume volatility = square root of the EMA of squared log(volume / previous volume), using 0 for the log return when either volume is not positive.
+Calculation: A stored zone is created at a confirmed pivot high of volume whose pivot-bar relative volume exceeds a threshold OR whose absolute pivot-bar delta-proxy Z-score exceeds a threshold OR whose pivot-bar volume-volatility Z-score exceeds a threshold. A pivot uses equal left and right lookbacks. Its midpoint is the pivot-bar (high + low + close) / 3; its half-width is max(pivot-bar ATR * width factor, minimum price increment * width floor); its score is max(pivot-bar relative volume, 1) + 0.70 * absolute pivot-bar delta-proxy Z-score + 0.45 * max(pivot-bar volume-volatility Z-score, 0). Keep at most the configured number of most recently created zones and exclude zones older than the profile lookback, measured from their pivot bars.
+Calculation: Active support is the highest-scoring stored zone whose top is below the current close; active resistance is the highest-scoring stored zone whose bottom is above the current close. Resolve equal scores in favor of the earlier stored zone.
+Long: Delta-proxy Z-score >= 0.
+Short: Delta-proxy Z-score < 0.
+Long: Participation >= 0.
+Short: Participation < 0.
+Long: Relative volume > high-volume threshold AND delta-proxy Z-score > positive climax threshold AND participation > 0.
+Short: Relative volume > high-volume threshold AND delta-proxy Z-score < negative climax threshold AND participation < 0.
+Long: Relative volume > high-volume threshold AND effort-result ratio < churn threshold AND delta-proxy Z-score > 0.
+Short: Relative volume > high-volume threshold AND effort-result ratio < churn threshold AND delta-proxy Z-score < 0.
+Long: Active support top < close AND low <= active support top AND close >= active support midpoint.
+Short: Active resistance bottom > close AND high >= active resistance bottom AND close <= active resistance midpoint.

@@ -1,5 +1,7 @@
-Calculation: Anchored VWAP = cumulative (HLC3 × volume) divided by cumulative volume since the exchange-day anchor; HLC3 = (high + low + close) / 3
-Calculation: Price distance = (close − current anchored VWAP) / prior bar ATR
-Calculation: VWAP shift = (current anchored VWAP − anchored VWAP from the shorter lookback ago) / prior bar ATR
-Long: Price distance ≥ minimum distance threshold AND VWAP shift ≥ meaningful shift threshold for the required number of consecutive closed bars AND the confirmed state changes to above VWAP / rising after initialization, with valid VWAP history in the same anchor and positive prior-bar ATR
-Short: Price distance ≤ −minimum distance threshold AND VWAP shift ≤ −meaningful shift threshold for the required number of consecutive closed bars AND the confirmed state changes to below VWAP / falling after initialization, with valid VWAP history in the same anchor and positive prior-bar ATR
+Calculation: Anchored VWAP = cumulative sum of ((high + low + close) / 3 × volume) divided by cumulative volume, starting at either the first observed exchange-day boundary after the dataset begins or the first bar opening at or after a selected anchor time, provided a preceding bar exists before that time. Reset at each anchor. Missing or negative volume invalidates VWAP until the next anchor; cumulative volume must be positive.
+Calculation: Price distance = (close − anchored VWAP) / previous bar's ATR.
+Calculation: Value shift = (anchored VWAP − anchored VWAP a configurable number of bars ago) / previous bar's ATR. Both VWAP values must belong to the same anchor period, and the previous ATR must be positive.
+Calculation: Raw state = upward when price distance >= a positive minimum distance AND value shift >= a positive minimum shift; downward when price distance <= the negative minimum distance AND value shift <= the negative minimum shift; otherwise other.
+Calculation: Confirmed state = the raw state after it has persisted for a configurable number of consecutive closed bars; retain the previous confirmed state until another raw state is confirmed. Reset confirmation at each anchor and whenever price distance or value shift is unavailable; the first subsequently confirmed state initializes confirmation.
+Long: price distance and value shift are available AND (raw state = upward OR confirmed state = upward)
+Short: price distance and value shift are available AND (raw state = downward OR confirmed state = downward)

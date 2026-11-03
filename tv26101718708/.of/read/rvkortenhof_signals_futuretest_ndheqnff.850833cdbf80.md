@@ -1,9 +1,11 @@
-Calculation: Bullish regime = chart-timeframe close is above its simple moving average and chart-timeframe RSI is within the configured bullish range for at least the configured number of consecutive bars.
-Calculation: Bearish regime = chart-timeframe close is below its simple moving average and chart-timeframe RSI is within the configured bearish range for at least the configured number of consecutive bars.
-Calculation: Higher-timeframe regime = on the last completed bar of a higher timeframe, close is above its simple moving average and RSI is within the bullish range (bullish); or close is below its simple moving average and RSI is within the bearish range (bearish). Use the same RSI and moving-average lookbacks as on the chart timeframe.
-Calculation: Stop-loss level = entry price minus (long) or plus (short) the chart-timeframe ATR multiplied by the configured stop multiplier, fixed at entry.
-Calculation: Selected take-profit level = entry price plus (long) or minus (short) the chart-timeframe ATR multiplied by the configured selected target multiplier, fixed at entry. The selected target is one of TP1, TP2, or TP3.
-Long: current bullish regime AND previous chart bar was not in a bullish regime AND (higher-timeframe confirmation disabled OR last completed higher-timeframe regime is bullish) AND (ADX filter disabled OR chart-timeframe ADX is at least its configured minimum) AND datetime is on or after the configured history start.
-Short: current bearish regime AND previous chart bar was not in a bearish regime AND (higher-timeframe confirmation disabled OR last completed higher-timeframe regime is bearish) AND (ADX filter disabled OR chart-timeframe ADX is at least its configured minimum) AND datetime is on or after the configured history start.
-Exit: long, low is at or below the stop-loss level OR high is at or above the selected take-profit level.
-Exit: short, high is at or above the stop-loss level OR low is at or below the selected take-profit level.
+Calculation: Bullish regime = trend source > SMA of trend source AND RSI of RSI source is within the inclusive bullish range for each of the most recent confirmation-count bars.
+Calculation: Bearish regime = trend source < SMA of trend source AND RSI of RSI source is within the inclusive bearish range for each of the most recent confirmation-count bars.
+Calculation: Higher-timeframe bullish condition = on the last completed higher-timeframe bar, trend source > SMA of trend source AND RSI of RSI source is within the inclusive bullish range; use the same sources, lengths, and range as on the chart timeframe.
+Calculation: Higher-timeframe bearish condition = on the last completed higher-timeframe bar, trend source < SMA of trend source AND RSI of RSI source is within the inclusive bearish range; use the same sources, lengths, and range as on the chart timeframe.
+Calculation: Entry ATR = ATR on the signal bar, fixed for the life of the trade; the entry price is the close of the bar preceding the signal bar.
+Long: Bullish regime is true.
+Short: Bearish regime is true.
+Long: Bullish regime is true AND bullish regime was false on the previous bar AND (higher-timeframe confirmation is disabled OR higher-timeframe bullish condition is true) AND (ADX filter is disabled OR ADX >= minimum strength) AND datetime >= history start.
+Short: Bearish regime is true AND bearish regime was false on the previous bar AND (higher-timeframe confirmation is disabled OR higher-timeframe bearish condition is true) AND (ADX filter is disabled OR ADX >= minimum strength) AND datetime >= history start.
+Exit: long, low <= entry price - entry ATR * stop multiplier OR high >= entry price + entry ATR * selected target multiplier.
+Exit: short, high >= entry price + entry ATR * stop multiplier OR low <= entry price - entry ATR * selected target multiplier.

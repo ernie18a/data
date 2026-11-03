@@ -1,3 +1,3 @@
-Calculation: Volume profile levels = Divide the configured profile window’s highest high to lowest low into equal-price rows; allocate each bar’s volume to each row in proportion to the overlap between the bar’s high-low range and the row; set POC to the midpoint of the highest-volume row; expand the value area from POC by adding the adjacent row with greater volume (upper row on ties) until it contains the configured fraction of total volume; VAH and VAL are the upper and lower boundaries of the resulting rows.
-Long: close > VAH
-Short: close < VAL
+Calculation: Point of control = Divide the high-to-low range of the profile bars into equal price bins. Use either a fixed lookback including the current bar, or, in session mode, the greater of two bars and the number of bars elapsed since the current trading day began, including the current bar. If the range is zero, use a fixed positive bin width. For each bar with positive volume and high greater than low, distribute its volume among overlapping bins in proportion to the overlap with its high-to-low range. The point of control is the midpoint of the lowest-priced bin with the greatest volume. If all bin volumes are zero, retain the previous point of control; it is undefined until first calculated.
+Long: close > point of control
+Short: close <= point of control

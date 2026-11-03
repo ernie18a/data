@@ -1,16 +1,16 @@
-Calculation: Elephant bar = (high − low) > ATR × range multiplier AND |close − open| / (high − low) > body-strength threshold
-Calculation: Bullish fair value gap = current low > high two bars earlier
-Calculation: Bearish fair value gap = current high < low two bars earlier
-Calculation: Swing high/low = pivot high/low confirmed by the configured number of bars on both sides
-Long: Elephant bar AND close > open
-Short: Elephant bar AND close < open
-Long: close > short-term SMA
-Short: close < short-term SMA
-Long: Bullish fair value gap
-Short: Bearish fair value gap
-Long: close crosses above the higher-timeframe EMA, using the higher-timeframe bar still forming
-Short: close crosses below the higher-timeframe EMA, using the higher-timeframe bar still forming
-Long: Swing low confirmed AND a demand zone is created
-Short: Swing high confirmed AND a supply zone is created
-Long: close >= top of a supply zone
-Short: close <= bottom of a demand zone
+Calculation: Confirmed swing high or low = a pivot high or low confirmed after an equal number of preceding and subsequent chart bars; if both are confirmed on the same bar, process only the swing high.
+Calculation: Supply and demand zones = at each confirmed swing high or low, respectively, propose a zone extending from the pivot toward lower or higher prices by a parameter times the current ATR. Accept it only if its midpoint is outside the inclusive interval of each active same-side zone's midpoint plus or minus a parameter times the current ATR. Keep a parameterized number of the most recently accepted zones on each side, discarding the oldest when necessary. Remove a supply zone when close reaches or exceeds its upper edge; remove a demand zone when close reaches or falls below its lower edge. Create zones before checking for removals on each bar.
+Long: Close > SMA of close.
+Short: Close < SMA of close.
+Long: High - low > ATR times a parameter AND high > low AND absolute value of close - open divided by high - low > a parameter AND close > open.
+Short: High - low > ATR times a parameter AND high > low AND absolute value of close - open divided by high - low > a parameter AND close < open.
+Long: Low > high two bars earlier.
+Short: High < low two bars earlier.
+Long: A swing high is confirmed AND its value >= the previous confirmed swing high, initially zero.
+Short: A swing high is confirmed AND its value < the previous confirmed swing high, initially zero.
+Long: A swing low is confirmed AND its value >= the previous processed swing low, initially zero.
+Short: A swing low is confirmed AND its value < the previous processed swing low, initially zero.
+Long: A demand zone is accepted.
+Short: A supply zone is accepted.
+Long: Close >= the upper edge of an active supply zone.
+Short: Close <= the lower edge of an active demand zone.

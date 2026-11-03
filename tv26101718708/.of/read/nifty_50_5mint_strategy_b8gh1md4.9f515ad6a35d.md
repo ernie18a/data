@@ -1,8 +1,10 @@
-Calculation: Breakout threshold = highest close or lowest close over the configured lookback on a higher timeframe, shifted by the configured number of higher-timeframe bars; use the default security timing (last completed bar historically, developing bar live)
-Calculation: Long trailing threshold = lowest close over the configured trailing lookback on the chart timeframe, shifted back one chart bar
-Calculation: Short trailing threshold = highest close over the configured trailing lookback on the chart timeframe, shifted back one chart bar
-Calculation: DEMA = 2 × EMA(close, period) − EMA(EMA(close, period), period)
-Long: close > the shifted higher-timeframe highest-close threshold AND close crosses above the upper Bollinger Band if that filter is enabled AND DEMA > VWAP if that filter is enabled AND within the configured date range, session time, and enabled weekdays AND flat
-Short: close < the shifted higher-timeframe lowest-close threshold AND close crosses below the lower Bollinger Band if that filter is enabled AND DEMA < VWAP if that filter is enabled AND within the configured date range, session time, and enabled weekdays AND flat
-Exit: Long, low ≤ entry price − configured fixed stop distance if fixed stop is enabled OR close < long trailing threshold if trailing stop is enabled OR outside the configured date range, session time, or enabled weekdays
-Exit: Short, high ≥ entry price + configured fixed stop distance if fixed stop is enabled OR close > short trailing threshold if trailing stop is enabled OR outside the configured date range, session time, or enabled weekdays
+Calculation: Higher-timeframe breakout high = highest close over a configurable lookback on the higher timeframe, using the last completed higher-timeframe bar; then shift the resulting chart-timeframe series back by a configurable number of chart bars.
+Calculation: Higher-timeframe breakout low = lowest close over the same higher-timeframe lookback, using the last completed higher-timeframe bar; then shift the resulting chart-timeframe series back by the same number of chart bars.
+Long: Position is flat AND close > higher-timeframe breakout high AND (Bollinger Band filter disabled OR close crosses above the upper Bollinger Band) AND (DEMA-VWAP filter disabled OR DEMA of close > session VWAP) AND bar time is within the configured date range AND bar time is within the configured session on a selected weekday.
+Short: Position is flat AND close < higher-timeframe breakout low AND (Bollinger Band filter disabled OR close crosses below the lower Bollinger Band) AND (DEMA-VWAP filter disabled OR DEMA of close < session VWAP) AND bar time is within the configured date range AND bar time is within the configured session on a selected weekday.
+Exit: long, fixed stop enabled AND low <= entry signal bar close minus the configured fixed stop distance.
+Exit: short, fixed stop enabled AND high >= entry signal bar close plus the configured fixed stop distance.
+Exit: long, trailing exit enabled AND close < lowest close over the trailing lookback ending on the previous chart bar.
+Exit: short, trailing exit enabled AND close > highest close over the same trailing lookback ending on the previous chart bar.
+Exit: long, (bar time is outside the configured session OR bar time is outside the configured date range) AND bar time is outside the configured session on selected weekdays.
+Exit: short, (bar time is outside the configured session OR bar time is outside the configured date range) AND bar time is outside the configured session on selected weekdays.

@@ -1,14 +1,19 @@
-Calculation: Chart fast and slow EMAs = exponential moving averages of chart-timeframe close, with the fast EMA using a shorter lookback.
-Calculation: Anchor fast and slow EMAs = chart-timeframe exponential moving averages of the higher-timeframe close series, with the fast EMA using a shorter lookback; use the last completed higher-timeframe bar historically and the forming bar in real time.
-Calculation: Long setup = flat position AND previous-bar long window was false AND chart fast EMA >= chart slow EMA AND, on each chart bar from the current bar through the anchor lookback, low > anchor slow EMA and anchor fast EMA > anchor slow EMA AND close >= chart fast EMA AND low <= chart fast EMA.
-Calculation: Short setup = flat position AND previous-bar short window was false AND chart fast EMA <= chart slow EMA AND, on each chart bar from the current bar through the anchor lookback, high < anchor slow EMA and anchor fast EMA < anchor slow EMA AND close <= chart fast EMA AND high >= chart fast EMA.
-Calculation: Long window remains valid while the latest long setup is no older than its validity limit, no short setup is more recent, close >= anchor fast EMA, the long anchor condition holds, and chart fast EMA >= chart slow EMA.
-Calculation: Short window remains valid while the latest short setup is no older than its validity limit, no long setup is more recent, close <= anchor fast EMA, the short anchor condition holds, and chart fast EMA <= chart slow EMA.
-Calculation: Long entry level = highest chart-timeframe high over the signal bar and preceding entry lookback bars, plus a price buffer.
-Calculation: Short entry level = lowest chart-timeframe low over the signal bar and preceding entry lookback bars, minus a price buffer.
-Calculation: Long stop = signal-bar low minus a price buffer; short stop = signal-bar high plus a price buffer.
-Calculation: Long target = long entry level + target multiple × (long entry level − long stop); short target = short entry level − target multiple × (short stop − short entry level).
-Long: Long window valid AND lower-timeframe open crosses above the stored long entry level.
-Short: Short window valid AND lower-timeframe open crosses below the stored short entry level.
-Exit: long, low <= long stop OR high >= long target
-Exit: short, high >= short stop OR low <= short target
+Calculation: Anchor EMAs = short- and long-period EMAs calculated on chart bars from the repeated close of the last completed higher-timeframe bar; their EMA periods are each multiplied by a shared scaling parameter.
+Calculation: Long anchor = on every chart bar in an inclusive lookback ending at the current bar, low > long-period anchor EMA AND short-period anchor EMA > long-period anchor EMA.
+Calculation: Short anchor = on every chart bar in an inclusive lookback ending at the current bar, high < long-period anchor EMA AND short-period anchor EMA < long-period anchor EMA.
+Calculation: Long signal = position is flat AND previous bar's long window is false AND short-period chart-close EMA >= long-period chart-close EMA AND long anchor is true AND close >= short-period chart-close EMA AND low <= short-period chart-close EMA.
+Calculation: Short signal = position is flat AND previous bar's short window is false AND short-period chart-close EMA <= long-period chart-close EMA AND short anchor is true AND close <= short-period chart-close EMA AND high >= short-period chart-close EMA.
+Calculation: Long window = bars since the latest long signal <= validity limit AND the latest long signal is not older than the latest short signal AND close >= short-period anchor EMA AND long anchor is true AND short-period chart-close EMA >= long-period chart-close EMA; treat comparisons involving an unavailable signal age as false in the corresponding window-closing tests.
+Calculation: Short window = bars since the latest short signal <= validity limit AND the latest short signal is not older than the latest long signal AND close <= short-period anchor EMA AND short anchor is true AND short-period chart-close EMA <= long-period chart-close EMA; treat comparisons involving an unavailable signal age as false in the corresponding window-closing tests.
+Calculation: Long entry level = highest high over a lookback ending at the latest long signal bar plus a price offset; short entry level = lowest low over the same-length lookback ending at the latest short signal bar minus the offset.
+Calculation: Long stop = low of the latest long signal bar minus the price offset; short stop = high of the latest short signal bar plus the price offset.
+Calculation: Long target = long entry level + reward multiple * (long entry level - long stop); short target = short entry level - reward multiple * (short stop - short entry level). Recalculate levels from the latest corresponding signal.
+Calculation: Trigger price = open of the last completed lower-timeframe bar within each chart bar.
+Long: short-period anchor EMA >= long-period anchor EMA.
+Short: short-period anchor EMA < long-period anchor EMA.
+Long: long window is true.
+Short: short window is true.
+Long: long window is true AND trigger price > long entry level AND previous chart bar's trigger price <= previous chart bar's long entry level AND datetime is within the configured backtest date range.
+Short: short window is true AND trigger price < short entry level AND previous chart bar's trigger price >= previous chart bar's short entry level AND datetime is within the configured backtest date range.
+Exit: long, low <= long stop OR high >= long target.
+Exit: short, high >= short stop OR low <= short target.

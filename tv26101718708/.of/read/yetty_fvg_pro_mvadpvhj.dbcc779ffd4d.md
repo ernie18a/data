@@ -1,2 +1,8 @@
-Long: (current completed chart-timeframe bar low > high two bars earlier AND low − high two bars earlier ≥ configured minimum gap size) OR (a bearish FVG exists AND current completed chart-timeframe bar close > its upper boundary)
-Short: (current completed chart-timeframe bar high < low two bars earlier AND low two bars earlier − high ≥ configured minimum gap size) OR (a bullish FVG exists AND current completed chart-timeframe bar close < its lower boundary)
+Calculation: Qualifying gap = a gap whose size is at least a configurable minimum price distance, and, if enabled, whose middle candle has absolute body size divided by its high-low range at least a configurable fraction, whose middle candle volume exceeds its volume SMA multiplied by a configurable factor, and whose third candle is within a configurable session. A zero-range middle candle has a body fraction of zero.
+Calculation: Active FVGs = qualifying gaps retained in creation order, limited to a configurable number of the most recent gaps across both directions. Remove a gap when it inverts. Check existing gaps for inversion before adding and limiting new gaps on each completed bar.
+Calculation: Bearish inversion = for a retained bullish FVG, the current low is below its bottom, the current close is below its top, the current close is below its midpoint, or the current close is below its bottom, according to the selected inversion mode.
+Calculation: Bullish inversion = for a retained bearish FVG, the current high is above its top, the current close is above its bottom, the current close is above its midpoint, or the current close is above its top, according to the selected inversion mode.
+Long: Current low > high two bars earlier AND the gap from that high to the current low is a qualifying gap.
+Long: Bullish inversion.
+Short: Current high < low two bars earlier AND the gap from the current high to that low is a qualifying gap.
+Short: Bearish inversion.

@@ -1,9 +1,16 @@
-Calculation: Fast EMA = EMA(close, shorter lookback)
-Calculation: Slow EMA = EMA(close, longer lookback)
-Calculation: Bollinger middle = SMA(close, lookback)
-Calculation: Long stop = Bollinger lower band at entry; thereafter, the greater of the prior stop and current Bollinger lower band
-Calculation: Short stop = Bollinger upper band at entry; thereafter, the lesser of the prior stop and current Bollinger upper band
-Long: While flat, fast EMA crosses above Bollinger middle or slow EMA and fast EMA is not above both; OR a long setup is armed when fast EMA first becomes above both Bollinger middle and slow EMA, remains so for fewer than the setup-validity bars, and close > Bollinger middle and (close − Bollinger middle ≤ maximum break distance × ATR OR ATR filter is off) and (high − low ≤ maximum candle range × ATR OR ATR filter is off)
-Short: While flat, fast EMA crosses below Bollinger middle or slow EMA and fast EMA is not below both; OR a short setup is armed when fast EMA first becomes below both Bollinger middle and slow EMA, remains so for fewer than the setup-validity bars, and close < Bollinger middle and (Bollinger middle − close ≤ maximum break distance × ATR OR ATR filter is off) and (high − low ≤ maximum candle range × ATR OR ATR filter is off)
-Exit: long, low ≤ long stop OR high ≥ Bollinger upper band OR slow EMA crosses below Bollinger middle
-Exit: short, high ≥ short stop OR low ≤ Bollinger lower band OR slow EMA crosses above Bollinger middle
+Calculation: Moving averages = independently selectable SMA, EMA, RMA, or WMA of close, with a shorter lookback for the fast average and a longer lookback for the slow average.
+Calculation: Long bias = fast moving average > Bollinger middle band AND fast moving average > slow moving average.
+Calculation: Short bias = fast moving average < Bollinger middle band AND fast moving average < slow moving average.
+Calculation: Armed direction = while flat, arm long or short when the corresponding bias becomes true after being false on the previous bar; replace any existing arm with the new direction. Cancel the arm when its bias becomes false, its age in bars reaches the setup-validity parameter, or an entry occurs. An arm can enter on its creation bar; a failed ATR filter leaves it armed. Do not create or use an arm on an exit bar.
+Calculation: Long stop = lower Bollinger band at entry; if trailing is enabled, after each subsequent bar without an exit, update it to the maximum of its previous value and the current lower band.
+Calculation: Short stop = upper Bollinger band at entry; if trailing is enabled, after each subsequent bar without an exit, update it to the minimum of its previous value and the current upper band.
+Long: Position is flat at the start of the bar AND fast moving average crosses above the Bollinger middle band OR slow moving average AND long bias is false.
+Short: Position is flat at the start of the bar AND fast moving average crosses below the Bollinger middle band OR slow moving average AND short bias is false.
+Long: Position is flat AND long bias becomes true after being false on the previous bar AND no long entry occurs on the same bar.
+Short: Position is flat AND short bias becomes true after being false on the previous bar AND no short entry occurs on the same bar.
+Long: Armed direction is long AND close > Bollinger middle band AND (ATR filter is disabled OR (close - Bollinger middle band <= maximum distance parameter * ATR AND high - low <= maximum range parameter * ATR)).
+Short: Armed direction is short AND close < Bollinger middle band AND (ATR filter is disabled OR (Bollinger middle band - close <= maximum distance parameter * ATR AND high - low <= maximum range parameter * ATR)).
+Long: Armed direction is long AND close > Bollinger middle band AND ATR filter is enabled AND (close - Bollinger middle band > maximum distance parameter * ATR OR high - low > maximum range parameter * ATR).
+Short: Armed direction is short AND close < Bollinger middle band AND ATR filter is enabled AND (Bollinger middle band - close > maximum distance parameter * ATR OR high - low > maximum range parameter * ATR).
+Exit: Long, low <= long stop OR high >= current upper Bollinger band OR (early exit is enabled AND slow moving average crosses below Bollinger middle band).
+Exit: Short, high >= short stop OR low <= current lower Bollinger band OR (early exit is enabled AND slow moving average crosses above Bollinger middle band).

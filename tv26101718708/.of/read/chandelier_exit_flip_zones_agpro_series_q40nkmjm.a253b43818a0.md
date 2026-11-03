@@ -1,9 +1,9 @@
-Calculation: Chandelier long stop = highest high over the structure lookback minus ATR times the ATR multiple; if the previous close is above the previous long stop, use the greater of this value and the previous long stop, otherwise use this value
-Calculation: Chandelier short stop = lowest low over the structure lookback plus ATR times the ATR multiple; if the previous close is below the previous short stop, use the lesser of this value and the previous short stop, otherwise use this value
-Calculation: Chandelier trail side = long if close is above the previous Chandelier short stop; short if close is below the previous Chandelier long stop; otherwise retain the previous trail side
-Calculation: Active Chandelier trail = Chandelier long stop when trail side is long; Chandelier short stop when trail side is short
-Calculation: Distance from active trail in ATR = absolute value of (close minus active Chandelier trail) divided by ATR
-Long: current Chandelier trail side is long AND previous Chandelier trail side was short
-Short: current Chandelier trail side is short AND previous Chandelier trail side was long
-Exit: long, distance from active trail in ATR <= exit-watch threshold
-Exit: short, distance from active trail in ATR <= exit-watch threshold
+Calculation: Chandelier stops = On each chart bar, raw long stop is the highest high over the structure lookback minus ATR multiplied by a stop-distance multiplier; raw short stop is the lowest low over the same lookback plus ATR multiplied by the same multiplier. For each stop, use its previous value, or its current raw value if the previous value is unavailable. If the previous close is above the prior long stop, the current long stop is the maximum of the raw and prior long stops; otherwise it is the raw long stop. If the previous close is below the prior short stop, the current short stop is the minimum of the raw and prior short stops; otherwise it is the raw short stop.
+Calculation: Trail side = Initialize long. On each bar, set long if close is above the prior short stop; otherwise set short if close is below the prior long stop; otherwise retain the previous side. Use the current raw stop when its prior stop is unavailable.
+Calculation: Active trail distance = Absolute difference between close and the current stop for the trail side, divided by ATR; undefined when ATR is not positive.
+Long: Trail side is long AND previous trail side is short
+Long: Trail side is long
+Short: Trail side is short AND previous trail side is long
+Short: Trail side is short
+Exit: long, trail side is long AND active trail distance is at or below the exit-watch threshold
+Exit: short, trail side is short AND active trail distance is at or below the exit-watch threshold

@@ -1,4 +1,3 @@
-Calculation: Opening range high/low = highest high and lowest low during the configured opening-range duration beginning at an enabled session open
-Calculation: Previous day high/low = high and low of the last completed higher-timeframe daily bar
-Long: close > an enabled session’s opening range high OR close > previous day high
-Short: close < an enabled session’s opening range low OR close < previous day low
+Calculation: Opening-range high and low = highest high and lowest low of chart bars in a configured session whose opening timestamps are within the configured opening-range duration after the first session bar; include that first bar, update the range through the current bar, retain it after the session ends, and reset it at the next session start.
+Long: For any of three independently configured sessions, an opening range exists AND close > opening-range high; OR for a fourth independently configured session, the current bar is in that session AND close > opening-range high.
+Short: For any of three independently configured sessions, an opening range exists AND close < opening-range low; OR for a fourth independently configured session, the current bar is in that session AND close < opening-range low.

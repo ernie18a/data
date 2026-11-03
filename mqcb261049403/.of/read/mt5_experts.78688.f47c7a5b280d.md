@@ -1,12 +1,9 @@
-Calculation: Session high/low = highest high and lowest low of completed lower-timeframe bars from the session start up to, but not including, the session end
-Calculation: Range width = session high − session low
-Calculation: Long stop-entry level = session high + entry offset + spread at order placement
-Calculation: Short stop-entry level = session low − entry offset
-Calculation: Long stop-loss level = session low − stop offset
-Calculation: Short stop-loss level = session high + stop offset + spread at order placement
-Calculation: Long take-profit level = entry price + reward/risk multiple × (entry price − long stop-loss level)
-Calculation: Short take-profit level = entry price − reward/risk multiple × (short stop-loss level − entry price)
-Long: After the session ends and before the daily order-cancel time AND trading day is enabled AND maximum spread is disabled or current spread ≤ maximum spread AND minimum range width is disabled or range width ≥ minimum range width AND maximum range width is disabled or range width ≤ maximum range width AND long stop-entry level − current ask > broker minimum stop distance
-Short: After the session ends and before the daily order-cancel time AND trading day is enabled AND maximum spread is disabled or current spread ≤ maximum spread AND minimum range width is disabled or range width ≥ minimum range width AND maximum range width is disabled or range width ≤ maximum range width AND current bid − short stop-entry level > broker minimum stop distance
-Exit: Long, current price ≤ long stop-loss level OR current price ≥ long take-profit level OR current time ≥ enabled daily position-close time
-Exit: Short, current price ≥ short stop-loss level OR current price ≤ short take-profit level OR current time ≥ enabled daily position-close time
+Calculation: Range high and range low = the highest high and lowest low of completed bars whose opening times are within the configured daily range interval, including its start and excluding its end; use a lower timeframe than the chart timeframe, or the chart timeframe if it is already the finest available timeframe.
+Calculation: Long entry level = range high + entry offset.
+Calculation: Short entry level = range low − entry offset.
+Calculation: Long stop = range low − stop offset.
+Calculation: Short stop = range high + stop offset.
+Long: Current day is enabled AND time is at or after range end and before cancellation time AND range width is within the enabled minimum and maximum limits AND price at order placement is below the long entry level AND high reaches the long entry level AND no entry has occurred from the day's order set.
+Short: Current day is enabled AND time is at or after range end and before cancellation time AND range width is within the enabled minimum and maximum limits AND price at order placement is above the short entry level AND low reaches the short entry level AND no entry has occurred from the day's order set.
+Exit: long, low <= long stop OR high >= long entry level + risk-reward multiplier × (long entry level − long stop) OR enabled close time is reached.
+Exit: short, high >= short stop OR low <= short entry level − risk-reward multiplier × (short stop − short entry level) OR enabled close time is reached.

@@ -1,11 +1,12 @@
-Calculation: Short-term EMA = exponential moving average of close with a shorter lookback than the long-term EMA
-Calculation: Long-term EMA = exponential moving average of close with a longer lookback than the short-term EMA
-Calculation: White candle = short-term EMA crosses either way through the long-term EMA, or the absolute difference between the two EMAs is below a tolerance
-Calculation: RSI = relative strength index of close
-Calculation: Confirmed RSI pivot low/high = an RSI local low/high confirmed using bars on both sides of the pivot; compare its RSI and price with the prior pivot of the same type, provided that prior pivot is within a bounded lookback range
-Long: A confirmed RSI pivot low has a lower low in price and a higher RSI than the prior pivot low (regular bullish divergence), or a higher low in price and a lower RSI than the prior pivot low (hidden bullish divergence)
-Long: RSI crosses upward through a lower threshold AND the candle closes above its open
-Long: A white candle has been detected AND no signal has fired since the bar immediately after that white candle AND high exceeds the highest high among the white candle, its preceding bar, and its immediately following bar AND short-term EMA is above long-term EMA AND short-term EMA is not crossing upward through long-term EMA
-Short: A confirmed RSI pivot high has a higher high in price and a lower RSI than the prior pivot high (regular bearish divergence), or a lower high in price and a higher RSI than the prior pivot high (hidden bearish divergence)
-Short: RSI crosses downward through an upper threshold
-Short: A white candle has been detected AND no signal has fired since the bar immediately after that white candle AND low is below the lowest low among the white candle, its preceding bar, and its immediately following bar AND short-term EMA is below long-term EMA AND short-term EMA is not crossing downward through long-term EMA
+Calculation: Setup bar = a bar where the short-period close EMA crosses the long-period close EMA in either direction OR the absolute difference between those EMAs is below a tolerance.
+Calculation: Setup range = the highest high and lowest low of a setup bar, its preceding bar, and its immediately following bar. Update the range on the following bar only if that bar is not itself a setup bar; otherwise retain the previous range. Retain the range until another update.
+Calculation: Signal availability = true after a setup range update and false after either setup-range entry; a new setup bar alone does not reset it. Before the first range update, no setup-range entry is available.
+Calculation: RSI pivot low or high = an RSI low or high confirmed after a specified number of right-hand bars against specified left-hand and right-hand neighboring bars. Compare the price low or high at the current RSI pivot with the price low or high at the preceding RSI pivot of the same kind. The allowed pivot spacing is measured as the number of bars between their confirmation bars minus one and must be between a minimum and maximum inclusive.
+Calculation: Bullish RSI divergence = a confirmed RSI pivot low with allowed spacing AND either RSI at the current pivot > RSI at the preceding pivot AND price low at the current pivot < price low at the preceding pivot, OR RSI at the current pivot < RSI at the preceding pivot AND price low at the current pivot > price low at the preceding pivot.
+Calculation: Bearish RSI divergence = a confirmed RSI pivot high with allowed spacing AND either RSI at the current pivot < RSI at the preceding pivot AND price high at the current pivot > price high at the preceding pivot, OR RSI at the current pivot > RSI at the preceding pivot AND price high at the current pivot < price high at the preceding pivot.
+Long: High > setup-range highest high AND signal availability = true AND short-period close EMA > long-period close EMA AND the short-period EMA did not cross above the long-period EMA on the current bar.
+Short: Low < setup-range lowest low AND signal availability = true AND short-period close EMA < long-period close EMA AND the short-period EMA did not cross below the long-period EMA on the current bar.
+Long: Bullish RSI divergence AND current bar is not a setup bar AND regular bearish RSI divergence is false.
+Short: Bearish RSI divergence AND current bar is not a setup bar AND either regular bearish RSI divergence is true OR bullish RSI divergence is false.
+Long: RSI crosses above a lower threshold AND close > open.
+Short: RSI crosses below a higher threshold.

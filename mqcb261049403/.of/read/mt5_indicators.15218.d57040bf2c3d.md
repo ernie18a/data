@@ -1,10 +1,8 @@
-Calculation: Bezier line = the binomially weighted sum of the configured applied price over the current bar and the preceding BPeriod bars, using weights C(BPeriod,i)·T^i·(1−T)^(BPeriod−i) for the bar i bars ago.
-Calculation: Bezier-change standard deviation = population standard deviation of the most recent std_period changes in the Bezier line.
-Long: On the chart timeframe, the current Bezier line is greater than its value on the preceding bar.
-Long: On the chart timeframe, the current Bezier-line change is greater than dK times the Bezier-change standard deviation.
-Long: On a higher timeframe, the current still-forming bar’s Bezier line is greater than its value on the preceding bar.
-Long: On a higher timeframe, the current still-forming bar’s Bezier-line change is greater than dK times the Bezier-change standard deviation.
-Short: On the chart timeframe, the current Bezier line is less than its value on the preceding bar.
-Short: On the chart timeframe, the current Bezier-line change is less than −dK times the Bezier-change standard deviation.
-Short: On a higher timeframe, the current still-forming bar’s Bezier line is less than its value on the preceding bar.
-Short: On a higher timeframe, the current still-forming bar’s Bezier-line change is less than −dK times the Bezier-change standard deviation.
+Calculation: Selected price = a configurable choice of open, high, low, close, (high + low)/2, (high + low + close)/3, (high + low + 2 × close)/4, (open + close)/2, (open + high + low + close)/4, or one of the following: if close > open use high, if close < open use low, otherwise use close; if close > open use (high + close)/2, if close < open use (low + close)/2, otherwise use close; or let x = (high + low + close + (low if close < open, high if close > open, otherwise close))/2 and use x - (high + low)/2.
+Calculation: Bézier value at bar t = sum over i from 0 through the configurable period n of selected price at bar t-i × binomial coefficient(n, i) × sensitivity^i × (1 - sensitivity)^(n-i), where sensitivity is constrained to [0, 1]. Calculate either on the chart timeframe or on a higher timeframe using its still-forming bar; for the higher-timeframe version, repeat its current value on chart bars within that higher-timeframe bar.
+Calculation: Bézier change = current Bézier value minus previous Bézier value on the timeframe used for the Bézier calculation.
+Calculation: Change threshold = configurable multiplier × population standard deviation of Bézier changes over a configurable lookback on the same timeframe. Round both the current Bézier change and the threshold to the instrument's price precision plus two decimal places before comparing them.
+Long: Current Bézier value > previous Bézier value.
+Short: Current Bézier value < previous Bézier value.
+Long: Rounded Bézier change > rounded change threshold.
+Short: Rounded Bézier change < negative rounded change threshold.

@@ -1,5 +1,5 @@
-Calculation: Short-, middle-, and long-lookback ADX = standard ADX on the chart timeframe or a selected higher timeframe, using the still-forming bar and its preceding bar; the lookbacks are ordered shortest < middle < longest. Use +DI and −DI from the shortest-lookback ADX.
-Calculation: Active trend = all three ADX values are greater than their respective preceding-bar values AND short-lookback ADX > its threshold AND middle-lookback ADX > its threshold.
-Long: Active trend AND the preceding bar was not an active trend AND +DI > −DI
-Short: Active trend AND the preceding bar was not an active trend AND +DI <= −DI
-Exit: long or short, the preceding bar was an active trend AND the current bar is not an active trend
+Calculation: Trend strength = minimum of (short-lookback ADX minus its previous-bar value), (medium-lookback ADX minus its previous-bar value), (long-lookback ADX minus its previous-bar value), (short-lookback ADX minus the higher ADX threshold), and (medium-lookback ADX minus the lower ADX threshold). Calculate on the chart timeframe or on the still-forming higher-timeframe bar; previous-bar values refer to the preceding bar of the selected timeframe.
+Long: Trend strength > 0 AND short-lookback +DI > short-lookback -DI.
+Short: Trend strength > 0 AND short-lookback +DI <= short-lookback -DI.
+Exit: Long, previous-bar trend strength > 0 AND current trend strength <= 0.
+Exit: Short, previous-bar trend strength > 0 AND current trend strength <= 0.

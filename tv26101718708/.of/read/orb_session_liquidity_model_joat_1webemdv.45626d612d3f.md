@@ -1,8 +1,11 @@
-Calculation: Opening-range high/low = highest high and lowest low during the configured opening window, fixed when that window ends
-Calculation: Breakout buffer = ATR × configured buffer multiplier
-Calculation: Stop = opposite opening-range boundary, or entry price minus (long) / plus (short) ATR × configured stop multiplier; if the resulting risk distance is nonpositive, use that ATR stop
-Calculation: TP1 = entry price plus (long) / minus (short) risk distance × configured TP1 R multiple
-Long: opening window has ended AND current bar is in the configured trade session AND long signals used today < configured daily limit AND current close > current opening-range high + current breakout buffer AND previous close <= previous opening-range high + previous breakout buffer
-Short: opening window has ended AND current bar is in the configured trade session AND short signals used today < configured daily limit AND current close < current opening-range low - current breakout buffer AND previous close >= previous opening-range low - previous breakout buffer
-Exit: long position, bar high >= TP1 OR bar low <= stop
-Exit: short position, bar low <= TP1 OR bar high >= stop
+Calculation: Opening range high and low = highest high and lowest low of chart bars in the configured opening window, using its configured timezone; update during the window and lock on the first bar outside it. Retain the locked range until the next opening window starts.
+Calculation: Breakout buffer = current ATR multiplied by a buffer parameter.
+Calculation: Daily signal count = number of breakout signals for the same direction since the start of the current exchange day, reset at each new exchange day.
+Calculation: Entry stop = at the signal close, either entry price minus ATR times a stop multiplier for a long or plus it for a short, or the opening range low for a long or high for a short. If the absolute distance between entry and stop is zero or unavailable, use ATR times the stop multiplier as the distance and place the stop that distance below a long entry or above a short entry. Fix the stop at entry.
+Calculation: First target = entry price plus, for a long, or minus, for a short, the absolute distance from entry to entry stop multiplied by a target parameter; fix it at entry.
+Long: Opening range is locked AND current bar is in the configured trade session AND daily long signal count is below the per-direction cap AND close is above opening range high plus breakout buffer AND previous close is at or below the previous bar's opening range high plus breakout buffer.
+Short: Opening range is locked AND current bar is in the configured trade session AND daily short signal count is below the per-direction cap AND close is below opening range low minus breakout buffer AND previous close is at or above the previous bar's opening range low minus breakout buffer.
+Long: Opening range is locked AND close > opening range high.
+Short: Opening range is locked AND close < opening range low.
+Exit: long, on a bar after entry, high >= first target OR low <= entry stop OR a new breakout signal occurs.
+Exit: short, on a bar after entry, low <= first target OR high >= entry stop OR a new breakout signal occurs.

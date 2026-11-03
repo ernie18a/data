@@ -1,5 +1,7 @@
-Calculation: Upper drift = Average of the most recent configured number of confirmed swing highs, each higher than the highs of the configured number of bars on both sides; updates only when a new swing high is confirmed and is available after at least two confirmed swing highs
-Calculation: Lower drift = Average of the most recent configured number of confirmed swing lows, each lower than the lows of the configured number of bars on both sides; updates only when a new swing low is confirmed and is available after at least two confirmed swing lows
-Calculation: Trend state = Starts bullish; becomes bullish when close crosses above the upper drift and bearish when close crosses below the lower drift; otherwise retains its prior state
-Long: Both drift lines are available AND trend state changes from bearish to bullish
-Short: Both drift lines are available AND trend state changes from bullish to bearish
+Calculation: Upper drift = mean of the most recent configurable number of confirmed pivot highs, available after at least two; a pivot high is greater than or equal to highs in an equal configurable number of preceding bars and greater than highs in that many subsequent bars, and is added when confirmed.
+Calculation: Lower drift = mean of the most recent configurable number of confirmed pivot lows, available after at least two; a pivot low is less than or equal to lows in an equal configurable number of preceding bars and less than lows in that many subsequent bars, and is added when confirmed.
+Calculation: Trend = bullish initially; once both drifts are available, set bullish when close crosses above upper drift and set bearish when close crosses below lower drift, retaining the previous state otherwise. If both crosses occur on the same bar, bearish takes precedence. A crossover requires current close > current drift and previous close <= previous drift; a crossunder requires current close < current drift and previous close >= previous drift.
+Long: Trend is bullish.
+Short: Trend is bearish.
+Long: Trend is bullish AND previous trend is bearish.
+Short: Trend is bearish AND previous trend is bullish.

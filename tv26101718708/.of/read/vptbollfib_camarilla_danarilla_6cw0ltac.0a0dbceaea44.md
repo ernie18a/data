@@ -1,17 +1,26 @@
-Calculation: Previous-period Camarilla H3/L3 = previous completed bar’s close ± (previous bar’s high − low) × 1.1/4, using the configured pivot timeframe, which is higher than the chart timeframe.
-Calculation: MACD line = short-lookback EMA of close − long-lookback EMA of close; signal line = moving average of the MACD line over a shorter lookback.
-Calculation: Bollinger Fibonacci bands = same-lookback SMA of close ± ATR of that lookback multiplied by Fibonacci ratios; band 2 uses the second ratio. Smoothed VPT price line = short-lookback SMA of the VPT-derived price series, where VPT is the cumulative sum of (close − open) × 100 × (volume / ((high − low) × 100)), and the derived price series is high + shadow when shadow is positive, otherwise low + shadow; shadow = (VPT − its short-lookback SMA) / standard deviation of that difference over a longer lookback × standard deviation of (high − low) over that longer lookback.
-Long: low <= previous-period Camarilla L3
-Short: high >= previous-period Camarilla H3
-Exit: Long, high >= previous-period Camarilla H3
-Exit: Short, low <= previous-period Camarilla L3
-Long: RSI is above its threshold AND MACD line is above its signal line AND the previous signal state was short
-Short: RSI is below its threshold AND MACD line is below its signal line AND the previous signal state was long
-Long: smoothed VPT price line crosses above the lower band 2
-Short: smoothed VPT price line crosses below the upper band 2
-Long: TKE crosses above zero
-Short: TKE crosses below its overbought threshold
-Long: previous bar range > ATR × multiplier AND previous bar body/range is between minimum and maximum fractions AND previous bar closed below its open AND current bar closes above its open
-Short: previous bar range > ATR × multiplier AND previous bar body/range is between minimum and maximum fractions AND previous bar closed above its open AND current bar closes below its open
-Long: previous bar range > ATR × multiplier AND current low < previous low AND current close > previous high
-Short: previous bar range > ATR × multiplier AND current high > previous high AND current close < previous low
+Calculation: VPT signal = SMA of projected VPT price over a smoothing lookback. For each bar, signed volume = volume × (close − open) / (high − low); cumulative VPT = signed volume + cumulative sum of signed volume; deviation = (cumulative VPT − SMA of cumulative VPT over a second smoothing lookback) × standard deviation of high − low over a window lookback / standard deviation of cumulative VPT − its SMA over the same window lookback; projected VPT price = high + deviation if deviation > 0, otherwise low + deviation.
+Calculation: TKE = mean of momentum, CCI, RSI, Williams %R, stochastic %K, money flow component, and ultimate oscillator component. Momentum = 100 × close / close one lookback ago. CCI uses typical price. The money flow component = 100 − 100 / (1 + positive flow / negative flow), where each flow is an RSI-style Wilder average of its rolling sum: positive sum includes volume × typical price only when typical price rises, and negative sum includes it only when typical price falls. The ultimate oscillator component = 100 × (4 × short ratio + 2 × medium ratio + long ratio) / 7; each ratio is the rolling sum of close − min(low, previous close) divided by the rolling sum of max(high, previous close) − min(low, previous close). The short, medium, and long lookbacks increase in that order; the other components use the same lookback.
+Calculation: Jurik moving average = recursively calculate phase ratio = clamp(phase / 100 + 1.5, 0.5, 2.5), beta = 0.45 × (length − 1) / (0.45 × (length − 1) + 2), alpha = beta ^ power, e0 = (1 − alpha) × close + alpha × previous e0, e1 = (close − e0) × (1 − beta) + beta × previous e1, e2 = (e0 + phase ratio × e1 − previous average) × (1 − alpha)^2 + alpha^2 × previous e2, and average = e2 + previous average; initialize previous values to zero.
+Calculation: PPO ranks = percentile ranks over the same lookback of 100 × (short Jurik moving average − long Jurik moving average) / long Jurik moving average and its negation, respectively. The short average uses a shorter length than the long average.
+Calculation: Hull variant = either WMA(2 × WMA(close, length / 2) − WMA(close, length), round(sqrt(length))), EMA(2 × EMA(close, length / 2) − EMA(close, length), round(sqrt(length))), or WMA(3 × WMA(close, length / 6) − WMA(close, length / 4) − WMA(close, length / 2), length / 2).
+Calculation: RSI swing state = the most recent RSI extreme: overbought when RSI >= its upper threshold, oversold when RSI <= its lower threshold. On a switch to overbought, initialize the swing high to the current high; while overbought is the most recent extreme, replace it whenever the current high >= swing high. On a switch to oversold, initialize the swing low to the current low; while oversold is the most recent extreme, replace it whenever the current low <= swing low. Swing high and low markings can be updated only after their respective first state switches.
+Long: RSI > upper threshold AND fast EMA of close − slow EMA of close > SMA of that EMA difference AND the most recent prior bar satisfying either this condition or its bearish counterpart satisfied the bearish counterpart.
+Short: RSI < lower threshold AND fast EMA of close − slow EMA of close < SMA of that EMA difference AND the most recent prior bar satisfying either this condition or its bullish counterpart satisfied the bullish counterpart.
+Long: VPT signal crosses above SMA of close − ATR × band multiplier.
+Short: VPT signal crosses below SMA of close + ATR × band multiplier.
+Long: TKE crosses above zero.
+Short: TKE crosses below an upper threshold.
+Long: previous high − previous low > ATR of the current bar × range multiplier AND abs(previous close − previous open) / (previous high − previous low) >= minimum body fraction AND abs(previous close − previous open) / (previous high − previous low) <= maximum body fraction AND previous close < previous open AND close > open.
+Short: previous high − previous low > ATR of the current bar × range multiplier AND abs(previous close − previous open) / (previous high − previous low) >= minimum body fraction AND abs(previous close − previous open) / (previous high − previous low) <= maximum body fraction AND previous close > previous open AND close < open.
+Long: previous high − previous low > ATR of the current bar × outside-reversal range multiplier AND low < previous low AND close > previous high.
+Short: previous high − previous low > ATR of the current bar × outside-reversal range multiplier AND high > previous high AND close < previous low.
+Long: close > EMA of high.
+Short: close < EMA of low.
+Long: session VWAP of open <= session VWAP of close.
+Short: session VWAP of open > session VWAP of close.
+Long: percentile rank of negative PPO >= warning threshold.
+Short: percentile rank of PPO >= warning threshold AND percentile rank of negative PPO < warning threshold.
+Long: Hull variant > its value a fixed number of bars ago.
+Short: Hull variant <= its value a fixed number of bars ago.
+Long: RSI swing state switches from overbought to oversold OR RSI swing state is oversold AND low <= prior swing low AND an oversold swing marking exists.
+Short: RSI swing state switches from oversold to overbought OR RSI swing state is overbought AND high >= prior swing high AND an overbought swing marking exists.

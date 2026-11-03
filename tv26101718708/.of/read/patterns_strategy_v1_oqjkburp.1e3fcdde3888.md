@@ -1,23 +1,20 @@
-Calculation: Candle body % = 100 × abs(close − open) / (high − low), or 0 when high = low
-Calculation: Bullish engulfing = previous close < previous open AND current close > current open AND current body % ≥ configured minimum AND (strict mode: current open < previous close AND current close > previous open; otherwise current open ≤ previous close AND current close ≥ previous open) AND (close-beyond-previous-open requirement disabled OR current close > previous open)
-Calculation: Bearish engulfing = previous close > previous open AND current close < current open AND current body % ≥ configured minimum AND (strict mode: current open > previous close AND current close < previous open; otherwise current open ≥ previous close AND current close ≤ previous open) AND (close-beyond-previous-open requirement disabled OR current close < previous open)
-Calculation: Morning Star = candle two bars ago closes below its open AND its body % ≥ configured outer-candle minimum AND intervening candle body % ≤ configured middle-candle maximum AND current candle closes above its open AND its body % ≥ configured outer-candle minimum AND current close > candle-two-bars-ago open − (configured penetration fraction × its body size)
-Calculation: Evening Star = candle two bars ago closes above its open AND its body % ≥ configured outer-candle minimum AND intervening candle body % ≤ configured middle-candle maximum AND current candle closes below its open AND its body % ≥ configured outer-candle minimum AND current close < candle-two-bars-ago open + (configured penetration fraction × its body size)
-Calculation: Long trigger = signal candle high + configured entry buffer
-Calculation: Short trigger = signal candle low − configured entry buffer
-Calculation: Initial long stop = lower of signal candle low and (for engulfing, previous candle low when whole-pattern stops are enabled; for Morning Star, lows of the prior two candles) − configured stop buffer; if trigger − stop is less than configured minimum stop distance, use trigger − minimum stop distance
-Calculation: Initial short stop = higher of signal candle high and (for engulfing, previous candle high when whole-pattern stops are enabled; for Evening Star, highs of the prior two candles) + configured stop buffer; if stop − trigger is less than configured minimum stop distance, use trigger + minimum stop distance
-Calculation: Risk distance = absolute value of entry price − initial stop
-Calculation: Long TP1 = entry price + configured TP1 risk multiple × risk distance
-Calculation: Long TP2 = entry price + configured TP2 risk multiple × risk distance
-Calculation: Short TP1 = entry price − configured TP1 risk multiple × risk distance
-Calculation: Short TP2 = entry price − configured TP2 risk multiple × risk distance
-Calculation: Active stop after TP1 = entry price + configured break-even offset for a long position, or entry price − configured break-even offset for a short position, when break-even adjustment is enabled; otherwise retain the initial stop
-Long: (Bullish engulfing OR Morning Star) AND (trend filter disabled OR close > EMA) AND long trades enabled
-Long: Valid pending long setup AND high ≥ long trigger
-Short: (Bearish engulfing OR Evening Star) AND (trend filter disabled OR close < EMA) AND short trades enabled
-Short: Valid pending short setup AND low ≤ short trigger
-Exit: long, low ≤ active stop
-Exit: long, high ≥ long TP1 OR high ≥ long TP2
-Exit: short, high ≥ active stop
-Exit: short, low ≤ short TP1 OR low ≤ short TP2
+Calculation: Body fraction = abs(close - open) / (high - low), or 0 when high = low; [1] and [2] denote the preceding and second preceding bars.
+Calculation: Bullish engulfing = engulfing enabled AND close[1] < open[1] AND close > open AND body fraction >= minimum engulfing fraction AND (if strict engulfing is enabled: open < close[1] AND close > open[1]; otherwise: open <= close[1] AND close >= open[1]) AND (close-beyond-open disabled OR close > open[1]).
+Calculation: Bearish engulfing = engulfing enabled AND close[1] > open[1] AND close < open AND body fraction >= minimum engulfing fraction AND (if strict engulfing is enabled: open > close[1] AND close < open[1]; otherwise: open >= close[1] AND close <= open[1]) AND (close-beyond-open disabled OR close < open[1]).
+Calculation: Morning star = stars enabled AND close[2] < open[2] AND body fraction[2] >= minimum outer-body fraction AND body fraction[1] <= maximum middle-body fraction AND close > open AND body fraction >= minimum outer-body fraction AND close > open[2] - abs(close[2] - open[2]) * penetration fraction.
+Calculation: Evening star = stars enabled AND close[2] > open[2] AND body fraction[2] >= minimum outer-body fraction AND body fraction[1] <= maximum middle-body fraction AND close < open AND body fraction >= minimum outer-body fraction AND close < open[2] + abs(close[2] - open[2]) * penetration fraction.
+Long: (Bullish engulfing OR morning star) AND long trading enabled AND (trend filter disabled OR close > EMA of close).
+Short: (Bearish engulfing OR evening star) AND short trading enabled AND (trend filter disabled OR close < EMA of close).
+Calculation: A marked setup arms a pending order at its bar close only when flat, no pending order exists, inside the permitted session if enabled, daily trade count is below its limit, daily losing closed-trade count is below its enabled limit, and the first-pattern-only limit has not already been used. Reset counts and the first-pattern flag on a new calendar day; set the flag when a setup arms. Increment trade count when an entry is detected and losing-trade count for each closed trade with negative profit. If both directions qualify, arm long. Cancel a pending order when its age in bars exceeds its validity limit, the day changes, the session restriction fails, a daily limit is reached, a position exists, or optional stop invalidation occurs: low <= initial stop for long or high >= initial stop for short. Check cancellation before a market-on-break trigger; a previously placed stop order can fill before that bar-close check.
+Calculation: Pending long trigger = setup high + entry buffer; pending short trigger = setup low - entry buffer. Initial long stop = the lower of trigger - minimum stop distance and pattern low - stop buffer; initial short stop = the higher of trigger + minimum stop distance and pattern high + stop buffer. Pattern low/high covers all three star bars; for engulfing it covers the current bar and optionally the previous bar. Buffers and minimum distance are configurable price increments.
+Long: Pending long order remains valid AND high >= pending long trigger; in stop-order mode the order is active from the bar after the setup and fills at the stop subject to gap handling; in market-on-break mode the comparison includes the setup bar and submits a market order for the next bar open.
+Short: Pending short order remains valid AND low <= pending short trigger; in stop-order mode the order is active from the bar after the setup and fills at the stop subject to gap handling; in market-on-break mode the comparison includes the setup bar and submits a market order for the next bar open.
+Calculation: Initial risk = abs(entry price - initial stop). Long targets = entry price + initial risk * respective target multiples; short targets = entry price - initial risk * respective target multiples. After the first target is reached, if partial target and break-even adjustment are enabled, set the active stop to entry price + break-even offset for long or entry price - break-even offset for short; otherwise retain the initial stop. The first and final target multiples are independently configurable.
+Exit: long, initial risk > 0 AND low <= active stop.
+Exit: short, initial risk > 0 AND high >= active stop.
+Exit: long, initial risk > 0 AND partial target enabled AND high >= first target; close the configured fraction.
+Exit: short, initial risk > 0 AND partial target enabled AND low <= first target; close the configured fraction.
+Exit: long, initial risk > 0 AND high >= final target; close the remaining position.
+Exit: short, initial risk > 0 AND low <= final target; close the remaining position.
+Exit: long, session-end closing enabled AND session restriction enabled AND current bar is outside the configured session AND previous bar was inside; submit a market close for the next bar open.
+Exit: short, session-end closing enabled AND session restriction enabled AND current bar is outside the configured session AND previous bar was inside; submit a market close for the next bar open.

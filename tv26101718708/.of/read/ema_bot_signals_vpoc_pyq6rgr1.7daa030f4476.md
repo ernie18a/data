@@ -1,11 +1,25 @@
-Calculation: Slow EMA slope per bar = ((current slow EMA - slow EMA N bars ago) / slow EMA N bars ago) / N × 100
-Calculation: Volume ratio = current volume / simple moving average of volume over N bars
-Calculation: Bull targets = Over the prior L bars, average the open at each fast-EMA cross above slow EMA (prior fast EMA ≤ prior slow EMA); find the highest high where fast EMA > slow EMA. If that high exceeds the average, set EMA T1 to average + half the difference and EMA T2 to average + the difference; otherwise targets are unavailable. If VPoC is enabled and exceeds 1.08 × the average, use VPoC for T1 and average + 2 × (VPoC − average) for T2. VPoC is the midpoint of the price bin with the greatest volume, where bar volume is apportioned across overlapping bins in proportion to range overlap over the last V bars.
-Long: Not long AND Bull targets available AND (fast EMA crosses above slow EMA OR (anticipation percentage > 0 AND fast EMA < slow EMA AND (slow EMA − fast EMA) / slow EMA ≤ anticipation percentage AND fast EMA > prior fast EMA))
-Long: Not long AND fast EMA > slow EMA AND close ≥ 0.95 × T1 AND close ≤ 1.15 × T1 AND slow EMA slope per bar > 0 AND slow EMA slope per bar > prior slope per bar AND prior slope per bar ≤ 0.02 AND volume ratio ≥ 0.7 AND volume ratio ≥ prior volume ratio AND (slow EMA slope per bar ≥ 0.05 OR volume ratio ≥ 1)
-Long: Bullish engulfing OR hammer OR morning star OR piercing line OR bullish harami
-Short: Fast EMA crosses below slow EMA OR bearish engulfing OR shooting star OR evening star OR dark cloud cover OR bearish harami
-Exit: Long, high ≥ T2
-Exit: Long, low ≤ stop price AND high < T2
-Exit: Long, fast EMA crosses below slow EMA AND high < T2 AND low > stop price
-Exit: Long, slow EMA slope per bar < 0 AND volume ratio < 0.7 for two consecutive bars
+Calculation: Candle body = abs(close - open); candle range = max(high - low, a small positive floor); upper wick = high - max(open, close); lower wick = min(open, close) - low; body midpoint = (open + close) / 2. Subscripts denote bars ago.
+Calculation: Bullish engulfing = close > open AND close[1] < open[1] AND body > body[1] AND close >= open[1] AND open <= close[1].
+Calculation: Bearish engulfing = close < open AND close[1] > open[1] AND body > body[1] AND open >= close[1] AND close <= open[1].
+Calculation: Hammer = body <= range times a body fraction AND lower wick >= range times a long-wick fraction AND upper wick <= range times a short-wick fraction.
+Calculation: Shooting star = body <= range times the same body fraction AND upper wick >= range times the same long-wick fraction AND lower wick <= range times the same short-wick fraction.
+Calculation: Morning star = body[2] >= range[2] times a minimum body fraction AND body[1] <= body[2] times a small-body fraction AND close[2] < open[2] AND close > open AND close > body midpoint[2] AND body > body[1].
+Calculation: Evening star = body[2] >= range[2] times the same minimum body fraction AND body[1] <= body[2] times the same small-body fraction AND close[2] > open[2] AND close < open AND close < body midpoint[2] AND body > body[1].
+Calculation: Piercing line = close[1] < open[1] AND close > open AND open < close[1] AND close > body midpoint[1] AND close < open[1].
+Calculation: Dark cloud cover = close[1] > open[1] AND close < open AND open > close[1] AND close < body midpoint[1] AND close > open[1].
+Calculation: Bullish harami = body[1] > 0 AND body < body[1] times a harami fraction AND close[1] < open[1] AND close > open AND max(open, close) <= max(open[1], close[1]) AND min(open, close) >= min(open[1], close[1]).
+Calculation: Bearish harami = body[1] > 0 AND body < body[1] times the same harami fraction AND close[1] > open[1] AND close < open AND max(open, close) <= max(open[1], close[1]) AND min(open, close) >= min(open[1], close[1]).
+Calculation: Target base = average open of prior bars with a shorter-period close EMA crossing above a longer-period close EMA within a target lookback; target peak = highest high among prior bars within that lookback whose shorter EMA exceeds the longer EMA. Targets are unavailable unless at least one crossover exists and target peak > target base. Current first target = target base plus a fraction of (target peak - target base); current second target = target peak.
+Calculation: Trade state = on a flat-position crossover entry, anticipation entry, or recovery entry, record close as entry price, entry price reduced by a stop fraction as stop, and the current first and second targets. On each later bar, evaluate exits and the first-target milestone using the targets and stop carried into that bar; then raise the stored second target to the current second target if greater, and raise the stored first target to the current first target if greater and the first target was not previously hit. If high reaches the stored second target, close the position; otherwise, if the first target has not previously been hit and high reaches it, mark it hit and set the stop to entry price, even if the old stop was also reached on that bar; otherwise, if low reaches the stop or the shorter EMA crosses below the longer EMA, close the position.
+Calculation: EMA slope = (longer-period close EMA / its value a slope lookback ago - 1) / slope lookback; volume ratio = volume / its simple moving average.
+Calculation: Recovery condition = shorter-period close EMA > longer-period close EMA AND close >= current first target times a lower zone multiplier AND close <= current first target times an upper zone multiplier AND EMA slope > 0 AND EMA slope > prior EMA slope AND prior EMA slope <= a slope threshold AND volume ratio >= a recovery threshold AND volume ratio >= prior volume ratio AND (EMA slope >= a strength threshold OR volume ratio >= a strength threshold).
+Long: Flat position AND current first target is available AND shorter-period close EMA crosses above longer-period close EMA.
+Long: Flat position AND current first target is available AND shorter-period close EMA does not cross above longer-period close EMA AND shorter EMA < longer EMA AND (longer EMA - shorter EMA) / longer EMA <= a positive anticipation threshold AND shorter EMA > prior shorter EMA.
+Long: Recovery condition is true AND prior recovery condition is false.
+Long: Bullish engulfing OR hammer OR morning star OR piercing line OR bullish harami.
+Short: Shorter-period close EMA crosses below longer-period close EMA AND position is flat.
+Short: Bearish engulfing OR shooting star OR evening star OR dark cloud cover OR bearish harami.
+Exit: long, high >= stored second target.
+Exit: long, low <= stored stop AND high < stored second target.
+Exit: long, shorter-period close EMA crosses below longer-period close EMA AND high < stored second target AND low > stored stop.
+Exit: long, EMA slope < 0 AND volume ratio < a collapse threshold on both the current and previous bars AND the same two-bar condition was false on the previous bar.

@@ -1,2 +1,4 @@
-Long: ADX >= trend threshold AND +DI > -DI
-Short: ADX >= trend threshold AND +DI <= -DI
+Long: On any of six ordered timeframes, which may be lower than, equal to, or higher than the chart timeframe, using the bar still forming, ADX >= trend threshold AND +DI > -DI, OR ADX = 0 AND +DI > -DI.
+Short: On any of the same six timeframes, using the bar still forming, ADX >= trend threshold AND +DI <= -DI, OR ADX = 0 AND +DI <= -DI.
+Long: On any of the three shortest of those timeframes, using the bar still forming, CCI of typical price with either a shorter or longer lookback > 0, OR that CCI > its value on the last completed bar.
+Short: On any of the same three timeframes, using the bar still forming, CCI of typical price with either a shorter or longer lookback <= 0, OR that CCI <= its value on the last completed bar.

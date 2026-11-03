@@ -1,12 +1,26 @@
-Calculation: Bullish engulfing = prior bar is bearish, current bar is bullish, current body contains the prior body, and current body is larger than prior body
-Calculation: Bearish engulfing = prior bar is bullish, current bar is bearish, current body contains the prior body, and current body is larger than prior body
-Calculation: Long stop = tighter of the buffered lower of the current and prior bar lows, or the maximum stop distance below entry
-Calculation: Short stop = tighter of the buffered higher of the current and prior bar highs, or the maximum stop distance above entry
-Calculation: Long flip stop = tighter of the buffered lowest low over the swing lookback, or the maximum flip stop distance below the broken stop
-Calculation: Short flip stop = tighter of the buffered highest high over the swing lookback, or the maximum flip stop distance above the broken stop
-Long: chart-timeframe RSI > long-entry threshold AND chart-timeframe MACD line > signal line AND bullish engulfing AND chart-timeframe ATR > its moving average with a longer lookback AND chart-timeframe volume > its moving average multiplied by the volume-spike threshold AND last completed bar on a higher timeframe has close > its EMA AND last completed bar on a higher timeframe has RSI > midpoint AND long cooldowns have elapsed AND no drawdown halt or pending flip
-Long: a main short position's stop was hit AND flip wait has elapsed AND no flip-on-flip AND generic cooldown has elapsed AND no drawdown halt
-Short: chart-timeframe RSI < short-entry threshold AND chart-timeframe MACD line < signal line AND bearish engulfing AND chart-timeframe ATR > its moving average with a longer lookback AND chart-timeframe volume > its moving average multiplied by the volume-spike threshold AND last completed bar on a higher timeframe has close < its EMA AND last completed bar on a higher timeframe has RSI < midpoint AND short cooldowns have elapsed AND no drawdown halt or pending flip
-Short: a main long position's stop was hit AND flip wait has elapsed AND no flip-on-flip AND generic cooldown has elapsed AND no drawdown halt
-Exit: Long, low <= active stop OR favorable move >= configured R multiple of initial stop distance OR short-entry signal OR flip-position time-stop elapsed
-Exit: Short, high >= active stop OR favorable move >= configured R multiple of initial stop distance OR long-entry signal OR flip-position time-stop elapsed
+Calculation: Bullish engulfing = previous close < previous open AND close > open AND close >= previous open AND open <= previous close AND abs(close - open) > abs(previous close - previous open) × body multiplier.
+Calculation: Bearish engulfing = previous close > previous open AND close < open AND open >= previous close AND close <= previous open AND abs(close - open) > abs(previous close - previous open) × body multiplier.
+Calculation: Long signal = bullish engulfing AND chart-timeframe RSI > long RSI threshold AND MACD line > signal line AND ATR > SMA of ATR AND volume > volume multiplier × volume SMA AND close > EMA on the last completed higher-timeframe bar AND RSI > momentum threshold on the last completed higher-timeframe bar. The close/EMA timeframe is higher than the RSI timeframe.
+Calculation: Short signal = bearish engulfing AND chart-timeframe RSI < short RSI threshold AND MACD line < signal line AND ATR > SMA of ATR AND volume > volume multiplier × volume SMA AND close < EMA on the last completed higher-timeframe bar AND RSI < momentum threshold on the last completed higher-timeframe bar. The close/EMA timeframe is higher than the RSI timeframe.
+Calculation: Main long stop = max(min(entry-bar low, preceding-bar low) × (1 - stop buffer), entry-bar close × (1 - main stop cap)); main short stop = min(max(entry-bar high, preceding-bar high) × (1 + stop buffer), entry-bar close × (1 + main stop cap)).
+Calculation: Flip long stop = max(lowest low over the swing lookback, including the current bar, × (1 - stop buffer), broken stop × (1 - flip stop cap)); flip short stop = min(highest high over the swing lookback, including the current bar, × (1 + stop buffer), broken stop × (1 + flip stop cap)). The flip stop cap is tighter than the main stop cap.
+Calculation: Stored stop = the main stop recalculated on the first bar where the position is observed open, including for flip positions; after a partial exit, replace it with entry price × (1 + break-even buffer) for a long or entry price × (1 - break-even buffer) for a short when the buffer > 0. The active stop remains the entry order's stop until replaced by the break-even stop.
+Calculation: Trading halt = on a flat bar, equity drawdown from peak equity <= negative drawdown threshold; reset peak equity to current equity and block entries until the halt duration in chart bars has elapsed. Equity follows the strategy's leveraged position returns, transaction costs and fills; peak equity is the highest equity since initialization or the most recent halt.
+Long: Last completed bar of the higher close/EMA timeframe has close > EMA.
+Short: Last completed bar of the higher close/EMA timeframe has close < EMA.
+Long: MACD line > signal line.
+Short: MACD line <= signal line.
+Long: Bullish engulfing.
+Short: Bearish engulfing.
+Long: Long signal AND position is flat AND no flip is pending AND close > main long stop AND bars since the last detected long stop >= same-direction cooldown AND bars since the last detected exit >= generic cooldown AND trading halt has elapsed.
+Short: Short signal AND position is flat AND no flip is pending AND close < main short stop AND bars since the last detected short stop >= same-direction cooldown AND bars since the last detected exit >= generic cooldown AND trading halt has elapsed.
+Long: Flip enabled AND a short position other than a flip has just become flat AND its exit-detection bar high >= stored stop, creating a pending long flip; on the first subsequent eligible bar, position is flat AND bars since detection >= flip wait AND bars since the last detected exit >= generic cooldown AND trading halt has elapsed AND close > flip long stop. Clear the pending flip on that eligible bar even if the stop comparison fails.
+Short: Flip enabled AND a long position other than a flip has just become flat AND its exit-detection bar low <= stored stop, creating a pending short flip; on the first subsequent eligible bar, position is flat AND bars since detection >= flip wait AND bars since the last detected exit >= generic cooldown AND trading halt has elapsed AND close < flip short stop. Clear the pending flip on that eligible bar even if the stop comparison fails.
+Exit: long, low <= active stop.
+Exit: short, high >= active stop.
+Exit: long, partial exit not yet taken AND entry price - stored stop > 0 AND (close - entry price) / (entry price - stored stop) >= take-profit multiple; close the configured fraction and update the active stop to entry price × (1 + break-even buffer) when the buffer > 0.
+Exit: short, partial exit not yet taken AND stored stop - entry price > 0 AND (entry price - close) / (stored stop - entry price) >= take-profit multiple; close the configured fraction and update the active stop to entry price × (1 - break-even buffer) when the buffer > 0.
+Exit: long, short signal.
+Exit: short, long signal.
+Exit: long, position is a flip AND bars since flip entry >= flip time limit.
+Exit: short, position is a flip AND bars since flip entry >= flip time limit.

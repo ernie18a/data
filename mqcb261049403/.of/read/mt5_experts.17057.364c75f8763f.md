@@ -1,6 +1,5 @@
-Calculation: Fast MA = simple moving average of close over a shorter lookback on the working timeframe, using the bar still forming; the working timeframe may be higher, lower, or the same as the chart timeframe
-Calculation: Slow MA = simple moving average of close over a longer lookback on the working timeframe, using the bar still forming; the working timeframe may be higher, lower, or the same as the chart timeframe
-Long: Fast MA > Slow MA AND current hour is within the configured entry hours (inclusive) AND price reaches the breakout level set one breakout distance above the price when this signal first occurs
-Short: Fast MA < Slow MA AND current hour is within the configured entry hours (inclusive)
-Exit: long, Fast MA < Slow MA OR it is Friday at or after the configured close hour OR price reaches the stop-loss or take-profit level from entry OR the trailing stop is hit
-Exit: short, Fast MA > Slow MA OR it is Friday at or after the configured close hour OR price reaches the stop-loss or take-profit level from entry OR the trailing stop is hit
+Long: At the start of a new higher-timeframe bar, the shorter-period moving average of the still-forming higher-timeframe bar > the longer-period moving average of that bar AND the current hour is within the inclusive entry-hour range, if enabled.
+Short: At the start of a new higher-timeframe bar, the shorter-period moving average of the still-forming higher-timeframe bar < the longer-period moving average of that bar AND the current hour is within the inclusive entry-hour range, if enabled.
+Exit: long, at the start of a new higher-timeframe bar, the shorter-period moving average of the still-forming higher-timeframe bar < the longer-period moving average of that bar OR Friday's current hour is at or after the configured closing hour, if enabled.
+Exit: short, at the start of a new higher-timeframe bar, the shorter-period moving average of the still-forming higher-timeframe bar > the longer-period moving average of that bar OR Friday's current hour is at or after the configured closing hour, if enabled.
+Exit: long, low <= entry price minus the stop-loss distance, if enabled, OR high >= entry price plus the take-profit distance, if enabled.

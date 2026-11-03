@@ -1,4 +1,7 @@
-Calculation: Bullish sweep = on the selected analysis timeframe (which may be higher or lower than the chart timeframe), the last completed candle has a low below the preceding completed candle’s low, a high at or below its high, and a close strictly between its low and high
-Calculation: Bearish sweep = on the selected analysis timeframe, the last completed candle has a high above the preceding completed candle’s high, a low at or above its low, and a close strictly between its low and high
-Long: Bullish sweep AND the current price on the selected analysis timeframe, using its still-forming candle, is above the last completed candle’s high
-Short: Bearish sweep AND the current price on the selected analysis timeframe, using its still-forming candle, is below the last completed candle’s low
+Calculation: Projection candles = candles on a selected timeframe that may be higher, lower, or equal to the chart timeframe. For a higher timeframe, use the forming candle as the current candle; for a lower timeframe, use the latest available lower-timeframe candle; for an equal timeframe, use the current chart candle. The sweep candle is the preceding completed projection candle, and the reference candle is the completed projection candle immediately before it.
+Long: Sweep close > reference low AND sweep close < reference high AND sweep low < reference low AND sweep high <= reference high.
+Short: Sweep close > reference low AND sweep close < reference high AND sweep high > reference high AND sweep low >= reference low.
+Long: Sweep close > reference low AND sweep close < reference high AND sweep low < reference low AND sweep high <= reference high AND current projection candle close > sweep high.
+Short: Sweep close > reference low AND sweep close < reference high AND sweep high > reference high AND sweep low >= reference low AND current projection candle close < sweep low.
+Long: Projection timeframe > chart timeframe AND sweep close > reference low AND sweep close < reference high AND sweep low < reference low AND sweep high <= reference high AND current projection candle high > sweep high.
+Short: Projection timeframe > chart timeframe AND sweep close > reference low AND sweep close < reference high AND sweep high > reference high AND sweep low >= reference low AND current projection candle low < sweep low.

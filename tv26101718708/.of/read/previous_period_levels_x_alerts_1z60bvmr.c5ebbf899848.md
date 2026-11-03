@@ -1,4 +1,2 @@
-Calculation: Previous higher-timeframe open/high/low/close = open/high/low/close of the last completed higher-timeframe bar
-Calculation: Alert SMA = simple moving average of the selected price series
-Long: Alert SMA > any previous higher-timeframe open, high, low, or close AND prior Alert SMA <= that level AND current bar is not at a higher-timeframe boundary
-Short: Alert SMA < any previous higher-timeframe open, high, low, or close AND prior Alert SMA >= that level AND current bar is not at a higher-timeframe boundary
+Long: The chart-timeframe SMA of a selectable price source crosses above the open, high, low, OR close of the last completed higher-timeframe bar AND the current bar is not the first bar of a new higher-timeframe period.
+Short: The chart-timeframe SMA of a selectable price source crosses below the open, high, low, OR close of the last completed higher-timeframe bar AND the current bar is not the first bar of a new higher-timeframe period.

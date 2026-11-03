@@ -1,3 +1,6 @@
-Calculation: Normalized energy = clamp(20 × EMA₃(0.6 × (RSIₛ(HLC3) − 50) + (RSIₘ(HLC3) − 50) + 1.4 × (RSIₗ(HLC3) − 50)) / standard deviation₅₀ of that EMA, −100, 100), using short-, medium-, and long-term RSI lookbacks
-Long: normalized energy on the last completed higher-timeframe bar > 0
-Short: normalized energy on the last completed higher-timeframe bar < 0
+Calculation: Normalized energy = Clamp to a symmetric range the EMA of the weighted sum of three RSI values of (high + low + close) / 3, each centered on the RSI midpoint, divided by the standard deviation of that EMA and multiplied by a scaling factor; use zero when the standard deviation is zero. The RSI lookbacks are short, medium, and long, with increasing weights in that order.
+Calculation: Higher-timeframe normalized energy = Normalized energy calculated on a higher timeframe, using the last completed higher-timeframe bar on historical bars and the still-forming higher-timeframe bar in real time.
+Long: Higher-timeframe normalized energy > 0
+Short: Higher-timeframe normalized energy < 0
+Long: Normalized energy > 0 AND ((automatic mode = enabled AND absolute normalized energy > SMA of absolute normalized energy) OR (automatic mode = disabled AND heat display = enabled))
+Short: Normalized energy < 0 AND ((automatic mode = enabled AND absolute normalized energy > SMA of absolute normalized energy) OR (automatic mode = disabled AND heat display = enabled))

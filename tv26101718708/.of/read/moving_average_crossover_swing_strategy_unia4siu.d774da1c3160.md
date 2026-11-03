@@ -1,4 +1,10 @@
-Long: Fast MA crosses above medium MA AND no open position AND (if slow MA confirmation is enabled, close > slower MA) AND (if MACD confirmation is enabled, MACD line crosses above its signal line AND the MACD line satisfies the selected zero-line rule: above zero, below zero, or either)
-Short: Fast MA crosses below medium MA AND no open position AND (if slow MA confirmation is enabled, close < slower MA) AND (if MACD confirmation is enabled, MACD line crosses below its signal line AND the MACD line satisfies the selected zero-line rule: above zero, below zero, or either)
-Exit: long, (if MA cross exit is enabled, fast exit MA crosses below medium exit MA) OR (if max-bars exit is enabled, bars since the long entry signal >= maximum bars) OR low <= entry price - ATR captured at entry signal * stop multiplier OR high >= entry price + ATR captured at entry signal * target multiplier
-Exit: short, (if MA cross exit is enabled, fast exit MA crosses above medium exit MA) OR (if max-bars exit is enabled, bars since the short entry signal >= maximum bars) OR high >= entry price + ATR captured at entry signal * stop multiplier OR low <= entry price - ATR captured at entry signal * target multiplier
+Long: no open position AND long entries enabled AND shorter entry MA crosses above longer entry MA AND (slow MA confirmation disabled OR close > slow MA) AND (MACD confirmation disabled OR (MACD line crosses above MACD signal line AND (zero-line filter is either OR (zero-line filter is above AND MACD line > 0) OR (zero-line filter is below AND MACD line < 0))))
+Short: no open position AND short entries enabled AND shorter entry MA crosses below longer entry MA AND (slow MA confirmation disabled OR close < slow MA) AND (MACD confirmation disabled OR (MACD line crosses below MACD signal line AND (zero-line filter is either OR (zero-line filter is above AND MACD line > 0) OR (zero-line filter is below AND MACD line < 0))))
+Long: first MA of any displayed MA pair >= second MA of that pair
+Short: first MA of any displayed MA pair < second MA of that pair
+Exit: long, MA cross exit enabled AND shorter exit MA crosses below longer exit MA
+Exit: short, MA cross exit enabled AND shorter exit MA crosses above longer exit MA
+Exit: long, maximum-bars exit enabled AND bars since long entry signal >= maximum bars
+Exit: short, maximum-bars exit enabled AND bars since short entry signal >= maximum bars
+Exit: long, low <= entry price - ATR at entry signal * stop-loss multiplier OR high >= entry price + ATR at entry signal * take-profit multiplier
+Exit: short, high >= entry price + ATR at entry signal * stop-loss multiplier OR low <= entry price - ATR at entry signal * take-profit multiplier

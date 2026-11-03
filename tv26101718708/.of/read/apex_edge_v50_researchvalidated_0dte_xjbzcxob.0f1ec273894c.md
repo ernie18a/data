@@ -1,21 +1,34 @@
-Calculation: Opening range = high and low of the opening session interval; opening direction = its close compared with its open
-Calculation: Noise bands = current day open plus or minus a scaled long-lookback average true range
-Calculation: Relative volume = current volume divided by its moving average; strong relative volume = relative volume above its higher threshold; in-play = relative volume above its lower threshold
-Calculation: Higher-timeframe trend = higher-timeframe 20-period EMA compared with 50-period EMA, using the last completed higher-timeframe bar
-Calculation: Opening volatility = opening-range width greater than a multiple of current ATR
-Calculation: Intraday return = (close − current day open) / current day open
-Calculation: Primary signal = opening-range breakout or noise-band breakout; secondary signal = late-day momentum signal
-Calculation: Quality score = points for relative-volume strength, trend regime, primary versus secondary signal, VWAP alignment, and higher-timeframe alignment
-Calculation: Initial stop = opposite opening-range extreme for an opening-range breakout, otherwise entry price offset by a multiple of ATR; first and second targets = entry price offset by one and two initial risk distances; after the first target is reached, stop = entry price
-Long: close > opening-range high AND close > open AND in-play AND (higher-timeframe EMA trend is bullish OR close > VWAP) AND opening range is complete AND within the morning entry window AND opening-range breakout has not fired that day
-Short: close < opening-range low AND close < open AND in-play AND (higher-timeframe EMA trend is bearish OR close < VWAP) AND opening range is complete AND within the morning entry window AND opening-range breakout has not fired that day
-Long: close crosses above the upper noise band AND within the morning entry window
-Short: close crosses below the lower noise band AND within the morning entry window
-Long: opening direction is bullish AND opening range is volatile AND close > VWAP AND volume > its moving average AND within the late-day momentum window
-Short: opening direction is bearish AND opening range is volatile AND close < VWAP AND volume > its moving average AND within the late-day momentum window
-Long: intraday return exceeds the positive threshold AND close > VWAP AND volume > its moving average AND within the late-day momentum window
-Short: intraday return exceeds the negative threshold in magnitude AND close < VWAP AND volume > its moving average AND within the late-day momentum window
-Long: primary or secondary long signal AND no gap-down block AND before hard exit AND cooldown elapsed AND quality score meets the entry threshold
-Short: primary or secondary short signal AND no gap-up block AND before hard exit AND cooldown elapsed AND quality score meets the entry threshold
-Exit: long, high reaches the second target OR low reaches the current stop OR bars held reaches the time limit OR hard-exit time is reached
-Exit: short, low reaches the second target OR high reaches the current stop OR bars held reaches the time limit OR hard-exit time is reached
+Calculation: Day open = open of the first chart bar of the new trading day; previous day close = close of the chart bar immediately preceding it.
+Calculation: Opening range = highest high and lowest low of chart bars in the configured opening session; its open is the first such bar's open and its close is the last such bar's close. The range is complete on the first chart bar after the session. Bars since completion is zero on that bar and also before completion.
+Calculation: Relative volume = volume / SMA(volume), or 1 when that SMA is not positive.
+Calculation: Higher-timeframe trend = short-period EMA(close) compared with long-period EMA(close), using the higher-timeframe bar still forming in realtime and the last completed higher-timeframe bar on historical chart bars.
+Calculation: Noise bands = day open plus or minus a multiplier times SMA(true range) on chart bars, with a lookback expressed as a configurable number of trading days times a configurable number of chart bars per trading day.
+Calculation: Gap return = (day open - previous day close) / previous day close, or zero when the previous day close is unavailable or zero.
+Calculation: Intraday return = (close - day open) / day open, or zero when day open is unavailable or close is zero.
+Calculation: Opening-range long candidate = opening range complete AND outside the opening session AND bars since completion <= limit AND no opening-range candidate has occurred today AND time within the morning entry window AND close > opening-range high AND close > open AND relative volume >= minimum threshold AND (higher-timeframe short EMA > higher-timeframe long EMA OR close > session VWAP). Reset the candidate flag each new day and set it as soon as either opening-range candidate occurs, even if no final entry occurs.
+Calculation: Opening-range short candidate = opening range complete AND outside the opening session AND bars since completion <= limit AND no opening-range candidate has occurred today AND time within the morning entry window AND close < opening-range low AND close < open AND relative volume >= minimum threshold AND (higher-timeframe short EMA < higher-timeframe long EMA OR close < session VWAP).
+Calculation: Noise-band long candidate = time within the morning entry window AND close > upper noise band AND previous close <= previous upper noise band.
+Calculation: Noise-band short candidate = time within the morning entry window AND close < lower noise band AND previous close >= previous lower noise band.
+Calculation: Late long candidate = time within the late entry window AND time < hard-exit time AND close > session VWAP AND volume > SMA(volume) AND ((opening range complete AND opening-range close > opening-range open AND opening-range high - opening-range low > ATR times a multiplier) OR intraday return > positive threshold).
+Calculation: Late short candidate = time within the late entry window AND time < hard-exit time AND close < session VWAP AND volume > SMA(volume) AND ((opening range complete AND opening-range close < opening-range open AND opening-range high - opening-range low > ATR times a multiplier) OR intraday return < negative threshold).
+Calculation: Raw long = (opening-range long candidate OR noise-band long candidate OR late long candidate) AND NOT (gap return < negative gap threshold AND bars since opening-range completion <= gap-block limit). Raw short = (opening-range short candidate OR noise-band short candidate OR late short candidate) AND NOT (gap return > positive gap threshold AND bars since opening-range completion <= gap-block limit).
+Calculation: Quality score = 2 points if relative volume >= strong threshold, otherwise 1 if relative volume >= minimum threshold, otherwise 0; plus 2 if ADX > trend threshold AND ((positive DI > negative DI AND higher-timeframe short EMA > higher-timeframe long EMA) OR (negative DI > positive DI AND higher-timeframe short EMA < higher-timeframe long EMA)); plus 2 if any opening-range or noise-band candidate exists, otherwise 1; plus 1 if (close > session VWAP) equals raw long; plus 1 if (higher-timeframe short EMA > higher-timeframe long EMA) equals raw long OR (higher-timeframe short EMA < higher-timeframe long EMA) equals raw short. The strong relative-volume threshold is higher than the minimum threshold.
+Calculation: Final long signal = raw long AND time < hard-exit time AND bars since either previous final signal >= cooldown AND quality score >= entry-grade threshold. Final short signal = raw short AND time < hard-exit time AND bars since either previous final signal >= cooldown AND quality score >= entry-grade threshold. Update the shared cooldown after evaluating both signals, even when already in a position.
+Calculation: Initial stop = opening-range low for a long entered when the opening-range long candidate is true, opening-range high for a short entered when the opening-range short candidate is true, otherwise entry price minus ATR times a multiplier for a long or entry price plus ATR times that multiplier for a short; freeze it at entry. Risk distance = entry price minus initial stop for a long, or initial stop minus entry price for a short. First and second targets = entry price plus the respective risk-distance multiples for a long, or minus them for a short; freeze both at entry. The second target uses the larger multiple.
+Calculation: Active stop = entry price once the first target has been reached by the high for a long or the low for a short, including on the entry bar; otherwise initial stop. Update the stop before evaluating exits on each bar. Bars held includes the entry bar. Open a tracked position at the close on a final signal only when flat; evaluate long before short if both signals occur.
+Long: Final long signal = true.
+Short: Final short signal = true.
+Long: ADX > trend threshold AND positive DI > negative DI AND higher-timeframe short EMA > higher-timeframe long EMA.
+Short: ADX > trend threshold AND negative DI > positive DI AND higher-timeframe short EMA < higher-timeframe long EMA.
+Long: Opening range complete AND opening-range close > opening-range open.
+Short: Opening range complete AND opening-range close < opening-range open.
+Long: Intraday return > positive threshold.
+Short: Intraday return < negative threshold.
+Long: Close > upper noise band.
+Short: Close < lower noise band.
+Long: Close > session VWAP.
+Short: Close <= session VWAP.
+Long: Gap return > positive gap threshold.
+Short: Gap return < negative gap threshold.
+Exit: long, high >= second target OR low <= active stop OR bars held >= holding limit OR time >= hard-exit time.
+Exit: short, low <= second target OR high >= active stop OR bars held >= holding limit OR time >= hard-exit time.

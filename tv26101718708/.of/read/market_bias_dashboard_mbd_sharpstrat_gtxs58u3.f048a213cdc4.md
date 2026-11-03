@@ -1,16 +1,16 @@
-Calculation: Swing structure = bullish when the latest two confirmed pivot highs and latest two confirmed pivot lows are both rising; bearish when both are falling; otherwise neutral. Confirm each pivot using the same configurable number of chart bars on each side.
-Calculation: Range position = (close − lowest low over the lookback) / (highest high − lowest low) × 100.
-Calculation: Smoothed swing size = EMA of abs(close − close[lookback]); compare it with the same EMA shifted back by that lookback. Accelerating = current > earlier × 1.05; fading = current < earlier × 0.95.
-Calculation: ATR ratio = ATR over the short lookback / SMA of that ATR over a longer lookback. Expanding = ratio ≥ 1.1; coiling = ratio ≤ the configurable threshold.
-Calculation: Bias score = +1 for bullish structure, +1 if range position > 55, +1 if momentum is accelerating, +1 if volatility is expanding; −1 for bearish structure, −1 if range position < 45, and −1 if momentum is fading. All other components contribute 0.
-Long: Swing structure is bullish
-Long: Range position ≥ 60
-Long: Momentum is accelerating
-Long: Volatility is expanding
-Long: Bias score > 0, and volatility is not coiling, and structure did not flip from bullish to bearish or bearish to bullish on this bar
-Long: On the higher timeframe, bias score > 0 and volatility is not coiling. Use the higher-timeframe bar as available, including while it is still forming.
-Short: Swing structure is bearish
-Short: Range position ≤ 40
-Short: Momentum is fading
-Short: Bias score < 0, and volatility is not coiling, and structure did not flip from bullish to bearish or bearish to bullish on this bar
-Short: On the higher timeframe, bias score < 0 and volatility is not coiling. Use the higher-timeframe bar as available, including while it is still forming.
+Calculation: Input series = chart high, low and close, or the high, low and close of the last completed higher-timeframe bar, carried forward on chart bars. All subsequent calculations run on chart bars. The higher-timeframe calculation uses chart-timeframe ATR.
+Calculation: Bullish structure = the latest confirmed pivot high is greater than the preceding confirmed pivot high AND the latest confirmed pivot low is greater than the preceding confirmed pivot low. Pivots use the same number of chart bars on each side.
+Calculation: Bearish structure = the latest confirmed pivot high is less than the preceding confirmed pivot high AND the latest confirmed pivot low is less than the preceding confirmed pivot low.
+Calculation: Range position = (input close - lowest input low over the range lookback) / (highest input high over the range lookback - lowest input low over the range lookback); use the range midpoint if the denominator is zero.
+Calculation: Momentum = EMA of the absolute difference between input close and input close one pivot-length ago. Previous momentum = the same EMA of that absolute difference shifted by one pivot-length.
+Calculation: Volatility ratio = chart-timeframe ATR / its longer-period simple moving average; use the neutral ratio if the average is not positive.
+Calculation: Bias score = sum of structure score, range score, momentum score and volatility score. Structure score is +1 for bullish structure, -1 for bearish structure, otherwise 0. Range score is +1 when range position is above its upper bias threshold, -1 when below its lower bias threshold, otherwise 0. Momentum score is +1 when momentum exceeds previous momentum multiplied by an upper factor, -1 when momentum is below previous momentum multiplied by a lower factor, otherwise 0. Volatility score is +1 when volatility ratio is at or above the expansion threshold, otherwise 0. The upper momentum factor is greater than the lower factor.
+Calculation: Structure flip = bullish structure on the current chart bar AND bearish structure on the preceding chart bar, OR bearish structure on the current chart bar AND bullish structure on the preceding chart bar.
+Long: Bullish structure using chart input series OR bullish structure using higher-timeframe input series.
+Short: Bearish structure using chart input series OR bearish structure using higher-timeframe input series.
+Long: Range position using chart input series >= its upper display threshold OR range position using higher-timeframe input series >= its upper display threshold.
+Short: Range position using chart input series <= its lower display threshold OR range position using higher-timeframe input series <= its lower display threshold.
+Long: Bias score using chart input series > 0 AND volatility ratio > coiling threshold AND structure flip = false.
+Short: Bias score using chart input series < 0 AND volatility ratio > coiling threshold AND structure flip = false.
+Long: Bias score using higher-timeframe input series > 0 AND volatility ratio > coiling threshold.
+Short: Bias score using higher-timeframe input series < 0 AND volatility ratio > coiling threshold.

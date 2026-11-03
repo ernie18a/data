@@ -1,4 +1,4 @@
-Calculation: Strict swing high = a high greater than every high in the same lookback window on both sides; eligible after the full right-side window closes.
-Calculation: Strict swing low = a low lower than every low in the same lookback window on both sides; eligible after the full right-side window closes.
-Long: Close > latest armed strict swing high + ATR × break buffer
-Short: Close < latest armed strict swing low − ATR × break buffer
+Calculation: Confirmed strict swing high or low = a bar whose high is strictly greater, or whose low is strictly less, respectively, than every corresponding value in an equal-length window of preceding and following bars; confirm it only when the final following bar closes.
+Calculation: Armed swing level = the latest confirmed strict swing high or low of its respective kind. A newly confirmed swing replaces and arms its level before the current bar's break is checked. A level is disarmed when its own break condition is satisfied and remains disarmed until replaced by a newly confirmed swing of the same kind.
+Long: ATR > 0 AND the swing high is armed AND close > armed swing high + ATR multiplied by the break-buffer parameter.
+Short: ATR > 0 AND the swing low is armed AND close < armed swing low - ATR multiplied by the break-buffer parameter AND the long break condition is false.

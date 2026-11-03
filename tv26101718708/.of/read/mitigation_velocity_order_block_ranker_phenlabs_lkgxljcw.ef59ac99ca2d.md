@@ -1,4 +1,3 @@
-Calculation: confirmed swing low = a low lower than the lows of the preceding and following swing-length bars
-Calculation: confirmed swing high = a high higher than the highs of the preceding and following swing-length bars
-Long: confirmed swing low AND the most recent preceding candle with close < open is found
-Short: confirmed swing high AND the most recent preceding candle with close > open is found
+Calculation: Active order blocks = On each bar, confirm swing highs and swing lows using the same number of bars on each side. For each confirmed swing high, find the most recent up-close candle from the pivot backward within a configurable search limit; create a bearish block with top at its high and bottom at its open. For each confirmed swing low, find the most recent down-close candle over the same search range; create a bullish block with top at its open and bottom at its low. Skip creation if no qualifying candle exists. Process swing highs before swing lows. Retain blocks in creation order, including mitigated blocks, and remove the oldest when the stored-block limit is exceeded. After creation and removal, mark every unmitigated block as mitigated if the current bar's price range overlaps its bounds; use either high and low or the higher and lower of open and close, according to the mitigation setting. A block is active from its confirmation bar until it is mitigated or removed.
+Long: Number of active bullish order blocks > 0
+Short: Number of active bearish order blocks > 0

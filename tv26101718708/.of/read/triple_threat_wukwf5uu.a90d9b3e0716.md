@@ -1,24 +1,15 @@
-Calculation: RSI = relative strength index of close
-Calculation: RSI moving average = simple moving average of RSI
-Calculation: BBWP = 100 × count of prior lookback bars whose Bollinger Band width is greater than or equal to current width, divided by lookback; Bollinger Band width = 2 × standard deviation of close / moving average of close
-Calculation: BBWP moving average = moving average of BBWP, using a shorter lookback than the BBWP percentile lookback
-Calculation: Trend moving average = selected moving average of close
-Calculation: Upward momentum trigger = RSI exceeds its moving average by the crossover threshold after an upward crossover and a retest within the retest threshold; cancel the pending crossover if RSI falls below its moving average by more than the retest threshold; also trigger when RSI exceeds its moving average by the instant threshold
-Calculation: Downward momentum trigger = mirror of the upward momentum trigger; also trigger when the RSI moving average exceeds RSI by the instant threshold
-Calculation: RSI buy zone = upward momentum trigger or prior RSI buy zone, unless a downward momentum trigger occurs; RSI sell zone = downward momentum trigger or prior RSI sell zone, unless an upward momentum trigger occurs
-Calculation: RSI buy signal = RSI buy zone begins after the prior bar was in the RSI sell zone; RSI sell signal = RSI sell zone begins after the prior bar was in the RSI buy zone
-Calculation: Forward buy confirmation = prior forward buy confirmation persists until an RSI sell signal, or RSI is at or below the oversold level; forward sell confirmation = prior forward sell confirmation persists until an RSI buy signal, or RSI is at or above the overbought level
-Calculation: BBWP confirmation = BBWP minus its moving average exceeds the confirmation threshold
-Calculation: Allowed buy = RSI > RSI moving average AND RSI moving average > oversold level; allowed sell = RSI < RSI moving average AND RSI moving average < overbought level
-Calculation: Confirmed buy zone = prior confirmed buy zone or full buy condition, unless full sell condition occurs; confirmed sell zone = prior confirmed sell zone or full sell condition, unless full buy condition occurs
-Calculation: Full buy condition = RSI buy zone AND (forward buy confirmation OR BBWP confirmation) AND allowed buy; full sell condition = RSI sell zone AND (forward sell confirmation OR BBWP confirmation) AND allowed sell
-Calculation: Trend-confirmed buy zone = confirmed buy zone AND close > trend moving average; trend-confirmed sell zone = confirmed sell zone AND close < trend moving average
-Calculation: Fully confirmed buy signal = trend-confirmed buy zone begins; fully confirmed sell signal = trend-confirmed sell zone begins
-Long: RSI buy signal
-Long: confirmed buy zone begins after the prior bar was in the confirmed sell zone
-Long: fully confirmed buy signal
-Short: RSI sell signal
-Short: confirmed sell zone begins after the prior bar was in the confirmed buy zone
-Short: fully confirmed sell signal
-Exit: Long, fully confirmed sell signal OR low <= entry price × (1 − stop loss) OR high >= entry price × (1 + take profit)
-Exit: Short, fully confirmed buy signal OR high >= entry price × (1 + stop loss) OR low <= entry price × (1 − take profit)
+Calculation: RSI difference = RSI of the selected price field minus the SMA of that RSI.
+Calculation: Upward setup = current RSI difference > crossover threshold OR (previous upward setup AND current RSI difference >= -retest threshold). Upward retest = current upward setup AND (previous upward retest OR current RSI difference < retest threshold). Downward setup and downward retest use the same formulas with RSI difference negated. Initialize all four states as false.
+Calculation: Bullish trigger = (upward retest AND RSI difference > crossover threshold) OR RSI difference > instant threshold. Bearish trigger uses the same formula with RSI difference negated.
+Calculation: Bullish momentum zone = (previous bullish momentum zone OR bullish trigger) AND NOT bearish trigger. Bearish momentum zone = (previous bearish momentum zone OR bearish trigger) AND NOT bullish trigger. Initialize both as false.
+Calculation: Bullish momentum signal = current bullish momentum zone AND previous bearish momentum zone. Bearish momentum signal = current bearish momentum zone AND previous bullish momentum zone.
+Calculation: Bullish extreme confirmation = (previous bullish extreme confirmation AND NOT bearish momentum signal) OR RSI <= oversold threshold. Bearish extreme confirmation = (previous bearish extreme confirmation AND NOT bullish momentum signal) OR RSI >= overbought threshold. Initialize both as false.
+Calculation: Bollinger Band Width Percentile = 100 times the count of preceding lookback bars whose band width is <= current band width, divided by the lookback. Band width = 2 times the standard deviation of the selected price field divided by its SMA, EMA, or VWMA over the same length. Count unavailable historical widths as qualifying.
+Calculation: Bullish confirmed condition = bullish momentum zone AND (bullish extreme confirmation OR Bollinger Band Width Percentile minus its SMA, EMA, or VWMA > volatility confirmation threshold) AND RSI > its SMA AND that SMA > oversold threshold. Bearish confirmed condition = bearish momentum zone AND (bearish extreme confirmation OR Bollinger Band Width Percentile minus its SMA, EMA, or VWMA > volatility confirmation threshold) AND RSI < its SMA AND that SMA < overbought threshold.
+Calculation: Bullish confirmed zone = (previous bullish confirmed zone OR bullish confirmed condition) AND NOT bearish confirmed condition. Bearish confirmed zone = (previous bearish confirmed zone OR bearish confirmed condition) AND NOT bullish confirmed condition. Initialize both as false.
+Calculation: Bullish trend condition = bullish confirmed zone AND selected price field > its trend SMA, EMA, or VWMA. Bearish trend condition = bearish confirmed zone AND selected price field < its trend SMA, EMA, or VWMA. Bullish trend event = current bullish trend condition AND NOT previous bullish trend condition. Bearish trend event = current bearish trend condition AND NOT previous bearish trend condition.
+Calculation: Bullish final zone = (previous bullish final zone OR bullish trend event) AND NOT bearish trend event. Bearish final zone = (previous bearish final zone OR bearish trend event) AND NOT bullish trend event. Initialize both as false. Bullish final signal = current bullish final zone AND NOT previous bullish final zone. Bearish final signal = current bearish final zone AND NOT previous bearish final zone.
+Long: bullish momentum signal OR (current bullish confirmed zone AND previous bearish confirmed zone) OR bullish final signal.
+Short: bearish momentum signal OR (current bearish confirmed zone AND previous bullish confirmed zone) OR bearish final signal.
+Exit: long, bearish final signal within the configured trading date range OR enabled stop loss AND low <= entry price * (1 - stop-loss fraction) OR enabled take profit AND high >= entry price * (1 + take-profit fraction).
+Exit: short, bullish final signal within the configured trading date range OR enabled stop loss AND high >= entry price * (1 + stop-loss fraction) OR enabled take profit AND low <= entry price * (1 - take-profit fraction).

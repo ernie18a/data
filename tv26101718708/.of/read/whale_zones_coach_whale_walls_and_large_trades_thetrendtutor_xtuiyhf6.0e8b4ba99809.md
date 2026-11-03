@@ -1,3 +1,8 @@
-Calculation: Volume z-score = (current volume − its rolling mean) / its rolling standard deviation over the volume-baseline lookback
-Long: Volume z-score ≥ its threshold AND close ≥ open
-Short: Volume z-score ≥ its threshold AND close < open
+Calculation: Volume z-score = (current volume minus its simple moving average) divided by its population standard deviation over the same lookback, including the current bar; use zero when the standard deviation is zero, and replace missing volume with zero.
+Calculation: Whale walls = Over a lookback including the current bar, divide the range from the lowest low to the highest high into equal price rows. For each positive-volume bar, distribute its volume equally across all rows from its low's row through its high's row, clamping row indices to the range. Separately for row centers above the current close and row centers at or below it, optionally exclude centers beyond a maximum percentage distance from the current close and calculate the mean row volume over the remaining rows, including zero-volume rows. Process the above-close side first, then the at-or-below-close side. On each side, repeatedly select the eligible unused row with the greatest positive volume, breaking ties in favor of the lower row; stop when the selection limit is reached, no positive-volume row remains, or the greatest volume is below a strength multiple of that side's mean. After each selection, mark that row and all rows within a specified row gap as used for both sides. Each selected row center is a wall. No walls exist if the price range is zero or cumulative volume is not positive.
+Long: Volume z-score >= threshold AND close >= open.
+Short: Volume z-score >= threshold AND close < open.
+Long: A whale wall <= close.
+Short: A whale wall > close.
+Long: Close > a current whale wall AND previous close <= that same current whale wall.
+Short: Close < a current whale wall AND previous close >= that same current whale wall.

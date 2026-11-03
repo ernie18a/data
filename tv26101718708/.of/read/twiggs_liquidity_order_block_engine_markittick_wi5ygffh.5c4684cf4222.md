@@ -1,12 +1,24 @@
-Calculation: Twiggs Money Flow (TMF) = EMA of ((2 × (close − true low) / true range) − 1) × volume divided by EMA of volume, where true high = max(high, previous close), true low = min(low, previous close), and true range = true high − true low; use 0 for the multiplier when true range is 0
-Calculation: TMF signal line = EMA of TMF
-Calculation: Confirmed swing high/low = the high/low at the middle bar of a window with equal numbers of bars before and after it, strictly higher/lower than every other high/low in that window
-Long: TMF two bars ago < 0 AND TMF one bar ago >= 0
-Long: TMF one bar ago >= TMF signal line one bar ago
-Long: The previous bar's close > the active confirmed swing high
-Long: A bullish Change of Character has occurred AND current price retraces into its fresh bullish order block AND (TMF is rising OR TMF crosses above its signal line OR TMF crosses upward above the oversold threshold)
-Short: TMF two bars ago >= 0 AND TMF one bar ago < 0
-Short: TMF one bar ago < TMF signal line one bar ago
-Short: The previous bar's close < the active confirmed swing low
-Short: Current price rallies into a pre-existing bearish order block AND TMF is above the overbought threshold AND TMF crosses below its signal line
-Exit: Long, Current price rallies into a pre-existing bearish order block AND TMF is above the overbought threshold AND TMF crosses below its signal line
+Calculation: Money flow = smoothed money flow volume / smoothed volume, or 0 when smoothed volume is 0. True high = max(high, previous close); true low = min(low, previous close); money flow volume = volume × (2 × (close − true low) / (true high − true low) − 1), or 0 when true high equals true low. Smooth each series recursively with alpha = 1 / money flow period, initializing each with its first available value.
+Calculation: Signal = money flow recursively smoothed with alpha = 1 / signal period, initialized with its first available money flow value.
+Calculation: Active swing high = the latest confirmed swing high not yet broken; a swing high is the high at the swing lookback bars ago when it is strictly greater than every other high from one through twice the swing lookback bars ago. A new swing high replaces the previous one. A break deactivates it.
+Calculation: Active swing low = the latest confirmed swing low not yet broken; a swing low is the low at the swing lookback bars ago when it is strictly less than every other low from one through twice the swing lookback bars ago. A new swing low replaces the previous one. A break deactivates it.
+Calculation: Structure direction = initially neutral; set to bullish when previous close > active swing high and set to bearish when previous close < active swing low. Update swings before testing breaks; if both breaks occur on the same bar, process the bullish break first and the bearish break second.
+Long: Money flow >= 0
+Short: Money flow < 0
+Long: Previous money flow > money flow two bars ago
+Short: Previous money flow <= money flow two bars ago
+Long: Previous money flow >= previous signal
+Short: Previous money flow < previous signal
+Long: Signal >= 0
+Short: Signal < 0
+Long: Money flow < oversold threshold
+Short: Money flow > overbought threshold
+Long: Money flow two bars ago < 0 AND previous money flow >= 0
+Short: Money flow two bars ago >= 0 AND previous money flow < 0
+Long: Money flow two bars ago > oversold threshold AND previous money flow <= oversold threshold
+Short: Money flow two bars ago < overbought threshold AND previous money flow >= overbought threshold
+Long: Money flow > signal AND previous money flow <= previous signal
+Long: Previous close > active swing high
+Short: Previous close < active swing low
+Long: Structure direction = bullish
+Short: Structure direction = bearish

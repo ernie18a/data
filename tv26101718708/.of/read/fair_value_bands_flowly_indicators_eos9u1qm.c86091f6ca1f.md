@@ -1,9 +1,14 @@
-Calculation: Fair value basis = a selected OHLC-derived price source smoothed by a selected method over a lookback.
-Calculation: Threshold bands = the fair value basis offset by the median historical high and low deviations recorded on bars whose range crosses the basis.
-Calculation: Deviation bands = the fair value basis offset by multiples of the median pivot deviations of OHLC4 relative to the basis; use five bars on each side to confirm pivots, recording upper pivots only when the bar low is above the upper threshold band and lower pivots only when the bar high is below the lower threshold band.
-Long: A selected source crosses below a selected deviation band
-Short: A selected source crosses above a selected deviation band
-Long: The trend state changes from down to up; in cross mode, the selected uptrend source is above the upper threshold band, and in direction mode, the fair value basis rises
-Short: The trend state changes from up to down; in cross mode, the selected downtrend source is below the lower threshold band, and in direction mode, the fair value basis falls
-Long: Trend state is up AND low <= upper threshold band
-Short: Trend state is down AND high >= lower threshold band
+Calculation: Price source = a selected open, high, low, close, HL2, HLC3, or OHLC4; selecting HLCC4 also produces OHLC4.
+Calculation: Fair value basis = the selected SMA, EMA, HMA, RMA, WMA, VWMA, rolling median, or anchored VWAP of the selected price source; anchored VWAP resets at each selected anchor period.
+Calculation: Unscaled threshold bands = fair value basis multiplied by the respective medians of high / fair value basis and low / fair value basis. On each bar, append those ratios only when low < fair value basis AND high > fair value basis; otherwise append missing values. Retain the latest configurable number of bars plus one and ignore missing values in each median.
+Calculation: Threshold bands = fair value basis plus or minus the respective distances from the fair value basis to the unscaled threshold bands, multiplied by a configurable nonnegative factor.
+Calculation: Trend state = initially neutral; on each bar set it to down if the down rule is true, otherwise set it to up if the up rule is true, otherwise retain its previous value. In cross mode, the up rule is selected up-source > upper threshold band and the down rule is selected down-source < lower threshold band. In direction mode, the up rule is fair value basis > previous fair value basis and the down rule is fair value basis < previous fair value basis.
+Calculation: Deviation bands = fair value basis plus or minus a configurable factor times the respective distance between fair value basis and fair value basis multiplied by the median of qualifying confirmed pivot ratios. The pivot series is OHLC4 / fair value basis, with equal configurable numbers of bars on each side of the pivot. On each confirmation bar, if low > unscaled upper threshold band, append the confirmed pivot high ratio or a missing value to the upper list; otherwise, if high < unscaled lower threshold band, append the confirmed pivot low ratio or a missing value to the lower list. Before each bar's append, remove the oldest item from each list if its size exceeds the configurable capacity; ignore missing values when taking medians. The outer bands use configurable integer multiples of the corresponding first-band distance.
+Long: trend state = up
+Short: trend state = down
+Long: trend state = up AND low <= upper threshold band
+Short: trend state = down AND high >= lower threshold band
+Long: previous trend state = down AND trend state = up
+Short: previous trend state = up AND trend state = down
+Long: selected price source crosses below a selected upper or lower deviation band
+Short: selected price source crosses above a selected upper or lower deviation band

@@ -1,5 +1,10 @@
-Calculation: Bullish EMA stack = 20-period EMA > 50-period EMA > 100-period EMA > 200-period EMA on the higher timeframe, using its still-forming bar
-Calculation: Moving-average alignment = all active chart-timeframe EMAs and SMAs, sorted by value from highest to lowest, have strictly increasing lookback lengths
-Long: Bullish EMA stack OR higher-timeframe MACD line > signal line OR higher-timeframe Supertrend is bullish OR higher-timeframe RSI > 50 OR moving-average alignment
-Calculation: Bearish EMA stack = 20-period EMA < 50-period EMA < 100-period EMA < 200-period EMA on the higher timeframe, using its still-forming bar
-Short: Bearish EMA stack OR higher-timeframe MACD line < signal line OR higher-timeframe Supertrend is bearish OR higher-timeframe RSI <= 50 OR moving-average alignment in reverse order
+Long: At least two enabled, valid chart-timeframe EMAs and SMAs exist AND, when sorted by value descending with ties retaining EMA-then-SMA input order, their lookback lengths are nondecreasing.
+Short: At least two enabled, valid chart-timeframe EMAs and SMAs exist AND, when sorted by value descending with ties retaining EMA-then-SMA input order, their lookback lengths are nonincreasing AND their lengths are not also nondecreasing.
+Long: On the higher timeframe, the shortest-lookback close EMA > the next-shorter-lookback close EMA AND the next-shorter-lookback EMA > the next-longer-lookback EMA AND the next-longer-lookback EMA > the longest-lookback EMA; use the last completed higher-timeframe bar historically and the forming bar in real time.
+Short: On the higher timeframe, the shortest-lookback close EMA < the next-shorter-lookback close EMA AND the next-shorter-lookback EMA < the next-longer-lookback EMA AND the next-longer-lookback EMA < the longest-lookback EMA; use the last completed higher-timeframe bar historically and the forming bar in real time.
+Long: Higher-timeframe MACD line > its signal line; use the last completed higher-timeframe bar historically and the forming bar in real time.
+Short: Higher-timeframe MACD line <= its signal line; use the last completed higher-timeframe bar historically and the forming bar in real time.
+Long: Higher-timeframe SuperTrend direction is bullish; use the last completed higher-timeframe bar historically and the forming bar in real time.
+Short: Higher-timeframe SuperTrend direction is bearish; use the last completed higher-timeframe bar historically and the forming bar in real time.
+Long: Higher-timeframe close RSI > its midpoint; use the last completed higher-timeframe bar historically and the forming bar in real time.
+Short: Higher-timeframe close RSI <= its midpoint; use the last completed higher-timeframe bar historically and the forming bar in real time.

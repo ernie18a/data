@@ -1,3 +1,3 @@
-Calculation: Configured moving average = selected SMA, EMA, WMA, VWMA, HMA, or RMA of the selected source over the selected lookback; use chart-timeframe bars by default. For a higher timeframe, use its still-forming bar; for a lower timeframe, use the latest lower-timeframe bar within the chart bar (live if still forming, otherwise completed).
-Long: At least one enabled fill has both connected moving averages enabled and distinct, and its first moving average > its second moving average
-Short: At least one enabled fill has both connected moving averages enabled and distinct, and its first moving average <= its second moving average
+Long: First selected moving average > second selected moving average
+Short: First selected moving average <= second selected moving average
+Calculation: Each selected moving average = SMA, EMA, WMA, VWMA, HMA, or RMA of an independently selected price source and lookback. Each may use the chart timeframe, a higher timeframe's still-forming bar, or the last completed bar of a lower timeframe. The two averages may have any relationship between their lookbacks.

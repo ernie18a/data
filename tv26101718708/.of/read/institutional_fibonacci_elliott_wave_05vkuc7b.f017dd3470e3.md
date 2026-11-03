@@ -1,8 +1,8 @@
-Calculation: Confirmed swing high = a high greater than the highs of the preceding and following lookback bars; confirmed swing low = a low lower than the lows of the preceding and following lookback bars. Use the chart timeframe; following bars must be completed.
-Calculation: Fibonacci retracement level = for an upswing, latest swing high − (latest swing high − latest swing low) × ratio; for a downswing, latest swing low + (latest swing high − latest swing low) × ratio. Use the latest confirmed swing high and low; direction is upswing if the high occurred later, otherwise downswing.
-Calculation: Fibonacci extension level = for an upswing, latest swing low + (latest swing high − latest swing low) × ratio; for a downswing, latest swing high − (latest swing high − latest swing low) × ratio.
-Long: The latest six confirmed pivots alternate low-high-low-high-low-high AND the second low is above the first low AND the third upward leg is at least as large as both the first and fifth upward legs AND the second high is above the first high
-Long: The close crosses below the 0.618 Fibonacci retracement level while the latest swing direction is upward
-Short: The latest six confirmed pivots alternate high-low-high-low-high-low AND the second high is below the first high AND the third downward leg is at least as large as both the first and fifth downward legs AND the second low is below the first low
-Short: The close crosses below the 0.618 Fibonacci retracement level while the latest swing direction is downward
-Exit: long, the close crosses above the 1.000 or 1.272 or 1.618 Fibonacci extension level
+Calculation: Confirmed swing high and low = pivots whose highs or lows are respectively highest or lowest over equal lookbacks before and after the pivot; recognize each only after the subsequent bars have completed. Use the most recent confirmed high H and low L, their pivot bar times, and range R = H - L.
+Calculation: Fibonacci direction = bullish if the high pivot bar is later than the low pivot bar; bearish if the low pivot bar is later than the high pivot bar.
+Calculation: Entry level = H - R × entry retracement ratio for bullish direction; L + R × entry retracement ratio for bearish direction.
+Calculation: Target level = L + R × extension ratio for bullish direction; H - R × extension ratio otherwise. Use three increasing extension ratios.
+Long: Fibonacci direction is bullish AND close crosses below the entry level.
+Short: Fibonacci direction is bearish AND close crosses below the entry level.
+Exit: long, close crosses above any target level.
+Exit: short, close crosses above any target level.

@@ -1,2 +1,10 @@
-Long: close > short-term EMA AND previous close <= previous short-term EMA OR close > medium-term EMA AND previous close <= previous medium-term EMA OR close > long-term EMA AND previous close <= previous long-term EMA OR higher-timeframe Supertrend direction is bullish AND was not bullish on the previous chart bar (use the last completed higher-timeframe bar) OR close > all three EMAs AND previous close was not above all three EMAs
-Short: close < short-term EMA AND previous close >= previous short-term EMA OR close < medium-term EMA AND previous close >= previous medium-term EMA OR close < long-term EMA AND previous close >= previous long-term EMA OR higher-timeframe Supertrend direction is bearish AND was not bearish on the previous chart bar (use the last completed higher-timeframe bar) OR close < all three EMAs AND previous close was not below all three EMAs
+Long: Close > any of three close EMAs with short, medium, and long lookbacks.
+Short: Close <= any of the three close EMAs.
+Long: Close > any of the three close EMAs AND previous close <= the same EMA on the previous bar.
+Short: Close < any of the three close EMAs AND previous close >= the same EMA on the previous bar.
+Long: Close > all three close EMAs AND previous close <= at least one of the three EMAs on the previous bar.
+Short: Close < all three close EMAs AND previous close >= at least one of the three EMAs on the previous bar.
+Long: Supertrend direction is bullish on the last completed higher-timeframe bar.
+Short: Supertrend direction is bearish on the last completed higher-timeframe bar.
+Long: Supertrend direction on the last completed higher-timeframe bar is bullish AND its direction on the previous chart bar was not bullish.
+Short: Supertrend direction on the last completed higher-timeframe bar is bearish AND its direction on the previous chart bar was not bearish.

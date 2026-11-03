@@ -1,5 +1,13 @@
-Calculation: Heikin-Ashi Supertrend direction = On Heikin-Ashi bars of the chart timeframe, calculate ATR; set the basic lower and upper bands to (high + low) / 2 − multiplier × ATR and (high + low) / 2 + multiplier × ATR. For each bar, carry forward the lower band as the maximum of its basic value and prior lower band when prior Heikin-Ashi close is above the prior lower band, otherwise use its basic value; carry forward the upper band as the minimum of its basic value and prior upper band when prior Heikin-Ashi close is below the prior upper band, otherwise use its basic value. Direction is +1 if Heikin-Ashi close is above the prior upper band, −1 if below the prior lower band, otherwise the prior direction (initially +1). Evaluate using the completed current chart bar.
-Long: Heikin-Ashi Supertrend direction changes from −1 to +1
-Short: Heikin-Ashi Supertrend direction changes from +1 to −1
-Exit: long, close > entry price × (1 + profit target percentage) OR (close < stop trigger price AND more than two chart bars since entry)
-Exit: short, close < entry price × (1 − profit target percentage) OR (close > stop trigger price AND more than two chart bars since entry)
+Calculation: Heikin Ashi trend direction = On chart-timeframe Heikin Ashi bars, calculate ATR and basic lower and upper bands as (high + low) / 2 minus and plus ATR times a multiplier. Set the lower band to the greater of its basic value and its previous value when the previous Heikin Ashi close was above the previous lower band; otherwise use its basic value. Set the upper band to the lesser of its basic value and its previous value when the previous Heikin Ashi close was below the previous upper band; otherwise use its basic value. Set direction to 1 when the Heikin Ashi close is above the previous upper band, otherwise to -1 when it is below the previous lower band, otherwise retain the previous direction, initially 1.
+Calculation: Stop price = For a long, entry price reduced by the stop-loss percentage; for a short, entry price increased by that percentage. If the optional stop move is enabled and, since entry, a long bar's high has exceeded entry price increased by the move-trigger percentage or a short bar's low has fallen below entry price reduced by that percentage, use entry price increased by the move-to percentage for a long or reduced by it for a short. Round each price to the configured decimal precision.
+Calculation: Stop trigger price = Stop price increased by the stop-offset percentage for a long or reduced by it for a short, rounded to the configured decimal precision.
+Long: Heikin Ashi trend direction changes from -1 to 1.
+Short: Heikin Ashi trend direction changes from 1 to -1.
+Exit: long, close > entry price increased by the profit-target percentage.
+Exit: short, close < entry price reduced by the profit-target percentage.
+Exit: long, close < stop trigger price AND bars since entry > the minimum holding-bar parameter; submit a sell stop at the stop price, which remains active until filled or the position closes.
+Exit: short, close > stop trigger price AND bars since entry > the minimum holding-bar parameter; submit a buy stop at the stop price, which remains active until filled or the position closes.
+Exit: long, manual close enabled AND datetime equals the configured manual-close datetime; submit a sell stop at the configured manual-close price.
+Exit: short, manual close enabled AND datetime equals the configured manual-close datetime; submit a buy stop at the configured manual-close price.
+Exit: long, Heikin Ashi trend direction changes from 1 to -1.
+Exit: short, Heikin Ashi trend direction changes from -1 to 1.

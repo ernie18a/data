@@ -1,12 +1,28 @@
-Calculation: Prior-day high/low = high/low of the last completed daily bar (higher timeframe than the chart timeframe)
-Calculation: Prior-week high/low = high/low of the last completed weekly bar (higher timeframe than the chart timeframe)
-Calculation: Lower-liquidity sweep = low below a prior-day or prior-week low and close back above that low
-Calculation: Upper-liquidity sweep = high above a prior-day or prior-week high and close back below that high
-Calculation: Active sweep = most recent lower- or upper-liquidity sweep, valid through the confirmation window after it occurs
-Calculation: Bullish structure break = close crosses above the latest confirmed swing high
-Calculation: Bearish structure break = close crosses below the latest confirmed swing low
-Calculation: Displacement = candle body larger than the average body over a longer lookback multiplied by a threshold, or a gap in the same direction
-Calculation: Relative volume = volume divided by its moving average
-Calculation: Trend alignment = close above/below both the chart-timeframe EMA and the EMA of the last completed higher-timeframe bar (higher timeframe than the chart timeframe)
-Long: Lower-liquidity sweep OR (active sweep is lower-liquidity AND bullish structure break AND bullish displacement AND trend alignment up AND relative volume above threshold AND RSI above its bullish threshold AND datetime within the execution session)
-Short: Upper-liquidity sweep OR (active sweep is upper-liquidity AND bearish structure break AND bearish displacement AND trend alignment down AND relative volume above threshold AND RSI below its bearish threshold AND datetime within the execution session)
+Calculation: Reference levels = high and low of the last completed bars of two higher timeframes, one longer than the other.
+Calculation: Structure high or low = the latest confirmed pivot high or low, using equal numbers of bars on each side of the pivot.
+Calculation: Lower sweep = low < a reference low AND close > that reference low; the shorter-timeframe reference must be enabled, or the longer-timeframe reference and its sweep tracking must both be enabled. Upper sweep = high > a reference high AND close < that reference high, with the corresponding reference enabled and longer-timeframe sweep tracking enabled when applicable.
+Calculation: Active sweep side = the side of the latest lower or upper sweep within a configurable confirmation window, including the current bar; a lower sweep takes precedence if both occur on the same bar. A new sweep replaces the previous side.
+Calculation: Bullish break = close > current structure high AND previous close <= current structure high. Bearish break = close < current structure low AND previous close >= current structure low.
+Calculation: Bullish displacement = close > open AND absolute candle body > its simple moving average multiplied by a configurable factor, OR low > previous high. Bearish displacement = close < open AND absolute candle body > its simple moving average multiplied by the same factor, OR high < previous low.
+Calculation: Trend alignment = close compared with both a chart-timeframe EMA and an EMA of the last completed higher-timeframe bar; both EMAs use the same length.
+Calculation: Relative volume = volume divided by its simple moving average when that average > 0; otherwise it equals 1.
+Calculation: Bullish imbalance = low > high two bars ago. Bearish imbalance = high < low two bars ago. An enabled bullish imbalance zone is created when bullish imbalance AND (active sweep side is lower OR bullish break); its bounds are the current low and the high two bars ago. An enabled bearish imbalance zone is created when bearish imbalance AND (active sweep side is upper OR bearish break); its bounds are the low two bars ago and the current high. Keep at most a configurable number of the newest zones across both sides; remove a bullish zone when low <= its lower bound, a bearish zone when high >= its upper bound, or either when its age exceeds a configurable maximum.
+Calculation: Bullish block = the high-to-low range of the most recent bearish candle within a configurable lookback before a bullish break, or the previous candle if none exists. Bearish block = the high-to-low range of the most recent bullish candle within that lookback before a bearish break, or the previous candle if none exists. Create blocks only when enabled; keep at most a configurable number of the newest blocks across both sides. Remove a bullish block when close < its low, a bearish block when close > its high, or either when its age exceeds the zone maximum.
+Calculation: Sweep zone = the range between the swept reference and the sweep bar's low for a lower sweep, or its high for an upper sweep; use the shorter-timeframe lower, longer-timeframe lower, shorter-timeframe upper, then longer-timeframe upper reference in that priority order. Create zones only when enabled; keep at most a configurable number of the newest zones across both sides. Remove a lower-sweep zone when close < its low, an upper-sweep zone when close > its high, or either when its age exceeds the zone maximum.
+Calculation: Long confluence = the count of true conditions among active sweep side is lower, an active sweep exists, bullish break, bullish displacement, upward trend alignment, relative volume >= its threshold, RSI >= its bullish threshold, and at least one bullish imbalance zone remains. Short confluence = the analogous count using upper sweep side, bearish break, bearish displacement, downward trend alignment, the same relative-volume test, RSI <= its bearish threshold, and at least one bearish imbalance zone remains.
+Long: Lower sweep.
+Short: Upper sweep.
+Long: Active sweep side is lower.
+Short: Active sweep side is upper.
+Long: Bullish break.
+Short: Bearish break.
+Long: Close > chart-timeframe EMA AND close > last completed higher-timeframe EMA.
+Short: Close < chart-timeframe EMA AND close < last completed higher-timeframe EMA.
+Long: At least one bullish imbalance zone remains.
+Short: At least one bearish imbalance zone remains AND no bullish imbalance zone remains.
+Long: At least one bullish block remains.
+Short: At least one bearish block remains AND no bullish block remains.
+Long: Long confluence >= short confluence.
+Short: Long confluence < short confluence.
+Long: Active sweep side is lower AND bullish break AND (displacement filter disabled OR bullish displacement) AND (trend filter disabled OR upward trend alignment) AND (volume filter disabled OR relative volume >= threshold) AND (RSI filter disabled OR RSI >= bullish threshold) AND (session filter disabled OR bar time is within the configured session) AND (imbalance filter disabled OR at least one bullish imbalance zone remains).
+Short: Active sweep side is upper AND bearish break AND (displacement filter disabled OR bearish displacement) AND (trend filter disabled OR downward trend alignment) AND (volume filter disabled OR relative volume >= threshold) AND (RSI filter disabled OR RSI <= bearish threshold) AND (session filter disabled OR bar time is within the configured session) AND (imbalance filter disabled OR at least one bearish imbalance zone remains).

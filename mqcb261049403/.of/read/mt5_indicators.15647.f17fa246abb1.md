@@ -1,8 +1,3 @@
-Calculation: Channel upper threshold = highest high over the lookback bars minus the risk fraction of the highest-high to lowest-low range over those bars.
-Calculation: Channel lower threshold = lowest low over the lookback bars plus the risk fraction of the highest-high to lowest-low range over those bars.
-Calculation: Long trailing stop = channel lower threshold, ratcheted upward so it never decreases while the long trend is active.
-Calculation: Short trailing stop = channel upper threshold, ratcheted downward so it never increases while the short trend is active.
-Long: close > previous bar's channel upper threshold AND previous bar was in a short trend
-Short: close < previous bar's channel lower threshold AND previous bar was in a long trend
-Exit: long, close < previous bar's long trailing stop
-Exit: short, close > previous bar's short trailing stop
+Calculation: Price-channel regime and stops = On the chart timeframe, or on a higher timeframe using its bar still forming, calculate the highest high H and lowest low L over a lookback including the current bar. Set the raw upper stop to H − risk × (H − L) and the raw lower stop to L + risk × (H − L). Initialize the regime and previous stops to zero. On each bar, set the regime to long if close > previous upper stop; then set it to short if close < previous lower stop; otherwise retain the existing regime. In a long regime, the lower stop is the maximum of its raw value and its previous value; otherwise it is its raw value. In a short regime, the upper stop is the minimum of its raw value and its previous value; otherwise it is its raw value.
+Long: Price-channel regime = long
+Short: Price-channel regime = short

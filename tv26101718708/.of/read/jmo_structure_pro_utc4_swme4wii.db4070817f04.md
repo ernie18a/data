@@ -1,13 +1,9 @@
-Calculation: Short-term, medium-term, and long-term EMA = exponential moving averages of close, with progressively longer lookbacks.
-Calculation: Bollinger upper band = close-based Bollinger Bands upper band, using a lookback and standard-deviation multiplier.
-Calculation: Higher-timeframe EMA band = range between the fast and slow EMAs calculated from a higher-timeframe bar that may still be forming.
-Calculation: Strong push candle = candle body at least the configured multiple of the 20-bar average candle body.
-Calculation: Demand base = a red candle inside an enabled session, within the configured lookback, with neither adjacent candle red; supply base = a green candle inside an enabled session, within the configured lookback, with neither adjacent candle green.
-Long: Short-term EMA > long-term EMA
-Long: Short-term EMA > medium-term EMA AND medium-term EMA > long-term EMA
-Long: Strong green push candle AND its close is above the high of a demand base
-Long: Short-term EMA or long-term EMA enters a higher-timeframe EMA band on the current chart bar, having been outside that band on the prior chart bar
-Short: Short-term EMA <= long-term EMA
-Short: Short-term EMA < medium-term EMA AND medium-term EMA < long-term EMA
-Short: Strong red push candle AND its close is below the low of a supply base
-Exit:
+Calculation: Structure band = the inclusive range between a shorter-period EMA of close and a longer-period EMA of close on a selected structure timeframe. For a higher timeframe use the last completed bar; for a lower timeframe use the last completed intrabar.
+Calculation: Zone base = the most recent candle within a specified lookback ending two zone-timeframe bars ago that is inside an enabled session, has the required bullish or bearish body, and has neither adjacent candle with a body of the same direction. For a higher zone timeframe use the last completed bar.
+Long: Chart-timeframe shorter-period EMA of close <= the structure band's upper boundary AND >= its lower boundary OR chart-timeframe longer-period EMA of close <= the structure band's upper boundary AND >= its lower boundary; AND neither EMA was inside that same band on the preceding chart bar.
+Long: On any selected panel timeframe, shorter-period EMA of close > longer-period EMA of close. For a higher timeframe use the last completed bar; for a lower timeframe use the last completed intrabar.
+Short: On any selected panel timeframe, shorter-period EMA of close <= longer-period EMA of close. For a higher timeframe use the last completed bar; for a lower timeframe use the last completed intrabar.
+Long: On any selected panel timeframe, shortest-period EMA of close > middle-period EMA of close AND middle-period EMA of close > longest-period EMA of close. For a higher timeframe use the last completed bar; for a lower timeframe use the last completed intrabar.
+Short: On any selected panel timeframe, shortest-period EMA of close < middle-period EMA of close AND middle-period EMA of close < longest-period EMA of close. For a higher timeframe use the last completed bar; for a lower timeframe use the last completed intrabar.
+Long: On an enabled zone timeframe at least as high as the chart timeframe, the preceding candle's close > its open AND its absolute body >= a specified multiple of the SMA of absolute candle bodies ending on that candle AND its close > the high of the bearish zone base AND the chart-timeframe timestamp at the base's bar offset differs from the timestamp of the last zone added for that zone timeframe.
+Short: On an enabled zone timeframe at least as high as the chart timeframe, the preceding candle's close < its open AND its absolute body >= a specified multiple of the SMA of absolute candle bodies ending on that candle AND its close < the low of the bullish zone base AND the chart-timeframe timestamp at the base's bar offset differs from the timestamp of the last zone added for that zone timeframe.
