@@ -1,0 +1,1 @@
+For each direction independently, if timed exits are enabled, close the traded instrument's position associated with that direction's strategy identifier when its age strictly exceeds the configured holding duration. Check on each tick after both indicator histories are sufficiently populated and any required signal data has been retrieved.

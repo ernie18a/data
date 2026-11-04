@@ -1,0 +1,1 @@
+At script startup, inspect open positions for an existing expiration marker on the current chart. If a position's marker is at chart object index zero, has a positive timestamp, and that timestamp has passed according to server time, close the position.
