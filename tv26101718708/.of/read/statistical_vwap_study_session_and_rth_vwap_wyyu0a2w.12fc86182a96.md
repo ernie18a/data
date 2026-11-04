@@ -1,0 +1,2 @@
+Long: RTH session VWAP is available AND close > current RTH session's opening bar open
+Short: RTH session VWAP is available AND (current RTH session's opening bar open is unavailable OR close <= current RTH session's opening bar open)

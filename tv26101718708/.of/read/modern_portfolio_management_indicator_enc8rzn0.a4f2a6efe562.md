@@ -1,0 +1,1 @@
+Long: bar datetime >= contribution start time AND bar datetime <= contribution end time

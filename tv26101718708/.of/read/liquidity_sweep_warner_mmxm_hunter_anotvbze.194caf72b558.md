@@ -1,0 +1,7 @@
+Calculation: Order-block data = chart OHLC and two independently selected higher-timeframe OHLC series. For each higher-timeframe series, use the last completed bar mapped onto each chart bar; all offsets below refer to chart bars after mapping. In realtime mode, use the still-forming higher-timeframe bar instead.
+Calculation: Bullish candidate = previous close < previous open AND current close > previous high, or previous close < previous open AND current high > previous high when wick breaks are selected. For a higher-timeframe series, accept at most one candidate per previous mapped bar timestamp.
+Calculation: Bearish candidate = previous close > previous open AND current close < previous low, or previous close > previous open AND current low < previous low when wick breaks are selected. For a higher-timeframe series, accept at most one candidate per previous mapped bar timestamp.
+Long: Bullish candidate AND direct confirmation selected
+Long: Bullish candidate pending since the current or an earlier chart bar AND current low > high two chart bars earlier AND fair-value-gap confirmation selected; for higher-timeframe data, current mapped bar timestamp > candidate source timestamp
+Short: Bearish candidate AND direct confirmation selected
+Short: Bearish candidate pending since the current or an earlier chart bar AND current high < low two chart bars earlier AND fair-value-gap confirmation selected; for higher-timeframe data, current mapped bar timestamp > candidate source timestamp
