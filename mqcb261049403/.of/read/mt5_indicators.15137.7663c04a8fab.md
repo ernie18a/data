@@ -1,0 +1,2 @@
+Long: Higher-timeframe stochastic main line > its signal line, using the higher-timeframe bar still forming.
+Short: Higher-timeframe stochastic main line < its signal line, using the higher-timeframe bar still forming.
