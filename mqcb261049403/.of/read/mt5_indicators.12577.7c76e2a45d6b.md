@@ -1,0 +1,6 @@
+Calculation: Range oscillator = 100 × (current bar midpoint − lowest low over the lookback including the current bar) / (highest high over the same lookback − lowest low over the same lookback); use 0 when the denominator is 0. Calculate on the chart timeframe or a higher timeframe, using the bar still forming.
+Calculation: Bullish event = on the first chart bar of an oscillator-timeframe bar, either the oscillator rises above the upper threshold from at or below it in entry mode, or it rises above the lower threshold from at or below it in exit mode. Compare the oscillator on the forming bar with the preceding completed oscillator-timeframe bar.
+Calculation: Bearish event = on the first chart bar of an oscillator-timeframe bar, either the oscillator falls below the lower threshold from at or above it in entry mode, or it falls below the upper threshold from at or above it in exit mode. Compare the oscillator on the forming bar with the preceding completed oscillator-timeframe bar.
+Calculation: Latest bullish event time and latest bearish event time = the respective most recent event times; use negative infinity before an event has occurred.
+Long: latest bullish event time > latest bearish event time
+Short: latest bearish event time > latest bullish event time

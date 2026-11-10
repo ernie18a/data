@@ -1,0 +1,14 @@
+Calculation: Pre-session range = highest high and lowest low accumulated during the configured pre-session window in America/New_York time; lock them when the active session begins and retain them until the next active session begins.
+Calculation: Latest confirmed pivot high or low = the most recent high or low confirmed as a pivot using equal numbers of chart bars on each side; update it on the confirmation bar.
+Calculation: Higher-timeframe EMA = EMA of higher-timeframe closes with lookahead off: on historical bars use the last completed higher-timeframe bar; on realtime bars use the higher-timeframe bar still forming.
+Calculation: Session trade count = number of entry orders submitted in the active session; reset it to zero on the first active-session bar.
+Calculation: Entry stop = at the entry signal bar, for a long, the minimum of latest confirmed pivot low minus a buffer and close minus ATR multiplied by a stop multiplier; for a short, the maximum of latest confirmed pivot high plus a buffer and close plus ATR multiplied by the same stop multiplier. Hold the result fixed for the trade; it is unavailable if the required pivot is unavailable.
+Calculation: Entry target = at the entry signal bar, for a long, close plus the reward-to-risk multiplier times close minus entry stop; for a short, close minus the reward-to-risk multiplier times entry stop minus close. Hold the result fixed for the trade.
+Long: Active-session bar AND session trade count < maximum AND position is flat AND ((locked pre-session range size >= minimum AND close > locked range high AND previous close <= current locked range high) OR (close > latest confirmed pivot high AND previous close <= current latest confirmed pivot high)) AND RSI >= long threshold AND (volume filter disabled OR volume > volume SMA multiplied by volume multiplier) AND (higher-timeframe filter disabled OR close > higher-timeframe EMA).
+Short: Active-session bar AND session trade count < maximum AND position is flat AND ((locked pre-session range size >= minimum AND close < locked range low AND previous close >= current locked range low) OR (close < latest confirmed pivot low AND previous close >= current latest confirmed pivot low)) AND RSI <= short threshold AND (volume filter disabled OR volume > volume SMA multiplied by volume multiplier) AND (higher-timeframe filter disabled OR close < higher-timeframe EMA).
+Long: Close > higher-timeframe EMA.
+Short: Close <= higher-timeframe EMA OR higher-timeframe EMA is unavailable.
+Long: RSI >= long threshold.
+Short: RSI < long threshold OR RSI is unavailable.
+Exit: Long, low <= entry stop OR high >= entry target OR current bar is outside both the pre-session and active-session windows AND previous bar was inside either window.
+Exit: Short, high >= entry stop OR low <= entry target OR current bar is outside both the pre-session and active-session windows AND previous bar was inside either window.

@@ -1,0 +1,4 @@
+Calculation: Window open = the open of the first chart bar in the configured New York time window.
+Calculation: Trigger distance = a multiplier times the standard deviation of the open-to-close changes of the most recent completed windows, calculated on a higher sample timeframe using its last completed bar, or on the chart timeframe if the configured sample timeframe is not higher. Use the value available when the chart window opens; require the minimum number of completed sample windows.
+Long: The chart bar is in the window AND no earlier chart bar in the window has closed beyond either trigger AND close > window open + trigger distance.
+Short: The chart bar is in the window AND no earlier chart bar in the window has closed beyond either trigger AND close < window open - trigger distance.

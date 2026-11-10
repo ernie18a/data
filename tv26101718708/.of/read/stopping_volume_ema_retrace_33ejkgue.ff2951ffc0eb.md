@@ -1,0 +1,6 @@
+Calculation: Lower wick = min(open, close) - low.
+Calculation: Upper wick = high - max(open, close).
+Calculation: Wick percentage = 100 * wick / (high - low) when high > low, otherwise 0.
+Calculation: Close position = 100 * (close - low) / (high - low) when high > low, otherwise 50.
+Long: low <= EMA(close) * (1 - extension percentage / 100) AND SMA of volume over previous completed bars > 0 AND volume >= SMA of volume over previous completed bars * volume multiplier AND lower wick percentage >= minimum wick percentage AND (wick dominance required = false OR lower wick > upper wick) AND close position >= minimum close recovery percentage.
+Short: high >= EMA(close) * (1 + extension percentage / 100) AND SMA of volume over previous completed bars > 0 AND volume >= SMA of volume over previous completed bars * volume multiplier AND upper wick percentage >= minimum wick percentage AND (wick dominance required = false OR upper wick > lower wick) AND close position <= 100 - minimum close recovery percentage.

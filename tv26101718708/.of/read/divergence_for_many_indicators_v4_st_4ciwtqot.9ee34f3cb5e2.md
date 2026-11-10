@@ -1,0 +1,15 @@
+Calculation: Pivot low/high = a low/high of the selected source (close or low/high respectively) confirmed by the same number of bars on each side; evaluate on the confirmation bar.
+Calculation: Indicator set = MACD line and histogram of close, RSI of close, SMA-smoothed stochastic of close/high/low, CCI of close, momentum of close, OBV, shorter-period VWMA of close minus longer-period VWMA of close, Chaikin money flow, and money flow index of close; each indicator can be enabled independently.
+Calculation: Divergence candidates = for each enabled indicator and enabled regular/hidden type, search the most recent bounded number of confirmed price pivots within a maximum lookback and beyond a minimum separation; use the first qualifying pivot. The current endpoint is the current bar if confirmation is disabled, otherwise the preceding bar. For low-pivot candidates, require confirmation disabled OR current indicator > previous indicator OR current close > previous close; for high-pivot candidates, require confirmation disabled OR current indicator < previous indicator OR current close < previous close. At every intermediate bar, both indicator and close must be on or above their respective straight lines between endpoints for low-pivot candidates, or on or below them for high-pivot candidates. Price comparisons use the selected pivot source; the straight-line test always uses close.
+Calculation: Low regular divergence = low-pivot candidate AND endpoint indicator > pivot indicator AND endpoint price < pivot price.
+Calculation: Low hidden divergence = low-pivot candidate AND endpoint indicator < pivot indicator AND endpoint price > pivot price.
+Calculation: High regular divergence = high-pivot candidate AND endpoint indicator < pivot indicator AND endpoint price > pivot price.
+Calculation: High hidden divergence = high-pivot candidate AND endpoint indicator > pivot indicator AND endpoint price < pivot price.
+Long: Confirmed pivot low AND pivot markings enabled.
+Short: Confirmed pivot high AND pivot markings enabled.
+Long: At least one low regular or low hidden divergence AND total count of all enabled indicator/type divergences across both directions >= minimum divergence count.
+Short: At least one high regular or high hidden divergence AND total count of all enabled indicator/type divergences across both directions >= minimum divergence count.
+Exit: long, high regular divergence AND total count of all enabled indicator/type divergences across both directions >= minimum divergence count.
+Exit: short, low regular divergence AND total count of all enabled indicator/type divergences across both directions >= minimum divergence count.
+Exit: long, low <= entry price * (1 - stop-loss fraction) OR high >= entry price * (1 + take-profit fraction).
+Exit: short, high >= entry price * (1 + stop-loss fraction) OR low <= entry price * (1 - take-profit fraction).

@@ -1,0 +1,6 @@
+Calculation: Upper threshold = highest high over a lookback window ending a configurable number of bars before the current bar minus a multiple of current ATR.
+Calculation: Lower threshold = lowest low over the same lookback window ending the same number of bars before the current bar plus the same multiple of current ATR.
+Calculation: Direction state = initialize to nonnegative; on each completed bar, change to negative if the prior state is nonnegative AND close < upper threshold, or to positive if the prior state is negative AND close > lower threshold; otherwise retain the prior state. For the current bar, evaluate the same rules provisionally without committing the state until the bar completes.
+Calculation: Fill difference = upper threshold minus lower threshold when the provisional direction state is nonnegative; otherwise lower threshold minus upper threshold. Calculate independently on the chart timeframe and on a higher timeframe, using the higher-timeframe bar still forming.
+Long: chart-timeframe fill difference < 0 OR higher-timeframe fill difference < 0
+Short: chart-timeframe fill difference > 0 OR higher-timeframe fill difference > 0

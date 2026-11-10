@@ -1,0 +1,4 @@
+Calculation: Median price = (high + low) / 2.
+Calculation: Cyber cycle = recursively calculate using alpha: smoothed median price = (current median price + 2 × previous median price + 2 × median price two bars ago + median price three bars ago) / 6; cycle = (1 - alpha / 2)² × (current smoothed median price - 2 × previous smoothed median price + smoothed median price two bars ago) + 2 × (1 - alpha) × previous cycle - (1 - alpha)² × cycle two bars ago. Start with the second-oldest bar; initialize the first nine calculated cycle values as (current median price - 2 × previous median price + median price two bars ago) / 4, using zero for unavailable prior prices, except that the first calculated cycle is zero.
+Long: Cyber cycle on the still-forming higher-timeframe bar > its previous higher-timeframe value.
+Short: Cyber cycle on the still-forming higher-timeframe bar < its previous higher-timeframe value.

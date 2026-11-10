@@ -1,0 +1,4 @@
+Long: position is flat AND available chart bars > minimum history length AND previous bar open < current bar's shifted simple moving average of close AND previous bar close > current bar's shifted simple moving average of close
+Short: position is flat AND available chart bars > minimum history length AND previous bar open > current bar's shifted simple moving average of close AND previous bar close < current bar's shifted simple moving average of close
+Exit: long, available chart bars > minimum history length AND previous bar open > current bar's shifted simple moving average of close AND previous bar close < current bar's shifted simple moving average of close
+Exit: short, available chart bars > minimum history length AND previous bar open < current bar's shifted simple moving average of close AND previous bar close > current bar's shifted simple moving average of close

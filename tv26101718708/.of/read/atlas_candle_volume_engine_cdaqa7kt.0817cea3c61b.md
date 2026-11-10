@@ -1,0 +1,2 @@
+Long: Chart close > chart open OR close > open on any of the three snapshot timeframes, using the last completed bar when the snapshot timeframe is higher than the chart timeframe and the last completed intrabar when it is lower; use the chart bar when they are equal.
+Short: Chart close < chart open OR close < open on any of the three snapshot timeframes, using the last completed bar when the snapshot timeframe is higher than the chart timeframe and the last completed intrabar when it is lower; use the chart bar when they are equal.

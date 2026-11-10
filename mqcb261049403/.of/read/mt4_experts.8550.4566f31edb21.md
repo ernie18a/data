@@ -1,0 +1,6 @@
+Calculation: Order levels = pivot and second support and resistance calculated from the high, low, and close of the bar preceding the previous chart bar, rounded to a chosen price precision and fixed when the pending order is placed. Pivot = (high + low + close) / 3; second resistance = pivot + high - low; second support = pivot - high + low.
+Calculation: Trailing stop = for a long position, the highest price observed since entry minus the trailing distance, activated when that highest price exceeds entry price plus the trailing distance; for a short position, the lowest price observed since entry plus the trailing distance, activated when that lowest price is below entry price minus the trailing distance.
+Long: Low reaches or falls below the pending buy-limit order's pivot.
+Short: Low reaches or falls below the pending sell-stop order's pivot.
+Exit: Long, low reaches or falls below the entry order's second support OR high reaches or exceeds the entry order's second resistance OR the trailing stop is active AND low reaches or falls below the trailing stop.
+Exit: Short, high reaches or exceeds the entry order's second resistance OR low reaches or falls below the entry order's second support OR the trailing stop is active AND high reaches or exceeds the trailing stop.

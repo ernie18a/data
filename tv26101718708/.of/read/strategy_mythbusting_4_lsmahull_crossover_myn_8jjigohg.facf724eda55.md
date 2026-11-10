@@ -1,0 +1,9 @@
+Calculation: Hull = a selected Hull moving average variant of a selected price source. For length L, HMA is WMA(2 × WMA(source, L/2) − WMA(source, L), round(sqrt(L))); EHMA substitutes EMA for every WMA; THMA is WMA(3 × WMA(source, L/3) − WMA(source, L/2) − WMA(source, L), L), evaluated with half the configured Hull length. Optionally calculate Hull on a higher timeframe using its last completed bar.
+Long: LSMA of a selected price source crosses above Hull AND Hull <= Hull two chart bars ago AND Hull source > Hull AND, if enabled, ADX > its threshold AND datetime is after the enabled start and before the enabled end AND position side is not long.
+Short: LSMA of a selected price source crosses below Hull AND Hull > Hull two chart bars ago AND Hull source < Hull AND, if enabled, ADX > its threshold AND datetime is after the enabled start and before the enabled end AND position side is not short.
+Exit: long, datetime is after the enabled start and before the enabled end AND close < entry price × (1 − stop-loss fraction).
+Exit: short, datetime is after the enabled start and before the enabled end AND close > entry price × (1 + stop-loss fraction).
+Exit: long, datetime is after the enabled start and before the enabled end AND high >= entry price × (1 + any configured take-profit fraction), closing the configured portion at each target.
+Exit: short, datetime is after the enabled start and before the enabled end AND low <= entry price × (1 − any configured take-profit fraction), closing the configured portion at each target.
+Exit: long, the short-entry condition is met.
+Exit: short, the long-entry condition is met.

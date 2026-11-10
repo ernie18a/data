@@ -1,0 +1,10 @@
+Calculation: Base FVG threshold = either a fixed fractional threshold or the cumulative sum of (high - low) / low from the first source-timeframe bar through the current bar, divided by the current zero-based source-timeframe bar index; use a small positive denominator when low is zero and use zero when the index is zero.
+Calculation: Base FVG source bars = chart bars or bars aggregated to a higher or lower timeframe; for a higher timeframe use the last completed bar in historical backtests and the still-forming bar in real time; for a lower timeframe use the last available intrabar within each chart bar.
+Calculation: IFVG gap threshold = ATR multiplied by a configurable factor; until ATR is available, use the cumulative mean of high - low from the first chart bar.
+Calculation: IFVG upper and lower test prices = either high and low, respectively, or the greater and lesser of open and close, respectively.
+Calculation: Bearish IFVG = a chart-timeframe gap with low > high two bars earlier AND previous close > high two bars earlier AND gap size > IFVG gap threshold, retained until the lower test price falls below the high from two bars before the gap bar.
+Calculation: Bullish IFVG = a chart-timeframe gap with high < low two bars earlier AND previous close < low two bars earlier AND gap size > IFVG gap threshold, retained until the upper test price rises above the low from two bars before the gap bar.
+Long: On the base FVG source bars, low > high two bars earlier AND previous close > high two bars earlier AND (low - high two bars earlier) / high two bars earlier > base FVG threshold.
+Short: On the base FVG source bars, high < low two bars earlier AND previous close < low two bars earlier AND (low two bars earlier - high) / high > base FVG threshold.
+Long: Upper test price > the upper boundary of a retained bullish IFVG.
+Short: Lower test price < the lower boundary of a retained bearish IFVG.

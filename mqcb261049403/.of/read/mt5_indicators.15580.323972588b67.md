@@ -1,0 +1,2 @@
+Long: Shorter-lookback CCI is greater than longer-lookback CCI, using either chart-timeframe bars or the still-forming higher-timeframe bar sampled at the start of each higher-timeframe bar and held until the next higher-timeframe bar.
+Short: Shorter-lookback CCI is less than longer-lookback CCI, using either chart-timeframe bars or the still-forming higher-timeframe bar sampled at the start of each higher-timeframe bar and held until the next higher-timeframe bar.

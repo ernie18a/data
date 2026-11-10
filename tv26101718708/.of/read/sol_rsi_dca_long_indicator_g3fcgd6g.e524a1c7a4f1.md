@@ -1,0 +1,7 @@
+Calculation: Active window = date filter disabled OR chart bar opening datetime >= configured start datetime AND chart bar opening datetime <= configured end datetime.
+Calculation: Averaging-order index k = 1 plus the number of averaging orders filled since the current base entry; at most one averaging order fills per chart bar.
+Calculation: Cumulative deviation for order k = first-order deviation multiplied by the sum of deviation step multiplier raised to powers 0 through k−1.
+Calculation: Average entry price = total quote-currency cost of the base entry and filled averaging orders divided by the sum of each order's quote-currency cost divided by its fill price. The base order fills at its signal bar's close; averaging order k fills at its signal bar's close with quote-currency cost equal to the first averaging-order cost multiplied by the order size multiplier raised to k−1. Include an averaging fill before evaluating the exit on the same bar.
+Long: Active window AND position is flat AND RSI of closes on the last completed higher-timeframe bar < RSI threshold.
+Long: Active window AND position is long AND k <= maximum averaging-order count AND close <= base entry price × (1 − cumulative deviation for order k).
+Exit: long, active window AND close >= average entry price × (1 + take-profit percentage).

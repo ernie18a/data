@@ -1,0 +1,6 @@
+Calculation: Normalized price movement = (current close − open one window before the current bar) / (highest high − lowest low over the window ending at the current bar); use zero if the range is zero.
+Calculation: Trend oscillator = 50 + 50 × sum of normalized price movements over the oscillator lookback / sum of their absolute values; use zero if the denominator is zero.
+Calculation: Oscillator trend = Hodrick–Prescott trend of the trend oscillator over the available, limited calculation history, using the configured smoothing parameter. Recalculate the two-sided filter on the available history.
+Calculation: Higher-timeframe oscillator and oscillator trend = calculate both on the higher timeframe using its bar still forming when the first chart bar of that higher-timeframe bar is evaluated; hold those values until the next higher-timeframe bar begins.
+Long: Higher-timeframe oscillator > higher-timeframe oscillator trend
+Short: Higher-timeframe oscillator < higher-timeframe oscillator trend

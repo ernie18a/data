@@ -1,0 +1,31 @@
+Calculation: Directional indicator result = +1 for its long condition, -1 for its short condition, and 0 otherwise; where both conditions hold, the short condition takes precedence.
+Calculation: Moving-average result = +1 when the shorter SMA or EMA of a selected price source, optionally shifted by a configurable number of bars, crosses above or is above the longer SMA or EMA of a selected price source, also optionally shifted; -1 when it crosses below or is below, respectively.
+Calculation: HiLo stop = the lowest low over the lookback when close > SMA(high); the highest high over the same lookback when close < SMA(low); otherwise its previous value. HiLo direction = +1 when close > SMA(high), -1 when close < SMA(low), otherwise 0. HiLo result = +1 when the stop < low, otherwise -1; alternatively, +1 when direction changes directly from -1 to +1, -1 when it changes directly from +1 to -1.
+Calculation: MACD result = +1 when the difference between the shorter and longer SMA or EMA of a selected price source crosses above or is above its signal-line average; -1 when it crosses below or is at or below, respectively. The signal line uses the same average type. If the optional filter is enabled, +1 requires MACD >= the filter threshold and -1 requires MACD <= that threshold.
+Calculation: Directional-movement result = +1 when +DI crosses above or is above -DI; -1 when -DI crosses above or is above +DI. Both require ADX within the inclusive configured range AND, if a trend filter is enabled, ADX > its previous value for a rising filter or ADX < its previous value for a falling filter. DI uses Wilder smoothing over its lookback and ADX uses a separately configurable smoothing period.
+Calculation: Stochastic result = +1 when SMA-smoothed stochastic %K crosses above or is above its SMA signal line AND %K <= its configured upper limit; -1 when %K crosses below or is below its signal line AND %K >= its configured lower limit.
+Calculation: VWAP result = +1 when close crosses above VWAP and -1 when close crosses below VWAP; alternatively, +1 when close > VWAP and -1 when close < VWAP; alternatively, +1 when close < VWAP and -1 when close > VWAP. VWAP resets each trading day and uses typical price and volume.
+Calculation: RSI result = +1 when RSI crosses above its lower threshold or is below that threshold; -1 when RSI crosses below its upper threshold or is above that threshold, respectively. RSI uses a selected price source.
+Calculation: Bollinger result = +1 when the selected price source crosses above the lower Bollinger Band or is below it; -1 when the source crosses below the upper band or is above it, respectively.
+Calculation: ATR stop = with previous stop defaulting to zero and distance equal to ATR times a configurable multiplier: if current and previous closes are both above the previous stop, the greater of the previous stop and close minus distance; if both are below, the lesser of the previous stop and close plus distance; otherwise close minus distance when close > previous stop, or close plus distance. ATR result = +1 when close crosses above or is above the ATR stop; -1 when close crosses below or is below it, respectively.
+Calculation: ATR plot direction = +1 when previous close < previous ATR stop AND close > previous ATR stop; -1 when previous close > previous ATR stop AND close < previous ATR stop; otherwise its previous value, initially 0.
+Calculation: Parabolic SAR result = +1 when close crosses above or is above Parabolic SAR; -1 when close crosses below or is below it, respectively.
+Long: At least one indicator is enabled for entry AND every enabled entry indicator result = +1 AND the completed bar's datetime is strictly within the configured backtest date interval AND within the configured entry session AND, if consecutive same-direction entries are prevented, the previous bar did not have every enabled entry indicator result = +1 AND long trading is enabled.
+Short: At least one indicator is enabled for entry AND every enabled entry indicator result = -1 AND the completed bar's datetime is strictly within the configured backtest date interval AND within the configured entry session AND, if consecutive same-direction entries are prevented, the previous bar did not have every enabled entry indicator result = -1 AND short trading is enabled.
+Long: HiLo is enabled AND HiLo stop < low.
+Short: HiLo is enabled AND HiLo stop >= low.
+Long: ATR stop is enabled AND ATR plot direction = +1.
+Short: ATR stop is enabled AND ATR plot direction = -1.
+Long: Parabolic SAR is enabled AND close > Parabolic SAR.
+Short: Parabolic SAR is enabled AND close <= Parabolic SAR.
+Exit: long, datetime is within the configured work session and strictly within the configured backtest date interval AND at least one enabled exit indicator result = -1, or every enabled exit indicator result = -1 when the all-indicators option is selected.
+Exit: short, datetime is within the configured work session and strictly within the configured backtest date interval AND at least one enabled exit indicator result = +1, or every enabled exit indicator result = +1 when the all-indicators option is selected.
+Exit: long or short, datetime is outside the configured work session OR outside the strictly bounded backtest date interval.
+Exit: long, low <= entry price minus the enabled fixed-stop distance OR high >= entry price plus the enabled profit-target distance.
+Exit: short, high >= entry price plus the enabled fixed-stop distance OR low <= entry price minus the enabled profit-target distance.
+Exit: long, the enabled trailing stop has activated after price reaches entry price plus the activation distance AND price falls to the highest price since activation minus the trailing distance.
+Exit: short, the enabled trailing stop has activated after price reaches entry price minus the activation distance AND price rises to the lowest price since activation plus the trailing distance.
+Exit: long, high >= entry price plus the enabled partial-profit distance; exit one unit.
+Exit: short, low <= entry price minus the enabled partial-profit distance; exit one unit.
+Exit: long, after the partial exit, if break-even is enabled, low <= entry price.
+Exit: short, after the partial exit, if break-even is enabled, high >= entry price.

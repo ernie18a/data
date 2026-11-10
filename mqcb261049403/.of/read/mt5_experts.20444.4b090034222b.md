@@ -1,0 +1,7 @@
+Calculation: Donchian upper and lower = highest high and lowest low, respectively, over the same lookback ending immediately before the channel bar. The channel timeframe is configurable as higher or lower than the chart timeframe; entry signals use its last completed bar and the preceding bar, while stops use its still-forming bar.
+Calculation: Long stop = lower channel value at entry; thereafter, raise it to the current lower channel value when current price > lower channel value + a price offset AND lower channel value > the existing stop by at least the price precision.
+Calculation: Short stop = upper channel value at entry; thereafter, lower it to the current upper channel value when current price < upper channel value - the same price offset AND upper channel value < the existing stop by at least the price precision.
+Long: No open position AND elapsed time since the last entry >= the cooldown period AND last completed upper channel > preceding upper channel by at least the price precision.
+Short: No open position AND elapsed time since the last entry >= the cooldown period AND last completed lower channel < preceding lower channel by at least the price precision AND the long entry condition is false.
+Exit: long, price <= long stop.
+Exit: short, price >= short stop.

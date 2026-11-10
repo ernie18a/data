@@ -1,0 +1,2 @@
+Long: The close of a selected timeframe's forming candle > its open; the selected timeframe may be higher or lower than the chart timeframe or equal to it.
+Short: The close of a selected timeframe's forming candle < its open; the selected timeframe may be higher or lower than the chart timeframe or equal to it.

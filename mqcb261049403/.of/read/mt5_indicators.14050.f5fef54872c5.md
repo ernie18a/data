@@ -1,0 +1,3 @@
+Long: For any independently configured DeMarker oscillator, the last completed bar's DeMarker is above its upper threshold AND at or above its lower threshold.
+Short: For any independently configured DeMarker oscillator, the last completed bar's DeMarker is below its lower threshold.
+Calculation: Each DeMarker oscillator uses its own lookback and thresholds and may use the chart timeframe or an independently configured higher or lower timeframe; use the last completed bar of that timeframe.

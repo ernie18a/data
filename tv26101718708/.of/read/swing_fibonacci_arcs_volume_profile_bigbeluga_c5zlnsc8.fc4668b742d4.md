@@ -1,0 +1,3 @@
+Calculation: Swing direction = Initialize bearish; on each bar, set bullish if high equals the highest high over the swing lookback, then set bearish if low equals the lowest low over the same lookback; otherwise retain its prior value.
+Long: Swing direction was bullish on the previous bar AND swing direction is bearish on the current bar.
+Short: Swing direction was bearish on the previous bar AND swing direction is bullish on the current bar.

@@ -1,0 +1,15 @@
+Calculation: Signal MAs = the same selected TEMA, Hull MA, or ALMA applied separately to optionally delayed open and close, using either standard or Heikin-Ashi prices; optionally calculate both on a higher timeframe using its last completed bar, otherwise use chart-timeframe bars.
+Calculation: Higher-timeframe bullish trend = last completed higher-timeframe close > its baseline EMA or SMA AND its shorter-period EMA > its longer-period EMA; bearish trend = last completed higher-timeframe close < its baseline AND its shorter-period EMA < its longer-period EMA.
+Calculation: Leg eligibility = no entry has occurred in the corresponding direction since the latest transition into its higher-timeframe trend; optionally disable the reset on such transitions or disable the restriction.
+Calculation: Exit distance = entry price multiplied by a chosen percentage OR ATR recorded when the position is first observed multiplied by a chosen multiplier; use separate parameters for the stop and each of three profit targets.
+Calculation: Active stop = entry price minus the stop distance for a long or plus it for a short; optionally replace it with entry price after the chart bar high reaches the first long target or low reaches the first short target.
+Long: Close signal MA crosses above open signal MA AND chart bar time is within the allowed session if the session filter is enabled AND ATR > its SMA multiplied by a minimum factor AND ATR < its SMA multiplied by a maximum factor AND long trading is enabled AND higher-timeframe bullish trend if its filter is enabled AND ADX >= its threshold if its filter is enabled AND bars since the position most recently became flat > the cooldown threshold if cooldown is enabled and a prior flat transition exists AND long leg is eligible.
+Short: Close signal MA crosses below open signal MA AND chart bar time is within the allowed session if the session filter is enabled AND ATR > its SMA multiplied by a minimum factor AND ATR < its SMA multiplied by a maximum factor AND short trading is enabled AND higher-timeframe bearish trend if its filter is enabled AND ADX >= its threshold if its filter is enabled AND bars since the position most recently became flat > the cooldown threshold if cooldown is enabled and a prior flat transition exists AND short leg is eligible.
+Long: Close signal MA > open signal MA.
+Short: Close signal MA <= open signal MA.
+Long: Higher-timeframe bullish trend.
+Short: Higher-timeframe bearish trend.
+Exit: long, short entry signal is true.
+Exit: short, long entry signal is true.
+Exit: long, low <= active stop OR high >= entry price plus a profit-target distance; each of the three targets closes its specified portion of the position, and the stop applies to each remaining portion.
+Exit: short, high >= active stop OR low <= entry price minus a profit-target distance; each of the three targets closes its specified portion of the position, and the stop applies to each remaining portion.

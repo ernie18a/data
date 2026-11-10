@@ -1,0 +1,6 @@
+Calculation: Session range = max(higher-timeframe high - low of the bar still forming, minimum price increment parameter).
+Calculation: Close location value = (higher-timeframe close - low of the bar still forming) / session range.
+Calculation: Bull score = sum of the four Boolean conditions evaluated on the higher-timeframe bar still forming: close > open; close > shorter-period EMA of close; shorter-period EMA of close > longer-period EMA of close; close > high of the last completed higher-timeframe bar.
+Calculation: Bear score = sum of the four Boolean conditions evaluated on the higher-timeframe bar still forming: close < open; close < shorter-period EMA of close; shorter-period EMA of close < longer-period EMA of close; close < low of the last completed higher-timeframe bar.
+Long: New York local time of chart bar open >= decision-time parameter AND bull score = 3 AND bull score > bear score AND close location value >= bullish threshold AND session range >= range multiplier × higher-timeframe ATR of the bar still forming.
+Short: New York local time of chart bar open >= decision-time parameter AND bear score = 3 AND bear score > bull score AND close location value <= bearish threshold AND session range >= range multiplier × higher-timeframe ATR of the bar still forming.

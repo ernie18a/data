@@ -1,0 +1,13 @@
+Calculation: Bullish trend = close > longer-period SMA of close AND shorter-period SMA of close > longer-period SMA of close AND longer-period SMA of close > its previous-bar value.
+Calculation: Bearish trend = close < longer-period SMA of close AND shorter-period SMA of close < longer-period SMA of close AND longer-period SMA of close < its previous-bar value.
+Calculation: Bullish support = bullish trend AND low = lowest low over the swing lookback, including the current bar.
+Calculation: Bearish resistance = bearish trend AND high = highest high over the swing lookback, including the current bar.
+Calculation: Long setup = bars since the most recent bullish support <= support recency lookback AND close > longer-period SMA of close AND longer-period SMA of close > its previous-bar value AND close > shorter-period SMA of close.
+Calculation: Short setup = bars since the most recent bearish resistance <= support recency lookback AND close < longer-period SMA of close AND longer-period SMA of close < its previous-bar value AND close < shorter-period SMA of close.
+Calculation: Momentum oscillator = 100 times the double EMA of close minus the midpoint of the highest and lowest closes over the momentum lookback, divided by half the double EMA of that highest-close minus lowest-close range; use zero when the denominator is zero. The second smoothing period is also the signal EMA period.
+Calculation: Long stop and target = on every long setup, reset the stop to the lowest low and target to the highest high over the support recency lookback plus the current bar. If trailing is enabled, while long, on bullish support with no short setup and low > the existing stop, replace the stop with the current low.
+Calculation: Short stop and target = on every short setup, reset the stop to the highest high and target to the lowest low over the support recency lookback plus the current bar. If trailing is enabled, while short, on bearish resistance with no long setup and high < the existing stop, replace the stop with the current high.
+Long: bullish support = true OR long setup = true OR (low = lowest low over the swing lookback AND bullish trend = false AND close > longer-period SMA of close) OR momentum oscillator > its signal EMA.
+Short: bearish resistance = true OR short setup = true OR (high = highest high over the swing lookback AND bearish trend = false AND close < longer-period SMA of close) OR momentum oscillator <= its signal EMA.
+Exit: long, short setup = true OR bearish resistance = true OR low <= active long stop OR high >= active long target.
+Exit: short, long setup = true OR bullish support = true OR high >= active short stop OR low <= active short target.

@@ -1,0 +1,10 @@
+On each bar, maintain at most one long position. While flat, enter at the close only after the historical window has elapsed and all of the following hold:
+
+- A configurable minimum number of trend checks pass: close above both medium and long simple moving averages; medium average above long average; long average above its value a configured number of bars ago; short average above both longer averages; close above short average; close at least a configured percentage above the rolling low; close no more than a configured percentage below the rolling high; and relative-strength percentile rank at or above its threshold. Calculate relative strength as the instrument's lookback return minus the benchmark's return, ranked over the rolling high/low window. Use a configured benchmark or an asset-class benchmark, carrying its last available close forward.
+- Using bars through the previous bar, calculate high-to-low percentage depths over nested full, half and quarter base windows. Each successive depth must be strictly smaller and the final depth must be at or below its limit. Round the shorter window lengths and enforce their minimum lengths.
+- Prior-bar short-term average volume is at or below a configured multiple of prior-bar long-term average volume. Skip this check when the current long-term average volume is not positive.
+- Close exceeds the prior base's highest high but is no more than a configured percentage above it. Current volume is at least a configured multiple of its long-term average; skip this volume check when that average is not positive.
+
+At entry, set a fixed percentage stop below entry. If the base-low stop option is enabled, use the higher of that stop and the prior quarter-window low reduced by a configured buffer. Set a fixed percentage target above entry.
+
+Starting on subsequent bars, exit when the low touches the stop, otherwise when the high touches the target, otherwise when the optional moving-average exit is enabled and close is below the short average. Stop takes precedence if both stop and target are touched. Do not re-enter on the same bar as an exit.

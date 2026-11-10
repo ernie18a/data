@@ -1,0 +1,6 @@
+Calculation: RSI input = chart-timeframe closes when the RSI timeframe equals the chart timeframe; for a higher timeframe, use the last completed bar on historical bars and the still-forming bar in real time; for a lower timeframe, use the last available intrabar.
+Calculation: Entry state = record the base entry at the entry bar's close. Maintain five ordered averaging-order deviations and independently configurable quote-currency order sizes; each successive deviation is larger. Fill at most the next unfilled averaging order per chart bar, at that bar's close. Reset the state after exit.
+Calculation: Average entry price = sum of quote-currency order sizes divided by sum of each order size divided by its fill price, using fills completed before the current bar.
+Long: position is flat AND RSI of RSI input < oversold threshold.
+Long: position is long at the start of the bar AND filled averaging orders < ladder size AND close <= base entry price * (1 - next unfilled order's deviation).
+Exit: long, close >= average entry price * (1 + take-profit percentage).

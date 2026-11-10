@@ -1,0 +1,11 @@
+Calculation: Simple ATR = simple moving average of max(high - low, abs(high - previous close), abs(low - previous close)).
+Calculation: Body ratio = abs(close - open) / (high - low) when high > low, otherwise 0.
+Calculation: Monthly realized result = sum of closed-trade price changes in the position's direction during the current calendar month; reset at the start of each month.
+Calculation: Trading pause end = the close-detection bar's datetime plus the pause duration when the consecutive losing-trade count reaches its threshold; reset the count after triggering the pause or after a non-losing trade.
+Long: close > open AND body ratio >= minimum body ratio AND abs(close - open) >= minimum body size AND simple ATR >= volatility floor AND simple ATR <= volatility ceiling AND datetime is in an enabled trading session and enabled weekday AND datetime is outside enabled exclusion windows AND datetime >= trading pause end AND (monthly profit limit disabled OR monthly realized result < profit limit) AND (monthly loss limit disabled OR monthly realized result > loss limit) AND (daily trade limit disabled OR entries opened today < daily limit) AND long direction enabled.
+Short: close < open AND body ratio >= minimum body ratio AND abs(close - open) >= minimum body size AND simple ATR >= volatility floor AND simple ATR <= volatility ceiling AND datetime is in an enabled trading session and enabled weekday AND datetime is outside enabled exclusion windows AND datetime >= trading pause end AND (monthly profit limit disabled OR monthly realized result < profit limit) AND (monthly loss limit disabled OR monthly realized result > loss limit) AND (daily trade limit disabled OR entries opened today < daily limit) AND short direction enabled.
+Exit: long, high >= entry price + profit target distance OR low <= entry price - stop distance.
+Exit: short, low <= entry price - profit target distance OR high >= entry price + stop distance.
+Exit: long OR short, time exit enabled AND bars elapsed since entry >= time limit.
+Exit: long OR short, session exit mode is session-transition AND previous bar is in a trading session AND current bar is outside that session.
+Exit: long OR short, session exit mode is scheduled AND datetime matches an exit time configured for that mode.

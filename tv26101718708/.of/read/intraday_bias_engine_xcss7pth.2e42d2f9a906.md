@@ -1,0 +1,27 @@
+Calculation: Session VWAP = cumulative sum of typical price times volume divided by cumulative volume, reset at each new session; undefined when cumulative volume is zero.
+Calculation: Opening range = highest high and lowest low of chart bars in the configured opening window of the current session; update while the window is forming and retain thereafter. The range is locked after the first bar outside the window following a bar inside it.
+Calculation: Central pivot range = pivot (previous session high + low + close) / 3, midpoint (previous session high + low) / 2, and reflected midpoint 2 × pivot − midpoint. Use the high, low and close of the last completed higher-timeframe session bar; its upper and lower boundaries are the maximum and minimum of the two midpoints.
+Calculation: Structure = bullish when the two latest confirmed pivot highs are rising AND the two latest confirmed pivot lows are rising; bearish when both are falling; neutral otherwise. Confirm each pivot using the same number of bars on either side.
+Calculation: Pressure = clamp to [0, 100] a neutral baseline plus a fixed increment if close > session VWAP, otherwise minus that increment; plus the same increment if session cumulative volume delta > 0, otherwise minus it; plus or minus that increment scaled by min(abs(close rate of change) / momentum scale, 1), with the sign of the rate of change; plus or minus that increment when relative volume exceeds its threshold, positive if close > open and negative otherwise; plus that increment if close > the current higher-timeframe session open, otherwise minus it. Session cumulative volume delta resets each session and sums volume × (2 × close − high − low) / (high − low), using zero for a zero-range bar. Relative volume is volume divided by its chart-bar simple moving average, or 1 when that average is not positive. The current session open is from the forming higher-timeframe session bar.
+Calculation: Directional scores = start bullish, bearish and sideways scores at zero. Add to the bullish or bearish score according to sign, using clamp(abs(x) / scale, 0, 1), for each of: percentage gap between the current higher-timeframe session open and the last completed session close; percentage distance of close from session VWAP; chart-bar close rate of change; and (close − current session open) / (last completed higher-timeframe session ATR × a scale). Add one point to the bullish score if close > opening-range high, or to the bearish score if close < opening-range low; add one point to the corresponding score for close outside the central pivot range and one for bullish or bearish structure. Add the normalized distance of pressure from its neutral baseline to the score corresponding to its side of the baseline. Add separate weights to the sideways score when opening-range width / last completed higher-timeframe session ATR is below its narrow threshold, relative volume is below its threshold, absolute percentage VWAP distance is below its threshold, and chart-bar ATR is below a scaled simple moving average of that ATR. Normalize each score by their sum; if the sum is zero, use neutral fallback probabilities with sideways slightly higher than bullish and bearish. Treat unavailable VWAP distance as zero and unavailable opening-range width as contributing no points.
+Calculation: Confidence = round and clamp to [0, 100] the weighted sum of the largest directional probability and opening-range clarity. Clarity is clamp(abs(opening-range width / last completed higher-timeframe session ATR − narrow threshold) / wide threshold, 0, 1), or a neutral fallback when unavailable.
+Long: Close > session VWAP.
+Short: Close <= session VWAP OR session VWAP is undefined.
+Long: Pressure >= buy-pressure threshold.
+Short: Pressure <= sell-pressure threshold.
+Long: Structure is bullish.
+Short: Structure is bearish.
+Long: Close > central pivot range upper boundary.
+Short: Close < central pivot range lower boundary.
+Long: Current higher-timeframe session open > last completed higher-timeframe session close.
+Short: Current higher-timeframe session open <= last completed higher-timeframe session close.
+Long: Bullish probability > bearish probability AND bullish probability > sideways probability.
+Short: Bearish probability > bullish probability AND bearish probability > sideways probability.
+Long: Opening-range width / last completed higher-timeframe session ATR is below the wide threshold OR relative volume <= expansion threshold; AND maximum of bullish and bearish probability > trend threshold AND absolute percentage VWAP distance > trend-distance threshold AND opening-range width / ATR >= narrow threshold AND bullish probability > bearish probability.
+Short: Opening-range width / last completed higher-timeframe session ATR is below the wide threshold OR relative volume <= expansion threshold; AND maximum of bullish and bearish probability > trend threshold AND absolute percentage VWAP distance > trend-distance threshold AND opening-range width / ATR >= narrow threshold AND bullish probability <= bearish probability.
+Long: Opening range is locked AND bullish probability > bias threshold AND confidence >= confidence threshold.
+Short: Opening range is locked AND bearish probability > bias threshold AND confidence >= confidence threshold.
+Long: Close crosses above opening-range high.
+Short: Close crosses below opening-range low.
+Long: Close crosses above session VWAP.
+Short: Close crosses below session VWAP.

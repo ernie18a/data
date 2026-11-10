@@ -1,0 +1,4 @@
+Long: No open position AND close of the previous chart bar < close of the chart bar before it AND RSI of close on its specified timeframe, using the last completed bar, <= lower RSI threshold AND RSI < upper RSI threshold.
+Short: No open position AND close of the previous chart bar < close of the chart bar before it AND RSI of close on its specified timeframe, using the last completed bar, > lower RSI threshold.
+Exit: Long, CCI of close on its specified timeframe, using the bar still forming, < negative CCI threshold.
+Exit: Short, CCI of close on its specified timeframe, using the bar still forming, > positive CCI threshold.

@@ -1,0 +1,5 @@
+Calculation: Confirmed pivot high or low = a high or low identified by a symmetric pivot lookback, confirmed after the same number of subsequent bars; use the most recently confirmed pivot of the required type.
+Calculation: Bullish displacement candidate = the most recent bearish candle within the search lookback whose highest high from the following bar through the current bar minus the candidate's high is greater than the current ATR multiplied by the displacement threshold.
+Calculation: Bearish displacement candidate = the most recent bullish candle within the search lookback whose low minus the lowest low from the following bar through the current bar is greater than the current ATR multiplied by the displacement threshold.
+Long: Current close > latest confirmed pivot high AND previous close <= that same pivot high AND a bullish displacement candidate exists.
+Short: Current close < latest confirmed pivot low AND previous close >= that same pivot low AND a bearish displacement candidate exists.

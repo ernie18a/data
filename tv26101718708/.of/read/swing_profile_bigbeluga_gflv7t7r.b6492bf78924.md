@@ -1,0 +1,5 @@
+Calculation: Swing direction = initially up; on each bar set it to down if high equals the highest high over the swing lookback, then set it to up if low equals the lowest low over the same lookback; otherwise retain its prior value.
+Calculation: Confirmed swing high = the previous bar's high when that high equaled the highest high over the swing lookback on the previous bar AND the current high is below the current highest high over that lookback. Retain the latest confirmed value.
+Calculation: Confirmed swing low = the previous bar's low when that low equaled the lowest low over the swing lookback on the previous bar AND the current low is above the current lowest low over that lookback. Retain the latest confirmed value.
+Long: Current swing direction is up AND previous swing direction is down AND a confirmed swing high and a confirmed swing low exist.
+Short: Current swing direction is down AND previous swing direction is up AND a confirmed swing high and a confirmed swing low exist.

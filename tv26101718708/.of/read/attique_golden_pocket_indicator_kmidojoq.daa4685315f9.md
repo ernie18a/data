@@ -1,0 +1,3 @@
+Calculation: Swing anchors = the most recently confirmed pivot high and pivot low, using independently parameterized left and right bar counts. Use chart bars or higher-timeframe bars; for the higher timeframe, historical bars use the last completed bar and realtime bars use the bar still forming. Retain each pivot's price and original bar time.
+Long: Swing anchor high time > swing anchor low time AND swing anchor high price > swing anchor low price AND swing anchor high price − swing anchor low price >= a multiple of chart-timeframe ATR
+Short: Swing anchor low time > swing anchor high time AND swing anchor high price > swing anchor low price AND swing anchor high price − swing anchor low price >= a multiple of chart-timeframe ATR

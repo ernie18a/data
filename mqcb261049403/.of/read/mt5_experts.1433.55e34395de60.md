@@ -1,0 +1,5 @@
+Long: RSI of close on the last completed higher-timeframe bar < threshold AND RSI of close on the last completed shorter higher-timeframe bar < threshold AND longer-period forward-shifted EMA of close > shorter-period forward-shifted EMA of close on the last completed shorter higher-timeframe bar
+Short: RSI of close on the last completed shorter higher-timeframe bar > threshold AND longer-period forward-shifted EMA of close > shorter-period forward-shifted EMA of close on the last completed shorter higher-timeframe bar
+Short: RSI of close on the last completed higher-timeframe bar > threshold AND RSI of close on the last completed shorter higher-timeframe bar > threshold AND longer-period forward-shifted EMA of close > shorter-period forward-shifted EMA of close on the last completed shorter higher-timeframe bar
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

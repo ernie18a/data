@@ -1,0 +1,3 @@
+Calculation: EMA ribbon = eight EMAs of a selected price source, ordered by increasing length. Choose fastest and slowest lengths; for each of the six intermediate lengths, take the greater of the preceding length plus one and the rounded geometric interpolation between the chosen lengths. The final length is the greater of the preceding length plus one and the chosen slowest length.
+Long: Each EMA is greater than the next longer EMA AND the same condition was not true on the previous bar.
+Short: Each EMA is less than the next longer EMA AND the same condition was not true on the previous bar.

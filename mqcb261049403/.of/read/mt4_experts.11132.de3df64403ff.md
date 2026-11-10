@@ -1,0 +1,6 @@
+Calculation: Typical price = (high + low + close) / 3
+Calculation: Shifted SMA = longer-period SMA of typical price, shifted forward by one bar on its own timeframe
+Long: CCI of chart-timeframe close >= its threshold AND RSI of chart-timeframe median price >= its threshold AND shifted SMA >= shorter-period SMA of typical price on each of six timeframes: one lower than the chart, the chart timeframe, and four successively higher timeframes AND chart close >= typical price on the chart timeframe AND chart close >= chart open AND at least one of these comparisons is strict
+Short: CCI of chart-timeframe close <= its threshold AND RSI of chart-timeframe median price <= its threshold AND shifted SMA <= shorter-period SMA of typical price on each of the same six timeframes AND chart close <= typical price on the chart timeframe AND chart close <= chart open
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

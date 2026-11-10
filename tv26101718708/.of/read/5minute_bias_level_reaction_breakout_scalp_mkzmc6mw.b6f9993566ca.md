@@ -1,0 +1,14 @@
+Calculation: Swing high and swing low = most recent confirmed pivot high and low, each using the same number of bars on either side; update them before evaluating the current bar.
+Calculation: Bias = initially neutral; set bearish when close < swing low, then set bullish when close > swing high; otherwise retain the previous bias.
+Calculation: Long reaction = bias is bullish AND swing low exists AND low <= swing low + tolerance multiplier * ATR AND close > open AND (wick filter disabled OR (high > low AND (min(open, close) - low) / (high - low) >= wick ratio)).
+Calculation: Short reaction = bias is bearish AND swing high exists AND high >= swing high - tolerance multiplier * ATR AND close < open AND (wick filter disabled OR (high > low AND (high - max(open, close)) / (high - low) >= wick ratio)).
+Calculation: Armed setup = initially none; when none, a reaction arms its direction and stores that bar's high, low and index, even if a trade is active or the daily cap is reached. Starting on the next bar, cancel it if bias changes away from its direction, its age exceeds the maximum wait, or its breakout occurs. A breakout cancels it even if no entry is allowed. Do not arm another setup on a bar that began armed.
+Calculation: Daily entry count = entries since the start of the current calendar day in the configured timezone; reset at the start of each such day.
+Calculation: Long stop = min(reaction low, swing low at entry) - stop buffer multiplier * ATR at entry; long target = entry price + reward multiplier * (entry price - long stop). Entry price is the reaction high.
+Calculation: Short stop = max(reaction high, swing high at entry) + stop buffer multiplier * ATR at entry; short target = entry price - reward multiplier * (short stop - entry price). Entry price is the reaction low. Stop and target remain fixed after entry.
+Long: Armed setup is absent at the start of the bar AND long reaction.
+Short: Armed setup is absent at the start of the bar AND short reaction.
+Long: Long setup is armed from an earlier bar AND bias is bullish AND setup age <= maximum wait AND (high >= reaction high in wick mode OR close >= reaction high in close mode) AND no active position AND daily entry count < daily cap.
+Short: Short setup is armed from an earlier bar AND bias is bearish AND setup age <= maximum wait AND (low <= reaction low in wick mode OR close <= reaction low in close mode) AND no active position AND daily entry count < daily cap.
+Exit: long, bar is after entry AND (high >= long target OR low <= long stop).
+Exit: short, bar is after entry AND (low <= short target OR high >= short stop).

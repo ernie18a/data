@@ -1,0 +1,3 @@
+Calculation: Price-based MFI = 100 - 100 / (1 + positive money flow / negative money flow), where each flow is the sum of price × volume over the lookback for bars whose selected price is respectively greater than or less than the previous bar's selected price; if negative money flow is zero, the MFI is 100. Calculate it separately for open and close using the same lookback.
+Long: Close-based MFI > open-based MFI
+Short: Close-based MFI < open-based MFI

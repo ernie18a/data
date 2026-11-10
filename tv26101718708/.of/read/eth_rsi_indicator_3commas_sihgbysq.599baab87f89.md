@@ -1,0 +1,4 @@
+Calculation: Blended entry price = sum of quote-currency order sizes divided by sum of each order size divided by its fill close, including the base order and all filled averaging orders.
+Long: Position is flat AND RSI of close on the selected timeframe < oversold threshold. For a higher timeframe, use the last completed bar; for a lower timeframe, use the last completed intrabar of the chart bar; the selected timeframe may also equal the chart timeframe.
+Long: Position is long AND an averaging order remains unfilled AND close <= base entry price × (1 − the next averaging order's deviation). Fill at most one averaging order per bar, in the configured sequence; deviations are measured from the base entry and normally increase with each successive order. Each order has its own quote-currency size and fills at close.
+Exit: Long, close >= blended entry price at the start of the bar × (1 + take-profit percentage).

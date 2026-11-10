@@ -1,0 +1,8 @@
+Calculation: Structure pivots = Confirm a pivot high when its high is at least the highs of the preceding lookback bars and greater than the highs of the following lookback bars; confirm a pivot low when its low is at most the lows of the preceding lookback bars and less than the lows of the following lookback bars. Use separate longer swing and shorter internal lookbacks. On confirmation, replace the latest pivot of that type and mark it unbroken.
+Calculation: Structure breaks = For each lookback, a bullish break occurs when close is greater than the latest confirmed unbroken pivot high; a bearish break occurs when close is less than the latest confirmed unbroken pivot low. Mark each broken pivot as broken until replaced. Swing trend starts undefined; after a swing bullish break set it bullish, and after a swing bearish break set it bearish. Evaluate conditions using the trend before the current bar's breaks; if both occur, update bullish first and bearish second.
+Long: Swing bullish break OR internal bullish break
+Short: Swing bearish break OR internal bearish break
+Long: Swing bullish break AND prior swing trend is bearish AND volume > simple moving average of volume × volume spike multiplier
+Short: Swing bearish break AND prior swing trend is bullish AND volume > simple moving average of volume × volume spike multiplier
+Long: Low > high two bars ago AND (minimum gap multiplier <= 0 OR low - high two bars ago >= ATR × minimum gap multiplier)
+Short: High < low two bars ago AND (minimum gap multiplier <= 0 OR low two bars ago - high >= ATR × minimum gap multiplier)

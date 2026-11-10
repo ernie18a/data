@@ -1,0 +1,7 @@
+Calculation: Higher-timeframe sweep = on the last completed higher-timeframe bar, a confirmed symmetric pivot high is below the bar's high and above its close, or a confirmed symmetric pivot low is above the bar's low and below its close. A pivot is eligible until its first sweep or a close beyond it; inspect either all pivots or the configured number of most recent pivots. If several qualify, retain the oldest qualifying pivot.
+Calculation: Market-structure level = after a new higher-timeframe sweep, retain the latest confirmed chart-timeframe pivot low for a high sweep or pivot high for a low sweep. Each pivot uses more bars on its left than on its right. The level remains active until its first qualifying break.
+Long: A higher-timeframe pivot low is swept.
+Long: An active market-structure level from a low sweep is at or below the current close AND the level's pivot is within the maximum lookback.
+Short: A higher-timeframe pivot high is swept.
+Short: An active market-structure level from a high sweep is at or above the previous close AND the level's pivot was within the maximum lookback on the previous bar.
+Calculation: FVG mitigation decisions cannot be reproduced from the supplied document because the imported FVG detector and drawing library implementations are absent.

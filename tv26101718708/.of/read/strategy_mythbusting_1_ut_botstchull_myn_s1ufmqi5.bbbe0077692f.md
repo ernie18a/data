@@ -1,0 +1,16 @@
+Calculation: Signal source = close or Heikin-Ashi close, selected by parameter; Heikin-Ashi close is (open + high + low + close) / 4.
+Calculation: ATR trailing stop = recursively, with previous stop initialized to zero and loss = ATR multiplied by a sensitivity parameter: if signal source and its previous value are both above the previous stop, use max(previous stop, signal source - loss); otherwise, if both are below the previous stop, use min(previous stop, signal source + loss); otherwise, use signal source - loss when signal source is above the previous stop and signal source + loss otherwise.
+Calculation: Schaff trend cycle = subtract the longer-period EMA of close from the shorter-period EMA. Normalize this difference to 0–100 using its rolling minimum and maximum; when the range is zero, retain the previous normalized value, initially zero. Smooth recursively as previous smoothed value + smoothing factor × (normalized value - previous smoothed value). Normalize the smoothed series in the same way over the same lookback and smooth again with the same factor; each smoothed series starts at zero.
+Calculation: Hull series = choose a source and a length. The standard variant is WMA(2 × WMA(source, length / 2) - WMA(source, length), round(sqrt(length))); the exponential variant replaces each WMA with EMA; the triangular variant uses L = length / 2 and WMA(3 × WMA(source, L / 3) - WMA(source, L / 2) - WMA(source, L), L). Optionally calculate the chosen variant on a higher timeframe using its last completed bar, then compare the resulting series at chart-bar offsets.
+Long: Signal source > ATR trailing stop.
+Short: Signal source < ATR trailing stop.
+Long: Hull series > Hull series two chart bars earlier.
+Short: Hull series <= Hull series two chart bars earlier.
+Long: Schaff trend cycle three bars ago >= its value two bars ago AND its value two bars ago < its value one bar ago AND its current value < a lower threshold.
+Short: Schaff trend cycle three bars ago <= its value two bars ago AND its value two bars ago > its value one bar ago AND its current value > an upper threshold.
+Long: Hull series crosses above Hull series two chart bars earlier.
+Short: Hull series crosses below Hull series two chart bars earlier.
+Long: The most recent signal-source cross above the ATR trailing stop is later than the most recent cross below it AND Schaff trend cycle > its previous value AND Schaff trend cycle < a lower threshold AND Hull series > Hull series two chart bars earlier AND datetime is strictly inside the enabled trading-date bounds AND position side is not long.
+Short: The most recent signal-source cross below the ATR trailing stop is later than the most recent cross above it AND Schaff trend cycle < its previous value AND Schaff trend cycle > an upper threshold AND Hull series <= Hull series two chart bars earlier AND datetime is strictly inside the enabled trading-date bounds AND position side is not short.
+Exit: long, datetime is strictly inside the enabled trading-date bounds AND (close < entry price × (1 - stop-loss fraction) OR high >= entry price × (1 + a take-profit fraction)).
+Exit: short, datetime is strictly inside the enabled trading-date bounds AND (close > entry price × (1 + stop-loss fraction) OR low <= entry price × (1 - a take-profit fraction)).

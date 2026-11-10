@@ -1,0 +1,3 @@
+Long: MACD histogram on the chart timeframe > 0 AND MACD histogram on the shortest higher timeframe > 0 AND MACD histogram on each of the two longer higher timeframes < 0.
+Short: MACD histogram on the chart timeframe < 0 AND MACD histogram on each of three progressively higher timeframes < 0.
+Calculation: For each higher-timeframe MACD histogram, use the bar still forming at the chart bar. MACD parameters may be configured independently for each timeframe; the fast EMA has a shorter period than the slow EMA.

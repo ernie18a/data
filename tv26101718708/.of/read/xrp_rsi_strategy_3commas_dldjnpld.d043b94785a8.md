@@ -1,0 +1,3 @@
+Long: Date filter is disabled OR bar datetime is within the configured date window, AND position is flat AND RSI of the last completed higher-timeframe bar is below its threshold.
+Long: Date filter is disabled OR bar datetime is within the configured date window, AND position is long AND fewer than five averaging orders have been triggered since entry AND close <= original base entry price * (1 - the next averaging-order deviation). Evaluate only the next order in the fixed sequence on each bar; each order has its own configurable deviation and size.
+Exit: long, close >= average entry price * (1 + take-profit percentage).

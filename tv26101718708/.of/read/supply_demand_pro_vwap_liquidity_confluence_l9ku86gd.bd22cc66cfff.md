@@ -1,0 +1,1 @@
+Cannot reconstruct a complete decision framework: the source code ends before the signal and backtest outcome logic. The description does not specify how freshness and sweep state are updated, which filters apply to sweep signals, or which exit wins when both target and stop are reached in one bar. Please provide the remaining source code.

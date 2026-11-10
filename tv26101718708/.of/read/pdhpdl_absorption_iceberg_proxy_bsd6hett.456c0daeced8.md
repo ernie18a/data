@@ -1,0 +1,14 @@
+Calculation: Prior high and prior low = high and low of the last completed higher-timeframe bar.
+Calculation: Zone half-height = chart-timeframe ATR at the first bar of the current higher-timeframe period multiplied by a parameter, held constant for that period.
+Calculation: High-zone touch = high >= prior high - zone half-height AND low <= prior high + zone half-height.
+Calculation: Low-zone touch = high >= prior low - zone half-height AND low <= prior low + zone half-height.
+Calculation: Absorption = volume > a parameter multiplied by the simple moving average of volume over preceding bars, excluding the current bar, AND either (high - low > 0 AND abs(close - open) <= a parameter multiplied by high - low) or (high - low < a parameter multiplied by the simple moving average of high - low over preceding bars, excluding the current bar), according to the selected test, AND, if the level filter is enabled, high-zone touch OR low-zone touch.
+Calculation: Absorption level = prior high if only the high zone is touched, prior low if only the low zone is touched, the closer of prior high and prior low to close if both are touched, with prior high winning a tie, and undefined if neither is touched.
+Calculation: First absorption hit = absorption AND (absorption level is undefined OR absorption level differs from the level of the immediately preceding absorption OR the number of bars since the immediately preceding absorption exceeds a parameter OR no preceding absorption exists).
+Calculation: New low-zone touch = low-zone touch AND (no preceding low-zone touch exists OR prior low differs from its value at the immediately preceding low-zone touch OR the number of bars since the immediately preceding low-zone touch exceeds a parameter).
+Calculation: Stop = prior low on the signal bar - zone half-height on the signal bar - a parameter multiplied by chart-timeframe ATR on the signal bar.
+Calculation: Risk = entry price - stop.
+Long: Previous bar was in the regular session AND current bar is in the regular session AND ((first absorption hit on the previous bar AND absorption level on the previous bar = prior low on the previous bar) OR (new low-zone touch on the previous bar AND absorption on the previous bar = false)) AND current open - stop >= a parameter multiplied by chart-timeframe ATR on the previous bar AND current open <= prior low on the previous bar + a parameter multiplied by chart-timeframe ATR on the previous bar; enter at current open.
+Exit: long, low <= stop; exit at stop, including on the entry bar.
+Exit: long, low > stop AND high >= entry price + a parameter multiplied by risk; exit at that target, including on the entry bar.
+Exit: long, low > stop AND high < entry price + a parameter multiplied by risk AND number of bars since entry including the entry bar >= a parameter; exit at close.

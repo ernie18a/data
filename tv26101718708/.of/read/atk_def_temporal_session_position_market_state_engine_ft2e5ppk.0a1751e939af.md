@@ -1,0 +1,8 @@
+Calculation: Session values = For each configured session, reset at the start of each exchange-calendar day; accumulate the first open, latest close, highest high, lowest low, and bar count from chart bars in that session, and retain them after the session ends until the reset.
+Calculation: Average range position = Average, over all available configured reference timeframes, of (chart close − reference low) / (reference high − reference low), excluding zero-range or unavailable references. Each reference timeframe may be higher or lower than the chart timeframe and uses its last completed bar.
+Long: For any session, session bar count > 0 AND (session close > session open × (1 + drive threshold) OR (session close >= session open × (1 − drive threshold) AND session close > session open)).
+Short: For any session, session bar count > 0 AND session close <= session open × (1 + drive threshold) AND (session close < session open × (1 − drive threshold) OR session close < session open).
+Long: For any session, session bar count > 0 AND session high > session low AND session close > (session high + session low) / 2.
+Short: For any session, session bar count > 0 AND session high > session low AND session close < (session high + session low) / 2.
+Long: Average range position > upper position threshold AND chart volume / SMA of chart volume < volume-ratio threshold AND SMA of ATR is available and nonzero.
+Short: Average range position < lower position threshold AND chart volume / SMA of chart volume < volume-ratio threshold AND SMA of ATR is available and nonzero.

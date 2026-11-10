@@ -1,0 +1,6 @@
+Calculation: Dynamic VWAP = Choose price as close, (high + low)/2, (high + low + close)/3, or (open + high + low + close)/4. Use volume as weight, replacing missing or nonpositive volume with 1. From the first bar or the latest reset bar through the current bar, divide the sum of price × weight by the sum of weight. Choose one reset rule: after a configurable number of bars; on confirmation of a pivot high or low using equal configurable numbers of bars on each side; when accumulated weight since the preceding reset reaches a configurable threshold; or at a calendar-day boundary. Include the reset bar in the new VWAP; for the volume rule, the threshold-crossing bar triggers the reset and its weight starts the new cycle.
+Calculation: Outer bands = Dynamic VWAP ± a configurable multiplier times the square root of max(0, weighted mean of squared price since the latest reset minus Dynamic VWAP squared), using the same price and weights as Dynamic VWAP.
+Long: close >= Dynamic VWAP
+Short: close < Dynamic VWAP
+Long: low crosses below the lower outer band
+Short: high crosses above the upper outer band

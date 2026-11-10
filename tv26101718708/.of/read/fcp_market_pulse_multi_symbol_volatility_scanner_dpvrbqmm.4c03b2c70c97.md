@@ -1,0 +1,2 @@
+Long: The range of the still-forming higher-timeframe bar, or the current chart bar when timeframes are equal, divided by the ATR of the preceding completed bar on that timeframe is >= a threshold AND (open = 0 OR (close - open) / open >= 0) AND the preceding bar's ATR > 0
+Short: The range of the still-forming higher-timeframe bar, or the current chart bar when timeframes are equal, divided by the ATR of the preceding completed bar on that timeframe is >= a threshold AND open != 0 AND (close - open) / open < 0 AND the preceding bar's ATR > 0

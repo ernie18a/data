@@ -1,0 +1,2 @@
+Long: close > open of the forming bar on the shorter higher timeframe OR close > open of the forming bar on the intermediate higher timeframe OR close > open of the forming bar on the longer higher timeframe
+Short: close < open of the forming bar on the shorter higher timeframe OR close < open of the forming bar on the intermediate higher timeframe OR close < open of the forming bar on the longer higher timeframe

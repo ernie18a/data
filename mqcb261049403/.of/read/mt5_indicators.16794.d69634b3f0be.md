@@ -1,0 +1,3 @@
+Calculation: Bull strength and bear strength = Choose a price from open, high, low, close, median, typical, weighted, or OHLC average. For the RSI method, bull strength is max(current price − previous price, 0) and bear strength is max(previous price − current price, 0). For the stochastic method, bull strength is current price − lowest low over the lookback, and bear strength is highest high over the lookback − current price. Apply the chosen moving-average method over the calculation lookback to each strength, then apply the same moving-average method to each result over the smoothing lookback.
+Long: Bull strength crosses above bear strength.
+Short: Bull strength crosses below bear strength.

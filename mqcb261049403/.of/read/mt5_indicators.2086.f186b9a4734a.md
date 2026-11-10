@@ -1,0 +1,5 @@
+Calculation: Reference pivot = (open + high + low of the previous non-Sunday calendar-day bar + close of the current calendar-day bar) / 4. The current calendar-day bar is completed for historical bars and still forming in real time.
+Calculation: Floating pivot = (highest high + lowest low of the indicator-timeframe bars since the start of the current calendar day through the current indicator-timeframe bar + its close) * 0.33333.
+Calculation: Both pivots are calculated on an indicator timeframe that is higher than or equal to the chart timeframe. On historical bars use the completed indicator-timeframe bar; in real time use the still-forming bar. Copy their values to the first chart bar of each indicator-timeframe bar and carry them forward until the next indicator-timeframe bar.
+Long: Floating pivot > reference pivot
+Short: Reference pivot > floating pivot

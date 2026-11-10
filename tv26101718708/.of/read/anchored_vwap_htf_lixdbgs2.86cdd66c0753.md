@@ -1,0 +1,4 @@
+Calculation: Higher-timeframe anchor event = On each higher timeframe, use the last completed bar to detect confirmed pivot lows and highs with the same number of bars on each side. A bullish event occurs when a pivot low is confirmed and no pivot low was confirmed on the preceding higher-timeframe bar. A bearish event occurs when a pivot high is confirmed, no pivot high was confirmed on the preceding higher-timeframe bar, and no pivot low is confirmed on the current higher-timeframe bar. Emit each event only on the first chart bar where its higher-timeframe condition becomes true.
+Calculation: Visible anchor = One of the two most recent anchor events on a higher timeframe, with cumulative chart-bar volume since that event greater than zero; replace missing volume with one.
+Long: A visible anchor is a bullish event.
+Short: A visible anchor is a bearish event.

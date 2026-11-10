@@ -1,0 +1,19 @@
+Calculation: Bull score = count of true conditions: close > session VWAP of typical price; short-period EMA of close > long-period EMA of close; RSI of close within the inclusive bullish range; volume >= its SMA multiplied by a volume multiplier; close > short-period SMA of close AND short-period SMA > long-period SMA.
+Calculation: Bear score = count of true conditions: close < session VWAP of typical price; short-period EMA of close < long-period EMA of close; RSI of close within the inclusive bearish range; volume >= its SMA multiplied by a volume multiplier; close < short-period SMA of close AND short-period SMA < long-period SMA.
+Calculation: Bull momentum = close > close at the shorter momentum lookback AND close > close at the longer momentum lookback.
+Calculation: Bear momentum = close < close at the shorter momentum lookback AND close < close at the longer momentum lookback.
+Calculation: Raw bull = bull score >= minimum score AND (momentum filter disabled OR bull momentum).
+Calculation: Raw bear = bear score >= minimum score AND (momentum filter disabled OR bear momentum).
+Calculation: Bull trigger = (EMA-cross requirement enabled AND short-period EMA crosses above long-period EMA AND bull score >= minimum score) OR (EMA-cross requirement disabled AND raw bull).
+Calculation: Bear trigger = (EMA-cross requirement enabled AND short-period EMA crosses below long-period EMA AND bear score >= minimum score) OR (EMA-cross requirement disabled AND raw bear).
+Calculation: Bull candidate = bull trigger AND current bar index minus the index of the last bull signal >= signal cooldown; initialize the last bull signal index to zero. A bull signal occurs when the current bull candidate is true AND the previous bar's bull candidate is false; then update the last bull signal index to the current bar index. Compute the previous candidate using the state that existed on that previous bar.
+Calculation: Bear candidate = bear trigger AND current bar index minus the index of the last bear signal >= signal cooldown; initialize the last bear signal index to zero. A bear signal occurs when the current bear candidate is true AND the previous bar's bear candidate is false; then update the last bear signal index to the current bar index. Compute the previous candidate using the state that existed on that previous bar.
+Calculation: Trim readiness = current bar index minus the index of the last long or short trim >= trim cooldown; initialize the last trim index to zero and update it when either trim condition is true. Evaluate both trim conditions before updating it.
+Long: Bull signal OR (short-period EMA crosses above long-period EMA AND bull score >= strong-signal score).
+Short: Bear signal OR (short-period EMA crosses below long-period EMA AND bear score >= strong-signal score).
+Long: Raw bull OR close > session VWAP of typical price OR short-period EMA of close > long-period EMA of close OR (close > short-period SMA of close AND short-period SMA > long-period SMA) OR bull momentum OR short-period EMA crosses above long-period EMA.
+Short: Raw bear OR close <= session VWAP of typical price OR short-period EMA of close <= long-period EMA of close OR (close < short-period SMA of close AND short-period SMA < long-period SMA) OR bear momentum OR short-period EMA crosses below long-period EMA.
+Long: RSI < oversold threshold OR (RSI <= overbought threshold AND RSI >= oversold threshold AND RSI within the inclusive bullish range).
+Short: RSI > overbought threshold OR (RSI <= overbought threshold AND RSI >= oversold threshold AND RSI outside the inclusive bullish range AND RSI within the inclusive bearish range).
+Exit: long, trim readiness AND raw bull AND (RSI > overbought threshold OR close >= upper Bollinger Band multiplied by an upper-band proximity factor).
+Exit: short, trim readiness AND raw bear AND (RSI < oversold threshold OR close <= lower Bollinger Band multiplied by a lower-band proximity factor).

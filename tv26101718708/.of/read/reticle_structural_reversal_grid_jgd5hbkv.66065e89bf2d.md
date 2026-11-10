@@ -1,0 +1,9 @@
+Calculation: Anchors A and B = the earlier and later, respectively, of the highest high and lowest low over a lookback, using their prices and bar-opening times; require B's chart-bar index to exceed A's. Use either chart bars or higher-timeframe bars. For higher-timeframe bars, historical evaluation uses the completed higher-timeframe bar's final values from its first chart bar onward; real-time evaluation uses the higher-timeframe bar still forming. Map each anchor time to the chart bar with the same opening time. Use the ATR at A on the swing timeframe when needed.
+Calculation: Exhaustion band = the interval between B - 0.5 × (B - A) and B - 0.625 × (B - A).
+Calculation: Death line at chart-bar index t = A + sign(B - A) × slope × (t - A's chart-bar index). Slope is a multiplier times one selected basis: a fixed price-per-bar factor; abs(B - A) divided by the chart-bar distance from A to B; ATR at A; ATR at A multiplied by chart-bar duration in hours; or ATR at A multiplied by chart-bar duration in days. Evaluate both the current and previous line values using the current anchors and slope.
+Long: B > A AND low <= exhaustion band upper bound AND close > exhaustion band upper bound
+Short: B < A AND high >= exhaustion band lower bound AND close < exhaustion band lower bound
+Long: chart-bar index > B's chart-bar index AND close > current death line AND previous close <= previous death line
+Short: chart-bar index > B's chart-bar index AND close < current death line AND previous close >= previous death line
+Exit: long, chart-bar index > B's chart-bar index AND close < current death line AND previous close >= previous death line
+Exit: short, chart-bar index > B's chart-bar index AND close > current death line AND previous close <= previous death line

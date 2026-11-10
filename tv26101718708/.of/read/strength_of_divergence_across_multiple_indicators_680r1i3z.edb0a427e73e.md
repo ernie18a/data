@@ -1,0 +1,3 @@
+Calculation: Divergence = an imported library's comparison of price pivots and an indicator; its pivot selection, comparison, and broken-trendline rules are not included in READ, so the decisions cannot be reproduced exactly from the supplied source.
+Long: At least one enabled indicator has bullish regular divergence OR enabled bullish hidden divergence.
+Short: At least one enabled indicator has bearish regular divergence OR enabled bearish hidden divergence.

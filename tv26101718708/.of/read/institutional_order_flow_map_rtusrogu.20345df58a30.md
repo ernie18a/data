@@ -1,0 +1,12 @@
+Calculation: Rejection percentage = 100 times the relevant wick length divided by high minus low; use zero when high equals low. The lower wick is min(open, close) minus low; the upper wick is high minus max(open, close).
+Calculation: Zone score = min(round(pivot volume / max(volume SMA on the confirmation bar, volume floor) * volume weight), volume score cap) + min(round(pivot rejection percentage * rejection weight), rejection score cap) + trend score, capped at a total score ceiling. Use the lower rejection percentage for a buy zone and the upper rejection percentage for a sell zone. The trend score is higher when the confirmation bar's close is above its EMA for a buy zone or below its EMA for a sell zone, and lower otherwise.
+Calculation: Zones = on confirmation of a pivot low or high with equal left and right lookbacks, create respectively a buy or sell zone if its score is at least the score threshold. Its center is the pivot bar's (high + low) / 2; its top and bottom are the center plus and minus ATR on the confirmation bar times a zone-height factor. On each bar, if mitigation is enabled, mark a buy zone mitigated when low <= its bottom and a sell zone mitigated when high >= its top, including on its creation bar. After mitigation, retain only the most recent maximum number of zones per side. The top active score for each side is the highest score among its retained, unmitigated zones, or zero if none exist.
+Calculation: Normalized flow = 100 times the rolling sum of bar delta divided by the highest absolute value of that rolling sum over a separate lookback; use zero if that highest value is zero. Bar delta is (close - open) / (high - low) * volume, or zero when high equals low.
+Long: Volume > volume SMA * volume multiplier AND lower rejection percentage >= rejection threshold AND close > open.
+Short: Volume > volume SMA * volume multiplier AND upper rejection percentage >= rejection threshold AND close < open.
+Long: A pivot low is confirmed AND its buy zone score >= score threshold.
+Short: A pivot high is confirmed AND its sell zone score >= score threshold.
+Long: Normalized flow > positive flow threshold.
+Short: Normalized flow < negative flow threshold.
+Long: Top active buy zone score > top active sell zone score.
+Short: Top active sell zone score > top active buy zone score.

@@ -1,0 +1,5 @@
+Calculation: Base entry price = fill price of the initial long order, retained until the position closes.
+Calculation: Average entry price = sum of each filled long order's price multiplied by its quantity, divided by total filled quantity; each order's quantity is its configured cash size divided by the signal-bar close.
+Long: Position is flat AND open trade count = zero AND (date filter is disabled OR bar opening time is within the configured date window) AND RSI of close on the configured timeframe < oversold threshold; for a higher timeframe use the last completed bar, for a lower timeframe use the last completed intrabar within the chart bar, and for the chart timeframe use the current completed bar.
+Long: Position is long AND (date filter is disabled OR bar opening time is within the configured date window) AND filled averaging-order count < number of configured rungs AND close <= base entry price × (1 − deviation of the next unfilled rung); fill at most one rung per bar, in configured order, with successively larger deviations from the base entry.
+Exit: long, close >= average entry price × (1 + take-profit percentage).

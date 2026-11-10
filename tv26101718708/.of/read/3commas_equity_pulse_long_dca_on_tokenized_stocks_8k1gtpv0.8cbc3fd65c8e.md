@@ -1,0 +1,7 @@
+Calculation: Safety-order trigger for level n = base-entry close × (1 − initial step fraction × sum of step coefficient^(i − 1) for i from 1 through n).
+Calculation: Average entry = total order notional divided by total quantity, using base-order quantity = base-order notional / base-entry close and each triggered safety-order quantity = safety-order notional / its trigger price; each successive safety-order notional equals the first safety-order notional × volume coefficient^(n − 1). Update this average immediately when a safety order triggers.
+Calculation: Exit RSI = RSI of closes on the selected timeframe, using the preceding bar's RSI with lookahead-on mapping: for a higher timeframe use the last completed bar; for the chart timeframe use the preceding bar; for a lower timeframe use the bar preceding the first lower-timeframe bar mapped to the chart bar on historical data.
+Long: No active deal AND date filtering is disabled OR no active deal AND bar datetime is within the configured date window.
+Long: Active deal AND next safety-order level is at most the maximum number of safety orders AND low <= next safety-order trigger; repeat in level order while the condition holds, including on the base-entry bar.
+Exit: long, exit RSI crosses above its threshold.
+Exit: long, close >= average entry × (1 + minimum profit fraction) AND RSI exit gate is disabled OR close >= average entry × (1 + minimum profit fraction) AND exit RSI crosses above its threshold.

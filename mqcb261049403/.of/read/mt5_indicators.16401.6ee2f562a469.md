@@ -1,0 +1,7 @@
+Calculation: Swing value = 0 if R = 0; otherwise 50 × (close − previous close + 0.5 × (close − open) + 0.25 × (previous close − previous open)) × K / R, where K = max(abs(high − previous close), abs(low − previous close)), R = ATR − 0.5 × E + 0.25 × abs(previous close − previous open), and E = max(low − previous close, 0, previous close − high).
+Calculation: Index = swing value, or swing value + previous bar's swing value for the alternative index type.
+Calculation: Higher-timeframe index state = the index and its previous higher-timeframe value sampled from the higher-timeframe bar still forming at the first chart bar of that higher-timeframe bar, then held until the next higher-timeframe bar.
+Long: Index >= 0 AND index >= previous index AND (previous index < 0 OR previous index < index two bars ago).
+Short: Index < 0 AND index <= previous index AND (previous index >= 0 OR previous index > index two bars ago).
+Long: Higher-timeframe index state has index >= 0 AND index >= previous higher-timeframe index AND the preceding chart bar's state does not satisfy both comparisons.
+Short: Higher-timeframe index state has index < 0 AND index <= previous higher-timeframe index AND the preceding chart bar's state does not satisfy both comparisons.

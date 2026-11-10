@@ -1,0 +1,3 @@
+Calculation: Sliding-range midpoint = half the sum of (1) the average of the rolling highest highs and (2) the average of the rolling lowest lows. For each average, use the current bar and the preceding bars over the same lookback as each rolling high or low, including each rolling window's ending bar. Round the midpoint to the price precision.
+Long: Sliding-range midpoint > previous bar's sliding-range midpoint
+Short: Sliding-range midpoint < previous bar's sliding-range midpoint

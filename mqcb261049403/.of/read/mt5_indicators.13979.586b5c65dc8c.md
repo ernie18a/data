@@ -1,0 +1,6 @@
+Calculation: Laguerre ROC = For each bar, compute ROC as (close minus close at a lookback) divided by close at that lookback. Initialize four stages to the first available ROC. On each subsequent bar, using the prior values of all stages, set stage 0 to (1 minus smoothing coefficient) times ROC plus smoothing coefficient times prior stage 0; set each stage 1 through 3 to minus smoothing coefficient times its newly calculated preceding stage plus the preceding stage's prior value plus smoothing coefficient times its own prior value. Sum the positive differences between each adjacent pair of stages as gains and the absolute negative differences as losses. The oscillator is gains divided by gains plus losses; when their sum is zero, retain the preceding oscillator value in the calculation pass, initialized to zero.
+Calculation: Higher-timeframe Laguerre ROC = Laguerre ROC calculated on the higher timeframe using its still-forming bar. Update the value at the first chart bar of each higher-timeframe bar; optionally carry it forward to the remaining chart bars in that higher-timeframe bar.
+Long: Laguerre ROC > midpoint
+Short: Laguerre ROC < midpoint
+Long: Higher-timeframe Laguerre ROC > midpoint
+Short: Higher-timeframe Laguerre ROC < midpoint

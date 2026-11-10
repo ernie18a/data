@@ -1,0 +1,8 @@
+Calculation: Smoothed price = the selected moving average of a selected OHLC-derived price; use the chart timeframe or the still-forming bar of a higher timeframe for all calculations.
+Calculation: Raw bull and bear strength = choose one method: RSI method: max(smoothed price − previous smoothed price, 0) and max(previous smoothed price − smoothed price, 0); stochastic method: smoothed price − lowest low over the evaluation lookback and highest high over the same lookback − smoothed price; DMI method: upward change in smoothed price and downward change in equally smoothed low, each floored at zero, with the smaller set to zero and both set to zero if equal.
+Calculation: Bull and bear strength = apply the selected moving average to the respective raw strength over the evaluation lookback, except skip this averaging for the stochastic method, then apply the same moving-average type over a separate smoothing period.
+Calculation: Bull and bear signal = the same moving-average type applied to the respective strength over a separate signal period; if that period is one bar, use the previous bar’s strength instead.
+Long: bull strength > bull signal AND bull strength > bear strength AND (bear strength <= bear signal OR bear strength = 0)
+Long: bear strength < bear signal AND bear strength > bull strength AND bull strength >= bull signal
+Short: bear strength > bear signal AND bear strength > bull strength AND (bull strength <= bull signal OR bull strength = 0)
+Short: bull strength < bull signal AND bull strength > bear strength AND bear strength >= bear signal

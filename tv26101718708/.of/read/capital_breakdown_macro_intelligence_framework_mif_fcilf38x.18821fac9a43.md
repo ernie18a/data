@@ -1,0 +1,5 @@
+Calculation: Pivot = (high + low + close) / 3 of the last completed higher-timeframe bar.
+Calculation: Reversal levels = pivot + (pivot - low), pivot - (high - pivot), pivot + (high - low), and pivot - (high - low), using the last completed bar of a longer higher timeframe.
+Calculation: Smoothed EMA = EMA of an EMA of close, both using the same lookback.
+Long: close > pivot - price buffer AND close < pivot + price buffer AND Supertrend direction is up AND close > smoothed EMA AND absolute distance from close to each reversal level >= price buffer AND RSI >= lower threshold AND RSI <= upper threshold.
+Short: close > pivot - price buffer AND close < pivot + price buffer AND Supertrend direction is down AND close < smoothed EMA AND absolute distance from close to each reversal level >= price buffer AND RSI >= lower threshold AND RSI <= upper threshold.

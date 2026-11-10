@@ -1,0 +1,4 @@
+Calculation: Confirmed pivot high = a higher-timeframe bar whose high is greater than or equal to the highs of the preceding pivot-length bars and greater than the highs of the following pivot-length bars; it confirms on the last of those following bars. Use the last completed higher-timeframe bar on historical data and the still-forming higher-timeframe bar in real time.
+Calculation: Confirmed pivot low = a higher-timeframe bar whose low is less than or equal to the lows of the preceding pivot-length bars and less than the lows of the following pivot-length bars; it confirms on the last of those following bars. Use the same pivot length and higher-timeframe bar convention as for the pivot high.
+Long: A pivot high newly confirms AND a pivot low was confirmed previously on the same higher timeframe.
+Short: A pivot low newly confirms AND a pivot high was confirmed previously on the same higher timeframe.

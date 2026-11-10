@@ -1,0 +1,4 @@
+Calculation: Reference range percentage = 100 × (high − low) / ATR on a reference timeframe that can be higher or lower than the chart timeframe; use the bar still forming. For historical higher-timeframe bars, use the final value of the containing bar from its first chart bar, matching lookahead-on behavior.
+Calculation: Average reference range percentage = simple moving average of the reference range percentage on the same reference timeframe and bar.
+Long: Reference timeframe close > open AND reference range percentage > average reference range percentage × volatility multiplier.
+Short: Reference timeframe close < open AND reference range percentage > average reference range percentage × volatility multiplier.

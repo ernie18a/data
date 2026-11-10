@@ -1,0 +1,24 @@
+Calculation: Regime center = SMA of the average of the latest confirmed pivot high and pivot low; use the current high or low until its respective pivot exists. Pivots use equal left and right confirmation lookbacks.
+Calculation: Regime bands = SMA of regime center plus or minus ATR multiplied by a band multiplier. Initialize regime bullish when close >= center, otherwise bearish. A close crossing above the upper band or below the lower band starts a pending bullish or bearish regime; apply it after a hold period, even if price reverses meanwhile. A new crossing replaces the pending regime.
+Calculation: Normalized regime distance = (close - regime center) / ATR; regime strength = absolute normalized regime distance.
+Calculation: Pressure signal = EMA of (close - selected SMA, EMA, RMA, WMA, or VWMA of close) divided by the highest absolute such distance over a normalization lookback.
+Calculation: Participation axis = midpoint of the highest-volume price bin over a lookback. Divide the lookback high-to-low range into equal bins, assign each historical close's entire volume to its bin, clamp out-of-range indices, and choose the lowest bin on a volume tie. Participation deviation = (close - participation axis) / ATR.
+Calculation: Delta wave = EMA of (EMA of volume on bullish candles minus EMA of volume on bearish candles) divided by EMA of max(volume, minimum volume); use the same lookback for the three inner EMAs. Delta slope = delta wave minus its previous value.
+Calculation: Recent bullish structure = within a validity lookback, either a bearish candle followed by a bullish candle whose body is at least an ATR multiple, using that second candle's ATR, or the current low exceeded the high two bars earlier and the intervening close exceeded that high. Recent bearish structure reverses all directions. Evaluate the impulse on the bar after the impulse candle.
+Calculation: Higher-timeframe bullish bias = shorter EMA > longer EMA AND close > longer EMA; bearish bias reverses both comparisons. Calculate on the last completed higher-timeframe bar; the configured timeframe may equal the chart timeframe. If it is lower than the chart timeframe, treat the bias as invalid.
+Calculation: Long score = sum of a double-weight point for bullish regime and one point each for normalized regime distance >= zero, regime strength >= strength threshold, pressure signal > zero, delta wave > zero, delta slope >= zero, recent bullish structure, close > participation axis, participation deviation > zero, and higher-timeframe bias disabled or invalid or bullish. Short score uses bearish regime, distance <= zero, the same strength condition, pressure < zero, delta < zero, slope <= zero, recent bearish structure, close < axis, deviation < zero, and bias disabled or invalid or bearish. Score spread = long score - short score.
+Calculation: Long stop = at entry, the lower of entry-bar close minus ATR times a stop multiplier and regime center minus ATR times a center-offset multiplier; thereafter, if trailing is enabled, the maximum of the previous stop and close minus ATR times a trailing multiplier. Short stop is the corresponding higher initial value and subsequent minimum. Long target = entry-bar close plus ATR times a target multiplier; short target = entry-bar close minus ATR times that multiplier. Keep targets fixed. Use the entry-bar ATR for initial stops and targets and current ATR for trailing stops.
+Long: bullish regime.
+Short: bearish regime.
+Long: pressure signal > zero OR delta wave > zero OR score spread >= zero.
+Short: pressure signal <= zero OR delta wave <= zero OR score spread < zero.
+Long: long score >= score threshold.
+Short: short score >= score threshold AND long score < score threshold.
+Long: higher-timeframe bias is enabled AND bullish bias.
+Short: higher-timeframe bias is enabled AND bearish bias.
+Long: long score >= score threshold AND score spread >= strong-spread threshold.
+Short: short score >= score threshold AND score spread <= negative strong-spread threshold.
+Long: long score >= score threshold AND score spread >= entry-spread threshold AND position is flat or short AND session filter is disabled or bar time is in the configured session AND bars since the last entry >= cooldown or no prior entry exists.
+Short: short score >= score threshold AND score spread <= negative entry-spread threshold AND position is flat or long AND session filter is disabled or bar time is in the configured session AND bars since the last entry >= cooldown or no prior entry exists.
+Exit: long, bearish regime OR score spread <= zero OR pressure signal < zero OR close < regime center OR low <= active long stop OR high >= long target OR short entry condition.
+Exit: short, bullish regime OR score spread >= zero OR pressure signal > zero OR close > regime center OR high >= active short stop OR low <= short target OR long entry condition.

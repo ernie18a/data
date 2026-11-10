@@ -1,0 +1,3 @@
+Calculation: RVI = sum over a lookback of the weighted close-minus-open values divided by the sum over the same lookback of the weighted high-minus-low values; each weighted value uses the current and three preceding bars with weights 1, 2, 2, 1, respectively. Set RVI to zero if the denominator is zero. Calculate on the chart timeframe or a higher timeframe, using the bar still forming.
+Long: RVI > previous bar's RVI on the RVI timeframe
+Short: RVI < previous bar's RVI on the RVI timeframe

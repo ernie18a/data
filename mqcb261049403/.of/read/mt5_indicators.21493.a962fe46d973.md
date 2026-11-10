@@ -1,0 +1,4 @@
+Calculation: Gravity open and gravity close = for open and close separately, smooth the product of their simple moving average and linearly weighted moving average, both using the same lookback. Use the same smoothing period and moving-average method for both series.
+Calculation: Higher-timeframe gravity open and close = calculate gravity open and close on higher-timeframe bars. The smoothing method's enumeration value equals the smoothing period. Use the higher-timeframe bar still forming; in historical calculation, assign its final value from its first chart bar onward.
+Long: gravity close > gravity open OR higher-timeframe gravity close > higher-timeframe gravity open
+Short: gravity close < gravity open OR higher-timeframe gravity close < higher-timeframe gravity open

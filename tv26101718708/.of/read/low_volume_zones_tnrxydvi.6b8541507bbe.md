@@ -1,0 +1,2 @@
+Long: Confirmed pivot low: the low of the candidate bar is less than or equal to the lows of all bars in the left lookback AND less than the lows of all bars in the right confirmation lookback. For a higher timeframe, use completed bars and signal when the confirmation bar completes.
+Short: Confirmed pivot high: the high of the candidate bar is greater than or equal to the highs of all bars in the left lookback AND greater than the highs of all bars in the right confirmation lookback. For a higher timeframe, use completed bars and signal when the confirmation bar completes.

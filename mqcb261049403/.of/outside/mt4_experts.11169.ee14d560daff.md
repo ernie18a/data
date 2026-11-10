@@ -1,0 +1,1 @@
+For each eligible order on the chart instrument, if the user enables a lifetime, create an adjustable expiration time based on the current chart bar's opening time and chart period. When server time is strictly later than that expiration, close an open position or delete a pending order.

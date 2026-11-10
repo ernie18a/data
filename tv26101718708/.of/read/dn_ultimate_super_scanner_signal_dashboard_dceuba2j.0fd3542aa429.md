@@ -1,0 +1,20 @@
+Calculation: High volume = volume > SMA(volume, volume lookback) × high-volume multiplier.
+Calculation: Bullish panel stack = shortest panel EMA(close) > middle panel EMA(close) AND middle panel EMA(close) > longest panel EMA(close) AND close > longer-period panel SMA(close).
+Calculation: Bearish panel stack = shortest panel EMA(close) < middle panel EMA(close) AND middle panel EMA(close) < longest panel EMA(close) AND close < longer-period panel SMA(close).
+Calculation: Panel volume filter = relative-volume filter disabled OR volume / SMA(volume, volume lookback) >= relative-volume threshold, provided the volume average is positive.
+Calculation: Squeeze = upper Bollinger Band < upper Keltner Channel AND lower Bollinger Band > lower Keltner Channel; the Bollinger Bands use SMA(close) and standard deviation of close, and the Keltner Channel uses EMA(close) and EMA(true range), with independently parameterized widths.
+Calculation: Reference high = highest high over the reference lookback on the reference timeframe. The reference timeframe can be higher or lower than the chart timeframe; for historical bars use the last completed reference bar available at the chart bar's close, and for a forming higher-timeframe bar use its current value.
+Calculation: Risk unit = ATR at the most recent panel entry × trail multiplier. A panel entry occurs when the corresponding panel stack becomes true after being false on the preceding bar and the panel volume filter passes; it resets the position side, entry price to close, and risk unit, including when a position is already open.
+Calculation: Long trail = highest close since the most recent long panel entry, including its entry bar and the current bar, minus the risk unit.
+Calculation: Short trail = lowest close since the most recent short panel entry, including its entry bar and the current bar, plus the risk unit.
+Long: High volume AND close > open.
+Short: High volume AND close < open.
+Long: Short scanner EMA(close) > medium scanner EMA(close) AND medium scanner EMA(close) > long scanner EMA(close) AND low <= short scanner EMA(close) AND close > short scanner EMA(close) AND volume > SMA(volume, volume lookback) AND RSI(close) > RSI threshold AND (chart timeframe is in the configured intraday set AND close > session VWAP(close) OR chart timeframe is outside that set).
+Short: Short scanner EMA(close) < medium scanner EMA(close) AND medium scanner EMA(close) < long scanner EMA(close) AND high >= short scanner EMA(close) AND close < short scanner EMA(close) AND volume > SMA(volume, volume lookback) AND RSI(close) < RSI threshold AND (chart timeframe is in the configured intraday set AND close < session VWAP(close) OR chart timeframe is outside that set).
+Long: Chart timeframe is in the configured intraday set AND close > highest high over the range lookback excluding the current bar AND high volume AND close > session VWAP(close).
+Short: Chart timeframe is in the configured intraday set AND close < lowest low over the range lookback excluding the current bar AND high volume AND close < session VWAP(close).
+Long: Bullish panel stack AND bullish panel stack was false on the preceding bar AND panel volume filter.
+Short: Bearish panel stack AND bearish panel stack was false on the preceding bar AND panel volume filter.
+Long: Close > price threshold AND SMA(volume, scanner volume lookback) > volume threshold AND ATR > ATR threshold AND standard deviation of percentage close-to-close returns < volatility threshold AND (reference high - close) / reference high <= proximity threshold AND RSI(close) >= lower RSI threshold AND RSI(close) <= upper RSI threshold AND close > shorter scanner SMA(close) AND close > longer scanner SMA(close) AND squeeze.
+Exit: long, close < long trail.
+Exit: short, close > short trail.

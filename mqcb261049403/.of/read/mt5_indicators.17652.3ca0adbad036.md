@@ -1,0 +1,4 @@
+Calculation: Heikin-Ashi close = (open + high + low + close) / 4; Heikin-Ashi open = (previous Heikin-Ashi open + previous Heikin-Ashi close) / 2, initialized to the first bar's open.
+Calculation: Trend state = the trend state of the nearest preceding bar within the lookback whose range between Heikin-Ashi open and close contains both the current Heikin-Ashi open and close, inclusive. If no such bar exists, the state is bullish when the current Heikin-Ashi close > open, bearish when it < open, and neutral when equal. Compute separately on the chart timeframe and on a higher timeframe using its still-forming bar.
+Long: Trend state = bullish.
+Short: Trend state = bearish.

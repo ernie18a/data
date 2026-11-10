@@ -1,0 +1,4 @@
+Calculation: Source-timeframe side counts = Initialize the above and below counts to zero. On each source bar, if close > SMA of close, increment the above count and reset the below count to zero; if close < SMA, increment the below count and reset the above count to zero; if close = SMA, leave both counts unchanged.
+Calculation: Confirmed-anchor event = On each source bar, create an up event if the above count equals the confirmation threshold, or a down event if the below count equals the confirmation threshold. Sample the cumulative event count and latest event direction on each chart bar. For a lower source timeframe, sample the last completed source bar within the chart bar; for a higher source timeframe, sample the last completed source bar. An event is new when the sampled cumulative event count exceeds its last observed value.
+Long: A new confirmed-anchor event has up direction.
+Short: A new confirmed-anchor event has down direction.

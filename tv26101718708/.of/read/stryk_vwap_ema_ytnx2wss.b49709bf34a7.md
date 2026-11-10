@@ -1,0 +1,4 @@
+Calculation: Estimated bar delta = sum signed volume of completed lower-timeframe bars within the chart bar; assign volume positive if close > open, negative if close < open, otherwise positive if close > previous close, negative if close < previous close, and zero otherwise. If no lower-timeframe bars are available, use chart-bar volume if close > open, negative chart-bar volume if close < open, and zero otherwise.
+Calculation: Live delta = sum estimated bar delta since the start of the still-forming higher-timeframe bar; the delta timeframe may instead equal the chart timeframe.
+Long: Live delta > 0
+Short: Live delta < 0

@@ -1,0 +1,5 @@
+Calculation: Trend moving average = a selected SMA, EMA, WMA, VWMA, HMA, ALMA, or T3 of close, optionally smoothed by a selected SMA, EMA, WMA, or VWMA.
+Calculation: Pivot low = the value of the selected series a specified number of bars ago is less than or equal to every value in an equally long preceding window and strictly less than every value in the following window ending at the current bar. The selected series is the trend moving average, low, or close.
+Calculation: Pivot high = the value of the selected series a specified number of bars ago is greater than or equal to every value in an equally long preceding window and strictly greater than every value in the following window ending at the current bar. The selected series is the trend moving average, high, or close.
+Long: A pivot low is confirmed AND (the pivot series is the trend moving average OR the optional price-pivot trend filter is disabled OR close > trend moving average).
+Short: A pivot high is confirmed AND (the pivot series is the trend moving average OR the optional price-pivot trend filter is disabled OR close < trend moving average).

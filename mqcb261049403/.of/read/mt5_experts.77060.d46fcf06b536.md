@@ -1,0 +1,4 @@
+Calculation: Entry mean range = mean of high minus low over a lookback of completed range-timeframe bars at entry; the range timeframe may be higher or lower than the chart timeframe and uses the last completed bar.
+Long: Position is flat AND server-time hour equals entry hour AND minute is less than entry-window length AND (skip-Monday filter is disabled OR server-time weekday is not Monday) AND time since the last entry is at least the session interval AND entry mean range is greater than zero.
+Exit: long, bar low is less than or equal to entry price minus stop multiplier times entry mean range.
+Exit: long, current datetime is greater than or equal to entry datetime plus holding duration.

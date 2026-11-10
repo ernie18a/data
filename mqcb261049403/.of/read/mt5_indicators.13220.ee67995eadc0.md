@@ -1,0 +1,5 @@
+Calculation: Oscillator = Smooth the weighted sum of five TRIX values with distinct lookbacks from shortest to longest, then smooth the difference between the weighted sum and its first smoothing. Both smoothings use the recurrence S[t] = X[t]/n + S[t-1]*(n-1)/n; the first uses a longer period than the second. The second and third TRIX values share the same weight; the others have separate weights. Initialize the first smoothing to the initial weighted sum divided by its period, and the second to the initial difference divided by its period. Calculate either on the chart timeframe or on the higher timeframe using its still-forming bar; compare higher-timeframe values with the preceding higher-timeframe bar.
+Long: Oscillator > 0 AND Oscillator > previous oscillator
+Long: Oscillator > 0 AND Oscillator < previous oscillator
+Short: Oscillator < 0 AND Oscillator < previous oscillator
+Short: Oscillator < 0 AND Oscillator > previous oscillator

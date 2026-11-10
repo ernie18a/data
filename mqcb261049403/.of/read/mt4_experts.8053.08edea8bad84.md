@@ -1,0 +1,8 @@
+Calculation: FX oscillator = short-period simple moving average of median price, shifted by a shorter lag, minus long-period simple moving average of median price, shifted by a longer lag.
+Calculation: Oscillator direction = rising when the FX oscillator is greater than its previous value, falling when it is less, and otherwise unchanged from its previous direction; initialize as rising.
+Calculation: Fractal zigzag level = on the specified timeframe, identify standard upper and lower fractals. Suppress consecutive equal fractal values and remove an immediately preceding same-side candidate when the current candidate is more extreme. Process candidates chronologically, alternating upper and lower pivots; before an opposite-side pivot occurs, replace the latest pivot with a more extreme same-side candidate. Ignore a candidate when both sides occur on the same bar, except when initializing. Carry the most recent zigzag pivot value forward to each subsequent bar; recalculate the recent pivots as bars form.
+Long: Oscillator direction is rising.
+Short: Oscillator direction is falling.
+Short: Chart-bar open > previous chart-bar low minus a price offset AND chart-bar close < previous chart-bar low minus the same offset AND chart-bar close > fractal zigzag level at the second previous chart bar AND FX oscillator < 0 AND chart-bar close < fractal zigzag level of the still-forming higher-timeframe bar.
+Exit: long, price >= entry price plus a take-profit distance.
+Exit: short, price <= entry price minus a take-profit distance.

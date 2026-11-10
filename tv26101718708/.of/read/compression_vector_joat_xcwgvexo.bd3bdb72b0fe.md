@@ -1,0 +1,7 @@
+Calculation: Bollinger width = (upper Bollinger Band - lower Bollinger Band) / max(Bollinger basis, positive price floor); the width SMA and Bollinger Bands use the same lookback.
+Calculation: Squeeze = short-term ATR / max(long-term ATR, positive price floor) < compression threshold AND (Bollinger width < its SMA * width threshold OR short-term ATR < its SMA * ATR squeeze threshold); the ATR SMA uses the Bollinger lookback.
+Calculation: Zone = high and low of a consecutive run of squeeze bars beginning after the warmup period, whose length is at least the minimum squeeze duration; create the zone on the first subsequent non-squeeze bar. Retain only the most recent maximum number of zones. A zone can signal once and expires after its start-bar age exceeds the expiry limit; check for a breakout before expiring it on that bar.
+Long: An unexpired, unfired zone exists AND close > zone high AND abs(close - open) > short-term ATR * impulse threshold AND (volume filter disabled OR volume > volume SMA * volume threshold) AND (RSI filter disabled OR RSI < upper RSI threshold).
+Short: An unexpired, unfired zone exists AND close < zone low AND abs(close - open) > short-term ATR * impulse threshold AND (volume filter disabled OR volume > volume SMA * volume threshold) AND (RSI filter disabled OR RSI > lower RSI threshold).
+Long: RSI < lower dashboard RSI threshold.
+Short: RSI > upper dashboard RSI threshold.

@@ -1,0 +1,3 @@
+Calculation: Opening-range high and low = At the first bar of each regular session, initialize them to that bar's high and low. Update them with the highest high and lowest low of regular-session bars whose start times are less than the opening-range duration after that first bar's start time. Lock them on the first subsequent regular-session bar and retain them until the next regular session.
+Long: Opening range is locked AND close > opening-range high + minimum price increment
+Short: Opening range is locked AND close < opening-range low - minimum price increment

@@ -1,0 +1,11 @@
+Calculation: Confirmed pivots = pivot highs and lows with the same number of bars on each side; each pivot becomes available only after its right-side bars have completed.
+Calculation: Wedge boundaries = straight lines through the two most recent confirmed pivot highs and the two most recent confirmed pivot lows. Let U(x) and L(x) be their respective values at bar index x, and let their slopes be su and sl. Let t be the current bar index, s the earlier index of the older high and older low pivots, W0 = U(s) - L(s), and W = U(t) - L(t).
+Calculation: Valid wedge = two confirmed highs and two confirmed lows exist AND W0 > 0 AND W > 0 AND W < W0 AND (W0 - W) / W0 >= minimum contraction AND W0 >= ATR × minimum height multiplier AND t - s >= pivot confirmation length AND t - s <= maximum duration AND the boundary intersection is after t or does not exist.
+Calculation: Rising wedge = valid wedge AND latest pivot high > preceding pivot high AND latest pivot low > preceding pivot low AND su > 0 AND sl > 0 AND sl > su × convergence multiplier.
+Calculation: Falling wedge = valid wedge AND latest pivot high < preceding pivot high AND latest pivot low < preceding pivot low AND su < 0 AND sl < 0 AND su < sl × convergence multiplier.
+Calculation: Upward breakout = close > U(t) AND previous close <= U(t - 1), using the current bar's pivot-derived boundaries for both comparisons.
+Calculation: Downward breakout = close < L(t) AND previous close >= L(t - 1), using the current bar's pivot-derived boundaries for both comparisons.
+Long: Falling wedge AND upward breakout AND (EMA filter disabled OR close > EMA of close) AND (volume filter disabled OR volume unavailable OR volume > SMA of volume × volume multiplier) AND (candle-size filter disabled OR absolute value of close - open >= ATR × candle-size multiplier).
+Short: Rising wedge AND downward breakout AND (EMA filter disabled OR close < EMA of close) AND (volume filter disabled OR volume unavailable OR volume > SMA of volume × volume multiplier) AND (candle-size filter disabled OR absolute value of close - open >= ATR × candle-size multiplier).
+Long: Forming preview enabled AND falling wedge AND upward breakout is false.
+Short: Forming preview enabled AND rising wedge AND downward breakout is false.

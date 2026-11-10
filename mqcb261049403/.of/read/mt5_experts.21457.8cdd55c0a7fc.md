@@ -1,0 +1,6 @@
+Calculation: Long stop = initial buy-stop order price minus stop-loss distance, if enabled; when trailing is enabled, update the stop to current price minus trailing distance whenever current price minus entry price > trailing distance plus trailing step AND the existing stop < current price minus trailing distance minus trailing step.
+Calculation: Short stop = initial sell-stop order price plus stop-loss distance, if enabled; when trailing is enabled, update the stop to current price plus trailing distance whenever entry price minus current price > trailing distance plus trailing step AND (the existing stop > current price plus trailing distance plus trailing step OR no stop exists).
+Long: High >= high of the last completed higher-timeframe bar plus minimum distance.
+Short: Low <= low of the last completed higher-timeframe bar minus minimum distance.
+Exit: long, low <= long stop OR high >= initial buy-stop order price plus take-profit distance, if enabled.
+Exit: short, high >= short stop OR low <= initial sell-stop order price minus take-profit distance, if enabled.

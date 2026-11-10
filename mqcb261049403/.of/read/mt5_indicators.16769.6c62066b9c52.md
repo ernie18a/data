@@ -1,0 +1,3 @@
+Calculation: Pre-filtered CCI = CCI calculated from a selected moving average of a selected OHLC-derived price.
+Long: Pre-filtered CCI > upper threshold OR (pre-filtered CCI = upper threshold OR pre-filtered CCI = lower threshold) AND previous bar's long marking = true.
+Short: Pre-filtered CCI < lower threshold OR (pre-filtered CCI = upper threshold OR pre-filtered CCI = lower threshold) AND previous bar's short marking = true.

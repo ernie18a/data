@@ -1,0 +1,3 @@
+Calculation: Bands = selected moving average of the selected OHLC-derived price, plus or minus a multiplier times the simple average of true range over the ATR lookback. Initialize both bands and direction to zero on the first bar. On each later bar, set direction to long if close > previous upper band, then set it to short if close < previous lower band; otherwise retain the previous direction. If direction is long, replace the lower band with the maximum of its current and previous values; otherwise replace the upper band with the minimum of its current and previous values.
+Long: direction is long OR direction is initially zero
+Short: direction is short

@@ -1,0 +1,5 @@
+Calculation: Cumulative deviation for averaging order k = first deviation fraction × sum of deviation multiplier^i for i from 0 to k − 1, where k is the next unfilled averaging order number.
+Calculation: Average entry price = total quote currency spent on the base order and filled averaging orders divided by the total units acquired; each averaging order's quote size equals the first averaging order size × size multiplier^(k − 1).
+Long: Position is flat AND (date filter is disabled OR bar time is within the configured date window) AND RSI of the last completed higher-timeframe bar < RSI threshold.
+Long: Position is long AND (date filter is disabled OR bar time is within the configured date window) AND filled averaging order count < maximum averaging order count AND close ≤ base entry price × (1 − cumulative deviation for the next unfilled averaging order).
+Exit: Long, close ≥ average entry price × (1 + take-profit fraction).

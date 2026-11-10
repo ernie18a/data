@@ -1,0 +1,4 @@
+Long: Williams %R on the last completed bar > Williams %R on the preceding bar + tolerance AND +DI minus -DI on the last completed bar < -tolerance AND +DI minus -DI on the preceding bar > tolerance
+Short: Williams %R on the last completed bar < Williams %R on the preceding bar - tolerance AND +DI minus -DI on the last completed bar > tolerance AND +DI minus -DI on the preceding bar < -tolerance
+Exit: long, money flow index using volume on the last completed bar > upper level + tolerance OR (stochastic main line on the last completed bar > its value on the preceding bar + tolerance AND its value on the preceding bar < its value two bars earlier - tolerance)
+Exit: short, money flow index using volume on the last completed bar < 100 - upper level - tolerance OR (stochastic main line on the last completed bar < its value on the preceding bar - tolerance AND its value on the preceding bar > its value two bars earlier + tolerance)

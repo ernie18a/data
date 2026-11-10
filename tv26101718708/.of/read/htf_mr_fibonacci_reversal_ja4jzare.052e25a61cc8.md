@@ -1,0 +1,4 @@
+Calculation: Confirmed pivot high = a chart-bar high greater than or equal to each high in an equal-length preceding window and greater than each high in the following window; confirm it when the following window completes.
+Calculation: Confirmed pivot low = a chart-bar low less than or equal to each low in an equal-length preceding window and less than each low in the following window; confirm it when the following window completes.
+Long: Close > most recently confirmed pivot high AND that pivot high has not previously been broken; alternatively, high > most recently confirmed pivot high AND that pivot high has not previously been broken.
+Short: Close < most recently confirmed pivot low AND that pivot low has not previously been broken; alternatively, low < most recently confirmed pivot low AND that pivot low has not previously been broken.

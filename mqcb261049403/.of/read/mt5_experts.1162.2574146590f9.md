@@ -1,0 +1,10 @@
+Calculation: Timeframe scores = For each of three progressively higher timeframes, count the five close SMAs whose selected-bar value is greater than the preceding bar for the up score, or less than the preceding bar for the down score. Use the same five progressively longer SMA periods on each timeframe. On the lowest and highest timeframes, add the corresponding accelerator weight; on the middle timeframe, add nothing. Each selected bar is either the forming bar or the last completed bar, according to the common bar-selection setting.
+Calculation: Accelerator weights = On the lowest and highest timeframes, let A0 be the accelerator oscillator on the selected bar and A1, A2, A3 its values on the preceding three bars. Set the up weight to 3 and down weight to 0 when (A1 > A2 AND A2 > A3 AND A0 < 0 AND A0 > A1) OR (A0 > A1 AND A1 > A2 AND A0 > 0). Set the up weight to 0 and down weight to 3 when (A1 < A2 AND A2 < A3 AND A0 > 0 AND A0 < A1) OR (A0 < A1 AND A1 < A2 AND A0 < 0). Set both weights to 0 when ((A1 < A2 OR A2 < A3) AND A0 < 0 AND A0 > A1) OR (A0 > A1 AND A1 < A2 AND A0 > 0) OR ((A1 > A2 OR A2 > A3) AND A0 > 0 AND A0 < A1) OR (A0 < A1 AND A1 > A2 AND A0 < 0). Otherwise retain the previous weights, initialized to 0.
+Long: Up score > 4 on each of the three timeframes.
+Short: Down score > 4 on each of the three timeframes.
+Exit: long, down score > 4 on each of the three timeframes.
+Exit: short, up score > 4 on each of the three timeframes.
+Exit: long, low <= entry price minus enabled stop-loss distance OR high >= entry price plus enabled take-profit distance.
+Exit: short, high >= entry price plus enabled stop-loss distance OR low <= entry price minus enabled take-profit distance.
+Exit: long, enabled trailing stop has been activated by price reaching entry price plus trailing distance AND price <= the highest price since entry minus trailing distance.
+Exit: short, enabled trailing stop has been activated by price reaching entry price minus trailing distance AND price >= the lowest price since entry plus trailing distance.

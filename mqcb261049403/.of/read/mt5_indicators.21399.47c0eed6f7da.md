@@ -1,0 +1,5 @@
+Calculation: Selected price = a configurable OHLC-derived price or its Heikin-Ashi equivalent; trend-biased price is (high + close)/2 when close > open and (low + close)/2 otherwise; extreme trend-biased price is high when close > open, low when close < open, and close otherwise.
+Calculation: Directional measures = on the chart timeframe or the still-forming higher-timeframe bar, calculate the selected price change; Wilder-smooth its positive part and the absolute value of its negative part with the same period. Divide each smoothed part by their sum, using zero for both ratios when the sum is zero. Wilder-smooth each ratio with the same period, initializing both smoothed ratios to zero.
+Calculation: Trend state = initially neutral; set to long when the smoothed positive ratio > 0.5, otherwise set to short when the smoothed negative ratio > 0.5, otherwise retain the previous state.
+Long: Trend state = long
+Short: Trend state = short OR (trend state = neutral AND the calculation timeframe is past its first bar)

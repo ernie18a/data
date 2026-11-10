@@ -1,0 +1,3 @@
+Calculation: Trend trigger = Jurik moving average of 200 × (buy power − sell power) / (buy power + sell power), where buy power is the highest high over the current lookback window minus the lowest low over the immediately preceding, equally long window, and sell power is the highest high over the preceding window minus the lowest low over the current window.
+Long: Chart-timeframe trend trigger > upper trigger level OR trend trigger calculated on the still-forming higher-timeframe bar > upper trigger level.
+Short: Chart-timeframe trend trigger < lower trigger level OR trend trigger calculated on the still-forming higher-timeframe bar < lower trigger level.

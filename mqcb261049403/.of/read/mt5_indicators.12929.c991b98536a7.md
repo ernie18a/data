@@ -1,0 +1,5 @@
+Calculation: Applied price = a selected open, high, low, close, (high + low)/2, (high + low + close)/3, (high + low + 2 × close)/4, (open + close)/2, or (open + high + low + close)/4; alternatively, select high if close > open, low if close < open, otherwise close; or (high + close)/2 if close > open, (low + close)/2 if close < open, otherwise close; or (high + low + close + X)/2 - (high + low)/2, where X is low if close < open, high if close > open, otherwise close.
+Calculation: Bezier = sum for i from 0 through lookback of applied price i bars ago × binomial coefficient(lookback, i) × sensitivity^i × (1 - sensitivity)^(lookback - i), with sensitivity constrained to [0, 1]. For the higher-timeframe version, use the higher-timeframe bar still forming at the first chart bar of each higher-timeframe bar and hold its Bezier value and direction until the next higher-timeframe bar.
+Long: Bezier on the current bar >= Bezier on the previous bar.
+Short: Bezier on the current bar < Bezier on the previous bar.
+Short: Higher-timeframe Bezier direction on the selected chart signal bar indicates Bezier >= its previous higher-timeframe value.

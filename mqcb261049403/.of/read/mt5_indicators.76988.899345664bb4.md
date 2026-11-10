@@ -1,0 +1,14 @@
+Calculation: Signal bars = bars on the configurable signal timeframe, which may be the chart timeframe or higher or lower than it; use the last completed signal bar and its preceding completed bars.
+Calculation: Confirmation bars = bars on a timeframe higher than the signal timeframe, which may be higher or lower than or equal to the chart timeframe; use the last completed confirmation bar.
+Long: Signal fast EMA > signal slow EMA AND signal close > signal long-term filter EMA AND signal ATR > 0.
+Short: Signal fast EMA < signal slow EMA AND signal close < signal long-term filter EMA AND signal ATR > 0.
+Long: Signal fast EMA > its value on the preceding signal bar AND signal ATR > 0.
+Short: Signal fast EMA < its value on the preceding signal bar AND signal ATR > 0.
+Long: Confirmation fast EMA > confirmation slow EMA AND confirmation close > confirmation fast EMA AND signal ATR > 0.
+Short: Confirmation fast EMA < confirmation slow EMA AND confirmation close < confirmation fast EMA AND signal ATR > 0.
+Long: Signal close > highest signal high over a lookback ending at the preceding signal bar AND signal ATR > 0.
+Short: Signal close < lowest signal low over a lookback ending at the preceding signal bar AND signal ATR > 0.
+Long: Signal fast EMA > signal slow EMA AND signal close > signal long-term filter EMA AND signal fast EMA > its value on the preceding signal bar AND confirmation fast EMA > confirmation slow EMA AND confirmation close > confirmation fast EMA AND signal ADX >= minimum ADX AND signal +DI > signal -DI AND signal ATR > 0.
+Short: Signal fast EMA < signal slow EMA AND signal close < signal long-term filter EMA AND signal fast EMA < its value on the preceding signal bar AND confirmation fast EMA < confirmation slow EMA AND confirmation close < confirmation fast EMA AND signal ADX >= minimum ADX AND signal -DI > signal +DI AND signal ATR > 0.
+Long: Signal fast EMA > signal slow EMA AND signal close > signal long-term filter EMA AND signal fast EMA > its value on the preceding signal bar AND confirmation fast EMA > confirmation slow EMA AND confirmation close > confirmation fast EMA AND signal ADX >= minimum ADX AND signal +DI > signal -DI AND signal ATR > 0 AND signal close > highest signal high over a lookback ending at the preceding signal bar AND absolute value of signal close minus signal open / signal ATR >= minimum body-to-ATR ratio.
+Short: Signal fast EMA < signal slow EMA AND signal close < signal long-term filter EMA AND signal fast EMA < its value on the preceding signal bar AND confirmation fast EMA < confirmation slow EMA AND confirmation close < confirmation fast EMA AND signal ADX >= minimum ADX AND signal -DI > signal +DI AND signal ATR > 0 AND signal close < lowest signal low over a lookback ending at the preceding signal bar AND absolute value of signal close minus signal open / signal ATR >= minimum body-to-ATR ratio.

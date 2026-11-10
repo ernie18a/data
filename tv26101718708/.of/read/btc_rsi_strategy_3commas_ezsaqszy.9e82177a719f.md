@@ -1,0 +1,3 @@
+Long: Position side = flat AND (date filter disabled OR bar time within the configured date window) AND RSI of close < oversold threshold; for a higher RSI timeframe use the last completed bar, for a lower RSI timeframe use the last completed lower-timeframe bar within the chart bar, and for the chart timeframe use the current bar.
+Long: Position side = long AND (date filter disabled OR bar time within the configured date window) AND filled averaging orders < five AND close <= base entry price × (1 − deviation of the next averaging order); averaging orders fill once each, in sequence, with one order at most per chart bar and independently configured deviations from the original base entry price.
+Exit: long, close >= average entry price × (1 + take-profit percentage).

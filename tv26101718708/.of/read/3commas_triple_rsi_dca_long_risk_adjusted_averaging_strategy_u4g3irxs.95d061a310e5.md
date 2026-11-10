@@ -1,0 +1,10 @@
+Calculation: Entry RSI = RSI of closes on the last completed higher-timeframe bar, sampled on each chart bar; its lookback is longer than the second safety RSI lookback.
+Calculation: First safety RSI = RSI of closes on the last completed higher-timeframe bar, sampled on each chart bar; its timeframe is higher than the entry RSI timeframe and its lookback equals the entry RSI lookback.
+Calculation: Second safety RSI = RSI of closes on the last completed higher-timeframe bar, sampled on each chart bar; its timeframe is lower than the entry RSI timeframe and its lookback is shorter.
+Calculation: Safety-order signal = first safety RSI crosses above its threshold OR second safety RSI crosses above its threshold; if the safety RSI requirement is disabled, the signal is always true.
+Calculation: Next safety-order price = base entry price × (1 − initial deviation × sum of step-scale powers from zero through the number of safety orders already placed). The base entry price is the close on the base-entry decision bar.
+Calculation: Average entry price = cumulative order notional divided by cumulative quantity. The base order quantity is its notional divided by the base entry price. Each successive safety-order notional equals the preceding safety-order notional multiplied by a volume scale; its quantity is its notional divided by the lesser of the decision bar's open and the next safety-order price.
+Long: Position is flat AND no base entry price is recorded AND (entry RSI crosses above its threshold OR the entry RSI requirement is disabled) AND (date filter is disabled OR bar datetime is within the inclusive date window).
+Long: Position is long AND safety-order signal is true AND (date filter is disabled OR bar datetime is within the inclusive date window).
+Long: Position is long AND safety orders placed are fewer than the maximum AND low ≤ next safety-order price AND safety-order signal is true AND (date filter is disabled OR bar datetime is within the inclusive date window).
+Exit: long, high ≥ average entry price × (1 + take-profit fraction) AND (date filter is disabled OR bar datetime is within the inclusive date window).

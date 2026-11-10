@@ -1,0 +1,10 @@
+Calculation: Rolling normalization of a series = 100 × (current value − rolling minimum) / (rolling maximum − rolling minimum); when the range is zero, use the previous value of the input series, or zero if unavailable.
+Calculation: Exponential smoothing of a series = previous smoothed value + smoothing factor × (current value − previous smoothed value), initialized with the first available input.
+Calculation: Transformed indicator = rolling-normalize the input, exponentially smooth it, rolling-normalize the result over the same lookback, exponentially smooth it with the same factor, then subtract 50 and multiply by 2.
+Calculation: Sharpe input = (mean close-to-close fractional return over the Sharpe lookback − annual risk-free rate / 252) / (population standard deviation of those returns + 0.0001).
+Calculation: Weighted score = weighted average of three transformed indicators: RSI of close minus 50, smoothed with a selectable moving average and clipped symmetrically; rate of change of close, smoothed with a separately selectable moving average and clipped symmetrically; and Sharpe input, clipped symmetrically. Use the same normalization lookback and exponential smoothing factor for all three.
+Calculation: Buy and sell cycle states = initially false; on each bar, in order: if score ≤ lower threshold and sell cycle is false, set buy cycle true and sell cycle false; if score ≥ upper threshold and buy cycle is false, set sell cycle true and buy cycle false; if score > lower threshold, set buy cycle false; if score < upper threshold, set sell cycle false. Evaluate each signal against the cycle states at its corresponding step.
+Long: Weighted score ≤ lower threshold
+Long: Weighted score ≤ lower threshold AND sell cycle is false
+Exit: long, weighted score ≥ upper threshold
+Exit: long, weighted score ≥ upper threshold AND buy cycle is false

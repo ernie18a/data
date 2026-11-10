@@ -1,0 +1,8 @@
+On each confirmed bar, signal a high-conviction long when all of these conditions hold:
+- The instrument is sufficiently below its rolling highest close, within either of two eligible drawdown bands, and meets the minimum rolling average dollar-volume requirement.
+- The number of recent bars making a new rolling low is within the base-maturity limit.
+- A spring occurs: price undercuts an aged rolling support low and reclaims it on the current bar, the prior bar, or within a recent reclaim window. For a delayed reclaim, a recent close must also have been below support. The reclaim bar closes above its open and in the upper portion of its range.
+- The close is near the rolling structural low and the drawdown is in the shallower eligible band.
+- Relative strength against a benchmark is disproportionately high compared with the instrument's position in its own recent high-low range, while the instrument is near the lower end of that range. Relative strength is the instrument's close divided by the benchmark's close; normalize both relative strength and price within their respective rolling ranges before comparing them.
+- The close is in the lower portion of a separate recent high-low range.
+- The required cooldown has elapsed since any qualifying spring entry, including entries that did not meet the benchmark or high-conviction conditions. Reset the cooldown whenever such a spring entry occurs.

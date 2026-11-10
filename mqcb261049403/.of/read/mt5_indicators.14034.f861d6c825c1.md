@@ -1,0 +1,2 @@
+Long: For any configured MFI, the MFI of the last completed bar on its configured timeframe, which may be the chart timeframe or a higher or lower timeframe, is greater than its upper threshold.
+Short: For any configured MFI, the MFI of the last completed bar on its configured timeframe, which may be the chart timeframe or a higher or lower timeframe, is less than its lower threshold.

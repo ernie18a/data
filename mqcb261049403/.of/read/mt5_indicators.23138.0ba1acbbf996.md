@@ -1,0 +1,3 @@
+Long: Spearman rank correlation on the shorter timeframe > Spearman rank correlation on the longer timeframe
+Short: Spearman rank correlation on the shorter timeframe < Spearman rank correlation on the longer timeframe
+Calculation: Spearman rank correlation on each timeframe = Spearman rank correlation of price with bar order over the same lookback, using the same selectable rank direction. The shorter timeframe is the chart timeframe or a higher timeframe; the longer timeframe is higher than the shorter timeframe. For each timeframe, sample the still-forming bar's value at the start of each new timeframe bar and hold it until the next timeframe bar.

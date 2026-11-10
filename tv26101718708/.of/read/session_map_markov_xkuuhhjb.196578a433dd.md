@@ -1,0 +1,8 @@
+Calculation: Session range high and low = Maximum high and minimum low of chart bars whose opening timestamps are within a configurable duration after the first regular-session bar; reset at each regular-session start. Opening range and initial balance use independently configurable durations. The range is complete on the first regular-session bar whose opening timestamp is outside its duration.
+Calculation: Anchored VWAP and standard deviation = From the selected regular-session open, overnight-session open, or daily open, accumulate typical price (high + low + close) / 3 with weight equal to volume when volume is positive, otherwise 1. VWAP is the weighted mean; standard deviation is the square root of max(0, weighted mean of squared typical price minus VWAP squared). Include the current bar.
+Long: Regular session AND opening range complete AND close > opening range high AND no earlier close > opening range high after the opening range completed in this session.
+Long: Regular session AND initial balance complete AND close > initial balance high AND no earlier close > initial balance high after the initial balance completed in this session.
+Long: Anchored VWAP standard deviation > 0 AND low <= anchored VWAP - band multiplier * anchored VWAP standard deviation.
+Short: Regular session AND opening range complete AND close < opening range low AND no earlier close < opening range low after the opening range completed in this session.
+Short: Regular session AND initial balance complete AND close < initial balance low AND no earlier close < initial balance low after the initial balance completed in this session.
+Short: Anchored VWAP standard deviation > 0 AND high >= anchored VWAP + band multiplier * anchored VWAP standard deviation.

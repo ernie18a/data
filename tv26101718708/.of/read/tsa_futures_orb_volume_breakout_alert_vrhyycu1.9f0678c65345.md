@@ -1,0 +1,8 @@
+Calculation: Opening range high and low = highest high and lowest low of chart bars whose opening times fall within the configured opening-range window of the configured session; reset at the start of each trading session and lock when the opening-range window ends.
+Calculation: Breakout state = neutral at the start of each trading session or when a chart bar closes within the locked opening range, inclusive; set to long after a long volume breakout and short after a short volume breakout.
+Long: Current chart bar is complete AND low > high two chart bars earlier.
+Short: Current chart bar is complete AND high < low two chart bars earlier.
+Long: Current chart bar is complete AND its opening time is within the configured trading session AND the opening range is locked AND close > opening range high AND volume >= a configurable multiplier times the simple moving average of volume over preceding chart bars, excluding the current bar AND that average > 0 AND breakout state before this decision is not long.
+Short: Current chart bar is complete AND its opening time is within the configured trading session AND the opening range is locked AND close < opening range low AND volume >= a configurable multiplier times the simple moving average of volume over preceding chart bars, excluding the current bar AND that average > 0 AND breakout state before this decision is not short.
+Long: Chart close >= open of a higher-timeframe bar, using the last completed higher-timeframe bar and the newly completed higher-timeframe bar on its closing chart bar.
+Short: Chart close < open of a higher-timeframe bar, using the last completed higher-timeframe bar and the newly completed higher-timeframe bar on its closing chart bar.

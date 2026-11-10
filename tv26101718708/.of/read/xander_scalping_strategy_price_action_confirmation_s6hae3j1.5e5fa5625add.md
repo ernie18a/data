@@ -1,0 +1,5 @@
+Calculation: Stochastic RSI K = SMA of 100 × (RSI of close − lowest RSI) / (highest RSI − lowest RSI), using a stochastic lookback and a K smoothing length; D = SMA of K using a D smoothing length.
+Calculation: Latest swing high or low = the most recent pivot high or pivot low confirmed using equal numbers of bars to its left and right.
+Calculation: Tolerance = close × a tolerance parameter.
+Long: Shorter-period EMA of close > longer-period EMA of close AND ((low <= shorter-period EMA AND high >= longer-period EMA) OR (low <= latest swing low + tolerance AND low >= latest swing low − tolerance)) AND K < oversold threshold AND D < oversold threshold AND K > D AND previous K <= previous D AND volume > SMA of volume.
+Short: Shorter-period EMA of close < longer-period EMA of close AND ((low <= shorter-period EMA AND high >= longer-period EMA) OR (high >= latest swing high − tolerance AND high <= latest swing high + tolerance)) AND K > overbought threshold AND D > overbought threshold AND K < D AND previous K >= previous D AND volume > SMA of volume.

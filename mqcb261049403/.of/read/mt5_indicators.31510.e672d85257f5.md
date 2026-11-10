@@ -1,0 +1,2 @@
+Long: Current chart bar open < EMA of chart bar median price (high + low) / 2, including the current bar
+Short: Current chart bar open > EMA of chart bar median price (high + low) / 2, including the current bar

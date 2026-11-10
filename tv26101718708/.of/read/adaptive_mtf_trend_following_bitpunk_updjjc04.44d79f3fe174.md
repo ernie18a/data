@@ -1,0 +1,6 @@
+Calculation: Envelope = EMA of close plus or minus width, where safe ATR is the greater of ATR and a positive price floor; adaptive ATR starts at safe ATR and subsequently equals safe ATR + decay factor × max(previous adaptive ATR − safe ATR, 0), with decay factor determined by a half-life parameter; width is the smaller of adaptive ATR × a multiplier and max(abs(close), price floor) × a price-cap fraction.
+Calculation: Trend direction = initially neutral; on a completed bar, set bullish when close crosses above the upper envelope, set bearish when close crosses below the lower envelope, and otherwise retain the previous direction. A cross above requires current close > current upper envelope AND previous close <= previous upper envelope; a cross below requires current close < current lower envelope AND previous close >= previous lower envelope. Calculate independently for each timeframe; use the last completed bar for a higher timeframe and the latest completed intrabar for a lower timeframe.
+Long: Close > EMA of close.
+Short: Close < EMA of close.
+Long: Trend direction = bullish on the chart timeframe OR a higher timeframe OR a lower timeframe.
+Short: Trend direction = bearish on the chart timeframe OR a higher timeframe OR a lower timeframe.

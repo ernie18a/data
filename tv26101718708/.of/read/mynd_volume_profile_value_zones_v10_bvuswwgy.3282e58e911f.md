@@ -1,0 +1,7 @@
+Calculation: Rolling value area = On each chart bar, divide the range from the lowest low to the highest high over a configurable rolling lookback including the current bar into a configurable number of equal price bins. Assign each available bar's entire volume to the bin containing a configurable price source: close, HLC3, or OHLC4; clamp the bin index to the valid range. If the range is zero, assign all volume to the lowest bin. Start the value area at the highest-volume bin, choosing the lowest bin on a tie. Expand one adjacent bin at a time toward the side with greater volume, choosing the lower side on a tie, until the area contains a configurable fraction of total profile volume or no bins remain. Value area low is the lower edge of the lowest included bin; value area high is the upper edge of the highest included bin. Recalculate on every bar.
+Long: Close > value area high
+Long: Close > value area high AND previous close <= previous value area high AND volume >= simple moving average of volume including the current bar multiplied by a configurable factor
+Long: Close > value area low AND previous close <= previous value area low
+Short: Close < value area low
+Short: Close < value area low AND previous close >= previous value area low AND volume >= simple moving average of volume including the current bar multiplied by a configurable factor
+Short: Close < value area high AND previous close >= previous value area high

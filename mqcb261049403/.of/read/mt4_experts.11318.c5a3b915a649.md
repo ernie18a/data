@@ -1,0 +1,4 @@
+Long: ADX on the forming bar of a configurable timeframe, which may be higher or lower than the chart timeframe, > threshold AND +DI on that bar > -DI on that bar AND +DI on the second completed bar of that timeframe < -DI on the second completed bar of that timeframe
+Short: ADX on the forming bar of a configurable timeframe, which may be higher or lower than the chart timeframe, > threshold AND +DI on that bar < -DI on that bar AND +DI on the second completed bar of that timeframe > -DI on the second completed bar of that timeframe
+Exit: long, +DI on the forming bar of a configurable timeframe, which may be higher or lower than the chart timeframe, < -DI on that bar
+Exit: short, +DI on the forming bar of a configurable timeframe, which may be higher or lower than the chart timeframe, > -DI on that bar

@@ -1,0 +1,6 @@
+Long: The shorter-lookback SMA of close crosses above the longer-lookback SMA of close on the last completed higher-timeframe bar AND that higher-timeframe bar has not previously produced an event.
+Short: The shorter-lookback SMA of close crosses below the longer-lookback SMA of close on the last completed higher-timeframe bar AND that higher-timeframe bar has not previously produced an event.
+Long: The shorter-lookback SMA of close is greater than or equal to the longer-lookback SMA of close on the last completed higher-timeframe bar.
+Short: The shorter-lookback SMA of close is less than the longer-lookback SMA of close on the last completed higher-timeframe bar.
+Long: The chart close or, alternatively, the close of the last completed higher-timeframe bar is greater than or equal to the longer-lookback SMA of close on the last completed higher-timeframe bar.
+Short: The chart close or, alternatively, the close of the last completed higher-timeframe bar is less than the longer-lookback SMA of close on the last completed higher-timeframe bar.

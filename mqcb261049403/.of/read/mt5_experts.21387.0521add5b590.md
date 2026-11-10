@@ -1,0 +1,6 @@
+Calculation: EMA slope = EMA of opens on a fixed timeframe, using its still-forming bar, minus the EMA on its last completed bar; that timeframe may be higher than, equal to, or lower than the chart timeframe.
+Calculation: Jump filter = every absolute difference between consecutive chart-bar opens among the current and preceding five bars is less than the single-jump threshold AND every absolute difference between chart-bar opens two bars apart among those same bars is less than the double-jump threshold.
+Long: Position side is not long AND EMA slope >= minimum slope AND EMA slope <= maximum slope AND minute of the hour > entry minute threshold AND current chart-bar close <= open AND current chart-bar close <= low + entry allowance AND jump filter.
+Short: Position side is not short AND EMA slope <= -minimum slope AND EMA slope >= -maximum slope AND minute of the hour > entry minute threshold AND current chart-bar close >= open AND current chart-bar close >= high - entry allowance AND jump filter.
+Exit: long, previous chart-bar volume <= volume threshold.
+Exit: short, previous chart-bar volume <= volume threshold.

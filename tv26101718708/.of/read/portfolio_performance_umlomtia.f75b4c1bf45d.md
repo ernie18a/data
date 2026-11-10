@@ -1,0 +1,1 @@
+Long: The current bar is the first eligible bar after the first chart bar with a defined close and datetime at or after the configured start date AND (the configured start date is after the configured end date OR datetime is at or before the configured end date) AND the portfolio allocation weight is greater than zero.

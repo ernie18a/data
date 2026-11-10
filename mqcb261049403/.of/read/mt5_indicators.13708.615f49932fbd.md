@@ -1,0 +1,3 @@
+Calculation: Gaussian average = sum over a lookback of selected price at each lag multiplied by exp(A * lag^N), divided by the sum of those weights; cap N at 5 when its absolute value exceeds 5. Selected price may be open, high, low, close, (high + low)/2, (high + low + close)/3, (high + low + 2*close)/4, (open + close)/2, (open + high + low + close)/4, high if close > open else low if close < open else close, or (high + close)/2 if close > open else (low + close)/2 if close < open else close. Calculate on the chart timeframe or on the still-forming bar of a higher timeframe.
+Long: Gaussian average > Gaussian average on the preceding bar of its calculation timeframe.
+Short: Gaussian average < Gaussian average on the preceding bar of its calculation timeframe.

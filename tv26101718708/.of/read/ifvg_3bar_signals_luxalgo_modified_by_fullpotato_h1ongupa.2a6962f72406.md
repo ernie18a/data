@@ -1,0 +1,7 @@
+Calculation: Active LVN zone = a manually specified lower and upper price bound, with at least one bound nonzero.
+Calculation: Long signal anchor = (low[3] + high[1]) / 2 on the most recent long-signal bar; save ATR on that bar.
+Calculation: Short signal anchor = (low[1] + high[3]) / 2 on the most recent short-signal bar; save ATR on that bar.
+Long: low[3] > high[1] AND close[2] < low[3] AND close > low[3] AND low[3] - high[1] > ATR × width multiplier AND volume >= volume[1] × volume multiplier AND (LVN filter disabled OR any active LVN zone has high[1] >= its lower bound AND low[1] <= its upper bound).
+Short: low[1] > high[3] AND close[2] > high[3] AND close < high[3] AND low[1] - high[3] > ATR × width multiplier AND volume >= volume[1] × volume multiplier AND (LVN filter disabled OR any active LVN zone has high[1] >= its lower bound AND low[1] <= its upper bound).
+Exit: long, high > long signal anchor + saved long-signal ATR × take-profit multiplier OR low < long signal anchor - saved long-signal ATR × stop-loss multiplier.
+Exit: short, low < short signal anchor - saved short-signal ATR × take-profit multiplier OR high > short signal anchor + saved short-signal ATR × stop-loss multiplier.

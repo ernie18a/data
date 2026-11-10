@@ -1,0 +1,8 @@
+Calculation: Confirmed swing high = previous bar's high when that high equals the highest high over the lookback ending on the previous bar AND the current high is below the highest high over the same lookback ending on the current bar. Confirmed swing low = previous bar's low when that low equals the lowest low over the lookback ending on the previous bar AND the current low is above the lowest low over the same lookback ending on the current bar. Use the same lookback for both.
+Calculation: Structure state = initially neutral, with last swing high, last swing low, last bullish break level, and last bearish break level undefined. On each bar, process a confirmed swing high first: if state is bearish and its price exceeds the previous swing high, set state to bullish; then store the new swing high. Process a confirmed swing low next: if state is bullish and its price is below the previous swing low, set state to bearish; then store the new swing low. Finally, process bullish and bearish break conditions in that order; on a bullish break store the current swing high as the last bullish break level and set state to bullish; on a bearish break store the current swing low as the last bearish break level and set state to bearish. A comparison with an undefined level is false.
+Long: Confirmed swing high > previous swing high.
+Long: Confirmed swing low > previous swing low.
+Long: Close > last swing high AND last swing high != last bullish break level AND structure state = bearish.
+Short: Confirmed swing high <= previous swing high.
+Short: Confirmed swing low <= previous swing low.
+Short: Close < last swing low AND last swing low != last bearish break level AND structure state = bullish.

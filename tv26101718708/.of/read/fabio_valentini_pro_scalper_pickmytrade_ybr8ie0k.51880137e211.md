@@ -1,0 +1,21 @@
+Calculation: Buying volume = volume if close > open; volume / 2 if close = open; otherwise volume × (high − close) / (high − low + a small positive constant).
+Calculation: Smoothed delta = SMA of (2 × buying volume − volume).
+Calculation: Absorption = volume > volume SMA × volume multiplier AND absolute(close − open) / ATR < movement threshold.
+Calculation: Range = highest high over a short lookback − lowest low over the same lookback; average range = SMA of range over a longer lookback.
+Calculation: Contraction = range < average range × contraction multiplier; expansion = range > average range × expansion multiplier AND volume > volume SMA × expansion multiplier.
+Calculation: Triple-A long = bullish absorption on any of a specified set of earlier bars AND contraction on the preceding bar AND expansion AND close > open AND smoothed delta > 0. Triple-A short = bearish absorption on any of the same earlier bars AND contraction on the preceding bar AND expansion AND close < open AND smoothed delta < 0.
+Calculation: Opening range = highest high and lowest low from the first session bar through the bar whose zero-based session-bar count equals the opening-range duration divided by chart-bar duration. Reset at each session start; the range is defined only if that count is an integer and the corresponding bar is reached.
+Calculation: Value area = divide the rolling highest-high to lowest-low range into equal rows; assign each lookback bar's volume to the row containing its close, excluding closes outside the rows. Start at the first row with the greatest volume and expand one adjacent row at a time toward the greater adjacent volume, preferring the upper row on ties, until the specified fraction of assigned volume is included or expansion stops. Value-area low is the bottom of the lowest included row; value-area high is the top of the highest included row.
+Calculation: Session loss count = number of closed losing trades since the latest session start, reset at each session start.
+Calculation: Long stop = entry-signal low − entry-signal ATR; long target = entry-signal close + (entry-signal close − long stop) × reward-to-risk ratio. Short stop = entry-signal high + entry-signal ATR; short target = entry-signal close − (short stop − entry-signal close) × reward-to-risk ratio.
+Calculation: Trailing stop = after price moves favorably from the actual entry price by an entry-signal ATR multiple, trail the highest high since activation for a long or the lowest low since activation for a short by a specified entry-signal ATR multiple. When enabled, use the first triggered exit among the fixed stop, target, and trailing stop.
+Long: Absorption AND close > open.
+Short: Absorption AND close < open.
+Long: Triple-A long.
+Short: Triple-A short.
+Long: Smoothed delta > 0 AND smoothed delta > preceding smoothed delta.
+Short: Smoothed delta < 0 AND smoothed delta < preceding smoothed delta.
+Long: (Triple-A long OR opening-range breakouts enabled AND opening range defined AND close > opening-range high AND preceding close <= current opening-range high OR low within a specified relative tolerance of value-area low AND absorption AND close > open AND smoothed delta > 0 AND smoothed delta > preceding smoothed delta) AND (VWAP filter disabled OR close > session VWAP of typical price − ATR × band multiplier) AND (session filter disabled OR bar in session) AND session loss count < loss limit AND position flat.
+Short: (Triple-A short OR opening-range breakouts enabled AND opening range defined AND close < opening-range low AND preceding close >= current opening-range low OR high within a specified relative tolerance of value-area high AND absorption AND close < open AND smoothed delta < 0 AND smoothed delta < preceding smoothed delta) AND (VWAP filter disabled OR close < session VWAP of typical price + ATR × band multiplier) AND (session filter disabled OR bar in session) AND session loss count < loss limit AND position flat.
+Exit: long, low <= long stop OR high >= long target OR trailing stop enabled AND trailing stop activated AND low <= long trailing stop.
+Exit: short, high >= short stop OR low <= short target OR trailing stop enabled AND trailing stop activated AND high >= short trailing stop.

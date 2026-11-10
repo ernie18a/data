@@ -1,0 +1,3 @@
+Calculation: Deviation = close minus a configurable moving average of a configurable price source, optionally divided by that moving average and multiplied by 100; the moving average type is configurable among SMA, EMA, WMA, VWMA, and HMA.
+Long: Deviation at the candidate bar is less than or equal to every deviation in the preceding lookback AND less than every deviation in the following lookback; evaluate when the following lookback is complete, using equal preceding and following lookbacks.
+Short: Deviation at the candidate bar is greater than or equal to every deviation in the preceding lookback AND greater than every deviation in the following lookback; evaluate when the following lookback is complete, using equal preceding and following lookbacks.

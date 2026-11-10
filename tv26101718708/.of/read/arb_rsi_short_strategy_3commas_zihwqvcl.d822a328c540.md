@@ -1,0 +1,4 @@
+Calculation: Averaging deviation for order k = first deviation multiplied by the sum of the deviation-step multiplier raised to each integer power from 0 through k − 1.
+Short: Position is flat AND datetime is within the configured backtest window, if enabled, AND RSI of the last completed higher-timeframe bar is below the trigger level AND RSI of the preceding higher-timeframe bar is at or above the trigger level.
+Short: Position is short AND datetime is within the configured backtest window, if enabled, AND the number of averaging orders already submitted is less than the configured maximum AND close is at or above the initial entry price multiplied by one plus the averaging deviation for the next order.
+Exit: short, close is at or below the average entry price multiplied by one minus the take-profit percentage.

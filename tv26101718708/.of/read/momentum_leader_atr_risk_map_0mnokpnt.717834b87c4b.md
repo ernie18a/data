@@ -1,0 +1,3 @@
+Calculation: ATR extension = (chart close - anchor-timeframe SMA of close) / anchor-timeframe ATR; use the last completed anchor bar or the forming anchor bar, with the anchor timeframe higher or lower than the chart timeframe. Require ATR > 0.
+Long: ATR extension <= add-zone threshold AND ATR extension > deep-pullback threshold.
+Exit: long, ATR extension >= profit-zone threshold AND ATR extension < extreme-zone threshold.

@@ -1,0 +1,18 @@
+Calculation: Efficiency ratio = absolute change in the input over a lookback divided by the sum of absolute bar-to-bar changes over that lookback; use zero when the denominator is zero.
+Calculation: Adaptive KAMA = recursively update the previous KAMA toward close using the square of (EMA-smoothed close efficiency ratio × (fast smoothing constant − slow smoothing constant) + slow smoothing constant); each smoothing constant is 2 / (its length + 1), with the fast length shorter than the slow length; initialize KAMA to close.
+Calculation: Session VWAP = cumulative sum of typical price × volume divided by cumulative volume since the start of the session; undefined outside the session or when cumulative volume is zero.
+Calculation: VWAP slope strength = session VWAP change over a lookback divided by ATR, or zero when ATR is not positive. Its threshold is the greater of a fixed minimum and a multiple of the rolling standard deviation of VWAP slope strength; the standard deviation is available only after the session bar count exceeds its lookback.
+Calculation: Candle pressure = (2 × close − high − low) / (high − low), or zero when the range is zero or below the minimum range threshold.
+Calculation: Candle score = direction × (close-zone score + body score), where direction is 1 if close > open, −1 if close < open, otherwise 0; close-zone score is 2 for a bullish candle closing in the upper third or a bearish candle closing in the lower third, 1 for either closing in the middle third, otherwise 0; body score is 2 when absolute body divided by range is at least the upper body threshold, 1 when at least the lower body threshold, otherwise 0, and is zero for zero range.
+Calculation: Two-candle momentum score = (current candle score + previous candle score + 2 × current candle direction if current close is outside the previous high–low range, otherwise current candle score + previous candle score) × min(current range / ATR, 2); use a range weight of 1 when ATR is unavailable or not positive.
+Calculation: Adaptive momentum = linear-regression slope of the two-candle momentum score over a lookback × its efficiency ratio over the same lookback; use zero for an unavailable efficiency ratio.
+Long: Adaptive KAMA > previous adaptive KAMA AND EMA-smoothed close efficiency ratio > threshold.
+Short: Adaptive KAMA < previous adaptive KAMA AND EMA-smoothed close efficiency ratio > threshold.
+Long: In session AND close > session VWAP AND ((session bar count < VWAP efficiency lookback + smoothing length AND session bar count >= early-session minimum AND candle pressure > early-session threshold) OR (session bar count >= VWAP efficiency lookback + smoothing length AND session bar count > VWAP slope standard-deviation lookback AND VWAP slope strength > its threshold AND EMA-smoothed session VWAP efficiency ratio > threshold)).
+Short: In session AND close < session VWAP AND ((session bar count < VWAP efficiency lookback + smoothing length AND session bar count >= early-session minimum AND candle pressure < negative early-session threshold) OR (session bar count >= VWAP efficiency lookback + smoothing length AND session bar count > VWAP slope standard-deviation lookback AND VWAP slope strength < negative of its threshold AND EMA-smoothed session VWAP efficiency ratio > threshold)).
+Long: Rounded normalized candle pressure, 100 × (candle pressure + 1) / 2, >= upper threshold.
+Short: Rounded normalized candle pressure, 100 × (candle pressure + 1) / 2, <= lower threshold.
+Long: Adaptive momentum > 0.
+Short: Adaptive momentum < 0.
+Long: Adaptive KAMA > session VWAP.
+Short: Adaptive KAMA <= session VWAP.

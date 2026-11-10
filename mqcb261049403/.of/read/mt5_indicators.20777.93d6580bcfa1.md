@@ -1,0 +1,7 @@
+Calculation: Source price = a selected price series: open, high, low, close, (high + low)/2, (high + low + close)/3, (high + low + 2 × close)/4, (open + close)/2, (open + high + low + close)/4, high if close > open and low if close < open and close otherwise, (high + close)/2 if close > open and (low + close)/2 if close < open and close otherwise, or (2 × close + 2 × D − high − low)/4 where D is low if close < open, high if close > open, and close otherwise.
+Calculation: Double linear weighted moving average = a linear weighted moving average of a linear weighted moving average of source price, both using the same length and the largest weight on the newest bar.
+Calculation: Higher-timeframe direction = the sign of the change in the double linear weighted moving average on the higher timeframe, using its still-forming bar at the first chart bar of each higher-timeframe bar and holding that direction until the next higher-timeframe bar.
+Long: Double linear weighted moving average > its previous bar's value.
+Short: Double linear weighted moving average < its previous bar's value.
+Long: Higher-timeframe direction > 0 AND its previous chart-bar value <= 0.
+Short: Higher-timeframe direction < 0 AND its previous chart-bar value >= 0.

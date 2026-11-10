@@ -1,0 +1,21 @@
+Calculation: Upper structure level = highest high over a lookback ending at the previous bar.
+Calculation: Lower structure level = lowest low over a lookback ending at the previous bar.
+Calculation: Bullish structure break = close > upper structure level AND previous close <= current upper structure level.
+Calculation: Bearish structure break = close < lower structure level AND previous close >= current lower structure level.
+Calculation: Bullish aggressive signal = (short EMA > medium EMA OR close > short EMA) AND RSI > RSI midline plus an offset AND bullish structure break AND session filter passes AND bars since the last bullish aggressive or continuation signal >= cooldown.
+Calculation: Bearish aggressive signal = (short EMA < medium EMA OR close < short EMA) AND RSI < RSI midline minus an offset AND bearish structure break AND session filter passes AND bars since the last bearish aggressive or continuation signal >= cooldown.
+Calculation: Zone candle body average = simple moving average of absolute close minus open on the zone timeframe. The zone timeframe can be higher or lower than the chart timeframe; use the last completed higher-timeframe bar or the last available lower-timeframe bar within the chart bar.
+Calculation: Long risk = close of the most recent bullish aggressive signal minus the lower of that signal bar's low and its preceding bar's low, multiplied by one minus a stop buffer. Replace this risk when either aggressive signal occurs.
+Calculation: Short risk = the higher of the most recent bearish aggressive signal bar's high and its preceding bar's high, multiplied by one plus a stop buffer, minus that signal bar's close. Replace this risk when either aggressive signal occurs.
+Calculation: Long target = close of the most recent bullish aggressive signal plus long risk multiplied by a profit-target multiplier; use each of three ordered multipliers.
+Calculation: Short target = close of the most recent bearish aggressive signal minus short risk multiplied by a profit-target multiplier; use each of three ordered multipliers.
+Long: Bullish aggressive signal.
+Long: Short EMA > medium EMA AND medium EMA > long EMA AND RSI > RSI midline AND bars since the most recent bullish structure break <= signal window AND session filter passes AND bars since the last bullish aggressive or continuation signal >= cooldown AND no previous bullish aggressive signal exists OR short EMA > medium EMA AND medium EMA > long EMA AND RSI > RSI midline AND bars since the most recent bullish structure break <= signal window AND session filter passes AND bars since the last bullish aggressive or continuation signal >= cooldown AND bars since the last bullish aggressive signal > continuation delay.
+Short: Bearish aggressive signal.
+Short: Short EMA < medium EMA AND medium EMA < long EMA AND RSI < RSI midline AND bars since the most recent bearish structure break <= signal window AND session filter passes AND bars since the last bearish aggressive or continuation signal >= cooldown AND no previous bearish aggressive signal exists OR short EMA < medium EMA AND medium EMA < long EMA AND RSI < RSI midline AND bars since the most recent bearish structure break <= signal window AND session filter passes AND bars since the last bearish aggressive signal or continuation signal >= cooldown AND bars since the last bearish aggressive signal > continuation delay.
+Long: Bullish structure break.
+Short: Bearish structure break.
+Long: Zone-timeframe close minus open > zone candle body average multiplied by a large-body factor AND zone-timeframe close > open AND absolute close minus open of a zone-timeframe bar at a fixed prior offset < current zone candle body average multiplied by a small-body factor.
+Short: Zone-timeframe open minus close > zone candle body average multiplied by a large-body factor AND zone-timeframe close < open AND absolute close minus open of a zone-timeframe bar at the same fixed prior offset < current zone candle body average multiplied by a small-body factor.
+Exit: long, most recent aggressive signal is bullish AND high >= any long target AND previous low < that target.
+Exit: short, most recent aggressive signal is bearish AND low <= any short target AND previous high > that target.

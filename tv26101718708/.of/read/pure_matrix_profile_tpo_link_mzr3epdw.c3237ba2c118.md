@@ -1,0 +1,2 @@
+Long: The current higher-timeframe session has more than one chart bar AND the highest high exceeds the lowest low among its chart bars excluding the first AND close >= EMA of close
+Short: The current higher-timeframe session has more than one chart bar AND the highest high exceeds the lowest low among its chart bars excluding the first AND close < EMA of close

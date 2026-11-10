@@ -1,0 +1,5 @@
+Calculation: Rank correlation = For a configurable price series derived from OHLC, multiply each price in the lookback by a configurable decimal scale and truncate to an integer. Sort the integers in configurable ascending or descending order and assign ranks starting at 1. For each run of equal sorted integers, assign its average rank; after processing a run, resume checking at the second element after that run. Map each original integer to its assigned rank. Number the original observations from 1 for the current bar to N for the oldest bar. The correlation is 1 minus 6 times the sum of squared differences between each observation's rank and its observation number, divided by N³ minus N.
+Long: Chart-timeframe rank correlation > 0
+Short: Chart-timeframe rank correlation < 0
+Long: Higher-timeframe rank correlation using the still-forming higher-timeframe bar > 0
+Short: Higher-timeframe rank correlation using the still-forming higher-timeframe bar < 0

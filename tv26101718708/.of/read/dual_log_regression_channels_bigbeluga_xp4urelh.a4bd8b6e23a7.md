@@ -1,0 +1,3 @@
+Calculation: Log-regression slope = ordinary least-squares slope of log(close) against bar age, indexed from 1 for the current bar to the lookback length for the oldest bar; calculate independently with a long-term and a shorter-term lookback.
+Long: Long-term log-regression slope < 0 OR shorter-term log-regression slope < 0
+Short: Long-term log-regression slope >= 0 OR shorter-term log-regression slope >= 0

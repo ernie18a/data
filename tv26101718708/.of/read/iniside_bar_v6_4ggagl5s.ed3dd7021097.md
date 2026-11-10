@@ -1,0 +1,15 @@
+Calculation: Active range = When no range is active and high <= previous high AND low >= previous low, set the range high and low to the previous bar's high and low. If wick expansion is enabled, on each active-range bar first replace the range high with high when high > range high AND max(open, close) <= range high, and replace the range low with low when low < range low AND min(open, close) >= range low. Clear the range after an entry signal or at the start of a new calendar day.
+Calculation: Breakout prices = In touch mode use high for the upward price and low for the downward price; in close mode use close for both.
+Calculation: Entry state = On an entry signal, record the entry bar, the active range boundaries, ATR on that bar, and entry price equal to the range high for a long or range low for a short. Each new entry replaces the prior entry state, including an entry in the same direction. Clear the tracked position at the start of a new calendar day.
+Calculation: Target levels = Entry price plus, for a long, or minus, for a short, entry-bar ATR multiplied by each of seven independently configurable target multipliers. Record each target as reached only once per entry; reaching a target does not clear the tracked position.
+Long: Active range exists AND upward breakout price > range high AND (EMA filter disabled OR high > selected close EMA OR short-period close EMA > long-period close EMA, according to the selected filter).
+Short: Active range exists AND downward breakout price < range low AND (EMA filter disabled OR low < selected close EMA OR short-period close EMA < long-period close EMA, according to the selected filter).
+Exit: long, bar is after entry bar AND first target has not previously been reached AND downward breakout price < range low recorded at entry.
+Exit: short, bar is after entry bar AND first target has not previously been reached AND upward breakout price > range high recorded at entry.
+Exit: long, bar is after entry bar AND first target has not previously been reached AND a new long entry signal occurs.
+Exit: short, bar is after entry bar AND first target has not previously been reached AND a new short entry signal occurs.
+Exit: long, bar is after entry bar AND low <= entry price - entry-bar ATR multiplied by the stop multiplier.
+Exit: short, bar is after entry bar AND high >= entry price + entry-bar ATR multiplied by the stop multiplier.
+Exit: long, bar is after entry bar AND high >= an unreached target level.
+Exit: short, bar is after entry bar AND low <= an unreached target level.
+Calculation: Evaluation order = Reset at the start of a new calendar day, update the active range, evaluate reversal exits, calculate both entry signals, mark same-direction exits, execute long then short signals, and finally monitor stops and targets. Reversal exits clear the tracked position; stop exits clear it after entering the applicable side's monitoring block. Targets in that block are still checked on the same bar as a stop. A new entry resets all target and stop states; if both entry signals occur on the same bar, both execute in that order.

@@ -1,0 +1,2 @@
+Long: Williams %R < fixed upper threshold OR (Williams %R <= configurable overbought threshold AND Williams %R < configurable oversold threshold)
+Short: Williams %R > fixed lower threshold OR Williams %R > configurable overbought threshold

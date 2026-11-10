@@ -1,0 +1,7 @@
+Calculation: Bollinger %B = (close − lower Bollinger Band) / (upper Bollinger Band − lower Bollinger Band), calculated on the last completed lower-timeframe bar and sampled on each chart bar.
+Calculation: RSI = RSI of close on the last completed lower-timeframe bar, sampled on each chart bar; its timeframe can differ from the Bollinger %B timeframe.
+Calculation: Next safety-order threshold = base entry price × (1 + first deviation × sum of deviation-step multiplier^i for i from 0 to the number of safety orders already filled).
+Calculation: Average entry price = total quote-currency order size / total asset quantity; initialize with base-order size and base-order size / entry-bar close. For each safety order, add its quote-currency size to total order size and its size / fill-bar close to total quantity. The first safety order has a configurable size; each subsequent size equals the previous size multiplied by the order-size multiplier. Fill at most one safety order per chart bar, at close. Evaluate the exit after any safety-order fill and reset the ledger on exit.
+Short: Position is flat AND previous chart-bar Bollinger %B < its threshold AND current Bollinger %B >= its threshold AND previous chart-bar RSI < its threshold AND current RSI >= its threshold.
+Short: Position is short AND number of safety orders filled < maximum safety orders AND close >= next safety-order threshold.
+Exit: Short, close <= average entry price × (1 − take-profit fraction).

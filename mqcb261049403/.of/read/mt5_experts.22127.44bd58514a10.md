@@ -1,0 +1,4 @@
+Long: At the opening of a new chart bar, the Chaikin Oscillator on the forming bar >= the positive entry threshold AND the percentage of the lookback bars, including the forming bar, whose absolute Chaikin Oscillator value <= the flat threshold > the percentage threshold.
+Short: At the opening of a new chart bar, the Chaikin Oscillator on the forming bar <= the negative entry threshold AND the percentage of the lookback bars, including the forming bar, whose absolute Chaikin Oscillator value <= the flat threshold > the percentage threshold.
+Exit: long, stop loss is enabled AND low <= entry price - stop-loss distance OR take profit is enabled AND high >= entry price + take-profit distance.
+Exit: short, stop loss is enabled AND high >= entry price + stop-loss distance OR take profit is enabled AND low <= entry price - take-profit distance.

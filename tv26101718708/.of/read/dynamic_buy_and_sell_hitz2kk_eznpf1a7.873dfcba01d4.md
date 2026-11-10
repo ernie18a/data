@@ -1,0 +1,15 @@
+Calculation: Ribbon midpoint = (shorter-period EMA of close + longer-period EMA of close) / 2; upper ribbon = midpoint + ATR × ribbon multiplier; lower ribbon = midpoint − ATR × ribbon multiplier.
+Calculation: Candle body = abs(close − open); upper wick = high − max(open, close); lower wick = min(open, close) − low.
+Calculation: Bullish engulfing = close > open AND previous close < previous open AND close >= previous open AND open <= previous close.
+Calculation: Bearish engulfing = close < open AND previous close > previous open AND close <= previous open AND open >= previous close.
+Calculation: Bullish pin bar = lower wick > candle body × wick multiplier AND upper wick < candle body AND close > open.
+Calculation: Bearish pin bar = upper wick > candle body × wick multiplier AND lower wick < candle body AND close < open.
+Calculation: Entry ATR = ATR on the entry bar; entry price = entry-bar close.
+Long: Shorter-period EMA of close > longer-period EMA of close.
+Short: Shorter-period EMA of close <= longer-period EMA of close.
+Long: For each of five independently selected timeframes, shorter-period EMA of close > longer-period EMA of close; use the last completed bar for a higher timeframe, the last completed intrabar for a lower timeframe, or the current bar for the chart timeframe.
+Short: For each of five independently selected timeframes, shorter-period EMA of close <= longer-period EMA of close; use the last completed bar for a higher timeframe, the last completed intrabar for a lower timeframe, or the current bar for the chart timeframe.
+Long: Shorter-period EMA of close > longer-period EMA of close AND shorter-period EMA > its previous value AND RSI >= bullish threshold AND (selected trigger mode includes breakout AND close > upper ribbon AND previous close <= previous upper ribbon OR selected trigger mode includes candlestick AND (bullish engulfing OR bullish pin bar)) AND (volume filter disabled OR volume > SMA of volume × volume multiplier) AND (MACD filter disabled OR MACD line > signal line).
+Short: Shorter-period EMA of close < longer-period EMA of close AND shorter-period EMA < its previous value AND RSI <= bearish threshold AND (selected trigger mode includes breakout AND close < lower ribbon AND previous close >= previous lower ribbon OR selected trigger mode includes candlestick AND (bearish engulfing OR bearish pin bar)) AND (volume filter disabled OR volume > SMA of volume × volume multiplier) AND (MACD filter disabled OR MACD line < signal line).
+Exit: long, after the entry bar, high >= entry price + entry ATR × stop multiplier × reward-to-risk ratio OR low <= entry price − entry ATR × stop multiplier; target takes priority if both are reached.
+Exit: short, after the entry bar, low <= entry price − entry ATR × stop multiplier × reward-to-risk ratio OR high >= entry price + entry ATR × stop multiplier; target takes priority if both are reached.

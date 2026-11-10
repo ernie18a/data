@@ -1,0 +1,4 @@
+Calculation: Three independently configured moving averages = SMA, EMA, WMA, RMA, HMA, DEMA, TEMA, or VWMA of a selected price source, each with its own lookback and timeframe; their lookbacks have no enforced ordering. Each uses the chart timeframe, a higher timeframe, or a lower timeframe. On historical bars, a higher-timeframe average uses the last completed higher-timeframe bar; a lower-timeframe average uses the last completed intrabar within the chart bar. On a realtime bar, the requested timeframe's bar may still be forming.
+Long: The first moving average crosses above the second OR the first crosses above the third OR the second crosses above the third.
+Short: The first moving average crosses below the second OR the first crosses below the third OR the second crosses below the third.
+Exit: long, the same pair of moving averages that produced the entry crosses in the opposite direction.

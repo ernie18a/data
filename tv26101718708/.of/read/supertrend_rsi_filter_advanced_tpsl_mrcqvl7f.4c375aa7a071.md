@@ -1,0 +1,10 @@
+Calculation: Multi-timeframe direction = Supertrend direction with the same parameters as the chart Supertrend, calculated separately on each enabled timeframe; for higher timeframes use the last completed bar on historical bars and the forming bar in real time; for lower timeframes use the last available intrabar in each chart bar.
+Calculation: Entry ATR = ATR at entry, or true range at entry if ATR is unavailable; use the same ATR length as Supertrend.
+Calculation: Long stop = entry price minus an ATR multiplier times entry ATR, or the lowest low over the swing lookback ending at entry; if the swing low is at or above entry price, use entry price minus a fallback multiplier times entry ATR.
+Calculation: Short stop = entry price plus an ATR multiplier times entry ATR, or the highest high over the swing lookback ending at entry; if the swing high is at or below entry price, use entry price plus a fallback multiplier times entry ATR.
+Calculation: Long target = entry price plus a target ATR multiplier times entry ATR, or entry price plus a reward-to-risk multiplier times the absolute distance from entry price to the long stop.
+Calculation: Short target = entry price minus a target ATR multiplier times entry ATR, or entry price minus a reward-to-risk multiplier times the absolute distance from entry price to the short stop.
+Long: Multi-timeframe filtering disabled AND chart Supertrend changes from bearish to bullish OR multi-timeframe filtering enabled AND every enabled timeframe's Supertrend is bullish AND not every enabled timeframe's Supertrend was bullish on the preceding chart bar.
+Short: Multi-timeframe filtering disabled AND chart Supertrend changes from bullish to bearish OR multi-timeframe filtering enabled AND every enabled timeframe's Supertrend is bearish AND not every enabled timeframe's Supertrend was bearish on the preceding chart bar.
+Exit: long, high >= long target OR low <= long stop OR reversal exit enabled AND chart Supertrend changes from bullish to bearish.
+Exit: short, low <= short target OR high >= short stop OR reversal exit enabled AND chart Supertrend changes from bearish to bullish.

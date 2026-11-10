@@ -1,0 +1,5 @@
+Calculation: Positive change = max(close − previous close, 0); negative change = max(previous close − close, 0).
+Calculation: Positive run = positive change plus the previous positive run when positive change > 0, otherwise 0; negative run = negative change plus the previous negative run when positive change = 0, otherwise 0. Initialize both runs to 0.
+Calculation: Positive trend = sum over the lookback of positive change + positive run; negative trend = sum over the same lookback of negative change + negative run. Calculate on the chart timeframe or on a higher timeframe. For the higher-timeframe version, sample the still-forming higher-timeframe bar at the first chart bar within it and hold that value until the next higher-timeframe bar.
+Long: positive trend > negative trend
+Short: positive trend < negative trend

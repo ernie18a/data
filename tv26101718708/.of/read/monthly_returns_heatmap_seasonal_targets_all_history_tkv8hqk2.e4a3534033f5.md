@@ -1,0 +1,3 @@
+Calculation: Historical seasonal average return = mean percentage close-to-previous-close return of completed calendar-month bars for the current calendar month in prior years within the selected history lookback; calendar-month bars are higher, equal, or lower timeframe than the chart depending on the chart timeframe.
+Long: Historical seasonal average return > 0
+Short: Historical seasonal average return < 0

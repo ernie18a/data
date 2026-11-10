@@ -1,0 +1,9 @@
+Calculation: Cash VWAP = With lower-timeframe precision enabled and lower-timeframe bars available, sum typical price × volume divided by sum volume over positive-volume lower-timeframe bars, including bars in the chart bar still forming; reset at the first lower-timeframe bar opening at 09:30 New York time on a new day. Otherwise, use chart-bar typical price × volume divided by volume, accumulated from the first chart bar of the New York cash session, including subsequent bars outside that session, and reset at the next cash-session open. Typical price is (high + low + close) / 3.
+Calculation: Volume zones = Divide the range from the lowest low to the highest high over the lookback into equal price bins. The lookback is either fixed or extends back to the latest confirmed pivot high or low, using equal numbers of bars on each side of the pivot. Assign each bin the full volume of every lookback bar whose high-low range overlaps it. A zone is a bin whose volume is less than a tolerance fraction of each existing adjacent bin's volume.
+Calculation: Footprint delta = Sum volume of lower-timeframe bars with close >= open minus sum volume of lower-timeframe bars with close < open, using all available lower-timeframe bars within the chart bar still forming.
+Long: Previous close > previous cash VWAP AND close two bars ago <= cash VWAP two bars ago AND previous close > previous open AND close > open
+Short: Previous close < previous cash VWAP AND close two bars ago >= cash VWAP two bars ago AND previous close < previous open AND close < open
+Long: Close > upper boundary of a volume zone
+Short: Close < lower boundary of a volume zone
+Long: Footprint delta >= 0
+Short: Footprint delta < 0

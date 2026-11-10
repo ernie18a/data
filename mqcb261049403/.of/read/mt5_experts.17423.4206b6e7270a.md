@@ -1,0 +1,2 @@
+Long: minute of the hour is within a configured trading interval AND MACD main line on the last completed chart bar > MACD main line on the preceding chart bar AND Williams %R on the last completed chart bar < lower threshold
+Short: minute of the hour is within a configured trading interval AND MACD main line on the last completed chart bar < MACD main line on the preceding chart bar AND Williams %R on the last completed chart bar > upper threshold

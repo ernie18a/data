@@ -1,0 +1,5 @@
+Calculation: A kept pivot high is a high greater than or equal to the highs of the preceding strength bars and greater than the highs of the following strength bars; a kept pivot low is a low less than or equal to the lows of the preceding strength bars and less than the lows of the following strength bars. Confirm the pivot after the following strength bars have completed. Keep it if the minimum swing multiplier is zero, no previous kept pivot exists, or its price differs from the most recently kept pivot price by at least the minimum swing multiplier times ATR at the pivot bar, substituting zero for an unavailable ATR. Evaluate both pivot types against the previously kept pivot before updating it; if both qualify, process the high first and the low second.
+Long: OBV > EMA of OBV
+Short: OBV <= EMA of OBV
+Long: A kept pivot low is confirmed AND its low < the previous kept pivot low AND its pivot-bar OBV > the previous kept pivot low's pivot-bar OBV
+Short: A kept pivot high is confirmed AND its high > the previous kept pivot high AND its pivot-bar OBV < the previous kept pivot high's pivot-bar OBV

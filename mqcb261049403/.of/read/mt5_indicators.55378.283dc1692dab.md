@@ -1,0 +1,4 @@
+Calculation: Channel boundaries = over a lookback ending at the chart bar offset backward by the channel shift, use either chart-timeframe bars or higher-timeframe bars, including the bar still forming at that chart bar. Select one paired method: highest high and lowest low; averages of highest high with highest open and lowest low with lowest open; averages of highest high with highest close and lowest low with lowest close; highest open and lowest open; or highest close and lowest close.
+Calculation: Midline = average of the upper and lower channel boundaries.
+Long: Selected chart bar open < its midline AND selected chart bar close > its midline; the selected bar is either the current forming bar or the last completed bar.
+Short: Selected chart bar open > its midline AND selected chart bar close < its midline; the selected bar is either the current forming bar or the last completed bar.

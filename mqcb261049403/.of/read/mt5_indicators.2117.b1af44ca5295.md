@@ -1,0 +1,9 @@
+Calculation: Smoothed RSI = moving average of RSI of close, using a configurable smoothing method and smoothing period.
+Calculation: QQE trailing line = recursively calculate a distance as a configurable multiplier times a moving average of a moving average of the absolute change in smoothed RSI; both averages use the same smoothing method as smoothed RSI and a period equal to twice the RSI period minus one. Initialize the previous trailing line to zero and the previous smoothed RSI to 50. If smoothed RSI is below the previous trailing line, set the line to smoothed RSI plus the distance; if the previous smoothed RSI was also below the previous trailing line, cap the new line at the previous trailing line. If smoothed RSI is above the previous trailing line, set the line to smoothed RSI minus the distance; if the previous smoothed RSI was also above the previous trailing line, floor the new line at the previous trailing line. If smoothed RSI equals the previous trailing line, retain the previous trailing line.
+Calculation: Higher-timeframe QQE values = smoothed RSI and QQE trailing line calculated on the higher timeframe using its bar still forming at the start of each higher-timeframe interval, then held constant for the remaining chart bars in that interval.
+Long: Smoothed RSI > QQE trailing line.
+Short: Smoothed RSI < QQE trailing line.
+Long: Smoothed RSI crosses above 50 AND smoothed RSI previously crossed above the QQE trailing line.
+Short: Smoothed RSI crosses below 50 AND smoothed RSI previously crossed below the QQE trailing line.
+Long: Higher-timeframe smoothed RSI > higher-timeframe QQE trailing line.
+Short: Higher-timeframe smoothed RSI < higher-timeframe QQE trailing line.

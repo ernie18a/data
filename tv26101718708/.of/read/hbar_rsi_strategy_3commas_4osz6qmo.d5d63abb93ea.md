@@ -1,0 +1,3 @@
+Long: Position is flat AND no trades are open AND (date filter is disabled OR bar time is within the configured date range) AND RSI of close is below the oversold threshold. RSI uses the chart timeframe or a configured higher timeframe's last completed bar; if configured lower, it uses the last available lower-timeframe bar within the chart bar.
+Long: Position is long AND (date filter is disabled OR bar time is within the configured date range) AND the next configured averaging rung exists AND close <= base entry price × (1 − the next rung's deviation). Use the rungs in configured order, at most one per bar, and use each rung once per position.
+Exit: Long, close >= position's quantity-weighted average entry price × (1 + take-profit percentage).

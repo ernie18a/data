@@ -1,0 +1,3 @@
+Calculation: Range-extreme bar indices = indices of the highest high and lowest low over a selected range of higher-timeframe bars; choose either the last completed bar alone or a lookback ending with the still-forming bar or the last completed bar. Index bars from 0 for the most recent, and use the most recent occurrence of each extreme.
+Long: Lowest-low bar index > highest-high bar index.
+Short: Lowest-low bar index <= highest-high bar index.

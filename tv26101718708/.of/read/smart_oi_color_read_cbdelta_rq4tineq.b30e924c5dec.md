@@ -1,0 +1,10 @@
+Calculation: CVD = cumulative signed volume of lower-timeframe bars within the current chart bar, including the lower bar still forming; when an anchor period is selected, accumulate across chart bars and reset at each new, still-forming higher-timeframe anchor period. Sign each lower bar's volume positive if its close exceeds its open, negative if below; if equal, compare its close with the previous lower bar's close, and if still equal retain the previous lower bar's sign.
+Calculation: Normalized EMA = (EMA of a series - EMA of that EMA) / standard deviation of that EMA over the same lookback; use zero when the standard deviation is zero.
+Calculation: Raw oscillator = normalized EMA of CVD - normalized EMA of close, using the same lookback for both.
+Calculation: Volume factor = volume / max(EMA of volume, a positive floor), or 1 when the ratio is unavailable.
+Calculation: Absorption oscillator = raw oscillator, optionally multiplied by volume factor.
+Calculation: Weighted oscillator = raw oscillator multiplied by volume factor.
+Long: absorption oscillator < -absorption threshold
+Long: absorption oscillator >= -absorption threshold AND absorption oscillator <= absorption threshold AND weighted oscillator < 0 AND absolute value of (weighted oscillator - SMA of weighted oscillator) > spike multiplier * standard deviation of weighted oscillator AND standard deviation of weighted oscillator > 0, using the same lookback for the SMA and standard deviation
+Short: absorption oscillator > absorption threshold
+Short: absorption oscillator >= -absorption threshold AND absorption oscillator <= absorption threshold AND weighted oscillator > 0 AND absolute value of (weighted oscillator - SMA of weighted oscillator) > spike multiplier * standard deviation of weighted oscillator AND standard deviation of weighted oscillator > 0, using the same lookback for the SMA and standard deviation

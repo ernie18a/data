@@ -1,0 +1,2 @@
+Long: The low of a candidate bar is strictly below the low of every bar in equal-length windows immediately before and after it; evaluate on the last bar of the subsequent window.
+Short: The high of a candidate bar is strictly above the high of every bar in equal-length windows immediately before and after it; evaluate on the last bar of the subsequent window.

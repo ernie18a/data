@@ -1,0 +1,4 @@
+Calculation: Weighted RSI = weighted sum of five RSIs of the selected applied price, with successively longer lookbacks; the second and third RSIs use the same weight.
+Calculation: Smoothed RSI oscillator = smooth the weighted RSI recursively as slow = weighted RSI / first smoothing period + previous slow × (first smoothing period − 1) / first smoothing period; then smooth weighted RSI − slow recursively using the second smoothing period in the same way. Initialize slow as weighted RSI / first smoothing period and the oscillator as (weighted RSI − slow) / second smoothing period. Use either chart-timeframe bars or the still-forming higher-timeframe bar and preceding higher-timeframe bars.
+Long: Smoothed RSI oscillator > 0 AND smoothed RSI oscillator != previous bar's smoothed RSI oscillator
+Short: Smoothed RSI oscillator < 0 AND smoothed RSI oscillator != previous bar's smoothed RSI oscillator

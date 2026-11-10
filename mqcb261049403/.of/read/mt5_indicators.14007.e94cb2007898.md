@@ -1,0 +1,2 @@
+Long: For any independently configured Relative Vigor Index (RVI), its main line on the last completed bar of its configured timeframe is above its upper threshold AND greater than or equal to its lower threshold; the configured timeframe may be the chart timeframe, higher, or lower.
+Short: For any independently configured RVI, its main line on the last completed bar of its configured timeframe is below its lower threshold; the configured timeframe may be the chart timeframe, higher, or lower.

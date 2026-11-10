@@ -1,0 +1,6 @@
+Calculation: Entry RSI and exit RSI = independently configured RSI of close, each sampled from the last completed bar of its respective lower timeframe at each chart-bar close; previous values are the samples from the previous chart bar.
+Calculation: Averaging-order threshold for the next order = base entry price × (1 − cumulative deviation), where cumulative deviation is the sum of the first deviation and each successive deviation multiplied by the step multiplier. The next order is indexed by the number of averaging orders already filled plus one.
+Calculation: Average entry price = total quote currency spent on the base and filled averaging orders divided by total units acquired; each fill occurs at the chart-bar close, and each successive averaging-order quote size equals the preceding averaging-order size multiplied by the size multiplier.
+Long: Position is flat AND previous entry RSI < entry level AND current entry RSI >= entry level.
+Long: Position is long AND number of filled averaging orders < maximum averaging orders AND close <= averaging-order threshold for the next order; fill at most one averaging order per chart bar.
+Exit: long, close >= average entry price × (1 + minimum profit fraction) AND previous exit RSI > exit level AND current exit RSI <= exit level.

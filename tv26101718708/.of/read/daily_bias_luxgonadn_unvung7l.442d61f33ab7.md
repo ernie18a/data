@@ -1,0 +1,14 @@
+Calculation: Reference timeframe = a timeframe that may be higher than, lower than, or equal to the chart timeframe.
+Calculation: Pivot state = calculate confirmed pivot highs and lows on completed reference-timeframe bars, using the same number of bars before and after each pivot. Map each pivot series to chart bars with gaps filled by its most recent value. On every chart bar where a mapped pivot value is available, compare it with the previously stored value of that pivot kind: set its state to 1 if greater, otherwise -1; then store the mapped value. Initialize each state to 0 and leave it unchanged until a prior value exists.
+Calculation: Previous-candle vote = 1 if the last completed reference-timeframe bar's close is greater than its open, -1 if less, otherwise 0.
+Calculation: Structure vote = 1 if both pivot states equal 1, -1 if both equal -1, otherwise 0.
+Calculation: Open vote = 1 if the chart close is greater than the open of the still-forming reference-timeframe bar, -1 if less, otherwise 0.
+Calculation: Combined score = previous-candle vote + structure vote + open vote.
+Long: Previous-candle vote = 1.
+Long: Structure vote = 1.
+Long: Open vote = 1.
+Long: Combined score >= 2.
+Short: Previous-candle vote = -1.
+Short: Structure vote = -1.
+Short: Open vote = -1.
+Short: Combined score <= -2.

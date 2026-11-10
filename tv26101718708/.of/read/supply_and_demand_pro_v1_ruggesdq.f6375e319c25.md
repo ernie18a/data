@@ -1,0 +1,18 @@
+Calculation: Bullish structure break = close > highest high over the preceding structure lookback bars AND previous close <= that same highest high.
+Calculation: Bearish structure break = close < lowest low over the preceding structure lookback bars AND previous close >= that same lowest low.
+Calculation: Session condition = session filter disabled OR bar opening time falls within the selected session in America/New_York time.
+Calculation: Aggressive long = (short EMA > medium EMA OR close > short EMA) AND RSI > RSI midline plus a positive offset AND bullish structure break AND session condition AND bars since the preceding aggressive or continuation long >= same-direction cooldown; initialize the preceding long bar to a fixed negative bar index.
+Calculation: Aggressive short = (short EMA < medium EMA OR close < short EMA) AND RSI < RSI midline minus a positive offset AND bearish structure break AND session condition AND bars since the preceding aggressive or continuation short >= same-direction cooldown; initialize the preceding short bar to a fixed negative bar index.
+Calculation: Long target = close of the latest aggressive entry of either side plus a positive target multiplier times its risk, if that entry was long; its risk is its close minus the lower of its low and previous bar's low, reduced by a percentage buffer.
+Calculation: Short target = close of the latest aggressive entry of either side minus a positive target multiplier times its risk, if that entry was short; its risk is the higher of its high and previous bar's high, increased by a percentage buffer, minus its close. Use multiple ordered target multipliers for both sides.
+Calculation: Zone average body = simple moving average of absolute close minus open on the selected zone timeframe. For a higher zone timeframe use the last completed bar on historical chart bars and the forming bar in real time; for a lower zone timeframe use the last available intrabar. The zone timeframe can also equal the chart timeframe.
+Long: bullish structure break.
+Short: bearish structure break.
+Long: aggressive long.
+Short: aggressive short.
+Long: short EMA > medium EMA AND medium EMA > long EMA AND RSI > RSI midline AND bars since the latest bullish structure break <= signal window AND session condition AND aggressive long is false AND bars since the preceding aggressive or continuation long >= same-direction cooldown AND (no preceding aggressive long exists OR bars since the latest aggressive long > aggressive-to-continuation delay).
+Short: short EMA < medium EMA AND medium EMA < long EMA AND RSI < RSI midline AND bars since the latest bearish structure break <= signal window AND session condition AND aggressive short is false AND bars since the preceding aggressive or continuation short >= same-direction cooldown AND (no preceding aggressive short exists OR bars since the latest aggressive short > aggressive-to-continuation delay).
+Long: zone-timeframe close minus open > zone average body times a body multiplier AND close > open AND absolute close minus open at a fixed prior zone bar < current zone average body times a smaller body multiplier.
+Short: zone-timeframe open minus close > zone average body times a body multiplier AND close < open AND absolute close minus open at the same fixed prior zone bar < current zone average body times the smaller body multiplier.
+Exit: long, high >= any long target AND previous low < that target.
+Exit: short, low <= any short target AND previous high > that target.

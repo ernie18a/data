@@ -1,0 +1,9 @@
+Calculation: Trend proxy = 1 - log10(sum of true range over the lookback / max(highest high - lowest low over the lookback, minimum price increment)) / log10(lookback).
+Calculation: Lower-timeframe signed volume = volume of the last completed lower-timeframe bar within each chart bar if its close > open, negative volume if its close < open, otherwise 0.
+Calculation: Regime = persistent state initialized to neutral. If the trend proxy > its trend threshold AND ADX > its upper threshold, set bullish when RSI > its midpoint AND positive DI > negative DI AND EMA of lower-timeframe signed volume >= 0 AND close > EMA of close; otherwise set bearish when RSI < its midpoint AND negative DI > positive DI AND EMA of lower-timeframe signed volume <= 0 AND close < EMA of close. In nonbinary mode, if the trend test fails AND (trend proxy < its lower threshold OR ADX < its lower threshold), set neutral; then set neutral if bullish AND close < EMA of close, or bearish AND close > EMA of close. Otherwise retain the prior state. The lower trend threshold is below the trend threshold, and the lower ADX threshold is below the upper threshold.
+Long: Regime overlay enabled AND regime = bullish AND regime = previous bar's regime.
+Short: Regime overlay enabled AND regime = bearish AND regime = previous bar's regime.
+Exit: long, close >= entry price * (1 + minimum profit fraction) AND close < EMA of close.
+Exit: short, close <= entry price * (1 - minimum profit fraction) AND close > EMA of close.
+Exit: long, close <= entry price * (1 - logical stop fraction) OR high >= entry price * (1 + maximum profit fraction).
+Exit: short, close >= entry price * (1 + logical stop fraction) OR low <= entry price * (1 - maximum profit fraction).

@@ -1,0 +1,3 @@
+Calculation: Session trend correlation = Pearson correlation between close and chronological bar index from the start of a session through the current bar. Recalculate from the second session bar onward; retain the last calculated value outside the session and on the first bar of the next session. It is undefined until calculable or when close has zero variance.
+Long: Session trend correlation > 0
+Short: Session trend correlation <= 0 OR session trend correlation is undefined

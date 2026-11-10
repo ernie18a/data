@@ -1,0 +1,8 @@
+Calculation: Smoothed volume delta = EMA of (2 × estimated buying volume − volume) / (volume + 0.000001), where estimated buying volume = volume × (0.5 + 0.5 × |close − open| / (high − low + 0.000001)) if close > open, otherwise volume × (0.5 − 0.5 × |close − open| / (high − low + 0.000001)).
+Calculation: Bearish RSI divergence = highest high over the current lookback > highest high over the immediately preceding equal-length lookback AND highest RSI over the current lookback < highest RSI over the immediately preceding equal-length lookback.
+Calculation: Tier 1 state = OBV on the last completed higher-timeframe bar < OBV limit AND chart-timeframe OBV < chart-timeframe OBV at the slope lookback AND OBV on the last completed lower-timeframe bar < lower-timeframe OBV at the same slope lookback AND RSI >= entry threshold AND (bearish RSI divergence OR RSI < SMA of RSI with the same period as RSI) AND MFI >= higher tier threshold AND MFI < MFI at the falling lookback AND (delta filter disabled OR smoothed volume delta < delta threshold).
+Calculation: Tier 2 state = OBV on the last completed higher-timeframe bar < OBV limit AND chart-timeframe OBV < chart-timeframe OBV at the slope lookback AND RSI >= entry threshold AND MFI >= lower tier threshold AND MFI < MFI at the falling lookback AND Tier 1 state = false.
+Short: Tier 1 state = true AND previous chart bar's Tier 1 state = false.
+Short: Tier 2 state = true AND previous chart bar's Tier 2 state = false.
+Short: MFI >= extreme threshold AND MFI < MFI at the falling lookback AND OBV on the last completed higher-timeframe bar < OBV limit.
+Exit: short, high >= entry price + ATR at entry × stop multiplier OR low <= entry price × (1 − furthest take-profit fraction).

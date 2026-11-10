@@ -1,0 +1,4 @@
+Calculation: Average entry price = total quote amount of the base entry and filled averaging orders divided by the sum of each order's quote amount divided by its fill close; use only fills before the current bar.
+Long: Position is flat AND RSI of close is below its threshold; use the chart timeframe, the last completed higher-timeframe bar, or the last lower-timeframe bar within the chart bar, according to the RSI timeframe setting.
+Long: Position is long AND fewer than the fixed number of averaging orders have filled AND close <= base entry price × (1 − next unfilled averaging order's percentage deviation); fill only the next order per bar, with successively larger deviations and independently specified order sizes.
+Exit: long, close >= average entry price × (1 + take-profit percentage).

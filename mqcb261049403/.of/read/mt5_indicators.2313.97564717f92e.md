@@ -1,0 +1,5 @@
+Calculation: Center of gravity = (n + 1) / 2 - sum((i + 1) × median price[i], i = 0 to n - 1) / sum(median price[i], i = 0 to n - 1), where median price = (high + low) / 2 and i = 0 is the current bar; use 0 when the denominator is 0.
+Calculation: Stochastic CG oscillator = 2 × ((4 × normalized CG[0] + 3 × normalized CG[1] + 2 × normalized CG[2] + normalized CG[3]) / 10 - 0.5), where normalized CG = (center of gravity - its lowest value over n bars) / (its highest value over n bars - its lowest value over n bars); use 0 when the range is 0. Use the same n for both calculations.
+Calculation: Trigger = 0.96 × (previous-bar stochastic CG oscillator + 0.02).
+Long: Stochastic CG oscillator on the higher timeframe's forming bar > trigger on the same bar.
+Short: Stochastic CG oscillator on the higher timeframe's forming bar < trigger on the same bar.

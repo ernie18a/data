@@ -1,0 +1,3 @@
+Calculation: Historical volume baseline = mean of positive volumes at offsets of i × round(assumed session duration / chart bar duration) chart bars, for i from 1 through the lookback count; use 0 if none are positive.
+Long: Bar opening time is within the pre-fixing window AND the optional date filter is satisfied AND historical volume baseline > 0 AND volume / historical volume baseline >= mild spike threshold AND close > open.
+Short: Bar opening time is within the pre-fixing window AND the optional date filter is satisfied AND historical volume baseline > 0 AND volume / historical volume baseline >= mild spike threshold AND close < open.

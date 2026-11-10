@@ -1,0 +1,11 @@
+Calculation: SuperTrend direction = For each of two parameter sets, calculate ATR using Wilder smoothing, lower band = (high + low) / 2 - multiplier × ATR, and upper band = (high + low) / 2 + multiplier × ATR. If the previous close is above the previous lower band, replace the lower band with the greater of the current and previous lower bands; if the previous close is below the previous upper band, replace the upper band with the lesser of the current and previous upper bands. Direction is bullish if close > previous upper band, bearish if close < previous lower band, and otherwise retains its previous direction. Initialize direction to neutral. One parameter set has a longer ATR lookback and a smaller multiplier than the other.
+Long: Both SuperTrend directions are bullish.
+Short: Both SuperTrend directions are bearish.
+Exit: long, either SuperTrend direction is bearish.
+Exit: short, either SuperTrend direction is bullish.
+Exit: long, low <= entry price × (1 - stop-loss percentage) OR high >= entry price × (1 + take-profit percentage).
+Exit: short, high >= entry price × (1 + stop-loss percentage) OR low <= entry price × (1 - take-profit percentage).
+Exit: long, low <= entry price × (1 - stop-loss percentage) OR high >= entry price × (1 + selected take-profit percentage) OR high >= entry price + previous-bar ATR × selected take-profit multiplier; apply each of four progressively larger targets to its configured portion of the position.
+Exit: short, high >= entry price × (1 + stop-loss percentage) OR low <= entry price × (1 - selected take-profit percentage) OR low <= entry price - previous-bar ATR × selected take-profit multiplier; apply each of four progressively larger targets to its configured portion of the position.
+Exit: long, after high reaches entry price × (1 + trailing percentage), low <= highest price since activation - trailing offset.
+Exit: short, after low reaches entry price × (1 - trailing percentage), high >= lowest price since activation + trailing offset.

@@ -1,0 +1,3 @@
+Long: On each structure timeframe, the most recent confirmed pivot high is greater than the preceding confirmed pivot high AND the most recent confirmed pivot low is greater than the preceding confirmed pivot low.
+Short: On each structure timeframe, the most recent confirmed pivot high is less than the preceding confirmed pivot high AND the most recent confirmed pivot low is less than the preceding confirmed pivot low.
+Calculation: Structure timeframe pivots = pivot highs and lows confirmed using the same number of bars on each side. Evaluate each structure timeframe independently; for a higher timeframe use the last completed bar, for a lower timeframe use the last completed intrabar within the chart bar, and for the chart timeframe use the current bar.

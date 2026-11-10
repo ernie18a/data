@@ -1,0 +1,2 @@
+Long: Previous close < previous open AND close > open AND close - open >= displacement multiplier × ATR AND (structure-break filter disabled OR close > previous high)
+Short: Previous close > previous open AND close < open AND open - close >= displacement multiplier × ATR AND (structure-break filter disabled OR close < previous low)

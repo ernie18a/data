@@ -1,0 +1,2 @@
+Long: For any of the six independently configured moving averages, the average on the selected bar is greater than its value on the preceding bar. Each average uses a distinct, successively longer timeframe, which may be lower than, equal to, or higher than the chart timeframe; the selected bar is the last completed bar by default, with a configurable offset that may select the still-forming bar or an earlier bar.
+Short: For any of the same six moving averages, the average on the selected bar is less than its value on the preceding bar.

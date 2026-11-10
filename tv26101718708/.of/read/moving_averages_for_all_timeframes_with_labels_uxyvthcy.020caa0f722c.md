@@ -1,0 +1,2 @@
+Long: Shorter-lookback moving average of the selected price source >= longer-lookback moving average of the selected price source
+Short: Shorter-lookback moving average of the selected price source < longer-lookback moving average of the selected price source

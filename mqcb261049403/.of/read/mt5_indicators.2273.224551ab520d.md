@@ -1,0 +1,5 @@
+Calculation: Range state = bullish if close > highest high of the preceding lookback bars; otherwise bearish if close < lowest low of the preceding lookback bars; otherwise retain the previous range state. Initialize as neutral.
+Long: Chart-timeframe range state = bullish AND previous chart-timeframe range state != bullish
+Short: Chart-timeframe range state = bearish AND previous chart-timeframe range state != bearish
+Long: Current chart bar is the first bar of a higher-timeframe bar AND the still-forming higher-timeframe range state = bullish AND the preceding completed higher-timeframe range state != bullish
+Short: Current chart bar is the first bar of a higher-timeframe bar AND the still-forming higher-timeframe range state = bearish AND the preceding completed higher-timeframe range state != bearish

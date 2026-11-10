@@ -1,0 +1,7 @@
+Calculation: Reference bars = bars aggregated to a configurable timeframe that may be higher or lower than the chart timeframe; when lower, use the last reference bar within each chart bar.
+Calculation: Structure vote = on completed reference bars, confirm pivot highs and lows using the same number of bars on each side. Map each confirmed pivot value to chart bars with lookahead off and carry it forward until the next reference-bar update. On every chart bar with a mapped pivot value, compare it with the previously stored value of the same pivot kind, then store it; equality counts as lower. The vote is +1 when the latest high and low comparisons are both higher, -1 when both are lower or equal, and 0 otherwise or until both comparisons exist.
+Calculation: Candle vote = +1 if the last completed reference bar's close > its open, -1 if its close < its open, otherwise 0.
+Calculation: Open vote = +1 if chart close > the still-forming reference bar's open, -1 if chart close < that open, otherwise 0.
+Calculation: Combined score = candle vote + structure vote + open vote.
+Long: Candle vote > 0 OR structure vote > 0 OR open vote > 0 OR combined score >= 2
+Short: Candle vote < 0 OR structure vote < 0 OR open vote < 0 OR combined score <= -2

@@ -1,0 +1,4 @@
+Calculation: Upper level and lower level = Over a configurable lookback including the evaluated bar, let H be the maximum of the current low and all highs, and L be the minimum of the current close and all lows. Let p = (33 - risk parameter) / 100. Upper level = H - (H - L) * p; lower level = L + (H - L) * p.
+Calculation: Trend state = Initialize to false. On each bar, start with the previous bar's state; set it to false if close < lower level, then set it to true if close > upper level. Evaluate on the chart timeframe or on a higher timeframe, using either its still-forming bar or a configurable completed-bar lag.
+Long: Trend state = true AND previous bar's trend state = false
+Short: Trend state = false AND previous bar's trend state = true

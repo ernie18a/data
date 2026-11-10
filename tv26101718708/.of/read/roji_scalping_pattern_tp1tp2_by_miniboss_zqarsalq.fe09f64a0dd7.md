@@ -1,0 +1,31 @@
+Calculation: Base high and base low = highest high and lowest low, respectively, over the base lookback ending at the previous bar.
+Calculation: Prior move = close at the start of the base lookback minus close an impulse lookback earlier; compare it with the current bar's ATR.
+Calculation: Double-bottom neckline = when two consecutive confirmed pivot lows, each using equal left and right pivot lookbacks, differ by no more than a price tolerance and are no more than a maximum number of bars apart, store the highest high over the neckline lookback ending on the confirmation bar. Replace it when another qualifying pair appears; clear it after close exceeds it.
+Calculation: Double-top neckline = when two consecutive confirmed pivot highs, each using equal left and right pivot lookbacks, differ by no more than a price tolerance and are no more than a maximum number of bars apart, store the lowest low over the neckline lookback ending on the confirmation bar. Replace it when another qualifying pair appears; clear it after close falls below it.
+Calculation: Bullish setup = base high minus base low <= ATR times a base-width multiplier AND close > base high AND previous close <= current base high AND ((continuation enabled AND prior move > ATR times an impulse multiplier) OR (reversal enabled AND prior move < negative ATR times the impulse multiplier)) OR double-pattern enabled AND close > stored double-bottom neckline.
+Calculation: Bearish setup = base high minus base low <= ATR times the base-width multiplier AND close < base low AND previous close >= current base low AND ((continuation enabled AND prior move < negative ATR times the impulse multiplier) OR (reversal enabled AND prior move > ATR times the impulse multiplier)) OR double-pattern enabled AND close < stored double-top neckline.
+Calculation: Retest state = on a bullish or bearish setup, wait for that direction and cancel the opposite wait; store the base boundary as the retest level for a base breakout. A double-pattern-only setup has no retest level because its neckline is cleared before the level is assigned. Count the setup bar as age one; expire the wait when age exceeds the maximum. A same-direction setup restarts the wait; a filled entry cancels its directional wait. If both setups occur on the same bar, the bearish wait takes precedence.
+Calculation: Bullish retest = bullish wait active AND low <= bullish retest level AND close >= bullish retest level AND close > open.
+Calculation: Bearish retest = bearish wait active AND high >= bearish retest level AND close <= bearish retest level AND close < open.
+Calculation: Daily eligibility = current bar is in the configured session when the session filter is enabled AND position is flat AND, unless research mode is enabled, entries today < daily entry limit AND, when the daily win/loss stop is enabled, wins today < daily win limit AND losses today < daily loss limit. Reset counts on each new day. Count each closed partial trade separately: it is break-even if absolute directional price movement in ticks <= break-even offset plus an additional tick allowance OR absolute profit <= a profit tolerance; otherwise count positive profit as a win and negative profit as a loss.
+Calculation: Entry risk = at entry, round to the nearest tick the distance from entry close to the lowest low over the structure lookback for a long, or from the highest high over that lookback to entry close for a short, plus a tick buffer, clamped between minimum and maximum tick distances. Fix this risk and both profit targets at entry; the second target uses a larger risk multiple than the first.
+Long: Bullish setup = true.
+Short: Bearish setup = true.
+Long: Bullish retest = true.
+Short: Bearish retest = true.
+Long: Daily eligibility = true AND (higher-timeframe filter disabled OR higher-timeframe close > its EMA) AND (EMA direction filter disabled OR close > medium EMA OR short EMA > medium EMA AND medium EMA > long EMA) AND ((break entry mode AND bullish setup = true) OR (retest entry mode AND bullish retest = true)).
+Short: Daily eligibility = true AND (higher-timeframe filter disabled OR higher-timeframe close < its EMA) AND (EMA direction filter disabled OR close < medium EMA OR short EMA < medium EMA AND medium EMA < long EMA) AND ((break entry mode AND bearish setup = true) OR (retest entry mode AND bearish retest = true)).
+Calculation: Higher-timeframe entry filter = close and EMA of the last completed higher-timeframe bar on historical chart bars; use the still-forming higher-timeframe bar on a realtime chart bar.
+Calculation: Dashboard deviation = (timeframe close minus its EMA) divided by its EMA. Evaluate each dashboard timeframe independently; it may be higher or lower than the chart timeframe. On historical bars use the last completed higher-timeframe bar or the last lower-timeframe bar within the chart bar; on realtime bars use the still-forming higher-timeframe bar or the latest available lower-timeframe bar.
+Long: Dashboard deviation > positive neutral threshold.
+Short: Dashboard deviation < negative neutral threshold.
+Long: Number of dashboard timeframes with deviation > positive neutral threshold > number with deviation < negative neutral threshold.
+Short: Number of dashboard timeframes with deviation < negative neutral threshold > number with deviation > positive neutral threshold.
+Exit: long, high >= entry price + entry risk times first target multiple; close the configured first portion.
+Exit: long, high >= entry price + entry risk times second target multiple; close the remaining target portion.
+Exit: long, low <= entry price - entry risk AND (break-even stop disabled OR first target has not been touched).
+Exit: long, low <= entry price + break-even offset AND break-even stop enabled AND first target has been touched, including on the current bar.
+Exit: short, low <= entry price - entry risk times first target multiple; close the configured first portion.
+Exit: short, low <= entry price - entry risk times second target multiple; close the remaining target portion.
+Exit: short, high >= entry price + entry risk AND (break-even stop disabled OR first target has not been touched).
+Exit: short, high >= entry price - break-even offset AND break-even stop enabled AND first target has been touched, including on the current bar.

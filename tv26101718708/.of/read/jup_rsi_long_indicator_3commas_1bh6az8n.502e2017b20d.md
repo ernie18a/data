@@ -1,0 +1,5 @@
+Calculation: RSI sample = RSI of closes on the configured timeframe; for a higher timeframe use the last completed bar, for a lower timeframe use the last completed intrabar, and for the chart timeframe use the current bar.
+Calculation: Average entry = sum of the quote amounts of the base entry and filled averaging orders divided by the sum of each order's quote amount divided by its fill-bar close. Process at most one averaging order per bar, in configured order, before evaluating the exit.
+Long: Position is flat AND RSI sample < entry threshold AND (date filter is disabled OR bar datetime >= start datetime AND bar datetime <= end datetime).
+Long: Position is long AND filled averaging order count < configured ladder length AND close <= base entry price × (1 − next averaging order's configured deviation) AND (date filter is disabled OR bar datetime >= start datetime AND bar datetime <= end datetime).
+Exit: long, close >= average entry × (1 + take-profit fraction) AND (date filter is disabled OR bar datetime >= start datetime AND bar datetime <= end datetime).

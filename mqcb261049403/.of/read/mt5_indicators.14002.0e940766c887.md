@@ -1,0 +1,2 @@
+Long: Any independently configured RSI on the chart timeframe or a higher or lower timeframe, using its last completed bar and configured OHLC-derived price, is above its upper threshold AND at or above its lower threshold.
+Short: Any independently configured RSI on the chart timeframe or a higher or lower timeframe, using its last completed bar and configured OHLC-derived price, is below its lower threshold.

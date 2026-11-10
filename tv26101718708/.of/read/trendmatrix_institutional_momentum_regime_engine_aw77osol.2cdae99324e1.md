@@ -1,0 +1,12 @@
+Calculation: Source = close or EMA of close, according to the smoothing setting.
+Calculation: Trend anchor = linear regression of source over the anchor lookback, evaluated at the current bar. The highest and lowest source anchors and ATR use the same lookback.
+Calculation: Higher-timeframe volatility rank = percentile rank of the EMA of the standard deviation of higher-timeframe closes, calculated on the higher timeframe. Use the last completed higher-timeframe bar for historical bars and the still-forming higher-timeframe bar in real time. If unavailable, use a neutral percentile rank.
+Calculation: Extension = (source − EMA of source) / standard deviation of source, using the same extension lookback; use zero when the standard deviation is zero.
+Calculation: Upper width = upper base multiplier × (1 − upper compression factor / (1 + exp(−extension))) × ATR × (1 + 0.5 × higher-timeframe volatility rank / 100). Lower width = lower base multiplier × (1 − lower compression factor / (1 + exp(extension))) × ATR × (1 + 0.5 × higher-timeframe volatility rank / 100).
+Calculation: Raw upper anchor = 0.7 × highest source anchor + 0.3 × trend anchor − upper width. Raw lower anchor = 0.7 × lowest source anchor + 0.3 × trend anchor + lower width. Upper band = maximum of the raw anchors; lower band = minimum of the raw anchors. Centerline = EMA of the midpoint of the upper and lower bands.
+Calculation: Bullish trigger = source crosses above centerline in fast mode; source crosses above lower band in reversal mode; or, in conservative mode, source crossed above centerline within the permitted recent bars AND source > centerline AND trend anchor > its previous value. Bearish trigger = source crosses below centerline in fast mode; source crosses below upper band in reversal mode; or, in conservative mode, source crossed below centerline within the permitted recent bars AND source < centerline AND trend anchor < its previous value. If bar-close confirmation is enabled, triggers require a confirmed chart bar.
+Calculation: Bullish state = initially false; set true on a bullish trigger, otherwise set false on a bearish trigger, otherwise retain the preceding state. A bullish trigger takes precedence if both occur.
+Long: bullish trigger AND preceding bullish state = false
+Short: bearish trigger AND preceding bullish state = true
+Long: bullish state = true OR source > upper band OR source > centerline
+Short: bullish state = false OR source < lower band OR source < centerline

@@ -1,0 +1,5 @@
+Calculation: MACD histogram = EMA of close with a shorter lookback minus EMA of close with a longer lookback, minus the simple moving average of that difference.
+Long: Chart-timeframe EMA of close > its previous-bar value AND chart-timeframe MACD histogram > its previous-bar value AND chart-timeframe MACD histogram > 0.
+Short: Chart-timeframe EMA of close < its previous-bar value AND chart-timeframe MACD histogram < its previous-bar value AND chart-timeframe MACD histogram < 0.
+Long: Forming higher-timeframe EMA of close > its previous completed higher-timeframe value AND forming higher-timeframe MACD histogram > its previous completed higher-timeframe value AND forming higher-timeframe MACD histogram > 0.
+Short: Forming higher-timeframe EMA of close < its previous completed higher-timeframe value AND forming higher-timeframe MACD histogram < its previous completed higher-timeframe value AND forming higher-timeframe MACD histogram < 0.

@@ -1,0 +1,4 @@
+Calculation: Session regression = least-squares regression of log(close) against x = i + 1 for each chart bar i in the still-forming higher-timeframe session, where i = 0 is the current bar; let its intercept be a and slope be b.
+Calculation: Maximum profile bin volume = divide each chart bar's range exp(a + b*i) ± channel-width multiplier × standard deviation of chart-bar closes in the still-forming higher-timeframe session into equal bins; assign each session bar's volume to the bin containing its close if the close lies within that bar's range, clamp the upper endpoint to the last bin, and take the maximum total volume across corresponding bins.
+Long: Maximum profile bin volume > 0 AND exp(a) >= exp(a + b × number of chart bars in the still-forming higher-timeframe session).
+Short: Maximum profile bin volume > 0 AND exp(a) < exp(a + b × number of chart bars in the still-forming higher-timeframe session).

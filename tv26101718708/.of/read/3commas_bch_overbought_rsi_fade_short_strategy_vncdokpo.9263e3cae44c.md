@@ -1,0 +1,7 @@
+Calculation: RSI signal = RSI of close on the selected timeframe crossing below a threshold; for a higher timeframe use the last completed bar, for a lower timeframe use the last completed intrabar within the chart bar, and for the chart timeframe use the chart bar.
+Calculation: Averaging threshold for order k = base entry price multiplied by one plus the sum of the first k deviation steps; each successive step equals the preceding step multiplied by the step multiplier.
+Calculation: Trailing minimum = the lowest close since the short opened among bars whose close was at or below the average entry price at that bar multiplied by one minus the take-profit fraction; reset when flat.
+Short: datetime is within the enabled backtest window AND position is flat AND RSI signal indicates a cross below the threshold.
+Short: datetime is within the enabled backtest window AND position is short AND filled averaging order count is below the configured maximum AND close >= averaging threshold for the next averaging order.
+Exit: short, close >= average entry price multiplied by one plus the stop-loss fraction.
+Exit: short, trailing minimum exists AND close >= trailing minimum multiplied by one plus the trailing fraction.

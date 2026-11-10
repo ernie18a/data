@@ -1,0 +1,4 @@
+Calculation: Average entry = total quote capital committed to the base entry and filled averaging orders divided by the sum of each order's quote capital divided by its fill close; use the value at the start of the chart bar.
+Long: Position is flat AND RSI of close is below its threshold. If the RSI timeframe is higher than the chart timeframe, use its last completed bar; if lower, use the last available lower-timeframe bar within the chart bar.
+Long: Position is long AND fewer than the fixed number of averaging orders have filled AND close <= base entry price × (1 − the next averaging order's percentage deviation). Fill at most one averaging order per chart bar, in order of increasing deviation; each order has its own quote capital size.
+Exit: long, close >= average entry × (1 + take-profit percentage).

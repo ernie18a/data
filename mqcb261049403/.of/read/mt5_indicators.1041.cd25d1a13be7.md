@@ -1,0 +1,3 @@
+Calculation: MACD state = For each of six independently configured chart-or-higher timeframes, at the first chart bar of each timeframe bar, compare the MACD main line with its signal line using the still-forming timeframe bar. Set the state to long if the main line is greater, short if it is less, and otherwise retain the previous state. Retain the state between timeframe bar starts. The MACD main line is the shorter-period EMA minus the longer-period EMA of the selected OHLC-derived price; its signal line is an SMA of the main line.
+Long: Any timeframe's MACD state = long
+Short: Any timeframe's MACD state = short

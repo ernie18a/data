@@ -1,0 +1,3 @@
+Calculation: MACD histogram = shorter-period EMA of the selected price minus longer-period EMA of the same price, minus a moving average of that difference; the signal moving average may be simple, exponential, smoothed, or linear-weighted. Calculate on the chart timeframe or on a higher or lower timeframe. For a different timeframe and open price, use the bar forming at the chart bar's open; for other price types, use the last bar completed by the chart bar's close.
+Long: multicolor mode is enabled AND MACD histogram > previous MACD histogram on its calculation timeframe
+Short: multicolor mode is enabled AND MACD histogram < previous MACD histogram on its calculation timeframe

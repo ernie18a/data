@@ -1,0 +1,14 @@
+Calculation: Bullish alignment count = number of true conditions among: RSI below its oversold threshold AND rising; MACD histogram above zero OR MACD line crossing above its signal line; Williams %R below its oversold threshold AND rising; current close below the current lower Bollinger Band OR previous close below the previous lower Bollinger Band.
+Calculation: Bearish alignment count = number of true conditions among: RSI above its overbought threshold AND falling; MACD histogram below zero OR MACD line crossing below its signal line; Williams %R above its overbought threshold AND falling; current close above the current upper Bollinger Band OR previous close above the previous upper Bollinger Band.
+Calculation: Bullish reversal candle = close > open AND close - open > 2 × (high - close) AND open - low > 0.6 × (high - low).
+Calculation: Bearish reversal candle = close < open AND open - close > 2 × (close - low) AND high - open > 0.6 × (high - low).
+Calculation: Bullish signal = bullish alignment count >= required indicator count AND divergence requirement disabled AND (volume requirement disabled OR volume > volume SMA × volume multiplier) AND (reversal candle requirement disabled OR bullish reversal candle) AND bar time within the selected session in the exchange timezone.
+Calculation: Bearish signal = bearish alignment count >= required indicator count AND divergence requirement disabled AND (volume requirement disabled OR volume > volume SMA × volume multiplier) AND (reversal candle requirement disabled OR bearish reversal candle) AND bar time within the selected session in the exchange timezone.
+Long: (signal flipping disabled AND bullish signal) OR (signal flipping enabled AND bearish signal).
+Short: (signal flipping disabled AND bearish signal) OR (signal flipping enabled AND bullish signal).
+Long: bullish alignment count >= 2 AND bar time within the selected session in the exchange timezone AND NOT ((signal flipping disabled AND bullish signal) OR (signal flipping enabled AND bearish signal)).
+Short: bearish alignment count >= 2 AND bar time within the selected session in the exchange timezone AND NOT ((signal flipping disabled AND bearish signal) OR (signal flipping enabled AND bullish signal)).
+Exit: long, short entry signal AND short entry permitted by the pyramiding setting and entry limit.
+Exit: short, long entry signal AND long entry permitted by the pyramiding setting and entry limit.
+Exit: long, stop loss enabled AND low <= latest long entry order's signal-bar close × (1 - stop-loss percentage) OR take profit enabled AND high >= latest long entry order's signal-bar close × (1 + take-profit percentage).
+Exit: short, stop loss enabled AND high >= latest short entry order's signal-bar close × (1 + stop-loss percentage) OR take profit enabled AND low <= latest short entry order's signal-bar close × (1 - take-profit percentage).

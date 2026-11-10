@@ -1,0 +1,4 @@
+Long: A confirmed upper Bill Williams fractal exists on the chart timeframe and its high is not zero.
+Short: A confirmed lower Bill Williams fractal exists on the chart timeframe and its low is not zero.
+Long: The current chart bar starts a higher-timeframe bar AND a confirmed upper Bill Williams fractal exists on the higher timeframe, using the still-forming higher-timeframe bar, and its high is not zero.
+Short: The current chart bar starts a higher-timeframe bar AND a confirmed lower Bill Williams fractal exists on the higher timeframe, using the still-forming higher-timeframe bar, and its low is not zero.

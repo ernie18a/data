@@ -1,0 +1,6 @@
+Long: On the first chart bar receiving a higher-timeframe cross event, the short-lookback SMA of higher-timeframe closes on the last completed higher-timeframe bar is greater than the long-lookback SMA, AND on the preceding higher-timeframe bar it was less than or equal to the long-lookback SMA.
+Short: On the first chart bar receiving a higher-timeframe cross event, the short-lookback SMA of higher-timeframe closes on the last completed higher-timeframe bar is less than the long-lookback SMA, AND on the preceding higher-timeframe bar it was greater than or equal to the long-lookback SMA.
+Long: The short-lookback SMA of higher-timeframe closes on the last completed higher-timeframe bar is greater than or equal to the long-lookback SMA.
+Short: The short-lookback SMA of higher-timeframe closes on the last completed higher-timeframe bar is less than the long-lookback SMA.
+Long: The selected price, either the chart close or the last completed higher-timeframe close, is greater than or equal to the long-lookback SMA of higher-timeframe closes on the last completed higher-timeframe bar, AND that SMA is not zero.
+Short: The selected price, either the chart close or the last completed higher-timeframe close, is less than the long-lookback SMA of higher-timeframe closes on the last completed higher-timeframe bar, AND that SMA is not zero.

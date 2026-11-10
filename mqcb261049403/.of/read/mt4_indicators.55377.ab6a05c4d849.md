@@ -1,0 +1,4 @@
+Calculation: Channel bounds = over a lookback ending at the chart bar shifted backward by the configured number of chart bars, use one paired method: highest high and lowest low; averages of highest high with highest open and lowest low with lowest open; averages of highest high with highest close and lowest low with lowest close; highest open and lowest open; or highest close and lowest close. Calculate on the chart timeframe or a higher timeframe; for a higher timeframe include the bar still forming at the shifted chart bar.
+Calculation: Midline = (upper channel bound + lower channel bound) / 2.
+Long: Selected chart bar open < its midline AND selected chart bar close > its midline.
+Short: Selected chart bar open > its midline AND selected chart bar close < its midline.

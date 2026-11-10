@@ -1,0 +1,4 @@
+Calculation: Composite MACD = mean of enabled timeframe MACD lines, each calculated as the shorter-period EMA of close minus the longer-period EMA of close; use the chart timeframe or higher timeframes, with the last completed bar for each higher timeframe. If no timeframe is enabled, use zero.
+Calculation: Display histogram = composite MACD minus its signal moving average, optionally smoothed by a moving average, then multiplied by a positive scale. The signal moving average may be EMA, SMA, RMA, or WMA; histogram smoothing may be EMA, SMA, or WMA.
+Long: Display histogram >= 0
+Short: Display histogram < 0

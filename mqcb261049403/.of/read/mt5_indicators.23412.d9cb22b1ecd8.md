@@ -1,0 +1,5 @@
+Calculation: Dynamic trend line = For each of three independently selected timeframes, each equal to or higher than the chart timeframe, use the same lookback and price offset; initialize the line to zero. If the source bar's close is below the previous source bar's line, set the line to the highest close over the lookback ending at the previous source bar minus the offset; otherwise set it to the lowest close over that lookback plus the offset. For a higher timeframe, use the bar still forming and its current close.
+Long: For any selected timeframe, current source-bar close >= previous source-bar dynamic trend line.
+Short: For any selected timeframe, current source-bar close < previous source-bar dynamic trend line.
+Long: For any selected timeframe, previous completed source-bar close > its dynamic trend line AND the preceding source-bar close <= its dynamic trend line.
+Short: For any selected timeframe, previous completed source-bar close < its dynamic trend line AND the preceding source-bar close >= its dynamic trend line.

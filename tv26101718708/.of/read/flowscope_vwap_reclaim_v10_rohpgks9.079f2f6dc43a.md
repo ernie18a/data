@@ -1,0 +1,20 @@
+Calculation: VWAP = cumulative sum of ((high + low + close) / 3 × volume) divided by cumulative volume, reset at each trading-day boundary; include bars outside the active session.
+Calculation: VWAP zone = VWAP ± clamp(ATR × zone multiplier, minimum zone width, maximum zone width).
+Calculation: Setup state = Maintain separate long and short active flags, hold-ready flags, cross-bar indices, and stored retest levels. Initially all flags are false and levels are missing. On an in-session upward close/VWAP crossover, activate long, deactivate short, clear both hold-ready flags, record the long cross bar, and clear the long retest level. On a downward crossover, perform the symmetric updates. While long is active, set long hold-ready when the lowest close over the hold lookback is greater than the current VWAP; while short is active, set short hold-ready when the highest close over that lookback is less than the current VWAP. Hold-ready persists until cleared. On each long retest confirmation store its high; on each short retest confirmation store its low, replacing any previously stored level. After storing retests, deactivate an active setup and clear its hold-ready flag if bars since its cross exceed the timeout and its retest level is missing. Then, if an active long has close < VWAP or an active short has close > VWAP, deactivate it, clear its hold-ready flag, and clear its retest level. Finally evaluate triggers using the stored levels as they stood at the end of the previous bar; after a trigger, deactivate that side and clear its hold-ready flag and retest level. Opposite-side crossovers do not clear the other side's stored retest level.
+Calculation: Long retest confirmation = in active session AND long hold-ready after the current bar's hold update AND low <= upper VWAP zone AND high >= lower VWAP zone AND close > VWAP AND close > open.
+Calculation: Short retest confirmation = in active session AND short hold-ready after the current bar's hold update AND high >= lower VWAP zone AND low <= upper VWAP zone AND close < VWAP AND close < open.
+Calculation: Chop risk = chop filter enabled AND in active session AND the count of in-session close/VWAP crossovers or crossunders over the chop lookback >= chop threshold.
+Calculation: Long trigger = in active session AND chop risk = false AND previous bar's stored long retest high exists AND high > that stored high AND (volume filter disabled OR volume / SMA of volume >= elevated-volume threshold).
+Calculation: Short trigger = in active session AND chop risk = false AND previous bar's stored short retest low exists AND low < that stored low AND (volume filter disabled OR volume / SMA of volume >= elevated-volume threshold).
+Long: in active session AND close crosses above VWAP.
+Short: in active session AND close crosses below VWAP.
+Long: long retest confirmation = true.
+Short: short retest confirmation = true.
+Long: long trigger = true.
+Short: short trigger = true.
+Long: in active session AND absolute value of close − VWAP >= minimum bias distance AND close > VWAP.
+Short: in active session AND absolute value of close − VWAP >= minimum bias distance AND close < VWAP.
+Long: long trigger = false AND short trigger = false AND chop risk = false AND long hold-ready = true after current-bar state updates.
+Short: long trigger = false AND short trigger = false AND chop risk = false AND long hold-ready = false AND short hold-ready = true after current-bar state updates.
+Long: long trigger = false AND short trigger = false AND chop risk = false AND both hold-ready flags = false AND (outside active session OR absolute value of close − VWAP < ATR × extension multiplier) AND long active = true after current-bar state updates.
+Short: long trigger = false AND short trigger = false AND chop risk = false AND both hold-ready flags = false AND (outside active session OR absolute value of close − VWAP < ATR × extension multiplier) AND long active = false AND short active = true after current-bar state updates.

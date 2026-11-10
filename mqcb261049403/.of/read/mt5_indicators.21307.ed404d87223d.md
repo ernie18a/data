@@ -1,0 +1,4 @@
+Calculation: Rounded range midpoint = for each of the most recent lookback bars, including the current bar, find the highest high and lowest low over a lookback-length window ending at that bar; average those highest highs, average those lowest lows, take the midpoint of the two averages, normalize it to the instrument's price precision, then round it to a configurable price increment.
+Calculation: Midpoint direction = the sign of the most recent nonzero change in the rounded range midpoint; retain the previous direction when the midpoint is unchanged.
+Long: Midpoint direction on the chart timeframe > 0 OR midpoint direction on the still-forming higher-timeframe bar > 0.
+Short: Midpoint direction on the chart timeframe < 0 OR midpoint direction on the still-forming higher-timeframe bar < 0.

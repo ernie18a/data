@@ -1,0 +1,3 @@
+Calculation: Session-adjusted rolling SMA = SMA of closes on a lower or equal calculation timeframe, using a window equal to the rounded median number of bars in recent completed trading sessions multiplied by the rolling session count. Retain a configurable number of completed sessions and require a minimum number before calculating. Use bars from the selected session. Sample the last completed calculation-timeframe bar at each chart-bar close, carrying its value forward when no new calculation-timeframe bar is available.
+Long: Chart close > session-adjusted rolling SMA AND session-adjusted rolling SMA > its value on the previous chart bar
+Short: Chart close < session-adjusted rolling SMA AND session-adjusted rolling SMA < its value on the previous chart bar

@@ -1,0 +1,14 @@
+Calculation: ATR trailing stop = On the long-entry bar, high minus ATR multiplied by a configurable factor. On each later bar in the position, take the greater of the previous stop and the highest high since entry, including the current bar, minus current ATR multiplied by the same factor.
+Long: Shorter-period EMA of close > longer-period EMA of close > shorter-period SMA of close > longer-period SMA of close.
+Short: Shorter-period EMA of close < longer-period EMA of close < shorter-period SMA of close < longer-period SMA of close.
+Long: Close > a selected EMA or SMA of close.
+Short: Close < a selected EMA or SMA of close.
+Long: A selected EMA or SMA of close > its value a configurable number of bars ago.
+Short: A selected EMA or SMA of close < its value a configurable number of bars ago.
+Long: No open position AND the bullish MA stack becomes true after being false on the previous bar AND, if enabled, volume is unavailable OR its SMA is unavailable OR volume >= its SMA multiplied by a configurable factor AND, if enabled, the absolute difference between the shorter-period EMA and longer-period SMA divided by close is >= a configurable threshold; use zero for this ratio when close is zero.
+Long: No open position AND close crosses above the selected EMA or SMA of close AND, if enabled, the selected average > its value a configurable number of bars ago AND, if enabled, volume is unavailable OR its SMA is unavailable OR volume >= its SMA multiplied by a configurable factor AND, if enabled, the absolute difference between the shorter-period EMA and longer-period SMA divided by close is >= a configurable threshold; use zero for this ratio when close is zero.
+Long: No open position AND the shorter-period EMA of close crosses above the longer-period EMA of close AND, if enabled, the longer-period EMA > its value a configurable number of bars ago AND, if enabled, volume is unavailable OR its SMA is unavailable OR volume >= its SMA multiplied by a configurable factor AND, if enabled, the absolute difference between the shorter-period EMA and longer-period SMA divided by close is >= a configurable threshold; use zero for this ratio when close is zero.
+Exit: Long, when using the MA-stack entry mode and MA exit mode, the bullish MA stack is false AND it was true on the previous bar.
+Exit: Long, when using the price-versus-MA entry mode and MA exit mode, close crosses below the selected EMA or SMA of close.
+Exit: Long, when using the EMA-crossover entry mode and MA exit mode, the shorter-period EMA of close crosses below the longer-period EMA of close.
+Exit: Long, when using the ATR exit mode, close < ATR trailing stop.

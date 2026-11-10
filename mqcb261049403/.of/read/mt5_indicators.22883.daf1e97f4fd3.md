@@ -1,0 +1,8 @@
+Long: Parabolic SAR on a higher, lower, or chart timeframe, at a configurable bar offset from its forming bar, < current chart-bar close
+Short: Parabolic SAR on a higher, lower, or chart timeframe, at a configurable bar offset from its forming bar, > current chart-bar close
+Long: Williams %R on a higher, lower, or chart timeframe, at a configurable bar offset from its forming bar, < lower threshold AND signal inversion is enabled
+Short: Williams %R on a higher, lower, or chart timeframe, at a configurable bar offset from its forming bar, < lower threshold AND signal inversion is disabled
+Long: Williams %R on a higher, lower, or chart timeframe, at a configurable bar offset from its forming bar, >= lower threshold AND > upper threshold AND signal inversion is disabled
+Short: Williams %R on a higher, lower, or chart timeframe, at a configurable bar offset from its forming bar, >= lower threshold AND > upper threshold AND signal inversion is enabled
+Long: shorter-period moving average > longer-period moving average, both using the same configurable method and price source on the same higher, lower, or chart timeframe and at the same configurable bar offset from its forming bar
+Short: shorter-period moving average < longer-period moving average, both using the same configurable method and price source on the same higher, lower, or chart timeframe and at the same configurable bar offset from its forming bar

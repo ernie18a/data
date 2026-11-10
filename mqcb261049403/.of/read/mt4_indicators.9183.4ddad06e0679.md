@@ -1,0 +1,7 @@
+Calculation: Higher-timeframe Heikin-Ashi boundaries = The high and low of the last completed Heikin-Ashi bar; if its open equals its close, retain the boundaries last assigned for a non-doji bar.
+Calculation: Longer-higher-timeframe trend = Down when the previous chart bar's close is below the longer-higher-timeframe lower boundary; up when that close is above the upper boundary; otherwise retain the previous trend.
+Calculation: Buy state = Initially false; set false when the previous chart bar's close is below the longer-higher-timeframe lower boundary, and set true when the long condition occurs. Apply the boundary reset before evaluating entries.
+Long: Longer-higher-timeframe trend = up AND previous chart bar close < shorter-higher-timeframe last completed Heikin-Ashi open AND shorter-higher-timeframe last completed Heikin-Ashi close > its open
+Short: Buy state = false AND longer-higher-timeframe trend = down AND previous chart bar close > shorter-higher-timeframe last completed Heikin-Ashi open AND shorter-higher-timeframe last completed Heikin-Ashi close < its open
+Exit: long, previous chart bar close < longer-higher-timeframe lower boundary
+Exit: short, previous chart bar close > longer-higher-timeframe upper boundary OR (longer-higher-timeframe trend = up AND previous chart bar close < shorter-higher-timeframe last completed Heikin-Ashi open AND shorter-higher-timeframe last completed Heikin-Ashi close > its open)

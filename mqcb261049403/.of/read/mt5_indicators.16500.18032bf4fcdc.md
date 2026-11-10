@@ -1,0 +1,4 @@
+Long: Shorter-lookback MFI > longer-lookback MFI AND longer-lookback MFI > signal level.
+Short: Shorter-lookback MFI < longer-lookback MFI AND longer-lookback MFI < 100 - signal level.
+Long: At the selected chart-bar offset, the sampled higher-timeframe or chart-timeframe state changes from not long to long; the state uses the same MFI conditions above. For a higher timeframe, sample its still-forming bar at the start of each higher-timeframe bar and carry that state across its constituent chart bars.
+Short: At the selected chart-bar offset, the sampled higher-timeframe or chart-timeframe state changes from not short to short; the state uses the same MFI conditions above. For a higher timeframe, sample its still-forming bar at the start of each higher-timeframe bar and carry that state across its constituent chart bars.

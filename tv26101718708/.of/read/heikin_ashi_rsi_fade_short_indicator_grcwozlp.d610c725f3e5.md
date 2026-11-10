@@ -1,0 +1,3 @@
+Calculation: Heikin Ashi streak = number of consecutive lower-timeframe Heikin Ashi bars since the last bar with close <= open for a bullish streak, or since the last bar with close >= open for a bearish streak; undefined until such a bar occurs. Use the last completed lower-timeframe bar.
+Short: position is flat AND lower-timeframe RSI of the last completed bar is greater than a threshold or less than a threshold, according to the selected comparison AND the selected bullish or bearish Heikin Ashi streak >= streak threshold.
+Exit: short, chart close <= entry price × (1 - take-profit fraction) OR chart close >= entry price × (1 + stop-loss fraction).

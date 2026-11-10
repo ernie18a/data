@@ -1,0 +1,7 @@
+Calculation: Selected price = a configurable choice of close, open, high, low, (high + low)/2, (high + low + close)/3, (high + low + 2 × close)/4, (open + close)/2, (open + high + low + close)/4, high if close > open and low if close < open and close otherwise, (high + close)/2 if close > open and (low + close)/2 if close < open and close otherwise, or DeMark price where X = high + low + close plus low if close < open, high if close > open, or close if close = open, and the price is (X - high - low)/2.
+Calculation: Double LWMA = a linear weighted moving average of a linear weighted moving average of the selected price, using the same lookback for both averages and weighting recent bars more heavily.
+Calculation: First timeframe double LWMA and second timeframe double LWMA = double LWMAs with the same lookback and selected price, each calculated on its own configurable timeframe, which may be the chart timeframe or a higher timeframe; use the bar still forming. The two timeframes have no required ordering.
+Long: chart timeframe double LWMA > its previous bar value
+Short: chart timeframe double LWMA < its previous bar value
+Long: first timeframe double LWMA > second timeframe double LWMA
+Short: first timeframe double LWMA < second timeframe double LWMA

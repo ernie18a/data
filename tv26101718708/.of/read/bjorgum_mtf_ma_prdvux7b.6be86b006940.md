@@ -1,0 +1,7 @@
+Calculation: Heikin-Ashi open = (previous Heikin-Ashi open + previous Heikin-Ashi close) / 2, initialized as (open + close) / 2; Heikin-Ashi close = (open + high + low + close) / 4; Heikin-Ashi EMA = EMA of Heikin-Ashi open.
+Calculation: Instantaneous trendline = (source + 2 × previous source + source two bars ago) / 4 for the initial bars; thereafter, with smoothing parameter α, (α − α² / 4) × source + α² / 2 × previous source − (α − 3α² / 4) × source two bars ago + 2 × (1 − α) × previous trendline − (1 − α)² × trendline two bars ago. Missing prior values are zero.
+Calculation: Moving average = independently selected EMA, Heikin-Ashi EMA, SMA, HMA, WMA, DEMA, VWMA, session VWAP, T3, or instantaneous trendline. Use close as the source except for Heikin-Ashi EMA, session VWAP, and instantaneous trendline, which uses a selectable price source. Calculate each average on the chart timeframe or an independently selected higher or lower timeframe. For another timeframe, use the last completed requested-timeframe value merged onto the previous chart bar; for a lower timeframe, use the last completed lower-timeframe bar within that chart bar.
+Long: Moving average on its own timeframe >= its previous value on that timeframe; for another timeframe, use the completed comparison merged onto the previous chart bar.
+Short: Moving average on its own timeframe < its previous value on that timeframe; for another timeframe, use the completed comparison merged onto the previous chart bar.
+Long: Chart close >= moving average.
+Short: Chart close < moving average.

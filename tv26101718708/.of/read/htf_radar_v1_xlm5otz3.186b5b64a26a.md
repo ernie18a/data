@@ -1,0 +1,2 @@
+Long: Chart close > shorter-period EMA of higher-timeframe closes AND chart close > longer-period EMA of higher-timeframe closes; use the last completed higher-timeframe bar.
+Short: Chart close < shorter-period EMA of higher-timeframe closes AND chart close < longer-period EMA of higher-timeframe closes; use the last completed higher-timeframe bar.

@@ -1,0 +1,4 @@
+Long: Shorter-period moving average > longer-period moving average AND shorter-period RSI >= longer-period RSI OR shorter-period moving average >= longer-period moving average AND shorter-period RSI > longer-period RSI
+Short: Shorter-period moving average < longer-period moving average AND shorter-period RSI <= longer-period RSI OR shorter-period moving average <= longer-period moving average AND shorter-period RSI < longer-period RSI
+Long: On the still-forming higher-timeframe bar, shorter-period moving average > longer-period moving average AND shorter-period RSI >= longer-period RSI OR shorter-period moving average >= longer-period moving average AND shorter-period RSI > longer-period RSI
+Short: On the still-forming higher-timeframe bar, shorter-period moving average < longer-period moving average AND shorter-period RSI <= longer-period RSI OR shorter-period moving average <= longer-period moving average AND shorter-period RSI < longer-period RSI

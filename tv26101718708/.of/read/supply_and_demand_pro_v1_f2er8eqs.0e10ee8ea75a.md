@@ -1,0 +1,19 @@
+Calculation: Bullish structure break = close > highest high over the preceding structure lookback AND previous close <= that same highest high.
+Calculation: Bearish structure break = close < lowest low over the preceding structure lookback AND previous close >= that same lowest low.
+Calculation: Session allowed = session filter disabled OR bar time is within the selected session in the session timezone.
+Calculation: Aggressive long signal = session allowed AND (short EMA > medium EMA OR close > short EMA) AND RSI > RSI midpoint + offset AND NOT (short EMA < medium EMA AND medium EMA < long EMA AND RSI < RSI midpoint) AND bullish structure break AND bars since the last long signal >= same-direction cooldown.
+Calculation: Aggressive short signal = session allowed AND (short EMA < medium EMA OR close < short EMA) AND RSI < RSI midpoint - offset AND NOT (short EMA > medium EMA AND medium EMA > long EMA AND RSI > RSI midpoint) AND bearish structure break AND bars since the last short signal >= same-direction cooldown.
+Calculation: Continuation long signal = session allowed AND short EMA > medium EMA AND medium EMA > long EMA AND RSI > RSI midpoint AND bars since the most recent bullish structure break <= signal window AND aggressive long signal is false AND bars since the last long signal >= same-direction cooldown AND (no preceding aggressive long signal exists OR bars since the most recent aggressive long signal > aggressive-to-continuation delay).
+Calculation: Continuation short signal = session allowed AND short EMA < medium EMA AND medium EMA < long EMA AND RSI < RSI midpoint AND bars since the most recent bearish structure break <= signal window AND aggressive short signal is false AND bars since the last short signal >= same-direction cooldown AND (no preceding aggressive short signal exists OR bars since the most recent aggressive short signal > aggressive-to-continuation delay).
+Calculation: Zone bar = bar from the configured zone timeframe; for a higher timeframe use the last completed bar, and for a lower timeframe use the last intrabar within the chart bar.
+Calculation: Average body = SMA of abs(close - open) on zone bars.
+Calculation: Latest aggressive-signal risk = for the most recent aggressive long signal, its close minus the lower of its low and the preceding bar's low after applying a downward percentage buffer; for the most recent aggressive short signal, the higher of its high and the preceding bar's high after applying an upward percentage buffer minus its close.
+Calculation: Profit target = the most recent aggressive signal's close plus its risk multiplied by a target multiplier for a long signal, or minus that product for a short signal; use three increasing target multipliers and retain the levels until the next aggressive signal.
+Long: bullish structure break.
+Short: bearish structure break.
+Long: aggressive long signal OR continuation long signal.
+Short: aggressive short signal OR continuation short signal.
+Long: zone bar close - zone bar open > average body multiplied by the expansion factor AND zone bar close > zone bar open AND abs(close - open) of the zone bar at the specified earlier offset < current average body multiplied by the contraction factor.
+Short: zone bar open - zone bar close > average body multiplied by the expansion factor AND zone bar close < zone bar open AND abs(close - open) of the zone bar at the specified earlier offset < current average body multiplied by the contraction factor.
+Exit: long, most recent aggressive signal is long AND high >= any profit target AND previous low < that same profit target.
+Exit: short, most recent aggressive signal is short AND low <= any profit target AND previous high > that same profit target.

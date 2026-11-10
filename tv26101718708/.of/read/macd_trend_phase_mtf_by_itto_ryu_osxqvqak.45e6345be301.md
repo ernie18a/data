@@ -1,0 +1,12 @@
+Calculation: PPO = 100 × (EMA of close with shorter lookback − EMA of close with longer lookback) / EMA of close with longer lookback; signal = EMA of PPO; histogram = PPO − signal. Use the same lookbacks on every timeframe.
+Calculation: Phase = 0 when PPO or signal or the regime PPO is unavailable, or absolute PPO is below the chop threshold. Otherwise, for PPO > 0: if PPO > signal, phase is 2 when regime PPO > 0 and 1 otherwise; if PPO <= signal, phase is 4 when the latest completed PPO-above-signal leg has a lower maximum PPO than the preceding such leg, and 3 otherwise. For PPO <= 0: if PPO <= signal, phase is -2 when regime PPO <= 0 and -1 otherwise; if PPO > signal, phase is -4 when the latest completed PPO-at-or-below-signal leg has a higher minimum PPO than the preceding such leg, and -3 otherwise. A missing prior leg makes the peak or trough comparison false. The regime PPO uses the last completed bar of a higher timeframe. Other phase inputs use the last completed bar of their respective timeframe; the phase timeframe is higher than the chart timeframe, while each grid timeframe may be lower than, equal to, or higher than the chart timeframe. For a lower grid timeframe, use the last available intrabar value in the chart bar.
+Calculation: Committed phase = initially 0; change to a different raw phase only after that same raw phase persists for the confirmation count of consecutive chart bars. Reset the candidate count when the raw phase equals the committed phase or changes to a different candidate.
+Calculation: Consensus = 100 × the weighted sum of grid phase scores / the sum of grid weights, or 0 when the weight sum is 0. Scores for phases 2, 3, 1, 4 and 0 are respectively 1, 0.75, 0.5, 0.25 and 0; negative phases have the negated corresponding score.
+Long: committed phase > 0
+Short: committed phase < 0
+Long: any grid phase is 1, 2, or 3
+Short: any grid phase is -1, -2, or -3
+Long: consensus >= bias threshold
+Short: consensus < bias threshold AND consensus <= negative bias threshold
+Long: committed phase = 3 AND chart histogram > previous chart histogram AND previous chart histogram < chart histogram two bars ago
+Short: committed phase = -3 AND chart histogram < previous chart histogram AND previous chart histogram > chart histogram two bars ago

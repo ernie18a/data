@@ -1,0 +1,4 @@
+Long: At the opening of a new work-timeframe bar, Parabolic SAR on the chart timeframe at the selected bar offset < low of the work-timeframe bar at the same offset
+Short: At the opening of a new work-timeframe bar, Parabolic SAR on the chart timeframe at the selected bar offset > high of the work-timeframe bar at the same offset
+Exit: long, at the opening of a new work-timeframe bar, Parabolic SAR on the chart timeframe at the selected bar offset > high of the work-timeframe bar at the same offset OR low <= entry price - enabled stop-loss distance OR high >= entry price + enabled take-profit distance
+Exit: short, at the opening of a new work-timeframe bar, Parabolic SAR on the chart timeframe at the selected bar offset < low of the work-timeframe bar at the same offset OR high >= entry price + enabled stop-loss distance OR low <= entry price - enabled take-profit distance

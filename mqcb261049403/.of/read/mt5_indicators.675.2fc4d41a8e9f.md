@@ -1,0 +1,8 @@
+Calculation: Normalized Williams %R = (close − lowest low) / (highest high − lowest low) over its lookback.
+Calculation: Adaptive oscillator = normalized Williams %R using a shorter lookback if, within a recent scan window, any bar’s close differs from the close a fixed number of bars earlier by at least a threshold multiple of the current bar’s average high-low range; otherwise use a longer lookback. The average range uses a longer window than the scan, and the close offset is shorter than the scan. Use the current bar’s selected lookback for both its oscillator value and every historical oscillator value examined for that bar.
+Calculation: ASCtrend direction = compare the adaptive oscillator with lower and upper thresholds symmetric around its midpoint. Search backward from the preceding bar for the most recent oscillator value strictly outside the thresholds, skipping values equal to or between them. Direction is long if the current value is above the upper threshold and the found value is below the lower threshold; direction is short if the current value is below the lower threshold and the found value is above the upper threshold.
+Calculation: Higher-timeframe trend = direction of the most recent ASCtrend direction on the higher timeframe, including its bar still forming; retain that direction until an opposite direction occurs.
+Long: Chart-timeframe ASCtrend direction is long.
+Short: Chart-timeframe ASCtrend direction is short.
+Long: Higher-timeframe trend is long.
+Short: Higher-timeframe trend is short.

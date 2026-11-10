@@ -1,0 +1,4 @@
+Calculation: Eligible buy-stop level = The previous chart bar's high plus a price offset, recorded at each new chart bar when there is no long position OR the level exceeds the highest open long entry price by more than a separate position-spacing offset. Retain recorded levels until any position is entered, then remove all recorded buy-stop and sell-stop levels.
+Calculation: Eligible sell-stop level = The previous chart bar's low minus a price offset, recorded at each new chart bar when there is no short position OR the lowest open short entry price exceeds the level by more than a separate position-spacing offset. Retain recorded levels until any position is entered, then remove all recorded buy-stop and sell-stop levels.
+Long: Current bar high >= any eligible buy-stop level.
+Short: Current bar low <= any eligible sell-stop level.

@@ -1,0 +1,13 @@
+Calculation: Confirmed pivot low = a low confirmed after the configured number of right-hand bars, using the configured numbers of left-hand and right-hand bars.
+Calculation: Setup state = start at 0; in state 0, replace support with each newly confirmed pivot low, then advance to state 1 and freeze the current high as reversal high when low <= support * (1 + tolerance) AND close > open AND close > previous high. In state 1, advance to state 2 when a confirmed pivot low > support. In state 2, advance to state 3 when close > reversal high. Evaluate these transitions in that order, allowing multiple transitions on one bar. After evaluating buy conditions, reset to state 0 and clear support and reversal high when state > 0 AND close < support. Also reset and clear them when a long entry is placed.
+Calculation: Entry-bar capture = on the first bar where the long position is observed, capture that bar's ATR and the current support, if available; count holding bars from that bar. The support and ATR assigned when the entry order is placed are cleared while still flat.
+Calculation: Long stop = min(max(captured support - buffer * captured ATR, entry price - maximum-risk multiplier * captured ATR), entry price - minimum price increment) when structure stops are enabled and captured support exists; otherwise min(entry price - maximum-risk multiplier * captured ATR, entry price - minimum price increment).
+Long: State 0 AND support exists AND low <= support * (1 + tolerance) AND close > open AND close > previous high.
+Long: State 1 AND confirmed pivot low > support.
+Long: State 2 AND close > reversal high.
+Long: State 3 AND volume >= volume moving average * volume multiplier AND ((close > mid-term EMA AND short-term EMA > mid-term EMA AND mid-term EMA > its earlier value) OR (close > longest-term EMA AND short-term EMA > mid-term EMA AND mid-term EMA > longer-term EMA AND longest-term EMA > its earlier value)) AND (VWAP filter disabled OR close > VWAP). VWAP uses close and resets at the start of each calendar day.
+Exit: Long, low <= long stop.
+Exit: Long, take-profit enabled AND high >= entry price + take-profit multiplier * captured ATR.
+Exit: Long, EMA exit enabled AND close < mid-term EMA.
+Exit: Long, support exit enabled AND captured support exists AND close < captured support.
+Exit: Long, maximum holding period enabled AND bars since entry-bar capture >= maximum holding period.

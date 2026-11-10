@@ -1,0 +1,23 @@
+Calculation: Channel basis = EMA of close.
+Calculation: Channel step = EMA of ATR multiplied by a positive band-spacing parameter; channel extension = (close − channel basis) / channel step when channel step > 0, otherwise 0.
+Calculation: Higher-timeframe histogram = MACD histogram calculated on the last completed higher-timeframe bar.
+Calculation: Histogram peak and trough = highest and lowest chart-timeframe MACD histogram over a longer lookback; dip low and dip high = lowest and highest histogram over a shorter lookback. Long dip depth = (peak − dip low) / peak when peak > 0, otherwise 0. Short dip depth = (dip high − trough) / absolute value of trough when trough < 0, otherwise 0.
+Calculation: Bullish regime = close > channel basis AND channel basis > its value a lookback ago AND higher-timeframe histogram > 0. Bearish regime = close < channel basis AND channel basis < its value a lookback ago AND higher-timeframe histogram < 0.
+Calculation: Long trend filter = close > channel basis AND channel basis > its value a lookback ago AND ADX >= minimum AND positive DI > negative DI AND channel extension < maximum AND (higher-timeframe agreement disabled OR higher-timeframe histogram > 0). Short trend filter = close < channel basis AND channel basis < its value a lookback ago AND ADX >= minimum AND negative DI > positive DI AND channel extension > −maximum AND (higher-timeframe agreement disabled OR higher-timeframe histogram < 0).
+Calculation: Entry gate = no previous entry order OR bars since previous entry order > cooldown.
+Calculation: Long entry signal = long direction enabled AND entry gate AND ((trend-cross entry enabled AND MACD crosses below signal AND short trend filter AND (pullback-only restriction disabled OR MACD < 0)) OR (pullback entry enabled AND long trend filter AND histogram > 0 AND histogram > previous histogram AND previous histogram <= histogram two bars ago AND long dip depth >= minimum depth AND close > open) OR (reversal entry enabled AND low <= channel basis − channel step × reversal-band multiplier at least once within the current bar and a recent lookback AND histogram > previous histogram AND previous histogram <= histogram two bars ago AND close > open AND close > previous close)).
+Calculation: Short entry signal = short direction enabled AND entry gate AND long entry signal = false AND ((trend-cross entry enabled AND MACD crosses below signal AND short trend filter AND (pullback-only restriction disabled OR MACD > 0)) OR (pullback entry enabled AND short trend filter AND histogram < 0 AND histogram < previous histogram AND previous histogram >= histogram two bars ago AND short dip depth >= minimum depth AND close < open) OR (reversal entry enabled AND high >= channel basis + channel step × reversal-band multiplier at least once within the current bar and a recent lookback AND histogram < previous histogram AND previous histogram >= histogram two bars ago AND close < open AND close < previous close)).
+Calculation: Initial risk distance = ATR on the entry-order bar × stop multiplier. Long target = entry price + initial risk distance × target multiplier; short target = entry price − initial risk distance × target multiplier.
+Calculation: Long stop starts at entry price − initial risk distance. Once any high since entry >= entry price + initial risk distance × arming multiplier, raise it to at least entry price; while armed and trailing is enabled, also raise it to at least the highest high over a trailing lookback − current ATR × trailing multiplier. Short stop starts at entry price + initial risk distance. Once any low since entry <= entry price − initial risk distance × arming multiplier, lower it to at most entry price; while armed and trailing is enabled, also lower it to at most the lowest low over the same trailing lookback + current ATR × trailing multiplier. Stops never move away from the entry price.
+Long: MACD crosses above its signal.
+Long: Bullish regime.
+Long: Long entry signal.
+Short: MACD crosses below its signal.
+Short: Bearish regime.
+Short: Short entry signal.
+Exit: long, low <= long stop OR high >= long target.
+Exit: short, high >= short stop OR low <= short target.
+Exit: long, opposite-cross exit enabled AND bars held >= minimum holding period AND MACD crosses below its signal.
+Exit: short, opposite-cross exit enabled AND bars held >= minimum holding period AND MACD crosses above its signal.
+Exit: long, time stop enabled AND bars held >= maximum holding period.
+Exit: short, time stop enabled AND bars held >= maximum holding period.
