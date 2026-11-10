@@ -1,0 +1,11 @@
+Calculation: Absolute volume score = (volume - SMA of volume) / standard deviation of volume over the same lookback; use 0 when the standard deviation is not positive or unavailable.
+Calculation: Volume acceleration score = (volume - previous bar's volume) / standard deviation of volume over the same lookback as the absolute volume score; use 0 when the standard deviation is not positive or unavailable.
+Calculation: Volume level = for each enabled score, classify it as exceptional if it is at least its exceptional threshold, otherwise very high if it is at least its very high threshold, otherwise high if it is at least its high threshold, otherwise normal. Exceptional thresholds exceed very high thresholds, which exceed high thresholds. Select the absolute score, the acceleration score, or both as a parameter; when both are selected, use the higher classification.
+Long: close > open AND volume level = normal
+Long: close > open AND volume level = high
+Long: close > open AND volume level = very high
+Long: close > open AND volume level = exceptional
+Short: close < open AND volume level = normal
+Short: close < open AND volume level = high
+Short: close < open AND volume level = very high
+Short: close < open AND volume level = exceptional

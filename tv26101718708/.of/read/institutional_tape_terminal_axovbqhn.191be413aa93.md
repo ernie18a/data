@@ -1,0 +1,2 @@
+Long: The close > open of any of three distinct timeframes, ordered from shorter to longer; for a higher timeframe use the bar still forming, and for a lower timeframe use the latest available bar.
+Short: The close < open of any of three distinct timeframes, ordered from shorter to longer; for a higher timeframe use the bar still forming, and for a lower timeframe use the latest available bar.

@@ -1,0 +1,5 @@
+Calculation: Bollinger bandwidth = (upper Bollinger band - lower Bollinger band) / middle Bollinger band, calculated using the first Bollinger calculation's middle band as its source.
+Long: All enabled comparisons assigned to long are true if the long connector is AND, OR at least one is true if it is OR. Each comparison uses a selected ATR, moving average, RSI, CCI, Bollinger bandwidth, ADX, MFI, or momentum as its left operand; a selected indicator from the same list or a constant as its right operand; and a selected operator from >, <, >=, <=, =, !=, crosses above, or crosses below. The two moving averages have independently selected types and lookbacks but share the first moving average's source.
+Short: All enabled comparisons assigned to short are true if the short connector is AND, OR at least one is true if it is OR. Each comparison uses the same operand and operator choices as the long comparisons.
+Exit: short, the long-entry condition is true.
+Exit: long, the short-entry condition is true.

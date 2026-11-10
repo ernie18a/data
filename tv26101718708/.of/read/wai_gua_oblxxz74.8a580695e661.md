@@ -1,0 +1,21 @@
+Calculation: Fast ribbon spread = shorter-lookback moving average of close minus longer-lookback moving average of close, using the selected fast-ribbon moving-average type.
+Calculation: Slow ribbon spread = shorter-lookback moving average of close minus longer-lookback moving average of close, using the selected slow-ribbon moving-average type.
+Calculation: Ribbon-average spread = average of the fast-ribbon moving averages minus average of the slow-ribbon moving averages.
+Calculation: Rising spread = spread > 0 AND spread > its previous-bar value on each of the current and preceding bars.
+Calculation: Falling spread = spread < 0 AND spread < its previous-bar value on each of the current and preceding bars.
+Calculation: Effective high = max(open, close) when the Renko option is enabled, otherwise high; effective low = min(open, close) when the Renko option is enabled, otherwise low.
+Calculation: Trade-state entry = a transition from flat to long or short when the corresponding three-spread condition first becomes true, provided neither close signal occurred on the preceding bar; the state resets to flat after a close signal. The flip option swaps the actual long and short entry actions while retaining the original trade state.
+Long: Close > exponential moving average of close.
+Short: Close <= exponential moving average of close.
+Long: Fast ribbon spread is rising OR slow ribbon spread is rising.
+Short: Fast ribbon spread is falling OR slow ribbon spread is falling.
+Long: Trade-state entry is long, or short if the flip option is enabled, AND long orders are enabled AND datetime is within the backtest period.
+Short: Trade-state entry is short, or long if the flip option is enabled, AND short orders are enabled AND datetime is within the backtest period.
+Exit: Long, long trade state AND long orders enabled AND datetime within the backtest period AND no long entry action on this bar AND trailing stop enabled AND effective low <= highest effective high since trade-state entry × (1 − trailing-stop fraction).
+Exit: Short, short trade state AND short orders enabled AND datetime within the backtest period AND no short entry action on this bar AND trailing stop enabled AND effective high >= lowest effective low since trade-state entry × (1 + trailing-stop fraction).
+Exit: Long, long trade state AND long orders enabled AND datetime within the backtest period AND no long entry action on this bar AND take profit enabled AND highest effective high since trade-state entry >= entry-signal close × (1 + profit-target fraction) AND effective low <= highest effective high since trade-state entry × (1 − trailing-profit fraction).
+Exit: Short, short trade state AND short orders enabled AND datetime within the backtest period AND no short entry action on this bar AND take profit enabled AND lowest effective low since trade-state entry <= entry-signal close × (1 − profit-target fraction) AND effective high >= lowest effective low since trade-state entry × (1 + trailing-profit fraction).
+Exit: Long, long trade state AND long orders enabled AND datetime within the backtest period AND no long entry action on this bar AND stop loss enabled AND effective low <= entry-signal close × (1 − stop-loss fraction).
+Exit: Short, short trade state AND short orders enabled AND datetime within the backtest period AND no short entry action on this bar AND stop loss enabled AND effective high >= entry-signal close × (1 + stop-loss fraction).
+Exit: Long, long trade state AND long orders enabled AND datetime within the backtest period AND no long entry action on this bar AND (opposite-trade close enabled OR both trailing stop and stop loss disabled) AND previous-bar fast ribbon average < previous-bar slow ribbon average AND open < previous-bar slow ribbon average AND this combined comparison was false on the preceding bar.
+Exit: Short, short trade state AND short orders enabled AND datetime within the backtest period AND no short entry action on this bar AND (opposite-trade close enabled OR both trailing stop and stop loss disabled) AND previous-bar fast ribbon average > previous-bar slow ribbon average AND open > previous-bar slow ribbon average AND this combined comparison was false on the preceding bar.

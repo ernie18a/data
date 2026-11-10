@@ -1,0 +1,6 @@
+Calculation: Intrinsic value = max(spot-high parameter − strike-price parameter, 0) for a call, or max(strike-price parameter − spot-low parameter, 0) for a put.
+Calculation: Upper levels = intrinsic value plus successive positive integer multiples of a step parameter, up to the configured number of levels, capped at seven.
+Calculation: Selected level = the lowest upper level crossed by close on the current bar; a cross requires the previous close to be at or below that level and the current close to be above it.
+Calculation: Active target = the upper level immediately above the selected level at the most recent long decision; active stop = the low of the bar preceding that decision. A new long decision replaces both levels, including when a trade is already active. Clear both levels after an exit. Evaluate exits on the entry bar as well as subsequent bars.
+Long: Close crosses above the selected level AND the next upper level exists.
+Exit: Long, high >= active target OR close <= active stop.

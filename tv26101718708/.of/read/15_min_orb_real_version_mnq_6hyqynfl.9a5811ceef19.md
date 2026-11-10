@@ -1,0 +1,14 @@
+Calculation: Opening range high and low = highest high and lowest low of chart bars whose New York local time is within the configured opening window on the current day; retain them after the window ends.
+Calculation: Opening range size = opening range high minus opening range low.
+Calculation: Entry stop = opening range low for a long or opening range high for a short, or, when the ATR stop option is selected, signal-bar close minus an ATR multiple for a long or plus an ATR multiple for a short; retain the selected level at entry.
+Calculation: Entry targets = opening range high plus, for a long, or opening range low minus, for a short, the opening range size multiplied by the respective first-target and second-target extension parameters; retain both levels at entry.
+Long: New York local time >= opening window end AND New York local time < end-of-day cutoff AND opening range size >= ATR multiplied by minimum range factor AND opening range size <= ATR multiplied by maximum range factor AND (close > opening range high when close confirmation is selected OR high > opening range high when wick confirmation is selected) AND volume > volume SMA multiplied by volume factor AND no earlier long breakout entry on the current day AND position side = flat.
+Short: New York local time >= opening window end AND New York local time < end-of-day cutoff AND opening range size >= ATR multiplied by minimum range factor AND opening range size <= ATR multiplied by maximum range factor AND (close < opening range low when close confirmation is selected OR low < opening range low when wick confirmation is selected) AND volume > volume SMA multiplied by volume factor AND no earlier short breakout entry on the current day AND position side = flat.
+Exit: long, low <= entry stop.
+Exit: short, high >= entry stop.
+Exit: long, high >= first entry target AND first target has not previously been triggered; submit a partial-position limit exit at the first target, active from the next tick.
+Exit: short, low <= first entry target AND first target has not previously been triggered; submit a partial-position limit exit at the first target, active from the next tick.
+Exit: long, first target has been triggered AND high >= second entry target; the second-target limit exit is active from the tick following the first-target trigger.
+Exit: short, first target has been triggered AND low <= second entry target; the second-target limit exit is active from the tick following the first-target trigger.
+Exit: long, New York local time >= end-of-day cutoff.
+Exit: short, New York local time >= end-of-day cutoff.

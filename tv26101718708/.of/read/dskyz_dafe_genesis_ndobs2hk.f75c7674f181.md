@@ -1,0 +1,13 @@
+Calculation: Volume imbalance = (buy volume - sell volume) / (buy volume + sell volume + epsilon), where the rolling volume-weighted close is sum(close * volume) / sum(volume), buy volume is the rolling sum of volume on bars whose close is above their own rolling volume-weighted close, and sell volume is the rolling sum of volume on bars whose close is below their own rolling volume-weighted close. The volume-weighted close uses a longer lookback than the volume sums; epsilon is a small positive constant.
+Calculation: Long confidence = the sum of one point each for short-lookback SMA of close > long-lookback SMA of close, volume imbalance > positive threshold, RSI > upper threshold, and ATR > a multiplier times its SMA, divided by the maximum raw score parameter.
+Calculation: Short confidence = the sum of one point each for short-lookback SMA of close < long-lookback SMA of close, volume imbalance < negative threshold, RSI < lower threshold, and ATR > the same multiplier times its SMA, divided by the maximum raw score parameter. The lower RSI threshold is below the upper RSI threshold.
+Calculation: Normalized momentum = min(1, absolute difference between fast and slow EMAs of close / a rolling percentile of that absolute difference); use zero if the percentile is unavailable or zero. Rolling percentiles include the current bar and select the sorted value at the rounded index percentile * (sample size - 1).
+Calculation: Circuit-breaker threshold = SMA of ATR + a multiplier times the standard deviation of ATR, using the same lookback for both.
+Long: Position is flat AND bar time is within the trading session AND ATR >= its rolling low percentile AND long confidence >= confidence threshold AND normalized momentum > momentum threshold AND fast EMA has not crossed below slow EMA on this bar AND RSI <= long-entry ceiling AND ATR <= circuit-breaker threshold.
+Short: Position is flat AND bar time is within the trading session AND ATR >= its rolling low percentile AND short confidence >= confidence threshold AND normalized momentum > momentum threshold AND fast EMA has not crossed above slow EMA on this bar AND RSI >= short-entry floor AND ATR <= circuit-breaker threshold.
+Exit: long OR short, ATR > circuit-breaker threshold.
+Exit: long OR short, bar time is within the close-out period.
+Exit: long, low <= entry-signal close - ATR on the entry-signal bar * stop multiplier.
+Exit: short, high >= entry-signal close + ATR on the entry-signal bar * stop multiplier.
+Exit: long, fast EMA crosses below slow EMA; exit half the position.
+Exit: short, fast EMA crosses above slow EMA; exit half the position.

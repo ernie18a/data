@@ -1,0 +1,2 @@
+Long: For each configured timeframe, the still-forming bar's close >= its open; the timeframe may be higher or lower than the chart timeframe, or the chart timeframe itself.
+Short: For each configured timeframe, the still-forming bar's close < its open; the timeframe may be higher or lower than the chart timeframe, or the chart timeframe itself.

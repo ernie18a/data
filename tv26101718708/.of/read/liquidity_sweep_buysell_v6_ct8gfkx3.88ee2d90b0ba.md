@@ -1,0 +1,7 @@
+Calculation: Liquidity high = the most recently confirmed pivot high, updated on its confirmation bar; a pivot high is greater than or equal to the highs of the preceding swing-length bars and greater than the highs of the following swing-length bars.
+Calculation: Liquidity low = the most recently confirmed pivot low, updated on its confirmation bar; a pivot low is less than or equal to the lows of the preceding swing-length bars and less than the lows of the following swing-length bars.
+Calculation: Effective position side = the position side carried from the preceding bar after its exits; on the current bar, set it to long if the Long condition is true, then set it to short if the Short condition is true. Apply Exit conditions after these updates.
+Long: low <= liquidity low * (1 - sweep tolerance fraction) AND close > liquidity low AND (EMA filter disabled OR close > EMA of close) AND (volume filter disabled OR volume > SMA of volume)
+Short: high >= liquidity high * (1 + sweep tolerance fraction) AND close < liquidity high AND (EMA filter disabled OR close < EMA of close) AND (volume filter disabled OR volume > SMA of volume)
+Exit: long, effective position side = long AND high >= liquidity high * (1 + sweep tolerance fraction) AND close < liquidity high
+Exit: short, effective position side = short AND low <= liquidity low * (1 - sweep tolerance fraction) AND close > liquidity low

@@ -1,0 +1,21 @@
+Calculation: WaveTrend = let source be a selected price series, center = EMA(source, channel length), deviation = EMA(abs(source - center), channel length), fast = EMA((source - center) / (0.015 * deviation), averaging length), and slow = SMA(fast, smoothing length).
+Calculation: MFI area = SMA(((close - open) / (high - low)) * multiplier, MFI length) - offset.
+Calculation: Stochastic RSI = RSI of a selected price series or its natural logarithm, converted to a stochastic over its lookback; K is the SMA of that stochastic and D is the SMA of K.
+Calculation: A qualifying oscillator top is the value two bars ago, strictly greater than each of the two values before and two values after it, and at least its upper divergence threshold. A qualifying bottom is strictly lower than those four values and at most its lower divergence threshold. Compare each qualifying top or bottom with the preceding qualifying top or bottom of the same oscillator. Regular bearish divergence requires a higher price high and a lower oscillator top; hidden bearish requires a lower price high and a higher oscillator top. Regular bullish divergence requires a lower price low and a higher oscillator bottom; hidden bullish requires a higher price low and a lower oscillator bottom. Use the highs or lows at the oscillator pivots. Divergence is available on the confirmation bar, two bars after the pivot. Regular and hidden divergences can each be enabled independently.
+Calculation: Uptrend = close > longer EMA of close AND shorter EMA of close > longer EMA of close. Downtrend = close < longer EMA of close AND shorter EMA of close < longer EMA of close.
+Calculation: Base filter = (ADX filter disabled OR ADX >= minimum AND ADX <= maximum) AND (volume filter disabled OR volume > SMA of volume * volume multiplier) AND (ATR filter disabled OR abs(close - open) >= ATR * body-size multiplier).
+Calculation: Buy score = sum of independently configurable weights for these true conditions: WaveTrend fast crosses above slow AND slow <= oversold threshold; enabled bullish WaveTrend divergence; enabled bullish RSI divergence; MFI area > 0; stochastic RSI K crosses above D AND K < lower stochastic threshold; trend filter enabled AND uptrend.
+Calculation: Sell score = sum of independently configurable weights for these true conditions: WaveTrend fast crosses below slow AND slow >= overbought threshold; enabled bearish WaveTrend divergence; enabled bearish RSI divergence; MFI area < 0; stochastic RSI K crosses below D AND K > upper stochastic threshold; trend filter enabled AND downtrend.
+Long: WaveTrend fast crosses above slow.
+Short: WaveTrend fast crosses below slow.
+Long: Enabled regular OR hidden bullish divergence of WaveTrend slow OR RSI.
+Short: Enabled regular OR hidden bearish divergence of WaveTrend slow OR RSI.
+Long: RSI <= RSI oversold threshold.
+Short: RSI >= RSI overbought threshold.
+Long: MFI area > 0.
+Short: MFI area < 0.
+Long: PRO mode enabled AND buy score >= minimum score AND base filter passes AND NOT (trend filter enabled AND downtrend AND ADX > maximum) AND bars since previous buy signal > cooldown, or no previous buy signal exists.
+Short: PRO mode enabled AND sell score >= minimum score AND base filter passes AND NOT (trend filter enabled AND uptrend AND ADX > maximum) AND bars since previous sell signal > cooldown, or no previous sell signal exists.
+Long: PRO mode disabled AND WaveTrend fast crosses above slow AND slow <= oversold threshold AND bars since previous buy signal > cooldown, or no previous buy signal exists.
+Short: PRO mode disabled AND WaveTrend fast crosses below slow AND slow >= overbought threshold AND bars since previous sell signal > cooldown, or no previous sell signal exists.
+Long: Enabled bullish WaveTrend divergence AND WaveTrend slow two bars ago <= deeper oversold threshold AND current WaveTrend slow > deeper oversold threshold AND current WaveTrend slow - WaveTrend slow two bars ago >= minimum rise AND RSI two bars ago < RSI threshold AND base filter passes.

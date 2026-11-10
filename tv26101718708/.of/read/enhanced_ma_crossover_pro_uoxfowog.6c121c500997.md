@@ -1,0 +1,10 @@
+Long: The shorter-lookback MA of close crosses above the longer-lookback MA of close; each MA is independently selectable as EMA, WMA, SMA, or RMA, and both use either the chart timeframe or the last completed higher-timeframe bar.
+Short: The shorter-lookback MA of close crosses below the longer-lookback MA of close; each MA is independently selectable as EMA, WMA, SMA, or RMA, and both use either the chart timeframe or the last completed higher-timeframe bar.
+Exit: long, the low reaches or falls below the stop price, where the stop is entry price minus a fixed distance, an ATR multiple, or the lesser of an ATR multiple and a fixed maximum; optionally, the stop is entry price whenever close is at least entry price plus a fixed distance or an ATR multiple.
+Exit: short, the high reaches or exceeds the stop price, where the stop is entry price plus a fixed distance, an ATR multiple, or the lesser of an ATR multiple and a fixed maximum; optionally, the stop is entry price whenever close is at most entry price minus a fixed distance or an ATR multiple.
+Exit: long, the high reaches or exceeds entry price plus a fixed target distance when the fixed stop method is selected, or entry price plus an ATR multiple when another stop method and the dynamic target are selected.
+Exit: short, the low reaches or falls below entry price minus a fixed target distance when the fixed stop method is selected, or entry price minus an ATR multiple when another stop method and the dynamic target are selected.
+Exit: long, the MA-exit method is selected AND previous close is above its selected chart-timeframe MA AND current close is below that MA.
+Exit: short, the MA-exit method is selected AND previous close is below its selected chart-timeframe MA AND current close is above that MA.
+Exit: long, the bar's hour equals the configured close hour AND its minute is at least the configured close minute.
+Exit: short, the bar's hour equals the configured close hour AND its minute is at least the configured close minute.

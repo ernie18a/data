@@ -1,0 +1,2 @@
+Long: volume-weighted moving average of close > volume-weighted moving average of open, using the same lookback
+Short: volume-weighted moving average of close < volume-weighted moving average of open, using the same lookback

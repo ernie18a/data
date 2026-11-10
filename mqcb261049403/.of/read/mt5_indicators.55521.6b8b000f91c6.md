@@ -1,0 +1,6 @@
+Long: Stochastic main line > Stochastic signal line, using low/high prices and simple moving average smoothing, on a selected chart, higher, or lower timeframe bar that is either still forming or the last completed bar.
+Short: Stochastic main line < Stochastic signal line, using the same settings and bar selection.
+Long: Shorter-lookback RSI of typical price > longer-lookback RSI of typical price, on a selected chart, higher, or lower timeframe bar that is either still forming or the last completed bar.
+Short: Shorter-lookback RSI of typical price < longer-lookback RSI of typical price, using the same bar selection.
+Long: For either the shorter- or longer-lookback CCI of typical price, on a selected chart, higher, or lower timeframe bar that is either still forming or the last completed bar: (CCI > 0 AND CCI > CCI on the preceding bar) OR (CCI < 0 AND CCI >= CCI on the preceding bar).
+Short: For either the shorter- or longer-lookback CCI of typical price, using the same bar selection: (CCI > 0 AND CCI <= CCI on the preceding bar) OR (CCI < 0 AND CCI < CCI on the preceding bar).

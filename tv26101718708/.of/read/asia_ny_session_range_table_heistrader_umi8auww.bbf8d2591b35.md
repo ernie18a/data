@@ -1,0 +1,3 @@
+Calculation: Daily average RSI = arithmetic mean of available chart-bar close RSI values within a calendar day in the configured timezone; at the first bar of each new day, store the preceding day's average and retain the five most recently stored daily averages.
+Long: Any stored daily average RSI <= oversold threshold AND that same average < overbought threshold.
+Short: Any stored daily average RSI >= overbought threshold.

@@ -1,0 +1,8 @@
+Calculation: CPR boundaries = For the last completed higher-timeframe bar, let pivot = (high + low + close) / 3 and midpoint = (high + low) / 2; the upper boundary is max(midpoint, 2 × pivot − midpoint) and the lower boundary is min(midpoint, 2 × pivot − midpoint).
+Calculation: Put-call ratio = Number of closed short trades divided by number of closed long trades; use zero when no long trades have closed. Count a trade as closed when an opposite entry signal occurs.
+Long: Long entries are enabled AND the bar's weekday is enabled AND its datetime is within the enabled backtest range AND position side is not long AND the selected price source crosses above the CPR upper boundary, with the previous source at or below the previous boundary.
+Short: Short entries are enabled AND the bar's weekday is enabled AND its datetime is within the enabled backtest range AND position side is not short AND the selected price source crosses below the CPR lower boundary, with the previous source at or above the previous boundary.
+Long: Put-call ratio < 1.
+Short: Put-call ratio > 1.
+Exit: long, short entries are enabled AND the bar's weekday is enabled AND its datetime is within the enabled backtest range AND the selected price source crosses below the CPR lower boundary, with the previous source at or above the previous boundary.
+Exit: short, long entries are enabled AND the bar's weekday is enabled AND its datetime is within the enabled backtest range AND the selected price source crosses above the CPR upper boundary, with the previous source at or below the previous boundary.

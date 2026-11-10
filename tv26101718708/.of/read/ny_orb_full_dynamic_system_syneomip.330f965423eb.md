@@ -1,0 +1,16 @@
+Calculation: Opening-range high and low = highest high and lowest low of chart bars whose opening times fall within the configured opening-range window, inclusive; reset at the configured daily reset time.
+Calculation: Second upside break = since the daily reset, close exceeded the opening-range high and subsequently closed at or below it; second downside break = since the daily reset, close fell below the opening-range low and subsequently closed at or above it.
+Calculation: Stop distance = selected fixed price distance, ATR multiplied by its stop multiplier, the lesser of that ATR distance and a fixed cap, or opening-range width multiplied by its stop multiplier.
+Calculation: Breakeven trigger distance = selected fixed price distance or current ATR multiplied by the adaptive breakeven multiplier.
+Calculation: Long target = entry price plus the selected current ATR or opening-range width multiplied by the target multiplier; if breakeven is enabled and close is at least entry price plus the breakeven trigger distance, use entry price instead. Short target is defined symmetrically below entry price, switching to entry price when close is at most entry price minus the breakeven trigger distance.
+Calculation: Long stop = entry price minus the current stop distance; if breakeven is enabled and close is at least entry price plus the breakeven trigger distance, use entry price instead. Short stop is defined symmetrically above entry price, switching to entry price when close is at most entry price minus the breakeven trigger distance.
+Long: Close > opening-range high AND (confirmation disabled OR close at the configured earlier bar <= current opening-range high) AND (second-break filter disabled OR second upside break) AND (RSI filter disabled OR RSI < upper RSI threshold) AND (MACD filter disabled OR MACD line > signal line) AND (VWAP filter disabled OR close > VWAP of close) AND (trend filter disabled OR close > SMA of close) AND long direction enabled.
+Short: Close < opening-range low AND (confirmation disabled OR close at the configured earlier bar >= current opening-range low) AND (second-break filter disabled OR second downside break) AND (RSI filter disabled OR RSI > lower RSI threshold) AND (MACD filter disabled OR MACD line < signal line) AND (VWAP filter disabled OR close < VWAP of close) AND (trend filter disabled OR close < SMA of close) AND short direction enabled.
+Exit: long, profit target enabled AND high >= previously submitted long target.
+Exit: short, profit target enabled AND low <= previously submitted short target.
+Exit: long, profit target disabled AND low <= previously submitted long stop.
+Exit: short, profit target disabled AND high >= previously submitted short stop.
+Exit: long, moving-average exit enabled AND close crosses below the selected SMA of close or VWAP of close AND (target is undefined OR close < the most recently calculated target).
+Exit: short, moving-average exit enabled AND close crosses above the selected SMA of close or VWAP of close AND (target is undefined OR close > the most recently calculated target).
+Exit: long, bar opening time >= configured daily exit time.
+Exit: short, bar opening time >= configured daily exit time.

@@ -1,0 +1,3 @@
+Calculation: Direction = up when the chart close is greater than both the last completed close of a longer reference timeframe and the last completed close of a shorter reference timeframe; down when it is less than both; otherwise retain the preceding direction. Initially direction is unset. Each reference timeframe may be higher or lower than the chart timeframe.
+Long: Direction = up
+Short: Direction = down

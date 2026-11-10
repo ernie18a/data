@@ -1,0 +1,7 @@
+Calculation: RSI bands = a selectable moving average of RSI plus or minus a configurable multiple of the standard deviation of RSI over the same lookback.
+Calculation: Tracked high price and RSI = on each bar, if RSI is the highest RSI in its lookback, reset both values to the current close and RSI; otherwise retain their previous values, initializing missing values to the current close and RSI. Then replace each value with the greater of itself and its corresponding current close or RSI.
+Calculation: Tracked low price and RSI = on each bar, if RSI is the lowest RSI in its lookback, reset both values to the current close and RSI; otherwise retain their previous values, initializing missing values to the current close and RSI. Then replace each value with the lesser of itself and its corresponding current close or RSI.
+Long: RSI < lower RSI band AND RSI != oversold threshold.
+Long: Previous tracked low price < tracked low price two bars ago AND previous RSI > current tracked low RSI AND current RSI >= previous RSI.
+Short: RSI > upper RSI band AND RSI != overbought threshold.
+Short: Previous tracked high price > tracked high price two bars ago AND previous RSI < current tracked high RSI AND current RSI <= previous RSI.

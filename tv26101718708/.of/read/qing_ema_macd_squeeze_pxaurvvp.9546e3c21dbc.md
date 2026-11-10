@@ -1,0 +1,10 @@
+Calculation: Reference trend = MACD on close compared with either zero or its signal line, according to the selected trend mode; its MACD parameters are independent of the entry MACD parameters.
+Long: Entry MACD crosses above its signal line AND no position is open AND either no trade has closed or the number of bars since the last trade closed is at least the cooldown period.
+Long: Close crosses above the short EMA AND volume is greater than its SMA multiplied by the volume spike multiplier.
+Long: Reference trend MACD is greater than zero in MACD mode OR reference trend MACD is greater than its signal line in MACD-minus-signal mode.
+Short: Short trading is enabled AND close is greater than both the long EMA and the longest EMA AND the very short EMA crosses below the shorter EMA AND entry MACD crosses below its signal line AND no position is open AND either no trade has closed or the number of bars since the last trade closed is at least the cooldown period AND RSI is below its bearish threshold AND either the higher-timeframe filter is disabled or the shorter SMA of higher-timeframe close is below the longer SMA of higher-timeframe close, using the last completed higher-timeframe bar.
+Short: Reference trend MACD is less than zero in MACD mode OR reference trend MACD is less than its signal line in MACD-minus-signal mode.
+Exit: long, signal-exit mode is enabled AND the shorter SMA of close crosses below the longer SMA of close.
+Exit: short, signal-exit mode is enabled AND the shorter SMA of close crosses above the longer SMA of close.
+Exit: long, signal-exit mode is disabled AND low is at or below the entry-signal bar's close minus its ATR multiplied by the stop multiplier OR high is at or above the entry-signal bar's close plus its ATR multiplied by the stop multiplier and the take-profit multiplier.
+Exit: short, signal-exit mode is disabled AND high is at or above the entry-signal bar's close plus its ATR multiplied by the stop multiplier OR low is at or below the entry-signal bar's close minus its ATR multiplied by the stop multiplier and the take-profit multiplier.

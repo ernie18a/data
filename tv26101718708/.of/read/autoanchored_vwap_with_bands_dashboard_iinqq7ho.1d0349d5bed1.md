@@ -1,0 +1,6 @@
+Calculation: Price source = a selected bar price: open, high, low, close, (high + low) / 2, (high + low + close) / 3, (open + high + low + close) / 4, or (high + low + 2 * close) / 4.
+Calculation: Anchored VWAP = volume-weighted mean of the price source from the anchor bar through the current bar. Select the anchor as either the first bar and each subsequent selected calendar boundary, or the bar of the highest high, lowest low, or highest volume in a rolling lookback ending at the current bar. Auto calendar anchoring uses session boundaries on intraday charts and month boundaries otherwise. Calendar choices include session, week, month, quarter, year, and changes in year / 10 or year / 100. For calendar anchoring, weight each bar by its volume once cumulative volume through that bar is positive; before that, use weight 1. For lookback anchoring, use each bar's volume if cumulative volume through the current bar is positive; otherwise use weight 1 for every bar in the anchored interval. Treat missing volume as zero when volume weights are used. VWAP is undefined when total weight is zero.
+Long: Price source > anchored VWAP.
+Long: Price source > anchored VWAP AND previous price source <= previous anchored VWAP.
+Short: Price source <= anchored VWAP.
+Short: Price source < anchored VWAP AND previous price source >= previous anchored VWAP.

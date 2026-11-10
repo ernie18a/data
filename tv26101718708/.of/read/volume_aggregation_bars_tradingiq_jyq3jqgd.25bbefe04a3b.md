@@ -1,0 +1,5 @@
+Calculation: Volume block = accumulate volume from chart bars or completed lower-timeframe bars in chronological order until it reaches the threshold; record that bar's close as the block close, then reset accumulated volume to zero, discarding any excess. Use either volume or volume multiplied by the same bar's close. The threshold is either a fixed volume or the nearest-rank percentile of chart-bar volume over a lookback.
+Long: A volume block completes AND its close > the previous completed volume block's close
+Short: A volume block completes AND its close <= the previous completed volume block's close
+Long: Accumulated volume in the unfinished block > 0 AND chart close > the previous completed volume block's close
+Short: Accumulated volume in the unfinished block > 0 AND chart close <= the previous completed volume block's close

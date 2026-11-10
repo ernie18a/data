@@ -1,0 +1,4 @@
+Calculation: Trend histogram = one selected oscillator: close-to-close stochastic main line with simple-moving-average smoothing minus its midpoint; close-based CCI; close-based RSI minus its midpoint; MACD main line using the shorter-period EMA minus the longer-period EMA of close; close-based momentum minus its neutral level; Williams %R minus its midpoint; ADX main line; or DeMarker minus its midpoint. Calculate on the chart timeframe or on a higher timeframe using its still-forming bar.
+Calculation: Volatility ratio = Bollinger deviation multiplier times the standard deviation of close divided by Keltner multiplier times ATR, calculated on the same timeframe and bar as the trend histogram.
+Long: Volatility ratio >= 1 AND trend histogram > 0
+Short: Volatility ratio >= 1 AND trend histogram < 0

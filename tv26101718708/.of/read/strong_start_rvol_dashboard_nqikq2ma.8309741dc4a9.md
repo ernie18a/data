@@ -1,0 +1,1 @@
+Long: The open of the current forming reference-timeframe bar > the close of the previous completed reference-timeframe bar AND the low of the current forming reference-timeframe bar >= the close of the previous completed reference-timeframe bar × a threshold below 1. The reference timeframe may be higher or lower than the chart timeframe; if equal, use the chart bar.

@@ -1,0 +1,3 @@
+Calculation: Anchored momentum = 100 * (EMA of a selected OHLC-derived price / SMA of the same price - 1), when the SMA is nonzero. Calculate either on the chart timeframe or on a higher timeframe using its still-forming bar; compare it with the preceding bar of the same timeframe.
+Long: Anchored momentum > 0 AND anchored momentum != its previous value
+Short: Anchored momentum < 0 AND anchored momentum != its previous value

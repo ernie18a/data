@@ -1,0 +1,2 @@
+Long: For any of six distinct timeframes, each lower than, equal to, or higher than the chart timeframe, using its currently forming bar, the close-to-close stochastic main line with SMA slowing is greater than its signal line AND the signal line is above the oscillator minimum, OR the main and signal lines are equal at the oscillator maximum.
+Short: For any of the same six timeframes, using its currently forming bar, the close-to-close stochastic main line with SMA slowing is less than or equal to its signal line AND the signal line is below the oscillator maximum.

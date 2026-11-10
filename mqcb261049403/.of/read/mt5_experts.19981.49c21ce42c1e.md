@@ -1,0 +1,6 @@
+Long: At the start of a new chart bar, the previous bar's close > open AND its low < the moving average evaluated on the new bar at its opening AND the previous bar's Chaikin oscillator using tick volume < negative opening threshold AND (no position is open OR exactly one short position is open AND the oscillator < negative hedging threshold).
+Short: At the start of a new chart bar, the previous bar's close < open AND its high > the moving average evaluated on the new bar at its opening AND the previous bar's Chaikin oscillator using tick volume > opening threshold AND (no position is open OR exactly one long position is open AND the oscillator > hedging threshold).
+Exit: Long, for a position opened when flat, take profit is enabled AND bar high >= entry price + take-profit distance.
+Exit: Short, for a position opened when flat, take profit is enabled AND bar low <= entry price - take-profit distance.
+Exit: Long, for a position opened when flat, trailing stop is disabled AND stop loss is enabled AND bar low <= entry price - stop-loss distance.
+Exit: Short, for a position opened when flat, trailing stop is disabled AND stop loss is enabled AND bar high >= entry price + stop-loss distance.

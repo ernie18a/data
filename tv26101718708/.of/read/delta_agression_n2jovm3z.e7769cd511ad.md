@@ -1,0 +1,14 @@
+Calculation: Estimated delta = volume * (2 * close - high - low) / (high - low) when high > low; otherwise 0.
+Calculation: Aggression ratio = absolute estimated delta divided by its simple moving average over the delta lookback, if that average is positive; otherwise 0.
+Calculation: Delta change = estimated delta minus the previous bar's estimated delta.
+Calculation: Shock ratio = absolute delta change divided by its simple moving average over the shock lookback, if that average is positive; otherwise 0.
+Long: Bar is closed AND estimated delta > 0 AND aggression ratio >= spike threshold AND aggression ratio < extreme threshold AND (volume filter enabled = false OR volume >= volume simple moving average * volume threshold).
+Short: Bar is closed AND estimated delta < 0 AND aggression ratio >= spike threshold AND aggression ratio < extreme threshold AND (volume filter enabled = false OR volume >= volume simple moving average * volume threshold).
+Long: Bar is closed AND estimated delta > 0 AND aggression ratio >= extreme threshold AND (volume filter enabled = false OR volume >= volume simple moving average * volume threshold).
+Short: Bar is closed AND estimated delta < 0 AND aggression ratio >= extreme threshold AND (volume filter enabled = false OR volume >= volume simple moving average * volume threshold).
+Long: Bar is closed AND estimated delta > previous bar's estimated delta AND previous bar's estimated delta > estimated delta two bars ago AND estimated delta two bars ago > 0 AND (volume filter enabled = false OR volume >= volume simple moving average * volume threshold).
+Short: Bar is closed AND estimated delta < previous bar's estimated delta AND previous bar's estimated delta < estimated delta two bars ago AND estimated delta two bars ago < 0 AND (volume filter enabled = false OR volume >= volume simple moving average * volume threshold).
+Long: Bar is closed AND delta change > 0 AND shock ratio >= shock threshold AND (previous bar's estimated delta >= 0 OR estimated delta <= 0 OR shock ratio < flip threshold) AND (volume filter enabled = false OR volume >= volume simple moving average * volume threshold).
+Short: Bar is closed AND delta change < 0 AND shock ratio >= shock threshold AND (previous bar's estimated delta <= 0 OR estimated delta >= 0 OR shock ratio < flip threshold) AND (volume filter enabled = false OR volume >= volume simple moving average * volume threshold).
+Long: Bar is closed AND previous bar's estimated delta < 0 AND estimated delta > 0 AND shock ratio >= flip threshold AND (volume filter enabled = false OR volume >= volume simple moving average * volume threshold).
+Short: Bar is closed AND previous bar's estimated delta > 0 AND estimated delta < 0 AND shock ratio >= flip threshold AND (volume filter enabled = false OR volume >= volume simple moving average * volume threshold).

@@ -1,0 +1,4 @@
+Long: RSI of the last completed bar on the RSI timeframe > midpoint AND previous completed daily low minus price offset >= current price minus stop distance
+Short: RSI of the last completed bar on the RSI timeframe > 0 AND RSI <= midpoint AND previous completed daily high plus price offset <= current price plus stop distance
+Exit: long, low <= entry price minus stop distance OR high >= entry price plus profit-target distance OR (price has risen by more than the stop distance since entry AND low <= entry price)
+Exit: short, high >= entry price plus stop distance OR low <= entry price minus profit-target distance OR (price has fallen by more than the stop distance since entry AND high >= entry price)

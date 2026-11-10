@@ -1,0 +1,4 @@
+Long: Chart-bar low > high two chart bars earlier AND their difference >= chart-timeframe minimum gap in price units.
+Short: Chart-bar high < low two chart bars earlier AND their difference >= chart-timeframe minimum gap in price units.
+Long: At the close of a higher-timeframe bar, the preceding completed higher-timeframe bar's low > the high two higher-timeframe bars before that completed bar AND their difference >= higher-timeframe minimum gap in price units.
+Short: At the close of a higher-timeframe bar, the preceding completed higher-timeframe bar's high < the low two higher-timeframe bars before that completed bar AND their difference >= higher-timeframe minimum gap in price units.

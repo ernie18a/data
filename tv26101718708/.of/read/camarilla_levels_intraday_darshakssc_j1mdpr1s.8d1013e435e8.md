@@ -1,0 +1,4 @@
+Calculation: Upper and lower reversal levels = last completed reference-timeframe close plus or minus its high-low range multiplied by a reversal coefficient. The reference timeframe is higher than an intraday chart timeframe, equal to the corresponding chart timeframe, and lower than a longer chart timeframe.
+Calculation: Upper and lower breakout levels = last completed reference-timeframe close plus or minus its high-low range multiplied by a breakout coefficient greater than the reversal coefficient.
+Long: close >= upper breakout level OR (close < lower reversal level AND previous close >= previous lower reversal level)
+Short: close <= lower breakout level OR (close > upper reversal level AND previous close <= previous upper reversal level)

@@ -1,0 +1,7 @@
+Calculation: Bullish gap = a three-bar gap whose newest low is greater than the oldest high; its bottom is the oldest high and its top is the newest low. Bearish gap = a three-bar gap whose newest high is less than the oldest low; its bottom is the newest high and its top is the oldest low. Track each confirmed gap until it is filled; a bullish gap is filled when the chart bar closes below its bottom or, in wick mode, its low is at or below the bottom. A bearish gap is filled when the chart bar closes above its top or, in wick mode, its high is at or above the top. Process newly confirmed gaps before checking fills on the same chart bar.
+Long: A bullish gap is confirmed at the start of a new selected-timeframe bar, using the last completed bar and the two bars preceding it; the selected timeframe may be the chart timeframe, higher, or lower.
+Short: A bearish gap is confirmed at the start of a new selected-timeframe bar, using the last completed bar and the two bars preceding it; the selected timeframe may be the chart timeframe, higher, or lower.
+Long: The still-forming bar on the chart timeframe or a higher selected timeframe has a low above the high of the bar two selected-timeframe bars earlier.
+Short: The still-forming bar on the chart timeframe or a higher selected timeframe has a high below the low of the bar two selected-timeframe bars earlier.
+Long: A tracked bearish gap is filled.
+Short: A tracked bullish gap is filled.

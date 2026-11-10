@@ -1,0 +1,11 @@
+Calculation: Opening range high and low = highest high and lowest low of chart bars whose opening times fall within the opening window; reset at the start of each trading day and update throughout the window.
+Calculation: Long stop = entry price minus an ATR multiple, initialized on entry; if trailing is enabled, update on every bar including the entry bar to the greater of the current stop and close minus a trailing ATR multiple.
+Calculation: Short stop = entry price plus an ATR multiple, initialized on entry; if trailing is enabled, update on every bar including the entry bar to the lesser of the current stop and close plus a trailing ATR multiple.
+Long: Close crosses above the opening range high, if the opening-range filter is enabled, AND the shorter-period EMA is above the longer-period EMA, if the EMA filter is enabled, AND RSI is above its long threshold, if the RSI filter is enabled, AND ADX is above its threshold, if the ADX filter is enabled, AND the last completed higher-timeframe close is above its EMA, if the higher-timeframe filter is enabled, AND no position is open AND the most recent entry was not long; the external volatility filter must be disabled.
+Short: Close crosses below the opening range low, if the opening-range filter is enabled, AND the shorter-period EMA is below the longer-period EMA, if the EMA filter is enabled, AND RSI is below its short threshold, if the RSI filter is enabled, AND ADX is above its threshold, if the ADX filter is enabled, AND the last completed higher-timeframe close is below its EMA, if the higher-timeframe filter is enabled, AND no position is open AND the most recent entry was not short; the external volatility filter must be disabled.
+Long: Last completed higher-timeframe close is above its EMA.
+Short: Last completed higher-timeframe close is at or below its EMA.
+Long: The EMA filter is disabled OR the shorter-period EMA is above the longer-period EMA.
+Short: The EMA filter is enabled AND the shorter-period EMA is at or below the longer-period EMA.
+Exit: long, close is below the updated long stop.
+Exit: short, close is above the updated short stop.

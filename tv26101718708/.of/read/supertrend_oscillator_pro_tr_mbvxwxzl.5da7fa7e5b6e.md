@@ -1,0 +1,13 @@
+Calculation: Supertrend direction and line = use ATR and midpoint of high and low; form upper and lower bands by adding and subtracting ATR times a factor. Set each lower band to its raw value if it exceeds the previous lower band or the previous close is below the previous lower band; otherwise retain the previous lower band. Set each upper band to its raw value if it is below the previous upper band or the previous close is above the previous upper band; otherwise retain the previous upper band. Replace missing previous bands and previous Supertrend line with zero. On the first bar, direction is up if close exceeds the upper band, otherwise down. Subsequently, if the previous Supertrend line equals the previous upper band, direction is up if close exceeds the current upper band, otherwise down; otherwise direction is down if close is below the current lower band, otherwise up. The Supertrend line is the lower band in an up direction and the upper band in a down direction.
+Calculation: Oscillator = smooth (close minus Supertrend line) divided by the greater of factor times ATR and a small positive floor, using a selectable EMA, SMA, RMA, WMA, VWMA, HMA, DEMA, TEMA, TRIMA, FRAMA, SWMA, or T3. In percentage mode, multiply the input to the moving average by 100 and clamp its output to [-100, 100]. In ratio mode, rescale the moving-average output using its rolling minimum and maximum to [-3, 3]; use zero when the range is zero.
+Calculation: Reversal cooldown = track the bar index of the most recent raw upward or downward reversal. Update it when either raw reversal occurs and the stored index is missing or zero, or its distance from the current bar exceeds the cooldown. For a decision, compare the current bar index with the stored index from the previous bar, substituting an initial negative index when missing.
+Long: Supertrend direction equals up.
+Short: Supertrend direction equals down.
+Long: Oscillator > 0.
+Short: Oscillator < 0.
+Long: Oscillator crosses above the lower level OR oscillator crosses above the upper level, AND the last accepted level-cross signal was not long.
+Short: Oscillator crosses below the lower level OR oscillator crosses below the upper level, AND the last accepted level-cross signal was not short.
+Long: The last accepted level-cross signal was long.
+Short: The last accepted level-cross signal was short.
+Long: Oscillator crosses above its previous-bar value AND oscillator is below a negative reversal threshold AND reversal cooldown exceeds its limit.
+Short: Oscillator crosses below its previous-bar value AND oscillator is above a positive reversal threshold AND reversal cooldown exceeds its limit.

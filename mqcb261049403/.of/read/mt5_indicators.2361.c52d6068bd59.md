@@ -1,0 +1,5 @@
+Calculation: Dynamic level and trend state = For a chosen lookback, initialize the level to the preceding close and the state to neutral at the first calculable bar. On each subsequent bar, if high is below the previous high, the high one lookback ago, and the previous level, set the level to high plus a price offset and set the state to neutral if the previous state was rising, otherwise falling. Otherwise, if low is above the previous low, the low one lookback ago, and the previous level, set the level to low plus the price offset and set the state to neutral if the previous state was falling, otherwise rising. Otherwise, retain the previous level and state; if the retained state is neutral, change it to rising if the state two bars ago was falling, or to falling if the state two bars ago was rising.
+Long: Dynamic trend state is rising.
+Short: Dynamic trend state is falling.
+Long: Dynamic trend state calculated on the still-forming higher-timeframe bar is rising.
+Short: Dynamic trend state calculated on the still-forming higher-timeframe bar is falling.

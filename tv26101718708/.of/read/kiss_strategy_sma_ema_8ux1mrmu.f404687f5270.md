@@ -1,0 +1,18 @@
+Calculation: Price = the selected price source derived from the chart bar’s OHLC fields.
+Calculation: Weekly close series = the close requested at the weekly timeframe; on a lower chart timeframe use the still-forming weekly bar, and on a higher chart timeframe use the first available lower-timeframe weekly bar for historical chart bars. History references to this series are chart-bar offsets, not weekly-bar offsets.
+Calculation: Downtrend = over the configured number of preceding chart-bar offsets, examined from oldest to newest, each weekly close is greater than or equal to the current price and at least one is greater. Uptrend = the same test with less than or equal and at least one less.
+Calculation: Slope difference = absolute value of (absolute change in the shorter SMA over two chart bars minus absolute change in the longer SMA over two chart bars).
+Calculation: MACD line = shorter-period EMA of price minus longer-period EMA of price. MACD signal = SMA of the MACD line.
+Calculation: Long trailing stop = maximum of the prior long trailing stop and close multiplied by one minus the trailing-loss fraction; reset to zero while not long. Short trailing stop = minimum of the prior short trailing stop and close multiplied by one plus the trailing-loss fraction; reset to a fixed high sentinel while not short.
+Long: Shorter SMA crosses above longer SMA.
+Short: Shorter SMA crosses below longer SMA.
+Long: Uptrend is true.
+Short: Downtrend is true.
+Long: Long direction is enabled AND (SMA filter is disabled OR shorter SMA crosses above longer SMA AND slope difference exceeds its threshold AND downtrend was true a number of chart bars ago equal to seven times the trend lookback) AND (MACD filter is disabled OR MACD line crossed above MACD signal at the configured chart-bar offset AND MACD line at that offset is below zero AND slope difference exceeds its threshold AND downtrend is true).
+Short: Short direction is enabled AND (SMA filter is disabled OR shorter SMA crosses below longer SMA AND slope difference exceeds its threshold AND uptrend was true a number of chart bars ago equal to seven times the trend lookback) AND (MACD filter is disabled OR MACD line crossed below MACD signal at the configured chart-bar offset AND MACD signal at that offset is above zero AND slope difference exceeds its threshold AND uptrend is true).
+Exit: Long, datetime is within the configured trading window AND (low reaches entry price multiplied by one minus the stop-loss fraction OR high reaches entry price multiplied by one plus the take-profit fraction). When trailing is enabled, this order exits half the position; otherwise it exits the whole position.
+Exit: Short, datetime is within the configured trading window AND (high reaches entry price multiplied by one plus the stop-loss fraction OR low reaches entry price multiplied by one minus the take-profit fraction). When trailing is enabled, this order exits half the position; otherwise it exits the whole position.
+Exit: Long, datetime is within the configured trading window AND trailing is enabled AND low reaches the previously submitted long trailing stop.
+Exit: Short, datetime is within the configured trading window AND trailing is enabled AND high reaches the previously submitted short trailing stop.
+Exit: Long, datetime is within the configured trading window AND the filtered short-entry condition is true.
+Exit: Short, datetime is within the configured trading window AND the filtered long-entry condition is true.

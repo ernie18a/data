@@ -1,0 +1,3 @@
+Calculation: Each pair consists of two independently configured moving averages, each using a selectable source, length, and SMA, EMA, WMA, HMA, RMA, or VWMA type. For a higher timeframe, use the last completed bar; for a lower timeframe, use the last completed lower-timeframe bar within the chart bar.
+Long: For any pair, the first moving average > the second moving average.
+Short: For any pair, the first moving average <= the second moving average.

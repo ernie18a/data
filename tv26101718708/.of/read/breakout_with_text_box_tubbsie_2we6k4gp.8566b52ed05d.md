@@ -1,0 +1,8 @@
+Long: Shorter EMA of close crosses above intermediate EMA of close
+Short: Shorter EMA of close crosses below intermediate EMA of close
+Long: During the configured regular session AND fastest EMA of close > shorter EMA of close AND shorter EMA of close > longest EMA of close AND close < open AND abs(close - fastest EMA of close) / fastest EMA of close <= a configured pullback threshold
+Short: During the configured regular session AND fastest EMA of close < shorter EMA of close AND shorter EMA of close < longest EMA of close AND close > open AND abs(close - fastest EMA of close) / fastest EMA of close <= a configured pullback threshold
+Long: During the configured regular session AND shorter EMA of close > intermediate EMA of close AND intermediate EMA of close > longest EMA of close AND close < open AND abs(close - intermediate EMA of close) / intermediate EMA of close <= a configured pullback threshold
+Short: During the configured regular session AND shorter EMA of close < intermediate EMA of close AND intermediate EMA of close < longest EMA of close AND close > open AND abs(close - intermediate EMA of close) / intermediate EMA of close <= a configured pullback threshold
+Long: shorter EMA of close > intermediate EMA of close AND (shorter EMA of close >= longest EMA of close OR shorter EMA of close >= intermediate EMA of close AND shorter EMA of close <= longest EMA of close AND intermediate EMA of close >= longest EMA of close)
+Short: shorter EMA of close <= intermediate EMA of close AND (shorter EMA of close <= longest EMA of close OR shorter EMA of close >= intermediate EMA of close AND shorter EMA of close >= longest EMA of close)

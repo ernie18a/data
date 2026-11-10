@@ -1,0 +1,4 @@
+Calculation: Relative strength estimate = clamp(baseline + multiplier × percentage change in close over the shorter price lookback, lower bound, upper bound).
+Calculation: Criteria score = count of these conditions satisfied on the current chart bar: close > short-, medium-, and long-period simple moving averages of close; short-period average > medium-period average AND medium-period average > long-period average; long-period average > its preceding-bar value for every bar in the uptrend lookback; close >= lowest low over the longer price lookback × (1 + low percentage threshold); close >= highest high over the longer price lookback × (1 - high percentage threshold); relative strength estimate >= strength threshold; volume >= simple moving average of volume × volume multiplier; close > close at the longer price lookback AND close > close at the shorter price lookback.
+Long: Criteria score = number of criteria.
+Exit: long, criteria score <= exit threshold.

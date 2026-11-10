@@ -1,0 +1,3 @@
+Calculation: Price-series MFI = over a lookback, sum price × volume for bars where the chosen price exceeds its previous-bar value as positive flow, and sum price × volume where it is below its previous-bar value as negative flow; return 100 − 100 / (1 + positive flow / negative flow), or 100 when negative flow is zero. Use the same lookback for open and close.
+Long: Close-series MFI > open-series MFI
+Short: Close-series MFI < open-series MFI

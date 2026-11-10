@@ -1,0 +1,2 @@
+Long: RSI of the last completed bar on a configurable higher, lower, or chart timeframe > overbought threshold
+Short: RSI of the last completed bar on a configurable higher, lower, or chart timeframe < oversold threshold

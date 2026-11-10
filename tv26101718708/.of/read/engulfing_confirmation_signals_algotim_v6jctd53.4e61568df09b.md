@@ -1,0 +1,11 @@
+Calculation: Volume score = min(20 × volume / SMA(volume), 30); use a volume ratio of 1 when SMA(volume) is not positive.
+Calculation: Volatility score = max(0, min(60 × (ATR / SMA(ATR) − 1) + 10, 30)); use an ATR ratio of 1 when SMA(ATR) is not positive. The SMA of ATR uses the same lookback as ATR.
+Calculation: Bullish quality score = volume score + volatility score + (40 if close > EMA(close), otherwise 20 if close > 0.998 × EMA(close), otherwise 0).
+Calculation: Bearish quality score = volume score + volatility score + (40 if close < EMA(close), otherwise 20 if close < 1.002 × EMA(close), otherwise 0).
+Calculation: Qualified bullish setup = close > open AND previous close < previous open AND absolute(close − open) >= minimum body ratio × absolute(previous close − previous open) AND (full-body engulfing is disabled OR (close > previous open AND open < previous close)) AND bullish quality score >= minimum quality score.
+Calculation: Qualified bearish setup = close < open AND previous close > previous open AND absolute(close − open) >= minimum body ratio × absolute(previous close − previous open) AND (full-body engulfing is disabled OR (close < previous open AND open > previous close)) AND bearish quality score >= minimum quality score.
+Calculation: A bullish zone stores the high of the latest qualified bullish setup; a bearish zone stores the low of the latest qualified bearish setup. Each same-side setup replaces its zone and resets its remaining waiting bars. Starting on the next bar, a zone is active until its first same-side confirmation or until the allowed number of bars without confirmation has elapsed. Check confirmation before expiring the zone on the last allowed bar. Manage the two sides independently.
+Long: Qualified bullish setup.
+Long: Bullish zone is active AND current bar is not a qualified bullish setup AND close > bullish zone high.
+Short: Qualified bearish setup.
+Short: Bearish zone is active AND current bar is not a qualified bearish setup AND close < bearish zone low.

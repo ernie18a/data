@@ -1,0 +1,6 @@
+Calculation: Timeframe return = (OHLC4 of the last completed bar − OHLC4 of the preceding bar) / OHLC4 of the preceding bar, where OHLC4 = (open + high + low + close) / 4. Calculate this for two configured timeframes, one longer than the other; each may be higher or lower than the chart timeframe.
+Calculation: Prediction = a bias-free feedforward neural network applied to a timeframe return: repeat the same return as every input to the first layer; apply tanh to each weighted sum in two successive hidden layers, then apply tanh to the weighted sum of the second hidden layer for the output. Use the same network weights and layer sizes for both timeframe returns.
+Long: Longer-timeframe prediction < −threshold AND shorter-timeframe prediction < −threshold
+Short: Longer-timeframe prediction > threshold AND shorter-timeframe prediction > threshold
+Exit: long, shorter-timeframe prediction >= threshold OR longer-timeframe prediction >= threshold
+Exit: short, shorter-timeframe prediction <= −threshold OR longer-timeframe prediction <= threshold

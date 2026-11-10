@@ -1,0 +1,4 @@
+Long: The high AND low of each bar in a consecutive sequence ending at the current chart bar are strictly higher than those of the preceding bar.
+Short: The high AND low of each bar in a consecutive sequence ending at the current chart bar are strictly lower than those of the preceding bar.
+Long: The current chart bar is the first bar of a higher-timeframe bar AND the high AND low of each bar in a consecutive sequence ending at the still-forming higher-timeframe bar are strictly higher than those of the preceding higher-timeframe bar.
+Short: The current chart bar is the first bar of a higher-timeframe bar AND the high AND low of each bar in a consecutive sequence ending at the still-forming higher-timeframe bar are strictly lower than those of the preceding higher-timeframe bar.

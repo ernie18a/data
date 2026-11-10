@@ -1,0 +1,6 @@
+Long: position is flat AND close of the forming work-timeframe bar > moving average of the forming work-timeframe bar AND momentum of the forming work-timeframe bar > 100 AND close of the forming work-timeframe bar > close of the previous completed work-timeframe bar
+Short: position is flat AND close of the forming work-timeframe bar < moving average of the forming work-timeframe bar AND momentum of the forming work-timeframe bar < 100 AND close of the forming work-timeframe bar < close of the previous completed work-timeframe bar
+Exit: long, momentum of the forming work-timeframe bar < 100 OR low <= entry price - long stop-loss distance OR high >= entry price + long take-profit distance
+Exit: short, momentum of the forming work-timeframe bar > 100 OR high >= entry price + short stop-loss distance OR low <= entry price - short take-profit distance
+Calculation: work timeframe = a configurable timeframe that may be higher than, lower than, or equal to the chart timeframe; evaluate at the start of each work-timeframe bar or on every tick, according to configuration
+Calculation: stop-loss or take-profit distance = a separately configurable price distance for each position side and exit type; a zero distance disables that exit

@@ -1,0 +1,5 @@
+Calculation: Instantaneous trend at bar t = (a − a²/4) × close[t] + (a²/2) × close[t−1] − (a − 3a²/4) × close[t−2] + 2(1 − a) × trend[t−1] − (1 − a)² × trend[t−2], initialized to close for the first four bars.
+Calculation: Trigger at bar t = 2 × instantaneous trend[t] − instantaneous trend[t−2].
+Calculation: Higher-timeframe trend and trigger = instantaneous trend and trigger calculated from the still-forming higher-timeframe bar at the first chart bar of each higher-timeframe period, then held constant for the rest of that period.
+Long: Chart-timeframe trigger > chart-timeframe instantaneous trend OR higher-timeframe trigger > higher-timeframe instantaneous trend.
+Short: Chart-timeframe trigger < chart-timeframe instantaneous trend OR higher-timeframe trigger < higher-timeframe instantaneous trend.

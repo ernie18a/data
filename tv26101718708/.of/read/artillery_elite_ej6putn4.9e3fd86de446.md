@@ -1,0 +1,6 @@
+Long: Shorter-period EMA of close > longer-period EMA of close
+Short: Shorter-period EMA of close <= longer-period EMA of close
+Long: Close > session VWAP
+Short: Close <= session VWAP
+Long: Shorter-period EMA of close > longer-period EMA of close AND close > session VWAP AND at least one close in the preceding pullback lookback < its corresponding shorter-period EMA AND close > shorter-period EMA AND close > open AND ADX > minimum threshold AND bar time falls within either configured session window in America/New_York AND bars since the most recent long signal > cooldown AND bars since the most recent short signal > cooldown
+Short: Shorter-period EMA of close < longer-period EMA of close AND close < session VWAP AND at least one close in the preceding pullback lookback > its corresponding shorter-period EMA AND close < shorter-period EMA AND close < open AND ADX > minimum threshold AND bar time falls within either configured session window in America/New_York AND bars since the most recent long signal > cooldown AND bars since the most recent short signal > cooldown

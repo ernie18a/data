@@ -1,0 +1,8 @@
+Calculation: Selected RSI set = RSI of the same configurable price source and lookback on each of up to three independently selected timeframes. For a higher timeframe, use the last completed bar; for a lower timeframe, use the last completed bar within the chart bar; for the chart timeframe, use the chart bar.
+Calculation: Required agreement = the number of active selected timeframes in all-agree mode, or the greater of two and the number of active selected timeframes minus one in partial-agreement mode.
+Long: At least two selected timeframes are active AND at least the required agreement of their RSI values are above the middle level.
+Short: At least two selected timeframes are active AND at least the required agreement of their RSI values are below the middle level.
+Long: At least two selected timeframes are active AND at least the required agreement of their RSI values are above the middle level AND the preceding chart bar did not satisfy this condition.
+Short: At least two selected timeframes are active AND at least the required agreement of their RSI values are below the middle level AND the preceding chart bar did not satisfy this condition.
+Long: RSI on any of the dashboard's five successively longer timeframes is above the middle level; use the last completed bar for a higher timeframe, the last completed bar within the chart bar for a lower timeframe, or the chart bar for the chart timeframe.
+Short: RSI on any of the dashboard's five successively longer timeframes is at or below the middle level; use the last completed bar for a higher timeframe, the last completed bar within the chart bar for a lower timeframe, or the chart bar for the chart timeframe.

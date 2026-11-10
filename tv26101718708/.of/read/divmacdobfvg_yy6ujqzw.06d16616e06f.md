@@ -1,0 +1,17 @@
+Calculation: Histogram = EMA of close with a shorter length minus EMA of close with a longer length, minus the SMA of that difference. Calculate it independently on the chart timeframe and on the lower timeframe.
+Calculation: Histogram pivot = a histogram high or low confirmed by the specified numbers of chart bars to its left and right. Compare each confirmed pivot with the immediately preceding confirmed pivot of the same type; measure their distance in chart bars. Evaluate the decision on the confirmation bar.
+Calculation: Price pivot high or low = a high or low confirmed by equal numbers of chart bars on both sides.
+Long: The previous chart bar's histogram < the histogram two chart bars ago AND < 0 AND the current histogram > the previous histogram AND the histogram of the last completed lower-timeframe bar in the current chart bar > that of the last completed lower-timeframe bar in the previous chart bar.
+Short: The previous chart bar's histogram > the histogram two chart bars ago AND > 0 AND the current histogram < the previous histogram AND the histogram of the last completed lower-timeframe bar in the current chart bar < that of the last completed lower-timeframe bar in the previous chart bar.
+Long: A histogram low pivot is confirmed AND its distance from the preceding low pivot is within the minimum and maximum bounds AND its price low < the preceding pivot's price low AND its histogram > the preceding pivot's histogram AND (the zero-side filter is disabled OR its histogram < 0).
+Long: A histogram low pivot is confirmed AND its distance from the preceding low pivot is within the minimum and maximum bounds AND its price low > the preceding pivot's price low AND its histogram < the preceding pivot's histogram AND (the zero-side filter is disabled OR its histogram < 0).
+Short: A histogram high pivot is confirmed AND its distance from the preceding high pivot is within the minimum and maximum bounds AND its price high > the preceding pivot's price high AND its histogram < the preceding pivot's histogram AND (the zero-side filter is disabled OR its histogram > 0).
+Short: A histogram high pivot is confirmed AND its distance from the preceding high pivot is within the minimum and maximum bounds AND its price high < the preceding pivot's price high AND its histogram > the preceding pivot's histogram AND (the zero-side filter is disabled OR its histogram > 0).
+Long: Current low > high two chart bars ago AND previous close > high two chart bars ago AND current low minus high two chart bars ago > ATR multiplied by a size threshold.
+Short: Current high < low two chart bars ago AND previous close < low two chart bars ago AND low two chart bars ago minus current high > ATR multiplied by a size threshold.
+Long: Close > the latest confirmed price pivot high AND no earlier close has broken that pivot high since it was confirmed.
+Short: Close < the latest confirmed price pivot low AND no earlier close has broken that pivot low since it was confirmed.
+Exit: long, the previous histogram > 0 AND > the histogram two chart bars ago AND the current histogram > 0 AND < the previous histogram.
+Exit: short, the previous histogram <= 0 AND < the histogram two chart bars ago AND the current histogram <= 0 AND > the previous histogram.
+Exit: long, the histogram high or bearish divergence conditions stated above are met.
+Exit: short, the histogram low or bullish divergence conditions stated above are met.

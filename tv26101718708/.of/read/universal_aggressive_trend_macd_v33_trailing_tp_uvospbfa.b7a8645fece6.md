@@ -1,0 +1,11 @@
+Calculation: Close profit percentage = 100 × (close − entry price) / entry price for a long position, or 100 × (entry price − close) / entry price for a short position.
+Calculation: Peak profit percentage = highest close profit percentage observed since entry, updated at each bar close and reset when flat.
+Calculation: Trailing exit level = peak profit percentage × (1 − giveback percentage / 100) in relative mode, or peak profit percentage − giveback in percentage-point mode.
+Long: Long entries enabled AND flat AND (no previous entry OR bars since last entry >= cooldown) AND (ADX filter disabled OR ADX > threshold) AND (volume filter disabled OR volume > volume SMA × multiplier) AND close > trend EMA AND (EMA slope filter disabled OR trend EMA > trend EMA at the slope lookback) AND (MACD arming disabled OR (bars since most recent MACD bullish crossover <= validity lookback AND MACD line > signal line) OR (continuation enabled AND MACD line > signal line AND MACD histogram > 0 AND close > highest high over the preceding breakout lookback bars)).
+Short: Short entries enabled AND flat AND (no previous entry OR bars since last entry >= cooldown) AND (ADX filter disabled OR ADX > threshold) AND (volume filter disabled OR volume > volume SMA × multiplier) AND close < trend EMA AND (EMA slope filter disabled OR trend EMA < trend EMA at the slope lookback) AND (MACD arming disabled OR (bars since most recent MACD bearish crossover <= validity lookback AND MACD line < signal line) OR (continuation enabled AND MACD line < signal line AND MACD histogram < 0 AND close < lowest low over the preceding breakout lookback bars)).
+Exit: long, trailing take profit enabled AND peak profit percentage >= minimum profit threshold AND close profit percentage <= trailing exit level.
+Exit: short, trailing take profit enabled AND peak profit percentage >= minimum profit threshold AND close profit percentage <= trailing exit level.
+Exit: long, opposite-cross exit enabled AND MACD line crosses below signal line.
+Exit: short, opposite-cross exit enabled AND MACD line crosses above signal line.
+Exit: long, low <= entry price − ATR at entry × stop multiplier, with the stop order active after the first post-entry bar closes.
+Exit: short, high >= entry price + ATR at entry × stop multiplier, with the stop order active after the first post-entry bar closes.

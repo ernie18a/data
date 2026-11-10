@@ -1,0 +1,2 @@
+Long: On any of three independently evaluated timeframes, the shorter-period linear weighted moving average of close > the longer-period linear weighted moving average of open; each timeframe may be higher or lower than the chart timeframe or equal to it and uses its still-forming bar.
+Short: On any of three independently evaluated timeframes, the shorter-period linear weighted moving average of close <= the longer-period linear weighted moving average of open; each timeframe may be higher or lower than the chart timeframe or equal to it and uses its still-forming bar.

@@ -1,0 +1,8 @@
+Calculation: Momentum z-score = (current close change − SMA of close changes) / standard deviation of close changes, using the same lookback for the SMA and standard deviation.
+Calculation: Latest eligible pivot high or low = most recently confirmed high or low pivot using equal left and right lookbacks; replace it when a new pivot of that kind is confirmed and clear it after a corresponding market structure break.
+Calculation: Tracked bullish gap = current low > high two bars ago AND prior bar's volume percentile rank >= threshold; its top is current low and its bottom is the high two bars ago. Track until first inversion or until a non-inverting bar occurs more than the maximum age after the bar two bars before gap formation.
+Calculation: Tracked bearish gap = current high < low two bars ago AND prior bar's volume percentile rank >= threshold; its top is the low two bars ago and its bottom is current high. Track until first inversion or until a non-inverting bar occurs more than the maximum age after the bar two bars before gap formation.
+Long: Close > latest eligible pivot high AND previous close <= that same pivot high AND momentum z-score > positive threshold.
+Short: Close < latest eligible pivot low AND previous close >= that same pivot low AND momentum z-score < negative threshold of equal magnitude.
+Long: Close > top of a tracked bearish gap.
+Short: Close < bottom of a tracked bullish gap.

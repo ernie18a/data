@@ -1,0 +1,3 @@
+Long: MACD line of Heikin Ashi close crosses above its EMA signal line, using a shorter EMA for the MACD line's fast average than for its slow average.
+Short: MACD line of Heikin Ashi close crosses below its EMA signal line, using a shorter EMA for the MACD line's fast average than for its slow average.
+Exit: long, MACD line of Heikin Ashi close crosses below its EMA signal line AND bar datetime is strictly after the configured start timestamp AND strictly before the configured end timestamp.

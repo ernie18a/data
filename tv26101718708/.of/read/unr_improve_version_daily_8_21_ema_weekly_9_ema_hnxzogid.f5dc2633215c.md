@@ -1,0 +1,4 @@
+Calculation: Reclaim for an EMA = at least one chart bar in the lookback ending on the current bar has low below its corresponding EMA value AND current close > current EMA AND (session restriction disabled OR current bar is within the configured session).
+Long: Shorter-period EMA of the still-forming higher-timeframe bar >= longer-period EMA of the same timeframe.
+Short: Shorter-period EMA of the still-forming higher-timeframe bar < longer-period EMA of the same timeframe.
+Long: For any of the shorter-period EMA, longer-period EMA, or EMA of a still-forming higher timeframe than those two EMAs, the preceding bar's reclaim is true AND the reclaim two bars ago is false AND current close > that EMA AND (green-bar confirmation disabled OR current close > current open) AND current close < the current trading day's open AND no undercut-and-rally signal has fired earlier in the current trading day.

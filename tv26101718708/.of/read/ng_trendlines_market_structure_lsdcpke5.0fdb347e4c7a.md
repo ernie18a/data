@@ -1,0 +1,14 @@
+Calculation: Range high and range low = highest high and lowest low over the same lookback, including the current confirmed chart bar.
+Calculation: Range midpoint = (range high + range low) / 2. Range tolerance = a fraction of (range high - range low).
+Calculation: Average range volume = accumulate the previous bar's volume and a bar count when that bar was inside its own range and no breakout has occurred since the last reset; divide the accumulated volume by the count, or use the volume SMA over the range lookback if the count is zero. After processing each bar, reset the accumulator and breakout flag if either range boundary changed. Set the breakout flag on the first bar whose close is above the range high and VWAP or below the range low and VWAP; at that time lock the average range volume until the next reset.
+Calculation: Higher- or lower-timeframe bias = compare that timeframe's close with its close EMA plus or minus a fractional EMA buffer. For a higher timeframe use the last completed bar; for a lower timeframe use the last completed intrabar within the chart bar. Apply this calculation to each configured timeframe; the two shorter timeframes share a shorter EMA lookback and the two longer timeframes share a longer EMA lookback. A configured timeframe may be higher or lower than the chart timeframe.
+Long: close > longest-lookback chart EMA
+Short: close < longest-lookback chart EMA
+Long: higher- or lower-timeframe close > its EMA + fractional EMA buffer
+Short: higher- or lower-timeframe close < its EMA - fractional EMA buffer
+Long: NOT (close > shortest chart EMA AND shortest chart EMA > intermediate chart EMA AND intermediate chart EMA > longest chart EMA) AND NOT (close < shortest chart EMA AND shortest chart EMA < intermediate chart EMA AND intermediate chart EMA < longest chart EMA) AND close < range midpoint AND low <= range low + range tolerance AND close > open AND volume >= average range volume
+Short: NOT (close > shortest chart EMA AND shortest chart EMA > intermediate chart EMA AND intermediate chart EMA > longest chart EMA) AND NOT (close < shortest chart EMA AND shortest chart EMA < intermediate chart EMA AND intermediate chart EMA < longest chart EMA) AND close > range midpoint AND high >= range high - range tolerance AND close < open AND volume >= average range volume
+Long: close > range high AND close > VWAP AND volume > locked average range volume multiplied by a strong-volume factor
+Short: close < range low AND close < VWAP AND volume > locked average range volume multiplied by a strong-volume factor
+Long: volume > locked average range volume multiplied by a spike factor AND close > open
+Short: volume > locked average range volume multiplied by a spike factor AND close < open

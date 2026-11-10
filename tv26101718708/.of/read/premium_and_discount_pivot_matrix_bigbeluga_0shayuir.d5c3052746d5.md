@@ -1,0 +1,5 @@
+Calculation: Resistance = maximum of the most recent retained confirmed pivot highs; a pivot high is confirmed after the same number of bars to its right as to its left. Retain a fixed maximum number of pivots, discarding the oldest when exceeded.
+Calculation: Support = minimum of the most recent retained confirmed pivot lows; a pivot low is confirmed after the same number of bars to its right as to its left. Retain the same maximum number of pivots as for resistance, discarding the oldest when exceeded.
+Calculation: Last breach bar index = index of the most recent bar on which the high-low midpoint crossed above the previous bar's resistance or below the previous bar's support, regardless of whether a signal was emitted; initialize to zero and update after evaluating the current bar's decisions.
+Long: Current bar is complete AND its high-low midpoint crosses below the previous bar's support AND current bar index minus last breach bar index > minimum separation.
+Short: Current bar is complete AND its high-low midpoint crosses above the previous bar's resistance AND current bar index minus last breach bar index > minimum separation.

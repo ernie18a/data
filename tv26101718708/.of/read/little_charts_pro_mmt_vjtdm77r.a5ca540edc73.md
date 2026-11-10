@@ -1,0 +1,7 @@
+Calculation: Mini-chart bars = a rolling, configurable-length buffer updated when the selected timeframe changes. Append the OHLC returned by the preceding chart bar's timeframe request; for a higher timeframe this is the last completed bar, for a lower timeframe it is the last lower-timeframe bar within the preceding chart bar, and for the chart timeframe it is the preceding bar. Evaluate decisions on the newest buffered bar when at least three bars are buffered.
+Calculation: Break state = initialize to neutral at the oldest buffered bar; for each subsequent buffered bar, set to bullish if its close > the preceding bar's high, set to bearish if its close < the preceding bar's low, and otherwise retain the previous state. Recalculate from the current buffer on each update.
+Long: Latest buffered close > preceding buffered high AND preceding buffered break state is neutral or bearish
+Short: Latest buffered close < preceding buffered low AND preceding buffered break state is neutral or bullish
+Long: Latest buffered low > buffered high two bars earlier
+Short: Latest buffered high < buffered low two bars earlier
+Long: Latest buffered close > its open AND preceding buffered close < its open

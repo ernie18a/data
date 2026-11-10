@@ -1,0 +1,11 @@
+Calculation: Tracked gaps = At each completed bar, add any gap whose absolute open-to-previous-close difference divided by previous close meets the minimum gap percentage; store its direction, upper and lower prices, and creation bar. Retain at most the maximum number of gaps, evicting the oldest before checking fills. A gap becomes filled when an up gap's low reaches or falls below its lower price, or a down gap's high reaches or exceeds its upper price; filled gaps remain tracked until evicted.
+Calculation: Signal cooldown = Current bar index minus the index of the last gap-fill or gap-and-go signal; initialize the last signal index to zero and update it after evaluating all signals on a bar.
+Calculation: Volume ratio = Volume divided by its simple moving average, or zero when that average is zero.
+Long: Open > previous close AND (open - previous close) / previous close >= minimum gap percentage.
+Short: Open < previous close AND (previous close - open) / previous close >= minimum gap percentage.
+Long: Close > EMA of close.
+Short: Close <= EMA of close.
+Long: At least one tracked unfilled gap becomes filled on the current bar AND volume > its simple moving average AND signal cooldown >= minimum cooldown AND close > open.
+Short: At least one tracked unfilled gap becomes filled on the current bar AND volume > its simple moving average AND signal cooldown >= minimum cooldown AND close < open.
+Long: Open > previous close AND (open - previous close) / previous close >= minimum gap percentage AND at least one tracked gap remains unfilled, is older than the minimum gap age, and has either up-gap direction with close > its upper price or down-gap direction with close < its lower price AND volume ratio > gap-and-go threshold AND volume > its simple moving average AND signal cooldown >= minimum cooldown.
+Short: Open < previous close AND (previous close - open) / previous close >= minimum gap percentage AND at least one tracked gap remains unfilled, is older than the minimum gap age, and has either up-gap direction with close > its upper price or down-gap direction with close < its lower price AND volume ratio > gap-and-go threshold AND volume > its simple moving average AND signal cooldown >= minimum cooldown.

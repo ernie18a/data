@@ -1,0 +1,1 @@
+Long: datetime >= start date AND no earlier bar has datetime >= start date

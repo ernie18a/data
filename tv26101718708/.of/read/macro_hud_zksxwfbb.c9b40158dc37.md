@@ -1,0 +1,3 @@
+Long: Close > close a lookback number of bars earlier OR close > EMA of close.
+Short: Close < close a lookback number of bars earlier OR close <= EMA of close.
+Calculation: Close and EMA inputs = values on the selected timeframe: use the last completed higher-timeframe bar on historical data and the still-forming bar in realtime; for a lower timeframe, use the last available intrabar; for the chart timeframe, use the current bar.

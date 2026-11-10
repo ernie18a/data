@@ -1,0 +1,7 @@
+Calculation: Shorter-timeframe HMA and longer-timeframe HMA = Hull moving averages of close using the same length, calculated on two timeframes. For each timeframe, if it is higher than the chart timeframe, use the last completed bar on historical data; if it is lower, use the last intrabar in the chart bar; if it equals the chart timeframe, use the chart bar.
+Calculation: Long first target reached = high has reached or exceeded entry price × (1 + first target percentage) on any bar after entry through the current bar.
+Calculation: Short first target reached = low has reached or fallen below entry price × (1 - first target percentage) on any bar after entry through the current bar.
+Long: Shorter-timeframe HMA crosses above longer-timeframe HMA.
+Short: Shorter-timeframe HMA crosses below longer-timeframe HMA.
+Exit: long, shorter-timeframe HMA crosses below longer-timeframe HMA OR high >= entry price × (1 + final target percentage) OR (long first target reached AND low <= entry price) OR (long first target not reached AND low <= entry price × (1 - stop percentage)).
+Exit: short, shorter-timeframe HMA crosses above longer-timeframe HMA OR low <= entry price × (1 - final target percentage) OR (short first target reached AND high >= entry price) OR (short first target not reached AND high >= entry price × (1 + stop percentage)).

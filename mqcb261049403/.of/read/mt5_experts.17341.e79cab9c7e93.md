@@ -1,0 +1,4 @@
+Calculation: Long trailing stop = the maximum of entry price minus the stop-loss distance and each chart-bar open since entry minus the trailing-stop distance, considering only opens more than the trailing-stop distance above entry price; include the current bar open.
+Long: no open position AND current bar open = current bar open
+Exit: long, previous completed bar's short-period close EMA > previous completed bar's long-period close EMA multiplied by a lower tolerance factor AND previous completed bar's short-period close EMA < previous completed bar's long-period close EMA multiplied by an upper tolerance factor
+Exit: long, current bar low <= long trailing stop OR current bar high >= entry price + take-profit distance

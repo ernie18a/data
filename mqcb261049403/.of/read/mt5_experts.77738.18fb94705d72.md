@@ -1,0 +1,4 @@
+Short: No position is open AND the last completed bar's server-time hour is at or after the session start and before the session end AND the preceding bar's close RSI is below the sell threshold AND the last completed bar's close RSI is at or above the sell threshold AND the last completed bar's ATR is greater than zero.
+Exit: short, high is at or above entry price plus the stop-loss multiplier times ATR from the last completed bar before entry.
+Exit: short, low is at or below entry price minus the take-profit multiplier times ATR from the last completed bar before entry.
+Exit: short, the number of bars since the entry bar is at or above the maximum holding period.

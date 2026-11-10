@@ -1,0 +1,6 @@
+Calculation: Window high and low = highest high and lowest low of either a selected number of completed source-timeframe bars or completed source-timeframe bars since a selected session start in New York time; the source timeframe is lower than the chart timeframe, or the same when both coincide. Exclude the source bar still forming, use the last available source bar within each chart bar, and make the session window unavailable on its opening source bar.
+Calculation: Range position = 100 × (chart close − window low) / (window high − window low), clamped to a selected lower and upper bound; unavailable when window high ≤ window low or either bound is unavailable.
+Long: Range position ≤ the selected window's band threshold.
+Short: 100 − range position ≤ the selected window's band threshold.
+Long: Range position ≤ the selected alert window's band threshold AND the preceding chart bar's range position was unavailable or exceeded that threshold.
+Short: 100 − range position ≤ the selected alert window's band threshold AND the preceding chart bar's range position was unavailable or 100 − its range position exceeded that threshold.

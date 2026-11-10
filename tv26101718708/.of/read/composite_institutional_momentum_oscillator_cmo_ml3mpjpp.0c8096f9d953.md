@@ -1,0 +1,20 @@
+Calculation: Price source = a chosen OHLC-derived price, defaulting to (open + high + low + close) / 4.
+Calculation: Momentum oscillator = on the chart timeframe or a chosen higher or lower timeframe, calculate delta = volume × (2 × price source − high − low) / max(high − low, a positive range floor); efficiency = volume / max(high − low, the range floor); delta factor = SMA(delta, short lookback) if enabled, otherwise 1; absorption factor = efficiency / max(SMA(efficiency, long lookback), the range floor) if enabled, otherwise 1; weight = max(abs(delta factor) × absorption factor × volume, 1); anchor = SMA(price source × weight, long lookback) / SMA(weight, long lookback); velocity = WMA(2 × WMA(price source, short lookback) − WMA(price source, intermediate lookback), round(sqrt(short lookback))); oscillator = EMA((velocity − anchor) / standard deviation(price source, long lookback), smoothing lookback). The long lookback is longer than the intermediate lookback, which is longer than the short lookback. For a higher timeframe use its last completed bar; for a lower timeframe use its last completed bar within each chart bar.
+Calculation: Sentiment score = 0.25 × clamp((1 − standard deviation(price source, short volatility lookback) / standard deviation(price source, long lookback)) × 50 + 25, 0, 100) + 0.45 × clamp((momentum oscillator + 2) × 25, 0, 100) + 0.30 × RSI(price source, RSI lookback), calculated on the oscillator timeframe and sampled as the oscillator is.
+Calculation: Adjusted sentiment = sentiment score reduced by a configurable amount and floored at 0 when chart low is below the lowest low of the preceding divergence lookback and oscillator is above its lowest value over the same preceding chart bars; then increased by a configurable amount and capped at 100 when chart high is above the highest high of the preceding divergence lookback and oscillator is below its highest value over the same preceding chart bars.
+Long: Higher-timeframe price source >= its long-lookback VWMA on the last completed higher-timeframe bar.
+Short: Higher-timeframe price source < its long-lookback VWMA on the last completed higher-timeframe bar.
+Long: Oscillator-timeframe price source >= its intermediate-lookback WMA.
+Short: Oscillator-timeframe price source < its intermediate-lookback WMA.
+Long: Momentum oscillator > 0.
+Short: Momentum oscillator <= 0.
+Long: Oscillator-timeframe low < the lowest low over the preceding long lookback AND oscillator-timeframe price source > that lowest low.
+Short: Oscillator-timeframe high > the highest high over the preceding long lookback AND oscillator-timeframe price source < that highest high.
+Long: Adjusted sentiment <= the accumulation threshold.
+Short: Adjusted sentiment >= the distribution threshold.
+Exit: long, adjusted sentiment >= the profit-taking threshold, which is below the distribution threshold.
+Long: Momentum oscillator is >= a negative capitulation threshold AND < a positive reclaim ceiling AND, since the most recent oscillator value >= the reclaim ceiling, the oscillator has been < the capitulation threshold.
+Long: Momentum oscillator crosses above the capitulation threshold AND, on the preceding chart bar, an oscillator value < the capitulation threshold has occurred since the most recent oscillator value >= the reclaim ceiling.
+Long: Momentum oscillator > a positive expansion threshold AND higher-timeframe price source >= its long-lookback VWMA on the last completed higher-timeframe bar.
+Short: Momentum oscillator < the capitulation threshold AND higher-timeframe price source < its long-lookback VWMA on the last completed higher-timeframe bar.
+Short: Momentum oscillator <= a negative distribution threshold AND the accumulation-reclaim condition is false AND the bearish expansion condition is false AND the bullish liquidity-sweep condition with oscillator < 0 is false AND the bearish liquidity-sweep condition with oscillator > 0 is false.

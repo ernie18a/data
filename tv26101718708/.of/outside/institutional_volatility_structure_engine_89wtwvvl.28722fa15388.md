@@ -1,0 +1,5 @@
+On each bar, use the 1-day, 9-day, 30-day, 3-month, and 6-month implied volatility index closes. If the 30-day feed is missing, use the traded instrument's close, or a fixed fallback if that too is missing. Replace any missing term with its corresponding fixed multiple of the 30-day value.
+
+Compute compression as the sum of the absolute differences between adjacent terms, weighting the 3-month-to-6-month difference by a fixed factor. Buy options when compression is below its threshold, provided the 1-day term is not above the 9-day term and compression is not above the expansion threshold. This reproduces the green heatmap condition.
+
+Sell options for premium when each of the 1-day, 9-day, and 30-day terms is below all of its own values over the configured preceding lookback. The rules do not specify an exit or how to resolve simultaneous signals.

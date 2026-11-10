@@ -1,0 +1,14 @@
+Calculation: Long setup = bar index >= max(warmup length, close-confirmation length, trailing EMA length) AND high > low AND open <= high - IRB fraction * (high - low) AND close <= high - IRB fraction * (high - low) AND normalized medium EMA slope >= positive slope threshold AND higher-timeframe medium EMA > its value a slope-lookback number of chart bars ago AND ADX >= threshold AND range-to-ATR ratio <= threshold AND short EMA > medium EMA AND medium EMA > long EMA AND every close in the confirmation lookback > its corresponding short EMA.
+Calculation: Short setup = bar index >= max(warmup length, close-confirmation length, trailing EMA length) AND high > low AND open >= low + IRB fraction * (high - low) AND close >= low + IRB fraction * (high - low) AND normalized medium EMA slope <= negative slope threshold AND higher-timeframe medium EMA < its value a slope-lookback number of chart bars ago AND ADX >= threshold AND range-to-ATR ratio <= threshold AND short EMA < medium EMA AND medium EMA < long EMA AND every close in the confirmation lookback < its corresponding short EMA.
+Calculation: Normalized medium EMA slope = (current chart-timeframe medium EMA - medium EMA a slope-lookback number of chart bars ago) / current ATR when ATR > 0; otherwise 0. Substitute 0 for an unavailable past EMA.
+Calculation: Range-to-ATR ratio = (high - low) / ATR when ATR > 0; otherwise 0.
+Calculation: Higher-timeframe medium EMA = EMA of higher-timeframe closes using the same period as the chart-timeframe medium EMA, using the last completed higher-timeframe bar; its historical comparison is indexed in chart bars.
+Calculation: Pending entry = after a setup while flat, place a stop at the setup high plus a price buffer for long or the setup low minus the buffer for short, active from the next bar. While pending, a same-side setup replaces the stop and resets its age; ignore opposite-side setups. Cancel when pending age reaches the trigger-window length; on that same bar, a new setup may create a new pending entry. Give the long setup priority when both occur while flat.
+Calculation: Long stop = the maximum of the entry setup low minus the price buffer and every trailing EMA value from the entry fill bar through the latest completed chart bar; the stop calculated at a bar close is active from the next bar.
+Calculation: Short stop = the minimum of the entry setup high plus the price buffer and every trailing EMA value from the entry fill bar through the latest completed chart bar; the stop calculated at a bar close is active from the next bar.
+Long: Long setup = true.
+Short: Short setup = true.
+Long: pending long entry exists AND high >= pending long entry stop.
+Short: pending short entry exists AND low <= pending short entry stop.
+Exit: long, low <= active long stop OR bars held >= time-stop length.
+Exit: short, high >= active short stop OR bars held >= time-stop length.

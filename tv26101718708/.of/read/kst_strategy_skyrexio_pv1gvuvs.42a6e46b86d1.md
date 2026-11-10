@@ -1,0 +1,6 @@
+Calculation: KST = sum of four SMAs of close rate of change, weighted respectively 1, 2, 3, and 4; each rate of change and its SMA has its own lookback. The KST signal is an SMA of KST.
+Calculation: Alligator jaw = smoothed moving average of (high + low) / 2, initialized with an SMA and subsequently updated as (previous average × (length − 1) + current input) / length, evaluated a configurable number of chart bars ago.
+Calculation: Choppiness Index = 100 × log10(sum of true range over the lookback / (highest high − lowest low over the same lookback)) / log10(lookback).
+Calculation: Long stop = low of the entry signal bar − stop multiplier × ATR of the entry signal bar; long target = close of the entry signal bar + target multiplier × ATR of the entry signal bar. Hold both levels fixed while the position is open.
+Long: KST crosses above its signal AND close > selected long-term moving average of close AND close > Alligator jaw AND (Choppiness Index filter disabled OR Choppiness Index < threshold) AND datetime >= trading start AND datetime <= trading stop.
+Exit: long, high >= long target OR low <= long stop.

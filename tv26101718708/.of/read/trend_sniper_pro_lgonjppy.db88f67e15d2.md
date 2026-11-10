@@ -1,0 +1,13 @@
+Calculation: Trend price breakout = abs(close − previous close) > ATR × trend price multiplier × (1 + trend price markup) OR (range-breakout option enabled AND high − low > ATR × trend price multiplier × range multiplier)
+Calculation: Reversal price breakout = abs(close − previous close) > ATR × reversal price multiplier × (1 + reversal price markup) OR (range-breakout option enabled AND high − low > ATR × reversal price multiplier × range multiplier)
+Calculation: High price breakout = abs(close − previous close) > ATR × high-breakout multiplier OR (range-breakout option enabled AND high − low > ATR × high-breakout multiplier × range multiplier)
+Calculation: Trend volume breakout = volume > moving average of volume × (1 + trend volume markup) OR volume is unavailable
+Calculation: Reversal volume breakout = volume > moving average of volume × (1 + reversal volume markup) OR volume is unavailable
+Calculation: High volume breakout = volume > moving average of volume × high-volume multiplier
+Calculation: Bullish bar = close > previous close AND ((SuperTrend direction is bullish AND trend price breakout AND trend volume breakout) OR (SuperTrend direction is bearish AND reversal price breakout AND reversal volume breakout) OR high volume breakout OR high price breakout)
+Calculation: Bearish bar = close < previous close AND ((SuperTrend direction is bearish AND trend price breakout AND trend volume breakout) OR (SuperTrend direction is bullish AND reversal price breakout AND reversal volume breakout) OR high volume breakout OR high price breakout)
+Calculation: Long and short stop lines = start each bar with long stop = close − stop multiplier × ATR and short stop = close + stop multiplier × ATR. If the bar is bullish OR the position is long, set short stop = close + compound multiplier × ATR; retain the previous long stop if the new long stop < previous long stop OR close < previous short stop, and retain the previous short stop if the new short stop < previous short stop OR close < previous short stop. Otherwise, if the bar is bearish OR the position is short, set long stop = close − compound multiplier × ATR; retain the previous short stop if the new short stop > previous short stop OR close > previous long stop, and retain the previous long stop if the new long stop > previous long stop OR close > previous long stop. When a previous stop is unavailable, apply these comparisons as false.
+Long: bullish bar = true
+Short: bearish bar = true
+Exit: long, low <= long stop line active for the bar
+Exit: short, high >= short stop line active for the bar

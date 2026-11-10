@@ -1,0 +1,2 @@
+Long: For any configured higher or lower timeframe, the low of the last completed bar > the high two bars before it
+Short: For any configured higher or lower timeframe, the high of the last completed bar < the low two bars before it

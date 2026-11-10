@@ -1,0 +1,6 @@
+Calculation: Signal components = On the signal timeframe, A = close minus the Bollinger Bands middle line; B = negative of the sum of Bulls Power and Bears Power, both using the same lookback. The Bollinger Bands lookback is longer than the power lookback. The signal timeframe may be higher, lower, or equal to the chart timeframe; use its bar still forming and its preceding completed bar.
+Calculation: Strength = absolute value of A plus absolute value of B, calculated separately for the forming signal bar and its preceding completed bar.
+Long: Forming-bar A > 0 AND forming-bar B < 0 AND forming-bar strength > preceding-bar strength × (1 + strength-change threshold).
+Short: Forming-bar A < 0 AND forming-bar B > 0 AND forming-bar strength > preceding-bar strength × (1 + strength-change threshold).
+Exit: long, forming-bar A > 0 AND forming-bar B < 0 AND forming-bar strength < preceding-bar strength × (1 - strength-change threshold).
+Exit: short, forming-bar A < 0 AND forming-bar B > 0 AND forming-bar strength < preceding-bar strength × (1 - strength-change threshold).

@@ -1,0 +1,13 @@
+Calculation: Confirmed pivot high = a high greater than or equal to the highs in a preceding lookback and greater than all highs in an equally long subsequent lookback; it is confirmed on the last bar of the subsequent lookback. A confirmed pivot low uses the corresponding low comparisons in the opposite direction.
+Calculation: Supply zone = on a confirmed pivot high, create a zone with top at the pivot high and bottom at the pivot high minus ATR at the pivot bar multiplied by a height factor and by selling volume divided by total volume. Selling volume is pivot-bar volume multiplied by 1 minus (close minus low) divided by (high minus low); use 0.5 for that fraction when high equals low. Total volume is pivot-bar volume when positive and 1 otherwise. Optionally require pivot-bar volume to exceed its volume SMA at the pivot bar. Keep only a limited number of the most recently created supply zones and delete a zone when close exceeds its top.
+Calculation: Demand zone = on a confirmed pivot low, create a zone with bottom at the pivot low and top at the pivot low plus ATR at the pivot bar multiplied by a height factor and by buying volume divided by total volume. Buying volume is pivot-bar volume multiplied by (close minus low) divided by (high minus low); use 0.5 for that fraction when high equals low. Total volume is pivot-bar volume when positive and 1 otherwise. Optionally require pivot-bar volume to exceed its volume SMA at the pivot bar. Keep only a limited number of the most recently created demand zones and delete a zone when close falls below its bottom.
+Calculation: Selected supply level = the lowest selected price among active supply zones, selecting each zone's bottom, midpoint, or top according to a configurable price choice. Selected demand level = the highest selected price among active demand zones, selecting each zone's top, midpoint, or bottom according to the same price choice.
+Calculation: Active pivot levels = confirmed pivot highs and lows retained separately, with only a limited number of the most recent levels retained for each side.
+Long: A pivot low is confirmed.
+Long: Low is at or below an active demand zone's top AND close is at or above its bottom.
+Long: Low crosses below the selected demand level, comparing each bar's low with that bar's selected level.
+Long: Close crosses above an active pivot high level.
+Short: A pivot high is confirmed.
+Short: High is at or above an active supply zone's bottom AND close is at or below its top.
+Short: High crosses above the selected supply level, comparing each bar's high with that bar's selected level.
+Short: Close crosses below an active pivot low level.

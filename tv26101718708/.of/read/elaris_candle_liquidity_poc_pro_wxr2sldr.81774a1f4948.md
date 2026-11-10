@@ -1,0 +1,9 @@
+Calculation: Candle profile = divide the chart candle's price range, floored at a minimum price increment, into equal bins starting at its low. Use either all completed lower-timeframe bars within the completed chart candle, or the chart candle itself. For each source bar and bin, let range = max(high - low, minimum price increment), overlap = max(0, min(bin high, source high) - max(bin low, source low)), and weight = overlap / range. Add source volume * weight to the bin volume and source volume * ((close - low) - (high - close)) / range * weight to the bin delta. The POC is the midpoint of the first bin with maximum volume; POC delta is that bin's delta. Concentration = POC bin volume / max(sum of bin volumes, 1).
+Calculation: Volume power = chart volume / its simple moving average when that average is positive, otherwise 0.
+Calculation: Bullish bias = POC delta >= 0 in delta-estimate mode, or chart close >= open in candle-direction mode; bearish bias is the opposite.
+Calculation: Active levels = when level extension is enabled, add each completed candle's POC if volume power >= minimum volume power and, when the strong-only filter is enabled, concentration >= minimum concentration. Record its bias and whether concentration >= minimum concentration. Before adding the current candle's level, remove every active level within the current candle's low-to-high range. After adding it, retain only the most recent parameterized maximum number of active levels per bias, including weak levels.
+Calculation: Retested strong level = the oldest strong active level within the current candle's low-to-high range before those levels are removed; if none exists, there is no retested strong level.
+Long: Volume power >= minimum volume power AND bullish bias.
+Short: Volume power >= minimum volume power AND bearish bias.
+Long: Retested strong level exists AND its bias is bullish.
+Short: Retested strong level exists AND its bias is bearish.

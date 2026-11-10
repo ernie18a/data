@@ -1,0 +1,4 @@
+Calculation: Higher-timeframe pivot high or low = a high or low confirmed using the same lookback on each side in higher-timeframe bars, using the last completed higher-timeframe bar; retain a pivot only when its higher-timeframe pivot result is available and the preceding chart bar's result was unavailable.
+Calculation: Resistance or support trend-line value = for each configured higher timeframe, linearly project to the current chart bar's opening timestamp the line through the timestamps and prices of the two most recently retained pivot highs or pivot lows, respectively.
+Long: For any configured higher timeframe, close > resistance trend-line value AND previous close <= previous bar's resistance trend-line value.
+Short: For any configured higher timeframe, close < support trend-line value AND previous close >= previous bar's support trend-line value.

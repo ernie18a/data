@@ -1,0 +1,15 @@
+Calculation: Directional quality score = sum of weights for each true condition: directional trend, directional RSI range, close on the directional side of the volume-weighted moving average, ATR divided by close at or above the volatility threshold, volume at or above its moving average, and directional trigger. The trend weight is greater than the RSI weight; the RSI weight is greater than the equal value and volatility weights; those weights are greater than the equal volume and trigger weights. The volume moving average and volume-weighted moving average use the same lookback.
+Calculation: Long trend = shorter-period close EMA > longer-period close EMA AND close > longer-period close EMA
+Calculation: Short trend = shorter-period close EMA < longer-period close EMA AND close < longer-period close EMA
+Calculation: Long trigger = (close > shorter-period close EMA AND previous close <= previous shorter-period close EMA) OR (close > highest high over the preceding swing lookback, excluding the current bar, AND close > open)
+Calculation: Short trigger = (close < shorter-period close EMA AND previous close >= previous shorter-period close EMA) OR (close < lowest low over the preceding swing lookback, excluding the current bar, AND close < open)
+Calculation: Long quality = directional quality score using long trend, RSI strictly between the long RSI bounds, close >= volume-weighted moving average, and long trigger
+Calculation: Short quality = directional quality score using short trend, RSI strictly between the short RSI bounds, close <= volume-weighted moving average, and short trigger. The short RSI bounds are below the long RSI bounds.
+Calculation: Long stop = the lower of the lowest low over the swing lookback preceding the entry bar and entry price minus entry-bar ATR multiplied by the stop-distance parameter
+Calculation: Short stop = the higher of the highest high over the swing lookback preceding the entry bar and entry price plus entry-bar ATR multiplied by the stop-distance parameter
+Long: ATR / close >= volatility threshold AND long trend
+Short: ATR / close >= volatility threshold AND short trend
+Long: long trend AND RSI > long lower bound AND RSI < long upper bound AND long trigger AND ATR / close >= volatility threshold AND long quality >= minimum quality
+Short: short trend AND RSI > short lower bound AND RSI < short upper bound AND short trigger AND ATR / close >= volatility threshold AND short quality >= minimum quality
+Exit: long, entry price - long stop > minimum risk threshold AND bars since entry <= plan duration + 1 AND (low <= long stop OR high >= entry price + (entry price - long stop) * second target multiple)
+Exit: short, short stop - entry price > minimum risk threshold AND bars since entry <= plan duration + 1 AND (high >= short stop OR low <= entry price - (short stop - entry price) * second target multiple)

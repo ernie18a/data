@@ -1,0 +1,13 @@
+Calculation: Raw delta = volume * (2 * (close - low) / (high - low) - 1) when high > low; otherwise -volume.
+Calculation: Smoothed delta = EMA of raw delta.
+Calculation: Cumulative delta = running sum of raw delta from the start of the data.
+Calculation: Low pivot = current low is less than or equal to every low in the preceding pivot-lookback bars; high pivot = current high is greater than or equal to every high in the preceding pivot-lookback bars. Compare each pivot with the immediately preceding pivot of the same type, including pivots that did not produce a signal.
+Calculation: Pivot delta change = absolute difference between smoothed delta at the current and previous same-type pivots, divided by max(abs(smoothed delta at the previous pivot), 1), multiplied by 100.
+Long: Current bar is a low pivot AND distance from the previous low pivot <= maximum pivot distance AND current low < previous pivot low AND current smoothed delta > smoothed delta at the previous pivot AND pivot delta change >= minimum delta change AND (volume filter disabled OR current volume >= SMA of volume * volume multiplier) AND (cumulative delta filter disabled OR cumulative delta > SMA of cumulative delta).
+Long: Current bar is a low pivot AND distance from the previous low pivot <= maximum pivot distance AND current low > previous pivot low AND current smoothed delta < smoothed delta at the previous pivot AND pivot delta change >= minimum delta change AND (volume filter disabled OR current volume >= SMA of volume * volume multiplier).
+Short: Current bar is a high pivot AND distance from the previous high pivot <= maximum pivot distance AND current high > previous pivot high AND current smoothed delta < smoothed delta at the previous pivot AND pivot delta change >= minimum delta change AND (volume filter disabled OR current volume >= SMA of volume * volume multiplier) AND (cumulative delta filter disabled OR cumulative delta <= SMA of cumulative delta).
+Short: Current bar is a high pivot AND distance from the previous high pivot <= maximum pivot distance AND current high < previous pivot high AND current smoothed delta > smoothed delta at the previous pivot AND pivot delta change >= minimum delta change AND (volume filter disabled OR current volume >= SMA of volume * volume multiplier).
+Long: Smoothed delta >= 0.
+Short: Smoothed delta < 0.
+Long: Cumulative delta > SMA of cumulative delta.
+Short: Cumulative delta <= SMA of cumulative delta.

@@ -1,0 +1,6 @@
+Calculation: Swing bars = chart bars or bars aggregated to a higher or lower timeframe; process each completed swing bar once, in chronological order. Index 0 is the completed swing bar being processed, and larger indices are earlier bars.
+Calculation: Bullish(i) = close[i] > open[i] when dojis are invalid; otherwise close[i] >= open[i].
+Calculation: Bearish(i) = close[i] < open[i] when dojis are invalid; otherwise close[i] <= open[i].
+Calculation: Pivot index = 2 for the five-bar and four-bar layouts; 1 for the three-bar layout.
+Long: ((five-bar layout AND Bearish(4) AND Bearish(3) AND Bullish(1) AND Bullish(0)) OR (four-bar layout AND Bearish(3) AND Bearish(2) AND Bullish(1) AND Bullish(0)) OR (three-bar layout AND Bearish(2) AND Bullish(0))) AND (structure filter disabled OR (pivot low < every low in the structure lookback immediately before the pivot AND pivot low < every low after the pivot through bar 0)).
+Short: ((five-bar layout AND Bullish(4) AND Bullish(3) AND Bearish(1) AND Bearish(0)) OR (four-bar layout AND Bullish(3) AND Bullish(2) AND Bearish(1) AND Bearish(0)) OR (three-bar layout AND Bullish(2) AND Bearish(0))) AND (structure filter disabled OR (pivot high > every high in the structure lookback immediately before the pivot AND pivot high > every high after the pivot through bar 0)).

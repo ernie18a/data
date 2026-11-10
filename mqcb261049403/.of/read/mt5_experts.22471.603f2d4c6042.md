@@ -1,0 +1,2 @@
+Long: CCI of the still-forming bar on a selected timeframe, which may be higher than, lower than, or equal to the chart timeframe, > negative threshold AND CCI of the last completed bar on that timeframe < negative threshold
+Short: CCI of the still-forming bar on a selected timeframe, which may be higher than, lower than, or equal to the chart timeframe, < positive threshold AND CCI of the last completed bar on that timeframe > positive threshold

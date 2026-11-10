@@ -1,0 +1,5 @@
+Calculation: Confirmed pivot = a pivot high or pivot low confirmed on the current chart bar using equal numbers of bars on each side; if both are confirmed, use the pivot high.
+Calculation: Pivot center = the first confirmed pivot initially; thereafter, on each confirmed pivot, (2 × previous pivot center + confirmed pivot) / 3; otherwise retain the previous center.
+Calculation: Pivot trend = calculate lower band = pivot center − ATR multiplier × ATR and upper band = pivot center + ATR multiplier × ATR. The trailing lower band is max(lower band, previous trailing lower band) if previous close > previous trailing lower band, otherwise lower band. The trailing upper band is min(upper band, previous trailing upper band) if previous close < previous trailing upper band, otherwise upper band. Set trend to 1 if close > previous trailing upper band, otherwise −1 if close < previous trailing lower band, otherwise retain the previous trend. Initialize trend to 0.
+Long: Pivot trend = 1 AND previous pivot trend = −1 OR pivot trend = 1 AND previous pivot trend = 1.
+Short: Pivot trend = −1 AND previous pivot trend = 1 OR pivot trend = −1 AND previous pivot trend = −1.

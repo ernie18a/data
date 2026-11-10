@@ -1,0 +1,4 @@
+Calculation: Raw momentum = z-score of close rate of change over a momentum lookback, using a normalization lookback; use 0 when the rate-of-change standard deviation is 0.
+Calculation: Participation = volume percentile rank over the same normalization lookback divided by 100, multiplied by close-location alignment. Use 50 for an unavailable volume percentile rank. Close-location alignment is (close - low) / (high - low) when raw momentum is positive, (high - close) / (high - low) when raw momentum is negative, and 0.5 when raw momentum is zero or high equals low.
+Long: Raw momentum >= strong-momentum threshold AND participation >= participation threshold.
+Short: Raw momentum <= negative strong-momentum threshold AND participation >= participation threshold.
