@@ -1,0 +1,5 @@
+Calculation: Adaptive bounds = For each bar, set the lookback to the ceiling of a positive parameter divided by the previous bar's ADX. Find the highest high and lowest low over that many bars, including the current bar. The lower bound is the lowest low plus a parameterized fraction of the high-low range; the upper bound is the highest high minus the same fraction of the range.
+Calculation: Trend state = Set the state to short when close is below the lower bound, then set it to long when close is above the upper bound; otherwise retain the prior state. Start with no state and initialize it to the first determined state without signaling.
+Calculation: Higher-timeframe variant = Apply the same calculations and decisions to a higher timeframe using its still-forming bar, and assign its decision to the first chart bar of that higher-timeframe bar.
+Long: Trend state changes from short to long AND close > upper bound.
+Short: Trend state changes from long to short AND close < lower bound.

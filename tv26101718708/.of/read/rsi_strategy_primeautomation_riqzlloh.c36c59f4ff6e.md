@@ -1,0 +1,8 @@
+Calculation: Long trailing stop = entry price minus entry-bar ATR times the stop multiplier initially; after each bar in the trade, update to the maximum of its prior value and low minus current ATR times the stop multiplier. Use the prior completed bar's stop for the current bar's exit checks.
+Calculation: Short trailing stop = entry price plus entry-bar ATR times the stop multiplier initially; after each bar in the trade, update to the minimum of its prior value and high plus current ATR times the stop multiplier. Use the prior completed bar's stop for the current bar's exit checks.
+Calculation: Long profit target = entry price plus entry-bar ATR times the profit-target multiplier, fixed for the trade.
+Calculation: Short profit target = entry price minus entry-bar ATR times the profit-target multiplier, fixed for the trade.
+Long: datetime >= strategy start datetime AND bar index > ATR lookback AND position is flat AND RSI of close crosses above the upper RSI threshold.
+Short: datetime >= strategy start datetime AND bar index > ATR lookback AND position is flat AND RSI of close crosses below the lower RSI threshold.
+Exit: long, low <= long trailing stop OR (take profit enabled AND high >= long profit target) OR exit-before-market-close option enabled.
+Exit: short, high >= short trailing stop OR (take profit enabled AND low <= short profit target) OR exit-before-market-close option enabled.

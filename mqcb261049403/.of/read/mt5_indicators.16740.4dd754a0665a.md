@@ -1,0 +1,5 @@
+Calculation: Price = selected open, high, low, close, median, typical, weighted, or corresponding Heikin-Ashi price, or Heikin-Ashi OHLC average. Heikin-Ashi close = (open + high + low + close) / 4; Heikin-Ashi open = (previous Heikin-Ashi open + previous Heikin-Ashi close) / 2, with both previous values initialized to zero; Heikin-Ashi high = max(high, Heikin-Ashi open, Heikin-Ashi close); Heikin-Ashi low = min(low, Heikin-Ashi open, Heikin-Ashi close).
+Calculation: Moving average = SMA or EMA of Price on the chart timeframe or a higher timeframe using its bar still forming. Initialize prior values to zero; divide an incomplete initial SMA sum by the full lookback.
+Calculation: Slope direction = long if the moving average > its previous bar's value, short if the moving average < its previous bar's value, otherwise the previous slope direction; initialize to long.
+Long: Slope direction = long
+Short: Slope direction = short

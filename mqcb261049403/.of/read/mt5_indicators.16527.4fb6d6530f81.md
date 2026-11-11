@@ -1,0 +1,2 @@
+Long: Money Flow Index using volume >= upper threshold AND (slowdown filter disabled OR absolute difference between current and previous Money Flow Index < slowdown threshold)
+Short: Money Flow Index using volume <= lower threshold AND (slowdown filter disabled OR absolute difference between current and previous Money Flow Index < slowdown threshold)

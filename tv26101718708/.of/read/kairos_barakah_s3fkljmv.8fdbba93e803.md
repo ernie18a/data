@@ -1,0 +1,6 @@
+Calculation: Reference levels and window = On each new exchange-calendar day, clear the reference levels, signal flags, last signal type, and window. At the bar whose opening time matches the configured reference time in IST, set the reference high and low to that bar's high and low, clear the signal flags and last signal type, and open the window. At the bar whose opening time matches the reference time plus the configured duration modulo one day, close the window and clear the signal flags.
+Calculation: Signal state = Evaluate all four decisions using the state at the start of the bar after the reference-time, end-time, and day updates. After evaluation, a triggered initial long or short reversal sets the buy flag, clears the sell flag, and sets the last signal type to buy. A triggered initial short or long reversal sets the sell flag, clears the buy flag, and sets the last signal type to sell.
+Long: Window open AND bar opening time != reference time AND buy flag = false AND close > reference high
+Long: Window open AND last signal type = buy AND close < reference low
+Short: Window open AND bar opening time != reference time AND sell flag = false AND close < reference low
+Short: Window open AND last signal type = sell AND close > reference high

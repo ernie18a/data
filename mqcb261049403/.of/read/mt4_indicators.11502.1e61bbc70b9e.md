@@ -1,0 +1,4 @@
+Calculation: Fractal high = the high of the most recent bar within a lookback whose high is greater than or equal to the highs of a specified number of bars on each side; search starts at the first bar whose newer comparison bars are all completed. If none is found, use the high of the bar immediately beyond the lookback.
+Calculation: Fractal low = the low of the most recent bar within a lookback whose low is less than or equal to the lows of the same number of bars on each side; search starts at the first bar whose newer comparison bars are all completed. If none is found, use the low of the bar immediately beyond the lookback. Calculate fractal highs and lows independently on each selected timeframe, which may be higher than, lower than, or equal to the chart timeframe, using completed bars.
+Long: Current chart-bar close > fractal high on the selected timeframe
+Short: Current chart-bar close < fractal low on the selected timeframe

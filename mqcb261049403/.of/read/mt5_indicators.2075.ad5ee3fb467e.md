@@ -1,0 +1,5 @@
+Calculation: Trend state = Initialize false; on each bar set false if Williams %R is below a lower threshold, then set true if Williams %R is above an upper threshold; otherwise retain the previous state. The thresholds are symmetric around -50; the second assignment takes precedence if both conditions hold.
+Long: Trend state changes from false to true.
+Short: Trend state changes from true to false.
+Long: On the first chart bar of a higher-timeframe bar, trend state calculated using the still-forming higher-timeframe bar changes from false to true relative to the preceding higher-timeframe bar.
+Short: On the first chart bar of a higher-timeframe bar, trend state calculated using the still-forming higher-timeframe bar changes from true to false relative to the preceding higher-timeframe bar.

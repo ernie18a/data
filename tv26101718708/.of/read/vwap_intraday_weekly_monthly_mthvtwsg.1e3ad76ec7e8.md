@@ -1,0 +1,3 @@
+Calculation: Session VWAP bands = From the first available chart bar, reset accumulated sums at each configured session start in America/New_York. Through the current bar, calculate VWAP = sum(source × volume) / sum(volume) and weighted standard deviation = sqrt(max(sum(source² × volume) / sum(volume) − VWAP², 0)); bands are VWAP ± a configurable multiplier × weighted standard deviation. Source is a configurable choice of close, (high + low) / 2, (high + low + close) / 3, or (open + high + low + close) / 4. Bands are undefined when accumulated volume is zero.
+Long: close > upper session VWAP band
+Short: close < lower session VWAP band

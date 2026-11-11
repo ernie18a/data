@@ -1,0 +1,6 @@
+Calculation: Smoothed RSI = EMA of close-based RSI.
+Calculation: QQE trailing line = initialize to zero; on each subsequent bar, let distance be a positive multiplier times the EMA of the EMA of the absolute change in smoothed RSI, with both EMA periods equal to twice the RSI period minus one. If smoothed RSI is below the previous trailing line, set the line to smoothed RSI plus distance, capped at the previous trailing line when the previous smoothed RSI was below that line. If smoothed RSI is above the previous trailing line, set the line to smoothed RSI minus distance, floored at the previous trailing line when the previous smoothed RSI was above that line. Otherwise retain the previous trailing line. Calculate on chart bars or on higher-timeframe bars; for higher-timeframe decisions use the last completed higher-timeframe bar and its predecessor.
+Long: Previous smoothed RSI < previous QQE trailing line AND current smoothed RSI > current QQE trailing line.
+Long: Previous smoothed RSI < threshold AND current smoothed RSI > threshold.
+Short: Previous smoothed RSI > previous QQE trailing line AND current smoothed RSI < current QQE trailing line.
+Short: Previous smoothed RSI > threshold AND current smoothed RSI < threshold.

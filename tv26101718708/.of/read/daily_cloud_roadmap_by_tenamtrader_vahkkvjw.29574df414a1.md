@@ -1,0 +1,3 @@
+Calculation: Cloud EMA = EMA of a selected OHLC-derived price source on the last completed higher-timeframe bar, optionally smoothed by applying two successive EMAs with the same smoothing period on the chart timeframe.
+Long: For any of the five independently evaluated EMA pairs, the shorter-period cloud EMA > the longer-period cloud EMA.
+Short: For any of the five independently evaluated EMA pairs, the shorter-period cloud EMA <= the longer-period cloud EMA.

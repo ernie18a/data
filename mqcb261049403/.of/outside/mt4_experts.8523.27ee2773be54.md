@@ -1,0 +1,5 @@
+Trade a basket of four configured currency pairs, ordered as EURUSD, USDCHF, GBPUSD and AUDUSD. During the configured entry window after the broker's daily rollover, if trading is enabled, permitted, and no basket or emergency position is open, compare the first pair's previous daily close with its preceding daily close. If it rose, buy the first, second and fourth pairs and sell the third. If it fell, reverse all four directions. If unchanged, do nothing.
+
+When basket profit monitoring is enabled, calculate the combined price-point profit of the original positions and any emergency positions. If the combined loss reaches the configured emergency threshold and emergency trading is enabled, once per daily entry window add a same-direction, same-size position for each original position that individually has positive monetary profit. If enabled, close every basket and emergency position when combined profit reaches the configured profit target or combined loss reaches the configured loss limit.
+
+At the configured end-of-day hour, close all basket and emergency positions. Reset emergency eligibility during the next entry window.

@@ -1,0 +1,6 @@
+Calculation: Price trend = linear regression slope of a selected price source over a lookback, optionally smoothed by a selected moving average; multiply the result by the regression lookback.
+Calculation: Confirmed oscillator pivot = a pivot high or low of price trend using configurable left and right lookbacks, identified on the bar after the right lookback has elapsed. For divergence, compare the current confirmed pivot with the immediately preceding confirmed pivot of the same kind; their confirmation bars must be separated by between the configured minimum plus one and maximum plus one bars, inclusive.
+Long: Price trend > 0
+Short: Price trend < 0
+Long: A confirmed oscillator pivot low is higher than the preceding confirmed oscillator pivot low AND the low at the current pivot is lower than the low at the preceding pivot AND the pivot separation is within the configured range.
+Short: A confirmed oscillator pivot high is lower than the preceding confirmed oscillator pivot high AND the high at the current pivot is higher than the high at the preceding pivot AND the pivot separation is within the configured range.

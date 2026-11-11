@@ -1,0 +1,3 @@
+Calculation: Sampled session FVG = for each New York calendar day and each of two independently configured sessions, record the first bullish or bearish FVG whose current and previous lower-timeframe bars both open within that session, including its boundaries and direction. A bullish FVG has current low > high two bars earlier AND previous close > previous open. A bearish FVG has current high < low two bars earlier AND previous close < previous open. Sample the state at the first completed lower-timeframe bar of each chart bar.
+Long: The sampled session FVG count increases AND the latest sampled session FVG is bullish.
+Short: The sampled session FVG count increases AND the latest sampled session FVG is bearish.

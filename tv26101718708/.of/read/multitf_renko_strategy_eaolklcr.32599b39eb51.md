@@ -1,0 +1,14 @@
+Calculation: Composite = choose the simple mean or a nonnegative weighted mean of four same-period close EMAs calculated on independently selected timeframes. In consensus mode, use the simple mean when all four EMAs have the same direction, otherwise use the weighted mean; an EMA is up when its current value is greater than or equal to its value on the preceding chart bar, and down otherwise. Each selected timeframe may be higher or lower than the chart timeframe. For a higher timeframe, use its last completed bar on historical chart bars and its still-forming bar in real time; for a lower timeframe, use its last available intrabar.
+Calculation: Brick size = either a fixed size or a positive multiple of ATR on a separately selected timeframe, which may be higher or lower than the chart timeframe; use the last completed higher-timeframe bar historically, the still-forming higher-timeframe bar in real time, or the last available lower-timeframe intrabar.
+Calculation: Synthetic brick direction = initialize the brick price to the first available composite and direction to neutral. On each subsequent chart bar, if composite minus brick price is at most minus one brick size, decrease brick price by floor((brick price minus composite) / brick size) brick sizes and set direction to down. Otherwise, if composite minus brick price is at least two brick sizes, increase brick price by floor((composite minus brick price) / brick size) brick sizes and set direction to up. Otherwise retain the brick price and direction. Use the current bar's brick size.
+Calculation: Initial stop = the close on the first entry signal for the current position multiplied by one minus a stop-loss fraction for a long, or one plus that fraction for a short. Do not update it on additions; clear it when the position closes.
+Long: Synthetic brick direction is up AND its previous chart-bar direction was not up.
+Short: Synthetic brick direction is down AND its previous chart-bar direction was not down.
+Exit: long, synthetic brick direction is down AND its previous chart-bar direction was not down.
+Exit: short, synthetic brick direction is up AND its previous chart-bar direction was not up.
+Exit: long, close <= initial stop.
+Exit: short, close >= initial stop.
+Exit: long, trailing is enabled AND close has reached or exceeded the average entry price times one plus the activation fraction since entry AND close <= the highest high since entry times one minus the trailing-offset fraction.
+Exit: short, trailing is enabled AND close has reached or fallen below the average entry price times one minus the activation fraction since entry AND close >= the lowest low since entry times one plus the trailing-offset fraction.
+Exit: long, trailing is disabled AND close >= average entry price times one plus the take-profit fraction.
+Exit: short, trailing is disabled AND close <= average entry price times one minus the take-profit fraction.

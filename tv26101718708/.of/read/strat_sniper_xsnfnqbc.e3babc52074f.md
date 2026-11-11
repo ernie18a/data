@@ -1,0 +1,13 @@
+Calculation: Execution bars = chart bars or bars aggregated to a selected higher or lower timeframe; use the last completed higher-timeframe bar or the last lower-timeframe bar within the chart bar. Index 0 is the selected execution bar and index 1 is its preceding bar.
+Calculation: Bullish continuity count = number of selected continuity timeframes whose close is at least their open; use the last completed bar for each higher timeframe and the last bar within the chart bar for each lower timeframe.
+Calculation: Bearish continuity count = number of the same continuity timeframes whose close is below their open.
+Long: Execution bar 1 low < execution bar 2 low AND execution bar 1 high <= execution bar 2 high AND execution bar 0 high <= execution bar 1 high AND execution bar 0 low >= execution bar 1 low AND (session filter disabled OR chart bar is in the selected session).
+Short: Execution bar 1 high > execution bar 2 high AND execution bar 1 low >= execution bar 2 low AND execution bar 0 high <= execution bar 1 high AND execution bar 0 low >= execution bar 1 low AND (session filter disabled OR chart bar is in the selected session).
+Long: A selected continuity bar close >= its open.
+Short: A selected continuity bar close < its open.
+Long: Bullish continuity count >= bearish continuity count.
+Short: Bullish continuity count < bearish continuity count.
+Long: Either of the two preceding chart bars has high > its preceding bar's high AND low >= its preceding bar's low.
+Short: Either of the two preceding chart bars has low < its preceding bar's low AND high <= its preceding bar's high.
+Exit: long, execution bar 1 low < execution bar 2 low AND execution bar 1 high <= execution bar 2 high AND execution bar 0 high <= execution bar 1 high AND execution bar 0 low >= execution bar 1 low AND (session filter disabled OR chart bar is in the selected session) AND chart bar high >= execution bar 0 high AND (chart bar low <= execution bar 0 low OR chart bar high >= execution bar 0 high + risk-reward parameter * (execution bar 0 high - execution bar 0 low)).
+Exit: short, execution bar 1 high > execution bar 2 high AND execution bar 1 low >= execution bar 2 low AND execution bar 0 high <= execution bar 1 high AND execution bar 0 low >= execution bar 1 low AND (session filter disabled OR chart bar is in the selected session) AND chart bar low <= execution bar 0 low AND (chart bar high >= execution bar 0 high OR chart bar low <= execution bar 0 low - risk-reward parameter * (execution bar 0 high - execution bar 0 low)).

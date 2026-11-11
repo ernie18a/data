@@ -1,0 +1,12 @@
+Calculation: Confirmed pivot high = a bar whose high is at least every high in an equal-length preceding window and strictly greater than every high in the following window; confirm it when the following window closes.
+Calculation: Confirmed pivot low = a bar whose low is at most every low in an equal-length preceding window and strictly less than every low in the following window; confirm it when the following window closes.
+Calculation: Long limit = the smaller of the pivot-low bar's open and close; short limit = the larger of the pivot-high bar's open and close. Keep each submitted limit order active until filled or canceled. On a new valid pivot of the same side, cancel its first pending order and replace it only if the submission condition holds; cancel both pending orders of the opposite side when a position opens.
+Calculation: Profit and stop levels = the submitted limit plus or minus configured price offsets; the second profit offset is measured from the first profit level. In the optional two-entry mode, the second entry has a separate stop that moves from the initial stop to the limit plus a configured favorable price offset after the first profit level is reached while the previous bar had a position.
+Long: A pivot low is confirmed AND its low is unequal to the previous confirmed pivot low.
+Short: A pivot high is confirmed AND its high is unequal to the previous confirmed pivot high.
+Long: A pivot low is confirmed AND position is flat AND (the moving-average filter is disabled OR close is above the selected moving average of close) AND high is at or above the long limit AND a submitted long limit order fills when price reaches or falls below that limit.
+Short: A pivot high is confirmed AND position is flat AND (the moving-average filter is disabled OR close is below the selected moving average of close) AND low is at or below the short limit AND a submitted short limit order fills when price reaches or rises above that limit.
+Exit: long, high reaches the first profit level OR low reaches the initial stop; in two-entry mode this exits the first entry.
+Exit: long, two-entry mode AND (high reaches the second profit level OR low reaches the second entry's current stop).
+Exit: short, low reaches the first profit level OR high reaches the initial stop; in two-entry mode this exits the first entry.
+Exit: short, two-entry mode AND (low reaches the second profit level OR high reaches the second entry's current stop).

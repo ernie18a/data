@@ -1,0 +1,4 @@
+Calculation: Percentage crossover line = Initialize to the first applied price. For each subsequent bar, set the line to applied price × (1 − percentage) if that exceeds the previous line; otherwise set it to applied price × (1 + percentage) if that is below the previous line; otherwise retain the previous line. Applied price is selected from OHLC-derived price series.
+Calculation: Percentage crossover direction = Initialize to long; set to long when the percentage crossover line rises, set to short when it falls, and retain the previous direction when it is unchanged. Calculate on the chart timeframe or on a higher timeframe using its still-forming bar.
+Long: Percentage crossover direction = long
+Short: Percentage crossover direction = short

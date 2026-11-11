@@ -1,0 +1,3 @@
+Calculation: Previous trading-day close = close of the last chart bar before the current user-defined trading day, whose start is determined by a configurable time in America/New_York. Update only when the trading-day identifier changes on an intraday chart; use the last completed trading day, a higher timeframe than the chart.
+Long: close > previous trading-day close
+Short: close < previous trading-day close

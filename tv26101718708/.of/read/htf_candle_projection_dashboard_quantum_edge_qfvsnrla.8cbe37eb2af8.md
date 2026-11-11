@@ -1,0 +1,2 @@
+Long: Higher-timeframe bar close >= its open, evaluated independently for the last completed bar and the bar still forming.
+Short: Higher-timeframe bar close < its open, evaluated independently for the last completed bar and the bar still forming.

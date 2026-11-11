@@ -1,0 +1,3 @@
+Long: Chart-timeframe CCI of the selected applied price >= 0 OR higher-timeframe CCI of the selected applied price >= 0
+Short: Chart-timeframe CCI of the selected applied price < 0 OR higher-timeframe CCI of the selected applied price < 0
+Calculation: Higher-timeframe CCI = CCI of the higher-timeframe bar still forming, sampled at the start of each higher-timeframe bar and carried forward across its chart bars; historical sampling uses the completed historical higher-timeframe bar.

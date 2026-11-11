@@ -1,0 +1,4 @@
+Long: Close > higher-timeframe EMA of close using the last completed higher-timeframe bar.
+Short: Close <= higher-timeframe EMA of close using the last completed higher-timeframe bar.
+Long: Shorter-period EMA of close crosses above longer-period EMA of close AND close > higher-timeframe EMA of close using the last completed higher-timeframe bar AND close > daily VWAP AND close modulo psychological-level interval > zone width AND close modulo psychological-level interval < psychological-level interval - zone width.
+Short: Shorter-period EMA of close crosses below longer-period EMA of close AND close < higher-timeframe EMA of close using the last completed higher-timeframe bar AND close <= daily VWAP AND close modulo psychological-level interval > zone width AND close modulo psychological-level interval < psychological-level interval - zone width.

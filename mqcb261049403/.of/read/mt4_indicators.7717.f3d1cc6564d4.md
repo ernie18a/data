@@ -1,0 +1,2 @@
+Long: Jurik moving average of chart-timeframe close >= its previous value OR Jurik moving average of higher-timeframe close using the still-forming bar >= its previous higher-timeframe value
+Short: Jurik moving average of chart-timeframe close < its previous value OR Jurik moving average of higher-timeframe close using the still-forming bar < its previous higher-timeframe value

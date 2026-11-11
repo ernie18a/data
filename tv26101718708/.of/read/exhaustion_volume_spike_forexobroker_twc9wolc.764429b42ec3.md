@@ -1,0 +1,7 @@
+Calculation: Trend direction = initialize to neutral; set to bullish when the shorter-period close EMA is greater than the longer-period close EMA, and bearish when it is less; retain the previous direction when the EMAs are equal.
+Calculation: Trend duration = initialize to zero, reset to zero whenever trend direction changes, then increment by one on every bar, including the change bar.
+Calculation: Trend ADX peak = initialize to zero, reset to the current ADX whenever trend direction changes, and otherwise retain the highest ADX observed since that change.
+Calculation: Momentum = close minus close the momentum lookback number of bars ago; its average is the SMA of momentum over the same lookback.
+Calculation: Bars since same-direction signal = current zero-based bar index minus the index of the most recent signal in that direction; initialize each direction's last signal index to zero and update it when that direction signals.
+Long: bar is closed AND trend direction is bearish AND volume > volume SMA × spike multiplier AND volume > volume SMA AND trend duration > minimum trend duration AND trend ADX peak − ADX > ADX decline threshold AND momentum > momentum average AND bars since same-direction signal > cooldown.
+Short: bar is closed AND trend direction is bullish AND volume > volume SMA × spike multiplier AND volume > volume SMA AND trend duration > minimum trend duration AND trend ADX peak − ADX > ADX decline threshold AND momentum < momentum average AND bars since same-direction signal > cooldown.

@@ -1,0 +1,3 @@
+Calculation: Time-segmented volume = rolling sum of (applied price minus previous bar's applied price) multiplied by the selected weight. Applied price is open, high, low, close, (high + low) / 2, (high + low + close) / 3, or (high + low + 2 × close) / 4. Weight is 1, volume, or true range. On the first bar, use its open as the previous applied price and its high minus low as true range; sum only available bars.
+Long: Time-segmented volume > 0
+Short: Time-segmented volume < 0

@@ -1,0 +1,5 @@
+Long: No long position is open AND selected bar low > moving average AND selected bar low < moving average + upper channel distance AND selected bar open > moving average + upper channel distance.
+Short: No short position is open AND selected bar high < moving average AND selected bar high > moving average - lower channel distance AND selected bar open < moving average - lower channel distance.
+Exit: Long, stop loss is enabled AND low <= entry price - stop-loss distance OR take profit is enabled AND high >= entry price + take-profit distance.
+Exit: Short, stop loss is enabled AND high >= entry price + stop-loss distance OR take profit is enabled AND low <= entry price - take-profit distance.
+Calculation: Selected bar and moving average = use a configurable chart, higher, or lower timeframe; select the still-forming bar or a configurable completed bar independently for OHLC and moving average. Calculate the moving average using a configurable method, applied price, lookback, and horizontal shift.

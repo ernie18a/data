@@ -1,0 +1,9 @@
+Calculation: Scaling factor = clamp to [1, maximum scaling factor]: minimum tick size / (ATR / SMA(close, price-range lookback)) for ATR-based scaling; sqrt(100 / max(SMA(close, price-range lookback), 0.01)) for price-based scaling; or sqrt(1000000 / max(volume, 100)) for volume-based scaling.
+Calculation: Price-mapped RSI = let H be the highest high and L the lowest low over the price-range lookback, M = (H + L) / 2, B = RSI base multiplied by the scaling factor when adaptive scaling is enabled and RSI base otherwise, U = RMA(max(change in selected price source, B), moving-average length), and D = RMA(-min(change in selected price source, B), RSI length). Let R = 100 if D = 0, 0 if U = 0, and otherwise 100 - 100 / (1 + U / D). With adaptive scaling, return M + ((R - 50) / 50) * ((H - L) / 2) * min(1, 1 / scaling factor). Without adaptive scaling, return H if D = L, L if U = L, and otherwise M - M / (1 + U / D).
+Calculation: Mapped-RSI average = the selected SMA, EMA, RMA, WMA, or VWMA of price-mapped RSI over the moving-average length; the Bollinger Bands selection uses SMA.
+Long: Price-mapped RSI > mapped-RSI average.
+Short: Price-mapped RSI <= mapped-RSI average.
+Exit: Long, trailing stop enabled AND price reaches the zero-offset trailing stop after price has risen from entry by the current order's activation distance of close * trailing-stop percentage * point value ticks.
+Exit: Short, trailing stop enabled AND price reaches the zero-offset trailing stop after price has fallen from entry by the current order's activation distance of close * trailing-stop percentage * point value ticks.
+Exit: Long, trailing stop disabled AND take profit enabled AND high reaches the active sell limit set to the previous calculation bar's close * (1 + take-profit percentage).
+Exit: Short, trailing stop disabled AND take profit enabled AND low reaches the active buy limit set to the previous calculation bar's close * (1 - take-profit percentage).

@@ -1,0 +1,6 @@
+Calculation: Polynomial regression channel = the external indicator's exact calculation and historical buffer behavior are not provided in READ, so its upper, middle, and lower lines cannot be reproduced from the supplied data.
+Calculation: Timeframes = three ordered timeframes: shortest, intermediate, and longest. All use the still-forming bar for current values; their relationship to the chart timeframe is unspecified.
+Long: Longest-timeframe upper channel line > its value at the channel lookback offset AND intermediate-timeframe low <= lower channel line AND shortest-timeframe low <= lower channel line AND no long position is open.
+Short: Longest-timeframe upper channel line < its value at the channel lookback offset AND intermediate-timeframe high >= upper channel line AND shortest-timeframe high >= upper channel line AND no short position is open.
+Exit: long, low <= entry price - half the difference between the intermediate-timeframe middle and lower channel lines at entry OR high >= the intermediate-timeframe middle channel line at entry.
+Exit: short, high >= entry price + half the difference between the intermediate-timeframe upper and middle channel lines at entry OR low <= the intermediate-timeframe middle channel line at entry.

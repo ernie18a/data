@@ -1,0 +1,4 @@
+Calculation: Swing state = initially 0; on each bar, set to 0 if the high N bars ago is greater than the highest high of the latest N bars; otherwise set to 1 if the low N bars ago is less than the lowest low of the latest N bars; otherwise retain the previous state.
+Calculation: Confirmed volume pivot = volume N bars ago is nonzero, greater than or equal to the volume of each of the preceding N bars, and greater than the volume of each of the subsequent N bars; evaluate on the current confirmation bar.
+Long: Confirmed volume pivot AND swing state = 1.
+Short: Confirmed volume pivot AND swing state = 0.

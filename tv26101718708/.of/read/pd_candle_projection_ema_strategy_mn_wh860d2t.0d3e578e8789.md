@@ -1,0 +1,8 @@
+Calculation: RSI pivot high or low = an RSI value that is respectively at least as high as, or at most as low as, every value in an equal-length window before it, and strictly higher or lower than every value in the window after it; recognize the pivot when the latter window is complete.
+Calculation: ATR trailing stop = for each bar, let previous stop be the prior stop or zero if unavailable, and distance be ATR multiplied by a parameter. If current and previous close are both above previous stop, use max(previous stop, close - distance); if both are below it, use min(previous stop, close + distance); otherwise use close - distance when close is above previous stop, and close + distance otherwise. Calculate separate stops with independently configurable ATR periods and multipliers for long and short signals.
+Long: On the previous bar, the shortest-period EMA crossed above either the medium-period EMA or the longest-period EMA, AND previous close < previous open AND current high > previous high AND current close > current open.
+Short: On the previous bar, the shortest-period EMA crossed below either the medium-period EMA or the longest-period EMA, AND previous close > previous open AND current low < previous low AND current close < current open.
+Long: A newly confirmed RSI pivot high > the preceding RSI pivot high OR a newly confirmed RSI pivot low > the preceding RSI pivot low.
+Short: A newly confirmed RSI pivot high < the preceding RSI pivot high OR a newly confirmed RSI pivot low < the preceding RSI pivot low.
+Long: Close crosses above the long ATR trailing stop.
+Short: Close crosses below the short ATR trailing stop.

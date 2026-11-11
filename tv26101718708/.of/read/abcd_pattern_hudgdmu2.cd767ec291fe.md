@@ -1,0 +1,11 @@
+Calculation: Confirmed pivot = a high greater than or equal to the highs of the preceding left-lookback bars and greater than the highs of the following right-lookback bars, or a low less than or equal to the lows of the preceding left-lookback bars and less than the lows of the following right-lookback bars. Confirm it on the final right-lookback bar.
+Calculation: Pivot buffer = confirmed pivots in chronological order, processed high before low when both confirm on one bar. Append an opposite-type pivot; replace the latest same-type pivot only if the new high is higher or the new low is lower. A, B, C, D are the latest four buffer pivots, oldest first; for a three-pivot pattern, A, B, C are the latest three.
+Calculation: Completed bullish pattern = a pivot was appended on this bar AND A, B, C, D are high, low, high, low respectively AND AB = A − B > 0 AND BC = C − B > 0 AND CD = C − D > 0 AND C < A AND AB >= minimum leg multiplier × current ATR AND minimum retracement <= BC / AB <= maximum retracement AND minimum extension <= CD / BC <= maximum extension.
+Calculation: Completed bearish pattern = a pivot was appended on this bar AND A, B, C, D are low, high, low, high respectively AND AB = B − A > 0 AND BC = B − C > 0 AND CD = D − C > 0 AND C > A AND AB >= minimum leg multiplier × current ATR AND minimum retracement <= BC / AB <= maximum retracement AND minimum extension <= CD / BC <= maximum extension.
+Calculation: Dashboard state = the direction of the most recent completed pattern when its confirmation is within the stale-lookback number of bars on the dashboard timeframe. Calculate it independently on each configured higher or lower timeframe, using the last completed higher-timeframe bar or the last lower-timeframe bar available within the chart bar.
+Long: Completed bullish pattern = true.
+Short: Completed bearish pattern = true.
+Long: A, B, C are high, low, high respectively AND AB = A − B > 0 AND BC = C − B > 0 AND C < A AND AB >= minimum leg multiplier × current ATR AND minimum retracement <= BC / AB <= maximum retracement.
+Short: A, B, C are low, high, low respectively AND AB = B − A > 0 AND BC = B − C > 0 AND C > A AND AB >= minimum leg multiplier × current ATR AND minimum retracement <= BC / AB <= maximum retracement.
+Long: Dashboard state = bullish.
+Short: Dashboard state = bearish.

@@ -1,0 +1,2 @@
+Long: The current candle body low > the previous candle body high AND the current candle body low − low <= a price tolerance AND NOT (a new calendar day or week has begun AND open != previous close).
+Short: The current candle body high < the previous candle body low AND high − the current candle body high <= a price tolerance AND NOT (a new calendar day or week has begun AND open != previous close).

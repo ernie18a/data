@@ -1,0 +1,9 @@
+On a weekly chart, identify a buy-the-dip opportunity when the total macro score is positive and the traded instrument's close is at or below its trend simple moving average. No short or exit decision is specified.
+
+Calculate the macro score as the sum of configurable weights for these conditions:
+- Liquidity: Choose either the sum of the US, eurozone, Chinese, Japanese, British and Swiss central-bank balance sheets, less US reverse repos and Treasury cash, or the sum of those economies' money supplies. Convert to US dollars, smooth with an exponential moving average, and calculate its rate of change. Optionally standardize that rate using its rolling mean and standard deviation, substituting zero when the standard deviation is zero. Apply fast, medium and slow exponential moving averages to the result. Assign the corresponding weight when fast is above medium and medium is above slow; fast is above medium and medium is at or below slow; fast is below medium and medium is at or above slow; or fast is below medium and medium is below slow. Otherwise assign zero.
+- High-yield credit spread and US dollar index: assign their respective falling or rising weights according to the sign of each rate of change; assign zero if unchanged.
+- Real yield: assign its falling or rising weight according to the sign of its change over the macro lookback; assign zero if unchanged.
+- Copper-to-gold price ratio: assign its rising or falling weight according to the sign of its rate of change; assign zero if unchanged. Use zero for the ratio when gold is zero.
+- Treasury yield curve spread: assign the normal or inverted weight according to whether the spread is positive or negative; assign zero if it is zero.
+- Volatility index: assign the calm weight below the lower threshold, the panic weight above the upper threshold, and zero otherwise.

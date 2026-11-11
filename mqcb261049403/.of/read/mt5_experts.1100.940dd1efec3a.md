@@ -1,0 +1,8 @@
+Calculation: Brake state and level = Process bars chronologically, starting at the third-oldest available bar. Initialize the state as rising, the anchor as that bar's low, the anchor bar as that bar, and the running high and low as empty. On each bar, include its high and low in the running extremes. Let distance = (exp(growth parameter × number of bars since the anchor bar) − 1) × price-distance parameter. If the state is rising and anchor + distance > current low, change the state to falling, set the anchor to the running high, set the anchor bar to the current bar, and clear both running extremes. Otherwise, if the state is falling and anchor − distance < current high, change the state to rising, set the anchor to the running low, set the anchor bar to the current bar, and clear both running extremes. The level after a change is the new anchor; otherwise it is anchor + distance in the rising state or anchor − distance in the falling state.
+Long: Brake state is rising AND Brake level > 0
+Short: Brake state is falling AND Brake level > 0
+Exit: long, Brake state is falling AND Brake level != 0
+Exit: short, Brake state is rising AND Brake level != 0
+Exit: long, low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price − take-profit distance
+Calculation: For the entry and trend-based exit decisions, Brake state and level may instead be calculated on a higher or lower timeframe than the chart timeframe. Use the configured bar offset: zero uses the bar still forming; a positive offset uses the corresponding completed bar. Stop-loss and take-profit distances apply when enabled.

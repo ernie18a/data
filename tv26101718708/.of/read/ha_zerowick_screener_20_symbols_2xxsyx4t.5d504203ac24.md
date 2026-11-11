@@ -1,0 +1,4 @@
+Calculation: Analysis OHLC = OHLC requested at the analysis timeframe and mapped to each chart bar. If the analysis timeframe is higher, use the last completed analysis bar; if lower, use the last completed analysis bar within the chart bar; if equal, use the chart bar.
+Calculation: Heikin Ashi OHLC = Calculate on successive chart bars from the mapped analysis OHLC: HA close = (open + high + low + close) / 4; HA open = (previous HA open + previous HA close) / 2, initialized to (open + close) / 2; HA high = max(high, HA open, HA close); HA low = min(low, HA open, HA close).
+Long: Previous HA close >= previous HA open AND previous HA open = previous HA low AND current HA close >= current HA open AND current HA close > previous HA close.
+Short: Previous HA close < previous HA open AND previous HA open = previous HA high AND current HA close < current HA open AND current HA close < previous HA close.

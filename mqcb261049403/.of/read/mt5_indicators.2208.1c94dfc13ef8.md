@@ -1,0 +1,3 @@
+Calculation: Aroon oscillator = 100 × (bars since the lowest low − bars since the highest high) / lookback; search the lookback bars including the current bar and use the most recent occurrence of tied extremes.
+Long: The forming higher-timeframe Aroon oscillator > 0 AND the forming higher-timeframe Aroon oscillator != the last completed higher-timeframe Aroon oscillator.
+Short: The forming higher-timeframe Aroon oscillator < 0 AND the forming higher-timeframe Aroon oscillator != the last completed higher-timeframe Aroon oscillator.

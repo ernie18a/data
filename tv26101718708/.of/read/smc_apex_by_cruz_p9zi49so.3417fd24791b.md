@@ -1,0 +1,14 @@
+Calculation: Swing high and swing low = the most recently confirmed pivot high and pivot low, respectively, using equal left and right lookbacks; update each on its confirmation bar.
+Calculation: Bullish structure break = close > current swing high AND previous close <= previous bar's swing high. Bearish structure break = close < current swing low AND previous close >= previous bar's swing low.
+Calculation: Bullish gap = low > high two bars ago AND (low - high two bars ago) / high two bars ago >= minimum gap fraction; its upper boundary is low and its lower boundary is high two bars ago. Bearish gap = high < low two bars ago AND (low two bars ago - high) / high >= minimum gap fraction; its upper boundary is low two bars ago and its lower boundary is high.
+Calculation: Structure-label cooldown = bars since the last bullish or bearish structure label; initialize the last label bar to bar index zero and update it whenever either structure label occurs.
+Calculation: Entry setup = maintain separate bullish and bearish waiting states, initially false. A bullish structure break with close != slow EMA sets bullish waiting true and clears its stored gap; a bearish structure break with close != slow EMA does the same for bearish waiting. While waiting, each corresponding new gap replaces the stored gap, including on the structure-break bar. A bullish setup triggers when bullish waiting is true AND a bullish gap is stored AND low <= its upper boundary AND close >= its lower boundary AND close > slow EMA. A bearish setup triggers when bearish waiting is true AND a bearish gap is stored AND high >= its lower boundary AND close <= its upper boundary AND close < slow EMA. Clear the corresponding waiting state immediately when a setup triggers, even if subsequent entry filters fail.
+Calculation: Entry-signal count and cooldown = count qualifying long and short breakout signals together, resetting the count at each change of calendar day; initialize the last signal bar to bar index zero and update it whenever either breakout signal occurs. Evaluate the signal filters before updating the count and last signal bar.
+Long: Bullish structure break AND close != slow EMA AND structure-label cooldown >= its minimum.
+Short: Bearish structure break AND close != slow EMA AND structure-label cooldown >= its minimum.
+Long: Bullish gap AND close > slow EMA AND gap display enabled.
+Short: Bearish gap AND close < slow EMA AND gap display enabled.
+Long: Bullish setup triggers AND close > highest high of the preceding breakout-lookback bars AND entry-signal cooldown >= its minimum AND entry-signal count < its daily maximum.
+Short: Bearish setup triggers AND close < lowest low of the preceding breakout-lookback bars AND entry-signal cooldown >= its minimum AND entry-signal count < its daily maximum.
+Long: Entry-signal count < its daily maximum AND close > slow EMA.
+Short: Entry-signal count < its daily maximum AND close <= slow EMA.

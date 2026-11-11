@@ -1,0 +1,8 @@
+Calculation: Bullish count = number of chart bars in the previous trading day whose close > open.
+Calculation: Bearish count = number of chart bars in the previous trading day whose close < open.
+Calculation: Long stop = low of the final chart bar of the previous trading day at entry − ATR of that bar × stop multiplier; fixed at entry.
+Calculation: Short stop = high of the final chart bar of the previous trading day at entry + ATR of that bar × stop multiplier; fixed at entry.
+Long: First chart bar of a new trading day AND day of week ≠ Monday AND previous trading day has at least a full day's expected number of chart bars AND position is flat AND ((mode = normal AND bullish count > bearish count AND final previous-day chart bar close > its moving average) OR (mode = inverted AND bearish count > bullish count AND final previous-day chart bar close < its moving average)).
+Short: First chart bar of a new trading day AND day of week ≠ Monday AND previous trading day has at least a full day's expected number of chart bars AND position is flat AND ((mode = normal AND bearish count > bullish count AND final previous-day chart bar close < its moving average) OR (mode = inverted AND bullish count > bearish count AND final previous-day chart bar close > its moving average)).
+Exit: long, low ≤ long stop OR high ≥ entry price + reward multiplier × abs(entry price − long stop).
+Exit: short, high ≥ short stop OR low ≤ entry price − reward multiplier × abs(entry price − short stop).

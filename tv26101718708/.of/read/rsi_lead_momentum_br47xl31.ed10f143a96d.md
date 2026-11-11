@@ -1,0 +1,10 @@
+Calculation: RSI = RSI of a selectable price source.
+Calculation: RSI slope = current RSI minus previous bar's RSI; RSI acceleration = current RSI slope minus previous bar's RSI slope.
+Calculation: Compression = bar high minus bar low is less than a threshold multiple of the SMA of high minus low, including the current bar.
+Calculation: RSI pivot = an RSI high or low confirmed after a configurable number of right-hand bars, relative to configurable left-hand and right-hand bars. For consecutive pivots of the same type, pivot spacing is the number of bars between their confirmation bars minus one.
+Long: RSI > the highest RSI over the preceding structure lookback AND, if the price-delay filter is enabled, high <= the highest high over the same preceding lookback AND, if the slope filter is enabled, RSI slope > a positive slope threshold AND RSI acceleration >= 0 AND, if the compression filter is enabled, current-bar compression is true AND, in confirmed mode, close > previous bar's high.
+Short: RSI < the lowest RSI over the preceding structure lookback AND, if the price-delay filter is enabled, low >= the lowest low over the same preceding lookback AND, if the slope filter is enabled, RSI slope < the negative of the slope threshold AND RSI acceleration <= 0 AND, if the compression filter is enabled, current-bar compression is true AND, in confirmed mode, close < previous bar's low.
+Long: Previous-bar compression is true AND RSI slope > an explosion threshold that is a multiple greater than one of the slope threshold.
+Short: Previous-bar compression is true AND RSI slope < the negative of the explosion threshold.
+Long: An RSI pivot low is confirmed on the current bar AND its RSI > the previous confirmed RSI pivot low's RSI AND its corresponding price low < the previous pivot's corresponding price low AND pivot spacing is within inclusive minimum and maximum limits.
+Short: An RSI pivot high is confirmed on the current bar AND its RSI < the previous confirmed RSI pivot high's RSI AND its corresponding price high > the previous pivot's corresponding price high AND pivot spacing is within inclusive minimum and maximum limits.

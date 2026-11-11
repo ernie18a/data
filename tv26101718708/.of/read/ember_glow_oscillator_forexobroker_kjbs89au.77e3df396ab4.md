@@ -1,0 +1,8 @@
+Calculation: Small-bar volume = volume when high - low <= ATR × small-bar range multiplier; otherwise 0.
+Calculation: Ember ratio = sum of small-bar volume signed positive when close > open, negative when close < open, and zero otherwise, over the ember lookback, divided by total small-bar volume over the same lookback; use 0 when the denominator is 0.
+Calculation: EMA slope = close EMA minus its value a slope lookback number of bars earlier.
+Calculation: Ignition = high - low >= ATR × ignition range multiplier AND ((close > open AND close > previous close) OR (close < open AND close < previous close)).
+Calculation: Ember score = round(min(min(abs(ember ratio) × ratio weight, ratio cap) + ignition weight if ignition is true, otherwise 0, + min(abs(EMA slope) / (ATR + small positive constant) × slope weight, slope cap), score cap)).
+Calculation: Signal cooldown = current zero-based bar index minus the bar index of the most recent Long or Short signal; initialize the most recent signal bar index to 0.
+Long: Ember ratio > 0 AND high - low >= ATR × ignition range multiplier AND close > open AND close > previous close AND close > close EMA AND EMA slope > 0 AND ember score >= score threshold AND signal cooldown >= cooldown threshold.
+Short: Ember ratio < 0 AND high - low >= ATR × ignition range multiplier AND close < open AND close < previous close AND close < close EMA AND EMA slope < 0 AND ember score >= score threshold AND signal cooldown >= cooldown threshold.

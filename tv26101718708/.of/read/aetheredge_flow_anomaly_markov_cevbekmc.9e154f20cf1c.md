@@ -1,0 +1,13 @@
+Calculation: Anomaly = Let x = ln(volume + 1) and y = abs(close - previous close) / max(ATR, 1e-8), replacing an unavailable price change with zero and an unavailable ATR with true range, then close * 0.001 if true range is unavailable. Initialize the means of x and y to their first values, both variances to 1, and their covariance to 0. On each bar, before updating these statistics, let dx and dy be the differences from their respective means and compute D² = (dx² * variance_y - 2 * dx * dy * covariance + dy² * variance_x) / max(variance_x * variance_y - covariance², 1e-8). An anomaly occurs when D² exceeds its threshold AND dx > 0. Afterward, update each mean to mean + alpha * difference; let each residual be its feature minus its updated mean. Update each variance to (1 - alpha) * (variance + alpha * residual²) and covariance to (1 - alpha) * (covariance + alpha * residual_x * residual_y).
+Calculation: State = Calculate close - previous close, replacing an unavailable change with zero. Standardize it using its rolling SMA and population standard deviation, floored at 1e-10. Assign states 0, 1, 2, 3, 4 respectively when the z-score is < -1.5, >= -1.5 AND < -0.5, >= -0.5 AND <= 0.5, > 0.5 AND <= 1.5, or > 1.5. If the z-score is unavailable, assign state 4.
+Calculation: Expected direction and predicted state = Initialize every transition count for each combination of anomaly status, origin state, and destination state to 1. On each completed bar, multiply all counts by the decay factor, then increment the count indexed by the previous bar's anomaly status, previous state, and current state, if a previous state exists. Select the row indexed by the current anomaly status and current state; divide each destination count by the row sum floored at 1e-8. Expected direction is the sum of each destination probability multiplied by its state number minus 2. Predicted state is the destination with the highest probability, choosing the lowest state number on ties.
+Long: Anomaly AND close > previous close
+Short: Anomaly AND close < previous close
+Long: Completed bar AND zero-based bar index > warmup length AND anomaly AND expected direction > positive score threshold
+Short: Completed bar AND zero-based bar index > warmup length AND anomaly AND expected direction < negative score threshold
+Long: State > 2
+Short: State < 2
+Long: Expected direction > 0
+Short: Expected direction < 0
+Long: Predicted state > 2
+Short: Predicted state < 2

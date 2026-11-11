@@ -1,0 +1,2 @@
+Long: On the last completed chart-timeframe bar or last completed bar of a selected higher or lower timeframe, low >= high two bars earlier AND high > low two bars earlier.
+Short: On the last completed chart-timeframe bar or last completed bar of a selected higher or lower timeframe, high <= low two bars earlier.

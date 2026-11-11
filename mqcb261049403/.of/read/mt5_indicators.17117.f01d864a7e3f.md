@@ -1,0 +1,3 @@
+Calculation: Extended Awesome Oscillator = shorter-period moving average of a chosen price minus longer-period moving average of a separately chosen price; each average may independently be simple, exponential, smoothed, or linear weighted. Calculate on the chart timeframe or on the still-forming bar of a higher timeframe.
+Long: Extended Awesome Oscillator > 0 OR (Extended Awesome Oscillator = 0 AND its most recent nonzero value > 0)
+Short: Extended Awesome Oscillator < 0 OR (Extended Awesome Oscillator = 0 AND its most recent nonzero value < 0)

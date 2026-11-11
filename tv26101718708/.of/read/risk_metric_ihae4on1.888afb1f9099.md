@@ -1,0 +1,5 @@
+Calculation: SMA = simple moving average of close on the selected timeframe. On the chart timeframe, use the current bar. On a higher timeframe, use the last completed bar historically and the bar still forming in real time. On a lower timeframe, use the last available intrabar within each chart bar.
+Calculation: Scale = exp(decay × (chart bar index − min(offset, final chart bar index)) × sensitivity) + baseline.
+Calculation: Risk = (ln(chart close) − ln(lower bound)) / (ln(upper bound) − ln(lower bound)), where upper bound = upper multiplier × SMA × scale and lower bound = lower multiplier × SMA × (scale if dynamic lower bound is enabled, otherwise 1). Risk is not clamped.
+Long: Risk <= entry threshold, or Risk < entry threshold if the strict comparator is selected.
+Exit: long, Risk >= exit threshold, or Risk > exit threshold if the strict comparator is selected.

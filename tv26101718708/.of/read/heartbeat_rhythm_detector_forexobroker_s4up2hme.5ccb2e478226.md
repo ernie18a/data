@@ -1,0 +1,11 @@
+Calculation: Range z-score = (current range - rolling mean of range) / rolling population standard deviation of range; use 0 when the standard deviation is 0. Range is high - low; the rolling window includes the current bar.
+Calculation: CV change = current range coefficient of variation minus its value one rhythm window ago; coefficient of variation is the rolling population standard deviation of range divided by its rolling mean, or 0 when the mean is not positive.
+Calculation: EMA slope = current close EMA minus that EMA a slope-lookback number of bars ago.
+Calculation: Rhythm score = round(min(100, min(max(range z-score - 1, 0) * 30, 40) + min(max(CV change, 0) * 50, 25) + min(max((volume / volume SMA - 1) * 40, 0), 20) + min(abs(EMA slope) / (ATR + 0.00001) * 20, 15))).
+Calculation: Bars since last signal = current bar index minus the index of the most recent pulse signal of either direction; initialize the last signal index to 0 and update it after each pulse signal.
+Long: Range z-score >= break threshold AND close > open AND close > previous close.
+Short: Range z-score >= break threshold AND close < open AND close < previous close.
+Long: Range z-score >= break threshold AND close > open AND close > previous close AND volume >= volume SMA * volume multiplier AND close > close EMA AND EMA slope > 0 AND rhythm score >= background score threshold.
+Short: Range z-score >= break threshold AND close < open AND close < previous close AND volume >= volume SMA * volume multiplier AND close < close EMA AND EMA slope < 0 AND rhythm score >= background score threshold.
+Long: Range z-score >= break threshold AND close > open AND close > previous close AND volume >= volume SMA * volume multiplier AND close > close EMA AND EMA slope > 0 AND rhythm score >= pulse score threshold AND bars since last signal >= cooldown.
+Short: Range z-score >= break threshold AND close < open AND close < previous close AND volume >= volume SMA * volume multiplier AND close < close EMA AND EMA slope < 0 AND rhythm score >= pulse score threshold AND bars since last signal >= cooldown.

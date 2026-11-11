@@ -1,0 +1,3 @@
+Calculation: Average daily range percentage = 100 × simple moving average of (high − low) / close, using chart bars including the current bar.
+Calculation: Conditional stop = current low if 100 × (high − low) / close >= range-development multiplier × average daily range percentage; otherwise close − ADR-floor multiplier × average daily range percentage / 100 × close.
+Long: previous close / close two bars ago <= prior-rise cap AND high > low AND (close − low) / (high − low) >= strong-close threshold AND close − open > previous close − previous open AND close >= price floor AND volume >= volume threshold AND 100 × (close − conditional stop) / close <= average daily range percentage

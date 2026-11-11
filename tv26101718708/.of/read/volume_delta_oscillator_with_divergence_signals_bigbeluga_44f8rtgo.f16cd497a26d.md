@@ -1,0 +1,5 @@
+Calculation: Delta = 0 when high = low; otherwise, clamp (volume × abs(close − open) / (high − low) / max(volume, 1)) to [0, 1], with a negative sign when close < open.
+Calculation: Delta oscillator = EMA of Delta.
+Calculation: Confirmed oscillator pivot low = an oscillator value less than or equal to each value in the preceding left lookback and strictly less than each value in the following right lookback; it is confirmed on the last bar of the right lookback. A pivot high reverses these comparisons.
+Long: A pivot low is confirmed AND its oscillator value is greater than the immediately preceding confirmed pivot low's oscillator value AND the price low at the current pivot is less than the price low at the preceding pivot.
+Short: A pivot high is confirmed AND its oscillator value is less than the immediately preceding confirmed pivot high's oscillator value AND the price high at the current pivot is greater than the price high at the preceding pivot.

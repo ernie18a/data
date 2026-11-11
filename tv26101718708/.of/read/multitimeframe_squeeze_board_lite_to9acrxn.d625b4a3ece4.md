@@ -1,0 +1,3 @@
+Calculation: Momentum = linear regression endpoint of close minus the average of the Donchian midline and SMA of close, using the same lookback for all components; calculate on the chart timeframe or a higher timeframe, using either the last completed bar or the still-forming bar of that timeframe. Compare momentum with its previous bar on the same timeframe.
+Long: (Momentum > 0 AND momentum > previous momentum) OR (momentum <= 0 AND momentum >= previous momentum)
+Short: (Momentum > 0 AND momentum <= previous momentum) OR (momentum <= 0 AND momentum < previous momentum)

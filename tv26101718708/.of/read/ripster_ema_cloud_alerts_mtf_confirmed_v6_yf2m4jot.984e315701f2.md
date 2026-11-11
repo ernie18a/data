@@ -1,0 +1,12 @@
+Calculation: Four EMA pairs use close on the chart timeframe: short-term, macro, pullback, and swing. Each pair has a shorter and a longer period; the default period ordering is short-term shorter, pullback shorter, pullback longer, short-term longer, swing shorter, swing longer, macro shorter, macro longer.
+Calculation: A pair's upper boundary is the maximum of its two EMAs; its lower boundary is their minimum.
+Calculation: The bullish source is close when the close requirement is enabled, otherwise high; the bearish source is close when the close requirement is enabled, otherwise low. The same setting applies to both sources.
+Calculation: A bullish stack is the shorter EMA > the longer EMA for each of the four chart-timeframe pairs AND close > the upper boundary of each pair.
+Calculation: Higher-timeframe EMAs use the last completed higher-timeframe bar. The intermediate and highest timeframes are both higher than the chart timeframe, and the highest is higher than the intermediate.
+Long: The shorter EMA > the longer EMA for any chart-timeframe pair.
+Short: The shorter EMA <= the longer EMA for any chart-timeframe pair.
+Long: The shorter EMA > the longer EMA for the short-term, macro, or swing pair on the intermediate timeframe, or for the macro or swing pair on the highest timeframe.
+Short: The shorter EMA <= the longer EMA for the short-term, macro, or swing pair on the intermediate timeframe, or for the macro or swing pair on the highest timeframe.
+Long: (The bullish source crosses above the short-term or macro upper boundary OR the macro shorter EMA changes from <= to > the macro longer EMA OR low <= the pullback upper boundary AND close > the pullback upper boundary OR a bullish stack changes from false to true) AND ((each enabled higher-timeframe filter passes: intermediate macro shorter EMA > longer EMA, highest macro shorter EMA > longer EMA, and intermediate swing shorter EMA > longer EMA) OR intermediate macro shorter EMA > longer EMA OR highest macro shorter EMA > longer EMA).
+Long: The bullish source crosses above the swing upper boundary AND each enabled higher-timeframe filter passes: intermediate macro shorter EMA > longer EMA, highest macro shorter EMA > longer EMA, and intermediate swing shorter EMA > longer EMA.
+Short: The bearish source crosses below the short-term or macro lower boundary OR the macro shorter EMA changes from > to <= the macro longer EMA.

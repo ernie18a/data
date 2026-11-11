@@ -1,0 +1,3 @@
+Calculation: Active support and resistance counts = For each chart bar, reconstruct levels from confirmations within the trailing lookback window, excluding its oldest boundary. A confirmed pivot high creates resistance and a confirmed pivot low creates support if its price is more than an ATR-based threshold from every unbroken level of either type; process resistance first when both occur together. After creating levels on each bar, mark resistance broken when close is above it and support broken when close is below it. Count unbroken levels whose pivot bars are within the lookback window, including levels broken on the current bar before marking them broken.
+Long: Active support count >= active resistance count
+Short: Active resistance count > active support count

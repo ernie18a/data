@@ -1,0 +1,15 @@
+Calculation: Relative Trend Index = EMA of 100 × (close − lowest low over the lookback) / (highest high over the lookback − lowest low over the lookback); the raw value is unavailable when the range is zero.
+Calculation: RTI direction = initially neutral; set to long when the Relative Trend Index is above the upper band, short when it is below the lower band, and otherwise retain its previous direction.
+Calculation: AlphaTrend = on the higher timeframe, calculate the simple moving average of true range; the upper support band is low minus that average multiplied by a coefficient, and the lower resistance band is high plus that average multiplied by the coefficient. Initialize AlphaTrend to (high + low) / 2; thereafter, retain its previous value if momentum is unavailable, use the greater of its previous value and the support band if momentum is at least the midpoint of its range, and otherwise use the lesser of its previous value and the resistance band. Momentum is MFI of typical price when the volume moving average is available and positive, otherwise RSI of close.
+Calculation: Higher-timeframe direction = initially neutral; on each completed higher-timeframe bar, set to long when AlphaTrend crosses above its value two higher-timeframe bars earlier, set to short when it crosses below that value, and otherwise retain its previous direction. Use the last completed higher-timeframe bar.
+Calculation: Final RTI direction = neutral if the optional macro cover is enabled, RTI direction is short, and close is above the macro EMA of close; otherwise neutral if the optional higher-timeframe gate is enabled and RTI direction opposes the available higher-timeframe direction; otherwise RTI direction. An unavailable or neutral higher-timeframe direction does not veto.
+Calculation: Laguerre filter = recursively calculate L0 = (1 − gamma) × close + gamma × previous L0; L1 = −gamma × L0 + previous L0 + gamma × previous L1; L2 = −gamma × L1 + previous L1 + gamma × previous L2; L3 = −gamma × L2 + previous L2 + gamma × previous L3. Substitute current close for each unavailable previous L value. The filter is (L0 + 2 × L1 + 2 × L2 + L3) / 6.
+Calculation: Laguerre direction = initially neutral; set to long when the Laguerre filter is above its value at the slope lookback, set to short when below, and otherwise retain its previous direction. If the optional macro cover is enabled, the direction is short, and close is above the macro EMA of close, report neutral without changing the retained direction.
+Long: Final RTI direction is long.
+Short: Final RTI direction is short.
+Long: Laguerre direction is long AND the Laguerre read is enabled.
+Short: Laguerre direction is short AND the Laguerre read is enabled.
+Long: Higher-timeframe direction is long.
+Short: Higher-timeframe direction is short.
+Exit: long, final RTI direction is neutral AND previous final RTI direction was long.
+Exit: short, final RTI direction is neutral AND previous final RTI direction was short.

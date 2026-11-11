@@ -1,0 +1,6 @@
+Calculation: Liquidity low = lowest low over the liquidity lookback ending on the previous chart bar.
+Calculation: Liquidity high = highest high over the liquidity lookback ending on the previous chart bar.
+Calculation: Rejection range = high minus low when high > low; otherwise the rejection wick ratio is zero.
+Calculation: Volatility threshold = ATR of higher-timeframe bars, using the last completed bar, multiplied by a sweep-size parameter.
+Long: Low < liquidity low AND close > liquidity low AND (min(open, close) - low) / rejection range >= minimum wick ratio AND liquidity low - low >= volatility threshold AND (BOS filter disabled OR close > highest high over the BOS lookback ending on the previous chart bar) AND (VWAP filter disabled OR close >= session VWAP of typical price) AND bar time is within an enabled session.
+Short: High > liquidity high AND close < liquidity high AND (high - max(open, close)) / rejection range >= minimum wick ratio AND high - liquidity high >= volatility threshold AND (BOS filter disabled OR close < lowest low over the BOS lookback ending on the previous chart bar) AND (VWAP filter disabled OR close <= session VWAP of typical price) AND bar time is within an enabled session.

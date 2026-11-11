@@ -1,0 +1,5 @@
+Calculation: For each bar, select three configurable price series and sort their values into lowest, middle, and highest. Each series may use an OHLC price or a derived price from ordinary or Heikin-Ashi OHLC. Trend-biased price is (high + close) / 2 when close > open, otherwise (low + close) / 2; extreme trend-biased price is high when close > open, low when close < open, otherwise close. Apply the same formulas to Heikin-Ashi OHLC when selected.
+Calculation: Upper band = the upper-percentile quantile of the highest selected values over a lookback; lower band = the lower-percentile quantile of the lowest selected values over the same lookback. Sort the values in ascending order and linearly interpolate between adjacent values at zero-based index (sample size - 1) × percentile. Calculate on the chart timeframe or on the still-forming bar of a higher timeframe.
+Calculation: Each band trend = 1 when its band is greater than on the previous calculation-timeframe bar, -1 when less, and otherwise its previous trend; initialize to 0.
+Long: Upper-band trend > 0 OR lower-band trend > 0.
+Short: Upper-band trend < 0 OR lower-band trend < 0.

@@ -1,0 +1,7 @@
+Long: Shorter-lookback system enabled AND (current position is flat OR previous bar's position was flat) AND close > highest high over the preceding shorter entry lookback AND (EMA filter disabled OR close > EMA of close) AND (volume filter disabled OR volume >= multiplier × SMA of volume) AND (RSI filter disabled OR RSI of close > threshold) AND (whipsaw filter disabled OR no trade has closed OR most recently closed trade's net profit <= 0)
+Long: Longer-lookback system enabled AND (current position is flat OR previous bar's position was flat) AND close > highest high over the preceding longer entry lookback AND (EMA filter disabled OR close > EMA of close) AND (volume filter disabled OR volume >= multiplier × SMA of volume) AND (RSI filter disabled OR RSI of close > threshold)
+Long: Position is long AND number of entered units < maximum units AND close >= initial position entry price + number of entered units × multiplier × current ATR AND (EMA slope filter disabled OR EMA of close > its value a lookback ago)
+Exit: long, low <= initial entry signal bar's close - multiplier × ATR on that signal bar
+Exit: long, shorter-lookback system enabled AND low <= previous bar's lowest low over the shorter exit lookback
+Exit: long, longer-lookback system enabled AND low <= previous bar's lowest low over the longer exit lookback
+Exit: long, EMA filter enabled AND close < EMA of close

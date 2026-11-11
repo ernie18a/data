@@ -1,0 +1,2 @@
+Long: For each of six distinct timeframes ordered from shortest to longest, the currently forming bar's close >= its open; each timeframe may be higher than, lower than, or equal to the chart timeframe.
+Short: For each of the same six timeframes, the currently forming bar's close < its open.

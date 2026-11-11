@@ -1,0 +1,9 @@
+Calculation: Timeframe momentum = ROC of close, standardized by its SMA and population standard deviation over a normalization lookback with the standard deviation floored at a small positive constant; multiply by a positive scale and one half, clamp to [-10, 10], then apply tanh. Use the previous bar's momentum on each of four selected chart or higher timeframes; for higher timeframes, map the last completed value with lookahead off and carry it forward. Replace unavailable momentum with zero.
+Calculation: Regression prediction = intercept plus the sum of each timeframe momentum multiplied by its coefficient. Initialize the intercept and coefficients to zero. On each confirmed chart bar after the forecast horizon, first calculate the current prediction using the existing weights; then train using the momenta from one forecast horizon ago and target (current close - close one forecast horizon ago) / current ATR. Floor ATR at a small positive constant; if unavailable, use current true range, or a small positive fraction of close if true range is unavailable. Set error to the prediction for the lagged momenta minus the target. Subtract learning rate times error from the intercept, and subtract learning rate times (error times lagged momentum + L2 penalty times coefficient) from each coefficient, using the pre-update error and coefficients.
+Calculation: Fused momentum = sum of each current timeframe momentum multiplied by its updated coefficient, divided by the sum of the absolute updated coefficients floored at a small positive constant; clamp the result to [-1, 1].
+Long: Chart bar index > warmup AND fused momentum > positive threshold AND previous fused momentum <= positive threshold
+Short: Chart bar index > warmup AND fused momentum < negative threshold AND previous fused momentum >= negative threshold
+Long: Fused momentum >= 0
+Short: Fused momentum < 0
+Long: Regression prediction >= 0
+Short: Regression prediction < 0

@@ -1,0 +1,1 @@
+On each tick, calculate account equity minus account balance. If it reaches or exceeds the basket profit threshold, or falls to or below the negative basket loss threshold, close all open positions and delete all pending orders across the account, regardless of instrument or strategy.

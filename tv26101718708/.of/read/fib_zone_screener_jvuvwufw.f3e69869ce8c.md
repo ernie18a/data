@@ -1,0 +1,9 @@
+Calculation: Swing = for each of three independently configurable chart-bar lookbacks, from shorter to longer, find the highest high and lowest low including the current bar, their most recent occurrence offsets, and their difference as the range.
+Calculation: Retracement = (highest high - close) / range when the highest high is more recent than the lowest low; otherwise (close - lowest low) / range.
+Calculation: Maximum retracement = (highest high - lowest low since and including the most recent highest-high bar) / range when the highest high is more recent than the lowest low; otherwise (highest high since and including the most recent lowest-low bar - lowest low) / range.
+Long: range > 0 AND highest-high occurrence is more recent than lowest-low occurrence.
+Short: range > 0 AND highest-high occurrence is as recent as or older than lowest-low occurrence.
+Long: range > 0 AND highest-high occurrence is more recent than lowest-low occurrence AND retracement >= a zone's from boundary AND retracement <= that zone's to boundary, for each of three independently configured zones.
+Short: range > 0 AND highest-high occurrence is as recent as or older than lowest-low occurrence AND retracement >= a zone's from boundary AND retracement <= that zone's to boundary, for each of three independently configured zones.
+Long: range > 0 AND highest-high occurrence is more recent than lowest-low occurrence AND retracement >= a zone's from boundary AND retracement <= that zone's to boundary AND maximum retracement <= that zone's to boundary, for each of the first two zones.
+Short: range > 0 AND highest-high occurrence is as recent as or older than lowest-low occurrence AND retracement >= a zone's from boundary AND retracement <= that zone's to boundary AND maximum retracement <= that zone's to boundary, for each of the first two zones.

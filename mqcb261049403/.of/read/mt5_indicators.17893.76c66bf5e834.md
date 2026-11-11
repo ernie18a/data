@@ -1,0 +1,3 @@
+Calculation: Weighted candle size = (absolute value of close minus open OR high minus low, according to the selected size mode) multiplied by (volume OR 1, according to the selected volume mode).
+Long: Weighted candle size of the bar at the configured signal-bar offset > threshold AND its close < its open.
+Short: Weighted candle size of the bar at the configured signal-bar offset > threshold AND its close >= its open.

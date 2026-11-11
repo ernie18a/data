@@ -1,0 +1,10 @@
+Calculation: Selected price = a selectable open, high, low, close, median, typical, weighted close, OHLC average, body midpoint, trend-biased price, or trend-biased extreme price, computed from either ordinary or Heikin-Ashi OHLC.
+Calculation: Trend-biased price = (high + close) / 2 when close > open; otherwise (low + close) / 2. Trend-biased extreme price = high when close > open, low when close < open, and close when close = open.
+Calculation: Generalized weighted moving average = sum of selected price at lag k multiplied by (period - k) raised to the speed parameter, divided by the sum of those weights, for available lags from the current bar through the period lookback. Calculate on the chart timeframe or, if selected, on the still-forming higher-timeframe bar and preceding higher-timeframe bars.
+Calculation: Floating levels = the lowest generalized weighted moving average over the floating-level lookback, including the current bar, plus its range over that lookback multiplied by the respective upper or lower level fraction. The middle level is the average of the upper and lower levels. Calculate on the same timeframe as the moving average.
+Long: (slope mode selected OR floating-level lookback is at most one bar) AND generalized weighted moving average > its preceding value.
+Short: (slope mode selected OR floating-level lookback is at most one bar) AND generalized weighted moving average < its preceding value.
+Long: outer-level mode selected AND floating-level lookback is greater than one bar AND generalized weighted moving average > upper floating level.
+Short: outer-level mode selected AND floating-level lookback is greater than one bar AND generalized weighted moving average < lower floating level.
+Long: middle-level mode selected AND floating-level lookback is greater than one bar AND generalized weighted moving average > middle floating level.
+Short: middle-level mode selected AND floating-level lookback is greater than one bar AND generalized weighted moving average < middle floating level.

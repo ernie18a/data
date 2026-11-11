@@ -1,0 +1,3 @@
+Calculation: Smoothed RSI = simple or exponential moving average of RSI of close, calculated independently on each selected timeframe using its latest bar, including the bar still forming; selected timeframes may be higher than, lower than, or equal to the chart timeframe.
+Long: Smoothed RSI > upper threshold OR (lower threshold <= Smoothed RSI <= upper threshold AND the most recent Smoothed RSI outside those thresholds within the calculated history was < lower threshold).
+Short: Smoothed RSI < lower threshold OR (lower threshold <= Smoothed RSI <= upper threshold AND the most recent Smoothed RSI outside those thresholds within the calculated history was > upper threshold).

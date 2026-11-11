@@ -1,0 +1,21 @@
+Calculation: Swing levels = For each of a longer and a shorter lookback, initialize swing state to 0. On each bar, set it to 0 if the high lookback bars ago exceeds the highest high of the most recent lookback bars; otherwise set it to 1 if the low lookback bars ago is below the lowest low of the most recent lookback bars; otherwise retain its previous state. When it changes to 0, record that historical high as the latest swing high; when it changes to 1, record that historical low as the latest swing low.
+Calculation: Structure state = Initialize to 0. Set to 1 when close exceeds the latest longer-lookback swing high for the first time since that swing was recorded; set to 0 when close falls below the latest longer-lookback swing low for the first time since that swing was recorded. If both occur on the same bar, apply the low break last.
+Calculation: Structure extremes = On each structure-state change, reset the running high and low to the current high and low; otherwise update them with the current high and low after evaluating the current bar's decisions. Record the bar of each extreme when it is reset or strictly exceeded.
+Calculation: Bullish structure break = After a change to structure state 1, arm the break when low falls below the latest shorter-lookback swing low and that swing low differs from the latest longer-lookback swing low. Disarm it after the break or any structure-state change. The break occurs when armed and close exceeds the prior running high.
+Calculation: Zero-lag trend = EMA of close plus the difference between close and close lagged by floor((EMA length minus one) divided by two). The upper and lower thresholds are this EMA plus and minus a multiplier times the highest ATR over a longer lookback than the EMA length. Initialize trend state to 0; set it to 1 when close crosses above the upper threshold and to -1 when close crosses below the lower threshold; otherwise retain the state.
+Calculation: Cloud bands = Over a longer lookback, calculate the highest high and lowest low; over a shorter lookback, calculate the highest high and lowest low. Initialize the reference to zero; if low equals the longer-lookback lowest low, set the reference to the longer-lookback highest high; otherwise, if high equals the longer-lookback highest high, set it to the longer-lookback lowest low; otherwise retain it. When close exceeds the reference, the outer and inner bands are the longer- and shorter-lookback lowest lows; otherwise they are the corresponding highest highs.
+Calculation: Bullish mean reversion = Low crosses above the previous bar's inner band, the previous inner band equals the previous high or low as specified in the decision, low differs from the current inner band, close does not cross the outer band, and the outer band equals its previous value.
+Long: Structure state changes to 1.
+Short: Structure state changes to 0.
+Long: Bullish structure break occurs.
+Short: Bullish structure break occurs.
+Long: Structure state equals 0 AND low is below the prior running low AND close is above the prior running low AND more than one bar has elapsed since that low.
+Short: Structure state equals 1 AND high is above the prior running high AND close is below the prior running high AND more than one bar has elapsed since that high.
+Long: Low crosses above the previous bar's inner band AND the previous inner band equals the previous low AND low differs from the current inner band AND close does not cross the outer band AND the outer band equals its previous value.
+Short: High crosses below the previous bar's inner band AND the previous inner band equals the previous high AND high differs from the current inner band AND close does not cross the outer band AND the outer band equals its previous value.
+Long: Low is above the high two bars ago AND the previous close is above the high two bars ago.
+Short: High is below the low two bars ago AND the previous close is below the low two bars ago.
+Long: Zero-lag trend state equals 1.
+Short: Zero-lag trend state does not equal 1.
+Long: Close is above the cloud reference.
+Short: Close is at or below the cloud reference.

@@ -1,0 +1,12 @@
+Calculation: Normalized momentum = Let raw momentum be 100 × (shorter-period EMA of close − longer-period EMA of close) / longer-period EMA of close. Find its highest and lowest values over a rolling lookback including the current bar. If their difference is positive, normalized momentum is 2 × (raw momentum − rolling lowest) / (rolling highest − rolling lowest) − 1; otherwise it is 0. Its signal is an EMA of normalized momentum.
+Calculation: Last entry direction = Initially neither long nor short. On each bar, update it to the direction of an entry that meets the full entry conditions, including the last-entry-direction filter; otherwise retain its previous value. Exits do not reset it.
+Long: close > longest-period trend EMA of close AND shorter-period trend EMA of close > longer-period trend EMA of close
+Short: close < longest-period trend EMA of close AND shorter-period trend EMA of close < longer-period trend EMA of close
+Long: normalized momentum > 0 AND normalized momentum > its signal
+Short: normalized momentum < 0 AND normalized momentum < its signal
+Long: volume >= SMA of volume × volume-surge multiplier AND close > open
+Short: volume >= SMA of volume × volume-surge multiplier AND close < open
+Long: close > longest-period trend EMA of close AND shorter-period trend EMA of close > longer-period trend EMA of close AND normalized momentum > 0 AND normalized momentum > its signal AND normalized momentum < overbought threshold AND (volume filter disabled OR (volume >= SMA of volume × volume-surge multiplier AND close > open)) AND last entry direction != long
+Short: close < longest-period trend EMA of close AND shorter-period trend EMA of close < longer-period trend EMA of close AND normalized momentum < 0 AND normalized momentum < its signal AND normalized momentum > oversold threshold AND (volume filter disabled OR (volume >= SMA of volume × volume-surge multiplier AND close < open)) AND last entry direction != short
+Exit: long, last entry direction = long AND ((normalized momentum < 0 AND normalized momentum < its signal) OR (normalized momentum >= overbought threshold AND normalized momentum < its signal))
+Exit: short, last entry direction = short AND ((normalized momentum > 0 AND normalized momentum > its signal) OR (normalized momentum <= oversold threshold AND normalized momentum > its signal))

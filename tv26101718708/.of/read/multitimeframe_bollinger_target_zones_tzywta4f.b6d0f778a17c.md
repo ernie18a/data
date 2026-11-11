@@ -1,0 +1,2 @@
+Long: Close <= lower Bollinger Band on the last completed higher-timeframe bar multiplied by a configurable near-band factor greater than 1.
+Exit: Long, close >= upper Bollinger Band on the last completed higher-timeframe bar multiplied by a configurable near-band factor less than 1.

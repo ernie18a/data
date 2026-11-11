@@ -1,0 +1,3 @@
+Calculation: Rolling high and rolling low = highest high and lowest low over the same lookback, including the evaluated bar; both are zero before the lookback is available.
+Long: Rolling low 3 bars ago minus the reversal threshold > rolling low 2 bars ago AND rolling low 2 bars ago = rolling low 1 bar ago.
+Short: Rolling high 3 bars ago plus the reversal threshold < rolling high 2 bars ago AND rolling high 2 bars ago = rolling high 1 bar ago AND (rolling low 3 bars ago minus the reversal threshold <= rolling low 2 bars ago OR rolling low 2 bars ago != rolling low 1 bar ago).

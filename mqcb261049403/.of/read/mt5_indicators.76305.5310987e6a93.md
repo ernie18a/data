@@ -1,0 +1,3 @@
+Calculation: Session range = for each configured session and calendar day, the highest high and lowest low of chart bars whose opening datetime is at or after that day's session start and before its session end; lock the range at the first chart bar opening at or after the session end, provided at least one bar contributed.
+Long: For any locked session range from the current calendar day, the current bar is the first bar since that range locked with low < session low - minimum penetration AND close > session low.
+Short: For any locked session range from the current calendar day, the current bar is the first bar since that range locked with high > session high + minimum penetration AND close < session high.

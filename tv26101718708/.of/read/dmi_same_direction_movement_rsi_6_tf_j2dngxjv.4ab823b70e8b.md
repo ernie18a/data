@@ -1,0 +1,2 @@
+Long: For any independently configured timeframe, +DI > -DI AND RSI > its midpoint; calculate both on that timeframe's last completed bar, whether the timeframe is higher, lower, or equal to the chart timeframe.
+Short: For any independently configured timeframe, -DI > +DI AND RSI < its midpoint; calculate both on that timeframe's last completed bar, whether the timeframe is higher, lower, or equal to the chart timeframe.

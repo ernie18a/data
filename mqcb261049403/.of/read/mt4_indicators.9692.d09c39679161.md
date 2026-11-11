@@ -1,0 +1,2 @@
+Long: The slow simple moving average of close is greater than the fast simple moving average of close, using the bar still forming on a timeframe that may be higher than, lower than, or equal to the chart timeframe.
+Short: The slow simple moving average of close is less than or equal to the fast simple moving average of close, using the bar still forming on the same timeframe.

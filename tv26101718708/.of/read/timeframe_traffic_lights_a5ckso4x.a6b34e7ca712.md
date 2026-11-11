@@ -1,0 +1,12 @@
+Calculation: Trend state = for each of five independently selected timeframes, 1 when close > shorter-period EMA of close AND shorter-period EMA > longer-period EMA, -1 when close < shorter-period EMA AND shorter-period EMA < longer-period EMA, otherwise 0. Each timeframe may be higher than, lower than, or equal to the chart timeframe; use either its bar still forming or its last completed bar, according to the selected update mode.
+Calculation: Up count = number of the five timeframe trend states equal to 1.
+Calculation: Down count = number of the five timeframe trend states equal to -1.
+Calculation: Trend-state age = number of bars of the selected timeframe since its trend state last changed, including a change to or from 0; use the same bar and update mode as its trend state.
+Long: Any timeframe's trend state = 1.
+Short: Any timeframe's trend state = -1.
+Long: Any timeframe's trend state = 1 AND its trend-state age < recent-change lookback.
+Short: Any timeframe's trend state = -1 AND its trend-state age < recent-change lookback.
+Long: Up count >= agreement threshold AND up count > down count.
+Short: Down count >= agreement threshold AND down count > up count.
+Long: Up count = five AND previous chart bar's up count < five.
+Short: Down count = five AND previous chart bar's down count < five.

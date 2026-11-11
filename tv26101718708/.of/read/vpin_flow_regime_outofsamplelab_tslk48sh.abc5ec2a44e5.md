@@ -1,0 +1,5 @@
+Calculation: Buy pressure = rolling sum of volume × (2 × buy fraction − 1) divided by rolling sum of volume; buy fraction is the selected standard-normal or Student-t cumulative distribution function of the close-to-close change divided by its rolling standard deviation. Pressure is unavailable when the standard deviation is unavailable or nonpositive, or the rolling volume sum is nonpositive.
+Long: Buy pressure >= 0
+Short: Buy pressure < 0
+Long: A price pivot low is confirmed AND its low is below the immediately preceding price pivot low AND buy pressure at the new pivot is above buy pressure at the preceding pivot.
+Short: A price pivot high is confirmed AND its high is above the immediately preceding price pivot high AND buy pressure at the new pivot is below buy pressure at the preceding pivot.

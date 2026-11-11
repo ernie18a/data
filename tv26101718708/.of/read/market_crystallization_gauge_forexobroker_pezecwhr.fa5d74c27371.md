@@ -1,0 +1,8 @@
+Calculation: Return = close minus previous close.
+Calculation: Return volatility ratio = standard deviation of return over a short lookback divided by its simple moving average over a longer lookback; use 1 when that average is not positive.
+Calculation: Crystallization score = round(clamp(60 × correlation of return with its one-bar lag + 30, 0, 40) + clamp(1.5 × (ADX − 15) + 3 × (ADX minus ADX a fixed number of bars earlier), 0, 35) + clamp(50 × (1.2 − return volatility ratio), 0, 25)). Use the same lookback for ADX and directional indicators.
+Calculation: Bars since last signal = current bar index minus the index of the most recent long or short crystallization signal, initialized to zero before any signal.
+Long: Positive directional indicator > negative directional indicator AND close > EMA of close.
+Short: Negative directional indicator > positive directional indicator AND close < EMA of close.
+Long: Crystallization score >= threshold AND previous crystallization score < threshold AND positive directional indicator > negative directional indicator AND close > EMA of close AND volume > simple moving average of volume AND bars since last signal >= cooldown.
+Short: Crystallization score >= threshold AND previous crystallization score < threshold AND negative directional indicator > positive directional indicator AND close < EMA of close AND volume > simple moving average of volume AND bars since last signal >= cooldown.

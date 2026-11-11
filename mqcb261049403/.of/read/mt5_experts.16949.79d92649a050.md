@@ -1,0 +1,6 @@
+Long: Position is flat AND the short-period close SMA on the last completed chart bar > the long-period close SMA on that bar AND the short-period close SMA on the preceding bar <= the long-period close SMA on that bar; evaluate at the open of a new chart bar.
+Short: Position is flat AND the short-period close SMA on the last completed chart bar < the long-period close SMA on that bar AND the short-period close SMA on the preceding bar >= the long-period close SMA on that bar; evaluate at the open of a new chart bar.
+Exit: Long, the short-period close SMA on the last completed chart bar < the long-period close SMA on that bar AND the short-period close SMA on the preceding bar >= the long-period close SMA on that bar; evaluate at the open of a new chart bar.
+Exit: Short, the short-period close SMA on the last completed chart bar > the long-period close SMA on that bar AND the short-period close SMA on the preceding bar <= the long-period close SMA on that bar; evaluate at the open of a new chart bar.
+Exit: Long, low <= entry price minus ATR fixed at entry, calculated using the chart bar forming at entry.
+Exit: Short, high >= entry price plus ATR fixed at entry, calculated using the chart bar forming at entry.

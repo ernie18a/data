@@ -1,0 +1,2 @@
+Long: The low of the latest completed higher-timeframe bar is greater than the high of the higher-timeframe bar two bars earlier.
+Short: The high of the latest completed higher-timeframe bar is less than the low of the higher-timeframe bar two bars earlier.

@@ -1,0 +1,2 @@
+Long: The shorter-period EMA of close crosses above the longer-period EMA of close.
+Exit: Long, high >= the close of the entry-signal bar multiplied by the take-profit multiplier OR low <= the close of the entry-signal bar multiplied by the stop-loss multiplier.

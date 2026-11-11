@@ -1,0 +1,7 @@
+Calculation: Heikin-Ashi close = (open + high + low + close) / 4.
+Calculation: Volume return = 0 if previous volume is zero; otherwise, if logarithmic returns are enabled and current and previous volume are positive, ln(current volume / previous volume); otherwise, current volume / previous volume - 1. On the first bar, use current volume as previous volume.
+Calculation: Volatility proxy = square root of either the simple moving average of squared volume returns or their exponentially weighted average. Initialize the exponentially weighted average to the first squared return; thereafter it equals decay factor * previous average + (1 - decay factor) * current squared return.
+Long: Shorter-lookback EMA of Heikin-Ashi close > longer-lookback EMA of Heikin-Ashi close.
+Short: Shorter-lookback EMA of Heikin-Ashi close <= longer-lookback EMA of Heikin-Ashi close.
+Long: On the previous bar, shorter-lookback EMA of Heikin-Ashi close crossed above longer-lookback EMA of Heikin-Ashi close AND volatility proxy > its simple moving average + a multiplier * its standard deviation on the previous bar.
+Short: On the previous bar, shorter-lookback EMA of Heikin-Ashi close crossed below longer-lookback EMA of Heikin-Ashi close AND volatility proxy > its simple moving average + a multiplier * its standard deviation on the previous bar.

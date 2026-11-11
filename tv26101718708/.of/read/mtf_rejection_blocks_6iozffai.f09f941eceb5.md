@@ -1,0 +1,6 @@
+Calculation: Candidate bar = the bar pivot-length bars before the last completed bar of a slot timeframe, evaluated at the start of a new slot-timeframe bar; a slot timeframe may be higher than or equal to the chart timeframe, and a lower slot timeframe is effectively treated as the chart timeframe.
+Calculation: Bearish rejection = candidate high is strictly greater than the highs of each pivot-length bars on both sides AND candidate high minus max(candidate open, candidate close) > 0 AND candidate high minus max(candidate open, candidate close) >= wick-ratio parameter times abs(candidate close minus candidate open).
+Calculation: Bullish rejection = candidate low is strictly less than the lows of each pivot-length bars on both sides AND min(candidate open, candidate close) minus candidate low > 0 AND min(candidate open, candidate close) minus candidate low >= wick-ratio parameter times abs(candidate close minus candidate open).
+Calculation: Previous block top = the top of the most recently created bullish or bearish block in the same slot; initially undefined and updated whenever a block is created.
+Long: Bullish rejection AND bearish rejection is false AND (previous block top is undefined OR min(candidate open, candidate close) != previous block top).
+Short: Bearish rejection AND (previous block top is undefined OR candidate high != previous block top).

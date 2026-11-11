@@ -1,0 +1,3 @@
+Calculation: SAR state = On the first chart bar of each higher-timeframe bar, compare the still-forming higher-timeframe bar's low and high with its still-forming Parabolic SAR. Set the state to up if low > SAR, down if high < SAR, and neutral otherwise; retain that state until the next higher-timeframe bar. The SAR timeframe may also equal the chart timeframe.
+Long: The first chart bar of a higher-timeframe bar AND SAR state is up AND the preceding chart bar's SAR state is not up.
+Short: The first chart bar of a higher-timeframe bar AND SAR state is down AND the preceding chart bar's SAR state is not down.

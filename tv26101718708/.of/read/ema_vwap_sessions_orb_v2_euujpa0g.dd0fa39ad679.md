@@ -1,0 +1,8 @@
+Calculation: Opening range high and low = highest high and lowest low of chart bars in the configured opening-range time window; retain them until the next window begins.
+Calculation: Upside breakout = outside the opening-range window AND low two bars ago < opening range high AND close two bars ago > opening range high AND previous low > opening range high AND previous close > opening range high AND close > previous low AND low > opening range high.
+Calculation: Downside breakout = outside the opening-range window AND high two bars ago > opening range low AND close two bars ago < opening range low AND previous high < opening range low AND previous close < opening range low AND close < previous high AND high < opening range low.
+Calculation: Breakout pending = a shared Boolean state reset at the first bar of each opening-range window; outside the window, set it when either breakout occurs, then evaluate retests and failures on the same bar, and clear it after either retest or after previous close > opening range high AND close < opening range high OR previous close < opening range low AND close > opening range low.
+Long: Upside breakout.
+Short: Downside breakout.
+Long: Outside the opening-range window AND breakout pending AND previous close > opening range high AND low <= opening range high AND close >= opening range high.
+Short: Outside the opening-range window AND breakout pending AND previous close < opening range low AND high >= opening range low AND close <= opening range low.

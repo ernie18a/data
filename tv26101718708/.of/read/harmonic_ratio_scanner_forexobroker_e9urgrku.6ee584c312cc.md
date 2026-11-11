@@ -1,0 +1,8 @@
+Calculation: Swing list = confirmed pivot highs and lows using equal left and right lookbacks, newest first; add the high before the low if both confirm on the same bar, and retain only the most recent configured maximum number of pivots.
+Calculation: Selected ratio = scan consecutive triples in the swing list from newest to oldest, up to the configured scan limit. For each triple, let p0, p1, and p2 be newest to oldest; select the first triple where abs(p1 - p2) > ATR × minimum swing multiplier, abs(p0 - p1) > 0, and abs(abs(p0 - p1) / abs(p1 - p2) - any enabled target ratio) < ratio tolerance. The selected endpoint is p0 and its bar is the pivot bar, not the confirmation bar.
+Calculation: New ratio = a selected ratio exists and its endpoint bar differs from the previously recorded endpoint bar; initialize the recorded bar to bar index zero and update it whenever a new ratio occurs.
+Calculation: Signal cooldown = current bar index minus the last buy or sell signal bar; initialize the last signal bar to bar index zero and update it whenever either filtered signal occurs.
+Long: New ratio AND selected endpoint is a pivot low AND p1 is a pivot high.
+Short: New ratio AND (selected endpoint is not a pivot low OR p1 is not a pivot high).
+Long: New ratio AND selected endpoint is a pivot low AND p1 is a pivot high AND signal cooldown >= cooldown length AND volume > volume SMA AND chart bar is confirmed.
+Short: New ratio AND (selected endpoint is not a pivot low OR p1 is not a pivot high) AND signal cooldown >= cooldown length AND volume > volume SMA AND chart bar is confirmed.

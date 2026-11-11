@@ -1,0 +1,3 @@
+Calculation: Net volume ratio = (2 × close − high − low) / (high − low) when high > low; otherwise 0.
+Long: close < open AND net volume ratio > buy ratio threshold AND volume >= SMA of volume × minimum volume multiplier AND RSI of close <= buy RSI threshold AND MACD histogram of close <= buy MACD threshold.
+Short: close > open AND net volume ratio < −sell ratio threshold AND volume >= SMA of volume × minimum volume multiplier AND RSI of close >= sell RSI threshold AND MACD histogram of close >= sell MACD threshold.

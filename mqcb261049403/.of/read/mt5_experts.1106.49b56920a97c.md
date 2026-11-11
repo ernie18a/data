@@ -1,0 +1,5 @@
+Calculation: GO = ((moving average of close − moving average of open) + (moving average of high − moving average of open) + (moving average of low − moving average of open) + (moving average of close − moving average of low) + (moving average of close − moving average of high)) × volume; all moving averages use the same method, lookback, and displacement, and all inputs are taken at the same configurable chart-bar offset, which may select the forming bar or a completed bar.
+Long: position is flat AND GO > opening level AND GO >= −opening level AND GO >= opening level − closing-level difference
+Short: position is flat AND GO < −opening level AND GO <= opening level AND GO <= −(opening level − closing-level difference)
+Exit: long, GO < opening level − closing-level difference
+Exit: short, GO > −(opening level − closing-level difference)

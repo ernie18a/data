@@ -1,0 +1,1 @@
+Long: close < longer-term simple moving average of closes on the previous completed chart bar AND close < shorter-term exponential moving average of closes on the last completed higher-timeframe bar AND (no previous long signal OR chart bars since the previous long signal >= the purchase interval)

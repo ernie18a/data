@@ -1,0 +1,4 @@
+Calculation: Smoothed directional difference = For each bar, calculate the positive and negative directional indicators from ADX. For each directional indicator x, calculate p = 2 × x + (alpha1 − 2) × previous x + (1 − alpha1) × previous p, then q = alpha2 × p + (1 − alpha2) × previous q. Initialize p and q to zero before the first calculated bar. The difference is positive-indicator q minus negative-indicator q.
+Calculation: Higher-timeframe difference = Smoothed directional difference on a higher timeframe or the chart timeframe, sampled from the bar still forming at the first chart bar of each selected-timeframe bar and held until the next selected-timeframe bar.
+Long: Chart-timeframe smoothed directional difference > 0 OR higher-timeframe difference > 0.00000001
+Short: Chart-timeframe smoothed directional difference < 0 OR higher-timeframe difference < 0.00000001

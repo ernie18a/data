@@ -1,0 +1,2 @@
+Long: Close >= any enabled moving average of a configurable price source, using SMA, EMA, RMA, WMA, or VWMA
+Short: Close < any enabled moving average of a configurable price source, using SMA, EMA, RMA, WMA, or VWMA

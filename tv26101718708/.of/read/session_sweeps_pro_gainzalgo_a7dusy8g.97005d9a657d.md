@@ -1,0 +1,3 @@
+Calculation: Accepted pivot levels = Store every confirmed pivot high or pivot low whose distance from every previously stored level is at least a threshold multiple of the current ATR; retain levels indefinitely. Process pivot highs before pivot lows on the same bar, so a newly accepted pivot high is included when checking the pivot low. Use the same number of bars on each side to confirm a pivot.
+Long: A pivot low is confirmed AND its level is accepted.
+Short: A pivot high is confirmed AND its level is accepted.

@@ -1,0 +1,4 @@
+Calculation: Swing high and swing low = the latest highs and lows, respectively, that equal the highest high or lowest low over the same rolling lookback, including the current bar. Track the bar of each occurrence.
+Calculation: Projection points = Let H and L be the swing high and low, k the projection parameter, and e the extension parameter. If the swing high is more recent than the swing low, P0 = H, P1 = H - (H - L) * k, and P3 = H - (H - L) * e; otherwise, P0 = L, P1 = L + (H - L) * k, and P3 = L + (H - L) * e. If the swing low is more recent than the swing high, P2 = P1 - (P1 - L) * k; otherwise, P2 = P1 + (H - P1) * k. Evaluate each consecutive pair (P0, P1), (P1, P2), and (P2, P3) as (start, end).
+Long: For any projection pair, end > start OR (end - start) / start > 0.
+Short: For any projection pair, end <= start OR (end - start) / start <= 0.

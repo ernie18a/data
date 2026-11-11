@@ -1,0 +1,6 @@
+Calculation: Volume filter passes = volume filtering is disabled OR the first pattern candle's high minus low exceeds the size threshold OR its volume is less than the second candle's volume OR the third candle's volume is greater than the second candle's volume OR the third candle's volume is greater than the first candle's volume.
+Calculation: Bearish pattern on a bar = the candles three and two bars earlier both close above their opens AND the second candle closes below the first candle's high AND the candle one bar earlier closes below its open and below the second candle's open AND the volume filter passes.
+Calculation: Bullish pattern on a bar = the candles three and two bars earlier both close below their opens AND the second candle closes above the first candle's low AND the candle one bar earlier closes above its open and above the second candle's open AND the volume filter passes.
+Long: Bullish pattern on the current bar = true.
+Long: Bearish pattern on the bar at the configurable alert lag = false AND bullish pattern on that bar = false.
+Short: Bearish pattern on the current bar = true.

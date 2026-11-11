@@ -1,0 +1,11 @@
+Calculation: EMA values = EMAs of a configurable price source on a configurable timeframe, using shorter and longer lengths. For a higher timeframe, use the bar still forming; historical lookahead uses its final value from the beginning of that bar. For a lower timeframe, use the first intrabar. Either EMA may be enabled, but at least one must be enabled.
+Calculation: Long setup = first bar high > second bar high AND first bar low > second bar low AND third bar low > second bar low AND, if the inside-bar filter is enabled, third bar high < second bar high AND each of the three lows > each enabled EMA value on the third bar.
+Calculation: Short setup = first bar high < second bar high AND first bar low < second bar low AND third bar high < second bar high AND, if the inside-bar filter is enabled, third bar low > second bar low AND each of the three highs < each enabled EMA value on the third bar.
+Calculation: Setup range = highest high of the three setup bars minus their lowest low.
+Long: Long setup AND the third bar's datetime is within the enabled backtest date range, including its start and excluding its end.
+Long: A long setup occurred within the entry-bar limit AND a subsequent bar's high >= the setup's third-bar high.
+Short: Short setup AND the third bar's datetime is within the enabled backtest date range, including its start and excluding its end.
+Short: A short setup occurred within the entry-bar limit AND a subsequent bar's low <= the setup's third-bar low.
+Exit: Long, low <= the setup's lowest low plus one price increment OR high >= the setup's third-bar high plus the setup range multiplied by the profit-over-risk parameter.
+Exit: Short, high >= the setup's highest high plus one price increment OR low <= the setup's third-bar low minus the setup range multiplied by the profit-over-risk parameter.
+Exit: Long OR short, the number of bars since the setup's third bar equals the holding-bar limit OR the datetime has just moved outside the enabled backtest date range.

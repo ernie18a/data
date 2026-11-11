@@ -1,0 +1,2 @@
+Long: A new bar begins on the same or a higher timeframe than the chart AND the low of the last completed bar on that timeframe is greater than the high of the bar two bars before it AND their difference is at least the minimum gap size.
+Short: A new bar begins on the same or a higher timeframe than the chart AND the high of the last completed bar on that timeframe is less than the low of the bar two bars before it AND their difference is at least the minimum gap size.

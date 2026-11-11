@@ -1,0 +1,4 @@
+Long: No open position AND preceding bar open < current bar's long-entry moving average AND preceding bar close > current bar's long-entry moving average AND NOT (preceding bar open > current bar's short-entry moving average AND preceding bar close < current bar's short-entry moving average)
+Short: No open position AND preceding bar open > current bar's short-entry moving average AND preceding bar close < current bar's short-entry moving average
+Exit: Long, preceding bar open > current bar's long-exit moving average AND preceding bar close < current bar's long-exit moving average
+Exit: Short, preceding bar open < current bar's short-exit moving average AND preceding bar close > current bar's short-exit moving average

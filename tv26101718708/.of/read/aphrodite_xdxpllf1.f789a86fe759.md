@@ -1,0 +1,6 @@
+Calculation: Random dot = absolute value of SMA(OHLC4) plus the standard deviation of OHLC4 over the same lookback multiplied by sqrt(-2 * ln(u)) * cos(2 * pi * v); u and v are separate sequences initialized with previous value 1 and updated each bar as ((3.14159 * previous value) remainder (zero-based bar index plus seed)) remainder 1, using opposite-signed seeds for u and v.
+Calculation: Scaled price = price multiplied by 100000 for 0.1 <= price < 0.9999, 10000 for 1 <= price < 9.999, 1000 for 10 <= price < 99.999, 100 for 100 <= price < 999.999, 10 for 1000 <= price < 9999.999, and 1 otherwise.
+Calculation: Prime flag of a price = 0 if its scaled price <= 1 or its scaled price has nonzero remainder for every integer divisor from 2 through 9; otherwise 1.
+Long: Random dot <= high
+Short: Random dot > high
+Exit: long, prime flag of open = 0 AND prime flag of high = 0 AND prime flag of low = 0 AND prime flag of close = 0 AND (random dot >= low OR calendar month != configured month OR day of month != configured day)

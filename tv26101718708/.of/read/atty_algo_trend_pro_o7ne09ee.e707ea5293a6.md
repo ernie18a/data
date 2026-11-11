@@ -1,0 +1,13 @@
+Calculation: Moving averages = the same selected moving-average type applied to a selected price source, using a shorter and a longer lookback.
+Calculation: Neutral threshold = a selected nonnegative fixed price amount, ATR multiplied by a nonnegative factor, or close multiplied by a nonnegative percentage.
+Calculation: Trend state = bullish if the shorter moving average minus the longer moving average exceeds the neutral threshold on every bar of a confirmation lookback; bearish if the difference is below the negative neutral threshold on every bar of that lookback; neutral otherwise.
+Calculation: Higher-timeframe direction = on the last completed higher-timeframe bar, bullish if the shorter moving average of close minus the longer moving average of close exceeds that timeframe's neutral threshold; bearish if the difference is below its negative; neutral otherwise. Use the same moving-average type, lengths, and threshold settings as on the chart timeframe.
+Calculation: Ribbon shift = EMA of the series equal to negative ATR times a nonnegative offset factor when trend state is bullish, positive ATR times that factor when bearish, and zero when neutral. Use the neutral-threshold ATR lookback.
+Calculation: Upper ribbon boundary = maximum of the shorter and longer moving averages plus ribbon shift.
+Calculation: Lower ribbon boundary = minimum of the shorter and longer moving averages plus ribbon shift.
+Long: Trend state = bullish.
+Short: Trend state = bearish.
+Long: Trend state = bullish AND previous bar's trend state != bullish AND (session gate disabled OR bar time is inside the configured session in its configured timezone) AND (higher-timeframe confirmation disabled OR higher-timeframe direction = bullish).
+Short: Trend state = bearish AND previous bar's trend state != bearish AND (session gate disabled OR bar time is inside the configured session in its configured timezone) AND (higher-timeframe confirmation disabled OR higher-timeframe direction = bearish).
+Long: Trend state = bullish AND low <= upper ribbon boundary AND close > upper ribbon boundary AND close > open AND (session gate disabled OR bar time is inside the configured session in its configured timezone).
+Short: Trend state = bearish AND high >= lower ribbon boundary AND close < lower ribbon boundary AND close < open AND (session gate disabled OR bar time is inside the configured session in its configured timezone).

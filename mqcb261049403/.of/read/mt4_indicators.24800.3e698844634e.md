@@ -1,0 +1,5 @@
+Calculation: Timeframe direction = compare the selected applied price of the current bar with that of the preceding bar on each timeframe in an ordered set. The applied price is open, high, low, close, median price, typical price, or weighted close. Use the bar still forming for higher timeframes, the latest available bar for lower timeframes, and the current bar for the chart timeframe. Direction is up if the current applied price is greater and current volume is positive, down if it is less and current volume is positive, and neutral otherwise.
+Long: Timeframe direction is up on any timeframe in the ordered set.
+Short: Timeframe direction is down on any timeframe in the ordered set.
+Long: The number of up directions among the shortest timeframes in the ordered set is at least the consensus threshold.
+Short: The number of down directions among the shortest timeframes in the ordered set is at least the consensus threshold.

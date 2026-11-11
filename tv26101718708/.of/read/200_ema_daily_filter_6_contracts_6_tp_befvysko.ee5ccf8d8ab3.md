@@ -1,0 +1,9 @@
+Long: Position is flat AND bar time is within the configured backtest date range AND close crosses above the chart-timeframe EMA AND (the previous completed higher-timeframe bar's close > its open OR the higher-timeframe filter is disabled).
+Short: Position is flat AND bar time is within the configured backtest date range AND close crosses below the chart-timeframe EMA AND (the previous completed higher-timeframe bar's close < its open OR the higher-timeframe filter is disabled).
+Exit: Long, an enabled profit-target order is active AND high >= entry price + that target's independently configured distance; exit one contract per target.
+Exit: Short, an enabled profit-target order is active AND low <= entry price - that target's independently configured distance; exit one contract per target.
+Exit: Long, the initial stop is enabled AND an enabled profit-target order with its stop is active AND the highest high since entry < entry price + the EMA-stop activation distance AND low <= the entry bar's low; exit the contracts covered by those orders.
+Exit: Short, the initial stop is enabled AND an enabled profit-target order with its stop is active AND the lowest low since entry > entry price - the EMA-stop activation distance AND high >= the entry bar's high; exit the contracts covered by those orders.
+Exit: Long, the highest high since entry >= entry price + the EMA-stop activation distance AND close crosses below the chart-timeframe EMA; exit all remaining contracts.
+Exit: Short, the lowest low since entry <= entry price - the EMA-stop activation distance AND close crosses above the chart-timeframe EMA; exit all remaining contracts.
+Exit: Long or short, bar time > the configured backtest end date; exit all remaining contracts.

@@ -1,0 +1,14 @@
+Calculation: Heikin-Ashi close = (open + high + low + close) / 4; Heikin-Ashi open = (previous Heikin-Ashi open + previous Heikin-Ashi close) / 2, initialized to (open + close) / 2; Heikin-Ashi high = max(high, Heikin-Ashi open, Heikin-Ashi close); Heikin-Ashi low = min(low, Heikin-Ashi open, Heikin-Ashi close).
+Calculation: Heikin-Ashi neutral = Heikin-Ashi high > Heikin-Ashi low AND abs(Heikin-Ashi close - Heikin-Ashi open) <= (Heikin-Ashi high - Heikin-Ashi low) * neutral-body fraction.
+Calculation: Daily VWAP = cumulative sum of ((high + low + close) / 3 * volume) divided by cumulative volume, resetting both sums at the start of each day; undefined when cumulative volume is zero.
+Calculation: Up trend = Supertrend direction is up when Supertrend is selected, OR close > Parabolic SAR when Parabolic SAR is selected. Down trend = Supertrend direction is down when Supertrend is selected, OR close < Parabolic SAR when Parabolic SAR is selected.
+Long: Heikin-Ashi close > Heikin-Ashi open AND Heikin-Ashi neutral = false.
+Short: Heikin-Ashi close <= Heikin-Ashi open AND Heikin-Ashi neutral = false.
+Long: short-lookback EMA > medium-lookback EMA AND medium-lookback EMA > long-lookback EMA.
+Short: short-lookback EMA < medium-lookback EMA AND medium-lookback EMA < long-lookback EMA.
+Long: Up trend = true.
+Short: Down trend = true.
+Long: position side = flat AND Heikin-Ashi close > Heikin-Ashi open AND Heikin-Ashi neutral = false AND short-lookback EMA > medium-lookback EMA AND medium-lookback EMA > long-lookback EMA AND close > short-lookback EMA AND Up trend = true AND (VWAP filter = disabled OR close > Daily VWAP).
+Short: position side = flat AND Heikin-Ashi close < Heikin-Ashi open AND Heikin-Ashi neutral = false AND short-lookback EMA < medium-lookback EMA AND medium-lookback EMA < long-lookback EMA AND close < short-lookback EMA AND Down trend = true AND (VWAP filter = disabled OR close < Daily VWAP).
+Exit: long, ((exit mode = trend flip OR exit mode = any) AND Down trend = true AND previous Down trend = false) OR ((exit mode = Heikin-Ashi flip OR exit mode = any) AND Heikin-Ashi close < Heikin-Ashi open) OR ((exit mode = EMA cross OR exit mode = any) AND close < medium-lookback EMA AND previous close >= previous medium-lookback EMA).
+Exit: short, ((exit mode = trend flip OR exit mode = any) AND Up trend = true AND previous Up trend = false) OR ((exit mode = Heikin-Ashi flip OR exit mode = any) AND Heikin-Ashi close > Heikin-Ashi open) OR ((exit mode = EMA cross OR exit mode = any) AND close > medium-lookback EMA AND previous close <= previous medium-lookback EMA).

@@ -1,0 +1,8 @@
+Calculation: For each of three distinct timeframes ordered from shortest to longest, evaluate the same conditions using that timeframe's close, close EMA, ATR, highest high and lowest low. A timeframe may be higher or lower than the chart timeframe, or equal to it. For historical bars, use the last completed higher-timeframe bar, the last completed lower-timeframe bar within the chart bar, or the current chart bar when timeframes are equal.
+Calculation: Previous highest high and previous lowest low are the highest high and lowest low over the structure lookback ending immediately before the current structure lookback.
+Calculation: Bullish timeframe = close > EMA AND EMA > its value a slope lookback ago AND (strength multiplier = 0 OR absolute value of (close − EMA) > ATR × strength multiplier) AND highest high > previous highest high − ATR × tolerance multiplier AND lowest low > previous lowest low − ATR × tolerance multiplier.
+Calculation: Bearish timeframe = close < EMA AND EMA < its value a slope lookback ago AND (strength multiplier = 0 OR absolute value of (close − EMA) > ATR × strength multiplier) AND highest high < previous highest high + ATR × tolerance multiplier AND lowest low < previous lowest low + ATR × tolerance multiplier.
+Long: Bullish timeframe = true for any of the three timeframes.
+Short: Bearish timeframe = true for any of the three timeframes.
+Long: At least two timeframes are bullish AND the longest timeframe is not bearish.
+Short: At least two timeframes are bearish AND the longest timeframe is not bullish.

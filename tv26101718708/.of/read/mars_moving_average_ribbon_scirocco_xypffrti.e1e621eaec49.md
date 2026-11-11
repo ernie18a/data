@@ -1,0 +1,3 @@
+Calculation: Master moving average = selected SMA, EMA, RMA, WMA, or VWMA of a selected data field on the chart timeframe or an independently selected higher or lower timeframe. For a higher timeframe, use the last completed bar; for a lower timeframe, use the last completed intrabar within the chart bar. Carry the last available moving-average value forward across chart bars.
+Long: Master moving average > its previous chart-bar value
+Short: Master moving average < its previous chart-bar value

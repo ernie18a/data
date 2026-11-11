@@ -1,0 +1,8 @@
+Calculation: RSI candle close = mean of RSI of open, high, low, and close, all using the same length.
+Calculation: RSI candle open = (previous RSI candle open + previous RSI candle close) / 2; initialize to (RSI of open + RSI of close) / 2 on the first bar with available values.
+Calculation: RSI candle low = minimum of RSI of low, RSI candle open, and RSI candle close.
+Calculation: RSI candle high = maximum of RSI of high, RSI candle open, and RSI candle close.
+Calculation: Higher-timeframe RSI candle close = mean of RSI of open, high, low, and close on the higher timeframe, using the same RSI length as the chart timeframe; use the last completed higher-timeframe bar on historical bars and the still-forming higher-timeframe bar in real time.
+Calculation: Bars since last signal = current zero-based bar index minus the bar index of the most recent Long or Short signal; initialize the last signal bar index to -999 and update it after either signal.
+Long: RSI candle close crosses above RSI candle open AND RSI candle open = RSI candle low AND (strict mode disabled OR previous RSI candle close < oversold threshold) AND (higher-timeframe filter disabled OR higher-timeframe RSI candle close > 50) AND (price-action filter disabled OR close > open) AND bars since last signal >= cooldown.
+Short: RSI candle close crosses below RSI candle open AND RSI candle open = RSI candle high AND (strict mode disabled OR previous RSI candle close > overbought threshold) AND (higher-timeframe filter disabled OR higher-timeframe RSI candle close < 50) AND (price-action filter disabled OR close < open) AND bars since last signal >= cooldown.

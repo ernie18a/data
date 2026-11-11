@@ -1,0 +1,4 @@
+Long: close >= short-term EMA of close AND short-term EMA of close >= medium-term EMA of close AND medium-term EMA of close >= long-term EMA of close
+Short: close <= short-term EMA of close AND short-term EMA of close <= medium-term EMA of close AND medium-term EMA of close <= long-term EMA of close AND close < long-term EMA of close
+Long: close > higher-timeframe close + trigger multiplier * higher-timeframe ATR, using either the last completed higher-timeframe bar for both calculations or the still-forming higher-timeframe bar for both calculations
+Short: close < higher-timeframe close - trigger multiplier * higher-timeframe ATR, using either the last completed higher-timeframe bar for both calculations or the still-forming higher-timeframe bar for both calculations

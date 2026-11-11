@@ -1,0 +1,7 @@
+Calculation: Momentum candle = a completed bar whose close is above the preceding bar's high OR below the preceding bar's low.
+Calculation: Anchor trigger = either a momentum candle on the current bar, or a momentum candle on the preceding bar AND the current completed bar's close is between the preceding bar's low and high inclusive. The anchor candle is the momentum candle. A new anchor replaces any active range.
+Calculation: Active range = at an anchor trigger, set the upper and lower bounds to the anchor candle's high and low. On each subsequent bar without a new anchor trigger, first end the range if the close is above the upper bound or below the lower bound; otherwise update the upper bound to the greater of its previous value and the bar's high, and the lower bound to the lesser of its previous value and the bar's low. A range retains its anchor candle's direction until it ends or is replaced.
+Long: Anchor trigger AND anchor candle close >= anchor candle open.
+Short: Anchor trigger AND anchor candle close < anchor candle open.
+Exit: long, active range anchor candle close >= anchor candle open AND no new anchor trigger AND (close > previous upper bound OR close < previous lower bound).
+Exit: short, active range anchor candle close < anchor candle open AND no new anchor trigger AND (close > previous upper bound OR close < previous lower bound).

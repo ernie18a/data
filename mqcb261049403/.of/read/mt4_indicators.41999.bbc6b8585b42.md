@@ -1,0 +1,3 @@
+Calculation: Volume-weighted price-change sum = rolling sum, over the summation lookback, of (applied price minus previous bar's applied price) multiplied by the selected weight. Applied price is open, high, low, close, (high + low) / 2, (high + low + close) / 3, or (high + low + 2 × close) / 4. Weight is 1, volume, or true range. On the first bar, use open as the previous applied price and high minus low as true range; use all available bars until the lookback is filled.
+Long: Volume-weighted price-change sum > 0
+Short: Volume-weighted price-change sum < 0

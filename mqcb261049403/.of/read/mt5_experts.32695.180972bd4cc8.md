@@ -1,0 +1,4 @@
+Long: At the start of a new chart bar, no position is open AND the previous chart bar's close is below its lower Bollinger Band AND its RSI is below an oversold threshold AND its close is above the last completed higher-timeframe EMA.
+Short: At the start of a new chart bar, no position is open AND the previous chart bar's close is above its upper Bollinger Band AND its RSI is above an overbought threshold AND its close is below the last completed higher-timeframe EMA.
+Exit: Long, low is at or below the lower Bollinger Band of the bar preceding entry minus a fixed price offset OR high is at or above the middle Bollinger Band of the bar preceding entry.
+Exit: Short, high is at or above the upper Bollinger Band of the bar preceding entry plus a fixed price offset OR low is at or below the middle Bollinger Band of the bar preceding entry.

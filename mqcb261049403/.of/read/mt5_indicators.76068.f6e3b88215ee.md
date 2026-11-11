@@ -1,0 +1,7 @@
+Calculation: Bullish block = the high and low of a down-close bar immediately followed by a closed bar whose close minus open is at least ATR times an impulse multiplier, with ATR greater than zero.
+Calculation: Bearish block = the high and low of an up-close bar immediately followed by a closed bar whose open minus close is at least ATR times an impulse multiplier, with ATR greater than zero.
+Calculation: Tracked blocks = registered bullish and bearish blocks, including mitigated blocks retained for a configurable number of bars; remove mitigated blocks immediately if retention is disabled, and discard the oldest blocks when the configurable maximum count is exceeded. Register each block only once while it is tracked. A block is initially unmitigated and becomes mitigated on its first qualifying touch after its block bar, including the impulse bar.
+Long: A bullish block is registered.
+Long: An unmitigated tracked bullish block exists AND the current bar is after its block bar AND (in wick mode, low <= block high OR in close mode, min(open, close) <= block high).
+Short: A bearish block is registered.
+Short: An unmitigated tracked bearish block exists AND the current bar is after its block bar AND (in wick mode, high >= block low OR in close mode, max(open, close) >= block low).

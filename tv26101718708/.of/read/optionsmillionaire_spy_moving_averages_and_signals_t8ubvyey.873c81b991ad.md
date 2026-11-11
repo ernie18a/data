@@ -1,0 +1,4 @@
+Calculation: Zero-lag moving average = 2 × WMA(WMA(source, lookback), smoothing period) − WMA(WMA(WMA(source, lookback), smoothing period), lookback)
+Calculation: Crossover moving averages = independently selected SMA, EMA, WMA, HMA, ALMA, linear regression moving average, or zero-lag moving average of the selected price source, with a shorter lookback for the short-term average and a longer lookback for the long-term average; use their values from the previous chart bar, or, for a higher timeframe, the last completed higher-timeframe values available on the previous chart bar
+Long: Short-term crossover moving average > long-term crossover moving average
+Short: Short-term crossover moving average < long-term crossover moving average

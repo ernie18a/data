@@ -1,0 +1,3 @@
+Long: At the opening of a new chart bar, the highs of the four preceding completed chart bars strictly decrease from oldest to newest AND their opens strictly decrease from oldest to newest AND, on each of two stochastic timeframes, the stochastic main line is above its signal line on both the last completed bar and the bar still forming. The two stochastic calculations use the same parameters; one timeframe is shorter than the other, and each may be lower than, equal to, or higher than the chart timeframe.
+Exit: Long, stop loss is enabled AND low <= entry price - stop-loss distance
+Exit: Long, take profit is enabled AND high >= entry price + take-profit distance

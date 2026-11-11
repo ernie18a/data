@@ -1,0 +1,2 @@
+Long: Chart-timeframe close >= a chart-timeframe moving average of a selected price source, calculated independently for each configured moving average using its selected type and length.
+Short: Chart-timeframe close < a chart-timeframe moving average of a selected price source, calculated independently for each configured moving average using its selected type and length.

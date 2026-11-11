@@ -1,0 +1,4 @@
+Calculation: Estimated relative strength = clamp(center + scale × 100 × (close / close at the shorter lag − 1), lower bound, upper bound).
+Calculation: Qualification score = number of these conditions satisfied: close > short-, medium-, and long-term simple moving averages of close; short-term simple moving average of close > medium-term simple moving average > long-term simple moving average; long-term simple moving average of close rises on every bar over its lookback; close >= rolling lowest low × (1 + low-distance threshold); close >= rolling highest high × (1 − high-distance threshold); estimated relative strength >= its threshold; volume >= simple moving average of volume × volume multiplier; close > close at both the shorter and longer lags. The rolling high and low use the same lookback, which equals the longer close lag.
+Long: Qualification score = total number of conditions.
+Exit: long, qualification score <= exit threshold.

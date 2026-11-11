@@ -1,0 +1,5 @@
+Calculation: Smoothed OHLC = apply the same selected moving average and lookback separately to open, high, low, and close. For the default smoothing, each output is (previous bar's weighted moving average of the source × (lookback − 1) + current source) / lookback; use the simple moving average until the previous weighted moving average is available.
+Calculation: Volatility quality = let H, L, O, and C be smoothed high, low, open, and close; P be the previous smoothed close; T = max(H, C) − min(L, P); R = H − L; Q = ((C − P) / T + (C − O) / R) / 2 when T and R are both nonzero, otherwise 0; V = abs(Q) × (C − P + C − O) / 2. The result is V when abs(V) > 1, otherwise 10 × V when 10 × abs(V) > 1, otherwise V.
+Calculation: Volatility quality z-score = (volatility quality − its simple moving average) / its standard deviation over the same lookback.
+Long: Volatility quality z-score > positive threshold.
+Short: Volatility quality z-score < negative threshold, equal in magnitude to the positive threshold.

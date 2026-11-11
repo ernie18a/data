@@ -1,0 +1,7 @@
+Calculation: Smoothed RSI = RSI of a selectable price source, optionally smoothed with an EMA, SMA, or RMA.
+Calculation: RSI signal = EMA, SMA, or RMA of smoothed RSI.
+Calculation: Higher-timeframe RSI = RSI of close on the last completed higher-timeframe bar.
+Calculation: Relative volume = current volume / SMA of volume.
+Long: Smoothed RSI crosses above the extreme-low threshold at the chart bar close.
+Long: Smoothed RSI crosses above the oversold threshold at the chart bar close AND, if the trend filter is enabled, each enabled condition holds: close > short-term EMA of close, short-term EMA of close > long-term SMA of close, short-term EMA of close > its value a specified number of bars ago AND, if the higher-timeframe RSI filter is enabled, higher-timeframe RSI >= its minimum threshold AND, if the volume filter is enabled, relative volume >= its minimum threshold AND, if signal confirmation is enabled, smoothed RSI > RSI signal.
+Long: Smoothed RSI crosses above the oversold threshold at the chart bar close AND, if the trend filter is enabled, each enabled condition holds: close > short-term EMA of close, short-term EMA of close > long-term SMA of close, short-term EMA of close > its value a specified number of bars ago AND, if signal confirmation is enabled, smoothed RSI > RSI signal AND higher-timeframe RSI >= its minimum threshold plus a nonnegative buffer AND relative volume >= the high-conviction threshold AND, if the volume filter is enabled, relative volume >= its minimum threshold.

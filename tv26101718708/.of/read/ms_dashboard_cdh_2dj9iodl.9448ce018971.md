@@ -1,0 +1,5 @@
+Calculation: Money flow = SMA of (Heikin-Ashi close − Heikin-Ashi open) / (Heikin-Ashi high − Heikin-Ashi low), multiplied by a positive multiplier plus one; use the unsmoothed value when the SMA length is one. Calculate separately on the chart timeframe and on each selected higher or lower timeframe. For historical bars, use the last completed higher-timeframe bar or the last completed lower-timeframe bar within the chart bar; for a live chart bar, a higher-timeframe value uses the bar still forming.
+Long: Money flow > 0 on the chart timeframe or on any selected higher or lower timeframe.
+Short: Money flow ≤ 0 on the chart timeframe or on any selected higher or lower timeframe.
+Long: Chart-timeframe money flow > 0 AND previous chart-timeframe money flow < 0.
+Short: Chart-timeframe money flow < 0 AND previous chart-timeframe money flow > 0.

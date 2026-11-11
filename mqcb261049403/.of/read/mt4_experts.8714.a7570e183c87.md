@@ -1,0 +1,14 @@
+Calculation: Bar i = the i-th completed chart bar before the current bar; body(i) = abs(close(i) - open(i)).
+Calculation: Vertical horizontal filter = abs(high of the bar with the highest close over the lookback - low of the bar with the lowest close over the lookback) / sum of abs(close(i) - close(i+1)) over the lookback, evaluated on completed bars.
+Calculation: Bullish engulfing = close(2) < open(2) AND close(1) > open(1) AND body(2) < body(1).
+Calculation: Bearish engulfing = close(2) > open(2) AND close(1) < open(1) AND body(2) < body(1).
+Calculation: Morning star = body(3) > body(2) AND body(1) > body(2) AND close(3) < open(3) AND close(1) > open(1) AND close(1) > min(open(3), close(3)) + body(3) / 2.
+Calculation: Evening star = body(3) > body(2) AND body(1) > body(2) AND close(3) > open(3) AND close(1) < open(1) AND close(1) < max(open(3), close(3)) - body(3) / 2.
+Calculation: Doji = body(1) < (high(1) - low(1)) / doji divisor.
+Calculation: OsMA = MACD main line using a shorter and a longer EMA of close, minus its simple moving average signal line.
+Long: close(1) > open(1) AND evening star = false AND doji = false AND bearish engulfing = false AND EMA-based standard deviation of close on bar 1 > threshold AND ((vertical horizontal filter on bar 1 >= trend threshold AND OsMA(1) > 0 AND OsMA(1) > OsMA(2)) OR (vertical horizontal filter on bar 1 < trend threshold AND stochastic main line(1) > stochastic signal line(1))).
+Short: close(1) < open(1) AND morning star = false AND doji = false AND bullish engulfing = false AND EMA-based standard deviation of close on bar 1 > threshold AND ((vertical horizontal filter on bar 1 >= trend threshold AND OsMA(1) < 0 AND OsMA(1) < OsMA(2)) OR (vertical horizontal filter on bar 1 < trend threshold AND stochastic main line(1) < stochastic signal line(1))).
+Exit: short, bullish engulfing = true OR morning star = true OR (vertical horizontal filter on bar 1 >= trend threshold AND OsMA(1) > 0) OR (vertical horizontal filter on bar 1 < trend threshold AND stochastic main line(1) >= stochastic signal line(1)).
+Exit: long, bearish engulfing = true OR evening star = true OR (vertical horizontal filter on bar 1 >= trend threshold AND OsMA(1) < 0) OR (vertical horizontal filter on bar 1 < trend threshold AND stochastic main line(1) <= stochastic signal line(1)).
+Exit: long, price <= entry price - stop-loss distance OR price >= entry price + take-profit distance OR (highest price since entry > entry price + trailing distance AND price <= highest price since entry - trailing distance).
+Exit: short, price >= entry price + stop-loss distance OR price <= entry price - take-profit distance OR (lowest price since entry < entry price - trailing distance AND price >= lowest price since entry + trailing distance).

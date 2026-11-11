@@ -1,0 +1,7 @@
+Calculation: Selected bar = either the bar still forming or the last completed bar, using the same selection for all indicators. Calculate each decision independently on each configured timeframe, which may be the chart timeframe or a higher or lower timeframe; references to preceding bars are on that timeframe.
+Long: Stochastic main line with high-low price field and SMA slowing > its SMA signal line on the selected bar
+Short: Stochastic main line with high-low price field and SMA slowing < its SMA signal line on the selected bar
+Long: Shorter-lookback RSI of typical price on the bar still forming > longer-lookback RSI of typical price on the selected bar
+Short: Shorter-lookback RSI of typical price on the bar still forming <= longer-lookback RSI of typical price on the selected bar AND longer-lookback RSI of typical price on the bar still forming > shorter-lookback RSI of typical price on the selected bar
+Long: For either the shorter-lookback or longer-lookback CCI of typical price, CCI on the selected bar > 0 AND CCI on the selected bar > CCI on the preceding bar OR CCI on the selected bar < 0 AND CCI on the selected bar >= CCI on the preceding bar
+Short: For either the shorter-lookback or longer-lookback CCI of typical price, CCI on the selected bar > 0 AND CCI on the selected bar <= CCI on the preceding bar OR CCI on the selected bar < 0 AND CCI on the selected bar < CCI on the preceding bar

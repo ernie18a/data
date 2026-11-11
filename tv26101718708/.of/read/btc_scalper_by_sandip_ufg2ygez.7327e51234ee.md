@@ -1,0 +1,11 @@
+Calculation: Demand zone = the most recently confirmed pivot low and an upper bound equal to that pivot low plus ATR at confirmation multiplied by a zone-width parameter. A pivot low is confirmed after an equal number of bars on each side; retain the zone until the next pivot low is confirmed.
+Calculation: Supply zone = the most recently confirmed pivot high and a lower bound equal to that pivot high minus ATR at confirmation multiplied by a zone-width parameter. A pivot high is confirmed after an equal number of bars on each side; retain the zone until the next pivot high is confirmed.
+Calculation: CPR pivot = (high + low + close) / 3 of the last completed higher-timeframe bar.
+Long: Shorter-period EMA of close crosses above longer-period EMA of close.
+Short: Shorter-period EMA of close crosses below longer-period EMA of close.
+Long: Shorter-period EMA of close > longer-period EMA of close.
+Short: Shorter-period EMA of close <= longer-period EMA of close.
+Long: Low <= demand zone upper bound AND low >= demand zone pivot low - current ATR multiplied by a bounce-distance parameter AND close > open AND close > previous bar low AND shorter-period EMA of close crossed above longer-period EMA of close within a lookback including the current bar AND, if enabled, RSI is above a lower threshold and below an upper threshold AND, if enabled, volume > volume SMA multiplied by a volume parameter AND, if enabled, close > CPR pivot.
+Short: High >= supply zone lower bound AND high <= supply zone pivot high + current ATR multiplied by a bounce-distance parameter AND close < open AND close < previous bar high AND shorter-period EMA of close crossed below longer-period EMA of close within a lookback including the current bar AND, if enabled, RSI is above the same lower threshold and below the same upper threshold AND, if enabled, volume > volume SMA multiplied by the same volume parameter AND, if enabled, close < CPR pivot.
+Exit: long, high >= entry price + current ATR multiplied by a take-profit parameter OR low <= entry price - current ATR multiplied by a stop-loss parameter.
+Exit: short, low <= entry price - current ATR multiplied by the same take-profit parameter OR high >= entry price + current ATR multiplied by the same stop-loss parameter.

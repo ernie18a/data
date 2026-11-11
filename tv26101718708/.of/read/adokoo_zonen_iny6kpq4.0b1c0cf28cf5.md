@@ -1,0 +1,2 @@
+Long: Previous close < previous open AND close > open AND close >= previous open AND open <= previous close AND close - open > previous open - previous close
+Short: Previous close > previous open AND close < open AND open >= previous close AND close <= previous open AND open - close > previous close - previous open

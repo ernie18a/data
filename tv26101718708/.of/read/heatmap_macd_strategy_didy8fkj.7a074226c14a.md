@@ -1,0 +1,16 @@
+Calculation: MACD histograms = MACD histograms of the selected source on five independently selected timeframes, using the same fast, slow and signal lengths. For historical bars, use the last completed higher-timeframe bar, the chart bar for the chart timeframe, or the last completed lower-timeframe bar within the chart bar. Compare prior values on the preceding chart bar.
+Calculation: Long stop = entry price minus the stop distance when the stop is initialized; if trailing is enabled, update it to the greater of the previous stop and the highest high reached while long minus the trailing distance. If breakeven is enabled, once per position, when the previous bar had a long position and (close minus entry price) divided by ten minimum ticks reaches the breakeven threshold, replace the stop with entry price plus the breakeven offset. A new signal resets the stop from the latest long entry price.
+Calculation: Short stop = entry price plus the stop distance when the stop is initialized; if trailing is enabled, update it to the lesser of the previous stop and the lowest low reached while short plus the trailing distance. If breakeven is enabled, once per position, when the previous bar had a short position and (entry price minus close) divided by ten minimum ticks reaches the breakeven threshold, replace the stop with entry price minus the breakeven offset. A new signal resets the stop from the latest short entry price.
+Long: At chart-bar close, all five MACD histograms > 0 AND fewer than five were > 0 on the preceding chart bar.
+Long: Any MACD histogram > 0 AND that histogram < 0 on the preceding chart bar.
+Short: At chart-bar close, all five MACD histograms < 0 AND fewer than five were < 0 on the preceding chart bar.
+Short: Any MACD histogram < 0 AND that histogram > 0 on the preceding chart bar.
+Exit: long, the previous bar had a long position AND stop loss is enabled AND low <= long stop.
+Exit: short, the previous bar had a short position AND stop loss is enabled AND high >= short stop.
+Exit: long, the previous bar had a long position AND all five MACD histograms were > 0 on the preceding chart bar AND fewer than five are > 0 now.
+Exit: short, the previous bar had a short position AND all five MACD histograms were < 0 on the preceding chart bar AND fewer than five are < 0 now.
+Exit: long, a previously placed first take-profit limit is reached at entry price plus the first profit distance; exit the configured percentage.
+Exit: long, a previously placed second take-profit limit is reached at entry price plus the second profit distance; exit the remaining position.
+Exit: short, a previously placed first take-profit limit is reached at entry price minus the first profit distance; exit the configured percentage.
+Exit: short, a previously placed second take-profit limit is reached at entry price minus the second profit distance; exit the remaining position.
+Calculation: Take-profit limits are placed when the previous chart bar had the corresponding position AND the enabled stop condition is not met; their input enable switches do not restrict order placement. Stop, trailing, profit and breakeven-offset distances are configurable pip amounts converted to price units; the breakeven trigger uses minimum ticks.

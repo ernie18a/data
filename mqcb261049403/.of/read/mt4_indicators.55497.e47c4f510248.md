@@ -1,0 +1,6 @@
+Calculation: Fast line = EMA of close-price RSI, calculated on the chart timeframe or on the last completed higher-timeframe bar.
+Calculation: Slow line = Recursive trailing line calculated on the same timeframe as the fast line. Let distance be a multiplier times the EMA of the EMA of the absolute bar-to-bar change in the fast line; both EMA periods equal twice the RSI period minus one. Initialize the trailing line to zero. If the fast line is below the previous trailing line, set the trailing line to fast line plus distance, capped at the previous trailing line if the previous fast line was also below it. If the fast line is above the previous trailing line, set the trailing line to fast line minus distance, floored at the previous trailing line if the previous fast line was also above it. If equal, retain the previous trailing line.
+Long: Previous fast line < previous slow line AND current fast line > current slow line.
+Long: Previous fast line < level AND current fast line > level.
+Short: Previous fast line > previous slow line AND current fast line < current slow line.
+Short: Previous fast line > level AND current fast line < level.

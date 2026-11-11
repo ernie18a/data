@@ -1,0 +1,4 @@
+Long: Current low > high two bars ago AND current low - high two bars ago >= minimum gap size multiplier × current ATR AND absolute value of previous close - previous open >= displacement multiplier × current ATR AND previous close > previous open
+Short: Current high < low two bars ago AND low two bars ago - current high >= minimum gap size multiplier × current ATR AND absolute value of previous close - previous open >= displacement multiplier × current ATR AND previous close < previous open
+Long: A new higher-timeframe bar has begun AND the low of the last completed higher-timeframe bar > the high of the completed higher-timeframe bar two bars before it
+Short: A new higher-timeframe bar has begun AND the high of the last completed higher-timeframe bar < the low of the completed higher-timeframe bar two bars before it

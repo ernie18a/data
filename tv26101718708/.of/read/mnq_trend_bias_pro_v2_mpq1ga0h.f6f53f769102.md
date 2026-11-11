@@ -1,0 +1,12 @@
+Calculation: Higher-timeframe bullish bias = higher-timeframe close > EMA AND close > session VWAP AND EMA > previous EMA AND session VWAP > previous session VWAP; use the last completed higher-timeframe bar and carry its result forward between completions.
+Calculation: Higher-timeframe bearish bias = higher-timeframe close < EMA AND close < session VWAP AND EMA < previous EMA AND session VWAP < previous session VWAP; use the last completed higher-timeframe bar and carry its result forward between completions.
+Calculation: VWAP extension = absolute value of chart close minus chart session VWAP divided by chart ATR when ATR > 0, otherwise 0. Both session VWAPs use typical price (high + low + close) / 3. The chart and higher-timeframe EMAs use the same length.
+Calculation: Long pullback armed = 1 after a chart bar closes below its EMA during bullish bias; reset to 0 when bullish bias ends or a long pullback condition occurs. Short pullback armed = 1 after a chart bar closes above its EMA during bearish bias; reset to 0 when bearish bias ends or a short pullback condition occurs.
+Long: Higher-timeframe bullish bias = true.
+Short: Higher-timeframe bearish bias = true.
+Long: Higher-timeframe bullish bias = true AND previous chart bar's higher-timeframe bullish bias = false.
+Short: Higher-timeframe bearish bias = true AND previous chart bar's higher-timeframe bearish bias = false.
+Long: Higher-timeframe bullish bias = true AND close > highest high of the preceding breakout-lookback chart bars AND close > chart EMA AND close > chart session VWAP AND close > open AND VWAP extension <= maximum extension AND no earlier long breakout has occurred during the current uninterrupted bullish bias.
+Short: Higher-timeframe bearish bias = true AND close < lowest low of the preceding breakout-lookback chart bars AND close < chart EMA AND close < chart session VWAP AND close < open AND VWAP extension <= maximum extension AND no earlier short breakout has occurred during the current uninterrupted bearish bias.
+Long: Long pullback armed = 1 AND higher-timeframe bullish bias = true AND close > chart EMA AND previous close <= previous chart EMA AND close > chart session VWAP AND close > open AND VWAP extension <= maximum extension.
+Short: Short pullback armed = 1 AND higher-timeframe bearish bias = true AND close < chart EMA AND previous close >= previous chart EMA AND close < chart session VWAP AND close < open AND VWAP extension <= maximum extension.

@@ -1,0 +1,5 @@
+Calculation: Channel midline and upper band = For a selected price source and true range, optionally replace each series x with 2*x - x[lag], where lag = floor((period - 1)/(2*poles)). Set beta = (1 - cos(2*pi/period))/(1.414^(2/poles) - 1), alpha = -beta + sqrt(beta^2 + 2*beta), and EMA length = max(1, floor(2/alpha)). Apply the EMA to each resulting series repeatedly for the selected number of poles. The filtered price is the midline; the upper band is the midline plus a multiplier times the filtered true range.
+Calculation: Fixed stop = close of the entry signal bar minus a multiplier times ATR from the bar preceding the entry signal bar.
+Long: close crosses above the upper band AND datetime is within the selected date range AND (regime filter is disabled OR close > EMA of close) AND (OBV filter is disabled OR OBV > EMA of OBV) AND position is flat.
+Exit: long, low <= fixed stop.
+Exit: long, (midline exit is enabled AND close < channel midline) OR (regime exit and regime filter are enabled AND close < EMA of close).

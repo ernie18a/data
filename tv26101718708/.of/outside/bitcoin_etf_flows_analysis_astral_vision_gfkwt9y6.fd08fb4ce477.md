@@ -1,0 +1,1 @@
+Go long when the combined daily Bitcoin flow of the selected spot Bitcoin ETFs turns positive after a period of negative flows. Calculate each ETF's flow as the change between its two most recently completed daily Bitcoin balances, treating missing balances as zero, and sum the selected ETFs' flows.

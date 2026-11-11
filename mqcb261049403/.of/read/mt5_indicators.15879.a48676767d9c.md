@@ -1,0 +1,3 @@
+Calculation: Channel boundary = round the volume-weighted moving average of highs for the upper boundary or lows for the lower boundary, plus a vertical price offset, to the nearest price increment; use the same lookback, volume weights, offset, and rounding increment for both boundaries.
+Long: close > upper channel boundary from a specified number of chart bars ago
+Short: close < lower channel boundary from the same number of chart bars ago

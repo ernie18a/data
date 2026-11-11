@@ -1,0 +1,4 @@
+Long: Current chart bar low < previous chart bar low AND current chart bar close > (current chart bar high + current chart bar low) / 2
+Short: Current chart bar high > previous chart bar high AND current chart bar close < (current chart bar high + current chart bar low) / 2
+Long: Forming higher-timeframe bar low < previous completed higher-timeframe bar low AND forming higher-timeframe bar close > (forming higher-timeframe bar high + forming higher-timeframe bar low) / 2
+Short: Forming higher-timeframe bar high > previous completed higher-timeframe bar high AND forming higher-timeframe bar close < (forming higher-timeframe bar high + forming higher-timeframe bar low) / 2

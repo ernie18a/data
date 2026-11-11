@@ -1,0 +1,7 @@
+Calculation: Volume delta = volume × (2 × close − high − low) / (high − low), or zero when high = low.
+Calculation: Delta oscillator = simple moving average of normalized cumulative delta, where cumulative delta is the rolling sum of volume delta and normalized cumulative delta is cumulative delta divided by its rolling population standard deviation, or zero when the standard deviation is zero or the normalization window is incomplete; use available bars for incomplete sum and smoothing windows.
+Calculation: Confirmed swing high or low = a bar whose high is strictly greater than, or low is strictly less than, every corresponding value in an equal number of bars on each side. Confirm it after the required bars on its right have formed. The previous swing is the nearest confirmed swing of the same type within a backward search range measured from the candidate swing.
+Long: Delta oscillator >= 0.
+Long: A swing low is confirmed AND its low < the previous swing low AND its delta oscillator at the swing bar > the delta oscillator at the previous swing bar.
+Short: Delta oscillator < 0.
+Short: A swing high is confirmed AND its high > the previous swing high AND its delta oscillator at the swing bar < the delta oscillator at the previous swing bar.

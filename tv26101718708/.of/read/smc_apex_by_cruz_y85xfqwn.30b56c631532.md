@@ -1,0 +1,13 @@
+Calculation: Swing high and swing low = the most recently confirmed pivot high and pivot low, respectively, using equal numbers of bars before and after the pivot; update each on its confirmation bar.
+Calculation: Bullish structure break = close > current swing high AND previous close <= previous bar's swing high. Bearish structure break = close < current swing low AND previous close >= previous bar's swing low.
+Calculation: Bullish gap = current low > high two bars ago AND (current low - high two bars ago) / high two bars ago >= minimum gap fraction. Bearish gap = low two bars ago > current high AND (low two bars ago - current high) / current high >= minimum gap fraction.
+Calculation: Pending gaps = independently for each direction, a structure break sets that direction to waiting and clears its stored gap. While waiting, each qualifying gap replaces the stored gap, including on the structure-break bar. A bullish stored gap has upper bound equal to its gap bar's low and lower bound equal to its high two bars earlier; a bearish stored gap has upper bound equal to its low two bars earlier and lower bound equal to its gap bar's high. Clear waiting immediately when that direction's gap-retest condition is met, even if its breakout or signal filters fail.
+Calculation: Signal count and cooldown = count both directions' breakout signals together, resetting the count at each calendar-day boundary. Initialize the last breakout-signal bar index and last structure-label bar index to zero. Update each index when its respective event occurs.
+Long: Bullish structure break AND close != EMA of close AND bars since either direction's last structure label >= structure-label cooldown.
+Short: Bearish structure break AND close != EMA of close AND bars since either direction's last structure label >= structure-label cooldown.
+Long: Bullish gap AND close > EMA of close.
+Short: Bearish gap AND close < EMA of close.
+Long: Waiting for a bullish gap AND a bullish gap is stored AND low <= stored upper bound AND close >= stored lower bound AND close > EMA of close AND close > highest high over the breakout lookback ending on the previous bar AND bars since either direction's last breakout signal >= signal cooldown AND today's breakout-signal count < maximum.
+Short: Waiting for a bearish gap AND a bearish gap is stored AND high >= stored lower bound AND close <= stored upper bound AND close < EMA of close AND close < lowest low over the breakout lookback ending on the previous bar AND bars since either direction's last breakout signal >= signal cooldown AND today's breakout-signal count < maximum.
+Long: Close > EMA of close.
+Short: Close <= EMA of close.

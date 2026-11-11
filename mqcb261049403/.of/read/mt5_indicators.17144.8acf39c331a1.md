@@ -1,0 +1,5 @@
+Calculation: Selected price = a configurable choice of open, high, low, close, median, typical, weighted, OHLC average, body midpoint, trend-biased price, or extreme trend-biased price, calculated from ordinary or Heikin-Ashi OHLC. Trend-biased price is (high + close) / 2 when close > open and (low + close) / 2 otherwise. Extreme trend-biased price is high when close > open, low when close < open, and close otherwise.
+Calculation: NEMA = the alternating sum over k from 1 through depth of binomial(depth, k) times the k-th recursively applied EMA of the input, starting with a positive sign. Each EMA uses the same period and is initialized with its first input; if the period is at most 1, NEMA equals the input.
+Calculation: NEMA MACD = NEMA of selected price with a shorter period minus NEMA of selected price with a longer period. Its signal is NEMA of NEMA MACD. All three use the same depth. Calculate on the chart timeframe or a higher timeframe using its bar still forming.
+Long: NEMA MACD > its signal OR NEMA MACD = its signal AND the preceding state is long.
+Short: NEMA MACD < its signal OR NEMA MACD = its signal AND the preceding state is short.

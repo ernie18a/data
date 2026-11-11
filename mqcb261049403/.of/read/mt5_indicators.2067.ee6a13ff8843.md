@@ -1,0 +1,5 @@
+Calculation: Fish = Let midpoint be (high + low) / 2, highest high and lowest low be over a lookback ending at the current bar, and range be their difference. Initialize the smoothed value on the first eligible bar as clamp(0.66 × ((midpoint − lowest low) / range − 0.5), −0.999, 0.999), or 0 if range is zero. On each subsequent bar with nonzero range, set the smoothed value to clamp(0.66 × ((midpoint − lowest low) / range − 0.5) + 0.67 × the previous smoothed value, −0.999, 0.999); when range is zero, retain the previous smoothed value. Initialize Fish to 0 and subsequently set Fish to 0.5 × ln((1 + smoothed value) / (1 − smoothed value)) + 0.5 × previous Fish.
+Long: Chart-timeframe Fish != 0 AND chart-timeframe Fish > previous chart-timeframe Fish
+Short: Chart-timeframe Fish != 0 AND chart-timeframe Fish < previous chart-timeframe Fish
+Long: Forming higher-timeframe Fish != 0 AND forming higher-timeframe Fish > previous completed higher-timeframe Fish
+Short: Forming higher-timeframe Fish != 0 AND forming higher-timeframe Fish < previous completed higher-timeframe Fish

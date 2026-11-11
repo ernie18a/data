@@ -1,0 +1,2 @@
+Long: For any of the four independently evaluated chart or higher timeframes, the RVI main line was above its signal line at the start of that timeframe's current bar, using the bar still forming.
+Short: For any of the four independently evaluated chart or higher timeframes, the RVI main line was below its signal line at the start of that timeframe's current bar, using the bar still forming.

@@ -1,0 +1,4 @@
+Calculation: Bullish strength = round(100 × (indicator(low − high[2] >= ATR × smaller gap multiplier) + indicator(low − high[2] >= ATR × larger gap multiplier) + indicator(high[1] − low[1] >= ATR × displacement multiplier) + indicator(close > short-period EMA of close AND short-period EMA of close > long-period EMA of close)) / 4).
+Calculation: Bearish strength = round(100 × (indicator(low[2] − high >= ATR × smaller gap multiplier) + indicator(low[2] − high >= ATR × larger gap multiplier) + indicator(high[1] − low[1] >= ATR × displacement multiplier) + indicator(close < short-period EMA of close AND short-period EMA of close < long-period EMA of close)) / 4).
+Long: low > high[2] AND bullish strength >= minimum strength AND bullish strength is within an enabled strength range.
+Short: high < low[2] AND bearish strength >= minimum strength AND bearish strength is within an enabled strength range.

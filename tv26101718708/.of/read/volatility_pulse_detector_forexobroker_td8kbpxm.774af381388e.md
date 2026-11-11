@@ -1,0 +1,4 @@
+Calculation: Detrended ATR = (short-term ATR - long-term ATR) / long-term ATR when long-term ATR > 0; otherwise 0.
+Calculation: Last signal bar index = 0 initially; update it to the current bar index after each long or short signal.
+Long: Detrended ATR > 0 AND previous bar's detrended ATR <= 0 AND close > EMA of close AND close > highest high of the preceding lookback bars AND volume > SMA of volume AND current bar index - last signal bar index >= cooldown bars.
+Short: Detrended ATR > 0 AND previous bar's detrended ATR <= 0 AND close < EMA of close AND close < lowest low of the preceding lookback bars AND volume > SMA of volume AND current bar index - last signal bar index >= cooldown bars.

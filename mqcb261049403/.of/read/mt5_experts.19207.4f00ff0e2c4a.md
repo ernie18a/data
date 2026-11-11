@@ -1,0 +1,4 @@
+Calculation: Pending buy-stop level = At the opening of each chart bar, if there is no long position, the high of the second-last completed bar of the other timeframe is greater than the high of its last completed bar, and the high of the second-last completed chart bar is greater than the high of the last completed chart bar, set the level to the last completed chart bar’s high plus the buy-stop offset if no buy-stop is pending or this new level is lower than the existing level. Otherwise retain the existing level. The other timeframe may be higher or lower than the chart timeframe, depending on the chart. Retain the pending level until filled or replaced.
+Long: A buy-stop level is pending AND the chart bar’s high >= the pending buy-stop level
+Exit: long, stop loss is enabled AND low <= entry price minus the long stop-loss distance
+Exit: long, take profit is enabled AND high >= entry price plus the long take-profit distance

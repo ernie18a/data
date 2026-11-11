@@ -1,0 +1,7 @@
+Calculation: Selected moving averages = two independently selected chart-timeframe moving averages, each with its own source, length, and type: SMA, EMA, WMA, RMA, HMA, VWMA, ALMA, LSMA, DEMA, TEMA, ZLEMA, KAMA, TMA, McGinley Dynamic, VAMA, FRAMA, T3, SWMA, or EVWMA. Their fast and slow designations do not enforce a length relationship.
+Calculation: TMA = SMA of SMA of the source, both using the ceiling of half the selected length.
+Calculation: VAMA = rolling sum of source multiplied by weight divided by rolling sum of weight, where weight is the source's rolling standard deviation divided by its rolling mean; all windows use the selected length.
+Calculation: FRAMA = recursively alpha times source plus one minus alpha times the previous FRAMA, initialized to source; alpha is an exponentially transformed and bounded fractal dimension. The dimension is the logarithm of (N1 + N2) divided by N3, normalized by the logarithm of 2. N1 is (max(current high, half length) - min(current low, half length)) divided by half length; N2 uses the same expression with high and low from half a length ago; N3 is (max(current high, length) - min(current low, length)) divided by length.
+Calculation: SWMA = standard four-bar SWMA when the selected length is four; otherwise SMA of the selected length.
+Long: Selected fast moving average is above selected slow moving average AND on the previous bar fast was at or below slow.
+Short: Selected fast moving average is below selected slow moving average AND on the previous bar fast was at or above slow.

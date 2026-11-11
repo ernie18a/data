@@ -1,0 +1,9 @@
+Calculation: Composite score = clamp to [-1, 1] the weighted average of four votes: clamp((shorter-period EMA(close) - longer-period EMA(close)) / ATR, -1, 1); clamp((RSI(close) - 50) / 20, -1, 1); clamp((close - session VWAP of typical price) / ATR, -1, 1) on intraday bars, otherwise 0; and +1 when Supertrend indicates an uptrend, otherwise -1. Replace unavailable EMA, RSI, and VWAP votes with 0; if ATR is zero, the ATR-divided votes are unavailable. Divide by the sum of all four nonnegative weights, or by 1 if their sum is zero.
+Calculation: Overall score = mean of the composite scores on the chart timeframe and two higher timeframes, one longer than the other. For each higher timeframe, use either the last completed bar or the still-forming bar, according to the non-repainting setting.
+Calculation: Expected move = close × annualized realized volatility × square root of time to expiry in years, where annualized realized volatility is the standard deviation of log(close / previous close) over a lookback multiplied by the square root of the annual trading-day count.
+Calculation: Put management level = close - strike-distance multiplier × expected move + management-buffer multiplier × expected move.
+Calculation: Call management level = close + strike-distance multiplier × expected move - management-buffer multiplier × expected move.
+Long: overall score >= -range band.
+Short: overall score <= range band.
+Exit: long, (overall score >= -range band AND close <= put management level) OR (overall score > range band AND close < lowest low over the preceding swing lookback, excluding the current bar).
+Exit: short, (overall score <= range band AND close >= call management level) OR (overall score < -range band AND close > highest high over the preceding swing lookback, excluding the current bar).

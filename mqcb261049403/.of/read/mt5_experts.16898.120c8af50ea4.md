@@ -1,0 +1,4 @@
+Calculation: Downward percentage = if the forming reference-timeframe close < its high, round(100 × close / high − 100, 2 decimal places); otherwise 0. The reference timeframe may be higher or lower than the chart timeframe.
+Calculation: Upward percentage = if the forming reference-timeframe close > its low, round(100 × close / low − 100, 2 decimal places); otherwise 0. The reference timeframe may be higher or lower than the chart timeframe.
+Long: position side is flat AND downward percentage >= negative percentage threshold AND previous chart bar close > previous chart bar open
+Short: position side is flat AND upward percentage <= percentage threshold AND previous chart bar close < previous chart bar open

@@ -1,0 +1,4 @@
+Long: An earlier-slot moving average > the immediately following enabled-slot moving average; each moving average uses the chart timeframe or the last completed bar of a higher timeframe.
+Short: An earlier-slot moving average <= the immediately following enabled-slot moving average; each moving average uses the chart timeframe or the last completed bar of a higher timeframe.
+Long: The first enabled moving average > every other enabled moving average AND at least one other moving average is enabled; each moving average uses the chart timeframe or the last completed bar of a higher timeframe.
+Short: The first enabled moving average < every other enabled moving average AND at least one other moving average is enabled; each moving average uses the chart timeframe or the last completed bar of a higher timeframe.
