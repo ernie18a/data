@@ -1,0 +1,6 @@
+Calculation: StochMain = SMA over a slowing length of raw %K, where raw %K = 100*(close - lowest low over K lookback)/(highest high over K lookback - lowest low over K lookback), on chart timeframe bars
+Calculation: StochSignal = SMA of StochMain over a D lookback (D lookback is longer than the K lookback and longer than the slowing length)
+Long: no position is open AND StochMain on the bar before the last completed bar <= StochSignal on that bar AND StochMain on the last completed bar > StochSignal on the last completed bar (evaluated once at the open of each new bar)
+Short: no position is open AND StochMain on the bar before the last completed bar >= StochSignal on that bar AND StochMain on the last completed bar < StochSignal on the last completed bar (evaluated once at the open of each new bar)
+Exit: long, short condition is true (opposite cross) OR price <= entry price - fixed stop distance OR price >= entry price + fixed target distance
+Exit: short, long condition is true (opposite cross) OR price >= entry price + fixed stop distance OR price <= entry price - fixed target distance

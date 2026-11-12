@@ -1,0 +1,3 @@
+Calculation: ExVol = average of (close - open) over the lookback of most recent bars including the current bar. It is computed either on chart-timeframe bars or on higher-timeframe bars, using the higher-timeframe bar still forming that contains the current chart bar. Previous ExVol = the same calculation at the previous bar of the timeframe used.
+Long: ExVol > 0 AND ExVol > previous ExVol
+Short: ExVol < 0 AND ExVol < previous ExVol

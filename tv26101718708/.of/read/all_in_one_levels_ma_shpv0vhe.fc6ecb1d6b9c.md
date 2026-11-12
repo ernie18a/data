@@ -1,0 +1,3 @@
+Calculation: VWAP = cumulative sum(close * volume) / cumulative sum(volume), reset at the start of each session (day), on the chart timeframe
+Long: close > VWAP AND close > short-term EMA(close) AND close > long-term EMA(close) AND close > SMA(close) with the same lookback as the long-term EMA (short-term EMA has a shorter lookback than the long-term EMA)
+Short: close < VWAP AND close < short-term EMA(close) AND close < long-term EMA(close) AND close < SMA(close) with the same lookback as the long-term EMA (short-term EMA has a shorter lookback than the long-term EMA)

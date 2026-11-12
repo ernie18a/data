@@ -1,0 +1,1 @@
+Long: high >= a preset pivot price level (fixed price, above which a breakout is defined) AND no earlier bar in the same session had high >= that pivot (only the first touching bar of each session; re-arms every new session)

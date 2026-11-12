@@ -1,0 +1,3 @@
+Calculation: ScaledVol = volume / standard deviation of volume over a lookback (0 if that standard deviation is 0)
+Long: (high+low)/2 <= min(open, close) AND low <= lowest low over a short lookback including the current bar AND volume > EMA of volume AND ScaledVol >= a threshold multiplier
+Short: (high+low)/2 >= max(open, close) AND high >= highest high over a short lookback including the current bar AND volume > EMA of volume AND ScaledVol >= a threshold multiplier

@@ -1,0 +1,4 @@
+Calculation: Leg1 VWAP = cumulative sum(source*volume) / cumulative sum(volume), accumulated from the anchor bar (first bar at or after a chosen start time) onward, where source is a chosen price series of the chart timeframe
+Calculation: Hand-off leg k+1 VWAP = same volume-weighted average of source, but restarted on every bar where source crosses over or under leg k VWAP (the cross bar is the first bar of the new accumulation, so its value equals source on that bar); legs chain from Leg1, so leg k+1 depends on leg k
+Long: source > leg VWAP, evaluated on the current bar for each leg separately (each leg gives its own bullish state)
+Short: source <= leg VWAP, evaluated on the current bar for each leg separately (each leg gives its own bearish state)

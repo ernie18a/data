@@ -1,0 +1,7 @@
+Calculation: TRF (twin range filter, computed on bars of a given timeframe) = per bar: sm(t,m) = EMA(EMA(abs(close - close[1]), t), 2t-1) * m; r = average of sm(fast t, fast m) and sm(slow t, slow m), with slow t > fast t and slow m > fast m; filt = recursive, with prev = filt[1] (0 at start): if close > prev then max(close - r, prev) else min(close + r, prev); ub = (filt + r < ub[1] OR close[1] > ub[1]) ? filt + r : ub[1]; lb = (filt - r > lb[1] OR close[1] < lb[1]) ? filt - r : lb[1]; trf = if trf[1] == ub[1]: (close <= ub ? ub : lb); else if trf[1] == lb[1]: (close >= lb ? lb : ub); else ub.
+Calculation: L_regime = TRF computed on a timeframe higher than the chart timeframe, taking the value of the last completed bar (never the forming bar).
+Calculation: L_fast = TRF computed on a timeframe lower than the L_regime timeframe and not lower than the chart timeframe, taking the value of the last completed bar.
+Calculation: P = close of the current chart-timeframe bar of the reference (volatility index) series, updated every chart bar.
+Long: P <= L_regime AND on the previous chart bar P was not <= L_regime (the long bias state holds while P <= L_regime)
+Short: (P > L_regime AND on the previous chart bar P was not > L_regime) OR (P > L_regime AND the bar opens at 09:30 New York time)
+Exit: long, P > L_fast AND on the previous chart bar P was not > L_fast

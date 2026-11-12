@@ -1,0 +1,8 @@
+Calculation: OR_high, OR_low = highest high and lowest low of the bars in the opening-range period at the start of each regular session (a fixed number of minutes). Decisions are evaluated only after that period ends. All sequence state resets each day.
+Calculation: SMA = simple moving average of close, on the chart timeframe, using the current bar's close
+Calculation: Long stop = at entry, the lowest low from the bar of step (1) of the Long sequence through the bar of step (2), inclusive. Once close >= entry + (entry - initial Long stop), each bar sets Long stop = max(Long stop, SMA), so it never decreases.
+Calculation: Short stop = at entry, the highest high from the bar of step (1) of the Short sequence through the bar of step (2), inclusive. Once close <= entry - (initial Short stop - entry), each bar sets Short stop = min(Short stop, SMA), so it never increases.
+Long: after the opening range has completed, all three steps occur in order, with no close < OR_low at any bar from step (1) through the current bar. (1) close > OR_high. (2) a later bar with close < OR_high. (3) a later bar with close > OR_high. Enter long at the close of the step (3) bar. The sequence then restarts from step (1) on the next bar.
+Short: after the opening range has completed, all three steps occur in order, with no close > OR_high at any bar from step (1) through the current bar. (1) close < OR_low. (2) a later bar with close > OR_low. (3) a later bar with close < OR_low. Enter short at the close of the step (3) bar. The sequence then restarts from step (1) on the next bar.
+Exit: Long, close < Long stop
+Exit: Short, close > Short stop

@@ -1,0 +1,2 @@
+Long: the current day is Monday AND the last completed daily bar's high of the preceding Friday (higher timeframe than the chart, completed bars only) > the completed daily high of the preceding Thursday
+Long: the current day is Thursday AND the completed daily high of Wednesday of the same week (higher timeframe than the chart, completed bars only) > the completed daily high of Monday of the same week

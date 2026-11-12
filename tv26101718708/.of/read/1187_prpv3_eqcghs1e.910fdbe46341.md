@@ -1,0 +1,6 @@
+Calculation: EMA stack bullish = fast EMA(close) > mid EMA(close) > slow EMA(close); bearish = fast EMA(close) < mid EMA(close) < slow EMA(close); lookbacks fast < mid < slow
+Calculation: Flow = WMA(3*WMA(close, third) - WMA(close, half) - WMA(close, full), full); lookbacks third < half < full, where third is about full/3 and half is about full/2, all rounded and very long; Guide = Flow 2 bars earlier
+Long: on a completed bar, Flow > Guide AND NOT (Flow > Guide on the previous bar) [call this BUY]
+Short: on a completed bar, Flow < Guide AND NOT (Flow < Guide on the previous bar) [call this SELL]
+Long: the most recent flow-turn signal is BUY AND the number of BUY+ signals since that BUY is below a cap AND ((EMA stack bullish was true on the BUY bar AND the current bar is the bar immediately after the BUY bar AND no BUY+ has fired yet since that BUY via this branch) OR (EMA stack bullish is true on the current bar AND was not true on the previous bar)) [BUY+]
+Short: the most recent flow-turn signal is SELL AND the number of SELL+ signals since that SELL is below a cap AND ((EMA stack bearish was true on the SELL bar AND the current bar is the bar immediately after the SELL bar AND no SELL+ has fired yet since that SELL via this branch) OR (EMA stack bearish is true on the current bar AND was not true on the previous bar)) [SELL+]

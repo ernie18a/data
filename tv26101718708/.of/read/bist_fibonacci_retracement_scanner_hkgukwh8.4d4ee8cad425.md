@@ -1,0 +1,7 @@
+Calculation: SwingHigh = a bar's high that is the highest high among an equal number of bars on both sides; it is known only after that many later bars have completed. Latest = most recent confirmed SwingHigh, Previous = the one before it. SwingLow is defined symmetrically with the lowest low.
+Calculation: Range = latest SwingHigh - latest SwingLow (valid only if > 0)
+Calculation: Uptrend = (if a previous SwingLow exists: latest SwingLow > previous SwingLow; else close > latest SwingLow); but if neither a previous SwingLow nor a previous SwingHigh exists: close > EMA(close). Requires a latest SwingHigh and SwingLow to exist.
+Calculation: Downtrend = (if a previous SwingHigh exists: latest SwingHigh < previous SwingHigh; else close < latest SwingHigh); but if neither a previous SwingLow nor a previous SwingHigh exists: close < EMA(close). Requires a latest SwingHigh and SwingLow to exist.
+Calculation: PullbackLevel(r) = latest SwingHigh - Range * r; BounceLevel(r) = latest SwingLow + Range * r; r is any enabled Fibonacci retracement ratio between 0 and 1 (typically shallow, middle, deep).
+Long: Uptrend AND |close - PullbackLevel(r)| / PullbackLevel(r) <= tolerance percent for at least one enabled r AND (optional filter) RSI < an oversold-side threshold AND (optional filter) volume / SMA(volume) >= a minimum multiple
+Short: Downtrend AND |close - BounceLevel(r)| / BounceLevel(r) <= tolerance percent for at least one enabled r AND (optional filter) RSI > an overbought-side threshold AND (optional filter) volume / SMA(volume) >= a minimum multiple

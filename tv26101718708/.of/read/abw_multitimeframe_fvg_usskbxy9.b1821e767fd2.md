@@ -1,0 +1,2 @@
+Long: (chart timeframe: low of the last completed bar > high of the bar two bars earlier) OR (higher timeframe, using the last completed higher-timeframe bar and not the forming one: its low > high of the higher-timeframe bar two bars before it)
+Short: (chart timeframe: high of the last completed bar < low of the bar two bars earlier) OR (higher timeframe, using the last completed higher-timeframe bar and not the forming one: its high < low of the higher-timeframe bar two bars before it)

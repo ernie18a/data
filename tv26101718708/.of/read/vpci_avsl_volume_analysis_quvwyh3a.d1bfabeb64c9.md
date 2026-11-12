@@ -1,0 +1,7 @@
+Calculation: VPCI = (VWMA(close, long_len) - SMA(close, long_len)) * (VWMA(close, short_len) / SMA(close, short_len)) * (SMA(volume, short_len) / SMA(volume, long_len)) / close, where long_len is a fixed multiple of short_len; the ratios default to 1 if their denominator is 0
+Calculation: VPCI_lower_band = SMA(VPCI, n) - k * population stdev(VPCI, n); VPCI_upper_band = SMA(VPCI, n) + k * population stdev(VPCI, n)
+Calculation: AVSL = adaptive volume-and-volatility band. VPC = VWMA(close, long_len) - SMA(close, long_len); VPR = VWMA(close, short_len) / SMA(close, short_len); adj = clamp((1 + VPC/close) * VPR) to fixed bounds around 1; low_adj = low / adj; high_adj = high * adj; len = round(base_len + 100 * VPCI), clamped to fixed bounds; mult = base_mult * (1 + VPCI), clamped to fixed bounds; AVSL_lower = SMA(low_adj, len) - mult * population stdev(low_adj, len); AVSL_upper = SMA(high_adj, len) + mult * population stdev(high_adj, len). The len used in SMA and stdev is variable per bar.
+Long: V-bottom: VPCI crosses above VPCI_lower_band on the current bar AND VPCI has been below VPCI_lower_band on at least one bar (including the current bar) since the previous V-bottom signal (latched flag, cleared when a V-bottom fires)
+Short: V-top: VPCI crosses below VPCI_upper_band on the current bar AND VPCI has been above VPCI_upper_band on at least one bar (including the current bar) since the previous V-top signal (latched flag, cleared when a V-top fires)
+Exit: long, close crosses below AVSL_lower
+Exit: short, close crosses above AVSL_upper

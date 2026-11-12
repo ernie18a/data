@@ -1,0 +1,4 @@
+Calculation: Bullish FVG zone = formed on bar t when low[t] > high[t-2] AND close[t-1] > open[t-1]; zone bottom = high[t-2], zone top = low[t]
+Calculation: Bearish FVG zone = formed on bar t when high[t] < low[t-2] AND close[t-1] < open[t-1]; zone top = low[t-2], zone bottom = high[t]
+Long: a bullish FVG zone forms on the current bar OR (close > top of an earlier bearish FVG zone, where this is the first close above that top since the zone formed AND the zone is within a limited number of bars since formation)
+Short: a bearish FVG zone forms on the current bar OR (close < bottom of an earlier bullish FVG zone, where this is the first close below that bottom since the zone formed AND the zone is within a limited number of bars since formation)

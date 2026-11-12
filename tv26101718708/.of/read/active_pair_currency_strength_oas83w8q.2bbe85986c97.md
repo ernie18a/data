@@ -1,0 +1,5 @@
+Calculation: CurrencyReturn(X) = percent return of currency X against USD over a lookback of N bars, measured on the chart timeframe or a fixed higher timeframe. Compare the current close with the close N bars earlier (the current bar counts as completed when the signal is evaluated). If the USD-quoted pair is X/USD, the return is (close/close[N]-1)*100. If the pair is USD/X, the return is (close[N]/close-1)*100. USD return = 0. The currencies are the 7 majors against USD (EUR, GBP, AUD, NZD, CAD, CHF, JPY) plus USD.
+Calculation: Strength(X) = CurrencyReturn(X) - mean of CurrencyReturn over all 8 currencies
+Calculation: BaseStrength, QuoteStrength = EMA (short length) of Strength for the chart pair's base currency and quote currency respectively, with the EMA updated once per bar of the calculation timeframe
+Long: BaseStrength crosses above QuoteStrength (previous bar BaseStrength <= QuoteStrength AND current bar BaseStrength > QuoteStrength), evaluated on the completed bar
+Short: BaseStrength crosses below QuoteStrength (previous bar BaseStrength >= QuoteStrength AND current bar BaseStrength < QuoteStrength), evaluated on the completed bar

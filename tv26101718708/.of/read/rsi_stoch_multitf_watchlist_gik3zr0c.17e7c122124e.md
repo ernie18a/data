@@ -1,0 +1,3 @@
+Calculation: SmoothedStochK = simple moving average (short smoothing window) of rawK, where rawK = (close - lowest low over K lookback) / max(highest high over K lookback - lowest low over K lookback, minimum tick) * 100
+Long: for any one of three independently chosen timeframes (each may be equal to, higher or lower than the chart timeframe; each uses the bar still forming on that timeframe, no lookahead): RSI(close) < RSI oversold threshold OR SmoothedStochK < Stoch oversold threshold (oversold thresholds are below the overbought thresholds)
+Short: for any one of the same three timeframes (bar still forming on that timeframe): RSI(close) > RSI overbought threshold OR SmoothedStochK > Stoch overbought threshold
