@@ -1,0 +1,2 @@
+Long: (close of the last completed daily bar (higher timeframe than chart) > high of the daily bar completed immediately before it) OR (close of the last completed 4-hour bar (higher timeframe than chart) > open of that same bar)
+Short: (close of the last completed daily bar (higher timeframe than chart) < low of the daily bar completed immediately before it) OR (close of the last completed 4-hour bar (higher timeframe than chart) < open of that same bar)

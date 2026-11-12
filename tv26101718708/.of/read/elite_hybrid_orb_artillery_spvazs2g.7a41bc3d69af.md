@@ -1,0 +1,7 @@
+Calculation: Session = a fixed time-of-day window on the chart timeframe; a new session starts on the first bar inside it.
+Calculation: OR_High, OR_Low = highest high and lowest low of the bars in the first opening-range period (a fixed number of minutes) of the session; they are final once that period has elapsed and are fixed for the rest of the session.
+Calculation: Width = OR_High - OR_Low; Buffer = a fixed percentage of Width.
+Long: close > OR_High + Buffer AND opening-range period has elapsed AND bar time is before the flatten time (a short fixed offset before session end) AND Width >= a minimum and Width <= a maximum cap (abnormally wide ranges are skipped) AND no open position AND trades taken this session < a maximum count
+Short: close < OR_Low - Buffer AND the same filters as Long AND short side is enabled (can be disabled for long-only)
+Exit: long, low <= OR_Low (stop at the far side of the range) OR high >= entry price + Width * multiplier (take profit) OR bar time >= flatten time (force flat before session end)
+Exit: short, high >= OR_High (stop at the far side of the range) OR low <= entry price - Width * multiplier (take profit) OR bar time >= flatten time (force flat before session end)

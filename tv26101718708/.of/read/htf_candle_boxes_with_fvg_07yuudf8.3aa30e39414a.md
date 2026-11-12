@@ -1,0 +1,4 @@
+Calculation: HTF range = running highest high and lowest low of the still-forming candle of a timeframe higher than the chart, from that candle's first chart bar through the current bar (inclusive)
+Calculation: Gap ATR = ATR of bars on a timeframe lower than the HTF candle and not lower than the chart timeframe, taken from the last completed bar at the first chart bar of the current HTF candle and held fixed for that candle
+Long: bullish fair value gap (low > high two bars back) AND (low - high two bars back) >= a multiple of Gap ATR AND gap top (current low) <= HTF range high AND gap bottom (high two bars back) >= HTF range low
+Short: bearish fair value gap (high < low two bars back) AND (low two bars back - high) >= a multiple of Gap ATR AND gap top (low two bars back) <= HTF range high AND gap bottom (current high) >= HTF range low

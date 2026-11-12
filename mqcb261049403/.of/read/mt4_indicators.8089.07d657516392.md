@@ -1,0 +1,5 @@
+Calculation: EMA(n) = exponential moving average of close with lookback n, computed on a bar series of a chosen timeframe. The decisions use a set of at least 2 lookbacks, ordered from shortest to longest. Evaluate every decision separately for each timeframe in a set that includes timeframes both lower and higher than the chart timeframe. On each timeframe, use the bar containing the end of the current chart bar: the still-forming bar for a higher timeframe, the last completed bar inside the chart bar for a lower timeframe. close is that bar's close.
+Long: (fan up) for each adjacent pair of EMAs ordered by lookback, EMA(shorter lookback) >= EMA(longer lookback), so the EMAs are non-increasing from shortest to longest lookback
+Long: (price above fan) close >= every EMA in the set
+Short: (fan down) AND NOT the Long fan-up condition: for each adjacent pair of EMAs ordered by lookback, EMA(shorter lookback) <= EMA(longer lookback), so the EMAs are non-decreasing from shortest to longest lookback
+Short: (price below fan) close <= every EMA in the set

@@ -1,0 +1,5 @@
+Calculation: Buy-side pool = price level of a confirmed swing high (a bar whose high is the highest among an equal number of bars on each side; confirmed only after the right-side bars complete, and the pool is live from the confirmation bar). A new swing high within a tolerance (a fraction of ATR) of a live buy-side pool merges into it and the pool level becomes the average of the two; otherwise it creates a new pool. Keep only the most recent few pools per side, dropping the oldest.
+Calculation: Sell-side pool = same as buy-side pool but built from confirmed swing lows.
+Calculation: Pool removal = a pool is removed on the bar it is swept (see Long/Short), or when a bar closes through it (buy-side: close > level; sell-side: close < level), checked after the sweep test. Newly created pools are tested only from the next bar on.
+Short: on bar close, for any live buy-side pool, high > pool level AND close < pool level
+Long: on bar close, for any live sell-side pool, low < pool level AND close > pool level

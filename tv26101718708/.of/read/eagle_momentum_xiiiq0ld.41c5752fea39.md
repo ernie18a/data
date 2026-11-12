@@ -1,0 +1,3 @@
+Calculation: score = number of the following 6 conditions that are true on the bar: (1) close > fast EMA of close AND fast EMA > slow SMA of close (slow has the longer lookback); (2) MACD histogram > 0 AND MACD histogram > previous bar's MACD histogram; (3) RSI >= lower threshold AND RSI <= upper threshold; (4) close > Bollinger Bands midline (SMA of close); (5) volume >= surge multiplier * SMA of volume; (6) Supertrend is in uptrend (bullish direction)
+Long: score >= 6 - 1
+Long: score >= 6 - 1 AND MACD line crossed above MACD signal line on the current bar or on any of the 3 previous bars

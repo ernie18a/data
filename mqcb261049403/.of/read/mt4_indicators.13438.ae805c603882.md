@@ -1,0 +1,7 @@
+Calculation: InsideBar(x) = bar x whose high is below and low is above the high and low of its immediately older bar
+Calculation: BullPattern = scan from the newest bar toward older bars; the first candidate B1 (low below the low of its immediately older bar) that completes the following is B1, and the resulting B2 and B3 are the pattern's bars (a candidate that fails is discarded and the scan continues with older candidates). Scanning bars older than B1: any scanned bar, inside bars included, with low < low[B1] invalidates the candidate; skip InsideBars; B2 = first bar with high > high[B1]. Continue scanning bars older than B2 with the same two rules, and also invalidate the candidate if any scanned bar has high > the highest high from the current bar through B1; B3 = first non-inside bar with high > high[B2]
+Calculation: BearPattern = mirror image of BullPattern: B1 has high above the high of its immediately older bar; invalidated by high > high[B1]; B2 = first non-inside bar with low < low[B1]; additionally invalidated by low < the lowest low from the current bar through B1; B3 = first non-inside bar with low < low[B2]
+Long: highest high over the bars newer than B3 of BullPattern, up to and including the current bar, > high[B3] of BullPattern
+Short: lowest low over the bars newer than B3 of BearPattern, up to and including the current bar, < low[B3] of BearPattern
+Exit: long, low < low[B1] of BullPattern OR low < low[B3] of BearPattern
+Exit: short, high > high[B1] of BearPattern OR high > high[B3] of BullPattern

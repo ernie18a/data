@@ -1,0 +1,9 @@
+Divergence between the traded instrument and a separate reference (breadth/macro) symbol, read on the same timeframe and aligned bar by bar. The signal is a short or long entry; no exit rule is defined.
+
+Pivots: a pivot high is a bar whose high is strictly the highest among a set number of bars on each side. A pivot low is a bar whose low is strictly the lowest among the same window. Use the same window length on both sides. A pivot is only confirmed after the right-side bars have closed, so the decision is made on the confirmation bar but refers to the pivot bar, which lies that many bars back. Track pivot highs and pivot lows independently. For each, store the last confirmed pivot's price on the traded instrument and the reference symbol's value at that pivot bar. For pivot highs use the reference symbol's high. For pivot lows use the reference symbol's low.
+
+Short (bearish divergence): when a new pivot high is confirmed and a prior pivot high exists, compare the two. Signal short if the traded instrument's new pivot high is higher than the previous pivot high, and the reference symbol's high at the new pivot bar is lower than its high at the previous pivot bar. The traded price makes a higher high while the reference makes a lower high.
+
+Long (bullish divergence): when a new pivot low is confirmed and a prior pivot low exists, compare the two. Signal long if the traded instrument's new pivot low is lower than the previous pivot low, and the reference symbol's low at the new pivot bar is higher than its low at the previous pivot bar. The traded price makes a lower low while the reference makes a higher low.
+
+After each pivot is evaluated, whether or not a signal fired, replace the stored previous pivot with the new one. The first pivot of each type only seeds the stored values and produces no signal. Comparisons are strict, so ties give no signal.

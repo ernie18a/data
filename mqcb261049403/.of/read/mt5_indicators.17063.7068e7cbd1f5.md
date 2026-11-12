@@ -1,0 +1,3 @@
+Calculation: Osc = moving average (short smoothing length) of the weighted average of RSI of close, MFI (volume-based), WPR + 100 (Williams %R shifted to a 0-100 scale), and 100 * DeMarker, all computed on the chart timeframe bars with the same lookback
+Long: Osc < LowLevel, where LowLevel is a fixed level below 50 (oversold)
+Short: Osc > HighLevel, where HighLevel is a fixed level above 50 (overbought)

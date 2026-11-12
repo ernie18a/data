@@ -1,0 +1,13 @@
+Calculation: SMMA(n) = Wilder smoothed moving average of close; first value is SMA(close,n), then (previous*(n-1)+close)/n. Three lengths are used: SMMA_fast < SMMA_mid < SMMA_slow.
+Calculation: EMA = exponential moving average of close, with a shorter length than SMMA_fast
+Calculation: LRslope = EMA of the one-bar change of linear regression value of close (the regression end value, i.e. fitted line at current bar)
+Calculation: DailyATR = Wilder-smoothed average of true range on daily bars (higher timeframe than chart), using the daily bar still forming
+Calculation: HH4 / LL4 = highest high / lowest low of the current and previous 3 bars
+Calculation: BullStrike = close[3]<=open[3] AND close[2]<=open[2] AND close[1]<=open[1] AND close>open[1]
+Calculation: BearStrike = close[3]>=open[3] AND close[2]>=open[2] AND close[1]>=open[1] AND close<open[1]
+Calculation: InitStop_long = LL4 at the entry bar - a fraction of DailyATR; InitStop_short = HH4 at the entry bar + the same fraction of DailyATR
+Calculation: Stop_long (before target reached) = min(InitStop_long, LL4); Stop_short (before target reached) = max(InitStop_short, HH4). Target_long = entry + K*(entry - Stop_long); Target_short = entry - K*(Stop_short - entry), with K a reward/risk multiple. Target is reached once high > Target_long (long) or low < Target_short (short) during the trade. After target is reached: Stop_long = max(previous Stop_long, previous bar low); Stop_short = min(previous Stop_short, previous bar high).
+Long: (bar time inside the allowed entry session and outside the no-entry time window) AND (high - low of the bar <= a fraction of DailyATR) AND ((BullStrike AND SMMA_fast > SMMA_mid AND SMMA_fast > SMMA_fast[1] AND abs(LRslope) > threshold) OR (BullStrike AND SMMA_fast < SMMA_slow AND SMMA_mid < SMMA_slow AND EMA > SMMA_fast AND EMA crossed SMMA_fast within the last few bars (cross on the current bar counts)))
+Short: (bar time inside the allowed entry session and outside the no-entry time window) AND (high - low of the bar <= a fraction of DailyATR) AND ((BearStrike AND SMMA_fast < SMMA_mid AND SMMA_fast < SMMA_fast[1] AND abs(LRslope) > threshold) OR (BearStrike AND SMMA_fast > SMMA_slow AND SMMA_mid > SMMA_slow AND EMA < SMMA_fast AND EMA crossed SMMA_fast within the last few bars (cross on the current bar counts)))
+Exit: long, BearStrike OR low <= Stop_long OR bar time outside the allowed entry session
+Exit: short, BullStrike OR high >= Stop_short OR bar time outside the allowed entry session

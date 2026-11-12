@@ -1,0 +1,3 @@
+Calculation: TrailActive = true from the first bar after entry on which high > entry price + ATR * trail-activation multiplier (ATR of that bar), and stays true until exit; trail-activation multiplier > stop multiplier
+Long: fast CCI crosses above 0 (previous bar <= 0, current bar > 0) AND middle CCI > 0 AND slow CCI > 0 (all CCI on typical price hlc3, chart timeframe; fast < middle < slow lookback) AND close > trend EMA of close (trend EMA lookback longer than trailing EMA lookback) AND MFI of hlc3 > 50
+Exit: long, low <= entry price - ATR * stop multiplier (ATR of the current bar) OR (TrailActive AND close < trailing EMA of close)

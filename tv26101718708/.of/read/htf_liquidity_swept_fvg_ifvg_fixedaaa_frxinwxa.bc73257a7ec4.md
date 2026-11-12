@@ -1,0 +1,4 @@
+Calculation: Bullish FVG = three-bar gap where the current bar's low > the high of the bar two bars earlier; zone = [high two bars earlier, current low]; size = current low - high two bars earlier
+Calculation: Bearish FVG = three-bar gap where the current bar's high < the low of the bar two bars earlier; zone = [current high, low two bars earlier]; size = low two bars earlier - current high
+Long: a Bullish FVG forms on the current bar with size >= a minimum size OR close > upper edge of a previously formed Bearish FVG zone that has not yet been closed through (first such close only; only among the most recent such zones)
+Short: a Bearish FVG forms on the current bar with size >= a minimum size OR close < lower edge of a previously formed Bullish FVG zone that has not yet been closed through (first such close only; only among the most recent such zones)

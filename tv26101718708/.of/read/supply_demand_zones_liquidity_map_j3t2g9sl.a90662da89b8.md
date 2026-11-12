@@ -1,0 +1,11 @@
+Calculation: ATR = Wilder average true range, same lookback on the chart timeframe for all uses
+Calculation: Base run = count of consecutive bars immediately before the current bar (up to a maximum count) whose range (high-low) < a fraction (<1) of ATR
+Calculation: Demand zone = created on a bar that is bullish (close>open) with range > a multiple (>1) of ATR and body/range > a dominance threshold, when Base run >= a minimum count; zone top = highest high and zone bottom = lowest low of the Base run bars
+Calculation: Supply zone = same as Demand zone but the creation bar is bearish (close<open); zone top/bottom = highest high/lowest low of the Base run bars
+Calculation: Fresh demand zone = a Demand zone, evaluated including the current bar, that has not had any bar close below its bottom, and for which no bar at least 2 bars after the creation bar (through the current bar) has low <= zone top. Because the current bar must have low <= zone top (see Long), the current bar is the creation bar or the bar right after it
+Calculation: Fresh supply zone = a Supply zone that has not had any bar close above its top, and for which no bar at least 2 bars after the creation bar (through the current bar) has high >= zone bottom. Because the current bar must have high >= zone bottom (see Short), the current bar is the creation bar or the bar right after it
+Calculation: Pivot low = a bar whose low is the lowest among a fixed number of bars on each side; it is confirmed on the current bar, that many bars after the pivot bar. Pivot high = the mirror, using highs
+Calculation: Equal-lows event = on the current bar a Pivot low is confirmed, an earlier Pivot low exists, and the absolute difference of the two pivot lows <= a fraction of the current ATR. Equal-highs event = same with Pivot highs
+Calculation: Prior day high/low = high/low of the last completed bar of a higher (daily) timeframe
+Long: a Fresh demand zone exists with current low <= its top AND current close >= its bottom, AND ((current low < prior day low AND current close > prior day low) OR Equal-lows event on the current bar)
+Short: a Fresh supply zone exists with current high >= its bottom AND current close <= its top, AND ((current high > prior day high AND current close < prior day high) OR Equal-highs event on the current bar)

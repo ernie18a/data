@@ -1,0 +1,4 @@
+Calculation: Score = count of true among: (1) close > slow EMA of close; (2) fast EMA of close > slow EMA of close; (3) slow EMA > slow EMA from several bars ago; (4) higher-timeframe close of the still-forming bar > higher-timeframe slow EMA of close (same slow EMA length as on the chart timeframe); (5) (close / slow EMA) / (benchmark-index close / benchmark-index slow EMA) > 1, with the benchmark index on the chart timeframe, current bar; (6) RSI >= lower bound AND RSI <= upper bound; (7) SMA of volume over a short window > the same SMA taken a number of bars earlier (the lag is longer than the window)
+Calculation: Retest = (low <= slow EMA * (1 + small tolerance) AND close > slow EMA) is true on this bar AND was false on each of the previous 3 bars
+Long: Retest AND Score >= threshold AND volume > SMA of volume over a longer lookback * multiplier (multiplier > 1; this volume clause can be disabled)
+Exit: Long, Score < threshold AND previous bar Score >= threshold

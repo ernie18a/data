@@ -1,0 +1,6 @@
+Long: current price > open of the still-forming daily bar (higher timeframe) AND (that daily open - low so far of the still-forming daily bar) > minimum distance AND no position is open AND no long position has already been closed today AND trading session is active (weekday Mon-Fri AND bar hour-of-day >= session start hour AND < session end hour, where session end hour < forced-close hour)
+Short: current price < open of the still-forming daily bar (higher timeframe) AND (high so far of the still-forming daily bar - that daily open) > minimum distance AND no position is open AND no short position has already been closed today AND trading session is active (weekday Mon-Fri AND bar hour-of-day >= session start hour AND < session end hour, where session end hour < forced-close hour)
+Exit: long, price >= entry price + take-profit distance OR price <= entry price - stop-loss distance (stop-loss distance > take-profit distance)
+Exit: short, price <= entry price - take-profit distance OR price >= entry price + stop-loss distance (stop-loss distance > take-profit distance)
+Exit: long, bar hour-of-day >= forced-close hour OR (holding time since entry >= maximum holding time AND price >= entry price)
+Exit: short, bar hour-of-day >= forced-close hour OR (holding time since entry >= maximum holding time AND price <= entry price)

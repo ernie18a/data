@@ -1,0 +1,4 @@
+Calculation: Base = a chosen price of the bar still forming on a higher timeframe than the chart, containing the current chart bar (open, high, low, close, hl2, hlc3, ohlc4 or (high+low)/2), constant within that higher-timeframe bar
+Calculation: Upper_k = Base * (1 + p_k/100); Lower_k = Base * (1 - p_k/100), for several percentages p_k > 0 (ascending k = wider levels)
+Long: for any k, close > Upper_k AND previous chart-bar close <= Upper_k; OR close > Base AND previous chart-bar close <= Base
+Short: for any k, close < Lower_k AND previous chart-bar close >= Lower_k; OR close < Base AND previous chart-bar close >= Base

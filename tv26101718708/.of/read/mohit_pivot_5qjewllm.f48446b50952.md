@@ -1,0 +1,6 @@
+Calculation: Pivot levels = from the previous completed bar of a higher timeframe than the chart (high H, low L, close C): PP=(H+L+C)/3, R1=2*PP-L, R2=PP+(H-L), S1=2*PP-H, S2=PP-(H-L)
+Calculation: Zone(level) = [level-w, level+w], where w = a small fraction multiplier * ATR on the chart timeframe; ordered sequence of levels from low to high: S2, S1, PP, R1, R2
+Long: close crosses above PP (previous close <= PP AND close > PP) OR (low <= upper bound of Zone(S1) or Zone(S2) AND close > open AND close > upper bound of that same zone)
+Short: close crosses below PP (previous close >= PP AND close < PP) OR (high >= lower bound of Zone(R1) or Zone(R2) AND close < open AND close < lower bound of that same zone)
+Exit: long, high >= lower bound of the zone of the next level above the level whose zone the entry came from (take-profit) OR low < lower bound of the entry-origin zone (stop) OR close < lower bound of Zone(PP)
+Exit: short, low <= upper bound of the zone of the next level below the level whose zone the entry came from (take-profit) OR high > upper bound of the entry-origin zone (stop) OR close > upper bound of Zone(PP)

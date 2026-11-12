@@ -1,0 +1,7 @@
+Calculation: Opening range high/low = highest high and lowest low of bars from a finer-or-equal timeframe than the chart, covering a fixed window that starts at the session open; range = high - low
+Calculation: Daily ATR = ATR on a higher timeframe (daily), using the last completed bar
+Calculation: Stop distance = range * stop fraction + 2 * buffer, where buffer is a fixed small price distance
+Long: no trade yet taken today AND time is after the opening-range window ends and before the last-entry time AND range > 0 AND range > min multiple * daily ATR AND range < max multiple * daily ATR AND high >= opening range high + buffer (entry price = opening range high + buffer)
+Short: no trade yet taken today AND time is after the opening-range window ends and before the last-entry time AND range > 0 AND range > min multiple * daily ATR AND range < max multiple * daily ATR AND low <= opening range low - buffer (entry price = opening range low - buffer)
+Exit: long, low <= entry price - stop distance OR high >= entry price + reward multiple * stop distance OR time >= close-all time of the same session day
+Exit: short, high >= entry price + stop distance OR low <= entry price - reward multiple * stop distance OR time >= close-all time of the same session day

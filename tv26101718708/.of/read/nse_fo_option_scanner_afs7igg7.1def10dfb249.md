@@ -1,0 +1,6 @@
+Calculation: Bull score = count of true among: (1) fast EMA of close > slow EMA of close (fast has the shorter lookback); (2) close > previous close; (3) a reference sector index's close > its own EMA of close, same timeframe as the chart, current bar; (4) RSI < upper threshold; (5) volume > a multiple (>1) of the SMA of volume
+Calculation: Bear score = count of true among: (1) fast EMA <= slow EMA; (2) close <= previous close; (3) the sector index's close <= its own EMA of close, same timeframe as the chart, current bar; (4) RSI > lower threshold (lower threshold < upper threshold); (5) the same volume spike condition as in Bull score
+Long: Bull score >= 3 of 5 AND fast EMA > slow EMA
+Short: Bear score >= 3 of 5 AND fast EMA <= slow EMA
+Exit: long, low <= entry price - stop multiple * ATR at entry bar OR high >= entry price + stop multiple * reward-risk ratio * ATR at entry bar (target 1) OR high >= entry price + target-2 multiple * stop multiple * reward-risk ratio * ATR at entry bar (target 2, a farther level than target 1)
+Exit: short, high >= entry price + stop multiple * ATR at entry bar OR low <= entry price - stop multiple * reward-risk ratio * ATR at entry bar (target 1) OR low <= entry price - target-2 multiple * stop multiple * reward-risk ratio * ATR at entry bar (target 2, a farther level than target 1)

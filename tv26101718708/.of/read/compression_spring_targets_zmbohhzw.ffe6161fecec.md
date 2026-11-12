@@ -1,0 +1,13 @@
+Calculation: Block = chart bars aggregated into a timeframe higher than the chart. Decisions use only completed blocks (never the forming block) and are evaluated once, when a block completes. Block high = max of bar highs, block low = min of bar lows, block close = last bar close, block volume = sum of bar volume (at least a small positive value), block range = block high - block low.
+Calculation: RangeRatio = block range / mean block range of the previous N completed blocks (current block excluded). VolRatio = block volume / mean block volume of the same previous N blocks. Both are undefined until N previous blocks exist, and then nothing below is evaluated.
+Calculation: CompressionBlock = RangeRatio <= max-range threshold AND VolRatio >= min-volume threshold.
+Calculation: Spring = run of compression blocks tracked with springHigh, springLow, count, gaps and volSum. If no spring is active and a completed block is a CompressionBlock, start a spring: springHigh = block high, springLow = block low, count = 1, gaps = 0, volSum = VolRatio. For each later completed block while a spring is active, test the breakout first. If it is not a valid breakout: when the block is a CompressionBlock, set springHigh = max(springHigh, block high), springLow = min(springLow, block low), count += 1, volSum += VolRatio and gaps = 0. Otherwise gaps += 1, and when gaps exceeds the allowed gap count the spring is discarded. A valid breakout also discards the spring after the signal, and the breakout block does not start a new spring.
+Calculation: BreakoutFilter = VolRatio >= breakout min volume ratio AND RangeRatio >= breakout min range ratio AND count >= min compression blocks. The breakout min range ratio is higher than the compression max-range threshold. The breakout min volume ratio is at least the compression min-volume threshold. The volume part of the filter is switchable.
+Calculation: Height = springHigh - springLow, taken at the breakout. AvgVolR = volSum / count. Energy = min(count * AvgVolR * energy multiplier, max multiple of Height).
+Calculation: Targets are frozen at the breakout. Long T1 = springHigh + Height. Long T2 = springHigh + Height * Energy. Short T1 = springLow - Height. Short T2 = springLow - Height * Energy.
+Long: spring active AND completed block close > springHigh AND BreakoutFilter
+Short: spring active AND completed block close < springLow AND BreakoutFilter
+Exit: long, high >= Long T1
+Exit: long, high >= Long T2
+Exit: short, low <= Short T1
+Exit: short, low <= Short T2

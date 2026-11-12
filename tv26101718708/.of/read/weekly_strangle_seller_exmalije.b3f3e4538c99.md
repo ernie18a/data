@@ -1,0 +1,7 @@
+Calculation: center = daily-reset VWAP of (high+low+close)/3 (alternative: EMA of close)
+Calculation: ceLevel = ceil((center + ATR*k)/step)*step; peLevel = floor((center - ATR*k)/step)*step; ATR = Wilder ATR on chart timeframe
+Calculation: widthPct = (ceLevel - peLevel)/close*100
+Calculation: slUp = ceLevel + (ceLevel - center)*(m-1); slDn = peLevel - (center - peLevel)*(m-1); m > 1; center, ceLevel, peLevel taken at the entry bar and held fixed while in the position
+Long: flat AND no entry yet in the current week (counter resets on the first bar of Monday) AND weekday is one of the early-week entry days AND time-of-day is inside the entry window AND widthPct >= minimum width AND widthPct >= a second width threshold larger than the minimum width AND RSI(close) <= overbought level AND RSI(close) >= oversold level; opened together with the Short on the same bar
+Short: identical condition to Long; opened together with the Long on the same bar
+Exit: long and short (both close together), in position AND (high >= slUp OR low <= slDn OR (weekday is the expiry day, later in the week than the entry days, AND time-of-day >= expiry exit time) OR (weekday is Friday AND time-of-day >= a late-session time))

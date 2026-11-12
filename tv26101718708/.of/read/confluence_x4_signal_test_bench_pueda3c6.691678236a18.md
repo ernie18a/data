@@ -1,0 +1,22 @@
+Calculation: TriBull = RSI > neutral level AND MACD line (fast EMA - slow EMA of close) > 0 AND CMF > 0, where CMF = sum(mult*volume)/sum(volume) over a lookback and mult = (2*close-low-high)/(high-low), or 0 if high==low; TriBear = mirror (RSI < neutral level AND MACD line < 0 AND CMF < 0)
+Calculation: MTScore = sum of five votes, each in {-1,0,+1}. Votes 1-3: sign(K-D) for each of three stochastics with long, medium and short lookback (K = SMA of raw stochastic of close vs high/low, D = SMA of K, smoothing shorter for shorter lookback). Vote 4: +1 if SVE > low level, plus -1 if SVE < high level (low level < high level), where SVE = 100*SMA(R-lowest(R,w),s)/(small positive constant + SMA(highest(R,w)-lowest(R,w),s)) and R is RSI. Vote 5: +1 if PR >= midpoint else -1, where PR = percent rank, over a long lookback, of Ratio = Kr/Dr (Ratio = 1 if Dr==0), Kr = SMA of the stochastic of RSI taken over itself, Dr = SMA of Kr. MTBull = MTScore >= threshold; MTBear = MTScore <= -threshold
+Calculation: MCUScore = sum of nine votes, +1 for each bullish vote and -1 for each bearish vote. Ichimoku group: tenkan = midpoint of highest high and lowest low over a short lookback; kijun = same over a medium lookback; senA = (tenkan+kijun)/2; senB = same midpoint over a long lookback; cloudTop/cloudBot = max/min(senA, senB) taken D bars ago. Votes: close>cloudTop / close<cloudBot; tenkan>kijun / tenkan<kijun; close>close D bars ago / close<close D bars ago. ATR group: atrR = (ATR/close) / SMA(ATR/close, longer lookback than ATR). Votes: close>previous close AND atrR>L1 / close<previous close AND atrR>L1; close>previous close AND atrR>L2 / close<previous close AND atrR>L2 (L1 slightly above 1, L2 clearly larger than L1); close>EMA(close) / close<EMA(close). Squeeze group: sqOn = Bollinger upper < Keltner upper AND Bollinger lower > Keltner lower (SMA basis +/- k*stdev vs EMA basis +/- m*ATR); sqFired = NOT sqOn now AND sqOn was true within the last few bars; sqM = linear regression value (current bar) of [close - average(midpoint of highest high and lowest low, SMA(close))] over a lookback. Votes: sqM>0 / sqM<0; sqM>0 AND sqM>previous sqM / sqM<0 AND sqM<previous sqM; sqFired AND sqM>0 / sqFired AND sqM<0. MCUBull = MCUScore >= threshold; MCUBear = MCUScore <= -threshold
+Calculation: MAState = (short SMA > long SMA AND ADX > level) for bull, (short SMA < long SMA AND ADX > level) for bear; ADX is the DMI ADX with ADX smoothing longer than DI length
+Calculation: OptFilterL = true if every chosen filter from {TriBull, MTBull, MCUBull, MAState bull} is true on the same bar (no filter chosen = true); OptFilterS = same with {TriBear, MTBear, MCUBear, MAState bear}
+Long: TriBull is true AND was false on the previous bar, AND OptFilterL
+Long: MTBull is true AND was false on the previous bar, AND OptFilterL
+Long: MCUBull is true AND was false on the previous bar, AND OptFilterL
+Long: short SMA crosses above long SMA AND ADX > level AND RSI(long-ish length) < upper level, AND OptFilterL
+Long: TriBull AND MTBull AND MCUBull AND MAState bull
+Short: TriBear is true AND was false on the previous bar, AND OptFilterS
+Short: MTBear is true AND was false on the previous bar, AND OptFilterS
+Short: MCUBear is true AND was false on the previous bar, AND OptFilterS
+Short: short SMA crosses below long SMA AND ADX > level AND RSI > lower level (lower level < upper level), AND OptFilterS
+Short: TriBear AND MTBear AND MCUBear AND MAState bear
+Exit: long or short, bars since entry fill >= N
+Exit: long, the selected trigger's unfiltered Short condition is true (TriBear / MTBear / MCUBear first bar, or MA cross-under with ADX and RSI conditions)
+Exit: short, the selected trigger's unfiltered Long condition is true (TriBull / MTBull / MCUBull first bar, or MA cross-over with ADX and RSI conditions)
+Exit: long, low <= entry price - stopMult*ATR OR high >= entry price + targetMult*ATR (stopMult < targetMult; ATR from the previous completed bar)
+Exit: short, high >= entry price + stopMult*ATR OR low <= entry price - targetMult*ATR (stopMult < targetMult; ATR from the previous completed bar)
+Exit: long, RSI crosses above upper extreme level
+Exit: short, RSI crosses below lower extreme level (lower extreme < upper extreme)

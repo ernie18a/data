@@ -1,0 +1,8 @@
+Calculation: PrevHTF = high (PH) and low (PL) of the last completed bar of a timeframe higher than the chart timeframe, i.e. the bar immediately before the higher-timeframe bar containing the current bar
+Calculation: SwingHigh / SwingLow = most recent confirmed pivot high / pivot low on chart-timeframe bars (high above / low below the highs / lows of the same number of bars on each side; confirmed only after the right-side bars have closed), updated every bar
+Calculation: SweepLow = lowest low over bars of the current day, inside the daily trading window, while flat and with no entry yet today, whose low < PL (undefined if no such bar)
+Calculation: SweepHigh = highest high over bars of the current day, inside the daily trading window, while flat and with no entry yet today, whose high > PH (undefined if no such bar)
+Long: current bar is inside the daily trading window AND position is flat AND no entry has been made earlier today AND SweepLow is defined AND SwingHigh is defined AND high >= SwingHigh AND SwingHigh > SweepLow - buffer AND PH > SwingHigh
+Short: current bar is inside the daily trading window AND position is flat AND no entry has been made earlier today AND SweepHigh is defined AND SwingLow is defined AND low <= SwingLow AND SwingLow < SweepHigh + buffer AND PL < SwingLow
+Exit: long, high >= PH (value fixed at entry) OR low <= stop, where the initial stop = SweepLow - buffer (fixed at entry) and the stop moves to the entry price once high >= entry price + (entry price - initial stop)
+Exit: short, low <= PL (value fixed at entry) OR high >= stop, where the initial stop = SweepHigh + buffer (fixed at entry) and the stop moves to the entry price once low <= entry price - (initial stop - entry price)

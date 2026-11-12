@@ -1,0 +1,7 @@
+Calculation: I = last completed bar of a chosen detection timeframe (any relation to chart timeframe, completed bars only, no forming bar); B = the completed bar immediately before I on that same timeframe
+Calculation: DemandZone = [bottom = B.low, top = B.open] formed when the Long condition is met; it stays valid until the Exit condition occurs
+Calculation: SupplyZone = [bottom = B.open, top = B.high] formed when the Short condition is met; it stays valid until the Exit condition occurs
+Long: I.close > I.open AND (I.close - I.open)/I.open >= impulse minimum move AND I.high > I.low AND (I.close - I.low)/(I.high - I.low) >= close-in-range threshold AND B.close < B.open AND (B.open - B.close) <= base ratio * (I.close - I.open), evaluated once when I completes (a new DemandZone is created; same B does not retrigger)
+Short: I.close < I.open AND (I.open - I.close)/I.open >= impulse minimum move AND I.high > I.low AND (I.high - I.close)/(I.high - I.low) >= close-in-range threshold AND B.close > B.open AND (B.close - B.open) <= base ratio * (I.open - I.close), evaluated once when I completes (a new SupplyZone is created; same B does not retrigger)
+Exit: long, chart bar low <= DemandZone.bottom of the zone that triggered the Long (the zone is invalidated)
+Exit: short, chart bar high >= SupplyZone.top of the zone that triggered the Short (the zone is invalidated)

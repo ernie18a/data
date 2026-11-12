@@ -1,0 +1,6 @@
+Calculation: Daily ATR = average true range on daily bars, using the last completed daily bar's value (higher timeframe than the chart)
+Calculation: Prev-day bar = the just-completed daily bar, aggregated from the chart bars (open = first open, close = last close, high = highest high, low = lowest low)
+Long: first bar of a new day AND the previous day's weekday equals the chosen test weekday AND no position is open AND Prev-day close <= Prev-day open (reversal mode; in continuation mode use Prev-day close > Prev-day open) AND (optional filter) Prev-day high - Prev-day low >= a multiple of Daily ATR
+Short: first bar of a new day AND the previous day's weekday equals the chosen test weekday AND no position is open AND Prev-day close > Prev-day open (reversal mode; in continuation mode use Prev-day close <= Prev-day open) AND (optional filter) Prev-day high - Prev-day low >= a multiple of Daily ATR
+Exit: long, low <= entry price - (stop multiple * Daily ATR at entry) OR high >= entry price + (reward/risk ratio * stop multiple * Daily ATR at entry) OR bar hour >= the close hour
+Exit: short, high >= entry price + (stop multiple * Daily ATR at entry) OR low <= entry price - (reward/risk ratio * stop multiple * Daily ATR at entry) OR bar hour >= the close hour

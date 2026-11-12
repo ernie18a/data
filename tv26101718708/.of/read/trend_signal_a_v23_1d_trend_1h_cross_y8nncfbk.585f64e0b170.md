@@ -1,0 +1,5 @@
+Calculation: trend = 100 * (MA(HA close) - MA(HA open)) / (MA(HA high) - MA(HA low)), computed on the chart timeframe, where HA is the Heikin-Ashi candle series and MA is one and the same moving average applied separately to each of the four HA series
+Calculation: htf_bullish = on Heikin-Ashi candles of a higher timeframe than the chart, using the last completed higher-timeframe bar only (not the forming bar), MA(HA close) > MA(HA open), with the same MA type as in trend (its length may differ)
+Calculation: stop = entry price - multiplier * ATR, where ATR is its value on the entry bar and is fixed for the life of the trade
+Long: no open position AND htf_bullish AND trend > 0 AND previous bar trend <= 0 (enter at the close of this bar; entry price = this close)
+Exit: long, low <= stop OR (trend < 0 AND previous bar trend >= 0) (the stop test takes priority; stop-out fills at stop, cross exit fills at the bar close)

@@ -1,0 +1,12 @@
+Calculation: Pivots = swing highs and lows (pivot high/low of high/low, or of max/min of open and close) with equal bars left and right, confirmed after those right bars; only pivots within a lookback number of bars are kept.
+Calculation: Zones = clusters of kept pivot values, each with Top (ceiling) and Bottom (floor). A cluster starts at one pivot and absorbs another pivot if it lies at or below the ceiling and within max width of the ceiling, or lies above the ceiling and within max width of the floor, then extends the ceiling or floor. Max width = (highest high - lowest low over a long window) * width percentage. Cluster strength = 20 * absorbed pivots + number of bars in the lookback whose high or low lies inside [Bottom, Top]. Zones are chosen greedily by highest strength, requiring at least a minimum strength and discarding clusters that overlap an already chosen zone, up to a max zone count. Zones are recomputed only on bars where a new pivot is confirmed.
+Calculation: Outside = close is not inside [Bottom, Top] of any zone.
+Calculation: ResBreak = Outside AND for some zone, close[1] <= Top AND close > Top.
+Calculation: SupBreak = Outside AND for some zone, close[1] >= Bottom AND close < Bottom.
+Calculation: BreakLevel = Top of the zone most recently broken upward, or Bottom of the zone most recently broken downward, whichever break happened last; it persists until the next break.
+Calculation: Fast MA, Slow MA = EMA or SMA of close, fast length shorter than slow length.
+Calculation: Filters = RSI > oversold level AND RSI < overbought level AND ATR > ATR multiplier * ATR AND bar hour between trading start hour and end hour inclusive AND volume > volume factor * SMA of volume over a lookback.
+Long: (ResBreak OR (BreakLevel exists AND close < BreakLevel AND close[1] >= BreakLevel)) AND Fast MA > Slow MA AND Filters
+Short: (SupBreak OR (BreakLevel exists AND close > BreakLevel AND close[1] <= BreakLevel)) AND Fast MA < Slow MA AND Filters
+Exit: long, RSI > extreme-overbought level (above the overbought level) OR Slow MA crosses above Fast MA OR low <= entry price - stop multiple * ATR at entry bar OR high >= entry price + reward ratio * stop multiple * ATR at entry bar
+Exit: short, RSI < extreme-oversold level (below the oversold level) OR Fast MA crosses above Slow MA OR high >= entry price + stop multiple * ATR at entry bar OR low <= entry price - reward ratio * stop multiple * ATR at entry bar
