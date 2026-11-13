@@ -1,0 +1,12 @@
+Calculation: ATR = average true range on the chart timeframe
+Calculation: SwingHigh, SwingLow = on a timeframe higher than the chart, the most recent confirmed pivot high and pivot low (symmetric left/right bar count). Each is replaced by the highest high / lowest low over a longer higher-timeframe lookback if it has not been refreshed by a new pivot for a fixed number of chart bars. Swings are valid only if both exist and SwingHigh > SwingLow. Range = SwingHigh - SwingLow
+Calculation: BullLevels = SwingHigh - Range * r for r in {0.382, 0.5, 0.618, 0.786}; BearLevels = SwingLow + Range * r for the same r
+Calculation: InBullZone = any BullLevel L satisfies |close - L| <= ATR * zone_mult; InBearZone = any BearLevel L satisfies |close - L| <= ATR * zone_mult
+Calculation: HTF trend inputs = close of the still-forming higher-timeframe bar (HTFClose) and a long-period EMA of close on the higher timeframe, using the still-forming bar (HTFEMA)
+Calculation: body = |close - open|; range = high - low; BullCandle = close > open AND (body > 0.4 * range OR (open - low) > 1.5 * body OR (previous bar bearish AND body > previous bar body)); BearCandle = close < open AND (body > 0.4 * range OR (high - open) > 1.5 * body OR (previous bar bullish AND body > previous bar body))
+Calculation: RSI = RSI of close on the chart timeframe; EMAs = short-period EMA of close on the chart timeframe
+Long: flat position AND swings valid AND HTFClose > HTFEMA AND InBullZone AND BullCandle AND close > EMAs AND RSI < overbought threshold AND RSI > a floor below the oversold threshold AND bar hour inside a fixed intraday session window (start inclusive, end exclusive)
+Short: flat position AND swings valid AND HTFClose < HTFEMA AND InBearZone AND BearCandle AND close < EMAs AND RSI > oversold threshold AND RSI < a ceiling above the overbought threshold AND bar hour inside the same session window
+Exit: long, with D = stop_mult * ATR at the signal bar and E = close of the signal bar: low <= E - D (close all) OR high >= E + D * tp1_ratio (close a partial fraction) OR high >= E + D * tp2_ratio (close the remainder), tp2_ratio > tp1_ratio
+Exit: short, with D and E as above: high >= E + D (close all) OR low <= E - D * tp1_ratio (close a partial fraction) OR low <= E - D * tp2_ratio (close the remainder), tp2_ratio > tp1_ratio
+Exit: any, bar hour == fixed close hour AND bar minute >= fixed close minute (optional end-of-day close)

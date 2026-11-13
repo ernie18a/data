@@ -1,0 +1,3 @@
+Calculation: SessionHigh / SessionLow = highest high / lowest low over the bars of the most recently completed session. A session is a fixed time-of-day window on an intraday chart timeframe. The values stay constant after the session ends, until the next occurrence of that session ends. Each session (more than one may be defined) has its own SessionHigh/SessionLow, and the conditions below are evaluated per session, with any session triggering.
+Long: current bar is not inside that session window AND SessionLow exists AND previous bar close < SessionLow AND current bar close > SessionLow
+Short: current bar is not inside that session window AND SessionHigh exists AND previous bar close > SessionHigh AND current bar close < SessionHigh

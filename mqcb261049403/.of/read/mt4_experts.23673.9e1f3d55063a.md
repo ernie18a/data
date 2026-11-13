@@ -1,0 +1,8 @@
+Calculation: FastMA, SlowMA = simple moving averages of close on the chart timeframe, FastMA with a shorter lookback than SlowMA; both taken at the last completed bar. FastMA_prev = FastMA taken one bar before the last completed bar. Compare FastMA_prev against the current SlowMA (not the SlowMA of the same earlier bar).
+Calculation: HTF ADX and HTF RSI = standard ADX and RSI on a higher timeframe than the chart, taken at the last completed higher-timeframe bar.
+Calculation: StopLevel = fixed at entry: for a long, the lowest low of the most recent N bars including the still-forming bar; for a short, the highest high of the same window.
+Long: HTF ADX <= ADX threshold AND HTF RSI < RSI threshold AND FastMA > SlowMA AND FastMA_prev < SlowMA
+Short: HTF ADX <= ADX threshold AND HTF RSI > (100 - RSI threshold) AND FastMA < SlowMA AND FastMA_prev > SlowMA
+Exit: long, (current close - entry)/entry >= take-profit fraction OR current close < StopLevel OR (FastMA_prev > SlowMA AND FastMA < SlowMA) OR (breakeven stop armed AND current price <= entry + fixed offset)
+Exit: short, (entry - current close)/entry >= take-profit fraction OR current close > StopLevel OR (FastMA > SlowMA AND FastMA_prev < SlowMA) OR (breakeven stop armed AND current price >= entry - fixed offset)
+Calculation: breakeven stop armed = once, since entry, the unrealized profit fraction (close vs entry) exceeded a protect fraction smaller than the take-profit fraction AND the price was beyond the offset level in profit (long: entry + fixed offset <= current price; short: entry - fixed offset >= current price); once armed it stays armed.

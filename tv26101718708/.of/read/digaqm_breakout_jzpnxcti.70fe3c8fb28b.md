@@ -1,0 +1,7 @@
+Calculation: SwingHigh = high of the most recent confirmed pivot high on the chart timeframe (a bar whose high is the highest among N bars on each side; confirmed N bars later)
+Calculation: SwingLow = low of the most recent confirmed pivot low on the chart timeframe (same pivot rule, using lows)
+Calculation: MA_slow, MA_trail = SMA or EMA of close on a higher timeframe than the chart, using the still-forming higher-timeframe bar; MA_trail has a shorter length than MA_slow
+Calculation: SwingStop = SwingLow, updated at each new pivot low, but once a SwingLow of the previous bar is >= the entry price while in a position, it freezes at its previous value for the rest of the trade
+Calculation: TrailStop = low of the most recent bar whose low crossed below MA_trail (previous low >= previous MA_trail and current low < MA_trail), measured on either the same higher timeframe as the MAs or the chart timeframe; defined only if that cross occurred after entry, otherwise undefined
+Long: flat AND high >= SwingHigh AND SwingHigh > MA_slow (entry is a stop order at SwingHigh)
+Exit: long, low <= ExitStop, where ExitStop = TrailStop if (TrailStop is defined AND TrailStop >= SwingStop AND previous close > TrailStop AND previous close > MA_trail), otherwise SwingStop

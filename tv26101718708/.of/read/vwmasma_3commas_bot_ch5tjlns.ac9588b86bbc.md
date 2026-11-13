@@ -1,0 +1,9 @@
+Calculation: Fast VWMA, Slow VWMA = volume-weighted moving averages of close (fast has the shorter length). Fast SMA, Slow SMA = simple moving averages of close; Fast SMA has the same length as Fast VWMA, and Slow SMA has the same length as Slow VWMA.
+Calculation: ATR = Average True Range on the chart timeframe, current bar.
+Calculation: StochK = SMA of raw stochastic %K, where raw %K = 100*(close-lowest low)/(highest high-lowest low) over a lookback. StochD = SMA of StochK, with a shorter smoothing length than the one used for StochK.
+Calculation: LongTP, LongSL = close at the most recent bar where Slow VWMA crossed above Slow SMA, plus ATR*tpMult for LongTP and minus ATR*slMult for LongSL. ATR is taken on that bar. Levels persist until the next such cross.
+Calculation: ShortTP, ShortSL = close at the most recent bar where Slow VWMA crossed below Slow SMA, minus ATR*tpMult for ShortTP and plus ATR*slMult for ShortSL. ATR is taken on that bar. Levels persist until the next such cross.
+Long: Fast VWMA crosses above Fast SMA OR Fast VWMA crosses above Slow SMA OR Slow VWMA crosses above Slow SMA (one of the three is selected as the trigger)
+Short: Fast VWMA crosses below Fast SMA OR Fast VWMA crosses below Slow SMA OR Slow VWMA crosses below Slow SMA (the same variant as chosen for Long)
+Exit: long, high > LongTP OR low < LongSL OR Slow VWMA crosses below Slow SMA OR (StochK crosses below StochD AND average(StochK, StochD) >= overbought threshold)
+Exit: short, low < ShortTP OR high > ShortSL OR Slow VWMA crosses above Slow SMA OR (StochK crosses above StochD AND average(StochK, StochD) <= oversold threshold)

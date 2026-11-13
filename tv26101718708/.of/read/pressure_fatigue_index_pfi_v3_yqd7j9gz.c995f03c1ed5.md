@@ -1,0 +1,10 @@
+Calculation: ClosePos = (2*close - high - low)/(high - low), 0 if high = low
+Calculation: Weight = min((high - low)/ATR, upper cap), ATR on the chart timeframe
+Calculation: Raw = 50 + 50*tanh(WilderMA(ClosePos*Weight, pressure length)/sensitivity); OS < 50 < OB are fixed levels
+Calculation: Fat = state variable, starts at 0; each bar: if Raw > OB then Fat = min(Fat + (Raw-OB)/(100-OB)*build, cap); else if Raw < OS then Fat = min(Fat + (OS-Raw)/OS*build, cap); else Fat = Fat*release (release < 1)
+Calculation: Pfi = 50 + (Raw-50)*exp(-Fat*impact)
+Calculation: LongEpisode = consecutive bars since Raw was last >= 50 (current bar included); ShortEpisode = consecutive bars since Raw was last <= 50 (current bar included)
+Calculation: LongDiv (optional filter) = within LongEpisode, some bar had Raw < OS and low <= lowest low of earlier LongEpisode bars with Raw < OS and Raw > lowest Raw of those earlier bars + min margin; ShortDiv = mirror (Raw > OB, high >= highest high of earlier ShortEpisode bars with Raw > OB, Raw < highest earlier Raw - min margin)
+Calculation: LongLock = set on a Long signal bar; cleared when Raw >= 50 or a cooldown number of bars has passed since that signal; ShortLock = mirror (cleared when Raw <= 50 or cooldown elapsed since Short signal)
+Long: within LongEpisode (current bar included) ALL of: (a) some bar had Raw < OS AND (high-low)/ATR (capped as in Weight) >= flush range threshold AND ClosePos <= -flush close threshold; (b) some bar had Raw < OS AND (Pfi - Raw) >= arm gap; AND current bar ClosePos >= trigger close threshold AND Weight >= trigger range threshold AND Raw > previous bar Raw AND Raw <= OS + near buffer AND LongLock was not set before this bar AND (optional filter: LongDiv)
+Short: within ShortEpisode (current bar included) ALL of: (a) some bar had Raw > OB AND Weight >= flush range threshold AND ClosePos >= flush close threshold; (b) some bar had Raw > OB AND (Raw - Pfi) >= arm gap; AND current bar ClosePos <= -trigger close threshold AND Weight >= trigger range threshold AND Raw < previous bar Raw AND Raw >= OB - near buffer AND ShortLock was not set before this bar AND (optional filter: ShortDiv)

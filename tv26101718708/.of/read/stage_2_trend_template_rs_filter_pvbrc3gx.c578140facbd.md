@@ -1,0 +1,7 @@
+Calculation: SMA_short, SMA_mid, SMA_long = simple moving averages of close on chart timeframe, with lookbacks short < mid < long
+Calculation: RangeHigh, RangeLow = highest high / lowest low over a lookback of about one year of chart bars, including the current bar
+Calculation: RS = close / benchmark close, where the benchmark is a reference market series on the same chart timeframe, same bar (current bar)
+Calculation: RelPerf(n) = (close / close n bars ago) / (benchmark close / benchmark close n bars ago)
+Calculation: Weighted = 0.4*RelPerf(n1) + 0.2*RelPerf(n2) + 0.2*RelPerf(n3) + 0.2*RelPerf(n4), with n1 < n2 < n3 < n4 and n4 = one-year lookback
+Calculation: Setup = ALL of: close > SMA_mid AND close > SMA_long; SMA_mid > SMA_long; SMA_long > SMA_long k bars ago (k shorter than the one-year lookback); SMA_short > SMA_mid AND SMA_short > SMA_long; close > SMA_short; (close/RangeLow - 1) >= a minimum positive fraction; (1 - close/RangeHigh) <= a maximum fraction; RS > SMA(RS, medium lookback); RS >= SMA(RS, one-year lookback); Weighted >= 1; RelPerf(n4) >= 1; (close/SMA_short - 1) < a maximum extension fraction
+Long: Setup is true on the current bar AND Setup was false on the previous bar

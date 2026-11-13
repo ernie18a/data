@@ -1,0 +1,4 @@
+Calculation: Bollinger Bands = on close, basis = simple moving average of close; upper/lower = basis plus/minus a multiplier times the standard deviation of close; same lookback for basis and standard deviation
+Calculation: LastSignal = direction (Long or Short) of the most recent bar on which a Long or Short line fired; none before the first one
+Long: close crosses above upper Bollinger Band (previous close <= previous upper band AND current close > current upper band) AND LastSignal is not Long
+Short: close crosses below lower Bollinger Band (previous close >= previous lower band AND current close < current lower band) AND LastSignal is not Short

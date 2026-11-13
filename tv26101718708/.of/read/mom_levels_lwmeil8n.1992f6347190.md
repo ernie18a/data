@@ -1,0 +1,3 @@
+Calculation: HTFBull = close of the still-forming higher-timeframe bar (higher than chart timeframe, not the last completed bar; its open is fixed at that bar's start and its close is the current price) > open of that same higher-timeframe bar
+Long: HTFBull is true on the current chart bar AND HTFBull was false on the previous chart bar
+Short: HTFBull is false on the current chart bar AND HTFBull was true on the previous chart bar

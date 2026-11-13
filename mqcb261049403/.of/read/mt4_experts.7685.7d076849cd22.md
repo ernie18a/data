@@ -1,0 +1,16 @@
+Calculation: bar[k] = chart-timeframe bar k bars before the forming bar (bar[0] = still-forming bar, bar[1] = last completed bar); close[0] = latest price.
+Calculation: OsMA[k] = OsMA (MACD histogram: MACD line minus its signal line, on close, fast EMA period shorter than slow EMA period) evaluated at bar[k].
+Calculation: Pivot = (high + low + close)/3 of the last completed bar of a higher timeframe (one day, much longer than the chart bar); it stays fixed for the whole current day.
+Long: no position open AND bar[3].high > bar[1].high AND bar[3].high > bar[2].high AND bar[3].high > bar[4].high AND bar[3].high > bar[5].high AND volume[1] > a minimum volume threshold AND volume[1] > volume[2] AND OsMA[1] < OsMA[0] AND OsMA[1] >= 0 AND OsMA[0] > 0 AND close[0] < Pivot
+Long: (a position exists AND no hedge position is open AND at most two positions are open) AND (floating profit of the long side >= hedge profit threshold OR floating profit of the short side < -(hedge loss threshold), where the loss threshold is larger than the profit threshold)
+Short: no position open AND bar[3].low < bar[1].low AND bar[3].low < bar[2].low AND bar[3].low < bar[4].low AND bar[3].low < bar[5].low AND volume[1] > a minimum volume threshold AND volume[1] > volume[2] AND OsMA[1] > OsMA[0] AND OsMA[1] <= 0 AND OsMA[0] < 0 AND close[0] > Pivot
+Short: (a position exists AND no hedge position is open AND at most two positions are open) AND (floating profit of the short side >= hedge profit threshold OR floating profit of the long side < -(hedge loss threshold), where the loss threshold is larger than the profit threshold)
+Short (optional lock mode, off by default): exactly one position open AND it is long AND its floating profit < -(lock loss threshold, smaller than the hedge loss threshold)
+Long (optional lock mode, off by default): exactly one position open AND it is short AND its floating profit < -(lock loss threshold, smaller than the hedge loss threshold)
+Exit: long, price <= entry - fixed stop distance OR price >= entry + fixed take-profit distance
+Exit: short, price >= entry + fixed stop distance OR price <= entry - fixed take-profit distance
+Exit: all positions, total floating profit >= profit target multiplied by the number of open positions (one profit target per position)
+Exit: long, optional trailing mode (off by default), floating profit > 0 AND price has risen above entry by more than the trailing distance AND price <= highest price since entry - trailing distance
+Exit: short, optional trailing mode (off by default), floating profit > 0 AND price has fallen below entry by more than the trailing distance AND price >= lowest price since entry + trailing distance
+Exit: all positions, optional trailing mode (off by default), floating profit of the long side < hedge stop level OR floating profit of the short side < hedge stop level (a negative level)
+Exit: the base-size position of a side, optional trailing mode (off by default), at least two positions are open AND one side's floating profit < -(large loss threshold) AND the opposite side's floating profit > large profit threshold AND this side's floating profit < -(twice the profit target)

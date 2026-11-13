@@ -1,0 +1,4 @@
+Calculation: EMA1..EMA5 = exponential moving averages of close on the chart timeframe, with strictly increasing lookbacks (EMA1 shortest, EMA5 longest)
+Calculation: DEMA = 2*EMA(close, n) - EMA(EMA(close, n), n), on the chart timeframe, with n longer than the EMA4 lookback and shorter than the EMA5 lookback
+Long: (close > EMA1 AND EMA1 > EMA2 AND EMA2 > EMA3 AND EMA3 > EMA4 AND EMA4 > DEMA AND DEMA > EMA5) is true on the current bar AND was false on the previous bar
+Short: (close < EMA1 AND EMA1 < EMA2 AND EMA2 < EMA3 AND EMA3 < EMA4 AND EMA4 < DEMA AND DEMA < EMA5) is true on the current bar AND was false on the previous bar

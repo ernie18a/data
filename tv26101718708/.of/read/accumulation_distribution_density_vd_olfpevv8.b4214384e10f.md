@@ -1,0 +1,6 @@
+Calculation: range = high - low
+Calculation: density = volume / range (if range is zero, divide by the smallest price increment instead)
+Calculation: avg_range = simple moving average of range over a lookback window ending at the previous bar (excludes the current bar)
+Calculation: avg_density = simple moving average of density over a lookback window ending at the previous bar (excludes the current bar)
+Long: bar is completed AND volume > 0 AND low <= lowest low of the previous N bars (excludes the current bar) AND density >= density_factor * avg_density AND (optional filter) range <= spread_factor * avg_range AND (optional filter) (close - low) / range * 100 >= close_pct (passes if range is zero)
+Short: bar is completed AND volume > 0 AND high >= highest high of the previous N bars (excludes the current bar) AND density >= density_factor * avg_density AND (optional filter) range <= spread_factor * avg_range AND (optional filter) (high - close) / range * 100 >= close_pct (passes if range is zero)

@@ -1,0 +1,3 @@
+Calculation: PeriodRegSlope = slope of the ordinary least squares linear regression of close (y) against bar index (x), fitted over all chart bars from the first bar of the current higher-timeframe period (the period still forming, which resets at each new period) through the current bar; it is undefined until the period has at least 2 bars (equivalently, the sign of the Pearson correlation between close and bar index over the same bars)
+Long: PeriodRegSlope > 0
+Short: PeriodRegSlope < 0

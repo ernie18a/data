@@ -1,0 +1,7 @@
+Calculation: ATR = Wilder average true range on a zone timeframe higher than the chart timeframe, taken from its last completed bar
+Calculation: DemandOB = scanning the zone-timeframe bars before the impulse bar from nearest to oldest, within a fixed lookback count, the first bar with close < open OR body |close-open| < a small fraction of that bar's own ATR; zone = [min(open,close), max(open,close)] of that bar
+Calculation: SupplyOB = same scan as DemandOB, but the first bar with close > open OR the same small-body condition
+Long: on a newly completed zone-timeframe bar, close > open AND |close-open| > impulse multiple * ATR AND DemandOB exists AND DemandOB zone does not overlap any existing demand zone (new high >= existing low AND new low <= existing high); the DemandOB zone is the long demand zone
+Short: on a newly completed zone-timeframe bar, close < open AND |close-open| > impulse multiple * ATR AND SupplyOB exists AND SupplyOB zone does not overlap any existing supply zone (new high >= existing low AND new low <= existing high); the SupplyOB zone is the short supply zone
+Exit: long, chart-bar close < bottom of the demand zone
+Exit: short, chart-bar close > top of the supply zone

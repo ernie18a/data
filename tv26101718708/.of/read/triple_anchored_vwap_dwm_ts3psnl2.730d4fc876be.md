@@ -1,0 +1,3 @@
+Calculation: Anchored VWAP(anchor period) = cumulative sum of (typical price * volume) / cumulative volume, accumulated from the first bar of the current anchor period and reset at each new anchor period; typical price = (high+low+close)/3. Three VWAPs are used, with a short, a medium and a long anchor period, all longer than the chart timeframe. Each is computed from the chart-timeframe bars and updated on every bar, including the still-forming period.
+Long: close > VWAP AND close[1] <= VWAP[1], for any one of the short, medium or long anchor VWAPs (each is evaluated independently)
+Short: close < VWAP AND close[1] >= VWAP[1], for any one of the short, medium or long anchor VWAPs (each is evaluated independently)

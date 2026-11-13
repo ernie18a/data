@@ -1,0 +1,10 @@
+Calculation: BullCnt, BearCnt = integer counters on the chart timeframe, both start at 0. On each bar, in this order: (1) BullCnt += 1 if volume > SMA(volume, fixed lookback) * multiplier AND 1-bar close percent change > +price threshold AND RSI < an extreme-overbought cap (above the overbought level); BearCnt += 1 if the same volume condition AND 1-bar close percent change < -price threshold AND RSI > an extreme-oversold cap (below the oversold level). (2) Cap each counter at a fixed maximum. (3) On every Nth bar index (bar_index % N == 0), decrease both counters by 1, floored at 0.
+Calculation: Sentiment = 'positive' if BullCnt > BearCnt AND BullCnt >= M; else 'negative' if BearCnt > BullCnt AND BearCnt >= M; else 'neutral' if BullCnt == BearCnt; else a fixed preset value (default 'positive'). M is a minimum count.
+Calculation: Squeeze = (Bollinger upper - Bollinger lower) / Bollinger middle < small fixed ratio. Bands are on close.
+Calculation: Mom = close - close of a fixed number of bars ago.
+Long: flat AND (Sentiment == 'positive' OR BullCnt >= M) AND EMA(close, shorter) > EMA(close, longer) AND close > SMA(close, much longer than both EMAs) AND RSI(close) < overbought level AND MACD line > MACD signal line AND Mom > 0 AND NOT Squeeze
+Long: close crosses above SMA(close, very short lookback) (no other filter; ignored while already long)
+Exit: long, RSI > overbought level OR EMA(close, shorter) < EMA(close, longer) OR close < SMA(close, much longer than both EMAs) OR MACD line < MACD signal line OR Sentiment == 'negative' OR BearCnt >= M OR Mom < -(fixed price-unit amount)
+Exit: long, low <= entry price * (1 - stop percent) (entries from the SMA crossover also use a tighter stop percent; the tighter one applies)
+Exit: long, high >= entry price * (1 + take-profit percent)
+Exit: long, bars held since entry > maximum holding duration converted to bars

@@ -1,0 +1,11 @@
+Calculation: VWAP = daily-anchored volume-weighted average of (high+low+close)/3, reset at the start of each day; UpperBand = VWAP + m*sd and LowerBand = VWAP - m*sd, where sd = volume-weighted standard deviation of that same price around VWAP within the day and m is a band multiplier
+Calculation: Resid = close - VWAP
+Calculation: ResHi, ResLo = upper and lower percentiles (linear interpolation, symmetric, ResHi's percentile > ResLo's percentile) of Resid over the last N bars, including the current bar
+Calculation: Expansion = stdev(Resid, N) / stdev(close, N), using the same N as the percentiles
+Calculation: VWAPSlope = slope of the linear regression line fitted to VWAP over the last N bars (same N)
+Calculation: MicroFlow = using the closes of the lower-timeframe bars (lower than the chart timeframe) that lie inside the current chart bar, evaluated at the chart bar's close: mean of sign(close_i - close_(i-1)) over the most recent S consecutive close-to-close changes (fewer if the chart bar contains fewer), range -1..+1; 0 if fewer than 2 lower-timeframe closes
+Calculation: ATR = Wilder ATR on the chart timeframe, evaluated on the current bar
+Long: ((Expansion < G AND Resid <= ResLo AND MicroFlow > g) OR (Expansion >= G AND close > UpperBand AND VWAPSlope > 0 AND MicroFlow > g)) AND bar time is inside the allowed trading-hours window (optional filter) AND bars since the last position close >= cooldown (or no position has closed yet)
+Short: ((Expansion < G AND Resid >= ResHi AND MicroFlow < -g) OR (Expansion >= G AND close < LowerBand AND VWAPSlope < 0 AND MicroFlow < -g)) AND bar time is inside the allowed trading-hours window (optional filter) AND bars since the last position close >= cooldown (or no position has closed yet)
+Exit: long, Short condition is true (reverse and enter short) OR low <= entry price - a*ATR OR high >= entry price + b*ATR, where b > a
+Exit: short, Long condition is true (reverse and enter long) OR high >= entry price + a*ATR OR low <= entry price - b*ATR, where b > a

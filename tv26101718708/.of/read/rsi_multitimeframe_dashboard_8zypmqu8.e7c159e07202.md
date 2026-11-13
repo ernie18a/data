@@ -1,0 +1,5 @@
+Calculation: RSI = Wilder RSI of close, computed on each of several monitored timeframes. Every monitored timeframe is equal to or higher than the chart timeframe. The value uses the bar still forming on that timeframe (no lookahead).
+Calculation: bullCount = number of monitored timeframes with RSI >= midline level
+Calculation: bearCount = number of monitored timeframes with RSI < midline level
+Long: RSI <= oversold level on every monitored timeframe (oversold level < midline level) OR bullCount crosses above bearCount (previous bar bullCount <= bearCount AND current bar bullCount > bearCount)
+Short: RSI >= overbought level on every monitored timeframe (overbought level > midline level) OR bullCount crosses below bearCount (previous bar bullCount >= bearCount AND current bar bullCount < bearCount)

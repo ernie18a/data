@@ -1,0 +1,4 @@
+Calculation: RSI = Wilder RSI of close on the chart timeframe
+Calculation: RowRSI = within the current block (fixed-length run of consecutive bars, aligned to bar-index multiples of the block length, including the still-forming bar), split the block's range [lowest low, highest high] into equal-height price rows; each bar's volume is divided equally among the rows its low-to-high range touches; RowRSI of a row = sum(bar RSI * bar's volume share in that row) / sum(bar's volume share in that row), only for rows with volume > 0
+Long: RowRSI of the row containing close <= oversold level
+Short: RowRSI of the row containing close >= overbought level (overbought level > oversold level)

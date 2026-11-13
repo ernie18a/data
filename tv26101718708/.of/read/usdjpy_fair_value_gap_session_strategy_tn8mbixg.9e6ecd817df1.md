@@ -1,0 +1,11 @@
+Calculation: BullFVG = on bar t, low[t] > high[t-2] AND high[t-1] > high[t-2]; zone lower = high[t-2], zone upper = low[t]; zone is valid only if (upper - lower) >= a minimum size.
+Calculation: BearFVG = on bar t, high[t] < low[t-2] AND low[t-1] < low[t-2]; zone upper = low[t-2], zone lower = high[t]; zone is valid only if (upper - lower) >= a minimum size.
+Calculation: ActiveBullZone = the most recent valid BullFVG zone (the current bar counts), replaced when a newer one forms. It is discarded when a bar's low <= its lower, when more than a maximum number of bars have passed since its formation bar, or after it has been used for a long entry. The bar that discards it cannot trigger an entry.
+Calculation: ActiveBearZone = the most recent valid BearFVG zone (the current bar counts), replaced when a newer one forms. It is discarded when a bar's high >= its upper, when more than a maximum number of bars have passed since its formation bar, or after it has been used for a short entry. The bar that discards it cannot trigger an entry.
+Calculation: SessionOK = the bar's time-of-day hour is inside session window A OR inside session window B (B starts later in the day than A).
+Calculation: VolSpike = volume > multiplier * SMA(volume, lookback), where the SMA includes the current bar and multiplier > 1.
+Calculation: EMA = EMA of close on the chart timeframe.
+Long: no open position AND ActiveBullZone exists AND low <= zone upper AND low > zone lower AND close > open AND VolSpike AND close > EMA AND SessionOK. Entry price = this bar's close.
+Short: no open position AND ActiveBearZone exists AND high >= zone lower AND high < zone upper AND close < open AND VolSpike AND close < EMA AND SessionOK. Entry price = this bar's close.
+Exit: long, low <= entry price * (1 - p) OR high >= entry price * (1 + k*p), where p is a fixed percentage and k > 1 is a reward-to-risk multiple.
+Exit: short, high >= entry price * (1 + p) OR low <= entry price * (1 - k*p), where p is a fixed percentage and k > 1 is a reward-to-risk multiple.

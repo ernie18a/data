@@ -1,0 +1,8 @@
+Calculation: HTF High / HTF Low = high / low of the last completed bar of a timeframe higher than the chart timeframe (the bar before the currently forming higher-timeframe bar). Both are fixed for the whole current higher-timeframe bar period, and only refreshed at a new higher-timeframe bar while flat.
+Calculation: Pivot Low / Pivot High = low / high of a bar that is the lowest / highest among an equal number of bars to its left and to its right; confirmed only after the right-side bars have closed. Last Pivot = the most recent confirmed one.
+Calculation: S1 High = high of the first chart bar in the current higher-timeframe bar period whose high >= HTF High. S1 Low = low of the first chart bar in the current higher-timeframe bar period whose low <= HTF Low. Each stays fixed once set.
+Calculation: Stop and Target are fixed at entry. Long: Stop = last Pivot Low, Target = entry price + RR * (entry price - Stop). Short: Stop = last Pivot High, Target = entry price - RR * (Stop - entry price). RR is a fixed reward-to-risk multiple.
+Long: flat AND S1 High exists (set on an earlier bar) AND S1 Low has not been set in this higher-timeframe period AND close > HTF High AND close > S1 High AND a Last Pivot Low exists. Enter at that bar's close.
+Short: flat AND S1 Low exists (set on an earlier bar) AND S1 High has not been set in this higher-timeframe period AND close < HTF Low AND close < S1 Low AND a Last Pivot High exists. Enter at that bar's close. If both touches occur on the same bar, the high side takes priority.
+Exit: long, low <= Stop OR high >= Target OR bar time-of-day (in a fixed timezone) equals a configured exit time
+Exit: short, high >= Stop OR low <= Target OR bar time-of-day (in a fixed timezone) equals a configured exit time

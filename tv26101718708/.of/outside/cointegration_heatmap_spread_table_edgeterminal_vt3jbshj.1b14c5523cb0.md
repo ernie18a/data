@@ -1,0 +1,7 @@
+Pairs mean-reversion on returns, evaluated for every unique pair (X = earlier-listed symbol, Y = later-listed symbol) in a user-supplied symbol list. Each symbol's price series is dividend-adjusted. Sample it at a weekly or monthly timeframe using only completed bars, and compute each period's percent return. Store the returns of all symbols as one column per period. Skip any period in which any symbol lacks a return. Optionally cap the history to a maximum number of periods by dropping the oldest. Require at least 2 periods.
+
+Per pair: run an ordinary least squares regression of Y returns on X returns over the full stored history, giving intercept alpha and slope beta. The spread for each period is Y - (alpha + beta*X). Take the most recent spread. Compute the mean and population standard deviation of the spreads over the last 100 periods (or fewer if less history is available). The z-score is (latest spread - that mean) / that standard deviation.
+
+Signals: if z > +2, short Y (the quote asset) and long X (the base asset). If z < -2, long Y and short X. Otherwise stay neutral. Exit an open pair trade when z returns to about 0. This exit is described in the text and is not coded.
+
+Optional pair-quality filter (a guideline, not coded as a gate): cointegration score = 1 / standard deviation of the regression residuals, using the last 100 residuals. Treat a pair as tradable only if the score is above a minimum, about 25%, and as very strong above about 40%. Recompute everything on each bar as new period returns arrive.

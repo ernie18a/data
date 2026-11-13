@@ -1,0 +1,10 @@
+Calculation: PO = EMA(smooth, short length) of [(close - EMA(close, medium length)) / (k * Wilder ATR(ATR length)) * 100], with k a positive ATR multiple
+Calculation: Level L = a positive threshold on the PO scale (extreme level by default; a lower level or zero are alternatives)
+Calculation: VWAP = session-anchored VWAP of (high+low+close)/3
+Long: PO crosses above +L (previous PO <= +L AND current PO > +L) AND bar is inside the intraday entry window, which starts at regular-session open and ends before the flat time (optionally the whole regular session up to the flat time) AND bar close time is before the flat time AND (if VWAP filter is used) abs(close - VWAP) <= m * ATR; if a Short signal fires on the same bar, take the Short instead
+Short: PO crosses below -L (previous PO >= -L AND current PO < -L) AND bar is inside the intraday entry window AND bar close time is before the flat time AND (if VWAP filter is used) abs(close - VWAP) <= m * ATR
+Exit: long, PO crosses below -L (default; if a Short entry fires on the same bar, flip to short) OR [alternative: PO crosses below 0] OR [alternative: PO crosses below +L]
+Exit: short, PO crosses above +L (default; if a Long entry fires on the same bar, flip to long) OR [alternative: PO crosses above 0] OR [alternative: PO crosses above -L]
+Exit: long or short, bar close time reaches the flat time near the end of the regular session (skipped if holding overnight) OR bar time is outside the regular session
+Exit: long, (optional) low <= entry price * (1 - hard stop %) OR (optional trailing stop, armed once high >= entry price * (1 + trail %)) low <= highest high since entry - entry price * trail %
+Exit: short, (optional) high >= entry price * (1 + hard stop %) OR (optional trailing stop, armed once low <= entry price * (1 - trail %)) high >= lowest low since entry + entry price * trail %

@@ -1,0 +1,13 @@
+Calculation: all values below are computed on a timeframe higher than the chart timeframe, using only the last completed higher-timeframe bar (no forming bar). Osc = MFI(close) over a lookback. Fast = moving average of Osc over a short length. Slow = moving average of Osc over a longer length than Fast. Mid = simple moving average of Osc over a BB length. Upper = Mid + k * stdev(Osc, BB length). Lower = Mid - k * stdev(Osc, BB length). BBW = Upper - Lower. BBW falling = BBW < BBW of the previous higher-timeframe bar.
+Long: Fast crosses above Mid (early entry)
+Long: Slow crosses from below Lower back to inside the band (Slow rises above Lower) AND Fast is not above Upper (elite entry plus elite filter)
+Long: Slow crosses above Fast AND, since the previous short basic cross, Slow has crossed Mid or Upper or Lower (flip filter) (basic entry)
+Long: Slow crosses above Mid AND Slow is not overbought (above an overbought threshold) (safe entry plus safe filter)
+Long: BBW falling AND Slow crosses above Upper (breakout entry)
+Short: Fast crosses below Mid (early entry)
+Short: Slow crosses from above Upper back to inside the band (Slow falls below Upper) AND Fast is not below Lower (elite entry plus elite filter)
+Short: Slow crosses below Fast AND, since the previous long basic cross, Slow has crossed Mid or Upper or Lower (flip filter) (basic entry)
+Short: Slow crosses below Mid AND Slow is not oversold (below an oversold threshold) (safe entry plus safe filter)
+Short: BBW falling AND Slow crosses below Lower (breakout entry)
+Exit: long, Fast crosses below Mid (early take profit) OR Slow crosses above Upper (elite take profit) OR Slow crosses below Fast (basic take profit) OR Slow crosses below Mid (safe hard exit) OR (BBW falling AND Slow crosses below Lower) (breakout hard exit)
+Exit: short, Fast crosses above Mid (early take profit) OR Slow crosses below Lower (elite take profit) OR Slow crosses above Fast (basic take profit) OR Slow crosses above Mid (safe hard exit) OR (BBW falling AND Slow crosses above Upper) (breakout hard exit)

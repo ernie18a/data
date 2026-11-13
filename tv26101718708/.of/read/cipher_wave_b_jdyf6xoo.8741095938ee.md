@@ -1,0 +1,10 @@
+Calculation: hlc3 = (high + low + close)/3, using Heikin Ashi bars of the chart timeframe (same timeframe, current bar)
+Calculation: esa = EMA(hlc3, channel length)
+Calculation: de = EMA(abs(hlc3 - esa), channel length)
+Calculation: ci = (hlc3 - esa) / (0.015 * de), or 0 if de is 0
+Calculation: wt1 = amplitude multiplier * EMA(ci, average length)
+Calculation: wt2 = SMA(wt1, short signal length)
+Long: wt1 crosses above wt2 on this bar AND wt2 <= oversold level (negative level)
+Long: wt1 crosses above wt2 on this bar (unfiltered raw cross)
+Short: wt1 crosses below wt2 on this bar AND wt2 >= overbought level (positive level, same magnitude as the oversold level)
+Short: wt1 crosses below wt2 on this bar (unfiltered raw cross)

@@ -1,0 +1,8 @@
+Calculation: UpperLevel = highest high of the last N chart-timeframe bars including the current bar, plus a fixed offset, measured on the bar whose time-of-day equals a fixed set time-of-day
+Calculation: LowerLevel = lowest low of the last N chart-timeframe bars (same N, same bar set as UpperLevel), minus the same fixed offset, measured on the same set-time bar
+Calculation: TrailStop(long) = highest high since entry minus a trail distance; counts only once it is above the entry price; the trail distance is the smaller of the two trail distances used, with the other being a break-even trail that only applies while the stop is still below entry
+Calculation: TrailStop(short) = lowest low since entry plus a trail distance; counts only once it is below the entry price; same distance rule
+Long: no position is open AND UpperLevel was set on a set-time bar AND a later bar has high >= UpperLevel (entry at UpperLevel) AND the order has not expired AND the opposite-side level has not already been triggered
+Short: no position is open AND LowerLevel was set on a set-time bar AND a later bar has low <= LowerLevel (entry at LowerLevel) AND the order has not expired AND the opposite-side level has not already been triggered
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance OR low <= TrailStop(long)
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance OR high >= TrailStop(short)

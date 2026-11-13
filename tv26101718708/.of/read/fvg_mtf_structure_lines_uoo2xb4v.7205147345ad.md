@@ -1,0 +1,9 @@
+Calculation: Leg(n) = state that becomes DOWN when high[n bars ago] > highest high of the n most recent bars, becomes UP when low[n bars ago] < lowest low of the n most recent bars (checked in that order), otherwise keeps its previous state
+Calculation: PivotHigh(n) = high[n bars ago], registered when Leg(n) flips to DOWN; PivotLow(n) = low[n bars ago], registered when Leg(n) flips to UP; the latest registered value is used, and registering a new one marks it as not yet broken
+Calculation: n_short < n_long (internal vs. swing lookback)
+Long: close crosses above latest PivotHigh(n_short) (previous close <= level, current close > level) AND that pivot is not yet broken AND latest PivotHigh(n_short) level != latest PivotHigh(n_long) level; the pivot is then marked broken
+Long: close crosses above latest PivotHigh(n_long) AND that pivot is not yet broken; the pivot is then marked broken
+Short: close crosses below latest PivotLow(n_short) AND that pivot is not yet broken AND latest PivotLow(n_short) level != latest PivotLow(n_long) level; the pivot is then marked broken
+Short: close crosses below latest PivotLow(n_long) AND that pivot is not yet broken; the pivot is then marked broken
+Long: for each of several timeframes higher than the chart timeframe, evaluated on the first chart bar of each new higher-timeframe bar, with bar0 = that higher-timeframe bar still forming, bar1 = the previous higher-timeframe bar, bar2 = the one before it: low of bar0 > high of bar2 AND close of bar1 > high of bar2 (bullish fair value gap)
+Short: for each of several timeframes higher than the chart timeframe, evaluated on the first chart bar of each new higher-timeframe bar, with bar0 = that higher-timeframe bar still forming, bar1 = the previous higher-timeframe bar, bar2 = the one before it: high of bar0 < low of bar2 AND close of bar1 < low of bar2 (bearish fair value gap)

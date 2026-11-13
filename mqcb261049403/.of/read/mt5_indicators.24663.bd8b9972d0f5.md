@@ -1,0 +1,3 @@
+Calculation: RocketRSI (computed on chart timeframe bars, using the last completed and current bar values bar by bar) = Fisher transform of an RSI built on a smoothed momentum. Steps: mom[t] = close[t] - close[t-N+1]; f[t] = c1*(mom[t]+mom[t-1])/2 + c2*f[t-1] + c3*f[t-2], where a = exp(-1.414*pi/S), c2 = 2*a*cos(1.414*pi/S), c3 = -a^2, c1 = 1-c2-c3 (S = smoothing length, N = RSI period); up[t] = max(f[t]-f[t-1], 0); dn[t] = max(f[t-1]-f[t], 0); r = (sum of up over last N bars - sum of dn over last N bars) / (sum of up + sum of dn) (r = 0 if denominator is 0), clamped to [-0.999, 0.999]; RocketRSI = 0.5*ln((1+r)/(1-r)).
+Long: RocketRSI[t] > RocketRSI[t-1]
+Short: RocketRSI[t] < RocketRSI[t-1]

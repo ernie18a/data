@@ -1,0 +1,4 @@
+Calculation: osc = 100 * EMA(net, short_len) / SMA(volume, longer_len), where net = volume*(2*cp - 1) and cp = (close-low)/(high-low), with cp = 0.5 when high == low
+Calculation: reclaim_ema = EMA of close
+Long: osc > 0 AND close crosses above reclaim_ema AND position is not already long AND bars since the last long or short signal >= cooldown (optional variant: replace the first two terms with osc crossing above 0; optional extra filter: |osc| >= strong_threshold)
+Short: osc < 0 AND close crosses below reclaim_ema AND position is not already short AND bars since the last long or short signal >= cooldown (optional variant: replace the first two terms with osc crossing below 0; optional extra filter: |osc| >= strong_threshold)

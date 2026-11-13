@@ -1,0 +1,8 @@
+Calculation: Supertrend = standard ATR-based Supertrend on chart timeframe; uptrend/downtrend is its direction state
+Calculation: RSI = Wilder RSI of close on chart timeframe
+Calculation: RSI MA = moving average of RSI, with a longer window than none required relative to RSI length
+Calculation: Signal = RSI OR RSI MA (one fixed choice)
+Calculation: RSI pivot low = RSI at a bar that is the lowest RSI among N bars before and M bars after it; it is confirmed on the bar M bars after the pivot bar. Previous pivot low = the most recent earlier RSI pivot low
+Calculation: RSI pivot high = RSI at a bar that is the highest RSI among N bars before and M bars after it; confirmed M bars after the pivot bar. Previous pivot high = the most recent earlier RSI pivot high
+Long: (Supertrend flips from downtrend to uptrend on this bar) OR (Supertrend is in uptrend AND Signal crosses up through the RSI midpoint level, i.e. previous bar Signal <= level and current bar Signal > level) OR (on the bar an RSI pivot low is confirmed: RSI at that pivot > RSI at previous pivot low AND low price at the pivot bar < low price at the previous pivot low bar AND the number of bars since the previous pivot low's confirmation is between a minimum and a larger maximum)
+Short: (Supertrend flips from uptrend to downtrend on this bar) OR (Supertrend is in downtrend AND Signal crosses down through the RSI midpoint level, i.e. previous bar Signal >= level and current bar Signal < level) OR (on the bar an RSI pivot high is confirmed: RSI at that pivot < RSI at previous pivot high AND high price at the pivot bar > high price at the previous pivot high bar AND the number of bars since the previous pivot high's confirmation is between a minimum and a larger maximum)

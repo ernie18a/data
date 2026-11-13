@@ -1,0 +1,3 @@
+Calculation: Daily Stochastic = on daily bars (higher timeframe than the chart, using the daily bar still forming at the current chart bar), %K = (close - lowest low over N bars) / (highest high over N bars - lowest low over N bars) * 100 with no extra smoothing, %D = short simple moving average of %K
+Long: MACD line crosses above its signal line on the chart timeframe AND daily %K > daily %D AND daily %K < an overbought threshold
+Exit: Long, low <= entry price - stop multiple * ATR (ATR of the current chart bar, recalculated every bar) OR (high has crossed above entry price + activation multiple * ATR at any bar since entry, where the activation multiple is larger than the stop multiple, AND close < EMA of close)

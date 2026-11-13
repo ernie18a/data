@@ -1,0 +1,3 @@
+Calculation: TTF = on bars of a timeframe equal to or higher than the chart timeframe (if higher, use the value of the still-forming higher-timeframe bar containing the current chart bar), HHr = highest high of the most recent N bars including the current bar, HHo = highest high of the N bars immediately before those (non-overlapping), LLr = lowest low of the most recent N bars, LLo = lowest low of the N bars immediately before those; Buy = HHr - LLo; Sell = HHo - LLr; raw = 100*(Buy - Sell)/(0.5*(Buy + Sell)), or 0 if Buy + Sell = 0; TTF = T3 moving average (Tillson, six cascaded EMAs with volume factor) of raw, with T3 period shorter than N
+Long: TTF > +L
+Short: TTF < -L (same magnitude L as the long threshold, opposite sign)

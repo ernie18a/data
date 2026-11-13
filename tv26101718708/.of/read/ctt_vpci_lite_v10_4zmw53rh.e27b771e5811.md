@@ -1,0 +1,3 @@
+Calculation: RVOL = volume of the still-forming higher-timeframe bar / (simple average of volume over the N most recently completed higher-timeframe bars, excluding the forming bar, multiplied during intraday regular-session hours by U = min(1, p + k*sin(pi*p)), where p = elapsed session time / session length clamped to [small minimum, 1] and k is a small positive constant)
+Long: close > close of the last completed higher-timeframe bar OR close >= open OR RSI(close) <= oversold threshold OR RVOL >= high-RVOL threshold
+Short: close <= close of the last completed higher-timeframe bar OR close < open OR RSI(close) >= overbought threshold

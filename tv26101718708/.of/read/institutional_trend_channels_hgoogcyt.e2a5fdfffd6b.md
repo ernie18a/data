@@ -1,0 +1,4 @@
+Calculation: UpperBand = least-squares linear regression value of close at the current bar over a lookback window + (multiplier * population standard deviation of close over the same window)
+Calculation: LowerBand = least-squares linear regression value of close at the current bar over the same window - (multiplier * standard deviation of close over the same window)
+Long: close crosses above UpperBand (close > UpperBand AND previous close <= previous bar's UpperBand) on a completed bar AND (optional filter) volume >= multiplier * simple moving average of volume over a lookback window, with the multiplier > 1
+Short: close crosses below LowerBand (close < LowerBand AND previous close >= previous bar's LowerBand) on a completed bar AND (optional filter) volume >= multiplier * simple moving average of volume over a lookback window, with the multiplier > 1

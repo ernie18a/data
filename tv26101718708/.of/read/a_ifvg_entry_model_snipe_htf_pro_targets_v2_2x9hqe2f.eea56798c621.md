@@ -1,0 +1,16 @@
+Calculation: ATR = Average True Range
+Calculation: SwingLow/SwingHigh = most recent confirmed pivot low/high (extreme versus an equal number of bars on each side; known only after those right-side bars have closed)
+Calculation: BullSweep bar = low < SwingLow AND close > SwingLow; BearSweep bar = high > SwingHigh AND close < SwingHigh
+Calculation: LongStop = lowest low from the latest BullSweep bar through the current bar - (small fraction of ATR); ShortStop = highest high from the latest BearSweep bar through the current bar + (same fraction of ATR)
+Calculation: LiqHigh/LiqLow = high/low of the most recent bar (including the current) whose high/low differs from the previous bar's high/low by less than a small fraction of ATR
+Calculation: SnipeLongTarget = LiqHigh if it exists and > close; else highest high over a short lookback if > close; else close + k1*ATR. SnipeShortTarget = mirrored (LiqLow if < close; else lowest low over the short lookback if < close; else close - k1*ATR)
+Calculation: RunnerLongTarget = highest high over a long lookback (longer than the short lookback) if > close; else close + k2*ATR (k2 > k1). RunnerShortTarget = mirrored (lowest low over the long lookback if < close; else close - k2*ATR)
+Calculation: HTFBias = bullish if the close of a higher-timeframe bar (the bar still forming, so its close is the current price) > the EMA of close on that higher timeframe; bearish if <
+Long (SNIPE): within the last W bars including the current one a BullSweep bar occurred AND within the last W bars a bar with close > open AND (close - open) > m*ATR occurred AND current close > current open AND current close > previous bar's high AND (close - LongStop) > 0 AND (SnipeLongTarget - close) > r*(close - LongStop), r = minimum reward-to-risk ratio AND no SNIPE long signal in the last C bars
+Long (HTF runner): same as Long (SNIPE) AND HTFBias is bullish, with RunnerLongTarget replacing SnipeLongTarget in the reward-to-risk test, and the C-bar cooldown counted only against previous HTF long signals
+Short (SNIPE): within the last W bars including the current one a BearSweep bar occurred AND within the last W bars a bar with close < open AND (open - close) > m*ATR occurred AND current close < current open AND current close < previous bar's low AND (ShortStop - close) > 0 AND (close - SnipeShortTarget) > r*(ShortStop - close) AND no SNIPE short signal in the last C bars
+Short (HTF runner): same as Short (SNIPE) AND HTFBias is bearish, with RunnerShortTarget replacing SnipeShortTarget in the reward-to-risk test, and the C-bar cooldown counted only against previous HTF short signals
+Exit: long opened by SNIPE entry, low <= LongStop OR high >= SnipeLongTarget (stop and target values fixed on the entry bar)
+Exit: long opened by HTF entry, low <= LongStop OR high >= RunnerLongTarget (stop and target values fixed on the entry bar)
+Exit: short opened by SNIPE entry, high >= ShortStop OR low <= SnipeShortTarget (stop and target values fixed on the entry bar)
+Exit: short opened by HTF entry, high >= ShortStop OR low <= RunnerShortTarget (stop and target values fixed on the entry bar)

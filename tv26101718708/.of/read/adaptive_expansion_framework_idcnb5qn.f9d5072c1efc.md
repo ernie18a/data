@@ -1,0 +1,5 @@
+Calculation: Channel upper = linear regression value (at the current bar) of close over a lookback + multiplier × population standard deviation of close over the same lookback
+Calculation: Channel lower = linear regression value (at the current bar) of close over the same lookback − the same multiplier × the same standard deviation
+Calculation: True range = max(high-low, |high-previous close|, |low-previous close|); ATR = Wilder-smoothed average of true range
+Long: close > channel upper AND previous close <= previous bar's channel upper AND true range > multiplier × ATR AND (optional filter) volume > multiplier × simple moving average of volume
+Short: close < channel lower AND previous close >= previous bar's channel lower AND true range > multiplier × ATR AND (optional filter) volume > multiplier × simple moving average of volume

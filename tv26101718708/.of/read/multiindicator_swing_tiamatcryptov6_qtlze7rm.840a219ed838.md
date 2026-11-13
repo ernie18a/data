@@ -1,0 +1,7 @@
+Calculation: Supertrend = standard ATR-band Supertrend (ATR multiplier factor, ATR period); state is 'down' when its line is above price (upper band active) and 'up' when its line is below price (lower band active)
+Calculation: ADX = SMA-based ADX, all smoothing by simple moving average over one common length: TR = max(high-low, |high-prev close|, |low-prev close|); DM+ = (high>prev high) ? high-prev high : 0; DM- = (prev low>low) ? prev low-low : 0; DI+ = 100*SMA(DM+)/SMA(TR); DI- = 100*SMA(DM-)/SMA(TR); DX = 100*|DI+ - DI-|/(DI+ + DI-) (0 if the sum is 0); ADX = SMA(DX)
+Calculation: Delta = EMA(SMA(raw, L)/SMA(volume, L), S) where S is shorter than L; raw = bidVol - askVol; bidVol = (close<open) ? volume : volume*(high-close)/(high-low+tiny epsilon); askVol = (close>open) ? volume : volume*(close-low)/(high-low+tiny epsilon)
+Long: Supertrend state is 'down' AND ADX > trend-strength threshold AND Delta > +delta threshold AND (optional filter) close > Parabolic SAR
+Short: Supertrend state is 'up' AND ADX > trend-strength threshold AND Delta < -(delta threshold) AND (optional filter) close < Parabolic SAR
+Exit: long, low <= entry price*(1 - stop%) OR high >= entry price*(1 + take-profit%) OR Short condition is true (reverse to short); take-profit% is larger than stop%
+Exit: short, high >= entry price*(1 + stop%) OR low <= entry price*(1 - take-profit%) OR Long condition is true (reverse to long); take-profit% is larger than stop%

@@ -1,0 +1,6 @@
+Calculation: DailyOpen = open of the current (still forming) daily bar, a higher timeframe than the chart; constant for the whole day
+Calculation: ADR(n) = SMA over the last n completed daily bars (excluding the current day) of (daily high - daily low)
+Calculation: Inner = k * min(ADR(short n), ADR(long n)); Outer = k * max(ADR(short n), ADR(long n)); k is a fixed positive factor, the same for both
+Calculation: SellerZone = [DailyOpen + Inner, DailyOpen + Outer]; BuyerZone = [DailyOpen - Outer, DailyOpen - Inner]
+Long: (this bar's high >= BuyerZone lower AND this bar's low <= BuyerZone upper) AND NOT (previous bar's high >= BuyerZone lower AND previous bar's low <= BuyerZone upper) OR (close > SellerZone upper AND previous close <= SellerZone upper)
+Short: (this bar's high >= SellerZone lower AND this bar's low <= SellerZone upper) AND NOT (previous bar's high >= SellerZone lower AND previous bar's low <= SellerZone upper) OR (close < BuyerZone lower AND previous close >= BuyerZone lower)

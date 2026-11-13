@@ -1,0 +1,3 @@
+Calculation: Bollinger Bands = Middle: moving average of close over a lookback; Upper: Middle + multiplier * standard deviation of close over the same lookback; Lower: Middle - multiplier * the same standard deviation. All on chart timeframe.
+Long: close crosses above Middle (previous close <= previous Middle AND current close > current Middle) OR close crosses above Upper (same crossing test) OR close crosses above Lower (same crossing test)
+Short: close crosses below Middle (previous close >= previous Middle AND current close < current Middle) OR close crosses below Upper (same crossing test) OR close crosses below Lower (same crossing test)

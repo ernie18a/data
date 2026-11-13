@@ -1,0 +1,7 @@
+Calculation: AccBox = when no setup is active, if (highest high - lowest low over the last N bars) <= ATR * multiplier, the box top/bottom = that window's highest high/lowest low; each later bar whose high and low both stay within the box +/- a small fraction of ATR belongs to the box and widens top/bottom to include its high/low
+Calculation: SweepHigh = first bar after AccBox formation whose high > AccBox top + small ATR fraction (checked before SweepLow; may be the same bar as the close condition below). SweepLow = first such bar whose low < AccBox bottom - small ATR fraction
+Calculation: SetupAlive = since the sweep bar, price has not exceeded the sweep side of the box by more than a larger ATR multiple, and no more than a fixed number of bars have elapsed
+Calculation: HTFBias = bullish if on both higher timeframes (second longer than first; the bar still forming, close = latest chart close) close > SMA(close); bearish if on both close < SMA(close); else neutral
+Calculation: BodyPct = abs(close - open) / (high - low), 0 if high == low
+Long: SweepLow occurred AND SetupAlive AND close > AccBox top AND (BodyPct >= threshold, optional filter) AND (HTFBias is bullish, optional filter)
+Short: SweepHigh occurred AND SetupAlive AND close < AccBox bottom AND (BodyPct >= threshold, optional filter) AND (HTFBias is bearish, optional filter)

@@ -1,0 +1,6 @@
+Calculation: CHOP = 100 * log10(sum of true range over N bars / (highest high over N bars - lowest low over N bars)) / log10(N)
+Calculation: ATR% = ATR / close * 100, evaluated on the signal bar and held fixed for the whole trade
+Long: no open position AND MACD line crosses the MACD signal line in either direction on this bar AND MACD histogram < 0 AND low <= VWMA(close) AND CHOP < threshold AND ADX > threshold AND (no prior exit OR bars since last position exit >= cooldown)
+Short: no open position AND MACD line crosses the MACD signal line in either direction on this bar AND MACD histogram > 0 AND high >= VWMA(close) AND CHOP < threshold AND ADX > threshold AND (no prior exit OR bars since last position exit >= cooldown)
+Exit: long, high >= entry price * (1 + ATR% * tp_mult / 100) OR low <= max(entry price * (1 - ATR% * sl_mult / 100), entry price * (1 - plug% / 100)), where tp_mult > sl_mult and the stop is whichever of the two is closer to entry
+Exit: short, low <= entry price * (1 - ATR% * tp_mult / 100) OR high >= min(entry price * (1 + ATR% * sl_mult / 100), entry price * (1 + plug% / 100)), where tp_mult > sl_mult and the stop is whichever of the two is closer to entry

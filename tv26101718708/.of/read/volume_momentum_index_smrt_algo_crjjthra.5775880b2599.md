@@ -1,0 +1,5 @@
+Calculation: VMI = EMA(EMA(100 * vmiRaw / highest(|vmiRaw|, W), s), s), where vmiRaw = EMA(pm * (1 + k * bvp), b); pm = (close - close[N]) / EMA(|close - close[N]|, N); bvp = vp / (1 + |vp|); vp = sign(close - close[1]) * volume / EMA(volume, N); k is a volume-influence weight; W (normalization window) is longer than N (momentum lookback); b and s are short smoothing lengths; all on chart timeframe bars
+Calculation: Signal = EMA(VMI, g), where g is longer than the smoothing lengths b and s
+Calculation: OS = negative oversold threshold; OB = positive overbought threshold (symmetric around zero, |OS| and |OB| large, near the extremes of the 100-scaled VMI)
+Long: VMI crosses above Signal (previous VMI <= previous Signal AND current VMI > current Signal) AND VMI < OS AND Signal < OS (strict comparisons, evaluated on the completed bar)
+Short: VMI crosses below Signal (previous VMI >= previous Signal AND current VMI < current Signal) AND VMI > OB AND Signal > OB (strict comparisons, evaluated on the completed bar)

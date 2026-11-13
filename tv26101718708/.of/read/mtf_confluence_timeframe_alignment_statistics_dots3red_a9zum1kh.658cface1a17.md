@@ -1,0 +1,6 @@
+Calculation: Trend(series) = +1 if close > SMA(close) AND ADX >= a minimum threshold; -1 if close < SMA(close) AND ADX >= the same threshold; else 0. The SMA length and ADX length are the same for all three series.
+Calculation: Series = the chart timeframe (current bar) and two higher timeframes (both higher than the chart, one higher than the other). Each higher timeframe uses its bar still forming at the current chart bar's close (no lookahead), with close, SMA and ADX taken from that bar.
+Calculation: Count = if chart Trend is nonzero, the number of the three series whose Trend equals the chart Trend (range 1-3); otherwise 0.
+Calculation: OpenEvent = an earlier signal with direction d (+1 long, -1 short), signal-bar close P and signal bar index b, still unresolved. It resolves at a later bar when d*(close - P) >= a multiple of ATR (chart timeframe, fixed lookback) OR bars elapsed since b >= a fixed bar window. The resolution check on a bar runs before the signal check on that same bar.
+Long: chart Trend == +1 AND (Count != previous bar's Count OR previous bar's chart Trend != +1) AND no OpenEvent exists. This opens an OpenEvent with d=+1.
+Short: chart Trend == -1 AND (Count != previous bar's Count OR previous bar's chart Trend != -1) AND no OpenEvent exists. This opens an OpenEvent with d=-1.

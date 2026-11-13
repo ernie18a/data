@@ -1,0 +1,2 @@
+Calculation: calm_gap = number of daily sessions elapsed since the most recent daily close of the market fear gauge (volatility index) at or above the panic level, measured before the current session; unbounded if no such close exists yet
+Long: the fear gauge's daily close of the current completed session >= panic level AND calm_gap > calm-period length (in sessions); enter at the next session's open

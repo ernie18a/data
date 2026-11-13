@@ -1,0 +1,3 @@
+Calculation: SAR_chart, SAR_mid, SAR_senior = Parabolic SAR computed on the chart timeframe, on a timeframe higher than the chart, and on a timeframe higher than the mid one, respectively. For the mid and senior values on bar t, use the higher-timeframe bar that contains chart bar t (the bar still forming, not the last completed one).
+Long: open[t-1] < SAR_chart[t-1] AND open[t] >= SAR_chart[t] AND close[t] > SAR_mid AND close[t] > SAR_senior
+Short: open[t-1] >= SAR_chart[t-1] AND open[t] < SAR_chart[t] AND close[t] < SAR_mid AND close[t] < SAR_senior

@@ -1,0 +1,3 @@
+Calculation: weekday_avg_return = using only completed daily bars (a timeframe higher than or equal to the chart timeframe, excluding the daily bar still forming), over the most recent lookback window of daily bars, the mean of (daily close - previous daily close) / previous daily close * 100 across only those days whose UTC weekday equals the UTC weekday of the current chart bar; undefined if no such day is in the window
+Long: weekday_avg_return is defined AND weekday_avg_return >= 0
+Short: weekday_avg_return is defined AND weekday_avg_return < 0

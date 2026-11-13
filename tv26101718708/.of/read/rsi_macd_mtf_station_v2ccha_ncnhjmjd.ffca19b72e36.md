@@ -1,0 +1,4 @@
+Calculation: MACD line = EMA(close, shorter lookback) - EMA(close, longer lookback)
+Long: RSI(close) <= oversold threshold on any evaluated timeframe OR MACD line > 0 on any evaluated timeframe (each timeframe is evaluated independently; it may be the chart timeframe or a higher or lower one; use the value of the bar still forming at the current chart bar close, with no future data)
+Long: MACD line > 0 on a higher timeframe than the chart timeframe AND RSI(close) <= oversold threshold on the chart timeframe or a lower timeframe (macro trend up plus short-term oversold dip; same bar-still-forming evaluation)
+Short: RSI(close) >= overbought threshold on any evaluated timeframe OR MACD line < 0 on any evaluated timeframe (same per-timeframe, bar-still-forming evaluation; overbought threshold > oversold threshold)

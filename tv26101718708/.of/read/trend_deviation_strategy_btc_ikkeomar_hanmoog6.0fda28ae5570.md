@@ -1,0 +1,8 @@
+Calculation: BBands = on hlc3=(high+low+close)/3, Upper/Lower = SMA(hlc3,n) +/- mult*stdev(hlc3,n)
+Calculation: Mom = close - close[k]; MomChg = Mom - Mom[1]
+Calculation: MACD = EMA(close,fast) - EMA(close,slow) (fast period shorter than slow); Signal = EMA(MACD,signal period)
+Calculation: STC = Schaff Trend Cycle on close: m = EMA(close,fast)-EMA(close,slow) (fast shorter than slow); s1 = 100*(m-lowest(m,L))/(highest(m,L)-lowest(m,L)) (carry previous value if range is 0); p1 = p1[prev] + f*(s1-p1[prev]) (init s1); s2 = 100*(p1-lowest(p1,L))/(highest(p1,L)-lowest(p1,L)) (same carry rule); STC = STC[prev] + f*(s2-STC[prev]) (init s2); L is the cycle lookback, f is a smoothing factor in (0,1]
+Long: +DI crosses above -DI (Wilder DMI; +DI > -DI now and <= on previous bar) AND hlc3 < BBands Upper AND ((Mom > 0 AND MomChg > 0) OR MACD > Signal OR Supertrend direction flips from downtrend to uptrend on this bar OR (STC[3] >= STC[2] AND STC[2] <= STC[1] AND STC < LevelA) OR STC < LevelLow OR AroonDown > AroonUp OR AroonUp crosses above AroonDown (AroonUp > AroonDown now and <= on previous bar)) (standard Aroon Up/Down; LevelLow < LevelA)
+Short: -DI crosses above +DI (-DI > +DI now and <= on previous bar) AND hlc3 > BBands Lower AND ((Mom < 0 AND MomChg < 0) OR MACD < Signal OR Supertrend direction flips from uptrend to downtrend on this bar OR (STC[3] <= STC[2] AND STC[2] >= STC[1] AND STC > LevelB) OR STC > LevelHigh OR AroonDown < AroonUp OR AroonUp crosses below AroonDown (AroonUp < AroonDown now and >= on previous bar)) (LevelHigh > LevelB; LevelB < LevelA)
+Exit: long, Short condition is true (position reverses to short)
+Exit: short, Long condition is true (position reverses to long)

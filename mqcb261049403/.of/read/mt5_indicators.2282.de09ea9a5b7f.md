@@ -1,0 +1,2 @@
+Long: on the chart timeframe, the current bar's MFI (Money Flow Index) is above the upper level for at least one of four MFI lookbacks of different lengths (OR across the four lookbacks; each is evaluated independently)
+Short: on the chart timeframe, the current bar's MFI is below the lower level for at least one of the same four lookbacks (OR across the four lookbacks; the lower level is below the upper level)

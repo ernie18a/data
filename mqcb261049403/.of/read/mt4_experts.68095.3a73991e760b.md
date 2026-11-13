@@ -1,0 +1,7 @@
+Calculation: Range = RangeHigh (highest high) and RangeLow (lowest low) of the chart-timeframe bars inside the opening window of each New York calendar day. The window starts at 00:00 New York local time, DST-adjusted. The values are fixed once the window ends and apply until the next day's window starts. No decisions are made while the window is in progress.
+Calculation: BelowRun = consecutive chart bars that each close < RangeLow, starting at the second-most-recent completed bar and going backward. AboveRun = consecutive chart bars that each close > RangeHigh, starting at the same bar and going backward.
+Calculation: StopLong = lowest low over BelowRun. StopShort = highest high over AboveRun.
+Long: Range is fixed AND no open position AND last completed bar close > RangeLow AND the completed bar before it close < RangeLow AND length of BelowRun <= a maximum bar count (longer excursions are invalid). Enter at the current price at the next bar's open.
+Short: Range is fixed AND no open position AND last completed bar close < RangeHigh AND the completed bar before it close > RangeHigh AND length of AboveRun <= a maximum bar count (longer excursions are invalid). Enter at the current price at the next bar's open.
+Exit: Long, low <= StopLong (stop captured at entry) OR high >= entry price + K * (entry price - StopLong), where K is a fixed reward-to-risk multiple
+Exit: Short, high >= StopShort (stop captured at entry) OR low <= entry price - K * (StopShort - entry price), where K is a fixed reward-to-risk multiple

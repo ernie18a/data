@@ -1,0 +1,3 @@
+Calculation: AC = (SMA(median price, short lookback) - SMA(median price, long lookback)) - SMA(that difference, short lookback); median price = (high+low)/2; computed on bars of a timeframe equal to or higher than the chart timeframe, where the latest value uses the bar still forming that contains the current chart bar, and the previous value is the preceding bar of that same timeframe.
+Long: AC > AC of the previous bar
+Short: AC < AC of the previous bar

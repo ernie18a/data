@@ -1,0 +1,6 @@
+Calculation: AD line = running cumulative sum of ((close-low)-(high-close))/(high-low)*volume (multiplier 0 when high==low)
+Calculation: Chaikin = EMA(AD line, fast length) - EMA(AD line, slow length), fast length shorter than slow length
+Calculation: flow z = (Chaikin - SMA(Chaikin, window)) / stdev(Chaikin, window), 0 when stdev is 0
+Calculation: reclaim EMA = EMA of close
+Long: flow z >= mild threshold (optionally the stricter strong threshold, with strong threshold > mild threshold) AND close crosses above reclaim EMA (previous close <= previous reclaim EMA and close > reclaim EMA) AND current position is not long AND bars since the last long or short entry >= cooldown AND (optional) bar time within a session window; all on chart timeframe, evaluated on completed bars
+Short: flow z <= -(mild threshold) (optionally the stricter -(strong threshold)) AND close crosses below reclaim EMA (previous close >= previous reclaim EMA and close < reclaim EMA) AND current position is not short AND bars since the last long or short entry >= cooldown AND (optional) bar time within a session window; all on chart timeframe, evaluated on completed bars

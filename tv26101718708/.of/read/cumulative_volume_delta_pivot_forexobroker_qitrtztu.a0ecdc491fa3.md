@@ -1,0 +1,7 @@
+Calculation: CVD = running cumulative sum from the first bar of volume * (2*(close-low)/(high-low) - 1), with the term 0 when high = low
+Calculation: CVD slope = CVD - EMA(CVD)
+Calculation: Reclaim EMA = EMA(close), with a shorter lookback than the CVD EMA
+Calculation: Pivot low (pivot high) = a bar whose low (high) is the lowest (highest) among N bars on each side, confirmed only on the Nth bar after it. Price pivots use low/high and CVD pivots use CVD, with the same N.
+Calculation: Bullish confluence = a CVD pivot low is confirmed on the current bar AND the most recent confirmed price pivot (either type) is a pivot low that was confirmed on the current bar or within the previous M bars. Bearish confluence = the same with CVD pivot high and price pivot high.
+Long: CVD slope > 0 AND close crosses above Reclaim EMA (close > EMA AND previous close <= previous EMA) on a completed bar AND (optionally, as a gate) bullish confluence AND the last signal was not Long AND at least K bars have passed since the last signal of either side
+Short: CVD slope < 0 AND close crosses below Reclaim EMA (close < EMA AND previous close >= previous EMA) on a completed bar AND (optionally, as a gate) bearish confluence AND the last signal was not Short AND at least K bars have passed since the last signal of either side

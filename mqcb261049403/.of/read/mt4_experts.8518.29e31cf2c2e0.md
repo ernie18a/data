@@ -1,0 +1,4 @@
+Long: bar is the first bar of the designated entry hour of day AND no position is open AND close of the completed bar N bars back (N = long lookback) > close of the last completed bar (bars of a timeframe equal to or higher than the chart timeframe, evaluated at the open of the entry hour)
+Short: bar is the first bar of the designated entry hour of day AND no position is open AND close of the completed bar N bars back (N = long lookback) <= close of the last completed bar (same bars as Long)
+Exit: long, high >= entry price + take-profit distance OR low <= entry price - stop-loss distance (stop-loss distance larger than take-profit distance) OR time since entry > maximum holding time
+Exit: short, low <= entry price - take-profit distance OR high >= entry price + stop-loss distance (stop-loss distance larger than take-profit distance) OR time since entry > maximum holding time

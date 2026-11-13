@@ -1,0 +1,7 @@
+Calculation: relV = volume / SMA(volume, volume lookback), computed on the bars of a given timeframe
+Calculation: pos = (close - low) / (high - low) * 2 - 1 (0 if high == low)
+Calculation: delta = EMA(relV * pos, delta lookback), computed on the bars of a given timeframe; delta lookback is shorter than volume lookback
+Calculation: TF score, for each of four timeframes (relative to the chart timeframe they are the same or higher, in ascending order), using the bar still forming on each timeframe. For each of two correlated instruments, compute relV and delta on that timeframe's bars. Let R = average of the two relV values and D = sum of the two delta values. Score = +1 if R > relative-volume threshold AND D > 0 AND close > open on both instruments. Score = -1 if R > relative-volume threshold AND D < 0 AND close < open on both instruments. Otherwise score = 0. Score = 0 on every timeframe when the chart bar is outside the regular trading session.
+Calculation: total = sum of the four TF scores (range -4 to +4)
+Long: total >= strong threshold on each of the last K consecutive chart bars (K = persistence count) AND this was not true on the previous chart bar (fires on the first bar of the run)
+Short: total <= -strong threshold on each of the last K consecutive chart bars AND this was not true on the previous chart bar (fires on the first bar of the run)

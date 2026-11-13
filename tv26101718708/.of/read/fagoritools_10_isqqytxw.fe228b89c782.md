@@ -1,0 +1,2 @@
+Long: close > EMA of close, both computed on the same aggregated timeframe's bars, using the bar still forming (not the last completed bar); the timeframe may be higher or lower than the chart timeframe, and each timeframe is evaluated independently
+Short: close <= EMA of close, both computed on the same aggregated timeframe's bars, using the bar still forming (not the last completed bar); the timeframe may be higher or lower than the chart timeframe, and each timeframe is evaluated independently

@@ -1,0 +1,9 @@
+Calculation: ZZ = pivot series computed on higher-timeframe bars (higher than the chart timeframe). On each higher-TF bar: up = close>=open, down = close<=open; dir = -1 if previous bar up and this bar down, +1 if previous bar down and this bar up, else previous dir. ZZ value = previous bar's high if (previous up AND this down AND previous dir != -1); previous bar's low if (previous down AND this up AND previous dir != +1); else none. It is sampled only on the chart bar that opens a new higher-TF bar, using the higher-TF bar containing that chart bar (the bar still forming, not the last completed one). A pivot is recorded only when a value exists.
+Calculation: X,A,B,C,D = the 5 most recently recorded ZZ pivots (D newest, X oldest); they stay constant on chart bars between new pivots.
+Calculation: XAB=|B-A|/|X-A|; XAD=|A-D|/|X-A|; ABC=|B-C|/|A-B|; BCD=|C-D|/|B-C|.
+Calculation: PatternMatch = XAB, ABC, BCD, XAD all lie inside the fixed ratio ranges of at least one named harmonic pattern (Bat, Alt Bat, Butterfly, Gartley, Crab, Shark, ABCD (checks only ABC and BCD), 5-0, Wolfe, Head&Shoulders, contracting triangle, expanding triangle, and the anti-versions of Bat, Butterfly, Gartley, Crab, Shark); each pattern has its own ranges.
+Calculation: Fib(r) = D - |D-C|*r if D>C, else D + |D-C|*r; always recomputed each bar from the current D and C (not frozen at entry). Entry-window ratio < take-profit ratio; stop-loss ratio is negative (level lies beyond D, away from C).
+Long: PatternMatch AND D<C AND close <= Fib(entry-window ratio) AND no open long position
+Short: PatternMatch AND D>C AND close >= Fib(entry-window ratio) AND no open short position
+Exit: long, high >= Fib(take-profit ratio) OR low <= Fib(stop-loss ratio)
+Exit: short, low <= Fib(take-profit ratio) OR high >= Fib(stop-loss ratio)

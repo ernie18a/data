@@ -1,0 +1,12 @@
+Calculation: VWAP = cumulative(((high+low+close)/3) * volume) / cumulative(volume), reset at the start of each trading day
+Calculation: ATR = Wilder average true range on the chart timeframe
+Calculation: body = |close-open|; range = high-low; upperWick = high-max(open,close); lowerWick = min(open,close)-low
+Calculation: HMA = Hull moving average of close
+Calculation: TopLevel = high of the most recent top fractal, where a top fractal is a bar whose high is strictly greater than the highs of the 2 bars before it and the 2 bars after it (known only after the 2 later bars are complete); BotLevel = low of the most recent bottom fractal, defined symmetrically with lows and strictly lower
+Calculation: validBody = body > a*ATR, where a is a fraction of ATR smaller than the fraction b used in the entry conditions
+Calculation: BullPattern = validBody AND ((close>open AND lowerWick>=1.5*body AND lowerWick>upperWick) OR (close>open AND close[1]<open[1] AND open<=close[1] AND close>=open[1]) OR (close[1]<open[1] AND |open[1]-close[1]|/range[1]>=0.7 AND close>open AND body/range>=0.7 AND open<=close[1] AND close<open[1] AND close>(open[1]+close[1])/2) OR (open[1]>close[1] AND close>open AND close<=open[1] AND high<=open[1] AND body<open[1]-close[1] AND high<high[1] AND low>low[1]))
+Calculation: BearPattern = validBody AND ((close<open AND upperWick>=1.5*body AND upperWick>lowerWick) OR (close<open AND close[1]>open[1] AND open>=close[1] AND close<=open[1]) OR (close[1]>open[1] AND |close[1]-open[1]|/range[1]>=0.7 AND close<open AND body/range>=0.7 AND open>=close[1] AND close>open[1] AND close<(open[1]+close[1])/2) OR (close[1]>open[1] AND open>close AND open<=close[1] AND low>=open[1] AND body<close[1]-open[1] AND high<high[1] AND low>low[1]))
+Long: close>VWAP AND ((low<=VWAP AND close>open AND body>b*ATR) OR (close crosses above VWAP, i.e. close>VWAP AND close[1]<=VWAP[1], AND close>open AND body>b*ATR) OR (close crosses above TopLevel, i.e. close>TopLevel AND close[1]<=TopLevel as of the previous bar)) AND close>high[1] AND HMA>HMA[1] AND body>b*ATR
+Long: BullPattern
+Short: close<VWAP AND ((high>=VWAP AND close<open AND body>b*ATR) OR (close<open AND close[1]>=VWAP[1] AND body>b*ATR) OR (close crosses below BotLevel, i.e. close<BotLevel AND close[1]>=BotLevel as of the previous bar)) AND close<low[1] AND HMA<HMA[1] AND body>b*ATR
+Short: BearPattern

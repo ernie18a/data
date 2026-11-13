@@ -1,0 +1,7 @@
+Calculation: RVOL = volume / simple moving average of volume over a lookback (current bar included)
+Calculation: PriorHigh = highest high of the previous N bars on the chart timeframe, excluding the current bar
+Calculation: Squeeze = Bollinger upper band < Keltner upper band AND Bollinger lower band > Keltner lower band, where both are centered on the same SMA of close with the same length, Bollinger = k_bb * population stdev of close, Keltner = k_kc * SMA of true range, and k_bb > k_kc
+Calculation: Coiled = Squeeze is true on the current bar OR Squeeze was true within the last M bars
+Calculation: TrendUp = on a higher timeframe than the chart (using the still-forming bar's current values), SMA(close, short) > SMA(close, medium) AND SMA(close, medium) > SMA(close, long) AND that higher-timeframe close > SMA(close, medium)
+Long: close > PriorHigh AND RVOL >= RVOL threshold AND Coiled AND TrendUp
+Long: previous bar range (high - low) / previous bar low * 100 >= big-move threshold AND (previous close - previous low) / (previous high - previous low) >= close-fraction threshold AND previous close > previous open AND previous bar RVOL >= RVOL threshold AND current low < previous close AND close > open AND (close - low) / (high - low) > 0.5

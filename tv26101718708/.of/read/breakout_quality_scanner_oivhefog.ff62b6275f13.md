@@ -1,0 +1,10 @@
+Calculation: Range High = highest high of the previous N bars, excluding the current bar; Range Low = lowest low of the previous N bars, excluding the current bar (same lookback N for both)
+Calculation: Tracked Breakout = a bar where close > Range High (long) or close < Range Low (short) while no monitoring is active; it stores direction, close, high and low of that bar. Monitoring is active from that bar until a verdict (continuation or exit) occurs or the bar after the last monitored bar has passed. Monitoring bar k = k-th bar after the tracked breakout bar, and the monitoring window is M bars.
+Calculation: Bullish Rejection = close < open AND high > low AND (high - max(open, close)) / (high - low) >= wick ratio AND volume > previous bar volume AND volume > SMA of volume
+Calculation: Bearish Rejection = close > open AND high > low AND (min(open, close) - low) / (high - low) >= wick ratio AND volume > previous bar volume AND volume > SMA of volume
+Long: close > Range High AND bars since the last Tracked Breakout >= cooldown
+Long: the active Tracked Breakout is long AND this is monitoring bar M AND no exit has occurred on earlier monitoring bars AND close > tracked-breakout close * (1 - tolerance) AND NOT Bullish Rejection
+Short: close < Range Low AND bars since the last Tracked Breakout >= cooldown
+Short: the active Tracked Breakout is short AND this is monitoring bar M AND no exit has occurred on earlier monitoring bars AND close < tracked-breakout close * (1 + tolerance) AND NOT Bearish Rejection
+Exit: long, the active Tracked Breakout is long AND monitoring bar is between 1 and M AND (Bullish Rejection OR close < low of the tracked breakout bar)
+Exit: short, the active Tracked Breakout is short AND monitoring bar is between 1 and M AND (Bearish Rejection OR close > high of the tracked breakout bar)

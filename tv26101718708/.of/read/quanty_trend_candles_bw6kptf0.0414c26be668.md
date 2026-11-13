@@ -1,0 +1,8 @@
+Calculation: score = clamp(EMA(sign(z) * tanh(min((|z|/zScale)^1.5, cap)) * volumeFactor, short smoothing length), -1, 1), evaluated on closed chart-timeframe bars. z = momentum / (sigma * nullSd). ret = ln(close / previous close). momentum = 0.5 * EMA(ret, fast length) + 0.5 * EMA(ret, slow length), with fast length < slow length. sigma = sqrt(EMA(ret^2, volatility length)), with volatility length > slow length. With a = 2/(length+1) for each of the fast and slow lengths: var = a/(2-a); cov = aF*aS/(1-(1-aF)*(1-aS)); nullSd = sqrt(0.25*varFast + 0.25*varSlow + 0.5*cov). volumeFactor = keep + (1-keep) * support, with keep in [0,1]. support = clamp(sign(z) * share * sqrt(effN) / 2, 0, 1). w = volume capped at a multiple of its long-term SMA (w = 1 if the data has no volume). share = sum(w*sign(ret), slow length) / sum(w, slow length). effN = sum(w, slow length)^2 / sum(w^2, slow length). zScale is a sensitivity constant, larger = more conservative.
+Long: score > indecision band (a threshold in (0,1)) [weak up marking]
+Long: score >= strong level, taken as a new entry when the state was not already strong-up [strong up alert]
+Short: score < -indecision band [weak down marking]
+Short: score <= -strong level, taken as a new entry when the state was not already strong-down [strong down alert]
+Exit: long, state was strong-up and |score| < strong level - hysteresis margin, OR score <= -strong level
+Exit: short, state was strong-down and |score| < strong level - hysteresis margin, OR score >= strong level
+Note: the strong state persists while |score| lies between (strong level - margin) and strong level (hysteresis); it flips only on the opposite strong level.

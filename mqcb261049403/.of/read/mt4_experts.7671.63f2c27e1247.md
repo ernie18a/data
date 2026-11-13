@@ -1,0 +1,8 @@
+Calculation: MA = moving average of close (exponential by default), chart timeframe, value of the current forming bar
+Calculation: EnvUp = MA*(1+p), EnvLo = MA*(1-p), p = small fixed percentage
+Calculation: LongStop = EnvLo at the signal bar; on each later bar while the long is open, if close > entry price AND close > EnvUp AND EnvLo > LongStop then LongStop = EnvLo (stop only ratchets up)
+Calculation: ShortStop = EnvUp at the signal bar; on each later bar while the short is open, if close < entry price AND close < EnvLo AND EnvUp < ShortStop then ShortStop = EnvUp (stop only ratchets down)
+Long: last completed bar close > MA AND last completed bar close < EnvUp AND bar hour is after the session-open hour AND before the session-close hour; place a buy limit at MA (value at signal bar), filled when low <= that level; cancel the unfilled order when bar hour reaches the session-close hour; up to three independent long positions with different take-profit offsets, each re-armed once closed
+Short: last completed bar close < MA AND last completed bar close > EnvLo AND bar hour is after the session-open hour AND before the session-close hour; place a sell limit at MA (value at signal bar), filled when high >= that level; cancel the unfilled order when bar hour reaches the session-close hour; up to three independent short positions with different take-profit offsets, each re-armed once closed
+Exit: long, low <= LongStop OR high >= (EnvUp at signal bar + fixed offset, offset differs per position and increases from first to third)
+Exit: short, high >= ShortStop OR low <= (EnvLo at signal bar - fixed offset, offset differs per position and increases from first to third)

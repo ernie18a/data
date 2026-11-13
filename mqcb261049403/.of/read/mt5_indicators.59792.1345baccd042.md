@@ -1,0 +1,6 @@
+Calculation: ChanHigh(k) = highest high of the N most recent bars ending at bar k; ChanLow(k) = lowest low of the N most recent bars ending at bar k (same chart timeframe, N = channel lookback)
+Calculation: RSI = standard RSI of close (chart timeframe, last completed bar)
+Calculation: EMA = exponential moving average of close, with a long period (chart timeframe)
+Calculation: AvgVol(k) = mean of volume over the L most recent bars ending at bar k, including bar k
+Long: Evaluate on current bar t with pivot bar i = t - (D + 1), where D = number of flat-confirmation bars. Trigger when ChanLow(i-1) > ChanLow(i) AND ChanLow(t) == ChanLow(i) (channel low stepped down at i, then stayed flat for D+1 bars) AND RSI(i) < 50 AND volume(i) >= m * AvgVol(i), where m is a fraction of the average, typically less than 1 AND close(i) < EMA(i) AND the previous accepted pivot signal was not Long (or none exists). Act on bar t.
+Short: Evaluate on current bar t with pivot bar i = t - (D + 1). Trigger when ChanHigh(i-1) < ChanHigh(i) AND ChanHigh(t) == ChanHigh(i) (channel high stepped up at i, then stayed flat for D+1 bars) AND RSI(i) > 50 AND volume(i) >= m * AvgVol(i) AND close(i) > EMA(i) AND the previous accepted pivot signal was not Short (or none exists). Act on bar t.

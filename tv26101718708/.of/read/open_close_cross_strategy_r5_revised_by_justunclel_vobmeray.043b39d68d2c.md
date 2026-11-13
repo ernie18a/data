@@ -1,0 +1,6 @@
+Calculation: MAclose = smoothed moving average (Wilder-style recursive, seeded with SMA) of close over a lookback, computed on bars of a higher timeframe than the chart, taking the value of the higher-timeframe bar still forming at each chart bar
+Calculation: MAopen = same moving average type, lookback and higher timeframe as MAclose, applied to open
+Long: MAclose crosses above MAopen (previous chart bar MAclose <= MAopen AND current chart bar MAclose > MAopen)
+Short: MAclose crosses below MAopen (previous chart bar MAclose >= MAopen AND current chart bar MAclose < MAopen)
+Exit: long, MAclose crosses below MAopen (this also reverses into Short when short trades are allowed) OR optional fixed target: high >= entry price + target distance OR optional fixed stop: low <= entry price - stop distance
+Exit: short, MAclose crosses above MAopen (this also reverses into Long when long trades are allowed) OR optional fixed target: low <= entry price - target distance OR optional fixed stop: high >= entry price + stop distance

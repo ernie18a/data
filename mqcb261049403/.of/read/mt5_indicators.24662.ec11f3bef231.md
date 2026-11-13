@@ -1,0 +1,3 @@
+Calculation: SSRSI = Super Smoother RSI on close, computed on the chart timeframe with lookback N. Per bar, up = max(close - prev close, 0) and dn = max(prev close - close, 0). sumUp and sumDn are the sums of up and dn over the last N bars. Each sum x is smoothed by a 2-pole Super Smoother: S[t] = c1*(x[t] + x[t-1])/2 + c2*S[t-1] + c3*S[t-2], where a = exp(-1.414*pi/N), c2 = 2*a*cos(1.414*pi/N), c3 = -a^2, c1 = 1 - c2 - c3. Initialise S[t] = x[t] for the first two bars. SSRSI = 100 - 100/(1 + S_up/S_dn), or 0 if S_dn = 0.
+Long: SSRSI[t] > SSRSI[t-1] OR (SSRSI[t] == SSRSI[t-1] AND the previous bar's state was long)
+Short: SSRSI[t] < SSRSI[t-1] OR (SSRSI[t] == SSRSI[t-1] AND the previous bar's state was short)

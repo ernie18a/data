@@ -1,0 +1,7 @@
+Calculation: HH_old, HH_mid, HH_new = highest high over three consecutive, non-overlapping windows of equal length on a signal timeframe (higher than the chart timeframe). HH_new is the most recent window and includes the still-forming bar; HH_mid is the window just before it; HH_old is the window before that.
+Calculation: LL_old, LL_mid, LL_new = lowest low over the same three windows.
+Long: LL_old < LL_mid AND LL_mid < LL_new (rising lows) AND NOT (HH_old > HH_mid AND HH_mid > HH_new) AND no open long position has an entry price within a minimum distance of the current price (pyramiding allowed only at least that far from every existing long entry)
+Short: HH_old > HH_mid AND HH_mid > HH_new (falling highs) AND NOT (LL_old < LL_mid AND LL_mid < LL_new) AND no open short position has an entry price within a minimum distance of the current price (pyramiding allowed only at least that far from every existing short entry)
+Exit: long, low <= entry price - stop distance OR high >= entry price + target distance (distances fixed, target distance larger than stop distance; optionally ATR multiples; optional trailing: stop = current price - stop distance, only ratcheted upward)
+Exit: short, high >= entry price + stop distance OR low <= entry price - target distance (optional trailing: stop = current price + stop distance, only ratcheted downward)
+Exit: all positions of both sides, total floating profit of all open positions >= profit threshold OR total floating loss of all open positions >= loss threshold (loss rule active only if threshold > 0)

@@ -1,0 +1,10 @@
+Calculation: Pivot High = a bar whose high is the highest among the same number of bars on each side of it; it is confirmed only after that many later bars have closed. Pivot Low is the mirror (lowest low).
+Calculation: Up Level = value of the most recently confirmed Pivot High. Down Level = value of the most recently confirmed Pivot Low. Each level can be broken only once; a newly confirmed pivot replaces it and makes it unbroken again.
+Calculation: Last Break Direction = direction (up or down) of the most recent break of an Up Level (close > Up Level) or Down Level (close < Down Level). It is updated on every break, whether or not the break passes the filters.
+Calculation: Fib(r) = A + r*(B-A). Bullish setup: A = most recently confirmed Pivot Low, B = high of the bar that made the bullish CHoCH. Bearish setup: A = most recently confirmed Pivot High, B = low of the bar that made the bearish CHoCH. The active setup is the latest one, and a new setup replaces the previous one.
+Long: (Bullish CHoCH) close > unbroken Up Level AND Last Break Direction before this bar is down AND a Pivot Low exists AND (optional filter) volume > simple average of volume over a lookback AND (optional filter) close > moving average of close. The bar that satisfies this creates the bullish setup.
+Long: (Entry zone) active setup is bullish AND the bar is after the setup bar AND (low, high or close lies between Fib(0.382) and Fib(0.618)).
+Short: (Bearish CHoCH) close < unbroken Down Level AND Last Break Direction before this bar is up AND a Pivot High exists AND (optional filter) volume > simple average of volume over a lookback AND (optional filter) close < moving average of close. The bar that satisfies this creates the bearish setup.
+Short: (Entry zone) active setup is bearish AND the bar is after the setup bar AND (low, high or close lies between Fib(0.382) and Fib(0.618)).
+Exit: long, active setup is bullish AND high >= Fib(1.382)
+Exit: short, active setup is bearish AND low <= Fib(1.382)

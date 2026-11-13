@@ -1,0 +1,8 @@
+Calculation: Band = Donchian channel computed on a timeframe higher than the chart timeframe, at the still-forming higher-timeframe bar but with the window shifted back: Upper = highest high and Lower = lowest low of the lookback bars that end 2 bars before the forming bar (the forming bar and the last completed bar are excluded).
+Calculation: Side = latched state, updated on each new chart bar from the last completed chart bar: if its high > Band.Upper then Up; else if its low < Band.Lower then Down; else keep the previous value (initially none). Up takes priority when both break on the same bar.
+Calculation: BullEngulf = last completed chart bar close > high of the bar before it AND its low < low of the bar before it.
+Calculation: BearEngulf = last completed chart bar close < low of the bar before it AND its high > high of the bar before it.
+Calculation: ATR = Average True Range on a timeframe higher than the chart timeframe, still-forming bar.
+Long: (flat AND Side == Down AND BullEngulf, evaluated on a new chart bar) OR (position is long AND current price <= first entry price - n * (fixed multiple of ATR), where n = number of entries opened so far in this position; scale-in)
+Short: (flat AND Side == Up AND BearEngulf, evaluated on a new chart bar) OR (position is short AND current price >= first entry price + n * (fixed multiple of ATR), where n = number of entries opened so far in this position; scale-in)
+Exit: long or short, (total unrealized profit of all entries in the position > fixed fraction of the capital invested in the position) OR (total unrealized loss of the position > fixed large fraction of account balance); close all entries

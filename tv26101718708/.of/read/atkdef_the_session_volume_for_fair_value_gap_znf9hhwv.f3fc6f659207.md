@@ -1,0 +1,5 @@
+Calculation: session window = the Asia, Europe, or US intraday trading-hours window (each fixed local clock hours in its own timezone, DST-aware, windows may overlap)
+Long: low > high[2] AND (low - high[2]) >= minimum gap size AND the timestamp of the previous bar (bar[1]) lies inside at least one session window (evaluate on completed bar; bar[2] is two bars back)
+Short: high < low[2] AND (low[2] - high) >= minimum gap size AND the timestamp of the previous bar (bar[1]) lies inside at least one session window (evaluate on completed bar)
+Exit: long, low <= high[2] as it was on the long-signal bar (the bullish gap's lower boundary), checked on each later completed bar
+Exit: short, high >= low[2] as it was on the short-signal bar (the bearish gap's upper boundary), checked on each later completed bar
