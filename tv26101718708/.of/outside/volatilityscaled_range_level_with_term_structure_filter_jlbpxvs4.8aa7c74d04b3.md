@@ -1,0 +1,10 @@
+Framework for an index put-credit-spread entry signal, evaluated once at the start of each new higher-timeframe period (weekly for multi-day holds, daily for 1-day holds). Action: SELL a bearish-protected put credit spread (sell a short put, buy a further-out-of-the-money long put) on the index when all gates pass, otherwise take no trade that period.
+
+Strike construction: take the close of the last completed higher-timeframe period and the ATR (Wilder smoothing of true range, fixed lookback, computed on the same higher timeframe and the same completed period, using extended-session data). Level = prior period close minus that ATR. Short put strike = level rounded DOWN to the nearest strike increment. Long put strike = short strike minus a fixed spread width. Required minimum credit is a fixed percentage of the spread width. This is only a floor to be checked at order entry, since the chain is not available. Optionally the anchor can use the still-forming period instead of the last completed one.
+
+Gates (all enabled gates must pass to sell the spread):
+1. Term structure: ratio of the short-dated implied volatility index to the longer-dated (3-month) implied volatility index, using daily closes, must be at or below a maximum threshold below 1 (contango). Above the threshold (backwardation) means no trade.
+2. Volatility floor: the short-dated volatility index level must be at or above a minimum value, as a proxy for adequate option premium.
+3. Optional trend filter: if enabled, the index close must be above its medium-length (about one month) exponential moving average; if disabled, this gate always passes.
+
+Decision: at each new period, if all gates pass, signal SELL the put spread with the computed short and long strikes. If any gate fails, signal NO TRADE for that period. Exit guidance: the short strike is the reference level for an exit alert on the position, meaning the spread is to be managed or closed if the index reaches the short strike. No long or short positions are taken directly in the index.

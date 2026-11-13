@@ -1,0 +1,4 @@
+Calculation: DropCandle = the most recent bar among those 2 to N bars before the current bar (N = a short lookback window) that is bearish (close < open) AND has RSI < a threshold AND low < long-term SMA of close AND close < session VWAP of hlc3 AND low < short-term SMA of close (shorter period than the long-term SMA) AND has at least one bar after it, before the current bar, whose close < its low (optional filters: close < EMA; volume >= a multiple of average volume), all evaluated on the DropCandle bar itself
+Calculation: SweepRef = lowest low among bars after DropCandle and before the current bar whose close < DropCandle low
+Long: DropCandle exists AND current low <= SweepRef AND current close > DropCandle low
+Exit: long, high >= DropCandle high (alternative target: entry close + k * (DropCandle high - DropCandle low), k > 1) OR low <= entry bar low * (1 - small buffer)

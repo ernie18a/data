@@ -1,0 +1,6 @@
+Calculation: SuperTrend = trend line built from midpoint (high+low)/2 +/- multiplier * ATR (Wilder-smoothed true range). The lower band only rises unless previous close < previous lower band; the upper band only falls unless previous close > previous upper band. State is bullish when close > upper band while the previous line was the upper band, or when close >= lower band while the previous line was the lower band. State is bearish otherwise.
+Calculation: VolumeRatio = (sum of volume over the last N bars counting only bars with close > open) / max(sum of volume over the last N bars counting only bars with close < open, tiny positive constant)
+Long: SuperTrend state flips from bearish to bullish on this bar AND close > SMA(close) AND ADX > threshold
+Short: SuperTrend state flips from bullish to bearish on this bar AND close < SMA(close) AND ADX > threshold
+Exit: long, bars since entry >= delay AND abs(VolumeRatio - 1) <= tolerance
+Exit: short, bars since entry >= delay AND abs(VolumeRatio - 1) <= tolerance

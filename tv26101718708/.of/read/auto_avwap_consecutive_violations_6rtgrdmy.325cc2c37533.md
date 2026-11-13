@@ -1,0 +1,7 @@
+Calculation: StochRSI D = SMA(K, short smoothing); K = weighted moving average (short smoothing) of Stochastic(RSI(hlc3, long lookback), shorter lookback) on a 0-100 scale
+Calculation: High Next = sum(high*volume)/sum(volume) from the most recent restart bar through the current bar; a restart bar is any bar where D < lower band OR high > phi, and at a restart bar phi is set to that bar's high (phi starts at the first bar's high)
+Calculation: Low Next = sum(low*volume)/sum(volume) from the most recent restart bar through the current bar; a restart bar is any bar where D > upper band OR low < plo, and at a restart bar plo is set to that bar's low (plo starts at the first bar's low)
+Calculation: High AVWAP = sum(high*volume)/sum(volume) accumulated from its anchor (initially the first bar), including the current bar; after adding the current bar, hiCount = hiCount+1 if close > High AVWAP, else 0; when hiCount >= N consecutive bars (N = violation count), High AVWAP is replaced by High Next (same bar) and hiCount = 0
+Calculation: Low AVWAP = sum(low*volume)/sum(volume) accumulated from its anchor (initially the first bar), including the current bar; after adding the current bar, loCount = loCount+1 if close < Low AVWAP, else 0; when loCount >= N consecutive bars, Low AVWAP is replaced by Low Next (same bar) and loCount = 0
+Long: open > High AVWAP (value after any replacement on this bar)
+Short: open < Low AVWAP (value after any replacement on this bar)

@@ -1,0 +1,14 @@
+Calculation: EMAfast, EMAslow = EMA of close; EMAfast has a shorter lookback than EMAslow
+Calculation: ATR = Wilder average true range; RSI = RSI of close; VolSMA = simple moving average of volume
+Calculation: PivotHigh/PivotLow = bar whose high/low is the highest/lowest among an equal number of bars on both sides, confirmed only after the right-side bars complete; LastPH/LastPL = price of the most recent confirmed pivot high/low
+Calculation: BullCtx = close > EMAslow AND EMAfast > EMAslow AND EMAfast > EMAfast one bar ago; BearCtx = all comparisons reversed
+Calculation: Bias = +1 from a bull BOS (Long line 1) until a bear BOS (Short line 1), -1 from a bear BOS until a bull BOS, initially 0; it is updated on the BOS bar before the entry checks of that bar. BosDir = same value as Bias, but reset to 0 when (Bias=-1 AND a pivot high is confirmed on the bar) OR (Bias=+1 AND a pivot low is confirmed on the bar)
+Calculation: ChochBull = Long line 1 condition true AND Bias before this bar's update = -1; ChochBear = Short line 1 condition true AND Bias before this bar's update = +1
+Calculation: DemandZone = created on a bar where a pivot low is confirmed AND (high - that pivot low) > m*ATR AND (BullCtx OR ChochBull): zoneBottom = that pivot low, zoneTop = that pivot low + z*ATR, flagged unused; it replaces any existing zone; it is deleted when close < zoneBottom
+Calculation: SupplyZone = created on a bar where a pivot high is confirmed AND (that pivot high - low) > m*ATR AND (BearCtx OR ChochBear): zoneTop = that pivot high, zoneBottom = that pivot high - z*ATR, flagged unused; it replaces any existing zone; it is deleted when close > zoneTop. Only one zone (demand or supply) is active at a time; a zone is flagged used when it fires an entry
+Long: close > LastPH + a*ATR AND RSI > 50 AND BosDir != +1 (optionally also AND volume > VolSMA)  [bull BOS / CHoCH]
+Long: active zone is DemandZone AND unused AND BullCtx AND Bias = +1 AND low <= zoneTop AND high >= zoneBottom AND close > open AND close > low + f*(high - low) with f > 0.5 AND |close - EMAfast| / EMAfast < maximum distance
+Short: close < LastPL - a*ATR AND RSI < 50 AND BosDir != -1 (optionally also AND volume < VolSMA is NOT used; the optional volume filter is volume > VolSMA)  [bear BOS / CHoCH]
+Short: active zone is SupplyZone AND unused AND BearCtx AND Bias = -1 AND low <= zoneTop AND high >= zoneBottom AND close < open AND close < high - f*(high - low) with f > 0.5 AND |close - EMAfast| / EMAfast < maximum distance
+Exit: long, low <= zoneBottom of the entry zone (stop) OR high >= entry price + r*(entry price - zoneBottom) for ascending target multiples r1 < r2 < r3
+Exit: short, high >= zoneTop of the entry zone (stop) OR low <= entry price - r*(zoneTop - entry price) for ascending target multiples r1 < r2 < r3

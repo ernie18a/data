@@ -1,0 +1,3 @@
+Calculation: MA1, MA2, MA3 = moving averages of close (same chart timeframe, EMA, SMA or WMA), where MA1 has a shorter lookback than MA2 and MA2 has a shorter lookback than MA3
+Long: MA1 crosses above MA2 (MA1 > MA2 on the current bar and MA1 <= MA2 on the previous bar) OR MA2 crosses above MA3 (MA2 > MA3 on the current bar and MA2 <= MA3 on the previous bar)
+Short: MA1 crosses below MA2 (MA1 < MA2 on the current bar and MA1 >= MA2 on the previous bar) OR MA2 crosses below MA3 (MA2 < MA3 on the current bar and MA2 >= MA3 on the previous bar)

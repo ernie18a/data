@@ -1,0 +1,4 @@
+Calculation: SSL level = most recent confirmed swing low (a bar whose low is the lowest among an equal number of bars on each side, confirmed only after the right-side bars complete); it is cleared after it triggers a Long sweep and replaced when a new swing low is confirmed
+Calculation: BSL level = most recent confirmed swing high (a bar whose high is the highest among an equal number of bars on each side, same count as for the swing low, confirmed only after the right-side bars complete); it is cleared after it triggers a Short sweep and replaced when a new swing high is confirmed
+Long: (SSL level exists AND low < SSL level AND close > SSL level) OR (low > high of 2 bars ago AND previous bar close > previous bar open)
+Short: (BSL level exists AND high > BSL level AND close < BSL level) OR (high < low of 2 bars ago AND previous bar close < previous bar open)

@@ -1,0 +1,7 @@
+Calculation: range = high - low; body = abs(close - open); upper_wick = high - max(open, close); lower_wick = min(open, close) - low; body_bottom = min(open, close); body_top = max(open, close)
+Calculation: fast_sma = SMA of close over a short lookback; fast_slope = fast_sma - fast_sma 2 bars earlier
+Calculation: slow_ema = EMA of close over a long lookback (including the current bar); slow_slope = slow_ema - slow_ema N bars earlier (N much shorter than the EMA lookback)
+Calculation: ATR = average true range over a medium lookback
+Calculation: vol_avg = SMA of volume over a short lookback
+Long: range > 0 AND body/range <= body_max AND lower_wick/range >= dominant_min AND upper_wick/range <= opposite_max (opposite_max < dominant_min) AND lower_wick > body AND lower_wick > upper_wick AND body_bottom > fast_sma AND (low - fast_sma) <= k * ATR AND fast_slope > 0 AND body_bottom >= slow_ema AND slow_slope > 0 AND volume >= vol_min_mult * vol_avg AND volume <= vol_max_mult * vol_avg (vol_min_mult < vol_max_mult)
+Short: range > 0 AND body/range <= body_max AND upper_wick/range >= dominant_min AND lower_wick/range <= opposite_max (opposite_max < dominant_min) AND upper_wick > body AND upper_wick > lower_wick AND body_top < fast_sma AND (fast_sma - high) <= k * ATR AND fast_slope < 0 AND body_top <= slow_ema AND slow_slope < 0 AND volume >= vol_min_mult * vol_avg AND volume <= vol_max_mult * vol_avg (vol_min_mult < vol_max_mult)

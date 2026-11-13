@@ -1,0 +1,14 @@
+Calculation: EMAf, EMAs = EMA of close on the chart timeframe, EMAf with a shorter lookback than EMAs; SMAt = SMA of close with a lookback longer than both EMAs; ATR = Wilder average true range; volAvg = SMA of volume
+Calculation: slope%(X) = (X - X[1]) / X[1] * 100; s = flat-slope threshold (small positive)
+Calculation: roomDn = (close - lowest low of last N bars incl. current) / ATR; roomUp = (highest high of last N bars incl. current - close) / ATR; strongRoom > minRoom (both thresholds in ATR units)
+Calculation: bullAligned = EMAf > EMAs AND slope%(EMAf) > s AND slope%(EMAs) > s; bearAligned = EMAf < EMAs AND slope%(EMAf) < -s AND slope%(EMAs) < -s
+Calculation: chopZone = (|slope%(EMAf)| <= s AND |slope%(EMAs)| <= s) OR |EMAf - EMAs| <= c*ATR (c small)
+Calculation: meanChop = for each of the last K bars including the current one, (|close - SMAt| / ATR <= d AND |slope%(SMAt)| <= m AND low <= SMAt <= high); d = small ATR multiple, m = small slope threshold
+Calculation: bearReject = close < open AND |close-open|/(high-low) >= b AND close is within the lowest fraction f of the bar range (b is about half, f about a third); bullReject = close > open AND |close-open|/(high-low) >= b AND close is within the highest fraction f of the bar range
+Calculation: lowerHigh = high < high[1] AND high[1] <= high[2]; higherLow = low > low[1] AND low[1] >= low[2]; failedPop = high < highest high of last N bars AND close < open AND close < EMAf; lostFast = close < EMAf AND close < EMAs; inMiddle = close is inside the middle band of the last-N-bar low-high range (between a lower and an upper fractional position of the range)
+Calculation: volOk = volume >= volAvg; volStrong = volume >= k*volAvg (k > 1)
+Calculation: longScore = [EMAf>EMAs] + 2*[bullAligned] + [close>SMAt] + [slope%(SMAt)>=0] + [higherLow] + [bullReject] + [volOk] + [volStrong] + [roomUp>=minRoom] + [roomUp>=strongRoom] + 1 - 2*[chopZone] - 2*[roomUp<minRoom] - 3*[meanChop]
+Calculation: trendShortScore = [EMAf<EMAs] + 2*[bearAligned] + [close<SMAt] + [slope%(SMAt)<=0] + [lowerHigh] + [bearReject] + [volOk] + [volStrong] + [roomDn>=minRoom] + [roomDn>=strongRoom] + 1 - 2*[chopZone] - 2*[roomDn<minRoom] - 3*[meanChop]
+Calculation: reversalShortScore = [EMAf<EMAs] + [slope%(EMAf)<-s] + [slope%(EMAs)<-s] + [lowerHigh] + [bearReject] + [failedPop] + [lostFast] + [volOk] + [volStrong] + [roomDn>=minRoom] + [roomDn>=strongRoom] + 1 - [chopZone] - [inMiddle] - 2*[roomDn<minRoom] - 3*[meanChop]
+Long: EMAf crosses above EMAs on the current bar (EMAf > EMAs AND EMAf[1] <= EMAs[1]) AND NOT meanChop AND longScore >= thrB
+Short: EMAf crosses below EMAs on the current bar (EMAf < EMAs AND EMAf[1] >= EMAs[1]) AND NOT meanChop AND (trendShortScore >= thrB OR reversalShortScore >= thrB)

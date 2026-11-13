@@ -1,0 +1,6 @@
+Calculation: Spread = weighted average of futures closes across venues minus weighted average of spot closes across venues, for the same underlying
+Calculation: Z_k = (Spread_k - SMA(Spread_k, N)) / STDEV(Spread_k, N), for k = 1, 2, 3, where Spread_k is Spread computed on bars of timeframe k. Each timeframe k is higher than the chart timeframe, with TF1 < TF2 < TF3, and uses the bar still forming. N is the same for all three timeframes.
+Long: Z_1 > long_threshold AND Z_2 > long_threshold AND Z_3 > long_threshold (long_threshold is positive)
+Short: Z_1 < short_threshold AND Z_2 < short_threshold AND Z_3 < short_threshold (short_threshold is negative, below long_threshold)
+Exit: long, time since entry >= hold duration OR Short condition is true OR high >= entry price * (1 + take_profit_pct) OR low <= entry price * (1 - stop_loss_pct)
+Exit: short, time since entry >= hold duration OR Long condition is true OR low <= entry price * (1 - take_profit_pct) OR high >= entry price * (1 + stop_loss_pct)

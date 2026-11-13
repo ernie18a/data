@@ -1,0 +1,11 @@
+Calculation: Osc = average, over four timeframes that are all higher than the chart timeframe (of increasing length), of (K + D) / 2, using the still-forming bar of each higher timeframe. Per timeframe: R = RSI of close; Stoch = 100 * (R - lowest R) / (highest R - lowest R) over a lookback; K = short SMA of Stoch; D = short SMA of K. Osc ranges 0-100.
+Calculation: RawPivotHigh/RawPivotLow = Osc at a bar that is the highest/lowest Osc among N bars on each side. It is known only N bars later, and that later bar is the signal bar. Every raw pivot, filtered or not, becomes the 'previous pivot' with its type and value.
+Calculation: FilteredMAX = at the signal bar of a RawPivotHigh, the previous pivot exists and is a pivot low, AND (pivot high value - previous pivot value) >= minDiff. FilteredMIN = at the signal bar of a RawPivotLow, the previous pivot exists and is a pivot high, AND (previous pivot value - pivot low value) >= minDiff.
+Calculation: ConfirmedMin = track the watch state: set watch-from-high when Osc >= high level and no watch is active; at a bar where watch-from-high is active and Osc <= mid level (mid level lower than high level), clear the watch and start tracking Dec = Osc with count = 0. On every tracking bar, including the start bar: if Osc < Dec then Dec = Osc and count = 0, else count += 1. ConfirmedMin is true on the bar where count >= confirmBars (then tracking stops).
+Calculation: ConfirmedMax = same as ConfirmedMin, mirrored: watch-from-low is set when Osc <= low level (low level lower than mid level) and no watch is active; at a bar with watch-from-low active and Osc >= mid level, clear the watch and start tracking Inc = Osc; if Osc > Inc then Inc = Osc and count = 0, else count += 1. ConfirmedMax is true when count >= confirmBars.
+Long: FilteredMIN
+Long: the last three filtered signals (FilteredMIN/FilteredMAX, in order) are MIN, MAX, MIN AND the bar distance from the first to the third signal bar <= cluster window, evaluated at the bar of the third signal
+Long: ConfirmedMin
+Short: FilteredMAX
+Short: the last three filtered signals are MAX, MIN, MAX AND the bar distance from the first to the third signal bar <= cluster window, evaluated at the bar of the third signal
+Short: ConfirmedMax

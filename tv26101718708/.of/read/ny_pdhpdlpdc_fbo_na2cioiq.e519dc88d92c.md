@@ -1,0 +1,3 @@
+Calculation: SessionHigh, SessionLow = highest high and lowest low over the bars of the most recently completed intraday time-of-day session, held fixed from the session end until the next occurrence of that session completes. Computed separately for each of two sessions, A and B (A and B may overlap).
+Long: for either session S (A OR B), the current bar is not inside S AND SessionLow of S exists AND previous bar close < SessionLow of S AND current bar close > SessionLow of S
+Short: for either session S (A OR B), the current bar is not inside S AND SessionHigh of S exists AND previous bar close > SessionHigh of S AND current bar close < SessionHigh of S

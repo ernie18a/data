@@ -1,0 +1,10 @@
+Calculation: HullLow = LWMA(2*LWMA(low, n/2) - LWMA(low, n), sqrt(n)), n a medium period. All calculations below use bars of one fixed timeframe (not lower than the chart timeframe). HullLow and SAR use the still-forming bar as current; MA and RSI use last completed bars.
+Calculation: SlopeDir = rising if HullLow(current bar) > HullLow(previous bar); falling if HullLow(current bar) < HullLow(previous bar); if equal, keep the last non-equal result.
+Calculation: MA = LWMA(close, long period), evaluated at each of the last 3 completed bars using that bar's own MA value.
+Calculation: RSIlong = RSI(close, longer period) and RSIshort = RSI(close, shorter period), both on the last completed bar.
+Long: SlopeDir is falling AND MA > high on each of the last 3 completed bars AND RSIlong > 50 AND RSIshort < RSIlong AND no long position is open
+Short: SlopeDir is rising AND MA < low on each of the last 3 completed bars AND RSIlong < 50 AND RSIshort > RSIlong AND no short position is open
+Exit: long, SlopeDir is rising AND (MA < low on each of the last 3 completed bars OR (RSIlong < 50 AND RSIshort > RSIlong) OR ParabolicSAR(current bar) >= high of the current bar)
+Exit: short, SlopeDir is falling AND (MA > high on each of the last 3 completed bars OR (RSIlong > 50 AND RSIshort < RSIlong) OR ParabolicSAR(current bar) <= low of the current bar)
+Exit: long, price >= entry + target distance OR price <= stop level, where stop level starts at entry - stop distance and, once price > entry + stop distance/2, ratchets upward only to max(stop level, price - stop distance)
+Exit: short, price <= entry - target distance OR price >= stop level, where stop level starts at entry + stop distance and, once price < entry - stop distance/2, ratchets downward only to min(stop level, price + stop distance)

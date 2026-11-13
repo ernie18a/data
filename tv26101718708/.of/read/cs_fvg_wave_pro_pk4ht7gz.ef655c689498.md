@@ -1,0 +1,5 @@
+Calculation: GapVol = the gap zone (gap bottom to gap top) is split into equal slices; GapVol is the sum, over slices, of the volumes of lower-timeframe bars inside the current chart bar whose close is within one slice height of the slice midpoint; if that sum is zero or there are no lower-timeframe bars, GapVol = the current chart bar's volume
+Long: low > high two bars ago AND (low - high two bars ago) > factor * ATR AND (optional volume filter: GapVol > multiplier * simple moving average of chart volume over a long lookback)
+Short: high < low two bars ago AND (low two bars ago - high) > factor * ATR AND (optional volume filter: GapVol > multiplier * simple moving average of chart volume over a long lookback)
+Exit: long, low < gap bottom, where gap bottom = the high of the bar two bars before the bar that signalled the bullish gap, evaluated on bars after the signal bar
+Exit: short, high > gap top, where gap top = the low of the bar two bars before the bar that signalled the bearish gap, evaluated on bars after the signal bar

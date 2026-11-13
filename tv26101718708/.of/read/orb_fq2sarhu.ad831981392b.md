@@ -1,0 +1,10 @@
+Calculation: OR = opening range, the highest high (OR high) and lowest low (OR low) of the bars in a fixed-length window starting at the session start, frozen once the window ends; resets daily
+Calculation: SessHigh / SessLow = running highest high / lowest low since the start of the active signal session of the day
+Calculation: Breakout up = close crosses above OR high (previous close <= OR high, current close > OR high), only after the OR window has ended; Breakout down = close crosses below OR low (previous close >= OR low, current close < OR low), only after the OR window has ended. Bias = direction of the most recent breakout
+Calculation: SwingHigh = highest high since the most recent Breakout up bar (inclusive); SwingLow = lowest low since the most recent Breakout down bar (inclusive)
+Calculation: LongLevel(p) = SwingHigh - (SwingHigh - SessLow) * p; ShortLevel(p) = SwingLow + (SessHigh - SwingLow) * p; p is a retracement ratio, with entry ratio p_e < stop ratio p_s
+Calculation: PullbackReachedLong = after the latest SwingHigh update, some bar had low <= LongLevel(p_e) (the flag resets to false whenever SwingHigh makes a new high); PullbackReachedShort = after the latest SwingLow update, some bar had high >= ShortLevel(p_e) (resets whenever SwingLow makes a new low)
+Long: bias is up AND bar is inside the active signal session AND the OR window has ended AND PullbackReachedLong AND no long entry yet since the current OR window started AND close > open AND close > LongLevel(p_e) AND MACD line > MACD signal line; entry price = close
+Short: bias is down AND bar is inside the active signal session AND the OR window has ended AND PullbackReachedShort AND no short entry yet since the current OR window started AND close < open AND close < ShortLevel(p_e) AND MACD line < MACD signal line; entry price = close
+Exit: long, high >= SwingHigh at entry OR low <= LongLevel(p_s) at entry - ATR * buffer multiple (levels fixed at entry)
+Exit: short, low <= SwingLow at entry OR high >= ShortLevel(p_s) at entry + ATR * buffer multiple (levels fixed at entry)

@@ -1,0 +1,5 @@
+Calculation: Pivot high = a bar whose high is strictly greater than the highs of the same number of bars on each side; confirmed only after the right-side bars complete. Pivot low = the mirror, using lows.
+Calculation: Correlated asset = a second, positively correlated instrument, aggregated to the chart timeframe and aligned bar by bar.
+Calculation: Previous pivot = the most recent earlier pivot of the same kind on the same instrument, tracked separately for the chart and the correlated asset.
+Long: a pivot low is confirmed on the chart AND a pivot low is confirmed on the correlated asset on the same bar AND ((chart pivot low < chart previous pivot low AND correlated pivot low > correlated previous pivot low) OR (chart pivot low > chart previous pivot low AND correlated pivot low < correlated previous pivot low))
+Short: a pivot high is confirmed on the chart AND a pivot high is confirmed on the correlated asset on the same bar AND ((chart pivot high > chart previous pivot high AND correlated pivot high < correlated previous pivot high) OR (chart pivot high < chart previous pivot high AND correlated pivot high > correlated previous pivot high))

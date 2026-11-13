@@ -1,0 +1,4 @@
+Calculation: trendEMA = exponential moving average of close, computed on a timeframe higher than the chart timeframe, using the value of the still-forming higher-timeframe bar
+Long: no open position AND weekday (in the session's local timezone) is Monday through Thursday AND bar time >= (same-day session close time - entry lead time) AND bar time < same-day session close time AND (close > trendEMA; this EMA filter is optional and is dropped when disabled)
+Exit: long, weekday is Monday through Friday AND bar time >= (same-day session open time + exit delay) AND bar time < same-day session close time
+Exit: long, weekday is Friday AND bar time >= (same-day session close time - a short fixed lead time)

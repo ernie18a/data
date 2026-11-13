@@ -1,0 +1,3 @@
+Calculation: Composite = short-lookback SMA of the weighted average of six components, each bounded to 0-1: (1) RSI/100; (2) Stochastic %K of close/high/low/100; (3) MFI on typical price (hlc3)/100; (4) (tanh(CCI/scale)+1)/2; (5) OBV momentum, where OBV is the cumulative sum of volume signed by close-vs-previous-close direction, momentum is its N-bar change, min-max normalized over a rolling window longer than N (0.5 if max equals min) and clipped to 0-1; (6) Awesome Oscillator, SMA(hl2, shorter length) minus SMA(hl2, longer length), min-max normalized over a rolling window the same way and clipped to 0-1.
+Long: Composite < oversold level
+Short: Composite > overbought level (overbought level > oversold level)

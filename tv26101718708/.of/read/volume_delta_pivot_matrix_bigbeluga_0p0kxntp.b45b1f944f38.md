@@ -1,0 +1,7 @@
+Calculation: PivotDelta = for a pivot bar, sum over the window from N bars before it to N bars after it (N = pivot swing length) of volume * (2*(close-low)/(high-low) - 1) per bar; if high == low, use +volume when close >= open, else -volume
+Calculation: ActiveLevel = a confirmed pivot-low price (low lower than the lows of N bars on each side; support) or pivot-high price (high higher than the highs of N bars on each side; resistance), confirmed N bars after the pivot bar, that has not been invalidated by a completed bar closing through it (support: close <= level; resistance: close >= level), and that is among the most recent M such levels
+Calculation: DeltaRatio = abs(PivotDelta of the level) / max(abs(PivotDelta)) over all ActiveLevels, support and resistance together
+Long: an ActiveLevel exists that is a pivot-low support AND its DeltaRatio >= minimum ratio threshold (the support level is marked as bullish support)
+Short: an ActiveLevel exists that is a pivot-high resistance AND its DeltaRatio >= minimum ratio threshold (the resistance level is marked as bearish resistance)
+Exit: long, close <= the support level that was used for the Long (level breaks)
+Exit: short, close >= the resistance level that was used for the Short (level breaks)

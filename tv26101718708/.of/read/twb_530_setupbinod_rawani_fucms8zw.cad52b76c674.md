@@ -1,0 +1,7 @@
+Calculation: RefHigh, RefLow = high and low of the last completed bar of a timeframe higher than the chart, namely the bar that starts at a fixed time of day; they are fixed for the rest of that day from the chart bar on which that higher-timeframe bar completes
+Calculation: Range = RefHigh - RefLow; UpperLevel = RefHigh - a*Range; LowerLevel = RefHigh - b*Range, with 0 < a < b < 1; Risk = UpperLevel - LowerLevel; m = positive reward multiple
+Calculation: Entry price = UpperLevel for long and LowerLevel for short (filled at the level, not at the close)
+Long: no trade has been taken yet today AND the first bar of the day, once RefHigh/RefLow are fixed, whose close is outside [RefLow, RefHigh] closed above RefHigh (this applies on that bar and on every later bar of the same day) AND low <= UpperLevel AND close > open
+Short: no trade has been taken yet today AND the first bar of the day, once RefHigh/RefLow are fixed, whose close is outside [RefLow, RefHigh] closed below RefLow (this applies on that bar and on every later bar of the same day) AND high >= LowerLevel AND close < open
+Exit: long, high >= UpperLevel + m*Risk OR low <= LowerLevel (checked from the entry bar onward; if both occur on the same bar, the target takes priority)
+Exit: short, low <= LowerLevel - m*Risk OR high >= UpperLevel (checked from the entry bar onward; if both occur on the same bar, the target takes priority)

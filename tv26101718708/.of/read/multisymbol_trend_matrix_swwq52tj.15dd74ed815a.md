@@ -1,0 +1,4 @@
+Calculation: Trend(TF) = evaluated on bars of timeframe TF: +1 if close > fast EMA(close) AND fast EMA > slow EMA(close) AND RSI(close) > 50; -1 if close < fast EMA AND fast EMA < slow EMA AND RSI(close) < 50; otherwise 0. The fast EMA has a shorter lookback than the slow EMA. For a TF different from the chart timeframe, use the TF bar containing the current chart bar at its close, which may still be forming.
+Calculation: Score = sum of Trend(TF) over four distinct fixed timeframes, which are independent of the chart timeframe and range from lower to higher than it.
+Long: Score == +4 on a completed chart bar AND Score on the previous chart bar != +4 OR Trend(chart timeframe) == +1
+Short: Score == -4 on a completed chart bar AND Score on the previous chart bar != -4 OR Trend(chart timeframe) == -1

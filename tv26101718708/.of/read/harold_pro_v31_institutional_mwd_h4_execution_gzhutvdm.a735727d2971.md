@@ -1,0 +1,13 @@
+Calculation: MonthlyMA = SMA, over the last A chart bars, of the close of the last completed monthly bar (that value repeated on every chart bar). Monthly close = that same series.
+Calculation: WeeklyMA = same construction using the last completed weekly bar's close, with a longer lookback than MonthlyMA. Weekly close = that series.
+Calculation: SwingHigh = highest, over the previous C chart bars (excluding the current bar), of the last-completed weekly high series. SwingLow = lowest of the last-completed weekly low series over the same window.
+Calculation: Origin/Target = if weekly close > WeeklyMA then Origin=SwingLow, Target=SwingHigh; if weekly close < WeeklyMA then Origin=SwingHigh, Target=SwingLow; otherwise keep the previous values.
+Calculation: Fib(r) = Target - (Target - Origin)*r. Mid = Fib(r_mid). ZoneTop/ZoneBottom = max/min of Fib(r_a) and Fib(r_b), with r_mid < r_a < r_b < 1. Ext = Fib(r_ext) with r_ext > 1.
+Calculation: BullOB = zone [low, high] set when daily close > highest, over the previous N chart bars (excluding current), of the daily high series (last completed daily bar). The zone is the high/low of the most recent bearish daily bar (close<open) found within the last M chart-bar offsets (1..M) of the daily series. It persists until daily close < zone midpoint, then it is cleared.
+Calculation: BearOB = mirror: set when daily close < lowest daily low over the previous N chart bars; zone is the high/low of the most recent bullish daily bar (close>open) within the last M offsets; cleared when daily close > zone midpoint.
+Calculation: SqueezeOff = Bollinger upper (SMA(close,L) + k_bb*stdev(close,L)) > Keltner upper (SMA(close,L) + k_kc*ATR(L)) AND Bollinger lower < Keltner lower, with k_bb > k_kc.
+Calculation: Mom = linear regression value (at the current bar, over L bars) of (close - SMA(close,L)).
+Long: monthly close > MonthlyMA AND weekly close > WeeklyMA AND ZoneBottom <= close <= ZoneTop AND close < Mid AND BullOB exists AND BullOB.low <= close <= BullOB.high AND SqueezeOff AND Mom > 0 AND Mom > Mom[1]
+Short: monthly close < MonthlyMA AND weekly close < WeeklyMA AND ZoneBottom <= close <= ZoneTop AND close > Mid AND BearOB exists AND BearOB.low <= close <= BearOB.high AND SqueezeOff AND Mom < 0 AND Mom < Mom[1]
+Exit: long, (Mom < Mom[1] AND Mom[1] > 0) OR close >= Ext OR (BearOB exists AND close >= BearOB.low)
+Exit: short, (Mom > Mom[1] AND Mom[1] < 0) OR close <= Ext OR (BullOB exists AND close <= BullOB.high)

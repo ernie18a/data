@@ -1,0 +1,4 @@
+Calculation: DailyClose = close of the daily bar aggregated from chart bars (equal or higher timeframe than chart, bar still forming)
+Calculation: SMA_S, SMA_M, SMA_L, SMA_XL = simple moving averages of DailyClose, with lookbacks SMA_S < SMA_M < SMA_L < SMA_XL
+Calculation: Low1y, High1y = lowest and highest DailyClose over a one-year lookback of daily bars (longer than the SMA_XL lookback)
+Long: DailyClose crosses above SMA_S (previous DailyClose <= previous SMA_S AND DailyClose > SMA_S) AND DailyClose > SMA_L AND DailyClose > SMA_XL AND SMA_L > SMA_XL AND SMA_M > SMA_L AND SMA_M > SMA_XL AND SMA_XL has risen on every daily bar over a recent lookback window (shorter than the SMA_L lookback) AND DailyClose >= (1 + fixed premium) * Low1y AND DailyClose >= (1 - fixed discount) * High1y

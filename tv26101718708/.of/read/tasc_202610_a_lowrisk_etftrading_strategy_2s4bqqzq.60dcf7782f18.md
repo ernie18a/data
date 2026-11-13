@@ -1,0 +1,6 @@
+Calculation: Benchmark = close of a reference index series, same timeframe as the chart, aligned bar by bar
+Calculation: RSMK = EMA(short smoothing length, ln(close/Benchmark) - ln(close/Benchmark) from N bars ago) * 100
+Calculation: Corr = rolling Pearson correlation of close and Benchmark over a long lookback
+Calculation: BenchROC = percent change of Benchmark over a short lookback
+Long: no open position AND SMA(volume, short lookback) > minimum volume AND RSMK > SMA(RSMK, long lookback) AND RSMK > L (positive level) AND RSMK equals its highest value over a short window including the current bar AND RSMK < U (U > L) AND ((BenchROC > T AND Corr > c) OR (BenchROC < T AND Corr < -c)) (T = fixed negative percent threshold, c = positive correlation threshold) AND lowest RSI over a medium lookback < oversold level AND RSI > RSI from a few bars ago AND EMA(close, short length) > SMA(close, longer length) from several bars ago
+Exit: long, (RSMK < -L AND Corr > h, where h > c) OR close >= entry price * (1 + profit target percent) OR bars since entry >= maximum holding bars

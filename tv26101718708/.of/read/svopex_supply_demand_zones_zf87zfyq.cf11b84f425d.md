@@ -1,0 +1,4 @@
+Calculation: ATR = average true range over a fixed lookback, computed on the chart timeframe
+Calculation: Base bar = bar with |close-open| < f*ATR; explosive threshold m*ATR with m > f (explosive body threshold larger than base body threshold); base run = maximal sequence of consecutive base bars immediately before bar X; zone = [lowest low, highest high] of the base run
+Long: bar X is not a base bar AND close-open of X > m*ATR AND base run length is between 1 and a small maximum N; signal (demand zone marked, expected buy on retest of the zone) is taken on the bar after X, using the completed X
+Short: bar X is not a base bar AND open-close of X > m*ATR AND base run length is between 1 and a small maximum N; signal (supply zone marked, expected sell on retest of the zone) is taken on the bar after X, using the completed X

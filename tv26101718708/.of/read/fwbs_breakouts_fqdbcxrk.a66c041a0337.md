@@ -1,0 +1,8 @@
+Calculation: window = the previous L bars (L = consolidation lookback) whose close is within a set percentage of the current close, i.e. |close[i]-close|/close*100 < range_pct
+Calculation: con_high = max(current close, highs of window bars); con_low = min(current close, lows of window bars); bucket = (con_high-con_low)/10; buckets are indexed 0..9 upward from con_low, each spanning [con_low+k*bucket, con_low+(k+1)*bucket], bounds inclusive
+Calculation: resistance = midpoint of the bucket among buckets 7,8,9 that contains the most window-bar highs (first bucket wins ties; con_high if no bucket has a count)
+Calculation: support = midpoint of the bucket among buckets 0,1,2 that contains the most window-bar lows (first bucket wins ties; con_low if no bucket has a count)
+Calculation: stop_level = resistance - 2/3*(resistance-support); stop_pct = (close-stop_level)/close*100
+Long: close > resistance AND previous close <= resistance AND high > low AND (high-close)/(high-low) < a cap AND volume > previous volume*(1+spike pct) AND close == highest close of the last M bars (including current) AND (close-previous close)/previous close*100 is between a minimum and a maximum breakout pct AND stop_pct <= max stop pct. Entry price = signal bar close; stop_level is frozen at the entry bar.
+Exit: long, low <= frozen stop_level OR high >= entry price + 2*(entry price - frozen stop_level)
+Exit: long, after entry, low <= the low of the most recent bar since entry on which MACD crossed below its signal line AND close > SMA of close (trailing stop raised to that bar's low; the SMA is longer-period than the MACD fast line)

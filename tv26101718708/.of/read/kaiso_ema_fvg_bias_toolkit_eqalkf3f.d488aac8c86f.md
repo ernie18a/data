@@ -1,0 +1,2 @@
+Long: low > high of 2 bars earlier (bullish fair value gap on the chart timeframe, evaluated on the completed bar)
+Short: high < low of 2 bars earlier (bearish fair value gap on the chart timeframe, evaluated on the completed bar)

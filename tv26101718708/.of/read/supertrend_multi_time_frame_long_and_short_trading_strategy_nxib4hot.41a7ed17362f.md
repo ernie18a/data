@@ -1,0 +1,10 @@
+Calculation: SuperTrendDir(timeframe) = trend direction (+1 or -1) computed on bars of the given timeframe, using one ATR length N and one multiplier M for every timeframe. A = M * ATR(N), with Wilder (RMA) smoothing. longStop = highest close over N bars - A; if the previous close > the previous bar's longStop, longStop = max(longStop, previous bar's longStop). shortStop = lowest close over N bars + A; if the previous close < the previous bar's shortStop, shortStop = min(shortStop, previous bar's shortStop). Dir = +1 if close > previous bar's shortStop; else -1 if close < previous bar's longStop; else the previous Dir (initial +1).
+Calculation: HTF1 and HTF2 are two timeframes both higher than the chart timeframe, with HTF2 higher than HTF1. Their SuperTrendDir values are taken from the last completed bar of that timeframe, not the forming bar.
+Long: chart-timeframe SuperTrendDir flipped from -1 on the previous bar to +1 on the current bar AND SuperTrendDir(HTF1) = +1 AND SuperTrendDir(HTF2) = +1 AND not already long
+Short: chart-timeframe SuperTrendDir flipped from +1 on the previous bar to -1 on the current bar AND SuperTrendDir(HTF1) = -1 AND SuperTrendDir(HTF2) = -1 AND not already short
+Exit: long, chart-timeframe SuperTrendDir flipped from +1 on the previous bar to -1 on the current bar (regardless of the higher-timeframe directions)
+Exit: short, chart-timeframe SuperTrendDir flipped from -1 on the previous bar to +1 on the current bar (regardless of the higher-timeframe directions)
+Exit: long, low < entry price * (1 - stop fraction)
+Exit: short, high > entry price * (1 + stop fraction)
+Exit: long, high >= entry price * (1 + profit target fraction), applied as several ascending profit-target levels, each closing a partial portion; the remaining portion exits only through the signal or stop exits above
+Exit: short, low <= entry price * (1 - profit target fraction), applied as several ascending profit-target levels, each closing a partial portion; the remaining portion exits only through the signal or stop exits above

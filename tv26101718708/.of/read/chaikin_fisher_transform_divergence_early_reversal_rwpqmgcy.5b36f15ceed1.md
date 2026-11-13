@@ -1,0 +1,11 @@
+Calculation: ChaikinOsc = EMA(Accumulation/Distribution line, short period) - EMA(Accumulation/Distribution line, long period)
+Calculation: fish = Fisher transform of ChaikinOsc, computed as: hi = highest(ChaikinOsc, N), lo = lowest(ChaikinOsc, N); raw = (hi != lo) ? (ChaikinOsc - lo)/(hi - lo) - 0.5 : 0; v = 0.66*raw + 0.67*v[1], then clamped to [-0.999, 0.999]; fish = 0.5*ln((1+v)/(1-v)) + 0.5*fish[1]; trigger = fish[1]
+Calculation: fish pivot low/high = fish value at a bar that is the lowest/highest of fish over R bars before and R bars after it; confirmed R bars later. Pivot price = low (for pivot low) or high (for pivot high) of the pivot bar. 'Previous pivot' = the preceding fish pivot of the same type.
+Long: fish crosses above trigger (fish > trigger AND previous fish <= previous trigger)
+Long: at a confirmed fish pivot low, AND its distance from the previous fish pivot low is <= a max bar count, AND (pivot-bar low < previous pivot-bar low AND fish pivot low > previous fish pivot low) [regular bullish divergence]
+Long: at a confirmed fish pivot low, AND its distance from the previous fish pivot low is <= a max bar count, AND (pivot-bar low > previous pivot-bar low AND fish pivot low < previous fish pivot low) [hidden bullish divergence]
+Long: previous fish <= oversold level AND fish > previous fish AND previous fish <= fish two bars ago AND (no earlier signal of this same condition, or bars since the last signal of this same condition >= a cooldown bar count)
+Short: fish crosses below trigger (fish < trigger AND previous fish >= previous trigger)
+Short: at a confirmed fish pivot high, AND its distance from the previous fish pivot high is <= a max bar count, AND (pivot-bar high > previous pivot-bar high AND fish pivot high < previous fish pivot high) [regular bearish divergence]
+Short: at a confirmed fish pivot high, AND its distance from the previous fish pivot high is <= a max bar count, AND (pivot-bar high < previous pivot-bar high AND fish pivot high > previous fish pivot high) [hidden bearish divergence]
+Short: previous fish >= overbought level AND fish < previous fish AND previous fish >= fish two bars ago AND (no earlier signal of this same condition, or bars since the last signal of this same condition >= a cooldown bar count)

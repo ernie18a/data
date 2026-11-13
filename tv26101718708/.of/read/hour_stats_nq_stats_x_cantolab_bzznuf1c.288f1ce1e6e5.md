@@ -1,0 +1,3 @@
+Calculation: PriorHigh, PriorLow = high and low of the last completed higher-timeframe bar immediately before the higher-timeframe bar currently forming (held constant for the whole current higher-timeframe bar)
+Long: low < PriorLow AND no earlier chart bar within the current higher-timeframe bar had low < PriorLow or high > PriorHigh (first breach only) AND bar time is inside the allowed trading-session window
+Short: high > PriorHigh AND no earlier chart bar within the current higher-timeframe bar had low < PriorLow or high > PriorHigh (first breach only) AND bar time is inside the allowed trading-session window

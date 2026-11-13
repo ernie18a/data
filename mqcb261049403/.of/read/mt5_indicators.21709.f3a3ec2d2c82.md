@@ -1,0 +1,3 @@
+Calculation: TTF_JMA = JMA smoothing (length shorter than the TTF lookback N) of ttf, where HHr = highest high of the last N bars including the current bar; HHo = highest high of the N bars immediately before those; LLr = lowest low of the last N bars including the current bar; LLo = lowest low of the N bars immediately before those; BuyPower = HHr - LLo; SellPower = HHo - LLr; ttf = 100*(BuyPower - SellPower)/(0.5*(BuyPower + SellPower)), or 0 if BuyPower + SellPower = 0
+Long: TTF_JMA > +L (L = positive level threshold)
+Short: TTF_JMA < -L

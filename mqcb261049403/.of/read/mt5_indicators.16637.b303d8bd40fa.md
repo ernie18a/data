@@ -1,0 +1,4 @@
+Calculation: OMA = triple-cascaded double-exponential smoothing of the close. Per bar t, with smoothing factor alpha_t, run three stages in sequence. Stage 1 input is close, and stages 2 and 3 take the previous stage's output v as input. In each stage, e1 = e1_prev + alpha_t*(input - e1_prev), e2 = e2_prev + alpha_t*(e1 - e2_prev), and v = 1.5*e1 - 0.5*e2. All e values start at 0. OMA = stage-3 v.
+Calculation: alpha_t = (2 + speed)/(1 + speed + period_t). If adaptive and length > 1, then minP = length/2, maxP = 5*minP, endP = ceil(maxP), signal = |close_t - close_(t-endP)|, noise = tiny positive constant + sum over k=1..endP-1 of |close_t - close_(t-k)|, and period_t = (signal/noise)*(maxP - minP) + minP. Otherwise period_t = length.
+Long: OMA_t > OMA_(t-1), or (OMA_t == OMA_(t-1) AND the previous bar's state was long)
+Short: OMA_t < OMA_(t-1), or (OMA_t == OMA_(t-1) AND the previous bar's state was short)

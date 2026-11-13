@@ -1,0 +1,10 @@
+Calculation: Z = P * V, computed on bars of a higher timeframe than the chart, using the last completed higher-timeframe bar and held constant across the chart bars it covers. P = (SMA(Stochastic(close, high, low, long lookback), short smoothing) - 50) / 50, where Stochastic(x, h, l, n) = 100 * (x - lowest(l, n)) / (highest(h, n) - lowest(l, n)). V = Stochastic(D, D, D, same long lookback), where D = standard deviation of close over a dispersion lookback.
+Calculation: Z pivot low / pivot high = Z is the lowest / highest value within a left window and a right window of bars around it. It is confirmed once the right-window bars have completed, and the pivot bar is the right-window length earlier than the confirmation bar. For each confirmed pivot, use Z and the chart-timeframe low (pivot low) or high (pivot high) at the pivot bar. Prev = the previously confirmed pivot of the same type. Spacing OK = the number of bars since Prev's confirmation lies between a minimum and a maximum (minimum < maximum).
+Long: Z crosses above a positive straddle threshold (upward breakout from the band around 0)
+Long: Z crosses above a negative oversold level (-80 type level, deeply negative)
+Long: (Regular bullish divergence) a Z pivot low is confirmed AND Spacing OK AND the pivot's low < Prev's low AND the pivot's Z > Prev's Z
+Long: (Hidden bullish divergence) a Z pivot low is confirmed AND Spacing OK AND the pivot's low > Prev's low AND the pivot's Z < Prev's Z
+Short: Z crosses below a negative straddle threshold (downward breakout from the band around 0, symmetric to the positive one)
+Short: Z crosses below a positive overbought level (+80 type level, deeply positive)
+Short: (Regular bearish divergence) a Z pivot high is confirmed AND Spacing OK AND the pivot's high > Prev's high AND the pivot's Z < Prev's Z
+Short: (Hidden bearish divergence) a Z pivot high is confirmed AND Spacing OK AND the pivot's high < Prev's high AND the pivot's Z > Prev's Z

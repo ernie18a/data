@@ -1,0 +1,3 @@
+Calculation: ShortStrike = floor((close of last completed higher-timeframe bar - Wilder ATR (RMA of True Range) of last completed higher-timeframe bar) / fixed price increment) * fixed price increment; higher timeframe is above the chart timeframe; value stays fixed through the current higher-timeframe period
+Long: current bar is the first chart bar of a new higher-timeframe period AND close > EMA(close)
+Exit: long, close < ShortStrike

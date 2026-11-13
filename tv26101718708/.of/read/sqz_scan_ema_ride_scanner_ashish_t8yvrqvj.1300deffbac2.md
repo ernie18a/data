@@ -1,0 +1,6 @@
+Calculation: SqueezeOn = Bollinger lower band (SMA of close minus stdev multiple) > Keltner lower band (SMA of close minus multiple of SMA of true range) AND Bollinger upper band < Keltner upper band; both bands use the chart timeframe
+Calculation: SqueezeRun = number of consecutive bars, ending at the current bar, with SqueezeOn true (0 when SqueezeOn is false)
+Calculation: Momentum = (linear regression endpoint value over a lookback of [close minus the average of (average of highest high and lowest low over the lookback) and SMA of close over the lookback]) / close * 100
+Long: SqueezeOn on the previous bar AND SqueezeOn false on the current bar AND SqueezeRun on the previous bar >= a minimum bar count AND Momentum > 0 AND Momentum > previous bar Momentum AND close > trend EMA of close AND volume > a multiple of the SMA of volume
+Long: SqueezeOn AND Momentum > 0 AND previous bar Momentum <= 0 AND close > trend EMA of close
+Long: SqueezeOn AND SqueezeRun on the previous bar >= a minimum bar count AND close > trend EMA of close

@@ -1,0 +1,7 @@
+Calculation: AD = running cumulative sum over bars of volume * ((close-low)-(high-close))/(high-low), with the multiplier equal to 0 when high equals low
+Calculation: Wave = AD - EMA(AD, longer length than the reclaim EMA)
+Calculation: ReclaimEMA = EMA(close, shorter length than the Wave EMA)
+Calculation: BullDiv = close <= lowest close over the lookback (current bar included) AND AD > lowest AD over the same lookback
+Calculation: BearDiv = close >= highest close over the lookback (current bar included) AND AD < highest AD over the same lookback
+Long: Wave > a non-negative minimum threshold AND close crosses above ReclaimEMA on the completed bar (previous close <= previous ReclaimEMA AND close > ReclaimEMA) AND (optional divergence-only mode: BullDiv is true; otherwise no divergence requirement) AND the last signal was not a Long AND bars since the last signal (either side) >= cooldown
+Short: Wave < -(the same minimum threshold) AND close crosses below ReclaimEMA on the completed bar (previous close >= previous ReclaimEMA AND close < ReclaimEMA) AND (optional divergence-only mode: BearDiv is true; otherwise no divergence requirement) AND the last signal was not a Short AND bars since the last signal (either side) >= cooldown

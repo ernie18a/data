@@ -1,0 +1,5 @@
+Calculation: SwingTrend = per-bar state, up or down, initially down. Chart-timeframe bars are used by default; the same calculation may instead run on higher-timeframe bars, read from the still-forming higher-timeframe bar. If the previous state is down: DownHigh = min(DownHigh, high), a running minimum of highs since the down state began, started at the high of the bar where the state turned down. If the previous state is up: UpLow = max(UpLow, low), a running maximum of lows since the up state began, started at the low of the bar where the state turned up. The state turns up when previous state is down AND low > DownHigh. The state turns down when previous state is up AND high < UpLow. Otherwise the state is unchanged.
+Long: SwingTrend turns from down to up on this bar (previous state down AND low > DownHigh)
+Short: SwingTrend turns from up to down on this bar (previous state up AND high < UpLow)
+Exit: long, SwingTrend turns down (high < UpLow)
+Exit: short, SwingTrend turns up (low > DownHigh)

@@ -1,0 +1,5 @@
+Calculation: RS line = chart close / benchmark-instrument close (benchmark is another instrument on the same timeframe as the chart, same bar)
+Calculation: Mansfield = (RS line / SMA(RS line, long lookback) - 1) * 100
+Calculation: Weighted RS = sum over four lookbacks n1<n2<n3<n4 of w_k * [(close / close[n_k]) / (benchmark close / benchmark close[n_k])], with w for the shortest lookback the largest and the other three equal and smaller, weights sum to 1; n4 is the longest lookback, about a year
+Calculation: TemplatePass = close > SMA(fast) AND SMA(fast) > SMA(mid) AND SMA(mid) > SMA(slow) (fast < mid < slow lengths) AND SMA(slow) > SMA(slow)[k bars ago] AND (close / lowest(low, n4) - 1) * 100 >= min-gain threshold AND (1 - close / highest(high, n4)) * 100 <= max-distance threshold AND RS line > SMA(RS line, medium lookback) AND Mansfield >= threshold AND Weighted RS >= threshold AND (close / close[n4]) / (benchmark close / benchmark close[n4]) >= 1 AND (close / SMA(fast) - 1) * 100 < too-extended threshold
+Long: TemplatePass is true on the current bar AND TemplatePass was false on the previous bar

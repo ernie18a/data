@@ -1,0 +1,8 @@
+Calculation: RMI = average of RSI and MFI computed with the same lookback
+Calculation: TWAP = SMA of (high+low+close)/3
+Calculation: HTF_MA = SMA of the higher-timeframe close (last completed higher-timeframe bar); its lookback is longer than the chart-timeframe MA lookback, which is longer than the LTF_MA lookback
+Calculation: LTF_MA = SMA, over the series of lower-timeframe closes sampled once per chart bar (last completed lower-timeframe bar within that chart bar), with a shorter lookback than the chart-timeframe MA
+Long: bar time is inside at least one enabled trading-session time-of-day window AND higher-timeframe close (last completed bar) > HTF_MA AND chart close crosses above SMA(chart close) AND one selected confirmation holds [RMI > high overbought level | close > TWAP | close > TEMA | close > DEMA | close > SMA(close) | MFI > high level | close > VWMA | close > Parabolic SAR] AND (optional filter, if enabled: ADX > threshold)
+Short: bar time is inside at least one enabled trading-session time-of-day window AND higher-timeframe close (last completed bar) < HTF_MA AND chart close crosses below SMA(chart close) AND one selected confirmation holds [RMI < low oversold level | close < TWAP | close < TEMA | close < DEMA | close < SMA(close) | MFI < low level | close < VWMA | close < Parabolic SAR] AND (optional filter, if enabled: ADX > threshold)
+Exit: long, bar time is inside at least one enabled trading-session time-of-day window AND lower-timeframe close crosses below LTF_MA
+Exit: short, bar time is inside at least one enabled trading-session time-of-day window AND lower-timeframe close crosses above LTF_MA

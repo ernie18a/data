@@ -1,0 +1,3 @@
+Calculation: BarDelta = sum, over all lower-timeframe bars (timeframe lower than the chart timeframe) that fall inside the chart bar, of SignedVolume; the chart bar is evaluated once it has completed. SignedVolume of a lower-timeframe bar = +volume if close > open; -volume if close < open; if close == open then +volume if close > previous lower-timeframe close, -volume if close < previous lower-timeframe close, otherwise 0.
+Long: BarDelta >= 0 (equivalently, the cumulative BarDelta, reset on a periodic schedule, closes at or above its open on this bar)
+Short: BarDelta < 0 (equivalently, the cumulative BarDelta closes below its open on this bar)

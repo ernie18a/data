@@ -1,0 +1,13 @@
+Calculation: HTF EMA = EMA of close on a timeframe higher than the chart, using the still-forming higher-timeframe bar; HTF EMA prev = the same EMA one higher-timeframe bar earlier; HTF close = close of the still-forming higher-timeframe bar
+Calculation: HTF uptrend = HTF close > HTF EMA AND HTF EMA > HTF EMA prev; HTF downtrend = HTF close < HTF EMA AND HTF EMA < HTF EMA prev
+Calculation: HTF last pivot high / low = value of the most recent confirmed higher-timeframe pivot high / pivot low (extreme versus the same number of bars on each side), kept until a newer one is confirmed
+Calculation: Pullback from high = HTF uptrend AND HTF close < HTF last pivot high; Pullback from low = HTF downtrend AND HTF close > HTF last pivot low
+Calculation: Bullish divergence = chart RSI < oversold level AND low <= lowest low of the previous N bars AND low < previous bar low AND RSI > lowest RSI of the previous N bars; Bearish divergence = chart RSI > overbought level AND high >= highest high of the previous N bars AND high > previous bar high AND RSI < highest RSI of the previous N bars
+Calculation: Bullish engulfing = close > open AND previous close < previous open AND close > previous open AND open < previous close; Bearish engulfing = close < open AND previous close > previous open AND close < previous open AND open > previous close
+Calculation: Swing-low engulfing = bullish engulfing on the bar that confirms a chart-timeframe pivot low (equal bars left and right) or on one of the 2 bars after that confirming bar; Swing-high engulfing = bearish engulfing on the bar that confirms a chart-timeframe pivot high or on one of the 2 bars after it
+Long: Bullish divergence
+Short: Bearish divergence
+Long: no open position AND HTF uptrend AND chart close > HTF EMA AND Pullback from high AND RSI < a relaxed oversold level (higher than the oversold level) AND (Bullish divergence OR (RSI > previous RSI AND previous RSI < oversold level)) AND Swing-low engulfing
+Short: no open position AND HTF downtrend AND chart close < HTF EMA AND Pullback from low AND RSI > a relaxed overbought level (lower than the overbought level) AND (Bearish divergence OR (RSI < previous RSI AND previous RSI > overbought level)) AND Swing-high engulfing
+Exit: long, low <= entry price - ATR multiple * ATR (ATR taken on the entry signal bar) OR high >= entry price * (1 + take-profit percent)
+Exit: short, high >= entry price + ATR multiple * ATR (ATR taken on the entry signal bar) OR low <= entry price * (1 - take-profit percent)

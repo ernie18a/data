@@ -1,0 +1,6 @@
+Calculation: Velocity(price, lookback L) = sum(price[k]*w_k^2)/sum(w_k^2) - sum(price[k]*w_k)/sum(w_k), for k=0..L-1 (k=0 is the newest bar), with linear weights w_k = L-k
+Calculation: V = EMA of Velocity(close), using a smoothing period much shorter than L; computed on a timeframe equal to or higher than the chart timeframe (if higher, use the still-forming higher-timeframe bar, so V and the levels below are forward-filled onto chart bars)
+Calculation: D = EMA(EMA(abs(V[t-1] - V[t]), n), n), the same n used twice; FastBand = D * mF; SlowBand = D * mS, with mS > mF
+Calculation: Level(band) = trailing stop line on V, initialized to 0. Start with T = previous Level. If V < T: T = V + band; if V[t-1] < previous Level and T > previous Level, then T = previous Level. If V > T: T = V - band; if V[t-1] > previous Level and T < previous Level, then T = previous Level. Level = T. FastLevel uses FastBand and SlowLevel uses SlowBand, each tracked as its own separate recursion
+Long: V > FastLevel AND V > SlowLevel (the long state persists on bars where neither the long nor the short condition holds, until the short condition occurs)
+Short: V < FastLevel AND V < SlowLevel (the short state persists on bars where neither the long nor the short condition holds, until the long condition occurs)

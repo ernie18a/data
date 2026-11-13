@@ -1,0 +1,9 @@
+Calculation: Supertrend = ATR-based trailing band line; direction is up when price is above the line (line = lower band) and down when below (line = upper band).
+Calculation: MACD = standard MACD line (fast EMA minus slow EMA of close) and its signal line (EMA of the MACD line).
+Calculation: CVD = running cumulative sum of ((close - open) / max(high - low, mintick)) * volume.
+Calculation: Fast MA and Slow MA = two moving averages of close, where the fast MA has a shorter length than the slow MA.
+Calculation: Targets = levels fixed on the most recent bar where the Supertrend direction flipped, and held until the next flip. HVN1 = close of the latest bar whose volume equals the highest volume over a long lookback. HVN2 = the same over a shorter lookback. Let H and L be the highest high and lowest low over a lookback on a higher timeframe, taken from the bar still forming, and R = H - L. If the direction is up at the flip, Fib1 = L + 1.618*R and Fib2 = L + 2.618*R. If the direction is down at the flip, Fib1 = H - 1.618*R and Fib2 = H - 2.618*R.
+Long: Supertrend direction is up AND MACD line > MACD signal AND RSI > 50 AND CVD > CVD of previous bar AND Fast MA > Slow MA AND bullish engulfing (close > open AND previous close < previous open AND close > previous open) AND (high - low) > ATR * multiplier AND bars since the last long or short signal > cooldown bars.
+Short: Supertrend direction is down AND MACD line < MACD signal AND RSI < 50 AND CVD < CVD of previous bar AND Fast MA < Slow MA AND bearish engulfing (close < open AND previous close > previous open AND close < previous open) AND (high - low) > ATR * multiplier AND bars since the last long or short signal > cooldown bars.
+Exit: long, close < Supertrend line (direction turns down) OR high >= any of HVN1, HVN2, Fib1, Fib2 that lies above the entry price.
+Exit: short, close > Supertrend line (direction turns up) OR low <= any of HVN1, HVN2, Fib1, Fib2 that lies below the entry price.

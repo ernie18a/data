@@ -1,0 +1,6 @@
+Calculation: RVOL z-score = (RVOL - SMA(RVOL, Z window)) / stdev(RVOL, Z window), where RVOL = volume / SMA(volume, volume MA length) (0 if the SMA is 0, z = 0 if stdev is 0); Z window is longer than volume MA length; all on chart-timeframe bars, current completed bar
+Calculation: trend EMA = EMA(close, long lookback); entry EMA = EMA(close, short lookback), with the entry EMA lookback shorter than the trend EMA lookback
+Long: RVOL z-score >= hot threshold (optionally relaxed to a lower warm threshold, which is below the hot threshold) AND close > trend EMA AND close crosses over entry EMA (previous close <= previous entry EMA AND close > entry EMA) AND position side is not long AND bars since the last long or short signal >= cooldown bars AND (optional) bar time inside a session window; evaluated on completed bars
+Short: RVOL z-score >= hot threshold (optionally relaxed to the lower warm threshold) AND close < trend EMA AND close crosses under entry EMA (previous close >= previous entry EMA AND close < entry EMA) AND position side is not short AND bars since the last long or short signal >= cooldown bars AND (optional) bar time inside a session window; evaluated on completed bars
+Exit: long, the Short condition is true (exit and reverse to short)
+Exit: short, the Long condition is true (exit and reverse to long)

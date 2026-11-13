@@ -1,0 +1,5 @@
+Calculation: SwingHigh = confirmed pivot high (bar whose high is the highest among an equal number of bars on each side; confirmed only after the right-side bars complete); level = that bar's high; area = from the larger of that bar's open/close up to the level
+Calculation: SwingLow = confirmed pivot low (bar whose low is the lowest among an equal number of bars on each side; confirmed only after the right-side bars complete); level = that bar's low; area = from the level up to the smaller of that bar's open/close
+Calculation: Activity = over the bars after the pivot bar (counted with a lag equal to the pivot lookback), the number of bars whose high-low range overlaps the swing area (count), or the sum of their volume (volume); reset when a new pivot of the same type is confirmed
+Long: close > level of the latest SwingHigh AND that SwingHigh has not been closed above since confirmation (first such bar) AND Activity > threshold
+Short: close < level of the latest SwingLow AND that SwingLow has not been closed below since confirmation (first such bar) AND Activity > threshold

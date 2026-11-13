@@ -1,0 +1,4 @@
+Calculation: ORB high = highest high of all bars of the current day whose time falls in the opening-range window (from the start of the regular session until the opening-range end time)
+Calculation: ORB average volume = mean volume per bar over the same opening-range bars of the current day
+Calculation: VWAP = cumulative sum of (typical price (high+low+close)/3 * volume) divided by cumulative volume, reset at each session start
+Long: bar time is at or after the opening-range end time AND before a later cutoff time of the same day AND close > ORB high AND volume >= multiplier * ORB average volume AND close > VWAP AND this full set of conditions was not all true on the previous bar (enter only on the first bar where all become true)

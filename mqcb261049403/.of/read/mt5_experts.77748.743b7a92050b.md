@@ -1,0 +1,5 @@
+Calculation: PDH = high of the last completed daily bar (higher timeframe than the chart)
+Calculation: ZoneHigh = PDH * (1 + w/2), ZoneLow = PDH * (1 - w/2), where w is a small fraction (zone width relative to PDH)
+Calculation: Stage = per-day state, reset to 0 at the start of each new day (PDH is recomputed on the new day); updated once per newly completed chart bar using that bar's close C
+Short: flat (no open position) AND Stage reaches 3 on the just-completed chart bar, where Stage advances in order, one step per bar: 0->1 when C >= ZoneLow; 1->2 when C <= ZoneLow * (1 - d), d being a fraction larger than w (a drop below the zone); 2->3 when ZoneLow <= C <= ZoneHigh (price returns into the zone from below). When Stage reaches 3 it resets to 0, whether or not a position is opened. Entry at the market (current price) on the next bar
+Exit: short, low <= entry_price * (1 - tp) OR high >= entry_price * (1 + sl), where tp and sl are fractions of entry price and sl is much larger than tp

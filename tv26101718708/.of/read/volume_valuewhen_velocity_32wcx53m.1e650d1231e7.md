@@ -1,0 +1,8 @@
+Calculation: HTFVol(n) = volume of the still-forming higher-timeframe bar that contains the chart bar from n chart bars ago
+Calculation: LTFVol(n) = volume of the last lower-timeframe bar inside the chart bar from n chart bars ago
+Calculation: CloseAtOcc(k) = close at the k-th most recent chart bar (k=0 is the current bar if it qualifies) where close > SMA(close) on the chart timeframe
+Calculation: ColorH = 1 if, on a higher timeframe, close 2 bars before the still-forming bar > open 1 bar before the still-forming bar, else 0
+Calculation: ColorL = 1 if, on a lower timeframe, close 2 lower-timeframe bars before the last lower-timeframe bar of the current chart bar > open of that last lower-timeframe bar, else 0
+Calculation: ColorW = 1 if, on a timeframe higher than ColorH's, close of the last completed bar > open of the last completed bar, else 0
+Long: HTFVol(a) > m1*HTFVol(c) AND HTFVol(b) > m3*HTFVol(c) AND LTFVol(d) > m2*LTFVol(e) AND LTFVol(f) > m2*LTFVol(g) (m1,m2,m3 are positive multipliers; lags satisfy b>a>c and e>d>f>g) AND (ATR on chart timeframe < lo OR ATR on chart timeframe > hi, with lo<hi in price units) AND ColorH + ColorL <= ColorW AND RSI(close) <= level on at least one of the last N chart bars including the current bar AND CloseAtOcc(far) - CloseAtOcc(near) > dist (far>near, dist in price units) AND ATR(short lookback) < ATR(long lookback), both computed on a lower timeframe and taken from the last lower-timeframe bar of the current chart bar AND close > SMA(close) on at least one of the last M chart bars including the current bar (M small)
+Exit: long, low <= entry price*(1 - stop fraction) OR high >= entry price*(1 + target fraction)

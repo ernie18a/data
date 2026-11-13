@@ -1,0 +1,4 @@
+Calculation: SRSI_K = simple moving average of StochRSI, where StochRSI = 100 * (RSI - lowest RSI over a lookback) / (highest RSI over the same lookback - lowest RSI over the same lookback)
+Calculation: SRSI_D = simple moving average of SRSI_K
+Long: close > EMA (trend EMA, computed on a higher timeframe than the chart, still-forming bar) AND RSI <= 30 AND SRSI_K <= 20 AND SRSI_D <= 20 (all computed on a lower timeframe than the chart or the chart timeframe, still-forming bar)
+Short: close < EMA (trend EMA, computed on a higher timeframe than the chart, still-forming bar) AND RSI >= 70 AND SRSI_K >= 80 AND SRSI_D >= 80 (all computed on a lower timeframe than the chart or the chart timeframe, still-forming bar)

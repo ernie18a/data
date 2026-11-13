@@ -1,0 +1,4 @@
+Calculation: RSI_slow = RSI of close on the chart timeframe with a longer lookback; RSI_fast = RSI of close on the chart timeframe with a shorter lookback
+Calculation: Pivot low of X = bar k bars ago whose X value is the lowest among the k bars before it and the k bars after it (confirmed on the current bar); Pivot high of X = same with highest; the left and right window sizes k are equal
+Long: for X in {RSI_slow, RSI_fast} (either one, OR): a Pivot low of X is confirmed on the current bar AND X at this pivot bar > X at the previous Pivot low of X AND low at this pivot bar < low at the previous Pivot low of X bar
+Short: for X in {RSI_slow, RSI_fast} (either one, OR): a Pivot high of X is confirmed on the current bar AND X at this pivot bar < X at the previous Pivot high of X AND high at this pivot bar > high at the previous Pivot high of X bar

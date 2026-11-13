@@ -1,0 +1,6 @@
+Calculation: ScanBars = bars of a timeframe equal to or higher than the chart timeframe, using the last completed bar
+Calculation: Score = sum of five 1/0 tests on ScanBars: (1) close > mid-term SMA of close AND mid-term SMA > longer-term SMA of close AND longer-term SMA > longest-term SMA of close; (2) RSI is between a lower bound and an upper bound; (3) SMA(volume, short lookback) / SMA(volume, long lookback) >= a multiplier above 1; (4) ATR% = ATR / close * 100 is between a lower and an upper bound; (5) DistHigh = (close / highest high over a long lookback - 1) * 100 is between a negative lower bound and -1, i.e. close is below the long-lookback high by at least 1% but within a maximum percentage
+Calculation: EntryATR = ATR on ScanBars at the entry bar, held fixed while the position is open
+Long: Score >= minimum score AND reference equity index close > its long-term SMA of close (ScanBars-type bars) AND reference volatility index close < a threshold (ScanBars-type bars) AND ATR > 0 AND close > 0
+Exit: long, low <= entry price - stop multiplier * EntryATR (stop)
+Exit: long, high >= entry price + target multiplier * EntryATR (target; target multiplier > stop multiplier)

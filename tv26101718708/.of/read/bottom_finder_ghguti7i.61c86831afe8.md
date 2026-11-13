@@ -1,0 +1,5 @@
+Calculation: ATR ratio = ATR over a short lookback / ATR over a longer lookback
+Calculation: volume ratio = SMA of volume over a short lookback / SMA of volume over a longer lookback (this longer volume SMA is the long-term volume average used below)
+Calculation: H = highest high over a long lookback (longer than the lookback used for the recent low)
+Long: (H - close) / H >= minimum decline threshold AND (close - lowest low over a medium lookback) / lowest low <= maximum rebound threshold AND (ATR ratio <= shrink threshold below 1 OR volume ratio <= dry-up threshold below 1) AND close crossed above its SMA within the last N bars including the current bar AND volume >= multiplier (above 1) * long-term volume average within the last N bars including the current bar AND close > open on the current bar AND RSI crossed above a level below 50 within the last M bars including the current bar, where M is longer than N
+Exit: long, high >= entry price + f1 * (H at the entry bar - entry price) OR high >= entry price + f2 * (H at the entry bar - entry price), where f2 > f1 (first and second profit targets)
