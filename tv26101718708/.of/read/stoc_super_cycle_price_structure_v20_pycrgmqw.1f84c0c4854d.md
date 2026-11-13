@@ -1,0 +1,6 @@
+Calculation: FullBullTrend = close > base EMA AND base EMA > long SMA 1 AND long SMA 1 > long SMA 2 AND long SMA 2 > long SMA 2 from N bars earlier (fast EMA lookback < base EMA lookback < long SMA 1 lookback < long SMA 2 lookback)
+Calculation: Resistance = highest high over a lookback of completed bars, excluding the current bar
+Calculation: PullbackArmed = state updated on each completed bar in this order: set false if a Long signal fired on that bar; then set false if FullBullTrend is false, otherwise set true if low > fast EMA; state is read before the current bar's update
+Long: close > Resistance AND previous close <= Resistance (same Resistance value) AND FullBullTrend
+Long: FullBullTrend AND low <= fast EMA AND close > fast EMA AND close > open AND PullbackArmed AND bars since the previous pullback Long >= minimum spacing AND the breakout Long condition is not true on the same bar
+Exit: long, close < base EMA AND previous close >= previous base EMA AND at least one Long signal has fired since the last Exit

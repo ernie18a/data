@@ -1,0 +1,4 @@
+Calculation: Confirmed pivot high = a bar whose high is greater than or equal to the highs of the left-lookback bars before it and the right-lookback bars after it. It is confirmed on the bar when the right-lookback bars after it have completed, so it is evaluated on the current bar for the pivot bar located right-lookback bars earlier.
+Calculation: Confirmed pivot low = a bar whose low is less than or equal to the lows of the left-lookback bars before it and the right-lookback bars after it. It is confirmed on the bar when the right-lookback bars after it have completed, so it is evaluated on the current bar for the pivot bar located right-lookback bars earlier.
+Long: a confirmed pivot low occurs on the current bar AND (optional filter) the volume of the pivot bar > a minimum volume threshold
+Short: a confirmed pivot high occurs on the current bar AND (optional filter) the volume of the pivot bar > a minimum volume threshold

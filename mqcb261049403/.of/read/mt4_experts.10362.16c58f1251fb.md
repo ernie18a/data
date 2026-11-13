@@ -1,0 +1,9 @@
+Calculation: BB_open = Bollinger Bands (SMA of bar open prices +/- deviation multiple of the standard deviation of open prices) on the chart timeframe, current bar
+Calculation: RSI_set = RSI of close on the chart timeframe and on three successively higher timeframes, each taken from the still-forming higher-timeframe bar that contains the current chart bar
+Calculation: SAR_set = Parabolic SAR on the chart timeframe and on the next two higher timeframes, each taken from the still-forming bar that contains the current chart bar
+Long: no open position AND bar hour is within [start hour, end hour] inclusive AND all RSI_set values > 50 AND current chart bar high >= BB_open upper band AND all SAR_set values < current chart bar low (each of the three groups RSI, BB, SAR can be individually disabled; the enabled groups are ANDed, and at least one is enabled)
+Long: long position open AND number of open positions < max positions AND ask <= most recent long entry price - add-on distance
+Short: no open position AND bar hour is within [start hour, end hour] inclusive AND all RSI_set values < 50 AND current chart bar low <= BB_open lower band AND all SAR_set values > current chart bar high (each of the three groups RSI, BB, SAR can be individually disabled; the enabled groups are ANDed, and at least one is enabled)
+Short: short position open AND number of open positions < max positions AND bid >= most recent short entry price + add-on distance
+Exit: long, sum of lot-weighted unrealized profit of all open positions >= profit target OR bar high >= most recent long entry price + take-profit distance OR (stop enabled AND bar low <= most recent long entry price - stop distance)
+Exit: short, sum of lot-weighted unrealized profit of all open positions >= profit target OR bar low <= most recent short entry price - take-profit distance OR (stop enabled AND bar high >= most recent short entry price + stop distance)

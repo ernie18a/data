@@ -1,0 +1,4 @@
+Calculation: OBV = cumulative sum over bars of sign(close - previous close) * volume
+Calculation: HTF OBV state = sign(OBV - previous OBV), with OBV computed from bars aggregated to a higher timeframe than the chart, using the bar still forming
+Long: (OBV > previous-bar OBV, or, if OBV smoothing is used, moving average of OBV > its previous-bar value) OR (OBV > previous-bar OBV AND HTF OBV state > 0 on a first higher timeframe AND HTF OBV state > 0 on a second, even higher timeframe [AND optionally HTF OBV state > 0 on a third, even higher timeframe])
+Short: (OBV < previous-bar OBV, or, if OBV smoothing is used, moving average of OBV < its previous-bar value) OR (OBV < previous-bar OBV AND HTF OBV state < 0 on a first higher timeframe AND HTF OBV state < 0 on a second, even higher timeframe [AND optionally HTF OBV state < 0 on a third, even higher timeframe])

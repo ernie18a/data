@@ -1,0 +1,5 @@
+Calculation: Stage2 = ALL of: close > SMA_mid AND close > SMA_long; SMA_mid > SMA_long; SMA_long > SMA_long from a fixed number of bars ago; SMA_short > SMA_mid AND SMA_short > SMA_long; close > SMA_short; close >= lowest low over a long (about one-year) lookback by a minimum percentage; close <= highest high over the same long lookback by no more than a maximum percentage below it (SMA of close, SMA_short < SMA_mid < SMA_long in lookback length)
+Calculation: Pivot = high of the most recent confirmed pivot high (a bar whose high is the highest among the N bars on each side, confirmed after N further bars)
+Calculation: AvgVol = SMA of volume over a lookback longer than the exit moving average
+Long: Stage2 AND close > Pivot AND previous close <= Pivot AND volume > AvgVol * a multiple greater than 1
+Exit: long, close < a very short SMA of close (shorter than SMA_short)

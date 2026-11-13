@@ -1,0 +1,7 @@
+Calculation: VWAP = cumulative sum of (typical price (high+low+close)/3 * volume) divided by cumulative sum of volume, reset at the start of each trading session
+Calculation: MA = moving average of close over a lookback, on the chart timeframe
+Long: MA crosses above VWAP (MA on previous bar <= VWAP on previous bar AND MA on current bar > VWAP on current bar) AND bar time of day is within the entry window (at or after window start AND at or before window end) AND no open position; entry price = close of the signal bar
+Short: MA crosses below VWAP (MA on previous bar >= VWAP on previous bar AND MA on current bar < VWAP on current bar) AND bar time of day is within the entry window (at or after window start AND at or before window end) AND no open position; entry price = close of the signal bar
+Exit: long, low <= entry price - stop distance OR high >= entry price + take-profit distance (each distance is a fixed fraction of entry price or a fixed amount; take-profit distance is larger than stop distance)
+Exit: short, high >= entry price + stop distance OR low <= entry price - take-profit distance (same distance definitions as for long)
+Exit: long or short, bar time of day >= close-all time (later than the entry window end)

@@ -1,0 +1,11 @@
+Signals come from SMT (smart-money-technique) divergence between the traded instrument and a correlated instrument, both on the chart timeframe. There is no explicit exit rule, so a position is held until an opposite signal appears. Only divergence signals are used; other overlay features that use only the traded instrument's own prices are ignored.
+
+Pivot detection: on both instruments, a swing high is a bar whose high is the highest among a fixed number of bars on each side. A swing low is the mirror case. A pivot is only confirmed after that many bars have passed to its right, so signals arrive with that delay. Correlated-instrument data is requested without look-ahead.
+
+State: for each instrument, keep the two most recent confirmed swing highs and the two most recent confirmed swing lows. For the correlated instrument, also record the bar at which its latest swing high and latest swing low were confirmed. Each side updates independently as new pivots confirm, with no time alignment between the two instruments' pivots beyond the recency check below.
+
+SHORT: evaluate when the traded instrument confirms a new swing high. Require that the traded instrument has a previous swing high, and that the correlated instrument has its two latest swing highs available. Require that the correlated instrument's latest swing high was confirmed no more than a set maximum number of bars before the current bar. Enter short if the traded instrument's new swing high is above its previous swing high (higher high) while the correlated instrument's latest swing high is below its previous swing high (lower high). The traded instrument makes a new high that the correlated one fails to confirm.
+
+LONG: evaluate when the traded instrument confirms a new swing low. Apply the same availability and recency requirements using swing lows. Enter long if the traded instrument's new swing low is below its previous swing low (lower low) while the correlated instrument's latest swing low is above its previous swing low (higher low). The traded instrument makes a new low that the correlated one fails to confirm.
+
+Otherwise there is no signal. Each signal fires once, on the bar where the traded instrument's pivot is confirmed.

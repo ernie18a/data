@@ -1,0 +1,3 @@
+Calculation: DMI/ADX per timeframe = standard Wilder DMI (DI+, DI-, ADX), with ADX smoothing length and DI length as separate parameters. It is computed on a set of several timeframes, which may be lower than, equal to, or higher than the chart timeframe. For each timeframe, use the value of that timeframe's bar still forming (not the last completed bar) as of the current chart bar's close.
+Long: on EVERY timeframe in the set, ADX >= strong-trend threshold AND DI+ > DI-
+Short: on EVERY timeframe in the set, ADX >= strong-trend threshold AND DI- > DI+

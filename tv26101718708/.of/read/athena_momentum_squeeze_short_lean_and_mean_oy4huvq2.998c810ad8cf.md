@@ -1,0 +1,8 @@
+Calculation: Momentum = linear regression value at the current bar, over a lookback, of (close - average(average(highest high over the lookback, lowest low over the lookback), SMA of close over the lookback))
+Calculation: Momentum colors = light green: Momentum > 0 AND Momentum > previous bar Momentum; dark green: Momentum > 0 AND Momentum <= previous bar Momentum; light red: Momentum <= 0 AND Momentum < previous bar Momentum; dark red: Momentum <= 0 AND Momentum >= previous bar Momentum
+Calculation: SqueezeOff = Bollinger lower band < Keltner lower band AND Bollinger upper band > Keltner upper band, where Bollinger = SMA(close) +/- m*stdev(close), Keltner = SMA(close) +/- m*SMA(true range), and Bollinger and Keltner use the same lookback and the same multiplier m
+Calculation: NonOffRun = number of consecutive bars up to and including the bar, on which SqueezeOff is false (0 if SqueezeOff is true on that bar)
+Long: Momentum color is light green AND SqueezeOff is true on the current bar AND NonOffRun on the previous bar >= a minimum count AND close > long-lookback SMA of close
+Short: Momentum color is light red AND SqueezeOff is true on the current bar AND NonOffRun on the previous bar >= a minimum count AND close < long-lookback SMA of close
+Exit: long, Momentum color is dark green OR low <= entry price - k * ATR (ATR value on the entry bar, fixed for the trade)
+Exit: short, Momentum color is dark red OR high >= entry price + k * ATR (ATR value on the entry bar, fixed for the trade)

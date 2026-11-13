@@ -1,0 +1,5 @@
+Calculation: Keltner Channel = EMA(close) +/- multiplier * ATR (upper/lower bands). Chart bands are computed on chart-timeframe bars. HTF bands are computed the same way on higher-timeframe bars; at each chart bar the HTF band is the linear interpolation from the second-last completed HTF bar's band to the last completed HTF bar's band, weighted by the elapsed fraction of the current HTF bar.
+Calculation: Width percentile = (width - lowest width over lookback) / (highest width over lookback - lowest width over lookback) * 100, where width = upper band - lower band (50 if the range is 0). Chart percentile uses chart bands on chart bars. HTF percentile uses HTF bands on higher-timeframe bars, interpolated the same way as the HTF bands.
+Long: close < chart lower band AND close < HTF lower band, on the first bar where this holds (it did not hold on the previous bar).
+Short: close > chart upper band AND close > HTF upper band, on the first bar where this holds (it did not hold on the previous bar).
+Exit: long or short, chart width percentile >= upper threshold AND HTF width percentile >= upper threshold

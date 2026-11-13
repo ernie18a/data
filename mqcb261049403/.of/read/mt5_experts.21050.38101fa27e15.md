@@ -1,0 +1,4 @@
+Long: volume of the last completed bar > volume of the bar before it AND hour of the current bar's open time is within an allowed trading-hour window (inclusive of both ends)
+Short: volume of the last completed bar < volume of the bar before it AND hour of the current bar's open time is within an allowed trading-hour window (inclusive of both ends)
+Exit: short, volume of the last completed bar > volume of the bar before it AND hour of the current bar's open time is within an allowed trading-hour window (inclusive of both ends)
+Exit: long, volume of the last completed bar < volume of the bar before it AND hour of the current bar's open time is within an allowed trading-hour window (inclusive of both ends)

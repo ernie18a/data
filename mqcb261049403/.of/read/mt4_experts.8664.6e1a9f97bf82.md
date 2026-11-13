@@ -1,0 +1,7 @@
+Calculation: Channel(tf) = over the last N bars of timeframe tf (same N for all tfs, including the still-forming bar), least-squares linear regression line of close; center = line value at the newest bar; halfwidth = max absolute deviation of close from the line over the N bars; support = center - halfwidth; resistance = center + halfwidth.
+Calculation: Slope(tf) = line value at the newest bar minus line value at the oldest bar of the N-bar window (positive = rising line).
+Calculation: Timeframes: chart tf is the lowest; mid tf is higher than chart tf; trend tf is higher than mid tf. All values use the still-forming bar of each tf (not the last completed bar).
+Long: Slope(trend tf) > 0 AND forming-bar low of mid tf <= Channel(mid tf).support AND forming-bar low of chart tf <= Channel(chart tf).support AND no long position is open.
+Short: Slope(trend tf) < 0 AND forming-bar high of mid tf >= Channel(mid tf).resistance AND forming-bar high of chart tf >= Channel(chart tf).resistance AND no short position is open.
+Exit: long, high >= Channel(mid tf).center at entry time OR low <= entry price - (Channel(mid tf).center - Channel(mid tf).support at entry time)/2.
+Exit: short, low <= Channel(mid tf).center at entry time OR high >= entry price + (Channel(mid tf).resistance - Channel(mid tf).center at entry time)/2.

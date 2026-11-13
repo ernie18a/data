@@ -1,0 +1,2 @@
+Calculation: CPR top = max(TC, BC), where Pivot = (H + L + C)/3, BC = (H + L)/2, TC = 2*Pivot - BC, and H, L, C are the high, low and close of the previous completed bar of a higher timeframe than the chart (the last completed bar, not the one still forming). The same CPR top applies to every chart bar within the current higher-timeframe bar.
+Long: close crosses above CPR top (previous bar close <= previous bar CPR top AND current close > current CPR top)

@@ -1,0 +1,10 @@
+Calculation: RangeHigh/RangeLow = highest high / lowest low of the chart-timeframe bars in the current day's opening-range session (fixed once the session ends)
+Calculation: Mid = (RangeHigh + RangeLow) / 2
+Calculation: DailyEMA = long-period EMA of daily closes, computed on a higher timeframe including the still-forming daily bar; DailyClose = close of that forming daily bar
+Calculation: InitStop = Mid (alternative: opposite range boundary, i.e. RangeLow for long, RangeHigh for short)
+Calculation: Target = signal-bar close +/- |signal-bar close - InitStop| * reward multiple (+ for long, - for short)
+Calculation: ActiveStop = InitStop; once close reaches entry +/- |entry - InitStop| in the profit direction, ActiveStop = entry price
+Long: bar is inside the trade-window session after the opening range has ended AND no trade has been taken yet today AND close crosses above RangeHigh (previous close <= RangeHigh and close > RangeHigh) AND DailyClose > DailyEMA AND (optional) RangeHigh-RangeLow is <= a larger multiple and >= a smaller multiple of ATR (short lookback) measured on the first bar after the range ends AND (optional) volume > multiplier * SMA(volume, longer lookback) on the breakout bar. Entry price = RangeHigh, filled on a later bar when low <= RangeHigh; the pending order is cancelled once outside the trade window (alternative: enter at market on the signal bar)
+Short: bar is inside the trade-window session after the opening range has ended AND no trade has been taken yet today AND close crosses below RangeLow (previous close >= RangeLow and close < RangeLow) AND DailyClose <= DailyEMA AND (optional) same range-size ATR filter as Long AND (optional) same volume filter as Long. Entry price = RangeLow, filled on a later bar when high >= RangeLow; the pending order is cancelled once outside the trade window (alternative: enter at market on the signal bar)
+Exit: long, low <= ActiveStop OR high >= Target OR time of day >= cutoff time
+Exit: short, high >= ActiveStop OR low <= Target OR time of day >= cutoff time

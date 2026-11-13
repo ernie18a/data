@@ -1,0 +1,6 @@
+Calculation: MACD = EMA(close, fast length) - EMA(close, slow length), fast length shorter than slow length; signal = EMA of MACD (signal length shorter than slow length)
+Calculation: SupportLevel = most recent confirmed pivot low of low (a bar whose low is the lowest among an equal number of bars on its left and right; confirmed only after the right-side bars complete); ResistLevel = same with pivot high of high
+Long: MACD crosses above signal AND low < lowest low of the previous L bars (excluding current bar) AND MACD > lowest MACD of the previous L bars (excluding current bar) AND MACD < 0 AND SupportLevel exists AND abs(close - SupportLevel)/close <= tolerance AND volume > SMA(volume)
+Long: MACD crosses above signal AND volume > SMA(volume)
+Short: MACD crosses below signal AND high > highest high of the previous L bars (excluding current bar) AND MACD < highest MACD of the previous L bars (excluding current bar) AND MACD > 0 AND ResistLevel exists AND abs(close - ResistLevel)/close <= tolerance AND volume > SMA(volume)
+Short: MACD crosses below signal AND volume > SMA(volume)

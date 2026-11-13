@@ -1,0 +1,8 @@
+Calculation: OpenRangeHigh/OpenRangeLow = highest high / lowest low of the bars inside a fixed intraday opening time window of the current day, held constant after the window ends (the level is only usable after the window closes)
+Calculation: PrevDayHigh/PrevDayLow = high/low of the last completed bar of a higher timeframe (daily)
+Calculation: LongStop = lowest low over a short lookback minus ATR; ShortStop = highest high over the same lookback plus ATR; both are evaluated on the entry bar and then held fixed for the trade
+Long: bar is completed AND (close crosses above OpenRangeHigh (close > level AND previous close <= level) OR close crosses above PrevDayHigh) AND close > open AND (optional filter: RSI > bullish threshold AND volume > multiplier * VWMA(close) over a lookback) AND (if the market is not 24h, bar time of day < end-of-day cutoff)
+Short: bar is completed AND (close crosses below OpenRangeLow (close < level AND previous close >= level) OR close crosses below PrevDayLow) AND close < open AND (optional filter: RSI < bearish threshold AND volume > multiplier * VWMA(close) over a lookback) AND (if the market is not 24h, bar time of day < end-of-day cutoff)
+Exit: long, close >= entry + RR * (entry - LongStop) OR close <= LongStop
+Exit: short, close <= entry - RR * (ShortStop - entry) OR close >= ShortStop
+Exit: any, market is not 24h AND bar time of day >= end-of-day cutoff

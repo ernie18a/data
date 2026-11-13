@@ -1,0 +1,5 @@
+Calculation: MACD per timeframe = main line (EMA of close with shorter period minus EMA of close with longer period), signal line (EMA of main line), histogram = main - signal. Computed on a set of timeframes ranging from lower than the chart timeframe to higher than the chart timeframe, each using the bar still forming.
+Calculation: timeframe score = +2 if main > signal AND histogram > 0 AND main > 0; +1 if main > signal AND histogram > 0 AND main <= 0; -2 if main < signal AND histogram < 0 AND main < 0; -1 if main < signal AND histogram < 0 AND main >= 0; otherwise 0.
+Calculation: total score = sum of timeframe scores over all timeframes in the set.
+Long: total score >= a positive threshold (a higher positive threshold marks strong long)
+Short: total score <= a negative threshold of equal magnitude (a lower negative threshold marks strong short)

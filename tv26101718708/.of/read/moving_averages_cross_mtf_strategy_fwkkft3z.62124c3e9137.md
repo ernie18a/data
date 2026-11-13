@@ -1,0 +1,5 @@
+Calculation: MA_short = moving average of close with the shorter lookback; MA_long = same moving-average type of close with the longer lookback (each may optionally be computed on a higher timeframe than the chart, using the last completed higher-timeframe bar). Entry price = close of the entry bar.
+Long: MA_short crosses above MA_long (previous bar MA_short <= MA_long AND current bar MA_short > MA_long)
+Short: MA_short crosses below MA_long (previous bar MA_short >= MA_long AND current bar MA_short < MA_long)
+Exit: long, close > entry price * (1 + take_profit_pct) OR close < entry price * (1 - stop_loss_pct) OR (highest high since entry >= entry price * (1 + trail_activation_pct) AND low <= highest high since entry * (1 - trail_pct)); no new long signal on the same bar
+Exit: short, close < entry price * (1 - take_profit_pct) OR close > entry price * (1 + stop_loss_pct) OR (lowest low since entry <= entry price * (1 - trail_activation_pct) AND high >= lowest low since entry * (1 + trail_pct)); no new short signal on the same bar

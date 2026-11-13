@@ -1,0 +1,7 @@
+Calculation: delta = volume * (2*(close-low)/(high-low) - 1), 0 if high == low
+Calculation: Session = fixed UTC hour-of-day windows [start, end) for three sessions (Asian, London, NY; London and NY overlap); a bar's session is the first matching in order Asian, London, NY; bars in no session have none
+Calculation: Session CVD = running sum of delta over bars of the same session, reset to 0 at the first bar of each session window; the series used below is the CVD of the bar's session (undefined outside sessions)
+Calculation: CVD pivot high/low = Session CVD value at a bar that is the highest/lowest among the N bars before and N bars after it (same chart timeframe); confirmed and acted on at the bar N bars after the pivot bar
+Calculation: Previous pivot = the most recent earlier CVD pivot of the same kind (high or low), regardless of its session; compare only if the pivot bar and the previous pivot bar belong to the same session
+Long: (on confirmation of a CVD pivot low, same session as previous CVD pivot low) AND ((low of pivot bar < low of previous pivot bar AND CVD pivot low > previous CVD pivot low) OR (low of pivot bar > low of previous pivot bar AND CVD pivot low < previous CVD pivot low))
+Short: (on confirmation of a CVD pivot high, same session as previous CVD pivot high) AND ((high of pivot bar > high of previous pivot bar AND CVD pivot high < previous CVD pivot high) OR (high of pivot bar < high of previous pivot bar AND CVD pivot high > previous CVD pivot high))

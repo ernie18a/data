@@ -1,0 +1,2 @@
+Long: close > close 3 bars ago * (1 + impulse threshold percent) AND current bar close > open AND previous bar close > open AND close 3 bars ago < open 3 bars ago (bearish candle before the impulse)
+Short: close < close 3 bars ago * (1 - impulse threshold percent) AND current bar close < open AND previous bar close < open AND close 3 bars ago > open 3 bars ago (bullish candle before the impulse)

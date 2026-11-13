@@ -1,0 +1,7 @@
+Calculation: Envelope = Basis ± multiplier × ATR, where Basis is a moving average of close and ATR is Average True Range; Upper = Basis + multiplier × ATR; Lower = Basis - multiplier × ATR (all on chart timeframe, current bar)
+Calculation: Trend = persistent state: bull (+1) when close crosses above Upper, bear (-1) when close crosses below Lower, otherwise keeps the previous state (initially none)
+Calculation: Pocket = zone between two levels placed at fractions r1 < r2 (both > 0.5) of the envelope width (Upper - Lower); when Trend is bull, each level = Upper - r × width; when Trend is bear, each level = Lower + r × width; close is inside the Pocket if it is between the two levels, inclusive
+Long: close crosses above Upper (close <= Upper on the previous bar AND close > Upper on this bar) AND Trend on the previous bar was not bull
+Short: close crosses below Lower (close >= Lower on the previous bar AND close < Lower on this bar) AND Trend on the previous bar was not bear
+Long: Trend is bull AND close is inside the Pocket AND at least three of four distinct timeframes (spanning lower to higher than the chart timeframe) have Trend bull, each computed with the same calculation on aggregated bars using the last completed bar
+Short: Trend is bear AND close is inside the Pocket AND at least three of four distinct timeframes (spanning lower to higher than the chart timeframe) have Trend bear, each computed with the same calculation on aggregated bars using the last completed bar

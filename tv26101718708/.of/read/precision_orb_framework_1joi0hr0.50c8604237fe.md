@@ -1,0 +1,11 @@
+Calculation: ORH, ORL = max and min of (open, close) of the first bar of the session day (opening range body)
+Calculation: VWAP = session-anchored VWAP of hlc3, reset each day
+Calculation: ClosePos = (close - low) / (high - low)
+Calculation: AcceptUp = count of consecutive completed trade-window bars with close > ORH (reset to 0 on a bar with close <= ORH); AcceptDn = same with close < ORL
+Calculation: SwingHigh = most recent confirmed pivot high (a high above the highs of N bars on each side); SwingLow = most recent confirmed pivot low (mirror)
+Calculation: RevUp = completed trade-window bar with close > ORH by at least a minimum distance AND high > SwingHigh by at least a minimum sweep distance AND (upper wick / (high - low) >= wick threshold OR ClosePos < strength threshold) AND no RevUp or RevDn occurred earlier today. RevDn = mirror: close < ORL by at least a minimum distance AND SwingLow - low >= minimum sweep distance AND (lower wick / (high - low) >= wick threshold OR ClosePos > 1 - strength threshold) AND no RevUp or RevDn occurred earlier today
+Calculation: Long targets: entry = signal bar close; risk = entry - ORL. Candidates = confirmed swing highs within a lookback window lying between entry + (small multiple of risk) and entry + (larger multiple of risk). TP1 = lowest candidate; TP2 = second-lowest distinct candidate. If a candidate is missing, use a round-number grid level above entry + a minimum distance (TP1 = nearest grid level, TP2 = a farther grid level). If TP2 <= TP1, TP2 = the farther grid level. Short targets mirror this: risk = ORH - entry, swing lows, grid levels below entry
+Long: signal bar completed AND within the early-session trade window after the opening range bar AND no Long or Short signal earlier today AND close > ORH by at least a minimum distance AND AcceptUp >= required count AND ClosePos >= strength threshold AND close > VWAP AND NOT RevUp
+Short: signal bar completed AND within the early-session trade window after the opening range bar AND no Long or Short signal earlier today AND close < ORL by at least a minimum distance AND AcceptDn >= required count AND ClosePos <= 1 - strength threshold AND close < VWAP AND NOT RevDn
+Exit: long, low <= ORL (stop) OR high >= TP1 OR high >= TP2
+Exit: short, high >= ORH (stop) OR low <= TP1 OR low <= TP2

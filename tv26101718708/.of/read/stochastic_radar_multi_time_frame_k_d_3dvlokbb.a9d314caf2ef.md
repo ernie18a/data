@@ -1,0 +1,3 @@
+Calculation: Stochastic %K = SMA(100*(close - lowest low over lookback)/(highest high over lookback - lowest low over lookback), K smoothing length); %D = SMA(%K, D smoothing length). Computed on bars aggregated to a chosen timeframe (any timeframe, lower or higher than the chart timeframe, evaluated independently per timeframe), using the bar still forming on that timeframe.
+Long: %K < oversold level OR %D < oversold level (on any one evaluated timeframe; more timeframes in the zone at the same time gives stronger confluence)
+Short: %K > overbought level OR %D > overbought level (on any one evaluated timeframe; more timeframes in the zone at the same time gives stronger confluence)

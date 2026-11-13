@@ -1,0 +1,4 @@
+Calculation: AnchoredVWAPBands(m) = volume-weighted average of bar open prices, reset at the start of each period of a timeframe higher than the chart timeframe (the period still forming at the current bar); stdev = volume-weighted standard deviation of open around that VWAP within the period; Upper(m) = VWAP + m*stdev; Lower(m) = VWAP - m*stdev. Two multipliers are used: wide and narrow, with narrow < wide. WideUpper/WideLower use the wide multiplier; NarrowUpper/NarrowLower use the narrow multiplier.
+Calculation: ATR = Wilder average true range over a fixed lookback of chart-timeframe bars.
+Long: WideUpper != WideLower AND (WideUpper - WideLower) >= k * ATR (k a positive constant) AND close > NarrowUpper
+Short: WideUpper != WideLower AND (WideUpper - WideLower) >= k * ATR (k a positive constant) AND close < NarrowLower

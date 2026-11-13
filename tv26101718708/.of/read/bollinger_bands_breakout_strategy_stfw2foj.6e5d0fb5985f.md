@@ -1,0 +1,8 @@
+Calculation: Bollinger Bands = middle: simple moving average of close; upper: middle + multiplier * standard deviation of close; lower: middle - multiplier * standard deviation of close (same lookback)
+Calculation: StdDev = standard deviation of close over a lookback
+Calculation: Trend MA = moving average of close with a lookback much longer than the Bollinger Bands lookback
+Calculation: ROC = (current close - close of the last completed bar of a higher timeframe than the chart) / that close * 100
+Long: close crosses above Bollinger Bands upper (close > upper AND previous close <= previous upper) AND StdDev > simple moving average of StdDev AND (optional) close > Trend MA AND (optional) ROC > threshold
+Short: close crosses below Bollinger Bands lower (close < lower AND previous close >= previous lower) AND StdDev > simple moving average of StdDev AND (optional) close < Trend MA AND (optional) ROC > threshold
+Exit: long, close crosses below Bollinger Bands lower OR low <= entry price * (1 - stop-loss %) OR high >= entry price * (1 + take-profit %) OR (highest high since entry >= entry price * (1 + trailing-activation %) AND price falls to highest high since entry * (1 - trailing-offset %))
+Exit: short, close crosses above Bollinger Bands upper OR high >= entry price * (1 + stop-loss %) OR low <= entry price * (1 - take-profit %) OR (lowest low since entry <= entry price * (1 - trailing-activation %) AND price rises to lowest low since entry * (1 + trailing-offset %))

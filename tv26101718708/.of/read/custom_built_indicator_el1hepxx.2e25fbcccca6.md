@@ -1,0 +1,6 @@
+Calculation: Baseline = moving average (RMA-type) of close over a lookback
+Calculation: Upper Band = Baseline + upper multiplier * ATR; Lower Band = Baseline - lower multiplier * ATR (the two multipliers are independent; ATR lookback is separate from the Baseline lookback)
+Long: close > Upper Band AND NOT (close < Lower Band) AND the position is not already long (flips from short or flat). Optional extra AND filters: volume > previous bar's volume, OR Baseline > Baseline of previous bar, OR (close > Upper Band) was also true on the previous bar. Alternative base conditions: close > Baseline, or Baseline > previous Baseline
+Short: close < Lower Band AND the position is not already short (flips from long or flat); this takes priority over Long on the same bar. Optional extra AND filters: volume < previous bar's volume, OR Baseline < Baseline of previous bar, OR (close < Lower Band) was also true on the previous bar. Alternative base conditions: close < Baseline, or Baseline < previous Baseline
+Exit: long, Short condition is true (close and reverse to short)
+Exit: short, Long condition is true (close and reverse to long)

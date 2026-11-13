@@ -1,0 +1,7 @@
+Calculation: Swing high/low = bar whose high/low is the extreme of N bars on each side (N is the same for both); usable only after N later bars have closed. A new swing replaces the previous one of its kind.
+Calculation: Unbroken swing high/low = latest swing high/low that no bar has closed beyond by the buffer. It is spent once broken, until a new swing of that kind forms.
+Calculation: Unswept swing high/low = latest swing high/low not yet swept. It is spent once swept, until a new swing of that kind forms.
+Calculation: ATR = average true range, evaluated on the chart timeframe.
+Calculation: Trend = direction of the last close-confirmed break (up after an upward break, down after a downward break). It is none at the start.
+Long: evaluated on bar close, using any one or more of the following events (the event set can be restricted to CHoCH only, BOS only, sweep only, or all): (1) BOS up: close > unbroken swing high + buffer*ATR AND Trend is not down; (2) CHoCH up: close > unbroken swing high + buffer*ATR AND Trend is down; (3) sweep low: low < unswept swing low AND close > that swing low. After (1) or (2), Trend becomes up and that swing high is spent.
+Short: evaluated on bar close, using any one or more of the following events (same restriction on the event set): (1) BOS down: close < unbroken swing low - buffer*ATR AND Trend is not up; (2) CHoCH down: close < unbroken swing low - buffer*ATR AND Trend is up; (3) sweep high: high > unswept swing high AND close < that swing high. After (1) or (2), Trend becomes down and that swing low is spent.

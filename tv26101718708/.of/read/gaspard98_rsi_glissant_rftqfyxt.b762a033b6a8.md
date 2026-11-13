@@ -1,0 +1,5 @@
+Calculation: LowerLevel = lowest low over the last N bars + pLow * (highest high over the last N bars - lowest low over the last N bars), computed on the chart timeframe including the current bar, with 0 < pLow < pHigh < 1
+Calculation: UpperLevel = same formula as LowerLevel but using pHigh in place of pLow
+Calculation: HA candle = Heikin Ashi candle, where haClose = (open+high+low+close)/4 and haOpen = (previous haOpen + previous haClose)/2, seeded on the first bar with (open+close)/2; green if haClose >= haOpen, red otherwise
+Long: (previous close <= previous LowerLevel AND close > LowerLevel) AND the previous emitted signal was not Long (Long and Short strictly alternate) AND, if the optional HA filter is used, HA candle is green
+Short: (previous close >= previous UpperLevel AND close < UpperLevel) AND the previous emitted signal was not Short (Long and Short strictly alternate) AND, if the optional HA filter is used, HA candle is red

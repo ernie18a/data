@@ -1,0 +1,9 @@
+Calculation: Bands = Center ± multiplier × ATR (volatility, lookback longer than the Center smoothing), where Center = EMA(EMA(close, L), L) with both EMAs using the same L; Upper = Center + multiplier × ATR, Lower = Center − multiplier × ATR.
+Calculation: Regime = bullish once close crosses above Upper (previous close <= previous Upper and close > Upper), bearish once close crosses below Lower; the regime persists until the opposite cross.
+Calculation: SwingLow(N) = bar whose low is the lowest low among N bars on each side, confirmed N bars later; SwingHigh(N) = bar whose high is the highest high among N bars on each side, confirmed N bars later. The same N is used for the VWAP restart window below.
+Calculation: LowVWAP = volume-weighted average of the previous bar's low, restarting on every bar where the previous bar's low equals the lowest low of the last N bars (including the current bar) and the current low is above it. HighVWAP = the same with highs, restarting where the previous bar's high equals the highest high of the last N bars and the current high is below it.
+Calculation: ShortArmed = becomes true when a SwingLow is confirmed on a bar where the regime is bearish and was also bearish N bars earlier; reset to false when the regime changes or when a Short fires. LongArmed = the same with SwingHigh and a bullish regime, reset when the regime changes or when a Long fires.
+Long: Regime is bullish AND LongArmed was true before this bar AND no SwingHigh is confirmed on this bar AND close >= HighVWAP
+Short: Regime is bearish AND ShortArmed was true before this bar AND no SwingLow is confirmed on this bar AND close <= LowVWAP
+Exit: long, low < Lower + ATR
+Exit: short, high > Upper − ATR

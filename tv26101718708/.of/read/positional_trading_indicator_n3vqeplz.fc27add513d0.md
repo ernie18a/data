@@ -1,0 +1,3 @@
+Calculation: HTF pivot high / pivot low = on bars aggregated to a timeframe higher than the chart timeframe, a bar whose high (low) is the highest (lowest) of the bars within the same number of bars on its left and on its right; it is confirmed only once the right-side bars have completed. Latest = most recently confirmed pivot, previous = the one confirmed before it.
+Long: latest HTF pivot high > previous HTF pivot high AND latest HTF pivot low > previous HTF pivot low
+Short: latest HTF pivot high < previous HTF pivot high AND latest HTF pivot low < previous HTF pivot low

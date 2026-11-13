@@ -1,0 +1,6 @@
+Calculation: Score = sum of the following votes, each +1 or -1: (a) for each of three RSI readings taken from three chosen timeframes (using the higher-timeframe bar that contains the current bar, i.e. the still-forming bar): -1 if RSI >= 70, +1 if RSI <= 30, otherwise +1 if RSI > 50 else -1; (b) for each of four EMAs of close with different lookbacks (short, medium, long, very long): +1 if close > EMA else -1; (c) Stochastic: +1 if smoothed %K (SMA of raw stochastic %K) > %D (SMA of smoothed %K, shorter lookback) else -1; (d) MACD: +1 if MACD line > signal line else -1; (e) DMI: +1 if +DI > -DI else -1; (f) MFI computed on hlc3: +1 if MFI > 50 else -1; (g) VWAP of hlc3 (session-anchored): +1 if close > VWAP else -1; (h) OBV: +1 if OBV > EMA of OBV else -1
+Calculation: R = ATR * multiplier (current chart timeframe)
+Long: Score >= 2
+Short: Score <= -2
+Exit: long, low <= entry price - R (stop loss) OR high >= entry price + m*R, where m is 1.5, 2, or 3 (staged take-profit targets)
+Exit: short, high >= entry price + R (stop loss) OR low <= entry price - m*R, where m is 1.5, 2, or 3 (staged take-profit targets)

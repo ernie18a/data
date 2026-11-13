@@ -1,0 +1,3 @@
+Calculation: MA = EMA of close with the same lookback for every timeframe; MA_prev = the MA value one completed bar earlier on that same timeframe
+Long: on every timeframe in a fixed set spanning timeframes both lower and higher than the chart timeframe, using the still-forming bar of each timeframe, close > MA (the stricter all-timeframes version, which also requires MA > MA_prev on each, is a subset and gives the same direction)
+Short: on every timeframe in the same set, using the still-forming bar of each timeframe, close < MA (the stricter all-timeframes version, which also requires MA < MA_prev on each, is a subset and gives the same direction)

@@ -1,0 +1,4 @@
+Calculation: GapPct = (close of the still-forming higher-timeframe bar - close of the last completed higher-timeframe bar) / close of the last completed higher-timeframe bar. Both are evaluated on every chart bar, so the first is effectively the current price.
+Calculation: Up = GapPct > T, where T is a positive threshold; Up is a boolean that is false whenever the condition is not met.
+Long: Up is true on the current chart bar AND Up was false on the previous chart bar (GapPct crosses above T).
+Short: Up is false on the current chart bar AND Up was true on the previous chart bar (GapPct falls back to T or below).

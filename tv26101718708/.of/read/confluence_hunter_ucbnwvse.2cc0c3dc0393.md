@@ -1,0 +1,11 @@
+Calculation: BullCount = number of the following that are true: (1) EMA stack bullish: EMA1 > EMA2 > EMA3 > EMA4, with EMA lengths strictly ascending from 1 to 4; (2) close > session VWAP; (3) bullish liquidity sweep on this bar; (4) EMA of delta > 0; (5) close > session POC; (6) RSI > bullish threshold above the neutral 50
+Calculation: BearCount = number of the following that are true: (1) EMA stack bearish: EMA1 < EMA2 < EMA3 < EMA4; (2) close < session VWAP; (3) bearish liquidity sweep on this bar; (4) EMA of delta < 0; (5) close < session POC; (6) RSI < bearish threshold, placed below 50 symmetrically to the bullish threshold
+Calculation: session VWAP = cumulative sum(hlc3*volume)/cumulative sum(volume), reset at each new daily session; band SD = sqrt(max(cumulative sum(hlc3^2*volume)/cumulative sum(volume) - VWAP^2, 0)); upper/lower band = VWAP +/- k*SD
+Calculation: pivot low/high = lowest low/highest high over N bars on each side of a bar, known only after N further bars have closed; lastPL/lastPH = most recent confirmed pivot low/high
+Calculation: bullish liquidity sweep = low < lastPL AND close > lastPL AND (min(open,close) - low)/(high - low) >= wick ratio (high > low); bearish liquidity sweep = high > lastPH AND close < lastPH AND (high - max(open,close))/(high - low) >= wick ratio
+Calculation: delta = (2*(close - low)/(high - low) - 1)*volume, equal to 0 if high = low; EMA of delta uses a moderate lookback
+Calculation: session POC = midpoint price of the highest-volume bin of a session volume profile; the profile splits the session range so far (running session high to running session low, reset daily) into equal-height bins, spreads each bar's volume evenly over the bins between its low and high, and is recomputed every bar
+Long: BullCount >= min confluence threshold AND BearCount <= 1
+Short: BearCount >= min confluence threshold AND BullCount <= 1
+Exit: long, low < low of the most recent bullish sweep bar at or before entry OR high >= VWAP + k*SD (upper band) OR close < EMA2 (second-shortest EMA of the stack)
+Exit: short, high > high of the most recent bearish sweep bar at or before entry OR low <= VWAP - k*SD (lower band) OR close > EMA2 (second-shortest EMA of the stack)

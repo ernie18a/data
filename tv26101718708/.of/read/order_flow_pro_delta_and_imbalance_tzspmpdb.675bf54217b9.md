@@ -1,0 +1,7 @@
+Calculation: Delta = +volume if close>open, -volume if close<open, else 0
+Calculation: DeltaMA = simple moving average of Delta over a lookback of n_ma bars
+Calculation: BullImb (per bar) = close>open AND volume>0 AND (close-open)/(high-low) > threshold; BearImb (per bar) = close<open AND volume>0 AND (open-close)/(high-low) > threshold
+Calculation: HighVol = volume > m_v * simple moving average of volume, where its lookback is longer than n_ma
+Calculation: pivot high/low of series X with p bars on each side = the bar p bars ago is the highest/lowest of X within p bars before and p bars after it (confirmed on the current bar)
+Long: (BullImb on the current bar AND on each of the previous 2 bars) OR (Delta > k1*DeltaMA) OR (Delta > k2*DeltaMA AND HighVol) OR (Delta > k3*DeltaMA) OR (close p bars ago is a pivot low of close AND Delta p bars ago is a pivot high of Delta AND close p bars ago < close 2p bars ago); k1<k2<k3
+Short: (BearImb on the current bar AND on each of the previous 2 bars) OR (Delta < -k1*DeltaMA) OR (Delta < -k2*DeltaMA AND HighVol) OR (Delta < -k3*DeltaMA) OR (close p bars ago is a pivot high of close AND Delta p bars ago is a pivot low of Delta AND close p bars ago > close 2p bars ago); k1<k2<k3

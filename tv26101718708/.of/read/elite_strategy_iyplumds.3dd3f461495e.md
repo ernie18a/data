@@ -1,0 +1,5 @@
+Calculation: BullCount = number of timeframes in a fixed set of several timeframes (mixed, some lower and some higher than the chart timeframe) where close > EMA(close), both taken from that timeframe's bar containing the current chart bar (the still-forming bar for higher timeframes); BearCount = same count with close < EMA(close)
+Long: Supertrend direction flips from downtrend to uptrend on this bar AND BullCount >= a minimum threshold AND bar time falls within the allowed trading session (if a session restriction is used)
+Short: Supertrend direction flips from uptrend to downtrend on this bar AND BearCount >= a minimum threshold AND bar time falls within the allowed trading session (if a session restriction is used)
+Exit: long, Short condition is true (position reverses to short)
+Exit: short, Long condition is true (position reverses to long)

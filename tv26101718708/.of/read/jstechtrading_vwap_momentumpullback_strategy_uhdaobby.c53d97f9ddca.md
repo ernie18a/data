@@ -1,0 +1,5 @@
+Calculation: VWAP = session-anchored (resets each trading session) cumulative sum(hlc3 * volume) / cumulative sum(volume)
+Long: RSI(close) <= oversold level on at least one of the most recent N bars (including the current bar) AND SMA(close) crosses above VWAP on the current bar (SMA > VWAP now AND SMA <= VWAP on the previous bar)
+Short: RSI(close) >= overbought level on at least one of the most recent N bars (including the current bar) AND SMA(close) crosses below VWAP on the current bar (SMA < VWAP now AND SMA >= VWAP on the previous bar); the overbought level is above the oversold level
+Exit: long, (RSI(close) >= overbought level on at least one of the most recent N bars AND SMA(close) crosses below VWAP on the current bar) OR low <= entry price * (1 - stop-loss percent) OR high >= entry price * (1 + take-profit percent)
+Exit: short, (RSI(close) <= oversold level on at least one of the most recent N bars AND SMA(close) crosses above VWAP on the current bar) OR high >= entry price * (1 + stop-loss percent) OR low <= entry price * (1 - take-profit percent)

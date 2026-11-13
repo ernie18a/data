@@ -1,0 +1,2 @@
+Long: current chart bar is the first chart bar of a new higher-timeframe bar (higher than chart timeframe, bar still forming, so its close is the current chart bar's close and its open is the open of the higher-timeframe bar) AND that higher-timeframe bar's close > its open
+Short: current chart bar is the first chart bar of a new higher-timeframe bar (higher than chart timeframe, bar still forming, so its close is the current chart bar's close and its open is the open of the higher-timeframe bar) AND that higher-timeframe bar's close < its open

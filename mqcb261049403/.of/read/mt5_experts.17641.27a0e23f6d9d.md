@@ -1,0 +1,4 @@
+Long: SMA(close, short-term lookback) > SMA(close, long-term lookback) on the last completed bar of the chart timeframe AND current price <= lowest low of the last N completed bars of the chart timeframe (N is a short lookback, window excludes the forming bar)
+Short: SMA(close, short-term lookback) < SMA(close, long-term lookback) on the last completed bar of the chart timeframe AND current price >= highest high of the last N completed bars of the chart timeframe (same N as Long, window excludes the forming bar)
+Exit: long, current price >= highest high of the last N completed bars of the chart timeframe (window excludes the forming bar) OR current price <= entry price - fixed stop distance
+Exit: short, current price <= lowest low of the last N completed bars of the chart timeframe (window excludes the forming bar) OR current price >= entry price + fixed stop distance

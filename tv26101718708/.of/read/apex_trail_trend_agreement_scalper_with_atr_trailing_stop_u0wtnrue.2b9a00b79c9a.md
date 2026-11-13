@@ -1,0 +1,9 @@
+Calculation: RFdir = Range Filter direction. smRng = EMA(EMA(abs(close - prior close), n), 2n-1) * multiplier (second EMA longer than first). filt starts at close; if close > prior filt then filt = max(prior filt, close - smRng) else filt = min(prior filt, close + smRng). RFdir = +1 if filt > prior filt, -1 if filt < prior filt, otherwise unchanged from previous bar.
+Calculation: HAdir = smoothed Heikin-Ashi direction. Take EMA (pre-length) of open, high, low, close -> o1,h1,l1,c1. haC = (o1+h1+l1+c1)/4; haO = (o1+c1)/2 on first bar, else (prior haO + prior haC)/2. o2 = EMA(haO, post-length), c2 = EMA(haC, post-length). HAdir = +1 if c2 >= o2 else -1.
+Calculation: HTFdir = HAdir computed on bars of a higher timeframe than the chart, taken from the last completed higher-timeframe bar (not the forming one).
+Calculation: SMI = Stochastic Momentum Index: hh = highest high and ll = lowest low over lookback; rel = close - (hh+ll)/2; SMI = 100 * EMA(EMA(rel, s1), s2) / (EMA(EMA(hh-ll, s1), s2) / 2).
+Calculation: Trail = ATR trailing stop, ratcheting only in the trade's favor. At entry: long Trail = entry - k*ATR, short Trail = entry + k*ATR. Each later bar: long Trail = max(Trail, close - k*ATR), short Trail = min(Trail, close + k*ATR). The Trail value updated on a bar is tested from the next bar on.
+Long: position flat AND bars since last exit >= cooldown AND RFdir = +1 AND HAdir = +1 AND HTFdir = +1 on the current bar AND NOT (RFdir, HAdir, HTFdir all +1) on the previous bar AND SMI < positive limit
+Short: position flat AND bars since last exit >= cooldown AND RFdir = -1 AND HAdir = -1 AND HTFdir = -1 on the current bar AND NOT (RFdir, HAdir, HTFdir all -1) on the previous bar AND SMI > -(same limit)
+Exit: long, low <= Trail OR RFdir = -1 OR high >= entry + R * (k*ATR at entry)
+Exit: short, high >= Trail OR RFdir = +1 OR low <= entry - R * (k*ATR at entry)

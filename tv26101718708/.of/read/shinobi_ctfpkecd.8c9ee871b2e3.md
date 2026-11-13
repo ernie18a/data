@@ -1,0 +1,11 @@
+Calculation: HA = Heikin Ashi candle on chart bars (haO, haH, haL, haC), haO seeded with (open+close)/2 on the first bar. Range = haH-haL, body = |haC-haO|, upperWick = haH-max(haO,haC), lowerWick = min(haO,haC)-haL. Bar[0] is the current bar, bar[1] and bar[2] are the 1 and 2 bars before it.
+Calculation: NoUpperWick(i) = Range[i]==0 OR upperWick[i]/Range[i] <= small tolerance fraction. NoLowerWick(i) = Range[i]==0 OR lowerWick[i]/Range[i] <= small tolerance fraction.
+Calculation: Doji0 = body[0]/Range[0] <= small max fraction (1 if Range[0]==0) AND upperWick[0] >= k*body[0] AND lowerWick[0] >= k*body[0], with k a fixed multiplier.
+Calculation: SwingPivots = on haH (pivot high) and haL (pivot low), a bar is a pivot if it is the extreme among N bars on each side; it is confirmed N bars later (same N on both sides). Track the latest and the previous confirmed pivot high and pivot low.
+Calculation: Supertrend = standard ATR-based Supertrend on the raw chart bars (not HA); Uptrend means price is above the Supertrend line, Downtrend means below.
+Calculation: VolOK = volume >= multiplier * EMA(volume, lookback).
+Calculation: SessionOK = bar datetime time-of-day lies inside a fixed daily window.
+Long: flat AND haC[2]<haO[2] AND NoUpperWick(2) AND haC[1]<haO[1] AND NoUpperWick(1) AND Doji0 AND Range[0]>Range[1] AND Supertrend is Uptrend AND ADX >= minimum AND (fewer than two confirmed pivot lows OR latest pivot low > previous pivot low) AND SessionOK AND VolOK; enter at the close of this bar, and set stop = haL[0] of this bar, target = entry + RR*(entry - stop), RR a fixed risk-reward multiple.
+Short: flat AND haC[2]>=haO[2] AND NoLowerWick(2) AND haC[1]>=haO[1] AND NoLowerWick(1) AND Doji0 AND Range[0]>Range[1] AND Supertrend is Downtrend AND ADX >= minimum AND (fewer than two confirmed pivot highs OR latest pivot high < previous pivot high) AND SessionOK AND VolOK; enter at the close of this bar, and set stop = haH[0] of this bar, target = entry - RR*(stop - entry).
+Exit: long, low <= stop OR high >= target
+Exit: short, high >= stop OR low <= target

@@ -1,0 +1,3 @@
+Calculation: CompositeRSI = arithmetic mean of the RSI of close (same lookback for every timeframe), computed on several timeframes, some shorter and some longer than the chart timeframe; each uses the bar still forming at the current chart bar
+Long: CompositeRSI >= bullish threshold AND CompositeRSI < extreme-overbought threshold (ordering: extreme-overbought threshold > bullish threshold > 50)
+Short: CompositeRSI < bearish threshold AND CompositeRSI >= extreme-oversold threshold (ordering: 50 > bearish threshold > extreme-oversold threshold)

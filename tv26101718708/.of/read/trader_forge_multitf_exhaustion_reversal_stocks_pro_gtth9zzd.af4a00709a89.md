@@ -1,0 +1,8 @@
+Calculation: StochRSI K(tf) = on bars of timeframe tf, RSI of close, then stochastic of that RSI over a lookback (0-100 scale), then simple moving average smoothing
+Calculation: Donchian high/low = highest high / lowest low over a lookback of N chart bars, including the current bar
+Calculation: ATR = Average True Range over a lookback on chart bars
+Calculation: RelVol = volume / simple moving average of volume over a lookback
+Long: low <= Donchian low + a*ATR AND abs(close-open) <= b*ATR AND StochRSI K on chart timeframe <= oversold level AND StochRSI K on a higher timeframe (still-forming bar) <= oversold level AND StochRSI K on an even higher timeframe (still-forming bar) <= oversold level AND RelVol >= minimum threshold AND bar start time-of-day (exchange local time) is inside the regular trading session, excluding the first minutes after the open
+Long: the previous bar satisfied the Long condition on the line above AND close > previous bar high
+Short: high >= Donchian high - a*ATR AND abs(close-open) <= b*ATR AND StochRSI K on chart timeframe >= overbought level AND StochRSI K on a higher timeframe (still-forming bar) >= overbought level AND StochRSI K on an even higher timeframe (still-forming bar) >= overbought level AND RelVol >= minimum threshold AND bar start time-of-day (exchange local time) is inside the regular trading session, excluding the first minutes after the open
+Short: the previous bar satisfied the Short condition on the line above AND close < previous bar low

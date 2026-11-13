@@ -1,0 +1,7 @@
+Calculation: VWAP = cumulative sum(volume * (high+low+close)/3) / cumulative sum(volume), reset at the start of each trading day
+Calculation: BullVotes = number of true among [close > VWAP, fast EMA(close) > slow EMA(close), RSI(close) > 50]; fast EMA length is shorter than slow EMA length
+Calculation: BearVotes = number of true among [close <= VWAP, fast EMA(close) <= slow EMA(close), RSI(close) <= 50]
+Long: (close > open AND previous close < previous open AND close > previous open AND open < previous close AND ADX >= strong-trend threshold AND RSI > lower bound AND RSI < upper bound (lower bound below 50, upper bound above 50) AND fast EMA > slow EMA) OR BullVotes >= 2 OR close crosses above VWAP OR fast EMA crosses above slow EMA
+Short: (close < open AND previous close > previous open AND close < previous open AND open > previous close AND ADX >= strong-trend threshold AND RSI > lower bound AND RSI < upper bound AND fast EMA < slow EMA) OR BearVotes >= 2 OR close crosses below VWAP OR fast EMA crosses below slow EMA
+Exit: long, high >= entry price + fixed profit distance OR low <= entry price - fixed stop distance
+Exit: short, low <= entry price - fixed profit distance OR high >= entry price + fixed stop distance

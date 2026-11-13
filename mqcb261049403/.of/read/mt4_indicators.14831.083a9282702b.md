@@ -1,0 +1,3 @@
+Calculation: MA_tf(k) = simple moving average of close, same lookback for every timeframe, on bars of timeframe tf, evaluated k bars before the tf bar that contains the current chart bar's open time (k=0 is that containing bar: for tf higher than the chart timeframe it is the still-forming bar, for tf lower or equal it is the first tf bar within the chart bar)
+Long: for a chosen timeframe tf (tf may be lower than, equal to, or higher than the chart timeframe; READ marks each of several tf independently), MA_tf(0) > MA_tf(1)
+Short: for the same tf, MA_tf(0) <= MA_tf(1)

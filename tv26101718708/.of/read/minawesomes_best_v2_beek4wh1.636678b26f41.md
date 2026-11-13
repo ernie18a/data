@@ -1,0 +1,5 @@
+Calculation: Prior HTF range = high (HTF High) and low (HTF Low) of the last completed bar of a timeframe higher than the chart timeframe, i.e. the bar immediately before the higher-timeframe bar that contains the current chart bar. Used on intraday charts only.
+Calculation: Bullish FVG zone = created on a bar where low > high of the bar two bars earlier; bottom = high two bars earlier, top = low of the creation bar. Active until the first close below its bottom, or until it is older than a limited number of trading days (sessions, not bars).
+Calculation: Bearish FVG zone = created on a bar where high < low of the bar two bars earlier; top = low two bars earlier, bottom = high of the creation bar. Active until the first close above its top, or until it is older than a limited number of trading days (sessions, not bars).
+Long: (low < HTF Low AND close > HTF Low) OR (a Bullish FVG zone is created on this bar) OR (close > top of an active Bearish FVG zone; the zone then becomes inactive)
+Short: (high > HTF High AND close < HTF High) OR (a Bearish FVG zone is created on this bar) OR (close < bottom of an active Bullish FVG zone; the zone then becomes inactive)

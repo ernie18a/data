@@ -1,0 +1,5 @@
+Calculation: AdaptiveBands = Basis +/- Mult * stdev(close, N), with Upper = Basis + Mult * stdev(close, N) and Lower = Basis - Mult * stdev(close, N), computed on chart-timeframe bars (current bar).
+Calculation: Basis = VWMA(close, N) if relative volume (volume / SMA(volume)) is above a threshold; else EMA(close, N) if ADX is above a threshold; else SMA(close, N).
+Calculation: Mult = BaseMult * EMA(DynFactor, smoothing length). DynFactor = (mADX*wADX + mVol*wVol + mRSI*wRSI) / (wADX + wVol + wRSI). mADX = ADX divided by a constant, clamped to a range. mVol = relative volume, clamped to a range. mRSI = 1 + (|RSI - 50| / 50) * elasticity. wADX = ADX divided by a constant, clamped to a range. wVol = relative volume, clamped to a range. wRSI = capped (offset + |RSI - 50| / constant). Fall back to 1 if DynFactor is invalid.
+Long: close crosses above AdaptiveBands Upper (previous close <= previous Upper AND current close > current Upper)
+Short: close crosses below AdaptiveBands Lower (previous close >= previous Lower AND current close < current Lower)

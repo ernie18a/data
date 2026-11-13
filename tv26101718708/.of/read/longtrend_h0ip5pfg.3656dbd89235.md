@@ -1,0 +1,6 @@
+Calculation: TrailVariant(f) = ATR-based trailing stop with multiplier f: upper=hl2+ATR*f, lower=hl2-ATR*f; upper = min(new upper, previous upper) if previous close < previous upper, else new upper; lower = max(new lower, previous lower) if previous close > previous lower, else new lower; trend = 1 if close>upper, 0 if close<lower, else previous trend; output = lower if trend==1 else upper
+Calculation: Perf(f) = EMA of [(close - previous close) * sign(previous close - previous bar's output of TrailVariant(f))]
+Calculation: TargetFactor = K-means (3 clusters, initial centroids at the 25th/50th/75th percentiles) over Perf values of TrailVariant across an evenly spaced grid of multipliers from smaller to larger; select the cluster with the highest mean Perf; TargetFactor = mean multiplier of the variants in that cluster
+Calculation: AdaptiveStop = TrailVariant recursion using TargetFactor, with state os (1 if close>upper, 0 if close<lower, else previous os); AdaptiveStop = lower if os==1 else upper
+Long: AdaptiveStop crosses SMA of close (shorter lookback than the other SMAs, either direction) on this bar AND os==1 AND volume >= K * SMA(volume) (K = rising-volume multiplier) AND close > open
+Short: AdaptiveStop crosses SMA of close (same shorter-lookback SMA, either direction) on this bar AND os==0 AND volume >= K * SMA(volume) AND close < open

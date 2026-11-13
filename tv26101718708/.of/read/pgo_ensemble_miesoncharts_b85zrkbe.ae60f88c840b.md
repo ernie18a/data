@@ -1,0 +1,7 @@
+Calculation: PGO(L) = (close - MovingAverage(close, L)) / WilderATR(L), where both use the same lookback L; the moving average is SMA by default (EMA, WMA or VWMA are alternatives)
+Calculation: State(L) = latched per-lookback state: set to +1 when PGO(L) > UpperThreshold, set to -1 when PGO(L) < LowerThreshold, otherwise keeps its previous value; starts at 0 until the first crossing. UpperThreshold is positive, LowerThreshold is negative, and UpperThreshold's magnitude is larger than LowerThreshold's magnitude
+Calculation: Score = average of State(L) over an evenly spaced set of lookbacks L spanning from a shorter lookback to a longer lookback, on the chart timeframe using the current (forming) bar; the result lies in [-1, +1]
+Long: Score >= TrendThreshold (TrendThreshold is positive, at most 1), evaluated only after a warm-up longer than the longest lookback; a long signal fires when this becomes true after not being true on the previous bar
+Short: Score <= -TrendThreshold, evaluated only after the same warm-up; a short signal fires when this becomes true after not being true on the previous bar
+Exit: long, Score < TrendThreshold AND Score > -TrendThreshold (optional flat-when-undecided mode; otherwise the long position is held until the Short condition occurs and reverses it)
+Exit: short, Score > -TrendThreshold AND Score < TrendThreshold (optional flat-when-undecided mode; otherwise the short position is held until the Long condition occurs and reverses it)

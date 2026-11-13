@@ -1,0 +1,7 @@
+Calculation: HAS_up(tf) = true when smoothed haOpen < smoothed haClose on the still-forming bar of timeframe tf, else false (down). Smoothed Heiken Ashi: apply a moving average with a longer lookback (period P1) separately to open, high, low and close; haClose = average of the four averaged values; haOpen = (previous haOpen + previous haClose)/2; then smooth haOpen and haClose each with a second moving average with a shorter lookback (period P2 < P1). The timeframes tf are fixed and independent of the chart timeframe, ordered TF_a < TF_b < TF_c < TF_d < TF_e (the smallest timeframe is ignored).
+Calculation: UpRun(tf) = number of consecutive chart-bar evaluations, including the current one, in which HAS_up(tf) has been true (0 if currently false); DownRun(tf) = same for HAS_up(tf) false.
+Calculation: StopDist = base stop distance, widened by a fixed increment on every entry made while the previous closed trade was a loss; TpDist = fixed take-profit distance.
+Long: no position open AND HAS_up is true on TF_a, TF_b, TF_c, TF_d, TF_e AND UpRun(TF_a) < small threshold AND UpRun(TF_b) > large threshold (the TF_a threshold is much smaller than the TF_b threshold)
+Short: no position open AND HAS_up is false on TF_a, TF_b, TF_c, TF_d, TF_e AND DownRun(TF_a) < small threshold AND DownRun(TF_b) > large threshold (the TF_a threshold is much smaller than the TF_b threshold)
+Exit: long, price <= entry price - StopDist OR price >= entry price + TpDist
+Exit: short, price >= entry price + StopDist OR price <= entry price - TpDist

@@ -1,0 +1,6 @@
+Calculation: Structure = up if the most recent bar whose high was the highest high over the trailing N bars (including itself) is later than the most recent bar whose low was the lowest low over the same N bars; otherwise down
+Calculation: RangeOK = (highest high over M bars - lowest low over M bars) > k * ATR(M), where ATR is the Wilder ATR of the same length M and k is a constant multiplier
+Long: Structure is up AND close > EMA(close) AND RangeOK, taken only on the first bar where this whole condition is true after being false on the previous bar
+Short: Structure is down AND close < EMA(close) AND RangeOK, taken only on the first bar where this whole condition is true after being false on the previous bar
+Exit: long, Structure is down OR low <= entry price - m * ATR (a separate Wilder ATR, a longer-distance catastrophe stop, with ATR value and entry price fixed at the entry bar's close)
+Exit: short, Structure is up OR high >= entry price + m * ATR (a separate Wilder ATR, a longer-distance catastrophe stop, with ATR value and entry price fixed at the entry bar's close)

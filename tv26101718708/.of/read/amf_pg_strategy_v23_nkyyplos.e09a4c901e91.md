@@ -1,0 +1,13 @@
+Calculation: DMI = standard Wilder +DI, -DI, ADX. 'Fast DMI' uses a shorter DI length and shorter ADX smoothing than 'slow DMI'.
+Calculation: FastUp = fast ADX > T_fast AND fast +DI > fast -DI; FastDown = fast ADX > T_fast AND fast -DI > fast +DI
+Calculation: Chop = 100*log10(SMA(TR,n)/(highest high n - lowest low n))/log10(n), or 50 if the range is 0
+Calculation: Hurst = rescaled-range exponent over the last n closes (long lookback), recomputed only on every 5th bar index and held between. x=ln(close); m=SMA(x,n); d_i=x_i-m; ys = cumulative sum of d accumulated from the newest bar backward; R=max(ys)-min(ys); S=sqrt(mean(d^2)); Hurst = ln(R/S)/ln(n), or 0 if S=0
+Calculation: VolExp = SMA(TR, shorter lookback)/SMA(TR, longer lookback) > ratio threshold
+Calculation: LongOK = slow ADX > T_slow AND Chop < T_chop AND slow +DI > slow -DI AND Hurst > T_h AND NOT VolExp; ShortOK = same but slow -DI > slow +DI
+Calculation: z = clamp(k * (BBwidth(close, short lookback)/BBwidth(close, long lookback)), z_min, z_max), where BBwidth = 4*stdev/SMA
+Calculation: BurstUp = SMA(dC,s) > SMA(dC,l)+z*stdev(dC,l) AND (SMA(TR,s) > SMA(TR,l)+z*stdev(TR,l) OR SMA(volume,s) > SMA(volume,l)+z*stdev(volume,l)); BurstDown = SMA(dC,s) < SMA(dC,l)-z*stdev(dC,l) AND (same TR OR volume expansion tests); dC = close - previous close; s is a shorter lookback than l
+Calculation: N = round(N_min + (N_max-N_min)*(sd - min sd)/(max sd - min sd)), with N_min < N_max, where sd = stdev of 1-bar close returns, and min/max of sd are taken over the same lookback (N = N_min if max=min); M = max(1, round(c_m*N))
+Calculation: R = Wilder RMA(TR, M); K = SMA(R,3); af = min(K/SMA(R,M), cap); fx = min(((SMA(volume,3)+volume)/2) / EMA(avg(SMA(volume,a),SMA(volume,b),SMA(volume,c)), e), cap) with a<b<c; cp = (DEMA(close,N)*fx + ((highest high N + lowest low N)/2)*(2-fx))/2; W = K*af*fx + 0.5*RMA(TR, fixed length); U = cp+W; Lo = cp-W; if BurstUp OR BurstDown then U = close + K*m and Lo = close - K*m (m constant multiplier)
+Calculation: Trail = persistent state (dir, trail), starting dir=none. Each bar: if BurstDown then dir=short, trail=U; else if BurstUp then dir=long, trail=Lo; else if dir=none then (if close > U AND FastUp AND LongOK then dir=long, trail=Lo; else if close < Lo AND FastDown AND ShortOK then dir=short, trail=U; else trail unchanged); else if dir=long then t=max(previous trail, Lo), and if close < t AND FastDown then dir=short, trail=U else trail=t; else if dir=short then t=min(previous trail, U), and if close > t AND FastUp then dir=long, trail=Lo else trail=t
+Long: close > Trail AND FastUp AND LongOK
+Short: close < Trail AND FastDown AND ShortOK

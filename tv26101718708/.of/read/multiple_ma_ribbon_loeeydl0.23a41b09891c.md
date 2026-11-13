@@ -1,0 +1,3 @@
+Calculation: Ribbon = set of many moving averages of (open+high+low+close)/4 on the chart timeframe, with lookbacks spread from short-term to long-term; the longest-lookback member is the long-term reference MA
+Long: close > every MA in Ribbon (including the long-term reference MA) on the current completed bar AND NOT (close > every MA in Ribbon on the previous bar)
+Short: close < every MA in Ribbon (including the long-term reference MA) on the current completed bar AND NOT (close < every MA in Ribbon on the previous bar)

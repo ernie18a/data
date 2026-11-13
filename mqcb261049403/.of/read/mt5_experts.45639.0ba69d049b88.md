@@ -1,0 +1,8 @@
+Calculation: Now = decisions are evaluated once at the open of each chart-timeframe bar; the current bar is treated as containing only its open (high=low=close=open), all windows and indicators include it, and price = its open
+Calculation: RangeHigh = highest high over the last N chart-timeframe bars including the current bar
+Calculation: RangeLow = low of the bar that has the lowest high (not the lowest low) among the same N bars
+Calculation: RangePct = (RangeHigh - RangeLow) / RangeHigh * 100
+Long: no open position AND bar time of day is after a start time and before an end time AND RangePct < a size threshold AND RangeLow < fast EMA(close) < RangeHigh AND fast EMA(close) < slow SMA(close) AND price < fast EMA(close) (fast EMA has a shorter period than slow SMA; both on the chart timeframe, current bar included)
+Short: no open position AND bar time of day is after a start time and before an end time AND RangePct < a size threshold AND RangeLow < fast EMA(close) < RangeHigh AND fast EMA(close) > slow SMA(close) AND price > fast EMA(close) (fast EMA has a shorter period than slow SMA; both on the chart timeframe, current bar included)
+Exit: long, price <= entry price - fixed stop distance OR price >= entry price + fixed target distance (target distance larger than stop distance) OR (optional) bar time of day >= a close time
+Exit: short, price >= entry price + fixed stop distance OR price <= entry price - fixed target distance (target distance larger than stop distance) OR (optional) bar time of day >= a close time

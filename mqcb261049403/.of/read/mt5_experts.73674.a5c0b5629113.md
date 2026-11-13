@@ -1,0 +1,6 @@
+Calculation: Monday daily bar = bars of the day aggregated into one higher-timeframe (daily) bar (open = first open, high = max high, low = min low, close = last close), using the last completed day
+Calculation: Daily ATR = ATR on a higher timeframe than the chart (daily), value of the last completed daily bar at entry time, fixed for the life of the trade; the stop multiple is a positive multiplier of it, and the target multiple is a risk/reward ratio applied to the stop distance
+Long: current bar is the first bar of a new day AND the previous day was a Monday AND no position is open AND Monday close <= Monday open AND (optional filter) Monday high - Monday low >= minimum multiple of Daily ATR
+Short: current bar is the first bar of a new day AND the previous day was a Monday AND no position is open AND Monday close > Monday open AND (optional filter) Monday high - Monday low >= minimum multiple of Daily ATR
+Exit: long, (optional stop) bar low <= entry price - stop multiple * Daily ATR OR (optional target) bar high >= entry price + target multiple * stop multiple * Daily ATR OR bar hour-of-day >= a fixed close hour
+Exit: short, (optional stop) bar high >= entry price + stop multiple * Daily ATR OR (optional target) bar low <= entry price - target multiple * stop multiple * Daily ATR OR bar hour-of-day >= a fixed close hour

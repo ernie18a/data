@@ -1,0 +1,9 @@
+Calculation: SwingHigh = most recent confirmed pivot high of high (a bar whose high exceeds the highs of an equal number of bars on each side; confirmed only after the right-side bars complete); SwingLow = same for pivot low of low
+Calculation: RangeHigh = highest high of the prior N bars excluding the current bar; RangeLow = lowest low of the prior N bars excluding the current bar
+Calculation: HTF bars = chart bars aggregated to a higher timeframe than the chart; HTF conditions are evaluated once, when a new HTF bar has just completed, using the last completed HTF bar as 'current HTF bar' and the HTF bar before it as 'previous HTF bar'; HTF ATR = ATR computed on HTF bars (same lookback as the chart ATR)
+Long: close crosses above SwingHigh (previous close <= SwingHigh and close > SwingHigh)
+Short: close crosses below SwingLow (previous close >= SwingLow and close < SwingLow)
+Long: (previous bar is bearish AND current bar is bullish AND current bar body (close-open) > ATR) OR (current low > high of 2 bars ago) OR (current low <= RangeLow AND previous low > RangeLow)
+Short: (previous bar is bullish AND current bar is bearish AND current bar body (open-close) > ATR) OR (current high < low of 2 bars ago) OR (current high >= RangeHigh AND previous high < RangeHigh)
+Long: (previous HTF bar is bearish AND current HTF bar is bullish AND current HTF body (close-open) > HTF ATR) OR (current HTF low > HTF high of two HTF bars ago)
+Short: (previous HTF bar is bullish AND current HTF bar is bearish AND current HTF body (open-close) > HTF ATR) OR (current HTF high < HTF low of two HTF bars ago)

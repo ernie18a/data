@@ -1,0 +1,4 @@
+Calculation: SchaffRSX = RSX applied to the series (fast EMA of close minus slow EMA of close), where the fast EMA period is shorter than the slow EMA period
+Calculation: RSX(x) = clamp(100 * (0.5 + 0.5 * M / A), 0, 100), where M and A are three cascaded smoothing stages applied to d = x[t] - x[t-1] (giving M) and to |d| (giving A). With K = 3/(2+period) and H = 1-K, each stage is s1 = K*in + H*s1[prev]; s2 = K*s1 + H*s2[prev]; out = 1.5*s1 - 0.5*s2. Each stage's out is the next stage's input.
+Long: SchaffRSX > SchaffRSX of previous bar, OR (SchaffRSX == SchaffRSX of previous bar AND the previous bar's state was Long)
+Short: SchaffRSX < SchaffRSX of previous bar, OR (SchaffRSX == SchaffRSX of previous bar AND the previous bar's state was Short)

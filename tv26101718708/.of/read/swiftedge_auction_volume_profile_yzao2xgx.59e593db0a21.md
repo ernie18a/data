@@ -1,0 +1,4 @@
+Calculation: Swing size = a fixed price distance, or alternatively a multiple of ATR.
+Calculation: Leg = alternating zigzag state, up-leg or down-leg (initially up-leg). Leg start = bar of the previous leg's extreme. Leg extreme = highest high since leg start during an up-leg, or lowest low since leg start during a down-leg, updated with the current bar before the check. When a signal fires, the leg flips and the new leg's extreme restarts from the signal bar's high (new up-leg) or low (new down-leg), with leg start = bar of the old leg's extreme.
+Long: Leg is a down-leg AND bars since leg start >= a minimum leg length AND close >= leg extreme (lowest low) + swing size. This marks a swing low.
+Short: Leg is an up-leg AND bars since leg start >= a minimum leg length AND close <= leg extreme (highest high) - swing size. This marks a swing high.

@@ -1,0 +1,5 @@
+Calculation: DI+ = 100 * RMA(up > down ? up : 0, n) / TR; DI- = 100 * RMA(down > up ? down : 0, n) / TR, where up = high - previous high, down = previous low - low, TR = the current bar's unsmoothed true range, and both use the same n; a NaN result takes the last non-NaN value
+Long: EMA(close, short-term lookback) crosses above EMA(close, long-term lookback), with the short-term lookback shorter than the long-term one, OR DI+ > DI- on the chart timeframe, OR DI+ > DI- on the bars of any one of several other fixed timeframes (each evaluated separately, using the still-forming bar of that timeframe)
+Short: EMA(close, short-term lookback) crosses below EMA(close, long-term lookback), OR DI- > DI+ on the chart timeframe, OR DI- > DI+ on the bars of any one of several other fixed timeframes (each evaluated separately, using the still-forming bar of that timeframe)
+Exit: long, low <= entry price * (1 - stop percentage / 100) OR the Short condition's EMA crossunder occurs (reversal)
+Exit: short, high >= entry price * (1 + stop percentage / 100) OR the Long condition's EMA crossover occurs (reversal)

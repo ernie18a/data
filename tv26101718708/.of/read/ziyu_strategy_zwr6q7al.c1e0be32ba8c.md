@@ -1,0 +1,7 @@
+Calculation: ORBHigh = highest high of the bars inside a fixed intraday opening window of the current day; usable only after that window has ended.
+Calculation: Pivots = from the last completed higher-timeframe bar (higher than the chart timeframe) with high H, low L, close C: P=(H+L+C)/3; R1=2P-L; R2=P+H-L; R3=2P+H-2L; R4=3P+H-3L; R5=4P+H-4L.
+Calculation: Ladder = ascending levels indexed 0..10: [ORBHigh, M0, R1, M1, R2, M2, R3, M3, R4, M4, R5], where M0=ORBHigh+|R1-ORBHigh|/2 and Mn=Rn+|Rn-R(n+1)|/2 for n=1..4.
+Calculation: Trail = 0 at entry; on each bar after entry, for every ladder index k whose level is below the bar's high, the candidate is Ladder[0] if k=1, Ladder[k-2] if k>=3, and none if k=2 or k=0; Trail = max(previous Trail, highest candidate).
+Long: opening window already ended today AND flat AND open < ORBHigh AND high > ORBHigh (entry at ORBHigh) AND number of entries today < a daily limit AND not within a fixed number of bars after two consecutive losing trades.
+Exit: Long, low <= max(InitialStop, Trail), where InitialStop = entry price * (1 - fixed percentage) (alternative: the low of the bar before the setup bar, capped at entry price); exit at that stop level.
+Exit: Long, current bar is the last bar of the trading day (close the position).

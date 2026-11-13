@@ -1,0 +1,9 @@
+Calculation: ATR = Average True Range on the chart timeframe
+Calculation: HTF_EMA = EMA of close on a higher timeframe than the chart, using the still-forming higher-timeframe bar (its close so far is the current chart close)
+Calculation: LiquidityHighs = the K most recent unswept swing highs. A swing high is a bar whose high is the highest among N bars on each side, known N bars after it. It is added on its confirmation bar, before that bar's sweep check. A level is removed once swept (high > level AND close < level) or when pushed out by newer levels.
+Calculation: LiquidityLows = the K most recent unswept swing lows. A swing low is a bar whose low is the lowest among N bars on each side, known N bars after it. It is added on its confirmation bar, before that bar's sweep check. A level is removed once swept (low < level AND close > level) or when pushed out by newer levels.
+Calculation: Stop (long) = entry-bar low - b*ATR; Stop (short) = entry-bar high + b*ATR, with ATR taken on the entry bar; Risk = |entry price - Stop|; Target (long) = entry price + R*Risk; Target (short) = entry price - R*Risk; entry price = close of the entry bar
+Long: on a closed bar, for any level L in LiquidityLows, low < L AND close > L; AND optional body filter |close - open| >= m*ATR; AND optional trend filter, which is either none, or with-trend (close > HTF_EMA), or counter-trend (close < HTF_EMA)
+Short: on a closed bar, for any level L in LiquidityHighs, high > L AND close < L; AND optional body filter |close - open| >= m*ATR; AND optional trend filter, which is either none, or with-trend (close < HTF_EMA), or counter-trend (close > HTF_EMA). The with-trend / counter-trend choice is the same one used for Long.
+Exit: long, low <= Stop OR high >= Target
+Exit: short, high >= Stop OR low <= Target

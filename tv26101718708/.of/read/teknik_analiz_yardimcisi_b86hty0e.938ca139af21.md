@@ -1,0 +1,11 @@
+Calculation: SignalEMA_i (4 of them) = for each of four EMAs of close with lengths ordered shortest < shorter < longer < longest: AL(+1) if close > EMA else SAT(-1)
+Calculation: SignalRSI = Wilder RSI of close; SAT(-1) if RSI >= overbought level, AL(+1) if RSI <= oversold level, else neutral (0)
+Calculation: SignalBB = Bollinger Bands (SMA of close +/- k*stdev of close); AL(+1) if close <= lower band, SAT(-1) if close >= upper band, else 0
+Calculation: SignalVWAP = VWAP using close as source (sum(close*volume)/sum(volume), reset each session); AL(+1) if close > VWAP else SAT(-1)
+Calculation: Supertrend = hl2 +/- mult*ATR bands; lower band = max(current lower, previous lower) if previous close > previous lower band else current lower; upper band = min(current upper, previous upper) if previous close < previous upper band else current upper; trend starts up; trend flips to up if trend is down and close > upper band; flips to down if trend is up and close < lower band; otherwise unchanged. SignalST = AL(+1) if trend up else SAT(-1)
+Calculation: SignalOBVMACD: obv = cumulative sum(sign(close change)*volume); d = obv - SMA(obv, n_short); shadow = 0 if stdev(d, n_long)==0 else d/stdev(d, n_long)*stdev(high-low, n_long) (n_long > n_short); out = high+shadow if shadow>0 else low+shadow; fast = DEMA(out, f) = 2*EMA(out,f) - EMA(EMA(out,f),f); slow = EMA(close, s) with s > f; m = fast - slow; step line b starts at m on first bar, and on each bar b = m if m > b_prev + A or m < b_prev - A, else b_prev, where A = (running sum over all bars so far, including the current bar, of |m - b_prev|) / bar count; dir = +1 if b > b_prev, -1 if b < b_prev, else previous dir (initial 0); SignalOBVMACD = AL(+1) if dir == +1 else SAT(-1)
+Calculation: net = sum of the nine signals (4 SignalEMA + SignalRSI + SignalBB + SignalVWAP + SignalST + SignalOBVMACD), i.e. count of AL minus count of SAT
+Long: net > 0 (strong at net >= 3)
+Long: Supertrend trend flips from down to up on this bar
+Short: net < 0 (strong at net <= -3)
+Short: Supertrend trend flips from up to down on this bar

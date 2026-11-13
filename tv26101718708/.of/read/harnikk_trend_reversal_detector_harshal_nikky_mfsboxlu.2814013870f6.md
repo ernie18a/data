@@ -1,0 +1,13 @@
+Calculation: crossover(a,b) = a > b on this bar AND a <= b on the previous bar; crossunder(a,b) = a < b on this bar AND a >= b on the previous bar. All bars are on the chart timeframe, using the current bar.
+Calculation: pivot = a bar whose high (low) is the highest (lowest) among n bars on each side; it is known only n bars after it forms. Swing pivots use n_swing. Trendline pivots use n_trend, which is longer than n_swing.
+Calculation: LaggedSwingHigh (LaggedSwingLow) = value of the most recent swing-high (swing-low) pivot that was already known n_swing bars before the current bar.
+Calculation: RSI = RSI of close; HH_p = highest high over the last k bars including the current bar; LL_p = lowest low over the last k bars; HH_r = highest RSI over the last k bars; LL_r = lowest RSI over the last k bars.
+Calculation: VolSpike = volume > SMA(volume, m) * mult, where mult > 1.
+Calculation: Body = abs(close-open); UpperWick = high - max(open,close); LowerWick = min(open,close) - low; AvgBody = SMA(Body, fixed lookback).
+Calculation: BullCandle = Hammer OR BullEngulf OR MorningStar; Hammer = LowerWick >= 2*Body AND UpperWick <= 0.5*Body AND close > open; BullEngulf = close[1] < open[1] AND close > open AND close >= open[1] AND open <= close[1]; MorningStar = close[2] < open[2] AND Body[1] < 0.3*AvgBody[1] AND close > open AND close > (open[2]+close[2])/2.
+Calculation: BearCandle = ShootingStar OR BearEngulf OR EveningStar; ShootingStar = UpperWick >= 2*Body AND LowerWick <= 0.5*Body AND close < open; BearEngulf = close[1] > open[1] AND close < open AND close <= open[1] AND open >= close[1]; EveningStar = close[2] > open[2] AND Body[1] < 0.3*AvgBody[1] AND close < open AND close < (open[2]+close[2])/2.
+Calculation: SupportLine = P + slope*(bars since pivot bar), with P = latest trendline pivot-low value, slope = (P - value of P as of the previous bar)/max(bars since pivot bar,1). ResistanceLine = same construction using trendline pivot highs.
+Calculation: BullScore = count of true among: [crossover(close, LaggedSwingLow)], [low <= LL_p AND RSI > LL_r[1]], [VolSpike], [BullCandle], [crossover(close, ResistanceLine)].
+Calculation: BearScore = count of true among: [crossunder(close, LaggedSwingHigh)], [high >= HH_p AND RSI < HH_r[1]], [VolSpike], [BearCandle], [crossunder(close, SupportLine)].
+Long: BullScore >= min_signals (integer from 1 to 5)
+Short: BearScore >= min_signals (integer from 1 to 5)

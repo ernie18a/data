@@ -1,0 +1,4 @@
+Calculation: LTFavgVol = average volume of the most recent N lower-timeframe bars (lower than the chart timeframe), counting only bars with volume > 0, including the most recent bar; N is the lookback length
+Calculation: LTFdir = +1 if the close of the most recent lower-timeframe bar (inside the still-forming chart bar) is above the close of the previous lower-timeframe bar with volume > 0, -1 if below, and unchanged from the prior value if equal
+Long: volume of the most recent lower-timeframe bar >= multiplier * LTFavgVol AND LTFdir = +1
+Short: volume of the most recent lower-timeframe bar >= multiplier * LTFavgVol AND LTFdir = -1

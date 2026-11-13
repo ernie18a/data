@@ -1,0 +1,6 @@
+Calculation: HTFUp = close of a higher-timeframe bar (the bar still forming, using its current close) > SMA of higher-timeframe closes (including that forming bar's close)
+Calculation: CycleHigh = high of the latest qualifying peak bar. A bar qualifies when high == highest high over the lookback (including the current bar) AND HTFUp AND volume filter passes (if enabled: volume > multiplier * SMA(volume)). CycleHigh is updated only if it is undefined or the qualifying bar's high > CycleHigh. Each update re-arms levels 1, 2 and 3.
+Calculation: Drop% = (CycleHigh - close) / CycleHigh * 100, or 0 if CycleHigh is undefined
+Long: for each level k in {1,2,3} (drop thresholds T1 < T2 < T3, evaluated independently, several may fire on the same bar): level k is armed AND Drop% >= Tk AND HTFUp AND volume filter passes (if enabled: volume > multiplier * SMA(volume)). Level k is disarmed after it enters, until the next CycleHigh update.
+Long: re-enter long with the same size on the bar a level-k position is closed by the time exit
+Exit: long, bars since that level's entry >= 1 (closes that level's position; applies once per level entry, not to the rebuy)

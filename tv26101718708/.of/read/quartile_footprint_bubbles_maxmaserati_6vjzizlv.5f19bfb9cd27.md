@@ -1,0 +1,4 @@
+Calculation: Levels = with H = highest high and L = lowest low over a lookback window ending at the current chart bar (inclusive), and R = H - L, the five levels are H, H - 0.25*R, H - 0.5*R, L + 0.25*R, L.
+Calculation: Delta = sum over all lower-timeframe bars inside the current chart bar (lower than the chart timeframe, taken at the chart bar's close) of (volume if that bar's close >= open, else -volume); if there are no lower-timeframe bars, use volume if chart close >= chart open, else -volume.
+Long: the chart bar's low <= any one of the Levels <= the chart bar's high AND Delta > 0
+Short: the chart bar's low <= any one of the Levels <= the chart bar's high AND Delta <= 0

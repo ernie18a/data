@@ -1,0 +1,6 @@
+Calculation: Osc = SMA(close, short length) - SMA(close, long length)
+Calculation: OscSignal = SMA(Osc, length longer than the short length)
+Calculation: Mom = close - close N bars ago (N small)
+Calculation: MA = SMA(close, short length)
+Long: (Osc > Osc[1] AND OscSignal > OscSignal[1] AND Mom > Mom[1]) OR (close > MA AND each of the previous K closes (K at least several) was <= its own MA) OR (Mom >= highest Mom over the last M bars including the current bar, M longer than N) OR (high >= highest high over the last L bars including the current bar)
+Short: (Osc < Osc[1] AND OscSignal < OscSignal[1] AND Mom < Mom[1]) OR (close < MA AND each of the previous K closes was >= its own MA) OR (Mom <= lowest Mom over the last M bars including the current bar) OR (low <= lowest low over the last L bars including the current bar)
